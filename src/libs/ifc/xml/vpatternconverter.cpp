@@ -209,7 +209,7 @@ QString VPatternConverter::XSDSchema(int ver) const
         case (0x000406):
             return QStringLiteral("://schema/pattern/v0.4.6.xsd");
         case (0x000407):
-            return QStringLiteral("://schema/pattern/v0.4.8.xsd");
+            return QStringLiteral("://schema/pattern/v0.4.7.xsd");
         case (0x000408):
             return CurrentSchema;
         default:
