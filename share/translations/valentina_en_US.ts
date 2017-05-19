@@ -51,7 +51,7 @@
     </message>
     <message>
         <source>Server name/IP</source>
-        <translation type="vanished">Server name/IP</translation>
+        <translation type="vanished">User name</translation>
     </message>
     <message>
         <source>Secure connection</source>
@@ -165,7 +165,7 @@
     <name>ConfigurationPage</name>
     <message>
         <source>Setup user interface language updated and will be used the next time start</source>
-        <translation type="vanished">Setup user interface language updated and will be used the next time start</translation>
+        <translation type="vanished">The GUI language has been updated and will be used the next time Valentina starts.</translation>
     </message>
     <message>
         <source>Default unit updated and will be used the next pattern creation</source>
@@ -4376,7 +4376,7 @@ Apply settings anyway?</translation>
     </message>
     <message>
         <source>Calulation</source>
-        <translation type="vanished">Calculation</translation>
+        <translation type="vanished">Calulation</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>

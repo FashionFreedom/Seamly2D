@@ -499,7 +499,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="413"/>
         <source>Indent: Neck Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Положення корпусу шиї ззаду</translation>
+        <translation>Положення корпусу: шия ззаду</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="414"/>
@@ -564,7 +564,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="451"/>
         <source>hand_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hand_length</translation>
+        <translation>довжина_кисті</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="453"/>
@@ -636,7 +636,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="489"/>
         <source>foot_width</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>foot_width</translation>
+        <translation>ширина_ступні</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="491"/>
@@ -654,7 +654,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="495"/>
         <source>foot_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>foot_length</translation>
+        <translation>довжина_ступні</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="497"/>
@@ -2424,13 +2424,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1240"/>
         <source>shoulder_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Шп</translation>
+        <translation>довжина_плеча</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1242"/>
         <source>Shoulder length</source>
         <comment>Full measurement name.</comment>
-        <translation>Довжина плечового ската</translation>
+        <translation>Довжина плеча</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1243"/>
@@ -2676,7 +2676,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1351"/>
         <source>bustpoint_to_bustpoint</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Цг</translation>
+        <translation>соскова_точка_до_соскової_точки</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1353"/>
@@ -3756,7 +3756,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1815"/>
         <source>crotch_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>crotch_length</translation>
+        <translation>довжина_промежини</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1817"/>

@@ -200,7 +200,7 @@
     </message>
     <message>
         <source>First point of line</source>
-        <translation type="vanished">נקודה ראשונה בקו</translation>
+        <translation type="vanished">נקודה ראשונה בשורה</translation>
     </message>
     <message>
         <source>Second point</source>
@@ -208,7 +208,7 @@
     </message>
     <message>
         <source>Second point of line</source>
-        <translation type="vanished">נקודה שנייה בקו</translation>
+        <translation type="vanished">נקודה שנייה בשורה</translation>
     </message>
     <message>
         <source>Type of line</source>
@@ -1457,7 +1457,7 @@
     </message>
     <message>
         <source>Curve</source>
-        <translation type="unfinished">עקומה</translation>
+        <translation>עקומה</translation>
     </message>
     <message>
         <source>Cubic bezier curve</source>
@@ -2666,7 +2666,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">למחוק</translation>
+        <translation>למחוק</translation>
     </message>
     <message>
         <source>Current seam aloowance</source>
@@ -3357,11 +3357,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">למחוק</translation>
+        <translation>למחוק</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">אפשרויות</translation>
+        <translation>אפשרויות</translation>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
@@ -5419,7 +5419,7 @@ Do you want to save your changes?</source>
     <name>PreferencesConfigurationPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">שמור</translation>
+        <translation>שמור</translation>
     </message>
     <message>
         <source>Auto-save modified pattern</source>
@@ -5507,11 +5507,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished">סנטימטרים</translation>
+        <translation>סנטימטרים</translation>
     </message>
     <message>
         <source>Millimiters</source>
-        <translation type="unfinished">מילימטר</translation>
+        <translation>מילימטר</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -8318,7 +8318,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">אפשרויות</translation>
+        <translation>אפשרויות</translation>
     </message>
     <message>
         <source>In layout</source>
@@ -8326,7 +8326,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">למחוק</translation>
+        <translation>למחוק</translation>
     </message>
 </context>
 <context>
@@ -9497,7 +9497,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">למחוק</translation>
+        <translation>למחוק</translation>
     </message>
 </context>
 <context>

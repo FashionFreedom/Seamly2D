@@ -235,7 +235,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="277"/>
         <source>Vertical distance from the Waist Front to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Distancia vertical desde la cintura frontal al piso.</translation>
+        <translation>Distancia vertical desde la parte delantera de la cintura hasta el suelo.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="281"/>
@@ -289,7 +289,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="298"/>
         <source>Vertical distance from the Neck Front to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Distancia vertical desde el Cuello (delantera) hasta el piso</translation>
+        <translation>Distancia vertical delantera desde el Cuello hasta el piso</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="302"/>
@@ -457,7 +457,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="385"/>
         <source>width_hip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>ancho_caderas</translation>
+        <translation>ancho_cadera</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="387"/>
@@ -469,7 +469,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="388"/>
         <source>Horizontal distance from Hip Side to Hip Side.</source>
         <comment>Full measurement description.</comment>
-        <translation>Distancia horizontal de un lado de la cadera al otro lado de la cadera</translation>
+        <translation>Distancia horizontal de un lado de la cadera al otro lado de la cadera.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="392"/>
@@ -540,7 +540,7 @@
     <message>
         <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
         <comment>Full measurement description.</comment>
-        <translation type="vanished">Distancia horizontal entre un palo liso, puesto perpendicular al talón, y la mayor hendidura del Tobillo.</translation>
+        <translation type="vanished">Distancia horizontal entre un palo liso, puesto perpendicular al talón, y la mayor marca del Tobillo.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="444"/>
@@ -564,7 +564,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="451"/>
         <source>hand_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>longitud_mano</translation>
+        <translation>mano_longitud</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="453"/>
@@ -1590,7 +1590,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="888"/>
         <source>Curve stiff paper around front of abdomen, tape at sides. Measure from Hip Side to Hip Side over paper across front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Curvar el papel rígido alrededor de la parte frontal del abdomen, pegar a los lados. Medida desde el lado de la cadera hasta el lado de la cadera sobre el papel a través de la parte frontal.</translation>
+        <translation>Curvar el papel rígido alrededor de la parte frontal del abdomen, pegar a los lados. Medir desde el lado de la cadera hasta el lado de la cadera sobre el papel a través de la parte frontal.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="893"/>
@@ -1698,7 +1698,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="945"/>
         <source>From Neck Front down between breasts to Waist Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Desde parte frontal del cuello a por entre los pechos hasta la parte frontal de la cintura.</translation>
+        <translation>Desde parte frontal del cuello por entre los pechos hasta la parte frontal de la cintura.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="949"/>
@@ -1824,7 +1824,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="993"/>
         <source>From Neck Front down to Bust Front. Requires tape to cover gap between Bustpoints.</source>
         <comment>Full measurement description.</comment>
-        <translation>Desde la parte frontal del cuello hasta la parte frontal del busto. Requiere cinta adhesiva para cubrir el espacio entre los pezones.</translation>
+        <translation>Desde la parte frontal del cuello hasta la parte frontal del busto. Requiere cinta adhesiva para cubrir el espacio entre los pechos.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="998"/>
@@ -1878,7 +1878,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1015"/>
         <source>From lowest rib at side down to Waist Side.</source>
         <comment>Full measurement description.</comment>
-        <translation>Desde el lado de la costilla más baja hasta el lado de la cintura</translation>
+        <translation>Desde el lado de la costilla más baja hasta el lado de la cintura.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
@@ -1950,7 +1950,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1043"/>
         <source>From mid-Shoulder down front to Highbust level, aimed at Bustpoint.</source>
         <comment>Full measurement description.</comment>
-        <translation>Desde la mitad del hombro por delante hasta el nivel del busto alto, dirigido a la cima del pecho</translation>
+        <translation>Desde la mitad del hombro por delante hasta el nivel del busto alto, dirigido a la cima del pecho.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1047"/>
@@ -2124,7 +2124,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1111"/>
         <source>Shoulder Tip to Armfold Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Desde el extremo del hombro hasta la parte trasera del brazo</translation>
+        <translation>Desde el extremo del hombro hasta la parte trasera del pliegue del brazo</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1112"/>
@@ -2202,7 +2202,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1140"/>
         <source>From Waist Front to Highhip Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Desde la parte frontal de la cintura hasta la parte frontal de la cadera alta</translation>
+        <translation>Desde la parte frontal de la cintura hasta la parte frontal de la cadera alta.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1143"/>
@@ -2436,7 +2436,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1243"/>
         <source>From Neck Side to Shoulder Tip.</source>
         <comment>Full measurement description.</comment>
-        <translation>Desde el lado del cuello hasta lo alto del hombro</translation>
+        <translation>Desde el lado del cuello hasta lo alto del hombro.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1246"/>

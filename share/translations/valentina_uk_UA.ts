@@ -448,7 +448,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -563,7 +563,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>First angle</source>
@@ -587,7 +587,7 @@
     </message>
     <message>
         <source>Select point of center of arc</source>
-        <translation type="vanished">Виберіть точку центра дуги</translation>
+        <translation type="vanished">Виберіть точку центру дуги</translation>
     </message>
     <message>
         <source>Error</source>
@@ -674,7 +674,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>First angle</source>
@@ -773,7 +773,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -974,7 +974,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Axis point</source>
@@ -1073,7 +1073,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Arc</source>
@@ -1148,7 +1148,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Curve</source>
@@ -1196,7 +1196,7 @@
     </message>
     <message>
         <source>Point label:</source>
-        <translation>Мітка точки:</translation>
+        <translation>Ім&apos;я точки:</translation>
     </message>
     <message>
         <source>Unique label</source>
@@ -1223,7 +1223,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Curve</source>
@@ -1271,7 +1271,7 @@
     </message>
     <message>
         <source>Point label:</source>
-        <translation>Мітка точки:</translation>
+        <translation>Ім&apos;я точки:</translation>
     </message>
     <message>
         <source>Unique label</source>
@@ -1338,7 +1338,7 @@
     </message>
     <message>
         <source>Seam allowance tool</source>
-        <translation type="vanished">Деталь</translation>
+        <translation type="vanished">Інструмент прибавка на шви</translation>
     </message>
     <message>
         <source>All objects in path should follow in clockwise direction.</source>
@@ -1442,7 +1442,7 @@
     </message>
     <message>
         <source>Pattern label visible</source>
-        <translation type="vanished">Мітка вікрійки видима</translation>
+        <translation type="vanished">Мітка лекала видима</translation>
     </message>
     <message>
         <source>Fabric</source>
@@ -1458,11 +1458,11 @@
     </message>
     <message>
         <source>Interlining</source>
-        <translation type="vanished">флізелін</translation>
+        <translation type="vanished">Флізелін</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="vanished">Жодний</translation>
+        <translation type="vanished">Жодного</translation>
     </message>
     <message>
         <source>Cut on fold</source>
@@ -1474,7 +1474,7 @@
     </message>
     <message>
         <source> on Fold</source>
-        <translation type="vanished">Вирізати на згиб</translation>
+        <translation type="vanished">на згиб</translation>
     </message>
     <message>
         <source>Update</source>
@@ -1573,7 +1573,7 @@
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Вставити змінну у формулу</translation>
+        <translation>Вставте значення в формулу</translation>
     </message>
     <message>
         <source>Value of first angle</source>
@@ -1581,7 +1581,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Input data</source>
@@ -1601,7 +1601,7 @@
     </message>
     <message>
         <source>Length of lines</source>
-        <translation>Довжина ліній</translation>
+        <translation>Довжини лінії</translation>
     </message>
     <message>
         <source>Length of arcs</source>
@@ -1609,7 +1609,7 @@
     </message>
     <message>
         <source>Length of curves</source>
-        <translation>Довжина кривих</translation>
+        <translation>Довжни кривих</translation>
     </message>
     <message>
         <source>Angle of lines</source>
@@ -1807,7 +1807,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -2066,7 +2066,7 @@
     </message>
     <message>
         <source>Select first point of line</source>
-        <translation>Виберість першу точку лінії</translation>
+        <translation>Виберіть першу точку лінії</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -2288,7 +2288,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation>Позначення</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <source>The calculated value</source>
@@ -2380,7 +2380,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -2649,7 +2649,7 @@
     </message>
     <message>
         <source>Custom</source>
-        <translation>Користувацький</translation>
+        <translation>Користувацька</translation>
     </message>
     <message>
         <source>Wrong fields.</source>
@@ -2837,7 +2837,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Axis point</source>
@@ -3201,7 +3201,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -3217,7 +3217,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Additional angle degrees</source>
-        <translation type="vanished">Додатковий кут градуси</translation>
+        <translation type="vanished">Дод. кут градуси</translation>
     </message>
     <message>
         <source>Type of line</source>
@@ -3344,11 +3344,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Користувацькі</translation>
+        <translation>Користувацька</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Зріст:</translation>
+        <translation>Висота:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -3915,7 +3915,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -4006,7 +4006,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -4203,7 +4203,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius of the second circle</source>
@@ -4314,7 +4314,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Point label:</source>
-        <translation>Мітка:</translation>
+        <translation>Ім&apos;я точки:</translation>
     </message>
     <message>
         <source>Unique label</source>
@@ -4368,7 +4368,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Майстер формул</translation>
+        <translation>Мастер формул</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4380,7 +4380,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Origin Point:</source>
@@ -4732,7 +4732,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -4760,7 +4760,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Select first point of line</source>
-        <translation>Виберість першу точку лінії</translation>
+        <translation>Виберіть першу точку лінії</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -4768,7 +4768,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Special point on shoulder</source>
-        <translation>Спеціальна точка на плече</translation>
+        <translation>Спеціальна точка на плечі</translation>
     </message>
     <message>
         <source>Line color</source>
@@ -4946,7 +4946,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Майстер формул</translation>
+        <translation>Мастер формул</translation>
     </message>
     <message>
         <source>Value</source>
@@ -4958,7 +4958,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -5073,7 +5073,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Майстер формул</translation>
+        <translation>Мастер формул</translation>
     </message>
     <message>
         <source>Value</source>
@@ -5085,7 +5085,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -5250,7 +5250,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Select first point</source>
-        <translation>Виберість першу точку</translation>
+        <translation>Виберіть першу точку</translation>
     </message>
     <message>
         <source>Select second point</source>
@@ -5571,7 +5571,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Виключення: %1. Програма буде закрита.</translation>
+        <translation>Програмне виключення: %1. Програма буде закрита.</translation>
     </message>
     <message>
         <source>Valentina&apos;s measurements editor.</source>
@@ -5666,15 +5666,15 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Point along bisector</source>
-        <translation>Інструмент точка бісектриси кута</translation>
+        <translation>Точка бісектриси кута</translation>
     </message>
     <message>
         <source>Point at distance and angle</source>
-        <translation>Інструмент точка на кінці лінії</translation>
+        <translation>Точка на кінці лінії</translation>
     </message>
     <message>
         <source>Point at distance along line</source>
-        <translation>Інструмент точка вздовж лінії</translation>
+        <translation>Точка вздовж лінії</translation>
     </message>
     <message>
         <source>Tools for creating lines.</source>
@@ -6163,7 +6163,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seam allowance tool</source>
-        <translation>Деталь</translation>
+        <translation>Інструмент прибавка на шви</translation>
     </message>
     <message>
         <source>Union tool</source>
@@ -6231,7 +6231,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc with given length</source>
-        <translation>Дуга за заданою довжиною</translation>
+        <translation>Дуга із заданою довжиною</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -6323,7 +6323,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Unsaved changes</source>
-        <translation>Незбережені зміни</translation>
+        <translation>Не збереженні змінення</translation>
     </message>
     <message>
         <source>Load Individual ...</source>
@@ -6380,11 +6380,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window.</source>
-        <translation>Не вдалося заблокувати. Цей файл вже відкрито в іншому вікні.</translation>
+        <translation>Неможливо заблокувати. Цей файл вже був відкритий в іншому вікні.</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collissions when run 2 copies of the program.</source>
-        <translation>Не вдалося заблокувати. Цей файл вже відкрито в іншому вікні. Очікуйте колізій якщо відкрито 2 копії програми.</translation>
+        <translation>Неможливо заблокувати. Цей файл вже був відкритий в іншому вікні. Можливі конфлікти, якщо одночасно запущено кілька екземплярів програми.</translation>
     </message>
     <message>
         <source>Measurement file contains invalid known measurement(s).</source>
@@ -7004,7 +7004,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Path</source>
-        <translation type="vanished">Шлях</translation>
+        <translation type="vanished">Контур</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -7694,7 +7694,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation>Позначення</translation>
+        <translation>Ім&apos;я</translation>
     </message>
     <message>
         <source>Calculated value</source>
@@ -7730,7 +7730,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показати повний розрахунок у вікні повідомлення&lt;/p&gt;&lt;/body&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Base value:</source>
@@ -8223,27 +8223,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Locking file</source>
-        <translation>Файл блокування</translation>
+        <translation>Блокування файлу</translation>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Цей файл вже відкрит в іншому вікні. Ігноруйте, якщо бажаєте продовжити (не рекомендується, може призвести до пошкодження даних).</translation>
+        <translation>Цей файл вже відкритий в іншому вікні. Ігноруйте якщо ви хочете продовжити (не рекомендується, може призвести до втрати даних).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Файл блокування не може бути створений через відсутність дозволу. Ігноруйте, якщо бажаєте продовжити (не рекомендується, може призвести до пошкодження даних).</translation>
+        <translation>Не вдалося створити lock файл через відсутність дозволів. Ігноруйте якщо хочете продовжити (не рекомендується, може призвести до втрати даних).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Виникла невідома помилка, наприклад, повністю заповнений розділ заважає запису файлу блокування. Ігноруйте, якщо ви хочете продовжити (не рекомендується, може призвести до пошкодження даних).</translation>
+        <translation>Сталася невідома помилка, наприклад переповнення розділу попередило запис lock файлу. Ігноруйте якщо бажаєте продовжити (не рекомендується, може призвести до втрати даних).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>Файл блокування не може бути створений, не вистачає прав доступу.</translation>
+        <translation>Не вдалося створити lock файл через відсутність дозволів.</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Виникла невідома помилка, наприклад, повністю заповнений розділ заважає запису файла блокування.</translation>
+        <translation>Сталася невідома помилка, наприклад переповнення розділу попередило запис lock файлу.</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -8752,7 +8752,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Path</source>
-        <translation type="vanished">Шлях</translation>
+        <translation type="vanished">Контур</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -10007,7 +10007,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point at distance and angle</source>
-        <translation>Інструмент точка на кінці лінії</translation>
+        <translation>Точка на кінці лінії</translation>
     </message>
     <message>
         <source>Line type</source>
@@ -10023,7 +10023,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point at distance along line</source>
-        <translation>Інструмент точка вздовж лінії</translation>
+        <translation>Точка вздовж лінії</translation>
     </message>
     <message>
         <source>Arc</source>
@@ -10043,7 +10043,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point along bisector</source>
-        <translation>Інструмент точка бісектриси кута</translation>
+        <translation>Точка бісектриси кута</translation>
     </message>
     <message>
         <source>Cut arc tool</source>
@@ -10087,7 +10087,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Special point on shoulder</source>
-        <translation>Спеціальна точка на плече</translation>
+        <translation>Спеціальна точка на плечі</translation>
     </message>
     <message>
         <source>Curve tool</source>
@@ -11385,7 +11385,7 @@ Do you want to save your changes?</source>
     <message>
         <source>None</source>
         <comment>System name</comment>
-        <translation>Внутрішня</translation>
+        <translation>Жодного</translation>
     </message>
     <message>
         <source>Valentina team</source>
@@ -11565,7 +11565,7 @@ Do you want to save your changes?</source>
     <message>
         <source>min</source>
         <comment>min of all arguments</comment>
-        <translation>min</translation>
+        <translation>хв</translation>
     </message>
     <message>
         <source>max</source>

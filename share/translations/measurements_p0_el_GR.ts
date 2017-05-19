@@ -475,7 +475,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="392"/>
         <source>width_abdomen_to_hip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>πλάτος_κοιλιάς_ως_το_γοφό</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="394"/>

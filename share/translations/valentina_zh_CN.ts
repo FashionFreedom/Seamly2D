@@ -150,7 +150,7 @@
     <name>DeletePiece</name>
     <message>
         <source>delete tool</source>
-        <translation type="unfinished">删除工具</translation>
+        <translation>删除工具</translation>
     </message>
 </context>
 <context>
@@ -918,6 +918,14 @@
         <source>Width:</source>
         <translation type="vanished">宽度:</translation>
     </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="vanished">打算</translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="vanished">长度:</translation>
+    </message>
 </context>
 <context>
     <name>DialogEditWrongFormula</name>
@@ -1046,7 +1054,7 @@
     </message>
     <message>
         <source>Calulation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1062,7 +1070,7 @@
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>Second angle:</source>
@@ -1074,7 +1082,7 @@
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished">中点:</translation>
+        <translation>中点:</translation>
     </message>
     <message>
         <source>Select center point of the arc</source>
@@ -1082,11 +1090,11 @@
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">颜色:</translation>
+        <translation>颜色:</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
@@ -2229,7 +2237,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished">长度:</translation>
+        <translation>长度:</translation>
     </message>
     <message>
         <source>Suffix:</source>
@@ -2241,11 +2249,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Edit length</source>
-        <translation type="unfinished">修长度</translation>
+        <translation>修长度</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>Move</source>
@@ -2577,6 +2585,13 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>DialogPatternXmlEdit</name>
+    <message>
+        <source>Type:</source>
+        <translation type="vanished">类型:</translation>
+    </message>
+</context>
+<context>
     <name>DialogPiecePath</name>
     <message>
         <source>Piece path tool</source>
@@ -2600,7 +2615,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">类型:</translation>
+        <translation>类型:</translation>
     </message>
     <message>
         <source>Piece:</source>
@@ -2620,7 +2635,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">宽度:</translation>
+        <translation>宽度:</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -2632,7 +2647,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -2676,7 +2691,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Current seam aloowance</source>
@@ -3159,11 +3174,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">样板</translation>
+        <translation>样板</translation>
     </message>
     <message>
         <source>Paths</source>
-        <translation type="unfinished">路径</translation>
+        <translation>路径</translation>
     </message>
 </context>
 <context>
@@ -3183,6 +3198,10 @@ Apply settings anyway?</source>
     <message>
         <source>Value</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calulation</source>
+        <translation type="vanished">打算</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -3210,7 +3229,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
 </context>
 <context>
@@ -3343,7 +3362,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Options</source>
@@ -3447,11 +3466,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation type="unfinished">修长度</translation>
+        <translation>修长度</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -3467,7 +3486,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Paths</source>
-        <translation type="unfinished">路径</translation>
+        <translation>路径</translation>
     </message>
     <message>
         <source>Excluded</source>
@@ -3679,6 +3698,10 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Calulation</source>
+        <translation type="vanished">打算</translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3700,7 +3723,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
@@ -3708,7 +3731,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
 </context>
 <context>
@@ -3770,6 +3793,10 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Calulation</source>
+        <translation type="vanished">打算</translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3791,7 +3818,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Length can&apos;t be negative</source>
@@ -3803,7 +3830,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
 </context>
 <context>
@@ -3818,7 +3845,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Paths</source>
-        <translation type="unfinished">路径</translation>
+        <translation>路径</translation>
     </message>
 </context>
 <context>
@@ -4127,11 +4154,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">信息</translation>
+        <translation>信息</translation>
     </message>
 </context>
 <context>
@@ -4580,7 +4607,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation type="unfinished"></translation>
+        <translation>错误:编码错误.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
@@ -5415,7 +5442,7 @@ Do you want to save your changes?</source>
     <name>PreferencesConfigurationPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">保存</translation>
+        <translation>保存</translation>
     </message>
     <message>
         <source>Auto-save modified pattern</source>
@@ -5427,11 +5454,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished">最小值</translation>
+        <translation>最小值</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">语言</translation>
+        <translation>语言</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -5443,7 +5470,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Default unit:</source>
-        <translation type="unfinished">默认单位:</translation>
+        <translation>默认单位:</translation>
     </message>
     <message>
         <source>Label language:</source>
@@ -5459,7 +5486,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Author:</source>
-        <translation type="unfinished">作者:</translation>
+        <translation>作者:</translation>
     </message>
     <message>
         <source>Book:</source>
@@ -5483,7 +5510,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation type="unfinished">工具栏</translation>
+        <translation>工具栏</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
@@ -5503,15 +5530,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished">公分</translation>
+        <translation>公分</translation>
     </message>
     <message>
         <source>Millimiters</source>
-        <translation type="unfinished">毫米</translation>
+        <translation>毫米</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished">英寸</translation>
+        <translation>英寸</translation>
     </message>
 </context>
 <context>
@@ -5569,7 +5596,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>User name:</source>
-        <translation type="unfinished">用户名:</translation>
+        <translation>用户名:</translation>
     </message>
     <message>
         <source>Graphical output</source>
@@ -6542,7 +6569,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6550,7 +6577,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished">长度:</translation>
+        <translation>长度:</translation>
     </message>
     <message>
         <source>Center pin:</source>
@@ -6637,7 +6664,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">宽度:</translation>
+        <translation>宽度:</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -6649,7 +6676,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6767,7 +6794,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Width:</source>
-        <translation type="unfinished">宽度:</translation>
+        <translation>宽度:</translation>
     </message>
     <message>
         <source>Formula wizard</source>
@@ -6779,7 +6806,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">打算</translation>
+        <translation>打算</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -6879,7 +6906,7 @@ Do you want to save your changes?</source>
     <name>TapePreferencesConfigurationPage</name>
     <message>
         <source>Language</source>
-        <translation type="unfinished">语言</translation>
+        <translation>语言</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -6899,7 +6926,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Author:</source>
-        <translation type="unfinished">作者:</translation>
+        <translation>作者:</translation>
     </message>
     <message>
         <source>Book:</source>
@@ -6915,7 +6942,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation type="unfinished">工具栏</translation>
+        <translation>工具栏</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
@@ -7602,7 +7629,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error wrong id.</source>
-        <translation type="unfinished"></translation>
+        <translation>错误:编码错误.</translation>
     </message>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
@@ -8080,11 +8107,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Line color:</source>
-        <translation type="unfinished">线颜色:</translation>
+        <translation>线颜色:</translation>
     </message>
     <message>
         <source>Length:</source>
-        <translation type="unfinished">长度:</translation>
+        <translation>长度:</translation>
     </message>
     <message>
         <source>Angle:</source>
@@ -8092,19 +8119,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>First point:</source>
-        <translation type="unfinished">第一点:</translation>
+        <translation>第一点:</translation>
     </message>
     <message>
         <source>Second point:</source>
-        <translation type="unfinished">第二点:</translation>
+        <translation>第二点:</translation>
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished">中点:</translation>
+        <translation>中点:</translation>
     </message>
     <message>
         <source>Radius:</source>
-        <translation type="unfinished">半径:</translation>
+        <translation>半径:</translation>
     </message>
     <message>
         <source>First angle:</source>
@@ -8116,7 +8143,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">颜色:</translation>
+        <translation>颜色:</translation>
     </message>
     <message>
         <source>Third point:</source>
@@ -8359,7 +8386,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
 </context>
 <context>
@@ -9379,7 +9406,7 @@ Do you want to save your changes?</source>
     <message>
         <source>height</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>高度</translation>
     </message>
     <message>
         <source>C1LengthSpl_</source>
@@ -9530,7 +9557,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
 </context>
 <context>
@@ -9649,7 +9676,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished">信息</translation>
+        <translation>信息</translation>
     </message>
 </context>
 <context>

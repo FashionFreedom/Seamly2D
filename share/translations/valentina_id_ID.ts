@@ -327,7 +327,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -438,7 +438,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan penuh dalam kotak pesa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>First angle</source>
@@ -628,11 +628,11 @@
     </message>
     <message>
         <source>Value of length</source>
-        <translation type="vanished">nilai panjang</translation>
+        <translation type="vanished">Nilai panjang</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Point label</source>
@@ -821,7 +821,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Axis point</source>
@@ -912,7 +912,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Arc</source>
@@ -1131,6 +1131,10 @@
         <source>Delete</source>
         <translation type="vanished">hapus</translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
 </context>
 <context>
     <name>DialogEditWrongFormula</name>
@@ -1232,7 +1236,7 @@
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Nama</translation>
+        <translation>Nama</translation>
     </message>
     <message>
         <source>Full name</source>
@@ -1271,7 +1275,7 @@
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius2:</source>
@@ -1724,7 +1728,7 @@
     </message>
     <message>
         <source>Curve</source>
-        <translation type="unfinished">kurva</translation>
+        <translation>kurva</translation>
     </message>
     <message>
         <source>Cubic bezier curve</source>
@@ -1732,7 +1736,7 @@
     </message>
     <message>
         <source>Arc</source>
-        <translation type="unfinished">busur</translation>
+        <translation>busur</translation>
     </message>
     <message>
         <source>%1 with length %2</source>
@@ -2486,7 +2490,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2897,7 +2901,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation type="unfinished">kampuh</translation>
+        <translation>kampuh</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -2917,7 +2921,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Nodes</source>
@@ -2957,7 +2961,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">hapus</translation>
+        <translation>hapus</translation>
     </message>
     <message>
         <source>Current seam aloowance</source>
@@ -3017,7 +3021,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished">sudut</translation>
+        <translation>sudut</translation>
     </message>
     <message>
         <source>Straightforward</source>
@@ -3496,11 +3500,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Configuration</source>
-        <translation type="unfinished">Konfigurasi</translation>
+        <translation>Konfigurasi</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Pola</translation>
+        <translation>Pola</translation>
     </message>
     <message>
         <source>Paths</source>
@@ -3527,7 +3531,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Origin Point:</source>
@@ -3672,11 +3676,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">hapus</translation>
+        <translation>hapus</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">pilihan</translation>
+        <translation>pilihan</translation>
     </message>
     <message>
         <source>Error. Can&apos;t save piece path.</source>
@@ -4013,7 +4017,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -4100,7 +4104,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -4143,7 +4147,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Configuration</source>
-        <translation type="unfinished">Konfigurasi</translation>
+        <translation>Konfigurasi</translation>
     </message>
     <message>
         <source>Paths</source>
@@ -5755,23 +5759,23 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <name>PreferencesConfigurationPage</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Simpan</translation>
+        <translation>Simpan</translation>
     </message>
     <message>
         <source>Auto-save modified pattern</source>
-        <translation type="unfinished">Simpan otomatis Pola yang telah dimodifikasi</translation>
+        <translation>Simpan otomatis Pola yang telah dimodifikasi</translation>
     </message>
     <message>
         <source>Interval:</source>
-        <translation type="unfinished">Selang waktu:</translation>
+        <translation>Selang waktu:</translation>
     </message>
     <message>
         <source>min</source>
-        <translation type="unfinished">minimal</translation>
+        <translation>minimal</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Bahasa</translation>
+        <translation>Bahasa</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -5807,11 +5811,11 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Send crash reports</source>
-        <translation type="unfinished">Kirim laporan kerusakan</translation>
+        <translation>Kirim laporan kerusakan</translation>
     </message>
     <message>
         <source>Send crash reports (recommended)</source>
-        <translation type="unfinished">Kirim laporan kerusakan (disarankan)</translation>
+        <translation>Kirim laporan kerusakan (disarankan)</translation>
     </message>
     <message>
         <source>Pattern editing</source>
@@ -5843,15 +5847,15 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished">Centimeter</translation>
+        <translation>Centimeter</translation>
     </message>
     <message>
         <source>Millimiters</source>
-        <translation type="unfinished">Milimeter</translation>
+        <translation>Milimeter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished">Inchi</translation>
+        <translation>Inchi</translation>
     </message>
 </context>
 <context>
@@ -6878,7 +6882,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -6921,7 +6925,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Detail</source>
-        <translation type="unfinished">rincial</translation>
+        <translation>rincial</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
@@ -6985,7 +6989,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Height:</source>
@@ -7040,7 +7044,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Angle</source>
-        <translation type="unfinished">sudut</translation>
+        <translation>sudut</translation>
     </message>
     <message>
         <source>Straightforward</source>
@@ -7091,7 +7095,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation type="unfinished">kampuh</translation>
+        <translation>kampuh</translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -7115,7 +7119,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Nodes</source>
@@ -7220,7 +7224,7 @@ Do you want to save your changes?</source>
     <name>TapePreferencesConfigurationPage</name>
     <message>
         <source>Language</source>
-        <translation type="unfinished">Bahasa</translation>
+        <translation>Bahasa</translation>
     </message>
     <message>
         <source>GUI language:</source>
@@ -7413,7 +7417,7 @@ Do you want to save your changes?</source>
     <name>VAbstractPieceData</name>
     <message>
         <source>Detail</source>
-        <translation type="unfinished">rincial</translation>
+        <translation>rincial</translation>
     </message>
 </context>
 <context>
@@ -8151,7 +8155,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Detail</source>
-        <translation type="unfinished">rincial</translation>
+        <translation>rincial</translation>
     </message>
     <message>
         <source>Unnamed path</source>
@@ -8384,6 +8388,10 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Name</source>
+        <translation type="vanished">Nama</translation>
+    </message>
+    <message>
         <source>Cubic bezier curve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8461,7 +8469,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Radius:</source>
-        <translation type="unfinished">Radius:</translation>
+        <translation>Radius:</translation>
     </message>
     <message>
         <source>First angle:</source>
@@ -8708,7 +8716,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">pilihan</translation>
+        <translation>pilihan</translation>
     </message>
     <message>
         <source>In layout</source>
@@ -8716,7 +8724,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">hapus</translation>
+        <translation>hapus</translation>
     </message>
 </context>
 <context>
@@ -9887,7 +9895,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">hapus</translation>
+        <translation>hapus</translation>
     </message>
 </context>
 <context>
@@ -9986,7 +9994,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>peringatan</translation>
     </message>
     <message>
         <source>Critical error</source>

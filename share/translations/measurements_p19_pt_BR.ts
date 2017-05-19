@@ -115,13 +115,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="232"/>
         <source>height_gluteal_fold</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>altura_grande_quadril</translation>
+        <translation>altura_dobra_quadril</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="234"/>
         <source>Height: Gluteal Fold</source>
         <comment>Full measurement name.</comment>
-        <translation>Altura: Grande Quadril</translation>
+        <translation>Altura: Dobra do Quadril</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="235"/>
@@ -271,7 +271,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="291"/>
         <source>Vertical distance from the Shoulder Tip to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>DistÂncia vertical entre a ponta do ombro e o chão.</translation>
+        <translation>Distância vertical entre a ponta do ombro e o chão.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="295"/>
