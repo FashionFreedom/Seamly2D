@@ -1461,6 +1461,12 @@ void TMainWindow::ChangedHeight(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::ShowMData()
 {
+    ShowNewMData(true);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::ShowNewMData(bool fresh)
+{
     if (ui->tableWidget->rowCount() > 0)
     {
         MFields(true);
@@ -1512,9 +1518,12 @@ void TMainWindow::ShowMData()
             const qreal value = UnitConvertor(data->GetTableValue(meash->GetName(), mType), mUnit, pUnit);
             ui->labelCalculatedValue->setText(qApp->LocaleToString(value) + " " +postfix);
 
-            ui->doubleSpinBoxBaseValue->setValue(meash->GetBase());
-            ui->doubleSpinBoxInSizes->setValue(meash->GetKsize());
-            ui->doubleSpinBoxInHeights->setValue(meash->GetKheight());
+            if (fresh)
+            {
+                ui->doubleSpinBoxBaseValue->setValue(meash->GetBase());
+                ui->doubleSpinBoxInSizes->setValue(meash->GetKsize());
+                ui->doubleSpinBoxInHeights->setValue(meash->GetKheight());
+            }
 
             ui->labelCalculatedValue->blockSignals(false);
             ui->doubleSpinBoxBaseValue->blockSignals(false);
@@ -1765,7 +1774,7 @@ void TMainWindow::SaveMBaseValue(double value)
     ui->tableWidget->selectRow(row);
     ui->tableWidget->blockSignals(false);
 
-    ShowMData();
+    ShowNewMData(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1790,7 +1799,7 @@ void TMainWindow::SaveMSizeIncrease(double value)
     ui->tableWidget->selectRow(row);
     ui->tableWidget->blockSignals(false);
 
-    ShowMData();
+    ShowNewMData(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1815,7 +1824,7 @@ void TMainWindow::SaveMHeightIncrease(double value)
     ui->tableWidget->selectRow(row);
     ui->tableWidget->blockSignals(false);
 
-    ShowMData();
+    ShowNewMData(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
