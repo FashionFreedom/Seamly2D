@@ -8538,6 +8538,10 @@ Do you want to save your changes?</source>
         <source>Show the second passmark on seam line</source>
         <translation>Показати другу надсічку на лінії шва</translation>
     </message>
+    <message>
+        <source>This option has effect only if the second passmark on seam line enabled in global preferences. The option helps disable the second passmark for this passmark only.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TabPaths</name>
