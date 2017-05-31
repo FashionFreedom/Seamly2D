@@ -3798,7 +3798,7 @@ Toch de instellingen aanpassen?</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Elk punt in het pad moet uniek zijn!</translation>
+        <translation type="vanished">Elk punt in het pad moet uniek zijn!</translation>
     </message>
     <message>
         <source>Marks</source>
@@ -3827,6 +3827,10 @@ Toch de instellingen aanpassen?</translation>
     <message>
         <source>Intersection</source>
         <translation>Kruispunt van lijnen</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8540,7 +8544,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>This option has effect only if the second passmark on seam line enabled in global preferences. The option helps disable the second passmark for this passmark only.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze optie heeft alleen effect als de optie om een tweede knipje te laten zien op de zoomlijn aangevinkt is in de algemene opties. Deze optie staat het vervolgens toe om het tweede knipje voor dit specifieke knipje, uit te zetten.</translation>
     </message>
 </context>
 <context>

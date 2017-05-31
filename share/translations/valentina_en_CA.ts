@@ -3798,7 +3798,7 @@ Apply settings anyway?</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Each point in the path must be unique!</translation>
+        <translation type="vanished">Each point in the path must be unique!</translation>
     </message>
     <message>
         <source>Marks</source>
@@ -3827,6 +3827,10 @@ Apply settings anyway?</translation>
     <message>
         <source>Intersection</source>
         <translation>Intersection</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8541,7 +8545,7 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>This option has effect only if the second passmark on seam line enabled in global preferences. The option helps disable the second passmark for this passmark only.</source>
-        <translation type="unfinished"></translation>
+        <translation>This option has effect only if the second passmark on seam line enabled in global preferences. The option helps disable the second passmark for this passmark only.</translation>
     </message>
 </context>
 <context>

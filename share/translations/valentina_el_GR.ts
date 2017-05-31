@@ -3723,7 +3723,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Κάθε σημείο στο μονοπάτι πρέπει να είναι μοναδικό!</translation>
+        <translation type="vanished">Κάθε σημείο στο μονοπάτι πρέπει να είναι μοναδικό!</translation>
     </message>
     <message>
         <source>Marks</source>
@@ -3752,6 +3752,10 @@ Apply settings anyway?</source>
     <message>
         <source>Intersection</source>
         <translation>Διατομή</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

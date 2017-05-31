@@ -3798,7 +3798,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
-        <translation>Каждая точка в контуре должна быть уникальной!</translation>
+        <translation type="vanished">Каждая точка в контуре должна быть уникальной!</translation>
     </message>
     <message>
         <source>Marks</source>
@@ -3827,6 +3827,10 @@ Apply settings anyway?</source>
     <message>
         <source>Intersection</source>
         <translation>Пересечение</translation>
+    </message>
+    <message>
+        <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8540,7 +8544,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>This option has effect only if the second passmark on seam line enabled in global preferences. The option helps disable the second passmark for this passmark only.</source>
-        <translation type="unfinished"></translation>
+        <translation>Эта опция имеет эффект только если вторая надсечка на линии шва включена в глобальных настройках. Опция позволяет отключать вторую надсечку только для этой надсечки.</translation>
     </message>
 </context>
 <context>
