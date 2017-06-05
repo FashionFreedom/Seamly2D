@@ -1467,8 +1467,8 @@ void MainWindow::LoadStandard()
     const QString filter = tr("Multisize measurements") + QLatin1String(" (*.vst);;") + tr("Individual measurements") +
                            QLatin1String("(*.vit)");
     //Use standard path to standard measurements
-    const QString path = qApp->ValentinaSettings()->GetPathStandardMeasurements();
-    VCommonSettings::PrepareStandardTables(path);
+    QString path = qApp->ValentinaSettings()->GetPathStandardMeasurements();
+    path = VCommonSettings::PrepareStandardTables(path);
     const QString mPath = QFileDialog::getOpenFileName(this, tr("Open file"), path, filter);
 
     if (not mPath.isEmpty())
@@ -4421,8 +4421,8 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
                 {
                     const QString filter = tr("Multisize measurements") + QLatin1String(" (*.vst)");
                     //Use standard path to standard measurements
-                    const QString path = qApp->ValentinaSettings()->GetPathStandardMeasurements();
-                    VCommonSettings::PrepareStandardTables(path);
+                    QString path = qApp->ValentinaSettings()->GetPathStandardMeasurements();
+                    path = VCommonSettings::PrepareStandardTables(path);
                     mPath = QFileDialog::getOpenFileName(this, tr("Open file"), path, filter);
                 }
                 else if (patternType == MeasurementsType::Individual)
@@ -4451,8 +4451,8 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
                     const QString filter = tr("Individual measurements") + QLatin1String(" (*.vit);;") +
                                            tr("Multisize measurements") + QLatin1String(" (*.vst)");
                     //Use standard path to individual measurements
-                    const QString path = qApp->ValentinaSettings()->GetPathIndividualMeasurements();
-                    VCommonSettings::PrepareStandardTables(VCommonSettings::GetDefPathStandardMeasurements());
+                    QString path = qApp->ValentinaSettings()->GetPathIndividualMeasurements();
+                    path = VCommonSettings::PrepareStandardTables(VCommonSettings::GetDefPathStandardMeasurements());
 
                     bool usedNotExistedDir = false;
                     QDir directory(path);
