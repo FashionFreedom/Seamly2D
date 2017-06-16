@@ -384,7 +384,8 @@ void VCommonSettings::SetPMSystemCode(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetUnit() const
 {
-    return value(settingConfigurationUnit, "cm").toString();
+    return value(settingConfigurationUnit,
+                 QLocale().measurementSystem() == QLocale::MetricSystem ? unitCM : unitINCH).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
