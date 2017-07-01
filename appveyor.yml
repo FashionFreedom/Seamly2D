@@ -12,7 +12,7 @@
 # version format
 version: '{build}-{branch}'
 
-os: Visual Studio 2015
+os: Visual Studio 2017
 
 # branches to build
 branches:
@@ -40,11 +40,31 @@ shallow_clone: false                 # default is "false"
 
 environment:
   matrix:
-  - QT5: Qt\5.8\mingw53_32
+  - QT5: Qt\5.9\mingw53_32
     QMAKE_GENERATOR: "MinGW Makefiles"
     MINGW_PATH: C:\Qt\Tools\mingw530_32\bin
     PLATFORM: x86
     DEPLOY: true
+  - QT5: Qt\5.9\msvc2017_64
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14.1
+    PLATFORM: x64
+    DEPLOY: false
+  - QT5: Qt\5.9\msvc2015_64
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x64
+    DEPLOY: false
+  - QT5: Qt\5.9\msvc2015
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x86
+    DEPLOY: false
+  - QT5: Qt\5.8\mingw53_32
+    QMAKE_GENERATOR: "MinGW Makefiles"
+    MINGW_PATH: C:\Qt\Tools\mingw530_32\bin
+    PLATFORM: x86
+    DEPLOY: false
   - QT5: Qt\5.8\msvc2015_64
     QMAKE_GENERATOR: "NMake Makefiles JOM"
     VSVER: 14
