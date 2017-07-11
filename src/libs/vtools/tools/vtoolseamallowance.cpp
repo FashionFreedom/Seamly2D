@@ -1093,7 +1093,8 @@ VToolSeamAllowance::VToolSeamAllowance(VAbstractPattern *doc, VContainer *data, 
       m_seamAllowance(new VNoBrushScalePathItem(this)),
       m_dataLabel(new VTextGraphicsItem(this)),
       m_patternInfo(new VTextGraphicsItem(this)),
-      m_grainLine(new VGrainlineItem(this))
+      m_grainLine(new VGrainlineItem(this)),
+      m_passmarks(new QGraphicsPathItem(this))
 {
     VPiece detail = data->GetPiece(id);
     InitNodes(detail, scene);
@@ -1165,12 +1166,9 @@ void VToolSeamAllowance::RefreshGeometry()
 
     const VPiece detail = VAbstractTool::data.GetPiece(id);
     QPainterPath path = detail.MainPathPath(this->getData());
+    this->setPath(path);
 
-    {
-        QPainterPath mainPath = path;
-        mainPath.addPath(detail.PassmarksPath(this->getData()));
-        this->setPath(mainPath);
-    }
+    m_passmarks->setPath(detail.PassmarksPath(this->getData()));
 
     this->setPos(detail.GetMx(), detail.GetMy());
 
