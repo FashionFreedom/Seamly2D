@@ -495,7 +495,7 @@ void VLayoutPiece::SetDetail(const QString& qsName, const VPieceLabelData& data,
         v[i] = RotatePoint(ptCenter, v.at(i), dAng);
     }
 
-    QScopedPointer<QGraphicsItem> item(GetMainItem());
+    QScopedPointer<QGraphicsItem> item(GetMainPathItem());
     d->detailLabel = CorrectPosition(item->boundingRect(), RoundPoints(v));
 
     // generate text
@@ -535,7 +535,7 @@ void VLayoutPiece::SetPatternInfo(const VAbstractPattern* pDoc, const VPatternLa
     {
         v[i] = RotatePoint(ptCenter, v.at(i), dAng);
     }
-    QScopedPointer<QGraphicsItem> item(GetMainItem());
+    QScopedPointer<QGraphicsItem> item(GetMainPathItem());
     d->patternInfo = CorrectPosition(item->boundingRect(), RoundPoints(v));
 
     // Generate text
@@ -588,7 +588,7 @@ void VLayoutPiece::SetGrainline(const VGrainlineData& geom, const VContainer* pa
         v << pt2;
     }
 
-    QScopedPointer<QGraphicsItem> item(GetMainItem());
+    QScopedPointer<QGraphicsItem> item(GetMainPathItem());
     d->grainlinePoints = CorrectPosition(item->boundingRect(), RoundPoints(v));
 }
 
@@ -857,16 +857,7 @@ QVector<T> VLayoutPiece::Map(const QVector<T> &points) const
 //---------------------------------------------------------------------------------------------------------------------
 QPainterPath VLayoutPiece::ContourPath() const
 {
-    QPainterPath path;
-
-    // contour
-    QVector<QPointF> points = GetContourPoints();
-    path.moveTo(points.at(0));
-    for (qint32 i = 1; i < points.count(); ++i)
-    {
-        path.lineTo(points.at(i));
-    }
-    path.lineTo(points.at(0));
+    QPainterPath path = MainPath();
 
     // seam allowance
     if (IsSeamAllowance())
@@ -874,7 +865,7 @@ QPainterPath VLayoutPiece::ContourPath() const
         if (not IsSeamAllowanceBuiltIn())
         {
             // Draw seam allowance
-            points = GetSeamAllowancePoints();
+            QVector<QPointF> points = GetSeamAllowancePoints();
 
             if (points.last().toPoint() != points.first().toPoint())
             {
@@ -903,6 +894,23 @@ QPainterPath VLayoutPiece::ContourPath() const
         path.addPath(passmaksPath);
         path.setFillRule(Qt::WindingFill);
     }
+
+    return path;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QPainterPath VLayoutPiece::MainPath() const
+{
+    QPainterPath path;
+
+    // contour
+    QVector<QPointF> points = GetContourPoints();
+    path.moveTo(points.at(0));
+    for (qint32 i = 1; i < points.count(); ++i)
+    {
+        path.lineTo(points.at(i));
+    }
+    path.lineTo(points.at(0));
 
     return path;
 }
@@ -993,6 +1001,14 @@ QGraphicsPathItem *VLayoutPiece::GetMainItem() const
 {
     QGraphicsPathItem *item = new QGraphicsPathItem();
     item->setPath(ContourPath());
+    return item;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QGraphicsPathItem *VLayoutPiece::GetMainPathItem() const
+{
+    QGraphicsPathItem *item = new QGraphicsPathItem();
+    item->setPath(MainPath());
     return item;
 }
 
