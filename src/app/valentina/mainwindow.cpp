@@ -180,10 +180,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
     connect(qApp, &QApplication::focusChanged, RECEIVER(this)[this](QWidget *old, QWidget *now)
     {
+        static bool asking = false;
         if (old == nullptr && isAncestorOf(now) == true)
         {// focus IN
-            if (mChanges && not mChangesAsked)
+            if (not asking && mChanges && not mChangesAsked)
             {
+                asking = true;
                 mChangesAsked = true;
                 const auto answer = QMessageBox::question(this, tr("Measurements"),
                                                  tr("Measurements were changed. Do you want to sync measurements now?"),
@@ -192,6 +194,7 @@ MainWindow::MainWindow(QWidget *parent)
                 {
                     SyncMeasurements();
                 }
+                asking = false;
             }
         }
 
