@@ -37,7 +37,7 @@
 const QString settingDataBaseGeometry = QStringLiteral("database/geometry");
 
 const QString settingDefHeight = QStringLiteral("gradation/defHeight");
-const QString settingDefSize   = QStringLiteral("gradation/defHeight");
+const QString settingDefSize   = QStringLiteral("gradation/defSize");
 
 const QString settingCSVWithHeader = QStringLiteral("csv/withHeader");
 const QString settingCSVCodec      = QStringLiteral("csv/withCodec");
