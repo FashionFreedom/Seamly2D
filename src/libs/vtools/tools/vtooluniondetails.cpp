@@ -1580,7 +1580,8 @@ QVector<quint32> VToolUnionDetails::GetReferenceObjects() const
 
     const QStringList parts = QStringList() << VAbstractPattern::TagNodes     /*0*/
                                             << VToolSeamAllowance::TagCSA     /*1*/
-                                            << VToolSeamAllowance::TagIPaths; /*2*/
+                                            << VToolSeamAllowance::TagIPaths  /*2*/
+                                            << VToolSeamAllowance::TagPins;   /*3*/
 
     const QDomNodeList nodesList = tool.childNodes();
     for (qint32 i = 0; i < nodesList.size(); ++i)
@@ -1604,6 +1605,19 @@ QVector<quint32> VToolUnionDetails::GetReferenceObjects() const
                             list += ReferenceObjects(element, VToolSeamAllowance::TagRecord,
                                                      VAbstractPattern::AttrPath);
                             break;
+                        case 3://VToolSeamAllowance::TagPins
+                        {
+                            const QDomNodeList children = element.childNodes();
+                            for (qint32 i = 0; i < children.size(); ++i)
+                            {
+                                const QDomElement record = children.at(i).toElement();
+                                if (not record.isNull() && record.tagName() == VToolSeamAllowance::TagRecord)
+                                {
+                                    list.append(record.text().toUInt());
+                                }
+                            }
+                            break;
+                        }
                         default:
                             break;
                     }
