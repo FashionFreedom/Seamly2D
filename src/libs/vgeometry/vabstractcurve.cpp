@@ -116,7 +116,12 @@ QVector<QPointF> VAbstractCurve::FromBegin(const QVector<QPointF> &points, const
                 if (IsPointOnLineSegment(begin, points.at(i), points.at(i+1)))
                 {
                     theBegin = true;
-                    segment.append(begin);
+
+                    if (begin != points.at(i+1))
+                    {
+                        segment.append(begin);
+                    }
+
                     if (i == points.count()-2)
                     {
                          segment.append(points.at(i+1));
