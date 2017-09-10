@@ -1,5 +1,5 @@
 FROM gcc
-MAINTAINER Roman Telezhynskyi <dismine@gmail.com>
+MAINTAINER Steve Conklin <sconklin+vpo2@conklinhouse.com>
 
 RUN apt-get update && apt-get install -y \
     cppcheck \
