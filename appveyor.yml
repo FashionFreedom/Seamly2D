@@ -28,7 +28,7 @@ skip_tags: true
 #---------------------------------#
 
 # clone directory
-clone_folder: c:\projects\valentina
+clone_folder: c:\projects\vpo2
 
 # set clone depth
 clone_depth: 1                       # clone entire repository history if not defined
@@ -119,7 +119,7 @@ init:
   # Path before
   - path
   - set QTDIR=C:\%QT5%
-  - set PATH=%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Mercurial\
+  - set PATH=%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
   - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
   - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using MinGW"
@@ -131,7 +131,7 @@ init:
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" set PATH=%MINGW_PATH%;%PATH%
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" set PATH=C:\Qt\Tools\QtCreator\bin;%PATH%
-  - set PATH=C:\projects\valentina\build\src\libs\vpropertyexplorer\bin;C:\projects\valentina\build\src\libs\qmuparser\bin;%PATH%
+  - set PATH=C:\projects\vpo2\build\src\libs\vpropertyexplorer\bin;C:\projects\vpo2\build\src\libs\qmuparser\bin;%PATH%
   # Path after
   - path
   - qmake -v
@@ -141,7 +141,7 @@ init:
 #---------------------------------#
 
 before_build:
-  - cd c:\projects\valentina
+  - cd c:\projects\vpo2
   - md build
 
 # to run your custom scripts instead of automatic MSBuild
@@ -168,7 +168,7 @@ notifications:
   # Email
   - provider: Email
     to:
-      - dismine@gmail.com
+      - steve+vpo2@conklinhouse.com
       - susan.spencer@gmail.com
     on_build_success: false
     on_build_failure: true
@@ -188,15 +188,19 @@ artifacts:
 
 deploy:
 - provider: BinTray
-  username: dismine
+  username: vpo2
   api_key:
-    secure: 1jW114y8neFIaH4B0rs5grypsejzCe97gZdmCsxl0V5Ff4aumNJ1eKbVIi2sdYEu
-  subject: dismine
-  repo: Valentina
-  package: valentina-win_auto-upload
+    secure: rBIGhKmxGnCgtNOiYchjPAfeopvI1LWE/WafFtvYxZo909LL9F03luBkUer2nn2B
+  subject: vpo2-bintray
+  repo: vpo2
+  package: vpo2-win_auto-upload
   publish: true
   override: true
   version: 0.5
   on:
     DEPLOY: true
+<<<<<<< HEAD
   artifact: valentina-win-$(APPVEYOR_REPO_COMMIT)
+=======
+  artifact: vpo-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
+>>>>>>> fork the build tools and pipelines

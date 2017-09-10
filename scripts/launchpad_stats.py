@@ -9,8 +9,8 @@ import os
 
 print 'Please, wait...'
  
-USERNAME='dismine'
-PPA='valentina-dev'
+USERNAME='vpo2'
+PPA='vpo2-dev'
 PACKAGE='valentina'
 
 print 'Connect to Service.'
