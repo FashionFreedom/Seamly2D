@@ -1,16 +1,21 @@
+Valentina
+=========
+
 Pattern making program
+
+Homepage and downloads: https://valentina-project.org
+Wiki: https://wiki.valentinaproject.org 
+Forum http://forum.valentina-project.org/
+User manual https://wiki.valentinaproject.org/wiki/Main_Page 
+Translations: https://www.transifex.com/organization/valentina
+PPA for Ubuntu (develop): 
+IRC channel: #valentina on irc.freenode.net
+Main repository: https://github.com/valentina-project/vpo2
+
 Author Roman Telezhynskyi <dismine(at)gmail.com>
 Copyright (C) 2013-2017 Valentina project  
-Valentina Web page: http://www.valentina-project.org/ 
-Wiki: https://wiki.valentinaproject.org   
-Valentina user manual https://bitbucket.org/dismine/valentina/wiki/manual/Content    
-Valentina main repository: https://bitbucket.org/dismine/valentina/overview    
-Forum http://forum.valentina-project.org/    
-PPA for Ubuntu (develop): https://launchpad.net/~dismine/+archive/valentina-dev    
-Help translate https://www.transifex.com/organization/valentina    
-IRC channel: #valentina on irc.freenode.net.
 
-Valentina
+About Valentina
 ==========
 Valentina is a cross-platform patternmaking program which allows designers 
 to create and model patterns of clothing. This software allows pattern 
@@ -62,19 +67,19 @@ Note: On some platforms e.g. Fedora, all Qt-tools come as qmake-qt5
     prior to qmake. You will not come along with just using qmake-qt5
     here.
 
+Note: In order to build and use Valentina, the PATH environment variable 
+    needs to be extended:
 
-Note:In order to build and use Valentina, the PATH environment variable 
-needs to be extended:
+    PATH - to locate qmake, moc and other Qt tools
+    This is done by adding your Qt's installation path (eg c:\Qt\%VERSION%\bin) to the PATH variable.
+    Check your Qt installation to find the correct path to enter. 
 
- PATH               - to locate qmake, moc and other Qt tools
-This is done by adding c:\Qt\%VERSION%\bin to the PATH variable.
+    For newer versions of Windows, PATH can be extended through the 
+    Control Panel|System|Advanced|Environment variables menu.
 
-For newer versions of Windows, PATH can be extended through the 
-Control Panel|System|Advanced|Environment variables menu.
-
-You may also need to ensure that the locations of your compiler and 
-other build tools are listed in the PATH variable. This will depend on 
-your choice of software development environment.
+    You may also need to ensure that the locations of your compiler and 
+    other build tools are listed in the PATH variable. This will depend on 
+    your choice of software development environment.
 
 Unix systems:
 Default prefix for command "make install" is /usr. For using another 
