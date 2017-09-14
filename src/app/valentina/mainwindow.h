@@ -139,7 +139,7 @@ private slots:
     void ToolCutSplinePath(bool checked);
     void ToolPointOfContact(bool checked);
     void ToolDetail(bool checked);
-    void ToolPiecePath(bool checked);
+    void ToolInternalPath(bool checked);
     void ToolPin(bool checked);
     void ToolHeight(bool checked);
     void ToolTriangle(bool checked);
@@ -174,7 +174,7 @@ private slots:
 
     void ClosedDialogUnionDetails(int result);
     void ClosedDialogGroup(int result);
-    void ClosedDialogPiecePath(int result);
+    void ClosedDialogInternalPath(int result);
     void ClosedDialogPin(int result);
     void ClosedDialogInsertNode(int result);
 

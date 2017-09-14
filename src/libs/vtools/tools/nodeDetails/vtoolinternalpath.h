@@ -26,8 +26,8 @@
  **
  *************************************************************************/
 
-#ifndef VTOOLPIECEPATH_H
-#define VTOOLPIECEPATH_H
+#ifndef VTOOLINTERNALPATH_H
+#define VTOOLINTERNALPATH_H
 
 #include <QtGlobal>
 
@@ -35,19 +35,19 @@
 
 class DialogTool;
 
-class VToolPiecePath : public VAbstractNode, public QGraphicsPathItem
+class VToolInternalPath : public VAbstractNode, public QGraphicsPathItem
 {
     Q_OBJECT
 public:
-    static VToolPiecePath* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
+    static VToolInternalPath* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                   VContainer *data);
-    static VToolPiecePath *Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
+    static VToolInternalPath *Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
                                   VAbstractPattern *doc, VContainer *data, const Document &parse,
                                   const Source &typeCreation, const QString &drawName = QString(),
                                   const quint32 &idTool = 0);
 
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Tool::PiecePath)};
+    enum { Type = UserType + static_cast<int>(Tool::InternalPath)};
     virtual QString getTagName() const Q_DECL_OVERRIDE;
 
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
@@ -67,11 +67,11 @@ protected:
     virtual void HideNode() Q_DECL_OVERRIDE;
     virtual void ToolCreation(const Source &typeCreation) Q_DECL_OVERRIDE;
 private:
-    Q_DISABLE_COPY(VToolPiecePath)
+    Q_DISABLE_COPY(VToolInternalPath)
 
     quint32 m_pieceId;
 
-    VToolPiecePath(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pieceId,  const Source &typeCreation,
+    VToolInternalPath(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pieceId,  const Source &typeCreation,
                    const QString &drawName = QString(), const quint32 &idTool = 0, QObject *qoParent = nullptr,
                    QGraphicsItem * parent = nullptr );
 
@@ -81,4 +81,4 @@ private:
     void DecrementNodes(const VPiecePath &path) const;
 };
 
-#endif // VTOOLPIECEPATH_H
+#endif // VTOOLINTERNALPATH_H

@@ -38,7 +38,7 @@
 #include "nodeDetails/vnodepoint.h"
 #include "nodeDetails/vnodespline.h"
 #include "nodeDetails/vnodesplinepath.h"
-#include "nodeDetails/vtoolpiecepath.h"
+#include "nodeDetails/vtoolinternalpath.h"
 #include "../vgeometry/varc.h"
 #include "../vgeometry/vellipticalarc.h"
 #include "../vgeometry/vcubicbezier.h"
@@ -1493,7 +1493,7 @@ void VToolSeamAllowance::InitInternalPaths(const VPiece &detail)
 {
     for (int i = 0; i < detail.GetInternalPaths().size(); ++i)
     {
-        auto *tool = qobject_cast<VToolPiecePath*>(VAbstractPattern::getTool(detail.GetInternalPaths().at(i)));
+        auto *tool = qobject_cast<VToolInternalPath*>(VAbstractPattern::getTool(detail.GetInternalPaths().at(i)));
         SCASSERT(tool != nullptr);
         tool->setParentItem(this);
         tool->SetParentType(ParentType::Item);

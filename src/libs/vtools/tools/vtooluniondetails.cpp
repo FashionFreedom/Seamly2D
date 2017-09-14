@@ -66,7 +66,7 @@
 #include "nodeDetails/vnodepoint.h"
 #include "nodeDetails/vnodespline.h"
 #include "nodeDetails/vnodesplinepath.h"
-#include "nodeDetails/vtoolpiecepath.h"
+#include "nodeDetails/vtoolinternalpath.h"
 #include "nodeDetails/vtoolpin.h"
 #include "vdatatool.h"
 #include "vnodedetail.h"
@@ -1037,7 +1037,7 @@ void CreateUnitedDetailCSA(VPiece &newDetail, const VPiece &d, QVector<quint32> 
             AddNodeToNewPath(initData, newPath, path.at(i), id, nodeChildren, drawName, dx, dy, pRotate, angle);
         }
         const quint32 idPath = initData.data->AddPiecePath(newPath);
-        VToolPiecePath::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
+        VToolInternalPath::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
                                Source::FromTool, drawName, id);
         record.path = idPath;
         newDetail.GetCustomSARecords().append(record);
@@ -1077,7 +1077,7 @@ void CreateUnitedDetailInternalPaths(VPiece &newDetail, const VPiece &d, QVector
             AddNodeToNewPath(initData, newPath, path.at(i), id, nodeChildren, drawName, dx, dy, pRotate, angle);
         }
         const quint32 idPath = initData.data->AddPiecePath(newPath);
-        VToolPiecePath::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
+        VToolInternalPath::Create(idPath, newPath, NULL_ID, initData.scene, initData.doc, initData.data, initData.parse,
                                Source::FromTool, drawName, id);
         newDetail.GetInternalPaths().append(idPath);
         nodeChildren.prepend(idPath);

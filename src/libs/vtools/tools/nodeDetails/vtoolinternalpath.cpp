@@ -26,31 +26,31 @@
  **
  *************************************************************************/
 
-#include "vtoolpiecepath.h"
-#include "../../dialogs/tools/piece/dialogpiecepath.h"
+#include "vtoolinternalpath.h"
+#include "../../dialogs/tools/piece/dialoginternalpath.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../../undocommands/savepieceoptions.h"
 #include "../vtoolseamallowance.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPiecePath *VToolPiecePath::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
+VToolInternalPath *VToolInternalPath::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                        VAbstractPattern *doc, VContainer *data)
 {
     SCASSERT(not dialog.isNull());
-    QSharedPointer<DialogPiecePath> dialogTool = dialog.objectCast<DialogPiecePath>();
+    QSharedPointer<DialogInternalPath> dialogTool = dialog.objectCast<DialogInternalPath>();
     SCASSERT(not dialogTool.isNull())
     VPiecePath path = dialogTool->GetPiecePath();
     const quint32 pieceId = dialogTool->GetPieceId();
     qApp->getUndoStack()->beginMacro("add path");
     path.SetNodes(PrepareNodes(path, scene, doc, data));
 
-    VToolPiecePath *pathTool = Create(0, path, pieceId, scene, doc, data, Document::FullParse, Source::FromGui);
+    VToolInternalPath *pathTool = Create(0, path, pieceId, scene, doc, data, Document::FullParse, Source::FromGui);
     return pathTool;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPiecePath *VToolPiecePath::Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
+VToolInternalPath *VToolInternalPath::Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
                                        VAbstractPattern *doc, VContainer *data, const Document &parse,
                                        const Source &typeCreation, const QString &drawName, const quint32 &idTool)
 {
@@ -70,10 +70,10 @@ VToolPiecePath *VToolPiecePath::Create(quint32 _id, const VPiecePath &path, quin
 
     if (parse == Document::FullParse)
     {
-        VAbstractTool::AddRecord(id, Tool::PiecePath, doc);
+        VAbstractTool::AddRecord(id, Tool::InternalPath, doc);
         //TODO Need create garbage collector and remove all nodes, that we don't use.
         //Better check garbage before each saving file. Check only modeling tags.
-        VToolPiecePath *pathTool = new VToolPiecePath(doc, data, id, pieceId, typeCreation, drawName, idTool, doc);
+        VToolInternalPath *pathTool = new VToolInternalPath(doc, data, id, pieceId, typeCreation, drawName, idTool, doc);
 
         VAbstractPattern::AddTool(id, pathTool);
         if (idTool != NULL_ID)
@@ -107,13 +107,13 @@ VToolPiecePath *VToolPiecePath::Create(quint32 _id, const VPiecePath &path, quin
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPiecePath::getTagName() const
+QString VToolInternalPath::getTagName() const
 {
     return VAbstractPattern::TagPath;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+void VToolInternalPath::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     qreal width = widthHairLine;
 
@@ -132,7 +132,7 @@ void VToolPiecePath::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::incrementReferens()
+void VToolInternalPath::incrementReferens()
 {
     VAbstractTool::incrementReferens();
     if (_referens == 1)
@@ -155,7 +155,7 @@ void VToolPiecePath::incrementReferens()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::decrementReferens()
+void VToolInternalPath::decrementReferens()
 {
     VAbstractTool::decrementReferens();
     if (_referens == 0)
@@ -178,7 +178,7 @@ void VToolPiecePath::decrementReferens()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::AddAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiecePath &path)
+void VToolInternalPath::AddAttributes(VAbstractPattern *doc, QDomElement &domElement, quint32 id, const VPiecePath &path)
 {
     doc->SetAttribute(domElement, VDomDocument::AttrId, id);
     doc->SetAttribute(domElement, AttrName, path.GetName());
@@ -192,27 +192,27 @@ void VToolPiecePath::AddAttributes(VAbstractPattern *doc, QDomElement &domElemen
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::FullUpdateFromFile()
+void VToolInternalPath::FullUpdateFromFile()
 {
     RefreshGeometry();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::AllowHover(bool enabled)
+void VToolInternalPath::AllowHover(bool enabled)
 {
     Q_UNUSED(enabled)
     // do nothing
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::AllowSelecting(bool enabled)
+void VToolInternalPath::AllowSelecting(bool enabled)
 {
     Q_UNUSED(enabled)
     // do nothing
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::AddToFile()
+void VToolInternalPath::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
     const VPiecePath path = VAbstractTool::data.GetPiecePath(id);
@@ -253,7 +253,7 @@ void VToolPiecePath::AddToFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::ShowNode()
+void VToolInternalPath::ShowNode()
 {
     if (parentType != ParentType::Scene)
     {
@@ -262,13 +262,13 @@ void VToolPiecePath::ShowNode()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::HideNode()
+void VToolInternalPath::HideNode()
 {
     hide();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::ToolCreation(const Source &typeCreation)
+void VToolInternalPath::ToolCreation(const Source &typeCreation)
 {
     if (typeCreation == Source::FromGui || typeCreation == Source::FromTool)
     {
@@ -285,7 +285,7 @@ void VToolPiecePath::ToolCreation(const Source &typeCreation)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPiecePath::VToolPiecePath(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pieceId,
+VToolInternalPath::VToolInternalPath(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pieceId,
                                const Source &typeCreation, const QString &drawName, const quint32 &idTool,
                                QObject *qoParent, QGraphicsItem *parent)
     :VAbstractNode(doc, data, id, 0, drawName, idTool, qoParent),
@@ -298,7 +298,7 @@ VToolPiecePath::VToolPiecePath(VAbstractPattern *doc, VContainer *data, quint32 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::RefreshGeometry()
+void VToolInternalPath::RefreshGeometry()
 {
     const VPiecePath path = VAbstractTool::data.GetPiecePath(id);
     if (path.GetType() == PiecePathType::InternalPath)
@@ -314,7 +314,7 @@ void VToolPiecePath::RefreshGeometry()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::IncrementNodes(const VPiecePath &path) const
+void VToolInternalPath::IncrementNodes(const VPiecePath &path) const
 {
     for (int i = 0; i < path.CountNodes(); ++i)
     {
@@ -323,7 +323,7 @@ void VToolPiecePath::IncrementNodes(const VPiecePath &path) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPiecePath::DecrementNodes(const VPiecePath &path) const
+void VToolInternalPath::DecrementNodes(const VPiecePath &path) const
 {
     for (int i = 0; i < path.CountNodes(); ++i)
     {
