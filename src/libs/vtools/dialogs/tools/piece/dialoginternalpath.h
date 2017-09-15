@@ -1,6 +1,6 @@
 /************************************************************************
  **
- **  @file   dialogpiecepath.h
+ **  @file   dialoginternalpath.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   22 11, 2016
  **
@@ -26,22 +26,22 @@
  **
  *************************************************************************/
 
-#ifndef DIALOGPIECEPATH_H
-#define DIALOGPIECEPATH_H
+#ifndef DIALOGINTERNALPATH_H
+#define DIALOGINTERNALPATH_H
 
 #include "../dialogtool.h"
 
 namespace Ui
 {
-    class DialogPiecePath;
+    class DialogInternalPath;
 }
 
-class DialogPiecePath : public DialogTool
+class DialogInternalPath : public DialogTool
 {
     Q_OBJECT
 public:
-    explicit DialogPiecePath(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
-    virtual ~DialogPiecePath();
+    explicit DialogInternalPath(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
+    virtual ~DialogInternalPath();
 
     void EnbleShowMode(bool disable);
 
@@ -93,8 +93,8 @@ private slots:
     void DeployWidthAfterFormulaTextEdit();
 
 private:
-    Q_DISABLE_COPY(DialogPiecePath)
-    Ui::DialogPiecePath *ui;
+    Q_DISABLE_COPY(DialogInternalPath)
+    Ui::DialogInternalPath *ui;
     bool  m_showMode;
     qreal m_saWidth;
 
@@ -143,4 +143,4 @@ private:
     QString GetFormulaSAWidthAfter() const;
 };
 
-#endif // DIALOGPIECEPATH_H
+#endif // DIALOGINTERNALPATH_H

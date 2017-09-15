@@ -26,7 +26,7 @@
  **
  *************************************************************************/
 
-#include "vistoolpiecepath.h"
+#include "vistoolinternalpath.h"
 #include "../vwidgets/vsimplepoint.h"
 #include "../vgeometry/vpointf.h"
 #include "../vwidgets/scalesceneitems.h"
@@ -34,7 +34,7 @@
 #include <QGraphicsSceneMouseEvent>
 
 //---------------------------------------------------------------------------------------------------------------------
-VisToolPiecePath::VisToolPiecePath(const VContainer *data, QGraphicsItem *parent)
+VisToolInternalPath::VisToolInternalPath(const VContainer *data, QGraphicsItem *parent)
     : VisPath(data, parent),
       m_points(),
       m_line(nullptr),
@@ -44,7 +44,7 @@ VisToolPiecePath::VisToolPiecePath(const VContainer *data, QGraphicsItem *parent
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPiecePath::RefreshGeometry()
+void VisToolInternalPath::RefreshGeometry()
 {
     HideAllItems();
 
@@ -74,25 +74,25 @@ void VisToolPiecePath::RefreshGeometry()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPiecePath::SetPath(const VPiecePath &path)
+void VisToolInternalPath::SetPath(const VPiecePath &path)
 {
     m_path = path;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPiecePath::mousePressEvent(QGraphicsSceneMouseEvent *event)
+void VisToolInternalPath::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     event->ignore();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VSimplePoint *VisToolPiecePath::GetPoint(quint32 i, const QColor &color)
+VSimplePoint *VisToolInternalPath::GetPoint(quint32 i, const QColor &color)
 {
     return VisPath::GetPoint(m_points, i, color);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPiecePath::HideAllItems()
+void VisToolInternalPath::HideAllItems()
 {
     if (m_line)
     {

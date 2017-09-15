@@ -26,8 +26,8 @@
  **
  *************************************************************************/
 
-#ifndef VISTOOLPIECEPATH_H
-#define VISTOOLPIECEPATH_H
+#ifndef VISTOOLINTERNALPATH_H
+#define VISTOOLINTERNALPATH_H
 
 #include <QtCore/QObject>
 #include <QtGlobal>
@@ -37,22 +37,22 @@
 
 class VSimplePoint;
 
-class VisToolPiecePath : public VisPath
+class VisToolInternalPath : public VisPath
 {
     Q_OBJECT
 public:
-    VisToolPiecePath(const VContainer *data, QGraphicsItem *parent = nullptr);
-    virtual ~VisToolPiecePath() Q_DECL_EQ_DEFAULT;
+    VisToolInternalPath(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual ~VisToolInternalPath() Q_DECL_EQ_DEFAULT;
 
     virtual void RefreshGeometry() Q_DECL_OVERRIDE;
     void         SetPath(const VPiecePath &path);
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Vis::ToolPiecePath)};
+    enum { Type = UserType + static_cast<int>(Vis::ToolInternalPath)};
 protected:
     virtual void mousePressEvent( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
 
 private:
-    Q_DISABLE_COPY(VisToolPiecePath)
+    Q_DISABLE_COPY(VisToolInternalPath)
     QVector<VSimplePoint *> m_points;
 
     VScaledLine *m_line;
@@ -64,4 +64,4 @@ private:
     void HideAllItems();
 };
 
-#endif // VISTOOLPIECEPATH_H
+#endif // VISTOOLINTERNALPATH_H

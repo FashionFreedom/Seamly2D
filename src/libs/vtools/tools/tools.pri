@@ -58,7 +58,7 @@ HEADERS += \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.h \
     $$PWD/nodeDetails/vnodeellipticalarc.h \
     $$PWD/vtoolseamallowance.h \
-    $$PWD/nodeDetails/vtoolpiecepath.h \
+    $$PWD/nodeDetails/vtoolinternalpath.h \
     $$PWD/nodeDetails/vtoolpin.h \
     $$PWD/vinteractivetool.h
 
@@ -116,6 +116,6 @@ SOURCES += \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.cpp \
     $$PWD/nodeDetails/vnodeellipticalarc.cpp \
     $$PWD/vtoolseamallowance.cpp \
-    $$PWD/nodeDetails/vtoolpiecepath.cpp \
     $$PWD/nodeDetails/vtoolpin.cpp \
-    $$PWD/vinteractivetool.cpp
+    $$PWD/vinteractivetool.cpp \
+    $$PWD/nodeDetails/vtoolinternalpath.cpp

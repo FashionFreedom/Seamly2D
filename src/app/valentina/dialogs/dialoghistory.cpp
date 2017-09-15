@@ -404,7 +404,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
             case Tool::FlippingByLine:
             case Tool::FlippingByAxis:
             case Tool::Move:
-            case Tool::PiecePath:
+            case Tool::InternalPath:
             case Tool::Pin:
             case Tool::InsertNode:
                 return QString();

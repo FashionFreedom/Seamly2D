@@ -39,7 +39,7 @@
 #include "../vpatterndb/calculator.h"
 #include "visualization/path/vistoolpiece.h"
 #include "visualization/path/vispiecepins.h"
-#include "dialogpiecepath.h"
+#include "dialoginternalpath.h"
 #include "../../../undocommands/savepiecepathoptions.h"
 #include "../../support/dialogeditwrongformula.h"
 #include "../../support/dialogeditlabel.h"
@@ -584,7 +584,7 @@ void DialogSeamAllowance::ShowCustomSAContextMenu(const QPoint &pos)
     }
     else if (selectedAction == actionOption)
     {
-        auto *dialog = new DialogPiecePath(data, record.path, this);
+        auto *dialog = new DialogInternalPath(data, record.path, this);
         dialog->SetPiecePath(data->GetPiecePath(record.path));
         dialog->SetPieceId(toolId);
         if (record.includeType == PiecePathIncludeType::AsMainPath)
@@ -624,7 +624,7 @@ void DialogSeamAllowance::ShowInternalPathsContextMenu(const QPoint &pos)
         SCASSERT(rowItem != nullptr);
         const quint32 pathId = qvariant_cast<quint32>(rowItem->data(Qt::UserRole));
 
-        auto *dialog = new DialogPiecePath(data, pathId, this);
+        auto *dialog = new DialogInternalPath(data, pathId, this);
         dialog->SetPiecePath(data->GetPiecePath(pathId));
         dialog->SetPieceId(toolId);
         dialog->EnbleShowMode(true);
@@ -995,7 +995,7 @@ void DialogSeamAllowance::PathDialogClosed(int result)
     if (result == QDialog::Accepted)
     {
         SCASSERT(not m_dialog.isNull());
-        DialogPiecePath *dialogTool = qobject_cast<DialogPiecePath*>(m_dialog.data());
+        DialogInternalPath *dialogTool = qobject_cast<DialogInternalPath*>(m_dialog.data());
         SCASSERT(dialogTool != nullptr);
         try
         {

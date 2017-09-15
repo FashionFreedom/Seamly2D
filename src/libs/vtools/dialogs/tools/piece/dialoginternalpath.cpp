@@ -1,6 +1,6 @@
 /************************************************************************
  **
- **  @file   dialogpiecepath.cpp
+ **  @file   dialoginternalpath.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   22 11, 2016
  **
@@ -26,10 +26,10 @@
  **
  *************************************************************************/
 
-#include "dialogpiecepath.h"
-#include "ui_dialogpiecepath.h"
+#include "dialoginternalpath.h"
+#include "ui_dialoginternalpath.h"
 #include "../vpatterndb/vpiecenode.h"
-#include "visualization/path/vistoolpiecepath.h"
+#include "visualization/path/vistoolinternalpath.h"
 #include "../../../tools/vabstracttool.h"
 #include "../../../tools/vtoolseamallowance.h"
 #include "../../support/dialogeditwrongformula.h"
@@ -38,9 +38,9 @@
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogPiecePath::DialogPiecePath(const VContainer *data, quint32 toolId, QWidget *parent)
+DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, QWidget *parent)
     : DialogTool(data, toolId, parent),
-      ui(new Ui::DialogPiecePath),
+      ui(new Ui::DialogInternalPath),
       m_showMode(false),
       m_saWidth(0),
       m_timerWidth(nullptr),
@@ -61,7 +61,7 @@ DialogPiecePath::DialogPiecePath(const VContainer *data, quint32 toolId, QWidget
     flagError = PathIsValid();
     CheckState();
 
-    vis = new VisToolPiecePath(data);
+    vis = new VisToolInternalPath(data);
 
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabSeamAllowance));
     ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabPassmarks));
@@ -73,13 +73,13 @@ DialogPiecePath::DialogPiecePath(const VContainer *data, quint32 toolId, QWidget
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogPiecePath::~DialogPiecePath()
+DialogInternalPath::~DialogInternalPath()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::EnbleShowMode(bool disable)
+void DialogInternalPath::EnbleShowMode(bool disable)
 {
     m_showMode = disable;
     ui->comboBoxType->setDisabled(m_showMode);
@@ -87,7 +87,7 @@ void DialogPiecePath::EnbleShowMode(bool disable)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ChosenObject(quint32 id, const SceneObject &type)
+void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (not prepare)
     {
@@ -135,7 +135,7 @@ void DialogPiecePath::ChosenObject(quint32 id, const SceneObject &type)
 
         if (not m_showMode)
         {
-            auto visPath = qobject_cast<VisToolPiecePath *>(vis);
+            auto visPath = qobject_cast<VisToolInternalPath *>(vis);
             SCASSERT(visPath != nullptr);
             const VPiecePath p = CreatePath();
             visPath->SetPath(p);
@@ -163,7 +163,7 @@ void DialogPiecePath::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ShowDialog(bool click)
+void DialogInternalPath::ShowDialog(bool click)
 {
     if (click == false)
     {
@@ -174,7 +174,7 @@ void DialogPiecePath::ShowDialog(bool click)
 
             if (not m_showMode)
             {
-                auto visPath = qobject_cast<VisToolPiecePath *>(vis);
+                auto visPath = qobject_cast<VisToolInternalPath *>(vis);
                 SCASSERT(visPath != nullptr);
                 visPath->SetMode(Mode::Show);
                 visPath->RefreshGeometry();
@@ -186,29 +186,29 @@ void DialogPiecePath::ShowDialog(bool click)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::CheckState()
+void DialogInternalPath::CheckState()
 {
     SCASSERT(bOk != nullptr);
     bOk->setEnabled(flagName && flagError);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ShowVisualization()
+void DialogInternalPath::ShowVisualization()
 {
-    AddVisualization<VisToolPiecePath>();
+    AddVisualization<VisToolInternalPath>();
 
     if (m_showMode)
     {
         VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(GetPieceId()));
         SCASSERT(tool != nullptr);
-        auto visPath = qobject_cast<VisToolPiecePath *>(vis);
+        auto visPath = qobject_cast<VisToolInternalPath *>(vis);
         SCASSERT(visPath != nullptr);
         visPath->setParentItem(tool);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::closeEvent(QCloseEvent *event)
+void DialogInternalPath::closeEvent(QCloseEvent *event)
 {
     ui->plainTextEditFormulaWidth->blockSignals(true);
     ui->plainTextEditFormulaWidthBefore->blockSignals(true);
@@ -217,7 +217,7 @@ void DialogPiecePath::closeEvent(QCloseEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ShowContextMenu(const QPoint &pos)
+void DialogInternalPath::ShowContextMenu(const QPoint &pos)
 {
     const int row = ui->listWidget->currentRow();
     if (ui->listWidget->count() == 0 || row == -1 || row >= ui->listWidget->count())
@@ -271,11 +271,11 @@ void DialogPiecePath::ShowContextMenu(const QPoint &pos)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ListChanged()
+void DialogInternalPath::ListChanged()
 {
     if (not m_showMode)
     {
-        auto visPath = qobject_cast<VisToolPiecePath *>(vis);
+        auto visPath = qobject_cast<VisToolInternalPath *>(vis);
         SCASSERT(visPath != nullptr);
         visPath->SetPath(CreatePath());
         visPath->RefreshGeometry();
@@ -286,7 +286,7 @@ void DialogPiecePath::ListChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::NameChanged()
+void DialogInternalPath::NameChanged()
 {
     if (ui->lineEditName->text().isEmpty())
     {
@@ -302,7 +302,7 @@ void DialogPiecePath::NameChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::NodeChanged(int index)
+void DialogInternalPath::NodeChanged(int index)
 {
     ui->plainTextEditFormulaWidthBefore->setDisabled(true);
     ui->toolButtonExprBefore->setDisabled(true);
@@ -378,7 +378,7 @@ void DialogPiecePath::NodeChanged(int index)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::PassmarkChanged(int index)
+void DialogInternalPath::PassmarkChanged(int index)
 {
     ui->radioButtonOneLine->setDisabled(true);
     ui->radioButtonTwoLines->setDisabled(true);
@@ -455,7 +455,7 @@ void DialogPiecePath::PassmarkChanged(int index)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ReturnDefBefore()
+void DialogInternalPath::ReturnDefBefore()
 {
     ui->plainTextEditFormulaWidthBefore->setPlainText(currentSeamAllowance);
     if (QPushButton* button = qobject_cast<QPushButton*>(sender()))
@@ -465,7 +465,7 @@ void DialogPiecePath::ReturnDefBefore()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ReturnDefAfter()
+void DialogInternalPath::ReturnDefAfter()
 {
     ui->plainTextEditFormulaWidthAfter->setPlainText(currentSeamAllowance);
     if (QPushButton* button = qobject_cast<QPushButton*>(sender()))
@@ -475,7 +475,7 @@ void DialogPiecePath::ReturnDefAfter()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::PassmarkLineTypeChanged(int id)
+void DialogInternalPath::PassmarkLineTypeChanged(int id)
 {
     const int i = ui->comboBoxPassmarks->currentIndex();
     if (i != -1)
@@ -517,7 +517,7 @@ void DialogPiecePath::PassmarkLineTypeChanged(int id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::PassmarkAngleTypeChanged(int id)
+void DialogInternalPath::PassmarkAngleTypeChanged(int id)
 {
     const int i = ui->comboBoxPassmarks->currentIndex();
     if (i != -1)
@@ -551,7 +551,7 @@ void DialogPiecePath::PassmarkAngleTypeChanged(int id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::EvalWidth()
+void DialogInternalPath::EvalWidth()
 {
     labelEditFormula = ui->labelEditWidth;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -571,7 +571,7 @@ void DialogPiecePath::EvalWidth()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::EvalWidthBefore()
+void DialogInternalPath::EvalWidthBefore()
 {
     labelEditFormula = ui->labelEditBefore;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -589,7 +589,7 @@ void DialogPiecePath::EvalWidthBefore()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::EvalWidthAfter()
+void DialogInternalPath::EvalWidthAfter()
 {
     labelEditFormula = ui->labelEditAfter;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -607,7 +607,7 @@ void DialogPiecePath::EvalWidthAfter()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::FXWidth()
+void DialogInternalPath::FXWidth()
 {
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
@@ -622,7 +622,7 @@ void DialogPiecePath::FXWidth()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::FXWidthBefore()
+void DialogInternalPath::FXWidthBefore()
 {
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
@@ -637,7 +637,7 @@ void DialogPiecePath::FXWidthBefore()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::FXWidthAfter()
+void DialogInternalPath::FXWidthAfter()
 {
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
@@ -652,7 +652,7 @@ void DialogPiecePath::FXWidthAfter()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::WidthChanged()
+void DialogInternalPath::WidthChanged()
 {
     labelEditFormula = ui->labelEditWidth;
     labelResultCalculation = ui->labelResultWidth;
@@ -661,7 +661,7 @@ void DialogPiecePath::WidthChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::WidthBeforeChanged()
+void DialogInternalPath::WidthBeforeChanged()
 {
     labelEditFormula = ui->labelEditBefore;
     labelResultCalculation = ui->labelResultBefore;
@@ -671,7 +671,7 @@ void DialogPiecePath::WidthBeforeChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::WidthAfterChanged()
+void DialogInternalPath::WidthAfterChanged()
 {
     labelEditFormula = ui->labelEditAfter;
     labelResultCalculation = ui->labelResultAfter;
@@ -681,31 +681,31 @@ void DialogPiecePath::WidthAfterChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::DeployWidthFormulaTextEdit()
+void DialogInternalPath::DeployWidthFormulaTextEdit()
 {
     DeployFormula(ui->plainTextEditFormulaWidth, ui->pushButtonGrowWidth, m_formulaBaseWidth);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::DeployWidthBeforeFormulaTextEdit()
+void DialogInternalPath::DeployWidthBeforeFormulaTextEdit()
 {
     DeployFormula(ui->plainTextEditFormulaWidthBefore, ui->pushButtonGrowWidthBefore, m_formulaBaseWidthBefore);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::DeployWidthAfterFormulaTextEdit()
+void DialogInternalPath::DeployWidthAfterFormulaTextEdit()
 {
     DeployFormula(ui->plainTextEditFormulaWidthAfter, ui->pushButtonGrowWidthAfter, m_formulaBaseWidthAfter);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::InitPathTab()
+void DialogInternalPath::InitPathTab()
 {
     ui->lineEditName->setClearButtonEnabled(true);
 
     FillComboBoxTypeLine(ui->comboBoxPenType, CurvePenStylesPics());
 
-    connect(ui->lineEditName, &QLineEdit::textChanged, this, &DialogPiecePath::NameChanged);
+    connect(ui->lineEditName, &QLineEdit::textChanged, this, &DialogInternalPath::NameChanged);
 
     InitPathTypes();
     connect(ui->comboBoxType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
@@ -717,11 +717,11 @@ void DialogPiecePath::InitPathTab()
     });
 
     ui->listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(ui->listWidget, &QListWidget::customContextMenuRequested, this, &DialogPiecePath::ShowContextMenu);
+    connect(ui->listWidget, &QListWidget::customContextMenuRequested, this, &DialogInternalPath::ShowContextMenu);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::InitSeamAllowanceTab()
+void DialogInternalPath::InitSeamAllowanceTab()
 {
     plainTextEditFormula = ui->plainTextEditFormulaWidth;
     this->m_formulaBaseWidth = ui->plainTextEditFormulaWidth->height();
@@ -733,13 +733,13 @@ void DialogPiecePath::InitSeamAllowanceTab()
     ui->plainTextEditFormulaWidthAfter->installEventFilter(this);
 
     m_timerWidth = new QTimer(this);
-    connect(m_timerWidth, &QTimer::timeout, this, &DialogPiecePath::EvalWidth);
+    connect(m_timerWidth, &QTimer::timeout, this, &DialogInternalPath::EvalWidth);
 
     m_timerWidthBefore = new QTimer(this);
-    connect(m_timerWidthBefore, &QTimer::timeout, this, &DialogPiecePath::EvalWidthBefore);
+    connect(m_timerWidthBefore, &QTimer::timeout, this, &DialogInternalPath::EvalWidthBefore);
 
     m_timerWidthAfter = new QTimer(this);
-    connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogPiecePath::EvalWidthAfter);
+    connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogInternalPath::EvalWidthAfter);
 
     // Default value for seam allowence is 1 cm. But pattern have different units, so just set 1 in dialog not enough.
     m_saWidth = UnitConvertor(1, Unit::Cm, qApp->patternUnit());
@@ -747,47 +747,47 @@ void DialogPiecePath::InitSeamAllowanceTab()
 
     InitNodesList();
     connect(ui->comboBoxNodes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
-            &DialogPiecePath::NodeChanged);
+            &DialogInternalPath::NodeChanged);
 
-    connect(ui->pushButtonDefBefore, &QPushButton::clicked, this, &DialogPiecePath::ReturnDefBefore);
-    connect(ui->pushButtonDefAfter, &QPushButton::clicked, this, &DialogPiecePath::ReturnDefAfter);
+    connect(ui->pushButtonDefBefore, &QPushButton::clicked, this, &DialogInternalPath::ReturnDefBefore);
+    connect(ui->pushButtonDefAfter, &QPushButton::clicked, this, &DialogInternalPath::ReturnDefAfter);
 
     InitNodeAngles(ui->comboBoxAngle);
     connect(ui->comboBoxAngle, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
-            &DialogPiecePath::NodeAngleChanged);
+            &DialogInternalPath::NodeAngleChanged);
 
-    connect(ui->toolButtonExprWidth, &QPushButton::clicked, this, &DialogPiecePath::FXWidth);
-    connect(ui->toolButtonExprBefore, &QPushButton::clicked, this, &DialogPiecePath::FXWidthBefore);
-    connect(ui->toolButtonExprAfter, &QPushButton::clicked, this, &DialogPiecePath::FXWidthAfter);
+    connect(ui->toolButtonExprWidth, &QPushButton::clicked, this, &DialogInternalPath::FXWidth);
+    connect(ui->toolButtonExprBefore, &QPushButton::clicked, this, &DialogInternalPath::FXWidthBefore);
+    connect(ui->toolButtonExprAfter, &QPushButton::clicked, this, &DialogInternalPath::FXWidthAfter);
 
-    connect(ui->plainTextEditFormulaWidth, &QPlainTextEdit::textChanged, this, &DialogPiecePath::WidthChanged);
+    connect(ui->plainTextEditFormulaWidth, &QPlainTextEdit::textChanged, this, &DialogInternalPath::WidthChanged);
     connect(ui->plainTextEditFormulaWidthBefore, &QPlainTextEdit::textChanged, this,
-            &DialogPiecePath::WidthBeforeChanged);
+            &DialogInternalPath::WidthBeforeChanged);
     connect(ui->plainTextEditFormulaWidthAfter, &QPlainTextEdit::textChanged, this,
-            &DialogPiecePath::WidthAfterChanged);
+            &DialogInternalPath::WidthAfterChanged);
 
-    connect(ui->pushButtonGrowWidth, &QPushButton::clicked, this, &DialogPiecePath::DeployWidthFormulaTextEdit);
+    connect(ui->pushButtonGrowWidth, &QPushButton::clicked, this, &DialogInternalPath::DeployWidthFormulaTextEdit);
     connect(ui->pushButtonGrowWidthBefore, &QPushButton::clicked,
-            this, &DialogPiecePath::DeployWidthBeforeFormulaTextEdit);
+            this, &DialogInternalPath::DeployWidthBeforeFormulaTextEdit);
     connect(ui->pushButtonGrowWidthAfter, &QPushButton::clicked, this,
-            &DialogPiecePath::DeployWidthAfterFormulaTextEdit);
+            &DialogInternalPath::DeployWidthAfterFormulaTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::InitPassmarksTab()
+void DialogInternalPath::InitPassmarksTab()
 {
     InitPassmarksList();
     connect(ui->comboBoxPassmarks, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPiecePath::PassmarkChanged);
+            this, &DialogInternalPath::PassmarkChanged);
 
     connect(ui->buttonGroupMarkType, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
-            this, &DialogPiecePath::PassmarkLineTypeChanged);
+            this, &DialogInternalPath::PassmarkLineTypeChanged);
     connect(ui->buttonGroupAngleType, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
-            this, &DialogPiecePath::PassmarkAngleTypeChanged);
+            this, &DialogInternalPath::PassmarkAngleTypeChanged);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::InitPathTypes()
+void DialogInternalPath::InitPathTypes()
 {
     ui->comboBoxType->addItem(tr("Internal path"), static_cast<int>(PiecePathType::InternalPath));
     ui->comboBoxType->addItem(tr("Custom seam allowance"), static_cast<int>(PiecePathType::CustomSeamAllowance));
@@ -797,7 +797,7 @@ void DialogPiecePath::InitPathTypes()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::InitNodesList()
+void DialogInternalPath::InitNodesList()
 {
     const quint32 id = ui->comboBoxNodes->currentData().toUInt();
 
@@ -831,7 +831,7 @@ void DialogPiecePath::InitNodesList()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::InitPassmarksList()
+void DialogInternalPath::InitPassmarksList()
 {
     const quint32 id = ui->comboBoxPassmarks->currentData().toUInt();
 
@@ -865,7 +865,7 @@ void DialogPiecePath::InitPassmarksList()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::NodeAngleChanged(int index)
+void DialogInternalPath::NodeAngleChanged(int index)
 {
     const int i = ui->comboBoxNodes->currentIndex();
     if (i != -1 && index != -1)
@@ -884,13 +884,13 @@ void DialogPiecePath::NodeAngleChanged(int index)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath DialogPiecePath::GetPiecePath() const
+VPiecePath DialogInternalPath::GetPiecePath() const
 {
     return CreatePath();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetPiecePath(const VPiecePath &path)
+void DialogInternalPath::SetPiecePath(const VPiecePath &path)
 {
     ui->listWidget->clear();
     for (int i = 0; i < path.CountNodes(); ++i)
@@ -901,7 +901,7 @@ void DialogPiecePath::SetPiecePath(const VPiecePath &path)
     SetType(path.GetType());
     ui->lineEditName->setText(path.GetName());
 
-    VisToolPiecePath *visPath = qobject_cast<VisToolPiecePath *>(vis);
+    VisToolInternalPath *visPath = qobject_cast<VisToolInternalPath *>(vis);
     SCASSERT(visPath != nullptr);
     visPath->SetPath(path);
     SetPenType(path.GetPenType());
@@ -913,13 +913,13 @@ void DialogPiecePath::SetPiecePath(const VPiecePath &path)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PiecePathType DialogPiecePath::GetType() const
+PiecePathType DialogInternalPath::GetType() const
 {
     return static_cast<PiecePathType>(ui->comboBoxType->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetType(PiecePathType type)
+void DialogInternalPath::SetType(PiecePathType type)
 {
     const qint32 index = ui->comboBoxType->findData(static_cast<int>(type));
     if (index != -1)
@@ -932,32 +932,32 @@ void DialogPiecePath::SetType(PiecePathType type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Qt::PenStyle DialogPiecePath::GetPenType() const
+Qt::PenStyle DialogInternalPath::GetPenType() const
 {
     return LineStyleToPenStyle(GetComboBoxCurrentData(ui->comboBoxPenType, TypeLineLine));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetPenType(const Qt::PenStyle &type)
+void DialogInternalPath::SetPenType(const Qt::PenStyle &type)
 {
     ChangeCurrentData(ui->comboBoxPenType, PenStyleToLineStyle(type));
     vis->setLineStyle(type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogPiecePath::IsCutPath() const
+bool DialogInternalPath::IsCutPath() const
 {
     return ui->checkBoxCut->isChecked();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetCutPath(bool value)
+void DialogInternalPath::SetCutPath(bool value)
 {
     ui->checkBoxCut->setChecked(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QListWidgetItem *DialogPiecePath::GetItemById(quint32 id)
+QListWidgetItem *DialogInternalPath::GetItemById(quint32 id)
 {
     for (qint32 i = 0; i < ui->listWidget->count(); ++i)
     {
@@ -973,7 +973,7 @@ QListWidgetItem *DialogPiecePath::GetItemById(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPiecePath::GetLastId() const
+quint32 DialogInternalPath::GetLastId() const
 {
     const int count = ui->listWidget->count();
     if (count > 0)
@@ -989,21 +989,21 @@ quint32 DialogPiecePath::GetLastId() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetCurrentSABefore(const QString &formula)
+void DialogInternalPath::SetCurrentSABefore(const QString &formula)
 {
     UpdateNodeSABefore(formula);
     ListChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetCurrentSAAfter(const QString &formula)
+void DialogInternalPath::SetCurrentSAAfter(const QString &formula)
 {
     UpdateNodeSAAfter(formula);
     ListChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::UpdateNodeSABefore(const QString &formula)
+void DialogInternalPath::UpdateNodeSABefore(const QString &formula)
 {
     const int index = ui->comboBoxNodes->currentIndex();
     if (index != -1)
@@ -1019,7 +1019,7 @@ void DialogPiecePath::UpdateNodeSABefore(const QString &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::UpdateNodeSAAfter(const QString &formula)
+void DialogInternalPath::UpdateNodeSAAfter(const QString &formula)
 {
     const int index = ui->comboBoxNodes->currentIndex();
     if (index != -1)
@@ -1035,7 +1035,7 @@ void DialogPiecePath::UpdateNodeSAAfter(const QString &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetFormulaSAWidth(const QString &formula)
+void DialogInternalPath::SetFormulaSAWidth(const QString &formula)
 {
     if (formula.isEmpty())
     {
@@ -1050,7 +1050,7 @@ void DialogPiecePath::SetFormulaSAWidth(const QString &formula)
     }
     ui->plainTextEditFormulaWidth->setPlainText(width);
 
-    VisToolPiecePath *path = qobject_cast<VisToolPiecePath *>(vis);
+    VisToolInternalPath *path = qobject_cast<VisToolInternalPath *>(vis);
     SCASSERT(path != nullptr)
     path->SetPath(CreatePath());
 
@@ -1068,13 +1068,13 @@ void DialogPiecePath::SetFormulaSAWidth(const QString &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPiecePath::GetPieceId() const
+quint32 DialogInternalPath::GetPieceId() const
 {
     return getCurrentObjectId(ui->comboBoxPiece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetPieceId(quint32 id)
+void DialogInternalPath::SetPieceId(quint32 id)
 {
     if (ui->comboBoxPiece->count() <= 0)
     {
@@ -1095,7 +1095,7 @@ void DialogPiecePath::SetPieceId(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogPiecePath::GetFormulaSAWidth() const
+QString DialogInternalPath::GetFormulaSAWidth() const
 {
     QString width = ui->plainTextEditFormulaWidth->toPlainText();
     width.replace("\n", " ");
@@ -1103,13 +1103,13 @@ QString DialogPiecePath::GetFormulaSAWidth() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::SetPiecesList(const QVector<quint32> &list)
+void DialogInternalPath::SetPiecesList(const QVector<quint32> &list)
 {
     FillComboBoxPiecesList(ui->comboBoxPiece, list);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VPiecePath DialogPiecePath::CreatePath() const
+VPiecePath DialogInternalPath::CreatePath() const
 {
     VPiecePath path;
     for (qint32 i = 0; i < ui->listWidget->count(); ++i)
@@ -1127,7 +1127,7 @@ VPiecePath DialogPiecePath::CreatePath() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogPiecePath::PathIsValid() const
+bool DialogInternalPath::PathIsValid() const
 {
     QString url = DialogWarningIcon();
 
@@ -1177,20 +1177,20 @@ bool DialogPiecePath::PathIsValid() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::ValidObjects(bool value)
+void DialogInternalPath::ValidObjects(bool value)
 {
     flagError = value;
     CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPiecePath::NewItem(const VPieceNode &node)
+void DialogInternalPath::NewItem(const VPieceNode &node)
 {
     NewNodeItem(ui->listWidget, node);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogPiecePath::GetFormulaSAWidthBefore() const
+QString DialogInternalPath::GetFormulaSAWidthBefore() const
 {
     QString width = ui->plainTextEditFormulaWidthBefore->toPlainText();
     width.replace("\n", " ");
@@ -1198,7 +1198,7 @@ QString DialogPiecePath::GetFormulaSAWidthBefore() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogPiecePath::GetFormulaSAWidthAfter() const
+QString DialogInternalPath::GetFormulaSAWidthAfter() const
 {
     QString width = ui->plainTextEditFormulaWidthAfter->toPlainText();
     width.replace("\n", " ");

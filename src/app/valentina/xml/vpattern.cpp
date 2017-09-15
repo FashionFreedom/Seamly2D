@@ -3313,7 +3313,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
         path.SetPenType(LineStyleToPenStyle(penType));
         path.SetCutPath(cut);
 
-        VToolPiecePath::Create(id, path, 0, scene, this, data, parse, Source::FromFile, "", idTool);
+        VToolInternalPath::Create(id, path, 0, scene, this, data, parse, Source::FromFile, "", idTool);
     }
     catch (const VExceptionBadId &e)
     {
@@ -3942,7 +3942,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::NodeSpline:
                 case Tool::NodeSplinePath:
                 case Tool::Group:
-                case Tool::PiecePath:
+                case Tool::InternalPath:
                 case Tool::Pin:
                 case Tool::InsertNode:
                     break;

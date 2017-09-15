@@ -54,7 +54,7 @@
 #include "tools/drawTools/drawtools.h"
 #include "../vtools/dialogs/tooldialogs.h"
 #include "tools/vtoolseamallowance.h"
-#include "tools/nodeDetails/vtoolpiecepath.h"
+#include "tools/nodeDetails/vtoolinternalpath.h"
 #include "tools/nodeDetails/vtoolpin.h"
 #include "tools/vtooluniondetails.h"
 #include "dialogs/dialogs.h"
@@ -596,7 +596,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
             case Tool::Midpoint:
                 dialogTool->Build(t);
                 break;
-            case Tool::PiecePath:
+            case Tool::InternalPath:
             case Tool::Pin:
             case Tool::InsertNode:
                 dialogTool->SetPiecesList(doc->GetActivePPPieces());
@@ -997,12 +997,12 @@ void MainWindow::ToolDetail(bool checked)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ToolPiecePath(bool checked)
+void MainWindow::ToolInternalPath(bool checked)
 {
     ToolSelectAllDrawObjects();
-    SetToolButton<DialogPiecePath>(checked, Tool::PiecePath, "://cursor/path_cursor.png",
+    SetToolButton<DialogInternalPath>(checked, Tool::InternalPath, "://cursor/path_cursor.png",
                                    tr("Select path objects, <b>Shift</b> - reverse direction curve"),
-                                   &MainWindow::ClosedDialogPiecePath);
+                                   &MainWindow::ClosedDialogInternalPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1157,12 +1157,12 @@ void MainWindow::ClosedDialogGroup(int result)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ClosedDialogPiecePath(int result)
+void MainWindow::ClosedDialogInternalPath(int result)
 {
     SCASSERT(dialogTool != nullptr);
     if (result == QDialog::Accepted)
     {
-        VToolPiecePath::Create(dialogTool, sceneDetails, doc, pattern);
+        VToolInternalPath::Create(dialogTool, sceneDetails, doc, pattern);
     }
     ArrowTool();
     doc->LiteParseTree(Document::LiteParse);
@@ -1946,7 +1946,7 @@ void MainWindow::InitToolButtons()
     connect(ui->toolButtonCubicBezierPath, &QToolButton::clicked, this, &MainWindow::ToolCubicBezierPath);
     connect(ui->toolButtonPointOfContact, &QToolButton::clicked, this, &MainWindow::ToolPointOfContact);
     connect(ui->toolButtonNewDetail, &QToolButton::clicked, this, &MainWindow::ToolDetail);
-    connect(ui->toolButtonInternalPath, &QToolButton::clicked, this, &MainWindow::ToolPiecePath);
+    connect(ui->toolButtonInternalPath, &QToolButton::clicked, this, &MainWindow::ToolInternalPath);
     connect(ui->toolButtonHeight, &QToolButton::clicked, this, &MainWindow::ToolHeight);
     connect(ui->toolButtonTriangle, &QToolButton::clicked, this, &MainWindow::ToolTriangle);
     connect(ui->toolButtonPointOfIntersection, &QToolButton::clicked, this, &MainWindow::ToolPointOfIntersection);
@@ -2095,7 +2095,7 @@ void MainWindow::CancelTool()
         case Tool::Piece:
             ui->toolButtonNewDetail->setChecked(false);
             break;
-        case Tool::PiecePath:
+        case Tool::InternalPath:
             ui->toolButtonInternalPath->setChecked(false);
             break;
         case Tool::Height:
@@ -3728,9 +3728,9 @@ void MainWindow::LastUsedTool()
             ui->toolButtonNewDetail->setChecked(true);
             ToolDetail(true);
             break;
-        case Tool::PiecePath:
+        case Tool::InternalPath:
             ui->toolButtonInternalPath->setChecked(true);
-            ToolPiecePath(true);
+            ToolInternalPath(true);
             break;
         case Tool::Height:
             ui->toolButtonHeight->setChecked(true);
