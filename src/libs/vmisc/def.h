@@ -63,6 +63,8 @@ enum class Source : char { FromGui, FromFile, FromTool };
 enum class NodeUsage : bool {NotInUse = false, InUse = true};
 enum class SelectionType : bool {ByMousePress, ByMouseRelease};
 
+enum class PageOrientation : bool {Portrait = true, Landscape = false};
+
 enum class PieceNodeAngle : unsigned char
 {
     ByLength = 0,

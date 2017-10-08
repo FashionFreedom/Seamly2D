@@ -17,7 +17,8 @@ HEADERS += \
     $$PWD/configpages/preferencesconfigurationpage.h \
     $$PWD/configpages/preferencespatternpage.h \
     $$PWD/configpages/preferencespathpage.h \
-    $$PWD/dialogdatetimeformats.h
+    $$PWD/dialogdatetimeformats.h \
+    $$PWD/vabstractlayoutdialog.h
 
 SOURCES += \
     $$PWD/dialogincrements.cpp \
@@ -34,7 +35,8 @@ SOURCES += \
     $$PWD/configpages/preferencesconfigurationpage.cpp \
     $$PWD/configpages/preferencespatternpage.cpp \
     $$PWD/configpages/preferencespathpage.cpp \
-    $$PWD/dialogdatetimeformats.cpp
+    $$PWD/dialogdatetimeformats.cpp \
+    $$PWD/vabstractlayoutdialog.cpp
 
 FORMS += \
     $$PWD/dialogincrements.ui \

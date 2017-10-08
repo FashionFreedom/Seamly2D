@@ -35,6 +35,7 @@
 #include <QString>
 #include <QtGlobal>
 
+#include "../vmisc/def.h"
 #include "../vlayout/vbank.h"
 #include "vcommonsettings.h"
 
@@ -154,6 +155,19 @@ public:
     bool GetTextAsPaths() const;
     static bool GetDefTextAsPaths();
     void SetTextAsPaths(bool value);
+
+    // settings for the tiled PDFs
+    QMarginsF GetTiledPDFMargins(const QMarginsF &def = QMarginsF()) const;
+    void SetTiledPDFMargins(const QMarginsF &value);
+
+    qreal GetTiledPDFPaperHeight() const;
+    void SetTiledPDFPaperHeight(qreal value);
+
+    qreal GetTiledPDFPaperWidth() const;
+    void SetTiledPDFPaperWidth(qreal value);
+
+    PageOrientation GetTiledPDFOrientation() const;
+    void SetTiledPDFOrientation(PageOrientation value);
 
 private:
     Q_DISABLE_COPY(VSettings)

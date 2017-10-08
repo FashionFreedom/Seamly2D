@@ -38,6 +38,7 @@
 #include <QStringDataPtr>
 #include <QVariant>
 #include <QPrinterInfo>
+#include <QtDebug>
 
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
@@ -79,6 +80,11 @@ const QString settingIgnoreFields           = QStringLiteral("layout/ignoreField
 const QString settingStripOptimization      = QStringLiteral("layout/stripOptimization");
 const QString settingMultiplier             = QStringLiteral("layout/multiplier");
 const QString settingTextAsPaths            = QStringLiteral("layout/textAsPaths");
+
+const QString settingTiledPDFMargins        = QStringLiteral("tiledPDF/margins");
+const QString settingTiledPDFPaperHeight    = QStringLiteral("tiledPDF/paperHeight");
+const QString settingTiledPDFPaperWidth     = QStringLiteral("tiledPDF/paperWidth");
+const QString settingTiledPDFOrientation    = QStringLiteral("tiledPDF/orientation");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -604,5 +610,101 @@ bool VSettings::GetDefTextAsPaths()
 void VSettings::SetTextAsPaths(bool value)
 {
     setValue(settingTextAsPaths, value);
+}
+
+// settings for the tiled PDFs
+//---------------------------------------------------------------------------------------------------------------------
+QMarginsF VSettings::GetTiledPDFMargins(const QMarginsF &def) const
+{
+    const QVariant val = value(settingTiledPDFMargins, QVariant::fromValue(def));
+
+    // TODO : convert margin values from mm to pattern unit
+
+    if (val.canConvert<QMarginsF>())
+    {
+        return val.value<QMarginsF>();
+    }
+    return def;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VSettings::SetTiledPDFMargins(const QMarginsF &value)
+{
+    // TODO : convert margin values to mm
+
+    setValue(settingTiledPDFMargins, QVariant::fromValue(value));
+}
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VSettings::GetTiledPDFPaperHeight() const
+{
+    // TODO : convert height value from mm to pattern unit
+
+    const qreal def = UnitConvertor(297/*A4*/, Unit::Mm, Unit::Mm); // here convert to pattern unit as well
+    bool ok = false;
+    const qreal height = value(settingTiledPDFPaperHeight, def).toDouble(&ok);
+    if (ok)
+    {
+        return height;
+    }
+    else
+    {
+        return def;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VSettings::SetTiledPDFPaperHeight(qreal value)
+{
+     // TODO : convert height values to mm
+
+    setValue(settingTiledPDFPaperHeight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VSettings::GetTiledPDFPaperWidth() const
+{
+    // TODO : convert width value from mm to pattern unit
+
+    const qreal def = UnitConvertor(210/*A4*/, Unit::Mm, Unit::Mm);
+    bool ok = false;
+    const qreal width = value(settingTiledPDFPaperWidth, def).toDouble(&ok);
+
+    if (ok)
+    {
+        return width;
+    }
+    else
+    {
+        return def;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VSettings::SetTiledPDFPaperWidth(qreal value)
+{
+     // TODO : convert width value to mm
+
+    setValue(settingTiledPDFPaperWidth, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+PageOrientation VSettings::GetTiledPDFOrientation() const
+{
+    bool defaultValue = static_cast<bool>(PageOrientation::Portrait);
+
+    bool result = value(settingTiledPDFOrientation, defaultValue).toBool();
+
+    return static_cast<PageOrientation>(result);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VSettings::SetTiledPDFOrientation(PageOrientation value)
+{
+    bool orientation = static_cast<bool> (value);
+
+    setValue(settingTiledPDFOrientation, orientation);
 }
 

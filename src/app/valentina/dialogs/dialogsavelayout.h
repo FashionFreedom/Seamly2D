@@ -30,7 +30,9 @@
 #define DIALOGSAVELAYOUT_H
 
 #include <QDialog>
+#include <QMarginsF>
 #include "../vgeometry/vgeometrydef.h"
+#include "vabstractlayoutdialog.h"
 
 #ifdef Q_OS_WIN
 #   define PDFTOPS "pdftops.exe"
@@ -82,7 +84,7 @@ enum class LayoutExportFormats : char
     COUNT                 /*Use only for validation*/
 };
 
-class DialogSaveLayout : public QDialog
+class DialogSaveLayout : public  VAbstractLayoutDialog
 {
     Q_OBJECT
 
@@ -113,10 +115,14 @@ public:
 
 protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    void InitTemplates(QComboBox *comboBoxTemplates);
+
 private slots:
     void Save();
     void PathChanged(const QString &text);
     void ShowExample();
+
+
 private:
     Q_DISABLE_COPY(DialogSaveLayout)
     Ui::DialogSaveLAyout *ui;
@@ -131,6 +137,9 @@ private:
     static QVector<std::pair<QString, LayoutExportFormats> > InitFormats();
 
     void RemoveFormatFromList(LayoutExportFormats format);
+
+    void ReadSettings();
+    void WriteSettings() const;
 };
 
 #endif // DIALOGSAVELAYOUT_H
