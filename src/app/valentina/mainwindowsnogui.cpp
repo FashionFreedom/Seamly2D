@@ -1212,6 +1212,9 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     printer->setCreator(QGuiApplication::applicationDisplayName()+" "+QCoreApplication::applicationVersion());
     printer->setOrientation(QPrinter::Portrait);
 
+    qDebug() << "is tiled ? " << isTiled;
+    qDebug();
+
     if (not isTiled)
     {
         QSizeF size = QSizeF(FromPixel(paperSize.width(), Unit::Mm), FromPixel(paperSize.height(), Unit::Mm));
@@ -1240,12 +1243,32 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
         printer->setPaperSize(QPrinter::A4);
     }
 
-    printer->setFullPage(ignorePrinterFields);
 
-    const qreal left = FromPixel(margins.left(), Unit::Mm);
-    const qreal top = FromPixel(margins.top(), Unit::Mm);
-    const qreal right = FromPixel(margins.right(), Unit::Mm);
-    const qreal bottom = FromPixel(margins.bottom(), Unit::Mm);
+    qreal left, top, right, bottom;
+
+    printer->setFullPage(true);
+    //printer->setFullPage(ignorePrinterFields);
+
+    if (not isTiled)
+    {
+        left = FromPixel(margins.left(), Unit::Mm);
+        top = FromPixel(margins.top(), Unit::Mm);
+        right = FromPixel(margins.right(), Unit::Mm);
+        bottom = FromPixel(margins.bottom(), Unit::Mm);
+    }
+    else
+    {
+        VSettings *settings = qApp->ValentinaSettings();
+        QMarginsF marginTiled = settings->GetTiledPDFMargins();
+
+        // TODO : better usage of Units with the tiled settings.
+
+        left = UnitConvertor(marginTiled.left(), qApp->patternUnit() , Unit::Mm);
+        top = UnitConvertor(marginTiled.top(), qApp->patternUnit() , Unit::Mm);
+        right = UnitConvertor(marginTiled.right(), qApp->patternUnit() , Unit::Mm);
+        bottom = UnitConvertor(marginTiled.bottom(), qApp->patternUnit() , Unit::Mm);
+    }
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
     const bool success = printer->setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
 
