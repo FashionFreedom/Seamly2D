@@ -479,6 +479,8 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const DialogSaveLayout &dial
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::PrintPages(QPrinter *printer)
 {
+    VSettings *settings = qApp->ValentinaSettings();
+
     // Here we try understand difference between printer's dpi and our.
     // Get printer rect acording to our dpi.
     const QRectF printerPageRect(0, 0, ToPixel(printer->pageRect(QPrinter::Millimeter).width(), Unit::Mm),
@@ -505,15 +507,25 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
 
     if (isTiled)
     {
+        // when isTiled, the landscape tiles have to be rotated, because the pages
+        // stay portrait in the pdf
+        if(settings->GetTiledPDFOrientation() == PageOrientation::Landscape)
+        {
+            painter.rotate(-90);
+            painter.translate(-ToPixel(printer->pageRect(QPrinter::Millimeter).height(),Unit::Mm), 0);
+        }
+
         poster = QSharedPointer<QVector<PosterData>>(new QVector<PosterData>());
         posterazor = QSharedPointer<VPoster>(new VPoster(printer));
 
         for (int i=0; i < scenes.size(); ++i)
         {
+
             auto *paper = qgraphicsitem_cast<QGraphicsRectItem *>(papers.at(i));
+
             if (paper)
             {
-                *poster += posterazor->Calc(paper->rect().toRect(), i);
+                *poster += posterazor->Calc(paper->rect().toRect(), i, settings->GetTiledPDFOrientation());
             }
         }
 
@@ -1251,27 +1263,47 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     printer->setFullPage(true);
     //printer->setFullPage(ignorePrinterFields);
 
-    QMarginsF pageMargin;
+    qreal left, top, right, bottom;
 
     if (not isTiled)
     {
-        pageMargin = QMarginsF(UnitConvertor(margins, Unit::Px, Unit::Mm));
+        QMarginsF pageMargin = QMarginsF(UnitConvertor(margins, Unit::Px, Unit::Mm));
+        left = pageMargin.left();
+        top = pageMargin.top();
+        right = pageMargin.right();
+        bottom = pageMargin.bottom();
     }
     else
     {
         VSettings *settings = qApp->ValentinaSettings();
-        pageMargin = QMarginsF(settings->GetTiledPDFMargins(Unit::Mm));
+        QMarginsF  pageMargin = QMarginsF(settings->GetTiledPDFMargins(Unit::Mm));
+        if(settings->GetTiledPDFOrientation() == PageOrientation::Landscape)
+        {
+            // because when painting we have a -90rotation in landscape modus,
+            // see function PrintPages.
+            left = pageMargin.bottom();
+            top = pageMargin.left();
+            right = pageMargin.top();
+            bottom = pageMargin.right();
+        }
+        else
+        {
+            left = pageMargin.left();
+            top = pageMargin.top();
+            right = pageMargin.right();
+            bottom = pageMargin.bottom();
+        }
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-    const bool success = printer->setPageMargins(pageMargin, QPageLayout::Millimeter);
+    const bool success = printer->setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
 
     if (not success)
     {
         qWarning() << tr("Cannot set printer margins");
     }
 #else
-    printer->setPageMargins(pageMargin.left(), pageMargin.top(), pageMargin.right(), pageMargin.bottom(), QPrinter::Millimeter);
+    printer->setPageMargins(left, top, right, bottom, QPrinter::Millimeter);
 #endif //QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 
     switch(printType)

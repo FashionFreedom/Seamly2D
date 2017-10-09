@@ -153,7 +153,7 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
     connect(ui->doubleSpinBoxBottomField, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
             this, &DialogSaveLayout::WriteSettings);
 
-    // connects for the orientation
+    // connects for the orientation buttons for the tiled pdf
     connect(ui->toolButtonPortrait, &QToolButton::toggled, this, &DialogSaveLayout::WriteSettings);
     connect(ui->toolButtonLandscape, &QToolButton::toggled, this, &DialogSaveLayout::WriteSettings);
 
@@ -683,6 +683,7 @@ QVector<std::pair<QString, LayoutExportFormats> > DialogSaveLayout::InitFormats(
 
     InitFormat(LayoutExportFormats::SVG);
     InitFormat(LayoutExportFormats::PDF);
+    InitFormat(LayoutExportFormats::PDFTiled);
     InitFormat(LayoutExportFormats::PNG);
     InitFormat(LayoutExportFormats::OBJ);
     if (SupportPSTest())
@@ -718,7 +719,6 @@ QVector<std::pair<QString, LayoutExportFormats> > DialogSaveLayout::InitFormats(
 //    InitFormat(LayoutExportFormats::DXF_AC1021_ASTM);
 //    InitFormat(LayoutExportFormats::DXF_AC1024_ASTM);
 //    InitFormat(LayoutExportFormats::DXF_AC1027_ASTM);
-    InitFormat(LayoutExportFormats::PDFTiled); 
 
     return list;
 }
