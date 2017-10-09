@@ -905,7 +905,6 @@ void MainWindowsNoGUI::PdfTiledFile(const QString &name)
     }
     QPrinter printer;
     SetPrinterSettings(&printer, PrintType::PrintPDF);
-    printer.setPageSize(QPrinter::A4);// Want to be sure that page size is correct.
 
     // Call IsPagesFit after setting a printer settings and check if pages is not bigger than printer's paper size
     if (not isTiled && not IsPagesFit(printer.paperRect().size()))
@@ -1212,9 +1211,6 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     printer->setCreator(QGuiApplication::applicationDisplayName()+" "+QCoreApplication::applicationVersion());
     printer->setOrientation(QPrinter::Portrait);
 
-    qDebug() << "is tiled ? " << isTiled;
-    qDebug();
-
     if (not isTiled)
     {
         QSizeF size = QSizeF(FromPixel(paperSize.width(), Unit::Mm), FromPixel(paperSize.height(), Unit::Mm));
@@ -1228,7 +1224,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
             }
         }
 
-        const QPrinter::PageSize pSZ = FindTemplate(size);
+        const QPrinter::PageSize pSZ = FindQPrinterPageSize(size);
         if (pSZ == QPrinter::Custom)
         {
             printer->setPaperSize (size, QPrinter::Millimeter );
@@ -1240,11 +1236,17 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     }
     else
     {
-        printer->setPaperSize(QPrinter::A4);
+        VSettings *settings = qApp->ValentinaSettings();
+        QSizeF size = QSizeF(
+            settings->GetTiledPDFPaperWidth(Unit::Mm),
+            settings->GetTiledPDFPaperHeight(Unit::Mm)
+
+            );
+        const QPrinter::PageSize pSZ = FindQPrinterPageSize(size);
+        printer->setPaperSize(pSZ);
+        // no need to take custom into account, because custom isn't a format option for tiled pdf.
     }
 
-
-    qreal left, top, right, bottom;
 
     printer->setFullPage(true);
     //printer->setFullPage(ignorePrinterFields);
@@ -1269,7 +1271,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
         qWarning() << tr("Cannot set printer margins");
     }
 #else
-    printer->setPageMargins(left, top, right, bottom, QPrinter::Millimeter);
+    printer->setPageMargins(pageMargin.left(), pageMargin.top(), pageMargin.right(), pageMargin.bottom(), QPrinter::Millimeter);
 #endif //QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 
     switch(printType)
@@ -1340,7 +1342,12 @@ bool MainWindowsNoGUI::IsLayoutGrayscale() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPrinter::PaperSize MainWindowsNoGUI::FindTemplate(const QSizeF &size) const
+/**
+ * @brief MainWindowsNoGUI::FindTemplate
+ * @param size has to be in Mm
+ * @return
+ */
+QPrinter::PaperSize MainWindowsNoGUI::FindQPrinterPageSize(const QSizeF &size) const
 {
     if (size == QSizeF(841, 1189))
     {
