@@ -157,14 +157,14 @@ public:
     void SetTextAsPaths(bool value);
 
     // settings for the tiled PDFs
-    QMarginsF GetTiledPDFMargins(const QMarginsF &def = QMarginsF()) const;
-    void SetTiledPDFMargins(const QMarginsF &value);
+    QMarginsF GetTiledPDFMargins(const Unit &unit) const;
+    void SetTiledPDFMargins(const QMarginsF &value, const Unit &unit);
 
-    qreal GetTiledPDFPaperHeight() const;
-    void SetTiledPDFPaperHeight(qreal value);
+    qreal GetTiledPDFPaperHeight(const Unit &unit) const;
+    void SetTiledPDFPaperHeight(qreal value, const Unit &unit);
 
-    qreal GetTiledPDFPaperWidth() const;
-    void SetTiledPDFPaperWidth(qreal value);
+    qreal GetTiledPDFPaperWidth(const Unit &unit) const;
+    void SetTiledPDFPaperWidth(qreal value, const Unit &unit);
 
     PageOrientation GetTiledPDFOrientation() const;
     void SetTiledPDFOrientation(PageOrientation value);

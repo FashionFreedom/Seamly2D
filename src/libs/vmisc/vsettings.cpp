@@ -614,80 +614,105 @@ void VSettings::SetTextAsPaths(bool value)
 
 // settings for the tiled PDFs
 //---------------------------------------------------------------------------------------------------------------------
-QMarginsF VSettings::GetTiledPDFMargins(const QMarginsF &def) const
+/**
+ * @brief VSettings::GetTiledPDFMargins returns the tiled pdf margins in the given unit. When the setting is
+ * called for the first time, the 4 default margins are 10mm.
+ * @param unit
+ * @return
+ */
+QMarginsF VSettings::GetTiledPDFMargins(const Unit &unit) const
 {
-    const QVariant val = value(settingTiledPDFMargins, QVariant::fromValue(def));
+    // default value is 10mm. We save the margins in mm in the setting.
+    const QMarginsF def = QMarginsF(10,10,10,10);
 
-    // TODO : convert margin values from mm to pattern unit
+    const QVariant val = value(settingTiledPDFMargins, QVariant::fromValue(def));
 
     if (val.canConvert<QMarginsF>())
     {
-        return val.value<QMarginsF>();
+        return UnitConvertor(val.value<QMarginsF>(), Unit::Mm, unit);
     }
-    return def;
+    return UnitConvertor(def, Unit::Mm, unit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetTiledPDFMargins(const QMarginsF &value)
+/**
+ * @brief VSettings::SetTiledPDFMargins sets the setting tiled pdf margins to the given value.
+ * @param value the margins to save
+ * @param unit the unit in which are the value. Necessary because we save the values
+ * internaly as mm so there is conversion beeing made.
+ */
+void VSettings::SetTiledPDFMargins(const QMarginsF &value, const Unit &unit)
 {
-    // TODO : convert margin values to mm
+    QMarginsF margins = UnitConvertor(value, unit, Unit::Mm);
 
-    setValue(settingTiledPDFMargins, QVariant::fromValue(value));
+    setValue(settingTiledPDFMargins, QVariant::fromValue(margins));
 }
 
 
-
 //---------------------------------------------------------------------------------------------------------------------
-qreal VSettings::GetTiledPDFPaperHeight() const
+/**
+ * @brief VSettings::GetTiledPDFPaperHeight returns the paper height of tiled pdf in the desired unit.
+ * @param unit the unit to return the value to (internally it's saved as mm)
+ * @return
+ */
+qreal VSettings::GetTiledPDFPaperHeight(const Unit &unit) const
 {
-    // TODO : convert height value from mm to pattern unit
-
-    const qreal def = UnitConvertor(297/*A4*/, Unit::Mm, Unit::Mm); // here convert to pattern unit as well
+    const qreal def = 297 /*A4*/;
     bool ok = false;
     const qreal height = value(settingTiledPDFPaperHeight, def).toDouble(&ok);
     if (ok)
     {
-        return height;
+        return UnitConvertor(height, Unit::Mm, unit);
     }
     else
     {
-        return def;
+        return UnitConvertor(def, Unit::Mm, unit);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetTiledPDFPaperHeight(qreal value)
+/**
+ * @brief VSettings::SetTiledPDFPaperHeight sets the tiled pdf paper height
+ * @param value in Mm
+ * @param unit unit of the given value
+ */
+void VSettings::SetTiledPDFPaperHeight(qreal value, const Unit &unit)
 {
-     // TODO : convert height values to mm
-
-    setValue(settingTiledPDFPaperHeight, value);
+    setValue(settingTiledPDFPaperHeight, UnitConvertor(value, unit, Unit::Mm));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VSettings::GetTiledPDFPaperWidth() const
+/**
+ * @brief VSettings::GetTiledPDFPaperWidth returns the paper height of tiled pdf in the desired unit.
+ * @param unit the unit to return the value to (internally it's saved as mm)
+ * @return
+ */
+qreal VSettings::GetTiledPDFPaperWidth(const Unit &unit) const
 {
-    // TODO : convert width value from mm to pattern unit
 
-    const qreal def = UnitConvertor(210/*A4*/, Unit::Mm, Unit::Mm);
+    const qreal def = 210 /*A4*/;
     bool ok = false;
     const qreal width = value(settingTiledPDFPaperWidth, def).toDouble(&ok);
 
     if (ok)
     {
-        return width;
+        return UnitConvertor(width, Unit::Mm, unit);
     }
     else
     {
-        return def;
+        return UnitConvertor(def, Unit::Mm, unit);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetTiledPDFPaperWidth(qreal value)
+/**
+ * @brief VSettings::SetTiledPDFPaperWidth sets the tiled pdf paper width
+ * @param unit unit of the given value
+ * @param value in Mm
+ */
+void VSettings::SetTiledPDFPaperWidth(qreal value, const Unit &unit)
 {
-     // TODO : convert width value to mm
-
-    setValue(settingTiledPDFPaperWidth, value);
+    setValue(settingTiledPDFPaperWidth, UnitConvertor(value,unit, Unit::Mm));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

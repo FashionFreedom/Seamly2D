@@ -346,6 +346,21 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineEditPath</tabstop>
+  <tabstop>pushButtonBrowse</tabstop>
+  <tabstop>comboBoxFormat</tabstop>
+  <tabstop>checkBoxBinaryDXF</tabstop>
+  <tabstop>checkBoxTextAsPaths</tabstop>
+  <tabstop>doubleSpinBoxLeftField</tabstop>
+  <tabstop>doubleSpinBoxTopField</tabstop>
+  <tabstop>doubleSpinBoxRightField</tabstop>
+  <tabstop>doubleSpinBoxBottomField</tabstop>
+  <tabstop>comboBoxTemplates</tabstop>
+  <tabstop>toolButtonPortrait</tabstop>
+  <tabstop>toolButtonLandscape</tabstop>
+  <tabstop>lineEditFileName</tabstop>
+ </tabstops>
  <resources>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>

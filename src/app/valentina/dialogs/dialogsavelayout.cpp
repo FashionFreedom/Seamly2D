@@ -743,10 +743,11 @@ void DialogSaveLayout::RemoveFormatFromList(LayoutExportFormats format)
  */
 void DialogSaveLayout::ReadSettings()
 {
-    const VSettings *settings = qApp->ValentinaSettings();
+    VSettings *settings = qApp->ValentinaSettings();
+    const Unit unit = qApp->patternUnit();
 
     // read Margins top, right, bottom, left
-    QMarginsF margins = settings->GetTiledPDFMargins();
+    QMarginsF margins = settings->GetTiledPDFMargins(unit);
 
     ui->doubleSpinBoxLeftField->setValue(margins.left());
     ui->doubleSpinBoxTopField->setValue(margins.top());
@@ -754,14 +755,13 @@ void DialogSaveLayout::ReadSettings()
     ui->doubleSpinBoxBottomField->setValue(margins.bottom());
 
     // read Template
-    QSizeF size = QSizeF(settings->GetTiledPDFPaperWidth(), settings->GetTiledPDFPaperHeight());
+    QSizeF size = QSizeF(settings->GetTiledPDFPaperWidth(Unit::Mm), settings->GetTiledPDFPaperHeight(Unit::Mm));
 
-    const Unit unit = qApp->patternUnit();
     const int max = static_cast<int>(PaperSizeTemplate::Custom);
     for (int i=0; i < max; ++i)
     {
 
-        const QSizeF tmplSize = GetTemplateSize(static_cast<PaperSizeTemplate>(i), unit);
+        const QSizeF tmplSize = GetTemplateSize(static_cast<PaperSizeTemplate>(i), Unit::Mm);
         if (size == tmplSize)
         {
             ui->comboBoxTemplates->setCurrentIndex(i);
@@ -770,10 +770,6 @@ void DialogSaveLayout::ReadSettings()
     }
 
     // read Orientation
-
-    qDebug() << "orientation : " << static_cast<bool>(settings->GetTiledPDFOrientation()) ;
-    qDebug();
-
     if(settings->GetTiledPDFOrientation() == PageOrientation::Portrait)
     {
         ui->toolButtonPortrait->setChecked(true);
@@ -795,6 +791,7 @@ void DialogSaveLayout::ReadSettings()
 void DialogSaveLayout::WriteSettings() const
 {
     VSettings *settings = qApp->ValentinaSettings();
+    const Unit unit = qApp->patternUnit();
 
     // write Margins top, right, bottom, left
     QMarginsF margins = QMarginsF(
@@ -803,15 +800,15 @@ void DialogSaveLayout::WriteSettings() const
         ui->doubleSpinBoxRightField->value(),
         ui->doubleSpinBoxBottomField->value()
     );
-    settings->SetTiledPDFMargins(margins);
+    settings->SetTiledPDFMargins(margins,unit);
 
     // write Template
     PaperSizeTemplate temp;
     temp = static_cast<PaperSizeTemplate>(ui->comboBoxTemplates->currentData().toInt());
-    const QSizeF size = GetTemplateSize(temp, qApp->patternUnit());
+    const QSizeF size = GetTemplateSize(temp, Unit::Mm);
 
-    settings->SetTiledPDFPaperHeight(size.height());
-    settings->SetTiledPDFPaperWidth(size.width());
+    settings->SetTiledPDFPaperHeight(size.height(),Unit::Mm);
+    settings->SetTiledPDFPaperWidth(size.width(),Unit::Mm);
 
     // write Orientation
     if(ui->toolButtonPortrait->isChecked())

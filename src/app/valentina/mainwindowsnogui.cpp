@@ -1249,28 +1249,20 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     printer->setFullPage(true);
     //printer->setFullPage(ignorePrinterFields);
 
+    QMarginsF pageMargin;
+
     if (not isTiled)
     {
-        left = FromPixel(margins.left(), Unit::Mm);
-        top = FromPixel(margins.top(), Unit::Mm);
-        right = FromPixel(margins.right(), Unit::Mm);
-        bottom = FromPixel(margins.bottom(), Unit::Mm);
+        pageMargin = QMarginsF(UnitConvertor(margins, Unit::Px, Unit::Mm));
     }
     else
     {
         VSettings *settings = qApp->ValentinaSettings();
-        QMarginsF marginTiled = settings->GetTiledPDFMargins();
-
-        // TODO : better usage of Units with the tiled settings.
-
-        left = UnitConvertor(marginTiled.left(), qApp->patternUnit() , Unit::Mm);
-        top = UnitConvertor(marginTiled.top(), qApp->patternUnit() , Unit::Mm);
-        right = UnitConvertor(marginTiled.right(), qApp->patternUnit() , Unit::Mm);
-        bottom = UnitConvertor(marginTiled.bottom(), qApp->patternUnit() , Unit::Mm);
+        pageMargin = QMarginsF(settings->GetTiledPDFMargins(Unit::Mm));
     }
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-    const bool success = printer->setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
+    const bool success = printer->setPageMargins(pageMargin, QPageLayout::Millimeter);
 
     if (not success)
     {
