@@ -214,7 +214,7 @@ void MainWindowsNoGUI::ErrorConsoleMode(const LayoutErrors &state)
             qCritical() << tr("Couldn't prepare data for creation layout");
             break;
         case LayoutErrors::EmptyPaperError:
-            qCritical() << tr("Several workpieces left not arranged, but none of them match for paper");
+            qCritical() << tr("One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.");
             break;
         case LayoutErrors::ProcessStoped:
         default:
@@ -479,6 +479,8 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const DialogSaveLayout &dial
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::PrintPages(QPrinter *printer)
 {
+    VSettings *settings = qApp->ValentinaSettings();
+
     // Here we try understand difference between printer's dpi and our.
     // Get printer rect acording to our dpi.
     const QRectF printerPageRect(0, 0, ToPixel(printer->pageRect(QPrinter::Millimeter).width(), Unit::Mm),
@@ -505,15 +507,25 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
 
     if (isTiled)
     {
+        // when isTiled, the landscape tiles have to be rotated, because the pages
+        // stay portrait in the pdf
+        if(settings->GetTiledPDFOrientation() == PageOrientation::Landscape)
+        {
+            painter.rotate(-90);
+            painter.translate(-ToPixel(printer->pageRect(QPrinter::Millimeter).height(),Unit::Mm), 0);
+        }
+
         poster = QSharedPointer<QVector<PosterData>>(new QVector<PosterData>());
         posterazor = QSharedPointer<VPoster>(new VPoster(printer));
 
         for (int i=0; i < scenes.size(); ++i)
         {
+
             auto *paper = qgraphicsitem_cast<QGraphicsRectItem *>(papers.at(i));
+
             if (paper)
             {
-                *poster += posterazor->Calc(paper->rect().toRect(), i);
+                *poster += posterazor->Calc(paper->rect().toRect(), i, settings->GetTiledPDFOrientation());
             }
         }
 
@@ -905,7 +917,6 @@ void MainWindowsNoGUI::PdfTiledFile(const QString &name)
     }
     QPrinter printer;
     SetPrinterSettings(&printer, PrintType::PrintPDF);
-    printer.setPageSize(QPrinter::A4);// Want to be sure that page size is correct.
 
     // Call IsPagesFit after setting a printer settings and check if pages is not bigger than printer's paper size
     if (not isTiled && not IsPagesFit(printer.paperRect().size()))
@@ -1225,7 +1236,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
             }
         }
 
-        const QPrinter::PageSize pSZ = FindTemplate(size);
+        const QPrinter::PageSize pSZ = FindQPrinterPageSize(size);
         if (pSZ == QPrinter::Custom)
         {
             printer->setPaperSize (size, QPrinter::Millimeter );
@@ -1237,15 +1248,53 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
     }
     else
     {
-        printer->setPaperSize(QPrinter::A4);
+        VSettings *settings = qApp->ValentinaSettings();
+        QSizeF size = QSizeF(
+            settings->GetTiledPDFPaperWidth(Unit::Mm),
+            settings->GetTiledPDFPaperHeight(Unit::Mm)
+
+            );
+        const QPrinter::PageSize pSZ = FindQPrinterPageSize(size);
+        printer->setPaperSize(pSZ);
+        // no need to take custom into account, because custom isn't a format option for tiled pdf.
     }
 
-    printer->setFullPage(ignorePrinterFields);
 
-    const qreal left = FromPixel(margins.left(), Unit::Mm);
-    const qreal top = FromPixel(margins.top(), Unit::Mm);
-    const qreal right = FromPixel(margins.right(), Unit::Mm);
-    const qreal bottom = FromPixel(margins.bottom(), Unit::Mm);
+    printer->setFullPage(true);
+    //printer->setFullPage(ignorePrinterFields);
+
+    qreal left, top, right, bottom;
+
+    if (not isTiled)
+    {
+        QMarginsF pageMargin = QMarginsF(UnitConvertor(margins, Unit::Px, Unit::Mm));
+        left = pageMargin.left();
+        top = pageMargin.top();
+        right = pageMargin.right();
+        bottom = pageMargin.bottom();
+    }
+    else
+    {
+        VSettings *settings = qApp->ValentinaSettings();
+        QMarginsF  pageMargin = QMarginsF(settings->GetTiledPDFMargins(Unit::Mm));
+        if(settings->GetTiledPDFOrientation() == PageOrientation::Landscape)
+        {
+            // because when painting we have a -90rotation in landscape modus,
+            // see function PrintPages.
+            left = pageMargin.bottom();
+            top = pageMargin.left();
+            right = pageMargin.top();
+            bottom = pageMargin.right();
+        }
+        else
+        {
+            left = pageMargin.left();
+            top = pageMargin.top();
+            right = pageMargin.right();
+            bottom = pageMargin.bottom();
+        }
+    }
+
 #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
     const bool success = printer->setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
 
@@ -1325,7 +1374,12 @@ bool MainWindowsNoGUI::IsLayoutGrayscale() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPrinter::PaperSize MainWindowsNoGUI::FindTemplate(const QSizeF &size) const
+/**
+ * @brief MainWindowsNoGUI::FindTemplate
+ * @param size has to be in Mm
+ * @return
+ */
+QPrinter::PaperSize MainWindowsNoGUI::FindQPrinterPageSize(const QSizeF &size) const
 {
     if (size == QSizeF(841, 1189))
     {

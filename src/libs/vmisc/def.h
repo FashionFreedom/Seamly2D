@@ -63,6 +63,8 @@ enum class Source : char { FromGui, FromFile, FromTool };
 enum class NodeUsage : bool {NotInUse = false, InUse = true};
 enum class SelectionType : bool {ByMousePress, ByMouseRelease};
 
+enum class PageOrientation : bool {Portrait = true, Landscape = false};
+
 enum class PieceNodeAngle : unsigned char
 {
     ByLength = 0,
@@ -408,6 +410,7 @@ Q_REQUIRED_RESULT double ToPixel(double val, const Unit &unit);
 Q_REQUIRED_RESULT double FromPixel(double pix, const Unit &unit);
 
 Q_REQUIRED_RESULT qreal UnitConvertor(qreal value, const Unit &from, const Unit &to);
+Q_REQUIRED_RESULT QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &from, const Unit &to);
 
 void InitLanguages(QComboBox *combobox);
 Q_REQUIRED_RESULT QStringList SupportedLocales();
