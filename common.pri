@@ -179,29 +179,35 @@ CONFIG(debug, debug|release){
 }else{
     # Release mode
 
-    macx{
-        HG = /usr/local/bin/hg # Can't defeat PATH variable on Mac OS.
-    }else {
+    #build revision number for using in version
+    #get the short form of the latest commit's changeset hash, i.e. a 12-character hexadecimal string
+
+    #macx{
+    #    HG = /usr/local/bin/hg # Can't defeat PATH variable on Mac OS.
+    ##}else {
         HG = hg # All other platforms are OK.
+    #}
+    macx{
+        GIT = /usr/local/bin/git # Can't defeat PATH variable on Mac OS.
+    }else {
+        GIT = git # All other platforms are OK.
     }
 
-    #build revision number for using in version
-    unix {
-        DVCS_HESH=$$system("$${HG} log -r. --template '{node|short}'")
+    #unix {
+    #    DVCS_HESH=$$system("$${HG} log -r. --template '{node|short}'")
+    #} else {
+    #    # Use escape character before "|" on Windows
+    #    DVCS_HESH=$$system($${HG} log -r. --template "{node^|short}")
+    #}
+    DVCS_HESH=$$system("git rev-parse --short=12 HEAD") #get SHA1 commit hash
+    message("common.pri: Latest commit hash:" $${DVCS_HESH})
+
+    isEmpty(DVCS_HESH){       
+       DVCS_HESH = \\\"unknown\\\" # if we can't find build revision left unknown.
     } else {
-        # Use escape character before "|" on Windows
-        DVCS_HESH=$$system($${HG} log -r. --template "{node^|short}")
+       DVCS_HESH=\\\"Git:$${DVCS_HESH}\\\"
     }
-    isEmpty(DVCS_HESH){
-        DVCS_HESH=$$system("git rev-parse --short HEAD")
-        isEmpty(DVCS_HESH){
-            DVCS_HESH = \\\"unknown\\\" # if we can't find build revision left unknown.
-        } else {
-            DVCS_HESH=\\\"Git:$${DVCS_HESH}\\\"
-        }
-    } else {
-        DVCS_HESH=\\\"Hg:$${DVCS_HESH}\\\"
-    }
+
     return($${DVCS_HESH})
 }
 }
@@ -295,9 +301,10 @@ GCC_DEBUG_CXXFLAGS += \
     -ftrapv
 
 # Good support Q_NULLPTR came later
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 5) {
-GCC_DEBUG_CXXFLAGS += -Wzero-as-null-pointer-constant
-}
+# TODO: uncomment out this GCC_DEBUG_CSSFLAGS flag
+#greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 5) {
+#GCC_DEBUG_CXXFLAGS += -Wzero-as-null-pointer-constant
+#}
 
 # Since GCC 5
 g++5:GCC_DEBUG_CXXFLAGS += \

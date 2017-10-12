@@ -37,7 +37,7 @@ unix {
             }
         }
 
-        message(Qt version: $$QMAKESPEC)
+        message(warnings.pri: Qt version: $$QMAKESPEC)
 
     }
 
