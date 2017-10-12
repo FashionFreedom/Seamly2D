@@ -75,18 +75,42 @@ CONFIG(debug, debug|release){
         }
     }
 
-    macx{
-        HG = /usr/local/bin/hg # Can't defeat PATH variable on Mac OS.
-    }else {
-        HG = hg # All other platforms all OK.
-    }
+    #comment out HG tag & version - slspencer 20171012
+    #macx{
+        #HG = /usr/local/bin/hg # Can't defeat PATH variable on Mac OS.
+    #}else {
+        #HG = hg # All other platforms all OK.
+    #}
     #latest tag distance number for using in version
-    HG_DISTANCE=$$system($${HG} log -r. --template '{latesttagdistance}')
-    isEmpty(HG_DISTANCE){
-        HG_DISTANCE = 0 # if we can't find local revision left 0.
+    #HG_DISTANCE=$$system($${HG} log -r. --template '{latesttagdistance}')
+    #isEmpty(HG_DISTANCE){
+        #HG_DISTANCE = 0 # if we can't find local revision left 0.
+    #}
+    #message("Latest tag distance:" $${HG_DISTANCE})
+    #DEFINES += "LATEST_TAG_DISTANCE=$${HG_DISTANCE}" # Make available latest tag distance number in sources.
+    #DEFINES += HG_VERSION=\\"$$HG_VERSION\\"
+
+    #get latest git tag and it's distance from HEAD
+    macx{
+        GIT = /usr/local/bin/git # Can't defeat PATH variable on Mac OS.
+    }else {
+        GIT = GIT # All other platforms all OK.
     }
-    message("Latest tag distance:" $${HG_DISTANCE})
-    DEFINES += "LATEST_TAG_DISTANCE=$${HG_DISTANCE}" # Make available latest tag distance number in sources.
+
+    # tag is formatted as TAG-N-gSHA:
+    # 1. latest stable version is TAG, or vX.Y.Z
+    # 2. number of commits since latest stable version is N
+    # 3. latest commit is gSHA
+    tag_all = $$system(git describe --tags)
+    tag_split = $$split(tag_all, "-") #split at the dashes
+    GIT_DISTANCE = $$member(tag_split,1) #get 2nd element of results
+
+    isEmpty(GIT_DISTANCE){
+        GIT_DISTANCE = 0 # if we can't find local revision left 0.
+    }
+    message("vtest.pro: Latest tag distance:" $${GIT_DISTANCE})
+    DEFINES += "LATEST_TAG_DISTANCE=$${GIT_DISTANCE}" # Make available latest tag distance number in sources.
+    DEFINES += GIT_VERSION=\\"$$GIT_VERSION\\"
 }
 
 include (../libs.pri)

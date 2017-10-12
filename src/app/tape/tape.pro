@@ -304,7 +304,7 @@ CONFIG(release, debug|release){
         # Turn on debug symbols in release mode on Unix systems.
         # On Mac OS X temporarily disabled. Need find way how to strip binary file.
         !macx:!*msvc*{
-            QMAKE_CXXFLAGS_RELEASE += -g -gdwarf-3
+            QMAKE_CXXFLAGS_RELEASE   += -g -gdwarf-3
             QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
             QMAKE_LFLAGS_RELEASE =
         }
@@ -312,7 +312,7 @@ CONFIG(release, debug|release){
 }
 
 DVCS_HESH=$$FindBuildRevision()
-message("Build revision:" $${DVCS_HESH})
+message("tape.pro: Build revision:" $${DVCS_HESH})
 DEFINES += "BUILD_REVISION=$${DVCS_HESH}" # Make available build revision number in sources.
 
 # Path to recource file.

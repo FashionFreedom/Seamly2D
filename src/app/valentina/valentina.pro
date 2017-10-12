@@ -95,22 +95,22 @@ CONFIG(release, debug|release){
 }
 
 DVCS_HESH=$$FindBuildRevision()
-message("Build revision:" $${DVCS_HESH})
+message("valentina.pro: Build revision:" $${DVCS_HESH})
 DEFINES += "BUILD_REVISION=$${DVCS_HESH}" # Make available build revision number in sources.
 
 # Some extra information about Qt. Can be usefull.
-message(Qt version: $$[QT_VERSION])
-message(Qt is installed in $$[QT_INSTALL_PREFIX])
-message(Qt resources can be found in the following locations:)
-message(Documentation: $$[QT_INSTALL_DOCS])
-message(Header files: $$[QT_INSTALL_HEADERS])
-message(Libraries: $$[QT_INSTALL_LIBS])
-message(Binary files (executables): $$[QT_INSTALL_BINS])
-message(Plugins: $$[QT_INSTALL_PLUGINS])
-message(Data files: $$[QT_INSTALL_DATA])
-message(Translation files: $$[QT_INSTALL_TRANSLATIONS])
-message(Settings: $$[QT_INSTALL_SETTINGS])
-message(Examples: $$[QT_INSTALL_EXAMPLES])
+message(valentina.pro: Qt version: $$[QT_VERSION])
+message(valentina.pro: Qt is installed in $$[QT_INSTALL_PREFIX])
+message(valentina.pro: Qt resources can be found in the following locations:)
+message(valentina.pro: Documentation: $$[QT_INSTALL_DOCS])
+message(valentina.pro: Header files: $$[QT_INSTALL_HEADERS])
+message(valentina.pro: Libraries: $$[QT_INSTALL_LIBS])
+message(valentina.pro: Binary files (executables): $$[QT_INSTALL_BINS])
+message(valentina.pro: Plugins: $$[QT_INSTALL_PLUGINS])
+message(valentina.pro: Data files: $$[QT_INSTALL_DATA])
+message(valentina.pro: Translation files: $$[QT_INSTALL_TRANSLATIONS])
+message(valentina.pro: Settings: $$[QT_INSTALL_SETTINGS])
+message(valentina.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 
 # Path to recource file.
 win32:RC_FILE = share/resources/valentina.rc
@@ -427,7 +427,7 @@ win32:*g++* {
             build_package.depends = $${MANGLED_INSTALLS}
             INSTALLS += build_package
         } else {
-            message("Inno Setup was not found!")
+            message("valentina.pro: Inno Setup was not found!")
         }
     }
 }
