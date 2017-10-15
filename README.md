@@ -20,17 +20,20 @@ Main repository            https://github.com/valentina-project/vpo2
 
 Compiling Valentina
 ====================
-See this thread on forum for building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833
+See this thread on forum for building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833  
+
 Prerequisites:   
-   * Qt 5.7.0 or later (On Unix, more development packages are needed) 
-   * Qt Creator 4.3.1 or later
+   * Qt 5.7.0 or later (to provide Qt widgets)
+   * Qt Creator 4.3.1 or later (to build code)
+   * Qt Chooser (to maintain Qt)
    * git (for working with repository)   
    * On Unix:     
      - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or
        clang (clang 3.4 recommended)
      - xpdf (tool pdftops). 
-     - additional packages needed for building on Ubuntu: -  mesa-utils for Open GL
-                                                          -  ccache for building quickly (after building code once)
+     - additional packages needed for building on Ubuntu: 
+     - - mesa-utils (for Open GL)
+     - - ccache (for quick build time after building code once)
    * On Windows:   
      - MinGW  
      - Xpdf is an open source viewer for Portable Document Format (PDF) 
@@ -39,17 +42,17 @@ Prerequisites:
 
 The installed toolchains have to match the one Qt was compiled with.
 
-You can build Valentina with
+You can build Valentina within the <em>Qt Creator</em> IDE (see forum post above), or build with Qt's <em>qmake</em> from terminal window:
 
     cd $SOURCE_DIRECTORY\build
     qmake ..\Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
     make (or mingw32-make or nmake or jom, depending on your platform)
 
-Note: On some platforms e.g. Fedora, all Qt-tools come as qmake-qt5, etc. In this case you should install qtchooser. This wrapper resolves the Qt version with respect to QT_SELECT. So run 
+Note: On some platforms e.g. Fedora, all Qt-tools come as qmake-qt5, etc. In this case you should install <em>qtchooser</em>. This wrapper resolves the Qt version with respect to QT_SELECT. So run 
 
     export QT_SELECT=5
 
-prior to qmake. You will not come along with just using qmake-qt5 here.
+prior to running <em>qmake</em>. You will not come along with just using <em>qmake-qt5</em> here.
 
 Note: In order to build and use Valentina, the PATH environment variable needs to be extended to locate qmake, moc and other Qt tools. This is done by adding your Qt's installation path (eg c:\Qt\%VERSION%\bin) to the PATH variable. Check your Qt installation to find the correct path to enter. 
 
@@ -65,6 +68,7 @@ Default prefix for command "make install" is /usr. For using another prefix buil
     qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
 
 where /usr/local is a new prefix for installation binary files and /usr/lib/i386-linux-gnu is new prefix for install libraries.
+If you use QtChooser to update and set the latest QT version as your default, and within the QtCreator IDE you define your compiler and compiler kit, and assign the compiler kit to your project, then issues with prefixes are taken care of automatically when you run 'Build/Run Qmake' followed by 'Build/Build All'.
 
 LICENSING
 ==========
@@ -84,14 +88,4 @@ Other components released under:
 * QMuParser - BSD license
 * VPropertyExplorer - LGPLv2.1 license
 © 2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
+
