@@ -67,8 +67,9 @@ Default prefix for command "make install" is /usr. For using another prefix buil
 
     qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
 
-where /usr/local is a new prefix for installation binary files and /usr/lib/i386-linux-gnu is new prefix for install libraries.
-If you use QtChooser to update and set the latest QT version as your default, and within the QtCreator IDE you define your compiler and compiler kit, and assign the compiler kit to your project, then issues with prefixes are taken care of automatically when you run 'Build/Run Qmake' followed by 'Build/Build All'.
+where /usr/local is a new prefix for installation binary files and /usr/lib/i386-linux-gnu is new prefix for install libraries.  
+
+Note: If you use <em>QtChooser</e,> to update and set the latest QT as default, and within the <em>QtCreator</em> IDE you define your compiler and compiler kit, and assign the compiler kit to your project, then there's no need to export or define path prefixes, this is automatically set in Qt. Your operating system's path to your Qt executable files is still required in PATH system variable via your Linux's .bashrc or Windows' Control Panel.
 
 LICENSING
 ==========
