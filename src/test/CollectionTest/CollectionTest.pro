@@ -209,25 +209,25 @@ VALENTINA_TEST_FILES += \
     tst_valentina/issue_256_correct.vit \
     tst_valentina/issue_256_wrong.vit \
     tst_valentina/issue_256_correct.vst \
-    tst_valentina/issue_256_wrong.vit \
+    tst_valentina/issue_256_wrong.vst \
     tst_valentina/wrong_formula.val
 
 COLLECTION_FILES += \
     $${PWD}/../../app/share/tables/multisize/GOST_man_ru.vst \
     $${PWD}/../../app/share/collection/bra.val \
     $${PWD}/../../app/share/collection/bra.vit \
-    $${PWD}/../../app/share/collection/jacketМ1_52-176.val \
-    $${PWD}/../../app/share/collection/jacketМ2_40-146.val \
-    $${PWD}/../../app/share/collection/jacketМ3_40-146.val \
-    $${PWD}/../../app/share/collection/jacketМ4_40-146.val \
-    $${PWD}/../../app/share/collection/jacketМ5_30-110.val \
-    $${PWD}/../../app/share/collection/jacketМ6_30-110.val \
-    $${PWD}/../../app/share/collection/pantsМ1_52-176.val \
-    $${PWD}/../../app/share/collection/pantsМ2_40-146.val \
-    $${PWD}/../../app/share/collection/pantsМ7.val \
+    $${PWD}/../../app/share/collection/jacket1_52-176.val \
+    $${PWD}/../../app/share/collection/jacket2_40-146.val \
+    $${PWD}/../../app/share/collection/jacket3_40-146.val \
+    $${PWD}/../../app/share/collection/jacket4_40-146.val \
+    $${PWD}/../../app/share/collection/jacket5_30-110.val \
+    $${PWD}/../../app/share/collection/jacket6_30-110.val \
+    $${PWD}/../../app/share/collection/pants1_52-176.val \
+    $${PWD}/../../app/share/collection/pants2_40-146.val \
+    $${PWD}/../../app/share/collection/pants7.val \
     $${PWD}/../../app/share/collection/TShirt_test.val \
     $${PWD}/../../app/share/collection/TestDart.val \
-    $${PWD}/../../app/share/collection/patrón_blusa.val \
+    $${PWD}/../../app/share/collection/patron_blusa.val \
     $${PWD}/../../app/share/collection/blusa.vit \
     $${PWD}/../../app/share/collection/PajamaTopWrap2.val \
     $${PWD}/../../app/share/collection/Susan.vit \

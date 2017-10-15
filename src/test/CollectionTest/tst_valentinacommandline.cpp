@@ -233,19 +233,15 @@ void TST_ValentinaCommandLine::TestOpenCollection_data() const
     const QString keyTest = QStringLiteral("--test");
 
     QTest::newRow("bra")               << "bra.val"               << keyTest  << V_EX_OK;
-#ifdef Q_OS_WIN
-    Q_UNUSED(testGOST)
-#else
-    QTest::newRow("jacketМ1_52-176")   << "jacketМ1_52-176.val"   << testGOST << V_EX_OK;
-    QTest::newRow("jacketМ2_40-146")   << "jacketМ2_40-146.val"   << testGOST << V_EX_OK;
-    QTest::newRow("jacketМ3_40-146")   << "jacketМ3_40-146.val"   << testGOST << V_EX_OK;
-    QTest::newRow("jacketМ4_40-146")   << "jacketМ4_40-146.val"   << testGOST << V_EX_OK;
-    QTest::newRow("jacketМ5_30-110")   << "jacketМ5_30-110.val"   << testGOST << V_EX_OK;
-    QTest::newRow("jacketМ6_30-110")   << "jacketМ6_30-110.val"   << testGOST << V_EX_OK;
-    QTest::newRow("pantsМ1_52-176")    << "pantsМ1_52-176.val"    << testGOST << V_EX_OK;
-    QTest::newRow("pantsМ2_40-146")    << "pantsМ2_40-146.val"    << testGOST << V_EX_OK;
-    QTest::newRow("pantsМ7")           << "pantsМ7.val"           << testGOST << V_EX_OK;
-#endif
+    QTest::newRow("jacket1_52-176")   << "jacket1_52-176.val"   << testGOST << V_EX_OK;
+    QTest::newRow("jacket2_40-146")   << "jacket2_40-146.val"   << testGOST << V_EX_OK;
+    QTest::newRow("jacket3_40-146")   << "jacket3_40-146.val"   << testGOST << V_EX_OK;
+    QTest::newRow("jacket4_40-146")   << "jacket4_40-146.val"   << testGOST << V_EX_OK;
+    QTest::newRow("jacket5_30-110")   << "jacket5_30-110.val"   << testGOST << V_EX_OK;
+    QTest::newRow("jacket6_30-110")   << "jacket6_30-110.val"   << testGOST << V_EX_OK;
+    QTest::newRow("pants1_52-176")    << "pants1_52-176.val"    << testGOST << V_EX_OK;
+    QTest::newRow("pants2_40-146")    << "pants2_40-146.val"    << testGOST << V_EX_OK;
+    QTest::newRow("pants7")           << "pants7.val"           << testGOST << V_EX_OK;
     QTest::newRow("TShirt_test")       << "TShirt_test.val"       << keyTest  << V_EX_OK;
     QTest::newRow("TestDart")          << "TestDart.val"          << keyTest  << V_EX_OK;
     QTest::newRow("MaleShirt")         << "MaleShirt.val"         << keyTest  << V_EX_OK;
@@ -253,8 +249,7 @@ void TST_ValentinaCommandLine::TestOpenCollection_data() const
     QTest::newRow("Basic block women")      << "Basic_block_women-2016.val" << keyTest << V_EX_OK;
     QTest::newRow("Gent Jacket with tummy") << "Gent_Jacket_with_tummy.val" << keyTest << V_EX_OK;
     QTest::newRow("Steampunk_trousers")     << "Steampunk_trousers.val"     << keyTest << V_EX_OK;
-#ifndef Q_OS_WIN
-    QTest::newRow("patrón_blusa")      << "patrón_blusa.val"      << keyTest  << V_EX_OK;
+    QTest::newRow("patron_blusa")      << "patron_blusa.val"      << keyTest  << V_EX_OK;
     QTest::newRow("PajamaTopWrap2")    << "PajamaTopWrap2.val"    << keyTest  << V_EX_OK;
     QTest::newRow("Keiko_skirt")       << "Keiko_skirt.val"       << keyTest  << V_EX_OK;
     QTest::newRow("pantalon_base_Eli") << "pantalon_base_Eli.val" << keyTest  << V_EX_OK;
@@ -262,8 +257,6 @@ void TST_ValentinaCommandLine::TestOpenCollection_data() const
     QTest::newRow("IMK_Zhaketa")       << "IMK_Zhaketa_poluprilegayuschego_silueta.val" << keyTest << V_EX_OK;
     QTest::newRow("Moulage_0.5_armhole_neckline") << "Moulage_0.5_armhole_neckline.val" << keyTest << V_EX_OK;
     QTest::newRow("0.7_Armhole_adjustment_0.10")  << "0.7_Armhole_adjustment_0.10.val"  << keyTest << V_EX_OK;
-#endif
-    // We have a problem with encoding in Windows when we try to open some files in terminal
 }
 
 //---------------------------------------------------------------------------------------------------------------------
