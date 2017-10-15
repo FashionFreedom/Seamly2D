@@ -29,7 +29,8 @@ Prerequisites:
    * Qt Creator 4.3.1 or later (to build code)
    * Qt Chooser (to maintain Qt)
    * git (for working with repository)   
-   * On Unix:     
+   * On Unix: 
+     Ubuntu:
      - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), current 5.0 (2017)):
        > sudo apt-get build-essential  
        > sudo apt-get install g++-4.8        
@@ -40,7 +41,9 @@ Prerequisites:
      - - mesa-utils (for Open GL)  
        > sudo apt-get install mesa-utils  
      - - ccache (for quick build time after building code once) 
-       >  sudo apt-get install ccache  
+       >  sudo apt-get install ccache 
+     - - qt build libraries
+       > sudo apt-get install qtdeclarative5-dev
    * On Windows:     
      - MinGW v5.0.2 from http://mingw-w64.org/doku.php       
      - Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe 
