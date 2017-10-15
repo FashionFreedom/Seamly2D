@@ -20,7 +20,9 @@ Main repository            https://github.com/valentina-project/vpo2
 
 Compiling Valentina
 ====================
-See this thread on forum for building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833  
+
+Download open source Qt 5.x binaries and latest Qt Creator: https://www1.qt.io/download-open-source
+See this thread on forum for building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833 
 
 Prerequisites:   
    * Qt 5.7.0 or later (to provide Qt widgets)
@@ -28,16 +30,20 @@ Prerequisites:
    * Qt Chooser (to maintain Qt)
    * git (for working with repository)   
    * On Unix:     
-     - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or
-       clang (clang 3.4 recommended)
-     - xpdf (tool pdftops). 
-     - additional packages needed for building on Ubuntu: 
-     - - mesa-utils (for Open GL)
-     - - ccache (for quick build time after building code once)
-   * On Windows:   
-     - MinGW  
-     - Xpdf is an open source viewer for Portable Document Format (PDF) 
-     files. Website http://www.foolabs.com/xpdf/. Put tool pdftops.exe 
+     - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014, current 5.0 (2017)):
+       > sudo apt-get build-essential  
+       > sudo apt-get install g++-4.8        
+       > sudo apt-get install clang-5.0 lldb-5.0 lld-5.0       
+     - xpdf (pdftops in poppler-utils 0.41.0)
+       > sudo apt-get install poppler-utils  
+     - additional packages needed for building on Ubuntu:   
+     - - mesa-utils (for Open GL)  
+       > sudo apt-get install mesa-utils  
+     - - ccache (for quick build time after building code once) 
+       >  sudo apt-get install ccache  
+   * On Windows:     
+     - MinGW v5.0.2 from http://mingw-w64.org/doku.php       
+     - Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe 
      in the same directory with Valentina's binary file.
 
 The installed toolchains have to match the one Qt was compiled with.
