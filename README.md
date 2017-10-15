@@ -30,7 +30,7 @@ Prerequisites:
    * Qt Chooser (to maintain Qt)
    * git (for working with repository)   
    * On Unix:     
-     - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014, current 5.0 (2017)):
+     - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), current 5.0 (2017)):
        > sudo apt-get build-essential  
        > sudo apt-get install g++-4.8        
        > sudo apt-get install clang-5.0 lldb-5.0 lld-5.0       
