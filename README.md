@@ -20,13 +20,17 @@ Main repository            https://github.com/valentina-project/vpo2
 
 Compiling Valentina
 ====================
+See this thread on forum for building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833
 Prerequisites:   
-   * Qt 5.2.0 or later (On Unix development packages needed)   
-   * git (only for working with repository)   
+   * Qt 5.7.0 or later (On Unix, more development packages are needed) 
+   * Qt Creator 4.3.1 or later
+   * git (for working with repository)   
    * On Unix:     
      - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or
        clang (clang 3.4 recommended)
-     - xpdf package (tool pdftops).    
+     - xpdf (tool pdftops). 
+     - additional packages needed for building on Ubuntu: -  mesa-utils for Open GL
+                                                          -  ccache for building quickly (after building code once)
    * On Windows:   
      - MinGW  
      - Xpdf is an open source viewer for Portable Document Format (PDF) 
