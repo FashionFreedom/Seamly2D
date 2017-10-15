@@ -21,37 +21,52 @@ Main repository            https://github.com/valentina-project/vpo2
 Compiling Valentina
 ====================
 
-Download open source Qt 5.x binaries and latest Qt Creator: https://www1.qt.io/download-open-source
-See this thread on forum for building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833 
+See forum thread on building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833 
 
-Prerequisites:   
-   * Qt 5.7.0 or later (to provide Qt widgets)
-   * Qt Creator 4.3.1 or later (to build code)
-   * Qt Chooser (to maintain Qt)
-   * git (for working with repository)   
-   * On Unix: 
-     Ubuntu:
-     - g++ (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), current 5.0 (2017)):
-       > sudo apt-get build-essential  
-       > sudo apt-get install g++-4.8        
-       > sudo apt-get install clang-5.0 lldb-5.0 lld-5.0       
-     - xpdf (pdftops in poppler-utils 0.41.0)
-       > sudo apt-get install poppler-utils  
-     - additional packages needed for building on Ubuntu:   
-     - - mesa-utils (for Open GL)  
-       > sudo apt-get install mesa-utils  
+Basic Prerequisites:   
+   * Qt 5.7.0 or later https://www1.qt.io/download-open-source (included in Qt install)
+   * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)
+   * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)
+   * git (for working with repository)  https://git-scm.com/downloads
+   
+Additional:
+   ________
+   * <em>Unix</em>: 
+     - g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), current 5.0 (2017))
+     - xpdf (pdftops)
+     - OpenGL libraries
+     - Qt build libraries
+     <em>Fedora</em>:
+       > sudo yum groupinstall "C Development Tools and Libraries"
+       > sudo yum install mesa-libGL-devel
+     <em>Suse</em>:
+       > sudo zypper install -t pattern devel_basis
+     <em>Ubuntu</em>:
+     - g++ 
+       > sudo apt-get install build-essential  
+       > sudo apt-get install g++-4.8   
+     - clang (optional)
+       > sudo apt-get install clang-5.0 lldb-5.0 lld-5.0         
+     - xpdf (pdftops in poppler-utils 0.41.0)  
+       > sudo apt-get install poppler-utils   
+     - mesa-utils (for Open GL)  
+       > sudo apt-get install mesa-utils libgl1-mesa-dev       
      - - ccache (for quick build time after building code once) 
        >  sudo apt-get install ccache 
      - - qt build libraries
-       > sudo apt-get install qtdeclarative5-dev
-   * On Windows:     
+       > sudo apt-get install qtdeclarative5-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev
+       > sudo apt-get install libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev 
+       ________
+   * <em>MAC OSX</em>:
+   ________
+   * <em>Windows</em>:     
      - MinGW v5.0.2 from http://mingw-w64.org/doku.php       
      - Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe 
      in the same directory with Valentina's binary file.
 
 The installed toolchains have to match the one Qt was compiled with.
 
-You can build Valentina within the <em>Qt Creator</em> IDE (see forum post above), or build with Qt's <em>qmake</em> from terminal window:
+You can build from within the <em>QtCreator</em> IDE (see forum post above), or build with Qt's <em>qmake</em> from a terminal window:
 
     cd $SOURCE_DIRECTORY\build
     qmake ..\Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
