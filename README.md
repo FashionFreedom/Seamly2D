@@ -1,11 +1,11 @@
 Valentina / LibreFashion
 ====================
 
-Valentina / LibreFashion uses couture and bespoke pattern techniques with time-saving, digital workflows to create reusable, scalable, sharable patterns with perfect fit.
+Valentina / LibreFashion creates reusable, scalable, sharable patterns with perfect fit using couture and bespoke pattern techniques. Valentina / LibreFashion saves designers and patternmakers time and improves quality by redefining patterns as accurate, reusable parametric CAD engineering documents.
 
-Designers have complete control of the patternmaking process. Each reusable pattern can use multi-size tables for boutique sizing *and* individual measurements for custom-fit.
+Designers have complete control of the patternmaking process. Each reusable, scalable pattern can use multi-size tables for boutique sizing *and* individual measurements for custom-fit.
 
-Valentina / LibreFashion is open source software with GPLv3+ license.  It is available for Windows, OSX, and Linux.   
+Valentina / LibreFashion is open source software with GPLv3+ license.  It is available for Windows, OSX, and Linux.  Valentina / LibreFashion has an active, friendly user forum at https://forum.valentina-project.org 
 
 Supported platforms:  
    * Windows XP SP2 (32-bit) or later   
