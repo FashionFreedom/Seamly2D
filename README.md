@@ -31,38 +31,40 @@ Basic Prerequisites:
    
 Additional:
    ________
-   * <em>Unix</em>: 
+   * <em>Unix</em>:   
      - g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), current 5.0 (2017))
      - xpdf (pdftops)
      - OpenGL libraries
-     - Qt build libraries
-     <em>Fedora</em>:
-       > sudo yum groupinstall "C Development Tools and Libraries"
-       > sudo yum install mesa-libGL-devel
-     <em>Suse</em>:
-       > sudo zypper install -t pattern devel_basis
-     <em>Ubuntu</em>:
-     - g++ 
-       > sudo apt-get install build-essential  
-       > sudo apt-get install g++-4.8   
-     - clang (optional)
-       > sudo apt-get install clang-5.0 lldb-5.0 lld-5.0         
-     - xpdf (pdftops in poppler-utils 0.41.0)  
-       > sudo apt-get install poppler-utils   
+     - Qt build libraries   
+     Linux distro installation:  
+     <em>Fedora</em>:  
+       sudo yum groupinstall "C Development Tools and Libraries"  
+       sudo yum install mesa-libGL-devel  
+     <em>Suse</em>:  
+       sudo zypper install -t pattern devel_basis  
+     <em>Ubuntu</em>:  
+     - g++   
+       sudo apt-get install build-essential    
+       sudo apt-get install g++-4.8   
+     - clang (optional)  
+       sudo apt-get install clang-5.0 lldb-5.0 lld-5.0           
+     - xpdf (pdftops in poppler-utils 0.41.0)    
+       sudo apt-get install poppler-utils   
      - mesa-utils (for Open GL)  
-       > sudo apt-get install mesa-utils libgl1-mesa-dev       
+       sudo apt-get install mesa-utils libgl1-mesa-dev       
      - - ccache (for quick build time after building code once) 
-       >  sudo apt-get install ccache 
-     - - qt build libraries
-       > sudo apt-get install qtdeclarative5-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev
-       > sudo apt-get install libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev 
-       ________
-   * <em>MAC OSX</em>:
-   ________
-   * <em>Windows</em>:     
-     - MinGW v5.0.2 from http://mingw-w64.org/doku.php       
+       sudo apt-get install ccache 
+     - - qt build libraries    
+       sudo apt-get install qtdeclarative5-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev  
+       sudo apt-get install libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev   
+   ________  
+   * <em>MAC OSX</em>:    
+   ________  
+   * <em>Windows</em>:       
+     - MinGW v5.0.2 from http://mingw-w64.org/doku.php         
      - Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe 
-     in the same directory with Valentina's binary file.
+     in the same directory with Valentina's binary file.  
+   ________
 
 The installed toolchains have to match the one Qt was compiled with.
 
