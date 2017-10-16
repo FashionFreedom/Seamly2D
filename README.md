@@ -20,9 +20,9 @@ Forum                      https://forum.valentina-project.org/
 Translations               https://www.transifex.com/organization/valentina   
 PPA for Ubuntu (develop)   (soon) ...    
 PPA for Ubuntu (test)      (soon) ...    
-IRC channel                #valentina on irc.freenode.net  
-Main repository            https://github.com/valentina-project/vpo2 
-Doxygen docs               https://valentina-project.github.io/
+IRC channel                #valentina on irc.freenode.net   
+Main repository            https://github.com/valentina-project/vpo2   
+Doxygen docs               https://valentina-project.github.io/  
 
 Building Valentina / LibreFashion
 ================
