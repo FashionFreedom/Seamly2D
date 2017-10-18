@@ -4,7 +4,7 @@ matrix:
   - os: linux
     dist: trusty
     sudo: required
-    compiler: clang
+    compiler: gcc
     env: 
     - DEPLOY=false
     - CCACHE_CPP2=yes
@@ -18,6 +18,7 @@ matrix:
 before_install:
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
     sudo apt-get -qq update;
     sudo apt-get install -y qtbase5-dev;
     sudo apt-get install -y libqt5svg5-dev;
@@ -33,6 +34,7 @@ before_install:
     sudo apt-get install -y libqt5xmlpatterns5;
     sudo apt-get install -y xpdf;
     sudo apt-get install -y xvfb;
+    sudo apt-get install -y g++-5
     wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
     sudo dpkg -i ccache_3.3.4-1_amd64.deb;
   else
