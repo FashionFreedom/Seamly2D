@@ -21,10 +21,10 @@ before_install:
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
     sudo add-apt-repository -y ppa:beineri/opt-qt562-trusty
     sudo apt-get -qq update;
+    sudo apt-get install -y qt56-meta-full;
     sudo apt-get install -y xpdf;
     sudo apt-get install -y xvfb;
     sudo apt-get install -y g++-5;
-    sudo apt-get install -qq qt56base; source /opt/qt56/bin/qt56-env.sh;
     wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
     sudo dpkg -i ccache_3.3.4-1_amd64.deb;
   else
@@ -36,7 +36,7 @@ before_script:
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     uname -a;
-    which qmake;
+    which /opt/qt56/bin/qmake;
   else
     QTDIR="/usr/local/opt/qt5";
     PATH="$QTDIR/bin:$PATH";
