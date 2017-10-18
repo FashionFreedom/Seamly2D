@@ -19,25 +19,12 @@ before_install:
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-    sudo add-apt-repository ppa:beineri/opt-qt562-trusty -y
+    sudo add-apt-repository -y ppa:beineri/opt-qt562-trusty
     sudo apt-get -qq update;
-#    sudo apt-get install -y qtbase5-dev;
-#    sudo apt-get install -y libqt5svg5-dev;
-#    sudo apt-get install -y qt5-default;
-#    sudo apt-get install -y qttools5-dev-tools;
-#    sudo apt-get install -y libqt5xmlpatterns5-dev;
-#    sudo apt-get install -y libqt5core5a;
-#    sudo apt-get install -y libqt5gui5;
-#    sudo apt-get install -y libqt5printsupport5;
-#    sudo apt-get install -y libqt5svg5;
-#    sudo apt-get install -y libqt5widgets5;
-#    sudo apt-get install -y libqt5xml5;
-#    sudo apt-get install -y libqt5xmlpatterns5;
     sudo apt-get install -y xpdf;
     sudo apt-get install -y xvfb;
-    sudo apt-get install -y g++-5
+    sudo apt-get install -y g++-5;
     sudo apt-get install -qq qt55base; source /opt/qt55/bin/qt55-env.sh;
-
     wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
     sudo dpkg -i ccache_3.3.4-1_amd64.deb;
   else
