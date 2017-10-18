@@ -50,14 +50,18 @@ ________________
          
 <em>Ubuntu</em>:  
 
+    sudo apt-get install xpdf
     sudo apt-get install build-essential    
-    sudo apt-get install g++-4.8 
+    sudo apt-get install g++ 
     sudo apt-get install clang  
     sudo apt-get install poppler-utils 
     sudo apt-get install mesa-utils libgl1-mesa-dev
     sudo apt-get install ccache 
     sudo apt-get install qtdeclarative5-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev  
     sudo apt-get install libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev  
+    # launchpad build tools
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
     
 ________________
 
