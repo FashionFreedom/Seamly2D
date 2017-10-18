@@ -499,7 +499,7 @@ CLANG_DEBUG_CXXFLAGS += \
     -Wincomplete-implementation \
     -Wincomplete-module \
     -Wincomplete-umbrella \
-    -Winherited-variadic-ctor \
+    #-Winherited-variadic-ctor \
     -Winit-self \
     -Winitializer-overrides \
 #    -Winline \
@@ -590,7 +590,7 @@ CLANG_DEBUG_CXXFLAGS += \
     -Wreadonly-iboutlet-property \
     -Wreceiver-expr \
     -Wreceiver-forward-class \
-    -Wreceiver-is-weak \
+    #-Wreceiver-is-weak \
     -Wredundant-decls \
     -Wreinterpret-base-class \
     -Wreorder \
