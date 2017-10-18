@@ -52,7 +52,7 @@ ________________
 
     sudo apt-get install build-essential    
     sudo apt-get install g++-4.8 
-    sudo apt-get install clang-5.0 lldb-5.0 lld-5.0  
+    sudo apt-get install clang  
     sudo apt-get install poppler-utils 
     sudo apt-get install mesa-utils libgl1-mesa-dev
     sudo apt-get install ccache 
