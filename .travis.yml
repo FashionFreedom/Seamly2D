@@ -21,7 +21,11 @@ before_install:
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
     sudo add-apt-repository -y ppa:beineri/opt-qt562-trusty
     sudo apt-get -qq update;
-    sudo apt-get install -y qt56-meta-full;
+    sudo apt-get install -y qtbase5-dev;
+    sudo apt-get install -y qt56svg;
+    sudo apt-get install -y qt56xmlpatterns;
+    sudo apt-get install -y qt56imageformats;
+    sudo apt-get install -y qt56tools;
     sudo apt-get install -y xpdf;
     sudo apt-get install -y xvfb;
     sudo apt-get install -y g++-5;
@@ -50,7 +54,7 @@ before_script:
 - /opt/qt56/bin/qmake --version
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    /opt/qt56/bin/qmake ../Valentina.pro -r -spec linux-clang CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
+    /opt/qt56/bin/qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
   else
     qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings CONFIG+=noTests;
   fi
