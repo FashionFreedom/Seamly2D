@@ -41,17 +41,18 @@ before_script:
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     uname -a;
     which /opt/qt56/bin/qmake;
+    /opt/qt56/bin/qmake --version;
   else
     QTDIR="/usr/local/opt/qt5";
     PATH="$QTDIR/bin:$PATH";
     LDFLAGS=-L$QTDIR/lib;
     CPPFLAGS=-I$QTDIR/include;
     PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;
+    qmake --version;
   fi
 - mkdir build
 - cd build
 - pwd
-- /opt/qt56/bin/qmake --version
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     /opt/qt56/bin/qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
