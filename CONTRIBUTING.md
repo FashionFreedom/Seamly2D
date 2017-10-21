@@ -1,40 +1,73 @@
-# Before pull request
+# Contributing code
 
-This page describes how to create a pull request. We highly recommend you to read this page before you will decide to send us your changes.
+We highly recommend that you read this page before you clone the repo and start making changes. 
+
+Our workflow is based on "Git Flow".    
+Read more about git flow branch development here: http://nvie.com/posts/a-successful-git-branching-model/  
+Read the Github tutorials about making Pull Requests https://help.github.com/articles/about-pull-requests/ and https://help.github.com/articles/creating-a-pull-request/  
 
 ## Named branches
 
-First you should know little bit about our workflow. Right now we work with several named branches.
-Read more about git flow branch development here: http://nvie.com/posts/a-successful-git-branching-model/
+We have a naming scheme for branches, based on "Git Flow":
 
-* *master* - Used only for releases.
-* *develop* - Contains the next major release. Used for testing and sharing among developers. 
-* *release-x.x.x* - Created from *develop*. Feature freeze state before the next major release. Used for preparing each major & minor release. Merged into *master* with new tag info to create a release.
-* *feature-xxx* - Created from *develop*. Contains code for unfinished features. Multiple programmers can work on a *feature*. Merged to *develop*.
-* *hotfix-x.x.x* - Created from *develop* and *master*. Contains a quick fix for current release (or proposed release). Merged to *master* (or *release*) and *develop*.
+* **master** - Used only for releases.
+* **develop** - Contains next major release. Used for testing and sharing among developers. 
+* **release-x.x.x** - Create from **develop**. Contains feature freeze state before the next major release. Used for preparing each major & minor release with updated build information. Merge to **master** with new tag to create a new release.
+* **feature-_issue#_** - Create from **develop**. Contains code for new or improved features. Merge to **develop**.
+* **hotfix-x.x.x** - Create from **develop** and **master**. Contains a quick fix. Merge to **master** (or **release**) and **develop**.
 
 
-## Submitting your code
+### Create your feature branch
 
-Before creating a pull request:
-
-- Read the Github tutorials about making Pull Requests (https://help.github.com/articles/about-pull-requests/) and (https://help.github.com/articles/creating-a-pull-request/)
-- Pull latest code and checkout the develop branch. Create your feature branch. You should use **feature-\<issue#\>**
+Get the latest code & create your **feature-_issue#_** branch.  Include the issue number that you're working on.
 
 > git pull  
-git checkout develop    
-git checkout -b feature-\<issue#\>    #creates feature branch  
-git checkout feature-\<issue#\>n      #switches to feature branch  
+git checkout develop                 
+git checkout -b feature-_issue#_   
+git checkout feature-_issue#_      
+#make your code changes then commit...
+git commit -a
+git commit -m "_your commit message_"
+git commit push feature-_issue#_   
 
-- now make your changes to your **feature** branch
-- Be sure you use correct branch for your changes. **This is the most popular mistake.**
+If you don't have rights to create a branch, contact the maintainer - they will give you rights.
 
-- Add correct description for your pull request. It should be "**Resolved (or Fixed) issue #XXX. <Text of an issue description>**". Where XXX is a number of issue in the Issue Tracker.
-- Don't forget!!!Add your changes to file ChangeLog.txt!!!
-- Merge your local **feature** branch with your local **develop** branch. Fix any issues which arise.
-- Then push your local **feature** branch to project repo:
--- git push origin feature-\<issue#\>
-- Then make a pull request on the repo so that the maintainer can merge your changes into the develop branch.
+
+### Follow the daily code routine - important!
+
+Check daily for **develop** updates & merge into **feature-_issue#_**
+
+>git checkout develop
+git pull
+git checkout feature-_issue#_
+git merge develop
+#make your code changes then commit...
+git commit -a
+git commit -m "_your commit message_"
+git push origin  feature-_issue#_    #save your changes to repo!
+
+Periodically test your code by building in QtCreator and running the app.
+Checkout your feature branch before building in Qt! 
+No need to build the develop branch :)
+
+
+### When you're ready to submit your feature branch
+
+Build your code in QtCreator one last time and test by running the app, trying to break your new or improved feature.
+If all is good...
+Merge your **feature-_issue#_** to your **develop** & resolve merge issues.
+Go back to **feature-_issue#_** & push  to the github repo.
+
+>git checkout develop
+git merge feature-_issue_#
+git checkout feature-_issue#_
+git push origin feature-_issue#_
+
+Login to the github repo and make a pull request with description "**Resolved (or Fixed) issue #XXX. \<Text of issue description\>**"
+Add your changes to file **ChangeLog.txt**!!!
+
+The maintainer will merge your branch into **develop**.
+ 
 
 # Reviewing 
 Most likely we will ask you to fix some issues in your code. In this case you will add your changes to your local **feature** branch, push your **feature** branch to the repo, and update your existing pull request. 
