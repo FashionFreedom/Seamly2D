@@ -57,7 +57,7 @@ before_script:
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     /opt/qt56/bin/qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
   else
-    qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings CONFIG+=noTests;
+    qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=noTests;
   fi
 script:
 - $CXX --version
