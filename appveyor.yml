@@ -177,14 +177,14 @@ matrix:
 #         notifications           #
 #---------------------------------#
   
-notifications:
-  # Email
-  - provider: Email
-    to:
-      - steve+vpo2@conklinhouse.com
-    on_build_success: false
-    on_build_failure: true
-    on_build_status_changed: true
+#notifications:
+# Email
+#  - provider: Email
+#    to:
+#      - steve+vpo2@conklinhouse.com
+#    on_build_success: false
+#    on_build_failure: true
+#    on_build_status_changed: true
 
 #---------------------------------#
 #         deployment              #
