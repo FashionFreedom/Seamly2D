@@ -31,7 +31,7 @@ Basic Prerequisites:
    * Qt 5.7.0 or later https://www1.qt.io/download-open-source (included in Qt install)  
    * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)  
    * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)  
-   * git (for working with repository)  https://git-scm.com/downloads    
+   * git (for working with repository)  https://git-scm.com/downloads  
    * Read forum on building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833
    
 Additional:
@@ -51,9 +51,8 @@ ________________
 <em>Ubuntu</em>:  
 
     sudo apt-get install xpdf
-    sudo apt-get install build-essential    
+    sudo apt-get install build-essential 
     sudo apt-get install g++ 
-    sudo apt-get install clang  
     sudo apt-get install poppler-utils 
     sudo apt-get install mesa-utils libgl1-mesa-dev
     sudo apt-get install ccache 
@@ -65,12 +64,12 @@ ________________
     
 ________________
 
- <em>MAC OSX</em>:    
+ <em>MAC OSX</em>:  
 ________________
 
 <em>Windows</em>: 
 
-* MinGW v5.0.2 from http://mingw-w64.org/doku.php         
+* MinGW v5.0.2 from http://mingw-w64.org/doku.php  
 * Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Valentina's binary file.  
 
 ________________
