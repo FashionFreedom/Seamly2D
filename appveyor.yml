@@ -133,6 +133,7 @@ init:
   - path
   - set QTDIR=C:\%QT5%
   - set PATH=%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
+  - set "PATH=%PATH:C:\Program Files (x86)\Git\bin=%"
   - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
   - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using MinGW"
