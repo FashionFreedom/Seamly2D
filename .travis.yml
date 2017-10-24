@@ -75,13 +75,13 @@ notifications:
     on_failure: always
 before_deploy:
 - |
-  if [[ "$DEPLOY" == "true" ]]; then
+  if [[ ("$TRAVIS_OS_NAME" == "osx") && ("$DEPLOY" == "true" ) ]]; then
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app;
     tar --exclude "*.DS_Store" -cvzf valentina-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app/;
   fi
 deploy:
   provider: launchpad
-  slug: https://git.launchpad.net/librefashion
+  slug: "launchpad.net/librefashion"
   oauth_token:
     secure: lN7xFBiec7we2dftKudjaSinNRvMjoUa+1C/r4niBOIZ4LWvf6ung53e48YAsWykcqe1q2M7LsaMTnZD3eS/PMwxstg/ucNH70ASb5PZOLrbANX2aBrGJLr5OgnXPngC5dcIULRUUDiDIEzs1YW60LPEt7hFHyvTaLCpA9tXq6KysBz8om0FuKvMKmdjNu/CvIxWWKs+4jhFDz7Ddy/NX2litnQgBw50YJBPpZMDUKYrAGzXuQ/2yzbj2fcLeYAG9GC5wQFC+PfV/Pp8HuQzmvtu1V/b+NvVAXgHnIBRGHDqhS+3tzQbIJCMLgOgkPQQbGcph+9TTGnHUvsTBmu9L/3Zw2knSBwQS3B49SLviMlII6h58SAZrZFcbpmHMkXs9ZP4OCylzcXitRFDbHSbh0gBTlSjkcvao6qOQdsQNuwom4ZKu1X1SIqu6vOwjpPDRHtvInG8fqC1DtoEVsHvrKZHFS/vNdYlwZf9cErXYHv6WuuKFkmZrRmifj1ZW31xx8bVwnT6aN3+k+Op9K96ePHM31j6kIcEqkKQm0ZoyPo5gXonwBGYUlSliA5XGUif45ew+3A74I0TbgajD3gL13kRgVaugx8VbsJKdaPvoZVTvWtCFTKteq3Ftqc/EgpBR4WUsQEFdH/mVWlKnY7H4zZIPH3dLJz6We2ykYIMZ8I=
   oauth_token_secret:
