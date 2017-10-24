@@ -2,7 +2,7 @@ language: cpp
 matrix:
   include:
   - os: linux
-    dist: trusty
+    dist: xenial
     sudo: required
     compiler: gcc
     env:
@@ -11,7 +11,7 @@ matrix:
     cache:
     - ccache
     directories:
-    - "$HOME/.sonar/cache"
+    #- "$HOME/.sonar/cache"
   - os: osx
     compiler: clang
     env: DEPLOY=true
