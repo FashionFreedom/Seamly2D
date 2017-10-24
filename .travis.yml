@@ -15,42 +15,43 @@ matrix:
     env: DEPLOY=true
 before_install:
 - |
-  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then 
+  if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
-    sudo apt-get -qq update;  
-    sudo apt-get install -y build-essential git mesa-common-dev libgl1-mesa-dev;
-    sudo apt-get install -y xpdf xvfb;
+    sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty;
+    sudo apt-get -qq update;
+    sudo apt-get install -y build-essential git;
+    sudo apt-get install -y qt58-meta-full;
+    sudo apt-get install -y xpdf;
+    sudo apt-get install -y xvfb;
     sudo apt-get install -y g++-5;
     wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
-    sudo dpkg -i ccache_3.3.4-1_amd64.deb; 
-    wget http://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run ;
-    chmod +x ./qt-opensource-linux-x64-5.9.1.run ;
-    ./qt-opensource-linux-x64-5.9.1.run --platform minimal --script qt-installer-noninteractive.qs --no-force-installations ;    
+    sudo dpkg -i ccache_3.3.4-1_amd64.deb;
   else
     brew update > /dev/null;
     brew install qt5;
-    chmod -R 755 /usr/local/opt/qt5/*;    
+    chmod -R 755 /usr/local/opt/qt5/*;
   fi
 before_script:
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     uname -a;
-    which /opt/qt59/bin/qmake;
-    /opt/qt59/bin/qmake --version;   
+    which /opt/qt58/bin/qmake;
+    /opt/qt58/bin/qmake --version;   
   else
     QTDIR="/usr/local/opt/qt5";
     PATH="$QTDIR/bin:$PATH";
     LDFLAGS=-L$QTDIR/lib;
     CPPFLAGS=-I$QTDIR/include;
     PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;
-    qmake --version;
+    chmod -R 755 /usr/local/opt/qt5/*;    
+  fi    qmake --version;
   fi
 - mkdir build
 - cd build
 - pwd
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    /opt/qt59/bin/qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
+    /opt/qt58/bin/qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
   else
     qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=noTests;
   fi
