@@ -49,8 +49,8 @@ before_script:
     LDFLAGS=-L$QTDIR/lib;
     CPPFLAGS=-I$QTDIR/include;
     PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;
-    chmod -R 755 /usr/local/opt/qt5/*;    
-  fi    qmake --version;
+    chmod -R 755 /usr/local/opt/qt5/*;  
+    qmake --version;  
   fi
 - mkdir build
 - cd build
