@@ -49,19 +49,32 @@ ________________
     sudo zypper install -t pattern devel_basis  
          
 <em>Ubuntu</em>:  
-
-    sudo apt-get install xpdf
-    sudo apt-get install build-essential 
-    sudo apt-get install g++ 
-    sudo apt-get install poppler-utils 
-    sudo apt-get install mesa-utils libgl1-mesa-dev
-    sudo apt-get install ccache 
-    sudo apt-get install qtdeclarative5-dev libfontconfig1-dev libfreetype6-dev libx11-dev libxext-dev libxfixes-dev  
-    sudo apt-get install libxi-dev libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev  
-    # launchpad build tools
-    sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-    
+ 
+* Install packages:
+    sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test     
+    sudo apt-get -qq update
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5     
+    sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev  
+    sudo apt-get install -y poppler-utils 
+    sudo apt-get install -y g++-5 
+    sudo apt-get install -y xpdf 
+    sudo apt-get install -y xvfb 
+    sudo apt-get install -y libfontconfig1-dev libfreetype6-dev 
+    sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev 
+    sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
+     
+    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb 
+    sudo dpkg -i ccache_3.3.4-1_amd64.deb 
+  
+* Install Qt from https://www1.qt.io/download-open-source/ 
+* Install Qt from ppa. This will take some time. 
+    sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty  
+    sudo apt-get -qq update
+    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator
+* After Qt5.9 installation, run shell file to configure environment variables
+    sudo chmod +x /opt/qt59/bin/qt59-env.sh  
+    sudo /opt/qt59/bin/qt59-env.sh  
+   
 ________________
 
  <em>MAC OSX</em>:  
