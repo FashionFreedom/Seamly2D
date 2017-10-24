@@ -6,9 +6,8 @@ matrix:
     dist: trusty
     compiler: gcc
     env:
-      global:
-      - DEPLOY=true
-      - CCACHE_CPP2=yes
+    - DEPLOY=true
+    - CCACHE_CPP2=yes
     cache:
     - ccache
   - os: osx
