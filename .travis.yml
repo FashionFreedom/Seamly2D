@@ -1,6 +1,5 @@
-sudo: false
 language: cpp
-
+sudo: false
 matrix:
   include:
   - os: linux
@@ -16,6 +15,7 @@ matrix:
     compiler: clang
     env: DEPLOY=true
 before_install:
+- |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then 
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
     sudo apt-get -qq update;  
@@ -27,14 +27,13 @@ before_install:
     wget http://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run ;
     chmod +x ./qt-opensource-linux-x64-5.9.1.run ;
     ./qt-opensource-linux-x64-5.9.1.run --platform minimal --script qt-installer-noninteractive.qs --no-force-installations ;    
-  else 
-    echo osx
+  else
     brew update > /dev/null;
     brew install qt5;
     chmod -R 755 /usr/local/opt/qt5/*;    
   fi
 before_script:
-  echo before_script
+- |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     uname -a;
     which /opt/qt59/bin/qmake;
@@ -69,6 +68,7 @@ notifications:
     on_success: always
     on_failure: always
 before_deploy:
+- |
   if [[ "$DEPLOY" == "true" ]]; then
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app;
     tar --exclude "*.DS_Store" -cvzf valentina-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app/;
