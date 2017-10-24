@@ -1,49 +1,46 @@
+sudo: false
 language: cpp
+
 matrix:
   include:
   - os: linux
-    dist: xenial
-    sudo: required
+    dist: trusty
     compiler: gcc
     env:
-    - DEPLOY=true
-    - CCACHE_CPP2=yes
+      global:
+      - DEPLOY=true
+      - CCACHE_CPP2=yes
     cache:
     - ccache
   - os: osx
     compiler: clang
     env: DEPLOY=true
 before_install:
-- |
   echo before_install
-  echo **TRAVIS_OS_NAME=$TRAVIS_OS_NAME**
-  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    
+  echo "${TRAVIS_OS_NAME}"
+  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then 
+    echo linux 
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
     sudo add-apt-repository -y ppa:beineri/opt-qt592-xenial;
-    sudo apt-get -qq update;
-    
+    sudo apt-get -qq update;  
     sudo apt-get install -y build-essential git mesa-common-dev libgl1-mesa-dev;  
     sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator;
     sudo apt-get install -y xpdf xvfb;
-    sudo apt-get install -y g++-5;
-    
+    sudo apt-get install -y g++-5;   
     wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
     sudo dpkg -i ccache_3.3.4-1_amd64.deb; 
-
-  else
+  else 
+    echo osx
     brew update > /dev/null;
     brew install qt5;
-    chmod -R 755 /usr/local/opt/qt5/*;
+    chmod -R 755 /usr/local/opt/qt5/*;    
   fi
 before_script:
-- |
   echo before_script
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
     uname -a;
     which /opt/qt59/bin/qmake;
-    /opt/qt59/bin/qmake --version;
-    
+    /opt/qt59/bin/qmake --version;   
   else
     QTDIR="/usr/local/opt/qt5";
     PATH="$QTDIR/bin:$PATH";
@@ -75,7 +72,6 @@ notifications:
     on_success: always
     on_failure: always
 before_deploy:
-- |
   if [[ "$DEPLOY" == "true" ]]; then
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app;
     tar --exclude "*.DS_Store" -cvzf valentina-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app/;
