@@ -232,8 +232,8 @@
         <translation type="vanished">Надсилати звіти про помилки (рекомендується)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Після кожного падіння Valentina збирає інформацію яка може допомогти нам у виправленні помилки. Ми не збираємо персональну інформацію користувачів. Дізнатися більше про &lt;a href=https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&gt;информацію&lt;/a&gt; яку ми збираємо.</translation>
+        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Після кожного падіння Valentina збирає інформацію яка може допомогти нам у виправленні помилки. Ми не збираємо персональну інформацію користувачів. Дізнатися більше про &lt;a href=https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&gt;информацію&lt;/a&gt; яку ми збираємо.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">Одиниці вимірювання по замовчуванню були оновлені і будуть використанні як основні наступного разу при створенні нової викрійки.</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Після кожного падіння Valentina збирає інформацію яка може допомогти нам у виправленні помилки. Ми не збираємо персональну інформацію користувачів. Дізнатися більше про &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;інформацію&lt;/a&gt; яку ми збираємо.</translation>
+        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Після кожного падіння Valentina збирає інформацію яка може допомогти нам у виправленні помилки. Ми не збираємо персональну інформацію користувачів. Дізнатися більше про &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;інформацію&lt;/a&gt; яку ми збираємо.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>

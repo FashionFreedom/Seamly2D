@@ -3,7 +3,7 @@
 
 #define MyAppName "Valentina"
 #define MyAppVersion GetFileVersion('valentina\valentina.exe')
-#define MyAppPublisher "Roman Telezhynskyi"
+#define MyAppPublisher "Susan Spencer"
 #define MyAppURL "http://www.valentina-project.org/"
 #define MyAppExeName "valentina.exe"
 #define MyAppCopyright "(C) 2013-2017 Valentina project"

@@ -232,8 +232,8 @@
         <translation type="vanished">Αποστολή αναφορών απότομης διακοπής (προτείνεται)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Valentina συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε κάποιο πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
+        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Valentina συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε κάποιο πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">Οι προεπιλεγμένες μονάδες έχουν ενημερωθεί και θα χρησιμοποιηθούν ως προεπιλογή για το επόμενο πατρόν που θα δημιουργήσετε.</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Valentina συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε το πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
+        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Valentina συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε το πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>

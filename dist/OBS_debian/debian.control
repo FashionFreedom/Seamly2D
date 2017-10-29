@@ -1,7 +1,7 @@
 Source: valentina
 Section: graphics
 Priority: optional
-Maintainer: Roman Telezhynskyi <dismine@gmail.com>
+Maintainer: Susan Spencer <susan.spencer@gmail.com>
 Build-Depends: debhelper (>= 8.0.0), 
                qtbase5-dev (>= 5.2.0), 
                libqt5svg5-dev (>= 5.2.0), 
@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 8.0.0),
                libqt5xmlpatterns5-dev (>= 5.2.0)
 Standards-Version: 3.9.5
 Homepage: http://www.valentina-project.org/
-Vcs-Browser: https://bitbucket.org/dismine/valentina
+Vcs-Browser: https://github.com/valentina-project/vpo2
 
 Package: valentina
 Architecture: i386 amd64

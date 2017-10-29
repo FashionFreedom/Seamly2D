@@ -47,13 +47,13 @@ Requires:   poppler-utils
 
 Version:	0.5.999
 Release:	0
-URL:		https://bitbucket.org/dismine/valentina
+URL:		https://github.org/valentina-project/vpo2
 License:	GPL-3.0+
 Source0:	%{name}-%{version}.tar.gz
 Group:		Graphics
 Summary:	Pattern Making Application
 BuildRoot:  %{_tmppath}/%{name}-%{version}-build 
-Packager:   Roman Telezhinskyi <dismine@gmail.com>   
+Packager:   Susan Spencer <susan.spencer@gmail.com>   
 
 # Disables debug packages and stripping of binaries:
 %global _enable_debug_package 0
@@ -163,6 +163,6 @@ rm -f dist/debian/%{name}.1.gz dist/debian/tape.1.gz dist/debian/%{name}.xml dis
 
 
 %changelog
-* Fri Nov 27 2015 Roman Telezhynskyi
+* Sat Oct 28 2017 Susan Spencer
  - Auto build
 

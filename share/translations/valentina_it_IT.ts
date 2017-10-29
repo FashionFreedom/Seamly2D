@@ -232,8 +232,8 @@
         <translation type="vanished">Invia segnalazioni di crash (Raccomandato)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Dopo ogni crash Valentina recupera informazioni che ci possono aiutare a risolvere un problema. Non raccogliamo informazioni personali. Scopri di più sul &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt; genere di informazioni&lt;/a&gt; che raccogliamo.</translation>
+        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Dopo ogni crash Valentina recupera informazioni che ci possono aiutare a risolvere un problema. Non raccogliamo informazioni personali. Scopri di più sul &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt; genere di informazioni&lt;/a&gt; che raccogliamo.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">L&apos;unità di default è stata aggiornata e verrà utilizzata come impostazione predefinita nella creazione del prossimo modello.</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Dopo ogni crash Valentina recupera informazioni utili per risolvere un problema. Non raccogliamo informazioni personali. Scopri di più su &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;tipo d&apos;informazioni&lt;/a&gt; raccolte.</translation>
+        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Dopo ogni crash Valentina recupera informazioni utili per risolvere un problema. Non raccogliamo informazioni personali. Scopri di più su &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;tipo d&apos;informazioni&lt;/a&gt; raccolte.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>

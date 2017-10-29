@@ -197,8 +197,8 @@
         <translation type="vanished">Poslat hlášení o pádu (doporučeno)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Po každém pádu Valentina sbírá informace, které nám mohou pomoci problém opravit. Nesbíráme žádné osobní údaje. Podívejte se, jaký &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;typ informací&lt;/a&gt; sbíráme.</translation>
+        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Po každém pádu Valentina sbírá informace, které nám mohou pomoci problém opravit. Nesbíráme žádné osobní údaje. Podívejte se, jaký &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;typ informací&lt;/a&gt; sbíráme.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>

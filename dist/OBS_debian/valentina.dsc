@@ -3,11 +3,11 @@ Source: valentina
 Binary: valentina
 Architecture: i386 amd64
 Version: 0.4.5
-Maintainer: Roman Telezhynskyi <dismine@gmail.com>
+Maintainer: Susan Spencer <susan.spencer@gmail.com>
 Homepage: http://www.valentina-project.org/
 Standards-Version: 3.9.5
-Vcs-Browser: https://bitbucket.org/dismine/valentina
-Build-Depends: debhelper (>= 8.0.0), qtbase5-dev (>= 5.0.0), libqt5svg5-dev (>= 5.0.0), g++ (>= 4.6.0), qt5-default (>= 5.0.0), qttools5-dev-tools (>= 5.0.0), libqt5xmlpatterns5-dev (>= 5.0.0)
+Vcs-Browser: https://github.com/valentina-project/vpo2
+Build-Depends: debhelper (>= 8.0.0), qtbase5-dev (>= 5.8.0), libqt5svg5-dev (>= 5.5.1), g++ (>= 4.6.0), qt5-default (>= 5.8.0), qttools5-dev-tools (>= 5.0.0), libqt5xmlpatterns5-dev (>= 5.0.0)
 Package-List: 
  valentina deb graphics optional
 Files: 

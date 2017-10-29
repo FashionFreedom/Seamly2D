@@ -190,8 +190,8 @@
         <translation type="vanished">Lähetä kaatumisraportteja (suositus)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Valentina kerää tietoa jokaisesta ohjelman kaatumisesta. Ohjelma ei kerää henkilökohtaisia tietoja. Lisätietoa kerätystä  &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;tiedosta. &lt;/a&gt; </translation>
+        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Valentina kerää tietoa jokaisesta ohjelman kaatumisesta. Ohjelma ei kerää henkilökohtaisia tietoja. Lisätietoa kerätystä  &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;tiedosta. &lt;/a&gt; </translation>
     </message>
     <message>
         <source>Pattern Editing</source>

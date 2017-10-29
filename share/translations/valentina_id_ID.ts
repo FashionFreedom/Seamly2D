@@ -182,8 +182,8 @@
         <translation type="vanished">Kirim laporan kerusakan (disarankan)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Setelah setiap kerusakan Valentina mengumpulkan informasi yang dapat membantu kami memperbaiki suatu masalah. Kami tidak mengumpulkan informasi pribadi apapun. Temukan lebih lanjut tentang apa &lt;a href=&quot;https://bitbucket.org/dismine/valentina/wiki/manual/Crash_reports&quot;&gt; jenis informasi &lt;/a&gt; kami kumpulkan.</translation>
+        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Setelah setiap kerusakan Valentina mengumpulkan informasi yang dapat membantu kami memperbaiki suatu masalah. Kami tidak mengumpulkan informasi pribadi apapun. Temukan lebih lanjut tentang apa &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt; jenis informasi &lt;/a&gt; kami kumpulkan.</translation>
     </message>
 </context>
 <context>
