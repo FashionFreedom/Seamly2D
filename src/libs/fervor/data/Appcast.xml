@@ -18,7 +18,7 @@ a unique pattern making tool.</description>
 
 		<item>
 			<title>Version 0.4.4</title>
-			<link>https://github.com/valentina-project/vpo2/blob/develop/ChangeLog.txtt</link>
+			<link>https://github.com/valentina-project/vpo2/blob/develop/ChangeLog.txt</link>
   			<description>New minor release</description>
 
 			<!--
@@ -27,19 +27,19 @@ a unique pattern making tool.</description>
 
 			<!-- Windows version. -->
 			<enclosure
-				url="https://bitbucket.org/dismine/valentina/downloads/valentina_0.4.4_i386.exe"
-				fervor:version="0.4.4"
+				url="https://bitbucket.org/ValentinaTeam/valentina/downloads/valentina_0.5.0.0_i386.exe"
+				fervor:version="0.5.0"
 				fervor:platform="Q_OS_WIN32" />
 
 			<!-- Linux version. -->
 			<enclosure
 				url="http://valentina-project.org/"
-				fervor:version="0.4.4"
+				fervor:version="0.5.0"
 				fervor:platform="Q_OS_LINUX" />
 
 			<!-- OS X version. -->
 			<enclosure
-				url="https://bitbucket.org/dismine/valentina/downloads/valentina_0.4.4_64bit-OSX.dmg"
+				url="https://bitbucket.org/ValentinaTeam/valentina/downloads/valentina_0.5.0_64bit-OSX.dmg"
 				fervor:version="0.4.4"
 				fervor:platform="Q_OS_MAC" />
 
