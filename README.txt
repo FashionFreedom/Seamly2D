@@ -1,11 +1,11 @@
-Valentina / LibreFashion
+Seamly2D
 ====================
 
-Valentina / LibreFashion creates reusable, scalable, sharable patterns with perfect fit using couture and bespoke pattern techniques. Valentina / LibreFashion saves designers and patternmakers time and improves quality by redefining patterns as accurate, reusable parametric CAD engineering documents.
+Seamly2D creates reusable, scalable, sharable patterns with perfect fit using couture and bespoke pattern techniques. Seamly2D saves designers and patternmakers time and improves quality by redefining patterns as accurate, reusable parametric CAD engineering documents.
 
 Designers have complete control of the patternmaking process. Each reusable, scalable pattern can use multi-size tables for boutique sizing *and* individual measurements for custom-fit.
 
-Valentina / LibreFashion is open source software with GPLv3+ license.  It is available for Windows, OSX, and Linux.  Valentina / LibreFashion has an active, friendly user forum at https://forum.valentina-project.org 
+Seamly2D is open source software with GPLv3+ license.  It is available for Windows, OSX, and Linux.  Seamly2D has an active, friendly user forum at https://forum.valentina-project.org 
 
 Supported platforms:  
    * Windows XP SP2 (32-bit) or later   
@@ -24,7 +24,7 @@ IRC channel                #valentina on irc.freenode.net
 Main repository            https://github.com/valentina-project/vpo2   
 Doxygen docs               https://valentina-project.github.io/  
 
-Building Valentina / LibreFashion
+Building Seamly2D
 ================
 
 Basic Prerequisites:   
@@ -101,7 +101,7 @@ Note: On some platforms e.g. Fedora, all Qt-tools come as qmake-qt5, etc. Run
 
 prior to running <em>qmake</em>. You will not come along with just using <em>qmake-qt5</em> here.
 
-Note: In order to build and use Valentina / LibreFashion, the PATH environment variable needs to be extended to locate qmake (or qmake-qt5), moc and other Qt tools. This is done by adding your Qt's installation path (eg c:\Qt\%VERSION%\bin) to the PATH variable. Check your Qt installation to find the correct path to enter. 
+Note: In order to build and use Seamly2D, the PATH environment variable needs to be extended to locate qmake (or qmake-qt5), moc and other Qt tools. This is done by adding your Qt's installation path (eg c:\Qt\%VERSION%\bin) to the PATH variable. Check your Qt installation to find the correct path to enter. 
 
 For newer versions of Windows, PATH can be extended through this menu:
 
@@ -120,12 +120,12 @@ Use <em>QtChooser</em> to update and set the latest QT version as default. Withi
 
 LICENSING
 ================
-Valentina / LibreFashion is free software: you can redistribute it and/or modify
+Seamly2D is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-Valentina / LibreFashion is distributed in the hope that it will be useful,
+Seamly2D is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
@@ -135,5 +135,5 @@ See LICENSE_GPL.txt file for further information
 Other components released under:
 * QMuParser - BSD license
 * VPropertyExplorer - LGPLv2.1 license
-© 2017 GitHub, Inc.
+
 
