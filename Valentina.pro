@@ -1,9 +1,9 @@
 include(common.pri)
 
-#Check if Qt version >= 5.2.0
-!minQtVersion(5, 2, 0) {
+#Check if Qt version >= 5.7.0
+!minQtVersion(5, 7, 0) {
     message("Valentina.pro: Cannot build Valentina with Qt version $${QT_VERSION}.")
-    error("Use at least Qt 5.2.0.")
+    error("Use at least Qt 5.7.0.")
 }
 
 #These checks need because we can quote all paths that contain space.
