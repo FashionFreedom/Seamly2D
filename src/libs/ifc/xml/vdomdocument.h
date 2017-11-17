@@ -32,7 +32,7 @@
  **  This source code is part of the Valentina project, a pattern making
  **  program that allows creating and modelling patterns of clothing.
  **  Copyright (C) 2013-2015 Valentina project
- **  <https: /github.com/valentina-project/vpo2> All Rights Reserved.
+ **  <https://github.com/valentina-project/vpo2> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
