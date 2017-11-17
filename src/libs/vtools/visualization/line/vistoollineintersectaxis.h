@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   http://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/valentina-project/vpo2                             *
  *                                                                         *
  ***************************************************************************
  **
