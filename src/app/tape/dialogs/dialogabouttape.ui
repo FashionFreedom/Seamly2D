@@ -23,7 +23,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>About Tape</string>
+   <string>About SeamlyMe</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../share/resources/tapeicon.qrc">
@@ -72,7 +72,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Tape version</string>
+          <string>SeamlyMe version</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -95,7 +95,7 @@
        <item alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>This program is part of Valentina project.</string>
+          <string>This program is part of Seamly2D project.</string>
          </property>
         </widget>
        </item>

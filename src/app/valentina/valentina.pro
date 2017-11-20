@@ -95,22 +95,22 @@ CONFIG(release, debug|release){
 }
 
 DVCS_HESH=$$FindBuildRevision()
-message("valentina.pro: Build revision:" $${DVCS_HESH})
+message("seamly2d.pro: Build revision:" $${DVCS_HESH})
 DEFINES += "BUILD_REVISION=$${DVCS_HESH}" # Make available build revision number in sources.
 
 # Some extra information about Qt. Can be usefull.
-message(valentina.pro: Qt version: $$[QT_VERSION])
-message(valentina.pro: Qt is installed in $$[QT_INSTALL_PREFIX])
-message(valentina.pro: Qt resources can be found in the following locations:)
-message(valentina.pro: Documentation: $$[QT_INSTALL_DOCS])
-message(valentina.pro: Header files: $$[QT_INSTALL_HEADERS])
-message(valentina.pro: Libraries: $$[QT_INSTALL_LIBS])
-message(valentina.pro: Binary files (executables): $$[QT_INSTALL_BINS])
-message(valentina.pro: Plugins: $$[QT_INSTALL_PLUGINS])
-message(valentina.pro: Data files: $$[QT_INSTALL_DATA])
-message(valentina.pro: Translation files: $$[QT_INSTALL_TRANSLATIONS])
-message(valentina.pro: Settings: $$[QT_INSTALL_SETTINGS])
-message(valentina.pro: Examples: $$[QT_INSTALL_EXAMPLES])
+message(seamly2d.pro: Qt version: $$[QT_VERSION])
+message(seamly2d.pro: Qt is installed in $$[QT_INSTALL_PREFIX])
+message(seamly2d.pro: Qt resources can be found in the following locations:)
+message(seamly2d.pro: Documentation: $$[QT_INSTALL_DOCS])
+message(seamly2d.pro: Header files: $$[QT_INSTALL_HEADERS])
+message(seamly2d.pro: Libraries: $$[QT_INSTALL_LIBS])
+message(seamly2d.pro: Binary files (executables): $$[QT_INSTALL_BINS])
+message(seamly2d.pro: Plugins: $$[QT_INSTALL_PLUGINS])
+message(seamly2d.pro: Data files: $$[QT_INSTALL_DATA])
+message(seamly2d.pro: Translation files: $$[QT_INSTALL_TRANSLATIONS])
+message(seamly2d.pro: Settings: $$[QT_INSTALL_SETTINGS])
+message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 
 
 # Path to recource file.

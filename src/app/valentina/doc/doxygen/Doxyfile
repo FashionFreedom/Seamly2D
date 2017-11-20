@@ -8,7 +8,7 @@
 # All text after a hash (#) is considered a comment and will be ignored.
 # The format is:
 #       TAG = value [value, ...]
-# For lists items can also be appended using:
+# For lists items can also be appended using:f
 #       TAG += value [value, ...]
 # Values that contain spaces should be placed between quotes (" ").
 
@@ -28,7 +28,7 @@ DOXYFILE_ENCODING      = UTF-8
 # identify the project. Note that if you do not use Doxywizard you need
 # to put quotes around the project name if it contains spaces.
 
-PROJECT_NAME           = "Valentina"
+PROJECT_NAME           = "Seamly2D"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number.
 # This could be handy for archiving the generated documentation or

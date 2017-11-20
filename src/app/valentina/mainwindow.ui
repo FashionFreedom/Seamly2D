@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Valentina</string>
+   <string>Seamly2D</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
@@ -1676,7 +1676,7 @@
     <addaction name="actionForum"/>
     <addaction name="actionReportBug"/>
     <addaction name="actionAbout_Qt"/>
-    <addaction name="actionAbout_Valentina"/>
+    <addaction name="actionAbout_Seamly2D"/>
    </widget>
    <widget class="QMenu" name="menuPatternPiece">
     <property name="title">
@@ -2202,7 +2202,7 @@
     <string>Layout</string>
    </property>
    <property name="toolTip">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your prefered file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode is availiable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your prefered file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+L</string>
@@ -2222,13 +2222,13 @@
     <enum>QAction::AboutQtRole</enum>
    </property>
   </action>
-  <action name="actionAbout_Valentina">
+  <action name="actionAbout_Seamly2D">
    <property name="icon">
     <iconset theme="help-about">
      <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>&amp;About Valentina</string>
+    <string>&amp;About Seamly2D</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>

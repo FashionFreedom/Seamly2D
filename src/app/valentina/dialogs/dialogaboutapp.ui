@@ -26,7 +26,7 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle">
-   <string>About Valentina</string>
+   <string>About Seamly2D</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
@@ -81,7 +81,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Valentina version</string>
+          <string>Seamly2D version</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -206,12 +206,12 @@
          <property name="plainText">
           <string notr="true">Roman Telezhinskyi  
 Susan Spencer
+Steve Conklin
 Timo Virtaneva 
 luzpazB 
 Christine Neupert
 Sabine Schmaltz
 grumpi
-Steve Conklin
 Lindsay Williams
 Patrick Proy
 Mischa Krempel
