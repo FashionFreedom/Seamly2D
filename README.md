@@ -1,33 +1,33 @@
 Seamly2D
 ====================
 
-Seamly2D creates reusable, scalable, sharable patterns with perfect fit using couture and bespoke pattern techniques. Seamly2D saves designers and patternmakers time and improves quality by redefining patterns as accurate, reusable parametric CAD engineering documents.
+Seamly2D is pattern design software to create reusable, scalable, sharable custom-fit patterns with using historical, couture and bespoke pattern techniques. Seamly2D saves time and improves fit by creating patterns that are reusable parametric CAD engineering documents. 
 
-Designers have complete control of the patternmaking process. Each reusable, scalable pattern can use multi-size tables for boutique sizing *and* individual measurements for custom-fit.
+Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
 
-Seamly2D is open source software with GPLv3+ license.  It is available for Windows, OSX, and Linux.  Seamly2D has an active, friendly user forum at https://forum.valentina-project.org 
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.valentina-project.org 
 
 Supported platforms:  
    * Windows XP SP2 (32-bit) or later   
    * Ubuntu Linux 14.04 (32-bit/64-bit) or later   
    * OpenSUSE 13.02 (32-bit/64-bit) or later   
-   * Fedora 24 (32-bit/64-bit) or later    
+   * Fedora 24 (32-bit/64-bit) or later  
    * Mac OS X 10.8 (64-bit) or later  
 
 Homepage and downloads     https://valentina-project.org   
-Wiki & User Manual         https://wiki.valentinaproject.org    
-Forum                      https://forum.valentina-project.org/       
-Translations               https://www.transifex.com/organization/valentina   
-PPA for Ubuntu (develop)   (soon) ...    
-PPA for Ubuntu (test)      (soon) ...    
-IRC channel                #valentina on irc.freenode.net   
-Main repository            https://github.com/valentina-project/vpo2   
+Wiki & User Manual         https://wiki.valentinaproject.org  
+Forum                      https://forum.valentina-project.org/  
+Translations               https://www.transifex.com/organization/valentina  
+PPA for Ubuntu (develop)   (soon) ...  
+PPA for Ubuntu (test)      (soon) ...  
+IRC channel                #valentina on irc.freenode.net  
+Main repository            https://github.com/valentina-project/vpo2  
 Doxygen docs               https://valentina-project.github.io/  
 
 Building Seamly2D
 ================
 
-Basic Prerequisites:   
+Basic Prerequisites:  
    * Qt 5.7.0 or later https://www1.qt.io/download-open-source (included in Qt install)  
    * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)  
    * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)  
@@ -53,25 +53,25 @@ ________________
 * Install packages:
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test     
     sudo apt-get -qq update
-    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5     
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5  
     sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev  
     sudo apt-get install -y poppler-utils 
     sudo apt-get install -y g++-5 
     sudo apt-get install -y xpdf 
     sudo apt-get install -y xvfb 
     sudo apt-get install -y libfontconfig1-dev libfreetype6-dev 
-    sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev 
-    sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
+    sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev  
+    sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev 
      
-    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb 
+    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb  
     sudo dpkg -i ccache_3.3.4-1_amd64.deb 
   
 * Install Qt from https://www1.qt.io/download-open-source/ 
 * Install Qt from ppa. This will take some time. 
     sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty  
-    sudo apt-get -qq update
-    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator
-* After Qt5.9 installation, run shell file to configure environment variables
+    sudo apt-get -qq update 
+    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator 
+* After Qt5.9 installation, run shell file to configure environment variables 
     sudo chmod +x /opt/qt59/bin/qt59-env.sh  
     sudo /opt/qt59/bin/qt59-env.sh  
    

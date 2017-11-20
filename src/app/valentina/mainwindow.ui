@@ -55,7 +55,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>126</width>
+         <width>104</width>
          <height>351</height>
         </rect>
        </property>
@@ -401,7 +401,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>140</width>
+         <width>104</width>
          <height>108</height>
         </rect>
        </property>
@@ -510,7 +510,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>140</width>
+         <width>104</width>
          <height>243</height>
         </rect>
        </property>
@@ -772,7 +772,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>140</width>
+         <width>104</width>
          <height>243</height>
         </rect>
        </property>
@@ -1037,7 +1037,7 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>140</width>
+         <width>98</width>
          <height>102</height>
         </rect>
        </property>
@@ -1120,8 +1120,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>140</width>
-         <height>324</height>
+         <width>104</width>
+         <height>192</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -1534,8 +1534,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>140</width>
-         <height>324</height>
+         <width>104</width>
+         <height>57</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -1676,7 +1676,7 @@
     <addaction name="actionForum"/>
     <addaction name="actionReportBug"/>
     <addaction name="actionAbout_Qt"/>
-    <addaction name="actionAbout_Seamly2D"/>
+    <addaction name="actionAbout_Valentina"/>
    </widget>
    <widget class="QMenu" name="menuPatternPiece">
     <property name="title">
@@ -2222,16 +2222,16 @@
     <enum>QAction::AboutQtRole</enum>
    </property>
   </action>
-  <action name="actionAbout_Seamly2D">
+  <action name="actionAbout_Valentina">
    <property name="icon">
     <iconset theme="help-about">
      <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
-    <string>&amp;About Seamly2D</string>
+    <string>&amp;About Valentina</string>
    </property>
-   <property name="shortcut">
-    <string notr="true"/>
+   <property name="toolTip">
+    <string>About Valentina</string>
    </property>
    <property name="menuRole">
     <enum>QAction::AboutRole</enum>
@@ -2685,8 +2685,8 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="share/resources/toolicon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

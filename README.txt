@@ -1,11 +1,11 @@
 Seamly2D
 ====================
 
-Seamly2D creates reusable, scalable, sharable patterns with perfect fit using couture and bespoke pattern techniques. Seamly2D saves designers and patternmakers time and improves quality by redefining patterns as accurate, reusable parametric CAD engineering documents.
+Seamly2D is pattern design software to create reusable, scalable, sharable custom-fit patterns with using historical, couture and bespoke pattern techniques. Seamly2D saves time and improves fit by creating patterns that are reusable parametric CAD engineering documents. 
 
-Designers have complete control of the patternmaking process. Each reusable, scalable pattern can use multi-size tables for boutique sizing *and* individual measurements for custom-fit.
+Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
 
-Seamly2D is open source software with GPLv3+ license.  It is available for Windows, OSX, and Linux.  Seamly2D has an active, friendly user forum at https://forum.valentina-project.org 
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.valentina-project.org 
 
 Supported platforms:  
    * Windows XP SP2 (32-bit) or later   
