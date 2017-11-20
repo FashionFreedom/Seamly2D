@@ -113,6 +113,7 @@ message(seamly2d.pro: Settings: $$[QT_INSTALL_SETTINGS])
 message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 
 
+
 # Path to recource file.
 win32:RC_FILE = share/resources/valentina.rc
 
