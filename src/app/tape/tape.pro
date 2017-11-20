@@ -187,6 +187,8 @@ unix{
     }
 
     unix:!macx{
+
+        QMAKE_RPATHDIR += $$[QT_INSTALL_LIBS]
         DATADIR =$$PREFIX/share
         DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
 
@@ -325,8 +327,9 @@ noRunPath{ # For enable run qmake with CONFIG+=noRunPath
         # suppress the default RPATH
         # helps to run the program without Qt Creator
         # see problem with path to libqmuparser and libpropertybrowser
-        QMAKE_LFLAGS_RPATH =
-        QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\' -Wl,-rpath,$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -Wl,-rpath,$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR}"
+        QMAKE_LFLAGS_RPATH += $${LD_RUN_PATH}
+        QMAKE_LFLAGS_RPATH += $${LDFLAGS}
+        QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\' -Wl,-rpath,$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -Wl,-rpath,$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -Wl,-rpath,$${QMAKE_LFLAGS_RPATH}"
     }
 }
 
