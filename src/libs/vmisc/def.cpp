@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -591,7 +591,7 @@ bool IsOptionSet(int argc, char *argv[], const char *option)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-// See issue #624. https://bitbucket.org/dismine/valentina/issues/624
+// See issue #624. https://bitbucket.org/dismine/seamly2d/issues/624
 void InitHighDpiScaling(int argc, char *argv[])
 {
     /* For more info see: http://doc.qt.io/qt-5/highdpi.html */
@@ -768,7 +768,7 @@ void InitLanguages(QComboBox *combobox)
     combobox->clear();
 
     QStringList fileNames;
-    QDirIterator it(qApp->translationsPath(), QStringList("valentina_*.qm"), QDir::Files, QDirIterator::Subdirectories);
+    QDirIterator it(qApp->translationsPath(), QStringList("seamly2d_*.qm"), QDir::Files, QDirIterator::Subdirectories);
     while (it.hasNext())
     {
         it.next();
@@ -782,8 +782,8 @@ void InitLanguages(QComboBox *combobox)
     {
         // get locale extracted by filename
         QString locale;
-        locale = fileNames.at(i);                  // "valentina_de_De.qm"
-        locale.truncate(locale.lastIndexOf('.'));  // "valentina_de_De"
+        locale = fileNames.at(i);                  // "seamly2d_de_De.qm"
+        locale.truncate(locale.lastIndexOf('.'));  // "seamly2d_de_De"
         locale.remove(0, locale.indexOf('_') + 1); // "de_De"
 
         if (not englishUS)

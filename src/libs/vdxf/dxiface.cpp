@@ -167,7 +167,7 @@ void dx_iface::writeAppId(){
 
 void dx_iface::InitHeader(VarMeasurement varMeasurement, VarInsunits varInsunits)
 {
-    cData.headerC.addComment("Valentina DXF File");
+    cData.headerC.addComment("Seamly2D DXF File");
 
     // 1 = Clockwise angles, 0 = Counterclockwise
     cData.headerC.addInt("$ANGDIR", 0, 70);// Qt use counterclockwise
@@ -304,7 +304,7 @@ void dx_iface::InitTextstyles()
 void dx_iface::InitAppId()
 {
     DRW_AppId ai;
-    ai.name ="Valentina";
+    ai.name ="Seamly2D";
     cData.appIds.push_back(ai);
 }
 

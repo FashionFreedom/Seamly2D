@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -1265,7 +1265,7 @@ void TMainWindow::Fx()
 
     if (dialog->exec() == QDialog::Accepted)
     {
-        // Fix the bug #492. https://bitbucket.org/dismine/valentina/issues/492/valentina-crashes-when-add-an-increment
+        // Fix the bug #492. https://bitbucket.org/dismine/seamly2d/issues/492/seamly2d-crashes-when-add-an-increment
         // Because of the bug need to take QTableWidgetItem twice time. Previous update "killed" the pointer.
         const QTableWidgetItem *nameField = ui->tableWidget->item(row, ColumnName);
         m->SetMValue(nameField->data(Qt::UserRole).toString(), dialog->GetFormula());

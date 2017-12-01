@@ -29,23 +29,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentina project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program that allows creating and modelling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
+ **  Copyright (C) 2013-2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -81,11 +81,11 @@ QT_WARNING_DISABLE_GCC("-Weffc++")
 QT_WARNING_DISABLE_GCC("-Wnon-virtual-dtor")
 
 /**
- * @brief The VDomDocument class represents a Valentina document (.val file).
+ * @brief The VDomDocument class represents a Seamly2D document (.val file).
  *
- * A Valentina document describes the construction of a sewing pattern. The
+ * A Seamly2D document describes the construction of a sewing pattern. The
  * information is stored in XML format. By parsing a VDomDocument, the contained
- * pattern is rendered to a Valentina graphics scene (VMainGraphicsScene).
+ * pattern is rendered to a Seamly2D graphics scene (VMainGraphicsScene).
  *
  * A sewing pattern consists of zero or more increments and one
  * or more pattern pieces.

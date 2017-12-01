@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -120,10 +120,10 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
     //
     // Related issues:
     // Issue #584. frequent xcb errors and hangs
-    // https://bitbucket.org/dismine/valentina/issues/584/frequent-xcb-errors-and-hangs
+    // https://bitbucket.org/dismine/seamly2d/issues/584/frequent-xcb-errors-and-hangs
     // Issue #527. Error: Pasting a wrong formula : every dialog box is "glued" to the screen and can't close file
-    // or Valentina.
-    // https://bitbucket.org/dismine/valentina/issues/527/error-pasting-a-wrong-formula-every-dialog
+    // or Seamly2D.
+    // https://bitbucket.org/dismine/seamly2d/issues/527/error-pasting-a-wrong-formula-every-dialog
 
     setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
@@ -183,7 +183,7 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
         }
         else
         {
-            return QStringLiteral("/usr/share/valentina/translations");
+            return QStringLiteral("/usr/share/seamly2d/translations");
         }
     }
 #else // Unix
@@ -195,7 +195,7 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     }
     else
     {
-        return QStringLiteral("/usr/share/valentina/translations");
+        return QStringLiteral("/usr/share/seamly2d/translations");
     }
 #endif
 }
@@ -359,7 +359,7 @@ void VAbstractApplication::LoadTranslation(const QString &locale)
     installTranslator(qtBaseTranslator);
 
     appTranslator = new QTranslator(this);
-    appTranslator->load("valentina_" + locale, translationsPath(locale));
+    appTranslator->load("seamly2d_" + locale, translationsPath(locale));
     installTranslator(appTranslator);
 
     const QString system = Settings()->GetPMSystemCode();

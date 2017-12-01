@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Valentina project
+ **  Copyright (C) 2016 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -79,7 +79,7 @@ TST_AbstractRegExp::~TST_AbstractRegExp()
 int TST_AbstractRegExp::LoadVariables(const QString &checkedLocale)
 {
     const QString path = TranslationsPath();
-    const QString file = QString("valentina_%1.qm").arg(checkedLocale);
+    const QString file = QString("seamly2d_%1.qm").arg(checkedLocale);
 
     if (QFileInfo(path+QLatin1String("/")+file).size() <= 34)
     {

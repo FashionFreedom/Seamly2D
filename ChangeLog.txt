@@ -29,24 +29,24 @@
 - [#696] Wrong grainline position on layout.
 - [#697] Incomplete Internal Path for Waist Dart.
 - [#698] Problem typing in new axis point for new piece.
-- [#702] Valentina produces broken shortcut (.lnk) files on Windows.
+- [#702] Seamly2D produces broken shortcut (.lnk) files on Windows.
 - Changed default behaviour if path to multisize measurements or templates doesn't exist. 
-- [#703] Valentina warns about format rewriting for unsaved files.
-- [#704] Valentina crashes if click on detail.
+- [#703] Seamly2D warns about format rewriting for unsaved files.
+- [#704] Seamly2D crashes if click on detail.
 - [#706] Default unit in preferences not changing new file unit.
-- Fix bug. Valentina overrids exported file even if a user said no.
+- Fix bug. Seamly2D overrids exported file even if a user said no.
 - Fix bug. Date on label doesn't obey GUI language locale.
 - Tool Seam allowance's bounding box should not include passmarks.
 - Fix grainline position on layout.
-- [#719] Valentina crashes when unite pieces.
-- Fixed Valentina crash. Used way to avoid Qt's bug QTBUG-61213.
-- Fixed behaviour on Windows. Valentina asks about synchronization measurements twice.
+- [#719] Seamly2D crashes when unite pieces.
+- Fixed Seamly2D crash. Used way to avoid Qt's bug QTBUG-61213.
+- Fixed behaviour on Windows. Seamly2D asks about synchronization measurements twice.
 - Fixed bug. Tape app saved default size value in wrong place.
-- [#737] Valentina produces corrupted file if unite two pieces with pins.
+- [#737] Seamly2D produces corrupted file if unite two pieces with pins.
 - [#738] Bug in transformation over arc and elliptical arc.
 - [#729] Moved Bezier curves can't be rotated.
-- [#742] Valentina produces wrong seam allowance.
-- [#743] Valentina doesn't update update pattern after adding item.
+- [#742] Seamly2D produces wrong seam allowance.
+- [#743] Seamly2D doesn't update update pattern after adding item.
 - Fix translation variables.
 - [#744] Check for Updates button produces error.
 
@@ -54,7 +54,7 @@
 - [#581] User can now filter input lists by keyword in function wizard.
 - [#24] User can now add labels with different information on the detail
 - [#505] New installer script based on Inno Setup 5.
-- Size of preferences dialog in both Valentina and Tape app is now preserved between sessions
+- Size of preferences dialog in both Seamly2D and Tape app is now preserved between sessions
 - [#479] Preferences dialog is now extendable and when it is opened again, it will be resized to its previous size.
 - [#508] Settings saved to INI files in different folders.
 - [#193] Undeletable zombie arc objects.
@@ -99,9 +99,9 @@
 - [#580] Extend the list of heights.
 - [#582] Issue with standard path to shared data on Linux.
 - [#595] GapWidth affecting to the margins.
-- [#589] Valentina lock up if not enough space for label.
+- [#589] Seamly2D lock up if not enough space for label.
 - [#606] Mac OS X. Can’t type in measurements due to digit count limitation.
-- [#612] Valentina crashes when network is disabled on Linux.
+- [#612] Seamly2D crashes when network is disabled on Linux.
 - [#406] New feature: Seam allowance tool -> Preview.
 - [#88] New feature: Variable width seam allowances.
 - [#280] New tool: 'Hem' in Detail mode.
@@ -112,22 +112,22 @@
 - [#679] Second control point at beginning of curved path - bug.
 
 # Version 0.4.5 October 15, 2016
-- [#435] Valentina doesn't change the cursor.
+- [#435] Seamly2D doesn't change the cursor.
 - [#473] Tape 'Preferences' cause loss of focus.
 - [#485] Error when drawing a curved path.
-- [#491] Valentina doesn't update fractional separator.
-- [#492] Valentina crashes when add an increment.
+- [#491] Seamly2D doesn't update fractional separator.
+- [#492] Seamly2D crashes when add an increment.
 - [#493] Error in seam allowance drawing.
 - [#468] Error - Tape 'Save As' should set 'Read Only' to false.
 - [#501] Rename Window->Close Window to Window->Close pattern.
 - [#515] Seam allowance wrong way.
 - [#494] Printing is not working.
-- [#516] Valentina crashes when use "Point intersect line and axis" instrument.
+- [#516] Seamly2D crashes when use "Point intersect line and axis" instrument.
 - [#483] File lost.
 - Fixed Bisector tool bug. The tool created internal variable for wrong segment.  
 - [#526] Dialog Detail is not on top after selection second object on Mac.
 - [#532] Unexpected error occurs when zoom out image.
-- [#537] Valentina crashes when use undo command.
+- [#537] Seamly2D crashes when use undo command.
 - [#544] Error: Color Lines are black until touched.
 - [#543] Detail loses details.
 - [#548] Bug Detail tool. Case when seam allowance is wrong.
@@ -248,7 +248,7 @@ has been scrolled. Fixed validation when the list conatains only curve.
 - [#253] Show detail information about standard measurements file in dialog Increments.
 - [#249] Set default base height and base size according base values in standard measurements file.
 - New localization language - Spanish.
-- Fixed bug with About Valentina dialog on Windows.
+- Fixed bug with About Seamly2D dialog on Windows.
 - [#235] Delete point without confirmation / configurable.
 - Version for Mac OS support export to .ps, .eps.
 - New localization language - Finnish.
@@ -309,7 +309,7 @@ has been scrolled. Fixed validation when the list conatains only curve.
 - Macros Q_DECL_NOEXCEPT_EXPR don't work in gcc 4.6.
 - Change in build dependency for deb package. Add new architecture for deb file.
 - Added spec file for rpm package.
-- Fix valentina.desktop.
+- Fix seamly2d.desktop.
 
 # Version 0.2.1 Released December 8, 2013
 - Problem with compilation in console on Ubuntu.

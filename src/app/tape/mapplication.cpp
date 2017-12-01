@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -268,7 +268,7 @@ MApplication::MApplication(int &argc, char **argv)
     setApplicationVersion(APP_VERSION_STR);
     // We have been running Tape in two different cases.
     // The first inside own bundle where info.plist is works fine, but the second,
-    // when we run inside Valentina's bundle, require direct setting the icon.
+    // when we run inside Seamly2D's bundle, require direct setting the icon.
     setWindowIcon(QIcon(":/tapeicon/64x64/logo.png"));
 }
 
@@ -521,7 +521,7 @@ QString MApplication::diagramsPath() const
         }
         else
         {
-            return QStringLiteral("/usr/share/valentina") + dPath;
+            return QStringLiteral("/usr/share/seamly2d") + dPath;
         }
     }
 #else // Unix
@@ -532,7 +532,7 @@ QString MApplication::diagramsPath() const
     }
     else
     {
-        return QStringLiteral("/usr/share/valentina") + dPath;
+        return QStringLiteral("/usr/share/seamly2d") + dPath;
     }
 #endif
 }
@@ -576,7 +576,7 @@ void MApplication::RetranslateTables()
 void MApplication::ParseCommandLine(const SocketConnection &connection, const QStringList &arguments)
 {
     QCommandLineParser parser;
-    parser.setApplicationDescription(tr("Valentina's measurements editor."));
+    parser.setApplicationDescription(tr("Seamly2D's measurements editor."));
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addPositionalArgument("filename", tr("The measurement file."));

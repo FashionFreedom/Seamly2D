@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -128,7 +128,7 @@ QStringList ClearFormats(const QStringList &predefinedFormats, QStringList forma
 static const QString commonIniFilename = QStringLiteral("common");
 
 #if !defined(Q_OS_WIN)
-const QString VCommonSettings::unixStandardSharePath = QStringLiteral("/usr/share/valentina");
+const QString VCommonSettings::unixStandardSharePath = QStringLiteral("/usr/share/seamly2d");
 #endif
 
 namespace
@@ -294,7 +294,7 @@ QString VCommonSettings::PrepareMultisizeTables(const QString &currentPath)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetDefPathIndividualMeasurements()
 {
-    return QDir::homePath() + QLatin1String("/valentina/") + tr("measurements") + QLatin1String("/") + tr("individual");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("individual");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -315,7 +315,7 @@ void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetDefPathMultisizeMeasurements()
 {
-    return QDir::homePath() + QLatin1String("/valentina/") + tr("measurements") + QLatin1String("/") + tr("multisize");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("multisize");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -336,7 +336,7 @@ void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetDefPathTemplate()
 {
-    return QDir::homePath() + QLatin1String("/valentina/") + tr("templates");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -357,7 +357,7 @@ void VCommonSettings::SetPathTemplate(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetDefPathLabelTemplate()
 {
-    return QDir::homePath() + QLatin1String("/valentina/") + tr("label templates");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

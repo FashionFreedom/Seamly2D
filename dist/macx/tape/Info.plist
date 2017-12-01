@@ -11,13 +11,13 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>10.6</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2013-2017, Valentina project</string>
+	<string>© 2013-2017, Seamly2D project</string>
 	<key>CFBundleSignature</key>
 	<string>@TYPEINFO@</string>
 	<key>CFBundleExecutable</key>
 	<string>@EXECUTABLE@</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.valentinaproject.@EXECUTABLE@</string>
+        <string>org.seamly2dproject.@EXECUTABLE@</string>
 	<key>CFBundleShortVersionString</key>
 	<string>0.6.0</string>
 	<key>CFBundleVersion</key>
@@ -33,10 +33,10 @@
 			<string>i-measurements.incs</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.valentinaproject.vit</string>
+                                <string>org.seamly2dproject.vit</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Valentina individual measurements</string>
+			<string>Seamly2D individual measurements</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 		</dict>
@@ -47,10 +47,10 @@
 			<string>s-measurements.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.valentinaproject.vst</string>
+                                <string>org.seamly2dproject.vst</string>
 			</array>
 			<key>CFBundleTypeName</key>
-                        <string>Valentina multisize measurements</string>
+                        <string>Seamly2D multisize measurements</string>
 			<key>LSHandlerRank</key>
 			<string>Owner</string>
 		</dict>
@@ -64,11 +64,11 @@
 				<string>public.xml</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Valentina individual measurements</string>
+			<string>Seamly2D individual measurements</string>
 			<key>UTTypeIconFile</key>
 			<string>i-measurements.icns</string>
 			<key>UTTypeIdentifier</key>
-			<string>org.valentinaproject.vit</string>
+                        <string>org.seamly2dproject.vit</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -86,11 +86,11 @@
 				<string>public.xml</string>
 			</array>
 			<key>UTTypeDescription</key>
-                        <string>Valentina multisize measurements</string>
+                        <string>Seamly2D multisize measurements</string>
 			<key>UTTypeIconFile</key>
 			<string>s-measurements.icns</string>
 			<key>UTTypeIdentifier</key>
-			<string>org.valentinaproject.vst</string>
+                        <string>org.seamly2dproject.vst</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

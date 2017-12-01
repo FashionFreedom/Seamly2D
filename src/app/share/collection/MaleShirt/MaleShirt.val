@@ -66,7 +66,7 @@ Delete layouts which are not needed.</description>
         <increment name="#SleeveHemLineTurn" description="Short sleeve hemline turn amount" formula="2"/>
         <increment name="#ArmLenght" description="Lenght of the arm" formula="arm_shoulder_tip_to_wrist_bent+3"/>
         <increment name="#CuffGirth" description="Cuff circumfence" formula="#SleeveWristGirth-2*#SleeveDart"/>
-        <increment name="#PrintingFix" description="The is a value to control Valentina to print inside of the of the piece" formula="0.01"/>
+        <increment name="#PrintingFix" description="The is a value to control Seamly2D to print inside of the of the piece" formula="0.01"/>
         <increment name="#CollarButton" description="The amount need to be added to the collar for the button panel" formula="1.5"/>
         <increment name="#CollarFrontBaseHeight" description="Collabase height at the front" formula="2"/>
         <increment name="#CollarUpperButtonLength" description="The  length of the Collar Top  from button" formula="#CollarButton+1"/>

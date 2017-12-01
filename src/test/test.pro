@@ -1,6 +1,6 @@
 TEMPLATE = subdirs
 SUBDIRS = \
     ParserTest \
-    ValentinaTest \
+    Seamly2DTest \
     TranslationsTest \
     CollectionTest

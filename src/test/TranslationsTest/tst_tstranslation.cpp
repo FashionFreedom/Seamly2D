@@ -31,21 +31,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Valentina is free software: you can redistribute it and/or modify
+ **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Valentina is distributed in the hope that it will be useful,
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -82,7 +82,7 @@ void TST_TSTranslation::CheckEnglishLocalization_data()
     QTest::addColumn<QString>("source");
     QTest::addColumn<QString>("translation");
 
-    const QString fileName = QStringLiteral("valentina_en_US.ts");
+    const QString fileName = QStringLiteral("seamly2d_en_US.ts");
     const QDomNodeList messages = LoadTSFile(fileName);
     if (messages.isEmpty())
     {
@@ -142,7 +142,7 @@ void TST_TSTranslation::CheckEmptyToolButton_data()
     QTest::addColumn<QString>("source");
     QTest::addColumn<QDomElement>("message");
 
-    const QString fileName = QStringLiteral("valentina.ts");
+    const QString fileName = QStringLiteral("seamly2d.ts");
     const QDomNodeList messages = LoadTSFile(fileName);
     if (messages.isEmpty())
     {
@@ -209,7 +209,7 @@ void TST_TSTranslation::CheckPlaceMarkerExist_data()
 
     {
         QDir dir(TS_DIR);
-        const QStringList fileNames = dir.entryList(QStringList("valentina*.ts"));
+        const QStringList fileNames = dir.entryList(QStringList("seamly2d*.ts"));
         QVERIFY2(locales.size() == fileNames.size()-1, "Unexpected count of files.");
     }
 
@@ -218,7 +218,7 @@ void TST_TSTranslation::CheckPlaceMarkerExist_data()
 
     for(int j = 0; j < locales.size(); ++j)
     {
-        const QString filename = QString("valentina_%1.ts").arg(locales.at(j));
+        const QString filename = QString("seamly2d_%1.ts").arg(locales.at(j));
 
         const QDomNodeList messages = LoadTSFile(filename);
         if (messages.isEmpty())
@@ -321,7 +321,7 @@ void TST_TSTranslation::TestPunctuation_data()
 
     {
         QDir dir(TS_DIR);
-        const QStringList fileNames = dir.entryList(QStringList("valentina*.ts"));
+        const QStringList fileNames = dir.entryList(QStringList("seamly2d*.ts"));
         QVERIFY2(locales.size() == fileNames.size()-1, "Unexpected count of files.");
     }
 
@@ -331,7 +331,7 @@ void TST_TSTranslation::TestPunctuation_data()
 
     for(int j = 0; j < locales.size(); ++j)
     {
-        const QString filename = QString("valentina_%1.ts").arg(locales.at(j));
+        const QString filename = QString("seamly2d_%1.ts").arg(locales.at(j));
 
         const QDomNodeList messages = LoadTSFile(filename);
         if (messages.isEmpty())
@@ -432,7 +432,7 @@ void TST_TSTranslation::TestHTMLTags_data()
 
     {
         QDir dir(TS_DIR);
-        const QStringList fileNames = dir.entryList(QStringList("valentina*.ts"));
+        const QStringList fileNames = dir.entryList(QStringList("seamly2d*.ts"));
         QVERIFY2(locales.size() == fileNames.size()-1, "Unexpected count of files.");
     }
 
@@ -441,7 +441,7 @@ void TST_TSTranslation::TestHTMLTags_data()
 
     for(int j = 0; j < locales.size(); ++j)
     {
-        const QString filename = QString("valentina_%1.ts").arg(locales.at(j));
+        const QString filename = QString("seamly2d_%1.ts").arg(locales.at(j));
 
         const QDomNodeList messages = LoadTSFile(filename);
         if (messages.isEmpty())

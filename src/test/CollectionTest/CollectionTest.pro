@@ -45,14 +45,14 @@ DEFINES += SRCDIR=\\\"$$PWD/\\\"
 SOURCES += \
     qttestmainlambda.cpp \
     tst_tapecommandline.cpp \
-    tst_valentinacommandline.cpp
+    tst_seamly2dcommandline.cpp
 
 *msvc*:SOURCES += stable.cpp
 
 HEADERS += \
     stable.h \
     tst_tapecommandline.h \
-    tst_valentinacommandline.h
+    tst_seamly2dcommandline.h
 
 # Set using ccache. Function enable_ccache() defined in common.pri.
 $$enable_ccache()
@@ -194,23 +194,23 @@ TAPE_TEST_FILES += \
     tst_tape/text.vit \
     tst_tape/text.vst
 
-VALENTINA_TEST_FILES += \
-    tst_valentina/empty.val \
-    tst_valentina/issue_372.val \
-    tst_valentina/wrong_obj_type.val \
-    tst_valentina/text.val \
-    tst_valentina/glimited_no_m.val \
-    tst_valentina/glimited_vit.val \
-    tst_valentina/glimited.vit \
-    tst_valentina/glimited_vst.val \
-    tst_valentina/glimited.vst \
-    tst_valentina/issue_256.val \
-    tst_valentina/issue_256_wrong_path.val \
-    tst_valentina/issue_256_correct.vit \
-    tst_valentina/issue_256_wrong.vit \
-    tst_valentina/issue_256_correct.vst \
-    tst_valentina/issue_256_wrong.vst \
-    tst_valentina/wrong_formula.val
+seamly2d_TEST_FILES += \
+    tst_seamly2d/empty.val \
+    tst_seamly2d/issue_372.val \
+    tst_seamly2d/wrong_obj_type.val \
+    tst_seamly2d/text.val \
+    tst_seamly2d/glimited_no_m.val \
+    tst_seamly2d/glimited_vit.val \
+    tst_seamly2d/glimited.vit \
+    tst_seamly2d/glimited_vst.val \
+    tst_seamly2d/glimited.vst \
+    tst_seamly2d/issue_256.val \
+    tst_seamly2d/issue_256_wrong_path.val \
+    tst_seamly2d/issue_256_correct.vit \
+    tst_seamly2d/issue_256_wrong.vit \
+    tst_seamly2d/issue_256_correct.vst \
+    tst_seamly2d/issue_256_wrong.vst \
+    tst_seamly2d/wrong_formula.val
 
 COLLECTION_FILES += \
     $${PWD}/../../app/share/tables/multisize/GOST_man_ru.vst \
@@ -254,7 +254,7 @@ COLLECTION_FILES += \
 # Compilation will fail without this files after we added them to this section.
 OTHER_FILES += \
     $$TAPE_TEST_FILES \
-    $$VALENTINA_TEST_FILES \
+    $$seamly2d_TEST_FILES \
     $$COLLECTION_FILES
 
 for(DIR, TAPE_TEST_FILES) {
@@ -265,13 +265,13 @@ for(DIR, TAPE_TEST_FILES) {
 
 copyToDestdir($$tape_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_tape))
 
-for(DIR, VALENTINA_TEST_FILES) {
+for(DIR, seamly2d_TEST_FILES) {
      #add these absolute paths to a variable which
      #ends up as 'mkcommands = path1 path2 path3 ...'
-     valentina_path += $${PWD}/$$DIR
+     seamly2d_path += $${PWD}/$$DIR
 }
 
-copyToDestdir($$valentina_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_valentina))
+copyToDestdir($$seamly2d_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_seamly2d))
 
 for(DIR, COLLECTION_FILES) {
      #add these absolute paths to a variable which
@@ -279,4 +279,4 @@ for(DIR, COLLECTION_FILES) {
      collection_path += $$DIR
 }
 
-copyToDestdir($$collection_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_valentina_collection))
+copyToDestdir($$collection_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_seamly2d_collection))

@@ -195,7 +195,7 @@ unix{
         # Path to bin file after installation
         target.path = $$PREFIX/bin
 
-        rcc_diagrams.path = /usr/share/valentina/
+        rcc_diagrams.path = /usr/share/seamly2d/
         rcc_diagrams.files = $${OUT_PWD}/$${DESTDIR}/diagrams.rcc
         rcc_diagrams.CONFIG = no_check_exist
 

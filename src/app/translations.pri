@@ -35,7 +35,7 @@ isEmpty(LOCALES){
 }
 
 for(lang, LANGUAGES) {
-    INSTALL_TRANSLATIONS += $${TRANSLATIONS_PATH}/valentina_$${lang}.qm
+    INSTALL_TRANSLATIONS += $${TRANSLATIONS_PATH}/seamly2d_$${lang}.qm
 }
 
 for(lang, LANGUAGES) {
@@ -61,8 +61,8 @@ for(_translation_name, INSTALL_TRANSLATIONS) {
     !exists($$_translation_name) {
         system($$shell_path($$[QT_INSTALL_BINS]/$$LRELEASE) -silent $$shell_path($${TRANSLATIONS_PATH}/$$_translation_name_ts) -qm $$shell_path($$_translation_name))
         unix {
-            exists($${OUT_PWD}/$$DESTDIR/valentina) {
-                system(rm -fv $${OUT_PWD}/$$DESTDIR/valentina) # force to call linking
+            exists($${OUT_PWD}/$$DESTDIR/seamly2d) {
+                system(rm -fv $${OUT_PWD}/$$DESTDIR/seamly2d) # force to call linking
             }
             system(rm -fv $${OUT_PWD}/$$DESTDIR/translations/*.qm)
         }
@@ -82,7 +82,7 @@ macx{
     RESOURCES_DIR = "Contents/Resources"
 
         # Copy in bundle translation files.
-        exists($${TRANSLATIONS_PATH}/valentina_ru_RU.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_ru_RU.qm){
             TRANSLATION_ru_RU.files += \
                 $$files($${TRANSLATIONS_PATH}/*_ru_RU.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_ru.qm \
@@ -93,7 +93,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_ru_RU
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_uk_UA.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_uk_UA.qm){
             TRANSLATION_uk_UA.files += \
                 $$files($${TRANSLATIONS_PATH}/*_uk_UA.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_uk.qm \
@@ -104,7 +104,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_uk_UA
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_de_DE.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_de_DE.qm){
             TRANSLATION_de_DE.files += \
                 $$files($${TRANSLATIONS_PATH}/*_de_DE.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_de.qm \
@@ -115,7 +115,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_de_DE
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_cs_CZ.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_cs_CZ.qm){
             TRANSLATION_cs_CZ.files += \
                 $$files($${TRANSLATIONS_PATH}/*_cs_CZ.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_cs.qm \
@@ -126,7 +126,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_cs_CZ
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_he_IL.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_he_IL.qm){
             TRANSLATION_he_IL.files += \
                 $$files($${TRANSLATIONS_PATH}/*_he_IL.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_he.qm \
@@ -135,7 +135,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_he_IL
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_fr_FR.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_fr_FR.qm){
             TRANSLATION_fr_FR.files += \
                 $$files($${TRANSLATIONS_PATH}/*_fr_FR.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_fr.qm \
@@ -146,7 +146,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_fr_FR
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_it_IT.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_it_IT.qm){
             TRANSLATION_it_IT.files += \
                 $$files($${TRANSLATIONS_PATH}/*_it_IT.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_it.qm \
@@ -157,7 +157,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_it_IT
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_nl_NL.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_nl_NL.qm){
             TRANSLATION_nl_NL.files += \
                 $$files($${TRANSLATIONS_PATH}/*_nl_NL.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
@@ -165,7 +165,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_nl_NL
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_id_ID.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_id_ID.qm){
             TRANSLATION_id_ID.files += \
                 $$files($${TRANSLATIONS_PATH}/*_id_ID.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
@@ -173,7 +173,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_id_ID
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_es_ES.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_es_ES.qm){
             TRANSLATION_es_ES.files += \
                 $$files($${TRANSLATIONS_PATH}/*_es_ES.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qt_es.qm \
@@ -182,7 +182,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_es_ES
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_fi_FI.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_fi_FI.qm){
             TRANSLATION_fi_FI.files += \
                 $$files($${TRANSLATIONS_PATH}/*_fi_FI.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_fi.qm \
@@ -192,7 +192,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_fi_FI
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_en_US.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_en_US.qm){
             TRANSLATION_en_US.files += \
                 $$files($${TRANSLATIONS_PATH}/*_en_US.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qtbase_en.qm \
@@ -203,7 +203,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_en_US
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_en_CA.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_en_CA.qm){
             TRANSLATION_en_CA.files += \
                 $$files($${TRANSLATIONS_PATH}/*_en_CA.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
@@ -211,7 +211,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_en_CA
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_en_IN.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_en_IN.qm){
             TRANSLATION_en_IN.files += \
                 $$files($${TRANSLATIONS_PATH}/*_en_IN.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
@@ -219,7 +219,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_en_IN
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_ro_RO.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_ro_RO.qm){
             TRANSLATION_ro_RO.files += \
                 $$files($${TRANSLATIONS_PATH}/*_ro_RO.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
@@ -227,7 +227,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_ro_RO
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_zh_CN.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_zh_CN.qm){
             TRANSLATION_zh_CN.files += \
                 $$files($${TRANSLATIONS_PATH}/*_zh_CN.qm) \
                 $$[QT_INSTALL_TRANSLATIONS]/qt_zh_CN.qm \
@@ -236,7 +236,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_zh_CN
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_pt_BR.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_pt_BR.qm){
             TRANSLATION_pt_BR.files += \
                 $$files($${TRANSLATIONS_PATH}/*_pt_BR.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
@@ -244,7 +244,7 @@ macx{
             QMAKE_BUNDLE_DATA += TRANSLATION_pt_BR
         }
 
-        exists($${TRANSLATIONS_PATH}/valentina_el_GR.qm){
+        exists($${TRANSLATIONS_PATH}/seamly2d_el_GR.qm){
             TRANSLATION_el_GR.files += \
                 $$files($${TRANSLATIONS_PATH}/*_el_GR.qm) \
                 $${TRANSLATIONS_PATH}/Localizable.strings
