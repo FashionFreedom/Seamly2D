@@ -5,7 +5,7 @@ Seamly2D is pattern design software to create reusable, scalable, sharable custo
 
 Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
 
-Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.valentina-project.org 
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly2d.com
 
 Supported platforms:  
    * Windows XP SP2 (32-bit) or later   
@@ -14,14 +14,14 @@ Supported platforms:
    * Fedora 24 (32-bit/64-bit) or later  
    * Mac OS X 10.8 (64-bit) or later  
 
-Homepage and downloads     https://valentina-project.org   
+Homepage and downloads     https://fashionfreedom.eu
 Wiki & User Manual         https://wiki.valentinaproject.org  
-Forum                      https://forum.valentina-project.org/  
+Forum                      https://forum.seamly2d.com/ 
 Translations               https://www.transifex.com/organization/valentina  
 PPA for Ubuntu (develop)   (soon) ...  
 PPA for Ubuntu (test)      (soon) ...  
 IRC channel                #valentina on irc.freenode.net  
-Main repository            https://github.com/valentina-project/vpo2  
+Main repository            https://github.com/fashionfreedom/seamly2d
 Doxygen docs               https://valentina-project.github.io/  
 
 Building Seamly2D
@@ -32,7 +32,7 @@ Basic Prerequisites:
    * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)  
    * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)  
    * git (for working with repository)  https://git-scm.com/downloads  
-   * Read forum on building with Qt: https://forum.valentina-project.org/t/how-to-build-with-qt/1833
+   * Read forum on building with Qt: https://forum.seamly2d.com/t/how-to-build-with-qt/1833
    
 Additional:
 ________________
@@ -83,7 +83,7 @@ ________________
 <em>Windows</em>: 
 
 * MinGW v5.0.2 from http://mingw-w64.org/doku.php  
-* Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Valentina's binary file.  
+* Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Seamly2D's binary file.  
 
 ________________
 
@@ -92,7 +92,7 @@ The installed toolchains have to match the one Qt was configured with.
 You can build from within the <em>QtCreator</em> IDE (see forum post above), or build with Qt's <em>qmake</em> from a terminal window:
 
     cd $SOURCE_DIRECTORY\build
-    qmake ..\Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
     make (or mingw32-make or nmake or jom, depending on your platform)
 
 Note: On some platforms e.g. Fedora, all Qt-tools come as qmake-qt5, etc. Run 
@@ -112,7 +112,7 @@ Add the locations of your compiler and other build tools to your system's PATH v
 Unix systems: 
 Default prefix for command "make install" is /usr. For using another prefix build with qmake command:
 
-    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
 
 where /usr/local is a new prefix for installation binary files and /usr/lib/i386-linux-gnu is new prefix for install libraries.  
 

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/valentina-project/vpo2                             *
+ *   https://github.com/fashionfreedom/seamly2d                             *
  *                                                                         *
  ***************************************************************************
  **
@@ -32,7 +32,7 @@
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013-2015 Valentina project
- **  <https://github.com/valentina-project/vpo2> All Rights Reserved.
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -918,7 +918,7 @@ void VApplication::SendReport(const QString &reportName) const
     content.append(QString("Build revision:%1").arg(BUILD_REVISION)+"\r\n");
     content.append(QString("Based on Qt %1 (32 bit)").arg(QT_VERSION_STR)+"\r\n");
     content.append(QString("Built on %1 at %2").arg(__DATE__).arg(__TIME__)+"\r\n");
-    content.append(QString("Web site:http://www.valentina-project.org/ ")+"\r\n");
+    content.append(QString("Web site:http://https://fashionfreedom.eu/ ")+"\r\n");
     content.append("\r\n");
 
     // Creating json with report

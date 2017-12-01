@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/valentina-project/vpo2                             *
+ *   https://github.com/fashionfreedom/seamly2d                             *
  *                                                                         *
  ***************************************************************************
  **
@@ -32,7 +32,7 @@
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013-2015 Valentina project
- **  <https://github.com/valentina-project/vpo2> All Rights Reserved.
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -95,7 +95,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Pattern created with Valentina v%1 (http://www.valentina-project.org/).").arg(APP_VERSION_STR);
+    return QString("Pattern created with Valentina v%1 (https://fashionfreedom.eu/).").arg(APP_VERSION_STR);
 }
 }
 
