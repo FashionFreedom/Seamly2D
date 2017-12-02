@@ -22,7 +22,7 @@ PPA for Ubuntu (develop)   (soon) ...
 PPA for Ubuntu (test)      (soon) ...
 IRC channel                #seamly2d on irc.freenode.net
 Main repository            https://github.com/fashionfreedom/seamly2d
-Doxygen docs               https://seamly2d.hithub.io/
+Doxygen docs               https://seamly2d.github.io/
 
 Building Seamly2D
 ================

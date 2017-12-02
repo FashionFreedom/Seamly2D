@@ -4023,7 +4023,7 @@ void MainWindow::CreateActions()
     connect(ui->actionForum, &QAction::triggered, this, [this]()
     {
         qCDebug(vMainWindow, "Opening forum");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("http://forum.seamly2d-project.org/")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly2d.com/")));
     });
 
     connect(ui->actionLast_tool, &QAction::triggered, this, &MainWindow::LastUsedTool);
