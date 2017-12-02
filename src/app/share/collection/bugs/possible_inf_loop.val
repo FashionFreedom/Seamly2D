@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <pattern>
-    <!--Pattern created with Seamly2D (http://www.valentina-project.org/).-->
+    <!--Pattern created with Seamly2D (https://fashionfreedom.eu/).-->
     <version>0.3.9</version>
     <unit>cm</unit>
     <author>Timo Virtaneva</author>
@@ -16,20 +16,20 @@
     <measurements/>
     <increments>
         <increment name="#Primarymeasuremements" description="" formula="0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0"/>
-        <increment name="#BH" description="Body height&#xa;Measure the height from the top of the head to the floor&#xa;&#xa;Valentina: height" formula="168"/>
-        <increment name="#CG" description="Chest girth&#xa;Measure the fulles part of the bust&#xa;&#xa;Valentina: bust_circ" formula="92"/>
-        <increment name="#WG" description="Waist girth&#xa;Measure the narrowest part of the waist&#xa;&#xa;Valentina: waist_circ" formula="74"/>
-        <increment name="#HG" description="Hip Girth&#xa;Measure the fullest part of the hip&#xa;&#xa;Valentina: hip_circ" formula="98"/>
-        <increment name="#SL" description="Sleeve lenght&#xa;Measure over the bend elbow from shoulder tip to the wristbone&#xa;&#xa;Valentina:  arm_shoulder_tip_to_wrist_bent" formula="60"/>
+        <increment name="#BH" description="Body height&#xa;Measure the height from the top of the head to the floor&#xa;&#xa;seamly2d: height" formula="168"/>
+        <increment name="#CG" description="Chest girth&#xa;Measure the fulles part of the bust&#xa;&#xa;seamly2d: bust_circ" formula="92"/>
+        <increment name="#WG" description="Waist girth&#xa;Measure the narrowest part of the waist&#xa;&#xa;seamly2d: waist_circ" formula="74"/>
+        <increment name="#HG" description="Hip Girth&#xa;Measure the fullest part of the hip&#xa;&#xa;seamly2d: hip_circ" formula="98"/>
+        <increment name="#SL" description="Sleeve lenght&#xa;Measure over the bend elbow from shoulder tip to the wristbone&#xa;&#xa;seamly2d:  arm_shoulder_tip_to_wrist_bent" formula="60"/>
         <increment name="#Auxiliarymeasurements" description="" formula="0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0"/>
-        <increment name="#SD" description="Skye depth&#xa;Measured from the neck &#xa;Calculated&#xa;CG &lt; 116  SD=CG/10+11, other wise CG/10+10,5 &#xa;&#xa;Valentina: height_neck_back - height_armpit" formula="#CG/10+(#CG&lt;116?11:10.5 )"/>
-        <increment name="#BWL" description="Back waist lenght&#xa;Measured from the neck&#xa;Calculated:&#xa;BH/4-0...1&#xa;&#xa;Valentina: height_neck_back - height_waist_side" formula="#BH/4-1"/>
-        <increment name="#HD" description="Hip depth&#xa;Measured from the neck&#xa;Calculated: SD+BWL&#xa;Valentina: height_neck_back - height_hip" formula="#SD+#BWL"/>
+        <increment name="#SD" description="Skye depth&#xa;Measured from the neck &#xa;Calculated&#xa;CG &lt; 116  SD=CG/10+11, other wise CG/10+10,5 &#xa;&#xa;seamly2d: height_neck_back - height_armpit" formula="#CG/10+(#CG&lt;116?11:10.5 )"/>
+        <increment name="#BWL" description="Back waist lenght&#xa;Measured from the neck&#xa;Calculated:&#xa;BH/4-0...1&#xa;&#xa;seamly2d: height_neck_back - height_waist_side" formula="#BH/4-1"/>
+        <increment name="#HD" description="Hip depth&#xa;Measured from the neck&#xa;Calculated: SD+BWL&#xa;seamly2d: height_neck_back - height_hip" formula="#SD+#BWL"/>
         <increment name="#L" description="Length" formula="106"/>
         <increment name="#NW" description="Nech width&#xa;Calculated: CG/20+2" formula="#CG/20+2"/>
-        <increment name="#BL_I" description="Bust lenght I&#xa;Measured from the nape of the neck&#xa;Valentina: bustpoint_to_bustpoint_halter/2" formula="34"/>
+        <increment name="#BL_I" description="Bust lenght I&#xa;Measured from the nape of the neck&#xa;seamly2d: bustpoint_to_bustpoint_halter/2" formula="34"/>
         <increment name="#BL_II" description="Bust lenght II&#xa;Measured BL_I-NW&#xa;Calculated&#xa;CG &lt; 96 BL_II=CG/4+6&#xa;CG &lt; 116 BL_II=CG/4+5&#xa;other wise CG/4+4&#xa;" formula="#CG/4+6-(#CG>96?1:0)-(#CG>116?1:0)"/>
-        <increment name="#FWL_I" description="Front waist length I&#xa;Measured fron the nape of the neck&#xa;Valentina: " formula="52"/>
+        <increment name="#FWL_I" description="Front waist length I&#xa;Measured fron the nape of the neck&#xa;seamly2d: " formula="52"/>
         <increment name="#FWL_II" description="Front waist lenght II&#xa;Measured FWL_I-NW&#xa;Calculated&#xa;CG &lt; 90: BWL+4&#xa;CG &lt; 100: BWL+4+0,5&#xa;CG &lt; 110: BWL+4+0,5+(CG-100)/10&#xa;CG &lt; 120: BWL+4+0,5+0,5+(CG-100)/10&#xa;CG &lt; 130: BWL+4+0,5+0,5+0,5+(CG-100)/10&#xa;CG > 130: BWL+4+0,5+0,5+0,5+0,5+(CG-100)/10&#xa;&#xa;" formula="#BWL+4+(#CG > 90?0.5:0)+(#CG > 100?(#CG-100)/10:0)+(#CG >110?0.5:0)+(#CG >120?0.5:0)+(#CG >130?0.5:0)"/>
         <increment name="#BW" description="Back width&#xa;CG/8+5,5" formula="#CG/8+5.5"/>
         <increment name="#SW" description="Skye width&#xa;CG/8-1,5" formula="#CG/8-1.5"/>

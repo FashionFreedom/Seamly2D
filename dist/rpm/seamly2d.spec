@@ -1,4 +1,4 @@
-Name:valentina
+Name:seamly2d
 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
@@ -47,7 +47,7 @@ Requires:   poppler-utils
 
 Version:	0.5.999
 Release:	0
-URL:		https://github.org/valentina-project/vpo2
+URL:		https://github.org/seamly2d-project/vpo2
 License:	GPL-3.0+
 Source0:	%{name}-%{version}.tar.gz
 Group:		Graphics
@@ -66,7 +66,7 @@ Packager:   Susan Spencer <susan.spencer@gmail.com>
 %endif
 
 %description
-Valentina is a cross-platform patternmaking program which allows designers 
+Seamly2D is a cross-platform patternmaking program which allows designers 
 to create and model patterns of clothing. This software allows pattern 
 creation, using either standard sizing tables or an individual’s set of 
 measurements. It blends new technologies with traditional methods to create 
@@ -77,9 +77,9 @@ a unique pattern making tool.
 
 %build
 %if 0%{?suse_version} >= 1315
-qmake-qt5 PREFIX=%{_prefix} LRELEASE=lrelease-qt5 Valentina.pro -r "CONFIG += noTests noRunPath no_ccache noDebugSymbols"
+qmake-qt5 PREFIX=%{_prefix} LRELEASE=lrelease-qt5 Seamly2D.pro -r "CONFIG += noTests noRunPath no_ccache noDebugSymbols"
 %else
-qmake-qt5 PREFIX=%{_prefix} Valentina.pro -r "CONFIG += noTests noRunPath no_ccache noDebugSymbols"
+qmake-qt5 PREFIX=%{_prefix} Seamly2D.pro -r "CONFIG += noTests noRunPath no_ccache noDebugSymbols"
 %endif
 %{__make} %{?jobs:-j %jobs}
 
@@ -94,10 +94,10 @@ gzip -9c dist/debian/%{name}.1 > dist/debian/%{name}.1.gz &&
 gzip -9c dist/debian/tape.1 > dist/debian/tape.1.gz &&
 %{__install} -Dm 644 dist/debian/tape.1.gz %{buildroot}%{_mandir}/man1/tape.1.gz
 
-cp dist/debian/valentina.sharedmimeinfo dist/debian/%{name}.xml &&
+cp dist/debian/seamly2d.sharedmimeinfo dist/debian/%{name}.xml &&
 %{__install} -Dm 644 dist/debian/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
 
-cp dist/debian/valentina.mime dist/debian/%{name} &&
+cp dist/debian/seamly2d.mime dist/debian/%{name} &&
 %{__install} -Dm 644 dist/debian/%{name} %{buildroot}%{_libdir}/mime/packages/%{name}
 
 %if 0%{?suse_version} > 0
@@ -130,7 +130,7 @@ fi
 %doc README.txt LICENSE_GPL.txt 
 %doc %{_mandir}/man1/%{name}.1.gz
 %doc %{_mandir}/man1/tape.1.gz
-%{_bindir}/valentina
+%{_bindir}/seamly2d
 %{_bindir}/tape
 %{_libdir}/libvpropertyexplorer.so
 %{_libdir}/libvpropertyexplorer.so.*

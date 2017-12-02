@@ -232,8 +232,8 @@
         <translation type="vanished">Αποστολή αναφορών απότομης διακοπής (προτείνεται)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Valentina συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε κάποιο πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Seamly2D συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε κάποιο πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">Οι προεπιλεγμένες μονάδες έχουν ενημερωθεί και θα χρησιμοποιηθούν ως προεπιλογή για το επόμενο πατρόν που θα δημιουργήσετε.</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Valentina συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε το πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished"> Μετά απο κάθε απότομη διακοπή το Seamly2D συλλέγει πληροφορίες που πιθανώς θα μας βοηθήσουν να διορθώσουμε το πρόβλημα. Δε συλλέγουμε καμία προσωπική πληροφορία. Μάθετε περισσότερα για το τι &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;είδους πληροφορίες&lt;/a&gt; συλλέγουμε.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
@@ -353,12 +353,12 @@
 <context>
     <name>DialogAboutApp</name>
     <message>
-        <source>About Valentina</source>
-        <translation>Σχετικά με το Valentina</translation>
+        <source>About Seamly2D</source>
+        <translation>Σχετικά με το Seamly2D</translation>
     </message>
     <message>
-        <source>Valentina version</source>
-        <translation>Έκδοση Valentina</translation>
+        <source>Seamly2D version</source>
+        <translation>Έκδοση Seamly2D</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -400,8 +400,8 @@
         <translation>Αναθεώρηση έκδοσης:</translation>
     </message>
     <message>
-        <source>This program is part of Valentina project.</source>
-        <translation>Αυτό το πρόγραμμα είναι μέρος του Valentina project.</translation>
+        <source>This program is part of Seamly2D project.</source>
+        <translation>Αυτό το πρόγραμμα είναι μέρος του Seamly2D project.</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
@@ -5851,8 +5851,8 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina&apos;s measurements editor.</source>
-        <translation>Επεξεργαστής μετρήσεων του Valentina.</translation>
+        <source>Seamly2D&apos;s measurements editor.</source>
+        <translation>Επεξεργαστής μετρήσεων του Seamly2D.</translation>
     </message>
     <message>
         <source>The measurement file.</source>
@@ -5918,8 +5918,8 @@ Apply settings anyway?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Valentina</source>
-        <translation>Valentina</translation>
+        <source>Seamly2D</source>
+        <translation>Seamly2D</translation>
     </message>
     <message>
         <source>Tools for creating points.</source>
@@ -6118,8 +6118,8 @@ Apply settings anyway?</source>
         <translation>Σχετικά &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Valentina</source>
-        <translation>&amp;Σχετικά με το Valentina</translation>
+        <source>&amp;About Seamly2D</source>
+        <translation>&amp;Σχετικά με το Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -6372,8 +6372,8 @@ Do you want to save your changes?</source>
         <translation>Το αρχείο φορτώθηκε</translation>
     </message>
     <message>
-        <source>Valentina didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Το Valentina δεν τερματίστηκε σωστά. Θέλετε να ανοίξετε εκ νέου τα αρχεία (%1) που είχατε ανοιχτά;</translation>
+        <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
+        <translation>Το Seamly2D δεν τερματίστηκε σωστά. Θέλετε να ανοίξετε εκ νέου τα αρχεία (%1) που είχατε ανοιχτά;</translation>
     </message>
     <message>
         <source>Reopen files.</source>
@@ -7321,8 +7321,8 @@ Do you want to save your changes?</source>
         <translation type="vanished">Άνοιγμα φακέλου</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
-        <translation type="vanished">Μονοπάτι που χρησιμοποιεί το Valentina</translation>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Μονοπάτι που χρησιμοποιεί το Seamly2D</translation>
     </message>
     <message>
         <source>Default</source>
@@ -7471,7 +7471,7 @@ Do you want to save your changes?</source>
         <translation>Με επιλογές του λειτουργικού συστήματος</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7494,8 +7494,8 @@ Do you want to save your changes?</source>
 <context>
     <name>PreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
-        <translation>Διαδρομές φακέλων που χρησιμοποιεί το Valentina</translation>
+        <source>Paths that Seamly2D uses</source>
+        <translation>Διαδρομές φακέλων που χρησιμοποιεί το Seamly2D</translation>
     </message>
     <message>
         <source>Type</source>
@@ -9044,8 +9044,8 @@ Do you want to save your changes?</source>
         <translation type="vanished">Άνοιγμα φακέλου</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
-        <translation type="vanished">Μονοπάτι που χρησιμοποιεί το Valentina</translation>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Μονοπάτι που χρησιμοποιεί το Seamly2D</translation>
     </message>
     <message>
         <source>Default</source>
@@ -9142,8 +9142,8 @@ Do you want to save your changes?</source>
 <context>
     <name>TapePreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
-        <translation>Διαδρομές φακέλων που χρησιμοποιεί το Valentina</translation>
+        <source>Paths that Seamly2D uses</source>
+        <translation>Διαδρομές φακέλων που χρησιμοποιεί το Seamly2D</translation>
     </message>
     <message>
         <source>Type</source>
@@ -11774,12 +11774,12 @@ Do you want to save your changes?</source>
         <translation>Κανένα</translation>
     </message>
     <message>
-        <source>Valentina team</source>
+        <source>Seamly2D team</source>
         <comment>Author name</comment>
-        <translation>Ομάδα του Valentina</translation>
+        <translation>Ομάδα του Seamly2D</translation>
     </message>
     <message>
-        <source>Valentina&apos;s internal standard</source>
+        <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
         <translation type="unfinished"></translation>
     </message>

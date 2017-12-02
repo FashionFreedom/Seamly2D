@@ -918,7 +918,7 @@ void VApplication::SendReport(const QString &reportName) const
     content.append(QString("Build revision:%1").arg(BUILD_REVISION)+"\r\n");
     content.append(QString("Based on Qt %1 (32 bit)").arg(QT_VERSION_STR)+"\r\n");
     content.append(QString("Built on %1 at %2").arg(__DATE__).arg(__TIME__)+"\r\n");
-    content.append(QString("Web site:http://https://fashionfreedom.eu/ ")+"\r\n");
+    content.append(QString("Web site:http://fashionfreedom.eu/ ")+"\r\n");
     content.append("\r\n");
 
     // Creating json with report

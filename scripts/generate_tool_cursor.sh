@@ -15,9 +15,9 @@
 # I have spent hour before understand why i don't see PNG inside SVG in Nautilus.
 
 PATTERN=*@2x.png
-TOOLICONPATH=../src/app/valentina/share/resources/toolicon/32x32/ # PNG tool icon should be here
+TOOLICONPATH=../src/app/seamly2d/share/resources/toolicon/32x32/ # PNG tool icon should be here
 TOOLICONS=`ls $TOOLICONPATH$PATTERN`
-OUTPATH=../src/app/valentina/share/resources/cursor/svg # Seek SVG templates here
+OUTPATH=../src/app/seamly2d/share/resources/cursor/svg # Seek SVG templates here
 
 
 for var in $TOOLICONS

@@ -4017,7 +4017,7 @@ void MainWindow::CreateActions()
     connect(ui->actionWiki, &QAction::triggered, this, [this]()
     {
         qCDebug(vMainWindow, "Showing online help");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.valentinaproject.org/wiki/Main_Page")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly2d.com/wiki/Main_Page")));
     });
 
     connect(ui->actionForum, &QAction::triggered, this, [this]()

@@ -57,9 +57,9 @@ before_script:
 - pwd
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    /opt/qt58/bin/qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
+    /opt/qt58/bin/qmake ../Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
   else
-    qmake ../Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=noTests;
+    qmake ../Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=noTests;
   fi
 script:
 - "$CXX --version"
@@ -76,8 +76,8 @@ notifications:
 before_deploy:
 - |
   if [[ ("$TRAVIS_OS_NAME" == "osx") && ("$DEPLOY" == "true" ) ]]; then
-    ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app;
-    tar --exclude "*.DS_Store" -cvzf valentina-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/valentina/bin/Valentina.app/;
+    ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app;
+    tar --exclude "*.DS_Store" -cvzf seamly2d-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app/;
   fi
 deploy:
   provider: launchpad

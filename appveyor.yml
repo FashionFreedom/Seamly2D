@@ -89,7 +89,7 @@ before_build:
 # to run your custom scripts instead of automatic MSBuild
 build_script:
   - cd build
-  - if "%DEPLOY%" == "true" (qmake ..\Valentina.pro -r CONFIG+=no_ccache CONFIG+=checkWarnings CONFIG+=noWindowsInstaller) else (qmake ..\Valentina.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings)
+  - if "%DEPLOY%" == "true" (qmake ..\Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=checkWarnings CONFIG+=noWindowsInstaller) else (qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings)
   - if not "%QMAKE_GENERATOR%" == "MinGW Makefiles" (nmake -s) else (mingw32-make -j%NUMBER_OF_PROCESSORS%)
 
 # to run your custom scripts instead of automatic tests
@@ -124,8 +124,8 @@ after_test:
   - if "%DEPLOY%" == "true" (mingw32-make install)
 
 artifacts:
-  - path: build/package/valentina
-    name: valentina-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
+  - path: build/package/seamly2d
+    name: seamly2d-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
 
 deploy:
 - provider: BinTray

@@ -12,7 +12,7 @@ DEPENDPATH +=  \
 
 include(../../src/libs/vpatterndb/trmeasurements.pri)
 
-# Add here path to new translation file with name "valentina_*_*.ts" if you want to add new language.
+# Add here path to new translation file with name "seamly2d_*_*.ts" if you want to add new language.
 # Same paths in variable INSTALL_TRANSLATIONS (translations.pri).
 
 # File measurements_*.ts we use in transifex.com. It is empty translation file only with english inside.

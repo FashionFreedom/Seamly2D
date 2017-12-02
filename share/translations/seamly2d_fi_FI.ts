@@ -190,8 +190,8 @@
         <translation type="vanished">Lähetä kaatumisraportteja (suositus)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Valentina kerää tietoa jokaisesta ohjelman kaatumisesta. Ohjelma ei kerää henkilökohtaisia tietoja. Lisätietoa kerätystä  &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;tiedosta. &lt;/a&gt; </translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Seamly2D kerää tietoa jokaisesta ohjelman kaatumisesta. Ohjelma ei kerää henkilökohtaisia tietoja. Lisätietoa kerätystä  &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;tiedosta. &lt;/a&gt; </translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -233,12 +233,12 @@
 <context>
     <name>DialogAboutApp</name>
     <message>
-        <source>About Valentina</source>
-        <translation>Tietoja Valentinasta</translation>
+        <source>About Seamly2D</source>
+        <translation>Tietoja Seamly2Dsta</translation>
     </message>
     <message>
-        <source>Valentina version</source>
-        <translation>Valentina versio</translation>
+        <source>Seamly2D version</source>
+        <translation>Seamly2D versio</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -284,7 +284,7 @@
         <translation>Käännös versio:</translation>
     </message>
     <message>
-        <source>This program is part of Valentina project.</source>
+        <source>This program is part of Seamly2D project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5293,7 +5293,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina&apos;s measurements editor.</source>
+        <source>Seamly2D&apos;s measurements editor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5360,8 +5360,8 @@ Apply settings anyway?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Valentina</source>
-        <translation>Valentina</translation>
+        <source>Seamly2D</source>
+        <translation>Seamly2D</translation>
     </message>
     <message>
         <source>Tools for creating points.</source>
@@ -5560,8 +5560,8 @@ Apply settings anyway?</source>
         <translation>Tietoja &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Valentina</source>
-        <translation>&amp;Tietoja Valentinasta</translation>
+        <source>&amp;About Seamly2D</source>
+        <translation>&amp;Tietoja Seamly2Dsta</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5814,8 +5814,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Tiedosto ladattu</translation>
     </message>
     <message>
-        <source>Valentina didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Valentina ei sulkeutunut oikein. Haluatko uudelleen avata tiedostot (%1)?</translation>
+        <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
+        <translation>Seamly2D ei sulkeutunut oikein. Haluatko uudelleen avata tiedostot (%1)?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
@@ -6622,8 +6622,8 @@ Haluatko tallentaa muutokset?</translation>
         <translation type="vanished">Avaa kansio</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
-        <translation type="vanished">Valentinan käyttämä polku</translation>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Seamly2Dn käyttämä polku</translation>
     </message>
     <message>
         <source>Default</source>
@@ -6768,7 +6768,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6791,7 +6791,7 @@ Haluatko tallentaa muutokset?</translation>
 <context>
     <name>PreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8214,8 +8214,8 @@ Do you want to save your changes?</source>
         <translation type="vanished">Avaa kansio</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
-        <translation type="vanished">Valentinan käyttämä polku</translation>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Seamly2Dn käyttämä polku</translation>
     </message>
     <message>
         <source>Default</source>
@@ -8308,7 +8308,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TapePreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10855,12 +10855,12 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina team</source>
+        <source>Seamly2D team</source>
         <comment>Author name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina&apos;s internal standard</source>
+        <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
         <translation type="unfinished"></translation>
     </message>

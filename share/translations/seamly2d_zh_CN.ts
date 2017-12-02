@@ -244,12 +244,12 @@
 <context>
     <name>DialogAboutApp</name>
     <message>
-        <source>About Valentina</source>
-        <translation>关于Valentina</translation>
+        <source>About Seamly2D</source>
+        <translation>关于Seamly2D</translation>
     </message>
     <message>
-        <source>Valentina version</source>
-        <translation>Valentina版本</translation>
+        <source>Seamly2D version</source>
+        <translation>Seamly2D版本</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -291,7 +291,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This program is part of Valentina project.</source>
+        <source>This program is part of Seamly2D project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4557,7 +4557,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina&apos;s measurements editor.</source>
+        <source>Seamly2D&apos;s measurements editor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4624,7 +4624,7 @@ Apply settings anyway?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Valentina</source>
+        <source>Seamly2D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4816,7 +4816,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&amp;About Valentina</source>
+        <source>&amp;About Seamly2D</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5017,7 +5017,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
+        <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5903,7 +5903,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5926,7 +5926,7 @@ Do you want to save your changes?</source>
 <context>
     <name>PreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7403,7 +7403,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TapePreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9845,12 +9845,12 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina team</source>
+        <source>Seamly2D team</source>
         <comment>Author name</comment>
-        <translation>Valentina团队</translation>
+        <translation>Seamly2D团队</translation>
     </message>
     <message>
-        <source>Valentina&apos;s internal standard</source>
+        <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
         <translation type="unfinished"></translation>
     </message>

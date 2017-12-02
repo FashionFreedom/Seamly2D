@@ -197,8 +197,8 @@
         <translation type="vanished">Poslat hlášení o pádu (doporučeno)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Po každém pádu Valentina sbírá informace, které nám mohou pomoci problém opravit. Nesbíráme žádné osobní údaje. Podívejte se, jaký &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;typ informací&lt;/a&gt; sbíráme.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Po každém pádu Seamly2D sbírá informace, které nám mohou pomoci problém opravit. Nesbíráme žádné osobní údaje. Podívejte se, jaký &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;typ informací&lt;/a&gt; sbíráme.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -240,12 +240,12 @@
 <context>
     <name>DialogAboutApp</name>
     <message>
-        <source>About Valentina</source>
-        <translation>O programu Valentina</translation>
+        <source>About Seamly2D</source>
+        <translation>O programu Seamly2D</translation>
     </message>
     <message>
-        <source>Valentina version</source>
-        <translation>Verze programu Valentina</translation>
+        <source>Seamly2D version</source>
+        <translation>Verze programu Seamly2D</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -291,7 +291,7 @@
         <translation>Revize sestavení:</translation>
     </message>
     <message>
-        <source>This program is part of Valentina project.</source>
+        <source>This program is part of Seamly2D project.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5312,7 +5312,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina&apos;s measurements editor.</source>
+        <source>Seamly2D&apos;s measurements editor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5379,8 +5379,8 @@ Apply settings anyway?</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Valentina</source>
-        <translation>Valentina</translation>
+        <source>Seamly2D</source>
+        <translation>Seamly2D</translation>
     </message>
     <message>
         <source>Tools for creating points.</source>
@@ -5579,8 +5579,8 @@ Apply settings anyway?</source>
         <translation>O &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Valentina</source>
-        <translation>&amp;O programu Valentina</translation>
+        <source>&amp;About Seamly2D</source>
+        <translation>&amp;O programu Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
@@ -5833,8 +5833,8 @@ Chcete uložit své změny?</translation>
         <translation>Soubor nahrán</translation>
     </message>
     <message>
-        <source>Valentina didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Valentina nebyla vypnuta správně. Chcete znovu otevřít soubory (%1), které jste měli otevřeny?</translation>
+        <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
+        <translation>Seamly2D nebyla vypnuta správně. Chcete znovu otevřít soubory (%1), které jste měli otevřeny?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
@@ -6641,8 +6641,8 @@ Chcete uložit své změny?</translation>
         <translation type="vanished">Otevřít adresář</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
-        <translation type="vanished">Cesta, kterou používá Valentina</translation>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Cesta, kterou používá Seamly2D</translation>
     </message>
     <message>
         <source>Default</source>
@@ -6783,7 +6783,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6806,7 +6806,7 @@ Chcete uložit své změny?</translation>
 <context>
     <name>PreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8268,8 +8268,8 @@ Do you want to save your changes?</source>
         <translation type="vanished">Otevřít adresář</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
-        <translation type="vanished">Cesta, kterou používá Valentina</translation>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Cesta, kterou používá Seamly2D</translation>
     </message>
     <message>
         <source>Default</source>
@@ -8358,7 +8358,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TapePreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10905,12 +10905,12 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina team</source>
+        <source>Seamly2D team</source>
         <comment>Author name</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Valentina&apos;s internal standard</source>
+        <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
         <translation type="unfinished"></translation>
     </message>

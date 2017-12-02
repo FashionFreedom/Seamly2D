@@ -113,7 +113,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Measurements created with Seamly2D v%1 (http://https://fashionfreedom.eu/).").arg(APP_VERSION_STR);
+    return QString("Measurements created with Seamly2D v%1 (http://fashionfreedom.eu/).").arg(APP_VERSION_STR);
 }
 }
 

@@ -64,34 +64,34 @@ DEBEMAIL="<Your email address>"
 # Init package tools for launchpad
 - Create a Bazaar directory
     mkdir bzr
-- Create debian directory and upload it onto bzr branch ~dismine/valentina/debian
+- Create debian directory and upload it onto bzr branch ~dismine/seamly2d/debian
     cd bzr
     mkdir debian
     cd debian
     bzr init
-    cp -pr valentina/debian bzr/debian
+    cp -pr seamly2d/debian bzr/debian
     bzr add debian
     bzr commit -m "Init"
-    bzr push lp:~dismine/valentina/debian
+    bzr push lp:~dismine/seamly2d/debian
   or download it from launchpad bazaar:
     cd bzr
-    bzr branch lp:~dismine/valentina/debian
+    bzr branch lp:~dismine/seamly2d/debian
 - To update this debian directory, edit files into the bzr dir and run
     bzr commit -m "Description of change"
-    bzr push lp:~dismine/valentina/debian
-- Create a file valentina.recipe with content
+    bzr push lp:~dismine/seamly2d/debian
+- Create a file seamly2d.recipe with content
     cd bzr
-    vi valentina.recipe
+    vi seamly2d.recipe
         # bzr-builder format 0.3 deb-version {debupstream}+{revno}+{revno:packaging}
-        lp:valentina
-        merge packaging lp:~dismine/valentina/debian
+        lp:seamly2d
+        merge packaging lp:~dismine/seamly2d/debian
 
 	Next command usefull for local testing creation recipe.
 - Run command
     cd bzr
-    bzr dailydeb --allow-fallback-to-native valentina.recipe working-dir
-  This will create a directory "working-dir" with valentina sources and will add sources from ~dismine/valentina/debian
+    bzr dailydeb --allow-fallback-to-native seamly2d.recipe working-dir
+  This will create a directory "working-dir" with seamly2d sources and will add sources from ~dismine/seamly2d/debian
 - Test package sources
     sudo pbuilder build <working-dir>/<project>_<version>.dsc
-    Example: sudo pbuilder build working-dir/valentina_0.2.2.dsc
+    Example: sudo pbuilder build working-dir/seamly2d_0.2.2.dsc
 

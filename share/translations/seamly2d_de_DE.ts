@@ -232,8 +232,8 @@
         <translation type="vanished">Absturzberichte senden (empfohlen)</translation>
     </message>
     <message>
-        <source>After each crash Valentina collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Nach jedem Absturz stellt Valentina Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;welche Information&lt;/a&gt; übertragen werden.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Nach jedem Absturz stellt Seamly2D Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;welche Information&lt;/a&gt; übertragen werden.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,16 +288,16 @@
         <translation type="vanished">Die Standardmaßeinheit wurde geändert und wird als Standard für neu angelegte Schnittmuster wirksam.</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Nach jedem Absturz stellt Valentina Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, &lt;a href=&quot;https://wiki.valentinaproject.org/wiki/Developer:Crash_Reports&quot;&gt;welche Information&lt;/a&gt; übertragen werden.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Nach jedem Absturz stellt Seamly2D Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;welche Information&lt;/a&gt; übertragen werden.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
         <translation type="vanished">Der Text wird unter dem Symbol angezeigt (empfohlen für Anfänger).</translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
-        <translation type="vanished">Nach jedem Absturz stellt Valentina Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, welche %1 Information %2 übertragen werden.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
+        <translation type="vanished">Nach jedem Absturz stellt Seamly2D Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, welche %1 Information %2 übertragen werden.</translation>
     </message>
 </context>
 <context>
@@ -349,12 +349,12 @@
 <context>
     <name>DialogAboutApp</name>
     <message>
-        <source>About Valentina</source>
-        <translation>Über Valentina</translation>
+        <source>About Seamly2D</source>
+        <translation>Über Seamly2D</translation>
     </message>
     <message>
-        <source>Valentina version</source>
-        <translation>Valentina-Version</translation>
+        <source>Seamly2D version</source>
+        <translation>Seamly2D-Version</translation>
     </message>
     <message>
         <source>Contributors</source>
@@ -400,8 +400,8 @@
         <translation>Build-Revision:</translation>
     </message>
     <message>
-        <source>This program is part of Valentina project.</source>
-        <translation>Dieses Programm ist Teil des Valentina-Projekts.</translation>
+        <source>This program is part of Seamly2D project.</source>
+        <translation>Dieses Programm ist Teil des Seamly2D-Projekts.</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
@@ -5845,8 +5845,8 @@ Einstellungen trotzdem anwenden?</translation>
         <translation>Ausnahme ausgelöst: %1. Programm wird beendet.</translation>
     </message>
     <message>
-        <source>Valentina&apos;s measurements editor.</source>
-        <translation>Valentinas Maßsatzeditor.</translation>
+        <source>Seamly2D&apos;s measurements editor.</source>
+        <translation>Seamly2Ds Maßsatzeditor.</translation>
     </message>
     <message>
         <source>The measurement file.</source>
@@ -5916,8 +5916,8 @@ Einstellungen trotzdem anwenden?</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <source>Valentina</source>
-        <translation>Valentina</translation>
+        <source>Seamly2D</source>
+        <translation>Seamly2D</translation>
     </message>
     <message>
         <source>Tools for creating points.</source>
@@ -6116,12 +6116,12 @@ Einstellungen trotzdem anwenden?</translation>
         <translation>Über &amp;Qt</translation>
     </message>
     <message>
-        <source>&amp;About Valentina</source>
-        <translation>&amp;Über Valentina</translation>
+        <source>&amp;About Seamly2D</source>
+        <translation>&amp;Über Seamly2D</translation>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Valentina &amp;beenden</translation>
+        <translation>Seamly2D &amp;beenden</translation>
     </message>
     <message>
         <source>Exit the application</source>
@@ -6370,8 +6370,8 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Datei geladen</translation>
     </message>
     <message>
-        <source>Valentina didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Valentina wurde nicht korrekt beendet. Zuletzt geöffnete Dateien (%1) laden?</translation>
+        <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
+        <translation>Seamly2D wurde nicht korrekt beendet. Zuletzt geöffnete Dateien (%1) laden?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
@@ -7339,7 +7339,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="vanished">Verzeichnis öffnen</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
+        <source>Path that use Seamly2D</source>
         <translation type="vanished">Verwendete Verzeichnisse</translation>
     </message>
     <message>
@@ -7497,8 +7497,8 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>After each crash Valentina collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
-        <translation type="unfinished">Nach jedem Absturz stellt Valentina Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, welche %1 Information %2 übertragen werden.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
+        <translation type="unfinished">Nach jedem Absturz stellt Seamly2D Informationen zusammen, die helfen können, das Problem zu beheben. Es werden keine persönlichen Daten übertragen. Finde mehr darüber heraus, welche %1 Information %2 übertragen werden.</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -7520,7 +7520,7 @@ Sollen die Änderungen gespeichert werden?</translation>
 <context>
     <name>PreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9123,7 +9123,7 @@ Do you want to save your changes?</source>
         <translation type="vanished">Verzeichnis öffnen</translation>
     </message>
     <message>
-        <source>Path that use Valentina</source>
+        <source>Path that use Seamly2D</source>
         <translation type="vanished">Verwendete Verzeichnisse</translation>
     </message>
     <message>
@@ -9221,7 +9221,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TapePreferencesPathPage</name>
     <message>
-        <source>Paths that Valentina uses</source>
+        <source>Paths that Seamly2D uses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11907,14 +11907,14 @@ Do you want to save your changes?</source>
         <translation>Keine</translation>
     </message>
     <message>
-        <source>Valentina team</source>
+        <source>Seamly2D team</source>
         <comment>Author name</comment>
-        <translation>Valentina-Team</translation>
+        <translation>Seamly2D-Team</translation>
     </message>
     <message>
-        <source>Valentina&apos;s internal standard</source>
+        <source>Seamly2D&apos;s internal standard</source>
         <comment>Book name</comment>
-        <translation>Valentina&apos;s interner Standard</translation>
+        <translation>Seamly2D&apos;s interner Standard</translation>
     </message>
     <message>
         <source>Line_</source>

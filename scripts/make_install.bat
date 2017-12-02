@@ -33,13 +33,13 @@ IF exist build (
 	del /s /q /f build\*.exe
 	del /s /q /f build\*.dll
 	del /q /f build\src\app\tape\obj\dialogabouttape.o
-	del /q /f build\src\app\valentina\obj\dialogaboutapp.o
+	del /q /f build\src\app\seamly2d\obj\dialogaboutapp.o
 ) 
 mkdir build && echo build created
 cd build
 cd
 
-qmake -r CONFIG+=noTests ..\Valentina.pro
+qmake -r CONFIG+=noTests ..\Seamly2D.pro
 IF ERRORLEVEL 1 GOTO ERRORQMAKE1
 IF ERRORLEVEL 0 GOTO MAKE
 

@@ -15,14 +15,14 @@ Supported platforms:
    * Mac OS X 10.8 (64-bit) or later  
 
 Homepage and downloads     https://fashionfreedom.eu
-Wiki & User Manual         https://wiki.valentinaproject.org  
+Wiki & User Manual         https://wiki.seamly2d.com  
 Forum                      https://forum.seamly2d.com/ 
 Translations               https://www.transifex.com/organization/valentina  
 PPA for Ubuntu (develop)   (soon) ...  
 PPA for Ubuntu (test)      (soon) ...  
-IRC channel                #valentina on irc.freenode.net  
+IRC channel                #seamly2d on irc.freenode.net  
 Main repository            https://github.com/fashionfreedom/seamly2d
-Doxygen docs               https://valentina-project.github.io/  
+Doxygen docs               https://seamly2d.hithub.io/  
 
 Building Seamly2D
 ================

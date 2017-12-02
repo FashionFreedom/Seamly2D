@@ -19,7 +19,7 @@ $CPPCHECK \
           --library=std.cfg \
           --library=posix.cfg \
           --inconclusive \
-          --suppress=leakReturnValNotUsed:../src/app/valentina/core/vapplication.cpp \
+          --suppress=leakReturnValNotUsed:../src/app/seamly2d/core/vapplication.cpp \
           --suppress=unmatchedSuppression:../src/libs/ifc/xml/vdomdocument.cpp \
           --suppress=redundantCondition:../src/libs/vtools/tools/drawTools/toolcurve/vtoolsplinepath.cpp \
           --suppress=unmatchedSuppression:../src/libs/vtools/tools/drawTools/toolcurve/vtoolsplinepath.cpp \

@@ -7,8 +7,8 @@ EAPI=5
 inherit qmake-utils gnome2-utils fdo-mime
 
 DESCRIPTION="Cloth patternmaking software"
-HOMEPAGE="http://www.valentina-project.org/"
-SRC_URI="https://bitbucket.org/dismine/valentina/get/v0.0.0.zip -> ${P}.zip"
+HOMEPAGE="https://fashionfreedom.eu/"
+SRC_URI="https://bitbucket.org/dismine/seamly2d/get/v0.0.0.zip -> ${P}.zip"
 
 LICENSE="GPL-3"
 SLOT="1"
@@ -48,7 +48,7 @@ src_configure() {
         fi
     done
 
-	eqmake5 LOCALES="${locales}" "CONFIG += noTests noRunPath no_ccache noDebugSymbols" Valentina.pro -r
+	eqmake5 LOCALES="${locales}" "CONFIG += noTests noRunPath no_ccache noDebugSymbols" Seamly2D.pro -r
 }
 
 src_install() {
@@ -59,7 +59,7 @@ src_install() {
 	doman dist/debian/${PN}.1
 	doman dist/debian/tape.1
 
-	cp dist/debian/valentina.sharedmimeinfo dist/debian/${PN}.xml || die
+	cp dist/debian/seamly2d.sharedmimeinfo dist/debian/${PN}.xml || die
 	insinto /usr/share/mime/packages
 	doins dist/debian/${PN}.xml
 }

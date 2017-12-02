@@ -3,7 +3,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-  APPNAME := Valentina
+  APPNAME := Seamly2D
 
   DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
   ifeq ($(DEB_HOST_ARCH),amd64)
@@ -37,7 +37,7 @@
 	dh_testroot
 	dh_prep
 	dh_installdirs
-	# Add here commands to install the package into debian/valentina
+	# Add here commands to install the package into debian/seamly2d
 	cd builddir && $(MAKE) INSTALL_ROOT=$(CURDIR)/debian/tmp install
   # Build architecture-independent files here.
   binary-indep: build install

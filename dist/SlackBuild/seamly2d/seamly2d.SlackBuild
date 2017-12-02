@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for valentina
+# Slackware build script for seamly2d
 
 # Copyright 2016, 2017 Roman Telezhynskyi <dismine@gmail.com>, Susan Spencer <susan.spencer@gmail.com>
 # All rights reserved.
@@ -22,7 +22,7 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PRGNAM=valentina
+PRGNAM=seamly2d
 VERSION=${VERSION:-0.5.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-dismine}
@@ -77,7 +77,7 @@ find -L . \
  \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
   -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
 
-qmake-qt5 Valentina.pro \
+qmake-qt5 Seamly2D.pro \
   QMAKE_CXXFLAGS="$SLKCFLAGS" \
   PREFIX=/usr \
   PREFIX_LIB=${LIBDIRSUFFIX} \
@@ -92,7 +92,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 
 # Install all the needed stuff to the package dir
 mkdir -p $PKG/usr/man/man1
-install -m 644 dist/debian/valentina.1 $PKG/usr/man/man1/
+install -m 644 dist/debian/seamly2d.1 $PKG/usr/man/man1/
 install -m 644 dist/debian/tape.1 $PKG/usr/man/man1/
 
 # Compress man pages
@@ -101,7 +101,7 @@ for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; r
 
 # Copy icon, desktop file and mime info
 mkdir -p $PKG/usr/share/mime/packages
-cat dist/debian/valentina.sharedmimeinfo > $PKG/usr/share/mime/packages/$PRGNAM.xml
+cat dist/debian/seamly2d.sharedmimeinfo > $PKG/usr/share/mime/packages/$PRGNAM.xml
 
 # Copy program documentation into the package
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION

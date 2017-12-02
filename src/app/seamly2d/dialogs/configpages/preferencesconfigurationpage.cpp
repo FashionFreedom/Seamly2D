@@ -126,7 +126,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
                                     "problem. We do not collect any personal information. Find more about what %1"
                                     "kind of information%2 we collect.")
-                                 .arg("<a href=\"https://wiki.valentinaproject.org/wiki/UserManual:Crash_reports\">")
+                                 .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
                                  .arg("</a>"));
 
     //----------------------------- Pattern Editing
@@ -237,6 +237,6 @@ void PreferencesConfigurationPage::RetranslateUi()
     ui->description->setText(tr("After each crash Seamly2D collects information that may help us fix the "
                                 "problem. We do not collect any personal information. Find more about what %1"
                                 "kind of information%2 we collect.")
-                             .arg("<a href=\"https://wiki.valentinaproject.org/wiki/UserManual:Crash_reports\">")
+                             .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
                              .arg("</a>"));
 }

@@ -7,15 +7,15 @@
 
 	<channel>
 		<title>Seamly2D</title>
-		<link>http://valentina-project.org/</link>
+                <link>https://fashionfreedom.eu/</link>
 		<description>Seamly2D is a cross-platform patternmaking program which allows designers 
 to create sharable, custom-sized clothing patterns. This software allows pattern creation, using either standard sizing tables or an individual’s set of measurements. It blends new technologies with traditional methods to create a unique pattern making tool.</description>
 		<language>en</language>
-		<atom:link href="http://valentina-project.org/Appcast.xml" rel="self" type="application/rss+xml" />
+                <atom:link href="https://fashionfreedom.eu/Appcast.xml" rel="self" type="application/rss+xml" />
 
 		<item>
 			<title>Version 0.4.4</title>
-			<link>https://github.com/valentina-project/vpo2/blob/develop/ChangeLog.txt</link>
+			<link>https://github.com/fashionfreedom/seamly2d/blob/develop/ChangeLog.txt</link>
   			<description>New minor release</description>
 
 			<!--
@@ -24,19 +24,19 @@ to create sharable, custom-sized clothing patterns. This software allows pattern
 
 			<!-- Windows version. -->
 			<enclosure
-				url="https://bitbucket.org/ValentinaTeam/valentina/downloads/valentina_0.5.0.0_i386.exe"
+                                url="https://github.com/fashionfreedom/seamly2d/downloads/seamly2d_0.5.0.0_i386.exe"
 				fervor:version="0.5.0"
 				fervor:platform="Q_OS_WIN32" />
 
 			<!-- Linux version. -->
 			<enclosure
-				url="http://valentina-project.org/"
+                                url="https://fashionfreedom.eu"
 				fervor:version="0.5.0"
 				fervor:platform="Q_OS_LINUX" />
 
 			<!-- OS X version. -->
 			<enclosure
-				url="https://bitbucket.org/ValentinaTeam/valentina/downloads/valentina_0.5.0_64bit-OSX.dmg"
+                                url="https://github.com/fashionfreedom/seamly2d/downloads/seamly2d_0.5.0_64bit-OSX.dmg"
 				fervor:version="0.4.4"
 				fervor:platform="Q_OS_MAC" />
 

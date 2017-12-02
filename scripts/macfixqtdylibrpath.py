@@ -7,7 +7,7 @@ import fnmatch
 import sys
 import getopt
 
-# ./macfixqtdylibrpath.py ./Valentina.app /Users/dismine/Qt5.7.0/5.7/clang_64/bin/qmake
+# ./macfixqtdylibrpath.py ./Seamly2D.app /Users/dismine/Qt5.7.0/5.7/clang_64/bin/qmake
 def usage():
   print "Usage: %s <path_to_bundle_root_directory> [qmake_path]" % os.path.basename(sys.argv[0])
 

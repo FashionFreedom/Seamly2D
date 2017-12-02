@@ -7,7 +7,7 @@
 # Name of your certificate in look "Developer ID Application: <yourID>"
 # Be sure that you use Developer ID certificate!
 CERTIFICATE="Developer ID Application: <yourID>"
-BUNDLE=Valentina.app
+BUNDLE=Seamly2D.app
 
 # all must be signed
 #s ign all *.dylib

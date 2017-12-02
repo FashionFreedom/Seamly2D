@@ -1,14 +1,14 @@
 <services>                   
   <service name="tar_scm">
-  	<param name="url">https://github.com/dismine/Valentina.git</param>
+  	<param name="url">https://github.com/dismine/Seamly2D.git</param>
   	<param name="versionprefix">0.5.999</param>
-    <param name="filename">valentina</param>
+    <param name="filename">seamly2d</param>
   	<param name="scm">git</param>
     <param name="versionformat">%at</param>
   </service>
   <service name="extract_file">
     <param name="archive">*.tar</param>
-    <param name="files">*/dist/rpm/valentina.spec */dist/OBS_debian/*</param>
+    <param name="files">*/dist/rpm/seamly2d.spec */dist/OBS_debian/*</param>
   </service>
   <service name="recompress">
     <param name="file">*.tar</param>

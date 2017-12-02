@@ -4,7 +4,7 @@
 #define MyAppName "Seamly2D"
 #define MyAppVersion GetFileVersion('Seamly2D\seamly2d.exe')
 #define MyAppPublisher "Susan Spencer"
-#define MyAppURL "http://www.valentina-project.org/"
+#define MyAppURL "https://fashionfreedom.eu/"
 #define MyAppExeName "seamly2d.exe"
 #define MyAppCopyright "(C) 2013-2017 Seamly2D project"
 #define MyDateTimeString GetDateTimeString('yyyymmddhhnnss', '', '');
@@ -239,21 +239,21 @@ Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Fil
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
 [Registry]
-Root: "HKCR"; Subkey: ".val"; ValueType: string; ValueName: ""; ValueData: "Valentina.Pattern"; Flags: uninsdeletevalue; Tasks: fileassoc1
-Root: "HKCR"; Subkey: ".vit"; ValueType: string; ValueName: ""; ValueData: "Valentina.IndividualMeasurements"; Flags: uninsdeletevalue; Tasks: fileassoc2
-Root: "HKCR"; Subkey: ".vst"; ValueType: string; ValueName: ""; ValueData: "Valentina.StandardMeasurements"; Flags: uninsdeletevalue; Tasks: fileassoc3
+Root: "HKCR"; Subkey: ".val"; ValueType: string; ValueName: ""; ValueData: "Seamly2D.Pattern"; Flags: uninsdeletevalue; Tasks: fileassoc1
+Root: "HKCR"; Subkey: ".vit"; ValueType: string; ValueName: ""; ValueData: "Seamly2D.IndividualMeasurements"; Flags: uninsdeletevalue; Tasks: fileassoc2
+Root: "HKCR"; Subkey: ".vst"; ValueType: string; ValueName: ""; ValueData: "Seamly2D.StandardMeasurements"; Flags: uninsdeletevalue; Tasks: fileassoc3
 
-Root: "HKCR"; Subkey: "Valentina.Pattern"; ValueType: string; ValueData: "Valentina pattern file"; Flags: uninsdeletekey; Tasks: fileassoc1
-Root: "HKCR"; Subkey: "Valentina.Pattern\DefaultIcon"; ValueType: string; ValueData: "{app}\pattern.ico,0"; Tasks: fileassoc1
-Root: "HKCR"; Subkey: "Valentina.Pattern\shell\open\command"; ValueType: string; ValueData: """{app}\valentina.exe"" ""%1"""; Tasks: fileassoc1
+Root: "HKCR"; Subkey: "Seamly2D.Pattern"; ValueType: string; ValueData: "Seamly2D pattern file"; Flags: uninsdeletekey; Tasks: fileassoc1
+Root: "HKCR"; Subkey: "Seamly2D.Pattern\DefaultIcon"; ValueType: string; ValueData: "{app}\pattern.ico,0"; Tasks: fileassoc1
+Root: "HKCR"; Subkey: "Seamly2D.Pattern\shell\open\command"; ValueType: string; ValueData: """{app}\seamly2d.exe"" ""%1"""; Tasks: fileassoc1
 
-Root: "HKCR"; Subkey: "Valentina.IndividualMeasurements"; ValueType: string; ValueData: "Valentina individual measurement file"; Flags: uninsdeletekey; Tasks: fileassoc2
-Root: "HKCR"; Subkey: "Valentina.IndividualMeasurements\DefaultIcon"; ValueType: string; ValueData: "{app}\i-measurements.ico,0"; Tasks: fileassoc2
-Root: "HKCR"; Subkey: "Valentina.IndividualMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\tape.exe"" ""%1"""; Tasks: fileassoc2
+Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements"; ValueType: string; ValueData: "Seamly2D individual measurement file"; Flags: uninsdeletekey; Tasks: fileassoc2
+Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements\DefaultIcon"; ValueType: string; ValueData: "{app}\i-measurements.ico,0"; Tasks: fileassoc2
+Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\tape.exe"" ""%1"""; Tasks: fileassoc2
 
-Root: "HKCR"; Subkey: "Valentina.StandardMeasurements"; ValueType: string; ValueData: "Valentina standard measurement file"; Flags: uninsdeletekey; Tasks: fileassoc3
-Root: "HKCR"; Subkey: "Valentina.StandardMeasurements\DefaultIcon"; ValueType: string; ValueData: "{app}\s-measurements.ico,0"; Tasks: fileassoc3
-Root: "HKCR"; Subkey: "Valentina.StandardMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\tape.exe"" ""%1"""; Tasks: fileassoc3
+Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements"; ValueType: string; ValueData: "Seamly2D standard measurement file"; Flags: uninsdeletekey; Tasks: fileassoc3
+Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements\DefaultIcon"; ValueType: string; ValueData: "{app}\s-measurements.ico,0"; Tasks: fileassoc3
+Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\tape.exe"" ""%1"""; Tasks: fileassoc3
 
 [CustomMessages]
 FileAssoc=Create file associations

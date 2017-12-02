@@ -11,7 +11,7 @@ print 'Please, wait...'
  
 USERNAME='vpo2'
 PPA='vpo2-dev'
-PACKAGE='valentina'
+PACKAGE='seamly2d'
 
 print 'Connect to Service.'
  
