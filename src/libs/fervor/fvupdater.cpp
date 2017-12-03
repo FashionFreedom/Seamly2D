@@ -50,7 +50,7 @@
 #include "fvavailableupdate.h"
 #include "fvupdatewindow.h"
 
-const QString defaultFeedURL = QStringLiteral("https://seamly2dproject.bitbucket.io/Appcast.xml");
+const QString defaultFeedURL = QStringLiteral("https://seamly2d.github.io/Appcast.xml");
 
 QPointer<FvUpdater> FvUpdater::m_Instance;
 

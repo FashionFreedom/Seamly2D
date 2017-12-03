@@ -20,7 +20,7 @@ branches:
     - release
     - default
 
-# Do not build on tags (GitHub and BitBucket)
+# Do not build on tags (GitHub)
 skip_tags: true
 
 #---------------------------------#
