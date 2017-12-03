@@ -117,7 +117,6 @@ void TST_VSpline::GetSegmentPoints()
 void TST_VSpline::GetSegmentPoints_issue412()
 {
     // Input data taken from real case
-    // See issue #412 https://bitbucket.org/dismine/seamly2d/issues/412/error-in-detail-using-segment-a-simple
     VPointF p1(869.11748031496063, -61.117228346456692, "p1", 5.0000125984251973, 9.9999874015748045);
     VPointF p4(491.16472440944887, 316.83552755905515, "p4", 5.0000125984251973, 9.9999874015748045);
 

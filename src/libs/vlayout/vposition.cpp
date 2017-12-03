@@ -242,7 +242,7 @@ void VPosition::DrawDebug(const VContour &contour, const VLayoutPiece &detail, i
 
     // Dump frame to image
     // Note. If program was build with Address Sanitizer possible crashes. Address Sanitizer doesn't support big
-    // allocations. See page https://bitbucket.org/dismine/seamly2d/wiki/developers/Address_Sanitizer
+    // allocations.
     QImage frameImage(pictureRect.width()+biasWidth, pictureRect.height()+biasHeight, QImage::Format_RGB32);
 
     if (frameImage.isNull())

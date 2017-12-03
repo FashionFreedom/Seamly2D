@@ -85,8 +85,6 @@ void TST_VAbstractPiece::EquidistantRemoveLoop_data()
                                  << OutputPointsCase3();
 
     // These are two real cases where equdistant has loop.
-    // See issue #298. Segmented Curve isn't selected in Seam Allowance tool.
-    // https://bitbucket.org/dismine/seamly2d/issue/298/segmented-curve-isnt-selected-in-seam
     // Code should clean loops in path.
     QTest::newRow("Issue 298. Case1") << InputPointsIssue298Case1()
                                       << 75.5906 // seam allowance width
@@ -96,8 +94,7 @@ void TST_VAbstractPiece::EquidistantRemoveLoop_data()
                                       << 37.7953 // seam allowance width
                                       << OutputPointsIssue298Case2();
 
-    // See issue #548. Bug Detail tool. Case when seam allowance is wrong.
-    // https://bitbucket.org/dismine/seamly2d/issues/548/bug-detail-tool-case-when-seam-allowance
+
     // Files: Steampunk_trousers.val and marie.vit
     // Actually buggy detail see in file src/app/share/collection/bugs/Steampunk_trousers_issue_#548.val
     // Code should clean loops in path.

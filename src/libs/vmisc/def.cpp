@@ -591,7 +591,6 @@ bool IsOptionSet(int argc, char *argv[], const char *option)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-// See issue #624. https://bitbucket.org/dismine/seamly2d/issues/624
 void InitHighDpiScaling(int argc, char *argv[])
 {
     /* For more info see: http://doc.qt.io/qt-5/highdpi.html */

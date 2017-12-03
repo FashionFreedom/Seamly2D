@@ -71,7 +71,7 @@ enum class BestFrom : char
 };
 
 /* Warning! Debugging doesn't work stable in debug mode. If you need big allocation use release mode. Or disable
- * Address Sanitizer. See page https://bitbucket.org/dismine/seamly2d/wiki/developers/Address_Sanitizer
+ * Address Sanitizer.
  */
 //#define LAYOUT_DEBUG // Enable debug mode
 

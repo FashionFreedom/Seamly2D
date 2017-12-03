@@ -2049,8 +2049,6 @@ void MainWindow::CancelTool()
             helpLabel->setText("");
 
             // Crash: using CRTL+Z while using line tool.
-            // related bug report:
-            // https://bitbucket.org/dismine/seamly2d/issues/454/crash-using-crtl-z-while-using-line-tool
             undoAction->setEnabled(false);
             redoAction->setEnabled(false);
             VInteractiveTool::m_suppressContextMenu = true;
@@ -2196,8 +2194,6 @@ void MainWindow::CancelTool()
     }
 
     // Crash: using CRTL+Z while using line tool.
-    // related bug report:
-    // https://bitbucket.org/dismine/seamly2d/issues/454/crash-using-crtl-z-while-using-line-tool
     undoAction->setEnabled(qApp->getUndoStack()->canUndo());
     redoAction->setEnabled(qApp->getUndoStack()->canRedo());
 }

@@ -862,7 +862,6 @@ void DialogIncrements::Fx()
 
     if (dialog->exec() == QDialog::Accepted)
     {
-        // Fix the bug #492. https://bitbucket.org/dismine/seamly2d/issues/492/seamly2d-crashes-when-add-an-increment
         // Because of the bug need to take QTableWidgetItem twice time. Previous update "killed" the pointer.
         const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
         doc->SetIncrementFormula(nameField->text(), dialog->GetFormula());

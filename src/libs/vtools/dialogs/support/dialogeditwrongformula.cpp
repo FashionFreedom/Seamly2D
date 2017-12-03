@@ -612,7 +612,6 @@ void DialogEditWrongFormula::FilterVariablesEdited(const QString &filter)
     ui->tableWidget->blockSignals(true);
 
     // If filter is empty findItems() for unknown reason returns nullptr items.
-    // See issue #586. https://bitbucket.org/dismine/seamly2d/issues/586/seamly2d-crashes-if-clear-input-filter
     if (filter.isEmpty())
     {
         // show all rows

@@ -76,8 +76,6 @@ void TST_VLayoutDetail::RemoveDublicates() const
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VLayoutDetail::Case1() const
 {
-    // See issue #304. Layout appears different than my pattern.
-    // https://bitbucket.org/dismine/seamly2d/issue/304/layout-appears-different-than-my-pattern
 
     VLayoutPiece det = VLayoutPiece();
     det.SetCountourPoints(InputPointsCase1());

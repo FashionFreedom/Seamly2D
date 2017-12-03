@@ -178,8 +178,6 @@ void TST_VAbstractCurve::IsPointOnCurve_data() const
 
     point = QPointF(756.052743609466, -631.2251813422373);
 
-    // Real case. Issue #458. https://bitbucket.org/dismine/seamly2d/issues/458/issue-with-segment-of-curve
-    // See file <root>/src/app/share/collection/bugs/Issue_#458.val
     QTest::newRow("Issue #458") << points << point << true;
 }
 

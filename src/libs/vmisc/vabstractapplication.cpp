@@ -117,13 +117,6 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
     // Because on Windows and Mac OS X we always use last version
     // and Linux users send bug reports probably they related to this attribute
     // better not enable it before Qt 5.6.
-    //
-    // Related issues:
-    // Issue #584. frequent xcb errors and hangs
-    // https://bitbucket.org/dismine/seamly2d/issues/584/frequent-xcb-errors-and-hangs
-    // Issue #527. Error: Pasting a wrong formula : every dialog box is "glued" to the screen and can't close file
-    // or Seamly2D.
-    // https://bitbucket.org/dismine/seamly2d/issues/527/error-pasting-a-wrong-formula-every-dialog
 
     setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
