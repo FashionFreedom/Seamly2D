@@ -1,7 +1,7 @@
 /************************************************************************
  **
  **  @file   vtoolellipticalarc.cpp
- **  @author Seamly2D Zhuravska <zhuravska19(at)gmail.com>
+ **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
  **  @date   20 10, 2016
  **
  **  @brief

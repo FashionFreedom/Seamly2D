@@ -1,7 +1,7 @@
 /************************************************************************
  **
  **  @file   dialogellipticalarc.h
- **  @author Seamly2D Zhuravska <zhuravska19(at)gmail.com>
+ **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
  **  @date   15 9, 2016
  **
  **  @brief

@@ -1,7 +1,7 @@
 /************************************************************************
  **
  **  @file   vellipticalarc.h
- **  @author Seamly2D Zhuravska <zhuravska19(at)gmail.com>
+ **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
  **  @date   February 1, 2016
  **
  **  @brief
