@@ -14,14 +14,14 @@ Supported platforms:
    * Fedora 24 (32-bit/64-bit) or later  
    * Mac OS X 10.8 (64-bit) or later  
 
-Homepage and downloads     https://fashionfreedom.eu
+Homepage and downloads     https://fashionfreedom.eu  
 Wiki & User Manual         https://wiki.seamly2d.com  
-Forum                      https://forum.seamly2d.com/ 
+Forum                      https://forum.seamly2d.com/  
 Translations               https://www.transifex.com/organization/valentina  
 PPA for Ubuntu (develop)   (soon) ...  
 PPA for Ubuntu (test)      (soon) ...  
 IRC channel                #seamly2d on irc.freenode.net  
-Main repository            https://github.com/fashionfreedom/seamly2d
+Main repository            https://github.com/fashionfreedom/seamly2d  
 Doxygen docs               https://seamly2d.github.io/  
 
 Building Seamly2D
