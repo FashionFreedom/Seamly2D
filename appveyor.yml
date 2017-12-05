@@ -134,10 +134,10 @@ artifacts:
 
 deploy:
 - provider: BinTray
-  username: slspencer
+  username: fashionfreedom
   api_key:
     secure: 6eaf75584eaf80bc95dd2559215f08cf8a1f74e2
-  subject: slspencer-bintray
+  subject: fashionfreedom
   repo: Seamly2D
   package: Seamly2D-win_auto-upload
   publish: true
