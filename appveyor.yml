@@ -20,7 +20,7 @@ branches:
     - release
     - default
 
-# Do not build on tags (GitHub)
+# Do not build on tags (GitHub and BitBucket)
 skip_tags: true
 
 #---------------------------------#
@@ -60,7 +60,7 @@ init:
   # Path before
   - path
   - set QTDIR=C:\%QT5%
-  - set PATH=%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
+  - set PATH=C:\ProgramData\chocolatey;%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
   - set PATH=%PATH%;C:\Program Files\Git\cmd"
   - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
   - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
@@ -78,6 +78,11 @@ init:
   - path
   - qmake -v
 
+ 
+install:
+  - choco install -y InnoSetup  
+  
+  
 #---------------------------------#
 #       build configuration       #
 #---------------------------------#
@@ -89,7 +94,7 @@ before_build:
 # to run your custom scripts instead of automatic MSBuild
 build_script:
   - cd build
-  - if "%DEPLOY%" == "true" (qmake ..\Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=checkWarnings CONFIG+=noWindowsInstaller) else (qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings)
+  - if "%DEPLOY%" == "true" (qmake ..\Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=checkWarnings) else (qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings)
   - if not "%QMAKE_GENERATOR%" == "MinGW Makefiles" (nmake -s) else (mingw32-make -j%NUMBER_OF_PROCESSORS%)
 
 # to run your custom scripts instead of automatic tests
@@ -110,7 +115,7 @@ notifications:
 # Email
   - provider: Email
     to:
-      - steve+vpo2@conklinhouse.com
+      - dvajdual@gmail.com
     on_build_success: false
     on_build_failure: true
     on_build_status_changed: true
@@ -124,20 +129,20 @@ after_test:
   - if "%DEPLOY%" == "true" (mingw32-make install)
 
 artifacts:
-  - path: build/package/seamly2d
+  - path: build/package/seamly2d_*.exe
     name: seamly2d-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
 
 deploy:
 - provider: BinTray
-  username: vpo2
+  username: slspencer
   api_key:
-    secure: rBIGhKmxGnCgtNOiYchjPAfeopvI1LWE/WafFtvYxZo909LL9F03luBkUer2nn2B
-  subject: vpo2-bintray
-  repo: vpo2
-  package: vpo2-win_auto-upload
+    secure: 6eaf75584eaf80bc95dd2559215f08cf8a1f74e2
+  subject: slspencer-bintray
+  repo: Seamly2D
+  package: Seamly2D-win_auto-upload
   publish: true
   override: true
   version: 0.6
   on:
     DEPLOY: true
-  artifact: vpo-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
+  artifact: seamly2d-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
