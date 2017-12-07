@@ -69,9 +69,15 @@ before_deploy:
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app;
     tar --exclude "*.DS_Store" -cvzf seamly2d-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app/;
   fi
+  ## Zip up the installation using a file name that identifies where the
+  # binaries were built.
+  - mkdir $TRAVIS_BUILD_DIR/to_deploy
+  - export ZIPNAME=Seamly2D_${TRAVIS_OS_NAME}_${TRAVIS_COMMIT}.zip
+  # Leave symlinks intact.
+  - zip --symlinks --recurse-paths --quiet $TRAVIS_BUILD_DIR/to_deploy/$ZIPNAME $TRAVIS_BUILD_DIR/build/bin  
 deploy:
   provider: BinTray
-  file: fashionfreedom/Seamly2D/Seamly2D-win_auto-upload/0.6
+  file: travis-bintray.json
   user: slspencer
   key:
     secure: U9cFPY6pBLNQvXD1e7nIihi7fHtqKvtv8SkDSQsIAEYSpApQTW1nYwVwHHhpuz/5wBtVocRF6qckCLR4zkl6yLjqwjShr8VEZsj7yF2cGB65mSyPpkdtHy42h+rzdaD+SAhaBzO8PeGrbmg1BBFy2iVdw3QJn626w+HFseVM6siuJBKHgJF0GCPukFsutUELJ/wxSkeiCJvbJiZIyyMV+hJo+tWFjV6qb3NRvz8vPXP7l96u1G3r9m/HqFJsRSYXaG/6xnyGucvRevLLDNi4saLXyZU2phMuR8oXRDU2zVfQAp/WfRrYnMNwrHEU1B9yMTl5zbHGLTOtZB6GE+cFQFqXJzXhZcfEFhFQ0EmBz0uU7/9bApHomlwYbB3uj4fqre1GuGJopfFsuIvVj0Bn4s+4oltJXkqmSKKUEXMjs5kai3RhWy2bK5UnaePFS39DKIPwNkUO5UMZVkbAnQjrv9Cq5CQYc4P9L29q2BcKb10BvxvaWIohinJbShLnOGAaYlQ1gkBQ8e3g7wZ0KYOn49t3UWzX8AWVc79tr7tyo5XJQgdtftnjIUGZCuY52+4IMZdTA483VhkQ+hkjbRMgM4aHRL+c9YlsMCt4DJkF54rE8Rv+fyY0p9OO1tWJlcb/YnzMA8TFBTKxn9ApLkMWfk1e6kIh7R95Y6O+3+ZViTY=
