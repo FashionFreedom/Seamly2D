@@ -38,10 +38,20 @@ before_install:
     chmod -R 755 /usr/local/opt/qt5/*;
   fi
 before_script:
-- "if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then\n  uname -a;\n  which /opt/qt58/bin/qmake;\n
-  \ /opt/qt58/bin/qmake --version;   \nelse\n  QTDIR=\"/usr/local/opt/qt5\";\n  PATH=\"$QTDIR/bin:$PATH\";\n
-  \ LDFLAGS=-L$QTDIR/lib;\n  CPPFLAGS=-I$QTDIR/include;\n  PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;\n
-  \ chmod -R 755 /usr/local/opt/qt5/*;  \n  qmake --version;  \nfi\n"
+- |
+  if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+    uname -a;
+    which /opt/qt58/bin/qmake;
+    /opt/qt58/bin/qmake --version;   
+  else
+    QTDIR="/usr/local/opt/qt5";
+    PATH="$QTDIR/bin:$PATH";
+    LDFLAGS=-L$QTDIR/lib;
+    CPPFLAGS=-I$QTDIR/include;
+    PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;
+    chmod -R 755 /usr/local/opt/qt5/*;  
+    qmake --version;  
+  fi
 - mkdir build
 - cd build
 - pwd
@@ -55,8 +65,8 @@ script:
 - "$CXX --version"
 - "if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then\n  build-wrapper-linux-x86-64 --out-dir
   ../bw-outputs make -j$(nproc);\n  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:\"$TRAVIS_BUILD_DIR/build/src/libs/vpropertyexplorer/bin:$TRAVIS_BUILD_DIR/build/src/libs/qmuparser/bin\";\n
-  \ xvfb-run -a make --silent check TESTARGS=\"-silent\";\n  cd ..;\n  else\n  make
-  -j8;\nfi  \n"
+  \ xvfb-run -a make --silent check TESTARGS=\"-silent\";\n  cd ..;\n  else\n
+  \ make -j8;\nfi  \n"
 notifications:
   email:
     recipients:
@@ -69,18 +79,19 @@ before_deploy:
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app;
     tar --exclude "*.DS_Store" -cvzf seamly2d-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app/;
   fi
-  ## Zip up the installation using a file name that identifies where the
-  # binaries were built.
-  - mkdir $TRAVIS_BUILD_DIR/to_deploy
-  - export ZIPNAME=Seamly2D_${TRAVIS_OS_NAME}_${TRAVIS_COMMIT}.zip
-  # Leave symlinks intact.
-  - zip --symlinks --recurse-paths --quiet $TRAVIS_BUILD_DIR/to_deploy/$ZIPNAME $TRAVIS_BUILD_DIR/build/bin  
 deploy:
-  provider: BinTray
-  file: travis-bintray.json
+  provider: launchpad
+  slug: "seamly2d"
   user: slspencer
   key:
-    secure: U9cFPY6pBLNQvXD1e7nIihi7fHtqKvtv8SkDSQsIAEYSpApQTW1nYwVwHHhpuz/5wBtVocRF6qckCLR4zkl6yLjqwjShr8VEZsj7yF2cGB65mSyPpkdtHy42h+rzdaD+SAhaBzO8PeGrbmg1BBFy2iVdw3QJn626w+HFseVM6siuJBKHgJF0GCPukFsutUELJ/wxSkeiCJvbJiZIyyMV+hJo+tWFjV6qb3NRvz8vPXP7l96u1G3r9m/HqFJsRSYXaG/6xnyGucvRevLLDNi4saLXyZU2phMuR8oXRDU2zVfQAp/WfRrYnMNwrHEU1B9yMTl5zbHGLTOtZB6GE+cFQFqXJzXhZcfEFhFQ0EmBz0uU7/9bApHomlwYbB3uj4fqre1GuGJopfFsuIvVj0Bn4s+4oltJXkqmSKKUEXMjs5kai3RhWy2bK5UnaePFS39DKIPwNkUO5UMZVkbAnQjrv9Cq5CQYc4P9L29q2BcKb10BvxvaWIohinJbShLnOGAaYlQ1gkBQ8e3g7wZ0KYOn49t3UWzX8AWVc79tr7tyo5XJQgdtftnjIUGZCuY52+4IMZdTA483VhkQ+hkjbRMgM4aHRL+c9YlsMCt4DJkF54rE8Rv+fyY0p9OO1tWJlcb/YnzMA8TFBTKxn9ApLkMWfk1e6kIh7R95Y6O+3+ZViTY=
+    secure: bO6brggaax+GHaTCf/7eMkCm/tTRLrKl9RgSO/gKE39aDPEOqNl3TIGZ2IxhYXxYbD2oXPuliamTfDX8mE/9pXKB/R6W4ncbanBKEif8qkf0xP8qgZ7b32E6k7wnBE+xlsX/9zxdwN0ANE6aB3pg49oCZGChLt5PSFy9e5Xowq73oLVAHIGcomPbnLgN9zi+QSvRqj8blGs8HGBXzezlANrZJtDAuNExU3VfJvzFrdvlgh+D5A4RC9t1xxwu1WcyOc9xSymoCHmkQEOz4IYQQ960h4n0XWDeAf8LSDNXYOZogGXqRMi3APu2EHfH9KBSr1IiICY9gQE6inDzPs1jHvrEORmqQzMF3r/59MSEHw2X6qX6CxXs+IYxRxCpbh7dx2svi7K+M+CMhBSSBjoEi443U3+fsWQclMoOAV4AOTu3fmPb4Bknb/fPoN8MxqRXZjNkCOll2TgDESBjivBCHWF9T71/k3tnBEjp1SlQy4JU5CEgATMBcg7mwGDLymHFFyAuUbgb8XrnOuXfx6dlpiJVZBG5t6T41z7ofVh1GILOm9Q2wpL/Adqyb0hp+tehZHbMZpGw/6ennM2GDfAmMTHYeSgLlTe5dK/kdr+6GAqNRWWTbltC+ZUz+y+DJeYuIbRKMtyd6fFZX6Q5zj6wjkPdmYhlazW5o5HlBhrd2H8=  
+  oauth_token:
+    secure: lN7xFBiec7we2dftKudjaSinNRvMjoUa+1C/r4niBOIZ4LWvf6ung53e48YAsWykcqe1q2M7LsaMTnZD3eS/PMwxstg/ucNH70ASb5PZOLrbANX2aBrGJLr5OgnXPngC5dcIULRUUDiDIEzs1YW60LPEt7hFHyvTaLCpA9tXq6KysBz8om0FuKvMKmdjNu/CvIxWWKs+4jhFDz7Ddy/NX2litnQgBw50YJBPpZMDUKYrAGzXuQ/2yzbj2fcLeYAG9GC5wQFC+PfV/Pp8HuQzmvtu1V/b+NvVAXgHnIBRGHDqhS+3tzQbIJCMLgOgkPQQbGcph+9TTGnHUvsTBmu9L/3Zw2knSBwQS3B49SLviMlII6h58SAZrZFcbpmHMkXs9ZP4OCylzcXitRFDbHSbh0gBTlSjkcvao6qOQdsQNuwom4ZKu1X1SIqu6vOwjpPDRHtvInG8fqC1DtoEVsHvrKZHFS/vNdYlwZf9cErXYHv6WuuKFkmZrRmifj1ZW31xx8bVwnT6aN3+k+Op9K96ePHM31j6kIcEqkKQm0ZoyPo5gXonwBGYUlSliA5XGUif45ew+3A74I0TbgajD3gL13kRgVaugx8VbsJKdaPvoZVTvWtCFTKteq3Ftqc/EgpBR4WUsQEFdH/mVWlKnY7H4zZIPH3dLJz6We2ykYIMZ8I=
+  oauth_token_secret:
+    secure: XzNBGaI+VDs6xAKeMyUna3ic2wjrx1zGJrVIBPpE/lkr+gkNGGhw5dB7BxpS6lHQ7ThqPWOkpMbljPV3NJrvrwhpIqRWLzc8eS8Ixxu4rDKUAaJeXj0DpwfL9OVoWIS4Kht8BxpJF+Ptp7wQkm//6vblh8wnfAh6yWPzLM+/yd1v3RcU5CS+N5YImVwGI2FAWPn9lfrdH+dS7HMTTypBVWUytHtsYDG02KoQR/0jp3ts3fEU9+RDaskxBXls3jSHDpOWBQS1/LC8lf1vjM9yRKICYE/OmuezLsr6a5suNCsP5a/QqWI76nhwGtvBsDBeEBHBNZtwujgyScizd0tBmh4FX3dU1hv33i2sYXLxhlx2yypcIhOgjJv9zmZhkX1aNbVsfCRU4BdsZwDCAuGljADkAz0Q0/DPZQbnhi2cQ9OyVc0GO6DNh54iY9hvraQ2kocnuNR5d1zXMLBhAYEeeKnQQd+BaNQvKMETaVpWN8SEuJGWeLNRSURe8XSsnvEhKdVgxy3ZXG8Lh3IWaXtDvooMdeugOohpxqbK3VVZODYyyyC2GmVeUnym2Dj7Mmwu+VOG0Eza5+2OJHfkILn4wSh0mr0WhaSxS7pzjCKmzXufx2Zm0LoBUiNCEdApUoZ0Hv6lEQSNWDearrBI+cvulQD7Cx6flRGY0ymWlbgcCzo=
+  skip_cleanup: true
+  dry-run: false
   on:
     all_branches: true
-    condition: "$DEPLOY = true"    
+    condition: "$DEPLOY = true"
+
