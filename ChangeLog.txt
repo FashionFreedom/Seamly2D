@@ -21,8 +21,8 @@
 - [#686] Seam allowance not placed correctly.
 - [#687] Wrong seam allowance.
 - [#689] Grainline default values swapped around.
-- [#688] Difficult to enter numbers in Tape.
-- Fixed bug in Tape app. Tape showed birth date in wrong locale.
+- [#688] Difficult to enter numbers in SeamlyMe.
+- Fixed bug in SeamlyMe app. SeamlyMe showed birth date in wrong locale.
 - Fixed bug in dialog Internal Piece Path. Value from the field After rewrited data in the field Before.
 - Tab Pins moved to be second in the list after tab Paths. 
 - Added tooltip for tab Passmark. Explained meaning of check box "Show the second passmark on seam line". 
@@ -41,7 +41,7 @@
 - [#719] Seamly2D crashes when unite pieces.
 - Fixed Seamly2D crash. Used way to avoid Qt's bug QTBUG-61213.
 - Fixed behaviour on Windows. Seamly2D asks about synchronization measurements twice.
-- Fixed bug. Tape app saved default size value in wrong place.
+- Fixed bug. SeamlyMe app saved default size value in wrong place.
 - [#737] Seamly2D produces corrupted file if unite two pieces with pins.
 - [#738] Bug in transformation over arc and elliptical arc.
 - [#729] Moved Bezier curves can't be rotated.
@@ -54,7 +54,7 @@
 - [#581] User can now filter input lists by keyword in function wizard.
 - [#24] User can now add labels with different information on the detail
 - [#505] New installer script based on Inno Setup 5.
-- Size of preferences dialog in both Seamly2D and Tape app is now preserved between sessions
+- Size of preferences dialog in both Seamly2D and SeamlyMe app is now preserved between sessions
 - [#479] Preferences dialog is now extendable and when it is opened again, it will be resized to its previous size.
 - [#508] Settings saved to INI files in different folders.
 - [#193] Undeletable zombie arc objects.
@@ -74,16 +74,16 @@
 - Show additional message dialog if measurements was changed. Related to issue [#440].
 - [#132] Intersect Curves.
 - Added new languages Chinese (China), Portuguese (Brazil) and Greek (Greece).
-- New icon for VAL file. Updated Tape logo. Updated ico for standard measurements.
+- New icon for VAL file. Updated SeamlyMe logo. Updated ico for standard measurements.
 - [#325] Check pattern for inverse compatibility.
-- [#385] Add 'Open Recent' option in Tape.exe, 'File' dropdown menu.
-- [#471] Add a 'Show/Hide' button for measurement diagram in Tape.
+- [#385] Add 'Open Recent' option in SeamlyMe.exe, 'File' dropdown menu.
+- [#471] Add a 'Show/Hide' button for measurement diagram in SeamlyMe.
 - [#478] Rename 'Print preview tiled' to 'Preview Tiled PDF'.
 - [#472] Add 'Full Name' column to Formula dialog.
 - [#487] True dart point always goes to origin when the label is moved.
 - [#128] New Tool: Slash and Spread.
 - [#409] New feature: Export measurement file to Excel .csv.
-- [#180] New feature: Search field in tape app and dialog Increments.
+- [#180] New feature: Search field in seamlyme app and dialog Increments.
 - [#514] Read only setting not working properly.
 - [#480] New tool: Midpoint between two points.
 - [#496] Selector for selecting which pieces to print.
@@ -113,12 +113,12 @@
 
 # Version 0.4.5 October 15, 2016
 - [#435] Seamly2D doesn't change the cursor.
-- [#473] Tape 'Preferences' cause loss of focus.
+- [#473] SeamlyMe 'Preferences' cause loss of focus.
 - [#485] Error when drawing a curved path.
 - [#491] Seamly2D doesn't update fractional separator.
 - [#492] Seamly2D crashes when add an increment.
 - [#493] Error in seam allowance drawing.
-- [#468] Error - Tape 'Save As' should set 'Read Only' to false.
+- [#468] Error - SeamlyMe 'Save As' should set 'Read Only' to false.
 - [#501] Rename Window->Close Window to Window->Close pattern.
 - [#515] Seam allowance wrong way.
 - [#494] Printing is not working.
@@ -132,8 +132,8 @@
 - [#543] Detail loses details.
 - [#548] Bug Detail tool. Case when seam allowance is wrong.
 - Called the main app in console mode doesn't show opening file error in some cases.
-- [#553] Tape.exe crash. Issue with the Search field.
-- [#569] Tape app. Options that open new file open new instance even if a user doesn't want this.
+- [#553] SeamlyMe.exe crash. Issue with the Search field.
+- [#569] SeamlyMe app. Options that open new file open new instance even if a user doesn't want this.
 - [#539] Infinite alert loop "Gradation doesn't support inches" when loading standard table.
 - [#572] Issue with thousand separator during a formula translations to user.
 

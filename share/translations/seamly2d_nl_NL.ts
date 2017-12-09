@@ -396,12 +396,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>Over het programma Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Over het programma SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Versie programma Tape</translation>
+        <source>SeamlyMe version</source>
+        <translation>Versie programma SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -7131,8 +7131,8 @@ Do you want to save your changes?</source>
         <translation>Laad het meermaten-systeem bestand</translation>
     </message>
     <message>
-        <source>Open Tape</source>
-        <translation>Open Tape</translation>
+        <source>Open SeamlyMe</source>
+        <translation>Open SeamlyMe</translation>
     </message>
     <message>
         <source>Edit Current</source>
@@ -7203,8 +7203,8 @@ Do you want to save your changes?</source>
         <translation>Selecteer een of meer objecten, houd &lt;b&gt;%1&lt;/b&gt; vast - voor meerdere selecties, &lt;b&gt;Enter&lt;/b&gt; - bevestig selectie</translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
-        <translation>Open de Tape app om een matenbestand te wijzigen of aan te maken</translation>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
+        <translation>Open de SeamlyMe app om een matenbestand te wijzigen of aan te maken</translation>
     </message>
     <message>
         <source>Export increments to CSV</source>
@@ -8373,8 +8373,8 @@ Do you want to save your changes?</source>
         <translation>Over &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>Over het programma Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Over het programma SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>

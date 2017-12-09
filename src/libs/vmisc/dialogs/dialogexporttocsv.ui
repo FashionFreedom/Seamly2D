@@ -17,8 +17,8 @@
    <string>Export options</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../share/resources/tapeicon.qrc">
-    <normaloff>:/tapeicon/64x64/logo.png</normaloff>:/tapeicon/64x64/logo.png</iconset>
+   <iconset resource="../share/resources/seamlymeicon.qrc">
+    <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -125,7 +125,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../share/resources/tapeicon.qrc"/>
+  <include location="../share/resources/seamlymeicon.qrc"/>
  </resources>
  <connections>
   <connection>

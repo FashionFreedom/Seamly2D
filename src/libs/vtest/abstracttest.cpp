@@ -109,9 +109,9 @@ QString AbstractTest::Seamly2DPath() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString AbstractTest::TapePath() const
+QString AbstractTest::SeamlyMePath() const
 {
-    const QString path = QStringLiteral("/../../../app/tape/bin/tape");
+    const QString path = QStringLiteral("/../../../app/seamlyme/bin/seamlyme");
 #ifdef Q_OS_WIN
     return QCoreApplication::applicationDirPath() + path + QLatin1String(".exe");
 #else

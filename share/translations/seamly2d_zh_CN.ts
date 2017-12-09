@@ -279,11 +279,11 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
+        <source>About SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tape version</source>
+        <source>SeamlyMe version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5529,7 +5529,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape</source>
+        <source>Open SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5601,7 +5601,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6560,7 +6560,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About Tape</source>
+        <source>About SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

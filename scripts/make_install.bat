@@ -32,7 +32,7 @@ IF exist build (
 	del /s /q /f build\Makefile
 	del /s /q /f build\*.exe
 	del /s /q /f build\*.dll
-	del /q /f build\src\app\tape\obj\dialogabouttape.o
+	del /q /f build\src\app\seamlyme\obj\dialogaboutseamlyme.o
 	del /q /f build\src\app\seamly2d\obj\dialogaboutapp.o
 ) 
 mkdir build && echo build created

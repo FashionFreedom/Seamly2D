@@ -157,7 +157,7 @@ Name: "lang_files\chinese"; Description: "Chinese (China)"; Types: full custom; 
 [Files]
 ; Signing
 Source: ".\Seamly2D\seamly2d.exe"; DestDir: "{app}"; Flags: ignoreversion sign
-Source: ".\Seamly2D\tape.exe"; DestDir: "{app}"; Flags: ignoreversion sign
+Source: ".\Seamly2D\seamlyme.exe"; DestDir: "{app}"; Flags: ignoreversion sign
 Source: ".\Seamly2D\vpropertyexplorer.dll"; DestDir: "{app}"; Flags: ignoreversion sign
 Source: ".\Seamly2D\qmuparser2.dll"; DestDir: "{app}"; Flags: ignoreversion sign
 ; Localizations
@@ -230,9 +230,9 @@ Type: filesandordirs; Name: "{app}\translations"
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{group}\Tape"; Filename: "{app}\tape.exe"
+Name: "{group}\SeamlyMe"; Filename: "{app}\seamlyme.exe"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
-Name: "{commondesktop}\Tape"; Filename: "{app}\tape.exe"; Tasks: desktopicon
+Name: "{commondesktop}\SeamlyMe"; Filename: "{app}\seamlyme.exe"; Tasks: desktopicon
 Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: quicklaunchicon
 
 [Run]
@@ -249,11 +249,11 @@ Root: "HKCR"; Subkey: "Seamly2D.Pattern\shell\open\command"; ValueType: string; 
 
 Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements"; ValueType: string; ValueData: "Seamly2D individual measurement file"; Flags: uninsdeletekey; Tasks: fileassoc2
 Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements\DefaultIcon"; ValueType: string; ValueData: "{app}\i-measurements.ico,0"; Tasks: fileassoc2
-Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\tape.exe"" ""%1"""; Tasks: fileassoc2
+Root: "HKCR"; Subkey: "Seamly2D.IndividualMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\seamlyme.exe"" ""%1"""; Tasks: fileassoc2
 
 Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements"; ValueType: string; ValueData: "Seamly2D standard measurement file"; Flags: uninsdeletekey; Tasks: fileassoc3
 Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements\DefaultIcon"; ValueType: string; ValueData: "{app}\s-measurements.ico,0"; Tasks: fileassoc3
-Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\tape.exe"" ""%1"""; Tasks: fileassoc3
+Root: "HKCR"; Subkey: "Seamly2D.StandardMeasurements\shell\open\command"; ValueType: string; ValueData: """{app}\seamlyme.exe"" ""%1"""; Tasks: fileassoc3
 
 [CustomMessages]
 FileAssoc=Create file associations
@@ -276,8 +276,8 @@ const
 // Executable names to check before any setup/uninstall operation
   ProgramName1 = 'Seamly2D';
   ProgramExeName1 = 'seamly2d.exe';
-  ProgramName2 = 'Tape';
-  ProgramExeName2 = 'tape.exe';
+  ProgramName2 = 'SeamlyMe';
+  ProgramExeName2 = 'seamlyme.exe';
 
 /////////////////////////////////////////////////////////////////////
 // Convert version strings into float and compare

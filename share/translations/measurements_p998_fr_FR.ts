@@ -1606,7 +1606,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="895"/>
-        <source>Curve stiff paper around front of abdomen, tape at sides. Measure from Hip Side to Hip Side over paper across front.</source>
+        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
         <comment>Full measurement description.</comment>
         <translation>Feuille de papier autour du ventre, scotché sur les cotés. La mesure s&apos;effectue d&apos;un coté à l&apos;autre de la hanche en passant par la feuille de papier.</translation>
     </message>
@@ -1696,7 +1696,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="945"/>
-        <source>From Neck Front, over tape between Breastpoints, down to Waist Front.</source>
+        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
         <comment>Full measurement description.</comment>
         <translation>De l&apos;encolure devant à la taille devant, en passant entre les seins.</translation>
     </message>
@@ -1822,7 +1822,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="992"/>
-        <source>From Highbust Front to Waist Front. Use tape to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
+        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
         <comment>Full measurement description.</comment>
         <translation>Du milieu de la ligne de sur-poitrine devant à la ligne de taille , devant, vertical. On utilise un bloduc entre les pointes de sein. (&apos;Distance entre l&apos;encolure et la taille , devant&apos; - &apos;Encolure devant à ligne sur-poitrinaire, devant&apos;).</translation>
     </message>
@@ -1840,7 +1840,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1000"/>
-        <source>From Neck Front down to Bust Front. Requires tape to cover gap between Bustpoints.</source>
+        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
         <comment>Full measurement description.</comment>
         <translation>Point d&apos;encolure au milieu devant à la ligne de sur-poitrine, vertical. On utilise un bolduc entre les pointes de sein.</translation>
     </message>
@@ -2290,7 +2290,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1171"/>
-        <source>From Waist Back down to Hip Back. Requires tape to cover the gap between buttocks.</source>
+        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
         <comment>Full measurement description.</comment>
         <translation>Distance de la ligne de taille dans le dos à la ligne de hanches dos. Nécessite un bolduc tendu au sommet des fesses.</translation>
     </message>
@@ -3750,7 +3750,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1805"/>
         <source>From Waist Side along curve to Hip level then straight down to  Knee level. (&apos;Leg: Waist Side to Floor&apos; - &apos;Height Knee&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Du Côté de la Taille le long de la courbe de la Hanche et jusqu&apos;au genou. (&apos;Jambe : Coté de la Taille jusqu&apos;au genou&apos; - &apos;Genou&apos;).</translation>
+        <translation>Du Côté de la Taille le long de la courbe de la Hanche et jusqu&apos;au genou. (&apos;Jambe : Coté de la Taille jusqu&apos;au genou&apos; - &apos;Genou&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1822"/>
@@ -3766,7 +3766,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1825"/>
-        <source>Put tape across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
         <translation>Faire passer le Ruban sur le creux des Fesses commençant au niveau de Hanches. Mesurer de la Taille Devant, en descendant par l&apos;entrejambe et en remontant jusqu&apos;à la Taille Dos.</translation>
     </message>
@@ -3784,7 +3784,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1832"/>
-        <source>Put tape across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
         <comment>Full measurement description.</comment>
         <translation>Faire passer le Ruban sur le creux des Fesses se dessinant au niveau de Hanches. Mesurer à partir de la Taille Dos jusqu&apos;au milieu de la fourche, se point se situer au Vagin chez la femme ou entre les testicules et l&apos;anus chez l&apos;homme).</translation>
     </message>

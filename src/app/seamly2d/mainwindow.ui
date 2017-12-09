@@ -1697,7 +1697,7 @@
     <property name="title">
      <string>Measurements</string>
     </property>
-    <addaction name="actionOpenTape"/>
+    <addaction name="actionOpenSeamlyMe"/>
     <addaction name="actionEditCurrent"/>
     <addaction name="actionUnloadMeasurements"/>
     <addaction name="actionLoadIndividual"/>
@@ -2571,12 +2571,12 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionOpenTape">
+  <action name="actionOpenSeamlyMe">
    <property name="text">
-    <string>Open Tape</string>
+    <string>Open SeamlyMe</string>
    </property>
    <property name="toolTip">
-    <string>Open Tape app for creating or editing measurements file</string>
+    <string>Open SeamlyMe app for creating or editing measurements file</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>

@@ -56,7 +56,7 @@ src_install() {
 	dodoc LICENSE_GPL.txt ChangeLog.txt README.txt
 
 	doman dist/debian/${PN}.1
-	doman dist/debian/tape.1
+	doman dist/debian/seamlyme.1
 
 	cp dist/debian/seamly2d.sharedmimeinfo dist/debian/${PN}.xml || die
 	insinto /usr/share/mime/packages

@@ -9,7 +9,7 @@
 TEMPLATE = app
 DEPENDPATH +=  \
             ../../src/app/seamly2d \
-            ../../src/app/tape \
+            ../../src/app/seamlyme \
             ../../src/libs/qmuparser \
             ../../src/libs/vpropertyexplorer \
             ../../src/libs/ifc \
@@ -23,7 +23,7 @@ DEPENDPATH +=  \
             ../../src/libs/fervor
 
 include(../../src/app/seamly2d/seamly2d.pri)
-include(../../src/app/tape/tape.pri)
+include(../../src/app/seamlyme/seamlyme.pri)
 include(../../src/libs/qmuparser/qmuparser.pri)
 include(../../src/libs/vpropertyexplorer/vpropertyexplorer.pri)
 include(../../src/libs/ifc/ifc.pri)

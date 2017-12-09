@@ -388,12 +388,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>Über Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Über SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Tape-Version</translation>
+        <source>SeamlyMe version</source>
+        <translation>SeamlyMe-Version</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -7027,7 +7027,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape</source>
+        <source>Open SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7099,7 +7099,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8234,8 +8234,8 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Über &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>Über Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Über SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>

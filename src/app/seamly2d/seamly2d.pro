@@ -142,19 +142,19 @@ unix{
         # Path to bin file after installation
         target.path = $$PREFIX/bin
 
-        tape.path = $$PREFIX/bin
-        tape.files += $${OUT_PWD}/../tape/$${DESTDIR}/tape
+        seamlyme.path = $$PREFIX/bin
+        seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme
 
         # .desktop file
         desktop.path = /usr/share/applications/
         desktop.files += ../../../dist/$${TARGET}.desktop \
-        desktop.files += ../../../dist/tape.desktop
+        desktop.files += ../../../dist/seamlyme.desktop
 
         # logo
         pixmaps.path = /usr/share/pixmaps/
         pixmaps.files += \
             ../../../dist/$${TARGET}.png \
-            ../../../dist/tape.png \
+            ../../../dist/seamlyme.png \
             ../../../dist/application-x-seamly2d-pattern.png \
             ../../../dist/application-x-seamly2d-i-measurements.png \
             ../../../dist/application-x-seamly2d-s-measurements.png \
@@ -177,7 +177,7 @@ unix{
 
         INSTALLS += \
             target \
-            tape \
+            seamlyme \
             desktop \
             pixmaps \
             translations \
@@ -223,8 +223,8 @@ unix{
         libraries.files += $${OUT_PWD}/../../libs/qmuparser/$${DESTDIR}/libqmuparser.2.dylib
         libraries.files += $${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.1.dylib
 
-        tape.path = $$MACOS_DIR
-        tape.files += $${OUT_PWD}/../tape/$${DESTDIR}/tape.app/$$MACOS_DIR/tape
+        seamlyme.path = $$MACOS_DIR
+        seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$$MACOS_DIR/seamlyme
 
         # Utility pdftops need for saving a layout image to PS and EPS formates.
         xpdf.path = $$MACOS_DIR
@@ -254,14 +254,14 @@ unix{
 
         # Copy to bundle multisize measurements files
         # We cannot add none exist files to bundle through QMAKE_BUNDLE_DATA. That's why we must do this manually.
-        QMAKE_POST_LINK += $$VCOPY $$quote($${OUT_PWD}/../tape/$${DESTDIR}/tape.app/$$RESOURCES_DIR/diagrams.rcc) $$quote($$shell_path($${OUT_PWD}/$$DESTDIR/$${TARGET}.app/$$RESOURCES_DIR/)) $$escape_expand(\\n\\t)
+        QMAKE_POST_LINK += $$VCOPY $$quote($${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$$RESOURCES_DIR/diagrams.rcc) $$quote($$shell_path($${OUT_PWD}/$$DESTDIR/$${TARGET}.app/$$RESOURCES_DIR/)) $$escape_expand(\\n\\t)
 
         QMAKE_BUNDLE_DATA += \
             templates \
             multisize \
             label \
             libraries \
-            tape \
+            seamlyme \
             xpdf \
             icns_resources
     }
@@ -273,8 +273,8 @@ win32:*g++* {
     package.path = $${OUT_PWD}/../../../package/seamly2d
     package.files += \
         $${OUT_PWD}/$${DESTDIR}/seamly2d.exe \
-        $${OUT_PWD}/../tape/$${DESTDIR}/tape.exe \
-        $${OUT_PWD}/../tape/$${DESTDIR}/diagrams.rcc \
+        $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.exe \
+        $${OUT_PWD}/../seamlyme/$${DESTDIR}/diagrams.rcc \
         $$PWD/../../../dist/win/seamly2d.ico \
         $$PWD/../../../dist/win/i-measurements.ico \
         $$PWD/../../../dist/win/s-measurements.ico \
@@ -308,7 +308,7 @@ win32:*g++* {
     !noDebugSymbols:!noCrashReports{
         package.files += \
             $${OUT_PWD}/$${DESTDIR}/seamly2d.exe.dbg \
-            $${OUT_PWD}/../tape/$${DESTDIR}/tape.exe.dbg \
+            $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.exe.dbg \
             $$PWD/../../../dist/win/exchndl.dll \
             $$PWD/../../../dist/win/dbghelp.dll \
             $$PWD/../../../dist/win/mgwhelp.dll \

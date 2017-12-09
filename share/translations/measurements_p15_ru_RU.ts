@@ -1607,7 +1607,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="895"/>
-        <source>Curve stiff paper around front of abdomen, tape at sides. Measure from Hip Side to Hip Side over paper across front.</source>
+        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
         <comment>Full measurement description.</comment>
         <translation>Ленту накладывают на ягодичные точки. Лента должна проходить горизонтально вокруг туловища, спереди - по гибкой пластине, приложенной вертикально к животу для учета выступа живота, и замыкаться на правой стороне туловища
 </translation>
@@ -1698,7 +1698,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="945"/>
-        <source>From Neck Front, over tape between Breastpoints, down to Waist Front.</source>
+        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
         <comment>Full measurement description.</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -1824,7 +1824,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="992"/>
-        <source>From Highbust Front to Waist Front. Use tape to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
+        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
         <comment>Full measurement description.</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -1842,7 +1842,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1000"/>
-        <source>From Neck Front down to Bust Front. Requires tape to cover gap between Bustpoints.</source>
+        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
         <comment>Full measurement description.</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -2292,7 +2292,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1171"/>
-        <source>From Waist Back down to Hip Back. Requires tape to cover the gap between buttocks.</source>
+        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
         <comment>Full measurement description.</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -3786,7 +3786,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1825"/>
-        <source>Put tape across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
         <translation>Номер размерного признака в стандарте №77. Измеряют в вертикальной плоскости от линии талии спереди через выступающую точку живота, левую сторону паховой области и тонкую пластину шириной до 2 см, наложенную на ягодичные точки, до линии талии сзади.</translation>
     </message>
@@ -3804,7 +3804,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1832"/>
-        <source>Put tape across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
         <comment>Full measurement description.</comment>
         <translation type="unfinished"></translation>
     </message>

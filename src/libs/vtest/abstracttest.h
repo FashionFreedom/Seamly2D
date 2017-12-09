@@ -88,7 +88,7 @@ protected:
     void Comparison(const QVector<QPointF> &ekv, const QVector<QPointF> &ekvOrig) const;
 
     QString Seamly2DPath() const;
-    QString TapePath() const;
+    QString SeamlyMePath() const;
     QString TranslationsPath() const;
 
     int Run(int exit, const QString &program, const QStringList &arguments, QString &error, int msecs = 120000);

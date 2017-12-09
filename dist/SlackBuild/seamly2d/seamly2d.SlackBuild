@@ -93,7 +93,7 @@ find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | gr
 # Install all the needed stuff to the package dir
 mkdir -p $PKG/usr/man/man1
 install -m 644 dist/debian/seamly2d.1 $PKG/usr/man/man1/
-install -m 644 dist/debian/tape.1 $PKG/usr/man/man1/
+install -m 644 dist/debian/seamlyme.1 $PKG/usr/man/man1/
 
 # Compress man pages
 find $PKG/usr/man -type f -exec gzip -9 {} \;

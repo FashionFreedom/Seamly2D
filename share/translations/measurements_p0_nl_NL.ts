@@ -1606,7 +1606,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="895"/>
-        <source>Curve stiff paper around front of abdomen, tape at sides. Measure from Hip Side to Hip Side over paper across front.</source>
+        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
         <comment>Full measurement description.</comment>
         <translation>Plak stevig papier rond voorkant van de onderbuik aan beide zijde. Meet van heup zijde naar heup zijde over het papier langs de voorkant.</translation>
     </message>
@@ -1696,7 +1696,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="945"/>
-        <source>From Neck Front, over tape between Breastpoints, down to Waist Front.</source>
+        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
         <comment>Full measurement description.</comment>
         <translation>Van voorkant nek, over meetlint tussen borstpunten, naar beneden naar voorkant taille.</translation>
     </message>
@@ -1822,7 +1822,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="992"/>
-        <source>From Highbust Front to Waist Front. Use tape to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
+        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
         <comment>Full measurement description.</comment>
         <translation>Van voorkant hogebuste naar voorkant taille. Gebruik meetlint om het gat tussen bustepunten te overbruggen.(&apos;Voorkant nek naar voorkant taille&apos; - &apos;Voorkant nek naar voorkant hogebuste&apos;).</translation>
     </message>
@@ -1840,7 +1840,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1000"/>
-        <source>From Neck Front down to Bust Front. Requires tape to cover gap between Bustpoints.</source>
+        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
         <comment>Full measurement description.</comment>
         <translation>Van voorkant naar beneden naar voorkant buste. Vergt meetlint om het gat tussen bustepunten te dekken.</translation>
     </message>
@@ -2290,7 +2290,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1171"/>
-        <source>From Waist Back down to Hip Back. Requires tape to cover the gap between buttocks.</source>
+        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
         <comment>Full measurement description.</comment>
         <translation>Van taille rug naar beneden naar heup rug. Vereist meetlint om de ruimte tussen billen te overbruggen.</translation>
     </message>
@@ -3794,7 +3794,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1825"/>
-        <source>Put tape across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
         <translation>Plaats meetlint over ruimte tussen de billen op heup level. Meet vanaf voorkant taille naar beneden tussen de benen en terug naar boven naar taille aan de rugkant.</translation>
     </message>
@@ -3812,7 +3812,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1832"/>
-        <source>Put tape across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
         <comment>Full measurement description.</comment>
         <translation>Plaats meetlint over ruimte tussen de billen op heup level. Meet vanaf taille rugkant naar midden kruis, op de vagina of tussen de testikels en anus.</translation>
     </message>

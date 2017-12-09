@@ -1,8 +1,8 @@
 TEMPLATE = subdirs
 SUBDIRS = \
-    tape \
+    seamlyme \
     seamly2d
 
-macx{# For making app bundle tape must exist before seamly2d.app will be created
-    seamly2d.depends = tape
+macx{# For making app bundle seamlyme must exist before seamly2d.app will be created
+    seamly2d.depends = seamlyme
 }

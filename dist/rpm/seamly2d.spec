@@ -91,8 +91,8 @@ export NO_DEBUGINFO_STRIP_DEBUG=true
 gzip -9c dist/debian/%{name}.1 > dist/debian/%{name}.1.gz &&
 %{__install} -Dm 644 dist/debian/%{name}.1.gz %{buildroot}%{_mandir}/man1/%{name}.1.gz
 
-gzip -9c dist/debian/tape.1 > dist/debian/tape.1.gz &&
-%{__install} -Dm 644 dist/debian/tape.1.gz %{buildroot}%{_mandir}/man1/tape.1.gz
+gzip -9c dist/debian/seamlyme.1 > dist/debian/seamlyme.1.gz &&
+%{__install} -Dm 644 dist/debian/seamlyme.1.gz %{buildroot}%{_mandir}/man1/seamlyme.1.gz
 
 cp dist/debian/seamly2d.sharedmimeinfo dist/debian/%{name}.xml &&
 %{__install} -Dm 644 dist/debian/%{name}.xml %{buildroot}%{_datadir}/mime/packages/%{name}.xml
@@ -102,7 +102,7 @@ cp dist/debian/seamly2d.mime dist/debian/%{name} &&
 
 %if 0%{?suse_version} > 0
 %suse_update_desktop_file -r %{name} Graphics VectorGraphics 2DGraphics
-%suse_update_desktop_file -r tape Utility Applet
+%suse_update_desktop_file -r seamlyme Utility Applet
 %endif
 
 %post 
@@ -129,9 +129,9 @@ fi
 %defattr(-,root,root,-)
 %doc README.txt LICENSE_GPL.txt 
 %doc %{_mandir}/man1/%{name}.1.gz
-%doc %{_mandir}/man1/tape.1.gz
+%doc %{_mandir}/man1/seamlyme.1.gz
 %{_bindir}/seamly2d
-%{_bindir}/tape
+%{_bindir}/seamlyme
 %{_libdir}/libvpropertyexplorer.so
 %{_libdir}/libvpropertyexplorer.so.*
 %{_libdir}/libqmuparser.so
@@ -143,7 +143,7 @@ fi
 %dir %{_datadir}/mime/packages
 %{_datadir}/mime/packages/%{name}.xml
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/applications/tape.desktop
+%{_datadir}/applications/seamlyme.desktop
 %{_datadir}/pixmaps/*
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/diagrams.rcc
@@ -158,7 +158,7 @@ fi
 %{_datadir}/%{name}/labels/*.xml
 
 %clean
-rm -f dist/debian/%{name}.1.gz dist/debian/tape.1.gz dist/debian/%{name}.xml dist/debian/%{name}
+rm -f dist/debian/%{name}.1.gz dist/debian/seamlyme.1.gz dist/debian/%{name}.xml dist/debian/%{name}
 [ "%{buildroot}" != "/" ] && %{__rm} -rf %{buildroot}
 
 

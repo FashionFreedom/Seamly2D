@@ -44,14 +44,14 @@ DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 SOURCES += \
     qttestmainlambda.cpp \
-    tst_tapecommandline.cpp \
+    tst_seamlymecommandline.cpp \
     tst_seamly2dcommandline.cpp
 
 *msvc*:SOURCES += stable.cpp
 
 HEADERS += \
     stable.h \
-    tst_tapecommandline.h \
+    tst_seamlymecommandline.h \
     tst_seamly2dcommandline.h
 
 # Set using ccache. Function enable_ccache() defined in common.pri.
@@ -178,21 +178,21 @@ else:unix: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpro
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 
-TAPE_TEST_FILES += \
-    tst_tape/keiko.vit \
-    tst_tape/empty.vit \
-    tst_tape/all_measurements_v0.3.0.vit \
-    tst_tape/all_measurements_v0.4.0.vst \
-    tst_tape/GOST_man_ru_v0.3.0.vst \
-    tst_tape/all_measurements_v0.3.3.vit \
-    tst_tape/all_measurements_v0.4.2.vst \
-    tst_tape/GOST_man_ru_v0.4.2.vst \
-    tst_tape/broken1.vit \
-    tst_tape/broken2.vit \
-    tst_tape/broken3.vit \
-    tst_tape/broken4.vit \
-    tst_tape/text.vit \
-    tst_tape/text.vst
+SEAMLYME_TEST_FILES += \
+    tst_seamlyme/keiko.vit \
+    tst_seamlyme/empty.vit \
+    tst_seamlyme/all_measurements_v0.3.0.vit \
+    tst_seamlyme/all_measurements_v0.4.0.vst \
+    tst_seamlyme/GOST_man_ru_v0.3.0.vst \
+    tst_seamlyme/all_measurements_v0.3.3.vit \
+    tst_seamlyme/all_measurements_v0.4.2.vst \
+    tst_seamlyme/GOST_man_ru_v0.4.2.vst \
+    tst_seamlyme/broken1.vit \
+    tst_seamlyme/broken2.vit \
+    tst_seamlyme/broken3.vit \
+    tst_seamlyme/broken4.vit \
+    tst_seamlyme/text.vit \
+    tst_seamlyme/text.vst
 
 seamly2d_TEST_FILES += \
     tst_seamly2d/empty.val \
@@ -253,17 +253,17 @@ COLLECTION_FILES += \
 
 # Compilation will fail without this files after we added them to this section.
 OTHER_FILES += \
-    $$TAPE_TEST_FILES \
+    $$SEAMLYME_TEST_FILES \
     $$seamly2d_TEST_FILES \
     $$COLLECTION_FILES
 
-for(DIR, TAPE_TEST_FILES) {
+for(DIR, SEAMLYME_TEST_FILES) {
      #add these absolute paths to a variable which
      #ends up as 'mkcommands = path1 path2 path3 ...'
-     tape_path += $${PWD}/$$DIR
+     seamlyme_path += $${PWD}/$$DIR
 }
 
-copyToDestdir($$tape_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_tape))
+copyToDestdir($$seamlyme_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_seamlyme))
 
 for(DIR, seamly2d_TEST_FILES) {
      #add these absolute paths to a variable which

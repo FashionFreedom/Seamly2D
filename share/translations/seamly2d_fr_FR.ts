@@ -396,12 +396,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>A propos de Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>A propos de SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Version de Tape</translation>
+        <source>SeamlyMe version</source>
+        <translation>Version de SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -6846,7 +6846,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. These pattern pieces are base for going to the next stage &amp;quot;Details mode&amp;quot;. Before you will be able to enable the &amp;quot;Details mode&amp;quot; need create at least one detail.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode de travail fait pour travailler avec des pi&amp;egrave;ces de patron. Ces pi&amp;egrave;ces servent pour l&apos;&amp;eacute;tape suivante: le mode &amp;quot;Isolation&amp;quot;. Avant de passer a ce mode, vous devez au moins cr&amp;eacute;er une pi&amp;egrave;ce de patron.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode de travail fait pour travailler avec des pi&amp;egrave;ces de patron. Ces pi&amp;egrave;ces servent pour l&apos;&amp;eacute;tape_ suivante: le mode &amp;quot;Isolation&amp;quot;. Avant de passer a ce mode, vous devez au moins cr&amp;eacute;er une pi&amp;egrave;ce de patron.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with details. Before you will be able to enable the &amp;quot;Details mode&amp;quot; need create at least one detail on the stage &amp;quot;Draw mode&amp;quot;. Details created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -7125,7 +7125,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape</source>
+        <source>Open SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7197,7 +7197,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8355,8 +8355,8 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation>À propos de &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>A propos de Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>A propos de SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>

@@ -388,12 +388,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>Σχετικά με το Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Σχετικά με το SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Έκδοση Tape</translation>
+        <source>SeamlyMe version</source>
+        <translation>Έκδοση SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -7009,8 +7009,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape</source>
-        <translation>Άνοιγμα Tape</translation>
+        <source>Open SeamlyMe</source>
+        <translation>Άνοιγμα SeamlyMe</translation>
     </message>
     <message>
         <source>Edit Current</source>
@@ -7081,8 +7081,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
-        <translation>Ανοίξτε την εφαρμογή Tape για δημιουργία ή διόρθωση του αρχείου μετρήσεων</translation>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
+        <translation>Ανοίξτε την εφαρμογή SeamlyMe για δημιουργία ή διόρθωση του αρχείου μετρήσεων</translation>
     </message>
     <message>
         <source>Export increments to CSV</source>
@@ -8170,8 +8170,8 @@ Do you want to save your changes?</source>
         <translation>Σχετικά &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>Σχετικά με το Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Σχετικά με το SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>

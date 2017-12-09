@@ -51,7 +51,7 @@
 
 #include <QtTest>
 
-#include "tst_tapecommandline.h"
+#include "tst_seamlymecommandline.h"
 #include "tst_seamly2dcommandline.h"
 
 int main(int argc, char** argv)
@@ -65,7 +65,7 @@ int main(int argc, char** argv)
         delete obj;
     };
 
-    ASSERT_TEST(new TST_TapeCommandLine());
+    ASSERT_TEST(new TST_SeamlyMeCommandLine());
     ASSERT_TEST(new TST_Seamly2DCommandLine());
 
     return status;

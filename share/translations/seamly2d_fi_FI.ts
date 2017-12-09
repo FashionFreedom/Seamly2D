@@ -272,11 +272,11 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
+        <source>About SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tape version</source>
+        <source>SeamlyMe version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6342,7 +6342,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape</source>
+        <source>Open SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6414,7 +6414,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7421,7 +7421,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Tietoja &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
+        <source>About SeamlyMe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

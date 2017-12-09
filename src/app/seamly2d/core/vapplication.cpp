@@ -422,53 +422,53 @@ bool VApplication::notify(QObject *receiver, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VApplication::TapeFilePath() const
+QString VApplication::SeamlyMeFilePath() const
 {
-    const QString tape = QStringLiteral("tape");
+    const QString seamlyme = QStringLiteral("seamlyme");
 #ifdef Q_OS_WIN
-    QFileInfo tapeFile(QCoreApplication::applicationDirPath() + "/" + tape + ".exe");
-    if (tapeFile.exists())
+    QFileInfo seamlymeFile(QCoreApplication::applicationDirPath() + "/" + seamlyme + ".exe");
+    if (seamlymeFile.exists())
     {
-        return tapeFile.absoluteFilePath();
+        return seamlymeFile.absoluteFilePath();
     }
     else
     {
-        return QCoreApplication::applicationDirPath() + "/../../tape/bin/" + tape + ".exe";
+        return QCoreApplication::applicationDirPath() + "/../../seamlyme/bin/" + seamlyme + ".exe";
     }
 #elif defined(Q_OS_MAC)
-    QFileInfo tapeFile(QCoreApplication::applicationDirPath() + "/" + tape);
-    if (tapeFile.exists())
+    QFileInfo seamlymeFile(QCoreApplication::applicationDirPath() + "/" + seamlyme);
+    if (seamlymeFile.exists())
     {
-        return tapeFile.absoluteFilePath();
+        return seamlymeFile.absoluteFilePath();
     }
     else
     {
-        QFileInfo file(QCoreApplication::applicationDirPath() + "/../../tape/bin/" + tape);
+        QFileInfo file(QCoreApplication::applicationDirPath() + "/../../seamlyme/bin/" + seamlyme);
         if (file.exists())
         {
             return file.absoluteFilePath();
         }
         else
         {
-            return tape;
+            return seamlyme;
         }
     }
 #else // Unix
-    QFileInfo file(QCoreApplication::applicationDirPath() + "/../../tape/bin/" + tape);
+    QFileInfo file(QCoreApplication::applicationDirPath() + "/../../seamlyme/bin/" + seamlyme);
     if (file.exists())
     {
         return file.absoluteFilePath();
     }
     else
     {
-        QFileInfo tapeFile(QCoreApplication::applicationDirPath() + "/" + tape);
-        if (tapeFile.exists())
+        QFileInfo seamlymeFile(QCoreApplication::applicationDirPath() + "/" + seamlyme);
+        if (seamlymeFile.exists())
         {
-            return tapeFile.absoluteFilePath();
+            return seamlymeFile.absoluteFilePath();
         }
         else
         {
-            return tape;
+            return seamlyme;
         }
     }
 #endif

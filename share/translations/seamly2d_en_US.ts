@@ -396,12 +396,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>About Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>About SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Tape version</translation>
+        <source>SeamlyMe version</source>
+        <translation>SeamlyMe version</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -7132,8 +7132,8 @@ Do you want to save your changes?</translation>
         <translation>Load multisize measurements file</translation>
     </message>
     <message>
-        <source>Open Tape</source>
-        <translation>Open Tape</translation>
+        <source>Open SeamlyMe</source>
+        <translation>Open SeamlyMe</translation>
     </message>
     <message>
         <source>Edit Current</source>
@@ -7204,8 +7204,8 @@ Do you want to save your changes?</translation>
         <translation>Select one or more objects, hold &lt;b&gt;%1&lt;/b&gt; - for multiple selection, &lt;b&gt;Enter&lt;/b&gt; - confirm selection</translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
-        <translation>Open Tape app for creating or editing measurements file</translation>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
+        <translation>Open SeamlyMe app for creating or editing measurements file</translation>
     </message>
     <message>
         <source>Export increments to CSV</source>
@@ -8374,8 +8374,8 @@ Do you want to save your changes?</translation>
         <translation>About &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>About Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>About SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>

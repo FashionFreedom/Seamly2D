@@ -251,9 +251,9 @@ MainWindow::MainWindow(QWidget *parent)
     actionOpenPattern->setMenuRole(QAction::NoRole);
     connect(actionOpenPattern, &QAction::triggered, this, &MainWindow::Open);
 
-    QAction *actionOpenTape = menu->addAction(tr("Create/Edit measurements"));
-    actionOpenTape->setMenuRole(QAction::NoRole);
-    connect(actionOpenTape, &QAction::triggered, this, &MainWindow::CreateMeasurements);
+    QAction *actionOpenSeamlyMe = menu->addAction(tr("Create/Edit measurements"));
+    actionOpenSeamlyMe->setMenuRole(QAction::NoRole);
+    connect(actionOpenSeamlyMe, &QAction::triggered, this, &MainWindow::CreateMeasurements);
 
     QAction *actionPreferences = menu->addAction(tr("Preferences"));
     actionPreferences->setMenuRole(QAction::NoRole);
@@ -1700,9 +1700,9 @@ void MainWindow::ShowMeasurements()
             arguments.append(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING);
         }
 
-        const QString tape = qApp->TapeFilePath();
-        const QString workingDirectory = QFileInfo(tape).absoluteDir().absolutePath();
-        QProcess::startDetached(tape, arguments, workingDirectory);
+        const QString seamlyme = qApp->SeamlyMeFilePath();
+        const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
+        QProcess::startDetached(seamlyme, arguments, workingDirectory);
     }
     else
     {
@@ -4054,10 +4054,10 @@ void MainWindow::CreateActions()
     connect(ui->actionLoadIndividual, &QAction::triggered, this, &MainWindow::LoadIndividual);
     connect(ui->actionLoadMultisize, &QAction::triggered, this, &MainWindow::LoadMultisize);
 
-    connect(ui->actionOpenTape, &QAction::triggered, this, [this]()
+    connect(ui->actionOpenSeamlyMe, &QAction::triggered, this, [this]()
     {
-        const QString tape = qApp->TapeFilePath();
-        const QString workingDirectory = QFileInfo(tape).absoluteDir().absolutePath();
+        const QString seamlyme = qApp->SeamlyMeFilePath();
+        const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
 
         QStringList arguments;
         if (isNoScaling)
@@ -4065,7 +4065,7 @@ void MainWindow::CreateActions()
             arguments.append(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING);
         }
 
-        QProcess::startDetached(tape, arguments, workingDirectory);
+        QProcess::startDetached(seamlyme, arguments, workingDirectory);
     });
 
     connect(ui->actionEditCurrent, &QAction::triggered, this, &MainWindow::ShowMeasurements);
@@ -4189,7 +4189,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     try
     {
         // Here comes undocumented Seamly2D's feature.
-        // Because app bundle in Mac OS X doesn't allow setup assosiation for Tape we must do this through Seamly2D
+        // Because app bundle in Mac OS X doesn't allow setup assosiation for SeamlyMe we must do this through Seamly2D
         VMeasurements m(pattern);
         m.SetSize(VContainer::rsize());
         m.SetHeight(VContainer::rheight());
@@ -4197,8 +4197,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         if (m.Type() == MeasurementsType::Multisize || m.Type() == MeasurementsType::Individual)
         {
-            const QString tape = qApp->TapeFilePath();
-            const QString workingDirectory = QFileInfo(tape).absoluteDir().absolutePath();
+            const QString seamlyme = qApp->SeamlyMeFilePath();
+            const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
 
             QStringList arguments = QStringList() << fileName;
             if (isNoScaling)
@@ -4206,7 +4206,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
                 arguments.append(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING);
             }
 
-            QProcess::startDetached(tape, arguments, workingDirectory);
+            QProcess::startDetached(seamlyme, arguments, workingDirectory);
             qApp->exit(V_EX_OK);
             return false; // stop continue processing
         }
@@ -4430,8 +4430,8 @@ void MainWindow::Preferences()
 #if defined(Q_OS_MAC)
 void MainWindow::CreateMeasurements()
 {
-    const QString tape = qApp->TapeFilePath();
-    const QString workingDirectory = QFileInfo(tape).absoluteDir().absolutePath();
+    const QString seamlyme = qApp->SeamlyMeFilePath();
+    const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
 
     QStringList arguments;
     if (isNoScaling)
@@ -4439,7 +4439,7 @@ void MainWindow::CreateMeasurements()
         arguments.append(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING);
     }
 
-    QProcess::startDetached(tape, arguments, workingDirectory);
+    QProcess::startDetached(seamlyme, arguments, workingDirectory);
 }
 #endif
 

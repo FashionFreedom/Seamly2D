@@ -396,12 +396,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>О Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>О SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Версия  Tape</translation>
+        <source>SeamlyMe version</source>
+        <translation>Версия  SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -7132,8 +7132,8 @@ Do you want to save your changes?</source>
         <translation>Загрузить файл с мультиразмерными мерками</translation>
     </message>
     <message>
-        <source>Open Tape</source>
-        <translation>Открыть Tape</translation>
+        <source>Open SeamlyMe</source>
+        <translation>Открыть SeamlyMe</translation>
     </message>
     <message>
         <source>Edit Current</source>
@@ -7204,8 +7204,8 @@ Do you want to save your changes?</source>
         <translation>Выберите один или несколько объектов, зажмите  &lt;b&gt;%1&lt;/b&gt; - для множественного выбора, &lt;b&gt;Enter&lt;/b&gt; - подтвердить выбор</translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
-        <translation>Открыть программу Tape для создания или редактирования файла мерок</translation>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
+        <translation>Открыть программу SeamlyMe для создания или редактирования файла мерок</translation>
     </message>
     <message>
         <source>Export increments to CSV</source>
@@ -8374,8 +8374,8 @@ Do you want to save your changes?</source>
         <translation>О &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>О Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>О SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>

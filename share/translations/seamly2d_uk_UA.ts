@@ -396,12 +396,12 @@
 <context>
     <name>DialogAboutTape</name>
     <message>
-        <source>About Tape</source>
-        <translation>Про Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Про SeamlyMe</translation>
     </message>
     <message>
-        <source>Tape version</source>
-        <translation>Версія Tape</translation>
+        <source>SeamlyMe version</source>
+        <translation>Версія SeamlyMe</translation>
     </message>
     <message>
         <source>Build revision:</source>
@@ -7131,8 +7131,8 @@ Do you want to save your changes?</source>
         <translation>Завантажити файл стандартних мірок</translation>
     </message>
     <message>
-        <source>Open Tape</source>
-        <translation>Відкрити Tape</translation>
+        <source>Open SeamlyMe</source>
+        <translation>Відкрити SeamlyMe</translation>
     </message>
     <message>
         <source>Edit Current</source>
@@ -7203,8 +7203,8 @@ Do you want to save your changes?</source>
         <translation>Виберіть один чи більше об&apos;єктів, затисніть &lt;b&gt;%1&lt;/b&gt; - масового вибору, &lt;b&gt;Enter&lt;/b&gt; - завершити створення</translation>
     </message>
     <message>
-        <source>Open Tape app for creating or editing measurements file</source>
-        <translation>Відкрити програму Tape для створення чи редагування файлу мірок</translation>
+        <source>Open SeamlyMe app for creating or editing measurements file</source>
+        <translation>Відкрити програму SeamlyMe для створення чи редагування файлу мірок</translation>
     </message>
     <message>
         <source>Export increments to CSV</source>
@@ -8373,8 +8373,8 @@ Do you want to save your changes?</source>
         <translation>Про &amp;Qt</translation>
     </message>
     <message>
-        <source>About Tape</source>
-        <translation>Про Tape</translation>
+        <source>About SeamlyMe</source>
+        <translation>Про SeamlyMe</translation>
     </message>
     <message>
         <source>New</source>
