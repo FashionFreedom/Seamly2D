@@ -50,16 +50,16 @@ ________________
          
 <em>Ubuntu</em>:  
  
-* Install packages:
+* Install packages:  
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test     
-    sudo apt-get -qq update
+    sudo apt-get -qq update  
     sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5  
     sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev  
-    sudo apt-get install -y poppler-utils 
-    sudo apt-get install -y g++-5 
-    sudo apt-get install -y xpdf 
-    sudo apt-get install -y xvfb 
-    sudo apt-get install -y libfontconfig1-dev libfreetype6-dev 
+    sudo apt-get install -y poppler-utils  
+    sudo apt-get install -y g++-5  
+    sudo apt-get install -y xpdf  
+    sudo apt-get install -y xvfb  
+    sudo apt-get install -y libfontconfig1-dev libfreetype6-dev  
     sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev  
     sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev 
      
@@ -67,11 +67,11 @@ ________________
     sudo dpkg -i ccache_3.3.4-1_amd64.deb 
   
 * Install Qt from https://www1.qt.io/download-open-source/ 
-* Install Qt from ppa. This will take some time. 
+* Install Qt from ppa. This will take some time.  
     sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty  
-    sudo apt-get -qq update 
-    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator 
-* After Qt5.9 installation, run shell file to configure environment variables 
+    sudo apt-get -qq update  
+    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator  
+* After Qt5.9 installation, run shell file to configure environment variables  
     sudo chmod +x /opt/qt59/bin/qt59-env.sh  
     sudo /opt/qt59/bin/qt59-env.sh  
    
@@ -109,8 +109,8 @@ For newer versions of Windows, PATH can be extended through this menu:
 
 Add the locations of your compiler and other build tools to your system's PATH variable. This will depend on your choice of software development environment.
 
-Unix systems: 
-Default prefix for command "make install" is /usr. For using another prefix build with qmake command:
+Unix systems:  
+Default prefix for command "make install" is /usr. For using another prefix build with qmake command:  
 
     qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
 
@@ -132,7 +132,7 @@ GNU General Public License for more details.
 
 See LICENSE_GPL.txt file for further information
 
-Other components released under:
-* QMuParser - BSD license
-* VPropertyExplorer - LGPLv2.1 license
+Other components released under:  
+* QMuParser - BSD license  
+* VPropertyExplorer - LGPLv2.1 license  
 
