@@ -37,6 +37,11 @@ clone_depth: 1                       # clone entire repository history if not de
 shallow_clone: false                 # default is "false"
 
 environment:
+  PFX_PASSW:
+    secure: ifE3wBjV66koJF1uPVbfHQ==
+  PFX7z_PASSW:
+    secure: V31OHD0fr3vqkXWndDanbw==
+  PFX_FILE: C:\projects\vpo2\SeamlySert.pfx
   matrix:
   - QT5: Qt\5.9\mingw53_32
     QT_VERSION: Qt5.9
@@ -62,6 +67,7 @@ init:
   - set QTDIR=C:\%QT5%
   - set PATH=C:\ProgramData\chocolatey;%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
   - set PATH=%PATH%;C:\Program Files\Git\cmd"
+  - set PATH=%PATH%;"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin"  
   - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
   - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using MinGW"
@@ -77,7 +83,7 @@ init:
   # Path after
   - path
   - qmake -v
-
+  - 7z x C:\projects\vpo2\seamly.7z -p%PFX7z_PASSW%
  
 install:
   - choco install -y InnoSetup  
@@ -127,6 +133,8 @@ notifications:
 # prepare to deploy
 after_test:
   - if "%DEPLOY%" == "true" (mingw32-make install)
+  - signtool sign /debug /f %PFX_FILE% /p %PFX_PASSW% build/package/seamly2d_*.exe
+  - signtool timestamp /t http://timestamp.verisign.com/scripts/timestamp.dll build/package/seamly2d_*.exe
 
 artifacts:
   - path: build/package/seamly2d_*.exe
