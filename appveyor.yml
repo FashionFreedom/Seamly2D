@@ -95,8 +95,8 @@ install:
 
 before_build:
   - 7z x C:\projects\vpo2\seamly.7z -p%PFX7z_PASSW%
-  - "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1\Bin\signtool.exe" sign /debug /f %PFX_FILE% /p %PFX_PASSW% build/package/seamly2d_*.exe  
-  - "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\signtool.exe" sign /debug /f %PFX_FILE% /p %PFX_PASSW% build/package/seamly2d_*.exe
+  - C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1\Bin\signtool.exe sign /debug /f %PFX_FILE% /p %PFX_PASSW% build/package/seamly2d_*.exe  
+  - C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\signtool.exe sign /debug /f %PFX_FILE% /p %PFX_PASSW% build/package/seamly2d_*.exe
   - cd c:\projects\vpo2 
   - md build
 
