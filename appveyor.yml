@@ -66,7 +66,7 @@ init:
   - path
   - set QTDIR=C:\%QT5%
   - set PATH=C:\ProgramData\chocolatey;%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
-  - set PATH=%PATH%;C:\Program Files\Git\cmd"
+  - set PATH=%PATH%;C:\Program Files\Git\cmd\
   - set PATH=%PATH%;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\
    set PATH=%PATH%;C:\Program Files\7-Zip\
   - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
