@@ -38,7 +38,7 @@ shallow_clone: false                 # default is "false"
 
 environment:
   PFX_PASSW:
-    secure: ifE3wBjV66koJF1uPVbfHQ==
+    secure: 27oXT3aJ48poktx/j1EJew==
   PFX7z_PASSW:
     secure: V31OHD0fr3vqkXWndDanbw==
   PFX_FILE: C:\projects\vpo2\SeamlySert.pfx
@@ -67,8 +67,7 @@ init:
   - set QTDIR=C:\%QT5%
   - set PATH=C:\ProgramData\chocolatey;%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
   - set PATH=%PATH%;C:\Program Files\Git\cmd\
-  - set PATH=%PATH%;C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin\
-   set PATH=%PATH%;C:\Program Files\7-Zip\
+  - set PATH=%PATH%;C:\Program Files\7-Zip\
   - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
   - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using MinGW"
@@ -95,10 +94,6 @@ install:
 
 before_build:
   - 7z x C:\projects\vpo2\seamly.7z -p%PFX7z_PASSW%
-  - cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1\Bin"
-  - signtool.exe sign
-  - cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin"  
-  - signtool.exe sign
   - cd c:\projects\vpo2 
   - md build
 
@@ -138,8 +133,9 @@ notifications:
 # prepare to deploy
 after_test:
   - if "%DEPLOY%" == "true" (mingw32-make install)
-  - signtool sign /debug /f %PFX_FILE% /p %PFX_PASSW% build/package/seamly2d_*.exe
-  - signtool timestamp /t http://timestamp.verisign.com/scripts/timestamp.dll build/package/seamly2d_*.exe
+  - cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin"  
+  - signtool sign /f %PFX_FILE% /p %PFX_PASSW% c:/projects/vpo2/build/package/seamly2d_*.exe
+  - signtool timestamp /t http://timestamp.verisign.com/scripts/timestamp.dll c:/projects/vpo2/build/package/seamly2d_*.exe
 
 artifacts:
   - path: build/package/seamly2d_*.exe
