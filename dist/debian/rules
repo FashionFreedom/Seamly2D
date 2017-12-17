@@ -14,9 +14,9 @@
     PREFIX_LIB:= /usr/lib/i386-linux-gnu
   endif
 
-  builddir:
+  builddir: 
 	mkdir -p builddir
- 
+  
 	  
   builddir/Makefile: builddir
 	cd builddir && qmake PREFIX=/usr PREFIX_LIB=$(PREFIX_LIB) "CONFIG += noTests noRunPath no_ccache noDebugSymbols" ../$(APPNAME).pro -r
