@@ -3,8 +3,7 @@ Section: graphics
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Susan Spencer <susan.spencer@gmail.com>
-Build-Depends: ~beineri/+archive/ubuntu/opt-qt593-trusty,
-               debhelper (>= 9.0.0), 
+Build-Depends: debhelper (>= 9.0.0), 
                qtbase5-dev (>= 5.7.0), 
                libqt5svg5-dev (>= 5.7.0), 
                g++ (>= 4.7.0), 
