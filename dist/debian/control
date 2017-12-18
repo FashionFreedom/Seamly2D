@@ -4,19 +4,19 @@ Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Susan Spencer <susan.spencer@gmail.com>
 Build-Depends: debhelper (>= 9.0.0), 
-               qtbase5-dev (>= 5.7.0), 
-               libqt5svg5-dev (>= 5.7.0), 
+               qtbase5-dev (>= 5.2.0), 
+               libqt5svg5-dev (>= 5.2.0), 
                g++ (>= 4.7.0), 
-               qt5-default (>= 5.7.0), 
-               qttools5-dev-tools (>= 5.7.0), 
-               libqt5xmlpatterns5-dev (>= 5.7.0)
+               qt5-default (>= 5.2.0), 
+               qttools5-dev-tools (>= 5.2.0), 
+               libqt5xmlpatterns5-dev (>= 5.2.0)
 Standards-Version: 3.9.5
 Homepage: https://fashionfreedom.eu/
 Vcs-Browser: https://github.com/fashionfreedom/seamly2d
 
 Package: seamly2d
 Architecture: i386 amd64
-Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libqt5core5a (>= 5.7.0) | libqt5core5 (>= 5.7.0), libqt5gui5 (>= 5.7.0) | libqt5gui5-gles (>= 5.7.0), libqt5printsupport5 (>= 5.7.0), libqt5svg5 (>= 5.7.0), libqt5widgets5 (>= 5.7.0), libqt5xml5 (>= 5.7.0), libqt5xmlpatterns5 (>= 5.7.0), libstdc++6 (>= 4.6), xpdf
+Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libqt5core5a (>= 5.2.0) | libqt5core5 (>= 5.2.0), libqt5gui5 (>= 5.2.0) | libqt5gui5-gles (>= 5.2.0), libqt5printsupport5 (>= 5.2.0), libqt5svg5 (>= 5.2.0), libqt5widgets5 (>= 5.2.0), libqt5xml5 (>= 5.2.0), libqt5xmlpatterns5 (>= 5.2.0), libstdc++6 (>= 4.6), xpdf
 Description: Pattern making program.
  Seamly2D is a free and opensource patternmaking program for Windows, Mac, and 
  Linux. Seamly2D enables creative parametric patterns which conform to an
