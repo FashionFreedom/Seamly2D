@@ -59,7 +59,7 @@
 #include "../vmisc/def.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "variables/vinternalvariable.h"
-
+#include <QSharedPointer>
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Calculator class wraper for QMuParser. Make easy initialization math parser.
