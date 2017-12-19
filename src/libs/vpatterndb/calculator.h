@@ -60,8 +60,8 @@
 
 #include "../qmuparser/qmuformulabase.h"
 
-class VInternalVariable;
-
+//class VInternalVariable;
+#include "variables/vinternalvariable.h"
 /**
  * @brief The Calculator class for calculation formula.
  *

@@ -70,8 +70,8 @@ Q_DECLARE_LOGGING_CATEGORY(vVis)
 class VScaledEllipse;
 class VScaledLine;
 class VContainer;
-class VInternalVariable;
-
+//class VInternalVariable;
+#include "variables/vinternalvariable.h"
 enum class Mode : char {Creation, Show};
 
 class Visualization : public QObject
