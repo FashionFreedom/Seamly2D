@@ -18,8 +18,8 @@ Homepage and downloads     https://fashionfreedom.eu
 Wiki & User Manual         https://wiki.seamly2d.com  
 Forum                      https://forum.seamly2d.com/  
 Translations               https://www.transifex.com/organization/valentina  
-PPA for Ubuntu (develop)   ppa:susan-spencer/fashionfreedom  
-PPA for Ubuntu (stable)    ppa:susan-spencer/fashionfreedom-stable  
+PPA for Ubuntu (stable)    ppa:susan-spencer/seamly2d  
+PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build   
 IRC channel                #seamly2d on irc.freenode.net  
 Main repository            https://github.com/fashionfreedom/seamly2d  
 Doxygen docs               https://seamly2d.github.io/  
