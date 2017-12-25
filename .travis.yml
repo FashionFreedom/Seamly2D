@@ -81,7 +81,7 @@ deploy:
     dry-run: false
     on:
       all_branches: true
-      condition: $TRAVIS_OS_NAME = linux && "$DEPLOY = true"
+      condition: $TRAVIS_OS_NAME = linux && $DEPLOY = true
   - provider: bintray
     skip_cleanup: true
     file: ../share/bintray.json

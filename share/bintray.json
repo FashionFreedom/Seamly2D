@@ -11,7 +11,7 @@
 
     "files":
         [
-        {"includePattern": "./(vpo-osx-.*\\.tar.gz)", "uploadPattern": "$1",
+        {"includePattern": "./(seamly2d-osx-.*\\.tar.gz)", "uploadPattern": "$1",
         "matrixParams": {
            "override": 1 }
         }
