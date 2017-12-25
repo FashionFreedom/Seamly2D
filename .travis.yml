@@ -70,15 +70,25 @@ before_deploy:
     tar --exclude "*.DS_Store" -cvzf seamly2d-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app/;
   fi
 deploy:
-  provider: launchpad
-  slug: ~susan-spencer/seamly2d/+git/seamly2d
-  user: susan-spencer
-  oauth_token:
-    secure: ax7+cS0EVUXfxu63pXkxAmber9jwGaM18bWHoFpt2H7e0rqvdRbt6FtuhVNSpefnyuKFor2O9/Hn/jIAljP8Zf2VOmAbUaDk5F8ArGu1xOV0nO0I87Q18pR3lXYzrqeCa2rlnt5xp8aEWVlIjKGkIxUzdRY9h0fbn6JcQ8Weru7Hg5H6r9NughEB3v40/mJhHToDgoiIk9RiQPsjyo1YwVnQzb8KjA/TQsjqmMN9Qobs0i9TPuL1Dm9zech0BDeT7nDwF39YDbVeUjBMjcZu6KpoNbXpG9NEzZbstls6jc6yez2z82fJ3MAar714m+PxxU2fFbfxZOBgcq3xFSrhfETzKyLD0g5yw/fLlTU3UPmIVFSFnGnfHwHXzu0AEyOg8koLbVdF6vzy1Jm8CAScaFOucx5+CiMtEqkcDOSBSqIR6yFCXTxDTbtPC6WyJ4nIas/Fj+4yppDjYd2PGDim2G3eTiOkvBGWF4cqx3ztFykfbVMkr54gfCnGBvWad2/21I/eXeX/3LRqIxEW3WeLtBy5v7iGexwhHfzWdO5vTGNRMAtSz7g76FYCaO72pASXmbgiCvDNy2DeEPPZf5P1GDeetw9RwQJUEJ5FnVkQ+iq3VDgXivM0yCj5phKITo2T6I+hUfxp40LfOazdpzciC0cA4Ac1eiv+1Yz7QqVCLjs=
-  oauth_token_secret:
-    secure: IDb3RqgC4csNXv8RCNiD5VReQc7324tzHPT63VVmy/QRJDXrkO4AWx64F5o4ZPbJ/vIgDKvoMx0NPqmwJq5cTXAikR4/3p3q+LigElT6hFNTmtQMHv72NmSeKHhNmOxuQiPFkmTdAkgi1RXn98xtxPaAoUMqFTmPh1BzfgAApWX/4PkkF6CaXp3DwAKB4fnyWsz1/WyFbwdMtEa1r64Y2WkE31fmALcd3pJEri2yFvCem53TD5Twqw2/qpj+ldj/Qc3bZ96qz5I1/EV0pdTOKSY8f8wVnMYk/AwTjPbYfjvrFZl9+Ok8nqLu4TSHp2o3fXk2VyWyYf5Swacm1pAz0JinJ1mXWSvV1S5EexnN57JC69/HRScgxEMyRHs7YUbtAx0htoFiIe/ZuY7+413ClGgaoY+TpJT37l9JNU/MVJEp0G081v4E+AfHS3kk9EaH5qsELs7IfpKIdkvpmoYEa/RGEOO7GsmuCj1uo/wWocFcFoDjrMkWSI9EbkX2bjHvOFX/xTQtX+eouNp0jA5fNYQpYnYLi9UbMktst2F2YoS2n9k5OUadwurQUpQwmHUektJkPWMTaRNEJsSxoaYdA6Cy2ms4aos1gx47seLWh4SrBT9bvBOvPlxa8Q6bVs62Xss2Mpimb2N5Lnu84q/UfwG/5Fvrcg63lsXTlxlYwSk=
-  skip_cleanup: true
-  dry-run: false
-  on:
-    all_branches: true
-    condition: "$DEPLOY = true"
+  - provider: launchpad
+    slug: ~susan-spencer/seamly2d/+git/seamly2d
+    user: susan-spencer
+    oauth_token:
+      secure: ax7+cS0EVUXfxu63pXkxAmber9jwGaM18bWHoFpt2H7e0rqvdRbt6FtuhVNSpefnyuKFor2O9/Hn/jIAljP8Zf2VOmAbUaDk5F8ArGu1xOV0nO0I87Q18pR3lXYzrqeCa2rlnt5xp8aEWVlIjKGkIxUzdRY9h0fbn6JcQ8Weru7Hg5H6r9NughEB3v40/mJhHToDgoiIk9RiQPsjyo1YwVnQzb8KjA/TQsjqmMN9Qobs0i9TPuL1Dm9zech0BDeT7nDwF39YDbVeUjBMjcZu6KpoNbXpG9NEzZbstls6jc6yez2z82fJ3MAar714m+PxxU2fFbfxZOBgcq3xFSrhfETzKyLD0g5yw/fLlTU3UPmIVFSFnGnfHwHXzu0AEyOg8koLbVdF6vzy1Jm8CAScaFOucx5+CiMtEqkcDOSBSqIR6yFCXTxDTbtPC6WyJ4nIas/Fj+4yppDjYd2PGDim2G3eTiOkvBGWF4cqx3ztFykfbVMkr54gfCnGBvWad2/21I/eXeX/3LRqIxEW3WeLtBy5v7iGexwhHfzWdO5vTGNRMAtSz7g76FYCaO72pASXmbgiCvDNy2DeEPPZf5P1GDeetw9RwQJUEJ5FnVkQ+iq3VDgXivM0yCj5phKITo2T6I+hUfxp40LfOazdpzciC0cA4Ac1eiv+1Yz7QqVCLjs=
+    oauth_token_secret:
+      secure: IDb3RqgC4csNXv8RCNiD5VReQc7324tzHPT63VVmy/QRJDXrkO4AWx64F5o4ZPbJ/vIgDKvoMx0NPqmwJq5cTXAikR4/3p3q+LigElT6hFNTmtQMHv72NmSeKHhNmOxuQiPFkmTdAkgi1RXn98xtxPaAoUMqFTmPh1BzfgAApWX/4PkkF6CaXp3DwAKB4fnyWsz1/WyFbwdMtEa1r64Y2WkE31fmALcd3pJEri2yFvCem53TD5Twqw2/qpj+ldj/Qc3bZ96qz5I1/EV0pdTOKSY8f8wVnMYk/AwTjPbYfjvrFZl9+Ok8nqLu4TSHp2o3fXk2VyWyYf5Swacm1pAz0JinJ1mXWSvV1S5EexnN57JC69/HRScgxEMyRHs7YUbtAx0htoFiIe/ZuY7+413ClGgaoY+TpJT37l9JNU/MVJEp0G081v4E+AfHS3kk9EaH5qsELs7IfpKIdkvpmoYEa/RGEOO7GsmuCj1uo/wWocFcFoDjrMkWSI9EbkX2bjHvOFX/xTQtX+eouNp0jA5fNYQpYnYLi9UbMktst2F2YoS2n9k5OUadwurQUpQwmHUektJkPWMTaRNEJsSxoaYdA6Cy2ms4aos1gx47seLWh4SrBT9bvBOvPlxa8Q6bVs62Xss2Mpimb2N5Lnu84q/UfwG/5Fvrcg63lsXTlxlYwSk=
+    skip_cleanup: true
+    dry-run: false
+    on:
+      all_branches: true
+      condition: $TRAVIS_OS_NAME = linux && "$DEPLOY = true"
+  - provider: bintray
+    skip_cleanup: true
+    file: ../share/bintray.json
+    user: slspencer
+    key:
+      secure: U9cFPY6pBLNQvXD1e7nIihi7fHtqKvtv8SkDSQsIAEYSpApQTW1nYwVwHHhpuz/5wBtVocRF6qckCLR4zkl6yLjqwjShr8VEZsj7yF2cGB65mSyPpkdtHy42h+rzdaD+SAhaBzO8PeGrbmg1BBFy2iVdw3QJn626w+HFseVM6siuJBKHgJF0GCPukFsutUELJ/wxSkeiCJvbJiZIyyMV+hJo+tWFjV6qb3NRvz8vPXP7l96u1G3r9m/HqFJsRSYXaG/6xnyGucvRevLLDNi4saLXyZU2phMuR8oXRDU2zVfQAp/WfRrYnMNwrHEU1B9yMTl5zbHGLTOtZB6GE+cFQFqXJzXhZcfEFhFQ0EmBz0uU7/9bApHomlwYbB3uj4fqre1GuGJopfFsuIvVj0Bn4s+4oltJXkqmSKKUEXMjs5kai3RhWy2bK5UnaePFS39DKIPwNkUO5UMZVkbAnQjrv9Cq5CQYc4P9L29q2BcKb10BvxvaWIohinJbShLnOGAaYlQ1gkBQ8e3g7wZ0KYOn49t3UWzX8AWVc79tr7tyo5XJQgdtftnjIUGZCuY52+4IMZdTA483VhkQ+hkjbRMgM4aHRL+c9YlsMCt4DJkF54rE8Rv+fyY0p9OO1tWJlcb/YnzMA8TFBTKxn9ApLkMWfk1e6kIh7R95Y6O+3+ZViTY=
+    dry-run: false
+    on:
+      all_branches: true
+      condition: $TRAVIS_OS_NAME = osx && $DEPLOY = true      
