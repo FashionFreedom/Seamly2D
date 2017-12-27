@@ -134,7 +134,7 @@ notifications:
 after_test:
   - if "%DEPLOY%" == "true" (mingw32-make install)
   - if "%DEPLOY%" == "true" cd "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\Bin"  
-  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW% c:/projects/vpo2/build/package/seamly2d_*.exe
+  - if "%DEPLOY%" == "true" signtool sign /fd SHA256 /f %PFX_FILE% /p %PFX_PASSW% c:/projects/vpo2/build/package/seamly2d_*.exe
   - if "%DEPLOY%" == "true" signtool timestamp /t http://timestamp.verisign.com/scripts/timestamp.dll c:/projects/vpo2/build/package/seamly2d_*.exe
 
 artifacts:
