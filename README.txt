@@ -24,6 +24,29 @@ IRC channel                #seamly2d on irc.freenode.net
 Main repository            https://github.com/fashionfreedom/seamly2d
 Doxygen docs               https://seamly2d.github.io/
 
+Seamly2D Downloads  
+================
+<em>Windows</em>:
+  
+* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
+* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
+
+<em>Mac OS X</em>:  
+
+* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
+* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
+
+<em>Ubuntu</em>:  
+
+* stable version:  
+sudo add-apt-repository ppa:susan-spencer/seamly2d  
+sudo apt-get update  
+sudo apt-get install seamly2d  
+* development version:  
+sudo add-apt-repository ppa:susan-spencer/seamly2d-dayly-build  
+sudo apt-get update  
+sudo apt-get install seamly2d  
+
 Building Seamly2D
 ================
 

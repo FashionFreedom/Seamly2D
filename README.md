@@ -14,15 +14,38 @@ Supported platforms:
    * Fedora 24 (32-bit/64-bit) or later  
    * Mac OS X 10.8 (64-bit) or later  
 
-Homepage and downloads     https://fashionfreedom.eu  
-Wiki & User Manual         https://wiki.seamly2d.com  
-Forum                      https://forum.seamly2d.com/  
-Translations               https://www.transifex.com/organization/valentina  
 PPA for Ubuntu (stable)    ppa:susan-spencer/seamly2d  
 PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build   
-IRC channel                #seamly2d on irc.freenode.net  
-Main repository            https://github.com/fashionfreedom/seamly2d  
-Doxygen docs               https://seamly2d.github.io/  
+IRC channel                #seamly2d on irc.freenode.net    
+[Homepage and downloads](https://fashionfreedom.eu)  
+[Wiki & User Manual](https://wiki.seamly2d.com)  
+[Forum](https://forum.seamly2d.com/)  
+[Translations](https://www.transifex.com/organization/valentina)  
+[Main repository](https://github.com/fashionfreedom/seamly2d)  
+[Doxygen docs](https://seamly2d.github.io/)  
+
+Seamly2D Downloads  
+================
+<em>Windows</em>:
+  
+* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
+* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
+
+<em>Mac OS X</em>:  
+
+* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
+* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
+
+<em>Ubuntu</em>:  
+
+* stable version:  
+sudo add-apt-repository ppa:susan-spencer/seamly2d  
+sudo apt-get update  
+sudo apt-get install seamly2d  
+* development version:  
+sudo add-apt-repository ppa:susan-spencer/seamly2d-dayly-build  
+sudo apt-get update  
+sudo apt-get install seamly2d  
 
 Building Seamly2D
 ================
