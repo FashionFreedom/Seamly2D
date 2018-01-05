@@ -68,8 +68,8 @@ extern const QString APP_VERSION_STR;
 // Change version number in projectversion.cpp too.
 // Synchronize seamly2d.nsi
 
-#define VER_FILEVERSION             0,6,0,0
-#define VER_FILEVERSION_STR         "0.6.0.0a\0"
+#define VER_FILEVERSION             0,6,0,1
+#define VER_FILEVERSION_STR         "0.6.0.1a\0"
 
 #define V_PRERELEASE // Mark prerelease builds
 
