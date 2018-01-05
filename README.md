@@ -33,8 +33,8 @@ Seamly2D Downloads
 
 <em>Mac OS X</em>:  
 
-* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
-* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
+* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_release)  
+* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_auto-upload)  
 
 <em>Ubuntu</em>:  
 
