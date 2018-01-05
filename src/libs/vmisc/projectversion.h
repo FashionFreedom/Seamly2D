@@ -69,7 +69,7 @@ extern const QString APP_VERSION_STR;
 // Synchronize seamly2d.nsi
 
 #define VER_FILEVERSION             0,6,0,1
-#define VER_FILEVERSION_STR         "0.6.0.1a\0"
+#define VER_FILEVERSION_STR         "0.6.0.1\0"
 
 #define V_PRERELEASE // Mark prerelease builds
 
