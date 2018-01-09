@@ -7,7 +7,7 @@
 # File with common stuff for whole project
 include(../../../common.pri)
 
-VERSION = 1.0.0s
+VERSION = 1.0.0.0
 
 QT += widgets printsupport testlib gui
 
