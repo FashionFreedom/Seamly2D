@@ -7,7 +7,7 @@
 # File with common stuff for whole project
 include(../../../common.pri)
 
-VERSION = 1.0.0.0
+!win32:VERSION = 1.0.0.0
 
 # Library work with xml.
 QT       += xml xmlpatterns printsupport
