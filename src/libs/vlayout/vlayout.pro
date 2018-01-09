@@ -7,6 +7,8 @@
 # File with common stuff for whole project
 include(../../../common.pri)
 
+VERSION = 1.0.0s
+
 QT += core gui widgets printsupport xml
 
 # Name of library

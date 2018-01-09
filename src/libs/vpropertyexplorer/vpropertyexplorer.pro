@@ -7,6 +7,8 @@
 # File with common stuff for whole project
 include(../../../common.pri)
 
+VERSION = 1.0.0s
+
 # Library use widgets
 QT       += core widgets
 

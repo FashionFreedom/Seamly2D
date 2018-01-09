@@ -42,6 +42,8 @@ OBJECTS_DIR = obj
 # Directory for files created uic
 UI_DIR = uic
 
+VERSION = 1.0.0s
+
 # Set using ccache. Function enable_ccache() defined in common.pri.
 $$enable_ccache()
 
