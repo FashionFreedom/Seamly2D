@@ -7,11 +7,11 @@
 
   DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
   ifeq ($(DEB_HOST_ARCH),amd64)
-    LIBPATH:= /debian/tmp/usr/lib/x86_64-linux-gnu
-    PREFIX_LIB:= /usr/lib/x86_64-linux-gnu
+    LIBPATH:= /debian/tmp/usr/lib/x86_64-linux-gnu/Seamly2D
+    PREFIX_LIB:= /usr/lib/x86_64-linux-gnu/Seamly2D
   else
-    LIBPATH:= /debian/tmp/usr/lib/i386-linux-gnu
-    PREFIX_LIB:= /usr/lib/i386-linux-gnu
+    LIBPATH:= /debian/tmp/usr/lib/i386-linux-gnu/Seamly2D
+    PREFIX_LIB:= /usr/lib/i386-linux-gnu/Seamly2D
   endif
 
   builddir: 

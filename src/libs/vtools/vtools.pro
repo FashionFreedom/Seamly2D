@@ -7,8 +7,6 @@
 # File with common stuff for whole project
 include(../../../common.pri)
 
-!win32:VERSION = 1.0.0.0
-
 QT       += widgets xml printsupport
 
 # Name of the library

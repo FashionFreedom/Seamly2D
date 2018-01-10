@@ -45,7 +45,7 @@ OBJECTS_DIR = obj
 
 include(qmuparser.pri)
 
-VERSION = 2.5.0.1
+VERSION = 2.5.0
 
 # Allow MAC OS X to find library inside a bundle
 macx:QMAKE_SONAME_PREFIX = @rpath
@@ -62,9 +62,9 @@ unix:!macx{
             PR_LIB = $$PREFIX
         }
         contains(QMAKE_HOST.arch, x86_64) {
-            PREFIX_LIB = $$PR_LIB/lib64
+            PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
         } else {
-            PREFIX_LIB = $$PR_LIB/lib
+            PREFIX_LIB = $$PR_LIB/lib/Seamly2D
         }
     }
     target.path = $$PREFIX_LIB

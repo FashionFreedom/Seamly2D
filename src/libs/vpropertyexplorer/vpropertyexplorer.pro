@@ -7,8 +7,6 @@
 # File with common stuff for whole project
 include(../../../common.pri)
 
-!win32:VERSION = 1.0.0.0
-
 # Library use widgets
 QT       += core widgets
 
@@ -58,9 +56,9 @@ unix:!macx{
             PR_LIB = $$PREFIX
         }
         contains(QMAKE_HOST.arch, x86_64) {
-            PREFIX_LIB = $$PR_LIB/lib64
+            PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
         } else {
-            PREFIX_LIB = $$PR_LIB/lib
+            PREFIX_LIB = $$PR_LIB/lib/Seamly2D
         }
     }
     target.path = $$PREFIX_LIB
