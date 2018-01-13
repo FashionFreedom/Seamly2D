@@ -187,6 +187,19 @@ unix{
     }
 
     unix:!macx{
+        isEmpty(PREFIX_LIB){
+            isEmpty(PREFIX){
+                PR_LIB = $$DEFAULT_PREFIX
+            } else {
+                PR_LIB = $$PREFIX
+            }
+            contains(QMAKE_HOST.arch, x86_64) {
+                PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
+            } else {
+                PREFIX_LIB = $$PR_LIB/lib/Seamly2D
+            }
+        }
+        QMAKE_RPATHDIR += $$PREFIX_LIB
 
         QMAKE_RPATHDIR += $$[QT_INSTALL_LIBS]
         DATADIR =$$PREFIX/share
