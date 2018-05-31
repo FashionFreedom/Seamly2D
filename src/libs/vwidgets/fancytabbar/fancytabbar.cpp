@@ -600,6 +600,7 @@ QString FancyTabBar::TabText(int index) const
 void FancyTabBar::SetTabText(int index, QString text)
 {
     m_attachedTabs.at(index)->m_text=text;
+    UpdateSize();
     update();
 }
 
@@ -643,6 +644,7 @@ void FancyTabBar::InsertTab(int index, const QIcon &icon, const QString &label)
     tab->m_icon = icon;
     tab->m_text = label;
     m_attachedTabs.insert(index, tab);
+    UpdateSize();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -650,4 +652,19 @@ void FancyTabBar::RemoveTab(int index)
 {
     FancyTab *tab = m_attachedTabs.takeAt(index);
     delete tab;
+    UpdateSize();
+}
+
+void FancyTabBar::UpdateSize()
+{
+    if (m_position == FancyTabBar::Above || m_position == FancyTabBar::Below)
+    {
+        setMinimumHeight(TabSizeHint(true).height());
+        setMaximumHeight(TabSizeHint(false).height());
+    }
+    else
+    {
+        setMinimumWidth(TabSizeHint(true).width());
+        setMaximumWidth(TabSizeHint(false).width());
+    }
 }

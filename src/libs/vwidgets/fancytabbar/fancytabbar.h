@@ -119,6 +119,7 @@ private:
     QSize TabSizeHint(bool minimum = false) const;
     void  PaintTab(QPainter *painter, int tabIndex) const;
     bool  ValidIndex(int index) const;
+    void  UpdateSize();
 };
 
 #endif // FANCYTABWIDGET_H
