@@ -257,7 +257,8 @@ unix{
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
         # Path to label templates after installation
-        label.path = /usr/share/$${TARGET}/labels/
+        label.path = $$RESOURCES_DIR/labels/
+        #label.path = /usr/share/$${TARGET}/labels/
         label.files = $$INSTALL_LABEL_TEMPLATES
 
         icns_resources.path = $$RESOURCES_DIR/
