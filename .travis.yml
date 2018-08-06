@@ -67,7 +67,10 @@ before_deploy:
 - |
   if [[ ("$TRAVIS_OS_NAME" == "osx") && ("$DEPLOY" == "true" ) ]]; then
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app;
-    tar --exclude "*.DS_Store" -cvzf seamly2d-osx-${TRAVIS_COMMIT}.tar.gz $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app/;
+    cd src/app/seamly2d/bin -R;
+    tar --exclude "*.DS_Store" -zcvf seamly2d-osx-${TRAVIS_COMMIT}.tar.gz Seamly2D.app;
+    cd ../../../../
+    cp src/app/seamly2d/bin/seamly2d-osx-${TRAVIS_COMMIT}.tar.gz seamly2d-osx-${TRAVIS_COMMIT}.tar.gz
   fi
 deploy:
   - provider: launchpad
