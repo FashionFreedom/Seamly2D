@@ -916,7 +916,7 @@ void VTranslateMeasurements::InitGroupG()
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Hip arc with Abdomen, front", "Full measurement name.");
     d = translate("VTranslateMeasurements",
-                  "Curve stiff paper around front of abdomen, seamlyme at sides. Measure from Hip Side to Hip Side over "
+                  "Curve stiff paper around front of abdomen, tape at sides. Measure from Hip Side to Hip Side over "
                   "paper across front.", "Full measurement description.");
     InitMeasurement(hipWithAbdomenArcF_M, m, g, d, "G42");
     //=================================================================================================================
@@ -965,7 +965,7 @@ void VTranslateMeasurements::InitGroupH()
     m = translate("VTranslateMeasurements", "neck_front_to_waist_f",
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Neck Front to Waist Front", "Full measurement name.");
-    d = translate("VTranslateMeasurements", "From Neck Front, over seamlyme between Breastpoints, down to Waist Front.",
+    d = translate("VTranslateMeasurements", "From Neck Front, over tape between Breastpoints, down to Waist Front.",
                   "Full measurement description.");
     InitMeasurement(neckFrontToWaistF_M, m, g, d, "H01");
     //=================================================================================================================
@@ -1013,7 +1013,7 @@ void VTranslateMeasurements::InitGroupH()
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Highbust Front to Waist Front", "Full measurement name.");
     d = translate("VTranslateMeasurements",
-                  "From Highbust Front to Waist Front. Use seamlyme to bridge gap between Bustpoints. ('Neck Front to "
+                  "From Highbust Front to Waist Front. Use tape to bridge gap between Bustpoints. ('Neck Front to "
                   "Waist Front' - 'Neck Front to Highbust Front').", "Full measurement description.");
     InitMeasurement(highbustToWaistF_M, m, g, d, "H08", "(neck_front_to_waist_f - neck_front_to_highbust_f)");
     //=================================================================================================================
@@ -1021,7 +1021,7 @@ void VTranslateMeasurements::InitGroupH()
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Neck Front to Bust Front", "Full measurement name.");
     d = translate("VTranslateMeasurements",
-                  "From Neck Front down to Bust Front. Requires seamlyme to cover gap between Bustpoints.",
+                  "From Neck Front down to Bust Front. Requires tape to cover gap between Bustpoints.",
                   "Full measurement description.");
     InitMeasurement(neckFrontToBustF_M, m, g, d, "H09");
     //=================================================================================================================
@@ -1192,7 +1192,7 @@ void VTranslateMeasurements::InitGroupH()
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Waist Back to Hip Back", "Full measurement name.");
     d = translate("VTranslateMeasurements",
-                  "From Waist Back down to Hip Back. Requires seamlyme to cover the gap between buttocks.",
+                  "From Waist Back down to Hip Back. Requires tape to cover the gap between buttocks.",
                   "Full measurement description.");
     InitMeasurement(waistToHipB_M, m, g, d, "H34");
     //=================================================================================================================
@@ -1845,14 +1845,14 @@ void VTranslateMeasurements::InitGroupN()
     m = translate("VTranslateMeasurements", "crotch_length",
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Crotch length", "Full measurement name.");
-    d = translate("VTranslateMeasurements", "Put seamlyme across gap between buttocks at Hip level. Measure from Waist "
+    d = translate("VTranslateMeasurements", "Put tape across gap between buttocks at Hip level. Measure from Waist "
                   "Front down betwen legs and up to Waist Back.", "Full measurement description.");
     InitMeasurement(crotchLength_M, m, g, d, "N01");
     //=================================================================================================================
     m = translate("VTranslateMeasurements", "crotch_length_b",
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Crotch length, back", "Full measurement name.");
-    d = translate("VTranslateMeasurements", "Put seamlyme across gap between buttocks at Hip level. Measure from Waist "
+    d = translate("VTranslateMeasurements", "Put tape across gap between buttocks at Hip level. Measure from Waist "
                   "Back to mid-Crotch, either at the vagina or between testicles and anus).",
                   "Full measurement description.");
     InitMeasurement(crotchLengthB_M, m, g, d, "N02");
