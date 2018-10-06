@@ -18,7 +18,6 @@ branches:
   only:
     - develop
 ##    - release
-##    - default
 
 # Do not build on tags (GitHub and BitBucket)
 skip_tags: true
@@ -62,9 +61,13 @@ environment:
 
 # scripts that are called at very beginning, before repo cloning
 init:
-  # Path before 
-  - path
   - set QTDIR=C:\%QT5%
+
+    # Prevent pull requests from attempting to sign package.
+  - if NOT "%APPVEYOR_PULL_REQUEST_NUMBER%" == "" set DEPLOY=false
+
+  - path  # Path before
+
   - set PATH=C:\ProgramData\chocolatey;%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
   - set PATH=%PATH%;C:\Program Files\Git\cmd\
   - set PATH=%PATH%;C:\Program Files\7-Zip\
@@ -80,25 +83,22 @@ init:
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" set PATH=%MINGW_PATH%;%PATH%
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" set PATH=C:\Qt\Tools\QtCreator\bin;%PATH%
   - set PATH=C:\projects\vpo2\build\src\libs\vpropertyexplorer\bin;C:\projects\vpo2\build\src\libs\qmuparser\bin;%PATH%
-  # Path after
-  - path
+
+  - path  # Path after
+
   - qmake -v
 
 install:
-  - choco install -y InnoSetup  
+  - choco install -y InnoSetup
 
 
 #---------------------------------#
 #       build configuration       #
 #---------------------------------#
 
-before_build:
-  - 7z x C:\projects\vpo2\seamly.7z -p%PFX7z_PASSW%
-  - cd c:\projects\vpo2 
-  - md build
-
 # to run your custom scripts instead of automatic MSBuild
 build_script:
+  - md build
   - cd build
   - if "%DEPLOY%" == "true" (qmake ..\Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=checkWarnings) else (qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=checkWarnings)
   - if not "%QMAKE_GENERATOR%" == "MinGW Makefiles" (nmake -s) else (mingw32-make -j%NUMBER_OF_PROCESSORS%)
@@ -107,7 +107,7 @@ build_script:
 test_script:
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" (mingw32-make -s check TESTARGS="-silent")
 
-# to disable automatic tests 
+# to disable automatic tests
 #test: off
 
 matrix:
@@ -118,7 +118,6 @@ matrix:
 #---------------------------------#
 
 notifications:
-# Email
   - provider: Email
     to:
       - dvajdual@gmail.com
@@ -132,10 +131,11 @@ notifications:
 
 # prepare to deploy
 after_test:
+  - if "%DEPLOY%" == "true" 7z x C:\projects\vpo2\seamly.7z -p%PFX7z_PASSW% -o..\
   - if "%DEPLOY%" == "true" (mingw32-make install)
-  - if "%DEPLOY%" == "true" cd "C:\Program Files (x86)\Windows Kits\8.1\bin\x86"  
+  - if "%DEPLOY%" == "true" cd "C:\Program Files (x86)\Windows Kits\8.1\bin\x86"
   - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW%  /t http://timestamp.comodoca.com /v c:/projects/vpo2/build/package/seamly2d_*.exe
-  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW% /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v c:/projects/vpo2/build/package/seamly2d_*.exe  
+  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW% /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v c:/projects/vpo2/build/package/seamly2d_*.exe
   - if "%DEPLOY%" == "true" for %%I in (c:\projects\vpo2\build\package\seamly2d_*.exe) do set artifactName=%%~nI
   - if "%DEPLOY%" == "true" 7z a -tzip -mx1 c:\projects\vpo2\build\package\%artifactName%.zip c:\projects\vpo2\build\package\seamly2d_*.exe
 
@@ -172,4 +172,4 @@ deploy:
   on:
     DEPLOY: true
     branch: master
-  artifact: seamly2d-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)  
+  artifact: seamly2d-win-$(QT_VERSION)-$(APPVEYOR_REPO_COMMIT)
