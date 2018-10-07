@@ -8,12 +8,13 @@ Read the Github tutorials about making Pull Requests https://help.github.com/art
 
 ## Named branches
 
-We have a naming scheme for branches, based on "Git Flow":
+Use the "Git Flow" naming scheme for your contributor fixes:
+* **feature-_issue#_** - Create from **develop**. Contains code for new or improved features. Merge to **develop**. (e.g. **feature-155** to name your fix for issue #155)
 
-* **master** - Used only for releases.
+These are 
 * **develop** - Contains next major release. Used for testing and sharing among developers. 
+* **master** - Used only for releases.
 * **release-x.x.x** - Create from **develop**. Contains feature freeze state before the next major release. Used for preparing each major & minor release with updated build information. Merge to **master** with new tag to create a new release.
-* **feature-_issue#_** - Create from **develop**. Contains code for new or improved features. Merge to **develop**.
 * **hotfix-x.x.x** - Create from **develop** and **master**. Contains a quick fix. Merge to **master** (or **release**) and **develop**.
 
 
