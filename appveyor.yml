@@ -45,10 +45,10 @@ environment:
   PFX_PASSW:
     secure: f4vku3+mgQ57n7SBkfB7Ag==
   PFX7z_PASSW:
-    # updated 10/25/2018 slspencer -- replaced V31OHD0fr3vqkXWndDanbw== with Seamly2D
-    secure: Seamly2D
+    secure: crIrhNZav7fcHfF6XvKykg==
   #updated 10/25/2018 slspencer -- replaced vpo2\SeamlySert.pfx with seamly2d\Seamly2D.pfx
   PFX_FILE: C:\projects\seamly2d\Seamly2D.pfx
+  
   matrix:
   - QT5: Qt\5.9\mingw53_32
     QT_VERSION: Qt5.9
@@ -134,7 +134,8 @@ notifications:
   - provider: Email
     to:
       - susan.spencer@gmail.com
-    on_build_success: false
+      - kim.marchforce@gmail.com
+    on_build_success: true
     on_build_failure: true
     on_build_status_changed: true
 
