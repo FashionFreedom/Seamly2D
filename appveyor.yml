@@ -32,7 +32,8 @@ skip_tags: true
 #---------------------------------#
 
 # clone directory
-clone_folder: c:\projects\vpo2
+# updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
+clone_folder: c:\projects\seamly2d
 
 # set clone depth
 clone_depth: 1                       # clone entire repository history if not defined
@@ -44,8 +45,10 @@ environment:
   PFX_PASSW:
     secure: f4vku3+mgQ57n7SBkfB7Ag==
   PFX7z_PASSW:
-    secure: V31OHD0fr3vqkXWndDanbw==
-  PFX_FILE: C:\projects\vpo2\SeamlySert.pfx
+    # updated 10/25/2018 slspencer -- replaced V31OHD0fr3vqkXWndDanbw== with Seamly2D
+    secure: Seamly2D
+  #updated 10/25/2018 slspencer -- replaced vpo2\SeamlySert.pfx with seamly2d\Seamly2D.pfx
+  PFX_FILE: C:\projects\seamly2d\Seamly2D.pfx
   matrix:
   - QT5: Qt\5.9\mingw53_32
     QT_VERSION: Qt5.9
@@ -86,7 +89,8 @@ init:
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" set PATH=%MINGW_PATH%;%PATH%
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" set PATH=C:\Qt\Tools\QtCreator\bin;%PATH%
-  - set PATH=C:\projects\vpo2\build\src\libs\vpropertyexplorer\bin;C:\projects\vpo2\build\src\libs\qmuparser\bin;%PATH%
+  # updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
+  - set PATH=C:\projects\seamly2d\build\src\libs\vpropertyexplorer\bin;C:\projects\seamly2d\build\src\libs\qmuparser\bin;%PATH%
   # Path after
   - path
   - qmake -v
@@ -98,10 +102,10 @@ install:
 #---------------------------------#
 #       build configuration       #
 #---------------------------------#
-
+#updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
 before_build:
-  - 7z x C:\projects\vpo2\seamly.7z -p%PFX7z_PASSW%
-  - cd c:\projects\vpo2 
+  - 7z x C:\projects\seamly2d\seamly.7z -p%PFX7z_PASSW%
+  - cd c:\projects\seamly2d
   - md build
 
 # to run your custom scripts instead of automatic MSBuild
@@ -126,9 +130,10 @@ matrix:
   
 notifications:
 # Email
+# updated 10/25/2018 -- replaced dvajdual@gmail.com with susan.spencer@gmail.com
   - provider: Email
     to:
-      - dvajdual@gmail.com
+      - susan.spencer@gmail.com
     on_build_success: false
     on_build_failure: true
     on_build_status_changed: true
@@ -138,13 +143,14 @@ notifications:
 #---------------------------------#
 
 # prepare to deploy
+# updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
 after_test:
   - if "%DEPLOY%" == "true" (mingw32-make install)
   - if "%DEPLOY%" == "true" cd "C:\Program Files (x86)\Windows Kits\8.1\bin\x86"  
-  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW%  /t http://timestamp.comodoca.com /v c:/projects/vpo2/build/package/seamly2d_*.exe
-  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW% /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v c:/projects/vpo2/build/package/seamly2d_*.exe  
-  - if "%DEPLOY%" == "true" for %%I in (c:\projects\vpo2\build\package\seamly2d_*.exe) do set artifactName=%%~nI
-  - if "%DEPLOY%" == "true" 7z a -tzip -mx1 c:\projects\vpo2\build\package\%artifactName%.zip c:\projects\vpo2\build\package\seamly2d_*.exe
+  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW%  /t http://timestamp.comodoca.com /v c:/projects/seamly2d/build/package/seamly2d_*.exe
+  - if "%DEPLOY%" == "true" signtool sign /f %PFX_FILE% /p %PFX_PASSW% /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v c:/projects/seamly2d/build/package/seamly2d_*.exe  
+  - if "%DEPLOY%" == "true" for %%I in (c:\projects\seamly2d\build\package\seamly2d_*.exe) do set artifactName=%%~nI
+  - if "%DEPLOY%" == "true" 7z a -tzip -mx1 c:\projects\seamly2d\build\package\%artifactName%.zip c:\projects\seamly2d\build\package\seamly2d_*.exe
 
 artifacts:
   - path: build/package/seamly2d_*.zip
