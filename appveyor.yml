@@ -104,7 +104,7 @@ install:
 #---------------------------------#
 #updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
 before_build:
-  - 7z x C:\projects\seamly2d\seamly.7z -p%PFX7z_PASSW%
+  - 7z x C:\projects\seamly2d\Seamly2D.7z -p%PFX7z_PASSW%
   - cd c:\projects\seamly2d
   - md build
 
