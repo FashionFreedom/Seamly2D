@@ -1,5 +1,5 @@
 # Contributing code
-lah
+lah de dah
 We highly recommend that you read this page before you clone the repo and start making changes. 
 
 Our workflow is based on "Git Flow".    
