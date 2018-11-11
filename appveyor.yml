@@ -80,17 +80,15 @@ init:
   - set PATH=%PATH%;C:\Program Files\Git\cmd\
   - set PATH=%PATH%;C:\Program Files\7-Zip\
   
- ##KimMF 8-6-18
-  - ps: $env:VSCOMNTOOLS="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\Tools\" 
- ### - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
-  - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
+  - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio 2015 at %VS140COMNTOOLS%"
+ 
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using MinGW"
   # Set VC variables for the platform
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x64 call "%VSCOMNTOOLS%\..\..\VC\bin\x86_amd64\vcvarsx86_amd64.bat"
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x86 call "%VSCOMNTOOLS%\..\..\VC\bin\vcvars32.bat"
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x86" call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat"
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x64 call "%VS140COMNTOOLS%\..\..\VC\bin\x86_amd64\vcvarsx86_amd64.bat"
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x86 call "%VS140COMNTOOLS%\..\..\VC\bin\vcvars32.bat"
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x86" call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat"
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" set PATH=%MINGW_PATH%;%PATH%
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" set PATH=C:\Qt\Tools\QtCreator\bin;%PATH%
   # updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
