@@ -20,9 +20,10 @@ branches:
   # whitelist
   only:
     - develop
-##KimMF 8-6-18
-##    - release
-##    - default
+##KimMF 8-6-18 commented out release and default brances
+## KMF 11-11-2018 returned release and default branches for normal operation
+    - release
+    - default
 
 # Do not build on tags (GitHub and BitBucket)
 skip_tags: true
@@ -69,6 +70,9 @@ environment:
 
 # scripts that are called at very beginning, before repo cloning
 init:
+    # KMF 11-11-2018 manually merged from ZonicaD fix163 branch Prevent pull requests from attempting to sign package.
+  - if NOT "%APPVEYOR_PULL_REQUEST_NUMBER%" == "" set DEPLOY=false
+  
   # Path before 
   - path
   - set QTDIR=C:\%QT5%
