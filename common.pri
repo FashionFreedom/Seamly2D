@@ -145,6 +145,10 @@ defineReplace(set_PCH){
 }
 
 defineReplace(enable_ccache){
+    *clang*:clazy {
+        QMAKE_CXX = clazy
+        export(QMAKE_CXX) # export value to global variable.
+    } else {
     no_ccache{ # For enable run qmake with CONFIG+=no_ccache
         $$set_PCH()
     } else {
@@ -168,6 +172,7 @@ defineReplace(enable_ccache){
         } else {
             $$set_PCH()
         }
+    }
     }
     return(true)
 }
@@ -231,7 +236,9 @@ ISYSTEM += \
     -isystem "$$[QT_INSTALL_HEADERS]/QtPrintSupport" \
     -isystem "$$[QT_INSTALL_HEADERS]/QtSvg" \
     -isystem "$$[QT_INSTALL_HEADERS]/QtNetwork" \
-    -isystem "$$[QT_INSTALL_HEADERS]/QtTest"
+    -isystem "$$[QT_INSTALL_HEADERS]/QtTest" \
+    -isystem "$$[QT_INSTALL_HEADERS]/QtConcurrent" \
+    -isystem "$$[QT_INSTALL_HEADERS]/QtOpenGL"
 } else {
 ISYSTEM += \
     -isystem "$$[QT_INSTALL_LIBS]/QtWidgets.framework/Headers/" \
@@ -251,7 +258,11 @@ ISYSTEM += \
     -isystem "$$[QT_INSTALL_LIBS]/QtNetwork.framework/Headers/" \
     -isystem "$$[QT_INSTALL_LIBS]/QtNetwork.framework/Versions/5/Headers/" \
     -isystem "$$[QT_INSTALL_LIBS]/QtTest.framework/Headers/" \
-    -isystem "$$[QT_INSTALL_LIBS]/QtTest.framework/Versions/5/Headers/"
+    -isystem "$$[QT_INSTALL_LIBS]/QtTest.framework/Versions/5/Headers/" \
+    -isystem "$$[QT_INSTALL_LIBS]/QtConcurrent.framework/Headers/" \
+    -isystem "$$[QT_INSTALL_LIBS]/QtConcurrent.framework/Versions/5/Headers/" \
+    -isystem "$$[QT_INSTALL_LIBS]/QtOpenGL.framework/Headers/" \
+    -isystem "$$[QT_INSTALL_LIBS]/QtOpenGL.framework/Versions/5/Headers/"
 }
 
 # Usefull GCC warnings keys.
@@ -296,15 +307,15 @@ GCC_DEBUG_CXXFLAGS += \
     -Wpointer-arith \
     -Wstrict-null-sentinel \
     -Wstrict-overflow=5 \
+    -Wno-error=strict-overflow \
     -Wundef \
     -Wno-unused \
     -ftrapv
 
 # Good support Q_NULLPTR came later
-# TODO: uncomment out this GCC_DEBUG_CSSFLAGS flag
-#greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 5) {
-#GCC_DEBUG_CXXFLAGS += -Wzero-as-null-pointer-constant
-#}
+greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 5) {
+GCC_DEBUG_CXXFLAGS += -Wzero-as-null-pointer-constant
+}
 
 # Since GCC 5
 g++5:GCC_DEBUG_CXXFLAGS += \
@@ -373,7 +384,7 @@ CLANG_DEBUG_CXXFLAGS += \
     -Wauto-var-id \
     -Wavailability \
     -Wbackslash-newline-escape \
-    -Wbad-array-new-length \
+    # -Wbad-array-new-length \
     -Wbad-function-cast \
     -Wbind-to-temporary-copy \
         -Wno-c++98-compat-bind-to-temporary-copy \
@@ -708,6 +719,11 @@ CLANG_DEBUG_CXXFLAGS += \
     -Qunused-arguments \
     -fcolor-diagnostics \
     -fms-extensions # Need for pragma message
+    
+    freebsd-clang* {
+    # https://bitbucket.org/dismine/valentina/issues/877/lots-of-warnings-unknown-warning-option
+    CLANG_DEBUG_CXXFLAGS -= -Wextended-offsetof
+}
 
 ICC_DEBUG_CXXFLAGS += \
     $$ISYSTEM \ # Ignore warnings Qt headers.
@@ -738,7 +754,8 @@ ICC_DEBUG_CXXFLAGS += \
 # Can't find way mark ignore Qt header on Windows.
 GCC_DEBUG_CXXFLAGS += \
     -O0 \
-    -Wall \
+    -Wall \ 
+    -Wno-error=strict-overflow \
     -Wextra \
     -fno-omit-frame-pointer # Need for exchndl.dll
 
@@ -788,6 +805,7 @@ MSVC_DEBUG_CXXFLAGS += \
     # standard library headers, so it's impractical to leave them on.
     -wd4619 \ # there is no warning number 'XXXX'
     -wd4668 \ # XXX is not defined as a preprocessor macro
+    -wd5045 \ # Compiler will insert Spectre mitigation for memory load if /Qspectre switch specified
     # Because Microsoft doesn't provide a way to suppress warnings in headers we will suppress
     # all warnings we meet in headers globally
     -wd4548 \
