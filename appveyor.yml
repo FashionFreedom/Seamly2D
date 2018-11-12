@@ -124,6 +124,11 @@ init:
   # Path before 
   - path
   - set QTDIR=C:\%QT5%
+  
+  ##KMF this is a temporary fix to avoid decryption problems with pull request builds
+  # Prevent pull requests from attempting to sign package.
+  - if NOT "%APPVEYOR_PULL_REQUEST_NUMBER%" == "" set DEPLOY=false
+  
   - set PATH=C:\ProgramData\chocolatey;%QTDIR%\bin;%QTDIR%\include;C:\Tools\PsTools;C:\Windows\system32;C:\Windows;C:\Windows\System32\WindowsPowerShell\v1.0\
   - set PATH=%PATH%;C:\Program Files\Git\cmd\
   - set PATH=%PATH%;C:\Program Files\7-Zip\
