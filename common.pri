@@ -751,6 +751,7 @@ CLANG_DEBUG_CXXFLAGS += \
     -fms-extensions # Need for pragma message
 
 MSVC_DEBUG_CXXFLAGS += \
+    -Wspectre \
     -Wall \
     -wd4061 \ # enum value is not *explicitly* handled in switch
     -wd4099 \ # first seen using 'struct' now seen using 'class'
