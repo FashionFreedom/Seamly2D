@@ -20,10 +20,7 @@ branches:
   # whitelist
   only:
     - develop
-##KimMF 8-6-18 commented out release and default brances
-## KMF 11-11-2018 returned release and default branches for normal operation
     - release
-    - default
 
 # Do not build on tags (GitHub and BitBucket)
 skip_tags: true
@@ -70,9 +67,7 @@ environment:
 
 # scripts that are called at very beginning, before repo cloning
 init:
-    # KMF 11-11-2018 manually merged from ZonicaD fix163 branch Prevent pull requests from attempting to sign package.
-  - if NOT "%APPVEYOR_PULL_REQUEST_NUMBER%" == "" set DEPLOY=false
-  
+     
   # Path before 
   - path
   - set QTDIR=C:\%QT5%
@@ -80,15 +75,16 @@ init:
   - set PATH=%PATH%;C:\Program Files\Git\cmd\
   - set PATH=%PATH%;C:\Program Files\7-Zip\
   
-  - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio 2015 at %VS140COMNTOOLS%"
- 
+  - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
+  - if NOT "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using Visual Studio %VSVER%.0 at %VSCOMNTOOLS%"
+  
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" echo "Using MinGW"
   # Set VC variables for the platform
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x64 call "%VS140COMNTOOLS%\..\..\VC\bin\x86_amd64\vcvarsx86_amd64.bat"
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x86 call "%VS140COMNTOOLS%\..\..\VC\bin\vcvars32.bat"
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x86" call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat"
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x64 call "%VSCOMNTOOLS%\..\..\VC\bin\x86_amd64\vcvarsx86_amd64.bat"
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if %PLATFORM% == x86 call "%VSCOMNTOOLS%\..\..\VC\bin\vcvars32.bat"
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x86" call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat"
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
-  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
+  - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" if "%PLATFORM%" == "x64" call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" x86_amd64
   - if "%QMAKE_GENERATOR%" == "MinGW Makefiles" set PATH=%MINGW_PATH%;%PATH%
   - if "%QMAKE_GENERATOR%" == "NMake Makefiles JOM" set PATH=C:\Qt\Tools\QtCreator\bin;%PATH%
   # updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
