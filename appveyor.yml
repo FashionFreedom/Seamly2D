@@ -48,6 +48,46 @@ environment:
   PFX_FILE: C:\projects\seamly2d\Seamly2D.pfx
   
   matrix:
+  
+  - QT5: Qt\5.11\mingw53_32
+    QT_VERSION: Qt5.11
+    QMAKE_GENERATOR: "MinGW Makefiles"
+    MINGW_PATH: C:\Qt\Tools\mingw530_32\bin
+    PLATFORM: x86
+    DEPLOY: true  
+  - QT5: Qt\5.6\mingw49_32
+    QT_VERSION: Qt5.6
+    QMAKE_GENERATOR: "MinGW Makefiles"
+    MINGW_PATH: C:\Qt\Tools\mingw492_32\bin
+    PLATFORM: x86
+    DEPLOY: true
+  - QT5: Qt\5.11\msvc2015_64
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x64
+    DEPLOY: false
+  - QT5: Qt\5.11\msvc2015
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x86
+    DEPLOY: false 
+  - QT5: Qt\5.10\mingw53_32
+    QT_VERSION: Qt5.10
+    QMAKE_GENERATOR: "MinGW Makefiles"
+    MINGW_PATH: C:\Qt\Tools\mingw530_32\bin
+    PLATFORM: x86
+    DEPLOY: false
+  - QT5: Qt\5.10\msvc2015_64
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x64
+    DEPLOY: false
+  - QT5: Qt\5.10\msvc2015
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x86
+    DEPLOY: false
+  
   - QT5: Qt\5.9\mingw53_32
     QT_VERSION: Qt5.9
     QMAKE_GENERATOR: "MinGW Makefiles"
@@ -60,6 +100,19 @@ environment:
     PLATFORM: x64
     DEPLOY: false
   - QT5: Qt\5.9\msvc2015
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x86
+    DEPLOY: false
+    
+  - QT5: Qt\5.6\msvc2015_64
+    QT_VERSION: Qt5.6
+    QMAKE_GENERATOR: "NMake Makefiles JOM"
+    VSVER: 14
+    PLATFORM: x64
+    DEPLOY: false
+  - QT5: Qt\5.6\msvc2015
+    QT_VERSION: Qt5.6
     QMAKE_GENERATOR: "NMake Makefiles JOM"
     VSVER: 14
     PLATFORM: x86
