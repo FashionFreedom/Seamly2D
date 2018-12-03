@@ -22,6 +22,7 @@ branches:
   only:
     - develop
     - release
+    - feature-173
 
 # Do not build on tags (GitHub and BitBucket)
 skip_tags: true
@@ -40,13 +41,13 @@ clone_depth: 1                       # clone entire repository history if not de
 # fetch repository as zip archive
 shallow_clone: false                 # default is "false"
 
+# updated passwords and cert file - slspencer 12/2/2018
 environment:
   PFX_PASSW:
-    secure: f4vku3+mgQ57n7SBkfB7Ag==
-  PFX7z_PASSW:
     secure: crIrhNZav7fcHfF6XvKykg==
-  #updated 10/25/2018 slspencer -- replaced vpo2\SeamlySert.pfx with seamly2d\Seamly2D.pfx
-  PFX_FILE: C:\projects\seamly2d\Seamly2D.pfx
+  PFX7z_PASSW:
+    secure: fqZv6LjoFmilkJk7lNfafg==
+  PFX_FILE: C:\projects\seamly2d\cert.pfx
   
   matrix:
   
@@ -165,7 +166,7 @@ install:
 #---------------------------------#
 #updated 10/25/2018 slspencer -- replaced vpo2 with seamly2d
 before_build:
-  - 7z x C:\projects\seamly2d\Seamly2D.7z -p%PFX7z_PASSW%
+  - 7z x C:\projects\seamly2d\cert.7z -p%PFX7z_PASSW%
   - cd c:\projects\seamly2d
   - md build
 
