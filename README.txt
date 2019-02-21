@@ -5,7 +5,7 @@ Seamly2D is pattern design software to create reusable, scalable, sharable custo
 
 Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
 
-Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly2d.com
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
 
 Supported platforms:
    * Windows XP SP2 (32-bit) or later
@@ -15,8 +15,8 @@ Supported platforms:
    * Mac OS X 10.8 (64-bit) or later
 
 Homepage and downloads     https://fashionfreedom.eu
-Wiki & User Manual         https://wiki.seamly2d.com
-Forum                      https://forum.seamly2d.com/
+Wiki & User Manual         https://wiki.valentinaproject.org
+Forum                      https://forum.seamly.net/
 Translations               https://www.transifex.com/organization/valentina
 PPA for Ubuntu (stable)    ppa:susan-spencer/seamly2d
 PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build   
@@ -55,7 +55,7 @@ Basic Prerequisites:
    * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)
    * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)
    * git (for working with repository)  https://git-scm.com/downloads
-   * Read forum on building with Qt: https://forum.seamly2d.com/t/how-to-build-with-qt/1833
+   * Read forum on building with Qt: https://forum.seamly.net/t/how-to-build-with-qt/1833
 
 Additional:
 ________________
