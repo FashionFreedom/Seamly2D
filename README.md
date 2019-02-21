@@ -16,8 +16,8 @@ Supported platforms:
 
 ### Seamly2D Community Resources
 * [Homepage and downloads](https://fashionfreedom.eu)  
-* [Wiki & User Manual](https://wiki.seamly2d.com)  
-* [Forum](https://forum.seamly2d.com/)  
+* [Wiki & User Manual](https://wiki.valentinaproject.com)  
+* [Forum](https://forum.seamly.net/)  
 * [Translations](https://www.transifex.com/organization/valentina)  
 * [Code repository](https://github.com/fashionfreedom/seamly2d)  
 * [Doxygen docs](https://seamly2d.github.io/)  
@@ -54,7 +54,7 @@ Basic Prerequisites:
    * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)  
    * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)  
    * git (for working with repository)  https://git-scm.com/downloads  
-   * Read forum on building with Qt: https://forum.seamly2d.com/t/how-to-build-with-qt/1833
+   * Read forum on building with Qt: https://forum.seamly.net/t/how-to-build-with-qt/1833
 
 ### Linux
 **Note: For Linux in general, these additional tools and libraries may be required:**
@@ -116,7 +116,7 @@ TBD
 
 **Note:** The installed toolchains have to match the one Qt was configured with.
 
-You can build from within the *QtCreator* IDE (see [said forum post](https://forum.seamly2d.com/t/how-to-build-with-qt/183)) **OR** build with Qt's *qmake* from a terminal window:
+You can build from within the *QtCreator* IDE (see [said forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** build with Qt's *qmake* from a terminal window:
 ```
 cd $SOURCE_DIRECTORY\build
 qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
