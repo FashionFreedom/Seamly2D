@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vformat.pro")
 include(../../../common.pri)
 
 # Library work with xml.

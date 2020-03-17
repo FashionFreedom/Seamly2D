@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vgeometry.pro")
 include(../../../common.pri)
 
 QT += widgets printsupport

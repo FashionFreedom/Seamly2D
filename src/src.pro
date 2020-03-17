@@ -1,3 +1,5 @@
+message("Entering src.pro")
+
 TEMPLATE = subdirs
 
 noTests{ # For enable run qmake with CONFIG+=noTests
@@ -14,4 +16,4 @@ noTests{ # For enable run qmake with CONFIG+=noTests
 	test.depends = libs
 }
 
-app.depends = libs 
+app.depends = libs

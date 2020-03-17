@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering fervor.pro")
+
 include(../../../common.pri)
 
 QT       += network widgets xml printsupport

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vdxf.pro")
 include(../../../common.pri)
 
 QT += printsupport xml

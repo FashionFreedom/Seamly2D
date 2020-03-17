@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vtest.pro")
 include(../../../common.pri)
 
 QT += testlib widgets

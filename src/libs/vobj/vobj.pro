@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vobj.pro")
 include(../../../common.pri)
 
 # Name of library

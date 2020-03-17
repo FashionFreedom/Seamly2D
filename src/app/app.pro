@@ -1,3 +1,5 @@
+message("Entering app.pro")
+
 TEMPLATE = subdirs
 SUBDIRS = \
     seamlyme \
