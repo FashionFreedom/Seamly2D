@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # Compilation main binary file
+message("Entering seamly2D.pro")
 
 # File with common stuff for whole project
 include(../../../common.pri)

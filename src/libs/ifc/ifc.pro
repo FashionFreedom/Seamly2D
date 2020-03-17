@@ -5,6 +5,8 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering ifc.pro")
+
 include(../../../common.pri)
 
 # Library work with xml.

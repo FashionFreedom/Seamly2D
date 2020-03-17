@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vtools.pro")
 include(../../../common.pri)
 
 QT       += widgets xml printsupport

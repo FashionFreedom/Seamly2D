@@ -3,6 +3,7 @@
 # Project created by QtCreator 2015-07-07T14:35:12
 #
 #-------------------------------------------------
+message("Entering seamlyme.pro")
 
 # File with common stuff for whole project
 include(../../../common.pri)

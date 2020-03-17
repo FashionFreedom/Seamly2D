@@ -1,5 +1,6 @@
 include(common.pri)
 
+message("Entering Seamly2D.pro")
 #Check if Qt version >= 5.7.0
 #!minQtVersion(5, 7, 0) {
 #    message("Seamly2D.pro: Cannot build Seamly2D with Qt version $${QT_VERSION}.")

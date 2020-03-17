@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-# File with common stuff for whole project
+# File with common stuff for whole
+message("Entering vpatterndb.pro")
 include(../../../common.pri)
 
 QT += widgets printsupport

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering vpropertyexplorer.pro")
 include(../../../common.pri)
 
 # Library use widgets
