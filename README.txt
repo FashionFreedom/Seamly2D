@@ -14,53 +14,78 @@ Supported platforms:
    * Fedora 24 (32-bit/64-bit) or later
    * Mac OS X 10.8 (64-bit) or later
 
-Homepage and downloads     https://fashionfreedom.eu
-Wiki & User Manual         https://wiki.valentinaproject.org
-Forum                      https://forum.seamly.net/
-Translations               https://www.transifex.com/organization/valentina
-PPA for Ubuntu (stable)    ppa:susan-spencer/seamly2d
-PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build   
-IRC channel                #seamly2d on irc.freenode.net
-Main repository            https://github.com/fashionfreedom/seamly2d
-Doxygen docs               https://seamly2d.github.io/
+Community Resources:
+   * Homepage and downloads     https://fashionfreedom.eu
+   * Wiki & User Manual         https://wiki.valentinaproject.org
+   * Forum                      https://forum.seamly.net/
+   * Translations               https://www.transifex.com/organization/valentina
+   * PPA for Ubuntu (stable)    ppa:susan-spencer/seamly2d
+   * PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build
+   * IRC channel                #seamly2d on irc.freenode.net
+   * Main repository            https://github.com/fashionfreedom/seamly2d
 
-Seamly2D Downloads  
+Seamly2D Downloads
 ================
 <em>Windows</em>:
-  
-* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
-* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
 
-<em>Mac OS X</em>:  
+   * [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)
+   * [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)
 
-* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_release)  
-* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_auto-upload)  
+<em>Mac OS X</em>:
 
-<em>Ubuntu</em>:  
+   * [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_release)
+   * [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_auto-upload)
 
-* stable version:  
-sudo add-apt-repository ppa:susan-spencer/seamly2d  
-sudo apt-get update  
-sudo apt-get install seamly2d  
-* development version:  
-sudo add-apt-repository ppa:susan-spencer/seamly2d-dayly-build  
-sudo apt-get update  
-sudo apt-get install seamly2d  
+<em>Ubuntu</em>:
+
+   * stable version:
+      sudo add-apt-repository ppa:susan-spencer/seamly2d
+      sudo apt-get update
+      sudo apt-get install seamly2d
+   * development version:
+      sudo add-apt-repository ppa:susan-spencer/seamly2d-dayly-build
+      sudo apt-get update
+      sudo apt-get install seamly2d
 
 Building Seamly2D
 ================
 
 Basic Prerequisites:
-   * Qt 5.7.0 or later https://www1.qt.io/download-open-source (included in Qt install)
-   * Qt Creator 4.3.1 or later (to build code) https://www1.qt.io/download-open-source (included in Qt install)
-   * Qt Chooser (to maintain Qt, set Qt default version) https://www1.qt.io/download-open-source (included in Qt install)
-   * git (for working with repository)  https://git-scm.com/downloads
-   * Read forum on building with Qt: https://forum.seamly.net/t/how-to-build-with-qt/1833
+   * Qt 5.7.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
+   * QtCreator 4.3.1 or later (to build code)
+   * QtChooser (to select or update Qt version)
+   * Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
+   * Compiler - gcc from https://gcc.gnu.org, clang from https://clang.llvm.org/, or mingw from https://sourceforge.net/projects/mingw/
+   * Check the sections below for your operating system to find additional installation requirements
 
-Additional:
-________________
-*Linux: In general, these additional tools and libraries may be required:
- g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), current 5.0 (2017)), xpdf (pdftops), OpenGL libraries, Qt build libraries*
+Development methods and styles:
+   * Git Flow workflow: https://medium.com/@devmrin/learn-complete-gitflow-workflow-basics-how-to-from-start-to-finish-8756ad5b7394
+   * Gibhub commit message style guide: https://www.conventionalcommits.org/en/v1.0.0/
+   * Github issue description style guide: https://guides.github.com/features/issues/
+
+Build method:
+   * Building with Qt: https://forum.seamly.net/t/how-to-build-with-qt/1833
+
+Additional information for Linux (Ubuntu, Suse, Fedora), Mac, and Windows Operating Systems:
+=============================================================================
+<em>Linux</em>
+   * In general, these additional tools and libraries may be required:
+      - g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), 5.0 (2017) https://clang.llvm.org/), xpdf (pdftops poppler-utils), OpenGL libraries, Qt build libraries, and xmlpatterns python library*
+      - xpdf (pdftops)
+      - OpenGL libraries
+      - Qt build libraries*
+      - XMLpatterns qt5 xml bindings https://command-not-found.com/xmlpatterns
+   * All Qt-tools come as qmake-qt5, etc. If you build from command line instead of within Qt Creator, run the following prior to running *qmake-qt5*:
+
+       export QT_SELECT=5
+
+   * The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:
+
+       qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
+
+    where `/usr/local` is a new prefix for installation binary files and `/usr/lib/i386-linux-gnu` is new prefix for install libraries.
+
+   * Add Qt path to operating system PATH environment variable using `.bashrc` or other file specific to your distribution
 
 <em>Fedora</em>:
 
@@ -73,73 +98,54 @@ ________________
 
 <em>Ubuntu</em>:
 
-* Install packages:
-    sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-    sudo apt-get -qq update
-    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-    sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev
-    sudo apt-get install -y poppler-utils
-    sudo apt-get install -y g++-5
-    sudo apt-get install -y xpdf
-    sudo apt-get install -y xvfb
-    sudo apt-get install -y libfontconfig1-dev libfreetype6-dev
-    sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev
-    sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
+   * Install packages:
+       sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+       sudo apt-get -qq update
+       sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+       sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev
+       sudo apt-get install -y poppler-utils
+       sudo apt-get install -y g++-5
+       sudo apt-get install -y xpdf
+       sudo apt-get install -y xvfb
+       sudo apt-get install -y libfontconfig1-dev libfreetype6-dev
+       sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev
+       sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
+       sudo apt-get install -y qt5-qtxmlpatterns-devel
 
-    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb
-    sudo dpkg -i ccache_3.3.4-1_amd64.deb
+       wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb
+       sudo dpkg -i ccache_3.3.4-1_amd64.deb
 
-* Install Qt from https://www1.qt.io/download-open-source/
-* Install Qt from ppa. This will take some time.
-    sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty
-    sudo apt-get -qq update
-    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator
-* After Qt5.9 installation, run shell file to configure environment variables
-    sudo chmod +x /opt/qt59/bin/qt59-env.sh
-    sudo /opt/qt59/bin/qt59-env.sh
+   * If Qt came partially installed with your distribution, uninstall Qt then install Qt from ppa. Use ppa for your distribution, this example is from Trusty:
 
-________________
+       sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty
+       sudo apt-get -qq update
+       sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator
 
- <em>MAC OSX</em>:
-________________
+   * Configure Qt environment variables:
+
+       sudo chmod +x /opt/qt59/bin/qt59-env.sh
+       sudo /opt/qt59/bin/qt59-env.sh
+
+<em>MAC OSX</em>:
+   Would some of our Mac devs fill in this section?
 
 <em>Windows</em>:
 
-* MinGW v5.0.2 from http://mingw-w64.org/doku.php
-* Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Seamly2D's binary file.
+   * MinGW from http://mingw-w64.org/doku.php
+   * Xpdf (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Seamly2D's binary file.
+   * Add paths for Qt and MinGW to the Windows PATH environment variable through Control Panel:
+        [Control Panel|System And Security|System|Advanced Tab|Environment Variables button]
 
-________________
+Additional Information about Qt
+==================================
+   * After Seamly2d, gcc or mingw, xpdf, and Qt or QtCreator installation, add their paths (eg `c:\Qt\%VERSION%\bin`)to your operating system's `PATH` environment variable via Linux `.bashrc` or Windows' Control Panel.
+   * Use *QtChooser* to update and set the latest QT version as default.
+   * Within *QtCreator* select your compiler in the compiler kit, and assign the compiler kit to your project. This automatically defines your Qt variables for compilers, debuggers, etc.
+   * You can build Seamly2D from within the *QtCreator* IDE (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake-qtx* from a terminal window:
 
-The installed toolchains have to match the one Qt was configured with.
-
-You can build from within the <em>QtCreator</em> IDE (see forum post above), or build with Qt's <em>qmake</em> from a terminal window:
-
-    cd $SOURCE_DIRECTORY\build
-    qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
-    make (or mingw32-make or nmake or jom, depending on your platform)
-
-Note: On some platforms e.g. Fedora, all Qt-tools come as qmake-qt5, etc. Run
-
-    export QT_SELECT=5
-
-prior to running <em>qmake</em>. You will not come along with just using <em>qmake-qt5</em> here.
-
-Note: In order to build and use Seamly2D, the PATH environment variable needs to be extended to locate qmake (or qmake-qt5), moc and other Qt tools. This is done by adding your Qt's installation path (eg c:\Qt\%VERSION%\bin) to the PATH variable. Check your Qt installation to find the correct path to enter.
-
-For newer versions of Windows, PATH can be extended through this menu:
-
-     Control Panel|System|Advanced|Environment
-
-Add the locations of your compiler and other build tools to your system's PATH variable. This will depend on your choice of software development environment.
-
-Unix systems:
-Default prefix for command "make install" is /usr. For using another prefix build with qmake command:
-
-    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
-
-where /usr/local is a new prefix for installation binary files and /usr/lib/i386-linux-gnu is new prefix for install libraries.
-
-Use <em>QtChooser</em> to update and set the latest QT version as default. Within the <em>QtCreator</em> IDE define your compiler and compiler kit, and assign the compiler kit to your project. This automatically defines your Path prefixes in Qt. Your operating system's path to your Qt executable files is still required in PATH system variable via your Linux's .bashrc or Windows' Control Panel.
+        cd $SOURCE_DIRECTORY\build
+        qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
+        make (or mingw32-make or nmake or jom, depending on your platform)
 
 LICENSING
 ================
@@ -158,4 +164,3 @@ See LICENSE_GPL.txt file for further information
 Other components released under:
 * QMuParser - BSD license
 * VPropertyExplorer - LGPLv2.1 license
-
