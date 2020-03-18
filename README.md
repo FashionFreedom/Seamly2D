@@ -112,7 +112,7 @@ sudo zypper install -t pattern devel_basis
   sudo apt-get install -y libfontconfig1-dev libfreetype6-dev  
   sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev  
   sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
-  sudo apt-get install -y qt5-qtxmlpatterns-devel
+  sudo apt-get install -y libqt5xmlpatterns5-dev
 ```
 * Manually retrieve and install `ccache`
 ```
