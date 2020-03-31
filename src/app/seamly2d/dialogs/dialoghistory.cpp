@@ -187,7 +187,8 @@ void DialogHistory::FillTable()
     QVector<VToolRecord> history = doc->getLocalHistory();
     qint32 currentRow = -1;
     qint32 count = 0;
-    ui->tableWidget->setRowCount(history.size());//Make row count max possible number
+    ui->tableWidget->setRowCount(history.size());//Set Row count to number of Tool history records
+
     for (qint32 i = 0; i< history.size(); ++i)
     {
         const VToolRecord tool = history.at(i);
@@ -201,27 +202,29 @@ void DialogHistory::FillTable()
                 item->setTextAlignment(Qt::AlignHCenter);
                 item->setData(Qt::UserRole, tool.getId());
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
-                ui->tableWidget->setItem(currentRow, 0, item);
+                ui->tableWidget->setItem(currentRow, 0, item);//1st column is ID to lookup Tool history description
             }
 
             QTableWidgetItem *item = new QTableWidgetItem(historyRecord);
-            item->setFont(QFont("Times", 12, QFont::Bold));
+            item->setFont(QFont("Times", 10, QFont::Bold));
             item->setFlags(item->flags() ^ Qt::ItemIsEditable);
-            ui->tableWidget->setItem(currentRow, 1, item);
+            ui->tableWidget->setItem(currentRow, 1, item);//2nd column is Tool history description
             ++count;
+
         }
     }
-    ui->tableWidget->setRowCount(count);//Real row count
+    ui->tableWidget->setRowCount(count);//Current history records count
     if (count>0)
     {
         cursorRow = CursorRow();
         QTableWidgetItem *item = ui->tableWidget->item(cursorRow, 0);
         SCASSERT(item != nullptr)
-        item->setIcon(QIcon("://icon/32x32/put_after.png"));
+        item->setIcon(QIcon("://icon/32x32/put_after.png"));//place curved arrow in 1st column of most recent history record
     }
-    ui->tableWidget->resizeColumnsToContents();
-    ui->tableWidget->resizeRowsToContents();
-    ui->tableWidget->verticalHeader()->setDefaultSectionSize(20);
+    //ui->tableWidget->resizeColumnsToContents();//doesn't work, maybe sets column size to header size
+    ui->tableWidget->resizeRowsToContents();//works, sets row count to current number of history records
+    ui->tableWidget->verticalHeader()->setDefaultSectionSize(20);//works,sets all row heights to 20px
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
