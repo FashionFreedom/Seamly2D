@@ -5,13 +5,11 @@ Seamly2D is pattern design software to create reusable, scalable, sharable custo
 
 Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
 
-Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, MacOS, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows 10, MacOS, and Ubuntu Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
 
 ## Supported platforms:  
-   * Windows XP SP2 (32-bit) or later   
-   * Ubuntu Linux 14.04 (32-bit/64-bit) or later   
-   * OpenSUSE 13.02 (32-bit/64-bit) or later   
-   * Fedora 24 (32-bit/64-bit) or later  
+   * Windows 10 (32-bit/64-bit)    
+   * Ubuntu Linux 16.04 (32-bit/64-bit) or later    
    * Mac OS X 10.8 (64-bit) or later  
 
 ## Seamly2D Community Resources:

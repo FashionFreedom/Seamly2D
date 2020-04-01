@@ -8,11 +8,9 @@ Unlike other pattern design software, Seamly2D allows designers to have complete
 Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, OSX, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
 
 Supported platforms:
-   * Windows XP SP2 (32-bit) or later
-   * Ubuntu Linux 14.04 (32-bit/64-bit) or later
-   * OpenSUSE 13.02 (32-bit/64-bit) or later
-   * Fedora 24 (32-bit/64-bit) or later
-   * Mac OS X 10.8 (64-bit) or later
+* Windows 10 (32-bit/64-bit)
+* Ubuntu Linux 16.04 (32-bit/64-bit) or later
+* Mac OS X 10.10 (64-bit) or laterr
 
 Community Resources:
    * Homepage and downloads     https://fashionfreedom.eu
@@ -47,16 +45,17 @@ Seamly2D Downloads
       sudo apt-get update
       sudo apt-get install seamly2d
 
-Building Seamly2D
+Build Seamly2D
 ================
 
-Basic Prerequisites:
-   * Qt 5.7.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
-   * QtCreator 4.3.1 or later (to build code)
-   * QtChooser (to select or update Qt version)
-   * Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
-   * Compiler - gcc from https://gcc.gnu.org, clang from https://clang.llvm.org/, or mingw from https://sourceforge.net/projects/mingw/
-   * Check the sections below for your operating system to find additional installation requirements
+Basic Software Requirements:
+* Qt 5.9 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
+* QtCreator 4.11.1 or later (to build code)
+* QtChooser (to select or update Qt version)
+* Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
+* Compiler - either g++ 7+ from https://gcc.gnu.org, or mingw 4+ from https://sourceforge.net/projects/mingw/
+* XpdfWidget/Qt - https://www.xpdfreader.com/XpdfWidget.html
+* Check the sections below for your operating system to find additional installation requirements
 
 Development methods and styles:
    * Git Flow workflow: https://medium.com/@devmrin/learn-complete-gitflow-workflow-basics-how-to-from-start-to-finish-8756ad5b7394
@@ -69,14 +68,13 @@ Build method:
 Additional information for Linux (Ubuntu, Suse, Fedora), Mac, and Windows Operating Systems:
 =============================================================================
 <em>Linux</em>
-   * In general, these additional tools and libraries may be required:
-      - g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) or clang (minimum clang 3.4 (2014), 5.0 (2017) https://clang.llvm.org/), xpdf (pdftops poppler-utils), OpenGL libraries, Qt build libraries, and xmlpatterns python library*
-      - xpdf (pdftops)
-      - OpenGL libraries
-      - Qt build libraries*
-      - XMLpatterns qt5 xml bindings https://command-not-found.com/xmlpatterns
-   * All Qt-tools come as qmake-qt5, etc. If you build from command line instead of within Qt Creator, run the following prior to running *qmake-qt5*:
-
+* For Linux in general, these additional tools and libraries may be required:
+- g++ compiler (at least GCC 7+ is needed ) OR clang (minimum clang 4.0 (2017)),
+- xpdf (pdftops)
+- OpenGL libraries
+- Qt 5.9+ build libraries*
+- XMLpatterns qt5 xml bindings https://command-not-found.com/xmlpatterns
+* All Qt-tools come as qmake-qt5, etc. If you build from command line instead of within Qt Creator, run the following prior to running *qmake-qt5*:
        export QT_SELECT=5
 
    * The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:
@@ -98,41 +96,41 @@ Additional information for Linux (Ubuntu, Suse, Fedora), Mac, and Windows Operat
 
 <em>Ubuntu</em>:
 
-   * Install packages:
-       sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-       sudo apt-get -qq update
-       sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-       sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev
-       sudo apt-get install -y poppler-utils
-       sudo apt-get install -y g++-5
-       sudo apt-get install -y xpdf
-       sudo apt-get install -y xvfb
-       sudo apt-get install -y libfontconfig1-dev libfreetype6-dev
-       sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev
-       sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
-       sudo apt-get install -y libqt5xmlpatterns5-dev
-
-       wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb
-       sudo dpkg -i ccache_3.3.4-1_amd64.deb
-
-   * If Qt came partially installed with your distribution, uninstall Qt then install Qt from ppa. Use ppa for your distribution, this example is from Trusty:
-
-       sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty
-       sudo apt-get -qq update
-       sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator
-
-   * Configure Qt environment variables:
-
-       sudo chmod +x /opt/qt59/bin/qt59-env.sh
-       sudo /opt/qt59/bin/qt59-env.sh
+   * Install & configure packages:
+   sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
+   sudo add-apt-repository -y ppa:beineri/opt-qt597-xenial;
+   sudo apt-get -qq update;
+   sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+   sudo apt-get install -y build-essential git;
+   sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev
+   sudo apt-get install -y poppler-utils
+   sudo apt-get install -y qt59base;
+   sudo apt-get install -y qt59svg;
+   sudo apt-get install -y qt59xmlpatterns;
+   sudo apt-get install -y qt59imageformats;
+   sudo apt-get install -y qt59tools;
+   sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator;
+   sudo apt-get install -y xpdf;
+   sudo apt-get install -y xvfb;
+   sudo apt-get install -y g++-7;
+   sudo apt-get install -y libfontconfig1-dev libfreetype6-dev;
+   sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev;
+   sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev;
+   sudo apt-get install -y libqt5xmlpatterns5-dev;
+   wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.4.1-1_amd64.deb;
+   sudo dpkg -i ccache_3.4.1-1_amd64.deb;
+   sudo chmod +x /opt/qt59/bin/qt59-env.sh;
+   /opt/qt59/bin/qt59-env.sh;
+   wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.4.1-1_amd64.deb;
+   sudo dpkg -i ccache_3.4.1-1_amd64.deb;
 
 <em>MAC OSX</em>:
    Would some of our Mac devs fill in this section?
 
 <em>Windows</em>:
 
-   * MinGW from http://mingw-w64.org/doku.php
-   * Xpdf (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Seamly2D's binary file.
+   * MinGW v5.0.2 from http://mingw-w64.org/doku.php
+   * Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Seamly2D's binary file.
    * Add paths for Qt and MinGW to the Windows PATH environment variable through Control Panel:
         [Control Panel|System And Security|System|Advanced Tab|Environment Variables button]
 
@@ -141,7 +139,7 @@ Additional Information about Qt
    * After Seamly2d, gcc or mingw, xpdf, and Qt or QtCreator installation, add their paths (eg `c:\Qt\%VERSION%\bin`)to your operating system's `PATH` environment variable via Linux `.bashrc` or Windows' Control Panel.
    * Use *QtChooser* to update and set the latest QT version as default.
    * Within *QtCreator* select your compiler in the compiler kit, and assign the compiler kit to your project. This automatically defines your Qt variables for compilers, debuggers, etc.
-   * You can build Seamly2D from within the *QtCreator* IDE (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake-qtx* from a terminal window:
+   * You can build Seamly2D from within the *QtCreator* IDE (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake* from a terminal window:
 
         cd $SOURCE_DIRECTORY\build
         qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache

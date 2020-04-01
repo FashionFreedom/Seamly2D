@@ -1,62 +1,90 @@
+#Build Linux (Ubuntu) and Mac
 language: cpp
 sudo: false
 matrix:
   include:
+  #Linux Ubuntu
   - os: linux
-    dist: trusty
+    dist: xenial
     compiler: gcc
     env:
     - DEPLOY=true
     - CCACHE_CPP2=yes
     cache:
     - ccache
+  #Mac
   - os: osx
     compiler: clang
     env: DEPLOY=true
 before_install:
+  echo "installing ubuntu dependencies"
 - |
   if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then
     sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
-    sudo add-apt-repository -y ppa:beineri/opt-qt58-trusty;
+    sudo add-apt-repository -y ppa:beineri/opt-qt597-xenial;
     sudo apt-get -qq update;
+    sudo apt-get install -y g++-7;
+    sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
     sudo apt-get install -y build-essential git;
-    sudo apt-get install -y qt58base;
-    sudo apt-get install -y qt58svg;
-    sudo apt-get install -y qt58xmlpatterns;
-    sudo apt-get install -y qt58imageformats;
-    sudo apt-get install -y qt58tools;
+    sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev
+    sudo apt-get install -y poppler-utils
     sudo apt-get install -y xpdf;
     sudo apt-get install -y xvfb;
-    sudo apt-get install -y g++-5;
-    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
-    sudo dpkg -i ccache_3.3.4-1_amd64.deb;
-    sudo chmod +x /opt/qt58/bin/qt58-env.sh;
-    /opt/qt58/bin/qt58-env.sh;
+    sudo apt-get install -y qt59base;
+    sudo apt-get install -y qt59svg;
+    sudo apt-get install -y qt59xmlpatterns;
+    sudo apt-get install -y qt59imageformats;
+    sudo apt-get install -y qt59tools;
+    sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator;
+    sudo apt-get install -y libqt5xmlpatterns5-dev;
+    sudo apt-get install -y libfontconfig1-dev libfreetype6-dev;
+    sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev;
+    sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev;
+    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.4.1-1_amd64.deb;
+    sudo dpkg -i ccache_3.4.1-1_amd64.deb;
+    sudo chmod +x /opt/qt59/bin/qt59-env.sh;
+    /opt/qt59/bin/qt59-env.sh;
+    wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.4.1-1_amd64.deb;
+    sudo dpkg -i ccache_3.4.1-1_amd64.deb;
   else
+    echo "brew install qt on Mac"
     brew update > /dev/null;
     brew install qt5;
     chmod -R 755 /usr/local/opt/qt5/*;
   fi
 before_script:
-- "if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then\n  uname -a;\n  which /opt/qt58/bin/qmake;\n
-  \ /opt/qt58/bin/qmake --version;   \nelse\n  QTDIR=\"/usr/local/opt/qt5\";\n  PATH=\"$QTDIR/bin:$PATH\";\n
-  \ LDFLAGS=-L$QTDIR/lib;\n  CPPFLAGS=-I$QTDIR/include;\n  PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;\n
-  \ chmod -R 755 /usr/local/opt/qt5/*;  \n  qmake --version;  \nfi\n"
+  echo "Run pre-script tasks"
+#Set PATH environment variables & LDFLAGS, CPPFLAGS, qmake version, etc.
+- "if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then\n
+    \ uname -a;\n
+    \ which /opt/qt59/bin/qmake;\n
+    \ /opt/qt59/bin/qmake --version;  \n
+  \ else\n
+    \ QTDIR=\"/usr/local/opt/qt5\";\n
+    \ PATH=\"$QTDIR/bin:$PATH\";\n
+    \ LDFLAGS=-L$QTDIR/lib;\n
+    \ CPPFLAGS=-I$QTDIR/include;\n
+    \ PKG_CONFIG_PATH=/usr/local/opt/qt5/lib/pkgconfig;\n
+    \ chmod -R 755 /usr/local/opt/qt5/*;\n
+    \ qmake --version;  \n
+  \ fi\n"
+#Make Seamly2D
+echo "Make Seamly2D"
 - mkdir build
 - cd build
 - pwd
 - |
   if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-    /opt/qt58/bin/qmake ../Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
+    /opt/qt59/bin/qmake ../Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=checkWarnings;
   else
     qmake ../Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache CONFIG+=noTests;
   fi
 script:
+echo "Build "Seamly2D"
 - "$CXX --version"
 - "if [[ \"$TRAVIS_OS_NAME\" == \"linux\" ]]; then\n  build-wrapper-linux-x86-64 --out-dir
   ../bw-outputs make -j$(nproc);\n  export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:\"$TRAVIS_BUILD_DIR/build/src/libs/vpropertyexplorer/bin:$TRAVIS_BUILD_DIR/build/src/libs/qmuparser/bin\";\n
-  \ xvfb-run -a make --silent check TESTARGS=\"-silent\";\n  cd ..;\n  else\n  make
-  -j8;\nfi  \n"
+  \ xvfb-run -a make --silent check TESTARGS=\"-silent\";\n  cd ..;\n  else\n  make -j8;\nfi  \n"
 notifications:
   email:
     recipients:
@@ -64,6 +92,8 @@ notifications:
     on_success: always
     on_failure: always
 before_deploy:
+echo "Run pre-deployment tasks"
+  #Mac
 - |
   if [[ ("$TRAVIS_OS_NAME" == "osx") && ("$DEPLOY" == "true" ) ]]; then
     ../scripts/macfixqtdylibrpath.py $TRAVIS_BUILD_DIR/build/src/app/seamly2d/bin/Seamly2D.app;
@@ -73,6 +103,8 @@ before_deploy:
     cp src/app/seamly2d/bin/seamly2d-osx-${TRAVIS_COMMIT}.tar.gz seamly2d-osx-${TRAVIS_COMMIT}.tar.gz
   fi
 deploy:
+echo "Deploy Seamly2D on Ubuntu with Launchpad"
+  #Linux Ubuntu
   - provider: launchpad
     slug: ~susan-spencer/seamly2d/+git/seamly2d
     user: susan-spencer
@@ -85,6 +117,8 @@ deploy:
     on:
       all_branches: true
       condition: $TRAVIS_OS_NAME = linux && $DEPLOY = true
+  #Mac
+  echo "Deploy Seamly2D on Mac with Bintray"
   - provider: bintray
     skip_cleanup: true
     file: ../share/bintray.json
@@ -94,4 +128,4 @@ deploy:
     dry-run: false
     on:
       all_branches: true
-      condition: $TRAVIS_OS_NAME = osx && $DEPLOY = true      
+      condition: $TRAVIS_OS_NAME = osx && $DEPLOY = true
