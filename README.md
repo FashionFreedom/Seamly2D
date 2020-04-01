@@ -5,12 +5,12 @@ Seamly2D is pattern design software to create reusable, scalable, sharable custo
 
 Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
 
-Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows 10, MacOS, and Ubuntu Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows 10, MacOS 10.10+, and Ubuntu 16.04+ Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
 
 ## Supported platforms:  
    * Windows 10 (32-bit/64-bit)    
    * Ubuntu Linux 16.04 (32-bit/64-bit) or later    
-   * Mac OS X 10.8 (64-bit) or later  
+   * Mac OS X 10.10 (64-bit) or later
 
 ## Seamly2D Community Resources:
    * [Homepage and downloads](https://fashionfreedom.eu)  
@@ -50,15 +50,15 @@ ___________________________________________________
 ## Build Seamly2D
 
 Basic Software Prerequisites:  
-* Qt 5.7.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
-* QtCreator 4.3.1 or later (to build code)
+* Qt 5.9 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
+* QtCreator 4.11.1 or later (to build code)
 * QtChooser (to select or update Qt version)
 * Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
-* Compiler - either gcc from https://gcc.gnu.org, or mingw from https://sourceforge.net/projects/mingw/
+* Compiler - either g++ 7+ from https://gcc.gnu.org, or mingw 4+ from https://sourceforge.net/projects/mingw/
 * XpdfWidget/Qt - https://www.xpdfreader.com/XpdfWidget.html
 * Check the sections below for your operating system to find additional installation requirements
 
-Learn Seamly2D development methods and styles:
+Learn development methods and styles:
    * Git Flow workflow: https://medium.com/@devmrin/learn-complete-gitflow-workflow-basics-how-to-from-start-to-finish-8756ad5b7394
    * Gibhub commit message style guide: https://www.conventionalcommits.org/en/v1.0.0/
    * Github issue description style guide: https://guides.github.com/features/issues/
@@ -71,10 +71,10 @@ ___________________________________________________
 
 ### Linux (general)
 * For Linux in general, these additional tools and libraries may be required:
-- g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) OR clang (minimum clang 3.4 (2014), current 5.0 (2017)),
+- g++ compiler (at least GCC 7+ is needed ) OR clang (minimum clang 4.0 (2017)),
 - xpdf (pdftops)
 - OpenGL libraries
-- Qt build libraries*
+- Qt 5.9+ build libraries*
 - XMLpatterns qt5 xml bindings https://command-not-found.com/xmlpatterns
 * All Qt-tools come as qmake-qt5, etc. If you build from command line instead of within Qt Creator, run the following prior to running *qmake-qt5*:
 ```
@@ -99,35 +99,32 @@ sudo zypper install -t pattern devel_basis
 #### Ubuntu
 * Install the following packages:
 ```
-  sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test     
-  sudo apt-get -qq update  
-  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5  
-  sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev  
-  sudo apt-get install -y poppler-utils  
-  sudo apt-get install -y g++-5  
-  sudo apt-get install -y xpdf  
-  sudo apt-get install -y xvfb  
-  sudo apt-get install -y libfontconfig1-dev libfreetype6-dev  
-  sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev  
-  sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
-  sudo apt-get install -y libqt5xmlpatterns5-dev
-```
-* Manually retrieve and install `ccache`
-```
-wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb  
-sudo dpkg -i ccache_3.3.4-1_amd64.deb
-```
-* Install Qt
-- If Qt is not completely installed on your distrubution, uninstall Qt then install Qt from ppa. Use ppa for your distribution, this example is from Trusty:
-```
-sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty  
-sudo apt-get -qq update  
-sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator  
-```
-* Configure Qt environment variables:  
-```
-sudo chmod +x /opt/qt59/bin/qt59-env.sh  
-sudo /opt/qt59/bin/qt59-env.sh  
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
+sudo add-apt-repository -y ppa:beineri/opt-qt597-xenial;
+sudo apt-get -qq update;
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+sudo apt-get install -y build-essential git;
+sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev
+sudo apt-get install -y poppler-utils
+sudo apt-get install -y qt59base;
+sudo apt-get install -y qt59svg;
+sudo apt-get install -y qt59xmlpatterns;
+sudo apt-get install -y qt59imageformats;
+sudo apt-get install -y qt59tools;
+sudo apt-get install -y qt59-meta-full qt59-meta-dbg-full qt59creator;
+sudo apt-get install -y xpdf;
+sudo apt-get install -y xvfb;
+sudo apt-get install -y g++-7;
+sudo apt-get install -y libfontconfig1-dev libfreetype6-dev;  
+sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev;  
+sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev;
+sudo apt-get install -y libqt5xmlpatterns5-dev;
+wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.4.1-1_amd64.deb;
+sudo dpkg -i ccache_3.4.1-1_amd64.deb;
+sudo chmod +x /opt/qt59/bin/qt59-env.sh;
+/opt/qt59/bin/qt59-env.sh;
+wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.4.1-1_amd64.deb;
+sudo dpkg -i ccache_3.4.1-1_amd64.deb;
 ```   
 
 ### MAC OSX
