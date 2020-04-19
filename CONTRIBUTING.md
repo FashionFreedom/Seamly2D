@@ -2,73 +2,72 @@
 
 We highly recommend that you read this page before you clone the repo and start making changes. 
 
-Our workflow is based on "Git Flow".    
-Read more about git flow branch development here: http://nvie.com/posts/a-successful-git-branching-model/  
-Read the Github tutorials about making Pull Requests https://help.github.com/articles/about-pull-requests/ and https://help.github.com/articles/creating-a-pull-request/  
+Our preferred workflow is based on **Git Flow**. If you use a different workflow approach keep in mind this might create extra work when creating pull requests.
 
-## Named branches
+More about **Git Flow**:  http://nvie.com/posts/a-successful-git-branching-model/   
+More about **Pull Requests**: https://help.github.com/articles/about-pull-requests/ and https://help.github.com/articles/creating-a-pull-request/    
 
-Use the "Git Flow" naming scheme for your contributor fixes:
-* **feature-_issue#_** - Create from **develop**. Contains code for new or improved features. Merge to **develop**. (e.g. **feature-155** to name your fix for issue #155)
+## Permanent Named branches 
 
-These are 
+The permanent named branches on this repo are: 
 * **develop** - Contains next major release. Used for testing and sharing among developers. 
 * **master** - Used only for releases.
-* **release-x.x.x** - Create from **develop**. Contains feature freeze state before the next major release. Used for preparing each major & minor release with updated build information. Merge to **master** with new tag to create a new release.
-* **hotfix-x.x.x** - Create from **develop** and **master**. Contains a quick fix. Merge to **master** (or **release**) and **develop**.
+* **release-x.x.x** - Created from **develop**. Contains feature freeze state before the next major release. Used for preparing each major & minor release with updated build information. Merge to **master** with new tag to create a new release.
+* **hotfix-x.x.x** - Create from **develop** and **master**. Contains a quick emergency fix for big bugs. Merge to **master** (or **release**) and **develop**.
 
+## Git Flow summary 
+### Git Flow 1 - Clone the repo
 
-### Create your feature branch
+* Clone our repo to your local PC.
+>git clone https://github.com/fashionfreedom/seamly2d
+* Set the origin URL.
+>git remote set-url origin https://github.com/fashionfreedom/seamly2d
+* Create your issue branch, name it after the issue you will fix: **issue-#_n_** (eg - **issue-#155** to name your fix for issue #155.) 
 
-Get the latest code & create your **feature-_issue#_** branch.  Include the issue number that you're working on.
+### Git Flow 2 - Create your issue branch from develop branch then switch to your issue branch
+>git checkout develop       
+git checkout -b issue-#_n_
+git checkout issue-#_n_
 
-> git pull  
-git checkout develop                 
-git checkout -b feature-_issue#_   
-git checkout feature-_issue#_      
-#make your code changes then commit...
+### GitFlow 3 - Daily workflow
+
+* Get latest changes from the **develop** branch from our main repo before
+>git pull develop issue-#_n_
+git checkout issue-#_n_ 
+* Make your code changes 
+* Commit your changes to issue-#_n_
 git commit -a
 git commit -m "_your commit message_"
-git commit push feature-_issue#_   
+git commit push issue-#_n_   
 
-If you don't have rights to create a branch, contact the maintainer - they will give you rights.
+### GitFlow 4 - Test your issue branch (DON'T SKIP THIS STEP)
 
+* Periodically build your issue branch. Use QT or VisualStudio for Windows and Mac, or create an AppImage for Linux.
+* Run it on your local PC. Try to find how to make your changes crash.
 
-### Follow the daily code routine - important!
+### GitFLow 5 -Push your issue branch up to the main repo
 
-Check daily for **develop** updates & merge into **feature-_issue#_**
+* When you confirm that the issue was fixed (at least for you! :D), ask our repo admins to give you write permissions.
+* Push your branch up to our main repo. 
+>git push -u origin issue-#_n_
 
->git checkout develop
-git pull
-git checkout feature-_issue#_
-git merge develop
-#make your code changes then commit...
-git commit -a
-git commit -m "_your commit message_"
-git push origin  feature-_issue#_    #save your changes to repo!
+### GitFLow 6 - Create a Pull Request
 
-Periodically test your code by building in QtCreator and running the app.
-Checkout your feature branch before building in Qt! 
-No need to build the develop branch :)
+* On the Code page in the main repo, next to **Branch:develop** in upper left above file listing, select the **New Pull Request** button. If **Branch:master** is displayed use the dropdown list to select the **develop** branch.
+* The Pull Request page will appear. From the **Compare:** dropdown list, select your issue branch.
+* In the comments box, add the text "Fix issue #_n_" (eg "Fix issue #155") 
+* On the next line add the text "Tested on _operatingsystem_ _version_ _buswidth_". (eg "Tested on Windows 10 64-bit")
+* Click the **Create Pull Request** button.
+* Link your Pull Request to the fixed issue with the **Linked Issues** option in the right hand column.
+* Other team members will test it on their systems and approve the Pull Request.
+* The maintainer will merge your issue branch into **develop**.
+* After merge, add your changes to file **ChangeLog.txt**
 
+### GitFlow 7 - Update your Pull Request 
+Most likely we will ask you to fix some issues in your code. In this case you would: 
+* Make changes to your local **issue-#_n_** branch
+* Push your **issue-#_n_** branch up to the repo
+* Update your existing pull request 
+* Rejoice again! :D
 
-### When you're ready to submit your feature branch
-
-Build your code in QtCreator one last time and test by running the app, trying to break your new or improved feature.
-If all is good...
-Merge your **feature-_issue#_** to your **develop** & resolve merge issues.
-Go back to **feature-_issue#_** & push  to the github repo.
-
->git checkout develop
-git merge feature-_issue_#
-git checkout feature-_issue#_
-git push origin feature-_issue#_
-
-Login to the github repo and make a pull request with description "**Resolved (or Fixed) issue #XXX. \<Text of issue description\>**"
-Add your changes to file **ChangeLog.txt**!!!
-
-The maintainer will merge your branch into **develop**.
- 
-
-# Reviewing 
-Most likely we will ask you to fix some issues in your code. In this case you will add your changes to your local **feature** branch, push your **feature** branch to the repo, and update your existing pull request. 
+Thanks for being an open source contributor!
