@@ -25,7 +25,6 @@ before_install:
     sudo apt-get install -y qt58xmlpatterns;
     sudo apt-get install -y qt58imageformats;
     sudo apt-get install -y qt58tools;
-    sudo apt-get install -y xpdf;
     sudo apt-get install -y xvfb;
     sudo apt-get install -y g++-5;
     wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.deb;
