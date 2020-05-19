@@ -1,0 +1,29 @@
+name: Build
+on:
+  push:
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install build dependencies
+        run: |
+          sudo apt install g++ make ccache qttools5-dev-tools libqt5xmlpatterns5-dev libqt5svg5-dev
+
+      - name: build
+        run: |
+          mkdir /home/runner/local
+          qmake PREFIX=/home/runner/local Seamly2D.pro
+          make
+          make install
+
+      - name: archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: seamly2d-linux
+          path: /home/runner/local
