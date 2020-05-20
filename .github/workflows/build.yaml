@@ -4,6 +4,7 @@ on:
 
 jobs:
   linux:
+    if: false
     runs-on: ubuntu-latest
     env:
       QT_SELECT: 5
@@ -27,3 +28,28 @@ jobs:
         with:
           name: seamly2d-linux
           path: /home/runner/local
+
+  windows:
+    runs-on: windows-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - name: install build dependencies
+        uses: jurplel/install-qt-action@v2
+
+      - name: build
+        run: |
+          qmake Seamly2D.pro
+          make
+
+      - name: archive
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: makefile-windows
+          path: Makefile
