@@ -30,6 +30,7 @@ jobs:
           path: /home/runner/local
 
   windows:
+    if: false
     runs-on: windows-latest
     env:
       QT_SELECT: 5
@@ -53,3 +54,30 @@ jobs:
         with:
           name: makefile-windows
           path: Makefile
+
+  macos:
+    runs-on: macos-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: install build dependencies
+        uses: jurplel/install-qt-action@v2
+
+      - name: build
+        run: |
+          qmake Seamly2D.pro
+          make
+          mkdir /Users/runner/local
+          hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
+          hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
+          cp Seamly2D.dmg /Users/runner/local
+          cp SeamlyME.dmg /Users/runner/local
+
+      - name: archive
+        uses: actions/upload-artifact@v2
+        with:
+          name: seamly2d-macos
+          path: /Users/runner/local
