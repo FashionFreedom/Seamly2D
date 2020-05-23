@@ -30,7 +30,6 @@ jobs:
           path: /home/runner/local
 
   windows:
-    if: false
     runs-on: windows-latest
     env:
       QT_SELECT: 5
@@ -45,17 +44,22 @@ jobs:
 
       - name: build
         run: |
-          qmake Seamly2D.pro
-          make
+          qmake.exe Seamly2D.pro
+          nmake
+          Get-ChildItem -Path . -Recurse -Filter *.exe
+          New-Item -Path . -Name "executables" -ItemType "directory"
+          Copy-Item -Path src\app\seamly2d\bin\seamly2d.exe -Destination executables\
+          Copy-Item -Path src\app\seamlyme\bin\seamlyme.exe -Destination executables\
 
       - name: archive
-        if: ${{ always() }}
+        if: false
         uses: actions/upload-artifact@v2
         with:
-          name: makefile-windows
-          path: Makefile
+          name: build-windows
+          path: executables
 
   macos:
+    if: false
     runs-on: macos-latest
     env:
       QT_SELECT: 5
