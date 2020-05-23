@@ -1,0 +1,121 @@
+name: Build release assets
+
+on:
+  release:
+    types: [ published ]
+
+env:
+  TAG_NAME: ${{ github.event.release.tag_name }}
+  UPLOAD_URL: ${{ github.event.release.upload_url }}
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install build dependencies
+        run: |
+          sudo apt update
+          sudo apt install g++ make ccache qttools5-dev-tools libqt5xmlpatterns5-dev libqt5svg5-dev
+
+      - name: build
+        run: |
+          mkdir /home/runner/local
+          qmake PREFIX=/home/runner/local Seamly2D.pro
+          make
+          make install
+
+      - name: tar.gz package
+        run: |
+          tar cfz linux.tar.gz /home/runner/local
+
+      - name: upload linux.tar.gz
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./linux.tar.gz
+          asset_name: linux-build.tar.gz
+          asset_content_type: application/gzip
+  macos:
+    runs-on: macos-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install build dependencies
+        uses: jurplel/install-qt-action@v2
+
+      - name: build
+        run: |
+          qmake Seamly2D.pro
+          make
+
+      - name: dmg packages
+        run: |
+          hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
+          hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
+
+      - name: upload Seamly2D.dmg
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./Seamly2D.dmg
+          asset_name: Seamly2D.dmg
+          asset_content_type: application/x-apple-diskimage
+
+      - name: upload SeamlyME.dmg
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./SeamlyME.dmg
+          asset_name: SeamlyME.dmg
+          asset_content_type: application/x-apple-diskimage
+  windows:
+    runs-on: windows-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1
+      - name: install build dependencies
+        uses: jurplel/install-qt-action@v2
+
+      - name: build
+        run: |
+          qmake.exe Seamly2D.pro
+          nmake
+          Get-ChildItem -Path . -Recurse -Filter *.exe
+          New-Item -Path . -Name "executables" -ItemType "directory"
+          Copy-Item -Path src\app\seamly2d\bin\seamly2d.exe -Destination executables\
+          Copy-Item -Path src\app\seamlyme\bin\seamlyme.exe -Destination executables\
+
+      - name: upload seamly2d.exe
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: src\app\seamly2d\bin\seamly2d.exe
+          asset_name: seamly2d.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
+
+      - name: upload seamlyme.exe
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: src\app\seamlyme\bin\seamlyme.exe
+          asset_name: seamlyme.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
