@@ -20,6 +20,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install g++ make ccache qttools5-dev-tools libqt5xmlpatterns5-dev libqt5svg5-dev
+          sudo apt install fuse
 
       - name: build
         run: |
@@ -41,6 +42,52 @@ jobs:
           asset_path: ./linux.tar.gz
           asset_name: linux-build.tar.gz
           asset_content_type: application/gzip
+
+      - name: AppImages
+        run: |
+          mkdir -p /home/runner/local/share/applications /home/runner/local/share/icons/hicolor/256x256
+
+          cp dist/seamly2d.desktop /home/runner/local/share/applications/
+          cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamly2d.png
+
+          docker run --cap-add SYS_ADMIN --device /dev/fuse \
+            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
+            -v /home/runner/local:/app/usr \
+            --rm mhitza/linuxdeployqt:9.5.9
+
+          mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
+          cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamlyme.png
+
+          rm /home/runner/local/share/applications/seamly2d.desktop
+          cp dist/seamlyme.desktop /home/runner/local/share/applications
+
+          docker run --cap-add SYS_ADMIN --device /dev/fuse \
+            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
+            -v /home/runner/local:/app/usr \
+            --rm mhitza/linuxdeployqt:9.5.9
+
+          mv /home/runner/local/SeamlyMe*.AppImage SeamlyMe.AppImage
+
+      - name: upload Seamly2D.AppImage
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./Seamly2D.AppImage
+          asset_name: Seamly2D.AppImage
+          asset_content_type: application/octet-stream
+
+      - name: upload SeamlyMe.AppImage
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./SeamlyMe.AppImage
+          asset_name: SeamlyMe.AppImage
+          asset_content_type: application/octet-stream
+
   macos:
     runs-on: macos-latest
     env:
@@ -95,27 +142,18 @@ jobs:
         run: |
           qmake.exe Seamly2D.pro
           nmake
-          Get-ChildItem -Path . -Recurse -Filter *.exe
-          New-Item -Path . -Name "executables" -ItemType "directory"
-          Copy-Item -Path src\app\seamly2d\bin\seamly2d.exe -Destination executables\
-          Copy-Item -Path src\app\seamlyme\bin\seamlyme.exe -Destination executables\
+          mkdir ..\windows-build
+          Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
+          windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
+          windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
+          Compress-Archive -Path ..\windows-build -DestinationPath windows-build.zip
 
-      - name: upload seamly2d.exe
+      - name: upload windows.zip
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: src\app\seamly2d\bin\seamly2d.exe
-          asset_name: seamly2d.exe
-          asset_content_type: application/vnd.microsoft.portable-executable
-
-      - name: upload seamlyme.exe
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: src\app\seamlyme\bin\seamlyme.exe
-          asset_name: seamlyme.exe
-          asset_content_type: application/vnd.microsoft.portable-executable
+          asset_path: ./windows-build.zip
+          asset_name: windows.zip
+          asset_content_type: application/zip
