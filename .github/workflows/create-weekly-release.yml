@@ -1,0 +1,23 @@
+name: Create weekly release
+
+on:
+  schedule:
+    - cron: '0 0 * * MON'
+    
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "::set-env name=TAG_NAME::weekly-`date +%Y%m%d`"
+        echo "::set-env name=RELEASE_NAME::Weekly release `date +%Y%m%d`"
+        
+    - uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ env.TAG_NAME }}
+        release_name: ${{ env.RELEASE_NAME }}
+        body: This is an automated weekly release.
+
