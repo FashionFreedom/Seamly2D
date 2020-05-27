@@ -142,18 +142,24 @@ jobs:
         run: |
           qmake.exe Seamly2D.pro
           nmake
+
+      - name: create installer
+        run: |
           mkdir ..\windows-build
           Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
           windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
           windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
-          Compress-Archive -Path ..\windows-build -DestinationPath windows-build.zip
+          copy .\dist\seamly2d-installer.nsi ..\windows-build\
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: upload windows.zip
+
+      - name: upload seamly2d-installer
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./windows-build.zip
-          asset_name: windows.zip
-          asset_content_type: application/zip
+          asset_path: ../windows-build/seamly2d-installer.exe
+          asset_name: seamly2d-installer.exe
+          asset_content_type: application/octet-stream
