@@ -1,18 +1,35 @@
 name: Build release assets
 
 on:
-  release:
-    types: [ published ]
-
-env:
-  TAG_NAME: ${{ github.event.release.tag_name }}
-  UPLOAD_URL: ${{ github.event.release.upload_url }}
+  schedule:
+    - cron: '0 0 * * MON'
 
 jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create-release.outputs.upload_url }}
+
+    steps:
+      - run: |
+          echo "::set-env name=TAG_NAME::weekly-`date +%Y%m%d`"
+          echo "::set-env name=RELEASE_NAME::Weekly release `date +%Y%m%d`"
+          
+      - uses: actions/create-release@v1
+        id: create-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          body: This is an automated weekly release.
+
   linux:
     runs-on: ubuntu-latest
+    needs: create-release
     env:
       QT_SELECT: 5
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
       - uses: actions/checkout@v2
@@ -90,8 +107,10 @@ jobs:
 
   macos:
     runs-on: macos-latest
+    needs: create-release
     env:
       QT_SELECT: 5
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
       - uses: actions/checkout@v2
@@ -127,10 +146,13 @@ jobs:
           asset_path: ./SeamlyME.dmg
           asset_name: SeamlyME.dmg
           asset_content_type: application/x-apple-diskimage
+
   windows:
     runs-on: windows-latest
+    needs: create-release
     env:
       QT_SELECT: 5
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
       - uses: actions/checkout@v2
