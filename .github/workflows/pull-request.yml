@@ -1,0 +1,30 @@
+name: Pull request
+
+on: [ pull_request ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    env:
+      QT_SELECT: 5
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install build dependencies
+        run: |
+          sudo apt update
+          sudo apt install g++ make ccache qttools5-dev-tools libqt5xmlpatterns5-dev libqt5svg5-dev
+          sudo apt install xvfb
+          sudo apt install fuse
+
+      - name: build
+        run: |
+          mkdir /home/runner/local
+          qmake PREFIX=/home/runner/local Seamly2D.pro
+          make && make install
+          ls -lahR /home/runner/local
+
+      - name: test
+        run: |
+          export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
+          xvfb-run -a make --silent check  TESTARGS="-silent"
