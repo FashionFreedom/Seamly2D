@@ -2,29 +2,40 @@ name: Pull request
 
 on: [ pull_request ]
 
+env:
+  QT_SELECT: 5
+
+  # See https://wiki.qt.io/Qt_5.13_Release
+  # The project is currently incompatible with Qt-5.15/5.14.2
+  # When chaning the version information in this file be sure to change it in
+  # build-release-weekly.yml as well
+  QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
+
+
 jobs:
   build-test:
+    name: 'Build & Test'
     runs-on: ubuntu-latest
-    env:
-      QT_SELECT: 5
-
     steps:
       - uses: actions/checkout@v2
-      - name: install build dependencies
-        run: |
-          sudo apt update
-          sudo apt install g++ make ccache qttools5-dev-tools libqt5xmlpatterns5-dev libqt5svg5-dev
-          sudo apt install xvfb
-          sudo apt install fuse
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
 
       - name: build
         run: |
           mkdir /home/runner/local
-          qmake PREFIX=/home/runner/local Seamly2D.pro
+          qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache
           make && make install
-          ls -lahR /home/runner/local
+
+
+      - name: install test dependencies
+        # xvfb use to test built application within a framebuffer
+        run: |
+          sudo apt update
+          sudo apt install xvfb
 
       - name: test
         run: |
           export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
-          xvfb-run -a make --silent check  TESTARGS="-silent"
+          xvfb-run -a make --silent check TESTARGS="-silent"
