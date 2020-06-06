@@ -1,0 +1,209 @@
+name: Build weekly release
+
+on:
+  schedule:
+    - cron: '0 0 * * MON'
+
+env:
+  QT_SELECT: 5
+
+  # See https://wiki.qt.io/Qt_5.13_Release
+  # The project is currently incompatible with Qt-5.15/5.14.2
+  # When chaning the version information in this file be sure to change it in
+  # pull-request.yml as well
+  QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create-release.outputs.upload_url }}
+
+    steps:
+      - name: generate release name and tag
+        run: |
+          echo "::set-env name=TAG_NAME::weekly-`date +%Y%m%d`"
+          echo "::set-env name=RELEASE_NAME::Weekly release `date +%Y%m%d`"
+          
+      # there is no way to create a shared environment variable between jobs
+      # as such we'll use the needs.JOB_NAME.outputs functionality to read
+      # the upload_url output exposed by the create-release action
+      - uses: actions/create-release@v1
+        id: create-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          body: This is an automated weekly release.
+
+  linux:
+    runs-on: ubuntu-latest
+    needs: create-release
+    env:
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
+
+      - name: build
+        run: |
+          mkdir /home/runner/local
+          qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          make
+          make install
+
+      - name: tar.gz package
+        run: |
+          tar cfz linux.tar.gz /home/runner/local
+
+      - name: upload linux.tar.gz
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./linux.tar.gz
+          asset_name: linux-build.tar.gz
+          asset_content_type: application/gzip
+
+
+      # the AppImage bundler relies on fuse during packaging
+      - name: install AppImage system dependency
+        run: |
+          sudo apt update
+          sudo apt install fuse
+
+      - name: AppImages
+        run: |
+          mkdir -p /home/runner/local/share/applications /home/runner/local/share/icons/hicolor/256x256
+
+          cp dist/seamly2d.desktop /home/runner/local/share/applications/
+          cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamly2d.png
+
+          docker run --cap-add SYS_ADMIN --device /dev/fuse \
+            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
+            -v /home/runner/local:/app/usr \
+            --rm mhitza/linuxdeployqt:5.13.2
+
+          mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
+          cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamlyme.png
+
+          rm /home/runner/local/share/applications/seamly2d.desktop
+          cp dist/seamlyme.desktop /home/runner/local/share/applications
+
+          docker run --cap-add SYS_ADMIN --device /dev/fuse \
+            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
+            -v /home/runner/local:/app/usr \
+            --rm mhitza/linuxdeployqt:5.13.2
+
+          mv /home/runner/local/SeamlyMe*.AppImage SeamlyMe.AppImage
+
+      - name: upload Seamly2D.AppImage
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./Seamly2D.AppImage
+          asset_name: Seamly2D.AppImage
+          asset_content_type: application/octet-stream
+
+      - name: upload SeamlyMe.AppImage
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./SeamlyMe.AppImage
+          asset_name: SeamlyMe.AppImage
+          asset_content_type: application/octet-stream
+
+  macos:
+    runs-on: macos-latest
+    needs: create-release
+    env:
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
+
+      - name: build
+        run: |
+          qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          make
+
+      - name: build dmg packages
+        run: |
+          hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
+          hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
+
+      - name: upload Seamly2D.dmg
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./Seamly2D.dmg
+          asset_name: Seamly2D.dmg
+          asset_content_type: application/x-apple-diskimage
+
+      - name: upload SeamlyME.dmg
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./SeamlyME.dmg
+          asset_name: SeamlyME.dmg
+          asset_content_type: application/x-apple-diskimage
+
+  windows:
+    runs-on: windows-latest
+    needs: create-release
+    env:
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
+
+      - name: build
+        run: |
+          qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          nmake
+
+      - name: create & code sign installer
+        run: |
+          mkdir ..\windows-build
+          Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
+          windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
+          windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
+          copy .\dist\seamly2d-installer.nsi ..\windows-build\
+          copy .\dist\win\VC_redist.x86.exe ..\windows-build\
+
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+          echo "${{ secrets.PFX_BASE64 }}" > cert.pfx.base64
+          certutil -decode cert.pfx.base64 cert.pfx
+          & 'C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe' sign /f cert.pfx /p ${{ secrets.PFX_PASSWORD }}  /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v .\seamly2d-installer.exe
+
+      - name: upload seamly2d-installer
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ../windows-build/seamly2d-installer.exe
+          asset_name: seamly2d-installer.exe
+          asset_content_type: application/octet-stream

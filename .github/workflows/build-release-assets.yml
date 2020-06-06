@@ -1,48 +1,34 @@
-name: Build weekly release
+name: Build release assets
 
 on:
-  schedule:
-    - cron: '0 0 * * MON'
+  release:
+    types: [ published ]
+
+env:
+  UPLOAD_URL: ${{ github.event.release.upload_url }}
+
+  QT_SELECT: 5
+
+  # See https://wiki.qt.io/Qt_5.13_Release
+  # The project is currently incompatible with Qt-5.15/5.14.2
+  # When chaning the version information in this file be sure to change it in
+  # pull-request.yml, build-weekly-release as well
+  QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
+
 
 jobs:
-  create-release:
-    runs-on: ubuntu-latest
-    outputs:
-      upload_url: ${{ steps.create-release.outputs.upload_url }}
-
-    steps:
-      - run: |
-          echo "::set-env name=TAG_NAME::weekly-`date +%Y%m%d`"
-          echo "::set-env name=RELEASE_NAME::Weekly release `date +%Y%m%d`"
-          
-      - uses: actions/create-release@v1
-        id: create-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.RELEASE_NAME }}
-          body: This is an automated weekly release.
-
   linux:
     runs-on: ubuntu-latest
-    needs: create-release
-    env:
-      QT_SELECT: 5
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
-
     steps:
       - uses: actions/checkout@v2
-      - name: install build dependencies
-        run: |
-          sudo apt update
-          sudo apt install g++ make ccache qttools5-dev-tools libqt5xmlpatterns5-dev libqt5svg5-dev
-          sudo apt install fuse
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
 
       - name: build
         run: |
           mkdir /home/runner/local
-          qmake PREFIX=/home/runner/local Seamly2D.pro
+          qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           make
           make install
 
@@ -60,6 +46,13 @@ jobs:
           asset_name: linux-build.tar.gz
           asset_content_type: application/gzip
 
+
+      # the AppImage bundler relies on fuse during packaging
+      - name: install AppImage system dependency
+        run: |
+          sudo apt update
+          sudo apt install fuse
+
       - name: AppImages
         run: |
           mkdir -p /home/runner/local/share/applications /home/runner/local/share/icons/hicolor/256x256
@@ -70,7 +63,7 @@ jobs:
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
             --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
             -v /home/runner/local:/app/usr \
-            --rm mhitza/linuxdeployqt:9.5.9
+            --rm mhitza/linuxdeployqt:5.13.2
 
           mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
           cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamlyme.png
@@ -81,7 +74,7 @@ jobs:
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
             --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
             -v /home/runner/local:/app/usr \
-            --rm mhitza/linuxdeployqt:9.5.9
+            --rm mhitza/linuxdeployqt:5.13.2
 
           mv /home/runner/local/SeamlyMe*.AppImage SeamlyMe.AppImage
 
@@ -107,22 +100,19 @@ jobs:
 
   macos:
     runs-on: macos-latest
-    needs: create-release
-    env:
-      QT_SELECT: 5
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
       - uses: actions/checkout@v2
-      - name: install build dependencies
-        uses: jurplel/install-qt-action@v2
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
 
       - name: build
         run: |
-          qmake Seamly2D.pro
+          qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           make
 
-      - name: dmg packages
+      - name: build dmg packages
         run: |
           hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
           hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
@@ -149,20 +139,17 @@ jobs:
 
   windows:
     runs-on: windows-latest
-    needs: create-release
-    env:
-      QT_SELECT: 5
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
       - uses: actions/checkout@v2
       - uses: ilammy/msvc-dev-cmd@v1
-      - name: install build dependencies
-        uses: jurplel/install-qt-action@v2
+      - uses: jurplel/install-qt-action@v2
+        with:
+          version: ${{ env.QT_VERSION }}
 
       - name: build
         run: |
-          qmake.exe Seamly2D.pro
+          qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           nmake
 
       - name: create & code sign installer
@@ -172,6 +159,7 @@ jobs:
           windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
           windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
           copy .\dist\seamly2d-installer.nsi ..\windows-build\
+          copy .\dist\win\VC_redist.x86.exe ..\windows-build\
 
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
