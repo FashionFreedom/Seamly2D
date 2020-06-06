@@ -189,6 +189,7 @@ jobs:
           windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
           windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
           copy .\dist\seamly2d-installer.nsi ..\windows-build\
+          copy .\dist\win\VC_redist.x86.exe ..\windows-build\
 
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi

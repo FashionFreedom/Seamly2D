@@ -19,12 +19,14 @@ Page instfiles
 UninstPage uninstConfirm
 UninstPage instfiles
 
-
 Section "Seamly2D"
 
   SectionIn RO
   
   SetOutPath $INSTDIR
+
+  File "VC_redist.x86.exe"
+  ExecWait '"$INSTDIR\VC_redist.x86.exe"  /passive /norestart'
 
   ; relative to the location of this .nsi file, copy all the files/directories recursively
   File /r *
