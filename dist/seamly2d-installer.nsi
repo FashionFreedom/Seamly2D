@@ -26,7 +26,14 @@ Section "Seamly2D"
   SetOutPath $INSTDIR
 
   File "VC_redist.x86.exe"
-  ExecWait '"$INSTDIR\VC_redist.x86.exe"  /passive /norestart'
+  File "VC_redist.x64.exe"
+
+  !include "x64.nsh"
+  ${If} ${RunningX64}
+    ExecWait '"$INSTDIR\VC_redist.x64.exe"  /passive /norestart'
+  ${Else}
+    ExecWait '"$INSTDIR\VC_redist.x86.exe"  /passive /norestart'
+  ${EndIf}
 
   ; relative to the location of this .nsi file, copy all the files/directories recursively
   File /r *
