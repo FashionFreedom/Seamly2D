@@ -277,7 +277,6 @@ unix{
             label \
             libraries \
             seamlyme \
-            xpdf \
             icns_resources
     }
 }
