@@ -276,7 +276,7 @@ unix{
             multisize \
             label \
             libraries \
-            seamlyme \
+            seamlyme \ 
             icns_resources
     }
 }
