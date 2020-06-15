@@ -63,20 +63,10 @@ jobs:
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
             --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
             -v /home/runner/local:/app/usr \
+            -e EXTRA_BINARIES="seamlyme" \
             --rm mhitza/linuxdeployqt:5.13.2
 
           mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
-          cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamlyme.png
-
-          rm /home/runner/local/share/applications/seamly2d.desktop
-          cp dist/seamlyme.desktop /home/runner/local/share/applications
-
-          docker run --cap-add SYS_ADMIN --device /dev/fuse \
-            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-            -v /home/runner/local:/app/usr \
-            --rm mhitza/linuxdeployqt:5.13.2
-
-          mv /home/runner/local/SeamlyMe*.AppImage SeamlyMe.AppImage
 
       - name: upload Seamly2D.AppImage
         uses: actions/upload-release-asset@v1
@@ -86,16 +76,6 @@ jobs:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ./Seamly2D.AppImage
           asset_name: Seamly2D.AppImage
-          asset_content_type: application/octet-stream
-
-      - name: upload SeamlyMe.AppImage
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./SeamlyMe.AppImage
-          asset_name: SeamlyMe.AppImage
           asset_content_type: application/octet-stream
 
   macos:
