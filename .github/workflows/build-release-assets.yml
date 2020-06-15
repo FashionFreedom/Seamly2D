@@ -64,7 +64,7 @@ jobs:
             --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
             -v /home/runner/local:/app/usr \
             -e EXTRA_BINARIES="seamlyme" \
-            --rm mhitza/linuxdeployqt:5.13.2
+            --rm mhitza/linuxdeployqt:${{ env.QT_VERSION }}
 
           mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
 
