@@ -85,9 +85,10 @@ jobs:
           cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamly2d.png
 
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
-          --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-          -v /home/runner/local:/app/usr \
-          --rm lucaszanella/linuxdeployqt /bin/bash builder.sh "-executable=/app/usr/bin/seamlyme"
+            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
+            -v /home/runner/local:/app/usr \
+            -e EXTRA_BINARIES="seamlyme" \
+            --rm mhitza/linuxdeployqt:5.13.2
 
           mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
           cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamlyme.png
@@ -96,9 +97,9 @@ jobs:
           cp dist/seamlyme.desktop /home/runner/local/share/applications
 
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
-          --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-          -v /home/runner/local:/app/usr \
-          --rm lucaszanella/linuxdeployqt /bin/bash builder.sh
+            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
+            -v /home/runner/local:/app/usr \
+            --rm mhitza/linuxdeployqt:5.13.2
 
           mv /home/runner/local/SeamlyMe*.AppImage SeamlyMe.AppImage
 

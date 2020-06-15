@@ -62,8 +62,6 @@ jobs:
 
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
             --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-            -v /home/runner/local:/app/usr \
             -v /home/runner/local:/app/usr \
             -e EXTRA_BINARIES="seamlyme" \
             --rm mhitza/linuxdeployqt:5.13.2
@@ -76,8 +74,6 @@ jobs:
 
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
             --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-            -v /home/runner/local:/app/usr \
             -v /home/runner/local:/app/usr \
             --rm mhitza/linuxdeployqt:5.13.2
 
