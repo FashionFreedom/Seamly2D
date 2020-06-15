@@ -62,7 +62,7 @@ jobs:
 
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
           --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-          -v /home/user/local:/app/usr \
+          -v /home/runner/local:/app/usr \
           --rm lucaszanella/linuxdeployqt /bin/bash builder.sh "-executable=/app/usr/bin/seamlyme"
 
           mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
@@ -73,7 +73,7 @@ jobs:
 
           docker run --cap-add SYS_ADMIN --device /dev/fuse \
           --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-          -v /home/user/local:/app/usr \
+          -v /home/runner/local:/app/usr \
           --rm lucaszanella/linuxdeployqt /bin/bash builder.sh
 
           mv /home/runner/local/SeamlyMe*.AppImage SeamlyMe.AppImage
