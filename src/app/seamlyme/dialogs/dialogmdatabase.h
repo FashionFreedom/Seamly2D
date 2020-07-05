@@ -92,6 +92,24 @@ private:
     bool selectMode;
     QStringList list;
 
+    const QString groupAText;
+    const QString groupBText;
+    const QString groupCText;
+    const QString groupDText;
+    const QString groupEText;
+    const QString groupFText;
+    const QString groupGText;
+    const QString groupHText;
+    const QString groupIText;
+    const QString groupJText;
+    const QString groupKText;
+    const QString groupLText;
+    const QString groupMText;
+    const QString groupNText;
+    const QString groupOText;
+    const QString groupPText;
+    const QString groupQText;
+
     QTreeWidgetItem *groupA;
     QTreeWidgetItem *groupB;
     QTreeWidgetItem *groupC;
@@ -120,6 +138,7 @@ private:
 
     void ReadSettings();
     void WriteSettings();
+    void Filter(const QString term);
 
     void RetranslateGroup(QTreeWidgetItem *group, const QString &groupText, const QStringList &list);
     void RetranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name);

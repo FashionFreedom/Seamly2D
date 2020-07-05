@@ -59,6 +59,24 @@
 #include <QSvgRenderer>
 #include <QtSvg>
 
+const QString groupAText = "A. " + DialogMDataBase::tr("Direct Height", "Measurement section");
+const QString groupBText = "B. " + DialogMDataBase::tr("Direct Width", "Measurement section");
+const QString groupCText = "C. " + DialogMDataBase::tr("Indentation", "Measurement section");
+const QString groupDText = "D. " + DialogMDataBase::tr("Hand", "Measurement section");
+const QString groupEText = "E. " + DialogMDataBase::tr("Foot", "Measurement section");
+const QString groupFText = "F. " + DialogMDataBase::tr("Head", "Measurement section");
+const QString groupGText = "G. " + DialogMDataBase::tr("Circumference and Arc", "Measurement section");
+const QString groupHText = "H. " + DialogMDataBase::tr("Vertical", "Measurement section");
+const QString groupIText = "I. " + DialogMDataBase::tr("Horizontal", "Measurement section");
+const QString groupJText = "J. " + DialogMDataBase::tr("Bust", "Measurement section");
+const QString groupKText = "K. " + DialogMDataBase::tr("Balance", "Measurement section");
+const QString groupLText = "L. " + DialogMDataBase::tr("Arm", "Measurement section");
+const QString groupMText = "M. " + DialogMDataBase::tr("Leg", "Measurement section");
+const QString groupNText = "N. " + DialogMDataBase::tr("Crotch and Rise", "Measurement section");
+const QString groupOText = "O. " + DialogMDataBase::tr("Men & Tailoring", "Measurement section");
+const QString groupPText = "P. " + DialogMDataBase::tr("Historical & Specialty", "Measurement section");
+const QString groupQText = "Q. " + DialogMDataBase::tr("Patternmaking measurements", "Measurement section");
+
 //---------------------------------------------------------------------------------------------------------------------
 DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
     :QDialog(parent),
@@ -88,6 +106,7 @@ DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
 
     ui->treeWidget->installEventFilter(this);
 
+    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
     connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &DialogMDataBase::UpdateChecks);
     connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &DialogMDataBase::ShowDescription);
     connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &DialogMDataBase::TreeMenu);
@@ -125,6 +144,7 @@ DialogMDataBase::DialogMDataBase(QWidget *parent)
 
     ui->treeWidget->installEventFilter(this);
 
+    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
     connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &DialogMDataBase::ShowDescription);
     connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &DialogMDataBase::TreeMenu);
     connect(ui->treeWidget, &QTreeWidget::itemActivated, this, &DialogMDataBase::ShowDescription);
@@ -167,23 +187,23 @@ QStringList DialogMDataBase::GetNewNames() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMDataBase::RetranslateGroups()
 {
-    RetranslateGroup(groupA, "A. " + tr("Direct Height", "Measurement section"),              ListGroupA());
-    RetranslateGroup(groupB, "B. " + tr("Direct Width", "Measurement section"),               ListGroupB());
-    RetranslateGroup(groupC, "C. " + tr("Indentation", "Measurement section"),                ListGroupC());
-    RetranslateGroup(groupD, "D. " + tr("Hand", "Measurement section"),                       ListGroupD());
-    RetranslateGroup(groupE, "E. " + tr("Foot", "Measurement section"),                       ListGroupE());
-    RetranslateGroup(groupF, "F. " + tr("Head", "Measurement section"),                       ListGroupF());
-    RetranslateGroup(groupG, "G. " + tr("Circumference and Arc", "Measurement section"),      ListGroupG());
-    RetranslateGroup(groupH, "H. " + tr("Vertical", "Measurement section"),                   ListGroupH());
-    RetranslateGroup(groupI, "I. " + tr("Horizontal", "Measurement section"),                 ListGroupI());
-    RetranslateGroup(groupJ, "J. " + tr("Bust", "Measurement section"),                       ListGroupJ());
-    RetranslateGroup(groupK, "K. " + tr("Balance", "Measurement section"),                    ListGroupK());
-    RetranslateGroup(groupL, "L. " + tr("Arm", "Measurement section"),                        ListGroupL());
-    RetranslateGroup(groupM, "M. " + tr("Leg", "Measurement section"),                        ListGroupM());
-    RetranslateGroup(groupN, "N. " + tr("Crotch and Rise", "Measurement section"),            ListGroupN());
-    RetranslateGroup(groupO, "O. " + tr("Men & Tailoring", "Measurement section"),            ListGroupO());
-    RetranslateGroup(groupP, "P. " + tr("Historical & Specialty", "Measurement section"),     ListGroupP());
-    RetranslateGroup(groupQ, "Q. " + tr("Patternmaking measurements", "Measurement section"), ListGroupQ());
+    RetranslateGroup(groupA, groupAText, ListGroupA());
+    RetranslateGroup(groupB, groupBText, ListGroupB());
+    RetranslateGroup(groupC, groupCText, ListGroupC());
+    RetranslateGroup(groupD, groupDText, ListGroupD());
+    RetranslateGroup(groupE, groupEText, ListGroupE());
+    RetranslateGroup(groupF, groupFText, ListGroupF());
+    RetranslateGroup(groupG, groupGText, ListGroupG());
+    RetranslateGroup(groupH, groupHText, ListGroupH());
+    RetranslateGroup(groupI, groupIText, ListGroupI());
+    RetranslateGroup(groupJ, groupJText, ListGroupJ());
+    RetranslateGroup(groupK, groupKText, ListGroupK());
+    RetranslateGroup(groupL, groupLText, ListGroupL());
+    RetranslateGroup(groupM, groupMText, ListGroupM());
+    RetranslateGroup(groupN, groupNText, ListGroupN());
+    RetranslateGroup(groupO, groupOText, ListGroupO());
+    RetranslateGroup(groupP, groupPText, ListGroupP());
+    RetranslateGroup(groupQ, groupQText, ListGroupQ());
 
     ShowDescription(ui->treeWidget->currentItem(), 0);
 }
@@ -425,91 +445,187 @@ void DialogMDataBase::Recheck()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMDataBase::InitDataBase(const QStringList &list)
 {
-    InitGroup(&groupA, "A. " + tr("Direct Height", "Measurement section"),              ListGroupA(), list);
-    InitGroup(&groupB, "B. " + tr("Direct Width", "Measurement section"),               ListGroupB(), list);
-    InitGroup(&groupC, "C. " + tr("Indentation", "Measurement section"),                ListGroupC(), list);
-    InitGroup(&groupD, "D. " + tr("Hand", "Measurement section"),                       ListGroupD(), list);
-    InitGroup(&groupE, "E. " + tr("Foot", "Measurement section"),                       ListGroupE(), list);
-    InitGroup(&groupF, "F. " + tr("Head", "Measurement section"),                       ListGroupF(), list);
-    InitGroup(&groupG, "G. " + tr("Circumference and Arc", "Measurement section"),      ListGroupG(), list);
-    InitGroup(&groupH, "H. " + tr("Vertical", "Measurement section"),                   ListGroupH(), list);
-    InitGroup(&groupI, "I. " + tr("Horizontal", "Measurement section"),                 ListGroupI(), list);
-    InitGroup(&groupJ, "J. " + tr("Bust", "Measurement section"),                       ListGroupJ(), list);
-    InitGroup(&groupK, "K. " + tr("Balance", "Measurement section"),                    ListGroupK(), list);
-    InitGroup(&groupL, "L. " + tr("Arm", "Measurement section"),                        ListGroupL(), list);
-    InitGroup(&groupM, "M. " + tr("Leg", "Measurement section"),                        ListGroupM(), list);
-    InitGroup(&groupN, "N. " + tr("Crotch and Rise", "Measurement section"),            ListGroupN(), list);
-    InitGroup(&groupO, "O. " + tr("Men & Tailoring", "Measurement section"),            ListGroupO(), list);
-    InitGroup(&groupP, "P. " + tr("Historical & Specialty", "Measurement section"),     ListGroupP(), list);
-    InitGroup(&groupQ, "Q. " + tr("Patternmaking measurements", "Measurement section"), ListGroupQ(), list);
-}
-
+    InitGroup(&groupA, groupAText, ListGroupA(), list);
+    InitGroup(&groupB, groupBText, ListGroupB(), list);
+    InitGroup(&groupC, groupCText, ListGroupC(), list);
+    InitGroup(&groupD, groupDText, ListGroupD(), list);
+    InitGroup(&groupE, groupEText, ListGroupE(), list);
+    InitGroup(&groupF, groupFText, ListGroupF(), list);
+    InitGroup(&groupG, groupGText, ListGroupG(), list);
+    InitGroup(&groupH, groupHText, ListGroupH(), list);
+    InitGroup(&groupI, groupIText, ListGroupI(), list);
+    InitGroup(&groupJ, groupJText, ListGroupJ(), list);
+    InitGroup(&groupK, groupKText, ListGroupK(), list);
+    InitGroup(&groupL, groupLText, ListGroupL(), list);
+    InitGroup(&groupM, groupMText, ListGroupM(), list);
+    InitGroup(&groupN, groupNText, ListGroupN(), list);
+    InitGroup(&groupO, groupOText, ListGroupO(), list);
+    InitGroup(&groupP, groupPText, ListGroupP(), list);
+    InitGroup(&groupQ, groupQText, ListGroupQ(), list);
+}                                  
+                                   
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMDataBase::InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &mList,
                                 const QStringList &list)
-{
-    *group = AddGroup(groupName);
+{                                  
+    *group = AddGroup(groupName);  
     for (int i=0; i < mList.size(); ++i)
-    {
+    {                              
         AddMeasurement(*group, mList.at(i), list);
-    }
-}
-
+    }                              
+}                                  
+                                   
 //---------------------------------------------------------------------------------------------------------------------
 QTreeWidgetItem *DialogMDataBase::AddGroup(const QString &text)
-{
+{                                  
     QTreeWidgetItem *group = new QTreeWidgetItem(ui->treeWidget);
-    group->setText(0, text);
-    group->setToolTip(0, text);
-    group->setExpanded(true);
-    if (selectMode)
-    {
+    group->setText(0, text);       
+    group->setToolTip(0, text);    
+    group->setExpanded(true);      
+    if (selectMode)                
+    {                              
         group->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsEnabled);
         group->setCheckState(0, Qt::Unchecked);
         group->setBackground(0, QBrush(Qt::lightGray));
-    }
-    return group;
-}
-
+    }                              
+    return group;                  
+}                                  
+                                   
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name, const QStringList &list)
-{
-    SCASSERT(group != nullptr)
-
+{                                  
+    SCASSERT(group != nullptr)     
+                                   
     QTreeWidgetItem *m = new QTreeWidgetItem(group);
-
-    if (selectMode)
-    {
-        if (list.contains(name))
-        {
+                                   
+    if (selectMode)                
+    {                              
+        if (list.contains(name))   
+        {                          
             m->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
             m->setCheckState(0, Qt::Checked);
             m->setBackground(0, QBrush(Qt::yellow));
-        }
-        else
-        {
+        }                          
+        else                       
+        {                          
             m->setCheckState(0, Qt::Unchecked);
-        }
-
-        UpdateChecks(m, 0);
-    }
-
+        }                          
+                                   
+        UpdateChecks(m, 0);        
+    }                              
+                                   
     const QString text = qApp->TrVars()->MNumber(name) + ". " + qApp->TrVars()->MToUser(name);
-    m->setText(0, text);
-    m->setToolTip(0, text);
+    m->setText(0, text);           
+    m->setToolTip(0, text);        
     m->setData(0, Qt::UserRole, name);
-}
-
+}                                  
+                                   
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMDataBase::ReadSettings()
-{
+{                                  
     restoreGeometry(qApp->SeamlyMeSettings()->GetDataBaseGeometry());
-}
-
+}                                  
+                                   
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMDataBase::WriteSettings()
-{
+{                                  
     qApp->SeamlyMeSettings()->SetDataBaseGeometry(saveGeometry());
+}                                  
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogMDataBase::Filter(const QString term)
+{
+
+    if (term.isEmpty())
+    {
+        InitDataBase(list);
+        return;
+    }
+
+    if (ListGroupA().filter(term).count() > 0)
+    {
+        InitGroup(&groupA, groupAText, ListGroupA().filter(term), list);
+    }
+
+    if (ListGroupB().filter(term).count() > 0)
+    {
+        InitGroup(&groupB, groupBText, ListGroupB().filter(term), list);
+    }
+
+    if (ListGroupC().filter(term).count() > 0)
+    {
+        InitGroup(&groupC, groupCText, ListGroupC().filter(term), list);
+    }
+
+    if (ListGroupD().filter(term).count() > 0)
+    {
+        InitGroup(&groupD, groupDText, ListGroupD().filter(term), list);
+    }
+
+    if (ListGroupE().filter(term).count() > 0)
+    {
+        InitGroup(&groupE, groupEText, ListGroupE().filter(term), list);
+    }
+
+    if (ListGroupF().filter(term).count() > 0)
+    {
+        InitGroup(&groupF, groupFText, ListGroupF().filter(term), list);
+    }
+
+    if (ListGroupG().filter(term).count() > 0)
+    {
+        InitGroup(&groupG, groupGText, ListGroupG().filter(term), list);
+    }
+
+    if (ListGroupH().filter(term).count() > 0)
+    {
+        InitGroup(&groupH, groupHText, ListGroupH().filter(term), list);
+    }
+
+    if (ListGroupI().filter(term).count() > 0)
+    {
+        InitGroup(&groupI, groupIText, ListGroupI().filter(term), list);
+    }
+
+    if (ListGroupJ().filter(term).count() > 0)
+    {
+        InitGroup(&groupJ, groupJText, ListGroupJ().filter(term), list);
+    }
+
+    if (ListGroupK().filter(term).count() > 0)
+    {
+        InitGroup(&groupK, groupKText, ListGroupK().filter(term), list);
+    }
+
+    if (ListGroupL().filter(term).count() > 0)
+    {
+        InitGroup(&groupL, groupLText, ListGroupL().filter(term), list);
+    }
+
+    if (ListGroupM().filter(term).count() > 0)
+    {
+        InitGroup(&groupM, groupMText, ListGroupM().filter(term), list);
+    }
+
+    if (ListGroupN().filter(term).count() > 0)
+    {
+        InitGroup(&groupN, groupNText, ListGroupN().filter(term), list);
+    }
+
+    if (ListGroupO().filter(term).count() > 0)
+    {
+        InitGroup(&groupO, groupOText, ListGroupO().filter(term), list);
+    }
+
+    if (ListGroupP().filter(term).count() > 0)
+    {
+        InitGroup(&groupP, groupPText, ListGroupP().filter(term), list);
+    }
+
+    if (ListGroupQ().filter(term).count() > 0)
+    {
+        InitGroup(&groupQ, groupQText, ListGroupQ().filter(term), list);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
