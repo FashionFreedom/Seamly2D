@@ -7,7 +7,7 @@ import fnmatch
 import sys
 import getopt
 
-# ./macfixqtdylibrpath.py ./Seamly2D.app /Users/dismine/Qt5.7.0/5.7/clang_64/bin/qmake
+# ./macfixqtdylibrpath.py ./Seamly2D.app /Users/dismine/Qt5.12.0/5.12/clang_64/bin/qmake
 def usage():
   print "Usage: %s <path_to_bundle_root_directory> [qmake_path]" % os.path.basename(sys.argv[0])
 
@@ -38,11 +38,11 @@ def findQtLibraries(filter):
   wholefiles = []
   for root, subdirs, filenames in os.walk('.'):
     for filename in filenames:
-      wholefiles.append(os.path.join(root, filename))  
+      wholefiles.append(os.path.join(root, filename))
 
   filtered = []
   for filtered_file in fnmatch.filter(wholefiles, filter):
-    filtered.append(filtered_file)  
+    filtered.append(filtered_file)
   return filtered
 
 def which(program):
@@ -110,7 +110,7 @@ def main():
   print "qmake path: " + qmake_bin
 
   QT_INSTALL_LIBS = readQmakeVar(qmake_bin, 'QT_INSTALL_LIBS')
-  print "Path to Qt libraries: " + QT_INSTALL_LIBS 
+  print "Path to Qt libraries: " + QT_INSTALL_LIBS
 
   fixFrameworks(QT_INSTALL_LIBS)
   fixDylibs(QT_INSTALL_LIBS)

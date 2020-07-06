@@ -51,8 +51,8 @@ Building Seamly2D
 ================
 
 Basic Prerequisites:
-   * Qt 5.7.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
-   * QtCreator 4.3.1 or later (to build code)
+   * Qt 5.12.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
+   * QtCreator 4.11.2 or later (to build code)
    * QtChooser (to select or update Qt version)
    * Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
    * Compiler - gcc from https://gcc.gnu.org, clang from https://clang.llvm.org/, or mingw from https://sourceforge.net/projects/mingw/
