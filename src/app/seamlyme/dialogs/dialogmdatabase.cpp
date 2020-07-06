@@ -59,30 +59,13 @@
 #include <QSvgRenderer>
 #include <QtSvg>
 
-const QString groupAText = "A. " + DialogMDataBase::tr("Direct Height", "Measurement section");
-const QString groupBText = "B. " + DialogMDataBase::tr("Direct Width", "Measurement section");
-const QString groupCText = "C. " + DialogMDataBase::tr("Indentation", "Measurement section");
-const QString groupDText = "D. " + DialogMDataBase::tr("Hand", "Measurement section");
-const QString groupEText = "E. " + DialogMDataBase::tr("Foot", "Measurement section");
-const QString groupFText = "F. " + DialogMDataBase::tr("Head", "Measurement section");
-const QString groupGText = "G. " + DialogMDataBase::tr("Circumference and Arc", "Measurement section");
-const QString groupHText = "H. " + DialogMDataBase::tr("Vertical", "Measurement section");
-const QString groupIText = "I. " + DialogMDataBase::tr("Horizontal", "Measurement section");
-const QString groupJText = "J. " + DialogMDataBase::tr("Bust", "Measurement section");
-const QString groupKText = "K. " + DialogMDataBase::tr("Balance", "Measurement section");
-const QString groupLText = "L. " + DialogMDataBase::tr("Arm", "Measurement section");
-const QString groupMText = "M. " + DialogMDataBase::tr("Leg", "Measurement section");
-const QString groupNText = "N. " + DialogMDataBase::tr("Crotch and Rise", "Measurement section");
-const QString groupOText = "O. " + DialogMDataBase::tr("Men & Tailoring", "Measurement section");
-const QString groupPText = "P. " + DialogMDataBase::tr("Historical & Specialty", "Measurement section");
-const QString groupQText = "Q. " + DialogMDataBase::tr("Patternmaking measurements", "Measurement section");
-
 //---------------------------------------------------------------------------------------------------------------------
 DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
     :QDialog(parent),
       ui(new Ui::DialogMDataBase),
       selectMode(true),
       list(list),
+      newList(),
       groupA(nullptr),
       groupB(nullptr),
       groupC(nullptr),
@@ -102,7 +85,7 @@ DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
       groupQ(nullptr)
 {
     ui->setupUi(this);
-    InitDataBase(list);
+    InitDataBase();
 
     ui->treeWidget->installEventFilter(this);
 
@@ -120,6 +103,7 @@ DialogMDataBase::DialogMDataBase(QWidget *parent)
       ui(new Ui::DialogMDataBase),
       selectMode(false),
       list(),
+      newList(),
       groupA(nullptr),
       groupB(nullptr),
       groupC(nullptr),
@@ -137,7 +121,6 @@ DialogMDataBase::DialogMDataBase(QWidget *parent)
       groupO(nullptr),
       groupP(nullptr),
       groupQ(nullptr)
-
 {
     ui->setupUi(this);
     InitDataBase();
@@ -162,26 +145,7 @@ DialogMDataBase::~DialogMDataBase()
 //---------------------------------------------------------------------------------------------------------------------
 QStringList DialogMDataBase::GetNewNames() const
 {
-    if (selectMode)
-    {
-        QStringList newNames;
-        QTreeWidgetItemIterator it(ui->treeWidget,
-                                   QTreeWidgetItemIterator::NoChildren | QTreeWidgetItemIterator::Checked );
-        while (*it)
-        {
-            const QString name = (*it)->data(0, Qt::UserRole).toString();
-            if (not list.contains(name))
-            {
-                newNames.append(name);
-            }
-            ++it;
-        }
-        return newNames;
-    }
-    else
-    {
-        return QStringList();
-    }
+    return newList;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -321,6 +285,22 @@ void DialogMDataBase::UpdateChecks(QTreeWidgetItem *item, int column)
     }
     else if (item->childCount() == 0 || column == -1)
     {
+
+        QString itemName = item->data(0, Qt::UserRole).toString();
+        Qt::CheckState checkState = item->checkState(0);
+
+        if (checkState == Qt::CheckState::Unchecked)
+        {
+            newList.removeOne(itemName);
+        }
+        else if (checkState == Qt::CheckState::Checked &&
+                 not list.contains(itemName) &&
+                 not newList.contains(itemName) &&
+                 not itemName.isEmpty())
+        {
+            newList.append(itemName);
+        }
+
         QTreeWidgetItem *parent = item->parent();
         if (parent == nullptr)
         {
@@ -443,44 +423,44 @@ void DialogMDataBase::Recheck()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::InitDataBase(const QStringList &list)
+void DialogMDataBase::InitDataBase(const QStringList &newList)
 {
-    InitGroup(&groupA, groupAText, ListGroupA(), list);
-    InitGroup(&groupB, groupBText, ListGroupB(), list);
-    InitGroup(&groupC, groupCText, ListGroupC(), list);
-    InitGroup(&groupD, groupDText, ListGroupD(), list);
-    InitGroup(&groupE, groupEText, ListGroupE(), list);
-    InitGroup(&groupF, groupFText, ListGroupF(), list);
-    InitGroup(&groupG, groupGText, ListGroupG(), list);
-    InitGroup(&groupH, groupHText, ListGroupH(), list);
-    InitGroup(&groupI, groupIText, ListGroupI(), list);
-    InitGroup(&groupJ, groupJText, ListGroupJ(), list);
-    InitGroup(&groupK, groupKText, ListGroupK(), list);
-    InitGroup(&groupL, groupLText, ListGroupL(), list);
-    InitGroup(&groupM, groupMText, ListGroupM(), list);
-    InitGroup(&groupN, groupNText, ListGroupN(), list);
-    InitGroup(&groupO, groupOText, ListGroupO(), list);
-    InitGroup(&groupP, groupPText, ListGroupP(), list);
-    InitGroup(&groupQ, groupQText, ListGroupQ(), list);
+    InitGroup(&groupA, groupAText, ListGroupA(), newList);
+    InitGroup(&groupB, groupBText, ListGroupB(), newList);
+    InitGroup(&groupC, groupCText, ListGroupC(), newList);
+    InitGroup(&groupD, groupDText, ListGroupD(), newList);
+    InitGroup(&groupE, groupEText, ListGroupE(), newList);
+    InitGroup(&groupF, groupFText, ListGroupF(), newList);
+    InitGroup(&groupG, groupGText, ListGroupG(), newList);
+    InitGroup(&groupH, groupHText, ListGroupH(), newList);
+    InitGroup(&groupI, groupIText, ListGroupI(), newList);
+    InitGroup(&groupJ, groupJText, ListGroupJ(), newList);
+    InitGroup(&groupK, groupKText, ListGroupK(), newList);
+    InitGroup(&groupL, groupLText, ListGroupL(), newList);
+    InitGroup(&groupM, groupMText, ListGroupM(), newList);
+    InitGroup(&groupN, groupNText, ListGroupN(), newList);
+    InitGroup(&groupO, groupOText, ListGroupO(), newList);
+    InitGroup(&groupP, groupPText, ListGroupP(), newList);
+    InitGroup(&groupQ, groupQText, ListGroupQ(), newList);
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &mList,
-                                const QStringList &list)
+void DialogMDataBase::InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
+                                const QStringList &newList)
 {                                  
     *group = AddGroup(groupName);  
-    for (int i=0; i < mList.size(); ++i)
+    for (int i=0; i < groupList.size(); ++i)
     {                              
-        AddMeasurement(*group, mList.at(i), list);
+        AddMeasurement(*group, groupList.at(i), newList);
     }                              
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-QTreeWidgetItem *DialogMDataBase::AddGroup(const QString &text)
+QTreeWidgetItem *DialogMDataBase::AddGroup(const QString &groupName)
 {                                  
     QTreeWidgetItem *group = new QTreeWidgetItem(ui->treeWidget);
-    group->setText(0, text);       
-    group->setToolTip(0, text);    
+    group->setText(0, groupName);
+    group->setToolTip(0, groupName);
     group->setExpanded(true);      
     if (selectMode)                
     {                              
@@ -492,7 +472,7 @@ QTreeWidgetItem *DialogMDataBase::AddGroup(const QString &text)
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name, const QStringList &list)
+void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name, const QStringList &newList)
 {                                  
     SCASSERT(group != nullptr)     
                                    
@@ -505,11 +485,15 @@ void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name
             m->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
             m->setCheckState(0, Qt::Checked);
             m->setBackground(0, QBrush(Qt::yellow));
-        }                          
-        else                       
+        }
+        else if (newList.contains(name))
+        {
+            m->setCheckState(0, Qt::Checked);
+        }
+        else
         {                          
             m->setCheckState(0, Qt::Unchecked);
-        }                          
+        }
                                    
         UpdateChecks(m, 0);        
     }                              
@@ -536,96 +520,65 @@ void DialogMDataBase::WriteSettings()
 void DialogMDataBase::Filter(const QString term)
 {
 
+    delete groupA;
+    delete groupB;
+    delete groupC;
+    delete groupD;
+    delete groupE;
+    delete groupF;
+    delete groupG;
+    delete groupH;
+    delete groupI;
+    delete groupJ;
+    delete groupK;
+    delete groupL;
+    delete groupM;
+    delete groupN;
+    delete groupO;
+    delete groupP;
+    delete groupQ;
+
+    groupA = nullptr;
+    groupB = nullptr;
+    groupC = nullptr;
+    groupD = nullptr;
+    groupE = nullptr;
+    groupF = nullptr;
+    groupG = nullptr;
+    groupH = nullptr;
+    groupI = nullptr;
+    groupJ = nullptr;
+    groupK = nullptr;
+    groupL = nullptr;
+    groupM = nullptr;
+    groupN = nullptr;
+    groupO = nullptr;
+    groupP = nullptr;
+    groupQ = nullptr;
+
     if (term.isEmpty())
     {
-        InitDataBase(list);
+        InitDataBase(newList);
         return;
     }
 
-    if (ListGroupA().filter(term).count() > 0)
-    {
-        InitGroup(&groupA, groupAText, ListGroupA().filter(term), list);
-    }
-
-    if (ListGroupB().filter(term).count() > 0)
-    {
-        InitGroup(&groupB, groupBText, ListGroupB().filter(term), list);
-    }
-
-    if (ListGroupC().filter(term).count() > 0)
-    {
-        InitGroup(&groupC, groupCText, ListGroupC().filter(term), list);
-    }
-
-    if (ListGroupD().filter(term).count() > 0)
-    {
-        InitGroup(&groupD, groupDText, ListGroupD().filter(term), list);
-    }
-
-    if (ListGroupE().filter(term).count() > 0)
-    {
-        InitGroup(&groupE, groupEText, ListGroupE().filter(term), list);
-    }
-
-    if (ListGroupF().filter(term).count() > 0)
-    {
-        InitGroup(&groupF, groupFText, ListGroupF().filter(term), list);
-    }
-
-    if (ListGroupG().filter(term).count() > 0)
-    {
-        InitGroup(&groupG, groupGText, ListGroupG().filter(term), list);
-    }
-
-    if (ListGroupH().filter(term).count() > 0)
-    {
-        InitGroup(&groupH, groupHText, ListGroupH().filter(term), list);
-    }
-
-    if (ListGroupI().filter(term).count() > 0)
-    {
-        InitGroup(&groupI, groupIText, ListGroupI().filter(term), list);
-    }
-
-    if (ListGroupJ().filter(term).count() > 0)
-    {
-        InitGroup(&groupJ, groupJText, ListGroupJ().filter(term), list);
-    }
-
-    if (ListGroupK().filter(term).count() > 0)
-    {
-        InitGroup(&groupK, groupKText, ListGroupK().filter(term), list);
-    }
-
-    if (ListGroupL().filter(term).count() > 0)
-    {
-        InitGroup(&groupL, groupLText, ListGroupL().filter(term), list);
-    }
-
-    if (ListGroupM().filter(term).count() > 0)
-    {
-        InitGroup(&groupM, groupMText, ListGroupM().filter(term), list);
-    }
-
-    if (ListGroupN().filter(term).count() > 0)
-    {
-        InitGroup(&groupN, groupNText, ListGroupN().filter(term), list);
-    }
-
-    if (ListGroupO().filter(term).count() > 0)
-    {
-        InitGroup(&groupO, groupOText, ListGroupO().filter(term), list);
-    }
-
-    if (ListGroupP().filter(term).count() > 0)
-    {
-        InitGroup(&groupP, groupPText, ListGroupP().filter(term), list);
-    }
-
-    if (ListGroupQ().filter(term).count() > 0)
-    {
-        InitGroup(&groupQ, groupQText, ListGroupQ().filter(term), list);
-    }
+    if (ListGroupA().filter(term).count() > 0) { InitGroup(&groupA, groupAText, ListGroupA().filter(term), newList); }
+    if (ListGroupB().filter(term).count() > 0) { InitGroup(&groupB, groupBText, ListGroupB().filter(term), newList); }
+    if (ListGroupC().filter(term).count() > 0) { InitGroup(&groupC, groupCText, ListGroupC().filter(term), newList); }
+    if (ListGroupD().filter(term).count() > 0) { InitGroup(&groupD, groupDText, ListGroupD().filter(term), newList); }
+    if (ListGroupE().filter(term).count() > 0) { InitGroup(&groupE, groupEText, ListGroupE().filter(term), newList); }
+    if (ListGroupF().filter(term).count() > 0) { InitGroup(&groupF, groupFText, ListGroupF().filter(term), newList); }
+    if (ListGroupG().filter(term).count() > 0) { InitGroup(&groupG, groupGText, ListGroupG().filter(term), newList); }
+    if (ListGroupH().filter(term).count() > 0) { InitGroup(&groupH, groupHText, ListGroupH().filter(term), newList); }
+    if (ListGroupI().filter(term).count() > 0) { InitGroup(&groupI, groupIText, ListGroupI().filter(term), newList); }
+    if (ListGroupJ().filter(term).count() > 0) { InitGroup(&groupJ, groupJText, ListGroupJ().filter(term), newList); }
+    if (ListGroupK().filter(term).count() > 0) { InitGroup(&groupK, groupKText, ListGroupK().filter(term), newList); }
+    if (ListGroupL().filter(term).count() > 0) { InitGroup(&groupL, groupLText, ListGroupL().filter(term), newList); }
+    if (ListGroupM().filter(term).count() > 0) { InitGroup(&groupM, groupMText, ListGroupM().filter(term), newList); }
+    if (ListGroupN().filter(term).count() > 0) { InitGroup(&groupN, groupNText, ListGroupN().filter(term), newList); }
+    if (ListGroupO().filter(term).count() > 0) { InitGroup(&groupO, groupOText, ListGroupO().filter(term), newList); }
+    if (ListGroupP().filter(term).count() > 0) { InitGroup(&groupP, groupPText, ListGroupP().filter(term), newList); }
+    if (ListGroupQ().filter(term).count() > 0) { InitGroup(&groupQ, groupQText, ListGroupQ().filter(term), newList); }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

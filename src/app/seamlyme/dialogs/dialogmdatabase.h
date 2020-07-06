@@ -91,24 +91,25 @@ private:
     Ui::DialogMDataBase *ui;
     bool selectMode;
     QStringList list;
+    QStringList newList;
 
-    const QString groupAText;
-    const QString groupBText;
-    const QString groupCText;
-    const QString groupDText;
-    const QString groupEText;
-    const QString groupFText;
-    const QString groupGText;
-    const QString groupHText;
-    const QString groupIText;
-    const QString groupJText;
-    const QString groupKText;
-    const QString groupLText;
-    const QString groupMText;
-    const QString groupNText;
-    const QString groupOText;
-    const QString groupPText;
-    const QString groupQText;
+    const QString groupAText = "A. " + DialogMDataBase::tr("Direct Height", "Measurement section");
+    const QString groupBText = "B. " + DialogMDataBase::tr("Direct Width", "Measurement section");
+    const QString groupCText = "C. " + DialogMDataBase::tr("Indentation", "Measurement section");
+    const QString groupDText = "D. " + DialogMDataBase::tr("Hand", "Measurement section");
+    const QString groupEText = "E. " + DialogMDataBase::tr("Foot", "Measurement section");
+    const QString groupFText = "F. " + DialogMDataBase::tr("Head", "Measurement section");
+    const QString groupGText = "G. " + DialogMDataBase::tr("Circumference and Arc", "Measurement section");
+    const QString groupHText = "H. " + DialogMDataBase::tr("Vertical", "Measurement section");
+    const QString groupIText = "I. " + DialogMDataBase::tr("Horizontal", "Measurement section");
+    const QString groupJText = "J. " + DialogMDataBase::tr("Bust", "Measurement section");
+    const QString groupKText = "K. " + DialogMDataBase::tr("Balance", "Measurement section");
+    const QString groupLText = "L. " + DialogMDataBase::tr("Arm", "Measurement section");
+    const QString groupMText = "M. " + DialogMDataBase::tr("Leg", "Measurement section");
+    const QString groupNText = "N. " + DialogMDataBase::tr("Crotch and Rise", "Measurement section");
+    const QString groupOText = "O. " + DialogMDataBase::tr("Men & Tailoring", "Measurement section");
+    const QString groupPText = "P. " + DialogMDataBase::tr("Historical & Specialty", "Measurement section");
+    const QString groupQText = "Q. " + DialogMDataBase::tr("Patternmaking measurements", "Measurement section");
 
     QTreeWidgetItem *groupA;
     QTreeWidgetItem *groupB;
@@ -129,12 +130,12 @@ private:
     QTreeWidgetItem *groupQ;
 
     void InitDataBase(const QStringList &list = QStringList());
-    void InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &mList,
-                   const QStringList &list = QStringList());
+    void InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
+                   const QStringList &newList = QStringList());
 
     Q_REQUIRED_RESULT QTreeWidgetItem *AddGroup(const QString &text);
 
-    void AddMeasurement(QTreeWidgetItem *group, const QString &name, const QStringList &list);
+    void AddMeasurement(QTreeWidgetItem *group, const QString &groupName, const QStringList &newList);
 
     void ReadSettings();
     void WriteSettings();
