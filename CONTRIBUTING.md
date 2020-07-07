@@ -46,7 +46,7 @@ git commit -m "_your commit message_"
 git commit push issue-#_n_    
 * Add your changes to the file **ChangeLog.txt** 
 
-### GitFlow 4 - Test * After merge, ayour issue branch (DON'T SKIP THIS STEP)
+### GitFlow 4 - Test your issue branch (DON'T SKIP THIS STEP)
  
 * Periodically build your issue branch. You'll need Qt 5.12.x and Qt Creator 4.3.x with MSVC 2017 64bit or MinGW 7.3.0 64bit in your Qt project Kit.
 * Run it on your local PC. Try to find how to make your changes crash.
