@@ -18,6 +18,9 @@ The permanent named branches on this repo are:
 * **hotfix-x.x.x** - Create from **develop** and **master**. Contains a quick emergency fix for big bugs. Merge to **master** (or **release**) and **develop**.
 
 ## Git Flow summary 
+_These steps use Git command line_ 
+_It's easier if you use Github Desktop https://desktop.github.com/ for Windows & Mac_
+
 ### Git Flow 1 - Clone the repo
 
 * Clone our repo to your local PC.
