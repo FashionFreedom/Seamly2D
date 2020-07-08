@@ -18,6 +18,9 @@ The permanent named branches on this repo are:
 * **hotfix-x.x.x** - Create from **develop** and **master**. Contains a quick emergency fix for big bugs. Merge to **master** (or **release**) and **develop**.
 
 ## Git Flow summary 
+_These steps use Git command line_ 
+_It's easier if you use Github Desktop https://desktop.github.com/ for Windows & Mac_
+
 ### Git Flow 1 - Clone the repo
 
 * Clone our repo to your local PC.
@@ -40,16 +43,18 @@ git checkout issue-#_n_
 * Commit your changes to issue-#_n_    
 >git commit -a  
 git commit -m "_your commit message_"  
-git commit push issue-#_n_     
+git commit push issue-#_n_    
+* Add your changes to the file **ChangeLog.txt** 
 
 ### GitFlow 4 - Test your issue branch (DON'T SKIP THIS STEP)
-
-* Periodically build your issue branch. Use QT or VisualStudio for Windows and Mac, or create an AppImage for Linux.
+ 
+* Periodically build your issue branch. You'll need Qt 5.12.x and Qt Creator 4.3.x with MSVC 2017 64bit or MinGW 7.3.0 64bit in your Qt project Kit.
 * Run it on your local PC. Try to find how to make your changes crash.
+* Test your final commit before creating a pull request.
 
 ### GitFLow 5 -Push your issue branch up to the main repo
 
-* When you confirm that the issue was fixed (at least for you! :D), ask our repo admins to give you write permissions.
+* When you confirm that the issue was fixed (at least for you! :D), ask our repo admins to give you write permissions. Send email to mailto:hello@seamly.net or 
 * Push your branch up to our main repo. 
 >git push -u origin issue-#_n_  
 
@@ -58,12 +63,11 @@ git commit push issue-#_n_
 * On the Code page in the main repo, next to **Branch:develop** in upper left above file listing, select the **New Pull Request** button. If **Branch:master** is displayed use the dropdown list to select the **develop** branch.  
 * The Pull Request page will appear. From the **Compare:** dropdown list, select your issue branch.  
 * In the comments box, add the text "Fix issue #_n_" (eg "Fix issue #155")  
-* On the next line add the text "Tested on _operatingsystem_ _version_ _buswidth_". (eg "Tested on Windows 10 64-bit")  
-* Click the **Create Pull Request** button. 
+* On the next line add the text "Tested on _operatingsystem_ _version_ _64-bit_". (eg "Tested on Windows 10 64-bit"). We don't support 32-bit platforms.  
+* Click the **Create Pull Request** button
 * Link your Pull Request to the fixed issue with the **Linked Issues** option in the right hand column.  
 * Other team members will test it on their systems and approve the Pull Request.  
-* The maintainer will merge your issue branch into **develop**.  
-* After merge, add your changes to file **ChangeLog.txt**.    
+* The maintainer will merge your issue branch into **develop**.     
 
 ### GitFlow 7 - Update your Pull Request 
 
