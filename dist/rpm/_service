@@ -1,7 +1,7 @@
-<services>                   
+<services>
   <service name="tar_scm">
-  	<param name="url">https://github.com/dismine/Seamly2D.git</param>
-  	<param name="versionprefix">0.5.999</param>
+  	<param name="url">https://github.com/fashionfreedom/Seamly2D.git</param>
+  	<param name="versionprefix">0.6.0</param>
     <param name="filename">seamly2d</param>
   	<param name="scm">git</param>
     <param name="versionformat">%at</param>
