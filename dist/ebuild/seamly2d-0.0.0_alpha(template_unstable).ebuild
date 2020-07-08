@@ -6,10 +6,10 @@ EAPI=5
 
 inherit mercurial qmake-utils gnome2-utils fdo-mime
 
-DESCRIPTION="Cloth patternmaking software"
+DESCRIPTION="Pattern drafting software"
 HOMEPAGE="https://fashionfreedom.eu/"
 SRC_URI=""
-EHG_REPO_URI="https://bitbucket.org/dismine/seamly2d"
+EHG_REPO_URI="https://github.com/fashionfreedom/seamly2d"
 EHG_REVISION="develop"
 
 LICENSE="GPL-3"

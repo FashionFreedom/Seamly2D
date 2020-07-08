@@ -16,7 +16,7 @@ Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is
 
 ## Seamly2D Community Resources:
    * [Homepage and downloads](https://fashionfreedom.eu)  
-   * [Wiki & User Manual](https://wiki.valentinaproject.com)  
+   * [Wiki & User Manual](https://wiki.seamly.net)  
    * [Forum](https://forum.seamly.net/)  
    * [Translations](https://www.transifex.com/organization/valentina)  
    * [Code repository](https://github.com/fashionfreedom/seamly2d)
