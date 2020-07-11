@@ -66,14 +66,13 @@ class DialogMDataBase : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogMDataBase(const QStringList &list, QWidget *parent = nullptr);
+    explicit DialogMDataBase(const QStringList &measurements, QWidget *parent = nullptr);
     explicit DialogMDataBase(QWidget *parent = nullptr);
     virtual ~DialogMDataBase() Q_DECL_OVERRIDE;
 
-    QStringList GetNewNames() const;
-
     void RetranslateGroups();
 
+    QStringList GetNewMeasurements() const;
     static QString ImgTag(const QString &number);
 
 protected:
@@ -90,8 +89,8 @@ private:
     Q_DISABLE_COPY(DialogMDataBase)
     Ui::DialogMDataBase *ui;
     bool selectMode;
-    QStringList list;
-    QStringList newList;
+    QStringList measurements;
+    QStringList newMeasurements;
 
     const QString groupAText = "A. " + DialogMDataBase::tr("Direct Height", "Measurement section");
     const QString groupBText = "B. " + DialogMDataBase::tr("Direct Width", "Measurement section");
@@ -129,19 +128,19 @@ private:
     QTreeWidgetItem *groupP;
     QTreeWidgetItem *groupQ;
 
-    void InitDataBase(const QStringList &list = QStringList());
+    void InitDataBase(const QStringList &measurements = QStringList());
     void InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
-                   const QStringList &newList = QStringList());
+                   const QStringList &newMeasurements = QStringList());
 
     Q_REQUIRED_RESULT QTreeWidgetItem *AddGroup(const QString &text);
 
-    void AddMeasurement(QTreeWidgetItem *group, const QString &groupName, const QStringList &newList);
+    void AddMeasurement(QTreeWidgetItem *group, const QString &groupName, const QStringList &newMeasurements);
 
     void ReadSettings();
     void WriteSettings();
     void Filter(const QString term);
 
-    void RetranslateGroup(QTreeWidgetItem *group, const QString &groupText, const QStringList &list);
+    void RetranslateGroup(QTreeWidgetItem *group, const QString &groupText, const QStringList &measurements);
     void RetranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name);
 
     void ChangeCheckState(QTreeWidgetItem *group, Qt::CheckState check);

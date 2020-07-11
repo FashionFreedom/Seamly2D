@@ -1317,7 +1317,7 @@ void TMainWindow::AddKnown()
     {
         qint32 currentRow;
 
-        const QStringList list = dialog->GetNewNames();
+        const QStringList list = dialog->GetNewMeasurements();
         if (ui->tableWidget->currentRow() == -1)
         {
             currentRow  = ui->tableWidget->rowCount() + list.size() - 1;

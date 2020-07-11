@@ -64,8 +64,8 @@ DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
     :QDialog(parent),
       ui(new Ui::DialogMDataBase),
       selectMode(true),
-      list(list),
-      newList(),
+      measurements(list),
+      newMeasurements(),
       groupA(nullptr),
       groupB(nullptr),
       groupC(nullptr),
@@ -102,8 +102,8 @@ DialogMDataBase::DialogMDataBase(QWidget *parent)
     :QDialog(parent),
       ui(new Ui::DialogMDataBase),
       selectMode(false),
-      list(),
-      newList(),
+      measurements(),
+      newMeasurements(),
       groupA(nullptr),
       groupB(nullptr),
       groupC(nullptr),
@@ -143,9 +143,9 @@ DialogMDataBase::~DialogMDataBase()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList DialogMDataBase::GetNewNames() const
+QStringList DialogMDataBase::GetNewMeasurements() const
 {
-    return newList;
+    return newMeasurements;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -271,7 +271,7 @@ void DialogMDataBase::UpdateChecks(QTreeWidgetItem *item, int column)
         Qt::CheckState checkState = item->checkState(0);
         for (int i = 0; i < item->childCount(); ++i)
         {
-            if (not list.contains(item->child(i)->data(0, Qt::UserRole).toString()))
+            if (not measurements.contains(item->child(i)->data(0, Qt::UserRole).toString()))
             {
                 item->child(i)->setCheckState(0, checkState);
                 flag = true;
@@ -291,14 +291,14 @@ void DialogMDataBase::UpdateChecks(QTreeWidgetItem *item, int column)
 
         if (checkState == Qt::CheckState::Unchecked)
         {
-            newList.removeOne(itemName);
+            newMeasurements.removeOne(itemName);
         }
         else if (checkState == Qt::CheckState::Checked &&
-                 not list.contains(itemName) &&
-                 not newList.contains(itemName) &&
+                 not measurements.contains(itemName) &&
+                 not newMeasurements.contains(itemName) &&
                  not itemName.isEmpty())
         {
-            newList.append(itemName);
+            newMeasurements.append(itemName);
         }
 
         QTreeWidgetItem *parent = item->parent();
@@ -480,7 +480,7 @@ void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name
                                    
     if (selectMode)                
     {                              
-        if (list.contains(name))   
+        if (measurements.contains(name))
         {                          
             m->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
             m->setCheckState(0, Qt::Checked);
@@ -558,27 +558,27 @@ void DialogMDataBase::Filter(const QString term)
 
     if (term.isEmpty())
     {
-        InitDataBase(newList);
+        InitDataBase(newMeasurements);
         return;
     }
 
-    if (ListGroupA().filter(term).count() > 0) { InitGroup(&groupA, groupAText, ListGroupA().filter(term), newList); }
-    if (ListGroupB().filter(term).count() > 0) { InitGroup(&groupB, groupBText, ListGroupB().filter(term), newList); }
-    if (ListGroupC().filter(term).count() > 0) { InitGroup(&groupC, groupCText, ListGroupC().filter(term), newList); }
-    if (ListGroupD().filter(term).count() > 0) { InitGroup(&groupD, groupDText, ListGroupD().filter(term), newList); }
-    if (ListGroupE().filter(term).count() > 0) { InitGroup(&groupE, groupEText, ListGroupE().filter(term), newList); }
-    if (ListGroupF().filter(term).count() > 0) { InitGroup(&groupF, groupFText, ListGroupF().filter(term), newList); }
-    if (ListGroupG().filter(term).count() > 0) { InitGroup(&groupG, groupGText, ListGroupG().filter(term), newList); }
-    if (ListGroupH().filter(term).count() > 0) { InitGroup(&groupH, groupHText, ListGroupH().filter(term), newList); }
-    if (ListGroupI().filter(term).count() > 0) { InitGroup(&groupI, groupIText, ListGroupI().filter(term), newList); }
-    if (ListGroupJ().filter(term).count() > 0) { InitGroup(&groupJ, groupJText, ListGroupJ().filter(term), newList); }
-    if (ListGroupK().filter(term).count() > 0) { InitGroup(&groupK, groupKText, ListGroupK().filter(term), newList); }
-    if (ListGroupL().filter(term).count() > 0) { InitGroup(&groupL, groupLText, ListGroupL().filter(term), newList); }
-    if (ListGroupM().filter(term).count() > 0) { InitGroup(&groupM, groupMText, ListGroupM().filter(term), newList); }
-    if (ListGroupN().filter(term).count() > 0) { InitGroup(&groupN, groupNText, ListGroupN().filter(term), newList); }
-    if (ListGroupO().filter(term).count() > 0) { InitGroup(&groupO, groupOText, ListGroupO().filter(term), newList); }
-    if (ListGroupP().filter(term).count() > 0) { InitGroup(&groupP, groupPText, ListGroupP().filter(term), newList); }
-    if (ListGroupQ().filter(term).count() > 0) { InitGroup(&groupQ, groupQText, ListGroupQ().filter(term), newList); }
+    if (ListGroupA().filter(term).count() > 0) { InitGroup(&groupA, groupAText, ListGroupA().filter(term), newMeasurements); }
+    if (ListGroupB().filter(term).count() > 0) { InitGroup(&groupB, groupBText, ListGroupB().filter(term), newMeasurements); }
+    if (ListGroupC().filter(term).count() > 0) { InitGroup(&groupC, groupCText, ListGroupC().filter(term), newMeasurements); }
+    if (ListGroupD().filter(term).count() > 0) { InitGroup(&groupD, groupDText, ListGroupD().filter(term), newMeasurements); }
+    if (ListGroupE().filter(term).count() > 0) { InitGroup(&groupE, groupEText, ListGroupE().filter(term), newMeasurements); }
+    if (ListGroupF().filter(term).count() > 0) { InitGroup(&groupF, groupFText, ListGroupF().filter(term), newMeasurements); }
+    if (ListGroupG().filter(term).count() > 0) { InitGroup(&groupG, groupGText, ListGroupG().filter(term), newMeasurements); }
+    if (ListGroupH().filter(term).count() > 0) { InitGroup(&groupH, groupHText, ListGroupH().filter(term), newMeasurements); }
+    if (ListGroupI().filter(term).count() > 0) { InitGroup(&groupI, groupIText, ListGroupI().filter(term), newMeasurements); }
+    if (ListGroupJ().filter(term).count() > 0) { InitGroup(&groupJ, groupJText, ListGroupJ().filter(term), newMeasurements); }
+    if (ListGroupK().filter(term).count() > 0) { InitGroup(&groupK, groupKText, ListGroupK().filter(term), newMeasurements); }
+    if (ListGroupL().filter(term).count() > 0) { InitGroup(&groupL, groupLText, ListGroupL().filter(term), newMeasurements); }
+    if (ListGroupM().filter(term).count() > 0) { InitGroup(&groupM, groupMText, ListGroupM().filter(term), newMeasurements); }
+    if (ListGroupN().filter(term).count() > 0) { InitGroup(&groupN, groupNText, ListGroupN().filter(term), newMeasurements); }
+    if (ListGroupO().filter(term).count() > 0) { InitGroup(&groupO, groupOText, ListGroupO().filter(term), newMeasurements); }
+    if (ListGroupP().filter(term).count() > 0) { InitGroup(&groupP, groupPText, ListGroupP().filter(term), newMeasurements); }
+    if (ListGroupQ().filter(term).count() > 0) { InitGroup(&groupQ, groupQText, ListGroupQ().filter(term), newMeasurements); }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
