@@ -153,7 +153,7 @@ private slots:
 private:
     Q_DISABLE_COPY(TMainWindow)
     Ui::TMainWindow *ui;
-    VMeasurements   *measurements;
+    VMeasurements   *individualMeasurements;
     VContainer      *data;
     Unit             mUnit;
     Unit             pUnit;
