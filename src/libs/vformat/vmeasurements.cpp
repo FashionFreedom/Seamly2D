@@ -176,7 +176,7 @@ bool VMeasurements::SaveDocument(const QString &fileName, QString &error)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::AddEmpty(const QString &name, const QString &formula)
+void VMeasurements::addEmpty(const QString &name, const QString &formula)
 {
     const QDomElement element = MakeEmpty(name, formula);
 
@@ -692,7 +692,7 @@ QStringList VMeasurements::ListAll() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurements::ListKnown() const
+QStringList VMeasurements::listKnown() const
 {
     QStringList listNames;
     const QStringList list = ListAll();
@@ -718,7 +718,7 @@ bool VMeasurements::IsDefinedKnownNamesValid() const
         set.insert(var);
     }
 
-    names = ListKnown();
+    names = listKnown();
     foreach (const QString &var, names)
     {
         if (not set.contains(var))

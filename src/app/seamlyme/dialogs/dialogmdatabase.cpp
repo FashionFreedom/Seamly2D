@@ -60,7 +60,7 @@
 #include <QtSvg>
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
+MeasurementDatabaseDialog::MeasurementDatabaseDialog(const QStringList &list, QWidget *parent)
     :QDialog(parent),
       ui(new Ui::DialogMDataBase),
       selectMode(true),
@@ -85,20 +85,21 @@ DialogMDataBase::DialogMDataBase(const QStringList &list, QWidget *parent)
       groupQ(nullptr)
 {
     ui->setupUi(this);
-    InitDataBase();
+    initDataBase();
 
     ui->treeWidget->installEventFilter(this);
 
-    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
-    connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &DialogMDataBase::UpdateChecks);
-    connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &DialogMDataBase::ShowDescription);
-    connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &DialogMDataBase::TreeMenu);
+    connect(ui->lineEditFind, &QLineEdit::textChanged, this, &MeasurementDatabaseDialog::filter);
+//    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
+    connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &MeasurementDatabaseDialog::UpdateChecks);
+    connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &MeasurementDatabaseDialog::ShowDescription);
+    connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &MeasurementDatabaseDialog::TreeMenu);
 
-    ReadSettings();
+    readSettings();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogMDataBase::DialogMDataBase(QWidget *parent)
+MeasurementDatabaseDialog::MeasurementDatabaseDialog(QWidget *parent)
     :QDialog(parent),
       ui(new Ui::DialogMDataBase),
       selectMode(false),
@@ -123,57 +124,57 @@ DialogMDataBase::DialogMDataBase(QWidget *parent)
       groupQ(nullptr)
 {
     ui->setupUi(this);
-    InitDataBase();
+    initDataBase();
 
     ui->treeWidget->installEventFilter(this);
 
     connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
-    connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &DialogMDataBase::ShowDescription);
-    connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &DialogMDataBase::TreeMenu);
-    connect(ui->treeWidget, &QTreeWidget::itemActivated, this, &DialogMDataBase::ShowDescription);
+    connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &MeasurementDatabaseDialog::ShowDescription);
+    connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &MeasurementDatabaseDialog::TreeMenu);
+    connect(ui->treeWidget, &QTreeWidget::itemActivated, this, &MeasurementDatabaseDialog::ShowDescription);
 
-    ReadSettings();
+    readSettings();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogMDataBase::~DialogMDataBase()
+MeasurementDatabaseDialog::~MeasurementDatabaseDialog()
 {
-    WriteSettings();
+    writeSettings();
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList DialogMDataBase::GetNewMeasurements() const
+QStringList MeasurementDatabaseDialog::getNewMeasurementNames() const
 {
     return newMeasurements;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::RetranslateGroups()
+void MeasurementDatabaseDialog::RetranslateGroups()
 {
-    RetranslateGroup(groupA, groupAText, ListGroupA());
-    RetranslateGroup(groupB, groupBText, ListGroupB());
-    RetranslateGroup(groupC, groupCText, ListGroupC());
-    RetranslateGroup(groupD, groupDText, ListGroupD());
-    RetranslateGroup(groupE, groupEText, ListGroupE());
-    RetranslateGroup(groupF, groupFText, ListGroupF());
-    RetranslateGroup(groupG, groupGText, ListGroupG());
-    RetranslateGroup(groupH, groupHText, ListGroupH());
-    RetranslateGroup(groupI, groupIText, ListGroupI());
-    RetranslateGroup(groupJ, groupJText, ListGroupJ());
-    RetranslateGroup(groupK, groupKText, ListGroupK());
-    RetranslateGroup(groupL, groupLText, ListGroupL());
-    RetranslateGroup(groupM, groupMText, ListGroupM());
-    RetranslateGroup(groupN, groupNText, ListGroupN());
-    RetranslateGroup(groupO, groupOText, ListGroupO());
-    RetranslateGroup(groupP, groupPText, ListGroupP());
-    RetranslateGroup(groupQ, groupQText, ListGroupQ());
+    retranslateGroup(groupA, groupAText, ListGroupA());
+    retranslateGroup(groupB, groupBText, ListGroupB());
+    retranslateGroup(groupC, groupCText, ListGroupC());
+    retranslateGroup(groupD, groupDText, ListGroupD());
+    retranslateGroup(groupE, groupEText, ListGroupE());
+    retranslateGroup(groupF, groupFText, ListGroupF());
+    retranslateGroup(groupG, groupGText, ListGroupG());
+    retranslateGroup(groupH, groupHText, ListGroupH());
+    retranslateGroup(groupI, groupIText, ListGroupI());
+    retranslateGroup(groupJ, groupJText, ListGroupJ());
+    retranslateGroup(groupK, groupKText, ListGroupK());
+    retranslateGroup(groupL, groupLText, ListGroupL());
+    retranslateGroup(groupM, groupMText, ListGroupM());
+    retranslateGroup(groupN, groupNText, ListGroupN());
+    retranslateGroup(groupO, groupOText, ListGroupO());
+    retranslateGroup(groupP, groupPText, ListGroupP());
+    retranslateGroup(groupQ, groupQText, ListGroupQ());
 
     ShowDescription(ui->treeWidget->currentItem(), 0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogMDataBase::ImgTag(const QString &number)
+QString MeasurementDatabaseDialog::imgTag(const QString &number)
 {
     QString imgUrl("<img src=\"wrong.png\" align=\"center\"/>"); // In case of error
     const QString filePath = QString("://diagrams/%1.svg").arg(MapDiagrams(qApp->TrVars(), number));
@@ -215,7 +216,7 @@ QString DialogMDataBase::ImgTag(const QString &number)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::changeEvent(QEvent *event)
+void MeasurementDatabaseDialog::changeEvent(QEvent *event)
 {
     if (event->type() == QEvent::LanguageChange)
     {
@@ -228,7 +229,7 @@ void DialogMDataBase::changeEvent(QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogMDataBase::eventFilter(QObject *target, QEvent *event)
+bool MeasurementDatabaseDialog::eventFilter(QObject *target, QEvent *event)
 {
     if (target == ui->treeWidget && event->type() == QEvent::KeyPress)
     {
@@ -257,7 +258,7 @@ bool DialogMDataBase::eventFilter(QObject *target, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::UpdateChecks(QTreeWidgetItem *item, int column)
+void MeasurementDatabaseDialog::UpdateChecks(QTreeWidgetItem *item, int column)
 {
     bool diff = false;
     if (column != 0 && column != -1)
@@ -328,7 +329,7 @@ void DialogMDataBase::UpdateChecks(QTreeWidgetItem *item, int column)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::ShowDescription(QTreeWidgetItem *item, int column)
+void MeasurementDatabaseDialog::ShowDescription(QTreeWidgetItem *item, int column)
 {
     if (column != 0 && column != -1)
     {
@@ -356,7 +357,7 @@ void DialogMDataBase::ShowDescription(QTreeWidgetItem *item, int column)
                                  "normal\"> %1 <br clear=\"left\"><b>%2</b>. <i>%3</i></p>"
                                  "<p align=\"left\" style=\"font-variant: normal; font-style: normal; font-weight: "
                                  "normal\">%4</p>")
-            .arg(ImgTag(number))
+            .arg(imgTag(number))
             .arg(number)
             .arg(trv->GuiText(name))
             .arg(trv->Description(name));
@@ -365,7 +366,7 @@ void DialogMDataBase::ShowDescription(QTreeWidgetItem *item, int column)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::TreeMenu(const QPoint &pos)
+void MeasurementDatabaseDialog::TreeMenu(const QPoint &pos)
 {
     // Because item also will be selected need to show description
     const QModelIndex model = ui->treeWidget->currentIndex();
@@ -388,7 +389,7 @@ void DialogMDataBase::TreeMenu(const QPoint &pos)
         GlobalCheckState() == Qt::Checked ? actionName = tr("Check all") : actionName = tr("Uncheck all");
 
         QAction *actionRecheck = new QAction(actionName, this);
-        connect(actionRecheck, &QAction::triggered, this, &DialogMDataBase::Recheck);
+        connect(actionRecheck, &QAction::triggered, this, &MeasurementDatabaseDialog::Recheck);
 
         menu.addAction(actionRecheck);
     }
@@ -396,67 +397,67 @@ void DialogMDataBase::TreeMenu(const QPoint &pos)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::Recheck()
+void MeasurementDatabaseDialog::Recheck()
 {
     if (selectMode)
     {
         const Qt::CheckState check = GlobalCheckState();
 
-        ChangeCheckState(groupA, check);
-        ChangeCheckState(groupB, check);
-        ChangeCheckState(groupC, check);
-        ChangeCheckState(groupD, check);
-        ChangeCheckState(groupE, check);
-        ChangeCheckState(groupF, check);
-        ChangeCheckState(groupG, check);
-        ChangeCheckState(groupH, check);
-        ChangeCheckState(groupI, check);
-        ChangeCheckState(groupJ, check);
-        ChangeCheckState(groupK, check);
-        ChangeCheckState(groupL, check);
-        ChangeCheckState(groupM, check);
-        ChangeCheckState(groupN, check);
-        ChangeCheckState(groupO, check);
-        ChangeCheckState(groupP, check);
-        ChangeCheckState(groupQ, check);
+        changeCheckState(groupA, check);
+        changeCheckState(groupB, check);
+        changeCheckState(groupC, check);
+        changeCheckState(groupD, check);
+        changeCheckState(groupE, check);
+        changeCheckState(groupF, check);
+        changeCheckState(groupG, check);
+        changeCheckState(groupH, check);
+        changeCheckState(groupI, check);
+        changeCheckState(groupJ, check);
+        changeCheckState(groupK, check);
+        changeCheckState(groupL, check);
+        changeCheckState(groupM, check);
+        changeCheckState(groupN, check);
+        changeCheckState(groupO, check);
+        changeCheckState(groupP, check);
+        changeCheckState(groupQ, check);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::InitDataBase(const QStringList &newList)
+void MeasurementDatabaseDialog::initDataBase(const QStringList &newList)
 {
-    InitGroup(&groupA, groupAText, ListGroupA(), newList);
-    InitGroup(&groupB, groupBText, ListGroupB(), newList);
-    InitGroup(&groupC, groupCText, ListGroupC(), newList);
-    InitGroup(&groupD, groupDText, ListGroupD(), newList);
-    InitGroup(&groupE, groupEText, ListGroupE(), newList);
-    InitGroup(&groupF, groupFText, ListGroupF(), newList);
-    InitGroup(&groupG, groupGText, ListGroupG(), newList);
-    InitGroup(&groupH, groupHText, ListGroupH(), newList);
-    InitGroup(&groupI, groupIText, ListGroupI(), newList);
-    InitGroup(&groupJ, groupJText, ListGroupJ(), newList);
-    InitGroup(&groupK, groupKText, ListGroupK(), newList);
-    InitGroup(&groupL, groupLText, ListGroupL(), newList);
-    InitGroup(&groupM, groupMText, ListGroupM(), newList);
-    InitGroup(&groupN, groupNText, ListGroupN(), newList);
-    InitGroup(&groupO, groupOText, ListGroupO(), newList);
-    InitGroup(&groupP, groupPText, ListGroupP(), newList);
-    InitGroup(&groupQ, groupQText, ListGroupQ(), newList);
+    initGroup(&groupA, groupAText, ListGroupA(), newList);
+    initGroup(&groupB, groupBText, ListGroupB(), newList);
+    initGroup(&groupC, groupCText, ListGroupC(), newList);
+    initGroup(&groupD, groupDText, ListGroupD(), newList);
+    initGroup(&groupE, groupEText, ListGroupE(), newList);
+    initGroup(&groupF, groupFText, ListGroupF(), newList);
+    initGroup(&groupG, groupGText, ListGroupG(), newList);
+    initGroup(&groupH, groupHText, ListGroupH(), newList);
+    initGroup(&groupI, groupIText, ListGroupI(), newList);
+    initGroup(&groupJ, groupJText, ListGroupJ(), newList);
+    initGroup(&groupK, groupKText, ListGroupK(), newList);
+    initGroup(&groupL, groupLText, ListGroupL(), newList);
+    initGroup(&groupM, groupMText, ListGroupM(), newList);
+    initGroup(&groupN, groupNText, ListGroupN(), newList);
+    initGroup(&groupO, groupOText, ListGroupO(), newList);
+    initGroup(&groupP, groupPText, ListGroupP(), newList);
+    initGroup(&groupQ, groupQText, ListGroupQ(), newList);
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::InitGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
+void MeasurementDatabaseDialog::initGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
                                 const QStringList &newList)
 {                                  
     *group = AddGroup(groupName);  
     for (int i=0; i < groupList.size(); ++i)
     {                              
-        AddMeasurement(*group, groupList.at(i), newList);
+        addMeasurement(*group, groupList.at(i), newList);
     }                              
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-QTreeWidgetItem *DialogMDataBase::AddGroup(const QString &groupName)
+QTreeWidgetItem *MeasurementDatabaseDialog::AddGroup(const QString &groupName)
 {                                  
     QTreeWidgetItem *group = new QTreeWidgetItem(ui->treeWidget);
     group->setText(0, groupName);
@@ -472,7 +473,7 @@ QTreeWidgetItem *DialogMDataBase::AddGroup(const QString &groupName)
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name, const QStringList &newList)
+void MeasurementDatabaseDialog::addMeasurement(QTreeWidgetItem *group, const QString &name, const QStringList &newList)
 {                                  
     SCASSERT(group != nullptr)     
                                    
@@ -505,19 +506,19 @@ void DialogMDataBase::AddMeasurement(QTreeWidgetItem *group, const QString &name
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::ReadSettings()
+void MeasurementDatabaseDialog::readSettings()
 {                                  
     restoreGeometry(qApp->SeamlyMeSettings()->GetDataBaseGeometry());
 }                                  
                                    
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::WriteSettings()
+void MeasurementDatabaseDialog::writeSettings()
 {                                  
     qApp->SeamlyMeSettings()->SetDataBaseGeometry(saveGeometry());
 }                                  
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::Filter(const QString term)
+void MeasurementDatabaseDialog::filter(const QString term)
 {
 
     delete groupA;
@@ -558,43 +559,43 @@ void DialogMDataBase::Filter(const QString term)
 
     if (term.isEmpty())
     {
-        InitDataBase(newMeasurements);
+        initDataBase(newMeasurements);
         return;
     }
 
-    if (ListGroupA().filter(term).count() > 0) { InitGroup(&groupA, groupAText, ListGroupA().filter(term), newMeasurements); }
-    if (ListGroupB().filter(term).count() > 0) { InitGroup(&groupB, groupBText, ListGroupB().filter(term), newMeasurements); }
-    if (ListGroupC().filter(term).count() > 0) { InitGroup(&groupC, groupCText, ListGroupC().filter(term), newMeasurements); }
-    if (ListGroupD().filter(term).count() > 0) { InitGroup(&groupD, groupDText, ListGroupD().filter(term), newMeasurements); }
-    if (ListGroupE().filter(term).count() > 0) { InitGroup(&groupE, groupEText, ListGroupE().filter(term), newMeasurements); }
-    if (ListGroupF().filter(term).count() > 0) { InitGroup(&groupF, groupFText, ListGroupF().filter(term), newMeasurements); }
-    if (ListGroupG().filter(term).count() > 0) { InitGroup(&groupG, groupGText, ListGroupG().filter(term), newMeasurements); }
-    if (ListGroupH().filter(term).count() > 0) { InitGroup(&groupH, groupHText, ListGroupH().filter(term), newMeasurements); }
-    if (ListGroupI().filter(term).count() > 0) { InitGroup(&groupI, groupIText, ListGroupI().filter(term), newMeasurements); }
-    if (ListGroupJ().filter(term).count() > 0) { InitGroup(&groupJ, groupJText, ListGroupJ().filter(term), newMeasurements); }
-    if (ListGroupK().filter(term).count() > 0) { InitGroup(&groupK, groupKText, ListGroupK().filter(term), newMeasurements); }
-    if (ListGroupL().filter(term).count() > 0) { InitGroup(&groupL, groupLText, ListGroupL().filter(term), newMeasurements); }
-    if (ListGroupM().filter(term).count() > 0) { InitGroup(&groupM, groupMText, ListGroupM().filter(term), newMeasurements); }
-    if (ListGroupN().filter(term).count() > 0) { InitGroup(&groupN, groupNText, ListGroupN().filter(term), newMeasurements); }
-    if (ListGroupO().filter(term).count() > 0) { InitGroup(&groupO, groupOText, ListGroupO().filter(term), newMeasurements); }
-    if (ListGroupP().filter(term).count() > 0) { InitGroup(&groupP, groupPText, ListGroupP().filter(term), newMeasurements); }
-    if (ListGroupQ().filter(term).count() > 0) { InitGroup(&groupQ, groupQText, ListGroupQ().filter(term), newMeasurements); }
+    if (ListGroupA().filter(term).count() > 0) { initGroup(&groupA, groupAText, ListGroupA().filter(term), newMeasurements); }
+    if (ListGroupB().filter(term).count() > 0) { initGroup(&groupB, groupBText, ListGroupB().filter(term), newMeasurements); }
+    if (ListGroupC().filter(term).count() > 0) { initGroup(&groupC, groupCText, ListGroupC().filter(term), newMeasurements); }
+    if (ListGroupD().filter(term).count() > 0) { initGroup(&groupD, groupDText, ListGroupD().filter(term), newMeasurements); }
+    if (ListGroupE().filter(term).count() > 0) { initGroup(&groupE, groupEText, ListGroupE().filter(term), newMeasurements); }
+    if (ListGroupF().filter(term).count() > 0) { initGroup(&groupF, groupFText, ListGroupF().filter(term), newMeasurements); }
+    if (ListGroupG().filter(term).count() > 0) { initGroup(&groupG, groupGText, ListGroupG().filter(term), newMeasurements); }
+    if (ListGroupH().filter(term).count() > 0) { initGroup(&groupH, groupHText, ListGroupH().filter(term), newMeasurements); }
+    if (ListGroupI().filter(term).count() > 0) { initGroup(&groupI, groupIText, ListGroupI().filter(term), newMeasurements); }
+    if (ListGroupJ().filter(term).count() > 0) { initGroup(&groupJ, groupJText, ListGroupJ().filter(term), newMeasurements); }
+    if (ListGroupK().filter(term).count() > 0) { initGroup(&groupK, groupKText, ListGroupK().filter(term), newMeasurements); }
+    if (ListGroupL().filter(term).count() > 0) { initGroup(&groupL, groupLText, ListGroupL().filter(term), newMeasurements); }
+    if (ListGroupM().filter(term).count() > 0) { initGroup(&groupM, groupMText, ListGroupM().filter(term), newMeasurements); }
+    if (ListGroupN().filter(term).count() > 0) { initGroup(&groupN, groupNText, ListGroupN().filter(term), newMeasurements); }
+    if (ListGroupO().filter(term).count() > 0) { initGroup(&groupO, groupOText, ListGroupO().filter(term), newMeasurements); }
+    if (ListGroupP().filter(term).count() > 0) { initGroup(&groupP, groupPText, ListGroupP().filter(term), newMeasurements); }
+    if (ListGroupQ().filter(term).count() > 0) { initGroup(&groupQ, groupQText, ListGroupQ().filter(term), newMeasurements); }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::RetranslateGroup(QTreeWidgetItem *group, const QString &groupText, const QStringList &list)
+void MeasurementDatabaseDialog::retranslateGroup(QTreeWidgetItem *group, const QString &groupText, const QStringList &list)
 {
     group->setText(0, groupText);
     group->setToolTip(0, groupText);
 
     for (int i=0; i<list.size(); ++i)
     {
-        RetranslateMeasurement(group, i, list.at(i));
+        retranslateMeasurement(group, i, list.at(i));
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::RetranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name)
+void MeasurementDatabaseDialog::retranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name)
 {
     const QString text = qApp->TrVars()->MNumber(name) + ". " + qApp->TrVars()->MToUser(name);
 
@@ -604,14 +605,14 @@ void DialogMDataBase::RetranslateMeasurement(QTreeWidgetItem *group, int index, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMDataBase::ChangeCheckState(QTreeWidgetItem *group, Qt::CheckState check)
+void MeasurementDatabaseDialog::changeCheckState(QTreeWidgetItem *group, Qt::CheckState check)
 {
     SCASSERT(group != nullptr)
     group->setCheckState(0, check);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Qt::CheckState DialogMDataBase::GlobalCheckState() const
+Qt::CheckState MeasurementDatabaseDialog::GlobalCheckState() const
 {
     SCASSERT(groupA != nullptr)
     SCASSERT(groupB != nullptr)
