@@ -44,7 +44,9 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QRegularExpression>
-
+#include <QStandardPaths>
+#include <QDir>
+#include <QProcess>
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vabstractconverter.h"
 #include "../vmisc/projectversion.h"
@@ -52,7 +54,7 @@
 #include "../vmisc/vcommonsettings.h"
 
 const QString defaultFeedURL = QStringLiteral(
-	"https://api.github.com/repos/FashionFreedom/Seamly2D/releases/latest");
+	"https://api.github.com/repos/FashionFreedom/Seamly2D/releases");
 
 QPointer<FvUpdater> FvUpdater::m_Instance;
 
@@ -78,7 +80,7 @@ void FvUpdater::drop() {
 
 //---------------------------------------------------------------------------------------------------------------------
 FvUpdater::FvUpdater()
-	: QObject(nullptr), m_proposedUpdate(nullptr),
+	: QObject(nullptr),
 	  m_silentAsMuchAsItCouldGet(true), m_feedURL(), m_qnam(), m_reply(nullptr),
 	  m_httpRequestAborted(false), m_dropOnFinnish(true) {
 	// noop
@@ -175,7 +177,7 @@ bool FvUpdater::CheckForUpdatesNotSilent() {
 	return success;
 }
 
-void FvUpdater::startDownloadFile(const QUrl &url) {
+void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	QNetworkRequest request;
 	request.setHeader(QNetworkRequest::ContentTypeHeader,
 					  QStringLiteral("application/text"));
@@ -185,6 +187,16 @@ void FvUpdater::startDownloadFile(const QUrl &url) {
 	request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
 
 	m_reply = m_qnam.get(request);
+	QDir downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+	auto downloadedFile = new QFile(downloadDir.filePath(name), this);
+	downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
+	connect(m_reply.data(), &QNetworkReply::readyRead, this, [this, downloadedFile]() {
+		// this slot gets called every time the QNetworkReply has new data.
+		// We read all of its new data and write it into the file.
+		// That way we use less RAM than when reading it at the finished()
+		// signal of the QNetworkReply
+		downloadedFile->write(m_reply->readAll());
+	});
 
 	connect(m_reply.data(), &QNetworkReply::downloadProgress, this,
 			[this](qint64 bytesRead, qint64 totalBytes) {
@@ -195,8 +207,23 @@ void FvUpdater::startDownloadFile(const QUrl &url) {
 					return;
 				}
 			});
-	connect(m_reply.data(), &QNetworkReply::finished, this,
-			&FvUpdater::httpFeedDownloadFinished);
+	connect(m_reply.data(), &QNetworkReply::finished, this, [this, downloadedFile]() {
+		// this slot gets called every time the QNetworkReply has new data.
+		// We read all of its new data and write it into the file.
+		// That way we use less RAM than when reading it at the finished()
+		// signal of the QNetworkReply
+		downloadedFile->write(m_reply->readAll());
+		downloadedFile->close();
+		auto fileInfo = QFileInfo(*downloadedFile);
+#ifdef Q_OS_WIN32
+		QProcess proc;
+		auto	 res = proc.startDetached("explorer.exe /select," + QDir::toNativeSeparators(fileInfo.absoluteFilePath()));
+		auto	 err = proc.error();
+		qDebug() << res << " " << err;
+#else
+			QDesktopServices::openUrl(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
+#endif
+	});
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -256,7 +283,11 @@ void FvUpdater::httpFeedDownloadFinished() {
 		startDownloadFeed(m_feedURL);
 		return;
 	} else {
-		auto jsonRespArray = QJsonDocument::fromJson(m_reply->readAll()).array();
+		auto jsonDoc = QJsonDocument::fromJson(m_reply->readAll());
+		qDebug() << jsonDoc.isArray();
+		qDebug() << jsonDoc.isObject();
+		auto jsonRespArray = jsonDoc.array();
+		auto jsonRespObj = jsonDoc.object();
 		for (const auto &jsonResp : jsonRespArray) {
 			auto tag = jsonResp.toObject()["tag_name"].toString();
 
@@ -270,7 +301,7 @@ void FvUpdater::httpFeedDownloadFinished() {
 					showInformationDialog(tr("No new releases available."));
 					return;
 				}
-				if (showConfirmationDialog(tr("A new release %1 is available").arg(matcher.captured())))
+				if (showConfirmationDialog(tr("A new release %1 is available.\nDo you want to download it?").arg(matcher.captured())))
 					getPLatformSpecificInstaller(jsonResp.toObject()["assets"].toArray());
 				return;
 			}
@@ -297,12 +328,13 @@ void FvUpdater::getPLatformSpecificInstaller(QJsonArray assets) {
 
 	for (const auto &asset : assets) {
 		// qDebug() << asset;
-		qDebug() << asset.toObject()["name"].toString();
-		if (asset.toObject()["name"].toString().contains(searchPattern,
-														 Qt::CaseInsensitive)) {
+		auto name = asset.toObject()["name"].toString();
+		qDebug() << name;
+		if (name.contains(searchPattern,
+						  Qt::CaseInsensitive)) {
 			QUrl downloadableUrl =
 				asset.toObject()["browser_download_url"].toString();
-			startDownloadFile(downloadableUrl);
+			startDownloadFile(downloadableUrl, name);
 		}
 	}
 }
@@ -354,12 +386,19 @@ bool FvUpdater::showConfirmationDialog(const QString &message,
 	dlInformationMsgBox.setIcon(QMessageBox::Information);
 	dlInformationMsgBox.setText(tr("Information"));
 	dlInformationMsgBox.setInformativeText(message);
-	dlInformationMsgBox.setStandardButtons(QMessageBox::Ok
-										   | QMessageBox::Cancel);
+	dlInformationMsgBox.setStandardButtons(QMessageBox::Yes
+										   | QMessageBox::No);
 
-	return QMessageBox::Ok == dlInformationMsgBox.exec();
+	return QMessageBox::Yes == dlInformationMsgBox.exec();
 }
 
 
 bool FvUpdater::releaseIsNewer(const QString &releaseTag) const {
+	const auto releaseVersion = releaseTag.mid(1).split('.');
+	const auto currentVersion = QCoreApplication::applicationVersion().split('.');
+	for (int i = 0; i < releaseVersion.length(); i++) {
+		if (releaseVersion[i].toInt() > currentVersion[i].toInt())
+			return true;
+	}
+	return false;
 }

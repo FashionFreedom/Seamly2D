@@ -102,9 +102,9 @@ private:
 	bool					m_httpRequestAborted;
 	bool					m_dropOnFinnish;
 
-	void startDownloadFeed(const QUrl &url); // Start downloading feed
-	void startDownloadFile(const QUrl &url); // Start downloading feed
-	void cancelDownloadFeed();				 // Stop downloading the current feed
+	void startDownloadFeed(const QUrl &url);		// Start downloading feed
+	void startDownloadFile(QUrl url, QString name); // Start downloading file
+	void cancelDownloadFeed();						// Stop downloading the current feed
 
 	// Dialogs (notifications)
 	// Show an error message
