@@ -77,7 +77,7 @@ public:
     virtual void setXMLContent(const QString &fileName) Q_DECL_OVERRIDE;
     virtual bool SaveDocument(const QString &fileName, QString &error) Q_DECL_OVERRIDE;
 
-    void AddEmpty(const QString &name, const QString &formula = QString());
+    void addEmpty(const QString &name, const QString &formula = QString());
     void AddEmptyAfter(const QString &after, const QString &name, const QString &formula = QString());
     void Remove(const QString &name);
     void MoveTop(const QString &name);
@@ -159,7 +159,7 @@ public:
     static GenderType StrToGender(const QString &sex);
 
     QStringList ListAll() const;
-    QStringList ListKnown() const;
+    QStringList listKnown() const;
 
     bool IsDefinedKnownNamesValid() const;
 

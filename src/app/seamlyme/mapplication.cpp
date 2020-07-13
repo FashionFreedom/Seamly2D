@@ -257,7 +257,7 @@ MApplication::MApplication(int &argc, char **argv)
       mainWindows(),
       localServer(nullptr),
       trVars(nullptr),
-      dataBase(QPointer<DialogMDataBase>()),
+      dataBase(QPointer<MeasurementDatabaseDialog>()),
       testMode(false)
 {
     setApplicationDisplayName(VER_PRODUCTNAME_STR);
@@ -542,7 +542,7 @@ void MApplication::ShowDataBase()
 {
     if (dataBase.isNull())
     {
-        dataBase = new DialogMDataBase();
+        dataBase = new MeasurementDatabaseDialog();
         dataBase->setAttribute(Qt::WA_DeleteOnClose, true);
         dataBase->setModal(false);
         dataBase->show();
