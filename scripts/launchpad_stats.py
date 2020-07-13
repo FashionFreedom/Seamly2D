@@ -2,24 +2,24 @@
 
 # See https://api.launchpad.net/+apidoc/devel.html#binary_package_publishing_history
 # See https://help.launchpad.net/API/launchpadlib
- 
+
 from launchpadlib.launchpad import Launchpad
 
-import os 
+import os
 
 print 'Please, wait...'
- 
-USERNAME='vpo2'
-PPA='vpo2-dev'
+
+USERNAME='susan-spencer'
+PPA='seamly2d'
 PACKAGE='seamly2d'
 
 print 'Connect to Service.'
- 
+
 cachedir = os.environ['HOME'] + '/.launchpadlib/cache/'
 launchpad = Launchpad.login_anonymously('just testing', 'production', cachedir)
 
 print 'Getting package information.'
- 
+
 ppa = launchpad.people[USERNAME].getPPAByName(name=PPA)
 bins = ppa.getPublishedBinaries(binary_name=PACKAGE)
 builds = []
@@ -32,10 +32,10 @@ for bin in bins:
     total += count
     if (count > 0):
         builds.append([count,'%s %s' % (bin.binary_package_name,bin.binary_package_version)])
- 
+
 builds_sorted = sorted(builds,key=lambda count: count[0],reverse=True)
 
 for build in builds_sorted:
    print '%s:%s' % (build[0], build[1])
-   
+
 print 'Total: %s' % (total)
