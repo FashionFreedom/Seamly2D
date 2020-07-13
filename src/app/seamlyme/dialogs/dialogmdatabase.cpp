@@ -90,7 +90,6 @@ MeasurementDatabaseDialog::MeasurementDatabaseDialog(const QStringList &list, QW
     ui->treeWidget->installEventFilter(this);
 
     connect(ui->lineEditFind, &QLineEdit::textChanged, this, &MeasurementDatabaseDialog::filter);
-//    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
     connect(ui->treeWidget, &QTreeWidget::itemChanged, this, &MeasurementDatabaseDialog::UpdateChecks);
     connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &MeasurementDatabaseDialog::ShowDescription);
     connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &MeasurementDatabaseDialog::TreeMenu);
@@ -128,7 +127,7 @@ MeasurementDatabaseDialog::MeasurementDatabaseDialog(QWidget *parent)
 
     ui->treeWidget->installEventFilter(this);
 
-    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){Filter(term);});
+    connect(ui->lineEditFind, &QLineEdit::textChanged, this, &MeasurementDatabaseDialog::filter);
     connect(ui->treeWidget, &QTreeWidget::itemClicked, this, &MeasurementDatabaseDialog::ShowDescription);
     connect(ui->treeWidget, &QTreeWidget::customContextMenuRequested, this, &MeasurementDatabaseDialog::TreeMenu);
     connect(ui->treeWidget, &QTreeWidget::itemActivated, this, &MeasurementDatabaseDialog::ShowDescription);
