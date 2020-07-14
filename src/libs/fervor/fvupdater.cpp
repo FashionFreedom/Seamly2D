@@ -334,7 +334,7 @@ void FvUpdater::httpFeedDownloadFinished() {
 					showInformationDialog(tr("No new releases available."));
 					return;
 				}
-				if (showConfirmationDialog(tr("A new release %1 is available.\nDo you want to download it?").arg(matcher.captured())))
+				if (showConfirmationDialog(tr("A new release %1 is available.\nDo you want to download it?").arg(matcher.captured()), true))
 					getPLatformSpecificInstaller(jsonResp.toObject()["assets"].toArray());
 				return;
 			}
