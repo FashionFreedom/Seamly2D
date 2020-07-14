@@ -40,6 +40,7 @@
 #include <QPointer>
 #include <QString>
 #include <QUrl>
+#include <QNetworkReply>
 #include <QtGlobal>
 
 extern const QString defaultFeedURL;
@@ -57,8 +58,8 @@ public:
 	void	SetFeedURL(const QString &feedURL);
 	QString GetFeedURL() const;
 
-	bool IsDropOnFinnish() const;
-	void SetDropOnFinnish(bool value);
+	bool IsDropOnFinish() const;
+	void SetDropOnFinish(bool value);
 
 public slots:
 	// Check for updates
@@ -77,6 +78,7 @@ protected slots:
 
 private slots:
 	void httpFeedDownloadFinished();
+	void networkError(QNetworkReply::NetworkError);
 
 private:
 	//
@@ -100,7 +102,7 @@ private:
 	QNetworkAccessManager	m_qnam;
 	QPointer<QNetworkReply> m_reply;
 	bool					m_httpRequestAborted;
-	bool					m_dropOnFinnish;
+	bool					m_dropOnFinish;
 
 	void startDownloadFeed(const QUrl &url);		// Start downloading feed
 	void startDownloadFile(QUrl url, QString name); // Start downloading file

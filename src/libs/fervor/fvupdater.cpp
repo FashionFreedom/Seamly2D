@@ -47,6 +47,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QProcess>
+#include <QtConcurrent/QtConcurrent>
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vabstractconverter.h"
 #include "../vmisc/projectversion.h"
@@ -82,7 +83,7 @@ void FvUpdater::drop() {
 FvUpdater::FvUpdater()
 	: QObject(nullptr),
 	  m_silentAsMuchAsItCouldGet(true), m_feedURL(), m_qnam(), m_reply(nullptr),
-	  m_httpRequestAborted(false), m_dropOnFinnish(true) {
+	  m_httpRequestAborted(false), m_dropOnFinish(true) {
 	// noop
 }
 
@@ -103,10 +104,10 @@ void FvUpdater::SetFeedURL(const QString &feedURL) {
 QString FvUpdater::GetFeedURL() const { return m_feedURL.toString(); }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool FvUpdater::IsDropOnFinnish() const { return m_dropOnFinnish; }
+bool FvUpdater::IsDropOnFinish() const { return m_dropOnFinish; }
 
 //---------------------------------------------------------------------------------------------------------------------
-void FvUpdater::SetDropOnFinnish(bool value) { m_dropOnFinnish = value; }
+void FvUpdater::SetDropOnFinish(bool value) { m_dropOnFinish = value; }
 
 //---------------------------------------------------------------------------------------------------------------------
 bool FvUpdater::CheckForUpdates(bool silentAsMuchAsItCouldGet) {
@@ -156,12 +157,12 @@ bool FvUpdater::CheckForUpdatesSilent() {
 	if (qApp->Settings()->GetDateOfLastRemind().daysTo(QDate::currentDate())
 		>= 1) {
 		const bool success = CheckForUpdates(true);
-		if (m_dropOnFinnish && not success) {
+		if (m_dropOnFinish && not success) {
 			drop();
 		}
 		return success;
 	} else {
-		if (m_dropOnFinnish) {
+		if (m_dropOnFinish) {
 			drop();
 		}
 		return true;
@@ -171,7 +172,7 @@ bool FvUpdater::CheckForUpdatesSilent() {
 //---------------------------------------------------------------------------------------------------------------------
 bool FvUpdater::CheckForUpdatesNotSilent() {
 	const bool success = CheckForUpdates(false);
-	if (m_dropOnFinnish && not success) {
+	if (m_dropOnFinish && not success) {
 		drop();
 	}
 	return success;
@@ -189,7 +190,10 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	m_reply = m_qnam.get(request);
 	QDir downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
 	auto downloadedFile = new QFile(downloadDir.filePath(name), this);
-	downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
+	bool isOpen = downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
+	if (!isOpen) {
+		showErrorDialog(tr("Unable to open file\n%1\nfor writing").arg(downloadDir.filePath(name)), false);
+	}
 	connect(m_reply.data(), &QNetworkReply::readyRead, this, [this, downloadedFile]() {
 		// this slot gets called every time the QNetworkReply has new data.
 		// We read all of its new data and write it into the file.
@@ -197,6 +201,9 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 		// signal of the QNetworkReply
 		downloadedFile->write(m_reply->readAll());
 	});
+
+	connect(m_reply.data(), SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(networkError(QNetworkReply::NetworkError)));
+
 
 	connect(m_reply.data(), &QNetworkReply::downloadProgress, this,
 			[this](qint64 bytesRead, qint64 totalBytes) {
@@ -207,22 +214,48 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 					return;
 				}
 			});
-	connect(m_reply.data(), &QNetworkReply::finished, this, [this, downloadedFile]() {
+	connect(m_reply.data(), &QNetworkReply::finished, this, [=]() {
 		// this slot gets called every time the QNetworkReply has new data.
 		// We read all of its new data and write it into the file.
 		// That way we use less RAM than when reading it at the finished()
 		// signal of the QNetworkReply
-		downloadedFile->write(m_reply->readAll());
-		downloadedFile->close();
-		auto fileInfo = QFileInfo(*downloadedFile);
+
+		if (m_httpRequestAborted) {
+			m_reply->deleteLater();
+			return;
+		}
+
+		const QVariant redirectionTarget =
+			m_reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+		if (m_reply->error() != QNetworkReply::NoError) {
+			// Error.
+			showErrorDialog(
+				tr("File download failed: %1.").arg(m_reply->errorString()), false);
+		} else if (not redirectionTarget.isNull()) {
+			downloadedFile->close();
+			const QUrl newUrl = m_feedURL.resolved(redirectionTarget.toUrl());
+			m_reply->deleteLater();
+			showInformationDialog(tr("Download has started, the installer will open once it's finished downloading"), false);
+			startDownloadFile(newUrl, name);
+			return;
+		} else {
+
+			downloadedFile->write(m_reply->readAll());
+			downloadedFile->close();
+			auto fileInfo = QFileInfo(*downloadedFile);
+			/*
 #ifdef Q_OS_WIN32
 		QProcess proc;
 		auto	 res = proc.startDetached("explorer.exe /select," + QDir::toNativeSeparators(fileInfo.absoluteFilePath()));
 		auto	 err = proc.error();
 		qDebug() << res << " " << err;
 #else
+*/
 			QDesktopServices::openUrl(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
-#endif
+			//#endif
+
+			downloadedFile->deleteLater();
+		}
 	});
 }
 
@@ -310,7 +343,7 @@ void FvUpdater::httpFeedDownloadFinished() {
 
 	m_reply->deleteLater();
 
-	if (m_dropOnFinnish) {
+	if (m_dropOnFinish) {
 		drop();
 	}
 }
@@ -403,4 +436,8 @@ bool FvUpdater::releaseIsNewer(const QString &releaseTag) const {
 			return true;
 	}
 	return false;
+}
+
+void FvUpdater::networkError(QNetworkReply::NetworkError) {
+	showErrorDialog(m_reply->errorString(), false);
 }
