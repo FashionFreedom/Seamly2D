@@ -258,7 +258,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     }
     else
     {
-        if (type != QtDebugMsg)
+        if( QtDebugMsg != type && QtWarningMsg != type )
         {
             abort(); // be NOISY unless overridden!
         }
