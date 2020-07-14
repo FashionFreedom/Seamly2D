@@ -320,7 +320,7 @@ void FvUpdater::getPLatformSpecificInstaller(QJsonArray assets) {
 
 #ifdef Q_OS_LINUX // Defined on Linux.
 	auto searchPattern = "AppImage";
-#elseif Q_OS_MAC // Defined on MAC OS (synonym for Darwin).
+#elseifdef Q_OS_MAC // Defined on MAC OS (synonym for Darwin).
 	auto searchPattern = "dmg";
 #else
 	auto searchPattern = ".exe";
