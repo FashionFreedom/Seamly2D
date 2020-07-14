@@ -1,7 +1,6 @@
 ![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner.svg)
 # Seamly2D
-[![Generic badge](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://img.shields.io/github/license/fashionfreedom/seamly2d) | [![Website seamly.net](https://img.shields.io/website-up-down-brightgreen-red/http/seamly.net.svg)](http://seamly.net/)  
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/fashionfreedom/seamly2d/commit-activity)
+[![Generic badge](https://img.shields.io/badge/License-GPLv3-brightgreen.svg)](https://img.shields.io/github/license/fashionfreedom/seamly2d)  [![Website seamly.net](https://img.shields.io/website-up-down-brightgreen-red/http/seamly.net.svg)](http://seamly.net/)  [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg)](https://GitHub.com/fashionfreedom/seamly2d/commit-activity)
 
 Seamly2D is pattern design software to create reusable, scalable, sharable custom-fit patterns with using historical, couture and bespoke pattern techniques. Seamly2D saves time and improves fit by creating patterns that are reusable parametric CAD engineering documents.
 
