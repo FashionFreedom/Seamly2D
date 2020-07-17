@@ -72,6 +72,13 @@
 #include "vlayoutpaper_p.h"
 #include "vposition.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VLayoutPaper &VLayoutPaper::operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW { Swap(paper); return *this; }
+#endif
+
+void VLayoutPaper::Swap(VLayoutPaper &paper) Q_DECL_NOTHROW
+{ std::swap(d, paper.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPaper::VLayoutPaper()
     :d(new VLayoutPaperData)

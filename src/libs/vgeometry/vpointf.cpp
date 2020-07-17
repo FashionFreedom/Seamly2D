@@ -56,6 +56,13 @@
 #include <QString>
 #include <QTransform>
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VPointF &VPointF::operator=(VPointF &&point) Q_DECL_NOTHROW { Swap(point); return *this; }
+#endif
+
+void VPointF::Swap(VPointF &point) Q_DECL_NOTHROW
+{ VGObject::Swap(point); std::swap(d, point.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VPointF creat empty point

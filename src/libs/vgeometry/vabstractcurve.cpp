@@ -62,6 +62,14 @@
 
 const qreal VAbstractCurve::lengthCurveDirectionArrow = 14;
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VAbstractCurve &VAbstractCurve::operator=(VAbstractCurve &&curve) Q_DECL_NOTHROW
+{ Swap(curve); return *this; }
+#endif
+
+void VAbstractCurve::Swap(VAbstractCurve &curve) Q_DECL_NOTHROW
+{ VGObject::Swap(curve); std::swap(d, curve.d); }
+
 VAbstractCurve::VAbstractCurve(const GOType &type, const quint32 &idObject, const Draw &mode)
     :VGObject(type, idObject, mode), d (new VAbstractCurveData())
 {}

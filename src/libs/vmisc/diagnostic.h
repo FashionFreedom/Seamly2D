@@ -48,7 +48,7 @@
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
-
+#include <QtGlobal>
 #ifndef DIAGNOSTIC_H
 #define DIAGNOSTIC_H
 

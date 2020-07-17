@@ -57,6 +57,13 @@
 #include "vspline_p.h"
 #include "../vmisc/vmath.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VSpline &VSpline::operator=(VSpline &&spline) Q_DECL_NOTHROW { Swap(spline); return *this; }
+#endif
+
+void VSpline::Swap(VSpline &spline) Q_DECL_NOTHROW
+{ VAbstractCubicBezier::Swap(spline); std::swap(d, spline.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VSpline default constructor

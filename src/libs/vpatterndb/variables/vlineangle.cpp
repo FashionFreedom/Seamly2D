@@ -63,6 +63,14 @@
 #include "vinternalvariable.h"
 #include "vlineangle_p.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VLineAngle &VLineAngle::operator=(VLineAngle &&var) Q_DECL_NOTHROW
+{ Swap(var); return *this; }
+#endif
+
+void VLineAngle::Swap(VLineAngle &var) Q_DECL_NOTHROW
+{ VInternalVariable::Swap(var); std::swap(d, var.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VLineAngle::VLineAngle()
     :VInternalVariable(), d(new VLineAngleData)
