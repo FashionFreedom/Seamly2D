@@ -164,7 +164,7 @@ jobs:
           qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           nmake
 
-      - name: create & code sign installer
+      - name: bundle VC_redist, OpenSSL dlls, and create + code sign installer
         run: |
           mkdir ..\windows-build
           Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
@@ -173,6 +173,10 @@ jobs:
           copy .\dist\seamly2d-installer.nsi ..\windows-build\
           copy .\dist\win\VC_redist.x86.exe ..\windows-build\
           copy .\dist\win\VC_redist.x64.exe ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
 
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
