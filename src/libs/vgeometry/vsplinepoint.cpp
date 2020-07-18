@@ -56,6 +56,14 @@
 #include "../qmuparser/qmutokenparser.h"
 #include "vsplinepoint_p.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VFSplinePoint &VFSplinePoint::operator=(VFSplinePoint &&point) Q_DECL_NOTHROW
+{ Swap(point); return *this; }
+#endif
+
+void VFSplinePoint::Swap(VFSplinePoint &point) Q_DECL_NOTHROW
+{ std::swap(d, point.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VFSplinePoint default constructor.
@@ -211,6 +219,14 @@ void VFSplinePoint::SetKAsm2(const qreal &value)
     d->kAsm2 = value;
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+#ifdef Q_COMPILER_RVALUE_REFS
+VSplinePoint &VSplinePoint::operator=(VSplinePoint &&point) Q_DECL_NOTHROW
+{ Swap(point); return *this; }
+#endif
+
+void VSplinePoint::Swap(VSplinePoint &point) Q_DECL_NOTHROW
+{ std::swap(d, point.d); }
 //------------------------------------------VSplinePoint---------------------------------------------------------------
 VSplinePoint::VSplinePoint()
     : d(new VSplinePointData)

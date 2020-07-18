@@ -56,6 +56,14 @@
 #include "vinternalvariable.h"
 #include "vcurvevariable_p.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VCurveVariable &VCurveVariable::operator=(VCurveVariable &&var) Q_DECL_NOTHROW
+{ Swap(var); return *this; }
+#endif
+
+void VCurveVariable::Swap(VCurveVariable &var) Q_DECL_NOTHROW
+{ VInternalVariable::Swap(var); std::swap(d, var.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VCurveVariable::VCurveVariable()
     :VInternalVariable(), d(new VCurveVariableData)

@@ -61,6 +61,14 @@
 #include "vinternalvariable.h"
 #include "vlinelength_p.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VLengthLine &VLengthLine::operator=(VLengthLine &&var) Q_DECL_NOTHROW
+{ Swap(var); return *this; }
+#endif
+
+void VLengthLine::Swap(VLengthLine &var) Q_DECL_NOTHROW
+{ VInternalVariable::Swap(var); std::swap(d, var.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VLengthLine::VLengthLine()
     :VInternalVariable(), d(new VLengthLineData)

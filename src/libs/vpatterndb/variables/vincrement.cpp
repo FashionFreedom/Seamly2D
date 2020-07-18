@@ -55,6 +55,13 @@
 #include "vvariable.h"
 #include "vincrement_p.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VIncrement &VIncrement::operator=(VIncrement &&incr) Q_DECL_NOTHROW { Swap(incr); return *this; }
+#endif
+
+void VIncrement::Swap(VIncrement &incr) Q_DECL_NOTHROW
+{ VVariable::Swap(incr); std::swap(d, incr.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VIncrement create enpty increment

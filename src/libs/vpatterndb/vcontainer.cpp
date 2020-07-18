@@ -91,6 +91,14 @@ qreal VContainer::_size = 50;
 qreal VContainer::_height = 176;
 QSet<QString> VContainer::uniqueNames = QSet<QString>();
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VContainer &VContainer::operator=(VContainer &&data) Q_DECL_NOTHROW
+{ Swap(data); return *this; }
+#endif
+
+void VContainer::Swap(VContainer &data) Q_DECL_NOTHROW
+{ std::swap(d, data.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VContainer create empty container

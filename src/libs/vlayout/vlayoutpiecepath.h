@@ -69,11 +69,10 @@ public:
 
     VLayoutPiecePath &operator=(const VLayoutPiecePath &path);
 #ifdef Q_COMPILER_RVALUE_REFS
-    VLayoutPiecePath &operator=(VLayoutPiecePath &&path) Q_DECL_NOTHROW { Swap(path); return *this; }
+	VLayoutPiecePath &operator=(VLayoutPiecePath &&path) Q_DECL_NOTHROW;
 #endif
 
-    void Swap(VLayoutPiecePath &path) Q_DECL_NOTHROW
-    { std::swap(d, path.d); }
+	void Swap(VLayoutPiecePath &path) Q_DECL_NOTHROW;
 
     QPainterPath GetPainterPath() const;
 

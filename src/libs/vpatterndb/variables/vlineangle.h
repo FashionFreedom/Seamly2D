@@ -73,11 +73,10 @@ public:
 
     VLineAngle &operator=(const VLineAngle &var);
 #ifdef Q_COMPILER_RVALUE_REFS
-    VLineAngle &operator=(VLineAngle &&var) Q_DECL_NOTHROW { Swap(var); return *this; }
+	VLineAngle &operator=(VLineAngle &&var) Q_DECL_NOTHROW;
 #endif
 
-    void Swap(VLineAngle &var) Q_DECL_NOTHROW
-    { VInternalVariable::Swap(var); std::swap(d, var.d); }
+	void Swap(VLineAngle &var) Q_DECL_NOTHROW;
 
     virtual bool Filter(quint32 id) Q_DECL_OVERRIDE;
     void         SetValue(const VPointF *p1, const VPointF *p2);

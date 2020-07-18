@@ -80,11 +80,10 @@ public:
 
     VLayoutPaper &operator=(const VLayoutPaper &paper);
 #ifdef Q_COMPILER_RVALUE_REFS
-    VLayoutPaper &operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW { Swap(paper); return *this; }
+	VLayoutPaper &operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW;
 #endif
 
-    void Swap(VLayoutPaper &paper) Q_DECL_NOTHROW
-    { std::swap(d, paper.d); }
+	void Swap(VLayoutPaper &paper) Q_DECL_NOTHROW;
 
     int  GetHeight() const;
     void SetHeight(int height);
