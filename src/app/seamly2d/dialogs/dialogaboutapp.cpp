@@ -38,84 +38,83 @@
 #include "../fervor/fvupdater.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogAboutApp::DialogAboutApp(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::DialogAboutApp),
-    isInitialized(false)
-{
-    ui->setupUi(this);
+DialogAboutApp::DialogAboutApp(QWidget *parent) : QDialog(parent),
+												  ui(new Ui::DialogAboutApp),
+												  isInitialized(false) {
+	ui->setupUi(this);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+	qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    ui->label_Seamly2D_Version->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
-    ui->labelBuildRevision->setText(QString("Build revision: %1").arg(BUILD_REVISION));
-    ui->label_QT_Version->setText(buildCompatibilityString());
+	ui->label_Seamly2D_Version->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
+	ui->labelBuildRevision->setText(QString("Build revision: %1").arg(BUILD_REVISION));
+	ui->label_QT_Version->setText(buildCompatibilityString());
 
-    QDate date = QLocale::c().toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
-    ui->label_Seamly2D_Built->setText(tr("Built on %1 at %2").arg(date.toString()).arg(__TIME__));
+	QDate date = QLocale::c().toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
+	ui->label_Seamly2D_Built->setText(tr("Built on %1 at %2").arg(date.toString()).arg(__TIME__));
 
-    ui->label_Legal_Stuff->setText(QApplication::translate("InternalStrings",
-                                                           "The program is provided AS IS with NO WARRANTY OF ANY "
-                                                           "KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY "
-                                                           "AND FITNESS FOR A PARTICULAR PURPOSE."));
+	ui->label_Legal_Stuff->setText(QApplication::translate("InternalStrings",
+														   "The program is provided AS IS with NO WARRANTY OF ANY "
+														   "KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY "
+														   "AND FITNESS FOR A PARTICULAR PURPOSE."));
 
 
-    ui->pushButton_Web_Site->setText(tr("Web site : %1").arg(VER_COMPANYDOMAIN_STR));
-    connect(ui->pushButton_Web_Site, &QPushButton::clicked, this, [this]()
-    {
-        if ( QDesktopServices::openUrl(QUrl(VER_COMPANYDOMAIN_STR)) == false)
-        {
-            qWarning() << tr("Cannot open your default browser");
-        }
-    });
+	ui->pushButton_Web_Site->setText(tr("Web site : %1").arg(VER_COMPANYDOMAIN_STR));
+	connect(ui->pushButton_Web_Site, &QPushButton::clicked, this, []() {
+		if (QDesktopServices::openUrl(QUrl(VER_COMPANYDOMAIN_STR)) == false) {
+			qWarning() << tr("Cannot open your default browser");
+		}
+	});
 
-    connect(ui->pushButtonCheckUpdate, &QPushButton::clicked, []()
-    {
-        // Set feed URL before doing anything else
-        FvUpdater::sharedUpdater()->SetFeedURL(defaultFeedURL);
-        FvUpdater::sharedUpdater()->CheckForUpdatesNotSilent();
-    });
+	connect(ui->pushButtonCheckUpdate, &QPushButton::clicked, []() {
+		// Set feed URL before doing anything else
+		FvUpdater::sharedUpdater()->SetFeedURL(defaultFeedURL);
+		FvUpdater::sharedUpdater()->CheckForUpdatesNotSilent();
+	});
 
-    // By default on Windows font point size 8 points we need 11 like on Linux.
-    FontPointSize(ui->label_Legal_Stuff, 11);
-    FontPointSize(ui->label_contrib_label, 11);
-    FontPointSize(ui->label_Seamly2D_Built, 11);
-    FontPointSize(ui->label_QT_Version, 11);
+	ui->downloadProgress->hide();
+	connect(FvUpdater::sharedUpdater(), SIGNAL(setProgress(int)), this, SLOT(setProgressValue(int)));
+	// By default on Windows font point size 8 points we need 11 like on Linux.
+	FontPointSize(ui->label_Legal_Stuff, 11);
+	FontPointSize(ui->label_contrib_label, 11);
+	FontPointSize(ui->label_Seamly2D_Built, 11);
+	FontPointSize(ui->label_QT_Version, 11);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogAboutApp::~DialogAboutApp()
-{
-    delete ui;
+DialogAboutApp::~DialogAboutApp() {
+	delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogAboutApp::showEvent(QShowEvent *event)
-{
-    QDialog::showEvent( event );
-    if ( event->spontaneous() )
-    {
-        return;
-    }
+void DialogAboutApp::showEvent(QShowEvent *event) {
+	QDialog::showEvent(event);
+	if (event->spontaneous()) {
+		return;
+	}
 
-    if (isInitialized)
-    {
-        return;
-    }
-    // do your init stuff here
+	if (isInitialized) {
+		return;
+	}
+	// do your init stuff here
 
-    setMaximumSize(size());
-    setMinimumSize(size());
+	setMaximumSize(size());
+	setMinimumSize(size());
 
-    isInitialized = true;//first show windows are held
+	isInitialized = true; //first show windows are held
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogAboutApp::FontPointSize(QWidget *w, int pointSize)
-{
-    SCASSERT(w != nullptr)
+void DialogAboutApp::FontPointSize(QWidget *w, int pointSize) {
+	SCASSERT(w != nullptr)
 
-    QFont font = w->font();
-    font.setPointSize(pointSize);
-    w->setFont(font);
+	QFont font = w->font();
+	font.setPointSize(pointSize);
+	w->setFont(font);
+}
+void DialogAboutApp::setProgressValue(int val) {
+	if (!ui->downloadProgress->isVisible())
+		ui->downloadProgress->show();
+	ui->downloadProgress->setValue(val);
+	if (val == 100)
+		ui->downloadProgress->hide();
 }

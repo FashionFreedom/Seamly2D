@@ -60,7 +60,8 @@ public:
 
 	bool IsDropOnFinish() const;
 	void SetDropOnFinish(bool value);
-
+signals:
+	void setProgress(int);
 public slots:
 	// Check for updates
 	bool CheckForUpdates(bool silentAsMuchAsItCouldGet = true);
@@ -79,6 +80,7 @@ protected slots:
 private slots:
 	void httpFeedDownloadFinished();
 	void networkError(QNetworkReply::NetworkError);
+	void getFileSize();
 
 private:
 	//
@@ -103,6 +105,7 @@ private:
 	QPointer<QNetworkReply> m_reply;
 	bool					m_httpRequestAborted;
 	bool					m_dropOnFinish;
+	int						m_fileSize{};
 
 	void startDownloadFeed(const QUrl &url);		// Start downloading feed
 	void startDownloadFile(QUrl url, QString name); // Start downloading file

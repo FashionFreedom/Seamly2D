@@ -178,6 +178,13 @@ bool FvUpdater::CheckForUpdatesNotSilent() {
 	return success;
 }
 
+void FvUpdater::getFileSize() {
+	auto fileSizeHeader = m_reply->header(QNetworkRequest::ContentLengthHeader).toInt();
+	if (m_fileSize == 0 && fileSizeHeader > 1000000) {
+		m_fileSize = fileSizeHeader;
+	}
+}
+
 void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	QNetworkRequest request;
 	request.setHeader(QNetworkRequest::ContentTypeHeader,
@@ -188,6 +195,7 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
 
 	m_reply = m_qnam.get(request);
+	connect(m_reply, SIGNAL(metaDataChanged()), this, SLOT(getFileSize()));
 	QDir downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
 	auto downloadedFile = new QFile(downloadDir.filePath(name), this);
 	bool isOpen = downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
@@ -200,6 +208,8 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 		// That way we use less RAM than when reading it at the finished()
 		// signal of the QNetworkReply
 		downloadedFile->write(m_reply->readAll());
+		int progress = downloadedFile->size() * 100.0 / m_fileSize;
+		setProgress(progress);
 	});
 
 	connect(m_reply.data(), SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(networkError(QNetworkReply::NetworkError)));
@@ -215,11 +225,6 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 				}
 			});
 	connect(m_reply.data(), &QNetworkReply::finished, this, [=]() {
-		// this slot gets called every time the QNetworkReply has new data.
-		// We read all of its new data and write it into the file.
-		// That way we use less RAM than when reading it at the finished()
-		// signal of the QNetworkReply
-
 		if (m_httpRequestAborted) {
 			m_reply->deleteLater();
 			return;
@@ -239,7 +244,8 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 			startDownloadFile(newUrl, name);
 			return;
 		} else {
-
+			setProgress(100); //just in case
+			m_fileSize = 0;
 			downloadedFile->write(m_reply->readAll());
 			downloadedFile->close();
 			auto fileInfo = QFileInfo(*downloadedFile);
@@ -439,5 +445,7 @@ bool FvUpdater::releaseIsNewer(const QString &releaseTag) const {
 }
 
 void FvUpdater::networkError(QNetworkReply::NetworkError) {
+	setProgress(100);
+	m_fileSize = 0;
 	showErrorDialog(m_reply->errorString(), false);
 }
