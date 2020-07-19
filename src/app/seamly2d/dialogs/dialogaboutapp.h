@@ -47,6 +47,9 @@ public:
 protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
+public slots:
+	void setProgressValue(int val);
+
 private:
     Ui::DialogAboutApp *ui;
     bool isInitialized;

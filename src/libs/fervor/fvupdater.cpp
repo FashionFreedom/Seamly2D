@@ -178,6 +178,13 @@ bool FvUpdater::CheckForUpdatesNotSilent() {
 	return success;
 }
 
+void FvUpdater::getFileSize() {
+	auto fileSizeHeader = m_reply->header(QNetworkRequest::ContentLengthHeader).toInt();
+	if (m_fileSize == 0 && fileSizeHeader > 1000000) {
+		m_fileSize = fileSizeHeader;
+	}
+}
+
 void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	QNetworkRequest request;
 	request.setHeader(QNetworkRequest::ContentTypeHeader,
@@ -188,7 +195,10 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	request.setSslConfiguration(QSslConfiguration::defaultConfiguration());
 
 	m_reply = m_qnam.get(request);
+	connect(m_reply, SIGNAL(metaDataChanged()), this, SLOT(getFileSize()));
 	QDir downloadDir = QStandardPaths::writableLocation(QStandardPaths::DownloadLocation);
+	downloadDir.mkdir(m_releaseName);
+	downloadDir.cd(m_releaseName);
 	auto downloadedFile = new QFile(downloadDir.filePath(name), this);
 	bool isOpen = downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
 	if (!isOpen) {
@@ -200,6 +210,8 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 		// That way we use less RAM than when reading it at the finished()
 		// signal of the QNetworkReply
 		downloadedFile->write(m_reply->readAll());
+		int progress = downloadedFile->size() * 100.0 / m_fileSize;
+		setProgress(progress);
 	});
 
 	connect(m_reply.data(), SIGNAL(error(QNetworkReply::NetworkError)), this, SLOT(networkError(QNetworkReply::NetworkError)));
@@ -215,50 +227,49 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 				}
 			});
 	connect(m_reply.data(), &QNetworkReply::finished, this, [=]() {
-		// this slot gets called every time the QNetworkReply has new data.
-		// We read all of its new data and write it into the file.
-		// That way we use less RAM than when reading it at the finished()
-		// signal of the QNetworkReply
+		fileDownloadFinished(downloadedFile, name);
+	});
+}
+void FvUpdater::fileDownloadFinished(QFile *downloadedFile, QString name) {
+	if (m_httpRequestAborted) {
+		m_reply->deleteLater();
+		return;
+	}
 
-		if (m_httpRequestAborted) {
-			m_reply->deleteLater();
-			return;
-		}
+	const QVariant redirectionTarget =
+		m_reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
+	if (m_reply->error() != QNetworkReply::NoError) {
+		// Error.
+		showErrorDialog(
+			tr("File download failed: %1.").arg(m_reply->errorString()), false);
+	} else if (not redirectionTarget.isNull()) {
+		downloadedFile->close();
+		const QUrl newUrl = m_feedURL.resolved(redirectionTarget.toUrl());
+		m_reply->deleteLater();
+		showInformationDialog(tr("Download has started, the installer will open once it's finished downloading"), false);
+		startDownloadFile(newUrl, name);
+		return;
+	} else {
+		setProgress(100); //just in case
+		m_fileSize = 0;
+		downloadedFile->write(m_reply->readAll());
+		downloadedFile->close();
+		auto fileInfo = QFileInfo(*downloadedFile);
 
-		const QVariant redirectionTarget =
-			m_reply->attribute(QNetworkRequest::RedirectionTargetAttribute);
-		if (m_reply->error() != QNetworkReply::NoError) {
-			// Error.
-			showErrorDialog(
-				tr("File download failed: %1.").arg(m_reply->errorString()), false);
-		} else if (not redirectionTarget.isNull()) {
-			downloadedFile->close();
-			const QUrl newUrl = m_feedURL.resolved(redirectionTarget.toUrl());
-			m_reply->deleteLater();
-			showInformationDialog(tr("Download has started, the installer will open once it's finished downloading"), false);
-			startDownloadFile(newUrl, name);
-			return;
-		} else {
-
-			downloadedFile->write(m_reply->readAll());
-			downloadedFile->close();
-			auto fileInfo = QFileInfo(*downloadedFile);
-			/*
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_LINUX
+		QDesktopServices::openUrl(QUrl::fromLocalFile(fileInfo.dir().absolutePath()));
 		QProcess proc;
-		auto	 res = proc.startDetached("explorer.exe /select," + QDir::toNativeSeparators(fileInfo.absoluteFilePath()));
+		auto	 res = proc.startDetached(QDir::toNativeSeparators(fileInfo.absoluteFilePath()));
 		auto	 err = proc.error();
 		qDebug() << res << " " << err;
 #else
-*/
-			QDesktopServices::openUrl(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
-			//#endif
 
-			downloadedFile->deleteLater();
-		}
-	});
+		QDesktopServices::openUrl(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));
+#endif
+
+		downloadedFile->deleteLater();
+	}
 }
-
 //---------------------------------------------------------------------------------------------------------------------
 void FvUpdater::startDownloadFeed(const QUrl &url) {
 	// m_xml.clear();
@@ -428,16 +439,18 @@ bool FvUpdater::showConfirmationDialog(const QString &message,
 }
 
 
-bool FvUpdater::releaseIsNewer(const QString &releaseTag) const {
+bool FvUpdater::releaseIsNewer(const QString &releaseTag) {
 	const auto releaseVersion = releaseTag.mid(1).split('.');
 	const auto currentVersion = QCoreApplication::applicationVersion().split('.');
 	for (int i = 0; i < releaseVersion.length(); i++) {
 		if (releaseVersion[i].toInt() > currentVersion[i].toInt())
-			return true;
+			return (m_releaseName = releaseTag), true;
 	}
 	return false;
 }
 
 void FvUpdater::networkError(QNetworkReply::NetworkError) {
+	setProgress(100);
+	m_fileSize = 0;
 	showErrorDialog(m_reply->errorString(), false);
 }
