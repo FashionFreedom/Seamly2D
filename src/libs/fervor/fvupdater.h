@@ -44,7 +44,7 @@
 #include <QtGlobal>
 
 extern const QString defaultFeedURL;
-
+class QFile;
 class FvUpdater : public QObject {
 	Q_OBJECT
 
@@ -106,10 +106,12 @@ private:
 	bool					m_httpRequestAborted;
 	bool					m_dropOnFinish;
 	int						m_fileSize{};
+	QString					m_releaseName{};
 
 	void startDownloadFeed(const QUrl &url);		// Start downloading feed
 	void startDownloadFile(QUrl url, QString name); // Start downloading file
-	void cancelDownloadFeed();						// Stop downloading the current feed
+	void fileDownloadFinished(QFile *downloadedFile, QString name);
+	void cancelDownloadFeed(); // Stop downloading the current feed
 
 	// Dialogs (notifications)
 	// Show an error message
@@ -124,7 +126,7 @@ private:
 
 
 	// bool jsonParsing(); //
-	bool releaseIsNewer(const QString &releaseTag) const;
+	bool releaseIsNewer(const QString &releaseTag);
 	void getPLatformSpecificInstaller(QJsonArray assets);
 };
 
