@@ -1,8 +1,13 @@
 ![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner.svg)
 # Seamly2D
-[![Latest Version](https://img.shields.io/github/release/fashionfreedom/seamly2d.svg?style=flat-square)](https://github.com/fashionfreedom/seamly2d/releases) 
-[![Generic badge](https://img.shields.io/badge/License-GPLv3-brightgreen.svg?style=flat-square)](https://img.shields.io/github/license/fashionfreedom/seamly2d)  [![Website seamly.net](https://img.shields.io/website-up-down-brightgreen-red/http/seamly.net.svg?style=flat-square)](http://seamly.net/)  ![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square) ![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/fashionfreedom/seamly2d/Build%20weekly%20release/develop?logo=github&style=flat-square)   
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?style=flat-square)  ![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square)
+[![Latest Version](https://img.shields.io/github/release/fashionfreedom/seamly2d.svg?style=flat-square)](https://github.com/fashionfreedom/seamly2d/releases)]   
+[![Generic badge](https://img.shields.io/badge/License-GPLv3-brightgreen.svg?style=flat-square)](https://img.shields.io/github/license/fashionfreedom/seamly2d)     
+![Website seamly.net](https://img.shields.io/website-up-down-brightgreen-red/http/seamly.net.svg?style=flat-square)](http://seamly.net/)   
+![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square)]
+
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/fashionfreedom/seamly2d/Build%20weekly%20release/develop?logo=github&style=flat-square)]   
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?style=flat-square)]    
+[![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square)]  
 
 Seamly2D is pattern design software to create reusable, scalable, sharable custom-fit patterns with using historical, couture and bespoke pattern techniques. Seamly2D saves time and improves fit by creating patterns that are reusable parametric CAD engineering documents.
 
