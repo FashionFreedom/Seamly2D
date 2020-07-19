@@ -40,6 +40,9 @@ Section "Seamly2D"
   
   WriteRegStr HKLM SOFTWARE\NSIS_Seamly2D "Install_Dir" "$INSTDIR"
   
+  StrCpy $R1 "Seamly2D"
+  Call check_for_window
+  
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "DisplayName" "Seamly2D"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "NoModify" 1
@@ -69,3 +72,11 @@ Section "Uninstall"
   RMDir "$SMPROGRAMS\Seamly2D"
 
 SectionEnd
+
+Function check_for_window
+FindWindow $R0 "" $R1
+IsWindow $R0 0 not_running
+MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION "Please close any running Seamly2D processes" IDRETRY -2 IDABORT +1
+Quit
+not_running:
+FunctionEnd
