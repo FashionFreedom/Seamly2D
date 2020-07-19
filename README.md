@@ -1,5 +1,9 @@
 ![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner.svg)
 # Seamly2D
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?color=blue&include_prereleases&style=flat-square)    
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fashionfreedom/seamly2d/Build%20weekly%20release?style=flat-square)  ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?color=brightgreen&style=flat-square)  ![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square)  
+![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square)  ![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square)  
+![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.net)   ![Discourse posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.net&style=flat-square)  
 
 Seamly2D is pattern design software to create reusable, scalable, sharable custom-fit patterns with using historical, couture and bespoke pattern techniques. Seamly2D saves time and improves fit by creating patterns that are reusable parametric CAD engineering documents.
 
@@ -20,52 +24,32 @@ Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is
    * [Forum](https://forum.seamly.net/)  
    * [Translations](https://www.transifex.com/organization/valentina)  
    * [Code repository](https://github.com/fashionfreedom/seamly2d)
-   * PPA for Ubuntu (release)   ppa:susan-spencer/seamly2d
-   * PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build   
-   * IRC channel #seamly2d on freenode    
+[//]: # (    *  PPA for Ubuntu (release)   ppa:susan-spencer/seamly2d)
+[//]: # (    *  PPA for Ubuntu (develop)   ppa:susan-spencer/seamly2d-dayly-build)   
+[//]: # (    * IRC channel #seamly2d on freenode)    
 
 ___________________________________________________
 ## Download Seamly2D code
 
-### Windows:  
-* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_release)  
-* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-win_auto-upload)  
+Download from our Releases page [here:](https://github.com/fashionfreedom/seamly2d/releases/latest)
 
-### Mac OS X  
-* [stable version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_release)  
-* [development version](https://bintray.com/fashionfreedom/Seamly2D/Seamly2D-mac_auto-upload)  
-
-### Ubuntu  
-release version:  
-```
-sudo add-apt-repository ppa:susan-spencer/seamly2d  
-sudo apt-get update  
-sudo apt-get install seamly2d  
-```
-development version:  
-```
-sudo add-apt-repository ppa:susan-spencer/seamly2d-dayly-build  
-sudo apt-get update  
-sudo apt-get install seamly2d  
-```
 ___________________________________________________
 ## Build Seamly2D
 
 Basic Software Prerequisites:  
-* Qt 5.12.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
-* QtCreator 4.11.2 or later (to build code)
-* QtChooser (to select or update Qt version)
+* Qt 5.15.0 or later - https://www.qt.io/download-open-source (includes Qt, QtCreator, and QtChooser)
+* QtCreator 4.13.2 or later (to build code)
 * Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
-* Compiler - either gcc from https://gcc.gnu.org, or mingw from https://sourceforge.net/projects/mingw/
+* Compiler - MSVC 2019, gcc, and MinWG are downloadable with QtCreator, and you can add them using Qt Maintenance Tool. You may use any to test your changes.
 * XpdfWidget/Qt - https://www.xpdfreader.com/XpdfWidget.html
 * Check the sections below for your operating system to find additional installation requirements
 
-Learn Seamly2D development methods and styles:
+Development methods and styles:
    * Git Flow workflow: https://medium.com/@devmrin/learn-complete-gitflow-workflow-basics-how-to-from-start-to-finish-8756ad5b7394
    * Gibhub commit message style guide: https://www.conventionalcommits.org/en/v1.0.0/
    * Github issue description style guide: https://guides.github.com/features/issues/
 
-Learn Seamly2D build method:
+Build method:
    * Building with Qt: https://forum.seamly.net/t/how-to-build-with-qt/1833
 
 ___________________________________________________
@@ -74,9 +58,9 @@ ___________________________________________________
 ### Linux (general)
 * For Linux in general, these additional tools and libraries may be required:
 - g++ compiler (at least GCC 4.7 is needed and GCC 4.8 is recommended) OR clang (minimum clang 3.4 (2014), current 5.0 (2017)),
-- xpdf (pdftops)
+- poppler (pdftops)
 - OpenGL libraries
-- Qt build libraries*
+- Qt build libraries* 
 - XMLpatterns qt5 xml bindings https://command-not-found.com/xmlpatterns
 * All Qt-tools come as qmake-qt5, etc. If you build from command line instead of within Qt Creator, run the following prior to running *qmake-qt5*:
 ```
@@ -120,7 +104,7 @@ wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.3.4-1_amd64.d
 sudo dpkg -i ccache_3.3.4-1_amd64.deb
 ```
 * Install Qt
-- If Qt is not completely installed on your distrubution, uninstall Qt then install Qt from ppa. Use ppa for your distribution, this example is from Trusty:
+- If Qt is not completely installed on your distrubution, uninstall Qt then install Qt from ppa. Use Qt's ppa for your distribution, this example is from Trusty:
 ```
 sudo add-apt-repository -y ppa:beineri/opt-qt592-trusty  
 sudo apt-get -qq update  
