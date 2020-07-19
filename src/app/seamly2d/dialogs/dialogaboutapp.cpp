@@ -38,9 +38,11 @@
 #include "../fervor/fvupdater.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogAboutApp::DialogAboutApp(QWidget *parent) : QDialog(parent),
-												  ui(new Ui::DialogAboutApp),
-												  isInitialized(false) {
+DialogAboutApp::DialogAboutApp(QWidget *parent) :
+	QDialog(parent),
+	ui(new Ui::DialogAboutApp),
+	isInitialized(false)
+{
 	ui->setupUi(this);
 
 	qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
@@ -59,20 +61,21 @@ DialogAboutApp::DialogAboutApp(QWidget *parent) : QDialog(parent),
 
 
 	ui->pushButton_Web_Site->setText(tr("Web site : %1").arg(VER_COMPANYDOMAIN_STR));
-	connect(ui->pushButton_Web_Site, &QPushButton::clicked, this, []() {
-		if (QDesktopServices::openUrl(QUrl(VER_COMPANYDOMAIN_STR)) == false) {
+	connect(ui->pushButton_Web_Site, &QPushButton::clicked, this, [this]()
+	{
+		if ( QDesktopServices::openUrl(QUrl(VER_COMPANYDOMAIN_STR)) == false)
+		{
 			qWarning() << tr("Cannot open your default browser");
 		}
 	});
 
-	connect(ui->pushButtonCheckUpdate, &QPushButton::clicked, []() {
+	connect(ui->pushButtonCheckUpdate, &QPushButton::clicked, []()
+	{
 		// Set feed URL before doing anything else
 		FvUpdater::sharedUpdater()->SetFeedURL(defaultFeedURL);
 		FvUpdater::sharedUpdater()->CheckForUpdatesNotSilent();
 	});
 
-	ui->downloadProgress->hide();
-	connect(FvUpdater::sharedUpdater(), SIGNAL(setProgress(int)), this, SLOT(setProgressValue(int)));
 	// By default on Windows font point size 8 points we need 11 like on Linux.
 	FontPointSize(ui->label_Legal_Stuff, 11);
 	FontPointSize(ui->label_contrib_label, 11);
@@ -81,18 +84,22 @@ DialogAboutApp::DialogAboutApp(QWidget *parent) : QDialog(parent),
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogAboutApp::~DialogAboutApp() {
+DialogAboutApp::~DialogAboutApp()
+{
 	delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogAboutApp::showEvent(QShowEvent *event) {
-	QDialog::showEvent(event);
-	if (event->spontaneous()) {
+void DialogAboutApp::showEvent(QShowEvent *event)
+{
+	QDialog::showEvent( event );
+	if ( event->spontaneous() )
+	{
 		return;
 	}
 
-	if (isInitialized) {
+	if (isInitialized)
+	{
 		return;
 	}
 	// do your init stuff here
@@ -100,17 +107,19 @@ void DialogAboutApp::showEvent(QShowEvent *event) {
 	setMaximumSize(size());
 	setMinimumSize(size());
 
-	isInitialized = true; //first show windows are held
+	isInitialized = true;//first show windows are held
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogAboutApp::FontPointSize(QWidget *w, int pointSize) {
+void DialogAboutApp::FontPointSize(QWidget *w, int pointSize)
+{
 	SCASSERT(w != nullptr)
 
 	QFont font = w->font();
 	font.setPointSize(pointSize);
 	w->setFont(font);
 }
+
 void DialogAboutApp::setProgressValue(int val) {
 	if (!ui->downloadProgress->isVisible())
 		ui->downloadProgress->show();

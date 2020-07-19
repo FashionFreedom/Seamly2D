@@ -31,29 +31,31 @@
 
 #include <QDialog>
 
-namespace Ui {
-	class DialogAboutApp;
+namespace Ui
+{
+    class DialogAboutApp;
 }
 
-class DialogAboutApp : public QDialog {
-	Q_OBJECT
+class DialogAboutApp : public QDialog
+{
+    Q_OBJECT
 
 public:
-	explicit DialogAboutApp(QWidget *parent = nullptr);
-	virtual ~DialogAboutApp();
+    explicit DialogAboutApp(QWidget *parent = nullptr);
+    virtual ~DialogAboutApp();
 
 protected:
-	virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
 public slots:
 	void setProgressValue(int val);
 
 private:
-	Ui::DialogAboutApp *ui;
-	bool				isInitialized;
-	Q_DISABLE_COPY(DialogAboutApp)
+    Ui::DialogAboutApp *ui;
+    bool isInitialized;
+    Q_DISABLE_COPY(DialogAboutApp)
 
-	void FontPointSize(QWidget *w, int pointSize);
+    void FontPointSize(QWidget *w, int pointSize);
 };
 
 #endif // DIALOGABOUTAPP_H
