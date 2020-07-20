@@ -82,6 +82,7 @@ DialogAboutApp::DialogAboutApp(QWidget *parent) :
 	FontPointSize(ui->label_Seamly2D_Built, 11);
 	FontPointSize(ui->label_QT_Version, 11);
 	ui->downloadProgress->hide();
+	ui->downloadProgress->setValue(0);
 	connect(FvUpdater::sharedUpdater(), SIGNAL(setProgress(int)), this, SLOT(setProgressValue(int)));
 }
 
@@ -130,6 +131,7 @@ void DialogAboutApp::setProgressValue(int val) {
 	ui->downloadProgress->setValue(val);
 	if (val == 100){
 		ui->downloadProgress->hide();
+		ui->downloadProgress->setValue(0);
 		ui->pushButtonCheckUpdate->setDisabled(false);
 	}
 }
