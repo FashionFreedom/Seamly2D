@@ -303,7 +303,7 @@ QStringList VAbstractPattern::ListMeasurements() const
         }
     }
 
-    return QStringList(measurements.toList());
+	return QStringList(measurements.values());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

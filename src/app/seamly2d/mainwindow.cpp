@@ -564,10 +564,11 @@ bool MainWindow::UpdateMeasurements(const QString &path, int size, int height)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::CheckRequiredMeasurements(const VMeasurements *m)
 {
-    const QSet<QString> match = doc->ListMeasurements().toSet().subtract(m->ListAll().toSet());
+	const QSet<QString> match = doc->ListMeasurements().toSet().
+									subtract(m->ListAll().toSet());
     if (not match.isEmpty())
     {
-        QList<QString> list = match.toList();
+		QList<QString> list = match.values();
         for (int i = 0; i < list.size(); ++i)
         {
             list[i] = qApp->TrVars()->MToUser(list.at(i));

@@ -150,8 +150,8 @@ bool VObjEngine::begin(QPaintDevice *pdev)
     }
 
     stream = QSharedPointer<QTextStream>(new QTextStream(outputDevice.data()));
-    *stream << "# Seamly2D OBJ File" <<  endl;
-    *stream << "# www.seamly2d-project.org/" <<  endl;
+	*stream << "# Seamly2D OBJ File\n";
+	*stream << "# www.seamly2d-project.org/\n";
     return true;
 }
 
@@ -191,7 +191,7 @@ void VObjEngine::drawPath(const QPainterPath &path)
     qint64 sq = Square(polygon);
 
     ++planeCount;
-    *stream << "o Plane." << QString("%1").arg(planeCount, 3, 10, QLatin1Char('0')) << endl;
+	*stream << "o Plane." << QString("%1").arg(planeCount, 3, 10, QLatin1Char('0')) << '\n';
 
     quint32 num_points = 0;
 
@@ -246,7 +246,7 @@ void VObjEngine::drawPath(const QPainterPath &path)
     }
 
     delaunay2d_release(res);//Don't forget release data
-    *stream << "s off" << endl;
+	*stream << "s off\n";
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -261,7 +261,7 @@ void VObjEngine::drawPolygon(const QPointF *points, int pointCount, PolygonDrawM
     {
         *stream << QString(" %1").arg(static_cast<int>(globalPointsCount) - pointCount + i + 1);
     }
-    *stream << endl;
+	*stream << '\n';
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -285,7 +285,7 @@ void VObjEngine::drawPoints(const QPointF *points, int pointCount)
         qreal y = (((points[i].y() - 0)/qFloor(size.width()/2.0)) - 1.0)*-1;
 
         *stream << "v" << " " << QString::number(x, 'f', 6 ) << " " << QString::number(y, 'f', 6 ) << " "
-             << "0.000000" << endl;
+		     << "0.000000\n";
         ++globalPointsCount;
     }
 }

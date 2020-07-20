@@ -625,7 +625,7 @@ bool VContainer::IsUnique(const QString &name)
 QStringList VContainer::AllUniqueNames()
 {
     QStringList names = builInFunctions;
-    names.append(uniqueNames.toList());
+	names.append(uniqueNames.values());
     return names;
 }
 
@@ -668,7 +668,7 @@ void VContainer::ClearUniqueNames()
 //---------------------------------------------------------------------------------------------------------------------
 void VContainer::ClearUniqueIncrementNames()
 {
-    const QList<QString> list = uniqueNames.toList();
+	const QList<QString> list = uniqueNames.values();
     ClearUniqueNames();
 
     for(int i = 0; i < list.size(); ++i)
