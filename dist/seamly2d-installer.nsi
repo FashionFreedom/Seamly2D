@@ -40,7 +40,7 @@ Section "Seamly2D"
   
   WriteRegStr HKLM SOFTWARE\NSIS_Seamly2D "Install_Dir" "$INSTDIR"
   
-  StrCpy $R1 "Seamly2D"
+  StrCpy $R1 " - Seamly2D"
   Call check_for_window
   
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "DisplayName" "Seamly2D"
@@ -76,7 +76,7 @@ SectionEnd
 Function check_for_window
 
 Push  0   # the starting offset of the push below
-Push  " - Seamly2D"   # the known part of the class name
+Push  $R1   # the known part of the class name
 Call  EnhancedFindWindow
 Pop  $0   # will contain the full wcn
 Pop  $1   # will contain the window's handle both will contain "failed", if no matching class name was found
@@ -107,7 +107,7 @@ Function  EnhancedFindWindow
     IsWindow  $3  0  search_loop
      System::Call 'user32.dll::GetWindowText(i r3, t .r4, i ${NSIS_MAX_STRLEN}) i .n'
 	 Push $4
-	 Push " - Seamly2D" 
+	 Push $R1
 	 Call StrContains
 	 Pop $R9
      StrCmp $R9 ""  search_loop search_end
