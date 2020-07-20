@@ -94,24 +94,16 @@ bool VPE::VProperty::setData(const QVariant &data, int role)
     return tmpResult;
 }
 
-bool VPE::VProperty::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index,
-                           const QAbstractItemDelegate *delegate) const
+bool VPE::VProperty::paint(QPainter *, const QStyleOptionViewItem &, const QModelIndex &,
+						   const QAbstractItemDelegate *) const
 {
-    Q_UNUSED(painter)
-    Q_UNUSED(option)
-    Q_UNUSED(index)
-    Q_UNUSED(delegate)
-
     return false;
 }
 
 //! Returns an editor widget, or NULL if it doesn't supply one
-QWidget* VPE::VProperty::createEditor(QWidget * parent, const QStyleOptionViewItem& options,
-                                      const QAbstractItemDelegate* delegate)
+QWidget* VPE::VProperty::createEditor(QWidget * parent, const QStyleOptionViewItem& ,
+									  const QAbstractItemDelegate* )
 {
-    Q_UNUSED(options)
-    Q_UNUSED(delegate)
-
     QItemEditorFactory *factory = new QItemEditorFactory;
     QItemEditorCreatorBase *lineCreator = new QStandardItemEditorCreator<QLineEdit>();
     factory->registerEditor(QVariant::String, lineCreator);
