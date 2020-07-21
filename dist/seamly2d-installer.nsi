@@ -20,7 +20,10 @@ UninstPage uninstConfirm
 UninstPage instfiles
 
 Section "Seamly2D"
-
+  
+  StrCpy $R1 " - Seamly2D"
+  Call check_for_window
+  
   SectionIn RO
   
   SetOutPath $INSTDIR
@@ -39,9 +42,6 @@ Section "Seamly2D"
   File /r *
   
   WriteRegStr HKLM SOFTWARE\NSIS_Seamly2D "Install_Dir" "$INSTDIR"
-  
-  StrCpy $R1 " - Seamly2D"
-  Call check_for_window
   
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "DisplayName" "Seamly2D"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "UninstallString" '"$INSTDIR\uninstall.exe"'
