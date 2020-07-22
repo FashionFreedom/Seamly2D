@@ -147,11 +147,10 @@ public:
 
     VContainer &operator=(const VContainer &data);
 #ifdef Q_COMPILER_RVALUE_REFS
-    VContainer &operator=(VContainer &&data) Q_DECL_NOTHROW { Swap(data); return *this; }
+	VContainer &operator=(VContainer &&data) Q_DECL_NOTHROW;
 #endif
 
-    void Swap(VContainer &data) Q_DECL_NOTHROW
-    { std::swap(d, data.d); }
+	void Swap(VContainer &data) Q_DECL_NOTHROW;
 
     template <typename T>
     const QSharedPointer<T> GeometricObject(const quint32 &id) const;

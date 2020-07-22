@@ -91,6 +91,14 @@ qreal VContainer::_size = 50;
 qreal VContainer::_height = 176;
 QSet<QString> VContainer::uniqueNames = QSet<QString>();
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VContainer &VContainer::operator=(VContainer &&data) Q_DECL_NOTHROW
+{ Swap(data); return *this; }
+#endif
+
+void VContainer::Swap(VContainer &data) Q_DECL_NOTHROW
+{ std::swap(d, data.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VContainer create empty container
@@ -617,7 +625,7 @@ bool VContainer::IsUnique(const QString &name)
 QStringList VContainer::AllUniqueNames()
 {
     QStringList names = builInFunctions;
-    names.append(uniqueNames.toList());
+	names.append(uniqueNames.values());
     return names;
 }
 
@@ -660,7 +668,7 @@ void VContainer::ClearUniqueNames()
 //---------------------------------------------------------------------------------------------------------------------
 void VContainer::ClearUniqueIncrementNames()
 {
-    const QList<QString> list = uniqueNames.toList();
+	const QList<QString> list = uniqueNames.values();
     ClearUniqueNames();
 
     for(int i = 0; i < list.size(); ++i)

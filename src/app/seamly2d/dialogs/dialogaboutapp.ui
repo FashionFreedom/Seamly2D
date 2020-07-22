@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>583</width>
-    <height>526</height>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -204,11 +204,11 @@
           <bool>true</bool>
          </property>
          <property name="plainText">
-          <string notr="true">Roman Telezhinskyi  
+          <string notr="true">Roman Telezhinskyi
 Susan Spencer
 Steve Conklin
-Timo Virtaneva 
-luzpazB 
+Timo Virtaneva
+luzpazB
 Christine Neupert
 Sabine Schmaltz
 grumpi
@@ -288,6 +288,25 @@ Ronan Le Tiec</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="downloadProgress">
+         <property name="value">
+          <number>25</number>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="textVisible">
+          <bool>true</bool>
+         </property>
+         <property name="invertedAppearance">
+          <bool>false</bool>
+         </property>
+         <property name="format">
+          <string>Downloading installer %p% complete</string>
          </property>
         </widget>
        </item>

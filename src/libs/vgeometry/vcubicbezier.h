@@ -80,11 +80,10 @@ public:
 
     VCubicBezier &operator=(const VCubicBezier &curve);
 #ifdef Q_COMPILER_RVALUE_REFS
-    VCubicBezier &operator=(VCubicBezier &&curve) Q_DECL_NOTHROW { Swap(curve); return *this; }
+	VCubicBezier &operator=(VCubicBezier &&curve) Q_DECL_NOTHROW;
 #endif
 
-    void Swap(VCubicBezier &curve) Q_DECL_NOTHROW
-    { VAbstractCubicBezier::Swap(curve); std::swap(d, curve.d); }
+	void Swap(VCubicBezier &curve) Q_DECL_NOTHROW;
 
     virtual VPointF GetP1() const Q_DECL_OVERRIDE;
     void            SetP1(const VPointF &p);

@@ -89,11 +89,10 @@ public:
 
     VArc& operator= (const VArc &arc);
 #ifdef Q_COMPILER_RVALUE_REFS
-    VArc &operator=(VArc &&arc) Q_DECL_NOTHROW { Swap(arc); return *this; }
+	VArc &operator=(VArc &&arc) Q_DECL_NOTHROW;
 #endif
 
-    void Swap(VArc &arc) Q_DECL_NOTHROW
-    { VAbstractArc::Swap(arc); std::swap(d, arc.d); }
+	void Swap(VArc &arc) Q_DECL_NOTHROW;
 
     QString GetFormulaRadius () const;
     void    SetFormulaRadius (const QString &formula, qreal value);

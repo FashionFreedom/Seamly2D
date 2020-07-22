@@ -115,7 +115,7 @@ private:
     QList<QPointer<TMainWindow> > mainWindows;
     QLocalServer *localServer;
     VTranslateVars *trVars;
-    QPointer<DialogMDataBase> dataBase;
+    QPointer<MeasurementDatabaseDialog> dataBase;
     bool testMode;
 
     void Clean();

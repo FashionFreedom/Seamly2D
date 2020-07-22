@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 # File with common stuff for whole project
+message("Entering qmuparser.pro")
 include(../../../common.pri)
 
 # We don't need gui library.

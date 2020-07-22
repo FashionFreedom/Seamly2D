@@ -6,9 +6,9 @@ EAPI=5
 
 inherit qmake-utils gnome2-utils fdo-mime
 
-DESCRIPTION="Cloth patternmaking software"
+DESCRIPTION="Pattern drafting software"
 HOMEPAGE="https://fashionfreedom.eu/"
-SRC_URI="https://bitbucket.org/dismine/seamly2d/get/v0.0.0.zip -> ${P}.zip"
+SRC_URI="https://github.com/fashionfreedom/seamly2d/releases/latest -> ${P}.zip"
 
 LICENSE="GPL-3"
 SLOT="1"
@@ -36,8 +36,8 @@ CDEPEND="
 RDEPEND="${CDEPEND}"
 DEPEND="${CDEPEND}
 	app-arch/unzip"
-	
-S=${WORKDIR}/dismine-${PN}-44d43351cb59
+
+S=${WORKDIR}/seamly2d-${PN}-44d43351cb59
 
 src_configure() {
 	local locales=""

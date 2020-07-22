@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-# File with common stuff for whole project
+# File with common stuff for whole
+message("Entering vlayout.pro")
 include(../../../common.pri)
 
 QT += core gui widgets printsupport xml

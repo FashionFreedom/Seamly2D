@@ -84,7 +84,7 @@ QVector<quint32> PieceMissingNodes(const QVector<quint32> &d1Nodes, const QVecto
         set2.insert(d2Nodes.at(j));
     }
 
-    const QList<quint32> set3 = set1.subtract(set2).toList();
+	const QList<quint32> set3 = set1.subtract(set2).values();
     QVector<quint32> r;
     for (qint32 i = 0; i < set3.size(); ++i)
     {
@@ -286,6 +286,16 @@ bool IsPassmarksPossible(const QVector<VPieceNode> &path)
     return countPointNodes >= 3 || (countPointNodes >= 1 && countOthers >= 1);
 }
 }
+
+//---------------------------------------------------------------------------------------------------------------------
+
+#ifdef Q_COMPILER_RVALUE_REFS
+VPiece &VPiece::operator=(VPiece &&piece) Q_DECL_NOTHROW
+{ Swap(piece); return *this; }
+#endif
+
+void VPiece::Swap(VPiece &piece) Q_DECL_NOTHROW
+{ VAbstractPiece::Swap(piece); std::swap(d, piece.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
 VPiece::VPiece()

@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>488</width>
-    <height>420</height>
+    <width>850</width>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,6 +22,9 @@
   </property>
   <property name="locale">
    <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>

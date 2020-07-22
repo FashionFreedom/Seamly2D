@@ -366,6 +366,15 @@ QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManage
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+
+#ifdef Q_COMPILER_RVALUE_REFS
+VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&detail) Q_DECL_NOTHROW { Swap(detail); return *this; }
+#endif
+
+void VLayoutPiece::Swap(VLayoutPiece &detail) Q_DECL_NOTHROW
+{ VAbstractPiece::Swap(detail); std::swap(d, detail.d); }
+
+//---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece::VLayoutPiece()
     :VAbstractPiece(), d(new VLayoutPieceData)
 {}
@@ -919,7 +928,7 @@ QVector<T> VLayoutPiece::Map(const QVector<T> &points) const
         QList<T> list = p.toList();
         for (int k=0, s=list.size(), max=(s/2); k<max; k++)
         {
-            list.swap(k, s-(1+k));
+			list.swapItemsAt(k, s-(1+k));
         }
         p = list.toVector();
     }

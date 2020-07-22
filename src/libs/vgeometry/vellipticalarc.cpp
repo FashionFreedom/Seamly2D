@@ -39,6 +39,13 @@
 #include "vellipticalarc_p.h"
 #include "vspline.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VEllipticalArc &VEllipticalArc::operator=(VEllipticalArc &&arc) Q_DECL_NOTHROW { Swap(arc); return *this; }
+#endif
+
+void VEllipticalArc::Swap(VEllipticalArc &arc) Q_DECL_NOTHROW
+{ VAbstractArc::Swap(arc); std::swap(d, arc.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VEllipticalArc default constructor.

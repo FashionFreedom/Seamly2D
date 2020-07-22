@@ -61,6 +61,14 @@
 
 const qreal maxL = 2.4;
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VAbstractPiece &VAbstractPiece::operator=(VAbstractPiece &&piece) Q_DECL_NOTHROW
+{ Swap(piece); return *this; }
+#endif
+
+void VAbstractPiece::Swap(VAbstractPiece &piece) Q_DECL_NOTHROW
+{ std::swap(d, piece.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractPiece::VAbstractPiece()
     : d(new VAbstractPieceData)

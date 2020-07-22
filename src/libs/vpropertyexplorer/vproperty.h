@@ -86,16 +86,14 @@ public:
     //! This is called by the delegate when the property value is being drawn.
     //! The standard implementation doesn't do anything.
     //! If you reimplement this in a sub property, make sure to return true or the delegate will draw the item.
-    virtual bool paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index,
-                       const QAbstractItemDelegate* delegate) const;
+	virtual bool paint(QPainter*, const QStyleOptionViewItem&, const QModelIndex&, const QAbstractItemDelegate*) const;
 
     //! Returns an editor widget, or NULL if it doesn't supply one
     //! \param parent The widget to which the editor will be added as a child
     //! \options Render options
     //! \delegate A pointer to the QAbstractItemDelegate requesting the editor. This can be used to connect signals and
     //! slots.
-    virtual QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& options,
-                                  const QAbstractItemDelegate* delegate);
+	virtual QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem&, const QAbstractItemDelegate*);
 
     //! Sets the property's data to the editor (returns false, if the standard delegate should do that)
     virtual bool setEditorData(QWidget* editor);

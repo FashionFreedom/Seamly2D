@@ -57,6 +57,14 @@
 #include "vinternalvariable.h"
 #include "vvariable_p.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VVariable &VVariable::operator=(VVariable &&var) Q_DECL_NOTHROW
+{ Swap(var); return *this; }
+#endif
+
+void VVariable::Swap(VVariable &var) Q_DECL_NOTHROW
+{ VInternalVariable::Swap(var); std::swap(d, var.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VVariable::VVariable()
     :VInternalVariable(), d(new VVariableData)

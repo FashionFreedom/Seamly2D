@@ -30,6 +30,14 @@
 #include "vpatternlabeldata_p.h"
 #include "../ifc/ifcdef.h"
 
+#ifdef Q_COMPILER_RVALUE_REFS
+VPatternLabelData &VPatternLabelData::operator=(VPatternLabelData &&data) Q_DECL_NOTHROW
+{ Swap(data); return *this; }
+#endif
+
+void VPatternLabelData::Swap(VPatternLabelData &data) Q_DECL_NOTHROW
+{ VAbstractFloatItemData::Swap(data); std::swap(d, data.d); }
+
 //---------------------------------------------------------------------------------------------------------------------
 VPatternLabelData::VPatternLabelData()
     : VAbstractFloatItemData(),

@@ -153,6 +153,16 @@ int IndexOfNode(const QVector<VPieceNode> &list, quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+
+#ifdef Q_COMPILER_RVALUE_REFS
+VPiecePath &VPiecePath::operator=(VPiecePath &&path) Q_DECL_NOTHROW
+{ Swap(path); return *this; }
+#endif
+
+void VPiecePath::Swap(VPiecePath &path) Q_DECL_NOTHROW
+{ std::swap(d, path.d); }
+
+//---------------------------------------------------------------------------------------------------------------------
 VPiecePath::VPiecePath()
     : d(new VPiecePathData)
 {}
@@ -478,7 +488,7 @@ QVector<quint32> VPiecePath::MissingNodes(const VPiecePath &path) const
         set2.insert(path.at(j).GetId());
     }
 
-    const QList<quint32> set3 = set1.subtract(set2).toList();
+	const QList<quint32> set3 = set1.subtract(set2).values();
     QVector<quint32> nodes;
     for (qint32 i = 0; i < set3.size(); ++i)
     {
