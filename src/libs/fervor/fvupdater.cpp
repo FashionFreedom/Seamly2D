@@ -200,9 +200,14 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 	downloadDir.mkdir(m_releaseName);
 	downloadDir.cd(m_releaseName);
 	auto downloadedFile = new QFile(downloadDir.filePath(name), this);
+	if(downloadedFile->exists() && !downloadedFile->remove()){
+		showErrorDialog(tr("Unable to get exclusive access to file \n%1\nPossibly the file is already being downloaded.").arg(downloadDir.filePath(name)), false);
+		return;
+	}
 	bool isOpen = downloadedFile->open(QIODevice::WriteOnly | QIODevice::Truncate);
 	if (!isOpen) {
 		showErrorDialog(tr("Unable to open file\n%1\nfor writing").arg(downloadDir.filePath(name)), false);
+		return;
 	}
 	connect(m_reply.data(), &QNetworkReply::readyRead, this, [this, downloadedFile]() {
 		// this slot gets called every time the QNetworkReply has new data.
