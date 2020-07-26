@@ -92,6 +92,10 @@ DialogAboutSeamlyMe::DialogAboutSeamlyMe(QWidget *parent)
     FontPointSize(ui->label_Legal_Stuff, 11);
     FontPointSize(ui->label_SeamlyMe_Built, 11);
     FontPointSize(ui->label_QT_Version, 11);
+	
+	ui->downloadProgress->hide();
+	ui->downloadProgress->setValue(0);
+	connect(FvUpdater::sharedUpdater(), SIGNAL(setProgress(int)), this, SLOT(setProgressValue(int)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -162,3 +166,17 @@ void DialogAboutSeamlyMe::RetranslateUi()
 
     ui->pushButton_Web_Site->setText(tr("Web site : %1").arg(VER_COMPANYDOMAIN_STR));
 }
+
+void DialogAboutSeamlyMe::setProgressValue(int val) {
+	if (!ui->downloadProgress->isVisible()){
+		ui->downloadProgress->show();
+		ui->pushButtonCheckUpdate->setDisabled(true);
+	}
+	ui->downloadProgress->setValue(val);
+	if (val == 100){
+		ui->downloadProgress->hide();
+		ui->downloadProgress->setValue(0);
+		ui->pushButtonCheckUpdate->setDisabled(false);
+	}
+}
+

@@ -243,6 +243,25 @@
          </property>
         </widget>
        </item>
+	   <item>
+        <widget class="QProgressBar" name="downloadProgress">
+         <property name="value">
+          <number>25</number>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="textVisible">
+          <bool>true</bool>
+         </property>
+         <property name="invertedAppearance">
+          <bool>false</bool>
+         </property>
+         <property name="format">
+          <string>Downloading installer %p% complete</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
     </layout>
