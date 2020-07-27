@@ -103,6 +103,10 @@ jobs:
           copy .\dist\seamly2d-installer.nsi ..\windows-build\
           copy .\dist\win\VC_redist.x86.exe ..\windows-build\
           copy .\dist\win\VC_redist.x64.exe ..\windows-build\
+
+          New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
+          Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
+
           copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
