@@ -525,15 +525,7 @@ QString MApplication::diagramsPath() const
         }
     }
 #else // Unix
-    QFileInfo file(QCoreApplication::applicationDirPath() + dPath);
-    if (file.exists())
-    {
-        return file.absoluteFilePath();
-    }
-    else
-    {
-        return QStringLiteral("/usr/share/seamly2d") + dPath;
-    }
+    return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + dPath;
 #endif
 }
 
