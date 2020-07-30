@@ -605,6 +605,15 @@ void VApplication::InitOptions()
         //This does not happen under GNOME or KDE
         QIcon::setThemeName("win.icon.theme");
     }
+
+    OpenSettings();
+    VSettings *settings = Seamly2DSettings();
+    QDir().mkpath(settings->GetDefPathLayout());
+    QDir().mkpath(settings->GetDefPathPattern());
+    QDir().mkpath(settings->GetDefPathIndividualMeasurements());
+    QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
+    QDir().mkpath(settings->GetDefPathTemplate());
+    QDir().mkpath(settings->GetDefPathLabelTemplate());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
