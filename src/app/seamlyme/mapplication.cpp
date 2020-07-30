@@ -404,6 +404,11 @@ void MApplication::InitOptions()
     qInstallMessageHandler(noisyFailureMsgHandler);
 
     OpenSettings();
+    VSeamlyMeSettings *settings = SeamlyMeSettings();
+    QDir().mkpath(settings->GetDefPathTemplate());
+    QDir().mkpath(settings->GetDefPathIndividualMeasurements());
+    QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
+    QDir().mkpath(settings->GetDefPathLabelTemplate());
 
     qCDebug(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
     qCDebug(mApp, "Build revision: %s", BUILD_REVISION);
