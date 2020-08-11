@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>480</width>
-    <height>453</height>
+    <height>493</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,16 @@
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QTabWidget" name="tabWidget">
-     <property name="currentIndex">
-      <number>0</number>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
      </property>
-     <widget class="QWidget" name="tabPath">
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <widget class="QWidget" name="path_Tab">
       <attribute name="title">
        <string>Path</string>
       </attribute>
@@ -34,14 +40,23 @@
           <enum>QFormLayout::ExpandingFieldsGrow</enum>
          </property>
          <item row="0" column="0">
-          <widget class="QLabel" name="labelName">
+          <widget class="QLabel" name="name_Label">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="text">
             <string>Name:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEditName">
+          <widget class="QLineEdit" name="pathName_LineEdit">
            <property name="text">
             <string>Unnamed path</string>
            </property>
@@ -51,27 +66,52 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QLabel" name="labelType">
+          <widget class="QLabel" name="type_Label">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="text">
             <string>Type:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QComboBox" name="comboBoxType"/>
+          <widget class="QComboBox" name="type_ComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QLabel" name="labelPenType">
+          <widget class="QLabel" name="penType_Label">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Type of pen:</string>
+            <string>Linetype:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QComboBox" name="comboBoxPenType">
+          <widget class="QComboBox" name="penType_ComboBox">
            <property name="minimumSize">
             <size>
-             <width>80</width>
+             <width>150</width>
              <height>0</height>
             </size>
            </property>
@@ -84,14 +124,30 @@
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QLabel" name="labelPiece">
+          <widget class="QLabel" name="piece_Label">
+           <property name="minimumSize">
+            <size>
+             <width>60</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="text">
             <string>Piece:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
          <item row="3" column="1">
-          <widget class="QComboBox" name="comboBoxPiece"/>
+          <widget class="QComboBox" name="piece_ComboBox">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -103,7 +159,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBoxCut">
+        <widget class="QCheckBox" name="cutOnFabric_CheckBox">
          <property name="toolTip">
           <string>The path is a cut contour</string>
          </property>
@@ -113,24 +169,54 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="helpLabel">
-         <property name="text">
-          <string>Ready!</string>
-         </property>
-         <property name="textFormat">
-          <enum>Qt::RichText</enum>
-         </property>
-         <property name="scaledContents">
-          <bool>false</bool>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Staus:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="status_Label">
+           <property name="text">
+            <string>Ready!</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::RichText</enum>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tabSeamAllowance">
+     <widget class="QWidget" name="seamAllowance_Tab">
       <attribute name="title">
        <string>Seam allowance</string>
       </attribute>
@@ -138,7 +224,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item alignment="Qt::AlignLeft">
-          <widget class="QLabel" name="labelEditWidth">
+          <widget class="QLabel" name="widthEdit_Label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -234,7 +320,7 @@
           </widget>
          </item>
          <item alignment="Qt::AlignRight">
-          <widget class="QLabel" name="labelResultWidth">
+          <widget class="QLabel" name="widthResult_Label">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -260,7 +346,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QPlainTextEdit" name="plainTextEditFormulaWidth">
+          <widget class="QPlainTextEdit" name="widthFormula_PlainTextEdit">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -282,7 +368,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButtonGrowWidth">
+          <widget class="QPushButton" name="widthGrow_PushButton">
            <property name="enabled">
             <bool>false</bool>
            </property>
@@ -337,7 +423,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBoxNodes">
+             <widget class="QComboBox" name="nodes_ComboBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -361,7 +447,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item alignment="Qt::AlignLeft">
-             <widget class="QLabel" name="labelEditBefore">
+             <widget class="QLabel" name="beforeWidthEdit_Label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -424,7 +510,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonDefBefore">
+             <widget class="QPushButton" name="beforeDefault_PushButton">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -437,7 +523,7 @@
              </widget>
             </item>
             <item alignment="Qt::AlignRight">
-             <widget class="QToolButton" name="toolButtonExprBefore">
+             <widget class="QToolButton" name="beforeExpr_ToolButton">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -470,7 +556,7 @@
              </widget>
             </item>
             <item alignment="Qt::AlignRight">
-             <widget class="QLabel" name="labelResultBefore">
+             <widget class="QLabel" name="beforeWidthResult_Label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -496,7 +582,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
-             <widget class="QPlainTextEdit" name="plainTextEditFormulaWidthBefore">
+             <widget class="QPlainTextEdit" name="beforeWidthForumla_PlainTextEdit">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -518,7 +604,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonGrowWidthBefore">
+             <widget class="QPushButton" name="beforeWidthGrow_PushButton">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -560,7 +646,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_16">
             <item alignment="Qt::AlignLeft">
-             <widget class="QLabel" name="labelEditAfter">
+             <widget class="QLabel" name="afterWidthEdit_Label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -623,7 +709,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonDefAfter">
+             <widget class="QPushButton" name="afterDefault_PushButton">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -636,7 +722,7 @@
              </widget>
             </item>
             <item alignment="Qt::AlignRight">
-             <widget class="QToolButton" name="toolButtonExprAfter">
+             <widget class="QToolButton" name="afterExpr_ToolButton">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -669,7 +755,7 @@
              </widget>
             </item>
             <item alignment="Qt::AlignRight">
-             <widget class="QLabel" name="labelResultAfter">
+             <widget class="QLabel" name="afterWidthResult_Label">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -695,7 +781,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_17">
             <item>
-             <widget class="QPlainTextEdit" name="plainTextEditFormulaWidthAfter">
+             <widget class="QPlainTextEdit" name="afterWidthForumla_PlainTextEdit">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -717,7 +803,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonGrowWidthAfter">
+             <widget class="QPushButton" name="afterWidthGrow_PushButton">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -766,7 +852,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBoxAngle">
+             <widget class="QComboBox" name="angle_ComboBox">
               <property name="enabled">
                <bool>false</bool>
               </property>
@@ -805,9 +891,9 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tabPassmarks">
+     <widget class="QWidget" name="notches_Tab">
       <attribute name="title">
-       <string>Passmarks</string>
+       <string>Notches</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
@@ -818,26 +904,39 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Passmark:</string>
+            <string>Notch:</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QComboBox" name="comboBoxPassmarks"/>
+          <widget class="QComboBox" name="notches_ComboBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBoxMarkType">
+        <widget class="QGroupBox" name="notchType_GroupBox">
          <property name="enabled">
           <bool>true</bool>
          </property>
          <property name="title">
-          <string>Marks</string>
+          <string>Type</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
-           <widget class="QRadioButton" name="radioButtonOneLine">
+           <widget class="QRadioButton" name="oneLine_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -845,12 +944,12 @@
              <string>One line</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupMarkType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonTwoLines">
+           <widget class="QRadioButton" name="twoLines_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -858,12 +957,12 @@
              <string>Two lines</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupMarkType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonThreeLines">
+           <widget class="QRadioButton" name="threeLines_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -871,12 +970,12 @@
              <string>Three lines</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupMarkType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonTMark">
+           <widget class="QRadioButton" name="tMark_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -884,12 +983,12 @@
              <string>T mark</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupMarkType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonVMark">
+           <widget class="QRadioButton" name="vMark_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -897,7 +996,7 @@
              <string>V mark</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupMarkType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -905,13 +1004,13 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBoxAngleType">
+        <widget class="QGroupBox" name="notchSubType_GroupBox">
          <property name="title">
-          <string>Angle</string>
+          <string>Sub Type</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QRadioButton" name="radioButtonStraightforward">
+           <widget class="QRadioButton" name="straightforward_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -919,12 +1018,12 @@
              <string>Straightforward</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupAngleType</string>
+             <string notr="true">notchSubType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonBisector">
+           <widget class="QRadioButton" name="bisector_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -932,23 +1031,23 @@
              <string>Bisector</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupAngleType</string>
+             <string notr="true">notchSubType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonIntersection">
+           <widget class="QRadioButton" name="intersection_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="toolTip">
-             <string>Select if need designate the corner point as a passmark</string>
+             <string>Select to designate the corner point as a notch</string>
             </property>
             <property name="text">
              <string>Intersection</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupAngleType</string>
+             <string notr="true">notchSubType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -1022,7 +1121,7 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="buttonGroupAngleType"/>
-  <buttongroup name="buttonGroupMarkType"/>
+  <buttongroup name="notchType_ButtonGroup"/>
+  <buttongroup name="notchSubType_ButtonGroup"/>
  </buttongroups>
 </ui>

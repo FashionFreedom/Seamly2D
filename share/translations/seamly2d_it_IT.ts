@@ -4021,11 +4021,11 @@ Applicare le impostazioni comunque?</translation>
         <translation type="unfinished">Hai doppi punti!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4053,7 +4053,7 @@ Applicare le impostazioni comunque?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4956,7 +4956,7 @@ Applicare le impostazioni comunque?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4964,7 +4964,7 @@ Applicare le impostazioni comunque?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8884,7 +8884,7 @@ Vuoi salvare le tue modifiche?</translation>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

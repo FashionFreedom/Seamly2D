@@ -2,7 +2,6 @@
 # This need for corect working file translations.pro
 
 SOURCES += \
-    $$PWD/def.cpp \
     $$PWD/vsettings.cpp \
     $$PWD/vabstractapplication.cpp \
     $$PWD/projectversion.cpp \
@@ -11,7 +10,8 @@ SOURCES += \
     $$PWD/commandoptions.cpp \
     $$PWD/qxtcsvmodel.cpp \
     $$PWD/vtablesearch.cpp \
-    $$PWD/dialogs/dialogexporttocsv.cpp
+    $$PWD/dialogs/dialogexporttocsv.cpp \
+    $$PWD/def.cpp
 
 *msvc*:SOURCES += $$PWD/stable.cpp
 

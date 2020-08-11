@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -81,16 +81,16 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
       ui(new Ui::PreferencesPatternPage)
 {
     ui->setupUi(this);
-    ui->graphOutputCheck->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
-    ui->undoCount->setValue(qApp->Seamly2DSettings()->GetUndoCount());
+    ui->graphOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
+    ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
 
     InitDefaultSeamAllowance();
     InitLabelDateTimeFormats();
 
-    ui->forbidFlippingCheck->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
-    ui->doublePassmarkCheck->setChecked(qApp->Seamly2DSettings()->IsDoublePassmark());
-    ui->checkBoxHideMainPath->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
-    ui->fontComboBoxLabelFont->setCurrentFont(qApp->Seamly2DSettings()->GetLabelFont());
+    ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
+    ui->doubleNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->isDoubleNotch());
+    ui->hideMainPath_CheckBox->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
+    ui->labelFont_ComboBox->setCurrentFont(qApp->Seamly2DSettings()->GetLabelFont());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -105,39 +105,39 @@ void PreferencesPatternPage::Apply()
     VSettings *settings = qApp->Seamly2DSettings();
 
     // Scene antialiasing
-    settings->SetGraphicalOutput(ui->graphOutputCheck->isChecked());
-    qApp->getSceneView()->setRenderHint(QPainter::Antialiasing, ui->graphOutputCheck->isChecked());
-    qApp->getSceneView()->setRenderHint(QPainter::SmoothPixmapTransform, ui->graphOutputCheck->isChecked());
+    settings->SetGraphicalOutput(ui->graphOutput_CheckBox->isChecked());
+    qApp->getSceneView()->setRenderHint(QPainter::Antialiasing, ui->graphOutput_CheckBox->isChecked());
+    qApp->getSceneView()->setRenderHint(QPainter::SmoothPixmapTransform, ui->graphOutput_CheckBox->isChecked());
 
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
-    settings->SetUndoCount(ui->undoCount->value());
+    settings->SetUndoCount(ui->undoCount_SpinBox->value());
 
-    settings->SetDefaultSeamAllowance(ui->defaultSeamAllowance->value());
+    settings->SetDefaultSeamAllowance(ui->defaultSeamAllowance_DoubleSpinBox->value());
 
-    settings->SetForbidWorkpieceFlipping(ui->forbidFlippingCheck->isChecked());
-    settings->SetHideMainPath(ui->checkBoxHideMainPath->isChecked());
-    settings->SetLabelFont(ui->fontComboBoxLabelFont->currentFont());
+    settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
+    settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
+    settings->SetLabelFont(ui->labelFont_ComboBox->currentFont());
 
-    if (settings->IsDoublePassmark() != ui->doublePassmarkCheck->isChecked())
+    if (settings->isDoubleNotch() != ui->doubleNotch_CheckBox->isChecked())
     {
-        settings->SetDoublePassmark(ui->doublePassmarkCheck->isChecked());
+        settings->setDoubleNotch(ui->doubleNotch_CheckBox->isChecked());
         qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
     }
 
-    settings->SetLabelDateFormat(ui->comboBoxDateFormats->currentText());
-    settings->SetLabelTimeFormat(ui->comboBoxTimeFormats->currentText());
+    settings->SetLabelDateFormat(ui->dateFormats_ComboBox->currentText());
+    settings->SetLabelTimeFormat(ui->timeFormats_ComboBox->currentText());
 
-    settings->SetUserDefinedDateFormats(ComboBoxAllStrings(ui->comboBoxDateFormats));
-    settings->SetUserDefinedTimeFormats(ComboBoxAllStrings(ui->comboBoxTimeFormats));
+    settings->SetUserDefinedDateFormats(ComboBoxAllStrings(ui->dateFormats_ComboBox));
+    settings->SetUserDefinedTimeFormats(ComboBoxAllStrings(ui->timeFormats_ComboBox));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::InitDefaultSeamAllowance()
 {
-    ui->defaultSeamAllowance->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
-    ui->defaultSeamAllowance->setSuffix(UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
+    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -146,15 +146,15 @@ void PreferencesPatternPage::EditDateTimeFormats()
     VSettings *settings = qApp->Seamly2DSettings();
 
     QPushButton *button = qobject_cast<QPushButton *>(sender());
-    if (button == ui->pushButtonEditDateFormats)
+    if (button == ui->editDateFormats_PushButton)
     {
         CallDateTimeFormatEditor(QDate::currentDate(), settings->PredefinedDateFormats(),
-                           settings->GetUserDefinedDateFormats(), ui->comboBoxDateFormats);
+                                 settings->GetUserDefinedDateFormats(), ui->dateFormats_ComboBox);
     }
-    else if (button == ui->pushButtonEditTimeFormats)
+    else if (button == ui->editTimeFormats_PushButton)
     {
         CallDateTimeFormatEditor(QTime::currentTime(), settings->PredefinedTimeFormats(),
-                           settings->GetUserDefinedTimeFormats(), ui->comboBoxTimeFormats);
+                                 settings->GetUserDefinedTimeFormats(), ui->timeFormats_ComboBox);
     }
 }
 
@@ -163,15 +163,15 @@ void PreferencesPatternPage::InitLabelDateTimeFormats()
 {
     VSettings *settings = qApp->Seamly2DSettings();
 
-    InitComboBoxFormats(ui->comboBoxDateFormats,
+    InitComboBoxFormats(ui->dateFormats_ComboBox,
                         VSettings::PredefinedDateFormats() + settings->GetUserDefinedDateFormats(),
                         settings->GetLabelDateFormat());
-    InitComboBoxFormats(ui->comboBoxTimeFormats,
+    InitComboBoxFormats(ui->timeFormats_ComboBox,
                         VSettings::PredefinedTimeFormats() + settings->GetUserDefinedTimeFormats(),
                         settings->GetLabelTimeFormat());
 
-    connect(ui->pushButtonEditDateFormats, &QPushButton::clicked, this, &PreferencesPatternPage::EditDateTimeFormats);
-    connect(ui->pushButtonEditTimeFormats, &QPushButton::clicked, this, &PreferencesPatternPage::EditDateTimeFormats);
+    connect(ui->editDateFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::EditDateTimeFormats);
+    connect(ui->editTimeFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::EditDateTimeFormats);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

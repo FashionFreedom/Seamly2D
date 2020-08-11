@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -69,16 +69,19 @@ DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, Q
       m_timerWidth(nullptr),
       m_timerWidthBefore(nullptr),
       m_timerWidthAfter(nullptr),
-      m_formulaBaseWidth(0),
-      m_formulaBaseWidthBefore(0),
-      m_formulaBaseWidthAfter(0)
+      m_widthFormula(0),
+      m_beforeWidthFormula(0),
+      m_afterWidthFormula(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/path.png"));
+
     InitOkCancel(ui);
 
     InitPathTab();
     InitSeamAllowanceTab();
-    InitPassmarksTab();
+    InitNotchesTab();
 
     flagName = true;//We have default name of piece.
     flagError = PathIsValid();
@@ -86,10 +89,10 @@ DialogInternalPath::DialogInternalPath(const VContainer *data, quint32 toolId, Q
 
     vis = new VisToolInternalPath(data);
 
-    ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabSeamAllowance));
-    ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->tabPassmarks));
+    ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->seamAllowance_Tab));
+    ui->tabWidget->removeTab(ui->tabWidget->indexOf(ui->notches_Tab));
 
-    connect(ui->comboBoxPiece, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    connect(ui->piece_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         ValidObjects(PathIsValid());
     });
@@ -105,8 +108,8 @@ DialogInternalPath::~DialogInternalPath()
 void DialogInternalPath::EnbleShowMode(bool disable)
 {
     m_showMode = disable;
-    ui->comboBoxType->setDisabled(m_showMode);
-    ui->comboBoxPiece->setDisabled(m_showMode);
+    ui->type_ComboBox->setDisabled(m_showMode);
+    ui->piece_ComboBox->setDisabled(m_showMode);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -233,9 +236,9 @@ void DialogInternalPath::ShowVisualization()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::closeEvent(QCloseEvent *event)
 {
-    ui->plainTextEditFormulaWidth->blockSignals(true);
-    ui->plainTextEditFormulaWidthBefore->blockSignals(true);
-    ui->plainTextEditFormulaWidthAfter->blockSignals(true);
+    ui->widthFormula_PlainTextEdit->blockSignals(true);
+    ui->beforeWidthForumla_PlainTextEdit->blockSignals(true);
+    ui->afterWidthForumla_PlainTextEdit->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -254,7 +257,7 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
     SCASSERT(rowItem != nullptr);
     VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-    QAction *actionPassmark = nullptr;
+    QAction *actionNotch = nullptr;
     QAction *actionReverse = nullptr;
     if (rowNode.GetTypeTool() != Tool::NodePoint)
     {
@@ -264,9 +267,9 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
     }
     else
     {
-        actionPassmark = menu->addAction(tr("Passmark"));
-        actionPassmark->setCheckable(true);
-        actionPassmark->setChecked(rowNode.IsPassmark());
+        actionNotch = menu->addAction(tr("Notch"));
+        actionNotch->setCheckable(true);
+        actionNotch->setChecked(rowNode.isNotch());
     }
 
     QAction *actionDelete = menu->addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
@@ -282,9 +285,9 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
         rowItem->setText(GetNodeName(rowNode, true));
     }
-    else if (selectedAction == actionPassmark)
+    else if (selectedAction == actionNotch)
     {
-        rowNode.SetPassmark(not rowNode.IsPassmark());
+        rowNode.setNotch(not rowNode.isNotch());
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
         rowItem->setText(GetNodeName(rowNode, true));
     }
@@ -304,22 +307,22 @@ void DialogInternalPath::ListChanged()
         visPath->RefreshGeometry();
     }
 
-    InitPassmarksList();
+    InitNotchesList();
     InitNodesList();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::NameChanged()
 {
-    if (ui->lineEditName->text().isEmpty())
+    if (ui->pathName_LineEdit->text().isEmpty())
     {
         flagName = false;
-        ChangeColor(ui->labelName, Qt::red);
+        ChangeColor(ui->name_Label, Qt::red);
     }
     else
     {
         flagName = true;
-        ChangeColor(ui->labelName, okColor);
+        ChangeColor(ui->name_Label, okColor);
     }
     CheckState();
 }
@@ -327,160 +330,160 @@ void DialogInternalPath::NameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::NodeChanged(int index)
 {
-    ui->plainTextEditFormulaWidthBefore->setDisabled(true);
-    ui->toolButtonExprBefore->setDisabled(true);
-    ui->pushButtonDefBefore->setDisabled(true);
+    ui->beforeWidthForumla_PlainTextEdit->setDisabled(true);
+    ui->beforeExpr_ToolButton->setDisabled(true);
+    ui->beforeDefault_PushButton->setDisabled(true);
 
-    ui->plainTextEditFormulaWidthAfter->setDisabled(true);
-    ui->toolButtonExprAfter->setDisabled(true);
-    ui->pushButtonDefAfter->setDisabled(true);
+    ui->afterWidthForumla_PlainTextEdit->setDisabled(true);
+    ui->afterExpr_ToolButton->setDisabled(true);
+    ui->afterDefault_PushButton->setDisabled(true);
 
-    ui->comboBoxAngle->setDisabled(true);
+    ui->angle_ComboBox->setDisabled(true);
 
-    ui->comboBoxAngle->blockSignals(true);
+    ui->angle_ComboBox->blockSignals(true);
 
     if (index != -1)
     {
         const VPiecePath path = CreatePath();
-        const int nodeIndex = path.indexOfNode(ui->comboBoxNodes->currentData().toUInt());
+        const int nodeIndex = path.indexOfNode(ui->nodes_ComboBox->currentData().toUInt());
         if (nodeIndex != -1)
         {
             const VPieceNode &node = path.at(nodeIndex);
 
             // Seam alowance before
-            ui->plainTextEditFormulaWidthBefore->setEnabled(true);
-            ui->toolButtonExprBefore->setEnabled(true);
+            ui->beforeWidthForumla_PlainTextEdit->setEnabled(true);
+            ui->beforeExpr_ToolButton->setEnabled(true);
 
             QString w1Formula = node.GetFormulaSABefore();
             if (w1Formula != currentSeamAllowance)
             {
-                ui->pushButtonDefBefore->setEnabled(true);
+                ui->beforeDefault_PushButton->setEnabled(true);
             }
             if (w1Formula.length() > 80)// increase height if needed.
             {
                 this->DeployWidthBeforeFormulaTextEdit();
             }
             w1Formula = qApp->TrVars()->FormulaToUser(w1Formula, qApp->Settings()->GetOsSeparator());
-            ui->plainTextEditFormulaWidthBefore->setPlainText(w1Formula);
-            MoveCursorToEnd(ui->plainTextEditFormulaWidthBefore);
+            ui->beforeWidthForumla_PlainTextEdit->setPlainText(w1Formula);
+            MoveCursorToEnd(ui->beforeWidthForumla_PlainTextEdit);
 
             // Seam alowance after
-            ui->plainTextEditFormulaWidthAfter->setEnabled(true);
-            ui->toolButtonExprAfter->setEnabled(true);
+            ui->afterWidthForumla_PlainTextEdit->setEnabled(true);
+            ui->afterExpr_ToolButton->setEnabled(true);
 
             QString w2Formula = node.GetFormulaSAAfter();
             if (w2Formula != currentSeamAllowance)
             {
-                ui->pushButtonDefAfter->setEnabled(true);
+                ui->afterDefault_PushButton->setEnabled(true);
             }
             if (w2Formula.length() > 80)// increase height if needed.
             {
                 this->DeployWidthAfterFormulaTextEdit();
             }
             w2Formula = qApp->TrVars()->FormulaToUser(w2Formula, qApp->Settings()->GetOsSeparator());
-            ui->plainTextEditFormulaWidthAfter->setPlainText(w2Formula);
-            MoveCursorToEnd(ui->plainTextEditFormulaWidthAfter);
+            ui->afterWidthForumla_PlainTextEdit->setPlainText(w2Formula);
+            MoveCursorToEnd(ui->afterWidthForumla_PlainTextEdit);
 
             // Angle type
-            ui->comboBoxAngle->setEnabled(true);
-            const int index = ui->comboBoxAngle->findData(static_cast<unsigned char>(node.GetAngleType()));
+            ui->angle_ComboBox->setEnabled(true);
+            const int index = ui->angle_ComboBox->findData(static_cast<unsigned char>(node.GetAngleType()));
             if (index != -1)
             {
-                ui->comboBoxAngle->setCurrentIndex(index);
+                ui->angle_ComboBox->setCurrentIndex(index);
             }
         }
     }
     else
     {
-        ui->plainTextEditFormulaWidthBefore->setPlainText("");
-        ui->plainTextEditFormulaWidthAfter->setPlainText("");
-        ui->comboBoxAngle->setCurrentIndex(-1);
+        ui->beforeWidthForumla_PlainTextEdit->setPlainText("");
+        ui->afterWidthForumla_PlainTextEdit->setPlainText("");
+        ui->angle_ComboBox->setCurrentIndex(-1);
     }
 
-    ui->comboBoxAngle->blockSignals(false);
+    ui->angle_ComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::PassmarkChanged(int index)
+void DialogInternalPath::notchChanged(int index)
 {
-    ui->radioButtonOneLine->setDisabled(true);
-    ui->radioButtonTwoLines->setDisabled(true);
-    ui->radioButtonThreeLines->setDisabled(true);
-    ui->radioButtonTMark->setDisabled(true);
-    ui->radioButtonVMark->setDisabled(true);
+    ui->oneLine_RadioButton->setDisabled(true);
+    ui->twoLines_RadioButton->setDisabled(true);
+    ui->threeLines_RadioButton->setDisabled(true);
+    ui->tMark_RadioButton->setDisabled(true);
+    ui->vMark_RadioButton->setDisabled(true);
 
-    ui->radioButtonStraightforward->setDisabled(true);
-    ui->radioButtonBisector->setDisabled(true);
-    ui->radioButtonIntersection->setDisabled(true);
+    ui->straightforward_RadioButton->setDisabled(true);
+    ui->bisector_RadioButton->setDisabled(true);
+    ui->intersection_RadioButton->setDisabled(true);
 
-    ui->groupBoxMarkType->blockSignals(true);
-    ui->groupBoxAngleType->blockSignals(true);
+    ui->notchType_GroupBox->blockSignals(true);
+    ui->notchSubType_GroupBox->blockSignals(true);
 
     if (index != -1)
     {
         const VPiecePath path = CreatePath();
-        const int nodeIndex = path.indexOfNode(ui->comboBoxPassmarks->currentData().toUInt());
+        const int nodeIndex = path.indexOfNode(ui->notches_ComboBox->currentData().toUInt());
         if (nodeIndex != -1)
         {
             const VPieceNode &node = path.at(nodeIndex);
 
             // Line type
-            ui->radioButtonOneLine->setEnabled(true);
-            ui->radioButtonTwoLines->setEnabled(true);
-            ui->radioButtonThreeLines->setEnabled(true);
-            ui->radioButtonTMark->setEnabled(true);
-            ui->radioButtonVMark->setEnabled(true);
+            ui->oneLine_RadioButton->setEnabled(true);
+            ui->twoLines_RadioButton->setEnabled(true);
+            ui->threeLines_RadioButton->setEnabled(true);
+            ui->tMark_RadioButton->setEnabled(true);
+            ui->vMark_RadioButton->setEnabled(true);
 
-            switch(node.GetPassmarkLineType())
+            switch(node.getNotchType())
             {
-                case PassmarkLineType::OneLine:
-                    ui->radioButtonOneLine->setChecked(true);
+                case NotchType::OneLine:
+                    ui->oneLine_RadioButton->setChecked(true);
                     break;
-                case PassmarkLineType::TwoLines:
-                    ui->radioButtonTwoLines->setChecked(true);
+                case NotchType::TwoLines:
+                    ui->twoLines_RadioButton->setChecked(true);
                     break;
-                case PassmarkLineType::ThreeLines:
-                    ui->radioButtonThreeLines->setChecked(true);
+                case NotchType::ThreeLines:
+                    ui->threeLines_RadioButton->setChecked(true);
                     break;
-                case PassmarkLineType::TMark:
-                    ui->radioButtonTMark->setChecked(true);
+                case NotchType::TMark:
+                    ui->tMark_RadioButton->setChecked(true);
                     break;
-                case PassmarkLineType::VMark:
-                    ui->radioButtonVMark->setChecked(true);
+                case NotchType::VMark:
+                    ui->vMark_RadioButton->setChecked(true);
                     break;
                 default:
                     break;
             }
 
             // Angle type
-            ui->radioButtonStraightforward->setEnabled(true);
-            ui->radioButtonBisector->setEnabled(true);
-            ui->radioButtonIntersection->setEnabled(true);
+            ui->straightforward_RadioButton->setEnabled(true);
+            ui->bisector_RadioButton->setEnabled(true);
+            ui->intersection_RadioButton->setEnabled(true);
 
-            switch(node.GetPassmarkAngleType())
+            switch(node.getNotchSubType())
             {
-                case PassmarkAngleType::Straightforward:
-                    ui->radioButtonStraightforward->setChecked(true);
+                case NotchSubType::Straightforward:
+                    ui->straightforward_RadioButton->setChecked(true);
                     break;
-                case PassmarkAngleType::Bisector:
-                    ui->radioButtonBisector->setChecked(true);
+                case NotchSubType::Bisector:
+                    ui->bisector_RadioButton->setChecked(true);
                     break;
-                case PassmarkAngleType::Intersection:
-                    ui->radioButtonIntersection->setChecked(true);
+                case NotchSubType::Intersection:
+                    ui->intersection_RadioButton->setChecked(true);
                     break;
                 default:
                     break;
             }
         }
     }
-    ui->groupBoxMarkType->blockSignals(false);
-    ui->groupBoxAngleType->blockSignals(false);
+    ui->notchType_GroupBox->blockSignals(false);
+    ui->notchSubType_GroupBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::ReturnDefBefore()
 {
-    ui->plainTextEditFormulaWidthBefore->setPlainText(currentSeamAllowance);
+    ui->beforeWidthForumla_PlainTextEdit->setPlainText(currentSeamAllowance);
     if (QPushButton* button = qobject_cast<QPushButton*>(sender()))
     {
         button->setEnabled(false);
@@ -490,7 +493,7 @@ void DialogInternalPath::ReturnDefBefore()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::ReturnDefAfter()
 {
-    ui->plainTextEditFormulaWidthAfter->setPlainText(currentSeamAllowance);
+    ui->afterWidthForumla_PlainTextEdit->setPlainText(currentSeamAllowance);
     if (QPushButton* button = qobject_cast<QPushButton*>(sender()))
     {
         button->setEnabled(false);
@@ -498,39 +501,39 @@ void DialogInternalPath::ReturnDefAfter()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::PassmarkLineTypeChanged(int id)
+void DialogInternalPath::notchTypeChanged(int id)
 {
-    const int i = ui->comboBoxPassmarks->currentIndex();
+    const int i = ui->notches_ComboBox->currentIndex();
     if (i != -1)
     {
-        QListWidgetItem *rowItem = GetItemById(ui->comboBoxPassmarks->currentData().toUInt());
+        QListWidgetItem *rowItem = GetItemById(ui->notches_ComboBox->currentData().toUInt());
         if (rowItem)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-            PassmarkLineType lineType = PassmarkLineType::OneLine;
-            if (id == ui->buttonGroupMarkType->id(ui->radioButtonOneLine))
+            NotchType lineType = NotchType::OneLine;
+            if (id == ui->notchType_ButtonGroup->id(ui->oneLine_RadioButton))
             {
-                lineType = PassmarkLineType::OneLine;
+                lineType = NotchType::OneLine;
             }
-            else if (id == ui->buttonGroupMarkType->id(ui->radioButtonTwoLines))
+            else if (id == ui->notchType_ButtonGroup->id(ui->twoLines_RadioButton))
             {
-                lineType = PassmarkLineType::TwoLines;
+                lineType = NotchType::TwoLines;
             }
-            else if (id == ui->buttonGroupMarkType->id(ui->radioButtonThreeLines))
+            else if (id == ui->notchType_ButtonGroup->id(ui->threeLines_RadioButton))
             {
-                lineType = PassmarkLineType::ThreeLines;
+                lineType = NotchType::ThreeLines;
             }
-            else if (id == ui->buttonGroupMarkType->id(ui->radioButtonTMark))
+            else if (id == ui->notchType_ButtonGroup->id(ui->tMark_RadioButton))
             {
-                lineType = PassmarkLineType::TMark;
+                lineType = NotchType::TMark;
             }
-            else if (id == ui->buttonGroupMarkType->id(ui->radioButtonVMark))
+            else if (id == ui->notchType_ButtonGroup->id(ui->vMark_RadioButton))
             {
-                lineType = PassmarkLineType::VMark;
+                lineType = NotchType::VMark;
             }
 
-            rowNode.SetPassmarkLineType(lineType);
+            rowNode.setNotchLineType(lineType);
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
             rowItem->setText(GetNodeName(rowNode, true));
 
@@ -540,31 +543,31 @@ void DialogInternalPath::PassmarkLineTypeChanged(int id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::PassmarkAngleTypeChanged(int id)
+void DialogInternalPath::notchSubTypeChanged(int id)
 {
-    const int i = ui->comboBoxPassmarks->currentIndex();
+    const int i = ui->notches_ComboBox->currentIndex();
     if (i != -1)
     {
-        QListWidgetItem *rowItem = GetItemById(ui->comboBoxPassmarks->currentData().toUInt());
+        QListWidgetItem *rowItem = GetItemById(ui->notches_ComboBox->currentData().toUInt());
         if (rowItem)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-            PassmarkAngleType angleType = PassmarkAngleType::Straightforward;
-            if (id == ui->buttonGroupAngleType->id(ui->radioButtonStraightforward))
+            NotchSubType angleType = NotchSubType::Straightforward;
+            if (id == ui->notchSubType_ButtonGroup->id(ui->straightforward_RadioButton))
             {
-                angleType = PassmarkAngleType::Straightforward;
+                angleType = NotchSubType::Straightforward;
             }
-            else if (id == ui->buttonGroupAngleType->id(ui->radioButtonBisector))
+            else if (id == ui->notchSubType_ButtonGroup->id(ui->bisector_RadioButton))
             {
-                angleType = PassmarkAngleType::Bisector;
+                angleType = NotchSubType::Bisector;
             }
-            else if (id == ui->buttonGroupAngleType->id(ui->radioButtonIntersection))
+            else if (id == ui->notchSubType_ButtonGroup->id(ui->intersection_RadioButton))
             {
-                angleType = PassmarkAngleType::Intersection;
+                angleType = NotchSubType::Intersection;
             }
 
-            rowNode.SetPassmarkAngleType(angleType);
+            rowNode.setNotchAngleType(angleType);
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
             rowItem->setText(GetNodeName(rowNode, true));
 
@@ -576,10 +579,10 @@ void DialogInternalPath::PassmarkAngleTypeChanged(int id)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::EvalWidth()
 {
-    labelEditFormula = ui->labelEditWidth;
+    labelEditFormula = ui->widthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    const QString formula = ui->plainTextEditFormulaWidth->toPlainText();
-    m_saWidth = Eval(formula, flagFormula, ui->labelResultWidth, postfix, false, true);
+    const QString formula = ui->widthFormula_PlainTextEdit->toPlainText();
+    m_saWidth = Eval(formula, flagFormula, ui->widthResult_Label, postfix, false, true);
 
     if (m_saWidth >= 0)
     {
@@ -596,16 +599,16 @@ void DialogInternalPath::EvalWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::EvalWidthBefore()
 {
-    labelEditFormula = ui->labelEditBefore;
+    labelEditFormula = ui->beforeWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    QString formula = ui->plainTextEditFormulaWidthBefore->toPlainText();
+    QString formula = ui->beforeWidthForumla_PlainTextEdit->toPlainText();
     bool flagFormula = false; // fake flag
-    Eval(formula, flagFormula, ui->labelResultBefore, postfix, false, true);
+    Eval(formula, flagFormula, ui->beforeWidthResult_Label, postfix, false, true);
 
     formula = GetFormulaSAWidthBefore();
     if (formula != currentSeamAllowance)
     {
-        ui->pushButtonDefBefore->setEnabled(true);
+        ui->beforeDefault_PushButton->setEnabled(true);
     }
 
     UpdateNodeSABefore(formula);
@@ -614,16 +617,16 @@ void DialogInternalPath::EvalWidthBefore()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::EvalWidthAfter()
 {
-    labelEditFormula = ui->labelEditAfter;
+    labelEditFormula = ui->afterWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    QString formula = ui->plainTextEditFormulaWidthAfter->toPlainText();
+    QString formula = ui->afterWidthForumla_PlainTextEdit->toPlainText();
     bool flagFormula = false; // fake flag
-    Eval(formula, flagFormula, ui->labelResultAfter, postfix, false, true);
+    Eval(formula, flagFormula, ui->afterWidthResult_Label, postfix, false, true);
 
     formula = GetFormulaSAWidthAfter();
     if (formula != currentSeamAllowance)
     {
-        ui->pushButtonDefAfter->setEnabled(true);
+        ui->afterDefault_PushButton->setEnabled(true);
     }
 
     UpdateNodeSAAfter(formula);
@@ -677,65 +680,65 @@ void DialogInternalPath::FXWidthAfter()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::WidthChanged()
 {
-    labelEditFormula = ui->labelEditWidth;
-    labelResultCalculation = ui->labelResultWidth;
+    labelEditFormula = ui->widthEdit_Label;
+    labelResultCalculation = ui->widthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    ValFormulaChanged(flagFormula, ui->plainTextEditFormulaWidth, m_timerWidth, postfix);
+    ValFormulaChanged(flagFormula, ui->widthFormula_PlainTextEdit, m_timerWidth, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::WidthBeforeChanged()
 {
-    labelEditFormula = ui->labelEditBefore;
-    labelResultCalculation = ui->labelResultBefore;
+    labelEditFormula = ui->beforeWidthEdit_Label;
+    labelResultCalculation = ui->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->plainTextEditFormulaWidthBefore, m_timerWidthBefore, postfix);
+    ValFormulaChanged(flagFormula, ui->beforeWidthForumla_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::WidthAfterChanged()
 {
-    labelEditFormula = ui->labelEditAfter;
-    labelResultCalculation = ui->labelResultAfter;
+    labelEditFormula = ui->afterWidthEdit_Label;
+    labelResultCalculation = ui->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->plainTextEditFormulaWidthAfter, m_timerWidthAfter, postfix);
+    ValFormulaChanged(flagFormula, ui->afterWidthForumla_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::DeployWidthFormulaTextEdit()
 {
-    DeployFormula(ui->plainTextEditFormulaWidth, ui->pushButtonGrowWidth, m_formulaBaseWidth);
+    DeployFormula(ui->widthFormula_PlainTextEdit, ui->widthGrow_PushButton, m_widthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::DeployWidthBeforeFormulaTextEdit()
 {
-    DeployFormula(ui->plainTextEditFormulaWidthBefore, ui->pushButtonGrowWidthBefore, m_formulaBaseWidthBefore);
+    DeployFormula(ui->beforeWidthForumla_PlainTextEdit, ui->beforeWidthGrow_PushButton, m_beforeWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::DeployWidthAfterFormulaTextEdit()
 {
-    DeployFormula(ui->plainTextEditFormulaWidthAfter, ui->pushButtonGrowWidthAfter, m_formulaBaseWidthAfter);
+    DeployFormula(ui->afterWidthForumla_PlainTextEdit, ui->afterWidthGrow_PushButton, m_afterWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::InitPathTab()
 {
-    ui->lineEditName->setClearButtonEnabled(true);
+    ui->pathName_LineEdit->setClearButtonEnabled(true);
 
-    FillComboBoxTypeLine(ui->comboBoxPenType, CurvePenStylesPics());
+    FillComboBoxTypeLine(ui->penType_ComboBox, CurvePenStylesPics());
 
-    connect(ui->lineEditName, &QLineEdit::textChanged, this, &DialogInternalPath::NameChanged);
+    connect(ui->pathName_LineEdit, &QLineEdit::textChanged, this, &DialogInternalPath::NameChanged);
 
     InitPathTypes();
-    connect(ui->comboBoxType, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(ui->type_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             [this]()
     {
-        ui->comboBoxPenType->setEnabled(GetType() == PiecePathType::InternalPath);
-        ui->checkBoxCut->setEnabled(GetType() == PiecePathType::InternalPath);
+        ui->penType_ComboBox->setEnabled(GetType() == PiecePathType::InternalPath);
+        ui->cutOnFabric_CheckBox->setEnabled(GetType() == PiecePathType::InternalPath);
         ValidObjects(PathIsValid());
     });
 
@@ -746,14 +749,14 @@ void DialogInternalPath::InitPathTab()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::InitSeamAllowanceTab()
 {
-    plainTextEditFormula = ui->plainTextEditFormulaWidth;
-    this->m_formulaBaseWidth = ui->plainTextEditFormulaWidth->height();
-    this->m_formulaBaseWidthBefore = ui->plainTextEditFormulaWidthBefore->height();
-    this->m_formulaBaseWidthAfter = ui->plainTextEditFormulaWidthAfter->height();
+    plainTextEditFormula = ui->widthFormula_PlainTextEdit;
+    this->m_widthFormula = ui->widthFormula_PlainTextEdit->height();
+    this->m_beforeWidthFormula = ui->beforeWidthForumla_PlainTextEdit->height();
+    this->m_afterWidthFormula = ui->afterWidthForumla_PlainTextEdit->height();
 
-    ui->plainTextEditFormulaWidth->installEventFilter(this);
-    ui->plainTextEditFormulaWidthBefore->installEventFilter(this);
-    ui->plainTextEditFormulaWidthAfter->installEventFilter(this);
+    ui->widthFormula_PlainTextEdit->installEventFilter(this);
+    ui->beforeWidthForumla_PlainTextEdit->installEventFilter(this);
+    ui->afterWidthForumla_PlainTextEdit->installEventFilter(this);
 
     m_timerWidth = new QTimer(this);
     connect(m_timerWidth, &QTimer::timeout, this, &DialogInternalPath::EvalWidth);
@@ -766,66 +769,66 @@ void DialogInternalPath::InitSeamAllowanceTab()
 
     // Default value for seam allowence is 1 cm. But pattern have different units, so just set 1 in dialog not enough.
     m_saWidth = UnitConvertor(1, Unit::Cm, qApp->patternUnit());
-    ui->plainTextEditFormulaWidth->setPlainText(qApp->LocaleToString(m_saWidth));
+    ui->widthFormula_PlainTextEdit->setPlainText(qApp->LocaleToString(m_saWidth));
 
     InitNodesList();
-    connect(ui->comboBoxNodes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
+    connect(ui->nodes_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
             &DialogInternalPath::NodeChanged);
 
-    connect(ui->pushButtonDefBefore, &QPushButton::clicked, this, &DialogInternalPath::ReturnDefBefore);
-    connect(ui->pushButtonDefAfter, &QPushButton::clicked, this, &DialogInternalPath::ReturnDefAfter);
+    connect(ui->beforeDefault_PushButton, &QPushButton::clicked, this, &DialogInternalPath::ReturnDefBefore);
+    connect(ui->afterDefault_PushButton, &QPushButton::clicked, this, &DialogInternalPath::ReturnDefAfter);
 
-    InitNodeAngles(ui->comboBoxAngle);
-    connect(ui->comboBoxAngle, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
+    InitNodeAngles(ui->angle_ComboBox);
+    connect(ui->angle_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
             &DialogInternalPath::NodeAngleChanged);
 
     connect(ui->toolButtonExprWidth, &QPushButton::clicked, this, &DialogInternalPath::FXWidth);
-    connect(ui->toolButtonExprBefore, &QPushButton::clicked, this, &DialogInternalPath::FXWidthBefore);
-    connect(ui->toolButtonExprAfter, &QPushButton::clicked, this, &DialogInternalPath::FXWidthAfter);
+    connect(ui->beforeExpr_ToolButton, &QPushButton::clicked, this, &DialogInternalPath::FXWidthBefore);
+    connect(ui->afterExpr_ToolButton, &QPushButton::clicked, this, &DialogInternalPath::FXWidthAfter);
 
-    connect(ui->plainTextEditFormulaWidth, &QPlainTextEdit::textChanged, this, &DialogInternalPath::WidthChanged);
-    connect(ui->plainTextEditFormulaWidthBefore, &QPlainTextEdit::textChanged, this,
+    connect(ui->widthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this, &DialogInternalPath::WidthChanged);
+    connect(ui->beforeWidthForumla_PlainTextEdit, &QPlainTextEdit::textChanged, this,
             &DialogInternalPath::WidthBeforeChanged);
-    connect(ui->plainTextEditFormulaWidthAfter, &QPlainTextEdit::textChanged, this,
+    connect(ui->afterWidthForumla_PlainTextEdit, &QPlainTextEdit::textChanged, this,
             &DialogInternalPath::WidthAfterChanged);
 
-    connect(ui->pushButtonGrowWidth, &QPushButton::clicked, this, &DialogInternalPath::DeployWidthFormulaTextEdit);
-    connect(ui->pushButtonGrowWidthBefore, &QPushButton::clicked,
+    connect(ui->widthGrow_PushButton, &QPushButton::clicked, this, &DialogInternalPath::DeployWidthFormulaTextEdit);
+    connect(ui->beforeWidthGrow_PushButton, &QPushButton::clicked,
             this, &DialogInternalPath::DeployWidthBeforeFormulaTextEdit);
-    connect(ui->pushButtonGrowWidthAfter, &QPushButton::clicked, this,
+    connect(ui->afterWidthGrow_PushButton, &QPushButton::clicked, this,
             &DialogInternalPath::DeployWidthAfterFormulaTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::InitPassmarksTab()
+void DialogInternalPath::InitNotchesTab()
 {
-    InitPassmarksList();
-    connect(ui->comboBoxPassmarks, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogInternalPath::PassmarkChanged);
+    InitNotchesList();
+    connect(ui->notches_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            this, &DialogInternalPath::notchChanged);
 
-    connect(ui->buttonGroupMarkType, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
-            this, &DialogInternalPath::PassmarkLineTypeChanged);
-    connect(ui->buttonGroupAngleType, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
-            this, &DialogInternalPath::PassmarkAngleTypeChanged);
+    connect(ui->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+            this, &DialogInternalPath::notchTypeChanged);
+    connect(ui->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+            this, &DialogInternalPath::notchSubTypeChanged);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::InitPathTypes()
 {
-    ui->comboBoxType->addItem(tr("Internal path"), static_cast<int>(PiecePathType::InternalPath));
-    ui->comboBoxType->addItem(tr("Custom seam allowance"), static_cast<int>(PiecePathType::CustomSeamAllowance));
+    ui->type_ComboBox->addItem(tr("Internal path"), static_cast<int>(PiecePathType::InternalPath));
+    ui->type_ComboBox->addItem(tr("Custom seam allowance"), static_cast<int>(PiecePathType::CustomSeamAllowance));
 
-    ui->comboBoxPenType->setEnabled(GetType() == PiecePathType::InternalPath);
-    ui->checkBoxCut->setEnabled(GetType() == PiecePathType::InternalPath);
+    ui->penType_ComboBox->setEnabled(GetType() == PiecePathType::InternalPath);
+    ui->cutOnFabric_CheckBox->setEnabled(GetType() == PiecePathType::InternalPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::InitNodesList()
 {
-    const quint32 id = ui->comboBoxNodes->currentData().toUInt();
+    const quint32 id = ui->nodes_ComboBox->currentData().toUInt();
 
-    ui->comboBoxNodes->blockSignals(true);
-    ui->comboBoxNodes->clear();
+    ui->nodes_ComboBox->blockSignals(true);
+    ui->nodes_ComboBox->clear();
 
     const VPiecePath path = CreatePath();
 
@@ -836,67 +839,67 @@ void DialogInternalPath::InitNodesList()
         {
             const QString name = GetNodeName(node);
 
-            ui->comboBoxNodes->addItem(name, node.GetId());
+            ui->nodes_ComboBox->addItem(name, node.GetId());
         }
     }
-    ui->comboBoxNodes->blockSignals(false);
+    ui->nodes_ComboBox->blockSignals(false);
 
-    const int index = ui->comboBoxNodes->findData(id);
+    const int index = ui->nodes_ComboBox->findData(id);
     if (index != -1)
     {
-        ui->comboBoxNodes->setCurrentIndex(index);
+        ui->nodes_ComboBox->setCurrentIndex(index);
         NodeChanged(index);// Need in case combox index was not changed
     }
     else
     {
-        ui->comboBoxNodes->count() > 0 ? NodeChanged(0) : NodeChanged(-1);
+        ui->nodes_ComboBox->count() > 0 ? NodeChanged(0) : NodeChanged(-1);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::InitPassmarksList()
+void DialogInternalPath::InitNotchesList()
 {
-    const quint32 id = ui->comboBoxPassmarks->currentData().toUInt();
+    const quint32 id = ui->notches_ComboBox->currentData().toUInt();
 
-    ui->comboBoxPassmarks->blockSignals(true);
-    ui->comboBoxPassmarks->clear();
+    ui->notches_ComboBox->blockSignals(true);
+    ui->notches_ComboBox->clear();
 
     const QVector<VPieceNode> nodes = GetListInternals<VPieceNode>(ui->listWidget);
 
     for (int i = 0; i < nodes.size(); ++i)
     {
         const VPieceNode node = nodes.at(i);
-        if (node.GetTypeTool() == Tool::NodePoint && node.IsPassmark())
+        if (node.GetTypeTool() == Tool::NodePoint && node.isNotch())
         {
             const QString name = GetNodeName(node);
 
-            ui->comboBoxPassmarks->addItem(name, node.GetId());
+            ui->notches_ComboBox->addItem(name, node.GetId());
         }
     }
-    ui->comboBoxPassmarks->blockSignals(false);
+    ui->notches_ComboBox->blockSignals(false);
 
-    const int index = ui->comboBoxPassmarks->findData(id);
+    const int index = ui->notches_ComboBox->findData(id);
     if (index != -1)
     {
-        ui->comboBoxPassmarks->setCurrentIndex(index);
-        PassmarkChanged(index);// Need in case combox index was not changed
+        ui->notches_ComboBox->setCurrentIndex(index);
+        notchChanged(index);// Need in case combox index was not changed
     }
     else
     {
-        ui->comboBoxPassmarks->count() > 0 ? PassmarkChanged(0) : PassmarkChanged(-1);
+        ui->notches_ComboBox->count() > 0 ? notchChanged(0) : notchChanged(-1);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::NodeAngleChanged(int index)
 {
-    const int i = ui->comboBoxNodes->currentIndex();
+    const int i = ui->nodes_ComboBox->currentIndex();
     if (i != -1 && index != -1)
     {
-        QListWidgetItem *rowItem = GetItemById(ui->comboBoxNodes->currentData().toUInt());
+        QListWidgetItem *rowItem = GetItemById(ui->nodes_ComboBox->currentData().toUInt());
         if (rowItem)
         {
-            const PieceNodeAngle angle = static_cast<PieceNodeAngle>(ui->comboBoxAngle->currentData().toUInt());
+            const PieceNodeAngle angle = static_cast<PieceNodeAngle>(ui->angle_ComboBox->currentData().toUInt());
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
             rowNode.SetAngleType(angle);
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
@@ -922,7 +925,7 @@ void DialogInternalPath::SetPiecePath(const VPiecePath &path)
     }
 
     SetType(path.GetType());
-    ui->lineEditName->setText(path.GetName());
+    ui->pathName_LineEdit->setText(path.GetName());
 
     VisToolInternalPath *visPath = qobject_cast<VisToolInternalPath *>(vis);
     SCASSERT(visPath != nullptr);
@@ -938,45 +941,45 @@ void DialogInternalPath::SetPiecePath(const VPiecePath &path)
 //---------------------------------------------------------------------------------------------------------------------
 PiecePathType DialogInternalPath::GetType() const
 {
-    return static_cast<PiecePathType>(ui->comboBoxType->currentData().toInt());
+    return static_cast<PiecePathType>(ui->type_ComboBox->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::SetType(PiecePathType type)
 {
-    const qint32 index = ui->comboBoxType->findData(static_cast<int>(type));
+    const qint32 index = ui->type_ComboBox->findData(static_cast<int>(type));
     if (index != -1)
     {
-        ui->comboBoxType->setCurrentIndex(index);
+        ui->type_ComboBox->setCurrentIndex(index);
     }
 
-    ui->comboBoxPenType->setEnabled(type == PiecePathType::InternalPath);
-    ui->checkBoxCut->setEnabled(type == PiecePathType::InternalPath);
+    ui->penType_ComboBox->setEnabled(type == PiecePathType::InternalPath);
+    ui->cutOnFabric_CheckBox->setEnabled(type == PiecePathType::InternalPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 Qt::PenStyle DialogInternalPath::GetPenType() const
 {
-    return LineStyleToPenStyle(GetComboBoxCurrentData(ui->comboBoxPenType, TypeLineLine));
+    return LineStyleToPenStyle(GetComboBoxCurrentData(ui->penType_ComboBox, TypeLineLine));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::SetPenType(const Qt::PenStyle &type)
 {
-    ChangeCurrentData(ui->comboBoxPenType, PenStyleToLineStyle(type));
+    ChangeCurrentData(ui->penType_ComboBox, PenStyleToLineStyle(type));
     vis->setLineStyle(type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 bool DialogInternalPath::IsCutPath() const
 {
-    return ui->checkBoxCut->isChecked();
+    return ui->cutOnFabric_CheckBox->isChecked();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::SetCutPath(bool value)
 {
-    ui->checkBoxCut->setChecked(value);
+    ui->cutOnFabric_CheckBox->setChecked(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1028,10 +1031,10 @@ void DialogInternalPath::SetCurrentSAAfter(const QString &formula)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::UpdateNodeSABefore(const QString &formula)
 {
-    const int index = ui->comboBoxNodes->currentIndex();
+    const int index = ui->nodes_ComboBox->currentIndex();
     if (index != -1)
     {
-        QListWidgetItem *rowItem = GetItemById(ui->comboBoxNodes->currentData().toUInt());
+        QListWidgetItem *rowItem = GetItemById(ui->nodes_ComboBox->currentData().toUInt());
         if (rowItem)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
@@ -1044,10 +1047,10 @@ void DialogInternalPath::UpdateNodeSABefore(const QString &formula)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::UpdateNodeSAAfter(const QString &formula)
 {
-    const int index = ui->comboBoxNodes->currentIndex();
+    const int index = ui->nodes_ComboBox->currentIndex();
     if (index != -1)
     {
-        QListWidgetItem *rowItem = GetItemById(ui->comboBoxNodes->currentData().toUInt());
+        QListWidgetItem *rowItem = GetItemById(ui->nodes_ComboBox->currentData().toUInt());
         if (rowItem)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
@@ -1071,48 +1074,48 @@ void DialogInternalPath::SetFormulaSAWidth(const QString &formula)
     {
         this->DeployWidthFormulaTextEdit();
     }
-    ui->plainTextEditFormulaWidth->setPlainText(width);
+    ui->widthFormula_PlainTextEdit->setPlainText(width);
 
     VisToolInternalPath *path = qobject_cast<VisToolInternalPath *>(vis);
     SCASSERT(path != nullptr)
     path->SetPath(CreatePath());
 
-    if (ui->tabWidget->indexOf(ui->tabSeamAllowance) == -1)
+    if (ui->tabWidget->indexOf(ui->seamAllowance_Tab) == -1)
     {
-        ui->tabWidget->addTab(ui->tabSeamAllowance, tr("Seam allowance"));
+        ui->tabWidget->addTab(ui->seamAllowance_Tab, tr("Seam allowance"));
     }
 
-    if (ui->tabWidget->indexOf(ui->tabPassmarks) == -1)
+    if (ui->tabWidget->indexOf(ui->notches_Tab) == -1)
     {
-        ui->tabWidget->addTab(ui->tabPassmarks, tr("Passmarks"));
+        ui->tabWidget->addTab(ui->notches_Tab, tr("Notches"));
     }
 
-    MoveCursorToEnd(ui->plainTextEditFormulaWidth);
+    MoveCursorToEnd(ui->widthFormula_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 quint32 DialogInternalPath::GetPieceId() const
 {
-    return getCurrentObjectId(ui->comboBoxPiece);
+    return getCurrentObjectId(ui->piece_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::SetPieceId(quint32 id)
 {
-    if (ui->comboBoxPiece->count() <= 0)
+    if (ui->piece_ComboBox->count() <= 0)
     {
-        ui->comboBoxPiece->addItem(data->GetPiece(id).GetName(), id);
+        ui->piece_ComboBox->addItem(data->GetPiece(id).GetName(), id);
     }
     else
     {
-        const qint32 index = ui->comboBoxPiece->findData(id);
+        const qint32 index = ui->piece_ComboBox->findData(id);
         if (index != -1)
         {
-            ui->comboBoxPiece->setCurrentIndex(index);
+            ui->piece_ComboBox->setCurrentIndex(index);
         }
         else
         {
-            ui->comboBoxPiece->setCurrentIndex(0);
+            ui->piece_ComboBox->setCurrentIndex(0);
         }
     }
 }
@@ -1120,7 +1123,7 @@ void DialogInternalPath::SetPieceId(quint32 id)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogInternalPath::GetFormulaSAWidth() const
 {
-    QString width = ui->plainTextEditFormulaWidth->toPlainText();
+    QString width = ui->widthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
     return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }
@@ -1128,7 +1131,7 @@ QString DialogInternalPath::GetFormulaSAWidth() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::SetPiecesList(const QVector<quint32> &list)
 {
-    FillComboBoxPiecesList(ui->comboBoxPiece, list);
+    FillComboBoxPiecesList(ui->piece_ComboBox, list);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1142,7 +1145,7 @@ VPiecePath DialogInternalPath::CreatePath() const
     }
 
     path.SetType(GetType());
-    path.SetName(ui->lineEditName->text());
+    path.SetName(ui->pathName_LineEdit->text());
     path.SetPenType(GetType() == PiecePathType::InternalPath ? GetPenType() : Qt::SolidLine);
     path.SetCutPath(GetType() == PiecePathType::InternalPath ? IsCutPath() : false);
 
@@ -1157,7 +1160,7 @@ bool DialogInternalPath::PathIsValid() const
     if(CreatePath().PathPoints(data).count() < 2)
     {
         url += tr("You need more points!");
-        ui->helpLabel->setText(url);
+        ui->status_Label->setText(url);
         return false;
     }
     else
@@ -1165,37 +1168,37 @@ bool DialogInternalPath::PathIsValid() const
         if (GetType() == PiecePathType::CustomSeamAllowance && FirstPointEqualLast(ui->listWidget))
         {
             url += tr("First point of <b>custom seam allowance</b> cannot be equal to the last point!");
-            ui->helpLabel->setText(url);
+            ui->status_Label->setText(url);
             return false;
         }
         else if (DoublePoints(ui->listWidget))
         {
             url += tr("You have double points!");
-            ui->helpLabel->setText(url);
+            ui->status_Label->setText(url);
             return false;
         }
         else if (GetType() == PiecePathType::CustomSeamAllowance && not EachPointLabelIsUnique(ui->listWidget))
         {
             url += tr("Each point in the <b>custom seam allowance</b> path must be unique!");
-            ui->helpLabel->setText(url);
+            ui->status_Label->setText(url);
             return false;
         }
     }
 
-    if (not m_showMode && ui->comboBoxPiece->count() <= 0)
+    if (not m_showMode && ui->piece_ComboBox->count() <= 0)
     {
         url += tr("List of details is empty!");
-        ui->helpLabel->setText(url);
+        ui->status_Label->setText(url);
         return false;
     }
-    else if (not m_showMode && ui->comboBoxPiece->currentIndex() == -1)
+    else if (not m_showMode && ui->piece_ComboBox->currentIndex() == -1)
     {
         url += tr("Please, select a detail to insert into!");
-        ui->helpLabel->setText(url);
+        ui->status_Label->setText(url);
         return false;
     }
 
-    ui->helpLabel->setText(tr("Ready!"));
+    ui->status_Label->setText(tr("Ready!"));
     return true;
 }
 
@@ -1215,7 +1218,7 @@ void DialogInternalPath::NewItem(const VPieceNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogInternalPath::GetFormulaSAWidthBefore() const
 {
-    QString width = ui->plainTextEditFormulaWidthBefore->toPlainText();
+    QString width = ui->beforeWidthForumla_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
     return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }
@@ -1223,7 +1226,7 @@ QString DialogInternalPath::GetFormulaSAWidthBefore() const
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogInternalPath::GetFormulaSAWidthAfter() const
 {
-    QString width = ui->plainTextEditFormulaWidthAfter->toPlainText();
+    QString width = ui->afterWidthForumla_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
     return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }

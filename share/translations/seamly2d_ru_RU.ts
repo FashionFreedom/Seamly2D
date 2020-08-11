@@ -4117,11 +4117,11 @@ Apply settings anyway?</source>
         <translation>Повторяются две точки подряд!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Надсечки</translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Надсечка:</translation>
     </message>
     <message>
@@ -4149,7 +4149,7 @@ Apply settings anyway?</source>
         <translation>Биссектриса</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Надсечка</translation>
     </message>
     <message>
@@ -5060,7 +5060,7 @@ Apply settings anyway?</source>
         <translation>Исключенный</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Надсечка</translation>
     </message>
     <message>
@@ -5068,7 +5068,7 @@ Apply settings anyway?</source>
         <translation>Каждая точка в контуре должна быть уникальной!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Надсечки</translation>
     </message>
     <message>
@@ -9012,7 +9012,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Надсечка:</translation>
     </message>
     <message>

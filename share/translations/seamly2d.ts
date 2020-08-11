@@ -4121,11 +4121,11 @@ Apply settings anyway?</translation>
         <translation type="unfinished">You have double points!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4157,7 +4157,7 @@ Apply settings anyway?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5220,7 +5220,7 @@ Apply settings anyway?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5228,7 +5228,7 @@ Apply settings anyway?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9228,7 +9228,7 @@ Do you want to save your changes?</translation>
         <translation type="obsolete">Form</translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

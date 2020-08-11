@@ -2944,10 +2944,10 @@
         <translation>Wrong fields.</translation>
     </message>
     <message>
-        <source>Fields go beyond printing. 
+        <source>Fields go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Fields go beyond printing. 
+        <translation>Fields go beyond printing.
 
 Apply settings anyway?</translation>
     </message>
@@ -4117,12 +4117,12 @@ Apply settings anyway?</translation>
         <translation>You have double points!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
-        <translation>Passmarks</translation>
+        <source>Notches</source>
+        <translation>Notches</translation>
     </message>
     <message>
-        <source>Passmark:</source>
-        <translation>Passmark:</translation>
+        <source>Notch:</source>
+        <translation>Notch:</translation>
     </message>
     <message>
         <source>One line</source>
@@ -4149,8 +4149,8 @@ Apply settings anyway?</translation>
         <translation>Bisector</translation>
     </message>
     <message>
-        <source>Passmark</source>
-        <translation>Passmark</translation>
+        <source>Notch</source>
+        <translation>Notch</translation>
     </message>
     <message>
         <source>Marks</source>
@@ -5060,16 +5060,16 @@ Apply settings anyway?</translation>
         <translation>Excluded</translation>
     </message>
     <message>
-        <source>Passmark</source>
-        <translation>Passmark</translation>
+        <source>Notch</source>
+        <translation>Notch</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
         <translation>Each point in the path must be unique!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
-        <translation>Passmarks</translation>
+        <source>Notches</source>
+        <translation>Notches</translation>
     </message>
     <message>
         <source>To open all detail&apos;s features complete creating the main path.</source>
@@ -9012,8 +9012,8 @@ Do you want to save your changes?</translation>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
-        <translation>Passmark:</translation>
+        <source>Notch:</source>
+        <translation>Notch:</translation>
     </message>
     <message>
         <source>One line</source>

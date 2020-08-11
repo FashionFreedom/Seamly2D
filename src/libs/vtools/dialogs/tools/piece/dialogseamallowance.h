@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -61,11 +61,11 @@
 namespace Ui
 {
     class DialogSeamAllowance;
-    class TabPaths;
-    class TabLabels;
-    class TabGrainline;
-    class TabPins;
-    class TabPassmarks;
+    class PathsTab;
+    class LabelsTab;
+    class GrainlineTab;
+    class PinsTab;
+    class NotchesTab;
 }
 
 class VisPiecePins;
@@ -76,210 +76,210 @@ class DialogSeamAllowance : public DialogTool
     Q_OBJECT
 
 public:
-    DialogSeamAllowance(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual ~DialogSeamAllowance();
+                                DialogSeamAllowance(const VContainer *data, const quint32 &toolId,
+                                                    QWidget *parent = nullptr);
+    virtual                    ~DialogSeamAllowance();
 
-    void EnableApply(bool enable);
+    void                        EnableApply(bool enable);
 
-    VPiece GetPiece() const;
-    void   SetPiece(const VPiece &piece);
+    VPiece                      GetPiece() const;
+    void                        SetPiece(const VPiece &piece);
 
-    QString GetFormulaSAWidth() const;
+    QString                     GetFormulaSAWidth() const;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void                ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void                ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 protected:
-    /** @brief SaveData Put dialog data in local variables */
-    virtual void SaveData() Q_DECL_OVERRIDE;
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
-    virtual void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    virtual void                SaveData() Q_DECL_OVERRIDE; //! @brief SaveData Put dialog data in local variables
+    virtual void                CheckState() Q_DECL_FINAL;
+    virtual void                closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    virtual void                showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
+    virtual void                resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 
 private slots:
-    void NameDetailChanged();
-    void ShowMainPathContextMenu(const QPoint &pos);
-    void ShowCustomSAContextMenu(const QPoint &pos);
-    void ShowInternalPathsContextMenu(const QPoint &pos);
-    void ShowPinsContextMenu(const QPoint &pos);
+    void                        NameDetailChanged();
+    void                        ShowMainPathContextMenu(const QPoint &pos);
+    void                        ShowCustomSAContextMenu(const QPoint &pos);
+    void                        ShowInternalPathsContextMenu(const QPoint &pos);
+    void                        ShowPinsContextMenu(const QPoint &pos);
 
-    void ListChanged();
-    void EnableSeamAllowance(bool enable);
-    void NodeChanged(int index);
-    void PassmarkChanged(int index);
-    void CSAStartPointChanged(int index);
-    void CSAEndPointChanged(int index);
-    void CSAIncludeTypeChanged(int index);
-    void NodeAngleChanged(int index);
-    void ReturnDefBefore();
-    void ReturnDefAfter();
-    void CustomSAChanged(int row);
-    void PathDialogClosed(int result);
-    void FancyTabChanged(int index);
-    void TabChanged(int index);
-    void PassmarkLineTypeChanged(int id);
-    void PassmarkAngleTypeChanged(int id);
-    void PassmarkShowSecondChanged(int state);
+    void                        ListChanged();
+    void                        EnableSeamAllowance(bool enable);
+    void                        NodeChanged(int index);
+    void                        notchChanged(int index);
+    void                        CSAStartPointChanged(int index);
+    void                        CSAEndPointChanged(int index);
+    void                        CSAIncludeTypeChanged(int index);
+    void                        NodeAngleChanged(int index);
+    void                        ReturnDefBefore();
+    void                        ReturnDefAfter();
+    void                        CustomSAChanged(int row);
+    void                        PathDialogClosed(int result);
+    void                        FancyTabChanged(int index);
+    void                        TabChanged(int index);
+    void                        notchTypeChanged(int id);
+    void                        notchSubTypeChanged(int id);
+    void                        showSecondNotchChanged(int state);
 
-    void UpdateGrainlineValues();
-    void UpdateDetailLabelValues();
-    void UpdatePatternLabelValues();
+    void                        UpdateGrainlineValues();
+    void                        UpdateDetailLabelValues();
+    void                        UpdatePatternLabelValues();
 
-    void EditGrainlineFormula();
-    void EditDLFormula();
-    void EditPLFormula();
+    void                        EditGrainlineFormula();
+    void                        EditDLFormula();
+    void                        EditPLFormula();
 
-    void DeployGrainlineRotation();
-    void DeployGrainlineLength();
+    void                        DeployGrainlineRotation();
+    void                        DeployGrainlineLength();
 
-    void DeployDLWidth();
-    void DeployDLHeight();
-    void DeployDLAngle();
+    void                        DeployDLWidth();
+    void                        DeployDLHeight();
+    void                        DeployDLAngle();
 
-    void DeployPLWidth();
-    void DeployPLHeight();
-    void DeployPLAngle();
+    void                        DeployPLWidth();
+    void                        DeployPLHeight();
+    void                        DeployPLAngle();
 
-    void ResetGrainlineWarning();
-    void ResetLabelsWarning();
+    void                        ResetGrainlineWarning();
+    void                        ResetLabelsWarning();
 
-    void EnabledGrainline();
-    void EnabledDetailLabel();
-    void EnabledPatternLabel();
+    void                        EnabledGrainline();
+    void                        EnabledDetailLabel();
+    void                        EnabledPatternLabel();
 
-    void EvalWidth();
-    void EvalWidthBefore();
-    void EvalWidthAfter();
+    void                        EvalWidth();
+    void                        EvalWidthBefore();
+    void                        EvalWidthAfter();
 
-    void FXWidth();
-    void FXWidthBefore();
-    void FXWidthAfter();
+    void                        FXWidth();
+    void                        FXWidthBefore();
+    void                        FXWidthAfter();
 
-    void WidthChanged();
-    void WidthBeforeChanged();
-    void WidthAfterChanged();
+    void                        WidthChanged();
+    void                        WidthBeforeChanged();
+    void                        WidthAfterChanged();
 
-    void DeployWidthFormulaTextEdit();
-    void DeployWidthBeforeFormulaTextEdit();
-    void DeployWidthAfterFormulaTextEdit();
+    void                        DeployWidthFormulaTextEdit();
+    void                        DeployWidthBeforeFormulaTextEdit();
+    void                        DeployWidthAfterFormulaTextEdit();
 
-    void GrainlinePinPointChanged();
-    void DetailPinPointChanged();
-    void PatternPinPointChanged();
+    void                        GrainlinePinPointChanged();
+    void                        DetailPinPointChanged();
+    void                        PatternPinPointChanged();
 
-    void EditLabel();
+    void                        EditLabel();
 
 private:
     Q_DISABLE_COPY(DialogSeamAllowance)
 
-    Ui::DialogSeamAllowance *ui;
-    Ui::TabPaths            *uiTabPaths;
-    Ui::TabLabels           *uiTabLabels;
-    Ui::TabGrainline        *uiTabGrainline;
-    Ui::TabPins             *uiTabPins;
-    Ui::TabPassmarks        *uiTabPassmarks;
+    Ui::DialogSeamAllowance    *ui;
+    Ui::PathsTab               *uiPathsTab;
+    Ui::LabelsTab              *uiLabelsTab;
+    Ui::GrainlineTab           *uiGrainlineTab;
+    Ui::PinsTab                *uiPinsTab;
+    Ui::NotchesTab           *uiNotchesTab;
 
-    QWidget *m_tabPaths;
-    QWidget *m_tabLabels;
-    QWidget *m_tabGrainline;
-    QWidget *m_tabPins;
-    QWidget *m_tabPassmarks;
+    QWidget                    *m_pathsTab;
+    QWidget                    *m_labelsTab;
+    QWidget                    *m_grainlineTab;
+    QWidget                    *m_pinsTab;
+    QWidget                    *m_notchesTab;
 
-    FancyTabBar* m_ftb;
+    FancyTabBar                *m_ftb;
 
-    bool   applyAllowed;
-    bool   flagGPin;
-    bool   flagDPin;
-    bool   flagPPin;
-    bool   flagGFormulas;
-    bool   flagDLAngle;
-    bool   flagDLFormulas;
-    bool   flagPLAngle;
-    bool   flagPLFormulas;
-    bool   m_bAddMode;
-    qreal  m_mx;
-    qreal  m_my;
+    bool                        applyAllowed;
+    bool                        flagGPin;
+    bool                        flagDPin;
+    bool                        flagPPin;
+    bool                        flagGFormulas;
+    bool                        flagDLAngle;
+    bool                        flagDLFormulas;
+    bool                        flagPLAngle;
+    bool                        flagPLFormulas;
+    bool                        m_bAddMode;
+    qreal                       m_mx;
+    qreal                       m_my;
 
-    QPointer<DialogTool>   m_dialog;
-    QPointer<VisPiecePins> m_visPins;
+    QPointer<DialogTool>        m_dialog;
+    QPointer<VisPiecePins>      m_visPins;
 
-    VPieceLabelData   m_oldData;
-    VPatternLabelData m_oldGeom;
-    VGrainlineData    m_oldGrainline;
-    int                  m_iRotBaseHeight;
-    int                  m_iLenBaseHeight;
-    int                  m_DLWidthBaseHeight;
-    int                  m_DLHeightBaseHeight;
-    int                  m_DLAngleBaseHeight;
-    int                  m_PLWidthBaseHeight;
-    int                  m_PLHeightBaseHeight;
-    int                  m_PLAngleBaseHeight;
-    int                  m_formulaBaseWidth;
-    int                  m_formulaBaseWidthBefore;
-    int                  m_formulaBaseWidthAfter;
+    VPieceLabelData             m_oldData;
+    VPatternLabelData           m_oldGeom;
+    VGrainlineData              m_oldGrainline;
+    int                         m_iRotBaseHeight;
+    int                         m_iLenBaseHeight;
+    int                         m_DLWidthBaseHeight;
+    int                         m_DLHeightBaseHeight;
+    int                         m_DLAngleBaseHeight;
+    int                         m_PLWidthBaseHeight;
+    int                         m_PLHeightBaseHeight;
+    int                         m_PLAngleBaseHeight;
+    int                         m_widthFormula;
+    int                         m_beforeWidthFormula;
+    int                         m_afterWidthFormula;
 
-    QTimer *m_timerWidth;
-    QTimer *m_timerWidthBefore;
-    QTimer *m_timerWidthAfter;
-    qreal   m_saWidth;
+    QTimer                     *m_timerWidth;
+    QTimer                     *m_timerWidthBefore;
+    QTimer                     *m_timerWidthAfter;
+    qreal                       m_saWidth;
 
     QVector<VLabelTemplateLine> m_templateLines;
 
-    VPiece CreatePiece() const;
+    VPiece                      CreatePiece() const;
 
-    void    NewMainPathItem(const VPieceNode &node);
-    void    NewCustomSA(const CustomSARecord &record);
-    void    NewInternalPath(quint32 path);
-    void    NewPin(quint32 pinPoint);
-    QString GetPathName(quint32 path, bool reverse = false) const;
-    bool    MainPathIsValid() const;
-    void    ValidObjects(bool value);
-    bool    MainPathIsClockwise() const;
-    void    UpdateCurrentCustomSARecord();
-    void    UpdateCurrentInternalPathRecord();
+    void                        NewMainPathItem(const VPieceNode &node);
+    void                        NewCustomSA(const CustomSARecord &record);
+    void                        NewInternalPath(quint32 path);
+    void                        NewPin(quint32 pinPoint);
+    QString                     GetPathName(quint32 path, bool reverse = false) const;
+    bool                        MainPathIsValid() const;
+    void                        ValidObjects(bool value);
+    bool                        MainPathIsClockwise() const;
+    void                        UpdateCurrentCustomSARecord();
+    void                        UpdateCurrentInternalPathRecord();
 
-    QListWidgetItem *GetItemById(quint32 id);
+    QListWidgetItem            *GetItemById(quint32 id);
 
-    quint32 GetLastId() const;
+    quint32                     GetLastId() const;
 
-    void SetCurrentSABefore(const QString &formula);
-    void SetCurrentSAAfter(const QString &formula);
+    void                        SetCurrentSABefore(const QString &formula);
+    void                        SetCurrentSAAfter(const QString &formula);
 
-    void UpdateNodeSABefore(const QString &formula);
-    void UpdateNodeSAAfter(const QString &formula);
+    void                        UpdateNodeSABefore(const QString &formula);
+    void                        UpdateNodeSAAfter(const QString &formula);
 
-    void InitFancyTabBar();
-    void InitMainPathTab();
-    void InitSeamAllowanceTab();
-    void InitNodesList();
-    void InitPassmarksList();
-    void InitCSAPoint(QComboBox *box);
-    void InitPinPoint(QComboBox *box);
-    void InitSAIncludeType();
-    void InitInternalPathsTab();
-    void InitPatternPieceDataTab();
-    void InitLabelsTab();
-    void InitGrainlineTab();
-    void InitPinsTab();
-    void InitPassmarksTab();
-    void InitAllPinComboboxes();
+    void                        InitFancyTabBar();
+    void                        InitMainPathTab();
+    void                        InitSeamAllowanceTab();
+    void                        InitNodesList();
+    void                        InitNotchesList();
+    void                        InitCSAPoint(QComboBox *box);
+    void                        InitPinPoint(QComboBox *box);
+    void                        InitSAIncludeType();
+    void                        InitInternalPathsTab();
+    void                        InitPatternPieceDataTab();
+    void                        InitLabelsTab();
+    void                        InitGrainlineTab();
+    void                        InitPinsTab();
+    void                        InitNotchesTab();
+    void                        InitAllPinComboboxes();
 
-    void SetFormulaSAWidth(const QString &formula);
+    void                        SetFormulaSAWidth(const QString &formula);
 
-    void SetGrainlineAngle(QString angleFormula);
-    void SetGrainlineLength(QString lengthFormula);
+    void                        SetGrainlineAngle(QString angleFormula);
+    void                        SetGrainlineLength(QString lengthFormula);
 
-    void SetDLWidth(QString widthFormula);
-    void SetDLHeight(QString heightFormula);
-    void SetDLAngle(QString angleFormula);
+    void                        SetDLWidth(QString widthFormula);
+    void                        SetDLHeight(QString heightFormula);
+    void                        SetDLAngle(QString angleFormula);
 
-    void SetPLWidth(QString widthFormula);
-    void SetPLHeight(QString heightFormula);
-    void SetPLAngle(QString angleFormula);
+    void                        SetPLWidth(QString widthFormula);
+    void                        SetPLHeight(QString heightFormula);
+    void                        SetPLAngle(QString angleFormula);
 
-    void ShowPins();
+    void                        ShowPins();
 };
 
 #endif // DIALOGSEAMALLOWANCE_H

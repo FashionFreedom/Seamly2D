@@ -15,13 +15,13 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QGroupBox" name="groupBox_2">
+    <widget class="QGroupBox" name="output_GroupBox">
      <property name="title">
       <string>Graphical output</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="QCheckBox" name="graphOutputCheck">
+       <widget class="QCheckBox" name="graphOutput_CheckBox">
         <property name="text">
          <string>Use antialiasing</string>
         </property>
@@ -31,7 +31,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="undo_GroupBox">
      <property name="title">
       <string>Undo</string>
      </property>
@@ -40,26 +40,26 @@
        <enum>QFormLayout::ExpandingFieldsGrow</enum>
       </property>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="undoCount_Label">
         <property name="text">
          <string>Count steps (0 - no limit):</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QSpinBox" name="undoCount"/>
+       <widget class="QSpinBox" name="undoCount_SpinBox"/>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_5">
+    <widget class="QGroupBox" name="WorkPiece_GroupBox">
      <property name="title">
       <string>Workpiece</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <widget class="QCheckBox" name="forbidFlippingCheck">
+       <widget class="QCheckBox" name="forbidFlipping_CheckBox">
         <property name="toolTip">
          <string>By default forbid flipping for all new created workpieces</string>
         </property>
@@ -69,17 +69,17 @@
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="doublePassmarkCheck">
+       <widget class="QCheckBox" name="doubleNotch_CheckBox">
         <property name="toolTip">
-         <string>Show a passmark both in the seam allowance and on the seam line.</string>
+         <string>Show notch on both the seam allowance and seam line.</string>
         </property>
         <property name="text">
-         <string>Show second passmark on seam line</string>
+         <string>Show second notch on seam line</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QCheckBox" name="checkBoxHideMainPath">
+       <widget class="QCheckBox" name="hideMainPath_CheckBox">
         <property name="toolTip">
          <string>By default hide the main path if the seam allowance was enabled</string>
         </property>
@@ -91,14 +91,20 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="labelFont_Label">
+          <property name="maximumSize">
+           <size>
+            <width>70</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="text">
            <string>Label font:</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QFontComboBox" name="fontComboBoxLabelFont"/>
+         <widget class="QFontComboBox" name="labelFont_ComboBox"/>
         </item>
        </layout>
       </item>
@@ -106,20 +112,20 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_6">
+    <widget class="QGroupBox" name="seamAllowance_groupBox">
      <property name="title">
       <string>Seam allowance</string>
      </property>
      <layout class="QFormLayout" name="formLayout_3">
       <item row="0" column="0">
-       <widget class="QLabel" name="label_defaultSeamAllowance">
+       <widget class="QLabel" name="defaultSeamAllowance_Label">
         <property name="text">
          <string>Default value:</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QDoubleSpinBox" name="defaultSeamAllowance">
+       <widget class="QDoubleSpinBox" name="defaultSeamAllowance_DoubleSpinBox">
         <property name="decimals">
          <number>3</number>
         </property>
@@ -138,7 +144,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox_4">
+    <widget class="QGroupBox" name="Formats_GroupBox">
      <property name="title">
       <string>Label data/time format</string>
      </property>
@@ -147,7 +153,7 @@
        <enum>QFormLayout::ExpandingFieldsGrow</enum>
       </property>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_4">
+       <widget class="QLabel" name="dateFormats_Label">
         <property name="text">
          <string>Date:</string>
         </property>
@@ -156,10 +162,10 @@
       <item row="0" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QComboBox" name="comboBoxDateFormats"/>
+         <widget class="QComboBox" name="dateFormats_ComboBox"/>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButtonEditDateFormats">
+         <widget class="QPushButton" name="editDateFormats_PushButton">
           <property name="text">
            <string>Edit formats</string>
           </property>
@@ -168,7 +174,7 @@
        </layout>
       </item>
       <item row="1" column="0">
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="timeFormats_Label">
         <property name="text">
          <string>Time:</string>
         </property>
@@ -177,10 +183,10 @@
       <item row="1" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QComboBox" name="comboBoxTimeFormats"/>
+         <widget class="QComboBox" name="timeFormats_ComboBox"/>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButtonEditTimeFormats">
+         <widget class="QPushButton" name="editTimeFormats_PushButton">
           <property name="text">
            <string>Edit formats</string>
           </property>

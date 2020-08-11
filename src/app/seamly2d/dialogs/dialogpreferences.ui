@@ -53,7 +53,7 @@
         <enum>QListView::IconMode</enum>
        </property>
        <property name="currentRow">
-        <number>0</number>
+        <number>-1</number>
        </property>
        <item>
         <property name="text">
@@ -87,7 +87,7 @@
        </item>
        <item>
         <property name="text">
-         <string>Paths</string>
+         <string>File Paths</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>

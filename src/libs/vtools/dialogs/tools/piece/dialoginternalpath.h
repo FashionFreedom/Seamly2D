@@ -93,11 +93,11 @@ private slots:
     void ListChanged();
     void NameChanged();
     void NodeChanged(int index);
-    void PassmarkChanged(int index);
+    void notchChanged(int index);
     void ReturnDefBefore();
     void ReturnDefAfter();
-    void PassmarkLineTypeChanged(int id);
-    void PassmarkAngleTypeChanged(int id);
+    void notchTypeChanged(int id);
+    void notchSubTypeChanged(int id);
 
     void EvalWidth();
     void EvalWidthBefore();
@@ -125,16 +125,16 @@ private:
     QTimer *m_timerWidthBefore;
     QTimer *m_timerWidthAfter;
 
-    int m_formulaBaseWidth;
-    int m_formulaBaseWidthBefore;
-    int m_formulaBaseWidthAfter;
+    int m_widthFormula;
+    int m_beforeWidthFormula;
+    int m_afterWidthFormula;
 
     void InitPathTab();
     void InitSeamAllowanceTab();
-    void InitPassmarksTab();
+    void InitNotchesTab();
     void InitPathTypes();
     void InitNodesList();
-    void InitPassmarksList();
+    void InitNotchesList();
     void NodeAngleChanged(int index);
 
     VPiecePath CreatePath() const;

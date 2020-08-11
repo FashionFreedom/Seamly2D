@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -64,63 +64,65 @@ class VContainer;
 class VPieceNode
 {
 public:
-    VPieceNode();
-    VPieceNode(quint32 id, Tool typeTool, bool reverse = false);
-    VPieceNode(const VPieceNode &node);
+                       VPieceNode();
+                       VPieceNode(quint32 id, Tool typeTool, bool reverse = false);
+                       VPieceNode(const VPieceNode &node);
 
-    ~VPieceNode();
+                      ~VPieceNode();
 
-    VPieceNode &operator=(const VPieceNode &node);
+    VPieceNode         &operator=(const VPieceNode &node);
+
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPieceNode &operator=(VPieceNode &&node) Q_DECL_NOTHROW;
+	VPieceNode           &operator=(VPieceNode &&node) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VPieceNode &node) Q_DECL_NOTHROW;
+	void                  Swap(VPieceNode &node) Q_DECL_NOTHROW;
 
-    friend QDataStream& operator<<(QDataStream& out, const VPieceNode& p);
-    friend QDataStream& operator>>(QDataStream& in, VPieceNode& p);
+    friend QDataStream &operator<<(QDataStream &out, const VPieceNode &);
+    friend QDataStream &operator>>(QDataStream &in, VPieceNode &p);
 
-    quint32 GetId() const;
-    void    SetId(quint32 id);
+    quint32             GetId() const;
+    void                SetId(quint32 id);
 
-    Tool GetTypeTool() const;
-    void SetTypeTool(Tool value);
+    Tool                GetTypeTool() const;
+    void                SetTypeTool(Tool value);
 
-    bool GetReverse() const;
-    void SetReverse(bool reverse);
+    bool                GetReverse() const;
+    void                SetReverse(bool reverse);
 
-    bool IsExcluded() const;
-    void SetExcluded(bool exclude);
+    bool                isExcluded() const;
+    void                SetExcluded(bool exclude);
 
-    qreal GetSABefore(const VContainer *data) const;
-    qreal GetSABefore(const VContainer *data, Unit unit) const;
+    qreal               GetSABefore(const VContainer *data) const;
+    qreal               GetSABefore(const VContainer *data, Unit unit) const;
 
-    QString GetFormulaSABefore() const;
-    void    SetFormulaSABefore(const QString &formula);
+    QString             GetFormulaSABefore() const;
+    void                SetFormulaSABefore(const QString &formula);
 
-    qreal GetSAAfter(const VContainer *data) const;
-    qreal GetSAAfter(const VContainer *data, Unit unit) const;
+    qreal               GetSAAfter(const VContainer *data) const;
+    qreal               GetSAAfter(const VContainer *data, Unit unit) const;
 
-    QString GetFormulaSAAfter() const;
-    void    SetFormulaSAAfter(const QString &formula);
+    QString             GetFormulaSAAfter() const;
+    void                SetFormulaSAAfter(const QString &formula);
 
-    PieceNodeAngle GetAngleType() const;
-    void           SetAngleType(PieceNodeAngle type);
+    PieceNodeAngle      GetAngleType() const;
+    void                SetAngleType(PieceNodeAngle type);
 
-    bool IsPassmark() const;
-    void SetPassmark(bool passmark);
+    bool                isNotch() const;
+    void                setNotch(bool notch);
 
-    bool IsMainPathNode() const;
-    void SetMainPathNode(bool value);
+    bool                IsMainPathNode() const;
+    void                SetMainPathNode(bool value);
 
-    PassmarkLineType GetPassmarkLineType() const;
-    void             SetPassmarkLineType(PassmarkLineType lineType);
+    NotchType           getNotchType() const;
+    void                setNotchLineType(NotchType lineType);
 
-    PassmarkAngleType GetPassmarkAngleType() const;
-    void              SetPassmarkAngleType(PassmarkAngleType angleType);
+    NotchSubType        getNotchSubType() const;
+    void                setNotchAngleType(NotchSubType angleType);
 
-    bool IsShowSecondPassmark() const;
-    void SetShowSecondPassmark(bool value);
+    bool                showSecondNotch() const;
+    void                setShowSecondNotch(bool value);
+
 private:
     QSharedDataPointer<VPieceNodeData> d;
 };
