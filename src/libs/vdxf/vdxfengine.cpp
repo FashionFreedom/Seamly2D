@@ -719,10 +719,10 @@ void VDxfEngine::ExportAAMANotch(dx_ifaceBlock *detailBlock, const VLayoutPiece 
 {
     if (detail.IsSeamAllowance())
     {
-        QVector<QLineF> passmarks = detail.GetPassmarks();
-        for(int i = 0; i < passmarks.size(); ++i)
+        QVector<QLineF> notches = detail.getNotches();
+        for(int i = 0; i < notches.size(); ++i)
         {
-            DRW_Entity *e = AAMALine(passmarks.at(i), "4");
+            DRW_Entity *e = AAMALine(notches.at(i), "4");
             if (e)
             {
                 detailBlock->ent.push_back(e);

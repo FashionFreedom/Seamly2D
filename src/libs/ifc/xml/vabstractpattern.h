@@ -262,10 +262,10 @@ public:
     static const QString AttrArrows;
     static const QString AttrNodeReverse;
     static const QString AttrNodeExcluded;
-    static const QString AttrNodePassmark;
-    static const QString AttrNodePassmarkLine;
-    static const QString AttrNodePassmarkAngle;
-    static const QString AttrNodeShowSecondPassmark;
+    static const QString AttrNodeNotch;
+    static const QString AttrNodeNotchType;
+    static const QString AttrNodeNotchSubType;
+    static const QString AttrNodeShowSecondNotch;
     static const QString AttrSABefore;
     static const QString AttrSAAfter;
     static const QString AttrStart;

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TabPassmarks</class>
- <widget class="QWidget" name="TabPassmarks">
+ <class>NotchesTab</class>
+ <widget class="QWidget" name="NotchesTab">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>352</width>
-    <height>411</height>
+    <height>534</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,38 +25,72 @@
         <x>0</x>
         <y>0</y>
         <width>332</width>
-        <height>391</height>
+        <height>514</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <layout class="QFormLayout" name="formLayout">
-         <property name="fieldGrowthPolicy">
-          <enum>QFormLayout::ExpandingFieldsGrow</enum>
+        <widget class="QGroupBox" name="selection_GroupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
          </property>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Passmark:</string>
+         <property name="title">
+          <string>Selection</string>
+         </property>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>291</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <property name="fieldGrowthPolicy">
+            <enum>QFormLayout::ExpandingFieldsGrow</enum>
            </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QComboBox" name="comboBoxPassmarks"/>
-         </item>
-        </layout>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Notch:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="notches_ComboBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBoxMarkType">
+        <widget class="QGroupBox" name="notchType_GroupBox">
          <property name="enabled">
           <bool>true</bool>
          </property>
          <property name="title">
-          <string>Marks</string>
+          <string>Type</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QRadioButton" name="radioButtonOneLine">
+           <widget class="QRadioButton" name="oneLine_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -64,12 +98,12 @@
              <string>One line</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupLineType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonTwoLines">
+           <widget class="QRadioButton" name="twoLines_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -77,12 +111,12 @@
              <string>Two lines</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupLineType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonThreeLines">
+           <widget class="QRadioButton" name="threeLines_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -90,12 +124,12 @@
              <string>Three lines</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupLineType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonTMark">
+           <widget class="QRadioButton" name="tMark_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -103,12 +137,12 @@
              <string>T mark</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupLineType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonVMark">
+           <widget class="QRadioButton" name="vMark_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -116,7 +150,7 @@
              <string>V mark</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupLineType</string>
+             <string notr="true">notchType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -124,13 +158,13 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBoxAngleType">
+        <widget class="QGroupBox" name="notchSubType_GroupBox">
          <property name="title">
-          <string>Angle</string>
+          <string>Subtype</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QRadioButton" name="radioButtonStraightforward">
+           <widget class="QRadioButton" name="straightforward_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -138,12 +172,12 @@
              <string>Straightforward</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupAngleType</string>
+             <string notr="true">notchSubType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonBisector">
+           <widget class="QRadioButton" name="bisector_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -151,23 +185,23 @@
              <string>Bisector</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupAngleType</string>
+             <string notr="true">notchSubType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="radioButtonIntersection">
+           <widget class="QRadioButton" name="intersection_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="toolTip">
-             <string>Select if need designate the corner point as a passmark</string>
+             <string>Select to designate a corner point as a notch</string>
             </property>
             <property name="text">
              <string>Intersection</string>
             </property>
             <attribute name="buttonGroup">
-             <string notr="true">buttonGroupAngleType</string>
+             <string notr="true">notchSubType_ButtonGroup</string>
             </attribute>
            </widget>
           </item>
@@ -175,16 +209,35 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBoxShowSecondPassmark">
-         <property name="enabled">
-          <bool>false</bool>
+        <widget class="QGroupBox" name="geometry_GroupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>50</height>
+          </size>
          </property>
-         <property name="toolTip">
-          <string>This option has effect only if the second passmark on seam line enabled in global preferences. The option helps disable the second passmark for this passmark only.</string>
+         <property name="title">
+          <string>Geometry</string>
          </property>
-         <property name="text">
-          <string>Show the second passmark on seam line</string>
-         </property>
+         <widget class="QCheckBox" name="showSecondNotch_CheckBox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>181</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="toolTip">
+           <string>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</string>
+          </property>
+          <property name="text">
+           <string>Show second notch on seam line</string>
+          </property>
+         </widget>
         </widget>
        </item>
        <item>
@@ -209,7 +262,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="buttonGroupLineType"/>
-  <buttongroup name="buttonGroupAngleType"/>
+  <buttongroup name="notchType_ButtonGroup"/>
+  <buttongroup name="notchSubType_ButtonGroup"/>
  </buttongroups>
 </ui>

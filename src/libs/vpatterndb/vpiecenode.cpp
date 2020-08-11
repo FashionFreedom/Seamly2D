@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -187,23 +187,23 @@ void VPieceNode::SetReverse(bool reverse)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VPieceNode::GetSABefore(const VContainer *data) const
 {
-    if (d->m_formulaWidthBefore == currentSeamAllowance)
+    if (d->m_beforeWidthFormula == currentSeamAllowance)
     {
         return -1;
     }
 
-    return EvalFormula(data, d->m_formulaWidthBefore);
+    return EvalFormula(data, d->m_beforeWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal VPieceNode::GetSABefore(const VContainer *data, Unit unit) const
 {
-    if (d->m_formulaWidthBefore == currentSeamAllowance)
+    if (d->m_beforeWidthFormula == currentSeamAllowance)
     {
         return -1;
     }
 
-    qreal value = EvalFormula(data, d->m_formulaWidthBefore);
+    qreal value = EvalFormula(data, d->m_beforeWidthFormula);
     if (value >= 0)
     {
         value = ToPixel(value, unit);
@@ -214,7 +214,7 @@ qreal VPieceNode::GetSABefore(const VContainer *data, Unit unit) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VPieceNode::GetFormulaSABefore() const
 {
-    return d->m_formulaWidthBefore;
+    return d->m_beforeWidthFormula;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -222,30 +222,30 @@ void VPieceNode::SetFormulaSABefore(const QString &formula)
 {
     if (d->m_typeTool == Tool::NodePoint)
     {
-        d->m_formulaWidthBefore = formula;
+        d->m_beforeWidthFormula = formula;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal VPieceNode::GetSAAfter(const VContainer *data) const
 {
-    if (d->m_formulaWidthAfter == currentSeamAllowance)
+    if (d->m_afterWidthFormula == currentSeamAllowance)
     {
         return -1;
     }
 
-    return EvalFormula(data, d->m_formulaWidthAfter);
+    return EvalFormula(data, d->m_afterWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal VPieceNode::GetSAAfter(const VContainer *data, Unit unit) const
 {
-    if (d->m_formulaWidthAfter == currentSeamAllowance)
+    if (d->m_afterWidthFormula == currentSeamAllowance)
     {
         return -1;
     }
 
-    qreal value = EvalFormula(data, d->m_formulaWidthAfter);
+    qreal value = EvalFormula(data, d->m_afterWidthFormula);
     if (value >= 0)
     {
         value = ToPixel(value, unit);
@@ -256,7 +256,7 @@ qreal VPieceNode::GetSAAfter(const VContainer *data, Unit unit) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VPieceNode::GetFormulaSAAfter() const
 {
-    return d->m_formulaWidthAfter;
+    return d->m_afterWidthFormula;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ void VPieceNode::SetFormulaSAAfter(const QString &formula)
 {
     if (d->m_typeTool == Tool::NodePoint)
     {
-        d->m_formulaWidthAfter = formula;
+        d->m_afterWidthFormula = formula;
     }
 }
 
@@ -284,17 +284,17 @@ void VPieceNode::SetAngleType(PieceNodeAngle type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPieceNode::IsPassmark() const
+bool VPieceNode::isNotch() const
 {
-    return d->m_isPassmark;
+    return d->m_isNotch;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::SetPassmark(bool passmark)
+void VPieceNode::setNotch(bool notch)
 {
     if (GetTypeTool() == Tool::NodePoint)
     {
-        d->m_isPassmark = passmark;
+        d->m_isNotch = notch;
     }
 }
 
@@ -311,43 +311,43 @@ void VPieceNode::SetMainPathNode(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PassmarkLineType VPieceNode::GetPassmarkLineType() const
+NotchType VPieceNode::getNotchType() const
 {
-    return d->m_passmarkLineType;
+    return d->m_notchType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::SetPassmarkLineType(PassmarkLineType lineType)
+void VPieceNode::setNotchLineType(NotchType lineType)
 {
-    d->m_passmarkLineType = lineType;
+    d->m_notchType = lineType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PassmarkAngleType VPieceNode::GetPassmarkAngleType() const
+NotchSubType VPieceNode::getNotchSubType() const
 {
-    return d->m_passmarkAngleType;
+    return d->m_notchSubType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::SetPassmarkAngleType(PassmarkAngleType angleType)
+void VPieceNode::setNotchAngleType(NotchSubType angleType)
 {
-    d->m_passmarkAngleType = angleType;
+    d->m_notchSubType = angleType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPieceNode::IsShowSecondPassmark() const
+bool VPieceNode::showSecondNotch() const
 {
-    return d->m_isShowSecondPassmark;
+    return d->m_showSecondNotch;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::SetShowSecondPassmark(bool value)
+void VPieceNode::setShowSecondNotch(bool value)
 {
-    d->m_isShowSecondPassmark = value;
+    d->m_showSecondNotch = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPieceNode::IsExcluded() const
+bool VPieceNode::isExcluded() const
 {
     return d->m_excluded;
 }

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -619,19 +619,19 @@ const QString strTMark = QStringLiteral("tMark");
 const QString strVMark = QStringLiteral("vMark");
 
 //---------------------------------------------------------------------------------------------------------------------
-QString PassmarkLineTypeToString(PassmarkLineType type)
+QString notchTypeToString(NotchType type)
 {
     switch(type)
     {
-        case PassmarkLineType::OneLine:
+        case NotchType::OneLine:
             return strOne;
-        case PassmarkLineType::TwoLines:
+        case NotchType::TwoLines:
             return strTwo;
-        case PassmarkLineType::ThreeLines:
+        case NotchType::ThreeLines:
             return strThree;
-        case PassmarkLineType::TMark:
+        case NotchType::TMark:
             return strTMark;
-        case PassmarkLineType::VMark:
+        case NotchType::VMark:
             return strVMark;
         default:
             break;
@@ -641,26 +641,26 @@ QString PassmarkLineTypeToString(PassmarkLineType type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PassmarkLineType StringToPassmarkLineType(const QString &value)
+NotchType stringToNotchType(const QString &value)
 {
     const QStringList values = QStringList() << strOne << strTwo << strThree << strTMark << strVMark;
 
     switch(values.indexOf(value))
     {
         case 0: // strOne
-            return PassmarkLineType::OneLine;
+            return NotchType::OneLine;
         case 1: // strTwo
-            return PassmarkLineType::TwoLines;
+            return NotchType::TwoLines;
         case 2: // strThree
-            return PassmarkLineType::ThreeLines;
+            return NotchType::ThreeLines;
         case 3: // strTMark
-            return PassmarkLineType::TMark;
+            return NotchType::TMark;
         case 4: // strVMark
-            return PassmarkLineType::VMark;
+            return NotchType::VMark;
         default:
             break;
     }
-    return PassmarkLineType::OneLine;
+    return NotchType::OneLine;
 }
 
 const QString strStraightforward = QStringLiteral("straightforward");
@@ -668,15 +668,15 @@ const QString strBisector        = QStringLiteral("bisector");
 const QString strIntersection    = QStringLiteral("intersection");
 
 //---------------------------------------------------------------------------------------------------------------------
-QString PassmarkAngleTypeToString(PassmarkAngleType type)
+QString notchSubTypeToString(NotchSubType type)
 {
     switch(type)
     {
-        case PassmarkAngleType::Straightforward:
+        case NotchSubType::Straightforward:
             return strStraightforward;
-        case PassmarkAngleType::Bisector:
+        case NotchSubType::Bisector:
             return strBisector;
-        case PassmarkAngleType::Intersection:
+        case NotchSubType::Intersection:
             return strIntersection;
         default:
             break;
@@ -686,22 +686,22 @@ QString PassmarkAngleTypeToString(PassmarkAngleType type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PassmarkAngleType StringToPassmarkAngleType(const QString &value)
+NotchSubType stringToNotchSubType(const QString &value)
 {
     const QStringList values = QStringList() << strStraightforward << strBisector << strIntersection;
 
     switch(values.indexOf(value))
     {
         case 0:
-            return PassmarkAngleType::Straightforward;
+            return NotchSubType::Straightforward;
         case 1:
-            return PassmarkAngleType::Bisector;
+            return NotchSubType::Bisector;
         case 2:
-            return PassmarkAngleType::Intersection;
+            return NotchSubType::Intersection;
         default:
             break;
     }
-    return PassmarkAngleType::Straightforward;
+    return NotchSubType::Straightforward;
 }
 
 

@@ -4117,11 +4117,11 @@ Apply settings anyway?</source>
         <translation>Одна точка не може бути використана два рази підряд!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Надсічки</translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Надсічка:</translation>
     </message>
     <message>
@@ -4149,7 +4149,7 @@ Apply settings anyway?</source>
         <translation>Бісектриса</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Надсічка</translation>
     </message>
     <message>
@@ -5060,7 +5060,7 @@ Apply settings anyway?</source>
         <translation>Виключений</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Надсічка</translation>
     </message>
     <message>
@@ -5068,7 +5068,7 @@ Apply settings anyway?</source>
         <translation>Кожна точка в контурі повинна бути унікальною!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Надсічки</translation>
     </message>
     <message>
@@ -9011,7 +9011,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Надсічка:</translation>
     </message>
     <message>

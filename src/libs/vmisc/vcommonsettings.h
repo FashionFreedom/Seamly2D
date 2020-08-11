@@ -165,8 +165,8 @@ public:
     bool IsHideMainPath() const;
     void SetHideMainPath(bool value);
 
-    bool IsDoublePassmark() const;
-    void SetDoublePassmark(bool value);
+    bool isDoubleNotch() const;
+    void setDoubleNotch(bool value);
 
     void SetCSVWithHeader(bool withHeader);
     bool GetCSVWithHeader() const;
