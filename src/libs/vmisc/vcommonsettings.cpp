@@ -89,7 +89,7 @@ const QString settingConfigurationToolBarStyle           = QStringLiteral("confi
 const QString settingPatternUndo                    = QStringLiteral("pattern/undo");
 const QString settingPatternForbidFlipping          = QStringLiteral("pattern/forbidFlipping");
 const QString settingPatternHideMainPath            = QStringLiteral("pattern/hideMainPath");
-const QString settingDoublePassmark                 = QStringLiteral("pattern/doublePassmark");
+const QString settingDoubleNotch                    = QStringLiteral("pattern/doubleNotch");
 const QString settingPatternDefaultSeamAllowance    = QStringLiteral("pattern/defaultSeamAllowance");
 const QString settingPatternLabelFont               = QStringLiteral("pattern/labelFont");
 
@@ -695,15 +695,15 @@ void VCommonSettings::SetHideMainPath(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::IsDoublePassmark() const
+bool VCommonSettings::isDoubleNotch() const
 {
-    return value(settingDoublePassmark, false).toBool();
+    return value(settingDoubleNotch, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetDoublePassmark(bool value)
+void VCommonSettings::setDoubleNotch(bool value)
 {
-    setValue(settingDoublePassmark, value);
+    setValue(settingDoubleNotch, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

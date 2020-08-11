@@ -4028,11 +4028,11 @@ Einstellungen trotzdem anwenden?</translation>
         <translation>Sie haben doppelte Punkte!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4060,7 +4060,7 @@ Einstellungen trotzdem anwenden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4963,7 +4963,7 @@ Einstellungen trotzdem anwenden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4971,7 +4971,7 @@ Einstellungen trotzdem anwenden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8863,7 +8863,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

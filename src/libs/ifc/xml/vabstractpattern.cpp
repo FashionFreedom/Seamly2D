@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -78,143 +78,143 @@
 
 class QDomElement;
 
-const QString VAbstractPattern::TagPattern          = QStringLiteral("pattern");
-const QString VAbstractPattern::TagCalculation      = QStringLiteral("calculation");
-const QString VAbstractPattern::TagModeling         = QStringLiteral("modeling");
-const QString VAbstractPattern::TagDetails          = QStringLiteral("details");
-const QString VAbstractPattern::TagDetail           = QStringLiteral("detail");
-const QString VAbstractPattern::TagDescription      = QStringLiteral("description");
-const QString VAbstractPattern::TagNotes            = QStringLiteral("notes");
-const QString VAbstractPattern::TagImage            = QStringLiteral("image");
-const QString VAbstractPattern::TagMeasurements     = QStringLiteral("measurements");
-const QString VAbstractPattern::TagIncrements       = QStringLiteral("increments");
-const QString VAbstractPattern::TagIncrement        = QStringLiteral("increment");
-const QString VAbstractPattern::TagDraw             = QStringLiteral("draw");
-const QString VAbstractPattern::TagGroups           = QStringLiteral("groups");
-const QString VAbstractPattern::TagGroup            = QStringLiteral("group");
-const QString VAbstractPattern::TagGroupItem        = QStringLiteral("item");
-const QString VAbstractPattern::TagPoint            = QStringLiteral("point");
-const QString VAbstractPattern::TagSpline           = QStringLiteral("spline");
-const QString VAbstractPattern::TagArc              = QStringLiteral("arc");
-const QString VAbstractPattern::TagElArc            = QStringLiteral("elArc");
-const QString VAbstractPattern::TagTools            = QStringLiteral("tools");
-const QString VAbstractPattern::TagOperation        = QStringLiteral("operation");
-const QString VAbstractPattern::TagGradation        = QStringLiteral("gradation");
-const QString VAbstractPattern::TagHeights          = QStringLiteral("heights");
-const QString VAbstractPattern::TagSizes            = QStringLiteral("sizes");
-const QString VAbstractPattern::TagData             = QStringLiteral("data");
-const QString VAbstractPattern::TagPatternInfo      = QStringLiteral("patternInfo");
-const QString VAbstractPattern::TagPatternName      = QStringLiteral("patternName");
-const QString VAbstractPattern::TagPatternNum       = QStringLiteral("patternNumber");
-const QString VAbstractPattern::TagCustomerName     = QStringLiteral("customer");
-const QString VAbstractPattern::TagCompanyName      = QStringLiteral("company");
-const QString VAbstractPattern::TagPatternLabel     = QStringLiteral("patternLabel");
-const QString VAbstractPattern::TagGrainline        = QStringLiteral("grainline");
-const QString VAbstractPattern::TagPath             = QStringLiteral("path");
-const QString VAbstractPattern::TagNodes            = QStringLiteral("nodes");
-const QString VAbstractPattern::TagNode             = QStringLiteral("node");
+const QString VAbstractPattern::TagPattern              = QStringLiteral("pattern");
+const QString VAbstractPattern::TagCalculation          = QStringLiteral("calculation");
+const QString VAbstractPattern::TagModeling             = QStringLiteral("modeling");
+const QString VAbstractPattern::TagDetails              = QStringLiteral("details");
+const QString VAbstractPattern::TagDetail               = QStringLiteral("detail");
+const QString VAbstractPattern::TagDescription          = QStringLiteral("description");
+const QString VAbstractPattern::TagNotes                = QStringLiteral("notes");
+const QString VAbstractPattern::TagImage                = QStringLiteral("image");
+const QString VAbstractPattern::TagMeasurements         = QStringLiteral("measurements");
+const QString VAbstractPattern::TagIncrements           = QStringLiteral("increments");
+const QString VAbstractPattern::TagIncrement            = QStringLiteral("increment");
+const QString VAbstractPattern::TagDraw                 = QStringLiteral("draw");
+const QString VAbstractPattern::TagGroups               = QStringLiteral("groups");
+const QString VAbstractPattern::TagGroup                = QStringLiteral("group");
+const QString VAbstractPattern::TagGroupItem            = QStringLiteral("item");
+const QString VAbstractPattern::TagPoint                = QStringLiteral("point");
+const QString VAbstractPattern::TagSpline               = QStringLiteral("spline");
+const QString VAbstractPattern::TagArc                  = QStringLiteral("arc");
+const QString VAbstractPattern::TagElArc                = QStringLiteral("elArc");
+const QString VAbstractPattern::TagTools                = QStringLiteral("tools");
+const QString VAbstractPattern::TagOperation            = QStringLiteral("operation");
+const QString VAbstractPattern::TagGradation            = QStringLiteral("gradation");
+const QString VAbstractPattern::TagHeights              = QStringLiteral("heights");
+const QString VAbstractPattern::TagSizes                = QStringLiteral("sizes");
+const QString VAbstractPattern::TagData                 = QStringLiteral("data");
+const QString VAbstractPattern::TagPatternInfo          = QStringLiteral("patternInfo");
+const QString VAbstractPattern::TagPatternName          = QStringLiteral("patternName");
+const QString VAbstractPattern::TagPatternNum           = QStringLiteral("patternNumber");
+const QString VAbstractPattern::TagCustomerName         = QStringLiteral("customer");
+const QString VAbstractPattern::TagCompanyName          = QStringLiteral("company");
+const QString VAbstractPattern::TagPatternLabel         = QStringLiteral("patternLabel");
+const QString VAbstractPattern::TagGrainline            = QStringLiteral("grainline");
+const QString VAbstractPattern::TagPath                 = QStringLiteral("path");
+const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes");
+const QString VAbstractPattern::TagNode                 = QStringLiteral("node");
 
-const QString VAbstractPattern::AttrName              = QStringLiteral("name");
-const QString VAbstractPattern::AttrVisible           = QStringLiteral("visible");
-const QString VAbstractPattern::AttrObject            = QStringLiteral("object");
-const QString VAbstractPattern::AttrTool              = QStringLiteral("tool");
-const QString VAbstractPattern::AttrType              = QStringLiteral("type");
-const QString VAbstractPattern::AttrLetter            = QStringLiteral("letter");
-const QString VAbstractPattern::AttrAnnotation        = QStringLiteral("annotation");
-const QString VAbstractPattern::AttrOrientation       = QStringLiteral("orientation");
-const QString VAbstractPattern::AttrRotationWay       = QStringLiteral("rotationWay");
-const QString VAbstractPattern::AttrTilt              = QStringLiteral("tilt");
-const QString VAbstractPattern::AttrFoldPosition      = QStringLiteral("foldPosition");
-const QString VAbstractPattern::AttrQuantity          = QStringLiteral("quantity");
-const QString VAbstractPattern::AttrOnFold            = QStringLiteral("onFold");
-const QString VAbstractPattern::AttrDateFormat        = QStringLiteral("dateFormat");
-const QString VAbstractPattern::AttrTimeFormat        = QStringLiteral("timeFormat");
-const QString VAbstractPattern::AttrArrows            = QStringLiteral("arrows");
-const QString VAbstractPattern::AttrNodeReverse       = QStringLiteral("reverse");
-const QString VAbstractPattern::AttrNodeExcluded      = QStringLiteral("excluded");
-const QString VAbstractPattern::AttrNodePassmark      = QStringLiteral("passmark");
-const QString VAbstractPattern::AttrNodePassmarkLine  = QStringLiteral("passmarkLine");
-const QString VAbstractPattern::AttrNodePassmarkAngle = QStringLiteral("passmarkAngle");
-const QString VAbstractPattern::AttrNodeShowSecondPassmark = QStringLiteral("showSecondPassmark");
-const QString VAbstractPattern::AttrSABefore          = QStringLiteral("before");
-const QString VAbstractPattern::AttrSAAfter           = QStringLiteral("after");
-const QString VAbstractPattern::AttrStart             = QStringLiteral("start");
-const QString VAbstractPattern::AttrPath              = QStringLiteral("path");
-const QString VAbstractPattern::AttrEnd               = QStringLiteral("end");
-const QString VAbstractPattern::AttrIncludeAs         = QStringLiteral("includeAs");
-const QString VAbstractPattern::AttrWidth             = QStringLiteral("width");
-const QString VAbstractPattern::AttrRotation          = QStringLiteral("rotation");
+const QString VAbstractPattern::AttrName                = QStringLiteral("name");
+const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");
+const QString VAbstractPattern::AttrObject              = QStringLiteral("object");
+const QString VAbstractPattern::AttrTool                = QStringLiteral("tool");
+const QString VAbstractPattern::AttrType                = QStringLiteral("type");
+const QString VAbstractPattern::AttrLetter              = QStringLiteral("letter");
+const QString VAbstractPattern::AttrAnnotation          = QStringLiteral("annotation");
+const QString VAbstractPattern::AttrOrientation         = QStringLiteral("orientation");
+const QString VAbstractPattern::AttrRotationWay         = QStringLiteral("rotationWay");
+const QString VAbstractPattern::AttrTilt                = QStringLiteral("tilt");
+const QString VAbstractPattern::AttrFoldPosition        = QStringLiteral("foldPosition");
+const QString VAbstractPattern::AttrQuantity            = QStringLiteral("quantity");
+const QString VAbstractPattern::AttrOnFold              = QStringLiteral("onFold");
+const QString VAbstractPattern::AttrDateFormat          = QStringLiteral("dateFormat");
+const QString VAbstractPattern::AttrTimeFormat          = QStringLiteral("timeFormat");
+const QString VAbstractPattern::AttrArrows              = QStringLiteral("arrows");
+const QString VAbstractPattern::AttrNodeReverse         = QStringLiteral("reverse");
+const QString VAbstractPattern::AttrNodeExcluded        = QStringLiteral("excluded");
+const QString VAbstractPattern::AttrNodeNotch           = QStringLiteral("passmark");
+const QString VAbstractPattern::AttrNodeNotchType       = QStringLiteral("passmarkLine");
+const QString VAbstractPattern::AttrNodeNotchSubType    = QStringLiteral("passmarkAngle");
+const QString VAbstractPattern::AttrNodeShowSecondNotch = QStringLiteral("showSecondPassmark");
+const QString VAbstractPattern::AttrSABefore            = QStringLiteral("before");
+const QString VAbstractPattern::AttrSAAfter             = QStringLiteral("after");
+const QString VAbstractPattern::AttrStart               = QStringLiteral("start");
+const QString VAbstractPattern::AttrPath                = QStringLiteral("path");
+const QString VAbstractPattern::AttrEnd                 = QStringLiteral("end");
+const QString VAbstractPattern::AttrIncludeAs           = QStringLiteral("includeAs");
+const QString VAbstractPattern::AttrWidth               = QStringLiteral("width");
+const QString VAbstractPattern::AttrRotation            = QStringLiteral("rotation");
 
-const QString VAbstractPattern::AttrAll             = QStringLiteral("all");
+const QString VAbstractPattern::AttrAll                 = QStringLiteral("all");
 
-const QString VAbstractPattern::AttrH50             = QStringLiteral("h50");
-const QString VAbstractPattern::AttrH56             = QStringLiteral("h56");
-const QString VAbstractPattern::AttrH62             = QStringLiteral("h62");
-const QString VAbstractPattern::AttrH68             = QStringLiteral("h68");
-const QString VAbstractPattern::AttrH74             = QStringLiteral("h74");
-const QString VAbstractPattern::AttrH80             = QStringLiteral("h80");
-const QString VAbstractPattern::AttrH86             = QStringLiteral("h86");
-const QString VAbstractPattern::AttrH92             = QStringLiteral("h92");
-const QString VAbstractPattern::AttrH98             = QStringLiteral("h98");
-const QString VAbstractPattern::AttrH104            = QStringLiteral("h104");
-const QString VAbstractPattern::AttrH110            = QStringLiteral("h110");
-const QString VAbstractPattern::AttrH116            = QStringLiteral("h116");
-const QString VAbstractPattern::AttrH122            = QStringLiteral("h122");
-const QString VAbstractPattern::AttrH128            = QStringLiteral("h128");
-const QString VAbstractPattern::AttrH134            = QStringLiteral("h134");
-const QString VAbstractPattern::AttrH140            = QStringLiteral("h140");
-const QString VAbstractPattern::AttrH146            = QStringLiteral("h146");
-const QString VAbstractPattern::AttrH152            = QStringLiteral("h152");
-const QString VAbstractPattern::AttrH158            = QStringLiteral("h158");
-const QString VAbstractPattern::AttrH164            = QStringLiteral("h164");
-const QString VAbstractPattern::AttrH170            = QStringLiteral("h170");
-const QString VAbstractPattern::AttrH176            = QStringLiteral("h176");
-const QString VAbstractPattern::AttrH182            = QStringLiteral("h182");
-const QString VAbstractPattern::AttrH188            = QStringLiteral("h188");
-const QString VAbstractPattern::AttrH194            = QStringLiteral("h194");
-const QString VAbstractPattern::AttrH200            = QStringLiteral("h200");
+const QString VAbstractPattern::AttrH50                 = QStringLiteral("h50");
+const QString VAbstractPattern::AttrH56                 = QStringLiteral("h56");
+const QString VAbstractPattern::AttrH62                 = QStringLiteral("h62");
+const QString VAbstractPattern::AttrH68                 = QStringLiteral("h68");
+const QString VAbstractPattern::AttrH74                 = QStringLiteral("h74");
+const QString VAbstractPattern::AttrH80                 = QStringLiteral("h80");
+const QString VAbstractPattern::AttrH86                 = QStringLiteral("h86");
+const QString VAbstractPattern::AttrH92                 = QStringLiteral("h92");
+const QString VAbstractPattern::AttrH98                 = QStringLiteral("h98");
+const QString VAbstractPattern::AttrH104                = QStringLiteral("h104");
+const QString VAbstractPattern::AttrH110                = QStringLiteral("h110");
+const QString VAbstractPattern::AttrH116                = QStringLiteral("h116");
+const QString VAbstractPattern::AttrH122                = QStringLiteral("h122");
+const QString VAbstractPattern::AttrH128                = QStringLiteral("h128");
+const QString VAbstractPattern::AttrH134                = QStringLiteral("h134");
+const QString VAbstractPattern::AttrH140                = QStringLiteral("h140");
+const QString VAbstractPattern::AttrH146                = QStringLiteral("h146");
+const QString VAbstractPattern::AttrH152                = QStringLiteral("h152");
+const QString VAbstractPattern::AttrH158                = QStringLiteral("h158");
+const QString VAbstractPattern::AttrH164                = QStringLiteral("h164");
+const QString VAbstractPattern::AttrH170                = QStringLiteral("h170");
+const QString VAbstractPattern::AttrH176                = QStringLiteral("h176");
+const QString VAbstractPattern::AttrH182                = QStringLiteral("h182");
+const QString VAbstractPattern::AttrH188                = QStringLiteral("h188");
+const QString VAbstractPattern::AttrH194                = QStringLiteral("h194");
+const QString VAbstractPattern::AttrH200                = QStringLiteral("h200");
 
-const QString VAbstractPattern::AttrS22             = QStringLiteral("s22");
-const QString VAbstractPattern::AttrS24             = QStringLiteral("s24");
-const QString VAbstractPattern::AttrS26             = QStringLiteral("s26");
-const QString VAbstractPattern::AttrS28             = QStringLiteral("s28");
-const QString VAbstractPattern::AttrS30             = QStringLiteral("s30");
-const QString VAbstractPattern::AttrS32             = QStringLiteral("s32");
-const QString VAbstractPattern::AttrS34             = QStringLiteral("s34");
-const QString VAbstractPattern::AttrS36             = QStringLiteral("s36");
-const QString VAbstractPattern::AttrS38             = QStringLiteral("s38");
-const QString VAbstractPattern::AttrS40             = QStringLiteral("s40");
-const QString VAbstractPattern::AttrS42             = QStringLiteral("s42");
-const QString VAbstractPattern::AttrS44             = QStringLiteral("s44");
-const QString VAbstractPattern::AttrS46             = QStringLiteral("s46");
-const QString VAbstractPattern::AttrS48             = QStringLiteral("s48");
-const QString VAbstractPattern::AttrS50             = QStringLiteral("s50");
-const QString VAbstractPattern::AttrS52             = QStringLiteral("s52");
-const QString VAbstractPattern::AttrS54             = QStringLiteral("s54");
-const QString VAbstractPattern::AttrS56             = QStringLiteral("s56");
-const QString VAbstractPattern::AttrS58             = QStringLiteral("s58");
-const QString VAbstractPattern::AttrS60             = QStringLiteral("s60");
-const QString VAbstractPattern::AttrS62             = QStringLiteral("s62");
-const QString VAbstractPattern::AttrS64             = QStringLiteral("s64");
-const QString VAbstractPattern::AttrS66             = QStringLiteral("s66");
-const QString VAbstractPattern::AttrS68             = QStringLiteral("s68");
-const QString VAbstractPattern::AttrS70             = QStringLiteral("s70");
-const QString VAbstractPattern::AttrS72             = QStringLiteral("s72");
+const QString VAbstractPattern::AttrS22                 = QStringLiteral("s22");
+const QString VAbstractPattern::AttrS24                 = QStringLiteral("s24");
+const QString VAbstractPattern::AttrS26                 = QStringLiteral("s26");
+const QString VAbstractPattern::AttrS28                 = QStringLiteral("s28");
+const QString VAbstractPattern::AttrS30                 = QStringLiteral("s30");
+const QString VAbstractPattern::AttrS32                 = QStringLiteral("s32");
+const QString VAbstractPattern::AttrS34                 = QStringLiteral("s34");
+const QString VAbstractPattern::AttrS36                 = QStringLiteral("s36");
+const QString VAbstractPattern::AttrS38                 = QStringLiteral("s38");
+const QString VAbstractPattern::AttrS40                 = QStringLiteral("s40");
+const QString VAbstractPattern::AttrS42                 = QStringLiteral("s42");
+const QString VAbstractPattern::AttrS44                 = QStringLiteral("s44");
+const QString VAbstractPattern::AttrS46                 = QStringLiteral("s46");
+const QString VAbstractPattern::AttrS48                 = QStringLiteral("s48");
+const QString VAbstractPattern::AttrS50                 = QStringLiteral("s50");
+const QString VAbstractPattern::AttrS52                 = QStringLiteral("s52");
+const QString VAbstractPattern::AttrS54                 = QStringLiteral("s54");
+const QString VAbstractPattern::AttrS56                 = QStringLiteral("s56");
+const QString VAbstractPattern::AttrS58                 = QStringLiteral("s58");
+const QString VAbstractPattern::AttrS60                 = QStringLiteral("s60");
+const QString VAbstractPattern::AttrS62                 = QStringLiteral("s62");
+const QString VAbstractPattern::AttrS64                 = QStringLiteral("s64");
+const QString VAbstractPattern::AttrS66                 = QStringLiteral("s66");
+const QString VAbstractPattern::AttrS68                 = QStringLiteral("s68");
+const QString VAbstractPattern::AttrS70                 = QStringLiteral("s70");
+const QString VAbstractPattern::AttrS72                 = QStringLiteral("s72");
 
-const QString VAbstractPattern::AttrCustom          = QStringLiteral("custom");
-const QString VAbstractPattern::AttrDefHeight       = QStringLiteral("defHeight");
-const QString VAbstractPattern::AttrDefSize         = QStringLiteral("defSize");
-const QString VAbstractPattern::AttrExtension       = QStringLiteral("extension");
+const QString VAbstractPattern::AttrCustom              = QStringLiteral("custom");
+const QString VAbstractPattern::AttrDefHeight           = QStringLiteral("defHeight");
+const QString VAbstractPattern::AttrDefSize             = QStringLiteral("defSize");
+const QString VAbstractPattern::AttrExtension           = QStringLiteral("extension");
 
-const QString VAbstractPattern::IncrementName        = QStringLiteral("name");
-const QString VAbstractPattern::IncrementFormula     = QStringLiteral("formula");
-const QString VAbstractPattern::IncrementDescription = QStringLiteral("description");
+const QString VAbstractPattern::IncrementName           = QStringLiteral("name");
+const QString VAbstractPattern::IncrementFormula        = QStringLiteral("formula");
+const QString VAbstractPattern::IncrementDescription    = QStringLiteral("description");
 
-const QString VAbstractPattern::NodeArc        = QStringLiteral("NodeArc");
-const QString VAbstractPattern::NodeElArc      = QStringLiteral("NodeElArc");
-const QString VAbstractPattern::NodePoint      = QStringLiteral("NodePoint");
-const QString VAbstractPattern::NodeSpline     = QStringLiteral("NodeSpline");
-const QString VAbstractPattern::NodeSplinePath = QStringLiteral("NodeSplinePath");
+const QString VAbstractPattern::NodeArc                 = QStringLiteral("NodeArc");
+const QString VAbstractPattern::NodeElArc               = QStringLiteral("NodeElArc");
+const QString VAbstractPattern::NodePoint               = QStringLiteral("NodePoint");
+const QString VAbstractPattern::NodeSpline              = QStringLiteral("NodeSpline");
+const QString VAbstractPattern::NodeSplinePath          = QStringLiteral("NodeSplinePath");
 
 QHash<quint32, VDataTool*> VAbstractPattern::tools = QHash<quint32, VDataTool*>();
 QVector<VLabelTemplateLine> VAbstractPattern::patternLabelLines = QVector<VLabelTemplateLine>();
@@ -721,15 +721,15 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
                                                             currentSeamAllowance);
     const PieceNodeAngle angle = static_cast<PieceNodeAngle>(VDomDocument::GetParametrUInt(domElement, AttrAngle, "0"));
 
-    const bool passmark = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodePassmark, falseStr);
-    const PassmarkLineType passmarkLine = StringToPassmarkLineType(VDomDocument::GetParametrString(domElement,
-                                                                                 VAbstractPattern::AttrNodePassmarkLine,
+    const bool notch = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeNotch, falseStr);
+    const NotchType notchType = stringToNotchType(VDomDocument::GetParametrString(domElement,
+                                                                                 VAbstractPattern::AttrNodeNotchType,
                                                                                                    strOne));
-    const PassmarkAngleType passmarkAngle = StringToPassmarkAngleType(VDomDocument::GetParametrString(domElement,
-                                                                                VAbstractPattern::AttrNodePassmarkAngle,
+    const NotchSubType notchSubType = stringToNotchSubType(VDomDocument::GetParametrString(domElement,
+                                                                                VAbstractPattern::AttrNodeNotchSubType,
                                                                                                    strStraightforward));
 
-    const bool showSecond = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeShowSecondPassmark,
+    const bool showSecond = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeShowSecondNotch,
                                                           trueStr);
 
     const QString t = VDomDocument::GetParametrString(domElement, AttrType, VAbstractPattern::NodePoint);
@@ -767,10 +767,10 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
     node.SetFormulaSAAfter(saAfter);
     node.SetAngleType(angle);
     node.SetExcluded(excluded);
-    node.SetShowSecondPassmark(showSecond);
-    node.SetPassmark(passmark);
-    node.SetPassmarkLineType(passmarkLine);
-    node.SetPassmarkAngleType(passmarkAngle);
+    node.setShowSecondNotch(showSecond);
+    node.setNotch(notch);
+    node.setNotchLineType(notchType);
+    node.setNotchAngleType(notchSubType);
 
     return node;
 }

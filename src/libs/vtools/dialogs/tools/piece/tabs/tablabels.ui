@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TabLabels</class>
- <widget class="QWidget" name="TabLabels">
+ <class>LabelsTab</class>
+ <widget class="QWidget" name="LabelsTab">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -36,9 +36,9 @@
        <item>
         <widget class="QTabWidget" name="tabWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
-         <widget class="QWidget" name="tabPieceLabelData">
+         <widget class="QWidget" name="pieceLabelData_Tab">
           <attribute name="title">
            <string>Piece label data</string>
           </attribute>
@@ -111,7 +111,7 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="VLineEdit" name="lineEditName">
+               <widget class="VLineEdit" name="detailName_LineEdit">
                 <property name="text">
                  <string>Detail</string>
                 </property>
@@ -245,7 +245,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="tabLabels">
+         <widget class="QWidget" name="labels_Tab">
           <attribute name="title">
            <string>Labels</string>
           </attribute>

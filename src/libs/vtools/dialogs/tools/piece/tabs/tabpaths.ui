@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TabPaths</class>
- <widget class="QWidget" name="TabPaths">
+ <class>PathsTab</class>
+ <widget class="QWidget" name="PathsTab">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -35,10 +35,16 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QTabWidget" name="tabWidget">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
-         <widget class="QWidget" name="tabMainPath">
+         <widget class="QWidget" name="mainPaths_Tab">
           <attribute name="title">
            <string>Main path</string>
           </attribute>
@@ -84,7 +90,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="checkBoxHideMainPath">
+            <widget class="QCheckBox" name="hideMainPath_CheckBox">
              <property name="toolTip">
               <string>Hide the main path if the seam allowance is enabled</string>
              </property>
@@ -101,21 +107,51 @@
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="helpLabel">
-             <property name="text">
-              <string>Ready!</string>
-             </property>
-             <property name="textFormat">
-              <enum>Qt::RichText</enum>
-             </property>
-             <property name="scaledContents">
-              <bool>false</bool>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Status:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="status_Label">
+               <property name="text">
+                <string>Ready!</string>
+               </property>
+               <property name="textFormat">
+                <enum>Qt::RichText</enum>
+               </property>
+               <property name="scaledContents">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="tabSeamAllowance">
+         <widget class="QWidget" name="seamAllowance_Tab">
           <attribute name="title">
            <string>Seam allowance</string>
           </attribute>
@@ -164,7 +200,7 @@
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
                 <item alignment="Qt::AlignLeft">
-                 <widget class="QLabel" name="labelEditWidth">
+                 <widget class="QLabel" name="widthEdit_Label">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -257,7 +293,7 @@
                  </widget>
                 </item>
                 <item alignment="Qt::AlignRight">
-                 <widget class="QLabel" name="labelResultWidth">
+                 <widget class="QLabel" name="widthResult_Label">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -283,7 +319,7 @@
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_6">
                 <item>
-                 <widget class="QPlainTextEdit" name="plainTextEditFormulaWidth">
+                 <widget class="QPlainTextEdit" name="widthFormula_PlainTextEdit">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -305,7 +341,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButtonGrowWidth">
+                 <widget class="QPushButton" name="widthGrow_PushButton">
                   <property name="maximumSize">
                    <size>
                     <width>18</width>
@@ -325,8 +361,8 @@
                    <string notr="true"/>
                   </property>
                   <property name="icon">
-                   <iconset theme="go-down">
-                    <normaloff>../</normaloff>../</iconset>
+                   <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                    <normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -366,7 +402,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QComboBox" name="comboBoxNodes">
+                    <widget class="QComboBox" name="nodes_ComboBox">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -393,7 +429,7 @@
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_9">
                    <item alignment="Qt::AlignLeft">
-                    <widget class="QLabel" name="labelEditBefore">
+                    <widget class="QLabel" name="beforeWidthEdit_Label">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -456,7 +492,7 @@
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonDefBefore">
+                    <widget class="QPushButton" name="beforeDefault_PushButton">
                      <property name="toolTip">
                       <string>Return to default width</string>
                      </property>
@@ -466,7 +502,7 @@
                     </widget>
                    </item>
                    <item alignment="Qt::AlignRight">
-                    <widget class="QToolButton" name="toolButtonExprBefore">
+                    <widget class="QToolButton" name="beforeExpr_ToolButton">
                      <property name="toolTip">
                       <string>Formula wizard</string>
                      </property>
@@ -496,7 +532,7 @@
                     </widget>
                    </item>
                    <item alignment="Qt::AlignRight">
-                    <widget class="QLabel" name="labelResultBefore">
+                    <widget class="QLabel" name="beforeWidthResult_Label">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -522,7 +558,7 @@
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
-                    <widget class="QPlainTextEdit" name="plainTextEditFormulaWidthBefore">
+                    <widget class="QPlainTextEdit" name="beforeWidthForumla_PlainTextEdit">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -544,7 +580,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonGrowWidthBefore">
+                    <widget class="QPushButton" name="beforeWidthGrow_PushButton">
                      <property name="maximumSize">
                       <size>
                        <width>18</width>
@@ -564,8 +600,8 @@
                       <string notr="true"/>
                      </property>
                      <property name="icon">
-                      <iconset theme="go-down">
-                       <normaloff>../</normaloff>../</iconset>
+                      <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                       <normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -583,7 +619,7 @@
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_16">
                    <item alignment="Qt::AlignLeft">
-                    <widget class="QLabel" name="labelEditAfter">
+                    <widget class="QLabel" name="afterWidthEdit_Label">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -646,7 +682,7 @@
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonDefAfter">
+                    <widget class="QPushButton" name="afterDefault_PushButton">
                      <property name="toolTip">
                       <string>Return to default width</string>
                      </property>
@@ -656,7 +692,7 @@
                     </widget>
                    </item>
                    <item alignment="Qt::AlignRight">
-                    <widget class="QToolButton" name="toolButtonExprAfter">
+                    <widget class="QToolButton" name="afterExpr_ToolButton">
                      <property name="toolTip">
                       <string>Formula wizard</string>
                      </property>
@@ -686,7 +722,7 @@
                     </widget>
                    </item>
                    <item alignment="Qt::AlignRight">
-                    <widget class="QLabel" name="labelResultAfter">
+                    <widget class="QLabel" name="afterWidthResult_Label">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -712,7 +748,7 @@
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_17">
                    <item>
-                    <widget class="QPlainTextEdit" name="plainTextEditFormulaWidthAfter">
+                    <widget class="QPlainTextEdit" name="afterWidthForumla_PlainTextEdit">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -734,7 +770,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButtonGrowWidthAfter">
+                    <widget class="QPushButton" name="afterWidthGrow_PushButton">
                      <property name="maximumSize">
                       <size>
                        <width>18</width>
@@ -754,8 +790,8 @@
                       <string notr="true"/>
                      </property>
                      <property name="icon">
-                      <iconset theme="go-down">
-                       <normaloff>../</normaloff>../</iconset>
+                      <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                       <normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -780,7 +816,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QComboBox" name="comboBoxAngle">
+                    <widget class="QComboBox" name="angle_ComboBox">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -907,7 +943,7 @@
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="tabInternalPaths">
+         <widget class="QWidget" name="internalPaths_Tab">
           <attribute name="title">
            <string>Internal paths</string>
           </attribute>
@@ -930,6 +966,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="../../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>

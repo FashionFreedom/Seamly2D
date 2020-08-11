@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -69,14 +69,14 @@ public:
           m_typeTool(Tool::NodePoint),
           m_reverse(false),
           m_excluded(false),
-          m_isPassmark(false),
+          m_isNotch(false),
           m_isMainPathNode(true),
-          m_formulaWidthBefore(currentSeamAllowance),
-          m_formulaWidthAfter(currentSeamAllowance),
+          m_beforeWidthFormula(currentSeamAllowance),
+          m_afterWidthFormula(currentSeamAllowance),
           m_angleType(PieceNodeAngle::ByLength),
-          m_passmarkLineType(PassmarkLineType::OneLine),
-          m_passmarkAngleType(PassmarkAngleType::Straightforward),
-          m_isShowSecondPassmark(true)
+          m_notchType(NotchType::OneLine),
+          m_notchSubType(NotchSubType::Straightforward),
+          m_showSecondNotch(true)
     {}
 
     VPieceNodeData(quint32 id, Tool typeTool, bool reverse)
@@ -84,14 +84,14 @@ public:
           m_typeTool(typeTool),
           m_reverse(reverse),
           m_excluded(false),
-          m_isPassmark(false),
+          m_isNotch(false),
           m_isMainPathNode(true),
-          m_formulaWidthBefore(currentSeamAllowance),
-          m_formulaWidthAfter(currentSeamAllowance),
+          m_beforeWidthFormula(currentSeamAllowance),
+          m_afterWidthFormula(currentSeamAllowance),
           m_angleType(PieceNodeAngle::ByLength),
-          m_passmarkLineType(PassmarkLineType::OneLine),
-          m_passmarkAngleType(PassmarkAngleType::Straightforward),
-          m_isShowSecondPassmark(true)
+          m_notchType(NotchType::OneLine),
+          m_notchSubType(NotchSubType::Straightforward),
+          m_showSecondNotch(true)
     {
         if (m_typeTool == Tool::NodePoint)
         {
@@ -105,14 +105,14 @@ public:
           m_typeTool(node.m_typeTool),
           m_reverse(node.m_reverse),
           m_excluded(node.m_excluded),
-          m_isPassmark(node.m_isPassmark),
+          m_isNotch(node.m_isNotch),
           m_isMainPathNode(node.m_isMainPathNode),
-          m_formulaWidthBefore(node.m_formulaWidthBefore),
-          m_formulaWidthAfter(node.m_formulaWidthAfter),
+          m_beforeWidthFormula(node.m_beforeWidthFormula),
+          m_afterWidthFormula(node.m_afterWidthFormula),
           m_angleType(node.m_angleType),
-          m_passmarkLineType(node.m_passmarkLineType),
-          m_passmarkAngleType(node.m_passmarkAngleType),
-          m_isShowSecondPassmark(node.m_isShowSecondPassmark)
+          m_notchType(node.m_notchType),
+          m_notchSubType(node.m_notchSubType),
+          m_showSecondNotch(node.m_showSecondNotch)
     {}
 
     ~VPieceNodeData() Q_DECL_EQ_DEFAULT;
@@ -133,21 +133,21 @@ public:
      * affect on main path. Also include to exist path items automatically setted excluded. */
     bool m_excluded;
 
-    /** @brief m_isPassmark has sense only for points. If true to seam allowance should be added a passmark. */
-    bool m_isPassmark;
+    /** @brief m_isNotch has sense only for points. If true to seam allowance should be added a notch. */
+    bool m_isNotch;
 
     /** @brief m_isMainPathNode need fin know if allowed for this passmakr to be double. */
-    bool m_isMainPathNode;
+    bool           m_isMainPathNode;
 
-    QString m_formulaWidthBefore;
-    QString m_formulaWidthAfter;
+    QString        m_beforeWidthFormula;
+    QString        m_afterWidthFormula;
 
     PieceNodeAngle m_angleType;
 
-    PassmarkLineType  m_passmarkLineType;
-    PassmarkAngleType m_passmarkAngleType;
+    NotchType      m_notchType;
+    NotchSubType   m_notchSubType;
 
-    bool m_isShowSecondPassmark;
+    bool           m_showSecondNotch;
 
 private:
     VPieceNodeData &operator=(const VPieceNodeData &) Q_DECL_EQ_DELETE;
@@ -161,40 +161,40 @@ QDataStream &operator<<(QDataStream &out, const VPieceNodeData &p)
         << static_cast<int>(p.m_typeTool)
         << p.m_reverse
         << p.m_excluded
-        << p.m_isPassmark
-        << p.m_formulaWidthBefore
-        << p.m_formulaWidthAfter
+        << p.m_isNotch
+        << p.m_beforeWidthFormula
+        << p.m_afterWidthFormula
         << static_cast<int>(p.m_angleType)
-        << static_cast<int>(p.m_passmarkLineType)
-        << static_cast<int>(p.m_passmarkAngleType)
-        << p.m_isShowSecondPassmark;
+        << static_cast<int>(p.m_notchType)
+        << static_cast<int>(p.m_notchSubType)
+        << p.m_showSecondNotch;
     return out;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QDataStream &operator>>(QDataStream &in, VPieceNodeData &p)
 {
-    int typeTool = 0;
-    int angleType = 0;
-    int passmarkLineType = 0;
-    int passmarkAngleType = 0;
+    int typeTool     = 0;
+    int angleType    = 0;
+    int notchType    = 0;
+    int notchSubType = 0;
 
     in >> p.m_id
        >> typeTool
        >> p.m_reverse
        >> p.m_excluded
-       >> p.m_isPassmark
-       >> p.m_formulaWidthBefore
-       >> p.m_formulaWidthAfter
+       >> p.m_isNotch
+       >> p.m_beforeWidthFormula
+       >> p.m_afterWidthFormula
        >> angleType
-       >> passmarkLineType
-       >> passmarkAngleType
-       >> p.m_isShowSecondPassmark;
+       >> notchType
+       >> notchSubType
+       >> p.m_showSecondNotch;
 
-    p.m_typeTool = static_cast<Tool>(typeTool);
-    p.m_angleType = static_cast<PieceNodeAngle>(angleType);
-    p.m_passmarkLineType = static_cast<PassmarkLineType>(passmarkLineType);
-    p.m_passmarkAngleType = static_cast<PassmarkAngleType>(passmarkAngleType);
+    p.m_typeTool     = static_cast<Tool>(typeTool);
+    p.m_angleType    = static_cast<PieceNodeAngle>(angleType);
+    p.m_notchType    = static_cast<NotchType>(notchType);
+    p.m_notchSubType = static_cast<NotchSubType>(notchSubType);
 
     return in;
 }
@@ -202,4 +202,3 @@ QDataStream &operator>>(QDataStream &in, VPieceNodeData &p)
 QT_WARNING_POP
 
 #endif // VPIECENODE_P_H
-

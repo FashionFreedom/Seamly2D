@@ -486,14 +486,14 @@ int DialogTool::FindNotExcludedNodeDown(QListWidget *listWidget, int candidate)
         SCASSERT(rowItem != nullptr);
         rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-        if (not rowNode.IsExcluded())
+        if (not rowNode.isExcluded())
         {
             index = i;
         }
 
         ++i;
     }
-    while (rowNode.IsExcluded() && i < listWidget->count());
+    while (rowNode.isExcluded() && i < listWidget->count());
 
     return index;
 }
@@ -517,14 +517,14 @@ int DialogTool::FindNotExcludedNodeUp(QListWidget *listWidget, int candidate)
         SCASSERT(rowItem != nullptr);
         rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-        if (not rowNode.IsExcluded())
+        if (not rowNode.isExcluded())
         {
             index = i;
         }
 
         --i;
     }
-    while (rowNode.IsExcluded() && i > -1);
+    while (rowNode.isExcluded() && i > -1);
 
     return index;
 }
@@ -604,7 +604,7 @@ QFont DialogTool::NodeFont(bool nodeExcluded)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogTool::GetNodeName(const VPieceNode &node, bool showPassmark) const
+QString DialogTool::GetNodeName(const VPieceNode &node, bool showNotch) const
 {
     const QSharedPointer<VGObject> obj = data->GetGObject(node.GetId());
     QString name = obj->name();
@@ -619,23 +619,23 @@ QString DialogTool::GetNodeName(const VPieceNode &node, bool showPassmark) const
             name = QLatin1String("- ") + name;
         }
     }
-    else if (showPassmark && node.IsPassmark())
+    else if (showNotch && node.isNotch())
     {
-        switch(node.GetPassmarkLineType())
+        switch(node.getNotchType())
         {
-            case PassmarkLineType::OneLine:
+            case NotchType::OneLine:
                 name += QLatin1Char('|');
                 break;
-            case PassmarkLineType::TwoLines:
+            case NotchType::TwoLines:
                 name += QLatin1Literal("||");
                 break;
-            case PassmarkLineType::ThreeLines:
+            case NotchType::ThreeLines:
                 name += QLatin1Literal("|||");
                 break;
-            case PassmarkLineType::TMark:
+            case NotchType::TMark:
                 name += QString("┴");
                 break;
-            case PassmarkLineType::VMark:
+            case NotchType::VMark:
                 name += QLatin1Char('^');
                 break;
             default:
@@ -683,7 +683,7 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
     if(canAddNewPoint)
     {
         QListWidgetItem *item = new QListWidgetItem(name);
-        item->setFont(NodeFont(node.IsExcluded()));
+        item->setFont(NodeFont(node.isExcluded()));
         item->setData(Qt::UserRole, QVariant::fromValue(node));
         listWidget->addItem(item);
         listWidget->setCurrentRow(listWidget->count()-1);

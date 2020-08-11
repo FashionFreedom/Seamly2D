@@ -2941,7 +2941,7 @@
         <translation>Mauvais champs.</translation>
     </message>
     <message>
-        <source>Fields go beyond printing. 
+        <source>Fields go beyond printing.
 
 Apply settings anyway?</source>
         <translation>Les champs dépassent l&apos;impression.
@@ -4114,11 +4114,11 @@ Appliquer les réglages quand-même ?</translation>
         <translation>Vous avez des points en double!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Repères de montage</translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Repère de montage :</translation>
     </message>
     <message>
@@ -4146,7 +4146,7 @@ Appliquer les réglages quand-même ?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Repère de montage</translation>
     </message>
     <message>
@@ -4198,7 +4198,7 @@ Appliquer les réglages quand-même ?</translation>
     </message>
     <message>
         <source>Point:</source>
-        <translation>Point :</translation>
+        <translation>Point:</translation>
     </message>
     <message>
         <source>Piece:</source>
@@ -5057,7 +5057,7 @@ Appliquer les réglages quand-même ?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Repère de montage</translation>
     </message>
     <message>
@@ -5065,7 +5065,7 @@ Appliquer les réglages quand-même ?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Repères de montage</translation>
     </message>
     <message>
@@ -8993,7 +8993,7 @@ Voulez-vous enregistrer les changements?</translation>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Repère de montage :</translation>
     </message>
     <message>

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -80,100 +80,103 @@ class VLayoutPiece :public VAbstractPiece
 {
     Q_DECLARE_TR_FUNCTIONS(VLayoutPiece)
 public:
-    VLayoutPiece();
-    VLayoutPiece(const VLayoutPiece &detail);
+                              VLayoutPiece();
+                              VLayoutPiece(const VLayoutPiece &detail);
 
-    virtual ~VLayoutPiece() Q_DECL_OVERRIDE;
+    virtual                  ~VLayoutPiece() Q_DECL_OVERRIDE;
 
-    VLayoutPiece &operator=(const VLayoutPiece &detail);
+    VLayoutPiece              &operator=(const VLayoutPiece &detail);
+
 #ifdef Q_COMPILER_RVALUE_REFS
-	VLayoutPiece &operator=(VLayoutPiece &&detail) Q_DECL_NOTHROW;
+	VLayoutPiece                &operator=(VLayoutPiece &&detail) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VLayoutPiece &detail) Q_DECL_NOTHROW;
+	  void                      Swap(VLayoutPiece &detail) Q_DECL_NOTHROW;
 
-    static VLayoutPiece Create(const VPiece &piece, const VContainer *pattern);
+    static VLayoutPiece       Create(const VPiece &piece, const VContainer *pattern);
 
-    QVector<QPointF> GetContourPoints() const;
-    void SetCountourPoints(const QVector<QPointF> &points, bool hideMainPath = false);
+    QVector<QPointF>          GetContourPoints() const;
+    void                      SetCountourPoints(const QVector<QPointF> &points, bool hideMainPath = false);
 
-    QVector<QPointF> GetSeamAllowancePoints() const;
-    void SetSeamAllowancePoints(const QVector<QPointF> &points, bool seamAllowance = true,
-                                bool seamAllowanceBuiltIn = false);
+    QVector<QPointF>          GetSeamAllowancePoints() const;
+    void                      SetSeamAllowancePoints(const QVector<QPointF> &points, bool seamAllowance = true,
+                                                     bool seamAllowanceBuiltIn = false);
 
-    QVector<QPointF> GetLayoutAllowancePoints() const;
-    void SetLayoutAllowancePoints();
+    QVector<QPointF>          GetLayoutAllowancePoints() const;
+    void                      SetLayoutAllowancePoints();
 
-    QVector<QLineF> GetPassmarks() const;
-    void SetPassmarks(const QVector<QLineF> &passmarks);
+    QVector<QLineF>           getNotches() const;
+    void                      setNotches(const QVector<QLineF> &notches);
 
     QVector<QVector<QPointF>> InternalPathsForCut(bool cut) const;
     QVector<VLayoutPiecePath> GetInternalPaths() const;
-    void SetInternalPaths(const QVector<VLayoutPiecePath> &internalPaths);
+    void                      SetInternalPaths(const QVector<VLayoutPiecePath> &internalPaths);
 
-    QPointF GetPieceTextPosition() const;
-    QStringList GetPieceText() const;
-    void SetPieceText(const QString &qsName, const VPieceLabelData& data, const QFont& font, const VContainer *pattern);
+    QPointF                   GetPieceTextPosition() const;
+    QStringList               GetPieceText() const;
+    void                      SetPieceText(const QString &qsName, const VPieceLabelData& data,
+                                           const QFont& font,  const VContainer *pattern);
 
-    QPointF GetPatternTextPosition() const;
-    QStringList GetPatternText() const;
-    void SetPatternInfo(VAbstractPattern *pDoc, const VPatternLabelData& geom, const QFont& font,
-                        const VContainer *pattern);
+    QPointF                   GetPatternTextPosition() const;
+    QStringList               GetPatternText() const;
+    void                      SetPatternInfo(VAbstractPattern *pDoc, const VPatternLabelData& geom,
+                                             const QFont& font, const VContainer *pattern);
 
-    void SetGrainline(const VGrainlineData& geom, const VContainer *pattern);
-    QVector<QPointF> GetGrainline() const;
+    void                      SetGrainline(const VGrainlineData& geom, const VContainer *pattern);
+    QVector<QPointF>          GetGrainline() const;
 
-    QTransform GetMatrix() const;
-    void    SetMatrix(const QTransform &matrix);
+    QTransform                GetMatrix() const;
+    void                      SetMatrix(const QTransform &matrix);
 
-    qreal GetLayoutWidth() const;
-    void  SetLayoutWidth(const qreal &value);
+    qreal                     GetLayoutWidth() const;
+    void                      SetLayoutWidth(const qreal &value);
 
-    bool IsMirror() const;
-    void SetMirror(bool value);
+    bool                      IsMirror() const;
+    void                      SetMirror(bool value);
 
-    void Translate(qreal dx, qreal dy);
-    void Rotate(const QPointF &originPoint, qreal degrees);
-    void Mirror(const QLineF &edge);
+    void                      Translate(qreal dx, qreal dy);
+    void                      Rotate(const QPointF &originPoint, qreal degrees);
+    void                      Mirror(const QLineF &edge);
 
-    int    DetailEdgesCount() const;
-    int    LayoutEdgesCount() const;
+    int                       DetailEdgesCount() const;
+    int                       LayoutEdgesCount() const;
 
-    QLineF DetailEdge(int i) const;
-    QLineF LayoutEdge(int i) const;
+    QLineF                    DetailEdge(int i) const;
+    QLineF                    LayoutEdge(int i) const;
 
-    int    DetailEdgeByPoint(const QPointF &p1) const;
-    int    LayoutEdgeByPoint(const QPointF &p1) const;
+    int                       DetailEdgeByPoint(const QPointF &p1) const;
+    int                       LayoutEdgeByPoint(const QPointF &p1) const;
 
-    QRectF DetailBoundingRect() const;
-    QRectF LayoutBoundingRect() const;
-    qreal  Diagonal() const;
+    QRectF                    DetailBoundingRect() const;
+    QRectF                    LayoutBoundingRect() const;
+    qreal                     Diagonal() const;
 
-    bool isNull() const;
-    qint64 Square() const;
-    QPainterPath ContourPath() const;
+    bool                      isNull() const;
+    qint64                    Square() const;
+    QPainterPath              ContourPath() const;
 
-    QPainterPath LayoutAllowancePath() const;
-    Q_REQUIRED_RESULT QGraphicsItem *GetItem(bool textAsPaths) const;
+    QPainterPath              LayoutAllowancePath() const;
+
+    Q_REQUIRED_RESULT QGraphicsItem     *GetItem(bool textAsPaths) const;
 
 private:
     QSharedDataPointer<VLayoutPieceData> d;
 
-    QVector<QPointF> DetailPath() const;
+    QVector<QPointF>                     DetailPath() const;
 
     Q_REQUIRED_RESULT QGraphicsPathItem *GetMainItem() const;
     Q_REQUIRED_RESULT QGraphicsPathItem *GetMainPathItem() const;
 
-    void CreateInternalPathItem(int i, QGraphicsItem *parent) const;
-    void CreateLabelStrings(QGraphicsItem *parent, const QVector<QPointF> &labelShape, const VTextManager &tm,
-                            bool textAsPaths) const;
-    void CreateGrainlineItem(QGraphicsItem *parent) const;
+    void                                 CreateInternalPathItem(int i, QGraphicsItem *parent) const;
+    void                                 CreateLabelStrings(QGraphicsItem *parent, const QVector<QPointF> &labelShape,
+                                                            const VTextManager &tm, bool textAsPaths) const;
+    void                                 CreateGrainlineItem(QGraphicsItem *parent) const;
 
     template <class T>
-    QVector<T> Map(const QVector<T> &points) const;
+    QVector<T>                           Map(const QVector<T> &points) const;
 
-    QLineF Edge(const QVector<QPointF> &path, int i) const;
-    int    EdgeByPoint(const QVector<QPointF> &path, const QPointF &p1) const;
+    QLineF                               Edge(const QVector<QPointF> &path, int i) const;
+    int                                  EdgeByPoint(const QVector<QPointF> &path, const QPointF &p1) const;
 };
 
 Q_DECLARE_TYPEINFO(VLayoutPiece, Q_MOVABLE_TYPE);

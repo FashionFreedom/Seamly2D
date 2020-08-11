@@ -288,7 +288,7 @@ QVector<QPointF> VPiecePath::PathPoints(const VContainer *data) const
     QVector<QPointF> points;
     for (int i = 0; i < CountNodes(); ++i)
     {
-        if (at(i).IsExcluded())
+        if (at(i).isExcluded())
         {
             continue;// skip excluded node
         }
@@ -333,7 +333,7 @@ QVector<VPointF> VPiecePath::PathNodePoints(const VContainer *data, bool showExc
         {
             case Tool::NodePoint:
             {
-                if (showExcluded || not at(i).IsExcluded())
+                if (showExcluded || not at(i).isExcluded())
                 {
                     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(at(i).GetId());
                     points.append(*point);
@@ -832,7 +832,7 @@ int VPiecePath::FindInLoopNotExcludedUp(int start, const QVector<VPieceNode> &no
     bool found = false;
     do
     {
-        if (not nodes.at(i).IsExcluded())
+        if (not nodes.at(i).isExcluded())
         {
             found = true;
             break;
@@ -868,7 +868,7 @@ int VPiecePath::FindInLoopNotExcludedDown(int start, const QVector<VPieceNode> &
     bool found = false;
     do
     {
-        if (not nodes.at(i).IsExcluded())
+        if (not nodes.at(i).isExcluded())
         {
             found = true;
             break;

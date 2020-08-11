@@ -136,10 +136,10 @@ FORMS += \
     $$PWD/tools/piece/dialogseamallowance.ui \
     $$PWD/tools/piece/dialoginternalpath.ui \
     $$PWD/tools/dialogpin.ui \
+    $$PWD/tools/piece/tabs/tabnotches.ui \
     $$PWD/tools/piece/tabs/tabpaths.ui \
     $$PWD/tools/piece/tabs/tablabels.ui \
     $$PWD/tools/piece/tabs/tabgrainline.ui \
     $$PWD/tools/piece/tabs/tabpins.ui \
     $$PWD/tools/dialoginsertnode.ui \
-    $$PWD/tools/piece/tabs/tabpassmarks.ui \
     $$PWD/support/dialogeditlabel.ui
