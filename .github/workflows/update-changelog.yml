@@ -1,0 +1,24 @@
+name: Update Changelog file
+
+on: [workflow_dispatch]
+
+env:
+  RUNNER_DEBUG: 1
+
+jobs:
+  create-changelog-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: jackstr/update-changelog@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: jackstr/create-pull-request@master
+        with:
+          branch: update-changelog
+          branch-suffix: timestamp
+          title: Update CHANGELOG.md
+          body: |
+            Updates CHANGELOG with latest versions.
+
+            This is automatically generated pull request.
