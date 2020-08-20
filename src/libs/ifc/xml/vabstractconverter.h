@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,24 +73,24 @@ class VAbstractConverter :public VDomDocument
 {
     Q_DECLARE_TR_FUNCTIONS(VAbstractConverter)
 public:
-    explicit VAbstractConverter(const QString &fileName);
-    virtual ~VAbstractConverter() Q_DECL_EQ_DEFAULT;
+    explicit        VAbstractConverter(const QString &fileName);
+    virtual        ~VAbstractConverter() Q_DECL_EQ_DEFAULT;
 
-    QString Convert();
+    QString         Convert();
 
-    int GetCurrentFormatVarsion() const;
-    QString GetVersionStr() const;
+    int             GetCurrentFormatVarsion() const;
+    QString         GetVersionStr() const;
 
-    static int GetVersion(const QString &version);
+    static int      GetVersion(const QString &version);
 
 protected:
-    int     m_ver;
-    QString m_convertedFileName;
+    int             m_ver;
+    QString         m_convertedFileName;
 
-    void ValidateInputFile(const QString &currentSchema) const;
+    void            ValidateInputFile(const QString &currentSchema) const;
     Q_NORETURN void InvalidVersion(int ver) const;
-    void Save();
-    void SetVersion(const QString &version);
+    void            Save();
+    void            SetVersion(const QString &version);
 
     virtual int     MinVer() const =0;
     virtual int     MaxVer() const =0;
@@ -102,20 +102,21 @@ protected:
     virtual void    ApplyPatches() =0;
     virtual void    DowngradeToCurrentMaxVersion() =0;
 
-    virtual bool IsReadOnly() const =0;
+    virtual bool    IsReadOnly() const =0;
 
-    void Replace(QString &formula, const QString &newName, int position, const QString &token, int &bias) const;
-    void CorrectionsPositions(int position, int bias, QMap<int, QString> &tokens) const;
-    static void BiasTokens(int position, int bias, QMap<int, QString> &tokens);
+    void            Replace(QString &formula, const QString &newName, int position,
+                            const QString &token, int &bias) const;
+    void            CorrectionsPositions(int position, int bias, QMap<int, QString> &tokens) const;
+    static void     BiasTokens(int position, int bias, QMap<int, QString> &tokens);
 
 private:
     Q_DISABLE_COPY(VAbstractConverter)
 
-    QTemporaryFile m_tmpFile;
+    QTemporaryFile  m_tmpFile;
 
-    static void ValidateVersion(const QString &version);
+    static void     ValidateVersion(const QString &version);
 
-    void ReserveFile() const;
+    void            ReserveFile() const;
 };
 
 #endif // VABSTRACTCONVERTER_H

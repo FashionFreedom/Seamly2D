@@ -637,7 +637,7 @@ void VToolOptionsPropertyBrowser::AddPropertyLineType(Tool *i, const QString &pr
         qWarning()<<"Can't find line style" << i->getLineType()<<"in list";
     }
     lineTypeProperty->setValue(index);
-    AddProperty(lineTypeProperty, AttrTypeLine);
+    AddProperty(lineTypeProperty, AttrLineType);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -917,10 +917,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolEndLine(VPE::VProperty *property
         case 0: // AttrName
             SetPointName<VToolEndLine>(value.toString());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 4: // AttrLength
@@ -952,10 +952,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolAlongLine(VPE::VProperty *proper
         case 0: // AttrName
             SetPointName<VToolAlongLine>(value.toString());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 4: // AttrLength
@@ -1058,10 +1058,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolBisector(VPE::VProperty *propert
         case 4: // AttrLength
             i->SetFormulaLength(value.value<VFormula>());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 6:  // AttrFirstPoint (read only)
@@ -1195,10 +1195,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolHeight(VPE::VProperty *property)
         case 0: // AttrName
             SetPointName<VToolHeight>(value.toString());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 2:  // AttrBasePoint (read only)
@@ -1223,10 +1223,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolLine(VPE::VProperty *property)
     SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 6: // AttrFirstPoint (read only)
@@ -1283,10 +1283,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolNormal(VPE::VProperty *property)
         case 5: // AttrAngle
             i->SetAngle(value.toDouble());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 2: // AttrBasePoint (read only)
@@ -1525,10 +1525,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolShoulderPoint(VPE::VProperty *pr
         case 0: // AttrName
             SetPointName<VToolShoulderPoint>(value.toString());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 6:  // AttrFirstPoint (read only)
@@ -1726,10 +1726,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolLineIntersectAxis(VPE::VProperty
         case 0: // AttrName
             SetPointName<VToolLineIntersectAxis>(value.toString());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 5: // AttrAngle
@@ -1760,10 +1760,10 @@ void VToolOptionsPropertyBrowser::ChangeDataToolCurveIntersectAxis(VPE::VPropert
         case 0: // AttrName
             SetPointName<VToolCurveIntersectAxis>(value.toString());
             break;
-        case 3: // AttrTypeLine
+        case 3: // AttrLineType
             i->SetTypeLine(value.toString());
             break;
-        case 26: // AttrTypeLineColor
+        case 26: // AttrLineColor
             i->SetLineColor(value.toString());
             break;
         case 5: // AttrAngle
@@ -2088,7 +2088,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLine(QGraphicsItem *item)
     AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrFirstPoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
     QMap<QString, QIcon> styles = LineStylesPics();
-    styles.remove(TypeLineNone);
+    styles.remove(LineTypeNone);
     AddPropertyLineType(i, tr("Line type:"), styles);
     AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
 }
@@ -2444,7 +2444,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolEndLine()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -2473,7 +2473,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolAlongLine()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -2571,7 +2571,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolBisector()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -2678,7 +2678,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolHeight()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -2706,7 +2706,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolLine()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -2762,7 +2762,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolNormal()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -2930,7 +2930,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolShoulderPoint()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -3096,7 +3096,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolLineIntersectAxis()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -3129,7 +3129,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolCurveIntersectAxis()
 
     {
     const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrTypeLine]->setValue(index);
+    idToProperty[AttrLineType]->setValue(index);
     }
 
     {
@@ -3246,7 +3246,7 @@ QStringList VToolOptionsPropertyBrowser::PropertiesList() const
     static QStringList attr = QStringList() << AttrName                           /* 0 */
                                             << QLatin1String("position")          /* 1 */
                                             << AttrBasePoint                      /* 2 */
-                                            << AttrTypeLine                       /* 3 */
+                                            << AttrLineType                       /* 3 */
                                             << AttrLength                         /* 4 */
                                             << AttrAngle                          /* 5 */
                                             << AttrFirstPoint                     /* 6 */

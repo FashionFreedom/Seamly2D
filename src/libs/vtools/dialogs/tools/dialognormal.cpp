@@ -348,7 +348,7 @@ void DialogNormal::SetPointName(const QString &value)
  */
 QString DialogNormal::GetTypeLine() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

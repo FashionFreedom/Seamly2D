@@ -68,7 +68,7 @@ public:
     VAbstractCurveData ()
         : duplicate(0),
           color(ColorBlack),
-          penStyle(TypeLineLine)
+          penStyle(LineTypeSolidLine)
     {}
 
     VAbstractCurveData(const VAbstractCurveData &curve)

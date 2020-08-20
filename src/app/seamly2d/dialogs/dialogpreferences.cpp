@@ -151,7 +151,7 @@ void DialogPreferences::Apply()
     m_patternPage->Apply();
     m_pathPage->Apply();
 
-    m_patternPage->InitDefaultSeamAllowance();
+    m_patternPage->initDefaultSeamAllowance();
 
     qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     emit UpdateProperties();

@@ -69,21 +69,22 @@ public:
     explicit PreferencesPatternPage(QWidget *parent = nullptr);
     virtual ~PreferencesPatternPage();
 
-    void Apply();
-    void InitDefaultSeamAllowance();
+    void     Apply();
+    void     initDefaultSeamAllowance();
 
 private slots:
-    void EditDateTimeFormats();
+    void     editDateTimeFormats();
 
 private:
     Q_DISABLE_COPY(PreferencesPatternPage)
     Ui::PreferencesPatternPage *ui;
 
-    void InitLabelDateTimeFormats();
-    void InitComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat);
+    void     initLabelDateTimeFormats();
+    void     initNotches();
+    void     initComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat);
 
     template <typename T>
-    void CallDateTimeFormatEditor(const T &type, const QStringList &predefinedFormats,
+    void callDateTimeFormatEditor(const T &type, const QStringList &predefinedFormats,
                                   const QStringList &userDefinedFormats, QComboBox *box);
 };
 

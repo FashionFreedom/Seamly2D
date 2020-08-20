@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -68,9 +68,12 @@
 #include "../exception/vexceptionemptyparameter.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../vmisc/def.h"
+#include "../vmisc/logging.h"
 #include "vabstractconverter.h"
 
 class QDomElement;
+
+Q_LOGGING_CATEGORY(PatternConverter, "patternConverter")
 
 /*
  * Version rules:
@@ -81,8 +84,8 @@ class QDomElement;
  */
 
 const QString VPatternConverter::PatternMinVerStr = QStringLiteral("0.1.0");
-const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.0");
-const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.0.xsd");
+const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.1");
+const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.1.xsd");
 
 //VPatternConverter::PatternMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //VPatternConverter::PatternMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -182,6 +185,10 @@ static const QString strLetter                    = QStringLiteral("letter");
 static const QString strMaterial                  = QStringLiteral("material");
 static const QString strUserDefined               = QStringLiteral("userDef");
 static const QString strPlacement                 = QStringLiteral("placement");
+static const QString strNotchCount                = QStringLiteral("notchCount");
+static const QString strNotchAngle                = QStringLiteral("notchAngle"); 
+static const QString strShowNotch                 = QStringLiteral("showNotch");
+static const QString strShowSecond                = QStringLiteral("showSecondNotch");
 
 //---------------------------------------------------------------------------------------------------------------------
 VPatternConverter::VPatternConverter(const QString &fileName)
@@ -264,6 +271,9 @@ QString VPatternConverter::XSDSchema(int ver) const
         case (0x000501):
             return QStringLiteral("://schema/pattern/v0.5.1.xsd");
         case (0x000600):
+            return QStringLiteral("://schema/pattern/v0.6.0.xsd");
+        case (0x000601):
+            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.1.xsd");
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -414,6 +424,10 @@ void VPatternConverter::ApplyPatches()
             ValidateXML(XSDSchema(0x000600), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000600):
+            ToV0_6_1();
+            ValidateXML(XSDSchema(0x000601), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000601):
             break;
         default:
             InvalidVersion(m_ver);
@@ -432,7 +446,7 @@ void VPatternConverter::DowngradeToCurrentMaxVersion()
 bool VPatternConverter::IsReadOnly() const
 {
     // Check if attribute readOnly was not changed in file format
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 0),
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 1),
                       "Check attribute readOnly.");
 
     // Possibly in future attribute readOnly will change position etc.
@@ -832,6 +846,199 @@ void VPatternConverter::ToV0_6_0()
     PortPatternLabeltoV0_6_0(label);
     PortPieceLabelstoV0_6_0();
     RemoveUnusedTagsV0_6_0();
+    Save();
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPatternConverter::ToV0_6_1()
+{
+    // TODO. Delete if minimal supported version is 0.6.1
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 1),
+                      "Time to refactor the code.");
+
+    SetVersion(QStringLiteral("0.6.1"));
+
+    QStringList nodenames = QStringList() << QStringLiteral("node")
+                                          << QStringLiteral("point")
+                                          << QStringLiteral("line")
+                                          << QStringLiteral("path")
+                                          << QStringLiteral("arc")
+                                          << QStringLiteral("spline");
+
+    QStringList oldnames = QStringList() << QStringLiteral("passmark")
+                                         << QStringLiteral("passmarkLine")
+                                         << QStringLiteral("passmarkAngle")
+                                         << QStringLiteral("showSecondPassmark")
+                                         << QStringLiteral("typeLine")
+                                         << QStringLiteral("penStyle");
+
+    QString newName = "";
+    qint32 index = 0;
+
+    for (int i = 0; i < nodenames.size(); i++)
+    {
+    QDomNodeList list = elementsByTagName(nodenames[i]);
+
+        for (int j = 0; j < list.size(); j++)
+        {
+            QDomNode node = list.at(j);
+
+            QDomNamedNodeMap map = node.attributes();
+
+            for (int k = 0; k < map.size(); k++)
+            {
+                index = -1;
+                QDomNode mapItem = map.item(k);
+                QDomAttr attribute = mapItem.toAttr();
+                QString attributeName = attribute.name();
+                QString newName;
+
+                index = oldnames.indexOf(attributeName);
+                if (index > -1)
+                {
+                    QString attributeValue = attribute.value();
+                    QDomElement owner = attribute.ownerElement();
+
+                    switch(index)
+                    {
+                        case 0:
+                        {
+                            newName = QStringLiteral("notch");
+                            owner.setAttribute(strNotchAngle, 0.0);
+                            owner.setAttribute(strShowNotch, "true");
+                            owner.setAttribute(strShowSecond, "true");
+                            break;
+                        }
+                        case 1: //! Replaces " passmarkLine" with "notchType"
+                        {
+                            newName = QStringLiteral("notchType");
+                            if (attributeValue == "one")
+                            {
+                              attributeValue = QString("slit");
+                              owner.setAttribute(strNotchCount, 1);
+                              break;
+                            }
+                            if (attributeValue == "two")
+                            {
+                              attributeValue = QString("slit");
+                              owner.setAttribute(strNotchCount, 2);
+                              break;
+                            }
+                            if (attributeValue == "three")
+                            {
+                              attributeValue = QString("slit");
+                              owner.setAttribute(strNotchCount, 3);
+                              break;
+                            }
+                            if (attributeValue == "tMark")
+                            {
+                              attributeValue = QString("tNotch");
+                              owner.setAttribute(strNotchCount, 1);
+                              break;
+                            }
+                            if (attributeValue == "vMark")
+                            {
+                              attributeValue = QString("vExternal");
+                              owner.setAttribute(strNotchCount, 1);
+                            }
+                            break;
+                        }
+                        case 2: //! Replaces " passmarkAngle" with "notchSubType"
+                        {
+                            newName = QStringLiteral("notchSubtype");
+                            break;
+                        }
+                        case 3:
+                        {
+                            newName = QStringLiteral("showSecondNotch");
+                            break;
+                        }
+                        case 4: //! Fixes incorrect name & value for lineType attribute
+                        {
+                            newName = QStringLiteral("lineType");
+                            if (attributeValue == "hair")
+                            {
+                              attributeValue = QString("solidLine");
+                            }
+                            break;
+                        }
+                        case 5: //! Fixes incorrect value for penStyle attribute
+                        {
+                            newName = QStringLiteral("penStyle");
+                            if (attributeValue == "hair")
+                            {
+                              attributeValue = QString("solidLine");
+                            }
+                            break;
+                        }
+
+                        default:
+                            break;
+                    }
+                    owner.removeAttribute(attributeName);
+                    owner.setAttribute(newName, attributeValue);
+                }
+            }
+        }
+    }
+/*
+    // Second pass to convert notchtype one | two | three to notchType = slit add notchCount = 1 | 2 | 3
+    nodenames = QStringList() << QStringLiteral("node") << QStringLiteral("path");
+    oldnames = QStringList() << QStringLiteral("notchType");
+
+    index = 0;
+
+    for (int i = 0; i < nodenames.size(); i++)
+    {
+    QDomNodeList list = elementsByTagName(nodenames[i]);
+
+        for (int j = 0; j < list.size(); j++)
+        {
+            QDomNode node = list.at(j);
+
+            QDomNamedNodeMap map = node.attributes();
+
+            for (int k = 0; k < map.size(); k++)
+            {
+                index = -1;
+                QDomNode mapItem = map.item(k);
+                QDomAttr attribute = mapItem.toAttr();
+                QString attributeName = attribute.name();
+
+                index = oldnames.indexOf(attributeName);
+                if (index > -1)
+                {
+                    QString attributeValue = attribute.value();
+                    QDomElement owner = attribute.ownerElement();
+
+                    switch(index)
+                    {
+                        case 0:
+                        {
+                            if (attributeValue == "one")
+                            {
+                              attribute.setValue(QString("slit"));
+                              owner.setAttribute(strNotchCount, 1);
+                            }
+                            else if (attributeValue == "two")
+                            {
+                              attribute.setValue(QString("slit"));
+                              owner.setAttribute(strNotchCount, 2);
+                            }
+                            else if (attributeValue == "three")
+                            {
+                              attribute.setValue(QString("slit"));
+                              owner.setAttribute(strNotchCount, 3);
+                            }
+                        }
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+    }*/
     Save();
 }
 

@@ -307,7 +307,7 @@ void VToolLineIntersectAxis::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogLineIntersectAxis> dialogTool = m_dialog.objectCast<DialogLineIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrTypeLine, dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
     doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
     doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
@@ -330,7 +330,7 @@ void VToolLineIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObje
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLineIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
     firstPointId = doc->GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);

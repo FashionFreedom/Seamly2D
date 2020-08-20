@@ -371,7 +371,7 @@ void DialogShoulderPoint::SetPointName(const QString &value)
  */
 QString DialogShoulderPoint::GetTypeLine() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

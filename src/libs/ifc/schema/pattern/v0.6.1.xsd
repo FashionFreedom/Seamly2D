@@ -152,7 +152,7 @@
                           <xs:attribute name="p2Line" type="xs:unsignedInt"/>
                           <xs:attribute name="length" type="xs:string"/>
                           <xs:attribute name="angle" type="xs:string"/>
-                          <xs:attribute name="typeLine" type="linePenStyle"/>
+                          <xs:attribute name="lineType" type="linePenStyle"/>
                           <xs:attribute name="splinePath" type="xs:unsignedInt"/>
                           <xs:attribute name="spline" type="xs:unsignedInt"/>
                           <xs:attribute name="p1Line1" type="xs:unsignedInt"/>
@@ -202,7 +202,7 @@
                           <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
                           <xs:attribute name="firstPoint" type="xs:unsignedInt"/>
                           <xs:attribute name="secondPoint" type="xs:unsignedInt"/>
-                          <xs:attribute name="typeLine" type="linePenStyle"/>
+                          <xs:attribute name="lineType" type="linePenStyle"/>
                           <xs:attribute name="lineColor" type="colors"/>
                         </xs:complexType>
                       </xs:element>
@@ -368,10 +368,15 @@
                                       <xs:attribute name="before" type="xs:double"/>
                                       <xs:attribute name="after" type="xs:double"/>
                                       <xs:attribute name="angle" type="nodeAngle"/>
-                                      <xs:attribute name="passmark" type="xs:boolean"/>
-                                      <xs:attribute name="passmarkLine" type="passmarkLineType"/>
-                                      <xs:attribute name="passmarkAngle" type="passmarkAngleType"/>
-                                      <xs:attribute name="showSecondPassmark" type="xs:boolean"/>
+                                      <xs:attribute name="notch" type="xs:boolean"/>
+                                      <xs:attribute name="notchType" type="notchTypes"/>
+                                      <xs:attribute name="notchSubtype" type="notchSubtypes"/>
+                                      <xs:attribute name="showNotch" type="xs:boolean"/>
+                                      <xs:attribute name="showSecondNotch" type="xs:boolean"/>
+                                      <xs:attribute name="notchAngle" type="xs:double"/>
+                                      <xs:attribute name="notchLength" type="xs:double"/>
+                                      <xs:attribute name="notchWidth" type="xs:double"/>
+                                      <xs:attribute name="notchCount" type="xs:unsignedInt"/>
                                     </xs:complexType>
                                   </xs:element>
                                 </xs:sequence>
@@ -383,7 +388,7 @@
                           <xs:attribute name="idTool" type="xs:unsignedInt"/>
                           <xs:attribute name="inUse" type="xs:boolean"/>
                           <xs:attribute name="name" type="xs:string"/>
-                          <xs:attribute name="typeLine" type="curvePenStyle"/>
+                          <xs:attribute name="lineType" type="curvePenStyle"/>
                           <xs:attribute name="cut" type="xs:boolean"/>
                         </xs:complexType>
                       </xs:element>
@@ -405,10 +410,15 @@
                                             <xs:attribute name="before" type="xs:string"/>
                                             <xs:attribute name="after" type="xs:string"/>
                                             <xs:attribute name="angle" type="nodeAngle"/>
-                                            <xs:attribute name="passmark" type="xs:boolean"/>
-                                            <xs:attribute name="passmarkLine" type="passmarkLineType"/>
-                                            <xs:attribute name="passmarkAngle" type="passmarkAngleType"/>
-                                            <xs:attribute name="showSecondPassmark" type="xs:boolean"/>
+                                            <xs:attribute name="notch" type="xs:boolean"/>
+                                            <xs:attribute name="notchType" type="notchTypes"/>
+                                            <xs:attribute name="notchSubtype" type="notchSubtypes"/>
+                                            <xs:attribute name="showNotch" type="xs:boolean"/>
+                                            <xs:attribute name="showSecondNotch" type="xs:boolean"/>
+                                            <xs:attribute name="notchAngle" type="xs:double"/>
+                                            <xs:attribute name="notchLength" type="xs:double"/>
+                                            <xs:attribute name="notchWidth" type="xs:double"/>
+                                            <xs:attribute name="notchCount" type="xs:unsignedInt"/>
                                           </xs:complexType>
                                         </xs:element>
                                       </xs:sequence>
@@ -576,10 +586,15 @@
                                     <xs:attribute name="angle" type="nodeAngle"/>
                                     <xs:attribute name="mx" type="xs:double"/>
                                     <xs:attribute name="my" type="xs:double"/>
-                                    <xs:attribute name="passmark" type="xs:boolean"/>
-                                    <xs:attribute name="passmarkLine" type="passmarkLineType"/>
-                                    <xs:attribute name="passmarkAngle" type="passmarkAngleType"/>
-                                    <xs:attribute name="showSecondPassmark" type="xs:boolean"/>
+                                    <xs:attribute name="notch" type="xs:boolean"/>
+                                    <xs:attribute name="notchType" type="notchTypes"/>
+                                    <xs:attribute name="notchSubtype" type="notchSubtypes"/>
+                                    <xs:attribute name="showNotch" type="xs:boolean"/>
+                                    <xs:attribute name="showSecondNotch" type="xs:boolean"/>
+                                    <xs:attribute name="notchAngle" type="xs:double"/>
+                                    <xs:attribute name="notchLength" type="xs:double"/>
+                                    <xs:attribute name="notchWidth" type="xs:double"/>
+                                    <xs:attribute name="notchCount" type="xs:unsignedInt"/>
                                   </xs:complexType>
                                 </xs:element>
                               </xs:sequence>
@@ -720,7 +735,7 @@
   <xs:simpleType name="linePenStyle">
     <xs:restriction base="xs:string">
       <xs:enumeration value="none"/>
-      <xs:enumeration value="hair"/>
+      <xs:enumeration value="solidLine"/>
       <xs:enumeration value="dashLine"/>
       <xs:enumeration value="dotLine"/>
       <xs:enumeration value="dashDotLine"/>
@@ -729,7 +744,7 @@
   </xs:simpleType>
   <xs:simpleType name="curvePenStyle">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="hair"/>
+      <xs:enumeration value="solidLine"/>
       <xs:enumeration value="dashLine"/>
       <xs:enumeration value="dotLine"/>
       <xs:enumeration value="dashDotLine"/>
@@ -910,16 +925,18 @@
       <!--as custom seam allowance-->
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="passmarkLineType">
+  <xs:simpleType name="notchTypes">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="one"/>
-      <xs:enumeration value="two"/>
-      <xs:enumeration value="three"/>
-      <xs:enumeration value="tMark"/>
-      <xs:enumeration value="vMark"/>
+      <xs:enumeration value="slit"/>
+      <xs:enumeration value="tNotch"/>
+      <xs:enumeration value="uNotch"/>
+      <xs:enumeration value="vInternal"/>
+      <xs:enumeration value="vExternal"/>
+      <xs:enumeration value="castle"/>
+      <xs:enumeration value="diamond"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="passmarkAngleType">
+  <xs:simpleType name="notchSubtypes">
     <xs:restriction base="xs:string">
       <xs:enumeration value="straightforward"/>
       <xs:enumeration value="bisector"/>

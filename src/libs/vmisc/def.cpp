@@ -612,55 +612,66 @@ void InitHighDpiScaling(int argc, char *argv[])
     }
 }
 
-const QString strOne   = QStringLiteral("one");
-const QString strTwo   = QStringLiteral("two");
-const QString strThree = QStringLiteral("three");
-const QString strTMark = QStringLiteral("tMark");
-const QString strVMark = QStringLiteral("vMark");
+const QString strSlit      = QStringLiteral("slit");
+const QString strTNotch    = QStringLiteral("tNotch");
+const QString strUNotch    = QStringLiteral("uNotch");
+const QString strVInternal = QStringLiteral("vInternal");
+const QString strVExternal = QStringLiteral("vExternal");
+const QString strCastle    = QStringLiteral("castle");
+const QString strDiamond   = QStringLiteral("diamond");
 
 //---------------------------------------------------------------------------------------------------------------------
 QString notchTypeToString(NotchType type)
 {
     switch(type)
     {
-        case NotchType::OneLine:
-            return strOne;
-        case NotchType::TwoLines:
-            return strTwo;
-        case NotchType::ThreeLines:
-            return strThree;
-        case NotchType::TMark:
-            return strTMark;
-        case NotchType::VMark:
-            return strVMark;
+        case NotchType::Slit:
+            return strSlit;
+        case NotchType::TNotch:
+            return strTNotch;
+        case NotchType::UNotch:
+            return strUNotch;
+        case NotchType::VInternal:
+            return strVInternal;
+        case NotchType::VExternal:
+            return strVExternal;
+        case NotchType::Castle:
+            return strCastle;
+        case NotchType::Diamond:
+            return strDiamond;
         default:
             break;
     }
 
-    return strOne;
+    return strSlit;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 NotchType stringToNotchType(const QString &value)
 {
-    const QStringList values = QStringList() << strOne << strTwo << strThree << strTMark << strVMark;
+    const QStringList values = QStringList() << strSlit << strTNotch << strUNotch << strVInternal << strVExternal
+                                             << strCastle << strDiamond;
 
     switch(values.indexOf(value))
     {
-        case 0: // strOne
-            return NotchType::OneLine;
-        case 1: // strTwo
-            return NotchType::TwoLines;
-        case 2: // strThree
-            return NotchType::ThreeLines;
-        case 3: // strTMark
-            return NotchType::TMark;
-        case 4: // strVMark
-            return NotchType::VMark;
+        case 0:
+            return NotchType::Slit;
+        case 1:
+            return NotchType::TNotch;
+        case 2:
+            return NotchType::UNotch;
+        case 3:
+            return NotchType::VInternal;
+        case 4:
+            return NotchType::VExternal;
+        case 5:
+            return NotchType::Castle;
+        case 6:
+            return NotchType::Diamond;
         default:
             break;
     }
-    return NotchType::OneLine;
+    return NotchType::Slit;
 }
 
 const QString strStraightforward = QStringLiteral("straightforward");

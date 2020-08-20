@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -70,10 +70,10 @@
 
 namespace
 {
-const QString settingPathsIndividualMeasurements = QStringLiteral("paths/individual_measurements");
-const QString settingPathsMultisizeMeasurements  = QStringLiteral("paths/standard_measurements");
-const QString settingPathsTemplates              = QStringLiteral("paths/templates");
-const QString settingPathsLabelTemplate          = QStringLiteral("paths/labels");
+const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_measurements");
+const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/standard_measurements");
+const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
+const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
 
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
@@ -86,33 +86,38 @@ const QString settingConfigurationConfirmItemDeletion    = QStringLiteral("confi
 const QString settingConfigurationConfirmFormatRewriting = QStringLiteral("configuration/confirm_format_rewriting");
 const QString settingConfigurationToolBarStyle           = QStringLiteral("configuration/tool_bar_style");
 
-const QString settingPatternUndo                    = QStringLiteral("pattern/undo");
-const QString settingPatternForbidFlipping          = QStringLiteral("pattern/forbidFlipping");
-const QString settingPatternHideMainPath            = QStringLiteral("pattern/hideMainPath");
-const QString settingDoubleNotch                    = QStringLiteral("pattern/doubleNotch");
-const QString settingPatternDefaultSeamAllowance    = QStringLiteral("pattern/defaultSeamAllowance");
-const QString settingPatternLabelFont               = QStringLiteral("pattern/labelFont");
+const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
+const QString settingPatternForbidFlipping               = QStringLiteral("pattern/forbidFlipping");
+const QString settingPatternHideMainPath                 = QStringLiteral("pattern/hideMainPath");
 
-const QString settingGeneralRecentFileList       = QStringLiteral("recentFileList");
-const QString settingGeneralRestoreFileList      = QStringLiteral("restoreFileList");
-const QString settingGeneralGeometry             = QStringLiteral("geometry");
-const QString settingGeneralWindowState          = QStringLiteral("windowState");
-const QString settingGeneralToolbarsState        = QStringLiteral("toolbarsState");
-const QString settingPreferenceDialogSize        = QStringLiteral("preferenceDialogSize");
-const QString settingToolSeamAllowanceDialogSize = QStringLiteral("toolSeamAllowanceDialogSize");
-const QString settingIncrementsDialogSize        = QStringLiteral("toolIncrementsDialogSize");
-const QString settingFormulaWizardDialogSize     = QStringLiteral("formulaWizardDialogSize");
-const QString settingLatestSkippedVersion        = QStringLiteral("lastestSkippedVersion");
-const QString settingDateOfLastRemind            = QStringLiteral("dateOfLastRemind");
+const QString settingDefaultNotchLength                  = QStringLiteral("pattern/defaultNotchLength");
+const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
+const QString settingDefaultNotchType                    = QStringLiteral("pattern/defaultNotchType");
+const QString settingDoubleNotch                         = QStringLiteral("pattern/doubleNotch");
 
-const QString settingCSVWithHeader = QStringLiteral("csv/withHeader");
-const QString settingCSVCodec      = QStringLiteral("csv/withCodec");
-const QString settingCSVSeparator  = QStringLiteral("csv/withSeparator");
+const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
+const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
 
-const QString settingLabelDateFormat      = QStringLiteral("label/dateFormat");
-const QString settingLabelUserDateFormats = QStringLiteral("label/userDateFormats");
-const QString settingLabelTimeFormat      = QStringLiteral("label/timeFormat");
-const QString settingLabelUserTimeFormats = QStringLiteral("label/userTimeFormats");
+const QString settingGeneralRecentFileList               = QStringLiteral("recentFileList");
+const QString settingGeneralRestoreFileList              = QStringLiteral("restoreFileList");
+const QString settingGeneralGeometry                     = QStringLiteral("geometry");
+const QString settingGeneralWindowState                  = QStringLiteral("windowState");
+const QString settingGeneralToolbarsState                = QStringLiteral("toolbarsState");
+const QString settingPreferenceDialogSize                = QStringLiteral("preferenceDialogSize");
+const QString settingToolSeamAllowanceDialogSize         = QStringLiteral("toolSeamAllowanceDialogSize");
+const QString settingIncrementsDialogSize                = QStringLiteral("toolIncrementsDialogSize");
+const QString settingFormulaWizardDialogSize             = QStringLiteral("formulaWizardDialogSize");
+const QString settingLatestSkippedVersion                = QStringLiteral("lastestSkippedVersion");
+const QString settingDateOfLastRemind                    = QStringLiteral("dateOfLastRemind");
+
+const QString settingCSVWithHeader                       = QStringLiteral("csv/withHeader");
+const QString settingCSVCodec                            = QStringLiteral("csv/withCodec");
+const QString settingCSVSeparator                        = QStringLiteral("csv/withSeparator");
+
+const QString settingLabelDateFormat                     = QStringLiteral("label/dateFormat");
+const QString settingLabelUserDateFormats                = QStringLiteral("label/userDateFormats");
+const QString settingLabelTimeFormat                     = QStringLiteral("label/timeFormat");
+const QString settingLabelUserTimeFormats                = QStringLiteral("label/userTimeFormats");
 
 //---------------------------------------------------------------------------------------------------------------------
 QStringList ClearFormats(const QStringList &predefinedFormats, QStringList formats)
@@ -695,15 +700,52 @@ void VCommonSettings::SetHideMainPath(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::isDoubleNotch() const
+bool VCommonSettings::showSecondNotch() const
 {
     return value(settingDoubleNotch, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setDoubleNotch(bool value)
+void VCommonSettings::setShowSecondNotch(bool value)
 {
     setValue(settingDoubleNotch, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultNotchLength() const
+{
+   return value(settingDefaultNotchLength, .250).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchLength(const qreal &value)
+{
+    setValue(settingDefaultNotchLength, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultNotchWidth() const
+{
+   return value(settingDefaultNotchWidth, .250).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchWidth(const qreal &value)
+{
+    setValue(settingDefaultNotchWidth, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultNotchType() const
+{
+   return value(settingDefaultNotchType, "slit").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchType(const QString &value)
+{
+    setValue(settingDefaultNotchType, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
