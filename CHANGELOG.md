@@ -1,0 +1,329 @@
+## Weekly 20200817
+
+* [#285](https://github.com/FashionFreedom/Seamly2D/issues/285) Build issue: cleanup unused build files for distributions
+
+## Weekly 20200727
+
+* [#266](https://github.com/FashionFreedom/Seamly2D/issues/266) Delete unused build (*.yml) files
+* [#255](https://github.com/FashionFreedom/Seamly2D/issues/255) Appveyor.yml gives errors.
+
+## Version 0.6.0
+- [#682] New feature. Export increments to Excel .csv.
+- [#681] Enhance feature: Dashed line options for curves, arcs, etc.
+- [#684] Proposal: Add option to only show outer edges on detail.
+- [#244] New feature: Adjust line and point thickness and label size.
+- [#637] Max scene size too small to fit all objects.
+- New feature Zoom Fit Best Current pattern piece.
+- [#693] New feature: Sort workpiece "Groups" by name.
+- [#712] Default seam allowance setting.
+- [#630] Improve export: upgrade to DXF r14 format.
+- [#669] Improve export: export labels as text in DXF.
+- [#716] Command line option to create *tiled* export.
+- [#660] New export: Export details without layout.
+- [#734] Optimization. Stop increments/variables table from updating immediately.
+- [#750] Info Box Beside Mouse.
+- [#721] Renamed Piece Path Tool to Internal Path Tool & changed icon.
+- [#657] Allow more paper formats for printing tile PDF + tiled PDF margins and tiled orientation
+
+## Version 0.5.1
+- [#683] Tool Seam allowance's dialog is off screen on small resolutions.
+- [#686] Seam allowance not placed correctly.
+- [#687] Wrong seam allowance.
+- [#689] Grainline default values swapped around.
+- [#688] Difficult to enter numbers in SeamlyMe.
+- Fixed bug in SeamlyMe app. SeamlyMe showed birth date in wrong locale.
+- Fixed bug in dialog Internal Piece Path. Value from the field After rewrited data in the field Before.
+- Tab Pins moved to be second in the list after tab Paths. 
+- Added tooltip for tab Passmark. Explained meaning of check box "Show the second passmark on seam line". 
+- [#696] Wrong grainline position on layout.
+- [#697] Incomplete Internal Path for Waist Dart.
+- [#698] Problem typing in new axis point for new piece.
+- [#702] Seamly2D produces broken shortcut (.lnk) files on Windows.
+- Changed default behaviour if path to multisize measurements or templates doesn't exist. 
+- [#703] Seamly2D warns about format rewriting for unsaved files.
+- [#704] Seamly2D crashes if click on detail.
+- [#706] Default unit in preferences not changing new file unit.
+- Fix bug. Seamly2D overrids exported file even if a user said no.
+- Fix bug. Date on label doesn't obey GUI language locale.
+- Tool Seam allowance's bounding box should not include passmarks.
+- Fix grainline position on layout.
+- [#719] Seamly2D crashes when unite pieces.
+- Fixed Seamly2D crash. Used way to avoid Qt's bug QTBUG-61213.
+- Fixed behaviour on Windows. Seamly2D asks about synchronization measurements twice.
+- Fixed bug. SeamlyMe app saved default size value in wrong place.
+- [#737] Seamly2D produces corrupted file if unite two pieces with pins.
+- [#738] Bug in transformation over arc and elliptical arc.
+- [#729] Moved Bezier curves can't be rotated.
+- [#742] Seamly2D produces wrong seam allowance.
+- [#743] Seamly2D doesn't update update pattern after adding item.
+- Fix translation variables.
+- [#744] Check for Updates button produces error.
+
+## Version 0.5.0 May 9, 2017
+- [#581] User can now filter input lists by keyword in function wizard.
+- [#24] User can now add labels with different information on the detail
+- [#505] New installer script based on Inno Setup 5.
+- Size of preferences dialog in both Seamly2D and SeamlyMe app is now preserved between sessions
+- [#479] Preferences dialog is now extendable and when it is opened again, it will be resized to its previous size.
+- [#508] Settings saved to INI files in different folders.
+- [#193] Undeletable zombie arc objects.
+- New feature. Groups.
+- Tool "Curve intersect axis" store data about subpaths. 
+- [#444] Length along Path seems not valid.
+- Added new curve path segment variables. 
+- Toggle ScrollHandDrag mode by clicking a middle mouse button.
+- Added horizontal scrolling by pressiong Shift + mouse wheel.
+- [#366] Update 'Point from Distance and Angle' tool to read distance and angle between points.
+- [#395] Create Curve tool which uses point as control handle.
+- pdftops updated to version 3.04.
+- [#306] Layout generator optimization. Divide into strips.
+- Fixed case with duplicate names of curves if they connect same points.
+- [#216] Better powerful way creation curved path.
+- Improved exporting to dxf. QPainterPath export as Polyline.
+- Show additional message dialog if measurements was changed. Related to issue [#440].
+- [#132] Intersect Curves.
+- Added new languages Chinese (China), Portuguese (Brazil) and Greek (Greece).
+- New icon for VAL file. Updated SeamlyMe logo. Updated ico for standard measurements.
+- [#325] Check pattern for inverse compatibility.
+- [#385] Add 'Open Recent' option in SeamlyMe.exe, 'File' dropdown menu.
+- [#471] Add a 'Show/Hide' button for measurement diagram in SeamlyMe.
+- [#478] Rename 'Print preview tiled' to 'Preview Tiled PDF'.
+- [#472] Add 'Full Name' column to Formula dialog.
+- [#487] True dart point always goes to origin when the label is moved.
+- [#128] New Tool: Slash and Spread.
+- [#409] New feature: Export measurement file to Excel .csv.
+- [#180] New feature: Search field in seamlyme app and dialog Increments.
+- [#514] Read only setting not working properly.
+- [#480] New tool: Midpoint between two points.
+- [#496] Selector for selecting which pieces to print.
+- [#520] Improve Union tool. An option to select about original pieces.
+- [#262] Automatic Update notification.
+- [#424] Improve Formula Wizard dialog.
+- Added "All/None" menu in detail list area for easier handling of many parts.
+- [#560] Flipped pattern pieces in Layout.
+- [#138] New tool: 'Mirror Point' or 'Symmetric Point'.
+- [#573] New tool: 'Move Point'.
+- [#577] 10 new colors added for the lines
+- [#570] Tiled PDF : Margin values correctly taken into account
+- [#580] Extend the list of heights.
+- [#582] Issue with standard path to shared data on Linux.
+- [#595] GapWidth affecting to the margins.
+- [#589] Seamly2D lock up if not enough space for label.
+- [#606] Mac OS X. Can’t type in measurements due to digit count limitation.
+- [#612] Seamly2D crashes when network is disabled on Linux.
+- [#406] New feature: Seam allowance tool -> Preview.
+- [#88] New feature: Variable width seam allowances.
+- [#280] New tool: 'Hem' in Detail mode.
+- [#509] Improve feature: Support internal Paths in Detail tool.
+- [#619] Non writable directory prevents opening.
+- [#620] Detail path not correct. Previous curve also should cut segment.
+- [#157] New feature: Passmarks tool.
+- [#679] Second control point at beginning of curved path - bug.
+
+## Version 0.4.5 October 15, 2016
+- [#435] Seamly2D doesn't change the cursor.
+- [#473] SeamlyMe 'Preferences' cause loss of focus.
+- [#485] Error when drawing a curved path.
+- [#491] Seamly2D doesn't update fractional separator.
+- [#492] Seamly2D crashes when add an increment.
+- [#493] Error in seam allowance drawing.
+- [#468] Error - SeamlyMe 'Save As' should set 'Read Only' to false.
+- [#501] Rename Window->Close Window to Window->Close pattern.
+- [#515] Seam allowance wrong way.
+- [#494] Printing is not working.
+- [#516] Seamly2D crashes when use "Point intersect line and axis" instrument.
+- [#483] File lost.
+- Fixed Bisector tool bug. The tool created internal variable for wrong segment.  
+- [#526] Dialog Detail is not on top after selection second object on Mac.
+- [#532] Unexpected error occurs when zoom out image.
+- [#537] Seamly2D crashes when use undo command.
+- [#544] Error: Color Lines are black until touched.
+- [#543] Detail loses details.
+- [#548] Bug Detail tool. Case when seam allowance is wrong.
+- Called the main app in console mode doesn't show opening file error in some cases.
+- [#553] SeamlyMe.exe crash. Issue with the Search field.
+- [#569] SeamlyMe app. Options that open new file open new instance even if a user doesn't want this.
+- [#539] Infinite alert loop "Gradation doesn't support inches" when loading standard table.
+- [#572] Issue with thousand separator during a formula translations to user.
+
+## Version 0.4.4 April 12, 2016
+- Updated measurement templates with all measurements. Added new template Aldrich/Women measurements.
+- Updated description measurements N06 and N07. Add new measurements A23 and J10.
+- Fixed GUI issue. After full parse some widgets was incorrectly reseted.
+- [#464] Crash. Issue with modeling node objects.
+- [#463] Wrong export to DXF format.
+- Fixed issue with deleting detail nodes.
+- [#458] Issue with segment of curve.
+- Fixed disappearing curve if start and finish points of a segment are equal.
+- Fixed bug case where an open equidistant point is too far from a main path.
+- [#462] Error while creating Detail/Seam Allowance using points made with True Dart tool.
+
+## Version 0.4.3 March 6, 2016
+- [#456] Crash: broken formula + clicking on the f(x) symbol.
+- [#454] Crash: using CRTL+Z while using line tool
+- Fixed broken saving pattern description.
+- Fixed UI bug. Release a dialog size for deploying a formula field.
+- Fixed broken formula when for system locale thousand separator is a space.
+- Using QGraphicsScene instead of VMainGraphicsScene caused a crash.
+- Fixed bug disabling tool True darts.
+- Fixed wrong calculation tool True darts.
+- [#405] Fixed crash after deleting first pattern piece in the list.
+- [#421] Fixed warning: unable to set geometry.
+
+## Version 0.4.2 February 17, 2016
+- Measurement Diagram is not shown on Mac OS X.
+- In dialog 'tool Spline Path' fixed broken selecting new point into the list of points.
+- Regesign dialogs tool 'Spline' and 'Spline Path' for avoiding text squeeze.
+- Fixed getting correct reversed segment for single in the list curve.
+- Fixed triggering validation a detail. Two new cases: has been changed Reverse option and the list 
+has been scrolled. Fixed validation when the list conatains only curve.
+- Fixed broken path to measurements after using Save As option.
+- Tool line. Block selecting the same point twice.
+- [#443] Not valid dxf file. libdxf updated to version 3.12.2.0. Fixed drawing subpaths.
+- Fixed combobox width in Dialog "Tool True Dart point".
+- [#441] Broken reference incrementation for tool "True Dart point".
+- [#439] Widen Formula Dialog.
+- Fixed broken tool dialogs "Intersection arcs" and "Point from arc and tangent".
+- [#442] 'Broken Formula' error when using Intersect Circles tool.
+
+## Version 0.4.1 January 29, 2016
+- [#438] Broken switching pattern pieces.
+- Fixed wrong title for dialog "New pattern".
+
+## Version 0.4.0 January 27, 2016
+- [#209] New tool for Point from arc and tangent (Draw)
+- [#232] Intersection of Arcs (Draw)
+- [#246] Arc with Given Length (Draw)
+- [#259] Draw free curve path point at distance (Draw)
+- [#301] True darts (Draw)
+- [#73] Seam Allowance - Width
+- [#329] Add ScrollUp/ScrollDown Button in Detail view
+- [#179] Export to DXF
+- [#202] Posterazor feature
+- [#277] Add 'Letter' and 'Legal' to paper size selection
+- [#334] Command Line Support
+- [#290] Add paper type 'Roll - 36" & 'Roll - 44" to 'Create Layout' paper size
+- [#172] Search field for dialog measurements
+- [#181] Better measurements standard
+- [#314] New measurement structure
+- [#275] Add 'Show Curve Details' icon on top menu bar to show/hide control points and curve direction
+- [#282] Add dialog for File/New, update Create Pattern Piece dialog
+- [#284] Remove History icon from work menu, add to top menu
+- [#285] Remove Table of Variables icon from work menu
+- [#286] Add 'Mode' menu picklist to top menu, create enable/disable for design workflow
+
+## Version 0.3.3 Released May 20, 2015
+- [#297] Scaling Error - Print.
+- [#304] Layout appears different than my pattern.
+
+## Version 0.3.2 Released May 15, 2015
+- [#298] Segmented Curve isn't selected in Seam Allowance tool.
+- [#299] Error when opening .val file.
+- [#302] Error when creating layout.
+
+## Version 0.3.1 Released April 24, 2015
+- [#263] Regression. Union tool doesn't work.
+- For tool Curve intersect axis fixed wrong calculation point in case with too small scene rect size.
+- Fixed crash if a seam allowance doesn't contain 0 points.
+- [#267] Error in the creation of obj files.
+- QMuParser. Bugfix for Bulkmode: Expressions with like "a=b, b*10" did not compute properly.
+- QMuParser. Fix for ParserTokenReader::ExtractOperatorToken incorrectly uses ValidInfixOprtChars().
+- Example of file name in dialog Save Layout appears only after user change format.
+- Fixed regression with removing loops in seam allowance.
+- Removed transparent field for a layout png file.
+
+## Version 0.3.0 Released March 23, 2015
+- Fixed creation equidistant if points less than 4.
+- [#203], [#89], [#90] New Layout Editor.
+- To File/Preferences/Paths added path to export a layout.
+- [#223] Fixed removing stale lock file on Windows.
+- [#222], [#204], [#207], [#205], [#212], [#218], [#210], [#219], [#220], [#248] Minor changes in GUI.
+- [#230] Fixed hangs if curve path has not unique points.
+- [#196] Fixed crash Detail dialog.
+- [#208] Vertical bar for tool "Point from X and Y".
+- Fixed package (.dmg) for Mac OSX.
+- [#171] Show images for pen styles instead of just names.
+- [#74] Fold Line in pattern piece. Pattern format updated to version 0.1.3.
+- [#242] Tool Dialogs: Label at bottom doesn't update for empty lists.
+- [#217] Bug with mouse cursor.
+- Dynamic update tool property browser after applying options changes.
+- [#215] Drag a curve to edit it.
+- [#184] Delete button "Equal" in dialogs.
+- [#183] Message "Changes saved" in dialog Increments.
+- [#234] Fixed problem with formula editing in vtooloptionspropertybrowser and "," decimal separator .
+- Continue improving log system.
+- Close property browser when reset window.
+- [#241] Repeat last used tool.
+- [#253] Show detail information about standard measurements file in dialog Increments.
+- [#249] Set default base height and base size according base values in standard measurements file.
+- New localization language - Spanish.
+- Fixed bug with About Seamly2D dialog on Windows.
+- [#235] Delete point without confirmation / configurable.
+- Version for Mac OS support export to .ps, .eps.
+- New localization language - Finnish.
+
+## Version 0.2.9 Released January 1, 2015
+- Export a layout to Wavefront .obj format.
+- New validation rules for point labels
+- Export layout in two new formats .ps and .eps.
+- Fixed support .svg format.
+- Support individual measurements.
+- Support mm, cm and inch units in patterns.
+- New math parser. 
+- Support language independent measurements.
+- Apply button in tool dialog.
+- Multi lines formula fields.
+- Recent file list.
+- Support local separator for numbers in formulas.
+- Support Clang.
+- Support Undo/Redo.
+- Optimization parsing pattern file.
+- New logo.
+- Support zoom to original scaling and Zoom Fit Best.
+- Use Zoom Fit Best for pattern piece after selection.
+- Open patterns from list of command line arguments. File association with pattern file format (.val).
+- Additional chackings in tool dialog.
+- Visualization for draw tools.
+- Allow user fix broken formula.
+- All point labels must be unique.
+- Support gradation options (only for standard measurements).
+- Fix special line that join point and label.
+- Show path direction when selected.
+- Show tools buttons in two columns instead of three.
+- Show cursor if item can be moved.
+- Second way edit tool property.
+- Zoom under mouse pointer.
+- Auto creation label.
+- Show in tooltip parser error message.
+- Show curve foot if only curve is selected.
+- Option hide unused measurements in list.
+- New tool line intersect axis.
+- New tool arc(curve) intersect axis.
+- Save and restore last window position and size.
+- User manual.
+- Propose reopen files after crash.
+- Use form layout in tool dialog.
+- Support delete action if you select tool from label.
+- Button "Stop using tool".
+- Value for angle also can be formula.
+- Fixed disabling GUI after error.
+- Don't set scroll bars to minimum after creation layout.
+- Menu Help->Report Bug...
+- Option "Standard table" in dialog changed to better "Measurements".
+- Fixed tool cut curved path.
+- Menu Window->Close window.
+- Support creation and sending crash reports. Only for Windows and Mingw compiler.
+
+## Version 0.2.2 Released February 11, 2014
+- Macros Q_DECL_NOEXCEPT_EXPR don't work in gcc 4.6.
+- Change in build dependency for deb package. Add new architecture for deb file.
+- Added spec file for rpm package.
+- Fix seamly2d.desktop.
+
+## Version 0.2.1 Released December 8, 2013
+- Problem with compilation in console on Ubuntu.
+- Problem with compilation on windows with msvc.
+
+## Version 0.2.0 Released October 29, 2013
+- First public release.
+
