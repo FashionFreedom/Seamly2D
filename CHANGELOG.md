@@ -1,3 +1,12 @@
+## Weekly 20200817
+
+* [#285](https://github.com/FashionFreedom/Seamly2D/issues/285) Build issue: cleanup unused build files for distributions
+
+## Weekly 20200727
+
+* [#266](https://github.com/FashionFreedom/Seamly2D/issues/266) Delete unused build (*.yml) files
+* [#255](https://github.com/FashionFreedom/Seamly2D/issues/255) Appveyor.yml gives errors.
+
 ## Version 0.6.0
 - [#682] New feature. Export increments to Excel .csv.
 - [#681] Enhance feature: Dashed line options for curves, arcs, etc.
