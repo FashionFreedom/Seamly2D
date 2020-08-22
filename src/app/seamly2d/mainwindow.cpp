@@ -2802,6 +2802,7 @@ void MainWindow::Clear()
     qCDebug(vMainWindow, "Unlocked pattern file.");
     ActionDraw(true);
     qCDebug(vMainWindow, "Returned to Draw mode.");
+    setCurrentFile(QString());
     pattern->Clear();
     qCDebug(vMainWindow, "Clearing pattern.");
     if (not qApp->GetPPath().isEmpty() && not doc->MPath().isEmpty())
@@ -2809,7 +2810,6 @@ void MainWindow::Clear()
         watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
     }
     doc->clear();
-    setCurrentFile(QString());
     qCDebug(vMainWindow, "Clearing scenes.");
     sceneDraw->clear();
     sceneDetails->clear();
@@ -4014,7 +4014,7 @@ void MainWindow::CreateActions()
     connect(ui->actionWiki, &QAction::triggered, this, [this]()
     {
         qCDebug(vMainWindow, "Showing online help");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly2d.com/wiki/Main_Page")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly.net/wiki/Main_Page")));
     });
 
     connect(ui->actionForum, &QAction::triggered, this, [this]()
