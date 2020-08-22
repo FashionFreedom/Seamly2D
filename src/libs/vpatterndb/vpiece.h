@@ -72,102 +72,109 @@ class VPointF;
 class VPiece : public VAbstractPiece
 {
 public:
-    VPiece();
-    VPiece(const VPiece &piece);
+                             VPiece();
+                             VPiece(const VPiece &piece);
 
-    virtual ~VPiece();
+    virtual                 ~VPiece();
 
-    VPiece &operator=(const VPiece &piece);
+    VPiece                  &operator=(const VPiece &piece);
+
 #ifdef Q_COMPILER_RVALUE_REFS
-	VPiece &operator=(VPiece &&piece) Q_DECL_NOTHROW;
+    VPiece                  &operator=(VPiece &&piece) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VPiece &piece) Q_DECL_NOTHROW;
+    void                     Swap(VPiece &piece) Q_DECL_NOTHROW;
 
-    VPiecePath GetPath() const;
-    VPiecePath &GetPath();
-    void       SetPath(const VPiecePath &path);
+    VPiecePath               GetPath() const;
+    VPiecePath              &GetPath();
+    void                     SetPath(const VPiecePath &path);
 
-    QVector<QPointF> MainPathPoints(const VContainer *data) const;
-    QVector<VPointF> MainPathNodePoints(const VContainer *data, bool showExcluded = false) const;
-    QVector<QPointF> SeamAllowancePoints(const VContainer *data) const;
-    QVector<QLineF>  PassmarksLines(const VContainer *data,
-                                    const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
+    QVector<QPointF>         MainPathPoints(const VContainer *data) const;
+    QVector<VPointF>         MainPathNodePoints(const VContainer *data, bool showExcluded = false) const;
+    QVector<QPointF>         SeamAllowancePoints(const VContainer *data) const;
+    QVector<QLineF>          createNotchLines(const VContainer *data,
+                                              const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
 
-    QPainterPath MainPathPath(const VContainer *data) const;
-    QPainterPath SeamAllowancePath(const VContainer *data) const;
-    QPainterPath SeamAllowancePath(const QVector<QPointF> &points) const;
-    QPainterPath PassmarksPath(const VContainer *data,
-                               const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
+    QPainterPath             MainPathPath(const VContainer *data) const;
+    QPainterPath             SeamAllowancePath(const VContainer *data) const;
+    QPainterPath             SeamAllowancePath(const QVector<QPointF> &points) const;
+    QPainterPath             getNotchesPath(const VContainer *data,
+                                           const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
 
-    bool IsInLayout() const;
-    void SetInLayout(bool inLayout);
+    bool                     IsInLayout() const;
+    void                     SetInLayout(bool inLayout);
 
-    bool IsUnited() const;
-    void SetUnited(bool united);
+    bool                     IsUnited() const;
+    void                     SetUnited(bool united);
 
-    QString GetFormulaSAWidth() const;
-    void    SetFormulaSAWidth(const QString &formula, qreal value);
+    QString                  GetFormulaSAWidth() const;
+    void                     SetFormulaSAWidth(const QString &formula, qreal value);
 
-    QVector<quint32> GetInternalPaths() const;
-    QVector<quint32> &GetInternalPaths();
-    void             SetInternalPaths(const QVector<quint32> &iPaths);
+    QVector<quint32>         GetInternalPaths() const;
+    QVector<quint32>        &GetInternalPaths();
+    void                     SetInternalPaths(const QVector<quint32> &iPaths);
 
-    QVector<CustomSARecord> GetCustomSARecords() const;
-    QVector<CustomSARecord> &GetCustomSARecords();
-    void                    SetCustomSARecords(const QVector<CustomSARecord> &records);
+    QVector<CustomSARecord>  GetCustomSARecords() const;
+    QVector<CustomSARecord>  &GetCustomSARecords();
+    void                     SetCustomSARecords(const QVector<CustomSARecord> &records);
 
-    QVector<quint32> GetPins() const;
-    QVector<quint32> &GetPins();
-    void             SetPins(const QVector<quint32> &pins);
+    QVector<quint32>         GetPins() const;
+    QVector<quint32>        &GetPins();
+    void                     SetPins(const QVector<quint32> &pins);
 
-    QVector<quint32> MissingNodes(const VPiece &det) const;
-    QVector<quint32> MissingCSAPath(const VPiece &det) const;
-    QVector<quint32> MissingInternalPaths(const VPiece &det) const;
-    QVector<quint32> MissingPins(const VPiece &det) const;
+    QVector<quint32>         MissingNodes(const VPiece &det) const;
+    QVector<quint32>         MissingCSAPath(const VPiece &det) const;
+    QVector<quint32>         MissingInternalPaths(const VPiece &det) const;
+    QVector<quint32>         MissingPins(const VPiece &det) const;
 
-    void                   SetPatternPieceData(const VPieceLabelData &data);
-    VPieceLabelData&       GetPatternPieceData();
-    const VPieceLabelData& GetPatternPieceData() const;
+    void                     SetPatternPieceData(const VPieceLabelData &data);
+    VPieceLabelData&         GetPatternPieceData();
+    const VPieceLabelData&   GetPatternPieceData() const;
 
     void                     SetPatternInfo(const VPatternLabelData &info);
     VPatternLabelData&       GetPatternInfo();
-    const VPatternLabelData& GetPatternInfo() const;
+    const VPatternLabelData &GetPatternInfo() const;
 
-    VGrainlineData&         GetGrainlineGeometry();
-    const VGrainlineData&   GetGrainlineGeometry() const;
+    VGrainlineData&          GetGrainlineGeometry();
+    const VGrainlineData&    GetGrainlineGeometry() const;
 
 private:
     QSharedDataPointer<VPieceData> d;
 
-    QVector<VPieceNode> GetUnitedPath(const VContainer *data) const;
+    QVector<VPieceNode>      GetUnitedPath(const VContainer *data) const;
 
-    QVector<CustomSARecord> GetValidRecords() const;
-    QVector<CustomSARecord> FilterRecords(QVector<CustomSARecord> records) const;
+    QVector<CustomSARecord>  GetValidRecords() const;
+    QVector<CustomSARecord>  FilterRecords(QVector<CustomSARecord> records) const;
 
-    QVector<VSAPoint> GetNodeSAPoints(const QVector<VPieceNode> &path, int index, const VContainer *data) const;
+    QVector<VSAPoint>        getNodeSAPoints(const QVector<VPieceNode> &path, int index,
+                                             const VContainer *data) const;
 
-    bool GetPassmarkSAPoint(const QVector<VPieceNode> &path, int index, const VContainer *data, VSAPoint &point) const;
-    bool GetPassmarkPreviousSAPoints(const QVector<VPieceNode> &path, int index, const VSAPoint &passmarkSAPoint,
+    bool                     getNotchSAPoint(const QVector<VPieceNode> &path, int index,
+                                                const VContainer *data, VSAPoint &point) const;
+    bool                     getNotchPreviousSAPoints(const QVector<VPieceNode> &path, int index,
+                                                         const VSAPoint &notchSAPoint,
                                      const VContainer *data, VSAPoint &point) const;
-    int GetPassmarkNextSAPoints(const QVector<VPieceNode> &path, int index, const VSAPoint &passmarkSAPoint,
-                                const VContainer *data, VSAPoint &point) const;
-    bool GetSeamPassmarkSAPoint(const VSAPoint &previousSAPoint, const VSAPoint &passmarkSAPoint,
-                                const VSAPoint &nextSAPoint, const VContainer *data, QPointF &point) const;
+    int                      getNotchNextSAPoints(const QVector<VPieceNode> &path, int index,
+                                                     const VSAPoint &notchSAPoint,
+                                                     const VContainer *data, VSAPoint &point) const;
+    bool                     getSeamNotchSAPoint(const VSAPoint &previousSAPoint, const VSAPoint &notchSAPoint,
+                                                    const VSAPoint &nextSAPoint,
+                                                    const VContainer *data, QPointF &point) const;
 
-    bool IsPassmarkVisible(const QVector<VPieceNode> &path, int passmarkIndex) const;
+    bool                     isNotchVisible(const QVector<VPieceNode> &path, int notchIndex) const;
 
-    QVector<QLineF> CreatePassmark(const QVector<VPieceNode> &path, int previousIndex, int passmarkIndex, int nextIndex,
-                                   const VContainer *data,
-                                   const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
-    QVector<QLineF> SAPassmark(const QVector<VPieceNode> &path, VSAPoint &previousSAPoint,
-                               const VSAPoint &passmarkSAPoint, VSAPoint &nextSAPoint, const VContainer *data,
-                               int passmarkIndex, const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
-    QVector<QLineF> BuiltInSAPassmark(const QVector<VPieceNode> &path, const VSAPoint &previousSAPoint,
-                                      const VSAPoint &passmarkSAPoint, const VSAPoint &nextSAPoint,
-                                      const VContainer *data, int passmarkIndex) const;
+    QVector<QLineF>          createNotch(const QVector<VPieceNode> &path, int previousIndex, int notchIndex,
+                                            int nextIndex, const VContainer *data,
+                                            const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
+    QVector<QLineF>          createSaNotch(const QVector<VPieceNode> &path, VSAPoint &previousSAPoint,
+                                        const VSAPoint &notchSAPoint, VSAPoint &nextSAPoint, const VContainer *data,
+                                        int notchIndex,
+                                        const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
+    QVector<QLineF>          createBuiltInSaNotch(const QVector<VPieceNode> &path, const VSAPoint &previousSAPoint,
+                                              const VSAPoint &notchSAPoint, const VSAPoint &nextSAPoint,
+                                              const VContainer *data, int notchIndex) const;
 
-    static int IsCSAStart(const QVector<CustomSARecord> &records, quint32 id);
+    static int               IsCSAStart(const QVector<CustomSARecord> &records, quint32 id);
 };
 
 Q_DECLARE_TYPEINFO(VPiece, Q_MOVABLE_TYPE);

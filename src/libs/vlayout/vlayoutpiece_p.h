@@ -76,7 +76,7 @@ public:
         : contour(),
           seamAllowance(),
           layoutAllowance(),
-          passmarks(),
+          notches(),
           m_internalPaths(),
           matrix(),
           layoutWidth(0),
@@ -93,7 +93,7 @@ public:
           contour(detail.contour),
           seamAllowance(detail.seamAllowance),
           layoutAllowance(detail.layoutAllowance),
-          passmarks(detail.passmarks),
+          notches(detail.notches),
           m_internalPaths(detail.m_internalPaths),
           matrix(detail.matrix),
           layoutWidth(detail.layoutWidth),
@@ -116,8 +116,8 @@ public:
     /** @brief layoutAllowance list of layout allowance points. */
     QVector<QPointF>          layoutAllowance;
 
-    /** @brief passmarks list of passmakrs. */
-    QVector<QLineF>           passmarks;
+    /** @brief notches list of passmakrs. */
+    QVector<QLineF>           notches;
 
     /** @brief m_internalPaths list of internal paths. */
     QVector<VLayoutPiecePath> m_internalPaths;

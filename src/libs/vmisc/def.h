@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -98,7 +98,7 @@ enum class PieceNodeAngle : unsigned char
     BySecondEdgeRightAngle
 };
 
-enum class PassmarkLineType : unsigned char
+enum class NotchType : unsigned char
 {
     OneLine = 0, // Default
     TwoLines,
@@ -107,18 +107,18 @@ enum class PassmarkLineType : unsigned char
     VMark
 };
 
-QString          PassmarkLineTypeToString(PassmarkLineType type);
-PassmarkLineType StringToPassmarkLineType(const QString &value);
+QString   notchTypeToString(NotchType type);
+NotchType stringToNotchType(const QString &value);
 
-enum class PassmarkAngleType : unsigned char
+enum class NotchSubType : unsigned char
 {
     Straightforward = 0, // Default
     Bisector,
     Intersection
 };
 
-QString           PassmarkAngleTypeToString(PassmarkAngleType type);
-PassmarkAngleType StringToPassmarkAngleType(const QString &value);
+QString      notchSubTypeToString(NotchSubType type);
+NotchSubType stringToNotchSubType(const QString &value);
 
 
 Unit    StrToUnits(const QString &unit);

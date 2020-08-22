@@ -2527,7 +2527,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Fields go beyond printing. 
+        <source>Fields go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -3627,11 +3627,11 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3659,7 +3659,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4486,7 +4486,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4494,7 +4494,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8044,7 +8044,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

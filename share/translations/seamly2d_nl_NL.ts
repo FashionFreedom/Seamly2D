@@ -4117,11 +4117,11 @@ Toch de instellingen aanpassen?</translation>
         <translation>Je hebt punten dubbel!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Pasmarkeringen</translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Pasmarkering:</translation>
     </message>
     <message>
@@ -4149,7 +4149,7 @@ Toch de instellingen aanpassen?</translation>
         <translation>Bisector</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Pasmarkering</translation>
     </message>
     <message>
@@ -5060,7 +5060,7 @@ Toch de instellingen aanpassen?</translation>
         <translation>Uitgezonderd</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation>Pasmarkering</translation>
     </message>
     <message>
@@ -5068,7 +5068,7 @@ Toch de instellingen aanpassen?</translation>
         <translation>Elk punt in het pad moet uniek zijn!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation>Pasmarkeringen</translation>
     </message>
     <message>
@@ -9011,7 +9011,7 @@ Wil je deze veranderingen opslaan?</translation>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation>Pasmarkering:</translation>
     </message>
     <message>

@@ -244,7 +244,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
     }
     else
     {
-        if (type != QtDebugMsg)
+		if (type != QtDebugMsg && type != QtWarningMsg)
         {
             abort(); // be NOISY unless overridden!
         }
@@ -404,6 +404,11 @@ void MApplication::InitOptions()
     qInstallMessageHandler(noisyFailureMsgHandler);
 
     OpenSettings();
+    VSeamlyMeSettings *settings = SeamlyMeSettings();
+    QDir().mkpath(settings->GetDefPathTemplate());
+    QDir().mkpath(settings->GetDefPathIndividualMeasurements());
+    QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
+    QDir().mkpath(settings->GetDefPathLabelTemplate());
 
     qCDebug(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
     qCDebug(mApp, "Build revision: %s", BUILD_REVISION);
@@ -525,15 +530,7 @@ QString MApplication::diagramsPath() const
         }
     }
 #else // Unix
-    QFileInfo file(QCoreApplication::applicationDirPath() + dPath);
-    if (file.exists())
-    {
-        return file.absoluteFilePath();
-    }
-    else
-    {
-        return QStringLiteral("/usr/share/seamly2d") + dPath;
-    }
+    return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + dPath;
 #endif
 }
 

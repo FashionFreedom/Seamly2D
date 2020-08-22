@@ -812,7 +812,7 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
 
     setPen(toolPen);
     m_seamAllowance->setPen(toolPen);
-    m_passmarks->setPen(toolPen);
+    m_notches->setPen(toolPen);
 
     if ((m_dataLabel->IsIdle() == false
             || m_patternInfo->IsIdle() == false
@@ -1139,7 +1139,7 @@ VToolSeamAllowance::VToolSeamAllowance(VAbstractPattern *doc, VContainer *data, 
       m_dataLabel(new VTextGraphicsItem(this)),
       m_patternInfo(new VTextGraphicsItem(this)),
       m_grainLine(new VGrainlineItem(this)),
-      m_passmarks(new QGraphicsPathItem(this))
+      m_notches(new QGraphicsPathItem(this))
 {
     VPiece detail = data->GetPiece(id);
     InitNodes(detail, scene);
@@ -1197,8 +1197,8 @@ void VToolSeamAllowance::UpdateExcludeState()
             VNodePoint *tool = qobject_cast<VNodePoint*>(VAbstractPattern::getTool(node.GetId()));
             SCASSERT(tool != nullptr);
 
-            tool->SetExluded(node.IsExcluded());
-            tool->setVisible(not node.IsExcluded());//Hide excluded point
+            tool->SetExluded(node.isExcluded());
+            tool->setVisible(not node.isExcluded());//Hide excluded point
         }
     }
 }
@@ -1235,7 +1235,7 @@ void VToolSeamAllowance::RefreshGeometry()
         seamAllowancePoints = detail.SeamAllowancePoints(this->getData());
     }
 
-    m_passmarks->setPath(detail.PassmarksPath(this->getData(), seamAllowancePoints));
+    m_notches->setPath(detail.getNotchesPath(this->getData(), seamAllowancePoints));
 
     this->setPos(detail.GetMx(), detail.GetMy());
 
@@ -1485,8 +1485,8 @@ void VToolSeamAllowance::InitNode(const VPieceNode &node, VMainGraphicsScene *sc
             connect(tool, &VNodePoint::ChoosedTool, scene, &VMainGraphicsScene::ChoosedItem);
             tool->setParentItem(parent);
             tool->SetParentType(ParentType::Item);
-            tool->SetExluded(node.IsExcluded());
-            tool->setVisible(not node.IsExcluded());//Hide excluded point
+            tool->SetExluded(node.isExcluded());
+            tool->setVisible(not node.isExcluded());//Hide excluded point
             doc->IncrementReferens(node.GetId());
             break;
         }

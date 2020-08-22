@@ -50,47 +50,7 @@ jobs:
           version: ${{ env.QT_VERSION }}
 
       - name: build
-        run: |
-          mkdir /home/runner/local
-          qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-          make
-          make install
-
-      - name: tar.gz package
-        run: |
-          tar cfz linux.tar.gz /home/runner/local
-
-      - name: upload linux.tar.gz
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./linux.tar.gz
-          asset_name: linux-build.tar.gz
-          asset_content_type: application/gzip
-
-
-      # the AppImage bundler relies on fuse during packaging
-      - name: install AppImage system dependency
-        run: |
-          sudo apt update
-          sudo apt install fuse
-
-      - name: AppImages
-        run: |
-          mkdir -p /home/runner/local/share/applications /home/runner/local/share/icons/hicolor/256x256
-
-          cp dist/seamly2d.desktop /home/runner/local/share/applications/
-          cp share/img/Seamly2D_logo_254x254.png /home/runner/local/share/icons/hicolor/256x256/seamly2d.png
-
-          docker run --cap-add SYS_ADMIN --device /dev/fuse \
-            --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-            -v /home/runner/local:/app/usr \
-            -e EXTRA_BINARIES="seamlyme" \
-            --rm mhitza/linuxdeployqt:${{ env.QT_VERSION }}
-
-          mv /home/runner/local/Seamly2D*.AppImage Seamly2D.AppImage
+        run: .github/workflows/build-linux-pkg.sh
 
       - name: upload Seamly2D.AppImage
         uses: actions/upload-release-asset@v1
@@ -124,25 +84,19 @@ jobs:
           hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
           hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
 
-      - name: upload Seamly2D.dmg
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./Seamly2D.dmg
-          asset_name: Seamly2D.dmg
-          asset_content_type: application/x-apple-diskimage
+      - name: pack package files into .zip
+        run: |
+          zip Seamly2D.zip Seamly2D.dmg SeamlyME.dmg
 
-      - name: upload SeamlyME.dmg
+      - name: upload Seamly2D.zip
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./SeamlyME.dmg
-          asset_name: SeamlyME.dmg
-          asset_content_type: application/x-apple-diskimage
+          asset_path: ./Seamly2D.zip
+          asset_name: Seamly2D.zip
+          asset_content_type: application/zip
 
   windows:
     runs-on: windows-latest
@@ -177,6 +131,10 @@ jobs:
           copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
+
+          New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
+          Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
+          Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
 
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi

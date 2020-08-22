@@ -71,6 +71,9 @@ protected:
     virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
+public slots:
+	void setProgressValue(int val);
+
 private:
     Q_DISABLE_COPY(DialogAboutSeamlyMe)
     Ui::DialogAboutSeamlyMe *ui;

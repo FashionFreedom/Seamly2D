@@ -4034,11 +4034,11 @@ Apply settings anyway?</source>
         <translation>Έχετε διπλά σημεία!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4066,7 +4066,7 @@ Apply settings anyway?</source>
         <translation>Διχοτόμος</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4973,7 +4973,7 @@ Apply settings anyway?</source>
         <translation>Εξαιρούμενο</translation>
     </message>
     <message>
-        <source>Passmark</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4981,7 +4981,7 @@ Apply settings anyway?</source>
         <translation>Κάθε σημείο στο μονοπάτι πρέπει να είναι μοναδικό!</translation>
     </message>
     <message>
-        <source>Passmarks</source>
+        <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8788,7 +8788,7 @@ Do you want to save your changes?</source>
 <context>
     <name>TabPassmarks</name>
     <message>
-        <source>Passmark:</source>
+        <source>Notch:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
