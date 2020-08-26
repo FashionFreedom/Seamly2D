@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -82,6 +82,12 @@
 #include "../vmisc/vcommonsettings.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 
+struct NodeInfo
+{
+     QString icon;
+     QString name;
+};
+
 template <class T> class QSharedPointer;
 
 Q_DECLARE_LOGGING_CATEGORY(vDialog)
@@ -114,6 +120,12 @@ public:
     void             SetToolId(const quint32 &value);
 
     QString          getPointName() const;
+
+    static void      moveListRowTop(QListWidget *list);
+    static void      moveListRowUp(QListWidget *list);
+    static void      moveListRowDown(QListWidget *list);
+    static void      moveListRowBottom(QListWidget *list);
+
 signals:
     /**
      * @brief DialogClosed signal dialog closed
@@ -129,6 +141,7 @@ signals:
      * @param toolTip text tooltipe
      */
     void             ToolTip(const QString &toolTip);
+    
 public slots:
     virtual void     ChosenObject(quint32 id, const SceneObject &type);
     virtual void     SelectedObject(bool selected, quint32 object, quint32 tool);
@@ -301,7 +314,7 @@ protected:
     static QString   DialogWarningIcon();
     static QFont     NodeFont(bool nodeExcluded);
 
-    QString          GetNodeName(const VPieceNode &node, bool showNotch = false) const;
+    NodeInfo         getNodeInfo(const VPieceNode &node, bool showNotch = false) const;
     void             NewNodeItem(QListWidget *listWidget, const VPieceNode &node);
 
     void             InitNodeAngles(QComboBox *box);

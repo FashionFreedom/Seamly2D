@@ -317,7 +317,7 @@ NotchType VPieceNode::getNotchType() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::setNotchLineType(NotchType lineType)
+void VPieceNode::setNotchType(NotchType lineType)
 {
     d->m_notchType = lineType;
 }
@@ -329,9 +329,21 @@ NotchSubType VPieceNode::getNotchSubType() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::setNotchAngleType(NotchSubType angleType)
+void VPieceNode::setNotchSubType(NotchSubType notchSubType)
 {
-    d->m_notchSubType = angleType;
+    d->m_notchSubType = notchSubType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VPieceNode::showNotch() const
+{
+    return d->m_showNotch;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPieceNode::setShowNotch(bool value)
+{
+    d->m_showNotch = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -344,6 +356,55 @@ bool VPieceNode::showSecondNotch() const
 void VPieceNode::setShowSecondNotch(bool value)
 {
     d->m_showSecondNotch = value;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPieceNode::setNotchLength(qreal notchLength)
+{
+    d->m_notchLength = notchLength;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VPieceNode::getNotchLength() const
+{
+    return d->m_notchLength;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPieceNode::setNotchWidth(qreal notchWidth)
+{
+    d->m_notchWidth = notchWidth;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VPieceNode::getNotchWidth() const
+{
+    return d->m_notchWidth;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPieceNode::setNotchAngle(qreal notchAngle)
+{
+    d->m_notchAngle = notchAngle;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VPieceNode::getNotchAngle() const
+{
+    return d->m_notchAngle;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPieceNode::setNotchCount(int notchCount)
+{
+    d->m_notchCount = notchCount;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VPieceNode::getNotchCount() const
+{
+    return d->m_notchCount;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

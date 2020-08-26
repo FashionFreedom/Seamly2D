@@ -51,17 +51,15 @@
 
 #include "vpiece.h"
 #include "vpiece_p.h"
+#include "vcontainer.h"
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vabstractcurve.h"
-#include "vcontainer.h"
+#include "../vgeometry/varc.h"
 #include "../vmisc/vabstractapplication.h"
 
 #include <QSharedPointer>
 #include <QDebug>
 #include <QPainterPath>
-
-const qreal notchFactor = 0.5;
-const qreal maxNotchLength = (10/*mm*/ / 25.4) * PrintDPI;
 
 namespace
 {
@@ -92,178 +90,6 @@ QVector<quint32> PieceMissingNodes(const QVector<quint32> &d1Nodes, const QVecto
     }
 
     return r;
-}
-
-const qreal notchGap = (1.5/*mm*/ / 25.4) * PrintDPI;
-
-//---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> createTwoNotchLines(const QLineF &line)
-{
-    QPointF l1p1;
-    {
-        QLineF line1 = line;
-        line1.setAngle(line1.angle() + 90);
-        line1.setLength(notchGap/2.);
-        l1p1 = line1.p2();
-    }
-
-    QPointF l2p1;
-    {
-        QLineF line2 = line;
-        line2.setAngle(line2.angle() - 90);
-        line2.setLength(notchGap/2.);
-        l2p1 = line2.p2();
-    }
-
-    QPointF l1p2;
-    {
-        QLineF line1 = QLineF(line.p2(), line.p1());
-        line1.setAngle(line1.angle() - 90);
-        line1.setLength(notchGap/2.);
-        l1p2 = line1.p2();
-    }
-
-    QPointF l2p2;
-    {
-        QLineF line2 = QLineF(line.p2(), line.p1());
-        line2.setAngle(line2.angle() + 90);
-        line2.setLength(notchGap/2.);
-        l2p2 = line2.p2();
-    }
-
-    QVector<QLineF> lines;
-    lines.append(QLineF(l1p1, l1p2));
-    lines.append(QLineF(l2p1, l2p2));
-    return lines;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> createThreeNotchLines(const QLineF &line)
-{
-    QPointF l1p1;
-    {
-        QLineF line1 = line;
-        line1.setAngle(line1.angle() + 90);
-        line1.setLength(notchGap);
-        l1p1 = line1.p2();
-    }
-
-    QPointF l2p1;
-    {
-        QLineF line2 = line;
-        line2.setAngle(line2.angle() - 90);
-        line2.setLength(notchGap);
-        l2p1 = line2.p2();
-    }
-
-    QPointF l1p2;
-    {
-        QLineF line1 = QLineF(line.p2(), line.p1());
-        line1.setAngle(line1.angle() - 90);
-        line1.setLength(notchGap);
-        l1p2 = line1.p2();
-    }
-
-    QPointF l2p2;
-    {
-        QLineF line2 = QLineF(line.p2(), line.p1());
-        line2.setAngle(line2.angle() + 90);
-        line2.setLength(notchGap);
-        l2p2 = line2.p2();
-    }
-
-    QVector<QLineF> lines;
-    lines.append(QLineF(l1p1, l1p2));
-    lines.append(line);
-    lines.append(QLineF(l2p1, l2p2));
-    return lines;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> createTMarkNotch(const QLineF &line)
-{
-    QPointF p1;
-    {
-        QLineF tmpLine = QLineF(line.p2(), line.p1());
-        tmpLine.setAngle(tmpLine.angle() - 90);
-        tmpLine.setLength(line.length() * 0.75 / 2);
-        p1 = tmpLine.p2();
-    }
-
-    QPointF p2;
-    {
-        QLineF tmpLine = QLineF(line.p2(), line.p1());
-        tmpLine.setAngle(tmpLine.angle() + 90);
-        tmpLine.setLength(line.length() * 0.75 / 2);
-        p2 = tmpLine.p2();
-    }
-
-    QVector<QLineF> lines;
-    lines.append(line);
-    lines.append(QLineF(p1, p2));
-    return lines;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> createVMarkNotch(const QLineF &line)
-{
-    QLineF l1 = line;
-    l1.setAngle(l1.angle() - 35);
-
-    QLineF l2 = line;
-    l2.setAngle(l2.angle() + 35);
-
-    QVector<QLineF> lines;
-    lines.append(l1);
-    lines.append(l2);
-    return lines;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> createNotches(NotchType notchType, NotchSubType notchSubType, const QLineF &line)
-{
-    QVector<QLineF> notches;
-
-    if (notchSubType == NotchSubType::Straightforward || notchSubType == NotchSubType::Intersection)
-    {
-        switch (notchType)
-        {
-            case NotchType::TwoLines:
-                notches += createTwoNotchLines(line);
-                break;
-            case NotchType::ThreeLines:
-                notches += createThreeNotchLines(line);
-                break;
-            case NotchType::TMark:
-                notches += createTMarkNotch(line);
-                break;
-            case NotchType::VMark:
-                notches += createVMarkNotch(line);
-                break;
-            case NotchType::OneLine:
-            default:
-                notches.append(line);
-                break;
-        }
-    }
-    else
-    {
-        switch (notchType)
-        {
-            case NotchType::TMark:
-                notches += createTMarkNotch(line);
-                break;
-            case NotchType::OneLine:
-            case NotchType::TwoLines:
-            case NotchType::ThreeLines:
-            case NotchType::VMark:
-            default:
-                notches.append(line);
-                break;
-        }
-    }
-
-    return notches;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -522,9 +348,9 @@ QPainterPath VPiece::SeamAllowancePath(const QVector<QPointF> &points) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPainterPath VPiece::getNotchesPath(const VContainer *data, const QVector<QPointF> &seamAllowance) const
+QPainterPath VPiece::getNotchesPath(const VContainer *data, const QVector<QPointF> &pathPoints) const
 {
-    const QVector<QLineF> notches = createNotchLines(data, seamAllowance);
+    const QVector<QLineF> notches = createNotchLines(data, pathPoints);
     QPainterPath path;
 
     // seam allowence
@@ -966,8 +792,8 @@ bool VPiece::getNotchPreviousSAPoints(const QVector<VPieceNode> &path, int index
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VPiece::getNotchNextSAPoints(const QVector<VPieceNode> &path, int index, const VSAPoint &notchSAPoint,
-                                    const VContainer *data, VSAPoint &point) const
+int VPiece::getNextNotchSAPoints(const QVector<VPieceNode> &path, int index, const VSAPoint &notchSAPoint,
+                                 const VContainer *data, VSAPoint &point) const
 {
     SCASSERT(data != nullptr)
 
@@ -1010,7 +836,7 @@ bool VPiece::getSeamNotchSAPoint(const VSAPoint &previousSAPoint, const VSAPoint
 
     /* Because method VAbstractPiece::EkvPoint has troubles with edges on a same line we should specially treat such
        cases.
-       First check if two edges and seam alowance create paralell lines.
+       First check if two edges and seam alowance create parallel lines.
        Second case check if two edges are on a same line geometrically and a notch point has equal SA width.*/
     if (IsEkvPointOnLine(notchSAPoint, previousSAPoint, nextSAPoint)// see issue #665
         || (IsEkvPointOnLine(static_cast<QPointF>(notchSAPoint), static_cast<QPointF>(previousSAPoint),
@@ -1089,7 +915,7 @@ bool VPiece::isNotchVisible(const QVector<VPieceNode> &path, int notchIndex) con
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previousIndex, int notchIndex,
                                        int nextIndex, const VContainer *data,
-                                       const QVector<QPointF> &seamAllowance) const
+                                       const QVector<QPointF> &pathPoints) const
 {
     SCASSERT(data != nullptr);
 
@@ -1105,42 +931,48 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
     }
 
     VSAPoint previousSAPoint;
-    if (not getNotchPreviousSAPoints(path, previousIndex, notchSAPoint, data,
-                                        previousSAPoint))
+    if (not getNotchPreviousSAPoints(path, previousIndex, notchSAPoint, data, previousSAPoint))
     {
         return QVector<QLineF>(); // Something wrong
     }
 
     VSAPoint nextSAPoint;
-    if (not getNotchNextSAPoints(path, nextIndex, notchSAPoint, data, nextSAPoint))
+    if (not getNextNotchSAPoints(path, nextIndex, notchSAPoint, data, nextSAPoint))
     {
         return QVector<QLineF>(); // Something wrong
     }
 
+    const QVector<QPointF> mainPathPoints = MainPathPoints(data);
     if (not IsSeamAllowanceBuiltIn())
     {
         QVector<QLineF> lines;
-        lines += createSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex, seamAllowance);
-        if (qApp->Settings()->isDoubleNotch()
+        if (path.at(notchIndex).showNotch())
+        {
+            lines += createSeamAllowanceNotch(path, previousSAPoint, notchSAPoint,  nextSAPoint,
+                                              data, notchIndex, pathPoints);
+        }
+        if (qApp->Settings()->showSecondNotch()
                 && not IsHideMainPath()
                 && path.at(notchIndex).IsMainPathNode()
                 && path.at(notchIndex).getNotchSubType() != NotchSubType::Intersection
                 && path.at(notchIndex).showSecondNotch())
         {
-            lines += createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex);
+            lines += createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data,
+                                          notchIndex, mainPathPoints);
         }
         return lines;
     }
     else
     {
-        return createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex);
+        return createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data, notchIndex, mainPathPoints);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> VPiece::createSaNotch(const QVector<VPieceNode> &path, VSAPoint &previousSAPoint,
-                                   const VSAPoint &notchSAPoint, VSAPoint &nextSAPoint, const VContainer *data,
-                                   int notchIndex, const QVector<QPointF> &seamAllowance) const
+QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path, VSAPoint &previousSAPoint,
+                                                 const VSAPoint &notchSAPoint, VSAPoint &nextSAPoint,
+                                                 const VContainer *data, int notchIndex,
+                                                 const QVector<QPointF> &pathPoints) const
 {
     QPointF seamNotchSAPoint;
     if (not getSeamNotchSAPoint(previousSAPoint, notchSAPoint, nextSAPoint, data, seamNotchSAPoint))
@@ -1148,36 +980,44 @@ QVector<QLineF> VPiece::createSaNotch(const QVector<VPieceNode> &path, VSAPoint 
         return QVector<QLineF>(); // Something wrong
     }
 
-    const qreal width = ToPixel(GetSAWidth(), *data->GetPatternUnit());
-
     QVector<QLineF> notches;
 
-    qreal notchLength = VAbstractPiece::MaxLocalSA(notchSAPoint, width) * notchFactor;
-    notchLength = qMin(notchLength, maxNotchLength);
     const VPieceNode &node = path.at(notchIndex);
+
+    NotchData notchData;
+    notchData.type    = node.getNotchType();
+    notchData.subType = node.getNotchSubType          ();
+    notchData.length  = ToPixel(node.getNotchLength(), *data->GetPatternUnit());
+    notchData.width   = ToPixel(node.getNotchWidth(),  *data->GetPatternUnit());
+    notchData.angle   = node.getNotchAngle();
+    notchData.count   = node.getNotchCount();
+
+
     if (node.getNotchSubType() == NotchSubType::Straightforward)
     {
         QLineF line = QLineF(seamNotchSAPoint, notchSAPoint);
-        line.setLength(notchLength);
-        notches += createNotches(node.getNotchType(), node.getNotchSubType(), line);
+        line.setLength(notchData.length);
+        notchData.line  = line;
+        notches += createNotches(notchData, pathPoints);
     }
     else if (node.getNotchSubType() == NotchSubType::Bisector)
     {
-        const QLineF bigLine1 = ParallelLine(previousSAPoint, notchSAPoint, width );
-        const QLineF bigLine2 = ParallelLine(notchSAPoint, nextSAPoint, width );
+        const QLineF bigLine1 = createParallelLine(previousSAPoint, notchSAPoint, notchData.width );
+        const QLineF bigLine2 = createParallelLine(notchSAPoint, nextSAPoint, notchData.width );
 
         QLineF edge1 = QLineF(seamNotchSAPoint, bigLine1.p1());
         QLineF edge2 = QLineF(seamNotchSAPoint, bigLine2.p2());
 
         edge1.setAngle(edge1.angle() + edge1.angleTo(edge2)/2.);
-        edge1.setLength(notchLength);
+        edge1.setLength(notchData.length);
 
-        notches += createNotches(node.getNotchType(), node.getNotchSubType(), edge1);
+        notchData.line  = edge1;
+        notches += createNotches(notchData, pathPoints);
     }
     else if (node.getNotchSubType() == NotchSubType::Intersection)
     {
         QVector<QPointF> seamPoints;
-        seamAllowance.isEmpty() ? seamPoints = SeamAllowancePoints(data) : seamPoints = seamAllowance;
+        pathPoints.isEmpty() ? seamPoints = SeamAllowancePoints(data) : seamPoints = pathPoints;
 
         {
             // first notch
@@ -1191,9 +1031,10 @@ QVector<QLineF> VPiece::createSaNotch(const QVector<VPieceNode> &path, VSAPoint 
             }
 
             line = QLineF(intersections.first(), notchSAPoint);
-            line.setLength(qMin(notchSAPoint.GetSAAfter(width) * notchFactor, maxNotchLength));
+            line.setLength(notchData.length);
 
-            notches += createNotches(node.getNotchType(), node.getNotchSubType(), line);
+            notchData.line = line;
+            notches += createNotches(notchData, pathPoints);
         }
 
         {
@@ -1209,9 +1050,10 @@ QVector<QLineF> VPiece::createSaNotch(const QVector<VPieceNode> &path, VSAPoint 
             }
 
             line = QLineF(intersections.last(), notchSAPoint);
-            line.setLength(qMin(notchSAPoint.GetSABefore(width) * notchFactor, maxNotchLength));
+            line.setLength(notchData.length);
 
-            notches += createNotches(node.getNotchType(), node.getNotchSubType(), line);
+            notchData.line = line;
+            notches += createNotches(notchData, pathPoints);
         }
     }
 
@@ -1220,23 +1062,29 @@ QVector<QLineF> VPiece::createSaNotch(const QVector<VPieceNode> &path, VSAPoint 
 
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QLineF> VPiece::createBuiltInSaNotch(const QVector<VPieceNode> &path, const VSAPoint &previousSAPoint,
-                                          const VSAPoint &notchSAPoint, const VSAPoint &nextSAPoint,
-                                          const VContainer *data, int notchIndex) const
+                                             const VSAPoint &notchSAPoint, const VSAPoint &nextSAPoint,
+                                             const VContainer *data, int notchIndex,
+                                             const QVector<QPointF> &pathPoints) const
 {
     QVector<QLineF> notches;
 
-    const qreal width = ToPixel(GetSAWidth(), *data->GetPatternUnit());
-    qreal notchLength = VAbstractPiece::MaxLocalSA(notchSAPoint, width) * notchFactor;
-    notchLength = qMin(notchLength, maxNotchLength);
+    const VPieceNode &node = path.at(notchIndex);
 
     QLineF edge1 = QLineF(notchSAPoint, previousSAPoint);
     QLineF edge2 = QLineF(notchSAPoint, nextSAPoint);
 
-    edge1.setAngle(edge1.angle() + edge1.angleTo(edge2)/2.);
-    edge1.setLength(notchLength);
+    NotchData notchData;
+    notchData.type    = node.getNotchType();
+    notchData.subType = node.getNotchSubType          ();
+    notchData.length  = ToPixel(node.getNotchLength(), *data->GetPatternUnit());
+    notchData.width   = ToPixel(node.getNotchWidth(), *data->GetPatternUnit());
+    notchData.angle   = node.getNotchAngle();
+    notchData.count   = node.getNotchCount();
 
-    const VPieceNode &node = path.at(notchIndex);
-    notches += createNotches(node.getNotchType(), node.getNotchSubType(), edge1);
+    edge1.setAngle(edge1.angle() + edge1.angleTo(edge2)/2.);
+    edge1.setLength(notchData.length);
+    notchData.line = edge1;
+    notches += createNotches(notchData, pathPoints);
 
     return notches;
 }
@@ -1253,4 +1101,401 @@ int VPiece::IsCSAStart(const QVector<CustomSARecord> &records, quint32 id)
     }
 
     return -1;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createSlitNotch(NotchData notchData) const
+{
+    QLineF refline = QLineF(notchData.line);
+    qreal  length  = notchData.length;
+    qreal  width   = notchData.width;
+    qreal  angle   = notchData.angle;
+    qreal  offset  = notchData.offset;
+    int    count   = notchData.count;
+
+    QLineF line = createParallelLine(refline.p1(), refline.p2(), offset);
+    line.setAngle(line.angle() + angle);
+
+    QVector<QLineF> lines;
+    lines.append(line);
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createTNotch(NotchData notchData) const
+{
+    QLineF refline = QLineF(notchData.line);
+    //qreal length   = notchData.length;
+    qreal width    = notchData.width;
+    qreal angle    = notchData.angle;
+    qreal offset   = notchData.offset;
+
+    QLineF line = createParallelLine(refline.p1(), refline.p2(), offset);
+    line.setAngle(line.angle() + angle);
+
+    QPointF p1;
+    {
+        QLineF tmpLine = QLineF(line.p2(), line.p1());
+        tmpLine.setAngle(tmpLine.angle() - 90);
+        tmpLine.setLength(width  * 0.75 / 2);
+        p1 = tmpLine.p2();
+    }
+
+    QPointF p2;
+    {
+        QLineF tmpLine = QLineF(line.p2(), line.p1());
+        tmpLine.setAngle(tmpLine.angle() + 90);
+        tmpLine.setLength(width * 0.75 / 2);
+        p2 = tmpLine.p2();
+    }
+
+    QVector<QLineF> lines;
+    lines.append(line);
+    lines.append(QLineF(p1, p2));
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createUNotch(const NotchData notchData, const QVector<QPointF> &pathPoints) const
+{
+    QLineF refline = QLineF(notchData.line);
+    qreal length   = notchData.length;
+    qreal width    = notchData.width;
+    qreal angle    = notchData.angle;
+    qreal offset   = notchData.offset;
+
+    QLineF centerLine = createParallelLine(refline.p1(), refline.p2(), offset);
+
+    QLineF line1 = createParallelLine(centerLine.p1(), centerLine.p2(), width / 2.);
+    line1.setLength(length / 2.);
+    line1.setAngle(line1.angle() + angle);
+
+    QLineF line2 = createParallelLine(centerLine.p1(), centerLine.p2(), - width / 2.);
+    line2.setLength(length / 2.);
+    line2.setAngle(line2.angle() + angle);
+
+    centerLine.setLength(length / 2.);
+    centerLine.setAngle(centerLine.angle() + angle);
+
+    VArc arc(VPointF(centerLine.p2()), width / 2., QLineF(centerLine.p2(), line2.p2()).angle(), QLineF(centerLine.p2(), line1.p2()).angle());
+
+    QVector<QLineF> lines;
+    lines.append(arc.getSegments());
+    lines.append(findIntersection(pathPoints, QLineF(line1.p2(), line1.p1())));
+    lines.append(findIntersection(pathPoints, QLineF(line2.p2(), line2.p1())));
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createVInternalNotch(NotchData notchData) const
+{
+    QLineF refline = QLineF(notchData.line);
+    //qreal length   = notchData.length;
+    qreal width    = notchData.width;
+    qreal angle    = notchData.angle;
+    qreal offset   = notchData.offset;
+
+    QLineF line = createParallelLine(refline.p2(), refline.p1(), offset);
+    line.setAngle(line.angle() + angle);
+    QPointF p1;
+    {
+        QLineF tmpLine = QLineF(line.p1(), line.p2());
+        tmpLine.setAngle(tmpLine.angle() - 90);
+        tmpLine.setLength(width / 2);
+        p1 = tmpLine.p2();
+    }
+
+    QPointF p2;
+    {
+        QLineF tmpLine = QLineF(line.p1(), line.p2());
+        tmpLine.setAngle(tmpLine.angle() + 90);
+        tmpLine.setLength(width / 2);
+        p2 = tmpLine.p2();
+    }
+
+    QVector<QLineF> lines;
+    lines.append(QLineF(line.p2(), p2));
+    lines.append(QLineF(line.p2(), p1));
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createVExternalNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const
+{
+    QLineF refline = QLineF(notchData.line);
+    //qreal length   = notchData.length;
+    qreal width    = notchData.width;
+    qreal angle    = notchData.angle;
+    qreal offset   = notchData.offset;
+
+    QLineF line = createParallelLine(refline.p1(), refline.p2(), offset);
+    line.setAngle(line.angle() + angle);
+
+    QPointF p1;
+    {
+        QLineF tmpLine = QLineF(line.p1(), line.p2());
+        tmpLine.setAngle(tmpLine.angle() - 90);
+        tmpLine.setLength(width / 2);
+        p1 = tmpLine.p2();
+    }
+
+    QPointF p2;
+    {
+        QLineF tmpLine = QLineF(line.p1(), line.p2());
+        tmpLine.setAngle(tmpLine.angle() + 90);
+        tmpLine.setLength(width / 2);
+        p2 = tmpLine.p2();
+    }
+
+    QVector<QLineF> lines;
+    lines.append(findIntersection(pathPoints, QLineF(line.p2(), p2)));
+    lines.append(findIntersection(pathPoints, QLineF(line.p2(), p1)));
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createCastleNotch(const NotchData notchData, const QVector<QPointF> &pathPoints) const
+{
+    QLineF refline = notchData.line;
+    //qreal length    = notchData.length;
+    qreal width    = notchData.width;
+    qreal angle    = notchData.angle;
+    qreal offset   = notchData.offset;
+
+    QLineF line = createParallelLine(refline.p1(), refline.p2(), offset);
+
+    QLineF line1 = createParallelLine(line.p1(), line.p2(), width / 2.);
+    line1.setAngle(line1.angle() + angle);
+    QLineF line2 = createParallelLine(line.p1(), line.p2(), -width / 2.);
+    line2.setAngle(line2.angle() + angle);
+
+    QVector<QLineF> lines;
+    lines.append(QLineF(line1.p2(), line2.p2()));
+    lines.append(findIntersection(pathPoints, QLineF(line1.p2(), line1.p1())));
+    lines.append(findIntersection(pathPoints, QLineF(line2.p2(), line2.p1())));
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createDiamondNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const
+{
+    //QLineF refline = notchData.line;
+    //qreal length    = notchData.length;
+    //qreal width    = notchData.width;
+    qreal angle    = notchData.angle;
+    //qreal offset   = notchData.offset;
+
+    QVector<QLineF> lines;
+    lines += createVExternalNotch(notchData, pathPoints);
+    notchData.angle = angle - 180;
+    lines += createVExternalNotch(notchData, pathPoints);
+    return lines;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF> &pathPoints) const
+{
+    int count            = notchData.count;
+    NotchType type       = notchData.type;
+    NotchSubType           subType = notchData.subType;
+    qreal width          = notchData.width;
+
+    QVector<QLineF> notches;
+
+    if (subType == NotchSubType          ::Straightforward)
+    {
+        switch (type)
+        {
+            case NotchType::TNotch:
+            {
+                switch (count)
+                {
+                    case 2:
+                        notchData.offset = width * .625;
+                        notches += createTNotch(notchData);
+                        notchData.offset = -(width * .625);
+                        notches += createTNotch(notchData);
+                        break;
+                    case 3:
+                        notchData.offset = 0;
+                        notches += createTNotch(notchData);
+                        notchData.offset = width * 1.25;
+                        notches += createTNotch(notchData);
+                        notchData.offset = -(width * 1.25);
+                        notches += createTNotch(notchData);
+                        break;
+                    case 1:
+                    default:
+                        notchData.offset = 0;
+                        notches += createTNotch(notchData);
+                        break;
+                }
+                break;
+            case NotchType::UNotch:
+                switch (count)
+                {
+                    case 2:
+                        notchData.offset = width * .625;
+                        notches += createUNotch(notchData, pathPoints);
+                        notchData.offset = -(width * .625);
+                        notches += createUNotch(notchData, pathPoints);
+                        break;
+                    case 3:
+                        notchData.offset = 0;
+                        notches += createUNotch(notchData, pathPoints);
+                        notchData.offset = width * 1.375;
+                        notches += createUNotch(notchData, pathPoints);
+                        notchData.offset = -(width * 1.375);
+                        notches += createUNotch(notchData, pathPoints);
+                        break;
+                    case 1:
+                    default:
+                        notchData.offset = 0;
+                        notches += createUNotch(notchData, pathPoints);
+                        break;
+                }
+                break;
+            case NotchType::VInternal:
+                switch (count)
+                {
+                    case 2:
+                        notchData.offset = width * .625;
+                        notches += createVInternalNotch(notchData);
+                        notchData.offset = -(width * .625);
+                        notches += createVInternalNotch(notchData);
+                        break;
+                    case 3:
+                        notchData.offset = 0;
+                        notches += createVInternalNotch(notchData);
+                        notchData.offset = width * 1.25;
+                        notches += createVInternalNotch(notchData);
+                        notchData.offset = -(width * 1.25);
+                        notches += createVInternalNotch(notchData);
+                        break;
+                    case 1:
+                    default:
+                        notchData.offset = 0;
+                        notches += createVInternalNotch(notchData);
+                        break;
+                }
+                break;
+            case NotchType::VExternal:
+                switch (count)
+                {
+                    case 2:
+                        notchData.offset = width * .625;
+                        notches += createVExternalNotch(notchData, pathPoints);
+                        notchData.offset = -(width * .625);
+                        notches += createVExternalNotch(notchData, pathPoints);
+                        break;
+                    case 3:
+                        notchData.offset = 0;
+                        notches += createVExternalNotch(notchData, pathPoints);
+                        notchData.offset = width * 1.25;
+                        notches += createVExternalNotch(notchData, pathPoints);
+                        notchData.offset = -(width * 1.25);
+                        notches += createVExternalNotch(notchData, pathPoints);
+                        break;
+                    case 1:
+                    default:
+                        notchData.offset = 0;
+                        notches += createVExternalNotch(notchData, pathPoints);
+                        break;
+                }
+                break;
+            case NotchType::Castle:
+                switch (count)
+                {
+                    case 2:
+                        notchData.offset = width * .625;
+                        notches += createCastleNotch(notchData, pathPoints);
+                        notchData.offset = -(width * .625);
+                        notches += createCastleNotch(notchData, pathPoints);
+                        break;
+                    case 3:
+                        notchData.offset = 0;
+                        notches += createCastleNotch(notchData, pathPoints);
+                        notchData.offset = width * 1.375;
+                        notches += createCastleNotch(notchData, pathPoints);
+                        notchData.offset = -(width * 1.375);
+                        notches += createCastleNotch(notchData, pathPoints);
+                        break;
+                    case 1:
+                    default:
+                        notchData.offset = 0;
+                        notches += createCastleNotch(notchData, pathPoints);
+                        break;
+                }
+                break;
+                case NotchType::Diamond:
+                    switch (count)
+                    {
+                        case 2:
+                            notchData.offset = width * .625;
+                            notches += createDiamondNotch(notchData, pathPoints);
+                            notchData.offset = -(width * .625);
+                            notches += createDiamondNotch(notchData, pathPoints);
+                            break;
+                        case 3:
+                            notchData.offset = 0;
+                            notches += createDiamondNotch(notchData, pathPoints);
+                            notchData.offset = width * 1.375;
+                            notches += createDiamondNotch(notchData, pathPoints);
+                            notchData.offset = -(width * 1.375);
+                            notches += createDiamondNotch(notchData, pathPoints);
+                            break;
+                        case 1:
+                        default:
+                            notchData.offset = 0;
+                            notches += createDiamondNotch(notchData, pathPoints);
+                            break;
+                    }
+                    break;
+            case NotchType::Slit:
+            default:
+                switch (count)
+                {
+                    case 2:
+                        notchData.offset = width * .625;
+                        notches += createSlitNotch(notchData);
+                        notchData.offset = -(width * .625);
+                        notches += createSlitNotch(notchData);
+                        break;
+                    case 3:
+                        notchData.offset = 0;
+                        notches += createSlitNotch(notchData);
+                        notchData.offset = width * 1.25;
+                        notches += createSlitNotch(notchData);
+                        notchData.offset = -(width * 1.25);
+                        notches += createSlitNotch(notchData);
+                        break;
+                    case 1:
+                    default:
+                        notchData.offset = 0;
+                        notches += createSlitNotch(notchData);
+                        break;
+                }
+            }
+        }
+    }
+    else
+    {
+        notchData.offset = 0;
+        notches += createSlitNotch(notchData);
+    }
+
+    return notches;
+}
+
+QLineF VPiece::findIntersection(const QVector<QPointF> &pathPoints, const QLineF &line) const
+{
+    QLineF tempLine = line;
+    tempLine.setLength(tempLine.length()*10);
+    QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(pathPoints, tempLine);
+    if (not intersections.isEmpty())
+    {
+        return QLineF(line.p1(), intersections.last());
+    }
+
+    return line;
 }

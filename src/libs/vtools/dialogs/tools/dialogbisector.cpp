@@ -371,7 +371,7 @@ void DialogBisector::closeEvent(QCloseEvent *event)
  */
 QString DialogBisector::GetTypeLine() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

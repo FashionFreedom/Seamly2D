@@ -205,10 +205,10 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     connect(ui->lineEditCustomerName, &QLineEdit::editingFinished, this, &DialogPatternProperties::LabelDataChanged);
     connect(ui->pushButtonEditPatternLabel, &QPushButton::clicked, this, &DialogPatternProperties::EditLabel);
 
-    InitComboBoxFormats(ui->comboBoxDateFormat,
+    initComboBoxFormats(ui->comboBoxDateFormat,
                         VSettings::PredefinedDateFormats() + settings->GetUserDefinedDateFormats(),
                         doc->GetLabelDateFormat());
-    InitComboBoxFormats(ui->comboBoxTimeFormat,
+    initComboBoxFormats(ui->comboBoxTimeFormat,
                         VSettings::PredefinedTimeFormats() + settings->GetUserDefinedTimeFormats(),
                         doc->GetLabelTimeFormat());
 
@@ -537,7 +537,7 @@ void DialogPatternProperties::InitSizes()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPatternProperties::InitComboBoxFormats(QComboBox *box, const QStringList &items,
+void DialogPatternProperties::initComboBoxFormats(QComboBox *box, const QStringList &items,
                                                   const QString &currentFormat)
 {
     SCASSERT(box != nullptr)

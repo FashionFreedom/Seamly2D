@@ -74,46 +74,49 @@ class VArc: public VAbstractArc
 {
     Q_DECLARE_TR_FUNCTIONS(VArc)
 public:
-    VArc ();
-    VArc (const VPointF &center, qreal radius, const QString &formulaRadius, qreal f1, const QString &formulaF1,
-          qreal f2, const QString &formulaF2, quint32 idObject = 0, Draw mode = Draw::Calculation);
-    VArc (const VPointF &center, qreal radius, qreal f1, qreal f2);
-    VArc (qreal length, const QString &formulaLength, const VPointF &center, qreal radius, const QString &formulaRadius,
-          qreal f1, const QString &formulaF1,  quint32 idObject = 0, Draw mode = Draw::Calculation);
-    VArc (qreal length, const VPointF &center, qreal radius, qreal f1);
+    VArc();
+    VArc(const VPointF &center, qreal radius, const QString &formulaRadius, qreal f1, const QString &formulaF1,
+        qreal f2, const QString &formulaF2, quint32 idObject = 0, Draw mode = Draw::Calculation);
+    VArc(const VPointF &center, qreal radius, qreal f1, qreal f2);
+    VArc(qreal length, const QString &formulaLength, const VPointF &center, qreal radius, const QString &formulaRadius,
+        qreal f1, const QString &formulaF1,  quint32 idObject = 0, Draw mode = Draw::Calculation);
+    VArc(qreal length, const VPointF &center, qreal radius, qreal f1);
     VArc(const VArc &arc);
-    VArc Rotate(const QPointF &originPoint, qreal degrees, const QString &prefix = QString()) const;
-    VArc Flip(const QLineF &axis, const QString &prefix = QString()) const;
-    VArc Move(qreal length, qreal angle, const QString &prefix = QString()) const;
-    virtual ~VArc() Q_DECL_OVERRIDE;
 
-    VArc& operator= (const VArc &arc);
+    VArc                         Rotate(const QPointF &originPoint, qreal degrees,
+                                        const QString &prefix = QString()) const;
+    VArc                         Flip(const QLineF &axis, const QString &prefix = QString()) const;
+    VArc                         Move(qreal length, qreal angle, const QString &prefix = QString()) const;
+    virtual                     ~VArc() Q_DECL_OVERRIDE;
+
+    VArc                        &operator= (const VArc &arc);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VArc &operator=(VArc &&arc) Q_DECL_NOTHROW;
+	VArc                          &operator=(VArc &&arc) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VArc &arc) Q_DECL_NOTHROW;
+	void                           Swap(VArc &arc) Q_DECL_NOTHROW;
 
-    QString GetFormulaRadius () const;
-    void    SetFormulaRadius (const QString &formula, qreal value);
-    qreal   GetRadius () const;
+    QString                      GetFormulaRadius () const;
+    void                         SetFormulaRadius (const QString &formula, qreal value);
+    qreal                        GetRadius () const;
 
-    virtual qreal GetLength () const Q_DECL_OVERRIDE;
+    virtual qreal                GetLength () const Q_DECL_OVERRIDE;
 
-    QPointF GetP1() const;
-    QPointF GetP2 () const;
+    QPointF                      GetP1() const;
+    QPointF                      GetP2 () const;
 
-    virtual QVector<QPointF> GetPoints () const Q_DECL_OVERRIDE;
+    virtual QVector<QPointF>     GetPoints () const Q_DECL_OVERRIDE;
+    QVector<QLineF>              getSegments() const;
 
-    QPointF CutArc (const qreal &length, VArc &arc1, VArc &arc2) const;
-    QPointF CutArc (const qreal &length) const;
+    QPointF                      CutArc (const qreal &length, VArc &arc1, VArc &arc2) const;
+    QPointF                      CutArc (const qreal &length) const;
 protected:
-    virtual void CreateName() Q_DECL_OVERRIDE;
-    virtual void FindF2(qreal length) Q_DECL_OVERRIDE;
+    virtual void                 CreateName() Q_DECL_OVERRIDE;
+    virtual void                 FindF2(qreal length) Q_DECL_OVERRIDE;
 private:
     QSharedDataPointer<VArcData> d;
 
-    qreal MaxLength() const;
+    qreal                        MaxLength() const;
 };
 
 Q_DECLARE_TYPEINFO(VArc, Q_MOVABLE_TYPE);

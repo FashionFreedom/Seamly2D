@@ -115,13 +115,28 @@ public:
     void                SetMainPathNode(bool value);
 
     NotchType           getNotchType() const;
-    void                setNotchLineType(NotchType lineType);
+    void                setNotchType(NotchType notchType);
 
     NotchSubType        getNotchSubType() const;
-    void                setNotchAngleType(NotchSubType angleType);
+    void                setNotchSubType(NotchSubType notchSubType);
 
     bool                showSecondNotch() const;
     void                setShowSecondNotch(bool value);
+
+    bool                showNotch() const;
+    void                setShowNotch(bool value);
+
+    qreal               getNotchLength() const;
+    void                setNotchLength(qreal notchLength);
+
+    qreal               getNotchWidth() const;
+    void                setNotchWidth(qreal notchWidth);
+
+    qreal               getNotchAngle() const;
+    void                setNotchAngle(qreal notchAngle);
+
+    int                 getNotchCount() const;
+    void                setNotchCount(int notchCount);
 
 private:
     QSharedDataPointer<VPieceNodeData> d;
