@@ -1,6 +1,8 @@
 ## Weekly 20200817
 
+* [#288](https://github.com/FashionFreedom/Seamly2D/pull/288) Fix Issue #183 Replace the term password with notch 
 * [#285](https://github.com/FashionFreedom/Seamly2D/issues/285) Build issue: cleanup unused build files for distributions
+
 
 ## Weekly 20200727
 
