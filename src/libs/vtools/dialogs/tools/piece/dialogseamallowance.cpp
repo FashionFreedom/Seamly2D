@@ -1161,7 +1161,7 @@ void DialogSeamAllowance::notchTypeChanged(int id)
 
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-            NotchType notchType = NotchType::Slit;
+            NotchType notchType = stringToNotchType(qApp->Settings()->getDefaultNotchType());
 
             if (id == uiNotchesTab->notchType_ButtonGroup->id(uiNotchesTab->slitNotch_RadioButton))
             {

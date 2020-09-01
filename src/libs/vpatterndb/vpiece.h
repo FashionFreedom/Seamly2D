@@ -193,10 +193,10 @@ private:
 
     static int               IsCSAStart(const QVector<CustomSARecord> &records, quint32 id);
 
-    QVector<QLineF>          createSlitNotch(NotchData notchData) const;
-    QVector<QLineF>          createTNotch(NotchData notchData) const;
+    QVector<QLineF>          createSlitNotch(NotchData notchData, const QVector<QPointF> &seamAllowance) const;
+    QVector<QLineF>          createTNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const;
     QVector<QLineF>          createUNotch(const NotchData notchData, const QVector<QPointF> &seamAllowance) const;
-    QVector<QLineF>          createVInternalNotch(NotchData notchData) const;
+    QVector<QLineF>          createVInternalNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const;
     QVector<QLineF>          createVExternalNotch(NotchData notchData, const QVector<QPointF> &seamAllowance) const;
     QVector<QLineF>          createCastleNotch(const NotchData notchData, const QVector<QPointF> &seamAllowance) const;
     QVector<QLineF>          createDiamondNotch(NotchData notchData, const QVector<QPointF> &seamAllowance) const;

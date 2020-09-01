@@ -986,7 +986,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
 
     NotchData notchData;
     notchData.type    = node.getNotchType();
-    notchData.subType = node.getNotchSubType          ();
+    notchData.subType = node.getNotchSubType();
     notchData.length  = ToPixel(node.getNotchLength(), *data->GetPatternUnit());
     notchData.width   = ToPixel(node.getNotchWidth(),  *data->GetPatternUnit());
     notchData.angle   = node.getNotchAngle();
@@ -1075,7 +1075,7 @@ QVector<QLineF> VPiece::createBuiltInSaNotch(const QVector<VPieceNode> &path, co
 
     NotchData notchData;
     notchData.type    = node.getNotchType();
-    notchData.subType = node.getNotchSubType          ();
+    notchData.subType = node.getNotchSubType();
     notchData.length  = ToPixel(node.getNotchLength(), *data->GetPatternUnit());
     notchData.width   = ToPixel(node.getNotchWidth(), *data->GetPatternUnit());
     notchData.angle   = node.getNotchAngle();
@@ -1104,49 +1104,49 @@ int VPiece::IsCSAStart(const QVector<CustomSARecord> &records, quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> VPiece::createSlitNotch(NotchData notchData) const
+QVector<QLineF> VPiece::createSlitNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const
 {
     QLineF refline = QLineF(notchData.line);
-    qreal  length  = notchData.length;
-    qreal  width   = notchData.width;
     qreal  angle   = notchData.angle;
     qreal  offset  = notchData.offset;
-    int    count   = notchData.count;
 
     QLineF line = createParallelLine(refline.p1(), refline.p2(), offset);
     line.setAngle(line.angle() + angle);
 
     QVector<QLineF> lines;
-    lines.append(line);
+    lines.append(findIntersection(pathPoints, QLineF(line.p2(), line.p1())));
     return lines;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> VPiece::createTNotch(NotchData notchData) const
+QVector<QLineF> VPiece::createTNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const
 {
     QLineF refline = QLineF(notchData.line);
-    //qreal length   = notchData.length;
+    qreal length   = notchData.length;
     qreal width    = notchData.width;
     qreal angle    = notchData.angle;
     qreal offset   = notchData.offset;
 
-    QLineF line = createParallelLine(refline.p1(), refline.p2(), offset);
-    line.setAngle(line.angle() + angle);
+    QLineF tempLine = createParallelLine(refline.p1(), refline.p2(), offset);
+    tempLine.setAngle(tempLine.angle() + angle);
+    tempLine = findIntersection(pathPoints, QLineF(tempLine.p2(), tempLine.p1()));
+    QLineF line = QLineF(tempLine.p2(), tempLine.p1());
+    line.setLength(length);
 
     QPointF p1;
     {
-        QLineF tmpLine = QLineF(line.p2(), line.p1());
-        tmpLine.setAngle(tmpLine.angle() - 90);
-        tmpLine.setLength(width  * 0.75 / 2);
-        p1 = tmpLine.p2();
+        QLineF tempLine = QLineF(line.p2(), line.p1());
+        tempLine.setAngle(tempLine.angle() - 90);
+        tempLine.setLength(width  * 0.75 / 2);
+        p1 = tempLine.p2();
     }
 
     QPointF p2;
     {
-        QLineF tmpLine = QLineF(line.p2(), line.p1());
-        tmpLine.setAngle(tmpLine.angle() + 90);
-        tmpLine.setLength(width * 0.75 / 2);
-        p2 = tmpLine.p2();
+        QLineF tempLine = QLineF(line.p2(), line.p1());
+        tempLine.setAngle(tempLine.angle() + 90);
+        tempLine.setLength(width * 0.75 / 2);
+        p2 = tempLine.p2();
     }
 
     QVector<QLineF> lines;
@@ -1187,35 +1187,39 @@ QVector<QLineF> VPiece::createUNotch(const NotchData notchData, const QVector<QP
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QLineF> VPiece::createVInternalNotch(NotchData notchData) const
+QVector<QLineF> VPiece::createVInternalNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const
 {
     QLineF refline = QLineF(notchData.line);
-    //qreal length   = notchData.length;
+    qreal length   = notchData.length;
     qreal width    = notchData.width;
     qreal angle    = notchData.angle;
     qreal offset   = notchData.offset;
 
-    QLineF line = createParallelLine(refline.p2(), refline.p1(), offset);
-    line.setAngle(line.angle() + angle);
+    QLineF tempLine = createParallelLine(refline.p1(), refline.p2(), offset);
+    tempLine.setAngle(tempLine.angle() + angle);
+    tempLine = findIntersection(pathPoints, QLineF(tempLine.p2(), tempLine.p1()));
+    QLineF line = QLineF(tempLine.p2(), tempLine.p1());
+    line.setLength(length);
+
     QPointF p1;
     {
-        QLineF tmpLine = QLineF(line.p1(), line.p2());
-        tmpLine.setAngle(tmpLine.angle() - 90);
-        tmpLine.setLength(width / 2);
-        p1 = tmpLine.p2();
+        QLineF tempLine = QLineF(line.p2(), line.p1());
+        tempLine.setAngle(tempLine.angle() - 90);
+        tempLine.setLength(width / 2);
+        p1 = tempLine.p2();
     }
 
     QPointF p2;
     {
-        QLineF tmpLine = QLineF(line.p1(), line.p2());
-        tmpLine.setAngle(tmpLine.angle() + 90);
-        tmpLine.setLength(width / 2);
-        p2 = tmpLine.p2();
+        QLineF tempLine = QLineF(line.p2(), line.p1());
+        tempLine.setAngle(tempLine.angle() + 90);
+        tempLine.setLength(width / 2);
+        p2 = tempLine.p2();
     }
 
     QVector<QLineF> lines;
-    lines.append(QLineF(line.p2(), p2));
-    lines.append(QLineF(line.p2(), p1));
+    lines.append(QLineF(line.p1(), p2));
+    lines.append(QLineF(line.p1(), p1));
     return lines;
 }
 
@@ -1223,7 +1227,6 @@ QVector<QLineF> VPiece::createVInternalNotch(NotchData notchData) const
 QVector<QLineF> VPiece::createVExternalNotch(NotchData notchData, const QVector<QPointF> &pathPoints) const
 {
     QLineF refline = QLineF(notchData.line);
-    //qreal length   = notchData.length;
     qreal width    = notchData.width;
     qreal angle    = notchData.angle;
     qreal offset   = notchData.offset;
@@ -1233,18 +1236,18 @@ QVector<QLineF> VPiece::createVExternalNotch(NotchData notchData, const QVector<
 
     QPointF p1;
     {
-        QLineF tmpLine = QLineF(line.p1(), line.p2());
-        tmpLine.setAngle(tmpLine.angle() - 90);
-        tmpLine.setLength(width / 2);
-        p1 = tmpLine.p2();
+        QLineF tempLine = QLineF(line.p1(), line.p2());
+        tempLine.setAngle(tempLine.angle() - 90);
+        tempLine.setLength(width / 2);
+        p1 = tempLine.p2();
     }
 
     QPointF p2;
     {
-        QLineF tmpLine = QLineF(line.p1(), line.p2());
-        tmpLine.setAngle(tmpLine.angle() + 90);
-        tmpLine.setLength(width / 2);
-        p2 = tmpLine.p2();
+        QLineF tempLine = QLineF(line.p1(), line.p2());
+        tempLine.setAngle(tempLine.angle() + 90);
+        tempLine.setLength(width / 2);
+        p2 = tempLine.p2();
     }
 
     QVector<QLineF> lines;
@@ -1257,7 +1260,6 @@ QVector<QLineF> VPiece::createVExternalNotch(NotchData notchData, const QVector<
 QVector<QLineF> VPiece::createCastleNotch(const NotchData notchData, const QVector<QPointF> &pathPoints) const
 {
     QLineF refline = notchData.line;
-    //qreal length    = notchData.length;
     qreal width    = notchData.width;
     qreal angle    = notchData.angle;
     qreal offset   = notchData.offset;
@@ -1297,12 +1299,12 @@ QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF
 {
     int count            = notchData.count;
     NotchType type       = notchData.type;
-    NotchSubType           subType = notchData.subType;
+    NotchSubType subType = notchData.subType;
     qreal width          = notchData.width;
 
     QVector<QLineF> notches;
 
-    if (subType == NotchSubType          ::Straightforward)
+    if (subType == NotchSubType::Straightforward)
     {
         switch (type)
         {
@@ -1312,22 +1314,22 @@ QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF
                 {
                     case 2:
                         notchData.offset = width * .625;
-                        notches += createTNotch(notchData);
+                        notches += createTNotch(notchData, pathPoints);
                         notchData.offset = -(width * .625);
-                        notches += createTNotch(notchData);
+                        notches += createTNotch(notchData, pathPoints);
                         break;
                     case 3:
                         notchData.offset = 0;
-                        notches += createTNotch(notchData);
+                        notches += createTNotch(notchData, pathPoints);
                         notchData.offset = width * 1.25;
-                        notches += createTNotch(notchData);
+                        notches += createTNotch(notchData, pathPoints);
                         notchData.offset = -(width * 1.25);
-                        notches += createTNotch(notchData);
+                        notches += createTNotch(notchData, pathPoints);
                         break;
                     case 1:
                     default:
                         notchData.offset = 0;
-                        notches += createTNotch(notchData);
+                        notches += createTNotch(notchData, pathPoints);
                         break;
                 }
                 break;
@@ -1360,22 +1362,22 @@ QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF
                 {
                     case 2:
                         notchData.offset = width * .625;
-                        notches += createVInternalNotch(notchData);
+                        notches += createVInternalNotch(notchData, pathPoints);
                         notchData.offset = -(width * .625);
-                        notches += createVInternalNotch(notchData);
+                        notches += createVInternalNotch(notchData, pathPoints);
                         break;
                     case 3:
                         notchData.offset = 0;
-                        notches += createVInternalNotch(notchData);
+                        notches += createVInternalNotch(notchData, pathPoints);
                         notchData.offset = width * 1.25;
-                        notches += createVInternalNotch(notchData);
+                        notches += createVInternalNotch(notchData, pathPoints);
                         notchData.offset = -(width * 1.25);
-                        notches += createVInternalNotch(notchData);
+                        notches += createVInternalNotch(notchData, pathPoints);
                         break;
                     case 1:
                     default:
                         notchData.offset = 0;
-                        notches += createVInternalNotch(notchData);
+                        notches += createVInternalNotch(notchData, pathPoints);
                         break;
                 }
                 break;
@@ -1457,22 +1459,22 @@ QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF
                 {
                     case 2:
                         notchData.offset = width * .625;
-                        notches += createSlitNotch(notchData);
+                        notches += createSlitNotch(notchData, pathPoints);
                         notchData.offset = -(width * .625);
-                        notches += createSlitNotch(notchData);
+                        notches += createSlitNotch(notchData, pathPoints);
                         break;
                     case 3:
                         notchData.offset = 0;
-                        notches += createSlitNotch(notchData);
+                        notches += createSlitNotch(notchData, pathPoints);
                         notchData.offset = width * 1.25;
-                        notches += createSlitNotch(notchData);
+                        notches += createSlitNotch(notchData, pathPoints);
                         notchData.offset = -(width * 1.25);
-                        notches += createSlitNotch(notchData);
+                        notches += createSlitNotch(notchData, pathPoints);
                         break;
                     case 1:
                     default:
                         notchData.offset = 0;
-                        notches += createSlitNotch(notchData);
+                        notches += createSlitNotch(notchData, pathPoints);
                         break;
                 }
             }
@@ -1481,7 +1483,7 @@ QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF
     else
     {
         notchData.offset = 0;
-        notches += createSlitNotch(notchData);
+        notches += createSlitNotch(notchData, pathPoints);
     }
 
     return notches;
@@ -1490,7 +1492,7 @@ QVector<QLineF> VPiece::createNotches(NotchData notchData, const QVector<QPointF
 QLineF VPiece::findIntersection(const QVector<QPointF> &pathPoints, const QLineF &line) const
 {
     QLineF tempLine = line;
-    tempLine.setLength(tempLine.length()*10);
+    tempLine.setLength(tempLine.length()*1.5);
     QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(pathPoints, tempLine);
     if (not intersections.isEmpty())
     {

@@ -74,6 +74,8 @@ void TST_VPiece::ClearLoop()
     const Unit unit = Unit::Mm;
     QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));
     qApp->setPatternUnit(unit);
+    qApp->Settings()->setDefaultNotchLength(.250);
+    qApp->Settings()->setDefaultNotchWidth(.250);
 
     data->UpdateGObject(304, new VPointF(61.866708661417327, 446.92270866141735, "Ф1", 5.0000125984251973,
                                          9.9999874015748045));

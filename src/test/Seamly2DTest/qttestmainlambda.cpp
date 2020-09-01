@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -76,13 +76,14 @@
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc\projectversion.h"
 
 class TestVApplication : public VAbstractApplication
 {
 public:
 
-    TestVApplication(int &argc, char ** argv);
-    virtual ~TestVApplication() Q_DECL_EQ_DEFAULT;
+                                  TestVApplication(int &argc, char ** argv);
+    virtual                      ~TestVApplication() Q_DECL_EQ_DEFAULT;
 
     virtual const VTranslateVars *TrVars();
     virtual void                  OpenSettings();
@@ -94,6 +95,9 @@ public:
 TestVApplication::TestVApplication(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
 {
+    setApplicationName(VER_INTERNALNAME_STR);
+    setOrganizationName(VER_COMPANYNAME_STR);
+    OpenSettings();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -105,6 +109,8 @@ const VTranslateVars *TestVApplication::TrVars()
 //---------------------------------------------------------------------------------------------------------------------
 void TestVApplication::OpenSettings()
 {
+    settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
+                             QCoreApplication::applicationName(), this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
