@@ -76,7 +76,7 @@
 #include "../vmisc/def.h"
 #include "../qmuparser/qmudef.h"
 #include "../vmisc/vabstractapplication.h"
-#include "../vmisc\projectversion.h"
+#include "../vmisc/projectversion.h"
 
 class TestVApplication : public VAbstractApplication
 {
