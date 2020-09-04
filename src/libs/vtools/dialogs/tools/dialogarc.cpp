@@ -184,7 +184,7 @@ void DialogArc::SetF2(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogArc::GetPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

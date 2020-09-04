@@ -82,7 +82,7 @@ DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *p
     FillComboBoxLineColors(ui->comboBoxLineColor);
 
     QMap<QString, QIcon> stylesPics = LineStylesPics();
-    stylesPics.remove(TypeLineNone);// Prevent hiding line
+    stylesPics.remove(LineTypeNone);// Prevent hiding line
     FillComboBoxTypeLine(ui->comboBoxLineType, stylesPics);
 
     number = 0;
@@ -258,5 +258,5 @@ quint32 DialogLine::GetSecondPoint() const
  */
 QString DialogLine::GetTypeLine() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }

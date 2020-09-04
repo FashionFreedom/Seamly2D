@@ -142,7 +142,7 @@ void DialogLineIntersectAxis::SetPointName(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogLineIntersectAxis::GetTypeLine() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

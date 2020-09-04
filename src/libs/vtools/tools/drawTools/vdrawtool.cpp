@@ -82,7 +82,7 @@ template <class T> class QSharedPointer;
 VDrawTool::VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
     : VInteractiveTool(doc, data, id, parent),
       nameActivDraw(doc->GetNameActivPP()),
-      m_lineType(TypeLineLine)
+      m_lineType(LineTypeSolidLine)
 {
     connect(this->doc, &VAbstractPattern::ChangedActivPP, this, &VDrawTool::ChangedActivDraw);
     connect(this->doc, &VAbstractPattern::ChangedNameDraw, this, &VDrawTool::ChangedNameDraw);

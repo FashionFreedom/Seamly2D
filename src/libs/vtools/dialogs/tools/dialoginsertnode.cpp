@@ -52,6 +52,8 @@
 #include "dialoginsertnode.h"
 #include "ui_dialoginsertnode.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogInsertNode::DialogInsertNode(const VContainer *data, quint32 toolId, QWidget *parent)

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -99,29 +99,19 @@ public:
 
     ~VPieceData();
 
-    /** @brief nodes list detail nodes. */
-    VPiecePath m_path;
-
-    bool m_inLayout;
-    bool m_united;
-
+    VPiecePath              m_path;          //! @brief nodes list detail nodes.
+    bool                    m_inLayout;
+    bool                    m_united;
     QVector<CustomSARecord> m_customSARecords;
     QVector<quint32>        m_internalPaths;
     QVector<quint32>        m_pins;
-
-    /** @brief Pattern piece data */
-    VPieceLabelData m_ppData;
-
-    /** @brief Pattern info coordinates */
-    VPatternLabelData m_piPatternInfo;
-
-    /** @brief m_glGrainline grainline geometry object*/
-    VGrainlineData m_glGrainline;
-
-    QString m_formulaWidth;
+    VPieceLabelData         m_ppData;        //! @brief Pattern piece data
+    VPatternLabelData       m_piPatternInfo; //! @brief Pattern info coordinates
+    VGrainlineData          m_glGrainline;   //! @brief m_glGrainline grainline geometry object
+    QString                 m_formulaWidth;
 
 private:
-    VPieceData &operator=(const VPieceData &) Q_DECL_EQ_DELETE;
+    VPieceData              &operator=(const VPieceData &) Q_DECL_EQ_DELETE;
 };
 
 VPieceData::~VPieceData()
@@ -130,4 +120,3 @@ VPieceData::~VPieceData()
 QT_WARNING_POP
 
 #endif // VPIECE_P_H
-

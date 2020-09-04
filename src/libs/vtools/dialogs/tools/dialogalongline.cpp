@@ -120,7 +120,7 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
     vis = new VisToolAlongLine(data);
 
     // Call after initialization vis!!!!
-    SetTypeLine(TypeLineNone);//By default don't show line
+    SetTypeLine(LineTypeNone);//By default don't show line
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -373,7 +373,7 @@ void DialogAlongLine::SetPointName(const QString &value)
  */
 QString DialogAlongLine::GetTypeLine() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

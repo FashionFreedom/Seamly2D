@@ -206,7 +206,7 @@ void VToolInternalPath::AddAttributes(VAbstractPattern *doc, QDomElement &domEle
     doc->SetAttribute(domElement, VDomDocument::AttrId, id);
     doc->SetAttribute(domElement, AttrName, path.GetName());
     doc->SetAttribute(domElement, AttrType, static_cast<int>(path.GetType()));
-    doc->SetAttribute(domElement, AttrTypeLine, PenStyleToLineStyle(path.GetPenType()));
+    doc->SetAttribute(domElement, AttrLineType, PenStyleToLineStyle(path.GetPenType()));
 
     if (path.GetType() == PiecePathType::InternalPath)
     {

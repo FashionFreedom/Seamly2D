@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -76,7 +76,7 @@ public:
     static const QString PatternMaxVerStr;
     static const QString CurrentSchema;
     static Q_DECL_CONSTEXPR const int PatternMinVer = CONVERTER_VERSION_CHECK(0, 1, 0);
-    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 0);
+    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 1);
 
 protected:
     virtual int     MinVer() const Q_DECL_OVERRIDE;
@@ -89,46 +89,47 @@ protected:
     virtual void    ApplyPatches() Q_DECL_OVERRIDE;
     virtual void    DowngradeToCurrentMaxVersion() Q_DECL_OVERRIDE;
 
-    virtual bool IsReadOnly() const Q_DECL_OVERRIDE;
+    virtual bool    IsReadOnly() const Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(VPatternConverter)
     static const QString PatternMinVerStr;
 
-    void ToV0_1_1();
-    void ToV0_1_2();
-    void ToV0_1_3();
-    void ToV0_1_4();
-    void ToV0_2_0();
-    void ToV0_2_1();
-    void ToV0_2_2();
-    void ToV0_2_3();
-    void ToV0_2_4();
-    void ToV0_2_5();
-    void ToV0_2_6();
-    void ToV0_2_7();
-    void ToV0_3_0();
-    void ToV0_3_1();
-    void ToV0_3_2();
-    void ToV0_3_3();
-    void ToV0_3_4();
-    void ToV0_3_5();
-    void ToV0_3_6();
-    void ToV0_3_7();
-    void ToV0_3_8();
-    void ToV0_3_9();
-    void ToV0_4_0();
-    void ToV0_4_1();
-    void ToV0_4_2();
-    void ToV0_4_3();
-    void ToV0_4_4();
-    void ToV0_4_5();
-    void ToV0_4_6();
-    void ToV0_4_7();
-    void ToV0_4_8();
-    void ToV0_5_0();
-    void ToV0_5_1();
-    void ToV0_6_0();
+    void          ToV0_1_1();
+    void          ToV0_1_2();
+    void          ToV0_1_3();
+    void          ToV0_1_4();
+    void          ToV0_2_0();
+    void          ToV0_2_1();
+    void          ToV0_2_2();
+    void          ToV0_2_3();
+    void          ToV0_2_4();
+    void          ToV0_2_5();
+    void          ToV0_2_6();
+    void          ToV0_2_7();
+    void          ToV0_3_0();
+    void          ToV0_3_1();
+    void          ToV0_3_2();
+    void          ToV0_3_3();
+    void          ToV0_3_4();
+    void          ToV0_3_5();
+    void          ToV0_3_6();
+    void          ToV0_3_7();
+    void          ToV0_3_8();
+    void          ToV0_3_9();
+    void          ToV0_4_0();
+    void          ToV0_4_1();
+    void          ToV0_4_2();
+    void          ToV0_4_3();
+    void          ToV0_4_4();
+    void          ToV0_4_5();
+    void          ToV0_4_6();
+    void          ToV0_4_7();
+    void          ToV0_4_8();
+    void          ToV0_5_0();
+    void          ToV0_5_1();
+    void          ToV0_6_0();
+    void          ToV0_6_1();
 
     void          TagUnitToV0_2_0();
     void          TagIncrementToV0_2_0();
@@ -145,40 +146,40 @@ private:
     void          FixArcExpressionsToV0_2_0(const QSet<QString> &names);
     void          FixPathPointExpressionsToV0_2_0(const QSet<QString> &names);
 
-    void    ConvertPointExpressionsToV0_2_0(const QMap<QString, QString> &names);
-    void    ConvertArcExpressionsToV0_2_0(const QMap<QString, QString> &names);
-    void    ConvertPathPointExpressionsToV0_2_0(const QMap<QString, QString> &names);
-    QString FixMeasurementInFormulaToV0_2_0(const QString &formula, const QMap<QString, QString> &names);
+    void          ConvertPointExpressionsToV0_2_0(const QMap<QString, QString> &names);
+    void          ConvertArcExpressionsToV0_2_0(const QMap<QString, QString> &names);
+    void          ConvertPathPointExpressionsToV0_2_0(const QMap<QString, QString> &names);
+    QString       FixMeasurementInFormulaToV0_2_0(const QString &formula, const QMap<QString, QString> &names);
 
-    QString MUnitV0_1_4() const;
-    QDomElement TagMeasurementsV0_1_4() const;
-    QDomElement TagIncrementsV0_1_4() const;
+    QString       MUnitV0_1_4() const;
+    QDomElement   TagMeasurementsV0_1_4() const;
+    QDomElement   TagIncrementsV0_1_4() const;
 
-    void FixToolUnionToV0_2_4();
-    void ParseModelingToV0_2_4(const QDomElement &modeling);
-    void SaveChildrenToolUnionToV0_2_4(quint32 id, const QVector<quint32> &children);
+    void          FixToolUnionToV0_2_4();
+    void          ParseModelingToV0_2_4(const QDomElement &modeling);
+    void          SaveChildrenToolUnionToV0_2_4(quint32 id, const QVector<quint32> &children);
 
     static QMap<QString, QString> OldNamesToNewNames_InV0_2_0();
     static QMap<QString, QString> OldNamesToNewNames_InV0_2_1();
 
-    void FixCutPoint();
-    void FixSubPaths(int i, quint32 id, quint32 baseCurve);
+    void          FixCutPoint();
+    void          FixSubPaths(int i, quint32 id, quint32 baseCurve);
 
-    void TagRemoveAttributeTypeObjectInV0_4_0();
-    void TagDetailToV0_4_0();
-    void TagUnionDetailsToV0_4_0();
-    QDomElement GetUnionDetailNodesV0_4_0(const QDomElement &detail);
-    QDomElement GetUnionChildrenNodesV0_4_0(const QDomElement &detail);
+    void          TagRemoveAttributeTypeObjectInV0_4_0();
+    void          TagDetailToV0_4_0();
+    void          TagUnionDetailsToV0_4_0();
+    QDomElement   GetUnionDetailNodesV0_4_0(const QDomElement &detail);
+    QDomElement   GetUnionChildrenNodesV0_4_0(const QDomElement &detail);
 
-    void LabelTagToV0_4_4(const QString &tagName);
+    void          LabelTagToV0_4_4(const QString &tagName);
 
-    QDomElement AddTagPatternLabelV0_5_1();
-    void PortPatternLabeltoV0_6_0(QDomElement &label);
-    void AddLabelTemplateLineV0_6_0(QDomElement &label, const QString &text, bool bold, bool italic, int alignment,
-                                    int fontSizeIncrement);
-    void PortPieceLabelstoV0_6_0();
-    void RemoveUnusedTagsV0_6_0();
-    void RemoveUniqueTagV0_6_0(const QString &tag);
+    QDomElement   AddTagPatternLabelV0_5_1();
+    void          PortPatternLabeltoV0_6_0(QDomElement &label);
+    void          AddLabelTemplateLineV0_6_0(QDomElement &label, const QString &text, bool bold,
+                                             bool italic, int alignment, int fontSizeIncrement);
+    void          PortPieceLabelstoV0_6_0();
+    void          RemoveUnusedTagsV0_6_0();
+    void          RemoveUniqueTagV0_6_0(const QString &tag);
 };
 
 //---------------------------------------------------------------------------------------------------------------------

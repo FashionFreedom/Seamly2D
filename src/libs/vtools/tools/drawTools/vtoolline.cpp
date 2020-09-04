@@ -401,7 +401,7 @@ void VToolLine::SaveDialog(QDomElement &domElement)
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrFirstPoint, QString().setNum(dialogTool->GetFirstPoint()));
     doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPoint()));
-    doc->SetAttribute(domElement, AttrTypeLine, dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
 }
 
@@ -412,7 +412,7 @@ void VToolLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 
     doc->SetAttribute(tag, AttrFirstPoint, firstPoint);
     doc->SetAttribute(tag, AttrSecondPoint, secondPoint);
-    doc->SetAttribute(tag, AttrTypeLine, m_lineType);
+    doc->SetAttribute(tag, AttrLineType, m_lineType);
     doc->SetAttribute(tag, AttrLineColor, lineColor);
 }
 
@@ -421,7 +421,7 @@ void VToolLine::ReadToolAttributes(const QDomElement &domElement)
 {
     firstPoint = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     secondPoint = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
-    m_lineType = doc->GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
 }
 

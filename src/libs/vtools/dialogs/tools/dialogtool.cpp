@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -82,6 +82,7 @@
 #include <QtDebug>
 #include <new>
 #include <QBuffer>
+#include <QFont>
 
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
@@ -95,6 +96,7 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/vgobject.h"
+#include "../vmisc/vcommonsettings.h"
 
 template <class T> class QSharedPointer;
 
@@ -322,7 +324,7 @@ void DialogTool::FillComboBoxTypeLine(QComboBox *box, const QMap<QString, QIcon>
         ++i;
     }
 
-    const int index = box->findData(QVariant(TypeLineLine));
+    const int index = box->findData(QVariant(LineTypeSolidLine));
     if (index != -1)
     {
         box->setCurrentIndex(index);
@@ -598,52 +600,66 @@ QString DialogTool::DialogWarningIcon()
 //---------------------------------------------------------------------------------------------------------------------
 QFont DialogTool::NodeFont(bool nodeExcluded)
 {
-    QFont font("Times", 12, QFont::Bold);
+    QFont font = qApp->Settings()->GetLabelFont();
+    font.setPointSize(12);
+    font.setBold(true);
     font.setStrikeOut(nodeExcluded);
     return font;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogTool::GetNodeName(const VPieceNode &node, bool showNotch) const
+NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
 {
+    NodeInfo info;
     const QSharedPointer<VGObject> obj = data->GetGObject(node.GetId());
-    QString name = obj->name();
+    info.name = obj->name();
+    info.icon = "://icon/24x24/spacer.png";
 
     if (node.GetTypeTool() != Tool::NodePoint)
     {
         int bias = 0;
-        qApp->TrVars()->VariablesToUser(name, 0, obj->name(), bias);
+        qApp->TrVars()->VariablesToUser(info.name, 0, obj->name(), bias);
 
         if (node.GetReverse())
         {
-            name = QLatin1String("- ") + name;
+            info.icon = "://icon/24x24/counter_clockwise.png";
+        }
+        else
+        {
+            info.icon = "://icon/24x24/clockwise.png";
         }
     }
     else if (showNotch && node.isNotch())
     {
         switch(node.getNotchType())
         {
-            case NotchType::OneLine:
-                name += QLatin1Char('|');
+            case NotchType::TNotch:
+                info.icon = "://icon/24x24/t_notch.png";
                 break;
-            case NotchType::TwoLines:
-                name += QLatin1Literal("||");
+            case NotchType::UNotch:
+                info.icon = "://icon/24x24/u_notch.png";
                 break;
-            case NotchType::ThreeLines:
-                name += QLatin1Literal("|||");
+            case NotchType::VInternal:
+                info.icon = "://icon/24x24/internal_v_notch.png";
                 break;
-            case NotchType::TMark:
-                name += QString("┴");
+            case NotchType::VExternal:
+                info.icon = "://icon/24x24/external_v_notch.png";
                 break;
-            case NotchType::VMark:
-                name += QLatin1Char('^');
+            case NotchType::Castle:
+                info.icon = "://icon/24x24/castle_notch.png";
+                break;
+            case NotchType::Diamond:
+                info.icon = "://icon/24x24/diamond_notch.png";
+                break;
+            case NotchType::Slit:
+                info.icon = "://icon/24x24/slit_notch.png";
                 break;
             default:
                 break;
         }
     }
 
-    return name;
+    return info;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -651,7 +667,7 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
 {
     SCASSERT(listWidget != nullptr);
     SCASSERT(node.GetId() > NULL_ID);
-    QString name;
+    NodeInfo info;
     switch (node.GetTypeTool())
     {
         case (Tool::NodePoint):
@@ -659,7 +675,7 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
         case (Tool::NodeElArc):
         case (Tool::NodeSpline):
         case (Tool::NodeSplinePath):
-            name = GetNodeName(node, true);
+            info = getNodeInfo(node, true);
             break;
         default:
             qDebug()<<"Got wrong tools. Ignore.";
@@ -682,9 +698,10 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
 
     if(canAddNewPoint)
     {
-        QListWidgetItem *item = new QListWidgetItem(name);
+        QListWidgetItem *item = new QListWidgetItem(info.name);
         item->setFont(NodeFont(node.isExcluded()));
         item->setData(Qt::UserRole, QVariant::fromValue(node));
+        item->setIcon(QIcon(info.icon));
         listWidget->addItem(item);
         listWidget->setCurrentRow(listWidget->count()-1);
     }
@@ -1266,6 +1283,62 @@ void DialogTool::SetToolId(const quint32 &value)
 QString DialogTool::getPointName() const
 {
     return pointName;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::moveListRowTop(QListWidget *list)
+{
+    SCASSERT(list != nullptr)
+    const int currentIndex = list->currentRow();
+    if (QListWidgetItem *currentItem = list->takeItem(currentIndex))
+    {
+        list->insertItem(0, currentItem);
+        list->setCurrentRow(0);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::moveListRowUp(QListWidget *list)
+{
+    SCASSERT(list != nullptr)
+    int currentIndex = list->currentRow();
+    if (QListWidgetItem *currentItem = list->takeItem(currentIndex--))
+    {
+        if (currentIndex < 0)
+        {
+            currentIndex = 0;
+        }
+        list->insertItem(currentIndex, currentItem);
+        list->setCurrentRow(currentIndex);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::moveListRowDown(QListWidget *list)
+{
+    SCASSERT(list != nullptr)
+    int currentIndex = list->currentRow();
+    if (QListWidgetItem *currentItem = list->takeItem(currentIndex++))
+    {
+        if (currentIndex > list->count())
+        {
+            currentIndex = list->count();
+        }
+        list->insertItem(currentIndex, currentItem);
+        list->setCurrentRow(currentIndex);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogTool::moveListRowBottom(QListWidget *list)
+{
+    SCASSERT(list != nullptr)
+    const int currentIndex = list->currentRow();
+    if (QListWidgetItem *currentItem = list->takeItem(currentIndex))
+    {
+        list->insertItem(list->count(), currentItem);
+        list->setCurrentRow(list->count()-1);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

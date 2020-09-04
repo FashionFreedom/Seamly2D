@@ -148,7 +148,7 @@ void VToolLinePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj
 {
     VToolSinglePoint::SaveOptions(tag, obj);
 
-    doc->SetAttribute(tag, AttrTypeLine, m_lineType);
+    doc->SetAttribute(tag, AttrLineType, m_lineType);
     doc->SetAttribute(tag, AttrLineColor, lineColor);
 }
 

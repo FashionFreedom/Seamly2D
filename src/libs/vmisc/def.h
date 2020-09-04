@@ -100,15 +100,17 @@ enum class PieceNodeAngle : unsigned char
 
 enum class NotchType : unsigned char
 {
-    OneLine = 0, // Default
-    TwoLines,
-    ThreeLines,
-    TMark,
-    VMark
+    Slit = 0, // Default
+    TNotch,
+    VInternal,
+    VExternal,
+    UNotch,
+    Castle,
+    Diamond
 };
 
-QString   notchTypeToString(NotchType type);
-NotchType stringToNotchType(const QString &value);
+QString      notchTypeToString(NotchType type);
+NotchType    stringToNotchType(const QString &value);
 
 enum class NotchSubType : unsigned char
 {
@@ -121,8 +123,8 @@ QString      notchSubTypeToString(NotchSubType type);
 NotchSubType stringToNotchSubType(const QString &value);
 
 
-Unit    StrToUnits(const QString &unit);
-QString UnitsToStr(const Unit &unit, const bool translate = false);
+Unit         StrToUnits(const QString &unit);
+QString      UnitsToStr(const Unit &unit, const bool translate = false);
 
 
 enum class PiecePathIncludeType : unsigned char
@@ -412,9 +414,7 @@ extern const QString degreeSymbol;
 extern const QString trueStr;
 extern const QString falseStr;
 
-extern const QString strOne;
-extern const QString strTwo;
-extern const QString strThree;
+extern const QString strSlit;
 
 extern const QString strStraightforward;
 extern const QString strBisector;

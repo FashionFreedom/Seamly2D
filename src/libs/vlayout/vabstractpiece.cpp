@@ -438,8 +438,8 @@ QVector<QPointF> VAbstractPiece::EkvPoint(const VSAPoint &p1Line1, const VSAPoin
         return QVector<QPointF>(); // Wrong edges
     }
 
-    const QLineF bigLine1 = ParallelLine(p1Line1, p2Line1, width );
-    const QLineF bigLine2 = ParallelLine(p2Line2, p1Line2, width );
+    const QLineF bigLine1 = createParallelLine(p1Line1, p2Line1, width );
+    const QLineF bigLine2 = createParallelLine(p2Line2, p1Line2, width );
     QPointF CrosPoint;
     const QLineF::IntersectType type = bigLine1.intersect( bigLine2, &CrosPoint );
     switch (type)
@@ -499,7 +499,7 @@ QT_WARNING_POP
                 {// Dart case. A bisector watch outside. In some cases a point still valid, but ignore if going
                  // outside of an equdistant.
 
-                    const QLineF bigEdge = ParallelLine(p1Line1, p1Line2, localWidth );
+                    const QLineF bigEdge = createParallelLine(p1Line1, p1Line2, localWidth );
                     QPointF px;
                     const QLineF::IntersectType type = bigEdge.intersect(line, &px);
                     if (type != QLineF::BoundedIntersection)
@@ -532,7 +532,7 @@ QT_WARNING_POP
                     }
                     else
                     {// Wrong cross point, probably inside of a piece. Manually creating correct seam allowance
-                        const QLineF bigEdge = ParallelLine(bigLine1.p2(), bigLine2.p1(), localWidth );
+                        const QLineF bigEdge = createParallelLine(bigLine1.p2(), bigLine2.p1(), localWidth );
                         points.append(bigEdge.p1());
                         points.append(bigEdge.p2());
                         return points;
@@ -790,7 +790,7 @@ QVector<QPointF> VAbstractPiece::AngleBySecondRightAngle(const QPointF &p2, cons
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QLineF VAbstractPiece::ParallelLine(const VSAPoint &p1, const VSAPoint &p2, qreal width)
+QLineF VAbstractPiece::createParallelLine(const VSAPoint &p1, const VSAPoint &p2, qreal width)
 {
     qreal w1 = p1.GetSAAfter();
     if (w1 < 0)
@@ -804,17 +804,17 @@ QLineF VAbstractPiece::ParallelLine(const VSAPoint &p1, const VSAPoint &p2, qrea
         w2 = width;
     }
 
-    const QLineF paralel = QLineF(SingleParallelPoint(p1, p2, 90, w1),
+    const QLineF parallel = QLineF(SingleParallelPoint(p1, p2, 90, w1),
                                   SingleParallelPoint(p2, p1, -90, w2));
-    return paralel;
+    return parallel;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QLineF VAbstractPiece::ParallelLine(const QPointF &p1, const QPointF &p2, qreal width)
+QLineF VAbstractPiece::createParallelLine(const QPointF &p1, const QPointF &p2, qreal width)
 {
-    const QLineF paralel = QLineF(SingleParallelPoint(p1, p2, 90, width),
+    const QLineF parallel = QLineF(SingleParallelPoint(p1, p2, 90, width),
                                   SingleParallelPoint(p2, p1, -90, width));
-    return paralel;
+    return parallel;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1013,8 +1013,8 @@ bool VAbstractPiece::IsEkvPointOnLine(const VSAPoint &iPoint, const VSAPoint &pr
 {
     // See bug #671
     const qreal tmpWidth = 10;
-    const QLineF bigLine1 = ParallelLine(prevPoint, iPoint, tmpWidth );
-    const QLineF bigLine2 = ParallelLine(iPoint, nextPoint, tmpWidth );
+    const QLineF bigLine1 = createParallelLine(prevPoint, iPoint, tmpWidth );
+    const QLineF bigLine2 = createParallelLine(iPoint, nextPoint, tmpWidth );
 
     return (VGObject::IsPointOnLineviaPDP(iPoint, prevPoint, nextPoint)
             && VGObject::IsPointOnLineviaPDP(bigLine1.p2(), bigLine1.p1(), bigLine2.p2())
