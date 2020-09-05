@@ -122,7 +122,7 @@ void PreferencesPatternPage::Apply()
     settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
     settings->SetLabelFont(ui->labelFont_ComboBox->currentFont());
 
-    settings->setDefaultNotchType(ui->defaultNotchType_ComboBox->currentText());
+    settings->setDefaultNotchType(ui->defaultNotchType_ComboBox->currentData().toString());
     settings->setDefaultNotchLength(ui->defaultNotchLength_DoubleSpinBox->value());
     settings->setDefaultNotchWidth(ui->defaultNotchWidth_DoubleSpinBox->value());
     if (settings->showSecondNotch() != ui->showSecondNotch_CheckBox->isChecked())
@@ -191,7 +191,7 @@ void PreferencesPatternPage::initNotches()
     ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("Diamond"),    "diamond");
 
     //-----------------------  Get Default Notch
-    int index = ui->defaultNotchType_ComboBox->findText(qApp->Seamly2DSettings()->getDefaultNotchType());
+    int index = ui->defaultNotchType_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultNotchType());
     if (index != -1)
     {
         ui->defaultNotchType_ComboBox->setCurrentIndex(index);
