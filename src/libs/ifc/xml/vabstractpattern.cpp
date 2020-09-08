@@ -132,10 +132,15 @@ const QString VAbstractPattern::AttrTimeFormat          = QStringLiteral("timeFo
 const QString VAbstractPattern::AttrArrows              = QStringLiteral("arrows");
 const QString VAbstractPattern::AttrNodeReverse         = QStringLiteral("reverse");
 const QString VAbstractPattern::AttrNodeExcluded        = QStringLiteral("excluded");
-const QString VAbstractPattern::AttrNodeNotch           = QStringLiteral("passmark");
-const QString VAbstractPattern::AttrNodeNotchType       = QStringLiteral("passmarkLine");
-const QString VAbstractPattern::AttrNodeNotchSubType    = QStringLiteral("passmarkAngle");
-const QString VAbstractPattern::AttrNodeShowSecondNotch = QStringLiteral("showSecondPassmark");
+const QString VAbstractPattern::AttrNodeIsNotch         = QStringLiteral("notch");
+const QString VAbstractPattern::AttrNodeNotchType       = QStringLiteral("notchType");
+const QString VAbstractPattern::AttrNodeNotchSubType    = QStringLiteral("notchSubtype");
+const QString VAbstractPattern::AttrNodeShowNotch       = QStringLiteral("showNotch");
+const QString VAbstractPattern::AttrNodeShowSecondNotch = QStringLiteral("showSecondNotch");
+const QString VAbstractPattern::AttrNodeNotchLength     = QStringLiteral("notchLength");
+const QString VAbstractPattern::AttrNodeNotchWidth      = QStringLiteral("notchWidth");
+const QString VAbstractPattern::AttrNodeNotchAngle      = QStringLiteral("notchAngle");
+const QString VAbstractPattern::AttrNodeNotchCount      = QStringLiteral("notchCount");
 const QString VAbstractPattern::AttrSABefore            = QStringLiteral("before");
 const QString VAbstractPattern::AttrSAAfter             = QStringLiteral("after");
 const QString VAbstractPattern::AttrStart               = QStringLiteral("start");
@@ -721,16 +726,21 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
                                                             currentSeamAllowance);
     const PieceNodeAngle angle = static_cast<PieceNodeAngle>(VDomDocument::GetParametrUInt(domElement, AttrAngle, "0"));
 
-    const bool notch = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeNotch, falseStr);
+    const bool notch = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeIsNotch, falseStr);
     const NotchType notchType = stringToNotchType(VDomDocument::GetParametrString(domElement,
-                                                                                 VAbstractPattern::AttrNodeNotchType,
-                                                                                                   strOne));
+                                                          VAbstractPattern::AttrNodeNotchType,strSlit));
     const NotchSubType notchSubType = stringToNotchSubType(VDomDocument::GetParametrString(domElement,
-                                                                                VAbstractPattern::AttrNodeNotchSubType,
-                                                                                                   strStraightforward));
+                                                          VAbstractPattern::AttrNodeNotchSubType, strStraightforward));
 
+    const bool showNotch = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeShowNotch,
+                                                          trueStr);
     const bool showSecond = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeShowSecondNotch,
                                                           trueStr);
+    const qreal  notchLength = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchLength, ".25");
+    const qreal   notchWidth = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchWidth, ".25");
+    const qreal   notchAngle = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchAngle, ".00");
+    const quint32 notchCount = VDomDocument::GetParametrUInt(domElement,   VAbstractPattern::AttrNodeNotchCount, "1");
+
 
     const QString t = VDomDocument::GetParametrString(domElement, AttrType, VAbstractPattern::NodePoint);
     Tool tool;
@@ -767,11 +777,15 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
     node.SetFormulaSAAfter(saAfter);
     node.SetAngleType(angle);
     node.SetExcluded(excluded);
-    node.setShowSecondNotch(showSecond);
     node.setNotch(notch);
-    node.setNotchLineType(notchType);
-    node.setNotchAngleType(notchSubType);
-
+    node.setNotchType(notchType);
+    node.setNotchSubType(notchSubType);
+    node.setShowNotch(showNotch);
+    node.setShowSecondNotch(showSecond);
+    node.setNotchLength(notchLength);
+    node.setNotchWidth(notchWidth);
+    node.setNotchAngle(notchAngle);
+    node.setNotchCount(notchCount);
     return node;
 }
 

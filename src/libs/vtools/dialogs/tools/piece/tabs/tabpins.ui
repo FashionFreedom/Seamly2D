@@ -19,7 +19,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QListWidget" name="listWidgetPins">
+    <widget class="QListWidget" name="pins_ListWidget">
      <property name="dragDropMode">
       <enum>QAbstractItemView::InternalMove</enum>
      </property>

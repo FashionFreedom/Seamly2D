@@ -572,38 +572,32 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
 
     if (type == Tool::NodePoint)
     {
-        doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotch, node.isNotch());
-        doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchType,
-                          notchTypeToString(node.getNotchType()));
-        doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchSubType,
-                          notchSubTypeToString(node.getNotchSubType()));
+        if (node.isNotch())
+        {
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeIsNotch,         node.isNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowNotch,       node.showNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowSecondNotch, node.showSecondNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchType,    notchTypeToString(node.getNotchType()));
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchSubType, notchSubTypeToString(node.getNotchSubType()));
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchLength,     node.getNotchLength());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchWidth,      node.getNotchWidth());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchAngle,      node.getNotchAngle());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchCount,      node.getNotchCount());
+        }
 
-        if (not node.isNotch()
-                && node.getNotchType() == NotchType::OneLine
-                && node.getNotchSubType() == NotchSubType::Straightforward)
+        if (not node.isNotch() && node.getNotchType() == NotchType::Slit
+            && node.getNotchSubType() == NotchSubType::Straightforward)
         { // For backward compatebility.
-            nod.removeAttribute(VAbstractPattern::AttrNodeNotch);
+            nod.removeAttribute(VAbstractPattern::AttrNodeIsNotch);
             nod.removeAttribute(VAbstractPattern::AttrNodeNotchType);
             nod.removeAttribute(VAbstractPattern::AttrNodeNotchSubType);
         }
     }
     else
     { // Wrong configuration.
-        nod.removeAttribute(VAbstractPattern::AttrNodeNotch);
+        nod.removeAttribute(VAbstractPattern::AttrNodeIsNotch);
         nod.removeAttribute(VAbstractPattern::AttrNodeNotchType);
         nod.removeAttribute(VAbstractPattern::AttrNodeNotchSubType);
-    }
-
-    {
-        const bool showSecond = node.showSecondNotch();
-        if (not showSecond)
-        {
-            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowSecondNotch, showSecond);
-        }
-        else
-        { // For backward compatebility.
-            nod.removeAttribute(VAbstractPattern::AttrNodeShowSecondNotch);
-        }
     }
 
     return nod;

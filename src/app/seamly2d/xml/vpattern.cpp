@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -102,7 +102,11 @@ QString FileComment()
 //---------------------------------------------------------------------------------------------------------------------
 VPattern::VPattern(VContainer *data, Draw *mode, VMainGraphicsScene *sceneDraw,
                    VMainGraphicsScene *sceneDetail, QObject *parent)
-    : VAbstractPattern(parent), data(data), mode(mode), sceneDraw(sceneDraw), sceneDetail(sceneDetail)
+    : VAbstractPattern(parent),
+      data(data),
+      mode(mode),
+      sceneDraw(sceneDraw),
+      sceneDetail(sceneDetail)
 {
     SCASSERT(sceneDraw != nullptr)
     SCASSERT(sceneDetail != nullptr)
@@ -993,10 +997,10 @@ void VPattern::ParseDetails(const QDomElement &domElement, const Document &parse
 
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx, qreal &my,
-                                      QString &typeLine, QString &lineColor)
+                                      QString &lineType, QString &lineColor)
 {
     PointsCommonAttributes(domElement, id, name, mx, my);
-    typeLine = GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+    lineType = GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     lineColor = GetParametrString(domElement, AttrLineColor, ColorBlack);
 }
 
@@ -1152,12 +1156,10 @@ void VPattern::ParseLineElement(VMainGraphicsScene *scene, const QDomElement &do
         ToolsCommonAttributes(domElement, id);
         const quint32 firstPoint = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPoint = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
-        const QString typeLine = GetParametrString(domElement, AttrTypeLine,
-                                                   TypeLineLine);
-        const QString lineColor = GetParametrString(domElement, AttrLineColor,
-                                                    ColorBlack);
+        const QString lineType = GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
+        const QString lineColor = GetParametrString(domElement, AttrLineColor, ColorBlack);
 
-        VToolLine::Create(id, firstPoint, secondPoint, typeLine, lineColor, scene, this, data, parse, Source::FromFile);
+        VToolLine::Create(id, firstPoint, secondPoint, lineType, lineColor, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &e)
     {
@@ -1294,10 +1296,10 @@ void VPattern::ParseToolEndLine(VMainGraphicsScene *scene, QDomElement &domEleme
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
 
         const QString formula = GetParametrString(domElement, AttrLength, "100.0");
         QString f = formula;//need for saving fixed formula;
@@ -1307,7 +1309,7 @@ void VPattern::ParseToolEndLine(VMainGraphicsScene *scene, QDomElement &domEleme
         const QString angle = GetParametrString(domElement, AttrAngle, "0.0");
         QString angleFix = angle;
 
-        VToolEndLine::Create(id, name, typeLine, lineColor, f, angleFix, basePointId, mx, my, scene, this, data,
+        VToolEndLine::Create(id, name, lineType, lineColor, f, angleFix, basePointId, mx, my, scene, this, data,
                              parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula || angleFix != angle)
@@ -1344,16 +1346,16 @@ void VPattern::ParseToolAlongLine(VMainGraphicsScene *scene, QDomElement &domEle
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
         const QString formula = GetParametrString(domElement, AttrLength, "100.0");
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
 
-        VToolAlongLine::Create(id, name, typeLine, lineColor, f, firstPointId, secondPointId, mx, my, scene,
+        VToolAlongLine::Create(id, name, lineType, lineColor, f, firstPointId, secondPointId, mx, my, scene,
                                this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
@@ -1389,17 +1391,17 @@ void VPattern::ParseToolShoulderPoint(VMainGraphicsScene *scene, QDomElement &do
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
         const QString formula = GetParametrString(domElement, AttrLength, "100.0");
         QString f = formula;//need for saving fixed formula;
         const quint32 p1Line = GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
         const quint32 p2Line = GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
         const quint32 pShoulder = GetParametrUInt(domElement, AttrPShoulder, NULL_ID_STR);
 
-        VToolShoulderPoint::Create(id, f, p1Line, p2Line, pShoulder, typeLine, lineColor, name, mx, my, scene,
+        VToolShoulderPoint::Create(id, f, p1Line, p2Line, pShoulder, lineType, lineColor, name, mx, my, scene,
                                    this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
@@ -1435,17 +1437,17 @@ void VPattern::ParseToolNormal(VMainGraphicsScene *scene, QDomElement &domElemen
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
         const QString formula = GetParametrString(domElement, AttrLength, "100.0");
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
         const qreal angle = GetParametrDouble(domElement, AttrAngle, "0.0");
 
-        VToolNormal::Create(id, f, firstPointId, secondPointId, typeLine, lineColor, name, angle, mx, my, scene,
+        VToolNormal::Create(id, f, firstPointId, secondPointId, lineType, lineColor, name, angle, mx, my, scene,
                             this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
@@ -1481,10 +1483,10 @@ void VPattern::ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElem
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
         const QString formula = GetParametrString(domElement, AttrLength, "100.0");
         QString f = formula;//need for saving fixed formula;
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
@@ -1492,7 +1494,7 @@ void VPattern::ParseToolBisector(VMainGraphicsScene *scene, QDomElement &domElem
         const quint32 thirdPointId = GetParametrUInt(domElement, AttrThirdPoint, NULL_ID_STR);
 
         VToolBisector::Create(id, f, firstPointId, secondPointId, thirdPointId,
-                            typeLine, lineColor, name, mx, my, scene, this, data, parse, Source::FromFile);
+                            lineType, lineColor, name, mx, my, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (f != formula)
         {
@@ -1659,15 +1661,15 @@ void VPattern::ParseToolHeight(VMainGraphicsScene *scene, const QDomElement &dom
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
         const quint32 basePointId = GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
         const quint32 p1LineId = GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
         const quint32 p2LineId = GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
 
-        VToolHeight::Create(id, name, typeLine, lineColor, basePointId, p1LineId, p2LineId,
+        VToolHeight::Create(id, name, lineType, lineColor, basePointId, p1LineId, p2LineId,
                             mx, my, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &e)
@@ -1874,10 +1876,10 @@ void VPattern::ParseToolLineIntersectAxis(VMainGraphicsScene *scene, QDomElement
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
 
         const quint32 basePointId = GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
         const quint32 firstPointId = GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
@@ -1886,7 +1888,7 @@ void VPattern::ParseToolLineIntersectAxis(VMainGraphicsScene *scene, QDomElement
         const QString angle = GetParametrString(domElement, AttrAngle, "0.0");
         QString angleFix = angle;
 
-        VToolLineIntersectAxis::Create(id, name, typeLine, lineColor, angleFix, basePointId, firstPointId,
+        VToolLineIntersectAxis::Create(id, name, lineType, lineColor, angleFix, basePointId, firstPointId,
                                        secondPointId, mx, my, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (angleFix != angle)
@@ -1925,17 +1927,17 @@ void VPattern::ParseToolCurveIntersectAxis(VMainGraphicsScene *scene, QDomElemen
         QString name;
         qreal mx = 0;
         qreal my = 0;
-        QString typeLine;
+        QString lineType;
         QString lineColor;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, typeLine, lineColor);
+        PointsCommonAttributes(domElement, id, name, mx, my, lineType, lineColor);
 
         const quint32 basePointId = GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
         const quint32 curveId = GetParametrUInt(domElement, AttrCurve, NULL_ID_STR);
         const QString angle = GetParametrString(domElement, AttrAngle, "0.0");
         QString angleFix = angle;
 
-        VToolCurveIntersectAxis::Create(id, name, typeLine, lineColor, angleFix, basePointId, curveId, mx, my,
+        VToolCurveIntersectAxis::Create(id, name, lineType, lineColor, angleFix, basePointId, curveId, mx, my,
                                         scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (angleFix != angle)
@@ -2251,7 +2253,7 @@ void VPattern::ParseToolSpline(VMainGraphicsScene *scene, QDomElement &domElemen
         QString l2 = length2;//need for saving fixed formula;
 
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
         const quint32 duplicate = GetParametrUInt(domElement, AttrDuplicate, "0");
 
         VToolSpline *spl = VToolSpline::Create(id, point1, point4, a1, a2, l1, l2, duplicate, color, penStyle, scene,
@@ -2306,7 +2308,7 @@ void VPattern::ParseToolCubicBezier(VMainGraphicsScene *scene, const QDomElement
         const quint32 point4 = GetParametrUInt(domElement, AttrPoint4, NULL_ID_STR);
 
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
         const quint32 duplicate = GetParametrUInt(domElement, AttrDuplicate, "0");
 
         auto p1 = data->GeometricObject<VPointF>(point1);
@@ -2406,7 +2408,7 @@ void VPattern::ParseToolSplinePath(VMainGraphicsScene *scene, const QDomElement 
 
         ToolsCommonAttributes(domElement, id);
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
         const quint32 duplicate = GetParametrUInt(domElement, AttrDuplicate, "0");
 
         QVector<quint32> points;
@@ -2499,7 +2501,7 @@ void VPattern::ParseToolCubicBezierPath(VMainGraphicsScene *scene, const QDomEle
 
         ToolsCommonAttributes(domElement, id);
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
         const quint32 duplicate = GetParametrUInt(domElement, AttrDuplicate, "0");
 
         QVector<VPointF> points;
@@ -2652,7 +2654,7 @@ void VPattern::ParseToolArc(VMainGraphicsScene *scene, QDomElement &domElement, 
         const QString f2 = GetParametrString(domElement, AttrAngle2, "270");
         QString f2Fix = f2;//need for saving fixed formula;
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
 
         VToolArc::Create(id, center, r, f1Fix, f2Fix, color, penStyle, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
@@ -2702,7 +2704,7 @@ void VPattern::ParseToolEllipticalArc(VMainGraphicsScene *scene, QDomElement &do
         const QString frotation = GetParametrString(domElement, AttrRotationAngle, "0");
         QString frotationFix = frotation;//need for saving fixed formula;
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
 
         VToolEllipticalArc::Create(id, center, r1, r2, f1Fix, f2Fix, frotationFix, color, penStyle, scene, this, data,
                                    parse, Source::FromFile);
@@ -2821,7 +2823,7 @@ void VPattern::ParseToolArcWithLength(VMainGraphicsScene *scene, QDomElement &do
         const QString length = GetParametrString(domElement, AttrLength, "10");
         QString lengthFix = length;//need for saving fixed length;
         const QString color = GetParametrString(domElement, AttrColor, ColorBlack);
-        const QString penStyle = GetParametrString(domElement, AttrPenStyle, TypeLineLine);
+        const QString penStyle = GetParametrString(domElement, AttrPenStyle, LineTypeSolidLine);
 
         VToolArcWithLength::Create(id, center, r, f1Fix, lengthFix, color, penStyle, scene, this, data, parse,
                                    Source::FromFile);
@@ -3321,7 +3323,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
         const QString defType = QString().setNum(static_cast<int>(PiecePathType::CustomSeamAllowance));
         const PiecePathType type = static_cast<PiecePathType>(GetParametrUInt(domElement, AttrType, defType));
         const quint32 idTool = GetParametrUInt(domElement, VAbstractNode::AttrIdTool, NULL_ID_STR);
-        const QString penType = GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+        const QString penType = GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
         const bool cut = GetParametrBool(domElement, AttrCut, falseStr);
 
         VPiecePath path;

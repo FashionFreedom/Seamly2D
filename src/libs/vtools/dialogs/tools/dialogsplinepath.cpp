@@ -194,7 +194,7 @@ void DialogSplinePath::SetPath(const VSplinePath &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogSplinePath::GetPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

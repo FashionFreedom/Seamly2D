@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -322,6 +322,25 @@ QVector<QPointF> VArc::GetPoints() const
         pStart = lineP4P3.p1();
     }
     return points;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<QLineF> VArc::getSegments() const
+{
+    QVector<QPointF> points = GetPoints();
+    QVector<QLineF> lines;
+    if (points.size() >= 2)
+    {
+        for (int i=0; i < points.size()-1; ++i)
+        {
+            QLineF segment = QLineF(points.at(i), points.at(i+1));
+            if (segment.length() > 0)
+            {
+                lines.append(segment);
+            }
+        }
+    }
+    return lines;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

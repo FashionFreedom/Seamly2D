@@ -55,7 +55,10 @@
 #include <QSharedData>
 #include <QDataStream>
 #include "../ifc/ifcdef.h"
+#include "../vmisc/def.h"
 #include "../vmisc/diagnostic.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Weffc++")
@@ -65,33 +68,43 @@ class VPieceNodeData : public QSharedData
 {
 public:
     VPieceNodeData()
-        : m_id(NULL_ID),
-          m_typeTool(Tool::NodePoint),
-          m_reverse(false),
-          m_excluded(false),
-          m_isNotch(false),
-          m_isMainPathNode(true),
-          m_beforeWidthFormula(currentSeamAllowance),
-          m_afterWidthFormula(currentSeamAllowance),
-          m_angleType(PieceNodeAngle::ByLength),
-          m_notchType(NotchType::OneLine),
-          m_notchSubType(NotchSubType::Straightforward),
-          m_showSecondNotch(true)
+        : m_id(NULL_ID)
+        , m_typeTool(Tool::NodePoint)
+        , m_reverse(false)
+        , m_excluded(false)
+        , m_isNotch(false)
+        , m_isMainPathNode(true)
+        , m_beforeWidthFormula(currentSeamAllowance)
+        , m_afterWidthFormula(currentSeamAllowance)
+        , m_angleType(PieceNodeAngle::ByLength)
+        , m_notchType(stringToNotchType(qApp->Settings()->getDefaultNotchType()))
+        , m_notchSubType(NotchSubType::Straightforward)
+        , m_showNotch(true)
+        , m_showSecondNotch(true)
+        , m_notchLength(qApp->Settings()->getDefaultNotchLength())
+        , m_notchWidth(qApp->Settings()->getDefaultNotchWidth())
+        , m_notchAngle(.000)
+        , m_notchCount(1)
     {}
 
     VPieceNodeData(quint32 id, Tool typeTool, bool reverse)
-        : m_id(id),
-          m_typeTool(typeTool),
-          m_reverse(reverse),
-          m_excluded(false),
-          m_isNotch(false),
-          m_isMainPathNode(true),
-          m_beforeWidthFormula(currentSeamAllowance),
-          m_afterWidthFormula(currentSeamAllowance),
-          m_angleType(PieceNodeAngle::ByLength),
-          m_notchType(NotchType::OneLine),
-          m_notchSubType(NotchSubType::Straightforward),
-          m_showSecondNotch(true)
+        : m_id(id)
+        , m_typeTool(typeTool)
+        , m_reverse(reverse)
+        , m_excluded(false)
+        , m_isNotch(false)
+        , m_isMainPathNode(true)
+        , m_beforeWidthFormula(currentSeamAllowance)
+        , m_afterWidthFormula(currentSeamAllowance)
+        , m_angleType(PieceNodeAngle::ByLength)
+        , m_notchType(stringToNotchType(qApp->Settings()->getDefaultNotchType()))
+        , m_notchSubType(NotchSubType::Straightforward)
+        , m_showNotch(true)
+        , m_showSecondNotch(true)
+        , m_notchLength(qApp->Settings()->getDefaultNotchLength())
+        , m_notchWidth(qApp->Settings()->getDefaultNotchWidth())
+        , m_notchAngle(.000)
+        , m_notchCount(1)
     {
         if (m_typeTool == Tool::NodePoint)
         {
@@ -100,19 +113,24 @@ public:
     }
 
     VPieceNodeData (const VPieceNodeData& node)
-        : QSharedData(node),
-          m_id(node.m_id),
-          m_typeTool(node.m_typeTool),
-          m_reverse(node.m_reverse),
-          m_excluded(node.m_excluded),
-          m_isNotch(node.m_isNotch),
-          m_isMainPathNode(node.m_isMainPathNode),
-          m_beforeWidthFormula(node.m_beforeWidthFormula),
-          m_afterWidthFormula(node.m_afterWidthFormula),
-          m_angleType(node.m_angleType),
-          m_notchType(node.m_notchType),
-          m_notchSubType(node.m_notchSubType),
-          m_showSecondNotch(node.m_showSecondNotch)
+        : QSharedData(node)
+        , m_id(node.m_id)
+        , m_typeTool(node.m_typeTool)
+        , m_reverse(node.m_reverse)
+        , m_excluded(node.m_excluded)
+        , m_isNotch(node.m_isNotch)
+        , m_isMainPathNode(node.m_isMainPathNode)
+        , m_beforeWidthFormula(node.m_beforeWidthFormula)
+        , m_afterWidthFormula(node.m_afterWidthFormula)
+        , m_angleType(node.m_angleType)
+        , m_notchType(node.m_notchType)
+        , m_notchSubType(node.m_notchSubType)
+        , m_showNotch(node.m_showNotch)
+        , m_showSecondNotch(node.m_showSecondNotch)
+        , m_notchLength(node.m_notchLength)
+        , m_notchWidth(node.m_notchWidth)
+        , m_notchAngle(node.m_notchAngle)
+        , m_notchCount(node.m_notchCount)
     {}
 
     ~VPieceNodeData() Q_DECL_EQ_DEFAULT;
@@ -120,24 +138,15 @@ public:
     friend QDataStream& operator<<(QDataStream& out, const VPieceNodeData& p);
     friend QDataStream& operator>>(QDataStream& in, VPieceNodeData& p);
 
-    /** @brief id object id. */
-    quint32 m_id;
-
-    /** @brief typeTool type of tool */
-    Tool m_typeTool;
-
-    /** @brief reverse true if need reverse points list for node. */
-    bool m_reverse;
-
-    /** @brief m_excluded true if item excluded from main path. Excluded item is not visible and also will not has
-     * affect on main path. Also include to exist path items automatically setted excluded. */
-    bool m_excluded;
-
-    /** @brief m_isNotch has sense only for points. If true to seam allowance should be added a notch. */
-    bool m_isNotch;
-
-    /** @brief m_isMainPathNode need fin know if allowed for this passmakr to be double. */
-    bool           m_isMainPathNode;
+    quint32        m_id;              //! @brief id object id.
+    Tool           m_typeTool;        //! @brief typeTool type of tool
+    bool           m_reverse;         //! @brief reverse true if need reverse points list for node.
+    bool           m_excluded;        //! @brief m_excluded true if item excluded from main path. Excluded item is
+                                      //! not visible and also will not has affect on main path. Also include to exist
+                                      //! path items automatically setted excluded. */
+    bool           m_isNotch;         //! @brief m_isNotch has sense only for points. If true to seam allowance should
+                                      //! a notch should be added.
+    bool           m_isMainPathNode;  //! @brief m_isMainPathNode need fin know if allowed for this notch to be double.
 
     QString        m_beforeWidthFormula;
     QString        m_afterWidthFormula;
@@ -146,8 +155,12 @@ public:
 
     NotchType      m_notchType;
     NotchSubType   m_notchSubType;
-
+    bool           m_showNotch;
     bool           m_showSecondNotch;
+    qreal          m_notchLength;
+    qreal          m_notchWidth;
+    qreal          m_notchAngle;
+    int            m_notchCount;
 
 private:
     VPieceNodeData &operator=(const VPieceNodeData &) Q_DECL_EQ_DELETE;
@@ -167,7 +180,12 @@ QDataStream &operator<<(QDataStream &out, const VPieceNodeData &p)
         << static_cast<int>(p.m_angleType)
         << static_cast<int>(p.m_notchType)
         << static_cast<int>(p.m_notchSubType)
-        << p.m_showSecondNotch;
+        << p.m_showNotch
+        << p.m_showSecondNotch
+        << p.m_notchLength
+        << p.m_notchWidth
+        << p.m_notchAngle
+        << p.m_notchCount;
     return out;
 }
 
@@ -189,7 +207,12 @@ QDataStream &operator>>(QDataStream &in, VPieceNodeData &p)
        >> angleType
        >> notchType
        >> notchSubType
-       >> p.m_showSecondNotch;
+       >> p.m_showNotch
+       >> p.m_showSecondNotch
+       >> p.m_notchLength
+       >> p.m_notchWidth
+       >> p.m_notchAngle
+       >> p.m_notchCount;
 
     p.m_typeTool     = static_cast<Tool>(typeTool);
     p.m_angleType    = static_cast<PieceNodeAngle>(angleType);

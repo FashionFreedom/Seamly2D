@@ -133,7 +133,7 @@ void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogCubicBezier::GetPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
