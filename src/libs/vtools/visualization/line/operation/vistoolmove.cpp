@@ -141,7 +141,7 @@ void VisToolMove::RefreshGeometry()
     DrawPoint(pointFinish, line.p2(), supportColor);
 
     static const QString prefix = UnitsToStr(qApp->patternUnit(), true);
-    Visualization::toolTip = tr("Length = %1%2, angle = %3°, <b>Shift</b> - sticking angle, "
+    Visualization::toolTip = tr("Length = %1%2, angle = %3°, Hold <b>SHIFT</b> to constrain angle, "
                                 "<b>Mouse click</b> - finish creation")
             .arg(qApp->TrVars()->FormulaToUser(QString::number(qApp->fromPixel(tempLength)),
                                                qApp->Settings()->GetOsSeparator()))

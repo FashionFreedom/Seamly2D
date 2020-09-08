@@ -168,8 +168,8 @@ void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
 
             if (p.CountNodes() == 1)
             {
-                emit ToolTip(tr("Select main path objects, <b>Shift</b> - reverse direction curve, "
-                                "<b>Enter</b> - finish creation"));
+                emit ToolTip(tr("Select main path objects, Use <b>SHIFT</b> to reverse curve direction, "
+                                "Press <b>ENTER</b> to finish path creation "));
 
                 if (not qApp->getCurrentScene()->items().contains(visPath))
                 {

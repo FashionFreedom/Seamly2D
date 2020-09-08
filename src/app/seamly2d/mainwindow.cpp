@@ -1025,7 +1025,7 @@ void MainWindow::ToolInternalPath(bool checked)
 {
     ToolSelectAllDrawObjects();
     SetToolButton<DialogInternalPath>(checked, Tool::InternalPath, "://cursor/path_cursor.png",
-                                   tr("Select path objects, <b>Shift</b> - reverse direction curve"),
+                                   tr("Select path objects, use <b>SHIFT</b> to reverse curve direction"),
                                    &MainWindow::ClosedDialogInternalPath);
 }
 
@@ -1106,8 +1106,8 @@ void MainWindow::ClosedDialogUnionDetails(int result)
 void MainWindow::ToolGroup(bool checked)
 {
     ToolSelectGroupObjects();
-    const QString tooltip = tr("Select one or more objects, hold <b>%1</b> - for multiple selection, "
-                               "<b>Enter</b> - finish creation")
+    const QString tooltip = tr("Select one or more objects, Hold <b>%1</b> for multiple selection, "
+                               "Press <b>ENTER</b> to finish group creation ")
             .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(), strCtrl.toUtf8().constData()));
     SetToolButton<DialogGroup>(checked, Tool::Group, ":/cursor/group_plus_cursor.png", tooltip,
                                &MainWindow::ClosedDialogGroup);
@@ -1117,8 +1117,8 @@ void MainWindow::ToolGroup(bool checked)
 void MainWindow::ToolRotation(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("Select one or more objects, hold <b>%1</b> - for multiple selection, "
-                               "<b>Enter</b> - confirm selection")
+    const QString tooltip = tr("Select one or more objects, Hold <b>%1</b> for multiple selection, "
+                               "Press <b>ENTER</b> to confirm selection")
             .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(), strCtrl.toUtf8().constData()));
     SetToolButtonWithApply<DialogRotation>(checked, Tool::Rotation, ":/cursor/rotation_cursor.png", tooltip,
                                            &MainWindow::ClosedDrawDialogWithApply<VToolRotation>,
@@ -1129,8 +1129,8 @@ void MainWindow::ToolRotation(bool checked)
 void MainWindow::ToolFlippingByLine(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("Select one or more objects, hold <b>%1</b> - for multiple selection, "
-                               "<b>Enter</b> - confirm selection")
+    const QString tooltip = tr("Select one or more objects, Hold <b>%1</b> for multiple selection, "
+                               "Press <b>ENTER</b> to confirm selection")
             .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(), strCtrl.toUtf8().constData()));
     SetToolButtonWithApply<DialogFlippingByLine>(checked, Tool::FlippingByLine, ":/cursor/flipping_line_cursor.png",
                                                  tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolFlippingByLine>,
@@ -1141,8 +1141,8 @@ void MainWindow::ToolFlippingByLine(bool checked)
 void MainWindow::ToolFlippingByAxis(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("Select one or more objects, hold <b>%1</b> - for multiple selection, "
-                               "<b>Enter</b> - confirm selection")
+    const QString tooltip = tr("Select one or more objects, Hold <b>%1</b> for multiple selection, "
+                               "Press <b>ENTER</b> to confirm selection")
             .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(), strCtrl.toUtf8().constData()));
     SetToolButtonWithApply<DialogFlippingByAxis>(checked, Tool::FlippingByAxis, ":/cursor/flipping_axis_cursor.png",
                                                  tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolFlippingByAxis>,
@@ -1153,8 +1153,8 @@ void MainWindow::ToolFlippingByAxis(bool checked)
 void MainWindow::ToolMove(bool checked)
 {
     ToolSelectOperationObjects();
-    const QString tooltip = tr("Select one or more objects, hold <b>%1</b> - for multiple selection, "
-                               "<b>Enter</b> - confirm selection")
+    const QString tooltip = tr("Select one or more objects, Hold <b>%1</b> for multiple selection, "
+                               "Press <b>ENTER</b> to confirm selection")
             .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(), strCtrl.toUtf8().constData()));
     SetToolButtonWithApply<DialogMove>(checked, Tool::Move, ":/cursor/move_cursor.png", tooltip,
                                        &MainWindow::ClosedDrawDialogWithApply<VToolMove>,
@@ -5077,12 +5077,12 @@ void MainWindow::UpdateWindowTitle()
 
     if (not patternReadOnly && isFileWritable)
     {
-        setWindowTitle(GetPatternFileName()+GetMeasurementFileName());
+        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() + QString(" - ") + VER_INTERNALNAME_STR);
     }
     else
     {
-        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() + QLatin1String(" (") + tr("read only") +
-                       QLatin1String(")"));
+        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() +QLatin1String(" (") +
+                       tr("read only") + QLatin1String(")") + QString(" - ") + VER_INTERNALNAME_STR);
     }
     setWindowFilePath(qApp->GetPPath());
 

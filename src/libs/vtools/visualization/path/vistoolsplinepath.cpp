@@ -137,11 +137,11 @@ void VisToolSplinePath::RefreshGeometry()
         else
         {
             Visualization::toolTip = tr("<b>Curved path</b>: select three or more points, "
-                                        "<b>Enter</b> - finish creation");
+                                        "Press <b>ENTER</b> to finish tool creation");
         }
         if (mode == Mode::Show)
         {
-            Visualization::toolTip = tr("Use <b>Shift</b> for sticking angle!");
+            Visualization::toolTip = tr("Use <b>SHIFT</b> to constrain angle");
             emit ToolTip(Visualization::toolTip);
         }
     }
