@@ -329,7 +329,7 @@ void VToolCurveIntersectAxis::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = m_dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName,      dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrTypeLine,  dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrLineType,  dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
     doc->SetAttribute(domElement, AttrAngle,     dialogTool->GetAngle());
     doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
