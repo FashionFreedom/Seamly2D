@@ -142,7 +142,7 @@ void VisToolRotation::RefreshGeometry()
         VArc arc(*origin, defPointRadiusPixel*2, 0, tempAngle);
         DrawPath(angleArc, arc.GetPath(), supportColor2, Qt::SolidLine, Qt::RoundCap);
 
-        Visualization::toolTip = tr("Rotating angle = %1°, <b>Shift</b> - sticking angle, "
+        Visualization::toolTip = tr("Rotating angle = %1°, Hold <b>SHIFT</b> to constrain angle, "
                                     "<b>Mouse click</b> - finish creation").arg(tempAngle);
     }
 

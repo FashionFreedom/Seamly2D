@@ -260,7 +260,7 @@ MApplication::MApplication(int &argc, char **argv)
       dataBase(QPointer<MeasurementDatabaseDialog>()),
       testMode(false)
 {
-    setApplicationDisplayName(VER_PRODUCTNAME_STR);
+    //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     setOrganizationDomain(VER_COMPANYDOMAIN_STR);

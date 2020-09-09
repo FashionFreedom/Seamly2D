@@ -286,7 +286,7 @@ VApplication::VApplication(int &argc, char **argv)
       lockLog(),
       out(nullptr)
 {
-    setApplicationDisplayName(VER_PRODUCTNAME_STR);
+    //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     setOrganizationDomain(VER_COMPANYDOMAIN_STR);
