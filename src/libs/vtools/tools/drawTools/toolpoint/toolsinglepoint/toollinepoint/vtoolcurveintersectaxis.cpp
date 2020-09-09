@@ -99,8 +99,9 @@ VToolCurveIntersectAxis::VToolCurveIntersectAxis(VAbstractPattern *doc, VContain
                                                  const QString &formulaAngle, const quint32 &basePointId,
                                                  const quint32 &curveId, const Source &typeCreation,
                                                  QGraphicsItem *parent)
-    :VToolLinePoint(doc, data, id, lineType, lineColor, QString(), basePointId, 0, parent), formulaAngle(formulaAngle),
-      curveId(curveId)
+    : VToolLinePoint(doc, data, id, lineType, lineColor, QString(), basePointId, 0, parent)
+    , formulaAngle(formulaAngle)
+    , curveId(curveId)
 {
     ToolCreation(typeCreation);
 }
@@ -221,14 +222,20 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, cons
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VToolCurveIntersectAxis::FindPoint(const QPointF &point, qreal angle,
+bool VToolCurveIntersectAxis::FindPoint(const QPointF &axisPoint, qreal angle,
                                            const QSharedPointer<VAbstractCurve> &curve, QPointF *intersectPoint)
 {
-    QRectF rec = QRectF(0, 0, INT_MAX, INT_MAX);
-    rec.translate(-INT_MAX/2.0, -INT_MAX/2.0);
+    QRectF rectangle = QRectF(0, 0, INT_MAX, INT_MAX);
+    rectangle.translate(-INT_MAX/2.0, -INT_MAX/2.0);
 
-    const QLineF axis = QLineF(point, VGObject::BuildRay(point, angle, rec));
+    QLineF axis = QLineF(axisPoint, VGObject::BuildRay(axisPoint, angle, rectangle));
     QVector<QPointF> points = curve->IntersectLine(axis);
+
+    if (points.isEmpty())
+    {
+        QLineF axis2 = QLineF(axisPoint, VGObject::BuildRay(axisPoint, angle + 180, rectangle));
+        points = curve->IntersectLine(axis2);
+    }
 
     if (points.size() > 0)
     {
@@ -242,7 +249,7 @@ bool VToolCurveIntersectAxis::FindPoint(const QPointF &point, qreal angle,
 
         for ( qint32 i = 0; i < points.size(); ++i )
         {
-            lengths.insert(QLineF(points.at(i), point).length(), i);
+            lengths.insert(QLineF(points.at(i), axisPoint).length(), i);
         }
 
         QMap<qreal, int>::const_iterator i = lengths.constBegin();
@@ -251,6 +258,7 @@ bool VToolCurveIntersectAxis::FindPoint(const QPointF &point, qreal angle,
             *intersectPoint = points.at(i.value());
             return true;
         }
+
     }
 
     return false;
@@ -329,7 +337,7 @@ void VToolCurveIntersectAxis::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = m_dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName,      dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrTypeLine,  dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrLineType,  dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
     doc->SetAttribute(domElement, AttrAngle,     dialogTool->GetAngle());
     doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
