@@ -376,8 +376,8 @@ void DialogSeamAllowance::ChosenObject(quint32 id, const SceneObject &type)
 
             if (p.GetPath().CountNodes() == 1)
             {
-                emit ToolTip(tr("Select main path objects clockwise, <b>Shift</b> - reverse direction curve, "
-                                "<b>Enter</b> - finish creation"));
+                emit ToolTip(tr("Select main path objects clockwise, Use <b>SHIFT</b> to reverse curve direction, "
+                                "Press <b>ENTER</b> to finish piece creation "));
 
                 if (not qApp->getCurrentScene()->items().contains(visPath))
                 {

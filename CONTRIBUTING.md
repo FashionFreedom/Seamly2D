@@ -27,9 +27,10 @@ _It's easier if you use Github Desktop https://desktop.github.com/ for Windows &
 >git clone https://github.com/fashionfreedom/seamly2d  
 * Set the origin URL.
 >git remote set-url origin https://github.com/fashionfreedom/seamly2d  
-* Create your issue branch, name it after the issue you will fix: **issue-#_n_** (eg - **issue-#155** to name your fix for issue #155.) 
 
 ### Git Flow 2 - Create your issue branch from develop branch then switch to your issue branch 
+
+* Create your issue branch, name it after the issue you will fix: **issue-#_n_** (eg - **issue-#155** to name your fix for issue #155.) 
 >git checkout develop       
 git checkout -b issue-#_n_   
 git checkout issue-#_n_  
@@ -44,37 +45,38 @@ git checkout issue-#_n_
 >git commit -a  
 git commit -m "_your commit message_"  
 git commit push issue-#_n_    
-* Add your changes to the file **ChangeLog.txt** 
+_Note: At the next build after merging your code into the develop branch, your commit message will be automatically added to the Changelog.md file_
 
 ### GitFlow 4 - Test your issue branch (DON'T SKIP THIS STEP)
  
-* Periodically build your issue branch. You'll need Qt 5.12.x and Qt Creator 4.3.x with MSVC 2017 64bit or MinGW 7.3.0 64bit in your Qt project Kit.
-* Run it on your local PC. Try to find how to make your changes crash.
-* Test your final commit before creating a pull request.
+* Periodically build your issue branch. You'll need Qt 5.13.2 and Qt Creator 4.3.x with MSVC 2017 64bit or MinGW 7.3.0 64bit in your Qt project Kit.
+* Run it on your local PC. Try to find how to make your changes crash before making your pull request.
 
-### GitFLow 5 -Push your issue branch up to the main repo
+### GitFLow 5 - Push your issue branch up to the main repo
 
-* When you confirm that the issue was fixed (at least for you! :D), ask our repo admins to give you write permissions. Send email to mailto:hello@seamly.net or 
-* Push your branch up to our main repo. 
->git push -u origin issue-#_n_  
+* Push your branch up to our main repo 
+>git push -u origin issue-#_n_ 
+* Go to **Pull Requests** and click on the green **New Pull Request** button
 
 ### GitFLow 6 - Create a Pull Request
 
-* On the Code page in the main repo, next to **Branch:develop** in upper left above file listing, select the **New Pull Request** button. If **Branch:master** is displayed use the dropdown list to select the **develop** branch.  
-* The Pull Request page will appear. From the **Compare:** dropdown list, select your issue branch.  
-* In the comments box, add the text "Fix issue #_n_" (eg "Fix issue #155")  
-* On the next line add the text "Tested on _operatingsystem_ _version_ _64-bit_". (eg "Tested on Windows 10 64-bit"). We don't support 32-bit platforms.  
+* On the Code page in the main repo, make sure **Branch:develop** is selected.   
+* Click on **Pull Requests** in the main menu bar. Click on the green **New Pull Request** button.
+* From the **Compare:develop** dropdown list, select your issue branch.  
+* In the comments box add a short description, eg "Fix issue #155" or other short description of what was done.  
+* On the next line optionally add additional relevant info. (eg "Tested on Windows 10 64-bit"). 
 * Click the **Create Pull Request** button
-* Link your Pull Request to the fixed issue with the **Linked Issues** option in the right hand column.  
+* Link your Pull Request to the issue with **Linked Issues** in the right hand column.  
 * Other team members will test it on their systems and approve the Pull Request.  
-* The maintainer will merge your issue branch into **develop**.     
+* The maintainer will merge your issue branch into **develop**.
+* At the next build, the first line of your short description will be added to ChangeLog.md
 
 ### GitFlow 7 - Update your Pull Request 
 
 Most likely we will ask you to fix some issues in your code. In this case you would: 
-* Make changes to your local **issue-#_n_** branch  
-* Push your **issue-#_n_** branch up to the repo  
+* Make changes locally to your **issue-#_n_** branch  
+* Push your **issue-#_n_** branch up to the repo again  
 * Update your existing pull request   
-* Rejoice again! :D  
+* Rejoice ! :D  
 
 Thanks for being an open source contributor!  
