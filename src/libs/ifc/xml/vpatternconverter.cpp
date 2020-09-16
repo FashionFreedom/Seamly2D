@@ -185,10 +185,32 @@ static const QString strLetter                    = QStringLiteral("letter");
 static const QString strMaterial                  = QStringLiteral("material");
 static const QString strUserDefined               = QStringLiteral("userDef");
 static const QString strPlacement                 = QStringLiteral("placement");
+static const QString strPassmark                  = QStringLiteral("passmark");
+static const QString strPassmarkLine              = QStringLiteral("passmarkLine");
+static const QString strPassmarkAngle             = QStringLiteral("passmarkAngle");
+static const QString strShowSecondPassmark        = QStringLiteral("showSecondPassmark");
+static const QString strNotch                     = QStringLiteral("notch");
 static const QString strNotchCount                = QStringLiteral("notchCount");
-static const QString strNotchAngle                = QStringLiteral("notchAngle"); 
+static const QString strNotchAngle                = QStringLiteral("notchAngle");
+static const QString strNotchType                 = QStringLiteral("notchType");
+static const QString strNotchSubType              = QStringLiteral("notchSubtype");
 static const QString strShowNotch                 = QStringLiteral("showNotch");
 static const QString strShowSecond                = QStringLiteral("showSecondNotch");
+static const QString strSlitNotch                 = QStringLiteral("slit");
+static const QString strVMark                     = QStringLiteral("vMark");
+static const QString strV_External                = QStringLiteral("vExternal");
+static const QString strTMark                     = QStringLiteral("tMark");
+static const QString strT_Notch                   = QStringLiteral("tNotch");
+static const QString strHair                      = QStringLiteral("hair");
+static const QString strSolidLine                 = QStringLiteral("solidLine");
+static const QString strOne                       = QStringLiteral("one");
+static const QString strTwo                       = QStringLiteral("two");
+static const QString strThree                     = QStringLiteral("three");
+static const QString strTypeLine                  = QStringLiteral("typeLine");
+static const QString strLineType                  = QStringLiteral("lineType");
+static const QString strPenStyle                  = QStringLiteral("penStyle");
+static const QString strElArc                     = QStringLiteral("elArc");
+static const QString strTrue                      = QStringLiteral("true");
 
 //---------------------------------------------------------------------------------------------------------------------
 VPatternConverter::VPatternConverter(const QString &fileName)
@@ -859,19 +881,20 @@ void VPatternConverter::ToV0_6_1()
 
     SetVersion(QStringLiteral("0.6.1"));
 
-    QStringList nodenames = QStringList() << QStringLiteral("node")
-                                          << QStringLiteral("point")
-                                          << QStringLiteral("line")
-                                          << QStringLiteral("path")
-                                          << QStringLiteral("arc")
-                                          << QStringLiteral("spline");
+    QStringList nodenames = QStringList() << strNode
+                                          << strPoint
+                                          << strLine
+                                          << strPath
+                                          << strArc
+                                          << strSpline
+                                          << strElArc;
 
-    QStringList oldnames = QStringList() << QStringLiteral("passmark")
-                                         << QStringLiteral("passmarkLine")
-                                         << QStringLiteral("passmarkAngle")
-                                         << QStringLiteral("showSecondPassmark")
-                                         << QStringLiteral("typeLine")
-                                         << QStringLiteral("penStyle");
+    QStringList oldnames = QStringList() << strPassmark
+                                         << strPassmarkLine
+                                         << strPassmarkAngle
+                                         << strShowSecondPassmark
+                                         << strTypeLine
+                                         << strPenStyle;
 
     QString newName = "";
     qint32 index = 0;
@@ -904,71 +927,71 @@ void VPatternConverter::ToV0_6_1()
                     {
                         case 0:
                         {
-                            newName = QStringLiteral("notch");
+                            newName = strNotch;
                             owner.setAttribute(strNotchAngle, 0.0);
-                            owner.setAttribute(strShowNotch, "true");
-                            owner.setAttribute(strShowSecond, "true");
+                            owner.setAttribute(strShowNotch, strTrue);
+                            owner.setAttribute(strShowSecond, strTrue);
                             break;
                         }
                         case 1: //! Replaces " passmarkLine" with "notchType"
                         {
-                            newName = QStringLiteral("notchType");
-                            if (attributeValue == "one")
+                            newName = strNotchType;
+                            if (attributeValue == strOne)
                             {
-                              attributeValue = QString("slit");
+                              attributeValue = strSlitNotch;
                               owner.setAttribute(strNotchCount, 1);
                               break;
                             }
-                            if (attributeValue == "two")
+                            if (attributeValue == strTwo)
                             {
-                              attributeValue = QString("slit");
+                              attributeValue = strSlitNotch;
                               owner.setAttribute(strNotchCount, 2);
                               break;
                             }
-                            if (attributeValue == "three")
+                            if (attributeValue == strThree)
                             {
-                              attributeValue = QString("slit");
+                              attributeValue = strSlitNotch;
                               owner.setAttribute(strNotchCount, 3);
                               break;
                             }
-                            if (attributeValue == "tMark")
+                            if (attributeValue == strTMark)
                             {
-                              attributeValue = QString("tNotch");
+                              attributeValue = strT_Notch;
                               owner.setAttribute(strNotchCount, 1);
                               break;
                             }
-                            if (attributeValue == "vMark")
+                            if (attributeValue == strVMark)
                             {
-                              attributeValue = QString("vExternal");
+                              attributeValue = strV_External;
                               owner.setAttribute(strNotchCount, 1);
                             }
                             break;
                         }
                         case 2: //! Replaces " passmarkAngle" with "notchSubType"
                         {
-                            newName = QStringLiteral("notchSubtype");
+                            newName = strNotchSubType;
                             break;
                         }
                         case 3:
                         {
-                            newName = QStringLiteral("showSecondNotch");
+                            newName = strShowSecond;
                             break;
                         }
                         case 4: //! Fixes incorrect name & value for lineType attribute
                         {
-                            newName = QStringLiteral("lineType");
-                            if (attributeValue == "hair")
+                            newName = strLineType;
+                            if (attributeValue == strHair)
                             {
-                              attributeValue = QString("solidLine");
+                              attributeValue = strSolidLine;
                             }
                             break;
                         }
                         case 5: //! Fixes incorrect value for penStyle attribute
                         {
-                            newName = QStringLiteral("penStyle");
-                            if (attributeValue == "hair")
+                            newName = strPenStyle;
+                            if (attributeValue == strHair)
                             {
-                              attributeValue = QString("solidLine");
+                              attributeValue = strSolidLine;
                             }
                             break;
                         }
@@ -982,63 +1005,6 @@ void VPatternConverter::ToV0_6_1()
             }
         }
     }
-/*
-    // Second pass to convert notchtype one | two | three to notchType = slit add notchCount = 1 | 2 | 3
-    nodenames = QStringList() << QStringLiteral("node") << QStringLiteral("path");
-    oldnames = QStringList() << QStringLiteral("notchType");
-
-    index = 0;
-
-    for (int i = 0; i < nodenames.size(); i++)
-    {
-    QDomNodeList list = elementsByTagName(nodenames[i]);
-
-        for (int j = 0; j < list.size(); j++)
-        {
-            QDomNode node = list.at(j);
-
-            QDomNamedNodeMap map = node.attributes();
-
-            for (int k = 0; k < map.size(); k++)
-            {
-                index = -1;
-                QDomNode mapItem = map.item(k);
-                QDomAttr attribute = mapItem.toAttr();
-                QString attributeName = attribute.name();
-
-                index = oldnames.indexOf(attributeName);
-                if (index > -1)
-                {
-                    QString attributeValue = attribute.value();
-                    QDomElement owner = attribute.ownerElement();
-
-                    switch(index)
-                    {
-                        case 0:
-                        {
-                            if (attributeValue == "one")
-                            {
-                              attribute.setValue(QString("slit"));
-                              owner.setAttribute(strNotchCount, 1);
-                            }
-                            else if (attributeValue == "two")
-                            {
-                              attribute.setValue(QString("slit"));
-                              owner.setAttribute(strNotchCount, 2);
-                            }
-                            else if (attributeValue == "three")
-                            {
-                              attribute.setValue(QString("slit"));
-                              owner.setAttribute(strNotchCount, 3);
-                            }
-                        }
-                        default:
-                            break;
-                    }
-                }
-            }
-        }
-    }*/
     Save();
 }
 
