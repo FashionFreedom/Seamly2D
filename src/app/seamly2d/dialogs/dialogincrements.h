@@ -55,7 +55,6 @@
 #include "../vtools/dialogs/tools/dialogtool.h"
 #include "../xml/vpattern.h"
 #include "../vmisc/vtablesearch.h"
-#include <tuple>
 
 #include <QPair>
 
@@ -113,33 +112,25 @@ private:
 
     int                  formulaBaseHeight;
 
-    QSharedPointer<VTableSearch> searchIncrements;
-    QSharedPointer<VTableSearch> searchLines;
-    QSharedPointer<VTableSearch> searchLineAngles;
-    QSharedPointer<VTableSearch> searchCurveLengths;
-    QSharedPointer<VTableSearch> searchCurveControlPointLengths;
-    QSharedPointer<VTableSearch> searchCurveAngles;
-    QSharedPointer<VTableSearch> searchArcRadiuses;
+    QSharedPointer<VTableSearch> search;
 
     bool hasChanges;
 
     QVector<QPair<QString, QString>> renameList;
 
     template <typename T>
-    void    FillTable(const QMap<QString, T> &varTable, QTableWidget *table);
+    void                 FillTable(const QMap<QString, T> &varTable, QTableWidget *table);
 
-    void    SetupTableSearch();
+    void                 FillIncrements(bool freshCall = false);
+    void                 FillLengthsLines();
+    void                 FillLengthLinesAngles();
+    void                 FillLengthsCurves();
+    void                 FillCurvesCLengths();
+    void                 FillRadiusesArcs();
+    void                 FillAnglesCurves();
 
-    void    FillIncrements(bool freshCall = false);
-    void    FillLineLengths();
-    void    FillLineAngles();
-    void    FillCurveLengths();
-    void    FillCurveControlPointLengths();
-    void    FillCurveAngles();
-    void    FillArcRadiuses();
-
-    void    ShowUnits();
-    void    ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
+    void                 ShowUnits();
+    void                 ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
 
     void AddCell(QTableWidget *table, const QString &text, int row, int column, int aligment, bool ok = true);
 
