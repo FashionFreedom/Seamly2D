@@ -83,22 +83,18 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
       data(data),
       doc(doc),
       formulaBaseHeight(0),
-      searchIncrements(),
-      searchLines(),
-      searchLineAngles(),
-      searchCurveLengths(),
-      searchCurveControlPointLengths(),
-      searchCurveAngles(),
-      searchArcRadiuses(),
+      search(),
       hasChanges(false),
       renameList()
 {
     ui->setupUi(this);
 
     ui->lineEditName->setClearButtonEnabled(true);
-    ui->lineEditFindIncrements->setClearButtonEnabled(true);
+    ui->lineEditFind->setClearButtonEnabled(true);
 
-    ui->lineEditFindIncrements->installEventFilter(this);
+    ui->lineEditFind->installEventFilter(this);
+
+    search = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetIncrement));
 
     formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
@@ -110,21 +106,12 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
 
     const bool freshCall = true;
     FillIncrements(freshCall);
-    FillLineLengths();
-    FillLineAngles();
-    FillCurveLengths();
-    FillCurveControlPointLengths();
-    FillArcRadiuses();
-    FillCurveAngles();
-
-    searchIncrements = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetIncrements));
-    searchLines = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetLines));
-    searchLineAngles = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetLineAngles));
-    searchCurveLengths = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetCurveLengths));
-    searchCurveControlPointLengths = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetCurveControlPointLengths));
-    searchCurveAngles = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetCurveAngles));
-    searchArcRadiuses = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetArcRadiuses));
-    SetupTableSearch();
+    FillLengthsLines();
+    FillLengthLinesAngles();
+    FillLengthsCurves();
+    FillCurvesCLengths();
+    FillRadiusesArcs();
+    FillAnglesCurves();
 
     connect(this->doc, &VPattern::FullUpdateFromFile, this, &DialogIncrements::FullUpdateFromFile);
 
@@ -132,7 +119,7 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
     ui->lineEditName->setValidator( new QRegularExpressionValidator(QRegularExpression(
                                                                         QLatin1String("^$|")+NameRegExp()), this));
 
-    connect(ui->tableWidgetIncrements, &QTableWidget::itemSelectionChanged, this,
+    connect(ui->tableWidgetIncrement, &QTableWidget::itemSelectionChanged, this,
             &DialogIncrements::ShowIncrementDetails);
 
     connect(ui->toolButtonAdd, &QPushButton::clicked, this, &DialogIncrements::AddIncrement);
@@ -144,63 +131,24 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
     connect(ui->lineEditName, &QLineEdit::textEdited, this, &DialogIncrements::SaveIncrName);
     connect(ui->plainTextEditDescription, &QPlainTextEdit::textChanged, this, &DialogIncrements::SaveIncrDescription);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogIncrements::SaveIncrFormula);
-
-    if (ui->tableWidgetIncrements->rowCount() > 0)
-    {
-        ui->tableWidgetIncrements->selectRow(0);
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief SetupTableSearch setup search functionality for all tabs
- */
-void DialogIncrements::SetupTableSearch()
-{
-    /*
-     * The same operation has to happen to all 7 tabs - creating a array of tuples to make this code more readable, hopefully
-     *
-     * Each tuple corresponds to a tab, containing:
-     *  - VTableSearch (search...)
-     *  - QLineEdit (lineEditFind...)
-     *  - QToolButton (findPrevious...)
-     *  - QToolButton (findNext...)
-     */
-    std::tuple<QSharedPointer<VTableSearch>, QLineEdit*, QToolButton*, QToolButton*> tableSearchItems[7] = {
-        (std::make_tuple(searchIncrements, ui->lineEditFindIncrements, ui->toolButtonFindPreviousIncrement, ui->toolButtonFindNextIncrement)),
-        (std::make_tuple(searchLines, ui->lineEditFindLines, ui->toolButtonFindPreviousLine, ui->toolButtonFindNextLine)),
-        (std::make_tuple(searchLineAngles, ui->lineEditFindLineAngles, ui->toolButtonFindPreviousLineAngle, ui->toolButtonFindNextLineAngle)),
-        (std::make_tuple(searchCurveLengths, ui->lineEditFindCurveLengths, ui->toolButtonFindPreviousCurveLength, ui->toolButtonFindNextCurveLength)),
-        (std::make_tuple(searchCurveControlPointLengths, ui->lineEditFindCurveControlPointLengths, ui->toolButtonFindPreviousCurveControlPointLength, ui->toolButtonFindNextCurveControlPointLength)),
-        (std::make_tuple(searchCurveAngles, ui->lineEditFindCurveAngles, ui->toolButtonFindPreviousCurveAngle, ui->toolButtonFindNextCurveAngle)),
-        (std::make_tuple(searchArcRadiuses, ui->lineEditFindArcRadiuses, ui->toolButtonFindPreviousArcRadius, ui->toolButtonFindNextArcRadius))
-    };
-
-    //For every tuple of (tableSearch, lineEdit, and toolButtons):
-    for(unsigned int tableSearchItemIndex = 0; tableSearchItemIndex < sizeof(tableSearchItems); tableSearchItemIndex = tableSearchItemIndex + 1 )
-    {
-        const std::tuple<QSharedPointer<VTableSearch>, QLineEdit*, QToolButton*, QToolButton*> tableSearchItem = tableSearchItems[tableSearchItemIndex];
-
-        //connect lineEdit and tableSearch
-        connect(std::get<1>(tableSearchItem), &QLineEdit::textEdited, this, [tableSearchItem](const QString &term){std::get<0>(tableSearchItem)->Find(term);});
-
-        //connect findPrevious/findNext buttons
-        connect(std::get<2>(tableSearchItem), &QToolButton::clicked, this, [tableSearchItem](){std::get<0>(tableSearchItem)->FindPrevious();});
-        connect(std::get<3>(tableSearchItem), &QToolButton::clicked, this, [tableSearchItem](){std::get<0>(tableSearchItem)->FindNext();});
-
-        //enable/disable findPrevious/findNext buttons depending on if the tableSearch has results
-        connect(std::get<0>(tableSearchItem).data(), &VTableSearch::HasResult, this, [tableSearchItem] (bool state)
-        {
-            std::get<2>(tableSearchItem)->setEnabled(state);
-        });
-
-        connect(std::get<0>(tableSearchItem).data(), &VTableSearch::HasResult, this, [tableSearchItem] (bool state)
-        {
-            std::get<3>(tableSearchItem)->setEnabled(state);
-        });
-    }
-
+    connect(ui->lineEditFind, &QLineEdit::textEdited, this, [this](const QString &term){search->Find(term);});
+    connect(ui->toolButtonFindPrevious, &QToolButton::clicked, this, [this](){search->FindPrevious();});
+    connect(ui->toolButtonFindNext, &QToolButton::clicked, this, [this](){search->FindNext();});
     connect(ui->pushButtonRefresh, &QPushButton::clicked, this, &DialogIncrements::RefreshPattern);
+
+    connect(search.data(), &VTableSearch::HasResult, this, [this] (bool state)
+    {
+        ui->toolButtonFindPrevious->setEnabled(state);
+    });
+    connect(search.data(), &VTableSearch::HasResult, this, [this] (bool state)
+    {
+        ui->toolButtonFindNext->setEnabled(state);
+    });
+
+    if (ui->tableWidgetIncrement->rowCount() > 0)
+    {
+        ui->tableWidgetIncrement->selectRow(0);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -209,8 +157,8 @@ void DialogIncrements::SetupTableSearch()
  */
 void DialogIncrements::FillIncrements(bool freshCall)
 {
-    ui->tableWidgetIncrements->blockSignals(true);
-    ui->tableWidgetIncrements->clearContents();
+    ui->tableWidgetIncrement->blockSignals(true);
+    ui->tableWidgetIncrement->clearContents();
 
     const QMap<QString, QSharedPointer<VIncrement> > increments = data->DataIncrements();
     QMap<QString, QSharedPointer<VIncrement> >::const_iterator i;
@@ -224,15 +172,15 @@ void DialogIncrements::FillIncrements(bool freshCall)
 
     qint32 currentRow = -1;
     QMapIterator<quint32, QString> iMap(map);
-    ui->tableWidgetIncrements->setRowCount ( increments.size() );
+    ui->tableWidgetIncrement->setRowCount ( increments.size() );
     while (iMap.hasNext())
     {
         iMap.next();
         QSharedPointer<VIncrement> incr = increments.value(iMap.value());
         currentRow++;
 
-        AddCell(ui->tableWidgetIncrements, incr->GetName(), currentRow, 0, Qt::AlignVCenter); // name
-        AddCell(ui->tableWidgetIncrements, qApp->LocaleToString(*incr->GetValue()), currentRow, 1,
+        AddCell(ui->tableWidgetIncrement, incr->GetName(), currentRow, 0, Qt::AlignVCenter); // name
+        AddCell(ui->tableWidgetIncrement, qApp->LocaleToString(*incr->GetValue()), currentRow, 1,
                 Qt::AlignHCenter | Qt::AlignVCenter, incr->IsFormulaOk()); // calculated value
 
         QString formula;
@@ -246,16 +194,16 @@ void DialogIncrements::FillIncrements(bool freshCall)
             formula = incr->GetFormula();
         }
 
-        AddCell(ui->tableWidgetIncrements, formula, currentRow, 2, Qt::AlignVCenter); // formula
+        AddCell(ui->tableWidgetIncrement, formula, currentRow, 2, Qt::AlignVCenter); // formula
     }
 
     if (freshCall)
     {
-        ui->tableWidgetIncrements->resizeColumnsToContents();
-        ui->tableWidgetIncrements->resizeRowsToContents();
+        ui->tableWidgetIncrement->resizeColumnsToContents();
+        ui->tableWidgetIncrement->resizeRowsToContents();
     }
-    ui->tableWidgetIncrements->horizontalHeader()->setStretchLastSection(true);
-    ui->tableWidgetIncrements->blockSignals(false);
+    ui->tableWidgetIncrement->horizontalHeader()->setStretchLastSection(true);
+    ui->tableWidgetIncrement->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -266,12 +214,12 @@ void DialogIncrements::FillTable(const QMap<QString, T> &varTable, QTableWidget 
 
     qint32 currentRow = -1;
     QMapIterator<QString, T> i(varTable);
-    table->setRowCount ( varTable.size() );
     while (i.hasNext())
     {
         i.next();
         qreal length = *i.value()->GetValue();
         currentRow++;
+        table->setRowCount ( varTable.size() );
 
         QTableWidgetItem *item = new QTableWidgetItem(i.key());
         item->setTextAlignment(Qt::AlignLeft);
@@ -291,45 +239,42 @@ void DialogIncrements::FillTable(const QMap<QString, T> &varTable, QTableWidget 
 /**
  * @brief FillLengthLines fill data for table of lines lengths
  */
-void DialogIncrements::FillLineLengths()
+void DialogIncrements::FillLengthsLines()
 {
     FillTable(data->DataLengthLines(), ui->tableWidgetLines);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief FillLengthLines fill data for table of lines angles
- */
-void DialogIncrements::FillLineAngles()
+void DialogIncrements::FillLengthLinesAngles()
 {
-    FillTable(data->DataAngleLines(), ui->tableWidgetLineAngles);
+    FillTable(data->DataAngleLines(), ui->tableWidgetLinesAngles);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief FillLengthSplines fill data for table of splines lengths
  */
-void DialogIncrements::FillCurveLengths()
+void DialogIncrements::FillLengthsCurves()
 {
-    FillTable(data->DataLengthCurves(), ui->tableWidgetCurveLengths);
+    FillTable(data->DataLengthCurves(), ui->tableWidgetSplines);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogIncrements::FillCurveControlPointLengths()
+void DialogIncrements::FillCurvesCLengths()
 {
-    FillTable(data->DataCurvesCLength(), ui->tableWidgetCurveControlPointLengths);
+    FillTable(data->DataCurvesCLength(), ui->tableWidgetCLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogIncrements::FillCurveAngles()
+void DialogIncrements::FillRadiusesArcs()
 {
-    FillTable(data->DataAnglesCurves(), ui->tableWidgetCurveAngles);
+    FillTable(data->DataRadiusesArcs(), ui->tableWidgetRadiusesArcs);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogIncrements::FillArcRadiuses()
+void DialogIncrements::FillAnglesCurves()
 {
-    FillTable(data->DataRadiusesArcs(), ui->tableWidgetArcRadiuses);
+    FillTable(data->DataAnglesCurves(), ui->tableWidgetAnglesCurves);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -337,15 +282,15 @@ void DialogIncrements::ShowUnits()
 {
     const QString unit = UnitsToStr(qApp->patternUnit());
 
-    ShowHeaderUnits(ui->tableWidgetIncrements, 1, unit);// calculated value
-    ShowHeaderUnits(ui->tableWidgetIncrements, 2, unit);// formula
+    ShowHeaderUnits(ui->tableWidgetIncrement, 1, unit);// calculated value
+    ShowHeaderUnits(ui->tableWidgetIncrement, 2, unit);// formula
 
     ShowHeaderUnits(ui->tableWidgetLines, 1, unit);// lengths
-    ShowHeaderUnits(ui->tableWidgetLineAngles, 1, unit);// lengths
-    ShowHeaderUnits(ui->tableWidgetCurveLengths, 1, unit);// lengths
-    ShowHeaderUnits(ui->tableWidgetCurveControlPointLengths, 1, degreeSymbol);// angle
-    ShowHeaderUnits(ui->tableWidgetCurveAngles, 1, unit);// radius
-    ShowHeaderUnits(ui->tableWidgetArcRadiuses, 1, degreeSymbol);// angle
+    ShowHeaderUnits(ui->tableWidgetSplines, 1, unit);// lengths
+    ShowHeaderUnits(ui->tableWidgetCLength, 1, unit);// lengths
+    ShowHeaderUnits(ui->tableWidgetLinesAngles, 1, degreeSymbol);// angle
+    ShowHeaderUnits(ui->tableWidgetRadiusesArcs, 1, unit);// radius
+    ShowHeaderUnits(ui->tableWidgetAnglesCurves, 1, degreeSymbol);// angle
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -457,9 +402,9 @@ bool DialogIncrements::EvalIncrementFormula(const QString &formula, bool fromUse
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::Controls()
 {
-    if (ui->tableWidgetIncrements->rowCount() > 0)
+    if (ui->tableWidgetIncrement->rowCount() > 0)
     {
-        const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(ui->tableWidgetIncrements->currentRow(), 0);
+        const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(ui->tableWidgetIncrement->currentRow(), 0);
         SCASSERT(nameField != nullptr)
 
         ui->toolButtonRemove->setEnabled(not IncrementUsed(nameField->text()));
@@ -469,14 +414,14 @@ void DialogIncrements::Controls()
         ui->toolButtonRemove->setEnabled(false);
     }
 
-    if (ui->tableWidgetIncrements->rowCount() >= 2)
+    if (ui->tableWidgetIncrement->rowCount() >= 2)
     {
-        if (ui->tableWidgetIncrements->currentRow() == 0)
+        if (ui->tableWidgetIncrement->currentRow() == 0)
         {
             ui->toolButtonUp->setEnabled(false);
             ui->toolButtonDown->setEnabled(true);
         }
-        else if (ui->tableWidgetIncrements->currentRow() == ui->tableWidgetIncrements->rowCount()-1)
+        else if (ui->tableWidgetIncrement->currentRow() == ui->tableWidgetIncrement->rowCount()-1)
         {
             ui->toolButtonUp->setEnabled(true);
             ui->toolButtonDown->setEnabled(false);
@@ -547,13 +492,7 @@ void DialogIncrements::UpdateTree()
 {
     FillIncrements();
 
-    searchIncrements->RefreshList(ui->lineEditFindIncrements->text());
-    searchLines->RefreshList(ui->lineEditFindLines->text());
-    searchLineAngles->RefreshList(ui->lineEditFindLineAngles->text());
-    searchCurveLengths->RefreshList(ui->lineEditFindCurveLengths->text());
-    searchCurveControlPointLengths->RefreshList(ui->lineEditFindCurveControlPointLengths->text());
-    searchCurveAngles->RefreshList(ui->lineEditFindCurveAngles->text());
-    searchArcRadiuses->RefreshList(ui->lineEditFindArcRadiuses->text());
+    search->RefreshList(ui->lineEditFind->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -609,29 +548,21 @@ void DialogIncrements::FullUpdateFromFile()
 {
     hasChanges = false;
 
-    ui->tableWidgetIncrements->clearContents();
     ui->tableWidgetLines->clearContents();
-    ui->tableWidgetLineAngles->clearContents();
-    ui->tableWidgetCurveLengths->clearContents();
-    ui->tableWidgetCurveControlPointLengths->clearContents();
-    ui->tableWidgetCurveAngles->clearContents();
-    ui->tableWidgetArcRadiuses->clearContents();
+    ui->tableWidgetSplines->clearContents();
+    ui->tableWidgetAnglesCurves->clearContents();
+    ui->tableWidgetLinesAngles->clearContents();
+    ui->tableWidgetRadiusesArcs->clearContents();
 
     FillIncrements();
-    FillLineLengths();
-    FillLineAngles();
-    FillCurveLengths();
-    FillCurveControlPointLengths();
-    FillArcRadiuses();
-    FillCurveAngles();
+    FillLengthsLines();
+    FillLengthLinesAngles();
+    FillLengthsCurves();
+    FillCurvesCLengths();
+    FillRadiusesArcs();
+    FillAnglesCurves();
 
-    searchIncrements->RefreshList(ui->lineEditFindIncrements->text());
-    searchLines->RefreshList(ui->lineEditFindLines->text());
-    searchLineAngles->RefreshList(ui->lineEditFindLineAngles->text());
-    searchCurveLengths->RefreshList(ui->lineEditFindCurveLengths->text());
-    searchCurveControlPointLengths->RefreshList(ui->lineEditFindCurveControlPointLengths->text());
-    searchCurveAngles->RefreshList(ui->lineEditFindCurveAngles->text());
-    searchArcRadiuses->RefreshList(ui->lineEditFindArcRadiuses->text());
+    search->RefreshList(ui->lineEditFind->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -646,13 +577,13 @@ void DialogIncrements::RefreshPattern()
         }
         renameList.clear();
 
-        const int row = ui->tableWidgetIncrements->currentRow();
+        const int row = ui->tableWidgetIncrement->currentRow();
 
         doc->LiteParseTree(Document::LiteParse);
 
-        ui->tableWidgetIncrements->blockSignals(true);
-        ui->tableWidgetIncrements->selectRow(row);
-        ui->tableWidgetIncrements->blockSignals(false);
+        ui->tableWidgetIncrement->blockSignals(true);
+        ui->tableWidgetIncrement->selectRow(row);
+        ui->tableWidgetIncrement->blockSignals(false);
 
         hasChanges = false;
     }
@@ -669,22 +600,22 @@ void DialogIncrements::AddIncrement()
     const QString name = GetCustomName();
     qint32 currentRow = -1;
 
-    if (ui->tableWidgetIncrements->currentRow() == -1)
+    if (ui->tableWidgetIncrement->currentRow() == -1)
     {
-        currentRow  = ui->tableWidgetIncrements->rowCount();
+        currentRow  = ui->tableWidgetIncrement->rowCount();
         doc->AddEmptyIncrement(name);
     }
     else
     {
-        currentRow  = ui->tableWidgetIncrements->currentRow()+1;
-        const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(ui->tableWidgetIncrements->currentRow(), 0);
+        currentRow  = ui->tableWidgetIncrement->currentRow()+1;
+        const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(ui->tableWidgetIncrement->currentRow(), 0);
         doc->AddEmptyIncrementAfter(nameField->text(), name);
     }
 
     hasChanges = true;
     LocalUpdateTree();
 
-    ui->tableWidgetIncrements->selectRow(currentRow);
+    ui->tableWidgetIncrement->selectRow(currentRow);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -693,22 +624,22 @@ void DialogIncrements::AddIncrement()
  */
 void DialogIncrements::RemoveIncrement()
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
     doc->RemoveIncrement(nameField->text());
 
     hasChanges = true;
     LocalUpdateTree();
 
-    if (ui->tableWidgetIncrements->rowCount() > 0)
+    if (ui->tableWidgetIncrement->rowCount() > 0)
     {
-        ui->tableWidgetIncrements->selectRow(0);
+        ui->tableWidgetIncrement->selectRow(0);
     }
     else
     {
@@ -719,52 +650,52 @@ void DialogIncrements::RemoveIncrement()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::MoveUp()
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
     doc->MoveUpIncrement(nameField->text());
 
     hasChanges = true;
     LocalUpdateTree();
 
-    ui->tableWidgetIncrements->selectRow(row-1);
+    ui->tableWidgetIncrement->selectRow(row-1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::MoveDown()
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
     doc->MoveDownIncrement(nameField->text());
 
     hasChanges = true;
     LocalUpdateTree();
 
-    ui->tableWidgetIncrements->selectRow(row+1);
+    ui->tableWidgetIncrement->selectRow(row+1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::SaveIncrName(const QString &text)
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
 
     QString newName = text.isEmpty() ? GetCustomName() : CustomIncrSign + text;
 
@@ -788,53 +719,53 @@ void DialogIncrements::SaveIncrName(const QString &text)
     hasChanges = true;
     LocalUpdateTree();
 
-    ui->tableWidgetIncrements->blockSignals(true);
-    ui->tableWidgetIncrements->selectRow(row);
-    ui->tableWidgetIncrements->blockSignals(false);
+    ui->tableWidgetIncrement->blockSignals(true);
+    ui->tableWidgetIncrement->selectRow(row);
+    ui->tableWidgetIncrement->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::SaveIncrDescription()
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
     doc->SetIncrementDescription(nameField->text(), ui->plainTextEditDescription->toPlainText());
 
     LocalUpdateTree();
 
     const QTextCursor cursor = ui->plainTextEditDescription->textCursor();
-    ui->tableWidgetIncrements->blockSignals(true);
-    ui->tableWidgetIncrements->selectRow(row);
-    ui->tableWidgetIncrements->blockSignals(false);
+    ui->tableWidgetIncrement->blockSignals(true);
+    ui->tableWidgetIncrement->selectRow(row);
+    ui->tableWidgetIncrement->blockSignals(false);
     ui->plainTextEditDescription->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::SaveIncrFormula()
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
 
     // Replace line return character with spaces for calc if exist
     QString text = ui->plainTextEditFormula->toPlainText();
     text.replace("\n", " ");
 
-    QTableWidgetItem *formulaField = ui->tableWidgetIncrements->item(row, 2);
+    QTableWidgetItem *formulaField = ui->tableWidgetIncrement->item(row, 2);
     if (formulaField->text() == text)
     {
-        QTableWidgetItem *result = ui->tableWidgetIncrements->item(row, 1);
+        QTableWidgetItem *result = ui->tableWidgetIncrement->item(row, 1);
         //Show unit in dialog lable (cm, mm or inch)
         const QString postfix = UnitsToStr(qApp->patternUnit());
         ui->labelCalculatedValue->setText(result->text() + " " +postfix);
@@ -870,9 +801,9 @@ void DialogIncrements::SaveIncrFormula()
     LocalUpdateTree();
 
     const QTextCursor cursor = ui->plainTextEditFormula->textCursor();
-    ui->tableWidgetIncrements->blockSignals(true);
-    ui->tableWidgetIncrements->selectRow(row);
-    ui->tableWidgetIncrements->blockSignals(false);
+    ui->tableWidgetIncrement->blockSignals(true);
+    ui->tableWidgetIncrement->selectRow(row);
+    ui->tableWidgetIncrement->blockSignals(false);
     ui->plainTextEditFormula->setTextCursor(cursor);
 }
 
@@ -912,14 +843,14 @@ void DialogIncrements::DeployFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::Fx()
 {
-    const int row = ui->tableWidgetIncrements->currentRow();
+    const int row = ui->tableWidgetIncrement->currentRow();
 
     if (row == -1)
     {
         return;
     }
 
-    const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+    const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
     QSharedPointer<VIncrement> incr = data->GetVariable<VIncrement>(nameField->text());
 
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(incr->GetData(), NULL_ID, this);
@@ -932,13 +863,13 @@ void DialogIncrements::Fx()
     if (dialog->exec() == QDialog::Accepted)
     {
         // Because of the bug need to take QTableWidgetItem twice time. Previous update "killed" the pointer.
-        const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(row, 0);
+        const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(row, 0);
         doc->SetIncrementFormula(nameField->text(), dialog->GetFormula());
 
         hasChanges = true;
         LocalUpdateTree();
 
-        ui->tableWidgetIncrements->selectRow(row);
+        ui->tableWidgetIncrement->selectRow(row);
     }
     delete dialog;
 }
@@ -1041,12 +972,12 @@ void DialogIncrements::resizeEvent(QResizeEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogIncrements::ShowIncrementDetails()
 {
-    if (ui->tableWidgetIncrements->rowCount() > 0)
+    if (ui->tableWidgetIncrement->rowCount() > 0)
     {
         EnableDetails(true);
 
         // name
-        const QTableWidgetItem *nameField = ui->tableWidgetIncrements->item(ui->tableWidgetIncrements->currentRow(), 0);
+        const QTableWidgetItem *nameField = ui->tableWidgetIncrement->item(ui->tableWidgetIncrement->currentRow(), 0);
         QSharedPointer<VIncrement> incr;
 
         try
