@@ -109,9 +109,9 @@ private:
     VContainer           *data; // need because we must change data //-V703
 
     /** @brief doc dom document container */
-    VPattern             *doc;
+    VPattern *doc;
 
-    int                  formulaBaseHeight;
+    int formulaBaseHeight;
 
     QSharedPointer<VTableSearch> searchIncrements;
     QSharedPointer<VTableSearch> searchLines;
@@ -126,29 +126,31 @@ private:
     QVector<QPair<QString, QString>> renameList;
 
     template <typename T>
-    void    FillTable(const QMap<QString, T> &varTable, QTableWidget *table);
+    void FillTable(const QMap<QString, T> &varTable, QTableWidget *table);
 
-    void    SetupTableSearch();
+    void SetupTableSearch();
 
-    void    FillIncrements(bool freshCall = false);
-    void    FillLineLengths();
-    void    FillLineAngles();
-    void    FillCurveLengths();
-    void    FillCurveControlPointLengths();
-    void    FillCurveAngles();
-    void    FillArcRadiuses();
+    void FillIncrements(bool freshCall = false);
+    void FillLineLengths();
+    void FillLineAngles();
+    void FillCurveLengths();
+    void FillCurveControlPointLengths();
+    void FillCurveAngles();
+    void FillArcRadiuses();
 
-    void    ShowUnits();
-    void    ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
+    void SearchTable();
+
+    void ShowUnits();
+    void ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
 
     void AddCell(QTableWidget *table, const QString &text, int row, int column, int aligment, bool ok = true);
 
     QString GetCustomName() const;
     QString ClearIncrementName(const QString &name) const;
 
-    bool    EvalIncrementFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
-    void    Controls();
-    void    EnableDetails(bool enabled);
+    bool EvalIncrementFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
+    void Controls();
+    void EnableDetails(bool enabled);
 
     void LocalUpdateTree();
     void UpdateTree();

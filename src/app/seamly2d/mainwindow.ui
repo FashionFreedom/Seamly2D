@@ -55,8 +55,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>351</height>
+         <width>123</width>
+         <height>344</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -401,8 +401,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>108</height>
+         <width>140</width>
+         <height>106</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -510,8 +510,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>243</height>
+         <width>140</width>
+         <height>238</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -772,8 +772,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>243</height>
+         <width>140</width>
+         <height>238</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1037,8 +1037,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>102</height>
+         <width>140</width>
+         <height>100</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1120,8 +1120,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>192</height>
+         <width>140</width>
+         <height>335</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -1325,7 +1325,7 @@
          <x>0</x>
          <y>0</y>
          <width>140</width>
-         <height>192</height>
+         <height>188</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1534,8 +1534,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>57</height>
+         <width>140</width>
+         <height>335</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -1638,7 +1638,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -2684,7 +2684,7 @@
   <customwidget>
    <class>VMainGraphicsView</class>
    <extends>QGraphicsView</extends>
-   <header>vmaingraphicsview.h</header>
+   <header location="global">vmaingraphicsview.h</header>
   </customwidget>
  </customwidgets>
  <resources>

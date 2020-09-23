@@ -96,9 +96,8 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
     ui->setupUi(this);
 
     ui->lineEditName->setClearButtonEnabled(true);
-    ui->lineEditFindIncrements->setClearButtonEnabled(true);
-
-    ui->lineEditFindIncrements->installEventFilter(this);
+    ui->lineEditFind->setClearButtonEnabled(true);
+    ui->lineEditFind->installEventFilter(this);
 
     formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
@@ -124,13 +123,14 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
     searchCurveControlPointLengths = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetCurveControlPointLengths));
     searchCurveAngles = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetCurveAngles));
     searchArcRadiuses = QSharedPointer<VTableSearch>(new VTableSearch(ui->tableWidgetArcRadiuses));
-    SetupTableSearch();
 
     connect(this->doc, &VPattern::FullUpdateFromFile, this, &DialogIncrements::FullUpdateFromFile);
 
     ui->tabWidget->setCurrentIndex(0);
     ui->lineEditName->setValidator( new QRegularExpressionValidator(QRegularExpression(
                                                                         QLatin1String("^$|")+NameRegExp()), this));
+
+    connect(ui->tabWidget, &QTabWidget::currentChanged, this, &DialogIncrements::SetupTableSearch);
 
     connect(ui->tableWidgetIncrements, &QTableWidget::itemSelectionChanged, this,
             &DialogIncrements::ShowIncrementDetails);
@@ -145,6 +145,10 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
     connect(ui->plainTextEditDescription, &QPlainTextEdit::textChanged, this, &DialogIncrements::SaveIncrDescription);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogIncrements::SaveIncrFormula);
 
+    connect(ui->pushButtonRefresh, &QPushButton::clicked, this, &DialogIncrements::RefreshPattern);
+
+    SetupTableSearch();
+
     if (ui->tableWidgetIncrements->rowCount() > 0)
     {
         ui->tableWidgetIncrements->selectRow(0);
@@ -157,50 +161,48 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
  */
 void DialogIncrements::SetupTableSearch()
 {
-    /*
-     * The same operation has to happen to all 7 tabs - creating a array of tuples to make this code more readable, hopefully
-     *
-     * Each tuple corresponds to a tab, containing:
-     *  - VTableSearch (search...)
-     *  - QLineEdit (lineEditFind...)
-     *  - QToolButton (findPrevious...)
-     *  - QToolButton (findNext...)
-     */
-    std::tuple<QSharedPointer<VTableSearch>, QLineEdit*, QToolButton*, QToolButton*> tableSearchItems[7] = {
-        (std::make_tuple(searchIncrements, ui->lineEditFindIncrements, ui->toolButtonFindPreviousIncrement, ui->toolButtonFindNextIncrement)),
-        (std::make_tuple(searchLines, ui->lineEditFindLines, ui->toolButtonFindPreviousLine, ui->toolButtonFindNextLine)),
-        (std::make_tuple(searchLineAngles, ui->lineEditFindLineAngles, ui->toolButtonFindPreviousLineAngle, ui->toolButtonFindNextLineAngle)),
-        (std::make_tuple(searchCurveLengths, ui->lineEditFindCurveLengths, ui->toolButtonFindPreviousCurveLength, ui->toolButtonFindNextCurveLength)),
-        (std::make_tuple(searchCurveControlPointLengths, ui->lineEditFindCurveControlPointLengths, ui->toolButtonFindPreviousCurveControlPointLength, ui->toolButtonFindNextCurveControlPointLength)),
-        (std::make_tuple(searchCurveAngles, ui->lineEditFindCurveAngles, ui->toolButtonFindPreviousCurveAngle, ui->toolButtonFindNextCurveAngle)),
-        (std::make_tuple(searchArcRadiuses, ui->lineEditFindArcRadiuses, ui->toolButtonFindPreviousArcRadius, ui->toolButtonFindNextArcRadius))
+    const int index = ui->tabWidget->currentIndex();
+
+    QSharedPointer<VTableSearch> tableSearchItems[7] = {
+        searchIncrements,
+        searchLines,
+        searchLineAngles,
+        searchCurveLengths,
+        searchCurveControlPointLengths,
+        searchCurveAngles,
+        searchArcRadiuses
     };
 
-    //For every tuple of (tableSearch, lineEdit, and toolButtons):
-    for(unsigned int tableSearchItemIndex = 0; tableSearchItemIndex < sizeof(tableSearchItems); tableSearchItemIndex = tableSearchItemIndex + 1 )
-    {
-        const std::tuple<QSharedPointer<VTableSearch>, QLineEdit*, QToolButton*, QToolButton*> tableSearchItem = tableSearchItems[tableSearchItemIndex];
+    const QSharedPointer<VTableSearch> currentTable = tableSearchItems[index];
 
-        //connect lineEdit and tableSearch
-        connect(std::get<1>(tableSearchItem), &QLineEdit::textEdited, this, [tableSearchItem](const QString &term){std::get<0>(tableSearchItem)->Find(term);});
+    qDebug() << index << "--|--" << ui->lineEditFind->text();
 
-        //connect findPrevious/findNext buttons
-        connect(std::get<2>(tableSearchItem), &QToolButton::clicked, this, [tableSearchItem](){std::get<0>(tableSearchItem)->FindPrevious();});
-        connect(std::get<3>(tableSearchItem), &QToolButton::clicked, this, [tableSearchItem](){std::get<0>(tableSearchItem)->FindNext();});
+//    currentTable->RefreshList(ui->lineEditFind->text());
+    currentTable->Find(ui->lineEditFind->text());
 
-        //enable/disable findPrevious/findNext buttons depending on if the tableSearch has results
-        connect(std::get<0>(tableSearchItem).data(), &VTableSearch::HasResult, this, [tableSearchItem] (bool state)
-        {
-            std::get<2>(tableSearchItem)->setEnabled(state);
-        });
-
-        connect(std::get<0>(tableSearchItem).data(), &VTableSearch::HasResult, this, [tableSearchItem] (bool state)
-        {
-            std::get<3>(tableSearchItem)->setEnabled(state);
-        });
+    if (currentTable.data()) {
+        ui->toolButtonFindNext->setEnabled(true);
+        ui->toolButtonFindPrevious->setEnabled(true);
+    } else {
+        ui->toolButtonFindNext->setEnabled(false);
+        ui->toolButtonFindPrevious->setEnabled(false);
     }
 
-    connect(ui->pushButtonRefresh, &QPushButton::clicked, this, &DialogIncrements::RefreshPattern);
+    connect(ui->lineEditFind, &QLineEdit::textEdited, this, [currentTable](const QString &term){currentTable->Find(term);});
+    connect(ui->toolButtonFindPrevious, &QToolButton::clicked, this, [currentTable](){currentTable->FindPrevious();});
+    connect(ui->toolButtonFindNext, &QToolButton::clicked, this, [currentTable](){currentTable->FindNext();});
+
+    connect(currentTable.data(), &VTableSearch::HasResult, this, [this](bool state)
+    {
+        qDebug() << state;
+        ui->toolButtonFindNext->setEnabled(state);
+    });
+
+    connect(currentTable.data(), &VTableSearch::HasResult, this, [this](bool state)
+    {
+        qDebug() << state;
+        ui->toolButtonFindPrevious->setEnabled(state);
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -547,13 +549,13 @@ void DialogIncrements::UpdateTree()
 {
     FillIncrements();
 
-    searchIncrements->RefreshList(ui->lineEditFindIncrements->text());
-    searchLines->RefreshList(ui->lineEditFindLines->text());
-    searchLineAngles->RefreshList(ui->lineEditFindLineAngles->text());
-    searchCurveLengths->RefreshList(ui->lineEditFindCurveLengths->text());
-    searchCurveControlPointLengths->RefreshList(ui->lineEditFindCurveControlPointLengths->text());
-    searchCurveAngles->RefreshList(ui->lineEditFindCurveAngles->text());
-    searchArcRadiuses->RefreshList(ui->lineEditFindArcRadiuses->text());
+    searchIncrements->RefreshList(ui->lineEditFind->text());
+    searchLines->RefreshList(ui->lineEditFind->text());
+    searchLineAngles->RefreshList(ui->lineEditFind->text());
+    searchCurveLengths->RefreshList(ui->lineEditFind->text());
+    searchCurveControlPointLengths->RefreshList(ui->lineEditFind->text());
+    searchCurveAngles->RefreshList(ui->lineEditFind->text());
+    searchArcRadiuses->RefreshList(ui->lineEditFind->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -625,13 +627,13 @@ void DialogIncrements::FullUpdateFromFile()
     FillArcRadiuses();
     FillCurveAngles();
 
-    searchIncrements->RefreshList(ui->lineEditFindIncrements->text());
-    searchLines->RefreshList(ui->lineEditFindLines->text());
-    searchLineAngles->RefreshList(ui->lineEditFindLineAngles->text());
-    searchCurveLengths->RefreshList(ui->lineEditFindCurveLengths->text());
-    searchCurveControlPointLengths->RefreshList(ui->lineEditFindCurveControlPointLengths->text());
-    searchCurveAngles->RefreshList(ui->lineEditFindCurveAngles->text());
-    searchArcRadiuses->RefreshList(ui->lineEditFindArcRadiuses->text());
+    searchIncrements->RefreshList(ui->lineEditFind->text());
+    searchLines->RefreshList(ui->lineEditFind->text());
+    searchLineAngles->RefreshList(ui->lineEditFind->text());
+    searchCurveLengths->RefreshList(ui->lineEditFind->text());
+    searchCurveControlPointLengths->RefreshList(ui->lineEditFind->text());
+    searchCurveAngles->RefreshList(ui->lineEditFind->text());
+    searchArcRadiuses->RefreshList(ui->lineEditFind->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
