@@ -1,5 +1,39 @@
 # https://help.github.com/articles/dealing-with-line-endings/
 
+#--------- c++ file encoding
+# force Github to re-encode & store non-UTF-8 text files as UTF-8. Upon checkout, these files might revert to their original encoding.
+*.cpp text diff=cpp working-tree-encoding=UTF-8
+*.c text diff=cpp working-tree-encoding=UTF-8
+*.h text diff=cpp working-tree-encoding=UTF-8
+*.hpp text diff=cpp working-tree-encoding=UTF-8
+
+# Compiled Object files
+*.slo   binary
+*.lo    binary
+*.o     binary
+*.obj   binary
+
+# Precompiled Headers
+*.gch   binary
+*.pch   binary
+
+# Compiled Dynamic libraries
+*.so    binary
+*.dylib binary
+*.dll   binary
+
+# Compiled Static libraries
+*.lai   binary
+*.la    binary
+*.a     binary
+*.lib   binary
+
+# Executables
+*.exe   binary
+*.out   binary
+*.app   binary
+#--------- end c++ file encoding
+
 # How to get extension in source
 # find $PWD | sed -e 's/.*\///' | grep '.\..' | sed -e 's/.*\.//' | sort | uniq
 
