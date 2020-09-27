@@ -1,10 +1,13 @@
 # https://help.github.com/articles/dealing-with-line-endings/
 
+#--------- Set the default behavior, in case people don't have core.autocrlf set
+* text=auto
+
 #--------- c++ file encoding
 # force Github to re-encode & store non-UTF-8 text files as UTF-8. Upon checkout, these files might revert to their original encoding.
-*.cpp text diff=cpp working-tree-encoding=UTF-8
+*.cpp text diff=cpp working-tree-encoding=UTF-8 eol=lf
 *.c text diff=cpp working-tree-encoding=UTF-8
-*.h text diff=cpp working-tree-encoding=UTF-8
+*.h text diff=cpp working-tree-encoding=UTF-8 eol=lf
 *.hpp text diff=cpp working-tree-encoding=UTF-8
 
 # Compiled Object files
@@ -29,10 +32,43 @@
 *.lib   binary
 
 # Executables
+*.app   binary
 *.exe   binary
 *.out   binary
-*.app   binary
 #--------- end c++ file encoding
+
+#--------- Declare text files that will always have LF line endings on checkout
+*.md text eol=lf
+*.pri text eol=lf
+*.pro text eol=lf
+*.py text eol=lf
+*.qrc text eol=lf
+*.spec text eol=lf
+*.txt text eol=lf
+#--------- end Declare text files that will always have LF line endings on checkout
+
+#--------- Begin encoding for non-c++ binary files 
+#graphics
+*.ico      binary
+*.png      binary 
+*.jpg      binary 
+*.bmp      binary 
+*.gif      binary
+*.ttf      binary
+
+#artifacts
+*.dll      binary
+*.ocx      binary
+*.pdb      binary
+*.apx      binary
+*.snk      binary
+*.pfx      binary
+*.pdf      binary
+#--------- end encoding for additional files 
+
+#--------- Explicitly declare text files you want to always be normalized and converted to native line endings on checkout.
+#.foo text
+#--------- end Explicity declare text files...
 
 # How to get extension in source
 # find $PWD | sed -e 's/.*\///' | grep '.\..' | sed -e 's/.*\.//' | sort | uniq
@@ -117,24 +153,3 @@
 # xsd
 # yml
 
-# Set the default behavior, in case people don't have core.autocrlf set.
-* text=auto
-
-# Explicitly declare text files you want to always be normalized and converted to native line endings on checkout.
-#.foo text
-
-# Declare files that will always have LF line endings on checkout.
-*.cpp text eol=lf
-*.h text eol=lf
-*.md text eol=lf
-*.pri text eol=lf
-*.pro text eol=lf
-*.py text eol=lf
-*.qrc text eol=lf
-*.spec text eol=lf
-*.txt text eol=lf
-
-# Denote all files that are truly binary and should not be modified.
-*.gif binary
-*.pdf binary
-*.png binary
