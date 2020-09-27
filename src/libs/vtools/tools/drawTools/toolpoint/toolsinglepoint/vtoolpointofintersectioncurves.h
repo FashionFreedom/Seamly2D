@@ -119,6 +119,11 @@ private:
     VCrossCurvesPoint vCrossPoint;
     HCrossCurvesPoint hCrossPoint;
 
+    template <class Item>
+    static void          InitArc(VContainer *data, qreal segLength, const VPointF *p, quint32 curveId);
+    static void          InitSegments(const GOType &curveType, qreal segLength, const VPointF *p, quint32 curveId,
+                                      VContainer *data);
+
     explicit VToolPointOfIntersectionCurves(VAbstractPattern *doc, VContainer *data, const quint32 &id, const
                                             quint32 firstCurveId, quint32 secondCurveId,
                                             VCrossCurvesPoint vCrossPoint, HCrossCurvesPoint hCrossPoint,
