@@ -3,22 +3,28 @@ Section: graphics
 Priority: optional
 Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
 XSBC-Original-Maintainer: Susan Spencer <susan.spencer@gmail.com>
-Build-Depends: debhelper (>= 12.1.1),
-               qtbase5-dev (>= 5.13.0),
-               libqt5svg5-dev (>= 5.13.0),
-               g++ (>= 7.3.0),
-               qt5-default (>= 5.13.0),
-               qttools5-dev-tools (>= 5.13.0),
-               libqt5xmlpatterns5-dev (>= 5.13.0)
+Build-Depends: debhelper (>= 11.1.6),
+               build-essential (>= 12.4),
+               g++ (>= 7.3.0-12),
+               libglu1-mesa-dev (>= 9.0.0-2.1)
+               qtbase5-dev (>= 5.9.5),
+               qt5-default (>= 5.9.5),
+               qttools5-dev-tools (>= 5.9.5),
+               qt5-image-formats-plugins (>= 5.9.5),
+               qt5-qmltooling-plugins (>=5.9.5),
+               qtwayland5 (>= 5.9.5),
+               libqt5svg5-dev (>= 5.9.5),
+               libqt5xmlpatterns5-dev (>= 5.9.5),
+               libqt5opengl5-dev (>= 5.9.5)
 Standards-Version: 3.9.5
-Homepage: https://fashionfreedom.eu/
+Homepage: https://seamly.net
 Vcs-Browser: https://github.com/fashionfreedom/seamly2d
 
 Package: seamly2d
 Architecture: i386 amd64
-Depends: libc6 (>= 2.4), libgcc1 (>= 1:8.4.0), libqt5core5a (>= 5.13.0) | libqt5core5 (>= 5.13.0), libqt5gui5 (>= 5.13.0) | libqt5gui5-gles (>= 5.13.0), libqt5printsupport5 (>= 5.13.0), libqt5svg5 (>= 5.13.0), libqt5widgets5 (>= 5.13.0), libqt5xml5 (>= 5.13.0), libqt5xmlpatterns5 (>= 5.13.0), libstdc++6 (>= 8.4.0)
-Description: Pattern making program.
- Seamly2D is a free and opensource patternmaking program for Windows, Mac, and
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:3.5), libqt5core5a (>= 5.9.5), libqt5gui5 (>= 5.9.5), libqt5printsupport5 (>= 5.9.5), libqt5svg5 (>= 5.9.5), libqt5widgets5 (>= 5.9.5), libqt5xml5 (>= 5.9.5), libqt5xmlpatterns5 (>= 5.9.5), libstdc++6 (>= 8.4.0)
+Description: Custom-fit pattern design program.
+ Seamly2D is a free and opensource pattern design program for Windows, Mac, and
  Linux. Seamly2D enables creative parametric patterns which conform to an
  individual's body measurements and to multiple sizing tables. Seamly2D blends
  new technologies with traditional methods to remove Victorian-era gender,
