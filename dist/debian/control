@@ -8,22 +8,22 @@ Build-Depends: debhelper (>= 11.1.6),
                build-essential (>= 12.4),
                g++ (>= 7.3.0-12),
                libglu1-mesa-dev (>= 9.0.0-2.1),
-               qtbase5-dev (>= 5.9.5),
-               qt5-default (>= 5.9.5),
-               qttools5-dev-tools (>= 5.9.5),
-               qt5-image-formats-plugins (>= 5.9.5),
-               qt5-qmltooling-plugins (>=5.9.5),
-               qtwayland5 (>= 5.9.5),
-               libqt5svg5-dev (>= 5.9.5),
-               libqt5xmlpatterns5-dev (>= 5.9.5),
-               libqt5opengl5-dev (>= 5.9.5)
+               qtbase5-dev (>= 5.12.9),
+               qt5-default (>= 5.12.9),
+               qttools5-dev-tools (>= 5.12.9),
+               qt5-image-formats-plugins (>= 5.12.9),
+               qt5-qmltooling-plugins (>=5.12.9),
+               qtwayland5 (>= 5.12.9),
+               libqt5svg5-dev (>= 5.12.9),
+               libqt5xmlpatterns5-dev (>= 5.12.9),
+               libqt5opengl5-dev (>= 5.12.9)
 Standards-Version: 3.9.5
 Homepage: https://seamly.net
 Vcs-Browser: https://github.com/fashionfreedom/seamly2d
 
 Package: seamly2d
 Architecture: i386 amd64
-Depends: libc6 (>= 2.14), libgcc1 (>= 1:3.5), libqt5core5a (>= 5.9.5), libqt5gui5 (>= 5.9.5), libqt5printsupport5 (>= 5.9.5), libqt5svg5 (>= 5.9.5), libqt5widgets5 (>= 5.9.5), libqt5xml5 (>= 5.9.5), libqt5xmlpatterns5 (>= 5.9.5), libstdc++6 (>= 8.4.0)
+Depends: libc6 (>= 2.14), libgcc1 (>= 1:3.5), libqt5core5a (>= 5.12.9), libqt5gui5 (>= 5.12.9), libqt5printsupport5 (>= 5.12.9), libqt5svg5 (>= 5.12.9), libqt5widgets5 (>= 5.12.9), libqt5xml5 (>= 5.12.9), libqt5xmlpatterns5 (>= 5.12.9), libstdc++6 (>= 8.4.0)
 Description: Custom-fit pattern design program
  Seamly2D is a free and opensource pattern design program for Windows, Mac, and
  Linux. Seamly2D enables creative parametric patterns which conform to an
