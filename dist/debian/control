@@ -17,7 +17,7 @@ Vcs-Browser: https://github.com/fashionfreedom/seamly2d
 
 Package: seamly2d
 Architecture: i386 amd64
-Depends: libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libqt5core5a (>= 5.9.5) | libqt5core5 (>= 5.9.5), libqt5gui5 (>= 5.9.5) | libqt5gui5-gles (>= 5.9.5), libqt5printsupport5 (>= 5.9.5), libqt5svg5 (>= 5.9.5), libqt5widgets5 (>= 5.9.5), libqt5xml5 (>= 5.9.5), libqt5xmlpatterns5 (>= 5.9.5), libstdc++6 (>= 4.6)
+Depends: libc6 (>= 2.27), libgcc1 (>= 1:4.1.1), libqt5core5a (>= 5.9.5) | libqt5core5 (>= 5.9.5), libqt5gui5 (>= 5.9.5) | libqt5gui5-gles (>= 5.9.5), libqt5printsupport5 (>= 5.9.5), libqt5svg5 (>= 5.9.5), libqt5widgets5 (>= 5.9.5), libqt5xml5 (>= 5.9.5), libqt5xmlpatterns5 (>= 5.9.5), libstdc++6 (>= 8.4.0)
 Description: Pattern making program.
  Seamly2D is a free and opensource patternmaking program for Windows, Mac, and
  Linux. Seamly2D enables creative parametric patterns which conform to an
