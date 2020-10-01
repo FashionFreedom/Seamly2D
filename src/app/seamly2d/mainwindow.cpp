@@ -3986,6 +3986,7 @@ void MainWindow::CreateActions()
                 ui->actionTable->setChecked(false);
                 delete dialogTable;
             });
+            
             dialogTable->show();
         }
         else
