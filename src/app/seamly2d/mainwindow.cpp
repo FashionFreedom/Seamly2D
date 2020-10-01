@@ -3981,6 +3981,12 @@ void MainWindow::CreateActions()
                 ui->actionTable->setChecked(false);
                 delete dialogTable;
             });
+            connect(dialogTable.data(), &DialogIncrements::rejected, this, [this]()
+            {
+                ui->actionTable->setChecked(false);
+                delete dialogTable;
+            });
+            
             dialogTable->show();
         }
         else
