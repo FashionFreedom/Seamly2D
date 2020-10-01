@@ -1,7 +1,7 @@
 ---
 name: Build issue
-about: Create issues about the build pipeline
-title: 'Build issue:'
+about: Report an issue with the Github Actions build pipeline
+title: 'Build: '
 labels: build
 assignees: ''
 
