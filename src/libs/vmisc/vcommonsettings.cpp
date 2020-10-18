@@ -84,7 +84,22 @@ const QString settingPMSystemCode                        = QStringLiteral("confi
 const QString settingConfigurationUnit                   = QStringLiteral("configuration/unit");
 const QString settingConfigurationConfirmItemDeletion    = QStringLiteral("configuration/confirm_item_deletion");
 const QString settingConfigurationConfirmFormatRewriting = QStringLiteral("configuration/confirm_format_rewriting");
-const QString settingConfigurationToolBarStyle           = QStringLiteral("configuration/tool_bar_style");
+
+const QString settingGraphicsViewToolBarStyle            = QStringLiteral("graphicsview/tool_bar_style");
+const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
+const QString settingGraphicsViewScrollBarWidth          = QStringLiteral("graphicsview/scrollBarWidth");
+const QString settingGraphicsViewScrollDuration          = QStringLiteral("graphicsview/scrollDuration");
+const QString settingGraphicsViewScrollUpdateInterval    = QStringLiteral("graphicsview/scrollUpdateInterval");
+const QString settingGraphicsViewScrollSpeedFactor       = QStringLiteral("graphicsview/scrollSpeedFactor");
+const QString settingGraphicsViewPixelDelta              = QStringLiteral("graphicsview/pixelDelta");
+const QString settingGraphicsViewAngleDelta              = QStringLiteral("graphicsview/angleDelta");
+const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
+const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
+const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
+const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
+const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
+const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
+const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
 const QString settingPatternForbidFlipping               = QStringLiteral("pattern/forbidFlipping");
@@ -495,15 +510,161 @@ void VCommonSettings::SetConfirmFormatRewriting(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetToolBarStyle() const
+bool VCommonSettings::getToolBarStyle() const
 {
-    return value(settingConfigurationToolBarStyle, 1).toBool();
+    return value(settingGraphicsViewToolBarStyle, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetToolBarStyle(const bool &value)
+void VCommonSettings::setToolBarStyle(const bool &value)
 {
-    setValue(settingConfigurationToolBarStyle, value);
+    setValue(settingGraphicsViewToolBarStyle, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+bool  VCommonSettings::getShowScrollBars() const
+{
+    return value(settingGraphicsViewShowScrollBars, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowScrollBars(const bool  &value)
+{
+    setValue(settingGraphicsViewShowScrollBars, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int  VCommonSettings::getScrollBarWidth() const
+{
+    return value(settingGraphicsViewScrollBarWidth, 10).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollBarWidth(const int  &width)
+{
+    setValue(settingGraphicsViewScrollBarWidth, width);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getScrollDuration() const
+{
+    return value(settingGraphicsViewScrollDuration, 300).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollDuration(const int &duration)
+{
+    setValue(settingGraphicsViewScrollDuration, duration);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getScrollUpdateInterval() const
+{
+    return value(settingGraphicsViewScrollUpdateInterval, 30).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollUpdateInterval(const int &interval)
+{
+    setValue(settingGraphicsViewScrollUpdateInterval, interval);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getScrollSpeedFactor() const
+{
+    return value(settingGraphicsViewScrollSpeedFactor, 1.00).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollSpeedFactor(const qreal &factor)
+{
+    setValue(settingGraphicsViewScrollSpeedFactor, factor);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getZoomModKey() const
+{
+    return value(settingGraphicsViewZoomModKey, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomModKey(const bool &value)
+{
+    setValue(settingGraphicsViewZoomModKey, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isZoomDoubleClick() const
+{
+    return value(settingGraphicsViewZoomDoubleClick, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomDoubleClick(const bool &value)
+{
+    setValue(settingGraphicsViewZoomDoubleClick, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int  VCommonSettings::getZoomSpeedFactor() const
+{
+    return value(settingGraphicsViewZoomSpeedFactor, 16).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomSpeedFactor(const int  &factor)
+{
+    setValue(settingGraphicsViewZoomSpeedFactor, factor);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getZoomRBPositiveColor() const
+{
+    return value(settingGraphicsViewZoomRBPositiveColor, "blue").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomRBPositiveColor(const QString &value)
+{
+    setValue(settingGraphicsViewZoomRBPositiveColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getZoomRBNegativeColor() const
+{
+    return value(settingGraphicsViewZoomRBNegativeColor, "green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomRBNegativeColor(const QString &value)
+{
+    setValue(settingGraphicsViewZoomRBNegativeColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getConstrainValue() const
+{
+    return value(settingGraphicsViewConstrainValue, 10.00).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setConstrainValue(const qreal &value)
+{
+    setValue(settingGraphicsViewConstrainValue, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getConstrainModKey() const
+{
+    return value(settingGraphicsViewConstrainModKey, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setConstrainModKey(const bool &value)
+{
+    setValue(settingGraphicsViewConstrainModKey, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -598,13 +759,13 @@ void VCommonSettings::SetToolbarsState(const QByteArray &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSize VCommonSettings::GetPreferenceDialogSize() const
+QSize VCommonSettings::getPreferenceDialogSize() const
 {
     return value(settingPreferenceDialogSize, QSize(0, 0)).toSize();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPreferenceDialogSize(const QSize& sz)
+void VCommonSettings::setPreferenceDialogSize(const QSize& sz)
 {
     setValue(settingPreferenceDialogSize, sz);
 }

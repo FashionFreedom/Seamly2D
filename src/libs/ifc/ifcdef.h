@@ -178,6 +178,8 @@ QString              PenStyleToLineStyle(Qt::PenStyle penStyle);
 QMap<QString, QIcon> LineStylesPics();
 QMap<QString, QIcon> CurvePenStylesPics();
 
+extern const QString ColorByGroup;
+extern const QString ColorNone;
 extern const QString ColorBlack;
 extern const QString ColorGreen;
 extern const QString ColorBlue;
@@ -195,7 +197,10 @@ extern const QString ColorMediumSeaGreen;
 extern const QString ColorLime;
 extern const QString ColorDeepSkyBlue;
 extern const QString ColorCornFlowerBlue;
-
+extern const QString ColorGray;
+extern const QString ColorDarkGray;
+extern const QString ColorLightGray;
+extern const QString ColorWhite;
 
 // variables name
 // Hacks for avoiding the linker error "undefined reference to"

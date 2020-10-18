@@ -73,6 +73,7 @@ class DialogHistory;
 class VWidgetGroups;
 class VWidgetDetails;
 class QToolButton;
+class QDoubleSpinBox;
 
 /**
  * @brief The MainWindow class main windows.
@@ -90,6 +91,7 @@ public slots:
     void ProcessCMD();
 
     virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void zoomToSelected() Q_DECL_OVERRIDE;
 
 signals:
     void RefreshHistory();
@@ -117,6 +119,10 @@ signals:
     void EnableNodeLabelHover(bool enable) const;
     void EnableNodePointHover(bool enable) const;
     void EnableDetailHover(bool enable) const;
+
+    void signalZoomToAreaActive(bool enable) const;
+    void signalZoomPanActive(bool enable) const;
+
 protected:
     virtual void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
@@ -126,7 +132,9 @@ protected:
     virtual void CleanLayout() Q_DECL_OVERRIDE;
     virtual void PrepareSceneList() Q_DECL_OVERRIDE;
     virtual void ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+
 private slots:
+    void zoomScaleChanged(qreal scale);
     void MouseMove(const QPointF &scenePos);
     void Clear();
     void PatternChangesWereSaved(bool saved);
@@ -201,7 +209,10 @@ private slots:
     void ClosedDialogPin(int result);
     void ClosedDialogInsertNode(int result);
 
-    void ZoomFitBestCurrent();
+    void zoomToPrevious();
+    void zoomToArea();
+    void zoomPan();
+
     void LoadIndividual();
     void LoadMultisize();
     void UnloadMeasurements();
@@ -218,77 +229,79 @@ private slots:
 private:
     Q_DISABLE_COPY(MainWindow)
     /** @brief ui keeps information about user interface */
-    Ui::MainWindow     *ui;
+    Ui::MainWindow                   *ui;
 
-    QFileSystemWatcher *watcher;
+    QFileSystemWatcher               *watcher;
 
     /** @brief tool current tool */
-    Tool               currentTool;
+    Tool                              currentTool;
 
     /** @brief tool last used tool */
-    Tool               lastUsedTool;
+    Tool                              lastUsedTool;
 
     /** @brief sceneDraw draw scene. */
-    VMainGraphicsScene *sceneDraw;
+    VMainGraphicsScene               *sceneDraw;
 
     /** @brief sceneDetails details scene. */
-    VMainGraphicsScene *sceneDetails;
+    VMainGraphicsScene               *sceneDetails;
 
     /** @brief mouseCoordinate pointer to label who show mouse coordinate. */
-    QPointer<QLabel>    mouseCoordinate;
+    QPointer<QLabel>                  mouseCoordinate;
 
     /** @brief helpLabel help show tooltip. */
-    QLabel             *helpLabel;
+    QLabel                           *helpLabel;
 
     /** @brief isInitialized true after first show window. */
-    bool               isInitialized;
+    bool                              isInitialized;
 
     /** @brief mChanges true if measurement file was changed. */
-    bool               mChanges;
-    bool               mChangesAsked;
+    bool                              mChanges;
+    bool                              mChangesAsked;
 
-    bool               patternReadOnly;
+    bool                              patternReadOnly;
 
-    QPointer<DialogIncrements> dialogTable;
-    QSharedPointer<DialogTool> dialogTool;
-    QPointer<DialogHistory>    dialogHistory;
+    QPointer<DialogIncrements>        dialogTable;
+    QSharedPointer<DialogTool>        dialogTool;
+    QPointer<DialogHistory>           dialogHistory;
 
     /** @brief comboBoxDraws comboc who show name of pattern peaces. */
-    QComboBox          *comboBoxDraws;
-    QLabel             *patternPieceLabel;
+    QComboBox                        *comboBoxDraws;
+    QLabel                           *patternPieceLabel;
 
     /** @brief mode keep current draw mode. */
-    Draw               mode;
+    Draw                              mode;
 
     /** @brief currentDrawIndex save current selected pattern peace. */
-    qint32             currentDrawIndex;
+    qint32                            currentDrawIndex;
 
     /** @brief currentToolBoxIndex save current set of tools. */
-    qint32             currentToolBoxIndex;
+    qint32                            currentToolBoxIndex;
 
-    bool               isDockToolOptionsVisible;
-    bool               isDockGroupsVisible;
+    bool                              isDockToolOptionsVisible;
+    bool                              isDockGroupsVisible;
 
     /** @brief drawMode true if we current draw scene. */
-    bool               drawMode;
+    bool                              drawMode;
 
     enum { MaxRecentFiles = 5 };
-    QAction            *recentFileActs[MaxRecentFiles];
-    QAction            *separatorAct;
-    QLabel             *leftGoToStage;
-    QLabel             *rightGoToStage;
-    QTimer             *autoSaveTimer;
-    bool               guiEnabled;
-    QPointer<QComboBox> gradationHeights;
-    QPointer<QComboBox> gradationSizes;
-    QPointer<QLabel>   gradationHeightsLabel;
-    QPointer<QLabel>   gradationSizesLabel;
-    VToolOptionsPropertyBrowser *toolOptions;
-    VWidgetGroups *groupsWidget;
-    VWidgetDetails *detailsWidget;
+    QAction                          *recentFileActs[MaxRecentFiles];
+    QAction                          *separatorAct;
+
+    QLabel                           *leftGoToStage;
+    QLabel                           *rightGoToStage;
+    QTimer                           *autoSaveTimer;
+    bool                              guiEnabled;
+    QPointer<QComboBox>               gradationHeights;
+    QPointer<QComboBox>               gradationSizes;
+    QPointer<QLabel>                  gradationHeightsLabel;
+    QPointer<QLabel>                  gradationSizesLabel;
+    VToolOptionsPropertyBrowser      *toolOptions;
+    VWidgetGroups                    *groupsWidget;
+    VWidgetDetails                   *detailsWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
-    QList<QToolButton*> toolButtonPointerList;
+    QList<QToolButton*>               toolButtonPointerList;
+    QDoubleSpinBox                   *zoomScaleSpinBox;
 
     void               SetDefaultHeight();
     void               SetDefaultSize();
@@ -350,7 +363,7 @@ private:
      * @brief EndVisualization try show dialog after and working with tool visualization.
      */
     void               EndVisualization(bool click = false);
-    void               ZoomFirstShow();
+    void               zoomFirstShow();
     void               UpdateHeightsList(const QStringList &list);
     void               UpdateSizesList(const QStringList &list);
 

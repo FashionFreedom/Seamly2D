@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -319,7 +319,8 @@ int VAbstractTool::ConfirmDeletion()
 //---------------------------------------------------------------------------------------------------------------------
 const QStringList VAbstractTool::Colors()
 {
-    const QStringList colors = QStringList() << ColorBlack          << ColorGreen           << ColorBlue
+    const QStringList colors = QStringList() << ColorByGroup
+                                             << ColorBlack          << ColorGreen           << ColorBlue
                                              << ColorDarkRed        << ColorDarkGreen       << ColorDarkBlue
                                              << ColorYellow         << ColorLightSalmon     << ColorGoldenRod
                                              << ColorOrange         << ColorDeepPink        << ColorViolet
@@ -339,55 +340,58 @@ QMap<QString, QString> VAbstractTool::ColorsList()
         QString name;
         switch (i)
         {
-            case 1: // ColorGreen
+            case 0: // ByGroup
+                name = tr("By Group");
+                break;
+            case 2: // ColorGreen
                 name = tr("green");
                 break;
-            case 2: // ColorBlue
+            case 3: // ColorBlue
                 name = tr("blue");
                 break;
-            case 3: // ColorDarkRed
+            case 4: // ColorDarkRed
                 name = tr("dark red");
                 break;
-            case 4: // ColorDarkGreen
+            case 5: // ColorDarkGreen
                 name = tr("dark green");
                 break;
-            case 5: // ColorDarkBlue
+            case 6: // ColorDarkBlue
                 name = tr("dark blue");
                 break;
-            case 6: // ColorYellow
+            case 7: // ColorYellow
                 name = tr("yellow");
                 break;
-            case 7: // ColorLightSalmon
+            case 8: // ColorLightSalmon
                 name = tr("light salmon");
                 break;
-            case 8: // ColorGoldenRod
+            case 9: // ColorGoldenRod
                 name = tr("goldenrod");
                 break;
-            case 9: // ColorOrange
+            case 10: // ColorOrange
                 name = tr("orange");
                 break;
-            case 10: // ColorDeepPink
+            case 11: // ColorDeepPink
                 name = tr("deep pink");
                 break;
-            case 11: // ColorViolet
+            case 12: // ColorViolet
                 name = tr("violet");
                 break;
-            case 12: // ColorDarkViolet
+            case 13: // ColorDarkViolet
                 name = tr("dark violet");
                 break;
-            case 13: // ColorMediumSeaGreen
+            case 14: // ColorMediumSeaGreen
                 name = tr("medium sea green");
                 break;
-            case 14: // ColorLime
+            case 15: // ColorLime
                 name = tr("lime");
                 break;
-            case 15: // ColorDeepSkyBlue
+            case 16: // ColorDeepSkyBlue
                 name = tr("deep sky blue");
                 break;
-            case 16: // ColorCornFlowerBlue
+            case 17: // ColorCornFlowerBlue
                 name = tr("corn flower blue");
                 break;
-            case 0: // ColorBlack
+            case 1: // ColorBlack
             default:
                 name = tr("black");
                 break;
@@ -396,6 +400,40 @@ QMap<QString, QString> VAbstractTool::ColorsList()
         map.insert(colorNames.at(i), name);
     }
     return map;
+}
+
+QPixmap VAbstractTool::createColorIcon(const int w, const int h, const QString &color)
+{
+    QPixmap pixmap(w, h);
+    pixmap.fill(QColor(Qt::black));
+
+    QPainter painter(&pixmap);
+    painter.setPen(Qt::black);
+
+    const QRect rectangle = QRect(1, 1, w-2, h-2);
+
+    qDebug()<<"createColorIcon - color = "<< color;
+
+    if (color == "No Group")
+    {
+        painter.fillRect(rectangle, QColor(Qt::white));
+        painter.drawLine(0, 0, w, h);
+        painter.drawLine(0, h, w, 0);
+    }
+    else if (color == "By Group")
+    {
+        QFont font = painter.font();
+        font.setPixelSize(10);
+        painter.setFont(font);
+        painter.fillRect(rectangle, QColor(Qt::white));
+        painter.drawText(rectangle, Qt::AlignCenter, "GROUP");
+    }
+    else
+    {
+        painter.fillRect(rectangle, QColor(color));
+    }
+
+    return pixmap;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

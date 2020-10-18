@@ -72,170 +72,171 @@ class TMainWindow : public VAbstractMainWindow
     Q_OBJECT
 
 public:
-    explicit TMainWindow(QWidget *parent = nullptr);
-    virtual ~TMainWindow() Q_DECL_OVERRIDE;
+    explicit            TMainWindow(QWidget *parent = nullptr);
+    virtual            ~TMainWindow() Q_DECL_OVERRIDE;
 
-    QString CurrentFile() const;
+    QString             CurrentFile() const;
 
-    void RetranslateTable();
+    void                RetranslateTable();
 
-    void SetBaseMHeight(int height);
-    void SetBaseMSize(int size);
-    void SetPUnit(Unit unit);
+    void                SetBaseMHeight(int height);
+    void                SetBaseMSize(int size);
+    void                SetPUnit(Unit unit);
 
-    bool LoadFile(const QString &path);
+    bool                LoadFile(const QString &path);
 
 public slots:
-    virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void        ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void        zoomToSelected() Q_DECL_OVERRIDE;
 
 protected:
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
-    virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    virtual bool eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
-    virtual void ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    virtual void        closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    virtual void        changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual void        showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual bool        eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+    virtual void        ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
 
 private slots:
-    void FileNew();
-    void OpenIndividual();
-    void OpenMultisize();
-    void OpenTemplate();
-    void CreateFromExisting();
-    void Preferences();
-    void ToolBarStyles();
+    void                FileNew();
+    void                OpenIndividual();
+    void                OpenMultisize();
+    void                OpenTemplate();
+    void                CreateFromExisting();
+    void                Preferences();
+    void                ToolBarStyles();
 
-    bool FileSave();
-    bool FileSaveAs();
-    void AboutToShowWindowMenu();
-    void ShowWindow() const;
+    bool                FileSave();
+    bool                FileSaveAs();
+    void                AboutToShowWindowMenu();
+    void                ShowWindow() const;
 
 #if defined(Q_OS_MAC)
-    void AboutToShowDockMenu();
-    void OpenAt(QAction *where);
+    void                AboutToShowDockMenu();
+    void                OpenAt(QAction *where);
 #endif //defined(Q_OS_MAC)
 
-    void SaveGivenName();
-    void SaveFamilyName();
-    void SaveEmail();
-    void SaveGender(int index);
-    void SaveBirthDate(const QDate & date);
-    void SaveNotes();
-    void SavePMSystem(int index);
+    void                SaveGivenName();
+    void                SaveFamilyName();
+    void                SaveEmail();
+    void                SaveGender(int index);
+    void                SaveBirthDate(const QDate & date);
+    void                SaveNotes();
+    void                SavePMSystem(int index);
 
-    void Remove();
-    void MoveTop();
-    void MoveUp();
-    void MoveDown();
-    void MoveBottom();
-    void Fx();
+    void                Remove();
+    void                MoveTop();
+    void                MoveUp();
+    void                MoveDown();
+    void                MoveBottom();
+    void                Fx();
 
-    void AddCustom();
-    void AddKnown();
-    void ImportFromPattern();
+    void                AddCustom();
+    void                AddKnown();
+    void                ImportFromPattern();
 
-    void ChangedSize(const QString &text);
-    void ChangedHeight(const QString & text);
+    void                ChangedSize(const QString &text);
+    void                ChangedHeight(const QString & text);
 
-    void ShowMData();
+    void                ShowMData();
 
-    void DeployFormula();
+    void                DeployFormula();
 
-    void SaveMName(const QString &text);
-    void SaveMValue();
-    void SaveMBaseValue(double value);
-    void SaveMSizeIncrease(double value);
-    void SaveMHeightIncrease(double value);
-    void SaveMDescription();
-    void SaveMFullName();
+    void                SaveMName(const QString &text);
+    void                SaveMValue();
+    void                SaveMBaseValue(double value);
+    void                SaveMSizeIncrease(double value);
+    void                SaveMHeightIncrease(double value);
+    void                SaveMDescription();
+    void                SaveMFullName();
 
-    void PatternUnitChanged(int index);
+    void                PatternUnitChanged(int index);
 
 private:
     Q_DISABLE_COPY(TMainWindow)
-    Ui::TMainWindow *ui;
-    VMeasurements   *individualMeasurements;
-    VContainer      *data;
-    Unit             mUnit;
-    Unit             pUnit;
-    MeasurementsType mType;
-    qreal            currentSize;
-    qreal            currentHeight;
-    QString          curFile;
-    QComboBox       *gradationHeights;
-    QComboBox       *gradationSizes;
-    QComboBox       *comboBoxUnits;
-    int              formulaBaseHeight;
+    Ui::TMainWindow    *ui;
+    VMeasurements      *individualMeasurements;
+    VContainer         *data;
+    Unit                mUnit;
+    Unit                pUnit;
+    MeasurementsType    mType;
+    qreal               currentSize;
+    qreal               currentHeight;
+    QString             curFile;
+    QComboBox          *gradationHeights;
+    QComboBox          *gradationSizes;
+    QComboBox          *comboBoxUnits;
+    int                 formulaBaseHeight;
     std::shared_ptr<VLockGuard<char>> lock;
-    QSharedPointer<VTableSearch> search;
-    QLabel *labelGradationHeights;
-    QLabel *labelGradationSizes;
-    QLabel *labelPatternUnit;
-    QAction *actionDockDiagram;
-    bool dockDiagramVisible;
-    bool isInitialized;
-    bool mIsReadOnly;
+    QSharedPointer<VTableSearch>      search;
+    QLabel             *labelGradationHeights;
+    QLabel             *labelGradationSizes;
+    QLabel             *labelPatternUnit;
+    QAction            *actionDockDiagram;
+    bool                dockDiagramVisible;
+    bool                isInitialized;
+    bool                mIsReadOnly;
     enum { MaxRecentFiles = 5 };
     QAction            *recentFileActs[MaxRecentFiles];
     QAction            *separatorAct;
-    QVector<QObject *> hackedWidgets;
+    QVector<QObject *>  hackedWidgets;
 
-    void SetupMenu();
-    void InitWindow();
-    void InitTable();
-    void SetDecimals();
-    void InitUnits();
-    void InitComboBoxUnits();
-    void InitGender(QComboBox *gender);
+    void                SetupMenu();
+    void                InitWindow();
+    void                InitTable();
+    void                SetDecimals();
+    void                InitUnits();
+    void                InitComboBoxUnits();
+    void                InitGender(QComboBox *gender);
 
-    void ShowNewMData(bool fresh);
-    void ShowUnits();
-    void ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
-    void UpdateRecentFileActions();
+    void                ShowNewMData(bool fresh);
+    void                ShowUnits();
+    void                ShowHeaderUnits(QTableWidget *table, int column, const QString &unit);
+    void                UpdateRecentFileActions();
 
-    void MeasurementsWasSaved(bool saved);
-    void SetCurrentFile(const QString &fileName);
-    bool SaveMeasurements(const QString &fileName, QString &error);
+    void                MeasurementsWasSaved(bool saved);
+    void                SetCurrentFile(const QString &fileName);
+    bool                SaveMeasurements(const QString &fileName, QString &error);
 
-    bool MaybeSave();
+    bool                MaybeSave();
 
-    QTableWidgetItem *AddCell(const QString &text, int row, int column, int aligment, bool ok = true);
+    QTableWidgetItem   *AddCell(const QString &text, int row, int column, int aligment, bool ok = true);
 
     Q_REQUIRED_RESULT QComboBox *SetGradationList(QLabel *label, const QStringList &list);
 
-    void       SetDefaultHeight(int value);
-    void       SetDefaultSize(int value);
+    void                SetDefaultHeight(int value);
+    void                SetDefaultSize(int value);
 
-    void RefreshData(bool freshCall = false);
-    void RefreshTable(bool freshCall = false);
+    void                RefreshData(bool freshCall = false);
+    void                RefreshTable(bool freshCall = false);
 
-    QString GetCustomName() const;
-    QString ClearCustomName(const QString &name) const;
+    QString             GetCustomName() const;
+    QString             ClearCustomName(const QString &name) const;
 
-    bool EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
-    void ShowMDiagram(const QString &name);
+    bool                EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
+    void                ShowMDiagram(const QString &name);
 
-    void Open(const QString &pathTo, const QString &filter);
-    void UpdatePadlock(bool ro);
-    void MeasurementGUI();
-    void Controls();
-    void MFields(bool enabled);
-    void UpdateWindowTitle();
+    void                Open(const QString &pathTo, const QString &filter);
+    void                UpdatePadlock(bool ro);
+    void                MeasurementGUI();
+    void                Controls();
+    void                MFields(bool enabled);
+    void                UpdateWindowTitle();
 
-    void ReadSettings();
-    void WriteSettings();
+    void                ReadSettings();
+    void                WriteSettings();
 
-    QStringList FilterMeasurements(const QStringList &mNew, const QStringList &mFilter);
+    QStringList         FilterMeasurements(const QStringList &mNew, const QStringList &mFilter);
 
-    void UpdatePatternUnit();
+    void                UpdatePatternUnit();
 
-    bool LoadFromExistingFile(const QString &path);
+    bool                LoadFromExistingFile(const QString &path);
 
-    void CreateWindowMenu(QMenu *menu);
+    void                CreateWindowMenu(QMenu *menu);
 
-    bool IgnoreLocking(int error, const QString &path);
+    bool                IgnoreLocking(int error, const QString &path);
 
     template <class T>
-    void HackWidget(T **widget);
+    void                HackWidget(T **widget);
 };
 
 #endif // TMAINWINDOW_H

@@ -34,6 +34,7 @@
 #include <QMetaObject>
 #include <QObject>
 #include <QString>
+#include <QGraphicsItem>
 
 class DialogExportToCSV;
 
@@ -41,24 +42,25 @@ class VAbstractMainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
-    explicit VAbstractMainWindow(QWidget *parent = nullptr);
-    virtual ~VAbstractMainWindow() Q_DECL_EQ_DEFAULT;
+    explicit      VAbstractMainWindow(QWidget *parent = nullptr);
+    virtual      ~VAbstractMainWindow() Q_DECL_EQ_DEFAULT;
 
 public slots:
-    virtual void ShowToolTip(const QString &toolTip)=0;
+    virtual void  ShowToolTip(const QString &toolTip)=0;
+    virtual void  zoomToSelected()=0;
 
 protected slots:
-    void WindowsLocale();
-    void ExportToCSV();
+    void          WindowsLocale();
+    void          ExportToCSV();
 
 protected:
-    int     m_curFileFormatVersion;
-    QString m_curFileFormatVersionStr;
+    int           m_curFileFormatVersion;
+    QString       m_curFileFormatVersionStr;
 
-    bool ContinueFormatRewrite(const QString &currentFormatVersion, const QString &maxFormatVersion);
-    void ToolBarStyle(QToolBar *bar);
+    bool          ContinueFormatRewrite(const QString &currentFormatVersion, const QString &maxFormatVersion);
+    void          ToolBarStyle(QToolBar *bar);
 
-    virtual void ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)=0;
+    virtual void  ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)=0;
 private:
     Q_DISABLE_COPY(VAbstractMainWindow)
 };

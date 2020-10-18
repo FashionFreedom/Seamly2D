@@ -108,7 +108,7 @@ void DialogSeamlyMePreferences::showEvent(QShowEvent *event)
 
     setMinimumSize(size());
 
-    QSize sz = qApp->Settings()->GetPreferenceDialogSize();
+    QSize sz = qApp->Settings()->getPreferenceDialogSize();
     if (sz.isEmpty() == false)
     {
         resize(sz);
@@ -126,7 +126,7 @@ void DialogSeamlyMePreferences::resizeEvent(QResizeEvent *event)
     // dialog creating, which would
     if (m_isInitialized)
     {
-        qApp->Settings()->SetPreferenceDialogSize(size());
+        qApp->Settings()->setPreferenceDialogSize(size());
     }
 }
 
@@ -137,7 +137,7 @@ void DialogSeamlyMePreferences::Apply()
     m_pathPage->Apply();
 
     qApp->SeamlyMeSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
-    emit UpdateProperties();
+    emit updateProperties();
     setResult(QDialog::Accepted);
 }
 
