@@ -6,58 +6,113 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>381</width>
-    <height>705</height>
+    <width>485</width>
+    <height>570</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>485</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>485</width>
+    <height>570</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string notr="true">Pattern</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QGroupBox" name="output_GroupBox">
-     <property name="title">
-      <string>Graphical output</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QCheckBox" name="graphOutput_CheckBox">
-        <property name="text">
-         <string>Use antialiasing</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <widget class="QGroupBox" name="undo_GroupBox">
+     <property name="minimumSize">
+      <size>
+       <width>465</width>
+       <height>50</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>465</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="title">
       <string>Undo</string>
      </property>
-     <layout class="QFormLayout" name="formLayout_2">
-      <property name="fieldGrowthPolicy">
-       <enum>QFormLayout::ExpandingFieldsGrow</enum>
+     <widget class="QLabel" name="undoCount_Label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>70</width>
+        <height>16</height>
+       </rect>
       </property>
-      <item row="0" column="0">
-       <widget class="QLabel" name="undoCount_Label">
-        <property name="text">
-         <string>Count steps (0 - no limit):</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QSpinBox" name="undoCount_SpinBox">
-        <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
+      <property name="minimumSize">
+       <size>
+        <width>70</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>70</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Count step:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="undoCount_SpinBox">
+      <property name="geometry">
+       <rect>
+        <x>86</x>
+        <y>20</y>
+        <width>39</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>20</y>
+        <width>64</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string> (0 - no limit)</string>
+      </property>
+     </widget>
     </widget>
    </item>
    <item>
     <widget class="QGroupBox" name="WorkPiece_GroupBox">
+     <property name="minimumSize">
+      <size>
+       <width>465</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>465</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="title">
       <string>Workpiece</string>
      </property>
@@ -116,6 +171,18 @@
    </item>
    <item>
     <widget class="QGroupBox" name="seamAllowance_GroupBox">
+     <property name="minimumSize">
+      <size>
+       <width>465</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>465</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="title">
       <string>Seam allowance</string>
      </property>
@@ -146,8 +213,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>170</width>
+          <width>120</width>
           <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>16777215</height>
          </size>
         </property>
         <property name="alignment">
@@ -174,8 +247,14 @@
     <widget class="QGroupBox" name="notches_GroupBox">
      <property name="minimumSize">
       <size>
-       <width>0</width>
+       <width>465</width>
        <height>150</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>465</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="title">
@@ -202,7 +281,7 @@
        <rect>
         <x>85</x>
         <y>45</y>
-        <width>170</width>
+        <width>120</width>
         <height>20</height>
        </rect>
       </property>
@@ -211,6 +290,18 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
       </property>
       <property name="currentIndex">
        <number>-1</number>
@@ -221,7 +312,7 @@
        <rect>
         <x>85</x>
         <y>71</y>
-        <width>170</width>
+        <width>120</width>
         <height>20</height>
        </rect>
       </property>
@@ -230,6 +321,18 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -345,7 +448,7 @@
        <rect>
         <x>85</x>
         <y>98</y>
-        <width>170</width>
+        <width>120</width>
         <height>20</height>
        </rect>
       </property>
@@ -354,6 +457,18 @@
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>120</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>120</width>
+        <height>16777215</height>
+       </size>
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -372,6 +487,18 @@
    </item>
    <item>
     <widget class="QGroupBox" name="Formats_GroupBox">
+     <property name="minimumSize">
+      <size>
+       <width>465</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>465</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="title">
       <string>Label data/time format</string>
      </property>
@@ -401,14 +528,26 @@
          <widget class="QComboBox" name="dateFormats_ComboBox">
           <property name="minimumSize">
            <size>
-            <width>90</width>
+            <width>120</width>
             <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
            </size>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="editDateFormats_PushButton">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="text">
            <string>Edit formats</string>
           </property>
@@ -438,14 +577,26 @@
          <widget class="QComboBox" name="timeFormats_ComboBox">
           <property name="minimumSize">
            <size>
-            <width>90</width>
+            <width>120</width>
             <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
            </size>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="editTimeFormats_PushButton">
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="text">
            <string>Edit formats</string>
           </property>

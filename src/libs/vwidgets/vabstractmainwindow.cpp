@@ -76,7 +76,7 @@ bool VAbstractMainWindow::ContinueFormatRewrite(const QString &currentFormatVers
 void VAbstractMainWindow::ToolBarStyle(QToolBar *bar)
 {
     SCASSERT(bar != nullptr)
-    if (qApp->Settings()->GetToolBarStyle())
+    if (qApp->Settings()->getToolBarStyle())
     {
         bar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
     }
@@ -122,4 +122,10 @@ void VAbstractMainWindow::ExportToCSV()
         qApp->Settings()->SetCSVCodec(dialog.SelectedMib());
         qApp->Settings()->SetCSVWithHeader(dialog.WithHeader());
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractMainWindow::zoomToSelected()
+{
+    // do nothing
 }

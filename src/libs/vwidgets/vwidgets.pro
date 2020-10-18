@@ -8,7 +8,7 @@
 message("Entering vwidgets.pro")
 include(../../../common.pri)
 
-QT += widgets printsupport
+QT += widgets xml printsupport
 
 # Name of the library
 TARGET = vwidgets

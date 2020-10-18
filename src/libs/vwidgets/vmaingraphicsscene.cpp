@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -71,12 +71,13 @@
  * @brief VMainGraphicsScene default constructor.
  */
 VMainGraphicsScene::VMainGraphicsScene(QObject *parent)
-    : QGraphicsScene(parent),
-      horScrollBar(0),
-      verScrollBar(0),
-      _transform(QTransform()),
-      scenePos(QPointF()),
-      origins()
+    : QGraphicsScene(parent)
+    , horScrollBar(0)
+    , verScrollBar(0)
+    , m_previousTransform(QTransform())
+    , m_currentTransform(QTransform())
+    , scenePos(QPointF())
+    , origins()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -86,12 +87,13 @@ VMainGraphicsScene::VMainGraphicsScene(QObject *parent)
  * @param parent parent object.
  */
 VMainGraphicsScene::VMainGraphicsScene(const QRectF & sceneRect, QObject * parent)
-    :QGraphicsScene ( sceneRect, parent ),
-      horScrollBar(0),
-      verScrollBar(0),
-      _transform(QTransform()),
-      scenePos(),
-      origins()
+    :QGraphicsScene ( sceneRect, parent )
+    , horScrollBar(0)
+    , verScrollBar(0)
+    , m_previousTransform(QTransform())
+    , m_currentTransform(QTransform())
+    , scenePos()
+    , origins()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -229,7 +231,7 @@ void VMainGraphicsScene::InitOrigins()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::SetOriginsVisible(bool visible)
+void VMainGraphicsScene::setOriginsVisible(bool visible)
 {
     foreach (QGraphicsItem *item, origins)
     {
@@ -244,7 +246,7 @@ QPointF VMainGraphicsScene::getScenePos() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QRectF VMainGraphicsScene::VisibleItemsBoundingRect() const
+QRectF VMainGraphicsScene::visibleItemsBoundingRect() const
 {
     QRectF rect;
     foreach(QGraphicsItem *item, items())
@@ -265,17 +267,29 @@ QRectF VMainGraphicsScene::VisibleItemsBoundingRect() const
  */
 QTransform VMainGraphicsScene::transform() const
 {
-    return _transform;
+    return m_currentTransform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief setTransform set view transformation.
+ * @brief setCurrentTransform set view transformation.
  * @param transform view transformation.
  */
-void VMainGraphicsScene::setTransform(const QTransform &transform)
+void VMainGraphicsScene::setCurrentTransform(const QTransform &transform)
 {
-    _transform = transform;
+    m_previousTransform = m_currentTransform;
+    m_currentTransform = transform;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief swapTransforms.
+ */
+void VMainGraphicsScene::swapTransforms()
+{
+    QTransform tempTransform = m_currentTransform;
+    m_currentTransform = m_previousTransform;
+    m_previousTransform = tempTransform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

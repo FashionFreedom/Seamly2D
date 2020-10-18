@@ -883,7 +883,7 @@ void DialogIncrements::closeEvent(QCloseEvent *event)
     ui->lineEditName->blockSignals(true);
     ui->plainTextEditDescription->blockSignals(true);
 
-    emit UpdateProperties();
+    emit updateProperties();
     emit DialogClosed(QDialog::Accepted);
     event->accept();
 }

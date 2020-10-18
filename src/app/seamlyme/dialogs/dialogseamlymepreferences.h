@@ -71,7 +71,7 @@ public:
     explicit DialogSeamlyMePreferences(QWidget *parent = nullptr);
     virtual ~DialogSeamlyMePreferences();
 signals:
-    void UpdateProperties();
+    void updateProperties();
 protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
     virtual void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
