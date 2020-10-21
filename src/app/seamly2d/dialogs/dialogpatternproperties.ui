@@ -11,17 +11,17 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Pattern properties</string>
+   <string>Pattern preferences</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
-    <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
+   <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
+    <normaloff>:/icons/win.icon.theme/16x16/actions/preferences-other.png</normaloff>:/icons/win.icon.theme/16x16/actions/preferences-other.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -1346,7 +1346,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

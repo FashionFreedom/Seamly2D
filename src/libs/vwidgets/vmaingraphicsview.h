@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -61,6 +61,9 @@
 #include <QString>
 #include <Qt>
 #include <QtGlobal>
+#include <QRubberBand>
+#include <QColor>
+#include <Qt>
 
 /*!
  * This class adds ability to zoom QGraphicsView using mouse wheel. The point under cursor
@@ -71,7 +74,7 @@
  * each scrolling step because that approach leads to position errors due to before-mentioned
  * positioning restrictions.
  *
- * When zommed using scroll, this class emits zoomed() signal.
+ * When zoomed using scroll, this class emits zoomed() signal.
  *
  * Usage:
  *
@@ -89,44 +92,63 @@
  */
 
 class QTimeLine;
+class QTransform;
+class QGesture;
+class QGestureEvent;
+class QPanGesture;
+class QPinchGesture;
 
 class GraphicsViewZoom : public QObject
 {
     Q_OBJECT
 public:
-    explicit GraphicsViewZoom(QGraphicsView* view);
-    void gentle_zoom(double factor);
-    void set_modifiers(Qt::KeyboardModifiers modifiers);
-    void set_zoom_factor_base(double value);
+    explicit              GraphicsViewZoom(QGraphicsView* view);
+    void                  gentleZoom(qreal factor);
+    void                  setModifiers(Qt::KeyboardModifiers modifiers);
+    void                  setZoomSpeedFactor(qreal value);
+    void                  initScrollAnimations();
+
 signals:
-    void zoomed();
+    void                  zoomed();
+
 public slots:
-    void VerticalScrollingTime(qreal x);
-    void HorizontalScrollingTime(qreal x);
-    void animFinished();
+    void                  verticalScrollingTime(qreal x);
+    void                  horizontalScrollingTime(qreal x);
+    void                  animFinished();
+
 protected:
-    virtual bool eventFilter(QObject* object, QEvent* event) Q_DECL_OVERRIDE;
+    virtual bool          eventFilter(QObject* object, QEvent* event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(GraphicsViewZoom)
-    QGraphicsView        *_view;
-    Qt::KeyboardModifiers _modifiers;
-    double                _zoom_factor_base;
-    QPointF               target_scene_pos;
-    QPointF               target_viewport_pos;
+    QGraphicsView        *m_view;
+    Qt::KeyboardModifiers m_modifiers;
+    qreal                 m_zoomSpeedFactor;
+    QPointF               targetScenePos;
+    QPointF               targetViewPos;
+    int                   m_duration;
+    int                   m_updateInterval;
     QTimeLine            *verticalScrollAnim;
     /** @brief _numScheduledVerticalScrollings keep number scheduled vertical scrollings. */
-    qint32                _numScheduledVerticalScrollings;
+    qint32                m_numScheduledVerticalScrollings;
     QTimeLine            *horizontalScrollAnim;
     /** @brief _numScheduledHorizontalScrollings keep number scheduled horizontal scrollings. */
-    qint32                _numScheduledHorizontalScrollings;
+    qint32                m_numScheduledHorizontalScrollings;
 
-    static const int duration;
-    static const int updateInterval;
+    void                  fictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view);
 
-    void FictiveSceneRect(QGraphicsScene *sc, QGraphicsView *view);
+    bool                  startVerticalScrollings(QWheelEvent* wheel_event);
+    bool                  startHorizontalScrollings(QWheelEvent* wheel_event);
+    bool                  gestureEvent(QGestureEvent* event);
+    void                  panTriggered(QPanGesture* gesture);
+    void                  pinchTriggered(QPinchGesture* gesture);
 
-    bool StartVerticalScrollings(QWheelEvent* wheel_event);
-    bool StartHorizontalScrollings(QWheelEvent* wheel_event);
+    QGesture             *pan;
+    QGesture             *pinch;
+    qreal                 horizontalOffset;
+    qreal                 verticalOffset;
+    qreal                 scaleFactor;
+    qreal                 currentScaleFactor;
 };
 
 /**
@@ -137,39 +159,69 @@ class VMainGraphicsView : public QGraphicsView
     Q_OBJECT
 public:
 
-    explicit VMainGraphicsView(QWidget *parent = nullptr);
-    void setShowToolOptions(bool value);
-    void AllowRubberBand(bool value);
+    explicit              VMainGraphicsView(QWidget *parent = nullptr);
+    void                  setShowToolOptions(bool value);
+    void                  allowRubberBand(bool value);
+    void                  zoomPanEnabled(bool value);
+    void                  zoomToAreaEnabled(bool value);
 
-    static void NewSceneRect(QGraphicsScene *sc, QGraphicsView *view);
-    static QRectF SceneVisibleArea(QGraphicsView *view);
+    static void           NewSceneRect(QGraphicsScene *sc, QGraphicsView *view);
+    static QRectF         SceneVisibleArea(QGraphicsView *view);
 
-    static qreal MinScale();
-    static qreal MaxScale();
+    static qreal          MinScale();
+    static qreal          MaxScale();
+
+    void                  setRubberBandColor(QRubberBand *band, const QColor &color);
+
+    void                  initScrollBars();
 
 signals:
     /**
-     * @brief MouseRelease help catch mouse release event.
+     * @brief mouseRelease help catch mouse release event.
      *
      * Usefull when you need show dialog after working with tool visualization.
      */
-    void     MouseRelease();
-    void     itemClicked(QGraphicsItem *item);
+    void                  mouseRelease();
+    void                  itemClicked(QGraphicsItem *item);
+    void                  signalZoomScaleChanged(qreal scale);
+
+
 public slots:
-    void     ZoomIn();
-    void     ZoomOut();
-    void     ZoomOriginal();
-    void     ZoomFitBest();
+    void                  zoomByScale(qreal scale);
+    void                  zoomIn();
+    void                  zoomOut();
+    void                  zoom100Percent();
+    void                  zoomToFit();
+    void                  zoomToRect(const QRectF &rect);
+    void                  updateView(const QTransform &transform);
+    void                  resetScrollBars();
+    void                  resetScrollAnimations();
+
 protected:
-    virtual void mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void          mousePressEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void          mouseMoveEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void          mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void          mouseDoubleClickEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
+
+    std::unique_ptr<QCursor> curMagnifier;
+
 private:
     Q_DISABLE_COPY(VMainGraphicsView)
-    GraphicsViewZoom* zoom;
-    bool              showToolOptions;
-    bool              isAllowRubberBand;
-    QPoint            m_ptStartPos;
+    GraphicsViewZoom     *zoom;
+    bool                  showToolProperties;
+    bool                  showScrollBars;
+    bool                  isallowRubberBand;
+    bool                  isZoomToAreaActive{false};
+    bool                  isRubberBandActive{false};
+    bool                  isRubberBandColorSet{false};
+    bool                  isZoomPanActive{false};
+    bool                  isPanDragActive{false};
+    QRubberBand          *rubberBand=NULL;
+    QRect                *rubberBandRect=NULL;
+    QPoint                startPoint;
+    QPoint                endPoint;
+    QPoint                m_ptStartPos;
+    QPoint                cursorPos;
 };
 
 #endif // VMAINGRAPHICSVIEW_H

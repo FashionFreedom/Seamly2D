@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -60,6 +60,7 @@
 #include <QStringList>
 #include <Qt>
 #include <QtGlobal>
+#include <QPixmap>
 
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vabstractpattern.h"
@@ -80,91 +81,93 @@ class VAbstractTool: public VDataTool
     Q_OBJECT
 public:
     VAbstractTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent = nullptr);
-    virtual ~VAbstractTool() Q_DECL_OVERRIDE;
-    quint32                 getId() const;
+    virtual                      ~VAbstractTool() Q_DECL_OVERRIDE;
+    quint32                       getId() const;
 
-    static const QString AttrInUse;
+    static const QString          AttrInUse;
 
-    static qreal CheckFormula(const quint32 &toolId, QString &formula, VContainer *data);
+    static qreal                  CheckFormula(const quint32 &toolId, QString &formula, VContainer *data);
 
     static const QStringList      Colors();
     static QMap<QString, QString> ColorsList();
+    static QPixmap                createColorIcon(const int w, const int h, const QString &color);
 
-    static void AddRecord(const quint32 id, const Tool &toolType, VAbstractPattern *doc);
-    static void AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path);
-    static void AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
 
-    const VContainer        *getData() const;
+    static void                   AddRecord(const quint32 id, const Tool &toolType, VAbstractPattern *doc);
+    static void                   AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path);
+    static void                   AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
 
-    QMap<QString, quint32>  PointsList() const;
-    virtual QString         getTagName() const =0;
-    virtual void            ShowVisualization(bool show) =0;
+    const VContainer             *getData() const;
+
+    QMap<QString, quint32>        PointsList() const;
+    virtual QString               getTagName() const =0;
+    virtual void                  ShowVisualization(bool show) =0;
 
     template<typename T>
-    static quint32 CreateNode(VContainer *data, quint32 id);
+    static quint32                CreateNode(VContainer *data, quint32 id);
 public slots:
     /**
      * @brief FullUpdateFromFile update tool data form file.
      */
-    virtual void            FullUpdateFromFile()=0;
-    virtual void            AllowHover(bool enabled)=0;
-    virtual void            AllowSelecting(bool enabled)=0;
-    virtual void            ToolSelectionType(const SelectionType &type);
+    virtual void                 FullUpdateFromFile()=0;
+    virtual void                 AllowHover(bool enabled)=0;
+    virtual void                 AllowSelecting(bool enabled)=0;
+    virtual void                 ToolSelectionType(const SelectionType &type);
 signals:
     /**
      * @brief toolhaveChange emit if tool create change that need save.
      */
-    void                    toolhaveChange();
+    void                         toolhaveChange();
     /**
      * @brief ChoosedTool emit if object was clicked.
      * @param id object id in container.
      * @param type type of scene object.
      */
-    void                    ChoosedTool(quint32 id, SceneObject type);
+    void                         ChoosedTool(quint32 id, SceneObject type);
     /**
      * @brief FullUpdateTree emit if need reparse pattern file.
      */
-    void                    LiteUpdateTree(const Document &parse);
+    void                         LiteUpdateTree(const Document &parse);
 
-    void                    ToolTip(const QString &toolTip);
+    void                         ToolTip(const QString &toolTip);
 protected:
     /** @brief doc dom document container */
-    VAbstractPattern         *doc;
+    VAbstractPattern            *doc;
 
     /** @brief id object id. */
-    const quint32            id;
+    const quint32                id;
 
     QPointer<Visualization> vis;
-    SelectionType           selectionType;
+    SelectionType                selectionType;
 
     /**
      * @brief AddToFile add tag with informations about tool into file.
      */
-    virtual void            AddToFile()=0;
+    virtual void                 AddToFile()=0;
     /**
      * @brief RefreshDataInFile refresh attributes in file. If attributes don't exist create them.
      */
-    virtual void            RefreshDataInFile();
+    virtual void                 RefreshDataInFile();
     /**
      * @brief RemoveReferens decrement value of reference.
      */
-    virtual void            RemoveReferens() {}
-    virtual void            DeleteTool(bool ask = true);
-    static int              ConfirmDeletion();
+    virtual void                 RemoveReferens() {}
+    virtual void                 DeleteTool(bool ask = true);
+    static int                   ConfirmDeletion();
 
     template <typename T>
-    void AddVisualization();
+    void                         AddVisualization();
 
-    virtual void SetVisualization()=0;
-    virtual void ToolCreation(const Source &typeCreation);
+    virtual void                 SetVisualization()=0;
+    virtual void                 ToolCreation(const Source &typeCreation);
 
-    static QDomElement AddSANode(VAbstractPattern *doc, const QString &tagName, const VPieceNode &node);
-    static void        AddNode(VAbstractPattern *doc, QDomElement &domElement, const VPieceNode &node);
+    static QDomElement           AddSANode(VAbstractPattern *doc, const QString &tagName, const VPieceNode &node);
+    static void                  AddNode(VAbstractPattern *doc, QDomElement &domElement, const VPieceNode &node);
 
-    static QVector<VPieceNode> PrepareNodes(const VPiecePath &path, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                            VContainer *data);
-    static quint32 PrepareNode(const VPieceNode &node, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                               VContainer *data);
+    static QVector<VPieceNode>   PrepareNodes(const VPiecePath &path, VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                             VContainer *data);
+    static quint32               PrepareNode(const VPieceNode &node, VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                             VContainer *data);
 private:
     Q_DISABLE_COPY(VAbstractTool)
 };

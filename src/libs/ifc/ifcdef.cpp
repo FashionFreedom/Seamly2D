@@ -250,6 +250,8 @@ QMap<QString, QIcon> CurvePenStylesPics()
     return map;
 }
 
+const QString ColorByGroup          = QStringLiteral("byGroup");
+const QString ColorNone             = QStringLiteral("none");
 const QString ColorBlack            = QStringLiteral("black");
 const QString ColorGreen            = QStringLiteral("green");
 const QString ColorBlue             = QStringLiteral("blue");
@@ -267,6 +269,10 @@ const QString ColorMediumSeaGreen   = QStringLiteral("mediumseagreen");
 const QString ColorLime             = QStringLiteral("lime");
 const QString ColorDeepSkyBlue      = QStringLiteral("deepskyblue");
 const QString ColorCornFlowerBlue   = QStringLiteral("cornflowerblue");
+const QString ColorGray             = QStringLiteral("gray");
+const QString ColorDarkGray         = QStringLiteral("darkgray");
+const QString ColorLightGray        = QStringLiteral("lightgray");
+const QString ColorWhite            = QStringLiteral("white");
 
 //variables
 const QString measurement_         = QStringLiteral("M_");

@@ -874,19 +874,19 @@
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuWindow">
+   <widget class="QMenu" name="window_Menu">
     <property name="title">
      <string>Window</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuHelp">
+   <widget class="QMenu" name="help_Menu">
     <property name="title">
      <string>Help</string>
     </property>
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutSeamlyMe"/>
    </widget>
-   <widget class="QMenu" name="menuMeasurements">
+   <widget class="QMenu" name="measurements_Menu">
     <property name="title">
      <string>Measurements</string>
     </property>
@@ -896,9 +896,9 @@
     <addaction name="actionImportFromPattern"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuMeasurements"/>
-   <addaction name="menuWindow"/>
-   <addaction name="menuHelp"/>
+   <addaction name="measurements_Menu"/>
+   <addaction name="window_Menu"/>
+   <addaction name="help_Menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="enabled">

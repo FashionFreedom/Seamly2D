@@ -6,22 +6,40 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>712</width>
-    <height>522</height>
+    <width>640</width>
+    <height>620</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>640</width>
+    <height>620</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>640</width>
+    <height>620</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Preferences</string>
+   <string>Application Preferences</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
-    <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
+   <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
+    <normaloff>:/icons/win.icon.theme/16x16/actions/preferences-other.png</normaloff>:/icons/win.icon.theme/16x16/actions/preferences-other.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QListWidget" name="contentsWidget">
+      <widget class="QListWidget" name="contents_ListWidget">
        <property name="minimumSize">
         <size>
          <width>128</width>
@@ -100,21 +118,48 @@
          <set>ItemIsSelectable|ItemIsUserCheckable|ItemIsEnabled</set>
         </property>
        </item>
+       <item>
+        <property name="text">
+         <string>Graphics</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
+          <normaloff>:/icon/graphics_view_config.png</normaloff>:/icon/graphics_view_config.png</iconset>
+        </property>
+       </item>
       </widget>
      </item>
      <item>
-      <widget class="QStackedWidget" name="pagesWidget">
+      <widget class="QStackedWidget" name="pages_StackedWidget">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>570</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>570</height>
+        </size>
+       </property>
        <property name="sizeIncrement">
         <size>
          <width>0</width>
          <height>0</height>
         </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
        </property>
        <widget class="QWidget" name="page_2"/>
       </widget>
@@ -135,6 +180,7 @@
  </widget>
  <resources>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

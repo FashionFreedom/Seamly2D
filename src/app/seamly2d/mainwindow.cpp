@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -108,6 +108,7 @@
 #include <QFileSystemWatcher>
 #include <QComboBox>
 #include <QTextCodec>
+#include <QDoubleSpinBox>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -134,25 +135,46 @@ const QString strCtrl        = QStringLiteral("Ctrl"); // String
  * @param parent parent widget.
  */
 MainWindow::MainWindow(QWidget *parent)
-    :MainWindowsNoGUI(parent), ui(new Ui::MainWindow), watcher(new QFileSystemWatcher(this)), currentTool(Tool::Arrow),
-      lastUsedTool(Tool::Arrow), sceneDraw(nullptr), sceneDetails(nullptr),
-      mouseCoordinate(nullptr), helpLabel(nullptr), isInitialized(false), mChanges(false), mChangesAsked(true),
-      patternReadOnly(false),
-      dialogTable(nullptr),
-      dialogTool(),
-      dialogHistory(nullptr), comboBoxDraws(nullptr), patternPieceLabel(nullptr), mode(Draw::Calculation),
-      currentDrawIndex(0), currentToolBoxIndex(0),
-      isDockToolOptionsVisible(true),
-      isDockGroupsVisible(true),
-      drawMode(true), recentFileActs(),
-      separatorAct(nullptr),
-      leftGoToStage(nullptr), rightGoToStage(nullptr), autoSaveTimer(nullptr), guiEnabled(true),
-      gradationHeights(nullptr), gradationSizes(nullptr), gradationHeightsLabel(nullptr), gradationSizesLabel(nullptr),
-      toolOptions(nullptr),
-      groupsWidget(nullptr),
-      detailsWidget(nullptr),
-      lock(nullptr),
-      toolButtonPointerList()
+    : MainWindowsNoGUI(parent)
+    , ui(new Ui::MainWindow)
+    , watcher(new QFileSystemWatcher(this))
+    , currentTool(Tool::Arrow)
+    , lastUsedTool(Tool::Arrow)
+    , sceneDraw(nullptr)
+    , sceneDetails(nullptr)
+    , mouseCoordinate(nullptr)
+    , helpLabel(nullptr)
+    , isInitialized(false)
+    , mChanges(false)
+    , mChangesAsked(true)
+    , patternReadOnly(false)
+    , dialogTable(nullptr)
+    , dialogTool()
+    , dialogHistory(nullptr)
+    , comboBoxDraws(nullptr)
+    , patternPieceLabel(nullptr)
+    , mode(Draw::Calculation)
+    , currentDrawIndex(0)
+    , currentToolBoxIndex(0)
+    , isDockToolOptionsVisible(true)
+    , isDockGroupsVisible(true)
+    , drawMode(true)
+    , recentFileActs()
+    , separatorAct(nullptr)
+    , leftGoToStage(nullptr)
+    , rightGoToStage(nullptr)
+    , autoSaveTimer(nullptr)
+    , guiEnabled(true)
+    , gradationHeights(nullptr)
+    , gradationSizes(nullptr)
+    , gradationHeightsLabel(nullptr)
+    , gradationSizesLabel(nullptr)
+    , toolOptions(nullptr)
+    , groupsWidget(nullptr)
+    , detailsWidget(nullptr)
+    , lock(nullptr)
+    , toolButtonPointerList()
+    , zoomScaleSpinBox(nullptr)
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
     {
@@ -236,7 +258,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->toolBarDraws->setIconSize(QSize(24, 24));
     ui->toolBarOption->setIconSize(QSize(24, 24));
     ui->toolBarStages->setIconSize(QSize(24, 24));
-    ui->toolBarTools->setIconSize(QSize(24, 24));
+    ui->edit_Toolbar->setIconSize(QSize(24, 24));
+    ui->zoom_ToolBar->setIconSize(QSize(24, 24));
 
     setUnifiedTitleAndToolBarOnMac(true);
 
@@ -255,9 +278,9 @@ MainWindow::MainWindow(QWidget *parent)
     actionOpenSeamlyMe->setMenuRole(QAction::NoRole);
     connect(actionOpenSeamlyMe, &QAction::triggered, this, &MainWindow::CreateMeasurements);
 
-    QAction *actionPreferences = menu->addAction(tr("Preferences"));
-    actionPreferences->setMenuRole(QAction::NoRole);
-    connect(actionPreferences, &QAction::triggered, this, &MainWindow::Preferences);
+    QAction *appPreferences_Action = menu->addAction(tr("Preferences"));
+    appPreferences_Action->setMenuRole(QAction::NoRole);
+    connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
 
     menu->setAsDockMenu();
 #endif //defined(Q_OS_MAC)
@@ -307,7 +330,7 @@ void MainWindow::AddPP(const QString &PPName)
 
     // Show best for new PP
     VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view);
-    ZoomFitBestCurrent();
+    ui->view->zoom100Percent();
 
     ui->actionNewDraw->setEnabled(true);
     helpLabel->setText("");
@@ -321,7 +344,7 @@ QPointF MainWindow::StartPositionNewPP() const
     const qreal margin = 40.0;
     if (comboBoxDraws->count() > 1)
     {
-        const QRectF rect = sceneDraw->VisibleItemsBoundingRect();
+        const QRectF rect = sceneDraw->visibleItemsBoundingRect();
         if (rect.width() <= rect.height())
         {
             return QPointF(rect.width()+margin, originY);
@@ -379,10 +402,12 @@ void MainWindow::InitScenes()
 
     ui->view->setScene(currentScene);
 
-    sceneDraw->setTransform(ui->view->transform());
-    sceneDetails->setTransform(ui->view->transform());
+    sceneDraw->setCurrentTransform(ui->view->transform());
+    sceneDetails->setCurrentTransform(ui->view->transform());
 
-    connect(ui->view, &VMainGraphicsView::MouseRelease, this, [this](){EndVisualization(true);});
+    connect(ui->view, &VMainGraphicsView::mouseRelease, this, [this](){EndVisualization(true);});
+    connect(ui->view, &VMainGraphicsView::signalZoomScaleChanged, this, &MainWindow::zoomScaleChanged);
+
     QSizePolicy policy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     policy.setHorizontalStretch(12);
     ui->view->setSizePolicy(policy);
@@ -1219,27 +1244,6 @@ void MainWindow::ClosedDialogInsertNode(int result)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ZoomFitBestCurrent()
-{
-    const QRectF rect = doc->ActiveDrawBoundingRect();
-    if (rect.isEmpty())
-    {
-        return;
-    }
-
-    ui->view->fitInView(rect, Qt::KeepAspectRatio);
-    QTransform transform = ui->view->transform();
-
-    qreal factor = transform.m11();
-    factor = qMax(factor, VMainGraphicsView::MinScale());
-    factor = qMin(factor, VMainGraphicsView::MaxScale());
-
-    transform.setMatrix(factor, transform.m12(), transform.m13(), transform.m21(), factor, transform.m23(),
-                        transform.m31(), transform.m32(), transform.m33());
-    ui->view->setTransform(transform);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ToolCutArc handler tool cutArc.
  * @param checked true - button checked.
@@ -1911,30 +1915,128 @@ void MainWindow::ToolBarTools()
     QList<QKeySequence> zoomInShortcuts;
     zoomInShortcuts.append(QKeySequence(QKeySequence::ZoomIn));
     zoomInShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Plus + Qt::KeypadModifier));
-    ui->actionZoomIn->setShortcuts(zoomInShortcuts);
-    connect(ui->actionZoomIn, &QAction::triggered, ui->view, &VMainGraphicsView::ZoomIn);
+    ui->zoomIn_Action->setShortcuts(zoomInShortcuts);
+    connect(ui->zoomIn_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomIn);
 
     QList<QKeySequence> zoomOutShortcuts;
     zoomOutShortcuts.append(QKeySequence(QKeySequence::ZoomOut));
     zoomOutShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Minus + Qt::KeypadModifier));
-    ui->actionZoomOut->setShortcuts(zoomOutShortcuts);
-    connect(ui->actionZoomOut, &QAction::triggered, ui->view, &VMainGraphicsView::ZoomOut);
+    ui->zoomOut_Action->setShortcuts(zoomOutShortcuts);
+    connect(ui->zoomOut_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomOut);
 
-    QList<QKeySequence> zoomOriginalShortcuts;
-    zoomOriginalShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0));
-    zoomOriginalShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0 + Qt::KeypadModifier));
-    ui->actionZoomOriginal->setShortcuts(zoomOriginalShortcuts);
-    connect(ui->actionZoomOriginal, &QAction::triggered, ui->view, &VMainGraphicsView::ZoomOriginal);
+    QList<QKeySequence> zoom100PercentShortcuts;
+    zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0));
+    zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0 + Qt::KeypadModifier));
+    ui->zoom100Percent_Action->setShortcuts(zoom100PercentShortcuts);
+    connect(ui->zoom100Percent_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoom100Percent);
 
-    QList<QKeySequence> zoomFitBestShortcuts;
-    zoomFitBestShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Equal));
-    ui->actionZoomFitBest->setShortcuts(zoomFitBestShortcuts);
-    connect(ui->actionZoomFitBest, &QAction::triggered, ui->view, &VMainGraphicsView::ZoomFitBest);
+    QList<QKeySequence> zoomToFitShortcuts;
+    zoomToFitShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Equal));
+    ui->zoomToFit_Action->setShortcuts(zoomToFitShortcuts);
+    connect(ui->zoomToFit_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomToFit);
 
-    QList<QKeySequence> zoomFitBestCurrentShortcuts;
-    zoomFitBestCurrentShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_M));
-    ui->actionZoomFitBestCurrent->setShortcuts(zoomFitBestCurrentShortcuts);
-    connect(ui->actionZoomFitBestCurrent, &QAction::triggered, this, &MainWindow::ZoomFitBestCurrent);
+    QList<QKeySequence> zoomToSelectedShortcuts;
+    zoomToSelectedShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Right));
+    ui->zoomToSelected_Action->setShortcuts(zoomToSelectedShortcuts);
+    connect(ui->zoomToSelected_Action, &QAction::triggered, this, &MainWindow::zoomToSelected);
+
+    QList<QKeySequence> zoomToPreviousShortcuts;
+    zoomToPreviousShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Left));
+    ui->zoomToPrevious_Action->setShortcuts(zoomToPreviousShortcuts);
+    connect(ui->zoomToPrevious_Action, &QAction::triggered,  this, &MainWindow::zoomToPrevious);
+
+    QList<QKeySequence> zoomToAreaShortcuts;
+    zoomToAreaShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_A));
+    ui->zoomToArea_Action->setShortcuts(zoomToAreaShortcuts);
+    connect(ui->zoomToArea_Action, &QAction::triggered, this, &MainWindow::zoomToArea);
+
+    //QList<QKeySequence> zoomPanShortcuts;
+    //zoomPanShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_M));
+    //ui->zoomPan_Action->setShortcuts(zoomPanShortcuts);
+    connect(ui->zoomPan_Action, &QAction::triggered, this, &MainWindow::zoomPan);
+
+    if (zoomScaleSpinBox != nullptr)
+    {
+        delete zoomScaleSpinBox;
+    }
+    zoomScaleSpinBox = new QDoubleSpinBox();
+    zoomScaleSpinBox->setDecimals(1);
+    zoomScaleSpinBox->setAlignment(Qt::AlignRight);
+    zoomScaleSpinBox->setSingleStep(0.1);
+    zoomScaleSpinBox->setMinimum(qFloor(VMainGraphicsView::MinScale()*1000)/10.0);
+    zoomScaleSpinBox->setMaximum(qFloor(VMainGraphicsView::MaxScale()*1000)/10.0);
+    zoomScaleSpinBox->setSuffix("%");
+    zoomScaleSpinBox->setMaximumWidth(80);
+    zoomScaleSpinBox->setKeyboardTracking(false);
+    ui->zoom_ToolBar->insertWidget(ui->zoomIn_Action,zoomScaleSpinBox);
+
+    zoomScaleChanged(ui->view->transform().m11());
+    connect(zoomScaleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
+            this,[this](double d){ui->view->zoomByScale(d/100.0);});
+
+}
+
+void MainWindow::zoomScaleChanged(qreal scale)
+{
+    zoomScaleSpinBox->blockSignals(true);
+    zoomScaleSpinBox->setValue(qFloor(scale*1000)/10.0);
+    zoomScaleSpinBox->blockSignals(false);
+    qCDebug(vMainWindow, "Value %f\n", (qreal)(qFloor(scale*1000)/10.0));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::zoomToSelected()
+{
+    if (qApp->getCurrentScene() == sceneDraw)
+    {
+        ui->view->zoomToRect(doc->ActiveDrawBoundingRect());
+    }
+    else if (qApp->getCurrentScene() == sceneDetails)
+    {
+        QGraphicsItem *item = qApp->getCurrentScene()->focusItem();
+        {
+            if ((item != nullptr) && (item->type() == QGraphicsItem::UserType + static_cast<int>(Tool::Piece)))
+            {
+                QRectF rect;
+                rect = item->boundingRect();
+                rect.translate(item->scenePos());
+                ui->view->zoomToRect(rect);
+            }
+        }
+    }
+}
+
+void MainWindow::zoomToPrevious()
+{
+    VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(currentScene);
+    SCASSERT(scene != nullptr)
+
+    /*Set transform for current scene*/
+    scene->swapTransforms();
+    ui->view->setTransform(scene->transform());
+    zoomScaleChanged(ui->view->transform().m11());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::zoomToArea()
+{
+      ui->view->zoomToAreaEnabled((ui->zoomToArea_Action->isChecked())?true:false);
+
+      if (ui->zoomToArea_Action->isChecked())
+      {
+          ui->zoomPan_Action->setChecked(false);
+      }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::zoomPan()
+{
+    ui->view->zoomPanEnabled((ui->zoomPan_Action->isChecked())?true:false);
+
+    if (ui->zoomPan_Action->isChecked())
+    {
+        ui->zoomToArea_Action->setChecked(false);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2039,6 +2141,12 @@ void MainWindow::CancelTool()
     currentScene->setFocus(Qt::OtherFocusReason);
     currentScene->clearSelection();
     ui->view->itemClicked(nullptr); // Hide visualization to avoid a crash
+
+    ui->zoomPan_Action->setChecked(false);         //Disable Pan Zoom
+    ui->view->zoomPanEnabled(false);
+
+    ui->zoomToArea_Action->setChecked(false);      //Disable Zoom to Area
+    ui->view->zoomToAreaEnabled(false);
 
     switch ( currentTool )
     {
@@ -2242,7 +2350,7 @@ void  MainWindow::ArrowTool()
     emit EnableNodePointHover(true);
     emit EnableDetailHover(true);
 
-    ui->view->AllowRubberBand(true);
+    ui->view->allowRubberBand(true);
 
     ui->view->viewport()->unsetCursor();
     helpLabel->setText("");
@@ -2284,7 +2392,7 @@ void MainWindow::SaveCurrentScene()
         SCASSERT(scene != nullptr)
 
         /*Save transform*/
-        scene->setTransform(ui->view->transform());
+        scene->setCurrentTransform(ui->view->transform());
         /*Save scroll bars value for previous scene.*/
         QScrollBar *horScrollBar = ui->view->horizontalScrollBar();
         scene->setHorScrollBar(horScrollBar->value());
@@ -2304,6 +2412,7 @@ void MainWindow::RestoreCurrentScene()
 
     /*Set transform for current scene*/
     ui->view->setTransform(scene->transform());
+    zoomScaleChanged(ui->view->transform().m11());
     /*Set value for current scene scroll bar.*/
     QScrollBar *horScrollBar = ui->view->horizontalScrollBar();
     horScrollBar->setValue(scene->getHorScrollBar());
@@ -2822,15 +2931,22 @@ void MainWindow::Clear()
     ui->actionOptionDraw->setEnabled(false);
     ui->actionSave->setEnabled(false);
     ui->actionSaveAs->setEnabled(false);
-    ui->actionPattern_properties->setEnabled(false);
-    ui->actionZoomIn->setEnabled(false);
-    ui->actionZoomOut->setEnabled(false);
-    ui->actionZoomFitBest->setEnabled(false);
-    ui->actionZoomFitBestCurrent->setEnabled(false);
-    ui->actionZoomOriginal->setEnabled(false);
+    ui->patternPreferences_Action->setEnabled(false);
+
+    // disable zoom actions until a pattern is loaded
+    zoomScaleSpinBox->setEnabled(false);
+    ui->zoomIn_Action->setEnabled(false);
+    ui->zoomOut_Action->setEnabled(false);
+    ui->zoomToFit_Action->setEnabled(false);
+    ui->zoomToSelected_Action->setEnabled(false);
+    ui->zoom100Percent_Action->setEnabled(false);
+    ui->zoomToPrevious_Action->setEnabled(false);
+    ui->zoomToArea_Action->setEnabled(false);
+    ui->zoomPan_Action->setEnabled(false);
+
     ui->actionHistory->setEnabled(false);
     ui->actionTable->setEnabled(false);
-    ui->actionLast_tool->setEnabled(false);
+    ui->lastTool_Action->setEnabled(false);
     ui->actionShowCurveDetails->setEnabled(false);
     ui->actionLoadIndividual->setEnabled(false);
     ui->actionLoadMultisize->setEnabled(false);
@@ -2979,7 +3095,7 @@ void MainWindow::FullParseFile()
         }
     }
     comboBoxDraws->blockSignals(false);
-    ui->actionPattern_properties->setEnabled(true);
+    ui->patternPreferences_Action->setEnabled(true);
 
     GlobalChangePP(patternPiece);
 
@@ -3065,19 +3181,24 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->actionOptionDraw->setEnabled(enable && drawStage);
     ui->actionSave->setEnabled(isWindowModified() && enable && not patternReadOnly);
     ui->actionSaveAs->setEnabled(enable);
-    ui->actionPattern_properties->setEnabled(enable && designStage);
-    ui->actionZoomIn->setEnabled(enable);
-    ui->actionZoomOut->setEnabled(enable);
-    ui->actionArrowTool->setEnabled(enable && designStage);
+    ui->patternPreferences_Action->setEnabled(enable && designStage);
+
+    zoomScaleSpinBox->setEnabled(enable);
+    ui->zoomIn_Action->setEnabled(enable);
+    ui->zoomOut_Action->setEnabled(enable);
+    ui->zoomToFit_Action->setEnabled(enable);
+    ui->zoomToSelected_Action->setEnabled(enable);
+    ui->zoom100Percent_Action->setEnabled(enable);
+    ui->zoomToPrevious_Action->setEnabled(enable);
+    ui->zoomToArea_Action->setEnabled(enable);
+    ui->zoomPan_Action->setEnabled(enable);
+
     ui->actionHistory->setEnabled(enable && drawStage);
     ui->actionNewDraw->setEnabled(enable && drawStage);
     ui->actionDraw->setEnabled(enable);
     ui->actionDetails->setEnabled(enable);
     ui->actionLayout->setEnabled(enable);
     ui->actionTable->setEnabled(enable && drawStage);
-    ui->actionZoomFitBest->setEnabled(enable);
-    ui->actionZoomFitBestCurrent->setEnabled(enable && drawStage);
-    ui->actionZoomOriginal->setEnabled(enable);
     ui->actionShowCurveDetails->setEnabled(enable && drawStage);
     ui->actionLoadIndividual->setEnabled(enable && designStage);
     ui->actionLoadMultisize->setEnabled(enable && designStage);
@@ -3374,7 +3495,7 @@ void MainWindow::SetEnableTool(bool enable)
     ui->toolButtonPin->setEnabled(drawTools);
     ui->toolButtonInsertNode->setEnabled(drawTools);
 
-    ui->actionLast_tool->setEnabled(drawTools);
+    ui->lastTool_Action->setEnabled(drawTools);
 
     for (auto pointer : toolButtonPointerList)
     {
@@ -3620,33 +3741,34 @@ void MainWindow::UpdateRecentFileActions()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::CreateMenus()
 {
+    //Add last 5 most recent projects to file menu.
     for (int i = 0; i < MaxRecentFiles; ++i)
     {
-        ui->menuFile->insertAction(ui->actionPreferences, recentFileActs[i]);
+        ui->file_Menu->insertAction(ui->exit_Action, recentFileActs[i]);
     }
     separatorAct = new QAction(this);
     separatorAct->setSeparator(true);
-    ui->menuFile->insertAction(ui->actionPreferences, separatorAct);
+    ui->file_Menu->insertAction(ui->exit_Action, separatorAct);
     UpdateRecentFileActions();
 
-    //Add Undo/Redo actions.
+    //Add Undo/Redo actions to edit menu.
     undoAction = qApp->getUndoStack()->createUndoAction(this, tr("&Undo"));
     connect(undoAction, &QAction::triggered, toolOptions, &VToolOptionsPropertyBrowser::RefreshOptions);
     undoAction->setShortcuts(QKeySequence::Undo);
     undoAction->setIcon(QIcon::fromTheme("edit-undo"));
-    ui->menuPatternPiece->insertAction(ui->actionLast_tool, undoAction);
-    ui->toolBarTools->addAction(undoAction);
+    ui->edit_Menu->addAction(undoAction);
+    ui->edit_Toolbar->addAction(undoAction);
 
     redoAction = qApp->getUndoStack()->createRedoAction(this, tr("&Redo"));
     connect(redoAction, &QAction::triggered, toolOptions, &VToolOptionsPropertyBrowser::RefreshOptions);
     redoAction->setShortcuts(QKeySequence::Redo);
     redoAction->setIcon(QIcon::fromTheme("edit-redo"));
-    ui->menuPatternPiece->insertAction(ui->actionLast_tool, redoAction);
-    ui->toolBarTools->addAction(redoAction);
+    ui->edit_Menu->addAction(redoAction);
+    ui->edit_Toolbar->addAction(redoAction);
 
     separatorAct = new QAction(this);
     separatorAct->setSeparator(true);
-    ui->menuPatternPiece->insertAction(ui->actionPattern_properties, separatorAct);
+    ui->edit_Menu->addAction(separatorAct);
 
     AddDocks();
 }
@@ -3862,22 +3984,18 @@ void MainWindow::AddDocks()
 {
     //Add dock
     actionDockWidgetToolOptions = ui->dockWidgetToolOptions->toggleViewAction();
-    ui->menuPatternPiece->insertAction(ui->actionPattern_properties, actionDockWidgetToolOptions);
+    ui->view_Menu->addAction(actionDockWidgetToolOptions);
     connect(ui->dockWidgetToolOptions, &QDockWidget::visibilityChanged, this, [this](bool visible)
     {
         isDockToolOptionsVisible = visible;
     });
 
     actionDockWidgetGroups = ui->dockWidgetGroups->toggleViewAction();
-    ui->menuPatternPiece->insertAction(ui->actionPattern_properties, actionDockWidgetGroups);
+    ui->view_Menu->addAction(actionDockWidgetGroups);
     connect(ui->dockWidgetGroups, &QDockWidget::visibilityChanged, this, [this](bool visible)
     {
         isDockGroupsVisible = visible;
     });
-
-    separatorAct = new QAction(this);
-    separatorAct->setSeparator(true);
-    ui->menuPatternPiece->insertAction(ui->actionPattern_properties, separatorAct);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3974,7 +4092,7 @@ void MainWindow::CreateActions()
         if (checked)
         {
             dialogTable = new DialogIncrements(pattern, doc, this);
-            connect(dialogTable.data(), &DialogIncrements::UpdateProperties, toolOptions,
+            connect(dialogTable.data(), &DialogIncrements::updateProperties, toolOptions,
                     &VToolOptionsPropertyBrowser::RefreshOptions);
             connect(dialogTable.data(), &DialogIncrements::DialogClosed, this, [this]()
             {
@@ -3986,7 +4104,7 @@ void MainWindow::CreateActions()
                 ui->actionTable->setChecked(false);
                 delete dialogTable;
             });
-            
+
             dialogTable->show();
         }
         else
@@ -4008,9 +4126,9 @@ void MainWindow::CreateActions()
         aboutDialog->show();
     });
 
-    connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
+    connect(ui->exit_Action, &QAction::triggered, this, &MainWindow::close);
 
-    connect(ui->actionPreferences, &QAction::triggered, this, &MainWindow::Preferences);
+    connect(ui->appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
     connect(ui->actionReportBug, &QAction::triggered, this, [this]()
     {
         qCDebug(vMainWindow, "Reporting bug");
@@ -4029,9 +4147,9 @@ void MainWindow::CreateActions()
         QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly.net/")));
     });
 
-    connect(ui->actionLast_tool, &QAction::triggered, this, &MainWindow::LastUsedTool);
+    connect(ui->lastTool_Action, &QAction::triggered, this, &MainWindow::LastUsedTool);
 
-    connect(ui->actionPattern_properties, &QAction::triggered, this, [this]()
+    connect(ui->patternPreferences_Action, &QAction::triggered, this, [this]()
     {
         DialogPatternProperties proper(doc, pattern, this);
         connect(&proper, &DialogPatternProperties::UpdateGradation, this, [this]()
@@ -4042,7 +4160,7 @@ void MainWindow::CreateActions()
         proper.exec();
     });
 
-    ui->actionPattern_properties->setEnabled(false);
+    ui->patternPreferences_Action->setEnabled(false);
     connect(ui->actionClosePattern, &QAction::triggered, this, [this]()
     {
         if (MaybeSave())
@@ -4135,21 +4253,21 @@ void MainWindow::InitAutoSave()
 //---------------------------------------------------------------------------------------------------------------------
 QString MainWindow::PatternPieceName(const QString &text)
 {
-    QInputDialog *dlg = new QInputDialog(this);
-    dlg->setInputMode( QInputDialog::TextInput );
-    dlg->setLabelText(tr("Pattern piece:"));
-    dlg->setTextEchoMode(QLineEdit::Normal);
-    dlg->setWindowTitle(tr("Enter a new label for the pattern piece."));
-    dlg->resize(300, 100);
-    dlg->setTextValue(text);
+    QInputDialog *dialog = new QInputDialog(this);
+    dialog->setInputMode( QInputDialog::TextInput );
+    dialog->setLabelText(tr("Pattern piece:"));
+    dialog->setTextEchoMode(QLineEdit::Normal);
+    dialog->setWindowTitle(tr("Enter a new label for the pattern piece."));
+    dialog->resize(300, 100);
+    dialog->setTextValue(text);
     QString nameDraw;
     while (1)
     {
-        const bool bOk = dlg->exec();
-        nameDraw = dlg->textValue();
+        const bool bOk = dialog->exec();
+        nameDraw = dialog->textValue();
         if (bOk == false || nameDraw.isEmpty())
         {
-            delete dlg;
+            delete dialog;
             return QString();
         }
         if (comboBoxDraws->findText(nameDraw) == -1)
@@ -4157,7 +4275,7 @@ QString MainWindow::PatternPieceName(const QString &text)
             break;//repeate show dialog
         }
     }
-    delete dlg;
+    delete dialog;
     return nameDraw;
 }
 
@@ -4329,7 +4447,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         qCDebug(vMainWindow, "File loaded.");
 
         //Fit scene size to best size for first show
-        ZoomFirstShow();
+        zoomFirstShow();
 
         ActionDraw(true);
 
@@ -4388,7 +4506,8 @@ void MainWindow::ToolBarStyles()
     ToolBarStyle(ui->toolBarDraws);
     ToolBarStyle(ui->toolBarOption);
     ToolBarStyle(ui->toolBarStages);
-    ToolBarStyle(ui->toolBarTools);
+    ToolBarStyle(ui->edit_Toolbar);
+    ToolBarStyle(ui->zoom_ToolBar);
     ToolBarStyle(ui->mainToolBar);
 }
 
@@ -4417,13 +4536,16 @@ void MainWindow::Preferences()
         QGuiApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
         DialogPreferences *preferences = new DialogPreferences(this);
         // QScopedPointer needs to be sure any exception will never block guard
-        QScopedPointer<DialogPreferences> dlg(preferences);
+        QScopedPointer<DialogPreferences> dialog(preferences);
         guard = preferences;
-        connect(dlg.data(), &DialogPreferences::UpdateProperties, this, &MainWindow::WindowsLocale); // Must be first
-        connect(dlg.data(), &DialogPreferences::UpdateProperties, toolOptions,
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::WindowsLocale); // Must be first
+        connect(dialog.data(), &DialogPreferences::updateProperties, toolOptions,
                 &VToolOptionsPropertyBrowser::RefreshOptions);
-        connect(dlg.data(), &DialogPreferences::UpdateProperties, this, &MainWindow::ToolBarStyles);
-        connect(dlg.data(), &DialogPreferences::UpdateProperties, this, &MainWindow::RefreshDetailsLabel);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::ToolBarStyles);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::RefreshDetailsLabel);
+        connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
+        connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
+
         QGuiApplication::restoreOverrideCursor();
 
         if (guard->exec() == QDialog::Accepted)
@@ -4754,7 +4876,7 @@ void MainWindow::ChangePP(int index, bool zoomBestFit)
             ArrowTool();
             if (zoomBestFit)
             {
-                ZoomFitBestCurrent();
+                zoomToSelected();
             }
         }
         toolOptions->itemClicked(nullptr);//hide options for tool in previous pattern piece
@@ -4773,25 +4895,23 @@ void MainWindow::EndVisualization(bool click)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ZoomFirstShow Fit scene size to best size for first show
+ * @brief zoomFirstShow Fit scene size to best size for first show
  */
-void MainWindow::ZoomFirstShow()
+void MainWindow::zoomFirstShow()
 {
-    /* If don't call ZoomFitBest() twice, after first scaling or moving pattern piece, scene change coordinate and whole
+    /* If don't call zoomToFit() twice, after first scaling or moving pattern piece, scene change coordinate and whole
      * pattern will be moved. Looks very ugly. It is best solution that i have now.
      */
-
     if (pattern->DataPieces()->size() > 0)
     {
         ActionDetails(true);
-        ui->view->ZoomFitBest();
+        ui->view->zoomToFit();
     }
-
     if (not ui->actionDraw->isChecked())
     {
         ActionDraw(true);
     }
-    ZoomFitBestCurrent();
+    zoomToSelected();
 
     VMainGraphicsView::NewSceneRect(sceneDraw, ui->view);
     VMainGraphicsView::NewSceneRect(sceneDetails, ui->view);
@@ -4799,7 +4919,7 @@ void MainWindow::ZoomFirstShow()
     if (pattern->DataPieces()->size() > 0)
     {
         ActionDetails(true);
-        ui->view->ZoomFitBest();
+        ui->view->zoomToFit();
     }
 
     if (not ui->actionDraw->isChecked())
@@ -5205,7 +5325,7 @@ void MainWindow::ToolSelectPoint() const
     emit EnableSplineHover(false);
     emit EnableSplinePathHover(false);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5245,7 +5365,7 @@ void MainWindow::ToolSelectSpline() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5271,7 +5391,7 @@ void MainWindow::ToolSelectSplinePath() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5297,7 +5417,7 @@ void MainWindow::ToolSelectArc() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5323,7 +5443,7 @@ void MainWindow::ToolSelectPointArc() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5349,7 +5469,7 @@ void MainWindow::ToolSelectCurve() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5375,7 +5495,7 @@ void MainWindow::ToolSelectAllDrawObjects() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5401,7 +5521,7 @@ void MainWindow::ToolSelectOperationObjects() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(true);
+    ui->view->allowRubberBand(true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5430,5 +5550,5 @@ void MainWindow::ToolSelectDetail() const
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
-    ui->view->AllowRubberBand(false);
+    ui->view->allowRubberBand(false);
 }

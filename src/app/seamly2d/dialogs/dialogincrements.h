@@ -76,7 +76,7 @@ public:
     virtual ~DialogIncrements() Q_DECL_OVERRIDE;
 
 signals:
-    void UpdateProperties();
+    void updateProperties();
 
 protected:
     virtual void closeEvent ( QCloseEvent * event ) Q_DECL_OVERRIDE;

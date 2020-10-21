@@ -120,8 +120,45 @@ public:
     bool                 GetConfirmFormatRewriting() const;
     void                 SetConfirmFormatRewriting(const bool &value);
 
-    bool                 GetToolBarStyle() const;
-    void                 SetToolBarStyle(const bool &value);
+    bool                 getToolBarStyle() const;
+    void                 setToolBarStyle(const bool &value);
+
+    bool                 getShowScrollBars() const;
+    void                 setShowScrollBars(const bool &value);
+
+    int                  getScrollBarWidth() const;
+    void                 setScrollBarWidth(const int &width);
+
+    int                  getScrollDuration() const;
+    void                 setScrollDuration(const int &duration);
+
+    int                  getScrollUpdateInterval() const;
+    void                 setScrollUpdateInterval(const int &interval);
+
+    qreal                getScrollSpeedFactor() const;
+    void                 setScrollSpeedFactor(const qreal &factor);
+
+    bool                 getZoomModKey() const;
+    void                 setZoomModKey(const bool &value);
+
+    bool                 isZoomDoubleClick() const;
+    void                 setZoomDoubleClick(const bool &value);
+
+    int                  getZoomSpeedFactor() const;
+    void                 setZoomSpeedFactor(const int &factor);
+
+
+    QString              getZoomRBPositiveColor() const;
+    void                 setZoomRBPositiveColor(const QString &value);
+
+    QString              getZoomRBNegativeColor() const;
+    void                 setZoomRBNegativeColor(const QString &value);
+
+    qreal                getConstrainValue() const;
+    void                 setConstrainValue(const qreal &value);
+
+    bool                 getConstrainModKey() const;
+    void                 setConstrainModKey(const bool &value);
 
     int                  GetUndoCount() const;
     void                 SetUndoCount(const int &value);
@@ -141,8 +178,8 @@ public:
     QByteArray           GetToolbarsState() const;
     void                 SetToolbarsState(const QByteArray &value);
 
-    QSize                GetPreferenceDialogSize() const;
-    void                 SetPreferenceDialogSize(const QSize& sz);
+    QSize                getPreferenceDialogSize() const;
+    void                 setPreferenceDialogSize(const QSize& sz);
 
     QSize                GetToolSeamAllowanceDialogSize() const;
     void                 SetToolSeamAllowanceDialogSize(const QSize& sz);
