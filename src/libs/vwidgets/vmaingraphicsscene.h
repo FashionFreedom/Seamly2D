@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,20 +72,21 @@ class VMainGraphicsScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    explicit VMainGraphicsScene(QObject *parent = nullptr);
-    explicit VMainGraphicsScene(const QRectF & sceneRect, QObject * parent = nullptr);
+    explicit      VMainGraphicsScene(QObject *parent = nullptr);
+    explicit      VMainGraphicsScene(const QRectF & sceneRect, QObject * parent = nullptr);
     qint32        getHorScrollBar() const;
     void          setHorScrollBar(const qint32 &value);
     qint32        getVerScrollBar() const;
     void          setVerScrollBar(const qint32 &value);
     QTransform    transform() const;
-    void          setTransform(const QTransform &transform);
+    void          setCurrentTransform(const QTransform &transform);
+    void          swapTransforms();
     void          SetDisableTools(bool disable, const QString &namePP);
     QPointF       getScenePos() const;
 
-    QRectF        VisibleItemsBoundingRect() const;
+    QRectF        visibleItemsBoundingRect() const;
     void          InitOrigins();
-    void          SetOriginsVisible(bool visible);
+    void          setOriginsVisible(bool visible);
 public slots:
     void          ChoosedItem(quint32 id, const SceneObject &type);
     void          SelectedItem(bool selected, quint32 object, quint32 tool);
@@ -175,7 +176,8 @@ private:
     qint32        verScrollBar;
 
     /** @brief _transform view transform value. */
-    QTransform    _transform;
+    QTransform    m_previousTransform;
+    QTransform    m_currentTransform;
     QPointF       scenePos;
     QVector<QGraphicsItem *> origins;
 };

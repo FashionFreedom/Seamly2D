@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -62,6 +62,7 @@ namespace Ui
 class PreferencesConfigurationPage;
 class PreferencesPatternPage;
 class PreferencesPathPage;
+class PreferencesGraphicsViewPage;
 class QListWidgetItem;
 class VPattern;
 
@@ -70,25 +71,26 @@ class DialogPreferences : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogPreferences(QWidget *parent = nullptr);
-    virtual ~DialogPreferences();
+    explicit                     DialogPreferences(QWidget *parent = nullptr);
+    virtual                     ~DialogPreferences();
 signals:
-    void UpdateProperties();
+    void                          updateProperties();
 protected:
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    virtual void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
+    virtual void                  showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual void                  resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
 private slots:
-    void PageChanged(QListWidgetItem *current, QListWidgetItem *previous);
+    void                          pageChanged(QListWidgetItem *current, QListWidgetItem *previous);
 private:
     Q_DISABLE_COPY(DialogPreferences)
-    Ui::DialogPreferences *ui;
-    bool m_isInitialized;
+    Ui::DialogPreferences        *ui;
+    bool                          m_isInitialized;
     PreferencesConfigurationPage *m_configurePage;
     PreferencesPatternPage       *m_patternPage;
     PreferencesPathPage          *m_pathPage;
+    PreferencesGraphicsViewPage  *m_graphicsPage;
 
-    void Apply();
-    void Ok();
+    void                          Apply();
+    void                          Ok();
 };
 
 #endif // DIALOGPREFERENCES_H

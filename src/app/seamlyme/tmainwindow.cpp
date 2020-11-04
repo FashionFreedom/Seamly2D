@@ -521,8 +521,8 @@ void TMainWindow::Preferences()
 		QScopedPointer<DialogSeamlyMePreferences> dlg(preferences);
 		guard = preferences;
 		// Must be first
-		connect(dlg.data(), &DialogSeamlyMePreferences::UpdateProperties, this, &TMainWindow::WindowsLocale);
-		connect(dlg.data(), &DialogSeamlyMePreferences::UpdateProperties, this, &TMainWindow::ToolBarStyles);
+		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::WindowsLocale);
+		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::ToolBarStyles);
 		QGuiApplication::restoreOverrideCursor();
 		dlg->exec();
 	}
@@ -955,8 +955,8 @@ bool TMainWindow::FileSaveAs()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::AboutToShowWindowMenu()
 {
-	ui->menuWindow->clear();
-	CreateWindowMenu(ui->menuWindow);
+	ui->window_Menu->clear();
+	CreateWindowMenu(ui->window_Menu);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1984,13 +1984,13 @@ void TMainWindow::SetupMenu()
 	connect(ui->actionImportFromPattern, &QAction::triggered, this, &TMainWindow::ImportFromPattern);
 	actionDockDiagram = ui->dockWidgetDiagram->toggleViewAction();
 	actionDockDiagram->setMenuRole(QAction::NoRole);
-	ui->menuMeasurements->addAction(actionDockDiagram);
+	ui->measurements_Menu->addAction(actionDockDiagram);
 	ui->mainToolBar->addAction(actionDockDiagram);
 	actionDockDiagram->setEnabled(false);
 	actionDockDiagram->setIcon(QIcon("://seamlymeicon/24x24/mannequin.png"));
 
 	// Window
-	connect(ui->menuWindow, &QMenu::aboutToShow, this, &TMainWindow::AboutToShowWindowMenu);
+	connect(ui->window_Menu, &QMenu::aboutToShow, this, &TMainWindow::AboutToShowWindowMenu);
 	AboutToShowWindowMenu();
 
 	// Help
@@ -3165,4 +3165,10 @@ void TMainWindow::HackWidget(T **widget)
 	delete *widget;
 	*widget = new T();
 	hackedWidgets.append(*widget);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::zoomToSelected()
+{
+    // do nothing
 }

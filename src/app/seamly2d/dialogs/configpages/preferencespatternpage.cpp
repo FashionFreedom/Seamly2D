@@ -82,13 +82,13 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
       ui(new Ui::PreferencesPatternPage)
 {
     ui->setupUi(this);
-    ui->graphOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
-    ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     initDefaultSeamAllowance();
     initLabelDateTimeFormats();
     initNotches();
 
+    ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
     ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
     ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
     ui->hideMainPath_CheckBox->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
@@ -105,11 +105,6 @@ PreferencesPatternPage::~PreferencesPatternPage()
 void PreferencesPatternPage::Apply()
 {
     VSettings *settings = qApp->Seamly2DSettings();
-
-    // Scene antialiasing
-    settings->SetGraphicalOutput(ui->graphOutput_CheckBox->isChecked());
-    qApp->getSceneView()->setRenderHint(QPainter::Antialiasing, ui->graphOutput_CheckBox->isChecked());
-    qApp->getSceneView()->setRenderHint(QPainter::SmoothPixmapTransform, ui->graphOutput_CheckBox->isChecked());
 
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
@@ -142,7 +137,7 @@ void PreferencesPatternPage::Apply()
 void PreferencesPatternPage::initDefaultSeamAllowance()
 {
     ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
-    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -198,7 +193,9 @@ void PreferencesPatternPage::initNotches()
     }
     ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
     ui->defaultNotchLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchLength());
+    ui->defaultNotchLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
     ui->defaultNotchWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchWidth());
+    ui->defaultNotchWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

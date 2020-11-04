@@ -55,8 +55,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>351</height>
+         <width>123</width>
+         <height>344</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -401,8 +401,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>108</height>
+         <width>140</width>
+         <height>106</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -510,8 +510,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>243</height>
+         <width>140</width>
+         <height>238</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -772,8 +772,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>243</height>
+         <width>140</width>
+         <height>238</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1037,8 +1037,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>102</height>
+         <width>140</width>
+         <height>100</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1120,8 +1120,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>192</height>
+         <width>140</width>
+         <height>335</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -1325,7 +1325,7 @@
          <x>0</x>
          <y>0</y>
          <width>140</width>
-         <height>192</height>
+         <height>188</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1534,8 +1534,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>104</width>
-         <height>57</height>
+         <width>140</width>
+         <height>335</height>
         </rect>
        </property>
        <attribute name="icon">
@@ -1638,10 +1638,10 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
+   <widget class="QMenu" name="file_Menu">
     <property name="title">
      <string>&amp;File</string>
     </property>
@@ -1664,14 +1664,14 @@
     <addaction name="separator"/>
     <addaction name="menuLayout"/>
     <addaction name="separator"/>
-    <addaction name="actionPreferences"/>
-    <addaction name="actionPattern_properties"/>
+    <addaction name="appPreferences_Action"/>
+    <addaction name="patternPreferences_Action"/>
     <addaction name="separator"/>
     <addaction name="actionLabelTemplateEditor"/>
     <addaction name="separator"/>
-    <addaction name="actionExit"/>
+    <addaction name="exit_Action"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
+   <widget class="QMenu" name="help_Menu">
     <property name="title">
      <string>&amp;Help</string>
     </property>
@@ -1681,22 +1681,7 @@
     <addaction name="actionAbout_Qt"/>
     <addaction name="actionAbout_Seamly2D"/>
    </widget>
-   <widget class="QMenu" name="menuPatternPiece">
-    <property name="title">
-     <string>&amp;Pattern piece</string>
-    </property>
-    <addaction name="actionNewDraw"/>
-    <addaction name="actionOptionDraw"/>
-    <addaction name="actionZoomIn"/>
-    <addaction name="actionZoomOut"/>
-    <addaction name="actionZoomFitBest"/>
-    <addaction name="actionZoomFitBestCurrent"/>
-    <addaction name="actionZoomOriginal"/>
-    <addaction name="separator"/>
-    <addaction name="actionLast_tool"/>
-    <addaction name="actionShowCurveDetails"/>
-   </widget>
-   <widget class="QMenu" name="menuMeasurements">
+   <widget class="QMenu" name="measurements_Menu">
     <property name="title">
      <string>Measurements</string>
     </property>
@@ -1709,33 +1694,60 @@
     <addaction name="actionTable"/>
     <addaction name="actionExportIncrementsToCSV"/>
    </widget>
-   <widget class="QMenu" name="menuWindow">
+   <widget class="QMenu" name="window_Menu">
     <property name="title">
      <string>Window</string>
     </property>
     <addaction name="actionClosePattern"/>
    </widget>
-   <widget class="QMenu" name="menuHistory">
+   <widget class="QMenu" name="history_Menu">
     <property name="title">
      <string>History</string>
     </property>
     <addaction name="actionHistory"/>
    </widget>
-   <widget class="QMenu" name="menuMode">
+   <widget class="QMenu" name="view_Menu">
     <property name="title">
-     <string>Mode</string>
+     <string>View</string>
     </property>
     <addaction name="actionDraw"/>
     <addaction name="actionDetails"/>
     <addaction name="actionLayout"/>
+    <addaction name="separator"/>
+    <addaction name="zoomIn_Action"/>
+    <addaction name="zoomOut_Action"/>
+    <addaction name="zoom100Percent_Action"/>
+    <addaction name="zoomToFit_Action"/>
+    <addaction name="zoomToPrevious_Action"/>
+    <addaction name="zoomToSelected_Action"/>
+    <addaction name="zoomToArea_Action"/>
+    <addaction name="zoomPan_Action"/>
+    <addaction name="separator"/>
+    <addaction name="actionShowCurveDetails"/>
+    <addaction name="separator"/>
    </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuPatternPiece"/>
-   <addaction name="menuMode"/>
-   <addaction name="menuMeasurements"/>
-   <addaction name="menuHistory"/>
-   <addaction name="menuWindow"/>
-   <addaction name="menuHelp"/>
+   <widget class="QMenu" name="edit_Menu">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="tools_Menu">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionNewDraw"/>
+    <addaction name="actionOptionDraw"/>
+    <addaction name="separator"/>
+    <addaction name="lastTool_Action"/>
+   </widget>
+   <addaction name="file_Menu"/>
+   <addaction name="edit_Menu"/>
+   <addaction name="view_Menu"/>
+   <addaction name="tools_Menu"/>
+   <addaction name="measurements_Menu"/>
+   <addaction name="history_Menu"/>
+   <addaction name="window_Menu"/>
+   <addaction name="help_Menu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <property name="font">
@@ -1828,7 +1840,7 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QToolBar" name="toolBarTools">
+  <widget class="QToolBar" name="edit_Toolbar">
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -1849,9 +1861,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionZoomIn"/>
-   <addaction name="actionZoomOut"/>
-   <addaction name="actionZoomFitBest"/>
   </widget>
   <widget class="QDockWidget" name="dockWidgetToolOptions">
    <property name="minimumSize">
@@ -1943,6 +1952,31 @@
     <number>2</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents_2"/>
+  </widget>
+  <widget class="QToolBar" name="zoom_ToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="zoomIn_Action"/>
+   <addaction name="zoomOut_Action"/>
+   <addaction name="zoom100Percent_Action"/>
+   <addaction name="zoomToFit_Action"/>
+   <addaction name="zoomToSelected_Action"/>
+   <addaction name="zoomToPrevious_Action"/>
+   <addaction name="zoomToArea_Action"/>
+   <addaction name="zoomPan_Action"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -2115,7 +2149,7 @@
     <string>New pattern piece</string>
    </property>
    <property name="toolTip">
-    <string>Add new pattern piece</string>
+    <string>Add new pattern piece (Ctrl+Shift+N)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Shift+N</string>
@@ -2133,7 +2167,7 @@
      <normaloff>:/icon/32x32/option_draw.png</normaloff>:/icon/32x32/option_draw.png</iconset>
    </property>
    <property name="text">
-    <string>Config pattern piece</string>
+    <string>Rename pattern piece</string>
    </property>
    <property name="toolTip">
     <string>Change the label of pattern piece</string>
@@ -2157,7 +2191,7 @@
      <normaloff>:/icon/32x32/table.png</normaloff>:/icon/32x32/table.png</iconset>
    </property>
    <property name="text">
-    <string>Variables Table</string>
+    <string>Variables table</string>
    </property>
    <property name="toolTip">
     <string>Contains information about increments and internal variables</string>
@@ -2240,7 +2274,7 @@
     <enum>QAction::AboutRole</enum>
    </property>
   </action>
-  <action name="actionExit">
+  <action name="exit_Action">
    <property name="icon">
     <iconset theme="application-exit">
      <normaloff>.</normaloff>.</iconset>
@@ -2258,9 +2292,9 @@
     <enum>QAction::QuitRole</enum>
    </property>
   </action>
-  <action name="actionPreferences">
+  <action name="appPreferences_Action">
    <property name="text">
-    <string>Preferences</string>
+    <string>Application preferences...</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>
@@ -2269,9 +2303,9 @@
     <enum>QAction::PreferencesRole</enum>
    </property>
   </action>
-  <action name="actionPattern_properties">
+  <action name="patternPreferences_Action">
    <property name="text">
-    <string>Pattern properties</string>
+    <string>Pattern preferences...</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>
@@ -2280,43 +2314,49 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionZoomIn">
+  <action name="zoomIn_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="zoom-in">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_in.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_in.png</iconset>
    </property>
    <property name="text">
     <string>Zoom in</string>
    </property>
+   <property name="iconText">
+    <string>In</string>
+   </property>
    <property name="toolTip">
-    <string>zoom in</string>
+    <string>Zoom in (Ctrl++)</string>
    </property>
    <property name="shortcut">
-    <string notr="true"/>
+    <string notr="true">Ctrl++</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionZoomOut">
+  <action name="zoomOut_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="zoom-out">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_out.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_out.png</iconset>
    </property>
    <property name="text">
     <string>Zoom out</string>
    </property>
+   <property name="iconText">
+    <string>Out</string>
+   </property>
    <property name="toolTip">
-    <string>Zoom out</string>
+    <string>Zoom out (CTRL+-)</string>
    </property>
    <property name="shortcut">
-    <string notr="true"/>
+    <string notr="true">Ctrl+-</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -2343,16 +2383,22 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionZoomFitBest">
+  <action name="zoomToFit_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="zoom-fit-best">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_fit.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_fit.png</iconset>
    </property>
    <property name="text">
-    <string>Zoom fit best</string>
+    <string>Fit all</string>
+   </property>
+   <property name="iconText">
+    <string>Fit</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to fit (CTRL+=)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+=</string>
@@ -2363,7 +2409,7 @@
   </action>
   <action name="actionReportBug">
    <property name="text">
-    <string>Report Bug...</string>
+    <string>Report bug...</string>
    </property>
    <property name="toolTip">
     <string>Report bug</string>
@@ -2410,15 +2456,15 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionLast_tool">
+  <action name="lastTool_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Last Tool</string>
+    <string>Last tool</string>
    </property>
    <property name="toolTip">
-    <string>Activate last used tool again</string>
+    <string>Activate last used tool (L)</string>
    </property>
    <property name="shortcut">
     <string notr="true">L</string>
@@ -2435,10 +2481,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Show Curve Details</string>
+    <string>Curve details</string>
    </property>
    <property name="toolTip">
-    <string>Show/hide control points and curve direction</string>
+    <string>Show/hide control points and curve direction (F2)</string>
    </property>
    <property name="shortcut">
     <string notr="true">F2</string>
@@ -2542,7 +2588,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Load Individual</string>
+    <string>Load individual</string>
    </property>
    <property name="toolTip">
     <string>Load Individual measurements file</string>
@@ -2559,10 +2605,10 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Load Multisize</string>
+    <string>Load multisize</string>
    </property>
    <property name="iconText">
-    <string>Load Multisize</string>
+    <string>Load multisize</string>
    </property>
    <property name="toolTip">
     <string>Load multisize measurements file</string>
@@ -2579,10 +2625,10 @@
     <string>Open SeamlyMe</string>
    </property>
    <property name="toolTip">
-    <string>Open SeamlyMe app for creating or editing measurements file</string>
+    <string>Open SeamlyMe measurements app (Ctrl+M)</string>
    </property>
    <property name="shortcut">
-    <string notr="true"/>
+    <string notr="true">Ctrl+M</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -2593,7 +2639,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Edit Current</string>
+    <string>Edit current</string>
    </property>
    <property name="toolTip">
     <string>Edit linked to the pattern measurements</string>
@@ -2631,7 +2677,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>Unload Current</string>
+    <string>Unload current</string>
    </property>
    <property name="toolTip">
     <string>Unload measurements if they were not used in a pattern file</string>
@@ -2659,15 +2705,25 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="actionZoomFitBestCurrent">
+  <action name="zoomToSelected_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_selection.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_selection.png</iconset>
+   </property>
    <property name="text">
-    <string>Zoom fit best current</string>
+    <string>Selected</string>
+   </property>
+   <property name="iconText">
+    <string>Selected</string>
    </property>
    <property name="toolTip">
-    <string>zoom fit best current pattern piece</string>
+    <string>Zoom to selected (CTRL+M)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">Ctrl+M</string>
+    <string notr="true">Ctrl+Right</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -2675,7 +2731,85 @@
   </action>
   <action name="actionLabelTemplateEditor">
    <property name="text">
-    <string>Label template editor</string>
+    <string>Label template editor...</string>
+   </property>
+  </action>
+  <action name="zoomToPrevious_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_previous.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_previous.png</iconset>
+   </property>
+   <property name="text">
+    <string>Previous</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to previous (Ctrl+Left)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Left</string>
+   </property>
+  </action>
+  <action name="zoomToArea_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_area.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_area.png</iconset>
+   </property>
+   <property name="text">
+    <string>Area</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to selected area (CTRL+Right)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="zoomPan_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_pan.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_pan.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pan</string>
+   </property>
+   <property name="toolTip">
+    <string>Pan work area (Z,P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Z, P</string>
+   </property>
+  </action>
+  <action name="zoom100Percent_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_100_percent.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_100_percent.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom 1:1</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to 100 percent (Ctrl+0)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+0</string>
    </property>
   </action>
  </widget>
@@ -2690,6 +2824,7 @@
  <resources>
   <include location="share/resources/toolicon.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
