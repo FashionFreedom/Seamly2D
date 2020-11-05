@@ -69,8 +69,8 @@ public:
     VSeamlyMeSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
                   QObject *parent = nullptr);
 
-    QByteArray GetDataBaseGeometry() const;
-    void SetDataBaseGeometry(const QByteArray &value);
+    QByteArray getDataBaseGeometry() const;
+    void setDataBaseGeometry(const QByteArray &value);
 
     void SetDefHeight(int value);
     int  GetDefHeight() const;

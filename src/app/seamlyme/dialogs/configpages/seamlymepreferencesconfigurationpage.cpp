@@ -163,7 +163,7 @@ void SeamlyMePreferencesConfigurationPage::Apply()
 
         // Part about measurments will not be updated automatically
         qApp->RetranslateTables();
-        qApp->RetranslateGroups();
+        qApp->retranslateGroups();
     }
 
     if (m_defGradationChanged)
