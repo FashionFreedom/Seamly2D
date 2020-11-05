@@ -1577,7 +1577,7 @@ void TMainWindow::ShowMDiagram(const QString &name)
 	{
 		ui->labelDiagram->setText(QString("<html><head/><body><p align=\"center\">%1</p>"
 										  "<p align=\"center\"><b>%2</b>. <i>%3</i></p></body></html>")
-										  .arg(MeasurementDatabaseDialog::imgTag(number)).arg(number).arg(trv->GuiText(name)));
+										  .arg(MeasurementDatabaseDialog::imageUrl(number)).arg(number).arg(trv->GuiText(name)));
 	}
 	// This part is very ugly, can't find better way to resize dockWidget.
 	ui->labelDiagram->adjustSize();
