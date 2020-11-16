@@ -95,7 +95,7 @@ public:
     QString diagramsPath() const;
 
     void ShowDataBase();
-    void RetranslateGroups();
+    void retranslateGroups();
     void RetranslateTables();
 
     void ParseCommandLine(const SocketConnection &connection, const QStringList &arguments);
