@@ -120,6 +120,7 @@ private:
     QSharedPointer<VTableSearch> searchCurveControlPointLengths;
     QSharedPointer<VTableSearch> searchCurveAngles;
     QSharedPointer<VTableSearch> searchArcRadiuses;
+    QSharedPointer<VTableSearch> currentTable;
 
     bool hasChanges;
 

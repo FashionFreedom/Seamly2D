@@ -149,6 +149,10 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
 
     SetupTableSearch();
 
+    connect(ui->lineEditFind, &QLineEdit::textChanged, [this] (const QString &term){currentTable->Find(term);});
+    connect(ui->toolButtonFindPrevious, &QToolButton::clicked, [this] (){currentTable->FindPrevious();});
+    connect(ui->toolButtonFindNext, &QToolButton::clicked, [this] (){currentTable->FindNext();});
+
     if (ui->tableWidgetIncrements->rowCount() > 0)
     {
         ui->tableWidgetIncrements->selectRow(0);
@@ -161,8 +165,6 @@ DialogIncrements::DialogIncrements(VContainer *data, VPattern *doc, QWidget *par
  */
 void DialogIncrements::SetupTableSearch()
 {
-    const int index = ui->tabWidget->currentIndex();
-
     QSharedPointer<VTableSearch> tableSearchItems[7] = {
         searchIncrements,
         searchLines,
@@ -173,36 +175,9 @@ void DialogIncrements::SetupTableSearch()
         searchArcRadiuses
     };
 
-    const QSharedPointer<VTableSearch> currentTable = tableSearchItems[index];
-
-    qDebug() << index << "--|--" << ui->lineEditFind->text();
-
-//    currentTable->RefreshList(ui->lineEditFind->text());
+    currentTable = tableSearchItems[ui->tabWidget->currentIndex()];
+    currentTable->RefreshList(ui->lineEditFind->text());
     currentTable->Find(ui->lineEditFind->text());
-
-    if (currentTable.data()) {
-        ui->toolButtonFindNext->setEnabled(true);
-        ui->toolButtonFindPrevious->setEnabled(true);
-    } else {
-        ui->toolButtonFindNext->setEnabled(false);
-        ui->toolButtonFindPrevious->setEnabled(false);
-    }
-
-    connect(ui->lineEditFind, &QLineEdit::textEdited, this, [currentTable](const QString &term){currentTable->Find(term);});
-    connect(ui->toolButtonFindPrevious, &QToolButton::clicked, this, [currentTable](){currentTable->FindPrevious();});
-    connect(ui->toolButtonFindNext, &QToolButton::clicked, this, [currentTable](){currentTable->FindNext();});
-
-    connect(currentTable.data(), &VTableSearch::HasResult, this, [this](bool state)
-    {
-        qDebug() << state;
-        ui->toolButtonFindNext->setEnabled(state);
-    });
-
-    connect(currentTable.data(), &VTableSearch::HasResult, this, [this](bool state)
-    {
-        qDebug() << state;
-        ui->toolButtonFindPrevious->setEnabled(state);
-    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -548,14 +523,7 @@ void DialogIncrements::LocalUpdateTree()
 void DialogIncrements::UpdateTree()
 {
     FillIncrements();
-
-    searchIncrements->RefreshList(ui->lineEditFind->text());
-    searchLines->RefreshList(ui->lineEditFind->text());
-    searchLineAngles->RefreshList(ui->lineEditFind->text());
-    searchCurveLengths->RefreshList(ui->lineEditFind->text());
-    searchCurveControlPointLengths->RefreshList(ui->lineEditFind->text());
-    searchCurveAngles->RefreshList(ui->lineEditFind->text());
-    searchArcRadiuses->RefreshList(ui->lineEditFind->text());
+    currentTable->RefreshList(ui->lineEditFind->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -627,13 +595,7 @@ void DialogIncrements::FullUpdateFromFile()
     FillArcRadiuses();
     FillCurveAngles();
 
-    searchIncrements->RefreshList(ui->lineEditFind->text());
-    searchLines->RefreshList(ui->lineEditFind->text());
-    searchLineAngles->RefreshList(ui->lineEditFind->text());
-    searchCurveLengths->RefreshList(ui->lineEditFind->text());
-    searchCurveControlPointLengths->RefreshList(ui->lineEditFind->text());
-    searchCurveAngles->RefreshList(ui->lineEditFind->text());
-    searchArcRadiuses->RefreshList(ui->lineEditFind->text());
+    currentTable->RefreshList(ui->lineEditFind->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
