@@ -3,7 +3,6 @@
 
 HEADERS += \
     $$PWD/dialogs.h \
-    $$PWD/dialogincrements.h \
     $$PWD/dialoghistory.h \
     $$PWD/dialogpatternproperties.h \
     $$PWD/dialognewpattern.h \
@@ -11,6 +10,7 @@ HEADERS += \
     $$PWD/dialoglayoutsettings.h \
     $$PWD/dialoglayoutprogress.h \
     $$PWD/dialogsavelayout.h \
+    $$PWD/dialogvariables.h \
     $$PWD/vwidgetgroups.h \
     $$PWD/vwidgetdetails.h \
     $$PWD/dialogpreferences.h \
@@ -22,7 +22,6 @@ HEADERS += \
     $$PWD/vabstractlayoutdialog.h
 
 SOURCES += \
-    $$PWD/dialogincrements.cpp \
     $$PWD/dialoghistory.cpp \
     $$PWD/dialogpatternproperties.cpp \
     $$PWD/dialognewpattern.cpp \
@@ -30,6 +29,7 @@ SOURCES += \
     $$PWD/dialoglayoutsettings.cpp \
     $$PWD/dialoglayoutprogress.cpp \
     $$PWD/dialogsavelayout.cpp \
+    $$PWD/dialogvariables.cpp \
     $$PWD/vwidgetgroups.cpp \
     $$PWD/vwidgetdetails.cpp \
     $$PWD/dialogpreferences.cpp \
@@ -41,7 +41,6 @@ SOURCES += \
     $$PWD/vabstractlayoutdialog.cpp
 
 FORMS += \
-    $$PWD/dialogincrements.ui \
     $$PWD/dialoghistory.ui \
     $$PWD/dialogpatternproperties.ui \
     $$PWD/dialognewpattern.ui \
@@ -49,6 +48,7 @@ FORMS += \
     $$PWD/dialoglayoutsettings.ui \
     $$PWD/dialoglayoutprogress.ui \
     $$PWD/dialogsavelayout.ui \
+    $$PWD/dialogvariables.ui \
     $$PWD/vwidgetgroups.ui \
     $$PWD/vwidgetdetails.ui \
     $$PWD/dialogpreferences.ui \

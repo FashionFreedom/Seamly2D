@@ -3393,7 +3393,7 @@ void VPattern::ParseIncrementsElement(const QDomNode &node)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::AddEmptyIncrement(const QString &name)
+void VPattern::addEmptyCustomVariable(const QString &name)
 {
     const QDomElement element = MakeEmptyIncrement(name);
 
@@ -3403,7 +3403,7 @@ void VPattern::AddEmptyIncrement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::AddEmptyIncrementAfter(const QString &after, const QString &name)
+void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &name)
 {
     const QDomElement element = MakeEmptyIncrement(name);
     const QDomElement sibling = FindIncrement(after);
@@ -3422,7 +3422,7 @@ void VPattern::AddEmptyIncrementAfter(const QString &after, const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::RemoveIncrement(const QString &name)
+void VPattern::removeCustomVariable(const QString &name)
 {
     const QDomNodeList list = elementsByTagName(TagIncrements);
     list.at(0).removeChild(FindIncrement(name));
@@ -3462,7 +3462,7 @@ void VPattern::MoveDownIncrement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::SetIncrementName(const QString &name, const QString &text)
+void VPattern::setIncrementName(const QString &name, const QString &text)
 {
     QDomElement node = FindIncrement(name);
     if (not node.isNull())
@@ -3484,7 +3484,7 @@ void VPattern::SetIncrementFormula(const QString &name, const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::SetIncrementDescription(const QString &name, const QString &text)
+void VPattern::setIncrementDescription(const QString &name, const QString &text)
 {
     QDomElement node = FindIncrement(name);
     if (not node.isNull())
@@ -3495,7 +3495,7 @@ void VPattern::SetIncrementDescription(const QString &name, const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ReplaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName)
+void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName)
 {
     const int bias = name.length() - newName.length();
 

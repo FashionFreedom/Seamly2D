@@ -141,7 +141,7 @@ signals:
      * @param toolTip text tooltipe
      */
     void             ToolTip(const QString &toolTip);
-    
+
 public slots:
     virtual void     ChosenObject(quint32 id, const SceneObject &type);
     virtual void     SelectedObject(bool selected, quint32 object, quint32 tool);
@@ -233,7 +233,7 @@ protected:
     qint32           number;
 
     QPointer<Visualization> vis;
-
+    virtual void     keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
     virtual void     closeEvent ( QCloseEvent * event ) Q_DECL_OVERRIDE;
     virtual void     showEvent( QShowEvent *event ) Q_DECL_OVERRIDE;
 
