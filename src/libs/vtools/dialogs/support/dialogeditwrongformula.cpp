@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -97,15 +97,22 @@ enum {ColumnName = 0, ColumnFullName};
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogEditWrongFormula::DialogEditWrongFormula(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogEditWrongFormula), formula(QString()), formulaBaseHeight(0),
-      checkZero(false), checkLessThanZero(false), postfix(QString()), restoreCursor(false)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogEditWrongFormula)
+    , formula(QString())
+    , formulaBaseHeight(0)
+    , checkZero(false)
+    , checkLessThanZero(false)
+    , postfix(QString())
+    , restoreCursor(false)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
     InitVariables();
     InitFormulaUI(ui);
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
-    ui->filterFormulaInputs->setClearButtonEnabled(true);
 
     connect(ui->filterFormulaInputs, &QLineEdit::textChanged, this, &DialogEditWrongFormula::FilterVariablesEdited);
 
@@ -295,21 +302,21 @@ void DialogEditWrongFormula::Measurements()
 void DialogEditWrongFormula::LengthLines()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataLengthLines());
+    ShowVariable(data->lineLengthsData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEditWrongFormula::RadiusArcs()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataRadiusesArcs());
+    ShowVariable(data->arcRadiusesData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEditWrongFormula::AnglesCurves()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataAnglesCurves());
+    ShowVariable(data->curveAnglesData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -319,21 +326,21 @@ void DialogEditWrongFormula::AnglesCurves()
 void DialogEditWrongFormula::LengthCurves()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataLengthCurves());
+    ShowVariable(data->curveLengthsData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEditWrongFormula::CurvesCLength()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataCurvesCLength());
+    ShowVariable(data->controlPointLengthsData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEditWrongFormula::AngleLines()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataAngleLines());
+    ShowVariable(data->lineAnglesData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -343,7 +350,7 @@ void DialogEditWrongFormula::AngleLines()
 void DialogEditWrongFormula::Increments()
 {
     ui->checkBoxHideEmpty->setEnabled(false);
-    ShowVariable(data->DataIncrements());
+    ShowVariable(data->variablesData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1501,7 +1501,7 @@ void MainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCS
         csv.setHeaderText(2, tr("Formula"));
     }
 
-    const QMap<QString, QSharedPointer<VIncrement> > increments = pattern->DataIncrements();
+    const QMap<QString, QSharedPointer<VIncrement> > increments = pattern->variablesData();
     QMap<QString, QSharedPointer<VIncrement> >::const_iterator i;
     QMap<quint32, QString> map;
     //Sorting QHash by id
@@ -4045,15 +4045,15 @@ void MainWindow::CreateActions()
         if (checked)
         {
             dialogHistory = new DialogHistory(pattern, doc, this);
-            dialogHistory->setWindowFlags(Qt::Window);
             connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::UpdateHistory);
             connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
             {
                 ui->actionHistory->setChecked(false);
-                delete dialogHistory;
+                if (dialogHistory != nullptr)
+                {
+                    delete dialogHistory;
+                }
             });
-            // Fix issue #526. Dialog Detail is not on top after selection second object on Mac.
-            dialogHistory->setWindowFlags(dialogHistory->windowFlags() | Qt::WindowStaysOnTopHint);
             dialogHistory->show();
         }
         else
@@ -4091,18 +4091,18 @@ void MainWindow::CreateActions()
     {
         if (checked)
         {
-            dialogTable = new DialogIncrements(pattern, doc, this);
-            connect(dialogTable.data(), &DialogIncrements::updateProperties, toolOptions,
+            dialogTable = new DialogVariables(pattern, doc, this);
+            connect(dialogTable.data(), &DialogVariables::updateProperties, toolOptions,
                     &VToolOptionsPropertyBrowser::RefreshOptions);
-            connect(dialogTable.data(), &DialogIncrements::DialogClosed, this, [this]()
+            connect(dialogTable.data(), &DialogVariables::DialogClosed, this, [this]()
             {
                 ui->actionTable->setChecked(false);
-                delete dialogTable;
-            });
-            connect(dialogTable.data(), &DialogIncrements::rejected, this, [this]()
-            {
-                ui->actionTable->setChecked(false);
-                delete dialogTable;
+                qCDebug(vMainWindow, "Closed Variables Dialog\n");                
+                if (dialogTable != nullptr)
+                {
+                    qCDebug(vMainWindow, "Deleting Variables Dialog\n");
+                    delete dialogTable;
+                }
             });
 
             dialogTable->show();
