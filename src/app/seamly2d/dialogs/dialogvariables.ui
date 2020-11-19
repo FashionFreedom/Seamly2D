@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>750</width>
+    <width>775</width>
     <height>535</height>
    </rect>
   </property>
@@ -56,11 +56,6 @@
      </item>
      <item>
       <widget class="QLabel" name="labelFind">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-        </font>
-       </property>
        <property name="text">
         <string>Filter:</string>
        </property>
@@ -68,11 +63,6 @@
      </item>
      <item>
       <widget class="QLineEdit" name="filter_LineEdit">
-       <property name="font">
-        <font>
-         <family>Segoe UI</family>
-        </font>
-       </property>
        <property name="placeholderText">
         <string>Filter list by keyword</string>
        </property>
@@ -90,13 +80,6 @@
        <horstretch>1</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="font">
-      <font>
-       <family>Segoe UI</family>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
      </property>
      <property name="tabPosition">
       <enum>QTabWidget::North</enum>
@@ -126,14 +109,6 @@
             <width>0</width>
             <height>150</height>
            </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <pointsize>9</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
           </property>
           <property name="alternatingRowColors">
            <bool>true</bool>
@@ -184,13 +159,6 @@
            <property name="text">
             <string>Name</string>
            </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
            <property name="background">
             <color>
              <red>210</red>
@@ -203,12 +171,6 @@
            <property name="text">
             <string>The calculated value</string>
            </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
            <property name="background">
             <color>
              <red>210</red>
@@ -220,12 +182,6 @@
           <column>
            <property name="text">
             <string>Formula</string>
-           </property>
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
            </property>
            <property name="background">
             <color>
@@ -362,13 +318,6 @@
             <width>0</width>
             <height>236</height>
            </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
           </property>
           <property name="toolTip">
            <string>Details</string>
@@ -613,13 +562,6 @@
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
         <widget class="QTableWidget" name="lineLengths_TableWidget">
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -645,23 +587,10 @@
           <property name="text">
            <string>Line</string>
           </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
          </column>
          <column>
           <property name="text">
            <string>Length</string>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
           </property>
          </column>
         </widget>
@@ -675,13 +604,6 @@
       <layout class="QGridLayout" name="gridLayout_6">
        <item row="0" column="0">
         <widget class="QTableWidget" name="lineAngles_TableWidget">
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -707,23 +629,10 @@
           <property name="text">
            <string>Line</string>
           </property>
-          <property name="font">
-           <font>
-            <family>Segoe UI</family>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
          </column>
          <column>
           <property name="text">
            <string>Angle</string>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
           </property>
          </column>
         </widget>
@@ -737,13 +646,6 @@
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
         <widget class="QTableWidget" name="curveLengths_TableWidget">
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -769,22 +671,10 @@
           <property name="text">
            <string>Curve</string>
           </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
          </column>
          <column>
           <property name="text">
            <string>Length</string>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
           </property>
          </column>
         </widget>
@@ -798,13 +688,6 @@
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="0">
         <widget class="QTableWidget" name="curveAngles_TableWidget">
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -830,22 +713,10 @@
           <property name="text">
            <string>Curve</string>
           </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
          </column>
          <column>
           <property name="text">
            <string>Angle</string>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
           </property>
          </column>
         </widget>
@@ -859,13 +730,6 @@
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QTableWidget" name="controlPointLengths_TableWidget">
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -891,22 +755,10 @@
           <property name="text">
            <string>Curve</string>
           </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
          </column>
          <column>
           <property name="text">
            <string>Length</string>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
           </property>
          </column>
         </widget>
@@ -920,13 +772,6 @@
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="0" column="0">
         <widget class="QTableWidget" name="arcRadiuses_TableWidget">
-         <property name="font">
-          <font>
-           <family>Segoe UI</family>
-           <weight>50</weight>
-           <bold>false</bold>
-          </font>
-         </property>
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
@@ -952,12 +797,6 @@
           <property name="text">
            <string>Arc</string>
           </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
           <property name="background">
            <color>
             <red>210</red>
@@ -969,12 +808,6 @@
          <column>
           <property name="text">
            <string>Radius</string>
-          </property>
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
           </property>
          </column>
         </widget>
