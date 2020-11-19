@@ -165,6 +165,7 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
         if (ui->tabWidget->currentIndex() == 0)
         {
             filterVariables("");       
+            filterVariables("");
             ui->variables_TableWidget->horizontalHeader()->setSortIndicator(-1, Qt::AscendingOrder);
             isSorted = false;
             setMoveControls();
