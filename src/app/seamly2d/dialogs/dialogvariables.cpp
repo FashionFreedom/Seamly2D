@@ -164,7 +164,6 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
 
         if (ui->tabWidget->currentIndex() == 0)
         {
-            filterVariables("");       
             filterVariables("");
             ui->variables_TableWidget->horizontalHeader()->setSortIndicator(-1, Qt::AscendingOrder);
             isSorted = false;
@@ -254,7 +253,6 @@ void DialogVariables::fillTable(const QMap<QString, T> &varTable, QTableWidget *
 
         QTableWidgetItem *item = new QTableWidgetItem(i.key());
         item->setTextAlignment(Qt::AlignLeft);
-        //item->setFont(QFont("Segoe UI", 12));
         table->setItem(currentRow, 0, item);
 
         item = new QTableWidgetItem(qApp->LocaleToString(length));
