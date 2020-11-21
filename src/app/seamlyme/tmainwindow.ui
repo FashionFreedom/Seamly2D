@@ -89,8 +89,8 @@
              <string notr="true">...</string>
             </property>
             <property name="icon">
-             <iconset theme="go-previous">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+              <normaloff>:/icons/win.icon.theme/16x16/actions/go-previous.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-previous.png</iconset>
             </property>
             <property name="shortcut">
              <string>Ctrl+Shift+G</string>
@@ -109,8 +109,8 @@
              <string notr="true">...</string>
             </property>
             <property name="icon">
-             <iconset theme="go-next">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+              <normaloff>:/icons/win.icon.theme/16x16/actions/go-next.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-next.png</iconset>
             </property>
             <property name="shortcut">
              <string>Ctrl+G</string>
@@ -272,8 +272,8 @@
                 <string notr="true"/>
                </property>
                <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/move_down.png</normaloff>:/icon/32x32/move_down.png</iconset>
+                <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+                 <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -366,8 +366,8 @@
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/move_top.png</normaloff>:/icon/32x32/move_top.png</iconset>
+                <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+                 <normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</iconset>
                </property>
               </widget>
              </item>
@@ -383,8 +383,8 @@
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/move_up.png</normaloff>:/icon/32x32/move_up.png</iconset>
+                <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+                 <normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</iconset>
                </property>
               </widget>
              </item>
@@ -400,8 +400,8 @@
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/move_down.png</normaloff>:/icon/32x32/move_down.png</iconset>
+                <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+                 <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
                </property>
               </widget>
              </item>
@@ -417,8 +417,8 @@
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/move_bottom.png</normaloff>:/icon/32x32/move_bottom.png</iconset>
+                <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+                 <normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</iconset>
                </property>
               </widget>
              </item>
@@ -1209,7 +1209,7 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="share/resources/seamlymeicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

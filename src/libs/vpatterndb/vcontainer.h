@@ -200,20 +200,20 @@ public:
     static qreal       height();
     static qreal      *rheight();
 
-    void               RemoveIncrement(const QString& name);
+    void               removeCustomVariable(const QString& name);
 
     const QHash<quint32, QSharedPointer<VGObject> >         *DataGObjects() const;
     const QHash<quint32, VPiece>                            *DataPieces() const;
     const QHash<QString, QSharedPointer<VInternalVariable>> *DataVariables() const;
 
     const QMap<QString, QSharedPointer<VMeasurement> >  DataMeasurements() const;
-    const QMap<QString, QSharedPointer<VIncrement> >    DataIncrements() const;
-    const QMap<QString, QSharedPointer<VLengthLine> >   DataLengthLines() const;
-    const QMap<QString, QSharedPointer<VCurveLength> >  DataLengthCurves() const;
-    const QMap<QString, QSharedPointer<VCurveCLength> > DataCurvesCLength() const;
-    const QMap<QString, QSharedPointer<VLineAngle> >    DataAngleLines() const;
-    const QMap<QString, QSharedPointer<VArcRadius> >    DataRadiusesArcs() const;
-    const QMap<QString, QSharedPointer<VCurveAngle> >   DataAnglesCurves() const;
+    const QMap<QString, QSharedPointer<VIncrement> >    variablesData() const;
+    const QMap<QString, QSharedPointer<VLengthLine> >   lineLengthsData() const;
+    const QMap<QString, QSharedPointer<VCurveLength> >  curveLengthsData() const;
+    const QMap<QString, QSharedPointer<VCurveCLength> > controlPointLengthsData() const;
+    const QMap<QString, QSharedPointer<VLineAngle> >    lineAnglesData() const;
+    const QMap<QString, QSharedPointer<VArcRadius> >    arcRadiusesData() const;
+    const QMap<QString, QSharedPointer<VCurveAngle> >   curveAnglesData() const;
 
     static bool        IsUnique(const QString &name);
     static QStringList AllUniqueNames();
