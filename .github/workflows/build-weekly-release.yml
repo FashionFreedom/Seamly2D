@@ -22,9 +22,11 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "::set-env name=TAG_NAME::weekly-`date +%Y%m%d`"
-          echo "::set-env name=RELEASE_NAME::Weekly release `date +%Y%m%d`"
-          
+          echo "TAG_NAME=weekly-`date +%Y%m%d`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Weekly release `date +%Y%m%d`" >> $GITHUB_ENV        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # there is no way to create a shared environment variable between jobs
       # as such we'll use the needs.JOB_NAME.outputs functionality to read
       # the upload_url output exposed by the create-release action
@@ -151,4 +153,4 @@ jobs:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ../windows-build/seamly2d-installer.exe
           asset_name: seamly2d-installer.exe
-          asset_content_type: application/octet-stream     
+          asset_content_type: application/octet-stream
