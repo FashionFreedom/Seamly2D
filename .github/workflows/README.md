@@ -11,14 +11,14 @@ There are three distinct GitHub workflows:
 
 ---
  1. Setup
-   1.1 `actions/create-release` - outputs the upload url for the new release
-   1.3 [Install Qt](#iq)
-   1.4 [Enable Developer Command Prompt](#edcp)
- 2. Packaging & Distribution
-   2.1 [AppImages](#ai)
-   2.2 [Nullsoft Scriptable Install System](#nsis)
-   2.3 Code Signing - signs the windows installer using `signtool.exe`
-   2.4 `actions/upload-release-asset` - annoyingly can't infer the content type by itself
+   1.1 `actions/create-release` - outputs the upload url for the new release  
+   1.3 [Install Qt](#iq)  
+   1.4 [Enable Developer Command Prompt](#edcp)  
+ 2. Packaging & Distribution  
+   2.1 [AppImages](#ai)  
+   2.2 [Nullsoft Scriptable Install System](#nsis)  
+   2.3 Code Signing - signs the windows installer using `signtool.exe`  
+   2.4 `actions/upload-release-asset` - annoyingly can't infer the content type by itself  
 
 ## Setup
 
