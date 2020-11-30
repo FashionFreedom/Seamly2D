@@ -2738,8 +2738,8 @@ void MainWindow::handlePatternPiecesMenu()
     qCDebug(vMainWindow, "PatternPieces Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),                  tr("Union Tool"));
-    QAction *action_ExportPieces = menu.addAction(QIcon(":/icon/32x32/export_to_picture_document.png"), tr("Export Pattern Pieces"));
+    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),                      tr("Union Tool"));
+    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export_to_picture_document.png"), tr("Export Pattern Pieces"));
     QAction *selectedAction = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)

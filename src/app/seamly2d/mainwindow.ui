@@ -3822,8 +3822,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/icon/32x32/export_to_picture_document.png</normaloff>:/icon/32x32/export_to_picture_document.png</iconset>
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/export_to_picture_document.png</normaloff>:/toolicon/32x32/export_to_picture_document.png</iconset>
    </property>
    <property name="text">
     <string>Export As...</string>
