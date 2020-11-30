@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -64,12 +64,11 @@ VFormulaProperty::VFormulaProperty(const QString &name)
 {
     d_ptr->type = VPE::Property::Complex;
 
-    VPE::VStringProperty* tmpFormula = new VPE::VStringProperty(tr("Formula"));
+    VPE::VStringProperty* tmpFormula = new VPE::VStringProperty(tr("Formula:"));
     addChild(tmpFormula);
     tmpFormula->setClearButtonEnable(true);
     tmpFormula->setUpdateBehaviour(true, false);
     tmpFormula->setOsSeparator(qApp->Settings()->GetOsSeparator());
-
     setValue(0);
 }
 

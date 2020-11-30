@@ -2393,7 +2393,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolFlippingByLine(QGraphicsItem *i
 {
     VToolFlippingByLine *i = qgraphicsitem_cast<VToolFlippingByLine *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Tool flipping by line"));
+    formView->setTitle(tr("Mirror by Line"));
 
     AddPropertyOperationSuffix(i, tr("Suffix:"));
     AddPropertyParentPointName(i->FirstLinePointName(), tr("First line point:"), AttrFirstPoint);
@@ -2405,7 +2405,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolFlippingByAxis(QGraphicsItem *i
 {
     VToolFlippingByAxis *i = qgraphicsitem_cast<VToolFlippingByAxis *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Tool flipping by axis"));
+    formView->setTitle(tr("Mirror by Axis"));
 
     AddPropertyAxisType(i, tr("Axis type:"));
     AddPropertyOperationSuffix(i, tr("Suffix:"));
