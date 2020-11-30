@@ -11,20 +11,20 @@ There are three distinct GitHub workflows:
 
 ---
  1. Setup
-   1.1 `actions/create-release` - outputs the upload url for the new release
-   1.3 [Install Qt](#iq)
-   1.4 [Enable Developer Command Prompt](#edcp)
- 2. Packaging & Distribution
-   2.1 [AppImages](#ai)
-   2.2 [Nullsoft Scriptable Install System](#nsis)
-   2.3 Code Signing - signs the windows installer using `signtool.exe`
-   2.4 `actions/upload-release-asset` - annoyingly can't infer the content type by itself
+   1.1 `actions/create-release` - outputs the upload url for the new release  
+   1.3 [Install Qt](#iq)  
+   1.4 [Enable Developer Command Prompt](#edcp)  
+ 2. Packaging & Distribution  
+   2.1 [AppImages](#ai)  
+   2.2 [Nullsoft Scriptable Install System](#nsis)  
+   2.3 Code Signing - signs the windows installer using `signtool.exe`  
+   2.4 `actions/upload-release-asset` - annoyingly can't infer the content type by itself  
 
 ## Setup
 
 ### <a id="iq"></a>[Install Qt](https://github.com/marketplace/actions/install-qt)
 
-Referenced as `jurplel/install-qt-action`, installs the Qt platform across all the three different runners (ubuntu-latest, macos-latest, windows-latest) consistently. Internally it uses the [aqtinstall](jurplel/install-qt-action@v2) installer written in Python. Worth knowing if those errors propagate up through the GitHub action.
+Referenced as `jurplel/install-qt-action`, installs the Qt platform across all the three different runners (ubuntu-latest, macos-latest, windows-latest) consistently. Internally it uses the [aqtinstall](jurplel/install-qt-action@v2.10.0) installer written in Python. Worth knowing if those errors propagate up through the GitHub action.
 
 ### <a id="edcp"></a>[Enable Developer Command Prompt](https://github.com/marketplace/actions/enable-developer-command-prompt)
 

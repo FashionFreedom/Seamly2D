@@ -69,13 +69,13 @@ VSeamlyMeSettings::VSeamlyMeSettings(Format format, Scope scope, const QString &
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QByteArray VSeamlyMeSettings::GetDataBaseGeometry() const
+QByteArray VSeamlyMeSettings::getDataBaseGeometry() const
 {
     return value(settingDataBaseGeometry).toByteArray();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSeamlyMeSettings::SetDataBaseGeometry(const QByteArray &value)
+void VSeamlyMeSettings::setDataBaseGeometry(const QByteArray &value)
 {
     setValue(settingDataBaseGeometry, value);
 }

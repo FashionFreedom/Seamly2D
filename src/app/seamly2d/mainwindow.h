@@ -67,7 +67,7 @@ class VToolOptionsPropertyBrowser;
 class VMeasurements;
 class QFileSystemWatcher;
 class QLabel;
-class DialogIncrements;
+class DialogVariables;
 class DialogTool;
 class DialogHistory;
 class VWidgetGroups;
@@ -269,7 +269,7 @@ private:
 
     bool                              patternReadOnly;
 
-    QPointer<DialogIncrements>        dialogTable;
+    QPointer<DialogVariables>        dialogTable;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<DialogHistory>           dialogHistory;
 

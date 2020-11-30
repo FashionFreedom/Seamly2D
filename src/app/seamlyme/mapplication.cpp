@@ -554,11 +554,11 @@ void MApplication::ShowDataBase()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::RetranslateGroups()
+void MApplication::retranslateGroups()
 {
     if (not dataBase.isNull())
     {
-        dataBase->RetranslateGroups();
+        dataBase->retranslateGroups();
     }
 }
 
