@@ -170,6 +170,20 @@ DialogTool::~DialogTool()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void DialogTool::keyPressEvent(QKeyEvent *event)
+{
+    switch (event->key())
+    {
+        case Qt::Key_Escape:
+            DialogRejected();
+            return; // After reject the dialog will be destroyed, exit imidiately
+        default:
+            break;
+    }
+    QDialog::keyPressEvent ( event );
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief closeEvent handle when dialog cloded
  * @param event event
@@ -979,7 +993,7 @@ void DialogTool::DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowL
 
     const QTextCursor cursor = formula->textCursor();
 
-    //Before deploy ned to release dialog size
+    //Before deploy need to release dialog size
     //I don't know why, but don't need to fixate again.
     //A dialog will be lefted fixated. That's what we need.
     setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
@@ -989,8 +1003,8 @@ void DialogTool::DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowL
     {
         formula->setFixedHeight(DIALOG_MAX_FORMULA_HEIGHT);
         //Set icon from theme (internal for Windows system)
-        buttonGrowLength->setIcon(QIcon::fromTheme("go-next",
-                                                   QIcon(":/icons/win.icon.theme/16x16/actions/go-next.png")));
+        buttonGrowLength->setIcon(QIcon::fromTheme("go-up",
+                                                   QIcon(":/icons/win.icon.theme/16x16/actions/go-up.png")));
     }
     else
     {

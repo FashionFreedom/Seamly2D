@@ -22,9 +22,11 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "::set-env name=TAG_NAME::weekly-`date +%Y%m%d`"
-          echo "::set-env name=RELEASE_NAME::Weekly release `date +%Y%m%d`"
-          
+          echo "TAG_NAME=weekly-`date +%Y%m%d`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Weekly release `date +%Y%m%d`" >> $GITHUB_ENV        
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # there is no way to create a shared environment variable between jobs
       # as such we'll use the needs.JOB_NAME.outputs functionality to read
       # the upload_url output exposed by the create-release action
@@ -44,8 +46,8 @@ jobs:
       UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: jurplel/install-qt-action@v2
+      - uses: actions/checkout@v2.3.4
+      - uses: jurplel/install-qt-action@v2.10.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -53,7 +55,7 @@ jobs:
         run: .github/workflows/build-linux-pkg.sh
 
       - name: upload Seamly2D.AppImage
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -69,8 +71,8 @@ jobs:
       UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: jurplel/install-qt-action@v2
+      - uses: actions/checkout@v2.3.4
+      - uses: jurplel/install-qt-action@v2.10.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -89,7 +91,7 @@ jobs:
           zip Seamly2D.zip Seamly2D.dmg SeamlyME.dmg
 
       - name: upload Seamly2D.zip
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -105,11 +107,11 @@ jobs:
       UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: actions/checkout@v2.3.4
+      - uses: ilammy/msvc-dev-cmd@v1.4.1
         with:
           toolset: '14.16.27023'
-      - uses: jurplel/install-qt-action@v2
+      - uses: jurplel/install-qt-action@v2.10.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -144,11 +146,11 @@ jobs:
           & 'C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe' sign /f cert.pfx /p ${{ secrets.PFX_PASSWORD }}  /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v .\seamly2d-installer.exe
 
       - name: upload seamly2d-installer
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ../windows-build/seamly2d-installer.exe
           asset_name: seamly2d-installer.exe
-          asset_content_type: application/octet-stream     
+          asset_content_type: application/octet-stream
