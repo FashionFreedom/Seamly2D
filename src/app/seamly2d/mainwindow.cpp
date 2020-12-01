@@ -1739,7 +1739,7 @@ void MainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCS
         csv.setHeaderText(2, tr("Formula"));
     }
 
-    const QMap<QString, QSharedPointer<VIncrement> > increments = pattern->DataIncrements();
+    const QMap<QString, QSharedPointer<VIncrement> > increments = pattern->variablesData();
     QMap<QString, QSharedPointer<VIncrement> >::const_iterator i;
     QMap<quint32, QString> map;
     //Sorting QHash by id
@@ -5098,6 +5098,7 @@ void MainWindow::CreateActions()
     //Tools->Line submenu actions
     connect(ui->lineTool_Action, &QAction::triggered, this, [this]
     {
+
         ui->tools_ToolBox->setCurrentWidget(ui->lines_Page);
         ui->line_ToolButton->setChecked(true);
         handleLineTool(true);
@@ -5108,7 +5109,7 @@ void MainWindow::CreateActions()
         ui->lineIntersect_ToolButton->setChecked(true);
         handleLineIntersectTool(true);
     });
-
+  
     //Tools->Curve submenu actions
     connect(ui->curve_Action, &QAction::triggered, this, [this]
     {
@@ -5347,20 +5348,17 @@ void MainWindow::CreateActions()
     {
         if (checked)
         {
-            dialogTable = new DialogIncrements(pattern, doc, this);
-            connect(dialogTable.data(), &DialogIncrements::updateProperties, toolProperties,
+            dialogTable = new DialogVariables(pattern, doc, this);
+            connect(dialogTable.data(), &DialogVariables::updateProperties, toolProperties,
                     &VToolOptionsPropertyBrowser::RefreshOptions);
-            connect(dialogTable.data(), &DialogIncrements::DialogClosed, this, [this]()
+            connect(dialogTable.data(), &DialogVariables::DialogClosed, this, [this]()
             {
                 ui->table_Action->setChecked(false);
-                delete dialogTable;
+                if (dialogTable != nullptr)
+                {
+                    delete dialogTable;
+                }
             });
-            connect(dialogTable.data(), &DialogIncrements::rejected, this, [this]()
-            {
-                ui->table_Action->setChecked(false);
-                delete dialogTable;
-            });
-
             dialogTable->show();
         }
         else
@@ -5382,7 +5380,10 @@ void MainWindow::CreateActions()
             connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
-                delete dialogHistory;
+                if (dialogHistory != nullptr)
+                {
+                    delete dialogHistory;
+                }
             });
             // Fix issue #526. Dialog Detail is not on top after selection second object on Mac.
             dialogHistory->setWindowFlags(dialogHistory->windowFlags() | Qt::WindowStaysOnTopHint);

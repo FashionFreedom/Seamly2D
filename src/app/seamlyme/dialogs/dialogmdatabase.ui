@@ -13,8 +13,14 @@
     <height>550</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>750</width>
+    <height>550</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Measurement data base</string>
+   <string>ME Database - Add known measurement</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../share/resources/seamlymeicon.qrc">
@@ -44,6 +50,9 @@
        <widget class="QLineEdit" name="lineEditFind">
         <property name="placeholderText">
          <string>Search</string>
+        </property>
+        <property name="clearButtonEnabled">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
