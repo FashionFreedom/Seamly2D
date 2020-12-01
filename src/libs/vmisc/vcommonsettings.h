@@ -135,8 +135,8 @@ public:
     int                  getScrollUpdateInterval() const;
     void                 setScrollUpdateInterval(const int &interval);
 
-    qreal                getScrollSpeedFactor() const;
-    void                 setScrollSpeedFactor(const qreal &factor);
+    int                  getScrollSpeedFactor() const;
+    void                 setScrollSpeedFactor(const int &factor);
 
     bool                 getZoomModKey() const;
     void                 setZoomModKey(const bool &value);

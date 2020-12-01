@@ -147,9 +147,9 @@ MainWindowsNoGUI::~MainWindowsNoGUI()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::ToolLayoutSettings(bool checked)
+void MainWindowsNoGUI::toolLayoutSettings(QToolButton *tButton, bool checked)
 {
-    QToolButton *tButton = qobject_cast< QToolButton * >(this->sender());
+    //QToolButton *tButton = qobject_cast< QToolButton * >(this->sender());
     SCASSERT(tButton != nullptr)
 
     if (checked)

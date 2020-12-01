@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -143,58 +143,67 @@ private slots:
     void SetEnabledGUI(bool enabled);
     void GlobalChangePP(const QString &patternPiece);
     void ToolBarStyles();
-    void ShowPaper(int index);
+    void showLayoutPages(int index);
     void Preferences();
 #if defined(Q_OS_MAC)
     void CreateMeasurements();
 #endif
-    void ExportLayoutAs();
-    void ExportDetailsAs();
+    void exportLayoutAs();
+    void exportPiecesAs();
 
-    void ArrowTool();
-    void ToolEndLine(bool checked);
-    void ToolLine(bool checked);
-    void ToolAlongLine(bool checked);
-    void ToolMidpoint(bool checked);
-    void ToolShoulderPoint(bool checked);
-    void ToolNormal(bool checked);
-    void ToolBisector(bool checked);
-    void ToolLineIntersect(bool checked);
-    void ToolSpline(bool checked);
-    void ToolCubicBezier(bool checked);
-    void ToolCutSpline(bool checked);
-    void ToolArc(bool checked);
-    void ToolEllipticalArc(bool checked);
-    void ToolSplinePath(bool checked);
-    void ToolCubicBezierPath(bool checked);
-    void ToolCutSplinePath(bool checked);
-    void ToolPointOfContact(bool checked);
-    void ToolDetail(bool checked);
-    void ToolInternalPath(bool checked);
-    void ToolPin(bool checked);
-    void ToolHeight(bool checked);
-    void ToolTriangle(bool checked);
-    void ToolPointOfIntersection(bool checked);
-    void ToolUnionDetails(bool checked);
-    void ToolGroup(bool checked);
-    void ToolRotation(bool checked);
-    void ToolFlippingByLine(bool checked);
-    void ToolFlippingByAxis(bool checked);
-    void ToolMove(bool checked);
-    void ToolCutArc(bool checked);
-    void ToolLineIntersectAxis(bool checked);
-    void ToolCurveIntersectAxis(bool checked);
-    void ToolArcIntersectAxis(bool checked);
-    void ToolPointOfIntersectionArcs(bool checked);
-    void ToolPointOfIntersectionCircles(bool checked);
-    void ToolPointOfIntersectionCurves(bool checked);
-    void ToolPointFromCircleAndTangent(bool checked);
-    void ToolPointFromArcAndTangent(bool checked);
-    void ToolArcWithLength(bool checked);
-    void ToolTrueDarts(bool checked);
-    void ToolInsertNode(bool checked);
+    void handleArrowTool();
+    void handlePointAtDistanceAngleTool(bool checked);
+    void handleAlongLineTool(bool checked);
+    void handleMidpointTool(bool checked);
+    void handleShoulderPointTool(bool checked);
+    void handleNormalTool(bool checked);
+    void handleBisectorTool(bool checked);
+    void handleHeightTool(bool checked);
+    void handleTriangleTool(bool checked);
+    void handleLineIntersectAxisTool(bool checked);
+    void handlePointOfContactTool(bool checked);
+    void handlePointOfIntersectionTool(bool checked);
 
-    void ActionDraw(bool checked);
+    void handleLineTool(bool checked);
+    void handleLineIntersectTool(bool checked);
+
+    void handleCurveTool(bool checked);
+    void handleSplineTool(bool checked);
+    void handleCurveWithControlPointsTool(bool checked);
+    void handleSplineWithControlPointsTool(bool checked);
+    void handlePointAlongCurveTool(bool checked);
+    void handlePointAlongSplineTool(bool checked);
+    void handleCurveIntersectCurveTool(bool checked);
+    void handleCurveIntersectAxisTool(bool checked);
+
+    void handleArcTool(bool checked);
+    void handlePointAlongArcTool(bool checked);
+    void handlePointFromArcAndTangentTool(bool checked);
+    void handleArcWithLengthTool(bool checked);
+    void handleArcIntersectAxisTool(bool checked);
+    void handlePointOfIntersectionArcsTool(bool checked);
+    void handlePointOfIntersectionCirclesTool(bool checked);
+    void handlePointFromCircleAndTangentTool(bool checked);
+
+    void handleEllipticalArcTool(bool checked);
+
+    void handleGroupTool(bool checked);
+    void handleRotationTool(bool checked);
+    void handleMirrorByLineTool(bool checked);
+    void handleMirrorByAxisTool(bool checked);
+    void handleMoveTool(bool checked);
+    void handleTrueDartTool(bool checked);
+
+    void handleInternalPathTool(bool checked);
+    void handleAnchorPointTool(bool checked);
+    void handleInsertNodeTool(bool checked);
+
+    void handlePatternPieceTool(bool checked);
+    void handleUnionDetailsTool(bool checked);
+
+    void handleNewLayout(bool checked);
+
+    void draftMode_Action(bool checked);
     void ActionDetails(bool checked);
     void ActionLayout(bool checked);
 
@@ -206,7 +215,7 @@ private slots:
     void ClosedDialogUnionDetails(int result);
     void ClosedDialogGroup(int result);
     void ClosedDialogInternalPath(int result);
-    void ClosedDialogPin(int result);
+    void ClosedDialogAnchorPoint(int result);
     void ClosedDialogInsertNode(int result);
 
     void zoomToPrevious();
@@ -277,8 +286,9 @@ private:
     /** @brief currentToolBoxIndex save current set of tools. */
     qint32                            currentToolBoxIndex;
 
-    bool                              isDockToolOptionsVisible;
-    bool                              isDockGroupsVisible;
+    bool                              isToolOptionsDockVisible;
+    bool                              isGroupsDockVisible;
+    bool                              isLayoutsDockVisible;
 
     /** @brief drawMode true if we current draw scene. */
     bool                              drawMode;
@@ -295,26 +305,39 @@ private:
     QPointer<QComboBox>               gradationSizes;
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
-    VToolOptionsPropertyBrowser      *toolOptions;
+    VToolOptionsPropertyBrowser      *toolProperties;
     VWidgetGroups                    *groupsWidget;
-    VWidgetDetails                   *detailsWidget;
+    VWidgetDetails                   *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
     QList<QToolButton*>               toolButtonPointerList;
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
-    void               SetDefaultHeight();
-    void               SetDefaultSize();
+    void                              SetDefaultHeight();
+    void                              SetDefaultSize();
 
-    void               ToolBarOption();
-    void               ToolBarStages();
-    void               ToolBarDraws();
-    void               ToolBarTools();
-    void               InitToolButtons();
-    void               CancelTool();
+    void                              initStatusToolBar();
+    void                              initModesToolBar();
+    void                              initDraftToolBar();
+    void                              initToolsToolBar();
+    void                              InitToolButtons();
+
+    void                              handlePointsMenu();
+    void                              handleLinesMenu();
+    void                              handleArcsMenu();
+    void                              handleCurvesMenu();
+    void                              handleCirclesMenu();
+    void                              handleEllipsesMenu();
+    void                              handleModifyMenu();
+    void                              handlePatternPiecesMenu();
+    void                              handleDetailsMenu();
+    void                              handleLayoutMenu();
+    void                              handleImagesMenu();
+
+    void                              CancelTool();
 
     void               SetEnableWidgets(bool enable);
-    void               SetEnableTool(bool enable);
+    void               setEnableTools(bool enable);
     void               SetLayoutModeActions();
 
     void               SaveCurrentScene();
