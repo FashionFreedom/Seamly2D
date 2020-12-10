@@ -49,64 +49,56 @@
  **
  *************************************************************************/
 
-#ifndef VISOPERATION_H
-#define VISOPERATION_H
+#ifndef VTOOLMIRRORBYLINE_H
+#define VTOOLMIRRORBYLINE_H
 
 #include <QtGlobal>
 
-#include "../visline.h"
-#include "../vpatterndb/vcontainer.h"
+#include "vabstractmirror.h"
 
-class VisOperation : public VisLine
+class VToolMirrorByLine : public VAbstractMirror
 {
     Q_OBJECT
+
 public:
-    explicit                  VisOperation(const VContainer *data, QGraphicsItem *parent = nullptr);
-    virtual                  ~VisOperation();
+    virtual                  ~VToolMirrorByLine() Q_DECL_EQ_DEFAULT;
+    virtual void              setDialog() Q_DECL_OVERRIDE;
+    static VToolMirrorByLine *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
+                                       VAbstractPattern *doc, VContainer *data);
+    static VToolMirrorByLine *Create(const quint32 _id, quint32 firstLinePointId, quint32 secondLinePointId,
+                                       const QString &suffix, const QVector<quint32> &source,
+                                       const QVector<DestinationItem> &destination, VMainGraphicsScene *scene,
+                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
+                                       const Source &typeCreation);
 
-    void                      setObjects(QVector<quint32> objects);
-
-    virtual void              VisualMode(const quint32 &pointId = NULL_ID) Q_DECL_OVERRIDE;
+    static const QString      ToolType;
 
     virtual int               type() const Q_DECL_OVERRIDE {return Type;}
-    enum                      {Type = UserType + static_cast<int>(Vis::ToolRotation)};
+    enum                      { Type = UserType + static_cast<int>(Tool::MirrorByLine)};
+
+    QString                   firstLinePointName() const;
+    QString                   secondLinePointName() const;
+
+    virtual void              ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
 protected:
-    QVector<quint32>          objects;
-    QColor                    supportColor2;
+    virtual void              SetVisualization() Q_DECL_OVERRIDE;
+    virtual void              SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void              ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void              SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void              contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
 
-    QVector<VScaledEllipse *> points;
-    QVector<VCurvePathItem *> curves;
-
-    VScaledEllipse           *GetPoint(quint32 i, const QColor &color);
-    VCurvePathItem           *GetCurve(quint32 i, const QColor &color);
-
-    template <class Item>
-    int                       addFlippedCurve(const QPointF &firstPoint, const QPointF &secondPoint, quint32 id, int i);
-
-    void                      refreshMirroredObjects(const QPointF &firstPoint, const QPointF &secondPoint);
 private:
-    Q_DISABLE_COPY(VisOperation)
+    Q_DISABLE_COPY(VToolMirrorByLine)
+
+    quint32                   m_firstLinePointId;
+    quint32                   m_secondLinePointId;
+
+                              VToolMirrorByLine(VAbstractPattern *doc, VContainer *data, quint32 id,
+                                                quint32 firstLinePointId, quint32 secondLinePointId,
+                                                const QString &suffix, const QVector<quint32> &source,
+                                                const QVector<DestinationItem> &destination, const Source &typeCreation,
+                                                QGraphicsItem *parent = nullptr);
 };
 
-//---------------------------------------------------------------------------------------------------------------------
-template <class Item>
-int VisOperation::addFlippedCurve(const QPointF &firstPoint, const QPointF &secondPoint, quint32 id, int i)
-{
-    const QSharedPointer<Item> curve = Visualization::data->template GeometricObject<Item>(id);
-
-    ++i;
-    VCurvePathItem *path = GetCurve(static_cast<quint32>(i), supportColor2);
-    DrawPath(path, curve->GetPath(), curve->DirectionArrows(), supportColor2, Qt::SolidLine, Qt::RoundCap);
-
-    ++i;
-    path = GetCurve(static_cast<quint32>(i), supportColor);
-    if (object1Id != NULL_ID)
-    {
-        const Item flipped = curve->Flip(QLineF(firstPoint, secondPoint));
-        DrawPath(path, flipped.GetPath(), flipped.DirectionArrows(), supportColor, Qt::SolidLine, Qt::RoundCap);
-    }
-
-    return i;
-}
-
-#endif // VISOPERATION_H
+#endif // VTOOLMIRRORBYLINE_H

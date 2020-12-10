@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,69 +72,54 @@ class DialogRotation : public DialogTool
 {
     Q_OBJECT
 public:
-    explicit DialogRotation(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual ~DialogRotation();
+    explicit            DialogRotation(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+    virtual            ~DialogRotation();
 
-    quint32 GetOrigPointId() const;
-    void    SetOrigPointId(const quint32 &value);
+    quint32             getRotationPointId() const;
+    void                setRotationPointId(const quint32 &value);
 
-    QString GetAngle() const;
-    void    SetAngle(const QString &value);
+    QString             GetAngle() const;
+    void                SetAngle(const QString &value);
 
-    QString GetSuffix() const;
-    void    SetSuffix(const QString &value);
+    QString             getSuffix() const;
+    void                setSuffix(const QString &value);
 
-    QVector<quint32> GetObjects() const;
+    QVector<quint32>    getObjects() const;
 
-    virtual void ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void        ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void        ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void        SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
 
 private slots:
-    /** @brief DeployAngleTextEdit grow or shrink formula input */
-    void DeployAngleTextEdit();
-    void AngleChanged();
-    void FXAngle();
-    void SuffixChanged();
+    void                angleChanged();
+    void                editAngleFormula();
+    void                suffixChanged();
 
 protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+    virtual void        CheckState() Q_DECL_FINAL;
+    virtual void        ShowVisualization() Q_DECL_OVERRIDE;
 
     /** @brief SaveData Put dialog data in local variables */
-    virtual void SaveData() Q_DECL_OVERRIDE;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    virtual void        SaveData() Q_DECL_OVERRIDE;
+    virtual void        closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private slots:
-    void PointChanged();
+    void                pointChanged();
 
 private:
     Q_DISABLE_COPY(DialogRotation)
     Ui::DialogRotation *ui;
-
-    /** @brief flagAngle true if value of angle is correct */
-    bool    flagAngle;
-
-    /** @brief timerAngle timer of check formula of angle */
-    QTimer  *timerAngle;
-
-    /** @brief angle formula of angle */
-    QString formulaAngle;
-
-    /** @brief formulaBaseHeightAngle base height defined by dialogui */
-    int     formulaBaseHeightAngle;
-
-    QList<quint32> objects;
-
-    bool stage1;
-
-    QString m_suffix;
-
-    bool m_firstRelease;
-
-    void EvalAngle();
+    bool                angleFlag;        //! @brief angleFlag true if value of angle is correct */
+    QTimer             *angleTimer;       //! @brief angleTimer timer of check formula of angle */
+    QString             angleFormula;     //! @brief angle formula of angle
+    QList<quint32>      objects;
+    bool                stage1;
+    QString             m_suffix;
+    bool                m_firstRelease;
+    
+    void                evaluateAngle();
 };
 
 #endif // DIALOGROTATION_H

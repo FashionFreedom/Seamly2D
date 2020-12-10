@@ -804,7 +804,7 @@
       <string/>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>5</number>
      </property>
      <property name="tabSpacing">
       <number>4</number>
@@ -2035,7 +2035,7 @@
          </property>
          <property name="icon">
           <iconset resource="share/resources/toolicon.qrc">
-           <normaloff>:/toolicon/32x32/group_plus.png</normaloff>:/toolicon/32x32/group_plus.png</iconset>
+           <normaloff>:/toolicon/32x32/group.png</normaloff>:/toolicon/32x32/group.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2087,7 +2087,7 @@
          </property>
          <property name="icon">
           <iconset resource="share/resources/toolicon.qrc">
-           <normaloff>:/toolicon/32x32/flipping_line.png</normaloff>:/toolicon/32x32/flipping_line.png</iconset>
+           <normaloff>:/toolicon/32x32/mirror_by_line.png</normaloff>:/toolicon/32x32/mirror_by_line.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2113,7 +2113,7 @@
          </property>
          <property name="icon">
           <iconset resource="share/resources/toolicon.qrc">
-           <normaloff>:/toolicon/32x32/flipping_axis.png</normaloff>:/toolicon/32x32/flipping_axis.png</iconset>
+           <normaloff>:/toolicon/32x32/mirror_by_axis.png</normaloff>:/toolicon/32x32/mirror_by_axis.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -2864,7 +2864,7 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/group_plus.png</normaloff>:/toolicon/32x32/group_plus.png</iconset>
+     <normaloff>:/toolicon/32x32/group.png</normaloff>:/toolicon/32x32/group.png</iconset>
    </property>
    <property name="text">
     <string>Create New Group</string>
@@ -2903,7 +2903,7 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/flipping_line.png</normaloff>:/toolicon/32x32/flipping_line.png</iconset>
+     <normaloff>:/toolicon/32x32/mirror_by_line.png</normaloff>:/toolicon/32x32/mirror_by_line.png</iconset>
    </property>
    <property name="text">
     <string>Mirror by Line</string>
@@ -2921,7 +2921,7 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/flipping_axis.png</normaloff>:/toolicon/32x32/flipping_axis.png</iconset>
+     <normaloff>:/toolicon/32x32/mirror_by_axis.png</normaloff>:/toolicon/32x32/mirror_by_axis.png</iconset>
    </property>
    <property name="text">
     <string>Mirror by Axis</string>

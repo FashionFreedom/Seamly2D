@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -70,7 +70,7 @@ QString VAbstractOperation::Suffix() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::SetSuffix(const QString &suffix)
+void VAbstractOperation::setSuffix(const QString &suffix)
 {
     // Don't know if need check name here.
     this->suffix = suffix;

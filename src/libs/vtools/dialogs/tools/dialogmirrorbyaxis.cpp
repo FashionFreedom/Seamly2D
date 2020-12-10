@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,9 +23,9 @@
 
  ************************************************************************
  **
- **  @file   dialogflippingbyline.cpp
+ **  @file   dialogmirrorbyaxis.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 9, 2016
+ **  @date   16 9, 2016
  **
  **  @brief
  **  @copyright
@@ -49,7 +49,7 @@
  **
  *************************************************************************/
 
-#include "dialogflippingbyline.h"
+#include "dialogmirrorbyaxis.h"
 
 #include <QColor>
 #include <QComboBox>
@@ -68,7 +68,7 @@
 #include <new>
 
 #include "../../visualization/visualization.h"
-#include "../../visualization/line/operation/vistoolflippingbyline.h"
+#include "../../visualization/line/operation/vistoolmirrorbyaxis.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
@@ -78,96 +78,99 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "ui_dialogflippingbyline.h"
+#include "ui_dialogmirrorbyaxis.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogFlippingByLine::DialogFlippingByLine(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    : DialogTool(data, toolId, parent),
-      ui(new Ui::DialogFlippingByLine),
-      objects(),
-      stage1(true),
-      m_suffix()
+DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &toolId, QWidget *parent)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogMirrorByAxis)
+    , objects()
+    , stage1(true)
+    , m_suffix()
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/mirror_by_axis.png"));
 
-    ui->lineEditSuffix->setText(qApp->getCurrentDocument()->GenerateSuffix());
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix());
 
     InitOkCancelApply(ui);
 
-    FillComboBoxPoints(ui->comboBoxFirstLinePoint);
-    FillComboBoxPoints(ui->comboBoxSecondLinePoint);
+    FillComboBoxPoints(ui->originPoint_ComboBox);
+    fillComboBoxAxisType(ui->axisType_ComboBox);
 
     flagName = true;
     CheckState();
 
-    connect(ui->lineEditSuffix, &QLineEdit::textChanged, this, &DialogFlippingByLine::SuffixChanged);
-    connect(ui->comboBoxFirstLinePoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogFlippingByLine::PointChanged);
-    connect(ui->comboBoxSecondLinePoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogFlippingByLine::PointChanged);
+    connect(ui->suffix_LineEdit, &QLineEdit::textChanged, this, &DialogMirrorByAxis::suffixChanged);
+    connect(ui->originPoint_ComboBox, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            this, &DialogMirrorByAxis::pointChanged);
 
-    vis = new VisToolFlippingByLine(data);
+    vis = new VisToolMirrorByAxis(data);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogFlippingByLine::~DialogFlippingByLine()
+DialogMirrorByAxis::~DialogMirrorByAxis()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogFlippingByLine::GetFirstLinePointId() const
+quint32 DialogMirrorByAxis::getOriginPointId() const
 {
-    return getCurrentObjectId(ui->comboBoxFirstLinePoint);
+    return getCurrentObjectId(ui->originPoint_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::SetFirstLinePointId(quint32 value)
+void DialogMirrorByAxis::setOriginPointId(quint32 value)
 {
-    ChangeCurrentData(ui->comboBoxFirstLinePoint, value);
-    VisToolFlippingByLine *operation = qobject_cast<VisToolFlippingByLine *>(vis);
+    ChangeCurrentData(ui->originPoint_ComboBox, value);
+    VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
     SCASSERT(operation != nullptr)
-    operation->SetFirstLinePointId(value);
+    operation->setOriginPointId(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogFlippingByLine::GetSecondLinePointId() const
+AxisType DialogMirrorByAxis::getAxisType() const
 {
-    return getCurrentObjectId(ui->comboBoxSecondLinePoint);
+    return getCurrentCrossPoint<AxisType>(ui->axisType_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::SetSecondLinePointId(quint32 value)
+void DialogMirrorByAxis::setAxisType(AxisType type)
 {
-    ChangeCurrentData(ui->comboBoxSecondLinePoint, value);
-    VisToolFlippingByLine *operation = qobject_cast<VisToolFlippingByLine *>(vis);
-    SCASSERT(operation != nullptr)
-    operation->SetSecondLinePointId(value);
+    auto index = ui->axisType_ComboBox->findData(static_cast<int>(type));
+    if (index != -1)
+    {
+        ui->axisType_ComboBox->setCurrentIndex(index);
+
+        auto operation = qobject_cast<VisToolMirrorByAxis *>(vis);
+        SCASSERT(operation != nullptr)
+        operation->setAxisType(type);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogFlippingByLine::GetSuffix() const
+QString DialogMirrorByAxis::getSuffix() const
 {
     return m_suffix;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::SetSuffix(const QString &value)
+void DialogMirrorByAxis::setSuffix(const QString &value)
 {
     m_suffix = value;
-    ui->lineEditSuffix->setText(value);
+    ui->suffix_LineEdit->setText(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> DialogFlippingByLine::GetObjects() const
+QVector<quint32> DialogMirrorByAxis::getObjects() const
 {
     return objects.toVector();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::ShowDialog(bool click)
+void DialogMirrorByAxis::ShowDialog(bool click)
 {
     if (stage1 && not click)
     {
@@ -182,9 +185,9 @@ void DialogFlippingByLine::ShowDialog(bool click)
         SCASSERT(scene != nullptr)
         scene->clearSelection();
 
-        VisToolFlippingByLine *operation = qobject_cast<VisToolFlippingByLine *>(vis);
+        VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
         SCASSERT(operation != nullptr)
-        operation->SetObjects(objects.toVector());
+        operation->setObjects(objects.toVector());
         operation->VisualMode();
 
         scene->ToggleArcSelection(false);
@@ -197,7 +200,7 @@ void DialogFlippingByLine::ShowDialog(bool click)
         scene->ToggleSplineHover(false);
         scene->ToggleSplinePathHover(false);
 
-        emit ToolTip(tr("Select first line point"));
+        emit ToolTip(tr("Select axis rotation point"));
     }
     else if (not stage1 && prepare && click)
     {
@@ -208,63 +211,33 @@ void DialogFlippingByLine::ShowDialog(bool click)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::ChosenObject(quint32 id, const SceneObject &type)
+void DialogMirrorByAxis::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (not stage1 && not prepare)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)
         {
-            switch (number)
+            if (objects.contains(id))
             {
-                case 0:
-                    if (objects.contains(id))
-                    {
-                        emit ToolTip(tr("Select first line point that is not part of the list of objects"));
-                        return;
-                    }
+                emit ToolTip(tr("Select axis rotation point that is not part of the list of objects"));
+                return;
+            }
 
-                    if (SetObject(id, ui->comboBoxFirstLinePoint, tr("Select second line point")))
-                    {
-                        number++;
-                        VisToolFlippingByLine *operation = qobject_cast<VisToolFlippingByLine *>(vis);
-                        SCASSERT(operation != nullptr)
-                        operation->SetFirstLinePointId(id);
-                        operation->RefreshGeometry();
-                    }
-                    break;
-                case 1:
-                    if (objects.contains(id))
-                    {
-                        emit ToolTip(tr("Select second line point that is not part of the list of objects"));
-                        return;
-                    }
+            if (SetObject(id, ui->originPoint_ComboBox, ""))
+            {
+                VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
+                SCASSERT(operation != nullptr)
+                operation->setOriginPointId(id);
+                operation->RefreshGeometry();
 
-                    if (getCurrentObjectId(ui->comboBoxFirstLinePoint) != id)
-                    {
-                        if (SetObject(id, ui->comboBoxSecondLinePoint, ""))
-                        {
-                            if (flagError)
-                            {
-                                number = 0;
-                                prepare = true;
-
-                                VisToolFlippingByLine *operation = qobject_cast<VisToolFlippingByLine *>(vis);
-                                SCASSERT(operation != nullptr)
-                                operation->SetSecondLinePointId(id);
-                                operation->RefreshGeometry();
-                            }
-                        }
-                    }
-                    break;
-                default:
-                    break;
+                prepare = true;
             }
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::SelectedObject(bool selected, quint32 object, quint32 tool)
+void DialogMirrorByAxis::SelectedObject(bool selected, quint32 object, quint32 tool)
 {
     Q_UNUSED(tool)
     if (stage1)
@@ -284,7 +257,7 @@ void DialogFlippingByLine::SelectedObject(bool selected, quint32 object, quint32
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::SuffixChanged()
+void DialogMirrorByAxis::suffixChanged()
 {
     QLineEdit* edit = qobject_cast<QLineEdit*>(sender());
     if (edit)
@@ -293,7 +266,7 @@ void DialogFlippingByLine::SuffixChanged()
         if (suffix.isEmpty())
         {
             flagName = false;
-            ChangeColor(ui->labelSuffix, Qt::red);
+            ChangeColor(ui->suffix_Label, Qt::red);
             CheckState();
             return;
         }
@@ -309,7 +282,7 @@ void DialogFlippingByLine::SuffixChanged()
                     if (not rx.match(name).hasMatch() || not data->IsUnique(name))
                     {
                         flagName = false;
-                        ChangeColor(ui->labelSuffix, Qt::red);
+                        ChangeColor(ui->suffix_Label, Qt::red);
                         CheckState();
                         return;
                     }
@@ -318,13 +291,13 @@ void DialogFlippingByLine::SuffixChanged()
         }
 
         flagName = true;
-        ChangeColor(ui->labelSuffix, okColor);
+        ChangeColor(ui->suffix_Label, okColor);
     }
     CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::CheckState()
+void DialogMirrorByAxis::CheckState()
 {
     SCASSERT(bOk != nullptr)
     bOk->setEnabled(flagError && flagName);
@@ -333,52 +306,48 @@ void DialogFlippingByLine::CheckState()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::ShowVisualization()
+void DialogMirrorByAxis::ShowVisualization()
 {
-    AddVisualization<VisToolFlippingByLine>();
+    AddVisualization<VisToolMirrorByAxis>();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::SaveData()
+void DialogMirrorByAxis::SaveData()
 {
-    m_suffix = ui->lineEditSuffix->text();
+    m_suffix = ui->suffix_LineEdit->text();
 
-    VisToolFlippingByLine *operation = qobject_cast<VisToolFlippingByLine *>(vis);
+    VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
     SCASSERT(operation != nullptr)
 
-    operation->SetObjects(objects.toVector());
-    operation->SetFirstLinePointId(GetFirstLinePointId());
-    operation->SetSecondLinePointId(GetSecondLinePointId());
+    operation->setObjects(objects.toVector());
+    operation->setOriginPointId(getOriginPointId());
+    operation->setAxisType(getAxisType());
     operation->RefreshGeometry();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogFlippingByLine::PointChanged()
+void DialogMirrorByAxis::pointChanged()
 {
     QColor color = okColor;
-    flagError = true;
-    ChangeColor(ui->labelFirstLinePoint, color);
-    ChangeColor(ui->labelSecondLinePoint, color);
-
-    if (getCurrentObjectId(ui->comboBoxFirstLinePoint) == getCurrentObjectId(ui->comboBoxSecondLinePoint))
+    if (objects.contains(getCurrentObjectId(ui->originPoint_ComboBox)))
     {
         flagError = false;
         color = errorColor;
-        ChangeColor(ui->labelFirstLinePoint, color);
-        ChangeColor(ui->labelSecondLinePoint, color);
     }
-    else if (objects.contains(getCurrentObjectId(ui->comboBoxFirstLinePoint)))
+    else
     {
-        flagError = false;
-        color = errorColor;
-        ChangeColor(ui->labelFirstLinePoint, color);
+        flagError = true;
+        color = okColor;
     }
-    else if (objects.contains(getCurrentObjectId(ui->comboBoxSecondLinePoint)))
-    {
-        flagError = false;
-        color = errorColor;
-        ChangeColor(ui->labelSecondLinePoint, color);
-    }
-
+    ChangeColor(ui->originPoint_Label, color);
     CheckState();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogMirrorByAxis::fillComboBoxAxisType(QComboBox *box)
+{
+    SCASSERT(box != nullptr)
+
+    box->addItem(tr("Vertical axis"), QVariant(static_cast<int>(AxisType::VerticalAxis)));
+    box->addItem(tr("Horizontal axis"), QVariant(static_cast<int>(AxisType::HorizontalAxis)));
 }

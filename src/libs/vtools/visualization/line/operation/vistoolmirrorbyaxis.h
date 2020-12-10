@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -25,7 +25,7 @@
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 9, 2016
+ **  @date   16 9, 2016
  **
  **  @brief
  **  @copyright
@@ -49,32 +49,34 @@
  **
  *************************************************************************/
 
-#ifndef VISTOOLFLIPPINGBYLINE_H
-#define VISTOOLFLIPPINGBYLINE_H
+#ifndef VISTOOLMIRRORBYAXIS_H
+#define VISTOOLMIRRORBYAXIS_H
 
 #include <QtGlobal>
 
 #include "visoperation.h"
+#include "../ifc/xml/vabstractpattern.h"
 
-class VisToolFlippingByLine : public VisOperation
+class VisToolMirrorByAxis : public VisOperation
 {
     Q_OBJECT
 public:
-    explicit VisToolFlippingByLine(const VContainer *data, QGraphicsItem *parent = nullptr);
-    virtual ~VisToolFlippingByLine() = default;
+    explicit        VisToolMirrorByAxis(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual        ~VisToolMirrorByAxis() = default;
 
-    virtual void   RefreshGeometry() Q_DECL_OVERRIDE;
+    virtual void    RefreshGeometry() Q_DECL_OVERRIDE;
 
-    void SetFirstLinePointId(quint32 value);
-    void SetSecondLinePointId(quint32 value);
+    void            setOriginPointId(quint32 value);
+    void            setAxisType(AxisType value);
 
-    virtual int type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Vis::ToolFlippingByLine)};
+    virtual int     type() const Q_DECL_OVERRIDE {return Type;}
+    enum { Type = UserType + static_cast<int>(Vis::ToolMirrorByAxis)};
 private:
-    Q_DISABLE_COPY(VisToolFlippingByLine)
-    quint32         object2Id;
+    Q_DISABLE_COPY(VisToolMirrorByAxis)
+
+    AxisType        m_axisType;
+
     VScaledEllipse *point1;
-    VScaledEllipse *point2;
 };
 
-#endif // VISTOOLFLIPPINGBYLINE_H
+#endif // VISTOOLMIRRORBYAXIS_H

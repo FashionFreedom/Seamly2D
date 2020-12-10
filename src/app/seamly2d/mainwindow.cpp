@@ -159,6 +159,7 @@ MainWindow::MainWindow(QWidget *parent)
     , isToolOptionsDockVisible(true)
     , isGroupsDockVisible(true)
     , isLayoutsDockVisible(false)
+    , isToolboxDockVisible(true)
     , drawMode(true)
     , recentFileActs()
     , separatorAct(nullptr)
@@ -1354,7 +1355,7 @@ void MainWindow::handleGroupTool(bool checked)
     (
         checked,
         Tool::Group,
-        ":/cursor/group_plus_cursor.png",
+        ":/cursor/group_cursor.png",
         tooltip,
         &MainWindow::ClosedDialogGroup
     );
@@ -1408,13 +1409,13 @@ void MainWindow::handleMirrorByLineTool(bool checked)
                                "Press <b>ENTER</b> to confirm selection")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButtonWithApply<DialogFlippingByLine>
+    SetToolButtonWithApply<DialogMirrorByLine>
     (
         checked,
-        Tool::FlippingByLine,
-        ":/cursor/flipping_line_cursor.png",
-        tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolFlippingByLine>,
-        &MainWindow::ApplyDrawDialog<VToolFlippingByLine>
+        Tool::MirrorByLine,
+        ":/cursor/mirror_by_line_cursor.png",
+        tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByLine>,
+        &MainWindow::ApplyDrawDialog<VToolMirrorByLine>
     );
 }
 
@@ -1427,14 +1428,14 @@ void MainWindow::handleMirrorByAxisTool(bool checked)
                                "Press <b>ENTER</b> to confirm selection")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButtonWithApply<DialogFlippingByAxis>
+    SetToolButtonWithApply<DialogMirrorByAxis>
     (
         checked,
-        Tool::FlippingByAxis,
-        ":/cursor/flipping_axis_cursor.png",
+        Tool::MirrorByAxis,
+        ":/cursor/mirror_by_axis_cursor.png",
         tooltip,
-        &MainWindow::ClosedDrawDialogWithApply<VToolFlippingByAxis>,
-        &MainWindow::ApplyDrawDialog<VToolFlippingByAxis>
+        &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByAxis>,
+        &MainWindow::ApplyDrawDialog<VToolMirrorByAxis>
     );
 }
 
@@ -2639,12 +2640,12 @@ void MainWindow::handleModifyMenu()
     qCDebug(vMainWindow, "Modify Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group_plus.png"),    tr("New Group"));
-    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),      tr("Rotate"));
-    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/flipping_line.png"), tr("Mirror by Line"));
-    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/flipping_axis.png"), tr("Mirror by Axis"));
-    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),          tr("Move"));
-    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),    tr("True Darts"));
+    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group"));
+    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate"));
+    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line"));
+    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis"));
+    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move"));
+    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2966,10 +2967,10 @@ void MainWindow::CancelTool()
         case Tool::Rotation:
             ui->rotation_ToolButton->setChecked(false);
             break;
-        case Tool::FlippingByLine:
+        case Tool::MirrorByLine:
             ui->mirrorByLine_ToolButton->setChecked(false);
             break;
-        case Tool::FlippingByAxis:
+        case Tool::MirrorByAxis:
             ui->mirrorByAxis_ToolButton->setChecked(false);
             break;
         case Tool::Move:
@@ -4450,6 +4451,7 @@ void MainWindow::ReadSettings()
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
     isGroupsDockVisible = ui->groups_DockWidget->isVisible();
     isLayoutsDockVisible = ui->layoutPages_DockWidget->isVisible();
+    isToolboxDockVisible = ui->layoutPages_DockWidget->isVisible();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4836,11 +4838,11 @@ void MainWindow::LastUsedTool()
             ui->rotation_ToolButton->setChecked(true);
             handleRotationTool(true);
             break;
-        case Tool::FlippingByLine:
+        case Tool::MirrorByLine:
             ui->mirrorByLine_ToolButton->setChecked(true);
             handleMirrorByLineTool(true);
             break;
-        case Tool::FlippingByAxis:
+        case Tool::MirrorByAxis:
             ui->mirrorByAxis_ToolButton->setChecked(true);
             handleMirrorByAxisTool(true);
             break;
@@ -4890,10 +4892,11 @@ void MainWindow::AddDocks()
         isLayoutsDockVisible = visible;
     });
 
-    ui->view_Menu->addAction(ui->toolbox_DockWidget->toggleViewAction());
+    actionDockWidgetToolbox = ui->toolbox_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetToolbox);
     connect(ui->toolbox_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
     {
-        ui->toolbox_DockWidget->setVisible(visible);
+        isToolboxDockVisible  = visible;
     });
 }
 
@@ -5109,7 +5112,7 @@ void MainWindow::CreateActions()
         ui->lineIntersect_ToolButton->setChecked(true);
         handleLineIntersectTool(true);
     });
-  
+
     //Tools->Curve submenu actions
     connect(ui->curve_Action, &QAction::triggered, this, [this]
     {

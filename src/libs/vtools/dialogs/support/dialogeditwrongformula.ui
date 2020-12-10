@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>448</width>
-    <height>425</height>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -114,13 +114,13 @@
        </property>
       </spacer>
      </item>
-     <item alignment="Qt::AlignRight">
-      <widget class="QToolButton" name="toolButtonPutHere">
+     <item>
+      <widget class="QPushButton" name="insert_PushButton">
        <property name="toolTip">
         <string>Insert variable into formula</string>
        </property>
        <property name="text">
-        <string notr="true">...</string>
+        <string notr="true"/>
        </property>
        <property name="icon">
         <iconset resource="../../../vmisc/share/resources/icon.qrc">
@@ -131,6 +131,9 @@
          <width>24</width>
          <height>24</height>
         </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -164,8 +167,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>16</width>
-         <height>16</height>
+         <width>20</width>
+         <height>20</height>
         </size>
        </property>
        <property name="flat">
@@ -195,6 +198,26 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="clear_PushButton">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../vmisc/share/resources/icon.qrc">
+         <normaloff>:/icon/32x32/clear.png</normaloff>:/icon/32x32/clear.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -217,7 +240,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonStandardTable">
+          <widget class="QRadioButton" name="measurements_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -233,7 +256,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonIncrements">
+          <widget class="QRadioButton" name="customVariables_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -246,7 +269,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonLengthLine">
+          <widget class="QRadioButton" name="lineLengths_RadioButton">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -262,7 +285,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonAngleLine">
+          <widget class="QRadioButton" name="lineAngles_RadioButton">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -278,7 +301,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonLengthSpline">
+          <widget class="QRadioButton" name="curveLengths_RadioButton">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -294,7 +317,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonAnglesCurves">
+          <widget class="QRadioButton" name="curveAngles_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -307,14 +330,14 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonCLength">
+          <widget class="QRadioButton" name="controlPoints_RadioButton">
            <property name="text">
             <string>Control point lengths</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonRadiusesArcs">
+          <widget class="QRadioButton" name="arcRadiuses_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -327,7 +350,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonFunctions">
+          <widget class="QRadioButton" name="functions_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -393,7 +416,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="labelDescription">
+    <widget class="QLabel" name="description_Label">
      <property name="text">
       <string/>
      </property>
@@ -416,17 +439,17 @@
  </widget>
  <tabstops>
   <tabstop>plainTextEditFormula</tabstop>
-  <tabstop>toolButtonPutHere</tabstop>
-  <tabstop>radioButtonStandardTable</tabstop>
-  <tabstop>radioButtonIncrements</tabstop>
-  <tabstop>radioButtonLengthLine</tabstop>
-  <tabstop>radioButtonLengthSpline</tabstop>
+  <tabstop>insert_PushButton</tabstop>
+  <tabstop>measurements_RadioButton</tabstop>
+  <tabstop>customVariables_RadioButton</tabstop>
+  <tabstop>lineLengths_RadioButton</tabstop>
+  <tabstop>curveLengths_RadioButton</tabstop>
   <tabstop>checkBoxHideEmpty</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
-  <include location="../../../vmisc/share/resources/icon.qrc"/>
   <include location="../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,9 +23,9 @@
 
  ************************************************************************
  **
- **  @file   dialogflippingbyline.h
+ **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   12 9, 2016
+ **  @date   16 9, 2016
  **
  **  @brief
  **  @copyright
@@ -49,74 +49,58 @@
  **
  *************************************************************************/
 
-#ifndef DIALOGFLIPPINGBYLINE_H
-#define DIALOGFLIPPINGBYLINE_H
+#ifndef VTOOLMIRRORBYAXIS_H
+#define VTOOLMIRRORBYAXIS_H
 
-#include "dialogtool.h"
-
-#include <qcompilerdetection.h>
-#include <QList>
-#include <QMetaObject>
-#include <QObject>
-#include <QString>
-#include <QVector>
 #include <QtGlobal>
 
-#include "../vmisc/def.h"
+#include "vabstractmirror.h"
 
-namespace Ui
-{
-    class DialogFlippingByLine;
-}
-
-class DialogFlippingByLine : public DialogTool
+class VToolMirrorByAxis : public VAbstractMirror
 {
     Q_OBJECT
 
 public:
-    explicit DialogFlippingByLine(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual ~DialogFlippingByLine();
+    virtual                  ~VToolMirrorByAxis() Q_DECL_EQ_DEFAULT;
+    virtual void              setDialog() Q_DECL_OVERRIDE;
+    static VToolMirrorByAxis *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
+                                     VAbstractPattern *doc, VContainer *data);
 
-    quint32 GetFirstLinePointId() const;
-    void    SetFirstLinePointId(quint32 value);
+    static VToolMirrorByAxis *Create(const quint32 _id, quint32 originPointId, AxisType axisType,
+                                     const QString &suffix, const QVector<quint32> &source,
+                                     const QVector<DestinationItem> &destination, VMainGraphicsScene *scene,
+                                     VAbstractPattern *doc, VContainer *data, const Document &parse,
+                                     const Source &typeCreation);
 
-    quint32 GetSecondLinePointId() const;
-    void    SetSecondLinePointId(quint32 value);
+    static const QString ToolType;
 
-    QString GetSuffix() const;
-    void    SetSuffix(const QString &value);
+    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    enum         {Type = UserType + static_cast<int>(Tool::MirrorByAxis)};
 
-    QVector<quint32> GetObjects() const;
+    AxisType     getAxisType() const;
+    void         setAxisType(AxisType value);
 
-    virtual void ShowDialog(bool click) Q_DECL_OVERRIDE;
+    QString      getOriginPointName() const;
 
-public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
-
-private slots:
-    void SuffixChanged();
+    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
 protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
-
-    /** @brief SaveData Put dialog data in local variables */
-    virtual void SaveData() Q_DECL_OVERRIDE;
-
-private slots:
-    void PointChanged();
+    virtual void SetVisualization() Q_DECL_OVERRIDE;
+    virtual void SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
 
 private:
-    Q_DISABLE_COPY(DialogFlippingByLine)
+    Q_DISABLE_COPY(VToolMirrorByAxis)
 
-    Ui::DialogFlippingByLine *ui;
+    quint32      m_originPointId;
+    AxisType     m_axisType;
 
-    QList<quint32> objects;
-
-    bool stage1;
-
-    QString m_suffix;
+                 VToolMirrorByAxis(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 originPointId,
+                                   AxisType axisType, const QString &suffix, const QVector<quint32> &source,
+                                   const QVector<DestinationItem> &destination, const Source &typeCreation,
+                                   QGraphicsItem *parent = nullptr);
 };
 
-#endif // DIALOGFLIPPINGBYLINE_H
+#endif // VTOOLMIRRORBYAXIS_H

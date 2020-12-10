@@ -362,7 +362,7 @@ QString DialogVariables::getCustomVariableName() const
     QString name;
     do
     {
-        name = CustomIncrSign + qApp->TrVars()->InternalVarToUser(increment_) + QString().number(num);
+        name = CustomIncrSign + qApp->TrVars()->InternalVarToUser(variable_) + QString().number(num);
         num++;
     } while (not data->IsUnique(name));
     return name;
