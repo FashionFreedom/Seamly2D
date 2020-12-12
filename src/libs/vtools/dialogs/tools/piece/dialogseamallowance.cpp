@@ -2503,7 +2503,7 @@ void DialogSeamAllowance::UpdateNodeSAAfter(const QString &formula)
 void DialogSeamAllowance::InitFancyTabBar()
 {
     m_ftb->InsertTab(TabOrder::Paths, QIcon("://icon/32x32/paths.png"), tr("Paths"));
-    m_ftb->InsertTab(TabOrder::Pins, QIcon("://icon/32x32/pins.png"), tr("Pins"));
+    m_ftb->InsertTab(TabOrder::Pins, QIcon("://icon/32x32/anchor_point.png"), tr("Anchor Points"));
     m_ftb->InsertTab(TabOrder::Labels, QIcon("://icon/32x32/labels.png"), tr("Labels"));
     m_ftb->InsertTab(TabOrder::Grainline, QIcon("://icon/32x32/grainline.png"), tr("Grainline"));
     m_ftb->InsertTab(TabOrder::Notches, QIcon("://icon/32x32/notches.png"), tr("Notches"));

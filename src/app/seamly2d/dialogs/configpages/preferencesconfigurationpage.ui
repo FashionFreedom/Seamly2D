@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string notr="true">Configuration</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QGridLayout" name="gridLayout">
    <property name="topMargin">
     <number>8</number>
    </property>
@@ -35,7 +35,7 @@
    <property name="bottomMargin">
     <number>8</number>
    </property>
-   <item>
+   <item row="0" column="0">
     <widget class="QGroupBox" name="save_GroupBox">
      <property name="minimumSize">
       <size>
@@ -51,6 +51,8 @@
      </property>
      <property name="font">
       <font>
+       <family>MS Shell Dlg 2 UI</family>
+       <pointsize>9</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -58,75 +60,102 @@
      <property name="title">
       <string>Save</string>
      </property>
-     <widget class="QCheckBox" name="autoSaveCheck">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>155</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Auto-save modified pattern</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>45</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Interval:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QSpinBox" name="autoTime">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>45</y>
-        <width>80</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>80</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-      <property name="suffix">
-       <string> min</string>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>60</number>
-      </property>
-     </widget>
+     <layout class="QGridLayout" name="gridLayout_6" columnminimumwidth="140,0,0">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="autoSaveCheck">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Auto-save modified pattern</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="autoTime">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>80</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="suffix">
+         <string> min</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>60</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Interval:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </item>
-   <item>
+   <item row="1" column="0">
     <widget class="QGroupBox" name="language_GroupBox">
      <property name="minimumSize">
       <size>
@@ -140,273 +169,321 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2 UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
      <property name="title">
       <string>Language</string>
      </property>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>23</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>GUI language:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="langCombo">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>23</y>
-        <width>200</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>7</x>
-        <y>49</y>
-        <width>118</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Decimal separator parts:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QCheckBox" name="osOptionCheck">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>49</y>
-        <width>122</width>
-        <height>17</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string notr="true">&lt; With OS options &gt;</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>72</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Default unit:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>98</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Label language:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="unitCombo">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>72</y>
-        <width>80</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>80</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="labelCombo">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>98</y>
-        <width>200</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
+     <layout class="QGridLayout" name="gridLayout_2" columnminimumwidth="140,0,0">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Decimal separator:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QCheckBox" name="osOptionCheck">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">&lt; With OS options &gt;</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="langCombo">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>GUI language:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="labelCombo">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Label language:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_4">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Default unit:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="unitCombo">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </item>
-   <item>
+   <item row="2" column="0">
     <widget class="QGroupBox" name="patternMakingSytem_GroupBox">
      <property name="minimumSize">
       <size>
        <width>465</width>
-       <height>190</height>
+       <height>170</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
        <width>465</width>
-       <height>190</height>
+       <height>16777215</height>
       </size>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2 UI</family>
+       <pointsize>9</pointsize>
+      </font>
      </property>
      <property name="title">
       <string>Pattern making system</string>
      </property>
-     <widget class="QLabel" name="label_6">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>23</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>System:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QComboBox" name="systemCombo">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>23</y>
-        <width>200</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>0</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>49</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Author:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="systemAuthorValueLabel">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>49</y>
-        <width>200</width>
-        <height>20</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>20</height>
-       </size>
-      </property>
-      <property name="text">
-       <string notr="true">author</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>70</y>
-        <width>115</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Book:</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="systemBookValueLabel">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>70</y>
-        <width>320</width>
-        <height>100</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>320</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>320</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
+     <layout class="QGridLayout" name="gridLayout_3" columnminimumwidth="140,0,0">
+      <item row="0" column="1">
+       <widget class="QComboBox" name="systemCombo">
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPlainTextEdit" name="systemBookValueLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>280</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>280</width>
+          <height>100</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>System:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Author:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Book:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="systemAuthorValueLabel">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string notr="true">author</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <spacer name="horizontalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </item>
-   <item>
+   <item row="3" column="0">
     <widget class="QGroupBox" name="crashReports_GroupBox">
      <property name="minimumSize">
       <size>
@@ -420,12 +497,30 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2 UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
      <property name="title">
       <string>Crash reports</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="0" column="0">
        <widget class="QCheckBox" name="sendReportCheck">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Send crash reports (recommended)</string>
         </property>
@@ -434,8 +529,14 @@
         </property>
        </widget>
       </item>
-      <item>
+      <item row="1" column="0">
        <widget class="QLabel" name="description">
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string notr="true">TextLabel</string>
         </property>
@@ -456,7 +557,7 @@
      </layout>
     </widget>
    </item>
-   <item>
+   <item row="4" column="0">
     <widget class="QGroupBox" name="patternEditing_GroupBox">
      <property name="minimumSize">
       <size>
@@ -470,11 +571,17 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2 UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
      <property name="title">
       <string>Pattern editing</string>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
-      <item>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
        <widget class="QPushButton" name="resetWarningsButton">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -482,10 +589,29 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="font">
+         <font>
+          <family>MS Shell Dlg 2 UI</family>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Reset warnings</string>
         </property>
        </widget>
+      </item>
+      <item row="0" column="1">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>

@@ -571,13 +571,13 @@ void VCommonSettings::setScrollUpdateInterval(const int &interval)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VCommonSettings::getScrollSpeedFactor() const
+int VCommonSettings::getScrollSpeedFactor() const
 {
-    return value(settingGraphicsViewScrollSpeedFactor, 1.00).toReal();
+    return value(settingGraphicsViewScrollSpeedFactor, 10).toInt();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setScrollSpeedFactor(const qreal &factor)
+void VCommonSettings::setScrollSpeedFactor(const int &factor)
 {
     setValue(settingGraphicsViewScrollSpeedFactor, factor);
 }

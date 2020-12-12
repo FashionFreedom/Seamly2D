@@ -403,7 +403,7 @@ bool GraphicsViewZoom::startVerticalScrollings(QWheelEvent *wheel_event)
         m_numScheduledVerticalScrollings = numSteps;
     }
 
-    m_numScheduledVerticalScrollings *= qreal(qApp->Settings()->getScrollSpeedFactor())/10;
+    m_numScheduledVerticalScrollings *= qreal(qApp->Settings()->getScrollSpeedFactor())/10.0;
 
     if (verticalScrollAnim->state() != QTimeLine::Running)
     {
@@ -440,7 +440,7 @@ bool GraphicsViewZoom::startHorizontalScrollings(QWheelEvent *wheel_event)
         m_numScheduledHorizontalScrollings = numSteps;
     }
 
-    m_numScheduledHorizontalScrollings *= qreal(qApp->Settings()->getScrollSpeedFactor())/10;
+    m_numScheduledHorizontalScrollings *= qreal(qApp->Settings()->getScrollSpeedFactor())/10.0;
 
     if (horizontalScrollAnim->state() != QTimeLine::Running)
     {
