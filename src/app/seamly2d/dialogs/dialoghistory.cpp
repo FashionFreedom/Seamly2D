@@ -433,8 +433,8 @@ QString DialogHistory::Record(const VToolRecord &tool)
             case Tool::NodeSplinePath:
             case Tool::Group:
             case Tool::Rotation:
-            case Tool::FlippingByLine:
-            case Tool::FlippingByAxis:
+            case Tool::MirrorByLine:
+            case Tool::MirrorByAxis:
             case Tool::Move:
             case Tool::InternalPath:
             case Tool::Pin:

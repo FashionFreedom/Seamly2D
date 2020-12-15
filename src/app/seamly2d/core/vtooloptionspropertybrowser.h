@@ -114,7 +114,7 @@ private:
     void SetHCrossCurvesPoint(const QVariant &value);
 
     template<class Tool>
-    void SetAxisType(const QVariant &value);
+    void setAxisType(const QVariant &value);
 
     template<class Tool>
     void AddPropertyObjectName(Tool *i, const QString &propertyName, bool readOnly = false);
@@ -187,8 +187,8 @@ private:
     void ChangeDataToolCurveIntersectAxis(VPE::VProperty *property);
     void ChangeDataToolRotation(VPE::VProperty *property);
     void ChangeDataToolMove(VPE::VProperty *property);
-    void ChangeDataToolFlippingByLine(VPE::VProperty *property);
-    void ChangeDataToolFlippingByAxis(VPE::VProperty *property);
+    void ChangeDataToolMirrorByLine(VPE::VProperty *property);
+    void ChangeDataToolMirrorByAxis(VPE::VProperty *property);
     void ChangeDataToolEllipticalArc(VPE::VProperty *property);
 
     void ShowOptionsToolSinglePoint(QGraphicsItem *item);
@@ -222,8 +222,8 @@ private:
     void ShowOptionsToolCurveIntersectAxis(QGraphicsItem *item);
     void ShowOptionsToolRotation(QGraphicsItem *item);
     void ShowOptionsToolMove(QGraphicsItem *item);
-    void ShowOptionsToolFlippingByLine(QGraphicsItem *item);
-    void ShowOptionsToolFlippingByAxis(QGraphicsItem *item);
+    void ShowOptionsToolMirrorByLine(QGraphicsItem *item);
+    void ShowOptionsToolMirrorByAxis(QGraphicsItem *item);
     void ShowOptionsToolEllipticalArc(QGraphicsItem *item);
 
     void UpdateOptionsToolSinglePoint();
@@ -257,8 +257,8 @@ private:
     void UpdateOptionsToolCurveIntersectAxis();
     void UpdateOptionsToolRotation();
     void UpdateOptionsToolMove();
-    void UpdateOptionsToolFlippingByLine();
-    void UpdateOptionsToolFlippingByAxis();
+    void UpdateOptionsToolMirrorByLine();
+    void UpdateOptionsToolMirrorByAxis();
     void UpdateOptionsToolEllipticalArc();
 };
 

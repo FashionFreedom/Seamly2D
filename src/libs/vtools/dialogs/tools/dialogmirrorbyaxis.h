@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,7 +23,7 @@
 
  ************************************************************************
  **
- **  @file
+ **  @file   dialogmirrorbyaxis.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   16 9, 2016
  **
@@ -49,57 +49,73 @@
  **
  *************************************************************************/
 
-#include "vistoolflippingbyaxis.h"
-#include "../vgeometry/vpointf.h"
+#ifndef DIALOGMIRRORBYAXIS_H
+#define DIALOGMIRRORBYAXIS_H
 
-//---------------------------------------------------------------------------------------------------------------------
-VisToolFlippingByAxis::VisToolFlippingByAxis(const VContainer *data, QGraphicsItem *parent)
-    : VisOperation(data, parent),
-      m_axisType(AxisType::VerticalAxis),
-      point1(nullptr)
+#include "dialogtool.h"
+
+#include <qcompilerdetection.h>
+#include <QList>
+#include <QMetaObject>
+#include <QObject>
+#include <QString>
+#include <QVector>
+#include <QtGlobal>
+
+#include "../vmisc/def.h"
+
+namespace Ui
 {
-    point1 = InitPoint(supportColor2, this);
+    class DialogMirrorByAxis;
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void VisToolFlippingByAxis::RefreshGeometry()
+class DialogMirrorByAxis : public DialogTool
 {
-    if (objects.isEmpty())
-    {
-        return;
-    }
+    Q_OBJECT
 
-    QPointF firstPoint;
-    QPointF secondPoint;
+public:
+    explicit               DialogMirrorByAxis(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+    virtual               ~DialogMirrorByAxis();
 
-    if (object1Id != NULL_ID)
-    {
-        firstPoint = static_cast<QPointF>(*Visualization::data->GeometricObject<VPointF>(object1Id));
-        DrawPoint(point1, firstPoint, supportColor2);
+    quint32                getOriginPointId() const;
+    void                   setOriginPointId(quint32 value);
 
-        if (m_axisType == AxisType::VerticalAxis)
-        {
-            secondPoint = QPointF(firstPoint.x(), firstPoint.y() + 100);
-        }
-        else
-        {
-            secondPoint = QPointF(firstPoint.x() + 100, firstPoint.y());
-        }
+    AxisType               getAxisType() const;
+    void                   setAxisType(AxisType type);
 
-        DrawLine(this, Axis(firstPoint, secondPoint), supportColor2, Qt::DashLine);
-    }
+    QString                getSuffix() const;
+    void                   setSuffix(const QString &value);
 
-    RefreshFlippedObjects(firstPoint, secondPoint);
-}
+    QVector<quint32>       getObjects() const;
 
-//---------------------------------------------------------------------------------------------------------------------
-void VisToolFlippingByAxis::SetOriginPointId(quint32 value)
-{
-    object1Id = value;
-}
+    virtual void           ShowDialog(bool click) Q_DECL_OVERRIDE;
 
-//---------------------------------------------------------------------------------------------------------------------
-void VisToolFlippingByAxis::SetAxisType(AxisType value)
-{
-    m_axisType = value;
-}
+public slots:
+    virtual void           ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void           SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+
+private slots:
+    void                   suffixChanged();
+
+protected:
+    virtual void           CheckState() Q_DECL_FINAL;
+    virtual void           ShowVisualization() Q_DECL_OVERRIDE;
+
+    /** @brief SaveData Put dialog data in local variables */
+    virtual void           SaveData() Q_DECL_OVERRIDE;
+
+private slots:
+    void                   pointChanged();
+
+private:
+    Q_DISABLE_COPY(DialogMirrorByAxis)
+
+    Ui::DialogMirrorByAxis *ui;
+    QList<quint32>          objects;
+    bool                    stage1;
+    QString                 m_suffix;
+
+    static void             fillComboBoxAxisType(QComboBox *box);
+};
+
+#endif // DIALOGMIRRORBYAXIS_H

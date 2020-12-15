@@ -106,6 +106,7 @@ protected:
     QAction *actionDockWidgetToolOptions;
     QAction *actionDockWidgetGroups;
     QAction *actionDockWidgetLayouts;
+    QAction *actionDockWidgetToolbox;
 
     bool isNoScaling;
     bool isLayoutStale;

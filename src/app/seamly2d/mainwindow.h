@@ -269,7 +269,7 @@ private:
 
     bool                              patternReadOnly;
 
-    QPointer<DialogVariables>        dialogTable;
+    QPointer<DialogVariables>         dialogTable;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<DialogHistory>           dialogHistory;
 
@@ -289,6 +289,7 @@ private:
     bool                              isToolOptionsDockVisible;
     bool                              isGroupsDockVisible;
     bool                              isLayoutsDockVisible;
+    bool                              isToolboxDockVisible;
 
     /** @brief drawMode true if we current draw scene. */
     bool                              drawMode;

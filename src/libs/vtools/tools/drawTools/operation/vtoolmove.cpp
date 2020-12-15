@@ -105,7 +105,7 @@ void VToolMove::setDialog()
     SCASSERT(not dialogTool.isNull())
     dialogTool->SetAngle(formulaAngle);
     dialogTool->SetLength(formulaLength);
-    dialogTool->SetSuffix(suffix);
+    dialogTool->setSuffix(suffix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -117,8 +117,8 @@ VToolMove *VToolMove::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsSce
     SCASSERT(not dialogTool.isNull())
     QString angle = dialogTool->GetAngle();
     QString length = dialogTool->GetLength();
-    const QString suffix = dialogTool->GetSuffix();
-    const QVector<quint32> source = dialogTool->GetObjects();
+    const QString suffix = dialogTool->getSuffix();
+    const QVector<quint32> source = dialogTool->getObjects();
     VToolMove* operation = Create(0, angle, length, suffix, source, QVector<DestinationItem>(), scene, doc, data,
                                     Document::FullParse, Source::FromGui);
     if (operation != nullptr)
@@ -163,26 +163,26 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    dest.append(CreatePoint(id, idObject, calcAngle, calcLength, suffix, data));
+                    dest.append(createPoint(id, idObject, calcAngle, calcLength, suffix, data));
                     break;
                 case GOType::Arc:
-                    dest.append(CreateArc<VArc>(id, idObject, calcAngle, calcLength, suffix, data));
+                    dest.append(createArc<VArc>(id, idObject, calcAngle, calcLength, suffix, data));
                     break;
                 case GOType::EllipticalArc:
-                    dest.append(CreateArc<VEllipticalArc>(id, idObject, calcAngle, calcLength, suffix, data));
+                    dest.append(createArc<VEllipticalArc>(id, idObject, calcAngle, calcLength, suffix, data));
                     break;
                 case GOType::Spline:
-                    dest.append(CreateCurve<VSpline>(id, idObject, calcAngle, calcLength, suffix, data));
+                    dest.append(createCurve<VSpline>(id, idObject, calcAngle, calcLength, suffix, data));
                     break;
                 case GOType::SplinePath:
-                    dest.append(CreateCurveWithSegments<VSplinePath>(id, idObject, calcAngle, calcLength, suffix,
+                    dest.append(createCurveWithSegments<VSplinePath>(id, idObject, calcAngle, calcLength, suffix,
                                                                      data));
                     break;
                 case GOType::CubicBezier:
-                    dest.append(CreateCurve<VCubicBezier>(id, idObject, calcAngle, calcLength, suffix, data));
+                    dest.append(createCurve<VCubicBezier>(id, idObject, calcAngle, calcLength, suffix, data));
                     break;
                 case GOType::CubicBezierPath:
-                    dest.append(CreateCurveWithSegments<VCubicBezierPath>(id, idObject, calcAngle, calcLength, suffix,
+                    dest.append(createCurveWithSegments<VCubicBezierPath>(id, idObject, calcAngle, calcLength, suffix,
                                                                           data));
                     break;
                 case GOType::Unknown:
@@ -206,27 +206,27 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    UpdatePoint(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id, dest.at(i).mx,
+                    updatePoint(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id, dest.at(i).mx,
                                 dest.at(i).my);
                     break;
                 case GOType::Arc:
-                    UpdateArc<VArc>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
+                    updateArc<VArc>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
                     break;
                 case GOType::EllipticalArc:
-                    UpdateArc<VEllipticalArc>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
+                    updateArc<VEllipticalArc>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Spline:
-                    UpdateCurve<VSpline>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
+                    updateCurve<VSpline>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
                     break;
                 case GOType::SplinePath:
-                    UpdateCurveWithSegments<VSplinePath>(id, idObject, calcAngle, calcLength, suffix, data,
+                    updateCurveWithSegments<VSplinePath>(id, idObject, calcAngle, calcLength, suffix, data,
                                                          dest.at(i).id);
                     break;
                 case GOType::CubicBezier:
-                    UpdateCurve<VCubicBezier>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
+                    updateCurve<VCubicBezier>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezierPath:
-                    UpdateCurveWithSegments<VCubicBezierPath>(id, idObject, calcAngle, calcLength, suffix, data,
+                    updateCurveWithSegments<VCubicBezierPath>(id, idObject, calcAngle, calcLength, suffix, data,
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:
@@ -246,7 +246,7 @@ QT_WARNING_POP
         VToolMove *tool = new VToolMove(doc, data, id, formulaAngle, formulaLength, suffix, source, dest,
                                             typeCreation);
         scene->addItem(tool);
-        InitOperationToolConnections(scene, tool);
+        initOperationToolConnections(scene, tool);
         VAbstractPattern::AddTool(id, tool);
         for (int i = 0; i < source.size(); ++i)
         {
@@ -315,7 +315,7 @@ void VToolMove::SetVisualization()
         VisToolMove *visual = qobject_cast<VisToolMove *>(vis);
         SCASSERT(visual != nullptr)
 
-        visual->SetObjects(source);
+        visual->setObjects(source);
         visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
         visual->SetLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->GetOsSeparator()));
         visual->RefreshGeometry();
@@ -332,7 +332,7 @@ void VToolMove::SaveDialog(QDomElement &domElement)
     doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
     QString length = dialogTool->GetLength();
     doc->SetAttribute(domElement, AttrLength, length);
-    doc->SetAttribute(domElement, AttrSuffix, dialogTool->GetSuffix());
+    doc->SetAttribute(domElement, AttrSuffix, dialogTool->getSuffix());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -384,7 +384,7 @@ VToolMove::VToolMove(VAbstractPattern *doc, VContainer *data, quint32 id,
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DestinationItem VToolMove::CreatePoint(quint32 idTool, quint32 idItem, qreal angle,
+DestinationItem VToolMove::createPoint(quint32 idTool, quint32 idItem, qreal angle,
                                          qreal length, const QString &suffix, VContainer *data)
 {
     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(idItem);
@@ -400,16 +400,16 @@ DestinationItem VToolMove::CreatePoint(quint32 idTool, quint32 idItem, qreal ang
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VToolMove::CreateArc(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
+DestinationItem VToolMove::createArc(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
                                        VContainer *data)
 {
-    const DestinationItem item = CreateItem<Item>(idTool, idItem, angle, length, suffix, data);
+    const DestinationItem item = createItem<Item>(idTool, idItem, angle, length, suffix, data);
     data->AddArc(data->GeometricObject<Item>(item.id), item.id);
     return item;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolMove::UpdatePoint(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
+void VToolMove::updatePoint(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
                               VContainer *data, quint32 id, qreal mx, qreal my)
 {
     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(idItem);
@@ -422,16 +422,16 @@ void VToolMove::UpdatePoint(quint32 idTool, quint32 idItem, qreal angle, qreal l
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VToolMove::UpdateArc(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
+void VToolMove::updateArc(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
                             VContainer *data, quint32 id)
 {
-    UpdateItem<Item>(idTool, idItem, angle, length, suffix, data, id);
+    updateItem<Item>(idTool, idItem, angle, length, suffix, data, id);
     data->AddArc(data->GeometricObject<Item>(id), id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VToolMove::CreateItem(quint32 idTool, quint32 idItem, qreal angle,
+DestinationItem VToolMove::createItem(quint32 idTool, quint32 idItem, qreal angle,
                                         qreal length, const QString &suffix, VContainer *data)
 {
     const QSharedPointer<Item> i = data->GeometricObject<Item>(idItem);
@@ -447,28 +447,28 @@ DestinationItem VToolMove::CreateItem(quint32 idTool, quint32 idItem, qreal angl
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VToolMove::CreateCurve(quint32 idTool, quint32 idItem, qreal angle, qreal length,
+DestinationItem VToolMove::createCurve(quint32 idTool, quint32 idItem, qreal angle, qreal length,
                                          const QString &suffix, VContainer *data)
 {
-    const DestinationItem item = CreateItem<Item>(idTool, idItem, angle, length, suffix, data);
+    const DestinationItem item = createItem<Item>(idTool, idItem, angle, length, suffix, data);
     data->AddSpline(data->GeometricObject<Item>(item.id), item.id);
     return item;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VToolMove::CreateCurveWithSegments(quint32 idTool, quint32 idItem, qreal angle,
+DestinationItem VToolMove::createCurveWithSegments(quint32 idTool, quint32 idItem, qreal angle,
                                                      qreal length, const QString &suffix,
                                                      VContainer *data)
 {
-    const DestinationItem item = CreateItem<Item>(idTool, idItem, angle, length, suffix, data);
+    const DestinationItem item = createItem<Item>(idTool, idItem, angle, length, suffix, data);
     data->AddCurveWithSegments(data->GeometricObject<Item>(item.id), item.id);
     return item;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VToolMove::UpdateItem(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
+void VToolMove::updateItem(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
                              VContainer *data, quint32 id)
 {
     const QSharedPointer<Item> i = data->GeometricObject<Item>(idItem);
@@ -479,18 +479,18 @@ void VToolMove::UpdateItem(quint32 idTool, quint32 idItem, qreal angle, qreal le
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VToolMove::UpdateCurve(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
+void VToolMove::updateCurve(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
                               VContainer *data, quint32 id)
 {
-    UpdateItem<Item>(idTool, idItem, angle, length, suffix, data, id);
+    updateItem<Item>(idTool, idItem, angle, length, suffix, data, id);
     data->AddSpline(data->GeometricObject<Item>(id), id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VToolMove::UpdateCurveWithSegments(quint32 idTool, quint32 idItem, qreal angle, qreal length,
+void VToolMove::updateCurveWithSegments(quint32 idTool, quint32 idItem, qreal angle, qreal length,
                                           const QString &suffix, VContainer *data, quint32 id)
 {
-    UpdateItem<Item>(idTool, idItem, angle, length, suffix, data, id);
+    updateItem<Item>(idTool, idItem, angle, length, suffix, data, id);
     data->AddCurveWithSegments(data->GeometricObject<Item>(id), id);
 }

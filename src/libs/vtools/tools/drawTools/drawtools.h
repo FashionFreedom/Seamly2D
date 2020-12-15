@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -83,8 +83,8 @@
 #include "toolpoint/toolsinglepoint/vtoolpointfromarcandtangent.h"
 #include "toolpoint/tooldoublepoint/vtooltruedarts.h"
 #include "operation/vtoolrotation.h"
-#include "operation/flipping/vtoolflippingbyline.h"
-#include "operation/flipping/vtoolflippingbyaxis.h"
+#include "operation/mirror/vtoolmirrorbyline.h"
+#include "operation/mirror/vtoolmirrorbyaxis.h"
 #include "operation/vtoolmove.h"
 
 #endif // DRAWTOOLS_H

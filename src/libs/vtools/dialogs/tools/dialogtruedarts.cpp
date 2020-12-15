@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -78,6 +78,8 @@ DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, 
       ch2(NULL_ID), flagName1(true), flagName2(true)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/true_darts.png"));
 
     ui->lineEditFirstNewDartPoint->setClearButtonEnabled(true);
     ui->lineEditSecondNewDartPoint->setClearButtonEnabled(true);
