@@ -95,7 +95,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Pattern created with Seamly2D v%1 (https://fashionfreedom.eu/).").arg(APP_VERSION_STR);
+    return QString("Pattern created with Seamly2D v%1 (https://seamly.net).").arg(APP_VERSION_STR);
 }
 }
 
