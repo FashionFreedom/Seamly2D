@@ -68,7 +68,7 @@ VAbstractMConverter::VAbstractMConverter(const QString &fileName)
 void VAbstractMConverter::AddRootComment()
 {
     const QString rootComment =
-            QStringLiteral("Measurements created with Seamly2D (https://fashionfreedom.eu/).");
+            QStringLiteral("Measurements created with Seamly2D (https://seamly.net).");
 
     QDomElement rootElement = this->documentElement();
     rootElement.insertBefore(createComment(rootComment), rootElement.firstChild());
