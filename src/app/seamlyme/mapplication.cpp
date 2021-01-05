@@ -512,8 +512,9 @@ VSeamlyMeSettings *MApplication::SeamlyMeSettings()
 //---------------------------------------------------------------------------------------------------------------------
 QString MApplication::diagramsPath() const
 {
-    const QString dPath = QStringLiteral("/diagrams.rcc");
-    QFileInfo file(QCoreApplication::applicationDirPath() + dPath);
+    const QString dPath = QStringLiteral("diagrams.rcc");
+    QDir appDirectory(QCoreApplication::applicationDirPath());
+    QFileInfo file(appDirectory.filePath(dPath));
     if (file.exists())
     {
         return file.absoluteFilePath();
