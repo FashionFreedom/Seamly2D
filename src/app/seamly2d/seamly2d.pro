@@ -467,19 +467,6 @@ win32 {
     copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
 }
 
-noRunPath{ # For enable run qmake with CONFIG+=noRunPath
-    # do nothing
-} else {
-    unix:!macx{
-        # suppress the default RPATH
-        # helps to run the program without Qt Creator
-        # see problem with path to libqmuparser and libpropertybrowser
-        QMAKE_LFLAGS_RPATH += $${LD_RUN_PATH}
-        QMAKE_LFLAGS_RPATH += $${LDFLAGS}
-        QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN\' -Wl,-rpath,$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -Wl,-rpath,$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -Wl,-rpath,$${QMAKE_LFLAGS_RPATH}"
-    }
-}
-
 # When the GNU linker sees a library, it discards all symbols that it doesn't need.
 # Dependent library go first.
 
