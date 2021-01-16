@@ -1944,8 +1944,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolEndLine(QGraphicsItem *item)
 
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("Base point:"), AttrBasePoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
@@ -1960,8 +1960,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolAlongLine(QGraphicsItem *item)
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
 }
 
@@ -1976,7 +1976,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolArc(QGraphicsItem *item)
     AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius(), AttrRadius);
     AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
     AddPropertyFormula(tr("Second angle:"), i->GetFormulaF2(), AttrAngle2);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -1991,7 +1991,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolArcWithLength(QGraphicsItem *it
     AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius(), AttrRadius);
     AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2006,8 +2006,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolBisector(QGraphicsItem *item)
     AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrFirstPoint);
     AddPropertyParentPointName(i->BasePointName(), tr("Second point:"), AttrBasePoint);
     AddPropertyParentPointName(i->ThirdPointName(), tr("Third point:"), AttrThirdPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
 }
 
@@ -2074,8 +2074,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolHeight(QGraphicsItem *item)
     AddPropertyParentPointName(i->BasePointName(), tr("Base point:"), AttrBasePoint);
     AddPropertyParentPointName(i->FirstLinePointName(), tr("First line point:"), AttrP1Line);
     AddPropertyParentPointName(i->SecondLinePointName(), tr("Second line point:"), AttrP2Line);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2089,8 +2089,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLine(QGraphicsItem *item)
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
     QMap<QString, QIcon> styles = LineStylesPics();
     styles.remove(LineTypeNone);
-    AddPropertyLineType(i, tr("Line type:"), styles);
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), styles);
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2118,8 +2118,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolNormal(QGraphicsItem *item)
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 
     VPE::VDoubleProperty* itemAngle = new VPE::VDoubleProperty(tr("Additional angle degrees:"));
     itemAngle->setValue(i->GetAngle());
@@ -2235,8 +2235,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolShoulderPoint(QGraphicsItem *it
     AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
     AddPropertyParentPointName(i->ShoulderPointName(), tr("Third point:"), AttrThirdPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
 }
 
@@ -2275,7 +2275,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSpline(QGraphicsItem *item)
     length2.setPostfix(UnitsToStr(qApp->patternUnit()));
     AddPropertyFormula(tr("C2: length:"), length2, AttrLength2);
 
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2291,7 +2291,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezier(QGraphicsItem *item
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrPoint2);
     AddPropertyParentPointName(i->ThirdPointName(), tr("Third point:"), AttrPoint3);
     AddPropertyParentPointName(i->ForthPointName(), tr("Fourth point:"), AttrPoint4);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2303,7 +2303,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSplinePath(QGraphicsItem *item)
     formView->setTitle(tr("Tool for path curve"));
 
     AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2315,7 +2315,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezierPath(QGraphicsItem *
     formView->setTitle(tr("Tool cubic bezier curve"));
 
     AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2344,8 +2344,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLineIntersectAxis(QGraphicsItem
     AddPropertyParentPointName(i->BasePointName(), tr("Axis point:"), AttrBasePoint);
     AddPropertyParentPointName(i->FirstLinePoint(), tr("First line point:"), AttrFirstPoint);
     AddPropertyParentPointName(i->SecondLinePoint(), tr("Second line point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
 
@@ -2359,8 +2359,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCurveIntersectAxis(QGraphicsIte
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("Axis point:"), AttrBasePoint);
     AddPropertyParentPointName(i->CurveName(), tr("Curve:"), AttrCurve);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
 
