@@ -89,7 +89,7 @@ extern const QString APP_VERSION_STR;
 //#define VER_ORIGINALFILENAME_STR  "seamly2d.exe" // Defined in program
 //#define VER_PRODUCTNAME_STR       "Seamly2D" // Defined in program
 
-#define VER_COMPANYDOMAIN_STR       "https://fashionfreedom.eu"
+#define VER_COMPANYDOMAIN_STR       "https://seamly.net"
 
 QString compilerString();
 QString buildCompatibilityString();
