@@ -319,8 +319,7 @@ int VAbstractTool::ConfirmDeletion()
 //---------------------------------------------------------------------------------------------------------------------
 const QStringList VAbstractTool::Colors()
 {
-    const QStringList colors = QStringList() << ColorByGroup
-                                             << ColorBlack          << ColorGreen           << ColorBlue
+    const QStringList colors = QStringList() << ColorBlack          << ColorGreen           << ColorBlue
                                              << ColorDarkRed        << ColorDarkGreen       << ColorDarkBlue
                                              << ColorYellow         << ColorLightSalmon     << ColorGoldenRod
                                              << ColorOrange         << ColorDeepPink        << ColorViolet
@@ -340,60 +339,57 @@ QMap<QString, QString> VAbstractTool::ColorsList()
         QString name;
         switch (i)
         {
-            case 0: // ByGroup
-                name = tr("By Group");
+            case 1: // ColorGreen
+                name = tr("Green");
                 break;
-            case 2: // ColorGreen
-                name = tr("green");
+            case 2: // ColorBlue
+                name = tr("Blue");
                 break;
-            case 3: // ColorBlue
-                name = tr("blue");
+            case 3: // ColorDarkRed
+                name = tr("Dark Red");
                 break;
-            case 4: // ColorDarkRed
-                name = tr("dark red");
+            case 4: // ColorDarkGreen
+                name = tr("Dark Green");
                 break;
-            case 5: // ColorDarkGreen
-                name = tr("dark green");
+            case 5: // ColorDarkBlue
+                name = tr("Dark Blue");
                 break;
-            case 6: // ColorDarkBlue
-                name = tr("dark blue");
+            case 6: // ColorYellow
+                name = tr("Yellow");
                 break;
-            case 7: // ColorYellow
-                name = tr("yellow");
+            case 7: // ColorLightSalmon
+                name = tr("Light Salmon");
                 break;
-            case 8: // ColorLightSalmon
-                name = tr("light salmon");
+            case 8: // ColorGoldenRod
+                name = tr("Goldenrod");
                 break;
-            case 9: // ColorGoldenRod
-                name = tr("goldenrod");
+            case 9: // ColorOrange
+                name = tr("Orange");
                 break;
-            case 10: // ColorOrange
-                name = tr("orange");
+            case 10: // ColorDeepPink
+                name = tr("Deep Pink");
                 break;
-            case 11: // ColorDeepPink
-                name = tr("deep pink");
+            case 11: // ColorViolet
+                name = tr("Violet");
                 break;
-            case 12: // ColorViolet
-                name = tr("violet");
+            case 12: // ColorDarkViolet
+                name = tr("Dark Violet");
                 break;
-            case 13: // ColorDarkViolet
-                name = tr("dark violet");
+            case 13: // ColorMediumSeaGreen
+                name = tr("Medium Sea Green");
                 break;
-            case 14: // ColorMediumSeaGreen
-                name = tr("medium sea green");
+            case 14: // ColorLime
+                name = tr("Lime");
                 break;
-            case 15: // ColorLime
-                name = tr("lime");
+            case 15: // ColorDeepSkyBlue
+                name = tr("Deep Sky Blue");
                 break;
-            case 16: // ColorDeepSkyBlue
-                name = tr("deep sky blue");
+            case 16: // ColorCornFlowerBlue
+                name = tr("Corn Flower Blue");
                 break;
-            case 17: // ColorCornFlowerBlue
-                name = tr("corn flower blue");
-                break;
-            case 1: // ColorBlack
+            case 0: // ColorBlack
             default:
-                name = tr("black");
+                name = tr("Black");
                 break;
         }
 
