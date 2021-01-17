@@ -76,7 +76,6 @@ int main(int argc, char *argv[])
 
 #ifndef Q_OS_MAC // supports natively
     InitHighDpiScaling(argc, argv);
-    InitMacLayerToTop(arc, argv)
 #endif //Q_OS_MAC
 
     VApplication app(argc, argv);

@@ -589,6 +589,7 @@ bool IsOptionSet(int argc, char *argv[], const char *option)
     }
     return false;
 }
+
 //---------------------------------------------------------------------------------------------------------------------
 void InitHighDpiScaling(int argc, char *argv[])
 {
@@ -610,28 +611,7 @@ void InitHighDpiScaling(int argc, char *argv[])
 #endif
     }
 }
-//---------------------------------------------------------------------------------------------------------------------
-void InitMacLayerToTop(int argc, char *argv[])
-{
-  #ifdef Q_OS_MAC
-    {
-      // Fix for QT issue on MacOS Big Sur
-      //    https://forum.seamly.net/t/mac-os11-big-sur-eats-ram-and-hangs-cpu-with-qt-apps/4860
-      //    https://bugreports.qt.io/browse/QTBUG-87014
-      // Enables layer backing for Big Sur
-      // by setting QT_MAC_WANTS_LAYER=1,
-      #include <QOperatingSystemVersion>
-      static inline void
-      macos_enable_layer_backing(void)
-      QOperatingSystemVersion os_ver = QOperatingSystemVersion::current();
-      if (qgetenv("QT_MAC_WANTS_LAYER").isEmpty()) {
-          qputenv("QT_MAC_WANTS_LAYER", "1");
-        }
-      #endif
-    }
-  #endif
-}
-//---------------------------------------------------------------------------------------------------------------------
+
 const QString strSlit      = QStringLiteral("slit");
 const QString strTNotch    = QStringLiteral("tNotch");
 const QString strUNotch    = QStringLiteral("uNotch");
