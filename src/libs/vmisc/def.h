@@ -332,6 +332,10 @@ extern const QString LONG_OPTION_NO_HDPI_SCALING;
 bool IsOptionSet(int argc, char *argv[], const char *option);
 void InitHighDpiScaling(int argc, char *argv[]);
 
+extern const QString LONG_OPTION_SET_MAC_LAYER_TO_TOP;
+bool IsOptionSet(int argc, char *argv[], const char *option);
+void InitMacLayerToTop(int argc, char *argv[]);
+
 // functions
 extern const QString degTorad_F;
 extern const QString radTodeg_F;
