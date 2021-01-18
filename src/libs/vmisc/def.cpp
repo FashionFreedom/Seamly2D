@@ -612,30 +612,6 @@ void InitHighDpiScaling(int argc, char *argv[])
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
-void InitMacLayerToTop(int argc, char *argv[])
-{
-  #ifdef Q_OS_MAC
-    {
-      // Fix QT issue on MacOS version 11.0 "Big Sur"
-      //    https://forum.seamly.net/t/mac-os11-big-sur-eats-ram-and-hangs-cpu-with-qt-apps/4860
-      //    https://bugreports.qt.io/browse/QTBUG-87014
-      // Enables layer backing for Big Sur
-      // Prevents 100% CPU & RAM utilization
-      // More info about Qt apps running on MacOS here:
-      //    https://doc.qt.io/qt-6/macos-issues.html
-      #include <QOperatingSystemVersion>
-      QOperatingSystemVersion os_ver = QOperatingSystemVersion::current();
-      int major_ver = os_ver.majorVersion();
-      int minor_ver = os_ver.minorVersion();
-      if (major_ver == 11 && minor_ver >= 0) {
-         if (qgetenv("QT_MAC_WANTS_LAYER").isEmpty()) {
-             qputenv("QT_MAC_WANTS_LAYER", "1");
-         }
-      }
-    }
-  #endif
-}
-//---------------------------------------------------------------------------------------------------------------------
 
 const QString strSlit      = QStringLiteral("slit");
 const QString strTNotch    = QStringLiteral("tNotch");
