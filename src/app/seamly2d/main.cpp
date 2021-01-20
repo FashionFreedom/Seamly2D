@@ -73,38 +73,15 @@ int main(int argc, char *argv[])
 
     // Need to internally move a node inside a piece main path
     qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode");
-//------------------------------------------------------------------------
-#include <QOperatingSystemVersion>
-QOperatingSystemVersion os_ver = QOperatingSystemVersion::current();
-int macos_major_ver = os_ver.majorVersion();
-int macos_minor_ver = os_ver.minorVersion();
-bool macos_affected = (macos_major_ver == 10 && macos_minor_ver >= 16 || \
-                      macos_major_ver >= 11);
-bool qtver_affected = (QT_VERSION >= QT_VERSION_CHECK(5, 12, 0) && \
-                      QT_VERSION < QT_VERSION_CHECK(5, 12, 11) || \
-                      QT_VERSION >= QT_VERSION_CHECK(5, 15, 0) && \
-                      QT_VERSION < QT_VERSION_CHECK(5, 15, 3) || \
-                      QT_VERSION < QT_VERSION_CHECK(6, 0, 0));
-bool qtenvvar_empty = qgetenv("QT_MAC_WANTS_LAYER").isEmpty();
-int macosver_qtver_qtenvvar_affected = (macos_affected && qtver_affected && qtenvvar_empty);
 
+//------------------------------------------------------------------------
+// On macOS, correct WebView / QtQuick compositing and stacking requires running
+// Qt in layer-backed mode, which again requires rendering on the Gui thread.
+qWarning("Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic");
+qputenv("QT_MAC_WANTS_LAYER", "1");
+//------------------------------------------------------------------------
 #ifndef Q_OS_MAC // supports natively
     InitHighDpiScaling(argc, argv);
-    // handle Qt issue with MacOS Big Sur https://bugreports.qt.io/browse/QTBUG-87014
-    // Based on Wireshark's fix
-    //    https://gitlab.com/wireshark/wireshark/-/commit/2428285d44939ad0054df329a9c2a109ed37c877
-    // TODO - move this to def.cpp and call as a function
-    // As of Jan 17, 2021 the QTBUG-87014 is...
-    // ...in https://github.com/qt/qtbase/blob/5.12/src/plugins/platforms/cocoa/qnsview_drawing.mm
-    // ...not in https://github.com/qt/qtbase/blob/5.12.10/src/plugins/platforms/cocoa/qnsview_drawing.mm
-    // ...in https://github.com/qt/qtbase/blob/5.15/src/plugins/platforms/cocoa/qnsview_drawing.mm
-    // ...not in https://github.com/qt/qtbase/blob/5.15.2/src/plugins/platforms/cocoa/qnsview_drawing.mm
-    // ...not in https://github.com/qt/qtbase/blob/6.0/src/plugins/platforms/cocoa/qnsview_drawing.mm
-    // ...not in https://github.com/qt/qtbase/blob/6.0.0/src/plugins/platforms/cocoa/qnsview_drawing.mm
-    // We'll assume that it will be fixed in 5.12.11, 5.15.3, and 6.0.1.
-    #if defined(macosver_qtver_qtenvvar_affected)
-        qputenv("QT_MAC_WANTS_LAYER", QByteArray("1"));
-    #endif
 #endif //Q_OS_MAC
 
     VApplication app(argc, argv);
