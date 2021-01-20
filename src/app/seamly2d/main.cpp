@@ -74,12 +74,13 @@ int main(int argc, char *argv[])
     // Need to internally move a node inside a piece main path
     qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode");
 
-//------------------------------------------------------------------------
-// On macOS, correct WebView / QtQuick compositing and stacking requires running
-// Qt in layer-backed mode, which again requires rendering on the Gui thread.
-qWarning("Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic");
-qputenv("QT_MAC_WANTS_LAYER", "1");
-//------------------------------------------------------------------------
+    //------------------------------------------------------------------------
+    // On macOS, correct WebView / QtQuick compositing and stacking requires running
+    // Qt in layer-backed mode, which again requires rendering on the Gui thread.
+    qWarning("Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic");
+    qputenv("QT_MAC_WANTS_LAYER", "1");
+    //------------------------------------------------------------------------
+
 #ifndef Q_OS_MAC // supports natively
     InitHighDpiScaling(argc, argv);
 #endif //Q_OS_MAC

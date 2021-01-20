@@ -3567,7 +3567,7 @@ bool MainWindow::Save()
  */
 void MainWindow::Open()
 {
-    qCDebug(vMainWindow, "Openning new file.");
+    qCDebug(vMainWindow, "Opening new file.");
     const QString filter(tr("Pattern files (*.val)"));
     //Get list last open files
     const QStringList files = qApp->Seamly2DSettings()->GetRecentFileList();
@@ -5583,7 +5583,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         return false;
     }
 
-    qCDebug(vMainWindow, "Loking file");
+    qCDebug(vMainWindow, "Locking file");
     VlpCreateLock(lock, fileName);
 
     if (lock->IsLocked())
