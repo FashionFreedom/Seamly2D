@@ -3422,7 +3422,7 @@ bool MainWindow::SaveAs()
         if (not tmp.IsLocked())
         {
             qCCritical(vMainWindow, "%s",
-                       qUtf8Printable(tr("Failed to lock. This file already opened in another window.")));
+                       qUtf8Printable(tr("Failed to lock. This file is already opened in another window.")));
             RemoveTempDir();
             return false;
         }
@@ -3467,8 +3467,8 @@ bool MainWindow::SaveAs()
         qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(fileName));
         qCDebug(vMainWindow, "Error type: %d", lock->GetLockError());
         qCCritical(vMainWindow, "%s",
-                   qUtf8Printable(tr("Failed to lock. This file already opened in another window. Expect "
-                                     "collisions when run 2 copies of the program.")));
+                   qUtf8Printable(tr("Failed to lock. This file is already opened in another window. Expect "
+                                     "collisions when running 2 copies of the program.")));
     }
 
     RemoveTempDir();
@@ -3506,7 +3506,7 @@ bool MainWindow::Save()
             QMessageBox messageBox(this);
             messageBox.setIcon(QMessageBox::Question);
             messageBox.setText(tr("The document has no write permissions."));
-            messageBox.setInformativeText("Do you want to change the premissions?");
+            messageBox.setInformativeText("Do you want to change the permissions?");
             messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
             messageBox.setDefaultButton(QMessageBox::Yes);
 
@@ -3998,7 +3998,7 @@ void MainWindow::New()
         }
         else
         {
-            qCDebug(vMainWindow, "Creating new pattern piece was canceled.");
+            qCDebug(vMainWindow, "Creating new Pattern Piece was canceled.");
             return;
         }
 
@@ -5016,7 +5016,7 @@ void MainWindow::CreateActions()
     connect(ui->newDraft_Action, &QAction::triggered, this, [this]()
     {
         qCDebug(vMainWindow, "New Pattern Piece.");
-        QString patternPieceName = tr("Pattern piece %1").arg(comboBoxDraws->count()+1);
+        QString patternPieceName = tr("Pattern Piece %1").arg(comboBoxDraws->count()+1);
         qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
 
         qCDebug(vMainWindow, "Pattern Piece count %d", comboBoxDraws->count());
@@ -5498,7 +5498,7 @@ QString MainWindow::PatternPieceName(const QString &text)
         messageBox.setIcon(QMessageBox::Warning);
         messageBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
         messageBox.setDefaultButton(QMessageBox::Retry);
-        messageBox.setText(tr("The action can't be completed because the draft block name already exists."));
+        messageBox.setText(tr("The action can't be completed because the Draft Block name already exists."));
         int boxResult = messageBox.exec();
 
         switch (boxResult)
@@ -5859,8 +5859,8 @@ void MainWindow::exportPiecesAs()
 
     if (detailsInLayout.count() == 0)
     {
-        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have enough details to export. Please, "
-                                                              "include at least one detail in layout."),
+        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have enough Detail Pieces to export. Please, "
+                                                              "include at least one Detail Piece in layout."),
                                  QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
@@ -5872,8 +5872,8 @@ void MainWindow::exportPiecesAs()
     }
     catch (VException &e)
     {
-        QMessageBox::warning(this, tr("Export details"),
-                             tr("Can't export details.") + QLatin1String(" \n") + e.ErrorMessage(),
+        QMessageBox::warning(this, tr("Export Details"),
+                             tr("Can't export Details.") + QLatin1String(" \n") + e.ErrorMessage(),
                              QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
