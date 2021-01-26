@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     //------------------------------------------------------------------------
     // On macOS, correct WebView / QtQuick compositing and stacking requires running
     // Qt in layer-backed mode, which again requires rendering on the Gui thread.
-    qWarning("Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic");
+    qWarning("Seamly2D: Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic");
     qputenv("QT_MAC_WANTS_LAYER", "1");
     //------------------------------------------------------------------------
 
