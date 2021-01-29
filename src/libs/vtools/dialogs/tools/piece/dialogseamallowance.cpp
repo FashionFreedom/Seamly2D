@@ -706,8 +706,23 @@ void DialogSeamAllowance::ListChanged()
 void DialogSeamAllowance::EnableSeamAllowance(bool enable)
 {
     uiPathsTab->builtIn_CheckBox->setEnabled(enable);
-    uiPathsTab->groupBoxAutomatic->setEnabled(enable);
-    uiPathsTab->groupBoxCustom->setEnabled(enable);
+
+    if (not enable)
+    {
+        uiPathsTab->groupBoxAutomatic->setEnabled(enable);
+        uiPathsTab->groupBoxCustom->setEnabled(enable);
+    }
+    else
+    {
+        uiPathsTab->builtIn_CheckBox->toggled(uiPathsTab->builtIn_CheckBox->isChecked());
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSeamAllowance::enableBuiltIn(bool enable)
+{
+    uiPathsTab->groupBoxAutomatic->setEnabled(not enable);
+    uiPathsTab->groupBoxCustom->setEnabled(not enable);
 
     if (enable)
     {
@@ -2582,6 +2597,7 @@ void DialogSeamAllowance::InitSeamAllowanceTab()
     connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogSeamAllowance::EvalWidthAfter);
 
     connect(uiPathsTab->seams_CheckBox, &QCheckBox::toggled, this, &DialogSeamAllowance::EnableSeamAllowance);
+    connect(uiPathsTab->builtIn_CheckBox, &QCheckBox::toggled, this, &DialogSeamAllowance::enableBuiltIn);
 
     // init the default seam allowance, convert the value if app unit is different than pattern unit
     m_saWidth = UnitConvertor(qApp->Settings()->GetDefaultSeamAllowance(),
