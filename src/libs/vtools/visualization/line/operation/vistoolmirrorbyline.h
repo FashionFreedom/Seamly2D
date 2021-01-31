@@ -49,52 +49,32 @@
  **
  *************************************************************************/
 
-#ifndef VTOOLFLIPPINGBYLINE_H
-#define VTOOLFLIPPINGBYLINE_H
+#ifndef VISTOOLMIRRORBYLINE_H
+#define VISTOOLMIRRORBYLINE_H
 
 #include <QtGlobal>
 
-#include "vabstractflipping.h"
+#include "visoperation.h"
 
-class VToolFlippingByLine : public VAbstractFlipping
+class VisToolMirrorByLine : public VisOperation
 {
     Q_OBJECT
 public:
-    virtual ~VToolFlippingByLine() Q_DECL_EQ_DEFAULT;
-    virtual void setDialog() Q_DECL_OVERRIDE;
-    static VToolFlippingByLine* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
-                                       VAbstractPattern *doc, VContainer *data);
-    static VToolFlippingByLine* Create(const quint32 _id, quint32 firstLinePointId, quint32 secondLinePointId,
-                                       const QString &suffix, const QVector<quint32> &source,
-                                       const QVector<DestinationItem> &destination, VMainGraphicsScene *scene,
-                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                       const Source &typeCreation);
+    explicit VisToolMirrorByLine(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual ~VisToolMirrorByLine() = default;
 
-    static const QString ToolType;
+    virtual void   RefreshGeometry() Q_DECL_OVERRIDE;
+
+    void setFirstLinePointId(quint32 value);
+    void setSecondLinePointId(quint32 value);
 
     virtual int type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Tool::FlippingByLine)};
-
-    QString FirstLinePointName() const;
-    QString SecondLinePointName() const;
-
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
-protected:
-    virtual void SetVisualization() Q_DECL_OVERRIDE;
-    virtual void SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
+    enum { Type = UserType + static_cast<int>(Vis::ToolMirrorByLine)};
 private:
-    Q_DISABLE_COPY(VToolFlippingByLine)
-
-    quint32 m_firstLinePointId;
-    quint32 m_secondLinePointId;
-
-    VToolFlippingByLine(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 firstLinePointId,
-                        quint32 secondLinePointId, const QString &suffix, const QVector<quint32> &source,
-                        const QVector<DestinationItem> &destination, const Source &typeCreation,
-                        QGraphicsItem *parent = nullptr);
+    Q_DISABLE_COPY(VisToolMirrorByLine)
+    quint32         object2Id;
+    VScaledEllipse *point1;
+    VScaledEllipse *point2;
 };
 
-#endif // VTOOLFLIPPINGBYLINE_H
+#endif // VISTOOLMIRRORBYLINE_H

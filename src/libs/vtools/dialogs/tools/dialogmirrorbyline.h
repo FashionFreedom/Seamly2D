@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,9 +23,9 @@
 
  ************************************************************************
  **
- **  @file   dialogflippingbyaxis.h
+ **  @file   dialogmirrorbyline.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   16 9, 2016
+ **  @date   12 9, 2016
  **
  **  @brief
  **  @copyright
@@ -49,8 +49,8 @@
  **
  *************************************************************************/
 
-#ifndef DIALOGFLIPPINGBYAXIS_H
-#define DIALOGFLIPPINGBYAXIS_H
+#ifndef DIALOGMIRRORBYLINE_H
+#define DIALOGMIRRORBYLINE_H
 
 #include "dialogtool.h"
 
@@ -66,59 +66,57 @@
 
 namespace Ui
 {
-    class DialogFlippingByAxis;
+    class DialogMirrorByLine;
 }
 
-class DialogFlippingByAxis : public DialogTool
+class DialogMirrorByLine : public DialogTool
 {
     Q_OBJECT
 
 public:
-    explicit DialogFlippingByAxis(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    virtual ~DialogFlippingByAxis();
+    explicit               DialogMirrorByLine(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+    virtual               ~DialogMirrorByLine();
 
-    quint32 GetOriginPointId() const;
-    void    SetOriginPointId(quint32 value);
+    quint32                getFirstLinePointId() const;
+    void                   setFirstLinePointId(quint32 value);
 
-    AxisType GetAxisType() const;
-    void     SetAxisType(AxisType type);
+    quint32                getSecondLinePointId() const;
+    void                   setSecondLinePointId(quint32 value);
 
-    QString GetSuffix() const;
-    void    SetSuffix(const QString &value);
+    QString                getSuffix() const;
+    void                   setSuffix(const QString &value);
 
-    QVector<quint32> GetObjects() const;
+    QVector<quint32>       getObjects() const;
 
-    virtual void ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void           ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void           ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void           SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
 
 private slots:
-    void SuffixChanged();
+    void                   suffixChanged();
 
 protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+    virtual void           CheckState() Q_DECL_FINAL;
+    virtual void           ShowVisualization() Q_DECL_OVERRIDE;
 
     /** @brief SaveData Put dialog data in local variables */
-    virtual void SaveData() Q_DECL_OVERRIDE;
+    virtual void           SaveData() Q_DECL_OVERRIDE;
 
 private slots:
-    void PointChanged();
+    void                   pointChanged();
 
 private:
-    Q_DISABLE_COPY(DialogFlippingByAxis)
+    Q_DISABLE_COPY(DialogMirrorByLine)
 
-    Ui::DialogFlippingByAxis *ui;
+    Ui::DialogMirrorByLine *ui;
 
-    QList<quint32> objects;
+    QList<quint32>          objects;
 
-    bool stage1;
+    bool                    stage1;
 
-    QString m_suffix;
-
-    static void FillComboBoxAxisType(QComboBox *box);
+    QString                 m_suffix;
 };
 
-#endif // DIALOGFLIPPINGBYAXIS_H
+#endif // DIALOGMIRRORBYLINE_H

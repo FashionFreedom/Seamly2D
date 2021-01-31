@@ -4,7 +4,7 @@
 #define MyAppName "Seamly2D"
 #define MyAppVersion GetFileVersion('Seamly2D\seamly2d.exe')
 #define MyAppPublisher "Susan Spencer"
-#define MyAppURL "https://fashionfreedom.eu/"
+#define MyAppURL "https://seamly.net"
 #define MyAppExeName "seamly2d.exe"
 #define MyAppCopyright "(C) 2013-2017 Seamly2D project"
 #define MyDateTimeString GetDateTimeString('yyyymmddhhnnss', '', '');
@@ -89,7 +89,7 @@ Name: "fileassoc3"; Description: "{cm:CreateFileAssocVst}"; GroupDescription: "{
 Name: "full_english"; Description: "System language"; Languages: english;
 ;Name: "full_armenian"; Description: "System language"; Languages: armenian;
 Name: "full_brazilianportuguese"; Description: "System language"; Languages: brazilianportuguese;
-;Name: "full_catalan"; Description: "System language"; Languages: catalan; 
+;Name: "full_catalan"; Description: "System language"; Languages: catalan;
 ;Name: "full_corsican"; Description: "System language"; Languages: corsican;
 Name: "full_czech"; Description: "System language"; Languages: czech;
 ;Name: "full_danish"; Description: "System language"; Languages: danish;
@@ -125,7 +125,7 @@ Name: "lang_files\english\in"; Description: "English (India)"; Types: full full_
 Name: "lang_files\english\ca"; Description: "English (Canada)"; Types: full full_english custom; Flags: disablenouninstallwarning
 ;Name: "lang_files\armenian"; Description: "Armenian"; Types: full full_armenian custom; Flags: disablenouninstallwarning
 Name: "lang_files\brazilianportuguese"; Description: "Brazilian portuguese"; Types: full full_brazilianportuguese custom; Flags: disablenouninstallwarning
-;Name: "lang_files\catalan"; Description: "Catalan"; Types: full full_catalan custom; Flags: disablenouninstallwarning 
+;Name: "lang_files\catalan"; Description: "Catalan"; Types: full full_catalan custom; Flags: disablenouninstallwarning
 ;Name: "lang_files\corsican"; Description: "Corsican"; Types: full full_orsican custom; Flags: disablenouninstallwarning
 Name: "lang_files\czech"; Description: "Czech"; Types: full full_czech custom; Flags: disablenouninstallwarning
 ;Name: "lang_files\danish"; Description: "Danish"; Types: full full_danish custom; Flags: disablenouninstallwarning
@@ -182,10 +182,10 @@ Source: ".\Seamly2D\translations\*_nl_NL.qm"; DestDir: "{app}\translations"; Fla
 Source: ".\Seamly2D\translations\*_id_ID.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\indonesian
 Source: ".\Seamly2D\translations\*_es_ES.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\spanish
 Source: ".\Seamly2D\translations\*_fi_FI.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\finnish
-Source: ".\Seamly2D\translations\*_fi.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\finnish        
-Source: ".\Seamly2D\translations\*_ro_RO.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\romanian         
-Source: ".\Seamly2D\translations\*_zh_CN.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\chinese         
-Source: ".\Seamly2D\translations\*_pt_BR.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\brazilianportuguese         
+Source: ".\Seamly2D\translations\*_fi.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\finnish
+Source: ".\Seamly2D\translations\*_ro_RO.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\romanian
+Source: ".\Seamly2D\translations\*_zh_CN.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\chinese
+Source: ".\Seamly2D\translations\*_pt_BR.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\brazilianportuguese
 Source: ".\Seamly2D\translations\*_el_GR.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\greek
 ; Additional languages provided by Qt
 Source: ".\Seamly2D\translations\*_sk.qm"; DestDir: "{app}\translations"; Flags: ignoreversion
@@ -216,9 +216,9 @@ Source: ".\Seamly2D\tables\*"; DestDir: "{app}\tables"; Flags: ignoreversion rec
 Source: ".\Seamly2D\labels\*"; DestDir: "{app}\labels"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: ".\Seamly2D\*.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\Seamly2D\*.dll"; DestDir: "{app}"
-Source: ".\Seamly2D\*.txt"; DestDir: "{app}"; Flags: ignoreversion 
-Source: ".\Seamly2D\*.rcc"; DestDir: "{app}"; Flags: ignoreversion 
-Source: ".\Seamly2D\*.ico"; DestDir: "{app}"; Flags: ignoreversion 
+Source: ".\Seamly2D\*.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\Seamly2D\*.rcc"; DestDir: "{app}"; Flags: ignoreversion
+Source: ".\Seamly2D\*.ico"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\Seamly2D\*.dbg"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
 Source: ".\Seamly2D\*.yes"; DestDir: "{app}"; Flags: ignoreversion skipifsourcedoesntexist
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
@@ -329,7 +329,7 @@ end;
 // Finish when the executable is closed or the user cancels the process.
 
 //  -> ProgramExeName: Name of executable
-//  -> Message : User message to prompt to close 
+//  -> Message : User message to prompt to close
 //  <- True if the program was closed (or was not running),
 //     False if the user clicked on the Cancel button and didn't close the program
 
@@ -344,7 +344,7 @@ begin
   // Check if the program is running or if the user has pressed the cancel button
   while FindApp( ProgramExeName ) and ( ButtonPressed <> IDCANCEL ) do
   begin
-    ButtonPressed := MsgBox( message , mbError, MB_RETRYCANCEL );    
+    ButtonPressed := MsgBox( message , mbError, MB_RETRYCANCEL );
   end;
 
   // Has the program been closed?
@@ -425,16 +425,16 @@ var
   else begin
     Result := True;
     CreateMutex(installer_mutex_name);
-  
+
     ProgramRunningOnInstallMessage := ExpandConstant('{cm:WarnRunningOnUnInstall1}') + #13 + #13 + ExpandConstant('{cm:WarnRunningOnUnInstall2}');
     InstallationCanceledMessage := ExpandConstant('{cm:WarnCancelInstall}');
-  
+
     Result := PromptUntilProgramClosedOrInstallationCanceled( ProgramExeName1, ProgramName1 + ProgramRunningOnInstallMessage)
     If Result Then
     begin
       Result := PromptUntilProgramClosedOrInstallationCanceled( ProgramExeName2, ProgramName2 + ProgramRunningOnInstallMessage)
     end;
-  
+
     if Not Result then
     begin
       MsgBox( InstallationCanceledMessage, mbInformation, MB_OK );
@@ -474,6 +474,6 @@ var
     if not Result then
     begin
       MsgBox( UninstallationCanceledMessage, mbInformation, MB_OK );
-    end;  
+    end;
   end;
 end;

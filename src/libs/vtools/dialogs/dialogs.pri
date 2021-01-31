@@ -38,8 +38,8 @@ HEADERS += \
     $$PWD/tools/dialogcubicbezierpath.h \
     $$PWD/tools/dialoggroup.h \
     $$PWD/tools/dialogrotation.h \
-    $$PWD/tools/dialogflippingbyline.h \
-    $$PWD/tools/dialogflippingbyaxis.h \
+    $$PWD/tools/dialogmirrorbyline.h \
+    $$PWD/tools/dialogmirrorbyaxis.h \
     $$PWD/tools/dialogmove.h \
     $$PWD/tools/dialogellipticalarc.h \
     $$PWD/tools/piece/dialogseamallowance.h \
@@ -84,8 +84,8 @@ SOURCES += \
     $$PWD/tools/dialogcubicbezierpath.cpp \
     $$PWD/tools/dialoggroup.cpp \
     $$PWD/tools/dialogrotation.cpp \
-    $$PWD/tools/dialogflippingbyline.cpp \
-    $$PWD/tools/dialogflippingbyaxis.cpp \
+    $$PWD/tools/dialogmirrorbyline.cpp \
+    $$PWD/tools/dialogmirrorbyaxis.cpp \
     $$PWD/tools/dialogmove.cpp \
     $$PWD/tools/dialogellipticalarc.cpp \
     $$PWD/tools/piece/dialogseamallowance.cpp \
@@ -129,8 +129,8 @@ FORMS += \
     $$PWD/tools/dialogcubicbezierpath.ui \
     $$PWD/tools/dialoggroup.ui \
     $$PWD/tools/dialogrotation.ui \
-    $$PWD/tools/dialogflippingbyline.ui \
-    $$PWD/tools/dialogflippingbyaxis.ui \
+    $$PWD/tools/dialogmirrorbyline.ui \
+    $$PWD/tools/dialogmirrorbyaxis.ui \
     $$PWD/tools/dialogmove.ui \
     $$PWD/tools/dialogellipticalarc.ui \
     $$PWD/tools/piece/dialogseamallowance.ui \

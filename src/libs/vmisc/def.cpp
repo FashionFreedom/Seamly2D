@@ -611,6 +611,7 @@ void InitHighDpiScaling(int argc, char *argv[])
 #endif
     }
 }
+//---------------------------------------------------------------------------------------------------------------------
 
 const QString strSlit      = QStringLiteral("slit");
 const QString strTNotch    = QStringLiteral("tNotch");

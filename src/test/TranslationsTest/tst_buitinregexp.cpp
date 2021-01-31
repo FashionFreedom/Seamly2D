@@ -143,7 +143,7 @@ void TST_BuitInRegExp::TestCheckUnderlineExists_data()
     QMap<QString, bool> data;
 
     data.insert(measurement_, true);
-    data.insert(increment_, true);
+    data.insert(variable_, true);
     data.insert(line_, true);
     data.insert(angleLine_, true);
     data.insert(arc_, true);

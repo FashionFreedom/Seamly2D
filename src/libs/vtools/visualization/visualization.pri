@@ -2,6 +2,8 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/line/operation/vistoolmirrorbyaxis.h \
+    $$PWD/line/operation/vistoolmirrorbyline.h \
     $$PWD/visualization.h \
     $$PWD/line/visline.h \
     $$PWD/line/vistoolline.h \
@@ -23,7 +25,6 @@ HEADERS += \
     $$PWD/line/vistoolpointfromcircleandtangent.h \
     $$PWD/line/vistoolpointfromarcandtangent.h \
     $$PWD/line/operation/vistoolrotation.h \
-    $$PWD/line/operation/vistoolflippingbyline.h \
     $$PWD/path/vispath.h \
     $$PWD/path/vistoolarc.h \
     $$PWD/path/vistoolcutarc.h \
@@ -36,7 +37,6 @@ HEADERS += \
     $$PWD/path/vistoolcubicbezier.h \
     $$PWD/path/vistoolcubicbezierpath.h \
     $$PWD/line/operation/visoperation.h \
-    $$PWD/line/operation/vistoolflippingbyaxis.h \
     $$PWD/line/operation/vistoolmove.h \
     $$PWD/path/vistoolellipticalarc.h \
     $$PWD/path/vistoolpiece.h \
@@ -45,6 +45,8 @@ HEADERS += \
     $$PWD/path/vispiecepins.h
 
 SOURCES += \
+    $$PWD/line/operation/vistoolmirrorbyaxis.cpp \
+    $$PWD/line/operation/vistoolmirrorbyline.cpp \
     $$PWD/visualization.cpp \
     $$PWD/line/visline.cpp \
     $$PWD/line/vistoolline.cpp \
@@ -66,7 +68,6 @@ SOURCES += \
     $$PWD/line/vistoolpointfromcircleandtangent.cpp \
     $$PWD/line/vistoolpointfromarcandtangent.cpp \
     $$PWD/line/operation/vistoolrotation.cpp \
-    $$PWD/line/operation/vistoolflippingbyline.cpp \
     $$PWD/path/vispath.cpp \
     $$PWD/path/vistoolarc.cpp \
     $$PWD/path/vistoolcutarc.cpp \
@@ -79,7 +80,6 @@ SOURCES += \
     $$PWD/path/vistoolcubicbezier.cpp \
     $$PWD/path/vistoolcubicbezierpath.cpp \
     $$PWD/line/operation/visoperation.cpp \
-    $$PWD/line/operation/vistoolflippingbyaxis.cpp \
     $$PWD/line/operation/vistoolmove.cpp \
     $$PWD/path/vistoolellipticalarc.cpp \
     $$PWD/path/vistoolpiece.cpp \

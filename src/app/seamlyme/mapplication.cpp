@@ -75,6 +75,7 @@
 #include <QGridLayout>
 #include <QSpacerItem>
 #include <QThread>
+#include <QStandardPaths>
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
@@ -511,30 +512,17 @@ VSeamlyMeSettings *MApplication::SeamlyMeSettings()
 //---------------------------------------------------------------------------------------------------------------------
 QString MApplication::diagramsPath() const
 {
-    const QString dPath = QStringLiteral("/diagrams.rcc");
-#ifdef Q_OS_WIN
-    return QCoreApplication::applicationDirPath() + dPath;
-#elif defined(Q_OS_MAC)
-    QFileInfo fileBundle(QCoreApplication::applicationDirPath() + QStringLiteral("/../Resources") + dPath);
-    if (fileBundle.exists())
+    const QString dPath = QStringLiteral("diagrams.rcc");
+    QDir appDirectory(QCoreApplication::applicationDirPath());
+    QFileInfo file(appDirectory.filePath(dPath));
+    if (file.exists())
     {
-        return fileBundle.absoluteFilePath();
+        return file.absoluteFilePath();
     }
     else
     {
-        QFileInfo file(QCoreApplication::applicationDirPath() + dPath);
-        if (file.exists())
-        {
-            return file.absoluteFilePath();
-        }
-        else
-        {
-            return QStringLiteral("/usr/share/seamly2d") + dPath;
-        }
+        return QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
     }
-#else // Unix
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + dPath;
-#endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------

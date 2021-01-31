@@ -99,7 +99,7 @@ public slots:
     void         DeployFormulaTextEdit();
     virtual void EvalFormula() Q_DECL_OVERRIDE;
     void         ValChanged(int row);
-    void         PutHere();
+    void         insertVariable();
     void         PutVal(QTableWidgetItem * item);
 
     void         Measurements();
@@ -140,7 +140,9 @@ private:
     void ShowMeasurements(const QMap<QString, QSharedPointer<VMeasurement> > &var);
     void ShowFunctions();
 
-    void SetDescription(const QString &name, qreal value, const QString &unit, const QString &description);
+    void setDescription(const QString &name, qreal value, const QString &unit,
+                        const QString &type, const QString &description);
+    void clearFormula();
 };
 
 

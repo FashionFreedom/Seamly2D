@@ -209,7 +209,7 @@ extern const QString ColorWhite;
 #define ELARC_ "ElArc_"
 
 extern const QString measurement_;
-extern const QString increment_;
+extern const QString variable_;
 extern const QString line_;
 extern const QString angleLine_;
 extern const QString arc_;

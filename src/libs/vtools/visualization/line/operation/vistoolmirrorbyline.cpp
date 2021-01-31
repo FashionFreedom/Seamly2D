@@ -25,7 +25,7 @@
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   16 9, 2016
+ **  @date   12 9, 2016
  **
  **  @brief
  **  @copyright
@@ -49,54 +49,60 @@
  **
  *************************************************************************/
 
-#ifndef VTOOLFLIPPINGBYAXIS_H
-#define VTOOLFLIPPINGBYAXIS_H
+#include "vistoolmirrorbyline.h"
+#include "../vgeometry/vpointf.h"
 
-#include <QtGlobal>
-
-#include "vabstractflipping.h"
-
-class VToolFlippingByAxis : public VAbstractFlipping
+//---------------------------------------------------------------------------------------------------------------------
+VisToolMirrorByLine::VisToolMirrorByLine(const VContainer *data, QGraphicsItem *parent)
+    : VisOperation(data, parent),
+      object2Id(NULL_ID),
+      point1(nullptr),
+      point2(nullptr)
 {
-    Q_OBJECT
-public:
-    virtual ~VToolFlippingByAxis() Q_DECL_EQ_DEFAULT;
-    virtual void setDialog() Q_DECL_OVERRIDE;
-    static VToolFlippingByAxis* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
-                                       VAbstractPattern *doc, VContainer *data);
-    static VToolFlippingByAxis* Create(const quint32 _id, quint32 originPointId, AxisType axisType,
-                                       const QString &suffix, const QVector<quint32> &source,
-                                       const QVector<DestinationItem> &destination, VMainGraphicsScene *scene,
-                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                       const Source &typeCreation);
+    point1 = InitPoint(supportColor2, this);
+    point2 = InitPoint(supportColor2, this);
+}
 
-    static const QString ToolType;
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolMirrorByLine::RefreshGeometry()
+{
+    if (objects.isEmpty())
+    {
+        return;
+    }
 
-    virtual int type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Tool::FlippingByAxis)};
+    QPointF firstPoint;
+    QPointF secondPoint;
 
-    AxisType GetAxisType() const;
-    void     SetAxisType(AxisType value);
+    if (object1Id != NULL_ID)
+    {
+        firstPoint = static_cast<QPointF>(*Visualization::data->GeometricObject<VPointF>(object1Id));
+        DrawPoint(point1, firstPoint, supportColor2);
 
-    QString OriginPointName() const;
+        if (object2Id == NULL_ID)
+        {
+            secondPoint = Visualization::scenePos;
+        }
+        else
+        {
+            secondPoint = static_cast<QPointF>(*Visualization::data->GeometricObject<VPointF>(object2Id));
+            DrawPoint(point2, secondPoint, supportColor2);
+        }
 
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
-protected:
-    virtual void SetVisualization() Q_DECL_OVERRIDE;
-    virtual void SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-private:
-    Q_DISABLE_COPY(VToolFlippingByAxis)
+        DrawLine(this, QLineF(firstPoint, secondPoint), supportColor2, Qt::DashLine);
+    }
 
-    quint32  m_originPointId;
-    AxisType m_axisType;
+    refreshMirroredObjects(firstPoint, secondPoint);
+}
 
-    VToolFlippingByAxis(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 originPointId,
-                        AxisType axisType, const QString &suffix, const QVector<quint32> &source,
-                        const QVector<DestinationItem> &destination, const Source &typeCreation,
-                        QGraphicsItem *parent = nullptr);
-};
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolMirrorByLine::setFirstLinePointId(quint32 value)
+{
+    object1Id = value;
+}
 
-#endif // VTOOLFLIPPINGBYAXIS_H
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolMirrorByLine::setSecondLinePointId(quint32 value)
+{
+    object2Id = value;
+}

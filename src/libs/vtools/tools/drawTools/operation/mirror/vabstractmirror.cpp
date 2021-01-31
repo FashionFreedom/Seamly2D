@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -49,7 +49,7 @@
  **
  *************************************************************************/
 
-#include "vabstractflipping.h"
+#include "vabstractmirror.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/varc.h"
 #include "../vgeometry/vellipticalarc.h"
@@ -61,7 +61,7 @@
 #include "../vgeometry/vsplinepath.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VAbstractFlipping::VAbstractFlipping(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
+VAbstractMirror::VAbstractMirror(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
                                      const QVector<quint32> &source, const QVector<DestinationItem> &destination,
                                      QGraphicsItem *parent)
     : VAbstractOperation(doc, data, id, suffix, source, destination, parent)
@@ -69,7 +69,7 @@ VAbstractFlipping::VAbstractFlipping(VAbstractPattern *doc, VContainer *data, qu
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractFlipping::CreateDestination(Source typeCreation, quint32 &id, QVector<DestinationItem> &dest,
+void VAbstractMirror::createDestination(Source typeCreation, quint32 &id, QVector<DestinationItem> &dest,
                                           const QVector<quint32> &source, const QPointF &fPoint, const QPointF &sPoint,
                                           const QString &suffix, VAbstractPattern *doc, VContainer *data,
                                           const Document &parse)
@@ -93,25 +93,25 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    dest.append(CreatePoint(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createPoint(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::Arc:
-                    dest.append(CreateArc<VArc>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createArc<VArc>(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::EllipticalArc:
-                    dest.append(CreateArc<VEllipticalArc>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createArc<VEllipticalArc>(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::Spline:
-                    dest.append(CreateCurve<VSpline>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurve<VSpline>(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::SplinePath:
-                    dest.append(CreateCurveWithSegments<VSplinePath>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurveWithSegments<VSplinePath>(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::CubicBezier:
-                    dest.append(CreateCurve<VCubicBezier>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurve<VCubicBezier>(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::CubicBezierPath:
-                    dest.append(CreateCurveWithSegments<VCubicBezierPath>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurveWithSegments<VCubicBezierPath>(id, idObject, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::Unknown:
                     break;
@@ -134,26 +134,26 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    UpdatePoint(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id, dest.at(i).mx,
+                    updatePoint(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id, dest.at(i).mx,
                                 dest.at(i).my);
                     break;
                 case GOType::Arc:
-                    UpdateArc<VArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateArc<VArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::EllipticalArc:
-                    UpdateArc<VEllipticalArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateArc<VEllipticalArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Spline:
-                    UpdateCurve<VSpline>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateCurve<VSpline>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::SplinePath:
-                    UpdateCurveWithSegments<VSplinePath>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateCurveWithSegments<VSplinePath>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezier:
-                    UpdateCurve<VCubicBezier>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateCurve<VCubicBezier>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezierPath:
-                    UpdateCurveWithSegments<VCubicBezierPath>(id, idObject, fPoint, sPoint, suffix, data,
+                    updateCurveWithSegments<VCubicBezierPath>(id, idObject, fPoint, sPoint, suffix, data,
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:
@@ -169,7 +169,7 @@ QT_WARNING_POP
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DestinationItem VAbstractFlipping::CreatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+DestinationItem VAbstractMirror::createPoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                                const QPointF &secondPoint, const QString &suffix, VContainer *data)
 {
     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(idItem);
@@ -185,16 +185,16 @@ DestinationItem VAbstractFlipping::CreatePoint(quint32 idTool, quint32 idItem, c
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VAbstractFlipping::CreateArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+DestinationItem VAbstractMirror::createArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                              const QPointF &secondPoint, const QString &suffix, VContainer *data)
 {
-    const DestinationItem item = CreateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data);
+    const DestinationItem item = createItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data);
     data->AddArc(data->GeometricObject<Item>(item.id), item.id);
     return item;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractFlipping::UpdatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+void VAbstractMirror::updatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                     const QPointF &secondPoint, const QString &suffix, VContainer *data, quint32 id,
                                     qreal mx, qreal my)
 {
@@ -208,9 +208,9 @@ void VAbstractFlipping::UpdatePoint(quint32 idTool, quint32 idItem, const QPoint
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VAbstractFlipping::UpdateArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
+void VAbstractMirror::updateArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
                                   const QString &suffix, VContainer *data, quint32 id)
 {
-    UpdateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data, id);
+    updateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data, id);
     data->AddArc(data->GeometricObject<Item>(id), id);
 }

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -49,34 +49,57 @@
  **
  *************************************************************************/
 
-#ifndef VISTOOLFLIPPINGBYAXIS_H
-#define VISTOOLFLIPPINGBYAXIS_H
+#include "vistoolmirrorbyaxis.h"
+#include "../vgeometry/vpointf.h"
 
-#include <QtGlobal>
-
-#include "visoperation.h"
-#include "../ifc/xml/vabstractpattern.h"
-
-class VisToolFlippingByAxis : public VisOperation
+//---------------------------------------------------------------------------------------------------------------------
+VisToolMirrorByAxis::VisToolMirrorByAxis(const VContainer *data, QGraphicsItem *parent)
+    : VisOperation(data, parent)
+    , m_axisType(AxisType::VerticalAxis)
+    , point1(nullptr)
 {
-    Q_OBJECT
-public:
-    explicit VisToolFlippingByAxis(const VContainer *data, QGraphicsItem *parent = nullptr);
-    virtual ~VisToolFlippingByAxis() = default;
+    point1 = InitPoint(supportColor2, this);
+}
 
-    virtual void RefreshGeometry() Q_DECL_OVERRIDE;
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolMirrorByAxis::RefreshGeometry()
+{
+    if (objects.isEmpty())
+    {
+        return;
+    }
 
-    void SetOriginPointId(quint32 value);
-    void SetAxisType(AxisType value);
+    QPointF firstPoint;
+    QPointF secondPoint;
 
-    virtual int type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Vis::ToolFlippingByAxis)};
-private:
-    Q_DISABLE_COPY(VisToolFlippingByAxis)
+    if (object1Id != NULL_ID)
+    {
+        firstPoint = static_cast<QPointF>(*Visualization::data->GeometricObject<VPointF>(object1Id));
+        DrawPoint(point1, firstPoint, supportColor2);
 
-    AxisType m_axisType;
+        if (m_axisType == AxisType::VerticalAxis)
+        {
+            secondPoint = QPointF(firstPoint.x(), firstPoint.y() + 100);
+        }
+        else
+        {
+            secondPoint = QPointF(firstPoint.x() + 100, firstPoint.y());
+        }
 
-    VScaledEllipse *point1;
-};
+        DrawLine(this, Axis(firstPoint, secondPoint), supportColor2, Qt::DashLine);
+    }
 
-#endif // VISTOOLFLIPPINGBYAXIS_H
+    refreshMirroredObjects(firstPoint, secondPoint);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolMirrorByAxis::setOriginPointId(quint32 value)
+{
+    object1Id = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VisToolMirrorByAxis::setAxisType(AxisType value)
+{
+    m_axisType = value;
+}

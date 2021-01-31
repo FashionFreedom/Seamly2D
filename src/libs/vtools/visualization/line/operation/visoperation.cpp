@@ -79,7 +79,7 @@ VisOperation::~VisOperation()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisOperation::SetObjects(QVector<quint32> objects)
+void VisOperation::setObjects(QVector<quint32> objects)
 {
     this->objects = objects;
 }
@@ -122,7 +122,7 @@ VCurvePathItem *VisOperation::GetCurve(quint32 i, const QColor &color)
 //---------------------------------------------------------------------------------------------------------------------
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
-void VisOperation::RefreshFlippedObjects(const QPointF &firstPoint, const QPointF &secondPoint)
+void VisOperation::refreshMirroredObjects(const QPointF &firstPoint, const QPointF &secondPoint)
 {
     int iPoint = -1;
     int iCurve = -1;
@@ -155,32 +155,32 @@ void VisOperation::RefreshFlippedObjects(const QPointF &firstPoint, const QPoint
             }
             case GOType::Arc:
             {
-                iCurve = AddFlippedCurve<VArc>(firstPoint, secondPoint, id, iCurve);
+                iCurve = addFlippedCurve<VArc>(firstPoint, secondPoint, id, iCurve);
                 break;
             }
             case GOType::EllipticalArc:
             {
-                iCurve = AddFlippedCurve<VEllipticalArc>(firstPoint, secondPoint, id, iCurve);
+                iCurve = addFlippedCurve<VEllipticalArc>(firstPoint, secondPoint, id, iCurve);
                 break;
             }
             case GOType::Spline:
             {
-                iCurve = AddFlippedCurve<VSpline>(firstPoint, secondPoint, id, iCurve);
+                iCurve = addFlippedCurve<VSpline>(firstPoint, secondPoint, id, iCurve);
                 break;
             }
             case GOType::SplinePath:
             {
-                iCurve = AddFlippedCurve<VSplinePath>(firstPoint, secondPoint, id, iCurve);
+                iCurve = addFlippedCurve<VSplinePath>(firstPoint, secondPoint, id, iCurve);
                 break;
             }
             case GOType::CubicBezier:
             {
-                iCurve = AddFlippedCurve<VCubicBezier>(firstPoint, secondPoint, id, iCurve);
+                iCurve = addFlippedCurve<VCubicBezier>(firstPoint, secondPoint, id, iCurve);
                 break;
             }
             case GOType::CubicBezierPath:
             {
-                iCurve = AddFlippedCurve<VCubicBezierPath>(firstPoint, secondPoint, id, iCurve);
+                iCurve = addFlippedCurve<VCubicBezierPath>(firstPoint, secondPoint, id, iCurve);
                 break;
             }
             case GOType::Unknown:

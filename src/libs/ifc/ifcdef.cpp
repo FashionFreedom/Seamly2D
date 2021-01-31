@@ -276,7 +276,7 @@ const QString ColorWhite            = QStringLiteral("white");
 
 //variables
 const QString measurement_         = QStringLiteral("M_");
-const QString increment_           = QStringLiteral("Increment_");
+const QString variable_           = QStringLiteral("Variable_");
 const QString line_                = QStringLiteral("Line_");
 const QString angleLine_           = QStringLiteral("AngleLine_");
 const QString spl_                 = QStringLiteral(SPL_);
@@ -308,7 +308,7 @@ const QString currentLength        = QStringLiteral("CurrentLength");
 const QString currentSeamAllowance = QStringLiteral("CurrentSeamAllowance");
 
 const QStringList builInVariables = QStringList() << measurement_
-                                                  << increment_
+                                                  << variable_
                                                   << line_
                                                   << angleLine_
                                                   << arc_

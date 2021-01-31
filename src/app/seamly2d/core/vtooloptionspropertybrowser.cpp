@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -200,11 +200,11 @@ void VToolOptionsPropertyBrowser::ShowItemOptions(QGraphicsItem *item)
         case VToolRotation::Type:
             ShowOptionsToolRotation(item);
             break;
-        case VToolFlippingByLine::Type:
-            ShowOptionsToolFlippingByLine(item);
+        case VToolMirrorByLine::Type:
+            ShowOptionsToolMirrorByLine(item);
             break;
-        case VToolFlippingByAxis::Type:
-            ShowOptionsToolFlippingByAxis(item);
+        case VToolMirrorByAxis::Type:
+            ShowOptionsToolMirrorByAxis(item);
             break;
         case VToolMove::Type:
             ShowOptionsToolMove(item);
@@ -324,11 +324,11 @@ void VToolOptionsPropertyBrowser::UpdateOptions()
         case VToolRotation::Type:
             UpdateOptionsToolRotation();
             break;
-        case VToolFlippingByLine::Type:
-            UpdateOptionsToolFlippingByLine();
+        case VToolMirrorByLine::Type:
+            UpdateOptionsToolMirrorByLine();
             break;
-        case VToolFlippingByAxis::Type:
-            UpdateOptionsToolFlippingByAxis();
+        case VToolMirrorByAxis::Type:
+            UpdateOptionsToolMirrorByAxis();
             break;
         case VToolMove::Type:
             UpdateOptionsToolMove();
@@ -465,11 +465,11 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         case VToolRotation::Type:
             ChangeDataToolRotation(prop);
             break;
-        case VToolFlippingByLine::Type:
-            ChangeDataToolFlippingByLine(prop);
+        case VToolMirrorByLine::Type:
+            ChangeDataToolMirrorByLine(prop);
             break;
-        case VToolFlippingByAxis::Type:
-            ChangeDataToolFlippingByAxis(prop);
+        case VToolMirrorByAxis::Type:
+            ChangeDataToolMirrorByAxis(prop);
             break;
         case VToolMove::Type:
             ChangeDataToolMove(prop);
@@ -620,7 +620,7 @@ void VToolOptionsPropertyBrowser::AddPropertyAxisType(Tool *i, const QString &pr
 {
     auto itemProperty = new VPE::VEnumProperty(propertyName);
     itemProperty->setLiterals(QStringList()<< tr("Vertical axis") << tr("Horizontal axis"));
-    itemProperty->setValue(static_cast<int>(i->GetAxisType())-1);
+    itemProperty->setValue(static_cast<int>(i->getAxisType())-1);
     AddProperty(itemProperty, AttrAxisType);
 }
 
@@ -782,7 +782,7 @@ void VToolOptionsPropertyBrowser::SetOperationSuffix(const QString &suffix)
             }
         }
 
-        item->SetSuffix(suffix);
+        item->setSuffix(suffix);
     }
     else
     {
@@ -858,11 +858,11 @@ void VToolOptionsPropertyBrowser::SetHCrossCurvesPoint(const QVariant &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetAxisType(const QVariant &value)
+void VToolOptionsPropertyBrowser::setAxisType(const QVariant &value)
 {
     if (auto i = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        i->SetAxisType(GetCrossPoint<AxisType>(value));
+        i->setAxisType(GetCrossPoint<AxisType>(value));
     }
     else
     {
@@ -1832,7 +1832,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolMove(VPE::VProperty *property)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolFlippingByLine(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::ChangeDataToolMirrorByLine(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
@@ -1842,7 +1842,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolFlippingByLine(VPE::VProperty *p
     switch (PropertiesList().indexOf(id))
     {
         case 38: // AttrSuffix
-            SetOperationSuffix<VToolFlippingByLine>(value.toString());
+            SetOperationSuffix<VToolMirrorByLine>(value.toString());
             break;
         case 6: // AttrFirstPoint
         case 7: // AttrSecondPoint
@@ -1854,7 +1854,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolFlippingByLine(VPE::VProperty *p
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolFlippingByAxis(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::ChangeDataToolMirrorByAxis(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
@@ -1866,11 +1866,11 @@ void VToolOptionsPropertyBrowser::ChangeDataToolFlippingByAxis(VPE::VProperty *p
         case 39: // AttrAxisType
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetAxisType<VToolFlippingByAxis>(value);
+            setAxisType<VToolMirrorByAxis>(value);
             break;
         }
         case 38: // AttrSuffix
-            SetOperationSuffix<VToolFlippingByAxis>(value.toString());
+            SetOperationSuffix<VToolMirrorByAxis>(value.toString());
             break;
         case 11: // AttrCenter (read only)
             break;
@@ -1944,8 +1944,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolEndLine(QGraphicsItem *item)
 
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("Base point:"), AttrBasePoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
@@ -1960,8 +1960,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolAlongLine(QGraphicsItem *item)
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
 }
 
@@ -1976,7 +1976,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolArc(QGraphicsItem *item)
     AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius(), AttrRadius);
     AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
     AddPropertyFormula(tr("Second angle:"), i->GetFormulaF2(), AttrAngle2);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -1991,7 +1991,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolArcWithLength(QGraphicsItem *it
     AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius(), AttrRadius);
     AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2006,8 +2006,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolBisector(QGraphicsItem *item)
     AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrFirstPoint);
     AddPropertyParentPointName(i->BasePointName(), tr("Second point:"), AttrBasePoint);
     AddPropertyParentPointName(i->ThirdPointName(), tr("Third point:"), AttrThirdPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
 }
 
@@ -2074,8 +2074,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolHeight(QGraphicsItem *item)
     AddPropertyParentPointName(i->BasePointName(), tr("Base point:"), AttrBasePoint);
     AddPropertyParentPointName(i->FirstLinePointName(), tr("First line point:"), AttrP1Line);
     AddPropertyParentPointName(i->SecondLinePointName(), tr("Second line point:"), AttrP2Line);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2089,8 +2089,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLine(QGraphicsItem *item)
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
     QMap<QString, QIcon> styles = LineStylesPics();
     styles.remove(LineTypeNone);
-    AddPropertyLineType(i, tr("Line type:"), styles);
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), styles);
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2118,8 +2118,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolNormal(QGraphicsItem *item)
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 
     VPE::VDoubleProperty* itemAngle = new VPE::VDoubleProperty(tr("Additional angle degrees:"));
     itemAngle->setValue(i->GetAngle());
@@ -2235,8 +2235,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolShoulderPoint(QGraphicsItem *it
     AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
     AddPropertyParentPointName(i->ShoulderPointName(), tr("Third point:"), AttrThirdPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
 }
 
@@ -2275,7 +2275,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSpline(QGraphicsItem *item)
     length2.setPostfix(UnitsToStr(qApp->patternUnit()));
     AddPropertyFormula(tr("C2: length:"), length2, AttrLength2);
 
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2291,7 +2291,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezier(QGraphicsItem *item
     AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrPoint2);
     AddPropertyParentPointName(i->ThirdPointName(), tr("Third point:"), AttrPoint3);
     AddPropertyParentPointName(i->ForthPointName(), tr("Fourth point:"), AttrPoint4);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2303,7 +2303,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSplinePath(QGraphicsItem *item)
     formView->setTitle(tr("Tool for path curve"));
 
     AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2315,7 +2315,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezierPath(QGraphicsItem *
     formView->setTitle(tr("Tool cubic bezier curve"));
 
     AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyCurvePenStyle(i, tr("Pen style:"), CurvePenStylesPics());
+    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
     AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
 }
 
@@ -2344,8 +2344,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLineIntersectAxis(QGraphicsItem
     AddPropertyParentPointName(i->BasePointName(), tr("Axis point:"), AttrBasePoint);
     AddPropertyParentPointName(i->FirstLinePoint(), tr("First line point:"), AttrFirstPoint);
     AddPropertyParentPointName(i->SecondLinePoint(), tr("Second line point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
 
@@ -2359,8 +2359,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCurveIntersectAxis(QGraphicsIte
     AddPropertyObjectName(i, tr("Point label:"));
     AddPropertyParentPointName(i->BasePointName(), tr("Axis point:"), AttrBasePoint);
     AddPropertyParentPointName(i->CurveName(), tr("Curve:"), AttrCurve);
-    AddPropertyLineType(i, tr("Line type:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Line color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
 
@@ -2369,10 +2369,10 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolRotation(QGraphicsItem *item)
 {
     VToolRotation *i = qgraphicsitem_cast<VToolRotation *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Tool rotation"));
+    formView->setTitle(tr("Rotation"));
 
+    AddPropertyParentPointName(i->getOriginPointName(), tr("Rotation point:"), AttrCenter);
     AddPropertyOperationSuffix(i, tr("Suffix:"));
-    AddPropertyParentPointName(i->OriginPointName(), tr("Origin point:"), AttrCenter);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
 }
 
@@ -2381,7 +2381,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolMove(QGraphicsItem *item)
 {
     VToolMove *i = qgraphicsitem_cast<VToolMove *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Tool move"));
+    formView->setTitle(tr("Move"));
 
     AddPropertyOperationSuffix(i, tr("Suffix:"));
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
@@ -2389,27 +2389,28 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolMove(QGraphicsItem *item)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolFlippingByLine(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::ShowOptionsToolMirrorByLine(QGraphicsItem *item)
 {
-    VToolFlippingByLine *i = qgraphicsitem_cast<VToolFlippingByLine *>(item);
+    VToolMirrorByLine *i = qgraphicsitem_cast<VToolMirrorByLine *>(item);
     i->ShowVisualization(true);
     formView->setTitle(tr("Mirror by Line"));
 
+    AddPropertyParentPointName(i->firstLinePointName(), tr("First line point:"), AttrFirstPoint);
+    AddPropertyParentPointName(i->secondLinePointName(), tr("Second line point:"), AttrSecondPoint);
     AddPropertyOperationSuffix(i, tr("Suffix:"));
-    AddPropertyParentPointName(i->FirstLinePointName(), tr("First line point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondLinePointName(), tr("Second line point:"), AttrSecondPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolFlippingByAxis(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::ShowOptionsToolMirrorByAxis(QGraphicsItem *item)
 {
-    VToolFlippingByAxis *i = qgraphicsitem_cast<VToolFlippingByAxis *>(item);
+    VToolMirrorByAxis *i = qgraphicsitem_cast<VToolMirrorByAxis *>(item);
     i->ShowVisualization(true);
     formView->setTitle(tr("Mirror by Axis"));
 
+    AddPropertyParentPointName(i->getOriginPointName(), tr("Axis point:"), AttrCenter);
     AddPropertyAxisType(i, tr("Axis type:"));
     AddPropertyOperationSuffix(i, tr("Suffix:"));
-    AddPropertyParentPointName(i->OriginPointName(), tr("Origin point:"), AttrCenter);
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3161,7 +3162,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolRotation()
     idToProperty[AttrAngle]->setValue(valueAngle);
 
     QVariant valueOriginPoint;
-    valueOriginPoint.setValue(i->OriginPointName());
+    valueOriginPoint.setValue(i->getOriginPointName());
     idToProperty[AttrCenter]->setValue(valueOriginPoint);
 }
 
@@ -3181,29 +3182,29 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolMove()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolFlippingByLine()
+void VToolOptionsPropertyBrowser::UpdateOptionsToolMirrorByLine()
 {
-    VToolFlippingByLine *i = qgraphicsitem_cast<VToolFlippingByLine *>(currentItem);
+    VToolMirrorByLine *i = qgraphicsitem_cast<VToolMirrorByLine *>(currentItem);
     idToProperty[AttrSuffix]->setValue(i->Suffix());
 
     QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstLinePointName());
+    valueFirstPoint.setValue(i->firstLinePointName());
     idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
 
     QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondLinePointName());
+    valueSecondPoint.setValue(i->secondLinePointName());
     idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolFlippingByAxis()
+void VToolOptionsPropertyBrowser::UpdateOptionsToolMirrorByAxis()
 {
-    VToolFlippingByAxis *i = qgraphicsitem_cast<VToolFlippingByAxis *>(currentItem);
-    idToProperty[AttrAxisType]->setValue(static_cast<int>(i->GetAxisType())-1);
+    VToolMirrorByAxis *i = qgraphicsitem_cast<VToolMirrorByAxis *>(currentItem);
+    idToProperty[AttrAxisType]->setValue(static_cast<int>(i->getAxisType())-1);
     idToProperty[AttrSuffix]->setValue(i->Suffix());
 
     QVariant valueOriginPoint;
-    valueOriginPoint.setValue(i->OriginPointName());
+    valueOriginPoint.setValue(i->getOriginPointName());
     idToProperty[AttrCenter]->setValue(valueOriginPoint);
 }
 

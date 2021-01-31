@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -81,6 +81,7 @@ class VAbstractOperation : public VDrawTool, public QGraphicsLineItem
     // Fix warning "Class implements the interface QGraphicsItem but does not list it
     // in Q_INTERFACES. qobject_cast to QGraphicsItem will not work!"
     Q_INTERFACES(QGraphicsItem)
+    
 public:
     virtual ~VAbstractOperation() Q_DECL_EQ_DEFAULT;
 
@@ -90,14 +91,15 @@ public:
 
     virtual QString getTagName() const Q_DECL_OVERRIDE;
 
-    QString Suffix() const;
-    void    SetSuffix(const QString &suffix);
+    QString      Suffix() const;
+    void         setSuffix(const QString &suffix);
 
     virtual void GroupVisibility(quint32 object, bool visible) Q_DECL_OVERRIDE;
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) Q_DECL_OVERRIDE;
 
-    static void ExtractData(const QDomElement &domElement, QVector<quint32> &source,
-                            QVector<DestinationItem> &destination);
+    static void  ExtractData(const QDomElement &domElement, QVector<quint32> &source,
+                             QVector<DestinationItem> &destination);
+
 public slots:
     virtual void FullUpdateFromFile() Q_DECL_OVERRIDE;
 
@@ -128,6 +130,7 @@ public slots:
     void         ObjectSelected(bool selected, quint32 objId);
     void         DeleteFromLabel();
     void         LabelChangePosition(const QPointF &pos, quint32 labelId);
+
 protected:
     QString suffix;
 
@@ -151,11 +154,13 @@ protected:
     void InitCurve(quint32 id, VContainer *data, GOType curveType, SceneObject sceneType);
 
     template <typename T>
-    static void InitOperationToolConnections(VMainGraphicsScene *scene, T *tool);
+    static void initOperationToolConnections(VMainGraphicsScene *scene, T *tool);
 
     void InitOperatedObjects();
+
 protected slots:
     void DoChangePosition(quint32 id, qreal mx, qreal my);
+
 private:
     Q_DISABLE_COPY(VAbstractOperation)
 
@@ -192,7 +197,7 @@ void VAbstractOperation::ShowToolVisualization(bool show)
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-void VAbstractOperation::InitOperationToolConnections(VMainGraphicsScene *scene, T *tool)
+void VAbstractOperation::initOperationToolConnections(VMainGraphicsScene *scene, T *tool)
 {
     SCASSERT(scene != nullptr)
     SCASSERT(tool != nullptr)

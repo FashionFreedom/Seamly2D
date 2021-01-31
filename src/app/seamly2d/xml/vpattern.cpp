@@ -95,7 +95,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Pattern created with Seamly2D v%1 (https://fashionfreedom.eu/).").arg(APP_VERSION_STR);
+    return QString("Pattern created with Seamly2D v%1 (https://seamly.net).").arg(APP_VERSION_STR);
 }
 }
 
@@ -2895,7 +2895,7 @@ void VPattern::ParseToolRotation(VMainGraphicsScene *scene, QDomElement &domElem
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParseToolFlippingByLine(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
+void VPattern::ParseToolMirrorByLine(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
 {
     SCASSERT(scene != nullptr)
     Q_ASSERT_X(domElement.isNull() == false, Q_FUNC_INFO, "domElement is null");
@@ -2913,19 +2913,19 @@ void VPattern::ParseToolFlippingByLine(VMainGraphicsScene *scene, QDomElement &d
         QVector<DestinationItem> destination;
         VAbstractOperation::ExtractData(domElement, source, destination);
 
-        VToolFlippingByLine::Create(id, p1, p2, suffix, source, destination, scene, this, data, parse,
+        VToolMirrorByLine::Create(id, p1, p2, suffix, source, destination, scene, this, data, parse,
                                     Source::FromFile);
     }
     catch (const VExceptionBadId &e)
     {
-        VExceptionObjectError excep(tr("Error creating or updating operation of flipping by line"), domElement);
+        VExceptionObjectError excep(tr("Error creating or updating operation of mirror by line"), domElement);
         excep.AddMoreInformation(e.ErrorMessage());
         throw excep;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParseToolFlippingByAxis(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
+void VPattern::ParseToolMirrorByAxis(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse)
 {
     SCASSERT(scene != nullptr)
     Q_ASSERT_X(domElement.isNull() == false, Q_FUNC_INFO, "domElement is null");
@@ -2943,12 +2943,12 @@ void VPattern::ParseToolFlippingByAxis(VMainGraphicsScene *scene, QDomElement &d
         QVector<DestinationItem> destination;
         VAbstractOperation::ExtractData(domElement, source, destination);
 
-        VToolFlippingByAxis::Create(id, origin, axisType, suffix, source, destination, scene, this, data, parse,
+        VToolMirrorByAxis::Create(id, origin, axisType, suffix, source, destination, scene, this, data, parse,
                                     Source::FromFile);
     }
     catch (const VExceptionBadId &e)
     {
-        VExceptionObjectError excep(tr("Error creating or updating operation of flipping by axis"), domElement);
+        VExceptionObjectError excep(tr("Error creating or updating operation of mirror by axis"), domElement);
         excep.AddMoreInformation(e.ErrorMessage());
         throw excep;
     }
@@ -3286,8 +3286,8 @@ void VPattern::ParseOperationElement(VMainGraphicsScene *scene, QDomElement &dom
     Q_ASSERT_X(not type.isEmpty(), Q_FUNC_INFO, "type of operation is empty");
 
     const QStringList opers = QStringList() << VToolRotation::ToolType        /*0*/
-                                            << VToolFlippingByLine::ToolType  /*1*/
-                                            << VToolFlippingByAxis::ToolType  /*2*/
+                                            << VToolMirrorByLine::ToolType  /*1*/
+                                            << VToolMirrorByAxis::ToolType  /*2*/
                                             << VToolMove::ToolType;           /*3*/
 
     switch (opers.indexOf(type))
@@ -3295,11 +3295,11 @@ void VPattern::ParseOperationElement(VMainGraphicsScene *scene, QDomElement &dom
         case 0: //VToolRotation::ToolType
             ParseToolRotation(scene, domElement, parse);
             break;
-        case 1: //VToolFlippingByLine::ToolType
-            ParseToolFlippingByLine(scene, domElement, parse);
+        case 1: //VToolMirrorByLine::ToolType
+            ParseToolMirrorByLine(scene, domElement, parse);
             break;
-        case 2: //VToolFlippingByAxis::ToolType
-            ParseToolFlippingByAxis(scene, domElement, parse);
+        case 2: //VToolMirrorByAxis::ToolType
+            ParseToolMirrorByAxis(scene, domElement, parse);
             break;
         case 3: //VToolMove::ToolType
             ParseToolMove(scene, domElement, parse);
@@ -3953,8 +3953,8 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                     rec = ToolBoundingRect<VToolDoublePoint>(rec, tool.getId());
                     break;
                 case Tool::Rotation:
-                case Tool::FlippingByLine:
-                case Tool::FlippingByAxis:
+                case Tool::MirrorByLine:
+                case Tool::MirrorByAxis:
                 case Tool::Move:
                     rec = ToolBoundingRect<VAbstractOperation>(rec, tool.getId());
                     break;

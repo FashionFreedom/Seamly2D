@@ -159,6 +159,7 @@ MainWindow::MainWindow(QWidget *parent)
     , isToolOptionsDockVisible(true)
     , isGroupsDockVisible(true)
     , isLayoutsDockVisible(false)
+    , isToolboxDockVisible(true)
     , drawMode(true)
     , recentFileActs()
     , separatorAct(nullptr)
@@ -1354,7 +1355,7 @@ void MainWindow::handleGroupTool(bool checked)
     (
         checked,
         Tool::Group,
-        ":/cursor/group_plus_cursor.png",
+        ":/cursor/group_cursor.png",
         tooltip,
         &MainWindow::ClosedDialogGroup
     );
@@ -1408,13 +1409,13 @@ void MainWindow::handleMirrorByLineTool(bool checked)
                                "Press <b>ENTER</b> to confirm selection")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButtonWithApply<DialogFlippingByLine>
+    SetToolButtonWithApply<DialogMirrorByLine>
     (
         checked,
-        Tool::FlippingByLine,
-        ":/cursor/flipping_line_cursor.png",
-        tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolFlippingByLine>,
-        &MainWindow::ApplyDrawDialog<VToolFlippingByLine>
+        Tool::MirrorByLine,
+        ":/cursor/mirror_by_line_cursor.png",
+        tooltip, &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByLine>,
+        &MainWindow::ApplyDrawDialog<VToolMirrorByLine>
     );
 }
 
@@ -1427,14 +1428,14 @@ void MainWindow::handleMirrorByAxisTool(bool checked)
                                "Press <b>ENTER</b> to confirm selection")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButtonWithApply<DialogFlippingByAxis>
+    SetToolButtonWithApply<DialogMirrorByAxis>
     (
         checked,
-        Tool::FlippingByAxis,
-        ":/cursor/flipping_axis_cursor.png",
+        Tool::MirrorByAxis,
+        ":/cursor/mirror_by_axis_cursor.png",
         tooltip,
-        &MainWindow::ClosedDrawDialogWithApply<VToolFlippingByAxis>,
-        &MainWindow::ApplyDrawDialog<VToolFlippingByAxis>
+        &MainWindow::ClosedDrawDialogWithApply<VToolMirrorByAxis>,
+        &MainWindow::ApplyDrawDialog<VToolMirrorByAxis>
     );
 }
 
@@ -2639,12 +2640,12 @@ void MainWindow::handleModifyMenu()
     qCDebug(vMainWindow, "Modify Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group_plus.png"),    tr("New Group"));
-    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),      tr("Rotate"));
-    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/flipping_line.png"), tr("Mirror by Line"));
-    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/flipping_axis.png"), tr("Mirror by Axis"));
-    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),          tr("Move"));
-    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),    tr("True Darts"));
+    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group"));
+    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate"));
+    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line"));
+    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis"));
+    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move"));
+    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2966,10 +2967,10 @@ void MainWindow::CancelTool()
         case Tool::Rotation:
             ui->rotation_ToolButton->setChecked(false);
             break;
-        case Tool::FlippingByLine:
+        case Tool::MirrorByLine:
             ui->mirrorByLine_ToolButton->setChecked(false);
             break;
-        case Tool::FlippingByAxis:
+        case Tool::MirrorByAxis:
             ui->mirrorByAxis_ToolButton->setChecked(false);
             break;
         case Tool::Move:
@@ -3421,7 +3422,7 @@ bool MainWindow::SaveAs()
         if (not tmp.IsLocked())
         {
             qCCritical(vMainWindow, "%s",
-                       qUtf8Printable(tr("Failed to lock. This file already opened in another window.")));
+                       qUtf8Printable(tr("Failed to lock. This file is already opened in another window.")));
             RemoveTempDir();
             return false;
         }
@@ -3466,8 +3467,8 @@ bool MainWindow::SaveAs()
         qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(fileName));
         qCDebug(vMainWindow, "Error type: %d", lock->GetLockError());
         qCCritical(vMainWindow, "%s",
-                   qUtf8Printable(tr("Failed to lock. This file already opened in another window. Expect "
-                                     "collissions when run 2 copies of the program.")));
+                   qUtf8Printable(tr("Failed to lock. This file is already opened in another window. Expect "
+                                     "collisions when running 2 copies of the program.")));
     }
 
     RemoveTempDir();
@@ -3505,7 +3506,7 @@ bool MainWindow::Save()
             QMessageBox messageBox(this);
             messageBox.setIcon(QMessageBox::Question);
             messageBox.setText(tr("The document has no write permissions."));
-            messageBox.setInformativeText("Do you want to change the premissions?");
+            messageBox.setInformativeText("Do you want to change the permissions?");
             messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
             messageBox.setDefaultButton(QMessageBox::Yes);
 
@@ -3566,7 +3567,7 @@ bool MainWindow::Save()
  */
 void MainWindow::Open()
 {
-    qCDebug(vMainWindow, "Openning new file.");
+    qCDebug(vMainWindow, "Opening new file.");
     const QString filter(tr("Pattern files (*.val)"));
     //Get list last open files
     const QStringList files = qApp->Seamly2DSettings()->GetRecentFileList();
@@ -3596,7 +3597,7 @@ void MainWindow::Open()
  */
 void MainWindow::Clear()
 {
-    qCDebug(vMainWindow, "Reseting main window.");
+    qCDebug(vMainWindow, "Resetting main window.");
     lock.reset();
     qCDebug(vMainWindow, "Unlocked pattern file.");
     draftMode_Action(true);
@@ -3982,21 +3983,22 @@ void MainWindow::New()
 {
     if (comboBoxDraws->count() == 0)
     {
-        qCDebug(vMainWindow, "New PP.");
+        // Creating a new pattern design requires creating a new pattern piece
+        qCDebug(vMainWindow, "New Pattern Piece.");
         QString patternPieceName = tr("Pattern piece %1").arg(comboBoxDraws->count()+1);
-        qCDebug(vMainWindow, "Generated PP name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
 
-        qCDebug(vMainWindow, "First PP");
+        qCDebug(vMainWindow, "First Pattern Piece");
         DialogNewPattern newPattern(pattern, patternPieceName, this);
         if (newPattern.exec() == QDialog::Accepted)
         {
             patternPieceName = newPattern.name();
             qApp->setPatternUnit(newPattern.PatternUnit());
-            qCDebug(vMainWindow, "PP name: %s", qUtf8Printable(patternPieceName));
+            qCDebug(vMainWindow, "Pattern Piece name: %s", qUtf8Printable(patternPieceName));
         }
         else
         {
-            qCDebug(vMainWindow, "Creation a new pattern was canceled.");
+            qCDebug(vMainWindow, "Creating new Pattern Piece was canceled.");
             return;
         }
 
@@ -4450,6 +4452,7 @@ void MainWindow::ReadSettings()
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
     isGroupsDockVisible = ui->groups_DockWidget->isVisible();
     isLayoutsDockVisible = ui->layoutPages_DockWidget->isVisible();
+    isToolboxDockVisible = ui->layoutPages_DockWidget->isVisible();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4836,11 +4839,11 @@ void MainWindow::LastUsedTool()
             ui->rotation_ToolButton->setChecked(true);
             handleRotationTool(true);
             break;
-        case Tool::FlippingByLine:
+        case Tool::MirrorByLine:
             ui->mirrorByLine_ToolButton->setChecked(true);
             handleMirrorByLineTool(true);
             break;
-        case Tool::FlippingByAxis:
+        case Tool::MirrorByAxis:
             ui->mirrorByAxis_ToolButton->setChecked(true);
             handleMirrorByAxisTool(true);
             break;
@@ -4890,23 +4893,24 @@ void MainWindow::AddDocks()
         isLayoutsDockVisible = visible;
     });
 
-    ui->view_Menu->addAction(ui->toolbox_DockWidget->toggleViewAction());
+    actionDockWidgetToolbox = ui->toolbox_DockWidget->toggleViewAction();
+    ui->view_Menu->addAction(actionDockWidgetToolbox);
     connect(ui->toolbox_DockWidget, &QDockWidget::visibilityChanged, this, [this](bool visible)
     {
-        ui->toolbox_DockWidget->setVisible(visible);
+        isToolboxDockVisible  = visible;
     });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitDocksContain()
 {
-    qCDebug(vMainWindow, "Initialization property editor.");
+    qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
     toolProperties = new VToolOptionsPropertyBrowser(ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
 
-    qCDebug(vMainWindow, "Initialization groups manager.");
+    qCDebug(vMainWindow, "Initialize Groups manager.");
     groupsWidget = new VWidgetGroups(doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
 
@@ -5011,16 +5015,16 @@ void MainWindow::CreateActions()
     //Tools menu
     connect(ui->newDraft_Action, &QAction::triggered, this, [this]()
     {
-        qCDebug(vMainWindow, "New PP.");
-        QString patternPieceName = tr("Pattern piece %1").arg(comboBoxDraws->count()+1);
-        qCDebug(vMainWindow, "Generated PP name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "New Pattern Piece.");
+        QString patternPieceName = tr("Pattern Piece %1").arg(comboBoxDraws->count()+1);
+        qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
 
-        qCDebug(vMainWindow, "PP count %d", comboBoxDraws->count());
+        qCDebug(vMainWindow, "Pattern Piece count %d", comboBoxDraws->count());
         patternPieceName = PatternPieceName(patternPieceName);
-        qCDebug(vMainWindow, "PP name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "Pattern Piece name: %s", qUtf8Printable(patternPieceName));
         if (patternPieceName.isEmpty())
         {
-            qCDebug(vMainWindow, "Name empty.");
+            qCDebug(vMainWindow, "Pattern Piece name is empty.");
             return;
         }
 
@@ -5109,7 +5113,7 @@ void MainWindow::CreateActions()
         ui->lineIntersect_ToolButton->setChecked(true);
         handleLineIntersectTool(true);
     });
-  
+
     //Tools->Curve submenu actions
     connect(ui->curve_Action, &QAction::triggered, this, [this]
     {
@@ -5456,7 +5460,7 @@ void MainWindow::InitAutoSave()
     {
         const qint32 autoTime = qApp->Seamly2DSettings()->GetAutosaveTime();
         autoSaveTimer->start(autoTime*60000);
-        qCDebug(vMainWindow, "Autosaving each %d minutes.", autoTime);
+        qCDebug(vMainWindow, "Autosaving every %d minutes.", autoTime);
     }
     qApp->setAutoSaveTimer(autoSaveTimer);
 }
@@ -5494,7 +5498,7 @@ QString MainWindow::PatternPieceName(const QString &text)
         messageBox.setIcon(QMessageBox::Warning);
         messageBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
         messageBox.setDefaultButton(QMessageBox::Retry);
-        messageBox.setText(tr("The action can't be completed because the draft block name already exists."));
+        messageBox.setText(tr("The action can't be completed because the Draft Block name already exists."));
         int boxResult = messageBox.exec();
 
         switch (boxResult)
@@ -5538,7 +5542,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (fileName.isEmpty())
     {
-        qCDebug(vMainWindow, "Got empty file.");
+        qCDebug(vMainWindow, "New loaded filename is empty.");
         Clear();
         return false;
     }
@@ -5580,7 +5584,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         return false;
     }
 
-    qCDebug(vMainWindow, "Loking file");
+    qCDebug(vMainWindow, "Locking file");
     VlpCreateLock(lock, fileName);
 
     if (lock->IsLocked())
@@ -5855,8 +5859,8 @@ void MainWindow::exportPiecesAs()
 
     if (detailsInLayout.count() == 0)
     {
-        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have enough details to export. Please, "
-                                                              "include at least one detail in layout."),
+        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have enough Detail Pieces to export. Please, "
+                                                              "include at least one Detail Piece in layout."),
                                  QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
@@ -5868,8 +5872,8 @@ void MainWindow::exportPiecesAs()
     }
     catch (VException &e)
     {
-        QMessageBox::warning(this, tr("Export details"),
-                             tr("Can't export details.") + QLatin1String(" \n") + e.ErrorMessage(),
+        QMessageBox::warning(this, tr("Export Details"),
+                             tr("Can't export Details.") + QLatin1String(" \n") + e.ErrorMessage(),
                              QMessageBox::Ok, QMessageBox::Ok);
         return;
     }

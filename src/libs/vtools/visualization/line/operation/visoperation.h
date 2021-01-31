@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -61,36 +61,36 @@ class VisOperation : public VisLine
 {
     Q_OBJECT
 public:
-    explicit VisOperation(const VContainer *data, QGraphicsItem *parent = nullptr);
-    virtual ~VisOperation();
+    explicit                  VisOperation(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual                  ~VisOperation();
 
-    void SetObjects(QVector<quint32> objects);
+    void                      setObjects(QVector<quint32> objects);
 
-    virtual void VisualMode(const quint32 &pointId = NULL_ID) Q_DECL_OVERRIDE;
+    virtual void              VisualMode(const quint32 &pointId = NULL_ID) Q_DECL_OVERRIDE;
 
-    virtual int type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Vis::ToolRotation)};
+    virtual int               type() const Q_DECL_OVERRIDE {return Type;}
+    enum                      {Type = UserType + static_cast<int>(Vis::ToolRotation)};
 protected:
-    QVector<quint32> objects;
-    QColor           supportColor2;
+    QVector<quint32>          objects;
+    QColor                    supportColor2;
 
     QVector<VScaledEllipse *> points;
     QVector<VCurvePathItem *> curves;
 
-    VScaledEllipse *GetPoint(quint32 i, const QColor &color);
-    VCurvePathItem *GetCurve(quint32 i, const QColor &color);
+    VScaledEllipse           *GetPoint(quint32 i, const QColor &color);
+    VCurvePathItem           *GetCurve(quint32 i, const QColor &color);
 
     template <class Item>
-    int AddFlippedCurve(const QPointF &firstPoint, const QPointF &secondPoint, quint32 id, int i);
+    int                       addFlippedCurve(const QPointF &firstPoint, const QPointF &secondPoint, quint32 id, int i);
 
-    void RefreshFlippedObjects(const QPointF &firstPoint, const QPointF &secondPoint);
+    void                      refreshMirroredObjects(const QPointF &firstPoint, const QPointF &secondPoint);
 private:
     Q_DISABLE_COPY(VisOperation)
 };
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-int VisOperation::AddFlippedCurve(const QPointF &firstPoint, const QPointF &secondPoint, quint32 id, int i)
+int VisOperation::addFlippedCurve(const QPointF &firstPoint, const QPointF &secondPoint, quint32 id, int i)
 {
     const QSharedPointer<Item> curve = Visualization::data->template GeometricObject<Item>(id);
 

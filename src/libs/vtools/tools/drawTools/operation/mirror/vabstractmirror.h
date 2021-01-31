@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -49,66 +49,69 @@
  **
  *************************************************************************/
 
-#ifndef VABSTRACTFLIPPING_H
-#define VABSTRACTFLIPPING_H
+#ifndef VABSTRACTMIRROR_H
+#define VABSTRACTMIRROR_H
 
 #include <QtGlobal>
 
 #include "../vabstractoperation.h"
 
-class VAbstractFlipping : public VAbstractOperation
+class VAbstractMirror : public VAbstractOperation
 {
     Q_OBJECT
+
 public:
-    virtual ~VAbstractFlipping() Q_DECL_EQ_DEFAULT;
+    virtual               ~VAbstractMirror() Q_DECL_EQ_DEFAULT;
+
 protected:
-    VAbstractFlipping(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
-                      const QVector<quint32> &source, const QVector<DestinationItem> &destination,
-                      QGraphicsItem *parent = nullptr);
+                           VAbstractMirror(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
+                                           const QVector<quint32> &source, const QVector<DestinationItem> &destination,
+                                           QGraphicsItem *parent = nullptr);
 
-    static void CreateDestination(Source typeCreation, quint32 &id, QVector<DestinationItem> &dest,
-                                  const QVector<quint32> &source, const QPointF &fPoint, const QPointF &sPoint,
-                                  const QString &suffix, VAbstractPattern *doc, VContainer *data,
-                                  const Document &parse);
+    static void            createDestination(Source typeCreation, quint32 &id, QVector<DestinationItem> &dest,
+                                             const QVector<quint32> &source, const QPointF &fPoint,
+                                             const QPointF &sPoint, const QString &suffix, VAbstractPattern *doc,
+                                             VContainer *data, const Document &parse);
 
-    static DestinationItem CreatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+    static DestinationItem createPoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                        const QPointF &secondPoint, const QString &suffix, VContainer *data);
 
     template <class Item>
-    static DestinationItem CreateItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+    static DestinationItem createItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                       const QPointF &secondPoint, const QString &suffix, VContainer *data);
     template <class Item>
-    static DestinationItem CreateArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+    static DestinationItem createArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                      const QPointF &secondPoint, const QString &suffix, VContainer *data);
     template <class Item>
-    static DestinationItem CreateCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+    static DestinationItem createCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                        const QPointF &secondPoint, const QString &suffix, VContainer *data);
     template <class Item>
-    static DestinationItem CreateCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+    static DestinationItem createCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                                    const QPointF &secondPoint, const QString &suffix, VContainer *data);
 
-    static void UpdatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
+    static void updatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
                             const QString &suffix, VContainer *data, quint32 id, qreal mx, qreal my);
     template <class Item>
-    static void UpdateItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
+    static void updateItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
                            const QString &suffix, VContainer *data, quint32 id);
     template <class Item>
-    static void UpdateArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
+    static void updateArc(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
                           const QString &suffix, VContainer *data, quint32 id);
     template <class Item>
-    static void UpdateCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
+    static void updateCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint, const QPointF &secondPoint,
                             const QString &suffix, VContainer *data, quint32 id);
     template <class Item>
-    static void UpdateCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+    static void updateCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                         const QPointF &secondPoint, const QString &suffix, VContainer *data,
                                         quint32 id);
+                                        
 private:
-    Q_DISABLE_COPY(VAbstractFlipping)
+    Q_DISABLE_COPY(VAbstractMirror)
 };
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VAbstractFlipping::CreateItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+DestinationItem VAbstractMirror::createItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                                 const QPointF &secondPoint, const QString &suffix, VContainer *data)
 {
     const QSharedPointer<Item> i = data->GeometricObject<Item>(idItem);
@@ -124,28 +127,28 @@ DestinationItem VAbstractFlipping::CreateItem(quint32 idTool, quint32 idItem, co
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VAbstractFlipping::CreateCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+DestinationItem VAbstractMirror::createCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                                  const QPointF &secondPoint, const QString &suffix, VContainer *data)
 {
-    const DestinationItem item = CreateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data);
+    const DestinationItem item = createItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data);
     data->AddSpline(data->GeometricObject<Item>(item.id), item.id);
     return item;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-DestinationItem VAbstractFlipping::CreateCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+DestinationItem VAbstractMirror::createCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                                            const QPointF &secondPoint, const QString &suffix,
                                                            VContainer *data)
 {
-    const DestinationItem item = CreateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data);
+    const DestinationItem item = createItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data);
     data->AddCurveWithSegments(data->GeometricObject<Item>(item.id), item.id);
     return item;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VAbstractFlipping::UpdateItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+void VAbstractMirror::updateItem(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                    const QPointF &secondPoint, const QString &suffix, VContainer *data, quint32 id)
 {
     const QSharedPointer<Item> i = data->GeometricObject<Item>(idItem);
@@ -156,21 +159,21 @@ void VAbstractFlipping::UpdateItem(quint32 idTool, quint32 idItem, const QPointF
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VAbstractFlipping::UpdateCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+void VAbstractMirror::updateCurve(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                     const QPointF &secondPoint, const QString &suffix, VContainer *data, quint32 id)
 {
-    UpdateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data, id);
+    updateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data, id);
     data->AddSpline(data->GeometricObject<Item>(id), id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <class Item>
-void VAbstractFlipping::UpdateCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
+void VAbstractMirror::updateCurveWithSegments(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
                                                 const QPointF &secondPoint, const QString &suffix, VContainer *data,
                                                 quint32 id)
 {
-    UpdateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data, id);
+    updateItem<Item>(idTool, idItem, firstPoint, secondPoint, suffix, data, id);
     data->AddCurveWithSegments(data->GeometricObject<Item>(id), id);
 }
 
-#endif // VABSTRACTFLIPPING_H
+#endif // VABSTRACTMIRROR_H
