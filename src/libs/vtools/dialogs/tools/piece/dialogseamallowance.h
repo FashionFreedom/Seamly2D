@@ -107,6 +107,7 @@ private slots:
 
     void                        ListChanged();
     void                        EnableSeamAllowance(bool enable);
+    void                        enableBuiltIn(bool enable);
     void                        NodeChanged(int index);
     void                        notchChanged(int index);
     void                        CSAStartPointChanged(int index);
