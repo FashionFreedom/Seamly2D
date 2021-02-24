@@ -15,7 +15,7 @@ env:
 
 jobs:
   create-release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     outputs:
       upload_url: ${{ steps.create-release.outputs.upload_url }}
 
