@@ -77,6 +77,8 @@ CONFIG(release, debug|release){
     DEFINES += V_NO_ASSERT
     !unix:*g++*{
         QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
+        QMAKE_CXXFLAGS += -ftrack-macro-expansion=0 # Remove extra #pragma msgs
+        QMAKE_CXXFLAGS += -fno-diagnostics-show-caret #Remove extra #pragma msgs
     }
 
     noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
