@@ -207,7 +207,7 @@ CONFIG(debug, debug|release){
     DVCS_HESH=$$system("git rev-parse --short=12 HEAD") #get SHA1 commit hash
     message("common.pri: Latest commit hash:" $${DVCS_HESH})
 
-    isEmpty(DVCS_HESH){       
+    isEmpty(DVCS_HESH){
        DVCS_HESH = \\\"unknown\\\" # if we can't find build revision left unknown.
     } else {
        DVCS_HESH=\\\"Git:$${DVCS_HESH}\\\"
@@ -718,8 +718,11 @@ CLANG_DEBUG_CXXFLAGS += \
     -Wzero-length-array \
     -Qunused-arguments \
     -fcolor-diagnostics \
-    -fms-extensions # Need for pragma message
-    
+    -fms-extensions \
+    -fno-diagnostics-show-caret \
+    -fno-diagnostics-show-line-numbers \
+    -fdiagnostics-plain-output # Need for diagnostic messages
+
     freebsd-clang* {
     # https://bitbucket.org/dismine/valentina/issues/877/lots-of-warnings-unknown-warning-option
     CLANG_DEBUG_CXXFLAGS -= -Wextended-offsetof
@@ -754,7 +757,7 @@ ICC_DEBUG_CXXFLAGS += \
 # Can't find way mark ignore Qt header on Windows.
 GCC_DEBUG_CXXFLAGS += \
     -O0 \
-    -Wall \ 
+    -Wall \
     -Wno-error=strict-overflow \
     -Wextra \
     -fno-omit-frame-pointer # Need for exchndl.dll
