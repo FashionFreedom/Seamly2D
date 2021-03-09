@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2.3.4
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -79,7 +79,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
         with:
           toolset: '14.16.27023'
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 
