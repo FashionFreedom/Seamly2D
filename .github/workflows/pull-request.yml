@@ -34,7 +34,8 @@ jobs:
         run: |
           sudo apt update
           sudo apt install xvfb
-
+          sudo apt-get install libdrm-dev -f
+          
       - name: test
         run: |
           export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
