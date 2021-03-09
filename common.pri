@@ -341,7 +341,8 @@ g++7:GCC_DEBUG_CXXFLAGS += \
     -Wduplicated-branches \
     -Wrestrict \
     -Walloc-zero \
-    -Wnonnull
+    -Wnonnull \
+    -fno-diagnostics-show-caret
 
 # Usefull Clang warnings keys.
 CLANG_DEBUG_CXXFLAGS += \
@@ -719,14 +720,12 @@ CLANG_DEBUG_CXXFLAGS += \
     -Qunused-arguments \
     -fcolor-diagnostics \
     -fms-extensions \
-    -fno-diagnostics-show-caret \
-    -fno-diagnostics-show-line-numbers \
-    -fdiagnostics-plain-output # Need for diagnostic messages
+    -fno-diagnostics-show-caret # Need for diagnostic messages
 
     freebsd-clang* {
     # https://bitbucket.org/dismine/valentina/issues/877/lots-of-warnings-unknown-warning-option
     CLANG_DEBUG_CXXFLAGS -= -Wextended-offsetof
-}
+    }
 
 ICC_DEBUG_CXXFLAGS += \
     $$ISYSTEM \ # Ignore warnings Qt headers.
