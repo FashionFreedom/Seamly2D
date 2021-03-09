@@ -4,6 +4,7 @@ unix {
         QMAKE_CXXFLAGS += \
             # Key -isystem disable checking errors in system headers.
             -isystem "$${OUT_PWD}/$${MOC_DIR}" \
+            -fdiagnostics-plain-output \
             $$GCC_DEBUG_CXXFLAGS # See common.pri for more details.
 
         checkWarnings{ # For enable run qmake with CONFIG+=checkWarnings
