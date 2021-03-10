@@ -1260,12 +1260,12 @@
     </message>
     <message>
         <source>Bold</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Italic</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2346,7 +2346,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Uknown</source>
+        <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5325,7 +5325,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Test mode doesn&apos;t support openning several files.</source>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6106,7 +6106,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your prefered file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your preferred file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7199,7 +7199,7 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Desimaalierotin on sama funktion argumentti erottimen kanssa.</translation>
     </message>
     <message>
-        <source>The &quot;$TOK$&quot; operator must be preceeded by a closing bracket.</source>
+        <source>The &quot;$TOK$&quot; operator must be preceded by a closing bracket.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
         <translation>&quot;$TOK$&quot; operaattorin edessä pitää olla sulku.</translation>
     </message>
@@ -8409,7 +8409,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished">Yllättävä versio &quot;%1&quot;.</translation>
     </message>
     <message>
-        <source>Error openning a temp file: %1.</source>
+        <source>Error Opening a temp file: %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

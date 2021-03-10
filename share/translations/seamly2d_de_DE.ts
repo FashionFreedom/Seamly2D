@@ -1544,12 +1544,12 @@
     </message>
     <message>
         <source>Bold</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Italic</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2670,7 +2670,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Uknown</source>
+        <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5881,7 +5881,7 @@ Einstellungen trotzdem anwenden?</translation>
         <translation>Eingehende Verbindung &apos;%1&apos; kann nicht aufgefangen werden</translation>
     </message>
     <message>
-        <source>Test mode doesn&apos;t support openning several files.</source>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
         <translation>Der Test-Modus unterstützt das Öffnen mehrerer Dateien nicht.</translation>
     </message>
     <message>
@@ -6759,7 +6759,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus zur Arbeit mit Details. Bevor Sie mit &amp;quot;Details mode&amp;quot; weitermachen können, müssen Sie zunächst ein Detail erstellen &amp;quot;Draw mode&amp;quot;. In dieser Phase erstellte Details werden für die Erstellung eines Layouts verwendet. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your prefered file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your preferred file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus zum Erstellen von Details. Dieser Modus ist verfügbar, wenn mindestens ein Detail erstellt wurde &amp;quot;Details mode&amp;quot;. Das Layout kann mit ihrem gewünschten Dateiformat exportiert und auf ihrer Festplatte gespeichert werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -7997,7 +7997,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Dezimaltrennzeichen ist identisch zum Trennzeichen des Funktionsarguments.</translation>
     </message>
     <message>
-        <source>The &quot;$TOK$&quot; operator must be preceeded by a closing bracket.</source>
+        <source>The &quot;$TOK$&quot; operator must be preceded by a closing bracket.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
         <translation>Der &quot;$TOK$&quot; Operator muss durch eine schließende Klammer eingeschlossen werden.</translation>
     </message>
@@ -9326,7 +9326,7 @@ Do you want to save your changes?</source>
         <translation>Unerwartete Version &quot;%1&quot;.</translation>
     </message>
     <message>
-        <source>Error openning a temp file: %1.</source>
+        <source>Error Opening a temp file: %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

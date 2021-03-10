@@ -1620,12 +1620,12 @@
     </message>
     <message>
         <source>Bold</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Italic</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2746,7 +2746,7 @@
         <translation>Деталь:</translation>
     </message>
     <message>
-        <source>Uknown</source>
+        <source>Unknown</source>
         <translation>Неизвестное</translation>
     </message>
 </context>
@@ -5978,7 +5978,7 @@ Apply settings anyway?</source>
         <translation>Невозможно начать слушать входящие соединения с именем &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Test mode doesn&apos;t support openning several files.</source>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
         <translation>Режим проверки не поддерживает открытия нескольких файлов.</translation>
     </message>
     <message>
@@ -6856,7 +6856,7 @@ Do you want to save your changes?</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим для работы с деталями. Перед тем, как вы сможете перейти к использованию &amp;quot;Режима деталей&amp;quot;, необходимо создать по крайней мере одну деталь в &amp;quot;Режиме чертежа&amp;quot;. Детали, созданные на этом этапе, используются для построения раскладки.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your prefered file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your preferred file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Режим создания раскладки деталей. Этот режим становится доступным, если была создана по крайней мере одна деталь в &amp;quot;Режиме чертежа&amp;quot;. Раскладку можно экспортировать в выбранный вами формат файла и сохранить на диск.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -8130,7 +8130,7 @@ Do you want to save your changes?</source>
         <translation>Десятичный разделитель является идентичным разделителю аргумент функции.</translation>
     </message>
     <message>
-        <source>The &quot;$TOK$&quot; operator must be preceeded by a closing bracket.</source>
+        <source>The &quot;$TOK$&quot; operator must be preceded by a closing bracket.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
         <translation>Оператору &quot;$TOK$&quot; должна предшествовать закрывающаяся скобка.</translation>
     </message>
@@ -9486,7 +9486,7 @@ Do you want to save your changes?</source>
         <translation type="vanished">Ошибка замены символической ссылки на файл: %1.</translation>
     </message>
     <message>
-        <source>Error openning a temp file: %1.</source>
+        <source>Error Opening a temp file: %1.</source>
         <translation>Ошибка открытия временного файла: %1.</translation>
     </message>
 </context>

@@ -702,7 +702,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     {
         if (testMode && args.count() > 1)
         {
-            qCCritical(mApp, "%s\n", qPrintable(tr("Test mode doesn't support openning several files.")));
+            qCCritical(mApp, "%s\n", qPrintable(tr("Test mode doesn't support Opening several files.")));
             parser.showHelp(V_EX_USAGE);
         }
 
