@@ -317,7 +317,7 @@ void VPattern::setCurrentData()
                 catch (VExceptionBadId &e)
                 {
                     Q_UNUSED(e)
-                    qCDebug(vXML, "List of tools doesn't containe id= %u", id);
+                    qCDebug(vXML, "List of tools doesn't contain id= %u", id);
                     return;
                 }
 
@@ -3599,7 +3599,7 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
         qCDebug(vXML, "Point label: %s", qUtf8Printable(name));
         return name;
     }
-    qCDebug(vXML, "Got unknow type %d", static_cast<int>(type));
+    qCDebug(vXML, "Got unknown type %d", static_cast<int>(type));
     return QString();
 }
 

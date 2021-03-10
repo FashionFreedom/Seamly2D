@@ -172,12 +172,12 @@ void VDrawTool::ContextMenu(Tool *tool, QGraphicsSceneContextMenuEvent *event, c
         {
             if (_referens > 1)
             {
-                qCDebug(vTool, "Remove disabled. Tool has childern.");
+                qCDebug(vTool, "Remove disabled. Tool has children.");
                 actionRemove->setEnabled(false);
             }
             else
             {
-                qCDebug(vTool, "Remove enabled. Tool has not childern.");
+                qCDebug(vTool, "Remove enabled. Tool has no children.");
                 actionRemove->setEnabled(true);
             }
         }

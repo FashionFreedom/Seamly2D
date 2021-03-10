@@ -124,7 +124,7 @@ void DialogInsertNode::SetNode(const VPieceNode &node)
 {
     m_node = node;
     m_flagItem = true;
-    QString name = tr("Uknown");
+    QString name = tr("Unknown");
     try
     {
         name = qApp->TrVars()->InternalVarToUser(data->GetGObject(m_node.GetId())->name());

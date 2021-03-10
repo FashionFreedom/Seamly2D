@@ -3766,7 +3766,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1825"/>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
         <translation type="unfinished"></translation>
     </message>

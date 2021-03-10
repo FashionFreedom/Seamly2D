@@ -233,7 +233,7 @@
     </message>
     <message>
         <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Après chaque plantage Seamly2D collecte des informations qui pourront nous être utile a la résolutions du problème. Nous ne collectons pas d&apos;informations personnelles. En savoir plus sur &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;le type d&apos;informations&lt;/a&gt; que nous collectons.</translation>
+        <translation type="vanished">Après chaque plantage Seamly2D collecte des Information qui pourront nous être utile a la résolutions du problème. Nous ne collectons pas d&apos;Information personnelles. En savoir plus sur &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;le type d&apos;Information&lt;/a&gt; que nous collectons.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -289,7 +289,7 @@
     </message>
     <message>
         <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Après chaque plantage, Seamly2D collecte des informations qui peuvent nous servir à régler le problème. Nous ne collectons aucune information personnelle. Pour en savoir plus : &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;le genre d&apos;information que nous collectons&lt;/a&gt;.</translation>
+        <translation type="vanished">Après chaque plantage, Seamly2D collecte des Information qui peuvent nous servir à régler le problème. Nous ne collectons aucune information personnelle. Pour en savoir plus : &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;le genre d&apos;information que nous collectons&lt;/a&gt;.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
@@ -297,7 +297,7 @@
     </message>
     <message>
         <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
-        <translation type="vanished">Après chaque plantage, Seamly2D collecte des informations qui peuvent nous servir à régler le problème. Nous ne collectons aucune information personnelle. Pour en savoir plus : %1 le genre d&apos;information%2 que nous collectons.</translation>
+        <translation type="vanished">Après chaque plantage, Seamly2D collecte des Information qui peuvent nous servir à régler le problème. Nous ne collectons aucune information personnelle. Pour en savoir plus : %1 le genre d&apos;information%2 que nous collectons.</translation>
     </message>
 </context>
 <context>
@@ -1620,12 +1620,12 @@
     </message>
     <message>
         <source>Bold</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Italic</source>
-        <comment>Font formating</comment>
+        <comment>Font formatting</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2746,7 +2746,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Uknown</source>
+        <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3737,7 +3737,7 @@ Appliquer les réglages quand-même ?</translation>
     </message>
     <message>
         <source>General info</source>
-        <translation type="vanished">Informations générales</translation>
+        <translation type="vanished">Information générales</translation>
     </message>
     <message>
         <source>Pattern name:</source>
@@ -5975,7 +5975,7 @@ Appliquer les réglages quand-même ?</translation>
         <translation>Ne peut être à l&apos;écoute des connexions entrantes de %1</translation>
     </message>
     <message>
-        <source>Test mode doesn&apos;t support openning several files.</source>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
         <translation>Le mode test ne supporte pas l&apos;ouverture de plusieurs fichiers.</translation>
     </message>
     <message>
@@ -6853,7 +6853,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode pour travailler avec despi&amp;egrave;ces de patron. Avant d&apos;activer le mode &amp;quot;Isolation&amp;quot;, vous devez cr&amp;eacute;er au moins un &amp;eacute;l&amp;eacute;ment de patron dans le mode &amp;quot;Trac&amp;eacute;&amp;quot;. Les pi&amp;egrave;ces de patrons ainsi cr&amp;eacute;es serviront &amp;agrave; cr&amp;eacute;er le plan de coupe.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your prefered file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of details. This mode avaliable if was created at least one detail on the stage &amp;quot;Details mode&amp;quot;. The layout can be exported to your preferred file format and saved to your harddirve.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode pour cr&amp;eacute;er une imposition des pi&amp;egrave;ces de patron. Ce mode n&apos;est accessible que si au moins une pi&amp;egrave;ce de patron a &amp;eacute;t&amp;eacute; cr&amp;eacute;e dans le mode &amp;quot;Isolation&amp;quot;. Le plan de coupe peut &amp;ecirc;tre export&amp;eacute; au format choisi et enregistr&amp;eacute; sur votre disque dur.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
@@ -7612,7 +7612,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what %1kind of information%2 we collect.</source>
-        <translation type="unfinished">Après chaque plantage, Seamly2D collecte des informations qui peuvent nous servir à régler le problème. Nous ne collectons aucune information personnelle. Pour en savoir plus : %1 le genre d&apos;information%2 que nous collectons.</translation>
+        <translation type="unfinished">Après chaque plantage, Seamly2D collecte des Information qui peuvent nous servir à régler le problème. Nous ne collectons aucune information personnelle. Pour en savoir plus : %1 le genre d&apos;information%2 que nous collectons.</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -7772,7 +7772,7 @@ Voulez-vous sauvegarder les changements?</translation>
     <name>QCommandLineParser</name>
     <message>
         <source>Displays version information.</source>
-        <translation type="vanished">Affiche les informations de version.</translation>
+        <translation type="vanished">Affiche les Information de version.</translation>
     </message>
     <message>
         <source>Displays this help.</source>
@@ -8111,7 +8111,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation>Le séparateur des décimales est le même que le séparateur des arguments de fonction.</translation>
     </message>
     <message>
-        <source>The &quot;$TOK$&quot; operator must be preceeded by a closing bracket.</source>
+        <source>The &quot;$TOK$&quot; operator must be preceded by a closing bracket.</source>
         <comment>Math parser error messages. Left untouched &quot;$TOK$&quot;</comment>
         <translation>L&apos;opérateur &quot;$TOK$&quot; doit être précédé d&apos;un crochet fermant.</translation>
     </message>
@@ -8388,7 +8388,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Show information about all known measurement</source>
-        <translation>Voir les informations pour toutes les mensurations connues</translation>
+        <translation>Voir les Information pour toutes les mensurations connues</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -9420,7 +9420,7 @@ Voulez-vous enregistrer les changements?</translation>
     <name>VAbstractConverter</name>
     <message>
         <source>Couldn&apos;t get version information.</source>
-        <translation>Impossible d&apos;obtenir les informations de version.</translation>
+        <translation>Impossible d&apos;obtenir les Information de version.</translation>
     </message>
     <message>
         <source>Too many tags &lt;%1&gt; in file.</source>
@@ -9463,7 +9463,7 @@ Voulez-vous enregistrer les changements?</translation>
         <translation>Version inattendue &quot;%1&quot;.</translation>
     </message>
     <message>
-        <source>Error openning a temp file: %1.</source>
+        <source>Error Opening a temp file: %1.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1846,7 +1846,7 @@ void VTranslateMeasurements::InitGroupN()
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Crotch length", "Full measurement name.");
     d = translate("VTranslateMeasurements", "Put tape across gap between buttocks at Hip level. Measure from Waist "
-                  "Front down betwen legs and up to Waist Back.", "Full measurement description.");
+                  "Front down between legs and up to Waist Back.", "Full measurement description.");
     InitMeasurement(crotchLength_M, m, g, d, "N01");
     //=================================================================================================================
     m = translate("VTranslateMeasurements", "crotch_length_b",
