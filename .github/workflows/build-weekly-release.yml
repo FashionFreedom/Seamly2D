@@ -40,7 +40,7 @@ jobs:
           body: This is an automated weekly release.
 
   linux:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     needs: create-release
     env:
       UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
