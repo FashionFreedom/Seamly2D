@@ -102,7 +102,7 @@ QString VAbstractConverter::Convert()
     }
     else
     {
-        const QString errorMsg(tr("Error openning a temp file: %1.").arg(m_tmpFile.errorString()));
+        const QString errorMsg(tr("Error Opening a temp file: %1.").arg(m_tmpFile.errorString()));
         throw VException(errorMsg);
     }
 

@@ -3794,7 +3794,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1825"/>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
         <translation>Plaats meetlint over ruimte tussen de billen op heup level. Meet vanaf voorkant taille naar beneden tussen de benen en terug naar boven naar taille aan de rugkant.</translation>
     </message>

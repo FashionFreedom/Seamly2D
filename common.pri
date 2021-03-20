@@ -1,5 +1,5 @@
 win32{
-    # Because "copy" doesn't support files that containe plus sign (+) in name we will use xcopy instead.
+    # Because "copy" doesn't support files that contain plus sign (+) in name we will use xcopy instead.
     unset(QMAKE_COPY)
     QMAKE_COPY = xcopy /y
 

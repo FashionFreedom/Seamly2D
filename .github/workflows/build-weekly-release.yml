@@ -15,7 +15,7 @@ env:
 
 jobs:
   create-release:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     outputs:
       upload_url: ${{ steps.create-release.outputs.upload_url }}
 
@@ -23,7 +23,7 @@ jobs:
       - name: generate release name and tag
         run: |
           echo "TAG_NAME=weekly-`date +%Y%m%d`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Weekly release `date +%Y%m%d`" >> $GITHUB_ENV        
+          echo "RELEASE_NAME=Weekly release `date +%Y%m%d`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,7 +47,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -72,7 +72,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.3.4
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -111,7 +111,7 @@ jobs:
       - uses: ilammy/msvc-dev-cmd@v1.4.1
         with:
           toolset: '14.16.27023'
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 
