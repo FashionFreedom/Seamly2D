@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -60,12 +60,12 @@
 
 #include "vundocommand.h"
 
-class RenamePP :public VUndoCommand
+class RenameDraftBlock :public VUndoCommand
 {
     Q_OBJECT
 public:
-    RenamePP(VAbstractPattern *doc, const QString &newPPname, QComboBox *combo, QUndoCommand *parent = nullptr);
-    virtual ~RenamePP() Q_DECL_OVERRIDE;
+    RenameDraftBlock(VAbstractPattern *doc, const QString &newPPname, QComboBox *combo, QUndoCommand *parent = nullptr);
+    virtual     ~RenameDraftBlock() Q_DECL_OVERRIDE;
 
     virtual void undo() Q_DECL_OVERRIDE;
     virtual void redo() Q_DECL_OVERRIDE;
@@ -74,21 +74,21 @@ public:
     QString      getNewPPname() const;
     QString      getOldPPname() const;
 private:
-    Q_DISABLE_COPY(RenamePP)
-    QComboBox *combo;
-    QString   newPPname;
-    QString   oldPPname;
-    void      ChangeName(const QString &oldName, const QString &newName);
+    Q_DISABLE_COPY(RenameDraftBlock)
+    QComboBox   *combo;
+    QString      newPPname;
+    QString      oldPPname;
+    void         ChangeName(const QString &oldName, const QString &newName);
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString RenamePP::getNewPPname() const
+inline QString RenameDraftBlock::getNewPPname() const
 {
     return newPPname;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString RenamePP::getOldPPname() const
+inline QString RenameDraftBlock::getOldPPname() const
 {
     return oldPPname;
 }

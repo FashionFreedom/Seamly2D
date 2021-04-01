@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -76,9 +76,9 @@ enum class UndoCommand: char { AddPatternPiece,
                                SavePieceOptions,
                                SavePiecePathOptions,
                                MovePiece,
-                               DeleteTool,
+                               deleteTool,
                                DeletePatternPiece,
-                               RenamePP,
+                               RenameDraftBlock,
                                MoveLabel,
                                MoveDoubleLabel,
                                RotationMoveLabel,
@@ -91,28 +91,33 @@ class VUndoCommand : public QObject, public QUndoCommand
 {
     Q_OBJECT
 public:
-    VUndoCommand(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent = nullptr);
-    virtual ~VUndoCommand() =default;
+                      VUndoCommand(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent = nullptr);
+    virtual          ~VUndoCommand() =default;
+
 signals:
-    void ClearScene();
-    void NeedFullParsing();
-    void NeedLiteParsing(const Document &parse);
+    void              ClearScene();
+    void              NeedFullParsing();
+    void              NeedLiteParsing(const Document &parse);
+
 protected:
-    QDomElement  xml;
+    QDomElement       xml;
     VAbstractPattern *doc;
-    quint32      nodeId;
-    bool         redoFlag;
-    virtual void RedoFullParsing();
-    void         UndoDeleteAfterSibling(QDomNode &parentNode, const quint32 &siblingId) const;
+    quint32           nodeId;
+    bool              redoFlag;
+    virtual void      RedoFullParsing();
+    void              UndoDeleteAfterSibling(QDomNode &parentNode, const quint32 &siblingId) const;
 
-    void         IncrementReferences(const QVector<quint32> &nodes) const;
-    void         DecrementReferences(const QVector<quint32> &nodes) const;
+    void              IncrementReferences(const QVector<quint32> &nodes) const;
+    void              DecrementReferences(const QVector<quint32> &nodes) const;
 
-    void         IncrementReferences(const QVector<CustomSARecord> &nodes) const;
-    void         DecrementReferences(const QVector<CustomSARecord> &nodes) const;
+    void              IncrementReferences(const QVector<CustomSARecord> &nodes) const;
+    void              DecrementReferences(const QVector<CustomSARecord> &nodes) const;
 
-    void         IncrementReferences(const QVector<VPieceNode> &nodes) const;
-    void         DecrementReferences(const QVector<VPieceNode> &nodes) const;
+    void              IncrementReferences(const QVector<VPieceNode> &nodes) const;
+    void              DecrementReferences(const QVector<VPieceNode> &nodes) const;
+
+    QDomElement       getDestinationObject(quint32 idTool, quint32 idPoint) const;
+
 private:
     Q_DISABLE_COPY(VUndoCommand)
 };

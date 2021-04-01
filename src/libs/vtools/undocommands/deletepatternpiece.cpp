@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -59,13 +59,15 @@
 #include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-DeletePatternPiece::DeletePatternPiece(VAbstractPattern *doc, const QString &namePP, QUndoCommand *parent)
-    : VUndoCommand(QDomElement(), doc, parent), namePP(namePP), patternPiece(QDomElement()),
-      previousPPName(QString())
+DeletePatternPiece::DeletePatternPiece(VAbstractPattern *doc, const QString &draftBlockName, QUndoCommand *parent)
+    : VUndoCommand(QDomElement(), doc, parent)
+    , draftBlockName(draftBlockName)
+    , patternPiece(QDomElement())
+    , previousPPName(QString())
 {
-    setText(tr("delete pattern piece %1").arg(namePP));
+    setText(tr("delete pattern piece %1").arg(draftBlockName));
 
-    const QDomElement patternP = doc->GetPPElement(namePP);
+    const QDomElement patternP = doc->GetPPElement(draftBlockName);
     patternPiece = patternP.cloneNode().toElement();
     const QDomElement previousPP = patternP.previousSibling().toElement();//find previous pattern piece
     if (not previousPP.isNull() && previousPP.tagName() == VAbstractPattern::TagDraw)
@@ -105,7 +107,7 @@ void DeletePatternPiece::undo()
     }
 
     emit NeedFullParsing();
-    doc->ChangeActivPP(namePP);
+    doc->ChangeActivPP(draftBlockName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -114,7 +116,7 @@ void DeletePatternPiece::redo()
     qCDebug(vUndo, "Redo.");
 
     QDomElement rootElement = doc->documentElement();
-    const QDomElement patternPiece = doc->GetPPElement(namePP);
+    const QDomElement patternPiece = doc->GetPPElement(draftBlockName);
     rootElement.removeChild(patternPiece);
     emit NeedFullParsing();
 }

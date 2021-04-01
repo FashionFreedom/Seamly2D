@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -57,12 +57,13 @@
 #include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-AddPatternPiece::AddPatternPiece(const QDomElement &xml, VAbstractPattern *doc, const QString &namePP,
+AddPatternPiece::AddPatternPiece(const QDomElement &xml, VAbstractPattern *doc, const QString &draftBlockName,
                                  QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent), namePP(namePP)
+    : VUndoCommand(xml, doc, parent)
+    , draftBlockName(draftBlockName)
 {
-    SCASSERT(namePP.isEmpty() == false)
-    setText(tr("add pattern piece %1").arg(namePP));
+    SCASSERT(draftBlockName.isEmpty() == false)
+    setText(tr("add pattern piece %1").arg(draftBlockName));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -81,7 +82,7 @@ void AddPatternPiece::undo()
     else
     {
         QDomElement rootElement = doc->documentElement();
-        QDomElement patternPiece = doc->GetPPElement(namePP);
+        QDomElement patternPiece = doc->GetPPElement(draftBlockName);
         rootElement.removeChild(patternPiece);
         emit NeedFullParsing();
     }

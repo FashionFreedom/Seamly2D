@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -60,7 +60,7 @@
 #include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-RenamePP::RenamePP(VAbstractPattern *doc, const QString &newPPname, QComboBox *combo, QUndoCommand *parent)
+RenameDraftBlock::RenameDraftBlock(VAbstractPattern *doc, const QString &newPPname, QComboBox *combo, QUndoCommand *parent)
     :VUndoCommand(QDomElement(), doc, parent), combo(combo), newPPname(newPPname), oldPPname(QString())
 {
     setText(tr("rename pattern piece"));
@@ -69,11 +69,11 @@ RenamePP::RenamePP(VAbstractPattern *doc, const QString &newPPname, QComboBox *c
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-RenamePP::~RenamePP()
+RenameDraftBlock::~RenameDraftBlock()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-void RenamePP::undo()
+void RenameDraftBlock::undo()
 {
     qCDebug(vUndo, "Undo.");
 
@@ -81,7 +81,7 @@ void RenamePP::undo()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void RenamePP::redo()
+void RenameDraftBlock::redo()
 {
     qCDebug(vUndo, "Redo.");
 
@@ -89,9 +89,9 @@ void RenamePP::redo()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool RenamePP::mergeWith(const QUndoCommand *command)
+bool RenameDraftBlock::mergeWith(const QUndoCommand *command)
 {
-    const RenamePP *renameCommand = static_cast<const RenamePP *>(command);
+    const RenameDraftBlock *renameCommand = static_cast<const RenameDraftBlock *>(command);
     SCASSERT(renameCommand != nullptr)
 
     const QString oldName = renameCommand->getOldPPname();
@@ -105,13 +105,13 @@ bool RenamePP::mergeWith(const QUndoCommand *command)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int RenamePP::id() const
+int RenameDraftBlock::id() const
 {
-    return static_cast<int>(UndoCommand::RenamePP);
+    return static_cast<int>(UndoCommand::RenameDraftBlock);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void RenamePP::ChangeName(const QString &oldName, const QString &newName)
+void RenameDraftBlock::ChangeName(const QString &oldName, const QString &newName)
 {
     if (doc->ChangeNamePP(oldName, newName))
     {
