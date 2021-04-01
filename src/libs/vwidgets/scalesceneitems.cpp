@@ -70,7 +70,7 @@ VScaledLine::VScaledLine(const QLineF &line, QGraphicsItem *parent)
 void VScaledLine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPen lPen = pen();
-    lPen.setWidthF(ScaleWidth(basicWidth, SceneScale(scene())));
+    lPen.setWidthF(scaleWidth(basicWidth, sceneScale(scene())));
     setPen(lPen);
 
     QGraphicsLineItem::paint(painter, option, widget);
@@ -83,7 +83,7 @@ qreal VScaledLine::GetBasicWidth() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VScaledLine::SetBasicWidth(const qreal &value)
+void VScaledLine::setBasicWidth(const qreal &value)
 {
     basicWidth = value;
 }
@@ -96,14 +96,14 @@ VScaledEllipse::VScaledEllipse(QGraphicsItem *parent)
 //---------------------------------------------------------------------------------------------------------------------
 void VScaledEllipse::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    const qreal scale = SceneScale(scene());
-    const qreal width = ScaleWidth(widthMainLine, scale);
+    const qreal scale = sceneScale(scene());
+    const qreal width = scaleWidth(widthMainLine, scale);
 
     QPen visPen = pen();
     visPen.setWidthF(width);
 
     setPen(visPen);
-    ScaleCircleSize(this, scale);
+    scaleCircleSize(this, scale);
 
     QGraphicsEllipseItem::paint(painter, option, widget);
 }

@@ -62,7 +62,7 @@ class VToolInternalPath : public VAbstractNode, public QGraphicsPathItem
 {
     Q_OBJECT
 public:
-    static VToolInternalPath* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
+    static VToolInternalPath *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                   VContainer *data);
     static VToolInternalPath *Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
                                   VAbstractPattern *doc, VContainer *data, const Document &parse,

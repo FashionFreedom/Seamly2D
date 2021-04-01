@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -109,7 +109,7 @@ void VToolCutSpline::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogCutSpline> dialogTool = m_dialog.objectCast<DialogCutSpline>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetFormula(formula);
     dialogTool->setSplineId(curveCutId);
     dialogTool->SetPointName(point->name());
@@ -132,7 +132,7 @@ VToolCutSpline* VToolCutSpline::Create(QSharedPointer<DialogTool> dialog, VMainG
     const QString pointName = dialogTool->getPointName();
     QString formula = dialogTool->GetFormula();
     const quint32 splineId = dialogTool->getSplineId();
-    VToolCutSpline* point = Create(0, pointName, formula, splineId, 5, 10, scene, doc, data, Document::FullParse,
+    VToolCutSpline* point = Create(0, pointName, formula, splineId, 5, 10, true, scene, doc, data, Document::FullParse,
                                    Source::FromGui);
     if (point != nullptr)
     {
@@ -157,7 +157,7 @@ VToolCutSpline* VToolCutSpline::Create(QSharedPointer<DialogTool> dialog, VMainG
  * @param typeCreation way we create this tool.
  */
 VToolCutSpline* VToolCutSpline::Create(const quint32 _id, const QString &pointName, QString &formula,
-                                       const quint32 &splineId, const qreal &mx, const qreal &my,
+                                       const quint32 &splineId, qreal mx, qreal my, bool showPointName,
                                        VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                        const Document &parse, const Source &typeCreation)
 {
@@ -170,6 +170,8 @@ VToolCutSpline* VToolCutSpline::Create(const quint32 _id, const QString &pointNa
 
     quint32 id = _id;
     VPointF *p = new VPointF(point, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     auto spline1 = QSharedPointer<VAbstractBezier>(new VSpline(spl->GetP1(), spl1p2, spl1p3, *p));
     auto spline2 = QSharedPointer<VAbstractBezier>(new VSpline(*p, spl2p2, spl2p3, spl->GetP4()));
 
@@ -215,11 +217,11 @@ void VToolCutSpline::ShowVisualization(bool show)
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolCutSpline::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolCutSpline::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogCutSpline>(this, event);
+        ContextMenu<DialogCutSpline>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -278,7 +280,7 @@ void VToolCutSpline::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolCutSpline::MakeToolTip() const
+QString VToolCutSpline::makeToolTip() const
 {
     const auto spl = VAbstractTool::data.GeometricObject<VAbstractCubicBezier>(curveCutId);
 
@@ -295,14 +297,20 @@ QString VToolCutSpline::MakeToolTip() const
     const QString lengthStr = tr("length");
 
     const QString toolTip = QString("<table>"
+                                    "<tr> <td><b>%6:</b> %7</td> </tr>"
                                     "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
+                                    "<tr> <td><b>%8:</b> %9</td> </tr>"
                                     "<tr> <td><b>%4:</b> %5 %3</td> </tr>"
                                     "</table>")
             .arg(curveStr + QLatin1String("1 ") + lengthStr)
             .arg(qApp->fromPixel(spline1.GetLength()))
             .arg(UnitsToStr(qApp->patternUnit(), true))
             .arg(curveStr + QLatin1String("2 ") + lengthStr)
-            .arg(qApp->fromPixel(spline2.GetLength()));
+            .arg(qApp->fromPixel(spline2.GetLength()))
+            .arg(curveStr + QLatin1String(" 1") + tr("label"))
+            .arg(spline1.name())
+            .arg(curveStr + QLatin1String(" 2") + tr("label"))
+            .arg(spline2.name());
 
     return toolTip;
 }

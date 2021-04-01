@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -60,7 +60,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractPoint::VAbstractPoint(VAbstractPattern *doc, VContainer *data, quint32 id)
-    :VDrawTool(doc, data, id)
+    : VDrawTool(doc, data, id)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -81,11 +81,11 @@ void VAbstractPoint::ShowTool(quint32 id, bool enable)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPoint::DeleteFromLabel()
+void VAbstractPoint::deletePoint()
 {
     try
     {
-        DeleteTool();
+        deleteTool();
     }
     catch(const VExceptionToolWasDeleted &e)
     {

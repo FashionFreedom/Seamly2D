@@ -76,7 +76,7 @@ VisToolSplinePath::VisToolSplinePath(const VContainer *data, QGraphicsItem *pare
       newCurveSegment(nullptr),
       path(),
       isLeftMousePressed(false),
-      pointSelected(false),
+      pointIsSelected(false),
       ctrlPoint()
 {
     newCurveSegment = InitItem<VCurvePathItem>(mainColor, this);
@@ -188,7 +188,7 @@ VScaledEllipse *VisToolSplinePath::getPoint(quint32 i)
     }
     else
     {
-        pointSelected = false;
+        pointIsSelected = false;
 
         auto point = InitPoint(supportColor, this);
         points.append(point);
@@ -227,7 +227,7 @@ void VisToolSplinePath::Creating(const QPointF &pSpl, int size)
         preLastPoint = lastPoint - 1;
     }
 
-    if (isLeftMousePressed && not pointSelected)
+    if (isLeftMousePressed && not pointIsSelected)
     {
         newCurveSegment->hide();
 
@@ -303,7 +303,7 @@ void VisToolSplinePath::Creating(const QPointF &pSpl, int size)
     }
     else
     {
-        pointSelected = true;
+        pointIsSelected = true;
 
         VSpline spline(VPointF(pSpl), ctrlPoint, Visualization::scenePos, VPointF(Visualization::scenePos));
 

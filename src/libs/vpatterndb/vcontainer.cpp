@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -275,27 +275,6 @@ void VContainer::UpdateId(quint32 newId)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief UpdateObject update object in container
- * @param obj container
- * @param id id of existing object
- * @param point object
- */
-template <typename val>
-void VContainer::UpdateObject(QHash<quint32, val> &obj, const quint32 &id, val point)
-{
-    Q_ASSERT_X(id != NULL_ID, Q_FUNC_INFO, "id == 0"); //-V654 //-V712
-    SCASSERT(point.isNull() == false)
-    point->setId(id);
-    if (d->gObjects.contains(id))
-    {
-        d->gObjects[id].clear();
-    }
-    obj[id] = point;
-    UpdateId(id);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
  * @brief Clear clear data in container. Id will be 0.
  */
 void VContainer::Clear()
@@ -524,20 +503,6 @@ quint32 VContainer::AddObject(QHash<key, val> &obj, val value)
     value->setId(id);
     obj[id] = value;
     return id;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief UpdateGObject update GObject by id
- * @param id id of existing GObject
- * @param obj object
- */
-void VContainer::UpdateGObject(quint32 id, VGObject* obj)
-{
-    SCASSERT(obj != nullptr)
-    QSharedPointer<VGObject> pointer(obj);
-    UpdateObject(d->gObjects, id, pointer);
-    uniqueNames.insert(obj->name());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

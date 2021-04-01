@@ -104,6 +104,7 @@
 
 template <class T> class QSharedPointer;
 
+bool VAbstractTool::m_suppressContextMenu = false;
 const QString VAbstractTool::AttrInUse = QStringLiteral("inUse");
 
 namespace
@@ -144,14 +145,14 @@ quint32 CreateNodeSplinePath(VContainer *data, quint32 id)
  * @param parent parent object.
  */
 VAbstractTool::VAbstractTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
-    :VDataTool(data, parent),
-      doc(doc),
-      id(id),
-      vis(),
-      selectionType(SelectionType::ByMouseRelease)
+    : VDataTool(data, parent)
+    , doc(doc)
+    , m_id(id)
+    , vis()
+    , selectionType(SelectionType::ByMouseRelease)
 {
     SCASSERT(doc != nullptr)
-    connect(this, &VAbstractTool::toolhaveChange, this->doc, &VAbstractPattern::haveLiteChange);
+    connect(this, &VAbstractTool::toolHasChanges, this->doc, &VAbstractPattern::haveLiteChange);
     connect(this->doc, &VAbstractPattern::FullUpdateFromFile, this, &VAbstractTool::FullUpdateFromFile);
     connect(this, &VAbstractTool::LiteUpdateTree, this->doc, &VAbstractPattern::LiteParseTree);
 }
@@ -257,9 +258,9 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief DeleteTool full delete object form scene and file.
+ * @brief deleteTool full delete object form scene and file.
  */
-void VAbstractTool::DeleteTool(bool ask)
+void VAbstractTool::deleteTool(bool ask)
 {
     qCDebug(vTool, "Deleting abstract tool.");
     if (_referens <= 1)
@@ -277,7 +278,7 @@ void VAbstractTool::DeleteTool(bool ask)
         }
 
         qCDebug(vTool, "Begin deleting.");
-        DelTool *delTool = new DelTool(doc, id);
+        DelTool *delTool = new DelTool(doc, m_id);
         connect(delTool, &DelTool::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
         qApp->getUndoStack()->push(delTool);
 
@@ -441,7 +442,7 @@ QMap<QString, quint32> VAbstractTool::PointsList() const
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     for (i = objs->constBegin(); i != objs->constEnd(); ++i)
     {
-        if (i.key() != id)
+        if (i.key() != m_id)
         {
             QSharedPointer<VGObject> obj = i.value();
             if (obj->getType() == GOType::Point && obj->getMode() == Draw::Calculation)
@@ -452,6 +453,20 @@ QMap<QString, quint32> VAbstractTool::PointsList() const
         }
     }
     return list;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractTool::setPointNamePosition(quint32 id, const QPointF &pos)
+{
+    Q_UNUSED(id)
+    Q_UNUSED(pos)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractTool::setPointNameVisiblity(quint32 id, bool visible)
+{
+    Q_UNUSED(id)
+    Q_UNUSED(visible)
 }
 
 //---------------------------------------------------------------------------------------------------------------------

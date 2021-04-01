@@ -224,9 +224,11 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    updatePoint(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id, dest.at(i).mx,
-                                dest.at(i).my);
+                {
+                    const DestinationItem &item = dest.at(i);
+                    updatePoint(id, idObject, oPoint, calcAngle, suffix, data, item);
                     break;
+                }
                 case GOType::Arc:
                     updateArc<VArc>(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id);
                     break;
@@ -285,7 +287,7 @@ VFormula VToolRotation::GetFormulaAngle() const
 {
     VFormula fAngle(formulaAngle, getData());
     fAngle.setCheckZero(false);
-    fAngle.setToolId(id);
+    fAngle.setToolId(m_id);
     fAngle.setPostfix(degreeSymbol);
     return fAngle;
 }
@@ -297,7 +299,7 @@ void VToolRotation::SetFormulaAngle(const VFormula &value)
     {
         formulaAngle = value.GetFormula(FormulaType::FromUser);
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -357,11 +359,23 @@ void VToolRotation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolRotation::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+QString VToolRotation::makeToolTip() const
+{
+    const QString toolTipStr = QString("<tr> <td><b>%1:</b> %2</td> </tr>"
+                                       "<tr> <td><b>%3:</b> %4°</td> </tr>")
+                                       .arg(tr("  Origin point"))
+                                       .arg(getOriginPointName())
+                                       .arg(tr("Rotation angle"))
+                                       .arg(GetFormulaAngle().getDoubleValue());
+    return toolTipStr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolRotation::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogRotation>(this, event);
+        ContextMenu<DialogRotation>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -381,6 +395,7 @@ DestinationItem VToolRotation::createPoint(quint32 idTool, quint32 idItem, const
     DestinationItem item;
     item.mx = rotated.mx();
     item.my = rotated.my();
+    item.showPointName = rotated.isShowPointName();
     item.id = data->AddGObject(new VPointF(rotated));
     return item;
 }
@@ -433,14 +448,15 @@ DestinationItem VToolRotation::createCurveWithSegments(quint32 idTool, quint32 i
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolRotation::updatePoint(quint32 idTool, quint32 idItem, const QPointF &origin, qreal angle,
-                                const QString &suffix, VContainer *data, quint32 id, qreal mx, qreal my)
+                                const QString &suffix, VContainer *data, const DestinationItem &item)
 {
     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(idItem);
     VPointF rotated = point->Rotate(origin, angle, suffix);
     rotated.setIdObject(idTool);
-    rotated.setMx(mx);
-    rotated.setMy(my);
-    data->UpdateGObject(id, new VPointF(rotated));
+    rotated.setMx(item.mx);
+    rotated.setMy(item.my);
+    rotated.setShowPointName(item.showPointName);
+    data->UpdateGObject(item.id, new VPointF(rotated));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

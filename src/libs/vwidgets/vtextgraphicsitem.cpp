@@ -151,7 +151,7 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 {
     Q_UNUSED(widget)
     Q_UNUSED(option)
-    painter->fillRect(m_rectBoundingBox, QColor(251, 251, 175));
+    painter->fillRect(m_rectBoundingBox, QColor(251, 251, 175, 128));
     painter->setRenderHints(QPainter::Antialiasing | QPainter::TextAntialiasing);
 
     painter->setPen(Qt::black);
@@ -244,27 +244,29 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
  */
 void VTextGraphicsItem::SetSize(qreal fW, qreal fH)
 {
-    qDebug() << "Setting size to" << fW << parentItem()->boundingRect().width();
     // don't allow resize under specific size
     if (fW > parentItem()->boundingRect().width())
     {
         fW = parentItem()->boundingRect().width();
+        qDebug() << "Setting label width to parent item width" << fW;
     }
     if (fW < minW)
     {
         fW = minW;
+        qDebug() << "Setting label width to min width" << fW;
     }
     if (fH > parentItem()->boundingRect().height())
     {
         fH = parentItem()->boundingRect().height();
+        qDebug() << "Setting label height to parent item height" << fW;
     }
     if (fH < minH)
     {
         fH = minH;
+        qDebug() << "Setting label height to min item height" << fW;
     }
 
     prepareGeometryChange();
-    qDebug() << "Actual size set to" << fW;
     m_rectBoundingBox.setTopLeft(QPointF(0, 0));
     m_rectBoundingBox.setWidth(fW);
     m_rectBoundingBox.setHeight(fH);
@@ -281,7 +283,7 @@ void VTextGraphicsItem::SetSize(qreal fW, qreal fH)
 void VTextGraphicsItem::Update()
 {
     CorrectLabel();
-    UpdateBox();
+    //UpdateBox();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -375,6 +377,7 @@ int VTextGraphicsItem::GetFontSize() const
  */
 void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *pME)
 {
+    qDebug() << "VTextGraphicsItem::mousePressEvent\n";
     if (pME->button() == Qt::LeftButton && pME->type() != QEvent::GraphicsSceneMouseDoubleClick)
     {
         if (m_moveType == NotMovable)
@@ -386,9 +389,11 @@ void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *pME)
         // record the parameters of the mouse press. Specially record the position
         // of the press as the origin for the following operations
         m_ptStartPos = pos();
+       qDebug() << " start position" << m_ptStartPos;
         m_ptStart = pME->scenePos();
         m_szStart = m_rectBoundingBox.size();
         m_ptRotCenter = mapToScene(m_rectBoundingBox.center());
+        qDebug() << " center position" << m_ptRotCenter;
         m_dAngle = GetAngle(pME->scenePos());
         m_dRotation = rotation();
         // in rotation mode, do not do any changes here, because user might want to
@@ -420,6 +425,7 @@ void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *pME)
         }
         else if (m_moveType & IsResizable)
         {
+            qDebug() << " Item is Movable\n";
             if (m_moveType & IsRotatable)
             {
                 AllUserModifications(pME->pos());
@@ -465,12 +471,14 @@ void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *pME)
  */
 void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent* pME)
 {
+    qDebug() << "VTextGraphicsItem::mouseMoveEvent\n";
     qreal dX;
     qreal dY;
     QRectF rectBB;
     const QPointF ptDiff = pME->scenePos() - m_ptStart;
     if (m_eMode == mMove && m_moveType & IsMovable)
     {
+        qDebug() << " Item is Movable\n";
         // in move mode move the label along the mouse move from the origin
         QPointF pt = m_ptStartPos + ptDiff;
         rectBB.setTopLeft(pt);
@@ -479,14 +487,17 @@ void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent* pME)
         // before moving label to a new position, check if it will still be inside the parent item
         if (IsContained(rectBB, rotation(), dX, dY) == false)
         {
+            qDebug() << " Item is contained\n";
             pt.setX(pt.x() + dX);
             pt.setY(pt.y() + dY);
         }
         setPos(pt);
+        qDebug() << " Item position" << pt;
         UpdateBox();
     }
     else if (m_eMode == mResize && m_moveType & IsResizable)
     {
+        qDebug() << " Item is Resizable\n";
         // in resize mode, resize the label along the mouse move from the origin
         QPointF pt;
 
@@ -517,11 +528,13 @@ void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent* pME)
         }
 
         SetSize(sz.width(), sz.height());
+        qDebug() << " Item size" << sz.width() << sz.height();
         Update();
         emit SignalShrink();
     }
     else if (m_eMode == mRotate && m_moveType & IsRotatable)
     {
+        qDebug() << " Item is Rotatable\n";
         // if the angle from the original position is small (0.5 degrees), just remeber the new angle
         // new angle will be the starting angle for rotation
         if (fabs(m_dAngle) < 0.01)
@@ -691,7 +704,7 @@ void VTextGraphicsItem::UserMoveAndResize(const QPointF &pos)
     if (m_rectResize.contains(pos) == true)
     {
         m_eMode = mResize;
-        setCursor(Qt::SizeFDiagCursor);
+        setCursor(Qt::SizeAllCursor);
     }
     else
     {

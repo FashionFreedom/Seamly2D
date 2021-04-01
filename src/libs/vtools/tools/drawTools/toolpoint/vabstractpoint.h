@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -76,30 +76,25 @@ class VAbstractPoint: public VDrawTool
 {
     Q_OBJECT
 public:
-    VAbstractPoint(VAbstractPattern *doc, VContainer *data, quint32 id);
-    virtual ~VAbstractPoint() Q_DECL_EQ_DEFAULT;
+                     VAbstractPoint(VAbstractPattern *doc, VContainer *data, quint32 id);
+    virtual         ~VAbstractPoint() Q_DECL_EQ_DEFAULT;
 
-    virtual QString      getTagName() const Q_DECL_OVERRIDE;
+    virtual QString  getTagName() const Q_DECL_OVERRIDE;
 
     template <typename T>
-    void ShowToolVisualization(bool show);
+    void             ShowToolVisualization(bool show);
 
 public slots:
-    virtual void ShowTool(quint32 id, bool enable) Q_DECL_OVERRIDE;
-    void         DeleteFromLabel();
-    virtual void DoChangePosition(quint32 id, qreal mx, qreal my) =0;
+    virtual void     ShowTool(quint32 id, bool enable) Q_DECL_OVERRIDE;
+    void             deletePoint();
 
 protected:
-    void SetPointName(quint32 id, const QString &name);
+    void             SetPointName(quint32 id, const QString &name);
+    virtual void     updatePointNamePosition(quint32 id, const QPointF &pos)=0;
+
 
     template <typename T>
-    void ChangePosition(T *item, quint32 id, const QPointF &pos);
-
-
-    virtual void UpdateNamePosition(quint32 id)=0;
-
-    template <typename T>
-    static void InitToolConnections(VMainGraphicsScene *scene, T *tool);
+    static void      InitToolConnections(VMainGraphicsScene *scene, T *tool);
 
 private:
     Q_DISABLE_COPY(VAbstractPoint)
@@ -132,15 +127,6 @@ void VAbstractPoint::ShowToolVisualization(bool show)
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-void VAbstractPoint::ChangePosition(T *item, quint32 id, const QPointF &pos)
-{
-    const QPointF p = pos - item->pos();
-    DoChangePosition(id, p.x(), p.y());
-    UpdateNamePosition(id);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-template <typename T>
 void VAbstractPoint::InitToolConnections(VMainGraphicsScene *scene, T *tool)
 {
     SCASSERT(scene != nullptr)
@@ -149,8 +135,8 @@ void VAbstractPoint::InitToolConnections(VMainGraphicsScene *scene, T *tool)
     InitDrawToolConnections(scene, tool);
     QObject::connect(scene, &VMainGraphicsScene::EnablePointItemHover, tool, &T::AllowHover);
     QObject::connect(scene, &VMainGraphicsScene::EnablePointItemSelection, tool, &T::AllowSelecting);
-    QObject::connect(scene, &VMainGraphicsScene::EnableLabelItemHover, tool, &T::AllowLabelHover);
-    QObject::connect(scene, &VMainGraphicsScene::EnableLabelItemSelection, tool, &T::AllowLabelSelecting);
+    QObject::connect(scene, &VMainGraphicsScene::enableTextItemHover, tool, &T::allowTextHover);
+    QObject::connect(scene, &VMainGraphicsScene::enableTextItemSelection, tool, &T::allowTextSelectable);
 }
 
 #endif // VABSTRACTPOINT_H

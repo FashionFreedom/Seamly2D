@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,52 +72,59 @@ class VToolPointOfIntersectionCurves : public VToolSinglePoint
 {
     Q_OBJECT
 public:
-    virtual void setDialog() Q_DECL_OVERRIDE;
+    virtual void         setDialog() Q_DECL_OVERRIDE;
+
     static VToolPointOfIntersectionCurves *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                                   VAbstractPattern *doc, VContainer *data);
     static VToolPointOfIntersectionCurves *Create(const quint32 _id, const QString &pointName,
                                                   quint32 firstCurveId, quint32 secondCurveId,
                                                   VCrossCurvesPoint vCrossPoint, HCrossCurvesPoint hCrossPoint,
-                                                  const qreal &mx, const qreal &my, VMainGraphicsScene *scene,
+                                                  qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                                   VAbstractPattern *doc, VContainer *data, const Document &parse,
                                                   const Source &typeCreation);
-    static QPointF FindPoint(const QVector<QPointF> &curve1Points, const QVector<QPointF> &curve2Points,
-                             VCrossCurvesPoint vCrossPoint, HCrossCurvesPoint hCrossPoint);
+
+    static QPointF       FindPoint(const QVector<QPointF> &curve1Points, const QVector<QPointF> &curve2Points,
+                                    VCrossCurvesPoint vCrossPoint, HCrossCurvesPoint hCrossPoint);
+
     static const QString ToolType;
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int          type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::PointOfIntersectionCurves) };
 
-    QString FirstCurveName() const;
-    QString SecondCurveName() const;
+    QString              FirstCurveName() const;
+    QString              SecondCurveName() const;
 
-    quint32 GetFirstCurveId() const;
-    void    SetFirstCurveId(const quint32 &value);
+    quint32              GetFirstCurveId() const;
+    void                 SetFirstCurveId(const quint32 &value);
 
-    quint32 GetSecondCurveId() const;
-    void    SetSecondCurveId(const quint32 &value);
+    quint32              GetSecondCurveId() const;
+    void                 SetSecondCurveId(const quint32 &value);
 
-    VCrossCurvesPoint GetVCrossPoint() const;
-    void              SetVCrossPoint(const VCrossCurvesPoint &value);
+    VCrossCurvesPoint    GetVCrossPoint() const;
+    void                 SetVCrossPoint(const VCrossCurvesPoint &value);
 
-    HCrossCurvesPoint GetHCrossPoint() const;
-    void              SetHCrossPoint(const HCrossCurvesPoint &value);
+    HCrossCurvesPoint    GetHCrossPoint() const;
+    void                 SetHCrossPoint(const HCrossCurvesPoint &value);
 
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
+protected slots:
+    virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
 protected:
-    virtual void RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SetVisualization() Q_DECL_OVERRIDE;
+    virtual void         RemoveReferens() Q_DECL_OVERRIDE;
+    virtual void         SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SetVisualization() Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VToolPointOfIntersectionCurves)
 
-    quint32 firstCurveId;
-    quint32 secondCurveId;
+    quint32              firstCurveId;
+    quint32              secondCurveId;
 
-    VCrossCurvesPoint vCrossPoint;
-    HCrossCurvesPoint hCrossPoint;
+    VCrossCurvesPoint    vCrossPoint;
+    HCrossCurvesPoint    hCrossPoint;
 
     explicit VToolPointOfIntersectionCurves(VAbstractPattern *doc, VContainer *data, const quint32 &id, const
                                             quint32 firstCurveId, quint32 secondCurveId,

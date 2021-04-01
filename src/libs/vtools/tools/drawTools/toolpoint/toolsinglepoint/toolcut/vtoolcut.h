@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,36 +72,37 @@ class VToolCut : public VToolSinglePoint
 {
     Q_OBJECT
 public:
-    VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
-             const quint32 &curveCutId, QGraphicsItem * parent = nullptr);
+                  VToolCut(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
+                           const quint32 &curveCutId, QGraphicsItem * parent = nullptr);
+                           
     virtual int   type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::Cut)};
 
-    VFormula GetFormula() const;
-    void     SetFormula(const VFormula &value);
+    VFormula      GetFormula() const;
+    void          SetFormula(const VFormula &value);
 
-    QString CurveName() const;
+    QString       CurveName() const;
 
-    quint32 getCurveCutId() const;
-    void    setCurveCutId(const quint32 &value);
+    quint32       getCurveCutId() const;
+    void          setCurveCutId(const quint32 &value);
 
 public slots:
-    virtual void    Disable(bool disable, const QString &namePP) Q_DECL_OVERRIDE;
-    virtual void    DetailsMode(bool mode) Q_DECL_OVERRIDE;
-    virtual void    FullUpdateFromFile() Q_DECL_OVERRIDE;
-    virtual QString MakeToolTip() const Q_DECL_OVERRIDE;
+    virtual void  Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;
+    virtual void  piecesMode(bool mode) Q_DECL_OVERRIDE;
+    virtual void  FullUpdateFromFile() Q_DECL_OVERRIDE;
+
 protected:
     /** @brief formula keep formula of length */
     QString       formula;
 
     quint32       curveCutId;
-    bool          detailsMode;
+    bool          m_piecesMode;
 
     void          RefreshGeometry();
     virtual void  RemoveReferens() Q_DECL_OVERRIDE;
 
     template <typename T>
-    void ShowToolVisualization(bool show);
+    void          ShowToolVisualization(bool show);
 
 private:
     Q_DISABLE_COPY(VToolCut)
@@ -134,8 +135,7 @@ inline void VToolCut::ShowToolVisualization(bool show)
     VDataTool *parent = VAbstractPattern::getTool(VAbstractTool::data.GetGObject(curveCutId)->getIdTool());
     if (VAbstractSpline *parentCurve = qobject_cast<VAbstractSpline *>(parent))
     {
-        detailsMode ? parentCurve->ShowHandles(detailsMode) : parentCurve->ShowHandles(show);
+        m_piecesMode ? parentCurve->ShowHandles(m_piecesMode) : parentCurve->ShowHandles(show);
     }
 }
-
 #endif // VTOOLCUT_H

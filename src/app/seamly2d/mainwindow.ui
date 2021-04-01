@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -37,7 +40,7 @@
     <item>
      <widget class="VMainGraphicsView" name="view">
       <property name="enabled">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -128,6 +131,15 @@
     <property name="title">
      <string>View</string>
     </property>
+    <widget class="QMenu" name="pointNames_Menu">
+     <property name="title">
+      <string>Point Names</string>
+     </property>
+     <addaction name="showPointNames_Action"/>
+     <addaction name="increaseSize_Action"/>
+     <addaction name="decreaseSize_Action"/>
+     <addaction name="useToolColor_Action"/>
+    </widget>
     <addaction name="draftMode_Action"/>
     <addaction name="pieceMode_Action"/>
     <addaction name="layoutMode_Action"/>
@@ -141,7 +153,9 @@
     <addaction name="zoomToArea_Action"/>
     <addaction name="zoomPan_Action"/>
     <addaction name="separator"/>
-    <addaction name="showCurveDetails_Action"/>
+    <addaction name="pointNames_Menu"/>
+    <addaction name="toggleControlPoints_Action"/>
+    <addaction name="toggleAxisOrigin_Action"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="edit_Menu">
@@ -739,6 +753,24 @@
    <addaction name="newPatternLayout_Action"/>
    <addaction name="exportLayout_Action"/>
   </widget>
+  <widget class="QToolBar" name="pointName_ToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Point Name ToolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="increaseSize_Action"/>
+   <addaction name="decreaseSize_Action"/>
+   <addaction name="showPointNames_Action"/>
+   <addaction name="useToolColor_Action"/>
+  </widget>
   <widget class="QDockWidget" name="toolbox_DockWidget">
    <property name="minimumSize">
     <size>
@@ -804,7 +836,7 @@
       <string/>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <property name="tabSpacing">
       <number>4</number>
@@ -2567,6 +2599,22 @@
     </widget>
    </widget>
   </widget>
+  <widget class="QToolBar" name="view_ToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>View Toolbar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="toggleControlPoints_Action"/>
+   <addaction name="toggleAxisOrigin_Action"/>
+  </widget>
   <action name="actionNew">
    <property name="icon">
     <iconset theme="document-new">
@@ -2659,7 +2707,7 @@
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="enabled">
     <bool>false</bool>
@@ -2731,7 +2779,7 @@
   </action>
   <action name="newDraft_Action">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
@@ -3725,21 +3773,25 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="showCurveDetails_Action">
+  <action name="toggleControlPoints_Action">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="enabled">
     <bool>false</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/curve_control_points.png</normaloff>:/icon/32x32/curve_control_points.png</iconset>
+   </property>
    <property name="text">
-    <string>Curve Details</string>
+    <string>Curve Control Points</string>
    </property>
    <property name="toolTip">
-    <string>Show/ Hide Control Points and Curve Direction (F2)</string>
+    <string>Toggle Control Points and Curve Direction (F2)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">F2</string>
+    <string notr="true">F3</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -4341,6 +4393,96 @@
    </property>
    <property name="text">
     <string>patternPiece_Action</string>
+   </property>
+  </action>
+  <action name="showPointNames_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/16x16/open_eye@2x.png</normaloff>:/icon/16x16/open_eye@2x.png</iconset>
+   </property>
+   <property name="text">
+    <string>Toggle Point Name Text</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="increaseSize_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/increase_size.png</normaloff>:/icon/32x32/increase_size.png</iconset>
+   </property>
+   <property name="text">
+    <string>Increase Text Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+]</string>
+   </property>
+  </action>
+  <action name="decreaseSize_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/decrease_size.png</normaloff>:/icon/32x32/decrease_size.png</iconset>
+   </property>
+   <property name="text">
+    <string>Decrease Text Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+[</string>
+   </property>
+  </action>
+  <action name="useToolColor_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/pen_color.png</normaloff>:/icon/32x32/pen_color.png</iconset>
+   </property>
+   <property name="text">
+    <string>Use Tool Color</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="toggleAxisOrigin_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/origin.png</normaloff>:/icon/32x32/origin.png</iconset>
+   </property>
+   <property name="text">
+    <string>Axis Origin </string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Axis Origin</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
    </property>
   </action>
  </widget>

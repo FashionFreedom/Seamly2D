@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -66,23 +66,44 @@ class VPointFData : public QSharedData
 public:
 
     VPointFData()
-        : _mx(0), _my(0), _x(0), _y(0)
+        : _mx(0)
+        , _my(0)
+        , _x(0)
+        , _y(0)
+        , m_showPointName(true)
     {}
 
     VPointFData(const VPointFData &point)
-        :QSharedData(point), _mx(point._mx), _my(point._my), _x(point._x), _y(point._y)
+        : QSharedData(point)
+        , _mx(point._mx)
+        , _my(point._my)
+        , _x(point._x)
+        , _y(point._y)
+        , m_showPointName(point.m_showPointName)
     {}
 
     explicit VPointFData(const QPointF &point)
-        :_mx(0), _my(0), _x(point.x()), _y(point.y())
+        : _mx(0)
+        , _my(0)
+        , _x(point.x())
+        , _y(point.y())
+        , m_showPointName(true)
     {}
 
     VPointFData(qreal x, qreal y, qreal mx, qreal my)
-        :_mx(mx), _my(my), _x(x), _y(y)
+        : _mx(mx)
+        , _my(my)
+        , _x(x)
+        , _y(y)
+        , m_showPointName(true)
     {}
 
     VPointFData(const QPointF &point, qreal mx, qreal my)
-        :_mx(mx), _my(my), _x(point.x()), _y(point.y())
+        : _mx(mx)
+        , _my(my)
+        , _x(point.x())
+        , _y(point.y())
+        , m_showPointName(true)
     {}
 
     virtual ~VPointFData();
@@ -98,6 +119,9 @@ public:
 
     /** @brief _y y coordinate */
     qreal   _y;
+
+    /** @brief m_showPointName hide or show name for this point */
+    bool    m_showPointName;
 
 private:
     VPointFData &operator=(const VPointFData &) Q_DECL_EQ_DELETE;

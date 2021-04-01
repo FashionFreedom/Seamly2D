@@ -65,6 +65,8 @@
 #include <Qt>
 
 #include "global.h"
+#include "../vmisc/vcommonsettings.h"
+#include "../vmisc/vabstractapplication.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -142,8 +144,9 @@ void VMainGraphicsScene::InitOrigins()
 {
     origins.clear();
 
-    QPen originsPen(Qt::green, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
-    QBrush axisTextBrush(Qt::green);
+    QColor orginColor = (QColor(qApp->Settings()->getAxisOrginColor()));
+    QPen originsPen(orginColor, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    QBrush axisTextBrush(orginColor);
     const qreal arrowAngle = 35.0;
     const qreal arrowLength = 12.0;
 
@@ -293,20 +296,20 @@ void VMainGraphicsScene::swapTransforms()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::SetDisableTools(bool disable, const QString &namePP)
+void VMainGraphicsScene::SetDisableTools(bool disable, const QString &draftBlockName)
 {
-    emit DisableItem(disable, namePP);
+    emit DisableItem(disable, draftBlockName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChoosedItem emit ChoosedObject signal.
+ * @brief chosenItem emit ChosenObject signal.
  * @param id object id.
  * @param type object scene type.
  */
-void VMainGraphicsScene::ChoosedItem(quint32 id, const SceneObject &type)
+void VMainGraphicsScene::chosenItem(quint32 id, const SceneObject &type)
 {
-    emit ChoosedObject(id, type);
+    emit ChosenObject(id, type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -322,9 +325,9 @@ void VMainGraphicsScene::EnableItemMove(bool move)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::EnableDetailsMode(bool mode)
+void VMainGraphicsScene::enablePiecesMode(bool mode)
 {
-    emit CurveDetailsMode(mode);
+    emit curvePiecesMode(mode);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -342,7 +345,7 @@ void VMainGraphicsScene::HighlightItem(quint32 id)
 //---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsScene::ToggleLabelSelection(bool enabled)
 {
-    emit EnableLabelItemSelection(enabled);
+    emit enableTextItemSelection(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -402,7 +405,7 @@ void VMainGraphicsScene::ToggleDetailSelection(bool enabled)
 //---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsScene::ToggleLabelHover(bool enabled)
 {
-    emit EnableLabelItemHover(enabled);
+    emit enableTextItemHover(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

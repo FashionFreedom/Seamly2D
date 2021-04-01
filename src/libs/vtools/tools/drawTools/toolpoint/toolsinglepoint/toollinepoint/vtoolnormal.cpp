@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -113,8 +113,9 @@ void VToolNormal::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogNormal> dialogTool = m_dialog.objectCast<DialogNormal>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetTypeLine(m_lineType);
+    dialogTool->SetLineColor(lineColor);
     dialogTool->SetFormula(formulaLength);
     dialogTool->SetAngle(angle);
     dialogTool->SetFirstPointId(basePointId);
@@ -143,8 +144,8 @@ VToolNormal* VToolNormal::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     const QString lineColor = dialogTool->GetLineColor();
     const QString pointName = dialogTool->getPointName();
     const qreal angle = dialogTool->GetAngle();
-    VToolNormal *point = Create(0, formula, firstPointId, secondPointId, typeLine, lineColor, pointName, angle, 5, 10,
-                                scene, doc, data, Document::FullParse, Source::FromGui);
+    VToolNormal *point = Create(0, formula, firstPointId, secondPointId, typeLine, lineColor, pointName, angle,
+                                5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -164,15 +165,16 @@ VToolNormal* VToolNormal::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
  * @param angle additional angle.
  * @param mx label bias x axis.
  * @param my label bias y axis.
+ * @param showPointName show/hide point name text.
  * @param scene pointer to scene.
  * @param doc dom document container.
  * @param data container with variables.
  * @param parse parser file mode.
  * @param typeCreation way we create this tool.
  */
-VToolNormal* VToolNormal::Create(const quint32 _id, QString &formula, const quint32 &firstPointId,
-                                 const quint32 &secondPointId, const QString &typeLine, const QString &lineColor,
-                                 const QString &pointName, const qreal angle, const qreal &mx, const qreal &my,
+VToolNormal* VToolNormal::Create(const quint32 _id, QString &formula, quint32 firstPointId,
+                                 quint32 secondPointId, const QString &typeLine, const QString &lineColor,
+                                 const QString &pointName, qreal angle, qreal mx, qreal my, bool showPointName,
                                  VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                  const Document &parse,
                                  const Source &typeCreation)
@@ -185,14 +187,17 @@ VToolNormal* VToolNormal::Create(const quint32 _id, QString &formula, const quin
     QPointF fPoint = VToolNormal::FindPoint(static_cast<QPointF>(*firstPoint), static_cast<QPointF>(*secondPoint),
                                             qApp->toPixel(result), angle);
     quint32 id = _id;
+    VPointF *p = new VPointF(fPoint, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     if (typeCreation == Source::FromGui)
     {
-        id = data->AddGObject(new VPointF(fPoint, pointName, mx, my));
+        id = data->AddGObject(p);
         data->AddLine(firstPointId, id);
     }
     else
     {
-        data->UpdateGObject(id, new VPointF(fPoint, pointName, mx, my));
+        data->UpdateGObject(id, p);
         data->AddLine(firstPointId, id);
         if (parse != Document::FullParse)
         {
@@ -245,11 +250,11 @@ QString VToolNormal::SecondPointName() const
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolNormal::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolNormal::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogNormal>(this, event);
+        ContextMenu<DialogNormal>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -340,7 +345,7 @@ void VToolNormal::SetSecondPointId(const quint32 &value)
     {
         secondPointId = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }

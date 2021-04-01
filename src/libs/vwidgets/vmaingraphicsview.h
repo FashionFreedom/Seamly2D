@@ -165,7 +165,7 @@ public:
     void                  zoomPanEnabled(bool value);
     void                  zoomToAreaEnabled(bool value);
 
-    static void           NewSceneRect(QGraphicsScene *sc, QGraphicsView *view);
+    static void           NewSceneRect(QGraphicsScene *sc, QGraphicsView *view, QGraphicsItem *item = nullptr);
     static QRectF         SceneVisibleArea(QGraphicsView *view);
 
     static qreal          MinScale();

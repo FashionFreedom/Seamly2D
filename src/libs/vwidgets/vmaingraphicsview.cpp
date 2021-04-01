@@ -819,21 +819,28 @@ void VMainGraphicsView::allowRubberBand(bool value)
  * @param sc scene.
  * @param view view.
  */
-void VMainGraphicsView::NewSceneRect(QGraphicsScene *sc, QGraphicsView *view)
-{
+ void VMainGraphicsView::NewSceneRect(QGraphicsScene *sc, QGraphicsView *view, QGraphicsItem *item)
+ {
     SCASSERT(sc != nullptr)
     SCASSERT(view != nullptr)
 
-    //Calculate view rect
-    const QRectF viewRect = SceneVisibleArea(view);
+    if (item == nullptr)
+    {
+        //Calculate view rect
+        const QRectF viewRect = SceneVisibleArea(view);
 
-    //Calculate scene rect
-    VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(sc);
-    SCASSERT(currentScene)
-    const QRectF itemsRect = currentScene->visibleItemsBoundingRect();
+        //Calculate scene rect
+        VMainGraphicsScene *currentScene = qobject_cast<VMainGraphicsScene *>(sc);
+        SCASSERT(currentScene)
+        const QRectF itemsRect = currentScene->visibleItemsBoundingRect();
 
-    //Unite two rects
-    sc->setSceneRect(itemsRect.united(viewRect));
+        //Unite two rects
+        sc->setSceneRect(itemsRect.united(viewRect));
+    }
+    else if (not sc->sceneRect().contains(item->sceneBoundingRect()))
+    {
+        sc->setSceneRect(sc->sceneRect().united(item->sceneBoundingRect()));
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

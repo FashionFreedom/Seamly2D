@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -75,47 +75,51 @@ class VToolShoulderPoint : public VToolLinePoint
 {
     Q_OBJECT
 public:
-    virtual void   setDialog() Q_DECL_OVERRIDE;
-    static QPointF FindPoint(const QPointF &p1Line, const QPointF &p2Line, const QPointF &pShoulder,
-                             const qreal &length);
-    static VToolShoulderPoint* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
+    virtual void               setDialog() Q_DECL_OVERRIDE;
+    static QPointF             FindPoint(const QPointF &p1Line, const QPointF &p2Line, const QPointF &pShoulder,
+                                         const qreal &length);
+
+    static VToolShoulderPoint *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                       VAbstractPattern *doc, VContainer *data);
-    static VToolShoulderPoint* Create(const quint32 _id, QString &formula, const quint32 &p1Line, const quint32 &p2Line,
-                                      const quint32 &pShoulder, const QString &typeLine, const QString &lineColor,
-                                      const QString &pointName, const qreal &mx, const qreal &my,
+    static VToolShoulderPoint *Create(const quint32 _id, QString &formula, quint32 p1Line, quint32 p2Line,
+                                      quint32 pShoulder, const QString &typeLine, const QString &lineColor,
+                                      const QString &pointName, qreal mx, qreal my, bool showPointName,
                                       VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                       const Document &parse,
                                       const Source &typeCreation);
-    static const QString ToolType;
-    virtual int    type() const Q_DECL_OVERRIDE {return Type;}
+                                      
+    static const QString       ToolType;
+    virtual int                type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::ShoulderPoint) };
 
-    QString SecondPointName() const;
-    QString ShoulderPointName() const;
+    QString                    SecondPointName() const;
+    QString                    ShoulderPointName() const;
 
-    quint32 GetP2Line() const;
-    void    SetP2Line(const quint32 &value);
+    quint32                    GetP2Line() const;
+    void                       SetP2Line(const quint32 &value);
 
-    quint32 getPShoulder() const;
-    void    setPShoulder(const quint32 &value);
+    quint32                    getPShoulder() const;
+    void                       setPShoulder(const quint32 &value);
 
-    virtual void   ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void               ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
+protected slots:
+    virtual void               showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
+
 protected:
-    virtual void    contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void    RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void    SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void    SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void    ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void    SetVisualization() Q_DECL_OVERRIDE;
-    virtual QString MakeToolTip() const Q_DECL_OVERRIDE;
+    virtual void               RemoveReferens() Q_DECL_OVERRIDE;
+    virtual void               SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void               SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void               ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void               SetVisualization() Q_DECL_OVERRIDE;
+    virtual QString            makeToolTip() const Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VToolShoulderPoint)
 
-    /** @brief p2Line id second line point. */
-    quint32         p2Line;
-
-    /** @brief pShoulder id shoulder line point. */
-    quint32         pShoulder;
+    quint32                    p2Line;        /** @brief p2Line id second line point. */
+    quint32                    pShoulder;     /** @brief pShoulder id shoulder line point. */
 
     VToolShoulderPoint(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
                        const QString &lineColor, const QString &formula, const quint32 &p1Line, const quint32 &p2Line,
