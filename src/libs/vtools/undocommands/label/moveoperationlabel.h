@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,7 +23,7 @@
 
  ************************************************************************
  **
- **  @file   operationmovelabel.h
+ **  @file   moveoperationlabel.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   13 5, 2016
  **
@@ -49,8 +49,8 @@
  **
  *************************************************************************/
 
-#ifndef OPERATIONMOVELABEL_H
-#define OPERATIONMOVELABEL_H
+#ifndef MOVE_OPERATION_LABEL_H
+#define MOVE_OPERATION_LABEL_H
 
 #include <qcompilerdetection.h>
 #include <QDomElement>
@@ -61,31 +61,33 @@
 
 #include "moveabstractlabel.h"
 
-class OperationMoveLabel : public MoveAbstractLabel
+class MoveOperationLabel : public MoveAbstractLabel
 {
-    Q_OBJECT
 public:
-    OperationMoveLabel(quint32 idTool, VAbstractPattern *doc, double x, double y, quint32 idPoint,
-                      QUndoCommand *parent = nullptr);
-    virtual ~OperationMoveLabel();
+                    MoveOperationLabel(quint32 idTool, VAbstractPattern *doc, const QPointF &pos,
+                                       quint32 idPoint, QUndoCommand *parent = nullptr);
+    virtual        ~MoveOperationLabel()=default;
 
-    virtual bool mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
-    virtual int  id() const Q_DECL_OVERRIDE;
+    virtual bool    mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
+    virtual int     id() const Q_DECL_OVERRIDE;
 
-    quint32 GetToolId() const;
+    quint32         GetToolId() const;
+
 protected:
-    virtual void Do(double mx, double my) Q_DECL_OVERRIDE;
-private:
-    Q_DISABLE_COPY(OperationMoveLabel)
-    quint32 m_idTool;
+    virtual void    Do(const QPointF &pos) Q_DECL_OVERRIDE;
 
-    QDomElement GetDestinationObject(quint32 idTool, quint32 idPoint) const;
+private:
+    Q_DISABLE_COPY(MoveOperationLabel)
+    quint32         m_idTool;
+    //Need for resizing scene rect
+    QGraphicsScene *m_scene;
+
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline quint32 OperationMoveLabel::GetToolId() const
+inline quint32 MoveOperationLabel::GetToolId() const
 {
     return m_idTool;
 }
 
-#endif // OPERATIONMOVELABEL_H
+#endif // MOVE_OPERATION_LABEL_H
