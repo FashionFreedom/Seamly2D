@@ -403,7 +403,7 @@ public slots:
 
 protected:
     /** @brief nameActivDraw name current pattern peace. */
-    QString        nameActivPP;
+    QString        activeDraftBlock;
 
     /** @brief cursor cursor keep id tool after which we will add new tool in file. */
     quint32        cursor;

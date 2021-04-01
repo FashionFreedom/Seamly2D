@@ -164,6 +164,9 @@ extern const QString AttrSuffix;
 extern const QString AttrIdObject;
 extern const QString AttrInLayout;
 extern const QString AttrClosed;
+extern const QString AttrShowPointName;
+extern const QString AttrShowPointName1;
+extern const QString AttrShowPointName2;
 
 extern const QString LineTypeNone;
 extern const QString LineTypeSolidLine;
