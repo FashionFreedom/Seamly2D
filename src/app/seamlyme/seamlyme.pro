@@ -178,7 +178,12 @@ QMAKE_CLEAN += $${OUT_PWD}/$${DESTDIR}/diagrams.rcc
 # INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
 include(../tables.pri)
 copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
+
+noTranslations{ # For enable run qmake with CONFIG+=noTranslations
+    # do nothing
+} else {
 include(../translations.pri)
+}
 
 # Set "make install" command for Unix-like systems.
 unix{
