@@ -92,7 +92,6 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
     ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
     ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
     ui->hideMainPath_CheckBox->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
-    ui->labelFont_ComboBox->setCurrentFont(qApp->Seamly2DSettings()->GetLabelFont());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -115,7 +114,6 @@ void PreferencesPatternPage::Apply()
 
     settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
     settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
-    settings->SetLabelFont(ui->labelFont_ComboBox->currentFont());
 
     settings->setDefaultNotchType(ui->defaultNotchType_ComboBox->currentData().toString());
     settings->setDefaultNotchLength(ui->defaultNotchLength_DoubleSpinBox->value());

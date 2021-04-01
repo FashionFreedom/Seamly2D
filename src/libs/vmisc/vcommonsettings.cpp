@@ -96,10 +96,23 @@ const QString settingGraphicsViewAngleDelta              = QStringLiteral("graph
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
+
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
 const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
+const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
+const QString settingGraphicsViewPointNameHoverColor     = QStringLiteral("graphicsview/pointNameHoverColor");
+const QString settingGraphicsViewAxisOrginColor          = QStringLiteral("graphicsview/axisOrginColor");
+
 const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
 const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
+
+const QString settingGraphicsViewPointNameSize           = QStringLiteral("graphicsview/pointNameSize");
+const QString settingGraphicsViewGuiFontSize             = QStringLiteral("graphicsview/guiFontSize");
+const QString settingGraphicsViewHidePointNames          = QStringLiteral("graphicsview/hidePointNames");
+const QString settingGraphicsViewShowAxisOrigin          = QStringLiteral("graphicsview/showAxisOrigin");
+const QString settingGraphicsViewShowControlPoints       = QStringLiteral("graphicsview/showControlPoints");
+const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graphicsview/showAnchorPoints");
+const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
 const QString settingPatternForbidFlipping               = QStringLiteral("pattern/forbidFlipping");
@@ -112,6 +125,8 @@ const QString settingDoubleNotch                         = QStringLiteral("patte
 
 const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
 const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
+const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
+const QString settingPatternPointNameFont                = QStringLiteral("pattern/pointNameFont");
 
 const QString settingGeneralRecentFileList               = QStringLiteral("recentFileList");
 const QString settingGeneralRestoreFileList              = QStringLiteral("restoreFileList");
@@ -133,6 +148,8 @@ const QString settingLabelDateFormat                     = QStringLiteral("label
 const QString settingLabelUserDateFormats                = QStringLiteral("label/userDateFormats");
 const QString settingLabelTimeFormat                     = QStringLiteral("label/timeFormat");
 const QString settingLabelUserTimeFormats                = QStringLiteral("label/userTimeFormats");
+
+int pointNameSize = 0;
 
 //---------------------------------------------------------------------------------------------------------------------
 QStringList ClearFormats(const QStringList &predefinedFormats, QStringList formats)
@@ -644,6 +661,42 @@ void VCommonSettings::setZoomRBNegativeColor(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getPointNameColor() const
+{
+    return value(settingGraphicsViewPointNameColor, "green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameColor(const QString &value)
+{
+    setValue(settingGraphicsViewPointNameColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getPointNameHoverColor() const
+{
+    return value(settingGraphicsViewPointNameHoverColor, "green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameHoverColor(const QString &value)
+{
+    setValue(settingGraphicsViewPointNameHoverColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getAxisOrginColor() const
+{
+    return value(settingGraphicsViewAxisOrginColor, "magenta").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAxisOrginColor(const QString &value)
+{
+    setValue(settingGraphicsViewAxisOrginColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getConstrainValue() const
 {
     return value(settingGraphicsViewConstrainValue, 10.00).toReal();
@@ -1048,15 +1101,133 @@ double VCommonSettings::GetDefaultSeamAllowance()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QFont VCommonSettings::GetLabelFont() const
+QFont VCommonSettings::getLabelFont() const
 {
     return qvariant_cast<QFont>(value(settingPatternLabelFont, QApplication::font()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetLabelFont(const QFont &f)
+void VCommonSettings::setLabelFont(const QFont &f)
 {
     setValue(settingPatternLabelFont, f);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QFont VCommonSettings::getGuiFont() const
+{
+    return qvariant_cast<QFont>(value(settingPatternGuiFont, QApplication::font()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setGuiFont(const QFont &f)
+{
+    setValue(settingPatternGuiFont, f);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QFont VCommonSettings::getPointNameFont() const
+{
+    return qvariant_cast<QFont>(value(settingPatternPointNameFont, QApplication::font()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameFont(const QFont &f)
+{
+    setValue(settingPatternPointNameFont, f);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getHidePointNames() const
+{
+    return value(settingGraphicsViewHidePointNames, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setHidePointNames(bool value)
+{
+    setValue(settingGraphicsViewHidePointNames, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowAxisOrigin() const
+{
+    return value(settingGraphicsViewShowAxisOrigin, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowAxisOrigin(bool value)
+{
+    setValue(settingGraphicsViewShowAxisOrigin, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowControlPoints() const
+{
+    return value(settingGraphicsViewShowControlPoints, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowControlPoints(bool value)
+{
+    setValue(settingGraphicsViewShowControlPoints, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowAnchorPoints() const
+{
+    return value(settingGraphicsViewShowAnchorPoints, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowAnchorPoints(bool value)
+{
+    setValue(settingGraphicsViewShowAnchorPoints, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getUseToolColor() const
+{
+    return value(settingGraphicsUseToolColor, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseToolColor(bool value)
+{
+    setValue(settingGraphicsUseToolColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getPointNameSize() const
+{
+    if (pointNameSize <= 0)
+    {
+        bool ok = false;
+        pointNameSize = value(settingGraphicsViewPointNameSize, 32).toInt(&ok);
+        if (not ok)
+        {
+            pointNameSize = 32;
+        }
+    }
+    return pointNameSize;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameSize(int value)
+{
+    setValue(settingGraphicsViewPointNameSize, value);
+    pointNameSize = value;
+}
+
+int VCommonSettings::getGuiFontSize() const
+{
+    return value(settingGraphicsViewGuiFontSize, 9).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setGuiFontSize(int value)
+{
+    setValue(settingGraphicsViewGuiFontSize, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

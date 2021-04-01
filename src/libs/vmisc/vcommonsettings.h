@@ -154,6 +154,16 @@ public:
     QString              getZoomRBNegativeColor() const;
     void                 setZoomRBNegativeColor(const QString &value);
 
+    QString              getPointNameColor() const;
+    void                 setPointNameColor(const QString &value);
+
+    QString              getPointNameHoverColor() const;
+    void                 setPointNameHoverColor(const QString &value);
+
+    QString              getAxisOrginColor() const;
+    void                 setAxisOrginColor(const QString &value);
+
+
     qreal                getConstrainValue() const;
     void                 setConstrainValue(const qreal &value);
 
@@ -229,12 +239,39 @@ public:
     void                 SetDefaultSeamAllowance(double value);
     double               GetDefaultSeamAllowance();
 
-    QFont                GetLabelFont() const;
-    void                 SetLabelFont(const QFont &f);
+    QFont                getLabelFont() const;
+    void                 setLabelFont(const QFont &f);
+
+    QFont                getGuiFont() const;
+    void                 setGuiFont(const QFont &f);
+
+    QFont                getPointNameFont() const;
+    void                 setPointNameFont(const QFont &f);
 
 #if !defined(Q_OS_WIN)
     static const QString unixStandardSharePath;
 #endif
+
+    int                  getPointNameSize() const;
+    void                 setPointNameSize(int value);
+
+    bool                 getHidePointNames() const;
+    void                 setHidePointNames(bool value);
+
+    bool                 getShowAxisOrigin() const;
+    void                 setShowAxisOrigin(bool value);
+
+    bool                 getShowControlPoints() const;
+    void                 setShowControlPoints(bool value);
+
+    bool                 getShowAnchorPoints() const;
+    void                 setShowAnchorPoints(bool value);
+
+    bool                 getUseToolColor() const;
+    void                 setUseToolColor(bool value);
+
+    int                  getGuiFontSize() const;
+    void                 setGuiFontSize(int value);
 
     QString              GetLabelDateFormat() const;
     void                 SetLabelDateFormat(const QString &format);
