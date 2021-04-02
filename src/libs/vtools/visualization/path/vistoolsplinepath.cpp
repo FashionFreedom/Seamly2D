@@ -113,10 +113,10 @@ void VisToolSplinePath::RefreshGeometry()
 
                     VSpline spl = path.GetSpline(i);
 
-                    ctrlPoints[preLastPoint]->RefreshCtrlPoint(i, SplinePointPosition::FirstPoint,
+                    ctrlPoints[preLastPoint]->refreshCtrlPoint(i, SplinePointPosition::FirstPoint,
                                                                static_cast<QPointF>(spl.GetP2()),
                                                                static_cast<QPointF>(spl.GetP1()));
-                    ctrlPoints[lastPoint]->RefreshCtrlPoint(i, SplinePointPosition::LastPoint,
+                    ctrlPoints[lastPoint]->refreshCtrlPoint(i, SplinePointPosition::LastPoint,
                                                             static_cast<QPointF>(spl.GetP3()),
                                                             static_cast<QPointF>(spl.GetP4()));
                 }
@@ -259,12 +259,12 @@ void VisToolSplinePath::Creating(const QPointF &pSpl, int size)
 
         if (size == 1)
         {
-            ctrlPoints[lastPoint]->RefreshCtrlPoint(size, SplinePointPosition::FirstPoint, ctrlPoint, pSpl);
+            ctrlPoints[lastPoint]->refreshCtrlPoint(size, SplinePointPosition::FirstPoint, ctrlPoint, pSpl);
         }
         else
         {
-            ctrlPoints[preLastPoint]->RefreshCtrlPoint(size-1, SplinePointPosition::LastPoint, ctrlLine.p2(), pSpl);
-            ctrlPoints[lastPoint]->RefreshCtrlPoint(size, SplinePointPosition::FirstPoint, ctrlPoint, pSpl);
+            ctrlPoints[preLastPoint]->refreshCtrlPoint(size-1, SplinePointPosition::LastPoint, ctrlLine.p2(), pSpl);
+            ctrlPoints[lastPoint]->refreshCtrlPoint(size, SplinePointPosition::FirstPoint, ctrlPoint, pSpl);
         }
 
         VSpline spline(VPointF(pSpl), ctrlPoint, Visualization::scenePos, VPointF(Visualization::scenePos));

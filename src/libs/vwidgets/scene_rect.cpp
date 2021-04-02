@@ -40,8 +40,7 @@
 //---------------------------------------------------------------------------------------------------------------------
 SceneRect::SceneRect(const QColor &lineColor, QGraphicsItem *parent)
     : QGraphicsRectItem(parent)
-    , m_pointLeader(new VScaledLine(this))
-    , m_pointColor(QColor(correctColor(this,lineColor)))
+    , m_rectColor(QColor(correctColor(this,lineColor)))
     , m_onlyPoint(false)
     , m_isHovered(false)
     , m_showPointName(true)
@@ -56,8 +55,8 @@ void SceneRect::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 {
     const qreal scale = sceneScale(scene());
 
-    setPointPen(scale);
-    scaleCircleSize(this, scale * .75);
+    setRectPen(scale);
+    scaleRectSize(this, scale * .75);
 
     QGraphicsRectItem::paint(painter, option, widget);
 }
@@ -84,7 +83,7 @@ bool SceneRect::isOnlyPoint() const
 
 void SceneRect::setPointColor(const QString &value)
 {
-    m_pointColor = QColor(value);
+    m_rectColor = QColor(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -102,25 +101,13 @@ void SceneRect::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void SceneRect::setPointPen(qreal scale)
+void SceneRect::setRectPen(qreal scale)
 {
     const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, scale);
 
-    if (qApp->Settings()->getUseToolColor() || isOnlyPoint())
-    {
-        setPen(QPen(correctColor(this, m_pointColor), width));
-        if (!m_onlyPoint)
-        {
-            setBrush(QBrush(correctColor(this, m_pointColor),Qt::SolidPattern));
-        }
-        else
-        {
-            setBrush(QBrush(correctColor(this, m_pointColor),Qt::NoBrush));
-        }
-    }
-    else
-    {
-        setPen(QPen(correctColor(this, QColor(qApp->Settings()->getPointNameColor())), width));
-        setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
-    }
+    QColor brushColor = m_rectColor;
+    brushColor.setAlpha(100);
+
+    setPen(QPen(m_rectColor, width));
+    setBrush(QBrush(brushColor, Qt::SolidPattern));
 }

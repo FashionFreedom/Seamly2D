@@ -549,7 +549,7 @@ bool VToolSpline::IsMovable() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolSpline::RefreshCtrlPoints()
+void VToolSpline::refreshCtrlPoints()
 {
     // Very important to disable control points. Without it the pogram can't move the curve.
     foreach (auto *point, controlPoints)
@@ -568,7 +568,7 @@ void VToolSpline::RefreshCtrlPoints()
 
         const QPointF splinePoint =
                 static_cast<QPointF>(*VAbstractTool::data.GeometricObject<VPointF>(spl->GetP1().id()));
-        controlPoints[0]->RefreshCtrlPoint(1, SplinePointPosition::FirstPoint, static_cast<QPointF>(spl->GetP2()),
+        controlPoints[0]->refreshCtrlPoint(1, SplinePointPosition::FirstPoint, static_cast<QPointF>(spl->GetP2()),
                                            static_cast<QPointF>(splinePoint), freeAngle1, freeLength1);
     }
 
@@ -578,7 +578,7 @@ void VToolSpline::RefreshCtrlPoints()
 
         const QPointF splinePoint =
                 static_cast<QPointF>(*VAbstractTool::data.GeometricObject<VPointF>(spl->GetP4().id()));
-        controlPoints[1]->RefreshCtrlPoint(1, SplinePointPosition::LastPoint, static_cast<QPointF>(spl->GetP3()),
+        controlPoints[1]->refreshCtrlPoint(1, SplinePointPosition::LastPoint, static_cast<QPointF>(spl->GetP3()),
                                            static_cast<QPointF>(splinePoint), freeAngle2, freeLength2);
     }
 

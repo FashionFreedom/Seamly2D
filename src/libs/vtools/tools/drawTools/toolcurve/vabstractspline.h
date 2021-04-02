@@ -143,7 +143,7 @@ protected:
     virtual void         mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
     virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void         RefreshCtrlPoints();
+    virtual void         refreshCtrlPoints();
     virtual void         contextMenuEvent (QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
 
     VSpline              CorrectedSpline(const VSpline &spline, const SplinePointPosition &position,

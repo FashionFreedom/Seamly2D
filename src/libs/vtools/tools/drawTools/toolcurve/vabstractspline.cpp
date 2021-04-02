@@ -120,7 +120,7 @@ void VAbstractSpline::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
     setPen(QPen(correctColor(this, curve->GetColor()), width, LineStyleToPenStyle(curve->GetPenStyle()), Qt::RoundCap));
 
-    RefreshCtrlPoints();
+    refreshCtrlPoints();
 
     if (m_isHovered || m_piecesMode)
     {
@@ -219,7 +219,7 @@ void VAbstractSpline::ShowTool(quint32 id, bool enable)
 void VAbstractSpline::RefreshGeometry()
 {
     InitDefShape();
-    RefreshCtrlPoints();
+    refreshCtrlPoints();
     SetVisualization();
 }
 
@@ -337,7 +337,7 @@ void VAbstractSpline::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &ob
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractSpline::RefreshCtrlPoints()
+void VAbstractSpline::refreshCtrlPoints()
 {
     // do nothing
 }

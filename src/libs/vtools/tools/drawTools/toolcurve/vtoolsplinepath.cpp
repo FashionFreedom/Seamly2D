@@ -676,7 +676,7 @@ bool VToolSplinePath::IsMovable(int index) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolSplinePath::RefreshCtrlPoints()
+void VToolSplinePath::refreshCtrlPoints()
 {
     // Very important to disable control points. Without it the pogram can't move the curve.
     foreach (auto *point, controlPoints)
@@ -700,7 +700,7 @@ void VToolSplinePath::RefreshCtrlPoints()
             const bool freeLength1 = qmu::QmuTokenParser::IsSingle(spl.GetC1LengthFormula());
 
             const auto splinePoint = spl.GetP1();
-            controlPoints[j-2]->RefreshCtrlPoint(i, SplinePointPosition::FirstPoint, static_cast<QPointF>(spl.GetP2()),
+            controlPoints[j-2]->refreshCtrlPoint(i, SplinePointPosition::FirstPoint, static_cast<QPointF>(spl.GetP2()),
                                                  static_cast<QPointF>(splinePoint), freeAngle1, freeLength1);
         }
 
@@ -709,7 +709,7 @@ void VToolSplinePath::RefreshCtrlPoints()
             const bool freeLength2 = qmu::QmuTokenParser::IsSingle(spl.GetC2LengthFormula());
 
             const auto splinePoint = spl.GetP4();
-            controlPoints[j-1]->RefreshCtrlPoint(i, SplinePointPosition::LastPoint, static_cast<QPointF>(spl.GetP3()),
+            controlPoints[j-1]->refreshCtrlPoint(i, SplinePointPosition::LastPoint, static_cast<QPointF>(spl.GetP3()),
                                                  static_cast<QPointF>(splinePoint), freeAngle2, freeLength2);
         }
 

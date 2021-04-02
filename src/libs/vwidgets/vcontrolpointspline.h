@@ -64,25 +64,27 @@
 #include "../vgeometry/vgeometrydef.h"
 #include "../vgeometry/vsplinepath.h"
 #include "../vmisc/def.h"
-#include "vscenepoint.h"
+#include "scene_rect.h"
 
 /**
  * @brief The VControlPointSpline class control spline point.
  */
-class VControlPointSpline : public QObject, public VScenePoint
+class VControlPointSpline : public QObject, public SceneRect
 {
     Q_OBJECT
 public:
-    VControlPointSpline(const qint32 &indexSpline, SplinePointPosition position, QGraphicsItem * parent = nullptr);
-    VControlPointSpline(const qint32 &indexSpline, SplinePointPosition position, const QPointF &controlPoint,
-                        const QPointF &splinePoint, bool freeAngle, bool freeLength, QGraphicsItem * parent = nullptr);
-    virtual ~VControlPointSpline() =default;
+                        VControlPointSpline(const qint32 &indexSpline, SplinePointPosition position,
+                                            QGraphicsItem * parent = nullptr);
+                        VControlPointSpline(const qint32 &indexSpline, SplinePointPosition position,
+                                            const QPointF &controlPoint, const QPointF &splinePoint,
+                                            bool freeAngle, bool freeLength, QGraphicsItem * parent = nullptr);
+    virtual            ~VControlPointSpline() =default;
 
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Vis::ControlPointSpline)};
+    virtual int         type() const Q_DECL_OVERRIDE {return Type;}
+    enum                { Type = UserType + static_cast<int>(Vis::ControlPointSpline)};
 
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                       QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+    virtual void        paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+                              QWidget *widget = nullptr) Q_DECL_OVERRIDE;
 signals:
     /**
      * @brief ControlPointChangePosition emit when control point change position.
@@ -90,40 +92,43 @@ signals:
      * @param position position point in spline.
      * @param pos new posotion.
      */
-    void              ControlPointChangePosition(const qint32 &indexSpline, SplinePointPosition position,
-                                                 const QPointF &pos);
+    void                ControlPointChangePosition(const qint32 &indexSpline, SplinePointPosition position,
+                                                   const QPointF &pos);
     /**
      * @brief showContextMenu emit when need show tool's context menu.
      * @param event context menu event.
      */
-    void              showContextMenu(QGraphicsSceneContextMenuEvent *event);
+    void                showContextMenu(QGraphicsSceneContextMenuEvent *event);
+
 public slots:
-    void              RefreshCtrlPoint(const qint32 &indexSpline, SplinePointPosition pos, const QPointF &controlPoint,
+    void                refreshCtrlPoint(const qint32 &indexSpline, SplinePointPosition pos, const QPointF &controlPoint,
                                        const QPointF &splinePoint, bool freeAngle = true, bool freeLength = true);
-    void              setEnabledPoint(bool enable);
+    void                setEnabledPoint(bool enable);
+
 protected:
     /** @brief controlLine pointer to line control point. */
-    VScaledLine      *controlLine;
+    VScaledLine        *controlLine;
 
-    virtual void      hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
-    virtual void      hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
-    QVariant          itemChange ( GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
-    virtual void      mousePressEvent( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void      mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void      contextMenuEvent (QGraphicsSceneContextMenuEvent *event ) Q_DECL_OVERRIDE;
+    virtual void        hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
+    virtual void        hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
+    QVariant            itemChange ( GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
+    virtual void        mousePressEvent( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
+    virtual void        mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
+    virtual void        contextMenuEvent (QGraphicsSceneContextMenuEvent *event ) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VControlPointSpline)
     /** @brief indexSpline index spline in list.. */
-    qint32            indexSpline;
+    qint32              indexSpline;
 
     /** @brief position position point in spline. */
     SplinePointPosition position;
 
-    bool freeAngle;
-    bool freeLength;
+    bool                freeAngle;
+    bool                freeLength;
 
-    void  Init();
-    void  SetCtrlLine(const QPointF &controlPoint, const QPointF &splinePoint);
+    void                init();
+    void                setCtrlLine(const QPointF &controlPoint, const QPointF &splinePoint);
 };
 
 #endif // VCONTROLPOINTSPLINE_H

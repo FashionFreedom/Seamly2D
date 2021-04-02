@@ -81,7 +81,6 @@ protected:
     VScaledLine             *m_pointLeader;  /** @brief pointL line that we see if Text is moved too away from point. */
     QColor                   m_pointColor; /** @brief m_pointColor color of point. */
     bool                     m_onlyPoint;
-    bool                     m_isControlPoint;
     bool                     m_isHovered;
     bool                     m_showPointName;
 

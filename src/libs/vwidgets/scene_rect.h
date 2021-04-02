@@ -28,15 +28,14 @@
 #define SCENE_RECT_H
 
 #include <QtGlobal>
-#include <QGraphicsEllipseItem>
+#include <QGraphicsRectItem>
 
 #include "../vmisc/def.h"
 
-class VGraphicsSimpleTextItem;
 class VPointF;
 class VScaledLine;
 
-class SceneRect: public QGraphicsEllipseItem
+class SceneRect: public QGraphicsRectItem
 {
 public:
     explicit                 SceneRect(const QColor &lineColor, QGraphicsItem *parent = nullptr);
@@ -49,10 +48,8 @@ public:
     virtual void             refreshPointGeometry(const VPointF &point);
 
 protected:
-
-    QColor                   m_pointColor; /** @brief m_pointColor color of point. */
+    QColor                   m_rectColor; /** @brief m_rectColor color of point. */
     bool                     m_onlyPoint;
-    bool                     m_isControlPoint;
     bool                     m_isHovered;
     bool                     m_showPointName;
 
@@ -67,7 +64,7 @@ protected:
 private:
     Q_DISABLE_COPY(SceneRect)
 
-    void                     setPointPen(qreal scale);
+    void                     setRectPen(qreal scale);
 };
 
 #endif // SCENE_RECT_H

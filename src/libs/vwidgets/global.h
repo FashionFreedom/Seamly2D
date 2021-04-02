@@ -61,6 +61,7 @@ extern const qreal widthHairLine;
 class QGraphicsScene;
 class QGraphicsItem;
 class QGraphicsEllipseItem;
+class QGraphicsRectItem;
 class QGraphicsLineItem;
 class QColor;
 class QRectF;
@@ -74,6 +75,7 @@ QColor correctColor(const QGraphicsItem *item, const QColor &color);
 QRectF PointRect(qreal radius);
 qreal  scaledRadius(qreal scale);
 void   scaleCircleSize(QGraphicsEllipseItem *item, qreal scale);
+void   scaleRectSize(QGraphicsRectItem *item, qreal scale);
 qreal  scaleWidth(qreal width, qreal scale);
 
 QPainterPath ItemShapeFromPath(const QPainterPath &path, const QPen &pen);

@@ -119,6 +119,14 @@ void scaleCircleSize(QGraphicsEllipseItem *item, qreal scale)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void scaleRectSize(QGraphicsRectItem *item, qreal scale)
+{
+    SCASSERT(item != nullptr)
+
+    item->setRect(PointRect(scaledRadius(scale)));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 qreal scaleWidth(qreal width, qreal scale)
 {
     if (scale > 1)
