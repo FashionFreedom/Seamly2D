@@ -2126,7 +2126,7 @@ void MainWindow::initPointNameToolBar()
 {
     fontComboBox = new QFontComboBox ;
     fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
-    ui->pointName_ToolBar->insertWidget(ui->increaseSize_Action,fontComboBox);
+    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontComboBox);
     fontComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     fontComboBox->setEnabled(true);
 
@@ -2138,7 +2138,7 @@ void MainWindow::initPointNameToolBar()
             });
 
     fontSizeComboBox = new QComboBox ;
-    ui->pointName_ToolBar->insertWidget(ui->increaseSize_Action,fontSizeComboBox);
+    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontSizeComboBox);
     fontSizeComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     fontSizeComboBox->addItem("6", QVariant(static_cast<int>(6)));
     fontSizeComboBox->addItem("7", QVariant(static_cast<int>(7)));
@@ -3728,11 +3728,14 @@ void MainWindow::Clear()
     ui->table_Action->setEnabled(false);
 
     ui->lastTool_Action->setEnabled(false);
+    ui->increaseSize_Action->setEnabled(false);
+    ui->decreaseSize_Action->setEnabled(false);
+    ui->useToolColor_Action->setEnabled(false);
     ui->showPointNames_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
-    ui->useToolColor_Action->setEnabled(false);
+
 
     //disable measurements menu actions
     ui->loadIndividual_Action->setEnabled(false);
@@ -3993,11 +3996,14 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
 
+    ui->increaseSize_Action->setEnabled(enable);
+    ui->decreaseSize_Action->setEnabled(enable);
+    ui->useToolColor_Action->setEnabled(enable && draftStage);
     ui->showPointNames_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
-    ui->useToolColor_Action->setEnabled(enable && draftStage);
+
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);

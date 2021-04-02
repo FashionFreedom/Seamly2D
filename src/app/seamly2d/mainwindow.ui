@@ -766,9 +766,9 @@
    <attribute name="toolBarBreak">
     <bool>true</bool>
    </attribute>
+   <addaction name="showPointNames_Action"/>
    <addaction name="increaseSize_Action"/>
    <addaction name="decreaseSize_Action"/>
-   <addaction name="showPointNames_Action"/>
    <addaction name="useToolColor_Action"/>
   </widget>
   <widget class="QDockWidget" name="toolbox_DockWidget">
@@ -4417,6 +4417,9 @@
    </property>
   </action>
   <action name="increaseSize_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
      <normaloff>:/icon/32x32/increase_size.png</normaloff>:/icon/32x32/increase_size.png</iconset>
@@ -4429,6 +4432,9 @@
    </property>
   </action>
   <action name="decreaseSize_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
      <normaloff>:/icon/32x32/decrease_size.png</normaloff>:/icon/32x32/decrease_size.png</iconset>
