@@ -61,7 +61,7 @@
 #include <new>
 
 #include "../../../../undocommands/label/movedoublelabel.h"
-#include "../../../../undocommands/label/ShowDoublePointName.h"
+#include "../../../../undocommands/label/showdoublepointname.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/xml/vabstractpattern.h"
