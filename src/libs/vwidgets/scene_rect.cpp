@@ -109,5 +109,12 @@ void SceneRect::setRectPen(qreal scale)
     brushColor.setAlpha(100);
 
     setPen(QPen(m_rectColor, width));
-    setBrush(QBrush(brushColor, Qt::SolidPattern));
+    if (!qApp->Settings()->isWireframe())
+    {
+       setBrush(QBrush(brushColor, Qt::SolidPattern));
+    }
+    else
+    {
+       setBrush(QBrush(brushColor, Qt::NoBrush));
+    }
 }

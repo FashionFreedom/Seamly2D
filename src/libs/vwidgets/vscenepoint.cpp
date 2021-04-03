@@ -216,8 +216,15 @@ void VScenePoint::setPointPen(qreal scale)
     {
         setPen(QPen(correctColor(this, m_pointColor), width));
         if (!m_onlyPoint)
-        {
-            setBrush(QBrush(correctColor(this, m_pointColor),Qt::SolidPattern));
+        {            
+            if (!qApp->Settings()->isWireframe())
+            {
+               setBrush(QBrush(correctColor(this, m_pointColor), Qt::SolidPattern));
+            }
+            else
+            {
+               setBrush(QBrush(correctColor(this, m_pointColor), Qt::NoBrush));
+            }
         }
         else
         {
@@ -227,6 +234,15 @@ void VScenePoint::setPointPen(qreal scale)
     else
     {
         setPen(QPen(correctColor(this, QColor(qApp->Settings()->getPointNameColor())), width));
-        setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
+
+        if (qApp->Settings()->isWireframe())
+        {
+           setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
+        }
+        else
+        {
+           setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::NoBrush));
+        }
+
     }
 }

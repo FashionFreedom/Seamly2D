@@ -110,6 +110,7 @@ const QString settingGraphicsViewPointNameSize           = QStringLiteral("graph
 const QString settingGraphicsViewGuiFontSize             = QStringLiteral("graphicsview/guiFontSize");
 const QString settingGraphicsViewHidePointNames          = QStringLiteral("graphicsview/hidePointNames");
 const QString settingGraphicsViewShowAxisOrigin          = QStringLiteral("graphicsview/showAxisOrigin");
+const QString settingGraphicsViewWireframe               = QStringLiteral("graphicsview/wireframe");
 const QString settingGraphicsViewShowControlPoints       = QStringLiteral("graphicsview/showControlPoints");
 const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graphicsview/showAnchorPoints");
 const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
@@ -1161,6 +1162,18 @@ void VCommonSettings::setShowAxisOrigin(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isWireframe() const
+{
+    return value(settingGraphicsViewWireframe, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setWireframe(bool value)
+{
+    setValue(settingGraphicsViewWireframe, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getShowControlPoints() const
 {
     return value(settingGraphicsViewShowControlPoints, false).toBool();
@@ -1171,7 +1184,6 @@ void VCommonSettings::setShowControlPoints(bool value)
 {
     setValue(settingGraphicsViewShowControlPoints, value);
 }
-
 
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getShowAnchorPoints() const

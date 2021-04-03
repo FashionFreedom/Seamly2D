@@ -3209,6 +3209,7 @@ void MainWindow::draftMode_Action(bool checked)
         SetEnableWidgets(true);
 
         ui->showPointNames_Action->setChecked(qApp->Settings()->getHidePointNames());
+        ui->toggleWireframe_Action->setChecked(qApp->Settings()->isWireframe());
         ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
 
@@ -3732,6 +3733,7 @@ void MainWindow::Clear()
     ui->decreaseSize_Action->setEnabled(false);
     ui->useToolColor_Action->setEnabled(false);
     ui->showPointNames_Action->setEnabled(false);
+    ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
@@ -4000,6 +4002,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->decreaseSize_Action->setEnabled(enable);
     ui->useToolColor_Action->setEnabled(enable && draftStage);
     ui->showPointNames_Action->setEnabled(enable);
+    ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
@@ -5119,6 +5122,13 @@ void MainWindow::CreateActions()
     connect(ui->pieceMode_Action, &QAction::triggered, this, &MainWindow::ActionDetails);
     connect(ui->layoutMode_Action, &QAction::triggered, this, &MainWindow::ActionLayout);
 
+    connect(ui->toggleWireframe_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setWireframe(checked);
+        ui->view->itemClicked(nullptr);
+        upDateScenes();
+    });
+
     connect(ui->toggleControlPoints_Action, &QAction::triggered, this, [this](bool checked)
     {
         qApp->Seamly2DSettings()->setShowControlPoints(checked);
@@ -6031,7 +6041,7 @@ void MainWindow::exportPiecesAs()
 
     if (detailsInLayout.count() == 0)
     {
-        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have enough pieces to export. Please, "
+        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have any pieces to export. Please, "
                                                               "include at least one piece in layout."),
                                  QMessageBox::Ok, QMessageBox::Ok);
         return;

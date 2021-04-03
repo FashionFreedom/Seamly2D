@@ -154,6 +154,7 @@
     <addaction name="zoomPan_Action"/>
     <addaction name="separator"/>
     <addaction name="pointNames_Menu"/>
+    <addaction name="toggleWireframe_Action"/>
     <addaction name="toggleControlPoints_Action"/>
     <addaction name="toggleAxisOrigin_Action"/>
     <addaction name="separator"/>
@@ -2612,6 +2613,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="toggleWireframe_Action"/>
    <addaction name="toggleControlPoints_Action"/>
    <addaction name="toggleAxisOrigin_Action"/>
   </widget>
@@ -3788,10 +3790,10 @@
     <string>Curve Control Points</string>
    </property>
    <property name="toolTip">
-    <string>Toggle Control Points and Curve Direction (F2)</string>
+    <string>Toggle Control Points and Curve Direction (C)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">F3</string>
+    <string notr="true">C</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -4410,10 +4412,13 @@
      <normaloff>:/icon/16x16/open_eye@2x.png</normaloff>:/icon/16x16/open_eye@2x.png</iconset>
    </property>
    <property name="text">
-    <string>Toggle Point Name Text</string>
+    <string>Point Name Text</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Point Name Text (P)</string>
    </property>
    <property name="shortcut">
-    <string>F5</string>
+    <string>P</string>
    </property>
   </action>
   <action name="increaseSize_Action">
@@ -4426,6 +4431,9 @@
    </property>
    <property name="text">
     <string>Increase Text Size</string>
+   </property>
+   <property name="toolTip">
+    <string>Increase Text Size (Ctrl+])</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+]</string>
@@ -4441,6 +4449,9 @@
    </property>
    <property name="text">
     <string>Decrease Text Size</string>
+   </property>
+   <property name="toolTip">
+    <string>Decrease Text Size (Ctrl+[)</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+[</string>
@@ -4463,8 +4474,11 @@
    <property name="text">
     <string>Use Tool Color</string>
    </property>
+   <property name="toolTip">
+    <string>Use Tool Color (T)</string>
+   </property>
    <property name="shortcut">
-    <string>F6</string>
+    <string>T</string>
    </property>
   </action>
   <action name="toggleAxisOrigin_Action">
@@ -4485,10 +4499,31 @@
     <string>Axis Origin </string>
    </property>
    <property name="toolTip">
-    <string>Toggle Axis Origin</string>
+    <string>Toggle Axis Origin (A)</string>
    </property>
    <property name="shortcut">
-    <string>F4</string>
+    <string>A</string>
+   </property>
+  </action>
+  <action name="toggleWireframe_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/wireframe.png</normaloff>:/icon/32x32/wireframe.png</iconset>
+   </property>
+   <property name="text">
+    <string>Wireframe Mode</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Wireframe Mode (W)</string>
+   </property>
+   <property name="shortcut">
+    <string>W</string>
    </property>
   </action>
  </widget>

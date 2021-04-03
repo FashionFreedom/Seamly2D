@@ -261,6 +261,9 @@ public:
     bool                 getShowAxisOrigin() const;
     void                 setShowAxisOrigin(bool value);
 
+    bool                 isWireframe() const;
+    void                 setWireframe(bool value);
+
     bool                 getShowControlPoints() const;
     void                 setShowControlPoints(bool value);
 
