@@ -148,7 +148,7 @@ protected:
     SelectionType                selectionType;
 
     /**
-     * @brief AddToFile add tag with informations about tool into file.
+     * @brief AddToFile add tag with Information about tool into file.
      */
     virtual void                 AddToFile()=0;
     /**

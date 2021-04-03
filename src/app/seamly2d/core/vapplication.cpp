@@ -223,7 +223,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 break;
             #if QT_VERSION > QT_VERSION_CHECK(5, 4, 2)
             case QtInfoMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "InformationS"));
+                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Information"));
                 messageBox.setIcon(QMessageBox::Information);
                 break;
             #endif

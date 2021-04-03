@@ -199,7 +199,7 @@ void VNodePoint::FullUpdateFromFile()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief AddToFile add tag with informations about tool into file.
+ * @brief AddToFile add tag with Information about tool into file.
  */
 void VNodePoint::AddToFile()
 {

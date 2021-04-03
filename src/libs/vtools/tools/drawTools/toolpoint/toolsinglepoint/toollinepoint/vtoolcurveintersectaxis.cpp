@@ -166,7 +166,7 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, cons
     {
         const QString msg = tr("<b><big>Can not create intersection point %1 from point %2</big></b><br>"
                                "<b><big>to curve %3 with an axis angle of %4°</big></b><br><br>"
-                               "Using orgin point as a place holder until pattern is corrected.")
+                               "Using origin point as a place holder until pattern is corrected.")
                                .arg(pointName)
                                .arg(basePoint->name())
                                .arg(curve->name())

@@ -145,7 +145,7 @@ QmuParserErrorMsg::QmuParserErrorMsg()
                      translate("QmuParserErrorMsg", "Decimal separator is identic to function argument separator.",
                         "Math parser error messages."));
     m_vErrMsg.insert(ecUNEXPECTED_CONDITIONAL,
-                     translate("QmuParserErrorMsg", "The \"$TOK$\" operator must be preceeded by a closing bracket.",
+                     translate("QmuParserErrorMsg", "The \"$TOK$\" operator must be preceded by a closing bracket.",
                         "Math parser error messages. Left untouched \"$TOK$\""));
     m_vErrMsg.insert(ecMISSING_ELSE_CLAUSE,
                      translate("QmuParserErrorMsg", "If-then-else operator is missing an else clause",

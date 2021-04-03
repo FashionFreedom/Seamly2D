@@ -3781,7 +3781,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1825"/>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down betwen legs and up to Waist Back.</source>
+        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
         <translation>Den Spalt zwischen den Pobacken mit Klebeband überbrücken. Von der Rückseite der Taille zur Mitte des Schritts messen, entweder zur Scheide oder zwischen Anus und Testikeln.</translation>
     </message>

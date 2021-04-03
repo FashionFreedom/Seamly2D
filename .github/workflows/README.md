@@ -24,7 +24,7 @@ There are three distinct GitHub workflows:
 
 ### <a id="iq"></a>[Install Qt](https://github.com/marketplace/actions/install-qt)
 
-Referenced as `jurplel/install-qt-action`, installs the Qt platform across all the three different runners (ubuntu-latest, macos-latest, windows-latest) consistently. Internally it uses the [aqtinstall](jurplel/install-qt-action@v2.10.0) installer written in Python. Worth knowing if those errors propagate up through the GitHub action.
+Referenced as `jurplel/install-qt-action`, installs the Qt platform across all the three different runners (ubuntu-latest, macos-latest, windows-latest) consistently. Internally it uses the [aqtinstall](jurplel/install-qt-action@v2.13.0) installer written in Python. Worth knowing if those errors propagate up through the GitHub action.
 
 ### <a id="edcp"></a>[Enable Developer Command Prompt](https://github.com/marketplace/actions/enable-developer-command-prompt)
 
@@ -43,5 +43,3 @@ The container is pulled from the docker registry instead of building it during t
 ### <a id="nsis"></a>[Nullsoft Scriptable Install System](https://nsis.sourceforge.io/Main_Page)
 
 Or NSIS for short, builds the Windows installer using the [seamly2d-installer.nsi](/dist/seamly2d-installer.nsi) script file. As of this moment, the script includes steps for setting up a start menu group and configuration necessary to provide an uninstaller.
-
-

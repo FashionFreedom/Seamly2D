@@ -3511,7 +3511,7 @@ bool MainWindow::SaveAs()
         if (not tmp.IsLocked())
         {
             qCCritical(vMainWindow, "%s",
-                       qUtf8Printable(tr("Failed to lock. This file already opened in another window.")));
+                       qUtf8Printable(tr("Failed to lock. This file is already opened in another window.")));
             RemoveTempDir();
             return false;
         }
@@ -3556,8 +3556,8 @@ bool MainWindow::SaveAs()
         qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(fileName));
         qCDebug(vMainWindow, "Error type: %d", lock->GetLockError());
         qCCritical(vMainWindow, "%s",
-                   qUtf8Printable(tr("Failed to lock. This file already opened in another window. Expect "
-                                     "collissions when run 2 copies of the program.")));
+                   qUtf8Printable(tr("Failed to lock. This file is already opened in another window. Expect "
+                                     "collisions when running 2 copies of the program.")));
     }
 
     RemoveTempDir();
@@ -3595,7 +3595,7 @@ bool MainWindow::Save()
             QMessageBox messageBox(this);
             messageBox.setIcon(QMessageBox::Question);
             messageBox.setText(tr("The document has no write permissions."));
-            messageBox.setInformativeText("Do you want to change the premissions?");
+            messageBox.setInformativeText("Do you want to change the permissions?");
             messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::Cancel);
             messageBox.setDefaultButton(QMessageBox::Yes);
 
@@ -3656,7 +3656,7 @@ bool MainWindow::Save()
  */
 void MainWindow::Open()
 {
-    qCDebug(vMainWindow, "Openning new file.");
+    qCDebug(vMainWindow, "Opening new file.");
     const QString filter(tr("Pattern files (*.val)"));
     //Get list last open files
     const QStringList files = qApp->Seamly2DSettings()->GetRecentFileList();
@@ -3686,7 +3686,7 @@ void MainWindow::Open()
  */
 void MainWindow::Clear()
 {
-    qCDebug(vMainWindow, "Reseting main window.");
+    qCDebug(vMainWindow, "Resetting main window.");
     lock.reset();
     qCDebug(vMainWindow, "Unlocked pattern file.");
     draftMode_Action(true);
@@ -4089,21 +4089,22 @@ void MainWindow::New()
 {
     if (comboBoxDraws->count() == 0)
     {
-        qCDebug(vMainWindow, "New PP.");
+        // Creating a new pattern design requires creating a new pattern piece
+        qCDebug(vMainWindow, "New Pattern Piece.");
         QString patternPieceName = tr("Pattern piece %1").arg(comboBoxDraws->count()+1);
-        qCDebug(vMainWindow, "Generated PP name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
 
-        qCDebug(vMainWindow, "First PP");
+        qCDebug(vMainWindow, "First Pattern Piece");
         DialogNewPattern newPattern(pattern, patternPieceName, this);
         if (newPattern.exec() == QDialog::Accepted)
         {
             patternPieceName = newPattern.name();
             qApp->setPatternUnit(newPattern.PatternUnit());
-            qCDebug(vMainWindow, "PP name: %s", qUtf8Printable(patternPieceName));
+            qCDebug(vMainWindow, "Pattern Piece name: %s", qUtf8Printable(patternPieceName));
         }
         else
         {
-            qCDebug(vMainWindow, "Creation a new pattern was canceled.");
+            qCDebug(vMainWindow, "Creating new Pattern Piece was canceled.");
             return;
         }
 
@@ -5020,13 +5021,13 @@ void MainWindow::AddDocks()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitDocksContain()
 {
-    qCDebug(vMainWindow, "Initialization property editor.");
+    qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
     toolProperties = new VToolOptionsPropertyBrowser(ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
 
-    qCDebug(vMainWindow, "Initialization groups manager.");
+    qCDebug(vMainWindow, "Initialize Groups manager.");
     groupsWidget = new VWidgetGroups(doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
 
@@ -5179,16 +5180,16 @@ void MainWindow::CreateActions()
     //Tools menu
     connect(ui->newDraft_Action, &QAction::triggered, this, [this]()
     {
-        qCDebug(vMainWindow, "New PP.");
-        QString patternPieceName = tr("Pattern piece %1").arg(comboBoxDraws->count()+1);
-        qCDebug(vMainWindow, "Generated PP name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "New Pattern Piece.");
+        QString patternPieceName = tr("Pattern Piece %1").arg(comboBoxDraws->count()+1);
+        qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
 
-        qCDebug(vMainWindow, "PP count %d", comboBoxDraws->count());
+        qCDebug(vMainWindow, "Pattern Piece count %d", comboBoxDraws->count());
         patternPieceName = PatternPieceName(patternPieceName);
-        qCDebug(vMainWindow, "PP name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "Pattern Piece name: %s", qUtf8Printable(patternPieceName));
         if (patternPieceName.isEmpty())
         {
-            qCDebug(vMainWindow, "Name empty.");
+            qCDebug(vMainWindow, "Pattern Piece name is empty.");
             return;
         }
 
@@ -5624,7 +5625,7 @@ void MainWindow::InitAutoSave()
     {
         const qint32 autoTime = qApp->Seamly2DSettings()->GetAutosaveTime();
         autoSaveTimer->start(autoTime*60000);
-        qCDebug(vMainWindow, "Autosaving each %d minutes.", autoTime);
+        qCDebug(vMainWindow, "Autosaving every %d minutes.", autoTime);
     }
     qApp->setAutoSaveTimer(autoSaveTimer);
 }
@@ -5662,7 +5663,7 @@ QString MainWindow::PatternPieceName(const QString &text)
         messageBox.setIcon(QMessageBox::Warning);
         messageBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
         messageBox.setDefaultButton(QMessageBox::Retry);
-        messageBox.setText(tr("The action can't be completed because the draft block name already exists."));
+        messageBox.setText(tr("The action can't be completed because the Draft Block name already exists."));
         int boxResult = messageBox.exec();
 
         switch (boxResult)
@@ -5706,7 +5707,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (fileName.isEmpty())
     {
-        qCDebug(vMainWindow, "Got empty file.");
+        qCDebug(vMainWindow, "New loaded filename is empty.");
         Clear();
         return false;
     }
@@ -5748,7 +5749,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         return false;
     }
 
-    qCDebug(vMainWindow, "Loking file");
+    qCDebug(vMainWindow, "Locking file");
     VlpCreateLock(lock, fileName);
 
     if (lock->IsLocked())

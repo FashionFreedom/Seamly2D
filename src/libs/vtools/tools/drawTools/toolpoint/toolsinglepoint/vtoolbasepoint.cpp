@@ -168,7 +168,7 @@ void VToolBasePoint::ShowVisualization(bool show)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief AddToFile add tag with informations about tool into file.
+ * @brief AddToFile add tag with Information about tool into file.
  */
 void VToolBasePoint::AddToFile()
 {
@@ -417,7 +417,7 @@ void VToolBasePoint::showContextMenu(QGraphicsSceneContextMenuEvent *event, quin
     qCDebug(vTool, "Context menu base point");
 #ifndef QT_NO_CURSOR
     QGuiApplication::restoreOverrideCursor();
-    qCDebug(vTool, "Overriden cursorn restored");
+    qCDebug(vTool, "Restored overridden cursor");
 #endif
 
     try

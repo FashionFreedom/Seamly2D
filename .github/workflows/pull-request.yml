@@ -15,10 +15,10 @@ env:
 jobs:
   build-test:
     name: 'Build & Test'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2.3.4
-      - uses: jurplel/install-qt-action@v2.10.0
+      - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
 

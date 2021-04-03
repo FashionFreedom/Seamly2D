@@ -147,7 +147,7 @@ void VNodeSpline::AllowSelecting(bool enabled)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief AddToFile add tag with informations about tool into file.
+ * @brief AddToFile add tag with Information about tool into file.
  */
 void VNodeSpline::AddToFile()
 {
