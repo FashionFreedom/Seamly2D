@@ -82,7 +82,7 @@ QSize FancyTabBar::TabSizeHint(bool minimum) const
     int maxLabelwidth = 0;
     for (int tab=0 ; tab<Count() ;++tab)
     {
-        int width = fm.width(TabText(tab));
+        int width = fm.horizontalAdvance(TabText(tab));
         if (width > maxLabelwidth)
         {
             maxLabelwidth = width;

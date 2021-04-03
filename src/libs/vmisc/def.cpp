@@ -208,7 +208,7 @@ void SetItemOverrideCursor(QGraphicsItem *item, const QString &pixmapPath, int h
 
     QPixmap pixmap;
 
-    if (not QPixmapCache::find(pixmapPath, pixmap))
+    if (not QPixmapCache::find(pixmapPath, &pixmap))
     {
         pixmap = QPixmap(pixmapPath);
         QPixmapCache::insert(pixmapPath, pixmap);

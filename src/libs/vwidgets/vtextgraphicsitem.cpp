@@ -176,7 +176,7 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
             break;
         }
 
-        if (fm.width(qsText) > iW)
+        if (fm.horizontalAdvance(qsText) > iW)
         {
             qsText = fm.elidedText(qsText, Qt::ElideMiddle, iW);
         }
