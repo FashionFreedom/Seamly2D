@@ -22,7 +22,7 @@
  **
  **************************************************************************/
 
-#include "ShowDoublePointName.h"
+#include "showdoublepointname.h"
 
 #include <QDomElement>
 
