@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -1413,7 +1413,7 @@ void VToolUnionDetails::incrementReferens()
             doc->IncrementReferens(objects.at(i));
         }
 
-        QDomElement domElement = doc->elementById(id, getTagName());
+        QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
         {
             doc->SetParametrUsage(domElement, AttrInUse, NodeUsage::InUse);
@@ -1433,7 +1433,7 @@ void VToolUnionDetails::decrementReferens()
             doc->DecrementReferens(objects.at(i));
         }
 
-        QDomElement domElement = doc->elementById(id, getTagName());
+        QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
         {
             doc->SetParametrUsage(domElement, AttrInUse, NodeUsage::NotInUse);
@@ -1524,7 +1524,7 @@ void VToolUnionDetails::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
 
-    doc->SetAttribute(domElement, VDomDocument::AttrId, id);
+    doc->SetAttribute(domElement, VDomDocument::AttrId, m_id);
     doc->SetAttribute(domElement, AttrType, ToolType);
     doc->SetAttribute(domElement, AttrIndexD1, indexD1);
     doc->SetAttribute(domElement, AttrIndexD2, indexD2);
@@ -1581,7 +1581,7 @@ void VToolUnionDetails::AddToModeling(const QDomElement &domElement)
 QVector<quint32> VToolUnionDetails::GetReferenceObjects() const
 {
     QVector<quint32> list;
-    const QDomElement tool = doc->elementById(id, getTagName());
+    const QDomElement tool = doc->elementById(m_id, getTagName());
     if (tool.isNull())
     {
         return list;

@@ -96,7 +96,7 @@ protected:
     VSplinePath                    path;
 
     bool isLeftMousePressed;
-    bool pointSelected;
+    bool pointIsSelected;
 
     QPointF ctrlPoint;
 

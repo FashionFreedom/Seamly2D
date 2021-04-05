@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -206,9 +206,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    updatePoint(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id, dest.at(i).mx,
-                                dest.at(i).my);
+                {
+                    updatePoint(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i));
                     break;
+                }
                 case GOType::Arc:
                     updateArc<VArc>(id, idObject, calcAngle, calcLength, suffix, data, dest.at(i).id);
                     break;
@@ -262,7 +263,7 @@ VFormula VToolMove::GetFormulaAngle() const
 {
     VFormula fAngle(formulaAngle, getData());
     fAngle.setCheckZero(false);
-    fAngle.setToolId(id);
+    fAngle.setToolId(m_id);
     fAngle.setPostfix(degreeSymbol);
     return fAngle;
 }
@@ -274,7 +275,7 @@ void VToolMove::SetFormulaAngle(const VFormula &value)
     {
         formulaAngle = value.GetFormula(FormulaType::FromUser);
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -284,7 +285,7 @@ VFormula VToolMove::GetFormulaLength() const
 {
     VFormula fLength(formulaLength, getData());
     fLength.setCheckZero(true);
-    fLength.setToolId(id);
+    fLength.setToolId(m_id);
     fLength.setPostfix(UnitsToStr(qApp->patternUnit()));
     return fLength;
 }
@@ -296,7 +297,7 @@ void VToolMove::SetFormulaLength(const VFormula &value)
     {
         formulaLength = value.GetFormula(FormulaType::FromUser);
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -357,11 +358,24 @@ void VToolMove::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolMove::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+QString VToolMove::makeToolTip() const
+{
+    const QString toolTipStr = QString("<tr> <td><b>%1:</b> %2°</td> </tr>"
+                                       "<tr> <td><b>%3:</b> %4 %5</td> </tr>")
+                                       .arg(tr("Rotation angle"))
+                                       .arg(GetFormulaAngle().getDoubleValue())
+                                       .arg(tr("        Length"))
+                                       .arg(GetFormulaLength().getDoubleValue())
+                                       .arg(UnitsToStr(qApp->patternUnit(), true));
+    return toolTipStr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMove::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogMove>(this, event);
+        ContextMenu<DialogMove>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -394,6 +408,7 @@ DestinationItem VToolMove::createPoint(quint32 idTool, quint32 idItem, qreal ang
     DestinationItem item;
     item.mx = moved.mx();
     item.my = moved.my();
+    item.showPointName = moved.isShowPointName();
     item.id = data->AddGObject(new VPointF(moved));
     return item;
 }
@@ -410,14 +425,15 @@ DestinationItem VToolMove::createArc(quint32 idTool, quint32 idItem, qreal angle
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolMove::updatePoint(quint32 idTool, quint32 idItem, qreal angle, qreal length, const QString &suffix,
-                              VContainer *data, quint32 id, qreal mx, qreal my)
+                              VContainer *data, const DestinationItem &item)
 {
     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(idItem);
     VPointF moved = point->Move(length, angle, suffix);
     moved.setIdObject(idTool);
-    moved.setMx(mx);
-    moved.setMy(my);
-    data->UpdateGObject(id, new VPointF(moved));
+    moved.setMx(item.mx);
+    moved.setMy(item.my);
+    moved.setShowPointName(item.showPointName);
+    data->UpdateGObject(item.id, new VPointF(moved));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

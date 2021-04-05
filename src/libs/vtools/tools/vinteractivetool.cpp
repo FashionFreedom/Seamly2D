@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -51,12 +51,10 @@
 
 #include "vinteractivetool.h"
 
-bool VInteractiveTool::m_suppressContextMenu = false;
-
 //---------------------------------------------------------------------------------------------------------------------
 VInteractiveTool::VInteractiveTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
-    : VAbstractTool(doc, data, id, parent),
-      m_dialog()
+    : VAbstractTool(doc, data, id, parent)
+    , m_dialog()
 {
 }
 

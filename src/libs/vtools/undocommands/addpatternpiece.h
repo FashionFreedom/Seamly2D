@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -65,14 +65,14 @@ class AddPatternPiece : public VUndoCommand
 {
     Q_OBJECT
 public:
-    AddPatternPiece(const QDomElement &xml, VAbstractPattern *doc, const QString &namePP,
+    AddPatternPiece(const QDomElement &xml, VAbstractPattern *doc, const QString &draftBlockName,
                     QUndoCommand *parent = nullptr);
     virtual ~AddPatternPiece() Q_DECL_OVERRIDE;
     virtual void undo() Q_DECL_OVERRIDE;
     virtual void redo() Q_DECL_OVERRIDE;
 private:
     Q_DISABLE_COPY(AddPatternPiece)
-    QString    namePP;
+    QString    draftBlockName;
 };
 
 #endif // ADDPATTERNPIECE_H

@@ -3,6 +3,7 @@
 
 SOURCES += \
     $$PWD/color_combobox.cpp \
+    $$PWD/scene_rect.cpp \
     $$PWD/vmaingraphicsscene.cpp \
     $$PWD/vmaingraphicsview.cpp \
     $$PWD/vwidgetpopup.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 
 HEADERS += \
     $$PWD/color_combobox.h \
+    $$PWD/scene_rect.h \
     $$PWD/stable.h \
     $$PWD/vmaingraphicsscene.h \
     $$PWD/vmaingraphicsview.h \

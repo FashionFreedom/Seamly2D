@@ -174,7 +174,7 @@ void VToolMirrorByAxis::setAxisType(AxisType value)
 {
     m_axisType = value;
 
-    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
     SaveOption(obj);
 }
 
@@ -239,17 +239,26 @@ void VToolMirrorByAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolMirrorByAxis::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolMirrorByAxis::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogMirrorByAxis>(this, event);
+        ContextMenu<DialogMirrorByAxis>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
         Q_UNUSED(e)
         return;//Leave this method immediately!!!
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolMirrorByAxis::makeToolTip() const
+{
+    const QString toolTipStr = QString("<tr> <td><b>%1:</b> %2</td> </tr>")
+                                       .arg(tr("Origin point"))
+                                       .arg(getOriginPointName());
+    return toolTipStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

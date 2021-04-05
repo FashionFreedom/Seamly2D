@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,6 +73,7 @@
 #include "../../vdrawtool.h"
 #include "vtoolsinglepoint.h"
 #include "../vmisc/vmath.h"
+#include "../vmisc/vabstractapplication.h"
 
 template <class T> class QSharedPointer;
 
@@ -94,8 +95,11 @@ const QString VToolTriangle::ToolType = QStringLiteral("triangle");
 VToolTriangle::VToolTriangle(VAbstractPattern *doc, VContainer *data, const quint32 &id, const quint32 &axisP1Id,
                              const quint32 &axisP2Id, const quint32 &firstPointId, const quint32 &secondPointId,
                              const Source &typeCreation, QGraphicsItem *parent)
-    :VToolSinglePoint(doc, data, id, parent), axisP1Id(axisP1Id), axisP2Id(axisP2Id), firstPointId(firstPointId),
-      secondPointId(secondPointId)
+    : VToolSinglePoint(doc, data, id, QColor(qApp->Settings()->getPointNameColor()), parent)
+    , axisP1Id(axisP1Id)
+    , axisP2Id(axisP2Id)
+    , firstPointId(firstPointId)
+    , secondPointId(secondPointId)
 {
     ToolCreation(typeCreation);
 }
@@ -109,7 +113,7 @@ void VToolTriangle::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogTriangle> dialogTool = m_dialog.objectCast<DialogTriangle>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetAxisP1Id(axisP1Id);
     dialogTool->SetAxisP2Id(axisP2Id);
     dialogTool->SetFirstPointId(firstPointId);
@@ -138,7 +142,7 @@ VToolTriangle* VToolTriangle::Create(QSharedPointer<DialogTool> dialog, VMainGra
     const quint32 secondPointId = dialogTool->GetSecondPointId();
     const QString pointName = dialogTool->getPointName();
     VToolTriangle* point = Create(0, pointName, axisP1Id, axisP2Id, firstPointId, secondPointId, 5, 10,
-                                  scene, doc, data, Document::FullParse, Source::FromGui);
+                                  true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -157,6 +161,7 @@ VToolTriangle* VToolTriangle::Create(QSharedPointer<DialogTool> dialog, VMainGra
  * @param secondPointId id second triangle point, what lies on the hypotenuse.
  * @param mx label bias x axis.
  * @param my label bias y axis.
+ * @param showPointName show/hide point name text.
  * @param scene pointer to scene.
  * @param doc dom document container.
  * @param data container with variables.
@@ -164,9 +169,9 @@ VToolTriangle* VToolTriangle::Create(QSharedPointer<DialogTool> dialog, VMainGra
  * @param typeCreation way we create this tool.
  * @return the created tool
  */
-VToolTriangle* VToolTriangle::Create(const quint32 _id, const QString &pointName, const quint32 &axisP1Id,
-                                     const quint32 &axisP2Id, const quint32 &firstPointId, const quint32 &secondPointId,
-                                     const qreal &mx, const qreal &my, VMainGraphicsScene *scene, VAbstractPattern *doc,
+VToolTriangle* VToolTriangle::Create(const quint32 _id, const QString &pointName, quint32 axisP1Id,
+                                     quint32 axisP2Id, quint32 firstPointId, quint32 secondPointId,
+                                     qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                      VContainer *data, const Document &parse, const Source &typeCreation)
 {
     const QSharedPointer<VPointF> axisP1 = data->GeometricObject<VPointF>(axisP1Id);
@@ -177,13 +182,16 @@ VToolTriangle* VToolTriangle::Create(const quint32 _id, const QString &pointName
     QPointF point = FindPoint(static_cast<QPointF>(*axisP1), static_cast<QPointF>(*axisP2),
                               static_cast<QPointF>(*firstPoint), static_cast<QPointF>(*secondPoint));
     quint32 id = _id;
+    VPointF *p = new VPointF(point, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     if (typeCreation == Source::FromGui)
     {
-        id = data->AddGObject(new VPointF(point, pointName, mx, my));
+        id = data->AddGObject(p);
     }
     else
     {
-        data->UpdateGObject(id, new VPointF(point, pointName, mx, my));
+        data->UpdateGObject(id, p);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -301,11 +309,11 @@ void VToolTriangle::RemoveReferens()
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolTriangle::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolTriangle::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogTriangle>(this, event);
+        ContextMenu<DialogTriangle>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -380,7 +388,7 @@ void VToolTriangle::SetSecondPointId(const quint32 &value)
     {
         secondPointId = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -404,7 +412,7 @@ void VToolTriangle::SetFirstPointId(const quint32 &value)
     {
         firstPointId = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -422,7 +430,7 @@ void VToolTriangle::SetAxisP2Id(const quint32 &value)
     {
         axisP2Id = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -440,7 +448,7 @@ void VToolTriangle::SetAxisP1Id(const quint32 &value)
     {
         axisP1Id = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }

@@ -45,6 +45,7 @@ public:
     virtual                          ~PreferencesGraphicsViewPage ();
 
     void                              Apply();
+
 protected:
 
 private:
@@ -52,6 +53,9 @@ private:
     Ui::PreferencesGraphicsViewPage  *ui;
     bool                              m_zrbPositiveColorChanged;
     bool                              m_zrbNegativeColorChanged;
+    bool                              m_pointNameColorChanged;
+    bool                              m_pointNameHoverColorChanged;
+    bool                              m_orginAxisColorChanged;
 };
 
 #endif // PREFERENCES_GRAPHICSVIEWPAGE_H

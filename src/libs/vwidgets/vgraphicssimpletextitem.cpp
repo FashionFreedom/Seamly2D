@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -65,28 +65,29 @@
 #include <QPolygonF>
 #include <QRectF>
 #include <Qt>
+#include <QtDebug>
 
 #include "vmaingraphicsscene.h"
 #include "vmaingraphicsview.h"
+#include "vscenepoint.h"
 #include "global.h"
+#include "../vmisc/vabstractapplication.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VGraphicsSimpleTextItem default constructor.
  * @param parent parent object.
  */
-VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(QGraphicsItem * parent)
-    :QGraphicsSimpleTextItem(parent), m_fontSize(0), selectionType(SelectionType::ByMouseRelease)
+VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(QColor textColor, QGraphicsItem *parent)
+    : QGraphicsSimpleTextItem(parent)
+    , m_fontSize(qApp->Settings()->getPointNameSize())
+    , m_scale(1)
+    , m_textColor(textColor)
+    , m_isNameHovered(false)
+    , selectionType(SelectionType::ByMouseRelease)
+    , m_showParentTooltip(true)
 {
-    this->setFlag(QGraphicsItem::ItemIsMovable, true);
-    this->setFlag(QGraphicsItem::ItemIsSelectable, true);
-    this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
-    this->setAcceptHoverEvents(true);
-    QFont font = this->font();
-    font.setPointSize(font.pointSize()+20);
-    m_fontSize = font.pointSize();
-    this->setFont(font);
+    initItem();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -95,28 +96,54 @@ VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(QGraphicsItem * parent)
  * @param text text.
  * @param parent parent object.
  */
-VGraphicsSimpleTextItem::VGraphicsSimpleTextItem( const QString & text, QGraphicsItem * parent )
-    :QGraphicsSimpleTextItem(text, parent), m_fontSize(0), selectionType(SelectionType::ByMouseRelease)
+VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(const QString &text, QColor textColor,  QGraphicsItem *parent)
+    : QGraphicsSimpleTextItem(text, parent)
+    , m_fontSize(qApp->Settings()->getPointNameSize())
+    , m_scale(1)
+    , m_textColor(textColor)
+    , selectionType(SelectionType::ByMouseRelease)
+    , m_showParentTooltip(true)
 {
-    this->setFlag(QGraphicsItem::ItemIsMovable, true);
-    this->setFlag(QGraphicsItem::ItemIsSelectable, true);
-    this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    this->setAcceptHoverEvents(true);
+    initItem();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VGraphicsSimpleTextItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    const qreal scale = SceneScale(scene());
-    qreal fontSize = BaseFontSize();
-    if (scale > 1)
+    QGraphicsScene *scene = this->scene();
+    const qreal scale = sceneScale(scene);
+
+    if (scale > 1.0 && not VFuzzyComparePossibleNulls(m_scale, scale))
     {
-        fontSize = qMax(0.1, fontSize/scale);
+        scalePointName(scale);
+    }
+    else if (scale <= 1.0 && not VFuzzyComparePossibleNulls(m_scale, 1.0))
+    {
+        scalePointName(1.0);
     }
 
-    QFont font = this->font();
-    font.setPointSizeF(fontSize);
-    setFont(font);
+    QFont fnt = this->font();
+    if (fnt.pointSize() != qApp->Settings()->getPointNameSize() ||
+        fnt.family() != qApp->Settings()->getPointNameFont().family())
+    {
+        fnt.setPointSize(qApp->Settings()->getPointNameSize());
+        fnt.setFamily(qApp->Settings()->getPointNameFont().family());
+        this->setFont(fnt);
+    }
+
+    if (QGraphicsView *view = scene->views().at(0))
+    {
+        VMainGraphicsView::NewSceneRect(scene, view, this);
+    }
+
+    if (m_isNameHovered)
+    {
+        this->setBrush(QBrush(QColor(qApp->Settings()->getPointNameHoverColor())));
+    }
+    else
+    {
+        this->setBrush(QBrush(getTextBrushColor()));
+    }
 
     QGraphicsSimpleTextItem::paint(painter, option, widget);
 }
@@ -125,21 +152,19 @@ void VGraphicsSimpleTextItem::paint(QPainter *painter, const QStyleOptionGraphic
 void VGraphicsSimpleTextItem::setEnabled(bool enabled)
 {
     QGraphicsSimpleTextItem::setEnabled(enabled);
-    const QPalette palet = this->scene()->palette();
-    if (enabled)
-    {
-        setBrush(palet.brush(QPalette::Active, QPalette::Text));
-    }
-    else
-    {
-        setBrush(palet.brush(QPalette::Disabled, QPalette::Text));
-    }
+    this->setBrush(QBrush(getTextBrushColor()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGraphicsSimpleTextItem::LabelSelectionType(const SelectionType &type)
+void VGraphicsSimpleTextItem::textSelectionType(const SelectionType &type)
 {
     selectionType = type;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VGraphicsSimpleTextItem::setShowParentTooltip(bool show)
+{
+    m_showParentTooltip = show;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -151,16 +176,15 @@ void VGraphicsSimpleTextItem::LabelSelectionType(const SelectionType &type)
  */
 QVariant VGraphicsSimpleTextItem::itemChange(GraphicsItemChange change, const QVariant &value)
 {
-     if (change == ItemPositionChange && scene())
+     if (change == ItemPositionChange  && scene())
      {
          // Each time we move something we call recalculation scene rect. In some cases this can cause moving
          // objects positions. And this cause infinite redrawing. That's why we wait the finish of saving the last move.
          static bool changeFinished = true;
+
          if (changeFinished)
          {
             changeFinished = false;
-            QPointF newPos = value.toPointF() + this->parentItem()->pos();
-            emit NameChangePosition(newPos);
             if (scene())
             {
                 const QList<QGraphicsView *> viewList = scene()->views();
@@ -191,14 +215,29 @@ QVariant VGraphicsSimpleTextItem::itemChange(GraphicsItemChange change, const QV
                     }
                 }
             }
+
+            m_pointNamePos = value.toPointF();
+            const qreal scale = sceneScale(scene());
+
+            if (scale > 1)
+            {
+                QLineF line(QPointF(), m_pointNamePos);
+                line.setLength(line.length() * scale);
+                m_pointNamePos = line.p2();
+            }
+            emit nameChangedPosition(m_pointNamePos + this->parentItem()->pos());
+
             changeFinished = true;
          }
      }
+
      if (change == QGraphicsItem::ItemSelectedChange)
      {
-         emit PointSelected(value.toBool());
+         setFlag(QGraphicsItem::ItemIsFocusable, value.toBool());
+         emit pointSelected(value.toBool());
      }
-     return QGraphicsItem::itemChange(change, value);
+     return QGraphicsSimpleTextItem::itemChange(change, value);
+     //return QGraphicsItem::itemChange(change, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -208,13 +247,18 @@ QVariant VGraphicsSimpleTextItem::itemChange(GraphicsItemChange change, const QV
  */
 void VGraphicsSimpleTextItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
+    m_isNameHovered = true;
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
     }
-    this->setBrush(Qt::green);
+    else
+    {
+        setCursor(qApp->getSceneView()->viewport()->cursor());
+    }
 
-    if(QGraphicsItem *parent = parentItem())
+    QGraphicsItem *parent = parentItem();
+    if(parent && m_showParentTooltip)
     {
         setToolTip(parent->toolTip());
     }
@@ -229,11 +273,12 @@ void VGraphicsSimpleTextItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
  */
 void VGraphicsSimpleTextItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
+    m_isNameHovered = false;
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         setCursor(QCursor());
     }
-    this->setBrush(Qt::black);
+
     QGraphicsSimpleTextItem::hoverLeaveEvent(event);
 }
 
@@ -244,7 +289,7 @@ void VGraphicsSimpleTextItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
  */
 void VGraphicsSimpleTextItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit ShowContextMenu(event);
+    emit showContextMenu(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -272,7 +317,11 @@ void VGraphicsSimpleTextItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
     else
     {
-        emit PointChoosed();
+        if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
+        {
+            emit pointChosen();
+            event->accept();
+        }
     }
 }
 
@@ -289,7 +338,7 @@ void VGraphicsSimpleTextItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
     if (selectionType == SelectionType::ByMouseRelease)
     {
-        emit PointChoosed();
+        emit pointChosen();
     }
 
     QGraphicsSimpleTextItem::mouseReleaseEvent(event);
@@ -301,10 +350,103 @@ void VGraphicsSimpleTextItem::keyReleaseEvent(QKeyEvent *event)
     switch (event->key())
     {
         case Qt::Key_Delete:
-            emit DeleteTool();
+            emit deleteTool();
             return; //Leave this method immediately after call!!!
         default:
             break;
     }
-    QGraphicsSimpleTextItem::keyReleaseEvent ( event );
+    QGraphicsSimpleTextItem::keyReleaseEvent (event);
+}
+
+QColor VGraphicsSimpleTextItem::getTextBrushColor()
+{
+    if (qApp->Settings()->getUseToolColor())
+    {
+        QColor textColor = correctColor(this, m_textColor);
+        textColor.setAlpha(224);
+        return textColor;
+    }
+    else
+    {
+        QColor textColor = correctColor(this, QColor(qApp->Settings()->getPointNameColor()));
+        textColor.setAlpha(224);
+        return textColor;
+    }
+}
+
+void VGraphicsSimpleTextItem::setTextColor(const QColor &color)
+{
+    m_textColor = color;
+    this->setBrush(QBrush(getTextBrushColor()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VGraphicsSimpleTextItem::setPosition(QPointF pos)
+{
+    m_pointNamePos = pos;
+
+    scalePosition();
+}
+
+void VGraphicsSimpleTextItem::initItem()
+{
+    this->setFlag(QGraphicsItem::ItemIsMovable, true);
+    this->setFlag(QGraphicsItem::ItemIsSelectable, true);
+    this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
+    this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
+    this->setAcceptHoverEvents(true);
+
+    QFont fnt = font();
+    fnt.setPointSize(m_fontSize);
+    fnt.setFamily(qApp->Settings()->getPointNameFont().family());
+    setFont(fnt);
+
+    setScale(m_scale);
+
+    setBrush(QBrush(getTextBrushColor()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief scalePointName handle point name scaling to maintain same size when scene scale changes.
+ * @param scale parent scene scale.
+ */
+ void VGraphicsSimpleTextItem::scalePointName(const qreal &scale)
+{
+    setScale(1/scale);
+    scalePosition();
+    updateLeader();
+    m_scale = scale;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief scalePosition handle point name position scaling to maintain same distance when scene scale changes.
+ */
+ void VGraphicsSimpleTextItem::scalePosition()
+{
+    const qreal scale = sceneScale(scene());
+    QPointF newPos = m_pointNamePos;
+
+    if (scale > 1)
+    {
+        QLineF line(QPointF(), m_pointNamePos);
+        line.setLength(line.length() / scale);
+        newPos = line.p2();
+    }
+
+    blockSignals(true);
+    setFlag(QGraphicsItem::ItemSendsGeometryChanges, false);
+    setPos(newPos);
+    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
+    blockSignals(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VGraphicsSimpleTextItem::updateLeader()
+{
+    if (VScenePoint *parent = dynamic_cast<VScenePoint *>(parentItem()))
+    {
+        parent->refreshLeader();
+    }
 }

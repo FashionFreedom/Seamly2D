@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,29 +73,35 @@ class VToolCutArc : public VToolCut
 {
     Q_OBJECT
 public:
-    virtual void setDialog() Q_DECL_OVERRIDE;
-    static VToolCutArc*  Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
+    virtual void        setDialog() Q_DECL_OVERRIDE;
+
+    static VToolCutArc *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                 VContainer *data);
-    static VToolCutArc*  Create(const quint32 _id, const QString &pointName, QString &formula, const quint32 &arcId,
-                                const qreal &mx, const qreal &my, VMainGraphicsScene *scene,
+    static VToolCutArc *Create(const quint32 _id, const QString &pointName, QString &formula, quint32 arcId,
+                                qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
                                 const Source &typeCreation);
+
     static const QString ToolType;
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int          type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::CutArc)};
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
+protected slots:
+    virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
 protected:
-    virtual void    contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void    SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void    SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void    ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void    SetVisualization() Q_DECL_OVERRIDE;
-    virtual QString MakeToolTip() const Q_DECL_OVERRIDE;
+    virtual void         SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SetVisualization() Q_DECL_OVERRIDE;
+    virtual QString      makeToolTip() const Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VToolCutArc)
 
-    VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &formula,
-                const quint32 &arcId, const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                         VToolCutArc(VAbstractPattern *doc, VContainer *data, const quint32 &id,
+                                     const QString &formula, const quint32 &arcId, const Source &typeCreation,
+                                     QGraphicsItem * parent = nullptr);
 };
-
 #endif // VTOOLCUTARC_H

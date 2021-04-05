@@ -79,8 +79,8 @@ public:
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::SimplePoint)};
 
-    using VScenePoint::SetOnlyPoint;
-    using VScenePoint::IsOnlyPoint;
+    using VScenePoint::setOnlyPoint;
+    using VScenePoint::isOnlyPoint;
 
     void SetVisualizationMode(bool value);
     bool IsVisualizationMode() const;
@@ -89,9 +89,10 @@ public:
 
     void SetEnabled(bool enabled);
     void EnableToolMove(bool move);
-    void AllowLabelHover(bool enabled);
-    void AllowLabelSelecting(bool enabled);
+    void allowTextHover(bool enabled);
+    void allowTextSelectable(bool enabled);
     virtual void ToolSelectionType(const SelectionType &type) Q_DECL_OVERRIDE;
+
 signals:
     /**
      * @brief Choosed send id when clicked.
@@ -99,13 +100,13 @@ signals:
      */
     void Choosed(quint32 id);
     void Selected(bool selected, quint32 id);
-    void NameChangedPosition(const QPointF &pos, quint32 id);
+    void nameChangedPosition(const QPointF &pos, quint32 id);
 
 public slots:
-    void DeleteFromLabel();
-    void PointChoosed();
-    void PointSelected(bool selected);
-    void ChangedPosition(const QPointF &pos);
+    void deletePoint();
+    void pointChosen();
+    void pointSelected(bool selected);
+    void pointnameChangedPosition(const QPointF &pos);
 
 protected:
     virtual void     mousePressEvent( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
@@ -114,7 +115,7 @@ protected:
     virtual void     hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
     virtual void     keyReleaseEvent ( QKeyEvent * event ) Q_DECL_OVERRIDE;
     virtual QVariant itemChange ( GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
-    virtual void     contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
+    virtual void     contextMenuEvent (QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(VSimplePoint)

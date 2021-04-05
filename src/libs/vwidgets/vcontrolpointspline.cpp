@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -67,6 +67,7 @@
 #include <Qt>
 
 #include "../vwidgets/global.h"
+#include "../vmisc/vabstractapplication.h"
 #include "../vgeometry/vgobject.h"
 #include "vmaingraphicsscene.h"
 #include "vmaingraphicsview.h"
@@ -75,14 +76,14 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VControlPointSpline::VControlPointSpline(const qint32 &indexSpline, SplinePointPosition position, QGraphicsItem *parent)
-    : VScenePoint(parent),
-      controlLine(nullptr),
-      indexSpline(indexSpline),
-      position(position),
-      freeAngle(true),
-      freeLength(true)
+    : SceneRect(QColor(Qt::red), parent)
+    , controlLine(nullptr)
+    , indexSpline(indexSpline)
+    , position(position)
+    , freeAngle(true)
+    , freeLength(true)
 {
-    Init();
+    init();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -97,31 +98,31 @@ VControlPointSpline::VControlPointSpline(const qint32 &indexSpline, SplinePointP
 VControlPointSpline::VControlPointSpline(const qint32 &indexSpline, SplinePointPosition position,
                                          const QPointF &controlPoint, const QPointF &splinePoint, bool freeAngle,
                                          bool freeLength, QGraphicsItem *parent)
-    : VScenePoint(parent),
-      controlLine(nullptr),
-      indexSpline(indexSpline),
-      position(position),
-      freeAngle(freeAngle),
-      freeLength(freeLength)
+    : SceneRect(QColor(Qt::red), parent)
+    , controlLine(nullptr)
+    , indexSpline(indexSpline)
+    , position(position)
+    , freeAngle(freeAngle)
+    , freeLength(freeLength)
 {
-    Init();
+    init();
 
     this->setFlag(QGraphicsItem::ItemIsMovable, true);
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     this->setAcceptHoverEvents(true);
     this->setPos(controlPoint);
 
-    SetCtrlLine(controlPoint, splinePoint);
+    setCtrlLine(controlPoint, splinePoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VControlPointSpline::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     QPen lPen = controlLine->pen();
-    lPen.setColor(CorrectColor(controlLine, Qt::black));
+    lPen.setColor(correctColor(controlLine, Qt::black));
     controlLine->setPen(lPen);
 
-    VScenePoint::paint(painter, option, widget);
+    SceneRect::paint(painter, option, widget);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -135,7 +136,7 @@ void VControlPointSpline::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
     }
-    VScenePoint::hoverEnterEvent(event);
+    SceneRect::hoverEnterEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -145,7 +146,7 @@ void VControlPointSpline::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     {
         setCursor(QCursor());
     }
-    VScenePoint::hoverLeaveEvent(event);
+    SceneRect::hoverLeaveEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -231,7 +232,7 @@ QVariant VControlPointSpline::itemChange(QGraphicsItem::GraphicsItemChange chang
         default:
             break;
     }
-    return VScenePoint::itemChange(change, value);
+    return SceneRect::itemChange(change, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -244,7 +245,7 @@ void VControlPointSpline::mousePressEvent(QGraphicsSceneMouseEvent *event)
             SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
         }
     }
-    VScenePoint::mousePressEvent(event);
+    SceneRect::mousePressEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -257,46 +258,45 @@ void VControlPointSpline::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
             SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         }
     }
-    VScenePoint::mouseReleaseEvent(event);
+    SceneRect::mouseReleaseEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VControlPointSpline::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit ShowContextMenu(event);
+    emit showContextMenu(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VControlPointSpline::Init()
+void VControlPointSpline::init()
 {
-    m_baseColor = Qt::red;
-    SetOnlyPoint(true);
+    setOnlyPoint(true);
     this->setBrush(QBrush(Qt::NoBrush));
     this->setZValue(100);
 
     controlLine = new VScaledLine(this);
-    controlLine->SetBasicWidth(widthHairLine);
+    controlLine->setBasicWidth(widthHairLine);
     controlLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VControlPointSpline::SetCtrlLine(const QPointF &controlPoint, const QPointF &splinePoint)
+void VControlPointSpline::setCtrlLine(const QPointF &controlPoint, const QPointF &splinePoint)
 {
     QPointF p1, p2;
-    VGObject::LineIntersectCircle(QPointF(), ScaledRadius(SceneScale(scene())),
+    VGObject::LineIntersectCircle(QPointF(), scaledRadius(sceneScale(scene())),
                                   QLineF( QPointF(), splinePoint-controlPoint), p1, p2);
     controlLine->setLine(QLineF(splinePoint-controlPoint, p1));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief RefreshCtrlPoint refresh the control point.
+ * @brief refreshCtrlPoint refresh the control point.
  * @param indexSpline index spline in list.
  * @param pos position point in spline.
  * @param controlPoint control point.
  * @param splinePoint spline point.
  */
-void VControlPointSpline::RefreshCtrlPoint(const qint32 &indexSpline, SplinePointPosition pos,
+void VControlPointSpline::refreshCtrlPoint(const qint32 &indexSpline, SplinePointPosition pos,
                                            const QPointF &controlPoint, const QPointF &splinePoint, bool freeAngle,
                                            bool freeLength)
 {
@@ -305,7 +305,7 @@ void VControlPointSpline::RefreshCtrlPoint(const qint32 &indexSpline, SplinePoin
         this->freeAngle = freeAngle;
         this->freeLength = freeLength;
         this->setPos(controlPoint);
-        SetCtrlLine(controlPoint, splinePoint);
+        setCtrlLine(controlPoint, splinePoint);
     }
 }
 

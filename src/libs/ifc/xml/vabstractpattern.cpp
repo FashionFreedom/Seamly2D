@@ -251,7 +251,7 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
 VAbstractPattern::VAbstractPattern(QObject *parent)
     : QObject(parent),
       VDomDocument(),
-      nameActivPP(QString()),
+      activeDraftBlock(QString()),
       cursor(0),
       toolsOnRemove(QVector<VDataTool*>()),
       history(QVector<VToolRecord>()),
@@ -320,9 +320,9 @@ QStringList VAbstractPattern::ListMeasurements() const
 void VAbstractPattern::ChangeActivPP(const QString &name, const Document &parse)
 {
     Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
-    if (CheckExistNamePP(name) && this->nameActivPP != name)
+    if (CheckExistNamePP(name) && this->activeDraftBlock != name)
     {
-        this->nameActivPP = name;
+        this->activeDraftBlock = name;
         if (parse == Document::FullParse)
         {
             emit ChangedActivPP(name);
@@ -337,7 +337,7 @@ void VAbstractPattern::ChangeActivPP(const QString &name, const Document &parse)
  */
 QString VAbstractPattern::GetNameActivPP() const
 {
-    return nameActivPP;
+    return activeDraftBlock;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -348,7 +348,7 @@ QString VAbstractPattern::GetNameActivPP() const
  */
 bool VAbstractPattern::GetActivDrawElement(QDomElement &element) const
 {
-    if (nameActivPP.isEmpty() == false)
+    if (activeDraftBlock.isEmpty() == false)
     {
         const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
         if (elements.size() == 0)
@@ -361,7 +361,7 @@ bool VAbstractPattern::GetActivDrawElement(QDomElement &element) const
             if (element.isNull() == false)
             {
                 const QString fieldName = element.attribute( AttrName );
-                if ( fieldName == nameActivPP )
+                if ( fieldName == activeDraftBlock )
                 {
                     return true;
                 }
@@ -547,9 +547,9 @@ bool VAbstractPattern::ChangeNamePP(const QString &oldName, const QString &newNa
     QDomElement ppElement = GetPPElement(oldName);
     if (ppElement.isElement())
     {
-        if (nameActivPP == oldName)
+        if (activeDraftBlock == oldName)
         {
-            nameActivPP = newName;
+            activeDraftBlock = newName;
         }
         ppElement.setAttribute(AttrName, newName);
         emit patternChanged(false);//For situation when we change name directly, without undocommands.
@@ -664,7 +664,7 @@ QVector<CustomSARecord> VAbstractPattern::ParsePieceCSARecords(const QDomElement
             record.startPoint = GetParametrUInt(element, VAbstractPattern::AttrStart, NULL_ID_STR);
             record.path = GetParametrUInt(element, VAbstractPattern::AttrPath, NULL_ID_STR);
             record.endPoint = GetParametrUInt(element, VAbstractPattern::AttrEnd, NULL_ID_STR);
-            record.reverse = GetParametrBool(element, VAbstractPattern::AttrNodeReverse, falseStr);
+            record.reverse = getParameterBool(element, VAbstractPattern::AttrNodeReverse, falseStr);
             record.includeType = static_cast<PiecePathIncludeType>(GetParametrUInt(element,
                                                                                    VAbstractPattern::AttrIncludeAs,
                                                                                    "1"));
@@ -719,22 +719,22 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
 {
     const quint32 id = VDomDocument::GetParametrUInt(domElement, AttrIdObject, NULL_ID_STR);
     const bool reverse = VDomDocument::GetParametrUInt(domElement, VAbstractPattern::AttrNodeReverse, "0");
-    const bool excluded = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeExcluded, falseStr);
+    const bool excluded = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeExcluded, falseStr);
     const QString saBefore = VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSABefore,
                                                              currentSeamAllowance);
     const QString saAfter = VDomDocument::GetParametrString(domElement, VAbstractPattern::AttrSAAfter,
                                                             currentSeamAllowance);
     const PieceNodeAngle angle = static_cast<PieceNodeAngle>(VDomDocument::GetParametrUInt(domElement, AttrAngle, "0"));
 
-    const bool notch = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeIsNotch, falseStr);
+    const bool notch = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeIsNotch, falseStr);
     const NotchType notchType = stringToNotchType(VDomDocument::GetParametrString(domElement,
                                                           VAbstractPattern::AttrNodeNotchType,strSlit));
     const NotchSubType notchSubType = stringToNotchSubType(VDomDocument::GetParametrString(domElement,
                                                           VAbstractPattern::AttrNodeNotchSubType, strStraightforward));
 
-    const bool showNotch = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeShowNotch,
+    const bool showNotch = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeShowNotch,
                                                           trueStr);
-    const bool showSecond = VDomDocument::GetParametrBool(domElement, VAbstractPattern::AttrNodeShowSecondNotch,
+    const bool showSecond = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeShowSecondNotch,
                                                           trueStr);
     const qreal  notchLength = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchLength, ".25");
     const qreal   notchWidth = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchWidth, ".25");
@@ -942,7 +942,7 @@ QMap<GHeights, bool> VAbstractPattern::GetGradationHeights() const
                 switch (gTags.indexOf(domElement.tagName()))
                 {
                     case 0: // TagHeights
-                        if (GetParametrBool(domElement, AttrAll, defValue))
+                        if (getParameterBool(domElement, AttrAll, defValue))
                         {
                             return map;
                         }
@@ -951,32 +951,32 @@ QMap<GHeights, bool> VAbstractPattern::GetGradationHeights() const
                             map.insert(GHeights::ALL, false);
                         }
 
-                        map.insert(GHeights::H50, GetParametrBool(domElement, AttrH50, defValue));
-                        map.insert(GHeights::H56, GetParametrBool(domElement, AttrH56, defValue));
-                        map.insert(GHeights::H62, GetParametrBool(domElement, AttrH62, defValue));
-                        map.insert(GHeights::H68, GetParametrBool(domElement, AttrH68, defValue));
-                        map.insert(GHeights::H74, GetParametrBool(domElement, AttrH74, defValue));
-                        map.insert(GHeights::H80, GetParametrBool(domElement, AttrH80, defValue));
-                        map.insert(GHeights::H86, GetParametrBool(domElement, AttrH86, defValue));
-                        map.insert(GHeights::H92, GetParametrBool(domElement, AttrH92, defValue));
-                        map.insert(GHeights::H98, GetParametrBool(domElement, AttrH98, defValue));
-                        map.insert(GHeights::H104, GetParametrBool(domElement, AttrH104, defValue));
-                        map.insert(GHeights::H110, GetParametrBool(domElement, AttrH110, defValue));
-                        map.insert(GHeights::H116, GetParametrBool(domElement, AttrH116, defValue));
-                        map.insert(GHeights::H122, GetParametrBool(domElement, AttrH122, defValue));
-                        map.insert(GHeights::H128, GetParametrBool(domElement, AttrH128, defValue));
-                        map.insert(GHeights::H134, GetParametrBool(domElement, AttrH134, defValue));
-                        map.insert(GHeights::H140, GetParametrBool(domElement, AttrH140, defValue));
-                        map.insert(GHeights::H146, GetParametrBool(domElement, AttrH146, defValue));
-                        map.insert(GHeights::H152, GetParametrBool(domElement, AttrH152, defValue));
-                        map.insert(GHeights::H158, GetParametrBool(domElement, AttrH158, defValue));
-                        map.insert(GHeights::H164, GetParametrBool(domElement, AttrH164, defValue));
-                        map.insert(GHeights::H170, GetParametrBool(domElement, AttrH170, defValue));
-                        map.insert(GHeights::H176, GetParametrBool(domElement, AttrH176, defValue));
-                        map.insert(GHeights::H182, GetParametrBool(domElement, AttrH182, defValue));
-                        map.insert(GHeights::H188, GetParametrBool(domElement, AttrH188, defValue));
-                        map.insert(GHeights::H194, GetParametrBool(domElement, AttrH194, defValue));
-                        map.insert(GHeights::H200, GetParametrBool(domElement, AttrH200, defValue));
+                        map.insert(GHeights::H50, getParameterBool(domElement, AttrH50, defValue));
+                        map.insert(GHeights::H56, getParameterBool(domElement, AttrH56, defValue));
+                        map.insert(GHeights::H62, getParameterBool(domElement, AttrH62, defValue));
+                        map.insert(GHeights::H68, getParameterBool(domElement, AttrH68, defValue));
+                        map.insert(GHeights::H74, getParameterBool(domElement, AttrH74, defValue));
+                        map.insert(GHeights::H80, getParameterBool(domElement, AttrH80, defValue));
+                        map.insert(GHeights::H86, getParameterBool(domElement, AttrH86, defValue));
+                        map.insert(GHeights::H92, getParameterBool(domElement, AttrH92, defValue));
+                        map.insert(GHeights::H98, getParameterBool(domElement, AttrH98, defValue));
+                        map.insert(GHeights::H104, getParameterBool(domElement, AttrH104, defValue));
+                        map.insert(GHeights::H110, getParameterBool(domElement, AttrH110, defValue));
+                        map.insert(GHeights::H116, getParameterBool(domElement, AttrH116, defValue));
+                        map.insert(GHeights::H122, getParameterBool(domElement, AttrH122, defValue));
+                        map.insert(GHeights::H128, getParameterBool(domElement, AttrH128, defValue));
+                        map.insert(GHeights::H134, getParameterBool(domElement, AttrH134, defValue));
+                        map.insert(GHeights::H140, getParameterBool(domElement, AttrH140, defValue));
+                        map.insert(GHeights::H146, getParameterBool(domElement, AttrH146, defValue));
+                        map.insert(GHeights::H152, getParameterBool(domElement, AttrH152, defValue));
+                        map.insert(GHeights::H158, getParameterBool(domElement, AttrH158, defValue));
+                        map.insert(GHeights::H164, getParameterBool(domElement, AttrH164, defValue));
+                        map.insert(GHeights::H170, getParameterBool(domElement, AttrH170, defValue));
+                        map.insert(GHeights::H176, getParameterBool(domElement, AttrH176, defValue));
+                        map.insert(GHeights::H182, getParameterBool(domElement, AttrH182, defValue));
+                        map.insert(GHeights::H188, getParameterBool(domElement, AttrH188, defValue));
+                        map.insert(GHeights::H194, getParameterBool(domElement, AttrH194, defValue));
+                        map.insert(GHeights::H200, getParameterBool(domElement, AttrH200, defValue));
                         return map;
                     case 1: // TagSizes
                     default:
@@ -1136,7 +1136,7 @@ QMap<GSizes, bool> VAbstractPattern::GetGradationSizes() const
                 switch (gTags.indexOf(domElement.tagName()))
                 {
                     case 1: // TagSizes
-                        if (GetParametrBool(domElement, AttrAll, defValue))
+                        if (getParameterBool(domElement, AttrAll, defValue))
                         {
                             return map;
                         }
@@ -1145,32 +1145,32 @@ QMap<GSizes, bool> VAbstractPattern::GetGradationSizes() const
                             map.insert(GSizes::ALL, false);
                         }
 
-                        map.insert(GSizes::S22, GetParametrBool(domElement, AttrS22, defValue));
-                        map.insert(GSizes::S24, GetParametrBool(domElement, AttrS24, defValue));
-                        map.insert(GSizes::S26, GetParametrBool(domElement, AttrS26, defValue));
-                        map.insert(GSizes::S28, GetParametrBool(domElement, AttrS28, defValue));
-                        map.insert(GSizes::S30, GetParametrBool(domElement, AttrS30, defValue));
-                        map.insert(GSizes::S32, GetParametrBool(domElement, AttrS32, defValue));
-                        map.insert(GSizes::S34, GetParametrBool(domElement, AttrS34, defValue));
-                        map.insert(GSizes::S36, GetParametrBool(domElement, AttrS36, defValue));
-                        map.insert(GSizes::S38, GetParametrBool(domElement, AttrS38, defValue));
-                        map.insert(GSizes::S40, GetParametrBool(domElement, AttrS40, defValue));
-                        map.insert(GSizes::S42, GetParametrBool(domElement, AttrS42, defValue));
-                        map.insert(GSizes::S44, GetParametrBool(domElement, AttrS44, defValue));
-                        map.insert(GSizes::S46, GetParametrBool(domElement, AttrS46, defValue));
-                        map.insert(GSizes::S48, GetParametrBool(domElement, AttrS48, defValue));
-                        map.insert(GSizes::S50, GetParametrBool(domElement, AttrS50, defValue));
-                        map.insert(GSizes::S52, GetParametrBool(domElement, AttrS52, defValue));
-                        map.insert(GSizes::S54, GetParametrBool(domElement, AttrS54, defValue));
-                        map.insert(GSizes::S56, GetParametrBool(domElement, AttrS56, defValue));
-                        map.insert(GSizes::S58, GetParametrBool(domElement, AttrS58, defValue));
-                        map.insert(GSizes::S60, GetParametrBool(domElement, AttrS60, defValue));
-                        map.insert(GSizes::S62, GetParametrBool(domElement, AttrS62, defValue));
-                        map.insert(GSizes::S64, GetParametrBool(domElement, AttrS64, defValue));
-                        map.insert(GSizes::S66, GetParametrBool(domElement, AttrS66, defValue));
-                        map.insert(GSizes::S68, GetParametrBool(domElement, AttrS68, defValue));
-                        map.insert(GSizes::S70, GetParametrBool(domElement, AttrS70, defValue));
-                        map.insert(GSizes::S72, GetParametrBool(domElement, AttrS72, defValue));
+                        map.insert(GSizes::S22, getParameterBool(domElement, AttrS22, defValue));
+                        map.insert(GSizes::S24, getParameterBool(domElement, AttrS24, defValue));
+                        map.insert(GSizes::S26, getParameterBool(domElement, AttrS26, defValue));
+                        map.insert(GSizes::S28, getParameterBool(domElement, AttrS28, defValue));
+                        map.insert(GSizes::S30, getParameterBool(domElement, AttrS30, defValue));
+                        map.insert(GSizes::S32, getParameterBool(domElement, AttrS32, defValue));
+                        map.insert(GSizes::S34, getParameterBool(domElement, AttrS34, defValue));
+                        map.insert(GSizes::S36, getParameterBool(domElement, AttrS36, defValue));
+                        map.insert(GSizes::S38, getParameterBool(domElement, AttrS38, defValue));
+                        map.insert(GSizes::S40, getParameterBool(domElement, AttrS40, defValue));
+                        map.insert(GSizes::S42, getParameterBool(domElement, AttrS42, defValue));
+                        map.insert(GSizes::S44, getParameterBool(domElement, AttrS44, defValue));
+                        map.insert(GSizes::S46, getParameterBool(domElement, AttrS46, defValue));
+                        map.insert(GSizes::S48, getParameterBool(domElement, AttrS48, defValue));
+                        map.insert(GSizes::S50, getParameterBool(domElement, AttrS50, defValue));
+                        map.insert(GSizes::S52, getParameterBool(domElement, AttrS52, defValue));
+                        map.insert(GSizes::S54, getParameterBool(domElement, AttrS54, defValue));
+                        map.insert(GSizes::S56, getParameterBool(domElement, AttrS56, defValue));
+                        map.insert(GSizes::S58, getParameterBool(domElement, AttrS58, defValue));
+                        map.insert(GSizes::S60, getParameterBool(domElement, AttrS60, defValue));
+                        map.insert(GSizes::S62, getParameterBool(domElement, AttrS62, defValue));
+                        map.insert(GSizes::S64, getParameterBool(domElement, AttrS64, defValue));
+                        map.insert(GSizes::S66, getParameterBool(domElement, AttrS66, defValue));
+                        map.insert(GSizes::S68, getParameterBool(domElement, AttrS68, defValue));
+                        map.insert(GSizes::S70, getParameterBool(domElement, AttrS70, defValue));
+                        map.insert(GSizes::S72, getParameterBool(domElement, AttrS72, defValue));
                         return map;
                     case 0: // TagHeights
                     default:
@@ -1593,7 +1593,7 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
 void VAbstractPattern::SetActivPP(const QString &name)
 {
     Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
-    this->nameActivPP = name;
+    this->activeDraftBlock = name;
     emit ChangedActivPP(name);
 }
 
@@ -1683,7 +1683,7 @@ int VAbstractPattern::GetIndexActivPP() const
         for (int i = 0; i < drawList.size(); ++i)
         {
             QDomElement node = drawList.at(i).toElement();
-            if (node.attribute(AttrName) == nameActivPP)
+            if (node.attribute(AttrName) == activeDraftBlock)
             {
                 index = i;
                 break;
@@ -2024,7 +2024,7 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::ParseItemElement(const QD
 
     try
     {
-        const bool visible = GetParametrBool(domElement, AttrVisible, trueStr);
+        const bool visible = getParameterBool(domElement, AttrVisible, trueStr);
 
         QMap<quint32, quint32> items;
 
@@ -2219,7 +2219,7 @@ QMap<quint32, QPair<QString, bool> > VAbstractPattern::GetGroups()
                         if (group.tagName() == TagGroup)
                         {
                             const quint32 id = GetParametrUInt(group, AttrId, "0");
-                            const bool visible = GetParametrBool(group, AttrVisible, trueStr);
+                            const bool visible = getParameterBool(group, AttrVisible, trueStr);
                             const QString name = GetParametrString(group, AttrName, tr("New group"));
 
                             data.insert(id, qMakePair(name, visible));
@@ -2248,7 +2248,7 @@ bool VAbstractPattern::GetGroupVisivility(quint32 id)
     QDomElement group = elementById(id, TagGroup);
     if (group.isElement())
     {
-        return GetParametrBool(group, AttrVisible, trueStr);
+        return getParameterBool(group, AttrVisible, trueStr);
     }
     else
     {

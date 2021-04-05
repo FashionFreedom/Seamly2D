@@ -80,8 +80,8 @@ void VisToolInternalPath::RefreshGeometry()
         for (int i = 0; i < nodes.size(); ++i)
         {
             VSimplePoint *point = GetPoint(static_cast<quint32>(i), supportColor);
-            point->SetOnlyPoint(mode == Mode::Creation);
-            point->RefreshPointGeometry(nodes.at(i));
+            point->setOnlyPoint(mode == Mode::Creation);
+            point->refreshPointGeometry(nodes.at(i));
             point->setVisible(true);
         }
 

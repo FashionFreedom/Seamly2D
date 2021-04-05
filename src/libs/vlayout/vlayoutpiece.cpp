@@ -427,14 +427,14 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     const VPieceLabelData& data = piece.GetPatternPieceData();
     if (data.IsVisible() == true)
     {
-        det.SetPieceText(piece.GetName(), data, qApp->Settings()->GetLabelFont(), pattern);
+        det.SetPieceText(piece.GetName(), data, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VPatternLabelData& geom = piece.GetPatternInfo();
     if (geom.IsVisible() == true)
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
-        det.SetPatternInfo(pDoc, geom, qApp->Settings()->GetLabelFont(), pattern);
+        det.SetPatternInfo(pDoc, geom, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
@@ -1075,7 +1075,7 @@ void VLayoutPiece::CreateLabelStrings(QGraphicsItem *parent, const QVector<QPoin
             }
 
             QString qsText = tl.m_qsText;
-            if (fm.width(qsText) > dW)
+            if (fm.horizontalAdvance(qsText) > dW)
             {
                 qsText = fm.elidedText(qsText, Qt::ElideMiddle, static_cast<int>(dW));
             }
@@ -1085,11 +1085,11 @@ void VLayoutPiece::CreateLabelStrings(QGraphicsItem *parent, const QVector<QPoin
             }
             else if ((tl.m_eAlign & Qt::AlignHCenter) > 0)
             {
-                dX = (dW - fm.width(qsText))/2;
+                dX = (dW - fm.horizontalAdvance(qsText))/2;
             }
             else
             {
-                dX = dW - fm.width(qsText);
+                dX = dW - fm.horizontalAdvance(qsText);
             }
 
             // set up the rotation around top-left corner matrix

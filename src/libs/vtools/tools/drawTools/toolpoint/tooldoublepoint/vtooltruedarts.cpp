@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -90,12 +90,12 @@ VToolTrueDarts::VToolTrueDarts(VAbstractPattern *doc,
                                const quint32 &dartP3Id,
                                const Source &typeCreation,
                                QGraphicsItem *parent)
-    :VToolDoublePoint(doc, data, id, p1id, p2id, parent),
-      baseLineP1Id (baseLineP1Id),
-      baseLineP2Id(baseLineP2Id),
-      dartP1Id(dartP1Id),
-      dartP2Id(dartP2Id),
-      dartP3Id(dartP3Id)
+    : VToolDoublePoint(doc, data, id, p1id, p2id, parent)
+    , baseLineP1Id (baseLineP1Id)
+    , baseLineP2Id(baseLineP2Id)
+    , dartP1Id(dartP1Id)
+    , dartP2Id(dartP2Id)
+    , dartP3Id(dartP3Id)
 {
     ToolCreation(typeCreation);
 }
@@ -160,7 +160,7 @@ VToolTrueDarts *VToolTrueDarts::Create(QSharedPointer<DialogTool> dialog, VMainG
     const quint32 dartP3Id = dialogTool->GetThirdDartPointId();
 
     VToolTrueDarts *point = Create(0, 0, 0, baseLineP1Id, baseLineP2Id, dartP1Id, dartP2Id, dartP3Id,
-                                   point1Name, 5, 10, point2Name, 5, 10, scene, doc, data, Document::FullParse,
+                                   point1Name, 5, 10, true, point2Name, 5, 10, true, scene, doc, data, Document::FullParse,
                                    Source::FromGui);
     if (point != nullptr)
     {
@@ -177,8 +177,10 @@ VToolTrueDarts *VToolTrueDarts::Create(quint32 _id,
                                        const quint32 &dartP1Id,
                                        const quint32 &dartP2Id,
                                        const quint32 &dartP3Id,
-                                       const QString &point1Name, const qreal &mx1, const qreal &my1,
-                                       const QString &point2Name, const qreal &mx2, const qreal &my2,
+                                       const QString &point1Name,
+                                       qreal mx1, qreal my1, bool showPointName1,
+                                       const QString &point2Name,
+                                       qreal mx2, qreal my2, bool showPointName2,
                                        VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                        const Document &parse, const Source &typeCreation)
 {
@@ -193,19 +195,28 @@ VToolTrueDarts *VToolTrueDarts::Create(quint32 _id,
     VToolTrueDarts::FindPoint(static_cast<QPointF>(*baseLineP1), static_cast<QPointF>(*baseLineP2),
                               static_cast<QPointF>(*dartP1), static_cast<QPointF>(*dartP2),
                               static_cast<QPointF>(*dartP3), fPoint1, fPoint2);
+
     quint32 id = _id;
     quint32 p1id = _p1id;
     quint32 p2id = _p2id;
+
+    VPointF *p1 = new VPointF(fPoint1, point1Name, mx1, my1, id);
+    p1->setShowPointName(showPointName1);
+
+    VPointF *p2 = new VPointF(fPoint2, point2Name, mx2, my2, id);
+    p2->setShowPointName(showPointName2);
+
+
     if (typeCreation == Source::FromGui)
     {
-        id = VContainer::getNextId();//Just reserve id for tool
-        p1id = data->AddGObject(new VPointF(fPoint1, point1Name, mx1, my1, id));
-        p2id = data->AddGObject(new VPointF(fPoint2, point2Name, mx2, my2, id));
+        id = VContainer::getNextId();  //Just reserve id for tool
+        p1id = data->AddGObject(p1);
+        p2id = data->AddGObject(p2);
     }
     else
     {
-        data->UpdateGObject(p1id, new VPointF(fPoint1, point1Name, mx1, my1, id));
-        data->UpdateGObject(p2id, new VPointF(fPoint2, point2Name, mx2, my2, id));
+        data->UpdateGObject(p1id, p1);
+        data->UpdateGObject(p2id, p2);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -279,7 +290,7 @@ void VToolTrueDarts::SetBaseLineP1Id(const quint32 &value)
     {
         baseLineP1Id = value;
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -297,7 +308,7 @@ void VToolTrueDarts::SetBaseLineP2Id(const quint32 &value)
     {
         baseLineP2Id = value;
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -315,7 +326,7 @@ void VToolTrueDarts::SetDartP1Id(const quint32 &value)
     {
         dartP1Id = value;
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -333,7 +344,7 @@ void VToolTrueDarts::SetDartP2Id(const quint32 &value)
     {
         dartP2Id = value;
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -351,17 +362,17 @@ void VToolTrueDarts::SetDartP3Id(const quint32 &value)
     {
         dartP3Id = value;
 
-        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
         SaveOption(obj);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolTrueDarts::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolTrueDarts::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogTrueDarts>(this, event);
+        ContextMenu<DialogTrueDarts>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {

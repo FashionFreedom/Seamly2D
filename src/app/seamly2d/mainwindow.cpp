@@ -107,6 +107,7 @@
 #include <thread>
 #include <QFileSystemWatcher>
 #include <QComboBox>
+#include <QFontComboBox>
 #include <QTextCodec>
 #include <QDoubleSpinBox>
 
@@ -140,8 +141,8 @@ MainWindow::MainWindow(QWidget *parent)
     , watcher(new QFileSystemWatcher(this))
     , currentTool(Tool::Arrow)
     , lastUsedTool(Tool::Arrow)
-    , sceneDraw(nullptr)
-    , sceneDetails(nullptr)
+    , draftScene(nullptr)
+    , pieceScene(nullptr)
     , mouseCoordinate(nullptr)
     , helpLabel(nullptr)
     , isInitialized(false)
@@ -151,6 +152,8 @@ MainWindow::MainWindow(QWidget *parent)
     , dialogTable(nullptr)
     , dialogTool()
     , dialogHistory(nullptr)
+    , fontComboBox(nullptr)
+    , fontSizeComboBox(nullptr)
     , comboBoxDraws(nullptr)
     , patternPieceLabel(nullptr)
     , mode(Draw::Calculation)
@@ -186,7 +189,7 @@ MainWindow::MainWindow(QWidget *parent)
     CreateActions();
     InitScenes();
 
-    doc = new VPattern(pattern, &mode, sceneDraw, sceneDetails);
+    doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
     connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
     connect(doc, &VPattern::UndoCommand, this, &MainWindow::FullParseFile);
@@ -207,6 +210,7 @@ MainWindow::MainWindow(QWidget *parent)
     InitDocksContain();
     CreateMenus();
     initDraftToolBar();
+    initPointNameToolBar();
     initModesToolBar();
     InitToolButtons();
 
@@ -299,8 +303,9 @@ void MainWindow::AddPP(const QString &PPName)
 
     if (comboBoxDraws->count() == 0)
     {
-        sceneDraw->InitOrigins();
-        sceneDetails->InitOrigins();
+        draftScene->InitOrigins();
+        draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
+        pieceScene->InitOrigins();
     }
 
     comboBoxDraws->blockSignals(true);
@@ -312,7 +317,7 @@ void MainWindow::AddPP(const QString &PPName)
     const QString label = doc->GenerateLabel(LabelType::NewPatternPiece);
     const QPointF startPosition = StartPositionNewPP();
     VPointF *point = new VPointF(startPosition.x(), startPosition.y(), label, 5, 10);
-    auto spoint = VToolBasePoint::Create(0, PPName, point, sceneDraw, doc, pattern, Document::FullParse,
+    auto spoint = VToolBasePoint::Create(0, PPName, point, draftScene, doc, pattern, Document::FullParse,
                                          Source::FromGui);
     ui->view->itemClicked(spoint);
 
@@ -331,7 +336,7 @@ void MainWindow::AddPP(const QString &PPName)
     comboBoxDraws->blockSignals(false);
 
     // Show best for new PP
-    VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view);
+    VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view, spoint);
     ui->view->zoom100Percent();
 
     ui->newDraft_Action->setEnabled(true);
@@ -346,7 +351,7 @@ QPointF MainWindow::StartPositionNewPP() const
     const qreal margin = 40.0;
     if (comboBoxDraws->count() > 1)
     {
-        const QRectF rect = sceneDraw->visibleItemsBoundingRect();
+        const QRectF rect = draftScene->visibleItemsBoundingRect();
         if (rect.width() <= rect.height())
         {
             return QPointF(rect.width()+margin, originY);
@@ -365,47 +370,47 @@ QPointF MainWindow::StartPositionNewPP() const
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitScenes()
 {
-    sceneDraw = new VMainGraphicsScene(this);
-    currentScene = sceneDraw;
+    draftScene = new VMainGraphicsScene(this);
+    currentScene = draftScene;
     qApp->setCurrentScene(&currentScene);
-    connect(this, &MainWindow::EnableItemMove, sceneDraw, &VMainGraphicsScene::EnableItemMove);
-    connect(this, &MainWindow::ItemsSelection, sceneDraw, &VMainGraphicsScene::ItemsSelection);
+    connect(this, &MainWindow::EnableItemMove, draftScene, &VMainGraphicsScene::EnableItemMove);
+    connect(this, &MainWindow::ItemsSelection, draftScene, &VMainGraphicsScene::ItemsSelection);
 
-    connect(this, &MainWindow::EnableLabelSelection, sceneDraw, &VMainGraphicsScene::ToggleLabelSelection);
-    connect(this, &MainWindow::EnablePointSelection, sceneDraw, &VMainGraphicsScene::TogglePointSelection);
-    connect(this, &MainWindow::EnableLineSelection, sceneDraw, &VMainGraphicsScene::ToggleLineSelection);
-    connect(this, &MainWindow::EnableArcSelection, sceneDraw, &VMainGraphicsScene::ToggleArcSelection);
-    connect(this, &MainWindow::EnableElArcSelection, sceneDraw, &VMainGraphicsScene::ToggleElArcSelection);
-    connect(this, &MainWindow::EnableSplineSelection, sceneDraw, &VMainGraphicsScene::ToggleSplineSelection);
-    connect(this, &MainWindow::EnableSplinePathSelection, sceneDraw, &VMainGraphicsScene::ToggleSplinePathSelection);
+    connect(this, &MainWindow::EnableLabelSelection, draftScene, &VMainGraphicsScene::ToggleLabelSelection);
+    connect(this, &MainWindow::EnablePointSelection, draftScene, &VMainGraphicsScene::TogglePointSelection);
+    connect(this, &MainWindow::EnableLineSelection, draftScene, &VMainGraphicsScene::ToggleLineSelection);
+    connect(this, &MainWindow::EnableArcSelection, draftScene, &VMainGraphicsScene::ToggleArcSelection);
+    connect(this, &MainWindow::EnableElArcSelection, draftScene, &VMainGraphicsScene::ToggleElArcSelection);
+    connect(this, &MainWindow::EnableSplineSelection, draftScene, &VMainGraphicsScene::ToggleSplineSelection);
+    connect(this, &MainWindow::EnableSplinePathSelection, draftScene, &VMainGraphicsScene::ToggleSplinePathSelection);
 
-    connect(this, &MainWindow::EnableLabelHover, sceneDraw, &VMainGraphicsScene::ToggleLabelHover);
-    connect(this, &MainWindow::EnablePointHover, sceneDraw, &VMainGraphicsScene::TogglePointHover);
-    connect(this, &MainWindow::EnableLineHover, sceneDraw, &VMainGraphicsScene::ToggleLineHover);
-    connect(this, &MainWindow::EnableArcHover, sceneDraw, &VMainGraphicsScene::ToggleArcHover);
-    connect(this, &MainWindow::EnableElArcHover, sceneDraw, &VMainGraphicsScene::ToggleElArcHover);
-    connect(this, &MainWindow::EnableSplineHover, sceneDraw, &VMainGraphicsScene::ToggleSplineHover);
-    connect(this, &MainWindow::EnableSplinePathHover, sceneDraw, &VMainGraphicsScene::ToggleSplinePathHover);
+    connect(this, &MainWindow::EnableLabelHover, draftScene, &VMainGraphicsScene::ToggleLabelHover);
+    connect(this, &MainWindow::EnablePointHover, draftScene, &VMainGraphicsScene::TogglePointHover);
+    connect(this, &MainWindow::EnableLineHover, draftScene, &VMainGraphicsScene::ToggleLineHover);
+    connect(this, &MainWindow::EnableArcHover, draftScene, &VMainGraphicsScene::ToggleArcHover);
+    connect(this, &MainWindow::EnableElArcHover, draftScene, &VMainGraphicsScene::ToggleElArcHover);
+    connect(this, &MainWindow::EnableSplineHover, draftScene, &VMainGraphicsScene::ToggleSplineHover);
+    connect(this, &MainWindow::EnableSplinePathHover, draftScene, &VMainGraphicsScene::ToggleSplinePathHover);
 
-    connect(sceneDraw, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
+    connect(draftScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
-    sceneDetails = new VMainGraphicsScene(this);
-    connect(this, &MainWindow::EnableItemMove, sceneDetails, &VMainGraphicsScene::EnableItemMove);
+    pieceScene = new VMainGraphicsScene(this);
+    connect(this, &MainWindow::EnableItemMove, pieceScene, &VMainGraphicsScene::EnableItemMove);
 
-    connect(this, &MainWindow::EnableNodeLabelSelection, sceneDetails, &VMainGraphicsScene::ToggleNodeLabelSelection);
-    connect(this, &MainWindow::EnableNodePointSelection, sceneDetails, &VMainGraphicsScene::ToggleNodePointSelection);
-    connect(this, &MainWindow::EnableDetailSelection, sceneDetails, &VMainGraphicsScene::ToggleDetailSelection);
+    connect(this, &MainWindow::EnableNodeLabelSelection, pieceScene, &VMainGraphicsScene::ToggleNodeLabelSelection);
+    connect(this, &MainWindow::EnableNodePointSelection, pieceScene, &VMainGraphicsScene::ToggleNodePointSelection);
+    connect(this, &MainWindow::EnableDetailSelection, pieceScene, &VMainGraphicsScene::ToggleDetailSelection);
 
-    connect(this, &MainWindow::EnableNodeLabelHover, sceneDetails, &VMainGraphicsScene::ToggleNodeLabelHover);
-    connect(this, &MainWindow::EnableNodePointHover, sceneDetails, &VMainGraphicsScene::ToggleNodePointHover);
-    connect(this, &MainWindow::EnableDetailHover, sceneDetails, &VMainGraphicsScene::ToggleDetailHover);
+    connect(this, &MainWindow::EnableNodeLabelHover, pieceScene, &VMainGraphicsScene::ToggleNodeLabelHover);
+    connect(this, &MainWindow::EnableNodePointHover, pieceScene, &VMainGraphicsScene::ToggleNodePointHover);
+    connect(this, &MainWindow::EnableDetailHover, pieceScene, &VMainGraphicsScene::ToggleDetailHover);
 
-    connect(sceneDetails, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
+    connect(pieceScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
     ui->view->setScene(currentScene);
 
-    sceneDraw->setCurrentTransform(ui->view->transform());
-    sceneDetails->setCurrentTransform(ui->view->transform());
+    draftScene->setCurrentTransform(ui->view->transform());
+    pieceScene->setCurrentTransform(ui->view->transform());
 
     connect(ui->view, &VMainGraphicsView::mouseRelease, this, [this](){EndVisualization(true);});
     connect(ui->view, &VMainGraphicsView::signalZoomScaleChanged, this, &MainWindow::zoomScaleChanged);
@@ -661,7 +666,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(currentScene);
         SCASSERT(scene != nullptr)
 
-        connect(scene, &VMainGraphicsScene::ChoosedObject, dialogTool.data(), &DialogTool::ChosenObject);
+        connect(scene, &VMainGraphicsScene::ChosenObject, dialogTool.data(), &DialogTool::ChosenObject);
         connect(scene, &VMainGraphicsScene::SelectedObject, dialogTool.data(), &DialogTool::SelectedObject);
         connect(dialogTool.data(), &DialogTool::DialogClosed, this, closeDialogSlot);
         connect(dialogTool.data(), &DialogTool::ToolTip, this, &MainWindow::ShowToolTip);
@@ -787,28 +792,28 @@ void MainWindow::ApplyDialog(VMainGraphicsScene *scene)
 template <typename DrawTool>
 void MainWindow::ClosedDrawDialogWithApply(int result)
 {
-    ClosedDialogWithApply<DrawTool>(result, sceneDraw);
+    ClosedDialogWithApply<DrawTool>(result, draftScene);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename DrawTool>
 void MainWindow::ApplyDrawDialog()
 {
-    ApplyDialog<DrawTool>(sceneDraw);
+    ApplyDialog<DrawTool>(draftScene);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename DrawTool>
 void MainWindow::ClosedDetailsDialogWithApply(int result)
 {
-    ClosedDialogWithApply<DrawTool>(result, sceneDetails);
+    ClosedDialogWithApply<DrawTool>(result, pieceScene);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename DrawTool>
 void MainWindow::ApplyDetailsDialog()
 {
-    ApplyDialog<DrawTool>(sceneDetails);
+    ApplyDialog<DrawTool>(pieceScene);
 }
 
 //Points
@@ -1539,7 +1544,7 @@ void MainWindow::ClosedDialogInternalPath(int result)
     SCASSERT(dialogTool != nullptr);
     if (result == QDialog::Accepted)
     {
-        VToolInternalPath::Create(dialogTool, sceneDetails, doc, pattern);
+        VToolInternalPath::Create(dialogTool, pieceScene, doc, pattern);
     }
     handleArrowTool();
     doc->LiteParseTree(Document::LiteParse);
@@ -1567,7 +1572,7 @@ void MainWindow::ClosedDialogInsertNode(int result)
     {
         QSharedPointer<DialogInsertNode> dTool = dialogTool.objectCast<DialogInsertNode>();
         SCASSERT(dTool != nullptr)
-        VToolSeamAllowance::InsertNode(dTool->GetNode(), dTool->GetPieceId(), sceneDetails, pattern, doc);
+        VToolSeamAllowance::InsertNode(dTool->GetNode(), dTool->GetPieceId(), pieceScene, pattern, doc);
     }
     handleArrowTool();
     doc->LiteParseTree(Document::LiteParse);
@@ -1660,7 +1665,7 @@ void MainWindow::changeEvent(QEvent *event)
         helpLabel->setText(QObject::tr("Changes applied."));
         patternPieceLabel->setText(tr("Draft Block:"));
         UpdateWindowTitle();
-        emit sceneDetails->LanguageChanged();
+        emit pieceScene->LanguageChanged();
     }
     // remember to call base class implementation
     QMainWindow::changeEvent(event);
@@ -2115,6 +2120,72 @@ void MainWindow::initModesToolBar()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
+ * @brief initPointNameToolBar enable Point Name toolbar.
+ */
+void MainWindow::initPointNameToolBar()
+{
+    fontComboBox = new QFontComboBox ;
+    fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
+    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontComboBox);
+    fontComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    fontComboBox->setEnabled(true);
+
+    connect(fontComboBox, static_cast<void (QFontComboBox::*)(const QFont &)>(&QFontComboBox::currentFontChanged),
+            this, [this](QFont font)
+            {
+                qApp->Seamly2DSettings()->setPointNameFont(font);
+                upDateScenes();
+            });
+
+    fontSizeComboBox = new QComboBox ;
+    ui->pointName_ToolBar->insertWidget(ui->showPointNames_Action,fontSizeComboBox);
+    fontSizeComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    fontSizeComboBox->addItem("6", QVariant(static_cast<int>(6)));
+    fontSizeComboBox->addItem("7", QVariant(static_cast<int>(7)));
+    fontSizeComboBox->addItem("8", QVariant(static_cast<int>(8)));
+    fontSizeComboBox->addItem("9", QVariant(static_cast<int>(9)));
+    fontSizeComboBox->addItem("10", QVariant(static_cast<int>(10)));
+    fontSizeComboBox->addItem("11", QVariant(static_cast<int>(11)));
+    fontSizeComboBox->addItem("12", QVariant(static_cast<int>(12)));
+    fontSizeComboBox->addItem("13", QVariant(static_cast<int>(13)));
+    fontSizeComboBox->addItem("14", QVariant(static_cast<int>(14)));
+    fontSizeComboBox->addItem("15", QVariant(static_cast<int>(15)));
+    fontSizeComboBox->addItem("16", QVariant(static_cast<int>(16)));
+    fontSizeComboBox->addItem("18", QVariant(static_cast<int>(18)));
+    fontSizeComboBox->addItem("20", QVariant(static_cast<int>(20)));
+    fontSizeComboBox->addItem("22", QVariant(static_cast<int>(22)));
+    fontSizeComboBox->addItem("24", QVariant(static_cast<int>(24)));
+    fontSizeComboBox->addItem("26", QVariant(static_cast<int>(26)));
+    fontSizeComboBox->addItem("28", QVariant(static_cast<int>(28)));
+    fontSizeComboBox->addItem("32", QVariant(static_cast<int>(32)));
+    fontSizeComboBox->addItem("36", QVariant(static_cast<int>(36)));
+    fontSizeComboBox->addItem("40", QVariant(static_cast<int>(40)));
+    fontSizeComboBox->addItem("44", QVariant(static_cast<int>(44)));
+    fontSizeComboBox->addItem("48", QVariant(static_cast<int>(48)));
+    fontSizeComboBox->addItem("54", QVariant(static_cast<int>(54)));
+    fontSizeComboBox->addItem("60", QVariant(static_cast<int>(60)));
+    fontSizeComboBox->addItem("66", QVariant(static_cast<int>(66)));
+    fontSizeComboBox->addItem("72", QVariant(static_cast<int>(72)));
+    fontSizeComboBox->addItem("80", QVariant(static_cast<int>(80)));
+    fontSizeComboBox->addItem("96", QVariant(static_cast<int>(96)));
+
+    int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
+    if (index < 0 || index > 28)
+    {
+        index = 18;
+    }
+    fontSizeComboBox->setCurrentIndex(index);
+
+    connect(fontSizeComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+            {
+                qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+                upDateScenes();
+            });
+    fontSizeComboBox->setEnabled(true);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
  * @brief initDraftToolBar enable draw toolbar.
  */
 void MainWindow::initDraftToolBar()
@@ -2138,8 +2209,8 @@ void MainWindow::initDraftToolBar()
         {
             return;
         }
-        RenamePP *renamePP = new RenamePP(doc, nameDraw, comboBoxDraws);
-        qApp->getUndoStack()->push(renamePP);
+        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, nameDraw, comboBoxDraws);
+        qApp->getUndoStack()->push(draftBlock);
     });
 }
 
@@ -2223,11 +2294,11 @@ void MainWindow::zoomScaleChanged(qreal scale)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::zoomToSelected()
 {
-    if (qApp->getCurrentScene() == sceneDraw)
+    if (qApp->getCurrentScene() == draftScene)
     {
         ui->view->zoomToRect(doc->ActiveDrawBoundingRect());
     }
-    else if (qApp->getCurrentScene() == sceneDetails)
+    else if (qApp->getCurrentScene() == pieceScene)
     {
         QGraphicsItem *item = qApp->getCurrentScene()->focusItem();
         {
@@ -2845,7 +2916,7 @@ void MainWindow::CancelTool()
             // Crash: using CRTL+Z while using line tool.
             undoAction->setEnabled(false);
             redoAction->setEnabled(false);
-            VInteractiveTool::m_suppressContextMenu = true;
+            VAbstractTool::m_suppressContextMenu = true;
             return;
         case Tool::BasePoint:
         case Tool::SinglePoint:
@@ -3009,7 +3080,7 @@ void  MainWindow::handleArrowTool()
     currentTool = Tool::Arrow;
     emit EnableItemMove(true);
     emit ItemsSelection(SelectionType::ByMouseRelease);
-    VInteractiveTool::m_suppressContextMenu = false;
+    VAbstractTool::m_suppressContextMenu = false;
 
     // Only true for rubber band selection
     emit EnableLabelSelection(true);
@@ -3126,7 +3197,7 @@ void MainWindow::draftMode_Action(bool checked)
 
         SaveCurrentScene();
 
-        currentScene = sceneDraw;
+        currentScene = draftScene;
         ui->view->setScene(currentScene);
         RestoreCurrentScene();
 
@@ -3136,6 +3207,20 @@ void MainWindow::draftMode_Action(bool checked)
 
         setEnableTools(true);
         SetEnableWidgets(true);
+
+        ui->showPointNames_Action->setChecked(qApp->Settings()->getHidePointNames());
+        ui->toggleWireframe_Action->setChecked(qApp->Settings()->isWireframe());
+        ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
+        draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
+
+        ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
+        draftScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
+        //ui->toggleAnchorPoints_Action->setChecked(qApp->Settings()->getShowAnchorPoints());
+        //draftScene->setOriginsVisible(qApp->Settings()->getShowAnchorPoints());
+
+        ui->useToolColor_Action->setChecked(qApp->Settings()->getUseToolColor());
+
         ui->tools_ToolBox->setCurrentIndex(currentToolBoxIndex);
 
         if (qApp->patternType() == MeasurementsType::Multisize)
@@ -3201,7 +3286,7 @@ void MainWindow::ActionDetails(bool checked)
         qCDebug(vMainWindow, "Show piece scene");
         SaveCurrentScene();
 
-        currentScene = sceneDetails;
+        currentScene = pieceScene;
         ui->view->itemClicked(nullptr);
         ui->view->setScene(currentScene);
         RestoreCurrentScene();
@@ -3213,6 +3298,10 @@ void MainWindow::ActionDetails(bool checked)
         mode = Draw::Modeling;
         setEnableTools(true);
         SetEnableWidgets(true);
+
+        ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
+        pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
         ui->tools_ToolBox->setCurrentIndex(ui->tools_ToolBox->indexOf(ui->pieces_Page));
 
         if (qApp->patternType() == MeasurementsType::Multisize)
@@ -3611,8 +3700,8 @@ void MainWindow::Clear()
     }
     doc->clear();
     qCDebug(vMainWindow, "Clearing scenes.");
-    sceneDraw->clear();
-    sceneDetails->clear();
+    draftScene->clear();
+    pieceScene->clear();
     handleArrowTool();
     comboBoxDraws->clear();
     ui->draftMode_Action->setEnabled(false);
@@ -3640,7 +3729,15 @@ void MainWindow::Clear()
     ui->table_Action->setEnabled(false);
 
     ui->lastTool_Action->setEnabled(false);
-    ui->showCurveDetails_Action->setEnabled(false);
+    ui->increaseSize_Action->setEnabled(false);
+    ui->decreaseSize_Action->setEnabled(false);
+    ui->useToolColor_Action->setEnabled(false);
+    ui->showPointNames_Action->setEnabled(false);
+    ui->toggleWireframe_Action->setEnabled(false);
+    ui->toggleControlPoints_Action->setEnabled(false);
+    ui->toggleAxisOrigin_Action->setEnabled(false);
+    //ui->toggleAnchorPoints_Action->setEnabled(false);
+
 
     //disable measurements menu actions
     ui->loadIndividual_Action->setEnabled(false);
@@ -3798,8 +3895,8 @@ void MainWindow::FullParseFile()
     setEnableTools(comboBoxDraws->count() > 0);
     patternPiecesWidget->UpdateList();
 
-    VMainGraphicsView::NewSceneRect(sceneDraw, qApp->getSceneView());
-    VMainGraphicsView::NewSceneRect(sceneDetails, qApp->getSceneView());
+    VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
+    VMainGraphicsView::NewSceneRect(pieceScene, qApp->getSceneView());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3900,7 +3997,16 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToPrevious_Action->setEnabled(enable);
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
-    ui->showCurveDetails_Action->setEnabled(enable && draftStage);
+
+    ui->increaseSize_Action->setEnabled(enable);
+    ui->decreaseSize_Action->setEnabled(enable);
+    ui->useToolColor_Action->setEnabled(enable && draftStage);
+    ui->showPointNames_Action->setEnabled(enable);
+    ui->toggleWireframe_Action->setEnabled(enable);
+    ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
+    ui->toggleAxisOrigin_Action->setEnabled(enable);
+    //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
+
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
@@ -3921,7 +4027,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
-    sceneDraw->SetDisableTools(!enable, doc->GetNameActivPP());
+    draftScene->SetDisableTools(!enable, doc->GetNameActivPP());
     ui->view->setEnabled(enable);
 }
 
@@ -4003,8 +4109,8 @@ void MainWindow::New()
         }
 
         //Set scene size to size scene view
-        VMainGraphicsView::NewSceneRect(sceneDraw, ui->view);
-        VMainGraphicsView::NewSceneRect(sceneDetails, ui->view);
+        VMainGraphicsView::NewSceneRect(draftScene, ui->view);
+        VMainGraphicsView::NewSceneRect(pieceScene, ui->view);
 
         AddPP(patternPieceName);
 
@@ -4047,7 +4153,7 @@ void MainWindow::ChangedSize(const QString & text)
                            static_cast<int>(VContainer::height())))
     {
         doc->LiteParseTree(Document::LiteParse);
-        emit sceneDetails->DimensionsChanged();
+        emit pieceScene->DimensionsChanged();
     }
     else
     {
@@ -4077,7 +4183,7 @@ void MainWindow::ChangedHeight(const QString &text)
                            text.toInt()))
     {
         doc->LiteParseTree(Document::LiteParse);
-        emit sceneDetails->DimensionsChanged();
+        emit pieceScene->DimensionsChanged();
     }
     else
     {
@@ -4584,6 +4690,17 @@ void MainWindow::CreateMenus()
     {
         ui->file_ToolBar->setVisible(visible);
     });
+    menu->addAction(ui->edit_Toolbar->toggleViewAction());
+    connect(ui->edit_Toolbar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->edit_Toolbar->setVisible(visible);
+    });
+    menu->addAction(ui->view_ToolBar->toggleViewAction());
+    connect(ui->view_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->view_ToolBar->setVisible(visible);
+    });
+
     menu->addAction(ui->mode_ToolBar->toggleViewAction());
     connect(ui->mode_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
     {
@@ -4594,11 +4711,7 @@ void MainWindow::CreateMenus()
     {
         ui->draft_ToolBar->setVisible(visible);
     });
-    menu->addAction(ui->edit_Toolbar->toggleViewAction());
-    connect(ui->edit_Toolbar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->edit_Toolbar->setVisible(visible);
-    });
+
     menu->addAction(ui->status_ToolBar->toggleViewAction());
     connect(ui->status_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
     {
@@ -4659,7 +4772,11 @@ void MainWindow::CreateMenus()
     {
         ui->layout_ToolBar->setVisible(visible);
     });
-
+    menu->addAction(ui->pointName_ToolBar->toggleViewAction());
+    connect(ui->pointName_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->pointName_ToolBar->setVisible(visible);
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4918,7 +5035,7 @@ void MainWindow::InitDocksContain()
     connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &VWidgetDetails::UpdateList);
     connect(doc, &VPattern::UpdateInLayoutList, patternPiecesWidget, &VWidgetDetails::UpdateList);
     connect(doc, &VPattern::ShowDetail, patternPiecesWidget, &VWidgetDetails::SelectDetail);
-    connect(patternPiecesWidget, &VWidgetDetails::Highlight, sceneDetails, &VMainGraphicsScene::HighlightItem);
+    connect(patternPiecesWidget, &VWidgetDetails::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
     patternPiecesWidget->setVisible(false);
 }
 
@@ -5006,10 +5123,58 @@ void MainWindow::CreateActions()
     connect(ui->pieceMode_Action, &QAction::triggered, this, &MainWindow::ActionDetails);
     connect(ui->layoutMode_Action, &QAction::triggered, this, &MainWindow::ActionLayout);
 
-    connect(ui->showCurveDetails_Action, &QAction::triggered, this, [this](bool checked)
+    connect(ui->toggleWireframe_Action, &QAction::triggered, this, [this](bool checked)
     {
+        qApp->Seamly2DSettings()->setWireframe(checked);
         ui->view->itemClicked(nullptr);
-        sceneDraw->EnableDetailsMode(checked);
+        upDateScenes();
+    });
+
+    connect(ui->toggleControlPoints_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowControlPoints(checked);
+        ui->view->itemClicked(nullptr);
+        draftScene->enablePiecesMode(checked);
+    });
+
+    connect(ui->toggleAxisOrigin_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowAxisOrigin(checked);
+        draftScene->setOriginsVisible(checked);
+        pieceScene->setOriginsVisible(checked);
+    });
+/**
+    connect(ui->toggleAnchorPoints_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowAnchorPoints(checked);
+    });
+**/
+    connect(ui->increaseSize_Action, &QAction::triggered, this, [this]()
+    {
+        int index = qMin(fontSizeComboBox->currentIndex() + 1, fontSizeComboBox->count()-1);
+        fontSizeComboBox->setCurrentIndex(index);
+        qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+        upDateScenes();
+    });
+
+    connect(ui->decreaseSize_Action, &QAction::triggered, this, [this]()
+    {
+        const int index = qMax(fontSizeComboBox->currentIndex() - 1, 0);
+        fontSizeComboBox->setCurrentIndex(index);
+        qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+        upDateScenes();
+    });
+
+    connect(ui->showPointNames_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setHidePointNames(checked);
+        upDateScenes();
+    });
+
+    connect(ui->useToolColor_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setUseToolColor(checked);
+        upDateScenes();
     });
 
     //Tools menu
@@ -5600,8 +5765,8 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     }
 
     // On this stage scene empty. Fit scene size to view size
-    VMainGraphicsView::NewSceneRect(sceneDraw, ui->view);
-    VMainGraphicsView::NewSceneRect(sceneDetails, ui->view);
+    VMainGraphicsView::NewSceneRect(draftScene, ui->view);
+    VMainGraphicsView::NewSceneRect(pieceScene, ui->view);
 
     qApp->setOpeningPattern();//Begin opening file
     try
@@ -5745,6 +5910,18 @@ void MainWindow::ToolBarStyles()
     ToolBarStyle(ui->edit_Toolbar);
     ToolBarStyle(ui->zoom_ToolBar);
     ToolBarStyle(ui->file_ToolBar);
+
+    fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
+    int index = fontSizeComboBox->findData(qApp->Seamly2DSettings()->getPointNameSize());
+    fontSizeComboBox->setCurrentIndex(index);
+}
+
+void MainWindow::resetOrigins()
+{
+    draftScene->InitOrigins();
+    draftScene->setOriginsVisible(true);
+    pieceScene->InitOrigins();
+    pieceScene->setOriginsVisible(true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5775,10 +5952,16 @@ void MainWindow::Preferences()
         QScopedPointer<DialogPreferences> dialog(preferences);
         guard = preferences;
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::WindowsLocale); // Must be first
-        connect(dialog.data(), &DialogPreferences::updateProperties, toolProperties,
-                &VToolOptionsPropertyBrowser::RefreshOptions);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::ToolBarStyles);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::RefreshDetailsLabel);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
+
+
+        connect(dialog.data(), &DialogPreferences::updateProperties,
+                toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
+
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
 
@@ -5859,8 +6042,8 @@ void MainWindow::exportPiecesAs()
 
     if (detailsInLayout.count() == 0)
     {
-        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have enough Detail Pieces to export. Please, "
-                                                              "include at least one Detail Piece in layout."),
+        QMessageBox::information(this, tr("Layout mode"),  tr("You don't have any pieces to export. Please, "
+                                                              "include at least one piece in layout."),
                                  QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
@@ -5872,8 +6055,8 @@ void MainWindow::exportPiecesAs()
     }
     catch (VException &e)
     {
-        QMessageBox::warning(this, tr("Export Details"),
-                             tr("Can't export Details.") + QLatin1String(" \n") + e.ErrorMessage(),
+        QMessageBox::warning(this, tr("Export pieces"),
+                             tr("Can't export pieces.") + QLatin1String(" \n") + e.ErrorMessage(),
                              QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
@@ -6149,8 +6332,8 @@ void MainWindow::zoomFirstShow()
     }
     zoomToSelected();
 
-    VMainGraphicsView::NewSceneRect(sceneDraw, ui->view);
-    VMainGraphicsView::NewSceneRect(sceneDetails, ui->view);
+    VMainGraphicsView::NewSceneRect(draftScene, ui->view);
+    VMainGraphicsView::NewSceneRect(pieceScene, ui->view);
 
     if (pattern->DataPieces()->size() > 0)
     {
@@ -6473,6 +6656,18 @@ void MainWindow::UpdateWindowTitle()
 #endif //defined(Q_OS_MAC)
 }
 
+void MainWindow::upDateScenes()
+{
+    if (draftScene)
+    {
+        draftScene->update();
+    }
+
+    if (pieceScene)
+    {
+        pieceScene->update();
+    }
+}
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::IgnoreLocking(int error, const QString &path)
 {

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -51,6 +51,7 @@
 
 #include "vscenepoint.h"
 #include "../vmisc/def.h"
+#include "../vmisc/vabstractapplication.h"
 #include "../vgeometry/vpointf.h"
 #include "global.h"
 #include "vgraphicssimpletextitem.h"
@@ -59,51 +60,63 @@
 #include <QBrush>
 #include <QFont>
 #include <QPen>
+#include <QColor>
+#include <QtDebug>
 
 //---------------------------------------------------------------------------------------------------------------------
-VScenePoint::VScenePoint(QGraphicsItem *parent)
-    : QGraphicsEllipseItem(parent),
-      m_namePoint(nullptr),
-      m_lineName(nullptr),
-      m_onlyPoint(false),
-      m_isHovered(false),
-      m_baseColor(Qt::black)
+VScenePoint::VScenePoint(const QColor &lineColor, QGraphicsItem *parent)
+    : QGraphicsEllipseItem(parent)
+    , m_pointName(new VGraphicsSimpleTextItem(m_pointColor, this))
+    , m_pointLeader(new VScaledLine(this))
+    , m_pointColor(QColor(correctColor(this,lineColor)))
+    , m_onlyPoint(false)
+    , m_isHovered(false)
+    , m_showPointName(true)
 {
-    m_namePoint = new VGraphicsSimpleTextItem(this);
-    m_lineName = new VScaledLine(this);
-    m_lineName->SetBasicWidth(widthHairLine);
-    m_lineName->setLine(QLineF(0, 0, 1, 0));
-    m_lineName->setVisible(false);
+    m_pointLeader->setBasicWidth(widthHairLine);
+    m_pointLeader->setLine(QLineF(0, 0, 1, 0));
+    m_pointLeader->setVisible(false);
 
-    this->setBrush(QBrush(Qt::NoBrush));
-    this->setAcceptHoverEvents(true);
-    this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
+    setZValue(100);
+    setAcceptHoverEvents(true);
+    setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VScenePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    const qreal scale = SceneScale(scene());
+    const qreal scale = sceneScale(scene());
 
-    if (m_namePoint->BaseFontSize()*scale < 1)
+    setPointPen(scale);
+    scaleCircleSize(this, scale * .75);
+
+    if (qApp->Settings()->getPointNameSize()*scale < 6 || !qApp->Settings()->getHidePointNames())
     {
-        m_namePoint->setVisible(false);
-        m_lineName->setVisible(false);
+        m_pointName->setVisible(false);
+        m_pointLeader->setVisible(false);
     }
     else
     {
-        ScaleMainPenWidth(scale);
-        ScaleCircleSize(this, scale);
-
-        if (not m_onlyPoint)
+        if (!m_onlyPoint)
         {
-            m_namePoint->setVisible(true);
+            m_pointName->setVisible(m_showPointName);
 
-            QPen lPen = m_lineName->pen();
-            lPen.setColor(CorrectColor(m_lineName, Qt::black));
-            m_lineName->setPen(lPen);
+            QPen leaderPen = m_pointLeader->pen();
+            if (qApp->Settings()->getUseToolColor())
+            {
+                QColor leaderColor = correctColor(m_pointLeader, m_pointColor);
+                leaderColor.setAlpha(128);
+                leaderPen.setColor(leaderColor);
+            }
+            else
+            {
+                QColor leaderColor = correctColor(m_pointLeader, QColor(qApp->Settings()->getPointNameColor()));
+                leaderColor.setAlpha(128);
+                leaderPen.setColor(leaderColor);
+            }
+            m_pointLeader->setPen(leaderPen);
 
-            RefreshLine();
+            refreshLeader();
         }
     }
 
@@ -111,32 +124,43 @@ void VScenePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VScenePoint::RefreshPointGeometry(const VPointF &point)
+void VScenePoint::refreshPointGeometry(const VPointF &point)
 {
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, false);
     setPos(static_cast<QPointF>(point));
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 
-    m_namePoint->blockSignals(true);
-    m_namePoint->setText(point.name());
-    m_namePoint->setPos(QPointF(point.mx(), point.my()));
-    m_namePoint->blockSignals(false);
+    m_showPointName = point.isShowPointName();
 
-    RefreshLine();
+    m_pointName->blockSignals(true);
+    m_pointName->setFlag(QGraphicsItem::ItemSendsGeometryChanges, false);
+    m_pointName->setPosition(QPointF(point.mx(), point.my()));
+    m_pointName->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
+    m_pointName->blockSignals(false);
+    m_pointName->setText(point.name());
+    m_pointName->setTextColor(m_pointColor);
+    m_pointName->setVisible(m_showPointName);
+
+    refreshLeader();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VScenePoint::SetOnlyPoint(bool value)
+void VScenePoint::setOnlyPoint(bool value)
 {
     m_onlyPoint = value;
-    m_namePoint->setVisible(not m_onlyPoint);
-    m_lineName->setVisible(not m_onlyPoint);
+    m_pointName->setVisible(!m_onlyPoint);
+    m_pointLeader->setVisible(!m_onlyPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VScenePoint::IsOnlyPoint() const
+bool VScenePoint::isOnlyPoint() const
 {
     return m_onlyPoint;
+}
+
+void VScenePoint::setPointColor(const QString &value)
+{
+    m_pointColor = QColor(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -154,39 +178,71 @@ void VScenePoint::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VScenePoint::RefreshLine()
+void VScenePoint::refreshLeader()
 {
-    QRectF nRec = m_namePoint->sceneBoundingRect();
-    nRec.translate(- scenePos());
-    if (not rect().intersects(nRec))
+    QRectF nRect = m_pointName->sceneBoundingRect();
+    nRect.translate(- scenePos());
+    if (not rect().intersects(nRect))
     {
-        const QRectF nameRec = m_namePoint->sceneBoundingRect();
+        const QRectF nameRect = m_pointName->sceneBoundingRect();
         QPointF p1;
         QPointF p2;
-        VGObject::LineIntersectCircle(QPointF(), ScaledRadius(SceneScale(scene())),
-                                      QLineF(QPointF(), nameRec.center() - scenePos()), p1, p2);
-        const QPointF pRec = VGObject::LineIntersectRect(nameRec, QLineF(scenePos(), nameRec.center()));
+        VGObject::LineIntersectCircle(QPointF(), scaledRadius(sceneScale(scene())),
+                                      QLineF(QPointF(), nameRect.center() - scenePos()), p1, p2);
+        const QPointF pointRect = VGObject::LineIntersectRect(nameRect, QLineF(scenePos(), nameRect.center()));
 
-        if (QLineF(p1, pRec - scenePos()).length() <= ToPixel(4, Unit::Mm))
+        if (QLineF(p1, pointRect - scenePos()).length() <= ToPixel(4/qMax(1.0, sceneScale(scene())), Unit::Mm))
         {
-            m_lineName->setVisible(false);
+            m_pointLeader->setVisible(false);
         }
         else
         {
-            m_lineName->setLine(QLineF(p1, pRec - scenePos()));
-            m_lineName->setVisible(true);
+            m_pointLeader->setLine(QLineF(p1, pointRect - scenePos()));
+            m_pointLeader->setVisible(m_showPointName);
         }
     }
     else
     {
-        m_lineName->setVisible(false);
+        m_pointLeader->setVisible(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VScenePoint::ScaleMainPenWidth(qreal scale)
+void VScenePoint::setPointPen(qreal scale)
 {
-    const qreal width = ScaleWidth(m_isHovered ? widthMainLine : widthHairLine, scale);
+    const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, scale);
 
-    setPen(QPen(CorrectColor(this, m_baseColor), width));
+    if (qApp->Settings()->getUseToolColor() || isOnlyPoint())
+    {
+        setPen(QPen(correctColor(this, m_pointColor), width));
+        if (!m_onlyPoint)
+        {            
+            if (!qApp->Settings()->isWireframe())
+            {
+               setBrush(QBrush(correctColor(this, m_pointColor), Qt::SolidPattern));
+            }
+            else
+            {
+               setBrush(QBrush(correctColor(this, m_pointColor), Qt::NoBrush));
+            }
+        }
+        else
+        {
+            setBrush(QBrush(correctColor(this, m_pointColor),Qt::NoBrush));
+        }
+    }
+    else
+    {
+        setPen(QPen(correctColor(this, QColor(qApp->Settings()->getPointNameColor())), width));
+
+        if (qApp->Settings()->isWireframe())
+        {
+           setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
+        }
+        else
+        {
+           setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::NoBrush));
+        }
+
+    }
 }
