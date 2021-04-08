@@ -67,7 +67,7 @@ class VPattern : public VAbstractPattern
 {
     Q_OBJECT
 public:
-    VPattern(VContainer *data, Draw *mode, VMainGraphicsScene *sceneDraw, VMainGraphicsScene *sceneDetail,
+    VPattern(VContainer *data, Draw *mode, VMainGraphicsScene *draftScene, VMainGraphicsScene *pieceScene,
              QObject *parent = nullptr);
 
     virtual void   CreateEmptyFile() Q_DECL_OVERRIDE;
@@ -135,8 +135,8 @@ private:
     /** @brief mode current draw mode. */
     Draw           *mode;
 
-    VMainGraphicsScene *sceneDraw;
-    VMainGraphicsScene *sceneDetail;
+    VMainGraphicsScene *draftScene;
+    VMainGraphicsScene *pieceScene;
 
     VNodeDetail    ParseDetailNode(const QDomElement &domElement) const;
 
@@ -170,9 +170,9 @@ private:
     void           PrepareForParse(const Document &parse);
     void           ToolsCommonAttributes(const QDomElement &domElement, quint32 &id);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
-                                          qreal &my, QString &typeLine, QString &lineColor);
+                                          qreal &my, bool &labelVisible, QString &typeLine, QString &lineColor);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
-                                          qreal &my);
+                                          qreal &my, bool &labelVisible);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, qreal &mx, qreal &my);
     void           SplinesCommonAttributes(const QDomElement &domElement, quint32 &id, quint32 &idObject,
                                            quint32 &idTool);

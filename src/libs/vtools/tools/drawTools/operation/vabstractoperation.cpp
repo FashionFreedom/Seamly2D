@@ -48,9 +48,11 @@
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
+#include <QtDebug>
 
 #include "vabstractoperation.h"
-#include "../../../undocommands/label/operationmovelabel.h"
+#include "../../../undocommands/label/moveoperationlabel.h"
+#include "../../../undocommands/label/showoperationpointname.h"
 #include "../vgeometry/vpointf.h"
 
 const QString VAbstractOperation::TagItem        = QStringLiteral("item");
@@ -74,7 +76,7 @@ void VAbstractOperation::setSuffix(const QString &suffix)
 {
     // Don't know if need check name here.
     this->suffix = suffix;
-    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
     SaveOption(obj);
 }
 
@@ -105,6 +107,115 @@ void VAbstractOperation::paint(QPainter *painter, const QStyleOptionGraphicsItem
     Q_UNUSED(painter)
     Q_UNUSED(option)
     Q_UNUSED(widget)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VAbstractOperation::isPointNameVisible(quint32 id) const
+{
+    if (operatedObjects.contains(id))
+    {
+        VAbstractSimple *obj = operatedObjects.value(id);
+        if (obj && obj->GetType() == GOType::Point)
+        {
+            return VAbstractTool::data.GeometricObject<VPointF>(id)->isShowPointName();
+        }
+    }
+
+    return false;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::setPointNameVisiblity(quint32 id, bool visible)
+{
+    if (operatedObjects.contains(id))
+    {
+        VAbstractSimple *obj = operatedObjects.value(id);
+        if (obj && obj->GetType() == GOType::Point)
+        {
+            VSimplePoint *item = qobject_cast<VSimplePoint *>(obj);
+            SCASSERT(item != nullptr)
+            const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(id);
+            point->setShowPointName(visible);
+            item->refreshPointGeometry(*point);
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::updatePointNameVisibility(quint32 id, bool visible)
+{
+    if (operatedObjects.contains(id))
+    {
+        VAbstractSimple *obj = operatedObjects.value(id);
+        if (obj && obj->GetType() == GOType::Point)
+        {
+            auto dItem = std::find_if(destination.begin(), destination.end(),
+                                    [id](const DestinationItem &dItem) { return dItem.id == id; });
+            if (dItem != destination.end())
+            {
+                dItem->showPointName = visible;
+            }
+            qApp->getUndoStack()->push(new ShowOperationPointName(doc, m_id, id, visible));
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::setPointNamePosition(quint32 id, const QPointF &pos)
+{
+    if (operatedObjects.contains(id))
+    {
+        VAbstractSimple *obj = operatedObjects.value(id);
+        if (obj && obj->GetType() == GOType::Point)
+        {
+            VSimplePoint *item = qobject_cast<VSimplePoint *>(obj);
+            SCASSERT(item != nullptr)
+            QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(id);
+            point->setMx(pos.x());
+            point->setMy(pos.y());
+            item->refreshPointGeometry(*(point.data()));
+
+            if (QGraphicsScene *sc = scene())
+            {
+                VMainGraphicsView::NewSceneRect(sc, qApp->getSceneView(), item);
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::pointNamePositionChanged(const QPointF &pos, quint32 labelId)
+{
+    if (operatedObjects.contains(labelId))
+    {
+        VAbstractSimple *obj = operatedObjects.value(labelId);
+        if (obj && obj->GetType() == GOType::Point)
+        {
+            VSimplePoint *item = qobject_cast<VSimplePoint *>(obj);
+            SCASSERT(item != nullptr)
+            updatePointNamePosition(labelId, pos - item->pos());
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::updatePointNamePosition(quint32 id, const QPointF &pos)
+{
+    if (operatedObjects.contains(id))
+    {
+        VAbstractSimple *obj = operatedObjects.value(id);
+        if (obj && obj->GetType() == GOType::Point)
+        {
+            auto dItem = std::find_if(destination.begin(), destination.end(),
+                                    [id](const DestinationItem &dItem) { return dItem.id == id; });
+            if (dItem != destination.end())
+            {
+                dItem->mx = pos.x();
+                dItem->my = pos.y();
+            }
+            qApp->getUndoStack()->push(new MoveOperationLabel(m_id, doc, pos, id));
+        }
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -142,6 +253,7 @@ void VAbstractOperation::ExtractData(const QDomElement &domElement, QVector<quin
                     d.id = VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR);
                     d.mx = qApp->toPixel(VDomDocument::GetParametrDouble(element, AttrMx, QString::number(INT_MAX)));
                     d.my = qApp->toPixel(VDomDocument::GetParametrDouble(element, AttrMy, QString::number(INT_MAX)));
+                    d.showPointName = VDomDocument::getParameterBool(element, AttrShowPointName1, trueStr);
                     destination.append(d);
                 }
             }
@@ -161,12 +273,14 @@ void VAbstractOperation::FullUpdateFromFile()
         {
             VSimplePoint *item = qobject_cast<VSimplePoint *>(i.value());
             SCASSERT(item != nullptr)
-            item->RefreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(i.key()));
+            item->setToolTip(complexPointToolTip(i.key()));
+            item->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(i.key()));
         }
         else
         {
             VSimpleCurve *item = qobject_cast<VSimpleCurve *>(i.value());
             SCASSERT(item != nullptr)
+            item->setToolTip(complexCurveToolTip(i.key()));
             item->RefreshGeometry(VAbstractTool::data.GeometricObject<VAbstractCurve>(i.key()));
         }
     }
@@ -276,7 +390,7 @@ void VAbstractOperation::AllowPointLabelHover(bool enabled)
         {
             VSimplePoint *item = qobject_cast<VSimplePoint *>(i.value());
             SCASSERT(item != nullptr)
-            item->AllowLabelHover(enabled);
+            item->allowTextHover(enabled);
         }
     }
 }
@@ -292,7 +406,7 @@ void VAbstractOperation::AllowPointLabelSelecting(bool enabled)
         {
             VSimplePoint *item = qobject_cast<VSimplePoint *>(i.value());
             SCASSERT(item != nullptr)
-            item->AllowLabelSelecting(enabled);
+            item->allowTextSelectable(enabled);
         }
     }
 }
@@ -367,9 +481,9 @@ void VAbstractOperation::ToolSelectionType(const SelectionType &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::Disable(bool disable, const QString &namePP)
+void VAbstractOperation::Disable(bool disable, const QString &draftBlockName)
 {
-    const bool enabled = !CorrectDisable(disable, namePP);
+    const bool enabled = !CorrectDisable(disable, draftBlockName);
     setEnabled(enabled);
 
     QMapIterator<quint32, VAbstractSimple *> i(operatedObjects);
@@ -394,15 +508,15 @@ void VAbstractOperation::Disable(bool disable, const QString &namePP)
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractOperation::ObjectSelected(bool selected, quint32 objId)
 {
-    emit ChangedToolSelection(selected, objId, id);
+    emit ChangedToolSelection(selected, objId, m_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::DeleteFromLabel()
+void VAbstractOperation::deletePoint()
 {
     try
     {
-        DeleteTool();
+        deleteTool();
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -412,30 +526,15 @@ void VAbstractOperation::DeleteFromLabel()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::LabelChangePosition(const QPointF &pos, quint32 labelId)
-{
-    if (operatedObjects.contains(labelId))
-    {
-        VAbstractSimple *obj = operatedObjects.value(labelId);
-        if (obj && obj->GetType() == GOType::Point)
-        {
-            VSimplePoint *item = qobject_cast<VSimplePoint *>(obj);
-            SCASSERT(item != nullptr)
-            ChangePosition(item, labelId, pos);
-        }
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 VAbstractOperation::VAbstractOperation(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
                                        const QVector<quint32> &source, const QVector<DestinationItem> &destination,
                                        QGraphicsItem *parent)
-    : VDrawTool(doc, data, id),
-      QGraphicsLineItem(parent),
-      suffix(suffix),
-      source(source),
-      destination(destination),
-      operatedObjects()
+    : VDrawTool(doc, data, id)
+    , QGraphicsLineItem(parent)
+    , suffix(suffix)
+    , source(source)
+    , destination(destination)
+    , operatedObjects()
 {
 }
 
@@ -443,18 +542,9 @@ VAbstractOperation::VAbstractOperation(VAbstractPattern *doc, VContainer *data, 
 void VAbstractOperation::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
-    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
     SaveOptions(domElement, obj);
     AddToCalculation(domElement);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::UpdateNamePosition(quint32 id)
-{
-    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(id);
-    auto moveLabel = new OperationMoveLabel(this->id, doc, point->mx(), point->my(), id);
-    connect(moveLabel, &OperationMoveLabel::ChangePosition, this, &VAbstractOperation::DoChangePosition);
-    qApp->getUndoStack()->push(moveLabel);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -482,6 +572,7 @@ void VAbstractOperation::SaveSourceDestination(QDomElement &tag)
         {
             doc->SetAttribute(item, AttrMx, qApp->fromPixel(destination.at(i).mx));
             doc->SetAttribute(item, AttrMy, qApp->fromPixel(destination.at(i).my));
+            doc->SetAttribute<bool>(item, AttrShowPointName, destination.at(i).showPointName);
         }
 
         tagObjects.appendChild(item);
@@ -496,35 +587,19 @@ void VAbstractOperation::InitCurve(quint32 id, VContainer *data, GOType curveTyp
     VSimpleCurve *curve = new VSimpleCurve(id, initCurve);
     curve->setParentItem(this);
     curve->SetType(curveType);
+    curve->setToolTip(complexCurveToolTip(id));
     connect(curve, &VSimpleCurve::Selected, this, &VAbstractOperation::ObjectSelected);
-    connect(curve, &VSimpleCurve::ShowContextMenu, this, [this](QGraphicsSceneContextMenuEvent * event)
+    connect(curve, &VSimpleCurve::showContextMenu, this, [this](QGraphicsSceneContextMenuEvent * event, quint32 id)
     {
-        contextMenuEvent(event);
+        showContextMenu(event, id);
     });
     connect(curve, &VSimpleCurve::Choosed, this, [this, sceneType](quint32 id)
     {
-        emit ChoosedTool(id, sceneType);
+        emit chosenTool(id, sceneType);
     });
-    connect(curve, &VSimpleCurve::Delete, this, &VAbstractOperation::DeleteFromLabel);
+    connect(curve, &VSimpleCurve::Delete, this, &VAbstractOperation::deletePoint);
     curve->RefreshGeometry(VAbstractTool::data.GeometricObject<VAbstractCurve>(id));
     operatedObjects.insert(id, curve);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::DoChangePosition(quint32 id, qreal mx, qreal my)
-{
-    if (operatedObjects.contains(id))
-    {
-        VPointF *point = new VPointF(*VAbstractTool::data.GeometricObject<VPointF>(id));
-        point->setMx(mx);
-        point->setMy(my);
-        VAbstractTool::data.UpdateGObject(id, point);
-
-        VSimplePoint *item = qobject_cast<VSimplePoint *>(operatedObjects.value(id));
-        SCASSERT(item != nullptr)
-
-        item->RefreshPointGeometry(*point);
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -566,14 +641,6 @@ void VAbstractOperation::AllowCurveSelecting(bool enabled, GOType type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::ChangePosition(QGraphicsItem *item, quint32 id, const QPointF &pos)
-{
-    const QPointF p = pos - item->pos();
-    DoChangePosition(id, p.x(), p.y());
-    UpdateNamePosition(id);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void VAbstractOperation::InitOperatedObjects()
 {
     for (int i = 0; i < destination.size(); ++i)
@@ -593,19 +660,20 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 VSimplePoint *point = new VSimplePoint(object.id, QColor(Qt::black));
                 point->setParentItem(this);
                 point->SetType(GOType::Point);
+                point->setToolTip(complexPointToolTip(object.id));
                 connect(point, &VSimplePoint::Choosed, this, [this](quint32 id)
                 {
-                    emit ChoosedTool(id, SceneObject::Point);
+                    emit chosenTool(id, SceneObject::Point);
                 });
                 connect(point, &VSimplePoint::Selected, this, &VAbstractOperation::ObjectSelected);
-                connect(point, &VSimplePoint::ShowContextMenu,
-                        this, [this](QGraphicsSceneContextMenuEvent * event)
+                connect(point, &VSimplePoint::showContextMenu,
+                        this, [this](QGraphicsSceneContextMenuEvent * event, quint32 id)
                 {
-                    contextMenuEvent(event);
+                    showContextMenu(event, id);
                 });
-                connect(point, &VSimplePoint::Delete, this, &VAbstractOperation::DeleteFromLabel);
-                connect(point, &VSimplePoint::NameChangedPosition, this, &VAbstractOperation::LabelChangePosition);
-                point->RefreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(object.id));
+                connect(point, &VSimplePoint::Delete, this, &VAbstractOperation::deletePoint);
+                connect(point, &VSimplePoint::nameChangedPosition, this, &VAbstractOperation::pointNamePositionChanged);
+                point->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(object.id));
                 operatedObjects.insert(object.id, point);
                 break;
             }
@@ -628,4 +696,36 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
         }
 QT_WARNING_POP
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractOperation::complexPointToolTip(quint32 itemId) const
+{
+    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(itemId);
+
+    const QString toolTipStr = QString("<table>"
+                                       "<tr> <td><b>%1:</b> %2</td> </tr>"
+                                       "%3"
+                                       "</table>")
+                                       .arg(tr("Name"), point->name(), makeToolTip());
+    return toolTipStr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractOperation::complexCurveToolTip(quint32 itemId) const
+{
+    const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(itemId);
+
+    const QString toolTipStr = QString("<table>"
+                                       "<tr> <td><b>  %1:</b> %2</td> </tr>"
+                                       "<tr> <td><b>%3:</b> %4 %5</td> </tr>"
+                                       "%6"
+                                       "</table>")
+                                       .arg(tr("Name"))
+                                       .arg(curve->name())
+                                       .arg(tr("Length"))
+                                       .arg(qApp->fromPixel(curve->GetLength()))
+                                       .arg(UnitsToStr(qApp->patternUnit(), true))
+                                       .arg(makeToolTip());
+    return toolTipStr;
 }

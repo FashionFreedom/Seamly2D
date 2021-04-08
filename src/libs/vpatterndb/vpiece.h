@@ -61,14 +61,14 @@
 
 struct NotchData
 {
-    QLineF       line;
-    NotchType    type;
-    NotchSubType subType;
-    qreal        length;
-    qreal        width;
-    qreal        angle;
-    qreal        offset;
-    int          count;
+    QLineF       line {};
+    NotchType    type {};
+    NotchSubType subType {};
+    qreal        length {};
+    qreal        width {};
+    qreal        angle {};
+    qreal        offset {};
+    int          count {};
 };
 
 class VPieceData;

@@ -85,8 +85,8 @@ void VisToolPin::RefreshGeometry()
     {
         const QSharedPointer<VPointF> point = Visualization::data->GeometricObject<VPointF>(object1Id);
 
-        m_point->SetOnlyPoint(mode == Mode::Creation);
-        m_point->RefreshPointGeometry(*point);
+        m_point->setOnlyPoint(mode == Mode::Creation);
+        m_point->refreshPointGeometry(*point);
         m_point->setVisible(true);
     }
 }

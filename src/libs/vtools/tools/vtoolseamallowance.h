@@ -70,9 +70,9 @@ class VToolSeamAllowance : public VInteractiveTool, public QGraphicsPathItem
 public:
     virtual ~VToolSeamAllowance() Q_DECL_EQ_DEFAULT;
 
-    static VToolSeamAllowance* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
+    static VToolSeamAllowance *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                       VAbstractPattern *doc, VContainer *data);
-    static VToolSeamAllowance* Create(quint32 id, VPiece newPiece, QString &width, VMainGraphicsScene *scene,
+    static VToolSeamAllowance *Create(quint32 id, VPiece newPiece, QString &width, VMainGraphicsScene *scene,
                                       VAbstractPattern *doc, VContainer *data, const Document &parse,
                                       const Source &typeCreation, const QString &drawName = QString());
 
@@ -151,10 +151,10 @@ protected:
     virtual void       mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
     virtual void       hoverEnterEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
     virtual void       hoverLeaveEvent ( QGraphicsSceneHoverEvent * event ) Q_DECL_OVERRIDE;
-    virtual void       contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
+    virtual void       contextMenuEvent (QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
     virtual void       keyReleaseEvent(QKeyEvent * event) Q_DECL_OVERRIDE;
     virtual void       SetVisualization() Q_DECL_OVERRIDE {}
-    virtual void       DeleteTool(bool ask = true) Q_DECL_OVERRIDE;
+    virtual void       deleteTool(bool ask = true) Q_DECL_OVERRIDE;
     virtual void       ToolCreation(const Source &typeCreation) Q_DECL_OVERRIDE;
     virtual void       SetDialog() Q_DECL_FINAL;
     virtual void       SaveDialogChange() Q_DECL_FINAL;
@@ -165,8 +165,8 @@ private:
     QPainterPath m_mainPath; // Must be first to prevent crash
     QRectF       m_mainPathRect;
 
-    /** @brief sceneDetails pointer to the scene. */
-    VMainGraphicsScene *m_sceneDetails;
+    /** @brief pieceScene pointer to the scene. */
+    VMainGraphicsScene *m_pieceScene;
     QString             m_drawName;
 
     VNoBrushScalePathItem *m_seamAllowance;

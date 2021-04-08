@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,39 +73,46 @@ class VNodePoint: public VAbstractNode, public VScenePoint
 {
     Q_OBJECT
 public:
-    static void  Create(VAbstractPattern *doc, VContainer *data, VMainGraphicsScene *scene,
-                        quint32 id, quint32 idPoint, const Document &parse,
-                        const Source &typeCreation, const QString &drawName = QString(), const quint32 &idTool = 0);
+    static void     Create(VAbstractPattern *doc, VContainer *data, VMainGraphicsScene *scene,
+                           quint32 id, quint32 idPoint, const Document &parse, const Source &typeCreation,
+                           const QString &drawName = QString(), const quint32 &idTool = 0);
 
     static const QString ToolType;
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int     type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::NodePoint)};
     virtual QString getTagName() const Q_DECL_OVERRIDE;
 
+    virtual void    setPointNamePosition(quint32 id, const QPointF &pos) Q_DECL_OVERRIDE;
+    virtual void    setPointNameVisiblity(quint32 id, bool visible) Q_DECL_OVERRIDE;
+
 signals:
     /**
-     * @brief ShowContextMenu emit when need show tool context menu.
+     * @brief showContextMenu emit when need show tool context menu.
      * @param event context menu event.
      */
-    void         ShowContextMenu(QGraphicsSceneContextMenuEvent *event);
+     //void ShowOptions();
+     //void ToggleInLayout(bool checked);
+     //void Delete();
 
 public slots:
-    virtual void FullUpdateFromFile() Q_DECL_OVERRIDE;
-    void         NameChangePosition(const QPointF &pos);
-    void         PointChoosed();
-    void         EnableToolMove(bool move);
-    virtual void AllowHover(bool enabled) Q_DECL_OVERRIDE;
-    virtual void AllowSelecting(bool enabled) Q_DECL_OVERRIDE;
-    void         AllowLabelHover(bool enabled);
-    void         AllowLabelSelecting(bool enabled);
+    virtual void    FullUpdateFromFile() Q_DECL_OVERRIDE;
+    void            nameChangedPosition(const QPointF &pos);
+    void            pointChosen();
+    void            EnableToolMove(bool move);
+    virtual void    AllowHover(bool enabled) Q_DECL_OVERRIDE;
+    virtual void    AllowSelecting(bool enabled) Q_DECL_OVERRIDE;
+    void            allowTextHover(bool enabled);
+    void            allowTextSelectable(bool enabled);
+
 protected:
-    virtual void AddToFile() Q_DECL_OVERRIDE;
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void UpdateNamePosition(qreal mx, qreal my);
-    virtual void ShowNode() Q_DECL_OVERRIDE;
-    virtual void HideNode() Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent(QGraphicsSceneContextMenuEvent *event) Q_DECL_OVERRIDE;
+    virtual void    AddToFile() Q_DECL_OVERRIDE;
+    virtual void    mousePressEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void    mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
+    virtual void    hoverEnterEvent(QGraphicsSceneHoverEvent *event) override;
+    virtual void    ShowNode() Q_DECL_OVERRIDE;
+    virtual void    HideNode() Q_DECL_OVERRIDE;
+    virtual void    contextMenuEvent(QGraphicsSceneContextMenuEvent *event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VNodePoint)
 

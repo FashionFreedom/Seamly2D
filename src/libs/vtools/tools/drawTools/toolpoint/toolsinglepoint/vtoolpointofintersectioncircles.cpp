@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -87,9 +87,12 @@ VToolPointOfIntersectionCircles::VToolPointOfIntersectionCircles(VAbstractPatter
                                                                  const QString &secondCircleRadius,
                                                                  CrossCirclesPoint crossPoint,
                                                                  const Source &typeCreation, QGraphicsItem *parent)
-    :VToolSinglePoint(doc, data, id, parent), firstCircleCenterId(firstCircleCenterId),
-      secondCircleCenterId(secondCircleCenterId), firstCircleRadius(firstCircleRadius),
-      secondCircleRadius(secondCircleRadius), crossPoint(crossPoint)
+    : VToolSinglePoint(doc, data, id, QColor(qApp->Settings()->getPointNameColor()), parent)
+    , firstCircleCenterId(firstCircleCenterId)
+    , secondCircleCenterId(secondCircleCenterId)
+    , firstCircleRadius(firstCircleRadius)
+    , secondCircleRadius(secondCircleRadius)
+    , crossPoint(crossPoint)
 {
     ToolCreation(typeCreation);
 }
@@ -101,7 +104,7 @@ void VToolPointOfIntersectionCircles::setDialog()
     QSharedPointer<DialogPointOfIntersectionCircles> dialogTool =
             m_dialog.objectCast<DialogPointOfIntersectionCircles>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetFirstCircleCenterId(firstCircleCenterId);
     dialogTool->SetSecondCircleCenterId(secondCircleCenterId);
     dialogTool->SetFirstCircleRadius(firstCircleRadius);
@@ -126,7 +129,7 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(QShared
     const CrossCirclesPoint pType = dialogTool->GetCrossCirclesPoint();
     const QString pointName = dialogTool->getPointName();
     VToolPointOfIntersectionCircles *point = Create(0, pointName, firstCircleCenterId, secondCircleCenterId,
-                                                    firstCircleRadius, secondCircleRadius, pType, 5, 10, scene, doc,
+                                                    firstCircleRadius, secondCircleRadius, pType, 5, 10, true, scene, doc,
                                                     data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -141,8 +144,10 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(const q
                                                                          quint32 secondCircleCenterId,
                                                                          QString &firstCircleRadius,
                                                                          QString &secondCircleRadius,
-                                                                         CrossCirclesPoint crossPoint, const qreal &mx,
-                                                                         const qreal &my, VMainGraphicsScene *scene,
+                                                                         CrossCirclesPoint crossPoint,
+                                                                         qreal mx, qreal my,
+                                                                         bool showPointName,
+                                                                         VMainGraphicsScene *scene,
                                                                          VAbstractPattern *doc, VContainer *data,
                                                                          const Document &parse,
                                                                          const Source &typeCreation)
@@ -156,13 +161,17 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(const q
     const QPointF point = FindPoint(static_cast<QPointF>(c1Point), static_cast<QPointF>(c2Point), calcC1Radius,
                                     calcC2Radius, crossPoint);
     quint32 id = _id;
+
+    VPointF *p = new VPointF(point, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     if (typeCreation == Source::FromGui)
     {
-        id = data->AddGObject(new VPointF(point, pointName, mx, my));
+        id = data->AddGObject(p);
     }
     else
     {
-        data->UpdateGObject(id, new VPointF(point, pointName, mx, my));
+        data->UpdateGObject(id, p);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
@@ -239,7 +248,7 @@ void VToolPointOfIntersectionCircles::SetFirstCircleCenterId(const quint32 &valu
     {
         firstCircleCenterId = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -257,7 +266,7 @@ void VToolPointOfIntersectionCircles::SetSecondCircleCenterId(const quint32 &val
     {
         secondCircleCenterId = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -267,7 +276,7 @@ VFormula VToolPointOfIntersectionCircles::GetFirstCircleRadius() const
 {
     VFormula radius(firstCircleRadius, getData());
     radius.setCheckZero(true);
-    radius.setToolId(id);
+    radius.setToolId(m_id);
     radius.setPostfix(UnitsToStr(qApp->patternUnit()));
     return radius;
 }
@@ -280,7 +289,7 @@ void VToolPointOfIntersectionCircles::SetFirstCircleRadius(const VFormula &value
         if (value.getDoubleValue() > 0)// Formula don't check this, but radius can't be 0 or negative
         {
             firstCircleRadius = value.GetFormula(FormulaType::FromUser);
-            QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+            QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
             SaveOption(obj);
         }
     }
@@ -291,7 +300,7 @@ VFormula VToolPointOfIntersectionCircles::GetSecondCircleRadius() const
 {
     VFormula radius(secondCircleRadius, getData());
     radius.setCheckZero(true);
-    radius.setToolId(id);
+    radius.setToolId(m_id);
     radius.setPostfix(UnitsToStr(qApp->patternUnit()));
     return radius;
 }
@@ -304,7 +313,7 @@ void VToolPointOfIntersectionCircles::SetSecondCircleRadius(const VFormula &valu
         if (value.getDoubleValue() > 0)// Formula don't check this, but radius can't be 0 or negative
         {
             secondCircleRadius = value.GetFormula(FormulaType::FromUser);
-            QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+            QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
             SaveOption(obj);
         }
     }
@@ -321,7 +330,7 @@ void VToolPointOfIntersectionCircles::SetCrossCirclesPoint(const CrossCirclesPoi
 {
     crossPoint = value;
 
-    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
     SaveOption(obj);
 }
 
@@ -342,11 +351,11 @@ void VToolPointOfIntersectionCircles::RemoveReferens()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolPointOfIntersectionCircles::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogPointOfIntersectionCircles>(this, event);
+        ContextMenu<DialogPointOfIntersectionCircles>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {

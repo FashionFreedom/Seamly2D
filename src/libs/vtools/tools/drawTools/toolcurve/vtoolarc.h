@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,45 +73,51 @@ class VToolArc :public VAbstractSpline
 {
     Q_OBJECT
 public:
-    virtual void     setDialog() Q_DECL_OVERRIDE;
-    static VToolArc* Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
+    virtual void         setDialog() Q_DECL_OVERRIDE;
+
+    static VToolArc *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                             VContainer *data);
-    static VToolArc* Create(const quint32 _id, const quint32 &center, QString &radius, QString &f1, QString &f2,
+    static VToolArc *Create(const quint32 _id, const quint32 &center, QString &radius, QString &f1, QString &f2,
                             const QString &color, const QString &penStyle, VMainGraphicsScene  *scene,
                             VAbstractPattern *doc, VContainer *data, const Document &parse, const Source &typeCreation);
 
     static const QString ToolType;
-    virtual int      type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int          type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::Arc)};
-    virtual QString  getTagName() const Q_DECL_OVERRIDE;
+    virtual QString      getTagName() const Q_DECL_OVERRIDE;
 
-    QString CenterPointName() const;
+    QString              CenterPointName() const;
 
-    quint32          getCenter() const;
-    void             setCenter(const quint32 &value);
+    quint32              getCenter() const;
+    void                 setCenter(const quint32 &value);
 
-    VFormula         GetFormulaRadius() const;
-    void             SetFormulaRadius(const VFormula &value);
+    VFormula             GetFormulaRadius() const;
+    void                 SetFormulaRadius(const VFormula &value);
 
-    VFormula         GetFormulaF1() const;
-    void             SetFormulaF1(const VFormula &value);
+    VFormula             GetFormulaF1() const;
+    void                 SetFormulaF1(const VFormula &value);
 
-    VFormula         GetFormulaF2() const;
-    void             SetFormulaF2(const VFormula &value);
+    VFormula             GetFormulaF2() const;
+    void                 SetFormulaF2(const VFormula &value);
 
-    virtual void     ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
+
+protected slots:
+    virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
 protected:
-    virtual void     contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void     RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void     SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void     SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void     SetVisualization() Q_DECL_OVERRIDE;
-    virtual QString  MakeToolTip() const Q_DECL_OVERRIDE;
+    virtual void         RemoveReferens() Q_DECL_OVERRIDE;
+    virtual void         SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void         SetVisualization() Q_DECL_OVERRIDE;
+    virtual QString      makeToolTip() const Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VToolArc)
 
-    VToolArc(VAbstractPattern *doc, VContainer *data, quint32 id, const Source &typeCreation,
-             QGraphicsItem * parent = nullptr);
+                         VToolArc(VAbstractPattern *doc, VContainer *data, quint32 id,
+                                  const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLARC_H

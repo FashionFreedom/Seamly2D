@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -94,12 +94,15 @@ public:
 
     virtual void           ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
+protected slots:
+    virtual void           showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
 protected:
     virtual void           SetVisualization() Q_DECL_OVERRIDE;
     virtual void           SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
     virtual void           ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
     virtual void           SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void           contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
+    virtual QString        makeToolTip() const Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(VToolRotation)
@@ -128,7 +131,7 @@ private:
                                                    qreal angle, const QString &suffix, VContainer *data);
 
     static void updatePoint(quint32 idTool, quint32 idItem, const QPointF &origin, qreal angle,
-                            const QString &suffix, VContainer *data, quint32 id, qreal mx, qreal my);
+                            const QString &suffix, VContainer *data, const DestinationItem &item);
     template <class Item>
     static void updateItem(quint32 idTool, quint32 idItem, const QPointF &origin, qreal angle,
                            const QString &suffix, VContainer *data, quint32 id);

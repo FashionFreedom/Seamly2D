@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,50 +72,55 @@ class VToolDoublePoint: public VAbstractPoint, public QGraphicsPathItem
 {
     Q_OBJECT
 public:
-    VToolDoublePoint(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 p1id, quint32 p2id,
-                     QGraphicsItem * parent = nullptr);
-    virtual ~VToolDoublePoint() Q_DECL_EQ_DEFAULT;
+                      VToolDoublePoint(VAbstractPattern *doc, VContainer *data, quint32 id,
+                                       quint32 p1id, quint32 p2id, QGraphicsItem * parent = nullptr);
+    virtual          ~VToolDoublePoint() Q_DECL_EQ_DEFAULT;
 
-    virtual int   type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int       type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::DoublePoint)};
 
-    QString nameP1() const;
-    void    setNameP1(const QString &name);
+    QString           nameP1() const;
+    void              setNameP1(const QString &name);
 
-    QString nameP2() const;
-    void    setNameP2(const QString &name);
+    QString           nameP2() const;
+    void              setNameP2(const QString &name);
 
-    virtual void GroupVisibility(quint32 object, bool visible) Q_DECL_OVERRIDE;
+    virtual void      GroupVisibility(quint32 object, bool visible) Q_DECL_OVERRIDE;
+    virtual void      setPointNamePosition(quint32 id, const QPointF &pos) Q_DECL_OVERRIDE;
+    virtual bool      isPointNameVisible(quint32 id) const Q_DECL_OVERRIDE;
+    virtual void      setPointNameVisiblity(quint32 id, bool visible) Q_DECL_OVERRIDE;
+
 public slots:
-    void         Label1ChangePosition(const QPointF &pos);
-    void         Label2ChangePosition(const QPointF &pos);
-    virtual void Disable(bool disable, const QString &namePP) Q_DECL_OVERRIDE;
-    virtual void EnableToolMove(bool move) Q_DECL_OVERRIDE;
-    void         Point1Choosed();
-    void         Point2Choosed();
-    void         Point1Selected(bool selected);
-    void         Point2Selected(bool selected);
-    virtual void FullUpdateFromFile() Q_DECL_OVERRIDE;
-    virtual void DoChangePosition(quint32 id, qreal mx, qreal my) Q_DECL_OVERRIDE;
-    virtual void AllowHover(bool enabled) Q_DECL_OVERRIDE;
-    virtual void AllowSelecting(bool enabled) Q_DECL_OVERRIDE;
-    void         AllowLabelHover(bool enabled);
-    void         AllowLabelSelecting(bool enabled);
-    virtual void ToolSelectionType(const SelectionType &type) Q_DECL_OVERRIDE;
+    void              changePointName1Position(const QPointF &pos);
+    void              changePointName2Position(const QPointF &pos);
+    virtual void      Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;
+    virtual void      EnableToolMove(bool move) Q_DECL_OVERRIDE;
+    void              point1Chosen();
+    void              point2Chosen();
+    void              point1Selected(bool selected);
+    void              point2Selected(bool selected);
+    virtual void      FullUpdateFromFile() Q_DECL_OVERRIDE;
+    virtual void      AllowHover(bool enabled) Q_DECL_OVERRIDE;
+    virtual void      AllowSelecting(bool enabled) Q_DECL_OVERRIDE;
+    void              allowTextHover(bool enabled);
+    void              allowTextSelectable(bool enabled);
+    virtual void      ToolSelectionType(const SelectionType &type) Q_DECL_OVERRIDE;
 
 protected:
-    VSimplePoint *firstPoint;
-    VSimplePoint *secondPoint;
+    VSimplePoint     *firstPoint;
+    VSimplePoint     *secondPoint;
 
-    quint32      p1id;
-    quint32      p2id;
+    quint32           p1id;
+    quint32           p2id;
 
-    virtual void UpdateNamePosition(quint32 id) Q_DECL_OVERRIDE;
-    virtual QVariant itemChange ( GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
-    virtual void keyReleaseEvent(QKeyEvent * event) Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void AddToFile() Q_DECL_OVERRIDE;
+    virtual void      updatePointNamePosition(quint32 id, const QPointF &pos) Q_DECL_OVERRIDE;
+    virtual QVariant  itemChange ( GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
+    virtual void      keyReleaseEvent(QKeyEvent * event) Q_DECL_OVERRIDE;
+    virtual void      contextMenuEvent (QGraphicsSceneContextMenuEvent *event) Q_DECL_OVERRIDE;
+    virtual void      SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void      AddToFile() Q_DECL_OVERRIDE;
+    virtual void      updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
+    QString           complexToolTip(quint32 itemId) const;
 
 private:
     Q_DISABLE_COPY(VToolDoublePoint)

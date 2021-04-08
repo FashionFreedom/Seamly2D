@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -81,12 +81,12 @@ const QString VAbstractNode::AttrIdTool = QStringLiteral("idTool");
  */
 VAbstractNode::VAbstractNode(VAbstractPattern *doc, VContainer *data, const quint32 &id, const quint32 &idNode,
                              const QString &drawName, const quint32 &idTool, QObject *parent)
-    : VAbstractTool(doc, data, id, parent),
-      parentType(ParentType::Item),
-      idNode(idNode),
-      idTool(idTool),
-      m_drawName(drawName),
-      m_exluded(false)
+    : VAbstractTool(doc, data, id, parent)
+    , parentType(ParentType::Item)
+    , idNode(idNode)
+    , idTool(idTool)
+    , m_drawName(drawName)
+    , m_exluded(false)
 {
     _referens = 0;
 }
@@ -113,7 +113,7 @@ void VAbstractNode::incrementReferens()
             doc->IncrementReferens(node->getIdTool());
         }
         ShowNode();
-        QDomElement domElement = doc->elementById(id, getTagName());
+        QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
         {
             doc->SetParametrUsage(domElement, AttrInUse, NodeUsage::InUse);
@@ -140,7 +140,7 @@ void VAbstractNode::decrementReferens()
             doc->DecrementReferens(node->getIdTool());
         }
         HideNode();
-        QDomElement domElement = doc->elementById(id, getTagName());
+        QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
         {
             doc->SetParametrUsage(domElement, AttrInUse, NodeUsage::NotInUse);

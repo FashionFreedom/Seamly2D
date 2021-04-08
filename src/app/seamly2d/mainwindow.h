@@ -74,6 +74,7 @@ class VWidgetGroups;
 class VWidgetDetails;
 class QToolButton;
 class QDoubleSpinBox;
+class QFontComboBox;
 
 /**
  * @brief The MainWindow class main windows.
@@ -143,6 +144,7 @@ private slots:
     void SetEnabledGUI(bool enabled);
     void GlobalChangePP(const QString &patternPiece);
     void ToolBarStyles();
+    void resetOrigins();
     void showLayoutPages(int index);
     void Preferences();
 #if defined(Q_OS_MAC)
@@ -248,11 +250,11 @@ private:
     /** @brief tool last used tool */
     Tool                              lastUsedTool;
 
-    /** @brief sceneDraw draw scene. */
-    VMainGraphicsScene               *sceneDraw;
+    /** @brief draftScene draft block scene. */
+    VMainGraphicsScene               *draftScene;
 
-    /** @brief sceneDetails details scene. */
-    VMainGraphicsScene               *sceneDetails;
+    /** @brief pieceScene pattern piece scene. */
+    VMainGraphicsScene               *pieceScene;
 
     /** @brief mouseCoordinate pointer to label who show mouse coordinate. */
     QPointer<QLabel>                  mouseCoordinate;
@@ -272,6 +274,9 @@ private:
     QPointer<DialogVariables>         dialogTable;
     QSharedPointer<DialogTool>        dialogTool;
     QPointer<DialogHistory>           dialogHistory;
+
+    QFontComboBox                    *fontComboBox;
+    QComboBox                        *fontSizeComboBox;
 
     /** @brief comboBoxDraws comboc who show name of pattern peaces. */
     QComboBox                        *comboBoxDraws;
@@ -320,6 +325,7 @@ private:
     void                              initStatusToolBar();
     void                              initModesToolBar();
     void                              initDraftToolBar();
+    void                              initPointNameToolBar();
     void                              initToolsToolBar();
     void                              InitToolButtons();
 
@@ -417,6 +423,7 @@ private:
     QString            GetMeasurementFileName();
 
     void               UpdateWindowTitle();
+    void               upDateScenes();
 
     bool               IgnoreLocking(int error, const QString &path);
 

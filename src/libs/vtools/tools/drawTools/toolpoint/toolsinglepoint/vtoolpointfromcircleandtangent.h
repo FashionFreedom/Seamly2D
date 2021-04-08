@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,53 +72,62 @@ class VToolPointFromCircleAndTangent : public VToolSinglePoint
 {
     Q_OBJECT
 public:
-    virtual void setDialog() Q_DECL_OVERRIDE;
+    virtual void         setDialog() Q_DECL_OVERRIDE;
+
     static VToolPointFromCircleAndTangent *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                                   VAbstractPattern *doc, VContainer *data);
     static VToolPointFromCircleAndTangent *Create(const quint32 _id, const QString &pointName,
                                                   quint32 circleCenterId, QString &circleRadius, quint32 tangentPointId,
-                                                  CrossCirclesPoint crossPoint, const qreal &mx, const qreal &my,
+                                                  CrossCirclesPoint crossPoint, qreal mx, qreal my, bool showPointName,
                                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                                   const Document &parse, const Source &typeCreation);
-    static QPointF FindPoint(const QPointF &p, const QPointF &center, qreal radius, const CrossCirclesPoint crossPoint);
+
+    static QPointF       FindPoint(const QPointF &p, const QPointF &center, qreal radius,
+                                   const CrossCirclesPoint crossPoint);
+
     static const QString ToolType;
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int          type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::PointFromCircleAndTangent) };
 
-    QString TangentPointName() const;
-    QString CircleCenterPointName() const;
+    QString              TangentPointName() const;
+    QString              CircleCenterPointName() const;
 
-    quint32 GetTangentPointId() const;
-    void    SetTangentPointId(const quint32 &value);
+    quint32              GetTangentPointId() const;
+    void                 SetTangentPointId(const quint32 &value);
 
-    quint32 GetCircleCenterId() const;
-    void    SetCircleCenterId(const quint32 &value);
+    quint32              GetCircleCenterId() const;
+    void                 SetCircleCenterId(const quint32 &value);
 
-    VFormula GetCircleRadius() const;
-    void     SetCircleRadius(const VFormula &value);
+    VFormula             GetCircleRadius() const;
+    void                 SetCircleRadius(const VFormula &value);
 
-    CrossCirclesPoint GetCrossCirclesPoint() const;
-    void              SetCrossCirclesPoint(const CrossCirclesPoint &value);
+    CrossCirclesPoint    GetCrossCirclesPoint() const;
+    void                 SetCrossCirclesPoint(const CrossCirclesPoint &value);
 
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
+protected slots:
+    virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
 protected:
-    virtual void RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SetVisualization() Q_DECL_OVERRIDE;
+    virtual void         RemoveReferens() Q_DECL_OVERRIDE;
+    virtual void         SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SetVisualization() Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VToolPointFromCircleAndTangent)
 
-    quint32 circleCenterId;
-    quint32 tangentPointId;
-    QString circleRadius;
-    CrossCirclesPoint crossPoint;
+    quint32              circleCenterId;
+    quint32              tangentPointId;
+    QString              circleRadius;
+    CrossCirclesPoint    crossPoint;
 
-    VToolPointFromCircleAndTangent(VAbstractPattern *doc, VContainer *data, const quint32 &id, quint32 circleCenterId,
-                                   const QString &circleRadius, quint32 tangentPointId, CrossCirclesPoint crossPoint,
-                                   const Source &typeCreation, QGraphicsItem * parent = nullptr);
+                         VToolPointFromCircleAndTangent(VAbstractPattern *doc, VContainer *data, const quint32 &id,
+                                                        quint32 circleCenterId, const QString &circleRadius,
+                                                        quint32 tangentPointId, CrossCirclesPoint crossPoint,
+                                                        const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLPOINTFROMCIRCLEANDTANGENT_H

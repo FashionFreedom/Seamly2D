@@ -4,6 +4,8 @@
 HEADERS += \
     $$PWD/addtocalc.h \
     $$PWD/addpatternpiece.h \
+    $$PWD/label/moveoperationlabel.h \
+    $$PWD/label/showoperationpointname.h \
     $$PWD/movespoint.h \
     $$PWD/movespline.h \
     $$PWD/movesplinepath.h \
@@ -15,10 +17,11 @@ HEADERS += \
     $$PWD/renamepp.h \
     $$PWD/label/movelabel.h \
     $$PWD/label/movedoublelabel.h \
+    $$PWD/label/showpointname.h \
+    $$PWD/label/showdoublepointname.h \
     $$PWD/addgroup.h \
     $$PWD/delgroup.h \
     $$PWD/label/moveabstractlabel.h \
-    $$PWD/label/operationmovelabel.h \
     $$PWD/addpiece.h \
     $$PWD/deletepiece.h \
     $$PWD/movepiece.h \
@@ -29,6 +32,8 @@ HEADERS += \
 SOURCES += \
     $$PWD/addtocalc.cpp \
     $$PWD/addpatternpiece.cpp \
+    $$PWD/label/moveoperationlabel.cpp \
+    $$PWD/label/showoperationpointname.cpp \
     $$PWD/movespoint.cpp \
     $$PWD/movespline.cpp \
     $$PWD/movesplinepath.cpp \
@@ -40,10 +45,11 @@ SOURCES += \
     $$PWD/renamepp.cpp \
     $$PWD/label/movelabel.cpp \
     $$PWD/label/movedoublelabel.cpp \
+    $$PWD/label/showpointname.cpp \
+    $$PWD/label/showdoublepointname.cpp \
     $$PWD/addgroup.cpp \
     $$PWD/delgroup.cpp \
     $$PWD/label/moveabstractlabel.cpp \
-    $$PWD/label/operationmovelabel.cpp \
     $$PWD/addpiece.cpp \
     $$PWD/deletepiece.cpp \
     $$PWD/movepiece.cpp \

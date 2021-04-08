@@ -225,17 +225,29 @@ void VToolMirrorByLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolMirrorByLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolMirrorByLine::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogMirrorByLine>(this, event);
+        ContextMenu<DialogMirrorByLine>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
         Q_UNUSED(e)
         return;//Leave this method immediately!!!
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolMirrorByLine::makeToolTip() const
+{
+    const QString toolTipStr = QString("<tr> <td><b>%1:</b> %2</td> </tr>"
+                                       "<tr> <td><b>%3:</b> %4</td> </tr>")
+                                       .arg(tr("First line point"))
+                                       .arg(firstLinePointName())
+                                       .arg(tr("Second line point"))
+                                       .arg(secondLinePointName());
+    return toolTipStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -61,6 +61,7 @@
 #include "../vwidgets/vmaingraphicsview.h"
 #include "vundocommand.h"
 
+
 //---------------------------------------------------------------------------------------------------------------------
 MovePiece::MovePiece(VAbstractPattern *doc, const double &x, const double &y, const quint32 &id,
                      QGraphicsScene *scene, QUndoCommand *parent)
@@ -107,7 +108,6 @@ void MovePiece::undo()
     else
     {
         qCDebug(vUndo, "Can't find detail with id = %u.", nodeId);
-        return;
     }
 }
 
@@ -134,7 +134,6 @@ void MovePiece::redo()
     else
     {
         qCDebug(vUndo, "Can't find detail with id = %u.", nodeId);
-        return;
     }
 }
 

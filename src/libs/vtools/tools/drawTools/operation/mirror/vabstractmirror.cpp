@@ -134,9 +134,12 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    updatePoint(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id, dest.at(i).mx,
-                                dest.at(i).my);
+                {
+                    const DestinationItem &item = dest.at(i);
+                    updatePoint(id, idObject, fPoint, sPoint, suffix, data, item);
+                        //dest.at(i).id, dest.at(i).mx, dest.at(i).my);
                     break;
+                }
                 case GOType::Arc:
                     updateArc<VArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
@@ -179,6 +182,7 @@ DestinationItem VAbstractMirror::createPoint(quint32 idTool, quint32 idItem, con
     DestinationItem item;
     item.mx = rotated.mx();
     item.my = rotated.my();
+    item.showPointName = rotated.isShowPointName();
     item.id = data->AddGObject(new VPointF(rotated));
     return item;
 }
@@ -195,15 +199,16 @@ DestinationItem VAbstractMirror::createArc(quint32 idTool, quint32 idItem, const
 
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractMirror::updatePoint(quint32 idTool, quint32 idItem, const QPointF &firstPoint,
-                                    const QPointF &secondPoint, const QString &suffix, VContainer *data, quint32 id,
-                                    qreal mx, qreal my)
+                                    const QPointF &secondPoint, const QString &suffix, VContainer *data,
+                                    const DestinationItem &item)
 {
     const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(idItem);
     VPointF rotated = point->Flip(QLineF(firstPoint, secondPoint), suffix);
     rotated.setIdObject(idTool);
-    rotated.setMx(mx);
-    rotated.setMy(my);
-    data->UpdateGObject(id, new VPointF(rotated));
+    rotated.setMx(item.mx);
+    rotated.setMy(item.my);
+    rotated.setShowPointName(item.showPointName);
+    data->UpdateGObject(item.id, new VPointF(rotated));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

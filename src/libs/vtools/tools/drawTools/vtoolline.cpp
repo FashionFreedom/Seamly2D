@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -218,9 +218,9 @@ QString VToolLine::getTagName() const
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    const qreal width = ScaleWidth(m_isHovered ? widthMainLine : widthHairLine, SceneScale(scene()));
+    const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
 
-    setPen(QPen(CorrectColor(this, lineColor), width, LineStyleToPenStyle(m_lineType)));
+    setPen(QPen(correctColor(this, lineColor), width, LineStyleToPenStyle(m_lineType)));
 
     QGraphicsLineItem::paint(painter, option, widget);
 }
@@ -260,9 +260,9 @@ void VToolLine::ShowTool(quint32 id, bool enable)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolLine::Disable(bool disable, const QString &namePP)
+void VToolLine::Disable(bool disable, const QString &draftBlockName)
 {
-    const bool enabled = !CorrectDisable(disable, namePP);
+    const bool enabled = !CorrectDisable(disable, draftBlockName);
     this->setEnabled(enabled);
 }
 
@@ -283,11 +283,12 @@ void VToolLine::AllowSelecting(bool enabled)
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolLine::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
+    Q_UNUSED(id)
     try
     {
-        ContextMenu<DialogLine>(this, event);
+        ContextMenu<DialogLine>(event);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -298,7 +299,17 @@ void VToolLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief AddToFile add tag with Information about tool into file.
+ * @brief contextMenuEvent handle context menu events.
+ * @param event context menu event.
+ */
+void VToolLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    showContextMenu(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief AddToFile add tag with informations about tool into file.
  */
 void VToolLine::AddToFile()
 {
@@ -316,7 +327,7 @@ void VToolLine::AddToFile()
 void VToolLine::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = true;
-    setToolTip(MakeToolTip());
+    setToolTip(makeToolTip());
     QGraphicsLineItem::hoverEnterEvent(event);
 }
 
@@ -358,7 +369,7 @@ QVariant VToolLine::itemChange(QGraphicsItem::GraphicsItemChange change, const Q
 {
     if (change == QGraphicsItem::ItemSelectedChange)
     {
-        emit ChangedToolSelection(value.toBool(), id, id);
+        emit ChangedToolSelection(value.toBool(), m_id, m_id);
     }
 
     return QGraphicsItem::itemChange(change, value);
@@ -376,7 +387,7 @@ void VToolLine::keyReleaseEvent(QKeyEvent *event)
         case Qt::Key_Delete:
             try
             {
-                DeleteTool();
+                deleteTool();
             }
             catch(const VExceptionToolWasDeleted &e)
             {
@@ -441,7 +452,7 @@ void VToolLine::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolLine::MakeToolTip() const
+QString VToolLine::makeToolTip() const
 {
     const QSharedPointer<VPointF> first = VAbstractTool::data.GeometricObject<VPointF>(firstPoint);
     const QSharedPointer<VPointF> second = VAbstractTool::data.GeometricObject<VPointF>(secondPoint);

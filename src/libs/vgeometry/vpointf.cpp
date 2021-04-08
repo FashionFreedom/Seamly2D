@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -68,17 +68,20 @@ void VPointF::Swap(VPointF &point) Q_DECL_NOTHROW
  * @brief VPointF creat empty point
  */
 VPointF::VPointF()
-    :VGObject(GOType::Point, 0, Draw::Calculation), d(new VPointFData)
+    : VGObject(GOType::Point, 0, Draw::Calculation)
+    , d(new VPointFData)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VPointF::VPointF(const VPointF &point)
-    :VGObject(point), d(point.d)
+    : VGObject(point)
+    , d(point.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VPointF::VPointF(const QPointF &point)
-    :VGObject(VPointF()), d(new VPointFData(point))
+    : VGObject(VPointF())
+    , d(new VPointFData(point))
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -91,7 +94,8 @@ VPointF::VPointF(const QPointF &point)
  * @param my offset name respect to y
  */
 VPointF::VPointF(qreal x, qreal y, const QString &name, qreal mx, qreal my, quint32 idObject, const Draw &mode)
-    :VGObject(GOType::Point, idObject, mode), d(new VPointFData(x, y, mx, my))
+    : VGObject(GOType::Point, idObject, mode)
+    , d(new VPointFData(x, y, mx, my))
 {
     setName(name);
 }
@@ -105,7 +109,8 @@ VPointF::VPointF(qreal x, qreal y, const QString &name, qreal mx, qreal my, quin
  * @param my offset name respect to y
  */
 VPointF::VPointF(const QPointF &point, const QString &name, qreal mx, qreal my, quint32 idObject, const Draw &mode)
-    :VGObject(GOType::Point, idObject, mode), d(new VPointFData(point, mx, my))
+    : VGObject(GOType::Point, idObject, mode)
+    , d(new VPointFData(point, mx, my))
 {
     setName(name);
 }
@@ -140,22 +145,28 @@ VPointF::operator QPointF() const
 //---------------------------------------------------------------------------------------------------------------------
 VPointF VPointF::Rotate(const QPointF &originPoint, qreal degrees, const QString &prefix) const
 {
-    const QPointF p = RotatePF(originPoint, toQPointF(), degrees);
-    return VPointF(p, name() + prefix, mx(), my());
+    const QPointF newPoint = RotatePF(originPoint, toQPointF(), degrees);
+    VPointF rotated(newPoint, name() + prefix, mx(), my());
+    rotated.setShowPointName(isShowPointName());
+    return rotated;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VPointF VPointF::Flip(const QLineF &axis, const QString &prefix) const
 {
-    const QPointF p = FlipPF(axis, toQPointF());
-    return VPointF(p, name() + prefix, mx(), my());
+    const QPointF newPoint = FlipPF(axis, toQPointF());
+    VPointF flipped(newPoint, name() + prefix, mx(), my());
+    flipped.setShowPointName(isShowPointName());
+    return flipped;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VPointF VPointF::Move(qreal length, qreal angle, const QString &prefix) const
 {
-    const QPointF p = MovePF(toQPointF(), length, angle);
-    return VPointF(p, name() + prefix, mx(), my());
+    const QPointF newPoint = MovePF(toQPointF(), length, angle);
+    VPointF moved(newPoint, name() + prefix, mx(), my());
+    moved.setShowPointName(isShowPointName());
+    return moved;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -242,6 +253,18 @@ qreal VPointF::y() const
 void VPointF::setY(const qreal &value)
 {
     d->_y = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VPointF::isShowPointName() const
+{
+    return d->m_showPointName;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPointF::setShowPointName(bool show)
+{
+    d->m_showPointName = show;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

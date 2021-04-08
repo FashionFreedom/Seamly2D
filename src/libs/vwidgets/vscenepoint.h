@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -55,6 +55,8 @@
 #include <QtGlobal>
 #include <QGraphicsEllipseItem>
 
+#include "../vmisc/def.h"
+
 class VGraphicsSimpleTextItem;
 class VPointF;
 class VScaledLine;
@@ -62,37 +64,38 @@ class VScaledLine;
 class VScenePoint: public QGraphicsEllipseItem
 {
 public:
-    explicit VScenePoint(QGraphicsItem *parent = nullptr);
-    virtual ~VScenePoint() = default;
+    explicit                 VScenePoint(const QColor &lineColor, QGraphicsItem *parent = nullptr);
+    virtual                 ~VScenePoint() = default;
+    virtual int              type() const Q_DECL_OVERRIDE {return Type;}
+                             enum { Type = UserType + static_cast<int>(Vis::ScenePoint)};
 
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                       QWidget *widget = nullptr) Q_DECL_OVERRIDE;
-    virtual void RefreshPointGeometry(const VPointF &point);
+    virtual void             paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+                                   QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+    virtual void             refreshPointGeometry(const VPointF &point);
+
+    void                     refreshLeader();
 
 protected:
-    /** @brief namePoint point label. */
-    VGraphicsSimpleTextItem *m_namePoint;
 
-    /** @brief lineName line what we see if label moved too away from point. */
-    VScaledLine             *m_lineName;
+    VGraphicsSimpleTextItem *m_pointName;  /** @brief namePoint point text. */
+    VScaledLine             *m_pointLeader;  /** @brief pointL line that we see if Text is moved too away from point. */
+    QColor                   m_pointColor; /** @brief m_pointColor color of point. */
+    bool                     m_onlyPoint;
+    bool                     m_isHovered;
+    bool                     m_showPointName;
 
-    bool m_onlyPoint;
-    bool m_isHovered;
+    virtual void             hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
+    virtual void             hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
 
-    /** @brief m_baseColor base color of point. */
-    QColor m_baseColor;
+    void                     setOnlyPoint(bool value);
+    bool                     isOnlyPoint() const;
 
-    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
+    void                     setPointColor(const QString &value);
 
-    void RefreshLine();
-
-    void SetOnlyPoint(bool value);
-    bool IsOnlyPoint() const;
 private:
     Q_DISABLE_COPY(VScenePoint)
 
-    void ScaleMainPenWidth(qreal scale);
+    void                     setPointPen(qreal scale);
 };
 
 #endif // VSCENEPOINT_H

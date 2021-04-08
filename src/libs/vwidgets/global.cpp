@@ -60,7 +60,7 @@ const qreal defPointRadiusPixel = (2./*mm*/ / 25.4) * PrintDPI;
 const qreal widthMainLine = (1.2/*mm*/ / 25.4) * PrintDPI;
 const qreal widthHairLine = widthMainLine/3.0;
 
-qreal SceneScale(QGraphicsScene *scene)
+qreal sceneScale(QGraphicsScene *scene)
 {
     qreal scale = 1;
 
@@ -77,7 +77,7 @@ qreal SceneScale(QGraphicsScene *scene)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QColor CorrectColor(const QGraphicsItem *item, const QColor &color)
+QColor correctColor(const QGraphicsItem *item, const QColor &color)
 {
     SCASSERT(item != nullptr)
 
@@ -100,30 +100,38 @@ QRectF PointRect(qreal radius)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal ScaledRadius(qreal scale)
+qreal scaledRadius(qreal scale)
 {
     qreal scaledRadius = defPointRadiusPixel;
     if (scale > 1)
     {
-        scaledRadius = qMax(defPointRadiusPixel/12, defPointRadiusPixel/scale);
+        scaledRadius = qMax(defPointRadiusPixel/96, defPointRadiusPixel/scale);
     }
     return scaledRadius;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void ScaleCircleSize(QGraphicsEllipseItem *item, qreal scale)
+void scaleCircleSize(QGraphicsEllipseItem *item, qreal scale)
 {
     SCASSERT(item != nullptr)
 
-    item->setRect(PointRect(ScaledRadius(scale)));
+    item->setRect(PointRect(scaledRadius(scale)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal ScaleWidth(qreal width, qreal scale)
+void scaleRectSize(QGraphicsRectItem *item, qreal scale)
+{
+    SCASSERT(item != nullptr)
+
+    item->setRect(PointRect(scaledRadius(scale)));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal scaleWidth(qreal width, qreal scale)
 {
     if (scale > 1)
     {
-        width = qMax(0.1, width/scale);
+        width = qMax(0.01, width/scale);
     }
     return width;
 }

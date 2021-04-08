@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -89,6 +89,7 @@ VToolPin *VToolPin::Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstr
         catch (const VExceptionBadId &e)
         { // Possible case. Parent was deleted, but the node object is still here.
             Q_UNUSED(e)
+            data->UpdateId(id);
             return nullptr;// Just ignore
         }
         VPointF *pinPoint = new VPointF(*point);
@@ -151,7 +152,7 @@ void VToolPin::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
 
-    doc->SetAttribute(domElement, VDomDocument::AttrId, id);
+    doc->SetAttribute(domElement, VDomDocument::AttrId, m_id);
     doc->SetAttribute(domElement, AttrType, ToolType);
     doc->SetAttribute(domElement, AttrIdObject, idNode);
     if (idTool != NULL_ID)
@@ -166,7 +167,7 @@ void VToolPin::AddToFile()
         const VPiece oldDet = VAbstractTool::data.GetPiece(m_pieceId);
         VPiece newDet = oldDet;
 
-        newDet.GetPins().append(id);
+        newDet.GetPins().append(m_id);
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldDet, newDet, doc, m_pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
@@ -178,8 +179,8 @@ void VToolPin::AddToFile()
 //---------------------------------------------------------------------------------------------------------------------
 VToolPin::VToolPin(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pointId, quint32 pieceId,
                    const Source &typeCreation, const QString &drawName, const quint32 &idTool, QObject *qoParent)
-    : VAbstractNode(doc, data, id, pointId, drawName, idTool, qoParent),
-      m_pieceId(pieceId)
+    : VAbstractNode(doc, data, id, pointId, drawName, idTool, qoParent)
+    , m_pieceId(pieceId)
 {
     ToolCreation(typeCreation);
 }

@@ -70,9 +70,9 @@ void VisPiecePins::RefreshGeometry()
     for (int i = 0; i < m_pins.size(); ++i)
     {
         VSimplePoint *point = GetPoint(static_cast<quint32>(i), supportColor);
-        point->SetOnlyPoint(false);
+        point->setOnlyPoint(false);
         const QSharedPointer<VPointF> p = Visualization::data->GeometricObject<VPointF>(m_pins.at(i));
-        point->RefreshPointGeometry(*p);
+        point->refreshPointGeometry(*p);
         point->setVisible(true);
     }
 }

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,17 +72,17 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VSimplePoint::VSimplePoint(quint32 id, const QColor &currentColor, QObject *parent)
-    : VAbstractSimple(id, parent),
-      VScenePoint(),
-      m_visualizationMode(false),
-      m_alwaysHovered(false)
+    : VAbstractSimple(id, parent)
+    , VScenePoint(currentColor)
+    , m_visualizationMode(false)
+    , m_alwaysHovered(false)
 {
-    m_baseColor = currentColor;
-    connect(m_namePoint, &VGraphicsSimpleTextItem::ShowContextMenu, this, &VSimplePoint::ContextMenu);
-    connect(m_namePoint, &VGraphicsSimpleTextItem::DeleteTool, this, &VSimplePoint::DeleteFromLabel);
-    connect(m_namePoint, &VGraphicsSimpleTextItem::PointChoosed, this, &VSimplePoint::PointChoosed);
-    connect(m_namePoint, &VGraphicsSimpleTextItem::PointSelected, this, &VSimplePoint::PointSelected);
-    connect(m_namePoint, &VGraphicsSimpleTextItem::NameChangePosition, this, &VSimplePoint::ChangedPosition);
+    m_pointColor = currentColor;
+    connect(m_pointName, &VGraphicsSimpleTextItem::showContextMenu,    this, &VSimplePoint::contextMenuEvent);
+    connect(m_pointName, &VGraphicsSimpleTextItem::deleteTool,         this, &VSimplePoint::deletePoint);
+    connect(m_pointName, &VGraphicsSimpleTextItem::pointChosen,        this, &VSimplePoint::pointChosen);
+    connect(m_pointName, &VGraphicsSimpleTextItem::pointSelected,      this, &VSimplePoint::pointSelected);
+    connect(m_pointName, &VGraphicsSimpleTextItem::nameChangedPosition, this, &VSimplePoint::pointnameChangedPosition);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -109,56 +109,56 @@ void VSimplePoint::SetPointHighlight(bool value)
 void VSimplePoint::SetEnabled(bool enabled)
 {
     setEnabled(enabled);
-    m_namePoint->setEnabled(enabled);
+    m_pointName->setEnabled(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VSimplePoint::EnableToolMove(bool move)
 {
-    m_namePoint->setFlag(QGraphicsItem::ItemIsMovable, move);
+    m_pointName->setFlag(QGraphicsItem::ItemIsMovable, move);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimplePoint::AllowLabelHover(bool enabled)
+void VSimplePoint::allowTextHover(bool enabled)
 {
-    m_namePoint->setAcceptHoverEvents(enabled);
+    m_pointName->setAcceptHoverEvents(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimplePoint::AllowLabelSelecting(bool enabled)
+void VSimplePoint::allowTextSelectable(bool enabled)
 {
-    m_namePoint->setFlag(QGraphicsItem::ItemIsSelectable, enabled);
+    m_pointName->setFlag(QGraphicsItem::ItemIsSelectable, enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VSimplePoint::ToolSelectionType(const SelectionType &type)
 {
     VAbstractSimple::ToolSelectionType(type);
-    m_namePoint->LabelSelectionType(type);
+    m_pointName->textSelectionType(type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimplePoint::DeleteFromLabel()
+void VSimplePoint::deletePoint()
 {
     emit Delete();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimplePoint::PointChoosed()
+void VSimplePoint::pointChosen()
 {
     emit Choosed(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimplePoint::PointSelected(bool selected)
+void VSimplePoint::pointSelected(bool selected)
 {
     setSelected(selected);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSimplePoint::ChangedPosition(const QPointF &pos)
+void VSimplePoint::pointnameChangedPosition(const QPointF &pos)
 {
-    emit NameChangedPosition(pos, id);
+    emit nameChangedPosition(pos, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -245,9 +245,9 @@ QVariant VSimplePoint::itemChange(QGraphicsItem::GraphicsItemChange change, cons
 {
     if (change == QGraphicsItem::ItemSelectedChange)
     {
-        m_namePoint->blockSignals(true);
-        m_namePoint->setSelected(value.toBool());
-        m_namePoint->blockSignals(false);
+        m_pointName->blockSignals(true);
+        m_pointName->setSelected(value.toBool());
+        m_pointName->blockSignals(false);
         emit Selected(value.toBool(), id);
     }
 
@@ -257,5 +257,5 @@ QVariant VSimplePoint::itemChange(QGraphicsItem::GraphicsItemChange change, cons
 //---------------------------------------------------------------------------------------------------------------------
 void VSimplePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit ShowContextMenu(event);
+    emit showContextMenu(event, id);
 }

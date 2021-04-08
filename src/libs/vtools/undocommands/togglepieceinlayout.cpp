@@ -73,7 +73,7 @@ TogglePieceInLayout::TogglePieceInLayout(quint32 id, bool state, VContainer *dat
       m_oldState(m_data->DataPieces()->value(m_id).IsInLayout()),
       m_newState(state)
 {
-    setText(tr("detail in layout list"));
+    setText(tr("Piece in Layout List"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

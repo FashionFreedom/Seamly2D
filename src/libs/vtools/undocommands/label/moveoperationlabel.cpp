@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,7 +23,7 @@
 
  ************************************************************************
  **
- **  @file   moverotationlabel.cpp
+ **  @file   moveoperationlabel.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   13 5, 2016
  **
@@ -49,38 +49,39 @@
  **
  *************************************************************************/
 
-#include "operationmovelabel.h"
+#include "moveoperationlabel.h"
 
 #include <QDomNode>
 #include <QDomNodeList>
 
-#include "../../tools/drawTools/operation/vtoolrotation.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/ifcdef.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/def.h"
+#include "../vtools/tools/drawTools/vdrawtool.h"
 #include "../vundocommand.h"
 #include "moveabstractlabel.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-OperationMoveLabel::OperationMoveLabel(quint32 idTool, VAbstractPattern *doc, double x, double y, quint32 idPoint,
+MoveOperationLabel::MoveOperationLabel(quint32 idTool, VAbstractPattern *doc, const QPointF &pos, quint32 idPoint,
                                        QUndoCommand *parent)
-    : MoveAbstractLabel(doc, idPoint, x, y, parent),
-      m_idTool(idTool)
+    : MoveAbstractLabel(doc, idPoint, pos, parent)
+    , m_idTool(idTool)
+    , m_scene(qApp->getCurrentScene())
 {
     setText(tr("move point label"));
 
     qCDebug(vUndo, "Tool id %u", m_idTool);
 
-    const QDomElement element = GetDestinationObject(m_idTool, nodeId);
+    const QDomElement element = getDestinationObject(m_idTool, nodeId);
     if (element.isElement())
     {
-        m_oldMx = qApp->toPixel(doc->GetParametrDouble(element, AttrMx, "0.0"));
-        m_oldMy = qApp->toPixel(doc->GetParametrDouble(element, AttrMy, "0.0"));
+        m_oldPos.rx() = qApp->toPixel(doc->GetParametrDouble(element, AttrMx, "0.0"));
+        m_oldPos.ry() = qApp->toPixel(doc->GetParametrDouble(element, AttrMy, "0.0"));
 
-        qCDebug(vUndo, "Label old Mx %f", m_oldMx);
-        qCDebug(vUndo, "Label old My %f", m_oldMy);
+        qCDebug(vUndo, "Label old Mx %f", m_oldPos.x());
+        qCDebug(vUndo, "Label old My %f", m_oldPos.y());
     }
     else
     {
@@ -90,14 +91,9 @@ OperationMoveLabel::OperationMoveLabel(quint32 idTool, VAbstractPattern *doc, do
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-OperationMoveLabel::~OperationMoveLabel()
+bool MoveOperationLabel::mergeWith(const QUndoCommand *command)
 {
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-bool OperationMoveLabel::mergeWith(const QUndoCommand *command)
-{
-    const OperationMoveLabel *moveCommand = static_cast<const OperationMoveLabel *>(command);
+    const MoveOperationLabel *moveCommand = static_cast<const MoveOperationLabel *>(command);
     SCASSERT(moveCommand != nullptr)
 
     if (moveCommand->GetToolId() != m_idTool && moveCommand->GetPointId() != nodeId)
@@ -105,74 +101,38 @@ bool OperationMoveLabel::mergeWith(const QUndoCommand *command)
         return false;
     }
 
-    qCDebug(vUndo, "Mergin undo.");
-    m_newMx = moveCommand->GetNewMx();
-    m_newMy = moveCommand->GetNewMy();
-    qCDebug(vUndo, "Label new Mx %f", m_newMx);
-    qCDebug(vUndo, "Label new My %f", m_newMy);
+    qCDebug(vUndo, "Merge with undo.");
+    m_newPos = moveCommand->GetNewPos();
+    qCDebug(vUndo, "Label new Mx %f", m_newPos.x());
+    qCDebug(vUndo, "Label new My %f", m_newPos.y());
     return true;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int OperationMoveLabel::id() const
+int MoveOperationLabel::id() const
 {
     return static_cast<int>(UndoCommand::RotationMoveLabel);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void OperationMoveLabel::Do(double mx, double my)
+void MoveOperationLabel::Do(const QPointF &pos)
 {
-    qCDebug(vUndo, "New mx %f", mx);
-    qCDebug(vUndo, "New my %f", my);
+    qCDebug(vUndo, "New mx %f", pos.x());
+    qCDebug(vUndo, "New my %f", pos.y());
 
-    QDomElement domElement = GetDestinationObject(m_idTool, nodeId);
+    QDomElement domElement = getDestinationObject(m_idTool, nodeId);
     if (not domElement.isNull() && domElement.isElement())
     {
-        doc->SetAttribute(domElement, AttrMx, QString().setNum(qApp->fromPixel(mx)));
-        doc->SetAttribute(domElement, AttrMy, QString().setNum(qApp->fromPixel(my)));
+        doc->SetAttribute(domElement, AttrMx, QString().setNum(qApp->fromPixel(pos.x())));
+        doc->SetAttribute(domElement, AttrMy, QString().setNum(qApp->fromPixel(pos.y())));
+
+        if (VDrawTool *tool = qobject_cast<VDrawTool *>(VAbstractPattern::getTool(m_idTool)))
+        {
+            tool->setPointNamePosition(nodeId, pos);
+        }
     }
     else
     {
         qCDebug(vUndo, "Can't find point with id = %u.", nodeId);
-        return;
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QDomElement OperationMoveLabel::GetDestinationObject(quint32 idTool, quint32 idPoint) const
-{
-    const QDomElement tool = doc->elementById(idTool, VAbstractPattern::TagOperation);
-    if (tool.isElement())
-    {
-        QDomElement correctDest;
-        const QDomNodeList nodeList = tool.childNodes();
-        for (qint32 i = 0; i < nodeList.size(); ++i)
-        {
-            const QDomElement dest = nodeList.at(i).toElement();
-            if (not dest.isNull() && dest.isElement() && dest.tagName() == VToolRotation::TagDestination)
-            {
-                correctDest = dest;
-                break;
-            }
-        }
-
-        if (not correctDest.isNull())
-        {
-            const QDomNodeList destObjects = correctDest.childNodes();
-            for (qint32 i = 0; i < destObjects.size(); ++i)
-            {
-                const QDomElement obj = destObjects.at(i).toElement();
-                if (not obj.isNull() && obj.isElement())
-                {
-                    const quint32 id = doc->GetParametrUInt(obj, AttrIdObject, NULL_ID_STR);
-                    if (idPoint == id)
-                    {
-                        return obj;
-                    }
-                }
-            }
-        }
-    }
-
-    return QDomElement();
 }

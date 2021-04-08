@@ -84,6 +84,8 @@ public:
     virtual                      ~VAbstractTool() Q_DECL_OVERRIDE;
     quint32                       getId() const;
 
+    static bool                   m_suppressContextMenu;
+
     static const QString          AttrInUse;
 
     static qreal                  CheckFormula(const quint32 &toolId, QString &formula, VContainer *data);
@@ -102,9 +104,12 @@ public:
     QMap<QString, quint32>        PointsList() const;
     virtual QString               getTagName() const =0;
     virtual void                  ShowVisualization(bool show) =0;
+    virtual void                  setPointNamePosition(quint32 id, const QPointF &pos);
+    virtual void                  setPointNameVisiblity(quint32 id, bool visible);
 
     template<typename T>
     static quint32                CreateNode(VContainer *data, quint32 id);
+
 public slots:
     /**
      * @brief FullUpdateFromFile update tool data form file.
@@ -113,31 +118,33 @@ public slots:
     virtual void                 AllowHover(bool enabled)=0;
     virtual void                 AllowSelecting(bool enabled)=0;
     virtual void                 ToolSelectionType(const SelectionType &type);
+
 signals:
     /**
-     * @brief toolhaveChange emit if tool create change that need save.
+     * @brief toolHasChanges emit if tool create change that need save.
      */
-    void                         toolhaveChange();
+    void                         toolHasChanges();
     /**
-     * @brief ChoosedTool emit if object was clicked.
+     * @brief chosenTool emit if object was clicked.
      * @param id object id in container.
      * @param type type of scene object.
      */
-    void                         ChoosedTool(quint32 id, SceneObject type);
+    void                         chosenTool(quint32 id, SceneObject type);
     /**
      * @brief FullUpdateTree emit if need reparse pattern file.
      */
     void                         LiteUpdateTree(const Document &parse);
 
     void                         ToolTip(const QString &toolTip);
+
 protected:
     /** @brief doc dom document container */
     VAbstractPattern            *doc;
 
     /** @brief id object id. */
-    const quint32                id;
+    const quint32                m_id;
 
-    QPointer<Visualization> vis;
+    QPointer<Visualization>      vis;
     SelectionType                selectionType;
 
     /**
@@ -152,7 +159,7 @@ protected:
      * @brief RemoveReferens decrement value of reference.
      */
     virtual void                 RemoveReferens() {}
-    virtual void                 DeleteTool(bool ask = true);
+    virtual void                 deleteTool(bool ask = true);
     static int                   ConfirmDeletion();
 
     template <typename T>
@@ -179,7 +186,7 @@ private:
  */
 inline quint32 VAbstractTool::getId() const
 {
-    return id;
+    return m_id;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

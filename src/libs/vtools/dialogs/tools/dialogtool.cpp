@@ -614,8 +614,8 @@ QString DialogTool::DialogWarningIcon()
 //---------------------------------------------------------------------------------------------------------------------
 QFont DialogTool::NodeFont(bool nodeExcluded)
 {
-    QFont font = qApp->Settings()->GetLabelFont();
-    font.setPointSize(12);
+    QFont font = qApp->Settings()->getGuiFont();
+    font.setPointSize(qApp->Settings()->getGuiFontSize());
     font.setBold(true);
     font.setStrikeOut(nodeExcluded);
     return font;

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -61,6 +61,7 @@
 #include <QString>
 #include <QVariant>
 #include <QtGlobal>
+#include <QColor>
 
 #include "../vmisc/def.h"
 
@@ -71,45 +72,64 @@ class VGraphicsSimpleTextItem : public QObject, public QGraphicsSimpleTextItem
 {
     Q_OBJECT
 public:
-    explicit VGraphicsSimpleTextItem(QGraphicsItem *parent = nullptr);
-    explicit VGraphicsSimpleTextItem( const QString & text, QGraphicsItem *parent = nullptr );
-    virtual ~VGraphicsSimpleTextItem() =default;
+    explicit         VGraphicsSimpleTextItem(QColor color, QGraphicsItem *parent = nullptr);
+    explicit         VGraphicsSimpleTextItem( const QString &text, QColor textColor, QGraphicsItem *parent = nullptr );
+    virtual         ~VGraphicsSimpleTextItem() =default;
 
-    qint32       BaseFontSize()const;
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    qint32           BaseFontSize()const;
+    virtual int      type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::GraphicsSimpleTextItem)};
 
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                       QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+    virtual void     paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+                           QWidget *widget = nullptr) Q_DECL_OVERRIDE;
 
-    void setEnabled(bool enabled);
-    void LabelSelectionType(const SelectionType &type);
+    void             setEnabled(bool enabled);
+    void             textSelectionType(const SelectionType &type);
+    void             setShowParentTooltip(bool show);
+
+    QColor           getTextBrushColor();
+    void             setTextColor(const QColor &color);
+
+    void             setPosition(QPointF pos);
+
 signals:
     /**
-     * @brief NameChangePosition emit when label change position.
+     * @brief nameChangedPosition emit when label change position.
      * @param pos new posotion.
      */
-    void         NameChangePosition(const QPointF &pos);
+    void             nameChangedPosition(const QPointF &pos);
     /**
-     * @brief ShowContextMenu emit when need show tool context menu.
+     * @brief showContextMenu emit when need show tool context menu.
      * @param event context menu event.
      */
-    void         ShowContextMenu(QGraphicsSceneContextMenuEvent *event);
-    void         DeleteTool();
-    void         PointChoosed();
-    void         PointSelected(bool selected);
+    void             showContextMenu(QGraphicsSceneContextMenuEvent *event);
+    void             deleteTool();
+    void             pointChosen();
+    void             pointSelected(bool selected);
+
 protected:
-    virtual QVariant itemChange ( GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
-    virtual void hoverEnterEvent ( QGraphicsSceneHoverEvent *event ) Q_DECL_OVERRIDE;
-    virtual void hoverLeaveEvent ( QGraphicsSceneHoverEvent *event ) Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent *event ) Q_DECL_OVERRIDE;
-    virtual void mousePressEvent( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void mouseReleaseEvent ( QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
-    virtual void keyReleaseEvent ( QKeyEvent * event ) Q_DECL_OVERRIDE;
+    virtual QVariant itemChange (GraphicsItemChange change, const QVariant &value ) Q_DECL_OVERRIDE;
+    virtual void     hoverEnterEvent (QGraphicsSceneHoverEvent *event ) Q_DECL_OVERRIDE;
+    virtual void     hoverLeaveEvent (QGraphicsSceneHoverEvent *event ) Q_DECL_OVERRIDE;
+    virtual void     contextMenuEvent (QGraphicsSceneContextMenuEvent *event ) Q_DECL_OVERRIDE;
+    virtual void     mousePressEvent(QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
+    virtual void     mouseReleaseEvent (QGraphicsSceneMouseEvent * event ) Q_DECL_OVERRIDE;
+    virtual void     keyReleaseEvent (QKeyEvent * event ) Q_DECL_OVERRIDE;
+
 private:
     /** @brief fontSize label font size. */
-    qint32        m_fontSize;
-    SelectionType selectionType;
+    qint32           m_fontSize;
+    qreal            m_scale;
+    QColor           m_textColor;
+    bool             m_isNameHovered;
+    SelectionType    selectionType;
+    bool             m_showParentTooltip;
+    QPointF          m_pointNamePos{};
+
+    void             initItem();
+    void             scalePointName(const qreal &scale);
+    void             scalePosition();
+    void             updateLeader();
 };
 
 //---------------------------------------------------------------------------------------------------------------------
