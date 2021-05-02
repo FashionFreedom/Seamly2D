@@ -27,7 +27,6 @@ docker run --cap-add SYS_ADMIN --device /dev/fuse \
     --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
     -v $buildDirPath:/app/usr \
     -e EXTRA_BINARIES="seamlyme" \
-    --rm mhitza/linuxdeployqt:"$QT_VERSION" \
-    gcc:9.3 gcc
+    --rm mhitza/linuxdeployqt:"$QT_VERSION"
 
 mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
