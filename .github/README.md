@@ -1,4 +1,4 @@
-![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner.svg)
+![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner_700x200.png)
 # Seamly2D
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?color=blue&include_prereleases&style=flat-square)    
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/fashionfreedom/seamly2d/Build%20weekly%20release?style=flat-square)  ![Travis (.org) branch](https://img.shields.io/travis/fashionfreedom/seamly2d/develop?label=travis-ci&style=flat-square)   ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?color=brightgreen&style=flat-square)  ![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square)  
