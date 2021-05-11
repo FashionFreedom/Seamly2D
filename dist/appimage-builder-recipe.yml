@@ -3,7 +3,7 @@ version: 1
 script:
   - rm -rf AppDir || true
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-  - INSTALL_ROOT=$PWD/AppDir make install -j$(nproc)
+  - INSTALL_ROOT=$PWD/AppDir make install
   # place the icon in the right path
   - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp AppDir/usr/share/pixmaps/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
