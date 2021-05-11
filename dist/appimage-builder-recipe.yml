@@ -1,0 +1,92 @@
+# appimage-builder recipe see https://appimage-builder.readthedocs.io for details
+version: 1
+script:
+  - rm -rf AppDir || true
+  - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+  - INSTALL_ROOT=$PWD/AppDir make install -j$(nproc)
+  # place the icon in the right path
+  - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps/
+  - cp AppDir/usr/share/pixmaps/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
+
+AppDir:
+  path: ./AppDir
+  app_info:
+    id: net.seamly.seamly2d
+    name: Seamly2D
+    icon: seamly2d
+    version: latest
+    exec: usr/bin/seamly2d
+    exec_args: $@
+  apt:
+    arch: amd64
+    allow_unauthenticated: true
+    sources:
+    - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
+    - sourceline: deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
+    - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+    include:
+    - libqt5svg5
+    - libqt5xml5
+    - liblz4-1
+    - libxshmfence1
+    - libxrender1
+    - qt5-image-formats-plugins
+    - libxcb-render-util0
+    - qttranslations5-l10n
+    - libxcb-sync1
+    - libxcb-xkb1
+    - qt5-gtk-platformtheme
+    - kimageformat-plugins
+    - libxau6
+    - qtwayland5
+    - libgcrypt20
+    - libxext6
+    - libpoppler97
+    - libxxf86vm1
+    - libjpeg-turbo8
+    - libxfixes3
+    - libsm6
+    - libxdmcp6
+    - libqt5xmlpatterns5
+    - libxcb-xinerama0
+    exclude:
+    - dbus
+    - ubuntu-mono
+    - humanity-icon-theme
+    - adwaita-icon-theme
+    - hicolor-icon-theme
+    - fonts-hack
+    - dbus-user-session
+    - dconf-service
+  files:
+    exclude:
+    - usr/share/man
+    - usr/share/doc/**/README.*
+    - usr/share/doc/**/changelog.*
+    - usr/share/doc/**/NEWS.*
+    - usr/share/doc/**/TODO.*
+  test:
+    fedora:
+      image: appimagecrafters/tests-env:fedora-30
+      command: ./AppRun
+      use_host_x: true
+    debian:
+      image: appimagecrafters/tests-env:debian-stable
+      command: ./AppRun
+      use_host_x: true
+    arch:
+      image: appimagecrafters/tests-env:archlinux-latest
+      command: ./AppRun
+      use_host_x: true
+    centos:
+      image: appimagecrafters/tests-env:centos-7
+      command: ./AppRun
+      use_host_x: true
+    ubuntu:
+      image: appimagecrafters/tests-env:ubuntu-xenial
+      command: ./AppRun
+      use_host_x: true
+AppImage:
+  arch: x86_64
+  update-information: guess
+  sign-key: None

@@ -1,0 +1,38 @@
+name: Build weekly release
+
+on:
+  push: 
+
+env:
+  QT_SELECT: 5
+
+  # See https://wiki.qt.io/Qt_5.13_Release
+  # The project is currently incompatible with Qt-5.15/5.14.2
+  # When chaning the version information in this file be sure to change it in
+  # pull-request.yml as well
+  QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
+
+jobs:
+  linux:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: jurplel/install-qt-action@v2.13.0
+        with:
+          version: ${{ env.QT_VERSION }}
+
+      - name: build
+        run: |
+          sudo wget https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
+          sudo chmod +x /usr/local/bin/appimage-builder
+          appimage-builder --recipe dist/appimage-builder-recipe.yml --skip-test
+
+      - name: upload Seamly2D.AppImage
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.UPLOAD_URL }}
+          asset_path: ./*.AppImage*
+          asset_name: Seamly2D.AppImage
+          asset_content_type: application/octet-stream
