@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2.3.4
       - name: Install Qt5
         run: |
-          sudo apt-get install -y build-essential gettext qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt-get install -y build-essential gettext git qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
       - name: build
         run: |
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
