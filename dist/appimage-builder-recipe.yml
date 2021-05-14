@@ -3,7 +3,9 @@ version: 1
 script:
   - rm -rf AppDir || true
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+  - make -j$(nproc)
   - INSTALL_ROOT=$PWD/AppDir make install
+
   # place the icon in the right path
   - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp AppDir/usr/share/pixmaps/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
@@ -11,7 +13,7 @@ script:
 AppDir:
   path: ./AppDir
   app_info:
-    id: net.seamly.seamly2d
+    id: seamly2d
     name: Seamly2D
     icon: seamly2d
     version: latest
@@ -19,11 +21,14 @@ AppDir:
     exec_args: $@
   apt:
     arch: amd64
-    allow_unauthenticated: true
     sources:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
     - sourceline: deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+      key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
+    - sourceline: deb http://archive.neon.kde.org/user focal main
+      key_url: https://origin.archive.neon.kde.org/public.key
+
     include:
     - libqt5svg5
     - libqt5xml5
