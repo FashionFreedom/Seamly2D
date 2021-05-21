@@ -7,16 +7,19 @@ script:
   - INSTALL_ROOT=$PWD/AppDir make install
 
   # create directories for diagrams, translations, desktop, and icons
-  - mkdir -p AppDir/usr/{share/translations,share/applications}
-  - mkdir -p AppDir/usr/{share/icons/hicolor/64x64/apps/,share/icons/hicolor/256x256}
+  - mkdir -p AppDir/usr/share/translations
+  - mkdir -p AppDir/usr/share/applications
+  - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
+  - mkdir -p AppDir/usr/share/icons/hicolor/256x256
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
   - cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
   # copy translations (qt's .qm translation files) into $build/share/translations directory
   - cp share/translations/*.qm AppDir/usr/share/translations
-  # copy desktop icon (.desktop file) from $build/dist directory to $build/share/applications directory
-  - cp AppDir/dist/seamly2d.desktop AppDir/usr/share/applications
-  # place icons in the right path
-  - cp share/pixmaps/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
+  # copy .desktop files from $build/dist directory to $build/share/applications directory
+  - cp dist/seamly2d.desktop AppDir/usr/share/applications
+  - cp dist/seamlyme.desktop AppDir/usr/share/applications
+  # copy icons to the correct directories
+  - cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
 
 AppDir:
