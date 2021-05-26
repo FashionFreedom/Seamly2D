@@ -1140,7 +1140,7 @@ void VCommonSettings::setPointNameFont(const QFont &f)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getHidePointNames() const
 {
-    return value(settingGraphicsViewHidePointNames, false).toBool();
+    return value(settingGraphicsViewHidePointNames, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1152,7 +1152,7 @@ void VCommonSettings::setHidePointNames(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getShowAxisOrigin() const
 {
-    return value(settingGraphicsViewShowAxisOrigin, false).toBool();
+    return value(settingGraphicsViewShowAxisOrigin, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
