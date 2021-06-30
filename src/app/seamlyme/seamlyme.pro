@@ -50,9 +50,8 @@ UI_DIR = uic
 include(seamlyme.pri)
 
 RESOURCES += \
+    share/resources/diagrams.qrc
     share/resources/seamlymeicon.qrc
-
-DATA_RESOURCE = share/resources/diagrams.qrc # External Binary Resource
 
 # The list helps to check that all files are exist.
 # Don't forget to convert text to curves.
