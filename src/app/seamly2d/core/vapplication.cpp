@@ -62,6 +62,7 @@
 #include "../qmuparser/qmuparsererror.h"
 #include "../mainwindow.h"
 
+#include <Qt>
 #include <QtDebug>
 #include <QDir>
 #include <QProcess>
@@ -205,23 +206,24 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 !QApplication::activeModalWidget()->inherits("QFileDialog");
 
         QMessageBox messageBox;
+
         switch (type)
         {
             case QtWarningMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Warning."));
+                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Warning"));
                 messageBox.setIcon(QMessageBox::Warning);
                 break;
             case QtCriticalMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Critical error."));
+                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Critical Error"));
                 messageBox.setIcon(QMessageBox::Critical);
                 break;
             case QtFatalMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Fatal error."));
+                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Fatal Error"));
                 messageBox.setIcon(QMessageBox::Critical);
                 break;
             #if QT_VERSION > QT_VERSION_CHECK(5, 4, 2)
             case QtInfoMsg:
-                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Information."));
+                messageBox.setWindowTitle(QApplication::translate("vNoisyHandler", "Information"));
                 messageBox.setIcon(QMessageBox::Information);
                 break;
             #endif
@@ -243,6 +245,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 #ifndef QT_NO_CURSOR
                     QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
                 #endif
+                    messageBox.setWindowFlags(messageBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
                     messageBox.exec();
                 #ifndef QT_NO_CURSOR
                     QGuiApplication::restoreOverrideCursor();
@@ -286,7 +289,7 @@ VApplication::VApplication(int &argc, char **argv)
       lockLog(),
       out(nullptr)
 {
-    setApplicationDisplayName(VER_PRODUCTNAME_STR);
+    //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     setOrganizationDomain(VER_COMPANYDOMAIN_STR);
@@ -927,7 +930,7 @@ void VApplication::SendReport(const QString &reportName) const
     content.append(QString("Build revision:%1").arg(BUILD_REVISION)+"\r\n");
     content.append(QString("Based on Qt %1 (32 bit)").arg(QT_VERSION_STR)+"\r\n");
     content.append(QString("Built on %1 at %2").arg(__DATE__).arg(__TIME__)+"\r\n");
-    content.append(QString("Web site:http://fashionfreedom.eu/ ")+"\r\n");
+    content.append(QString("Web site:http://seamly.net/ ")+"\r\n");
     content.append("\r\n");
 
     // Creating json with report

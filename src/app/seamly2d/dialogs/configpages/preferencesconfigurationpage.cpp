@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -137,9 +137,6 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         settings->SetConfirmItemDelete(true);
         settings->SetConfirmFormatRewriting(true);
     });
-
-    //----------------------- Toolbar
-    ui->toolBarStyleCheck->setChecked(qApp->Seamly2DSettings()->GetToolBarStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -162,7 +159,6 @@ void PreferencesConfigurationPage::Apply()
 
     settings->SetOsSeparator(ui->osOptionCheck->isChecked());
     settings->SetSendReportState(ui->sendReportCheck->isChecked());
-    settings->SetToolBarStyle(ui->toolBarStyleCheck->isChecked());
 
     if (m_langChanged || m_systemChanged)
     {

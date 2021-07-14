@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -106,7 +106,7 @@ void VToolCutArc::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogCutArc> dialogTool = m_dialog.objectCast<DialogCutArc>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetFormula(formula);
     dialogTool->setArcId(curveCutId);
     dialogTool->SetPointName(point->name());
@@ -129,7 +129,7 @@ VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     const QString pointName = dialogTool->getPointName();
     QString formula = dialogTool->GetFormula();
     const quint32 arcId = dialogTool->getArcId();
-    VToolCutArc* point = Create(0, pointName, formula, arcId, 5, 10, scene, doc, data, Document::FullParse,
+    VToolCutArc* point = Create(0, pointName, formula, arcId, 5, 10, true, scene, doc, data, Document::FullParse,
                                 Source::FromGui);
     if (point != nullptr)
     {
@@ -153,8 +153,8 @@ VToolCutArc* VToolCutArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
  * @param parse parser file mode.
  * @param typeCreation way we create this tool.
  */
-VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QString &formula, const quint32 &arcId,
-                                 const qreal &mx, const qreal &my, VMainGraphicsScene *scene, VAbstractPattern *doc,
+VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QString &formula, quint32 arcId,
+                                 qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene, VAbstractPattern *doc,
                                  VContainer *data, const Document &parse, const Source &typeCreation)
 {
     const QSharedPointer<VArc> arc = data->GeometricObject<VArc>(arcId);
@@ -167,6 +167,8 @@ VToolCutArc* VToolCutArc::Create(const quint32 _id, const QString &pointName, QS
 
     quint32 id = _id;
     VPointF *p = new VPointF(point, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     auto a1 = QSharedPointer<VArc>(new VArc(arc1));
     auto a2 = QSharedPointer<VArc>(new VArc(arc2));
     if (typeCreation == Source::FromGui)
@@ -215,11 +217,11 @@ void VToolCutArc::ShowVisualization(bool show)
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolCutArc::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolCutArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogCutArc>(this, event);
+        ContextMenu<DialogCutArc>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -278,7 +280,7 @@ void VToolCutArc::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolCutArc::MakeToolTip() const
+QString VToolCutArc::makeToolTip() const
 {
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(curveCutId);
 
@@ -298,7 +300,8 @@ QString VToolCutArc::MakeToolTip() const
     auto ArcToolTip = [arcStr, lengthStr, startAngleStr, endAngleStr, radiusStr](QString toolTip, const VArc &arc,
             const QString &arcNumber)
     {
-        toolTip += QString("<tr> <td><b>%1:</b> %2 %3</td> </tr>"
+        toolTip += QString("<tr> <td><b>%10:</b> %11</td> </tr>"
+                           "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
                            "<tr> <td><b>%4:</b> %5 %3</td> </tr>"
                            "<tr> <td><b>%6:</b> %7°</td> </tr>"
                            "<tr> <td><b>%8:</b> %9°</td> </tr>")
@@ -310,7 +313,9 @@ QString VToolCutArc::MakeToolTip() const
                     .arg(arcStr + arcNumber + QLatin1String(" ") + startAngleStr)
                     .arg(qApp->fromPixel(arc.GetStartAngle()))
                     .arg(arcStr + arcNumber + QLatin1String(" ") + endAngleStr)
-                    .arg(qApp->fromPixel(arc.GetEndAngle()));
+                    .arg(qApp->fromPixel(arc.GetEndAngle()))
+                    .arg(arcStr + arcNumber + QLatin1String(" ") + tr("label"))
+                    .arg(arc.name());
         return toolTip;
     };
 

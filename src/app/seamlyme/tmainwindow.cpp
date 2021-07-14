@@ -521,8 +521,8 @@ void TMainWindow::Preferences()
 		QScopedPointer<DialogSeamlyMePreferences> dlg(preferences);
 		guard = preferences;
 		// Must be first
-		connect(dlg.data(), &DialogSeamlyMePreferences::UpdateProperties, this, &TMainWindow::WindowsLocale);
-		connect(dlg.data(), &DialogSeamlyMePreferences::UpdateProperties, this, &TMainWindow::ToolBarStyles);
+		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::WindowsLocale);
+		connect(dlg.data(), &DialogSeamlyMePreferences::updateProperties, this, &TMainWindow::ToolBarStyles);
 		QGuiApplication::restoreOverrideCursor();
 		dlg->exec();
 	}
@@ -955,8 +955,8 @@ bool TMainWindow::FileSaveAs()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::AboutToShowWindowMenu()
 {
-	ui->menuWindow->clear();
-	CreateWindowMenu(ui->menuWindow);
+	ui->window_Menu->clear();
+	CreateWindowMenu(ui->window_Menu);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1577,7 +1577,7 @@ void TMainWindow::ShowMDiagram(const QString &name)
 	{
 		ui->labelDiagram->setText(QString("<html><head/><body><p align=\"center\">%1</p>"
 										  "<p align=\"center\"><b>%2</b>. <i>%3</i></p></body></html>")
-										  .arg(MeasurementDatabaseDialog::imgTag(number)).arg(number).arg(trv->GuiText(name)));
+										  .arg(MeasurementDatabaseDialog::imageUrl(number)).arg(number).arg(trv->GuiText(name)));
 	}
 	// This part is very ugly, can't find better way to resize dockWidget.
 	ui->labelDiagram->adjustSize();
@@ -1984,13 +1984,13 @@ void TMainWindow::SetupMenu()
 	connect(ui->actionImportFromPattern, &QAction::triggered, this, &TMainWindow::ImportFromPattern);
 	actionDockDiagram = ui->dockWidgetDiagram->toggleViewAction();
 	actionDockDiagram->setMenuRole(QAction::NoRole);
-	ui->menuMeasurements->addAction(actionDockDiagram);
+	ui->measurements_Menu->addAction(actionDockDiagram);
 	ui->mainToolBar->addAction(actionDockDiagram);
 	actionDockDiagram->setEnabled(false);
 	actionDockDiagram->setIcon(QIcon("://seamlymeicon/24x24/mannequin.png"));
 
 	// Window
-	connect(ui->menuWindow, &QMenu::aboutToShow, this, &TMainWindow::AboutToShowWindowMenu);
+	connect(ui->window_Menu, &QMenu::aboutToShow, this, &TMainWindow::AboutToShowWindowMenu);
 	AboutToShowWindowMenu();
 
 	// Help
@@ -2633,7 +2633,7 @@ void TMainWindow::UpdateWindowTitle()
 		showName += QLatin1String(" (") + tr("read only") + QLatin1String(")");
 	}
 
-	setWindowTitle(showName);
+	setWindowTitle(showName + QString(" - ") + VER_INTERNALNAME_STR);
 	setWindowFilePath(curFile);
 
 #if defined(Q_OS_MAC)
@@ -3165,4 +3165,10 @@ void TMainWindow::HackWidget(T **widget)
 	delete *widget;
 	*widget = new T();
 	hackedWidgets.append(*widget);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::zoomToSelected()
+{
+    // do nothing
 }

@@ -69,7 +69,7 @@ extern const QString CustomIncrSign;
 
 static const quint32 null_id = 0;
 
-#define NULL_ID null_id//use this value for initialization variables that keeps id values. 0 mean uknown id value.
+#define NULL_ID null_id//use this value for initialization variables that keeps id values. 0 mean Unknown id value.
 #define NULL_ID_STR "0"
 
 // Detect whether the compiler supports C++11 noexcept exception specifications.
@@ -104,7 +104,7 @@ extern const QString AttrDartP2;
 extern const QString AttrDartP3;
 extern const QString AttrX;
 extern const QString AttrY;
-extern const QString AttrTypeLine;
+extern const QString AttrLineType;
 extern const QString AttrCut;
 extern const QString AttrLength;
 extern const QString AttrBasePoint;
@@ -164,20 +164,25 @@ extern const QString AttrSuffix;
 extern const QString AttrIdObject;
 extern const QString AttrInLayout;
 extern const QString AttrClosed;
+extern const QString AttrShowPointName;
+extern const QString AttrShowPointName1;
+extern const QString AttrShowPointName2;
 
-extern const QString TypeLineNone;
-extern const QString TypeLineLine;
-extern const QString TypeLineDashLine;
-extern const QString TypeLineDotLine;
-extern const QString TypeLineDashDotLine;
-extern const QString TypeLineDashDotDotLine;
+extern const QString LineTypeNone;
+extern const QString LineTypeSolidLine;
+extern const QString LineTypeDashLine;
+extern const QString LineTypeDotLine;
+extern const QString LineTypeDashDotLine;
+extern const QString LineTypeDashDotDotLine;
 
 QStringList          StylesList();
-Qt::PenStyle         LineStyleToPenStyle(const QString &typeLine);
+Qt::PenStyle         LineStyleToPenStyle(const QString &lineType);
 QString              PenStyleToLineStyle(Qt::PenStyle penStyle);
 QMap<QString, QIcon> LineStylesPics();
 QMap<QString, QIcon> CurvePenStylesPics();
 
+extern const QString ColorByGroup;
+extern const QString ColorNone;
 extern const QString ColorBlack;
 extern const QString ColorGreen;
 extern const QString ColorBlue;
@@ -195,7 +200,10 @@ extern const QString ColorMediumSeaGreen;
 extern const QString ColorLime;
 extern const QString ColorDeepSkyBlue;
 extern const QString ColorCornFlowerBlue;
-
+extern const QString ColorGray;
+extern const QString ColorDarkGray;
+extern const QString ColorLightGray;
+extern const QString ColorWhite;
 
 // variables name
 // Hacks for avoiding the linker error "undefined reference to"
@@ -204,7 +212,7 @@ extern const QString ColorCornFlowerBlue;
 #define ELARC_ "ElArc_"
 
 extern const QString measurement_;
-extern const QString increment_;
+extern const QString variable_;
 extern const QString line_;
 extern const QString angleLine_;
 extern const QString arc_;

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,53 +72,60 @@ class VToolPointOfIntersectionArcs : public VToolSinglePoint
     Q_OBJECT
 
 public:
-    virtual void setDialog() Q_DECL_OVERRIDE;
+    virtual void         setDialog() Q_DECL_OVERRIDE;
+
     static VToolPointOfIntersectionArcs *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                                 VAbstractPattern *doc, VContainer *data);
     static VToolPointOfIntersectionArcs *Create(const quint32 _id, const QString &pointName, const quint32 &firstArcId,
                                                 const quint32 &secondArcId, CrossCirclesPoint pType,
-                                                const qreal &mx, const qreal &my, VMainGraphicsScene *scene,
+                                                qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
                                                 const Source &typeCreation);
-    static QPointF FindPoint(const VArc *arc1, const VArc *arc2, const CrossCirclesPoint pType);
+
+    static QPointF       FindPoint(const VArc *arc1, const VArc *arc2, const CrossCirclesPoint pType);
+
     static const QString ToolType;
-    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int          type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::PointOfIntersectionArcs) };
 
-    QString FirstArcName() const;
-    QString SecondArcName() const;
+    QString              FirstArcName() const;
+    QString              SecondArcName() const;
 
-    quint32 GetFirstArcId() const;
-    void    SetFirstArcId(const quint32 &value);
+    quint32              GetFirstArcId() const;
+    void                 SetFirstArcId(const quint32 &value);
 
-    quint32 GetSecondArcId() const;
-    void    SetSecondArcId(const quint32 &value);
+    quint32              GetSecondArcId() const;
+    void                 SetSecondArcId(const quint32 &value);
 
-    CrossCirclesPoint GetCrossCirclesPoint() const;
-    void              SetCrossCirclesPoint(const CrossCirclesPoint &value);
+    CrossCirclesPoint    GetCrossCirclesPoint() const;
+    void                 SetCrossCirclesPoint(const CrossCirclesPoint &value);
 
-    virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
+    virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
+
+protected slots:
+    virtual void         showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID) Q_DECL_OVERRIDE;
+
 protected:
-    virtual void RemoveReferens() Q_DECL_OVERRIDE;
-    virtual void contextMenuEvent ( QGraphicsSceneContextMenuEvent * event ) Q_DECL_OVERRIDE;
-    virtual void SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
-    virtual void ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
-    virtual void SetVisualization() Q_DECL_OVERRIDE;
+    virtual void         RemoveReferens() Q_DECL_OVERRIDE;
+    virtual void         SaveDialog(QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+    virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SetVisualization() Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(VToolPointOfIntersectionArcs)
 
     /** @brief firstArcId id first arc. */
-    quint32       firstArcId;
+    quint32              firstArcId;
 
     /** @brief secondArcId id second arc. */
-    quint32       secondArcId;
+    quint32              secondArcId;
 
-    CrossCirclesPoint crossPoint;
+    CrossCirclesPoint    crossPoint;
 
-    VToolPointOfIntersectionArcs(VAbstractPattern *doc, VContainer *data, const quint32 &id, const quint32 &firstArcId,
-                                 const quint32 &secondArcId, CrossCirclesPoint pType, const Source &typeCreation,
-                                 QGraphicsItem * parent = nullptr);
-};
+                         VToolPointOfIntersectionArcs(VAbstractPattern *doc, VContainer *data, const quint32 &id,
+                                                     const quint32 &firstArcId, const quint32 &secondArcId,
+                                                     CrossCirclesPoint pType, const Source &typeCreation,
+                                                     QGraphicsItem * parent = nullptr);};
 
 #endif // VTOOLPOINTOFINTERSECTIONARCS_H

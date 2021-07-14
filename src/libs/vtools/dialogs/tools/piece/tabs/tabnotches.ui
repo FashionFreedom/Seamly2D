@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>352</width>
-    <height>534</height>
+    <height>607</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>570</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string notr="true">Form</string>
@@ -25,7 +31,7 @@
         <x>0</x>
         <y>0</y>
         <width>332</width>
-        <height>514</height>
+        <height>587</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -46,7 +52,7 @@
             <x>10</x>
             <y>20</y>
             <width>291</width>
-            <height>21</height>
+            <height>22</height>
            </rect>
           </property>
           <layout class="QFormLayout" name="formLayout">
@@ -85,17 +91,27 @@
          <property name="enabled">
           <bool>true</bool>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>160</height>
+          </size>
+         </property>
          <property name="title">
           <string>Type</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
-           <widget class="QRadioButton" name="oneLine_RadioButton">
+           <widget class="QRadioButton" name="slitNotch_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>One line</string>
+             <string>Slit</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/slit_notch.png</normaloff>:/icon/24x24/slit_notch.png</iconset>
             </property>
             <attribute name="buttonGroup">
              <string notr="true">notchType_ButtonGroup</string>
@@ -103,12 +119,16 @@
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="twoLines_RadioButton">
+           <widget class="QRadioButton" name="tNotch_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Two lines</string>
+             <string>T Notch</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/t_notch.png</normaloff>:/icon/24x24/t_notch.png</iconset>
             </property>
             <attribute name="buttonGroup">
              <string notr="true">notchType_ButtonGroup</string>
@@ -116,12 +136,16 @@
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="threeLines_RadioButton">
+           <widget class="QRadioButton" name="uNotch_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>Three lines</string>
+             <string>U Notch</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/u_notch.png</normaloff>:/icon/24x24/u_notch.png</iconset>
             </property>
             <attribute name="buttonGroup">
              <string notr="true">notchType_ButtonGroup</string>
@@ -129,12 +153,16 @@
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="tMark_RadioButton">
+           <widget class="QRadioButton" name="vInternalNotch_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>T mark</string>
+             <string>V Internal </string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/internal_v_notch.png</normaloff>:/icon/24x24/internal_v_notch.png</iconset>
             </property>
             <attribute name="buttonGroup">
              <string notr="true">notchType_ButtonGroup</string>
@@ -142,12 +170,50 @@
            </widget>
           </item>
           <item>
-           <widget class="QRadioButton" name="vMark_RadioButton">
+           <widget class="QRadioButton" name="vExternalNotch_RadioButton">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="text">
-             <string>V mark</string>
+             <string>V External</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/external_v_notch.png</normaloff>:/icon/24x24/external_v_notch.png</iconset>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">notchType_ButtonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="castleNotch_RadioButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Castle</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/castle_notch.png</normaloff>:/icon/24x24/castle_notch.png</iconset>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">notchType_ButtonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="diamondNotch_RadioButton">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>Diamond</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/24x24/diamond_notch.png</normaloff>:/icon/24x24/diamond_notch.png</iconset>
             </property>
             <attribute name="buttonGroup">
              <string notr="true">notchType_ButtonGroup</string>
@@ -213,13 +279,13 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>50</height>
+           <height>190</height>
           </size>
          </property>
          <property name="title">
           <string>Geometry</string>
          </property>
-         <widget class="QCheckBox" name="showSecondNotch_CheckBox">
+         <widget class="QCheckBox" name="showNotch_CheckBox">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -235,7 +301,433 @@
            <string>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</string>
           </property>
           <property name="text">
-           <string>Show second notch on seam line</string>
+           <string>Show notch on seam allowance</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="resetWidth_PushButton">
+          <property name="geometry">
+           <rect>
+            <x>165</x>
+            <y>100</y>
+            <width>20</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Reset notch with to default.</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+            <normaloff>:/icons/win.icon.theme/24x24/actions/edit-undo.png</normaloff>:/icons/win.icon.theme/24x24/actions/edit-undo.png</iconset>
+          </property>
+         </widget>
+         <widget class="QLabel" name="notchCount_Label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>150</y>
+            <width>40</width>
+            <height>13</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Count:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="notchLength_DoubleSpinBox">
+          <property name="geometry">
+           <rect>
+            <x>55</x>
+            <y>75</y>
+            <width>100</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="keyboardTracking">
+           <bool>false</bool>
+          </property>
+          <property name="decimals">
+           <number>3</number>
+          </property>
+          <property name="minimum">
+           <double>0.125000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>5.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.125000000000000</double>
+          </property>
+         </widget>
+         <widget class="QLabel" name="notchLength_Label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>75</y>
+            <width>40</width>
+            <height>13</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Length:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="notchWidth_Label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>100</y>
+            <width>40</width>
+            <height>13</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string> Width:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="resetLength_PushButton">
+          <property name="geometry">
+           <rect>
+            <x>165</x>
+            <y>75</y>
+            <width>20</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Reset notch length to default.</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+            <normaloff>:/icons/win.icon.theme/24x24/actions/edit-undo.png</normaloff>:/icons/win.icon.theme/24x24/actions/edit-undo.png</iconset>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="notchCount_SpinBox">
+          <property name="geometry">
+           <rect>
+            <x>55</x>
+            <y>150</y>
+            <width>100</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>3</number>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="notchAngle_DoubleSpinBox">
+          <property name="geometry">
+           <rect>
+            <x>55</x>
+            <y>125</y>
+            <width>100</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="keyboardTracking">
+           <bool>false</bool>
+          </property>
+          <property name="decimals">
+           <number>3</number>
+          </property>
+          <property name="minimum">
+           <double>-360.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>360.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="resetAngle_PushButton">
+          <property name="geometry">
+           <rect>
+            <x>165</x>
+            <y>125</y>
+            <width>20</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>20</width>
+            <height>20</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Reset notch angle to default.</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+            <normaloff>:/icons/win.icon.theme/24x24/actions/edit-undo.png</normaloff>:/icons/win.icon.theme/24x24/actions/edit-undo.png</iconset>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="notchWidth_DoubleSpinBox">
+          <property name="geometry">
+           <rect>
+            <x>55</x>
+            <y>100</y>
+            <width>100</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="keyboardTracking">
+           <bool>false</bool>
+          </property>
+          <property name="decimals">
+           <number>3</number>
+          </property>
+          <property name="minimum">
+           <double>0.125000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>5.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.010000000000000</double>
+          </property>
+          <property name="value">
+           <double>0.125000000000000</double>
+          </property>
+         </widget>
+         <widget class="QLabel" name="notchAngle_Label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>125</y>
+            <width>40</width>
+            <height>13</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Angle:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="showSecondNotch_CheckBox">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>45</y>
+            <width>181</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="toolTip">
+           <string>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</string>
+          </property>
+          <property name="text">
+           <string>Show notch on seam line</string>
           </property>
          </widget>
         </widget>
@@ -259,10 +751,13 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../../../vmisc/share/resources/icon.qrc"/>
+ </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="notchType_ButtonGroup"/>
   <buttongroup name="notchSubType_ButtonGroup"/>
+  <buttongroup name="notchType_ButtonGroup"/>
  </buttongroups>
 </ui>

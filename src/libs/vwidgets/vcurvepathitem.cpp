@@ -82,8 +82,8 @@ QPainterPath VCurvePathItem::shape() const
     }
 
     const QPainterPath arrowsPath = VAbstractCurve::ShowDirection(m_directionArrows,
-                                                                  ScaleWidth(VAbstractCurve::lengthCurveDirectionArrow,
-                                                                             SceneScale(scene())));
+                                                                  scaleWidth(VAbstractCurve::lengthCurveDirectionArrow,
+                                                                             sceneScale(scene())));
     if (arrowsPath != QPainterPath())
     {
         itemPath.addPath(arrowsPath);
@@ -98,8 +98,8 @@ void VCurvePathItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
     ScalePenWidth();
 
     const QPainterPath arrowsPath = VAbstractCurve::ShowDirection(m_directionArrows,
-                                                                  ScaleWidth(VAbstractCurve::lengthCurveDirectionArrow,
-                                                                             SceneScale(scene())));
+                                                                  scaleWidth(VAbstractCurve::lengthCurveDirectionArrow,
+                                                                             sceneScale(scene())));
 
     if (arrowsPath != QPainterPath())
     {
@@ -133,7 +133,7 @@ void VCurvePathItem::SetPoints(const QVector<QPointF> &points)
 //---------------------------------------------------------------------------------------------------------------------
 void VCurvePathItem::ScalePenWidth()
 {
-    const qreal width = ScaleWidth(widthMainLine, SceneScale(scene()));
+    const qreal width = scaleWidth(widthMainLine, sceneScale(scene()));
 
     QPen toolPen = pen();
     toolPen.setWidthF(width);

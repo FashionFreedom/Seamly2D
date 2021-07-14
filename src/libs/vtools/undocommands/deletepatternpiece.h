@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -65,15 +65,17 @@ class DeletePatternPiece : public VUndoCommand
 {
     Q_OBJECT
 public:
-    DeletePatternPiece(VAbstractPattern *doc, const QString &namePP, QUndoCommand *parent = nullptr);
-    virtual ~DeletePatternPiece() Q_DECL_OVERRIDE;
-    virtual void undo() Q_DECL_OVERRIDE;
-    virtual void redo() Q_DECL_OVERRIDE;
+                  DeletePatternPiece(VAbstractPattern *doc, const QString &draftBlockName,
+                                     QUndoCommand *parent = nullptr);
+    virtual      ~DeletePatternPiece() Q_DECL_OVERRIDE;
+    virtual void  undo() Q_DECL_OVERRIDE;
+    virtual void  redo() Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(DeletePatternPiece)
-    QString     namePP;
-    QDomElement patternPiece;
-    QString     previousPPName;
+    QString       draftBlockName;
+    QDomElement   patternPiece;
+    QString       previousPPName;
 };
 
 #endif // DELETEPATTERNPIECE_H

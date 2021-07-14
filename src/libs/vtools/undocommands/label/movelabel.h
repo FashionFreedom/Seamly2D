@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -62,18 +62,21 @@
 
 class MoveLabel : public MoveAbstractLabel
 {
-    Q_OBJECT
 public:
-    MoveLabel(VAbstractPattern *doc, const double &x, const double &y, const quint32 &id,
-              QUndoCommand *parent = nullptr);
-    virtual ~MoveLabel();
+                    MoveLabel(VAbstractPattern *doc, const QPointF &pos, const quint32 &id,
+                              QUndoCommand *parent = nullptr);
+    virtual        ~MoveLabel()=default;
 
-    virtual bool mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
-    virtual int  id() const Q_DECL_OVERRIDE;
+    virtual bool    mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
+    virtual int     id() const Q_DECL_OVERRIDE;
+
 protected:
-    virtual void Do(double mx, double my) Q_DECL_OVERRIDE;
+    virtual void    Do(const QPointF &pos) Q_DECL_OVERRIDE;
+    
 private:
     Q_DISABLE_COPY(MoveLabel)
+    //Need for resizing scene rect
+    QGraphicsScene *m_scene;
 };
 
 #endif // MOVELABEL_H

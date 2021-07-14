@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -79,6 +79,8 @@ VAbstractConverter::VAbstractConverter(const QString &fileName)
 {
     setXMLContent(m_convertedFileName);// Throw an exception on error
     m_ver = GetVersion(GetVersionStr());
+
+    qDebug() << "VAbstractConverter::GetVersion() = " << m_ver;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -100,9 +102,12 @@ QString VAbstractConverter::Convert()
     }
     else
     {
-        const QString errorMsg(tr("Error openning a temp file: %1.").arg(m_tmpFile.errorString()));
+        const QString errorMsg(tr("Error Opening a temp file: %1.").arg(m_tmpFile.errorString()));
         throw VException(errorMsg);
     }
+
+    qDebug() << " m_ver = " << m_ver;
+    qDebug() << " MaxVer = " << MaxVer();
 
     m_ver < MaxVer() ? ApplyPatches() : DowngradeToCurrentMaxVersion();
 
@@ -137,6 +142,7 @@ QString VAbstractConverter::GetVersionStr() const
         const QDomElement domElement = domNode.toElement();
         if (domElement.isNull() == false)
         {
+            qDebug() << " VAbstractConverter::GetVersionStr()" << domElement.text();
             return domElement.text();
         }
     }
@@ -170,7 +176,6 @@ int VAbstractConverter::GetVersion(const QString &version)
     {
         return 0x0;
     }
-
     return (major<<16)|(minor<<8)|(patch);
 }
 

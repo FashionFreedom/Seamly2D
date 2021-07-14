@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -104,6 +104,7 @@
 
 template <class T> class QSharedPointer;
 
+bool VAbstractTool::m_suppressContextMenu = false;
 const QString VAbstractTool::AttrInUse = QStringLiteral("inUse");
 
 namespace
@@ -144,14 +145,14 @@ quint32 CreateNodeSplinePath(VContainer *data, quint32 id)
  * @param parent parent object.
  */
 VAbstractTool::VAbstractTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
-    :VDataTool(data, parent),
-      doc(doc),
-      id(id),
-      vis(),
-      selectionType(SelectionType::ByMouseRelease)
+    : VDataTool(data, parent)
+    , doc(doc)
+    , m_id(id)
+    , vis()
+    , selectionType(SelectionType::ByMouseRelease)
 {
     SCASSERT(doc != nullptr)
-    connect(this, &VAbstractTool::toolhaveChange, this->doc, &VAbstractPattern::haveLiteChange);
+    connect(this, &VAbstractTool::toolHasChanges, this->doc, &VAbstractPattern::haveLiteChange);
     connect(this->doc, &VAbstractPattern::FullUpdateFromFile, this, &VAbstractTool::FullUpdateFromFile);
     connect(this, &VAbstractTool::LiteUpdateTree, this->doc, &VAbstractPattern::LiteParseTree);
 }
@@ -257,9 +258,9 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief DeleteTool full delete object form scene and file.
+ * @brief deleteTool full delete object form scene and file.
  */
-void VAbstractTool::DeleteTool(bool ask)
+void VAbstractTool::deleteTool(bool ask)
 {
     qCDebug(vTool, "Deleting abstract tool.");
     if (_referens <= 1)
@@ -277,7 +278,7 @@ void VAbstractTool::DeleteTool(bool ask)
         }
 
         qCDebug(vTool, "Begin deleting.");
-        DelTool *delTool = new DelTool(doc, id);
+        DelTool *delTool = new DelTool(doc, m_id);
         connect(delTool, &DelTool::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
         qApp->getUndoStack()->push(delTool);
 
@@ -340,62 +341,96 @@ QMap<QString, QString> VAbstractTool::ColorsList()
         switch (i)
         {
             case 1: // ColorGreen
-                name = tr("green");
+                name = tr("Green");
                 break;
             case 2: // ColorBlue
-                name = tr("blue");
+                name = tr("Blue");
                 break;
             case 3: // ColorDarkRed
-                name = tr("dark red");
+                name = tr("Dark Red");
                 break;
             case 4: // ColorDarkGreen
-                name = tr("dark green");
+                name = tr("Dark Green");
                 break;
             case 5: // ColorDarkBlue
-                name = tr("dark blue");
+                name = tr("Dark Blue");
                 break;
             case 6: // ColorYellow
-                name = tr("yellow");
+                name = tr("Yellow");
                 break;
             case 7: // ColorLightSalmon
-                name = tr("light salmon");
+                name = tr("Light Salmon");
                 break;
             case 8: // ColorGoldenRod
-                name = tr("goldenrod");
+                name = tr("Goldenrod");
                 break;
             case 9: // ColorOrange
-                name = tr("orange");
+                name = tr("Orange");
                 break;
             case 10: // ColorDeepPink
-                name = tr("deep pink");
+                name = tr("Deep Pink");
                 break;
             case 11: // ColorViolet
-                name = tr("violet");
+                name = tr("Violet");
                 break;
             case 12: // ColorDarkViolet
-                name = tr("dark violet");
+                name = tr("Dark Violet");
                 break;
             case 13: // ColorMediumSeaGreen
-                name = tr("medium sea green");
+                name = tr("Medium Sea Green");
                 break;
             case 14: // ColorLime
-                name = tr("lime");
+                name = tr("Lime");
                 break;
             case 15: // ColorDeepSkyBlue
-                name = tr("deep sky blue");
+                name = tr("Deep Sky Blue");
                 break;
             case 16: // ColorCornFlowerBlue
-                name = tr("corn flower blue");
+                name = tr("Corn Flower Blue");
                 break;
             case 0: // ColorBlack
             default:
-                name = tr("black");
+                name = tr("Black");
                 break;
         }
 
         map.insert(colorNames.at(i), name);
     }
     return map;
+}
+
+QPixmap VAbstractTool::createColorIcon(const int w, const int h, const QString &color)
+{
+    QPixmap pixmap(w, h);
+    pixmap.fill(QColor(Qt::black));
+
+    QPainter painter(&pixmap);
+    painter.setPen(Qt::black);
+
+    const QRect rectangle = QRect(1, 1, w-2, h-2);
+
+    qDebug()<<"createColorIcon - color = "<< color;
+
+    if (color == "No Group")
+    {
+        painter.fillRect(rectangle, QColor(Qt::white));
+        painter.drawLine(0, 0, w, h);
+        painter.drawLine(0, h, w, 0);
+    }
+    else if (color == "By Group")
+    {
+        QFont font = painter.font();
+        font.setPixelSize(10);
+        painter.setFont(font);
+        painter.fillRect(rectangle, QColor(Qt::white));
+        painter.drawText(rectangle, Qt::AlignCenter, "GROUP");
+    }
+    else
+    {
+        painter.fillRect(rectangle, QColor(color));
+    }
+
+    return pixmap;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -407,7 +442,7 @@ QMap<QString, quint32> VAbstractTool::PointsList() const
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     for (i = objs->constBegin(); i != objs->constEnd(); ++i)
     {
-        if (i.key() != id)
+        if (i.key() != m_id)
         {
             QSharedPointer<VGObject> obj = i.value();
             if (obj->getType() == GOType::Point && obj->getMode() == Draw::Calculation)
@@ -418,6 +453,20 @@ QMap<QString, quint32> VAbstractTool::PointsList() const
         }
     }
     return list;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractTool::setPointNamePosition(quint32 id, const QPointF &pos)
+{
+    Q_UNUSED(id)
+    Q_UNUSED(pos)
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractTool::setPointNameVisiblity(quint32 id, bool visible)
+{
+    Q_UNUSED(id)
+    Q_UNUSED(visible)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -572,38 +621,32 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
 
     if (type == Tool::NodePoint)
     {
-        doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotch, node.isNotch());
-        doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchType,
-                          notchTypeToString(node.getNotchType()));
-        doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchSubType,
-                          notchSubTypeToString(node.getNotchSubType()));
+        if (node.isNotch())
+        {
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeIsNotch,         node.isNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowNotch,       node.showNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowSecondNotch, node.showSecondNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchType,    notchTypeToString(node.getNotchType()));
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchSubType, notchSubTypeToString(node.getNotchSubType()));
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchLength,     node.getNotchLength());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchWidth,      node.getNotchWidth());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchAngle,      node.getNotchAngle());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchCount,      node.getNotchCount());
+        }
 
-        if (not node.isNotch()
-                && node.getNotchType() == NotchType::OneLine
-                && node.getNotchSubType() == NotchSubType::Straightforward)
+        if (not node.isNotch() && node.getNotchType() == NotchType::Slit
+            && node.getNotchSubType() == NotchSubType::Straightforward)
         { // For backward compatebility.
-            nod.removeAttribute(VAbstractPattern::AttrNodeNotch);
+            nod.removeAttribute(VAbstractPattern::AttrNodeIsNotch);
             nod.removeAttribute(VAbstractPattern::AttrNodeNotchType);
             nod.removeAttribute(VAbstractPattern::AttrNodeNotchSubType);
         }
     }
     else
     { // Wrong configuration.
-        nod.removeAttribute(VAbstractPattern::AttrNodeNotch);
+        nod.removeAttribute(VAbstractPattern::AttrNodeIsNotch);
         nod.removeAttribute(VAbstractPattern::AttrNodeNotchType);
         nod.removeAttribute(VAbstractPattern::AttrNodeNotchSubType);
-    }
-
-    {
-        const bool showSecond = node.showSecondNotch();
-        if (not showSecond)
-        {
-            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowSecondNotch, showSecond);
-        }
-        else
-        { // For backward compatebility.
-            nod.removeAttribute(VAbstractPattern::AttrNodeShowSecondNotch);
-        }
     }
 
     return nod;

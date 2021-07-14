@@ -168,8 +168,8 @@ void DialogInternalPath::ChosenObject(quint32 id, const SceneObject &type)
 
             if (p.CountNodes() == 1)
             {
-                emit ToolTip(tr("Select main path objects, <b>Shift</b> - reverse direction curve, "
-                                "<b>Enter</b> - finish creation"));
+                emit ToolTip(tr("Select main path objects, Use <b>SHIFT</b> to reverse curve direction, "
+                                "Press <b>ENTER</b> to finish path creation "));
 
                 if (not qApp->getCurrentScene()->items().contains(visPath))
                 {
@@ -237,8 +237,8 @@ void DialogInternalPath::ShowVisualization()
 void DialogInternalPath::closeEvent(QCloseEvent *event)
 {
     ui->widthFormula_PlainTextEdit->blockSignals(true);
-    ui->beforeWidthForumla_PlainTextEdit->blockSignals(true);
-    ui->afterWidthForumla_PlainTextEdit->blockSignals(true);
+    ui->beforeWidthFormula_PlainTextEdit->blockSignals(true);
+    ui->afterWidthFormula_PlainTextEdit->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
@@ -252,6 +252,8 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
     }
 
     QScopedPointer<QMenu> menu(new QMenu());
+
+    NodeInfo info;
 
     QListWidgetItem *rowItem = ui->listWidget->item(row);
     SCASSERT(rowItem != nullptr);
@@ -282,14 +284,18 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
         rowNode.SetReverse(not rowNode.GetReverse());
+        info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
-        rowItem->setText(GetNodeName(rowNode, true));
+        rowItem->setIcon(QIcon(info.icon));
+        rowItem->setText(info.name);
     }
     else if (selectedAction == actionNotch)
     {
         rowNode.setNotch(not rowNode.isNotch());
+        info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
-        rowItem->setText(GetNodeName(rowNode, true));
+        rowItem->setIcon(QIcon(info.icon));
+        rowItem->setText(info.name);
     }
 
     ValidObjects(PathIsValid());
@@ -330,11 +336,11 @@ void DialogInternalPath::NameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::NodeChanged(int index)
 {
-    ui->beforeWidthForumla_PlainTextEdit->setDisabled(true);
+    ui->beforeWidthFormula_PlainTextEdit->setDisabled(true);
     ui->beforeExpr_ToolButton->setDisabled(true);
     ui->beforeDefault_PushButton->setDisabled(true);
 
-    ui->afterWidthForumla_PlainTextEdit->setDisabled(true);
+    ui->afterWidthFormula_PlainTextEdit->setDisabled(true);
     ui->afterExpr_ToolButton->setDisabled(true);
     ui->afterDefault_PushButton->setDisabled(true);
 
@@ -351,7 +357,7 @@ void DialogInternalPath::NodeChanged(int index)
             const VPieceNode &node = path.at(nodeIndex);
 
             // Seam alowance before
-            ui->beforeWidthForumla_PlainTextEdit->setEnabled(true);
+            ui->beforeWidthFormula_PlainTextEdit->setEnabled(true);
             ui->beforeExpr_ToolButton->setEnabled(true);
 
             QString w1Formula = node.GetFormulaSABefore();
@@ -364,11 +370,11 @@ void DialogInternalPath::NodeChanged(int index)
                 this->DeployWidthBeforeFormulaTextEdit();
             }
             w1Formula = qApp->TrVars()->FormulaToUser(w1Formula, qApp->Settings()->GetOsSeparator());
-            ui->beforeWidthForumla_PlainTextEdit->setPlainText(w1Formula);
-            MoveCursorToEnd(ui->beforeWidthForumla_PlainTextEdit);
+            ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
+            MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
             // Seam alowance after
-            ui->afterWidthForumla_PlainTextEdit->setEnabled(true);
+            ui->afterWidthFormula_PlainTextEdit->setEnabled(true);
             ui->afterExpr_ToolButton->setEnabled(true);
 
             QString w2Formula = node.GetFormulaSAAfter();
@@ -381,8 +387,8 @@ void DialogInternalPath::NodeChanged(int index)
                 this->DeployWidthAfterFormulaTextEdit();
             }
             w2Formula = qApp->TrVars()->FormulaToUser(w2Formula, qApp->Settings()->GetOsSeparator());
-            ui->afterWidthForumla_PlainTextEdit->setPlainText(w2Formula);
-            MoveCursorToEnd(ui->afterWidthForumla_PlainTextEdit);
+            ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
+            MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
 
             // Angle type
             ui->angle_ComboBox->setEnabled(true);
@@ -395,8 +401,8 @@ void DialogInternalPath::NodeChanged(int index)
     }
     else
     {
-        ui->beforeWidthForumla_PlainTextEdit->setPlainText("");
-        ui->afterWidthForumla_PlainTextEdit->setPlainText("");
+        ui->beforeWidthFormula_PlainTextEdit->setPlainText("");
+        ui->afterWidthFormula_PlainTextEdit->setPlainText("");
         ui->angle_ComboBox->setCurrentIndex(-1);
     }
 
@@ -406,15 +412,20 @@ void DialogInternalPath::NodeChanged(int index)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::notchChanged(int index)
 {
-    ui->oneLine_RadioButton->setDisabled(true);
-    ui->twoLines_RadioButton->setDisabled(true);
-    ui->threeLines_RadioButton->setDisabled(true);
-    ui->tMark_RadioButton->setDisabled(true);
-    ui->vMark_RadioButton->setDisabled(true);
+    ui->slitNotch_RadioButton->setDisabled(true);
+    ui->tNotch_RadioButton->setDisabled(true);
+    ui->uNotch_RadioButton->setDisabled(true);
+    ui->vInternalNotch_RadioButton->setDisabled(true);
+    ui->vExternalNotch_RadioButton->setDisabled(true);
+    ui->castleNotch_RadioButton->setDisabled(true);
+    ui->diamondNotch_RadioButton->setDisabled(true);
 
     ui->straightforward_RadioButton->setDisabled(true);
     ui->bisector_RadioButton->setDisabled(true);
     ui->intersection_RadioButton->setDisabled(true);
+
+    ui->showSecondNotch_CheckBox->setDisabled(true);
+    ui->showSecondNotch_CheckBox->blockSignals(true);
 
     ui->notchType_GroupBox->blockSignals(true);
     ui->notchSubType_GroupBox->blockSignals(true);
@@ -427,35 +438,43 @@ void DialogInternalPath::notchChanged(int index)
         {
             const VPieceNode &node = path.at(nodeIndex);
 
-            // Line type
-            ui->oneLine_RadioButton->setEnabled(true);
-            ui->twoLines_RadioButton->setEnabled(true);
-            ui->threeLines_RadioButton->setEnabled(true);
-            ui->tMark_RadioButton->setEnabled(true);
-            ui->vMark_RadioButton->setEnabled(true);
+            // Notch type
+            ui->slitNotch_RadioButton->setEnabled(true);
+            ui->tNotch_RadioButton->setEnabled(true);
+            ui->uNotch_RadioButton->setEnabled(true);
+            ui->vInternalNotch_RadioButton->setEnabled(true);
+            ui->vExternalNotch_RadioButton->setEnabled(true);
+            ui->castleNotch_RadioButton->setEnabled(true);
+            ui->diamondNotch_RadioButton->setEnabled(true);
 
             switch(node.getNotchType())
             {
-                case NotchType::OneLine:
-                    ui->oneLine_RadioButton->setChecked(true);
+                case NotchType::Slit:
+                    ui->slitNotch_RadioButton->setChecked(true);
                     break;
-                case NotchType::TwoLines:
-                    ui->twoLines_RadioButton->setChecked(true);
+                case NotchType::TNotch:
+                    ui->tNotch_RadioButton->setChecked(true);
                     break;
-                case NotchType::ThreeLines:
-                    ui->threeLines_RadioButton->setChecked(true);
+                case NotchType::UNotch:
+                    ui->uNotch_RadioButton->setChecked(true);
                     break;
-                case NotchType::TMark:
-                    ui->tMark_RadioButton->setChecked(true);
+                case NotchType::VInternal:
+                    ui->vInternalNotch_RadioButton->setChecked(true);
                     break;
-                case NotchType::VMark:
-                    ui->vMark_RadioButton->setChecked(true);
+                case NotchType::VExternal:
+                    ui->vExternalNotch_RadioButton->setChecked(true);
+                    break;
+                case NotchType::Castle:
+                    ui->castleNotch_RadioButton->setChecked(true);
+                    break;
+                case NotchType::Diamond:
+                    ui->diamondNotch_RadioButton->setChecked(true);
                     break;
                 default:
                     break;
             }
 
-            // Angle type
+            // Sub type
             ui->straightforward_RadioButton->setEnabled(true);
             ui->bisector_RadioButton->setEnabled(true);
             ui->intersection_RadioButton->setEnabled(true);
@@ -483,7 +502,7 @@ void DialogInternalPath::notchChanged(int index)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::ReturnDefBefore()
 {
-    ui->beforeWidthForumla_PlainTextEdit->setPlainText(currentSeamAllowance);
+    ui->beforeWidthFormula_PlainTextEdit->setPlainText(currentSeamAllowance);
     if (QPushButton* button = qobject_cast<QPushButton*>(sender()))
     {
         button->setEnabled(false);
@@ -493,7 +512,7 @@ void DialogInternalPath::ReturnDefBefore()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::ReturnDefAfter()
 {
-    ui->afterWidthForumla_PlainTextEdit->setPlainText(currentSeamAllowance);
+    ui->afterWidthFormula_PlainTextEdit->setPlainText(currentSeamAllowance);
     if (QPushButton* button = qobject_cast<QPushButton*>(sender()))
     {
         button->setEnabled(false);
@@ -510,32 +529,42 @@ void DialogInternalPath::notchTypeChanged(int id)
         if (rowItem)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
+            const NodeInfo info = getNodeInfo(rowNode, true);
 
-            NotchType lineType = NotchType::OneLine;
-            if (id == ui->notchType_ButtonGroup->id(ui->oneLine_RadioButton))
+            NotchType notchType = NotchType::Slit;
+            if (id == ui->notchType_ButtonGroup->id(ui->slitNotch_RadioButton))
             {
-                lineType = NotchType::OneLine;
+                notchType = NotchType::Slit;
             }
-            else if (id == ui->notchType_ButtonGroup->id(ui->twoLines_RadioButton))
+            else if (id == ui->notchType_ButtonGroup->id(ui->tNotch_RadioButton))
             {
-                lineType = NotchType::TwoLines;
+                notchType = NotchType::TNotch;
             }
-            else if (id == ui->notchType_ButtonGroup->id(ui->threeLines_RadioButton))
+            else if (id == ui->notchType_ButtonGroup->id(ui->uNotch_RadioButton))
             {
-                lineType = NotchType::ThreeLines;
+                notchType = NotchType::UNotch;
             }
-            else if (id == ui->notchType_ButtonGroup->id(ui->tMark_RadioButton))
+            else if (id == ui->notchType_ButtonGroup->id(ui->vInternalNotch_RadioButton))
             {
-                lineType = NotchType::TMark;
+                notchType = NotchType::VInternal;
             }
-            else if (id == ui->notchType_ButtonGroup->id(ui->vMark_RadioButton))
+            else if (id == ui->notchType_ButtonGroup->id(ui->vExternalNotch_RadioButton))
             {
-                lineType = NotchType::VMark;
+                notchType = NotchType::VExternal;
+            }
+            else if (id == ui->notchType_ButtonGroup->id(ui->castleNotch_RadioButton))
+            {
+                notchType = NotchType::Castle;
+            }
+            else if (id == ui->notchType_ButtonGroup->id(ui->diamondNotch_RadioButton))
+            {
+                notchType = NotchType::Diamond;
             }
 
-            rowNode.setNotchLineType(lineType);
+            rowNode.setNotchType(notchType);
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
-            rowItem->setText(GetNodeName(rowNode, true));
+            rowItem->setIcon(QIcon(info.icon));
+            rowItem->setText(info.name);
 
             ListChanged();
         }
@@ -553,23 +582,23 @@ void DialogInternalPath::notchSubTypeChanged(int id)
         {
             VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
 
-            NotchSubType angleType = NotchSubType::Straightforward;
+            NotchSubType notchSubType = NotchSubType::Straightforward;
             if (id == ui->notchSubType_ButtonGroup->id(ui->straightforward_RadioButton))
             {
-                angleType = NotchSubType::Straightforward;
+                notchSubType = NotchSubType::Straightforward;
             }
             else if (id == ui->notchSubType_ButtonGroup->id(ui->bisector_RadioButton))
             {
-                angleType = NotchSubType::Bisector;
+                notchSubType = NotchSubType::Bisector;
             }
             else if (id == ui->notchSubType_ButtonGroup->id(ui->intersection_RadioButton))
             {
-                angleType = NotchSubType::Intersection;
+                notchSubType = NotchSubType::Intersection;
             }
 
-            rowNode.setNotchAngleType(angleType);
+            rowNode.setNotchSubType(notchSubType);
             rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
-            rowItem->setText(GetNodeName(rowNode, true));
+            //rowItem->setText(getNodeInfo(rowNode, true));
 
             ListChanged();
         }
@@ -601,7 +630,7 @@ void DialogInternalPath::EvalWidthBefore()
 {
     labelEditFormula = ui->beforeWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    QString formula = ui->beforeWidthForumla_PlainTextEdit->toPlainText();
+    QString formula = ui->beforeWidthFormula_PlainTextEdit->toPlainText();
     bool flagFormula = false; // fake flag
     Eval(formula, flagFormula, ui->beforeWidthResult_Label, postfix, false, true);
 
@@ -619,7 +648,7 @@ void DialogInternalPath::EvalWidthAfter()
 {
     labelEditFormula = ui->afterWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    QString formula = ui->afterWidthForumla_PlainTextEdit->toPlainText();
+    QString formula = ui->afterWidthFormula_PlainTextEdit->toPlainText();
     bool flagFormula = false; // fake flag
     Eval(formula, flagFormula, ui->afterWidthResult_Label, postfix, false, true);
 
@@ -693,7 +722,7 @@ void DialogInternalPath::WidthBeforeChanged()
     labelResultCalculation = ui->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->beforeWidthForumla_PlainTextEdit, m_timerWidthBefore, postfix);
+    ValFormulaChanged(flagFormula, ui->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -703,7 +732,7 @@ void DialogInternalPath::WidthAfterChanged()
     labelResultCalculation = ui->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     bool flagFormula = false;
-    ValFormulaChanged(flagFormula, ui->afterWidthForumla_PlainTextEdit, m_timerWidthAfter, postfix);
+    ValFormulaChanged(flagFormula, ui->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -715,13 +744,13 @@ void DialogInternalPath::DeployWidthFormulaTextEdit()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::DeployWidthBeforeFormulaTextEdit()
 {
-    DeployFormula(ui->beforeWidthForumla_PlainTextEdit, ui->beforeWidthGrow_PushButton, m_beforeWidthFormula);
+    DeployFormula(ui->beforeWidthFormula_PlainTextEdit, ui->beforeWidthGrow_PushButton, m_beforeWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::DeployWidthAfterFormulaTextEdit()
 {
-    DeployFormula(ui->afterWidthForumla_PlainTextEdit, ui->afterWidthGrow_PushButton, m_afterWidthFormula);
+    DeployFormula(ui->afterWidthFormula_PlainTextEdit, ui->afterWidthGrow_PushButton, m_afterWidthFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -744,6 +773,12 @@ void DialogInternalPath::InitPathTab()
 
     ui->listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->listWidget, &QListWidget::customContextMenuRequested, this, &DialogInternalPath::ShowContextMenu);
+
+    connect(ui->listWidget, &QListWidget::itemSelectionChanged, this, &DialogInternalPath::setMoveExclusions);
+    connect(ui->moveTop_ToolButton,    &QToolButton::clicked, this, [this](){moveListRowTop(ui->listWidget);});
+    connect(ui->moveUp_ToolButton,     &QToolButton::clicked, this, [this](){moveListRowTop(ui->listWidget);});
+    connect(ui->moveDown_ToolButton,   &QToolButton::clicked, this, [this](){moveListRowDown(ui->listWidget);});
+    connect(ui->moveBottom_ToolButton, &QToolButton::clicked, this, [this](){moveListRowBottom(ui->listWidget);});
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -751,12 +786,12 @@ void DialogInternalPath::InitSeamAllowanceTab()
 {
     plainTextEditFormula = ui->widthFormula_PlainTextEdit;
     this->m_widthFormula = ui->widthFormula_PlainTextEdit->height();
-    this->m_beforeWidthFormula = ui->beforeWidthForumla_PlainTextEdit->height();
-    this->m_afterWidthFormula = ui->afterWidthForumla_PlainTextEdit->height();
+    this->m_beforeWidthFormula = ui->beforeWidthFormula_PlainTextEdit->height();
+    this->m_afterWidthFormula = ui->afterWidthFormula_PlainTextEdit->height();
 
     ui->widthFormula_PlainTextEdit->installEventFilter(this);
-    ui->beforeWidthForumla_PlainTextEdit->installEventFilter(this);
-    ui->afterWidthForumla_PlainTextEdit->installEventFilter(this);
+    ui->beforeWidthFormula_PlainTextEdit->installEventFilter(this);
+    ui->afterWidthFormula_PlainTextEdit->installEventFilter(this);
 
     m_timerWidth = new QTimer(this);
     connect(m_timerWidth, &QTimer::timeout, this, &DialogInternalPath::EvalWidth);
@@ -787,9 +822,9 @@ void DialogInternalPath::InitSeamAllowanceTab()
     connect(ui->afterExpr_ToolButton, &QPushButton::clicked, this, &DialogInternalPath::FXWidthAfter);
 
     connect(ui->widthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this, &DialogInternalPath::WidthChanged);
-    connect(ui->beforeWidthForumla_PlainTextEdit, &QPlainTextEdit::textChanged, this,
+    connect(ui->beforeWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
             &DialogInternalPath::WidthBeforeChanged);
-    connect(ui->afterWidthForumla_PlainTextEdit, &QPlainTextEdit::textChanged, this,
+    connect(ui->afterWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
             &DialogInternalPath::WidthAfterChanged);
 
     connect(ui->widthGrow_PushButton, &QPushButton::clicked, this, &DialogInternalPath::DeployWidthFormulaTextEdit);
@@ -837,9 +872,8 @@ void DialogInternalPath::InitNodesList()
         const VPieceNode node = path.at(i);
         if (node.GetTypeTool() == Tool::NodePoint)
         {
-            const QString name = GetNodeName(node);
-
-            ui->nodes_ComboBox->addItem(name, node.GetId());
+            const NodeInfo info = getNodeInfo(node);
+            ui->nodes_ComboBox->addItem(info.name, node.GetId());
         }
     }
     ui->nodes_ComboBox->blockSignals(false);
@@ -871,9 +905,9 @@ void DialogInternalPath::InitNotchesList()
         const VPieceNode node = nodes.at(i);
         if (node.GetTypeTool() == Tool::NodePoint && node.isNotch())
         {
-            const QString name = GetNodeName(node);
+            const NodeInfo info = getNodeInfo(node);
 
-            ui->notches_ComboBox->addItem(name, node.GetId());
+            ui->notches_ComboBox->addItem(QIcon(info.icon), info.name, node.GetId());
         }
     }
     ui->notches_ComboBox->blockSignals(false);
@@ -960,7 +994,7 @@ void DialogInternalPath::SetType(PiecePathType type)
 //---------------------------------------------------------------------------------------------------------------------
 Qt::PenStyle DialogInternalPath::GetPenType() const
 {
-    return LineStyleToPenStyle(GetComboBoxCurrentData(ui->penType_ComboBox, TypeLineLine));
+    return LineStyleToPenStyle(GetComboBoxCurrentData(ui->penType_ComboBox, LineTypeSolidLine));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1218,7 +1252,7 @@ void DialogInternalPath::NewItem(const VPieceNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogInternalPath::GetFormulaSAWidthBefore() const
 {
-    QString width = ui->beforeWidthForumla_PlainTextEdit->toPlainText();
+    QString width = ui->beforeWidthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
     return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
 }
@@ -1226,7 +1260,37 @@ QString DialogInternalPath::GetFormulaSAWidthBefore() const
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogInternalPath::GetFormulaSAWidthAfter() const
 {
-    QString width = ui->afterWidthForumla_PlainTextEdit->toPlainText();
+    QString width = ui->afterWidthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
     return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->GetOsSeparator());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogInternalPath::setMoveExclusions()
+{
+    ui->moveTop_ToolButton->setEnabled(false);
+    ui->moveUp_ToolButton->setEnabled(false);
+    ui->moveDown_ToolButton->setEnabled(false);
+    ui->moveBottom_ToolButton->setEnabled(false);
+
+    if (ui->listWidget->count() > 1)
+    {
+        if (ui->listWidget->currentRow() == 0)
+        {
+            ui->moveDown_ToolButton->setEnabled(true);
+            ui->moveBottom_ToolButton->setEnabled(true);
+        }
+        else if (ui->listWidget->currentRow() == ui->listWidget->count() - 1)
+        {
+            ui->moveTop_ToolButton->setEnabled(true);
+            ui->moveUp_ToolButton->setEnabled(true);
+        }
+        else
+        {
+            ui->moveTop_ToolButton->setEnabled(true);
+            ui->moveUp_ToolButton->setEnabled(true);
+            ui->moveDown_ToolButton->setEnabled(true);
+            ui->moveBottom_ToolButton->setEnabled(true);
+        }
+    }
 }

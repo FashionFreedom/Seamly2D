@@ -21,7 +21,7 @@
  **
  **************************************************************************
 
- ************************************************************************
+ **************************************************************************
  **
  **  @file   preferencespatternpage.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -47,7 +47,7 @@
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- *************************************************************************/
+ **************************************************************************/
 
 #include "preferencespatternpage.h"
 #include "ui_preferencespatternpage.h"
@@ -58,10 +58,11 @@
 #include <QMessageBox>
 #include <QDate>
 #include <QTime>
+#include <QComboBox>
 
 namespace
 {
-QStringList ComboBoxAllStrings(QComboBox *combo)
+QStringList initAllStringsComboBox(QComboBox *combo)
 {
     SCASSERT(combo != nullptr)
 
@@ -81,16 +82,16 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
       ui(new Ui::PreferencesPatternPage)
 {
     ui->setupUi(this);
-    ui->graphOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    initDefaultSeamAllowance();
+    initLabelDateTimeFormats();
+    initNotches();
+
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
-
-    InitDefaultSeamAllowance();
-    InitLabelDateTimeFormats();
-
     ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
-    ui->doubleNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->isDoubleNotch());
+    ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
     ui->hideMainPath_CheckBox->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
-    ui->labelFont_ComboBox->setCurrentFont(qApp->Seamly2DSettings()->GetLabelFont());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -104,11 +105,6 @@ void PreferencesPatternPage::Apply()
 {
     VSettings *settings = qApp->Seamly2DSettings();
 
-    // Scene antialiasing
-    settings->SetGraphicalOutput(ui->graphOutput_CheckBox->isChecked());
-    qApp->getSceneView()->setRenderHint(QPainter::Antialiasing, ui->graphOutput_CheckBox->isChecked());
-    qApp->getSceneView()->setRenderHint(QPainter::SmoothPixmapTransform, ui->graphOutput_CheckBox->isChecked());
-
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
@@ -118,64 +114,90 @@ void PreferencesPatternPage::Apply()
 
     settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
     settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
-    settings->SetLabelFont(ui->labelFont_ComboBox->currentFont());
 
-    if (settings->isDoubleNotch() != ui->doubleNotch_CheckBox->isChecked())
+    settings->setDefaultNotchType(ui->defaultNotchType_ComboBox->currentData().toString());
+    settings->setDefaultNotchLength(ui->defaultNotchLength_DoubleSpinBox->value());
+    settings->setDefaultNotchWidth(ui->defaultNotchWidth_DoubleSpinBox->value());
+    if (settings->showSecondNotch() != ui->showSecondNotch_CheckBox->isChecked())
     {
-        settings->setDoubleNotch(ui->doubleNotch_CheckBox->isChecked());
+        settings->setShowSecondNotch(ui->showSecondNotch_CheckBox->isChecked());
         qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
     }
 
     settings->SetLabelDateFormat(ui->dateFormats_ComboBox->currentText());
     settings->SetLabelTimeFormat(ui->timeFormats_ComboBox->currentText());
 
-    settings->SetUserDefinedDateFormats(ComboBoxAllStrings(ui->dateFormats_ComboBox));
-    settings->SetUserDefinedTimeFormats(ComboBoxAllStrings(ui->timeFormats_ComboBox));
+    settings->SetUserDefinedDateFormats(initAllStringsComboBox(ui->dateFormats_ComboBox));
+    settings->SetUserDefinedTimeFormats(initAllStringsComboBox(ui->timeFormats_ComboBox));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPatternPage::InitDefaultSeamAllowance()
+void PreferencesPatternPage::initDefaultSeamAllowance()
 {
     ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
-    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPatternPage::EditDateTimeFormats()
+void PreferencesPatternPage::editDateTimeFormats()
 {
     VSettings *settings = qApp->Seamly2DSettings();
 
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     if (button == ui->editDateFormats_PushButton)
     {
-        CallDateTimeFormatEditor(QDate::currentDate(), settings->PredefinedDateFormats(),
+        callDateTimeFormatEditor(QDate::currentDate(), settings->PredefinedDateFormats(),
                                  settings->GetUserDefinedDateFormats(), ui->dateFormats_ComboBox);
     }
     else if (button == ui->editTimeFormats_PushButton)
     {
-        CallDateTimeFormatEditor(QTime::currentTime(), settings->PredefinedTimeFormats(),
+        callDateTimeFormatEditor(QTime::currentTime(), settings->PredefinedTimeFormats(),
                                  settings->GetUserDefinedTimeFormats(), ui->timeFormats_ComboBox);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPatternPage::InitLabelDateTimeFormats()
+void PreferencesPatternPage::initLabelDateTimeFormats()
 {
     VSettings *settings = qApp->Seamly2DSettings();
 
-    InitComboBoxFormats(ui->dateFormats_ComboBox,
+    initComboBoxFormats(ui->dateFormats_ComboBox,
                         VSettings::PredefinedDateFormats() + settings->GetUserDefinedDateFormats(),
                         settings->GetLabelDateFormat());
-    InitComboBoxFormats(ui->timeFormats_ComboBox,
+    initComboBoxFormats(ui->timeFormats_ComboBox,
                         VSettings::PredefinedTimeFormats() + settings->GetUserDefinedTimeFormats(),
                         settings->GetLabelTimeFormat());
 
-    connect(ui->editDateFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::EditDateTimeFormats);
-    connect(ui->editTimeFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::EditDateTimeFormats);
+    connect(ui->editDateFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::editDateTimeFormats);
+    connect(ui->editTimeFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::editDateTimeFormats);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPatternPage::InitComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat)
+void PreferencesPatternPage::initNotches()
+{
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("Slit"),       "slit");
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("T Notch"),    "tNotch");
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("U Notch"),    "uNotch");
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("V Internal"), "vInternal");
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("V External"), "vExternal");
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("Castle"),     "castle");
+    ui->defaultNotchType_ComboBox->addItem(QIcon(), tr("Diamond"),    "diamond");
+
+    //-----------------------  Get Default Notch
+    int index = ui->defaultNotchType_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultNotchType());
+    if (index != -1)
+    {
+        ui->defaultNotchType_ComboBox->setCurrentIndex(index);
+    }
+    ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
+    ui->defaultNotchLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchLength());
+    ui->defaultNotchLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultNotchWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchWidth());
+    ui->defaultNotchWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesPatternPage::initComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat)
 {
     SCASSERT(box != nullptr)
 
@@ -193,7 +215,7 @@ void PreferencesPatternPage::InitComboBoxFormats(QComboBox *box, const QStringLi
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-void PreferencesPatternPage::CallDateTimeFormatEditor(const T &type, const QStringList &predefinedFormats,
+void PreferencesPatternPage::callDateTimeFormatEditor(const T &type, const QStringList &predefinedFormats,
                                                       const QStringList &userDefinedFormats, QComboBox *box)
 {
     SCASSERT(box != nullptr)

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -67,12 +67,14 @@ class VToolOptionsPropertyBrowser;
 class VMeasurements;
 class QFileSystemWatcher;
 class QLabel;
-class DialogIncrements;
+class DialogVariables;
 class DialogTool;
 class DialogHistory;
 class VWidgetGroups;
 class VWidgetDetails;
 class QToolButton;
+class QDoubleSpinBox;
+class QFontComboBox;
 
 /**
  * @brief The MainWindow class main windows.
@@ -90,6 +92,7 @@ public slots:
     void ProcessCMD();
 
     virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void zoomToSelected() Q_DECL_OVERRIDE;
 
 signals:
     void RefreshHistory();
@@ -117,6 +120,10 @@ signals:
     void EnableNodeLabelHover(bool enable) const;
     void EnableNodePointHover(bool enable) const;
     void EnableDetailHover(bool enable) const;
+
+    void signalZoomToAreaActive(bool enable) const;
+    void signalZoomPanActive(bool enable) const;
+
 protected:
     virtual void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
@@ -126,7 +133,9 @@ protected:
     virtual void CleanLayout() Q_DECL_OVERRIDE;
     virtual void PrepareSceneList() Q_DECL_OVERRIDE;
     virtual void ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+
 private slots:
+    void zoomScaleChanged(qreal scale);
     void MouseMove(const QPointF &scenePos);
     void Clear();
     void PatternChangesWereSaved(bool saved);
@@ -135,58 +144,68 @@ private slots:
     void SetEnabledGUI(bool enabled);
     void GlobalChangePP(const QString &patternPiece);
     void ToolBarStyles();
-    void ShowPaper(int index);
+    void resetOrigins();
+    void showLayoutPages(int index);
     void Preferences();
 #if defined(Q_OS_MAC)
     void CreateMeasurements();
 #endif
-    void ExportLayoutAs();
-    void ExportDetailsAs();
+    void exportLayoutAs();
+    void exportPiecesAs();
 
-    void ArrowTool();
-    void ToolEndLine(bool checked);
-    void ToolLine(bool checked);
-    void ToolAlongLine(bool checked);
-    void ToolMidpoint(bool checked);
-    void ToolShoulderPoint(bool checked);
-    void ToolNormal(bool checked);
-    void ToolBisector(bool checked);
-    void ToolLineIntersect(bool checked);
-    void ToolSpline(bool checked);
-    void ToolCubicBezier(bool checked);
-    void ToolCutSpline(bool checked);
-    void ToolArc(bool checked);
-    void ToolEllipticalArc(bool checked);
-    void ToolSplinePath(bool checked);
-    void ToolCubicBezierPath(bool checked);
-    void ToolCutSplinePath(bool checked);
-    void ToolPointOfContact(bool checked);
-    void ToolDetail(bool checked);
-    void ToolInternalPath(bool checked);
-    void ToolPin(bool checked);
-    void ToolHeight(bool checked);
-    void ToolTriangle(bool checked);
-    void ToolPointOfIntersection(bool checked);
-    void ToolUnionDetails(bool checked);
-    void ToolGroup(bool checked);
-    void ToolRotation(bool checked);
-    void ToolFlippingByLine(bool checked);
-    void ToolFlippingByAxis(bool checked);
-    void ToolMove(bool checked);
-    void ToolCutArc(bool checked);
-    void ToolLineIntersectAxis(bool checked);
-    void ToolCurveIntersectAxis(bool checked);
-    void ToolArcIntersectAxis(bool checked);
-    void ToolPointOfIntersectionArcs(bool checked);
-    void ToolPointOfIntersectionCircles(bool checked);
-    void ToolPointOfIntersectionCurves(bool checked);
-    void ToolPointFromCircleAndTangent(bool checked);
-    void ToolPointFromArcAndTangent(bool checked);
-    void ToolArcWithLength(bool checked);
-    void ToolTrueDarts(bool checked);
-    void ToolInsertNode(bool checked);
+    void handleArrowTool();
+    void handlePointAtDistanceAngleTool(bool checked);
+    void handleAlongLineTool(bool checked);
+    void handleMidpointTool(bool checked);
+    void handleShoulderPointTool(bool checked);
+    void handleNormalTool(bool checked);
+    void handleBisectorTool(bool checked);
+    void handleHeightTool(bool checked);
+    void handleTriangleTool(bool checked);
+    void handleLineIntersectAxisTool(bool checked);
+    void handlePointOfContactTool(bool checked);
+    void handlePointOfIntersectionTool(bool checked);
 
-    void ActionDraw(bool checked);
+    void handleLineTool(bool checked);
+    void handleLineIntersectTool(bool checked);
+
+    void handleCurveTool(bool checked);
+    void handleSplineTool(bool checked);
+    void handleCurveWithControlPointsTool(bool checked);
+    void handleSplineWithControlPointsTool(bool checked);
+    void handlePointAlongCurveTool(bool checked);
+    void handlePointAlongSplineTool(bool checked);
+    void handleCurveIntersectCurveTool(bool checked);
+    void handleCurveIntersectAxisTool(bool checked);
+
+    void handleArcTool(bool checked);
+    void handlePointAlongArcTool(bool checked);
+    void handlePointFromArcAndTangentTool(bool checked);
+    void handleArcWithLengthTool(bool checked);
+    void handleArcIntersectAxisTool(bool checked);
+    void handlePointOfIntersectionArcsTool(bool checked);
+    void handlePointOfIntersectionCirclesTool(bool checked);
+    void handlePointFromCircleAndTangentTool(bool checked);
+
+    void handleEllipticalArcTool(bool checked);
+
+    void handleGroupTool(bool checked);
+    void handleRotationTool(bool checked);
+    void handleMirrorByLineTool(bool checked);
+    void handleMirrorByAxisTool(bool checked);
+    void handleMoveTool(bool checked);
+    void handleTrueDartTool(bool checked);
+
+    void handleInternalPathTool(bool checked);
+    void handleAnchorPointTool(bool checked);
+    void handleInsertNodeTool(bool checked);
+
+    void handlePatternPieceTool(bool checked);
+    void handleUnionDetailsTool(bool checked);
+
+    void handleNewLayout(bool checked);
+
+    void draftMode_Action(bool checked);
     void ActionDetails(bool checked);
     void ActionLayout(bool checked);
 
@@ -198,10 +217,13 @@ private slots:
     void ClosedDialogUnionDetails(int result);
     void ClosedDialogGroup(int result);
     void ClosedDialogInternalPath(int result);
-    void ClosedDialogPin(int result);
+    void ClosedDialogAnchorPoint(int result);
     void ClosedDialogInsertNode(int result);
 
-    void ZoomFitBestCurrent();
+    void zoomToPrevious();
+    void zoomToArea();
+    void zoomPan();
+
     void LoadIndividual();
     void LoadMultisize();
     void UnloadMeasurements();
@@ -218,90 +240,111 @@ private slots:
 private:
     Q_DISABLE_COPY(MainWindow)
     /** @brief ui keeps information about user interface */
-    Ui::MainWindow     *ui;
+    Ui::MainWindow                   *ui;
 
-    QFileSystemWatcher *watcher;
+    QFileSystemWatcher               *watcher;
 
     /** @brief tool current tool */
-    Tool               currentTool;
+    Tool                              currentTool;
 
     /** @brief tool last used tool */
-    Tool               lastUsedTool;
+    Tool                              lastUsedTool;
 
-    /** @brief sceneDraw draw scene. */
-    VMainGraphicsScene *sceneDraw;
+    /** @brief draftScene draft block scene. */
+    VMainGraphicsScene               *draftScene;
 
-    /** @brief sceneDetails details scene. */
-    VMainGraphicsScene *sceneDetails;
+    /** @brief pieceScene pattern piece scene. */
+    VMainGraphicsScene               *pieceScene;
 
     /** @brief mouseCoordinate pointer to label who show mouse coordinate. */
-    QPointer<QLabel>    mouseCoordinate;
+    QPointer<QLabel>                  mouseCoordinate;
 
     /** @brief helpLabel help show tooltip. */
-    QLabel             *helpLabel;
+    QLabel                           *helpLabel;
 
     /** @brief isInitialized true after first show window. */
-    bool               isInitialized;
+    bool                              isInitialized;
 
     /** @brief mChanges true if measurement file was changed. */
-    bool               mChanges;
-    bool               mChangesAsked;
+    bool                              mChanges;
+    bool                              mChangesAsked;
 
-    bool               patternReadOnly;
+    bool                              patternReadOnly;
 
-    QPointer<DialogIncrements> dialogTable;
-    QSharedPointer<DialogTool> dialogTool;
-    QPointer<DialogHistory>    dialogHistory;
+    QPointer<DialogVariables>         dialogTable;
+    QSharedPointer<DialogTool>        dialogTool;
+    QPointer<DialogHistory>           dialogHistory;
+
+    QFontComboBox                    *fontComboBox;
+    QComboBox                        *fontSizeComboBox;
 
     /** @brief comboBoxDraws comboc who show name of pattern peaces. */
-    QComboBox          *comboBoxDraws;
-    QLabel             *patternPieceLabel;
+    QComboBox                        *comboBoxDraws;
+    QLabel                           *patternPieceLabel;
 
     /** @brief mode keep current draw mode. */
-    Draw               mode;
+    Draw                              mode;
 
     /** @brief currentDrawIndex save current selected pattern peace. */
-    qint32             currentDrawIndex;
+    qint32                            currentDrawIndex;
 
     /** @brief currentToolBoxIndex save current set of tools. */
-    qint32             currentToolBoxIndex;
+    qint32                            currentToolBoxIndex;
 
-    bool               isDockToolOptionsVisible;
-    bool               isDockGroupsVisible;
+    bool                              isToolOptionsDockVisible;
+    bool                              isGroupsDockVisible;
+    bool                              isLayoutsDockVisible;
+    bool                              isToolboxDockVisible;
 
     /** @brief drawMode true if we current draw scene. */
-    bool               drawMode;
+    bool                              drawMode;
 
     enum { MaxRecentFiles = 5 };
-    QAction            *recentFileActs[MaxRecentFiles];
-    QAction            *separatorAct;
-    QLabel             *leftGoToStage;
-    QLabel             *rightGoToStage;
-    QTimer             *autoSaveTimer;
-    bool               guiEnabled;
-    QPointer<QComboBox> gradationHeights;
-    QPointer<QComboBox> gradationSizes;
-    QPointer<QLabel>   gradationHeightsLabel;
-    QPointer<QLabel>   gradationSizesLabel;
-    VToolOptionsPropertyBrowser *toolOptions;
-    VWidgetGroups *groupsWidget;
-    VWidgetDetails *detailsWidget;
+    QAction                          *recentFileActs[MaxRecentFiles];
+    QAction                          *separatorAct;
+
+    QLabel                           *leftGoToStage;
+    QLabel                           *rightGoToStage;
+    QTimer                           *autoSaveTimer;
+    bool                              guiEnabled;
+    QPointer<QComboBox>               gradationHeights;
+    QPointer<QComboBox>               gradationSizes;
+    QPointer<QLabel>                  gradationHeightsLabel;
+    QPointer<QLabel>                  gradationSizesLabel;
+    VToolOptionsPropertyBrowser      *toolProperties;
+    VWidgetGroups                    *groupsWidget;
+    VWidgetDetails                   *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
-    QList<QToolButton*> toolButtonPointerList;
+    QList<QToolButton*>               toolButtonPointerList;
+    QDoubleSpinBox                   *zoomScaleSpinBox;
 
-    void               SetDefaultHeight();
-    void               SetDefaultSize();
+    void                              SetDefaultHeight();
+    void                              SetDefaultSize();
 
-    void               ToolBarOption();
-    void               ToolBarStages();
-    void               ToolBarDraws();
-    void               ToolBarTools();
-    void               InitToolButtons();
-    void               CancelTool();
+    void                              initStatusToolBar();
+    void                              initModesToolBar();
+    void                              initDraftToolBar();
+    void                              initPointNameToolBar();
+    void                              initToolsToolBar();
+    void                              InitToolButtons();
+
+    void                              handlePointsMenu();
+    void                              handleLinesMenu();
+    void                              handleArcsMenu();
+    void                              handleCurvesMenu();
+    void                              handleCirclesMenu();
+    void                              handleEllipsesMenu();
+    void                              handleModifyMenu();
+    void                              handlePatternPiecesMenu();
+    void                              handleDetailsMenu();
+    void                              handleLayoutMenu();
+    void                              handleImagesMenu();
+
+    void                              CancelTool();
 
     void               SetEnableWidgets(bool enable);
-    void               SetEnableTool(bool enable);
+    void               setEnableTools(bool enable);
     void               SetLayoutModeActions();
 
     void               SaveCurrentScene();
@@ -350,7 +393,7 @@ private:
      * @brief EndVisualization try show dialog after and working with tool visualization.
      */
     void               EndVisualization(bool click = false);
-    void               ZoomFirstShow();
+    void               zoomFirstShow();
     void               UpdateHeightsList(const QStringList &list);
     void               UpdateSizesList(const QStringList &list);
 
@@ -380,6 +423,7 @@ private:
     QString            GetMeasurementFileName();
 
     void               UpdateWindowTitle();
+    void               upDateScenes();
 
     bool               IgnoreLocking(int error, const QString &path);
 

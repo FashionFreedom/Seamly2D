@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -262,10 +262,15 @@ public:
     static const QString AttrArrows;
     static const QString AttrNodeReverse;
     static const QString AttrNodeExcluded;
-    static const QString AttrNodeNotch;
+    static const QString AttrNodeIsNotch;
     static const QString AttrNodeNotchType;
     static const QString AttrNodeNotchSubType;
+    static const QString AttrNodeShowNotch;
     static const QString AttrNodeShowSecondNotch;
+    static const QString AttrNodeNotchLength;
+    static const QString AttrNodeNotchWidth;
+    static const QString AttrNodeNotchAngle;
+    static const QString AttrNodeNotchCount;
     static const QString AttrSABefore;
     static const QString AttrSAAfter;
     static const QString AttrStart;
@@ -398,7 +403,7 @@ public slots:
 
 protected:
     /** @brief nameActivDraw name current pattern peace. */
-    QString        nameActivPP;
+    QString        activeDraftBlock;
 
     /** @brief cursor cursor keep id tool after which we will add new tool in file. */
     quint32        cursor;

@@ -103,7 +103,7 @@ void VisToolEndLine::RefreshGeometry()
     DrawLine(this, line, mainColor, lineStyle);
     static const QString prefix = UnitsToStr(qApp->patternUnit(), true);
     Visualization::toolTip = tr("<b>Point at distance and angle</b>: angle = %1°, length = %2%3; "
-                                "<b>Shift</b> - sticking angle, <b>Enter</b> - finish creation")
+                                "Hold <b>SHIFT</b> to constrain angle, Press <b>ENTER</b> to finish tool creation")
             .arg(this->line().angle())
             .arg(qApp->TrVars()->FormulaToUser(QString::number(qApp->fromPixel(this->line().length())),
                                                qApp->Settings()->GetOsSeparator()))

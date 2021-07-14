@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -59,12 +59,17 @@
 #include "../vmisc/customevents.h"
 #include "../vpatterndb/vnodedetail.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../tools/drawTools/operation/vabstractoperation.h"
 
 Q_LOGGING_CATEGORY(vUndo, "v.undo")
 
 //---------------------------------------------------------------------------------------------------------------------
 VUndoCommand::VUndoCommand(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent)
-    :QObject(), QUndoCommand(parent), xml(xml), doc(doc), nodeId(NULL_ID), redoFlag(false)
+    : QObject()
+    , QUndoCommand(parent)
+    , xml(xml), doc(doc)
+    , nodeId(NULL_ID)
+    , redoFlag(false)
 {
     SCASSERT(doc != nullptr)
 }
@@ -165,4 +170,43 @@ void VUndoCommand::DecrementReferences(const QVector<VPieceNode> &nodes) const
     }
 
     DecrementReferences(n);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QDomElement VUndoCommand::getDestinationObject(quint32 idTool, quint32 idPoint) const
+{
+    const QDomElement tool = doc->elementById(idTool, VAbstractPattern::TagOperation);
+    if (tool.isElement())
+    {
+        QDomElement correctDest;
+        const QDomNodeList nodeList = tool.childNodes();
+        for (qint32 i = 0; i < nodeList.size(); ++i)
+        {
+            const QDomElement dest = nodeList.at(i).toElement();
+            if (not dest.isNull() && dest.isElement() && dest.tagName() == VAbstractOperation::TagDestination)
+            {
+                correctDest = dest;
+                break;
+            }
+        }
+
+        if (not correctDest.isNull())
+        {
+            const QDomNodeList destObjects = correctDest.childNodes();
+            for (qint32 i = 0; i < destObjects.size(); ++i)
+            {
+                const QDomElement obj = destObjects.at(i).toElement();
+                if (not obj.isNull() && obj.isElement())
+                {
+                    const quint32 id = doc->GetParametrUInt(obj, AttrIdObject, NULL_ID_STR);
+                    if (idPoint == id)
+                    {
+                        return obj;
+                    }
+                }
+            }
+        }
+    }
+
+    return QDomElement();
 }

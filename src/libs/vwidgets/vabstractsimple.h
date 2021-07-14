@@ -71,27 +71,24 @@ class VAbstractSimple : public QObject
     Q_OBJECT
 public:
     VAbstractSimple(quint32 id, QObject *parent = nullptr);
-    virtual ~VAbstractSimple() = default;
+    virtual      ~VAbstractSimple() = default;
 
-    virtual void ToolSelectionType(const SelectionType &type);
+    virtual void  ToolSelectionType(const SelectionType &type);
 
-    GOType GetType() const;
-    void   SetType(const GOType &value);
+    GOType        GetType() const;
+    void          SetType(const GOType &value);
 
 signals:
-    void ShowContextMenu(QGraphicsSceneContextMenuEvent * event);
-    void Delete();
-
-public slots:
-    void ContextMenu(QGraphicsSceneContextMenuEvent * event);
+    void          showContextMenu(QGraphicsSceneContextMenuEvent * event, quint32 id = NULL_ID);
+    void          Delete();
 
 protected:
     /** @brief id spline id. */
-    quint32 id;
+    quint32       id;
 
     SelectionType selectionType;
 
-    GOType  type;
+    GOType        type;
 
 private:
     Q_DISABLE_COPY(VAbstractSimple)

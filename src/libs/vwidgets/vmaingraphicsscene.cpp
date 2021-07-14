@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -65,18 +65,21 @@
 #include <Qt>
 
 #include "global.h"
+#include "../vmisc/vcommonsettings.h"
+#include "../vmisc/vabstractapplication.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief VMainGraphicsScene default constructor.
  */
 VMainGraphicsScene::VMainGraphicsScene(QObject *parent)
-    : QGraphicsScene(parent),
-      horScrollBar(0),
-      verScrollBar(0),
-      _transform(QTransform()),
-      scenePos(QPointF()),
-      origins()
+    : QGraphicsScene(parent)
+    , horScrollBar(0)
+    , verScrollBar(0)
+    , m_previousTransform(QTransform())
+    , m_currentTransform(QTransform())
+    , scenePos(QPointF())
+    , origins()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -86,12 +89,13 @@ VMainGraphicsScene::VMainGraphicsScene(QObject *parent)
  * @param parent parent object.
  */
 VMainGraphicsScene::VMainGraphicsScene(const QRectF & sceneRect, QObject * parent)
-    :QGraphicsScene ( sceneRect, parent ),
-      horScrollBar(0),
-      verScrollBar(0),
-      _transform(QTransform()),
-      scenePos(),
-      origins()
+    :QGraphicsScene ( sceneRect, parent )
+    , horScrollBar(0)
+    , verScrollBar(0)
+    , m_previousTransform(QTransform())
+    , m_currentTransform(QTransform())
+    , scenePos()
+    , origins()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -140,8 +144,9 @@ void VMainGraphicsScene::InitOrigins()
 {
     origins.clear();
 
-    QPen originsPen(Qt::green, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
-    QBrush axisTextBrush(Qt::green);
+    QColor orginColor = (QColor(qApp->Settings()->getAxisOrginColor()));
+    QPen originsPen(orginColor, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin);
+    QBrush axisTextBrush(orginColor);
     const qreal arrowAngle = 35.0;
     const qreal arrowLength = 12.0;
 
@@ -229,7 +234,7 @@ void VMainGraphicsScene::InitOrigins()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::SetOriginsVisible(bool visible)
+void VMainGraphicsScene::setOriginsVisible(bool visible)
 {
     foreach (QGraphicsItem *item, origins)
     {
@@ -244,7 +249,7 @@ QPointF VMainGraphicsScene::getScenePos() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QRectF VMainGraphicsScene::VisibleItemsBoundingRect() const
+QRectF VMainGraphicsScene::visibleItemsBoundingRect() const
 {
     QRectF rect;
     foreach(QGraphicsItem *item, items())
@@ -265,34 +270,46 @@ QRectF VMainGraphicsScene::VisibleItemsBoundingRect() const
  */
 QTransform VMainGraphicsScene::transform() const
 {
-    return _transform;
+    return m_currentTransform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief setTransform set view transformation.
+ * @brief setCurrentTransform set view transformation.
  * @param transform view transformation.
  */
-void VMainGraphicsScene::setTransform(const QTransform &transform)
+void VMainGraphicsScene::setCurrentTransform(const QTransform &transform)
 {
-    _transform = transform;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::SetDisableTools(bool disable, const QString &namePP)
-{
-    emit DisableItem(disable, namePP);
+    m_previousTransform = m_currentTransform;
+    m_currentTransform = transform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChoosedItem emit ChoosedObject signal.
+ * @brief swapTransforms.
+ */
+void VMainGraphicsScene::swapTransforms()
+{
+    QTransform tempTransform = m_currentTransform;
+    m_currentTransform = m_previousTransform;
+    m_previousTransform = tempTransform;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VMainGraphicsScene::SetDisableTools(bool disable, const QString &draftBlockName)
+{
+    emit DisableItem(disable, draftBlockName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief chosenItem emit ChosenObject signal.
  * @param id object id.
  * @param type object scene type.
  */
-void VMainGraphicsScene::ChoosedItem(quint32 id, const SceneObject &type)
+void VMainGraphicsScene::chosenItem(quint32 id, const SceneObject &type)
 {
-    emit ChoosedObject(id, type);
+    emit ChosenObject(id, type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -308,9 +325,9 @@ void VMainGraphicsScene::EnableItemMove(bool move)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::EnableDetailsMode(bool mode)
+void VMainGraphicsScene::enablePiecesMode(bool mode)
 {
-    emit CurveDetailsMode(mode);
+    emit curvePiecesMode(mode);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -328,7 +345,7 @@ void VMainGraphicsScene::HighlightItem(quint32 id)
 //---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsScene::ToggleLabelSelection(bool enabled)
 {
-    emit EnableLabelItemSelection(enabled);
+    emit enableTextItemSelection(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -388,7 +405,7 @@ void VMainGraphicsScene::ToggleDetailSelection(bool enabled)
 //---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsScene::ToggleLabelHover(bool enabled)
 {
-    emit EnableLabelItemHover(enabled);
+    emit enableTextItemHover(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

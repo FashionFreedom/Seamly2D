@@ -121,7 +121,7 @@ void VisToolSpline::RefreshGeometry()
             if (isLeftMousePressed && not p2Selected)
             {
                 p2 = Visualization::scenePos;
-                controlPoints[0]->RefreshCtrlPoint(1, SplinePointPosition::FirstPoint, p2,
+                controlPoints[0]->refreshCtrlPoint(1, SplinePointPosition::FirstPoint, p2,
                                                    static_cast<QPointF>(*first));
 
                 if (not controlPoints[0]->isVisible())
@@ -159,7 +159,7 @@ void VisToolSpline::RefreshGeometry()
                     QLineF ctrlLine (static_cast<QPointF>(*second), Visualization::scenePos);
                     ctrlLine.setAngle(ctrlLine.angle()+180);
                     p3 = ctrlLine.p2();
-                    controlPoints[1]->RefreshCtrlPoint(1, SplinePointPosition::LastPoint, p3,
+                    controlPoints[1]->refreshCtrlPoint(1, SplinePointPosition::LastPoint, p3,
                                                        static_cast<QPointF>(*second));
 
                     if (not controlPoints[1]->isVisible())
@@ -189,7 +189,7 @@ void VisToolSpline::RefreshGeometry()
             {
                 VSpline spline(*first, *second, angle1, angle2, kAsm1, kAsm2, kCurve);
                 DrawPath(this, spline.GetPath(), spline.DirectionArrows(), mainColor, lineStyle, Qt::RoundCap);
-                Visualization::toolTip = tr("Use <b>Shift</b> for sticking angle!");
+                Visualization::toolTip = tr("Hold <b>SHIFT</b> to constrain angle");
                 emit ToolTip(Visualization::toolTip);
             }
         }

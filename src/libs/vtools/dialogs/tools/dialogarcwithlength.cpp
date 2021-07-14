@@ -212,7 +212,7 @@ void DialogArcWithLength::SetLength(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogArcWithLength::GetPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

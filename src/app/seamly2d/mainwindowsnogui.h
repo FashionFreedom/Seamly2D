@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -54,6 +54,7 @@
 
 #include <QMainWindow>
 #include <QPrinter>
+#include <QToolButton>
 
 #include "../vlayout/vlayoutpiece.h"
 #include "xml/vpattern.h"
@@ -73,7 +74,7 @@ public:
     virtual ~MainWindowsNoGUI() Q_DECL_OVERRIDE;
 
 public slots:
-    void ToolLayoutSettings(bool checked);
+    void toolLayoutSettings(QToolButton *tButton, bool checked);
     void PrintPreviewOrigin();
     void PrintPreviewTiled();
     void PrintOrigin();
@@ -104,6 +105,8 @@ protected:
     QAction *redoAction;
     QAction *actionDockWidgetToolOptions;
     QAction *actionDockWidgetGroups;
+    QAction *actionDockWidgetLayouts;
+    QAction *actionDockWidgetToolbox;
 
     bool isNoScaling;
     bool isLayoutStale;

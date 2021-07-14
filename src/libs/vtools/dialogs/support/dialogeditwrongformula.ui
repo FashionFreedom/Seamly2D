@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>448</width>
-    <height>425</height>
+    <height>448</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../../../vmisc/share/resources/icon.qrc">
-    <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
+    <normaloff>:/icon/32x32/list-edit_32.png</normaloff>:/icon/32x32/list-edit_32.png</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -77,52 +77,9 @@
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item alignment="Qt::AlignRight">
-      <widget class="QToolButton" name="toolButtonPutHere">
-       <property name="toolTip">
-        <string>Insert variable into formula</string>
-       </property>
-       <property name="text">
-        <string notr="true">...</string>
-       </property>
-       <property name="icon">
-        <iconset resource="../../../vmisc/share/resources/icon.qrc">
-         <normaloff>:/icon/24x24/putHere.png</normaloff>:/icon/24x24/putHere.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>24</width>
-         <height>24</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item alignment="Qt::AlignRight">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
-       </property>
-      </widget>
-     </item>
-     <item alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelResultCalculation">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -144,10 +101,81 @@
        </property>
       </widget>
      </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="insert_PushButton">
+       <property name="toolTip">
+        <string>Insert variable into formula</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../vmisc/share/resources/icon.qrc">
+         <normaloff>:/icon/24x24/putHere.png</normaloff>:/icon/24x24/putHere.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButtonGrowLength">
+       <property name="maximumSize">
+        <size>
+         <width>18</width>
+         <height>18</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../../vmisc/share/resources/theme.qrc">
+         <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QPlainTextEdit" name="plainTextEditFormula">
        <property name="sizePolicy">
@@ -171,28 +199,13 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButtonGrowLength">
-       <property name="maximumSize">
-        <size>
-         <width>18</width>
-         <height>18</height>
-        </size>
-       </property>
-       <property name="sizeIncrement">
-        <size>
-         <width>0</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
+      <widget class="QPushButton" name="clear_PushButton">
        <property name="text">
-        <string notr="true"/>
+        <string/>
        </property>
        <property name="icon">
-        <iconset theme="go-down">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset resource="../../../vmisc/share/resources/icon.qrc">
+         <normaloff>:/icon/32x32/clear.png</normaloff>:/icon/32x32/clear.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -227,7 +240,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonStandardTable">
+          <widget class="QRadioButton" name="measurements_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -243,7 +256,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonIncrements">
+          <widget class="QRadioButton" name="customVariables_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -251,12 +264,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Increments</string>
+            <string>Custom variables</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonLengthLine">
+          <widget class="QRadioButton" name="lineLengths_RadioButton">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -267,12 +280,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Length of lines</string>
+            <string>Line lengths</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonLengthSpline">
+          <widget class="QRadioButton" name="lineAngles_RadioButton">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -283,12 +296,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Length of curves</string>
+            <string>Line angles</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonAngleLine">
+          <widget class="QRadioButton" name="curveLengths_RadioButton">
            <property name="enabled">
             <bool>true</bool>
            </property>
@@ -299,12 +312,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Angle of lines</string>
+            <string>Curve lengths</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonRadiusesArcs">
+          <widget class="QRadioButton" name="curveAngles_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -312,12 +325,19 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Radius of arcs</string>
+            <string>Curve angles</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonAnglesCurves">
+          <widget class="QRadioButton" name="controlPoints_RadioButton">
+           <property name="text">
+            <string>Control point lengths</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="arcRadiuses_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -325,19 +345,12 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Angles of curves</string>
+            <string>Arc radiuses</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButtonCLength">
-           <property name="text">
-            <string>Lengths to control points</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QRadioButton" name="radioButtonFunctions">
+          <widget class="QRadioButton" name="functions_RadioButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
              <horstretch>0</horstretch>
@@ -359,6 +372,9 @@
         <widget class="QLineEdit" name="filterFormulaInputs">
          <property name="placeholderText">
           <string>Filter list by keyword</string>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -400,7 +416,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="labelDescription">
+    <widget class="QLabel" name="description_Label">
      <property name="text">
       <string/>
      </property>
@@ -423,17 +439,16 @@
  </widget>
  <tabstops>
   <tabstop>plainTextEditFormula</tabstop>
-  <tabstop>toolButtonPutHere</tabstop>
-  <tabstop>pushButtonGrowLength</tabstop>
-  <tabstop>radioButtonStandardTable</tabstop>
-  <tabstop>radioButtonIncrements</tabstop>
-  <tabstop>radioButtonLengthLine</tabstop>
-  <tabstop>radioButtonLengthSpline</tabstop>
-  <tabstop>radioButtonAngleLine</tabstop>
+  <tabstop>insert_PushButton</tabstop>
+  <tabstop>measurements_RadioButton</tabstop>
+  <tabstop>customVariables_RadioButton</tabstop>
+  <tabstop>lineLengths_RadioButton</tabstop>
+  <tabstop>curveLengths_RadioButton</tabstop>
   <tabstop>checkBoxHideEmpty</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
+  <include location="../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>

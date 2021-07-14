@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,79 +73,58 @@ class DialogMove : public DialogTool
     Q_OBJECT
 
 public:
-    explicit DialogMove(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
-    virtual ~DialogMove();
+    explicit         DialogMove(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
+    virtual         ~DialogMove();
 
-    QString GetAngle() const;
-    void    SetAngle(const QString &value);
+    QString          GetAngle() const;
+    void             SetAngle(const QString &value);
 
-    QString GetLength() const;
-    void    SetLength(const QString &value);
+    QString          GetLength() const;
+    void             SetLength(const QString &value);
 
-    QString GetSuffix() const;
-    void    SetSuffix(const QString &value);
+    QString          getSuffix() const;
+    void             setSuffix(const QString &value);
 
-    QVector<quint32> GetObjects() const;
+    QVector<quint32> getObjects() const;
 
-    virtual void ShowDialog(bool click) Q_DECL_OVERRIDE;
+    virtual void     ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void     ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void     SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
 
 private slots:
-    /** @brief DeployAngleTextEdit grow or shrink formula input */
-    void DeployAngleTextEdit();
-    void DeployLengthTextEdit();
+    void             angleChanged();
+    void             lengthChanged();
 
-    void AngleChanged();
-    void LengthChanged();
+    void             editAngleFormula();
+    void             editLengthFormula();
 
-    void FXAngle();
-    void FXLength();
-
-    void SuffixChanged();
+    void             suffixChanged();
 
 protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+    virtual void     CheckState() Q_DECL_FINAL;
+    virtual void     ShowVisualization() Q_DECL_OVERRIDE;
 
     /** @brief SaveData Put dialog data in local variables */
-    virtual void SaveData() Q_DECL_OVERRIDE;
-    virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    virtual void     SaveData() Q_DECL_OVERRIDE;
+    virtual void     closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(DialogMove)
-    Ui::DialogMove *ui;
+    Ui::DialogMove  *ui;
+    bool             angleFlag;            //! @brief angleFlag true if value of angle is correct */
+    QString          angleFormula;         //! @brief angle formula of angle */
+    QTimer          *angleTimer;           //! @brief angleTimer timer of check formula of angle */
+    bool             lengthFlag;           //! @brief lengthFlag true if value of length is correct */
+    QString          lengthFormula;        //! @brief length formula of length */
+    QTimer          *lengthTimer;          //! @brief lengthTimer timer of check formula of length */
+    QList<quint32>   objects;
+    bool             stage1;
+    QString          m_suffix;
 
-    /** @brief flagAngle true if value of angle is correct */
-    bool    flagAngle;
-
-    bool    flagLength;
-
-    /** @brief timerAngle timer of check formula of angle */
-    QTimer  *timerAngle;
-
-    QTimer  *timerLength;
-
-    /** @brief angle formula of angle */
-    QString formulaAngle;
-
-    QString formulaLength;
-
-    /** @brief formulaBaseHeightAngle base height defined by dialogui */
-    int     formulaBaseHeightAngle;
-
-    int     formulaBaseHeightLength;
-
-    QList<quint32> objects;
-
-    bool stage1;
-
-    QString m_suffix;
-
-    void EvalAngle();
-    void EvalLength();
+    void             evaluateAngle();
+    void             evaluateLength();
 };
 
 #endif // DIALOGMOVING_H

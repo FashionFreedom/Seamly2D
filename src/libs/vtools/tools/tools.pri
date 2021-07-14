@@ -2,6 +2,9 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/drawTools/operation/mirror/vabstractmirror.h \
+    $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.h \
+    $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.h \
     $$PWD/vdatatool.h \
     $$PWD/vabstracttool.h \
     $$PWD/tools.h \
@@ -50,10 +53,7 @@ HEADERS += \
     $$PWD/drawTools/toolcurve/vtoolcubicbezier.h \
     $$PWD/drawTools/toolcurve/vtoolcubicbezierpath.h \
     $$PWD/drawTools/operation/vtoolrotation.h \
-    $$PWD/drawTools/operation/flipping/vtoolflippingbyline.h \
     $$PWD/drawTools/operation/vabstractoperation.h \
-    $$PWD/drawTools/operation/flipping/vtoolflippingbyaxis.h \
-    $$PWD/drawTools/operation/flipping/vabstractflipping.h \
     $$PWD/drawTools/operation/vtoolmove.h \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.h \
     $$PWD/nodeDetails/vnodeellipticalarc.h \
@@ -63,6 +63,9 @@ HEADERS += \
     $$PWD/vinteractivetool.h
 
 SOURCES += \
+    $$PWD/drawTools/operation/mirror/vabstractmirror.cpp \
+    $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.cpp \
+    $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.cpp \
     $$PWD/vdatatool.cpp \
     $$PWD/vabstracttool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtooltriangle.cpp \
@@ -108,10 +111,7 @@ SOURCES += \
     $$PWD/drawTools/toolcurve/vtoolcubicbezier.cpp \
     $$PWD/drawTools/toolcurve/vtoolcubicbezierpath.cpp \
     $$PWD/drawTools/operation/vtoolrotation.cpp \
-    $$PWD/drawTools/operation/flipping/vtoolflippingbyline.cpp \
     $$PWD/drawTools/operation/vabstractoperation.cpp \
-    $$PWD/drawTools/operation/flipping/vtoolflippingbyaxis.cpp \
-    $$PWD/drawTools/operation/flipping/vabstractflipping.cpp \
     $$PWD/drawTools/operation/vtoolmove.cpp \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.cpp \
     $$PWD/nodeDetails/vnodeellipticalarc.cpp \

@@ -34,7 +34,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QGroupBox" name="groupBoxGrainline">
+        <widget class="QGroupBox" name="grainline_GroupBox">
          <property name="title">
           <string>Grainline visible</string>
          </property>
@@ -111,7 +111,7 @@
              </spacer>
             </item>
             <item alignment="Qt::AlignRight">
-             <widget class="QToolButton" name="pushButtonRot">
+             <widget class="QToolButton" name="rotation_PushButton">
               <property name="toolTip">
                <string>Formula wizard</string>
               </property>
@@ -173,7 +173,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_12">
             <item>
-             <widget class="QPlainTextEdit" name="lineEditRotFormula">
+             <widget class="QPlainTextEdit" name="rotationFormula_LineEdit">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -198,7 +198,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonShowRot">
+             <widget class="QPushButton" name="showRotation_PushButton">
               <property name="maximumSize">
                <size>
                 <width>18</width>
@@ -300,7 +300,7 @@
              </spacer>
             </item>
             <item alignment="Qt::AlignRight">
-             <widget class="QToolButton" name="pushButtonLen">
+             <widget class="QToolButton" name="length_PushButton">
               <property name="toolTip">
                <string>Formula wizard</string>
               </property>
@@ -362,7 +362,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_14">
             <item>
-             <widget class="QPlainTextEdit" name="lineEditLenFormula">
+             <widget class="QPlainTextEdit" name="lengthFormula_LineEdit">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -387,7 +387,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButtonShowLen">
+             <widget class="QPushButton" name="showLength_PushButton">
               <property name="maximumSize">
                <size>
                 <width>18</width>
@@ -431,12 +431,12 @@
             <item row="0" column="0">
              <widget class="QLabel" name="labelCenter">
               <property name="text">
-               <string>Center pin:</string>
+               <string>Center anchor point:</string>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="comboBoxGrainlineCenterPin"/>
+             <widget class="QComboBox" name="grainlineCenterPin_ComboBox"/>
             </item>
            </layout>
           </item>
@@ -455,22 +455,22 @@
             <item row="0" column="0">
              <widget class="QLabel" name="labelGrainlineTopPin">
               <property name="text">
-               <string>Top pin:</string>
+               <string>Top anchor point:</string>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="comboBoxGrainlineTopPin"/>
+             <widget class="QComboBox" name="grainlineTopPin_ComboBox"/>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="labelGrainlineBottomPin">
               <property name="text">
-               <string>Bottom pin:</string>
+               <string>Bottom anchor point:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QComboBox" name="comboBoxGrainlineBottomPin"/>
+             <widget class="QComboBox" name="grainlineBottomPin_ComboBox"/>
             </item>
            </layout>
           </item>
@@ -500,7 +500,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="comboBoxArrow"/>
+             <widget class="QComboBox" name="arrow_ComboBox"/>
             </item>
            </layout>
           </item>

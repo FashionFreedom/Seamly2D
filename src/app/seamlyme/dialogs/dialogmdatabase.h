@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -66,31 +66,31 @@ class MeasurementDatabaseDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit MeasurementDatabaseDialog(const QStringList &measurements, QWidget *parent = nullptr);
-    explicit MeasurementDatabaseDialog(QWidget *parent = nullptr);
-    virtual ~MeasurementDatabaseDialog() Q_DECL_OVERRIDE;
+    explicit             MeasurementDatabaseDialog(const QStringList &measurements, QWidget *parent = nullptr);
+    explicit             MeasurementDatabaseDialog(QWidget *parent = nullptr);
+    virtual             ~MeasurementDatabaseDialog() Q_DECL_OVERRIDE;
 
-    void RetranslateGroups();
+    void                 retranslateGroups();
 
-    QStringList getNewMeasurementNames() const;
-    static QString imgTag(const QString &number);
+    QStringList          getNewMeasurementNames() const;
+    static QString       imageUrl(const QString &number);
 
 protected:
-    virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
-    virtual bool eventFilter(QObject *target, QEvent *event) Q_DECL_OVERRIDE;
+    virtual void         changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual bool         eventFilter(QObject *target, QEvent *event) Q_DECL_OVERRIDE;
 
 private slots:
-    void UpdateChecks(QTreeWidgetItem *item, int column);
-    void ShowDescription(QTreeWidgetItem *item, int column);
-    void TreeMenu(const QPoint &pos);
-    void Recheck();
+    void                 updateChecks(QTreeWidgetItem *item, int column);
+    void                 showDescription(QTreeWidgetItem *item, int column);
+    void                 treeContextMenu(const QPoint &pos);
+    void                 recheckState();
 
 private:
     Q_DISABLE_COPY(MeasurementDatabaseDialog)
     Ui::DialogMDataBase *ui;
-    bool selectMode;
-    QStringList measurements;
-    QStringList newMeasurements;
+    bool                 selectMode;
+    QStringList          measurements;
+    QStringList          newMeasurements;
 
     const QString groupAText = "A. " + MeasurementDatabaseDialog::tr("Direct Height", "Measurement section");
     const QString groupBText = "B. " + MeasurementDatabaseDialog::tr("Direct Width", "Measurement section");
@@ -110,41 +110,44 @@ private:
     const QString groupPText = "P. " + MeasurementDatabaseDialog::tr("Historical & Specialty", "Measurement section");
     const QString groupQText = "Q. " + MeasurementDatabaseDialog::tr("Patternmaking measurements", "Measurement section");
 
-    QTreeWidgetItem *groupA;
-    QTreeWidgetItem *groupB;
-    QTreeWidgetItem *groupC;
-    QTreeWidgetItem *groupD;
-    QTreeWidgetItem *groupE;
-    QTreeWidgetItem *groupF;
-    QTreeWidgetItem *groupG;
-    QTreeWidgetItem *groupH;
-    QTreeWidgetItem *groupI;
-    QTreeWidgetItem *groupJ;
-    QTreeWidgetItem *groupK;
-    QTreeWidgetItem *groupL;
-    QTreeWidgetItem *groupM;
-    QTreeWidgetItem *groupN;
-    QTreeWidgetItem *groupO;
-    QTreeWidgetItem *groupP;
-    QTreeWidgetItem *groupQ;
+    QTreeWidgetItem     *groupA;
+    QTreeWidgetItem     *groupB;
+    QTreeWidgetItem     *groupC;
+    QTreeWidgetItem     *groupD;
+    QTreeWidgetItem     *groupE;
+    QTreeWidgetItem     *groupF;
+    QTreeWidgetItem     *groupG;
+    QTreeWidgetItem     *groupH;
+    QTreeWidgetItem     *groupI;
+    QTreeWidgetItem     *groupJ;
+    QTreeWidgetItem     *groupK;
+    QTreeWidgetItem     *groupL;
+    QTreeWidgetItem     *groupM;
+    QTreeWidgetItem     *groupN;
+    QTreeWidgetItem     *groupO;
+    QTreeWidgetItem     *groupP;
+    QTreeWidgetItem     *groupQ;
 
-    void initDataBase(const QStringList &measurements = QStringList());
-    void initGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
-                   const QStringList &newMeasurements = QStringList());
+    void                 initDataBase(const QStringList &measurements = QStringList());
+    void                 initGroup(QTreeWidgetItem **group, const QString &groupName, const QStringList &groupList,
+                                   const QStringList &measurementList = QStringList());
 
-    Q_REQUIRED_RESULT QTreeWidgetItem *AddGroup(const QString &text);
+    Q_REQUIRED_RESULT QTreeWidgetItem *addMeasurementGroup(const QString &text);
 
-    void addMeasurement(QTreeWidgetItem *group, const QString &groupName, const QStringList &newMeasurements);
+    void                addMeasurement(QTreeWidgetItem *group, const QString &groupName,
+                                       const QStringList &newMeasurements);
 
-    void readSettings();
-    void writeSettings();
-    void filter(const QString term);
+    void                readSettings();
+    void                writeSettings();
+    void                filterGroups(const QString searchString);
+    void                filterGroup(QTreeWidgetItem *group, const QString &searchString);
 
-    void retranslateGroup(QTreeWidgetItem *group, const QString &groupText, const QStringList &measurements);
-    void retranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name);
+    void                retranslateGroup(QTreeWidgetItem *group, const QString &groupName,
+                                         const QStringList &measurements);
+    void                retranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name);
 
-    void changeCheckState(QTreeWidgetItem *group, Qt::CheckState check);
-    Qt::CheckState GlobalCheckState() const;
+    void                changeCheckState(QTreeWidgetItem *group, Qt::CheckState state);
+    Qt::CheckState      globalCheckState() const;
 };
 
 #endif // DIALOGMDATABASE_H

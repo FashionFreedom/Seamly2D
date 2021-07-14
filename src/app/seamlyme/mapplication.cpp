@@ -62,6 +62,7 @@
 #include "../vmisc/diagnostic.h"
 #include "../qmuparser/qmuparsererror.h"
 
+#include <Qt>
 #include <QDir>
 #include <QFileOpenEvent>
 #include <QLocalSocket>
@@ -74,6 +75,7 @@
 #include <QGridLayout>
 #include <QSpacerItem>
 #include <QThread>
+#include <QStandardPaths>
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
@@ -189,6 +191,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
         const bool topWinAllowsPop = (QApplication::activeModalWidget() == nullptr) ||
                 !QApplication::activeModalWidget()->inherits("QFileDialog");
         QMessageBox messageBox;
+
         switch (type)
         {
             case QtWarningMsg:
@@ -196,11 +199,11 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 messageBox.setIcon(QMessageBox::Warning);
                 break;
             case QtCriticalMsg:
-                messageBox.setWindowTitle(QApplication::translate("mNoisyHandler", "Critical error"));
+                messageBox.setWindowTitle(QApplication::translate("mNoisyHandler", "Critical Error"));
                 messageBox.setIcon(QMessageBox::Critical);
                 break;
             case QtFatalMsg:
-                messageBox.setWindowTitle(QApplication::translate("mNoisyHandler", "Fatal error"));
+                messageBox.setWindowTitle(QApplication::translate("mNoisyHandler", "Fatal Error"));
                 messageBox.setIcon(QMessageBox::Critical);
                 break;
             #if QT_VERSION > QT_VERSION_CHECK(5, 4, 2)
@@ -229,6 +232,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 #ifndef QT_NO_CURSOR
                     QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
                 #endif
+                    messageBox.setWindowFlags(messageBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
                     messageBox.exec();
                 #ifndef QT_NO_CURSOR
                     QGuiApplication::restoreOverrideCursor();
@@ -260,7 +264,7 @@ MApplication::MApplication(int &argc, char **argv)
       dataBase(QPointer<MeasurementDatabaseDialog>()),
       testMode(false)
 {
-    setApplicationDisplayName(VER_PRODUCTNAME_STR);
+    //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     setOrganizationDomain(VER_COMPANYDOMAIN_STR);
@@ -508,30 +512,17 @@ VSeamlyMeSettings *MApplication::SeamlyMeSettings()
 //---------------------------------------------------------------------------------------------------------------------
 QString MApplication::diagramsPath() const
 {
-    const QString dPath = QStringLiteral("/diagrams.rcc");
-#ifdef Q_OS_WIN
-    return QCoreApplication::applicationDirPath() + dPath;
-#elif defined(Q_OS_MAC)
-    QFileInfo fileBundle(QCoreApplication::applicationDirPath() + QStringLiteral("/../Resources") + dPath);
-    if (fileBundle.exists())
+    const QString dPath = QStringLiteral("diagrams.rcc");
+    QDir appDirectory(QCoreApplication::applicationDirPath());
+    QFileInfo file(appDirectory.filePath(dPath));
+    if (file.exists())
     {
-        return fileBundle.absoluteFilePath();
+        return file.absoluteFilePath();
     }
     else
     {
-        QFileInfo file(QCoreApplication::applicationDirPath() + dPath);
-        if (file.exists())
-        {
-            return file.absoluteFilePath();
-        }
-        else
-        {
-            return QStringLiteral("/usr/share/seamly2d") + dPath;
-        }
+        return QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
     }
-#else // Unix
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + dPath;
-#endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -551,11 +542,11 @@ void MApplication::ShowDataBase()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::RetranslateGroups()
+void MApplication::retranslateGroups()
 {
     if (not dataBase.isNull())
     {
-        dataBase->RetranslateGroups();
+        dataBase->retranslateGroups();
     }
 }
 
@@ -711,7 +702,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     {
         if (testMode && args.count() > 1)
         {
-            qCCritical(mApp, "%s\n", qPrintable(tr("Test mode doesn't support openning several files.")));
+            qCCritical(mApp, "%s\n", qPrintable(tr("Test mode doesn't support Opening several files.")));
             parser.showHelp(V_EX_USAGE);
         }
 

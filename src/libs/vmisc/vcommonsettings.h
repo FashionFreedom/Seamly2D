@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -67,142 +67,228 @@ class VCommonSettings : public QSettings
 {
     Q_OBJECT
 public:
-    VCommonSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
-              QObject *parent = nullptr);
+                         VCommonSettings(Format format, Scope scope, const QString &organization,
+                                         const QString &application = QString(), QObject *parent = nullptr);
 
-    static QString SharePath(const QString &shareItem);
-    static QString MultisizeTablesPath();
-    static QString StandardTemplatesPath();
+    static QString       SharePath(const QString &shareItem);
+    static QString       MultisizeTablesPath();
+    static QString       StandardTemplatesPath();
 
-    static QString PrepareStandardTemplates(const QString &currentPath);
-    static QString PrepareMultisizeTables(const QString &currentPath);
+    static QString       PrepareStandardTemplates(const QString &currentPath);
+    static QString       PrepareMultisizeTables(const QString &currentPath);
 
-    static QString GetDefPathIndividualMeasurements();
-    QString GetPathIndividualMeasurements() const;
-    void SetPathIndividualMeasurements(const QString &value);
+    static QString       GetDefPathIndividualMeasurements();
+    QString              GetPathIndividualMeasurements() const;
+    void                 SetPathIndividualMeasurements(const QString &value);
 
-    static QString GetDefPathMultisizeMeasurements();
-    QString GetPathMultisizeMeasurements() const;
-    void SetPathMultisizeMeasurements(const QString &value);
+    static QString       GetDefPathMultisizeMeasurements();
+    QString              GetPathMultisizeMeasurements() const;
+    void                 SetPathMultisizeMeasurements(const QString &value);
 
-    static QString GetDefPathTemplate();
-    QString GetPathTemplate() const;
-    void SetPathTemplate(const QString &value);
+    static QString       GetDefPathTemplate();
+    QString              GetPathTemplate() const;
+    void                 SetPathTemplate(const QString &value);
 
-    static QString GetDefPathLabelTemplate();
-    QString GetPathLabelTemplate() const;
-    void SetPathLabelTemplate(const QString &value);
+    static QString       GetDefPathLabelTemplate();
+    QString              GetPathLabelTemplate() const;
+    void                 SetPathLabelTemplate(const QString &value);
 
-    bool GetOsSeparator() const;
-    void SetOsSeparator(const bool &value);
+    bool                 GetOsSeparator() const;
+    void                 SetOsSeparator(const bool &value);
 
-    bool GetAutosaveState() const;
-    void SetAutosaveState(const bool &value);
+    bool                 GetAutosaveState() const;
+    void                 SetAutosaveState(const bool &value);
 
-    int  GetAutosaveTime() const;
-    void SetAutosaveTime(const int &value);
+    int                  GetAutosaveTime() const;
+    void                 SetAutosaveTime(const int &value);
 
-    bool GetSendReportState() const;
-    void SetSendReportState(const bool &value);
+    bool                 GetSendReportState() const;
+    void                 SetSendReportState(const bool &value);
 
-    QString GetLocale() const;
-    void SetLocale(const QString &value);
+    QString              GetLocale() const;
+    void                 SetLocale(const QString &value);
 
-    QString GetPMSystemCode() const;
-    void SetPMSystemCode(const QString &value);
+    QString              GetPMSystemCode() const;
+    void                 SetPMSystemCode(const QString &value);
 
-    QString GetUnit() const;
-    void SetUnit(const QString &value);
+    QString              GetUnit() const;
+    void                 SetUnit(const QString &value);
 
-    bool GetConfirmItemDelete() const;
-    void SetConfirmItemDelete(const bool &value);
+    bool                 GetConfirmItemDelete() const;
+    void                 SetConfirmItemDelete(const bool &value);
 
-    bool GetConfirmFormatRewriting() const;
-    void SetConfirmFormatRewriting(const bool &value);
+    bool                 GetConfirmFormatRewriting() const;
+    void                 SetConfirmFormatRewriting(const bool &value);
 
-    bool GetToolBarStyle() const;
-    void SetToolBarStyle(const bool &value);
+    bool                 getToolBarStyle() const;
+    void                 setToolBarStyle(const bool &value);
 
-    int  GetUndoCount() const;
-    void SetUndoCount(const int &value);
+    bool                 getShowScrollBars() const;
+    void                 setShowScrollBars(const bool &value);
 
-    QStringList GetRecentFileList() const;
-    void SetRecentFileList(const QStringList &value);
+    int                  getScrollBarWidth() const;
+    void                 setScrollBarWidth(const int &width);
 
-    QStringList GetRestoreFileList() const;
-    void SetRestoreFileList(const QStringList &value);
+    int                  getScrollDuration() const;
+    void                 setScrollDuration(const int &duration);
 
-    QByteArray GetGeometry() const;
-    void SetGeometry(const QByteArray &value);
+    int                  getScrollUpdateInterval() const;
+    void                 setScrollUpdateInterval(const int &interval);
 
-    QByteArray GetWindowState() const;
-    void SetWindowState(const QByteArray &value);
+    int                  getScrollSpeedFactor() const;
+    void                 setScrollSpeedFactor(const int &factor);
 
-    QByteArray GetToolbarsState() const;
-    void SetToolbarsState(const QByteArray &value);
+    bool                 getZoomModKey() const;
+    void                 setZoomModKey(const bool &value);
 
-    QSize GetPreferenceDialogSize() const;
-    void SetPreferenceDialogSize(const QSize& sz);
+    bool                 isZoomDoubleClick() const;
+    void                 setZoomDoubleClick(const bool &value);
 
-    QSize GetToolSeamAllowanceDialogSize() const;
-    void  SetToolSeamAllowanceDialogSize(const QSize& sz);
+    int                  getZoomSpeedFactor() const;
+    void                 setZoomSpeedFactor(const int &factor);
 
-    QSize GetFormulaWizardDialogSize() const;
-    void  SetFormulaWizardDialogSize(const QSize& sz);
 
-    QSize GetIncrementsDialogSize() const;
-    void  SetIncrementsDialogSize(const QSize& sz);
+    QString              getZoomRBPositiveColor() const;
+    void                 setZoomRBPositiveColor(const QString &value);
 
-    int  GetLatestSkippedVersion() const;
-    void SetLatestSkippedVersion(int value);
+    QString              getZoomRBNegativeColor() const;
+    void                 setZoomRBNegativeColor(const QString &value);
 
-    QDate GetDateOfLastRemind() const;
-    void  SetDateOfLastRemind(const QDate &date);
+    QString              getPointNameColor() const;
+    void                 setPointNameColor(const QString &value);
 
-    bool GetForbidWorkpieceFlipping() const;
-    void SetForbidWorkpieceFlipping(bool value);
+    QString              getPointNameHoverColor() const;
+    void                 setPointNameHoverColor(const QString &value);
 
-    bool IsHideMainPath() const;
-    void SetHideMainPath(bool value);
+    QString              getAxisOrginColor() const;
+    void                 setAxisOrginColor(const QString &value);
 
-    bool isDoubleNotch() const;
-    void setDoubleNotch(bool value);
 
-    void SetCSVWithHeader(bool withHeader);
-    bool GetCSVWithHeader() const;
-    bool GetDefCSVWithHeader() const;
+    qreal                getConstrainValue() const;
+    void                 setConstrainValue(const qreal &value);
 
-    void SetCSVCodec(int mib);
-    int  GetCSVCodec() const;
-    int  GetDefCSVCodec() const;
+    bool                 getConstrainModKey() const;
+    void                 setConstrainModKey(const bool &value);
 
-    void  SetCSVSeparator(const QChar &separator);
-    QChar GetCSVSeparator() const;
-    QChar GetDefCSVSeparator() const;
+    int                  GetUndoCount() const;
+    void                 SetUndoCount(const int &value);
 
-    void SetDefaultSeamAllowance(double value);
-    double GetDefaultSeamAllowance();
+    QStringList          GetRecentFileList() const;
+    void                 SetRecentFileList(const QStringList &value);
 
-    QFont GetLabelFont() const;
-    void  SetLabelFont(const QFont &f);
+    QStringList          GetRestoreFileList() const;
+    void                 SetRestoreFileList(const QStringList &value);
+
+    QByteArray           GetGeometry() const;
+    void                 SetGeometry(const QByteArray &value);
+
+    QByteArray           GetWindowState() const;
+    void                 SetWindowState(const QByteArray &value);
+
+    QByteArray           GetToolbarsState() const;
+    void                 SetToolbarsState(const QByteArray &value);
+
+    QSize                getPreferenceDialogSize() const;
+    void                 setPreferenceDialogSize(const QSize& sz);
+
+    QSize                GetToolSeamAllowanceDialogSize() const;
+    void                 SetToolSeamAllowanceDialogSize(const QSize& sz);
+
+    QSize                GetFormulaWizardDialogSize() const;
+    void                 SetFormulaWizardDialogSize(const QSize& sz);
+
+    QSize                GetIncrementsDialogSize() const;
+    void                 SetIncrementsDialogSize(const QSize& sz);
+
+    int                  GetLatestSkippedVersion() const;
+    void                 SetLatestSkippedVersion(int value);
+
+    QDate                GetDateOfLastRemind() const;
+    void                 SetDateOfLastRemind(const QDate &date);
+
+    bool                 GetForbidWorkpieceFlipping() const;
+    void                 SetForbidWorkpieceFlipping(bool value);
+
+    bool                 IsHideMainPath() const;
+    void                 SetHideMainPath(bool value);
+
+    bool                 showSecondNotch() const;
+    void                 setShowSecondNotch(bool value);
+
+    qreal                getDefaultNotchLength() const;
+    void                 setDefaultNotchLength(const qreal &value);
+
+    qreal                getDefaultNotchWidth() const;
+    void                 setDefaultNotchWidth(const qreal &value);
+
+    QString              getDefaultNotchType() const;
+    void                 setDefaultNotchType(const QString &value);
+
+    void                 SetCSVWithHeader(bool withHeader);
+    bool                 GetCSVWithHeader() const;
+    bool                 GetDefCSVWithHeader() const;
+
+    void                 SetCSVCodec(int mib);
+    int                  GetCSVCodec() const;
+    int                  GetDefCSVCodec() const;
+
+    void                 SetCSVSeparator(const QChar &separator);
+    QChar                GetCSVSeparator() const;
+    QChar                GetDefCSVSeparator() const;
+
+    void                 SetDefaultSeamAllowance(double value);
+    double               GetDefaultSeamAllowance();
+
+    QFont                getLabelFont() const;
+    void                 setLabelFont(const QFont &f);
+
+    QFont                getGuiFont() const;
+    void                 setGuiFont(const QFont &f);
+
+    QFont                getPointNameFont() const;
+    void                 setPointNameFont(const QFont &f);
 
 #if !defined(Q_OS_WIN)
     static const QString unixStandardSharePath;
 #endif
 
-    QString GetLabelDateFormat() const;
-    void    SetLabelDateFormat(const QString &format);
+    int                  getPointNameSize() const;
+    void                 setPointNameSize(int value);
 
-    static QStringList PredefinedDateFormats();
-    QStringList GetUserDefinedDateFormats() const;
-    void        SetUserDefinedDateFormats(const QStringList &formats);
+    bool                 getHidePointNames() const;
+    void                 setHidePointNames(bool value);
 
-    QString GetLabelTimeFormat() const;
-    void    SetLabelTimeFormat(const QString &format);
+    bool                 getShowAxisOrigin() const;
+    void                 setShowAxisOrigin(bool value);
 
-    static QStringList PredefinedTimeFormats();
-    QStringList GetUserDefinedTimeFormats() const;
-    void        SetUserDefinedTimeFormats(const QStringList &formats);
+    bool                 isWireframe() const;
+    void                 setWireframe(bool value);
+
+    bool                 getShowControlPoints() const;
+    void                 setShowControlPoints(bool value);
+
+    bool                 getShowAnchorPoints() const;
+    void                 setShowAnchorPoints(bool value);
+
+    bool                 getUseToolColor() const;
+    void                 setUseToolColor(bool value);
+
+    int                  getGuiFontSize() const;
+    void                 setGuiFontSize(int value);
+
+    QString              GetLabelDateFormat() const;
+    void                 SetLabelDateFormat(const QString &format);
+
+    static QStringList   PredefinedDateFormats();
+    QStringList          GetUserDefinedDateFormats() const;
+    void                 SetUserDefinedDateFormats(const QStringList &formats);
+
+    QString              GetLabelTimeFormat() const;
+    void                 SetLabelTimeFormat(const QString &format);
+
+    static QStringList   PredefinedTimeFormats();
+    QStringList          GetUserDefinedTimeFormats() const;
+    void                 SetUserDefinedTimeFormats(const QStringList &formats);
 
 private:
     Q_DISABLE_COPY(VCommonSettings)

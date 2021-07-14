@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -68,9 +68,12 @@
 #include "../exception/vexceptionemptyparameter.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../vmisc/def.h"
+#include "../vmisc/logging.h"
 #include "vabstractconverter.h"
 
 class QDomElement;
+
+Q_LOGGING_CATEGORY(PatternConverter, "patternConverter")
 
 /*
  * Version rules:
@@ -81,8 +84,8 @@ class QDomElement;
  */
 
 const QString VPatternConverter::PatternMinVerStr = QStringLiteral("0.1.0");
-const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.0");
-const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.0.xsd");
+const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.2");
+const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.2.xsd");
 
 //VPatternConverter::PatternMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //VPatternConverter::PatternMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -182,6 +185,32 @@ static const QString strLetter                    = QStringLiteral("letter");
 static const QString strMaterial                  = QStringLiteral("material");
 static const QString strUserDefined               = QStringLiteral("userDef");
 static const QString strPlacement                 = QStringLiteral("placement");
+static const QString strPassmark                  = QStringLiteral("passmark");
+static const QString strPassmarkLine              = QStringLiteral("passmarkLine");
+static const QString strPassmarkAngle             = QStringLiteral("passmarkAngle");
+static const QString strShowSecondPassmark        = QStringLiteral("showSecondPassmark");
+static const QString strNotch                     = QStringLiteral("notch");
+static const QString strNotchCount                = QStringLiteral("notchCount");
+static const QString strNotchAngle                = QStringLiteral("notchAngle");
+static const QString strNotchType                 = QStringLiteral("notchType");
+static const QString strNotchSubType              = QStringLiteral("notchSubtype");
+static const QString strShowNotch                 = QStringLiteral("showNotch");
+static const QString strShowSecond                = QStringLiteral("showSecondNotch");
+static const QString strSlitNotch                 = QStringLiteral("slit");
+static const QString strVMark                     = QStringLiteral("vMark");
+static const QString strV_External                = QStringLiteral("vExternal");
+static const QString strTMark                     = QStringLiteral("tMark");
+static const QString strT_Notch                   = QStringLiteral("tNotch");
+static const QString strHair                      = QStringLiteral("hair");
+static const QString strSolidLine                 = QStringLiteral("solidLine");
+static const QString strOne                       = QStringLiteral("one");
+static const QString strTwo                       = QStringLiteral("two");
+static const QString strThree                     = QStringLiteral("three");
+static const QString strTypeLine                  = QStringLiteral("typeLine");
+static const QString strLineType                  = QStringLiteral("lineType");
+static const QString strPenStyle                  = QStringLiteral("penStyle");
+static const QString strElArc                     = QStringLiteral("elArc");
+static const QString strTrue                      = QStringLiteral("true");
 
 //---------------------------------------------------------------------------------------------------------------------
 VPatternConverter::VPatternConverter(const QString &fileName)
@@ -264,6 +293,11 @@ QString VPatternConverter::XSDSchema(int ver) const
         case (0x000501):
             return QStringLiteral("://schema/pattern/v0.5.1.xsd");
         case (0x000600):
+            return QStringLiteral("://schema/pattern/v0.6.0.xsd");
+        case (0x000601):
+            return QStringLiteral("://schema/pattern/v0.6.1.xsd");
+        case (0x000602):
+            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.2.xsd");
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -414,6 +448,14 @@ void VPatternConverter::ApplyPatches()
             ValidateXML(XSDSchema(0x000600), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000600):
+            ToV0_6_1();
+            ValidateXML(XSDSchema(0x000601), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000601):
+            ToV0_6_2();
+            ValidateXML(XSDSchema(0x000602), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000602):
             break;
         default:
             InvalidVersion(m_ver);
@@ -432,7 +474,7 @@ void VPatternConverter::DowngradeToCurrentMaxVersion()
 bool VPatternConverter::IsReadOnly() const
 {
     // Check if attribute readOnly was not changed in file format
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 0),
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 2),
                       "Check attribute readOnly.");
 
     // Possibly in future attribute readOnly will change position etc.
@@ -446,7 +488,7 @@ bool VPatternConverter::IsReadOnly() const
         return false;
     }
 
-    return GetParametrBool(pattern, strReadOnly, falseStr);
+    return getParameterBool(pattern, strReadOnly, falseStr);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -832,6 +874,153 @@ void VPatternConverter::ToV0_6_0()
     PortPatternLabeltoV0_6_0(label);
     PortPieceLabelstoV0_6_0();
     RemoveUnusedTagsV0_6_0();
+    Save();
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPatternConverter::ToV0_6_1()
+{
+    // TODO. Delete if minimal supported version is 0.6.1
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 1),
+                      "Time to refactor the code.");
+
+    SetVersion(QStringLiteral("0.6.1"));
+
+    QStringList nodenames = QStringList() << strNode
+                                          << strPoint
+                                          << strLine
+                                          << strPath
+                                          << strArc
+                                          << strSpline
+                                          << strElArc;
+
+    QStringList oldnames = QStringList() << strPassmark
+                                         << strPassmarkLine
+                                         << strPassmarkAngle
+                                         << strShowSecondPassmark
+                                         << strTypeLine
+                                         << strPenStyle;
+
+    QString newName = "";
+    qint32 index = 0;
+
+    for (int i = 0; i < nodenames.size(); i++)
+    {
+    QDomNodeList list = elementsByTagName(nodenames[i]);
+
+        for (int j = 0; j < list.size(); j++)
+        {
+            QDomNode node = list.at(j);
+
+            QDomNamedNodeMap map = node.attributes();
+
+            for (int k = 0; k < map.size(); k++)
+            {
+                index = -1;
+                QDomNode mapItem = map.item(k);
+                QDomAttr attribute = mapItem.toAttr();
+                QString attributeName = attribute.name();
+                QString newName;
+
+                index = oldnames.indexOf(attributeName);
+                if (index > -1)
+                {
+                    QString attributeValue = attribute.value();
+                    QDomElement owner = attribute.ownerElement();
+
+                    switch(index)
+                    {
+                        case 0:
+                        {
+                            newName = strNotch;
+                            owner.setAttribute(strNotchAngle, 0.0);
+                            owner.setAttribute(strShowNotch, strTrue);
+                            owner.setAttribute(strShowSecond, strTrue);
+                            break;
+                        }
+                        case 1: //! Replaces " passmarkLine" with "notchType"
+                        {
+                            newName = strNotchType;
+                            if (attributeValue == strOne)
+                            {
+                              attributeValue = strSlitNotch;
+                              owner.setAttribute(strNotchCount, 1);
+                              break;
+                            }
+                            if (attributeValue == strTwo)
+                            {
+                              attributeValue = strSlitNotch;
+                              owner.setAttribute(strNotchCount, 2);
+                              break;
+                            }
+                            if (attributeValue == strThree)
+                            {
+                              attributeValue = strSlitNotch;
+                              owner.setAttribute(strNotchCount, 3);
+                              break;
+                            }
+                            if (attributeValue == strTMark)
+                            {
+                              attributeValue = strT_Notch;
+                              owner.setAttribute(strNotchCount, 1);
+                              break;
+                            }
+                            if (attributeValue == strVMark)
+                            {
+                              attributeValue = strV_External;
+                              owner.setAttribute(strNotchCount, 1);
+                            }
+                            break;
+                        }
+                        case 2: //! Replaces " passmarkAngle" with "notchSubType"
+                        {
+                            newName = strNotchSubType;
+                            break;
+                        }
+                        case 3:
+                        {
+                            newName = strShowSecond;
+                            break;
+                        }
+                        case 4: //! Fixes incorrect name & value for lineType attribute
+                        {
+                            newName = strLineType;
+                            if (attributeValue == strHair)
+                            {
+                              attributeValue = strSolidLine;
+                            }
+                            break;
+                        }
+                        case 5: //! Fixes incorrect value for penStyle attribute
+                        {
+                            newName = strPenStyle;
+                            if (attributeValue == strHair)
+                            {
+                              attributeValue = strSolidLine;
+                            }
+                            break;
+                        }
+
+                        default:
+                            break;
+                    }
+                    owner.removeAttribute(attributeName);
+                    owner.setAttribute(newName, attributeValue);
+                }
+            }
+        }
+    }
+    Save();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPatternConverter::ToV0_6_2()
+{
+    // TODO. Delete if minimal supported version is 0.6.2
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 2),
+                      "Time to refactor the code.");
+    SetVersion(QStringLiteral("0.6.2"));
     Save();
 }
 

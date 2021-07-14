@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -55,17 +55,19 @@
 #include "configpages/preferencesconfigurationpage.h"
 #include "configpages/preferencespatternpage.h"
 #include "configpages/preferencespathpage.h"
+#include "configpages/preferencesgraphicsviewpage.h"
 
 #include <QPushButton>
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogPreferences::DialogPreferences(QWidget *parent)
-    : QDialog(parent),
-      ui(new Ui::DialogPreferences),
-      m_isInitialized(false),
-      m_configurePage(new PreferencesConfigurationPage),
-      m_patternPage(new PreferencesPatternPage),
-      m_pathPage(new PreferencesPathPage)
+    : QDialog(parent)
+    ,  ui(new Ui::DialogPreferences)
+    ,  m_isInitialized(false)
+    ,  m_configurePage(new PreferencesConfigurationPage)
+    ,  m_patternPage(new PreferencesPatternPage)
+    ,  m_pathPage(new PreferencesPathPage)
+    ,  m_graphicsPage(new PreferencesGraphicsViewPage)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -80,12 +82,14 @@ DialogPreferences::DialogPreferences(QWidget *parent)
     SCASSERT(bApply != nullptr)
     connect(bApply, &QPushButton::clicked, this, &DialogPreferences::Apply);
 
-    ui->pagesWidget->insertWidget(0, m_configurePage);
-    ui->pagesWidget->insertWidget(1, m_patternPage);
-    ui->pagesWidget->insertWidget(2, m_pathPage);
+    ui->pages_StackedWidget->insertWidget(0, m_configurePage);
+    ui->pages_StackedWidget->insertWidget(1, m_patternPage);
+    ui->pages_StackedWidget->insertWidget(2, m_pathPage);
+    ui->pages_StackedWidget->insertWidget(3, m_graphicsPage);
 
-    connect(ui->contentsWidget, &QListWidget::currentItemChanged, this, &DialogPreferences::PageChanged);
-    ui->pagesWidget->setCurrentIndex(0);
+
+    connect(ui->contents_ListWidget, &QListWidget::currentItemChanged, this, &DialogPreferences::pageChanged);
+    ui->pages_StackedWidget->setCurrentIndex(0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -111,7 +115,7 @@ void DialogPreferences::showEvent(QShowEvent *event)
 
     setMinimumSize(size());
 
-    QSize sz = qApp->Settings()->GetPreferenceDialogSize();
+    QSize sz = qApp->Settings()->getPreferenceDialogSize();
     if (sz.isEmpty() == false)
     {
         resize(sz);
@@ -129,19 +133,19 @@ void DialogPreferences::resizeEvent(QResizeEvent *event)
     // dialog creating, which would
     if (m_isInitialized)
     {
-        qApp->Settings()->SetPreferenceDialogSize(size());
+        qApp->Settings()->setPreferenceDialogSize(size());
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPreferences::PageChanged(QListWidgetItem *current, QListWidgetItem *previous)
+void DialogPreferences::pageChanged(QListWidgetItem *current, QListWidgetItem *previous)
 {
     if (current == nullptr)
     {
         current = previous;
     }
-    int rowIndex = ui->contentsWidget->row(current);
-    ui->pagesWidget->setCurrentIndex(rowIndex);
+    int rowIndex = ui->contents_ListWidget->row(current);
+    ui->pages_StackedWidget->setCurrentIndex(rowIndex);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -150,11 +154,12 @@ void DialogPreferences::Apply()
     m_configurePage->Apply();
     m_patternPage->Apply();
     m_pathPage->Apply();
+    m_graphicsPage->Apply();
 
-    m_patternPage->InitDefaultSeamAllowance();
+    m_patternPage->initDefaultSeamAllowance();
 
     qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
-    emit UpdateProperties();
+    emit updateProperties();
     setResult(QDialog::Accepted);
 }
 

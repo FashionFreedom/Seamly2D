@@ -107,6 +107,7 @@ private slots:
 
     void                        ListChanged();
     void                        EnableSeamAllowance(bool enable);
+    void                        enableBuiltIn(bool enable);
     void                        NodeChanged(int index);
     void                        notchChanged(int index);
     void                        CSAStartPointChanged(int index);
@@ -115,13 +116,21 @@ private slots:
     void                        NodeAngleChanged(int index);
     void                        ReturnDefBefore();
     void                        ReturnDefAfter();
-    void                        CustomSAChanged(int row);
+    void                        customSeamAllowanceChanged(int row);
     void                        PathDialogClosed(int result);
     void                        FancyTabChanged(int index);
     void                        TabChanged(int index);
     void                        notchTypeChanged(int id);
     void                        notchSubTypeChanged(int id);
+    void                        showNotchChanged(int state);
     void                        showSecondNotchChanged(int state);
+    void                        notchLengthChanged(qreal value);
+    void                        resetNotchLength();
+    void                        notchWidthChanged(qreal value);
+    void                        resetNotchWidth();
+    void                        notchAngleChanged(qreal value);
+    void                        resetNotchAngle();
+    void                        notchCountChanged(int value);
 
     void                        UpdateGrainlineValues();
     void                        UpdateDetailLabelValues();
@@ -210,12 +219,12 @@ private:
     VGrainlineData              m_oldGrainline;
     int                         m_iRotBaseHeight;
     int                         m_iLenBaseHeight;
-    int                         m_DLWidthBaseHeight;
-    int                         m_DLHeightBaseHeight;
-    int                         m_DLAngleBaseHeight;
-    int                         m_PLWidthBaseHeight;
-    int                         m_PLHeightBaseHeight;
-    int                         m_PLAngleBaseHeight;
+    int                         m_dLabelWidthBaseHeight;
+    int                         m_dLabelHeightBaseHeight;
+    int                         m_dLabelAngleBaseHeight;
+    int                         m_pLabelWidthBaseHeight;
+    int                         m_pLabelHeightBaseHeight;
+    int                         m_pLabelAngleBaseHeight;
     int                         m_widthFormula;
     int                         m_beforeWidthFormula;
     int                         m_afterWidthFormula;
@@ -280,6 +289,8 @@ private:
     void                        SetPLAngle(QString angleFormula);
 
     void                        ShowPins();
+    void                        setMoveExclusions();
+
 };
 
 #endif // DIALOGSEAMALLOWANCE_H

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -60,6 +60,7 @@
 #include <QStringData>
 #include <QStringDataPtr>
 #include <QVector>
+#include <QMessageBox>
 #include <new>
 
 #include "../../../../../dialogs/tools/dialogtool.h"
@@ -94,12 +95,13 @@ const QString VToolCurveIntersectAxis::ToolType = QStringLiteral("curveIntersect
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCurveIntersectAxis::VToolCurveIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                                 const QString &typeLine, const QString &lineColor,
+                                                 const QString &lineType, const QString &lineColor,
                                                  const QString &formulaAngle, const quint32 &basePointId,
                                                  const quint32 &curveId, const Source &typeCreation,
                                                  QGraphicsItem *parent)
-    :VToolLinePoint(doc, data, id, typeLine, lineColor, QString(), basePointId, 0, parent), formulaAngle(formulaAngle),
-      curveId(curveId)
+    : VToolLinePoint(doc, data, id, lineType, lineColor, QString(), basePointId, 0, parent)
+    , formulaAngle(formulaAngle)
+    , curveId(curveId)
 {
     ToolCreation(typeCreation);
 }
@@ -111,13 +113,13 @@ void VToolCurveIntersectAxis::setDialog()
     m_dialog->setModal(true);
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = m_dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> intersectPoint = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetTypeLine(m_lineType);
     dialogTool->SetLineColor(lineColor);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->SetBasePointId(basePointId);
     dialogTool->setCurveId(curveId);
-    dialogTool->SetPointName(p->name());
+    dialogTool->SetPointName(intersectPoint->name());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -128,15 +130,15 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(QSharedPointer<DialogTo
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
-    const QString pointName = dialogTool->getPointName();
-    const QString typeLine = dialogTool->GetTypeLine();
-    const QString lineColor = dialogTool->GetLineColor();
-    QString formulaAngle = dialogTool->GetAngle();
-    const quint32 basePointId = dialogTool->GetBasePointId();
-    const quint32 curveId = dialogTool->getCurveId();
+    const QString pointName    = dialogTool->getPointName();
+    const QString lineType     = dialogTool->GetTypeLine();
+    const QString lineColor    = dialogTool->GetLineColor();
+          QString formulaAngle = dialogTool->GetAngle();
+    const quint32 basePointId  = dialogTool->GetBasePointId();
+    const quint32 curveId      = dialogTool->getCurveId();
 
-    VToolCurveIntersectAxis *point = Create(0, pointName, typeLine, lineColor, formulaAngle, basePointId,
-                                            curveId, 5, 10, scene, doc, data, Document::FullParse, Source::FromGui);
+    VToolCurveIntersectAxis *point = Create(0, pointName, lineType, lineColor, formulaAngle, basePointId,
+                                            curveId, 5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -146,9 +148,9 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(QSharedPointer<DialogTo
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, const QString &pointName,
-                                                         const QString &typeLine, const QString &lineColor,
-                                                         QString &formulaAngle, const quint32 &basePointId,
-                                                         const quint32 &curveId, const qreal &mx, const qreal &my,
+                                                         const QString &lineType, const QString &lineColor,
+                                                         QString &formulaAngle, quint32 basePointId,
+                                                         quint32 curveId, qreal mx, qreal my, bool showPointName,
                                                          VMainGraphicsScene *scene, VAbstractPattern *doc,
                                                          VContainer *data,
                                                          const Document &parse, const Source &typeCreation)
@@ -157,10 +159,33 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, cons
     const qreal angle = CheckFormula(_id, formulaAngle, data);
     const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(curveId);
 
-    const QPointF fPoint = FindPoint(static_cast<QPointF>(*basePoint), angle, curve);
-    const qreal segLength = curve->GetLengthByPoint(fPoint);
+    QPointF intersectPoint;
+    const bool isIntersect = FindPoint(static_cast<QPointF>(*basePoint), angle, curve, &intersectPoint);
+
+    if (not isIntersect)
+    {
+        const QString msg = tr("<b><big>Can not create intersection point %1 from point %2</big></b><br>"
+                               "<b><big>to curve %3 with an axis angle of %4°</big></b><br><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName)
+                               .arg(basePoint->name())
+                               .arg(curve->name())
+                               .arg(angle);
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Intersection Point of Curve & Axis"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/curve_intersect_axis.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
+    const qreal segLength = curve->GetLengthByPoint(intersectPoint);
     quint32 id = _id;
-    VPointF *p = new VPointF(fPoint, pointName, mx, my);
+    VPointF *p = new VPointF(intersectPoint, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     if (typeCreation == Source::FromGui)
     {
         id = data->AddGObject(p);
@@ -186,7 +211,7 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, cons
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CurveIntersectAxis, doc);
-        VToolCurveIntersectAxis *point = new VToolCurveIntersectAxis(doc, data, id, typeLine, lineColor, formulaAngle,
+        VToolCurveIntersectAxis *point = new VToolCurveIntersectAxis(doc, data, id, lineType, lineColor, formulaAngle,
                                                                      basePointId, curveId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
@@ -199,37 +224,46 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, cons
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPointF VToolCurveIntersectAxis::FindPoint(const QPointF &point, qreal angle,
-                                           const QSharedPointer<VAbstractCurve> &curve)
+bool VToolCurveIntersectAxis::FindPoint(const QPointF &axisPoint, qreal angle,
+                                           const QSharedPointer<VAbstractCurve> &curve, QPointF *intersectPoint)
 {
-    QRectF rec = QRectF(0, 0, INT_MAX, INT_MAX);
-    rec.translate(-INT_MAX/2.0, -INT_MAX/2.0);
+    QRectF rectangle = QRectF(0, 0, INT_MAX, INT_MAX);
+    rectangle.translate(-INT_MAX/2.0, -INT_MAX/2.0);
 
-    const QLineF axis = VGObject::BuildAxis(point, angle, rec);
+    QLineF axis = QLineF(axisPoint, VGObject::BuildRay(axisPoint, angle, rectangle));
     QVector<QPointF> points = curve->IntersectLine(axis);
+
+    if (points.isEmpty())
+    {
+        QLineF axis2 = QLineF(axisPoint, VGObject::BuildRay(axisPoint, angle + 180, rectangle));
+        points = curve->IntersectLine(axis2);
+    }
 
     if (points.size() > 0)
     {
         if (points.size() == 1)
         {
-            return points.at(0);
+            *intersectPoint = points.at(0);
+            return true;
         }
 
         QMap<qreal, int> lengths;
 
         for ( qint32 i = 0; i < points.size(); ++i )
         {
-            lengths.insert(QLineF(points.at(i), point).length(), i);
+            lengths.insert(QLineF(points.at(i), axisPoint).length(), i);
         }
 
         QMap<qreal, int>::const_iterator i = lengths.constBegin();
         if (i != lengths.constEnd())
         {
-            return points.at(i.value());
+            *intersectPoint = points.at(i.value());
+            return true;
         }
+
     }
 
-    return QPointF();
+    return false;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -237,7 +271,7 @@ VFormula VToolCurveIntersectAxis::GetFormulaAngle() const
 {
     VFormula fAngle(formulaAngle, getData());
     fAngle.setCheckZero(false);
-    fAngle.setToolId(id);
+    fAngle.setToolId(m_id);
     fAngle.setPostfix(degreeSymbol);
     return fAngle;
 }
@@ -249,7 +283,7 @@ void VToolCurveIntersectAxis::SetFormulaAngle(const VFormula &value)
     {
         formulaAngle = value.GetFormula(FormulaType::FromUser);
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -273,7 +307,7 @@ void VToolCurveIntersectAxis::setCurveId(const quint32 &value)
     {
         curveId = value;
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }
@@ -285,11 +319,11 @@ void VToolCurveIntersectAxis::ShowVisualization(bool show)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolCurveIntersectAxis::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolCurveIntersectAxis::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogCurveIntersectAxis>(this, event);
+        ContextMenu<DialogCurveIntersectAxis>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -304,12 +338,12 @@ void VToolCurveIntersectAxis::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = m_dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrTypeLine, dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrName,      dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrLineType,  dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
-    doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrAngle,     dialogTool->GetAngle());
     doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
-    doc->SetAttribute(domElement, AttrCurve, QString().setNum(dialogTool->getCurveId()));
+    doc->SetAttribute(domElement, AttrCurve,     QString().setNum(dialogTool->getCurveId()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -326,7 +360,7 @@ void VToolCurveIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObj
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCurveIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
     curveId = doc->GetParametrUInt(domElement, AttrCurve, NULL_ID_STR);

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -275,27 +275,6 @@ void VContainer::UpdateId(quint32 newId)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief UpdateObject update object in container
- * @param obj container
- * @param id id of existing object
- * @param point object
- */
-template <typename val>
-void VContainer::UpdateObject(QHash<quint32, val> &obj, const quint32 &id, val point)
-{
-    Q_ASSERT_X(id != NULL_ID, Q_FUNC_INFO, "id == 0"); //-V654 //-V712
-    SCASSERT(point.isNull() == false)
-    point->setId(id);
-    if (d->gObjects.contains(id))
-    {
-        d->gObjects[id].clear();
-    }
-    obj[id] = point;
-    UpdateId(id);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
  * @brief Clear clear data in container. Id will be 0.
  */
 void VContainer::Clear()
@@ -527,20 +506,6 @@ quint32 VContainer::AddObject(QHash<key, val> &obj, val value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief UpdateGObject update GObject by id
- * @param id id of existing GObject
- * @param obj object
- */
-void VContainer::UpdateGObject(quint32 id, VGObject* obj)
-{
-    SCASSERT(obj != nullptr)
-    QSharedPointer<VGObject> pointer(obj);
-    UpdateObject(d->gObjects, id, pointer);
-    uniqueNames.insert(obj->name());
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void VContainer::UpdatePiece(quint32 id, const VPiece &detail)
 {
     Q_ASSERT_X(id != NULL_ID, Q_FUNC_INFO, "id == 0"); //-V654 //-V712
@@ -558,10 +523,10 @@ void VContainer::UpdatePiecePath(quint32 id, const VPiecePath &path)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief RemoveIncrement remove increment by name from increment table
+ * @brief removeCustomVariable remove increment by name from increment table
  * @param name name of existing increment
  */
-void VContainer::RemoveIncrement(const QString &name)
+void VContainer::removeCustomVariable(const QString &name)
 {
     d->variables[name].clear();
     d->variables.remove(name);
@@ -574,43 +539,43 @@ const QMap<QString, QSharedPointer<VMeasurement> > VContainer::DataMeasurements(
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VIncrement> > VContainer::DataIncrements() const
+const QMap<QString, QSharedPointer<VIncrement> > VContainer::variablesData() const
 {
     return DataVar<VIncrement>(VarType::Increment);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VLengthLine> > VContainer::DataLengthLines() const
+const QMap<QString, QSharedPointer<VLengthLine> > VContainer::lineLengthsData() const
 {
     return DataVar<VLengthLine>(VarType::LineLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VCurveLength> > VContainer::DataLengthCurves() const
+const QMap<QString, QSharedPointer<VCurveLength> > VContainer::curveLengthsData() const
 {
     return DataVar<VCurveLength>(VarType::CurveLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VCurveCLength> > VContainer::DataCurvesCLength() const
+const QMap<QString, QSharedPointer<VCurveCLength> > VContainer::controlPointLengthsData() const
 {
     return DataVar<VCurveCLength>(VarType::CurveCLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VLineAngle> > VContainer::DataAngleLines() const
+const QMap<QString, QSharedPointer<VLineAngle> > VContainer::lineAnglesData() const
 {
     return DataVar<VLineAngle>(VarType::LineAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VArcRadius> > VContainer::DataRadiusesArcs() const
+const QMap<QString, QSharedPointer<VArcRadius> > VContainer::arcRadiusesData() const
 {
     return DataVar<VArcRadius>(VarType::ArcRadius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VCurveAngle> > VContainer::DataAnglesCurves() const
+const QMap<QString, QSharedPointer<VCurveAngle> > VContainer::curveAnglesData() const
 {
     return DataVar<VCurveAngle>(VarType::CurveAngle);
 }

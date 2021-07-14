@@ -61,20 +61,22 @@ extern const qreal widthHairLine;
 class QGraphicsScene;
 class QGraphicsItem;
 class QGraphicsEllipseItem;
+class QGraphicsRectItem;
 class QGraphicsLineItem;
 class QColor;
 class QRectF;
 class QPainterPath;
 class QPen;
 
-qreal SceneScale(QGraphicsScene *scene);
+qreal sceneScale(QGraphicsScene *scene);
 
-QColor CorrectColor(const QGraphicsItem *item, const QColor &color);
+QColor correctColor(const QGraphicsItem *item, const QColor &color);
 
 QRectF PointRect(qreal radius);
-qreal  ScaledRadius(qreal scale);
-void   ScaleCircleSize(QGraphicsEllipseItem *item, qreal scale);
-qreal  ScaleWidth(qreal width, qreal scale);
+qreal  scaledRadius(qreal scale);
+void   scaleCircleSize(QGraphicsEllipseItem *item, qreal scale);
+void   scaleRectSize(QGraphicsRectItem *item, qreal scale);
+qreal  scaleWidth(qreal width, qreal scale);
 
 QPainterPath ItemShapeFromPath(const QPainterPath &path, const QPen &pen);
 

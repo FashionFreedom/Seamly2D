@@ -94,7 +94,7 @@
                </widget>
               </item>
               <item row="0" column="1">
-               <widget class="VLineEdit" name="lineEditLetter">
+               <widget class="VLineEdit" name="letter_LineEdit">
                 <property name="maxLength">
                  <number>3</number>
                 </property>
@@ -131,7 +131,7 @@
                </widget>
               </item>
               <item row="2" column="1">
-               <widget class="QSpinBox" name="spinBoxQuantity">
+               <widget class="QSpinBox" name="quantity_SpinBox">
                 <property name="minimum">
                  <number>1</number>
                 </property>
@@ -151,7 +151,7 @@
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QCheckBox" name="checkBoxFold">
+               <widget class="QCheckBox" name="fold_CheckBox">
                 <property name="text">
                  <string>on fold</string>
                 </property>
@@ -165,7 +165,7 @@
                </widget>
               </item>
               <item row="5" column="1">
-               <widget class="VLineEdit" name="lineEditAnnotation">
+               <widget class="VLineEdit" name="annotation_LineEdit">
                 <property name="placeholderText">
                  <string>A text field to add comments in</string>
                 </property>
@@ -179,7 +179,7 @@
                </widget>
               </item>
               <item row="6" column="1">
-               <widget class="VLineEdit" name="lineEditOrientation">
+               <widget class="VLineEdit" name="orientation_LineEdit">
                 <property name="placeholderText">
                  <string notr="true">&quot;Left&quot;/&quot;Right&quot;/&quot;Undefined&quot;</string>
                 </property>
@@ -193,7 +193,7 @@
                </widget>
               </item>
               <item row="7" column="1">
-               <widget class="VLineEdit" name="lineEditRotation">
+               <widget class="VLineEdit" name="rotation_LineEdit">
                 <property name="placeholderText">
                  <string notr="true">&quot;1-Way&quot;/&quot;2-Way&quot;/&quot;4-Way&quot;/&quot;Any&quot;</string>
                 </property>
@@ -207,7 +207,7 @@
                </widget>
               </item>
               <item row="8" column="1">
-               <widget class="VLineEdit" name="lineEditTilt">
+               <widget class="VLineEdit" name="tilt_LineEdit">
                 <property name="placeholderText">
                  <string notr="true">&quot;CW X&quot;/&quot;CCW X&quot;</string>
                 </property>
@@ -221,7 +221,7 @@
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="VLineEdit" name="lineEditFoldPosition">
+               <widget class="VLineEdit" name="foldPosition_LineEdit">
                 <property name="placeholderText">
                  <string notr="true">&quot;Up/Down&quot;/&quot;Left/Right&quot;</string>
                 </property>
@@ -255,7 +255,7 @@
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
-             <widget class="QGroupBox" name="groupBoxDetailLabel">
+             <widget class="QGroupBox" name="detailLabel_GroupBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -338,7 +338,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QToolButton" name="pushButtonDLWidth">
+                  <widget class="QToolButton" name="dLabelWidth_PushButton">
                    <property name="toolTip">
                     <string>Formula wizard</string>
                    </property>
@@ -400,7 +400,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_19">
                  <item>
-                  <widget class="QPlainTextEdit" name="lineEditDLWidthFormula">
+                  <widget class="QPlainTextEdit" name="dLabelWidthFormula_LineEdit">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -425,7 +425,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButtonShowDLWidth">
+                  <widget class="QPushButton" name="showDLWidth_PushButton">
                    <property name="maximumSize">
                     <size>
                      <width>18</width>
@@ -540,7 +540,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QToolButton" name="pushButtonDLHeight">
+                  <widget class="QToolButton" name="dLabelHeght_PushButton">
                    <property name="toolTip">
                     <string>Formula wizard</string>
                    </property>
@@ -602,7 +602,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_21">
                  <item>
-                  <widget class="QPlainTextEdit" name="lineEditDLHeightFormula">
+                  <widget class="QPlainTextEdit" name="dLabelHeightFormula_LineEdit">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -627,7 +627,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButtonShowDLHeight">
+                  <widget class="QPushButton" name="showDLHeight_PushButton">
                    <property name="maximumSize">
                     <size>
                      <width>18</width>
@@ -684,12 +684,12 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelDLCenter">
                    <property name="text">
-                    <string>Center pin:</string>
+                    <string>Center anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="comboBoxDLCenterPin"/>
+                  <widget class="QComboBox" name="dLabelCenterPin_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -721,22 +721,22 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelDLTopLeftPin">
                    <property name="text">
-                    <string>Top left pin:</string>
+                    <string>Top left anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="comboBoxDLTopLeftPin"/>
+                  <widget class="QComboBox" name="dLabelTopLeftPin_ComboBox"/>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="labelDLBottomRightPin">
                    <property name="text">
-                    <string>Bottom right pin:</string>
+                    <string>Bottom right anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="comboBoxDLBottomRightPin"/>
+                  <widget class="QComboBox" name="dLabelBottomRightPin_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -826,7 +826,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QToolButton" name="pushButtonDLAngle">
+                  <widget class="QToolButton" name="dLabelAngle_PushButton">
                    <property name="toolTip">
                     <string>Formula wizard</string>
                    </property>
@@ -888,7 +888,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_23">
                  <item>
-                  <widget class="QPlainTextEdit" name="lineEditDLAngleFormula">
+                  <widget class="QPlainTextEdit" name="dLabelAngleFormula_LineEdit">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -913,7 +913,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButtonShowDLAngle">
+                  <widget class="QPushButton" name="showDLAngle_PushButton">
                    <property name="maximumSize">
                     <size>
                      <width>18</width>
@@ -964,7 +964,7 @@
                </item>
               </layout>
              </widget>
-             <widget class="QGroupBox" name="groupBoxPatternLabel">
+             <widget class="QGroupBox" name="patternLabel_GroupBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
@@ -1044,7 +1044,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QToolButton" name="pushButtonPLWidth">
+                  <widget class="QToolButton" name="pLabelWidth_PushButton">
                    <property name="toolTip">
                     <string>Formula wizard</string>
                    </property>
@@ -1106,7 +1106,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_26">
                  <item>
-                  <widget class="QPlainTextEdit" name="lineEditPLWidthFormula">
+                  <widget class="QPlainTextEdit" name="pLabelWidthFormula_LineEdit">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -1131,7 +1131,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButtonShowPLWidth">
+                  <widget class="QPushButton" name="showPLabelWidth_PushButton">
                    <property name="maximumSize">
                     <size>
                      <width>18</width>
@@ -1246,7 +1246,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QToolButton" name="pushButtonPLHeight">
+                  <widget class="QToolButton" name="pLabelHeight_PushButton">
                    <property name="toolTip">
                     <string>Formula wizard</string>
                    </property>
@@ -1308,7 +1308,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_27">
                  <item>
-                  <widget class="QPlainTextEdit" name="lineEditPLHeightFormula">
+                  <widget class="QPlainTextEdit" name="pLabelHeightFormula_LineEdit">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -1333,7 +1333,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButtonShowPLHeight">
+                  <widget class="QPushButton" name="showPLabelHeight_PushButton">
                    <property name="maximumSize">
                     <size>
                      <width>18</width>
@@ -1390,12 +1390,12 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelPLCenter">
                    <property name="text">
-                    <string>Center pin:</string>
+                    <string>Center anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="comboBoxPLCenterPin"/>
+                  <widget class="QComboBox" name="pLabelCenterPin_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -1427,22 +1427,22 @@
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelPLTopLeftPin">
                    <property name="text">
-                    <string>Top left pin:</string>
+                    <string>Top left anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="comboBoxPLTopLeftPin"/>
+                  <widget class="QComboBox" name="pLabelTopLeftPin_ComboBox"/>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="labelPLBottomRightPin">
                    <property name="text">
-                    <string>Bottom right pin:</string>
+                    <string>Bottom right anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="comboBoxPLBottomRightPin"/>
+                  <widget class="QComboBox" name="pLabelBottomRightPin_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -1532,7 +1532,7 @@
                   </spacer>
                  </item>
                  <item alignment="Qt::AlignRight">
-                  <widget class="QToolButton" name="pushButtonPLAngle">
+                  <widget class="QToolButton" name="pLabelAngle_PushButton">
                    <property name="toolTip">
                     <string>Formula wizard</string>
                    </property>
@@ -1594,7 +1594,7 @@
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_28">
                  <item>
-                  <widget class="QPlainTextEdit" name="lineEditPLAngleFormula">
+                  <widget class="QPlainTextEdit" name="pLabelAngleFormula_LineEdit">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                      <horstretch>0</horstretch>
@@ -1619,7 +1619,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButtonShowPLAngle">
+                  <widget class="QPushButton" name="showPLabelAngle_PushButton">
                    <property name="maximumSize">
                     <size>
                      <width>18</width>

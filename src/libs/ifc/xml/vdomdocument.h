@@ -124,7 +124,7 @@ public:
     void SetAttribute(QDomElement &domElement, const QString &name, const T &value) const;
 
     static quint32 GetParametrUInt(const QDomElement& domElement, const QString &name, const QString &defValue);
-    static bool    GetParametrBool(const QDomElement& domElement, const QString &name, const QString &defValue);
+    static bool    getParameterBool(const QDomElement& domElement, const QString &name, const QString &defValue);
 
     static NodeUsage GetParametrUsage(const QDomElement& domElement, const QString &name);
     static void      SetParametrUsage(QDomElement& domElement, const QString &name, const NodeUsage &value);

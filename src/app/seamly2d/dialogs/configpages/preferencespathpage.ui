@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>422</width>
-    <height>295</height>
+    <width>485</width>
+    <height>570</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>485</width>
+    <height>570</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>485</width>
+    <height>570</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string notr="true">Path</string>
@@ -16,6 +28,12 @@
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QGroupBox" name="groupBox">
+     <property name="font">
+      <font>
+       <family>MS Shell Dlg 2 UI</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
      <property name="title">
       <string>Paths that Seamly2D uses</string>
      </property>
@@ -68,6 +86,12 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>MS Shell Dlg 2 UI</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Default</string>
        </property>
@@ -96,6 +120,12 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>MS Shell Dlg 2 UI</family>
+         <pointsize>9</pointsize>
+        </font>
        </property>
        <property name="text">
         <string>Edit</string>

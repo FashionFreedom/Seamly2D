@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -85,7 +85,7 @@ const QString AttrDartP2      = QStringLiteral("dartP2");
 const QString AttrDartP3      = QStringLiteral("dartP3");
 const QString AttrX           = QStringLiteral("x");
 const QString AttrY           = QStringLiteral("y");
-const QString AttrTypeLine    = QStringLiteral("typeLine");
+const QString AttrLineType    = QStringLiteral("lineType");
 const QString AttrCut         = QStringLiteral("cut");
 const QString AttrLength      = QStringLiteral("length");
 const QString AttrBasePoint   = QStringLiteral("basePoint");
@@ -145,13 +145,16 @@ const QString AttrIdObject    = QStringLiteral("idObject");
 const QString AttrInLayout    = QStringLiteral("inLayout");
 const QString AttrRotationAngle = QStringLiteral("rotationAngle");
 const QString AttrClosed      = QStringLiteral("closed");
+const QString AttrShowPointName   = QStringLiteral("showPointName");
+const QString AttrShowPointName1  = QStringLiteral("showPointName1");
+const QString AttrShowPointName2  = QStringLiteral("showPointName2");
 
-const QString TypeLineNone           = QStringLiteral("none");
-const QString TypeLineLine           = QStringLiteral("hair");
-const QString TypeLineDashLine       = QStringLiteral("dashLine");
-const QString TypeLineDotLine        = QStringLiteral("dotLine");
-const QString TypeLineDashDotLine    = QStringLiteral("dashDotLine");
-const QString TypeLineDashDotDotLine = QStringLiteral("dashDotDotLine");
+const QString LineTypeNone           = QStringLiteral("none");
+const QString LineTypeSolidLine      = QStringLiteral("solidLine");
+const QString LineTypeDashLine       = QStringLiteral("dashLine");
+const QString LineTypeDotLine        = QStringLiteral("dotLine");
+const QString LineTypeDashDotLine    = QStringLiteral("dashDotLine");
+const QString LineTypeDashDotDotLine = QStringLiteral("dashDotDotLine");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -160,9 +163,9 @@ const QString TypeLineDashDotDotLine = QStringLiteral("dashDotDotLine");
  */
 QStringList StylesList()
 {
-    const QStringList styles = QStringList() << TypeLineNone    << TypeLineLine << TypeLineDashLine
-                                             << TypeLineDotLine << TypeLineDashDotLine
-                                             << TypeLineDashDotDotLine;
+    const QStringList styles = QStringList() << LineTypeNone    << LineTypeSolidLine << LineTypeDashLine
+                                             << LineTypeDotLine << LineTypeDashDotLine
+                                             << LineTypeDashDotDotLine;
     return styles;
 }
 
@@ -171,20 +174,20 @@ QStringList StylesList()
  * @brief LineStyle return pen style for current line style.
  * @return pen style.
  */
-Qt::PenStyle LineStyleToPenStyle(const QString &typeLine)
+Qt::PenStyle LineStyleToPenStyle(const QString &lineType)
 {
     const QStringList styles = StylesList();
-    switch (styles.indexOf(typeLine))
+    switch (styles.indexOf(lineType))
     {
-        case 0: // TypeLineNone
+        case 0: // LineTypeNone
             return Qt::NoPen;
-        case 2: // TypeLineDashLine
+        case 2: // LineTypeDashLine
             return Qt::DashLine;
-        case 3: // TypeLineDotLine
+        case 3: // LineTypeDotLine
             return Qt::DotLine;
-        case 4: // TypeLineDashDotLine
+        case 4: // LineTypeDashDotLine
             return Qt::DashDotLine;
-        case 5: // TypeLineDashDotDotLine
+        case 5: // LineTypeDashDotDotLine
             return Qt::DashDotDotLine;
         default:
             return Qt::SolidLine;
@@ -200,22 +203,22 @@ QString PenStyleToLineStyle(Qt::PenStyle penStyle)
     switch (penStyle)
     {
         case Qt::NoPen:
-            return TypeLineNone;
+            return LineTypeNone;
         case Qt::DashLine:
-            return TypeLineDashLine;
+            return LineTypeDashLine;
         case Qt::DotLine:
-            return TypeLineDotLine;
+            return LineTypeDotLine;
         case Qt::DashDotLine:
-            return TypeLineDashDotLine;
+            return LineTypeDashDotLine;
         case Qt::DashDotDotLine:
-            return TypeLineDashDotDotLine;
+            return LineTypeDashDotDotLine;
         default:
             break;
     }
 
     QT_WARNING_POP
 
-    return TypeLineLine;
+    return LineTypeSolidLine;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -246,10 +249,12 @@ QMap<QString, QIcon> LineStylesPics()
 QMap<QString, QIcon> CurvePenStylesPics()
 {
     QMap<QString, QIcon> map = LineStylesPics();
-    map.remove(TypeLineNone);
+    map.remove(LineTypeNone);
     return map;
 }
 
+const QString ColorByGroup          = QStringLiteral("byGroup");
+const QString ColorNone             = QStringLiteral("none");
 const QString ColorBlack            = QStringLiteral("black");
 const QString ColorGreen            = QStringLiteral("green");
 const QString ColorBlue             = QStringLiteral("blue");
@@ -267,10 +272,14 @@ const QString ColorMediumSeaGreen   = QStringLiteral("mediumseagreen");
 const QString ColorLime             = QStringLiteral("lime");
 const QString ColorDeepSkyBlue      = QStringLiteral("deepskyblue");
 const QString ColorCornFlowerBlue   = QStringLiteral("cornflowerblue");
+const QString ColorGray             = QStringLiteral("gray");
+const QString ColorDarkGray         = QStringLiteral("darkgray");
+const QString ColorLightGray        = QStringLiteral("lightgray");
+const QString ColorWhite            = QStringLiteral("white");
 
 //variables
 const QString measurement_         = QStringLiteral("M_");
-const QString increment_           = QStringLiteral("Increment_");
+const QString variable_           = QStringLiteral("Variable_");
 const QString line_                = QStringLiteral("Line_");
 const QString angleLine_           = QStringLiteral("AngleLine_");
 const QString spl_                 = QStringLiteral(SPL_);
@@ -302,7 +311,7 @@ const QString currentLength        = QStringLiteral("CurrentLength");
 const QString currentSeamAllowance = QStringLiteral("CurrentSeamAllowance");
 
 const QStringList builInVariables = QStringList() << measurement_
-                                                  << increment_
+                                                  << variable_
                                                   << line_
                                                   << angleLine_
                                                   << arc_

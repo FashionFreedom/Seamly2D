@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -218,9 +218,9 @@ QString VToolLine::getTagName() const
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    const qreal width = ScaleWidth(m_isHovered ? widthMainLine : widthHairLine, SceneScale(scene()));
+    const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
 
-    setPen(QPen(CorrectColor(this, lineColor), width, LineStyleToPenStyle(m_lineType)));
+    setPen(QPen(correctColor(this, lineColor), width, LineStyleToPenStyle(m_lineType)));
 
     QGraphicsLineItem::paint(painter, option, widget);
 }
@@ -260,9 +260,9 @@ void VToolLine::ShowTool(quint32 id, bool enable)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolLine::Disable(bool disable, const QString &namePP)
+void VToolLine::Disable(bool disable, const QString &draftBlockName)
 {
-    const bool enabled = !CorrectDisable(disable, namePP);
+    const bool enabled = !CorrectDisable(disable, draftBlockName);
     this->setEnabled(enabled);
 }
 
@@ -283,17 +283,28 @@ void VToolLine::AllowSelecting(bool enabled)
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolLine::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
+    Q_UNUSED(id)
     try
     {
-        ContextMenu<DialogLine>(this, event);
+        ContextMenu<DialogLine>(event);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
         Q_UNUSED(e)
         return;//Leave this method immediately!!!
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief contextMenuEvent handle context menu events.
+ * @param event context menu event.
+ */
+void VToolLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+{
+    showContextMenu(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -316,7 +327,7 @@ void VToolLine::AddToFile()
 void VToolLine::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = true;
-    setToolTip(MakeToolTip());
+    setToolTip(makeToolTip());
     QGraphicsLineItem::hoverEnterEvent(event);
 }
 
@@ -358,7 +369,7 @@ QVariant VToolLine::itemChange(QGraphicsItem::GraphicsItemChange change, const Q
 {
     if (change == QGraphicsItem::ItemSelectedChange)
     {
-        emit ChangedToolSelection(value.toBool(), id, id);
+        emit ChangedToolSelection(value.toBool(), m_id, m_id);
     }
 
     return QGraphicsItem::itemChange(change, value);
@@ -376,7 +387,7 @@ void VToolLine::keyReleaseEvent(QKeyEvent *event)
         case Qt::Key_Delete:
             try
             {
-                DeleteTool();
+                deleteTool();
             }
             catch(const VExceptionToolWasDeleted &e)
             {
@@ -401,7 +412,7 @@ void VToolLine::SaveDialog(QDomElement &domElement)
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrFirstPoint, QString().setNum(dialogTool->GetFirstPoint()));
     doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPoint()));
-    doc->SetAttribute(domElement, AttrTypeLine, dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
 }
 
@@ -412,7 +423,7 @@ void VToolLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 
     doc->SetAttribute(tag, AttrFirstPoint, firstPoint);
     doc->SetAttribute(tag, AttrSecondPoint, secondPoint);
-    doc->SetAttribute(tag, AttrTypeLine, m_lineType);
+    doc->SetAttribute(tag, AttrLineType, m_lineType);
     doc->SetAttribute(tag, AttrLineColor, lineColor);
 }
 
@@ -421,7 +432,7 @@ void VToolLine::ReadToolAttributes(const QDomElement &domElement)
 {
     firstPoint = doc->GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
     secondPoint = doc->GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
-    m_lineType = doc->GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
 }
 
@@ -441,7 +452,7 @@ void VToolLine::SetVisualization()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolLine::MakeToolTip() const
+QString VToolLine::makeToolTip() const
 {
     const QSharedPointer<VPointF> first = VAbstractTool::data.GeometricObject<VPointF>(firstPoint);
     const QSharedPointer<VPointF> second = VAbstractTool::data.GeometricObject<VPointF>(secondPoint);

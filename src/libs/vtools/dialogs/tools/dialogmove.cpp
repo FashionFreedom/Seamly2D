@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -87,48 +87,43 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
-    : DialogTool(data, toolId, parent),
-      ui(new Ui::DialogMove),
-      flagAngle(false),
-      flagLength(false),
-      timerAngle(nullptr),
-      timerLength(nullptr),
-      formulaAngle(),
-      formulaLength(),
-      formulaBaseHeightAngle(0),
-      formulaBaseHeightLength(0),
-      objects(),
-      stage1(true),
-      m_suffix()
+    : DialogTool(data, toolId, parent)
+    ,  ui(new Ui::DialogMove)
+    , angleFlag(false)
+    , angleFormula()
+    , angleTimer(nullptr)
+    , lengthFlag(false)
+    , lengthFormula()
+    , lengthTimer(nullptr)
+    , objects()
+    , stage1(true)
+    , m_suffix()
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/move.png"));
 
-    this->formulaBaseHeightAngle = ui->plainTextEditAngle->height();
-    ui->plainTextEditAngle->installEventFilter(this);
+    ui->angle_PlainTextEdit->installEventFilter(this);
+    ui->length_PlainTextEdit->installEventFilter(this);
 
-    this->formulaBaseHeightLength = ui->plainTextEditLength->height();
-    ui->plainTextEditLength->installEventFilter(this);
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix());
 
-    ui->lineEditSuffix->setText(qApp->getCurrentDocument()->GenerateSuffix());
+    angleTimer = new QTimer(this);
+    connect(angleTimer, &QTimer::timeout, this, &DialogMove::evaluateAngle);
 
-    timerAngle = new QTimer(this);
-    connect(timerAngle, &QTimer::timeout, this, &DialogMove::EvalAngle);
-
-    timerLength = new QTimer(this);
-    connect(timerLength, &QTimer::timeout, this, &DialogMove::EvalLength);
+    lengthTimer = new QTimer(this);
+    connect(lengthTimer, &QTimer::timeout, this, &DialogMove::evaluateLength);
 
     InitOkCancelApply(ui);
 
     flagName = true;
     CheckState();
 
-    connect(ui->lineEditSuffix, &QLineEdit::textChanged, this, &DialogMove::SuffixChanged);
-    connect(ui->toolButtonExprAngle, &QPushButton::clicked, this, &DialogMove::FXAngle);
-    connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogMove::FXLength);
-    connect(ui->plainTextEditAngle, &QPlainTextEdit::textChanged, this, &DialogMove::AngleChanged);
-    connect(ui->plainTextEditLength, &QPlainTextEdit::textChanged, this, &DialogMove::LengthChanged);
-    connect(ui->pushButtonGrowAngle, &QPushButton::clicked, this, &DialogMove::DeployAngleTextEdit);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogMove::DeployLengthTextEdit);
+    connect(ui->suffix_LineEdit,          &QLineEdit::textChanged,      this, &DialogMove::suffixChanged);
+    connect(ui->angleFormula_ToolButton,  &QPushButton::clicked,        this, &DialogMove::editAngleFormula);
+    connect(ui->lengthFormula_ToolButton, &QPushButton::clicked,        this, &DialogMove::editLengthFormula);
+    connect(ui->angle_PlainTextEdit,      &QPlainTextEdit::textChanged, this, &DialogMove::angleChanged);
+    connect(ui->length_PlainTextEdit,     &QPlainTextEdit::textChanged, this, &DialogMove::lengthChanged);
 
     vis = new VisToolMove(data);
 }
@@ -142,66 +137,56 @@ DialogMove::~DialogMove()
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::GetAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formulaAngle, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(angleFormula, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SetAngle(const QString &value)
 {
-    formulaAngle = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
-    // increase height if needed.
-    if (formulaAngle.length() > 80)
-    {
-        this->DeployAngleTextEdit();
-    }
-    ui->plainTextEditAngle->setPlainText(formulaAngle);
+    angleFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    ui->angle_PlainTextEdit->setPlainText(angleFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
-    operation->SetAngle(formulaAngle);
+    operation->SetAngle(angleFormula);
 
-    MoveCursorToEnd(ui->plainTextEditAngle);
+    MoveCursorToEnd(ui->angle_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::GetLength() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formulaLength, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(lengthFormula, qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SetLength(const QString &value)
 {
-    formulaLength = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
-    // increase height if needed.
-    if (formulaLength.length() > 80)
-    {
-        this->DeployLengthTextEdit();
-    }
-    ui->plainTextEditLength->setPlainText(formulaLength);
+    lengthFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    ui->length_PlainTextEdit->setPlainText(lengthFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
-    operation->SetLength(formulaLength);
+    operation->SetLength(lengthFormula);
 
-    MoveCursorToEnd(ui->plainTextEditLength);
+    MoveCursorToEnd(ui->length_PlainTextEdit);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogMove::GetSuffix() const
+QString DialogMove::getSuffix() const
 {
     return m_suffix;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::SetSuffix(const QString &value)
+void DialogMove::setSuffix(const QString &value)
 {
     m_suffix = value;
-    ui->lineEditSuffix->setText(value);
+    ui->suffix_LineEdit->setText(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> DialogMove::GetObjects() const
+QVector<quint32> DialogMove::getObjects() const
 {
     return objects.toVector();
 }
@@ -225,7 +210,7 @@ void DialogMove::ShowDialog(bool click)
 
         VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
         SCASSERT(operation != nullptr)
-        operation->SetObjects(objects.toVector());
+        operation->setObjects(objects.toVector());
         operation->VisualMode();
 
         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
@@ -253,8 +238,8 @@ void DialogMove::ShowDialog(bool click)
             SetLength(operation->Length());
             setModal(true);
             emit ToolTip("");
-            timerAngle->start();
-            timerLength->start();
+            angleTimer->start();
+            lengthTimer->start();
             show();
         }
     }
@@ -289,35 +274,23 @@ void DialogMove::SelectedObject(bool selected, quint32 object, quint32 tool)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::DeployAngleTextEdit()
+void DialogMove::angleChanged()
 {
-    DeployFormula(ui->plainTextEditAngle, ui->pushButtonGrowAngle, formulaBaseHeightAngle);
+    labelEditFormula = ui->editAngle_Label;
+    labelResultCalculation = ui->angleResult_Label;
+    ValFormulaChanged(angleFlag, ui->angle_PlainTextEdit, angleTimer, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::DeployLengthTextEdit()
+void DialogMove::lengthChanged()
 {
-    DeployFormula(ui->plainTextEditLength, ui->pushButtonGrowLength, formulaBaseHeightLength);
+    labelEditFormula = ui->editLength_Label;
+    labelResultCalculation = ui->lengthResult_Label;
+    ValFormulaChanged(lengthFlag, ui->length_PlainTextEdit, lengthTimer, degreeSymbol);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::AngleChanged()
-{
-    labelEditFormula = ui->labelEditAngle;
-    labelResultCalculation = ui->labelResultAngle;
-    ValFormulaChanged(flagAngle, ui->plainTextEditAngle, timerAngle, degreeSymbol);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogMove::LengthChanged()
-{
-    labelEditFormula = ui->labelEditLength;
-    labelResultCalculation = ui->labelResultLength;
-    ValFormulaChanged(flagLength, ui->plainTextEditLength, timerLength, degreeSymbol);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogMove::FXAngle()
+void DialogMove::editAngleFormula()
 {
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
@@ -331,7 +304,7 @@ void DialogMove::FXAngle()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::FXLength()
+void DialogMove::editLengthFormula()
 {
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
@@ -345,7 +318,7 @@ void DialogMove::FXLength()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::SuffixChanged()
+void DialogMove::suffixChanged()
 {
     QLineEdit* edit = qobject_cast<QLineEdit*>(sender());
     if (edit)
@@ -354,7 +327,7 @@ void DialogMove::SuffixChanged()
         if (suffix.isEmpty())
         {
             flagName = false;
-            ChangeColor(ui->labelSuffix, Qt::red);
+            ChangeColor(ui->suffix_Label, Qt::red);
             CheckState();
             return;
         }
@@ -370,7 +343,7 @@ void DialogMove::SuffixChanged()
                     if (not rx.match(name).hasMatch() || not data->IsUnique(name))
                     {
                         flagName = false;
-                        ChangeColor(ui->labelSuffix, Qt::red);
+                        ChangeColor(ui->suffix_Label, Qt::red);
                         CheckState();
                         return;
                     }
@@ -379,7 +352,7 @@ void DialogMove::SuffixChanged()
         }
 
         flagName = true;
-        ChangeColor(ui->labelSuffix, okColor);
+        ChangeColor(ui->suffix_Label, okColor);
     }
     CheckState();
 }
@@ -388,7 +361,7 @@ void DialogMove::SuffixChanged()
 void DialogMove::CheckState()
 {
     SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagAngle && flagLength && flagName);
+    bOk->setEnabled(angleFlag && lengthFlag && flagName);
     SCASSERT(bApply != nullptr)
     bApply->setEnabled(bOk->isEnabled());
 }
@@ -402,42 +375,42 @@ void DialogMove::ShowVisualization()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SaveData()
 {
-    m_suffix = ui->lineEditSuffix->text();
+    m_suffix = ui->suffix_LineEdit->text();
 
-    formulaAngle = ui->plainTextEditAngle->toPlainText();
-    formulaAngle.replace("\n", " ");
+    angleFormula = ui->angle_PlainTextEdit->toPlainText();
+    angleFormula.replace("\n", " ");
 
-    formulaLength = ui->plainTextEditLength->toPlainText();
-    formulaLength.replace("\n", " ");
+    lengthFormula = ui->length_PlainTextEdit->toPlainText();
+    lengthFormula.replace("\n", " ");
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
 
-    operation->SetObjects(objects.toVector());
-    operation->SetAngle(formulaAngle);
-    operation->SetLength(formulaLength);
+    operation->setObjects(objects.toVector());
+    operation->SetAngle(angleFormula);
+    operation->SetLength(lengthFormula);
     operation->RefreshGeometry();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::closeEvent(QCloseEvent *event)
 {
-    ui->plainTextEditAngle->blockSignals(true);
-    ui->plainTextEditLength->blockSignals(true);
+    ui->angle_PlainTextEdit->blockSignals(true);
+    ui->length_PlainTextEdit->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::EvalAngle()
+void DialogMove::evaluateAngle()
 {
-    labelEditFormula = ui->labelEditAngle;
-    Eval(ui->plainTextEditAngle->toPlainText(), flagAngle, ui->labelResultAngle, degreeSymbol, false);
+    labelEditFormula = ui->editAngle_Label;
+    Eval(ui->angle_PlainTextEdit->toPlainText(), angleFlag, ui->angleResult_Label, degreeSymbol, false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMove::EvalLength()
+void DialogMove::evaluateLength()
 {
-    labelEditFormula = ui->labelEditLength;
+    labelEditFormula = ui->editLength_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    Eval(ui->plainTextEditLength->toPlainText(), flagLength, ui->labelResultLength, postfix);
+    Eval(ui->length_PlainTextEdit->toPlainText(), lengthFlag, ui->lengthResult_Label, postfix);
 }

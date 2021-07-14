@@ -106,7 +106,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     });
 
     //----------------------- Toolbar
-    ui->toolBarStyleCheck->setChecked(qApp->SeamlyMeSettings()->GetToolBarStyle());
+    ui->toolBarStyle_CheckBox->setChecked(qApp->SeamlyMeSettings()->getToolBarStyle());
 
     //---------------------------Default height and size
     ui->defHeightCombo->addItems(VMeasurement::WholeListHeights(Unit::Cm));
@@ -146,7 +146,7 @@ void SeamlyMePreferencesConfigurationPage::Apply()
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
     settings->SetOsSeparator(ui->osOptionCheck->isChecked());
 
-    settings->SetToolBarStyle(ui->toolBarStyleCheck->isChecked());
+    settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
 
     if (m_langChanged || m_systemChanged)
     {
@@ -163,7 +163,7 @@ void SeamlyMePreferencesConfigurationPage::Apply()
 
         // Part about measurments will not be updated automatically
         qApp->RetranslateTables();
-        qApp->RetranslateGroups();
+        qApp->retranslateGroups();
     }
 
     if (m_defGradationChanged)

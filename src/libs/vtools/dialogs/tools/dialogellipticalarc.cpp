@@ -331,7 +331,7 @@ void DialogEllipticalArc::SetRotationAngle(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogEllipticalArc::GetPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, TypeLineLine);
+    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

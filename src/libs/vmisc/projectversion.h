@@ -78,14 +78,18 @@ extern const QString APP_VERSION_STR;
 
 #define VER_COMPANYNAME_STR         "Seamly2DTeam"
 //#define VER_FILEDESCRIPTION_STR   "Patternmaking program." // Defined in program
-//#define VER_INTERNALNAME_STR      "Seamly2D" // Defined in program
+
+#ifndef VER_INTERNALNAME_STR
+    #define VER_INTERNALNAME_STR    "Seamly2D" // Defined in program
+#endif
+
 #define VER_LEGALCOPYRIGHT_STR      "Copyright © 2014-2017 Seamly2D Team"
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
 //#define VER_ORIGINALFILENAME_STR  "seamly2d.exe" // Defined in program
 //#define VER_PRODUCTNAME_STR       "Seamly2D" // Defined in program
 
-#define VER_COMPANYDOMAIN_STR       "https://fashionfreedom.eu"
+#define VER_COMPANYDOMAIN_STR       "https://seamly.net"
 
 QString compilerString();
 QString buildCompatibilityString();

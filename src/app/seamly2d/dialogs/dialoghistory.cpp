@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,10 +73,16 @@
  * @param parent parent widget
  */
 DialogHistory::DialogHistory(VContainer *data, VPattern *doc, QWidget *parent)
-    :DialogTool(data, 0, parent), ui(new Ui::DialogHistory), doc(doc), cursorRow(0),
-    cursorToolRecordRow(0)
+    : DialogTool(data, 0, parent)
+    , ui(new Ui::DialogHistory)
+    , doc(doc)
+    , cursorRow(0)
+    , cursorToolRecordRow(0)
 {
     ui->setupUi(this);
+
+    setWindowFlags(Qt::Window);
+    setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
 
     qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
@@ -427,8 +433,8 @@ QString DialogHistory::Record(const VToolRecord &tool)
             case Tool::NodeSplinePath:
             case Tool::Group:
             case Tool::Rotation:
-            case Tool::FlippingByLine:
-            case Tool::FlippingByAxis:
+            case Tool::MirrorByLine:
+            case Tool::MirrorByAxis:
             case Tool::Move:
             case Tool::InternalPath:
             case Tool::Pin:

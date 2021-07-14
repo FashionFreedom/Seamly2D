@@ -180,7 +180,7 @@ QVariant VSimpleCurve::itemChange(QGraphicsItem::GraphicsItemChange change, cons
 //---------------------------------------------------------------------------------------------------------------------
 void VSimpleCurve::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit ShowContextMenu(event);
+    emit showContextMenu(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -210,6 +210,6 @@ void VSimpleCurve::ScalePenWidth()
         width = widthHairLine;
     }
 
-    width = ScaleWidth(width, SceneScale(scene()));
-    setPen(QPen(CorrectColor(this, m_curve->GetColor()), width, LineStyleToPenStyle(m_curve->GetPenStyle())));
+    width = scaleWidth(width, sceneScale(scene()));
+    setPen(QPen(correctColor(this, m_curve->GetColor()), width, LineStyleToPenStyle(m_curve->GetPenStyle())));
 }

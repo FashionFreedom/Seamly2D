@@ -13,10 +13,13 @@ make install
 # The AppImage bundler relies on fuse during packaging
 sudo apt update
 sudo apt install fuse
+# The libdrm pkg not found on base ubuntu-latest build
+sudo apt-get install libdrm-dev
+sudo apt-get install -f
 
 mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
 cp dist/seamly2d.desktop $buildDirPath/share/applications
-cp share/img/Seamly2D_logo_254x254.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
+cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
 cp share/translations/*.qm $buildDirPath/share/translations
 cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
 

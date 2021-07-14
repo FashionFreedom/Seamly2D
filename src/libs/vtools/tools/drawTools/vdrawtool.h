@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -72,6 +72,7 @@
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vdatatool.h"
+#include "../vgeometry/vpointf.h"
 
 template <class T> class QSharedPointer;
 
@@ -81,80 +82,84 @@ template <class T> class QSharedPointer;
 class VDrawTool : public VInteractiveTool
 {
     Q_OBJECT
+
 public:
+                     VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent = nullptr);
+    virtual         ~VDrawTool() Q_DECL_EQ_DEFAULT;
 
-    VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent = nullptr);
-    virtual ~VDrawTool() Q_DECL_EQ_DEFAULT;
+    QString          getLineType() const;
+    virtual void     SetTypeLine(const QString &value);
 
-    QString      getLineType() const;
-    virtual void SetTypeLine(const QString &value);
+    virtual bool     isPointNameVisible(quint32 id) const;
 
 signals:
-    void ChangedToolSelection(bool selected, quint32 object, quint32 tool);
+    void             ChangedToolSelection(bool selected, quint32 object, quint32 tool);
 
 public slots:
-    virtual void ShowTool(quint32 id, bool enable);
-    virtual void ChangedActivDraw(const QString &newName);
-    void         ChangedNameDraw(const QString &oldName, const QString &newName);
-    virtual void EnableToolMove(bool move);
-    virtual void Disable(bool disable, const QString &namePP)=0;
-    virtual void DetailsMode(bool mode);
+    virtual void     ShowTool(quint32 id, bool enable);
+    virtual void     ChangedActivDraw(const QString &newName);
+    void             ChangedNameDraw(const QString &oldName, const QString &newName);
+    virtual void     EnableToolMove(bool move);
+    virtual void     Disable(bool disable, const QString &draftBlockName)=0;
+    virtual void     piecesMode(bool mode);
+
+protected slots:
+    virtual void     showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id=NULL_ID)=0;
+
 protected:
+    enum class       RemoveOption : bool {Disable = false, Enable = true};
+    enum class       Referens : bool {Follow = true, Ignore = false};
 
-    enum class RemoveOption : bool {Disable = false, Enable = true};
-    enum class Referens : bool {Follow = true, Ignore = false};
 
-    /** @brief nameActivDraw name of tool's pattern peace. */
-    QString      nameActivDraw;
+    QString          nameActivDraw;   /** @brief nameActivDraw name of tool's pattern peace. */
+    QString          m_lineType;      /** @brief typeLine line type. */
 
-    /** @brief typeLine line type. */
-    QString      m_lineType;
-
-    void         AddToCalculation(const QDomElement &domElement);
+    void             AddToCalculation(const QDomElement &domElement);
 
     /** @brief SaveDialog save options into file after change in dialog. */
-    virtual void    SaveDialog(QDomElement &domElement)=0;
-    virtual void    SaveDialogChange() Q_DECL_FINAL;
-    virtual void    AddToFile() Q_DECL_OVERRIDE;
-    void            SaveOption(QSharedPointer<VGObject> &obj);
-    virtual void    SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj);
-    virtual QString MakeToolTip() const;
+    virtual void     SaveDialog(QDomElement &domElement)=0;
+    virtual void     SaveDialogChange() Q_DECL_FINAL;
+    virtual void     AddToFile() Q_DECL_OVERRIDE;
+    void             SaveOption(QSharedPointer<VGObject> &obj);
+    virtual void     SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj);
+    virtual QString  makeToolTip() const;
 
-    bool         CorrectDisable(bool disable, const QString &namePP) const;
+    bool             CorrectDisable(bool disable, const QString &draftBlockName) const;
 
-    void         ReadAttributes();
-    virtual void ReadToolAttributes(const QDomElement &domElement)=0;
+    void             ReadAttributes();
+    virtual void     ReadToolAttributes(const QDomElement &domElement)=0;
+    virtual void     updatePointNameVisibility(quint32 id, bool visible);
 
-    template <typename Dialog, typename Tool>
-    void ContextMenu(Tool *tool, QGraphicsSceneContextMenuEvent *event,
-                     const RemoveOption &showRemove = RemoveOption::Enable,
-                     const Referens &ref = Referens::Follow);
+    template <typename Dialog>
+    void             ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemId = NULL_ID,
+                                 const RemoveOption &showRemove = RemoveOption::Enable,
+                                 const Referens &ref = Referens::Follow);
 
     template <typename Item>
-    void ShowItem(Item *item, quint32 id, bool enable);
+    void             ShowItem(Item *item, quint32 id, bool enable);
 
     template <typename T>
-    QString ObjectName(quint32 id) const;
+    QString          ObjectName(quint32 id) const;
 
     template <typename T>
-    static void InitDrawToolConnections(VMainGraphicsScene *scene, T *tool);
+    static void      InitDrawToolConnections(VMainGraphicsScene *scene, T *tool);
+
 private:
     Q_DISABLE_COPY(VDrawTool)
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-template <typename Dialog, typename Tool>
+template <typename Dialog>
 /**
  * @brief ContextMenu show context menu for tool.
- * @param tool tool.
+ * @param itemId id of point. 0 if not a point
  * @param event context menu event.
  * @param showRemove true - tool enable option delete.
  * @param ref true - do not ignore referens value.
  */
-void VDrawTool::ContextMenu(Tool *tool, QGraphicsSceneContextMenuEvent *event, const RemoveOption &showRemove,
-                            const Referens &ref)
+void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemId,
+                            const RemoveOption &showRemove, const Referens &ref)
 {
-    SCASSERT(tool != nullptr)
     SCASSERT(event != nullptr)
 
     if (m_suppressContextMenu)
@@ -162,9 +167,37 @@ void VDrawTool::ContextMenu(Tool *tool, QGraphicsSceneContextMenuEvent *event, c
         return;
     }
 
+    GOType itemType =  GOType::Unknown;
+    if(itemId != NULL_ID)
+    {
+        try
+        {
+            itemType = data.GetGObject(itemId)->getType();
+        }
+        catch (const VExceptionBadId &e)
+        { // Possible case. Parent was deleted, but the node object is still here.
+            qWarning() << qUtf8Printable(e.ErrorMessage());
+        }
+    }
+
     qCDebug(vTool, "Creating tool context menu.");
     QMenu menu;
     QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Options"));
+
+    // Show object name menu item
+    QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));
+    actionShowPointName->setCheckable(true);
+    actionShowPointName->setChecked(isPointNameVisible(itemId));
+
+    if (itemType == GOType::Point)
+    {
+        actionShowPointName->setChecked(isPointNameVisible(itemId));
+    }
+    else
+    {
+       actionShowPointName->setVisible(false);
+    }
+
     QAction *actionRemove = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
     if (showRemove == RemoveOption::Enable)
     {
@@ -172,12 +205,12 @@ void VDrawTool::ContextMenu(Tool *tool, QGraphicsSceneContextMenuEvent *event, c
         {
             if (_referens > 1)
             {
-                qCDebug(vTool, "Remove disabled. Tool has childern.");
+                qCDebug(vTool, "Remove disabled. Tool has children.");
                 actionRemove->setEnabled(false);
             }
             else
             {
-                qCDebug(vTool, "Remove enabled. Tool has not childern.");
+                qCDebug(vTool, "Remove enabled. Tool has no children.");
                 actionRemove->setEnabled(true);
             }
         }
@@ -198,21 +231,25 @@ void VDrawTool::ContextMenu(Tool *tool, QGraphicsSceneContextMenuEvent *event, c
     {
         qCDebug(vTool, "Show options.");
         qApp->getSceneView()->itemClicked(nullptr);
-        m_dialog = QSharedPointer<Dialog>(new Dialog(getData(), id, qApp->getMainWindow()));
+        m_dialog = QSharedPointer<Dialog>(new Dialog(getData(), m_id, qApp->getMainWindow()));
         m_dialog->setModal(true);
 
-        connect(m_dialog.data(), &DialogTool::DialogClosed, tool, &Tool::FullUpdateFromGuiOk);
-        connect(m_dialog.data(), &DialogTool::DialogApplied, tool, &Tool::FullUpdateFromGuiApply);
+        connect(m_dialog.data(), &DialogTool::DialogClosed, this, &VDrawTool::FullUpdateFromGuiOk);
+        connect(m_dialog.data(), &DialogTool::DialogApplied, this, &VDrawTool::FullUpdateFromGuiApply);
 
-        tool->setDialog();
+        this->setDialog();
 
         m_dialog->show();
     }
-    if (selectedAction == actionRemove)
+    else if (selectedAction == actionRemove)
     {
         qCDebug(vTool, "Deleting tool.");
-        DeleteTool(); // do not catch exception here
+        deleteTool(); // do not catch exception here
         return; //Leave this method immediately after call!!!
+    }
+    else if (selectedAction == actionShowPointName)
+    {
+        updatePointNameVisibility(itemId, selectedAction->isChecked());
     }
 }
 
@@ -227,7 +264,7 @@ template <typename Item>
 void VDrawTool::ShowItem(Item *item, quint32 id, bool enable)
 {
     SCASSERT(item != nullptr)
-    if (id == item->id)
+    if (id == item->m_id)
     {
         ShowVisualization(enable);
     }
@@ -261,11 +298,11 @@ void VDrawTool::InitDrawToolConnections(VMainGraphicsScene *scene, T *tool)
     SCASSERT(scene != nullptr)
     SCASSERT(tool != nullptr)
 
-    QObject::connect(tool, &T::ChoosedTool, scene, &VMainGraphicsScene::ChoosedItem);
+    QObject::connect(tool, &T::chosenTool, scene, &VMainGraphicsScene::chosenItem);
     QObject::connect(tool, &T::ChangedToolSelection, scene, &VMainGraphicsScene::SelectedItem);
     QObject::connect(scene, &VMainGraphicsScene::DisableItem, tool, &T::Disable);
     QObject::connect(scene, &VMainGraphicsScene::EnableToolMove, tool, &T::EnableToolMove);
-    QObject::connect(scene, &VMainGraphicsScene::CurveDetailsMode, tool, &T::DetailsMode);
+    QObject::connect(scene, &VMainGraphicsScene::curvePiecesMode, tool, &T::piecesMode);
     QObject::connect(scene, &VMainGraphicsScene::ItemSelection, tool, &T::ToolSelectionType);
 }
 

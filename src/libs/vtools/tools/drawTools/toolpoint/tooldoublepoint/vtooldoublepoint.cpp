@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -61,6 +61,7 @@
 #include <new>
 
 #include "../../../../undocommands/label/movedoublelabel.h"
+#include "../../../../undocommands/label/showdoublepointname.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/xml/vabstractpattern.h"
@@ -79,30 +80,32 @@
 //---------------------------------------------------------------------------------------------------------------------
 VToolDoublePoint::VToolDoublePoint(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 p1id, quint32 p2id,
                                    QGraphicsItem *parent)
-    :VAbstractPoint(doc, data, id),
-      QGraphicsPathItem(parent),
-      firstPoint(nullptr),
-      secondPoint(nullptr),
-      p1id(p1id),
-      p2id(p2id)
+    : VAbstractPoint(doc, data, id)
+    , QGraphicsPathItem(parent)
+    , firstPoint(nullptr)
+    , secondPoint(nullptr)
+    , p1id(p1id)
+    , p2id(p2id)
 {
-    firstPoint = new VSimplePoint(p1id, QColor(Qt::black));
+    firstPoint = new VSimplePoint(p1id, QColor(qApp->Settings()->getPointNameColor()));
     firstPoint->setParentItem(this);
-    connect(firstPoint, &VSimplePoint::Choosed, this, &VToolDoublePoint::Point1Choosed);
-    connect(firstPoint, &VSimplePoint::Selected, this, &VToolDoublePoint::Point1Selected);
-    connect(firstPoint, &VSimplePoint::ShowContextMenu, this, &VToolDoublePoint::contextMenuEvent);
-    connect(firstPoint, &VSimplePoint::Delete, this, &VToolDoublePoint::DeleteFromLabel);
-    connect(firstPoint, &VSimplePoint::NameChangedPosition, this, &VToolDoublePoint::Label1ChangePosition);
-    firstPoint->RefreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p1id));
+    firstPoint->setToolTip(complexToolTip(p1id));
+    connect(firstPoint, &VSimplePoint::Choosed, this, &VToolDoublePoint::point1Chosen);
+    connect(firstPoint, &VSimplePoint::Selected, this, &VToolDoublePoint::point1Selected);
+    connect(firstPoint, &VSimplePoint::showContextMenu, this, &VToolDoublePoint::showContextMenu);
+    connect(firstPoint, &VSimplePoint::Delete, this, &VToolDoublePoint::deletePoint);
+    connect(firstPoint, &VSimplePoint::nameChangedPosition, this, &VToolDoublePoint::changePointName1Position);
+    firstPoint->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p1id));
 
-    secondPoint = new VSimplePoint(p2id, QColor(Qt::black));
+    secondPoint = new VSimplePoint(p2id, QColor(qApp->Settings()->getPointNameColor()));
     secondPoint->setParentItem(this);
-    connect(secondPoint, &VSimplePoint::Choosed, this, &VToolDoublePoint::Point2Choosed);
-    connect(secondPoint, &VSimplePoint::Selected, this, &VToolDoublePoint::Point2Selected);
-    connect(secondPoint, &VSimplePoint::ShowContextMenu, this, &VToolDoublePoint::contextMenuEvent);
-    connect(secondPoint, &VSimplePoint::Delete, this, &VToolDoublePoint::DeleteFromLabel);
-    connect(secondPoint, &VSimplePoint::NameChangedPosition, this, &VToolDoublePoint::Label2ChangePosition);
-    secondPoint->RefreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p2id));
+    secondPoint->setToolTip(complexToolTip(p2id));
+    connect(secondPoint, &VSimplePoint::Choosed, this, &VToolDoublePoint::point2Chosen);
+    connect(secondPoint, &VSimplePoint::Selected, this, &VToolDoublePoint::point2Selected);
+    connect(secondPoint, &VSimplePoint::showContextMenu, this, &VToolDoublePoint::showContextMenu);
+    connect(secondPoint, &VSimplePoint::Delete, this, &VToolDoublePoint::deletePoint);
+    connect(secondPoint, &VSimplePoint::nameChangedPosition, this, &VToolDoublePoint::changePointName2Position);
+    secondPoint->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p2id));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -143,21 +146,55 @@ void VToolDoublePoint::GroupVisibility(quint32 object, bool visible)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Label1ChangePosition(const QPointF &pos)
+bool VToolDoublePoint::isPointNameVisible(quint32 id) const
 {
-    ChangePosition(firstPoint, p1id, pos);
+    if (p1id == id)
+    {
+        return VAbstractTool::data.GeometricObject<VPointF>(p1id)->isShowPointName();
+    }
+    else if (p2id == id)
+    {
+        return VAbstractTool::data.GeometricObject<VPointF>(p2id)->isShowPointName();
+    }
+    else
+    {
+        return false;
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Label2ChangePosition(const QPointF &pos)
+void VToolDoublePoint::setPointNameVisiblity(quint32 id, bool visible)
 {
-    ChangePosition(secondPoint, p2id, pos);
+    if (p1id == id)
+    {
+        const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(p1id);
+        point->setShowPointName(visible);
+        firstPoint->refreshPointGeometry(*point);
+    }
+    else if (p2id == id)
+    {
+        const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(p2id);
+        point->setShowPointName(visible);
+        secondPoint->refreshPointGeometry(*point);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Disable(bool disable, const QString &namePP)
+void VToolDoublePoint::changePointName1Position(const QPointF &pos)
 {
-    const bool enabled = !CorrectDisable(disable, namePP);
+    updatePointNamePosition(p1id, pos - firstPoint->pos());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolDoublePoint::changePointName2Position(const QPointF &pos)
+{
+    updatePointNamePosition(p2id, pos - secondPoint->pos());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolDoublePoint::Disable(bool disable, const QString &draftBlockName)
+{
+    const bool enabled = !CorrectDisable(disable, draftBlockName);
     this->setEnabled(enabled);
     firstPoint->SetEnabled(enabled);
     secondPoint->SetEnabled(enabled);
@@ -171,56 +208,67 @@ void VToolDoublePoint::EnableToolMove(bool move)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Point1Choosed()
+void VToolDoublePoint::point1Chosen()
 {
-    emit ChoosedTool(p1id, SceneObject::Point);
+    emit chosenTool(p1id, SceneObject::Point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Point2Choosed()
+void VToolDoublePoint::point2Chosen()
 {
-    emit ChoosedTool(p2id, SceneObject::Point);
+    emit chosenTool(p2id, SceneObject::Point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Point1Selected(bool selected)
+void VToolDoublePoint::point1Selected(bool selected)
 {
-    emit ChangedToolSelection(selected, p1id, id);
+    emit ChangedToolSelection(selected, p1id, m_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::Point2Selected(bool selected)
+void VToolDoublePoint::point2Selected(bool selected)
 {
-    emit ChangedToolSelection(selected, p2id, id);
+    emit ChangedToolSelection(selected, p2id, m_id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolDoublePoint::FullUpdateFromFile()
 {
     ReadAttributes();
-    firstPoint->RefreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p1id));
-    secondPoint->RefreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p2id));
+    firstPoint->setToolTip(complexToolTip(p1id));
+    firstPoint->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p1id));
+
+    secondPoint->setToolTip(complexToolTip(p2id));
+    secondPoint->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(p2id));
     SetVisualization();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::DoChangePosition(quint32 id, qreal mx, qreal my)
+void VToolDoublePoint::setPointNamePosition(quint32 id, const QPointF &pos)
 {
     if (id == p1id)
     {
         VPointF *point = new VPointF(*VAbstractTool::data.GeometricObject<VPointF>(p1id));
-        point->setMx(mx);
-        point->setMy(my);
-        VAbstractTool::data.UpdateGObject(p1id, point);
-        firstPoint->RefreshPointGeometry(*point);
+        point->setMx(pos.x());
+        point->setMy(pos.y());
+        firstPoint->refreshPointGeometry(*point);
+
+        if (QGraphicsScene *sc = firstPoint->scene())
+        {
+            VMainGraphicsView::NewSceneRect(sc, qApp->getSceneView(), firstPoint);
+        }
     }
     else if (id == p2id)
     {
         VPointF *point = new VPointF(*VAbstractTool::data.GeometricObject<VPointF>(p2id));
-        point->setMx(mx);
-        point->setMy(my);
-        VAbstractTool::data.UpdateGObject(p2id, point);
-        secondPoint->RefreshPointGeometry(*point);
+        point->setMx(pos.x());
+        point->setMy(pos.y());
+        secondPoint->refreshPointGeometry(*point);
+
+        if (QGraphicsScene *sc = secondPoint->scene())
+        {
+            VMainGraphicsView::NewSceneRect(sc, qApp->getSceneView(), secondPoint);
+        }
     }
 }
 
@@ -239,17 +287,17 @@ void VToolDoublePoint::AllowSelecting(bool enabled)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::AllowLabelHover(bool enabled)
+void VToolDoublePoint::allowTextHover(bool enabled)
 {
-    firstPoint->AllowLabelHover(enabled);
-    secondPoint->AllowLabelHover(enabled);
+    firstPoint->allowTextHover(enabled);
+    secondPoint->allowTextHover(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::AllowLabelSelecting(bool enabled)
+void VToolDoublePoint::allowTextSelectable(bool enabled)
 {
-    firstPoint->AllowLabelSelecting(enabled);
-    secondPoint->AllowLabelSelecting(enabled);
+    firstPoint->allowTextSelectable(enabled);
+    secondPoint->allowTextSelectable(enabled);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -261,23 +309,15 @@ void VToolDoublePoint::ToolSelectionType(const SelectionType &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolDoublePoint::UpdateNamePosition(quint32 id)
+void VToolDoublePoint::updatePointNamePosition(quint32 id, const QPointF &pos)
 {
     if (id == p1id)
     {
-        const VPointF *p1 = VAbstractTool::data.GeometricObject<VPointF>(p1id).data();
-
-        auto moveLabel = new MoveDoubleLabel(doc, p1->mx(), p1->my(), DoublePoint::FirstPoint, this->id, p1id);
-        connect(moveLabel, &MoveDoubleLabel::ChangePosition, this, &VToolDoublePoint::DoChangePosition);
-        qApp->getUndoStack()->push(moveLabel);
+        qApp->getUndoStack()->push(new MoveDoubleLabel(doc, pos, MoveDoublePoint::FirstPoint, m_id, p1id));
     }
     else if (id == p2id)
     {
-        const VPointF *p2 = VAbstractTool::data.GeometricObject<VPointF>(p2id).data();
-
-        auto moveLabel = new MoveDoubleLabel(doc, p2->mx(), p2->my(), DoublePoint::SecondPoint, this->id, p2id);
-        connect(moveLabel, &MoveDoubleLabel::ChangePosition, this, &VToolDoublePoint::DoChangePosition);
-        qApp->getUndoStack()->push(moveLabel);
+        qApp->getUndoStack()->push(new MoveDoubleLabel(doc, pos, MoveDoublePoint::SecondPoint, m_id, p2id));
     }
 }
 
@@ -318,7 +358,7 @@ void VToolDoublePoint::keyReleaseEvent(QKeyEvent *event)
         case Qt::Key_Delete:
             try
             {
-                DeleteTool();
+                deleteTool();
             }
             catch(const VExceptionToolWasDeleted &e)
             {
@@ -335,7 +375,7 @@ void VToolDoublePoint::keyReleaseEvent(QKeyEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolDoublePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    Q_UNUSED(event)
+    showContextMenu(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -351,6 +391,7 @@ void VToolDoublePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &o
         doc->SetAttribute(tag, AttrName1, point->name());
         doc->SetAttribute(tag, AttrMx1, qApp->fromPixel(point->mx()));
         doc->SetAttribute(tag, AttrMy1, qApp->fromPixel(point->my()));
+        doc->SetAttribute<bool>(tag, AttrShowPointName1, point->isShowPointName());
     }
     else if (obj->id() == p2id)
     {
@@ -360,6 +401,7 @@ void VToolDoublePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &o
         doc->SetAttribute(tag, AttrName2, point->name());
         doc->SetAttribute(tag, AttrMx2, qApp->fromPixel(point->mx()));
         doc->SetAttribute(tag, AttrMy2, qApp->fromPixel(point->my()));
+        doc->SetAttribute<bool>(tag, AttrShowPointName2, point->isShowPointName());
     }
     else
     {
@@ -370,11 +412,13 @@ void VToolDoublePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &o
         doc->SetAttribute(tag, AttrName1, p1->name());
         doc->SetAttribute(tag, AttrMx1, qApp->fromPixel(p1->mx()));
         doc->SetAttribute(tag, AttrMy1, qApp->fromPixel(p1->my()));
+        doc->SetAttribute<bool>(tag, AttrShowPointName1, p1->isShowPointName());
 
         doc->SetAttribute(tag, AttrPoint2, p2id);
         doc->SetAttribute(tag, AttrName2, p2->name());
         doc->SetAttribute(tag, AttrMx2, qApp->fromPixel(p2->mx()));
         doc->SetAttribute(tag, AttrMy2, qApp->fromPixel(p2->my()));
+        doc->SetAttribute<bool>(tag, AttrShowPointName2, p2->isShowPointName());
     }
 }
 
@@ -382,7 +426,33 @@ void VToolDoublePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &o
 void VToolDoublePoint::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
-    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(id);
+    QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
     SaveOptions(domElement, obj);
     AddToCalculation(domElement);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolDoublePoint::updatePointNameVisibility(quint32 id, bool visible)
+{
+    if (id == p1id)
+    {
+        qApp->getUndoStack()->push(new ShowDoublePointName(doc, m_id, p1id, visible, ShowDoublePoint::FirstPoint));
+    }
+    else if (id == p2id)
+    {
+        qApp->getUndoStack()->push(new ShowDoublePointName(doc, m_id, p2id, visible, ShowDoublePoint::SecondPoint));
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VToolDoublePoint::complexToolTip(quint32 itemId) const
+{
+    const QSharedPointer<VPointF> point = VAbstractTool::data.GeometricObject<VPointF>(itemId);
+
+    const QString toolTipStr = QString("<table>"
+                                       "<tr> <td><b>%1:</b> %2</td> </tr>"
+                                       "%3"
+                                       "</table>")
+                                       .arg(tr("Name"), point->name(), makeToolTip());
+    return toolTipStr;
 }

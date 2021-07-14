@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -140,7 +140,7 @@ void VToolInternalPath::paint(QPainter *painter, const QStyleOptionGraphicsItem 
 {
     qreal width = widthHairLine;
 
-    const qreal scale = SceneScale(scene());
+    const qreal scale = sceneScale(scene());
     if (scale > 1)
     {
         width = qMax(1., width/scale);
@@ -166,10 +166,10 @@ void VToolInternalPath::incrementReferens()
         }
         else
         {
-            IncrementNodes(VAbstractTool::data.GetPiecePath(id));
+            IncrementNodes(VAbstractTool::data.GetPiecePath(m_id));
         }
         ShowNode();
-        QDomElement domElement = doc->elementById(id, getTagName());
+        QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
         {
             doc->SetParametrUsage(domElement, AttrInUse, NodeUsage::InUse);
@@ -189,10 +189,10 @@ void VToolInternalPath::decrementReferens()
         }
         else
         {
-            DecrementNodes(VAbstractTool::data.GetPiecePath(id));
+            DecrementNodes(VAbstractTool::data.GetPiecePath(m_id));
         }
         HideNode();
-        QDomElement domElement = doc->elementById(id, getTagName());
+        QDomElement domElement = doc->elementById(m_id, getTagName());
         if (domElement.isElement())
         {
             doc->SetParametrUsage(domElement, AttrInUse, NodeUsage::NotInUse);
@@ -206,7 +206,7 @@ void VToolInternalPath::AddAttributes(VAbstractPattern *doc, QDomElement &domEle
     doc->SetAttribute(domElement, VDomDocument::AttrId, id);
     doc->SetAttribute(domElement, AttrName, path.GetName());
     doc->SetAttribute(domElement, AttrType, static_cast<int>(path.GetType()));
-    doc->SetAttribute(domElement, AttrTypeLine, PenStyleToLineStyle(path.GetPenType()));
+    doc->SetAttribute(domElement, AttrLineType, PenStyleToLineStyle(path.GetPenType()));
 
     if (path.GetType() == PiecePathType::InternalPath)
     {
@@ -238,9 +238,9 @@ void VToolInternalPath::AllowSelecting(bool enabled)
 void VToolInternalPath::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
-    const VPiecePath path = VAbstractTool::data.GetPiecePath(id);
+    const VPiecePath path = VAbstractTool::data.GetPiecePath(m_id);
 
-    AddAttributes(doc, domElement, id, path);
+    AddAttributes(doc, domElement, m_id, path);
 
     if (idTool != NULL_ID)
     {
@@ -258,12 +258,12 @@ void VToolInternalPath::AddToFile()
 
         if (path.GetType() == PiecePathType::InternalPath)
         {
-            newDet.GetInternalPaths().append(id);
+            newDet.GetInternalPaths().append(m_id);
         }
         else if (path.GetType() == PiecePathType::CustomSeamAllowance)
         {
             CustomSARecord record;
-            record.path = id;
+            record.path = m_id;
 
             newDet.GetCustomSARecords().append(record);
         }
@@ -323,7 +323,7 @@ VToolInternalPath::VToolInternalPath(VAbstractPattern *doc, VContainer *data, qu
 //---------------------------------------------------------------------------------------------------------------------
 void VToolInternalPath::RefreshGeometry()
 {
-    const VPiecePath path = VAbstractTool::data.GetPiecePath(id);
+    const VPiecePath path = VAbstractTool::data.GetPiecePath(m_id);
     if (path.GetType() == PiecePathType::InternalPath)
     {
         QPainterPath p = path.PainterPath(this->getData());

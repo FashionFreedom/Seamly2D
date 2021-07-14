@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -70,10 +70,10 @@
 
 namespace
 {
-const QString settingPathsIndividualMeasurements = QStringLiteral("paths/individual_measurements");
-const QString settingPathsMultisizeMeasurements  = QStringLiteral("paths/standard_measurements");
-const QString settingPathsTemplates              = QStringLiteral("paths/templates");
-const QString settingPathsLabelTemplate          = QStringLiteral("paths/labels");
+const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_measurements");
+const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/standard_measurements");
+const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
+const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
 
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
@@ -84,35 +84,73 @@ const QString settingPMSystemCode                        = QStringLiteral("confi
 const QString settingConfigurationUnit                   = QStringLiteral("configuration/unit");
 const QString settingConfigurationConfirmItemDeletion    = QStringLiteral("configuration/confirm_item_deletion");
 const QString settingConfigurationConfirmFormatRewriting = QStringLiteral("configuration/confirm_format_rewriting");
-const QString settingConfigurationToolBarStyle           = QStringLiteral("configuration/tool_bar_style");
 
-const QString settingPatternUndo                    = QStringLiteral("pattern/undo");
-const QString settingPatternForbidFlipping          = QStringLiteral("pattern/forbidFlipping");
-const QString settingPatternHideMainPath            = QStringLiteral("pattern/hideMainPath");
-const QString settingDoubleNotch                    = QStringLiteral("pattern/doubleNotch");
-const QString settingPatternDefaultSeamAllowance    = QStringLiteral("pattern/defaultSeamAllowance");
-const QString settingPatternLabelFont               = QStringLiteral("pattern/labelFont");
+const QString settingGraphicsViewToolBarStyle            = QStringLiteral("graphicsview/tool_bar_style");
+const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
+const QString settingGraphicsViewScrollBarWidth          = QStringLiteral("graphicsview/scrollBarWidth");
+const QString settingGraphicsViewScrollDuration          = QStringLiteral("graphicsview/scrollDuration");
+const QString settingGraphicsViewScrollUpdateInterval    = QStringLiteral("graphicsview/scrollUpdateInterval");
+const QString settingGraphicsViewScrollSpeedFactor       = QStringLiteral("graphicsview/scrollSpeedFactor");
+const QString settingGraphicsViewPixelDelta              = QStringLiteral("graphicsview/pixelDelta");
+const QString settingGraphicsViewAngleDelta              = QStringLiteral("graphicsview/angleDelta");
+const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
+const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
+const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 
-const QString settingGeneralRecentFileList       = QStringLiteral("recentFileList");
-const QString settingGeneralRestoreFileList      = QStringLiteral("restoreFileList");
-const QString settingGeneralGeometry             = QStringLiteral("geometry");
-const QString settingGeneralWindowState          = QStringLiteral("windowState");
-const QString settingGeneralToolbarsState        = QStringLiteral("toolbarsState");
-const QString settingPreferenceDialogSize        = QStringLiteral("preferenceDialogSize");
-const QString settingToolSeamAllowanceDialogSize = QStringLiteral("toolSeamAllowanceDialogSize");
-const QString settingIncrementsDialogSize        = QStringLiteral("toolIncrementsDialogSize");
-const QString settingFormulaWizardDialogSize     = QStringLiteral("formulaWizardDialogSize");
-const QString settingLatestSkippedVersion        = QStringLiteral("lastestSkippedVersion");
-const QString settingDateOfLastRemind            = QStringLiteral("dateOfLastRemind");
+const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
+const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
+const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
+const QString settingGraphicsViewPointNameHoverColor     = QStringLiteral("graphicsview/pointNameHoverColor");
+const QString settingGraphicsViewAxisOrginColor          = QStringLiteral("graphicsview/axisOrginColor");
 
-const QString settingCSVWithHeader = QStringLiteral("csv/withHeader");
-const QString settingCSVCodec      = QStringLiteral("csv/withCodec");
-const QString settingCSVSeparator  = QStringLiteral("csv/withSeparator");
+const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
+const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
 
-const QString settingLabelDateFormat      = QStringLiteral("label/dateFormat");
-const QString settingLabelUserDateFormats = QStringLiteral("label/userDateFormats");
-const QString settingLabelTimeFormat      = QStringLiteral("label/timeFormat");
-const QString settingLabelUserTimeFormats = QStringLiteral("label/userTimeFormats");
+const QString settingGraphicsViewPointNameSize           = QStringLiteral("graphicsview/pointNameSize");
+const QString settingGraphicsViewGuiFontSize             = QStringLiteral("graphicsview/guiFontSize");
+const QString settingGraphicsViewHidePointNames          = QStringLiteral("graphicsview/hidePointNames");
+const QString settingGraphicsViewShowAxisOrigin          = QStringLiteral("graphicsview/showAxisOrigin");
+const QString settingGraphicsViewWireframe               = QStringLiteral("graphicsview/wireframe");
+const QString settingGraphicsViewShowControlPoints       = QStringLiteral("graphicsview/showControlPoints");
+const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graphicsview/showAnchorPoints");
+const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
+
+const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
+const QString settingPatternForbidFlipping               = QStringLiteral("pattern/forbidFlipping");
+const QString settingPatternHideMainPath                 = QStringLiteral("pattern/hideMainPath");
+
+const QString settingDefaultNotchLength                  = QStringLiteral("pattern/defaultNotchLength");
+const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
+const QString settingDefaultNotchType                    = QStringLiteral("pattern/defaultNotchType");
+const QString settingDoubleNotch                         = QStringLiteral("pattern/doubleNotch");
+
+const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
+const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
+const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
+const QString settingPatternPointNameFont                = QStringLiteral("pattern/pointNameFont");
+
+const QString settingGeneralRecentFileList               = QStringLiteral("recentFileList");
+const QString settingGeneralRestoreFileList              = QStringLiteral("restoreFileList");
+const QString settingGeneralGeometry                     = QStringLiteral("geometry");
+const QString settingGeneralWindowState                  = QStringLiteral("windowState");
+const QString settingGeneralToolbarsState                = QStringLiteral("toolbarsState");
+const QString settingPreferenceDialogSize                = QStringLiteral("preferenceDialogSize");
+const QString settingToolSeamAllowanceDialogSize         = QStringLiteral("toolSeamAllowanceDialogSize");
+const QString settingIncrementsDialogSize                = QStringLiteral("toolIncrementsDialogSize");
+const QString settingFormulaWizardDialogSize             = QStringLiteral("formulaWizardDialogSize");
+const QString settingLatestSkippedVersion                = QStringLiteral("lastestSkippedVersion");
+const QString settingDateOfLastRemind                    = QStringLiteral("dateOfLastRemind");
+
+const QString settingCSVWithHeader                       = QStringLiteral("csv/withHeader");
+const QString settingCSVCodec                            = QStringLiteral("csv/withCodec");
+const QString settingCSVSeparator                        = QStringLiteral("csv/withSeparator");
+
+const QString settingLabelDateFormat                     = QStringLiteral("label/dateFormat");
+const QString settingLabelUserDateFormats                = QStringLiteral("label/userDateFormats");
+const QString settingLabelTimeFormat                     = QStringLiteral("label/timeFormat");
+const QString settingLabelUserTimeFormats                = QStringLiteral("label/userTimeFormats");
+
+int pointNameSize = 0;
 
 //---------------------------------------------------------------------------------------------------------------------
 QStringList ClearFormats(const QStringList &predefinedFormats, QStringList formats)
@@ -490,15 +528,197 @@ void VCommonSettings::SetConfirmFormatRewriting(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetToolBarStyle() const
+bool VCommonSettings::getToolBarStyle() const
 {
-    return value(settingConfigurationToolBarStyle, 1).toBool();
+    return value(settingGraphicsViewToolBarStyle, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetToolBarStyle(const bool &value)
+void VCommonSettings::setToolBarStyle(const bool &value)
 {
-    setValue(settingConfigurationToolBarStyle, value);
+    setValue(settingGraphicsViewToolBarStyle, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+bool  VCommonSettings::getShowScrollBars() const
+{
+    return value(settingGraphicsViewShowScrollBars, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowScrollBars(const bool  &value)
+{
+    setValue(settingGraphicsViewShowScrollBars, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int  VCommonSettings::getScrollBarWidth() const
+{
+    return value(settingGraphicsViewScrollBarWidth, 10).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollBarWidth(const int  &width)
+{
+    setValue(settingGraphicsViewScrollBarWidth, width);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getScrollDuration() const
+{
+    return value(settingGraphicsViewScrollDuration, 300).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollDuration(const int &duration)
+{
+    setValue(settingGraphicsViewScrollDuration, duration);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getScrollUpdateInterval() const
+{
+    return value(settingGraphicsViewScrollUpdateInterval, 30).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollUpdateInterval(const int &interval)
+{
+    setValue(settingGraphicsViewScrollUpdateInterval, interval);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getScrollSpeedFactor() const
+{
+    return value(settingGraphicsViewScrollSpeedFactor, 10).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setScrollSpeedFactor(const int &factor)
+{
+    setValue(settingGraphicsViewScrollSpeedFactor, factor);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getZoomModKey() const
+{
+    return value(settingGraphicsViewZoomModKey, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomModKey(const bool &value)
+{
+    setValue(settingGraphicsViewZoomModKey, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isZoomDoubleClick() const
+{
+    return value(settingGraphicsViewZoomDoubleClick, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomDoubleClick(const bool &value)
+{
+    setValue(settingGraphicsViewZoomDoubleClick, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int  VCommonSettings::getZoomSpeedFactor() const
+{
+    return value(settingGraphicsViewZoomSpeedFactor, 16).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomSpeedFactor(const int  &factor)
+{
+    setValue(settingGraphicsViewZoomSpeedFactor, factor);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getZoomRBPositiveColor() const
+{
+    return value(settingGraphicsViewZoomRBPositiveColor, "blue").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomRBPositiveColor(const QString &value)
+{
+    setValue(settingGraphicsViewZoomRBPositiveColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getZoomRBNegativeColor() const
+{
+    return value(settingGraphicsViewZoomRBNegativeColor, "green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setZoomRBNegativeColor(const QString &value)
+{
+    setValue(settingGraphicsViewZoomRBNegativeColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getPointNameColor() const
+{
+    return value(settingGraphicsViewPointNameColor, "green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameColor(const QString &value)
+{
+    setValue(settingGraphicsViewPointNameColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getPointNameHoverColor() const
+{
+    return value(settingGraphicsViewPointNameHoverColor, "green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameHoverColor(const QString &value)
+{
+    setValue(settingGraphicsViewPointNameHoverColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getAxisOrginColor() const
+{
+    return value(settingGraphicsViewAxisOrginColor, "magenta").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setAxisOrginColor(const QString &value)
+{
+    setValue(settingGraphicsViewAxisOrginColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getConstrainValue() const
+{
+    return value(settingGraphicsViewConstrainValue, 10.00).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setConstrainValue(const qreal &value)
+{
+    setValue(settingGraphicsViewConstrainValue, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getConstrainModKey() const
+{
+    return value(settingGraphicsViewConstrainModKey, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setConstrainModKey(const bool &value)
+{
+    setValue(settingGraphicsViewConstrainModKey, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -593,13 +813,13 @@ void VCommonSettings::SetToolbarsState(const QByteArray &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSize VCommonSettings::GetPreferenceDialogSize() const
+QSize VCommonSettings::getPreferenceDialogSize() const
 {
     return value(settingPreferenceDialogSize, QSize(0, 0)).toSize();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPreferenceDialogSize(const QSize& sz)
+void VCommonSettings::setPreferenceDialogSize(const QSize& sz)
 {
     setValue(settingPreferenceDialogSize, sz);
 }
@@ -695,15 +915,52 @@ void VCommonSettings::SetHideMainPath(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::isDoubleNotch() const
+bool VCommonSettings::showSecondNotch() const
 {
     return value(settingDoubleNotch, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setDoubleNotch(bool value)
+void VCommonSettings::setShowSecondNotch(bool value)
 {
     setValue(settingDoubleNotch, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultNotchLength() const
+{
+   return value(settingDefaultNotchLength, .250).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchLength(const qreal &value)
+{
+    setValue(settingDefaultNotchLength, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultNotchWidth() const
+{
+   return value(settingDefaultNotchWidth, .250).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchWidth(const qreal &value)
+{
+    setValue(settingDefaultNotchWidth, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultNotchType() const
+{
+   return value(settingDefaultNotchType, "slit").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchType(const QString &value)
+{
+    setValue(settingDefaultNotchType, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -845,15 +1102,144 @@ double VCommonSettings::GetDefaultSeamAllowance()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QFont VCommonSettings::GetLabelFont() const
+QFont VCommonSettings::getLabelFont() const
 {
     return qvariant_cast<QFont>(value(settingPatternLabelFont, QApplication::font()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetLabelFont(const QFont &f)
+void VCommonSettings::setLabelFont(const QFont &f)
 {
     setValue(settingPatternLabelFont, f);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QFont VCommonSettings::getGuiFont() const
+{
+    return qvariant_cast<QFont>(value(settingPatternGuiFont, QApplication::font()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setGuiFont(const QFont &f)
+{
+    setValue(settingPatternGuiFont, f);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QFont VCommonSettings::getPointNameFont() const
+{
+    return qvariant_cast<QFont>(value(settingPatternPointNameFont, QApplication::font()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameFont(const QFont &f)
+{
+    setValue(settingPatternPointNameFont, f);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getHidePointNames() const
+{
+    return value(settingGraphicsViewHidePointNames, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setHidePointNames(bool value)
+{
+    setValue(settingGraphicsViewHidePointNames, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowAxisOrigin() const
+{
+    return value(settingGraphicsViewShowAxisOrigin, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowAxisOrigin(bool value)
+{
+    setValue(settingGraphicsViewShowAxisOrigin, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isWireframe() const
+{
+    return value(settingGraphicsViewWireframe, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setWireframe(bool value)
+{
+    setValue(settingGraphicsViewWireframe, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowControlPoints() const
+{
+    return value(settingGraphicsViewShowControlPoints, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowControlPoints(bool value)
+{
+    setValue(settingGraphicsViewShowControlPoints, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowAnchorPoints() const
+{
+    return value(settingGraphicsViewShowAnchorPoints, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowAnchorPoints(bool value)
+{
+    setValue(settingGraphicsViewShowAnchorPoints, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getUseToolColor() const
+{
+    return value(settingGraphicsUseToolColor, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseToolColor(bool value)
+{
+    setValue(settingGraphicsUseToolColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int VCommonSettings::getPointNameSize() const
+{
+    if (pointNameSize <= 0)
+    {
+        bool ok = false;
+        pointNameSize = value(settingGraphicsViewPointNameSize, 32).toInt(&ok);
+        if (not ok)
+        {
+            pointNameSize = 32;
+        }
+    }
+    return pointNameSize;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPointNameSize(int value)
+{
+    setValue(settingGraphicsViewPointNameSize, value);
+    pointNameSize = value;
+}
+
+int VCommonSettings::getGuiFontSize() const
+{
+    return value(settingGraphicsViewGuiFontSize, 9).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setGuiFontSize(int value)
+{
+    setValue(settingGraphicsViewGuiFontSize, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -111,7 +111,7 @@ void VToolEndLine::setDialog()
     m_dialog->setModal(true);
     QSharedPointer<DialogEndLine> dialogTool = m_dialog.objectCast<DialogEndLine>();
     SCASSERT(not dialogTool.isNull())
-    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(id);
+    const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetTypeLine(m_lineType);
     dialogTool->SetLineColor(lineColor);
     dialogTool->SetFormula(formulaLength);
@@ -143,7 +143,7 @@ VToolEndLine* VToolEndLine::Create(QSharedPointer<DialogTool> dialog, VMainGraph
     const quint32 basePointId = dialogTool->GetBasePointId();
 
     VToolEndLine *point = Create(0, pointName, typeLine, lineColor, formulaLength, formulaAngle,
-                                 basePointId, 5, 10, scene, doc, data, Document::FullParse, Source::FromGui);
+                                 basePointId, 5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -163,6 +163,7 @@ VToolEndLine* VToolEndLine::Create(QSharedPointer<DialogTool> dialog, VMainGraph
  * @param basePointId id first point of line.
  * @param mx label bias x axis.
  * @param my label bias y axis.
+ * @param showPointName show/hide point name text
  * @param scene pointer to scene.
  * @param doc dom document container.
  * @param data container with variables.
@@ -172,7 +173,7 @@ VToolEndLine* VToolEndLine::Create(QSharedPointer<DialogTool> dialog, VMainGraph
  */
 VToolEndLine* VToolEndLine::Create(const quint32 _id, const QString &pointName, const QString &typeLine,
                                    const QString &lineColor, QString &formulaLength, QString &formulaAngle,
-                                   const quint32 &basePointId, const qreal &mx, const qreal &my,
+                                   quint32 basePointId, qreal mx, qreal my, bool showPointName,
                                    VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                    const Document &parse,
                                    const Source &typeCreation)
@@ -183,14 +184,17 @@ VToolEndLine* VToolEndLine::Create(const quint32 _id, const QString &pointName, 
     line.setAngle(CheckFormula(_id, formulaAngle, data)); //First set angle.
     line.setLength(qApp->toPixel(CheckFormula(_id, formulaLength, data)));
     quint32 id = _id;
+    VPointF *p = new VPointF(line.p2(), pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     if (typeCreation == Source::FromGui)
     {
-        id = data->AddGObject(new VPointF(line.p2(), pointName, mx, my));
+        id = data->AddGObject(p);
         data->AddLine(basePointId, id);
     }
     else
     {
-        data->UpdateGObject(id, new VPointF(line.p2(), pointName, mx, my));
+        data->UpdateGObject(id, p);
         data->AddLine(basePointId, id);
         if (parse != Document::FullParse)
         {
@@ -217,11 +221,11 @@ VToolEndLine* VToolEndLine::Create(const quint32 _id, const QString &pointName, 
  * @brief contextMenuEvent handle context menu events.
  * @param event context menu event.
  */
-void VToolEndLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+void VToolEndLine::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogEndLine>(this, event);
+        ContextMenu<DialogEndLine>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -240,7 +244,7 @@ void VToolEndLine::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogEndLine> dialogTool = m_dialog.objectCast<DialogEndLine>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrTypeLine, dialogTool->GetTypeLine());
+    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
     doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
     doc->SetAttribute(domElement, AttrLength, dialogTool->GetFormula());
     doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
@@ -261,7 +265,7 @@ void VToolEndLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolEndLine::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrTypeLine, TypeLineLine);
+    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
     lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     formulaLength = doc->GetParametrString(domElement, AttrLength, "");
     basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
@@ -289,7 +293,7 @@ VFormula VToolEndLine::GetFormulaAngle() const
 {
     VFormula fAngle(formulaAngle, getData());
     fAngle.setCheckZero(false);
-    fAngle.setToolId(id);
+    fAngle.setToolId(m_id);
     fAngle.setPostfix(degreeSymbol);
     return fAngle;
 }
@@ -301,7 +305,7 @@ void VToolEndLine::SetFormulaAngle(const VFormula &value)
     {
         formulaAngle = value.GetFormula(FormulaType::FromUser);
 
-        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(id);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
         SaveOption(obj);
     }
 }

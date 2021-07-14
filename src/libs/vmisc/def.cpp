@@ -208,7 +208,7 @@ void SetItemOverrideCursor(QGraphicsItem *item, const QString &pixmapPath, int h
 
     QPixmap pixmap;
 
-    if (not QPixmapCache::find(pixmapPath, pixmap))
+    if (not QPixmapCache::find(pixmapPath, &pixmap))
     {
         pixmap = QPixmap(pixmapPath);
         QPixmapCache::insert(pixmapPath, pixmap);
@@ -611,56 +611,68 @@ void InitHighDpiScaling(int argc, char *argv[])
 #endif
     }
 }
+//---------------------------------------------------------------------------------------------------------------------
 
-const QString strOne   = QStringLiteral("one");
-const QString strTwo   = QStringLiteral("two");
-const QString strThree = QStringLiteral("three");
-const QString strTMark = QStringLiteral("tMark");
-const QString strVMark = QStringLiteral("vMark");
+const QString strSlit      = QStringLiteral("slit");
+const QString strTNotch    = QStringLiteral("tNotch");
+const QString strUNotch    = QStringLiteral("uNotch");
+const QString strVInternal = QStringLiteral("vInternal");
+const QString strVExternal = QStringLiteral("vExternal");
+const QString strCastle    = QStringLiteral("castle");
+const QString strDiamond   = QStringLiteral("diamond");
 
 //---------------------------------------------------------------------------------------------------------------------
 QString notchTypeToString(NotchType type)
 {
     switch(type)
     {
-        case NotchType::OneLine:
-            return strOne;
-        case NotchType::TwoLines:
-            return strTwo;
-        case NotchType::ThreeLines:
-            return strThree;
-        case NotchType::TMark:
-            return strTMark;
-        case NotchType::VMark:
-            return strVMark;
+        case NotchType::Slit:
+            return strSlit;
+        case NotchType::TNotch:
+            return strTNotch;
+        case NotchType::UNotch:
+            return strUNotch;
+        case NotchType::VInternal:
+            return strVInternal;
+        case NotchType::VExternal:
+            return strVExternal;
+        case NotchType::Castle:
+            return strCastle;
+        case NotchType::Diamond:
+            return strDiamond;
         default:
             break;
     }
 
-    return strOne;
+    return strSlit;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 NotchType stringToNotchType(const QString &value)
 {
-    const QStringList values = QStringList() << strOne << strTwo << strThree << strTMark << strVMark;
+    const QStringList values = QStringList() << strSlit << strTNotch << strUNotch << strVInternal << strVExternal
+                                             << strCastle << strDiamond;
 
     switch(values.indexOf(value))
     {
-        case 0: // strOne
-            return NotchType::OneLine;
-        case 1: // strTwo
-            return NotchType::TwoLines;
-        case 2: // strThree
-            return NotchType::ThreeLines;
-        case 3: // strTMark
-            return NotchType::TMark;
-        case 4: // strVMark
-            return NotchType::VMark;
+        case 0:
+            return NotchType::Slit;
+        case 1:
+            return NotchType::TNotch;
+        case 2:
+            return NotchType::UNotch;
+        case 3:
+            return NotchType::VInternal;
+        case 4:
+            return NotchType::VExternal;
+        case 5:
+            return NotchType::Castle;
+        case 6:
+            return NotchType::Diamond;
         default:
             break;
     }
-    return NotchType::OneLine;
+    return NotchType::Slit;
 }
 
 const QString strStraightforward = QStringLiteral("straightforward");
@@ -792,7 +804,7 @@ void InitLanguages(QComboBox *combobox)
 
         QLocale loc = QLocale(locale);
         QString lang = loc.nativeLanguageName();
-        QIcon ico(QString("%1/%2.png").arg("://flags").arg(QLocale::countryToString(loc.country())));
+        QIcon ico(QString("%1/%2.png").arg(":/flags").arg(QLocale::countryToString(loc.country())));
 
         combobox->addItem(ico, lang, locale);
     }
@@ -800,7 +812,7 @@ void InitLanguages(QComboBox *combobox)
     if (combobox->count() == 0 || not englishUS)
     {
         // English language is internal and doens't have own *.qm file.
-        QIcon ico(QString("%1/%2.png").arg("://flags").arg(QLocale::countryToString(QLocale::UnitedStates)));
+        QIcon ico(QString(":/flags/United States.png"));
         QString lang = QLocale(en_US).nativeLanguageName();
         combobox->addItem(ico, lang, en_US);
     }

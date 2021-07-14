@@ -52,6 +52,8 @@
 #include "dialoginsertnode.h"
 #include "ui_dialoginsertnode.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogInsertNode::DialogInsertNode(const VContainer *data, quint32 toolId, QWidget *parent)
@@ -122,7 +124,7 @@ void DialogInsertNode::SetNode(const VPieceNode &node)
 {
     m_node = node;
     m_flagItem = true;
-    QString name = tr("Uknown");
+    QString name = tr("Unknown");
     try
     {
         name = qApp->TrVars()->InternalVarToUser(data->GetGObject(m_node.GetId())->name());

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -107,43 +107,19 @@ public:
 
     ~VLayoutPieceData() {}
 
-    /** @brief contour list of contour points. */
-    QVector<QPointF>          contour;
-
-    /** @brief seamAllowance list of seam allowance points. */
-    QVector<QPointF>          seamAllowance;
-
-    /** @brief layoutAllowance list of layout allowance points. */
-    QVector<QPointF>          layoutAllowance;
-
-    /** @brief notches list of passmakrs. */
-    QVector<QLineF>           notches;
-
-    /** @brief m_internalPaths list of internal paths. */
-    QVector<VLayoutPiecePath> m_internalPaths;
-
-    /** @brief matrix transformation matrix*/
-    QTransform                matrix;
-
-    /** @brief layoutWidth value layout allowance width in pixels. */
-    qreal                     layoutWidth;
-
-    bool                      mirror;
-
-    /** @brief detailLabel detail label rectangle */
-    QVector<QPointF>          detailLabel;
-
-    /** @brief patternInfo pattern info rectangle */
-    QVector<QPointF>          patternInfo;
-
-    /** @brief grainlineInfo line */
-    QVector<QPointF>          grainlinePoints;
-
-    /** @brief m_tmDetail text manager for laying out detail info */
-    VTextManager              m_tmDetail;
-
-    /** @brief m_tmPattern text manager for laying out pattern info */
-    VTextManager              m_tmPattern;
+    QVector<QPointF>           contour;            //! @brief contour list of contour points.
+    QVector<QPointF>           seamAllowance;      //! @brief seamAllowance list of seam allowance points.
+    QVector<QPointF>           layoutAllowance;    //! @brief layoutAllowance list of layout allowance points.
+    QVector<QLineF>            notches;            //! @brief notches list of notches.
+    QVector<VLayoutPiecePath>  m_internalPaths;    //! @brief m_internalPaths list of internal paths.
+    QTransform                 matrix;             //! @brief matrix transformation matrix
+    qreal                      layoutWidth;        //! @brief layoutWidth value layout allowance width in pixels.
+    bool                       mirror;
+    QVector<QPointF>           detailLabel;        //! @brief detailLabel detail label rectangle
+    QVector<QPointF>           patternInfo;        //! @brief patternInfo pattern info rectangle
+    QVector<QPointF>           grainlinePoints;    //! @brief grainlineInfo line
+    VTextManager               m_tmDetail;         //! @brief m_tmDetail text manager for laying out detail info
+    VTextManager               m_tmPattern;        //! @brief m_tmPattern text manager for laying out pattern info */
 
 private:
     VLayoutPieceData &operator=(const VLayoutPieceData &) Q_DECL_EQ_DELETE;
