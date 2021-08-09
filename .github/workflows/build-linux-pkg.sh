@@ -6,16 +6,16 @@ readonly buildDirPath=/home/runner/local
 
 mkdir $buildDirPath
 
-qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-make
-make install
-
 # The AppImage bundler relies on fuse during packaging
 sudo apt update
 sudo apt install fuse
 # The libdrm pkg not found on base ubuntu-latest build
 sudo apt-get install libdrm-dev
 sudo apt-get install -f
+
+qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+make
+make install
 
 mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
 cp dist/seamly2d.desktop $buildDirPath/share/applications
