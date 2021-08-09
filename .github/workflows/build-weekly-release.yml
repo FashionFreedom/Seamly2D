@@ -143,7 +143,7 @@ jobs:
 
           echo "${{ secrets.PFX_BASE64 }}" > cert.pfx.base64
           certutil -decode cert.pfx.base64 cert.pfx
-          & 'C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe' sign /f cert.pfx /p ${{ secrets.PFX_PASSWORD }}  /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /v .\seamly2d-installer.exe
+          & 'C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe' sign /f cert.pfx /p ${{ secrets.PFX_PASSWORD }}  /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /debug .\seamly2d-installer.exe
 
       - name: upload seamly2d-installer
         uses: actions/upload-release-asset@v1.0.2
