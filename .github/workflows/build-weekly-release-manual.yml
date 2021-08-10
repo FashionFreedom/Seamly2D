@@ -28,8 +28,8 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "TAG_NAME=weekly-`date +%Y%m%d%T%y`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Weekly release `date +%Y%m%d%T%y`" >> $GITHUB_ENV
+          echo "TAG_NAME=weekly-`date +%Y%m%d%T`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Weekly release `date +%Y%m%d%T`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
