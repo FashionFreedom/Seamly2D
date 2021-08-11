@@ -9,7 +9,6 @@ mkdir $buildDirPath
 # The AppImage bundler relies on fuse during packaging
 sudo apt update
 sudo apt install fuse
-sudo apt install libc6
 # The libdrm pkg not found on base ubuntu-latest build
 sudo apt-get install libdrm-dev
 sudo apt-get install -f
