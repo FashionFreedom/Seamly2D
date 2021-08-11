@@ -1,24 +1,32 @@
+# This manual build file is the sandbox for ..
+#   testing changes to the automated build-weekly-release.yml file.
+# When your updates to this file run without error ..
+#   incorporate your changes to build-weekly-release.yml.
+# Create a pull request for your updates to all build files ..
+#   whether for manual or automated build files.
+
 name: Build weekly release - manual
 
-on: 
+on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: 'Log level'     
+        description: 'Log level'
         required: true
         default: 'warning'
       tags:
-        description: 'Test build weekly release - manual'  
+        description: 'Build weekly release - manual'
 
 env:
   QT_SELECT: 5
 
   # See https://wiki.qt.io/Qt_5.13_Release
   # The project is currently incompatible with Qt-5.15/5.14.2
-  # When chaning the version information in this file be sure to change it in
+  # When changing the version information in this file be sure to change it in
   # pull-request.yml as well
   QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
 
+# The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
   create-release:
     runs-on: ubuntu-18.04
@@ -28,8 +36,8 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "TAG_NAME=weekly-`date +%Y%m%d`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Weekly release `date +%Y%m%d`" >> $GITHUB_ENV
+          echo "TAG_NAME=Test-weekly-`date +%F-%H:%M`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Test weekly release `date +%F-%H:%M`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

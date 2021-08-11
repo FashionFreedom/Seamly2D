@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
+#create build directory
 readonly buildDirPath=/home/runner/local
-
 mkdir $buildDirPath
 
 # The AppImage bundler relies on fuse during packaging
