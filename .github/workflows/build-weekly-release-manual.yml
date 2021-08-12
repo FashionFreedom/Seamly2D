@@ -36,8 +36,8 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "TAG_NAME=Test-weekly-`date +%F%H%M`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Test weekly release `date +%F%H%M`" >> $GITHUB_ENV
+          echo "TAG_NAME=Test-weekly-`date +"%F-%T"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Test weekly `date +"%F-%T"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
