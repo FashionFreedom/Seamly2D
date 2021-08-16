@@ -9,10 +9,11 @@ env:
 
   # See https://wiki.qt.io/Qt_5.13_Release
   # The project is currently incompatible with Qt-5.15/5.14.2
-  # When chaning the version information in this file be sure to change it in
+  # When changing the version information in this file be sure to change it in
   # pull-request.yml as well
   QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
 
+# The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
   create-release:
     runs-on: ubuntu-18.04
@@ -22,8 +23,8 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "TAG_NAME=weekly-`date +%Y%m%d`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Weekly release `date +%Y%m%d`" >> $GITHUB_ENV
+          echo "TAG_NAME=Weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Weekly `date +"%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
