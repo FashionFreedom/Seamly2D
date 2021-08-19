@@ -1,8 +1,21 @@
-name: Build weekly release
+# This manual build file is the sandbox for ..
+#   testing changes to the automated build-weekly-release.yml file.
+# When your updates to this file run without error ..
+#   incorporate your changes to build-weekly-release.yml.
+# Create a pull request for your updates to all build files ..
+#   whether for manual or automated build files.
+
+name: Build weekly release - manual
 
 on:
-  schedule:
-    - cron: '0 0 * * MON'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Build weekly release - manual'
 
 env:
   QT_SELECT: 5
@@ -23,8 +36,8 @@ jobs:
     steps:
       - name: generate release name and tag
         run: |
-          echo "TAG_NAME=Weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Weekly `date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=Test-weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Test weekly `date +"%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -81,16 +94,13 @@ jobs:
         run: |
           qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           make
-
       - name: build dmg packages
         run: |
           hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
           hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
-
       - name: pack package files into .zip
         run: |
           zip Seamly2D.zip Seamly2D.dmg SeamlyME.dmg
-
       - name: upload Seamly2D.zip
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -120,7 +130,6 @@ jobs:
         run: |
           qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           nmake
-
       - name: bundle VC_redist, OpenSSL dlls, and create + code sign installer
         run: |
           mkdir ..\windows-build
@@ -134,18 +143,14 @@ jobs:
           copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
-
           New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
           Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
           Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
-
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
-
           echo "${{ secrets.PFX_BASE64 }}" > cert.pfx.base64
           certutil -decode cert.pfx.base64 cert.pfx
           & 'C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe' sign /f cert.pfx /p ${{ secrets.PFX_PASSWORD }}  /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /debug .\seamly2d-installer.exe
-
       - name: upload seamly2d-installer
         uses: actions/upload-release-asset@v1.0.2
         env:
