@@ -125,6 +125,7 @@ jobs:
       - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
+          arch: 'win32_msvc2015'
 
       - name: build
         run: |
