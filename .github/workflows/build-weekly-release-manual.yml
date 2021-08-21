@@ -64,7 +64,7 @@ jobs:
       - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
-          arch: 'win32_mingw53'
+          arch: 'win32_msvc2017'
 
       - name: build
         run: .github/workflows/build-linux-pkg.sh
@@ -90,7 +90,7 @@ jobs:
       - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
-          arch: 'win32_mingw53'
+          arch: 'win32_msvc2017'
 
       - name: build
         run: |
@@ -127,7 +127,7 @@ jobs:
       - uses: jurplel/install-qt-action@v2.13.0
         with:
           version: ${{ env.QT_VERSION }}
-          arch: 'win32_mingw53'
+          arch: 'win32_msvc2017'
 
       - name: build
         run: |
