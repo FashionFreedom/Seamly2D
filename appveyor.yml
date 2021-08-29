@@ -8,7 +8,7 @@ environment:
     secure: +GIXChQeD2YvKKJfsC32mG4tVbbM49BK243gEJwayyB1IO98plDBc6wJ/yIQfG2XoSDaqgFtNbW/utfCN+D0rA==
 install:
   - sh: export QTDIR=$HOME/Qt/5.15.2
-  - sh: export PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+  - sh: export PATH=$QTDIR/bin:$PATH
   - sh: set -euo pipefail
   - sh: readonly buildDirPath=/home/runner/local
   - sh: mkdir $buildDirPath
