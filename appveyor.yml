@@ -1,0 +1,39 @@
+version: 1.0.{build}
+branches:
+  only:
+  - develop
+  - feature-173
+image:
+  - Visual Studio 2019
+environment:
+  my_variable:
+    secure: +GIXChQeD2YvKKJfsC32mG4tVbbM49BK243gEJwayyB1IO98plDBc6wJ/yIQfG2XoSDaqgFtNbW/utfCN+D0rA==
+clone_folder: c:\projects\seamly2d
+install:
+  - set QTDIR=C:\Qt\5.5\mingw492_32
+  - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+configuration: Release
+build:
+  - qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+  - nmake
+after_build:
+  - mkdir ..\windows-build
+  - Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
+  - windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
+  - windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
+  - copy .\dist\seamly2d-installer.nsi ..\windows-build\
+  - copy .\dist\win\VC_redist.x86.exe ..\windows-build\
+  - copy .\dist\win\VC_redist.x64.exe ..\windows-build\
+  - copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
+  - copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
+  - copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
+  - copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
+  - New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
+  - Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
+  - Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
+  - cd ..\windows-build\ & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+deploy:
+- provider: Webhook
+  url: https://app.signpath.io/API/v1/df2e36b2-f325-4900-b0bd-12669462567a/Integrations/AppVeyor?ProjectSlug=seamly2d&SigningPolicySlug=test-signing
+  authorization:
+     secure: +GIXChQeD2YvKKJfsC32mG4tVbbM49BK243gEJwayyB1IO98plDBc6wJ/yIQfG2XoSDaqgFtNbW/utfCN+D0rA==
