@@ -14,8 +14,8 @@ install:
   - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
 configuration: Release
 build:
-  - qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-  - nmake
+  - cmd: qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+  - cmd: nmake
 after_build:
   - mkdir ..\windows-build
   - Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
