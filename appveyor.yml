@@ -17,10 +17,13 @@ install:
   - sh: sudo apt-get install libdrm-dev
   - sh: sudo apt-get install -f
 configuration: Release
-build:
+before_build:
   - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sh: make
   - sh: make install   
+build:
+  parallel: true 
+  verbosity: normal
 after_build:
   - sh: mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
   - sh: cp dist/seamly2d.desktop $buildDirPath/share/applications
