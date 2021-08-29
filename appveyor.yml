@@ -11,7 +11,7 @@ install:
   - sh: export PATH=$QTDIR/bin:$PATH
   - sh: set -euo pipefail
   - sh: readonly buildDirPath=/home/runner/local
-  - sh: mkdir $buildDirPath
+  - sh: mkdir -p $buildDirPath
   - sh: sudo apt update
   - sh: sudo apt install fuse
   - sh: sudo apt-get install libdrm-dev
