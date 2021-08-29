@@ -10,7 +10,7 @@ install:
   - sh: export QTDIR=$HOME/Qt/5.15.2
   - sh: export PATH=$QTDIR/bin:$PATH
   - sh: set -euo pipefail
-  - sh: readonly buildDirPath=/home/runner/local
+  - sh: buildDirPath=/home/runner/local
   - sh: mkdir -p $buildDirPath
   - sh: sudo apt update
   - sh: sudo apt install fuse
