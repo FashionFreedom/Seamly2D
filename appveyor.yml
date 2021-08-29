@@ -8,7 +8,9 @@ environment:
     secure: +GIXChQeD2YvKKJfsC32mG4tVbbM49BK243gEJwayyB1IO98plDBc6wJ/yIQfG2XoSDaqgFtNbW/utfCN+D0rA==
 install:
   - sh: export QTDIR=$HOME/Qt/5.15.2
-  - sh: export PATH=$QTDIR/bin:$PATH
+  - sh: ls $HOME/Qt/5.15.2
+  - sh: ls $HOME/Qt/5.15.2/gcc_64/bin
+  - sh: export PATH=$QTDIR/bin:$HOME/Qt/5.15.2/gcc_64/bin:$PATH
   - sh: set -euo pipefail
   - sh: buildDirPath=$HOME/build
   - sh: mkdir -p $buildDirPath
