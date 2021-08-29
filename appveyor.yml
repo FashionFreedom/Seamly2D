@@ -27,9 +27,5 @@ after_build:
   - sh: cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
   - sh: cp share/translations/*.qm $buildDirPath/share/translations
   - sh: cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
-  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse \
-    --security-opt apparmor:unconfined --security-opt seccomp=unconfined \
-    -v $buildDirPath:/app/usr \
-    -e EXTRA_BINARIES="seamlyme" \
-    --rm mhitza/linuxdeployqt:"$QT_VERSION"
+  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:"$QT_VERSION"
   - sh: mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
