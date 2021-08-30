@@ -8,13 +8,13 @@ environment:
   my_variable:
     secure: +GIXChQeD2YvKKJfsC32mG4tVbbM49BK243gEJwayyB1IO98plDBc6wJ/yIQfG2XoSDaqgFtNbW/utfCN+D0rA==
 install:
-  - sh: sudo export QTDIR=$HOME/Qt/5.15.2
-  - sh: sudo ls $HOME/Qt/5.15.2
-  - sh: sudo ls $HOME/Qt/5.15.2/gcc_64/bin
-  - sh: sudo export PATH=$QTDIR/bin:$HOME/Qt/5.15.2/gcc_64/bin:$PATH
-  - sh: sudo set -euo pipefail
-  - sh: sudo buildDirPath=$HOME/build
-  - sh: sudo mkdir -p $buildDirPath
+  - sh: export QTDIR=$HOME/Qt/5.15.2
+  - sh: ls $HOME/Qt/5.15.2
+  - sh: ls $HOME/Qt/5.15.2/gcc_64/bin
+  - sh: export PATH=$QTDIR/bin:$HOME/Qt/5.15.2/gcc_64/bin:$PATH
+  - sh: set -euo pipefail
+  - sh: buildDirPath=$HOME/build
+  - sh: mkdir -p $buildDirPath
   - sh: sudo apt update
   - sh: sudo apt install fuse
   - sh: sudo apt-get install libdrm-dev
@@ -30,10 +30,10 @@ build:
   parallel: true 
   verbosity: normal
 after_build:
-  - sh: sudo mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
-  - sh: sudo cp dist/seamly2d.desktop $buildDirPath/share/applications
-  - sh: sudo cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
-  - sh: sudo cp share/translations/*.qm $buildDirPath/share/translations
-  - sh: sudo cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
-  - sh: sudo docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:"$QT_VERSION"
-  - sh: sudo mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
+  - sh: mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
+  - sh: cp dist/seamly2d.desktop $buildDirPath/share/applications
+  - sh: cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
+  - sh: cp share/translations/*.qm $buildDirPath/share/translations
+  - sh: cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
+  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:"$QT_VERSION"
+  - sh: mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
