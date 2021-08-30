@@ -17,6 +17,7 @@ install:
   - sh: sudo apt update
   - sh: sudo apt install fuse
   - sh: sudo apt-get install libdrm-dev
+  - sh: sudo apt-get install libtinfo-dev 
   - sh: sudo apt-get install -f
 configuration: Release
 before_build:
