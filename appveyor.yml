@@ -23,7 +23,7 @@ install:
   - sh: sudo apt-get install -f
 configuration: Release
 before_build:
-  - sh: sudo qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+  - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sh: sudo make
   - sh: sudo make install   
 build:
