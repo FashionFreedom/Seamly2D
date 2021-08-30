@@ -2,6 +2,7 @@ version: 1.0.{build}
 branches:
   only:
   - develop
+  - feature-173
 image: Ubuntu
 environment:
   my_variable:
