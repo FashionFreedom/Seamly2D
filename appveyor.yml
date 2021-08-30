@@ -22,7 +22,10 @@ install:
   - sh: sudo apt-get install libgl1-mesa-dev -y
   - sh: sudo apt-get install -f
 configuration: Release
-build_script:
+build:
+  parallel: true 
+  verbosity: normal
+before_build:
   - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sh: sudo make
   - sh: sudo make install   
@@ -33,6 +36,3 @@ build_script:
   - sh: cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
   - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:"$QT_VERSION"
   - sh: mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
-build:
-  parallel: true 
-  verbosity: normal
