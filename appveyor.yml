@@ -22,7 +22,7 @@ install:
   - sh: sudo apt-get install libgl1-mesa-dev -y
   - sh: sudo apt-get install -f
 configuration: Release
-before_script:
+build_script:
   - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sh: sudo make
   - sh: sudo make install   
