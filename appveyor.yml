@@ -19,8 +19,9 @@ install:
   - sh: sudo apt install fuse
   - sh: sudo apt-get install libdrm-dev
   - sh: sudo apt-get install libtinfo-dev 
+  - sh: apt install libgl1-mesa-dev
   - sh: sudo apt-get install -f
-  - sh: sudo ln -s /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1 /usr/lib/libGL.so
+  - sh: sudo locate libGL
 configuration: Release
 before_build:
   - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
