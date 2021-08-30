@@ -19,7 +19,7 @@ install:
   - sh: sudo apt install fuse
   - sh: sudo apt-get install libdrm-dev
   - sh: sudo apt-get install libtinfo-dev 
-  - sh: sudo apt install libgl1-mesa-dev
+  - sh: sudo apt-get install libgl1-mesa-dev -y
   - sh: sudo apt-get install -f
   - sh: sudo locate libGL
 configuration: Release
