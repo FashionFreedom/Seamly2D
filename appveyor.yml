@@ -18,18 +18,18 @@ install:
   - sh: sudo apt update
   - sh: sudo apt install fuse
   - sh: sudo apt-get install libdrm-dev
-  - sh: sudo apt-get install libtinfo-dev 
+  - sh: sudo apt-get install libtinfo-dev
   - sh: sudo apt-get install libgl1-mesa-dev -y
   - sh: sudo apt-get install -f
 configuration: Release
 build_script:
   - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sh: sudo make
-  - sh: sudo make install   
+  - sh: sudo make install
   - sh: mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
   - sh: cp dist/seamly2d.desktop $buildDirPath/share/applications
   - sh: cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
   - sh: cp share/translations/*.qm $buildDirPath/share/translations
   - sh: cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
-  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:5.14.2 
-  - sh: mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
+  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:5.14.2
+  - sh: mv $buildDirPath/Seamly2D*.AppImage Seamly2D-x86_64.AppImage
