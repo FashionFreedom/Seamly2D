@@ -29,4 +29,4 @@ docker run --cap-add SYS_ADMIN --device /dev/fuse \
     -e EXTRA_BINARIES="seamlyme" \
     --rm mhitza/linuxdeployqt:"$QT_VERSION"
 
-mv $buildDirPath/Seamly2D*.AppImage Seamly2D.AppImage
+mv $buildDirPath/Seamly2D*.AppImage Seamly2D-x86_64.AppImage

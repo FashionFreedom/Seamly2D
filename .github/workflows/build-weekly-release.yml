@@ -55,14 +55,14 @@ jobs:
       - name: build
         run: .github/workflows/build-linux-pkg.sh
 
-      - name: upload Seamly2D.AppImage
+      - name: upload Seamly2D-x86_64.AppImage
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./Seamly2D.AppImage
-          asset_name: Seamly2D.AppImage
+          asset_path: ./Seamly2D-x86_64.AppImage
+          asset_name: Seamly2D-x86_64.AppImage
           asset_content_type: application/octet-stream
 
   macos:
