@@ -247,7 +247,7 @@ void DialogLineIntersect::PointNameChanged()
     QLineF line1(static_cast<QPointF>(*p1Line1), static_cast<QPointF>(*p2Line1));
     QLineF line2(static_cast<QPointF>(*p1Line2), static_cast<QPointF>(*p2Line2));
     QPointF fPoint;
-    QLineF::IntersectType intersect = line1.intersect(line2, &fPoint);
+    QLineF::IntersectType intersect = line1.intersects(line2, &fPoint);
 
     QColor color = okColor;
     if (set.size() < 3 || intersect == QLineF::NoIntersection)
@@ -298,7 +298,7 @@ bool DialogLineIntersect::CheckIntersecion()
     QLineF line1(static_cast<QPointF>(*p1L1), static_cast<QPointF>(*p2L1));
     QLineF line2(static_cast<QPointF>(*p1L2), static_cast<QPointF>(*p2L2));
     QPointF fPoint;
-    QLineF::IntersectType intersect = line1.intersect(line2, &fPoint);
+    QLineF::IntersectType intersect = line1.intersects(line2, &fPoint);
     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
     {
         return true;

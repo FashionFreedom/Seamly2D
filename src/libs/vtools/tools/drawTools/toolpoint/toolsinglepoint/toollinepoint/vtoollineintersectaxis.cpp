@@ -194,7 +194,7 @@ VToolLineIntersectAxis *VToolLineIntersectAxis::Create(const quint32 _id, const 
 QPointF VToolLineIntersectAxis::FindPoint(const QLineF &axis, const QLineF &line)
 {
     QPointF fPoint;
-    QLineF::IntersectType intersect = axis.intersect(line, &fPoint);
+    QLineF::IntersectType intersect = axis.intersects(line, &fPoint);
     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
     {
         if(VFuzzyComparePossibleNulls(axis.angle(), line.angle())
