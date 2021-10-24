@@ -82,11 +82,9 @@ DialogPointOfIntersectionArcs::DialogPointOfIntersectionArcs(const VContainer *d
     FillComboBoxArcs(ui->comboBoxArc2);
     FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfIntersectionArcs::NamePointChanged);
-    connect(ui->comboBoxArc1, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfIntersectionArcs::ArcChanged);
-    connect(ui->comboBoxArc1, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfIntersectionArcs::ArcChanged);
+    connect(ui->lineEditNamePoint, &QLineEdit::textChanged,  this, &DialogPointOfIntersectionArcs::NamePointChanged);
+    connect(ui->comboBoxArc1,      &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionArcs::ArcChanged);
+    connect(ui->comboBoxArc1,      &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionArcs::ArcChanged);
 
     vis = new VisToolPointOfIntersectionArcs(data);
 }

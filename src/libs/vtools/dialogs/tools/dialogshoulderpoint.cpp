@@ -103,16 +103,13 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
     FillComboBoxPoints(ui->comboBoxP3);
     FillComboBoxLineColors(ui->comboBoxLineColor);
 
-    connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogShoulderPoint::FXLength);
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogShoulderPoint::NamePointChanged);
+    connect(ui->toolButtonExprLength, &QPushButton::clicked,        this, &DialogShoulderPoint::FXLength);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogShoulderPoint::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogShoulderPoint::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogShoulderPoint::DeployFormulaTextEdit);
-    connect(ui->comboBoxP1Line, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogShoulderPoint::PointNameChanged);
-    connect(ui->comboBoxP2Line, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogShoulderPoint::PointNameChanged);
-    connect(ui->comboBoxP3, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogShoulderPoint::PointNameChanged);
+    connect(ui->pushButtonGrowLength, &QPushButton::clicked,        this, &DialogShoulderPoint::DeployFormulaTextEdit);
+    connect(ui->comboBoxP1Line,       &QComboBox::currentTextChanged, this, &DialogShoulderPoint::PointNameChanged);
+    connect(ui->comboBoxP2Line,       &QComboBox::currentTextChanged, this, &DialogShoulderPoint::PointNameChanged);
+    connect(ui->comboBoxP3,           &QComboBox::currentTextChanged, this, &DialogShoulderPoint::PointNameChanged);
 
     vis = new VisToolShoulderPoint(data);
 }

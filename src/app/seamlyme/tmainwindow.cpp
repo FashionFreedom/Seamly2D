@@ -2058,14 +2058,12 @@ void TMainWindow::InitWindow()
 		labelGradationHeights = new QLabel(tr("Height:"));
 		gradationHeights = SetGradationList(labelGradationHeights, listHeights);
 		SetDefaultHeight(static_cast<int>(VContainer::height()));
-		connect(gradationHeights, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-				this, &TMainWindow::ChangedHeight);
+		connect(gradationHeights, &QComboBox::currentTextChanged, this, &TMainWindow::ChangedHeight);
 
 		labelGradationSizes = new QLabel(tr("Size:"));
 		gradationSizes = SetGradationList(labelGradationSizes, listSizes);
 		SetDefaultSize(static_cast<int>(VContainer::size()));
-		connect(gradationSizes, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-				this, &TMainWindow::ChangedSize);
+		connect(gradationSizes, &QComboBox::currentTextChanged, this, &TMainWindow::ChangedSize);
 
 		connect(ui->doubleSpinBoxBaseValue,
 				static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),

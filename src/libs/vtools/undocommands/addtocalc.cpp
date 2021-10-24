@@ -101,7 +101,7 @@ void AddToCalc::undo()
     }
     emit NeedFullParsing();
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    doc->SetCurrentPP(nameActivDraw);//Return current pattern piece after undo
+    doc->setCurrentDraftBlock(nameActivDraw);//Return current pattern piece after undo
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -148,7 +148,7 @@ void AddToCalc::RedoFullParsing()
     if (redoFlag)
     {
         emit NeedFullParsing();
-        doc->SetCurrentPP(nameActivDraw);//Return current pattern piece after undo
+        doc->setCurrentDraftBlock(nameActivDraw);//Return current pattern piece after undo
     }
     else
     {

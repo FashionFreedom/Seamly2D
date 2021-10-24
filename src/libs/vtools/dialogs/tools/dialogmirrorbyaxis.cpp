@@ -102,9 +102,8 @@ DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &to
     flagName = true;
     CheckState();
 
-    connect(ui->suffix_LineEdit, &QLineEdit::textChanged, this, &DialogMirrorByAxis::suffixChanged);
-    connect(ui->originPoint_ComboBox, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogMirrorByAxis::pointChanged);
+    connect(ui->suffix_LineEdit,      &QLineEdit::textChanged,        this, &DialogMirrorByAxis::suffixChanged);
+    connect(ui->originPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogMirrorByAxis::pointChanged);
 
     vis = new VisToolMirrorByAxis(data);
 }

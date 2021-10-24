@@ -108,14 +108,12 @@ DialogAlongLine::DialogAlongLine(const VContainer *data, const quint32 &toolId, 
     FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
     FillComboBoxLineColors(ui->comboBoxLineColor);
 
-    connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogAlongLine::FXLength);
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogAlongLine::NamePointChanged);
-    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogAlongLine::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogAlongLine::DeployFormulaTextEdit);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogAlongLine::PointChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
-            this, &DialogAlongLine::PointChanged);
+    connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogAlongLine::FXLength);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogAlongLine::NamePointChanged);
+    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged,   this, &DialogAlongLine::FormulaTextChanged);
+    connect(ui->pushButtonGrowLength, &QPushButton::clicked,          this, &DialogAlongLine::DeployFormulaTextEdit);
+    connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogAlongLine::PointChanged);
+    connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogAlongLine::PointChanged);
 
     vis = new VisToolAlongLine(data);
 
