@@ -2801,8 +2801,7 @@ void TMainWindow::WriteSettings()
 //---------------------------------------------------------------------------------------------------------------------
 QStringList TMainWindow::FilterMeasurements(const QStringList &mNew, const QStringList &mFilter)
 {
-	const QSet<QString> import = mNew.toSet().subtract(mFilter.toSet());
-	return QStringList(import.values());
+    return convertToList(convertToSet<QString>(mNew).subtract(convertToSet<QString>(mFilter)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

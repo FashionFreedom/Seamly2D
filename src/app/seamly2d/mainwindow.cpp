@@ -598,8 +598,9 @@ bool MainWindow::UpdateMeasurements(const QString &path, int size, int height)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::CheckRequiredMeasurements(const VMeasurements *measurements)
 {
-	const QSet<QString> match = doc->ListMeasurements().toSet().
-									subtract(measurements->ListAll().toSet());
+    const QSet<QString> match = convertToSet<QString>(doc->ListMeasurements())
+                                                      .subtract(convertToSet<QString>(measurements->ListAll()));
+
     if (not match.isEmpty())
     {
 		QList<QString> list = match.values();
