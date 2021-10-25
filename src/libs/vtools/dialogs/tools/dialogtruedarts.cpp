@@ -97,19 +97,19 @@ DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, 
     connect(ui->lineEditFirstNewDartPoint, &QLineEdit::textChanged, this, &DialogTrueDarts::NameDartPoint1Changed);
     connect(ui->lineEditSecondNewDartPoint, &QLineEdit::textChanged, this, &DialogTrueDarts::NameDartPoint2Changed);
     connect(ui->comboBoxFirstBasePoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogTrueDarts::PointNameChanged);
     connect(ui->comboBoxSecondBasePoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogTrueDarts::PointNameChanged);
     connect(ui->comboBoxFirstDartPoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogTrueDarts::PointNameChanged);
     connect(ui->comboBoxSecondDartPoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogTrueDarts::PointNameChanged);
     connect(ui->comboBoxThirdDartPoint,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogTrueDarts::PointNameChanged);
 
     vis = new VisToolTrueDarts(data);

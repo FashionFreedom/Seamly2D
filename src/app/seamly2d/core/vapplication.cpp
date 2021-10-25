@@ -195,7 +195,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 break;
         }
 
-        (*qApp->LogFile()) << debugdate <<  endl;
+        (*qApp->LogFile()) << debugdate <<  Qt::endl;
     }
 
     if (isGuiThread)
@@ -548,7 +548,7 @@ void VApplication::ClearOldLogs() const
         {
             auto fn = allFiles.at(i);
             QFileInfo info(fn);
-            if (info.created().daysTo(QDateTime::currentDateTime()) >= DAYS_TO_KEEP_LOGS)
+            if (info.birthTime().daysTo(QDateTime::currentDateTime()) >= DAYS_TO_KEEP_LOGS)
             {
                 VLockGuard<QFile> tmp(info.absoluteFilePath(), [&fn](){return new QFile(fn);});
                 if (tmp.GetProtected() != nullptr)
@@ -766,7 +766,7 @@ void VApplication::ClearOldReports() const
             for (int i = 0; i < allFiles.size(); ++i)
             {
                 QFileInfo info(allFiles.at(i));
-                if (info.created().daysTo(now) > 30)
+                if (info.birthTime().daysTo(now) > 30)
                 {
                     QFile(allFiles.at(i)).remove();
                 }
@@ -805,19 +805,19 @@ void VApplication::GatherLogs() const
 
                 if (tmp.IsLocked())
                 {
-                    *out <<"--------------------------" << endl;
+                    *out <<"--------------------------" << Qt::endl;
                     if (tmp.GetProtected()->open(QIODevice::ReadOnly | QIODevice::Text))
                     {
                         QTextStream in(tmp.GetProtected().get());
                         while (!in.atEnd())
                         {
-                            *out << in.readLine() << endl;
+                            *out << in.readLine() << Qt::endl;
                         }
                         tmp.GetProtected()->close();
                     }
                     else
                     {
-                        *out << "Log file error:" + tmp.GetProtected()->errorString() << endl;
+                        *out << "Log file error:" + tmp.GetProtected()->errorString() << Qt::endl;
                     }
                 }
                 else

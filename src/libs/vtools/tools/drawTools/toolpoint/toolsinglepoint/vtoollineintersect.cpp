@@ -183,7 +183,7 @@ VToolLineIntersect* VToolLineIntersect::Create(const quint32 _id, const quint32 
     QLineF line1(static_cast<QPointF>(*p1Line1), static_cast<QPointF>(*p2Line1));
     QLineF line2(static_cast<QPointF>(*p1Line2), static_cast<QPointF>(*p2Line2));
     QPointF fPoint;
-    QLineF::IntersectType intersect = line1.intersect(line2, &fPoint);
+    QLineF::IntersectType intersect = line1.intersects(line2, &fPoint);
     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
     {
         quint32 id = _id;

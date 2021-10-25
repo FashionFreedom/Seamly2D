@@ -841,9 +841,9 @@ void DialogInternalPath::InitNotchesTab()
     connect(ui->notches_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogInternalPath::notchChanged);
 
-    connect(ui->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+    connect(ui->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
             this, &DialogInternalPath::notchTypeChanged);
-    connect(ui->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+    connect(ui->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
             this, &DialogInternalPath::notchSubTypeChanged);
 }
 

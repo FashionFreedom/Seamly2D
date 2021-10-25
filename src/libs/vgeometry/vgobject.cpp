@@ -315,22 +315,22 @@ QPointF VGObject::LineIntersectRect(const QRectF &rec, const QLineF &line)
     qreal x1, y1, x2, y2;
     rec.getCoords(&x1, &y1, &x2, &y2);
     QPointF point;
-    QLineF::IntersectType type = line.intersect(QLineF(QPointF(x1, y1), QPointF(x1, y2)), &point);
+    QLineF::IntersectType type = line.intersects(QLineF(QPointF(x1, y1), QPointF(x1, y2)), &point);
     if ( type == QLineF::BoundedIntersection )
     {
         return point;
     }
-    type = line.intersect(QLineF(QPointF(x1, y1), QPointF(x2, y1)), &point);
+    type = line.intersects(QLineF(QPointF(x1, y1), QPointF(x2, y1)), &point);
     if ( type == QLineF::BoundedIntersection )
     {
         return point;
     }
-    type = line.intersect(QLineF(QPointF(x1, y2), QPointF(x2, y2)), &point);
+    type = line.intersects(QLineF(QPointF(x1, y2), QPointF(x2, y2)), &point);
     if ( type == QLineF::BoundedIntersection )
     {
         return point;
     }
-    type = line.intersect(QLineF(QPointF(x2, y1), QPointF(x2, y2)), &point);
+    type = line.intersects(QLineF(QPointF(x2, y1), QPointF(x2, y2)), &point);
     if ( type == QLineF::BoundedIntersection )
     {
         return point;
@@ -441,7 +441,7 @@ QPointF VGObject::ClosestPoint(const QLineF &line, const QPointF &point)
     qreal y = b + point.y();
     QLineF lin (point, QPointF(x, y));
     QPointF p;
-    QLineF::IntersectType intersect = line.intersect(lin, &p);
+    QLineF::IntersectType intersect = line.intersects(lin, &p);
     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
     {
         return p;

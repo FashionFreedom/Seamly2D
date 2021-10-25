@@ -107,11 +107,11 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogShoulderPoint::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogShoulderPoint::FormulaTextChanged);
     connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogShoulderPoint::DeployFormulaTextEdit);
-    connect(ui->comboBoxP1Line, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP1Line, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogShoulderPoint::PointNameChanged);
-    connect(ui->comboBoxP2Line, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP2Line, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogShoulderPoint::PointNameChanged);
-    connect(ui->comboBoxP3, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP3, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogShoulderPoint::PointNameChanged);
 
     vis = new VisToolShoulderPoint(data);

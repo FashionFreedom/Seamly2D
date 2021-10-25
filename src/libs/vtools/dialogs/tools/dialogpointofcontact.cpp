@@ -103,11 +103,11 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfContact::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogPointOfContact::FormulaTextChanged);
     connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogPointOfContact::DeployFormulaTextEdit);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogPointOfContact::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogPointOfContact::PointNameChanged);
-    connect(ui->comboBoxCenter, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxCenter, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogPointOfContact::PointNameChanged);
 
     vis = new VisToolPointOfContact(data);

@@ -103,7 +103,7 @@ DialogPointFromCircleAndTangent::DialogPointFromCircleAndTangent(const VContaine
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointFromCircleAndTangent::NamePointChanged);
     connect(ui->comboBoxCircleCenter,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogPointFromCircleAndTangent::PointChanged);
 
     connect(ui->toolButtonExprRadius, &QPushButton::clicked, this,
