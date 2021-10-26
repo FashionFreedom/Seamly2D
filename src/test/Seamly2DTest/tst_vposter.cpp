@@ -69,7 +69,7 @@ void TST_VPoster::BigPoster()
 {
     QPrinter printer;
     printer.setResolution(96);// By default
-    printer.setPaperSize(QPrinter::A4);
+    printer.setPageSize(QPageSize(QPageSize::A4));
     printer.setFullPage(true);
     // We need to set full page because otherwise QPrinter->pageRect returns different values in Windows and Linux
 
@@ -100,7 +100,7 @@ void TST_VPoster::SmallPoster()
 {
     QPrinter printer;
     printer.setResolution(96);// By default
-    printer.setPaperSize(QPrinter::A4);
+    printer.setPageSize(QPageSize(QPageSize::A4));
 
     const QRect image(0, 0, 700, 1000); // Little bit less than A4
     VPoster posterazor(&printer);

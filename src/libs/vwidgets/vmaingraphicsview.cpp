@@ -72,6 +72,7 @@
 #include <QWidget>
 #include <QDesktopWidget>
 #include <QAbstractScrollArea>
+#include <QScreen>
 
 #include "../vmisc/logging.h"
 #include "../vmisc/def.h"
@@ -267,7 +268,7 @@ bool GraphicsViewZoom::eventFilter(QObject *object, QEvent *event)
         SCASSERT(wheel_event != nullptr)
         if (QApplication::keyboardModifiers() == m_modifiers)
         {
-            if (wheel_event->orientation() == Qt::Vertical)
+            if (wheel_event->angleDelta().y() != 0)
             {
                 const double angle = wheel_event->angleDelta().y();
                 const double factor = qPow(m_zoomSpeedFactor, angle);
@@ -786,7 +787,7 @@ void VMainGraphicsView::mouseDoubleClickEvent(QMouseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VMainGraphicsView::MinScale()
 {
-    const QRect screenRect = QApplication::desktop()->availableGeometry();
+    const QRect screenRect = QApplication::primaryScreen()->availableGeometry();
     const qreal screenSize = qMin(screenRect.width(), screenRect.height());
 
     return screenSize / maxSceneSize;
@@ -795,7 +796,7 @@ qreal VMainGraphicsView::MinScale()
 //---------------------------------------------------------------------------------------------------------------------
 qreal VMainGraphicsView::MaxScale()
 {
-    const QRect screenRect = QApplication::desktop()->availableGeometry();
+    const QRect screenRect = QApplication::primaryScreen()->availableGeometry();
     const qreal screenSize = qMin(screenRect.width(), screenRect.height());
 
     return maxSceneSize / screenSize;

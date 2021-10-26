@@ -510,8 +510,9 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
     // Get printer rect acording to our dpi.
     const QRectF printerPageRect(0, 0, ToPixel(printer->pageRect(QPrinter::Millimeter).width(), Unit::Mm),
                                  ToPixel(printer->pageRect(QPrinter::Millimeter).height(), Unit::Mm));
-    const double xscale = printer->pageRect().width() / printerPageRect.width();
-    const double yscale = printer->pageRect().height() / printerPageRect.height();
+    QRect pageRect = printer->pageLayout().paintRectPixels(printer->resolution());
+    const double xscale = pageRect.width() / printerPageRect.width();
+    const double yscale = pageRect.height() / printerPageRect.height();
     const double scale = qMin(xscale, yscale);
 
     QPainter painter;
@@ -894,11 +895,12 @@ void MainWindowsNoGUI::PdfFile(const QString &name, QGraphicsRectItem *paper, QG
     printer.setDocName(FileName());
     const QRectF r = paper->rect();
     printer.setResolution(static_cast<int>(PrintDPI));
-    printer.setOrientation(QPrinter::Portrait);
+    printer.setPageOrientation(QPageLayout::Portrait);
     printer.setFullPage(ignorePrinterFields);
-    printer.setPaperSize ( QSizeF(FromPixel(r.width() + margins.left() + margins.right(), Unit::Mm),
-                                  FromPixel(r.height() + margins.top() + margins.bottom(), Unit::Mm)),
-                           QPrinter::Millimeter );
+    QSizeF size(FromPixel(r.width() + margins.left() + margins.right(), Unit::Mm),
+                FromPixel(r.height() + margins.top() + margins.bottom(), Unit::Mm));
+    QPageSize pageSize(size, QPageSize::Unit::Millimeter);
+    printer.setPageSize(pageSize);
 
     const qreal left = FromPixel(margins.left(), Unit::Mm);
     const qreal top = FromPixel(margins.top(), Unit::Mm);
@@ -944,7 +946,7 @@ void MainWindowsNoGUI::PdfTiledFile(const QString &name)
     SetPrinterSettings(&printer, PrintType::PrintPDF);
 
     // Call IsPagesFit after setting a printer settings and check if pages is not bigger than printer's paper size
-    if (not isTiled && not IsPagesFit(printer.paperRect().size()))
+    if (not isTiled && not IsPagesFit(printer.pageLayout().fullRectPixels(printer.resolution()).size()))
     {
         qWarning()<<tr("Pages will be cropped because they do not fit printer paper size.");
     }
@@ -1246,7 +1248,7 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
 {
     SCASSERT(printer != nullptr)
     printer->setCreator(QGuiApplication::applicationDisplayName()+" "+QCoreApplication::applicationVersion());
-    printer->setOrientation(QPrinter::Portrait);
+    printer->setPageOrientation(QPageLayout::Orientation::Portrait);
 
     if (not isTiled)
     {
@@ -1261,14 +1263,15 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
             }
         }
 
-        const QPrinter::PageSize pSZ = FindQPrinterPageSize(size);
-        if (pSZ == QPrinter::Custom)
+        const QPageSize pSZ = FindQPrinterPageSize(size);
+        if (pSZ.id() == QPageSize::Custom)
         {
-            printer->setPaperSize (size, QPrinter::Millimeter );
+            QPageSize pageSize(size, QPageSize::Unit::Millimeter);
+            printer->setPageSize (pageSize);
         }
         else
         {
-            printer->setPaperSize (pSZ);
+            printer->setPageSize (pSZ);
         }
     }
     else
@@ -1279,8 +1282,8 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
             settings->GetTiledPDFPaperHeight(Unit::Mm)
 
             );
-        const QPrinter::PageSize pSZ = FindQPrinterPageSize(size);
-        printer->setPaperSize(pSZ);
+        const QPageSize pSZ = FindQPrinterPageSize(size);
+        printer->setPageSize(pSZ);
         // no need to take custom into account, because custom isn't a format option for tiled pdf.
     }
 
@@ -1404,44 +1407,44 @@ bool MainWindowsNoGUI::IsLayoutGrayscale() const
  * @param size has to be in Mm
  * @return
  */
-QPrinter::PaperSize MainWindowsNoGUI::FindQPrinterPageSize(const QSizeF &size) const
+QPageSize MainWindowsNoGUI::FindQPrinterPageSize(const QSizeF &size) const
 {
     if (size == QSizeF(841, 1189))
     {
-        return QPrinter::A0;
+        return QPageSize(QPageSize::A0);
     }
 
     if (size == QSizeF(594, 841))
     {
-        return QPrinter::A1;
+        return QPageSize(QPageSize::A1);
     }
 
     if (size == QSizeF(420, 594))
     {
-        return QPrinter::A2;
+        return QPageSize(QPageSize::A2);
     }
 
     if (size == QSizeF(297, 420))
     {
-        return QPrinter::A3;
+        return QPageSize(QPageSize::A3);
     }
 
     if (size == QSizeF(210, 297))
     {
-        return QPrinter::A4;
+        return QPageSize(QPageSize::A4);
     }
 
     if (size == QSizeF(215.9, 355.6))
     {
-        return QPrinter::Legal;
+        return QPageSize(QPageSize::Legal);
     }
 
     if (size == QSizeF(215.9, 279.4))
     {
-        return QPrinter::Letter;
+        return QPageSize(QPageSize::Letter);
     }
 
-    return QPrinter::Custom;
+    return QPageSize(QPageSize::Custom);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

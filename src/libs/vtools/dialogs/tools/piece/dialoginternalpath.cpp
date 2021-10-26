@@ -840,11 +840,17 @@ void DialogInternalPath::InitNotchesTab()
     InitNotchesList();
     connect(ui->notches_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogInternalPath::notchChanged);
-
+#if QT_VERSION >= 0x051500
+    connect(ui->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
+            this, &DialogInternalPath::notchTypeChanged);
+    connect(ui->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
+            this, &DialogInternalPath::notchSubTypeChanged);
+#else
     connect(ui->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
             this, &DialogInternalPath::notchTypeChanged);
     connect(ui->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
             this, &DialogInternalPath::notchSubTypeChanged);
+#endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------

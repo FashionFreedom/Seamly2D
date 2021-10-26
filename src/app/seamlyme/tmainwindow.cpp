@@ -1441,20 +1441,20 @@ void TMainWindow::ImportFromPattern()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ChangedSize(const QString &text)
+void TMainWindow::ChangedSize(int index)
 {
 	const int row = ui->tableWidget->currentRow();
-	currentSize = text.toInt();
+    currentSize = gradationSizes->itemText(index).toInt();
 	RefreshData();
 	search->RefreshList(ui->lineEditFind->text());
 	ui->tableWidget->selectRow(row);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ChangedHeight(const QString &text)
+void TMainWindow::ChangedHeight(int index)
 {
 	const int row = ui->tableWidget->currentRow();
-	currentHeight = text.toInt();
+    currentHeight = gradationHeights->itemText(index).toInt();
 	RefreshData();
 	search->RefreshList(ui->lineEditFind->text());
 	ui->tableWidget->selectRow(row);
@@ -2058,13 +2058,13 @@ void TMainWindow::InitWindow()
 		labelGradationHeights = new QLabel(tr("Height:"));
 		gradationHeights = SetGradationList(labelGradationHeights, listHeights);
 		SetDefaultHeight(static_cast<int>(VContainer::height()));
-		connect(gradationHeights, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+		connect(gradationHeights, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
 				this, &TMainWindow::ChangedHeight);
 
 		labelGradationSizes = new QLabel(tr("Size:"));
 		gradationSizes = SetGradationList(labelGradationSizes, listSizes);
 		SetDefaultSize(static_cast<int>(VContainer::size()));
-		connect(gradationSizes, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+		connect(gradationSizes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
 				this, &TMainWindow::ChangedSize);
 
 		connect(ui->doubleSpinBoxBaseValue,
@@ -2803,7 +2803,8 @@ void TMainWindow::WriteSettings()
 //---------------------------------------------------------------------------------------------------------------------
 QStringList TMainWindow::FilterMeasurements(const QStringList &mNew, const QStringList &mFilter)
 {
-	const QSet<QString> import = mNew.toSet().subtract(mFilter.toSet());
+    const QSet<QString> import =
+	    QSet<QString>(mNew.begin(), mNew.end()).subtract(QSet<QString>(mFilter.begin(), mFilter.end()));
 	return QStringList(import.values());
 }
 
