@@ -78,7 +78,7 @@ VDxfEngine::VDxfEngine()
       fileName(),
       m_version(DRW::AC1014),
       m_binary(false),
-      matrix(),
+      transform(),
       input(),
       varMeasurement(VarMeasurement::Metric),
       varInsunits(VarInsunits::Millimeters),
@@ -134,14 +134,14 @@ void VDxfEngine::updateState(const QPaintEngineState &state)
 
     if (flags & QPaintEngine::DirtyTransform)
     {
-        matrix = state.matrix(); // Save new matrix for moving paths
+        transform = state.transform(); // Save new transformation for moving paths
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::drawPath(const QPainterPath &path)
 {
-    const QList<QPolygonF> subpaths = path.toSubpathPolygons(matrix);
+    const QList<QPolygonF> subpaths = path.toSubpathPolygons(transform);
 
     for (int j=0; j < subpaths.size(); ++j)
     {
@@ -204,8 +204,8 @@ void VDxfEngine::drawLines(const QLineF * lines, int lineCount)
 {
     for (int i = 0; i < lineCount; ++i)
     {
-        const QPointF p1 = matrix.map(lines[i].p1());
-        const QPointF p2 = matrix.map(lines[i].p2());
+        const QPointF p1 = transform.map(lines[i].p1());
+        const QPointF p2 = transform.map(lines[i].p2());
 
         DRW_Line *line = new DRW_Line();
         line->basePoint = DRW_Coord(FromPixel(p1.x(), varInsunits),
@@ -254,7 +254,7 @@ void VDxfEngine::drawPolygon(const QPointF *points, int pointCount, PolygonDrawM
 
         for (int i = 0; i < pointCount; ++i)
         {
-            const QPointF p = matrix.map(points[i]);
+            const QPointF p = transform.map(points[i]);
             poly->addVertex(DRW_Vertex2D(FromPixel(p.x(), varInsunits),
                                          FromPixel(getSize().height() - p.y(), varInsunits), 0));
         }
@@ -278,7 +278,7 @@ void VDxfEngine::drawPolygon(const QPointF *points, int pointCount, PolygonDrawM
 
         for (int i = 0; i < pointCount; ++i)
         {
-            const QPointF p = matrix.map(points[i]);
+            const QPointF p = transform.map(points[i]);
             poly->addVertex(DRW_Vertex(FromPixel(p.x(), varInsunits),
                                        FromPixel(getSize().height() - p.y(), varInsunits), 0, 0));
         }
@@ -296,24 +296,24 @@ void VDxfEngine::drawPolygon(const QPoint *points, int pointCount, QPaintEngine:
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::drawEllipse(const QRectF & rect)
 {
-    const QRectF newRect = matrix.mapRect(rect);
-    const double rotationAngle = atan(matrix.m12()/matrix.m11());
+    const QRectF newRect = transform.mapRect(rect);
+    const double rotationAngle = atan(transform.m12()/transform.m11());
 
     double majorX, majorY; // distanse between center and endpoint of the major axis
     double ratio; // ratio of minor axis to major axis
     if(rect.width()<= rect.height())
     {
-        majorX = (rect.top() - rect.center().y())*sin(rotationAngle)*matrix.m11()/cos(rotationAngle);
+        majorX = (rect.top() - rect.center().y())*sin(rotationAngle)*transform.m11()/cos(rotationAngle);
         // major axis * sin(rotation angle) * x-scale-factor
-        majorY = (rect.top() - rect.center().y())*matrix.m22();
-        // major axis * cos(rotation angle) * y-scale-factor, where y-scale-factor = matrix.m22()/cos(rotationAngle)
+        majorY = (rect.top() - rect.center().y())*transform.m22();
+        // major axis * cos(rotation angle) * y-scale-factor, where y-scale-factor = transform.m22()/cos(rotationAngle)
         ratio  = rect.width()/rect.height();
     }
     else
     {
-        majorX = (rect.right() - rect.center().x())*matrix.m11();
-        // major axis * cos(rotation angle) * x-scale-factor, where y-scale-factor = matrix.m22()/cos(rotationAngle)
-        majorY = (rect.right() - rect.center().x())*sin(rotationAngle)*matrix.m22()/cos(rotationAngle);
+        majorX = (rect.right() - rect.center().x())*transform.m11();
+        // major axis * cos(rotation angle) * x-scale-factor, where y-scale-factor = transform.m22()/cos(rotationAngle)
+        majorY = (rect.right() - rect.center().x())*sin(rotationAngle)*transform.m22()/cos(rotationAngle);
         // major axis * sin(rotation angle) * y-scale-factor
         ratio  = rect.height()/rect.width();
     }
@@ -345,8 +345,8 @@ void VDxfEngine::drawTextItem(const QPointF & p, const QTextItem & textItem)
 {
     if (textBuffer->text.size() == 0)
     {
-        const QPointF startPoint = matrix.map(p);
-        const double rotationAngle = qRadiansToDegrees(qAtan2(matrix.m12(), matrix.m11()));
+        const QPointF startPoint = transform.map(p);
+        const double rotationAngle = qRadiansToDegrees(qAtan2(transform.m12(), transform.m11()));
 
         const QFont f = textItem.font();
         const UTF8STRING fontStyle = input->AddFont(f);

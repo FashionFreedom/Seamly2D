@@ -327,7 +327,7 @@ void VApplication::NewSeamly2D(const QString &fileName)
         qCDebug(vApp, "New process without arguments. program = %s",
                 qUtf8Printable(QCoreApplication::applicationFilePath()));
         // Path can contain spaces.
-        if (QProcess::startDetached("\""+QCoreApplication::applicationFilePath()+"\""))
+        if (QProcess::startDetached("\""+QCoreApplication::applicationFilePath()+"\"", {}))
         {
             qCDebug(vApp, "The process was started successfully.");
         }
@@ -340,7 +340,7 @@ void VApplication::NewSeamly2D(const QString &fileName)
     {
         const QString run = QString("\"%1\" \"%2\"").arg(QCoreApplication::applicationFilePath()).arg(fileName);
         qCDebug(vApp, "New process with arguments. program = %s", qUtf8Printable(run));
-        if (QProcess::startDetached(run))
+        if (QProcess::startDetached(run, {}))
         {
             qCDebug(vApp, "The process was started successfully.");
         }
@@ -1010,7 +1010,8 @@ void VApplication::SendReport(const QString &reportName) const
                             QString("\" -H \"Accept: application/json\" -H \"Content-type: application/json\" -X POST "
                                     "--data @gist.json https://api.github.com/gists");
         QProcess proc;
-        proc.start(arg);
+        QStringList args;
+        proc.start(arg, args);
         proc.waitForFinished(10000); // 10 sec
         reportFile.remove();// Clear after yourself
     }

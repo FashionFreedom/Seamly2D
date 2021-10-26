@@ -60,6 +60,8 @@
 #include <QPushButton>
 #include <QSettings>
 #include <QDesktopWidget>
+#include <QApplication>
+#include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogNewPattern::DialogNewPattern(VContainer *data, const QString &patternPieceName, QWidget *parent)
@@ -72,7 +74,7 @@ DialogNewPattern::DialogNewPattern(VContainer *data, const QString &patternPiece
     qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QRect position = this->frameGeometry();
-    position.moveCenter(QDesktopWidget().availableGeometry().center());
+    position.moveCenter(QApplication::primaryScreen()->availableGeometry().center());
     move(position.topLeft());
 
     ui->lineEditName->setText(patternPieceName);
