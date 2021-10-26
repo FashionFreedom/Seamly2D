@@ -125,7 +125,7 @@ public:
 
     static const double accuracyPointOnLine;
 protected:
-    static QTransform FlippingMatrix(const QLineF &axis);
+    static QTransform flipTransform(const QLineF &axis);
 private:
     QSharedDataPointer<VGObjectData> d;
 

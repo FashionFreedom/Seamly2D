@@ -588,13 +588,13 @@ int VGObject::GetLengthContour(const QVector<QPointF> &contour, const QVector<QP
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QTransform VGObject::FlippingMatrix(const QLineF &axis)
+QTransform VGObject::flipTransform(const QLineF &axis)
 {
-    QTransform matrix;
+    QTransform transform;
 
     if (axis.isNull())
     {
-        return matrix;
+        return transform;
     }
 
     const QLineF axisOX = QLineF(axis.x2(), axis.y2(), axis.x2() + 100, axis.y2()); // Ox axis
@@ -606,19 +606,19 @@ QTransform VGObject::FlippingMatrix(const QLineF &axis)
     m.translate(p2.x(), p2.y());
     m.rotate(-angle);
     m.translate(-p2.x(), -p2.y());
-    matrix *= m;
+    transform *= m;
 
     m.reset();
     m.translate(p2.x(), p2.y());
     m.scale(m.m11(), m.m22()*-1);
     m.translate(-p2.x(), -p2.y());
-    matrix *= m;
+    transform *= m;
 
     m.reset();
     m.translate(p2.x(), p2.y());
     m.rotate(-(360-angle));
     m.translate(-p2.x(), -p2.y());
-    matrix *= m;
+    transform *= m;
 
-    return matrix;
+    return transform;
 }

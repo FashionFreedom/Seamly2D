@@ -63,15 +63,15 @@ class VBestSquare
 public:
     VBestSquare(const QSizeF &sheetSize, bool saveLength);
 
-    void NewResult(const QSizeF &candidate, int i, int j, const QTransform &matrix, bool mirror, BestFrom type);
+    void NewResult(const QSizeF &candidate, int i, int j, const QTransform &transform, bool mirror, BestFrom type);
     void NewResult(const VBestSquare &best);
 
     QSizeF     BestSize() const;
     int        GContourEdge() const;
     int        DetailEdge() const;
-    QTransform Matrix() const;
+    QTransform Transform() const;
     bool       ValidResult() const;
-    bool       Mirror() const;
+    bool       isMirror() const;
     BestFrom   Type() const;
 
     bool IsSaveLength() const;
@@ -80,7 +80,7 @@ private:
     // All nedded information about best result
     int resI; // Edge of global contour
     int resJ; // Edge of detail
-    QTransform resMatrix; // Matrix for rotation and translation detail
+    QTransform resTransform; // Transform for rotation and translation detail
     QSizeF bestSize;
     qreal sheetWidth;
     bool valideResult;

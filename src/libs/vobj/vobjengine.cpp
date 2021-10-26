@@ -99,8 +99,14 @@ QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
 VObjEngine::VObjEngine()
-    :QPaintEngine(svgEngineFeatures()), stream(), globalPointsCount(0), outputDevice(), planeCount(0),
-      size(), resolution(96), matrix()
+    : QPaintEngine(svgEngineFeatures())
+    , stream()
+    , globalPointsCount(0)
+    , outputDevice()
+    , planeCount(0)
+    , size()
+    , resolution(96)
+    , transform()
 {
     for (int i=0; i < MAX_POINTS; i++)
     {
@@ -174,14 +180,14 @@ void VObjEngine::updateState(const QPaintEngineState &state)
 
     if (flags & QPaintEngine::DirtyTransform)
     {
-        matrix = state.matrix(); // Save new matrix for moving paths
+        transform = state.transform(); // Save new transform for moving paths
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VObjEngine::drawPath(const QPainterPath &path)
 {
-    QPolygonF polygon = path.toFillPolygon(matrix);
+    QPolygonF polygon = path.toFillPolygon(transform);
     polygon = MakePointsUnique(polygon);// Points must be unique
     if (polygon.size() < 3)
     {

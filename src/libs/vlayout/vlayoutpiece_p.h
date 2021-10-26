@@ -78,7 +78,7 @@ public:
           layoutAllowance(),
           notches(),
           m_internalPaths(),
-          matrix(),
+          transform(),
           layoutWidth(0),
           mirror(false),
           detailLabel(),
@@ -95,7 +95,7 @@ public:
           layoutAllowance(detail.layoutAllowance),
           notches(detail.notches),
           m_internalPaths(detail.m_internalPaths),
-          matrix(detail.matrix),
+          transform(detail.transform),
           layoutWidth(detail.layoutWidth),
           mirror(detail.mirror),
           detailLabel(detail.detailLabel),
@@ -112,7 +112,7 @@ public:
     QVector<QPointF>           layoutAllowance;    //! @brief layoutAllowance list of layout allowance points.
     QVector<QLineF>            notches;            //! @brief notches list of notches.
     QVector<VLayoutPiecePath>  m_internalPaths;    //! @brief m_internalPaths list of internal paths.
-    QTransform                 matrix;             //! @brief matrix transformation matrix
+    QTransform                 transform;          //! @brief transform transformation transform
     qreal                      layoutWidth;        //! @brief layoutWidth value layout allowance width in pixels.
     bool                       mirror;
     QVector<QPointF>           detailLabel;        //! @brief detailLabel detail label rectangle

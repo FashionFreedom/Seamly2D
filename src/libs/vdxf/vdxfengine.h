@@ -99,7 +99,7 @@ private:
     QString          fileName;
     DRW::Version     m_version;
     bool             m_binary;
-    QMatrix          matrix;
+    QTransform       transform;
     QSharedPointer<dx_iface> input;
     VarMeasurement varMeasurement;
     VarInsunits varInsunits;

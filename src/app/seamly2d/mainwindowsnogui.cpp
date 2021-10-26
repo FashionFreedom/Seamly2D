@@ -356,12 +356,12 @@ void MainWindowsNoGUI::ExportDetailsAsFlatLayout(const DialogSaveLayout &dialog,
     const int mx = rect.x();
     const int my = rect.y();
 
-    QTransform matrix;
-    matrix = matrix.translate(-mx, -my);
+    QTransform transform;
+    transform = transform.translate(-mx, -my);
 
     for (int i=0; i < list.size(); ++i)
     {
-        list.at(i)->setTransform(matrix);
+        list.at(i)->setTransform(transform);
     }
 
     rect = scene->itemsBoundingRect().toRect();
@@ -477,22 +477,22 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const DialogSaveLayout &dial
     const int mx = rect.x();
     const int my = rect.y();
 
-    QTransform matrix;
-    matrix = matrix.translate(-mx, -my);
+    QTransform transform;
+    transform = transform.translate(-mx, -my);
 
     for (int i=0; i < list.size(); ++i)
     {
-        list.at(i)->setTransform(matrix);
+        list.at(i)->setTransform(transform);
     }
 
     rect = scene->itemsBoundingRect().toRect();
 
     for (int i=0; i < listDetails.count(); ++i)
     {
-        QTransform moveMatrix = listDetails[i].GetMatrix();
-        moveMatrix = moveMatrix.translate(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
-        moveMatrix = moveMatrix.translate(-mx, -my);
-        listDetails[i].SetMatrix(moveMatrix);
+        QTransform moveTransform = listDetails[i].getTransform();
+        moveTransform = moveTransform.translate(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
+        moveTransform = moveTransform.translate(-mx, -my);
+        listDetails[i].setTransform(moveTransform);
     }
 
     const QString name = dialog.Path() + QLatin1String("/") + dialog.FileName() + QString::number(1)

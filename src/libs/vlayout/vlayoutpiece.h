@@ -125,13 +125,13 @@ public:
     void                      SetGrainline(const VGrainlineData& geom, const VContainer *pattern);
     QVector<QPointF>          GetGrainline() const;
 
-    QTransform                GetMatrix() const;
-    void                      SetMatrix(const QTransform &matrix);
+    QTransform                getTransform() const;
+    void                      setTransform(const QTransform &transform);
 
     qreal                     GetLayoutWidth() const;
     void                      SetLayoutWidth(const qreal &value);
 
-    bool                      IsMirror() const;
+    bool                      isMirror() const;
     void                      SetMirror(bool value);
 
     void                      Translate(qreal dx, qreal dy);
