@@ -110,16 +110,6 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 #endif //defined(V_NO_ASSERT)
 
 #if defined(Q_OS_MAC)
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0) && QT_VERSION < QT_VERSION_CHECK(5, 7, 0)
-        // Try hide very annoying, Qt related, warnings in Mac OS X
-        // QNSView mouseDragged: Internal mouse button tracking invalid (missing Qt::LeftButton)
-        // https://bugreports.qt.io/browse/QTBUG-42846
-        if ((type == QtWarningMsg) && msg.contains(QStringLiteral("QNSView")))
-        {
-            type = QtDebugMsg;
-        }
-#   endif
-
     // Hide Qt bug 'Assertion when reading an icns file'
     // https://bugreports.qt.io/browse/QTBUG-45537
     // Remove after Qt fix will be released

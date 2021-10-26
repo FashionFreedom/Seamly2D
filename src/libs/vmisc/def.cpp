@@ -429,27 +429,16 @@ QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info, QPrinter::Prin
     QPrinterInfo tmpInfo = info;
     if(tmpInfo.isNull() || tmpInfo.printerName().isEmpty())
     {
-#if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
-        const QList<QPrinterInfo> list = QPrinterInfo::availablePrinters();
+        const QStringList list = QPrinterInfo::availablePrinterNames();
+        
         if(list.isEmpty())
         {
             return QSharedPointer<QPrinter>();
         }
         else
         {
-            tmpInfo = list.first();
+            tmpInfo = QPrinterInfo::printerInfo(list.first());
         }
-#else
-    const QStringList list = QPrinterInfo::availablePrinterNames();
-    if(list.isEmpty())
-    {
-        return QSharedPointer<QPrinter>();
-    }
-    else
-    {
-        tmpInfo = QPrinterInfo::printerInfo(list.first());
-    }
-#endif
     }
 
     auto printer = QSharedPointer<QPrinter>(new QPrinter(tmpInfo, mode));
@@ -460,23 +449,15 @@ QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info, QPrinter::Prin
 //---------------------------------------------------------------------------------------------------------------------
 QMarginsF GetMinPrinterFields(const QSharedPointer<QPrinter> &printer)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
     QPageLayout layout = printer->pageLayout();
     layout.setUnits(QPageLayout::Millimeter);
     const QMarginsF minMargins = layout.minimumMargins();
-
     QMarginsF min;
     min.setLeft(UnitConvertor(minMargins.left(), Unit::Mm, Unit::Px));
     min.setRight(UnitConvertor(minMargins.right(), Unit::Mm, Unit::Px));
     min.setTop(UnitConvertor(minMargins.top(), Unit::Mm, Unit::Px));
     min.setBottom(UnitConvertor(minMargins.bottom(), Unit::Mm, Unit::Px));
     return min;
-#else
-    auto tempPrinter = QSharedPointer<QPrinter>(new QPrinter(QPrinterInfo(* printer)));
-    tempPrinter->setFullPage(false);
-    tempPrinter->setPageMargins(0, 0, 0, 0, QPrinter::Millimeter);
-    return GetPrinterFields(tempPrinter);
-#endif //QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -596,19 +577,11 @@ void InitHighDpiScaling(int argc, char *argv[])
     /* For more info see: http://doc.qt.io/qt-5/highdpi.html */
     if (IsOptionSet(argc, argv, qPrintable(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING)))
     {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
         QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
-#else
-        qputenv("QT_DEVICE_PIXEL_RATIO", QByteArray("1"));
-#endif
     }
     else
     {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
         QApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // DPI support
-#else
-        qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
-#endif
     }
 }
 //---------------------------------------------------------------------------------------------------------------------

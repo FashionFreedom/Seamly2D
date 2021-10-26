@@ -39,14 +39,5 @@ HEADERS += \
 # 5.2.0, 5.2.1
 # 5.3.0, 5.3.1, 5.3.2
 
-
-contains(QT_VERSION, ^5\\.[0-2]\\.[0-2]$) { # Since Qt 5.3.0
-    HEADERS += \
-        $$PWD/backport/qmarginsf.h
-
-    SOURCES += \
-        $$PWD/backport/qmarginsf.cpp
-}
-
 FORMS    += \
     $$PWD/dialogs/dialogexporttocsv.ui

@@ -85,16 +85,6 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
 {
     QString rules;
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
-    // In Qt 5.2 need manualy enable debug information for categories. This work
-    // because Qt doesn't provide debug information for categories itself. And in this
-    // case will show our messages. Another situation with Qt 5.3 that has many debug
-    // messages itself. We don't need this information and can turn on later if need.
-    // But here Qt already show our debug messages without enabling.
-    rules += QLatin1String("*.debug=true\n");
-#endif // QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
-
-#if QT_VERSION >= QT_VERSION_CHECK(5, 4, 1)
 #if defined(V_NO_ASSERT)
     // Ignore SSL-related warnings
     // See issue #528: Error: QSslSocket: cannot resolve SSLv2_client_method.
@@ -103,7 +93,6 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
     rules += QLatin1String("qt.network.ssl.critical=false\n"
                            "qt.network.ssl.fatal=false\n");
 #endif //defined(V_NO_ASSERT)
-#endif // QT_VERSION >= QT_VERSION_CHECK(5, 4, 1)
 
     // cppcheck-suppress reademptycontainer
     if (not rules.isEmpty())
@@ -111,15 +100,7 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
         QLoggingCategory::setFilterRules(rules);
     }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
-    // Enable support for HiDPI bitmap resources
-    // The attribute is available since Qt 5.1, but by default disabled.
-    // Because on Windows and Mac OS X we always use last version
-    // and Linux users send bug reports probably they related to this attribute
-    // better not enable it before Qt 5.6.
-
     setAttribute(Qt::AA_UseHighDpiPixmaps);
-#endif
 
     connect(this, &QApplication::aboutToQuit, this, [this]()
     {
