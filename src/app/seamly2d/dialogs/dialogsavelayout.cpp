@@ -679,9 +679,9 @@ bool DialogSaveLayout::TestPdf()
     QProcess proc;
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
     // Seek pdftops in app bundle or near valentin.exe
-    proc.start(qApp->applicationDirPath() + QLatin1String("/")+ PDFTOPS);
+    proc.start(qApp->applicationDirPath() + QLatin1String("/")+ PDFTOPS, QStringList());
 #else
-    proc.start(PDFTOPS); // Seek pdftops in standard path
+    proc.start(PDFTOPS, QStringList()); // Seek pdftops in standard path
 #endif
     if (proc.waitForStarted(15000) && (proc.waitForFinished(15000) || proc.state() == QProcess::NotRunning))
     {
@@ -843,4 +843,3 @@ void DialogSaveLayout::WriteSettings() const
         settings->SetTiledPDFOrientation(PageOrientation::Landscape);
     }
 }
-
