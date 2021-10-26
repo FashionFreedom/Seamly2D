@@ -268,14 +268,11 @@ bool GraphicsViewZoom::eventFilter(QObject *object, QEvent *event)
         SCASSERT(wheel_event != nullptr)
         if (QApplication::keyboardModifiers() == m_modifiers)
         {
-            if (wheel_event->orientation() == Qt::Vertical)
-            {
                 const double angle = wheel_event->angleDelta().y();
                 const double factor = qPow(m_zoomSpeedFactor, angle);
                 qCDebug(vGraphicsViewZoom, "zoom Factor =%f  \n", factor);
                 gentleZoom(factor);
                 return true;
-            }
         }
         else
         {
