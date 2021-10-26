@@ -1886,7 +1886,7 @@ void QmuParserBase::StackDump(const QStack<token_type> &a_stVal, const QStack<to
         }
         stOprt.pop();
     }
-    qDebug() << dec;
+    qDebug() << Qt::dec;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
