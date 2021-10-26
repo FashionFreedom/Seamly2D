@@ -2856,10 +2856,17 @@ void DialogSeamAllowance::InitNotchesTab()
     connect(uiNotchesTab->notches_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSeamAllowance::notchChanged);
 
+#if QT_VERSION >= 0x051500
     connect(uiNotchesTab->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
             this, &DialogSeamAllowance::notchTypeChanged);
     connect(uiNotchesTab->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::idClicked),
             this, &DialogSeamAllowance::notchSubTypeChanged);
+#else
+    connect(uiNotchesTab->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+            this, &DialogSeamAllowance::notchTypeChanged);
+    connect(uiNotchesTab->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+            this, &DialogSeamAllowance::notchSubTypeChanged);
+#endif
     connect(uiNotchesTab->showNotch_CheckBox, &QCheckBox::stateChanged, this,
             &DialogSeamAllowance::showNotchChanged);
     connect(uiNotchesTab->showSecondNotch_CheckBox, &QCheckBox::stateChanged, this,
