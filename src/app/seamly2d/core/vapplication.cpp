@@ -185,7 +185,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 break;
         }
 
-        (*qApp->LogFile()) << debugdate <<  endl;
+        (*qApp->LogFile()) << debugdate << Qt::endl;
     }
 
     if (isGuiThread)
@@ -795,19 +795,19 @@ void VApplication::GatherLogs() const
 
                 if (tmp.IsLocked())
                 {
-                    *out <<"--------------------------" << endl;
+                    *out <<"--------------------------" << Qt::endl;
                     if (tmp.GetProtected()->open(QIODevice::ReadOnly | QIODevice::Text))
                     {
                         QTextStream in(tmp.GetProtected().get());
                         while (!in.atEnd())
                         {
-                            *out << in.readLine() << endl;
+                            *out << in.readLine() << Qt::endl;
                         }
                         tmp.GetProtected()->close();
                     }
                     else
                     {
-                        *out << "Log file error:" + tmp.GetProtected()->errorString() << endl;
+                        *out << "Log file error:" + tmp.GetProtected()->errorString() << Qt::endl;
                     }
                 }
                 else
