@@ -538,7 +538,7 @@ void VApplication::ClearOldLogs() const
         {
             auto fn = allFiles.at(i);
             QFileInfo info(fn);
-            if (info.created().daysTo(QDateTime::currentDateTime()) >= DAYS_TO_KEEP_LOGS)
+            if (info.birthTime().daysTo(QDateTime::currentDateTime()) >= DAYS_TO_KEEP_LOGS)
             {
                 VLockGuard<QFile> tmp(info.absoluteFilePath(), [&fn](){return new QFile(fn);});
                 if (tmp.GetProtected() != nullptr)
@@ -756,7 +756,7 @@ void VApplication::ClearOldReports() const
             for (int i = 0; i < allFiles.size(); ++i)
             {
                 QFileInfo info(allFiles.at(i));
-                if (info.created().daysTo(now) > 30)
+                if (info.birthTime().daysTo(now) > 30)
                 {
                     QFile(allFiles.at(i)).remove();
                 }
