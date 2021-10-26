@@ -134,6 +134,8 @@ VToolPointOfIntersectionArcs *VToolPointOfIntersectionArcs::Create(const quint32
                                                                    VContainer *data, const Document &parse,
                                                                    const Source &typeCreation)
 {
+    Q_UNUSED(showPointName);
+    
     const QSharedPointer<VArc> firstArc = data->GeometricObject<VArc>(firstArcId);
     const QSharedPointer<VArc> secondArc = data->GeometricObject<VArc>(secondArcId);
 

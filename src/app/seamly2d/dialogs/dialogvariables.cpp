@@ -147,6 +147,8 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
 
     connect(ui->variables_TableWidget->horizontalHeader(), &QHeaderView::sectionClicked, [this](int logicalIndex)
     {
+        Q_UNUSED(logicalIndex);
+
         isSorted = true;
         setMoveControls();
     });
@@ -431,7 +433,7 @@ bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser,
 //---------------------------------------------------------------------------------------------------------------------
 void DialogVariables::setMoveControls()
 {
-    if (isSorted == true | isFiltered == true)
+    if ((isSorted == true) | (isFiltered == true))
     {
         ui->toolButtonUp->setEnabled(false);
         ui->toolButtonDown->setEnabled(false);

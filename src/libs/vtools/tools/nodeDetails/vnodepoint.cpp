@@ -328,6 +328,8 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     if (VToolSeamAllowance *piece = qgraphicsitem_cast<VToolSeamAllowance *>(parentItem()))
     {
+        Q_UNUSED(piece);
+        
         QMenu menu;
 
         QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));

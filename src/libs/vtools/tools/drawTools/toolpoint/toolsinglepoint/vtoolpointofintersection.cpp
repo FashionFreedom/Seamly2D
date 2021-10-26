@@ -163,6 +163,8 @@ VToolPointOfIntersection *VToolPointOfIntersection::Create(const quint32 _id, co
                                                            const Document &parse,
                                                            const Source &typeCreation)
 {
+    Q_UNUSED(showPointName);
+
     const QSharedPointer<VPointF> firstPoint = data->GeometricObject<VPointF>(firstPointId);
     const QSharedPointer<VPointF> secondPoint = data->GeometricObject<VPointF>(secondPointId);
 
