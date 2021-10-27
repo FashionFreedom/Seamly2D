@@ -1886,11 +1886,7 @@ void QmuParserBase::StackDump(const QStack<token_type> &a_stVal, const QStack<to
         }
         stOprt.pop();
     }
-#if QT_VERSION >= 0x051500
     qDebug() << Qt::dec;
-#else
-    qDebug() << dec;
-#endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------
