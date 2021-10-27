@@ -282,7 +282,7 @@ void VPosition::SaveCandidate(VBestSquare &bestResult, const VLayoutPiece &detai
     QVector<QPointF> newGContour = gContour.UniteWithContour(detail, globalI, detJ, type);
     newGContour.append(newGContour.first());
     const QSizeF size = QPolygonF(newGContour).boundingRect().size();
-    bestResult.NewResult(size, globalI, detJ, detail.getTransform(), detail.isMirror(), type);
+    bestResult.NewResult(size, globalI, detJ, detail.getTransform(), detail.IsMirror(), type);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
