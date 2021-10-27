@@ -560,7 +560,7 @@ void ShowInGraphicalShell(const QString &filePath)
         }
         cmd += c;
     }
-    QProcess::startDetached(cmd);
+    QProcess::startDetached(cmd, QStringList());
 #endif
 
 }
