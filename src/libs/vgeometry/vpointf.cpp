@@ -278,8 +278,8 @@ QPointF VPointF::RotatePF(const QPointF &originPoint, const QPointF &point, qrea
 //---------------------------------------------------------------------------------------------------------------------
 QPointF VPointF::FlipPF(const QLineF &axis, const QPointF &point)
 {
-    const QTransform matrix = FlippingMatrix(axis);
-    return matrix.map(point);
+    const QTransform transform = flipTransform(axis);
+    return transform.map(point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
