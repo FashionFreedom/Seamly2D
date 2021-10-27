@@ -204,7 +204,7 @@ void TST_AbstractRegExp::CallTestCheckNoOriginalNamesInTranslation()
     QFETCH(QString, originalName);
 
     static const QStringList originalNames = AllNames();
-    static const QSet<QString> names(originalNames.begin(), originalNames.end());
+	static const QSet<QString> names = convertToSet<QString>(originalNames);
 
     const QString translated = m_trMs->VarToUser(originalName);
     if (names.contains(translated))
@@ -218,4 +218,3 @@ void TST_AbstractRegExp::CallTestCheckNoOriginalNamesInTranslation()
         }
     }
 }
-

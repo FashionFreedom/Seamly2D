@@ -356,12 +356,12 @@ void MainWindowsNoGUI::ExportDetailsAsFlatLayout(const DialogSaveLayout &dialog,
     const int mx = rect.x();
     const int my = rect.y();
 
-    QTransform matrix;
-    matrix = matrix.translate(-mx, -my);
+    QTransform transform;
+    transform = transform.translate(-mx, -my);
 
     for (int i=0; i < list.size(); ++i)
     {
-        list.at(i)->setTransform(matrix);
+        list.at(i)->setTransform(transform);
     }
 
     rect = scene->itemsBoundingRect().toRect();
@@ -477,22 +477,22 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const DialogSaveLayout &dial
     const int mx = rect.x();
     const int my = rect.y();
 
-    QTransform matrix;
-    matrix = matrix.translate(-mx, -my);
+    QTransform transform;
+    transform = transform.translate(-mx, -my);
 
     for (int i=0; i < list.size(); ++i)
     {
-        list.at(i)->setTransform(matrix);
+        list.at(i)->setTransform(transform);
     }
 
     rect = scene->itemsBoundingRect().toRect();
 
     for (int i=0; i < listDetails.count(); ++i)
     {
-        QTransform moveMatrix = listDetails[i].GetMatrix();
-        moveMatrix = moveMatrix.translate(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
-        moveMatrix = moveMatrix.translate(-mx, -my);
-        listDetails[i].SetMatrix(moveMatrix);
+        QTransform moveTransform = listDetails[i].getTransform();
+        moveTransform = moveTransform.translate(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
+        moveTransform = moveTransform.translate(-mx, -my);
+        listDetails[i].setTransform(moveTransform);
     }
 
     const QString name = dialog.Path() + QLatin1String("/") + dialog.FileName() + QString::number(1)
@@ -630,16 +630,9 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
                 qreal x,y;
                 if(printer->fullPage())
                 {
-                    #if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
-                        QMarginsF printerMargins = printer->pageLayout().margins();
-                        x = qFloor(ToPixel(printerMargins.left(),Unit::Mm));
-                        y = qFloor(ToPixel(printerMargins.top(),Unit::Mm));
-                    #else
-                        qreal left = 0, top = 0, right = 0, bottom = 0;
-                        printer->getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
-                        x = qFloor(ToPixel(left,Unit::Mm));
-                        y = qFloor(ToPixel(top,Unit::Mm));
-                    #endif
+                    QMarginsF printerMargins = printer->pageLayout().margins();
+                    x = qFloor(ToPixel(printerMargins.left(),Unit::Mm));
+                    y = qFloor(ToPixel(printerMargins.top(),Unit::Mm));
                 }
                 else
                 {
@@ -906,15 +899,12 @@ void MainWindowsNoGUI::PdfFile(const QString &name, QGraphicsRectItem *paper, QG
     const qreal top = FromPixel(margins.top(), Unit::Mm);
     const qreal right = FromPixel(margins.right(), Unit::Mm);
     const qreal bottom = FromPixel(margins.bottom(), Unit::Mm);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
+
     const bool success = printer.setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
     if (not success)
     {
         qWarning() << tr("Cannot set printer margins");
     }
-#else
-    printer.setPageMargins(left, top, right, bottom, QPrinter::Millimeter);
-#endif //QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 
     QPainter painter;
     if (painter.begin( &printer ) == false)
@@ -1323,16 +1313,11 @@ void MainWindowsNoGUI::SetPrinterSettings(QPrinter *printer, const PrintType &pr
         }
     }
 
-#if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
     const bool success = printer->setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);
-
     if (not success)
     {
         qWarning() << tr("Cannot set printer margins");
     }
-#else
-    printer->setPageMargins(left, top, right, bottom, QPrinter::Millimeter);
-#endif //QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 
     switch(printType)
     {
