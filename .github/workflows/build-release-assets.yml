@@ -13,7 +13,7 @@ env:
   # The project is currently incompatible with Qt-5.15/5.14.2
   # When chaning the version information in this file be sure to change it in
   # pull-request.yml, build-weekly-release as well
-  QT_VERSION: '5.13.2' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '5.15.0' # quotes required or YAML parser will interpret as float
 
 
 jobs:
