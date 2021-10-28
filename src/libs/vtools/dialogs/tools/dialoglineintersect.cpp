@@ -97,13 +97,13 @@ DialogLineIntersect::DialogLineIntersect(const VContainer *data, const quint32 &
     FillComboBoxPoints(ui->comboBoxP2Line2);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogLineIntersect::NamePointChanged);
-    connect(ui->comboBoxP1Line1, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP1Line1, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLineIntersect::PointNameChanged);
-    connect(ui->comboBoxP2Line1, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP2Line1, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLineIntersect::PointNameChanged);
-    connect(ui->comboBoxP1Line2, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP1Line2, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLineIntersect::PointNameChanged);
-    connect(ui->comboBoxP2Line2, static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxP2Line2, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLineIntersect::PointNameChanged);
 
     vis = new VisToolLineIntersect(data);
@@ -254,7 +254,7 @@ void DialogLineIntersect::PointNameChanged()
     QLineF line1(static_cast<QPointF>(*p1Line1), static_cast<QPointF>(*p2Line1));
     QLineF line2(static_cast<QPointF>(*p1Line2), static_cast<QPointF>(*p2Line2));
     QPointF fPoint;
-    QLineF::IntersectType intersect = line1.intersect(line2, &fPoint);
+    QLineF::IntersectType intersect = line1.intersects(line2, &fPoint);
 
     QColor color = okColor;
     if (set.size() < 3 || intersect == QLineF::NoIntersection)
@@ -305,7 +305,7 @@ bool DialogLineIntersect::CheckIntersecion()
     QLineF line1(static_cast<QPointF>(*p1L1), static_cast<QPointF>(*p2L1));
     QLineF line2(static_cast<QPointF>(*p1L2), static_cast<QPointF>(*p2L2));
     QPointF fPoint;
-    QLineF::IntersectType intersect = line1.intersect(line2, &fPoint);
+    QLineF::IntersectType intersect = line1.intersects(line2, &fPoint);
     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
     {
         return true;

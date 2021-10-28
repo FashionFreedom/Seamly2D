@@ -161,7 +161,7 @@ void VisToolLineIntersectAxis::setAxisPointId(const quint32 &value)
 void VisToolLineIntersectAxis::ShowIntersection(const QLineF &axis_line, const QLineF &base_line)
 {
     QPointF p;
-    QLineF::IntersectType intersect = axis_line.intersect(base_line, &p);
+    QLineF::IntersectType intersect = axis_line.intersects(base_line, &p);
     if (intersect == QLineF::UnboundedIntersection)
     {
         line_intersection->setVisible(true);

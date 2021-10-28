@@ -429,27 +429,16 @@ QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info, QPrinter::Prin
     QPrinterInfo tmpInfo = info;
     if(tmpInfo.isNull() || tmpInfo.printerName().isEmpty())
     {
-#if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
-        const QList<QPrinterInfo> list = QPrinterInfo::availablePrinters();
+        const QStringList list = QPrinterInfo::availablePrinterNames();
+
         if(list.isEmpty())
         {
             return QSharedPointer<QPrinter>();
         }
         else
         {
-            tmpInfo = list.first();
+            tmpInfo = QPrinterInfo::printerInfo(list.first());
         }
-#else
-    const QStringList list = QPrinterInfo::availablePrinterNames();
-    if(list.isEmpty())
-    {
-        return QSharedPointer<QPrinter>();
-    }
-    else
-    {
-        tmpInfo = QPrinterInfo::printerInfo(list.first());
-    }
-#endif
     }
 
     auto printer = QSharedPointer<QPrinter>(new QPrinter(tmpInfo, mode));
@@ -460,23 +449,15 @@ QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info, QPrinter::Prin
 //---------------------------------------------------------------------------------------------------------------------
 QMarginsF GetMinPrinterFields(const QSharedPointer<QPrinter> &printer)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
     QPageLayout layout = printer->pageLayout();
     layout.setUnits(QPageLayout::Millimeter);
     const QMarginsF minMargins = layout.minimumMargins();
-
     QMarginsF min;
     min.setLeft(UnitConvertor(minMargins.left(), Unit::Mm, Unit::Px));
     min.setRight(UnitConvertor(minMargins.right(), Unit::Mm, Unit::Px));
     min.setTop(UnitConvertor(minMargins.top(), Unit::Mm, Unit::Px));
     min.setBottom(UnitConvertor(minMargins.bottom(), Unit::Mm, Unit::Px));
     return min;
-#else
-    auto tempPrinter = QSharedPointer<QPrinter>(new QPrinter(QPrinterInfo(* printer)));
-    tempPrinter->setFullPage(false);
-    tempPrinter->setPageMargins(0, 0, 0, 0, QPrinter::Millimeter);
-    return GetPrinterFields(tempPrinter);
-#endif //QT_VERSION >= QT_VERSION_CHECK(5, 3, 0)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -487,18 +468,8 @@ QMarginsF GetPrinterFields(const QSharedPointer<QPrinter> &printer)
         return QMarginsF();
     }
 
-    qreal left = 0;
-    qreal top = 0;
-    qreal right = 0;
-    qreal bottom = 0;
-    printer->getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
     // We can't use Unit::Px because our dpi in most cases is different
-    QMarginsF def;
-    def.setLeft(UnitConvertor(left, Unit::Mm, Unit::Px));
-    def.setRight(UnitConvertor(right, Unit::Mm, Unit::Px));
-    def.setTop(UnitConvertor(top, Unit::Mm, Unit::Px));
-    def.setBottom(UnitConvertor(bottom, Unit::Mm, Unit::Px));
-    return def;
+    return UnitConvertor(printer->pageLayout().margins(), Unit::Mm, Unit::Px);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -529,8 +500,8 @@ QPixmap darkenPixmap(const QPixmap &pixmap)
 //---------------------------------------------------------------------------------------------------------------------
 void ShowInGraphicalShell(const QString &filePath)
 {
-#ifdef Q_OS_MAC
     QStringList args;
+#ifdef Q_OS_MAC
     args << "-e";
     args << "tell application \"Finder\"";
     args << "-e";
@@ -541,7 +512,7 @@ void ShowInGraphicalShell(const QString &filePath)
     args << "end tell";
     QProcess::startDetached("osascript", args);
 #elif defined(Q_OS_WIN)
-    QProcess::startDetached(QString("explorer /select, \"%1\"").arg(QDir::toNativeSeparators(filePath)));
+    QProcess::startDetached(QString("explorer /select, \"%1\"").arg(QDir::toNativeSeparators(filePath)), args);
 #else
     const QString app = "xdg-open %d";
     QString cmd;
@@ -570,7 +541,7 @@ void ShowInGraphicalShell(const QString &filePath)
         }
         cmd += c;
     }
-    QProcess::startDetached(cmd);
+    QProcess::startDetached(cmd, QStringList());
 #endif
 
 }
@@ -596,19 +567,11 @@ void InitHighDpiScaling(int argc, char *argv[])
     /* For more info see: http://doc.qt.io/qt-5/highdpi.html */
     if (IsOptionSet(argc, argv, qPrintable(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING)))
     {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
         QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
-#else
-        qputenv("QT_DEVICE_PIXEL_RATIO", QByteArray("1"));
-#endif
     }
     else
     {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 6, 0)
         QApplication::setAttribute(Qt::AA_EnableHighDpiScaling); // DPI support
-#else
-        qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", QByteArray("1"));
-#endif
     }
 }
 //---------------------------------------------------------------------------------------------------------------------

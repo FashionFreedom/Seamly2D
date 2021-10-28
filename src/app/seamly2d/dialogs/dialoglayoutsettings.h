@@ -52,17 +52,13 @@
 #ifndef DIALOGLAYOUTSETTINGS_H
 #define DIALOGLAYOUTSETTINGS_H
 
-#include <QCloseEvent>
 #include "vabstractlayoutdialog.h"
 
 #include "../vlayout/vbank.h"
 #include "../ifc/ifcdef.h"
 
-#if QT_VERSION < QT_VERSION_CHECK(5, 3, 0)
-#   include "../vmisc/backport/qmarginsf.h"
-#else
-#   include <QMargins>
-#endif
+#include <QCloseEvent>
+#include <QMargins>
 
 namespace Ui
 {

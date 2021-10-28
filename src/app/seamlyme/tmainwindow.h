@@ -134,8 +134,8 @@ private slots:
     void                AddKnown();
     void                ImportFromPattern();
 
-    void                ChangedSize(const QString &text);
-    void                ChangedHeight(const QString & text);
+    void                ChangedSize(int index);
+    void                ChangedHeight(int index);
 
     void                ShowMData();
 

@@ -2742,11 +2742,10 @@ void DialogSeamAllowance::InitLabelsTab()
     InitPinPoint(uiLabelsTab->dLabelTopLeftPin_ComboBox);
     InitPinPoint(uiLabelsTab->dLabelBottomRightPin_ComboBox);
 
-    connect(uiLabelsTab->dLabelTopLeftPin_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+    connect(uiLabelsTab->dLabelTopLeftPin_ComboBox, &QComboBox::currentTextChanged,
             this, &DialogSeamAllowance::DetailPinPointChanged);
-    connect(uiLabelsTab->dLabelBottomRightPin_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+
+    connect(uiLabelsTab->dLabelBottomRightPin_ComboBox, &QComboBox::currentTextChanged,
             this, &DialogSeamAllowance::DetailPinPointChanged);
 
     connect(uiLabelsTab->dLabelWidth_PushButton, &QPushButton::clicked, this, &DialogSeamAllowance::EditDLFormula);
@@ -2776,10 +2775,10 @@ void DialogSeamAllowance::InitLabelsTab()
     InitPinPoint(uiLabelsTab->pLabelBottomRightPin_ComboBox);
 
     connect(uiLabelsTab->pLabelTopLeftPin_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSeamAllowance::PatternPinPointChanged);
     connect(uiLabelsTab->pLabelBottomRightPin_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSeamAllowance::PatternPinPointChanged);
 
     connect(uiLabelsTab->pLabelWidth_PushButton,  &QPushButton::clicked, this, &DialogSeamAllowance::EditPLFormula);
@@ -2830,10 +2829,10 @@ void DialogSeamAllowance::InitGrainlineTab()
     InitPinPoint(uiGrainlineTab->grainlineBottomPin_ComboBox);
 
     connect(uiGrainlineTab->grainlineTopPin_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSeamAllowance::GrainlinePinPointChanged);
     connect(uiGrainlineTab->grainlineBottomPin_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSeamAllowance::GrainlinePinPointChanged);
 }
 
@@ -2856,9 +2855,10 @@ void DialogSeamAllowance::InitNotchesTab()
     connect(uiNotchesTab->notches_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSeamAllowance::notchChanged);
 
-    connect(uiNotchesTab->notchType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+    connect(uiNotchesTab->notchType_ButtonGroup,  &QButtonGroup::idClicked,
             this, &DialogSeamAllowance::notchTypeChanged);
-    connect(uiNotchesTab->notchSubType_ButtonGroup, static_cast<void(QButtonGroup::*)(int)>(&QButtonGroup::buttonClicked),
+
+    connect(uiNotchesTab->notchSubType_ButtonGroup,  &QButtonGroup::idClicked,
             this, &DialogSeamAllowance::notchSubTypeChanged);
     connect(uiNotchesTab->showNotch_CheckBox, &QCheckBox::stateChanged, this,
             &DialogSeamAllowance::showNotchChanged);

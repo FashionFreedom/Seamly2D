@@ -114,7 +114,7 @@ void VisToolLineIntersect::RefreshGeometry()
                     QLineF l1(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
                     QLineF l2(static_cast<QPointF>(*third), Visualization::scenePos);
                     QPointF fPoint;
-                    QLineF::IntersectType intersect = l1.intersect(l2, &fPoint);
+                    QLineF::IntersectType intersect = l1.intersects(l2, &fPoint);
                     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
                     {
                         DrawPoint(point, fPoint, mainColor);
@@ -130,7 +130,7 @@ void VisToolLineIntersect::RefreshGeometry()
                     QLineF l1(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
                     QLineF l2(static_cast<QPointF>(*third), static_cast<QPointF>(*forth));
                     QPointF fPoint;
-                    QLineF::IntersectType intersect = l1.intersect(l2, &fPoint);
+                    QLineF::IntersectType intersect = l1.intersects(l2, &fPoint);
                     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
                     {
                         DrawPoint(point, fPoint, mainColor);

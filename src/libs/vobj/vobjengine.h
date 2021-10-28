@@ -53,7 +53,7 @@
 #define VOBJENGINE_H
 
 #include <qcompilerdetection.h>
-#include <QMatrix>
+#include <QTransform>
 #include <QPaintEngine>
 #include <QPolygonF>
 #include <QRectF>
@@ -102,7 +102,7 @@ private:
     quint32     planeCount;
     QSize            size;
     int              resolution;
-    QMatrix          matrix;
+    QTransform       transform;
 
     QPolygonF  MakePointsUnique(const QPolygonF &polygon)const;
     qint64     Square(const QPolygonF &poly)const;

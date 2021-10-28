@@ -105,11 +105,11 @@ DialogMirrorByLine::DialogMirrorByLine(const VContainer *data, const quint32 &to
     connect(ui->suffix_LineEdit, &QLineEdit::textChanged, this, &DialogMirrorByLine::suffixChanged);
 
     connect(ui->firstLinePoint_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogMirrorByLine::pointChanged);
 
     connect(ui->secondLinePoint_ComboBox,
-            static_cast<void (QComboBox::*)(const QString &)>(&QComboBox::currentIndexChanged),
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogMirrorByLine::pointChanged);
 
     vis = new VisToolMirrorByLine(data);

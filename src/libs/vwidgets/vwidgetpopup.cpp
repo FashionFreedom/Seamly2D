@@ -62,6 +62,8 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <Qt>
+#include <QApplication>
+#include <QScreen>
 
 #include "../vmisc/def.h"
 
@@ -132,7 +134,7 @@ void VWidgetPopup::Show(QPoint coord)
     // important to do this before following adjustments!
     QFrame::show();
 
-    const QRect screen(QDesktopWidget().availableGeometry());
+    const QRect screen(QApplication::primaryScreen()->availableGeometry());
     coord.setX(coord.x() - width()/2);
 
     if (coord.x() < screen.x())

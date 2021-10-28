@@ -618,7 +618,7 @@ void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator, QText
             }
             data += qxt_addCsvQuotes(d_ptr.quoteMode, d_ptr.header.at(col));
         }
-        stream << data << endl;
+        stream << data << Qt::endl;
     }
     for (row = 0; row < rows; ++row)
     {
@@ -639,9 +639,9 @@ void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator, QText
                 data += qxt_addCsvQuotes(d_ptr.quoteMode, QString());
             }
         }
-        stream << data << endl;
+        stream << data << Qt::endl;
     }
-    stream << flush;
+    stream << Qt::flush;
     dest->close();
 }
 

@@ -501,7 +501,7 @@ QPointF VLayoutPiece::GetPieceTextPosition() const
 {
     if (d->detailLabel.count() > 2)
     {
-        return d->matrix.map(d->detailLabel.first());
+        return d->transform.map(d->detailLabel.first());
     }
     else
     {
@@ -562,7 +562,7 @@ QPointF VLayoutPiece::GetPatternTextPosition() const
 {
     if (d->patternInfo.count() > 2)
     {
-        return d->matrix.map(d->patternInfo.first());
+        return d->transform.map(d->patternInfo.first());
     }
     else
     {
@@ -668,15 +668,15 @@ QVector<QPointF> VLayoutPiece::GetGrainline() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QTransform VLayoutPiece::GetMatrix() const
+QTransform VLayoutPiece::getTransform() const
 {
-    return d->matrix;
+    return d->transform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetMatrix(const QTransform &matrix)
+void VLayoutPiece::setTransform(const QTransform &transform)
 {
-    d->matrix = matrix;
+    d->transform = transform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -696,7 +696,7 @@ void VLayoutPiece::Translate(qreal dx, qreal dy)
 {
     QTransform m;
     m.translate(dx, dy);
-    d->matrix *= m;
+    d->transform *= m;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -706,7 +706,7 @@ void VLayoutPiece::Rotate(const QPointF &originPoint, qreal degrees)
     m.translate(originPoint.x(), originPoint.y());
     m.rotate(-degrees);
     m.translate(-originPoint.x(), -originPoint.y());
-    d->matrix *= m;
+    d->transform *= m;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -725,19 +725,19 @@ void VLayoutPiece::Mirror(const QLineF &edge)
     m.translate(p2.x(), p2.y());
     m.rotate(-angle);
     m.translate(-p2.x(), -p2.y());
-    d->matrix *= m;
+    d->transform *= m;
 
     m.reset();
     m.translate(p2.x(), p2.y());
     m.scale(m.m11(), m.m22()*-1);
     m.translate(-p2.x(), -p2.y());
-    d->matrix *= m;
+    d->transform *= m;
 
     m.reset();
     m.translate(p2.x(), p2.y());
     m.rotate(-(360-angle));
     m.translate(-p2.x(), -p2.y());
-    d->matrix *= m;
+    d->transform *= m;
 
     d->mirror = !d->mirror;
 }
@@ -922,7 +922,7 @@ QVector<T> VLayoutPiece::Map(const QVector<T> &points) const
     QVector<T> p;
     for (int i = 0; i < points.size(); ++i)
     {
-        p.append(d->matrix.map(points.at(i)));
+        p.append(d->transform.map(points.at(i)));
     }
 
     if (d->mirror)
@@ -999,7 +999,7 @@ void VLayoutPiece::CreateInternalPathItem(int i, QGraphicsItem *parent) const
 {
     SCASSERT(parent != nullptr)
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
-    item->setPath(d->matrix.map(d->m_internalPaths.at(i).GetPainterPath()));
+    item->setPath(d->transform.map(d->m_internalPaths.at(i).GetPainterPath()));
 
     QPen pen = item->pen();
     pen.setStyle(d->m_internalPaths.at(i).PenStyle());
@@ -1093,22 +1093,22 @@ void VLayoutPiece::CreateLabelStrings(QGraphicsItem *parent, const QVector<QPoin
             }
 
             // set up the rotation around top-left corner matrix
-            QTransform labelMatrix;
-            labelMatrix.translate(labelShape.at(0).x(), labelShape.at(0).y());
+            QTransform labelTransform;
+            labelTransform.translate(labelShape.at(0).x(), labelShape.at(0).y());
             if (d->mirror)
             {
-                labelMatrix.scale(-1, 1);
-                labelMatrix.rotate(-angle);
-                labelMatrix.translate(-dW, 0);
-                labelMatrix.translate(dX, dY); // Each string has own position
+                labelTransform.scale(-1, 1);
+                labelTransform.rotate(-angle);
+                labelTransform.translate(-dW, 0);
+                labelTransform.translate(dX, dY); // Each string has own position
             }
             else
             {
-                labelMatrix.rotate(angle);
-                labelMatrix.translate(dX, dY); // Each string has own position
+                labelTransform.rotate(angle);
+                labelTransform.translate(dX, dY); // Each string has own position
             }
 
-            labelMatrix *= d->matrix;
+            labelTransform *= d->transform;
 
             if (textAsPaths)
             {
@@ -1118,7 +1118,7 @@ void VLayoutPiece::CreateLabelStrings(QGraphicsItem *parent, const QVector<QPoin
                 QGraphicsPathItem* item = new QGraphicsPathItem(parent);
                 item->setPath(path);
                 item->setBrush(QBrush(Qt::black));
-                item->setTransform(labelMatrix);
+                item->setTransform(labelTransform);
 
                 dY += tm.GetSpacing();
             }
@@ -1127,7 +1127,7 @@ void VLayoutPiece::CreateLabelStrings(QGraphicsItem *parent, const QVector<QPoin
                 QGraphicsSimpleTextItem* item = new QGraphicsSimpleTextItem(parent);
                 item->setFont(fnt);
                 item->setText(qsText);
-                item->setTransform(labelMatrix);
+                item->setTransform(labelTransform);
 
                 dY += (fm.height() + tm.GetSpacing());
             }
@@ -1237,11 +1237,11 @@ QLineF VLayoutPiece::Edge(const QVector<QPointF> &path, int i) const
         const int size = path.size()-1; //-V807
         i1 = size - i2;
         i2 = size - oldI1;
-        return QLineF(d->matrix.map(path.at(i2)), d->matrix.map(path.at(i1)));
+        return QLineF(d->transform.map(path.at(i2)), d->transform.map(path.at(i1)));
     }
     else
     {
-        return QLineF(d->matrix.map(path.at(i1)), d->matrix.map(path.at(i2)));
+        return QLineF(d->transform.map(path.at(i1)), d->transform.map(path.at(i2)));
     }
 }
 

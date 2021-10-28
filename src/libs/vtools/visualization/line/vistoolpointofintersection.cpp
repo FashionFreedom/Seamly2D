@@ -120,7 +120,7 @@ void VisToolPointOfIntersection::setPoint2Id(const quint32 &value)
 void VisToolPointOfIntersection::ShowIntersection(const QLineF &axis1, const QLineF &axis2, const QColor &color)
 {
     QPointF p;
-    QLineF::IntersectType intersect = axis1.intersect(axis2, &p);
+    QLineF::IntersectType intersect = axis1.intersects(axis2, &p);
     if (intersect == QLineF::UnboundedIntersection || intersect == QLineF::BoundedIntersection)
     {
         point->setVisible(true);

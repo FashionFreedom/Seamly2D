@@ -55,13 +55,13 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VBestSquare::VBestSquare(const QSizeF &sheetSize, bool saveLength)
-    :resI(0), resJ(0), resMatrix(QMatrix()), bestSize(QSizeF(sheetSize.width()+10, sheetSize.height()+10)),
+    :resI(0), resJ(0), resTransform(QTransform()), bestSize(QSizeF(sheetSize.width()+10, sheetSize.height()+10)),
       sheetWidth(sheetSize.width()), valideResult(false), resMirror(false), type (BestFrom::Rotation),
       saveLength(saveLength)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-void VBestSquare::NewResult(const QSizeF &candidate, int i, int j, const QTransform &matrix, bool mirror, BestFrom type)
+void VBestSquare::NewResult(const QSizeF &candidate, int i, int j, const QTransform &transform, bool mirror, BestFrom type)
 {
     if (saveLength)
     {
@@ -89,7 +89,7 @@ void VBestSquare::NewResult(const QSizeF &candidate, int i, int j, const QTransf
 
     resI = i;
     resJ = j;
-    resMatrix = matrix;
+    resTransform = transform;
     valideResult = true;
     resMirror = mirror;
     this->type = type;
@@ -100,7 +100,7 @@ void VBestSquare::NewResult(const VBestSquare &best)
 {
     if (best.ValidResult() && saveLength == best.IsSaveLength())
     {
-        NewResult(best.BestSize(), best.GContourEdge(), best.DetailEdge(), best.Matrix(), best.Mirror(), best.Type());
+        NewResult(best.BestSize(), best.GContourEdge(), best.DetailEdge(), best.Transform(), best.Mirror(), best.Type());
     }
 }
 
@@ -123,9 +123,9 @@ int VBestSquare::DetailEdge() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QTransform VBestSquare::Matrix() const
+QTransform VBestSquare::Transform() const
 {
-    return resMatrix;
+    return resTransform;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
