@@ -761,7 +761,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
         doc->LiteParseTree(Document::LiteParse);
         if (dialogHistory)
         {
-            dialogHistory->UpdateHistory();
+            dialogHistory->updateHistory();
         }
     }
 }
@@ -5545,7 +5545,7 @@ void MainWindow::CreateActions()
         {
             dialogHistory = new DialogHistory(pattern, doc, this);
             dialogHistory->setWindowFlags(Qt::Window);
-            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::UpdateHistory);
+            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::updateHistory);
             connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
