@@ -98,10 +98,12 @@ sudo dpkg -i ccache_3.7.7-1_amd64.deb.html
 ```
 
 ### MAC OSX
+* Download Xcode 11 - https://developer.apple.com/download/all/
 * Download QtCreator - https://www.qt.io/download-thank-you
-* Configure Qt & QtCreator - https://doc.qt.io/qt-5/macos.html
-* Install clang compiler - _Would some of our Mac devs complete this section?
-* Additional - _Would some of our Mac devs complete this section?_
+* Setup/validate build environment - https://doc.qt.io/qt-5/macos.html#build-environment:
+   * Switch to Xcode: `sudo xcode-select --switch /Applications/Xcode.app`
+   * Validate clang compiler points to Xcode: `xcrun -sdk macosx -find clang`
+   * Validate SDK version (macOS 10.15): `xcrun -sdk macosx --show-sdk-path`
 
 ### Windows 10
 * Download QtCreator - https://www.qt.io/download-thank-you
