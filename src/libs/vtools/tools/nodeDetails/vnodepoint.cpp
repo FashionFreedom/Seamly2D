@@ -326,7 +326,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     {
         return;
     }
-    if (qgraphicsitem_cast<VToolSeamAllowance *>(parentItem()))
+    if (VToolSeamAllowance *piece = qgraphicsitem_cast<VToolSeamAllowance *>(parentItem()))
     {
         Q_UNUSED(piece);
         

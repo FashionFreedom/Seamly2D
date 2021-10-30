@@ -2058,12 +2058,14 @@ void TMainWindow::InitWindow()
 		labelGradationHeights = new QLabel(tr("Height:"));
 		gradationHeights = SetGradationList(labelGradationHeights, listHeights);
 		SetDefaultHeight(static_cast<int>(VContainer::height()));
-		connect(gradationHeights, &QComboBox::currentTextChanged, this, &TMainWindow::ChangedHeight);
+        connect(gradationHeights, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+				this, &TMainWindow::ChangedHeight);
 
 		labelGradationSizes = new QLabel(tr("Size:"));
 		gradationSizes = SetGradationList(labelGradationSizes, listSizes);
 		SetDefaultSize(static_cast<int>(VContainer::size()));
-		connect(gradationSizes, &QComboBox::currentTextChanged, this, &TMainWindow::ChangedSize);
+        connect(gradationSizes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &TMainWindow::ChangedSize);
 
 		connect(ui->doubleSpinBoxBaseValue,
 				static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
@@ -2978,7 +2980,7 @@ void TMainWindow::CreateWindowMenu(QMenu *menu)
 	SCASSERT(menu != nullptr)
 
 	QAction *action = menu->addAction(tr("&New Window"));
-	connect(action, &QAction::triggered, this, [this]()
+	connect(action, &QAction::triggered, this, []()
 	{
 		qApp->NewMainWindow();
 		qApp->MainWindow()->activateWindow();

@@ -2074,7 +2074,8 @@ void MainWindow::initStatusToolBar()
         // set default height
         SetDefaultHeight();
 
-        connect(gradationHeights.data(), &QComboBox::currentTextChanged, this, &MainWindow::ChangedHeight);
+        connect(gradationHeights.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &MainWindow::ChangedHeight);
 
         gradationSizesLabel = new QLabel(tr("Size:"), this);
         gradationSizes = SetGradationList(gradationSizesLabel, listSizes);
@@ -2082,7 +2083,8 @@ void MainWindow::initStatusToolBar()
         // set default size
         SetDefaultSize();
 
-        connect(gradationSizes.data(), &QComboBox::currentTextChanged, this, &MainWindow::ChangedSize);
+        connect(gradationSizes.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &MainWindow::ChangedSize);
 
         ui->status_ToolBar->addSeparator();
     }
