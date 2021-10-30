@@ -63,6 +63,8 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <Qt>
+#include <QApplication>
+#include <QScreen>
 
 #include "../vmisc/def.h"
 

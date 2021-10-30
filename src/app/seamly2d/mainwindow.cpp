@@ -4050,7 +4050,7 @@ void MainWindow::UpdateHeightsList(const QStringList &list)
     }
     else
     {
-        ChangedHeight(list.at(0));
+        ChangedHeight(0);
     }
 }
 
@@ -4075,7 +4075,7 @@ void MainWindow::UpdateSizesList(const QStringList &list)
     }
     else
     {
-        ChangedSize(list.at(0));
+        ChangedSize(0);
     }
 }
 
@@ -4142,12 +4142,13 @@ void MainWindow::PatternChangesWereSaved(bool saved)
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ChangedSize change new size value.
- * @param text value size.
+ * @param index index of the selected item.
  */
-void MainWindow::ChangedSize(const QString & text)
+void MainWindow::ChangedSize(int index)
 {
     const int size = static_cast<int>(VContainer::size());
-    if (UpdateMeasurements(AbsoluteMPath(qApp->GetPPath(), doc->MPath()), text.toInt(),
+    if (UpdateMeasurements(AbsoluteMPath(qApp->GetPPath(), doc->MPath()),
+                           gradationSizes.data()->itemText(index).toInt(),
                            static_cast<int>(VContainer::height())))
     {
         doc->LiteParseTree(Document::LiteParse);
@@ -4172,13 +4173,13 @@ void MainWindow::ChangedSize(const QString & text)
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ChangedGrowth change new height value.
- * @param text value height.
+ * @param index index of the selected item.
  */
-void MainWindow::ChangedHeight(const QString &text)
+void MainWindow::ChangedHeight(int index)
 {
     const int height = static_cast<int>(VContainer::height());
     if (UpdateMeasurements(AbsoluteMPath(qApp->GetPPath(), doc->MPath()), static_cast<int>(VContainer::size()),
-                           text.toInt()))
+                           gradationHeights.data()->itemText(index).toInt()))
     {
         doc->LiteParseTree(Document::LiteParse);
         emit pieceScene->DimensionsChanged();
@@ -5564,19 +5565,19 @@ void MainWindow::CreateActions()
     });
 
     //Help menu
-    connect(ui->wiki_Action, &QAction::triggered, this, [this]()
+    connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Showing online help");
         QDesktopServices::openUrl(QUrl(QStringLiteral("https://wiki.seamly.net/wiki/Main_Page")));
     });
 
-    connect(ui->forum_Action, &QAction::triggered, this, [this]()
+    connect(ui->forum_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Opening forum");
         QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly.net/")));
     });
 
-    connect(ui->reportBug_Action, &QAction::triggered, this, [this]()
+    connect(ui->reportBug_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Reporting bug");
         QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/fashionfreedom/seamly2d/issues/new")));

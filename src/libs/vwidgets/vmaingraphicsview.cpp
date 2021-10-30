@@ -73,6 +73,7 @@
 #include <QGuiApplication>
 #include <QScreen>
 #include <QAbstractScrollArea>
+#include <QScreen>
 
 #include "../vmisc/logging.h"
 #include "../vmisc/def.h"
@@ -268,11 +269,14 @@ bool GraphicsViewZoom::eventFilter(QObject *object, QEvent *event)
         SCASSERT(wheel_event != nullptr)
         if (QApplication::keyboardModifiers() == m_modifiers)
         {
+            if (wheel_event->angleDelta().y() != 0)
+            {
                 const double angle = wheel_event->angleDelta().y();
                 const double factor = qPow(m_zoomSpeedFactor, angle);
                 qCDebug(vGraphicsViewZoom, "zoom Factor =%f  \n", factor);
                 gentleZoom(factor);
                 return true;
+            }
         }
         else
         {

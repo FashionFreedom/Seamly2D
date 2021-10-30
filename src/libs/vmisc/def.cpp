@@ -468,18 +468,8 @@ QMarginsF GetPrinterFields(const QSharedPointer<QPrinter> &printer)
         return QMarginsF();
     }
 
-    qreal left = 0;
-    qreal top = 0;
-    qreal right = 0;
-    qreal bottom = 0;
-    printer->getPageMargins(&left, &top, &right, &bottom, QPrinter::Millimeter);
     // We can't use Unit::Px because our dpi in most cases is different
-    QMarginsF def;
-    def.setLeft(UnitConvertor(left, Unit::Mm, Unit::Px));
-    def.setRight(UnitConvertor(right, Unit::Mm, Unit::Px));
-    def.setTop(UnitConvertor(top, Unit::Mm, Unit::Px));
-    def.setBottom(UnitConvertor(bottom, Unit::Mm, Unit::Px));
-    return def;
+    return UnitConvertor(printer->pageLayout().margins(), Unit::Mm, Unit::Px);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -510,8 +500,8 @@ QPixmap darkenPixmap(const QPixmap &pixmap)
 //---------------------------------------------------------------------------------------------------------------------
 void ShowInGraphicalShell(const QString &filePath)
 {
-#ifdef Q_OS_MAC
     QStringList args;
+#ifdef Q_OS_MAC
     args << "-e";
     args << "tell application \"Finder\"";
     args << "-e";

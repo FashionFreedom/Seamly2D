@@ -513,7 +513,7 @@ void DialogSaveLayout::Save()
 {
     for (int i=0; i < count; ++i)
     {
-        const QString name = Path()+QLatin1Literal("/")+FileName()+QString::number(i+1)+ExportFromatSuffix(Format());
+        const QString name = Path()+QLatin1String("/")+FileName()+QString::number(i+1)+ExportFromatSuffix(Format());
         if (QFile::exists(name))
         {
             QMessageBox::StandardButton res = QMessageBox::question(this, tr("Name conflict"),
@@ -677,6 +677,7 @@ bool DialogSaveLayout::TestPdf()
     bool res = false;
 
     QProcess proc;
+    QStringList args;
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
     // Seek pdftops in app bundle or near valentin.exe
     proc.start(qApp->applicationDirPath() + QLatin1String("/")+ PDFTOPS, QStringList());

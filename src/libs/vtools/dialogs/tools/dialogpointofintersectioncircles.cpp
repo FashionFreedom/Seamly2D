@@ -130,7 +130,7 @@ DialogPointOfIntersectionCircles::DialogPointOfIntersectionCircles(const VContai
 
     connect(ui->pushButtonGrowCircle1Radius, &QPushButton::clicked, this,
             &DialogPointOfIntersectionCircles::DeployCircle1RadiusTextEdit);
-            
+
     connect(ui->pushButtonGrowCircle2Radius, &QPushButton::clicked, this,
             &DialogPointOfIntersectionCircles::DeployCircle2RadiusTextEdit);
 

@@ -30,6 +30,7 @@
 #include <QtGlobal>
 #include <QRandomGenerator>
 #include <locale>
+#include <QRandomGenerator>
 
 #include "../qmuparser/qmuparser_global.h"
 #include "qmuparser.h"

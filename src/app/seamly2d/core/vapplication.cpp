@@ -1001,7 +1001,8 @@ void VApplication::SendReport(const QString &reportName) const
                             QString("\" -H \"Accept: application/json\" -H \"Content-type: application/json\" -X POST "
                                     "--data @gist.json https://api.github.com/gists");
         QProcess proc;
-        proc.start(arg);
+        QStringList args;
+        proc.start(arg, args);
         proc.waitForFinished(10000); // 10 sec
         reportFile.remove();// Clear after yourself
     }

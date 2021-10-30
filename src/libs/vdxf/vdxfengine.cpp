@@ -134,7 +134,7 @@ void VDxfEngine::updateState(const QPaintEngineState &state)
 
     if (flags & QPaintEngine::DirtyTransform)
     {
-        transform = state.transform(); // Save new transform for moving paths
+        transform = state.transform(); // Save new transformation for moving paths
     }
 }
 

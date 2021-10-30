@@ -234,8 +234,8 @@ private slots:
     void OpenAt(QAction *where);
 #endif //defined(Q_OS_MAC)
 
-    void ChangedSize(const QString &text);
-    void ChangedHeight(const QString &text);
+    void ChangedSize(int index);
+    void ChangedHeight(int index);
 
 private:
     Q_DISABLE_COPY(MainWindow)

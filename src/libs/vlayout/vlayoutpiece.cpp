@@ -1092,7 +1092,7 @@ void VLayoutPiece::CreateLabelStrings(QGraphicsItem *parent, const QVector<QPoin
                 dX = dW - fm.horizontalAdvance(qsText);
             }
 
-            // set up the rotation around top-left corner transform
+            // set up the rotation around top-left corner matrix
             QTransform labelTransform;
             labelTransform.translate(labelShape.at(0).x(), labelShape.at(0).y());
             if (d->mirror)

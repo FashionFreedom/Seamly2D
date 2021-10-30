@@ -53,7 +53,7 @@
 #define VOBJENGINE_H
 
 #include <qcompilerdetection.h>
-#include <QMatrix>
+#include <QTransform>
 #include <QPaintEngine>
 #include <QPolygonF>
 #include <QRectF>

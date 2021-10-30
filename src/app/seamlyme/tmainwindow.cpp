@@ -1441,20 +1441,20 @@ void TMainWindow::ImportFromPattern()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ChangedSize(const QString &text)
+void TMainWindow::ChangedSize(int index)
 {
 	const int row = ui->tableWidget->currentRow();
-	currentSize = text.toInt();
+    currentSize = gradationSizes->itemText(index).toInt();
 	RefreshData();
 	search->RefreshList(ui->lineEditFind->text());
 	ui->tableWidget->selectRow(row);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ChangedHeight(const QString &text)
+void TMainWindow::ChangedHeight(int index)
 {
 	const int row = ui->tableWidget->currentRow();
-	currentHeight = text.toInt();
+    currentHeight = gradationHeights->itemText(index).toInt();
 	RefreshData();
 	search->RefreshList(ui->lineEditFind->text());
 	ui->tableWidget->selectRow(row);
