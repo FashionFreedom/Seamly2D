@@ -6,7 +6,7 @@ jobs:
   linux:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.3.5
       - name: Install Qt5
         run: |
           # register kde neon repository
@@ -16,12 +16,13 @@ jobs:
           # install build dependencies
           sudo apt-get update
           sudo apt-get install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
       - name: build
         run: |
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
           appimage-builder --recipe dist/appimage-builder-recipe.yml --skip-test
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2.2.4
         with:
           name: AppImage
           path: './*.AppImage*'
