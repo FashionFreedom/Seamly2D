@@ -2,16 +2,15 @@ version: 1.0.{build}
 branches:
   only:
   - develop
-  - feature-173
 image: Ubuntu
 environment:
   my_variable:
     secure: +GIXChQeD2YvKKJfsC32mG4tVbbM49BK243gEJwayyB1IO98plDBc6wJ/yIQfG2XoSDaqgFtNbW/utfCN+D0rA==
 install:
-  - sh: export QTDIR=$HOME/Qt/5.14.2
-  - sh: ls $HOME/Qt/5.14.2
-  - sh: ls $HOME/Qt/5.14.2/gcc_64/bin
-  - sh: export PATH=$QTDIR/bin:$HOME/Qt/5.14.2/gcc_64/bin:$PATH
+  - sh: export QTDIR=$HOME/Qt/5.15.2
+  - sh: ls $HOME/Qt/5.15.2
+  - sh: ls $HOME/Qt/5.15.2/gcc_64/bin
+  - sh: export PATH=$QTDIR/bin:$HOME/Qt/5.15.2/gcc_64/bin:$PATH
   - sh: set -euo pipefail
   - sh: buildDirPath=$HOME/build
   - sh: mkdir -p $buildDirPath
@@ -31,6 +30,6 @@ build_script:
   - sh: cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
   - sh: cp share/translations/*.qm $buildDirPath/share/translations
   - sh: cp src/app/seamlyme/bin/diagrams.rcc $buildDirPath/share
-  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:5.14.2
+  - sh: docker run --cap-add SYS_ADMIN --device /dev/fuse --security-opt apparmor:unconfined --security-opt seccomp=unconfined -v $buildDirPath:/app/usr -e EXTRA_BINARIES="seamlyme" --rm mhitza/linuxdeployqt:5.15.2
   - sh: mv $buildDirPath/Seamly2D*.AppImage ./
   - sh: ls *.AppImage
