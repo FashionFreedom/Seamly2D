@@ -17,6 +17,8 @@ qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymb
 make
 make install
 
+sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
 mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
 cp dist/seamly2d.desktop $buildDirPath/share/applications
 cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
