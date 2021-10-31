@@ -420,7 +420,7 @@ VPosition::CrossingType VPosition::Crossing(const VLayoutPiece &detail) const
     }
 
     const QPainterPath gPath = gContour.ContourPath();
-    if (not gPath.intersects(detail.LayoutAllowancePath()) && not gPath.contains(detail.ContourPath()))
+    if (not gPath.intersects(detail.LayoutAllowancePath()) && not gPath.contains(detail.mainPath()))
     {
         return CrossingType::NoIntersection;
     }
@@ -591,7 +591,7 @@ QPainterPath VPosition::DrawDetails(const QVector<VLayoutPiece> &details)
     {
         for (int i = 0; i < details.size(); ++i)
         {
-            path.addPath(details.at(i).ContourPath());
+            path.addPath(details.at(i).mainPath());
         }
     }
     return path;

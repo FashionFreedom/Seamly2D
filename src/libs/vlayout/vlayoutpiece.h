@@ -153,7 +153,9 @@ public:
 
     bool                      isNull() const;
     qint64                    Square() const;
-    QPainterPath              ContourPath() const;
+
+    QPainterPath              mainPath() const;
+    QPainterPath              allowancePath() const;
 
     QPainterPath              LayoutAllowancePath() const;
 
@@ -165,6 +167,7 @@ private:
     QVector<QPointF>                     DetailPath() const;
 
     Q_REQUIRED_RESULT QGraphicsPathItem *GetMainItem() const;
+    Q_REQUIRED_RESULT QGraphicsPathItem *getAllowanceItem(QGraphicsItem *parent) const;
     Q_REQUIRED_RESULT QGraphicsPathItem *GetMainPathItem() const;
 
     void                                 CreateInternalPathItem(int i, QGraphicsItem *parent) const;
