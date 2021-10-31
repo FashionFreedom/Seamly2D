@@ -25,7 +25,7 @@ env:
 
   # When changing the version information in this file be sure to change it in
   # pull-request.yml as well
-  QT_VERSION: '5.15.3' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 # The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
