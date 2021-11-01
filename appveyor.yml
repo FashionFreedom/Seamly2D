@@ -15,17 +15,17 @@ install:
   - sh: buildDirPath=$HOME/build
   - sh: mkdir -p $buildDirPath
   - sh: sudo apt update
-  - sh: sudo apt install fuse
-  - sh: sudo apt-get install libdrm-dev
-  - sh: sudo apt-get install libtinfo-dev
-  - sh: sudo apt-get install libgl1-mesa-dev -y
+  - sh: sudo apt install -y fuse
+  - sh: sudo apt-get install -y libdrm-dev
+  - sh: sudo apt-get install -y libtinfo-dev
+  - sh: sudo apt-get install -y libgl1-mesa-dev
+  - sh: sudo apt-get install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
   - sh: sudo apt-get install -f
 configuration: Release
 build_script:
   - sh: qmake PREFIX=$buildDirPath Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sh: sudo make
   - sh: sudo make install
-  - sh: sudo apt-get install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
   - sh: mkdir -p $buildDirPath/{share/applications,share/icons/hicolor/256x256,share/translations}
   - sh: cp dist/seamly2d.desktop $buildDirPath/share/applications
   - sh: cp share/img/Seamly2D_logo_256x256.png $buildDirPath/share/icons/hicolor/256x256/seamly2d.png
