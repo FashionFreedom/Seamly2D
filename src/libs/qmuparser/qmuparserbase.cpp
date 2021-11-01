@@ -1136,61 +1136,61 @@ QT_WARNING_POP
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wundefined-reinterpret-cast")
 QT_WARNING_DISABLE_MSVC(4191)
-
+                void* fPtr = reinterpret_cast<void*>(pTok->Fun.ptr);
                 // switch according to argument count
                 switch (iArgCount)
                 {
                     case 0:
                         sidx += 1;
-                        Stack[sidx] = (*reinterpret_cast<fun_type0>(pTok->Fun.ptr))();
+                        Stack[sidx] = (*reinterpret_cast<fun_type0>(fPtr))();
                         continue;
                     case 1:
-                        Stack[sidx] = (*reinterpret_cast<fun_type1>(pTok->Fun.ptr))(Stack[sidx]);
+                        Stack[sidx] = (*reinterpret_cast<fun_type1>(fPtr))(Stack[sidx]);
                         continue;
                     case 2:
                         sidx -= 1;
-                        Stack[sidx] = (*reinterpret_cast<fun_type2>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1]);
+                        Stack[sidx] = (*reinterpret_cast<fun_type2>(fPtr))(Stack[sidx], Stack[sidx+1]);
                         continue;
                     case 3:
                         sidx -= 2;
-                        Stack[sidx] = (*reinterpret_cast<fun_type3>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type3>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2]);
                         continue;
                     case 4:
                         sidx -= 3;
-                        Stack[sidx] = (*reinterpret_cast<fun_type4>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type4>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3]);
                         continue;
                     case 5:
                         sidx -= 4;
-                        Stack[sidx] = (*reinterpret_cast<fun_type5>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type5>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3], Stack[sidx+4]);
                         continue;
                     case 6:
                         sidx -= 5;
-                        Stack[sidx] = (*reinterpret_cast<fun_type6>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type6>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
                         continue;
                     case 7:
                         sidx -= 6;
-                        Stack[sidx] = (*reinterpret_cast<fun_type7>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type7>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
                         continue;
                     case 8:
                         sidx -= 7;
-                        Stack[sidx] = (*reinterpret_cast<fun_type8>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type8>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6],
                                 Stack[sidx+7]);
                         continue;
                     case 9:
                         sidx -= 8;
-                        Stack[sidx] = (*reinterpret_cast<fun_type9>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type9>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6],
                                 Stack[sidx+7], Stack[sidx+8]);
                         continue;
                     case 10:
                         sidx -= 9;
-                        Stack[sidx] = (*reinterpret_cast<fun_type10>(pTok->Fun.ptr))(Stack[sidx], Stack[sidx+1],
+                        Stack[sidx] = (*reinterpret_cast<fun_type10>(fPtr))(Stack[sidx], Stack[sidx+1],
                                 Stack[sidx+2], Stack[sidx+3], Stack[sidx+4], Stack[sidx+5], Stack[sidx+6],
                                 Stack[sidx+7], Stack[sidx+8], Stack[sidx+9]);
                         continue;
@@ -1201,7 +1201,7 @@ QT_WARNING_DISABLE_MSVC(4191)
                         }
 
                         sidx -= -iArgCount - 1;
-                        Stack[sidx] =(*reinterpret_cast<multfun_type>(pTok->Fun.ptr))(&Stack[sidx], -iArgCount);
+                        Stack[sidx] =(*reinterpret_cast<multfun_type>(fPtr))(&Stack[sidx], -iArgCount);
                         continue;
                 }
             }
@@ -1212,19 +1212,20 @@ QT_WARNING_DISABLE_MSVC(4191)
 
                 // The index of the string argument in the string table
                 int iIdxStack = pTok->Fun.idx;
+                void* fPtr = reinterpret_cast<void*>(pTok->Fun.ptr);
                 Q_ASSERT( iIdxStack>=0 && iIdxStack<m_vStringBuf.size() );
 
                 switch (pTok->Fun.argc)  // switch according to argument count
                 {
                     case 0:
-                        Stack[sidx] = (*reinterpret_cast<strfun_type1>(pTok->Fun.ptr))(m_vStringBuf.at(iIdxStack));
+                        Stack[sidx] = (*reinterpret_cast<strfun_type1>(fPtr))(m_vStringBuf.at(iIdxStack));
                         continue;
                     case 1:
-                        Stack[sidx] = (*reinterpret_cast<strfun_type2>(pTok->Fun.ptr))(m_vStringBuf.at(iIdxStack),
+                        Stack[sidx] = (*reinterpret_cast<strfun_type2>(fPtr))(m_vStringBuf.at(iIdxStack),
                                                                                        Stack[sidx]);
                         continue;
                     case 2:
-                        Stack[sidx] = (*reinterpret_cast<strfun_type3>(pTok->Fun.ptr))(m_vStringBuf.at(iIdxStack),
+                        Stack[sidx] = (*reinterpret_cast<strfun_type3>(fPtr))(m_vStringBuf.at(iIdxStack),
                                                                                        Stack[sidx], Stack[sidx+1]);
                         continue;
                     default:
@@ -1237,65 +1238,66 @@ QT_WARNING_DISABLE_MSVC(4191)
             {
                 int iArgCount = pTok->Fun.argc;
 
+                void* fPtr = reinterpret_cast<void*>(pTok->Fun.ptr);
                 // switch according to argument count
                 switch (iArgCount)
                 {
                     case 0:
                         sidx += 1;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type0>(pTok->Fun.ptr))(nOffset, nThreadID);
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type0>(fPtr))(nOffset, nThreadID);
                         continue;
                     case 1:
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type1>(pTok->Fun.ptr))(nOffset, nThreadID,
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type1>(fPtr))(nOffset, nThreadID,
                                                                                         Stack[sidx]);
                         continue;
                     case 2:
                         sidx -= 1;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type2>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type2>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1]);
                         continue;
                     case 3:
                         sidx -= 2;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type3>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type3>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2]);
                         continue;
                     case 4:
                         sidx -= 3;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type4>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type4>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2], Stack[sidx+3]);
                         continue;
                     case 5:
                         sidx -= 4;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type5>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type5>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2], Stack[sidx+3],
                                 Stack[sidx+4]);
                         continue;
                     case 6:
                         sidx -= 5;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type6>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type6>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2],
                                 Stack[sidx+3], Stack[sidx+4], Stack[sidx+5]);
                         continue;
                     case 7:
                         sidx -= 6;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type7>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type7>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2], Stack[sidx+3],
                                 Stack[sidx+4], Stack[sidx+5], Stack[sidx+6]);
                         continue;
                     case 8:
                         sidx -= 7;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type8>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type8>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2], Stack[sidx+3],
                                 Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7]);
                         continue;
                     case 9:
                         sidx -= 8;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type9>(pTok->Fun.ptr))(nOffset, nThreadID, Stack[sidx],
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type9>(fPtr))(nOffset, nThreadID, Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2], Stack[sidx+3],
                                 Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8]);
                         continue;
                     case 10:
                         sidx -= 9;
-                        Stack[sidx] = (*reinterpret_cast<bulkfun_type10>(pTok->Fun.ptr))(nOffset, nThreadID,
+                        Stack[sidx] = (*reinterpret_cast<bulkfun_type10>(fPtr))(nOffset, nThreadID,
                                                                                          Stack[sidx],
                                                                        Stack[sidx+1], Stack[sidx+2], Stack[sidx+3],
                                 Stack[sidx+4], Stack[sidx+5], Stack[sidx+6], Stack[sidx+7], Stack[sidx+8],
