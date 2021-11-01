@@ -17,6 +17,7 @@ env:
 # The tag name is Test-YYmmdd-HHMM to enable multiple tests per day
 jobs:
 
+  create-release:
     runs-on: ubuntu-20.04
     outputs:
       upload_url: ${{ steps.create-release.outputs.upload_url }}
