@@ -82,7 +82,7 @@ jobs:
       - uses: actions/upload-artifact@v2.2.4
         with:
           name: seamly2d-x86_64-appimage.zip
-          path: './*.AppImage*'
+          path: ./*.zip
 
       - name: upload Seamly2D.AppImage
         uses: actions/upload-release-asset@v1.0.2
@@ -90,7 +90,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./seamly2d-x86_64-appimage.zip
+          asset_path: ./*.zip
           asset_name: seamly2d-x86_64-appimage.zip
           asset_content_type: application/octet-stream
 

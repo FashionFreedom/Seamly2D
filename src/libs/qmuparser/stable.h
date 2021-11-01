@@ -27,7 +27,7 @@
 #define STABLE_H
 
 /* I like to include this pragma too, so the build log indicates if pre-compiled headers were in use. */
-#pragma message("Compiling precompiled headers for QmuParser library.\n")
+#pragma message("Compiling precompiled headers for QmuParser library.")
 
 /* Add C includes here */
 
