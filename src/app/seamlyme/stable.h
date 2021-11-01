@@ -53,7 +53,7 @@
 #define STABLE_H
 
 /* I like to include this pragma too, so the build log indicates if pre-compiled headers were in use. */
-#pragma message("Compiling precompiled headers for seamlyme utility.\n")
+#pragma message("Compiling precompiled headers for seamlyme utility.")
 
 /* Add C includes here */
 

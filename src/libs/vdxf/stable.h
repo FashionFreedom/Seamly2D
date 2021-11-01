@@ -30,7 +30,7 @@
 #define STABLE_H
 
 /* I like to include this pragma too, so the build log indicates if pre-compiled headers were in use. */
-#pragma message("Compiling precompiled headers for VDxf library.\n")
+#pragma message("Compiling precompiled headers for VDxf library.")
 
 #define _CRT_SECURE_NO_WARNINGS
 
