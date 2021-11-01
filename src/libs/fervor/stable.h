@@ -52,9 +52,6 @@
 #ifndef STABLE_H
 #define STABLE_H
 
-/* I like to include this pragma too, so the build log indicates if pre-compiled headers were in use. */
-#pragma message("Compiling precompiled headers for Fervor library.")
-
 /* Add C includes here */
 
 #if defined __cplusplus
