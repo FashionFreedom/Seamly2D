@@ -65,6 +65,7 @@ jobs:
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
+          ls ./*.AppImage*
       - uses: actions/upload-artifact@v2.2.4
         with:
           name: Seamly2D-x86_64.AppImage
