@@ -73,7 +73,7 @@ jobs:
           
       - name: upload Seamly2D-x86_64.AppImage
         run: |
-          ls -R | grep '.*[.]AppImage*'
+          ls -R | grep *.AppImage
       - uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
