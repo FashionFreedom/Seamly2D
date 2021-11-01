@@ -31,5 +31,5 @@ jobs:
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
       - uses: actions/upload-artifact@v2.2.4
         with:
-          name: seamly2d-x86_64-appimage.zip
+          name: Seamly2D-x86_64.AppImage
           path: './*.AppImage*'
