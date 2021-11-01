@@ -109,18 +109,16 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
     FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
     FillComboBoxLineColors(ui->comboBoxLineColor);
 
-    connect(ui->toolButtonExprAngle, &QPushButton::clicked, this, &DialogLineIntersectAxis::FXAngle);
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogLineIntersectAxis::NamePointChanged);
+    connect(ui->toolButtonExprAngle,  &QPushButton::clicked,        this, &DialogLineIntersectAxis::FXAngle);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogLineIntersectAxis::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogLineIntersectAxis::AngleTextChanged);
     connect(ui->pushButtonGrowLengthAngle, &QPushButton::clicked, this, &DialogLineIntersectAxis::DeployAngleTextEdit);
     connect(timerFormula, &QTimer::timeout, this, &DialogLineIntersectAxis::EvalAngle);
-    connect(ui->comboBoxFirstLinePoint,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxFirstLinePoint, &QComboBox::currentTextChanged,
             this, &DialogLineIntersectAxis::PointNameChanged);
-    connect(ui->comboBoxSecondLinePoint,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxSecondLinePoint, &QComboBox::currentTextChanged,
             this, &DialogLineIntersectAxis::PointNameChanged);
-    connect(ui->comboBoxAxisPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(ui->comboBoxAxisPoint, &QComboBox::currentTextChanged,
             this, &DialogLineIntersectAxis::PointNameChanged);
 
     vis = new VisToolLineIntersectAxis(data);

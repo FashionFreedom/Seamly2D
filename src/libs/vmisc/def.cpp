@@ -510,38 +510,11 @@ void ShowInGraphicalShell(const QString &filePath)
     args << "select POSIX file \""+filePath+"\"";
     args << "-e";
     args << "end tell";
-    QProcess::startDetached("osascript", args);
+    QProcess::startDetached(QStringLiteral("osascript"), args);
 #elif defined(Q_OS_WIN)
-    QProcess::startDetached(QString("explorer /select, \"%1\"").arg(QDir::toNativeSeparators(filePath)), args);
+    QProcess::startDetached(QStringLiteral("explorer"), QStringList{"/select", QDir::toNativeSeparators(filePath)});
 #else
-    const QString app = "xdg-open %d";
-    QString cmd;
-    for (int i = 0; i < app.size(); ++i)
-    {
-        QChar c = app.at(i);
-        if (c == QLatin1Char('%') && i < app.size()-1)
-        {
-            c = app.at(++i);
-            QString s;
-            if (c == QLatin1Char('d'))
-            {
-                s = QLatin1Char('"') + QFileInfo(filePath).path() + QLatin1Char('"');
-            }
-            else if (c == QLatin1Char('%'))
-            {
-                s = c;
-            }
-            else
-            {
-                s = QLatin1Char('%');
-                s += c;
-            }
-            cmd += s;
-            continue;
-        }
-        cmd += c;
-    }
-    QProcess::startDetached(cmd, QStringList());
+    QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(filePath).path()));
 #endif
 
 }

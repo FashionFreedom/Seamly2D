@@ -2775,10 +2775,10 @@ void DialogSeamAllowance::InitLabelsTab()
     InitPinPoint(uiLabelsTab->pLabelBottomRightPin_ComboBox);
 
     connect(uiLabelsTab->pLabelTopLeftPin_ComboBox,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            &QComboBox::currentTextChanged,
             this, &DialogSeamAllowance::PatternPinPointChanged);
     connect(uiLabelsTab->pLabelBottomRightPin_ComboBox,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            &QComboBox::currentTextChanged,
             this, &DialogSeamAllowance::PatternPinPointChanged);
 
     connect(uiLabelsTab->pLabelWidth_PushButton,  &QPushButton::clicked, this, &DialogSeamAllowance::EditPLFormula);
@@ -2829,10 +2829,10 @@ void DialogSeamAllowance::InitGrainlineTab()
     InitPinPoint(uiGrainlineTab->grainlineBottomPin_ComboBox);
 
     connect(uiGrainlineTab->grainlineTopPin_ComboBox,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            &QComboBox::currentTextChanged,
             this, &DialogSeamAllowance::GrainlinePinPointChanged);
     connect(uiGrainlineTab->grainlineBottomPin_ComboBox,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            &QComboBox::currentTextChanged,
             this, &DialogSeamAllowance::GrainlinePinPointChanged);
 }
 
@@ -2860,21 +2860,26 @@ void DialogSeamAllowance::InitNotchesTab()
 
     connect(uiNotchesTab->notchSubType_ButtonGroup,  &QButtonGroup::idClicked,
             this, &DialogSeamAllowance::notchSubTypeChanged);
+
     connect(uiNotchesTab->showNotch_CheckBox, &QCheckBox::stateChanged, this,
             &DialogSeamAllowance::showNotchChanged);
+
     connect(uiNotchesTab->showSecondNotch_CheckBox, &QCheckBox::stateChanged, this,
             &DialogSeamAllowance::showSecondNotchChanged);
 
     connect(uiNotchesTab->notchLength_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &DialogSeamAllowance::notchLengthChanged);
+
     connect(uiNotchesTab->resetLength_PushButton, &QPushButton::clicked, this, &DialogSeamAllowance::resetNotchLength);
 
     connect(uiNotchesTab->notchWidth_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &DialogSeamAllowance::notchWidthChanged);
+
     connect(uiNotchesTab->resetWidth_PushButton, &QPushButton::clicked, this, &DialogSeamAllowance::resetNotchWidth);
 
     connect(uiNotchesTab->notchAngle_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &DialogSeamAllowance::notchAngleChanged);
+
     connect(uiNotchesTab->resetAngle_PushButton, &QPushButton::clicked, this, &DialogSeamAllowance::resetNotchAngle);
 
     connect(uiNotchesTab->notchCount_SpinBox, QOverload<int>::of(&QSpinBox::valueChanged),

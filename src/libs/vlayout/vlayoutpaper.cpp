@@ -323,7 +323,7 @@ bool VLayoutPaper::SaveResult(const VBestSquare &bestResult, const VLayoutPiece 
     {
         VLayoutPiece workDetail = detail;
         workDetail.setTransform(bestResult.Transform());// Don't forget set transform
-        workDetail.SetMirror(bestResult.Mirror());
+        workDetail.SetMirror(bestResult.isMirror());
         const QVector<QPointF> newGContour = d->globalContour.UniteWithContour(workDetail, bestResult.GContourEdge(),
                                                                                bestResult.DetailEdge(),
                                                                                bestResult.Type());

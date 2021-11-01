@@ -131,7 +131,7 @@ public:
     qreal                     GetLayoutWidth() const;
     void                      SetLayoutWidth(const qreal &value);
 
-    bool                      IsMirror() const;
+    bool                      isMirror() const;
     void                      SetMirror(bool value);
 
     void                      Translate(qreal dx, qreal dy);

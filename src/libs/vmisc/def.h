@@ -584,4 +584,33 @@ private:
     QxtPrivate<PUB>* pvt;
 };
 
+/*
+    Convert to a QSet
+*/
+//---------------------------------------------------------------------------------------------------------------------
+template <typename T, template <typename> class C>
+inline QSet<T> convertToSet(const C<T> &list)
+{
+    return QSet<T>(list.begin(), list.end());
+}
+
+/*
+    Convert to a QSet
+*/
+//---------------------------------------------------------------------------------------------------------------------
+template <typename T, typename C>
+inline QSet<T> convertToSet(const C &list)
+{
+    return QSet<T>(list.begin(), list.end());
+}
+
+/*
+    Convert to a QList
+*/
+//---------------------------------------------------------------------------------------------------------------------
+template <typename T, template <typename> class C>
+inline QList<T> convertToList(const C<T> &set)
+{
+    return QList<T>(set.begin(), set.end());
+}
 #endif // DEF_H

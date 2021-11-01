@@ -80,7 +80,8 @@ public slots:
     virtual void      DialogApply() Q_DECL_OVERRIDE {}
     void              cellClicked(int row, int column);
     void              ChangedCursor(quint32 id);
-    void              UpdateHistory();
+    void              updateHistory();
+
 signals:
     /**
      * @brief ShowHistoryTool signal change color of selected in records tool
@@ -88,9 +89,12 @@ signals:
      * @param enable true enable selection, false disable selection
      */
     void              ShowHistoryTool(quint32 id, bool enable);
+
 protected:
     virtual void      closeEvent ( QCloseEvent * event ) Q_DECL_OVERRIDE;
     virtual void      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+    virtual bool      eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(DialogHistory)
 
@@ -114,6 +118,7 @@ private:
     quint32           AttrUInt(const QDomElement &domElement, const QString &name);
     void              RetranslateUi();
     int               CursorRow() const;
+    void              findText(const QString &text);
 };
 
 #endif // DIALOGHISTORY_H

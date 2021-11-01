@@ -73,7 +73,7 @@ void VNoBrushScalePathItem::paint(QPainter *painter, const QStyleOptionGraphicsI
      * http://www.qtcentre.org/archive/index.php/t-13950.html
      *
      * You'll have to scale the brush down. The QStyleOptionGraphicsItem option passed in paint() will give you the
-     * transform being used, and you can set a matrix on a QBrush. Put the two together and you can scale the brush
+     * transform being used, and you can set a transform on a QBrush. Put the two together and you can scale the brush
      * opposite of the item.
      */
     QBrush brush = this->brush();

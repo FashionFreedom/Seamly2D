@@ -101,16 +101,13 @@ DialogBisector::DialogBisector(const VContainer *data, const quint32 &toolId, QW
     FillComboBoxPoints(ui->comboBoxThirdPoint);
     FillComboBoxLineColors(ui->comboBoxLineColor);
 
-    connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogBisector::FXLength);
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogBisector::NamePointChanged);
-    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogBisector::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogBisector::DeployFormulaTextEdit);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogBisector::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogBisector::PointNameChanged);
-    connect(ui->comboBoxThirdPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogBisector::PointNameChanged);
+    connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogBisector::FXLength);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogBisector::NamePointChanged);
+    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged,   this, &DialogBisector::FormulaTextChanged);
+    connect(ui->pushButtonGrowLength, &QPushButton::clicked,          this, &DialogBisector::DeployFormulaTextEdit);
+    connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogBisector::PointNameChanged);
+    connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogBisector::PointNameChanged);
+    connect(ui->comboBoxThirdPoint,   &QComboBox::currentTextChanged, this, &DialogBisector::PointNameChanged);
 
     vis = new VisToolBisector(data);
 }

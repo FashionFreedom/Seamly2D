@@ -115,7 +115,7 @@ void AddGroup::undo()
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    doc->SetCurrentPP(nameActivDraw);//Return current pattern piece after undo
+    doc->setCurrentDraftBlock(nameActivDraw);//Return current pattern piece after undo
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -70,7 +70,8 @@
 #include <QWheelEvent>
 #include <QGesture>
 #include <QWidget>
-#include <QDesktopWidget>
+#include <QGuiApplication>
+#include <QScreen>
 #include <QAbstractScrollArea>
 #include <QScreen>
 
@@ -787,7 +788,7 @@ void VMainGraphicsView::mouseDoubleClickEvent(QMouseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VMainGraphicsView::MinScale()
 {
-    const QRect screenRect = QApplication::primaryScreen()->availableGeometry();
+    const QRect screenRect(QGuiApplication::primaryScreen()->availableGeometry());
     const qreal screenSize = qMin(screenRect.width(), screenRect.height());
 
     return screenSize / maxSceneSize;
@@ -796,7 +797,7 @@ qreal VMainGraphicsView::MinScale()
 //---------------------------------------------------------------------------------------------------------------------
 qreal VMainGraphicsView::MaxScale()
 {
-    const QRect screenRect = QApplication::primaryScreen()->availableGeometry();
+    const QRect screenRect(QGuiApplication::primaryScreen()->availableGeometry());
     const qreal screenSize = qMin(screenRect.width(), screenRect.height());
 
     return maxSceneSize / screenSize;

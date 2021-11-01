@@ -99,8 +99,14 @@ QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
 VObjEngine::VObjEngine()
-    :QPaintEngine(svgEngineFeatures()), stream(), globalPointsCount(0), outputDevice(), planeCount(0),
-      size(), resolution(96), transform()
+    : QPaintEngine(svgEngineFeatures())
+    , stream()
+    , globalPointsCount(0)
+    , outputDevice()
+    , planeCount(0)
+    , size()
+    , resolution(96)
+    , transform()
 {
     for (int i=0; i < MAX_POINTS; i++)
     {

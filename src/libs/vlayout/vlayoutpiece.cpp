@@ -1200,7 +1200,7 @@ QGraphicsPathItem *VLayoutPiece::GetMainPathItem() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VLayoutPiece::IsMirror() const
+bool VLayoutPiece::isMirror() const
 {
     return d->mirror;
 }

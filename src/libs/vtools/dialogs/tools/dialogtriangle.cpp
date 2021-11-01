@@ -89,15 +89,11 @@ DialogTriangle::DialogTriangle(const VContainer *data, const quint32 &toolId, QW
     FillComboBoxPoints(ui->comboBoxFirstPoint);
     FillComboBoxPoints(ui->comboBoxSecondPoint);
 
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogTriangle::NamePointChanged);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogTriangle::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogTriangle::PointNameChanged);
-    connect(ui->comboBoxAxisP1, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogTriangle::PointNameChanged);
-    connect(ui->comboBoxAxisP2, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogTriangle::PointNameChanged);
+    connect(ui->lineEditNamePoint,   &QLineEdit::textChanged,        this, &DialogTriangle::NamePointChanged);
+    connect(ui->comboBoxFirstPoint,  &QComboBox::currentTextChanged, this, &DialogTriangle::PointNameChanged);
+    connect(ui->comboBoxSecondPoint, &QComboBox::currentTextChanged, this, &DialogTriangle::PointNameChanged);
+    connect(ui->comboBoxAxisP1,      &QComboBox::currentTextChanged, this, &DialogTriangle::PointNameChanged);
+    connect(ui->comboBoxAxisP2,      &QComboBox::currentTextChanged, this, &DialogTriangle::PointNameChanged);
 
     vis = new VisToolTriangle(data);
 }

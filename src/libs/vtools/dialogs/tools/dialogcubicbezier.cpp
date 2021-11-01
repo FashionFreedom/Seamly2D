@@ -85,14 +85,10 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
 
     DialogTool::CheckState();
 
-    connect(ui->comboBoxP1, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogCubicBezier::PointNameChanged);
-    connect(ui->comboBoxP2, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogCubicBezier::PointNameChanged);
-    connect(ui->comboBoxP3, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogCubicBezier::PointNameChanged);
-    connect(ui->comboBoxP4, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogCubicBezier::PointNameChanged);
+    connect(ui->comboBoxP1, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
+    connect(ui->comboBoxP2, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
+    connect(ui->comboBoxP3, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
+    connect(ui->comboBoxP4, &QComboBox::currentTextChanged, this, &DialogCubicBezier::PointNameChanged);
 
     vis = new VisToolCubicBezier(data);
 }

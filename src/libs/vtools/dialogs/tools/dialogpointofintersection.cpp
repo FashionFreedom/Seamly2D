@@ -87,11 +87,9 @@ DialogPointOfIntersection::DialogPointOfIntersection(const VContainer *data, con
     FillComboBoxPoints(ui->comboBoxFirstPoint);
     FillComboBoxPoints(ui->comboBoxSecondPoint);
 
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfIntersection::NamePointChanged);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfIntersection::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfIntersection::PointNameChanged);
+    connect(ui->lineEditNamePoint,   &QLineEdit::textChanged,        this, &DialogPointOfIntersection::NamePointChanged);
+    connect(ui->comboBoxFirstPoint,  &QComboBox::currentTextChanged, this, &DialogPointOfIntersection::PointNameChanged);
+    connect(ui->comboBoxSecondPoint, &QComboBox::currentTextChanged, this, &DialogPointOfIntersection::PointNameChanged);
 
     vis = new VisToolPointOfIntersection(data);
     vis->VisualMode(NULL_ID);//Show vertical axis

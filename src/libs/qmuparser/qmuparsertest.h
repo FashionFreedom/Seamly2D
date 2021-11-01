@@ -28,6 +28,7 @@
 #include <QString>
 #include <QVector>
 #include <QtGlobal>
+#include <QRandomGenerator>
 #include <locale>
 #include <QRandomGenerator>
 

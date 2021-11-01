@@ -131,7 +131,7 @@ VToolPointOfIntersection *VToolPointOfIntersection::Create(QSharedPointer<Dialog
     const quint32 firstPointId = dialogTool->GetFirstPointId();
     const quint32 secondPointId = dialogTool->GetSecondPointId();
     const QString pointName = dialogTool->getPointName();
-    VToolPointOfIntersection *point = Create(0, pointName, firstPointId, secondPointId, 5, 10, true, scene, doc,
+    VToolPointOfIntersection *point = Create(0, pointName, firstPointId, secondPointId, 5, 10, scene, doc,
                                              data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -158,7 +158,7 @@ VToolPointOfIntersection *VToolPointOfIntersection::Create(QSharedPointer<Dialog
  */
 VToolPointOfIntersection *VToolPointOfIntersection::Create(const quint32 _id, const QString &pointName,
                                                            const quint32 &firstPointId, const quint32 &secondPointId,
-                                                           qreal mx, qreal my, bool /*showPointName*/, VMainGraphicsScene *scene,
+                                                           qreal mx, qreal my, VMainGraphicsScene *scene,
                                                            VAbstractPattern *doc, VContainer *data,
                                                            const Document &parse,
                                                            const Source &typeCreation)

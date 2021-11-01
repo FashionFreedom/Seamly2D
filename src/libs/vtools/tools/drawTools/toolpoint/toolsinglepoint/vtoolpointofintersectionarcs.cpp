@@ -116,7 +116,7 @@ VToolPointOfIntersectionArcs *VToolPointOfIntersectionArcs::Create(QSharedPointe
     const quint32 secondArcId = dialogTool->GetSecondArcId();
     const CrossCirclesPoint pType = dialogTool->GetCrossArcPoint();
     const QString pointName = dialogTool->getPointName();
-    VToolPointOfIntersectionArcs *point = Create(0, pointName, firstArcId, secondArcId, pType, 5, 10, true, scene, doc,
+    VToolPointOfIntersectionArcs *point = Create(0, pointName, firstArcId, secondArcId, pType, 5, 10, scene, doc,
                                                  data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -129,7 +129,7 @@ VToolPointOfIntersectionArcs *VToolPointOfIntersectionArcs::Create(QSharedPointe
 VToolPointOfIntersectionArcs *VToolPointOfIntersectionArcs::Create(const quint32 _id, const QString &pointName,
                                                                    const quint32 &firstArcId,
                                                                    const quint32 &secondArcId, CrossCirclesPoint pType,
-                                                                   qreal mx, qreal my, bool /*showPointName*/,
+                                                                   qreal mx, qreal my,
                                                                    VMainGraphicsScene *scene, VAbstractPattern *doc,
                                                                    VContainer *data, const Document &parse,
                                                                    const Source &typeCreation)

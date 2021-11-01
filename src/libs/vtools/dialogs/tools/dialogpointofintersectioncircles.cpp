@@ -107,26 +107,30 @@ DialogPointOfIntersectionCircles::DialogPointOfIntersectionCircles(const VContai
     FillComboBoxPoints(ui->comboBoxCircle2Center);
     FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfIntersectionCircles::NamePointChanged);
-    connect(ui->comboBoxCircle1Center,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(ui->lineEditNamePoint, &QLineEdit::textChanged,
+            this, &DialogPointOfIntersectionCircles::NamePointChanged);
+
+    connect(ui->comboBoxCircle1Center, &QComboBox::currentTextChanged,
             this, &DialogPointOfIntersectionCircles::PointChanged);
-    connect(ui->comboBoxCircle2Center,
-            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+
+    connect(ui->comboBoxCircle2Center, &QComboBox::currentTextChanged,
             this, &DialogPointOfIntersectionCircles::PointChanged);
 
     connect(ui->toolButtonExprCircle1Radius, &QPushButton::clicked, this,
             &DialogPointOfIntersectionCircles::FXCircle1Radius);
+
     connect(ui->toolButtonExprCircle2Radius, &QPushButton::clicked, this,
             &DialogPointOfIntersectionCircles::FXCircle2Radius);
 
     connect(ui->plainTextEditCircle1Radius, &QPlainTextEdit::textChanged, this,
             &DialogPointOfIntersectionCircles::Circle1RadiusChanged);
+
     connect(ui->plainTextEditCircle2Radius, &QPlainTextEdit::textChanged, this,
             &DialogPointOfIntersectionCircles::Circle2RadiusChanged);
 
     connect(ui->pushButtonGrowCircle1Radius, &QPushButton::clicked, this,
             &DialogPointOfIntersectionCircles::DeployCircle1RadiusTextEdit);
+
     connect(ui->pushButtonGrowCircle2Radius, &QPushButton::clicked, this,
             &DialogPointOfIntersectionCircles::DeployCircle2RadiusTextEdit);
 

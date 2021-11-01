@@ -110,16 +110,6 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 #endif //defined(V_NO_ASSERT)
 
 #if defined(Q_OS_MAC)
-#   if QT_VERSION >= QT_VERSION_CHECK(5, 4, 0) && QT_VERSION < QT_VERSION_CHECK(5, 7, 0)
-        // Try hide very annoying, Qt related, warnings in Mac OS X
-        // QNSView mouseDragged: Internal mouse button tracking invalid (missing Qt::LeftButton)
-        // https://bugreports.qt.io/browse/QTBUG-42846
-        if ((type == QtWarningMsg) && msg.contains(QStringLiteral("QNSView")))
-        {
-            type = QtDebugMsg;
-        }
-#   endif
-
     // Hide Qt bug 'Assertion when reading an icns file'
     // https://bugreports.qt.io/browse/QTBUG-45537
     // Remove after Qt fix will be released
@@ -195,7 +185,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 break;
         }
 
-        (*qApp->LogFile()) << debugdate <<  Qt::endl;
+        (*qApp->LogFile()) << debugdate << Qt::endl;
     }
 
     if (isGuiThread)
@@ -327,7 +317,7 @@ void VApplication::NewSeamly2D(const QString &fileName)
         qCDebug(vApp, "New process without arguments. program = %s",
                 qUtf8Printable(QCoreApplication::applicationFilePath()));
         // Path can contain spaces.
-        if (QProcess::startDetached("\""+QCoreApplication::applicationFilePath()+"\"", {}))
+        if (QProcess::startDetached(QCoreApplication::applicationFilePath(), QStringList()))
         {
             qCDebug(vApp, "The process was started successfully.");
         }
@@ -340,7 +330,8 @@ void VApplication::NewSeamly2D(const QString &fileName)
     {
         const QString run = QString("\"%1\" \"%2\"").arg(QCoreApplication::applicationFilePath()).arg(fileName);
         qCDebug(vApp, "New process with arguments. program = %s", qUtf8Printable(run));
-        if (QProcess::startDetached(run, {}))
+
+        if (QProcess::startDetached(QCoreApplication::applicationFilePath(), QStringList{fileName}))
         {
             qCDebug(vApp, "The process was started successfully.");
         }

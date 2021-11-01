@@ -99,16 +99,13 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
     FillComboBoxPoints(ui->comboBoxSecondPoint);
     FillComboBoxPoints(ui->comboBoxCenter);
 
-    connect(ui->toolButtonExprRadius, &QPushButton::clicked, this, &DialogPointOfContact::FXRadius);
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfContact::NamePointChanged);
+    connect(ui->toolButtonExprRadius, &QPushButton::clicked,        this, &DialogPointOfContact::FXRadius);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogPointOfContact::NamePointChanged);
     connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogPointOfContact::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogPointOfContact::DeployFormulaTextEdit);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfContact::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfContact::PointNameChanged);
-    connect(ui->comboBoxCenter, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfContact::PointNameChanged);
+    connect(ui->pushButtonGrowLength, &QPushButton::clicked,        this, &DialogPointOfContact::DeployFormulaTextEdit);
+    connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
+    connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
+    connect(ui->comboBoxCenter,       &QComboBox::currentTextChanged, this, &DialogPointOfContact::PointNameChanged);
 
     vis = new VisToolPointOfContact(data);
 }

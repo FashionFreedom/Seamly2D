@@ -2059,13 +2059,13 @@ void TMainWindow::InitWindow()
 		gradationHeights = SetGradationList(labelGradationHeights, listHeights);
 		SetDefaultHeight(static_cast<int>(VContainer::height()));
 		connect(gradationHeights, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-				this, &TMainWindow::ChangedHeight);
+                this, &TMainWindow::ChangedHeight);
 
 		labelGradationSizes = new QLabel(tr("Size:"));
 		gradationSizes = SetGradationList(labelGradationSizes, listSizes);
 		SetDefaultSize(static_cast<int>(VContainer::size()));
 		connect(gradationSizes, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-				this, &TMainWindow::ChangedSize);
+                this, &TMainWindow::ChangedSize);
 
 		connect(ui->doubleSpinBoxBaseValue,
 				static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
@@ -2803,9 +2803,7 @@ void TMainWindow::WriteSettings()
 //---------------------------------------------------------------------------------------------------------------------
 QStringList TMainWindow::FilterMeasurements(const QStringList &mNew, const QStringList &mFilter)
 {
-    const QSet<QString> import =
-	    QSet<QString>(mNew.begin(), mNew.end()).subtract(QSet<QString>(mFilter.begin(), mFilter.end()));
-	return QStringList(import.values());
+    return convertToList(convertToSet<QString>(mNew).subtract(convertToSet<QString>(mFilter)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2982,7 +2980,7 @@ void TMainWindow::CreateWindowMenu(QMenu *menu)
 	SCASSERT(menu != nullptr)
 
 	QAction *action = menu->addAction(tr("&New Window"));
-	connect(action, &QAction::triggered, this, [this]()
+	connect(action, &QAction::triggered, this, []()
 	{
 		qApp->NewMainWindow();
 		qApp->MainWindow()->activateWindow();

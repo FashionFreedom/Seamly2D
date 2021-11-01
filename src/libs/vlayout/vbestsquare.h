@@ -71,7 +71,7 @@ public:
     int        DetailEdge() const;
     QTransform Transform() const;
     bool       ValidResult() const;
-    bool       Mirror() const;
+    bool       isMirror() const;
     BestFrom   Type() const;
 
     bool IsSaveLength() const;

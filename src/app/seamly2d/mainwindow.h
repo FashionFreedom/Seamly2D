@@ -142,7 +142,7 @@ private slots:
     void LastUsedTool();
     void FullParseFile();
     void SetEnabledGUI(bool enabled);
-    void GlobalChangePP(const QString &patternPiece);
+    void GlobalchangeDraftBlock(const QString &patternPiece);
     void ToolBarStyles();
     void resetOrigins();
     void showLayoutPages(int index);
@@ -388,7 +388,7 @@ private:
     QString            PatternPieceName(const QString &text);
     QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
     QComboBox          *SetGradationList(QLabel *label, const QStringList &list);
-    void               ChangePP(int index, bool zoomBestFit = true);
+    void               changeDraftBlock(int index, bool zoomBestFit = true);
     /**
      * @brief EndVisualization try show dialog after and working with tool visualization.
      */

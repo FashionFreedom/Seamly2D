@@ -59,8 +59,7 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSettings>
-#include <QDesktopWidget>
-#include <QApplication>
+#include <QGuiApplication>
 #include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -74,7 +73,7 @@ DialogNewPattern::DialogNewPattern(VContainer *data, const QString &patternPiece
     qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QRect position = this->frameGeometry();
-    position.moveCenter(QApplication::primaryScreen()->availableGeometry().center());
+    position.moveCenter(QGuiApplication::primaryScreen()->availableGeometry().center());
     move(position.topLeft());
 
     ui->lineEditName->setText(patternPieceName);

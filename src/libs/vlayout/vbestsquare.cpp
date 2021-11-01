@@ -55,9 +55,14 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VBestSquare::VBestSquare(const QSizeF &sheetSize, bool saveLength)
-    :resI(0), resJ(0), resTransform(QTransform()), bestSize(QSizeF(sheetSize.width()+10, sheetSize.height()+10)),
-      sheetWidth(sheetSize.width()), valideResult(false), resMirror(false), type (BestFrom::Rotation),
-      saveLength(saveLength)
+    : resI(0)
+    , resJ(0)
+    , resTransform(QTransform())
+    , bestSize(QSizeF(sheetSize.width()+10, sheetSize.height()+10))
+    , sheetWidth(sheetSize.width())
+    , valideResult(false)
+    , resMirror(false), type (BestFrom::Rotation)
+    , saveLength(saveLength)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -100,7 +105,7 @@ void VBestSquare::NewResult(const VBestSquare &best)
 {
     if (best.ValidResult() && saveLength == best.IsSaveLength())
     {
-        NewResult(best.BestSize(), best.GContourEdge(), best.DetailEdge(), best.Transform(), best.Mirror(), best.Type());
+        NewResult(best.BestSize(), best.GContourEdge(), best.DetailEdge(), best.Transform(), best.isMirror(), best.Type());
     }
 }
 
@@ -135,7 +140,7 @@ bool VBestSquare::ValidResult() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VBestSquare::Mirror() const
+bool VBestSquare::isMirror() const
 {
     return resMirror;
 }

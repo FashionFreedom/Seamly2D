@@ -99,7 +99,7 @@ private:
     quint32     globalPointsCount;
     QSharedPointer<QIODevice> outputDevice;
     del_point2d_t    points[MAX_POINTS];
-    quint32     planeCount;
+    quint32          planeCount;
     QSize            size;
     int              resolution;
     QTransform       transform;

@@ -72,17 +72,17 @@ QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
 VDxfEngine::VDxfEngine()
-    :QPaintEngine(svgEngineFeatures()),
-      size(),
-      resolution(static_cast<int>(PrintDPI)),
-      fileName(),
-      m_version(DRW::AC1014),
-      m_binary(false),
-      transform(),
-      input(),
-      varMeasurement(VarMeasurement::Metric),
-      varInsunits(VarInsunits::Millimeters),
-      textBuffer(new DRW_Text())
+    : QPaintEngine(svgEngineFeatures())
+    , size()
+    , resolution(static_cast<int>(PrintDPI))
+    , fileName()
+    , m_version(DRW::AC1014)
+    , m_binary(false)
+    , transform()
+    , input()
+    , varMeasurement(VarMeasurement::Metric)
+    , varInsunits(VarInsunits::Millimeters)
+    , textBuffer(new DRW_Text())
 {
 }
 

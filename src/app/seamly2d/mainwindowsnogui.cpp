@@ -123,7 +123,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
       detailsOnLayout(),
       undoAction(nullptr),
       redoAction(nullptr),
-      actionDockWidgetToolOptions(nullptr),      
+      actionDockWidgetToolOptions(nullptr),
       actionDockWidgetGroups(nullptr),
       actionDockWidgetLayouts(nullptr),
       actionDockWidgetToolbox(nullptr),

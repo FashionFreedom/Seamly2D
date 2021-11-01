@@ -103,14 +103,12 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
 
     InitArrow(ui);
 
-    connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogNormal::FXLength);
-    connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogNormal::NamePointChanged);
-    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &DialogNormal::FormulaTextChanged);
-    connect(ui->pushButtonGrowLength, &QPushButton::clicked, this, &DialogNormal::DeployFormulaTextEdit);
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogNormal::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogNormal::PointNameChanged);
+    connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogNormal::FXLength);
+    connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogNormal::NamePointChanged);
+    connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged,   this, &DialogNormal::FormulaTextChanged);
+    connect(ui->pushButtonGrowLength, &QPushButton::clicked,          this, &DialogNormal::DeployFormulaTextEdit);
+    connect(ui->comboBoxFirstPoint,   &QComboBox::currentTextChanged, this, &DialogNormal::PointNameChanged);
+    connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogNormal::PointNameChanged);
 
     vis = new VisToolNormal(data);
 }

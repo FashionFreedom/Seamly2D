@@ -86,10 +86,8 @@ DialogPointOfIntersectionCurves::DialogPointOfIntersectionCurves(const VContaine
     FillComboBoxHCrossCurvesPoint(ui->comboBoxHCorrection);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfIntersectionCurves::NamePointChanged);
-    connect(ui->comboBoxCurve1, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfIntersectionCurves::CurveChanged);
-    connect(ui->comboBoxCurve2, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogPointOfIntersectionCurves::CurveChanged);
+    connect(ui->comboBoxCurve1, &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionCurves::CurveChanged);
+    connect(ui->comboBoxCurve2, &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionCurves::CurveChanged);
 
     vis = new VisToolPointOfIntersectionCurves(data);
 }

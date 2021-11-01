@@ -204,7 +204,7 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
     });
-    connect(doc, &VPattern::SetCurrentPP, this, &MainWindow::GlobalChangePP);
+    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
     qApp->setCurrentDocument(doc);
 
     InitDocksContain();
@@ -761,7 +761,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
         doc->LiteParseTree(Document::LiteParse);
         if (dialogHistory)
         {
-            dialogHistory->UpdateHistory();
+            dialogHistory->updateHistory();
         }
     }
 }
@@ -2075,8 +2075,7 @@ void MainWindow::initStatusToolBar()
         // set default height
         SetDefaultHeight();
 
-        connect(gradationHeights.data(),
-                static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+        connect(gradationHeights.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
                 this, &MainWindow::ChangedHeight);
 
         gradationSizesLabel = new QLabel(tr("Size:"), this);
@@ -2085,8 +2084,7 @@ void MainWindow::initStatusToolBar()
         // set default size
         SetDefaultSize();
 
-        connect(gradationSizes.data(),
-                static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+        connect(gradationSizes.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
                 this, &MainWindow::ChangedSize);
 
         ui->status_ToolBar->addSeparator();
@@ -2178,9 +2176,9 @@ void MainWindow::initPointNameToolBar()
     }
     fontSizeComboBox->setCurrentIndex(index);
 
-    connect(fontSizeComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+    connect(fontSizeComboBox, &QComboBox::currentTextChanged, this, [this](QString text)
             {
-                qApp->Seamly2DSettings()->setPointNameSize(fontSizeComboBox->currentText().toInt());
+                qApp->Seamly2DSettings()->setPointNameSize(text.toInt());
                 upDateScenes();
             });
     fontSizeComboBox->setEnabled(true);
@@ -2200,8 +2198,9 @@ void MainWindow::initDraftToolBar()
     ui->draft_ToolBar->addWidget(comboBoxDraws);
     comboBoxDraws->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     comboBoxDraws->setEnabled(false);
+
     connect(comboBoxDraws,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, [this](int index){ChangePP(index);});
+            this, [this](int index){changeDraftBlock(index);});
 
     connect(ui->renameDraft_Action, &QAction::triggered, this, [this]()
     {
@@ -3892,7 +3891,7 @@ void MainWindow::FullParseFile()
     comboBoxDraws->blockSignals(false);
     ui->patternPreferences_Action->setEnabled(true);
 
-    GlobalChangePP(patternPiece);
+    GlobalchangeDraftBlock(patternPiece);
 
     setEnableTools(comboBoxDraws->count() > 0);
     patternPiecesWidget->UpdateList();
@@ -3902,18 +3901,18 @@ void MainWindow::FullParseFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::GlobalChangePP(const QString &patternPiece)
+void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
 {
     const qint32 index = comboBoxDraws->findText(patternPiece);
     try
     {
         if ( index != -1 )
         { // -1 for not found
-            ChangePP(index, false);
+            changeDraftBlock(index, false);
         }
         else
         {
-            ChangePP(0, false);
+            changeDraftBlock(0, false);
         }
     }
     catch (VExceptionBadId &e)
@@ -5548,7 +5547,7 @@ void MainWindow::CreateActions()
         {
             dialogHistory = new DialogHistory(pattern, doc, this);
             dialogHistory->setWindowFlags(Qt::Window);
-            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::UpdateHistory);
+            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::updateHistory);
             connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
@@ -6286,7 +6285,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ChangePP(int index, bool zoomBestFit)
+void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
 {
     if (index != -1)
     {

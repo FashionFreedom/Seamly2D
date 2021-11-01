@@ -87,10 +87,8 @@ DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *p
 
     number = 0;
 
-    connect(ui->comboBoxFirstPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogLine::PointNameChanged);
-    connect(ui->comboBoxSecondPoint, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogLine::PointNameChanged);
+    connect(ui->comboBoxFirstPoint,  &QComboBox::currentTextChanged, this, &DialogLine::PointNameChanged);
+    connect(ui->comboBoxSecondPoint, &QComboBox::currentTextChanged, this, &DialogLine::PointNameChanged);
 
     vis = new VisToolLine(data);
 }
