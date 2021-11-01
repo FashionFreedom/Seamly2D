@@ -90,7 +90,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: './*.AppImage*'
+          asset_path: ./seamly2d-x86_64-appimage.zip
           asset_name: seamly2d-x86_64-appimage.zip
           asset_content_type: application/octet-stream
 
