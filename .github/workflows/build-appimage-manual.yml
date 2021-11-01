@@ -71,9 +71,24 @@ jobs:
         with:
           name: Seamly2D-x86_64.AppImage
           path: './*.AppImage*'
-          
+
+      - name: Path lister
+        id: pl
+        uses: Rishabh510/Path-lister-action@master
+        with:
+          path: "./"
+          type: ".AppImage"
+
+      - name: Output results
+        run: |
+          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
+          for i in ${{ steps.pl.outputs.paths }}; do
+          echo $i
+          done
+
       - name: upload Seamly2D-x86_64.AppImage
         run: |
+          echo "$env.UPLOAD_URL"
           echo "$GITHUB_CONTEXT"
       - uses: actions/upload-release-asset@v1.0.2
         env:
