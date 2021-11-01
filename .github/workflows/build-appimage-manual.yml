@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build continous linux - manual'
+        description: 'Build appimage - manual'
 
 jobs:
   linux:
@@ -31,5 +31,5 @@ jobs:
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
       - uses: actions/upload-artifact@v2.2.4
         with:
-          name: Seamly2D-continuous-x86_64.AppImage
+          name: Seamly2D-x86_64.AppImage
           path: './*.AppImage*'
