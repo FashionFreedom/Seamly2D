@@ -14,11 +14,22 @@ env:
   UPLOAD_URL: ${{ github.event.release.upload_url }} 
   QT_SELECT: 5
   QT_VERSION: '5.15.3' # quotes required or YAML parser will interpret as float
- 
+
 jobs:
   linux:
     runs-on: ubuntu-20.04  
-    steps:   
+    outputs:
+      version: ${{ steps.step_version.outputs.version }}
+      upload_url: ${{ steps.step_upload_url.outputs.upload_url }}
+
+        
+    steps:
+      - id: step_version
+        run: echo "::set-output name=version::${{ steps.package_version.outputs.version }}"
+        
+      - id: step_upload_url 
+        run: echo "::set-output name=upload_url::${{ steps.create_release.outputs.upload_url }}"
+      
       - uses: actions/checkout@v2.3.5
       
       - name: Install Qt5
@@ -46,7 +57,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ env.UPLOAD_URL }}
+          upload_url: ${{ needs.Make_GitHub_Release.outputs.upload_url }}
           asset_path: ./Seamly2D-x86_64.AppImage
           asset_name: Seamly2D-x86_64.AppImage
           asset_content_type: application/octet-stream
+
