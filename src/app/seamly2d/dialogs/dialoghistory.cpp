@@ -610,6 +610,6 @@ void DialogHistory::findText(const QString &text)
 
     for (int i = 0; i < items.count(); ++i)
     {
-        items.at(i)->setBackground(Qt::red);
+        items.at(i)->setBackground(QColor("skyblue"));
     }
 }

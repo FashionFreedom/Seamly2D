@@ -78,7 +78,7 @@ public:
     static VToolPointOfIntersection *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                             VAbstractPattern *doc, VContainer *data);
     static VToolPointOfIntersection *Create(const quint32 _id, const QString &pointName, const quint32 &firstPointId,
-                                            const quint32 &secondPointId, qreal mx, qreal my, bool showPointName,
+                                            const quint32 &secondPointId, qreal mx, qreal my, 
                                             VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                             const Document &parse, const Source &typeCreation);
 
