@@ -46,7 +46,8 @@ jobs:
     runs-on: ubuntu-20.04 
     needs: create-release
     env:
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"      
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"  
+      GITHUB_CONTEXT: ${{ toJSON(github) }}
     steps:  
       - uses: actions/checkout@v2.3.5 
            
@@ -65,7 +66,7 @@ jobs:
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
-          ls ./*.AppImage*
+          echo "$GITHUB_CONTEXT"
       - uses: actions/upload-artifact@v2.2.4
         with:
           name: Seamly2D-x86_64.AppImage
@@ -73,7 +74,7 @@ jobs:
           
       - name: upload Seamly2D-x86_64.AppImage
         run: |
-          ls -R | grep *.AppImage
+          echo "$GITHUB_CONTEXT"
       - uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
