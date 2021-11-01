@@ -10,6 +10,11 @@ on:
       tags:
         description: 'Build appimage - manual'
 
+env:
+  UPLOAD_URL: ${{ github.event.release.upload_url }} 
+  QT_SELECT: 5
+  QT_VERSION: '5.15.3' # quotes required or YAML parser will interpret as float
+ 
 jobs:
   linux:
     runs-on: ubuntu-20.04  
