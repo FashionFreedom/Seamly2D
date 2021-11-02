@@ -64,6 +64,7 @@
 #include "../xml/vpattern.h"
 #include "../vmisc/diagnostic.h"
 #include <QDebug>
+#include <QCloseEvent>
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -84,19 +85,23 @@ DialogHistory::DialogHistory(VContainer *data, VPattern *doc, QWidget *parent)
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
 
+    ui->find_LineEdit->installEventFilter(this);
+
     qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
     connect(bOk, &QPushButton::clicked, this, &DialogHistory::DialogAccepted);
     FillTable();
     InitialTable();
-    connect(ui->tableWidget, &QTableWidget::cellClicked, this, &DialogHistory::cellClicked);
-    connect(this, &DialogHistory::ShowHistoryTool, doc, [doc](quint32 id, bool enable)
+    connect(ui->tableWidget,   &QTableWidget::cellClicked,      this, &DialogHistory::cellClicked);
+    connect(doc,               &VPattern::ChangedCursor,        this, &DialogHistory::ChangedCursor);
+    connect(doc,               &VPattern::patternChanged,       this, &DialogHistory::updateHistory);
+    connect(ui->find_LineEdit, &QLineEdit::textEdited,          this, &DialogHistory::findText);
+    connect(this,              &DialogHistory::ShowHistoryTool, doc,  [doc](quint32 id, bool enable)
     {
         emit doc->ShowTool(id, enable);
     });
-    connect(doc, &VPattern::ChangedCursor, this, &DialogHistory::ChangedCursor);
-    connect(doc, &VPattern::patternChanged, this, &DialogHistory::UpdateHistory);
+
     ShowPoint();
 }
 
@@ -175,9 +180,9 @@ void DialogHistory::ChangedCursor(quint32 id)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief UpdateHistory update history table
+ * @brief updateHistory update history table
  */
-void DialogHistory::UpdateHistory()
+void DialogHistory::updateHistory()
 {
     FillTable();
     InitialTable();
@@ -529,10 +534,40 @@ void DialogHistory::changeEvent(QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool DialogHistory::eventFilter(QObject *object, QEvent *event)
+{
+    if (QLineEdit *textEdit = qobject_cast<QLineEdit *>(object))
+    {
+        if (event->type() == QEvent::KeyPress)
+        {
+            QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
+            if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
+            {
+                if (qApp->Settings()->GetOsSeparator())
+                {
+                    textEdit->insert(QLocale().decimalPoint());
+                }
+                else
+                {
+                    textEdit->insert(QLocale::c().decimalPoint());
+                }
+                return true;
+            }
+        }
+    }
+    else
+    {
+        // pass the event on to the parent class
+        return DialogTool::eventFilter(object, event);
+    }
+    return false;// pass the event to the widget
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void DialogHistory::RetranslateUi()
 {
     qint32 currentRow = cursorRow;
-    UpdateHistory();
+    updateHistory();
 
     QTableWidgetItem *item = ui->tableWidget->item(cursorRow, 0);
     SCASSERT(item != nullptr)
@@ -561,4 +596,20 @@ int DialogHistory::CursorRow() const
         }
     }
     return ui->tableWidget->rowCount()-1;
+}
+
+void DialogHistory::findText(const QString &text)
+{
+    updateHistory();
+    if (text.isEmpty())
+    {
+        return;
+    }
+
+    QList<QTableWidgetItem *> items = ui->tableWidget->findItems(text, Qt::MatchContains);
+
+    for (int i = 0; i < items.count(); ++i)
+    {
+        items.at(i)->setBackground(QColor("skyblue"));
+    }
 }

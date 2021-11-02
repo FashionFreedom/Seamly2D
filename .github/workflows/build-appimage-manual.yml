@@ -1,0 +1,98 @@
+name: Build appimage - manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Build appimage - manual'
+
+env:
+  QT_SELECT: 5
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float  
+  run: |
+    echo "TAG_NAME=Test-weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
+    echo "RELEASE_NAME=Test weekly `date +"%F%H%M"`" >> $GITHUB_ENV
+    
+# there is no way to create a shared environment variable between jobs
+# so we'll use the needs.JOB_NAME.outputs functionality to read
+# the upload_url output exposed by the create-release action
+
+# The tag name is Test-YYmmdd-HHMM to enable multiple tests per day
+jobs:
+
+  job1-create-release:
+    name: Create the Release
+    runs-on: ubuntu-20.04
+    outputs: 
+      upload_url: ${{ steps.create_release.outputs.upload_url }} 
+    steps:
+      - name: create release and tag
+        uses: actions/create-release@v1         
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
+          draft: true
+          prerelease: false
+          body: This is a manual test of the build appimage workflow                
+          
+  job2-linux:
+    name: Build Linux AppImage
+    needs: job1-create-release
+    runs-on: ubuntu-20.04 
+    steps:  
+      - name: checkout code
+        uses: actions/checkout@v2.3.5  
+      
+      - name: install qt5
+        run: |
+          # register kde neon repository
+          echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
+          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
+          # install build dependencies
+          sudo apt-get update
+          sudo apt-get install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt-get install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          
+      - name: build appimage
+        run: |
+          sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
+          sudo chmod +x /usr/local/bin/appimage-builder
+          appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
+      - uses: actions/upload-artifact@v2.2.4
+        with:
+          name: Seamly2D-continuous-x86_64.AppImage
+          path: './Seamly2D*.AppImage'
+
+      - name: find appimage
+        id: find-appimage
+        uses: Rishabh510/Path-lister-action@master
+        with:
+          path: '.'
+          type: '.AppImage'
+
+      - name: output find-appimage results
+        run: |
+          echo "Found ${{ steps.find-appimage.outputs.path_count }} file(s) with this extension:"
+          for i in ${{ steps.find-appimage.outputs.paths }}; do
+          echo $i
+          done
+
+      - name: upload appimage release
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.job1.outputs.upload_url }}
+          asset_path: './Seamly2D*.AppImage'
+          asset_name: Seamly2D-x86_64.AppImage
+          asset_content_type: application/octet-stream
+          
+          
+          
+    
