@@ -12,8 +12,11 @@ on:
 
 env:
   QT_SELECT: 5
-  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
-
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float  
+  run: |
+    echo "TAG_NAME=Test-weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
+    echo "RELEASE_NAME=Test weekly `date +"%F%H%M"`" >> $GITHUB_ENV
+    
 # there is no way to create a shared environment variable between jobs
 # so we'll use the needs.JOB_NAME.outputs functionality to read
 # the upload_url output exposed by the create-release action
@@ -22,19 +25,13 @@ env:
 jobs:
 
   job1-create-release:
-    name: Create the Release information
+    name: Create the Release
     runs-on: ubuntu-20.04
     outputs: 
       upload_url: ${{ steps.create_release.outputs.upload_url }} 
     steps:
-      - name: create release name and tag
-        id: create_release
-        run: |
-          echo "TAG_NAME=Test-weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Test weekly `date +"%F%H%M"`" >> $GITHUB_ENV
-          draft: true
-          prerelease: false
-        uses: actions/create-release@v1
+      - name: create release and tag
+        uses: actions/create-release@v1         
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
