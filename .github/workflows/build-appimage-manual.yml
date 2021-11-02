@@ -46,7 +46,7 @@ jobs:
     runs-on: ubuntu-20.04
     needs: job-create-release
     env:
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+      UPLOAD_URL: "${{ needs.job-create-release.outputs.upload_url }}"
 
     steps:
       - name: checkout code
