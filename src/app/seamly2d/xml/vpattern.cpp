@@ -1747,7 +1747,7 @@ void VPattern::ParseToolPointOfIntersection(VMainGraphicsScene *scene, const QDo
         const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
 
-        VToolPointOfIntersection::Create(id, name, firstPointId, secondPointId, mx, my, showPointName, scene, this, data,
+        VToolPointOfIntersection::Create(id, name, firstPointId, secondPointId, mx, my, scene, this, data,
                                          parse, Source::FromFile);
     }
     catch (const VExceptionBadId &e)
@@ -2009,7 +2009,7 @@ void VPattern::ParseToolPointOfIntersectionArcs(VMainGraphicsScene *scene, const
                                                                                   AttrCrossPoint,
                                                                                   "1"));
 
-        VToolPointOfIntersectionArcs::Create(id, name, firstArcId, secondArcId, crossPoint, mx, my, showPointName, scene, this,
+        VToolPointOfIntersectionArcs::Create(id, name, firstArcId, secondArcId, crossPoint, mx, my, scene, this,
                                              data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &e)

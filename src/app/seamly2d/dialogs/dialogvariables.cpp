@@ -145,10 +145,8 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
 
     connect(ui->refresh_PushButton, &QPushButton::clicked, this, &DialogVariables::refreshPattern);
 
-    connect(ui->variables_TableWidget->horizontalHeader(), &QHeaderView::sectionClicked, [this](int /*logicalIndex*/)
+    connect(ui->variables_TableWidget->horizontalHeader(), &QHeaderView::sectionClicked, [this]()
     {
-        Q_UNUSED(logicalIndex);
-
         isSorted = true;
         setMoveControls();
     });

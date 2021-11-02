@@ -761,7 +761,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
         doc->LiteParseTree(Document::LiteParse);
         if (dialogHistory)
         {
-            dialogHistory->UpdateHistory();
+            dialogHistory->updateHistory();
         }
     }
 }
@@ -2075,7 +2075,8 @@ void MainWindow::initStatusToolBar()
         // set default height
         SetDefaultHeight();
 
-        connect(gradationHeights.data(), &QComboBox::currentTextChanged, this, &MainWindow::ChangedHeight);
+        connect(gradationHeights.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &MainWindow::ChangedHeight);
 
         gradationSizesLabel = new QLabel(tr("Size:"), this);
         gradationSizes = SetGradationList(gradationSizesLabel, listSizes);
@@ -2083,7 +2084,8 @@ void MainWindow::initStatusToolBar()
         // set default size
         SetDefaultSize();
 
-        connect(gradationSizes.data(), &QComboBox::currentTextChanged, this, &MainWindow::ChangedSize);
+        connect(gradationSizes.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+                this, &MainWindow::ChangedSize);
 
         ui->status_ToolBar->addSeparator();
     }
@@ -5545,7 +5547,7 @@ void MainWindow::CreateActions()
         {
             dialogHistory = new DialogHistory(pattern, doc, this);
             dialogHistory->setWindowFlags(Qt::Window);
-            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::UpdateHistory);
+            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::updateHistory);
             connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
