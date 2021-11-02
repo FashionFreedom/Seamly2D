@@ -70,7 +70,7 @@ jobs:
           appimage-builder --recipe dist/appimage-builder-recipe.yml --skip-test
       - uses: actions/upload-artifact@v2.2.4
         with:
-          name: seamly2d-x86_64-appimage.zip
+          name: Seamly2D.AppImage
           path: './*AppImage*'
 
       - name: upload Seamly2D.AppImage
@@ -79,9 +79,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./seamly2d-x86_64-appimage.zip
-          asset_name: seamly2d-x86_64-appimage.zip
-          asset_content_type: application/zip
+          asset_path: ./Seamly2D.AppImage
+          asset_name: Seamly2D.AppImage
+          asset_content_type: application/octet-stream
           
           
     
