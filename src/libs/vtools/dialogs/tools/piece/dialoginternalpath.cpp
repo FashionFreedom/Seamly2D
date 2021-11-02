@@ -992,7 +992,7 @@ void DialogInternalPath::SetType(PiecePathType type)
 //---------------------------------------------------------------------------------------------------------------------
 Qt::PenStyle DialogInternalPath::GetPenType() const
 {
-    return LineStyleToPenStyle(GetComboBoxCurrentData(ui->penType_ComboBox, LineTypeSolidLine));
+    return lineTypeToPenStyle(GetComboBoxCurrentData(ui->penType_ComboBox, LineTypeSolidLine));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

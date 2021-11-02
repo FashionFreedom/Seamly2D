@@ -274,7 +274,7 @@ void VToolCubicBezier::SetVisualization()
         visual->setObject2Id(spl->GetP2().id());
         visual->setObject3Id(spl->GetP3().id());
         visual->setObject4Id(spl->GetP4().id());
-        visual->setLineStyle(LineStyleToPenStyle(spl->GetPenStyle()));
+        visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }
