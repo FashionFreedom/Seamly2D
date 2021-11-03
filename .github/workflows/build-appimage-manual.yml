@@ -26,8 +26,8 @@ jobs:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=Test-weekly-`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Test weekly `date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=Test-manual-`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Test manual `date +"%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -71,14 +71,15 @@ jobs:
           sudo chmod +x /usr/local/bin/appimage-builder
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
 
-      - name: upload seamly2d-x86_64.tar.gz artifact
+      - name: copy to final file tag_name
         run: |
-          mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
-        # Seamly2D-continuous-x86_64.AppImage
-        # uploads ./Seamly2D-x86_64.AppImagez as artifact to Github Workflows
+          sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
+
+      - name: upload seamly2d-x86_64.tar.gz artifact
+        # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: ./Seamly2D-x86_64.AppImage
+          name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
 
       - name: find file path
