@@ -70,12 +70,10 @@ jobs:
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
+          mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 
       - name: upload seamly2d-x86_64.tar.gz artifact
-        run: |
-          mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
-        # Seamly2D-continuous-x86_64.AppImage
-        # uploads ./Seamly2D-x86_64.AppImagez as artifact to Github Workflows
+        # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
         uses: actions/upload-artifact@v2.2.4
         with:
           name: ./Seamly2D-x86_64.AppImage
