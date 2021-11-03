@@ -84,7 +84,7 @@ jobs:
         uses: Rishabh510/Path-lister-action@master
         with:
           path: "."
-          type: ".tar.gz"
+          type: ".gz"
 
       - name: show file path
         run: |
