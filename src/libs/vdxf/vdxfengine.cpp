@@ -657,16 +657,16 @@ bool VDxfEngine::ExportToAAMA(const QVector<VLayoutPiece> &details)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VDxfEngine::ExportAAMAOutline(dx_ifaceBlock *detailBlock, const VLayoutPiece &detail)
+void VDxfEngine::ExportAAMAOutline(dx_ifaceBlock *detailBlock, const VLayoutPiece &piece)
 {
     QVector<QPointF> outline;
-    if (detail.IsSeamAllowance() && not detail.IsSeamAllowanceBuiltIn())
+    if (piece.IsSeamAllowance() && not piece.IsSeamAllowanceBuiltIn())
     {
-        outline = detail.GetSeamAllowancePoints();
+        outline = piece.GetSeamAllowancePoints();
     }
     else
     {
-        outline = detail.GetContourPoints();
+        outline = piece.getContourPoints();
     }
 
     DRW_Entity *e = AAMAPolygon(outline, "1", true);
@@ -681,7 +681,7 @@ void VDxfEngine::ExportAAMADraw(dx_ifaceBlock *detailBlock, const VLayoutPiece &
 {
     if (not detail.IsHideMainPath())
     {
-        QVector<QPointF> poly = detail.GetContourPoints();
+        QVector<QPointF> poly = detail.getContourPoints();
         DRW_Entity *e = AAMAPolygon(poly, "8", true);
         if (e)
         {
@@ -734,7 +734,7 @@ void VDxfEngine::ExportAAMANotch(dx_ifaceBlock *detailBlock, const VLayoutPiece 
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::ExportAAMAGrainline(dx_ifaceBlock *detailBlock, const VLayoutPiece &detail)
 {
-    const QVector<QPointF> grainline = detail.GetGrainline();
+    const QVector<QPointF> grainline = detail.getGrainline();
     if (grainline.count() > 1)
     {
         DRW_Entity *e = AAMALine(QLineF(grainline.first(), grainline.last()), "7");

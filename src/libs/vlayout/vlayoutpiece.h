@@ -95,22 +95,22 @@ public:
 
     static VLayoutPiece       Create(const VPiece &piece, const VContainer *pattern);
 
-    QVector<QPointF>          GetContourPoints() const;
+    QVector<QPointF>          getContourPoints() const;
     void                      SetCountourPoints(const QVector<QPointF> &points, bool hideMainPath = false);
 
     QVector<QPointF>          GetSeamAllowancePoints() const;
-    void                      SetSeamAllowancePoints(const QVector<QPointF> &points, bool seamAllowance = true,
+    void                      setSeamAllowancePoints(const QVector<QPointF> &points, bool seamAllowance = true,
                                                      bool seamAllowanceBuiltIn = false);
 
-    QVector<QPointF>          GetLayoutAllowancePoints() const;
+    QVector<QPointF>          getLayoutAllowancePoints() const;
     void                      SetLayoutAllowancePoints();
 
     QVector<QLineF>           getNotches() const;
     void                      setNotches(const QVector<QLineF> &notches);
 
     QVector<QVector<QPointF>> InternalPathsForCut(bool cut) const;
-    QVector<VLayoutPiecePath> GetInternalPaths() const;
-    void                      SetInternalPaths(const QVector<VLayoutPiecePath> &internalPaths);
+    QVector<VLayoutPiecePath> getInternalPaths() const;
+    void                      setInternalPaths(const QVector<VLayoutPiecePath> &internalPaths);
 
     QPointF                   GetPieceTextPosition() const;
     QStringList               GetPieceText() const;
@@ -122,8 +122,8 @@ public:
     void                      SetPatternInfo(VAbstractPattern *pDoc, const VPatternLabelData& geom,
                                              const QFont& font, const VContainer *pattern);
 
-    void                      SetGrainline(const VGrainlineData& geom, const VContainer *pattern);
-    QVector<QPointF>          GetGrainline() const;
+    void                      setGrainline(const VGrainlineData& geom, const VContainer *pattern);
+    QVector<QPointF>          getGrainline() const;
 
     QTransform                getTransform() const;
     void                      setTransform(const QTransform &transform);
@@ -154,8 +154,9 @@ public:
     bool                      isNull() const;
     qint64                    Square() const;
 
-    QPainterPath              mainPath() const;
-    QPainterPath              allowancePath() const;
+    QPainterPath              createMainPath() const;
+    QPainterPath              createAllowancePath() const;
+    QPainterPath              createNotchesPath() const;
 
     QPainterPath              LayoutAllowancePath() const;
 
@@ -166,14 +167,15 @@ private:
 
     QVector<QPointF>                     DetailPath() const;
 
-    Q_REQUIRED_RESULT QGraphicsPathItem *GetMainItem() const;
-    Q_REQUIRED_RESULT QGraphicsPathItem *getAllowanceItem(QGraphicsItem *parent) const;
-    Q_REQUIRED_RESULT QGraphicsPathItem *GetMainPathItem() const;
+    Q_REQUIRED_RESULT QGraphicsPathItem *createMainItem() const;
+    void                                 createAllowanceItem(QGraphicsItem *parent) const;
+    void                                 createNotchesItem(QGraphicsItem *parent) const;
+    Q_REQUIRED_RESULT QGraphicsPathItem *getMainPathItem() const;
 
-    void                                 CreateInternalPathItem(int i, QGraphicsItem *parent) const;
-    void                                 CreateLabelStrings(QGraphicsItem *parent, const QVector<QPointF> &labelShape,
+    void                                 createInternalPathItem(int i, QGraphicsItem *parent) const;
+    void                                 createLabelItem(QGraphicsItem *parent, const QVector<QPointF> &labelShape,
                                                             const VTextManager &tm, bool textAsPaths) const;
-    void                                 CreateGrainlineItem(QGraphicsItem *parent) const;
+    void                                 createGrainlineItem(QGraphicsItem *parent) const;
 
     template <class T>
     QVector<T>                           Map(const QVector<T> &points) const;

@@ -111,11 +111,19 @@ void PreferencesPatternPage::Apply()
     settings->SetUndoCount(ui->undoCount_SpinBox->value());
 
     settings->SetDefaultSeamAllowance(ui->defaultSeamAllowance_DoubleSpinBox->value());
+    settings->setDefaultSeamColor(ui->defaultSeamColor_ComboBox->currentData().toString());
+    settings->setDefaultSeamLinetype(ui->defaultSeamLinetype_ComboBox->currentData().toString());
+    settings->setDefaultSeamLineweight(ui->defaultSeamLineweight_ComboBox->currentData().toReal());
+    settings->setDefaultCutColor(ui->defaultCutColor_ComboBox->currentData().toString());
+    settings->setDefaultCutLinetype(ui->defaultCutLinetype_ComboBox->currentData().toString());
+    settings->setDefaultCutLineweight(ui->defaultCutLineweight_ComboBox->currentData().toReal());
+
 
     settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
     settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
 
     settings->setDefaultNotchType(ui->defaultNotchType_ComboBox->currentData().toString());
+    settings->setDefaultNotchColor(ui->defaultNotchColor_ComboBox->currentData().toString());
     settings->setDefaultNotchLength(ui->defaultNotchLength_DoubleSpinBox->value());
     settings->setDefaultNotchWidth(ui->defaultNotchWidth_DoubleSpinBox->value());
     if (settings->showSecondNotch() != ui->showSecondNotch_CheckBox->isChecked())
@@ -136,6 +144,42 @@ void PreferencesPatternPage::initDefaultSeamAllowance()
 {
     ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
     ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+
+    int index = ui->defaultSeamLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamLinetype());
+    if (index != -1)
+    {
+        ui->defaultSeamLinetype_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultSeamLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamLineweight());
+    if (index != -1)
+    {
+        ui->defaultSeamLineweight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultSeamColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamColor());
+    if (index != -1)
+    {
+        ui->defaultSeamColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultCutLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutLinetype());
+    if (index != -1)
+    {
+        ui->defaultCutLinetype_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultCutLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutLineweight());
+    if (index != -1)
+    {
+        ui->defaultCutLineweight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultCutColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutColor());
+    if (index != -1)
+    {
+        ui->defaultCutColor_ComboBox->setCurrentIndex(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -188,6 +232,12 @@ void PreferencesPatternPage::initNotches()
     if (index != -1)
     {
         ui->defaultNotchType_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultNotchColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultNotchColor());
+    if (index != -1)
+    {
+        ui->defaultNotchColor_ComboBox->setCurrentIndex(index);
     }
     ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
     ui->defaultNotchLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchLength());

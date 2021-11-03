@@ -224,6 +224,9 @@ public:
     QString              getDefaultNotchType() const;
     void                 setDefaultNotchType(const QString &value);
 
+    QString              getDefaultNotchColor() const;
+    void                 setDefaultNotchColor(const QString &value);
+
     void                 SetCSVWithHeader(bool withHeader);
     bool                 GetCSVWithHeader() const;
     bool                 GetDefCSVWithHeader() const;
@@ -238,6 +241,24 @@ public:
 
     void                 SetDefaultSeamAllowance(double value);
     double               GetDefaultSeamAllowance();
+
+    QString              getDefaultSeamColor() const;
+    void                 setDefaultSeamColor(const QString &value);
+
+    QString              getDefaultSeamLinetype() const;
+    void                 setDefaultSeamLinetype(const QString &value);
+
+    qreal                getDefaultSeamLineweight() const;
+    void                 setDefaultSeamLineweight(const qreal &value);
+
+    QString              getDefaultCutColor() const;
+    void                 setDefaultCutColor(const QString &value);
+
+    QString              getDefaultCutLinetype() const;
+    void                 setDefaultCutLinetype(const QString &value);
+
+    qreal                getDefaultCutLineweight() const;
+    void                 setDefaultCutLineweight(const qreal &value);
 
     QFont                getLabelFont() const;
     void                 setLabelFont(const QFont &f);

@@ -122,9 +122,17 @@ const QString settingPatternHideMainPath                 = QStringLiteral("patte
 const QString settingDefaultNotchLength                  = QStringLiteral("pattern/defaultNotchLength");
 const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
 const QString settingDefaultNotchType                    = QStringLiteral("pattern/defaultNotchType");
+const QString settingDefaultNotchColor                   = QStringLiteral("pattern/defaultNotchColor");
 const QString settingDoubleNotch                         = QStringLiteral("pattern/doubleNotch");
 
 const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
+const QString settingDefaultSeamColor                    = QStringLiteral("pattern/defaultSeamColor");
+const QString settingDefaultSeamLinetype                 = QStringLiteral("pattern/defaultSeamLinetype");
+const QString settingDefaultSeamLineweight               = QStringLiteral("pattern/defaultSeamLineweight");
+const QString settingDefaultCutColor                     = QStringLiteral("pattern/defaultCutColor");
+const QString settingDefaultCutLinetype                  = QStringLiteral("pattern/defaultCutLinetype");
+const QString settingDefaultCutLineweight                = QStringLiteral("pattern/defaultCutLineweight");
+
 const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
 const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
 const QString settingPatternPointNameFont                = QStringLiteral("pattern/pointNameFont");
@@ -964,6 +972,18 @@ void VCommonSettings::setDefaultNotchType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultNotchColor() const
+{
+   return value(settingDefaultNotchColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchColor(const QString &value)
+{
+    setValue(settingDefaultNotchColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetCSVWithHeader(bool withHeader)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
@@ -1099,6 +1119,78 @@ double VCommonSettings::GetDefaultSeamAllowance()
     }
 
     return val;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultSeamColor() const
+{
+   return value(settingDefaultSeamColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamColor(const QString &value)
+{
+    setValue(settingDefaultSeamColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultSeamLinetype() const
+{
+   return value(settingDefaultSeamLinetype, "solid").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamLinetype(const QString &value)
+{
+    setValue(settingDefaultSeamLinetype, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultSeamLineweight() const
+{
+   return value(settingDefaultSeamLineweight, 0.18).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamLineweight(const qreal &value)
+{
+    setValue(settingDefaultSeamLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultCutColor() const
+{
+   return value(settingDefaultCutColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutColor(const QString &value)
+{
+    setValue(settingDefaultCutColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultCutLinetype() const
+{
+   return value(settingDefaultCutLinetype, "solid").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutLinetype(const QString &value)
+{
+    setValue(settingDefaultCutLinetype, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultCutLineweight() const
+{
+   return value(settingDefaultCutLineweight, 0.18).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutLineweight(const qreal &value)
+{
+    setValue(settingDefaultCutLineweight, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
