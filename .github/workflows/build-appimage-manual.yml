@@ -88,8 +88,9 @@ jobs:
 
       - name: show file path
         run: |
+          pwd
           echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.pl.outputs.paths }}; do
+          for i in ${{ steps.path-lister.outputs.paths }}; do
           echo $i
           done
 
