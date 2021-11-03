@@ -40,7 +40,9 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: This is a manual test of the automated weekly release function
+          body: Manual test of the automated weekly release function, creates pre-release
+          draft: false
+          prerelease: true
 
   linux:
     runs-on: ubuntu-20.04
@@ -52,16 +54,16 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2.3.5
         
-      - name: install qt5
+      - name: install kde and dependencies
         run: |
           # register kde neon repository
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
 
           # install build dependencies
-          sudo apt-get update
-          sudo apt-get install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
-          sudo apt-get install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          sudo apt update
+          sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
       - name: build appimage
         run: |
@@ -73,7 +75,22 @@ jobs:
           name: Seamly2D.AppImage
           path: './*AppImage*'
 
-      - name: upload Seamly2D.AppImage
+      - name: find appimage dir
+        id: path-lister
+        uses: Rishabh510/Path-lister-action@master
+        with:
+          path: "."
+          type: ".AppImage"
+
+      - name: show appimage dir
+        run: |
+          echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
+          for i in ${{ steps.path-lister.outputs.paths }}; do
+          echo $i
+          done
+
+
+      - name: upload Seappimage pre-release
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
