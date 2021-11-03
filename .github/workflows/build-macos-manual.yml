@@ -17,10 +17,10 @@ env:
 # The tag name is Test-macos-manual-YYmmdd-HHMM to enable multiple tests per day
 jobs:
 
-  create-release:
+  release-data:
     runs-on: ubuntu-20.04
     outputs:
-      upload_url: ${{ steps.create-release.outputs.upload_url }}
+      upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
     steps:
       - name: create name and tag
