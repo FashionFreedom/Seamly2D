@@ -39,7 +39,7 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Manual test of the automated weekly release function, creates pre-release
+          body: Manual test of macos build, creates pre-release
           draft: false
           prerelease: true
 
