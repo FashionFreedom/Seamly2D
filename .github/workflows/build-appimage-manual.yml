@@ -63,13 +63,13 @@ jobs:
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
-      - name: build appimage
+      - name: build Seamly2D appimage
         # uses parameters from appimage-build.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
         run: |
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
-          appimage-builder --recipe ./appimage-recipe.yml --skip-test
+          appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
 
       - name: upload seamly2d-x86_64.tar.gz artifact
         # Seamly2D-continuous-x86_64.AppImage
