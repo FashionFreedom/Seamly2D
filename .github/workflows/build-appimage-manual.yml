@@ -1,4 +1,4 @@
-name: Build appimage - manual
+name: Build linux appimage - manual
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build appimage - manual'
+        description: 'Build linux appimage - manual'
 
 env:
   QT_SELECT: 5
