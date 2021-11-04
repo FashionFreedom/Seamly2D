@@ -212,10 +212,6 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: copy to Seamly2D-installer.exe
-        run: |
-          sudo mv ./seamly2d-installer.exe ./Seamly2D-installer.exe
-
       - name: upload unsigned Seamly2D-installer.exe
         uses: actions/upload-release-asset@v1.0.2
         env:
