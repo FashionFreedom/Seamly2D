@@ -8,7 +8,7 @@
 #   because you can't test then until they're fully merged ..
 #   if the build fails immediately undo your work with a new PR & merge :D
 
-name: Build weekly release - manual
+name: Build manual weekly release
 
 on:
   workflow_dispatch:
@@ -86,7 +86,7 @@ jobs:
           sudo chmod +x /usr/local/bin/appimage-builder
           appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
 
-      - name: copy to final file tag_name
+      - name: copy to Seamly2D-x86_64.AppImage
         run: |
           sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 
@@ -120,7 +120,7 @@ jobs:
         with:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ./Seamly2D-x86_64.AppImage
-          asset_name: ./Seamly2D-x86_64.AppImage
+          asset_name: Seamly2D-x86_64.AppImage
           asset_content_type: application/octet-stream
 
   macos:
@@ -212,13 +212,17 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: upload unsigned seamly2d-installer.exe
+      - name: copy to Seamly2D-installer.exe
+        run: |
+          sudo mv ./seamly2d-installer.exe ./Seamly2D-installer.exe
+
+      - name: upload unsigned Seamly2D-installer.exe
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
 
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ../windows-build/seamly2d-installer.exe
-          asset_name: seamly2d-installer.exe
+          asset_path: ../windows-build/Seamly2D-installer.exe
+          asset_name: Seamly2D-installer.exe
           asset_content_type: application/octet-stream
