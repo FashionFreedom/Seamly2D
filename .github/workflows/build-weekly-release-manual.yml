@@ -167,7 +167,7 @@ jobs:
     runs-on: windows-latest
     needs: release-data
     env:
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+      UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
 
@@ -217,6 +217,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ../windows-build/seamly2d-installer.exe
           asset_name: seamly2d-installer.exe
