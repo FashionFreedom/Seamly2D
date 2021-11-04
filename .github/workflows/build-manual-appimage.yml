@@ -69,7 +69,7 @@ jobs:
         run: |
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
-          appimage-builder --recipe .github/workflows/appimage-recipe.yml --skip-test
+          appimage-builder --recipe dist/appimage-builder-recipe.yml --skip-test
 
       - name: copy to final file tag_name
         run: |
