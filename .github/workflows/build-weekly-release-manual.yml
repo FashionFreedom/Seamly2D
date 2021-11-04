@@ -140,9 +140,9 @@ jobs:
           version: ${{ env.QT_VERSION }}
 
       - name: make Seamly2D for macos
-      run: |
-        qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-        make
+        run: |
+          qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          make
 
       - name: build dmg packages
         run: |
@@ -151,7 +151,7 @@ jobs:
 
       - name: pack package files into .zip
         run: |
-        zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
+          zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
@@ -165,52 +165,52 @@ jobs:
 
   windows:
     runs-on: windows-latest
-      needs: release-data
-      env:
-        UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+    needs: release-data
+    env:
+      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
 
-      steps:
+    steps:
 
-        - name: checkout code
-          uses: actions/checkout@v2.3.5
+      - name: checkout code
+        uses: actions/checkout@v2.3.5
 
-        - name: install msvc
-          uses: ilammy/msvc-dev-cmd@v1.10.0
-          with:
-            version: ${{ env.QT_VERSION }}
-            # use SVC 2019 latest, 14.29.xxxx
-            toolset: '14.29'
+      - name: install msvc
+        uses: ilammy/msvc-dev-cmd@v1.10.0
+        with:
+          version: ${{ env.QT_VERSION }}
+          # use SVC 2019 latest, 14.29.xxxx
+          toolset: '14.29'
 
-        - name: install qt
-          uses: jurplel/install-qt-action@v2.14.0
-          with:
-            version: ${{ env.QT_VERSION }}
+      - name: install qt
+        uses: jurplel/install-qt-action@v2.14.0
+        with:
+          version: ${{ env.QT_VERSION }}
 
-        - name: make seamly2d.exe and seamlyme.exe
-          run: |
-            qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-            nmake
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          nmake
 
-        - name: create seamly2d-installer.exe
-          # seamly2d.exe, seamlyme.exe, VC_redist, OpenSSL dlls, and create + code sign installer
-          # uses parameters in seamly2d-installer.nsi to create the installer exe
-          run: |
-            mkdir ..\windows-build
-            Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
-            windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
-            windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
-            copy .\dist\seamly2d-installer.nsi ..\windows-build\
-            copy .\dist\win\VC_redist.x86.exe ..\windows-build\
-            copy .\dist\win\VC_redist.x64.exe ..\windows-build\
-            copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
-            copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
-            copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
-            copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
-            New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
-            Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
-            Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
-            cd ..\windows-build\
-            & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+      - name: create seamly2d-installer.exe
+        # seamly2d.exe, seamlyme.exe, VC_redist, OpenSSL dlls, and create + code sign installer
+        # uses parameters in seamly2d-installer.nsi to create the installer exe
+        run: |
+          mkdir ..\windows-build
+          Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
+          windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
+          windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
+          copy .\dist\seamly2d-installer.nsi ..\windows-build\
+          copy .\dist\win\VC_redist.x86.exe ..\windows-build\
+          copy .\dist\win\VC_redist.x64.exe ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
+          copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
+          New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
+          Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
+          Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: upload unsigned seamly2d-installer.exe
         uses: actions/upload-release-asset@v1.0.2
