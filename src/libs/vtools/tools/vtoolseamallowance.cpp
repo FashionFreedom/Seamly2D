@@ -810,12 +810,43 @@ void VToolSeamAllowance::SaveRotateGrainline(qreal dRot, const QPointF& ptPos)
  */
 void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QPen toolPen = pen();
-    toolPen.setWidthF(scaleWidth(widthHairLine, sceneScale(scene())));
+    QColor  color;
+    QString lineType;
+    qreal   lineWeight;
 
-    setPen(toolPen);
-    m_seamAllowance->setPen(toolPen);
-    m_notches->setPen(toolPen);
+    //set cutline pen
+    color      = QColor(qApp->Settings()->getDefaultCutColor());
+    lineType   = qApp->Settings()->getDefaultCutLinetype();
+    lineWeight = qApp->Settings()->getDefaultCutLineweight();
+    m_cutLine->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
+                            lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+    m_cutLine->setZValue(-10);
+
+    //set seamline, grainline, & labels pen
+    const VPiece piece = VAbstractTool::data.GetPiece(m_id);
+
+    if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn())
+    {
+        color      = QColor(qApp->Settings()->getDefaultSeamColor());
+        lineType   = qApp->Settings()->getDefaultSeamLinetype();
+        lineWeight = qApp->Settings()->getDefaultSeamLineweight();
+    }
+    else
+    {
+        color      = QColor(qApp->Settings()->getDefaultCutColor());
+        lineType   = qApp->Settings()->getDefaultCutLinetype();
+        lineWeight = qApp->Settings()->getDefaultCutLineweight();
+    }
+
+    this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
+                       lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+
+    this->setBrush(QBrush(QColor(Qt::white), Qt::SolidPattern));
+
+    //set notches pen
+    color = QColor(qApp->Settings()->getDefaultNotchColor());
+    m_notches->setPen(QPen(color, scaleWidth(lineWeight,
+                      sceneScale(scene())), Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 
     if ((m_dataLabel->IsIdle() == false
             || m_patternInfo->IsIdle() == false
@@ -829,13 +860,13 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
 //---------------------------------------------------------------------------------------------------------------------
 QRectF VToolSeamAllowance::boundingRect() const
 {
-    if (m_mainPathRect.isNull())
+    if (m_pieceRect.isNull())
     {
         return QGraphicsPathItem::boundingRect();
     }
     else
     {
-        return m_mainPathRect;
+        return m_pieceRect;
     }
 }
 
@@ -964,7 +995,7 @@ QVariant VToolSeamAllowance::itemChange(QGraphicsItem::GraphicsItemChange change
             VAbstractTool::data.UpdatePiece(m_id, piece);
 
             RefreshGeometry();
-            
+
             changeFinished = true;
         }
     }
@@ -1139,10 +1170,12 @@ VToolSeamAllowance::VToolSeamAllowance(VAbstractPattern *doc, VContainer *data, 
     : VInteractiveTool(doc, data, id)
     , QGraphicsPathItem(parent)
     , m_mainPath()
-    , m_mainPathRect()
+    , m_pieceRect()
+    , m_cutPath()
     , m_pieceScene(scene)
     , m_drawName(drawName)
-    , m_seamAllowance(new VNoBrushScalePathItem(this))
+    , m_seamLine(new VNoBrushScalePathItem(this))
+    , m_cutLine(new VNoBrushScalePathItem(this))
     , m_dataLabel(new VTextGraphicsItem(this))
     , m_patternInfo(new VTextGraphicsItem(this))
     , m_grainLine(new VGrainlineItem(this))
@@ -1214,6 +1247,7 @@ void VToolSeamAllowance::UpdateExcludeState()
 void VToolSeamAllowance::RefreshGeometry()
 {
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, false);
+    m_cutLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     QPainterPath path = piece.MainPathPath(this->getData());
@@ -1221,15 +1255,15 @@ void VToolSeamAllowance::RefreshGeometry()
     if (not piece.IsHideMainPath() || not piece.IsSeamAllowance() || piece.IsSeamAllowanceBuiltIn())
     {
         m_mainPath = QPainterPath();
-        m_mainPathRect = QRectF();
-        m_seamAllowance->setBrush(QBrush(Qt::Dense7Pattern));
+        m_pieceRect = QRectF();
+        m_cutLine->setBrush(QBrush(QColor(qApp->Settings()->getDefaultCutColor()), Qt::Dense7Pattern));
     }
     else
     {
-        m_seamAllowance->setBrush(QBrush(Qt::NoBrush)); // Disable if the main path was hidden
+        m_cutLine->setBrush(QBrush(Qt::NoBrush)); // Disable if the main path was hidden
         // need for returning a bounding rect when main path is not visible
         m_mainPath = path;
-        m_mainPathRect = m_mainPath.controlPointRect();
+        m_pieceRect = m_mainPath.controlPointRect();
         path = QPainterPath();
     }
 
@@ -1246,15 +1280,17 @@ void VToolSeamAllowance::RefreshGeometry()
 
     this->setPos(piece.GetMx(), piece.GetMy());
 
-    if (piece.IsSeamAllowance() && not piece.IsSeamAllowanceBuiltIn())
+    if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn())
     {
-        path.addPath(piece.SeamAllowancePath(seamAllowancePoints));
+        m_cutPath = piece.SeamAllowancePath(seamAllowancePoints);
+        m_cutPath.setFillRule(Qt::OddEvenFill);
         path.setFillRule(Qt::OddEvenFill);
-        m_seamAllowance->setPath(path);
+        m_cutLine->setPath(m_cutPath);
+        m_pieceRect = m_cutLine->boundingRect();
     }
     else
     {
-        m_seamAllowance->setPath(QPainterPath());
+        m_cutLine->setPath(QPainterPath());
     }
 
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
@@ -1524,12 +1560,28 @@ void VToolSeamAllowance::InitCSAPaths(const VPiece &piece)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSeamAllowance::InitInternalPaths(const VPiece &piece)
 {
-    for (int i = 0; i < piece.GetInternalPaths().size(); ++i)
+    const QVector<quint32> pathIds = piece.GetInternalPaths();
+    for (int i = 0; i < pathIds.size(); ++i)
     {
-        auto *tool = qobject_cast<VToolInternalPath*>(VAbstractPattern::getTool(piece.GetInternalPaths().at(i)));
+        const VPiecePath path = this->getData()->GetPiecePath(pathIds.at(i));
+        QColor  color;
+        if (path.IsCutPath())
+        {
+            color = QColor(qApp->Settings()->getDefaultCutoutColor());
+        }
+        else
+        {
+            color = QColor(qApp->Settings()->getDefaultInternalColor());
+        }
+        Qt::PenStyle lineType   = path.GetPenType();
+        qreal   lineWeight = qApp->Settings()->getDefaultInternalLineweight();
+
+
+        auto *tool = qobject_cast<VToolInternalPath*>(VAbstractPattern::getTool(pathIds.at(i)));
         SCASSERT(tool != nullptr);
         tool->setParentItem(this);
         tool->SetParentType(ParentType::Item);
+        tool->setPen(QPen(color, lineWeight, lineType, Qt::RoundCap, Qt::RoundJoin));
         tool->show();
         doc->IncrementReferens(piece.GetInternalPaths().at(i));
     }

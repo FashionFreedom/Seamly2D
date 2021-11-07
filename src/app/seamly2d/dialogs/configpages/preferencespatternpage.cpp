@@ -118,6 +118,14 @@ void PreferencesPatternPage::Apply()
     settings->setDefaultCutLinetype(ui->defaultCutLinetype_ComboBox->currentData().toString());
     settings->setDefaultCutLineweight(ui->defaultCutLineweight_ComboBox->currentData().toReal());
 
+    settings->setDefaultInternalColor(ui->defaultInternalColor_ComboBox->currentData().toString());
+    settings->setDefaultInternalLinetype(ui->defaultInternalLinetype_ComboBox->currentData().toString());
+    settings->setDefaultInternalLineweight(ui->defaultInternalLineweight_ComboBox->currentData().toReal());
+
+    settings->setDefaultCutoutColor(ui->defaultCutoutColor_ComboBox->currentData().toString());
+    settings->setDefaultCutoutLinetype(ui->defaultCutoutLinetype_ComboBox->currentData().toString());
+    settings->setDefaultCutoutLineweight(ui->defaultCutoutLineweight_ComboBox->currentData().toReal());
+
 
     settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
     settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
@@ -145,40 +153,69 @@ void PreferencesPatternPage::initDefaultSeamAllowance()
     ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
     ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 
-    int index = ui->defaultSeamLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamLinetype());
+    int index = ui->defaultSeamColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamColor());
+    if (index != -1)
+    {
+        ui->defaultSeamColor_ComboBox->setCurrentIndex(index);
+    }
+    index = ui->defaultSeamLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamLinetype());
     if (index != -1)
     {
         ui->defaultSeamLinetype_ComboBox->setCurrentIndex(index);
     }
-
     index = ui->defaultSeamLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamLineweight());
     if (index != -1)
     {
         ui->defaultSeamLineweight_ComboBox->setCurrentIndex(index);
     }
 
-    index = ui->defaultSeamColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultSeamColor());
+
+    index = ui->defaultCutColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutColor());
     if (index != -1)
     {
-        ui->defaultSeamColor_ComboBox->setCurrentIndex(index);
+        ui->defaultCutColor_ComboBox->setCurrentIndex(index);
     }
-
     index = ui->defaultCutLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutLinetype());
     if (index != -1)
     {
         ui->defaultCutLinetype_ComboBox->setCurrentIndex(index);
     }
-
     index = ui->defaultCutLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutLineweight());
     if (index != -1)
     {
         ui->defaultCutLineweight_ComboBox->setCurrentIndex(index);
     }
 
-    index = ui->defaultCutColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutColor());
+    index = ui->defaultInternalColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultInternalColor());
     if (index != -1)
     {
-        ui->defaultCutColor_ComboBox->setCurrentIndex(index);
+        ui->defaultInternalColor_ComboBox->setCurrentIndex(index);
+    }
+    index = ui->defaultInternalLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultInternalLinetype());
+    if (index != -1)
+    {
+        ui->defaultInternalLinetype_ComboBox->setCurrentIndex(index);
+    }
+    index = ui->defaultInternalLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultInternalLineweight());
+    if (index != -1)
+    {
+        ui->defaultInternalLineweight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->defaultCutoutColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutoutColor());
+    if (index != -1)
+    {
+        ui->defaultCutoutColor_ComboBox->setCurrentIndex(index);
+    }
+    index = ui->defaultCutoutLinetype_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutoutLinetype());
+    if (index != -1)
+    {
+        ui->defaultCutoutLinetype_ComboBox->setCurrentIndex(index);
+    }
+    index = ui->defaultCutoutLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultCutoutLineweight());
+    if (index != -1)
+    {
+        ui->defaultCutoutLineweight_ComboBox->setCurrentIndex(index);
     }
 }
 

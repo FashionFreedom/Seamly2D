@@ -82,18 +82,25 @@
 namespace
 {
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VLayoutPiecePath> ConvertInternalPaths(const VPiece &piece, const VContainer *pattern)
+QVector<VLayoutPiecePath> ConvertInternalPaths(const VPiece &piece, const VContainer *pattern, const bool isCut)
 {
     SCASSERT(pattern != nullptr)
 
     QVector<VLayoutPiecePath> paths;
-    const QVector<quint32> pathsId = piece.GetInternalPaths();
-    for (int i = 0; i < pathsId.size(); ++i)
+    const QVector<quint32> pathIds = piece.GetInternalPaths();
+    for (int i = 0; i < pathIds.size(); ++i)
     {
-        const VPiecePath path = pattern->GetPiecePath(pathsId.at(i));
+        const VPiecePath path = pattern->GetPiecePath(pathIds.at(i));
         if (path.GetType() == PiecePathType::InternalPath)
         {
-            paths.append(VLayoutPiecePath(path.PathPoints(pattern), path.IsCutPath(), path.GetPenType()));
+            if (isCut && path.IsCutPath())
+            {
+                paths.append(VLayoutPiecePath(path.PathPoints(pattern), path.IsCutPath(), path.GetPenType()));
+            }
+            else if (!isCut && !path.IsCutPath())
+            {
+                paths.append(VLayoutPiecePath(path.PathPoints(pattern), path.IsCutPath(), path.GetPenType()));
+            }
         }
     }
     return paths;
@@ -415,7 +422,8 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     det.SetCountourPoints(piece.MainPathPoints(pattern), piece.IsHideMainPath());
     det.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
                                piece.IsSeamAllowanceBuiltIn());
-    det.setInternalPaths(ConvertInternalPaths(piece, pattern));
+    det.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
+    det.setCutoutPaths(ConvertInternalPaths(piece, pattern, true));
     det.setNotches(piece.createNotchLines(pattern));
 
     det.SetName(piece.GetName());
@@ -918,6 +926,18 @@ void VLayoutPiece::setInternalPaths(const QVector<VLayoutPiecePath> &internalPat
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QVector<VLayoutPiecePath> VLayoutPiece::getCutoutPaths() const
+{
+    return d->m_cutoutPaths;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VLayoutPiece::setCutoutPaths(const QVector<VLayoutPiecePath> &cutoutPaths)
+{
+    d->m_cutoutPaths = cutoutPaths;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 template <class T>
 QVector<T> VLayoutPiece::Map(const QVector<T> &points) const
 {
@@ -995,24 +1015,18 @@ QPainterPath VLayoutPiece::createAllowancePath() const
 QPainterPath VLayoutPiece::createNotchesPath() const
 {
     QPainterPath path;
-    // seam allowance
-    if (IsSeamAllowance())
-    {
-        if (not IsSeamAllowanceBuiltIn())
-        {
-            // Draw notches
-                const QVector<QLineF> notches = getNotches();
-                QPainterPath notchesPath;
-            for (qint32 i = 0; i < notches.count(); ++i)
-            {
-                notchesPath.moveTo(notches.at(i).p1());
-                notchesPath.lineTo(notches.at(i).p2());
-            }
 
-            path.addPath(notchesPath);
-            path.setFillRule(Qt::WindingFill);
-        }
+    const QVector<QLineF> notches = getNotches();
+    QPainterPath notchesPath;
+
+    for (qint32 i = 0; i < notches.count(); ++i)
+    {
+        notchesPath.moveTo(notches.at(i).p1());
+        notchesPath.lineTo(notches.at(i).p2());
     }
+
+    path.addPath(notchesPath);
+    path.setFillRule(Qt::WindingFill);
 
     return path;
 }
@@ -1021,9 +1035,26 @@ QPainterPath VLayoutPiece::createNotchesPath() const
 void VLayoutPiece::createInternalPathItem(int i, QGraphicsItem *parent) const
 {
     SCASSERT(parent != nullptr)
+    QColor  color      = QColor(qApp->Settings()->getDefaultInternalColor());
+    QString lineType   = qApp->Settings()->getDefaultInternalLinetype();
+    qreal   lineWeight = qApp->Settings()->getDefaultInternalLineweight();
+
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
     item->setPath(d->transform.map(d->m_internalPaths.at(i).GetPainterPath()));
-    item->setPen(QPen(Qt::gray, 1, d->m_internalPaths.at(i).PenStyle(), Qt::RoundCap, Qt::RoundJoin));
+    item->setPen(QPen(color, lineWeight, d->m_internalPaths.at(i).PenStyle(), Qt::RoundCap, Qt::RoundJoin));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VLayoutPiece::createCutoutPathItem(int i, QGraphicsItem *parent) const
+{
+    SCASSERT(parent != nullptr)
+    QColor  color      = QColor(qApp->Settings()->getDefaultCutoutColor());
+    QString lineType   = qApp->Settings()->getDefaultCutoutLinetype();
+    qreal   lineWeight = qApp->Settings()->getDefaultCutoutLineweight();
+
+    QGraphicsPathItem* item = new QGraphicsPathItem(parent);
+    item->setPath(d->transform.map(d->m_cutoutPaths.at(i).GetPainterPath()));
+    item->setPen(QPen(color, lineWeight, d->m_cutoutPaths.at(i).PenStyle(), Qt::RoundCap, Qt::RoundJoin));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1053,6 +1084,11 @@ QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
     for (int i = 0; i < d->m_internalPaths.count(); ++i)
     {
         createInternalPathItem(i, item);
+    }
+
+    for (int i = 0; i < d->m_cutoutPaths.count(); ++i)
+    {
+        createCutoutPathItem(i, item);
     }
 
     createLabelItem(item, d->detailLabel, d->m_tmDetail, textAsPaths);
@@ -1150,7 +1186,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
                 item->setFont(fnt);
                 item->setText(qsText);
                 item->setTransform(labelTransform);
-                item->setPen(QPen(Qt::blue));
+                item->setPen(QPen(Qt::black));
 
                 dY += (fm.height() + tm.GetSpacing());
             }
@@ -1167,7 +1203,7 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent) const
     {
         return;
     }
-    VGraphicsFillItem* item = new VGraphicsFillItem(Qt::yellow, parent);
+    VGraphicsFillItem* item = new VGraphicsFillItem(Qt::black, parent);
 
     QPainterPath path;
 
@@ -1196,10 +1232,21 @@ QVector<QPointF> VLayoutPiece::DetailPath() const
 //---------------------------------------------------------------------------------------------------------------------
 QGraphicsPathItem *VLayoutPiece::createMainItem() const
 {
-    QColor  color      = QColor(qApp->Settings()->getDefaultSeamColor());
-    QString lineType   = qApp->Settings()->getDefaultSeamLinetype();
-    qreal   lineWeight = qApp->Settings()->getDefaultSeamLineweight();
-
+    QColor  color;
+    QString lineType;
+    qreal   lineWeight;
+    if (IsSeamAllowance() && !IsSeamAllowanceBuiltIn())
+    {
+        color      = QColor(qApp->Settings()->getDefaultSeamColor());
+        lineType   = qApp->Settings()->getDefaultSeamLinetype();
+        lineWeight = qApp->Settings()->getDefaultSeamLineweight();
+    }
+    else
+    {
+        color      = QColor(qApp->Settings()->getDefaultCutColor());
+        lineType   = qApp->Settings()->getDefaultCutLinetype();
+        lineWeight = qApp->Settings()->getDefaultCutLineweight();
+    }
     QGraphicsPathItem *item = new QGraphicsPathItem();
     item->setPath(createMainPath());
     item->setPen(QPen(color, lineWeight, lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));

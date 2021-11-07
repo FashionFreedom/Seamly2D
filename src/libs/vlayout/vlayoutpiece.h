@@ -112,6 +112,9 @@ public:
     QVector<VLayoutPiecePath> getInternalPaths() const;
     void                      setInternalPaths(const QVector<VLayoutPiecePath> &internalPaths);
 
+    QVector<VLayoutPiecePath> getCutoutPaths() const;
+    void                      setCutoutPaths(const QVector<VLayoutPiecePath> &cutoutPaths);
+
     QPointF                   GetPieceTextPosition() const;
     QStringList               GetPieceText() const;
     void                      SetPieceText(const QString &qsName, const VPieceLabelData& data,
@@ -173,8 +176,9 @@ private:
     Q_REQUIRED_RESULT QGraphicsPathItem *getMainPathItem() const;
 
     void                                 createInternalPathItem(int i, QGraphicsItem *parent) const;
+    void                                 createCutoutPathItem(int i, QGraphicsItem *parent) const;
     void                                 createLabelItem(QGraphicsItem *parent, const QVector<QPointF> &labelShape,
-                                                            const VTextManager &tm, bool textAsPaths) const;
+                                                         const VTextManager &tm, bool textAsPaths) const;
     void                                 createGrainlineItem(QGraphicsItem *parent) const;
 
     template <class T>

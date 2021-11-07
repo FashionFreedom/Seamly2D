@@ -260,6 +260,24 @@ public:
     qreal                getDefaultCutLineweight() const;
     void                 setDefaultCutLineweight(const qreal &value);
 
+    QString              getDefaultInternalColor() const;
+    void                 setDefaultInternalColor(const QString &value);
+
+    QString              getDefaultInternalLinetype() const;
+    void                 setDefaultInternalLinetype(const QString &value);
+
+    qreal                getDefaultInternalLineweight() const;
+    void                 setDefaultInternalLineweight(const qreal &value);
+
+    QString              getDefaultCutoutColor() const;
+    void                 setDefaultCutoutColor(const QString &value);
+
+    QString              getDefaultCutoutLinetype() const;
+    void                 setDefaultCutoutLinetype(const QString &value);
+
+    qreal                getDefaultCutoutLineweight() const;
+    void                 setDefaultCutoutLineweight(const qreal &value);
+
     QFont                getLabelFont() const;
     void                 setLabelFont(const QFont &f);
 
