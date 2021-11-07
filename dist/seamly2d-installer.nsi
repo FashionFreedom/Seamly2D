@@ -1,6 +1,6 @@
 Name "Seamly2D installer"
 
-OutFile "seamly2d-installer.exe"
+OutFile "Seamly2D-installer.exe"
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel admin
@@ -9,7 +9,7 @@ Unicode True
 
 InstallDir $PROGRAMFILES\Seamly2D
 
-; Registry key to check for directory (so if you install again, it will 
+; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
 InstallDirRegKey HKLM "Software\NSIS_Seamly2D" "Install_Dir"
 
@@ -20,12 +20,12 @@ UninstPage uninstConfirm
 UninstPage instfiles
 
 Section "Seamly2D"
-  
+
   StrCpy $R1 " - Seamly2D"
   Call check_for_window
-  
+
   SectionIn RO
-  
+
   SetOutPath $INSTDIR
 
   File "VC_redist.x86.exe"
@@ -40,15 +40,15 @@ Section "Seamly2D"
 
   ; relative to the location of this .nsi file, copy all the files/directories recursively
   File /r *
-  
+
   WriteRegStr HKLM SOFTWARE\NSIS_Seamly2D "Install_Dir" "$INSTDIR"
-  
+
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "DisplayName" "Seamly2D"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D" "NoRepair" 1
   WriteUninstaller "$INSTDIR\uninstall.exe"
-  
+
 SectionEnd
 
 Section "Start Menu Shortcuts"
@@ -57,12 +57,12 @@ Section "Start Menu Shortcuts"
   CreateShortcut "$SMPROGRAMS\Seamly2D\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
   CreateShortcut "$SMPROGRAMS\Seamly2D\Seamly2D.lnk" "$INSTDIR\seamly2d.exe" "" "$INSTDIR\seamly2d.exe" 0
   CreateShortcut "$SMPROGRAMS\Seamly2D\SeamlyMe.lnk" "$INSTDIR\seamlyme.exe" "" "$INSTDIR\seamlyme.exe" 0
-  
+
 SectionEnd
 
 
 Section "Uninstall"
-  
+
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Seamly2D"
   DeleteRegKey HKLM SOFTWARE\NSIS_Seamly2D
 
@@ -95,11 +95,11 @@ Function  EnhancedFindWindow
   Push  $3   # window handle
   Push  $4   # class name
   Push  $5   # temp
- 
+
   ; set up the variables
   StrCpy  $4  0
   StrLen  $2  $0
- 
+
  ; loop to search for open windows
  search_loop:
   FindWindow  $3  ""  ""  0  $3
@@ -111,12 +111,12 @@ Function  EnhancedFindWindow
 	 Call StrContains
 	 Pop $R9
      StrCmp $R9 ""  search_loop search_end
- 
+
  ; no matching class-name found, return "failed"
  search_failed:
   StrCpy  $3  "failed"
   StrCpy  $4  "failed"
- 
+
  ; search ended, output and restore variables
  search_end:
   StrCpy  $1  $3
@@ -131,13 +131,13 @@ Function  EnhancedFindWindow
 FunctionEnd
 
 ; StrContains
-; This function does a case sensitive searches for an occurrence of a substring in a string. 
-; It returns the substring if it is found. 
-; Otherwise it returns null(""). 
+; This function does a case sensitive searches for an occurrence of a substring in a string.
+; It returns the substring if it is found.
+; Otherwise it returns null("").
 ; Written by kenglish_hi
 ; Adapted from StrReplace written by dandaman32
- 
- 
+
+
 Var STR_HAYSTACK
 Var STR_NEEDLE
 Var STR_CONTAINS_VAR_1
@@ -145,7 +145,7 @@ Var STR_CONTAINS_VAR_2
 Var STR_CONTAINS_VAR_3
 Var STR_CONTAINS_VAR_4
 Var STR_RETURN_VAR
- 
+
 Function StrContains
   Exch $STR_NEEDLE
   Exch 1
@@ -167,14 +167,14 @@ Function StrContains
       Goto done
     done:
    Pop $STR_NEEDLE ;Prevent "invalid opcode" errors and keep the
-   Exch $STR_RETURN_VAR  
+   Exch $STR_RETURN_VAR
 FunctionEnd
- 
+
 !macro _StrContainsConstructor OUT NEEDLE HAYSTACK
   Push `${HAYSTACK}`
   Push `${NEEDLE}`
   Call StrContains
   Pop `${OUT}`
 !macroend
- 
+
 !define StrContains '!insertmacro "_StrContainsConstructor"'
