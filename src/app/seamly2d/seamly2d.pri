@@ -11,6 +11,9 @@ SOURCES += \
         $$PWD/main.cpp \
         $$PWD/mainwindow.cpp \
         $$PWD/mainwindowsnogui.cpp
+win32-msvc* {
+    SOURCES += $$PWD/Thinfinity.VirtualUI.cpp
+}
 
 *msvc*:SOURCES += $$PWD/stable.cpp
 
@@ -21,6 +24,9 @@ HEADERS  += \
         $$PWD/stable.h \
         $$PWD/version.h \
         $$PWD/mainwindowsnogui.h
+win32-msvc* {
+    HEADERS += $$PWD/Thinfinity.VirtualUI.h
+}
 # Main forms
 FORMS    += \
         $$PWD/mainwindow.ui

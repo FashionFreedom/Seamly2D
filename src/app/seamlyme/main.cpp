@@ -55,6 +55,9 @@
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QTimer>
+#if defined(_WIN32) && defined(_MSC_VER)
+#include "Thinfinity.VirtualUI.h"
+#endif
 
 int main(int argc, char *argv[])
 {
@@ -65,6 +68,11 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(flags);
 
     QT_REQUIRE_VERSION(argc, argv, "5.13.2")
+#if defined(_WIN32) && defined(_MSC_VER)
+    VirtualUI *vui = new VirtualUI();
+    vui->StdDialogs(true);
+    vui->Start();
+#endif
 
     //------------------------------------------------------------------------
     // On macOS, correct WebView / QtQuick compositing and stacking requires running

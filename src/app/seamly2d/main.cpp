@@ -56,6 +56,9 @@
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QTimer>
+#if defined(_WIN32) && defined(_MSC_VER)
+#include "Thinfinity.VirtualUI.h"
+#endif
 
 //---------------------------------------------------------------------------------------------------------------------
 
@@ -70,6 +73,11 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(toolicon);
 
     QT_REQUIRE_VERSION(argc, argv, "5.2.0")
+#if defined(_WIN32) && defined(_MSC_VER)
+    VirtualUI *vui = new VirtualUI();
+    vui->StdDialogs(true);
+    vui->Start();
+#endif
 
     // Need to internally move a node inside a piece main path
     qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode");

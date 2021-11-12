@@ -12,6 +12,9 @@ SOURCES  += \
     $$PWD/dialogs/dialogseamlymepreferences.cpp \
     $$PWD/dialogs/configpages/seamlymepreferencesconfigurationpage.cpp \
     $$PWD/dialogs/configpages/seamlymepreferencespathpage.cpp
+win32-msvc* {
+    SOURCES += $$PWD/Thinfinity.VirtualUI.cpp
+}
 
 *msvc*:SOURCES += $$PWD/stable.cpp
 
@@ -27,6 +30,9 @@ HEADERS  += \
     $$PWD/dialogs/dialogseamlymepreferences.h \
     $$PWD/dialogs/configpages/seamlymepreferencesconfigurationpage.h \
     $$PWD/dialogs/configpages/seamlymepreferencespathpage.h
+win32-msvc* {
+    HEADERS += $$PWD/Thinfinity.VirtualUI.h
+}
 
 FORMS    += \
     $$PWD/tmainwindow.ui \

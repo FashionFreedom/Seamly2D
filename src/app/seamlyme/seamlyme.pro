@@ -418,6 +418,10 @@ else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vgeometry/$${DESTDIR
 # VLayout static library
 unix|win32: LIBS += -L$$OUT_PWD/../../libs/vlayout/$${DESTDIR}/ -lvlayout
 
+win32-msvc* {
+    LIBS += -lShlwapi
+}
+
 INCLUDEPATH += $$PWD/../../libs/vlayout
 DEPENDPATH += $$PWD/../../libs/vlayout
 
