@@ -278,7 +278,7 @@ const QSharedPointer<T> VContainer::GeometricObject(const quint32 &id) const
     }
     else
     {
-        throw VExceptionBadId(tr("Can't find object"), id);
+        throw VExceptionBadId(tr("Can't find object Id: "), id);
     }
     try
     {

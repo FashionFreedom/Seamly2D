@@ -115,6 +115,7 @@ protected:
     QString          m_lineType;      /** @brief typeLine line type. */
 
     void             AddToCalculation(const QDomElement &domElement);
+    void             addDependence(QList<quint32> &list, quint32 objectId) const;
 
     /** @brief SaveDialog save options into file after change in dialog. */
     virtual void     SaveDialog(QDomElement &domElement)=0;

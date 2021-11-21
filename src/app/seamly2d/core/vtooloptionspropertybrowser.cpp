@@ -1816,6 +1816,9 @@ void VToolOptionsPropertyBrowser::ChangeDataToolMove(VPE::VProperty *property)
     SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
+        case 42: // AttrRotationAngle
+            i->setFormulaRotation(value.value<VFormula>());
+            break;
         case 38: // AttrSuffix
             SetOperationSuffix<VToolMove>(value.toString());
             break;
@@ -2384,8 +2387,10 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolMove(QGraphicsItem *item)
     formView->setTitle(tr("Move"));
 
     AddPropertyOperationSuffix(i, tr("Suffix:"));
+    AddPropertyParentPointName(i->getOriginPointName(), tr("Rotation origin point:"), AttrCenter);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
+    AddPropertyFormula(tr("Rotation angle:"), i->getFormulaRotation(), AttrRotationAngle);    
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3179,6 +3184,14 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolMove()
     QVariant valueLength;
     valueLength.setValue(i->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueLength);
+
+    QVariant valueRotation;
+    valueRotation.setValue(i->getFormulaRotation());
+    idToProperty[AttrRotationAngle]->setValue(valueRotation);
+
+    QVariant valueRotationOriginPoint;
+    valueRotationOriginPoint.setValue(i->getOriginPointName());
+    idToProperty[AttrCenter]->setValue(valueRotationOriginPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -66,6 +66,7 @@ VisOperation::VisOperation(const VContainer *data, QGraphicsItem *parent)
     : VisLine(data, parent),
       objects(),
       supportColor2(Qt::darkGreen),
+      supportColor3(Qt::darkBlue),
       points(),
       curves()
 {

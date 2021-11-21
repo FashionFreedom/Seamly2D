@@ -104,7 +104,7 @@ const QString VToolRotation::ToolType = QStringLiteral("rotation");
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolRotation::VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 origPointId,
-                             const QString &angle, const QString &suffix, const QVector<quint32> &source,
+                             const QString &angle, const QString &suffix, const QVector<SourceItem> &source,
                              const QVector<DestinationItem> &destination, const Source &typeCreation,
                              QGraphicsItem *parent)
     : VAbstractOperation(doc, data, id, suffix, source, destination, parent),
@@ -121,7 +121,7 @@ void VToolRotation::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogRotation> dialogTool = m_dialog.objectCast<DialogRotation>();
     SCASSERT(not dialogTool.isNull())
-    dialogTool->setRotationPointId(origPointId);
+    dialogTool->setOriginPointId(origPointId);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->setSuffix(suffix);
 }
@@ -133,10 +133,11 @@ VToolRotation *VToolRotation::Create(QSharedPointer<DialogTool> dialog, VMainGra
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogRotation> dialogTool = dialog.objectCast<DialogRotation>();
     SCASSERT(not dialogTool.isNull())
-    const quint32 originPointId = dialogTool->getRotationPointId();
+    const quint32 originPointId = dialogTool->getOriginPointId();
     QString angle = dialogTool->GetAngle();
     const QString suffix = dialogTool->getSuffix();
-    const QVector<quint32> source = dialogTool->getObjects();
+    const QVector<SourceItem> source = dialogTool->getSourceObjects();
+
     VToolRotation* operation = Create(0, originPointId, angle, suffix, source, QVector<DestinationItem>(),
                                       scene, doc, data, Document::FullParse, Source::FromGui);
     if (operation != nullptr)
@@ -148,7 +149,7 @@ VToolRotation *VToolRotation::Create(QSharedPointer<DialogTool> dialog, VMainGra
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolRotation *VToolRotation::Create(const quint32 _id, const quint32 &origin, QString &angle, const QString &suffix,
-                                     const QVector<quint32> &source,
+                                     const QVector<SourceItem> &source,
                                      const QVector<DestinationItem> &destination,
                                      VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                      const Document &parse, const Source &typeCreation)
@@ -171,8 +172,9 @@ VToolRotation *VToolRotation::Create(const quint32 _id, const quint32 &origin, Q
 
         for (int i = 0; i < source.size(); ++i)
         {
-            const quint32 idObject = source.at(i);
-            const QSharedPointer<VGObject> obj = data->GetGObject(idObject);
+            const SourceItem item = source.at(i);
+            const quint32 objectId = item.id;
+            const QSharedPointer<VGObject> obj = data->GetGObject(objectId);
 
             // This check helps to find missed objects in the switch
             Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
@@ -182,25 +184,25 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    dest.append(createPoint(id, idObject, oPoint, calcAngle, suffix, data));
+                    dest.append(createPoint(id, objectId, oPoint, calcAngle, suffix, data));
                     break;
                 case GOType::Arc:
-                    dest.append(createArc<VArc>(id, idObject, oPoint, calcAngle, suffix, data));
+                    dest.append(createArc<VArc>(id, objectId, oPoint, calcAngle, suffix, data));
                     break;
                 case GOType::EllipticalArc:
-                    dest.append(createArc<VEllipticalArc>(id, idObject, oPoint, calcAngle, suffix, data));
+                    dest.append(createArc<VEllipticalArc>(id, objectId, oPoint, calcAngle, suffix, data));
                     break;
                 case GOType::Spline:
-                    dest.append(createCurve<VSpline>(id, idObject, oPoint, calcAngle, suffix, data));
+                    dest.append(createCurve<VSpline>(id, objectId, oPoint, calcAngle, suffix, data));
                     break;
                 case GOType::SplinePath:
-                    dest.append(createCurveWithSegments<VSplinePath>(id, idObject, oPoint, calcAngle, suffix, data));
+                    dest.append(createCurveWithSegments<VSplinePath>(id, objectId, oPoint, calcAngle, suffix, data));
                     break;
                 case GOType::CubicBezier:
-                    dest.append(createCurve<VCubicBezier>(id, idObject, oPoint, calcAngle, suffix, data));
+                    dest.append(createCurve<VCubicBezier>(id, objectId, oPoint, calcAngle, suffix, data));
                     break;
                 case GOType::CubicBezierPath:
-                    dest.append(createCurveWithSegments<VCubicBezierPath>(id, idObject, oPoint, calcAngle, suffix,
+                    dest.append(createCurveWithSegments<VCubicBezierPath>(id, objectId, oPoint, calcAngle, suffix,
                                                                           data));
                     break;
                 case GOType::Unknown:
@@ -213,8 +215,9 @@ QT_WARNING_POP
     {
         for (int i = 0; i < source.size(); ++i)
         {
-            const quint32 idObject = source.at(i);
-            const QSharedPointer<VGObject> obj = data->GetGObject(idObject);
+            const SourceItem item = source.at(i);
+            const quint32 objectId = item.id;
+            const QSharedPointer<VGObject> obj = data->GetGObject(objectId);
 
             // This check helps to find missed objects in the switch
             Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
@@ -226,26 +229,26 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 case GOType::Point:
                 {
                     const DestinationItem &item = dest.at(i);
-                    updatePoint(id, idObject, oPoint, calcAngle, suffix, data, item);
+                    updatePoint(id, objectId, oPoint, calcAngle, suffix, data, item);
                     break;
                 }
                 case GOType::Arc:
-                    updateArc<VArc>(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id);
+                    updateArc<VArc>(id, objectId, oPoint, calcAngle, suffix, data, dest.at(i).id);
                     break;
                 case GOType::EllipticalArc:
-                    updateArc<VEllipticalArc>(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id);
+                    updateArc<VEllipticalArc>(id, objectId, oPoint, calcAngle, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Spline:
-                    updateCurve<VSpline>(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id);
+                    updateCurve<VSpline>(id, objectId, oPoint, calcAngle, suffix, data, dest.at(i).id);
                     break;
                 case GOType::SplinePath:
-                    updateCurveWithSegments<VSplinePath>(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id);
+                    updateCurveWithSegments<VSplinePath>(id, objectId, oPoint, calcAngle, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezier:
-                    updateCurve<VCubicBezier>(id, idObject, oPoint, calcAngle, suffix, data, dest.at(i).id);
+                    updateCurve<VCubicBezier>(id, objectId, oPoint, calcAngle, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezierPath:
-                    updateCurveWithSegments<VCubicBezierPath>(id, idObject, oPoint, calcAngle, suffix, data,
+                    updateCurveWithSegments<VCubicBezierPath>(id, objectId, oPoint, calcAngle, suffix, data,
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:
@@ -269,7 +272,8 @@ QT_WARNING_POP
         doc->IncrementReferens(originPoint.getIdTool());
         for (int i = 0; i < source.size(); ++i)
         {
-            doc->IncrementReferens(data->GetGObject(source.at(i))->getIdTool());
+            const SourceItem item = source.at(i);
+            doc->IncrementReferens(data->GetGObject(item.id)->getIdTool());
         }
         return tool;
     }
@@ -318,7 +322,7 @@ void VToolRotation::SetVisualization()
         VisToolRotation *visual = qobject_cast<VisToolRotation *>(vis);
         SCASSERT(visual != nullptr)
 
-        visual->setObjects(source);
+        visual->setObjects(sourceToObjects(source));
         visual->SetOriginPointId(origPointId);
         visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
         visual->RefreshGeometry();
@@ -332,7 +336,7 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
     QSharedPointer<DialogRotation> dialogTool = m_dialog.objectCast<DialogRotation>();
     SCASSERT(not dialogTool.isNull())
 
-    doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getRotationPointId()));
+    doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->getOriginPointId()));
     doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
     doc->SetAttribute(domElement, AttrSuffix, dialogTool->getSuffix());
 }

@@ -1408,7 +1408,7 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
     {
         if (rule == FillComboBox::NoChildren)
         {
-            if (i.key() != toolId && i.key() != ch1 && i.key() != ch2)
+            if (i.key() != toolId && i.value()->getIdTool() != toolId && i.key() != ch1 && i.key() != ch2)
             {
                 QSharedPointer<VGObject> obj = i.value();
                 if (obj->getType() == gType && obj->getMode() == Draw::Calculation)
@@ -1419,7 +1419,7 @@ void DialogTool::FillCombo(QComboBox *box, GOType gType, FillComboBox rule, cons
         }
         else
         {
-            if (i.key() != toolId)
+            if (i.key() != toolId && i.value()->getIdTool() != toolId)
             {
                 QSharedPointer<VGObject> obj = i.value();
                 if (obj->getType() == gType && obj->getMode() == Draw::Calculation)

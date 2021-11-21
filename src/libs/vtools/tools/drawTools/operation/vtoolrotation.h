@@ -78,7 +78,7 @@ public:
                                   VAbstractPattern *doc, VContainer *data);
 
     static VToolRotation  *Create(const quint32 _id, const quint32 &origin, QString &angle, const QString &suffix,
-                                  const QVector<quint32> &source, const QVector<DestinationItem> &destination,
+                                  const QVector<SourceItem> &source, const QVector<DestinationItem> &destination,
                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                   const Document &parse, const Source &typeCreation);
 
@@ -111,7 +111,7 @@ private:
 
                            VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id,
                                          quint32 origPointId, const QString &angle, const QString &suffix,
-                                         const QVector<quint32> &source, const QVector<DestinationItem> &destination,
+                                         const QVector<SourceItem> &source, const QVector<DestinationItem> &destination,
                                          const Source &typeCreation, QGraphicsItem *parent = nullptr);
 
     static DestinationItem createPoint(quint32 idTool, quint32 idItem, const QPointF &origin, qreal angle,

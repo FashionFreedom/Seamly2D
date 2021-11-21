@@ -65,11 +65,11 @@ public:
 
 protected:
                            VAbstractMirror(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
-                                           const QVector<quint32> &source, const QVector<DestinationItem> &destination,
+                                           const QVector<SourceItem> &source, const QVector<DestinationItem> &destination,
                                            QGraphicsItem *parent = nullptr);
 
     static void            createDestination(Source typeCreation, quint32 &id, QVector<DestinationItem> &dest,
-                                             const QVector<quint32> &source, const QPointF &fPoint,
+                                             const QVector<SourceItem> &source, const QPointF &fPoint,
                                              const QPointF &sPoint, const QString &suffix, VAbstractPattern *doc,
                                              VContainer *data, const Document &parse);
 
