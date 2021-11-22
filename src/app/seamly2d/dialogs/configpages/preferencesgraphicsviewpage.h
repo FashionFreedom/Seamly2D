@@ -56,6 +56,9 @@ private:
     bool                              m_pointNameColorChanged;
     bool                              m_pointNameHoverColorChanged;
     bool                              m_orginAxisColorChanged;
+    bool                              m_primarySupportColorChanged;
+    bool                              m_secondarySupportColorChanged;
+    bool                              m_tertiarySupportColorChanged;
 };
 
 #endif // PREFERENCES_GRAPHICSVIEWPAGE_H

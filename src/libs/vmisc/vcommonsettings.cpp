@@ -102,6 +102,10 @@ const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graph
 const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
 const QString settingGraphicsViewPointNameHoverColor     = QStringLiteral("graphicsview/pointNameHoverColor");
 const QString settingGraphicsViewAxisOrginColor          = QStringLiteral("graphicsview/axisOrginColor");
+const QString settingGraphicsViewPrimaryColor            = QStringLiteral("graphicsview/primarySupportColor");
+const QString settingGraphicsViewSecondaryColor          = QStringLiteral("graphicsview/secondarySupportColor");
+const QString settingGraphicsViewTertiaryColor           = QStringLiteral("graphicsview/tertiarySupportColor");
+
 
 const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
 const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
@@ -640,7 +644,7 @@ void VCommonSettings::setZoomSpeedFactor(const int  &factor)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getZoomRBPositiveColor() const
 {
-    return value(settingGraphicsViewZoomRBPositiveColor, "blue").toString();
+    return value(settingGraphicsViewZoomRBPositiveColor, "Blue").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -652,7 +656,7 @@ void VCommonSettings::setZoomRBPositiveColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getZoomRBNegativeColor() const
 {
-    return value(settingGraphicsViewZoomRBNegativeColor, "green").toString();
+    return value(settingGraphicsViewZoomRBNegativeColor, "Green").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -664,7 +668,7 @@ void VCommonSettings::setZoomRBNegativeColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getPointNameColor() const
 {
-    return value(settingGraphicsViewPointNameColor, "green").toString();
+    return value(settingGraphicsViewPointNameColor, "Black").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -676,7 +680,7 @@ void VCommonSettings::setPointNameColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getPointNameHoverColor() const
 {
-    return value(settingGraphicsViewPointNameHoverColor, "green").toString();
+    return value(settingGraphicsViewPointNameHoverColor, "Magenta").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -688,13 +692,49 @@ void VCommonSettings::setPointNameHoverColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getAxisOrginColor() const
 {
-    return value(settingGraphicsViewAxisOrginColor, "magenta").toString();
+    return value(settingGraphicsViewAxisOrginColor, "Magenta").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setAxisOrginColor(const QString &value)
 {
     setValue(settingGraphicsViewAxisOrginColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getPrimarySupportColor() const
+{
+    return value(settingGraphicsViewPrimaryColor, "Magenta").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPrimarySupportColor(const QString &value)
+{
+    setValue(settingGraphicsViewPrimaryColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getSecondarySupportColor() const
+{
+    return value(settingGraphicsViewSecondaryColor, "Forest Green").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setSecondarySupportColor(const QString &value)
+{
+    setValue(settingGraphicsViewSecondaryColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getTertiarySupportColor() const
+{
+    return value(settingGraphicsViewTertiaryColor, "Navy").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setTertiarySupportColor(const QString &value)
+{
+    setValue(settingGraphicsViewTertiaryColor, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -954,7 +994,7 @@ void VCommonSettings::setDefaultNotchWidth(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultNotchType() const
 {
-   return value(settingDefaultNotchType, "slit").toString();
+   return value(settingDefaultNotchType, "Slit").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

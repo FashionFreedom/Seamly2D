@@ -60,13 +60,14 @@
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vspline.h"
 #include "../vgeometry/vsplinepath.h"
+#include "../vmisc/vcommonsettings.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 VisOperation::VisOperation(const VContainer *data, QGraphicsItem *parent)
     : VisLine(data, parent),
       objects(),
-      supportColor2(Qt::darkGreen),
-      supportColor3(Qt::darkBlue),
+      supportColor2(QColor(qApp->Settings()->getSecondarySupportColor())),
+      supportColor3(QColor(qApp->Settings()->getTertiarySupportColor())),
       points(),
       curves()
 {

@@ -399,6 +399,59 @@ QMap<QString, QString> VAbstractTool::ColorsList()
     return map;
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+QMap<QString, QString> VAbstractTool::supportColorsList()
+{
+    QMap<QString, QString> map;
+    map.insert("gold", tr("Gold"));
+    map.insert("forestgreen", tr("Forest Green"));
+    map.insert("lawngreen", tr("Lawn Green"));
+    map.insert("limegreen", tr("Lime Green"));
+    map.insert("greenyellow", tr("Green Yellow"));
+    map.insert("sandybrown", tr("Sandy Brown"));
+    map.insert("orangered", tr("Orange Red"));
+    map.insert("maroon", tr("Maroon"));
+    map.insert("pink", tr("Pink"));
+    map.insert("hotpink", tr("Hot Pink"));
+    map.insert("blueviolet", tr("Blue Violet"));
+    map.insert("mediumvioletred", tr("Medium Violet Red"));
+    map.insert("indigo", tr("Indigo"));
+    map.insert("purple", tr("Purple"));
+    map.insert("plum", tr("Plum"));
+    map.insert("turquoise", tr("Turquoise"));
+    map.insert("mediumturquoise", tr("Medium Turquoise"));
+    map.insert("powderblue", tr("Powder Blue"));
+    map.insert("lightskyblue", tr("Light Sky Blue"));
+    map.insert("navy", tr("Navy"));
+    map.insert("magenta", tr("Magenta"));
+    return map;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QMap<QString, QString> VAbstractTool::backgroundColorsList()
+{
+    QMap<QString, QString> map;
+
+    map.insert("darkslategrey", tr("Dark Slate Grey"));
+    map.insert("grey", tr("Grey"));
+    map.insert("gainsboro", tr("Gainsboro"));
+    map.insert("darkseagreen", tr("Dark Sea Green"));
+    map.insert("lightgrey", tr("Light Grey"));
+    map.insert("darkslategrey", tr("Dark Slate Grey"));
+    map.insert("lightsteelblue", tr("Light Steel Blue"));
+    map.insert("biege", tr("Biege"));
+    map.insert("thistle", tr("Thistle"));
+    map.insert("silver", tr("Silver"));
+    map.insert("whitesmoke", tr("White Smoke"));
+    map.insert("white", tr("White"));
+    map.insert("darkgrey", tr("Dark Grey"));
+    map.insert("cadetblue", tr("Cadet Blue"));
+    map.insert("darkkhaki", tr("Dark Khaki"));
+    map.insert("tan", tr("Tan"));
+
+    return map;
+}
+
 QPixmap VAbstractTool::createColorIcon(const int w, const int h, const QString &color)
 {
     QPixmap pixmap(w, h);

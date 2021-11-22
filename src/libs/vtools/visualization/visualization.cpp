@@ -88,7 +88,7 @@ Visualization::Visualization(const VContainer *data)
       data(data),
       scenePos(QPointF()),
       mainColor(Qt::red),
-      supportColor(Qt::magenta),
+      supportColor(QColor(qApp->Settings()->getPrimarySupportColor())),
       lineStyle(Qt::SolidLine),
       object1Id(NULL_ID),
       toolTip(QString()),

@@ -163,6 +163,14 @@ public:
     QString              getAxisOrginColor() const;
     void                 setAxisOrginColor(const QString &value);
 
+    QString              getPrimarySupportColor() const;
+    void                 setPrimarySupportColor(const QString &value);
+
+    QString              getSecondarySupportColor() const;
+    void                 setSecondarySupportColor(const QString &value);
+
+    QString              getTertiarySupportColor() const;
+    void                 setTertiarySupportColor(const QString &value);
 
     qreal                getConstrainValue() const;
     void                 setConstrainValue(const qreal &value);

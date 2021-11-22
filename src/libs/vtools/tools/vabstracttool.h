@@ -92,6 +92,8 @@ public:
 
     static const QStringList      Colors();
     static QMap<QString, QString> ColorsList();
+    static QMap<QString, QString> supportColorsList();
+    static QMap<QString, QString> backgroundColorsList();
     static QPixmap                createColorIcon(const int w, const int h, const QString &color);
 
 
