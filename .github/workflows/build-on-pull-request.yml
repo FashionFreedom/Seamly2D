@@ -5,6 +5,7 @@ on:
   pull_request:
     branch:
     - develop
+    types: [closed]
 
 env:
   QT_SELECT: 5
@@ -14,6 +15,7 @@ env:
 jobs:
 
   release-data:
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
@@ -45,6 +47,7 @@ jobs:
           echo ${{ steps.create-release-data.outputs.upload_url }}
 
   linux:
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     needs: release-data
     env:
@@ -110,6 +113,7 @@ jobs:
           asset_content_type: application/octet-stream
 
   macos:
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: macos-latest
     needs: release-data
     env:
@@ -150,6 +154,7 @@ jobs:
           asset_content_type: application/zip
 
   windows:
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: windows-latest
     needs: release-data
     env:
