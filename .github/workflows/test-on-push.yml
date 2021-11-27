@@ -1,6 +1,6 @@
-name: Test on pull request
+name: Test on push
 
-on: [ pull_request ]
+on: [ push ]
 
 env:
   QT_SELECT: 5
@@ -8,7 +8,7 @@ env:
 
 jobs:
   build-test:
-    name: 'Test pull request Qt build'
+    name: 'Test Qt build'
     runs-on: ubuntu-20.04
     steps:
       - name: checkout code
