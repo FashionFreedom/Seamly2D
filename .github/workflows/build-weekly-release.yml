@@ -30,8 +30,8 @@ jobs:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=Weekly-release-`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Weekly release `date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=`date +"%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
