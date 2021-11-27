@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir /home/runner/local
           qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache
-          make && make install
+          make -j$(nproc) && make install
 
       - name: install test dependencies
         # xvfb use to test built application within a framebuffer
