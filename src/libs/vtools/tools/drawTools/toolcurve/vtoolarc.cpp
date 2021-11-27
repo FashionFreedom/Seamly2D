@@ -409,7 +409,7 @@ void VToolArc::SetVisualization()
         visual->setRadius(trVars->FormulaToUser(arc->GetFormulaRadius(), qApp->Settings()->GetOsSeparator()));
         visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
         visual->setF2(trVars->FormulaToUser(arc->GetFormulaF2(), qApp->Settings()->GetOsSeparator()));
-        visual->setLineStyle(LineStyleToPenStyle(arc->GetPenStyle()));
+        visual->setLineStyle(lineTypeToPenStyle(arc->GetPenStyle()));
         visual->RefreshGeometry();
     }
 }

@@ -121,7 +121,7 @@ void VToolLinePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 {
     QPen mPen = mainLine->pen();
     mPen.setColor(correctColor(this, lineColor));
-    mPen.setStyle(LineStyleToPenStyle(m_lineType));
+    mPen.setStyle(lineTypeToPenStyle(m_lineType));
 
     mainLine->setPen(mPen);
 

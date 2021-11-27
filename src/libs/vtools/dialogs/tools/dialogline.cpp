@@ -121,7 +121,7 @@ void DialogLine::SetSecondPoint(const quint32 &value)
 void DialogLine::SetTypeLine(const QString &value)
 {
     ChangeCurrentData(ui->comboBoxLineType, value);
-    vis->setLineStyle(LineStyleToPenStyle(value));
+    vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ void DialogLine::SaveData()
 
     line->setObject1Id(GetFirstPoint());
     line->setPoint2Id(GetSecondPoint());
-    line->setLineStyle(LineStyleToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
     line->RefreshGeometry();
 }
 

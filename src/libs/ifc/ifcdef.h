@@ -176,7 +176,7 @@ extern const QString LineTypeDashDotLine;
 extern const QString LineTypeDashDotDotLine;
 
 QStringList          StylesList();
-Qt::PenStyle         LineStyleToPenStyle(const QString &lineType);
+Qt::PenStyle         lineTypeToPenStyle(const QString &lineType);
 QString              PenStyleToLineStyle(Qt::PenStyle penStyle);
 QMap<QString, QIcon> LineStylesPics();
 QMap<QString, QIcon> CurvePenStylesPics();

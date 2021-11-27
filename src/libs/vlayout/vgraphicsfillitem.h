@@ -38,7 +38,7 @@ public:
     /**
      * @brief VGraphicsFillItem Constructor
      */
-    explicit VGraphicsFillItem(QGraphicsItem *parent = nullptr);
+    explicit VGraphicsFillItem(const QColor &color, QGraphicsItem *parent = nullptr);
     /**
      * @brief ~VGraphicsFillItem Destructor
      */
@@ -50,6 +50,10 @@ public:
      * @param widget unused
      */
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+
+private:
+    QColor   m_color;
+
 };
 
 #endif // VGRAPHICSFILLITEM_H

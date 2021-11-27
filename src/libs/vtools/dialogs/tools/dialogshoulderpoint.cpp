@@ -253,7 +253,7 @@ void DialogShoulderPoint::SaveData()
     line->setLineP1Id(GetP1Line());
     line->setLineP2Id(GetP2Line());
     line->setLength(formula);
-    line->setLineStyle(LineStyleToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
     line->RefreshGeometry();
 }
 
@@ -347,7 +347,7 @@ void DialogShoulderPoint::SetFormula(const QString &value)
 void DialogShoulderPoint::SetTypeLine(const QString &value)
 {
     ChangeCurrentData(ui->comboBoxLineType, value);
-    vis->setLineStyle(LineStyleToPenStyle(value));
+    vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

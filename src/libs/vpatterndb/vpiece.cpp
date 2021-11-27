@@ -274,7 +274,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
 QVector<QLineF> VPiece::createNotchLines(const VContainer *data, const QVector<QPointF> &seamAllowance) const
 {
     const QVector<VPieceNode> unitedPath = GetUnitedPath(data);
-    if (not IsSeamAllowance() || not notchesPossible(unitedPath))
+    if (not notchesPossible(unitedPath))
     {
         return QVector<QLineF>();
     }

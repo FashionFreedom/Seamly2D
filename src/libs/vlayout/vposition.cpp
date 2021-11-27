@@ -212,7 +212,7 @@ void VPosition::DrawDebug(const VContour &contour, const VLayoutPiece &detail, i
 
 #ifdef SHOW_CANDIDATE
     paint.setPen(QPen(Qt::darkGreen, 6, Qt::SolidLine, Qt::FlatCap, Qt::MiterJoin));
-    p = DrawContour(detail.GetLayoutAllowancePoints());
+    p = DrawContour(detail.getLayoutAllowancePoints());
     p.translate(biasWidth/2, biasHeight/2);
     paint.drawPath(p);
 #else
@@ -420,7 +420,7 @@ VPosition::CrossingType VPosition::Crossing(const VLayoutPiece &detail) const
     }
 
     const QPainterPath gPath = gContour.ContourPath();
-    if (not gPath.intersects(detail.LayoutAllowancePath()) && not gPath.contains(detail.ContourPath()))
+    if (not gPath.intersects(detail.LayoutAllowancePath()) && not gPath.contains(detail.createMainPath()))
     {
         return CrossingType::NoIntersection;
     }
@@ -591,7 +591,7 @@ QPainterPath VPosition::DrawDetails(const QVector<VLayoutPiece> &details)
     {
         for (int i = 0; i < details.size(); ++i)
         {
-            path.addPath(details.at(i).ContourPath());
+            path.addPath(details.at(i).createMainPath());
         }
     }
     return path;

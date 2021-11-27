@@ -182,7 +182,7 @@ void VToolAlongLine::SetVisualization()
         visual->setObject1Id(basePointId);
         visual->setObject2Id(secondPointId);
         visual->setLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->GetOsSeparator()));
-        visual->setLineStyle(LineStyleToPenStyle(m_lineType));
+        visual->setLineStyle(lineTypeToPenStyle(m_lineType));
         visual->RefreshGeometry();
     }
 }

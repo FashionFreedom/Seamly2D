@@ -118,7 +118,7 @@ void VAbstractSpline::paint(QPainter *painter, const QStyleOptionGraphicsItem *o
     const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
 
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
-    setPen(QPen(correctColor(this, curve->GetColor()), width, LineStyleToPenStyle(curve->GetPenStyle()), Qt::RoundCap));
+    setPen(QPen(correctColor(this, curve->GetColor()), width, lineTypeToPenStyle(curve->GetPenStyle()), Qt::RoundCap));
 
     refreshCtrlPoints();
 

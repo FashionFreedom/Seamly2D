@@ -246,7 +246,7 @@ void DialogAlongLine::SaveData()
     line->setObject1Id(GetFirstPointId());
     line->setObject2Id(GetSecondPointId());
     line->setLength(formula);
-    line->setLineStyle(LineStyleToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
     line->RefreshGeometry();
 }
 
@@ -338,7 +338,7 @@ void DialogAlongLine::SetFormula(const QString &value)
 void DialogAlongLine::SetTypeLine(const QString &value)
 {
     ChangeCurrentData(ui->comboBoxLineType, value);
-    vis->setLineStyle(LineStyleToPenStyle(value));
+    vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
