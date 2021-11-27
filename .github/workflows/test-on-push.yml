@@ -8,7 +8,7 @@ env:
 
 jobs:
   build-test:
-    name: 'Test Qt build'
+    name: 'Build & Test Qt build'
     runs-on: ubuntu-20.04
     steps:
       - name: checkout code
@@ -28,18 +28,19 @@ jobs:
           sudo apt update
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          sudo apt install -y libdrm-dev
 
       - name: build Seamly2D.exe
         run: |
           mkdir /home/runner/local
           qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache
-          make && make install
+          make -j$(nproc) && make install
 
       - name: install test dependencies
         # xvfb use to test built application within a framebuffer
         run: |
           sudo apt update
-          sudo apt install xvfb
+          sudo apt install -y xvfb
 
       - name: test Seamly2D.exe
         run: |
