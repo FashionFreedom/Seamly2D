@@ -1,7 +1,8 @@
 name: Build on pull request
 
 # build on successful pull request merge (aka push) to develop branch
-on: [ push ]
+on:
+  pull-request:
     branch:
     - develop
 

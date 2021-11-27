@@ -8,7 +8,7 @@ env:
 
 jobs:
   build-test:
-    name: 'Test pull request's Qt build'
+    name: 'Test pull request Qt build'
     runs-on: ubuntu-20.04
     steps:
       - name: checkout code
