@@ -1,0 +1,38 @@
+name: Test on pull request
+
+on: [ pull_request ]
+
+env:
+  QT_SELECT: 5
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
+
+jobs:
+  build-test:
+    name: 'Test pull request Qt build'
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2.3.5
+
+      - name: install qt
+        uses: jurplel/install-qt-action@v2.14.0
+        with:
+          version: ${{ env.QT_VERSION }}
+
+      - name: build Seamly2D.exe
+        run: |
+          mkdir /home/runner/local
+          qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache
+          make && make install
+          sudo apt-get install '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+      - name: install test dependencies
+        # xvfb use to test built application within a framebuffer
+        run: |
+          sudo apt update
+          sudo apt install xvfb
+
+      - name: test Seamly2D.exe
+        run: |
+          export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
+          xvfb-run -a make --silent check TESTARGS="-silent"

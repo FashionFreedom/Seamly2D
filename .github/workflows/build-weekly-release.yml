@@ -44,7 +44,7 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Manual test of weekly releases, creates pre-releases
+          body: Automated weekly release
           draft: false
           prerelease: true
 
