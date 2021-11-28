@@ -17,9 +17,9 @@ Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is
    * Ubuntu Linux 14.04 (32-bit/64-bit) or later   
    * OpenSUSE 13.02 (32-bit/64-bit) or later   
    * Fedora 24 (32-bit/64-bit) or later  
-   * Mac OS X 10.8 (64-bit) or later 
-   
-## Download Seamly2D 
+   * Mac OS X 10.8 (64-bit) or later
+
+## Download Seamly2D
 Download from our Releases page [here:](https://github.com/fashionfreedom/seamly2d/releases/latest)
 ___________________________________________________
 ## Seamly2D Community Resources:
