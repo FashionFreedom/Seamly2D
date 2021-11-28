@@ -11,8 +11,8 @@ env:
 jobs:
 
   build-test:
-    # run job 'build-test' if pull_request open and not merged
-    if: github.event.action == 'open' && github.event.pull_request.merged == false
+    # run job 'build-test' if push or pull_request is open AND pull_request is not merged
+    if: ( github.event.action == 'open') && ( github.event == 'pull' || github.event.pull_request.merged == false)
     name: 'Create Qt build'
     runs-on: ubuntu-20.04
 
