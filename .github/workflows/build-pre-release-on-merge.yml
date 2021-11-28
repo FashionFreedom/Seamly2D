@@ -1,6 +1,6 @@
 name: Build on pull request
 
-# build on successful pull request merge (aka push) to develop branch
+# trigger this workflow on pull requests to develop branch
 on:
   pull_request:
     branch:
@@ -15,6 +15,7 @@ env:
 jobs:
 
   release-data:
+    # run job 'release-data' after PR has been closed & merged
     if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     outputs:
@@ -47,6 +48,7 @@ jobs:
           echo ${{ steps.create-release-data.outputs.upload_url }}
 
   linux:
+    # run job 'release-data' after PR has been closed & merged
     if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     needs: release-data
@@ -113,6 +115,7 @@ jobs:
           asset_content_type: application/octet-stream
 
   macos:
+    # run job 'macos' after PR has been closed & merged
     if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: macos-latest
     needs: release-data
@@ -154,6 +157,7 @@ jobs:
           asset_content_type: application/zip
 
   windows:
+    # run job 'windows' after PR has been closed & merged
     if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: windows-latest
     needs: release-data
@@ -203,13 +207,17 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: upload unsigned Seamly2D-installer.exe
+      - name: pack installer file into .zip
+        run: |
+          zip Seamly2D-windows.zip Seamly2D-installer.exe
+
+      - name: upload unsigned Seamly2D-windows.zip as pre-release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
 
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ../windows-build/Seamly2D-installer.exe
-          asset_name: Seamly2D-installer.exe
-          asset_content_type: application/octet-stream
+          asset_path: ../windows-build/Seamly2D-windows.zip
+          asset_name: SSeamly2D-windows.zip
+          asset_content_type: application/zip
