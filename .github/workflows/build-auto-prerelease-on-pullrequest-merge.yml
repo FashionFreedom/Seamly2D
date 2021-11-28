@@ -1,6 +1,6 @@
-name: Build on pull request
+name: build pre-release after merging a pull_request
 
-# trigger this workflow on pull requests to develop branch
+# trigger this workflow on merging a pull request into develop branch
 on:
   pull_request:
     branch:
@@ -11,7 +11,7 @@ env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
-# The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
+
 jobs:
 
   release-data:
@@ -21,6 +21,7 @@ jobs:
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
+    # The tag name is Pre-release-YYmmdd-HHMM to distinguish between builds if there  are multiple pull-requests per day
     steps:
       - name: create name and tag
         id: create-name-and-tag

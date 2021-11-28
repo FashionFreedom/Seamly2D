@@ -1,4 +1,4 @@
-name: Build weekly release
+name: Build weekly release on cron job
 
 # cron format:
 # minute (0 - 59)
@@ -18,7 +18,6 @@ env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
-# The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
 
   release-data:
@@ -26,12 +25,13 @@ jobs:
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
+# The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
     steps:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -206,13 +206,17 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: upload unsigned Seamly2D-installer.exe
+      - name: pack installer file into .zip
+        run: |
+          zip Seamly2D-windows.zip Seamly2D-installer.exe
+
+      - name: upload unsigned Seamly2D-windows.zip
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
 
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ../windows-build/Seamly2D-installer.exe
-          asset_name: Seamly2D-installer.exe
-          asset_content_type: application/octet-stream
+          asset_path: ../windows-build/Seamly2D-windows.zip
+          asset_name: Seamly2D-windows.zip
+          asset_content_type: application/zip

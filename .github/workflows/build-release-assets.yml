@@ -1,4 +1,5 @@
 name: Build release assets
+# Will be deprecated after adding new code signing to windows build in other workflows
 
 on:
   release:

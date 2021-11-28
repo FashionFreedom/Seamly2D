@@ -1,15 +1,21 @@
-name: Test on push
+name: Build & test on push or pull_request
+# DOES NOT CREATE A RELEASE - BUILDS SEAMLY2D.EXE ON VIRTUAL SERVER TO RUN PRE-DEFINED TESTS
+# DOES NOT TEST SEAMLYME.EXE
 
-on: [ push ]
+on: [ push, pull_request ]
 
 env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
+
   build-test:
-    name: 'Build & Test Qt build'
+    # run job 'build-test' if pull_request open and not merged
+    if: github.event.action == 'open' && github.event.pull_request.merged == false
+    name: 'Create Qt build'
     runs-on: ubuntu-20.04
+
     steps:
       - name: checkout code
         uses: actions/checkout@v2.3.5
@@ -42,6 +48,7 @@ jobs:
           sudo apt update
           sudo apt install -y xvfb
 
+      # run the tests
       - name: test Seamly2D.exe
         run: |
           export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
