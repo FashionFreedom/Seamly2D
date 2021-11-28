@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#Creates linux appimage using deprecated docker workflow
+#Called from build-release-asset.yml
+#Will be depricated after adding new code signing to windows build in other workflows
+
 set -euo pipefail
 
 #create build directory
