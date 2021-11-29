@@ -3,13 +3,18 @@ name: Build qttest on push or pull_request
 # DOES NOT TEST SEAMLYME.EXE
 
 # Trigger on push branch or code to repo, and on pull requests
-on: [ push, pull_request ]
+on: [ push ]
 
 env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
+  show-env:
+    run: |
+    echo "github.event = ${{github.event}}"
+    echo "github.event.action = ${{github.event.action}}"
+    echo "github.event.pull_request.merged = ${{github.event.pull_request.merged}}"
 
   build-test:
     # run job 'build-test' if push, or if pull_request then it hasn't been merged
