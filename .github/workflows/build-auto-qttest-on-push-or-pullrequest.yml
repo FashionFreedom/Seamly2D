@@ -12,9 +12,9 @@ env:
 jobs:
   show-env:
     run: |
-    echo "github.event = ${{github.event}}"
-    echo "github.event.action = ${{github.event.action}}"
-    echo "github.event.pull_request.merged = ${{github.event.pull_request.merged}}"
+      echo " event = ${{ github.event }}"
+      echo " action = ${{ github.event.action }}"
+      echo " merged = ${{ github.event.pull_request.merged }}"
 
   build-test:
     # run job 'build-test' if push, or if pull_request then it hasn't been merged
