@@ -2,6 +2,7 @@ name: Build qttest on push or pull_request
 # DOES NOT CREATE A RELEASE - BUILDS SEAMLY2D.EXE ON VIRTUAL SERVER TO RUN PRE-DEFINED TESTS
 # DOES NOT TEST SEAMLYME.EXE
 
+# Trigger on push branch or code to repo, and on pull requests
 on: [ push, pull_request ]
 
 env:
@@ -9,17 +10,10 @@ env:
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
-  show-github-state:
-    steps:
-      -name: show values
-      run: |
-      echo 'github.event = ', ${{github.event}}
-      echo 'github.event.action = ', ${{github.event.action}}
-      echo 'github.event.pull_request.merged = ,'${{github.event.pull_request.merged}}'
 
   build-test:
-    # run job 'build-test' if push or pull_request is open AND pull_request is not merged
-    if: ( github.event.action == 'open') && ( github.event == 'pull' || github.event.pull_request.merged == false)
+    # run job 'build-test' if push, or if pull_request then it hasn't been merged
+    if: ( github.event != 'pull_request' || github.event.pull_request.merged == false)
     name: 'Create Qt build'
     runs-on: ubuntu-20.04
 
