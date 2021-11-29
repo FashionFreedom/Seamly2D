@@ -82,7 +82,7 @@ jobs:
         run: |
           sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 
-      - name: upload seamly2d-x86_64.tar.gz artifact
+      - name: upload seamly2d-x86_64.AppImage artifact
         # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
         uses: actions/upload-artifact@v2.2.4
         with:
