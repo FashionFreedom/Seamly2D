@@ -1,33 +1,43 @@
-name: build pre-release after merging a pull_request
+# This manual build file is the sandbox for ..
+#   testing changes to the automated build-weekly-release.yml file.
+# When your updates to this file run without error ..
+#   incorporate your changes to build-weekly-release.yml.
+# Create a pull request for your updates to all build files ..
+#   whether for manual or automated build files.
+# You can merge your own PR for updates to build Files ..
+#   because you can't test then until they're fully merged ..
+#   if the build fails immediately undo your work with a new PR & merge :D
 
-# trigger this workflow on merging a pull request into develop branch
+name: Build manual release
+
 on:
-  pull_request:
-    branch:
-    - develop
-    types: [closed]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Build manual release'
 
 env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
-
+# The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
 
   release-data:
-    # run job 'release-data' after PR has been closed & merged
-    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
-    # The tag name is Pre-release-YYmmdd-HHMM to distinguish between builds if there  are multiple pull-requests per day
     steps:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=Pre-release-`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Pre-release `date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=Test-manual-`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Test manual `date +"%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -40,7 +50,7 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Automated pre-release from pull request
+          body: Manual test of weekly releases, creates pre-releases
           draft: false
           prerelease: true
 
@@ -49,8 +59,6 @@ jobs:
           echo ${{ steps.create-release-data.outputs.upload_url }}
 
   linux:
-    # run job 'linux' after PR has been closed & merged
-    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     needs: release-data
     env:
@@ -116,8 +124,6 @@ jobs:
           asset_content_type: application/octet-stream
 
   macos:
-    # run job 'macos' after PR has been closed & merged
-    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: macos-latest
     needs: release-data
     env:
@@ -158,8 +164,6 @@ jobs:
           asset_content_type: application/zip
 
   windows:
-    # run job 'windows' after PR has been closed & merged
-    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: windows-latest
     needs: release-data
     env:
@@ -208,16 +212,13 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: pack installer file into .zip
-        run: |
-          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
-
-      - name: upload unsigned Seamly2D-windows.zip as pre-release to Github Releases
+      - name: upload unsigned Seamly2D-installer.exe
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ../windows-build/Seamly2D-windows.zip
-          asset_name: SSeamly2D-windows.zip
-          asset_content_type: application/zip
+          asset_path: ../windows-build/Seamly2D-installer.exe
+          asset_name: Seamly2D-installer.exe
+          asset_content_type: application/octet-stream

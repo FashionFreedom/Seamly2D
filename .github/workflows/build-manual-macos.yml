@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build macos zip - manual'
+        description: 'Build manual MacOS'
 
 env:
   QT_SELECT: 5

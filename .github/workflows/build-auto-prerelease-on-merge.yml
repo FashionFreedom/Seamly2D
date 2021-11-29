@@ -1,37 +1,33 @@
-name: Build weekly release on cron job
+name: build pre-release on merge
 
-# cron format:
-# minute (0 - 59)
-# │ ┌───────────── hour (0 - 23)
-# │ │ ┌───────────── day of the month (1 - 31)
-# │ │ │ ┌───────────── month (1 - 12)
-# │ │ │ │ ┌───────────── day of the week (0 - 6)
-# │ │ │ │ │
-# │ │ │ │ │
-# │ │ │ │ │
-#'* * * * *'
+# trigger this workflow on merging a pull request into develop branch
 on:
-  schedule:
-    - cron: '0 0 * * MON'
+  pull_request:
+    branch:
+    - develop
+    types: [closed]
 
 env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
+
 jobs:
 
   release-data:
+    # run job 'release-data' after PR has been closed & merged
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
-# The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
+    # The tag name is Pre-release-YYmmdd-HHMM to distinguish between builds if there  are multiple pull-requests per day
     steps:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=Pre-release-`date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=Pre-release `date +"%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -44,7 +40,7 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Automated weekly release
+          body: Automated pre-release from pull request
           draft: false
           prerelease: true
 
@@ -53,6 +49,8 @@ jobs:
           echo ${{ steps.create-release-data.outputs.upload_url }}
 
   linux:
+    # run job 'linux' after PR has been closed & merged
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
     needs: release-data
     env:
@@ -118,6 +116,8 @@ jobs:
           asset_content_type: application/octet-stream
 
   macos:
+    # run job 'macos' after PR has been closed & merged
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: macos-latest
     needs: release-data
     env:
@@ -158,6 +158,8 @@ jobs:
           asset_content_type: application/zip
 
   windows:
+    # run job 'windows' after PR has been closed & merged
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
     runs-on: windows-latest
     needs: release-data
     env:
@@ -208,15 +210,14 @@ jobs:
 
       - name: pack installer file into .zip
         run: |
-          zip Seamly2D-windows.zip Seamly2D-installer.exe
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
 
-      - name: upload unsigned Seamly2D-windows.zip
+      - name: upload unsigned Seamly2D-windows.zip as pre-release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ../windows-build/Seamly2D-windows.zip
-          asset_name: Seamly2D-windows.zip
+          asset_name: SSeamly2D-windows.zip
           asset_content_type: application/zip
