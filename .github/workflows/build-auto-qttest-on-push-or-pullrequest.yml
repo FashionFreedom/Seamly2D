@@ -10,15 +10,10 @@ env:
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
-  show-env:
-    run: |
-      echo " event = ${{ github.event }}"
-      echo " action = ${{ github.event.action }}"
-      echo " merged = ${{ github.event.pull_request.merged }}"
 
   build-test:
     # run job 'build-test' if push, or if pull_request then it hasn't been merged
-    if: ( github.event != 'pull_request' || github.event.pull_request.merged == false)
+    if: ( github.event.action == 'closed' && github.event.pull_request.merged == false)
     name: 'Create Qt build'
     runs-on: ubuntu-20.04
 
@@ -33,6 +28,11 @@ jobs:
 
       - name: install kde and dependencies
         run: |
+          # show git event values
+          echo " github event = ${{ github.event }}"
+          echo " github event action = ${{ github.event.action }}"
+          echo " github event pull_request merged = ${{ github.event.pull_request.merged }}"
+
           # register kde neon repository
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
