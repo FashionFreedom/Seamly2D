@@ -210,7 +210,8 @@ jobs:
 
       - name: pack installer file into .zip
         run: |
-          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-windows.zip
 
       - name: upload unsigned Seamly2D-windows.zip as pre-release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
