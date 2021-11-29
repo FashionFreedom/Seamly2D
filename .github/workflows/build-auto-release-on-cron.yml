@@ -46,7 +46,7 @@ jobs:
           release_name: ${{ env.RELEASE_NAME }}
           body: Automated weekly release
           draft: false
-          prerelease: true
+          prerelease: false
 
       - name: show UPLOAD_URL
         run: |
@@ -208,9 +208,10 @@ jobs:
 
       - name: pack installer file into .zip
         run: |
-          zip Seamly2D-windows.zip Seamly2D-installer.exe
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
 
-      - name: upload unsigned Seamly2D-windows.zip
+      - name: upload unsigned Seamly2D-windows.zip as release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
