@@ -220,5 +220,5 @@ jobs:
         with:
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ../windows-build/Seamly2D-windows.zip
-          asset_name: SSeamly2D-windows.zip
+          asset_name: Seamly2D-windows.zip
           asset_content_type: application/zip
