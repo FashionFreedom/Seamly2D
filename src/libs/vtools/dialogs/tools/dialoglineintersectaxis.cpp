@@ -147,7 +147,7 @@ QString DialogLineIntersectAxis::GetTypeLine() const
 void DialogLineIntersectAxis::SetTypeLine(const QString &value)
 {
     ChangeCurrentData(ui->comboBoxLineType, value);
-    vis->setLineStyle(LineStyleToPenStyle(value));
+    vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -409,7 +409,7 @@ void DialogLineIntersectAxis::SaveData()
     line->setPoint2Id(GetSecondPointId());
     line->setAxisPointId(GetBasePointId());
     line->SetAngle(formulaAngle);
-    line->setLineStyle(LineStyleToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
     line->RefreshGeometry();
 }
 

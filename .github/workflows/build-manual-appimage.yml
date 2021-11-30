@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build linux appimage - manual'
+        description: 'Build manual Linux AppImage'
 
 env:
   QT_SELECT: 5

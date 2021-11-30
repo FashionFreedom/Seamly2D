@@ -360,7 +360,7 @@ void VToolCutSplinePath::SetVisualization()
         visual->setLength(qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->GetOsSeparator()));
 
         const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(curveCutId);
-        visual->setLineStyle(LineStyleToPenStyle(curve->GetPenStyle()));
+        visual->setLineStyle(lineTypeToPenStyle(curve->GetPenStyle()));
 
         visual->RefreshGeometry();
     }

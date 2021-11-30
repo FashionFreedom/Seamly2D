@@ -1,4 +1,4 @@
-name: Build manual win installer exe
+name: Build manual Windows
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build win installer exe - manual'
+        description: 'Build manual Windows'
 
 env:
   QT_SELECT: 5

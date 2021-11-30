@@ -531,7 +531,7 @@ void VToolSpline::SetVisualization()
         visual->SetKAsm1(spl->GetKasm1());
         visual->SetKAsm2(spl->GetKasm2());
         visual->SetKCurve(spl->GetKcurve());
-        visual->setLineStyle(LineStyleToPenStyle(spl->GetPenStyle()));
+        visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }
