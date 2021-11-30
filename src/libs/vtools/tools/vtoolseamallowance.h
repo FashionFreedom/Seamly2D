@@ -163,13 +163,15 @@ private:
     Q_DISABLE_COPY(VToolSeamAllowance)
 
     QPainterPath m_mainPath; // Must be first to prevent crash
-    QRectF       m_mainPathRect;
+    QRectF       m_pieceRect;
+    QPainterPath m_cutPath; // Must be first to prevent crash
 
     /** @brief pieceScene pointer to the scene. */
     VMainGraphicsScene *m_pieceScene;
     QString             m_drawName;
 
-    VNoBrushScalePathItem *m_seamAllowance;
+    VNoBrushScalePathItem *m_seamLine;
+    VNoBrushScalePathItem *m_cutLine;
     VTextGraphicsItem     *m_dataLabel;
     VTextGraphicsItem     *m_patternInfo;
     VGrainlineItem        *m_grainLine;

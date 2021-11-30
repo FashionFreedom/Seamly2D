@@ -1,30 +1,23 @@
-# This manual build file is the sandbox for ..
-#   testing changes to the automated build-weekly-release.yml file.
-# When your updates to this file run without error ..
-#   incorporate your changes to build-weekly-release.yml.
-# Create a pull request for your updates to all build files ..
-#   whether for manual or automated build files.
-# You can merge your own PR for updates to build Files ..
-#   because you can't test then until they're fully merged ..
-#   if the build fails immediately undo your work with a new PR & merge :D
+name: Build release on cron
 
-name: Build manual weekly release
-
+# cron format:
+# minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6)
+# │ │ │ │ │
+# │ │ │ │ │
+# │ │ │ │ │
+#'* * * * *'
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Build weekly release - manual'
+  schedule:
+    - cron: '0 0 * * MON'
 
 env:
   QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
-# The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
 
   release-data:
@@ -32,12 +25,13 @@ jobs:
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
+# The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
     steps:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=Test-manual-`date +"%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=Test manual `date +"%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -50,9 +44,9 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Manual test of weekly releases, creates pre-releases
+          body: Automated weekly release
           draft: false
-          prerelease: true
+          prerelease: false
 
       - name: show UPLOAD_URL
         run: |
@@ -212,13 +206,18 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: upload unsigned Seamly2D-installer.exe
+      - name: pack installer file into .zip
+        run: |
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
+
+      - name: upload unsigned Seamly2D-windows.zip as release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
 
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ../windows-build/Seamly2D-installer.exe
-          asset_name: Seamly2D-installer.exe
-          asset_content_type: application/octet-stream
+          asset_path: ../windows-build/Seamly2D-windows.zip
+          asset_name: Seamly2D-windows.zip
+          asset_content_type: application/zip

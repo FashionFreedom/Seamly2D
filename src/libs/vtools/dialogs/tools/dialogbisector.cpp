@@ -256,7 +256,7 @@ void DialogBisector::SetPointName(const QString &value)
 void DialogBisector::SetTypeLine(const QString &value)
 {
     ChangeCurrentData(ui->comboBoxLineType, value);
-    vis->setLineStyle(LineStyleToPenStyle(value));
+    vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -350,7 +350,7 @@ void DialogBisector::SaveData()
     line->setObject2Id(GetSecondPointId());
     line->setObject3Id(GetThirdPointId());
     line->setLength(formula);
-    line->setLineStyle(LineStyleToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
     line->RefreshGeometry();
 }
 

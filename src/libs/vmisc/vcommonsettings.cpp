@@ -126,9 +126,23 @@ const QString settingPatternHideMainPath                 = QStringLiteral("patte
 const QString settingDefaultNotchLength                  = QStringLiteral("pattern/defaultNotchLength");
 const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
 const QString settingDefaultNotchType                    = QStringLiteral("pattern/defaultNotchType");
+const QString settingDefaultNotchColor                   = QStringLiteral("pattern/defaultNotchColor");
 const QString settingDoubleNotch                         = QStringLiteral("pattern/doubleNotch");
 
 const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
+const QString settingDefaultSeamColor                    = QStringLiteral("pattern/defaultSeamColor");
+const QString settingDefaultSeamLinetype                 = QStringLiteral("pattern/defaultSeamLinetype");
+const QString settingDefaultSeamLineweight               = QStringLiteral("pattern/defaultSeamLineweight");
+const QString settingDefaultCutColor                     = QStringLiteral("pattern/defaultCutColor");
+const QString settingDefaultCutLinetype                  = QStringLiteral("pattern/defaultCutLinetype");
+const QString settingDefaultCutLineweight                = QStringLiteral("pattern/defaultCutLineweight");
+const QString settingDefaultInternalColor                = QStringLiteral("pattern/defaultInternalColor");
+const QString settingDefaultInternalLinetype             = QStringLiteral("pattern/defaultInternalLinetype");
+const QString settingDefaultInternalLineweight           = QStringLiteral("pattern/defaultInternalLineweight");
+const QString settingDefaultCutoutColor                  = QStringLiteral("pattern/defaultCutoutColor");
+const QString settingDefaultCutoutLinetype               = QStringLiteral("pattern/defaultCutoutLinetype");
+const QString settingDefaultCutoutLineweight             = QStringLiteral("pattern/defaultCutoutLineweight");
+
 const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
 const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
 const QString settingPatternPointNameFont                = QStringLiteral("pattern/pointNameFont");
@@ -1004,6 +1018,18 @@ void VCommonSettings::setDefaultNotchType(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultNotchColor() const
+{
+   return value(settingDefaultNotchColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultNotchColor(const QString &value)
+{
+    setValue(settingDefaultNotchColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetCSVWithHeader(bool withHeader)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
@@ -1139,6 +1165,150 @@ double VCommonSettings::GetDefaultSeamAllowance()
     }
 
     return val;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultSeamColor() const
+{
+   return value(settingDefaultSeamColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamColor(const QString &value)
+{
+    setValue(settingDefaultSeamColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultSeamLinetype() const
+{
+   return value(settingDefaultSeamLinetype, "solid").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamLinetype(const QString &value)
+{
+    setValue(settingDefaultSeamLinetype, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultSeamLineweight() const
+{
+   return value(settingDefaultSeamLineweight, 0.18).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamLineweight(const qreal &value)
+{
+    setValue(settingDefaultSeamLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultCutColor() const
+{
+   return value(settingDefaultCutColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutColor(const QString &value)
+{
+    setValue(settingDefaultCutColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultCutLinetype() const
+{
+   return value(settingDefaultCutLinetype, "solid").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutLinetype(const QString &value)
+{
+    setValue(settingDefaultCutLinetype, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultCutLineweight() const
+{
+   return value(settingDefaultCutLineweight, 0.18).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutLineweight(const qreal &value)
+{
+    setValue(settingDefaultCutLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultInternalColor() const
+{
+   return value(settingDefaultInternalColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultInternalColor(const QString &value)
+{
+    setValue(settingDefaultInternalColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultInternalLinetype() const
+{
+   return value(settingDefaultInternalLinetype, "solid").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultInternalLinetype(const QString &value)
+{
+    setValue(settingDefaultInternalLinetype, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultInternalLineweight() const
+{
+   return value(settingDefaultInternalLineweight, 0.18).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultInternalLineweight(const qreal &value)
+{
+    setValue(settingDefaultInternalLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultCutoutColor() const
+{
+   return value(settingDefaultCutoutColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutoutColor(const QString &value)
+{
+    setValue(settingDefaultCutoutColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultCutoutLinetype() const
+{
+   return value(settingDefaultCutoutLinetype, "solid").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutoutLinetype(const QString &value)
+{
+    setValue(settingDefaultCutoutLinetype, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultCutoutLineweight() const
+{
+   return value(settingDefaultCutoutLineweight, 0.18).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultCutoutLineweight(const qreal &value)
+{
+    setValue(settingDefaultCutoutLineweight, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

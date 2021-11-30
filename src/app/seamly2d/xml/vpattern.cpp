@@ -3374,7 +3374,7 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
 
         path.SetType(type);
         path.SetName(name);
-        path.SetPenType(LineStyleToPenStyle(penType));
+        path.SetPenType(lineTypeToPenStyle(penType));
         path.SetCutPath(cut);
 
         VToolInternalPath::Create(id, path, 0, scene, this, data, parse, Source::FromFile, "", idTool);

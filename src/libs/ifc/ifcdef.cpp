@@ -175,7 +175,7 @@ QStringList StylesList()
  * @brief LineStyle return pen style for current line style.
  * @return pen style.
  */
-Qt::PenStyle LineStyleToPenStyle(const QString &lineType)
+Qt::PenStyle lineTypeToPenStyle(const QString &lineType)
 {
     const QStringList styles = StylesList();
     switch (styles.indexOf(lineType))
@@ -230,7 +230,7 @@ QMap<QString, QIcon> LineStylesPics()
 
     for (int i=0; i < styles.size(); ++i)
     {
-        const Qt::PenStyle style = LineStyleToPenStyle(styles.at(i));
+        const Qt::PenStyle style = lineTypeToPenStyle(styles.at(i));
         QPixmap pix(80, 14);
         pix.fill(Qt::white);
 
