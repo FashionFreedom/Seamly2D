@@ -1,4 +1,4 @@
-name: Test build auto-release on cron (Saturday 8:30pm CST)
+name: Test build auto-release on cron (Saturday 8:30pm CST, Sunday 2:30am UTC)
 
 # cron format:
 # minute (0 - 59)
@@ -12,7 +12,7 @@ name: Test build auto-release on cron (Saturday 8:30pm CST)
 #'* * * * *'
 on:
   schedule:
-    - cron: '0 20 * * SAT'
+    - cron: '30 2 * * SUN'
 
 env:
   QT_SELECT: 5
@@ -44,8 +44,10 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Automated weekly release
-          draft: false
+          body: Test run of Automated weekly release - unpublished full release
+          # create unpublished
+          draft: true
+          # create full release, not a pre-release
           prerelease: false
 
       - name: show UPLOAD_URL
