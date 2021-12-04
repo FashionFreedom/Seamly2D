@@ -1,4 +1,4 @@
-name: Test build auto-release on cron (Saturday 5:30pm CST)
+name: Test build auto-release on cron (Saturday 8:30pm CST)
 
 # cron format:
 # minute (0 - 59)
@@ -12,7 +12,7 @@ name: Test build auto-release on cron (Saturday 5:30pm CST)
 #'* * * * *'
 on:
   schedule:
-    - cron: '30 17 * * SAT'
+    - cron: '0 20 * * SAT'
 
 env:
   QT_SELECT: 5
