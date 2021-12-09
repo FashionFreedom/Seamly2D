@@ -76,6 +76,8 @@
 #include <QtDebug>
 #include <QPixmapCache>
 #include <QGraphicsItem>
+#include <QDesktopServices>
+#include <QUrl>
 
 #include "vabstractapplication.h"
 
