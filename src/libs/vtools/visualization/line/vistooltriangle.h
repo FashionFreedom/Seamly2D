@@ -93,10 +93,6 @@ private:
     VScaledEllipse    *hypotenuseP2;
     VScaledLine       *foot1;
     VScaledLine       *foot2;
-
-    void         DrawAimedAxis(VCurvePathItem *item, const QLineF &line, const QColor &color,
-                               Qt::PenStyle style = Qt::SolidLine);
-    void         DrawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
 };
 
 #endif // VISTOOLTRIANGLE_H

@@ -98,7 +98,9 @@ private:
     VScaledEllipse          *originPointItem;
     VScaledEllipse          *rotationOriginPointItem;
     VScaledEllipse          *rotationFinishPointItem;
+    VCurvePathItem          *moveLineItem;
     VScaledLine             *rotationLineItem;
+    QPointF                  m_origin;
 
     template <class Item>
     QGraphicsPathItem       *AddOriginCurve(quint32 id, int &i);
@@ -107,9 +109,7 @@ private:
     int                      AddDestinationCurve(qreal angle, qreal length, quint32 id, int i,
                                                   qreal rotationAngle, const QPointF &rotationOrigin);
 
-    static QPointF           GetOriginPoint(const QVector<QGraphicsItem *> &objects);
-
-    QVector<QGraphicsItem *> CreateOriginObjects(int &iPoint, int &iCurve);
+    void                     createOriginObjects(int &iPoint, int &iCurve);
     void                     createRotatedObjects(int &iPoint, int &iCurve, qreal length, qreal angle,
                                                        qreal rotationAngle, const QPointF &rotationOrigin);
 };

@@ -220,6 +220,9 @@ VToolMove *VToolMove::Create(quint32 _id, QString &formulaAngle, QString &formul
     {
         originPoint = data->GeometricObject<VPointF>(originPointId);
         rotationOrigin = static_cast<QPointF>(*originPoint);
+        QLineF moveLine(rotationOrigin, QPointF(rotationOrigin.x() + calcLength, rotationOrigin.y()));
+        moveLine.setAngle(calcAngle);
+        rotationOrigin = moveLine.p2();
     }
 
     QVector<DestinationItem> dest = destination;
@@ -490,9 +493,6 @@ void VToolMove::SaveDialog(QDomElement &domElement)
     SCASSERT(!m_dialog.isNull())
     QSharedPointer<DialogMove> dialogTool = m_dialog.objectCast<DialogMove>();
     SCASSERT(!dialogTool.isNull())
-
-    //AddDependence(oldDependencies, origPointId);
-    //AddDependence(newDependencies, dialogTool->GetRotationOrigPointId());
 
     doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
     QString length = dialogTool->GetLength();

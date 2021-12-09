@@ -95,14 +95,14 @@ void VisToolTriangle::RefreshGeometry()
 
         if (object2Id <= NULL_ID)
         {
-            DrawAimedAxis(axis, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor);
+            drawArrowedLine(axis, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor);
         }
         else
         {
             const QSharedPointer<VPointF> second = Visualization::data->GeometricObject<VPointF>(object2Id);
             DrawPoint(axisP2, static_cast<QPointF>(*second), supportColor);
 
-            DrawAimedAxis(axis, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor);
+            drawArrowedLine(axis, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor);
 
             if (hypotenuseP1Id <= NULL_ID)
             {
@@ -164,63 +164,4 @@ void VisToolTriangle::setHypotenuseP1Id(const quint32 &value)
 void VisToolTriangle::setHypotenuseP2Id(const quint32 &value)
 {
     hypotenuseP2Id = value;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VisToolTriangle::DrawAimedAxis(VCurvePathItem *item, const QLineF &line, const QColor &color,
-                                    Qt::PenStyle style)
-{
-    SCASSERT (item != nullptr)
-
-    QPen visPen = item->pen();
-    visPen.setColor(color);
-    visPen.setStyle(style);
-
-    item->setPen(visPen);
-
-    QPainterPath path;
-    path.moveTo(line.p1());
-    path.lineTo(line.p2());
-
-    qreal arrow_step = 60;
-    qreal arrow_size = 10;
-
-    if (line.length() < arrow_step)
-    {
-        DrawArrow(line, path, arrow_size);
-    }
-
-    QLineF axis;
-    axis.setP1(line.p1());
-    axis.setAngle(line.angle());
-    axis.setLength(arrow_step);
-
-    int steps = qFloor(line.length()/arrow_step);
-    for (int i=0; i<steps; ++i)
-    {
-        DrawArrow(axis, path, arrow_size);
-        axis.setLength(axis.length()+arrow_step);
-    }
-    item->setPath(path);
-    item->setVisible(true);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VisToolTriangle::DrawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size)
-{
-    QLineF arrowPart1;
-    arrowPart1.setP1(axis.p2());
-    arrowPart1.setLength(arrow_size);
-    arrowPart1.setAngle(axis.angle()+180+35);
-
-    path.moveTo(arrowPart1.p1());
-    path.lineTo(arrowPart1.p2());
-
-    QLineF arrowPart2;
-    arrowPart2.setP1(axis.p2());
-    arrowPart2.setLength(arrow_size);
-    arrowPart2.setAngle(axis.angle()+180-35);
-
-    path.moveTo(arrowPart2.p1());
-    path.lineTo(arrowPart2.p2());
 }

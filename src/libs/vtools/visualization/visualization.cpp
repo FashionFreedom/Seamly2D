@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -262,6 +262,66 @@ void Visualization::DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
     pathItem->setPath(path);
     pathItem->SetDirectionArrows(directionArrows);
     pathItem->setVisible(true);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void Visualization::drawArrowedLine(VCurvePathItem *item, const QLineF &line, const QColor &color,
+                                    Qt::PenStyle style)
+{
+    SCASSERT (item != nullptr)
+
+    QPen visPen = item->pen();
+    visPen.setColor(color);
+    visPen.setStyle(style);
+
+    item->setPen(visPen);
+
+    QPainterPath path;
+    path.moveTo(line.p1());
+    path.lineTo(line.p2());
+
+    qreal arrow_step = 60;
+    qreal arrow_size = 10;
+
+    if (line.length() < arrow_step)
+    {
+        drawArrow(line, path, arrow_size);
+    }
+
+    QLineF axis;
+    axis.setP1(line.p1());
+    axis.setAngle(line.angle());
+    axis.setLength(arrow_step);
+
+    int steps = qFloor(line.length()/arrow_step);
+    for (int i=0; i<steps; ++i)
+    {
+        drawArrow(axis, path, arrow_size);
+        axis.setLength(axis.length()+arrow_step);
+    }
+    item->setPath(path);
+    item->setVisible(true);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void Visualization::drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size)
+{
+    QLineF arrowPart1;
+    arrowPart1.setP1(axis.p2());
+    arrowPart1.setLength(arrow_size);
+    arrowPart1.setAngle(axis.angle()+180+35);
+
+    path.moveTo(arrowPart1.p1());
+    path.lineTo(arrowPart1.p2());
+
+    QLineF arrowPart2;
+    arrowPart2.setP1(axis.p2());
+    arrowPart2.setLength(arrow_size);
+    arrowPart2.setAngle(axis.angle()+180-35);
+
+    path.moveTo(arrowPart2.p1());
+    path.lineTo(arrowPart2.p2());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

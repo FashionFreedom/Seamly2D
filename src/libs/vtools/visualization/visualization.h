@@ -130,6 +130,10 @@ protected:
                           const QVector<DirectionArrow> &directionArrows, const QColor &color,
                           Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
 
+    void         drawArrowedLine(VCurvePathItem *item, const QLineF &line, const QColor &color,
+                                 Qt::PenStyle style = Qt::SolidLine);
+    void         drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
+
     template <typename Item>
     void          AddItem(Item *item);
 
