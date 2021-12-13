@@ -30,10 +30,19 @@ jobs:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          echo "TAG_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=`date + "." + "%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # update tag on repo
+      - name: Tag Repo
+        uses: richardsimko/update-tag@v1.0.5
+        with:
+          tag_name: ${{ env.TAG_NAME }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: create release data
         # produces upload_url
