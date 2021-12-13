@@ -817,7 +817,8 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
     //set cutline pen
     color      = QColor(qApp->Settings()->getDefaultCutColor());
     lineType   = qApp->Settings()->getDefaultCutLinetype();
-    lineWeight = qApp->Settings()->getDefaultCutLineweight();
+    lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
+
     m_cutLine->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
                             lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
     m_cutLine->setZValue(-10);
@@ -829,13 +830,13 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
     {
         color      = QColor(qApp->Settings()->getDefaultSeamColor());
         lineType   = qApp->Settings()->getDefaultSeamLinetype();
-        lineWeight = qApp->Settings()->getDefaultSeamLineweight();
+        lineWeight = ToPixel(qApp->Settings()->getDefaultSeamLineweight(), Unit::Mm);
     }
     else
     {
         color      = QColor(qApp->Settings()->getDefaultCutColor());
         lineType   = qApp->Settings()->getDefaultCutLinetype();
-        lineWeight = qApp->Settings()->getDefaultCutLineweight();
+        lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
     }
 
     this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
@@ -1574,14 +1575,13 @@ void VToolSeamAllowance::InitInternalPaths(const VPiece &piece)
             color = QColor(qApp->Settings()->getDefaultInternalColor());
         }
         Qt::PenStyle lineType   = path.GetPenType();
-        qreal   lineWeight = qApp->Settings()->getDefaultInternalLineweight();
-
+        qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultInternalLineweight(), Unit::Mm);
 
         auto *tool = qobject_cast<VToolInternalPath*>(VAbstractPattern::getTool(pathIds.at(i)));
         SCASSERT(tool != nullptr);
         tool->setParentItem(this);
         tool->SetParentType(ParentType::Item);
-        tool->setPen(QPen(color, lineWeight, lineType, Qt::RoundCap, Qt::RoundJoin));
+        tool->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())), lineType, Qt::RoundCap, Qt::RoundJoin));
         tool->show();
         doc->IncrementReferens(piece.GetInternalPaths().at(i));
     }

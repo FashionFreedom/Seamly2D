@@ -64,6 +64,7 @@
 #include <QTextCodec>
 #include <QFont>
 
+#include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
 #include "../vpatterndb/pmsystems.h"
@@ -1142,7 +1143,7 @@ void VCommonSettings::setDefaultSeamColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultSeamLinetype() const
 {
-   return value(settingDefaultSeamLinetype, "solid").toString();
+   return value(settingDefaultSeamLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1154,7 +1155,7 @@ void VCommonSettings::setDefaultSeamLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultSeamLineweight() const
 {
-   return value(settingDefaultSeamLineweight, 0.18).toReal();
+   return value(settingDefaultSeamLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1178,7 +1179,7 @@ void VCommonSettings::setDefaultCutColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultCutLinetype() const
 {
-   return value(settingDefaultCutLinetype, "solid").toString();
+   return value(settingDefaultCutLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1190,7 +1191,7 @@ void VCommonSettings::setDefaultCutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutLineweight() const
 {
-   return value(settingDefaultCutLineweight, 0.18).toReal();
+   return value(settingDefaultCutLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1214,7 +1215,7 @@ void VCommonSettings::setDefaultInternalColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultInternalLinetype() const
 {
-   return value(settingDefaultInternalLinetype, "solid").toString();
+   return value(settingDefaultInternalLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1226,7 +1227,7 @@ void VCommonSettings::setDefaultInternalLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultInternalLineweight() const
 {
-   return value(settingDefaultInternalLineweight, 0.18).toReal();
+   return value(settingDefaultInternalLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1250,7 +1251,7 @@ void VCommonSettings::setDefaultCutoutColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultCutoutLinetype() const
 {
-   return value(settingDefaultCutoutLinetype, "solid").toString();
+   return value(settingDefaultCutoutLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1262,7 +1263,7 @@ void VCommonSettings::setDefaultCutoutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutoutLineweight() const
 {
-   return value(settingDefaultCutoutLineweight, 0.18).toReal();
+   return value(settingDefaultCutoutLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1037,7 +1037,7 @@ void VLayoutPiece::createInternalPathItem(int i, QGraphicsItem *parent) const
     SCASSERT(parent != nullptr)
     QColor  color      = QColor(qApp->Settings()->getDefaultInternalColor());
     QString lineType   = qApp->Settings()->getDefaultInternalLinetype();
-    qreal   lineWeight = qApp->Settings()->getDefaultInternalLineweight();
+    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultInternalLineweight(), Unit::Mm);
 
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
     item->setPath(d->transform.map(d->m_internalPaths.at(i).GetPainterPath()));
@@ -1050,7 +1050,7 @@ void VLayoutPiece::createCutoutPathItem(int i, QGraphicsItem *parent) const
     SCASSERT(parent != nullptr)
     QColor  color      = QColor(qApp->Settings()->getDefaultCutoutColor());
     QString lineType   = qApp->Settings()->getDefaultCutoutLinetype();
-    qreal   lineWeight = qApp->Settings()->getDefaultCutoutLineweight();
+    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutoutLineweight(), Unit::Mm);
 
     QGraphicsPathItem* item = new QGraphicsPathItem(parent);
     item->setPath(d->transform.map(d->m_cutoutPaths.at(i).GetPainterPath()));
@@ -1239,13 +1239,13 @@ QGraphicsPathItem *VLayoutPiece::createMainItem() const
     {
         color      = QColor(qApp->Settings()->getDefaultSeamColor());
         lineType   = qApp->Settings()->getDefaultSeamLinetype();
-        lineWeight = qApp->Settings()->getDefaultSeamLineweight();
+        lineWeight = ToPixel(qApp->Settings()->getDefaultSeamLineweight(), Unit::Mm);
     }
     else
     {
         color      = QColor(qApp->Settings()->getDefaultCutColor());
         lineType   = qApp->Settings()->getDefaultCutLinetype();
-        lineWeight = qApp->Settings()->getDefaultCutLineweight();
+        lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
     }
     QGraphicsPathItem *item = new QGraphicsPathItem();
     item->setPath(createMainPath());
@@ -1258,7 +1258,7 @@ void VLayoutPiece::createAllowanceItem(QGraphicsItem *parent) const
 {
     QColor  color      = QColor(qApp->Settings()->getDefaultCutColor());
     QString lineType   = qApp->Settings()->getDefaultCutLinetype();
-    qreal   lineWeight = qApp->Settings()->getDefaultCutLineweight();
+    qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     QGraphicsPathItem *item = new QGraphicsPathItem(parent);
     item->setPath(createAllowancePath());
