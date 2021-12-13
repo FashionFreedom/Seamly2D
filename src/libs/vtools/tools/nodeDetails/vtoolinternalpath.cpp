@@ -54,6 +54,7 @@
 #include "../vpatterndb/vpiecepath.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../../undocommands/savepieceoptions.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vtoolseamallowance.h"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -138,17 +139,10 @@ QString VToolInternalPath::getTagName() const
 //---------------------------------------------------------------------------------------------------------------------
 void VToolInternalPath::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    qreal width = widthHairLine;
-
-    const qreal scale = sceneScale(scene());
-    if (scale > 1)
-    {
-        width = qMax(1., width/scale);
-    }
+    qreal lineWeight = ToPixel(qApp->Settings()->getDefaultInternalLineweight(), Unit::Mm);
 
     QPen toolPen = pen();
-    toolPen.setWidthF(width);
-
+    toolPen.setWidthF(scaleWidth(lineWeight, sceneScale(scene())));
     setPen(toolPen);
 
     QGraphicsPathItem::paint(painter, option, widget);
