@@ -424,6 +424,7 @@ private:
 
     void               UpdateWindowTitle();
     void               upDateScenes();
+    void               updateViewToolbar();
 
     bool               IgnoreLocking(int error, const QString &path);
 

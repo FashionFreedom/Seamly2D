@@ -179,7 +179,7 @@ private:
     void                                 createCutoutPathItem(int i, QGraphicsItem *parent) const;
     void                                 createLabelItem(QGraphicsItem *parent, const QVector<QPointF> &labelShape,
                                                          const VTextManager &tm, bool textAsPaths) const;
-    void                                 createGrainlineItem(QGraphicsItem *parent) const;
+    void                                 createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) const;
 
     template <class T>
     QVector<T>                           Map(const QVector<T> &points) const;

@@ -60,7 +60,7 @@ public:
     QString GetLabelHeight() const;
     void    SetLabelHeight(const QString &dLabelH);
 
-    int   GetFontSize() const;
+    int   getFontSize() const;
     void  SetFontSize(int iSize);
 
     QString GetRotation() const;

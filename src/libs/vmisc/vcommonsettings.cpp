@@ -140,6 +140,13 @@ const QString settingDefaultCutoutColor                  = QStringLiteral("patte
 const QString settingDefaultCutoutLinetype               = QStringLiteral("pattern/defaultCutoutLinetype");
 const QString settingDefaultCutoutLineweight             = QStringLiteral("pattern/defaultCutoutLineweight");
 
+const QString settingShowGrainlines                      = QStringLiteral("pattern/showGrainlines");
+const QString settingDefaultGrainlineColor               = QStringLiteral("pattern/defaultGrainlineColor");
+const QString settingDefaultGrainlineLineweight          = QStringLiteral("pattern/defaultGrainlineLineweight");
+
+const QString settingShowLabels                          = QStringLiteral("pattern/showLabels");
+const QString settingDefaultLabelColor                   = QStringLiteral("pattern/defaultLabelColor");
+
 const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
 const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
 const QString settingPatternPointNameFont                = QStringLiteral("pattern/pointNameFont");
@@ -1270,6 +1277,66 @@ qreal VCommonSettings::getDefaultCutoutLineweight() const
 void VCommonSettings::setDefaultCutoutLineweight(const qreal &value)
 {
     setValue(settingDefaultCutoutLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showGrainlines() const
+{
+    return value(settingShowGrainlines, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowGrainlines(const bool &value)
+{
+    setValue(settingShowGrainlines, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultGrainlineColor() const
+{
+   return value(settingDefaultGrainlineColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultGrainlineColor(const QString &value)
+{
+    setValue(settingDefaultGrainlineColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultGrainlineLineweight() const
+{
+   return value(settingDefaultGrainlineLineweight, 0.25).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultGrainlineLineweight(const qreal &value)
+{
+    setValue(settingDefaultGrainlineLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showLabels() const
+{
+    return value(settingShowLabels, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowLabels(const bool &value)
+{
+    setValue(settingShowLabels, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLabelColor() const
+{
+   return value(settingDefaultLabelColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLabelColor(const QString &value)
+{
+    setValue(settingDefaultLabelColor, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

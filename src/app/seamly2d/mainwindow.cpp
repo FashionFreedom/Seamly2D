@@ -3209,13 +3209,10 @@ void MainWindow::draftMode_Action(bool checked)
         setEnableTools(true);
         SetEnableWidgets(true);
 
-        ui->showPointNames_Action->setChecked(qApp->Settings()->getHidePointNames());
-        ui->toggleWireframe_Action->setChecked(qApp->Settings()->isWireframe());
-        ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
-
-        ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
         draftScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
+        updateViewToolbar();
 
         //ui->toggleAnchorPoints_Action->setChecked(qApp->Settings()->getShowAnchorPoints());
         //draftScene->setOriginsVisible(qApp->Settings()->getShowAnchorPoints());
@@ -3300,8 +3297,9 @@ void MainWindow::ActionDetails(bool checked)
         setEnableTools(true);
         SetEnableWidgets(true);
 
-        ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
+        updateViewToolbar();
 
         ui->tools_ToolBox->setCurrentIndex(ui->tools_ToolBox->indexOf(ui->pieces_Page));
 
@@ -3737,6 +3735,8 @@ void MainWindow::Clear()
     ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
+    ui->toggleGrainLines_Action->setEnabled(false);
+    ui->toggleLabels_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
 
 
@@ -4006,6 +4006,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
+    ui->toggleGrainLines_Action->setEnabled(enable && pieceStage);
+    ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
 
@@ -5145,6 +5147,20 @@ void MainWindow::CreateActions()
         draftScene->setOriginsVisible(checked);
         pieceScene->setOriginsVisible(checked);
     });
+
+    connect(ui->toggleGrainLines_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowGrainlines(checked);
+        ui->view->itemClicked(nullptr);
+        refreshGrainLines();
+    });
+
+    connect(ui->toggleLabels_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowLabels(checked);
+        ui->view->itemClicked(nullptr);
+        RefreshDetailsLabel();
+    });
 /**
     connect(ui->toggleAnchorPoints_Action, &QAction::triggered, this, [this](bool checked)
     {
@@ -5958,6 +5974,7 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::RefreshDetailsLabel);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
 
 
@@ -6670,6 +6687,16 @@ void MainWindow::upDateScenes()
         pieceScene->update();
     }
 }
+
+void MainWindow::updateViewToolbar()
+{
+    ui->toggleWireframe_Action->setChecked(qApp->Settings()->isWireframe());
+    ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
+    ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
+    ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
+    ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::IgnoreLocking(int error, const QString &path)
 {

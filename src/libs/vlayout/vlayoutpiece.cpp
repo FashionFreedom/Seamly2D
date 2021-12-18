@@ -66,6 +66,7 @@
 #include <Qt>
 #include <QtDebug>
 
+#include "global.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../ifc/ifcdef.h"
@@ -367,7 +368,7 @@ QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManage
     {
         for (int i = 0; i < tm.GetSourceLinesCount(); ++i)
         {
-            text.append(tm.GetSourceLine(i).m_qsText);
+            text.append(tm.GetSourceLine(i).m_text);
         }
     }
     return text;
@@ -559,11 +560,11 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
     d->detailLabel = CorrectPosition(item->boundingRect(), v);
 
     // generate text
-    d->m_tmDetail.SetFont(font);
-    d->m_tmDetail.SetFontSize(data.GetFontSize());
+    d->m_tmDetail.setFont(font);
+    d->m_tmDetail.SetFontSize(data.getFontSize());
     d->m_tmDetail.Update(qsName, data);
     // this will generate the lines of text
-    d->m_tmDetail.SetFontSize(data.GetFontSize());
+    d->m_tmDetail.SetFontSize(data.getFontSize());
     d->m_tmDetail.FitFontSize(labelWidth, labelHeight);
 }
 
@@ -618,13 +619,13 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
     d->patternInfo = CorrectPosition(item->boundingRect(), v);
 
     // Generate text
-    d->m_tmPattern.SetFont(font);
-    d->m_tmPattern.SetFontSize(geom.GetFontSize());
+    d->m_tmPattern.setFont(font);
+    d->m_tmPattern.SetFontSize(geom.getFontSize());
 
     d->m_tmPattern.Update(pDoc);
 
     // generate lines of text
-    d->m_tmPattern.SetFontSize(geom.GetFontSize());
+    d->m_tmPattern.SetFontSize(geom.getFontSize());
     d->m_tmPattern.FitFontSize(labelWidth, labelHeight);
 }
 
@@ -643,28 +644,31 @@ void VLayoutPiece::setGrainline(const VGrainlineData& geom, const VContainer* pa
 
     QPointF pt2(pt1.x() + dLen * qCos(dAng), pt1.y() - dLen * qSin(dAng));
 
-    const qreal dArrowLen = ToPixel(0.5, *pattern->GetPatternUnit());
+    const qreal dArrowLen = 15;
     const qreal dArrowAng = M_PI/9;
 
     QVector<QPointF> v;
-    v << pt1;
+    //v << pt1;
+    v << QPointF(pt1.x(), pt1.y() - dArrowLen);
 
     if (geom.GetArrowType() != ArrowType::atFront)
     {
         v << QPointF(pt1.x() + dArrowLen * qCos(dAng + dArrowAng), pt1.y() - dArrowLen * qSin(dAng + dArrowAng));
-        v << QPointF(pt1.x() + dArrowLen * qCos(dAng - dArrowAng), pt1.y() - dArrowLen * qSin(dAng - dArrowAng));
         v << pt1;
+        v << QPointF(pt1.x() + dArrowLen * qCos(dAng - dArrowAng), pt1.y() - dArrowLen * qSin(dAng - dArrowAng));
+        v << QPointF(pt1.x(), pt1.y() - dArrowLen);
     }
 
-    v << pt2;
+    //v << pt2;
+    v << QPointF(pt2.x(), pt2.y() + dArrowLen);
 
     if (geom.GetArrowType() != ArrowType::atRear)
     {
         dAng += M_PI;
-
         v << QPointF(pt2.x() + dArrowLen * qCos(dAng + dArrowAng), pt2.y() - dArrowLen * qSin(dAng + dArrowAng));
-        v << QPointF(pt2.x() + dArrowLen * qCos(dAng - dArrowAng), pt2.y() - dArrowLen * qSin(dAng - dArrowAng));
         v << pt2;
+        v << QPointF(pt2.x() + dArrowLen * qCos(dAng - dArrowAng), pt2.y() - dArrowLen * qSin(dAng - dArrowAng));
+        v << QPointF(pt2.x(), pt2.y() + dArrowLen);
     }
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
@@ -1093,7 +1097,7 @@ QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
 
     createLabelItem(item, d->detailLabel, d->m_tmDetail, textAsPaths);
     createLabelItem(item, d->patternInfo, d->m_tmPattern, textAsPaths);
-    createGrainlineItem(item);
+    createGrainlineItem(item, textAsPaths);
 
     return item;
 }
@@ -1103,6 +1107,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
                                       const VTextManager &tm, bool textAsPaths) const
 {
     SCASSERT(parent != nullptr)
+    QColor color = QColor(qApp->Settings()->getDefaultLabelColor());
 
     if (labelShape.count() > 2)
     {
@@ -1132,7 +1137,7 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
                 break;
             }
 
-            QString qsText = tl.m_qsText;
+            QString qsText = tl.m_text;
             if (fm.horizontalAdvance(qsText) > dW)
             {
                 qsText = fm.elidedText(qsText, Qt::ElideMiddle, static_cast<int>(dW));
@@ -1175,7 +1180,8 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
 
                 QGraphicsPathItem* item = new QGraphicsPathItem(parent);
                 item->setPath(path);
-                item->setBrush(QBrush(Qt::black));
+                item->setPen(QPen(color, widthHairLine));
+                item->setBrush(QBrush(Qt::NoBrush));
                 item->setTransform(labelTransform);
 
                 dY += tm.GetSpacing();
@@ -1186,7 +1192,8 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
                 item->setFont(fnt);
                 item->setText(qsText);
                 item->setTransform(labelTransform);
-                item->setPen(QPen(Qt::black));
+                item->setPen(QPen(color));
+                item->setBrush(QBrush(color));
 
                 dY += (fm.height() + tm.GetSpacing());
             }
@@ -1195,15 +1202,16 @@ void VLayoutPiece::createLabelItem(QGraphicsItem *parent, const QVector<QPointF>
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent) const
+void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) const
 {
     SCASSERT(parent != nullptr)
+    QColor color = QColor(qApp->Settings()->getDefaultGrainlineColor());
 
     if (d->grainlinePoints.count() < 2)
     {
         return;
     }
-    VGraphicsFillItem* item = new VGraphicsFillItem(Qt::black, parent);
+    VGraphicsFillItem* item = new VGraphicsFillItem(color, textAsPaths, parent);
 
     QPainterPath path;
 

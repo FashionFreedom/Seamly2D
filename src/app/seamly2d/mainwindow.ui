@@ -157,6 +157,8 @@
     <addaction name="toggleWireframe_Action"/>
     <addaction name="toggleControlPoints_Action"/>
     <addaction name="toggleAxisOrigin_Action"/>
+    <addaction name="toggleGrainLines_Action"/>
+    <addaction name="toggleLabels_Action"/>
     <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="edit_Menu">
@@ -2616,6 +2618,8 @@
    <addaction name="toggleWireframe_Action"/>
    <addaction name="toggleControlPoints_Action"/>
    <addaction name="toggleAxisOrigin_Action"/>
+   <addaction name="toggleGrainLines_Action"/>
+   <addaction name="toggleLabels_Action"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -3790,10 +3794,10 @@
     <string>Curve Control Points</string>
    </property>
    <property name="toolTip">
-    <string>Toggle Control Points and Curve Direction (C)</string>
+    <string>Toggle Control Points and Curve Direction (V, C)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">C</string>
+    <string notr="true">V, C</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -4418,7 +4422,7 @@
     <string>Toggle Point Name Text (P)</string>
    </property>
    <property name="shortcut">
-    <string>P</string>
+    <string>V, P</string>
    </property>
   </action>
   <action name="increaseSize_Action">
@@ -4478,7 +4482,7 @@
     <string>Use Tool Color (T)</string>
    </property>
    <property name="shortcut">
-    <string>T</string>
+    <string>V, T</string>
    </property>
   </action>
   <action name="toggleAxisOrigin_Action">
@@ -4499,10 +4503,10 @@
     <string>Axis Origin </string>
    </property>
    <property name="toolTip">
-    <string>Toggle Axis Origin (A)</string>
+    <string>Toggle Axis Origin (V, A)</string>
    </property>
    <property name="shortcut">
-    <string>A</string>
+    <string>V, A</string>
    </property>
   </action>
   <action name="toggleWireframe_Action">
@@ -4520,10 +4524,52 @@
     <string>Wireframe Mode</string>
    </property>
    <property name="toolTip">
-    <string>Toggle Wireframe Mode (W)</string>
+    <string>Toggle Wireframe Mode (V, W)</string>
    </property>
    <property name="shortcut">
-    <string>W</string>
+    <string>V, W</string>
+   </property>
+  </action>
+  <action name="toggleGrainLines_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/grainline.png</normaloff>:/icon/32x32/grainline.png</iconset>
+   </property>
+   <property name="text">
+    <string>Grainlines</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Grainlines (V, G)</string>
+   </property>
+   <property name="shortcut">
+    <string>V, G</string>
+   </property>
+  </action>
+  <action name="toggleLabels_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/labels.png</normaloff>:/icon/32x32/labels.png</iconset>
+   </property>
+   <property name="text">
+    <string>Labels</string>
+   </property>
+   <property name="toolTip">
+    <string>Toggle Labels (V, L)</string>
+   </property>
+   <property name="shortcut">
+    <string>V, L</string>
    </property>
   </action>
  </widget>

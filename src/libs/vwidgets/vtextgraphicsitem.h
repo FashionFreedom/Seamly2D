@@ -61,42 +61,42 @@ public:
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::TextGraphicsItem)};
 
-    void SetFont(const QFont& fnt);
-    int  GetFontSize() const;
-    void SetSize(qreal fW, qreal fH);
-    bool IsContained(QRectF rectBB, qreal dRot, qreal& dX, qreal& dY) const;
-    void UpdateData(const QString& qsName, const VPieceLabelData& data);
-    void UpdateData(VAbstractPattern* pDoc);
-    int  GetTextLines() const;
+    void setFont(const QFont &font);
+    int  getFontSize() const;
+    void setSize(qreal width, qreal height);
+    bool isContained(QRectF rectBB, qreal rotation, qreal &xPos, qreal &yPos) const;
+    void updateData(const QString &name, const VPieceLabelData &data);
+    void updateData(VAbstractPattern *doc);
+    int  getTextLines() const;
 
 protected:
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
-    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
-    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent* pHE) Q_DECL_OVERRIDE;
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* pHE) Q_DECL_OVERRIDE;
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
+    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
 
     void UpdateBox();
-    void CorrectLabel();
+    void correctLabel();
 
 signals:
-    void SignalResized(qreal iTW, int iFontSize);
-    void SignalRotated(qreal dAng);
-    void SignalShrink();
+    void itemResized(qreal width, int fontSize);
+    void itemRotated(qreal angle);
+    void textShrink();
 
 private:
     Q_DISABLE_COPY(VTextGraphicsItem)
-    QPointF      m_ptStartPos;
-    QPointF      m_ptStart;
-    QSizeF       m_szStart;
-    double       m_dRotation;
-    double       m_dAngle;
+    QPointF      m_startPos;
+    QPointF      m_start;
+    QSizeF       m_startSize;
+    double       m_rotation;
+    double       m_angle;
     QRectF       m_rectResize;
-    VTextManager m_tm;
+    VTextManager m_textMananger;
 
-    void AllUserModifications(const QPointF &pos);
-    void UserRotateAndMove();
-    void UserMoveAndResize(const QPointF &pos);
+    void allUserModifications(const QPointF &pos);
+    void userRotateAndMove();
+    void userMoveAndResize(const QPointF &pos);
 };
 
 #endif // VTEXTGRAPHICSITEM_H

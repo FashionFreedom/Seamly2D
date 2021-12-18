@@ -89,7 +89,7 @@ public:
     enum { Type = UserType + static_cast<int>(Vis::PieceItem)};
 
 signals:
-    void SignalMoved(const QPointF &ptPos);
+    void itemMoved(const QPointF &ptPos);
 
 protected:
     enum Mode

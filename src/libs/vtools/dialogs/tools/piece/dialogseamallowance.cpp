@@ -2187,7 +2187,7 @@ VPiece DialogSeamAllowance::CreatePiece() const
     piece.GetPatternPieceData().SetPos(m_oldData.GetPos());
     piece.GetPatternPieceData().SetLabelWidth(GetFormulaFromUser(uiLabelsTab->dLabelWidthFormula_LineEdit));
     piece.GetPatternPieceData().SetLabelHeight(GetFormulaFromUser(uiLabelsTab->dLabelHeightFormula_LineEdit));
-    piece.GetPatternPieceData().SetFontSize(m_oldData.GetFontSize());
+    piece.GetPatternPieceData().SetFontSize(m_oldData.getFontSize());
     piece.GetPatternPieceData().SetRotation(GetFormulaFromUser(uiLabelsTab->dLabelAngleFormula_LineEdit));
     piece.GetPatternPieceData().SetVisible(uiLabelsTab->detailLabel_GroupBox->isChecked());
     piece.GetPatternPieceData().SetCenterPin(getCurrentObjectId(uiLabelsTab->dLabelCenterPin_ComboBox));
