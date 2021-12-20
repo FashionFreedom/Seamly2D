@@ -87,6 +87,7 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
     initDefaultSeamAllowance();
     initLabelDateTimeFormats();
     initNotches();
+    initGrainlines();
 
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
     ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
@@ -126,7 +127,6 @@ void PreferencesPatternPage::Apply()
     settings->setDefaultCutoutLinetype(ui->defaultCutoutLinetype_ComboBox->currentData().toString());
     settings->setDefaultCutoutLineweight(ui->defaultCutoutLineweight_ComboBox->currentData().toReal());
 
-
     settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
     settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
 
@@ -140,6 +140,20 @@ void PreferencesPatternPage::Apply()
         qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
     }
 
+    if (settings->showGrainlines() != ui->showGrainlines_CheckBox->isChecked())
+    {
+        settings->setShowGrainlines(ui->showGrainlines_CheckBox->isChecked());
+        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
+    }
+    settings->setDefaultGrainlineColor(ui->defaultGrainlineColor_ComboBox->currentData().toString());
+    settings->setDefaultGrainlineLineweight(ui->defaultGrainlineLineweight_ComboBox->currentData().toReal());
+
+    if (settings->showLabels() != ui->showLabels_CheckBox->isChecked())
+    {
+        settings->setShowLabels(ui->showLabels_CheckBox->isChecked());
+        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
+    }
+    settings->setDefaultLabelColor(ui->defaultLabelColor_ComboBox->currentData().toString());
     settings->SetLabelDateFormat(ui->dateFormats_ComboBox->currentText());
     settings->SetLabelTimeFormat(ui->timeFormats_ComboBox->currentText());
 
@@ -242,6 +256,13 @@ void PreferencesPatternPage::initLabelDateTimeFormats()
 {
     VSettings *settings = qApp->Seamly2DSettings();
 
+    ui->showLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showLabels());
+    int index = ui->defaultLabelColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultLabelColor());
+    if (index != -1)
+    {
+        ui->defaultLabelColor_ComboBox->setCurrentIndex(index);
+    }
+
     initComboBoxFormats(ui->dateFormats_ComboBox,
                         VSettings::PredefinedDateFormats() + settings->GetUserDefinedDateFormats(),
                         settings->GetLabelDateFormat());
@@ -283,6 +304,21 @@ void PreferencesPatternPage::initNotches()
     ui->defaultNotchWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesPatternPage::initGrainlines()
+{
+    ui->showGrainlines_CheckBox->setChecked(qApp->Seamly2DSettings()->showGrainlines());
+    int index = ui->defaultGrainlineColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultGrainlineColor());
+    if (index != -1)
+    {
+        ui->defaultGrainlineColor_ComboBox->setCurrentIndex(index);
+    }
+    index = ui->defaultGrainlineLineweight_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultGrainlineLineweight());
+    if (index != -1)
+    {
+        ui->defaultGrainlineLineweight_ComboBox->setCurrentIndex(index);
+    }
+}
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat)
 {

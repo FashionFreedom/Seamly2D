@@ -49,7 +49,7 @@ class VAbstractPattern;
  */
 struct TextLine
 {
-    QString             m_qsText;
+    QString             m_text;
     int                 m_iFontSize;  // 0 means default
     bool bold;
     bool italic;
@@ -74,7 +74,7 @@ public:
 
     virtual int GetSpacing() const;
 
-    void         SetFont(const QFont& font);
+    void         setFont(const QFont& font);
     const QFont& GetFont() const;
     void         SetFontSize(int iFS);
     void         FitFontSize(qreal fW, qreal fH);

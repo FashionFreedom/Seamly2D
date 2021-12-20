@@ -91,7 +91,7 @@ void VPatternLabelData::SetLabelHeight(const QString &dLabelH)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VPatternLabelData::GetFontSize() const
+int VPatternLabelData::getFontSize() const
 {
     return d->m_iFontSize;
 }

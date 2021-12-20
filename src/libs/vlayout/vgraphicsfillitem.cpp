@@ -29,9 +29,10 @@
 #include "vgraphicsfillitem.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VGraphicsFillItem::VGraphicsFillItem(const QColor &color, QGraphicsItem *parent)
+VGraphicsFillItem::VGraphicsFillItem(const QColor &color, bool fill, QGraphicsItem *parent)
     : QGraphicsPathItem(parent)
     , m_color(color)
+    , m_fill(fill)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -39,13 +40,20 @@ VGraphicsFillItem::~VGraphicsFillItem()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGraphicsFillItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
+void VGraphicsFillItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option)
     Q_UNUSED(widget)
     painter->save();
-    //painter->setBrush(painter->pen().color());
-    painter->setBrush(m_color);
+    if (m_fill)
+    {
+        painter->setBrush(QBrush(Qt::NoBrush));
+    }
+    else
+    {
+        painter->setBrush(m_color);
+    }
+
     painter->setPen(m_color);
     painter->drawPath(path());
     painter->restore();

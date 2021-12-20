@@ -48,11 +48,11 @@ public:
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::GrainlineItem)};
 
-    bool IsContained(const QPointF &pt, qreal dRot, qreal &dX, qreal &dY) const;
+    bool isContained(const QPointF &pt, qreal dRot, qreal &dX, qreal &dY) const;
 
 signals:
-    void SignalResized(qreal dLength);
-    void SignalRotated(qreal dRot, const QPointF& ptNewPos);
+    void itemResized(qreal dLength);
+    void itemRotated(qreal dRot, const QPointF& ptNewPos);
 
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* pME) Q_DECL_OVERRIDE;
@@ -94,9 +94,9 @@ private:
 
     QPainterPath MainShape() const;
 
-    void AllUserModifications(const QPointF &pos);
-    void UserRotateAndMove();
-    void UserMoveAndResize(const QPointF &pos);
+    void allUserModifications(const QPointF &pos);
+    void userRotateAndMove();
+    void userMoveAndResize(const QPointF &pos);
 
     void UpdatePolyResize();
 };

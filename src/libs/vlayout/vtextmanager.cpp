@@ -46,7 +46,7 @@
  * @brief TextLine::TextLine default constructor
  */
 TextLine::TextLine()
-    : m_qsText(),
+    : m_text(),
       m_iFontSize(MIN_FONT_SIZE),
       bold(false),
       italic(false),
@@ -162,7 +162,7 @@ QList<TextLine> PrepareLines(const QVector<VLabelTemplateLine> &lines)
         if (not lines.at(i).line.isEmpty())
         {
             TextLine tl;
-            tl.m_qsText = lines.at(i).line;
+            tl.m_text = lines.at(i).line;
             tl.m_eAlign = static_cast<Qt::Alignment>(lines.at(i).alignment);
             tl.m_iFontSize = lines.at(i).fontSizeIncrement;
             tl.bold = lines.at(i).bold;
@@ -216,7 +216,7 @@ int VTextManager::GetSpacing() const
  * @brief SetFont set the text base font
  * @param font text base font
  */
-void VTextManager::SetFont(const QFont& font)
+void VTextManager::setFont(const QFont& font)
 {
     m_font = font;
 }
@@ -303,7 +303,7 @@ void VTextManager::FitFontSize(qreal fW, qreal fH)
         fnt.setBold(tl.bold);
         fnt.setItalic(tl.italic);
         QFontMetrics fm(fnt);
-        const int iTW = fm.horizontalAdvance(tl.m_qsText);
+        const int iTW = fm.horizontalAdvance(tl.m_text);
         if (iTW > iMaxLen)
         {
             iMaxLen = iTW;
@@ -322,7 +322,7 @@ void VTextManager::FitFontSize(qreal fW, qreal fH)
             --iFS;
             fnt.setPixelSize(iFS + maxLine.m_iFontSize);
             QFontMetrics fm(fnt);
-            lineLength = fm.horizontalAdvance(maxLine.m_qsText);
+            lineLength = fm.horizontalAdvance(maxLine.m_text);
         }
         while (lineLength > fW && iFS > MIN_FONT_SIZE);
     }
