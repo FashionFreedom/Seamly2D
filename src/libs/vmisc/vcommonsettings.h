@@ -120,6 +120,12 @@ public:
     bool                 GetConfirmFormatRewriting() const;
     void                 SetConfirmFormatRewriting(const bool &value);
 
+    QString              getMoveSuffix() const;
+    void                 setMoveSuffix(const QString &value);
+
+    QString              getRotateSuffix() const;
+    void                 setRotateSuffix(const QString &value);
+
     bool                 getToolBarStyle() const;
     void                 setToolBarStyle(const bool &value);
 

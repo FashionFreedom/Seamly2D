@@ -72,8 +72,8 @@ public:
     VSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
               QObject *parent = nullptr);
 
-    QString GetLabelLanguage() const;
-    void SetLabelLanguage(const QString &value);
+    QString  GetLabelLanguage() const;
+    void     SetLabelLanguage(const QString &value);
 
     static QString GetDefPathPattern();
     QString GetPathPattern() const;

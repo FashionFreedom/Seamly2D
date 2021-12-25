@@ -111,6 +111,7 @@ private slots:
     void             editRotationFormula();
 
     void             suffixChanged();
+    void             originChanged(const QString &text);
 
 protected:
     virtual void     CheckState() Q_DECL_FINAL;

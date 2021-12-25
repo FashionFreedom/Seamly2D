@@ -77,6 +77,8 @@ private:
     bool m_systemChanged;
     bool m_unitChanged;
     bool m_labelLangChanged;
+    bool m_moveSuffixChanged;
+    bool m_rotateSuffixChanged;
 
     void SetLabelComboBox(const QStringList &list);
     void InitUnits();

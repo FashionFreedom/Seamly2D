@@ -183,7 +183,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     qCDebug(vTool, "Creating tool context menu.");
     QMenu menu;
-    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Options"));
+    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
 
     // Show object name menu item
     QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));

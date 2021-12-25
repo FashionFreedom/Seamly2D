@@ -70,7 +70,6 @@
 #include <Qt>
 #include <new>
 
-
 #include "../../visualization/visualization.h"
 #include "../../visualization/line/operation/vistoolmove.h"
 #include "../ifc/xml/vabstractpattern.h"
@@ -114,7 +113,7 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     ui->length_PlainTextEdit->installEventFilter(this);
     ui->rotation_PlainTextEdit->installEventFilter(this);
 
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix());
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix() + qApp->Settings()->getMoveSuffix());
 
     angleTimer = new QTimer(this);
     connect(angleTimer, &QTimer::timeout, this, &DialogMove::evaluateAngle);
@@ -135,14 +134,15 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     flagName = true;
     CheckState();
 
-    connect(ui->suffix_LineEdit,            &QLineEdit::textChanged,      this, &DialogMove::suffixChanged);
-    connect(ui->angleFormula_ToolButton,    &QPushButton::clicked,        this, &DialogMove::editAngleFormula);
-    connect(ui->lengthFormula_ToolButton,   &QPushButton::clicked,        this, &DialogMove::editLengthFormula);
-    connect(ui->rotationFormula_ToolButton, &QPushButton::clicked,        this, &DialogMove::editRotationFormula);
+    connect(ui->suffix_LineEdit,            &QLineEdit::textChanged,        this, &DialogMove::suffixChanged);
+    connect(ui->angleFormula_ToolButton,    &QPushButton::clicked,          this, &DialogMove::editAngleFormula);
+    connect(ui->lengthFormula_ToolButton,   &QPushButton::clicked,          this, &DialogMove::editLengthFormula);
+    connect(ui->rotationFormula_ToolButton, &QPushButton::clicked,          this, &DialogMove::editRotationFormula);
 
-    connect(ui->angle_PlainTextEdit,        &QPlainTextEdit::textChanged, this, &DialogMove::angleChanged);
-    connect(ui->length_PlainTextEdit,       &QPlainTextEdit::textChanged, this, &DialogMove::lengthChanged);
-    connect(ui->rotation_PlainTextEdit,     &QPlainTextEdit::textChanged, this, &DialogMove::rotationChanged);
+    connect(ui->angle_PlainTextEdit,        &QPlainTextEdit::textChanged,   this, &DialogMove::angleChanged);
+    connect(ui->length_PlainTextEdit,       &QPlainTextEdit::textChanged,   this, &DialogMove::lengthChanged);
+    connect(ui->rotation_PlainTextEdit,     &QPlainTextEdit::textChanged,   this, &DialogMove::rotationChanged);
+    connect(ui->rotationPoint_ComboBox,     &QComboBox::currentTextChanged, this, &DialogMove::originChanged);
 
     vis = new VisToolMove(data);
 
@@ -477,6 +477,24 @@ void DialogMove::suffixChanged()
         ChangeColor(ui->suffix_Label, okColor);
     }
     CheckState();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogMove::originChanged(const QString &text)
+{
+    VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
+    SCASSERT(operation != nullptr)
+    if (text == "Center Point")
+    {
+        operation->setOriginPointId(NULL_ID);
+        useOriginPoint = false;
+    }
+    else
+    {
+        operation->setOriginPointId(getCurrentObjectId(ui->rotationPoint_ComboBox));
+        useOriginPoint = true;
+    }
+    operation->RefreshGeometry();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

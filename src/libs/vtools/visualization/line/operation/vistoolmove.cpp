@@ -105,7 +105,7 @@ VisToolMove::VisToolMove(const VContainer *data, QGraphicsItem *parent)
     rotationFinishPointItem = InitPoint(supportColor3, this, 130);
     rotationFinishPointItem->setBrush(QBrush(supportColor3, Qt::SolidPattern));
 
-    moveLineItem            = InitItem<VCurvePathItem>(supportColor2, this);
+    moveLineItem            = InitItem<ArrowedLineItem>(supportColor2, this);
     rotationLineItem        = InitItem<VScaledLine>(supportColor3, this);
 }
 
@@ -230,7 +230,7 @@ void VisToolMove::RefreshGeometry()
 //---------------------------------------------------------------------------------------------------------------------
 QString VisToolMove::Angle() const
 {
-    return QString::number(line().angle());
+    return QString::number(moveLineItem->line().angle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -261,7 +261,7 @@ QString VisToolMove::Length() const
 qreal VisToolMove::LengthValue() const
 {
     //return qApp->fromPixel(line().length());
-    return qApp->fromPixel(moveLineItem->path().length());
+    return qApp->fromPixel(moveLineItem->line().length());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

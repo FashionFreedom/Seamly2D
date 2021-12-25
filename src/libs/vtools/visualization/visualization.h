@@ -62,6 +62,7 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vcurvepathitem.h"
+#include  "../vwidgets/scalesceneitems.h"
 #include "../vwidgets/global.h"
 #include "../vgeometry/vabstractcurve.h"
 
@@ -69,6 +70,7 @@ Q_DECLARE_LOGGING_CATEGORY(vVis)
 
 class VScaledEllipse;
 class VScaledLine;
+class ArrowedLineItem;
 class VContainer;
 //class VInternalVariable;
 #include "variables/vinternalvariable.h"
@@ -130,7 +132,7 @@ protected:
                           const QVector<DirectionArrow> &directionArrows, const QColor &color,
                           Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
 
-    void         drawArrowedLine(VCurvePathItem *item, const QLineF &line, const QColor &color,
+    void         drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
                                  Qt::PenStyle style = Qt::SolidLine);
     void         drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
 

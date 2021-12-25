@@ -98,7 +98,7 @@ private:
     VScaledEllipse          *originPointItem;
     VScaledEllipse          *rotationOriginPointItem;
     VScaledEllipse          *rotationFinishPointItem;
-    VCurvePathItem          *moveLineItem;
+    ArrowedLineItem         *moveLineItem;
     VScaledLine             *rotationLineItem;
     QPointF                  m_origin;
 

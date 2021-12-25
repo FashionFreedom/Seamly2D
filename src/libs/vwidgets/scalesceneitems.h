@@ -55,6 +55,9 @@
 #include <QGraphicsLineItem>
 
 #include "../vmisc/def.h"
+#include "vcurvepathitem.h"
+
+class VCurvePathItem;
 
 class VScaledLine : public QGraphicsLineItem
 {
@@ -76,6 +79,25 @@ private:
     Q_DISABLE_COPY(VScaledLine)
 
     qreal        basicWidth;
+};
+
+class ArrowedLineItem : public QGraphicsLineItem
+{
+public:
+    explicit     ArrowedLineItem(QGraphicsItem * parent = nullptr);
+                 ArrowedLineItem(const QLineF &line, QGraphicsItem * parent = nullptr);
+    virtual     ~ArrowedLineItem() = default;
+
+    virtual int  type() const Q_DECL_OVERRIDE {return Type;}
+    enum { Type = UserType + static_cast<int>(Vis::ArrowedLineItem)};
+
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+                       QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+
+private:
+    Q_DISABLE_COPY(ArrowedLineItem)
+    void           drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
+    VCurvePathItem *m_arrows;
 };
 
 class VScaledEllipse : public QGraphicsEllipseItem

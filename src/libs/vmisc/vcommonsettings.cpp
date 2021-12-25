@@ -84,6 +84,8 @@ const QString settingPMSystemCode                        = QStringLiteral("confi
 const QString settingConfigurationUnit                   = QStringLiteral("configuration/unit");
 const QString settingConfigurationConfirmItemDeletion    = QStringLiteral("configuration/confirm_item_deletion");
 const QString settingConfigurationConfirmFormatRewriting = QStringLiteral("configuration/confirm_format_rewriting");
+const QString settingConfigurationMoveSuffix             = QStringLiteral("configuration/moveSuffix");
+const QString settingConfigurationRotateSuffix           = QStringLiteral("configuration/rotateSuffix");
 
 const QString settingGraphicsViewToolBarStyle            = QStringLiteral("graphicsview/tool_bar_style");
 const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
@@ -543,6 +545,31 @@ bool VCommonSettings::GetConfirmFormatRewriting() const
 void VCommonSettings::SetConfirmFormatRewriting(const bool &value)
 {
     setValue(settingConfigurationConfirmFormatRewriting, value);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getMoveSuffix() const
+{
+    return value(settingConfigurationMoveSuffix, "None").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setMoveSuffix(const QString &value)
+{
+    setValue(settingConfigurationMoveSuffix, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getRotateSuffix() const
+{
+    return value(settingConfigurationRotateSuffix, "None").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setRotateSuffix(const QString &value)
+{
+    setValue(settingConfigurationRotateSuffix, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -50,8 +50,10 @@
  *************************************************************************/
 
 #include "scalesceneitems.h"
+#include "vcurvepathitem.h"
 #include "global.h"
 
+#include <QtCore/qmath.h>
 #include <QPen>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -86,6 +88,74 @@ qreal VScaledLine::GetBasicWidth() const
 void VScaledLine::setBasicWidth(const qreal &value)
 {
     basicWidth = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+ArrowedLineItem::ArrowedLineItem(QGraphicsItem *parent)
+    : QGraphicsLineItem(parent)
+    , m_arrows(new VCurvePathItem(this))
+{}
+
+//---------------------------------------------------------------------------------------------------------------------
+ArrowedLineItem::ArrowedLineItem(const QLineF &line, QGraphicsItem *parent)
+    : QGraphicsLineItem(line, parent)
+    , m_arrows(new VCurvePathItem(this))
+{}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ArrowedLineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    QPen lPen = pen();
+    lPen.setWidthF(scaleWidth(widthMainLine, sceneScale(scene())));
+    setPen(lPen);
+    m_arrows->setPen(lPen);
+
+    QPainterPath path;
+    path.moveTo(line().p1());
+    path.lineTo(line().p2());
+
+    qreal arrow_step = 60;
+    qreal arrow_size = 10;
+
+    if (line().length() < arrow_step)
+    {
+        drawArrow(line(), path, arrow_size);
+    }
+
+    QLineF axis;
+    axis.setP1(line().p1());
+    axis.setAngle(line().angle());
+    axis.setLength(arrow_step);
+
+    int steps = qFloor(line().length()/arrow_step);
+    for (int i=0; i<steps; ++i)
+    {
+        drawArrow(axis, path, arrow_size);
+        axis.setLength(axis.length()+arrow_step);
+    }
+    m_arrows->setPath(path);
+
+    QGraphicsLineItem::paint(painter, option, widget);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void ArrowedLineItem::drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size)
+{
+    QLineF arrowPart1;
+    arrowPart1.setP1(axis.p2());
+    arrowPart1.setLength(arrow_size);
+    arrowPart1.setAngle(axis.angle()+180+35);
+
+    path.moveTo(arrowPart1.p1());
+    path.lineTo(arrowPart1.p2());
+
+    QLineF arrowPart2;
+    arrowPart2.setP1(axis.p2());
+    arrowPart2.setLength(arrow_size);
+    arrowPart2.setAngle(axis.angle()+180-35);
+
+    path.moveTo(arrowPart2.p1());
+    path.lineTo(arrowPart2.p2());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -248,7 +248,8 @@ enum class Vis : ToolVisHolderType
     PieceItem,
     TextGraphicsItem,
     ScenePoint,
-    LAST_ONE_DO_NOT_USE //add new stuffs above this, this constant must be last and never used
+    ArrowedLineItem,
+    LAST_ONE_DO_NOT_USE //add new types above this, this constant must be last and never used
 };
 
 enum class VarType : char { Measurement, Increment, LineLength, CurveLength, CurveCLength, LineAngle, CurveAngle,

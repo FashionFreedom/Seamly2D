@@ -266,7 +266,7 @@ void Visualization::DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
 
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::drawArrowedLine(VCurvePathItem *item, const QLineF &line, const QColor &color,
+void Visualization::drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
                                     Qt::PenStyle style)
 {
     SCASSERT (item != nullptr)
@@ -276,7 +276,9 @@ void Visualization::drawArrowedLine(VCurvePathItem *item, const QLineF &line, co
     visPen.setStyle(style);
 
     item->setPen(visPen);
-
+    item->setLine(line);
+    item->setVisible(true);
+/*
     QPainterPath path;
     path.moveTo(line.p1());
     path.lineTo(line.p2());
@@ -302,6 +304,8 @@ void Visualization::drawArrowedLine(VCurvePathItem *item, const QLineF &line, co
     }
     item->setPath(path);
     item->setVisible(true);
+
+*/
 }
 
 //---------------------------------------------------------------------------------------------------------------------

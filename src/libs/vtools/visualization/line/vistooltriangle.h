@@ -88,7 +88,7 @@ private:
     VScaledEllipse    *point;
     VScaledEllipse    *axisP1;
     VScaledEllipse    *axisP2;
-    VCurvePathItem    *axis;
+    ArrowedLineItem   *axis;
     VScaledEllipse    *hypotenuseP1;
     VScaledEllipse    *hypotenuseP2;
     VScaledLine       *foot1;

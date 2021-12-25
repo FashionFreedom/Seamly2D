@@ -76,7 +76,7 @@ VisToolTriangle::VisToolTriangle(const VContainer *data, QGraphicsItem *parent)
 {
     axisP1 = InitPoint(supportColor, this);
     axisP2 = InitPoint(supportColor, this);
-    axis = InitItem<VCurvePathItem>(supportColor, this);
+    axis = InitItem<ArrowedLineItem>(supportColor, this);
     hypotenuseP1 = InitPoint(supportColor, this);
     hypotenuseP2 = InitPoint(supportColor, this);
     foot1 = InitItem<VScaledLine>(supportColor, this);
