@@ -91,10 +91,10 @@ public:
 
     VArc                        &operator= (const VArc &arc);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VArc                          &operator=(VArc &&arc) Q_DECL_NOTHROW;
+	VArc                        &operator=(VArc &&arc) Q_DECL_NOTHROW;
 #endif
 
-	void                           Swap(VArc &arc) Q_DECL_NOTHROW;
+	void                         Swap(VArc &arc) Q_DECL_NOTHROW;
 
     QString                      GetFormulaRadius () const;
     void                         SetFormulaRadius (const QString &formula, qreal value);
@@ -108,11 +108,13 @@ public:
     virtual QVector<QPointF>     GetPoints () const Q_DECL_OVERRIDE;
     QVector<QLineF>              getSegments() const;
 
-    QPointF                      CutArc (const qreal &length, VArc &arc1, VArc &arc2) const;
-    QPointF                      CutArc (const qreal &length) const;
+    QPointF                      CutArc (qreal length, VArc &segment1, VArc &segment2) const;
+    QPointF                      CutArc (qreal length) const;
+
 protected:
     virtual void                 CreateName() Q_DECL_OVERRIDE;
     virtual void                 FindF2(qreal length) Q_DECL_OVERRIDE;
+
 private:
     QSharedDataPointer<VArcData> d;
 
