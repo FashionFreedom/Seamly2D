@@ -64,6 +64,7 @@
 #include <QRubberBand>
 #include <QColor>
 #include <Qt>
+#include <QSharedPointer>
 
 /*!
  * This class adds ability to zoom QGraphicsView using mouse wheel. The point under cursor
@@ -203,7 +204,7 @@ protected:
     virtual void          mouseReleaseEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
     virtual void          mouseDoubleClickEvent(QMouseEvent *event) Q_DECL_OVERRIDE;
 
-    std::unique_ptr<QCursor> curMagnifier;
+    QSharedPointer<QCursor> curMagnifier;
 
 private:
     Q_DISABLE_COPY(VMainGraphicsView)
