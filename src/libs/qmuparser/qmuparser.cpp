@@ -101,7 +101,7 @@ qreal QmuParser::SinD(qreal v)
 //---------------------------------------------------------------------------------------------------------------------
 qreal QmuParser::ASinD(qreal v)
 {
-    return qRadiansToDegrees(qAsin(v));
+    return qAsin(qDegreesToRadians(v));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -113,7 +113,7 @@ qreal QmuParser::CosD(qreal v)
 //---------------------------------------------------------------------------------------------------------------------
 qreal QmuParser::ACosD(qreal v)
 {
-    return qRadiansToDegrees(qAcos(v));
+    return qAcos(qDegreesToRadians(v));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ qreal QmuParser::TanD(qreal v)
 //---------------------------------------------------------------------------------------------------------------------
 qreal QmuParser::ATanD(qreal v)
 {
-    return qRadiansToDegrees(qAtan(v));
+    return qAtan(qDegreesToRadians(v));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -339,7 +339,7 @@ void QmuParser::InitFun()
     DefineFun("sinD",   SinD);
     DefineFun("cosD",   CosD);
     DefineFun("tanD",   TanD);
-    // arcus functions
+    // inverse functions
     DefineFun("asin",  qAsin);
     DefineFun("acos",  qAcos);
     DefineFun("atan",  qAtan);
@@ -351,7 +351,7 @@ void QmuParser::InitFun()
     DefineFun("sinh",  Sinh);
     DefineFun("cosh",  Cosh);
     DefineFun("tanh",  Tanh);
-    // arcus hyperbolic functions
+    // inverse hyperbolic functions
     DefineFun("asinh", ASinh);
     DefineFun("acosh", ACosh);
     DefineFun("atanh", ATanh);
