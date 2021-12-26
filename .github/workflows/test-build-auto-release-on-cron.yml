@@ -12,7 +12,7 @@ name: Test build auto-release on cron (Saturday 8:30pm CST, Sunday 2:30am UTC)
 #'* * * * *'
 on:
   schedule:
-    - cron: '30 2 * * SUN'
+    - cron: '0 0 * * MON'
 
 env:
   QT_SELECT: 5
@@ -27,33 +27,26 @@ jobs:
 
 # The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
     steps:
-      - name: create name and tag
-        id: create-name-and-tag
+      - name: create env vars for release name and tag
+        id: names
         run: |
-          echo "TAG_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
+          version_date_time="$(date +v%F.%H%M)"
+          echo "::set-output name=TAG_NAME::$version_date_time"
+          echo "::set-output name=RELEASE_NAME::$version_date_time"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # update tag on repo
-      - name: Tag Repo
-        uses: richardsimko/update-tag@v1.0.5
-        with:
-          tag_name: ${{ env.TAG_NAME }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
-      - name: create release data
-        # produces upload_url
-        id: create-release-data
+      # create the release
+      - name: release data
+        # output is 'upload_url'
+        id: release-data
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.RELEASE_NAME }}
-          body: Test run of Automated weekly release - unpublished full release
+          tag_name:  ${{ steps.names.outputs.TAG_NAME }}
+          release_name: ${{ steps.names.outputs.RELEASE_NAME }}
+          body: Test manual weekly release - unpublished full release
           # create unpublished
           draft: true
           # create full release, not a pre-release
@@ -61,7 +54,7 @@ jobs:
 
       - name: show UPLOAD_URL
         run: |
-          echo ${{ steps.create-release-data.outputs.upload_url }}
+          echo ${{ steps.release-data.outputs.upload_url }}
 
   linux:
     runs-on: ubuntu-20.04
