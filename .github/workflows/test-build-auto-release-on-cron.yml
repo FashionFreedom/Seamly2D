@@ -23,7 +23,7 @@ jobs:
   release-data:
     runs-on: ubuntu-20.04
     outputs:
-      upload_url: ${{ steps.create-release-data.outputs.upload_url }}
+      upload_url: ${{ steps.release-data.outputs.upload_url }}
 
 # The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
     steps:
