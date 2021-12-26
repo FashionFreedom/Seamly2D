@@ -26,8 +26,8 @@ jobs:
       - name: create env vars for release name and tag
         id: create-env-vars-for-release-name-and-tag
         run: |
-          echo "TAG_NAME=v`date + "%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=v`date + "%F%H%M"`" >> $GITHUB_ENV
+          echo "TAG_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
+          echo "RELEASE_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
