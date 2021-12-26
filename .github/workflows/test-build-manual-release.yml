@@ -26,7 +26,7 @@ jobs:
       - name: create env vars for release name and tag
         id: names
         run: |
-          version_date_time="$(date +v%F%z)"
+          version_date_time="$(date +v%F.%H%M)"
           echo "::set-output name=TAG_NAME::$version_date_time"
           echo "::set-output name=RELEASE_NAME::$version_date_time"
         env:
