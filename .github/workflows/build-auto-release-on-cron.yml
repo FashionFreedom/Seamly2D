@@ -1,7 +1,7 @@
 name: Build release on cron
 
 # cron format:
-# minute (0 - 59)
+# ┌───────────── minute (0 - 59)
 # │ ┌───────────── hour (0 - 23)
 # │ │ ┌───────────── day of the month (1 - 31)
 # │ │ │ ┌───────────── month (1 - 12)
@@ -10,9 +10,10 @@ name: Build release on cron
 # │ │ │ │ │
 # │ │ │ │ │
 #'* * * * *'
+# Build on Mondays at 01:00 UTC
 on:
   schedule:
-    - cron: '0 0 * * MON'
+    - cron: '0 1 * * MON'
 
 env:
   QT_SELECT: 5
@@ -23,34 +24,38 @@ jobs:
   release-data:
     runs-on: ubuntu-20.04
     outputs:
-      upload_url: ${{ steps.create-release-data.outputs.upload_url }}
+      upload_url: ${{ steps.release-data.outputs.upload_url }}
 
-# The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
+# The tag name is vYYYY-MM-DD.hhmm to create simple, easy-to-read "rolling release" versioning
     steps:
-      - name: create name and tag
-        id: create-name-and-tag
+      - name: create env vars for release name and tag
+        id: names
         run: |
-          echo "TAG_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
-          echo "RELEASE_NAME=`date + "%F%H%M"`" >> $GITHUB_ENV
+          version_date_time="$(date +v%F.%H%M)"
+          echo "::set-output name=TAG_NAME::$version_date_time"
+          echo "::set-output name=RELEASE_NAME::$version_date_time"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: create release data
-        # produces upload_url
-        id: create-release-data
+      # create the release
+      - name: release data
+        # output is 'upload_url'
+        id: release-data
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.RELEASE_NAME }}
-          body: Automated weekly release
+          tag_name:  ${{ steps.names.outputs.TAG_NAME }}
+          release_name: ${{ steps.names.outputs.RELEASE_NAME }}
+          body: Test manual weekly release - unpublished full release
+          # create upublished
           draft: false
+          # create a full release, not a pre-release
           prerelease: false
 
       - name: show UPLOAD_URL
         run: |
-          echo ${{ steps.create-release-data.outputs.upload_url }}
+          echo ${{ steps.release-data.outputs.upload_url }}
 
   linux:
     runs-on: ubuntu-20.04
