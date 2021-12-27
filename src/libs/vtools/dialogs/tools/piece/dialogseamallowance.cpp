@@ -2796,6 +2796,7 @@ void DialogSeamAllowance::InitLabelsTab()
     connect(uiLabelsTab->showPLabelHeight_PushButton, &QPushButton::clicked, this, &DialogSeamAllowance::DeployPLHeight);
     connect(uiLabelsTab->showPLabelAngle_PushButton,  &QPushButton::clicked, this, &DialogSeamAllowance::DeployPLAngle);
 
+    uiLabelsTab->detailName_LineEdit->setText(createPieceName());
     EnabledPatternLabel();
 }
 
@@ -3170,4 +3171,26 @@ void DialogSeamAllowance::setMoveExclusions()
             uiPathsTab->moveBottom_ToolButton->setEnabled(true);
         }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogSeamAllowance::createPieceName() const
+{
+    QList<VPiece> pieces = data->DataPieces()->values();
+    QStringList pieceNames;
+
+    for (int i = 0; i < pieces.size(); ++i)
+    {
+        pieceNames.append(pieces.at(i).GetName());
+    }
+
+    const QString defaultName = tr("PatternPiece");
+    QString pieceName = defaultName;
+    int i = 0;
+
+    while(pieceNames.contains(pieceName))
+    {
+        pieceName = defaultName + QString("_%1").arg(++i);
+    }
+    return pieceName;
 }
