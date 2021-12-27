@@ -313,12 +313,20 @@
     <addaction name="separator"/>
     <addaction name="lastTool_Action"/>
    </widget>
+   <widget class="QMenu" name="menuUtiliries">
+    <property name="title">
+     <string>Utilities</string>
+    </property>
+    <addaction name="calculator_Action"/>
+    <addaction name="decimalChart_Action"/>
+   </widget>
    <addaction name="file_Menu"/>
    <addaction name="edit_Menu"/>
    <addaction name="view_Menu"/>
    <addaction name="tools_Menu"/>
    <addaction name="measurements_Menu"/>
    <addaction name="history_Menu"/>
+   <addaction name="menuUtiliries"/>
    <addaction name="help_Menu"/>
   </widget>
   <widget class="QToolBar" name="file_ToolBar">
@@ -4570,6 +4578,30 @@
    </property>
    <property name="shortcut">
     <string>V, L</string>
+   </property>
+  </action>
+  <action name="calculator_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/calculator.png</normaloff>:/icon/32x32/calculator.png</iconset>
+   </property>
+   <property name="text">
+    <string>Calculator</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="decimalChart_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/table.png</normaloff>:/icon/32x32/table.png</iconset>
+   </property>
+   <property name="text">
+    <string>Decimal Chart</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+D</string>
    </property>
   </action>
  </widget>

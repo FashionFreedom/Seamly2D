@@ -84,6 +84,8 @@
 #include "dialogs/vwidgetgroups.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "dialogs/vwidgetdetails.h"
+#include "dialogs/calculator_dialog.h"
+#include "dialogs/decimalchart_dialog.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vtools/dialogs/support/dialogeditlabel.h"
@@ -4024,6 +4026,10 @@ void MainWindow::SetEnableWidgets(bool enable)
     //enable history menu actions
     ui->history_Action->setEnabled(enable && draftStage);
 
+    //enable utilities menu actions
+    ui->calculator_Action->setEnabled(enable);
+    ui->decimalChart_Action->setEnabled(enable);
+
     //enable dock widget actions
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
     actionDockWidgetGroups->setEnabled(enable && designStage);
@@ -5581,6 +5587,23 @@ void MainWindow::CreateActions()
             ui->history_Action->setChecked(true);
             dialogHistory->activateWindow();
         }
+    });
+
+    //Utilities menu
+    connect(ui->calculator_Action, &QAction::triggered, this, [this]()
+    {
+        CalculatorDialog *calcDialog = new CalculatorDialog(this);
+        calcDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        calcDialog->setWindowTitle(tr("Calculator"));
+        calcDialog->adjustSize();
+        calcDialog->show();
+    });
+
+    connect(ui->decimalChart_Action, &QAction::triggered, this, [this]()
+    {
+        DecimalChartDialog *decimalchartDialog = new DecimalChartDialog(this);
+        decimalchartDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        decimalchartDialog->show();
     });
 
     //Help menu
