@@ -291,6 +291,8 @@ private:
     void                        ShowPins();
     void                        setMoveExclusions();
 
+    QString                     createPieceName() const;
+
 };
 
 #endif // DIALOGSEAMALLOWANCE_H
