@@ -70,6 +70,8 @@ class QLabel;
 class DialogVariables;
 class DialogTool;
 class DialogHistory;
+class CalculatorDialog;
+class DecimalChartDialog;
 class VWidgetGroups;
 class VWidgetDetails;
 class QToolButton;
