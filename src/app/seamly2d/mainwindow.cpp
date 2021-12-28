@@ -811,6 +811,15 @@ template <typename DrawTool>
 void MainWindow::ClosedDetailsDialogWithApply(int result)
 {
     ClosedDialogWithApply<DrawTool>(result, pieceScene);
+    if (pattern->DataPieces()->size() > 0)
+    {
+        ui->anchorPoint_ToolButton->setEnabled(true);
+        ui->internalPath_ToolButton->setEnabled(true);
+        ui->insertNode_ToolButton->setEnabled(true);
+        ui->anchorPoint_Action->setEnabled(true);
+        ui->internalPath_Action->setEnabled(true);
+        ui->insertNode_Action->setEnabled(true);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2776,6 +2785,10 @@ void MainWindow::handleDetailsMenu()
     QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path"));
     QAction *action_InsertNode   = menu.addAction(QIcon(":/toolicon/32x32/insert_node.png"),  tr("Insert Node in Path"));
 
+    action_AnchorPoint->setEnabled(pattern->DataPieces()->size() > 0);
+    action_InternalPath->setEnabled(pattern->DataPieces()->size() > 0);
+    action_InsertNode->setEnabled(pattern->DataPieces()->size() > 0);
+
     QAction *selectedAction = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
@@ -4331,9 +4344,9 @@ void MainWindow::setEnableTools(bool enable)
 
     //Add Details
     ui->addPatternPiece_ToolButton->setEnabled(draftTools);
-    ui->anchorPoint_ToolButton->setEnabled(draftTools);
-    ui->internalPath_ToolButton->setEnabled(draftTools);
-    ui->insertNode_ToolButton->setEnabled(draftTools);
+    ui->anchorPoint_ToolButton->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
+    ui->internalPath_ToolButton->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->insertNode_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
 
     //Pattern Piece Tools
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
@@ -4405,9 +4418,9 @@ void MainWindow::setEnableTools(bool enable)
 
     //Add Details
     ui->addPiece_Action->setEnabled(draftTools);
-    ui->anchorPoint_Action->setEnabled(draftTools);
-    ui->internalPath_Action->setEnabled(draftTools);
-    ui->insertNode_Action->setEnabled(draftTools);
+    ui->anchorPoint_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->internalPath_Action->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
+    ui->insertNode_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
 
     //Pattern Pieces
     ui->union_Action->setEnabled(pieceTools);
