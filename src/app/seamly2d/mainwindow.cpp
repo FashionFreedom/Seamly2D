@@ -2215,13 +2215,13 @@ void MainWindow::initDraftToolBar()
 
     connect(ui->renameDraft_Action, &QAction::triggered, this, [this]()
     {
-        const QString activDraw = doc->GetNameActivPP();
-        const QString nameDraw = PatternPieceName(activDraw);
-        if (nameDraw.isEmpty())
+        const QString activeDraftBlock = doc->getActiveDraftBlockName();
+        const QString draftBlockName = PatternPieceName(activeDraftBlock);
+        if (draftBlockName.isEmpty())
         {
             return;
         }
-        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, nameDraw, comboBoxDraws);
+        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, comboBoxDraws);
         qApp->getUndoStack()->push(draftBlock);
     });
 }
@@ -2418,6 +2418,7 @@ void MainWindow::InitToolButtons()
             this, &MainWindow::handlePointFromArcAndTangentTool);
     connect(ui->arcWithLength_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleArcWithLengthTool);
     connect(ui->trueDarts_ToolButton,      &QToolButton::clicked, this, &MainWindow::handleTrueDartTool);
+    connect(ui->exportDraftBlocks_ToolButton, &QToolButton::clicked, this, &MainWindow::exportDraftBlocksAs);
     connect(ui->group_ToolButton,          &QToolButton::clicked, this, &MainWindow::handleGroupTool);
     connect(ui->rotation_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleRotationTool);
     connect(ui->mirrorByLine_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleMirrorByLineTool);
@@ -2729,6 +2730,7 @@ void MainWindow::handleModifyMenu()
     QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis"));
     QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move"));
     QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts"));
+    QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Draft Blocks"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2772,7 +2774,11 @@ void MainWindow::handleModifyMenu()
         ui->trueDarts_ToolButton->setChecked(true);
         handleTrueDartTool(true);
     }
-
+    else if (selectedAction == action_ExportDraftBlocks)
+    {
+        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        exportDraftBlocksAs();
+    }
 }
 
 void MainWindow::handleDetailsMenu()
@@ -2826,9 +2832,9 @@ void MainWindow::handlePatternPiecesMenu()
     qCDebug(vMainWindow, "PatternPieces Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),                      tr("Union Tool"));
-    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export_to_picture_document.png"), tr("Export Pattern Pieces"));
-    QAction *selectedAction = menu.exec(QCursor::pos());
+    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool"));
+    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces"));
+    QAction *selectedAction      = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
     {
@@ -2843,7 +2849,6 @@ void MainWindow::handlePatternPiecesMenu()
     else if (selectedAction == action_ExportPieces)
     {
         ui->tools_ToolBox->setCurrentWidget(ui->pieces_Page);
-        ui->exportPiecesAs_ToolButton->setChecked(true);
         exportPiecesAs();
     }
 }
@@ -2856,7 +2861,7 @@ void MainWindow::handleLayoutMenu()
     QMenu menu;
 
     QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layoutsettings.png"), tr("New Layout (LN)"));
-    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export_layout.png"), tr("Export Layout (LE)"));
+    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout (LE)"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2873,7 +2878,6 @@ void MainWindow::handleLayoutMenu()
     else if (selectedAction == action_ExportLayout)
     {
         ui->tools_ToolBox->setCurrentWidget(ui->layout_Page);
-        ui->exportLayout_ToolButton->setChecked(true);
         exportLayoutAs();
     }
 }
@@ -4049,7 +4053,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
-    draftScene->SetDisableTools(!enable, doc->GetNameActivPP());
+    draftScene->SetDisableTools(!enable, doc->getActiveDraftBlockName());
     ui->view->setEnabled(enable);
 }
 
@@ -4341,6 +4345,7 @@ void MainWindow::setEnableTools(bool enable)
     ui->mirrorByAxis_ToolButton->setEnabled(draftTools);
     ui->move_ToolButton->setEnabled(draftTools);
     ui->trueDarts_ToolButton->setEnabled(draftTools);
+    ui->exportDraftBlocks_ToolButton->setEnabled(draftTools);
 
     //Add Details
     ui->addPatternPiece_ToolButton->setEnabled(draftTools);
@@ -4415,6 +4420,7 @@ void MainWindow::setEnableTools(bool enable)
     ui->mirrorByAxis_Action->setEnabled(draftTools);
     ui->move_Action->setEnabled(draftTools);
     ui->trueDarts_Action->setEnabled(draftTools);
+    ui->exportDraftBlocks_Action->setEnabled(draftTools);
 
     //Add Details
     ui->addPiece_Action->setEnabled(draftTools);
@@ -5472,6 +5478,12 @@ void MainWindow::CreateActions()
         handleTrueDartTool(true);
     });
 
+    connect(ui->exportDraftBlocks_Action, &QAction::triggered, this, [this]
+    {
+        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        exportDraftBlocksAs();
+    });
+
     //Tools->Pattern Piece submenu actions
     connect(ui->union_Action, &QAction::triggered, this, [this]
     {
@@ -5483,7 +5495,6 @@ void MainWindow::CreateActions()
     connect(ui->exportPieces_Action, &QAction::triggered, this, [this]
     {
         ui->tools_ToolBox->setCurrentWidget(ui->pieces_Page);
-        ui->exportPiecesAs_ToolButton->setChecked(true);
         exportPiecesAs();
     });
 
@@ -5524,7 +5535,6 @@ void MainWindow::CreateActions()
     connect(ui->exportLayout_Action, &QAction::triggered, this, [this]
     {
         ui->tools_ToolBox->setCurrentWidget(ui->layout_Page);
-        ui->exportLayout_ToolButton->setChecked(true);
         exportLayoutAs();
     });
 
@@ -5697,17 +5707,17 @@ QString MainWindow::PatternPieceName(const QString &text)
                                          & ~Qt::WindowMinimizeButtonHint);
     dialog->resize(300, 100);
     dialog->setTextValue(text);
-    QString nameDraw;
+    QString draftBlockName;
     while (1)
     {
         const bool result = dialog->exec();
-        nameDraw = dialog->textValue();
-        if (result == false || nameDraw.isEmpty())
+        draftBlockName = dialog->textValue();
+        if (result == false || draftBlockName.isEmpty())
         {
             delete dialog;
             return QString();
         }
-        if (comboBoxDraws->findText(nameDraw) == -1)
+        if (comboBoxDraws->findText(draftBlockName) == -1)
         {
             break; //exit dialog
         }
@@ -5731,7 +5741,7 @@ QString MainWindow::PatternPieceName(const QString &text)
         }
     }
     delete dialog;
-    return nameDraw;
+    return draftBlockName;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -6049,6 +6059,8 @@ void MainWindow::CreateMeasurements()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportLayoutAs()
 {
+    ui->exportLayout_ToolButton->setChecked(true);
+
     if (isLayoutStale)
     {
         if (ContinueIfLayoutStale() == QMessageBox::No)
@@ -6083,6 +6095,9 @@ void MainWindow::exportLayoutAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportPiecesAs()
 {
+    ui->piecePointer_ToolButton->setChecked(false);
+    ui->exportPiecesAs_ToolButton->setChecked(true);
+
     const QHash<quint32, VPiece> *allDetails = pattern->DataPieces();
     QHash<quint32, VPiece>::const_iterator i = allDetails->constBegin();
     QHash<quint32, VPiece> detailsInLayout;
@@ -6119,6 +6134,7 @@ void MainWindow::exportPiecesAs()
     try
     {
         DialogSaveLayout dialog(1, Draw::Modeling, FileName(), this);
+        dialog.setWindowTitle("Export Pattern Pieces");
 
         if (dialog.exec() == QDialog::Rejected)
         {
@@ -6135,7 +6151,90 @@ void MainWindow::exportPiecesAs()
                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
         return;
     }
+
+    ui->operationsPointer_ToolButton->setChecked(true);
     ui->exportPiecesAs_ToolButton->setChecked(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::exportDraftBlocksAs()
+{
+    //select export tool button
+    ui->operationsPointer_ToolButton->setChecked(false);
+    ui->exportDraftBlocks_ToolButton->setChecked(true);
+
+    //Get view info so we can restore after export
+    int vScrollBar = ui->view->verticalScrollBar()->value();
+    int hScrollBar = ui->view->horizontalScrollBar()->value();
+    QTransform viewTransform = ui->view->transform();
+
+    //Include all items in draft scene
+    ui->view->zoomToFit();
+    ui->view->repaint();
+    ui->view->zoom100Percent();
+
+    // Enable all draft blocks in the scene
+    const QList<QGraphicsItem *> items = draftScene->items();
+    for (auto *item : items)
+    {
+        item->setEnabled(true);
+    }
+    ui->view->repaint();
+
+    draftScene->setOriginsVisible(false);
+
+    //Open a file dialog to save export
+    QString filters(tr("Images (*.png *.svg *.jpg *.bmp *.ppm)"));
+    QString dir = QDir::homePath() + QLatin1String("/") + FileName() + QLatin1String(".svg");
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Export Draft Blocks"), dir, filters, nullptr,
+                                                    QFileDialog::DontUseNativeDialog);
+
+    QFileInfo file(fileName);
+
+    if (file.suffix() == "png")
+    {
+        pngFile(fileName, draftScene);
+    }
+    else if (file.suffix() == "jpg")
+    {
+        jpgFile(fileName, draftScene);
+    }
+    else if (file.suffix() == "bmp")
+    {
+        bmpFile(fileName, draftScene);
+    }
+    else if (file.suffix() == "ppm")
+    {
+        ppmFile(fileName, draftScene);
+    }
+    else if (file.suffix() == "svg")
+    {
+        QRectF rect;
+        rect = draftScene->itemsBoundingRect();
+        draftScene->update(rect);
+
+        QGraphicsRectItem *paper = new QGraphicsRectItem(rect);
+
+        svgFile(fileName, paper, draftScene);
+    }
+
+
+    // Disable draft blocks in the scenee except current block
+    doc->changeActiveDraftBlock(doc->getActiveDraftBlockName(), Document::FullParse);
+
+    draftScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
+    // Restore scale, scrollbars, current active draft block
+    ui->view->setTransform(viewTransform);
+    VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view);
+    zoomScaleChanged(ui->view->transform().m11());
+
+    ui->view->verticalScrollBar()->setValue(vScrollBar);
+    ui->view->horizontalScrollBar()->setValue(hScrollBar);
+
+    //reset tool buttons
+    ui->operationsPointer_ToolButton->setChecked(true);
+    ui->exportDraftBlocks_ToolButton->setChecked(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -6342,7 +6441,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
 {
     if (index != -1)
     {
-        doc->ChangeActivPP(comboBoxDraws->itemText(index));
+        doc->changeActiveDraftBlock(comboBoxDraws->itemText(index));
         doc->setCurrentData();
         emit RefreshHistory();
         if (drawMode)

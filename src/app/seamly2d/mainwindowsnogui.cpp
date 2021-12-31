@@ -848,10 +848,10 @@ QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SvgFile save layout to svg file.
+ * @brief svgFile save layout to svg file.
  * @param name name layout file.
  */
-void MainWindowsNoGUI::SvgFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene) const
+void MainWindowsNoGUI::svgFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene) const
 {
     QSvgGenerator generator;
     generator.setFileName(name);
@@ -864,7 +864,7 @@ void MainWindowsNoGUI::SvgFile(const QString &name, QGraphicsRectItem *paper, QG
     painter.begin(&generator);
     painter.setFont( QFont( "Arial", 8, QFont::Normal ) );
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setPen(QPen(Qt::black, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    //painter.setPen(QPen(Qt::black, widthHairLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     painter.setBrush ( QBrush ( Qt::NoBrush ) );
     scene->render(&painter, paper->rect(), paper->rect(), Qt::IgnoreAspectRatio);
     painter.end();
@@ -872,22 +872,70 @@ void MainWindowsNoGUI::SvgFile(const QString &name, QGraphicsRectItem *paper, QG
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief PngFile save layout to png file.
+ * @brief pngFile save layout to png file.
  * @param name name layout file.
  */
-void MainWindowsNoGUI::PngFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene) const
+void MainWindowsNoGUI::pngFile(const QString &fileName,  QGraphicsScene *scene) const
 {
-    const QRectF r = paper->rect();
-    // Create the image with the exact size of the shrunk scene
-    QImage image(r.size().toSize(), QImage::Format_ARGB32);
+    QImage image(scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
     image.fill(Qt::transparent);                                              // Start all pixels transparent
     QPainter painter(&image);
-    painter.setFont( QFont( "Arial", 8, QFont::Normal ) );
+    painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
     painter.setRenderHint(QPainter::Antialiasing, true);
-    painter.setPen(QPen(Qt::black, widthMainLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     painter.setBrush ( QBrush ( Qt::NoBrush ) );
-    scene->render(&painter, r, r, Qt::IgnoreAspectRatio);
-    image.save(name);
+    scene->render(&painter);
+    image.save(fileName, "PNG", qApp->Seamly2DSettings()->getExportQuality());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief jpgFile save layout to jpg file.
+ * @param name name layout file.
+ */
+void MainWindowsNoGUI::jpgFile(const QString &fileName,  QGraphicsScene *scene) const
+{
+    QImage image(scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+    image.fill(Qt::white);                                              // Start all pixels transparent
+    QPainter painter(&image);
+    painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    scene->render(&painter);
+    image.save(fileName, "JPG", qApp->Seamly2DSettings()->getExportQuality());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief bmpFile save layout to bmp file.
+ * @param name name layout file.
+ */
+void MainWindowsNoGUI::bmpFile(const QString &fileName,  QGraphicsScene *scene) const
+{
+    QImage image(scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+    image.fill(Qt::white);                                              // Start all pixels transparent
+    QPainter painter(&image);
+    painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    scene->render(&painter);
+    image.save(fileName, "BMP", qApp->Seamly2DSettings()->getExportQuality());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief ppmFile save layout to gif file.
+ * @param name name layout file.
+ */
+void MainWindowsNoGUI::ppmFile(const QString &fileName,  QGraphicsScene *scene) const
+{
+    QImage image(scene->sceneRect().size().toSize(), QImage::Format_ARGB32);
+    image.fill(Qt::transparent);                                              // Start all pixels transparent
+    QPainter painter(&image);
+    painter.setFont(qApp->Seamly2DSettings()->getLabelFont());
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setBrush ( QBrush ( Qt::NoBrush ) );
+    scene->render(&painter);
+    image.save(fileName, "PPM", qApp->Seamly2DSettings()->getExportQuality());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1514,14 +1562,23 @@ void MainWindowsNoGUI::ExportScene(const DialogSaveLayout &dialog, const QList<Q
             {
                 case LayoutExportFormats::SVG:
                     paper->setVisible(false);
-                    SvgFile(name, paper, scene);
+                    svgFile(name, paper, scene);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormats::PDF:
                     PdfFile(name, paper, scene, ignorePrinterFields, margins);
                     break;
                 case LayoutExportFormats::PNG:
-                    PngFile(name, paper, scene);
+                    pngFile(name, scene);
+                    break;
+                case LayoutExportFormats::JPG:
+                    jpgFile(name, scene);
+                    break;
+                case LayoutExportFormats::BMP:
+                    bmpFile(name, scene);
+                    break;
+                case LayoutExportFormats::PPM:
+                    ppmFile(name, scene);
                     break;
                 case LayoutExportFormats::OBJ:
                     paper->setVisible(false);

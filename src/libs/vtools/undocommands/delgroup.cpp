@@ -64,7 +64,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DelGroup::DelGroup(VAbstractPattern *doc, quint32 id, QUndoCommand *parent)
-    : VUndoCommand(QDomElement(), doc, parent), nameActivDraw(doc->GetNameActivPP())
+    : VUndoCommand(QDomElement(), doc, parent), nameActivDraw(doc->getActiveDraftBlockName())
 {
     setText(tr("delete group"));
     nodeId = id;

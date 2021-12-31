@@ -107,7 +107,7 @@ void DeletePatternPiece::undo()
     }
 
     emit NeedFullParsing();
-    doc->ChangeActivPP(draftBlockName);
+    doc->changeActiveDraftBlock(draftBlockName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

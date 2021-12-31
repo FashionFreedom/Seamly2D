@@ -81,6 +81,11 @@ public slots:
     void PrintTiled();
     void RefreshDetailsLabel();
     void refreshGrainLines();
+    void svgFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
+    void pngFile(const QString &name, QGraphicsScene *scene)const;
+    void jpgFile(const QString &name, QGraphicsScene *scene)const;
+    void bmpFile(const QString &name, QGraphicsScene *scene)const;
+    void ppmFile(const QString &name, QGraphicsScene *scene)const;
 
 protected:
     QVector<VLayoutPiece> listDetails;
@@ -145,8 +150,7 @@ private:
                                                 const QList<QGraphicsItem *> &shadows,
                                                 const QList<QList<QGraphicsItem *> > &details);
 
-    void SvgFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
-    void PngFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
+
     void PdfFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignorePrinterFields,
                  const QMarginsF &margins)const;
     void PdfTiledFile(const QString &name);

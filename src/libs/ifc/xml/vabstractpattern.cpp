@@ -313,14 +313,14 @@ QStringList VAbstractPattern::ListMeasurements() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangeActivPP set new active pattern piece name.
+ * @brief changeActiveDraftBlock set new active pattern piece name.
  * @param name new name.
  * @param parse parser file mode.
  */
-void VAbstractPattern::ChangeActivPP(const QString &name, const Document &parse)
+void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Document &parse)
 {
     Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
-    if (CheckExistNamePP(name) && this->activeDraftBlock != name)
+    if (CheckExistNamePP(name))
     {
         this->activeDraftBlock = name;
         if (parse == Document::FullParse)
@@ -332,10 +332,10 @@ void VAbstractPattern::ChangeActivPP(const QString &name, const Document &parse)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetNameActivPP return current pattern piece name.
+ * @brief getActiveDraftBlockName return current pattern piece name.
  * @return pattern piece name.
  */
-QString VAbstractPattern::GetNameActivPP() const
+QString VAbstractPattern::getActiveDraftBlockName() const
 {
     return activeDraftBlock;
 }
@@ -813,7 +813,7 @@ QVector<VToolRecord> VAbstractPattern::getLocalHistory() const
     for (qint32 i = 0; i< history.size(); ++i)
     {
         const VToolRecord tool = history.at(i);
-        if (tool.getNameDraw() != GetNameActivPP())
+        if (tool.getNameDraw() != getActiveDraftBlockName())
         {
             continue;
         }

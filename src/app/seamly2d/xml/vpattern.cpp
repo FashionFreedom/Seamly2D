@@ -201,13 +201,13 @@ void VPattern::Parse(const Document &parse)
                             }
                             else
                             {
-                                ChangeActivPP(GetParametrString(domElement, AttrName));
+                                changeActiveDraftBlock(GetParametrString(domElement, AttrName));
                             }
                             patternPieces << GetParametrString(domElement, AttrName);
                         }
                         else
                         {
-                            ChangeActivPP(GetParametrString(domElement, AttrName), Document::LiteParse);
+                            changeActiveDraftBlock(GetParametrString(domElement, AttrName), Document::LiteParse);
                         }
                         ParseDrawElement(domElement, parse);
                         break;

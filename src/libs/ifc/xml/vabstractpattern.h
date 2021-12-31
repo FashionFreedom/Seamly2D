@@ -108,8 +108,8 @@ public:
 
     virtual void   CreateEmptyFile()=0;
 
-    void           ChangeActivPP(const QString& name, const Document &parse = Document::FullParse);
-    QString        GetNameActivPP() const;
+    void           changeActiveDraftBlock(const QString& name, const Document &parse = Document::FullParse);
+    QString        getActiveDraftBlockName() const;
     bool           CheckExistNamePP(const QString& name) const;
     int            CountPP() const;
     QDomElement    GetPPElement(const QString &name);

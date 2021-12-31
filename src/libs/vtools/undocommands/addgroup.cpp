@@ -63,7 +63,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 AddGroup::AddGroup(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent), nameActivDraw(doc->GetNameActivPP())
+    : VUndoCommand(xml, doc, parent), nameActivDraw(doc->getActiveDraftBlockName())
 {
     setText(tr("add group"));
     nodeId = doc->GetParametrId(xml);
@@ -79,7 +79,7 @@ void AddGroup::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    doc->ChangeActivPP(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
 
     QDomElement groups = doc->CreateGroups();
     if (not groups.isNull())
@@ -123,7 +123,7 @@ void AddGroup::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    doc->ChangeActivPP(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
 
     QDomElement groups = doc->CreateGroups();
     if (not groups.isNull())
