@@ -64,6 +64,7 @@
 #include <QTextCodec>
 #include <QFont>
 
+#include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vmath.h"
 #include "../vpatterndb/pmsystems.h"
@@ -144,6 +145,13 @@ const QString settingDefaultInternalLineweight           = QStringLiteral("patte
 const QString settingDefaultCutoutColor                  = QStringLiteral("pattern/defaultCutoutColor");
 const QString settingDefaultCutoutLinetype               = QStringLiteral("pattern/defaultCutoutLinetype");
 const QString settingDefaultCutoutLineweight             = QStringLiteral("pattern/defaultCutoutLineweight");
+
+const QString settingShowGrainlines                      = QStringLiteral("pattern/showGrainlines");
+const QString settingDefaultGrainlineColor               = QStringLiteral("pattern/defaultGrainlineColor");
+const QString settingDefaultGrainlineLineweight          = QStringLiteral("pattern/defaultGrainlineLineweight");
+
+const QString settingShowLabels                          = QStringLiteral("pattern/showLabels");
+const QString settingDefaultLabelColor                   = QStringLiteral("pattern/defaultLabelColor");
 
 const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
 const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
@@ -1209,7 +1217,7 @@ void VCommonSettings::setDefaultSeamColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultSeamLinetype() const
 {
-   return value(settingDefaultSeamLinetype, "solid").toString();
+   return value(settingDefaultSeamLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1221,7 +1229,7 @@ void VCommonSettings::setDefaultSeamLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultSeamLineweight() const
 {
-   return value(settingDefaultSeamLineweight, 0.18).toReal();
+   return value(settingDefaultSeamLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1245,7 +1253,7 @@ void VCommonSettings::setDefaultCutColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultCutLinetype() const
 {
-   return value(settingDefaultCutLinetype, "solid").toString();
+   return value(settingDefaultCutLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1257,7 +1265,7 @@ void VCommonSettings::setDefaultCutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutLineweight() const
 {
-   return value(settingDefaultCutLineweight, 0.18).toReal();
+   return value(settingDefaultCutLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1281,7 +1289,7 @@ void VCommonSettings::setDefaultInternalColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultInternalLinetype() const
 {
-   return value(settingDefaultInternalLinetype, "solid").toString();
+   return value(settingDefaultInternalLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1293,7 +1301,7 @@ void VCommonSettings::setDefaultInternalLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultInternalLineweight() const
 {
-   return value(settingDefaultInternalLineweight, 0.18).toReal();
+   return value(settingDefaultInternalLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1317,7 +1325,7 @@ void VCommonSettings::setDefaultCutoutColor(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultCutoutLinetype() const
 {
-   return value(settingDefaultCutoutLinetype, "solid").toString();
+   return value(settingDefaultCutoutLinetype, "solidLine").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1329,13 +1337,73 @@ void VCommonSettings::setDefaultCutoutLinetype(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultCutoutLineweight() const
 {
-   return value(settingDefaultCutoutLineweight, 0.18).toReal();
+   return value(settingDefaultCutoutLineweight, 1.20).toReal();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setDefaultCutoutLineweight(const qreal &value)
 {
     setValue(settingDefaultCutoutLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showGrainlines() const
+{
+    return value(settingShowGrainlines, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowGrainlines(const bool &value)
+{
+    setValue(settingShowGrainlines, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultGrainlineColor() const
+{
+   return value(settingDefaultGrainlineColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultGrainlineColor(const QString &value)
+{
+    setValue(settingDefaultGrainlineColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultGrainlineLineweight() const
+{
+   return value(settingDefaultGrainlineLineweight, 0.25).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultGrainlineLineweight(const qreal &value)
+{
+    setValue(settingDefaultGrainlineLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showLabels() const
+{
+    return value(settingShowLabels, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowLabels(const bool &value)
+{
+    setValue(settingShowLabels, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLabelColor() const
+{
+   return value(settingDefaultLabelColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLabelColor(const QString &value)
+{
+    setValue(settingDefaultLabelColor, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

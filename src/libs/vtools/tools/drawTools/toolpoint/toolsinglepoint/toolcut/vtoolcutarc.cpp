@@ -311,9 +311,9 @@ QString VToolCutArc::makeToolTip() const
                     .arg(arcStr + arcNumber + QLatin1String(" ") + radiusStr)
                     .arg(qApp->fromPixel(arc.GetRadius()))
                     .arg(arcStr + arcNumber + QLatin1String(" ") + startAngleStr)
-                    .arg(qApp->fromPixel(arc.GetStartAngle()))
+                    .arg(arc.GetStartAngle())
                     .arg(arcStr + arcNumber + QLatin1String(" ") + endAngleStr)
-                    .arg(qApp->fromPixel(arc.GetEndAngle()))
+                    .arg(arc.GetEndAngle())
                     .arg(arcStr + arcNumber + QLatin1String(" ") + tr("label"))
                     .arg(arc.name());
         return toolTip;

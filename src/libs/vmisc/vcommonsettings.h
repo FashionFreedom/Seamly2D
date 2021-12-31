@@ -292,6 +292,21 @@ public:
     qreal                getDefaultCutoutLineweight() const;
     void                 setDefaultCutoutLineweight(const qreal &value);
 
+    bool                 showGrainlines() const;
+    void                 setShowGrainlines(const bool &value);
+
+    QString              getDefaultGrainlineColor() const;
+    void                 setDefaultGrainlineColor(const QString &value);
+
+    qreal                getDefaultGrainlineLineweight() const;
+    void                 setDefaultGrainlineLineweight(const qreal &value);
+
+    bool                 showLabels() const;
+    void                 setShowLabels(const bool &value);
+
+    QString              getDefaultLabelColor() const;
+    void                 setDefaultLabelColor(const QString &value);
+
     QFont                getLabelFont() const;
     void                 setLabelFont(const QFont &f);
 

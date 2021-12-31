@@ -2,6 +2,8 @@
 # This need for corect working file translations.pro
 
 SOURCES += \
+    $$PWD/calculator/button.cpp \
+    $$PWD/calculator/calculator.cpp \
     $$PWD/color_combobox.cpp \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
@@ -31,6 +33,8 @@ SOURCES += \
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS += \
+    $$PWD/calculator/button.h \
+    $$PWD/calculator/calculator.h \
     $$PWD/color_combobox.h \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
@@ -57,3 +61,4 @@ HEADERS += \
     $$PWD/vscenepoint.h \
     $$PWD/scalesceneitems.h \
     $$PWD/vlineedit.h
+

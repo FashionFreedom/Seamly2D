@@ -70,6 +70,8 @@ class QLabel;
 class DialogVariables;
 class DialogTool;
 class DialogHistory;
+class CalculatorDialog;
+class DecimalChartDialog;
 class VWidgetGroups;
 class VWidgetDetails;
 class QToolButton;
@@ -424,6 +426,7 @@ private:
 
     void               UpdateWindowTitle();
     void               upDateScenes();
+    void               updateViewToolbar();
 
     bool               IgnoreLocking(int error, const QString &path);
 

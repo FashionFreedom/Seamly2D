@@ -84,6 +84,8 @@
 #include "dialogs/vwidgetgroups.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "dialogs/vwidgetdetails.h"
+#include "dialogs/calculator_dialog.h"
+#include "dialogs/decimalchart_dialog.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vtools/dialogs/support/dialogeditlabel.h"
@@ -809,6 +811,15 @@ template <typename DrawTool>
 void MainWindow::ClosedDetailsDialogWithApply(int result)
 {
     ClosedDialogWithApply<DrawTool>(result, pieceScene);
+    if (pattern->DataPieces()->size() > 0)
+    {
+        ui->anchorPoint_ToolButton->setEnabled(true);
+        ui->internalPath_ToolButton->setEnabled(true);
+        ui->insertNode_ToolButton->setEnabled(true);
+        ui->anchorPoint_Action->setEnabled(true);
+        ui->internalPath_Action->setEnabled(true);
+        ui->insertNode_Action->setEnabled(true);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2774,6 +2785,10 @@ void MainWindow::handleDetailsMenu()
     QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path"));
     QAction *action_InsertNode   = menu.addAction(QIcon(":/toolicon/32x32/insert_node.png"),  tr("Insert Node in Path"));
 
+    action_AnchorPoint->setEnabled(pattern->DataPieces()->size() > 0);
+    action_InternalPath->setEnabled(pattern->DataPieces()->size() > 0);
+    action_InsertNode->setEnabled(pattern->DataPieces()->size() > 0);
+
     QAction *selectedAction = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
@@ -3209,13 +3224,10 @@ void MainWindow::draftMode_Action(bool checked)
         setEnableTools(true);
         SetEnableWidgets(true);
 
-        ui->showPointNames_Action->setChecked(qApp->Settings()->getHidePointNames());
-        ui->toggleWireframe_Action->setChecked(qApp->Settings()->isWireframe());
-        ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
-
-        ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
         draftScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
+        updateViewToolbar();
 
         //ui->toggleAnchorPoints_Action->setChecked(qApp->Settings()->getShowAnchorPoints());
         //draftScene->setOriginsVisible(qApp->Settings()->getShowAnchorPoints());
@@ -3300,8 +3312,9 @@ void MainWindow::ActionDetails(bool checked)
         setEnableTools(true);
         SetEnableWidgets(true);
 
-        ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
+
+        updateViewToolbar();
 
         ui->tools_ToolBox->setCurrentIndex(ui->tools_ToolBox->indexOf(ui->pieces_Page));
 
@@ -3737,6 +3750,8 @@ void MainWindow::Clear()
     ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
+    ui->toggleGrainLines_Action->setEnabled(false);
+    ui->toggleLabels_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
 
 
@@ -4006,6 +4021,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
+    ui->toggleGrainLines_Action->setEnabled(enable && pieceStage);
+    ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
 
@@ -4021,6 +4038,10 @@ void MainWindow::SetEnableWidgets(bool enable)
 
     //enable history menu actions
     ui->history_Action->setEnabled(enable && draftStage);
+
+    //enable utilities menu actions
+    ui->calculator_Action->setEnabled(enable);
+    ui->decimalChart_Action->setEnabled(enable);
 
     //enable dock widget actions
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
@@ -4323,9 +4344,9 @@ void MainWindow::setEnableTools(bool enable)
 
     //Add Details
     ui->addPatternPiece_ToolButton->setEnabled(draftTools);
-    ui->anchorPoint_ToolButton->setEnabled(draftTools);
-    ui->internalPath_ToolButton->setEnabled(draftTools);
-    ui->insertNode_ToolButton->setEnabled(draftTools);
+    ui->anchorPoint_ToolButton->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
+    ui->internalPath_ToolButton->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->insertNode_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
 
     //Pattern Piece Tools
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
@@ -4397,9 +4418,9 @@ void MainWindow::setEnableTools(bool enable)
 
     //Add Details
     ui->addPiece_Action->setEnabled(draftTools);
-    ui->anchorPoint_Action->setEnabled(draftTools);
-    ui->internalPath_Action->setEnabled(draftTools);
-    ui->insertNode_Action->setEnabled(draftTools);
+    ui->anchorPoint_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->internalPath_Action->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
+    ui->insertNode_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
 
     //Pattern Pieces
     ui->union_Action->setEnabled(pieceTools);
@@ -5145,6 +5166,20 @@ void MainWindow::CreateActions()
         draftScene->setOriginsVisible(checked);
         pieceScene->setOriginsVisible(checked);
     });
+
+    connect(ui->toggleGrainLines_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowGrainlines(checked);
+        ui->view->itemClicked(nullptr);
+        refreshGrainLines();
+    });
+
+    connect(ui->toggleLabels_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowLabels(checked);
+        ui->view->itemClicked(nullptr);
+        RefreshDetailsLabel();
+    });
 /**
     connect(ui->toggleAnchorPoints_Action, &QAction::triggered, this, [this](bool checked)
     {
@@ -5567,6 +5602,23 @@ void MainWindow::CreateActions()
         }
     });
 
+    //Utilities menu
+    connect(ui->calculator_Action, &QAction::triggered, this, [this]()
+    {
+        CalculatorDialog *calcDialog = new CalculatorDialog(this);
+        calcDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        calcDialog->setWindowTitle(tr("Calculator"));
+        calcDialog->adjustSize();
+        calcDialog->show();
+    });
+
+    connect(ui->decimalChart_Action, &QAction::triggered, this, [this]()
+    {
+        DecimalChartDialog *decimalchartDialog = new DecimalChartDialog(this);
+        decimalchartDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        decimalchartDialog->show();
+    });
+
     //Help menu
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
@@ -5958,6 +6010,7 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::RefreshDetailsLabel);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
 
 
@@ -6670,6 +6723,16 @@ void MainWindow::upDateScenes()
         pieceScene->update();
     }
 }
+
+void MainWindow::updateViewToolbar()
+{
+    ui->toggleWireframe_Action->setChecked(qApp->Settings()->isWireframe());
+    ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
+    ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
+    ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
+    ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::IgnoreLocking(int error, const QString &path)
 {

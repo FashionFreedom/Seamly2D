@@ -700,7 +700,7 @@ void MainWindowsNoGUI::PrintTiled()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief RefreshDetailsLabel call to ecalculate piece labels. For example after changing a font.
+ * @brief RefreshDetailsLabel call to recalculate piece labels. For example after changing a font.
  */
 void MainWindowsNoGUI::RefreshDetailsLabel()
 {
@@ -712,6 +712,24 @@ void MainWindowsNoGUI::RefreshDetailsLabel()
         {
             tool->UpdatePatternInfo();
             tool->UpdateDetailLabel();
+        }
+        ++i;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief refreshGrainLines call to recalculate piece grainlines. For example after show / hide grainlines.
+ */
+void MainWindowsNoGUI::refreshGrainLines()
+{
+    const QHash<quint32, VPiece> *list = pattern->DataPieces();
+    QHash<quint32, VPiece>::const_iterator i = list->constBegin();
+    while (i != list->constEnd())
+    {
+        if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
+        {
+            tool->UpdateGrainline();
         }
         ++i;
     }

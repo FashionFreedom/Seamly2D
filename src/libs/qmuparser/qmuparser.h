@@ -64,7 +64,7 @@ namespace qmu
         static qreal Sinh(qreal);
         static qreal Cosh(qreal);
         static qreal Tanh(qreal);
-        // arcus hyperbolic functions
+        // inverse hyperbolic functions
         static qreal ASinh(qreal);
         static qreal ACosh(qreal);
         static qreal ATanh(qreal);

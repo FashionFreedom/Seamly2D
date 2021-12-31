@@ -81,6 +81,7 @@ private:
 
     void     initLabelDateTimeFormats();
     void     initNotches();
+    void     initGrainlines();
     void     initComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat);
 
     template <typename T>

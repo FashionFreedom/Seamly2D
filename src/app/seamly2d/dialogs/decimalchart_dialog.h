@@ -1,15 +1,15 @@
 /************************************************************************
  **
- **  @file   vgraphicsfillitem.h
- **  @author Bojan Kverh
- **  @date   October 16, 2016
+ **  @file   decimalchart_dialog.h
+ **  @author DSCaskey <dscaskey@gmail.com>
+ **  @date   12 26, 2021
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -26,37 +26,33 @@
  **
  *************************************************************************/
 
-#ifndef VGRAPHICSFILLITEM_H
-#define VGRAPHICSFILLITEM_H
+#ifndef DIALOGDECIMALCHART_H
+#define DIALOGDECIMALCHART_H
 
-#include <QGraphicsPathItem>
-#include <QPainter>
+#include <QDialog>
 
-class VGraphicsFillItem : public QGraphicsPathItem
+namespace Ui
 {
+    class DecimalChartDialog;
+}
+
+class DecimalChartDialog : public QDialog
+{
+    Q_OBJECT
+
 public:
-    /**
-     * @brief VGraphicsFillItem Constructor
-     * @param color color used for the item's pen & brush
-     * @param fill flag used if the item is to be filled or not
-     */
-    explicit VGraphicsFillItem(const QColor &color, bool fill, QGraphicsItem *parent = nullptr);
-    /**
-     * @brief ~VGraphicsFillItem Destructor
-     */
-    ~VGraphicsFillItem();
-    /**
-     * @brief paint Paints the item, filling the inside surface
-     * @param painter pointer to the painter object
-     * @param option unused
-     * @param widget unused
-     */
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
+    explicit DecimalChartDialog(QWidget *parent = nullptr);
+    virtual ~DecimalChartDialog();
+
+protected:
+    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
 private:
-    QColor   m_color;
-    bool     m_fill;
+    Ui::DecimalChartDialog *ui;
+    bool isInitialized;
+    Q_DISABLE_COPY(DecimalChartDialog)
 
+    void setFontPointSize(QWidget *w, int pointSize);
 };
 
-#endif // VGRAPHICSFILLITEM_H
+#endif // DIALOGDECIMALCHART_H

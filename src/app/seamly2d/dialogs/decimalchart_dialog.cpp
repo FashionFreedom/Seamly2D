@@ -1,15 +1,15 @@
 /************************************************************************
  **
- **  @file   vgraphicsfillitem.cpp
- **  @author Bojan Kverh
- **  @date   October 16, 2016
+ **  @file   decimalchart_dialog.h
+ **  @author DSCaskey <dscaskey@gmail.com>
+ **  @date   12 26, 2021
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -26,37 +26,56 @@
  **
  *************************************************************************/
 
-#include "vgraphicsfillitem.h"
+#include "decimalchart_dialog.h"
+#include "ui_decimalchart_dialog.h"
+
+#include <QFont>
+#include <QShowEvent>
+#include "../core/vapplication.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VGraphicsFillItem::VGraphicsFillItem(const QColor &color, bool fill, QGraphicsItem *parent)
-    : QGraphicsPathItem(parent)
-    , m_color(color)
-    , m_fill(fill)
-{}
-
-//---------------------------------------------------------------------------------------------------------------------
-VGraphicsFillItem::~VGraphicsFillItem()
-{}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VGraphicsFillItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+DecimalChartDialog::DecimalChartDialog(QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::DecimalChartDialog)
+    , isInitialized(false)
 {
-    Q_UNUSED(option)
-    Q_UNUSED(widget)
-    painter->save();
-    if (m_fill)
-    {
-        painter->setBrush(QBrush(Qt::NoBrush));
-    }
-    else
-    {
-        painter->setBrush(m_color);
-    }
-
-    painter->setPen(m_color);
-    painter->drawPath(path());
-    painter->restore();
+    ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+DecimalChartDialog::~DecimalChartDialog()
+{
+    delete ui;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DecimalChartDialog::showEvent(QShowEvent *event)
+{
+    QDialog::showEvent( event );
+    if ( event->spontaneous() )
+    {
+        return;
+    }
+
+    if (isInitialized)
+    {
+        return;
+    }
+    // do your init stuff here
+
+    setMaximumSize(size());
+    setMinimumSize(size());
+
+    isInitialized = true;//first show windows are held
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DecimalChartDialog::setFontPointSize(QWidget *w, int pointSize)
+{
+    SCASSERT(w != nullptr)
+
+    QFont font = w->font();
+    font.setPointSize(pointSize);
+    w->setFont(font);
+}

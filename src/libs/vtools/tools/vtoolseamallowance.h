@@ -132,8 +132,9 @@ public slots:
     void         Highlight(quint32 id);
     void         UpdateDetailLabel();
     void         UpdatePatternInfo();
+    void         UpdateGrainline();
+
 protected slots:
-    void UpdateGrainline();
     void SaveMoveDetail(const QPointF &ptPos);
     void SaveResizeDetail(qreal dLabelW, int iFontSize);
     void SaveRotationDetail(qreal dRot);
@@ -143,6 +144,7 @@ protected slots:
     void SaveMoveGrainline(const QPointF& ptPos);
     void SaveResizeGrainline(qreal dLength);
     void SaveRotateGrainline(qreal dRot, const QPointF& ptPos);
+    
 protected:
     virtual void       AddToFile () Q_DECL_OVERRIDE;
     virtual void       RefreshDataInFile() Q_DECL_OVERRIDE;

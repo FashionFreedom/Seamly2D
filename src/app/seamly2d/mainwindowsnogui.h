@@ -80,6 +80,8 @@ public slots:
     void PrintOrigin();
     void PrintTiled();
     void RefreshDetailsLabel();
+    void refreshGrainLines();
+
 protected:
     QVector<VLayoutPiece> listDetails;
 

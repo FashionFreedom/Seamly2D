@@ -337,7 +337,7 @@ void VToolSeamAllowance::AddPatternPieceData(VAbstractPattern *doc, QDomElement 
     doc->SetAttribute(domData, AttrMy,                             data.GetPos().y());
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,        data.GetLabelWidth());
     doc->SetAttribute(domData, AttrHeight,                         data.GetLabelHeight());
-    doc->SetAttribute(domData, AttrFont,                           data.GetFontSize());
+    doc->SetAttribute(domData, AttrFont,                           data.getFontSize());
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation,     data.GetRotation());
 
     if (data.CenterPin() > NULL_ID)
@@ -382,7 +382,7 @@ void VToolSeamAllowance::AddPatternInfo(VAbstractPattern *doc, QDomElement &domE
     doc->SetAttribute(domData, AttrMy,                         data.GetPos().y());
     doc->SetAttribute(domData, VAbstractPattern::AttrWidth,    data.GetLabelWidth());
     doc->SetAttribute(domData, AttrHeight,                     data.GetLabelHeight());
-    doc->SetAttribute(domData, AttrFont,                       data.GetFontSize());
+    doc->SetAttribute(domData, AttrFont,                       data.getFontSize());
     doc->SetAttribute(domData, VAbstractPattern::AttrRotation, data.GetRotation());
 
     if (data.CenterPin() > NULL_ID)
@@ -566,14 +566,14 @@ void VToolSeamAllowance::UpdateDetailLabel()
     qDebug() << "Update Piece label: " << piece.GetName();
     const VPieceLabelData& labelData = piece.GetPatternPieceData();
 
-    if (labelData.IsVisible() == true)
+    if (labelData.IsVisible() & qApp->Settings()->showLabels())
     {
         QPointF pos;
         qreal labelAngle = 0;
 
         if (PrepareLabelData(labelData, m_dataLabel, pos, labelAngle))
         {
-            m_dataLabel->UpdateData(piece.GetName(), labelData);
+            m_dataLabel->updateData(piece.GetName(), labelData);
             UpdateLabelItem(m_dataLabel, pos, labelAngle);
         }
     }
@@ -593,14 +593,14 @@ void VToolSeamAllowance::UpdatePatternInfo()
     qDebug() << "Update Pattern label: " << piece.GetName();
     const VPatternLabelData& geom = piece.GetPatternInfo();
 
-    if (geom.IsVisible() == true)
+    if (geom.IsVisible() & qApp->Settings()->showLabels())
     {
         QPointF pos;
         qreal labelAngle = 0;
 
         if (PrepareLabelData(geom, m_patternInfo, pos, labelAngle))
         {
-            m_patternInfo->UpdateData(doc);
+            m_patternInfo->updateData(doc);
             UpdateLabelItem(m_patternInfo, pos, labelAngle);
         }
     }
@@ -619,7 +619,7 @@ void VToolSeamAllowance::UpdateGrainline()
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     const VGrainlineData& data = piece.GetGrainlineGeometry();
 
-    if (data.IsVisible() == true)
+    if (data.IsVisible() & qApp->Settings()->showGrainlines())
     {
         QPointF pos;
         qreal dRotation = 0;
@@ -689,12 +689,12 @@ void VToolSeamAllowance::SaveRotationDetail(qreal dRot)
     VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
     VPiece newDet = oldDet;
     newDet.GetPatternPieceData().SetPos(m_dataLabel->pos());
-    newDet.GetPatternPieceData().SetFontSize(m_dataLabel->GetFontSize());
+    newDet.GetPatternPieceData().SetFontSize(m_dataLabel->getFontSize());
 
     // Tranform angle to anticlockwise
     QLineF line(0, 0, 100, 0);
     line.setAngle(-dRot);
-    newDet.GetPatternPieceData().SetRotationWay(QString().setNum(line.angle()));
+    newDet.GetPatternPieceData().SetRotation(QString().setNum(line.angle()));
 
     SavePieceOptions* rotateCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
     rotateCommand->setText(tr("rotate pattern piece label"));
@@ -747,7 +747,7 @@ void VToolSeamAllowance::SaveRotationPattern(qreal dRot)
     VPiece newDet = oldDet;
 
     newDet.GetPatternInfo().SetPos(m_patternInfo->pos());
-    newDet.GetPatternInfo().SetFontSize(m_patternInfo->GetFontSize());
+    newDet.GetPatternInfo().SetFontSize(m_patternInfo->getFontSize());
 
     // Tranform angle to anticlockwise
     QLineF line(0, 0, 100, 0);
@@ -817,7 +817,8 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
     //set cutline pen
     color      = QColor(qApp->Settings()->getDefaultCutColor());
     lineType   = qApp->Settings()->getDefaultCutLinetype();
-    lineWeight = qApp->Settings()->getDefaultCutLineweight();
+    lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
+
     m_cutLine->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
                             lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
     m_cutLine->setZValue(-10);
@@ -829,13 +830,13 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
     {
         color      = QColor(qApp->Settings()->getDefaultSeamColor());
         lineType   = qApp->Settings()->getDefaultSeamLinetype();
-        lineWeight = qApp->Settings()->getDefaultSeamLineweight();
+        lineWeight = ToPixel(qApp->Settings()->getDefaultSeamLineweight(), Unit::Mm);
     }
     else
     {
         color      = QColor(qApp->Settings()->getDefaultCutColor());
         lineType   = qApp->Settings()->getDefaultCutLinetype();
-        lineWeight = qApp->Settings()->getDefaultCutLineweight();
+        lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
     }
 
     this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
@@ -1198,17 +1199,17 @@ VToolSeamAllowance::VToolSeamAllowance(VAbstractPattern *doc, VContainer *data, 
     ToolCreation(typeCreation);
     setAcceptHoverEvents(true);
 
-    connect(m_dataLabel, &VTextGraphicsItem::SignalMoved,   this, &VToolSeamAllowance::SaveMoveDetail);
-    connect(m_dataLabel, &VTextGraphicsItem::SignalResized, this, &VToolSeamAllowance::SaveResizeDetail);
-    connect(m_dataLabel, &VTextGraphicsItem::SignalRotated, this, &VToolSeamAllowance::SaveRotationDetail);
+    connect(m_dataLabel, &VTextGraphicsItem::itemMoved,   this, &VToolSeamAllowance::SaveMoveDetail);
+    connect(m_dataLabel, &VTextGraphicsItem::itemResized, this, &VToolSeamAllowance::SaveResizeDetail);
+    connect(m_dataLabel, &VTextGraphicsItem::itemRotated, this, &VToolSeamAllowance::SaveRotationDetail);
 
-    connect(m_patternInfo, &VTextGraphicsItem::SignalMoved,   this, &VToolSeamAllowance::SaveMovePattern);
-    connect(m_patternInfo, &VTextGraphicsItem::SignalResized, this, &VToolSeamAllowance::SaveResizePattern);
-    connect(m_patternInfo, &VTextGraphicsItem::SignalRotated, this, &VToolSeamAllowance::SaveRotationPattern);
+    connect(m_patternInfo, &VTextGraphicsItem::itemMoved,   this, &VToolSeamAllowance::SaveMovePattern);
+    connect(m_patternInfo, &VTextGraphicsItem::itemResized, this, &VToolSeamAllowance::SaveResizePattern);
+    connect(m_patternInfo, &VTextGraphicsItem::itemRotated, this, &VToolSeamAllowance::SaveRotationPattern);
 
-    connect(m_grainLine, &VGrainlineItem::SignalMoved,   this, &VToolSeamAllowance::SaveMoveGrainline);
-    connect(m_grainLine, &VGrainlineItem::SignalResized, this, &VToolSeamAllowance::SaveResizeGrainline);
-    connect(m_grainLine, &VGrainlineItem::SignalRotated, this, &VToolSeamAllowance::SaveRotateGrainline);
+    connect(m_grainLine, &VGrainlineItem::itemMoved,   this, &VToolSeamAllowance::SaveMoveGrainline);
+    connect(m_grainLine, &VGrainlineItem::itemResized, this, &VToolSeamAllowance::SaveResizeGrainline);
+    connect(m_grainLine, &VGrainlineItem::itemRotated, this, &VToolSeamAllowance::SaveRotateGrainline);
 
     connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &VToolSeamAllowance::UpdatePatternInfo);
     connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &VToolSeamAllowance::UpdateDetailLabel);
@@ -1574,14 +1575,13 @@ void VToolSeamAllowance::InitInternalPaths(const VPiece &piece)
             color = QColor(qApp->Settings()->getDefaultInternalColor());
         }
         Qt::PenStyle lineType   = path.GetPenType();
-        qreal   lineWeight = qApp->Settings()->getDefaultInternalLineweight();
-
+        qreal   lineWeight = ToPixel(qApp->Settings()->getDefaultInternalLineweight(), Unit::Mm);
 
         auto *tool = qobject_cast<VToolInternalPath*>(VAbstractPattern::getTool(pathIds.at(i)));
         SCASSERT(tool != nullptr);
         tool->setParentItem(this);
         tool->SetParentType(ParentType::Item);
-        tool->setPen(QPen(color, lineWeight, lineType, Qt::RoundCap, Qt::RoundJoin));
+        tool->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())), lineType, Qt::RoundCap, Qt::RoundJoin));
         tool->show();
         doc->IncrementReferens(piece.GetInternalPaths().at(i));
     }
@@ -1670,7 +1670,7 @@ bool VToolSeamAllowance::PrepareLabelData(const VPatternLabelData &labelData, VT
 
     QFont fnt = qApp->Settings()->getLabelFont();
     {
-        const int iFS = labelData.GetFontSize();
+        const int iFS = labelData.getFontSize();
         qDebug() << " Label Font Size = " << iFS;
         iFS < MIN_FONT_SIZE ? fnt.setPixelSize(MIN_FONT_SIZE) : fnt.setPixelSize(iFS);
         if (iFS < MIN_FONT_SIZE)
@@ -1681,8 +1681,8 @@ bool VToolSeamAllowance::PrepareLabelData(const VPatternLabelData &labelData, VT
         qDebug() << " Label Font Pixel Size = " << iFS;
         }
     }
-    labelItem->SetFont(fnt);
-    labelItem->SetSize(ToPixel(labelWidth, *VDataTool::data.GetPatternUnit()),
+    labelItem->setFont(fnt);
+    labelItem->setSize(ToPixel(labelWidth, *VDataTool::data.GetPatternUnit()),
                        ToPixel(labelHeight, *VDataTool::data.GetPatternUnit()));
 
     qDebug() << " Label Width = " << labelWidth;
@@ -1704,7 +1704,7 @@ void VToolSeamAllowance::UpdateLabelItem(VTextGraphicsItem *labelItem, QPointF p
     rectBB.setHeight(labelItem->boundingRect().height());
     qreal dX;
     qreal dY;
-    if (labelItem->IsContained(rectBB, labelAngle, dX, dY) == false)
+    if (labelItem->isContained(rectBB, labelAngle, dX, dY) == false)
     {
         pos.setX(pos.x() + dX);
         pos.setY(pos.y() + dY);
@@ -1713,5 +1713,5 @@ void VToolSeamAllowance::UpdateLabelItem(VTextGraphicsItem *labelItem, QPointF p
     labelItem->setPos(pos);
     labelItem->setRotation(-labelAngle);// expects clockwise direction
     labelItem->Update();
-    labelItem->GetTextLines() > 0 ? labelItem->show() : labelItem->hide();
+    labelItem->getTextLines() > 0 ? labelItem->show() : labelItem->hide();
 }

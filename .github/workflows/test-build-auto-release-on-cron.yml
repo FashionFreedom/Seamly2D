@@ -1,7 +1,7 @@
-name: Build auto release on cron
+name: Test build auto-release on cron (Saturday 8:30pm CST, Sunday 2:30am UTC)
 
 # cron format:
-# ┌───────────── minute (0 - 59)
+# minute (0 - 59)
 # │ ┌───────────── hour (0 - 23)
 # │ │ ┌───────────── day of the month (1 - 31)
 # │ │ │ ┌───────────── month (1 - 12)
@@ -10,10 +10,9 @@ name: Build auto release on cron
 # │ │ │ │ │
 # │ │ │ │ │
 #'* * * * *'
-# Build on Mondays at 01:30 UTC
 on:
   schedule:
-    - cron: '30 1 * * MON'
+    - cron: '0 0 * * MON'
 
 env:
   QT_SELECT: 5
@@ -47,10 +46,10 @@ jobs:
         with:
           tag_name:  ${{ steps.names.outputs.TAG_NAME }}
           release_name: ${{ steps.names.outputs.RELEASE_NAME }}
-          body: Build auto weekly release - Published full release
-          # create upublished
-          draft: false
-          # create a full release, not a pre-release
+          body: Test manual weekly release - unpublished full release
+          # create unpublished
+          draft: true
+          # create full release, not a pre-release
           prerelease: false
 
       - name: show UPLOAD_URL

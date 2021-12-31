@@ -1,19 +1,14 @@
-name: Build auto release on cron
+name: Test build manual release
 
-# cron format:
-# ┌───────────── minute (0 - 59)
-# │ ┌───────────── hour (0 - 23)
-# │ │ ┌───────────── day of the month (1 - 31)
-# │ │ │ ┌───────────── month (1 - 12)
-# │ │ │ │ ┌───────────── day of the week (0 - 6)
-# │ │ │ │ │
-# │ │ │ │ │
-# │ │ │ │ │
-#'* * * * *'
-# Build on Mondays at 01:30 UTC
 on:
-  schedule:
-    - cron: '30 1 * * MON'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test Build manual releases'
 
 env:
   QT_SELECT: 5
@@ -26,7 +21,7 @@ jobs:
     outputs:
       upload_url: ${{ steps.release-data.outputs.upload_url }}
 
-# The tag name is vYYYY-MM-DD.hhmm to create simple, easy-to-read "rolling release" versioning
+# The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
     steps:
       - name: create env vars for release name and tag
         id: names
@@ -47,10 +42,10 @@ jobs:
         with:
           tag_name:  ${{ steps.names.outputs.TAG_NAME }}
           release_name: ${{ steps.names.outputs.RELEASE_NAME }}
-          body: Build auto weekly release - Published full release
-          # create upublished
-          draft: false
-          # create a full release, not a pre-release
+          body: Test manual weekly release - unpublished full release
+          # create unpublished
+          draft: true
+          # create full release, not a pre-release
           prerelease: false
 
       - name: show UPLOAD_URL
