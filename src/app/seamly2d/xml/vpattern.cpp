@@ -3643,7 +3643,7 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPattern::GenerateSuffix() const
+QString VPattern::GenerateSuffix(const QString &type) const
 {
     const QString suffixBase = GetLabelBase(static_cast<quint32>(GetIndexActivPP())).toLower();
     const QStringList uniqueNames = VContainer::AllUniqueNames();
@@ -3651,7 +3651,7 @@ QString VPattern::GenerateSuffix() const
     QString suffix;
     for (;;)
     {
-        suffix = QString("%1%2").arg(suffixBase).arg(num);
+        suffix = QString("_%1%2%3").arg(suffixBase).arg(num).arg(type);
 
         for (int i=0; i < uniqueNames.size(); ++i)
         {

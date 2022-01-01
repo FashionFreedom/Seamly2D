@@ -889,6 +889,17 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
     return result;
 }
 
+// Normalizes any number to an arbitrary range
+// by assuming the range wraps around when going below min or above max
+qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end ) 
+{
+  const qreal range       = end - start   ;   //
+  const qreal offsetValue = value - start ;   // value relative to 0
+
+  return ( offsetValue - ( floor( offsetValue / range ) * range ) ) + start ;
+  // + start to reset back to start of original range
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTool::setCurrentPointId(QComboBox *box, const quint32 &value, FillComboBox rule,
                                    const quint32 &ch1, const quint32 &ch2) const

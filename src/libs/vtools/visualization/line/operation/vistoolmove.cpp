@@ -95,6 +95,7 @@ VisToolMove::VisToolMove(const VContainer *data, QGraphicsItem *parent)
     , rotationFinishPointItem(nullptr)
     , rotationLineItem(nullptr)
     , m_origin(QPointF())
+    , m_rotationPoint(QPointF())
 {
     originPointItem         = InitPoint(supportColor2, this, 110);
     originPointItem->setBrush(QBrush(supportColor2, Qt::SolidPattern));
@@ -157,20 +158,21 @@ void VisToolMove::RefreshGeometry()
             m_origin = Visualization::data->GeometricObject<VPointF>(object1Id)->toQPointF();
             DrawPoint(rotationOriginPointItem, m_origin, supportColor2);
             line   = VGObject::BuildLine(m_origin, length, angle);
-            m_origin = line.p2();
+            m_rotationPoint = line.p2();
+            originPointItem->setVisible(false);
         }
         else
         {
             DrawPoint(originPointItem, m_origin, supportColor2);
             line   = VGObject::BuildLine(m_origin, length, angle);
-            m_origin = line.p2();
+            m_rotationPoint = line.p2();
             rotationOriginPointItem->setVisible(false);
         }
 
         QLineF rotationLine;
         if (VFuzzyComparePossibleNulls(rotationAngle, INT_MIN))
         {
-            rotationLine = QLineF(m_origin, Visualization::scenePos);
+            rotationLine = QLineF(m_rotationPoint, Visualization::scenePos);
 
             if (QGuiApplication::keyboardModifiers() == Qt::ShiftModifier)
             {
@@ -178,7 +180,7 @@ void VisToolMove::RefreshGeometry()
             }
 
             qreal cursorLength = rotationLine.length();
-            rotationLine.setP2(Ray(m_origin, rotationLine.angle()));
+            rotationLine.setP2(Ray(m_rotationPoint, rotationLine.angle()));
 
             qreal minL = scaledRadius(sceneScale(qApp->getCurrentScene())) * 1.5;
 
@@ -193,15 +195,14 @@ void VisToolMove::RefreshGeometry()
         }
         else
         {
-            rotationLine = QLineF(m_origin, Ray(m_origin, rotationAngle));
+            rotationLine = QLineF(m_rotationPoint, Ray(m_rotationPoint, rotationAngle));
             tempRotation = rotationAngle;
         }
 
         DrawLine(rotationLineItem, rotationLine, supportColor3, Qt::DashLine);
     }
-    //DrawLine(moveLineItem, line, supportColor2, Qt::DashLine);
-    drawArrowedLine(moveLineItem, line, supportColor2, Qt::DashLine);
 
+    drawArrowedLine(moveLineItem, line, supportColor2, Qt::DashLine);
     DrawPoint(rotationFinishPointItem, line.p2(), supportColor3);
 
     static const QString prefix = UnitsToStr(qApp->patternUnit(), true);
@@ -224,7 +225,7 @@ void VisToolMove::RefreshGeometry()
                                 .arg(tempAngle)
                                 .arg(tempRotation);
     }
-    createRotatedObjects(iPoint, iCurve, tempLength, tempAngle, tempRotation, m_origin);
+    createRotatedObjects(iPoint, iCurve, tempLength, tempAngle, tempRotation, m_rotationPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -312,11 +313,9 @@ void VisToolMove::createOriginObjects(int &iPoint, int &iCurve)
 {
     QPolygonF sourceObjects;
 
-    qCDebug(visTool, "Create Source Objects");
     for (int i = 0; i < objects.size(); ++i)
     {
         const quint32 id = objects.at(i);
-        qCDebug(visTool, "Object:  %d", id);
         const QSharedPointer<VGObject> obj = Visualization::data->GetGObject(id);
 
         // This check helps to find missed objects in the switch
@@ -375,19 +374,13 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void VisToolMove::createRotatedObjects(int &iPoint, int &iCurve, qreal length, qreal angle, qreal rotationAngle,
                                             const QPointF &rotationOrigin)
 {
-    qCDebug(visTool, "Create Rotated Objects");
     for (int i = 0; i < objects.size(); ++i)
     {
         const quint32 id = objects.at(i);
-        qCDebug(visTool, "Object:  %d", id);
         const QSharedPointer<VGObject> obj = Visualization::data->GetGObject(id);
 
         // This check helps to find missed objects in the switch
         Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects was handled.");
-
-        qCDebug(visTool, "VisToolMove - Rotation Origin");
-        qCDebug(visTool, "X:  %f", rotationOrigin.x());
-        qCDebug(visTool, "Y:  %f", rotationOrigin.y());
 
         switch(static_cast<GOType>(obj->getType()))
         {
@@ -397,10 +390,6 @@ void VisToolMove::createRotatedObjects(int &iPoint, int &iCurve, qreal length, q
 
                 ++iPoint;
                 VScaledEllipse *point = GetPoint(static_cast<quint32>(iPoint), supportColor);
-                qCDebug(visTool, "visTool - Point");
-                qCDebug(visTool, "length:  %f", length);
-                qCDebug(visTool, "angle:  %f", angle);
-                qCDebug(visTool, "rotation:  %f\n", rotationAngle);
                 DrawPoint(point, static_cast<QPointF>(p->Move(length, angle).Rotate(rotationOrigin, rotationAngle)),
                           supportColor);
                 break;
@@ -418,10 +407,6 @@ void VisToolMove::createRotatedObjects(int &iPoint, int &iCurve, qreal length, q
                 iCurve = AddDestinationCurve<VSplinePath>(angle, length, id, iCurve, rotationAngle, rotationOrigin);
                 break;
             case GOType::CubicBezier:
-                qCDebug(visTool, "visTool - VCubicBezier");
-                qCDebug(visTool, "length:  %f", length);
-                qCDebug(visTool, "angle:  %f", angle);
-                qCDebug(visTool, "rotation:  %f\n", rotationAngle);
                 iCurve = AddDestinationCurve<VCubicBezier>(angle, length, id, iCurve, rotationAngle, rotationOrigin);
                 break;
             case GOType::CubicBezierPath:

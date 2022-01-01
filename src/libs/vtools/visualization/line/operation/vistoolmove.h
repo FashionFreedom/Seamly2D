@@ -101,6 +101,7 @@ private:
     ArrowedLineItem         *moveLineItem;
     VScaledLine             *rotationLineItem;
     QPointF                  m_origin;
+    QPointF                  m_rotationPoint;
 
     template <class Item>
     QGraphicsPathItem       *AddOriginCurve(quint32 id, int &i);

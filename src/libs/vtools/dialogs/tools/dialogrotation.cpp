@@ -102,8 +102,7 @@ DialogRotation::DialogRotation(const VContainer *data, const quint32 &toolId, QW
     setWindowIcon(QIcon(":/toolicon/32x32/rotation.png"));
 
     ui->plainTextEditFormula->installEventFilter(this);
-
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix() + qApp->Settings()->getRotateSuffix());
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getRotateSuffix()));
 
     angleTimer = new QTimer(this);
     connect(angleTimer, &QTimer::timeout, this, &DialogRotation::evaluateAngle);

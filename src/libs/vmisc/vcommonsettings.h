@@ -126,6 +126,12 @@ public:
     QString              getRotateSuffix() const;
     void                 setRotateSuffix(const QString &value);
 
+    QString              getMirrorByAxisSuffix() const;
+    void                 setMirrorByAxisSuffix(const QString &value);
+
+    QString              getMirrorByLineSuffix() const;
+    void                 setMirrorByLineSuffix(const QString &value);
+
     bool                 getToolBarStyle() const;
     void                 setToolBarStyle(const bool &value);
 

@@ -92,7 +92,7 @@ DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &to
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/mirror_by_axis.png"));
 
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix());
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByAxisSuffix()));
 
     InitOkCancelApply(ui);
 

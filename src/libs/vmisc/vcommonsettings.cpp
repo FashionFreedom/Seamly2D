@@ -87,6 +87,8 @@ const QString settingConfigurationConfirmItemDeletion    = QStringLiteral("confi
 const QString settingConfigurationConfirmFormatRewriting = QStringLiteral("configuration/confirm_format_rewriting");
 const QString settingConfigurationMoveSuffix             = QStringLiteral("configuration/moveSuffix");
 const QString settingConfigurationRotateSuffix           = QStringLiteral("configuration/rotateSuffix");
+const QString settingConfigurationMirrorByAxisSuffix     = QStringLiteral("configuration/mirrorByAxisSuffix");
+const QString settingConfigurationMirrorByLineSuffix     = QStringLiteral("configuration/mirrorByLineSuffix");
 
 const QString settingGraphicsViewToolBarStyle            = QStringLiteral("graphicsview/tool_bar_style");
 const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
@@ -559,7 +561,7 @@ void VCommonSettings::SetConfirmFormatRewriting(const bool &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getMoveSuffix() const
 {
-    return value(settingConfigurationMoveSuffix, "None").toString();
+    return value(settingConfigurationMoveSuffix, "").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -571,13 +573,37 @@ void VCommonSettings::setMoveSuffix(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getRotateSuffix() const
 {
-    return value(settingConfigurationRotateSuffix, "None").toString();
+    return value(settingConfigurationRotateSuffix, "").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setRotateSuffix(const QString &value)
 {
     setValue(settingConfigurationRotateSuffix, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getMirrorByAxisSuffix() const
+{
+    return value(settingConfigurationMirrorByAxisSuffix, "").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setMirrorByAxisSuffix(const QString &value)
+{
+    setValue(settingConfigurationMirrorByAxisSuffix, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getMirrorByLineSuffix() const
+{
+    return value(settingConfigurationMirrorByLineSuffix, "").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setMirrorByLineSuffix(const QString &value)
+{
+    setValue(settingConfigurationMirrorByLineSuffix, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
