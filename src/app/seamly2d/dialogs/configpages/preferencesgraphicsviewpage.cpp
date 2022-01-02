@@ -31,8 +31,10 @@
 #include "../../core/vapplication.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vmisc/logging.h"
+#include "../vtools/tools/vabstracttool.h"
 #include "../vwidgets/vmaingraphicsview.h"
 
+#include <Qt>
 #include <QDir>
 #include <QDirIterator>
 #include <QMessageBox>
@@ -41,6 +43,7 @@
 #include <QDoubleSpinBox>
 #include <QCheckBox>
 #include <QFontComboBox>
+#include <QPixmap>
 
 
 Q_LOGGING_CATEGORY(vGraphicsViewConfig, "vgraphicsviewconfig")
@@ -53,6 +56,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     , m_pointNameColorChanged(false)
     , m_pointNameHoverColorChanged(false)
     , m_orginAxisColorChanged(false)
+    , m_primarySupportColorChanged(false)
+    , m_secondarySupportColorChanged(false)
+    , m_tertiarySupportColorChanged(false)
 {
     ui->setupUi(this);
 // Appearance preferences
@@ -61,6 +67,22 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // Antialiasing
     ui->graphicsOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
+
+    ui->primarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
+    ui->secondarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
+    ui->tertiarySupportColor_ComboBox->setItems(VAbstractTool::supportColorsList());
+
+    /*
+    QPixmap pixmap = VAbstractTool::createColorIcon(ui->primarySupportColor_ComboBox->getIconWidth(),
+                                                    ui->primarySupportColor_ComboBox->getIconHeight(),
+                                                    "magenta");
+    ui->primarySupportColor_ComboBox->addItem(QIcon(pixmap),   tr("Magenta"), "magenta");
+    ui->primarySupportColor_ComboBox->model()->sort(0, Qt::AscendingOrder);
+    ui->secondarySupportColor_ComboBox->addItem(QIcon(pixmap), tr("Magenta"), "magenta");
+    ui->secondarySupportColor_ComboBox->model()->sort(0, Qt::AscendingOrder);
+    ui->tertiarySupportColor_ComboBox->addItem(QIcon(pixmap),  tr("Magenta"), "magenta");
+    ui->tertiarySupportColor_ComboBox->model()->sort(0, Qt::AscendingOrder);
+    */
 
 // Color preferences
     // Zoom Rubberband colors
@@ -113,6 +135,37 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     connect(ui->axisOrginColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_orginAxisColorChanged = true;
+    });
+
+    //----------------------- Selection Support Colors
+    index = ui->primarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getPrimarySupportColor());
+    if (index != -1)
+    {
+        ui->primarySupportColor_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->primarySupportColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_primarySupportColorChanged = true;
+    });
+
+    index = ui->secondarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getSecondarySupportColor());
+    if (index != -1)
+    {
+        ui->secondarySupportColor_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->secondarySupportColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_secondarySupportColorChanged = true;
+    });
+
+    index = ui->tertiarySupportColor_ComboBox->findText(qApp->Seamly2DSettings()->getTertiarySupportColor());
+    if (index != -1)
+    {
+        ui->tertiarySupportColor_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->tertiarySupportColor_ComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_tertiarySupportColorChanged = true;
     });
 
 // Navigation preferences
@@ -252,6 +305,24 @@ void PreferencesGraphicsViewPage::Apply()
     {
       settings->setAxisOrginColor(ui->axisOrginColor_ComboBox->currentText());
       m_orginAxisColorChanged = false;
+    }
+
+    if (m_primarySupportColorChanged)
+    {
+      settings->setPrimarySupportColor(ui->primarySupportColor_ComboBox->currentText());
+      m_primarySupportColorChanged = false;
+    }
+
+    if (m_secondarySupportColorChanged)
+    {
+      settings->setSecondarySupportColor(ui->secondarySupportColor_ComboBox->currentText());
+      m_secondarySupportColorChanged = false;
+    }
+
+    if (m_tertiarySupportColorChanged)
+    {
+      settings->setTertiarySupportColor(ui->tertiarySupportColor_ComboBox->currentText());
+      m_tertiarySupportColorChanged = false;
     }
 
     // Navigation preferences

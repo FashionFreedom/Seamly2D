@@ -77,6 +77,10 @@ private:
     bool m_systemChanged;
     bool m_unitChanged;
     bool m_labelLangChanged;
+    bool m_moveSuffixChanged;
+    bool m_rotateSuffixChanged;
+    bool m_mirrorByAxisSuffixChanged;
+    bool m_mirrorByLineSuffixChanged;
 
     void SetLabelComboBox(const QStringList &list);
     void InitUnits();

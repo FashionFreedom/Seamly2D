@@ -167,6 +167,7 @@ extern const QString AttrClosed;
 extern const QString AttrShowPointName;
 extern const QString AttrShowPointName1;
 extern const QString AttrShowPointName2;
+extern const QString AttrAlias;
 
 extern const QString LineTypeNone;
 extern const QString LineTypeSolidLine;

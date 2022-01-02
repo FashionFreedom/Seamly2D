@@ -67,7 +67,7 @@ public:
                                      VAbstractPattern *doc, VContainer *data);
 
     static VToolMirrorByAxis *Create(const quint32 _id, quint32 originPointId, AxisType axisType,
-                                     const QString &suffix, const QVector<quint32> &source,
+                                     const QString &suffix, const QVector<SourceItem> &source,
                                      const QVector<DestinationItem> &destination, VMainGraphicsScene *scene,
                                      VAbstractPattern *doc, VContainer *data, const Document &parse,
                                      const Source &typeCreation);
@@ -101,7 +101,7 @@ private:
     AxisType             m_axisType;
 
                          VToolMirrorByAxis(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 originPointId,
-                                           AxisType axisType, const QString &suffix, const QVector<quint32> &source,
+                                           AxisType axisType, const QString &suffix, const QVector<SourceItem> &source,
                                            const QVector<DestinationItem> &destination, const Source &typeCreation,
                                            QGraphicsItem *parent = nullptr);
 };

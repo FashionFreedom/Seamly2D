@@ -62,7 +62,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractMirror::VAbstractMirror(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
-                                     const QVector<quint32> &source, const QVector<DestinationItem> &destination,
+                                     const QVector<SourceItem> &source, const QVector<DestinationItem> &destination,
                                      QGraphicsItem *parent)
     : VAbstractOperation(doc, data, id, suffix, source, destination, parent)
 {
@@ -70,7 +70,7 @@ VAbstractMirror::VAbstractMirror(VAbstractPattern *doc, VContainer *data, quint3
 
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractMirror::createDestination(Source typeCreation, quint32 &id, QVector<DestinationItem> &dest,
-                                          const QVector<quint32> &source, const QPointF &fPoint, const QPointF &sPoint,
+                                          const QVector<SourceItem> &source, const QPointF &fPoint, const QPointF &sPoint,
                                           const QString &suffix, VAbstractPattern *doc, VContainer *data,
                                           const Document &parse)
 {
@@ -82,8 +82,9 @@ void VAbstractMirror::createDestination(Source typeCreation, quint32 &id, QVecto
 
         for (int i = 0; i < source.size(); ++i)
         {
-            const quint32 idObject = source.at(i);
-            const QSharedPointer<VGObject> obj = data->GetGObject(idObject);
+            const SourceItem item = source.at(i);
+            const quint32 objectId = item.id;
+            const QSharedPointer<VGObject> obj = data->GetGObject(objectId);
 
             // This check helps to find missed objects in the switch
             Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
@@ -93,25 +94,25 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
             switch(static_cast<GOType>(obj->getType()))
             {
                 case GOType::Point:
-                    dest.append(createPoint(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createPoint(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::Arc:
-                    dest.append(createArc<VArc>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createArc<VArc>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::EllipticalArc:
-                    dest.append(createArc<VEllipticalArc>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createArc<VEllipticalArc>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::Spline:
-                    dest.append(createCurve<VSpline>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurve<VSpline>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::SplinePath:
-                    dest.append(createCurveWithSegments<VSplinePath>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurveWithSegments<VSplinePath>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::CubicBezier:
-                    dest.append(createCurve<VCubicBezier>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurve<VCubicBezier>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::CubicBezierPath:
-                    dest.append(createCurveWithSegments<VCubicBezierPath>(id, idObject, fPoint, sPoint, suffix, data));
+                    dest.append(createCurveWithSegments<VCubicBezierPath>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
                 case GOType::Unknown:
                     break;
@@ -123,8 +124,9 @@ QT_WARNING_POP
     {
         for (int i = 0; i < source.size(); ++i)
         {
-            const quint32 idObject = source.at(i);
-            const QSharedPointer<VGObject> obj = data->GetGObject(idObject);
+            const SourceItem item = source.at(i);
+            const quint32 objectId = item.id;
+            const QSharedPointer<VGObject> obj = data->GetGObject(objectId);
 
             // This check helps to find missed objects in the switch
             Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
@@ -136,27 +138,27 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 case GOType::Point:
                 {
                     const DestinationItem &item = dest.at(i);
-                    updatePoint(id, idObject, fPoint, sPoint, suffix, data, item);
+                    updatePoint(id, objectId, fPoint, sPoint, suffix, data, item);
                         //dest.at(i).id, dest.at(i).mx, dest.at(i).my);
                     break;
                 }
                 case GOType::Arc:
-                    updateArc<VArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateArc<VArc>(id, objectId, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::EllipticalArc:
-                    updateArc<VEllipticalArc>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateArc<VEllipticalArc>(id, objectId, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Spline:
-                    updateCurve<VSpline>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateCurve<VSpline>(id, objectId, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::SplinePath:
-                    updateCurveWithSegments<VSplinePath>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateCurveWithSegments<VSplinePath>(id, objectId, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezier:
-                    updateCurve<VCubicBezier>(id, idObject, fPoint, sPoint, suffix, data, dest.at(i).id);
+                    updateCurve<VCubicBezier>(id, objectId, fPoint, sPoint, suffix, data, dest.at(i).id);
                     break;
                 case GOType::CubicBezierPath:
-                    updateCurveWithSegments<VCubicBezierPath>(id, idObject, fPoint, sPoint, suffix, data,
+                    updateCurveWithSegments<VCubicBezierPath>(id, objectId, fPoint, sPoint, suffix, data,
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:

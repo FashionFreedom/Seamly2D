@@ -102,7 +102,7 @@ public:
     void replaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName);
 
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const Q_DECL_OVERRIDE;
-    virtual QString GenerateSuffix() const Q_DECL_OVERRIDE;
+    virtual QString GenerateSuffix(const QString &type) const Q_DECL_OVERRIDE;
 
     bool IsDefCustom() const;
     void SetDefCustom(bool value);

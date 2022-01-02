@@ -253,6 +253,16 @@ void VDrawTool::AddToCalculation(const QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VDrawTool::addDependence(QList<quint32> &list, quint32 objectId) const
+{
+    if (objectId != NULL_ID)
+    {
+        auto originPoint = VAbstractTool::data.GetGObject(objectId);
+        list.append(originPoint->getIdTool());
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VDrawTool::getLineType() const
 {
     return m_lineType;

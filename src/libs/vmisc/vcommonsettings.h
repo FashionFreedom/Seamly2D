@@ -120,6 +120,18 @@ public:
     bool                 GetConfirmFormatRewriting() const;
     void                 SetConfirmFormatRewriting(const bool &value);
 
+    QString              getMoveSuffix() const;
+    void                 setMoveSuffix(const QString &value);
+
+    QString              getRotateSuffix() const;
+    void                 setRotateSuffix(const QString &value);
+
+    QString              getMirrorByAxisSuffix() const;
+    void                 setMirrorByAxisSuffix(const QString &value);
+
+    QString              getMirrorByLineSuffix() const;
+    void                 setMirrorByLineSuffix(const QString &value);
+
     bool                 getToolBarStyle() const;
     void                 setToolBarStyle(const bool &value);
 
@@ -165,6 +177,14 @@ public:
     QString              getAxisOrginColor() const;
     void                 setAxisOrginColor(const QString &value);
 
+    QString              getPrimarySupportColor() const;
+    void                 setPrimarySupportColor(const QString &value);
+
+    QString              getSecondarySupportColor() const;
+    void                 setSecondarySupportColor(const QString &value);
+
+    QString              getTertiarySupportColor() const;
+    void                 setTertiarySupportColor(const QString &value);
 
     qreal                getConstrainValue() const;
     void                 setConstrainValue(const qreal &value);

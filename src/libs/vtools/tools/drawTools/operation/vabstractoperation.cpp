@@ -60,6 +60,20 @@ const QString VAbstractOperation::TagSource      = QStringLiteral("source");
 const QString VAbstractOperation::TagDestination = QStringLiteral("destination");
 
 //---------------------------------------------------------------------------------------------------------------------
+QVector<quint32> sourceToObjects(const QVector<SourceItem> &source)
+{
+    QVector<quint32> ids;
+    ids.reserve(source.size());
+
+    for (auto s: source)
+    {
+        ids.append(s.id);
+    }
+
+    return ids;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VAbstractOperation::getTagName() const
 {
     return VAbstractPattern::TagOperation;
@@ -219,7 +233,7 @@ void VAbstractOperation::updatePointNamePosition(quint32 id, const QPointF &pos)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractOperation::ExtractData(const QDomElement &domElement, QVector<quint32> &source,
+void VAbstractOperation::ExtractData(const QDomElement &domElement, QVector<SourceItem> &source,
                                      QVector<DestinationItem> &destination)
 {
     const QDomNodeList nodeList = domElement.childNodes();
@@ -235,7 +249,12 @@ void VAbstractOperation::ExtractData(const QDomElement &domElement, QVector<quin
                 const QDomElement element = srcList.at(j).toElement();
                 if (not element.isNull())
                 {
-                    source.append(VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR));
+                    SourceItem item;
+                    item.id       = VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR);
+                    item.alias    = VDomDocument::GetParametrEmptyString(element, AttrAlias);
+                    item.lineType = VDomDocument::GetParametrString(element, AttrLineType, LineTypeSolidLine);
+                    item.color    = VDomDocument::GetParametrString(element, AttrColor, "black");
+                    source.append(item);
                 }
             }
         }
@@ -527,7 +546,7 @@ void VAbstractOperation::deletePoint()
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractOperation::VAbstractOperation(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &suffix,
-                                       const QVector<quint32> &source, const QVector<DestinationItem> &destination,
+                                       const QVector<SourceItem> &source, const QVector<DestinationItem> &destination,
                                        QGraphicsItem *parent)
     : VDrawTool(doc, data, id)
     , QGraphicsLineItem(parent)
@@ -548,31 +567,51 @@ void VAbstractOperation::AddToFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::ReadToolAttributes(const QDomElement &domElement)
+{
+    ExtractData(domElement, source, destination);
+    suffix      = doc->GetParametrString(domElement, AttrSuffix);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractOperation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
+{
+    VDrawTool::SaveOptions(tag, obj);
+
+    doc->SetAttribute(tag, AttrSuffix, suffix);
+
+    SaveSourceDestination(tag);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractOperation::SaveSourceDestination(QDomElement &tag)
 {
     doc->RemoveAllChildren(tag);
 
     QDomElement tagObjects = doc->createElement(TagSource);
-    for (int i = 0; i < source.size(); ++i)
+    for (auto sourceItem : qAsConst(source))
     {
         QDomElement item = doc->createElement(TagItem);
-        doc->SetAttribute(item, AttrIdObject, source.at(i));
+        doc->SetAttribute(item, AttrIdObject, sourceItem.id);
+        doc->SetAttribute(item, AttrAlias,    sourceItem.alias);
+        doc->SetAttribute(item, AttrLineType, sourceItem.lineType);
+        doc->SetAttribute(item, AttrColor,    sourceItem.color);
         tagObjects.appendChild(item);
     }
     tag.appendChild(tagObjects);
 
     tagObjects = doc->createElement(TagDestination);
-    for (int i = 0; i < destination.size(); ++i)
+    for (auto destinationItem : qAsConst(destination))
     {
         QDomElement item = doc->createElement(TagItem);
-        doc->SetAttribute(item, AttrIdObject, destination.at(i).id);
+        doc->SetAttribute(item, AttrIdObject, destinationItem.id);
 
-        if (not VFuzzyComparePossibleNulls(destination.at(i).mx, INT_MAX) &&
-            not VFuzzyComparePossibleNulls(destination.at(i).my, INT_MAX))
+        if (not VFuzzyComparePossibleNulls(destinationItem.mx, INT_MAX) &&
+            not VFuzzyComparePossibleNulls(destinationItem.my, INT_MAX))
         {
-            doc->SetAttribute(item, AttrMx, qApp->fromPixel(destination.at(i).mx));
-            doc->SetAttribute(item, AttrMy, qApp->fromPixel(destination.at(i).my));
-            doc->SetAttribute<bool>(item, AttrShowPointName, destination.at(i).showPointName);
+            doc->SetAttribute(item, AttrMx, qApp->fromPixel(destinationItem.mx));
+            doc->SetAttribute(item, AttrMy, qApp->fromPixel(destinationItem.my));
+            doc->SetAttribute<bool>(item, AttrShowPointName, destinationItem.showPointName);
         }
 
         tagObjects.appendChild(item);
@@ -645,22 +684,22 @@ void VAbstractOperation::InitOperatedObjects()
 {
     for (int i = 0; i < destination.size(); ++i)
     {
-        const DestinationItem object = destination.at(i);
-        const QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(object.id);
+        const DestinationItem item = destination.at(i);
+        const QSharedPointer<VGObject> object = VAbstractTool::data.GetGObject(item.id);
 
         // This check helps to find missed objects in the switch
         Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
-        switch(static_cast<GOType>(obj->getType()))
+        switch(static_cast<GOType>(object->getType()))
         {
             case GOType::Point:
             {
-                VSimplePoint *point = new VSimplePoint(object.id, QColor(Qt::black));
+                VSimplePoint *point = new VSimplePoint(item.id, QColor(Qt::black));
                 point->setParentItem(this);
                 point->SetType(GOType::Point);
-                point->setToolTip(complexPointToolTip(object.id));
+                point->setToolTip(complexPointToolTip(item.id));
                 connect(point, &VSimplePoint::Choosed, this, [this](quint32 id)
                 {
                     emit chosenTool(id, SceneObject::Point);
@@ -673,23 +712,23 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 });
                 connect(point, &VSimplePoint::Delete, this, &VAbstractOperation::deletePoint);
                 connect(point, &VSimplePoint::nameChangedPosition, this, &VAbstractOperation::pointNamePositionChanged);
-                point->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(object.id));
-                operatedObjects.insert(object.id, point);
+                point->refreshPointGeometry(*VAbstractTool::data.GeometricObject<VPointF>(item.id));
+                operatedObjects.insert(item.id, point);
                 break;
             }
             case GOType::Arc:
-                InitCurve(object.id, &(VAbstractTool::data), obj->getType(), SceneObject::Arc);
+                InitCurve(item.id, &(VAbstractTool::data), object->getType(), SceneObject::Arc);
                 break;
             case GOType::EllipticalArc:
-                InitCurve(object.id, &(VAbstractTool::data), obj->getType(), SceneObject::ElArc);
+                InitCurve(item.id, &(VAbstractTool::data), object->getType(), SceneObject::ElArc);
                 break;
             case GOType::Spline:
             case GOType::CubicBezier:
-                InitCurve(object.id, &(VAbstractTool::data), obj->getType(), SceneObject::Spline);
+                InitCurve(item.id, &(VAbstractTool::data), object->getType(), SceneObject::Spline);
                 break;
             case GOType::SplinePath:
             case GOType::CubicBezierPath:
-                InitCurve(object.id, &(VAbstractTool::data), obj->getType(), SceneObject::SplinePath);
+                InitCurve(item.id, &(VAbstractTool::data), object->getType(), SceneObject::SplinePath);
                 break;
             case GOType::Unknown:
                 break;

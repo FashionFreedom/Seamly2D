@@ -61,6 +61,7 @@
 #include <QtGlobal>
 
 #include "../vmisc/def.h"
+#include "../../tools/drawTools/operation/vabstractoperation.h"
 #include "dialogtool.h"
 
 namespace Ui
@@ -75,8 +76,8 @@ public:
     explicit            DialogRotation(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
     virtual            ~DialogRotation();
 
-    quint32             getRotationPointId() const;
-    void                setRotationPointId(const quint32 &value);
+    quint32             getOriginPointId() const;
+    void                setOriginPointId(const quint32 &value);
 
     QString             GetAngle() const;
     void                SetAngle(const QString &value);
@@ -84,13 +85,15 @@ public:
     QString             getSuffix() const;
     void                setSuffix(const QString &value);
 
-    QVector<quint32>    getObjects() const;
+    QVector<SourceItem> getSourceObjects() const;
+    void                setSourceObjects(const QVector<SourceItem> &value);
+
 
     virtual void        ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 public slots:
     virtual void        ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void        SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void        SelectedObject(bool selected, quint32 id, quint32 tool) Q_DECL_OVERRIDE;
 
 private slots:
     void                angleChanged();
@@ -114,11 +117,11 @@ private:
     bool                angleFlag;        //! @brief angleFlag true if value of angle is correct */
     QTimer             *angleTimer;       //! @brief angleTimer timer of check formula of angle */
     QString             angleFormula;     //! @brief angle formula of angle
-    QList<quint32>      objects;
+    QVector<SourceItem> m_objects;
     bool                stage1;
     QString             m_suffix;
     bool                m_firstRelease;
-    
+
     void                evaluateAngle();
 };
 

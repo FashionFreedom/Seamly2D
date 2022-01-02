@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -70,37 +70,49 @@ class VisToolMove : public VisOperation
 {
     Q_OBJECT
 public:
-    explicit VisToolMove(const VContainer *data, QGraphicsItem *parent = nullptr);
-    virtual ~VisToolMove();
+    explicit                 VisToolMove(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual                 ~VisToolMove();
 
-    virtual void   RefreshGeometry() Q_DECL_OVERRIDE;
+    virtual void             RefreshGeometry() Q_DECL_OVERRIDE;
 
-    QString Angle() const;
-    void    SetAngle(const QString &expression);
+    QString                  Angle() const;
+    void                     SetAngle(const QString &expression);
 
-    QString Length() const;
-    qreal   LengthValue() const;
-    void    SetLength(const QString &expression);
+    QString                  Rotation() const;
+    void                     setRotation(const QString &expression);
 
-    virtual int type() const Q_DECL_OVERRIDE {return Type;}
+    QString                  Length() const;
+    qreal                    LengthValue() const;
+    void                     SetLength(const QString &expression);
+
+    void                     setOriginPointId(quint32 value);
+
+    virtual int              type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::ToolMove)};
+
 private:
     Q_DISABLE_COPY(VisToolMove)
-    qreal           angle;
-    qreal           length;
-    VScaledEllipse *pointOrigin;
-    VScaledEllipse *pointFinish;
+    qreal                    angle;
+    qreal                    length;
+    qreal                    rotationAngle;
+    VScaledEllipse          *originPointItem;
+    VScaledEllipse          *rotationOriginPointItem;
+    VScaledEllipse          *rotationFinishPointItem;
+    ArrowedLineItem         *moveLineItem;
+    VScaledLine             *rotationLineItem;
+    QPointF                  m_origin;
+    QPointF                  m_rotationPoint;
 
     template <class Item>
-    QGraphicsPathItem *AddOriginCurve(quint32 id, int &i);
+    QGraphicsPathItem       *AddOriginCurve(quint32 id, int &i);
 
     template <class Item>
-    int AddMovedCurve(qreal angle, qreal length, quint32 id, int i);
+    int                      AddDestinationCurve(qreal angle, qreal length, quint32 id, int i,
+                                                  qreal rotationAngle, const QPointF &rotationOrigin);
 
-    static QPointF GetOriginPoint(const QVector<QGraphicsItem *> &objects);
-
-    QVector<QGraphicsItem *> CreateOriginObjects(int &iPoint, int &iCurve);
-    void CreateMovedObjects(int &iPoint, int &iCurve, qreal length, qreal angle);
+    void                     createOriginObjects(int &iPoint, int &iCurve);
+    void                     createRotatedObjects(int &iPoint, int &iCurve, qreal length, qreal angle,
+                                                       qreal rotationAngle, const QPointF &rotationOrigin);
 };
 
 #endif // VISTOOLMOVE_H

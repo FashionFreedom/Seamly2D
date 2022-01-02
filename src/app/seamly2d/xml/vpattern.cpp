@@ -2899,7 +2899,7 @@ void VPattern::ParseToolRotation(VMainGraphicsScene *scene, QDomElement &domElem
         QString a = angle;//need for saving fixed formula;
         const QString suffix = GetParametrString(domElement, AttrSuffix, "");
 
-        QVector<quint32> source;
+        QVector<SourceItem> source;
         QVector<DestinationItem> destination;
         VAbstractOperation::ExtractData(domElement, source, destination);
 
@@ -2941,7 +2941,7 @@ void VPattern::ParseToolMirrorByLine(VMainGraphicsScene *scene, QDomElement &dom
         const quint32 p2 = GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
         const QString suffix = GetParametrString(domElement, AttrSuffix, "");
 
-        QVector<quint32> source;
+        QVector<SourceItem> source;;
         QVector<DestinationItem> destination;
         VAbstractOperation::ExtractData(domElement, source, destination);
 
@@ -2971,7 +2971,7 @@ void VPattern::ParseToolMirrorByAxis(VMainGraphicsScene *scene, QDomElement &dom
         const auto axisType = static_cast<AxisType>(GetParametrUInt(domElement, AttrAxisType, "1"));
         const QString suffix = GetParametrString(domElement, AttrSuffix, "");
 
-        QVector<quint32> source;
+        QVector<SourceItem> source;;
         QVector<DestinationItem> destination;
         VAbstractOperation::ExtractData(domElement, source, destination);
 
@@ -3001,18 +3001,25 @@ void VPattern::ParseToolMove(VMainGraphicsScene *scene, QDomElement &domElement,
         QString a = angle;//need for saving fixed formula;
         const QString length = GetParametrString(domElement, AttrLength, "0");
         QString len = length;//need for saving fixed formula;
+
+        const QString rotation = GetParametrString(domElement, AttrRotationAngle, "0");
+        QString rot = rotation;//need for saving fixed formula;
+        quint32 originPointId = GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
+
         const QString suffix = GetParametrString(domElement, AttrSuffix, "");
 
-        QVector<quint32> source;
+        QVector<SourceItem> source;;
         QVector<DestinationItem> destination;
         VAbstractOperation::ExtractData(domElement, source, destination);
 
-        VToolMove::Create(id, a, len, suffix, source, destination, scene, this, data, parse, Source::FromFile);
+        VToolMove::Create(id, a, len, rot, originPointId, suffix, source, destination,
+                          scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
-        if (a != angle || len != length)
+        if (a != angle || len != length || rot != rotation)
         {
-            SetAttribute(domElement, AttrAngle, a);
-            SetAttribute(domElement, AttrLength, len);
+            SetAttribute(domElement, AttrAngle, angle);
+            SetAttribute(domElement, AttrLength, length);
+            SetAttribute(domElement, AttrRotationAngle, rotation);
             modified = true;
             haveLiteChange();
         }
@@ -3636,7 +3643,7 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPattern::GenerateSuffix() const
+QString VPattern::GenerateSuffix(const QString &type) const
 {
     const QString suffixBase = GetLabelBase(static_cast<quint32>(GetIndexActivPP())).toLower();
     const QStringList uniqueNames = VContainer::AllUniqueNames();
@@ -3644,7 +3651,7 @@ QString VPattern::GenerateSuffix() const
     QString suffix;
     for (;;)
     {
-        suffix = QString("%1%2").arg(suffixBase).arg(num);
+        suffix = QString("_%1%2%3").arg(suffixBase).arg(num).arg(type);
 
         for (int i=0; i < uniqueNames.size(); ++i)
         {

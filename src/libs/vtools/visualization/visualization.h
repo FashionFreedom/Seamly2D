@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -62,6 +62,7 @@
 #include "../vmisc/vabstractapplication.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vcurvepathitem.h"
+#include  "../vwidgets/scalesceneitems.h"
 #include "../vwidgets/global.h"
 #include "../vgeometry/vabstractcurve.h"
 
@@ -69,6 +70,7 @@ Q_DECLARE_LOGGING_CATEGORY(vVis)
 
 class VScaledEllipse;
 class VScaledLine;
+class ArrowedLineItem;
 class VContainer;
 //class VInternalVariable;
 #include "variables/vinternalvariable.h"
@@ -78,8 +80,8 @@ class Visualization : public QObject
 {
     Q_OBJECT
 public:
-    explicit Visualization(const VContainer *data);
-    virtual ~Visualization() Q_DECL_EQ_DEFAULT;
+    explicit     Visualization(const VContainer *data);
+    virtual     ~Visualization() Q_DECL_EQ_DEFAULT;
 
     virtual void RefreshGeometry()=0;
 
@@ -92,15 +94,20 @@ public:
     const VContainer *GetData() const;
     void              SetData(const VContainer *data);
 
-    Mode GetMode() const;
-    void SetMode(const Mode &value);
+    Mode         GetMode() const;
+    void         SetMode(const Mode &value);
 
     static qreal FindLength(const QString &expression, const QHash<QString, QSharedPointer<VInternalVariable> > *vars);
     static qreal FindVal(const QString &expression, const QHash<QString, QSharedPointer<VInternalVariable> > *vars);
+
+    QString      CurrentToolTip() const {return toolTip;}
+
 signals:
     void         ToolTip(const QString &toolTip);
+
 public slots:
     void         MousePos(const QPointF &scenePos);
+
 protected:
     const VContainer *data;
     QPointF          scenePos;
@@ -125,8 +132,12 @@ protected:
                           const QVector<DirectionArrow> &directionArrows, const QColor &color,
                           Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
 
+    void         drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
+                                 Qt::PenStyle style = Qt::SolidLine);
+    void         drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
+
     template <typename Item>
-    void         AddItem(Item *item);
+    void          AddItem(Item *item);
 
     template <class Item>
     Item         *InitItem(const QColor &color, QGraphicsItem *parent);

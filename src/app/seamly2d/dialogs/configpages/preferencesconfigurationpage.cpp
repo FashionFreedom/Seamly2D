@@ -61,12 +61,16 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::PreferencesConfigurationPage),
-      m_langChanged(false),
-      m_systemChanged(),
-      m_unitChanged(false),
-      m_labelLangChanged(false)
+    : QWidget(parent)
+    , ui(new Ui::PreferencesConfigurationPage)
+    , m_langChanged(false)
+    , m_systemChanged()
+    , m_unitChanged(false)
+    , m_labelLangChanged(false)
+    , m_moveSuffixChanged(false)
+    , m_rotateSuffixChanged(false)
+    , m_mirrorByAxisSuffixChanged(false)
+    , m_mirrorByLineSuffixChanged(false)
 {
     ui->setupUi(this);
     ui->autoSaveCheck->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
@@ -122,14 +126,65 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         ui->systemCombo->setCurrentIndex(index);
     }
     //---------------------- Send crash reports
-    ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
-    ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
-                                    "problem. We do not collect any personal information. Find more about what %1"
-                                    "kind of information%2 we collect.")
-                                 .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
-                                 .arg("</a>"));
+    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
+    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
+    //                                "problem. We do not collect any personal information. Find more about what %1"
+    //                                "kind of information%2 we collect.")
+    //                             .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
+    //                             .arg("</a>"));
 
     //----------------------------- Pattern Editing
+    ui->moveSuffix_ComboBox->addItem(tr("None"), "");
+    ui->moveSuffix_ComboBox->addItem(tr("_M"), "_M");
+    ui->moveSuffix_ComboBox->addItem(tr("_MOV"), "_MOV");
+    index = ui->moveSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMoveSuffix());
+    if (index != -1)
+    {
+        ui->moveSuffix_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->moveSuffix_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_moveSuffixChanged = true;
+    });
+    ui->rotateSuffix_ComboBox->addItem(tr("None"), "");
+    ui->rotateSuffix_ComboBox->addItem(tr("_R"), "_R");
+    ui->rotateSuffix_ComboBox->addItem(tr("_ROT"), "_ROT");
+    index = ui->rotateSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getRotateSuffix());
+    if (index != -1)
+    {
+        ui->rotateSuffix_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->rotateSuffix_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_rotateSuffixChanged = true;
+    });
+
+    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("None"), "");
+    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("_MA"), "_MA");
+    ui->mirrorByAxisSuffix_ComboBox->addItem(tr("_MBA"), "_MBA");
+    index = ui->mirrorByAxisSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMirrorByAxisSuffix());
+    if (index != -1)
+    {
+        ui->mirrorByAxisSuffix_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->mirrorByAxisSuffix_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_mirrorByAxisSuffixChanged = true;
+    });
+
+    ui->mirrorByLineSuffix_ComboBox->addItem(tr("None"), "");
+    ui->mirrorByLineSuffix_ComboBox->addItem(tr("_MB"), "_MB");
+    ui->mirrorByLineSuffix_ComboBox->addItem(tr("_MBL"), "_MBL");
+    index = ui->mirrorByLineSuffix_ComboBox->findData(qApp->Seamly2DSettings()->getMirrorByLineSuffix());
+    if (index != -1)
+    {
+        ui->mirrorByLineSuffix_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->mirrorByLineSuffix_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_mirrorByLineSuffixChanged = true;
+    });
+
     connect(ui->resetWarningsButton, &QPushButton::released, []()
     {
         VSettings *settings = qApp->Seamly2DSettings();
@@ -158,7 +213,7 @@ void PreferencesConfigurationPage::Apply()
     ui->autoSaveCheck->isChecked() ? autoSaveTimer->start(ui->autoTime->value()*60000) : autoSaveTimer->stop();
 
     settings->SetOsSeparator(ui->osOptionCheck->isChecked());
-    settings->SetSendReportState(ui->sendReportCheck->isChecked());
+    //settings->SetSendReportState(ui->sendReportCheck->isChecked());
 
     if (m_langChanged || m_systemChanged)
     {
@@ -186,6 +241,30 @@ void PreferencesConfigurationPage::Apply()
         const QString locale = qvariant_cast<QString>(ui->labelCombo->currentData());
         settings->SetLabelLanguage(locale);
         m_labelLangChanged = false;
+    }
+    if (m_moveSuffixChanged)
+    {
+        const QString locale = qvariant_cast<QString>(ui->moveSuffix_ComboBox->currentData());
+        settings->setMoveSuffix(locale);
+        m_moveSuffixChanged = false;
+    }
+    if (m_rotateSuffixChanged)
+    {
+        const QString locale = qvariant_cast<QString>(ui->rotateSuffix_ComboBox->currentData());
+        settings->setRotateSuffix(locale);
+        m_rotateSuffixChanged = false;
+    }
+    if (m_mirrorByAxisSuffixChanged)
+    {
+        const QString locale = qvariant_cast<QString>(ui->mirrorByAxisSuffix_ComboBox->currentData());
+        settings->setMirrorByAxisSuffix(locale);
+        m_mirrorByAxisSuffixChanged = false;
+    }
+    if (m_mirrorByLineSuffixChanged)
+    {
+        const QString locale = qvariant_cast<QString>(ui->mirrorByLineSuffix_ComboBox->currentData());
+        settings->setMirrorByLineSuffix(locale);
+        m_mirrorByLineSuffixChanged = false;
     }
 }
 
@@ -230,9 +309,9 @@ void PreferencesConfigurationPage::InitUnits()
 void PreferencesConfigurationPage::RetranslateUi()
 {
     ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->description->setText(tr("After each crash Seamly2D collects information that may help us fix the "
-                                "problem. We do not collect any personal information. Find more about what %1"
-                                "kind of information%2 we collect.")
-                             .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
-                             .arg("</a>"));
+    //ui->description->setText(tr("After each crash Seamly2D collects information that may help us fix the "
+    //                            "problem. We do not collect any personal information. Find more about what %1"
+    //                            "kind of information%2 we collect.")
+    //                         .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
+    //                         .arg("</a>"));
 }

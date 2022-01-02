@@ -63,6 +63,7 @@
 #include <QtGlobal>
 
 #include "../vmisc/def.h"
+#include "../../tools/drawTools/operation/vabstractoperation.h"
 
 namespace Ui
 {
@@ -86,13 +87,14 @@ public:
     QString                getSuffix() const;
     void                   setSuffix(const QString &value);
 
-    QVector<quint32>       getObjects() const;
+    QVector<SourceItem>    getSourceObjects() const;
+    void                   setSourceObjects(const QVector<SourceItem> &value);
 
     virtual void           ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 public slots:
     virtual void           ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void           SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void           SelectedObject(bool selected, quint32 id, quint32 tool) Q_DECL_OVERRIDE;
 
 private slots:
     void                   suffixChanged();
@@ -112,7 +114,7 @@ private:
 
     Ui::DialogMirrorByLine *ui;
 
-    QList<quint32>          objects;
+    QVector<SourceItem>     m_objects;
 
     bool                    stage1;
 

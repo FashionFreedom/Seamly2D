@@ -66,7 +66,7 @@ public:
     static VToolMirrorByLine *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                        VAbstractPattern *doc, VContainer *data);
     static VToolMirrorByLine *Create(const quint32 _id, quint32 firstLinePointId, quint32 secondLinePointId,
-                                       const QString &suffix, const QVector<quint32> &source,
+                                       const QString &suffix, const QVector<SourceItem> &source,
                                        const QVector<DestinationItem> &destination, VMainGraphicsScene *scene,
                                        VAbstractPattern *doc, VContainer *data, const Document &parse,
                                        const Source &typeCreation);
@@ -99,7 +99,7 @@ private:
 
                               VToolMirrorByLine(VAbstractPattern *doc, VContainer *data, quint32 id,
                                                 quint32 firstLinePointId, quint32 secondLinePointId,
-                                                const QString &suffix, const QVector<quint32> &source,
+                                                const QString &suffix, const QVector<SourceItem> &source,
                                                 const QVector<DestinationItem> &destination, const Source &typeCreation,
                                                 QGraphicsItem *parent = nullptr);
 };

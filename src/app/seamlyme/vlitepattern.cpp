@@ -83,8 +83,9 @@ QString VLitePattern::GenerateLabel(const LabelType &type, const QString &reserv
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VLitePattern::GenerateSuffix() const
+QString VLitePattern::GenerateSuffix(const QString &type) const
 {
+    Q_UNUSED(type);
     return QString();
 }
 

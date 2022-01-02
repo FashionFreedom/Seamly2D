@@ -755,4 +755,3 @@ void VSettings::SetTiledPDFOrientation(PageOrientation value)
 
     setValue(settingTiledPDFOrientation, orientation);
 }
-

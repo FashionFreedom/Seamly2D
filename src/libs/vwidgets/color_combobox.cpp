@@ -54,8 +54,18 @@ ColorComboBox::~ColorComboBox(){}
  */
 void ColorComboBox::init()
 {
-    qCDebug(colorComboBox, "ColorComboBox::init");
+    setItems(VAbstractTool::ColorsList());
+    connect(this, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ColorComboBox::colorChanged);
+}
+
+/*
+ * Sets the items shown in the combobox and sets index to the 1st color.
+ */
+void ColorComboBox::setItems(QMap<QString, QString> map)
+{
     this->blockSignals(true);
+
+    clear();
 
 #if defined(Q_OS_MAC)
     // Mac pixmap should be little bit smaller
@@ -66,7 +76,6 @@ void ColorComboBox::init()
 #endif
 
     this->view()->setTextElideMode(Qt::ElideNone);
-    QMap<QString, QString> map = VAbstractTool::ColorsList();
     map.remove(ColorByGroup);
     QMap<QString, QString>::const_iterator i = map.constBegin();
     while (i != map.constEnd())
@@ -76,13 +85,13 @@ void ColorComboBox::init()
         ++i;
     }
 
-    this->blockSignals(false);
-    connect(this, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &ColorComboBox::colorChanged);
-
+    setMaxVisibleItems(map.size());
+    this->model()->sort(1, Qt::AscendingOrder);
     setCurrentIndex(0);
     colorChanged(currentIndex());
-}
 
+    this->blockSignals(false);
+}
 /*
  * Sets the color shown in the combobox to the given color.
  */

@@ -65,12 +65,26 @@
 #include "../vwidgets/vsimplecurve.h"
 #include "../vwidgets/vsimplepoint.h"
 
+struct SourceItem
+{
+    quint32 id{NULL_ID};
+    QString alias{};
+    QString lineType{"solidLine"};
+    QString lineWidth{"1.00"};
+    QString color{"black"};
+};
+
+Q_DECLARE_METATYPE(SourceItem)
+Q_DECLARE_TYPEINFO(SourceItem, Q_MOVABLE_TYPE);
+
+QVector<quint32>     sourceToObjects(const QVector<SourceItem> &source);
+
 struct DestinationItem
 {
     quint32 id;
-    qreal mx;
-    qreal my;
-    bool showPointName;
+    qreal mx{1};
+    qreal my{1};
+    bool showPointName{true};
 };
 
 // FIXME. I don't know how to use QGraphicsItem properly, so just took first available finished class.
@@ -103,7 +117,7 @@ public:
 
     virtual void         setPointNamePosition(quint32 id, const QPointF &pos) Q_DECL_OVERRIDE;
 
-    static void          ExtractData(const QDomElement &domElement, QVector<quint32> &source,
+    static void          ExtractData(const QDomElement &domElement, QVector<SourceItem> &source,
                                      QVector<DestinationItem> &destination);
 
 public slots:
@@ -139,16 +153,19 @@ public slots:
 
 protected:
     QString                          suffix;
-    QVector<quint32>                 source;
+    QVector<SourceItem>              source;
     QVector<DestinationItem>         destination;
     QMap<quint32, VAbstractSimple *> operatedObjects;
 
                          VAbstractOperation(VAbstractPattern *doc, VContainer *data, quint32 id,
-                                            const QString &suffix, const QVector<quint32> &source,
+                                            const QString &suffix, const QVector<SourceItem> &source,
                                             const QVector<DestinationItem> &destination,
                                             QGraphicsItem *parent = nullptr);
 
     virtual void         AddToFile() Q_DECL_OVERRIDE;
+    virtual void         ReadToolAttributes(const QDomElement &domElement) Q_DECL_OVERRIDE;
+    virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
+
 
     virtual void         updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
     void                 updatePointNamePosition(quint32 id, const QPointF &pos);

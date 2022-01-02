@@ -115,6 +115,7 @@ protected:
     QString          m_lineType;      /** @brief typeLine line type. */
 
     void             AddToCalculation(const QDomElement &domElement);
+    void             addDependence(QList<quint32> &list, quint32 objectId) const;
 
     /** @brief SaveDialog save options into file after change in dialog. */
     virtual void     SaveDialog(QDomElement &domElement)=0;
@@ -182,7 +183,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     qCDebug(vTool, "Creating tool context menu.");
     QMenu menu;
-    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Options"));
+    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
 
     // Show object name menu item
     QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));

@@ -255,7 +255,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
     if (domElem.isElement() == false)
     {
         qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
-        return tr("Can't create record.");
+        return QString();
     }
     try
     {
@@ -427,6 +427,24 @@ QString DialogHistory::Record(const VToolRecord &tool)
                         .arg(elArc->NameForHistory(tr("Elliptical arc")))
                         .arg(elArc->GetLength());
             }
+            case Tool::Rotation:
+                return tr("Rotate objects around point %1. Suffix '%2'")
+                          .arg(PointName(AttrUInt(domElem, AttrCenter)),
+                          doc->GetParametrString(domElem, AttrSuffix, QString()));
+            case Tool::MirrorByLine:
+                return tr("Mirror by line %1_%2. Suffix '%3'")
+                          .arg(PointName(AttrUInt(domElem, AttrP1Line)),
+                          PointName(AttrUInt(domElem, AttrP2Line)),
+                          doc->GetParametrString(domElem, AttrSuffix, QString()));
+            case Tool::MirrorByAxis:
+                return tr("Mirror by axis through %1 point. Suffix '%2'")
+                          .arg(PointName(AttrUInt(domElem, AttrCenter)),
+                           doc->GetParametrString(domElem, AttrSuffix, QString()));
+            case Tool::Move:
+                return tr("Move objects, rotate around point %1. Suffix '%2'")
+                          .arg(PointName(AttrUInt(domElem, AttrRotationAngle)),
+                          doc->GetParametrString(domElem, AttrSuffix, QString()));
+
             //Because "history" not only show history of pattern, but help restore current data for each pattern's
             //piece, we need add record about details and nodes, but don't show them.
             case Tool::Piece:
@@ -437,10 +455,6 @@ QString DialogHistory::Record(const VToolRecord &tool)
             case Tool::NodeSpline:
             case Tool::NodeSplinePath:
             case Tool::Group:
-            case Tool::Rotation:
-            case Tool::MirrorByLine:
-            case Tool::MirrorByAxis:
-            case Tool::Move:
             case Tool::InternalPath:
             case Tool::Pin:
             case Tool::InsertNode:
@@ -450,10 +464,10 @@ QString DialogHistory::Record(const VToolRecord &tool)
     catch (const VExceptionBadId &e)
     {
         qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
-        return tr("Can't create record.");
+        return QString();
     }
     qDebug()<<"Can't create history record for the tool.";
-    return tr("Can't create record.");
+    return QString();
 }
 
 QT_WARNING_POP

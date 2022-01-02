@@ -60,6 +60,7 @@
 #include <QVector>
 #include <QtGlobal>
 
+#include "../../tools/drawTools/operation/vabstractoperation.h"
 #include "../vmisc/def.h"
 #include "dialogtool.h"
 
@@ -82,25 +83,35 @@ public:
     QString          GetLength() const;
     void             SetLength(const QString &value);
 
+    QString          getRotation() const;
+    void             setRotation(const QString &value);
+
     QString          getSuffix() const;
     void             setSuffix(const QString &value);
 
-    QVector<quint32> getObjects() const;
+    quint32          getOriginPointId() const;
+    void             setOriginPointId(const quint32 &value);
 
     virtual void     ShowDialog(bool click) Q_DECL_OVERRIDE;
 
+    QVector<SourceItem> getSourceObjects() const;
+    void                setSourceObjects(const QVector<SourceItem> &value);
+
 public slots:
     virtual void     ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-    virtual void     SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+    virtual void     SelectedObject(bool selected, quint32 id, quint32 tool) Q_DECL_OVERRIDE;
 
 private slots:
     void             angleChanged();
     void             lengthChanged();
+    void             rotationChanged();
 
     void             editAngleFormula();
     void             editLengthFormula();
+    void             editRotationFormula();
 
     void             suffixChanged();
+    void             originChanged(const QString &text);
 
 protected:
     virtual void     CheckState() Q_DECL_FINAL;
@@ -119,12 +130,18 @@ private:
     bool             lengthFlag;           //! @brief lengthFlag true if value of length is correct */
     QString          lengthFormula;        //! @brief length formula of length */
     QTimer          *lengthTimer;          //! @brief lengthTimer timer of check formula of length */
-    QList<quint32>   objects;
+    bool             rotationFlag;         //! @brief rotationFlag true if value of length is correct */
+    QString          rotationFormula;      //! @brief rotationFormula of rotation */
+    QTimer          *rotationTimer;        //! @brief rotationTimer timer of check formula of rotation */
+    QVector<SourceItem>   m_objects;
     bool             stage1;
+    bool             stage2;
     QString          m_suffix;
+    bool             useOriginPoint;
 
     void             evaluateAngle();
     void             evaluateLength();
+    void             evaluateRotation();
 };
 
 #endif // DIALOGMOVING_H

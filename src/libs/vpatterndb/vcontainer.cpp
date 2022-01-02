@@ -176,7 +176,7 @@ const val VContainer::GetObject(const QHash<key, val> &obj, key id) const
     }
     else
     {
-        throw VExceptionBadId(tr("Can't find object"), id);
+        throw VExceptionBadId(tr("Can't find object: "), id);
     }
 }
 
@@ -189,7 +189,7 @@ VPiece VContainer::GetPiece(quint32 id) const
     }
     else
     {
-        throw VExceptionBadId(tr("Can't find object"), id);
+        throw VExceptionBadId(tr("Can't find piece: "), id);
     }
 }
 
@@ -202,7 +202,7 @@ VPiecePath VContainer::GetPiecePath(quint32 id) const
     }
     else
     {
-        throw VExceptionBadId(tr("Can't find object"), id);
+        throw VExceptionBadId(tr("Can't find path: "), id);
     }
 }
 

@@ -148,6 +148,7 @@ const QString AttrClosed      = QStringLiteral("closed");
 const QString AttrShowPointName   = QStringLiteral("showPointName");
 const QString AttrShowPointName1  = QStringLiteral("showPointName1");
 const QString AttrShowPointName2  = QStringLiteral("showPointName2");
+const QString AttrAlias           = QStringLiteral("alias");
 
 const QString LineTypeNone           = QStringLiteral("none");
 const QString LineTypeSolidLine      = QStringLiteral("solidLine");

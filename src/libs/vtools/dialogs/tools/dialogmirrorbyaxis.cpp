@@ -84,7 +84,7 @@
 DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent)
     , ui(new Ui::DialogMirrorByAxis)
-    , objects()
+    , m_objects()
     , stage1(true)
     , m_suffix()
 {
@@ -92,7 +92,7 @@ DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &to
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/mirror_by_axis.png"));
 
-    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix());
+    ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByAxisSuffix()));
 
     InitOkCancelApply(ui);
 
@@ -163,9 +163,19 @@ void DialogMirrorByAxis::setSuffix(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> DialogMirrorByAxis::getObjects() const
+QVector<SourceItem> DialogMirrorByAxis::getSourceObjects() const
 {
-    return objects.toVector();
+    return m_objects;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogMirrorByAxis::setSourceObjects(const QVector<SourceItem> &value)
+{
+    m_objects = value;
+
+    VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
+    SCASSERT(operation != nullptr)
+    operation->setObjects(sourceToObjects(m_objects));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -173,7 +183,7 @@ void DialogMirrorByAxis::ShowDialog(bool click)
 {
     if (stage1 && not click)
     {
-        if (objects.isEmpty())
+        if (m_objects.isEmpty())
         {
             return;
         }
@@ -186,7 +196,7 @@ void DialogMirrorByAxis::ShowDialog(bool click)
 
         VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
         SCASSERT(operation != nullptr)
-        operation->setObjects(objects.toVector());
+        operation->setObjects(sourceToObjects(m_objects));
         operation->VisualMode();
 
         scene->ToggleArcSelection(false);
@@ -199,10 +209,13 @@ void DialogMirrorByAxis::ShowDialog(bool click)
         scene->ToggleSplineHover(false);
         scene->ToggleSplinePathHover(false);
 
+        qApp->getSceneView()->allowRubberBand(false);
+
         emit ToolTip(tr("Select axis rotation point"));
     }
     else if (not stage1 && prepare && click)
     {
+        CheckState();
         setModal(true);
         emit ToolTip("");
         show();
@@ -216,7 +229,10 @@ void DialogMirrorByAxis::ChosenObject(quint32 id, const SceneObject &type)
     {
         if (type == SceneObject::Point)
         {
-            if (objects.contains(id))
+            auto object = std::find_if(m_objects.begin(), m_objects.end(),
+                                    [id](const SourceItem &item) { return item.id == id; });
+
+            if (object != m_objects.end())
             {
                 emit ToolTip(tr("Select axis rotation point that is not part of the list of objects"));
                 return;
@@ -236,21 +252,29 @@ void DialogMirrorByAxis::ChosenObject(quint32 id, const SceneObject &type)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogMirrorByAxis::SelectedObject(bool selected, quint32 object, quint32 tool)
+void DialogMirrorByAxis::SelectedObject(bool selected, quint32 id, quint32 tool)
 {
     Q_UNUSED(tool)
     if (stage1)
     {
+        auto object = std::find_if(m_objects.begin(), m_objects.end(),
+                                     [id](const SourceItem &item) { return item.id == id; });
+
         if (selected)
         {
-            if (not objects.contains(object))
+            if (object == m_objects.cend())
             {
-                objects.append(object);
+                SourceItem item;
+                item.id = id;
+                m_objects.append(item);
             }
         }
         else
         {
-            objects.removeOne(object);
+            if (object != m_objects.end())
+            {
+                m_objects.erase(object);
+            }
         }
     }
 }
@@ -318,7 +342,7 @@ void DialogMirrorByAxis::SaveData()
     VisToolMirrorByAxis *operation = qobject_cast<VisToolMirrorByAxis *>(vis);
     SCASSERT(operation != nullptr)
 
-    operation->setObjects(objects.toVector());
+    operation->setObjects(sourceToObjects(m_objects));
     operation->setOriginPointId(getOriginPointId());
     operation->setAxisType(getAxisType());
     operation->RefreshGeometry();
@@ -328,7 +352,11 @@ void DialogMirrorByAxis::SaveData()
 void DialogMirrorByAxis::pointChanged()
 {
     QColor color = okColor;
-    if (objects.contains(getCurrentObjectId(ui->originPoint_ComboBox)))
+    quint32 id = getCurrentObjectId(ui->originPoint_ComboBox);
+    auto objectId = std::find_if(m_objects.begin(), m_objects.end(),
+                                 [id](const SourceItem &item) { return item.id == id;});
+
+    if (objectId != m_objects.end())
     {
         flagError = false;
         color = errorColor;
