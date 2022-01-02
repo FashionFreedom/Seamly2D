@@ -1,19 +1,12 @@
 ---
-name: Pattern Support request
+name: Pattern support request
 about: Problems while working with patterns
-title: ''
-labels: support
+title: 'Pattern support'
+labels: forum
 assignees: ''
 
 ---
-
-**Describe the problem while editing a pattern**
-A clear and concise description of what you were trying to do and what was the result.
-
-**Paste screenshots**
-Screenshots help. But you can't post your pattern & measurement files to github. So.....
-
-**You may be asked to post the problem to the support forum at https://forum.seamly.net where you can upload your pattern & measurement and get expert Seamly & patternmaking support.**
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**For Pattern Support please post to the user forum at https://forum.seamly.com**
+**For _wonky tool behavior_ or _software crashes_ please open a Bug Report**
+Pattern Support is only available through the User Forum.
+Hope to see you there!

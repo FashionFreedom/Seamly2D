@@ -13,3 +13,4 @@ Examples of repository issues:
 * Create an automated ChangeLog file
 * Add a Contributors Agreement
 * Change the repo icon
+* Problems with templates, Readme's, etc.
