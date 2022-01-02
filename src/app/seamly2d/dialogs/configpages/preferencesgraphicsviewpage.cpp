@@ -132,6 +132,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Zoom Speed
     ui->zoomSpeedFactor_Slider->setValue(qApp->Seamly2DSettings()->getZoomSpeedFactor());
 
+    // Export Quality
+    ui->exportQuality_Slider->setValue(qApp->Seamly2DSettings()->getExportQuality());
+
 // Behavior preferences
     // Constrain Angle Value & Modifier Key
     ui->constrainValue_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getConstrainValue());
@@ -262,6 +265,9 @@ void PreferencesGraphicsViewPage::Apply()
     // Zoom
     settings->setZoomModKey(ui->zoomModKey_CheckBox->isChecked());
     settings->setZoomSpeedFactor(ui->zoomSpeedFactor_Slider->value());
+
+    // Export Quality
+    settings->setExportQuality(ui->exportQuality_Slider->value());
 
     // Behavior preferences
     // Constrain Angle Value & Modifier Key

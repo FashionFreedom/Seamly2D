@@ -147,6 +147,8 @@ public:
     int                  getZoomSpeedFactor() const;
     void                 setZoomSpeedFactor(const int &factor);
 
+    int                  getExportQuality() const;
+    void                 setExportQuality(const int &value);
 
     QString              getZoomRBPositiveColor() const;
     void                 setZoomRBPositiveColor(const QString &value);

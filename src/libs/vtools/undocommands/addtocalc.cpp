@@ -63,7 +63,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 AddToCalc::AddToCalc(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent), nameActivDraw(doc->GetNameActivPP()), cursor(doc->getCursor())
+    : VUndoCommand(xml, doc, parent), nameActivDraw(doc->getActiveDraftBlockName()), cursor(doc->getCursor())
 {
     setText(tr("add object"));
     nodeId = doc->GetParametrId(xml);
@@ -74,7 +74,7 @@ void AddToCalc::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    doc->ChangeActivPP(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
 
     QDomElement calcElement;
     if (doc->GetActivNodeElement(VAbstractPattern::TagCalculation, calcElement))
@@ -109,7 +109,7 @@ void AddToCalc::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    doc->ChangeActivPP(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
     doc->setCursor(cursor);
 
     QDomElement calcElement;

@@ -184,6 +184,7 @@
      <addaction name="mirrorByAxis_Action"/>
      <addaction name="move_Action"/>
      <addaction name="trueDarts_Action"/>
+     <addaction name="exportDraftBlocks_Action"/>
     </widget>
     <widget class="QMenu" name="elipses_Menu">
      <property name="title">
@@ -719,6 +720,7 @@
    <addaction name="mirrorByAxis_Action"/>
    <addaction name="move_Action"/>
    <addaction name="trueDarts_Action"/>
+   <addaction name="exportDraftBlocks_Action"/>
   </widget>
   <widget class="QToolBar" name="addDetails_ToolBar">
    <property name="enabled">
@@ -847,7 +849,7 @@
       <string/>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>7</number>
      </property>
      <property name="tabSpacing">
       <number>4</number>
@@ -2221,6 +2223,32 @@
          </property>
         </widget>
        </item>
+       <item row="4" column="0">
+        <widget class="QToolButton" name="exportDraftBlocks_ToolButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>Export Draft Blocks (E, D)</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="share/resources/toolicon.qrc">
+           <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="details_Page">
@@ -2495,14 +2523,14 @@
         </rect>
        </property>
        <property name="toolTip">
-        <string>Export Pieces (XP)</string>
+        <string>Export Pieces (EP)</string>
        </property>
        <property name="text">
         <string notr="true">...</string>
        </property>
        <property name="icon">
         <iconset resource="share/resources/toolicon.qrc">
-         <normaloff>:/toolicon/32x32/export_to_picture_document.png</normaloff>:/toolicon/32x32/export_to_picture_document.png</iconset>
+         <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -2592,7 +2620,7 @@
          </property>
          <property name="icon">
           <iconset resource="share/resources/toolicon.qrc">
-           <normaloff>:/toolicon/32x32/export_layout.png</normaloff>:/toolicon/32x32/export_layout.png</iconset>
+           <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -4298,16 +4326,16 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/export_layout.png</normaloff>:/toolicon/32x32/export_layout.png</iconset>
+     <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export Layout</string>
    </property>
    <property name="toolTip">
-    <string>Export Layout (XL)</string>
+    <string>Export Layout (EL)</string>
    </property>
    <property name="shortcut">
-    <string>X, L</string>
+    <string>E, L</string>
    </property>
   </action>
   <action name="anchorPoint_Action">
@@ -4385,16 +4413,16 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/export_to_picture_document.png</normaloff>:/toolicon/32x32/export_to_picture_document.png</iconset>
+     <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export Pieces</string>
    </property>
    <property name="toolTip">
-    <string>Export Pieces (XP)</string>
+    <string>Export Pieces (EP)</string>
    </property>
    <property name="shortcut">
-    <string>X, P</string>
+    <string>E, P</string>
    </property>
   </action>
   <action name="patternPiece_Action">
@@ -4602,6 +4630,24 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+D</string>
+   </property>
+  </action>
+  <action name="exportDraftBlocks_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export Draft Blocks</string>
+   </property>
+   <property name="toolTip">
+    <string>Export Draft Blocks (ED)</string>
+   </property>
+   <property name="shortcut">
+    <string>E, D</string>
    </property>
   </action>
  </widget>

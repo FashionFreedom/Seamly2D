@@ -97,6 +97,7 @@ const QString settingGraphicsViewAngleDelta              = QStringLiteral("graph
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
+const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
 
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
 const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
@@ -654,9 +655,21 @@ int  VCommonSettings::getZoomSpeedFactor() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setZoomSpeedFactor(const int  &factor)
+void VCommonSettings::setZoomSpeedFactor(const int  &value)
 {
-    setValue(settingGraphicsViewZoomSpeedFactor, factor);
+    setValue(settingGraphicsViewZoomSpeedFactor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+int  VCommonSettings::getExportQuality() const
+{
+    return value(settingGraphicsViewExportQuality, 75).toInt();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setExportQuality(const int  &value)
+{
+    setValue(settingGraphicsViewExportQuality, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -180,6 +180,7 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
     connect(ui->toolButtonPortrait, &QToolButton::toggled, this, &DialogSaveLayout::WriteSettings);
     connect(ui->toolButtonLandscape, &QToolButton::toggled, this, &DialogSaveLayout::WriteSettings);
 
+    connect(ui->exportQuality_Slider, &QSlider::valueChanged, this, &DialogSaveLayout::WriteSettings);
 
     ShowExample();//Show example for current format.
 }
@@ -252,6 +253,9 @@ void DialogSaveLayout::SetBinaryDXFFormat(bool binary)
         case LayoutExportFormats::PDF:
         case LayoutExportFormats::PDFTiled:
         case LayoutExportFormats::PNG:
+        case LayoutExportFormats::JPG:
+        case LayoutExportFormats::BMP:
+        case LayoutExportFormats::PPM:
         case LayoutExportFormats::OBJ:
         case LayoutExportFormats::PS:
         case LayoutExportFormats::EPS:
@@ -298,6 +302,9 @@ bool DialogSaveLayout::IsBinaryDXFFormat() const
         case LayoutExportFormats::PDF:
         case LayoutExportFormats::PDFTiled:
         case LayoutExportFormats::PNG:
+        case LayoutExportFormats::JPG:
+        case LayoutExportFormats::BMP:
+        case LayoutExportFormats::PPM:
         case LayoutExportFormats::OBJ:
         case LayoutExportFormats::PS:
         case LayoutExportFormats::EPS:
@@ -365,7 +372,13 @@ QString DialogSaveLayout::ExportFormatDescription(LayoutExportFormats format)
         case LayoutExportFormats::PDF:
             return QString("PDF %1 (*.pdf)").arg(filesStr);
         case LayoutExportFormats::PNG:
-            return tr("Image files") + QLatin1String(" (*.png)");
+            return QString("PNG %1 (*.png)").arg(filesStr);
+        case LayoutExportFormats::JPG:
+            return QString("JPG %1 (*.jpg)").arg(filesStr);
+        case LayoutExportFormats::BMP:
+            return QString("BMP %1 (*.bmp)").arg(filesStr);
+        case LayoutExportFormats::PPM:
+            return QString("PPM %1 (*.ppm)").arg(filesStr);
         case LayoutExportFormats::OBJ:
             return "Wavefront OBJ (*.obj)";
         case LayoutExportFormats::PS:
@@ -445,6 +458,12 @@ QString DialogSaveLayout::ExportFromatSuffix(LayoutExportFormats format)
             return ".pdf";
         case LayoutExportFormats::PNG:
             return ".png";
+        case LayoutExportFormats::JPG:
+            return ".jpg";
+        case LayoutExportFormats::BMP:
+            return ".bmp";
+        case LayoutExportFormats::PPM:
+            return ".ppm";
         case LayoutExportFormats::OBJ:
             return ".obj";
         case LayoutExportFormats::PS:
@@ -561,7 +580,10 @@ void DialogSaveLayout::PathChanged(const QString &text)
 void DialogSaveLayout::ShowExample()
 {
     const LayoutExportFormats currentFormat = Format();
-    ui->labelExample->setText(tr("Example:") + FileName() + QLatin1String("1") + ExportFromatSuffix(currentFormat));
+    ui->labelExample->setText(FileName() + QLatin1String("1") + ExportFromatSuffix(currentFormat));
+
+    //ui->lineEditFileName->setText(FileName() + QLatin1String("1") + ExportFromatSuffix(currentFormat));
+
 
     switch(currentFormat)
     {
@@ -598,6 +620,9 @@ void DialogSaveLayout::ShowExample()
         case LayoutExportFormats::PDF:
         case LayoutExportFormats::PDFTiled:
         case LayoutExportFormats::PNG:
+        case LayoutExportFormats::JPG:
+        case LayoutExportFormats::BMP:
+        case LayoutExportFormats::PPM:
         case LayoutExportFormats::OBJ:
         case LayoutExportFormats::PS:
         case LayoutExportFormats::EPS:
@@ -609,11 +634,18 @@ void DialogSaveLayout::ShowExample()
     // enable or disable the settings specific for tiled pdf
     switch(currentFormat)
     {
+        case LayoutExportFormats::PNG:
+            ui->exportQuality_Slider->setEnabled(true);
+            break;
+        case LayoutExportFormats::JPG:
+            ui->exportQuality_Slider->setEnabled(true);
+            break;
         case LayoutExportFormats::PDFTiled:
             ui->groupBoxPaperFormat->setEnabled(true);
             ui->groupBoxMargins->setEnabled(true);
             break;
         default:
+            ui->exportQuality_Slider->setEnabled(false);
             ui->groupBoxPaperFormat->setEnabled(false);
             ui->groupBoxMargins->setEnabled(false);
             break;
@@ -709,6 +741,9 @@ QVector<std::pair<QString, LayoutExportFormats> > DialogSaveLayout::InitFormats(
     InitFormat(LayoutExportFormats::PDF);
     InitFormat(LayoutExportFormats::PDFTiled);
     InitFormat(LayoutExportFormats::PNG);
+    InitFormat(LayoutExportFormats::JPG);
+    InitFormat(LayoutExportFormats::BMP);
+    InitFormat(LayoutExportFormats::PPM);
     InitFormat(LayoutExportFormats::OBJ);
     if (SupportPSTest())
     {
@@ -777,6 +812,7 @@ void DialogSaveLayout::ReadSettings()
     ui->doubleSpinBoxTopField->setValue(margins.top());
     ui->doubleSpinBoxRightField->setValue(margins.right());
     ui->doubleSpinBoxBottomField->setValue(margins.bottom());
+    ui->exportQuality_Slider->setValue(settings->getExportQuality());
 
     // read Template
     QSizeF size = QSizeF(settings->GetTiledPDFPaperWidth(Unit::Mm), settings->GetTiledPDFPaperHeight(Unit::Mm));
@@ -825,6 +861,7 @@ void DialogSaveLayout::WriteSettings() const
         ui->doubleSpinBoxBottomField->value()
     );
     settings->SetTiledPDFMargins(margins,unit);
+    settings->setExportQuality(ui->exportQuality_Slider->value());
 
     // write Template
     PaperSizeTemplate temp;

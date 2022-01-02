@@ -65,7 +65,7 @@ RenameDraftBlock::RenameDraftBlock(VAbstractPattern *doc, const QString &newPPna
 {
     setText(tr("rename pattern piece"));
     SCASSERT(combo != nullptr)
-    oldPPname = doc->GetNameActivPP();
+    oldPPname = doc->getActiveDraftBlockName();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

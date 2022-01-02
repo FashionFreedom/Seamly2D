@@ -154,6 +154,7 @@ private slots:
 #endif
     void exportLayoutAs();
     void exportPiecesAs();
+    void exportDraftBlocksAs();
 
     void handleArrowTool();
     void handlePointAtDistanceAngleTool(bool checked);

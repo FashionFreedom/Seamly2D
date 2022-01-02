@@ -504,7 +504,7 @@ void VAbstractTool::ToolCreation(const Source &typeCreation)
 void VAbstractTool::AddRecord(const quint32 id, const Tool &toolType, VAbstractPattern *doc)
 {
     QVector<VToolRecord> *history = doc->getHistory();
-    VToolRecord record = VToolRecord(id, toolType, doc->GetNameActivPP());
+    VToolRecord record = VToolRecord(id, toolType, doc->getActiveDraftBlockName());
     if (history->contains(record))
     {
         return;
