@@ -1,14 +1,19 @@
-name: Test build manual release
+# Use this file to test changes to the build-auto-release-on-cron.yml file
+name: Test build auto-release on cron (Saturday 8:30pm CST, Sunday 2:30am UTC)
 
+# cron format:
+# minute (0 - 59)
+# │ ┌───────────── hour (0 - 23)
+# │ │ ┌───────────── day of the month (1 - 31)
+# │ │ │ ┌───────────── month (1 - 12)
+# │ │ │ │ ┌───────────── day of the week (0 - 6)
+# │ │ │ │ │
+# │ │ │ │ │
+# │ │ │ │ │
+#'* * * * *'
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test Build manual releases'
+  schedule:
+    - cron: '0 0 * * MON'
 
 env:
   QT_SELECT: 5
@@ -21,7 +26,7 @@ jobs:
     outputs:
       upload_url: ${{ steps.release-data.outputs.upload_url }}
 
-# The tag name is YYMMDD.HHMM to create simple, easy-to-read "rolling release" versioning
+# The tag name is vYYYY-MM-DD.hhmm to create simple, easy-to-read "rolling release" versioning
     steps:
       - name: create env vars for release name and tag
         id: names
