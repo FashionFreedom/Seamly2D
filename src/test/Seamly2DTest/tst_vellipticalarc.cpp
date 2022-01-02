@@ -29,13 +29,12 @@
 #include "tst_vellipticalarc.h"
 #include "../vgeometry/vellipticalarc.h"
 #include "../vlayout/vabstractpiece.h"
-#include "../vmisc/logging.h"
 
 #include <QtGlobal>
 #include <QtTest>
 
 //---------------------------------------------------------------------------------------------------------------------
-TST_VEllipticalArc::TST_VEllipticalArc(QObject *parent) : QObject(parent)
+TST_VEllipticalArc::TST_VEllipticalArc(QObject *parent) : AbstractTest(parent)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -48,7 +47,7 @@ void TST_VEllipticalArc::CompareTwoWays_data()
     QTest::addColumn<qreal>("f2");
     QTest::addColumn<qreal>("rotationAngle");
 
-    //QTest::newRow("Test case 1") << QPointF() << 100. << 200. << 0. << 90.0 << 0.;
+    QTest::newRow("Test case 1") << QPointF() << 100. << 200. << 0. << 90.0 << 0.;
     QTest::newRow("Test case 2") << QPointF() << 100. << 200. << 0. << 180.0 << 0.;
     QTest::newRow("Test case 3") << QPointF() << 100. << 200. << 0. << 270.0 << 0.;
     QTest::newRow("Test case 4") << QPointF() << 100. << 200. << 0. << 360.0 << 0.;
@@ -85,19 +84,21 @@ void TST_VEllipticalArc::CompareTwoWays()
     VEllipticalArc arc2(length, center, radius1, radius2, f1, rotationAngle);
 
     const qreal lengthEps = ToPixel(0.1, Unit::Mm); // computing error
+
     const QString errorLengthMsg =
-            QString("Difference between real and computing lengthes bigger than eps = %1.").number(lengthEps);
-    QVERIFY2(qAbs(arc1.GetLength() - length) <= lengthEps, qUtf8Printable(errorLengthMsg));
-    QVERIFY2(qAbs(arc2.GetLength() - length) <= lengthEps, qUtf8Printable(errorLengthMsg));
-    QVERIFY2(qAbs(arc1.GetLength() - arc2.GetLength()) <= lengthEps, qUtf8Printable(errorLengthMsg));
+            QString("Difference between real and computing lengthes bigger than eps = %1. l1 = %2; l2 = %3");
+    QVERIFY2(qAbs(arc2.GetLength() - length) <= lengthEps,
+             qUtf8Printable(errorLengthMsg.arg(lengthEps).arg(arc2.GetLength()).arg(length)));
+    QVERIFY2(qAbs(arc1.GetLength() - arc2.GetLength()) <= lengthEps,
+             qUtf8Printable(errorLengthMsg.arg(lengthEps).arg(arc2.GetLength()).arg(arc2.GetLength())));
 
     const qreal angleEps = 0.4;
     const QString errorAngleMsg =
-            QString("Difference between real and computing angles bigger than eps = %1.").number(angleEps);
+            QString("Difference between real and computing angles bigger than eps = %1. f1 = %2; f2 = %3");
     // compare angles
-    QVERIFY2(qAbs(arc1.GetEndAngle() - arc2.GetEndAngle()) <= angleEps, qUtf8Printable(errorAngleMsg));
-    QVERIFY2(qAbs(arc1.GetEndAngle() - f2) <= angleEps, qUtf8Printable(errorAngleMsg));
-    QVERIFY2(qAbs(arc1.GetEndAngle() - f2) <= angleEps, qUtf8Printable(errorAngleMsg));
+    const qreal diff = qAbs(arc1.GetEndAngle() - arc2.GetEndAngle());
+    QVERIFY2(qAbs(diff - 360.0*(diff/360.0)) <= angleEps,
+             qUtf8Printable(errorAngleMsg.arg(angleEps).arg(arc1.GetEndAngle()).arg(arc2.GetEndAngle())));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -116,12 +117,17 @@ void TST_VEllipticalArc::NegativeArc()
     const qreal length = M_PI*(radius1+radius2)*(1+3*h/(10+qSqrt(4-3*h)))/2;
     VEllipticalArc arc(-length, center, radius1, radius2, f1, rotationAngle);
 
-    const qreal eps = 1; // computing error
+    const qreal eps = ToPixel(0.45, Unit::Mm); // computing error
     const QString errorMsg =
-            QString("Difference between real and computing lengthes bigger than eps = %1.").number(eps);
+            QString("Difference between real and computing lengthes bigger than eps = %1.  v1 = %2; v2 = %3");
 
-    QVERIFY2(qAbs(arc.GetLength() + length) <= eps, qUtf8Printable(errorMsg));
-    QVERIFY2(arc.GetEndAngle() - f2 <= eps, qUtf8Printable(errorMsg));
+
+            QVERIFY2(qAbs(arc.GetLength() + length) <= eps,
+                     qUtf8Printable(errorMsg.arg(eps).arg(arc.GetLength()).arg(length)));
+
+            const qreal angleEps = 0.4;
+            QVERIFY2(arc.GetEndAngle() - f2 <= angleEps,
+                     qUtf8Printable(errorMsg.arg(eps).arg(arc.GetEndAngle()).arg(f2)));
 }
 
 // cppcheck-suppress unusedFunction
@@ -158,19 +164,29 @@ void TST_VEllipticalArc::TestData()
     QTest::addColumn<qreal>("endAngle");
     QTest::addColumn<qreal>("rotationAngle");
 
-    QTest::newRow("Full circle: radiuses 10, 20") << 10.0 << 20.0 << 0.0 << 360.0 << 0.0;
-    QTest::newRow("Full circle: radiuses 150, 200") << 150.0 << 200.0 << 0.0 << 360.0 << 0.0;
-    QTest::newRow("Full circle: radiuses 150, 200, rotation 30") << 150.0 << 200.0 << 0.0 << 360.0 << 30.0;
-    QTest::newRow("Full circle: radiuses 1500, 1000") << 1500.0 << 1000.0 << 0.0 << 360.0 << 0.0;
-    QTest::newRow("Full circle: radiuses 1500, 1000, rotation 50") << 1500.0 << 1000.0 << 0.0 << 360.0 << 50.0;
-    QTest::newRow("Full circle: radiuses 90000, 80000, rotation 90") << 90000.0 << 80000.0 << 0.0 << 360.0 << 90.0;
+    QTest::newRow("Full circle: radiuses 10, 20; start 0") << 10.0 << 20.0 << 0.0 << 360.0 << 0.0;
+    QTest::newRow("Full circle: radiuses 150, 200; start 0") << 150.0 << 200.0 << 0.0 << 360.0 << 0.0;
+    QTest::newRow("Full circle: radiuses 150, 200, rotation 30; start 0") << 150.0 << 200.0 << 0.0 << 360.0 << 30.0;
+    QTest::newRow("Full circle: radiuses 1500, 1000; start 0") << 1500.0 << 1000.0 << 0.0 << 360.0 << 0.0;
+    QTest::newRow("Full circle: radiuses 1500, 1000, rotation 50; start 0") << 1500.0 << 1000.0 << 0.0 << 360.0 << 50.0;
+    QTest::newRow("Full circle: radiuses 15000, 10000, rotation 90; start 0") << 15000.0 << 10000.0 << 0.0 << 360.0
+                                                                              << 90.0;
+
+    QTest::newRow("Full circle: radiuses 10, 20; start 90") << 10.0 << 20.0 << 90.0 << 90.0 << 0.0;
+    QTest::newRow("Full circle: radiuses 150, 200; start 90") << 150.0 << 200.0 << 90.0 << 90.0 << 0.0;
+    QTest::newRow("Full circle: radiuses 150, 200, rotation 30; start 90") << 150.0 << 200.0 << 90.0 << 90.0 << 30.0;
+    QTest::newRow("Full circle: radiuses 1500, 1000; start 90") << 1500.0 << 1000.0 << 90.0 << 90.0 << 0.0;
+    QTest::newRow("Full circle: radiuses 1500, 1000, rotation 50; start 90") << 1500.0 << 1000.0 << 90.0 << 90.0
+                                                                             << 50.0;
+    QTest::newRow("Full circle: radiuses 15000, 10000, rotation 90; start 90") << 15000.0 << 10000.0 << 90.0 << 90.0
+                                                                              << 90.0;
 
     QTest::newRow("Arc less than 45 degree, radiuses 100, 50") << 100.0 << 50.0 << 0.0 << 10.5 << 0.0;
     QTest::newRow("Arc less than 45 degree, radiuses 150, 50, rotation 180") << 150.0 << 50.0 << 0.0 << 10.5 << 180.0;
     QTest::newRow("Arc less than 45 degree, radiuses 1500, 800, rotation 90") << 1500.0 << 800.0 << 0.0 << 10.5 << 90.0;
-    QTest::newRow("Arc less than 45 degree, radiuses 50000, 10000, rotation 40")
+    QTest::newRow("Arc less than 45 degree, radiuses 15000, 10000, rotation 40")
             << 50000.0 << 10000.0 << 0.0 << 10.5 << 40.0;
-    QTest::newRow("Arc less than 45 degree, radiuses 90000, 10000") << 90000.0 << 10000.0 << 0.0 << 10.5 << 0.0;
+    QTest::newRow("Arc less than 45 degree, radiuses 15000, 10000") << 15000.0 << 10000.0 << 0.0 << 10.5 << 0.0;
 
     QTest::newRow("Arc 45 degree, radiuses 100, 50, rotation 45") << 100.0 << 50.0 << 0.0 << 45.0 << 45.0;
     QTest::newRow("Arc 45 degree, radiuses 150, 15, rotation 30") << 150.0 << 15.0 << 0.0 << 45.0 << 30.0;
@@ -270,9 +286,8 @@ void TST_VEllipticalArc::TestGetPoints1()
     { // equation of ellipse will be different when rotation angle isn't 0 so we can't use this test in this case
         const qreal eps = 0.05;
 
-        for (int i=0; i < points.size(); ++i)
+        for (auto p : points)
         {
-            QPointF p = points.at(i);
             const qreal equationRes = p.rx()*p.rx()/(radius1*radius1) + p.ry()*p.ry()/(radius2*radius2);
             const qreal diff = qAbs(equationRes - 1);
             const QString errorMsg = QString("Broken the first rule. Any point must satisfy the equation of ellipse."
@@ -371,7 +386,7 @@ void TST_VEllipticalArc::TestGetPoints3()
     if (VFuzzyComparePossibleNulls(arc.AngleArc(), 360.0))
     {// calculated full ellipse square
         const qreal ellipseSquare = M_PI * radius1 * radius2;
-        const qreal epsSquare = ellipseSquare * 0.5 / 100; // computing error 0.5 % from origin squere
+        const qreal epsSquare = ellipseSquare * 1.7 / 100; // computing error 0.5 % from origin squere
         const qreal arcSquare = qAbs(VAbstractPiece::SumTrapezoids(points)/2.0);
         const qreal diffSquare = qAbs(ellipseSquare - arcSquare);
         const QString errorMsg1 = QString("Broken the second rule. Interpolation has too big computing error. "
@@ -423,6 +438,8 @@ void TST_VEllipticalArc::TestRotation_data()
 
     QTest::newRow("Test el arc 1") << QPointF() << 10. << 20.0 << 1. << 91. << 0.<< QPointF() << 90. << "_r";
     QTest::newRow("Test el arc 2") << QPointF() << 10. << 20.0 << 0. << 90. << 0.<< QPointF() << 90. << "_r";
+    QTest::newRow("Test el arc 3.2") << QPointF(10, 10) << 10. << 20.0 << 0. << 90. << 0.<< QPointF() << 90. << "_r";
+    QTest::newRow("Test el arc 3.1") << QPointF(10, 10) << 10. << 20.0 << 1. << 91. << 0.<< QPointF() << 90. << "_r";
     QTest::newRow("Test el arc 3") << QPointF(10, 10) << 10. << 20.0 << 1. << 91. << 90.<< QPointF() << 90. << "_r";
     QTest::newRow("Test el arc 4") << QPointF(10, 10) << 10. << 20.0 << 0. << 90. << 90.<< QPointF() << 90. << "_r";
     QTest::newRow("Test el arc 5") << QPointF(10, 10) << 10. << 20.0 << 0. << 180. << 90.<< QPointF() << 90. << "_r";
@@ -448,8 +465,16 @@ void TST_VEllipticalArc::TestRotation()
     const VEllipticalArc arcOrigin(VPointF(center), radius1, radius2, startAngle, endAngle, rotationAngle);
     const VEllipticalArc rotatedArc = arcOrigin.Rotate(rotatePoint, degrees, prefix);
 
-    QVERIFY(qAbs(arcOrigin.AngleArc() - rotatedArc.AngleArc()) <= 0.4);
-    QVERIFY(qAbs(arcOrigin.GetLength() - rotatedArc.GetLength()) <= ToPixel(1, Unit::Mm));
+    QVERIFY2(qAbs(arcOrigin.AngleArc() - rotatedArc.AngleArc()) <= 1.6,
+            qUtf8Printable(QString("a1 = %1, a2 - %2").arg(arcOrigin.AngleArc()).arg(rotatedArc.AngleArc())));
+
+    QString errorLengthMsg =
+            QString("Difference between real and computing lengthes bigger than eps = %1. l1 = %2; l2 = %3");
+    QVERIFY2(qAbs(arcOrigin.GetLength() - rotatedArc.GetLength()) <= ToPixel(1, Unit::Mm),
+             qUtf8Printable(errorLengthMsg.arg(ToPixel(1, Unit::Mm))
+                            .arg(arcOrigin.GetLength())
+                            .arg(rotatedArc.GetLength())));
+
     QCOMPARE(arcOrigin.GetRadius1(), rotatedArc.GetRadius1());
     QCOMPARE(arcOrigin.GetRadius2(), rotatedArc.GetRadius2());
     QCOMPARE(arcOrigin.GetRotationAngle(), rotatedArc.GetRotationAngle());

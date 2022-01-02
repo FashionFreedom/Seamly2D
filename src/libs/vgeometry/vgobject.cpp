@@ -63,7 +63,7 @@
 #include "../ifc/ifcdef.h"
 #include "vgobject_p.h"
 
-const double VGObject::accuracyPointOnLine = (0.12/*mm*/ / 25.4) * PrintDPI;
+const double VGObject::accuracyPointOnLine = (0.1555/*mm*/ / 25.4) * 96.0;
 
 #ifdef Q_COMPILER_RVALUE_REFS
 VGObject &VGObject::operator=(VGObject &&obj) Q_DECL_NOTHROW { Swap(obj); return *this; }

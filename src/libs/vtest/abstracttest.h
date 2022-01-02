@@ -86,6 +86,7 @@ public:
 
 protected:
     void Comparison(const QVector<QPointF> &ekv, const QVector<QPointF> &ekvOrig) const;
+    void Comparison(const QPointF &result, const QPointF &expected, qreal testAccuracy) const;
 
     QString Seamly2DPath() const;
     QString SeamlyMePath() const;
