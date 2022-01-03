@@ -1,18 +1,11 @@
-name: Test build auto-release on cron (Saturday 8:30pm CST, Sunday 2:30am UTC)
+# This manual build file contains the same build steps as build-auto-release-on-cron.yml file.
+# Builds releases on demand.
 
-# cron format:
-# minute (0 - 59)
-# │ ┌───────────── hour (0 - 23)
-# │ │ ┌───────────── day of the month (1 - 31)
-# │ │ │ ┌───────────── month (1 - 12)
-# │ │ │ │ ┌───────────── day of the week (0 - 6)
-# │ │ │ │ │
-# │ │ │ │ │
-# │ │ │ │ │
-#'* * * * *'
+name: Build manual release all
+
 on:
   schedule:
-    - cron: '0 0 * * MON'
+    - cron: '30 1 * * MON'
 
 env:
   QT_SELECT: 5
@@ -46,10 +39,10 @@ jobs:
         with:
           tag_name:  ${{ steps.names.outputs.TAG_NAME }}
           release_name: ${{ steps.names.outputs.RELEASE_NAME }}
-          body: Test manual weekly release - unpublished full release
-          # create unpublished
-          draft: true
-          # create full release, not a pre-release
+          body: Build auto weekly release - Published full release
+          # create upublished
+          draft: false
+          # create a full release, not a pre-release
           prerelease: false
 
       - name: show UPLOAD_URL
@@ -95,12 +88,15 @@ jobs:
           name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
 
-      - name: find file path
-        id: path-lister
-        uses: Rishabh510/Path-lister-action@master
-        with:
-          path: "."
-          type: ".AppImage"
+      # Use path-lister to confirm where the appimage file was created...
+      # ... so that the file can be uploaded. Takes a lot of time.
+      # Don't delete, might need this someday
+      #- name: find file path
+      #  id: path-lister
+      #  uses: Rishabh510/Path-lister-action@master
+      #  with:
+      #    path: "."
+      #    type: ".AppImage"
 
       - name: show file path
         run: |
