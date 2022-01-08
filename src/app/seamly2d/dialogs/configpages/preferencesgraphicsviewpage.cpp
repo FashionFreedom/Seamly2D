@@ -64,6 +64,15 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 // Appearance preferences
     // Toolbar
     ui->toolBarStyle_CheckBox->setChecked(qApp->Seamly2DSettings()->getToolBarStyle());
+    ui->toolsToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowToolsToolBar());
+    ui->pointToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowPointToolBar());
+    ui->lineToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowLineToolBar());
+    ui->curveToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowCurveToolBar());
+    ui->arcToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowArcToolBar());
+    ui->operationToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowOpsToolBar());
+    ui->pieceToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowPieceToolBar());
+    ui->detailsToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowDetailsToolBar());
+    ui->layoutToolbar_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowLayoutToolBar());
 
     // Antialiasing
     ui->graphicsOutput_CheckBox->setChecked(qApp->Seamly2DSettings()->GetGraphicalOutput());
@@ -266,6 +275,15 @@ void PreferencesGraphicsViewPage::Apply()
     VSettings *settings = qApp->Seamly2DSettings();
 
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
+    settings->setShowToolsToolBar(ui->toolsToolbar_CheckBox->isChecked());
+    settings->setShowPointToolBar(ui->pointToolbar_CheckBox->isChecked());
+    settings->setShowLineToolBar(ui->lineToolbar_CheckBox->isChecked());
+    settings->setShowCurveToolBar(ui->curveToolbar_CheckBox->isChecked());
+    settings->setShowArcToolBar(ui->arcToolbar_CheckBox->isChecked());
+    settings->setShowOpsToolBar(ui->operationToolbar_CheckBox->isChecked());
+    settings->setShowPieceToolBar(ui->pieceToolbar_CheckBox->isChecked());
+    settings->setShowDetailsToolBar(ui->detailsToolbar_CheckBox->isChecked());
+    settings->setShowLayoutToolBar(ui->layoutToolbar_CheckBox->isChecked());
 
     // Appearance preferences
     // Toolbar

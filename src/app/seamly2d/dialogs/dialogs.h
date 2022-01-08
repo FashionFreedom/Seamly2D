@@ -58,5 +58,6 @@
 #include "dialognewpattern.h"
 #include "dialogaboutapp.h"
 #include "dialogpreferences.h"
+#include "dialogs/vwidgetgroups.h"
 
 #endif // DIALOGS_H

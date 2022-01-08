@@ -74,6 +74,9 @@ class CalculatorDialog;
 class DecimalChartDialog;
 class VWidgetGroups;
 class VWidgetDetails;
+class DraftToolBox;
+class PieceToolBox;
+class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
@@ -156,7 +159,7 @@ private slots:
     void exportPiecesAs();
     void exportDraftBlocksAs();
 
-    void handleArrowTool();
+    void handleArrowTool(bool checked);
     void handlePointAtDistanceAngleTool(bool checked);
     void handleAlongLineTool(bool checked);
     void handleMidpointTool(bool checked);
@@ -319,7 +322,6 @@ private:
     VWidgetDetails                   *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
-    QList<QToolButton*>               toolButtonPointerList;
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
     void                              SetDefaultHeight();
@@ -330,6 +332,9 @@ private:
     void                              initDraftToolBar();
     void                              initPointNameToolBar();
     void                              initToolsToolBar();
+    void                              initToolBarVisibility();
+    void                              updateToolBarVisibility();
+    void                              setToolBarVisibility(QToolBar *toolbar, bool visible);
     void                              InitToolButtons();
 
     void                              handlePointsMenu();
@@ -337,7 +342,6 @@ private:
     void                              handleArcsMenu();
     void                              handleCurvesMenu();
     void                              handleCirclesMenu();
-    void                              handleEllipsesMenu();
     void                              handleModifyMenu();
     void                              handlePatternPiecesMenu();
     void                              handleDetailsMenu();
