@@ -53,11 +53,12 @@
 #define DEF_H
 
 #include <qcompilerdetection.h>
-#include <QPrinter>
+#include <QLineF>
 #include <QString>
 #include <QStringList>
 #include <Qt>
 #include <QtGlobal>
+#include <QPrinter>
 #include <csignal>
 #ifdef Q_OS_WIN
     #include <windows.h>
@@ -453,6 +454,16 @@ QMarginsF GetPrinterFields(const QSharedPointer<QPrinter> &printer);
 Q_REQUIRED_RESULT QPixmap darkenPixmap(const QPixmap &pixmap);
 
 void ShowInGraphicalShell(const QString &filePath);
+
+constexpr qreal accuracyPointOnLine = (0.1555/*mm*/ / 25.4) * 96.0;
+
+Q_REQUIRED_RESULT static inline bool VFuzzyComparePoints(const QPointF &p1, const QPointF &p2,
+                                                         qreal accuracy = accuracyPointOnLine);
+
+static inline bool VFuzzyComparePoints(const QPointF &p1, const QPointF &p2, qreal accuracy)
+{
+    return QLineF(p1, p2).length() <= accuracy;
+}
 
 Q_REQUIRED_RESULT static inline bool VFuzzyComparePossibleNulls(double p1, double p2);
 static inline bool VFuzzyComparePossibleNulls(double p1, double p2)

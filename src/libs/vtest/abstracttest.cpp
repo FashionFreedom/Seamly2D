@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -68,10 +68,19 @@
 #include <QStringList>
 #include <QVector>
 #include <QtGlobal>
+#include <QLineF>
 
 #include "logging.h"
 #include "vsysexits.h"
+#include "../vgeometry/vgeometrydef.h"
 #include "../vgeometry/vgobject.h"
+#include "../vgeometry/vpointf.h"
+#include "../vgeometry/vspline.h"
+#include "../vgeometry/vsplinepath.h"
+#include "../vlayout/vabstractpiece.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vpiece.h"
+#include "../vpatterndb/vpiecenode.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 AbstractTest::AbstractTest(QObject *parent) :
@@ -84,17 +93,22 @@ void AbstractTest::Comparison(const QVector<QPointF> &ekv, const QVector<QPointF
 {
     // Begin comparison
     QCOMPARE(ekv.size(), ekvOrig.size());// First check if sizes equal
+    const qreal testAccuracy = (1.0/*mm*/ / 25.4) * PrintDPI;
 
     for (int i=0; i < ekv.size(); i++)
     {
-        const QPointF p1 = ekv.at(i);
-        const QPointF p2 = ekvOrig.at(i);
-        const QString msg = QString("Index: %1. Got '%2;%3', Expected '%4;%5'.")
-                .arg(i).arg(p1.x()).arg(p1.y()).arg(p2.x()).arg(p2.y());
-        // Check each point. Don't use comparison float values
-        QVERIFY2((qAbs(p1.x() - p2.x()) <= VGObject::accuracyPointOnLine)
-                 && (qAbs(p1.y() - p2.y()) <= VGObject::accuracyPointOnLine), qUtf8Printable(msg));
+        Comparison(ekv.at(i), ekvOrig.at(i), testAccuracy);
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void AbstractTest::Comparison(const QPointF &result, const QPointF &expected, qreal testAccuracy) const
+{
+    const QString msg = QStringLiteral("Actual '%2;%3', Expected '%4;%5'. Distance between points %6 mm.")
+            .arg(result.x()).arg(result.y()).arg(expected.x()).arg(expected.y())
+            .arg(UnitConvertor(QLineF(result, expected).length(), Unit::Px, Unit::Mm));
+    // Check each point. Don't use comparison float values
+    QVERIFY2(VFuzzyComparePoints(result, expected, testAccuracy), qUtf8Printable(msg));
 }
 
 //---------------------------------------------------------------------------------------------------------------------

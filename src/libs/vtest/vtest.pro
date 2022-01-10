@@ -8,7 +8,7 @@
 message("Entering vtest.pro")
 include(../../../common.pri)
 
-QT += testlib widgets
+QT += testlib widgets printsupport
 
 # Name of library
 TARGET = vtest

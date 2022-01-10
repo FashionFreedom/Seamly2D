@@ -29,9 +29,9 @@
 #ifndef TST_VELLIPTICALARC_H
 #define TST_VELLIPTICALARC_H
 
-#include <QObject>
+#include "../vtest/abstracttest.h"
 
-class TST_VEllipticalArc : public QObject
+class TST_VEllipticalArc : public AbstractTest
 {
     Q_OBJECT
 public:
