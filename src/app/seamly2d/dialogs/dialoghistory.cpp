@@ -442,7 +442,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
                            doc->GetParametrString(domElem, AttrSuffix, QString()));
             case Tool::Move:
                 return tr("Move objects, rotate around point %1. Suffix '%2'")
-                          .arg(PointName(AttrUInt(domElem, AttrRotationAngle)),
+                          .arg(PointName(AttrUInt(domElem, AttrCenter)),
                           doc->GetParametrString(domElem, AttrSuffix, QString()));
 
             //Because "history" not only show history of pattern, but help restore current data for each pattern's
