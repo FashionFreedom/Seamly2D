@@ -64,7 +64,7 @@ jobs:
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
       - name: build Seamly2D appimage
-        # uses parameters from appimage-build.yml to build appimage
+        # uses parameters from appimage-builder-recipe.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
         run: |
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
