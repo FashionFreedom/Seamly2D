@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(schema);
     Q_INIT_RESOURCE(flags);
 
-    QT_REQUIRE_VERSION(argc, argv, "5.13.2")
+    QT_REQUIRE_VERSION(argc, argv, "5.15.2")
 
     //------------------------------------------------------------------------
     // On macOS, correct WebView / QtQuick compositing and stacking requires running
