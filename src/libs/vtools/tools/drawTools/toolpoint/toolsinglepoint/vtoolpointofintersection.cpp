@@ -131,7 +131,7 @@ VToolPointOfIntersection *VToolPointOfIntersection::Create(QSharedPointer<Dialog
     const quint32 firstPointId = dialogTool->GetFirstPointId();
     const quint32 secondPointId = dialogTool->GetSecondPointId();
     const QString pointName = dialogTool->getPointName();
-    VToolPointOfIntersection *point = Create(0, pointName, firstPointId, secondPointId, 5, 10, scene, doc,
+    VToolPointOfIntersection *point = Create(0, pointName, firstPointId, secondPointId, 5, 10, true, scene, doc,
                                              data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -158,9 +158,9 @@ VToolPointOfIntersection *VToolPointOfIntersection::Create(QSharedPointer<Dialog
  */
 VToolPointOfIntersection *VToolPointOfIntersection::Create(const quint32 _id, const QString &pointName,
                                                            const quint32 &firstPointId, const quint32 &secondPointId,
-                                                           qreal mx, qreal my, VMainGraphicsScene *scene,
-                                                           VAbstractPattern *doc, VContainer *data,
-                                                           const Document &parse,
+                                                           qreal mx, qreal my, bool showPointName,
+                                                           VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                                           VContainer *data, const Document &parse,
                                                            const Source &typeCreation)
 {
     const QSharedPointer<VPointF> firstPoint = data->GeometricObject<VPointF>(firstPointId);
@@ -168,13 +168,16 @@ VToolPointOfIntersection *VToolPointOfIntersection::Create(const quint32 _id, co
 
     QPointF point(firstPoint->x(), secondPoint->y());
     quint32 id = _id;
+    VPointF *p = new VPointF(point, pointName, mx, my);
+    p->setShowPointName(showPointName);
+
     if (typeCreation == Source::FromGui)
     {
-        id = data->AddGObject(new VPointF(point, pointName, mx, my));
+        id = data->AddGObject(p);
     }
     else
     {
-        data->UpdateGObject(id, new VPointF(point, pointName, mx, my));
+        data->UpdateGObject(id, p);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
