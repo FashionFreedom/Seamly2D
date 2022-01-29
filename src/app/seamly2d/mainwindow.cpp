@@ -5645,7 +5645,8 @@ void MainWindow::CreateActions()
     connect(ui->reportBug_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Reporting bug");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://github.com/fashionfreedom/seamly2d/issues/new")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral(
+            "https://github.com/FashionFreedom/Seamly2D/issues/new?&labels=bug&template=bug_report.md&title=BUG%3A")));
     });
 
     connect(ui->aboutQt_Action, &QAction::triggered, this, [this]()
