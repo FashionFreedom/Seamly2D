@@ -584,6 +584,10 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
                "Alternatively you can use the %1 environment variable.").arg("QT_AUTO_SCREEN_SCALE_FACTOR=0"));
     parser.addOption(scalingOption);
     //-----
+    QCommandLineOption csvOption (QStringList() << "exportCsvPath",
+            tr("Use for unit testing. Run the program and open a file without showing the main window."));
+    parser.addOption(csvOption);
+    //-----
     parser.process(arguments);
 
     bool flagHeight = false;
@@ -698,6 +702,9 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
 
         for (int i = 0; i < args.size(); ++i)
         {
+            if(!args.at(i).endsWith(".vit")) {
+                continue;
+            }
             NewMainWindow();
             if (not MainWindow()->LoadFile(args.at(i)))
             {
@@ -736,6 +743,17 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
             qCCritical(mApp, "%s\n", qPrintable(tr("Please, provide one input file.")));
             parser.showHelp(V_EX_USAGE);
         }
+    }
+
+    if(parser.isSet(csvOption)) {
+        QString path = "";
+        for(int i = 0; i < args.size(); i++) {
+            if(args[i].endsWith(".csv")) {
+                path = args[i];
+            }
+        }
+        this->MainWindow()->ExportDataToCSV(path, true, ',', 0);
+        qApp->exit(V_EX_OK);
     }
 
     if (testMode)

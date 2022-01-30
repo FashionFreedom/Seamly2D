@@ -84,6 +84,7 @@ public:
     void                SetPUnit(Unit unit);
 
     bool                LoadFile(const QString &path);
+    void                ExportDataToCSV(const QString &fileName, bool withHeader, QChar separator, int mib);
 
 public slots:
     virtual void        ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;

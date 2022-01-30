@@ -689,50 +689,56 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
 {
-	QxtCsvModel csv;
-	const int columns = ui->tableWidget->columnCount();
-	{
-		int colCount = 0;
-		for (int column = 0; column < columns; ++column)
-		{
-			if (not ui->tableWidget->isColumnHidden(column))
-			{
-				csv.insertColumn(colCount++);
-			}
-		}
-	}
+    ExportDataToCSV(fileName, dialog.WithHeader(), dialog.Separator(), dialog.SelectedMib());
+}
 
-	if (dialog.WithHeader())
-	{
-		int colCount = 0;
-		for (int column = 0; column < columns; ++column)
-		{
-			if (not ui->tableWidget->isColumnHidden(column))
-			{
-				QTableWidgetItem *header = ui->tableWidget->horizontalHeaderItem(colCount);
-				csv.setHeaderText(colCount, header->text());
-				++colCount;
-			}
-		}
-	}
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::ExportDataToCSV(const QString &fileName, bool withHeader, QChar separator, int mib){
+    QxtCsvModel csv;
+    const int columns = ui->tableWidget->columnCount();
+    {
+        int colCount = 0;
+        for (int column = 0; column < columns; ++column)
+        {
+            if (not ui->tableWidget->isColumnHidden(column))
+            {
+                csv.insertColumn(colCount++);
+            }
+        }
+    }
 
-	const int rows = ui->tableWidget->rowCount();
-	for (int row = 0; row < rows; ++row)
-	{
-		csv.insertRow(row);
-		int colCount = 0;
-		for (int column = 0; column < columns; ++column)
-		{
-			if (not ui->tableWidget->isColumnHidden(column))
-			{
-				QTableWidgetItem *item = ui->tableWidget->item(row, column);
-				csv.setText(row, colCount, item->text());
-				++colCount;
-			}
-		}
-	}
+    if (withHeader)
+    {
+        int colCount = 0;
+        for (int column = 0; column < columns; ++column)
+        {
+            if (not ui->tableWidget->isColumnHidden(column))
+            {
+                QTableWidgetItem *header = ui->tableWidget->horizontalHeaderItem(colCount);
+                csv.setHeaderText(colCount, header->text());
+                ++colCount;
+            }
+        }
+    }
 
-	csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), QTextCodec::codecForMib(dialog.SelectedMib()));
+    const int rows = ui->tableWidget->rowCount();
+    for (int row = 0; row < rows; ++row)
+    {
+        csv.insertRow(row);
+        int colCount = 0;
+        for (int column = 0; column < columns; ++column)
+        {
+            if (not ui->tableWidget->isColumnHidden(column))
+            {
+                QTableWidgetItem *item = ui->tableWidget->item(row, column);
+                csv.setText(row, colCount, item->text());
+                ++colCount;
+            }
+        }
+    }
+
+    csv.toCSV(fileName, withHeader, separator, QTextCodec::codecForMib(mib));
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
