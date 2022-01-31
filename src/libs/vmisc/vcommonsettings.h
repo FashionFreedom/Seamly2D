@@ -135,6 +135,33 @@ public:
     bool                 getToolBarStyle() const;
     void                 setToolBarStyle(const bool &value);
 
+    bool                 getShowToolsToolBar() const;
+    void                 setShowToolsToolBar(const bool &value);
+
+    bool                 getShowPointToolBar() const;
+    void                 setShowPointToolBar(const bool &value);
+
+    bool                 getShowLineToolBar() const;
+    void                 setShowLineToolBar(const bool &value);
+
+    bool                 getShowCurveToolBar() const;
+    void                 setShowCurveToolBar(const bool &value);
+
+    bool                 getShowArcToolBar() const;
+    void                 setShowArcToolBar(const bool &value);
+
+    bool                 getShowOpsToolBar() const;
+    void                 setShowOpsToolBar(const bool &value);
+
+    bool                 getShowPieceToolBar() const;
+    void                 setShowPieceToolBar(const bool &value);
+
+    bool                 getShowDetailsToolBar() const;
+    void                 setShowDetailsToolBar(const bool &value);
+
+    bool                 getShowLayoutToolBar() const;
+    void                 setShowLayoutToolBar(const bool &value);
+
     bool                 getShowScrollBars() const;
     void                 setShowScrollBars(const bool &value);
 

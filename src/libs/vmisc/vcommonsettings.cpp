@@ -91,6 +91,16 @@ const QString settingConfigurationMirrorByAxisSuffix     = QStringLiteral("confi
 const QString settingConfigurationMirrorByLineSuffix     = QStringLiteral("configuration/mirrorByLineSuffix");
 
 const QString settingGraphicsViewToolBarStyle            = QStringLiteral("graphicsview/tool_bar_style");
+const QString settingGraphicsViewShowToolsToolBar        = QStringLiteral("graphicsview/showToolsToolbar");
+const QString settingGraphicsViewShowPointToolBar        = QStringLiteral("graphicsview/showPointToolbar");
+const QString settingGraphicsViewShowLineToolBar         = QStringLiteral("graphicsview/showLineToolbar");
+const QString settingGraphicsViewShowCurveToolBar        = QStringLiteral("graphicsview/showCurveToolbar");
+const QString settingGraphicsViewShowArcToolBar          = QStringLiteral("graphicsview/showArcToolbar");
+const QString settingGraphicsViewShowOpsToolBar          = QStringLiteral("graphicsview/showOpsToolbar");
+const QString settingGraphicsViewShowPieceToolBar        = QStringLiteral("graphicsview/showPieceToolbar");
+const QString settingGraphicsViewShowDetailsToolBar      = QStringLiteral("graphicsview/showDetailsToolbar");
+const QString settingGraphicsViewShowLayoutToolBar       = QStringLiteral("graphicsview/showLayoutToolbar");
+
 const QString settingGraphicsViewShowScrollBars          = QStringLiteral("graphicsview/showScrollBars");
 const QString settingGraphicsViewScrollBarWidth          = QStringLiteral("graphicsview/scrollBarWidth");
 const QString settingGraphicsViewScrollDuration          = QStringLiteral("graphicsview/scrollDuration");
@@ -610,7 +620,7 @@ void VCommonSettings::setMirrorByLineSuffix(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getToolBarStyle() const
 {
-    return value(settingGraphicsViewToolBarStyle, 1).toBool();
+    return value(settingGraphicsViewToolBarStyle, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -619,6 +629,113 @@ void VCommonSettings::setToolBarStyle(const bool &value)
     setValue(settingGraphicsViewToolBarStyle, value);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowToolsToolBar() const
+{
+    return value(settingGraphicsViewShowToolsToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowToolsToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowToolsToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowPointToolBar() const
+{
+    return value(settingGraphicsViewShowPointToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowPointToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowPointToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowLineToolBar() const
+{
+    return value(settingGraphicsViewShowLineToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowLineToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowLineToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowCurveToolBar() const
+{
+    return value(settingGraphicsViewShowCurveToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowCurveToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowCurveToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowArcToolBar() const
+{
+    return value(settingGraphicsViewShowArcToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowArcToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowArcToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowOpsToolBar() const
+{
+    return value(settingGraphicsViewShowOpsToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowOpsToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowOpsToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowPieceToolBar() const
+{
+    return value(settingGraphicsViewShowPieceToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowPieceToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowPieceToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowDetailsToolBar() const
+{
+    return value(settingGraphicsViewShowDetailsToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowDetailsToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowDetailsToolBar, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowLayoutToolBar() const
+{
+    return value(settingGraphicsViewShowLayoutToolBar, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowLayoutToolBar(const bool &value)
+{
+    setValue(settingGraphicsViewShowLayoutToolBar, value);
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 bool  VCommonSettings::getShowScrollBars() const

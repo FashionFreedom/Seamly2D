@@ -81,7 +81,7 @@
 #include "tools/nodeDetails/vtoolpin.h"
 #include "tools/vtooluniondetails.h"
 #include "dialogs/dialogs.h"
-#include "dialogs/vwidgetgroups.h"
+
 #include "../vtools/undocommands/addgroup.h"
 #include "dialogs/vwidgetdetails.h"
 #include "dialogs/calculator_dialog.h"
@@ -180,7 +180,6 @@ MainWindow::MainWindow(QWidget *parent)
     , groupsWidget(nullptr)
     , patternPiecesWidget(nullptr)
     , lock(nullptr)
-    , toolButtonPointerList()
     , zoomScaleSpinBox(nullptr)
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
@@ -225,9 +224,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     InitAutoSave();
 
-    ui->tools_ToolBox->setCurrentIndex(0);
+    ui->draft_ToolBox->setCurrentIndex(0);
 
     ReadSettings();
+    initToolBarVisibility();
 
     setCurrentFile("");
     WindowsLocale();
@@ -731,7 +731,7 @@ void MainWindow::ClosedDialog(int result)
         // Do not check for nullptr! See issue #719.
         ui->view->itemClicked(tool);
     }
-    handleArrowTool();
+    handleArrowTool(true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -755,7 +755,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
         vtool->DialogLinkDestroy();
         connect(vtool, &DrawTool::ToolTip, this, &MainWindow::ShowToolTip);
     }
-    handleArrowTool();
+    handleArrowTool(true);
     ui->view->itemClicked(vtool);// Don't check for nullptr here
     // If insert not to the end of file call lite parse
     if (doc->getCursor() > 0)
@@ -1395,7 +1395,7 @@ void MainWindow::ClosedDialogGroup(int result)
             qApp->getUndoStack()->push(addGroup);
         }
     }
-    handleArrowTool();
+    handleArrowTool(true);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1533,7 +1533,7 @@ void MainWindow::ClosedDialogAnchorPoint(int result)
     {
         VToolPin::Create(dialogTool, doc, pattern);
     }
-    handleArrowTool();
+    handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
 }
 
@@ -1559,7 +1559,7 @@ void MainWindow::ClosedDialogInternalPath(int result)
     {
         VToolInternalPath::Create(dialogTool, pieceScene, doc, pattern);
     }
-    handleArrowTool();
+    handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
 }
 
@@ -1587,7 +1587,7 @@ void MainWindow::ClosedDialogInsertNode(int result)
         SCASSERT(dTool != nullptr)
         VToolSeamAllowance::InsertNode(dTool->GetNode(), dTool->GetPieceId(), pieceScene, pattern, doc);
     }
-    handleArrowTool();
+    handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
 }
 
@@ -2295,6 +2295,76 @@ void MainWindow::initToolsToolBar()
 
 }
 
+void MainWindow::initToolBarVisibility()
+{
+    updateToolBarVisibility();
+    connect(ui->tools_ToolBox_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->tools_ToolBox_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowToolsToolBar(visible);
+    });
+    connect(ui->points_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->points_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowPointToolBar(visible);
+    });
+    connect(ui->lines_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->lines_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowLineToolBar(visible);
+    });
+    connect(ui->curves_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->curves_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowCurveToolBar(visible);
+    });
+    connect(ui->arcs_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->arcs_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowArcToolBar(visible);
+    });
+    connect(ui->operations_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->operations_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowOpsToolBar(visible);
+    });
+    connect(ui->pieces_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->pieces_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowPieceToolBar(visible);
+    });
+    connect(ui->details_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->details_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowDetailsToolBar(visible);
+    });
+    connect(ui->layout_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
+    {
+        ui->layout_ToolBar->setVisible(visible);
+        qApp->Settings()->setShowLayoutToolBar(visible);
+    });
+}
+
+void MainWindow::updateToolBarVisibility()
+{
+    setToolBarVisibility(ui->tools_ToolBox_ToolBar, qApp->Settings()->getShowToolsToolBar());
+    setToolBarVisibility(ui->points_ToolBar, qApp->Settings()->getShowPointToolBar());
+    setToolBarVisibility(ui->lines_ToolBar, qApp->Settings()->getShowLineToolBar());
+    setToolBarVisibility(ui->curves_ToolBar, qApp->Settings()->getShowCurveToolBar());
+    setToolBarVisibility(ui->arcs_ToolBar, qApp->Settings()->getShowArcToolBar());
+    setToolBarVisibility(ui->operations_ToolBar, qApp->Settings()->getShowOpsToolBar());
+    setToolBarVisibility(ui->pieces_ToolBar, qApp->Settings()->getShowPieceToolBar());
+    setToolBarVisibility(ui->details_ToolBar, qApp->Settings()->getShowDetailsToolBar());
+    setToolBarVisibility(ui->layout_ToolBar, qApp->Settings()->getShowLayoutToolBar());
+}
+
+void MainWindow::setToolBarVisibility(QToolBar *toolbar, bool visible)
+{
+    toolbar->blockSignals(true);
+    toolbar->setVisible(visible);
+    toolbar->blockSignals(false);
+}
+
 void MainWindow::zoomScaleChanged(qreal scale)
 {
     zoomScaleSpinBox->blockSignals(true);
@@ -2361,19 +2431,7 @@ void MainWindow::zoomPan()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitToolButtons()
 {
-    toolButtonPointerList.append(ui->pointPointer_ToolButton);
-    toolButtonPointerList.append(ui->linePointer_ToolButton);
-    toolButtonPointerList.append(ui->curvePointer_ToolButton);
-    toolButtonPointerList.append(ui->arcPointer_ToolButton);
-    toolButtonPointerList.append(ui->ellipticalArcPointer_ToolButton);
-    toolButtonPointerList.append(ui->operationsPointer_ToolButton);
-    toolButtonPointerList.append(ui->detailsPointer_ToolButton);
-    toolButtonPointerList.append(ui->piecePointer_ToolButton);
-
-    for (auto pointer : toolButtonPointerList)
-    {
-        connect(pointer, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
-    }
+    connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
 
     // This check helps to find missed tools
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Check if all tools were connected.");
@@ -2458,67 +2516,67 @@ void MainWindow::handlePointsMenu()
     }
     else if (selectedAction == action_Midpoint)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->midpoint_ToolButton->setChecked(true);
         handleMidpointTool(true);
     }
     else if (selectedAction == action_PointAtDA)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointAtDistanceAngle_ToolButton->setChecked(true);
         handlePointAtDistanceAngleTool(true);
     }
     else if (selectedAction == action_PointAlongLine)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->alongLine_ToolButton->setChecked(true);
         handleAlongLineTool(true);
     }
     else if (selectedAction == action_AlongPerpendicular)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->normal_ToolButton->setChecked(true);
         handleNormalTool(true);
     }
     else if (selectedAction == action_Bisector)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->bisector_ToolButton->setChecked(true);
         handleBisectorTool(true);
     }
     else if (selectedAction == action_Shoulder)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->shoulderPoint_ToolButton->setChecked(true);
         handleShoulderPointTool(true);
     }
     else if (selectedAction == action_PointOfContact)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointOfContact_ToolButton->setChecked(true);
         handlePointOfContactTool(true);
     }
     else if (selectedAction == action_Triangle)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->triangle_ToolButton->setChecked(true);
         handleTriangleTool(true);
     }
     else if (selectedAction == action_PointOfIntersection)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointOfIntersection_ToolButton->setChecked(true);
         handlePointOfIntersectionTool(true);
     }
     else if (selectedAction == action_PerpendicularPoint)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->height_ToolButton->setChecked(true);
         handleHeightTool(true);
     }
     else if (selectedAction == action_PointIntersectAxis)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->lineIntersectAxis_ToolButton->setChecked(true);
         handleLineIntersectAxisTool(true);
     }
@@ -2540,13 +2598,13 @@ void MainWindow::handleLinesMenu()
     }
     else if (selectedAction == action_Line)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->lines_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->lines_Page);
         ui->line_ToolButton->setChecked(true);
         handleLineTool(true);
     }
     else if (selectedAction == action_LineIntersect)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->lines_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->lines_Page);
         ui->lineIntersect_ToolButton->setChecked(true);
         handleLineIntersectTool(true);
     }
@@ -2565,6 +2623,7 @@ void MainWindow::handleArcsMenu()
     QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Tangency Point of Circle and Tangent"));
     QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Tangency Point of Arc and Tangent"));
     QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Arc with Length"));
+    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical Arc"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2574,51 +2633,57 @@ void MainWindow::handleArcsMenu()
     }
     else if (selectedAction == action_Arc)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->arc_ToolButton->setChecked(true);
         handleArcTool(true);
     }
     else if (selectedAction == action_PointAlongArc)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointAlongArc_ToolButton->setChecked(true);
         handlePointAlongArcTool(true);
     }
     else if (selectedAction == action_ArcIntersectAxis)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->arcIntersectAxis_ToolButton->setChecked(true);
         handleArcIntersectAxisTool(true);
     }
     else if (selectedAction == action_ArcIntersectArc)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointOfIntersectionArcs_ToolButton->setChecked(true);
         handlePointOfIntersectionArcsTool(true);
     }
     else if (selectedAction == action_CircleIntersect)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointOfIntersectionCircles_ToolButton->setChecked(true);
         handlePointOfIntersectionCirclesTool(true);
     }
     else if (selectedAction == action_CircleTangent)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointFromCircleAndTangent_ToolButton->setChecked(true);
         handlePointFromCircleAndTangentTool(true);
     }
     else if (selectedAction == action_ArcTangent)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointFromArcAndTangent_ToolButton->setChecked(true);
         handlePointFromArcAndTangentTool(true);
     }
     else if (selectedAction == action_ArcWithLength)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->arcWithLength_ToolButton->setChecked(true);
         handleArcWithLengthTool(true);
+    }
+    else if (selectedAction == action_EllipticalArc)
+    {
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->ellipticalArc_ToolButton->setChecked(true);
+        handleEllipticalArcTool(true);
     }
 }
 
@@ -2644,49 +2709,49 @@ void MainWindow::handleCurvesMenu()
     }
     else if (selectedAction == action_Curve)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->curve_ToolButton->setChecked(true);
         handleCurveTool(true);
     }
     else if (selectedAction == action_Spline)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->spline_ToolButton->setChecked(true);
         handleSplineTool(true);
     }
     else if (selectedAction == action_PointAlongCurve)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->pointAlongCurve_ToolButton->setChecked(true);
         handlePointAlongCurveTool(true);
     }
     else if (selectedAction == action_PointAlongSpline)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->pointAlongSpline_ToolButton->setChecked(true);
         handlePointAlongSplineTool(true);
     }
     else if (selectedAction == action_CurveWithCPs)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->curveWithCPs_ToolButton->setChecked(true);
         handleCurveWithControlPointsTool(true);
     }
     else if (selectedAction == action_SplineWithCPs)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->splineWithCPs_ToolButton->setChecked(true);
         handleSplineWithControlPointsTool(true);
     }
     else if (selectedAction == action_CurveIntersectCurve)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->pointOfIntersectionCurves_ToolButton->setChecked(true);
         handleCurveIntersectCurveTool(true);
     }
     else if (selectedAction == action_CurveIntersectAxis)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->curveIntersectAxis_ToolButton->setChecked(true);
         handleCurveIntersectAxisTool(true);
     }
@@ -2696,27 +2761,6 @@ void MainWindow::handleCirclesMenu()
 {
     qCDebug(vMainWindow, "Circles Menu selected. \n");
 
-}
-
-void MainWindow::handleEllipsesMenu()
-{
-    qCDebug(vMainWindow, "Ellipses Menu selected. \n");
-    QMenu menu;
-
-    QAction *action_EllipticalArc = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"), tr("Elliptical Arc"));
-
-    QAction *selectedAction = menu.exec(QCursor::pos());
-
-    if(selectedAction == nullptr)
-    {
-        return;
-    }
-    else if (selectedAction == action_EllipticalArc)
-    {
-        ui->tools_ToolBox->setCurrentWidget(ui->ellipses_Page);
-        ui->ellipticalArc_ToolButton->setChecked(true);
-        handleEllipticalArcTool(true);
-    }
 }
 
 void MainWindow::handleModifyMenu()
@@ -2740,43 +2784,43 @@ void MainWindow::handleModifyMenu()
     }
     else if (selectedAction == action_Group)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->group_ToolButton->setChecked(true);
         handleGroupTool(true);
     }
     else if (selectedAction == action_Rotate)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->rotation_ToolButton->setChecked(true);
         handleRotationTool(true);
     }
     else if (selectedAction == action_MirrorByLine)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->mirrorByLine_ToolButton->setChecked(true);
         handleMirrorByLineTool(true);
     }
     else if (selectedAction == action_MirrorByAxis)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->mirrorByAxis_ToolButton->setChecked(true);
         handleMirrorByAxisTool(true);
     }
     else if (selectedAction == action_Move)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->move_ToolButton->setChecked(true);
         handleMoveTool(true);
     }
     else if (selectedAction == action_TrueDarts)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->trueDarts_ToolButton->setChecked(true);
         handleTrueDartTool(true);
     }
     else if (selectedAction == action_ExportDraftBlocks)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         exportDraftBlocksAs();
     }
 }
@@ -2803,25 +2847,25 @@ void MainWindow::handleDetailsMenu()
     }
     else if (selectedAction == action_Piece)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->addPatternPiece_ToolButton->setChecked(true);
         handlePatternPieceTool(true);
     }
     else if (selectedAction == action_AnchorPoint)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->anchorPoint_ToolButton->setChecked(true);
         handleAnchorPointTool(true);
     }
     else if (selectedAction == action_InternalPath)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->internalPath_ToolButton->setChecked(true);
         handleInternalPathTool(true);
     }
     else if (selectedAction == action_InsertNode)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->insertNode_ToolButton->setChecked(true);
         handleInsertNodeTool(true);
     }
@@ -2842,13 +2886,13 @@ void MainWindow::handlePatternPiecesMenu()
     }
     else if (selectedAction == action_Union)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->pieces_Page);
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         ui->unitePieces_ToolButton->setChecked(true);
         handleUnionDetailsTool(true);
     }
     else if (selectedAction == action_ExportPieces)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->pieces_Page);
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
     }
 }
@@ -2860,8 +2904,8 @@ void MainWindow::handleLayoutMenu()
 
     QMenu menu;
 
-    QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layoutsettings.png"), tr("New Layout (LN)"));
-    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout (LE)"));
+    QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layout_settings.png"), tr("New Print Layout (NL)"));
+    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout (EL)"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2871,13 +2915,13 @@ void MainWindow::handleLayoutMenu()
     }
     else if (selectedAction == action_NewLayout)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->layout_Page);
+        ui->layout_ToolBox->setCurrentWidget(ui->layout_Page);
         ui->layoutSettings_ToolButton->setChecked(true);
         handleNewLayout(true);
     }
     else if (selectedAction == action_ExportLayout)
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->layout_Page);
+        ui->layout_ToolBox->setCurrentWidget(ui->layout_Page);
         exportLayoutAs();
     }
 }
@@ -2927,10 +2971,8 @@ void MainWindow::CancelTool()
     switch ( currentTool )
     {
         case Tool::Arrow:
-            for (auto pointer : toolButtonPointerList)
-            {
-                pointer->setChecked(false);
-            }
+            ui->arrowPointer_ToolButton->setChecked(false);
+            ui->arrow_Action->setChecked(false);
             helpLabel->setText("");
 
             // Crash: using CRTL+Z while using line tool.
@@ -3089,49 +3131,55 @@ QT_WARNING_POP
 /**
  * @brief handleArrowTool enable arrow tool.
  */
-void  MainWindow::handleArrowTool()
+void  MainWindow::handleArrowTool(bool checked)
 {
-    qCDebug(vMainWindow, "Arrow tool.");
-    CancelTool();
-    for (auto pointer : toolButtonPointerList)
+    if (checked && currentTool != Tool::Arrow)
     {
-        pointer->setChecked(true);
+        qCDebug(vMainWindow, "Arrow tool.");
+        CancelTool();
+        ui->arrowPointer_ToolButton->setChecked(true);
+        ui->arrow_Action->setChecked(true);
+        currentTool = Tool::Arrow;
+        emit EnableItemMove(true);
+        emit ItemsSelection(SelectionType::ByMouseRelease);
+        VAbstractTool::m_suppressContextMenu = false;
+
+        // Only true for rubber band selection
+        emit EnableLabelSelection(true);
+        emit EnablePointSelection(false);
+        emit EnableLineSelection(false);
+        emit EnableArcSelection(false);
+        emit EnableElArcSelection(false);
+        emit EnableSplineSelection(false);
+        emit EnableSplinePathSelection(false);
+        emit EnableNodeLabelSelection(true);
+        emit EnableNodePointSelection(true);
+        emit EnableDetailSelection(true);// Disable when done visualization details
+
+        // Hovering
+        emit EnableLabelHover(true);
+        emit EnablePointHover(true);
+        emit EnableLineHover(true);
+        emit EnableArcHover(true);
+        emit EnableElArcHover(true);
+        emit EnableSplineHover(true);
+        emit EnableSplinePathHover(true);
+        emit EnableNodeLabelHover(true);
+        emit EnableNodePointHover(true);
+        emit EnableDetailHover(true);
+
+        ui->view->allowRubberBand(true);
+
+        ui->view->viewport()->unsetCursor();
+        helpLabel->setText("");
+        ui->view->setShowToolOptions(true);
+        qCDebug(vMainWindow, "Enabled arrow tool.");
     }
-    currentTool = Tool::Arrow;
-    emit EnableItemMove(true);
-    emit ItemsSelection(SelectionType::ByMouseRelease);
-    VAbstractTool::m_suppressContextMenu = false;
-
-    // Only true for rubber band selection
-    emit EnableLabelSelection(true);
-    emit EnablePointSelection(false);
-    emit EnableLineSelection(false);
-    emit EnableArcSelection(false);
-    emit EnableElArcSelection(false);
-    emit EnableSplineSelection(false);
-    emit EnableSplinePathSelection(false);
-    emit EnableNodeLabelSelection(true);
-    emit EnableNodePointSelection(true);
-    emit EnableDetailSelection(true);// Disable when done visualization details
-
-    // Hovering
-    emit EnableLabelHover(true);
-    emit EnablePointHover(true);
-    emit EnableLineHover(true);
-    emit EnableArcHover(true);
-    emit EnableElArcHover(true);
-    emit EnableSplineHover(true);
-    emit EnableSplinePathHover(true);
-    emit EnableNodeLabelHover(true);
-    emit EnableNodePointHover(true);
-    emit EnableDetailHover(true);
-
-    ui->view->allowRubberBand(true);
-
-    ui->view->viewport()->unsetCursor();
-    helpLabel->setText("");
-    ui->view->setShowToolOptions(true);
-    qCDebug(vMainWindow, "Enabled arrow tool.");
+    else
+    {
+        ui->arrowPointer_ToolButton->setChecked(true);
+        ui->arrow_Action->setChecked(true);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3144,7 +3192,7 @@ void MainWindow::keyPressEvent ( QKeyEvent * event )
     switch (event->key())
     {
         case Qt::Key_Escape:
-            handleArrowTool();
+            handleArrowTool(true);
             break;
         case Qt::Key_Return:
         case Qt::Key_Enter:
@@ -3205,8 +3253,9 @@ void MainWindow::draftMode_Action(bool checked)
 {
     if (checked)
     {
+        ui->toolbox_StackedWidget->setCurrentIndex(0);
         qCDebug(vMainWindow, "Show draft scene");
-        handleArrowTool();
+        handleArrowTool(true);
 
         leftGoToStage->setPixmap(QPixmap("://icon/24x24/fast_forward_left_to_right_arrow.png"));
         rightGoToStage->setPixmap(QPixmap("://icon/24x24/left_to_right_arrow.png"));
@@ -3238,7 +3287,7 @@ void MainWindow::draftMode_Action(bool checked)
 
         ui->useToolColor_Action->setChecked(qApp->Settings()->getUseToolColor());
 
-        ui->tools_ToolBox->setCurrentIndex(currentToolBoxIndex);
+        ui->draft_ToolBox->setCurrentIndex(currentToolBoxIndex);
 
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
@@ -3270,7 +3319,8 @@ void MainWindow::ActionDetails(bool checked)
 {
     if (checked)
     {
-        handleArrowTool();
+        ui->toolbox_StackedWidget->setCurrentIndex(1);
+        handleArrowTool(true);
 
         if(drawMode)
         {
@@ -3310,7 +3360,7 @@ void MainWindow::ActionDetails(bool checked)
 
         if (mode == Draw::Calculation)
         {
-            currentToolBoxIndex = ui->tools_ToolBox->currentIndex();
+            currentToolBoxIndex = ui->piece_ToolBox->currentIndex();
         }
         mode = Draw::Modeling;
         setEnableTools(true);
@@ -3320,7 +3370,7 @@ void MainWindow::ActionDetails(bool checked)
 
         updateViewToolbar();
 
-        ui->tools_ToolBox->setCurrentIndex(ui->tools_ToolBox->indexOf(ui->pieces_Page));
+        ui->piece_ToolBox->setCurrentIndex(ui->piece_ToolBox->indexOf(ui->details_Page));
 
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
@@ -3355,7 +3405,8 @@ void MainWindow::ActionLayout(bool checked)
 {
     if (checked)
     {
-        handleArrowTool();
+        ui->toolbox_StackedWidget->setCurrentIndex(2);
+        handleArrowTool(true);
 
         if(drawMode)
         {
@@ -3432,12 +3483,12 @@ void MainWindow::ActionLayout(bool checked)
 
         if (mode == Draw::Calculation)
         {
-            currentToolBoxIndex = ui->tools_ToolBox->currentIndex();
+            currentToolBoxIndex = ui->layout_ToolBox->currentIndex();
         }
         mode = Draw::Layout;
         setEnableTools(true);
         SetEnableWidgets(true);
-        ui->tools_ToolBox->setCurrentIndex(ui->tools_ToolBox->indexOf(ui->layout_Page));
+        ui->layout_ToolBox->setCurrentIndex(ui->layout_ToolBox->indexOf(ui->layout_Page));
 
         mouseCoordinate->setText("");
 
@@ -3720,7 +3771,7 @@ void MainWindow::Clear()
     qCDebug(vMainWindow, "Clearing scenes.");
     draftScene->clear();
     pieceScene->clear();
-    handleArrowTool();
+    handleArrowTool(true);
     comboBoxDraws->clear();
     ui->draftMode_Action->setEnabled(false);
     ui->pieceMode_Action->setEnabled(false);
@@ -3965,7 +4016,7 @@ void MainWindow::SetEnabledGUI(bool enabled)
     {
         if (enabled == false)
         {
-            handleArrowTool();
+            handleArrowTool(true);
             qApp->getUndoStack()->clear();
         }
         SetEnableWidgets(enabled);
@@ -4334,8 +4385,6 @@ void MainWindow::setEnableTools(bool enable)
     ui->pointFromCircleAndTangent_ToolButton->setEnabled(draftTools);
     ui->pointFromArcAndTangent_ToolButton->setEnabled(draftTools);
     ui->arcWithLength_ToolButton->setEnabled(draftTools);
-
-    //Elliptical Arcs
     ui->ellipticalArc_ToolButton->setEnabled(draftTools);
 
     //Operations
@@ -4366,10 +4415,9 @@ void MainWindow::setEnableTools(bool enable)
     ui->lines_Action->setEnabled(draftTools);
     ui->arcs_Action->setEnabled(draftTools);
     ui->curves_Action->setEnabled(draftTools);
-    ui->ellipses_Action->setEnabled(draftTools);
     ui->modifications_Action->setEnabled(draftTools);
-    ui->addDetails_Action->setEnabled(draftTools);
-    ui->patternPiece_Action->setEnabled(pieceTools);
+    ui->pieces_Action->setEnabled(draftTools);
+    ui->details_Action->setEnabled(pieceTools);
     ui->layout_Action->setEnabled(layoutTools);
 
     //Menu Actions
@@ -4409,8 +4457,6 @@ void MainWindow::setEnableTools(bool enable)
     ui->circleTangent_Action->setEnabled(draftTools);
     ui->arcTangent_Action->setEnabled(draftTools);;
     ui->arcWithLength_Action->setEnabled(draftTools);
-
-    //Ellipitical Arcs
     ui->ellipticalArc_Action->setEnabled(draftTools);
 
     //Operations
@@ -4433,15 +4479,13 @@ void MainWindow::setEnableTools(bool enable)
     ui->exportPieces_Action->setEnabled(pieceTools);
 
     //Layout
-    ui->newPatternLayout_Action->setEnabled(layoutTools);
+    ui->newPrintLayout_Action->setEnabled(layoutTools);
     ui->exportLayout_Action->setEnabled(layoutTools);
     ui->lastTool_Action->setEnabled(draftTools);
 
-    for (auto pointer : toolButtonPointerList)
-    {
-        pointer->setEnabled(draftTools || pieceTools);
-        pointer->setChecked(draftTools || pieceTools);
-    }
+    ui->arrowPointer_ToolButton->setEnabled(draftTools || pieceTools);
+    ui->arrowPointer_ToolButton->setChecked(draftTools || pieceTools);
+    ui->arrow_Action->setChecked(draftTools || pieceTools);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4752,60 +4796,15 @@ void MainWindow::CreateMenus()
         ui->zoom_ToolBar->setVisible(visible);
     });
     menu->addAction(ui->tools_ToolBox_ToolBar->toggleViewAction());
-    connect(ui->tools_ToolBox_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->tools_ToolBox_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->points_ToolBar->toggleViewAction());
-    connect(ui->points_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->points_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->lines_ToolBar->toggleViewAction());
-    connect(ui->lines_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->lines_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->curves_ToolBar->toggleViewAction());
-    connect(ui->curves_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->curves_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->arcs_ToolBar->toggleViewAction());
-    connect(ui->arcs_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->arcs_ToolBar->setVisible(visible);
-    });
-    menu->addAction(ui->ellipses_ToolBar->toggleViewAction());
-    connect(ui->ellipses_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->ellipses_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->operations_ToolBar->toggleViewAction());
-    connect(ui->operations_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->operations_ToolBar->setVisible(visible);
-    });
-    menu->addAction(ui->addDetails_ToolBar->toggleViewAction());
-    connect(ui->addDetails_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->addDetails_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->pieces_ToolBar->toggleViewAction());
-    connect(ui->pieces_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->pieces_ToolBar->setVisible(visible);
-    });
+    menu->addAction(ui->details_ToolBar->toggleViewAction());
     menu->addAction(ui->layout_ToolBar->toggleViewAction());
-    connect(ui->layout_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->layout_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->pointName_ToolBar->toggleViewAction());
-    connect(ui->pointName_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->pointName_ToolBar->setVisible(visible);
-    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4824,11 +4823,9 @@ void MainWindow::LastUsedTool()
     switch ( lastUsedTool )
     {
         case Tool::Arrow:
-            for (auto pointer : toolButtonPointerList)
-            {
-                pointer->setChecked(true);
-            }
-            handleArrowTool();
+            ui->arrowPointer_ToolButton->setChecked(true);
+            ui->arrow_Action->setChecked(true);
+            handleArrowTool(true);
             break;
         case Tool::BasePoint:
         case Tool::SinglePoint:
@@ -5066,6 +5063,8 @@ void MainWindow::InitDocksContain()
     connect(doc, &VPattern::ShowDetail, patternPiecesWidget, &VWidgetDetails::SelectDetail);
     connect(patternPiecesWidget, &VWidgetDetails::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
     patternPiecesWidget->setVisible(false);
+
+    ui->toolbox_StackedWidget->setCurrentIndex(0);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5083,8 +5082,6 @@ bool MainWindow::OpenNewSeamly2D(const QString &fileName) const
 void MainWindow::CreateActions()
 {
     ui->setupUi(this);
-
-    connect(ui->arrow_Action, &QAction::triggered, this, &MainWindow::handleArrowTool);
 
     //Files menu
     connect(ui->actionNew, &QAction::triggered, this, &MainWindow::New);
@@ -5242,67 +5239,67 @@ void MainWindow::CreateActions()
     //Tools->Point submenu actions
     connect(ui->midpoint_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->midpoint_ToolButton->setChecked(true);
         handleMidpointTool(true);
     });
     connect(ui->pointAtDistanceAngle_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointAtDistanceAngle_ToolButton->setChecked(true);
         handlePointAtDistanceAngleTool(true);
     });
     connect(ui->pointAlongLine_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->alongLine_ToolButton->setChecked(true);
         handleAlongLineTool(true);
     });
     connect(ui->pointAlongPerpendicular_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->normal_ToolButton->setChecked(true);
         handleNormalTool(true);
     });
     connect(ui->bisector_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->bisector_ToolButton->setChecked(true);
         handleBisectorTool(true);
     });
     connect(ui->pointOnShoulder_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->shoulderPoint_ToolButton->setChecked(true);
         handleShoulderPointTool(true);
     });
     connect(ui->pointOfContact_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointOfContact_ToolButton->setChecked(true);
         handlePointOfContactTool(true);
     });
     connect(ui->triangle_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->triangle_ToolButton->setChecked(true);
         handleTriangleTool(true);
     });
     connect(ui->pointOfIntersection_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointOfIntersection_ToolButton->setChecked(true);
         handlePointOfIntersectionTool(true);
     });
     connect(ui->perpendicularPoint_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->height_ToolButton->setChecked(true);
         handleHeightTool(true);
     });
     connect(ui->pointIntersectAxis_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->points_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->lineIntersectAxis_ToolButton->setChecked(true);
         handleLineIntersectAxisTool(true);
     });
@@ -5311,13 +5308,13 @@ void MainWindow::CreateActions()
     connect(ui->lineTool_Action, &QAction::triggered, this, [this]
     {
 
-        ui->tools_ToolBox->setCurrentWidget(ui->lines_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->lines_Page);
         ui->line_ToolButton->setChecked(true);
         handleLineTool(true);
     });
     connect(ui->lineIntersect_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->lines_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->lines_Page);
         ui->lineIntersect_ToolButton->setChecked(true);
         handleLineIntersectTool(true);
     });
@@ -5325,49 +5322,49 @@ void MainWindow::CreateActions()
     //Tools->Curve submenu actions
     connect(ui->curve_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->curve_ToolButton->setChecked(true);
         handleCurveTool(true);
     });
     connect(ui->spline_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->spline_ToolButton->setChecked(true);
         handleSplineTool(true);
     });
     connect(ui->curveWithCPs_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->curveWithCPs_ToolButton->setChecked(true);
         handleCurveWithControlPointsTool(true);
     });
     connect(ui->splineWithCPs_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->splineWithCPs_ToolButton->setChecked(true);
         handleSplineWithControlPointsTool(true);
     });
     connect(ui->pointAlongCurve_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->pointAlongCurve_ToolButton->setChecked(true);
         handlePointAlongCurveTool(true);
     });
     connect(ui->pointAlongSpline_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->pointAlongSpline_ToolButton->setChecked(true);
         handlePointAlongSplineTool(true);
     });
     connect(ui->curveIntersectCurve_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->pointOfIntersectionCurves_ToolButton->setChecked(true);
         handleCurveIntersectCurveTool(true);
     });
     connect(ui->splineIntersectAxis_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->curves_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->curves_Page);
         ui->curveIntersectAxis_ToolButton->setChecked(true);
         handleCurveIntersectAxisTool(true);
     });
@@ -5375,64 +5372,63 @@ void MainWindow::CreateActions()
     //Tools->Arc submenu actions
     connect(ui->arcTool_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->arc_ToolButton->setChecked(true);
         handleArcTool(true);
     });
 
     connect(ui->pointAlongArc_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointAlongArc_ToolButton->setChecked(true);
         handlePointAlongArcTool(true);
     });
 
     connect(ui->arcIntersectAxis_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->arcIntersectAxis_ToolButton->setChecked(true);
         handleArcIntersectAxisTool(true);
     });
 
     connect(ui->arcIntersectArc_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointOfIntersectionArcs_ToolButton->setChecked(true);
         handlePointOfIntersectionArcsTool(true);
     });
 
     connect(ui->circleIntersect_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointOfIntersectionCircles_ToolButton->setChecked(true);
         handlePointOfIntersectionCirclesTool(true);
     });
 
     connect(ui->circleTangent_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointFromCircleAndTangent_ToolButton->setChecked(true);
         handlePointFromCircleAndTangentTool(true);
     });
 
     connect(ui->arcTangent_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
         ui->pointFromArcAndTangent_ToolButton->setChecked(true);
         handlePointFromArcAndTangentTool(true);
     });
 
     connect(ui->arcWithLength_Action, &QAction::triggered, this, [this]
     {
-         ui->tools_ToolBox->setCurrentWidget(ui->arcs_Page);
+         ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
          ui->arcWithLength_ToolButton->setChecked(true);
          handleArcWithLengthTool(true);
      });
 
-    //Tools->Ellipses submenu actions
     connect(ui->ellipticalArc_Action, &QAction::triggered, this, [this]
     {
-         ui->tools_ToolBox->setCurrentWidget(ui->ellipses_Page);
+         ui->draft_ToolBox->setCurrentWidget(ui->arcs_Page);
          ui->ellipticalArc_ToolButton->setChecked(true);
          handleEllipticalArcTool(true);
      });
@@ -5440,101 +5436,101 @@ void MainWindow::CreateActions()
     //Tools->Modify submenu actions
     connect(ui->group_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->group_ToolButton->setChecked(true);
         handleGroupTool(true);
     });
 
     connect(ui->rotation_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->rotation_ToolButton->setChecked(true);
         handleRotationTool(true);
     });
 
     connect(ui->mirrorByLine_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->mirrorByLine_ToolButton->setChecked(true);
         handleMirrorByLineTool(true); });
     connect(ui->mirrorByAxis_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->mirrorByAxis_ToolButton->setChecked(true);
         handleMirrorByAxisTool(true);
     });
 
     connect(ui->move_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->move_ToolButton->setChecked(true);
         handleMoveTool(true);
     });
 
     connect(ui->trueDarts_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         ui->trueDarts_ToolButton->setChecked(true);
         handleTrueDartTool(true);
     });
 
     connect(ui->exportDraftBlocks_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->operations_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
         exportDraftBlocksAs();
     });
 
-    //Tools->Pattern Piece submenu actions
+    //Tools->Add Details submenu actions
     connect(ui->union_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->pieces_Page);
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         ui->unitePieces_ToolButton->setChecked(true);
         handleUnionDetailsTool(true);
     });
 
     connect(ui->exportPieces_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->pieces_Page);
+        ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         exportPiecesAs();
     });
 
-    //Tools->Add Details submenu actions
+    //Tools->Pattern Piece submenu actions
     connect(ui->addPiece_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->addPatternPiece_ToolButton->setChecked(true);
         handlePatternPieceTool(true);
     });
     connect(ui->anchorPoint_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->anchorPoint_ToolButton->setChecked(true);
         handleAnchorPointTool(true);
     });
     connect(ui->internalPath_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->internalPath_ToolButton->setChecked(true);
         handleInternalPathTool(true);
     });
     connect(ui->insertNode_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->details_Page);
+        ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
         ui->insertNode_ToolButton->setChecked(true);
         handleInsertNodeTool(true);
     });
 
     //Tools->Layout submenu actions
-    connect(ui->newPatternLayout_Action, &QAction::triggered, this, [this]
+    connect(ui->newPrintLayout_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->layout_Page);
+        ui->layout_ToolBox->setCurrentWidget(ui->layout_Page);
         ui->layoutSettings_ToolButton->setChecked(true);
         handleNewLayout(true);
     });
 
     connect(ui->exportLayout_Action, &QAction::triggered, this, [this]
     {
-        ui->tools_ToolBox->setCurrentWidget(ui->layout_Page);
+        ui->layout_ToolBox->setCurrentWidget(ui->layout_Page);
         exportLayoutAs();
     });
 
@@ -5667,10 +5663,9 @@ void MainWindow::CreateActions()
     connect(ui->lines_Action,         &QAction::triggered, this, &MainWindow::handleLinesMenu);
     connect(ui->arcs_Action,          &QAction::triggered, this, &MainWindow::handleArcsMenu);
     connect(ui->curves_Action,        &QAction::triggered, this, &MainWindow::handleCurvesMenu);
-    connect(ui->ellipses_Action,      &QAction::triggered, this, &MainWindow::handleEllipsesMenu);
     connect(ui->modifications_Action, &QAction::triggered, this, &MainWindow::handleModifyMenu);
-    connect(ui->patternPiece_Action,  &QAction::triggered, this, &MainWindow::handlePatternPiecesMenu);
-    connect(ui->addDetails_Action,    &QAction::triggered, this, &MainWindow::handleDetailsMenu);
+    connect(ui->details_Action,       &QAction::triggered, this, &MainWindow::handlePatternPiecesMenu);
+    connect(ui->pieces_Action,        &QAction::triggered, this, &MainWindow::handleDetailsMenu);
     connect(ui->layout_Action,        &QAction::triggered, this, &MainWindow::handleLayoutMenu);
 }
 
@@ -6018,13 +6013,12 @@ void MainWindow::Preferences()
         guard = preferences;
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::WindowsLocale); // Must be first
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::ToolBarStyles);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateToolBarVisibility);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::RefreshDetailsLabel);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
-
-
         connect(dialog.data(), &DialogPreferences::updateProperties,
                 toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
 
@@ -6096,7 +6090,8 @@ void MainWindow::exportLayoutAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportPiecesAs()
 {
-    ui->piecePointer_ToolButton->setChecked(false);
+    ui->arrowPointer_ToolButton->setChecked(false);
+    ui->arrow_Action->setChecked(false);
     ui->exportPiecesAs_ToolButton->setChecked(true);
 
     const QHash<quint32, VPiece> *allDetails = pattern->DataPieces();
@@ -6153,7 +6148,8 @@ void MainWindow::exportPiecesAs()
         return;
     }
 
-    ui->operationsPointer_ToolButton->setChecked(true);
+    ui->arrowPointer_ToolButton->setChecked(true);
+    ui->arrow_Action->setChecked(true);
     ui->exportPiecesAs_ToolButton->setChecked(false);
 }
 
@@ -6161,7 +6157,8 @@ void MainWindow::exportPiecesAs()
 void MainWindow::exportDraftBlocksAs()
 {
     //select export tool button
-    ui->operationsPointer_ToolButton->setChecked(false);
+    ui->arrowPointer_ToolButton->setChecked(false);
+    ui->arrow_Action->setChecked(false);
     ui->exportDraftBlocks_ToolButton->setChecked(true);
 
     //Get view info so we can restore after export
@@ -6234,7 +6231,8 @@ void MainWindow::exportDraftBlocksAs()
     ui->view->horizontalScrollBar()->setValue(hScrollBar);
 
     //reset tool buttons
-    ui->operationsPointer_ToolButton->setChecked(true);
+    ui->arrowPointer_ToolButton->setChecked(true);
+    ui->arrow_Action->setChecked(true);
     ui->exportDraftBlocks_ToolButton->setChecked(false);
 }
 
@@ -6447,7 +6445,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
         emit RefreshHistory();
         if (drawMode)
         {
-            handleArrowTool();
+            handleArrowTool(true);
             if (zoomBestFit)
             {
                 zoomToSelected();

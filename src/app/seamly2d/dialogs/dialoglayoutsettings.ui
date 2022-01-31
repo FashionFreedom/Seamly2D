@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Create a layout</string>
+   <string>Layout print settings</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
-    <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
+   <iconset resource="../share/resources/toolicon.qrc">
+    <normaloff>:/toolicon/32x32/layout_settings.png</normaloff>:/toolicon/32x32/layout_settings.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_8">
    <item>
@@ -718,6 +718,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="../share/resources/toolicon.qrc"/>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
