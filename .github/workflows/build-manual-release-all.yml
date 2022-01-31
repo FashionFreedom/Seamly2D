@@ -45,11 +45,11 @@ jobs:
         with:
           tag_name:  ${{ steps.names.outputs.TAG_NAME }}
           release_name: ${{ steps.names.outputs.RELEASE_NAME }}
-          body: Build auto weekly release - Published full release
+          body: Build manual pre-release for Windows, MacOS, Linux
           # create upublished
           draft: false
-          # create a full release, not a pre-release
-          prerelease: false
+          # create a pre-release
+          prerelease: true
 
       - name: show UPLOAD_URL
         run: |
