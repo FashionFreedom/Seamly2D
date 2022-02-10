@@ -555,6 +555,12 @@ void VToolSeamAllowance::Highlight(quint32 id)
     setSelected(m_id == id);
 }
 
+void VToolSeamAllowance::updatePieceDetails()
+{
+    UpdateDetailLabel();
+    UpdatePatternInfo();
+    UpdateGrainline();
+}
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief UpdateLabel updates the text label, making it just big enough for the text to fit it
@@ -1212,18 +1218,12 @@ VToolSeamAllowance::VToolSeamAllowance(VAbstractPattern *doc, VContainer *data, 
     connect(m_grainLine, &VGrainlineItem::itemRotated, this, &VToolSeamAllowance::SaveRotateGrainline);
 
     connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &VToolSeamAllowance::UpdatePatternInfo);
-    connect(doc, &VAbstractPattern::UpdatePatternLabel, this, &VToolSeamAllowance::UpdateDetailLabel);
-    connect(doc, &VAbstractPattern::CheckLayout,        this, &VToolSeamAllowance::UpdateDetailLabel);
-    connect(doc, &VAbstractPattern::CheckLayout,        this, &VToolSeamAllowance::UpdatePatternInfo);
-    connect(doc, &VAbstractPattern::CheckLayout,        this, &VToolSeamAllowance::UpdateGrainline);
+    connect(doc, &VAbstractPattern::CheckLayout,        this, &VToolSeamAllowance::updatePieceDetails);
 
-    connect(m_pieceScene, &VMainGraphicsScene::DimensionsChanged, this, &VToolSeamAllowance::UpdateDetailLabel);
-    connect(m_pieceScene, &VMainGraphicsScene::DimensionsChanged, this, &VToolSeamAllowance::UpdatePatternInfo);
+    connect(m_pieceScene, &VMainGraphicsScene::DimensionsChanged, this, &VToolSeamAllowance::updatePieceDetails);
     connect(m_pieceScene, &VMainGraphicsScene::LanguageChanged,   this, &VToolSeamAllowance::retranslateUi);
 
-    UpdateDetailLabel();
-    UpdatePatternInfo();
-    UpdateGrainline();
+    updatePieceDetails();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
