@@ -138,7 +138,7 @@ VEllipticalArc VEllipticalArc::Rotate(QPointF originPoint, qreal degrees, const 
 
     QTransform t = d->m_transform;
     t.translate(originPoint.x(), originPoint.y());
-    t.rotate(-degrees);
+    t.rotate(IsFlipped() ? degrees : -degrees);
     t.translate(-originPoint.x(), -originPoint.y());
 
     VEllipticalArc elArc(VAbstractArc::GetCenter(), GetRadius1(), GetRadius2(), VAbstractArc::GetStartAngle(),
@@ -258,14 +258,23 @@ VPointF VEllipticalArc::GetCenter() const
  //---------------------------------------------------------------------------------------------------------------------
 QPointF VEllipticalArc::getPoint(qreal angle) const
 {
+    if (qFuzzyIsNull(GetRadius1()) && qFuzzyIsNull(GetRadius2()))
+    {
+        return GetCenter().toQPointF();
+    }
     QLineF line(0, 0, 100, 0);
     line.setAngle(angle);
 
-    const qreal a = line.p2().x() / GetRadius1();
-    const qreal b = line.p2().y() / GetRadius2();
+    const qreal a = not qFuzzyIsNull(GetRadius1()) ? line.p2().x() / GetRadius1() : 0;
+    const qreal b = not qFuzzyIsNull(GetRadius2()) ? line.p2().y() / GetRadius2() : 0;
     const qreal k = qSqrt(a*a + b*b);
-    QPointF p(line.p2().x() / k, line.p2().y() / k);
 
+    if (qFuzzyIsNull(k))
+    {
+        return GetCenter().toQPointF();
+    }
+
+    QPointF p(line.p2().x() / k, line.p2().y() / k);
     QLineF line2(QPointF(), p);
     SCASSERT(VFuzzyComparePossibleNulls(line2.angle(), line.angle()))
 
@@ -287,7 +296,7 @@ QVector<QPointF> VEllipticalArc::GetPoints() const
     QLineF endLine = startLine;
 
     startLine.setAngle(VAbstractArc::GetStartAngle());
-    endLine.setAngle(VAbstractArc::GetEndAngle());
+    endLine.setAngle(getRealEndAngle());
     qreal sweepAngle = startLine.angleTo(endLine);
 
     if (qFuzzyIsNull(sweepAngle))
@@ -296,7 +305,9 @@ QVector<QPointF> VEllipticalArc::GetPoints() const
     }
 
     QPainterPath path;
+    path.moveTo(GetP1());
     path.arcTo(box, VAbstractArc::GetStartAngle(), sweepAngle);
+    path.moveTo(GetP2());
 
     QTransform t = d->m_transform;
     t.translate(center.x(), center.y());
@@ -310,13 +321,13 @@ QVector<QPointF> VEllipticalArc::GetPoints() const
     if (not subpath.isEmpty())
     {
         polygon = path.toSubpathPolygons().first();
-        if (not polygon.isEmpty())
+        if (not polygon.isEmpty() && not VFuzzyComparePoints(GetP1(), polygon.first()))
         {
             polygon.removeFirst(); // remove point (0;0)
         }
     }
 
-    return std::move(polygon);
+    return static_cast<QVector<QPointF>>(polygon);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -424,36 +435,39 @@ void VEllipticalArc::FindF2(qreal length)
     // We need to calculate the second angle
     // first approximation of angle between start and end angles
 
-    qreal endAngle = GetStartAngle() + gap;
+    QLineF radius1(GetCenter().x(), GetCenter().y(), GetCenter().x() + d->radius1, GetCenter().y());
+    radius1.setAngle(GetStartAngle());
+    radius1.setAngle(radius1.angle() + gap);
+    qreal endAngle = radius1.angle();
 
     // we need to set the end angle, because we want to use GetLength()
     SetFormulaF2(QString::number(endAngle), endAngle);
 
-    qreal lenBez = GetLength(); // first approximation of length
+    qreal bezLength = GetLength(); // first approximation of length
 
     const qreal eps = ToPixel(0.001, Unit::Mm);
 
-    while (qAbs(lenBez - length) > eps)
+    while (qAbs(bezLength - length) > eps)
     {
         gap = gap/2;
         if (gap < 0.0001)
         {
             break;
         }
-        if (lenBez > length)
+        if (bezLength > length)
         { // we selected too big end angle
-            endAngle = endAngle - qAbs(gap);
+            radius1.setAngle(endAngle - qAbs(gap));
         }
         else
         { // we selected too little end angle
-            endAngle = endAngle + qAbs(gap);
+            radius1.setAngle(endAngle + qAbs(gap));
         }
+        endAngle = radius1.angle();
         // we need to set d->f2, because we use it when we calculate GetLength
         SetFormulaF2(QString::number(endAngle), endAngle);
-        lenBez = GetLength();
+        bezLength = GetLength();
     }
-    SetFormulaF2(QString::number(endAngle), endAngle);
-    SetFormulaLength(QString::number(qApp->fromPixel(lenBez)));
+    SetFormulaLength(QString::number(qApp->fromPixel(bezLength)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -543,4 +557,24 @@ qreal VEllipticalArc::GetRadius2() const
 qreal VEllipticalArc::GetRotationAngle() const
 {
     return d->rotationAngle;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VEllipticalArc::getRealEndAngle() const
+{
+    qreal endAngle = VEllipticalArc::normalizeAngle(VAbstractArc::GetEndAngle());
+
+    if (qFuzzyIsNull(endAngle) ||
+            VFuzzyComparePossibleNulls(endAngle, 90) ||
+            VFuzzyComparePossibleNulls(endAngle, 180) ||
+            VFuzzyComparePossibleNulls(endAngle, 270) ||
+            VFuzzyComparePossibleNulls(endAngle, 360))
+    {
+        return endAngle;
+    }
+
+    endAngle = qRadiansToDegrees(qAtan2(d->radius1 * qSin(qDegreesToRadians(endAngle)),
+                                        d->radius2 * qCos(qDegreesToRadians(endAngle))));
+
+    return endAngle;
 }

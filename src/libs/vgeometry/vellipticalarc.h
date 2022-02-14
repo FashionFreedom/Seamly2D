@@ -118,6 +118,7 @@ private:
     QSharedDataPointer<VEllipticalArcData> d;
     qreal           MaxLength() const;
     QPointF         getPoint (qreal angle) const;
+    qreal           getRealEndAngle() const;
 };
 
 Q_DECLARE_METATYPE(VEllipticalArc)
