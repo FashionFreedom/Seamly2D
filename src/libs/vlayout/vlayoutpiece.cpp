@@ -189,13 +189,13 @@ bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool FindGrainlineGeometry(const VGrainlineData& geom, const VContainer *pattern, qreal &length, qreal &rotationAngle,
+bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern, qreal &length, qreal &rotationAngle,
                            QPointF &pos)
 {
     SCASSERT(pattern != nullptr)
 
-    const quint32 topPin = geom.TopPin();
-    const quint32 bottomPin = geom.BottomPin();
+    const quint32 topPin = data.TopPin();
+    const quint32 bottomPin = data.BottomPin();
 
     if (topPin != NULL_ID && bottomPin != NULL_ID)
     {
@@ -227,11 +227,11 @@ bool FindGrainlineGeometry(const VGrainlineData& geom, const VContainer *pattern
     try
     {
         Calculator cal1;
-        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), geom.GetRotation());
+        rotationAngle = cal1.EvalFormula(pattern->DataVariables(), data.GetRotation());
         rotationAngle = qDegreesToRadians(rotationAngle);
 
         Calculator cal2;
-        length = cal2.EvalFormula(pattern->DataVariables(), geom.GetLength());
+        length = cal2.EvalFormula(pattern->DataVariables(), data.GetLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
     }
     catch(qmu::QmuParserError &e)
@@ -240,7 +240,7 @@ bool FindGrainlineGeometry(const VGrainlineData& geom, const VContainer *pattern
         return false;
     }
 
-    const quint32 centerPin = geom.CenterPin();
+    const quint32 centerPin = data.CenterPin();
     if (centerPin != NULL_ID)
     {
         try
@@ -258,12 +258,12 @@ bool FindGrainlineGeometry(const VGrainlineData& geom, const VContainer *pattern
         }
         catch(const VExceptionBadId &)
         {
-            pos = geom.GetPos();
+            pos = data.GetPos();
         }
     }
     else
     {
-        pos = geom.GetPos();
+        pos = data.GetPos();
     }
     return true;
 }
@@ -347,15 +347,15 @@ QVector<VSAPoint> PrepareAllowance(const QVector<QPointF> &points)
  * @brief VLayoutDetail::RotatePoint rotates a point around the center for given angle
  * @param ptCenter center around which the point is rotated
  * @param pt point, which is rotated around the center
- * @param dAng angle of rotation
- * @return position of point pt after rotating it around the center for dAng radians
+ * @param rotationAngle angle of rotation
+ * @return position of point pt after rotating it around the center for rotation radians
  */
-QPointF RotatePoint(const QPointF &ptCenter, const QPointF& pt, qreal dAng)
+QPointF RotatePoint(const QPointF &ptCenter, const QPointF& pt, qreal rotationAngle)
 {
     QPointF ptDest;
     QPointF ptRel = pt - ptCenter;
-    ptDest.setX(cos(dAng)*ptRel.x() - sin(dAng)*ptRel.y());
-    ptDest.setY(sin(dAng)*ptRel.x() + cos(dAng)*ptRel.y());
+    ptDest.setX(cos(rotationAngle)*ptRel.x() - sin(rotationAngle)*ptRel.y());
+    ptDest.setY(sin(rotationAngle)*ptRel.x() + cos(rotationAngle)*ptRel.y());
 
     return ptDest + ptCenter;
 }
@@ -435,17 +435,17 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
         throw VException (tr("Piece %1 doesn't have shape.").arg(piece.GetName()));
     }
 
-    const VPieceLabelData& data = piece.GetPatternPieceData();
-    if (data.IsVisible() == true)
+    const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
+    if (pieceLabelData.IsVisible() == true)
     {
-        det.SetPieceText(piece.GetName(), data, qApp->Settings()->getLabelFont(), pattern);
+        det.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
-    const VPatternLabelData& geom = piece.GetPatternInfo();
-    if (geom.IsVisible() == true)
+    const VPatternLabelData& patternLabelData = piece.GetPatternInfo();
+    if (patternLabelData.IsVisible() == true)
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
-        det.SetPatternInfo(pDoc, geom, qApp->Settings()->getLabelFont(), pattern);
+        det.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
@@ -548,12 +548,12 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
       << QPointF(ptPos.x() + labelWidth, ptPos.y() + labelHeight)
       << QPointF(ptPos.x(), ptPos.y() + labelHeight);
 
-    const qreal dAng = qDegreesToRadians(-labelAngle);
+    const qreal rotationAngle = qDegreesToRadians(-labelAngle);
     const QPointF ptCenter(ptPos.x() + labelWidth/2, ptPos.y() + labelHeight/2);
 
     for (int i = 0; i < v.count(); ++i)
     {
-        v[i] = RotatePoint(ptCenter, v.at(i), dAng);
+        v[i] = RotatePoint(ptCenter, v.at(i), rotationAngle);
     }
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
@@ -588,14 +588,14 @@ QStringList VLayoutPiece::GetPatternText() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelData& geom, const QFont &font,
+void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelData& data, const QFont &font,
                                   const VContainer *pattern)
 {
     QPointF ptPos;
     qreal labelWidth = 0;
     qreal labelHeight = 0;
     qreal labelAngle = 0;
-    if (not FindLabelGeometry(geom, pattern, labelAngle, labelWidth, labelHeight, ptPos))
+    if (not FindLabelGeometry(data, pattern, labelAngle, labelWidth, labelHeight, ptPos))
     {
         return;
     }
@@ -609,66 +609,71 @@ void VLayoutPiece::SetPatternInfo(VAbstractPattern* pDoc, const VPatternLabelDat
       << QPointF(ptPos.x() + labelWidth, ptPos.y() + labelHeight)
       << QPointF(ptPos.x(), ptPos.y() + labelHeight);
 
-    const qreal dAng = qDegreesToRadians(-labelAngle);
+    const qreal rotationAngle = qDegreesToRadians(-labelAngle);
     const QPointF ptCenter(ptPos.x() + labelWidth/2, ptPos.y() + labelHeight/2);
     for (int i = 0; i < v.count(); ++i)
     {
-        v[i] = RotatePoint(ptCenter, v.at(i), dAng);
+        v[i] = RotatePoint(ptCenter, v.at(i), rotationAngle);
     }
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
     d->patternInfo = CorrectPosition(item->boundingRect(), v);
 
     // Generate text
     d->m_tmPattern.setFont(font);
-    d->m_tmPattern.SetFontSize(geom.getFontSize());
+    d->m_tmPattern.SetFontSize(data.getFontSize());
 
     d->m_tmPattern.Update(pDoc);
 
     // generate lines of text
-    d->m_tmPattern.SetFontSize(geom.getFontSize());
+    d->m_tmPattern.SetFontSize(data.getFontSize());
     d->m_tmPattern.FitFontSize(labelWidth, labelHeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPiece::setGrainline(const VGrainlineData& geom, const VContainer* pattern)
+void VLayoutPiece::setGrainline(const VGrainlineData& data, const VContainer* pattern)
 {
     SCASSERT(pattern != nullptr)
 
     QPointF pt1;
-    qreal dAng = 0;
-    qreal dLen = 0;
-    if ( not FindGrainlineGeometry(geom, pattern, dLen, dAng, pt1))
+    qreal rotationAngle = 0;
+    qreal length = 0;
+    if ( not FindGrainlineGeometry(data, pattern, length, rotationAngle, pt1))
     {
         return;
     }
 
-    QPointF pt2(pt1.x() + dLen * qCos(dAng), pt1.y() - dLen * qSin(dAng));
+    const qreal arrowLength = 45;
+    const qreal arrowAngle = M_PI/9;
 
-    const qreal dArrowLen = 15;
-    const qreal dArrowAng = M_PI/9;
+    QPointF pt2(pt1.x() + arrowLength * qCos(rotationAngle),
+                pt1.y() - arrowLength * qSin(rotationAngle));
+    QPointF pt3(pt1.x() + length * qCos(rotationAngle),
+                pt1.y() - length * qSin(rotationAngle));
+    QPointF pt4(pt1.x() + (length - arrowLength) * qCos(rotationAngle),
+                pt1.y() - (length - arrowLength) * qSin(rotationAngle));
 
     QVector<QPointF> v;
-    //v << pt1;
-    v << QPointF(pt1.x(), pt1.y() - dArrowLen);
-
-    if (geom.GetArrowType() != ArrowType::atFront)
+    v << pt2;
+    if (data.GetArrowType() != ArrowType::atFront)
     {
-        v << QPointF(pt1.x() + dArrowLen * qCos(dAng + dArrowAng), pt1.y() - dArrowLen * qSin(dAng + dArrowAng));
+        v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle + arrowAngle),
+                     pt1.y() - arrowLength * qSin(rotationAngle + arrowAngle));
         v << pt1;
-        v << QPointF(pt1.x() + dArrowLen * qCos(dAng - dArrowAng), pt1.y() - dArrowLen * qSin(dAng - dArrowAng));
-        v << QPointF(pt1.x(), pt1.y() - dArrowLen);
+        v << QPointF(pt1.x() + arrowLength * qCos(rotationAngle - arrowAngle),
+                     pt1.y() - arrowLength * qSin(rotationAngle - arrowAngle));
+        v << pt2;
     }
 
-    //v << pt2;
-    v << QPointF(pt2.x(), pt2.y() + dArrowLen);
-
-    if (geom.GetArrowType() != ArrowType::atRear)
+    v << pt4;
+    if (data.GetArrowType() != ArrowType::atRear)
     {
-        dAng += M_PI;
-        v << QPointF(pt2.x() + dArrowLen * qCos(dAng + dArrowAng), pt2.y() - dArrowLen * qSin(dAng + dArrowAng));
-        v << pt2;
-        v << QPointF(pt2.x() + dArrowLen * qCos(dAng - dArrowAng), pt2.y() - dArrowLen * qSin(dAng - dArrowAng));
-        v << QPointF(pt2.x(), pt2.y() + dArrowLen);
+        rotationAngle += M_PI;
+        v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle + arrowAngle),
+                     pt3.y() - arrowLength * qSin(rotationAngle + arrowAngle));
+        v << pt3;
+        v << QPointF(pt3.x() + arrowLength * qCos(rotationAngle - arrowAngle),
+                     pt3.y() - arrowLength * qSin(rotationAngle - arrowAngle));
+        v << pt4;
     }
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
@@ -1212,7 +1217,6 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
         return;
     }
     VGraphicsFillItem* item = new VGraphicsFillItem(color, textAsPaths, parent);
-
     QPainterPath path;
 
     QVector<QPointF> gPoints = getGrainline();
