@@ -122,6 +122,8 @@ DialogSeamAllowance::DialogSeamAllowance(const VContainer *data, const quint32 &
       flagDLFormulas(true),
       flagPLAngle(true),
       flagPLFormulas(true),
+      flagBeforeFormula(true),
+      flagAfterFormula(true),
       m_bAddMode(true),
       m_mx(0),
       m_my(0),
@@ -426,8 +428,14 @@ void DialogSeamAllowance::SaveData()
 void DialogSeamAllowance::CheckState()
 {
     SCASSERT(bOk != nullptr);
-    bOk->setEnabled(flagName && flagError && flagFormula && (flagGFormulas || flagGPin)
-                    && flagDLAngle && (flagDLFormulas || flagDPin) && flagPLAngle && (flagPLFormulas || flagPPin));
+    bOk->setEnabled(flagName
+                    && flagError
+                    && flagFormula
+                    && flagBeforeFormula
+                    && flagAfterFormula
+                    && (flagGFormulas || flagGPin)
+                    && flagDLAngle && (flagDLFormulas || flagDPin)
+                    && flagPLAngle && (flagPLFormulas || flagPPin));
     // In case dialog hasn't apply button
     if ( bApply != nullptr && applyAllowed)
     {
@@ -1912,7 +1920,7 @@ void DialogSeamAllowance::ResetLabelsWarning()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSeamAllowance::EvalWidth()
+void DialogSeamAllowance::evaluateDefaultWidth()
 {
     labelEditFormula = uiPathsTab->widthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -1926,19 +1934,18 @@ void DialogSeamAllowance::EvalWidth()
                                                                   QString().setNum(m_saWidth), true,
                                                                   tr("Current seam allowance")));
 
-        EvalWidthBefore();
-        EvalWidthAfter();
+        evaluateBeforeWidth();
+        evaluateAfterWidth();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSeamAllowance::EvalWidthBefore()
+void DialogSeamAllowance::evaluateBeforeWidth()
 {
     labelEditFormula = uiPathsTab->beforeWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     const QString formula = uiPathsTab->beforeWidthFormula_PlainTextEdit->toPlainText();
-    bool flagFormula = false; // fake flag
-    Eval(formula, flagFormula, uiPathsTab->beforeWidthResult_Label, postfix, false, true);
+    Eval(formula, flagBeforeFormula, uiPathsTab->beforeWidthResult_Label, postfix, false, true);
 
     const QString formulaSABefore = GetFormulaFromUser(uiPathsTab->beforeWidthFormula_PlainTextEdit);
     UpdateNodeSABefore(formulaSABefore);
@@ -1946,13 +1953,12 @@ void DialogSeamAllowance::EvalWidthBefore()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSeamAllowance::EvalWidthAfter()
+void DialogSeamAllowance::evaluateAfterWidth()
 {
     labelEditFormula = uiPathsTab->afterWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     const QString formula = uiPathsTab->afterWidthFormula_PlainTextEdit->toPlainText();
-    bool flagFormula = false; // fake flag
-    Eval(formula, flagFormula, uiPathsTab->afterWidthResult_Label, postfix, false, true);
+    Eval(formula, flagAfterFormula, uiPathsTab->afterWidthResult_Label, postfix, false, true);
 
     const QString formulaSAAfter = GetFormulaFromUser(uiPathsTab->afterWidthFormula_PlainTextEdit);
     UpdateNodeSAAfter(formulaSAAfter);
@@ -2005,7 +2011,7 @@ void DialogSeamAllowance::FXWidthAfter()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSeamAllowance::WidthChanged()
+void DialogSeamAllowance::defaultWidthChanged()
 {
     labelEditFormula = uiPathsTab->widthEdit_Label;
     labelResultCalculation = uiPathsTab->widthResult_Label;
@@ -2014,23 +2020,23 @@ void DialogSeamAllowance::WidthChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSeamAllowance::WidthBeforeChanged()
+void DialogSeamAllowance::beforeWidthChanged()
 {
     labelEditFormula = uiPathsTab->beforeWidthEdit_Label;
     labelResultCalculation = uiPathsTab->beforeWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    bool flagFormula = false;
-    ValFormulaChanged(flagFormula, uiPathsTab->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
+
+    ValFormulaChanged(flagBeforeFormula, uiPathsTab->beforeWidthFormula_PlainTextEdit, m_timerWidthBefore, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSeamAllowance::WidthAfterChanged()
+void DialogSeamAllowance::afterWidthChanged()
 {
     labelEditFormula = uiPathsTab->afterWidthEdit_Label;
     labelResultCalculation = uiPathsTab->afterWidthResult_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    bool flagFormula = false;
-    ValFormulaChanged(flagFormula, uiPathsTab->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
+
+    ValFormulaChanged(flagAfterFormula, uiPathsTab->afterWidthFormula_PlainTextEdit, m_timerWidthAfter, postfix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2588,13 +2594,13 @@ void DialogSeamAllowance::InitSeamAllowanceTab()
     uiPathsTab->afterWidthFormula_PlainTextEdit->installEventFilter(this);
 
     m_timerWidth = new QTimer(this);
-    connect(m_timerWidth, &QTimer::timeout, this, &DialogSeamAllowance::EvalWidth);
+    connect(m_timerWidth, &QTimer::timeout, this, &DialogSeamAllowance::evaluateDefaultWidth);
 
     m_timerWidthBefore = new QTimer(this);
-    connect(m_timerWidthBefore, &QTimer::timeout, this, &DialogSeamAllowance::EvalWidthBefore);
+    connect(m_timerWidthBefore, &QTimer::timeout, this, &DialogSeamAllowance::evaluateBeforeWidth);
 
     m_timerWidthAfter = new QTimer(this);
-    connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogSeamAllowance::EvalWidthAfter);
+    connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogSeamAllowance::evaluateAfterWidth);
 
     connect(uiPathsTab->seams_CheckBox, &QCheckBox::toggled, this, &DialogSeamAllowance::EnableSeamAllowance);
     connect(uiPathsTab->builtIn_CheckBox, &QCheckBox::toggled, this, &DialogSeamAllowance::enableBuiltIn);
@@ -2633,11 +2639,11 @@ void DialogSeamAllowance::InitSeamAllowanceTab()
     connect(uiPathsTab->afterExpr_ToolButton, &QPushButton::clicked, this, &DialogSeamAllowance::FXWidthAfter);
 
     connect(uiPathsTab->widthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
-            &DialogSeamAllowance::WidthChanged);
+            &DialogSeamAllowance::defaultWidthChanged);
     connect(uiPathsTab->beforeWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
-            &DialogSeamAllowance::WidthBeforeChanged);
+            &DialogSeamAllowance::beforeWidthChanged);
     connect(uiPathsTab->afterWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
-            &DialogSeamAllowance::WidthAfterChanged);
+            &DialogSeamAllowance::afterWidthChanged);
 
     connect(uiPathsTab->widthGrow_PushButton, &QPushButton::clicked, this,
             &DialogSeamAllowance::DeployWidthFormulaTextEdit);

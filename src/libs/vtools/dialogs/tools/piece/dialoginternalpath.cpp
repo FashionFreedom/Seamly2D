@@ -606,7 +606,7 @@ void DialogInternalPath::notchSubTypeChanged(int id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::EvalWidth()
+void DialogInternalPath::evaluateDefaultWidth()
 {
     labelEditFormula = ui->widthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -620,13 +620,13 @@ void DialogInternalPath::EvalWidth()
                                                                   QString().setNum(m_saWidth), true,
                                                                   tr("Current seam aloowance")));
 
-        EvalWidthBefore();
-        EvalWidthAfter();
+        evaluateBeforeWidth();
+        evaluateAfterWidth();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::EvalWidthBefore()
+void DialogInternalPath::evaluateBeforeWidth()
 {
     labelEditFormula = ui->beforeWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -644,7 +644,7 @@ void DialogInternalPath::EvalWidthBefore()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::EvalWidthAfter()
+void DialogInternalPath::evaluateAfterWidth()
 {
     labelEditFormula = ui->afterWidthEdit_Label;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -707,7 +707,7 @@ void DialogInternalPath::FXWidthAfter()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::WidthChanged()
+void DialogInternalPath::defaultWidthChanged()
 {
     labelEditFormula = ui->widthEdit_Label;
     labelResultCalculation = ui->widthResult_Label;
@@ -716,7 +716,7 @@ void DialogInternalPath::WidthChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::WidthBeforeChanged()
+void DialogInternalPath::beforeWidthChanged()
 {
     labelEditFormula = ui->beforeWidthEdit_Label;
     labelResultCalculation = ui->beforeWidthResult_Label;
@@ -726,7 +726,7 @@ void DialogInternalPath::WidthBeforeChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogInternalPath::WidthAfterChanged()
+void DialogInternalPath::afterWidthChanged()
 {
     labelEditFormula = ui->afterWidthEdit_Label;
     labelResultCalculation = ui->afterWidthResult_Label;
@@ -794,13 +794,13 @@ void DialogInternalPath::InitSeamAllowanceTab()
     ui->afterWidthFormula_PlainTextEdit->installEventFilter(this);
 
     m_timerWidth = new QTimer(this);
-    connect(m_timerWidth, &QTimer::timeout, this, &DialogInternalPath::EvalWidth);
+    connect(m_timerWidth, &QTimer::timeout, this, &DialogInternalPath::evaluateDefaultWidth);
 
     m_timerWidthBefore = new QTimer(this);
-    connect(m_timerWidthBefore, &QTimer::timeout, this, &DialogInternalPath::EvalWidthBefore);
+    connect(m_timerWidthBefore, &QTimer::timeout, this, &DialogInternalPath::evaluateBeforeWidth);
 
     m_timerWidthAfter = new QTimer(this);
-    connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogInternalPath::EvalWidthAfter);
+    connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogInternalPath::evaluateAfterWidth);
 
     // Default value for seam allowence is 1 cm. But pattern have different units, so just set 1 in dialog not enough.
     m_saWidth = UnitConvertor(1, Unit::Cm, qApp->patternUnit());
@@ -821,11 +821,11 @@ void DialogInternalPath::InitSeamAllowanceTab()
     connect(ui->beforeExpr_ToolButton, &QPushButton::clicked, this, &DialogInternalPath::FXWidthBefore);
     connect(ui->afterExpr_ToolButton, &QPushButton::clicked, this, &DialogInternalPath::FXWidthAfter);
 
-    connect(ui->widthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this, &DialogInternalPath::WidthChanged);
+    connect(ui->widthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this, &DialogInternalPath::defaultWidthChanged);
     connect(ui->beforeWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
-            &DialogInternalPath::WidthBeforeChanged);
+            &DialogInternalPath::beforeWidthChanged);
     connect(ui->afterWidthFormula_PlainTextEdit, &QPlainTextEdit::textChanged, this,
-            &DialogInternalPath::WidthAfterChanged);
+            &DialogInternalPath::afterWidthChanged);
 
     connect(ui->widthGrow_PushButton, &QPushButton::clicked, this, &DialogInternalPath::DeployWidthFormulaTextEdit);
     connect(ui->beforeWidthGrow_PushButton, &QPushButton::clicked,

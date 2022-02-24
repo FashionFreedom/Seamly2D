@@ -117,7 +117,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+                <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
                  <normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</iconset>
                </property>
               </widget>
@@ -131,7 +131,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+                <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
                  <normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</iconset>
                </property>
               </widget>
@@ -145,7 +145,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+                <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
                  <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
                </property>
               </widget>
@@ -159,7 +159,7 @@
                 <string>...</string>
                </property>
                <property name="icon">
-                <iconset resource="../../../../../vmisc/share/resources/icon.qrc">
+                <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
                  <normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</iconset>
                </property>
               </widget>
@@ -318,7 +318,7 @@
                    </palette>
                   </property>
                   <property name="text">
-                   <string>Width:</string>
+                   <string>Default width:</string>
                   </property>
                  </widget>
                 </item>
@@ -1039,8 +1039,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../../vmisc/share/resources/icon.qrc"/>
+  <include location="../../../../../vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

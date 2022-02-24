@@ -158,17 +158,17 @@ private slots:
     void                        EnabledDetailLabel();
     void                        EnabledPatternLabel();
 
-    void                        EvalWidth();
-    void                        EvalWidthBefore();
-    void                        EvalWidthAfter();
+    void                        evaluateDefaultWidth();
+    void                        evaluateBeforeWidth();
+    void                        evaluateAfterWidth();
 
     void                        FXWidth();
     void                        FXWidthBefore();
     void                        FXWidthAfter();
 
-    void                        WidthChanged();
-    void                        WidthBeforeChanged();
-    void                        WidthAfterChanged();
+    void                        defaultWidthChanged();
+    void                        beforeWidthChanged();
+    void                        afterWidthChanged();
 
     void                        DeployWidthFormulaTextEdit();
     void                        DeployWidthBeforeFormulaTextEdit();
@@ -182,6 +182,8 @@ private slots:
 
 private:
     Q_DISABLE_COPY(DialogSeamAllowance)
+
+
 
     Ui::DialogSeamAllowance    *ui;
     Ui::PathsTab               *uiPathsTab;
@@ -207,6 +209,9 @@ private:
     bool                        flagDLFormulas;
     bool                        flagPLAngle;
     bool                        flagPLFormulas;
+    bool                        flagBeforeFormula;
+    bool                        flagAfterFormula;
+
     bool                        m_bAddMode;
     qreal                       m_mx;
     qreal                       m_my;
