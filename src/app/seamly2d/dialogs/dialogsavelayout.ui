@@ -51,7 +51,7 @@
      <item row="0" column="0">
       <widget class="QGroupBox" name="groupBoxMargins">
        <property name="enabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="minimumSize">
         <size>
@@ -131,7 +131,7 @@
      <item row="0" column="1">
       <widget class="QGroupBox" name="groupBoxPaperFormat">
        <property name="enabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="minimumSize">
         <size>
@@ -292,7 +292,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QComboBox" name="comboBoxFormat">
+        <widget class="ExportFormatCombobox" name="comboBoxFormat">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -568,6 +568,13 @@ border-radius: 4px;
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ExportFormatCombobox</class>
+   <extends>QComboBox</extends>
+   <header>export_format_combobox.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>lineEditPath</tabstop>
   <tabstop>pushButtonBrowse</tabstop>

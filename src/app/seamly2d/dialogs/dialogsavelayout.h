@@ -56,60 +56,14 @@
 #include <QMarginsF>
 
 #include "../vgeometry/vgeometrydef.h"
+#include "../vmisc/def.h"
 #include "vabstractlayoutdialog.h"
-
-#ifdef Q_OS_WIN
-#   define PDFTOPS "pdftops.exe"
-#else
-#   define PDFTOPS "pdftops"
-#endif
 
 namespace Ui
 {
     class DialogSaveLAyout;
 }
 
-enum class LayoutExportFormats : char
-{
-    SVG = 0,
-    PDF = 1,
-    PDFTiled = 2,
-    PNG = 3,
-    JPG = 4,
-    BMP = 5,
-    PPM = 6,
-    OBJ = 7,              /* Wavefront OBJ*/
-    PS  = 8,
-    EPS = 9,
-    DXF_AC1006_Flat = 10,  /* R10. */
-    DXF_AC1009_Flat = 11,  /* R11 & R12. */
-    DXF_AC1012_Flat = 12,  /* R13. */
-    DXF_AC1014_Flat = 13,  /* R14. */
-    DXF_AC1015_Flat = 14, /* ACAD 2000. */
-    DXF_AC1018_Flat = 15, /* ACAD 2004. */
-    DXF_AC1021_Flat = 16, /* ACAD 2007. */
-    DXF_AC1024_Flat = 17, /* ACAD 2010. */
-    DXF_AC1027_Flat = 18, /* ACAD 2013. */
-    DXF_AC1006_AAMA = 19, /* R10. */
-    DXF_AC1009_AAMA = 20, /* R11 & R12. */
-    DXF_AC1012_AAMA = 21, /* R13. */
-    DXF_AC1014_AAMA = 22, /* R14. */
-    DXF_AC1015_AAMA = 23, /* ACAD 2000. */
-    DXF_AC1018_AAMA = 24, /* ACAD 2004. */
-    DXF_AC1021_AAMA = 25, /* ACAD 2007. */
-    DXF_AC1024_AAMA = 26, /* ACAD 2010. */
-    DXF_AC1027_AAMA = 27, /* ACAD 2013. */
-    DXF_AC1006_ASTM = 28, /* R10. */
-    DXF_AC1009_ASTM = 29, /* R11 & R12. */
-    DXF_AC1012_ASTM = 30, /* R13. */
-    DXF_AC1014_ASTM = 31, /* R14. */
-    DXF_AC1015_ASTM = 32, /* ACAD 2000. */
-    DXF_AC1018_ASTM = 33, /* ACAD 2004. */
-    DXF_AC1021_ASTM = 34, /* ACAD 2007. */
-    DXF_AC1024_ASTM = 35, /* ACAD 2010. */
-    DXF_AC1027_ASTM = 36, /* ACAD 2013. */
-    COUNT                 /*Use only for validation*/
-};
 
 class DialogSaveLayout : public  VAbstractLayoutDialog
 {
@@ -120,22 +74,23 @@ public:
                               QWidget *parent = nullptr);
     virtual ~DialogSaveLayout();
 
-    QString Path() const;
-    QString FileName() const;
+    QString            Path() const;
+    QString            FileName() const;
 
-    LayoutExportFormats Format() const;
-    void                SelectFormat(LayoutExportFormats format);
+    LayoutExportFormat Format() const;
+    QString            formatText() const;
+    void               SelectFormat(LayoutExportFormat format);
 
-    void SetBinaryDXFFormat(bool binary);
-    bool IsBinaryDXFFormat() const;
+    void               SetBinaryDXFFormat(bool binary);
+    bool               IsBinaryDXFFormat() const;
 
-    static QString MakeHelpFormatList();
-    void   SetDestinationPath(const QString& cmdDestinationPath);
 
-    Draw Mode() const;
+    void               SetDestinationPath(const QString& cmdDestinationPath);
 
-    static QString ExportFormatDescription(LayoutExportFormats format);
-    static QString ExportFromatSuffix(LayoutExportFormats format);
+    Draw               Mode() const;
+
+
+    static QString exportFormatSuffix(LayoutExportFormat format);
 
     bool IsTextAsPaths() const;
     void SetTextAsPaths(bool textAsPaths);
@@ -157,13 +112,7 @@ private:
     bool isInitialized;
     Draw m_mode;
 
-    static bool havePdf;
-    static bool tested;
-    static bool SupportPSTest();
-    static bool TestPdf();
-    static QVector<std::pair<QString, LayoutExportFormats> > InitFormats();
-
-    void RemoveFormatFromList(LayoutExportFormats format);
+    void RemoveFormatFromList(LayoutExportFormat format);
 
     void ReadSettings();
     void WriteSettings() const;

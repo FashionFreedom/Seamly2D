@@ -75,7 +75,7 @@
        </property>
        <item>
         <property name="text">
-         <string>Configuration</string>
+         <string>General</string>
         </property>
         <property name="textAlignment">
          <set>AlignCenter</set>
@@ -179,8 +179,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

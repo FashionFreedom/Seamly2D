@@ -99,8 +99,14 @@ public:
     bool                 GetAutosaveState() const;
     void                 SetAutosaveState(const bool &value);
 
-    int                  GetAutosaveTime() const;
-    void                 SetAutosaveTime(const int &value);
+    int                  getAutosaveInterval() const;
+    void                 setAutosaveInterval(const int &value);
+
+    bool                 useLastExportFormat() const;
+    void                 setUseLastExportFormat(const bool &value);
+
+    QString              getExportFormat() const;
+    void                 setExportFormat(const QString &value);
 
     bool                 GetSendReportState() const;
     void                 SetSendReportState(const bool &value);
@@ -114,11 +120,11 @@ public:
     QString              GetUnit() const;
     void                 SetUnit(const QString &value);
 
-    bool                 GetConfirmItemDelete() const;
-    void                 SetConfirmItemDelete(const bool &value);
+    bool                 getConfirmItemDelete() const;
+    void                 setConfirmItemDelete(const bool &value);
 
-    bool                 GetConfirmFormatRewriting() const;
-    void                 SetConfirmFormatRewriting(const bool &value);
+    bool                 getConfirmFormatRewriting() const;
+    void                 setConfirmFormatRewriting(const bool &value);
 
     QString              getMoveSuffix() const;
     void                 setMoveSuffix(const QString &value);

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -81,6 +81,7 @@ private:
     bool m_rotateSuffixChanged;
     bool m_mirrorByAxisSuffixChanged;
     bool m_mirrorByLineSuffixChanged;
+    bool m_defaultExportFormatChanged;
 
     void SetLabelComboBox(const QStringList &list);
     void InitUnits();

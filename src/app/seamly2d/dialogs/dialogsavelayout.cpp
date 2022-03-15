@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -55,6 +55,7 @@
 #include "../core/vapplication.h"
 #include "../vmisc/vsettings.h"
 #include "../ifc/exception/vexception.h"
+#include "../vwidgets/export_format_combobox.h"
 
 #include <QDir>
 #include <QFileDialog>
@@ -66,18 +67,16 @@
 
 const QString baseFilenameRegExp = QStringLiteral("^[\\p{L}\\p{Nd}\\-. _]+$");
 
-bool DialogSaveLayout::havePdf = false;
-bool DialogSaveLayout::tested  = false;
-
 //---------------------------------------------------------------------------------------------------------------------
 DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName, QWidget *parent)
-    :  VAbstractLayoutDialog(parent),
-      ui(new Ui::DialogSaveLAyout),
-      count(count),
-      isInitialized(false),
-      m_mode(mode)
+    : VAbstractLayoutDialog(parent)
+    , ui(new Ui::DialogSaveLAyout)
+    , count(count)
+    , isInitialized(false)
+    , m_mode(mode)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     ui->lineEditPath->setClearButtonEnabled(true);
     ui->lineEditFileName->setClearButtonEnabled(true);
@@ -108,17 +107,46 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
         }
     }
 
-    foreach (auto& v, InitFormats())
+    if (m_mode == Draw::Calculation)
     {
-        ui->comboBoxFormat->addItem(v.first, QVariant(static_cast<int>(v.second)));
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1006_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1009_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1012_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1014_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1015_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1018_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1021_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1024_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1027_Flat);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1006_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1009_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1012_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1014_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1015_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1018_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1021_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1024_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1027_AAMA);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1006_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1009_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1012_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1014_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1015_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1018_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1021_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1024_ASTM);
+        RemoveFormatFromList(LayoutExportFormat::DXF_AC1027_ASTM);
+        //RemoveFormatFromList(LayoutExportFormat::PS);
+        //RemoveFormatFromList(LayoutExportFormat::PDF);
+        //RemoveFormatFromList(LayoutExportFormat::EPS);
     }
 #ifdef V_NO_ASSERT // Temporarily unavailable
-    RemoveFormatFromList(LayoutExportFormats::OBJ);
+    RemoveFormatFromList(LayoutExportFormat::OBJ);
 #endif
 
     if (m_mode != Draw::Layout)
     {
-        RemoveFormatFromList(LayoutExportFormats::PDFTiled);
+        RemoveFormatFromList(LayoutExportFormat::PDFTiled);
     }
     else
     {
@@ -161,27 +189,6 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
     InitTemplates(ui->comboBoxTemplates);
 
     ReadSettings();
-
-    // connect for the template drop down box of the tiled pds
-    connect(ui->comboBoxTemplates, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogSaveLayout::WriteSettings);
-
-    // connects for the margins of the tiled pdf
-    connect(ui->doubleSpinBoxLeftField, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-            this, &DialogSaveLayout::WriteSettings);
-    connect(ui->doubleSpinBoxTopField, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-            this, &DialogSaveLayout::WriteSettings);
-    connect(ui->doubleSpinBoxRightField, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-            this, &DialogSaveLayout::WriteSettings);
-    connect(ui->doubleSpinBoxBottomField, static_cast<void (QDoubleSpinBox::*)(double)>(&QDoubleSpinBox::valueChanged),
-            this, &DialogSaveLayout::WriteSettings);
-
-    // connects for the orientation buttons for the tiled pdf
-    connect(ui->toolButtonPortrait, &QToolButton::toggled, this, &DialogSaveLayout::WriteSettings);
-    connect(ui->toolButtonLandscape, &QToolButton::toggled, this, &DialogSaveLayout::WriteSettings);
-
-    connect(ui->exportQuality_Slider, &QSlider::valueChanged, this, &DialogSaveLayout::WriteSettings);
-
     ShowExample();//Show example for current format.
 }
 
@@ -198,9 +205,9 @@ void DialogSaveLayout::InitTemplates(QComboBox *comboBoxTemplates)
 
 //---------------------------------------------------------------------------------------------------------------------
 
-void DialogSaveLayout::SelectFormat(LayoutExportFormats format)
+void DialogSaveLayout::SelectFormat(LayoutExportFormat format)
 {
-    if (static_cast<int>(format) < 0 || format >= LayoutExportFormats::COUNT)
+    if (static_cast<int>(format) < 0 || format >= LayoutExportFormat::COUNT)
     {
         VException e(tr("Tried to use out of range format number."));
         throw e;
@@ -220,45 +227,46 @@ void DialogSaveLayout::SetBinaryDXFFormat(bool binary)
 {
     switch(Format())
     {
-        case LayoutExportFormats::DXF_AC1006_Flat:
-        case LayoutExportFormats::DXF_AC1009_Flat:
-        case LayoutExportFormats::DXF_AC1012_Flat:
-        case LayoutExportFormats::DXF_AC1014_Flat:
-        case LayoutExportFormats::DXF_AC1015_Flat:
-        case LayoutExportFormats::DXF_AC1018_Flat:
-        case LayoutExportFormats::DXF_AC1021_Flat:
-        case LayoutExportFormats::DXF_AC1024_Flat:
-        case LayoutExportFormats::DXF_AC1027_Flat:
-        case LayoutExportFormats::DXF_AC1006_AAMA:
-        case LayoutExportFormats::DXF_AC1009_AAMA:
-        case LayoutExportFormats::DXF_AC1012_AAMA:
-        case LayoutExportFormats::DXF_AC1014_AAMA:
-        case LayoutExportFormats::DXF_AC1015_AAMA:
-        case LayoutExportFormats::DXF_AC1018_AAMA:
-        case LayoutExportFormats::DXF_AC1021_AAMA:
-        case LayoutExportFormats::DXF_AC1024_AAMA:
-        case LayoutExportFormats::DXF_AC1027_AAMA:
-        case LayoutExportFormats::DXF_AC1006_ASTM:
-        case LayoutExportFormats::DXF_AC1009_ASTM:
-        case LayoutExportFormats::DXF_AC1012_ASTM:
-        case LayoutExportFormats::DXF_AC1014_ASTM:
-        case LayoutExportFormats::DXF_AC1015_ASTM:
-        case LayoutExportFormats::DXF_AC1018_ASTM:
-        case LayoutExportFormats::DXF_AC1021_ASTM:
-        case LayoutExportFormats::DXF_AC1024_ASTM:
-        case LayoutExportFormats::DXF_AC1027_ASTM:
+        case LayoutExportFormat::DXF_AC1006_Flat:
+        case LayoutExportFormat::DXF_AC1009_Flat:
+        case LayoutExportFormat::DXF_AC1012_Flat:
+        case LayoutExportFormat::DXF_AC1014_Flat:
+        case LayoutExportFormat::DXF_AC1015_Flat:
+        case LayoutExportFormat::DXF_AC1018_Flat:
+        case LayoutExportFormat::DXF_AC1021_Flat:
+        case LayoutExportFormat::DXF_AC1024_Flat:
+        case LayoutExportFormat::DXF_AC1027_Flat:
+        case LayoutExportFormat::DXF_AC1006_AAMA:
+        case LayoutExportFormat::DXF_AC1009_AAMA:
+        case LayoutExportFormat::DXF_AC1012_AAMA:
+        case LayoutExportFormat::DXF_AC1014_AAMA:
+        case LayoutExportFormat::DXF_AC1015_AAMA:
+        case LayoutExportFormat::DXF_AC1018_AAMA:
+        case LayoutExportFormat::DXF_AC1021_AAMA:
+        case LayoutExportFormat::DXF_AC1024_AAMA:
+        case LayoutExportFormat::DXF_AC1027_AAMA:
+        case LayoutExportFormat::DXF_AC1006_ASTM:
+        case LayoutExportFormat::DXF_AC1009_ASTM:
+        case LayoutExportFormat::DXF_AC1012_ASTM:
+        case LayoutExportFormat::DXF_AC1014_ASTM:
+        case LayoutExportFormat::DXF_AC1015_ASTM:
+        case LayoutExportFormat::DXF_AC1018_ASTM:
+        case LayoutExportFormat::DXF_AC1021_ASTM:
+        case LayoutExportFormat::DXF_AC1024_ASTM:
+        case LayoutExportFormat::DXF_AC1027_ASTM:
             ui->checkBoxBinaryDXF->setChecked(binary);
             break;
-        case LayoutExportFormats::SVG:
-        case LayoutExportFormats::PDF:
-        case LayoutExportFormats::PDFTiled:
-        case LayoutExportFormats::PNG:
-        case LayoutExportFormats::JPG:
-        case LayoutExportFormats::BMP:
-        case LayoutExportFormats::PPM:
-        case LayoutExportFormats::OBJ:
-        case LayoutExportFormats::PS:
-        case LayoutExportFormats::EPS:
+        case LayoutExportFormat::SVG:
+        case LayoutExportFormat::PDF:
+        case LayoutExportFormat::PDFTiled:
+        case LayoutExportFormat::PNG:
+        case LayoutExportFormat::JPG:
+        case LayoutExportFormat::BMP:
+        case LayoutExportFormat::PPM:
+        case LayoutExportFormat::OBJ:
+        case LayoutExportFormat::PS:
+        case LayoutExportFormat::EPS:
+        case LayoutExportFormat::TIF:
         default:
             ui->checkBoxBinaryDXF->setChecked(false);
             break;
@@ -270,59 +278,48 @@ bool DialogSaveLayout::IsBinaryDXFFormat() const
 {
     switch(Format())
     {
-        case LayoutExportFormats::DXF_AC1006_Flat:
-        case LayoutExportFormats::DXF_AC1009_Flat:
-        case LayoutExportFormats::DXF_AC1012_Flat:
-        case LayoutExportFormats::DXF_AC1014_Flat:
-        case LayoutExportFormats::DXF_AC1015_Flat:
-        case LayoutExportFormats::DXF_AC1018_Flat:
-        case LayoutExportFormats::DXF_AC1021_Flat:
-        case LayoutExportFormats::DXF_AC1024_Flat:
-        case LayoutExportFormats::DXF_AC1027_Flat:
-        case LayoutExportFormats::DXF_AC1006_AAMA:
-        case LayoutExportFormats::DXF_AC1009_AAMA:
-        case LayoutExportFormats::DXF_AC1012_AAMA:
-        case LayoutExportFormats::DXF_AC1014_AAMA:
-        case LayoutExportFormats::DXF_AC1015_AAMA:
-        case LayoutExportFormats::DXF_AC1018_AAMA:
-        case LayoutExportFormats::DXF_AC1021_AAMA:
-        case LayoutExportFormats::DXF_AC1024_AAMA:
-        case LayoutExportFormats::DXF_AC1027_AAMA:
-        case LayoutExportFormats::DXF_AC1006_ASTM:
-        case LayoutExportFormats::DXF_AC1009_ASTM:
-        case LayoutExportFormats::DXF_AC1012_ASTM:
-        case LayoutExportFormats::DXF_AC1014_ASTM:
-        case LayoutExportFormats::DXF_AC1015_ASTM:
-        case LayoutExportFormats::DXF_AC1018_ASTM:
-        case LayoutExportFormats::DXF_AC1021_ASTM:
-        case LayoutExportFormats::DXF_AC1024_ASTM:
-        case LayoutExportFormats::DXF_AC1027_ASTM:
+        case LayoutExportFormat::DXF_AC1006_Flat:
+        case LayoutExportFormat::DXF_AC1009_Flat:
+        case LayoutExportFormat::DXF_AC1012_Flat:
+        case LayoutExportFormat::DXF_AC1014_Flat:
+        case LayoutExportFormat::DXF_AC1015_Flat:
+        case LayoutExportFormat::DXF_AC1018_Flat:
+        case LayoutExportFormat::DXF_AC1021_Flat:
+        case LayoutExportFormat::DXF_AC1024_Flat:
+        case LayoutExportFormat::DXF_AC1027_Flat:
+        case LayoutExportFormat::DXF_AC1006_AAMA:
+        case LayoutExportFormat::DXF_AC1009_AAMA:
+        case LayoutExportFormat::DXF_AC1012_AAMA:
+        case LayoutExportFormat::DXF_AC1014_AAMA:
+        case LayoutExportFormat::DXF_AC1015_AAMA:
+        case LayoutExportFormat::DXF_AC1018_AAMA:
+        case LayoutExportFormat::DXF_AC1021_AAMA:
+        case LayoutExportFormat::DXF_AC1024_AAMA:
+        case LayoutExportFormat::DXF_AC1027_AAMA:
+        case LayoutExportFormat::DXF_AC1006_ASTM:
+        case LayoutExportFormat::DXF_AC1009_ASTM:
+        case LayoutExportFormat::DXF_AC1012_ASTM:
+        case LayoutExportFormat::DXF_AC1014_ASTM:
+        case LayoutExportFormat::DXF_AC1015_ASTM:
+        case LayoutExportFormat::DXF_AC1018_ASTM:
+        case LayoutExportFormat::DXF_AC1021_ASTM:
+        case LayoutExportFormat::DXF_AC1024_ASTM:
+        case LayoutExportFormat::DXF_AC1027_ASTM:
             return ui->checkBoxBinaryDXF->isChecked();
-        case LayoutExportFormats::SVG:
-        case LayoutExportFormats::PDF:
-        case LayoutExportFormats::PDFTiled:
-        case LayoutExportFormats::PNG:
-        case LayoutExportFormats::JPG:
-        case LayoutExportFormats::BMP:
-        case LayoutExportFormats::PPM:
-        case LayoutExportFormats::OBJ:
-        case LayoutExportFormats::PS:
-        case LayoutExportFormats::EPS:
+        case LayoutExportFormat::SVG:
+        case LayoutExportFormat::PDF:
+        case LayoutExportFormat::PDFTiled:
+        case LayoutExportFormat::PNG:
+        case LayoutExportFormat::JPG:
+        case LayoutExportFormat::BMP:
+        case LayoutExportFormat::PPM:
+        case LayoutExportFormat::OBJ:
+        case LayoutExportFormat::PS:
+        case LayoutExportFormat::EPS:
+        case LayoutExportFormat::TIF:
         default:
             return false;
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::MakeHelpFormatList()
-{
-   QString out("\n");
-   foreach(auto& v, InitFormats())
-   {
-       out += QLatin1String("\t") + v.first + QLatin1String(" = ") + QString::number(static_cast<int>(v.second))
-               + QLatin1String("\n");
-   }
-   return out;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -359,144 +356,58 @@ Draw DialogSaveLayout::Mode() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::ExportFormatDescription(LayoutExportFormats format)
-{
-    const QString dxfSuffix = QStringLiteral("(*.dxf)");
-    const QString dxfFlatFilesStr = tr("(flat) files");
-    const QString filesStr = tr("files");
-
-    switch(format)
-    {
-        case LayoutExportFormats::SVG:
-            return QString("Svg %1 (*.svg)").arg(filesStr);
-        case LayoutExportFormats::PDF:
-            return QString("PDF %1 (*.pdf)").arg(filesStr);
-        case LayoutExportFormats::PNG:
-            return QString("PNG %1 (*.png)").arg(filesStr);
-        case LayoutExportFormats::JPG:
-            return QString("JPG %1 (*.jpg)").arg(filesStr);
-        case LayoutExportFormats::BMP:
-            return QString("BMP %1 (*.bmp)").arg(filesStr);
-        case LayoutExportFormats::PPM:
-            return QString("PPM %1 (*.ppm)").arg(filesStr);
-        case LayoutExportFormats::OBJ:
-            return "Wavefront OBJ (*.obj)";
-        case LayoutExportFormats::PS:
-            return QString("PS %1 (*.ps)").arg(filesStr);
-        case LayoutExportFormats::EPS:
-            return QString("EPS %1 (*.eps)").arg(filesStr);
-        case LayoutExportFormats::DXF_AC1006_Flat:
-            return QString("AutoCAD DXF R10 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1009_Flat:
-            return QString("AutoCAD DXF R11/12 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1012_Flat:
-            return QString("AutoCAD DXF R13 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1014_Flat:
-            return QString("AutoCAD DXF R14 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1015_Flat:
-            return QString("AutoCAD DXF 2000 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1018_Flat:
-            return QString("AutoCAD DXF 2004 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1021_Flat:
-            return QString("AutoCAD DXF 2007 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1024_Flat:
-            return QString("AutoCAD DXF 2010 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1027_Flat:
-            return QString("AutoCAD DXF 2013 %1 %2").arg(dxfFlatFilesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1006_AAMA:
-            return QString("AutoCAD DXF R10 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1009_AAMA:
-            return QString("AutoCAD DXF R11/12 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1012_AAMA:
-            return QString("AutoCAD DXF R13 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1014_AAMA:
-            return QString("AutoCAD DXF R14 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1015_AAMA:
-            return QString("AutoCAD DXF 2000 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1018_AAMA:
-            return QString("AutoCAD DXF 2004 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1021_AAMA:
-            return QString("AutoCAD DXF 2007 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1024_AAMA:
-            return QString("AutoCAD DXF 2010 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1027_AAMA:
-            return QString("AutoCAD DXF 2013 AAMA %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1006_ASTM:
-            return QString("AutoCAD DXF R10 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1009_ASTM:
-            return QString("AutoCAD DXF R11/12 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1012_ASTM:
-            return QString("AutoCAD DXF R13 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1014_ASTM:
-            return QString("AutoCAD DXF R14 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1015_ASTM:
-            return QString("AutoCAD DXF 2000 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1018_ASTM:
-            return QString("AutoCAD DXF 2004 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1021_ASTM:
-            return QString("AutoCAD DXF 2007 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1024_ASTM:
-            return QString("AutoCAD DXF 2010 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::DXF_AC1027_ASTM:
-            return QString("AutoCAD DXF 2013 ASTM %1 %2").arg(filesStr, dxfSuffix);
-        case LayoutExportFormats::PDFTiled:
-            return QString("PDF tiled %1 (*.pdf)").arg(filesStr);
-        default:
-            return QString();
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::ExportFromatSuffix(LayoutExportFormats format)
+QString DialogSaveLayout::exportFormatSuffix(LayoutExportFormat format)
 {
     switch(format)
     {
-        case LayoutExportFormats::SVG:
+        case LayoutExportFormat::SVG:
             return ".svg";
-        case LayoutExportFormats::PDF:
-        case LayoutExportFormats::PDFTiled:
+        case LayoutExportFormat::PDF:
+        case LayoutExportFormat::PDFTiled:
             return ".pdf";
-        case LayoutExportFormats::PNG:
+        case LayoutExportFormat::PNG:
             return ".png";
-        case LayoutExportFormats::JPG:
+        case LayoutExportFormat::JPG:
             return ".jpg";
-        case LayoutExportFormats::BMP:
+        case LayoutExportFormat::BMP:
             return ".bmp";
-        case LayoutExportFormats::PPM:
+        case LayoutExportFormat::PPM:
             return ".ppm";
-        case LayoutExportFormats::OBJ:
+        case LayoutExportFormat::OBJ:
             return ".obj";
-        case LayoutExportFormats::PS:
+        case LayoutExportFormat::PS:
             return ".ps";
-        case LayoutExportFormats::EPS:
+        case LayoutExportFormat::EPS:
             return ".eps";
-        case LayoutExportFormats::DXF_AC1006_Flat:
-        case LayoutExportFormats::DXF_AC1009_Flat:
-        case LayoutExportFormats::DXF_AC1012_Flat:
-        case LayoutExportFormats::DXF_AC1014_Flat:
-        case LayoutExportFormats::DXF_AC1015_Flat:
-        case LayoutExportFormats::DXF_AC1018_Flat:
-        case LayoutExportFormats::DXF_AC1021_Flat:
-        case LayoutExportFormats::DXF_AC1024_Flat:
-        case LayoutExportFormats::DXF_AC1027_Flat:
-        case LayoutExportFormats::DXF_AC1006_AAMA:
-        case LayoutExportFormats::DXF_AC1009_AAMA:
-        case LayoutExportFormats::DXF_AC1012_AAMA:
-        case LayoutExportFormats::DXF_AC1014_AAMA:
-        case LayoutExportFormats::DXF_AC1015_AAMA:
-        case LayoutExportFormats::DXF_AC1018_AAMA:
-        case LayoutExportFormats::DXF_AC1021_AAMA:
-        case LayoutExportFormats::DXF_AC1024_AAMA:
-        case LayoutExportFormats::DXF_AC1027_AAMA:
-        case LayoutExportFormats::DXF_AC1006_ASTM:
-        case LayoutExportFormats::DXF_AC1009_ASTM:
-        case LayoutExportFormats::DXF_AC1012_ASTM:
-        case LayoutExportFormats::DXF_AC1014_ASTM:
-        case LayoutExportFormats::DXF_AC1015_ASTM:
-        case LayoutExportFormats::DXF_AC1018_ASTM:
-        case LayoutExportFormats::DXF_AC1021_ASTM:
-        case LayoutExportFormats::DXF_AC1024_ASTM:
-        case LayoutExportFormats::DXF_AC1027_ASTM:
+        case LayoutExportFormat::TIF:
+            return ".tif";
+        case LayoutExportFormat::DXF_AC1006_Flat:
+        case LayoutExportFormat::DXF_AC1009_Flat:
+        case LayoutExportFormat::DXF_AC1012_Flat:
+        case LayoutExportFormat::DXF_AC1014_Flat:
+        case LayoutExportFormat::DXF_AC1015_Flat:
+        case LayoutExportFormat::DXF_AC1018_Flat:
+        case LayoutExportFormat::DXF_AC1021_Flat:
+        case LayoutExportFormat::DXF_AC1024_Flat:
+        case LayoutExportFormat::DXF_AC1027_Flat:
+        case LayoutExportFormat::DXF_AC1006_AAMA:
+        case LayoutExportFormat::DXF_AC1009_AAMA:
+        case LayoutExportFormat::DXF_AC1012_AAMA:
+        case LayoutExportFormat::DXF_AC1014_AAMA:
+        case LayoutExportFormat::DXF_AC1015_AAMA:
+        case LayoutExportFormat::DXF_AC1018_AAMA:
+        case LayoutExportFormat::DXF_AC1021_AAMA:
+        case LayoutExportFormat::DXF_AC1024_AAMA:
+        case LayoutExportFormat::DXF_AC1027_AAMA:
+        case LayoutExportFormat::DXF_AC1006_ASTM:
+        case LayoutExportFormat::DXF_AC1009_ASTM:
+        case LayoutExportFormat::DXF_AC1012_ASTM:
+        case LayoutExportFormat::DXF_AC1014_ASTM:
+        case LayoutExportFormat::DXF_AC1015_ASTM:
+        case LayoutExportFormat::DXF_AC1018_ASTM:
+        case LayoutExportFormat::DXF_AC1021_ASTM:
+        case LayoutExportFormat::DXF_AC1024_ASTM:
+        case LayoutExportFormat::DXF_AC1027_ASTM:
             return ".dxf";
         default:
             return QString();
@@ -522,9 +433,15 @@ QString DialogSaveLayout::FileName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-LayoutExportFormats DialogSaveLayout::Format() const
+LayoutExportFormat DialogSaveLayout::Format() const
 {
-    return static_cast<LayoutExportFormats>(ui->comboBoxFormat->currentData().toInt());
+    return static_cast<LayoutExportFormat>(ui->comboBoxFormat->currentData().toInt());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogSaveLayout::formatText() const
+{
+    return ui->comboBoxFormat->currentText();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -532,11 +449,11 @@ void DialogSaveLayout::Save()
 {
     for (int i=0; i < count; ++i)
     {
-        const QString name = Path()+QLatin1String("/")+FileName()+QString::number(i+1)+ExportFromatSuffix(Format());
+        const QString name = Path()+QLatin1String("/")+FileName()+QString::number(i+1)+exportFormatSuffix(Format());
         if (QFile::exists(name))
         {
             QMessageBox::StandardButton res = QMessageBox::question(this, tr("Name conflict"),
-                                  tr("Folder already contain file with name %1. Rewrite all conflict file names?")
+                                  tr("Folder already contains file with name %1. Rewrite all conflict file names?")
                                   .arg(name), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
             if (res == QMessageBox::No)
             {
@@ -549,6 +466,7 @@ void DialogSaveLayout::Save()
             }
         }
     }
+    WriteSettings();
     accept();
 }
 
@@ -579,78 +497,66 @@ void DialogSaveLayout::PathChanged(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSaveLayout::ShowExample()
 {
-    const LayoutExportFormats currentFormat = Format();
-    ui->labelExample->setText(FileName() + QLatin1String("1") + ExportFromatSuffix(currentFormat));
-
-    //ui->lineEditFileName->setText(FileName() + QLatin1String("1") + ExportFromatSuffix(currentFormat));
-
+    const LayoutExportFormat currentFormat = Format();
+    ui->checkBoxTextAsPaths->setEnabled(true);
+    ui->exportQuality_Slider->setEnabled(false);
+    ui->groupBoxPaperFormat->setEnabled(false);
+    ui->groupBoxMargins->setEnabled(false);
+    ui->labelExample->setText(FileName() + QLatin1String("1") + exportFormatSuffix(currentFormat));
 
     switch(currentFormat)
     {
-        case LayoutExportFormats::DXF_AC1006_Flat:
-        case LayoutExportFormats::DXF_AC1009_Flat:
-        case LayoutExportFormats::DXF_AC1012_Flat:
-        case LayoutExportFormats::DXF_AC1014_Flat:
-        case LayoutExportFormats::DXF_AC1015_Flat:
-        case LayoutExportFormats::DXF_AC1018_Flat:
-        case LayoutExportFormats::DXF_AC1021_Flat:
-        case LayoutExportFormats::DXF_AC1024_Flat:
-        case LayoutExportFormats::DXF_AC1027_Flat:
-        case LayoutExportFormats::DXF_AC1006_AAMA:
-        case LayoutExportFormats::DXF_AC1009_AAMA:
-        case LayoutExportFormats::DXF_AC1012_AAMA:
-        case LayoutExportFormats::DXF_AC1014_AAMA:
-        case LayoutExportFormats::DXF_AC1015_AAMA:
-        case LayoutExportFormats::DXF_AC1018_AAMA:
-        case LayoutExportFormats::DXF_AC1021_AAMA:
-        case LayoutExportFormats::DXF_AC1024_AAMA:
-        case LayoutExportFormats::DXF_AC1027_AAMA:
-        case LayoutExportFormats::DXF_AC1006_ASTM:
-        case LayoutExportFormats::DXF_AC1009_ASTM:
-        case LayoutExportFormats::DXF_AC1012_ASTM:
-        case LayoutExportFormats::DXF_AC1014_ASTM:
-        case LayoutExportFormats::DXF_AC1015_ASTM:
-        case LayoutExportFormats::DXF_AC1018_ASTM:
-        case LayoutExportFormats::DXF_AC1021_ASTM:
-        case LayoutExportFormats::DXF_AC1024_ASTM:
-        case LayoutExportFormats::DXF_AC1027_ASTM:
+        case LayoutExportFormat::DXF_AC1006_Flat:
+        case LayoutExportFormat::DXF_AC1009_Flat:
+        case LayoutExportFormat::DXF_AC1012_Flat:
+        case LayoutExportFormat::DXF_AC1014_Flat:
+        case LayoutExportFormat::DXF_AC1015_Flat:
+        case LayoutExportFormat::DXF_AC1018_Flat:
+        case LayoutExportFormat::DXF_AC1021_Flat:
+        case LayoutExportFormat::DXF_AC1024_Flat:
+        case LayoutExportFormat::DXF_AC1027_Flat:
+        case LayoutExportFormat::DXF_AC1006_AAMA:
+        case LayoutExportFormat::DXF_AC1009_AAMA:
+        case LayoutExportFormat::DXF_AC1012_AAMA:
+        case LayoutExportFormat::DXF_AC1014_AAMA:
+        case LayoutExportFormat::DXF_AC1015_AAMA:
+        case LayoutExportFormat::DXF_AC1018_AAMA:
+        case LayoutExportFormat::DXF_AC1021_AAMA:
+        case LayoutExportFormat::DXF_AC1024_AAMA:
+        case LayoutExportFormat::DXF_AC1027_AAMA:
+        case LayoutExportFormat::DXF_AC1006_ASTM:
+        case LayoutExportFormat::DXF_AC1009_ASTM:
+        case LayoutExportFormat::DXF_AC1012_ASTM:
+        case LayoutExportFormat::DXF_AC1014_ASTM:
+        case LayoutExportFormat::DXF_AC1015_ASTM:
+        case LayoutExportFormat::DXF_AC1018_ASTM:
+        case LayoutExportFormat::DXF_AC1021_ASTM:
+        case LayoutExportFormat::DXF_AC1024_ASTM:
+        case LayoutExportFormat::DXF_AC1027_ASTM:
             ui->checkBoxBinaryDXF->setEnabled(true);
             break;
-        case LayoutExportFormats::SVG:
-        case LayoutExportFormats::PDF:
-        case LayoutExportFormats::PDFTiled:
-        case LayoutExportFormats::PNG:
-        case LayoutExportFormats::JPG:
-        case LayoutExportFormats::BMP:
-        case LayoutExportFormats::PPM:
-        case LayoutExportFormats::OBJ:
-        case LayoutExportFormats::PS:
-        case LayoutExportFormats::EPS:
+        case LayoutExportFormat::PDFTiled:
+            ui->groupBoxPaperFormat->setEnabled(true);
+            ui->groupBoxMargins->setEnabled(true);
+            break;
+        case LayoutExportFormat::PNG:
+            ui->exportQuality_Slider->setEnabled(true);
+            break;
+        case LayoutExportFormat::JPG:
+            ui->exportQuality_Slider->setEnabled(true);
+            break;
+        case LayoutExportFormat::PDF:
+        case LayoutExportFormat::SVG:
+        case LayoutExportFormat::BMP:
+        case LayoutExportFormat::PPM:
+        case LayoutExportFormat::OBJ:
+        case LayoutExportFormat::PS:
+        case LayoutExportFormat::EPS:
+        case LayoutExportFormat::TIF:
         default:
             ui->checkBoxBinaryDXF->setEnabled(false);
             break;
     }
-
-    // enable or disable the settings specific for tiled pdf
-    switch(currentFormat)
-    {
-        case LayoutExportFormats::PNG:
-            ui->exportQuality_Slider->setEnabled(true);
-            break;
-        case LayoutExportFormats::JPG:
-            ui->exportQuality_Slider->setEnabled(true);
-            break;
-        case LayoutExportFormats::PDFTiled:
-            ui->groupBoxPaperFormat->setEnabled(true);
-            ui->groupBoxMargins->setEnabled(true);
-            break;
-        default:
-            ui->exportQuality_Slider->setEnabled(false);
-            ui->groupBoxPaperFormat->setEnabled(false);
-            ui->groupBoxMargins->setEnabled(false);
-            break;
-    }
-
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -693,102 +599,13 @@ void DialogSaveLayout::showEvent(QShowEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogSaveLayout::SupportPSTest()
-{
-    if (!tested)
-    {
-        havePdf = TestPdf();
-        tested = true;
-    }
-    return havePdf;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-bool DialogSaveLayout::TestPdf()
-{
-    bool res = false;
-
-    QProcess proc;
-    QStringList args;
-#if defined(Q_OS_WIN) || defined(Q_OS_OSX)
-    // Seek pdftops in app bundle or near valentin.exe
-    proc.start(qApp->applicationDirPath() + QLatin1String("/")+ PDFTOPS, QStringList());
-#else
-    proc.start(PDFTOPS, QStringList()); // Seek pdftops in standard path
-#endif
-    if (proc.waitForStarted(15000) && (proc.waitForFinished(15000) || proc.state() == QProcess::NotRunning))
-    {
-        res = true;
-    }
-    else
-    {
-        qDebug()<<PDFTOPS<<"error"<<proc.error()<<proc.errorString();
-    }
-    return res;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QVector<std::pair<QString, LayoutExportFormats> > DialogSaveLayout::InitFormats()
-{
-    QVector<std::pair<QString, LayoutExportFormats>> list;
-
-    auto InitFormat = [&list](LayoutExportFormats format)
-    {
-        list.append(std::make_pair(ExportFormatDescription(format), format));
-    };
-
-    InitFormat(LayoutExportFormats::SVG);
-    InitFormat(LayoutExportFormats::PDF);
-    InitFormat(LayoutExportFormats::PDFTiled);
-    InitFormat(LayoutExportFormats::PNG);
-    InitFormat(LayoutExportFormats::JPG);
-    InitFormat(LayoutExportFormats::BMP);
-    InitFormat(LayoutExportFormats::PPM);
-    InitFormat(LayoutExportFormats::OBJ);
-    if (SupportPSTest())
-    {
-        InitFormat(LayoutExportFormats::PS);
-        InitFormat(LayoutExportFormats::EPS);
-    }
-    InitFormat(LayoutExportFormats::DXF_AC1006_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1009_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1012_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1014_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1015_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1018_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1021_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1024_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1027_Flat);
-    InitFormat(LayoutExportFormats::DXF_AC1006_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1009_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1012_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1014_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1015_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1018_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1021_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1024_AAMA);
-    InitFormat(LayoutExportFormats::DXF_AC1027_AAMA);
-    // We will support them anyway
-//    InitFormat(LayoutExportFormats::DXF_AC1006_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1009_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1012_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1014_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1015_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1018_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1021_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1024_ASTM);
-//    InitFormat(LayoutExportFormats::DXF_AC1027_ASTM);
-
-    return list;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::RemoveFormatFromList(LayoutExportFormats format)
+void DialogSaveLayout::RemoveFormatFromList(LayoutExportFormat format)
 {
     const int index = ui->comboBoxFormat->findData(static_cast<int>(format));
     if (index != -1)
     {
         ui->comboBoxFormat->removeItem(index);
+        ui->comboBoxFormat->setCurrentToDefault();
     }
 }
 
@@ -879,5 +696,11 @@ void DialogSaveLayout::WriteSettings() const
     else
     {
         settings->SetTiledPDFOrientation(PageOrientation::Landscape);
+    }
+
+    //Export Format
+    if (qApp->Settings()->useLastExportFormat())
+    {
+        qApp->Settings()->setExportFormat(formatText());
     }
 }

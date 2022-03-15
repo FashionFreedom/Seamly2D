@@ -110,6 +110,7 @@ public:
 
     void           changeActiveDraftBlock(const QString& name, const Document &parse = Document::FullParse);
     QString        getActiveDraftBlockName() const;
+
     bool           CheckExistNamePP(const QString& name) const;
     int            CountPP() const;
     QDomElement    GetPPElement(const QString &name);
@@ -404,6 +405,8 @@ public slots:
 protected:
     /** @brief nameActivDraw name current pattern peace. */
     QString        activeDraftBlock;
+
+    QString        lastSavedExportFormat;
 
     /** @brief cursor cursor keep id tool after which we will add new tool in file. */
     quint32        cursor;

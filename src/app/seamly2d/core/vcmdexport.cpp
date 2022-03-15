@@ -28,7 +28,7 @@
 
 #include "vcmdexport.h"
 #include "../dialogs/dialoglayoutsettings.h"
-#include "../dialogs/dialogsavelayout.h"
+#include "../vwidgets/export_format_combobox.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../vformat/vmeasurements.h"
 #include "../vmisc/commandoptions.h"
@@ -97,7 +97,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
     options.append(new QCommandLineOption(QStringList() << SINGLE_OPTION_EXP2FORMAT << LONG_OPTION_EXP2FORMAT,
                                           translate("VCommandLine", "Number corresponding to output format (default = "
                                                                     "0, export mode):") +
-                                                                    DialogSaveLayout::MakeHelpFormatList(),
+                                                                    ExportFormatCombobox::makeHelpFormatList(),
                                           translate("VCommandLine", "Format number"), "0"));
 
     optionsIndex.insert(LONG_OPTION_BINARYDXF, index++);

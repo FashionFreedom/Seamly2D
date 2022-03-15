@@ -5,6 +5,7 @@ SOURCES += \
     $$PWD/calculator/button.cpp \
     $$PWD/calculator/calculator.cpp \
     $$PWD/color_combobox.cpp \
+    $$PWD/export_format_combobox.cpp \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
     $$PWD/scene_rect.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     $$PWD/calculator/button.h \
     $$PWD/calculator/calculator.h \
     $$PWD/color_combobox.h \
+    $$PWD/export_format_combobox.h \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
     $$PWD/scene_rect.h \

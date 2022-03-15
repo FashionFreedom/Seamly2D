@@ -53,6 +53,7 @@
 #include "ui_preferencesconfigurationpage.h"
 #include "../../core/vapplication.h"
 #include "../vpatterndb/pmsystems.h"
+#include "../vwidgets/export_format_combobox.h"
 
 #include <QDir>
 #include <QDirIterator>
@@ -71,41 +72,27 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     , m_rotateSuffixChanged(false)
     , m_mirrorByAxisSuffixChanged(false)
     , m_mirrorByLineSuffixChanged(false)
+    , m_defaultExportFormatChanged(false)
 {
     ui->setupUi(this);
-    ui->autoSaveCheck->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    InitLanguages(ui->langCombo);
-    connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_langChanged = true;
-    });
+    //Editing
+    // Undo
+    ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
 
-    //-------------------- Decimal separator setup
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->GetOsSeparator());
+    // Warnings
+    ui->confirmItemDelete_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmItemDelete());
+    ui->confirmFormatRewriting_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmFormatRewriting());
+    // Send crash reports
+    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
+    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
+    //                                "problem. We do not collect any personal information. Find more about what %1"
+    //                                "kind of information%2 we collect.")
+    //                             .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
+    //                             .arg("</a>"));
 
-    //----------------------- Unit setup
-    InitUnits();
-    connect(ui->unitCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_unitChanged = true;
-    });
-
-    //----------------------- Label language
-    SetLabelComboBox(VApplication::LabelLanguages());
-
-    int index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
-    if (index != -1)
-    {
-        ui->labelCombo->setCurrentIndex(index);
-    }
-    connect(ui->labelCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
-    {
-        m_labelLangChanged = true;
-    });
-
-    //---------------------- Pattern making system
+    // Pattern Making System
     InitPMSystems(ui->systemCombo);
     ui->systemBookValueLabel->setFixedHeight(4 * QFontMetrics(ui->systemBookValueLabel->font()).lineSpacing());
     connect(ui->systemCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -120,20 +107,13 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // set default pattern making system
-    index = ui->systemCombo->findData(qApp->Seamly2DSettings()->GetPMSystemCode());
+    int index = ui->systemCombo->findData(qApp->Seamly2DSettings()->GetPMSystemCode());
     if (index != -1)
     {
         ui->systemCombo->setCurrentIndex(index);
     }
-    //---------------------- Send crash reports
-    //ui->sendReportCheck->setChecked(qApp->Seamly2DSettings()->GetSendReportState());
-    //ui->description = new QLabel(tr("After each crash Seamly2D collects information that may help us fix the "
-    //                                "problem. We do not collect any personal information. Find more about what %1"
-    //                                "kind of information%2 we collect.")
-    //                             .arg("<a href=\"https://wiki.seamly2d.com/wiki/UserManual:Crash_reports\">")
-    //                             .arg("</a>"));
 
-    //----------------------------- Pattern Editing
+    // Default opertsions suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
     ui->moveSuffix_ComboBox->addItem(tr("_M"), "_M");
     ui->moveSuffix_ComboBox->addItem(tr("_MOV"), "_MOV");
@@ -185,12 +165,50 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_mirrorByLineSuffixChanged = true;
     });
 
-    connect(ui->resetWarningsButton, &QPushButton::released, []()
-    {
-        VSettings *settings = qApp->Seamly2DSettings();
+    // File handling
+    // Autosave
+    ui->autoSave_CheckBox->setChecked(qApp->Seamly2DSettings()->GetAutosaveState());
+    ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
 
-        settings->SetConfirmItemDelete(true);
-        settings->SetConfirmFormatRewriting(true);
+    // Export Format
+    ui->uselastExportFormat_CheckBox->setChecked(qApp->Seamly2DSettings()->useLastExportFormat());
+    index = ui->defaultExportFormat_ComboBox->findText(qApp->Seamly2DSettings()->getExportFormat());
+    if (index != -1)
+    {
+        ui->defaultExportFormat_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->defaultExportFormat_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_defaultExportFormatChanged = true;
+    });
+
+    // Language
+    InitLanguages(ui->langCombo);
+    connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_langChanged = true;
+    });
+
+    // Decimal separator setup
+    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->GetOsSeparator());
+
+    // Unit setup
+    InitUnits();
+    connect(ui->unitCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_unitChanged = true;
+    });
+    SetLabelComboBox(VApplication::LabelLanguages());
+
+    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
+    if (index != -1)
+    {
+        ui->labelCombo->setCurrentIndex(index);
+    }
+    connect(ui->labelCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_labelLangChanged = true;
     });
 }
 
@@ -204,13 +222,28 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 void PreferencesConfigurationPage::Apply()
 {
     VSettings *settings = qApp->Seamly2DSettings();
-    settings->SetAutosaveState(ui->autoSaveCheck->isChecked());
-    settings->SetAutosaveTime(ui->autoTime->value());
+    /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
+     * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
+     * prints a warning and does nothing.*/
+    settings->SetUndoCount(ui->undoCount_SpinBox->value());
+    settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
+    settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
+
+    settings->SetAutosaveState(ui->autoSave_CheckBox->isChecked());
+    settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
 
     QTimer *autoSaveTimer = qApp->getAutoSaveTimer();
     SCASSERT(autoSaveTimer)
 
-    ui->autoSaveCheck->isChecked() ? autoSaveTimer->start(ui->autoTime->value()*60000) : autoSaveTimer->stop();
+    ui->autoSave_CheckBox->isChecked() ? autoSaveTimer->start(ui->autoInterval_Spinbox->value()*60000) : autoSaveTimer->stop();
+
+    settings->setUseLastExportFormat(ui->uselastExportFormat_CheckBox->isChecked());
+    if (m_defaultExportFormatChanged)
+    {
+        const QString format = qvariant_cast<QString>(ui->defaultExportFormat_ComboBox->currentText());
+        settings->setExportFormat(format);
+        m_defaultExportFormatChanged = false;
+    }
 
     settings->SetOsSeparator(ui->osOptionCheck->isChecked());
     //settings->SetSendReportState(ui->sendReportCheck->isChecked());
