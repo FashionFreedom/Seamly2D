@@ -113,7 +113,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         ui->systemCombo->setCurrentIndex(index);
     }
 
-    // Default opertsions suffixes
+    // Default operations suffixes
     ui->moveSuffix_ComboBox->addItem(tr("None"), "");
     ui->moveSuffix_ComboBox->addItem(tr("_M"), "_M");
     ui->moveSuffix_ComboBox->addItem(tr("_MOV"), "_MOV");
@@ -181,7 +181,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     {
         m_defaultExportFormatChanged = true;
     });
-
+I 
     // Language
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
