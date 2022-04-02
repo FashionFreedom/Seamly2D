@@ -181,7 +181,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     {
         m_defaultExportFormatChanged = true;
     });
-I 
+ 
     // Language
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
