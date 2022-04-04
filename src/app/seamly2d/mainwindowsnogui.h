@@ -81,11 +81,18 @@ public slots:
     void PrintTiled();
     void RefreshDetailsLabel();
     void refreshGrainLines();
-    void svgFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
-    void pngFile(const QString &name, QGraphicsScene *scene)const;
-    void jpgFile(const QString &name, QGraphicsScene *scene)const;
-    void bmpFile(const QString &name, QGraphicsScene *scene)const;
-    void ppmFile(const QString &name, QGraphicsScene *scene)const;
+    void exportSVG(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
+    void exportPNG(const QString &name, QGraphicsScene *scene)const;
+    void exportTIF(const QString &name, QGraphicsScene *scene)const;
+    void exportJPG(const QString &name, QGraphicsScene *scene)const;
+    void exportBMP(const QString &name, QGraphicsScene *scene)const;
+    void exportPPM(const QString &name, QGraphicsScene *scene)const;
+    void exportPDF(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignoreMargins,
+                 const QMarginsF &margins)const;
+    void exportEPS(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignoreMargins,
+                 const QMarginsF &margins)const;
+    void exportPS(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignoreMargins,
+                const QMarginsF &margins)const;
 
 protected:
     QVector<VLayoutPiece> listDetails;
@@ -117,7 +124,7 @@ protected:
 
     bool isNoScaling;
     bool isLayoutStale;
-    bool ignorePrinterFields;
+    bool ignoreMargins;
     QMarginsF margins;
     QSizeF paperSize;
 
@@ -151,14 +158,10 @@ private:
                                                 const QList<QList<QGraphicsItem *> > &details);
 
 
-    void PdfFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignorePrinterFields,
-                 const QMarginsF &margins)const;
+
     void PdfTiledFile(const QString &name);
-    void EpsFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignorePrinterFields,
-                 const QMarginsF &margins)const;
-    void PsFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene, bool ignorePrinterFields,
-                const QMarginsF &margins)const;
-    void PdfToPs(const QStringList &params)const;
+
+    void convertPdfToPs(const QStringList &params)const;
     void ObjFile(const QString &name, QGraphicsRectItem *paper, QGraphicsScene *scene)const;
     void FlatDxfFile(const QString &name, int version, bool binary, QGraphicsRectItem *paper, QGraphicsScene *scene,
                  const QList<QList<QGraphicsItem *> > &details)const;
@@ -188,7 +191,7 @@ private:
                      const QList<QGraphicsItem *> &papers,
                      const QList<QGraphicsItem *> &shadows,
                      const QList<QList<QGraphicsItem *> > &details,
-                     bool ignorePrinterFields, const QMarginsF &margins) const;
+                     bool ignoreMargins, const QMarginsF &margins) const;
 
     void ExportApparelLayout(const DialogSaveLayout &dialog, const QVector<VLayoutPiece> &details, const QString &name,
                              const QSize &size) const;
@@ -200,7 +203,7 @@ private:
                           const QList<QGraphicsItem *> &papers,
                           const QList<QGraphicsItem *> &shadows,
                           const QList<QList<QGraphicsItem *> > &details,
-                          bool ignorePrinterFields, const QMarginsF &margins);
+                          bool ignoreMargins, const QMarginsF &margins);
 
     void ExportDetailsAsFlatLayout(const DialogSaveLayout &dialog, const QVector<VLayoutPiece> &listDetails);
 };

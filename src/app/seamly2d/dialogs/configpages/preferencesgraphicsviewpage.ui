@@ -407,6 +407,9 @@
                 <pointsize>8</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
              </widget>
             </item>
             <item row="1" column="0">
@@ -666,6 +669,9 @@
                 <pointsize>9</pointsize>
                </font>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
              </widget>
             </item>
             <item row="1" column="0">
@@ -924,6 +930,9 @@
                 <family>MS Shell Dlg 2 UI</family>
                 <pointsize>9</pointsize>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
               </property>
              </widget>
             </item>
@@ -1940,6 +1949,9 @@
               <property name="toolTip">
                <string>Scrolling animation duration</string>
               </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
@@ -1995,6 +2007,9 @@
               </property>
               <property name="toolTip">
                <string>Time in milliseconds between each animation update</string>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

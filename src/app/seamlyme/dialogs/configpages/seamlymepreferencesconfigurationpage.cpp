@@ -102,7 +102,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     {
         VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
-        settings->SetConfirmFormatRewriting(true);
+        settings->setConfirmFormatRewriting(true);
     });
 
     //----------------------- Toolbar

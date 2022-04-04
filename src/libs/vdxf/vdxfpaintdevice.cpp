@@ -135,7 +135,7 @@ void VDxfPaintDevice::SetBinaryFormat(bool binary)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VDxfPaintDevice::IsBinaryFromat() const
+bool VDxfPaintDevice::IsBinaryFormat() const
 {
     return engine->IsBinaryFormat();
 }

@@ -45,7 +45,7 @@ VAbstractMainWindow::VAbstractMainWindow(QWidget *parent)
 bool VAbstractMainWindow::ContinueFormatRewrite(const QString &currentFormatVersion,
                                                 const QString &maxFormatVersion)
 {
-    if (qApp->Settings()->GetConfirmFormatRewriting())
+    if (qApp->Settings()->getConfirmFormatRewriting())
     {
         Utils::CheckableMessageBox msgBox(this);
         msgBox.setWindowTitle(tr("Confirm format rewriting"));
@@ -61,7 +61,7 @@ bool VAbstractMainWindow::ContinueFormatRewrite(const QString &currentFormatVers
 
         if (dialogResult == QDialog::Accepted)
         {
-            qApp->Settings()->SetConfirmFormatRewriting(not msgBox.isChecked());
+            qApp->Settings()->setConfirmFormatRewriting(not msgBox.isChecked());
             return true;
         }
         else

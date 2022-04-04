@@ -89,7 +89,6 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
     initNotches();
     initGrainlines();
 
-    ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
     ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
     ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
     ui->hideMainPath_CheckBox->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
@@ -105,11 +104,6 @@ PreferencesPatternPage::~PreferencesPatternPage()
 void PreferencesPatternPage::Apply()
 {
     VSettings *settings = qApp->Seamly2DSettings();
-
-    /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
-     * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
-     * prints a warning and does nothing.*/
-    settings->SetUndoCount(ui->undoCount_SpinBox->value());
 
     settings->SetDefaultSeamAllowance(ui->defaultSeamAllowance_DoubleSpinBox->value());
     settings->setDefaultSeamColor(ui->defaultSeamColor_ComboBox->currentData().toString());

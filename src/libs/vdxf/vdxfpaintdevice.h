@@ -61,7 +61,7 @@ public:
     void         SetVersion(DRW::Version version);
 
     void SetBinaryFormat(bool binary);
-    bool IsBinaryFromat() const;
+    bool IsBinaryFormat() const;
 
     void setMeasurement(const VarMeasurement &var);
     void setInsunits(const VarInsunits &var);

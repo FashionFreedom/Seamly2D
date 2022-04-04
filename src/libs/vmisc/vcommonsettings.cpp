@@ -79,6 +79,10 @@ const QString settingPathsLabelTemplate                  = QStringLiteral("paths
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
+
+const QString settingConfigurationUseLastExportFormat    = QStringLiteral("configuration/autosave/useLastExportFormat");
+const QString settingConfigurationExportFormat           = QStringLiteral("configuration/autosave/exportFormat");
+
 const QString settingConfigurationSendReportState        = QStringLiteral("configuration/send_report/state");
 const QString settingConfigurationLocale                 = QStringLiteral("configuration/locale");
 const QString settingPMSystemCode                        = QStringLiteral("configuration/pmscode");
@@ -476,7 +480,7 @@ void VCommonSettings::SetAutosaveState(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VCommonSettings::GetAutosaveTime() const
+int VCommonSettings::getAutosaveInterval() const
 {
     bool ok = false;
     int val = value(settingConfigurationAutosaveTime, 1).toInt(&ok);
@@ -490,9 +494,33 @@ int VCommonSettings::GetAutosaveTime() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetAutosaveTime(const int &value)
+void VCommonSettings::setAutosaveInterval(const int &value)
 {
     setValue(settingConfigurationAutosaveTime, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useLastExportFormat() const
+{
+    return value(settingConfigurationUseLastExportFormat, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseLastExportFormat(const bool &value)
+{
+    setValue(settingConfigurationUseLastExportFormat, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getExportFormat() const
+{
+    return value(settingConfigurationExportFormat, "SVG").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setExportFormat(const QString &value)
+{
+    setValue(settingConfigurationExportFormat, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -545,25 +573,25 @@ void VCommonSettings::SetUnit(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetConfirmItemDelete() const
+bool VCommonSettings::getConfirmItemDelete() const
 {
     return value(settingConfigurationConfirmItemDeletion, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetConfirmItemDelete(const bool &value)
+void VCommonSettings::setConfirmItemDelete(const bool &value)
 {
     setValue(settingConfigurationConfirmItemDeletion, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetConfirmFormatRewriting() const
+bool VCommonSettings::getConfirmFormatRewriting() const
 {
     return value(settingConfigurationConfirmFormatRewriting, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetConfirmFormatRewriting(const bool &value)
+void VCommonSettings::setConfirmFormatRewriting(const bool &value)
 {
     setValue(settingConfigurationConfirmFormatRewriting, value);
 }

@@ -5683,7 +5683,7 @@ void MainWindow::InitAutoSave()
 
     if (qApp->Seamly2DSettings()->GetAutosaveState())
     {
-        const qint32 autoTime = qApp->Seamly2DSettings()->GetAutosaveTime();
+        const qint32 autoTime = qApp->Seamly2DSettings()->getAutosaveInterval();
         autoSaveTimer->start(autoTime*60000);
         qCDebug(vMainWindow, "Autosaving every %d minutes.", autoTime);
     }
@@ -6182,40 +6182,100 @@ void MainWindow::exportDraftBlocksAs()
     draftScene->setOriginsVisible(false);
 
     //Open a file dialog to save export
-    QString filters(tr("Images (*.png *.svg *.jpg *.bmp *.ppm)"));
-    QString dir = QDir::homePath() + QLatin1String("/") + FileName() + QLatin1String(".svg");
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Export Draft Blocks"), dir, filters, nullptr,
-                                                    QFileDialog::DontUseNativeDialog);
+    DialogSaveLayout dialog(1, Draw::Calculation, FileName(), this);
+    dialog.setWindowTitle("Export Draft Blocks");
 
-    QFileInfo file(fileName);
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        QString filename = dialog.Path() + QLatin1String("/") + dialog.FileName() + QString::number(1)
+                + DialogSaveLayout::exportFormatSuffix(dialog.Format());
 
-    if (file.suffix() == "png")
-    {
-        pngFile(fileName, draftScene);
-    }
-    else if (file.suffix() == "jpg")
-    {
-        jpgFile(fileName, draftScene);
-    }
-    else if (file.suffix() == "bmp")
-    {
-        bmpFile(fileName, draftScene);
-    }
-    else if (file.suffix() == "ppm")
-    {
-        ppmFile(fileName, draftScene);
-    }
-    else if (file.suffix() == "svg")
-    {
         QRectF rect;
         rect = draftScene->itemsBoundingRect();
         draftScene->update(rect);
-
         QGraphicsRectItem *paper = new QGraphicsRectItem(rect);
+        QMarginsF margins = QMarginsF(0, 0, 0, 0);
 
-        svgFile(fileName, paper, draftScene);
+        switch(dialog.Format())
+        {
+            case LayoutExportFormat::SVG:
+                {
+                    exportSVG(filename, paper, draftScene);
+                    break;
+                }
+            case LayoutExportFormat::PNG:
+                {
+                    exportPNG(filename, draftScene);
+                    break;
+                }
+            case LayoutExportFormat::JPG:
+                {
+                    exportJPG(filename, draftScene);
+                    break;
+                }
+            case LayoutExportFormat::BMP:
+                {
+                    exportBMP(filename, draftScene);
+                    break;
+                }
+            case LayoutExportFormat::TIF:
+                {
+                    exportTIF(filename, draftScene);
+                    break;
+                }
+            case LayoutExportFormat::PPM:
+                {
+                    exportPPM(filename, draftScene);
+                    break;
+                }
+            case LayoutExportFormat::PDF:
+                {
+                    exportPDF(filename, paper, draftScene, true, margins);
+                    break;
+                }
+            case LayoutExportFormat::PDFTiled:
+            case LayoutExportFormat::OBJ:
+            case LayoutExportFormat::PS:
+                {
+                    exportPS(filename, paper, draftScene, true, margins);
+                    break;
+                }
+            case LayoutExportFormat::EPS:
+                {
+                    exportEPS(filename, paper, draftScene, true, margins);
+                    break;
+                }
+            case LayoutExportFormat::DXF_AC1006_Flat:
+            case LayoutExportFormat::DXF_AC1009_Flat:
+            case LayoutExportFormat::DXF_AC1012_Flat:
+            case LayoutExportFormat::DXF_AC1014_Flat:
+            case LayoutExportFormat::DXF_AC1015_Flat:
+            case LayoutExportFormat::DXF_AC1018_Flat:
+            case LayoutExportFormat::DXF_AC1021_Flat:
+            case LayoutExportFormat::DXF_AC1024_Flat:
+            case LayoutExportFormat::DXF_AC1027_Flat:
+            case LayoutExportFormat::DXF_AC1006_AAMA:
+            case LayoutExportFormat::DXF_AC1009_AAMA:
+            case LayoutExportFormat::DXF_AC1012_AAMA:
+            case LayoutExportFormat::DXF_AC1014_AAMA:
+            case LayoutExportFormat::DXF_AC1015_AAMA:
+            case LayoutExportFormat::DXF_AC1018_AAMA:
+            case LayoutExportFormat::DXF_AC1021_AAMA:
+            case LayoutExportFormat::DXF_AC1024_AAMA:
+            case LayoutExportFormat::DXF_AC1027_AAMA:
+            case LayoutExportFormat::DXF_AC1006_ASTM:
+            case LayoutExportFormat::DXF_AC1009_ASTM:
+            case LayoutExportFormat::DXF_AC1012_ASTM:
+            case LayoutExportFormat::DXF_AC1014_ASTM:
+            case LayoutExportFormat::DXF_AC1015_ASTM:
+            case LayoutExportFormat::DXF_AC1018_ASTM:
+            case LayoutExportFormat::DXF_AC1021_ASTM:
+            case LayoutExportFormat::DXF_AC1024_ASTM:
+            case LayoutExportFormat::DXF_AC1027_ASTM:
+            default:
+                break;
+        }
     }
-
 
     // Disable draft blocks in the scenee except current block
     doc->changeActiveDraftBlock(doc->getActiveDraftBlockName(), Document::FullParse);
@@ -6522,7 +6582,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
         {
             DialogSaveLayout dialog(1, Draw::Modeling, expParams->OptBaseName(), this);
             dialog.SetDestinationPath(expParams->OptDestinationPath());
-            dialog.SelectFormat(static_cast<LayoutExportFormats>(expParams->OptExportType()));
+            dialog.SelectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
             dialog.SetBinaryDXFFormat(expParams->IsBinaryDXF());
             dialog.SetTextAsPaths(expParams->IsTextAsPaths());
 
@@ -6546,7 +6606,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
             {
                 DialogSaveLayout dialog(scenes.size(), Draw::Layout, expParams->OptBaseName(), this);
                 dialog.SetDestinationPath(expParams->OptDestinationPath());
-                dialog.SelectFormat(static_cast<LayoutExportFormats>(expParams->OptExportType()));
+                dialog.SelectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
                 dialog.SetBinaryDXFFormat(expParams->IsBinaryDXF());
 
                 ExportData(listDetails, dialog);

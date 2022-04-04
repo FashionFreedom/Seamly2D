@@ -249,14 +249,15 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractPattern::VAbstractPattern(QObject *parent)
-    : QObject(parent),
-      VDomDocument(),
-      activeDraftBlock(QString()),
-      cursor(0),
-      toolsOnRemove(QVector<VDataTool*>()),
-      history(QVector<VToolRecord>()),
-      patternPieces(QStringList()),
-      modified(false)
+    : QObject(parent)
+    ,  VDomDocument()
+    ,  activeDraftBlock(QString())
+    ,  lastSavedExportFormat(QString())
+    ,  cursor(0)
+    ,  toolsOnRemove(QVector<VDataTool*>())
+    ,  history(QVector<VToolRecord>())
+    ,  patternPieces(QStringList())
+     , modified(false)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------

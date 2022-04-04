@@ -71,17 +71,27 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
-    <widget class="QMenu" name="layout_Menu">
+    <widget class="QMenu" name="print_Menu">
      <property name="title">
-      <string>Layout</string>
+      <string>Print</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+       <normaloff>:/icons/win.icon.theme/32x32/actions/document-print.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-print.png</iconset>
+     </property>
+     <addaction name="print_Action"/>
+     <addaction name="printTiled_Action"/>
+    </widget>
+    <widget class="QMenu" name="preview_Menu">
+     <property name="title">
+      <string>Preview</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+       <normaloff>:/icons/win.icon.theme/32x32/actions/document-print-preview.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-print-preview.png</iconset>
      </property>
      <addaction name="printPreview_Action"/>
-     <addaction name="print_Action"/>
-     <addaction name="separator"/>
      <addaction name="printPreviewTiled_Action"/>
-     <addaction name="printTiled_Action"/>
-     <addaction name="separator"/>
-     <addaction name="exportAs_Action"/>
     </widget>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
@@ -89,7 +99,10 @@
     <addaction name="save_Action"/>
     <addaction name="saveAs_Action"/>
     <addaction name="separator"/>
-    <addaction name="layout_Menu"/>
+    <addaction name="print_Menu"/>
+    <addaction name="preview_Menu"/>
+    <addaction name="separator"/>
+    <addaction name="exportAs_Action"/>
     <addaction name="separator"/>
     <addaction name="appPreferences_Action"/>
     <addaction name="patternPreferences_Action"/>
@@ -2563,8 +2576,8 @@
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset theme="document-new">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-new.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-new.png</iconset>
    </property>
    <property name="text">
     <string>New</string>
@@ -2584,8 +2597,8 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -2608,8 +2621,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-save">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-save.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-save.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -3522,8 +3535,8 @@
   </action>
   <action name="exit_Action">
    <property name="icon">
-    <iconset theme="application-exit">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/application-exit.png</normaloff>:/icons/win.icon.theme/32x32/actions/application-exit.png</iconset>
    </property>
    <property name="text">
     <string>E&amp;xit</string>
@@ -3821,13 +3834,13 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/export_to_picture_document.png</normaloff>:/toolicon/32x32/export_to_picture_document.png</iconset>
+     <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export As...</string>
    </property>
    <property name="toolTip">
-    <string>Export Layout (XL)</string>
+    <string>Export Layout (EL)</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>
@@ -4564,6 +4577,11 @@
    </property>
    <property name="shortcut">
     <string>E, D</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Export</string>
    </property>
   </action>
  </widget>
