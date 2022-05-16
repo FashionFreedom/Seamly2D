@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -56,6 +56,7 @@
 #include "dialogs/dialogmdatabase.h"
 #include "dialogs/dialogseamlymepreferences.h"
 #include "dialogs/dialogexporttocsv.h"
+#include "dialogs/me_shortcuts_dialog.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../ifc/ifcdef.h"
@@ -1915,19 +1916,12 @@ void TMainWindow::SetupMenu()
 {
 	// File
 	connect(ui->actionNew, &QAction::triggered, this, &TMainWindow::FileNew);
-	ui->actionNew->setShortcuts(QKeySequence::New);
-
 	connect(ui->actionOpenIndividual, &QAction::triggered, this, &TMainWindow::OpenIndividual);
 	connect(ui->actionOpenMultisize, &QAction::triggered, this, &TMainWindow::OpenMultisize);
 	connect(ui->actionOpenTemplate, &QAction::triggered, this, &TMainWindow::OpenTemplate);
 	connect(ui->actionCreateFromExisting, &QAction::triggered, this, &TMainWindow::CreateFromExisting);
-
 	connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
-	ui->actionSave->setShortcuts(QKeySequence::Save);
-
 	connect(ui->actionSaveAs, &QAction::triggered, this, &TMainWindow::FileSaveAs);
-	ui->actionSaveAs->setShortcuts(QKeySequence::SaveAs);
-
 	connect(ui->actionExportToCSV, &QAction::triggered, this, &TMainWindow::ExportToCSV);
 	connect(ui->actionReadOnly, &QAction::triggered, this, [this](bool ro)
 	{
@@ -1975,7 +1969,6 @@ void TMainWindow::SetupMenu()
 
 
 	connect(ui->actionQuit, &QAction::triggered, this, &TMainWindow::close);
-	ui->actionQuit->setShortcuts(QKeySequence::Quit);
 
 	// Measurements
 	connect(ui->actionAddCustom, &QAction::triggered, this, &TMainWindow::AddCustom);
@@ -1994,6 +1987,12 @@ void TMainWindow::SetupMenu()
 	AboutToShowWindowMenu();
 
 	// Help
+    connect(ui->shortcuts_Action, &QAction::triggered, this, [this]()
+    {
+        MeShortcutsDialog *shortcutsDialog = new MeShortcutsDialog(this);
+        shortcutsDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        shortcutsDialog->show();
+    });
 	connect(ui->actionAboutQt, &QAction::triggered, this, [this]()
 	{
 		QMessageBox::aboutQt(this, tr("About Qt"));

@@ -17,8 +17,8 @@
    <string>New measurement file</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../share/resources/seamlymeicon.qrc">
-    <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
+   <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
+    <normaloff>:/icon/logos/seamlyme_logo_32.png</normaloff>:/icon/logos/seamlyme_logo_32.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -133,7 +133,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../share/resources/seamlymeicon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

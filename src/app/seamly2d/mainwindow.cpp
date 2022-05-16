@@ -83,9 +83,6 @@
 #include "dialogs/dialogs.h"
 
 #include "../vtools/undocommands/addgroup.h"
-#include "dialogs/vwidgetdetails.h"
-#include "dialogs/calculator_dialog.h"
-#include "dialogs/decimalchart_dialog.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vtools/dialogs/support/dialogeditlabel.h"
@@ -4098,6 +4095,9 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->calculator_Action->setEnabled(enable);
     ui->decimalChart_Action->setEnabled(enable);
 
+    //enable help menu
+    ui->shortcuts_Action->setEnabled(enable);
+
     //enable dock widget actions
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
     actionDockWidgetGroups->setEnabled(enable && designStage);
@@ -4731,17 +4731,26 @@ void MainWindow::CreateMenus()
     UpdateRecentFileActions();
 
     //Add Undo/Redo actions to edit menu.
+    QList<QKeySequence> undoShortcuts;
+    undoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Z));
+    undoShortcuts.append(QKeySequence(Qt::AltModifier + Qt::Key_Backspace));
+
     undoAction = qApp->getUndoStack()->createUndoAction(this, tr("&Undo"));
-    connect(undoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
-    undoAction->setShortcuts(QKeySequence::Undo);
+    undoAction->setShortcuts(undoShortcuts);
     undoAction->setIcon(QIcon::fromTheme("edit-undo"));
+    connect(undoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
     ui->edit_Menu->addAction(undoAction);
     ui->edit_Toolbar->addAction(undoAction);
 
+    QList<QKeySequence> redoShortcuts;
+    redoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Y));
+    redoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::ShiftModifier + Qt::Key_Z));
+    redoShortcuts.append(QKeySequence(Qt::AltModifier + Qt::ShiftModifier + Qt::Key_Backspace));
+
     redoAction = qApp->getUndoStack()->createRedoAction(this, tr("&Redo"));
-    connect(redoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
-    redoAction->setShortcuts(QKeySequence::Redo);
+    redoAction->setShortcuts(redoShortcuts);
     redoAction->setIcon(QIcon::fromTheme("edit-redo"));
+    connect(redoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
     ui->edit_Menu->addAction(redoAction);
     ui->edit_Toolbar->addAction(redoAction);
 
@@ -5626,6 +5635,12 @@ void MainWindow::CreateActions()
     });
 
     //Help menu
+    connect(ui->shortcuts_Action, &QAction::triggered, this, [this]()
+    {
+        ShortcutsDialog *shortcutsDialog = new ShortcutsDialog(this);
+        shortcutsDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        shortcutsDialog->show();
+    });
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Showing online help");
