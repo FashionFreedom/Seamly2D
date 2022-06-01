@@ -26,8 +26,8 @@
    <string>About SeamlyMe</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../share/resources/seamlymeicon.qrc">
-    <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
+   <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
+    <normaloff>:/icon/logos/seamlyme_logo_32.png</normaloff>:/icon/logos/seamlyme_logo_32.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -53,7 +53,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../share/resources/seamlymeicon.qrc">:/seamlymeicon/64x64/logo.png</pixmap>
+        <pixmap resource="../../../libs/vmisc/share/resources/icon.qrc">:/icon/logos/seamlyme_logo_96.png</pixmap>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -243,7 +243,7 @@
          </property>
         </widget>
        </item>
-	   <item>
+       <item>
         <widget class="QProgressBar" name="downloadProgress">
          <property name="value">
           <number>25</number>
@@ -296,7 +296,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../share/resources/seamlymeicon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -59,6 +59,7 @@
 #include "../vformat/vmeasurements.h"
 #include "../vmisc/vtablesearch.h"
 #include "../vwidgets/vabstractmainwindow.h"
+#include "dialogs/me_shortcuts_dialog.h"
 
 namespace Ui
 {
@@ -66,6 +67,7 @@ namespace Ui
 }
 
 class QLabel;
+class MeShortcutsDialog;
 
 class TMainWindow : public VAbstractMainWindow
 {

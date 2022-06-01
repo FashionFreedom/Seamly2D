@@ -23,8 +23,8 @@
    <string>ME Database - Add known measurement</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../share/resources/seamlymeicon.qrc">
-    <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
+   <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
+    <normaloff>:/icon/logos/seamlyme_logo_32.png</normaloff>:/icon/logos/seamlyme_logo_32.png</iconset>
   </property>
   <property name="modal">
    <bool>true</bool>
@@ -126,7 +126,7 @@
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
-  <include location="../share/resources/seamlymeicon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>
