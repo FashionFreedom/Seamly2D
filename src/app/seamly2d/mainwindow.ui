@@ -198,6 +198,7 @@
      <addaction name="move_Action"/>
      <addaction name="trueDarts_Action"/>
      <addaction name="exportDraftBlocks_Action"/>
+     <addaction name="importImage_Action"/>
     </widget>
     <widget class="QMenu" name="points_Menu">
      <property name="title">
@@ -278,7 +279,7 @@
     </widget>
     <widget class="QMenu" name="addDetails_Menu">
      <property name="title">
-      <string>Pattern Piece</string>
+      <string>Piece</string>
      </property>
      <property name="icon">
       <iconset resource="share/resources/toolicon.qrc">
@@ -869,7 +870,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="draftMode_Page">
           <widget class="QToolBox" name="draft_ToolBox">
@@ -911,7 +912,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>4</number>
+            <number>5</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -921,8 +922,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>118</width>
-              <height>288</height>
+              <width>124</width>
+              <height>293</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1268,7 +1269,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
+              <width>124</width>
               <height>58</height>
              </rect>
             </property>
@@ -1366,7 +1367,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>118</width>
+              <width>124</width>
               <height>196</height>
              </rect>
             </property>
@@ -1626,7 +1627,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
+              <width>124</width>
               <height>226</height>
              </rect>
             </property>
@@ -2128,8 +2129,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
-              <height>96</height>
+              <width>124</width>
+              <height>138</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -2259,6 +2260,32 @@
                <property name="icon">
                 <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/path.png</normaloff>:/toolicon/32x32/path.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QToolButton" name="importImage_ToolButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Import Image</string>
+               </property>
+               <property name="text">
+                <string notr="true">...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+                 <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2573,6 +2600,20 @@
    <addaction name="toggleAxisOrigin_Action"/>
    <addaction name="toggleGrainLines_Action"/>
    <addaction name="toggleLabels_Action"/>
+  </widget>
+  <widget class="QToolBar" name="image_ToolBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -4584,6 +4625,42 @@
     <string>Export</string>
    </property>
   </action>
+  <action name="importImage_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+  </action>
+  <action name="deleteImage_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/trashcan.png</normaloff>:/icon/32x32/trashcan.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="alignImage_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/alignment.png</normaloff>:/icon/32x32/alignment.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align</string>
+   </property>
+  </action>
+  <action name="lockImage_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/lock_on.png</normaloff>:/icon/32x32/lock_on.png</iconset>
+   </property>
+   <property name="text">
+    <string>Lock</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -4595,8 +4672,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

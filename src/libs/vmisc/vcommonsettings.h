@@ -93,6 +93,10 @@ public:
     QString              GetPathLabelTemplate() const;
     void                 SetPathLabelTemplate(const QString &value);
 
+    static QString       getDefaultImageFilePath();
+    QString              getImageFilePath() const;
+    void                 setImageFilePath(const QString &value);
+
     bool                 GetOsSeparator() const;
     void                 SetOsSeparator(const bool &value);
 

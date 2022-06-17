@@ -1,37 +1,16 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
+/******************************************************************************
  **  @file   mainwindow.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
+ **  @author DS Caskey
+ **  @date   Jul 31, 2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -51,6 +30,7 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include "../vgeometry/vspline.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
@@ -74,6 +54,7 @@
 #include "../ifc/xml/vvitconverter.h"
 #include "../vwidgets/vwidgetpopup.h"
 #include "../vwidgets/vmaingraphicsscene.h"
+#include "../vwidgets/image_toolbar.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/dialogs/tooldialogs.h"
 #include "tools/vtoolseamallowance.h"
@@ -81,8 +62,9 @@
 #include "tools/nodeDetails/vtoolpin.h"
 #include "tools/vtooluniondetails.h"
 #include "dialogs/dialogs.h"
-
+#include "../vpropertyexplorer/checkablemessagebox.h"
 #include "../vtools/undocommands/addgroup.h"
+#include "../tools/image_item.h"
 #include "dialogs/vwidgetdetails.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
@@ -112,6 +94,8 @@
 #include <QFontComboBox>
 #include <QTextCodec>
 #include <QDoubleSpinBox>
+#include <QToolBar>
+#include <QImageReader>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -181,14 +165,15 @@ MainWindow::MainWindow(QWidget *parent)
     , patternPiecesWidget(nullptr)
     , lock(nullptr)
     , zoomScaleSpinBox(nullptr)
+    , imageToolbarWidget(nullptr)
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
     {
         recentFileActs[i] = nullptr;
     }
 
-    CreateActions();
-    InitScenes();
+    createActions();
+    initializeScenes();
 
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
@@ -208,26 +193,27 @@ MainWindow::MainWindow(QWidget *parent)
     connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
     qApp->setCurrentDocument(doc);
 
-    InitDocksContain();
-    CreateMenus();
-    initDraftToolBar();
-    initPointNameToolBar();
-    initModesToolBar();
-    InitToolButtons();
+    initializeDocksContain();
+    createMenus();
+    initializeDraftToolBar();
+    initializePointNameToolBar();
+    initializeModesToolBar();
+    initializeImageToolBar();
+    initializeToolButtons();
 
     helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
     ui->statusBar->addWidget(helpLabel);
 
-    initToolsToolBar();
+    initializeToolsToolBar();
 
     connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::PatternChangesWereSaved);
 
-    InitAutoSave();
+    initializeAutoSave();
 
     ui->draft_ToolBox->setCurrentIndex(0);
 
     ReadSettings();
-    initToolBarVisibility();
+    initializeToolBarVisibility();
 
     setCurrentFile("");
     WindowsLocale();
@@ -305,9 +291,9 @@ void MainWindow::AddPP(const QString &PPName)
 
     if (comboBoxDraws->count() == 0)
     {
-        draftScene->InitOrigins();
+        draftScene->initializeOrigins();
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
-        pieceScene->InitOrigins();
+        pieceScene->initializeOrigins();
     }
 
     comboBoxDraws->blockSignals(true);
@@ -370,7 +356,7 @@ QPointF MainWindow::StartPositionNewPP() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::InitScenes()
+void MainWindow::initializeScenes()
 {
     draftScene = new VMainGraphicsScene(this);
     currentScene = draftScene;
@@ -512,7 +498,7 @@ bool MainWindow::LoadMeasurements(const QString &path)
     try
     {
         qApp->setPatternType(measurements->Type());
-        initStatusToolBar();
+        initializeStatusToolBar();
         pattern->ClearVariables(VarType::Measurement);
         measurements->ReadMeasurements();
     }
@@ -816,9 +802,11 @@ void MainWindow::ClosedDetailsDialogWithApply(int result)
         ui->anchorPoint_ToolButton->setEnabled(true);
         ui->internalPath_ToolButton->setEnabled(true);
         ui->insertNode_ToolButton->setEnabled(true);
+        ui->importImage_ToolButton->setEnabled(true);
         ui->anchorPoint_Action->setEnabled(true);
         ui->internalPath_Action->setEnabled(true);
         ui->insertNode_Action->setEnabled(true);
+        ui->importImage_Action->setEnabled(true);
     }
 }
 
@@ -1591,6 +1579,162 @@ void MainWindow::ClosedDialogInsertNode(int result)
     doc->LiteParseTree(Document::LiteParse);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleImportImage()
+{
+    qCDebug(vMainWindow, "Add Image");
+    ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
+    ui->importImage_ToolButton->setChecked(true);
+
+    QString filename = getImageFilename();
+    qCDebug(vMainWindow, "Image filename: %s", qUtf8Printable(filename));
+
+    DraftImage image;
+    QFileInfo f(filename);
+    if (filename.isEmpty())
+    {
+        return;
+    }
+    image.id = VContainer::getNextId();
+    image.name = f.baseName();
+    image.filename = filename;
+    image.units = qApp->patternUnit();
+
+    addImage(image);
+}
+
+void  MainWindow::addImage(DraftImage image)
+{
+    QImageReader imageReader(image.filename);
+    image.pixmap = QPixmap::fromImageReader(&imageReader);
+
+    ImageItem *item = new ImageItem(image);
+    m_ImageMap.insert(image.id, item);
+    draftScene->addItem(item);
+    imageToolbarWidget->blockSignals(true);
+    imageToolbarWidget->setImage(item->getImage());
+    //Need error dialog
+    imageToolbarWidget->blockSignals(false);
+
+    connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
+
+    //connect(item, &ImageItem::imageUpdated,  imageToolbarWidget, &ImageToolbarWidget::setImage);
+    //connect(item, &ImageItem::deleteImage,   this,               &MainWindow::handleDeleteImage);
+    connect(item, &ImageItem::imageSelected, this,               &MainWindow::handleImageSelected);
+
+    connect(imageToolbarWidget, &ImageToolbarWidget::lockClicked, item, &ImageItem::setLock);
+
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleDeleteImage(quint32 id)
+{
+    qCDebug(vMainWindow, "delete Image");
+    Utils::CheckableMessageBox msgBox(qApp->getMainWindow());
+    msgBox.setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+    //msgBox.setWindowTitle(tr("Confirm deletion"));
+    //msgBox.setWindowIcon(QIcon());
+    msgBox.setText(tr("Are you sure want to delete this image?"));
+    msgBox.setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
+    msgBox.setDefaultButton(QDialogButtonBox::No);
+    msgBox.setIconPixmap(QApplication::style()->standardIcon(QStyle::SP_MessageBoxWarning).pixmap(32, 32));
+
+    int dialogResult = msgBox.exec();
+
+    if (dialogResult == QDialog::Accepted)
+    {
+        qApp->Settings()->setConfirmItemDelete(not msgBox.isChecked());
+
+        ImageItem *item = m_ImageMap.value(id);
+        if (item)
+        {
+            m_ImageMap.remove(id);
+            draftScene->removeItem(item);
+            delete item;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleImageSelected(quint32 id)
+{
+    ImageItem *item = m_ImageMap.value(id);
+    if (item)
+    {
+        imageToolbarWidget->setImage(item->getImage());
+    }
+}
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleLockImage(bool state)
+{
+    qCDebug(vMainWindow, "lock Image = %s",  state ? "True" : "False");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleAlignImage()
+{
+    qCDebug(vMainWindow, "align Image");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::handleLockImageAspect(bool state)
+{
+    qCDebug(vMainWindow, "lock Image Aspect= %s",  state ? "True" : "False");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::updateImage(DraftImage image)
+{
+    qCDebug(vMainWindow, "Id = %d", image.id);
+    qCDebug(vMainWindow, "Name = %s", qUtf8Printable(image.name));
+    qCDebug(vMainWindow, "Filename = %s", qUtf8Printable(image.filename));
+    qCDebug(vMainWindow, "lock Image = %s", image.locked ? "True" : "False");
+    qCDebug(vMainWindow, "Anchor = %d", static_cast<int>(image.anchor));
+    qCDebug(vMainWindow, "Xpos = %f", image.xPos);
+    qCDebug(vMainWindow, "YPos = %f", image.yPos);
+    qCDebug(vMainWindow, "Width = %f", image.width);
+    qCDebug(vMainWindow, "Height = %f", image.height);
+    qCDebug(vMainWindow, "XScale = %f", image.xScale);
+    qCDebug(vMainWindow, "YScale = %f", image.yScale);
+    qCDebug(vMainWindow, "lock Image Aspect = %s",  image.aspectLocked ? "True" : "False");
+    qCDebug(vMainWindow, "Units = %d", static_cast<int>(image.units));
+    qCDebug(vMainWindow, "Rotation = %f", image.rotation);
+    qCDebug(vMainWindow, "Visible = %s",  image.visible ? "True" : "False");
+    qCDebug(vMainWindow, "Opacity = %f", image.opacity);
+    qCDebug(vMainWindow, "Order = %d\n", static_cast<int>(image.order));
+
+    ImageItem *item = static_cast<ImageItem *>(qApp->getCurrentScene()->focusItem());
+    if (item)
+    {
+        item->setImage(image);
+    }
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+QString MainWindow::getImageFilename()
+{
+    const QString filter = tr("SVG") + QLatin1String(" (*.svg);;") +
+                           tr("PNG") + QLatin1String(" (*.png);;") +
+                           tr("JPG") + QLatin1String(" (*.jpg);;") +
+                           tr("BMP") + QLatin1String(" (*.bmp);;") +
+                           tr("TIF") + QLatin1String(" (*.tf)");
+
+    const QString path = qApp->Seamly2DSettings()->getImageFilePath();
+
+    bool usedNotExistedDir = false;
+    QDir directory(path);
+    if (!directory.exists())
+    {
+        usedNotExistedDir = directory.mkpath(".");
+    }
+
+    const QString filename = QFileDialog::getOpenFileName(this, tr("Open Image File"), path, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
+
+    return filename;
+}
+
 //Pieces
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -1659,7 +1803,7 @@ void MainWindow::showEvent( QShowEvent *event )
     {
         return;
     }
-    // do your init stuff here
+    // do your initialize stuff here
 
     MinimumScrollBar();
 
@@ -1807,7 +1951,7 @@ void MainWindow::LoadIndividual()
 
     bool usedNotExistedDir = false;
     QDir directory(path);
-    if (not directory.exists())
+    if (!directory.exists())
     {
         usedNotExistedDir = directory.mkpath(".");
     }
@@ -1912,7 +2056,7 @@ void MainWindow::UnloadMeasurements()
         watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            initStatusToolBar();
+            initializeStatusToolBar();
         }
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
@@ -2049,9 +2193,9 @@ void MainWindow::OpenAt(QAction *where)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initStatusToolBar enable option toolbar.
+ * @brief initializeStatusToolBar enable option toolbar.
  */
-void MainWindow::initStatusToolBar()
+void MainWindow::initializeStatusToolBar()
 {
     ui->status_ToolBar->clear();
     if (not mouseCoordinate.isNull())
@@ -2118,7 +2262,7 @@ QComboBox *MainWindow::SetGradationList(QLabel *label, const QStringList &list)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::initModesToolBar()
+void MainWindow::initializeModesToolBar()
 {
     leftGoToStage = new QLabel(this);
     leftGoToStage->setPixmap(QPixmap("://icon/24x24/fast_forward_left_to_right_arrow.png"));
@@ -2129,11 +2273,24 @@ void MainWindow::initModesToolBar()
     ui->mode_ToolBar->insertWidget(ui->layoutMode_Action, rightGoToStage);
 }
 
+void MainWindow::initializeImageToolBar()
+{
+    imageToolbarWidget = new ImageToolbarWidget(this);
+    ui->image_ToolBar->addWidget(imageToolbarWidget);
+
+    connect(imageToolbarWidget, &ImageToolbarWidget::addClicked,        this, &MainWindow::handleImportImage);
+    //connect(imageToolbarWidget, &ImageToolbarWidget::deleteClicked,     this, &MainWindow::handleDeleteImage);
+    //connect(imageToolbarWidget, &ImageToolbarWidget::lockClicked,       this, &MainWindow::handleLockImage);
+    //connect(imageToolbarWidget, &ImageToolbarWidget::alignClicked,      this, &MainWindow::handleAlignImage);
+    //connect(imageToolbarWidget, &ImageToolbarWidget::imageUpdated,      this, &MainWindow::updateImage);
+    //connect(imageToolbarWidget, &ImageToolbarWidget::lockAspectClicked, this, &MainWindow::handleLockImageAspect);
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initPointNameToolBar enable Point Name toolbar.
+ * @brief initializePointNameToolBar enable Point Name toolbar.
  */
-void MainWindow::initPointNameToolBar()
+void MainWindow::initializePointNameToolBar()
 {
     fontComboBox = new QFontComboBox ;
     fontComboBox->setCurrentFont(qApp->Seamly2DSettings()->getPointNameFont());
@@ -2197,9 +2354,9 @@ void MainWindow::initPointNameToolBar()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initDraftToolBar enable draw toolbar.
+ * @brief initializeDraftToolBar enable draw toolbar.
  */
-void MainWindow::initDraftToolBar()
+void MainWindow::initializeDraftToolBar()
 {
     patternPieceLabel = new QLabel(tr("Draft Block:"));
     ui->draft_ToolBar->addWidget(patternPieceLabel);
@@ -2227,7 +2384,7 @@ void MainWindow::initDraftToolBar()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::initToolsToolBar()
+void MainWindow::initializeToolsToolBar()
 {
     /*First we will try use Standard Shortcuts from Qt, but because keypad "-" and "+" not the same keys like in main
     keypad, shortcut Ctrl+"-" or "+" from keypad will not working with standard shortcut (QKeySequence::ZoomIn or
@@ -2295,7 +2452,7 @@ void MainWindow::initToolsToolBar()
 
 }
 
-void MainWindow::initToolBarVisibility()
+void MainWindow::initializeToolBarVisibility()
 {
     updateToolBarVisibility();
     connect(ui->tools_ToolBox_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
@@ -2429,7 +2586,7 @@ void MainWindow::zoomPan()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::InitToolButtons()
+void MainWindow::initializeToolButtons()
 {
     connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
 
@@ -2488,6 +2645,9 @@ void MainWindow::InitToolButtons()
     connect(ui->ellipticalArc_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleEllipticalArcTool);
     connect(ui->anchorPoint_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleAnchorPointTool);
     connect(ui->insertNode_ToolButton,     &QToolButton::clicked, this, &MainWindow::handleInsertNodeTool);
+
+    connect(ui->importImage_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleImportImage);
+
 }
 
 void MainWindow::handlePointsMenu()
@@ -3155,6 +3315,7 @@ void  MainWindow::handleArrowTool(bool checked)
         emit EnableNodeLabelSelection(true);
         emit EnableNodePointSelection(true);
         emit EnableDetailSelection(true);// Disable when done visualization details
+        emit EnableImageSelection(true);
 
         // Hovering
         emit EnableLabelHover(true);
@@ -3167,6 +3328,7 @@ void  MainWindow::handleArrowTool(bool checked)
         emit EnableNodeLabelHover(true);
         emit EnableNodePointHover(true);
         emit EnableDetailHover(true);
+        emit EnableImageHover(true);
 
         ui->view->allowRubberBand(true);
 
@@ -3542,7 +3704,7 @@ bool MainWindow::SaveAs()
 
     bool usedNotExistedDir = false;
     QDir directory(dir);
-    if (not directory.exists())
+    if (!directory.exists())
     {
         usedNotExistedDir = directory.mkpath(".");
     }
@@ -3566,7 +3728,7 @@ bool MainWindow::SaveAs()
         return false;
     }
 
-    QFileInfo f( fileName );
+    QFileInfo f(fileName);
     if (f.suffix().isEmpty() && f.suffix() != QLatin1String("val"))
     {
         fileName += QLatin1String(".val");
@@ -3815,6 +3977,8 @@ void MainWindow::Clear()
     ui->loadMultisize_Action->setEnabled(false);
     ui->unloadMeasurements_Action->setEnabled(false);
     ui->editCurrent_Action->setEnabled(false);
+
+    ui->image_ToolBar->setEnabled(false);
 
     setEnableTools(false);
     qApp->setPatternUnit(Unit::Cm);
@@ -4106,6 +4270,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     //Now we don't want allow user call context menu
     draftScene->SetDisableTools(!enable, doc->getActiveDraftBlockName());
     ui->view->setEnabled(enable);
+
+    ui->image_ToolBar->setEnabled(enable && draftStage);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4401,6 +4567,7 @@ void MainWindow::setEnableTools(bool enable)
     ui->anchorPoint_ToolButton->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
     ui->internalPath_ToolButton->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
     ui->insertNode_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
+    ui->importImage_ToolButton->setEnabled(draftTools);
 
     //Pattern Piece Tools
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
@@ -4473,6 +4640,7 @@ void MainWindow::setEnableTools(bool enable)
     ui->anchorPoint_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
     ui->internalPath_Action->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
     ui->insertNode_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->importImage_Action->setEnabled(draftTools);
 
     //Pattern Pieces
     ui->union_Action->setEnabled(pieceTools);
@@ -4718,7 +4886,7 @@ void MainWindow::UpdateRecentFileActions()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::CreateMenus()
+void MainWindow::createMenus()
 {
     //Add last 5 most recent projects to file menu.
     for (int i = 0; i < MaxRecentFiles; ++i)
@@ -5045,7 +5213,7 @@ void MainWindow::AddDocks()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::InitDocksContain()
+void MainWindow::initializeDocksContain()
 {
     qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
     toolProperties = new VToolOptionsPropertyBrowser(ui->toolProperties_DockWidget);
@@ -5079,7 +5247,7 @@ bool MainWindow::OpenNewSeamly2D(const QString &fileName) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::CreateActions()
+void MainWindow::createActions()
 {
     ui->setupUi(this);
 
@@ -5520,6 +5688,12 @@ void MainWindow::CreateActions()
         handleInsertNodeTool(true);
     });
 
+    //Image actions
+    connect(ui->importImage_Action, &QAction::triggered, this, &MainWindow::handleImportImage);
+    //connect(ui->deleteImage_Action, &QAction::triggered, this, &MainWindow::handleDeleteImage);
+    connect(ui->lockImage_Action, &QAction::triggered, this, &MainWindow::handleLockImage);
+    connect(ui->alignImage_Action, &QAction::triggered, this, &MainWindow::handleAlignImage);
+
     //Tools->Layout submenu actions
     connect(ui->newPrintLayout_Action, &QAction::triggered, this, [this]
     {
@@ -5670,7 +5844,7 @@ void MainWindow::CreateActions()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::InitAutoSave()
+void MainWindow::initializeAutoSave()
 {
     //Autosaving file each 1 minutes
     delete autoSaveTimer;
@@ -5881,7 +6055,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         if (qApp->patternType() == MeasurementsType::Unknown)
         {// Show toolbar only if was not uploaded any measurements.
-            initStatusToolBar();
+            initializeStatusToolBar();
         }
     }
     catch (VException &e)
@@ -5978,9 +6152,9 @@ void MainWindow::ToolBarStyles()
 
 void MainWindow::resetOrigins()
 {
-    draftScene->InitOrigins();
+    draftScene->initializeOrigins();
     draftScene->setOriginsVisible(true);
-    pieceScene->InitOrigins();
+    pieceScene->initializeOrigins();
     pieceScene->setOriginsVisible(true);
 }
 
@@ -6029,7 +6203,7 @@ void MainWindow::Preferences()
 
         if (guard->exec() == QDialog::Accepted)
         {
-            InitAutoSave();
+            initializeAutoSave();
         }
     }
 }
@@ -6407,7 +6581,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
 
                     bool usedNotExistedDir = false;
                     QDir directory(path);
-                    if (not directory.exists())
+                    if (!directory.exists())
                     {
                         usedNotExistedDir = directory.mkpath(".");
                     }
@@ -6431,7 +6605,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
 
                     bool usedNotExistedDir = false;
                     QDir directory(path);
-                    if (not directory.exists())
+                    if (!directory.exists())
                     {
                         usedNotExistedDir = directory.mkpath(".");
                     }
@@ -6969,6 +7143,7 @@ void MainWindow::ToolSelectPoint() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(true);
@@ -6978,6 +7153,7 @@ void MainWindow::ToolSelectPoint() const
     emit EnableElArcHover(false);
     emit EnableSplineHover(false);
     emit EnableSplinePathHover(false);
+    emit EnableImageHover(false);
 
     ui->view->allowRubberBand(false);
 }
@@ -7007,6 +7183,7 @@ void MainWindow::ToolSelectSpline() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(false);
@@ -7016,6 +7193,7 @@ void MainWindow::ToolSelectSpline() const
     emit EnableElArcHover(false);
     emit EnableSplineHover(true);
     emit EnableSplinePathHover(false);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
@@ -7033,6 +7211,7 @@ void MainWindow::ToolSelectSplinePath() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(false);
@@ -7042,6 +7221,7 @@ void MainWindow::ToolSelectSplinePath() const
     emit EnableElArcHover(false);
     emit EnableSplineHover(false);
     emit EnableSplinePathHover(true);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
@@ -7059,6 +7239,7 @@ void MainWindow::ToolSelectArc() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(false);
@@ -7068,6 +7249,7 @@ void MainWindow::ToolSelectArc() const
     emit EnableElArcHover(false);
     emit EnableSplineHover(false);
     emit EnableSplinePathHover(false);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
@@ -7085,6 +7267,7 @@ void MainWindow::ToolSelectPointArc() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(true);
@@ -7094,6 +7277,7 @@ void MainWindow::ToolSelectPointArc() const
     emit EnableElArcHover(false);
     emit EnableSplineHover(false);
     emit EnableSplinePathHover(false);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
@@ -7111,6 +7295,7 @@ void MainWindow::ToolSelectCurve() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(false);
@@ -7120,6 +7305,7 @@ void MainWindow::ToolSelectCurve() const
     emit EnableElArcHover(true);
     emit EnableSplineHover(true);
     emit EnableSplinePathHover(true);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
@@ -7137,6 +7323,7 @@ void MainWindow::ToolSelectAllDrawObjects() const
     emit EnableElArcSelection(false);
     emit EnableSplineSelection(false);
     emit EnableSplinePathSelection(false);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(true);
@@ -7146,6 +7333,7 @@ void MainWindow::ToolSelectAllDrawObjects() const
     emit EnableElArcHover(true);
     emit EnableSplineHover(true);
     emit EnableSplinePathHover(true);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 
@@ -7163,6 +7351,7 @@ void MainWindow::ToolSelectOperationObjects() const
     emit EnableElArcSelection(true);
     emit EnableSplineSelection(true);
     emit EnableSplinePathSelection(true);
+    emit EnableImageSelection(false);
 
     // Hovering
     emit EnableLabelHover(true);
@@ -7172,6 +7361,7 @@ void MainWindow::ToolSelectOperationObjects() const
     emit EnableElArcHover(true);
     emit EnableSplineHover(true);
     emit EnableSplinePathHover(true);
+    emit EnableImageHover(false);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 

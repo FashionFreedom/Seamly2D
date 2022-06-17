@@ -245,6 +245,21 @@ public:
     static const QString TagNodes;
     static const QString TagNode;
 
+    static const QString TagDraftImages;
+    static const QString AttrId;
+    static const QString AttrFilename;
+    static const QString AttrLocked;
+    static const QString AttrAnchor;
+    static const QString AttrXPos;
+    static const QString AttrYPos;
+    static const QString AttrHeight;
+    static const QString AttrXScale;
+    static const QString AttrYScale ;
+    static const QString AttrAspectLocked;
+    static const QString AttrUnits;
+    static const QString AttrOpacity;
+    static const QString AttrOrder;
+
     static const QString AttrName;
     static const QString AttrVisible;
     static const QString AttrObject;

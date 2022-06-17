@@ -3889,9 +3889,9 @@ void VPattern::PrepareForParse(const Document &parse)
     {
         TestUniqueId();
         draftScene->clear();
-        draftScene->InitOrigins();
+        draftScene->initializeOrigins();
         pieceScene->clear();
-        pieceScene->InitOrigins();
+        pieceScene->initializeOrigins();
         data->ClearForFullParse();
         activeDraftBlock.clear();
         patternPieces.clear();

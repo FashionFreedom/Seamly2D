@@ -1,37 +1,16 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vabstractpattern.cpp
+/************************************************************************
+ **  @file   def.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 6, 2015
  **
+ **  @author Douglas S Caskey
+ **  @date   7.31.2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -51,6 +30,20 @@
 
 #include "vabstractpattern.h"
 
+#include "vdomdocument.h"
+#include "vpatternconverter.h"
+#include "vtoolrecord.h"
+#include "../exception/vexceptionemptyparameter.h"
+#include "../exception/vexceptionobjecterror.h"
+#include "../exception/vexceptionconversionerror.h"
+#include "../ifc/ifcdef.h"
+#include "../ifc/exception/vexceptionbadid.h"
+#include "../qmuparser/qmutokenparser.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vpiecenode.h"
+#include "../vtools/tools/vdatatool.h"
+
 #include <QDomNode>
 #include <QDomNodeList>
 #include <QLatin1String>
@@ -61,20 +54,6 @@
 #include <QStringData>
 #include <QStringDataPtr>
 #include <QtDebug>
-
-#include "../exception/vexceptionemptyparameter.h"
-#include "../exception/vexceptionobjecterror.h"
-#include "../exception/vexceptionconversionerror.h"
-#include "../qmuparser/qmutokenparser.h"
-#include "../ifc/exception/vexceptionbadid.h"
-#include "../ifc/ifcdef.h"
-#include "../vpatterndb/vcontainer.h"
-#include "../vpatterndb/vpiecenode.h"
-#include "../vtools/tools/vdatatool.h"
-#include "vpatternconverter.h"
-#include "vdomdocument.h"
-#include "vtoolrecord.h"
-#include "../vmisc/vabstractapplication.h"
 
 class QDomElement;
 
@@ -113,6 +92,21 @@ const QString VAbstractPattern::TagGrainline            = QStringLiteral("grainl
 const QString VAbstractPattern::TagPath                 = QStringLiteral("path");
 const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes");
 const QString VAbstractPattern::TagNode                 = QStringLiteral("node");
+
+const QString VAbstractPattern::TagDraftImages          = QStringLiteral("draftImages");
+const QString VAbstractPattern::AttrId                  = QStringLiteral("id");
+const QString VAbstractPattern::AttrFilename            = QStringLiteral("filename");
+const QString VAbstractPattern::AttrLocked              = QStringLiteral("locked");
+const QString VAbstractPattern::AttrAnchor              = QStringLiteral("anchor");
+const QString VAbstractPattern::AttrXPos                = QStringLiteral("xPos");
+const QString VAbstractPattern::AttrYPos                = QStringLiteral("yPos");
+const QString VAbstractPattern::AttrHeight              = QStringLiteral("height");
+const QString VAbstractPattern::AttrXScale              = QStringLiteral("xScale");
+const QString VAbstractPattern::AttrYScale              = QStringLiteral("yScale");
+const QString VAbstractPattern::AttrAspectLocked        = QStringLiteral("aspectLocked");
+const QString VAbstractPattern::AttrUnits               = QStringLiteral("units");
+const QString VAbstractPattern::AttrOpacity             = QStringLiteral("opacity");
+const QString VAbstractPattern::AttrOrder               = QStringLiteral("order");
 
 const QString VAbstractPattern::AttrName                = QStringLiteral("name");
 const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");
@@ -1607,7 +1601,7 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
     {
         const QStringList tags = QStringList() << TagUnit << TagImage << TagDescription << TagNotes
                                          << TagGradation << TagPatternName << TagPatternNum << TagCompanyName
-                                         << TagCustomerName << TagPatternLabel;
+                                         << TagCustomerName << TagPatternLabel << TagDraftImages;
         switch (tags.indexOf(tag))
         {
             case 1: //TagImage
@@ -1646,6 +1640,9 @@ QDomElement VAbstractPattern::CheckTagExists(const QString &tag)
                 break;
             case 9: // TagPatternLabel
                 element = createElement(TagPatternLabel);
+                break;
+            case 10: // TagDraftImages
+                element = createElement(TagDraftImages);
                 break;
             case 0: //TagUnit (Mandatory tag)
             default:

@@ -1,37 +1,16 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   mainwindow.h
+/******************************************************************************
+ **  @file   mainwindow.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
+ **  @author DS Caskey
+ **  @date   Jul 31, 2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -56,6 +35,7 @@
 #include "core/vcmdexport.h"
 #include "../vmisc/vlockguard.h"
 
+#include <QMap>
 #include <QPointer>
 
 namespace Ui
@@ -80,6 +60,10 @@ class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
+class ImageToolbarWidget;
+class DraftImage;
+class ImageItem;
+
 
 /**
  * @brief The MainWindow class main windows.
@@ -114,6 +98,7 @@ signals:
     void EnableNodeLabelSelection(bool enable) const;
     void EnableNodePointSelection(bool enable) const;
     void EnableDetailSelection(bool enable) const;
+    void EnableImageSelection(bool enable) const;
 
     void EnableLabelHover(bool enable) const;
     void EnablePointHover(bool enable) const;
@@ -125,6 +110,7 @@ signals:
     void EnableNodeLabelHover(bool enable) const;
     void EnableNodePointHover(bool enable) const;
     void EnableDetailHover(bool enable) const;
+    void EnableImageHover(bool enable) const;
 
     void signalZoomToAreaActive(bool enable) const;
     void signalZoomPanActive(bool enable) const;
@@ -205,6 +191,18 @@ private slots:
     void handleInternalPathTool(bool checked);
     void handleAnchorPointTool(bool checked);
     void handleInsertNodeTool(bool checked);
+
+    void       handleImportImage();
+    void       addImage(DraftImage image);
+
+    void handleDeleteImage(quint32 id);
+    void handleImageSelected(quint32 id);
+    void handleLockImage(bool state);
+    void handleAlignImage();
+    void updateImage(DraftImage image);
+    void handleLockImageAspect(bool state);
+    QString  getImageFilename();
+
 
     void handlePatternPieceTool(bool checked);
     void handleUnionDetailsTool(bool checked);
@@ -323,19 +321,22 @@ private:
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
+    ImageToolbarWidget               *imageToolbarWidget;
+    QMap<qint32, ImageItem *>         m_ImageMap{};
 
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
 
-    void                              initStatusToolBar();
-    void                              initModesToolBar();
-    void                              initDraftToolBar();
-    void                              initPointNameToolBar();
-    void                              initToolsToolBar();
-    void                              initToolBarVisibility();
+    void                              initializeStatusToolBar();
+    void                              initializeModesToolBar();
+    void                              initializeImageToolBar();
+    void                              initializeDraftToolBar();
+    void                              initializePointNameToolBar();
+    void                              initializeToolsToolBar();
+    void                              initializeToolBarVisibility();
     void                              updateToolBarVisibility();
     void                              setToolBarVisibility(QToolBar *toolbar, bool visible);
-    void                              InitToolButtons();
+    void                              initializeToolButtons();
 
     void                              handlePointsMenu();
     void                              handleLinesMenu();
@@ -389,9 +390,9 @@ private:
 
     bool               MaybeSave();
     void               UpdateRecentFileActions();
-    void               CreateMenus();
-    void               CreateActions();
-    void               InitAutoSave();
+    void               createMenus();
+    void               createActions();
+    void               initializeAutoSave();
     QString            PatternPieceName(const QString &text);
     QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
     QComboBox          *SetGradationList(QLabel *label, const QStringList &list);
@@ -405,7 +406,7 @@ private:
     void               UpdateSizesList(const QStringList &list);
 
     void               AddDocks();
-    void               InitDocksContain();
+    void               initializeDocksContain();
     bool               OpenNewSeamly2D(const QString &fileName = QString())const;
     void               FileClosedCorrect();
     QStringList        GetUnlokedRestoreFileList()const;
@@ -413,7 +414,7 @@ private:
     void               AddPP(const QString &PPName);
     QPointF            StartPositionNewPP() const;
 
-    void               InitScenes();
+    void               initializeScenes();
 
     QSharedPointer<VMeasurements> OpenMeasurementFile(const QString &path);
     bool               LoadMeasurements(const QString &path);

@@ -6,8 +6,10 @@ SOURCES += \
     $$PWD/calculator/calculator.cpp \
     $$PWD/color_combobox.cpp \
     $$PWD/export_format_combobox.cpp \
+    $$PWD/image_toolbar.cpp \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
+    $$PWD/resize_handle.cpp \
     $$PWD/scene_rect.cpp \
     $$PWD/vmaingraphicsscene.cpp \
     $$PWD/vmaingraphicsview.cpp \
@@ -38,8 +40,10 @@ HEADERS += \
     $$PWD/calculator/calculator.h \
     $$PWD/color_combobox.h \
     $$PWD/export_format_combobox.h \
+    $$PWD/image_toolbar.h \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
+    $$PWD/resize_handle.h \
     $$PWD/scene_rect.h \
     $$PWD/stable.h \
     $$PWD/vmaingraphicsscene.h \
@@ -63,4 +67,7 @@ HEADERS += \
     $$PWD/vscenepoint.h \
     $$PWD/scalesceneitems.h \
     $$PWD/vlineedit.h
+
+FORMS += \
+    $$PWD/image_toolbar.ui
 

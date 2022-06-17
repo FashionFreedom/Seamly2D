@@ -71,10 +71,11 @@
 
 namespace
 {
-const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_measurements");
-const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/standard_measurements");
-const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
-const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
+const QString settingIndividualMeasurementsPath          = QStringLiteral("paths/individual_measurements");
+const QString settingMultisizeMeasurementsPath           = QStringLiteral("paths/standard_measurements");
+const QString settingTemplatesPath                       = QStringLiteral("paths/templates");
+const QString settingLabelTemplatesPath                  = QStringLiteral("paths/labels");
+const QString settingImagesPath                          = QStringLiteral("paths/images");
 
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
@@ -384,14 +385,14 @@ QString VCommonSettings::GetDefPathIndividualMeasurements()
 QString VCommonSettings::GetPathIndividualMeasurements() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsIndividualMeasurements, GetDefPathIndividualMeasurements()).toString();
+    return settings.value(settingIndividualMeasurementsPath, GetDefPathIndividualMeasurements()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingPathsIndividualMeasurements, value);
+    settings.setValue(settingIndividualMeasurementsPath, value);
     settings.sync();
 }
 
@@ -405,14 +406,14 @@ QString VCommonSettings::GetDefPathMultisizeMeasurements()
 QString VCommonSettings::GetPathMultisizeMeasurements() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsMultisizeMeasurements, GetDefPathMultisizeMeasurements()).toString();
+    return settings.value(settingMultisizeMeasurementsPath, GetDefPathMultisizeMeasurements()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingPathsMultisizeMeasurements, value);
+    settings.setValue(settingMultisizeMeasurementsPath, value);
     settings.sync();
 }
 
@@ -426,33 +427,51 @@ QString VCommonSettings::GetDefPathTemplate()
 QString VCommonSettings::GetPathTemplate() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsTemplates, GetDefPathTemplate()).toString();
+    return settings.value(settingTemplatesPath, GetDefPathTemplate()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetPathTemplate(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingPathsTemplates, value);
+    settings.setValue(settingTemplatesPath, value);
     settings.sync();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetDefPathLabelTemplate()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::GetPathLabelTemplate() const
 {
-    return value(settingPathsLabelTemplate, GetDefPathLabelTemplate()).toString();
+    return value(settingLabelTemplatesPath, GetDefPathLabelTemplate()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::SetPathLabelTemplate(const QString &value)
 {
-    setValue(settingPathsLabelTemplate, value);
+    setValue(settingLabelTemplatesPath, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultImageFilePath()
+{
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getImageFilePath() const
+{
+    return value(settingImagesPath, getDefaultImageFilePath()).toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setImageFilePath(const QString &value)
+{
+    setValue(settingImagesPath, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
