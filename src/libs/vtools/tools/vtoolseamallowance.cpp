@@ -1109,7 +1109,7 @@ void VToolSeamAllowance::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     separator->setSeparator(true);
     menu.addAction(separator);
 
-    QAction *inLayoutOption = menu.addAction(tr("Include in Layout") + "\tL");
+    QAction *inLayoutOption = menu.addAction(tr("Include in Layout") + "\tI");
     inLayoutOption->setCheckable(true);
     inLayoutOption->setChecked(piece.IsInLayout());
 
@@ -1226,7 +1226,7 @@ void VToolSeamAllowance::keyReleaseEvent(QKeyEvent *event)
             editPieceProperties();
             break;
 
-        case Qt::Key_L:
+        case Qt::Key_I:
             {
                 toggleInLayout(!piece.IsInLayout());
                 break;
