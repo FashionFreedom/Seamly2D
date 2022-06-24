@@ -88,9 +88,9 @@ QSize FancyTabBar::TabSizeHint(bool minimum) const
             maxLabelwidth = width;
         }
     }
-    int iconHeight = minimum ? 0 : 32;
+    int iconHeight = minimum ? 0 : 36;
 
-    return QSize(qMax(width, maxLabelwidth + 4), iconHeight + spacing + fm.height());
+    return QSize(qMax(width, maxLabelwidth + 8), iconHeight + spacing + fm.height());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -420,7 +420,7 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     det.SetMx(piece.GetMx());
     det.SetMy(piece.GetMy());
 
-    det.SetCountourPoints(piece.MainPathPoints(pattern), piece.IsHideMainPath());
+    det.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
     det.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
                                piece.IsSeamAllowanceBuiltIn());
     det.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
@@ -471,7 +471,7 @@ QVector<QPointF> VLayoutPiece::getContourPoints() const
 void VLayoutPiece::SetCountourPoints(const QVector<QPointF> &points, bool hideMainPath)
 {
     d->contour = RemoveDublicates(points, false);
-    SetHideMainPath(hideMainPath);
+    setHideSeamLine(hideMainPath);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -976,7 +976,7 @@ QPainterPath VLayoutPiece::createMainPath() const
     // contour
     QVector<QPointF> points = getContourPoints();
 
-    if (not IsHideMainPath() || not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
+    if (not isHideSeamLine() || not IsSeamAllowance() || IsSeamAllowanceBuiltIn())
     {
         path.moveTo(points.at(0));
         for (qint32 i = 1; i < points.count(); ++i)

@@ -89,9 +89,9 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
     initNotches();
     initGrainlines();
 
-    ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping());
+    ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->getForbidPieceFlipping());
     ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
-    ui->hideMainPath_CheckBox->setChecked(qApp->Seamly2DSettings()->IsHideMainPath());
+    ui->hideSeamLine_CheckBox->setChecked(qApp->Seamly2DSettings()->isHideSeamLine());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -121,8 +121,8 @@ void PreferencesPatternPage::Apply()
     settings->setDefaultCutoutLinetype(ui->defaultCutoutLinetype_ComboBox->currentData().toString());
     settings->setDefaultCutoutLineweight(ui->defaultCutoutLineweight_ComboBox->currentData().toReal());
 
-    settings->SetForbidWorkpieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
-    settings->SetHideMainPath(ui->hideMainPath_CheckBox->isChecked());
+    settings->setForbidPieceFlipping(ui->forbidFlipping_CheckBox->isChecked());
+    settings->setHideSeamLine(ui->hideSeamLine_CheckBox->isChecked());
 
     settings->setDefaultNotchType(ui->defaultNotchType_ComboBox->currentData().toString());
     settings->setDefaultNotchColor(ui->defaultNotchColor_ComboBox->currentData().toString());
@@ -134,6 +134,12 @@ void PreferencesPatternPage::Apply()
         qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
     }
 
+    if (settings->showSeamAllowances() != ui->showSeamAllowances_CheckBox->isChecked())
+    {
+        settings->setShowSeamAllowances(ui->showSeamAllowances_CheckBox->isChecked());
+        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
+    }
+    
     if (settings->showGrainlines() != ui->showGrainlines_CheckBox->isChecked())
     {
         settings->setShowGrainlines(ui->showGrainlines_CheckBox->isChecked());

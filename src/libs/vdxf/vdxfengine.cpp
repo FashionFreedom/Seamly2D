@@ -679,7 +679,7 @@ void VDxfEngine::ExportAAMAOutline(dx_ifaceBlock *detailBlock, const VLayoutPiec
 //---------------------------------------------------------------------------------------------------------------------
 void VDxfEngine::ExportAAMADraw(dx_ifaceBlock *detailBlock, const VLayoutPiece &detail)
 {
-    if (not detail.IsHideMainPath())
+    if (not detail.isHideSeamLine())
     {
         QVector<QPointF> poly = detail.getContourPoints();
         DRW_Entity *e = AAMAPolygon(poly, "8", true);

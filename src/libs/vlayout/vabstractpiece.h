@@ -187,8 +187,8 @@ public:
     bool IsSeamAllowanceBuiltIn() const;
     void SetSeamAllowanceBuiltIn(bool value);
 
-    bool IsHideMainPath() const;
-    void SetHideMainPath(bool value);
+    bool isHideSeamLine() const;
+    void setHideSeamLine(bool value);
 
     qreal GetSAWidth() const;
     void  SetSAWidth(qreal value);

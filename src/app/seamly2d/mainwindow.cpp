@@ -3805,6 +3805,7 @@ void MainWindow::Clear()
     ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
+    ui->toggleSeamAllowances_Action->setEnabled(false);
     ui->toggleGrainLines_Action->setEnabled(false);
     ui->toggleLabels_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
@@ -4076,6 +4077,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
+    ui->toggleSeamAllowances_Action->setEnabled(enable && pieceStage);
     ui->toggleGrainLines_Action->setEnabled(enable && pieceStage);
     ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
@@ -5168,6 +5170,13 @@ void MainWindow::CreateActions()
         qApp->Seamly2DSettings()->setShowAxisOrigin(checked);
         draftScene->setOriginsVisible(checked);
         pieceScene->setOriginsVisible(checked);
+    });
+
+    connect(ui->toggleSeamAllowances_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowSeamAllowances(checked);
+        ui->view->itemClicked(nullptr);
+        refreshSeamAllowances();
     });
 
     connect(ui->toggleGrainLines_Action, &QAction::triggered, this, [this](bool checked)
@@ -6888,6 +6897,7 @@ void MainWindow::updateViewToolbar()
     ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
     ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
     ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
+    ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
 }
 
