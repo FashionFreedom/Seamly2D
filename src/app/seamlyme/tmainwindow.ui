@@ -14,8 +14,8 @@
    <string notr="true"/>
   </property>
   <property name="windowIcon">
-   <iconset resource="share/resources/seamlymeicon.qrc">
-    <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
+   <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+    <normaloff>:/icon/logos/seamlyme_logo_32.png</normaloff>:/icon/logos/seamlyme_logo_32.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="sizePolicy">
@@ -883,6 +883,7 @@
     <property name="title">
      <string>Help</string>
     </property>
+    <addaction name="shortcuts_Action"/>
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutSeamlyMe"/>
    </widget>
@@ -922,6 +923,7 @@
    <addaction name="actionNew"/>
    <addaction name="actionOpenIndividual"/>
    <addaction name="actionSave"/>
+   <addaction name="actionSaveAs"/>
    <addaction name="actionAddKnown"/>
    <addaction name="actionAddCustom"/>
   </widget>
@@ -994,11 +996,14 @@
   </widget>
   <action name="actionOpenIndividual">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open individual ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1009,11 +1014,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-save">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-save.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-save.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1024,11 +1032,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-save-as">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-save-as.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-save-as.png</iconset>
    </property>
    <property name="text">
     <string>Save As ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1036,11 +1047,14 @@
   </action>
   <action name="actionQuit">
    <property name="icon">
-    <iconset theme="application-exit">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/16x16/actions/application-exit.png</normaloff>:/icons/win.icon.theme/16x16/actions/application-exit.png</iconset>
    </property>
    <property name="text">
-    <string>Quit</string>
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
    </property>
    <property name="menuRole">
     <enum>QAction::QuitRole</enum>
@@ -1056,8 +1070,8 @@
   </action>
   <action name="actionAboutSeamlyMe">
    <property name="icon">
-    <iconset theme="help-about">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/logos/seamlyme_logo_32.png</normaloff>:/icon/logos/seamlyme_logo_32.png</iconset>
    </property>
    <property name="text">
     <string>About SeamlyMe</string>
@@ -1068,11 +1082,14 @@
   </action>
   <action name="actionNew">
    <property name="icon">
-    <iconset theme="document-new">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-new.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-new.png</iconset>
    </property>
    <property name="text">
     <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1128,11 +1145,14 @@
   </action>
   <action name="actionOpenMultisize">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open multisize ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+O</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1140,8 +1160,8 @@
   </action>
   <action name="actionOpenTemplate">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open template</string>
@@ -1162,8 +1182,15 @@
    </property>
   </action>
   <action name="actionPreferences">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/preferences-other.png</normaloff>:/icons/win.icon.theme/32x32/actions/preferences-other.png</iconset>
+   </property>
    <property name="text">
     <string>Preferences</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+,</string>
    </property>
    <property name="menuRole">
     <enum>QAction::PreferencesRole</enum>
@@ -1205,11 +1232,24 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
+  <action name="shortcuts_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/me_key_icon.png</normaloff>:/icon/32x32/me_key_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Shortcuts</string>
+   </property>
+   <property name="shortcut">
+    <string>K</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="share/resources/seamlymeicon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

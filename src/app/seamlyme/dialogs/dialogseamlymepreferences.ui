@@ -14,8 +14,8 @@
    <string>Preferences</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../share/resources/seamlymeicon.qrc">
-    <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
+   <iconset resource="../../../libs/vmisc/share/resources/theme.qrc">
+    <normaloff>:/icons/win.icon.theme/32x32/actions/preferences-other.png</normaloff>:/icons/win.icon.theme/32x32/actions/preferences-other.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -119,7 +119,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../share/resources/seamlymeicon.qrc"/>
+  <include location="../../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>

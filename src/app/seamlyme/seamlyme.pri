@@ -2,6 +2,7 @@
 # This need for corect working file translations.pro
 
 SOURCES  += \
+    $$PWD/dialogs/me_shortcuts_dialog.cpp \
     $$PWD/main.cpp \
     $$PWD/tmainwindow.cpp \
     $$PWD/mapplication.cpp \
@@ -16,6 +17,7 @@ SOURCES  += \
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS  += \
+    $$PWD/dialogs/me_shortcuts_dialog.h \
     $$PWD/tmainwindow.h \
     $$PWD/stable.h \
     $$PWD/mapplication.h \
@@ -29,6 +31,7 @@ HEADERS  += \
     $$PWD/dialogs/configpages/seamlymepreferencespathpage.h
 
 FORMS    += \
+    $$PWD/dialogs/me_shortcuts_dialog.ui \
     $$PWD/tmainwindow.ui \
     $$PWD/dialogs/dialogaboutseamlyme.ui \
     $$PWD/dialogs/dialognewmeasurements.ui \
