@@ -1,4 +1,4 @@
-name: Build manual linux appimage
+name: Build manual linux appimage - test
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build manual Linux AppImage'
+        description: 'Build manual Linux AppImage - Test'
 
 env:
   QT_SELECT: 5
@@ -55,14 +55,14 @@ jobs:
 
       - name: install kde and build dependencies
         run: |  
-          # register kde neon repository
+          # register the kde neon repository
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
 
           # This is the old way using public.key (no longer exists) and apt-key (deprecated)
-          #curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
+          # curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
 
-          #This is the new way using neon's new .gpg public key file, and adding it to straight to the ubuntu keyring
-          wget -O- <https://origin.archive.neon.kde.org/user/lts/dists/focal/Release.gpg> | gpg --dearmor | sudo tee /usr/share/keyrings/neon-archive-keyring.gpg
+          # This is the new way using neon's new .gpg public key file, and adding it to straight to the ubuntu keyring
+          wget -O- https://origin.archive.neon.kde.org/user/lts/dists/focal/Release.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/neon-archive-keyring.gpg
 
           # install build dependencies
           sudo apt update         
