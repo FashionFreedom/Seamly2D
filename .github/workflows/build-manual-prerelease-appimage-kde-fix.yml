@@ -100,7 +100,7 @@ jobs:
 
       - name: upload file as pre-release
         # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.1.3
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
