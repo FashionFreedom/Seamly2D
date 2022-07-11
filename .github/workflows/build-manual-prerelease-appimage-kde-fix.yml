@@ -75,8 +75,7 @@ jobs:
         run: |
           sudo rm -rf ./AppDir || true
           sudo mkdir -v ./AppDir
-          sudo make -j`nproc`
-          sudo make install DESTDIR=./AppDir
+          sudo make -j$(nproc) && make install DESTDIR=./AppDir
           sudo mkdir -p ./AppDir/usr/share/translations
           sudo mkdir -p ./AppDir/usr/share/applications
           sudo mkdir -p ./AppDir/usr/share/icons/hicolor/64x64/apps
