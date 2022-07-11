@@ -71,7 +71,7 @@ jobs:
           #sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.0.3/appimage-builder-1.0.3-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
-          appimage-builder --recipe dist/appimage-builder-recipe.yml --skip-test
+          appimage-builder --recipe dist/appimage-builder-recipe.yml --log DEBUG --generate
 
       - name: copy to final file tag_name
         run: |
