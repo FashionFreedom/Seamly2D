@@ -71,6 +71,39 @@ jobs:
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
+      - name: configure
+        run: sudo cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+        
+      - name: build
+         run: |
+          sudo rm -rf ./AppDir || true
+          sudo makdir -f ./AppDir
+          sudo make -j`nproc`
+          sudo make install DESTDIR=./AppDir
+          sudo mkdir -p ./AppDir/usr/share/translations
+          sudo mkdir -p ./AppDir/usr/share/applications
+          sudo mkdir -p ./AppDir/usr/share/icons/hicolor/64x64/apps
+          sudo mkdir -p ./AppDir/usr/share/icons/hicolor/256x256
+          
+          # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
+          echo "copy measurement diagrams"
+          cp src/app/seamlyme/bin/diagrams.rcc ./AppDir/usr/share
+          ls ./AppDir/usr/share/diagrams.rcc
+          
+          # copy translations (qt's .qm translation files) into $build/share/translations directory
+          echo "copy translation files"
+          cp share/translations/*.qm AppDir/usr/share/translations
+          
+          # copy .desktop files from $build/dist directory to $build/share/applications directory
+          echo "copy .desktop files"
+          cp dist/seamly2d.desktop AppDir/usr/share/applications
+          cp dist/seamlyme.desktop AppDir/usr/share/applications
+          
+           # copy icons to the correct directories
+          echo "copy icon files"
+          cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
+          cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png      
+        
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
@@ -78,7 +111,7 @@ jobs:
           #sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
-          appimage-builder --recipe dist/appimage-builder-recipe.yml --log DEBUG --generate --skip-test
+          appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --generate --skip-test
 
       - name: copy to final file tag_name
         run: |
