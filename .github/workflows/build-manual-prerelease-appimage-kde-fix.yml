@@ -70,9 +70,6 @@ jobs:
           # install build dependencies  
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-
-      - name: configure
-        run: sudo cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
         
       - name: build
         run: |
