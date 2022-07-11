@@ -56,14 +56,17 @@ jobs:
       - name: install kde and build dependencies
         run: |  
           # begin software install
-          sudo apt update  
+          sudo apt update 
+          sudo apt install -y debsig-verify
           # install kde neon, from computingforgeeks.com/install-kde-plasma-desktop-on-ubuntu-linux/
           #sudo add-apt-repository ppa:kubuntu-ppa/backports  
           #sudo apt install kubuntu-desktop 
           # register kde neon repository
-          echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
+          #echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           #curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -  
-          curl  https://keyserver.ubuntu.com/pks/lookup?search=neon&fingerprint=on&op=get -o - | sudo apt-key add -  
+          #curl  https://keyserver.ubuntu.com/pks/lookup?search=neon&fingerprint=on&op=get -o - | sudo apt-key add -  
+          #wget https://origin.archive.neon.kde.org/user/lts/dists/focal/Release.gpg
+          
           # install build dependencies  
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
