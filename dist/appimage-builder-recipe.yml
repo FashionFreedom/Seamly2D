@@ -1,18 +1,16 @@
 # appimage-builder recipe see https://appimage-builder.readthedocs.io for details
 version: 1
 script:
-  - echo "begin AppImage recipe" 
-  - pwd
-  - rm -rf AppDir || true
-  - mkdir -p AppDir
+  - echo "begin script" > console.log
+  - rm -rf ./AppDir || true
+  - mkdir -p ./AppDir
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sudo make -j$(nproc)
   #- INSTALL_ROOT=AppDir make install
-  - sudo make install DESTDIR=AppDir 
-  - echo "completed qmake build" 
+  - sudo make install DESTDIR=./AppDir 
 
   # create directories for diagrams, translations, desktop, and icons
-  - echo "create directories" 
+  - echo "create directories" > console.log
   - mkdir -p AppDir/usr/share/translations
   - mkdir -p AppDir/usr/share/applications
   - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
