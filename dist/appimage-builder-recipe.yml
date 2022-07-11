@@ -6,7 +6,7 @@ script:
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - make -j$(nproc)
   #- INSTALL_ROOT=$PWD/AppDir make install
-  - make DESTDIR=AppDir install
+  - make DESTDIR=$PWD/AppDir install
   - echo "completed qmake build" 
 
   # create directories for diagrams, translations, desktop, and icons
