@@ -232,8 +232,8 @@
         <translation type="vanished">Отправка отчета об ошибках (рекомендуется)</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">После каждого падения Seamly2D собирает информацию, которая может помочь нам в исправлении ошибки. Мы не собираем персональную информацию пользователей. Узнать больше об &lt;a href=https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&gt;информации&lt;/a&gt;, которую мы собираем.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">После каждого падения Seamly2D собирает информацию, которая может помочь нам в исправлении ошибки. Мы не собираем персональную информацию пользователей. Узнать больше об &lt;a href=https://wiki.seamly.net/wiki/Developer:Crash_Reports&gt;информации&lt;/a&gt;, которую мы собираем.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">Единицы измерения обновлены и будут применены при следующем создании выкройки.</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">После каждого падения Seamly2D собирает информацию, которая может помочь нам в исправлении ошибки. Мы не собираем персональную информацию пользователей. Узнать больше об &lt;a href=https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&gt;информации&lt;/a&gt;, которую мы собираем.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">После каждого падения Seamly2D собирает информацию, которая может помочь нам в исправлении ошибки. Мы не собираем персональную информацию пользователей. Узнать больше об &lt;a href=https://wiki.seamly.net/wiki/Developer:Crash_Reports&gt;информации&lt;/a&gt;, которую мы собираем.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
