@@ -1,26 +1,38 @@
 # appimage-builder recipe see https://appimage-builder.readthedocs.io for details
 version: 1
 script:
+  - echo "begin AppImage recipe" 
   - rm -rf AppDir || true
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - make -j$(nproc)
   - INSTALL_ROOT=$PWD/AppDir make install
+  - echo "completed qmake build" 
 
   # create directories for diagrams, translations, desktop, and icons
+  - echo "create directories" 
   - mkdir -p AppDir/usr/share/translations
   - mkdir -p AppDir/usr/share/applications
   - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
   - mkdir -p AppDir/usr/share/icons/hicolor/256x256
+  - ls AppDir/usr/share
+  - echo "completed created directories"
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
+  - echo "copy measurement diagrams"
   - cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
+  - ls AppDir/usr/share/diagrams.rcc
   # copy translations (qt's .qm translation files) into $build/share/translations directory
+  - echo "copy translation files"
   - cp share/translations/*.qm AppDir/usr/share/translations
   # copy .desktop files from $build/dist directory to $build/share/applications directory
+  - echo "copy .desktop files"
   - cp dist/seamly2d.desktop AppDir/usr/share/applications
   - cp dist/seamlyme.desktop AppDir/usr/share/applications
+  - ls AppDir/usr/share/applications/*.desktop
   # copy icons to the correct directories
+  - echo "copy icon files"
   - cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
+  - ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
 
 AppDir:
   path: ./AppDir
