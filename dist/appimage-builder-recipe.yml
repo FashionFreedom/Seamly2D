@@ -39,7 +39,9 @@ AppDir:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     - sourceline: deb http://archive.neon.kde.org/user focal main
-      key_url: https://origin.archive.neon.kde.org/public.key
+      #key_url: https://origin.archive.neon.kde.org/public.key
+      #key_url: https://origin.archive.neon.kde.org/user/lts/dists/focal/Release.gpg
+      key_url: https://keyserver.ubuntu.com/pks/lookup?search=neon&fingerprint=on&op=get
 
     include:
     - libqt5svg5
