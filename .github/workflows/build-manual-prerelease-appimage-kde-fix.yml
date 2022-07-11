@@ -82,6 +82,9 @@ jobs:
           sudo mkdir -p ./AppDir/usr/share/icons/hicolor/64x64/apps
           sudo mkdir -p ./AppDir/usr/share/icons/hicolor/256x256
           
+          # where are those pesky .rcc files?
+          find . -type f -regex ".*\.rcc"
+          
           # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
           echo "copy measurement diagrams"
           cp src/app/seamlyme/bin/diagrams.rcc ./AppDir/usr/share
