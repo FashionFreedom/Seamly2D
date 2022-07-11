@@ -88,25 +88,29 @@ jobs:
           sudo mkdir -p ./AppDir/usr/share/icons/hicolor/64x64/apps
           sudo mkdir -p ./AppDir/usr/share/icons/hicolor/256x256
           
-          # where are those pesky .rcc files?
-          pwd && find . -type f -regex ".*\.rcc" && ls ./AppDir/usr/share/diagrams.rcc
+          #*********************************
+          # when copying files
+          # we get this error: 
+          # ls: cannot access './AppDir/usr/share/diagrams.rcc': No such file or directory
+          echo "::debug::where are those pesky .rcc files?" && echo "::debug::$PWD"
+          find . -type f -regex ".*\.rcc" && ls ./AppDir/usr/share/diagrams.rcc >>
           
           # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
-          echo "copy measurement diagrams"
+          echo "::debug::copy measurement diagrams"
           cp src/app/seamlyme/bin/diagrams.rcc ./AppDir/usr/share
           ls ./AppDir/usr/share/diagrams.rcc
           
           # copy translations (qt's .qm translation files) into $build/share/translations directory
-          echo "copy translation files"
+          echo "::debug::copy translation files"
           cp share/translations/*.qm AppDir/usr/share/translations
           
           # copy .desktop files from $build/dist directory to $build/share/applications directory
-          echo "copy .desktop files"
+          echo "::debug::copy .desktop files"
           cp dist/seamly2d.desktop AppDir/usr/share/applications
           cp dist/seamlyme.desktop AppDir/usr/share/applications
           
            # copy icons to the correct directories
-          echo "copy icon files"
+          echo "::debug::copy icon files"
           cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
           cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png      
         
