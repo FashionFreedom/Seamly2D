@@ -58,14 +58,28 @@ jobs:
           # begin software install
           sudo apt update 
           sudo apt install -y debsig-verify
-          # install kde neon, from computingforgeeks.com/install-kde-plasma-desktop-on-ubuntu-linux/
-          #sudo add-apt-repository ppa:kubuntu-ppa/backports  
-          #sudo apt install kubuntu-desktop 
+          
+          # *********************************
           # register kde neon repository
+          
+          # option 1 - origina, no longer works because public.key no longer exists
           #echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           #curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -  
+          
+          # option 2 - search for name, use Release.gpg
           #curl  https://keyserver.ubuntu.com/pks/lookup?search=neon&fingerprint=on&op=get -o - | sudo apt-key add -  
           #wget https://origin.archive.neon.kde.org/user/lts/dists/focal/Release.gpg
+          
+          # option 3 - install kde plasma desktop from ppa, https://computingforgeeks.com/install-kde-plasma-desktop-on-ubuntu-linux/
+          #sudo add-apt-repository ppa:kubuntu-ppa/backports  
+          #sudo apt install kubuntu-desktop 
+          
+          # option 4 - search the keyserver to get kde key, add to keyring with gpg
+          echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
+          curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
+          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg   
+          
+          # *********************************
           
           # install build dependencies  
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
