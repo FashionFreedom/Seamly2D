@@ -74,7 +74,7 @@ jobs:
       - name: build
         run: |
           sudo rm -rf ./AppDir || true
-          sudo makdir -f ./AppDir
+          sudo mkdir -v ./AppDir
           sudo make -j`nproc`
           sudo make install DESTDIR=./AppDir
           sudo mkdir -p ./AppDir/usr/share/translations
