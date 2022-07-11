@@ -56,31 +56,25 @@ jobs:
 
       - name: install kde and build dependencies
         run: |  
-          # begin software install
-          sudo apt update 
-          sudo apt install -y debsig-verify
+          # *********************************
+          echo "-- install qt 5.15.2 --"
+          sudo add-apt-repository ppa:beineri/opt-qt-5.15.2-focal          
+          sudo apt update           
           
           # *********************************
-          # register kde neon repository
-          
-          # option 1 - original, no longer works because public.key no longer exists
-          #echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          #curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -  
-          
-          # option 2 - search the keyserver to get kde key, add to keyring with gpg
+          echo "-- register kde neon repository --"
+          sudo apt install -y debsig-verify           
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
-          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg   
+          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg  
           
           # *********************************
-          
-          # install build dependencies  
+          echo "-- install build dependencies --"
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
         
       - name: build
         run: |
-          echo 
           sudo rm -rf ./AppDir || true
           sudo mkdir -v ./AppDir
           qmake PREFIX=./AppDir Seamly2D.pro -r CONFIG+=no_ccache
@@ -93,9 +87,7 @@ jobs:
       - name: get pwd
         id: get-pwd
         run: |
-          # what will Github Action let us see in the build log?
-          echo "::debug::$PWD"
-          "echo $PWD"
+          echo "$PWD"
           
       - name: find resource files setup
         id: find-resource-files-setup
