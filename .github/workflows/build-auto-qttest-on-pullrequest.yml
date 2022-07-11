@@ -34,9 +34,14 @@ jobs:
           echo " github event pull_request merged = ${{ github.event.pull_request.merged }}"
 
           # register kde neon repository
+          # search the keyserver to get kde key, add to keyring with gpg
+          echo "* register kde neon repository*"
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
+          curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
+          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg 
+          
           # install build dependencies
+          echo "* install build dependencies *"
           sudo apt update
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
