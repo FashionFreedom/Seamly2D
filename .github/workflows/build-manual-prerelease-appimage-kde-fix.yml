@@ -75,7 +75,7 @@ jobs:
         run: sudo cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
         
       - name: build
-         run: |
+        run: |
           sudo rm -rf ./AppDir || true
           sudo makdir -f ./AppDir
           sudo make -j`nproc`
