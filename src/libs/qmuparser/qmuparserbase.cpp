@@ -1888,7 +1888,8 @@ void QmuParserBase::StackDump(const QStack<token_type> &a_stVal, const QStack<to
         }
         stOprt.pop();
     }
-    qDebug() << Qt::dec;
+    #qDebug() << Qt::dec;
+    qDebug() << dec; /* Qt::dec intoduced in 5.14, as of 2022-07-07 is yielding compiler error "'dec" is not a member of 'Qt'"
 }
 
 //---------------------------------------------------------------------------------------------------------------------

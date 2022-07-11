@@ -29,6 +29,7 @@
 #include <QStack>
 #include <QString>
 #include <QStringList>
+#include <QTextStream>
 #include <QVector>
 #include <QtGlobal>
 #include <memory>
