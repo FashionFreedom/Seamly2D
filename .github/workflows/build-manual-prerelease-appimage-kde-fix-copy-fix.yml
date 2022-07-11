@@ -75,28 +75,35 @@ jobs:
         
       - name: build
         run: |
-          sudo rm -rf ./AppDir || true
-          sudo mkdir -v ./AppDir
-          qmake PREFIX=./AppDir Seamly2D.pro -r CONFIG+=no_ccache
+          # *********************************
+          echo "-- show current directory --"
+          echo $PWD
+                    
+          # *********************************
+          echo "-- make Seamly2D & SeamlyMe --"
+          qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache
           make -j$(nproc) && make install
-          sudo mkdir -p ./AppDir/usr/share/translations
-          sudo mkdir -p ./AppDir/usr/share/applications
-          sudo mkdir -p ./AppDir/usr/share/icons/hicolor/64x64/apps
-          sudo mkdir -p ./AppDir/usr/share/icons/hicolor/256x256
           
-      - name: get pwd
-        id: get-pwd
-        run: |
-          echo "$PWD"
+          # *********************************
+          echo "-- remove & recreate AppDir --"
+          sudo rm -rf AppDir || true
+          sudo mkdir -v AppDir
           
-      - name: find resource files setup
-        id: find-resource-files-setup
+          # *********************************
+          echo "-- create AppDir usr/share directories--"
+          sudo mkdir -p AppDir/usr/share/translations
+          sudo mkdir -p AppDir/usr/share/applications
+          sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
+          sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
+          
+      - name: find rcc files setup
+        id: find-rcc-files-setup
         uses: Rishabh510/Path-lister-action@1.0
         with:
           path: "."
-          type: ".AppImage"
+          type: ".rcc"
           
-      - name: find resource files
+      - name: find rcc files
         id: find-resource-files
         run: |
           echo "Found ${{ steps.find-resource-files-setup.outputs.path_count }} file(s) with this extension:"
@@ -107,29 +114,25 @@ jobs:
       - name: copy resource files
         id: copy-resource-files
         run: |
-          #*********************************
-          # when copying files
-          # we get this error: 
-          # ls: cannot access './AppDir/usr/share/diagrams.rcc': No such file or directory
-          echo "::debug::where are those pesky .rcc files?" && echo "::debug::$PWD"
-          find . -type f -regex ".*\.rcc" && ls ./AppDir/usr/share/diagrams.rcc >>
+          #********************************************
+          # when copying files we get this error: 
+          # ls: cannot access 'AppDir/usr/share/diagrams.rcc': No such file or directory
           
-          # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
-          echo "::debug::copy measurement diagrams"
-          cp src/app/seamlyme/bin/diagrams.rcc ./AppDir/usr/share
-          ls ./AppDir/usr/share/diagrams.rcc
+          #********************************************
+          echo "-- copy measurement diagrams.rcc file --"
+          cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
           
-          # copy translations (qt's .qm translation files) into $build/share/translations directory
-          echo "::debug::copy translation files"
+          #********************************************
+          echo "-- copy translation *.qm files --"
           cp share/translations/*.qm AppDir/usr/share/translations
           
-          # copy .desktop files from $build/dist directory to $build/share/applications directory
-          echo "::debug::copy .desktop files"
+          #********************************************
+          echo "-- copy .desktop files --"
           cp dist/seamly2d.desktop AppDir/usr/share/applications
           cp dist/seamlyme.desktop AppDir/usr/share/applications
           
-           # copy icons to the correct directories
-          echo "::debug::copy icon files"
+          #********************************************
+          echo "-- copy icon .png files --"
           cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
           cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png 
           
@@ -139,9 +142,14 @@ jobs:
         # uses parameters from appimage-builder-recipe.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
         run: |
+          #********************************************
+          echo "-- get appimage-builder --"
           #sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
+          
+          #********************************************
+          echo "-- run appimage-builder --"
           appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --generate --skip-test
 
       - name: copy to final file tag_name
@@ -149,7 +157,7 @@ jobs:
           sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 
       - name: upload seamly2d-x86_64.tar.gz artifact
-        # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
+        # upload ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
         uses: actions/upload-artifact@v3.1.0
         with:
           name: Seamly2D-x86_64.AppImage
