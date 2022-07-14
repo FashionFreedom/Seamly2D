@@ -95,7 +95,7 @@ void TST_VAbstractPiece::EquidistantRemoveLoop_data()
                                       << OutputPointsIssue298Case2();
 
 
-    // Files: Steampunk_trousers.val and marie.vit
+    // Files: Steampunk_trousers.sm2dand marie.smme
     // Actually buggy detail see in file src/app/share/collection/bugs/Steampunk_trousers_issue_#548.val
     // Code should clean loops in path.
     QTest::newRow("Issue 548. Case1") << InputPointsIssue548Case1()

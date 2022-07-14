@@ -174,7 +174,7 @@ void TST_VPiece::ClearLoop()
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VPiece::Issue620()
 {
-    // See file <root>/src/app/share/collection/bugs/Issue_#620.vit
+    // See file <root>/src/app/share/collection/bugs/Issue_#620.smme
     // Check main path
     const Unit unit = Unit::Cm;
     QScopedPointer<VContainer> data(new VContainer(nullptr, &unit));

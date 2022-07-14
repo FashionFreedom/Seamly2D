@@ -1797,7 +1797,7 @@ void MainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCS
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::LoadIndividual()
 {
-    const QString filter = tr("Individual measurements") + QLatin1String(" (*.vit);;") + tr("Multisize measurements") +
+    const QString filter = tr("Individual measurements") + QLatin1String(" (*.smme);;") + tr("Multisize measurements") +
                            QLatin1String(" (*.vst)");
     //Use standard path to individual measurements
     const QString path = qApp->Seamly2DSettings()->GetPathIndividualMeasurements();
@@ -1843,7 +1843,7 @@ void MainWindow::LoadIndividual()
 void MainWindow::LoadMultisize()
 {
     const QString filter = tr("Multisize measurements") + QLatin1String(" (*.vst);;") + tr("Individual measurements") +
-                           QLatin1String("(*.vit)");
+                           QLatin1String("(*.smme)");
     //Use standard path to multisize measurements
     QString path = qApp->Seamly2DSettings()->GetPathMultisizeMeasurements();
     path = VCommonSettings::PrepareMultisizeTables(path);
@@ -6416,7 +6416,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
                 }
                 else if (patternType == MeasurementsType::Individual)
                 {
-                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.vit)");
+                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.smme)");
                     //Use standard path to individual measurements
                     const QString path = qApp->Seamly2DSettings()->GetPathIndividualMeasurements();
 
@@ -6438,7 +6438,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
                 }
                 else
                 {
-                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.vit);;") +
+                    const QString filter = tr("Individual measurements") + QLatin1String(" (*.smme);;") +
                                            tr("Multisize measurements") + QLatin1String(" (*.vst)");
                     //Use standard path to individual measurements
                     const QString path = qApp->Seamly2DSettings()->GetPathIndividualMeasurements();

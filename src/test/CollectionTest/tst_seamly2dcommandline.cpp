@@ -199,18 +199,18 @@ void TST_Seamly2DCommandLine::TestMode_data() const
                                << QString("--test")
                                << V_EX_OK;
 
-    QTest::newRow("Issue #256. Wrong path.")<< "issue_256_wrong_path.vit"
+    QTest::newRow("Issue #256. Wrong path.")<< "issue_256_wrong_path.smme"
                                << QString("--test")
                                << V_EX_NOINPUT;
 
     QTest::newRow("Issue #256. Correct individual measurements.")<< "issue_256.val"
                                << QString("--test;;-m;;%1").arg(tmp + QDir::separator() +
-                                                                QLatin1String("issue_256_correct.vit"))
+                                                                QLatin1String("issue_256_correct.smme"))
                                << V_EX_OK;
 
     QTest::newRow("Issue #256. Wrong individual measurements.")<< "issue_256.val"
                                << QString("--test;;-m;;%1").arg(tmp + QDir::separator() +
-                                                                QLatin1String("issue_256_wrong.vit"))
+                                                                QLatin1String("issue_256_wrong.smme"))
                                << V_EX_NOINPUT;
 
     QTest::newRow("Issue #256. Correct multisize measurements.")<< "issue_256.val"

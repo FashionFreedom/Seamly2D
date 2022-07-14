@@ -86,16 +86,16 @@ void TST_SeamlyMeCommandLine::OpenMeasurements_data() const
     QTest::addColumn<int>("exitCode");
 
     // The file doesn't exist!
-    QTest::newRow("Send wrong path to a file")                                     << "wrongPath.vit"
+    QTest::newRow("Send wrong path to a file")                                     << "wrongPath.smme"
                                                                                    << V_EX_NOINPUT;
 
-    QTest::newRow("Old individual format to new version")                          << "keiko.vit"
+    QTest::newRow("Old individual format to new version")                          << "keiko.smme"
                                                                                    << V_EX_OK;
 
-    QTest::newRow("Open empty file")                                               << "empty.vit"
+    QTest::newRow("Open empty file")                                               << "empty.smme"
                                                                                    << V_EX_OK;
 
-    QTest::newRow("Open the VIT file with all know measurements (v0.3.0)")         << "all_measurements_v0.3.0.vit"
+    QTest::newRow("Open the VIT file with all know measurements (v0.3.0)")         << "all_measurements_v0.3.0.smme"
                                                                                    << V_EX_OK;
 
     QTest::newRow("Open the VST file with all know measurements (v0.4.0)")         << "all_measurements_v0.4.0.vst"
@@ -104,7 +104,7 @@ void TST_SeamlyMeCommandLine::OpenMeasurements_data() const
     QTest::newRow("Open the VST file for man ru GOST (v0.3.0).")                   << "GOST_man_ru_v0.3.0.vst"
                                                                                    << V_EX_OK;
 
-    QTest::newRow("Open the VIT file with all know measurements (v0.3.3)")         << "all_measurements_v0.3.3.vit"
+    QTest::newRow("Open the VIT file with all know measurements (v0.3.3)")         << "all_measurements_v0.3.3.smme"
                                                                                    << V_EX_OK;
 
     QTest::newRow("Open the VST file with all know measurements (v0.4.2)")         << "all_measurements_v0.4.2.vst"
@@ -113,19 +113,19 @@ void TST_SeamlyMeCommandLine::OpenMeasurements_data() const
     QTest::newRow("Open the VST file for man ru GOST (v0.4.2).")                   << "GOST_man_ru_v0.4.2.vst"
                                                                                    << V_EX_OK;
 
-    QTest::newRow("Broken file. Not unique name.")                                 << "broken1.vit"
+    QTest::newRow("Broken file. Not unique name.")                                 << "broken1.smme"
                                                                                    << V_EX_NOINPUT;
 
-    QTest::newRow("Broken file. Measurement name can't be empty.")                 << "broken1.vit"
+    QTest::newRow("Broken file. Measurement name can't be empty.")                 << "broken1.smme"
                                                                                    << V_EX_NOINPUT;
 
-    QTest::newRow("Broken file. An empty value shouldn't break a file.")           << "broken3.vit"
+    QTest::newRow("Broken file. An empty value shouldn't break a file.")           << "broken3.smme"
                                                                                    << V_EX_OK;
 
-    QTest::newRow("Broken file. Invalid measurement name.")                        << "broken4.vit"
+    QTest::newRow("Broken file. Invalid measurement name.")                        << "broken4.smme"
                                                                                    << V_EX_NOINPUT;
 
-    QTest::newRow("Empty text VIT file.")                                          << "text.vit"
+    QTest::newRow("Empty text VIT file.")                                          << "text.smme"
                                                                                    << V_EX_NOINPUT;
 
     QTest::newRow("Empty text VST file.")                                          << "text.vst"

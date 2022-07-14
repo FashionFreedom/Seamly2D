@@ -179,76 +179,76 @@ INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 
 SEAMLYME_TEST_FILES += \
-    tst_seamlyme/keiko.vit \
-    tst_seamlyme/empty.vit \
-    tst_seamlyme/all_measurements_v0.3.0.vit \
+    tst_seamlyme/keiko.smme \
+    tst_seamlyme/empty.smme \
+    tst_seamlyme/all_measurements_v0.3.0.smme \
     tst_seamlyme/all_measurements_v0.4.0.vst \
     tst_seamlyme/GOST_man_ru_v0.3.0.vst \
-    tst_seamlyme/all_measurements_v0.3.3.vit \
+    tst_seamlyme/all_measurements_v0.3.3.smme \
     tst_seamlyme/all_measurements_v0.4.2.vst \
     tst_seamlyme/GOST_man_ru_v0.4.2.vst \
-    tst_seamlyme/broken1.vit \
-    tst_seamlyme/broken2.vit \
-    tst_seamlyme/broken3.vit \
-    tst_seamlyme/broken4.vit \
-    tst_seamlyme/text.vit \
+    tst_seamlyme/broken1.smme \
+    tst_seamlyme/broken2.smme \
+    tst_seamlyme/broken3.smme \
+    tst_seamlyme/broken4.smme \
+    tst_seamlyme/text.smme \
     tst_seamlyme/text.vst
 
 seamly2d_TEST_FILES += \
-    tst_seamly2d/empty.val \
-    tst_seamly2d/issue_372.val \
-    tst_seamly2d/wrong_obj_type.val \
-    tst_seamly2d/text.val \
-    tst_seamly2d/glimited_no_m.val \
-    tst_seamly2d/glimited_vit.val \
-    tst_seamly2d/glimited.vit \
-    tst_seamly2d/glimited_vst.val \
+    tst_seamly2d/empty.sm2d\
+    tst_seamly2d/issue_372.sm2d\
+    tst_seamly2d/wrong_obj_type.sm2d\
+    tst_seamly2d/text.sm2d\
+    tst_seamly2d/glimited_no_m.sm2d\
+    tst_seamly2d/glimited_vit.sm2d\
+    tst_seamly2d/glimited.smme \
+    tst_seamly2d/glimited_vst.sm2d\
     tst_seamly2d/glimited.vst \
-    tst_seamly2d/issue_256.val \
-    tst_seamly2d/issue_256_wrong_path.val \
-    tst_seamly2d/issue_256_correct.vit \
-    tst_seamly2d/issue_256_wrong.vit \
+    tst_seamly2d/issue_256.sm2d\
+    tst_seamly2d/issue_256_wrong_path.sm2d\
+    tst_seamly2d/issue_256_correct.smme \
+    tst_seamly2d/issue_256_wrong.smme \
     tst_seamly2d/issue_256_correct.vst \
     tst_seamly2d/issue_256_wrong.vst \
     tst_seamly2d/wrong_formula.val
 
 COLLECTION_FILES += \
     $${PWD}/../../app/share/tables/multisize/GOST_man_ru.vst \
-    $${PWD}/../../app/share/collection/bra.val \
-    $${PWD}/../../app/share/collection/bra.vit \
-    $${PWD}/../../app/share/collection/jacket1_52-176.val \
-    $${PWD}/../../app/share/collection/jacket2_40-146.val \
-    $${PWD}/../../app/share/collection/jacket3_40-146.val \
-    $${PWD}/../../app/share/collection/jacket4_40-146.val \
-    $${PWD}/../../app/share/collection/jacket5_30-110.val \
-    $${PWD}/../../app/share/collection/jacket6_30-110.val \
-    $${PWD}/../../app/share/collection/pants1_52-176.val \
-    $${PWD}/../../app/share/collection/pants2_40-146.val \
-    $${PWD}/../../app/share/collection/pants7.val \
-    $${PWD}/../../app/share/collection/TShirt_test.val \
-    $${PWD}/../../app/share/collection/TestDart.val \
-    $${PWD}/../../app/share/collection/patron_blusa.val \
-    $${PWD}/../../app/share/collection/blusa.vit \
-    $${PWD}/../../app/share/collection/PajamaTopWrap2.val \
-    $${PWD}/../../app/share/collection/Susan.vit \
-    $${PWD}/../../app/share/collection/Moulage_0.5_armhole_neckline.val \
-    $${PWD}/../../app/share/collection/0.7_Armhole_adjustment_0.10.val \
-    $${PWD}/../../app/share/collection/my_calculated_measurements_for_val.vit \
-    $${PWD}/../../app/share/collection/Keiko_skirt.val \
-    $${PWD}/../../app/share/collection/keiko.vit \
-    $${PWD}/../../app/share/collection/medidas_eli2015.vit \
-    $${PWD}/../../app/share/collection/pantalon_base_Eli.val \
-    $${PWD}/../../app/share/collection/Razmernye_priznaki_dlya_zhenskogo_zhaketa.vit \
-    $${PWD}/../../app/share/collection/IMK_Zhaketa_poluprilegayuschego_silueta.val \
-    $${PWD}/../../app/share/collection/Lara_Jil.vit \
-    $${PWD}/../../app/share/collection/modell_2.val \
-    $${PWD}/../../app/share/collection/MaleShirt/MaleShirt.val \
-    $${PWD}/../../app/share/collection/MaleShirt/MaleShirt.vit \
-    $${PWD}/../../app/share/collection/Trousers/Trousers.val \
-    $${PWD}/../../app/share/collection/Trousers/trousers.vit \
-    $${PWD}/../../app/share/collection/Steampunk_trousers.val \
-    $${PWD}/../../app/share/collection/Steampunk_trousers.vit \
-    $${PWD}/../../app/share/collection/Basic_block_women-2016.val \
+    $${PWD}/../../app/share/collection/bra.sm2d\
+    $${PWD}/../../app/share/collection/bra.smme \
+    $${PWD}/../../app/share/collection/jacket1_52-176.sm2d\
+    $${PWD}/../../app/share/collection/jacket2_40-146.sm2d\
+    $${PWD}/../../app/share/collection/jacket3_40-146.sm2d\
+    $${PWD}/../../app/share/collection/jacket4_40-146.sm2d\
+    $${PWD}/../../app/share/collection/jacket5_30-110.sm2d\
+    $${PWD}/../../app/share/collection/jacket6_30-110.sm2d\
+    $${PWD}/../../app/share/collection/pants1_52-176.sm2d\
+    $${PWD}/../../app/share/collection/pants2_40-146.sm2d\
+    $${PWD}/../../app/share/collection/pants7.sm2d\
+    $${PWD}/../../app/share/collection/TShirt_test.sm2d\
+    $${PWD}/../../app/share/collection/TestDart.sm2d\
+    $${PWD}/../../app/share/collection/patron_blusa.sm2d\
+    $${PWD}/../../app/share/collection/blusa.smme \
+    $${PWD}/../../app/share/collection/PajamaTopWrap2.sm2d\
+    $${PWD}/../../app/share/collection/Susan.smme \
+    $${PWD}/../../app/share/collection/Moulage_0.5_armhole_neckline.sm2d\
+    $${PWD}/../../app/share/collection/0.7_Armhole_adjustment_0.10.sm2d\
+    $${PWD}/../../app/share/collection/my_calculated_measurements_for_val.smme \
+    $${PWD}/../../app/share/collection/Keiko_skirt.sm2d\
+    $${PWD}/../../app/share/collection/keiko.smme \
+    $${PWD}/../../app/share/collection/medidas_eli2015.smme \
+    $${PWD}/../../app/share/collection/pantalon_base_Eli.sm2d\
+    $${PWD}/../../app/share/collection/Razmernye_priznaki_dlya_zhenskogo_zhaketa.smme \
+    $${PWD}/../../app/share/collection/IMK_Zhaketa_poluprilegayuschego_silueta.sm2d\
+    $${PWD}/../../app/share/collection/Lara_Jil.smme \
+    $${PWD}/../../app/share/collection/modell_2.sm2d\
+    $${PWD}/../../app/share/collection/MaleShirt/MaleShirt.sm2d\
+    $${PWD}/../../app/share/collection/MaleShirt/MaleShirt.smme \
+    $${PWD}/../../app/share/collection/Trousers/Trousers.sm2d\
+    $${PWD}/../../app/share/collection/Trousers/trousers.smme \
+    $${PWD}/../../app/share/collection/Steampunk_trousers.sm2d\
+    $${PWD}/../../app/share/collection/Steampunk_trousers.smme \
+    $${PWD}/../../app/share/collection/Basic_block_women-2016.sm2d\
     $${PWD}/../../app/share/collection/Gent_Jacket_with_tummy.val
 
 # Compilation will fail without this files after we added them to this section.

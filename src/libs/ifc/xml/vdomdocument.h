@@ -81,7 +81,7 @@ QT_WARNING_DISABLE_GCC("-Weffc++")
 QT_WARNING_DISABLE_GCC("-Wnon-virtual-dtor")
 
 /**
- * @brief The VDomDocument class represents a Seamly2D document (.val file).
+ * @brief The VDomDocument class represents a Seamly2D document (.sm2dfile).
  *
  * A Seamly2D document describes the construction of a sewing pattern. The
  * information is stored in XML format. By parsing a VDomDocument, the contained

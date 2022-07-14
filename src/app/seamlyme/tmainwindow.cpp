@@ -424,7 +424,7 @@ void TMainWindow::FileNew()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::OpenIndividual()
 {
-	const QString filter = tr("Individual measurements") + QLatin1String(" (*.vit);;") + tr("Multisize measurements") +
+	const QString filter = tr("Individual measurements") + QLatin1String(" (*.smme);;") + tr("Multisize measurements") +
 			QLatin1String(" (*.vst);;") + tr("All files") + QLatin1String(" (*.*)");
 	//Use standard path to individual measurements
 	const QString pathTo = qApp->SeamlyMeSettings()->GetPathIndividualMeasurements();
@@ -449,7 +449,7 @@ void TMainWindow::OpenIndividual()
 void TMainWindow::OpenMultisize()
 {
 	const QString filter = tr("Multisize measurements") + QLatin1String(" (*.vst);;") + tr("Individual measurements") +
-			QLatin1String(" (*.vit);;") + tr("All files") + QLatin1String(" (*.*)");
+			QLatin1String(" (*.smme);;") + tr("All files") + QLatin1String(" (*.*)");
 	//Use standard path to multisize measurements
 	QString pathTo = qApp->SeamlyMeSettings()->GetPathMultisizeMeasurements();
 	pathTo = VCommonSettings::PrepareMultisizeTables(pathTo);
@@ -460,7 +460,7 @@ void TMainWindow::OpenMultisize()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::OpenTemplate()
 {
-	const QString filter = tr("Measurements") + QLatin1String(" (*.vst *.vit);;") + tr("All files") +
+	const QString filter = tr("Measurements") + QLatin1String(" (*.vst *.smme);;") + tr("All files") +
 			QLatin1String(" (*.*)");
 	//Use standard path to template files
 	QString pathTo = qApp->SeamlyMeSettings()->GetPathTemplate();
@@ -477,7 +477,7 @@ void TMainWindow::OpenTemplate()
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::CreateFromExisting()
 {
-	const QString filter = tr("Individual measurements") + QLatin1String(" (*.vit)");
+	const QString filter = tr("Individual measurements") + QLatin1String(" (*.smme)");
 	//Use standard path to individual measurements
 	const QString pathTo = qApp->SeamlyMeSettings()->GetPathIndividualMeasurements();
 
@@ -841,7 +841,7 @@ bool TMainWindow::FileSaveAs()
 	QString suffix;
 	if (mType == MeasurementsType::Individual)
 	{
-		filters = tr("Individual measurements") + QLatin1String(" (*.vit)");
+		filters = tr("Individual measurements") + QLatin1String(" (*.smme)");
 		suffix = QLatin1String("vit");
 		fName += QLatin1String(".") + suffix;
 	}
@@ -2622,7 +2622,7 @@ void TMainWindow::UpdateWindowTitle()
 	else
 	{
 		showName = tr("untitled %1").arg(qApp->MainWindows().size()+1);
-		mType == MeasurementsType::Multisize ? showName += QLatin1String(".vst") : showName += QLatin1String(".vit");
+		mType == MeasurementsType::Multisize ? showName += QLatin1String(".vst") : showName += QLatin1String(".smme");
 	}
 
 	showName += QLatin1String("[*]");
