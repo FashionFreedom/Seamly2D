@@ -1049,7 +1049,7 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << VNodePoint::ToolType                      /*8*/
                                        << VToolHeight::ToolType                     /*9*/
                                        << VToolTriangle::ToolType                   /*10*/
-                                       << VToolPointOfIntersection::ToolType        /*11*/
+                                       << PointIntersectXYTool::ToolType            /*11*/
                                        << VToolCutSpline::ToolType                  /*12*/
                                        << VToolCutSplinePath::ToolType              /*13*/
                                        << VToolCutArc::ToolType                     /*14*/
@@ -1097,8 +1097,8 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
         case 10: //VToolTriangle::ToolType
             ParseToolTriangle(scene, domElement, parse);
             break;
-        case 11: //VToolPointOfIntersection::ToolType
-            ParseToolPointOfIntersection(scene, domElement, parse);
+        case 11: //PointIntersectXYTool::ToolType
+            parseIntersectXYTool(scene, domElement, parse);
             break;
         case 12: //VToolCutSpline::ToolType
             ParseToolCutSpline(scene, domElement, parse);
@@ -1729,7 +1729,7 @@ void VPattern::ParseToolTriangle(VMainGraphicsScene *scene, const QDomElement &d
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParseToolPointOfIntersection(VMainGraphicsScene *scene, const QDomElement &domElement,
+void VPattern::parseIntersectXYTool(VMainGraphicsScene *scene, const QDomElement &domElement,
                                             const Document &parse)
 {
     SCASSERT(scene != nullptr)
@@ -1741,18 +1741,21 @@ void VPattern::ParseToolPointOfIntersection(VMainGraphicsScene *scene, const QDo
         QString name;
         qreal mx = 0;
         qreal my = 0;
+        QString lineType;
+        QString lineColor;
         bool showPointName = true;
 
-        PointsCommonAttributes(domElement, id, name, mx, my, showPointName);
-        const quint32 firstPointId = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
+        PointsCommonAttributes(domElement, id, name, mx, my, showPointName, lineType, lineColor);
+        const quint32 firstPointId  = GetParametrUInt(domElement, AttrFirstPoint, NULL_ID_STR);
         const quint32 secondPointId = GetParametrUInt(domElement, AttrSecondPoint, NULL_ID_STR);
+        const QString lineWeight    = GetParametrString(domElement, AttrLineWeight, "0.35");
 
-        VToolPointOfIntersection::Create(id, name, firstPointId, secondPointId, mx, my, showPointName, scene, this, data,
-                                         parse, Source::FromFile);
+        PointIntersectXYTool::Create(id, name, lineType, lineWeight, lineColor, firstPointId, secondPointId,
+                                     mx, my, showPointName, scene, this, data, parse, Source::FromFile);
     }
     catch (const VExceptionBadId &e)
     {
-        VExceptionObjectError excep(tr("Error creating or updating point of intersection"), domElement);
+        VExceptionObjectError excep(tr("Error creating or updating Intersect XY tool"), domElement);
         excep.AddMoreInformation(e.ErrorMessage());
         throw excep;
     }
@@ -3931,7 +3934,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
     // This check helps to find missed tools in the switch
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used.");
 
-    QRectF rec;
+    QRectF rect;
 
     for (qint32 i = 0; i< history.size(); ++i)
     {
@@ -3964,7 +3967,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::PointOfIntersectionCurves:
                 case Tool::PointFromCircleAndTangent:
                 case Tool::PointFromArcAndTangent:
-                    rec = ToolBoundingRect<VToolSinglePoint>(rec, tool.getId());
+                    rect = ToolBoundingRect<VToolSinglePoint>(rect, tool.getId());
                     break;
                 case Tool::EndLine:
                 case Tool::AlongLine:
@@ -3974,10 +3977,10 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::Height:
                 case Tool::LineIntersectAxis:
                 case Tool::CurveIntersectAxis:
-                    rec = ToolBoundingRect<VToolLinePoint>(rec, tool.getId());
+                    rect = ToolBoundingRect<VToolLinePoint>(rect, tool.getId());
                     break;
                 case Tool::Line:
-                    rec = ToolBoundingRect<VToolLine>(rec, tool.getId());
+                    rect = ToolBoundingRect<VToolLine>(rect, tool.getId());
                     break;
                 case Tool::Spline:
                 case Tool::CubicBezier:
@@ -3986,16 +3989,16 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::CubicBezierPath:
                 case Tool::ArcWithLength:
                 case Tool::EllipticalArc:
-                    rec = ToolBoundingRect<VAbstractSpline>(rec, tool.getId());
+                    rect = ToolBoundingRect<VAbstractSpline>(rect, tool.getId());
                     break;
                 case Tool::TrueDarts:
-                    rec = ToolBoundingRect<VToolDoublePoint>(rec, tool.getId());
+                    rect = ToolBoundingRect<VToolDoublePoint>(rect, tool.getId());
                     break;
                 case Tool::Rotation:
                 case Tool::MirrorByLine:
                 case Tool::MirrorByAxis:
                 case Tool::Move:
-                    rec = ToolBoundingRect<VAbstractOperation>(rec, tool.getId());
+                    rect = ToolBoundingRect<VAbstractOperation>(rect, tool.getId());
                     break;
                 //These tools are not accesseble in Draw mode, but still 'history' contains them.
                 case Tool::Piece:
@@ -4013,16 +4016,16 @@ QRectF VPattern::ActiveDrawBoundingRect() const
             }
         }
     }
-    return rec;
+    return rect;
 }
 
 QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-QRectF VPattern::ToolBoundingRect(const QRectF &rec, const quint32 &id) const
+QRectF VPattern::ToolBoundingRect(const QRectF &rect, const quint32 &id) const
 {
-    QRectF recTool = rec;
+    QRectF toolRect = rect;
     if (tools.contains(id))
     {
         const T *vTool = qobject_cast<T *>(tools.value(id));
@@ -4032,14 +4035,14 @@ QRectF VPattern::ToolBoundingRect(const QRectF &rec, const quint32 &id) const
         //map to scene coordinate.
         childrenRect.translate(vTool->scenePos());
 
-        recTool = recTool.united(vTool->sceneBoundingRect());
-        recTool = recTool.united(childrenRect);
+        toolRect = toolRect.united(vTool->sceneBoundingRect());
+        toolRect = toolRect.united(childrenRect);
     }
     else
     {
         qDebug()<<"Can't find tool with id="<<id;
     }
-    return recTool;
+    return toolRect;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

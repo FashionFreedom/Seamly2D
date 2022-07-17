@@ -891,7 +891,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
 
 // Normalizes any number to an arbitrary range
 // by assuming the range wraps around when going below min or above max
-qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end ) 
+qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end )
 {
   const qreal range       = end - start   ;   //
   const qreal offsetValue = value - start ;   // value relative to 0
@@ -1394,7 +1394,7 @@ void DialogTool::SetAssociatedTool(VAbstractTool *tool)
         data = tool->getData();
         if (not vis.isNull())
         {
-            vis->SetData(data);
+            vis->setData(data);
         }
     }
     else

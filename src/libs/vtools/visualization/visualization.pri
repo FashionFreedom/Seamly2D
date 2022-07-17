@@ -4,6 +4,7 @@
 HEADERS += \
     $$PWD/line/operation/vistoolmirrorbyaxis.h \
     $$PWD/line/operation/vistoolmirrorbyline.h \
+    $$PWD/line/point_intersectxy_visual.h \
     $$PWD/visualization.h \
     $$PWD/line/visline.h \
     $$PWD/line/vistoolline.h \
@@ -13,7 +14,6 @@ HEADERS += \
     $$PWD/line/vistoolshoulderpoint.h \
     $$PWD/line/vistoolnormal.h \
     $$PWD/line/vistoolheight.h \
-    $$PWD/line/vistoolpointofintersection.h \
     $$PWD/line/vistooltriangle.h \
     $$PWD/line/vistoolpointofcontact.h \
     $$PWD/line/vistoollineintersect.h \
@@ -47,6 +47,7 @@ HEADERS += \
 SOURCES += \
     $$PWD/line/operation/vistoolmirrorbyaxis.cpp \
     $$PWD/line/operation/vistoolmirrorbyline.cpp \
+    $$PWD/line/point_intersectxy_visual.cpp \
     $$PWD/visualization.cpp \
     $$PWD/line/visline.cpp \
     $$PWD/line/vistoolline.cpp \
@@ -56,7 +57,6 @@ SOURCES += \
     $$PWD/line/vistoolshoulderpoint.cpp \
     $$PWD/line/vistoolnormal.cpp \
     $$PWD/line/vistoolheight.cpp \
-    $$PWD/line/vistoolpointofintersection.cpp \
     $$PWD/line/vistooltriangle.cpp \
     $$PWD/line/vistoolpointofcontact.cpp \
     $$PWD/line/vistoollineintersect.cpp \

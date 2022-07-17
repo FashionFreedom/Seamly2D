@@ -75,7 +75,7 @@
 #include "toolpoint/toolsinglepoint/vtoolpointofcontact.h"
 #include "toolpoint/toolsinglepoint/vtoolbasepoint.h"
 #include "toolpoint/toolsinglepoint/vtooltriangle.h"
-#include "toolpoint/toolsinglepoint/vtoolpointofintersection.h"
+#include "toolpoint/toolsinglepoint/point_intersectxy_tool.h"
 #include "toolpoint/toolsinglepoint/vtoolpointofintersectionarcs.h"
 #include "toolpoint/toolsinglepoint/vtoolpointofintersectioncircles.h"
 #include "toolpoint/toolsinglepoint/vtoolpointofintersectioncurves.h"

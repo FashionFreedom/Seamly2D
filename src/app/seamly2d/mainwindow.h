@@ -171,7 +171,7 @@ private slots:
     void handleTriangleTool(bool checked);
     void handleLineIntersectAxisTool(bool checked);
     void handlePointOfContactTool(bool checked);
-    void handlePointOfIntersectionTool(bool checked);
+    void handlePointIntersectXyTool(bool checked);
 
     void handleLineTool(bool checked);
     void handleLineIntersectTool(bool checked);

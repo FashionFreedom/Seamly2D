@@ -977,20 +977,20 @@ void MainWindow::handleTriangleTool(bool checked)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief handlePointOfIntersectionTool handler for pointOfIntersection tool.
+ * @brief handlePointIntersectXyTool handler for pointOfIntersection tool.
  * @param checked true - button checked.
  */
-void MainWindow::handlePointOfIntersectionTool(bool checked)
+void MainWindow::handlePointIntersectXyTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointOfIntersection>
+    SetToolButtonWithApply<PointIntersectXYDialog>
     (
         checked,
         Tool::PointOfIntersection,
         ":/cursor/pointofintersect_cursor.png",
         tr("<b>Tool::Points - Intersection Point XY from 2 Points:</b> Select point for X value (vertical)"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersection>,
-        &MainWindow::ApplyDrawDialog<VToolPointOfIntersection>
+        &MainWindow::ClosedDrawDialogWithApply<PointIntersectXYTool>,
+        &MainWindow::ApplyDrawDialog<PointIntersectXYTool>
     );
 }
 
@@ -2451,8 +2451,7 @@ void MainWindow::InitToolButtons()
     connect(ui->internalPath_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleInternalPathTool);
     connect(ui->height_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleHeightTool);
     connect(ui->triangle_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleTriangleTool);
-    connect(ui->pointOfIntersection_ToolButton, &QToolButton::clicked,
-            this, &MainWindow::handlePointOfIntersectionTool);
+    connect(ui->pointIntersectXY_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointIntersectXyTool);
     connect(ui->pointAlongCurve_ToolButton,     &QToolButton::clicked, this, &MainWindow::handlePointAlongCurveTool);
     connect(ui->pointAlongSpline_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointAlongSplineTool);
     connect(ui->unitePieces_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleUnionDetailsTool);
@@ -2493,17 +2492,17 @@ void MainWindow::handlePointsMenu()
 
     QMenu menu;
 
-    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),              tr("Midpoint"));
-    QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),               tr("Point at Distance and Angle"));
-    QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),            tr("Point at Distance along Line"));
-    QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                tr("Point on Perpendicular"));
-    QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),              tr("Point along Bisector"));
-    QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),              tr("Point on Shoulder"));
-    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_of_contact.png"),      tr("Intersection Point of Line and Arc"));
-    QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),              tr("Triangle"));
-    QAction *action_PointOfIntersection = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection.png"), tr("Intersection Point XY from 2 Points"));
-    QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                tr("Intersection Point of Line and Perpendicular"));
-    QAction *action_PointIntersectAxis  = menu.addAction(QIcon(":/toolicon/32x32/line_intersect_axis.png"),   tr("Intersection Point of Line and Axis"));
+    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint"));
+    QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Point at Distance and Angle"));
+    QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("Point at Distance along Line"));
+    QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("Point on Perpendicular"));
+    QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("Point along Bisector"));
+    QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Point on Shoulder"));
+    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_of_contact.png"),       tr("Intersection Point of Line and Arc"));
+    QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),               tr("Triangle"));
+    QAction *action_PointIntersectXY    = menu.addAction(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"), tr("Intersect XY") + "\tXY");
+    QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                 tr("Intersection Point of Line and Perpendicular"));
+    QAction *action_PointIntersectAxis  = menu.addAction(QIcon(":/toolicon/32x32/line_intersect_axis.png"),    tr("Intersection Point of Line and Axis"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2559,11 +2558,11 @@ void MainWindow::handlePointsMenu()
         ui->triangle_ToolButton->setChecked(true);
         handleTriangleTool(true);
     }
-    else if (selectedAction == action_PointOfIntersection)
+    else if (selectedAction == action_PointIntersectXY)
     {
         ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
-        ui->pointOfIntersection_ToolButton->setChecked(true);
-        handlePointOfIntersectionTool(true);
+        ui->pointIntersectXY_ToolButton->setChecked(true);
+        handlePointIntersectXyTool(true);
     }
     else if (selectedAction == action_PerpendicularPoint)
     {
@@ -3050,7 +3049,7 @@ void MainWindow::CancelTool()
             ui->triangle_ToolButton->setChecked(false);
             break;
         case Tool::PointOfIntersection:
-            ui->pointOfIntersection_ToolButton->setChecked(false);
+            ui->pointIntersectXY_ToolButton->setChecked(false);
             break;
         case Tool::CutSpline:
             ui->pointAlongCurve_ToolButton->setChecked(false);
@@ -4357,7 +4356,7 @@ void MainWindow::setEnableTools(bool enable)
     ui->shoulderPoint_ToolButton->setEnabled(draftTools);
     ui->pointOfContact_ToolButton->setEnabled(draftTools);
     ui->triangle_ToolButton->setEnabled(draftTools);
-    ui->pointOfIntersection_ToolButton->setEnabled(draftTools);
+    ui->pointIntersectXY_ToolButton->setEnabled(draftTools);
     ui->height_ToolButton->setEnabled(draftTools);
     ui->lineIntersectAxis_ToolButton->setEnabled(draftTools);
     ui->midpoint_ToolButton->setEnabled(draftTools);
@@ -4430,7 +4429,7 @@ void MainWindow::setEnableTools(bool enable)
     ui->pointOnShoulder_Action->setEnabled(draftTools);
     ui->pointOfContact_Action->setEnabled(draftTools);
     ui->triangle_Action->setEnabled(draftTools);
-    ui->pointOfIntersection_Action->setEnabled(draftTools);
+    ui->pointIntersectXY_Action->setEnabled(draftTools);
     ui->perpendicularPoint_Action->setEnabled(draftTools);
     ui->pointIntersectAxis_Action->setEnabled(draftTools);
 
@@ -4924,8 +4923,8 @@ void MainWindow::LastUsedTool()
             handleTriangleTool(true);
             break;
         case Tool::PointOfIntersection:
-            ui->pointOfIntersection_ToolButton->setChecked(true);
-            handlePointOfIntersectionTool(true);
+            ui->pointIntersectXY_ToolButton->setChecked(true);
+            handlePointIntersectXyTool(true);
             break;
         case Tool::PointOfIntersectionArcs:
             ui->pointOfIntersectionArcs_ToolButton->setChecked(true);
@@ -5294,11 +5293,11 @@ void MainWindow::CreateActions()
         ui->triangle_ToolButton->setChecked(true);
         handleTriangleTool(true);
     });
-    connect(ui->pointOfIntersection_Action, &QAction::triggered, this, [this]
+    connect(ui->pointIntersectXY_Action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
-        ui->pointOfIntersection_ToolButton->setChecked(true);
-        handlePointOfIntersectionTool(true);
+        ui->pointIntersectXY_ToolButton->setChecked(true);
+        handlePointIntersectXyTool(true);
     });
     connect(ui->perpendicularPoint_Action, &QAction::triggered, this, [this]
     {

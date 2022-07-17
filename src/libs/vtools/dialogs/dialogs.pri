@@ -20,7 +20,6 @@ HEADERS += \
     $$PWD/tools/dialogpointfromarcandtangent.h \
     $$PWD/tools/dialogpointfromcircleandtangent.h \
     $$PWD/tools/dialogpointofcontact.h \
-    $$PWD/tools/dialogpointofintersection.h \
     $$PWD/tools/dialogpointofintersectionarcs.h \
     $$PWD/tools/dialogpointofintersectioncircles.h \
     $$PWD/tools/dialogshoulderpoint.h \
@@ -46,7 +45,8 @@ HEADERS += \
     $$PWD/tools/piece/dialoginternalpath.h \
     $$PWD/tools/dialogpin.h \
     $$PWD/tools/dialoginsertnode.h \
-    $$PWD/support/dialogeditlabel.h
+    $$PWD/support/dialogeditlabel.h \
+    $$PWD/tools/point_intersectxy_dialog.h
 
 SOURCES += \
     $$PWD/tools/dialogalongline.cpp \
@@ -66,7 +66,6 @@ SOURCES += \
     $$PWD/tools/dialogpointfromarcandtangent.cpp \
     $$PWD/tools/dialogpointfromcircleandtangent.cpp \
     $$PWD/tools/dialogpointofcontact.cpp \
-    $$PWD/tools/dialogpointofintersection.cpp \
     $$PWD/tools/dialogpointofintersectionarcs.cpp \
     $$PWD/tools/dialogpointofintersectioncircles.cpp \
     $$PWD/tools/dialogshoulderpoint.cpp \
@@ -92,7 +91,8 @@ SOURCES += \
     $$PWD/tools/dialogpin.cpp \
     $$PWD/tools/dialoginsertnode.cpp \
     $$PWD/support/dialogeditlabel.cpp \
-    $$PWD/tools/piece/dialoginternalpath.cpp
+    $$PWD/tools/piece/dialoginternalpath.cpp \
+    $$PWD/tools/point_intersectxy_dialog.cpp
 
 FORMS += \
     $$PWD/tools/dialogalongline.ui \
@@ -112,7 +112,6 @@ FORMS += \
     $$PWD/tools/dialogpointfromarcandtangent.ui \
     $$PWD/tools/dialogpointfromcircleandtangent.ui \
     $$PWD/tools/dialogpointofcontact.ui \
-    $$PWD/tools/dialogpointofintersection.ui \
     $$PWD/tools/dialogpointofintersectionarcs.ui \
     $$PWD/tools/dialogpointofintersectioncircles.ui \
     $$PWD/tools/dialogshoulderpoint.ui \
@@ -142,4 +141,5 @@ FORMS += \
     $$PWD/tools/piece/tabs/tabgrainline.ui \
     $$PWD/tools/piece/tabs/tabpins.ui \
     $$PWD/tools/dialoginsertnode.ui \
-    $$PWD/support/dialogeditlabel.ui
+    $$PWD/support/dialogeditlabel.ui \
+    $$PWD/tools/point_intersectxy_dialog.ui
