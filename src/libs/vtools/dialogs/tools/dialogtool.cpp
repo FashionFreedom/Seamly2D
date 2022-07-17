@@ -1,43 +1,23 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
+/**************************************************************************
  **
  **  @file   dialogtool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
- **  @brief
+ **  @author Douglas S. Caskey
+ **  @date   7.17.2022
+ **
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -103,6 +83,7 @@ template <class T> class QSharedPointer;
 Q_LOGGING_CATEGORY(vDialog, "v.dialog")
 
 #define DIALOG_MAX_FORMULA_HEIGHT 64
+#define DIALOG_MIN_WIDTH 260
 
 namespace
 {
@@ -891,7 +872,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
 
 // Normalizes any number to an arbitrary range
 // by assuming the range wraps around when going below min or above max
-qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end ) 
+qreal DialogTool::normalize( const qreal value, const qreal start, const qreal end )
 {
   const qreal range       = end - start   ;   //
   const qreal offsetValue = value - start ;   // value relative to 0
@@ -1004,14 +985,9 @@ void DialogTool::DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowL
 
     const QTextCursor cursor = formula->textCursor();
 
-    //Before deploy need to release dialog size
-    //I don't know why, but don't need to fixate again.
-    //A dialog will be lefted fixated. That's what we need.
-    setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
-    setMinimumSize(QSize(0, 0));
-
     if (formula->height() < DIALOG_MAX_FORMULA_HEIGHT)
     {
+        setMaximumWidth(QWIDGETSIZE_MAX);
         formula->setFixedHeight(DIALOG_MAX_FORMULA_HEIGHT);
         //Set icon from theme (internal for Windows system)
         buttonGrowLength->setIcon(QIcon::fromTheme("go-up",
@@ -1019,10 +995,11 @@ void DialogTool::DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowL
     }
     else
     {
-       formula->setFixedHeight(formulaBaseHeight);
-       //Set icon from theme (internal for Windows system)
-       buttonGrowLength->setIcon(QIcon::fromTheme("go-down",
-                                                  QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
+        setMaximumWidth(DIALOG_MIN_WIDTH);
+        formula->setFixedHeight(formulaBaseHeight);
+        //Set icon from theme (internal for Windows system)
+        buttonGrowLength->setIcon(QIcon::fromTheme("go-down",
+                                                   QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
     }
 
     // I found that after change size of formula field, it was filed for angle formula, field for formula became black.

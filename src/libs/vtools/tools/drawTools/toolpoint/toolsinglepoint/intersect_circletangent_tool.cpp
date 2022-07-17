@@ -1,43 +1,23 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/**************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vtoolpointfromcircleandtangent.cpp
+ **  @file   intersect_circletangent_tool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   3 6, 2015
  **
- **  @brief
+ **  @author Douglas S. Caskey
+ **  @date   7.16.2022
+ **
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,37 +29,38 @@
  **
  *************************************************************************/
 
-#include "vtoolpointfromcircleandtangent.h"
+#include "intersect_circletangent_tool.h"
 
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
-
-#include "../../../../dialogs/tools/dialogpointfromcircleandtangent.h"
-#include "../../../../dialogs/tools/dialogtool.h"
-#include "../../../../visualization/visualization.h"
-#include "../../../../visualization/line/vistoolpointfromcircleandtangent.h"
+#include "vtoolsinglepoint.h"
+#include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../ifc/ifcdef.h"
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../../../vabstracttool.h"
 #include "../../vdrawtool.h"
-#include "vtoolsinglepoint.h"
+#include "../../../vabstracttool.h"
+#include "../../../../dialogs/tools/intersect_circletangent_dialog.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../visualization/visualization.h"
+#include "../../../../visualization/line/intersect_circletangent_visual.h"
+
+#include <QMessageBox>
+#include <QSharedPointer>
+#include <QStaticStringData>
+#include <QStringData>
+#include <QStringDataPtr>
+#include <new>
 
 template <class T> class QSharedPointer;
 
-const QString VToolPointFromCircleAndTangent::ToolType = QStringLiteral("pointFromCircleAndTangent");
+const QString IntersectCircleTangentTool::ToolType = QStringLiteral("pointFromCircleAndTangent");
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPointFromCircleAndTangent::VToolPointFromCircleAndTangent(VAbstractPattern *doc, VContainer *data,
+IntersectCircleTangentTool::IntersectCircleTangentTool(VAbstractPattern *doc, VContainer *data,
                                                                const quint32 &id,
                                                                quint32 circleCenterId, const QString &circleRadius,
                                                                quint32 tangentPointId, CrossCirclesPoint crossPoint,
@@ -94,10 +75,10 @@ VToolPointFromCircleAndTangent::VToolPointFromCircleAndTangent(VAbstractPattern 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::setDialog()
+void IntersectCircleTangentTool::setDialog()
 {
     SCASSERT(not m_dialog.isNull())
-    QSharedPointer<DialogPointFromCircleAndTangent> dialogTool = m_dialog.objectCast<DialogPointFromCircleAndTangent>();
+    QSharedPointer<IntersectCircleTangentDialog> dialogTool = m_dialog.objectCast<IntersectCircleTangentDialog>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetCircleCenterId(circleCenterId);
@@ -108,19 +89,19 @@ void VToolPointFromCircleAndTangent::setDialog()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPointFromCircleAndTangent *VToolPointFromCircleAndTangent::Create(QSharedPointer<DialogTool> dialog,
+IntersectCircleTangentTool *IntersectCircleTangentTool::Create(QSharedPointer<DialogTool> dialog,
                                                                        VMainGraphicsScene *scene,
                                                                        VAbstractPattern *doc, VContainer *data)
 {
     SCASSERT(not dialog.isNull())
-    QSharedPointer<DialogPointFromCircleAndTangent> dialogTool = dialog.objectCast<DialogPointFromCircleAndTangent>();
+    QSharedPointer<IntersectCircleTangentDialog> dialogTool = dialog.objectCast<IntersectCircleTangentDialog>();
     SCASSERT(not dialogTool.isNull())
     const quint32 circleCenterId = dialogTool->GetCircleCenterId();
     QString circleRadius = dialogTool->GetCircleRadius();
     const quint32 tangentPointId = dialogTool->GetTangentPointId();
     const CrossCirclesPoint pType = dialogTool->GetCrossCirclesPoint();
     const QString pointName = dialogTool->getPointName();
-    VToolPointFromCircleAndTangent *point = Create(0, pointName, circleCenterId, circleRadius, tangentPointId, pType,
+    IntersectCircleTangentTool *point = Create(0, pointName, circleCenterId, circleRadius, tangentPointId, pType,
                                                    5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -130,7 +111,7 @@ VToolPointFromCircleAndTangent *VToolPointFromCircleAndTangent::Create(QSharedPo
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPointFromCircleAndTangent *VToolPointFromCircleAndTangent::Create(const quint32 _id, const QString &pointName,
+IntersectCircleTangentTool *IntersectCircleTangentTool::Create(const quint32 _id, const QString &pointName,
                                                                        quint32 circleCenterId, QString &circleRadius,
                                                                        quint32 tangentPointId,
                                                                        CrossCirclesPoint crossPoint,
@@ -145,8 +126,25 @@ VToolPointFromCircleAndTangent *VToolPointFromCircleAndTangent::Create(const qui
     const VPointF cPoint = *data->GeometricObject<VPointF>(circleCenterId);
     const VPointF tPoint = *data->GeometricObject<VPointF>(tangentPointId);
 
-    const QPointF point = VToolPointFromCircleAndTangent::FindPoint(static_cast<QPointF>(tPoint),
+    const QPointF point = IntersectCircleTangentTool::FindPoint(static_cast<QPointF>(tPoint),
                                                                     static_cast<QPointF>(cPoint), radius, crossPoint);
+
+    if (point == QPointF())
+    {
+        const QString msg = tr("<b><big>Can find intersection point of</big></b><br>"
+                               "<b><big>circle and tangent</big></b><br><br>"
+                               "Using origin point as a place holder until pattern is corrected.");
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Intersect Circle and Tangent"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     quint32 id = _id;
 
     VPointF *p = new VPointF(point, pointName, mx, my);
@@ -168,7 +166,7 @@ VToolPointFromCircleAndTangent *VToolPointFromCircleAndTangent::Create(const qui
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::PointFromCircleAndTangent, doc);
-        VToolPointFromCircleAndTangent *point = new VToolPointFromCircleAndTangent(doc, data, id, circleCenterId,
+        IntersectCircleTangentTool *point = new IntersectCircleTangentTool(doc, data, id, circleCenterId,
                                                                                    circleRadius, tangentPointId,
                                                                                    crossPoint, typeCreation);
         scene->addItem(point);
@@ -182,7 +180,7 @@ VToolPointFromCircleAndTangent *VToolPointFromCircleAndTangent::Create(const qui
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPointF VToolPointFromCircleAndTangent::FindPoint(const QPointF &p, const QPointF &center, qreal radius,
+QPointF IntersectCircleTangentTool::FindPoint(const QPointF &p, const QPointF &center, qreal radius,
                                                   const CrossCirclesPoint crossPoint)
 {
     QPointF p1, p2;
@@ -209,25 +207,25 @@ QPointF VToolPointFromCircleAndTangent::FindPoint(const QPointF &p, const QPoint
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointFromCircleAndTangent::TangentPointName() const
+QString IntersectCircleTangentTool::TangentPointName() const
 {
     return VAbstractTool::data.GetGObject(tangentPointId)->name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointFromCircleAndTangent::CircleCenterPointName() const
+QString IntersectCircleTangentTool::CircleCenterPointName() const
 {
     return VAbstractTool::data.GetGObject(circleCenterId)->name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointFromCircleAndTangent::GetTangentPointId() const
+quint32 IntersectCircleTangentTool::GetTangentPointId() const
 {
     return tangentPointId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SetTangentPointId(const quint32 &value)
+void IntersectCircleTangentTool::SetTangentPointId(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -239,13 +237,13 @@ void VToolPointFromCircleAndTangent::SetTangentPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointFromCircleAndTangent::GetCircleCenterId() const
+quint32 IntersectCircleTangentTool::GetCircleCenterId() const
 {
     return circleCenterId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SetCircleCenterId(const quint32 &value)
+void IntersectCircleTangentTool::SetCircleCenterId(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -257,7 +255,7 @@ void VToolPointFromCircleAndTangent::SetCircleCenterId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VFormula VToolPointFromCircleAndTangent::GetCircleRadius() const
+VFormula IntersectCircleTangentTool::GetCircleRadius() const
 {
     VFormula radius(circleRadius, getData());
     radius.setCheckZero(true);
@@ -267,7 +265,7 @@ VFormula VToolPointFromCircleAndTangent::GetCircleRadius() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SetCircleRadius(const VFormula &value)
+void IntersectCircleTangentTool::SetCircleRadius(const VFormula &value)
 {
     if (value.error() == false)
     {
@@ -281,13 +279,13 @@ void VToolPointFromCircleAndTangent::SetCircleRadius(const VFormula &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-CrossCirclesPoint VToolPointFromCircleAndTangent::GetCrossCirclesPoint() const
+CrossCirclesPoint IntersectCircleTangentTool::GetCrossCirclesPoint() const
 {
     return crossPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SetCrossCirclesPoint(const CrossCirclesPoint &value)
+void IntersectCircleTangentTool::SetCrossCirclesPoint(const CrossCirclesPoint &value)
 {
     crossPoint = value;
 
@@ -296,13 +294,13 @@ void VToolPointFromCircleAndTangent::SetCrossCirclesPoint(const CrossCirclesPoin
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::ShowVisualization(bool show)
+void IntersectCircleTangentTool::ShowVisualization(bool show)
 {
-    ShowToolVisualization<VisToolPointFromCircleAndTangent>(show);
+    ShowToolVisualization<IntersectCircleTangentVisual>(show);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::RemoveReferens()
+void IntersectCircleTangentTool::RemoveReferens()
 {
     const auto circleCenter = VAbstractTool::data.GetGObject(circleCenterId);
     const auto tangentPoint = VAbstractTool::data.GetGObject(tangentPointId);
@@ -312,11 +310,11 @@ void VToolPointFromCircleAndTangent::RemoveReferens()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
+void IntersectCircleTangentTool::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogPointFromCircleAndTangent>(event, id);
+        ContextMenu<IntersectCircleTangentDialog>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -326,10 +324,10 @@ void VToolPointFromCircleAndTangent::showContextMenu(QGraphicsSceneContextMenuEv
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SaveDialog(QDomElement &domElement)
+void IntersectCircleTangentTool::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(not m_dialog.isNull())
-    QSharedPointer<DialogPointFromCircleAndTangent> dialogTool = m_dialog.objectCast<DialogPointFromCircleAndTangent>();
+    QSharedPointer<IntersectCircleTangentDialog> dialogTool = m_dialog.objectCast<IntersectCircleTangentDialog>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
     doc->SetAttribute(domElement, AttrCCenter, QString().setNum(dialogTool->GetCircleCenterId()));
@@ -340,7 +338,7 @@ void VToolPointFromCircleAndTangent::SaveDialog(QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
+void IntersectCircleTangentTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 {
     VToolSinglePoint::SaveOptions(tag, obj);
 
@@ -352,7 +350,7 @@ void VToolPointFromCircleAndTangent::SaveOptions(QDomElement &tag, QSharedPointe
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::ReadToolAttributes(const QDomElement &domElement)
+void IntersectCircleTangentTool::ReadToolAttributes(const QDomElement &domElement)
 {
     circleCenterId = doc->GetParametrUInt(domElement, AttrCCenter, NULL_ID_STR);
     tangentPointId = doc->GetParametrUInt(domElement, AttrTangent, NULL_ID_STR);
@@ -361,11 +359,11 @@ void VToolPointFromCircleAndTangent::ReadToolAttributes(const QDomElement &domEl
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointFromCircleAndTangent::SetVisualization()
+void IntersectCircleTangentTool::SetVisualization()
 {
     if (not vis.isNull())
     {
-        VisToolPointFromCircleAndTangent *visual = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+        IntersectCircleTangentVisual *visual = qobject_cast<IntersectCircleTangentVisual *>(vis);
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(tangentPointId);

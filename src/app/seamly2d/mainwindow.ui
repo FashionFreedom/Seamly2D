@@ -1776,7 +1776,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of 2 Circles (IC)</string>
+                <string>Intersection Point of Circles (IC)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1802,7 +1802,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Tangency Point of Circle and Tangent (CT)</string>
+                <string>Intersection Point of Circle and Tangent (CT)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -3448,7 +3448,7 @@
     <string>Intersection Point of Circles</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of 2 Circles (IC)</string>
+    <string>Intersection Point of Circles (IC)</string>
    </property>
    <property name="shortcut">
     <string>I, C</string>
@@ -3463,10 +3463,10 @@
      <normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</iconset>
    </property>
    <property name="text">
-    <string>Tangency Point of Circle and Tangent</string>
+    <string>Intersection Point of Circle and Tangent</string>
    </property>
    <property name="toolTip">
-    <string>Tangency Point of Circle and Tangent (CT)</string>
+    <string>Intersection Point of Circle and Tangent (CT)</string>
    </property>
    <property name="shortcut">
     <string>C, T</string>
