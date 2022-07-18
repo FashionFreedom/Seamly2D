@@ -131,7 +131,7 @@ IntersectCircleTangentTool *IntersectCircleTangentTool::Create(const quint32 _id
 
     if (point == QPointF())
     {
-        const QString msg = tr("<b><big>Can find intersection point of</big></b><br>"
+        const QString msg = tr("<b><big>Can't find intersection point of</big></b><br>"
                                "<b><big>circle and tangent</big></b><br><br>"
                                "Using origin point as a place holder until pattern is corrected.");
 
