@@ -94,22 +94,6 @@ jobs:
           sudo mkdir -p AppDir/usr/share/applications
           sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
           sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
-          
-      - name: find rcc files setup
-        id: find-rcc-files-setup
-        uses: Rishabh510/Path-lister-action@1.0
-        with:
-          path: "./"
-          #type: ".rcc"
-          type: "*."
-          
-      - name: find rcc files
-        id: find-resource-files
-        run: |
-          echo "Found ${{ steps.find-resource-files-setup.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.find-resource-files-setup.outputs.paths }}; do
-          echo $i
-          done          
 
       - name: copy resource files
         id: copy-resource-files
@@ -122,6 +106,11 @@ jobs:
           #********************************************
           echo "-- show the current directory and list files --"
           pwd && ls -la
+
+          #********************************************
+          echo "-- show the current directory and list files --"
+          echo "------ then list files in the share subdirectory --"
+          pwd && ls -la && ls -la ./share
 
           #********************************************
           echo "-- find the .rcc files -- "
