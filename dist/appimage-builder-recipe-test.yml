@@ -12,7 +12,7 @@ script:
   - pwd && ls
 
   - echo "=== build Seamly2D & SeamlyMe ====================="
-  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==="
+  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==="
   #- INSTALL_ROOT=AppDir make install
   - sudo make -j$(nproc) && echo "=== END MAKE ==="
   - sudo make install DESTDIR=AppDir && echo "=== END MAKE INSTALL ==="
