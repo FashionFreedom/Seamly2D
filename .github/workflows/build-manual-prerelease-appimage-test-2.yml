@@ -1,4 +1,4 @@
-name: Build manual linux appimage - test
+name: Build manual linux appimage - test 2
 
 on:
   workflow_dispatch:
@@ -74,80 +74,7 @@ jobs:
           echo "-- install build dependencies --"
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-        
-      - name: build Seamly2D & SeamlyMe
-        run: |
-          # *********************************
-          echo "-- show current directory --"
-          pwd
-          echo "-- find the .rcc files recursively, before building Seamly2D & SeamlyMe-- "
-          ls -Rla ./src/app | grep '\.rcc$' | wc -l
-                    
-          # *********************************
-          echo "-- make Seamly2D & SeamlyMe --"
-          qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache
-          make -j$(nproc) && make install
-          
-          # *********************************
-          echo "-- remove & recreate AppDir --"
-          sudo rm -rf AppDir || true
-          sudo mkdir -v AppDir
-          
-          # *********************************
-          echo "-- create AppDir usr/share directories--"
-          sudo mkdir -p AppDir/usr/share/translations
-          sudo mkdir -p AppDir/usr/share/applications
-          sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
-          sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
 
-      - name: compile diagramqrc to diagramrcc
-        id: compile-diagramqrc-to-diagramrcc
-        run: |
-          # ********************************************
-          echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
-          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
-
-          # ********************************************
-          echo "-- find the .rcc files recursively, after compiling diagrams.rcc "
-          ls -Rla ./src/app/seamlyme/share | grep '\.rcc$' | wc -l   && echo "--- END COMPILE DIAGRAM.QRC TO DIAGRAM.RCC ---"     
-
-      - name: copy resource files
-        id: copy-resource-files
-        run: |
-          echo "_______BEGIN DEBUGGING ___________________________"
-          #********************************************
-          # when copying files we get this error: 
-          # ls: cannot access 'AppDir/usr/share/diagrams.rcc': No such file or directory
-          # cp: cannot stat 'src/app/seamlyme/bin/diagrams.rcc': No such file or directory
-
-          #********************************************
-          echo "-- show the current directory and list files --"
-          echo "------ then list files in the src/app subdirectory --"
-          pwd && ls -la && ls -la ./src/app
-
-          #********************************************
-          echo "-- find the .rcc files recursively -- "
-          ls -Rla ./src/app/seamlyme/share/ | grep '\.rcc$' && echo "_______END DEBUGGING ___________________________"
-          
-          #********************************************
-          echo "-- copy measurement diagrams.rcc file from new location --"
-          #cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
-          sudo cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
-          
-          #********************************************
-          echo "-- copy translation *.qm files --"
-          sudo cp share/translations/*.qm AppDir/usr/share/translations
-          
-          #********************************************
-          echo "-- copy .desktop files --"
-          sudo cp dist/seamly2d.desktop AppDir/usr/share/applications
-          sudo cp dist/seamlyme.desktop AppDir/usr/share/applications
-          
-          #********************************************
-          echo "-- copy icon .png files --"
-          sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
-          sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png 
-        
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
