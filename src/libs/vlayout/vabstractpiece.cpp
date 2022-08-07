@@ -143,13 +143,13 @@ void VAbstractPiece::SetSeamAllowanceBuiltIn(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractPiece::IsHideMainPath() const
+bool VAbstractPiece::isHideSeamLine() const
 {
     return d->m_hideMainPath;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPiece::SetHideMainPath(bool value)
+void VAbstractPiece::setHideSeamLine(bool value)
 {
     d->m_hideMainPath = value;
 }
@@ -418,10 +418,10 @@ qreal VAbstractPiece::MaxLocalSA(const VSAPoint &p, qreal width)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief EkvPoint return seam aloowance points in place of intersection two edges. Last points of two edges should be
- * equal.
+ * @brief EkvPoint return seam allowance points in place of intersection of two edges. Last points of two edges 
+ * should be equal.
  * @param width global seam allowance width.
- * @return seam aloowance points.
+ * @return seam allowance points.
  */
 QVector<QPointF> VAbstractPiece::EkvPoint(const VSAPoint &p1Line1, const VSAPoint &p2Line1,
                                           const VSAPoint &p1Line2, const VSAPoint &p2Line2, qreal width)

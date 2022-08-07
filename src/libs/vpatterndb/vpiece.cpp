@@ -834,9 +834,9 @@ bool VPiece::getSeamNotchSAPoint(const VSAPoint &previousSAPoint, const VSAPoint
     QVector<QPointF> ekvPoints;
     const qreal width = ToPixel(GetSAWidth(), *data->GetPatternUnit());
 
-    /* Because method VAbstractPiece::EkvPoint has troubles with edges on a same line we should specially treat such
+    /* Because method VAbstractPiece::EkvPoint has troubles with edges on the same line we should specially treat such
        cases.
-       First check if two edges and seam alowance create parallel lines.
+       First check if two edges and seam allowance create parallel lines.
        Second case check if two edges are on a same line geometrically and a notch point has equal SA width.*/
     if (IsEkvPointOnLine(notchSAPoint, previousSAPoint, nextSAPoint)// see issue #665
         || (IsEkvPointOnLine(static_cast<QPointF>(notchSAPoint), static_cast<QPointF>(previousSAPoint),
@@ -952,7 +952,7 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
                                               data, notchIndex, pathPoints);
         }
         if (qApp->Settings()->showSecondNotch()
-                && not IsHideMainPath()
+                && not isHideSeamLine()
                 && path.at(notchIndex).IsMainPathNode()
                 && path.at(notchIndex).getNotchSubType() != NotchSubType::Intersection
                 && path.at(notchIndex).showSecondNotch())

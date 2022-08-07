@@ -90,12 +90,12 @@
             </widget>
            </item>
            <item>
-            <widget class="QCheckBox" name="hideMainPath_CheckBox">
+            <widget class="QCheckBox" name="hideSeamLine_CheckBox">
              <property name="toolTip">
               <string>Hide the main path if the seam allowance is enabled</string>
              </property>
              <property name="text">
-              <string>Hide main path</string>
+              <string>Hide seam line</string>
              </property>
             </widget>
            </item>

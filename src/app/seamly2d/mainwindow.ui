@@ -171,6 +171,7 @@
     <addaction name="toggleWireframe_Action"/>
     <addaction name="toggleControlPoints_Action"/>
     <addaction name="toggleAxisOrigin_Action"/>
+    <addaction name="toggleSeamAllowances_Action"/>
     <addaction name="toggleGrainLines_Action"/>
     <addaction name="toggleLabels_Action"/>
     <addaction name="separator"/>
@@ -2572,6 +2573,7 @@
    <addaction name="toggleWireframe_Action"/>
    <addaction name="toggleControlPoints_Action"/>
    <addaction name="toggleAxisOrigin_Action"/>
+   <addaction name="toggleSeamAllowances_Action"/>
    <addaction name="toggleGrainLines_Action"/>
    <addaction name="toggleLabels_Action"/>
   </widget>
@@ -3716,6 +3718,18 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
+  <action name="shortcuts_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/2d_key_icon.png</normaloff>:/icon/32x32/2d_key_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Shortcuts</string>
+   </property>
+   <property name="shortcut">
+    <string>K</string>
+   </property>
+  </action>
   <action name="lastTool_Action">
    <property name="enabled">
     <bool>false</bool>
@@ -4589,16 +4603,25 @@
     <string>Export</string>
    </property>
   </action>
-  <action name="shortcuts_Action">
+  <action name="toggleSeamAllowances_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-     <normaloff>:/icon/32x32/2d_key_icon.png</normaloff>:/icon/32x32/2d_key_icon.png</iconset>
+     <normaloff>:/icon/32x32/seaml_allowance@2x.png</normaloff>:/icon/32x32/seaml_allowance@2x.png</iconset>
    </property>
    <property name="text">
-    <string>Shortcuts</string>
+    <string>Seam Allowance</string>
    </property>
    <property name="shortcut">
-    <string>K</string>
+    <string>V, S</string>
    </property>
   </action>
  </widget>
@@ -4611,8 +4634,9 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="share/resources/toolicon.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

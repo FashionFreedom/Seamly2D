@@ -75,6 +75,7 @@
 #include "../undocommands/movepiece.h"
 #include "../undocommands/savepieceoptions.h"
 #include "../undocommands/togglepieceinlayout.h"
+#include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vwidgets/vnobrushscalepathitem.h"
 #include "../qmuparser/qmutokenparser.h"
@@ -84,6 +85,8 @@
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMessageBox>
+#include <QInputDialog>
+
 
 // Current version of seam allowance tag need for backward compatibility
 const quint8 VToolSeamAllowance::pieceVersion = 2;
@@ -96,7 +99,7 @@ const QString VToolSeamAllowance::TagPins    = QStringLiteral("pins");
 const QString VToolSeamAllowance::AttrVersion              = QStringLiteral("version");
 const QString VToolSeamAllowance::AttrForbidFlipping       = QStringLiteral("forbidFlipping");
 const QString VToolSeamAllowance::AttrSeamAllowance        = QStringLiteral("seamAllowance");
-const QString VToolSeamAllowance::AttrHideMainPath         = QStringLiteral("hideMainPath");
+const QString VToolSeamAllowance::AttrHideSeamLine         = QStringLiteral("hideMainPath");
 const QString VToolSeamAllowance::AttrSeamAllowanceBuiltIn = QStringLiteral("seamAllowanceBuiltIn");
 const QString VToolSeamAllowance::AttrHeight               = QStringLiteral("height");
 const QString VToolSeamAllowance::AttrUnited               = QStringLiteral("united");
@@ -195,17 +198,17 @@ void VToolSeamAllowance::InsertNode(VPieceNode node, quint32 pieceId, VMainGraph
 
     if (pieceId > NULL_ID)
     {
-        VPiece oldDet;
+        VPiece oldPiece;
         try
         {
-            oldDet = data->GetPiece(pieceId);
+            oldPiece = data->GetPiece(pieceId);
         }
         catch (const VExceptionBadId &)
         {
             return;
         }
 
-        VPiece newDet = oldDet;
+        VPiece newPiece = oldPiece;
 
         const quint32 id = PrepareNode(node, scene, doc, data);
         if (id == NULL_ID)
@@ -214,7 +217,7 @@ void VToolSeamAllowance::InsertNode(VPieceNode node, quint32 pieceId, VMainGraph
         }
 
         node.SetId(id);
-        newDet.GetPath().Append(node);
+        newPiece.GetPath().Append(node);
 
         // Seam allowance tool already initializated and can't init the node
         VToolSeamAllowance *patternPiece = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(pieceId));
@@ -222,9 +225,9 @@ void VToolSeamAllowance::InsertNode(VPieceNode node, quint32 pieceId, VMainGraph
 
         InitNode(node, scene, data, doc, patternPiece);
 
-        SavePieceOptions *saveCommand = new SavePieceOptions(oldDet, newDet, doc, pieceId);
+        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
-        data->UpdatePiece(pieceId, newDet);// Update piece because first save will not call lite update
+        data->UpdatePiece(pieceId, newPiece);// Update piece because first save will not call lite update
         connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     }
 }
@@ -242,7 +245,7 @@ void VToolSeamAllowance::AddAttributes(VAbstractPattern *doc, QDomElement &domEl
     doc->SetAttribute(domElement, AttrInLayout,         piece.IsInLayout());
     doc->SetAttribute(domElement, AttrForbidFlipping,   piece.IsForbidFlipping());
     doc->SetAttribute(domElement, AttrSeamAllowance,    piece.IsSeamAllowance());
-    doc->SetAttribute(domElement, AttrHideMainPath,     piece.IsHideMainPath());
+    doc->SetAttribute(domElement, AttrHideSeamLine,     piece.isHideSeamLine());
 
     const bool saBuiltIn = piece.IsSeamAllowanceBuiltIn();
     if (saBuiltIn)
@@ -625,6 +628,8 @@ void VToolSeamAllowance::UpdateGrainline()
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     const VGrainlineData& data = piece.GetGrainlineGeometry();
 
+    qDebug()<<"Update Grainline IsVisible() = "<< data.IsVisible();
+
     if (data.IsVisible() & qApp->Settings()->showGrainlines())
     {
         QPointF pos;
@@ -655,11 +660,11 @@ void VToolSeamAllowance::UpdateGrainline()
  */
 void VToolSeamAllowance::SaveMoveDetail(const QPointF& ptPos)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
-    newDet.GetPatternPieceData().SetPos(ptPos);
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetPatternPieceData().SetPos(ptPos);
 
-    SavePieceOptions* moveCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     moveCommand->setText(tr("move pattern piece label"));
     connect(moveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveCommand);
@@ -671,16 +676,16 @@ void VToolSeamAllowance::SaveMoveDetail(const QPointF& ptPos)
  */
 void VToolSeamAllowance::SaveResizeDetail(qreal dLabelW, int iFontSize)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
 
     dLabelW = FromPixel(dLabelW, *VDataTool::data.GetPatternUnit());
-    newDet.GetPatternPieceData().SetLabelWidth(QString().setNum(dLabelW));
+    newPiece.GetPatternPieceData().SetLabelWidth(QString().setNum(dLabelW));
     const qreal height = FromPixel(m_dataLabel->boundingRect().height(), *VDataTool::data.GetPatternUnit());
-    newDet.GetPatternPieceData().SetLabelHeight(QString().setNum(height));
-    newDet.GetPatternPieceData().SetFontSize(iFontSize);
+    newPiece.GetPatternPieceData().SetLabelHeight(QString().setNum(height));
+    newPiece.GetPatternPieceData().SetFontSize(iFontSize);
 
-    SavePieceOptions* resizeCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     resizeCommand->setText(tr("resize pattern piece label"));
     connect(resizeCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(resizeCommand);
@@ -692,17 +697,17 @@ void VToolSeamAllowance::SaveResizeDetail(qreal dLabelW, int iFontSize)
  */
 void VToolSeamAllowance::SaveRotationDetail(qreal dRot)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
-    newDet.GetPatternPieceData().SetPos(m_dataLabel->pos());
-    newDet.GetPatternPieceData().SetFontSize(m_dataLabel->getFontSize());
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetPatternPieceData().SetPos(m_dataLabel->pos());
+    newPiece.GetPatternPieceData().SetFontSize(m_dataLabel->getFontSize());
 
     // Tranform angle to anticlockwise
     QLineF line(0, 0, 100, 0);
     line.setAngle(-dRot);
-    newDet.GetPatternPieceData().SetRotation(QString().setNum(line.angle()));
+    newPiece.GetPatternPieceData().SetRotation(QString().setNum(line.angle()));
 
-    SavePieceOptions* rotateCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     rotateCommand->setText(tr("rotate pattern piece label"));
     connect(rotateCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(rotateCommand);
@@ -715,11 +720,11 @@ void VToolSeamAllowance::SaveRotationDetail(qreal dRot)
  */
 void VToolSeamAllowance::SaveMovePattern(const QPointF &ptPos)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
-    newDet.GetPatternInfo().SetPos(ptPos);
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetPatternInfo().SetPos(ptPos);
 
-    SavePieceOptions* moveCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     moveCommand->setText(tr("move pattern info label"));
     connect(moveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveCommand);
@@ -731,16 +736,16 @@ void VToolSeamAllowance::SaveMovePattern(const QPointF &ptPos)
  */
 void VToolSeamAllowance::SaveResizePattern(qreal dLabelW, int iFontSize)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
 
     dLabelW = FromPixel(dLabelW, *VDataTool::data.GetPatternUnit());
-    newDet.GetPatternInfo().SetLabelWidth(QString().setNum(dLabelW));
+    newPiece.GetPatternInfo().SetLabelWidth(QString().setNum(dLabelW));
     qreal height = FromPixel(m_patternInfo->boundingRect().height(), *VDataTool::data.GetPatternUnit());
-    newDet.GetPatternInfo().SetLabelHeight(QString().setNum(height));
-    newDet.GetPatternInfo().SetFontSize(iFontSize);
+    newPiece.GetPatternInfo().SetLabelHeight(QString().setNum(height));
+    newPiece.GetPatternInfo().SetFontSize(iFontSize);
 
-    SavePieceOptions* resizeCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     resizeCommand->setText(tr("resize pattern info label"));
     connect(resizeCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(resizeCommand);
@@ -749,18 +754,18 @@ void VToolSeamAllowance::SaveResizePattern(qreal dLabelW, int iFontSize)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSeamAllowance::SaveRotationPattern(qreal dRot)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
 
-    newDet.GetPatternInfo().SetPos(m_patternInfo->pos());
-    newDet.GetPatternInfo().SetFontSize(m_patternInfo->getFontSize());
+    newPiece.GetPatternInfo().SetPos(m_patternInfo->pos());
+    newPiece.GetPatternInfo().SetFontSize(m_patternInfo->getFontSize());
 
     // Tranform angle to anticlockwise
     QLineF line(0, 0, 100, 0);
     line.setAngle(-dRot);
-    newDet.GetPatternInfo().SetRotation(QString().setNum(line.angle()));
+    newPiece.GetPatternInfo().SetRotation(QString().setNum(line.angle()));
 
-    SavePieceOptions* rotateCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     rotateCommand->setText(tr("rotate pattern info label"));
     connect(rotateCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(rotateCommand);
@@ -770,12 +775,12 @@ void VToolSeamAllowance::SaveRotationPattern(qreal dRot)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSeamAllowance::SaveMoveGrainline(const QPointF& ptPos)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
-    newDet.GetGrainlineGeometry().SetPos(ptPos);
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetGrainlineGeometry().SetPos(ptPos);
     qDebug() << "******* new grainline pos" << ptPos;
 
-    SavePieceOptions* moveCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions* moveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     moveCommand->setText(tr("move grainline"));
     connect(moveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(moveCommand);
@@ -784,13 +789,13 @@ void VToolSeamAllowance::SaveMoveGrainline(const QPointF& ptPos)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSeamAllowance::SaveResizeGrainline(qreal dLength)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
 
     dLength = FromPixel(dLength, *VDataTool::data.GetPatternUnit());
-    newDet.GetGrainlineGeometry().SetPos(m_grainLine->pos());
-    newDet.GetGrainlineGeometry().SetLength(QString().setNum(dLength));
-    SavePieceOptions* resizeCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    newPiece.GetGrainlineGeometry().SetPos(m_grainLine->pos());
+    newPiece.GetGrainlineGeometry().SetLength(QString().setNum(dLength));
+    SavePieceOptions* resizeCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     resizeCommand->setText(tr("resize grainline"));
     connect(resizeCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(resizeCommand);
@@ -799,12 +804,12 @@ void VToolSeamAllowance::SaveResizeGrainline(qreal dLength)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSeamAllowance::SaveRotateGrainline(qreal dRot, const QPointF& ptPos)
 {
-    VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
-    VPiece newDet = oldDet;
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
 
-    newDet.GetGrainlineGeometry().SetRotation(QString().setNum(qRadiansToDegrees(dRot)));
-    newDet.GetGrainlineGeometry().SetPos(ptPos);
-    SavePieceOptions* rotateCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    newPiece.GetGrainlineGeometry().SetRotation(QString().setNum(qRadiansToDegrees(dRot)));
+    newPiece.GetGrainlineGeometry().SetPos(ptPos);
+    SavePieceOptions* rotateCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     rotateCommand->setText(tr("rotate grainline"));
     connect(rotateCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(rotateCommand);
@@ -832,28 +837,32 @@ void VToolSeamAllowance::paint(QPainter *painter, const QStyleOptionGraphicsItem
     //set seamline, grainline, & labels pen
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
 
-    if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn())
+    if (qApp->Settings()->showSeamAllowances())
     {
-        color      = QColor(qApp->Settings()->getDefaultSeamColor());
-        lineType   = qApp->Settings()->getDefaultSeamLinetype();
-        lineWeight = ToPixel(qApp->Settings()->getDefaultSeamLineweight(), Unit::Mm);
-    }
-    else
-    {
-        color      = QColor(qApp->Settings()->getDefaultCutColor());
-        lineType   = qApp->Settings()->getDefaultCutLinetype();
-        lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
-    }
+        if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn())
+        {
+            color      = QColor(qApp->Settings()->getDefaultSeamColor());
+            lineType   = qApp->Settings()->getDefaultSeamLinetype();
+            lineWeight = ToPixel(qApp->Settings()->getDefaultSeamLineweight(), Unit::Mm);
+        }
+        else
+        {
+            color      = QColor(qApp->Settings()->getDefaultCutColor());
+            lineType   = qApp->Settings()->getDefaultCutLinetype();
+            lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
+        }
 
-    this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
+
+        this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
                        lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 
-    this->setBrush(QBrush(QColor(Qt::white), Qt::SolidPattern));
+        this->setBrush(QBrush(QColor(Qt::white), Qt::SolidPattern));
 
-    //set notches pen
-    color = QColor(qApp->Settings()->getDefaultNotchColor());
-    m_notches->setPen(QPen(color, scaleWidth(lineWeight,
-                      sceneScale(scene())), Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        //set notches pen
+        color = QColor(qApp->Settings()->getDefaultNotchColor());
+        m_notches->setPen(QPen(color, scaleWidth(lineWeight,
+        sceneScale(scene())), Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    }
 
     if ((m_dataLabel->IsIdle() == false
             || m_patternInfo->IsIdle() == false
@@ -1091,38 +1100,96 @@ void VToolSeamAllowance::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         return;
     }
 
-    QMenu menu;
-    QAction *actionOption = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Options"));
+    VPiece piece = VAbstractTool::data.GetPiece(m_id);
 
-    QAction *inLayoutOption = menu.addAction(tr("Include in Layout"));
+    QMenu menu;
+    QAction *editProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties") + "\tP");
+
+    QAction *separator = new QAction(this);
+    separator->setSeparator(true);
+    menu.addAction(separator);
+
+    QAction *inLayoutOption = menu.addAction(tr("Include in Layout") + "\tI");
     inLayoutOption->setCheckable(true);
-    const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     inLayoutOption->setChecked(piece.IsInLayout());
 
-    QAction *actionRemove = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
-    _referens > 1 ? actionRemove->setEnabled(false) : actionRemove->setEnabled(true);
+    QAction *forbidFlipping = menu.addAction(tr("Forbid Flipping") + "\tF");
+    forbidFlipping->setCheckable(true);
+    forbidFlipping->setChecked(piece.IsForbidFlipping());
+
+    separator = new QAction(this);
+    separator->setSeparator(true);
+    menu.addAction(separator);
+
+    QAction *hideMainPath = menu.addAction(tr("Hide Seam Line") + "\t|");
+    hideMainPath->setCheckable(true);
+    hideMainPath->setChecked(piece.isHideSeamLine());
+    hideMainPath->setEnabled(piece.IsSeamAllowance() && qApp->Settings()->showSeamAllowances());
+
+    QAction *showSeamAllowance = menu.addAction(QIcon("://icon/32x32/seam_allowance.png"),
+                                                tr("Show Seam Allowance") + "\tS");
+    showSeamAllowance->setCheckable(true);
+    showSeamAllowance->setChecked(piece.IsSeamAllowance());
+
+    QAction *showGrainline = menu.addAction(QIcon("://icon/32x32/grainline.png"), tr("Show Grainline") + "\tG");
+    showGrainline->setCheckable(true);
+    qDebug()<<"Grainline IsVisible() = "<< piece.GetGrainlineGeometry().IsVisible();
+    showGrainline->setChecked(piece.GetGrainlineGeometry().IsVisible());
+
+    QAction *showPatternLabel = menu.addAction(QIcon("://icon/32x32/pattern_label.png"), tr("Show Pattern Label") + "\t[");
+    showPatternLabel->setCheckable(true);
+    showPatternLabel->setChecked(piece.GetPatternInfo().IsVisible());
+
+    QAction *showPieceLabel = menu.addAction(QIcon("://icon/32x32/piece_label.png"), tr("Show Piece Label") + "\t]");
+    showPieceLabel->setCheckable(true);
+    showPieceLabel->setChecked(piece.GetPatternPieceData().IsVisible());
+
+    separator = new QAction(this);
+    separator->setSeparator(true);
+    menu.addAction(separator);
+
+    QAction *rename = menu.addAction(tr("Rename...") + "\tF2");
+    QAction *deletePiece = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete") + "\tDel");
+    _referens > 1 ? deletePiece->setEnabled(false) : deletePiece->setEnabled(true);
 
     QAction *selectedAction = menu.exec(event->screenPos());
-    if (selectedAction == actionOption)
+    if (selectedAction == editProperties)
     {
-        QSharedPointer<DialogSeamAllowance> dialog =
-                QSharedPointer<DialogSeamAllowance>(new DialogSeamAllowance(getData(), m_id, qApp->getMainWindow()));
-        dialog->EnableApply(true);
-        m_dialog = dialog;
-        m_dialog->setModal(true);
-        connect(m_dialog.data(), &DialogTool::DialogClosed, this, &VToolSeamAllowance::FullUpdateFromGuiOk);
-        connect(m_dialog.data(), &DialogTool::DialogApplied, this, &VToolSeamAllowance::FullUpdateFromGuiApply);
-        SetDialog();
-        m_dialog->show();
+        editPieceProperties();
     }
     else if (selectedAction == inLayoutOption)
     {
-        TogglePieceInLayout *togglePrint = new TogglePieceInLayout(m_id, selectedAction->isChecked(),
-                                                                   &(VAbstractTool::data), doc);
-        connect(togglePrint, &TogglePieceInLayout::UpdateList, doc, &VAbstractPattern::CheckInLayoutList);
-        qApp->getUndoStack()->push(togglePrint);
+        toggleInLayout(selectedAction->isChecked());
     }
-    else if (selectedAction == actionRemove)
+    else if (selectedAction == forbidFlipping)
+    {
+        toggleFlipping(selectedAction->isChecked());
+    }
+    else if (selectedAction == hideMainPath)
+    {
+        toggleSeamLine(selectedAction->isChecked());
+    }
+    else if (selectedAction == showSeamAllowance)
+    {
+        toggleSeamAllowance(selectedAction->isChecked());
+    }
+    else if (selectedAction == showGrainline)
+    {
+        toggleGrainline(selectedAction->isChecked());
+    }
+    else if (selectedAction == showPatternLabel)
+    {
+        togglePatternLabel(selectedAction->isChecked());
+    }
+    else if (selectedAction == showPieceLabel)
+    {
+        togglePieceLabel(selectedAction->isChecked());
+    }
+    else if (selectedAction == rename)
+    {
+        renamePiece(piece);
+    }
+    else if (selectedAction == deletePiece)
     {
         try
         {
@@ -1140,6 +1207,7 @@ void VToolSeamAllowance::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolSeamAllowance::keyReleaseEvent(QKeyEvent *event)
 {
+    VPiece piece = VAbstractTool::data.GetPiece(m_id);
     switch (event->key())
     {
         case Qt::Key_Delete:
@@ -1153,11 +1221,68 @@ void VToolSeamAllowance::keyReleaseEvent(QKeyEvent *event)
                 return;//Leave this method immediately!!!
             }
             break;
+
+        case Qt::Key_P:
+            editPieceProperties();
+            break;
+
+        case Qt::Key_I:
+            {
+                toggleInLayout(!piece.IsInLayout());
+                break;
+            }
+
+        case Qt::Key_F:
+            {
+                toggleFlipping(!piece.IsForbidFlipping());
+                break;
+            }
+
+        case Qt::Key_Bar:
+            {
+                if (piece.IsSeamAllowance() && qApp->Settings()->showSeamAllowances())
+                {
+                    toggleSeamLine(!piece.isHideSeamLine()); //Seam line is only valid if there is a seam allowance
+                }
+                break;
+            }
+
+        case Qt::Key_S:
+            {
+                if (event->modifiers() & Qt::ControlModifier)
+                {
+                    break;
+                }
+                toggleSeamAllowance(!piece.IsSeamAllowance());
+                break;
+            }
+
+        case Qt::Key_G:
+            {
+                toggleGrainline(!piece.GetGrainlineGeometry().IsVisible());
+                break;
+            }
+
+        case Qt::Key_BracketLeft:
+            {
+                togglePatternLabel(!piece.GetPatternInfo().IsVisible());
+                break;
+            }
+
+        case Qt::Key_BracketRight:
+            {
+                togglePieceLabel(!piece.GetPatternPieceData().IsVisible());
+                break;
+            }
+
+        case Qt::Key_F2:
+            renamePiece(piece);
+            break;
         default:
             break;
     }
 
-    QGraphicsPathItem::keyReleaseEvent ( event );
+    QGraphicsPathItem::keyReleaseEvent (event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1253,7 +1378,7 @@ void VToolSeamAllowance::RefreshGeometry()
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
     QPainterPath path = piece.MainPathPath(this->getData());
 
-    if (not piece.IsHideMainPath() || not piece.IsSeamAllowance() || piece.IsSeamAllowanceBuiltIn())
+    if (!piece.isHideSeamLine() || !piece.IsSeamAllowance() || piece.IsSeamAllowanceBuiltIn())
     {
         m_mainPath = QPainterPath();
         m_pieceRect = QRectF();
@@ -1279,9 +1404,7 @@ void VToolSeamAllowance::RefreshGeometry()
 
     m_notches->setPath(piece.getNotchesPath(this->getData(), seamAllowancePoints));
 
-    this->setPos(piece.GetMx(), piece.GetMy());
-
-    if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn())
+    if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn() && qApp->Settings()->showSeamAllowances())
     {
         m_cutPath = piece.SeamAllowancePath(seamAllowancePoints);
         m_cutPath.setFillRule(Qt::OddEvenFill);
@@ -1294,6 +1417,7 @@ void VToolSeamAllowance::RefreshGeometry()
         m_cutLine->setPath(QPainterPath());
     }
 
+    this->setPos(piece.GetMx(), piece.GetMy());
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 }
 
@@ -1303,10 +1427,10 @@ void VToolSeamAllowance::SaveDialogChange()
     SCASSERT(not m_dialog.isNull());
     DialogSeamAllowance *dialogTool = qobject_cast<DialogSeamAllowance*>(m_dialog.data());
     SCASSERT(dialogTool != nullptr);
-    const VPiece newDet = dialogTool->GetPiece();
-    const VPiece oldDet = VAbstractTool::data.GetPiece(m_id);
+    const VPiece newPiece = dialogTool->GetPiece();
+    const VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
 
-    SavePieceOptions *saveCommand = new SavePieceOptions(oldDet, newDet, doc, m_id);
+    SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
     connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     qApp->getUndoStack()->push(saveCommand);
     UpdateDetailLabel();
@@ -1714,4 +1838,186 @@ void VToolSeamAllowance::UpdateLabelItem(VTextGraphicsItem *labelItem, QPointF p
     labelItem->setRotation(-labelAngle);// expects clockwise direction
     labelItem->Update();
     labelItem->getTextLines() > 0 ? labelItem->show() : labelItem->hide();
+}
+
+/**
+ * @brief editPieceProperties - routine to edit pattern piece properties .
+ */
+void VToolSeamAllowance::editPieceProperties()
+{
+    QSharedPointer<DialogSeamAllowance> dialog =
+            QSharedPointer<DialogSeamAllowance>(new DialogSeamAllowance(getData(), m_id, qApp->getMainWindow()));
+    dialog->EnableApply(true);
+    m_dialog = dialog;
+    m_dialog->setModal(true);
+    connect(m_dialog.data(), &DialogTool::DialogClosed, this, &VToolSeamAllowance::FullUpdateFromGuiOk);
+    connect(m_dialog.data(), &DialogTool::DialogApplied, this, &VToolSeamAllowance::FullUpdateFromGuiApply);
+    SetDialog();
+    m_dialog->show();
+}
+
+/**
+ * @brief toggleInLayout - routine to toggle if pattern piece is included and visible in layout.
+ * @param checked - true if piece is included.
+ */
+void VToolSeamAllowance::toggleInLayout(bool checked)
+{
+    TogglePieceInLayout *togglePiece = new TogglePieceInLayout(m_id, checked,
+                                                               &(VAbstractTool::data), doc);
+    connect(togglePiece, &TogglePieceInLayout::UpdateList, doc, &VAbstractPattern::CheckInLayoutList);
+    qApp->getUndoStack()->push(togglePiece);
+
+    showStatus(tr("Include piece in layout changed: ") + (checked ? tr("Include") : tr("Exclude")));
+}
+
+/**
+ * @brief toggleFlipping - routine to toggle forbidding flipping.
+ * @param checked - true if flipping is forbidden.
+ */
+void VToolSeamAllowance::toggleFlipping(bool checked)
+{
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.SetForbidFlipping(checked);
+
+    SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    undoCommand->setText(tr("Forbid Flipping"));
+    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+    qApp->getUndoStack()->push(undoCommand);
+
+    showStatus(tr("Forbid Flipping changed: ") + (checked ? tr("Enabled") : tr("Disabled")));
+}
+
+/**
+ * @brief toggleSeamLine - routine to toggle the visibility of the seam line.
+ * @param checked - true if seam line is visible.
+ */
+void VToolSeamAllowance::toggleSeamLine(bool checked)
+{
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.setHideSeamLine(checked);
+
+    SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    undoCommand->setText(tr("Hide Seam Line"));
+    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+    qApp->getUndoStack()->push(undoCommand);
+
+    showStatus(tr("Seam line visibility changed: ") + (checked ? tr("Hide") : tr("Show")));
+}
+
+/**
+ * @brief toggleSeamAllowance - routine to toggle the visibility of the seam allowance.
+ * @param checked - true if seam allowance is visible.
+ */
+void VToolSeamAllowance::toggleSeamAllowance(bool checked)
+{
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.SetSeamAllowance(checked);
+
+    SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    undoCommand->setText(tr("Show seam allowance"));
+    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+    qApp->getUndoStack()->push(undoCommand);
+
+    showStatus(tr("Seam allowance visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
+}
+
+/**
+ * @brief toggleGrainline - routine to toggle the visibility of the  piece grainline.
+ * @param checked - true if grainline is visible.
+ */
+void VToolSeamAllowance::toggleGrainline(bool checked)
+{
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetGrainlineGeometry().SetVisible(checked);
+
+    SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    undoCommand->setText(tr("Show grainline"));
+    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+    qApp->getUndoStack()->push(undoCommand);
+
+    showStatus(tr("Grainline visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
+}
+
+/**
+ * @brief togglePatternLabel - routine to toggle the visibility of the  pattern label.
+ * @param checked - true if pattern label is visible.
+ */
+void VToolSeamAllowance::togglePatternLabel(bool checked)
+{
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetPatternInfo().SetVisible(checked);
+
+    SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    undoCommand->setText(tr("Show pattern label"));
+    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+    qApp->getUndoStack()->push(undoCommand);
+
+    showStatus(tr("Pattern label visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
+}
+
+/**
+ * @brief togglePieceLabel - routine to toggle the visibility of the piece label.
+ * @param checked - true if piece label is visible.
+ */
+void VToolSeamAllowance::togglePieceLabel(bool checked)
+{
+    VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+    VPiece newPiece = oldPiece;
+    newPiece.GetPatternPieceData().SetVisible(checked);
+
+    SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+    undoCommand->setText(tr("Show piece label"));
+    connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+    qApp->getUndoStack()->push(undoCommand);
+
+    showStatus(tr("Piece label visibility changed: ") + (checked ? tr("Show") : tr("Hide")));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief renamePiece - routine to rename pattern piece.
+ */
+void VToolSeamAllowance::renamePiece(VPiece piece)
+{
+    QInputDialog *dialog = new QInputDialog(nullptr);
+    dialog->setInputMode( QInputDialog::TextInput );
+    dialog->setLabelText(tr("Piece name:"));
+    dialog->setTextEchoMode(QLineEdit::Normal);
+    dialog->setWindowTitle(tr("Rename Pattern Piece"));
+    dialog->setWindowIcon(QIcon());
+    dialog->setWindowFlags(dialog->windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
+    dialog->resize(300, 100);
+    dialog->setTextValue(piece.GetName());
+    QString pieceName;
+    const bool result = dialog->exec();
+    pieceName = dialog->textValue();
+
+    if (result == true && !pieceName.isEmpty())
+    {
+        VPiece oldPiece = VAbstractTool::data.GetPiece(m_id);
+        VPiece newPiece = oldPiece;
+        newPiece.SetName(pieceName);
+
+        SavePieceOptions* undoCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_id);
+        undoCommand->setText(tr("Rename pattern piece"));
+        connect(undoCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
+        qApp->getUndoStack()->push(undoCommand);
+
+        showStatus(tr("Piece renamed to: ") + pieceName);
+    }
+}
+
+void VToolSeamAllowance::showStatus(QString toolTip)
+{
+    VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
+    SCASSERT(window != nullptr)
+
+    window->ShowToolTip(toolTip);
 }

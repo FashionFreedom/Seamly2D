@@ -814,12 +814,12 @@ void VPattern::ParseDetailElement(QDomElement &domElement, const Document &parse
         detail.SetMx(qApp->toPixel(GetParametrDouble(domElement, AttrMx, "0.0")));
         detail.SetMy(qApp->toPixel(GetParametrDouble(domElement, AttrMy, "0.0")));
         detail.SetSeamAllowance(getParameterBool(domElement, VToolSeamAllowance::AttrSeamAllowance, falseStr));
-        detail.SetHideMainPath(getParameterBool(domElement, VToolSeamAllowance::AttrHideMainPath,
-                                               QString().setNum(qApp->Seamly2DSettings()->IsHideMainPath())));
+        detail.setHideSeamLine(getParameterBool(domElement, VToolSeamAllowance::AttrHideSeamLine,
+                                               QString().setNum(qApp->Seamly2DSettings()->isHideSeamLine())));
         detail.SetSeamAllowanceBuiltIn(getParameterBool(domElement, VToolSeamAllowance::AttrSeamAllowanceBuiltIn,
                                                        falseStr));
         detail.SetForbidFlipping(getParameterBool(domElement, VToolSeamAllowance::AttrForbidFlipping,
-                                           QString().setNum(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping())));
+                                           QString().setNum(qApp->Seamly2DSettings()->getForbidPieceFlipping())));
         detail.SetInLayout(getParameterBool(domElement, AttrInLayout, trueStr));
         detail.SetUnited(getParameterBool(domElement, VToolSeamAllowance::AttrUnited, falseStr));
 
