@@ -65,8 +65,7 @@ jobs:
           echo "-- register kde neon repository --"
           sudo apt install -y debsig-verify           
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
-          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg  
+          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add - 
           
           # *********************************
           echo "-- install build dependencies --"
@@ -149,11 +148,12 @@ jobs:
           sudo chmod +x /usr/local/bin/appimage-builder
           
           #********************************************
-          echo "-- run appimage-builder --"
+          echo "-- run appimage-builder with appimage-builder-recipe-test.yml --"
           appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --generate --skip-test
 
       - name: copy to final file tag_name
         run: |
+          ls Seamly2D-continuous-x86_64.AppImage
           sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 
       - name: upload seamly2d-x86_64.tar.gz artifact
