@@ -105,8 +105,8 @@ jobs:
 
           #********************************************
           echo "-- show the current directory and list files --"
-          echo "------ then list files in the src subdirectory --"
-          pwd && ls -la && ls -la ./src
+          echo "------ then list files in the src/app subdirectory --"
+          pwd && ls -la && ls -la ./src/app
 
           #********************************************
           echo "-- find the .rcc files -- "
