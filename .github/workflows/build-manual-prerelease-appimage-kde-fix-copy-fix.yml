@@ -99,8 +99,9 @@ jobs:
         id: find-rcc-files-setup
         uses: Rishabh510/Path-lister-action@1.0
         with:
-          path: "/usr"
-          type: ".rcc"
+          path: "./"
+          #type: ".rcc"
+          type: "*."
           
       - name: find rcc files
         id: find-resource-files
