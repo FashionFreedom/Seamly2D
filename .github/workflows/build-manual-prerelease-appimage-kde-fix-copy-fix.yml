@@ -105,7 +105,7 @@ jobs:
             id: compile-diagramqrc-to-diagramrcc
             run: |
           #********************************************
-          echo " --- run rcc compilation of src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc
+          echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
           rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
 
       - name: copy resource files
