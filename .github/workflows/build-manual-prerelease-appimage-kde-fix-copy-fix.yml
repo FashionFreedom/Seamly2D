@@ -107,7 +107,7 @@ jobs:
           echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
           rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
           echo "-- find the .rcc files recursively, after compilint diagrams.rcc "
-          ls -Rla ./src/app/seamlyme/ | grep '\.rcc$' | wc -l        
+          ls -Rla ./src/app/seamlyme/share | grep '\.rcc$' | wc -l   && echo "--- END COMPILE DIAGRAM.QRC TO DIAGRAM.RCC ---"     
 
       - name: copy resource files
         id: copy-resource-files
@@ -125,12 +125,12 @@ jobs:
 
           #********************************************
           echo "-- find the .rcc files recursively -- "
-          ls -Rla ./src/app | grep '\.rcc$' | wc -l && echo "_______END DEBUGGING ___________________________"
+          ls -Rla ./src/app/seamlyme/share/ | grep '\.rcc$' | wc -l && echo "_______END DEBUGGING ___________________________"
           
           #********************************************
           echo "-- copy measurement diagrams.rcc file from new location --"
           #cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
-          cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
+          sudo cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
           
           #********************************************
           echo "-- copy translation *.qm files --"
