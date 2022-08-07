@@ -103,11 +103,11 @@ jobs:
       - name: compile diagramqrc to diagramrcc
           id: compile-diagramqrc-to-diagramrcc
           run: |
-        #********************************************
-        echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
-        rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
-        echo "-- find the .rcc files recursively, after compilint diagrams.rcc "
-        ls -Rla ./src/app/seamlyme/ | grep '\.rcc$' | wc -l        
+          # ********************************************
+          echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
+          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
+          echo "-- find the .rcc files recursively, after compilint diagrams.rcc "
+          ls -Rla ./src/app/seamlyme/ | grep '\.rcc$' | wc -l        
 
       - name: copy resource files
         id: copy-resource-files
