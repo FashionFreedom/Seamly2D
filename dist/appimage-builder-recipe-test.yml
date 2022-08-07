@@ -142,4 +142,5 @@ AppDir:
     ubuntu:
       image: appimagecrafters/tests-env:ubuntu-xenial
       command: ./AppRun
-      use_host_x:
+      use_host_x: true
+
