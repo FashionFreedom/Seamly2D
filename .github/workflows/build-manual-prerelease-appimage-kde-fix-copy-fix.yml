@@ -125,7 +125,7 @@ jobs:
 
           #********************************************
           echo "-- find the .rcc files recursively -- "
-          ls -Rla ./src/app/seamlyme/share/ | grep '\.rcc$' | wc -l && echo "_______END DEBUGGING ___________________________"
+          ls -Rla ./src/app/seamlyme/share/ | grep '\.rcc$' && echo "_______END DEBUGGING ___________________________"
           
           #********************************************
           echo "-- copy measurement diagrams.rcc file from new location --"
@@ -134,17 +134,17 @@ jobs:
           
           #********************************************
           echo "-- copy translation *.qm files --"
-          cp share/translations/*.qm AppDir/usr/share/translations
+          sudo cp share/translations/*.qm AppDir/usr/share/translations
           
           #********************************************
           echo "-- copy .desktop files --"
-          cp dist/seamly2d.desktop AppDir/usr/share/applications
-          cp dist/seamlyme.desktop AppDir/usr/share/applications
+          sudo cp dist/seamly2d.desktop AppDir/usr/share/applications
+          sudo cp dist/seamlyme.desktop AppDir/usr/share/applications
           
           #********************************************
           echo "-- copy icon .png files --"
-          cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
-          cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png 
+          sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
+          sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png 
         
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
