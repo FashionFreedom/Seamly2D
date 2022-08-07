@@ -100,13 +100,12 @@ jobs:
           sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
           sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
 
-
-        - name: compile diagramqrc to diagramrcc
-            id: compile-diagramqrc-to-diagramrcc
-            run: |
-          #********************************************
-          echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
-          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
+      - name: compile diagramqrc to diagramrcc
+          id: compile-diagramqrc-to-diagramrcc
+          run: |
+        #********************************************
+        echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
+        rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
 
       - name: copy resource files
         id: copy-resource-files
