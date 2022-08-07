@@ -101,11 +101,13 @@ jobs:
           sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
 
       - name: compile diagramqrc to diagramrcc
-        id: compile-diagramqrc-to-diagramrcc
-        run: |
+          id: compile-diagramqrc-to-diagramrcc
+          run: |
           # ********************************************
-          echo " --- diagrams.qrc to diagrams.rcc --- "
+          echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
           rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
+          echo "-- find the .rcc files recursively, after compilint diagrams.rcc "
+          ls -Rla ./src/app/seamlyme/ | grep '\.rcc$' | wc -l        
 
       - name: copy resource files
         id: copy-resource-files
@@ -126,8 +128,9 @@ jobs:
           ls -Rla ./src/app | grep '\.rcc$' | wc -l && echo "_______END DEBUGGING ___________________________"
           
           #********************************************
-          echo "-- copy measurement diagrams.rcc file --"
-          cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
+          echo "-- copy measurement diagrams.rcc file from new location --"
+          #cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
+          cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
           
           #********************************************
           echo "-- copy translation *.qm files --"
