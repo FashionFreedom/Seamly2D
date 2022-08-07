@@ -37,8 +37,11 @@ jobs:
           # search the keyserver to get kde key, add to keyring with gpg
           echo "* register kde neon repository*"
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
-          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg 
+          
+          # this generates errors Warning: apt-key output should not be parsed (stdout is not a terminal)
+          #curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/#etc/apt/trusted.gpg.d/neon-release.gpg --import
+          curl -SL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' -o | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/#etc/apt/trusted.gpg.d/neon-release.gpg --import
+          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg
           
           # install build dependencies
           echo "* install build dependencies *"
