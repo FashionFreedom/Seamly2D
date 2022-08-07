@@ -2,6 +2,14 @@
 version: 1
 
 script:
+  - echo "=== BEGIN APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="
+  # get the neon public key into the keyring BEFORE getting the deb package in the next step
+  # ---------------------------------
+  - echo "=== register kde neon repository =========="
+  - sudo apt install -y debsig-verify           
+  - echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
+  - sudo curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
+
   - echo "=== begin AppImage script ========================="
   # must clear & recreate AppDir directory so that it is completely empty
   - sudo rm -rf AppDir || true
@@ -12,10 +20,10 @@ script:
   - pwd && ls
 
   - echo "=== build Seamly2D & SeamlyMe ====================="
-  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==="
+  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==================="
   #- INSTALL_ROOT=AppDir make install
-  - sudo make -j$(nproc) && echo "=== END MAKE ==="
-  - sudo make install DESTDIR=AppDir && echo "=== END MAKE INSTALL ==="
+  - sudo make -j$(nproc) && echo "=== END MAKE ==================="
+  - sudo make install DESTDIR=AppDir && echo "=== END MAKE INSTALL ==================="
 
   # create directories for diagrams, translations, desktop, and icons
   - echo "=== create directories =====================" > console.log
@@ -57,9 +65,7 @@ script:
   - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
   - sudo ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
 
-  # get the neon public key into the keyring BEFORE getting the deb package in the next step
-  - echo "=== get the neon public key into the keyring =========="
-  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 0xDEACEA00075E1D76  
+  - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="
 
 AppDir:
   path: ./AppDir
