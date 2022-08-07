@@ -1,43 +1,23 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
+/**************************************************************************
  **
  **  @file   visualization.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 8, 2014
  **
- **  @brief
+ **  @author Douglas S. Caskey
+ **  @date   7.16.2022
+ **
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -52,19 +32,19 @@
 #ifndef VISUALIZATION_H
 #define VISUALIZATION_H
 
+#include "../vgeometry/vabstractcurve.h"
+#include "../vmisc/def.h"
+#include "../vmisc/logging.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vwidgets/global.h"
+#include "../vwidgets/scalesceneitems.h"
+#include "../vwidgets/vcurvepathitem.h"
+#include "../vwidgets/vmaingraphicsscene.h"
+
 #include <qcompilerdetection.h>
 #include <QGraphicsItem>
 #include <QObject>
 #include <QtGlobal>
-
-#include "../vmisc/def.h"
-#include "../vmisc/logging.h"
-#include "../vmisc/vabstractapplication.h"
-#include "../vwidgets/vmaingraphicsscene.h"
-#include "../vwidgets/vcurvepathitem.h"
-#include  "../vwidgets/scalesceneitems.h"
-#include "../vwidgets/global.h"
-#include "../vgeometry/vabstractcurve.h"
 
 Q_DECLARE_LOGGING_CATEGORY(vVis)
 
@@ -80,74 +60,76 @@ class Visualization : public QObject
 {
     Q_OBJECT
 public:
-    explicit     Visualization(const VContainer *data);
-    virtual     ~Visualization() Q_DECL_EQ_DEFAULT;
+    explicit               Visualization(const VContainer *data);
+    virtual               ~Visualization() Q_DECL_EQ_DEFAULT;
 
-    virtual void RefreshGeometry()=0;
+    virtual void           RefreshGeometry()=0;
 
-    void         setObject1Id(const quint32 &value);
-    void         setLineStyle(const Qt::PenStyle &value);
-    void         setScenePos(const QPointF &value);
-    virtual void VisualMode(const quint32 &pointId);
-    void         setMainColor(const QColor &value);
+    void                   setObject1Id(const quint32 &value);
+    void                   setLineStyle(const Qt::PenStyle &value);
+    void                   setScenePos(const QPointF &value);
+    virtual void           VisualMode(const quint32 &pointId);
+    void                   setMainColor(const QColor &value);
 
-    const VContainer *GetData() const;
-    void              SetData(const VContainer *data);
+    const VContainer      *GetData() const;
+    void                   SetData(const VContainer *data);
 
-    Mode         GetMode() const;
-    void         SetMode(const Mode &value);
+    Mode                   GetMode() const;
+    void                   SetMode(const Mode &value);
 
-    static qreal FindLength(const QString &expression, const QHash<QString, QSharedPointer<VInternalVariable> > *vars);
-    static qreal FindVal(const QString &expression, const QHash<QString, QSharedPointer<VInternalVariable> > *vars);
+    static qreal           FindLength(const QString &expression, const QHash<QString,
+                                      QSharedPointer<VInternalVariable> > *vars);
+    static qreal           FindVal(const QString &expression, const QHash<QString,
+                                   QSharedPointer<VInternalVariable> > *vars);
 
-    QString      CurrentToolTip() const {return toolTip;}
+    QString                CurrentToolTip() const {return toolTip;}
 
 signals:
-    void         ToolTip(const QString &toolTip);
+    void                   ToolTip(const QString &toolTip);
 
 public slots:
-    void         MousePos(const QPointF &scenePos);
+    void                   MousePos(const QPointF &scenePos);
 
 protected:
-    const VContainer *data;
-    QPointF          scenePos;
-    QColor           mainColor;
-    QColor           supportColor;
-    Qt::PenStyle     lineStyle;
-    quint32          object1Id;
-    QString          toolTip;
-    Mode             mode;
+    const VContainer      *data;
+    QPointF                scenePos;
+    QColor                 mainColor;
+    QColor                 supportColor;
+    Qt::PenStyle           lineStyle;
+    quint32                object1Id;
+    QString                toolTip;
+    Mode                   mode;
 
-    virtual void InitPen()=0;
-    virtual void AddOnScene()=0;
+    virtual void           InitPen()=0;
+    virtual void           AddOnScene()=0;
 
-    VScaledEllipse *InitPoint(const QColor &color, QGraphicsItem *parent, qreal z = 0) const;
-    void         DrawPoint(VScaledEllipse *point, const QPointF &pos, const QColor &color,
-                           Qt::PenStyle style = Qt::SolidLine);
-    virtual void DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
-                          Qt::PenStyle style = Qt::SolidLine);
-    void         DrawPath(VCurvePathItem *pathItem, const QPainterPath &path, const QColor &color,
-                          Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
-    void         DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
-                          const QVector<DirectionArrow> &directionArrows, const QColor &color,
-                          Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
+    VScaledEllipse        *InitPoint(const QColor &color, QGraphicsItem *parent, qreal z = 0) const;
+    void                   DrawPoint(QGraphicsEllipseItem *point, const QPointF &pos, const QColor &color,
+                                     Qt::PenStyle style = Qt::SolidLine);
+    virtual void           DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
+                                    Qt::PenStyle style = Qt::SolidLine);
+    void                   DrawPath(VCurvePathItem *pathItem, const QPainterPath &path, const QColor &color,
+                                    Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
+    void                   DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
+                                    const QVector<DirectionArrow> &directionArrows, const QColor &color,
+                                    Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
 
-    void         drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
-                                 Qt::PenStyle style = Qt::SolidLine);
-    void         drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
+    void                   drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
+                                           Qt::PenStyle style = Qt::SolidLine);
+    void                   drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
 
     template <typename Item>
-    void          AddItem(Item *item);
+    void                   AddItem(Item *item);
 
     template <class Item>
-    Item         *InitItem(const QColor &color, QGraphicsItem *parent);
+    Item                  *InitItem(const QColor &color, QGraphicsItem *parent);
 
     static VScaledEllipse *GetPointItem(QVector<VScaledEllipse *> &points, quint32 i, const QColor &color,
                                         QGraphicsItem *parent);
 private:
-    Q_DISABLE_COPY(Visualization)
+                           Q_DISABLE_COPY(Visualization)
 
-    static VScaledEllipse* InitPointItem(const QColor &color, QGraphicsItem *parent, qreal z = 0);
+    static VScaledEllipse *InitPointItem(const QColor &color, QGraphicsItem *parent, qreal z = 0);
 };
 
 //---------------------------------------------------------------------------------------------------------------------

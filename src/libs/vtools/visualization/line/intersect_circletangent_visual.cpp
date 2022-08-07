@@ -1,43 +1,23 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/**************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vistoolpointfromcircleandtangent.cpp
+ **  @file   intersect_circletangent_visual.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   5 6, 2015
  **
- **  @brief
+ **  @author Douglas S. Caskey
+ **  @date   7.16.2022
+ **
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,7 +29,16 @@
  **
  *************************************************************************/
 
-#include "vistoolpointfromcircleandtangent.h"
+#include "intersect_circletangent_visual.h"
+
+#include "visline.h"
+#include "../ifc/ifcdef.h"
+#include "../visualization.h"
+#include "../vgeometry/vgobject.h"
+#include "../vgeometry/vpointf.h"
+#include "../vmisc/vcommonsettings.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../../tools/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.h"
 
 #include <QGraphicsEllipseItem>
 #include <QGraphicsLineItem>
@@ -57,28 +46,29 @@
 #include <Qt>
 #include <new>
 
-#include "../../tools/drawTools/toolpoint/toolsinglepoint/vtoolpointfromcircleandtangent.h"
-#include "../ifc/ifcdef.h"
-#include "../vgeometry/vgobject.h"
-#include "../vgeometry/vpointf.h"
-#include "../vpatterndb/vcontainer.h"
-#include "../visualization.h"
-#include "visline.h"
-
 //---------------------------------------------------------------------------------------------------------------------
-VisToolPointFromCircleAndTangent::VisToolPointFromCircleAndTangent(const VContainer *data, QGraphicsItem *parent)
-    : VisLine(data, parent), object2Id(NULL_ID), cRadius(0), crossPoint(CrossCirclesPoint::FirstPoint),
-      point(nullptr), tangent(nullptr), cCenter(nullptr), cPath(nullptr), tangent2(nullptr)
+IntersectCircleTangentVisual::IntersectCircleTangentVisual(const VContainer *data, QGraphicsItem *parent)
+    : VisLine(data, parent)
+    , object2Id(NULL_ID)
+    , cRadius(0)
+    , crossPoint(CrossCirclesPoint::FirstPoint)
+    , point(nullptr)
+    , tangent(nullptr)
+    , cCenter(nullptr)
+    , cPath(nullptr)
+    , tangent2(nullptr)
+    , m_secondarySupportColor(QColor(qApp->Settings()->getSecondarySupportColor()))
+
 {
-    cPath = InitItem<VScaledEllipse>(Qt::darkGreen, this);
-    point = InitPoint(mainColor, this);
-    tangent = InitPoint(supportColor, this);
-    cCenter = InitPoint(supportColor, this); //-V656
+    cPath    = InitItem<QGraphicsEllipseItem>(m_secondarySupportColor, this);
+    point    = InitPoint(mainColor, this);
+    tangent  = InitPoint(supportColor, this);
+    cCenter  = InitPoint(supportColor, this); //-V656
     tangent2 = InitItem<VScaledLine>(supportColor, this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPointFromCircleAndTangent::RefreshGeometry()
+void IntersectCircleTangentVisual::RefreshGeometry()
 {
     if (object1Id > NULL_ID)// tangent point
     {
@@ -93,11 +83,11 @@ void VisToolPointFromCircleAndTangent::RefreshGeometry()
             if (cRadius > 0)
             {
                 cPath->setRect(PointRect(cRadius));
-                DrawPoint(cPath, static_cast<QPointF>(*center), Qt::darkGreen, Qt::DashLine);
+                DrawPoint(cPath, static_cast<QPointF>(*center), m_secondarySupportColor, Qt::DashLine);
 
                 FindRays(static_cast<QPointF>(*tan), static_cast<QPointF>(*center), cRadius);
 
-                const QPointF fPoint = VToolPointFromCircleAndTangent::FindPoint(static_cast<QPointF>(*tan),
+                const QPointF fPoint = IntersectCircleTangentTool::FindPoint(static_cast<QPointF>(*tan),
                                                                                  static_cast<QPointF>(*center),
                                                                                  cRadius, crossPoint);
                 DrawPoint(point, fPoint, mainColor);
@@ -107,25 +97,25 @@ void VisToolPointFromCircleAndTangent::RefreshGeometry()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPointFromCircleAndTangent::setObject2Id(const quint32 &value)
+void IntersectCircleTangentVisual::setObject2Id(const quint32 &value)
 {
     object2Id = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPointFromCircleAndTangent::setCRadius(const QString &value)
+void IntersectCircleTangentVisual::setCRadius(const QString &value)
 {
     cRadius = FindLength(value, Visualization::data->DataVariables());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPointFromCircleAndTangent::setCrossPoint(const CrossCirclesPoint &value)
+void IntersectCircleTangentVisual::setCrossPoint(const CrossCirclesPoint &value)
 {
     crossPoint = value;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPointFromCircleAndTangent::FindRays(const QPointF &p, const QPointF &center, qreal radius)
+void IntersectCircleTangentVisual::FindRays(const QPointF &p, const QPointF &center, qreal radius)
 {
     QPointF p1, p2;
     const int res = VGObject::ContactPoints (p, center, radius, p1, p2);

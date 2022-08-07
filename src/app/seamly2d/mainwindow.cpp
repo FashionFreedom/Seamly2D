@@ -1278,14 +1278,14 @@ void MainWindow::handlePointOfIntersectionArcsTool(bool checked)
 void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointOfIntersectionCircles>
+    SetToolButtonWithApply<IntersectCirclesDialog>
     (
         checked,
         Tool::PointOfIntersectionCircles,
         "://cursor/point_of_intersection_circles.png",
         tr("<b>Tool::Arc - Intersection Point of Circles:</b> Select first circle center"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionCircles>,
-        &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionCircles>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectCirclesTool>,
+        &MainWindow::ApplyDrawDialog<IntersectCirclesTool>
     );
 }
 
@@ -1295,14 +1295,14 @@ void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
 void MainWindow::handlePointFromCircleAndTangentTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointFromCircleAndTangent>
+    SetToolButtonWithApply<IntersectCircleTangentDialog>
     (
         checked,
         Tool::PointFromCircleAndTangent,
         "://cursor/point_from_circle_and_tangent_cursor.png",
         tr("<b>Tool::Arc - Tangency Point of Circle and Tangent:</b> Select point on tangent"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointFromCircleAndTangent>,
-        &MainWindow::ApplyDrawDialog<VToolPointFromCircleAndTangent>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectCircleTangentTool>,
+        &MainWindow::ApplyDrawDialog<IntersectCircleTangentTool>
     );
 }
 

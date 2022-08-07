@@ -1,43 +1,23 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/**************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   dialogpointfromcircleandtangent.cpp
+ **  @file   intersect_circletangent_dialog.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   3 6, 2015
  **
- **  @brief
+ **  @author Douglas S. Caskey
+ **  @date   7.16.2022
+ **
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,7 +29,16 @@
  **
  *************************************************************************/
 
-#include "dialogpointfromcircleandtangent.h"
+#include "intersect_circletangent_dialog.h"
+#include "ui_intersect_circletangent_dialog.h"
+
+#include "../ifc/xml/vdomdocument.h"
+#include "../support/dialogeditwrongformula.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
+#include "../vpatterndb/vtranslatevars.h"
+#include "../../visualization/visualization.h"
+#include "../../visualization/line/intersect_circletangent_visual.h"
 
 #include <limits.h>
 #include <QColor>
@@ -64,22 +53,19 @@
 #include <QToolButton>
 #include <Qt>
 
-#include "../vpatterndb/vtranslatevars.h"
-#include "../../visualization/visualization.h"
-#include "../../visualization/line/vistoolpointfromcircleandtangent.h"
-#include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
-#include "../vmisc/vabstractapplication.h"
-#include "../vmisc/vcommonsettings.h"
-#include "ui_dialogpointfromcircleandtangent.h"
-
 //---------------------------------------------------------------------------------------------------------------------
-DialogPointFromCircleAndTangent::DialogPointFromCircleAndTangent(const VContainer *data, const quint32 &toolId,
-                                                                 QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogPointFromCircleAndTangent), flagCircleRadius(false),
-      timerCircleRadius(nullptr), circleRadius(), formulaBaseHeightCircleRadius(0)
+IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *data, const quint32 &toolId,
+                                                           QWidget *parent)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::IntersectCircleTangentDialog)
+    , flagCircleRadius(false)
+    , timerCircleRadius(nullptr)
+    , circleRadius()
+    , formulaBaseHeightCircleRadius(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
@@ -92,7 +78,7 @@ DialogPointFromCircleAndTangent::DialogPointFromCircleAndTangent(const VContaine
     ui->plainTextEditRadius->installEventFilter(this);
 
     timerCircleRadius = new QTimer(this);
-    connect(timerCircleRadius, &QTimer::timeout, this, &DialogPointFromCircleAndTangent::EvalCircleRadius);
+    connect(timerCircleRadius, &QTimer::timeout, this, &IntersectCircleTangentDialog::EvalCircleRadius);
 
     InitOkCancelApply(ui);
     CheckState();
@@ -102,61 +88,61 @@ DialogPointFromCircleAndTangent::DialogPointFromCircleAndTangent(const VContaine
     FillComboBoxCrossCirclesPoints(ui->comboBoxResult);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged,
-            this, &DialogPointFromCircleAndTangent::NamePointChanged);
+            this, &IntersectCircleTangentDialog::NamePointChanged);
 
     connect(ui->comboBoxCircleCenter, &QComboBox::currentTextChanged,
-            this, &DialogPointFromCircleAndTangent::PointChanged);
+            this, &IntersectCircleTangentDialog::PointChanged);
 
     connect(ui->toolButtonExprRadius, &QPushButton::clicked,
-            this, &DialogPointFromCircleAndTangent::FXCircleRadius);
+            this, &IntersectCircleTangentDialog::FXCircleRadius);
 
     connect(ui->plainTextEditRadius, &QPlainTextEdit::textChanged, this,
-            &DialogPointFromCircleAndTangent::CircleRadiusChanged);
+            &IntersectCircleTangentDialog::CircleRadiusChanged);
 
     connect(ui->pushButtonGrowRadius, &QPushButton::clicked, this,
-            &DialogPointFromCircleAndTangent::DeployCircleRadiusTextEdit);
+            &IntersectCircleTangentDialog::DeployCircleRadiusTextEdit);
 
-    vis = new VisToolPointFromCircleAndTangent(data);
+    vis = new IntersectCircleTangentVisual(data);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogPointFromCircleAndTangent::~DialogPointFromCircleAndTangent()
+IntersectCircleTangentDialog::~IntersectCircleTangentDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::SetPointName(const QString &value)
+void IntersectCircleTangentDialog::SetPointName(const QString &value)
 {
     pointName = value;
     ui->lineEditNamePoint->setText(pointName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPointFromCircleAndTangent::GetCircleCenterId() const
+quint32 IntersectCircleTangentDialog::GetCircleCenterId() const
 {
     return getCurrentObjectId(ui->comboBoxCircleCenter);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::SetCircleCenterId(const quint32 &value)
+void IntersectCircleTangentDialog::SetCircleCenterId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxCircleCenter, value);
 
-    VisToolPointFromCircleAndTangent *point = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+    IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
     SCASSERT(point != nullptr)
     point->setObject2Id(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogPointFromCircleAndTangent::GetCircleRadius() const
+QString IntersectCircleTangentDialog::GetCircleRadius() const
 {
     return qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditRadius->toPlainText(),
                                               qApp->Settings()->GetOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::SetCircleRadius(const QString &value)
+void IntersectCircleTangentDialog::SetCircleRadius(const QString &value)
 {
     const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
     // increase height if needed.
@@ -166,7 +152,7 @@ void DialogPointFromCircleAndTangent::SetCircleRadius(const QString &value)
     }
     ui->plainTextEditRadius->setPlainText(formula);
 
-    VisToolPointFromCircleAndTangent *point = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+    IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
     SCASSERT(point != nullptr)
     point->setCRadius(formula);
 
@@ -174,49 +160,49 @@ void DialogPointFromCircleAndTangent::SetCircleRadius(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 DialogPointFromCircleAndTangent::GetTangentPointId() const
+quint32 IntersectCircleTangentDialog::GetTangentPointId() const
 {
     return getCurrentObjectId(ui->comboBoxTangentPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::SetTangentPointId(const quint32 &value)
+void IntersectCircleTangentDialog::SetTangentPointId(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxTangentPoint, value);
 
-    VisToolPointFromCircleAndTangent *point = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+    IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
     SCASSERT(point != nullptr)
     point->setObject1Id(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-CrossCirclesPoint DialogPointFromCircleAndTangent::GetCrossCirclesPoint() const
+CrossCirclesPoint IntersectCircleTangentDialog::GetCrossCirclesPoint() const
 {
     return getCurrentCrossPoint<CrossCirclesPoint>(ui->comboBoxResult);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::SetCrossCirclesPoint(const CrossCirclesPoint &p)
+void IntersectCircleTangentDialog::SetCrossCirclesPoint(const CrossCirclesPoint &p)
 {
     const qint32 index = ui->comboBoxResult->findData(static_cast<int>(p));
     if (index != -1)
     {
         ui->comboBoxResult->setCurrentIndex(index);
 
-        VisToolPointFromCircleAndTangent *point = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+        IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
         SCASSERT(point != nullptr)
         point->setCrossPoint(p);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::ChosenObject(quint32 id, const SceneObject &type)
+void IntersectCircleTangentDialog::ChosenObject(quint32 id, const SceneObject &type)
 {
     if (prepare == false)// After first choose we ignore all objects
     {
         if (type == SceneObject::Point)
         {
-            VisToolPointFromCircleAndTangent *point = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+            IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
             SCASSERT(point != nullptr)
 
             switch (number)
@@ -250,7 +236,7 @@ void DialogPointFromCircleAndTangent::ChosenObject(quint32 id, const SceneObject
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::PointChanged()
+void IntersectCircleTangentDialog::PointChanged()
 {
     QColor color = okColor;
     if (getCurrentObjectId(ui->comboBoxCircleCenter) == getCurrentObjectId(ui->comboBoxTangentPoint))
@@ -269,13 +255,13 @@ void DialogPointFromCircleAndTangent::PointChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::DeployCircleRadiusTextEdit()
+void IntersectCircleTangentDialog::DeployCircleRadiusTextEdit()
 {
     DeployFormula(ui->plainTextEditRadius, ui->pushButtonGrowRadius, formulaBaseHeightCircleRadius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::CircleRadiusChanged()
+void IntersectCircleTangentDialog::CircleRadiusChanged()
 {
     labelEditFormula = ui->labelEditRadius;
     labelResultCalculation = ui->labelResultCircleRadius;
@@ -284,7 +270,7 @@ void DialogPointFromCircleAndTangent::CircleRadiusChanged()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::FXCircleRadius()
+void IntersectCircleTangentDialog::FXCircleRadius()
 {
     DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
@@ -298,7 +284,7 @@ void DialogPointFromCircleAndTangent::FXCircleRadius()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::EvalCircleRadius()
+void IntersectCircleTangentDialog::EvalCircleRadius()
 {
     labelEditFormula = ui->labelEditRadius;
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
@@ -312,25 +298,25 @@ void DialogPointFromCircleAndTangent::EvalCircleRadius()
         ui->labelResultCircleRadius->setText(tr("Error"));
         ui->labelResultCircleRadius->setToolTip(tr("Radius can't be negative"));
 
-        DialogPointFromCircleAndTangent::CheckState();
+        IntersectCircleTangentDialog::CheckState();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::ShowVisualization()
+void IntersectCircleTangentDialog::ShowVisualization()
 {
-    AddVisualization<VisToolPointFromCircleAndTangent>();
+    AddVisualization<IntersectCircleTangentVisual>();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::SaveData()
+void IntersectCircleTangentDialog::SaveData()
 {
     pointName = ui->lineEditNamePoint->text();
 
     QString radius = ui->plainTextEditRadius->toPlainText();
     radius.replace("\n", " ");
 
-    VisToolPointFromCircleAndTangent *point = qobject_cast<VisToolPointFromCircleAndTangent *>(vis);
+    IntersectCircleTangentVisual *point = qobject_cast<IntersectCircleTangentVisual *>(vis);
     SCASSERT(point != nullptr)
 
     point->setObject1Id(GetTangentPointId());
@@ -341,14 +327,14 @@ void DialogPointFromCircleAndTangent::SaveData()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::closeEvent(QCloseEvent *event)
+void IntersectCircleTangentDialog::closeEvent(QCloseEvent *event)
 {
     ui->plainTextEditRadius->blockSignals(true);
     DialogTool::closeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromCircleAndTangent::CheckState()
+void IntersectCircleTangentDialog::CheckState()
 {
     SCASSERT(bOk != nullptr)
     bOk->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);

@@ -1056,8 +1056,8 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << VToolLineIntersectAxis::ToolType          /*15*/
                                        << VToolCurveIntersectAxis::ToolType         /*16*/
                                        << VToolPointOfIntersectionArcs::ToolType    /*17*/
-                                       << VToolPointOfIntersectionCircles::ToolType /*18*/
-                                       << VToolPointFromCircleAndTangent::ToolType  /*19*/
+                                       << IntersectCirclesTool::ToolType /*18*/
+                                       << IntersectCircleTangentTool::ToolType  /*19*/
                                        << VToolPointFromArcAndTangent::ToolType     /*20*/
                                        << VToolTrueDarts::ToolType                  /*21*/
                                        << VToolPointOfIntersectionCurves::ToolType  /*22*/
@@ -1118,10 +1118,10 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
         case 17: //VToolPointOfIntersectionArcs::ToolType
             ParseToolPointOfIntersectionArcs(scene, domElement, parse);
             break;
-        case 18: //VToolPointOfIntersectionCircles::ToolType
+        case 18: //IntersectCirclesTool::ToolType
             ParseToolPointOfIntersectionCircles(scene, domElement, parse);
             break;
-        case 19: //VToolPointFromCircleAndTangent::ToolType
+        case 19: //IntersectCircleTangentTool::ToolType
             ParseToolPointFromCircleAndTangent(scene, domElement, parse);
             break;
         case 20: //VToolPointFromArcAndTangent::ToolType
@@ -2045,7 +2045,7 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
         const CrossCirclesPoint crossPoint = static_cast<CrossCirclesPoint>(GetParametrUInt(domElement,
                                                                                   AttrCrossPoint, "1"));
 
-        VToolPointOfIntersectionCircles::Create(id, name, c1CenterId, c2CenterId, c1R, c2R, crossPoint, mx, my,
+        IntersectCirclesTool::Create(id, name, c1CenterId, c2CenterId, c1R, c2R, crossPoint, mx, my,
                                                 showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (c1R != c1Radius || c2R != c2Radius)
@@ -2120,7 +2120,7 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
                                                                                   AttrCrossPoint,
                                                                                   "1"));
 
-        VToolPointFromCircleAndTangent::Create(id, name, cCenterId, cR, tangentId, crossPoint, mx, my,
+        IntersectCircleTangentTool::Create(id, name, cCenterId, cR, tangentId, crossPoint, mx, my,
                                                showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (cR != cRadius)
