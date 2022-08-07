@@ -4,21 +4,21 @@ version: 1
 script:
   - echo "=== begin AppImage script =====================" > console.log
   # must clear & recreate AppDir directory so that it is completely empty
-  - rm -rf AppDir || true
-  - mkdir -p AppDir
+  - sudo rm -rf AppDir || true
+  - sudo mkdir -p AppDir
 
   - echo "=== build Seamly2D & SeamlyMe ====================="
-  - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+  - sudo qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
   - sudo make -j$(nproc)
   #- INSTALL_ROOT=AppDir make install
   - sudo make install DESTDIR=AppDir 
 
   # create directories for diagrams, translations, desktop, and icons
   - echo "=== create directories =====================" > console.log
-  - mkdir -p AppDir/usr/share/translations
-  - mkdir -p AppDir/usr/share/applications
-  - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
-  - mkdir -p AppDir/usr/share/icons/hicolor/256x256
+  - sudo mkdir -p AppDir/usr/share/translations
+  - sudo mkdir -p AppDir/usr/share/applications
+  - sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
+  - sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
 
   # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
   - echo " === compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ==="
@@ -26,16 +26,16 @@ script:
 
   # list the contents of the share directory
   - echo "=== list share directory files ========================"
-  - ls AppDir/usr/share
+  - sudo ls AppDir/usr/share
 
   # list the contents of the src/app/seamlyme/share directory
   - echo "=== list src/app/seamlyme/share directory files ======="
-  ls -Rla ./src/app/seamlyme/share | grep '\.rcc$'
+  sudo ls -Rla ./src/app/seamlyme/share | grep '\.rcc$'
 
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
   - echo "=== copy measurement diagrams ========================="
   - sudo cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
-  - ls AppDir/usr/share/diagrams.rcc
+  - sudo ls AppDir/usr/share/diagrams.rcc
 
   # copy translations (qt's .qm translation files) into $build/share/translations directory
   - echo "=== copy translation files ============================"
@@ -45,13 +45,13 @@ script:
   - echo "=== copy .desktop files ==============================="
   - sudo cp dist/seamly2d.desktop AppDir/usr/share/applications
   - sudo cp dist/seamlyme.desktop AppDir/usr/share/applications
-  - ls AppDir/usr/share/applications/*.desktop
+  - sudo ls AppDir/usr/share/applications/*.desktop
 
   # copy icons to the correct directories
   - echo "=== copy icon files ==================================="
   - sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
   - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
-  - ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
+  - sudo ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
 
   # get the neon public key into the keyring BEFORE getting the deb package in the next step
   - echo "=== get the neon public key into the keyring =========="
