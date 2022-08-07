@@ -75,6 +75,11 @@ jobs:
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
+          # ---------------------------------
+          echo "-- create AppDir, will be erased & recreated in appimage-builder script ------"
+          sudo mkdir -p AppDir && pwd && ls -la
+
+
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
