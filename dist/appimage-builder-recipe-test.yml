@@ -2,10 +2,14 @@
 version: 1
 
 script:
-  - echo "=== begin AppImage script =====================" > console.log
+  - echo "=== begin AppImage script =========================" > console.log
   # must clear & recreate AppDir directory so that it is completely empty
   - sudo rm -rf AppDir || true
   - sudo mkdir -p AppDir
+
+  # prove that we created an AppDir
+  - echo "=== pwd & list current directory =================="
+  - pwd && ls
 
   - echo "=== build Seamly2D & SeamlyMe ====================="
   - sudo qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
@@ -22,15 +26,15 @@ script:
 
   # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
   - echo " === compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ==="
-  rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
+  - rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
 
-  # list the contents of the share directory
-  - echo "=== list share directory files ========================"
-  - sudo ls AppDir/usr/share
+  # list the contents of the AppDir directory
+  - echo "=== list Appdir files ========================"
+  - sudo ls AppDir
 
   # list the contents of the src/app/seamlyme/share directory
-  - echo "=== list src/app/seamlyme/share directory files ======="
-  sudo ls -Rla ./src/app/seamlyme/share | grep '\.rcc$'
+  - echo "=== list src/app/seamlyme/share/resouorces directory files ======="
+  - sudo ls -Rla ./src/app/seamlyme/share/resources | grep '\.rcc$'
 
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
   - echo "=== copy measurement diagrams ========================="

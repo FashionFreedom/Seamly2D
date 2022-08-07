@@ -87,7 +87,7 @@ jobs:
           
           #********************************************
           echo "-- run appimage-builder with appimage-builder-recipe-test.yml --"
-          appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --generate --skip-test
+          appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --skip-test
 
       - name: copy to final file tag_name
         run: |
