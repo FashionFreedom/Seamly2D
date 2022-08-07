@@ -109,8 +109,8 @@ jobs:
           pwd && ls -la && ls -la ./src/app
 
           #********************************************
-          echo "-- find the .rcc files -- "
-          find . -type f -name "*.rcc" 
+          echo "-- find the .rcc files recursively -- "
+          ls -Rla ./src/app | grep '\.rcc$' | wc -l && echo "__________________________________"
           
           #********************************************
           echo "-- copy measurement diagrams.rcc file --"
