@@ -75,11 +75,14 @@ AppDir:
     - sourceline: deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
-    - sourceline: deb http://archive.neon.kde.org/release focal main
-      key_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"'
-    #  key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDEACEA00075E1D76'    
+    #- sourceline: deb http://archive.neon.kde.org/release focal main
+    #  key_url: 'https://archive.neon.kde.org/public.key'
+    #  key_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"'
+    #  key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDEACEA00075E1D76'  
+    # let's install kde-standard and see what happens :)  
 
     include:
+    - kde-standard
     - libqt5svg5
     - libqt5xml5
     - liblz4-1
