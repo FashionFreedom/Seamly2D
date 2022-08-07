@@ -53,6 +53,9 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2.4.2
+        with:
+          submodules: true
+          fetch-depth: 0        
 
       - name: install kde and build dependencies
         run: |  
@@ -76,7 +79,9 @@ jobs:
         run: |
           # *********************************
           echo "-- show current directory --"
-          echo "$(pwd)"
+          pwd
+          echo "-- find the .rcc files recursively, before building Seamly2D & SeamlyMe-- "
+          ls -Rla ./src/app | grep '\.rcc$' | wc -l
                     
           # *********************************
           echo "-- make Seamly2D & SeamlyMe --"
@@ -95,9 +100,18 @@ jobs:
           sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
           sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
 
+
+        - name: compile diagramqrc to diagramrcc
+            id: compile-diagramqrc-to-diagramrcc
+            run: |
+          #********************************************
+          echo " --- run rcc compilation of src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc
+          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
+
       - name: copy resource files
         id: copy-resource-files
         run: |
+          echo "_______BEGIN DEBUGGING ___________________________"
           #********************************************
           # when copying files we get this error: 
           # ls: cannot access 'AppDir/usr/share/diagrams.rcc': No such file or directory
@@ -110,7 +124,7 @@ jobs:
 
           #********************************************
           echo "-- find the .rcc files recursively -- "
-          ls -Rla ./src/app | grep '\.rcc$' | wc -l && echo "__________________________________"
+          ls -Rla ./src/app | grep '\.rcc$' | wc -l && echo "_______END DEBUGGING ___________________________"
           
           #********************************************
           echo "-- copy measurement diagrams.rcc file --"
