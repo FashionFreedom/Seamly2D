@@ -76,7 +76,7 @@ jobs:
         run: |
           # *********************************
           echo "-- show current directory --"
-          echo $PWD
+          echo "$(pwd)"
                     
           # *********************************
           echo "-- make Seamly2D & SeamlyMe --"
