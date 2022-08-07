@@ -5,19 +5,11 @@ script:
   - echo "=== BEGIN APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="
   # get the neon public key into the keyring BEFORE getting the deb package in the next step
   # ---------------------------------
-  - echo "=== register kde neon repository =========="
-  - sudo apt install -y debsig-verify           
-  - echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-  - sudo curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
 
-  - echo "=== begin AppImage script ========================="
+  - echo "=== recreate AppDir, pwd, & ls ========================="
   # must clear & recreate AppDir directory so that it is completely empty
   - sudo rm -rf AppDir || true
-  - sudo mkdir -p AppDir
-
-  # prove that we created an AppDir
-  - echo "=== pwd & list current directory =================="
-  - pwd && ls
+  - sudo mkdir -p AppDir && pwd && ls -la
 
   - echo "=== build Seamly2D & SeamlyMe ====================="
   - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==================="
@@ -84,7 +76,7 @@ AppDir:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     - sourceline: deb http://archive.neon.kde.org/user focal main
-      key_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"'
+    #  key_url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"'
     #  key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xDEACEA00075E1D76'    
 
     include:
