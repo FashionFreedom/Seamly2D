@@ -1,6 +1,9 @@
 # appimage-builder recipe see https://appimage-builder.readthedocs.io for details
 version: 1
 
+script:
+  - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 0xDEACEA00075E1D76
+
 AppDir:
   path: ./AppDir
   app_info:
