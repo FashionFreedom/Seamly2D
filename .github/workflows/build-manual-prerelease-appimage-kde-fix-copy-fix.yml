@@ -108,6 +108,11 @@ jobs:
           pwd && ls -la
 
           #********************************************
+          echo "-- show the current directory and list files --"
+          echo "------ then list files in the share subdirectory --"
+          pwd && ls -la && ls -la ./share
+
+          #********************************************
           echo "-- find the .rcc files -- "
           find . -type f -name "*.rcc" 
           
