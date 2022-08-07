@@ -2,7 +2,7 @@
 version: 1
 
 script:
-  - echo "=== begin AppImage script =========================" > console.log
+  - echo "=== begin AppImage script ========================="
   # must clear & recreate AppDir directory so that it is completely empty
   - sudo rm -rf AppDir || true
   - sudo mkdir -p AppDir
@@ -12,10 +12,10 @@ script:
   - pwd && ls
 
   - echo "=== build Seamly2D & SeamlyMe ====================="
-  - sudo qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-  - sudo make -j$(nproc)
+  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==="
   #- INSTALL_ROOT=AppDir make install
-  - sudo make install DESTDIR=AppDir 
+  - sudo make -j$(nproc) && echo "=== END MAKE ==="
+  - sudo make install DESTDIR=AppDir && echo "=== END MAKE INSTALL ==="
 
   # create directories for diagrams, translations, desktop, and icons
   - echo "=== create directories =====================" > console.log
