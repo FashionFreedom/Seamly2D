@@ -737,6 +737,24 @@ void MainWindowsNoGUI::refreshGrainLines()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief refreshSeamAllowances call to show / hide seam allowances.
+ */
+void MainWindowsNoGUI::refreshSeamAllowances()
+{
+    const QHash<quint32, VPiece> *list = pattern->DataPieces();
+    QHash<quint32, VPiece>::const_iterator i = list->constBegin();
+    while (i != list->constEnd())
+    {
+        if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
+        {
+            tool->RefreshGeometry();
+        }
+        ++i;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QVector<VLayoutPiece> MainWindowsNoGUI::PrepareDetailsForLayout(const QHash<quint32, VPiece> &details)
 {
     QVector<VLayoutPiece> listDetails;

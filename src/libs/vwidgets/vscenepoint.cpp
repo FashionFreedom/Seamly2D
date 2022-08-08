@@ -235,7 +235,7 @@ void VScenePoint::setPointPen(qreal scale)
     {
         setPen(QPen(correctColor(this, QColor(qApp->Settings()->getPointNameColor())), width));
 
-        if (qApp->Settings()->isWireframe())
+        if (!qApp->Settings()->isWireframe())
         {
            setBrush(QBrush(correctColor(this, QColor(qApp->Settings()->getPointNameColor())),Qt::SolidPattern));
         }

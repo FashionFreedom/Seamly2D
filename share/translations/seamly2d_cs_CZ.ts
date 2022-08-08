@@ -197,8 +197,8 @@
         <translation type="vanished">Poslat hlášení o pádu (doporučeno)</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Po každém pádu Seamly2D sbírá informace, které nám mohou pomoci problém opravit. Nesbíráme žádné osobní údaje. Podívejte se, jaký &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;typ informací&lt;/a&gt; sbíráme.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Po každém pádu Seamly2D sbírá informace, které nám mohou pomoci problém opravit. Nesbíráme žádné osobní údaje. Podívejte se, jaký &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;typ informací&lt;/a&gt; sbíráme.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>

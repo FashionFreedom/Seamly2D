@@ -51,6 +51,7 @@
 
 #include "vabstractfloatitemdata.h"
 #include "vabstractfloatitemdata_p.h"
+#include <QtDebug>
 
 #ifdef Q_COMPILER_RVALUE_REFS
 VAbstractFloatItemData &VAbstractFloatItemData::operator=(VAbstractFloatItemData &&data) Q_DECL_NOTHROW { Swap(data); return *this; }
@@ -105,5 +106,6 @@ bool VAbstractFloatItemData::IsVisible() const
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractFloatItemData::SetVisible(bool bVisible)
 {
+    qDebug()<<"SetVisible Selected = "<< bVisible;
     d->m_bVisible = bVisible;
 }

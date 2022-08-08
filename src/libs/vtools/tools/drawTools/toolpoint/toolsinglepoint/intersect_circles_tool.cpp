@@ -1,43 +1,23 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/**************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vtoolpointofintersectioncircles.cpp
+ **  @file   intersect_circles_tool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   29 5, 2015
  **
- **  @brief
+ **  @author Douglas S. Caskey
+ **  @date   7.16.2022
+ **
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -49,18 +29,9 @@
  **
  *************************************************************************/
 
-#include "vtoolpointofintersectioncircles.h"
+#include "intersect_circles_tool.h"
 
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
-
-#include "../../../../dialogs/tools/dialogpointofintersectioncircles.h"
-#include "../../../../dialogs/tools/dialogtool.h"
-#include "../../../../visualization/visualization.h"
-#include "../../../../visualization/line/vistoolpointofintersectioncircles.h"
+#include "vtoolsinglepoint.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../ifc/ifcdef.h"
@@ -70,16 +41,25 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vformula.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../../../vabstracttool.h"
 #include "../../vdrawtool.h"
-#include "vtoolsinglepoint.h"
+#include "../../../vabstracttool.h"
+#include "../../../../dialogs/tools/intersect_circles_dialog.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../visualization/visualization.h"
+#include "../../../../visualization/line/intersect_circles_visual.h"
+
+#include <QSharedPointer>
+#include <QStaticStringData>
+#include <QStringData>
+#include <QStringDataPtr>
+#include <new>
 
 template <class T> class QSharedPointer;
 
-const QString VToolPointOfIntersectionCircles::ToolType = QStringLiteral("pointOfIntersectionCircles");
+const QString IntersectCirclesTool::ToolType = QStringLiteral("pointOfIntersectionCircles");
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPointOfIntersectionCircles::VToolPointOfIntersectionCircles(VAbstractPattern *doc, VContainer *data,
+IntersectCirclesTool::IntersectCirclesTool(VAbstractPattern *doc, VContainer *data,
                                                                  const quint32 &id,
                                                                  quint32 firstCircleCenterId,
                                                                  quint32 secondCircleCenterId,
@@ -98,11 +78,11 @@ VToolPointOfIntersectionCircles::VToolPointOfIntersectionCircles(VAbstractPatter
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::setDialog()
+void IntersectCirclesTool::setDialog()
 {
     SCASSERT(not m_dialog.isNull())
-    QSharedPointer<DialogPointOfIntersectionCircles> dialogTool =
-            m_dialog.objectCast<DialogPointOfIntersectionCircles>();
+    QSharedPointer<IntersectCirclesDialog> dialogTool =
+            m_dialog.objectCast<IntersectCirclesDialog>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetFirstCircleCenterId(firstCircleCenterId);
@@ -114,13 +94,13 @@ void VToolPointOfIntersectionCircles::setDialog()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(QSharedPointer<DialogTool> dialog,
+IntersectCirclesTool *IntersectCirclesTool::Create(QSharedPointer<DialogTool> dialog,
                                                                          VMainGraphicsScene *scene,
                                                                          VAbstractPattern *doc, VContainer *data)
 {
     SCASSERT(not dialog.isNull())
-    QSharedPointer<DialogPointOfIntersectionCircles> dialogTool =
-            dialog.objectCast<DialogPointOfIntersectionCircles>();
+    QSharedPointer<IntersectCirclesDialog> dialogTool =
+            dialog.objectCast<IntersectCirclesDialog>();
     SCASSERT(not dialogTool.isNull())
     const quint32 firstCircleCenterId = dialogTool->GetFirstCircleCenterId();
     const quint32 secondCircleCenterId = dialogTool->GetSecondCircleCenterId();
@@ -128,7 +108,7 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(QShared
     QString secondCircleRadius = dialogTool->GetSecondCircleRadius();
     const CrossCirclesPoint pType = dialogTool->GetCrossCirclesPoint();
     const QString pointName = dialogTool->getPointName();
-    VToolPointOfIntersectionCircles *point = Create(0, pointName, firstCircleCenterId, secondCircleCenterId,
+    IntersectCirclesTool *point = Create(0, pointName, firstCircleCenterId, secondCircleCenterId,
                                                     firstCircleRadius, secondCircleRadius, pType, 5, 10, true, scene, doc,
                                                     data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
@@ -139,7 +119,7 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(QShared
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(const quint32 _id, const QString &pointName,
+IntersectCirclesTool *IntersectCirclesTool::Create(const quint32 _id, const QString &pointName,
                                                                          quint32 firstCircleCenterId,
                                                                          quint32 secondCircleCenterId,
                                                                          QString &firstCircleRadius,
@@ -181,7 +161,7 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(const q
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::PointOfIntersectionCircles, doc);
-        VToolPointOfIntersectionCircles *point = new VToolPointOfIntersectionCircles(doc, data, id, firstCircleCenterId,
+        IntersectCirclesTool *point = new IntersectCirclesTool(doc, data, id, firstCircleCenterId,
                                                                                      secondCircleCenterId,
                                                                                      firstCircleRadius,
                                                                                      secondCircleRadius, crossPoint,
@@ -197,7 +177,7 @@ VToolPointOfIntersectionCircles *VToolPointOfIntersectionCircles::Create(const q
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPointF VToolPointOfIntersectionCircles::FindPoint(const QPointF &c1Point, const QPointF &c2Point, qreal c1Radius,
+QPointF IntersectCirclesTool::FindPoint(const QPointF &c1Point, const QPointF &c2Point, qreal c1Radius,
                                                    qreal c2Radius, const CrossCirclesPoint crossPoint)
 {
     QPointF p1, p2;
@@ -224,25 +204,25 @@ QPointF VToolPointOfIntersectionCircles::FindPoint(const QPointF &c1Point, const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointOfIntersectionCircles::FirstCircleCenterPointName() const
+QString IntersectCirclesTool::FirstCircleCenterPointName() const
 {
     return VAbstractTool::data.GetGObject(firstCircleCenterId)->name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPointOfIntersectionCircles::SecondCircleCenterPointName() const
+QString IntersectCirclesTool::SecondCircleCenterPointName() const
 {
     return VAbstractTool::data.GetGObject(secondCircleCenterId)->name();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfIntersectionCircles::GetFirstCircleCenterId() const
+quint32 IntersectCirclesTool::GetFirstCircleCenterId() const
 {
     return firstCircleCenterId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SetFirstCircleCenterId(const quint32 &value)
+void IntersectCirclesTool::SetFirstCircleCenterId(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -254,13 +234,13 @@ void VToolPointOfIntersectionCircles::SetFirstCircleCenterId(const quint32 &valu
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VToolPointOfIntersectionCircles::GetSecondCircleCenterId() const
+quint32 IntersectCirclesTool::GetSecondCircleCenterId() const
 {
     return secondCircleCenterId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SetSecondCircleCenterId(const quint32 &value)
+void IntersectCirclesTool::SetSecondCircleCenterId(const quint32 &value)
 {
     if (value != NULL_ID)
     {
@@ -272,7 +252,7 @@ void VToolPointOfIntersectionCircles::SetSecondCircleCenterId(const quint32 &val
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VFormula VToolPointOfIntersectionCircles::GetFirstCircleRadius() const
+VFormula IntersectCirclesTool::GetFirstCircleRadius() const
 {
     VFormula radius(firstCircleRadius, getData());
     radius.setCheckZero(true);
@@ -282,7 +262,7 @@ VFormula VToolPointOfIntersectionCircles::GetFirstCircleRadius() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SetFirstCircleRadius(const VFormula &value)
+void IntersectCirclesTool::SetFirstCircleRadius(const VFormula &value)
 {
     if (value.error() == false)
     {
@@ -296,7 +276,7 @@ void VToolPointOfIntersectionCircles::SetFirstCircleRadius(const VFormula &value
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VFormula VToolPointOfIntersectionCircles::GetSecondCircleRadius() const
+VFormula IntersectCirclesTool::GetSecondCircleRadius() const
 {
     VFormula radius(secondCircleRadius, getData());
     radius.setCheckZero(true);
@@ -306,7 +286,7 @@ VFormula VToolPointOfIntersectionCircles::GetSecondCircleRadius() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SetSecondCircleRadius(const VFormula &value)
+void IntersectCirclesTool::SetSecondCircleRadius(const VFormula &value)
 {
     if (value.error() == false)
     {
@@ -320,13 +300,13 @@ void VToolPointOfIntersectionCircles::SetSecondCircleRadius(const VFormula &valu
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-CrossCirclesPoint VToolPointOfIntersectionCircles::GetCrossCirclesPoint() const
+CrossCirclesPoint IntersectCirclesTool::GetCrossCirclesPoint() const
 {
     return crossPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SetCrossCirclesPoint(const CrossCirclesPoint &value)
+void IntersectCirclesTool::SetCrossCirclesPoint(const CrossCirclesPoint &value)
 {
     crossPoint = value;
 
@@ -335,13 +315,13 @@ void VToolPointOfIntersectionCircles::SetCrossCirclesPoint(const CrossCirclesPoi
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::ShowVisualization(bool show)
+void IntersectCirclesTool::ShowVisualization(bool show)
 {
-    ShowToolVisualization<VisToolPointOfIntersectionCircles>(show);
+    ShowToolVisualization<IntersectCirclesVisual>(show);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::RemoveReferens()
+void IntersectCirclesTool::RemoveReferens()
 {
     const auto firstCircleCenter = VAbstractTool::data.GetGObject(firstCircleCenterId);
     const auto secondCircleCenter = VAbstractTool::data.GetGObject(secondCircleCenterId);
@@ -351,11 +331,11 @@ void VToolPointOfIntersectionCircles::RemoveReferens()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
+void IntersectCirclesTool::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 id)
 {
     try
     {
-        ContextMenu<DialogPointOfIntersectionCircles>(event, id);
+        ContextMenu<IntersectCirclesDialog>(event, id);
     }
     catch(const VExceptionToolWasDeleted &e)
     {
@@ -365,11 +345,11 @@ void VToolPointOfIntersectionCircles::showContextMenu(QGraphicsSceneContextMenuE
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SaveDialog(QDomElement &domElement)
+void IntersectCirclesTool::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(not m_dialog.isNull())
-    QSharedPointer<DialogPointOfIntersectionCircles> dialogTool =
-            m_dialog.objectCast<DialogPointOfIntersectionCircles>();
+    QSharedPointer<IntersectCirclesDialog> dialogTool =
+            m_dialog.objectCast<IntersectCirclesDialog>();
     SCASSERT(not dialogTool.isNull())
     doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
     doc->SetAttribute(domElement, AttrC1Center, QString().setNum(dialogTool->GetFirstCircleCenterId()));
@@ -381,7 +361,7 @@ void VToolPointOfIntersectionCircles::SaveDialog(QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
+void IntersectCirclesTool::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 {
     VToolSinglePoint::SaveOptions(tag, obj);
 
@@ -394,7 +374,7 @@ void VToolPointOfIntersectionCircles::SaveOptions(QDomElement &tag, QSharedPoint
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::ReadToolAttributes(const QDomElement &domElement)
+void IntersectCirclesTool::ReadToolAttributes(const QDomElement &domElement)
 {
     firstCircleCenterId = doc->GetParametrUInt(domElement, AttrC1Center, NULL_ID_STR);
     secondCircleCenterId = doc->GetParametrUInt(domElement, AttrC2Center, NULL_ID_STR);
@@ -404,11 +384,11 @@ void VToolPointOfIntersectionCircles::ReadToolAttributes(const QDomElement &domE
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionCircles::SetVisualization()
+void IntersectCirclesTool::SetVisualization()
 {
     if (not vis.isNull())
     {
-        VisToolPointOfIntersectionCircles *visual = qobject_cast<VisToolPointOfIntersectionCircles *>(vis);
+        IntersectCirclesVisual *visual = qobject_cast<IntersectCirclesVisual *>(vis);
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(firstCircleCenterId);

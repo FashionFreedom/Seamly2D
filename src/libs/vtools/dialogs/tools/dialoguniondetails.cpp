@@ -158,12 +158,12 @@ void DialogUnionDetails::ChoosedDetail(const quint32 &id, const SceneObject &typ
             if (CheckDetail(id))
             {
                 idDetail = id;
-                emit ToolTip(tr("Select a first point"));
+                emit ToolTip(tr("Select the first point"));
                 return;
             }
             else
             {
-                emit ToolTip(tr("Workpiece should have at least two points and three objects"));
+                emit ToolTip(tr("Pattern piece should have at least two points and three objects"));
                 return;
             }
         }

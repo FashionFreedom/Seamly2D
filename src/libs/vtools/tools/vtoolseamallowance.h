@@ -86,7 +86,7 @@ public:
     static const QString AttrVersion;
     static const QString AttrForbidFlipping;
     static const QString AttrSeamAllowance;
-    static const QString AttrHideMainPath;
+    static const QString AttrHideSeamLine;
     static const QString AttrSeamAllowanceBuiltIn;
     static const QString AttrHeight;
     static const QString AttrUnited;
@@ -110,6 +110,8 @@ public:
     static void AddPatternPieceData(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
     static void AddPatternInfo(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
     static void AddGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
+
+    void RefreshGeometry();
 
     virtual int        type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::Piece)};
@@ -184,7 +186,7 @@ private:
                        VMainGraphicsScene *scene, const QString &drawName, QGraphicsItem * parent = nullptr);
 
     void UpdateExcludeState();
-    void RefreshGeometry();
+
 
     VPieceItem::MoveTypes FindLabelGeometry(const VPatternLabelData &labelData, qreal &rotationAngle, qreal &labelWidth,
                                             qreal &labelHeight, QPointF &pos);
@@ -201,6 +203,16 @@ private:
     bool PrepareLabelData(const VPatternLabelData &labelData, VTextGraphicsItem *labelItem, QPointF &pos,
                           qreal &labelAngle);
     void UpdateLabelItem(VTextGraphicsItem *labelItem, QPointF pos, qreal labelAngle);
+    void editPieceProperties();
+    void toggleInLayout(bool checked);
+    void toggleFlipping(bool checked);
+    void toggleSeamLine(bool checked);
+    void toggleSeamAllowance(bool checked);
+    void toggleGrainline(bool checked);
+    void togglePatternLabel(bool checked);
+    void togglePieceLabel(bool checked);
+    void renamePiece(VPiece piece);
+    void showStatus(QString toolTip);
 };
 
 #endif // VTOOLSEAMALLOWANCE_H

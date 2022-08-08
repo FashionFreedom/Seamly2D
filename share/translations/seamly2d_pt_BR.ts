@@ -232,8 +232,8 @@
         <translation type="vanished">Enviar relatório de erro ( Recomendável )</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Após cada erro, Seamly2D coleta informações que poderão nos ajudar a solucionar o problema. Nós não coletamos qualquer informação pessoal. Para maiores detalhes sobre qual &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;tipo de informação&lt;/a&gt; nós coletamos.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Após cada erro, Seamly2D coleta informações que poderão nos ajudar a solucionar o problema. Nós não coletamos qualquer informação pessoal. Para maiores detalhes sobre qual &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;tipo de informação&lt;/a&gt; nós coletamos.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">A unidade padrão foi atuaizada e será usada como padrão para o próximo molde criado.</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Após cada erro, Seamly2D coleta informações que poderão nos ajudar a solucionar o problema. Nós não coletamos qualquer informação pessoal. Para maiores detalhes sobre qual &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;tipo de informação&lt;/a&gt; nós coletamos.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Após cada erro, Seamly2D coleta informações que poderão nos ajudar a solucionar o problema. Nós não coletamos qualquer informação pessoal. Para maiores detalhes sobre qual &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;tipo de informação&lt;/a&gt; nós coletamos.</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>

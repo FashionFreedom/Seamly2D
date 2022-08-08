@@ -1269,14 +1269,14 @@ void MainWindow::handlePointOfIntersectionArcsTool(bool checked)
 void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointOfIntersectionCircles>
+    SetToolButtonWithApply<IntersectCirclesDialog>
     (
         checked,
         Tool::PointOfIntersectionCircles,
         "://cursor/point_of_intersection_circles.png",
         tr("<b>Tool::Arc - Intersection Point of Circles:</b> Select first circle center"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionCircles>,
-        &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionCircles>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectCirclesTool>,
+        &MainWindow::ApplyDrawDialog<IntersectCirclesTool>
     );
 }
 
@@ -1286,14 +1286,14 @@ void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
 void MainWindow::handlePointFromCircleAndTangentTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointFromCircleAndTangent>
+    SetToolButtonWithApply<IntersectCircleTangentDialog>
     (
         checked,
         Tool::PointFromCircleAndTangent,
         "://cursor/point_from_circle_and_tangent_cursor.png",
         tr("<b>Tool::Arc - Tangency Point of Circle and Tangent:</b> Select point on tangent"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointFromCircleAndTangent>,
-        &MainWindow::ApplyDrawDialog<VToolPointFromCircleAndTangent>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectCircleTangentTool>,
+        &MainWindow::ApplyDrawDialog<IntersectCircleTangentTool>
     );
 }
 
@@ -3967,6 +3967,7 @@ void MainWindow::Clear()
     ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
+    ui->toggleSeamAllowances_Action->setEnabled(false);
     ui->toggleGrainLines_Action->setEnabled(false);
     ui->toggleLabels_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
@@ -4240,6 +4241,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
+    ui->toggleSeamAllowances_Action->setEnabled(enable && pieceStage);
     ui->toggleGrainLines_Action->setEnabled(enable && pieceStage);
     ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
@@ -4261,6 +4263,9 @@ void MainWindow::SetEnableWidgets(bool enable)
     //enable utilities menu actions
     ui->calculator_Action->setEnabled(enable);
     ui->decimalChart_Action->setEnabled(enable);
+
+    //enable help menu
+    ui->shortcuts_Action->setEnabled(enable);
 
     //enable dock widget actions
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
@@ -4899,17 +4904,26 @@ void MainWindow::createMenus()
     UpdateRecentFileActions();
 
     //Add Undo/Redo actions to edit menu.
+    QList<QKeySequence> undoShortcuts;
+    undoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Z));
+    undoShortcuts.append(QKeySequence(Qt::AltModifier + Qt::Key_Backspace));
+
     undoAction = qApp->getUndoStack()->createUndoAction(this, tr("&Undo"));
-    connect(undoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
-    undoAction->setShortcuts(QKeySequence::Undo);
+    undoAction->setShortcuts(undoShortcuts);
     undoAction->setIcon(QIcon::fromTheme("edit-undo"));
+    connect(undoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
     ui->edit_Menu->addAction(undoAction);
     ui->edit_Toolbar->addAction(undoAction);
 
+    QList<QKeySequence> redoShortcuts;
+    redoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Y));
+    redoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::ShiftModifier + Qt::Key_Z));
+    redoShortcuts.append(QKeySequence(Qt::AltModifier + Qt::ShiftModifier + Qt::Key_Backspace));
+
     redoAction = qApp->getUndoStack()->createRedoAction(this, tr("&Redo"));
-    connect(redoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
-    redoAction->setShortcuts(QKeySequence::Redo);
+    redoAction->setShortcuts(redoShortcuts);
     redoAction->setIcon(QIcon::fromTheme("edit-redo"));
+    connect(redoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
     ui->edit_Menu->addAction(redoAction);
     ui->edit_Toolbar->addAction(redoAction);
 
@@ -5336,6 +5350,13 @@ void MainWindow::createActions()
         qApp->Seamly2DSettings()->setShowAxisOrigin(checked);
         draftScene->setOriginsVisible(checked);
         pieceScene->setOriginsVisible(checked);
+    });
+
+    connect(ui->toggleSeamAllowances_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowSeamAllowances(checked);
+        ui->view->itemClicked(nullptr);
+        refreshSeamAllowances();
     });
 
     connect(ui->toggleGrainLines_Action, &QAction::triggered, this, [this](bool checked)
@@ -5800,6 +5821,12 @@ void MainWindow::createActions()
     });
 
     //Help menu
+    connect(ui->shortcuts_Action, &QAction::triggered, this, [this]()
+    {
+        ShortcutsDialog *shortcutsDialog = new ShortcutsDialog(this);
+        shortcutsDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        shortcutsDialog->show();
+    });
     connect(ui->wiki_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Showing online help");
@@ -7062,6 +7089,7 @@ void MainWindow::updateViewToolbar()
     ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
     ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
     ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
+    ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
 }
 

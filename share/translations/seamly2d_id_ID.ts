@@ -182,8 +182,8 @@
         <translation type="vanished">Kirim laporan kerusakan (disarankan)</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Setelah setiap kerusakan Seamly2D mengumpulkan informasi yang dapat membantu kami memperbaiki suatu masalah. Kami tidak mengumpulkan informasi pribadi apapun. Temukan lebih lanjut tentang apa &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt; jenis informasi &lt;/a&gt; kami kumpulkan.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">Setelah setiap kerusakan Seamly2D mengumpulkan informasi yang dapat membantu kami memperbaiki suatu masalah. Kami tidak mengumpulkan informasi pribadi apapun. Temukan lebih lanjut tentang apa &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt; jenis informasi &lt;/a&gt; kami kumpulkan.</translation>
     </message>
 </context>
 <context>

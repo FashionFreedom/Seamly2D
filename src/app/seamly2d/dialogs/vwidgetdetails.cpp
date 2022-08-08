@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -61,10 +61,10 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VWidgetDetails::VWidgetDetails(VContainer *data, VAbstractPattern *doc, QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::VWidgetDetails),
-      m_doc(doc),
-      m_data(data)
+    : QWidget(parent)
+    ,  ui(new Ui::VWidgetDetails)
+    ,  m_doc(doc)
+    ,  m_data(data)
 {
     ui->setupUi(this);
 
@@ -119,9 +119,9 @@ void VWidgetDetails::InLayoutStateChanged(int row, int column)
     const QHash<quint32, VPiece> *allDetails = m_data->DataPieces();
     const bool inLayout = not allDetails->value(id).IsInLayout();
 
-    TogglePieceInLayout *togglePrint = new TogglePieceInLayout(id, inLayout, m_data, m_doc);
-    connect(togglePrint, &TogglePieceInLayout::UpdateList, this, &VWidgetDetails::UpdateList);
-    qApp->getUndoStack()->push(togglePrint);
+    TogglePieceInLayout *togglePiece = new TogglePieceInLayout(id, inLayout, m_data, m_doc);
+    connect(togglePiece, &TogglePieceInLayout::UpdateList, this, &VWidgetDetails::UpdateList);
+    qApp->getUndoStack()->push(togglePiece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -196,9 +196,9 @@ void VWidgetDetails::ToggleSectionDetails(bool select)
         {
             if (not (select == allDetails->value(id).IsInLayout()))
             {
-                TogglePieceInLayout *togglePrint = new TogglePieceInLayout(id, select, m_data, m_doc);
-                connect(togglePrint, &TogglePieceInLayout::UpdateList, this, &VWidgetDetails::UpdateList);
-                qApp->getUndoStack()->push(togglePrint);
+                TogglePieceInLayout *togglePiece = new TogglePieceInLayout(id, select, m_data, m_doc);
+                connect(togglePiece, &TogglePieceInLayout::UpdateList, this, &VWidgetDetails::UpdateList);
+                qApp->getUndoStack()->push(togglePiece);
             }
         }
     }
@@ -273,9 +273,9 @@ void VWidgetDetails::ShowContextMenu(const QPoint &pos)
             {
                 select = not allDetails->value(id).IsInLayout();
 
-                TogglePieceInLayout *togglePrint = new TogglePieceInLayout(id, select, m_data, m_doc);
-                connect(togglePrint, &TogglePieceInLayout::UpdateList, this, &VWidgetDetails::UpdateList);
-                qApp->getUndoStack()->push(togglePrint);
+                TogglePieceInLayout *togglePiece = new TogglePieceInLayout(id, select, m_data, m_doc);
+                connect(togglePiece, &TogglePieceInLayout::UpdateList, this, &VWidgetDetails::UpdateList);
+                qApp->getUndoStack()->push(togglePiece);
             }
         }
 

@@ -52,6 +52,7 @@ class DialogTool;
 class DialogHistory;
 class CalculatorDialog;
 class DecimalChartDialog;
+class ShortcutsDialog;
 class VWidgetGroups;
 class VWidgetDetails;
 class DraftToolBox;

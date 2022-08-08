@@ -232,8 +232,8 @@
         <translation type="vanished">Trimite rapoarte de blocaj (recomandat)</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">După fiecare blocaj Seamly2D colectează informații care ne pot ajuta să rezolvăm problema. Noi nu colectăm informații personale. Afla mai multe despre ceea ce &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt; fel de informații &lt;/a&gt; colectăm noi.</translation>
+        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">După fiecare blocaj Seamly2D colectează informații care ne pot ajuta să rezolvăm problema. Noi nu colectăm informații personale. Afla mai multe despre ceea ce &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt; fel de informații &lt;/a&gt; colectăm noi.</translation>
     </message>
     <message>
         <source>Pattern Editing</source>
@@ -288,8 +288,8 @@
         <translation type="vanished">Unitatea standard a fost actualizată și va fi utilizată ca standard pentru modelele viitoare pe care le creați.</translation>
     </message>
     <message>
-        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">După fiecare prăbușire, Seamly2D colectează informații care pot ajuta să rezolvăm problema. Noi nu colectăm informații personale. Află mai multe despre ce &lt;a href=&quot;https://wiki.seamly2d.com/wiki/Developer:Crash_Reports&quot;&gt; fel de informații &lt;/a&gt; colectăm noi.</translation>
+        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
+        <translation type="vanished">După fiecare prăbușire, Seamly2D colectează informații care pot ajuta să rezolvăm problema. Noi nu colectăm informații personale. Află mai multe despre ce &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt; fel de informații &lt;/a&gt; colectăm noi.</translation>
     </message>
 </context>
 <context>

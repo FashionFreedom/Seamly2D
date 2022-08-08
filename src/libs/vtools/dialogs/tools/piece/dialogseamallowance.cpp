@@ -226,7 +226,7 @@ void DialogSeamAllowance::SetPiece(const VPiece &piece)
         NewMainPathItem(piece.GetPath().at(i));
     }
 
-    uiPathsTab->hideMainPath_CheckBox->setChecked(piece.IsHideMainPath());
+    uiPathsTab->hideSeamLine_CheckBox->setChecked(piece.isHideSeamLine());
     uiPathsTab->customSeamAllowance_ListWidget->blockSignals(true);
     uiPathsTab->customSeamAllowance_ListWidget->clear();
     for (int i = 0; i < piece.GetCustomSARecords().size(); ++i)
@@ -284,7 +284,7 @@ void DialogSeamAllowance::SetPiece(const VPiece &piece)
 
     uiGrainlineTab->arrow_ComboBox->setCurrentIndex(int(piece.GetGrainlineGeometry().GetArrowType()));
 
-    uiLabelsTab->detailLabel_GroupBox->setChecked(m_oldData.IsVisible());
+    uiLabelsTab->pieceLabel_GroupBox->setChecked(m_oldData.IsVisible());
     ChangeCurrentData(uiLabelsTab->dLabelCenterPin_ComboBox, m_oldData.CenterPin());
     ChangeCurrentData(uiLabelsTab->dLabelTopLeftPin_ComboBox, m_oldData.TopLeftPin());
     ChangeCurrentData(uiLabelsTab->dLabelBottomRightPin_ComboBox, m_oldData.BottomRightPin());
@@ -714,8 +714,9 @@ void DialogSeamAllowance::ListChanged()
 void DialogSeamAllowance::EnableSeamAllowance(bool enable)
 {
     uiPathsTab->builtIn_CheckBox->setEnabled(enable);
+    uiPathsTab->hideSeamLine_CheckBox->setEnabled(enable);
 
-    if (not enable)
+    if (!enable)
     {
         uiPathsTab->groupBoxAutomatic->setEnabled(enable);
         uiPathsTab->groupBoxCustom->setEnabled(enable);
@@ -761,7 +762,7 @@ void DialogSeamAllowance::NodeChanged(int index)
         {
             const VPieceNode &node = piece.GetPath().at(nodeIndex);
 
-            // Seam alowance before
+            // Seam allowance before
             uiPathsTab->beforeWidthFormula_PlainTextEdit->setEnabled(true);
             uiPathsTab->beforeExpr_ToolButton->setEnabled(true);
 
@@ -775,7 +776,7 @@ void DialogSeamAllowance::NodeChanged(int index)
             uiPathsTab->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(uiPathsTab->beforeWidthFormula_PlainTextEdit);
 
-            // Seam alowance after
+            // Seam allowance after
             uiPathsTab->afterWidthFormula_PlainTextEdit->setEnabled(true);
             uiPathsTab->afterExpr_ToolButton->setEnabled(true);
 
@@ -1650,7 +1651,7 @@ void DialogSeamAllowance::EnabledGrainline()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::EnabledDetailLabel()
 {
-    if (uiLabelsTab->detailLabel_GroupBox->isChecked() == true)
+    if (uiLabelsTab->pieceLabel_GroupBox->isChecked() == true)
     {
         UpdateDetailLabelValues();
         DetailPinPointChanged();
@@ -2176,7 +2177,7 @@ VPiece DialogSeamAllowance::CreatePiece() const
     piece.SetForbidFlipping(uiPathsTab->forbidFlipping_CheckBox->isChecked());
     piece.SetSeamAllowance(uiPathsTab->seams_CheckBox->isChecked());
     piece.SetSeamAllowanceBuiltIn(uiPathsTab->builtIn_CheckBox->isChecked());
-    piece.SetHideMainPath(uiPathsTab->hideMainPath_CheckBox->isChecked());
+    piece.setHideSeamLine(uiPathsTab->hideSeamLine_CheckBox->isChecked());
     piece.SetName(uiLabelsTab->detailName_LineEdit->text());
     piece.SetMx(m_mx);
     piece.SetMy(m_my);
@@ -2195,7 +2196,7 @@ VPiece DialogSeamAllowance::CreatePiece() const
     piece.GetPatternPieceData().SetLabelHeight(GetFormulaFromUser(uiLabelsTab->dLabelHeightFormula_LineEdit));
     piece.GetPatternPieceData().SetFontSize(m_oldData.getFontSize());
     piece.GetPatternPieceData().SetRotation(GetFormulaFromUser(uiLabelsTab->dLabelAngleFormula_LineEdit));
-    piece.GetPatternPieceData().SetVisible(uiLabelsTab->detailLabel_GroupBox->isChecked());
+    piece.GetPatternPieceData().SetVisible(uiLabelsTab->pieceLabel_GroupBox->isChecked());
     piece.GetPatternPieceData().SetCenterPin(getCurrentObjectId(uiLabelsTab->dLabelCenterPin_ComboBox));
     piece.GetPatternPieceData().SetTopLeftPin(getCurrentObjectId(uiLabelsTab->dLabelTopLeftPin_ComboBox));
     piece.GetPatternPieceData().SetBottomRightPin(getCurrentObjectId(uiLabelsTab->dLabelBottomRightPin_ComboBox));
@@ -2523,11 +2524,11 @@ void DialogSeamAllowance::UpdateNodeSAAfter(const QString &formula)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::InitFancyTabBar()
 {
-    m_ftb->InsertTab(TabOrder::Paths, QIcon("://icon/32x32/paths.png"), tr("Paths"));
-    m_ftb->InsertTab(TabOrder::Pins, QIcon("://icon/32x32/anchor_point.png"), tr("Anchor Points"));
-    m_ftb->InsertTab(TabOrder::Labels, QIcon("://icon/32x32/labels.png"), tr("Labels"));
-    m_ftb->InsertTab(TabOrder::Grainline, QIcon("://icon/32x32/grainline.png"), tr("Grainline"));
-    m_ftb->InsertTab(TabOrder::Notches, QIcon("://icon/32x32/notches.png"), tr("Notches"));
+    m_ftb->InsertTab(TabOrder::Paths, QIcon("://icon/32x32/paths@2x.png"), tr("Paths"));
+    m_ftb->InsertTab(TabOrder::Pins, QIcon("://icon/32x32/anchor_point@2x.png"), tr("Anchor Points"));
+    m_ftb->InsertTab(TabOrder::Labels, QIcon("://icon/32x32/labels@2x.png"), tr("Labels"));
+    m_ftb->InsertTab(TabOrder::Grainline, QIcon("://icon/32x32/grainline@2x.png"), tr("Grainlines"));
+    m_ftb->InsertTab(TabOrder::Notches, QIcon("://icon/32x32/notches@2x.png"), tr("Notches"));
 
     ui->horizontalLayout->addWidget(m_ftb, 0, Qt::AlignLeft);
 
@@ -2560,8 +2561,8 @@ void DialogSeamAllowance::InitFancyTabBar()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::InitMainPathTab()
 {
-    uiPathsTab->forbidFlipping_CheckBox->setChecked(qApp->Settings()->GetForbidWorkpieceFlipping());
-    uiPathsTab->hideMainPath_CheckBox->setChecked(qApp->Settings()->IsHideMainPath());
+    uiPathsTab->forbidFlipping_CheckBox->setChecked(qApp->Settings()->getForbidPieceFlipping());
+    uiPathsTab->hideSeamLine_CheckBox->setChecked(qApp->Settings()->isHideSeamLine());
 
     uiPathsTab->mainPath_ListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(uiPathsTab->mainPath_ListWidget, &QListWidget::customContextMenuRequested, this,
@@ -2743,7 +2744,7 @@ void DialogSeamAllowance::InitLabelsTab()
     m_dLabelHeightBaseHeight = uiLabelsTab->dLabelHeightFormula_LineEdit->height();
     m_dLabelAngleBaseHeight = uiLabelsTab->dLabelAngleFormula_LineEdit->height();
 
-    connect(uiLabelsTab->detailLabel_GroupBox, &QGroupBox::toggled, this, &DialogSeamAllowance::EnabledDetailLabel);
+    connect(uiLabelsTab->pieceLabel_GroupBox, &QGroupBox::toggled, this, &DialogSeamAllowance::EnabledDetailLabel);
     InitPinPoint(uiLabelsTab->dLabelCenterPin_ComboBox);
     InitPinPoint(uiLabelsTab->dLabelTopLeftPin_ComboBox);
     InitPinPoint(uiLabelsTab->dLabelBottomRightPin_ComboBox);
