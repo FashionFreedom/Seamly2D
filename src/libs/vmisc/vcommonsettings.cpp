@@ -114,9 +114,9 @@ const QString settingGraphicsViewPixelDelta              = QStringLiteral("graph
 const QString settingGraphicsViewAngleDelta              = QStringLiteral("graphicsview/angleDelta");
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
+const QString settingGraphicsViewPanActiveSpaceKey       = QStringLiteral("graphicsview/panActiveSpaceKey");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
-
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
 const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
 const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
@@ -830,7 +830,7 @@ void VCommonSettings::setScrollSpeedFactor(const int &factor)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getZoomModKey() const
 {
-    return value(settingGraphicsViewZoomModKey, 1).toBool();
+    return value(settingGraphicsViewZoomModKey, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -842,13 +842,25 @@ void VCommonSettings::setZoomModKey(const bool &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::isZoomDoubleClick() const
 {
-    return value(settingGraphicsViewZoomDoubleClick, 1).toBool();
+    return value(settingGraphicsViewZoomDoubleClick, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setZoomDoubleClick(const bool &value)
 {
     setValue(settingGraphicsViewZoomDoubleClick, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isPanActiveSpaceKey() const
+{
+    return value(settingGraphicsViewPanActiveSpaceKey, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPanActiveSpaceKey(const bool &value)
+{
+    setValue(settingGraphicsViewPanActiveSpaceKey, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

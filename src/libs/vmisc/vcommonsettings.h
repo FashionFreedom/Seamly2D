@@ -189,6 +189,9 @@ public:
     bool                 isZoomDoubleClick() const;
     void                 setZoomDoubleClick(const bool &value);
 
+    bool                 isPanActiveSpaceKey() const;
+    void                 setPanActiveSpaceKey(const bool &value);
+
     int                  getZoomSpeedFactor() const;
     void                 setZoomSpeedFactor(const int &factor);
 

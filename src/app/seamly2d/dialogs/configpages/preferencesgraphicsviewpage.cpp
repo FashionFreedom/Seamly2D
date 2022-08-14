@@ -205,6 +205,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     // Zoom double mouse click to selected IsTestModeEnabled
     ui->zoomDoubleClick_CheckBox->setChecked(qApp->Seamly2DSettings()->isZoomDoubleClick());
 
+    // Pan Zoom while Space Key pressed
+    ui->panActiveSpacePressed_CheckBox->setChecked(qApp->Seamly2DSettings()->isPanActiveSpaceKey());
+
 // Font preferences
     // Pattern piece labels font
     //QFont labelFont = qApp->Seamly2DSettings()->getLabelFont();
@@ -365,6 +368,9 @@ void PreferencesGraphicsViewPage::Apply()
 
     // Zoom double mouse click to selected IsTestModeEnabled
     settings->setZoomDoubleClick(ui->zoomDoubleClick_CheckBox->isChecked());
+
+    // Pan Zoom while Space key pressed
+    settings->setPanActiveSpaceKey(ui->panActiveSpacePressed_CheckBox->isChecked());
 
     //Fonts
     settings->setLabelFont(ui->labelFont_ComboBox->currentFont());
