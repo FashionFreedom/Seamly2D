@@ -76,7 +76,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="appearanceTab">
       <attribute name="title">
@@ -2628,6 +2628,18 @@ border-radius: 4px;
             </property>
             <property name="checked">
              <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="panActiveSpacePressed_CheckBox">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Pan active while Space key is pressed</string>
             </property>
            </widget>
           </item>

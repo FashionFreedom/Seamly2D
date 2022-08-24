@@ -2267,9 +2267,10 @@ void MainWindow::initToolsToolBar()
     QList<QKeySequence> zoomToAreaShortcuts;
     zoomToAreaShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_A));
     ui->zoomToArea_Action->setShortcuts(zoomToAreaShortcuts);
-    connect(ui->zoomToArea_Action, &QAction::triggered, this, &MainWindow::zoomToArea);
+    connect(ui->zoomToArea_Action, &QAction::toggled, this, &MainWindow::zoomToArea);
 
-    connect(ui->zoomPan_Action, &QAction::triggered, this, &MainWindow::zoomPan);
+    resetPanShortcuts();
+    connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
     if (zoomScaleSpinBox != nullptr)
     {
@@ -2404,9 +2405,9 @@ void MainWindow::zoomToPrevious()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::zoomToArea()
+void MainWindow::zoomToArea(bool checked)
 {
-      ui->view->zoomToAreaEnabled((ui->zoomToArea_Action->isChecked())?true:false);
+      ui->view->zoomToAreaEnabled(checked);
 
       if (ui->zoomToArea_Action->isChecked())
       {
@@ -2415,11 +2416,10 @@ void MainWindow::zoomToArea()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::zoomPan()
+void MainWindow::zoomPan(bool checked)
 {
-    ui->view->zoomPanEnabled((ui->zoomPan_Action->isChecked())?true:false);
-
-    if (ui->zoomPan_Action->isChecked())
+    ui->view->zoomPanEnabled(checked);
+    if (checked)
     {
         ui->zoomToArea_Action->setChecked(false);
     }
@@ -3184,7 +3184,7 @@ void  MainWindow::handleArrowTool(bool checked)
  * @brief keyPressEvent handle key press events.
  * @param event key event.
  */
-void MainWindow::keyPressEvent ( QKeyEvent * event )
+void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     switch (event->key())
     {
@@ -3195,10 +3195,36 @@ void MainWindow::keyPressEvent ( QKeyEvent * event )
         case Qt::Key_Enter:
             EndVisualization();
             break;
+        case Qt::Key_Space:
+            if (qApp->Seamly2DSettings()->isPanActiveSpaceKey())
+            {
+                ui->zoomPan_Action->setChecked(true);
+            }
+            break;
         default:
             break;
     }
-    QMainWindow::keyPressEvent ( event );
+    QMainWindow::keyPressEvent (event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief keyReleaseEvent handle key press events.
+ * @param event key event.
+ */
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    switch (event->key())
+    {
+        case Qt::Key_Space:
+            if (qApp->Seamly2DSettings()->isPanActiveSpaceKey())
+            {
+                ui->zoomPan_Action->setChecked(false);
+            }
+        default:
+            break;
+    }
+    QMainWindow::keyReleaseEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -6042,12 +6068,14 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
         connect(dialog.data(), &DialogPreferences::updateProperties,
                 toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
 
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
+
 
         QGuiApplication::restoreOverrideCursor();
 
@@ -6914,6 +6942,18 @@ void MainWindow::updateViewToolbar()
     ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
     ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
+}
+
+void MainWindow::resetPanShortcuts()
+{
+    QList<QKeySequence> zoomPanShortcuts;
+    zoomPanShortcuts = ui->zoomPan_Action->shortcuts();
+    zoomPanShortcuts.removeAll(QKeySequence(Qt::Key_Space));
+    if (!qApp->Seamly2DSettings()->isPanActiveSpaceKey())
+    {
+        zoomPanShortcuts.append(QKeySequence(Qt::Key_Space));
+    }
+    ui->zoomPan_Action->setShortcuts(zoomPanShortcuts);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
