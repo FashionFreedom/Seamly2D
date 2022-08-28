@@ -55,23 +55,36 @@ jobs:
         uses: actions/checkout@v2.4.2
         with:
           submodules: true
-          fetch-depth: 0        
+          fetch-depth: 0  
 
-      - name: install kde and build dependencies
+      - name: install kde
         run: |  
-          #----------------------------------
-          echo "-- remove previous qt 5.12.8 and config files --"
-          sudo apt purge -y qtchooser && sudo apt purge -y qtcreator && sudo apt purge  -y *qt5*
-          
           # ---------------------------------
           echo "-- register kde neon repository --"
           sudo apt install -y debsig-verify           
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add - 
+          sudo apt update
+
+      - name: remove old qt 5.12.8  
+        run: |  
+          #----------------------------------
+          echo "-- remove previous qt 5.12.8 and config files --"
+          sudo apt purge -y qtchooser && sudo apt purge -y qtcreator && sudo apt purge -y *qt5*
+
+      - name: install new qt 5.15.2
+        # install-qt-action uses default qt v 5.15.2
+        uses: jurplel/install-qt-action@v3 
+        with:
+          version: '5.15.2'
+          host: 'linux'            
+          modules: 'qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev'
           
+      - name: install build dependencies
+        run: |  
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo apt install -y build-essential gettext git qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt install -y build-essential gettext git
           sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
           #----------------------------------
@@ -79,14 +92,8 @@ jobs:
           sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev 
 
           # ---------------------------------
-          echo "-- install qt 5.15.2 --"
-          sudo add-apt-repository ppa:beineri/opt-qt-5.15.2-focal          
-          sudo apt update              
-
-          # ---------------------------------
           echo "-- create AppDir, will be erased & recreated in appimage-builder script ------"
           sudo mkdir -p AppDir && pwd && ls -la
-
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
