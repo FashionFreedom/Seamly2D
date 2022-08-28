@@ -59,10 +59,9 @@ jobs:
 
       - name: install kde and build dependencies
         run: |  
-          # ---------------------------------
-          echo "-- install qt 5.15.2 --"
-          sudo add-apt-repository ppa:beineri/opt-qt-5.15.2-focal          
-          sudo apt update           
+          #----------------------------------
+          echo "-- remove previous qt 5.12.8 and config files --"
+          sudo apt purge -y qtchooser && sudo apt purge -y qtcreator && sudo apt purge  -y *qt5*
           
           # ---------------------------------
           echo "-- register kde neon repository --"
@@ -72,8 +71,17 @@ jobs:
           
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
-          sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          sudo apt install -y build-essential gettext git qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+          #----------------------------------
+          echo "-- install support for Wayland --"
+          sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev 
+
+          # ---------------------------------
+          echo "-- install qt 5.15.2 --"
+          sudo add-apt-repository ppa:beineri/opt-qt-5.15.2-focal          
+          sudo apt update              
 
           # ---------------------------------
           echo "-- create AppDir, will be erased & recreated in appimage-builder script ------"
