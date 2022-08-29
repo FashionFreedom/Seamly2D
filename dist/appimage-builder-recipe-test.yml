@@ -15,7 +15,7 @@ script:
   - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==================="
   #- INSTALL_ROOT=AppDir make install
   - sudo make -j$(nproc) && echo "=== END MAKE ==================="
-  - sudo make install DESTDIR=AppDir && echo "=== END MAKE INSTALL ==================="
+  - sudo make install DESTDIR=AppDir && ls -R AppDir && echo "=== END MAKE INSTALL ==================="
 
   # create directories for diagrams, translations, desktop, and icons
   - echo "=== create directories =====================" > console.log
