@@ -105,8 +105,9 @@ jobs:
           sudo chmod +x /usr/local/bin/appimage-builder
           
           # ---------------------------------
+          # appimage-builder log level is either INFO or DEBUG
           echo "-- run appimage-builder with appimage-builder-recipe-test.yml --"
-          appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --skip-test
+          appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log INFO --skip-test
 
       - name: copy to final file tag_name
         run: |
