@@ -6,7 +6,7 @@ on:
       logLevel:
         description: 'Log level'
         required: true
-        default: 'debug'
+        default: 'warning'
       tags:
         description: 'Build manual Linux AppImage - Test'
 
