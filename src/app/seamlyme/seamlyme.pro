@@ -37,7 +37,7 @@ DESTDIR = bin
 # Directory for files created moc
 MOC_DIR = moc
 
-# Directory for objecs files
+# Directory for objects files
 OBJECTS_DIR = obj
 
 # Directory for files created rcc
@@ -46,7 +46,7 @@ RCC_DIR = rcc
 # Directory for files created uic
 UI_DIR = uic
 
-# Suport subdirectories. Just better project code tree.
+# Support subdirectories. Just better project code tree.
 include(seamlyme.pri)
 
 RESOURCES += \
@@ -336,7 +336,7 @@ DVCS_HESH=$$FindBuildRevision()
 message("seamlyme.pro: Build revision:" $${DVCS_HESH})
 DEFINES += "BUILD_REVISION=$${DVCS_HESH}" # Make available build revision number in sources.
 
-# Path to recource file.
+# Path to resource file.
 win32:RC_FILE = share/resources/seamlyme.rc
 
 # When the GNU linker sees a library, it discards all symbols that it doesn't need.
@@ -446,7 +446,7 @@ noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
     noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
         # do nothing
     } else {
-        # Strip after you link all libaries.
+        # Strip after you link all libraries.
         CONFIG(release, debug|release){
             win32:!*msvc*{
                 # Strip debug symbols.

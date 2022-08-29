@@ -383,7 +383,7 @@ QString DialogVariables::clearCustomVariableName(const QString &name) const
 //---------------------------------------------------------------------------------------------------------------------
 bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label)
 {
-    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog lable (cm, mm or inch)
+    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog label (cm, mm or inch)
     if (formula.isEmpty())
     {
         label->setText(tr("Error") + " (" + postfix + "). " + tr("Empty field."));
@@ -791,7 +791,7 @@ void DialogVariables::saveCustomVariableFormula()
     if (formula->text() == text)
     {
         QTableWidgetItem *result = ui->variables_TableWidget->item(row, 1);
-        //Show unit in dialog lable (cm, mm or inch)
+        //Show unit in dialog label (cm, mm or inch)
         const QString postfix = UnitsToStr(qApp->patternUnit());
         ui->calculatedValue_Label->setText(result->text() + " " +postfix);
         return;
@@ -799,7 +799,7 @@ void DialogVariables::saveCustomVariableFormula()
 
     if (text.isEmpty())
     {
-        //Show unit in dialog lable (cm, mm or inch)
+        //Show unit in dialog label (cm, mm or inch)
         const QString postfix = UnitsToStr(qApp->patternUnit());
         ui->calculatedValue_Label->setText(tr("Error") + " (" + postfix + "). " + tr("Empty field."));
         return;
@@ -850,7 +850,7 @@ void DialogVariables::Fx()
     dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
                                                           qApp->Settings()->GetOsSeparator()));
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
-    dialog->setPostfix(postfix);//Show unit in dialog lable (cm, mm or inch)
+    dialog->setPostfix(postfix);//Show unit in dialog label (cm, mm or inch)
 
     if (dialog->exec() == QDialog::Accepted)
     {

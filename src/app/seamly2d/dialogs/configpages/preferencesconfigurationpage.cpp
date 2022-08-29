@@ -327,7 +327,7 @@ void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
 void PreferencesConfigurationPage::InitUnits()
 {
     ui->unitCombo->addItem(tr("Centimeters"), unitCM);
-    ui->unitCombo->addItem(tr("Millimiters"), unitMM);
+    ui->unitCombo->addItem(tr("Millimeters"), unitMM);
     ui->unitCombo->addItem(tr("Inches"), unitINCH);
 
     // set default unit

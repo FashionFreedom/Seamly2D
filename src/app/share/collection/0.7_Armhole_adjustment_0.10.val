@@ -39,7 +39,7 @@
         <increment name="#HighhipGuideline" description="4 1/2 inches from waist" formula="11.43"/>
         <increment name="#LowHipGuideline" description="8 1/2 inches from waist" formula="21.59"/>
         <increment name="#backNeckLengthGuide" description="9&quot; - Back Neck length guideline industry standard" formula="22.86"/>
-        <increment name="#BackCountouring" description="3/8&quot; - 0.95 cm" formula="0.95"/>
+        <increment name="#BackContouring" description="3/8&quot; - 0.95 cm" formula="0.95"/>
         <increment name="#frontNeckLengthGuide" description="4&quot; front neck guideline" formula="10.16"/>
         <increment name="#crossFrontGuideline" description="8&quot; Cross front guideline" formula="20.32"/>
         <increment name="#crossFrontGuidelineVertical" description="3&quot; from neck guideline vertical" formula="7.62"/>
@@ -74,13 +74,13 @@
             <line typeLine="hair" id="55" firstPoint="50" secondPoint="53" lineColor="black"/>
             <point type="alongLine" typeLine="hair" id="56" name="E" firstPoint="50" secondPoint="53" mx="2.04665" lineColor="black" my="0.351462" length="shoulder_length/2"/>
             <point type="alongLine" typeLine="hair" id="57" name="F" firstPoint="53" secondPoint="50" mx="-1.41412" lineColor="black" my="-2.95711" length="shoulder_length/2"/>
-            <point type="endLine" typeLine="hair" id="58" name="H" basePoint="36" mx="-0.905098" lineColor="black" my="-1.44776" angle="180.08" length="#BackCountouring"/>
+            <point type="endLine" typeLine="hair" id="58" name="H" basePoint="36" mx="-0.905098" lineColor="black" my="-1.44776" angle="180.08" length="#BackContouring"/>
             <point type="alongLine" typeLine="hair" id="59" name="I" firstPoint="36" secondPoint="39" mx="0.132292" lineColor="black" my="0.264583" length="7*#inch"/>
             <point type="endLine" typeLine="hair" id="60" name="R" basePoint="58" mx="-3.43553" lineColor="black" my="0.10483" angle="270" length="#inch/2"/>
             <line typeLine="hair" id="61" firstPoint="60" secondPoint="59" lineColor="black"/>
             <line typeLine="hair" id="62" firstPoint="47" secondPoint="58" lineColor="black"/>
             <point type="alongLine" typeLine="hair" id="64" name="K" firstPoint="58" secondPoint="37" mx="1.72598" lineColor="black" my="-2.84195" length="((waist_circ/4)-#oneFour)/2"/>
-            <point type="alongLine" typeLine="hair" id="65" name="L" firstPoint="64" secondPoint="37" mx="-2.8093" lineColor="black" my="-2.94486" length="((rint((leg_thigh_mid_circ-waist_circ)/#inch)>=0 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=1)?#WaistDartzeroOne:(rint((leg_thigh_mid_circ-waist_circ)/#inch)>=2 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=7)?#WaistDartTwoSeven:(rint((leg_thigh_mid_circ-waist_circ)/#inch)>=8 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=9)?#WaistDartEihtNine:(rint((leg_thigh_mid_circ-waist_circ)/#inch)>=10 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=13)?#WaistDartTenThirteen:#WaistdartfourteenSixteen)-#BackCountouring "/>
+            <point type="alongLine" typeLine="hair" id="65" name="L" firstPoint="64" secondPoint="37" mx="-2.8093" lineColor="black" my="-2.94486" length="((rint((leg_thigh_mid_circ-waist_circ)/#inch)>=0 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=1)?#WaistDartzeroOne:(rint((leg_thigh_mid_circ-waist_circ)/#inch)>=2 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=7)?#WaistDartTwoSeven:(rint((leg_thigh_mid_circ-waist_circ)/#inch)>=8 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=9)?#WaistDartEihtNine:(rint((leg_thigh_mid_circ-waist_circ)/#inch)>=10 &amp;&amp; rint((leg_thigh_mid_circ-waist_circ)/#inch)&lt;=13)?#WaistDartTenThirteen:#WaistdartfourteenSixteen)-#BackContouring "/>
             <point type="alongLine" typeLine="hair" id="66" name="M" firstPoint="65" secondPoint="37" mx="0.132292" lineColor="black" my="0.264583" length="((waist_circ/4)-#oneFour)/2"/>
             <point type="alongLine" typeLine="hair" id="67" name="A1" firstPoint="64" secondPoint="65" mx="-1.03796" lineColor="black" my="-3.1435" length="Line_K_L/2"/>
             <point type="normal" typeLine="hair" id="68" name="N" firstPoint="67" secondPoint="36" mx="0.132292" lineColor="black" my="0.264583" angle="180" length="Line_G_U"/>

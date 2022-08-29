@@ -18,7 +18,7 @@ public:
                                           A4,
                                           Letter,
                                           Legal,
-                                          Roll24in = 7, // Be carefull when change order roll type
+                                          Roll24in = 7, // Be careful when changing order roll type
                                           Roll30in,     // Used also for showing icon
                                           Roll36in,
                                           Roll42in,
