@@ -158,7 +158,7 @@ TMainWindow::TMainWindow(QWidget *parent)
 	ReadSettings();
 
 #if defined(Q_OS_MAC)
-	// On Mac deafault icon size is 32x32.
+	// On Mac default icon size is 32x32.
 	ui->toolBarGradation->setIconSize(QSize(24, 24));
 
 	ui->pushButtonShowInExplorer->setText(tr("Show in Finder"));
@@ -945,7 +945,7 @@ bool TMainWindow::FileSaveAs()
 	if (not lock->IsLocked())
 	{
 		qCCritical(tMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
-														"Expect collissions when run 2 copies of the program.")));
+														"Expect collisions when running 2 copies of the program.")));
 		RemoveTempDir();
 		return false;
 	}
@@ -1261,7 +1261,7 @@ void TMainWindow::Fx()
 	dialog->setWindowTitle(tr("Edit measurement"));
 	dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditFormula->toPlainText().replace("\n", " "),
 														  true));
-	const QString postfix = UnitsToStr(mUnit, true);//Show unit in dialog lable (cm, mm or inch)
+	const QString postfix = UnitsToStr(mUnit, true);//Show unit in dialog label (cm, mm or inch)
 	dialog->setPostfix(postfix);
 
 	if (dialog->exec() == QDialog::Accepted)
@@ -1517,7 +1517,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 			ui->doubleSpinBoxInSizes->blockSignals(true);
 			ui->doubleSpinBoxInHeights->blockSignals(true);
 
-			const QString postfix = UnitsToStr(pUnit);//Show unit in dialog lable (cm, mm or inch)
+			const QString postfix = UnitsToStr(pUnit);//Show unit in dialog label (cm, mm or inch)
 			const qreal value = UnitConvertor(*data->DataVariables()->value(meash->GetName())->GetValue(), mUnit,
 											  pUnit);
 			ui->labelCalculatedValue->setText(qApp->LocaleToString(value) + " " +postfix);
@@ -1700,14 +1700,14 @@ void TMainWindow::SaveMValue()
 	if (formulaField->text() == text)
 	{
 		QTableWidgetItem *result = ui->tableWidget->item(row, ColumnCalcValue);
-		const QString postfix = UnitsToStr(mUnit);//Show unit in dialog lable (cm, mm or inch)
+		const QString postfix = UnitsToStr(mUnit);//Show unit in dialog label (cm, mm or inch)
 		ui->labelCalculatedValue->setText(result->text() + " " +postfix);
 		return;
 	}
 
 	if (text.isEmpty())
 	{
-		const QString postfix = UnitsToStr(mUnit);//Show unit in dialog lable (cm, mm or inch)
+		const QString postfix = UnitsToStr(mUnit);//Show unit in dialog label (cm, mm or inch)
 		ui->labelCalculatedValue->setText(tr("Error") + " (" + postfix + "). " + tr("Empty field."));
 		return;
 	}
@@ -2675,7 +2675,7 @@ QString TMainWindow::ClearCustomName(const QString &name) const
 //---------------------------------------------------------------------------------------------------------------------
 bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label)
 {
-	const QString postfix = UnitsToStr(pUnit);//Show unit in dialog lable (cm, mm or inch)
+	const QString postfix = UnitsToStr(pUnit);//Show unit in dialog label (cm, mm or inch)
 	if (formula.isEmpty())
 	{
 		label->setText(tr("Error") + " (" + postfix + "). " + tr("Empty field."));
@@ -2783,7 +2783,7 @@ void TMainWindow::ReadSettings()
 	restoreState(settings->GetWindowState());
 	restoreState(settings->GetToolbarsState(), APP_VERSION);
 
-	// Text under tool buton icon
+	// Text under tool button icon
 	ToolBarStyles();
 
 	// Stack limit

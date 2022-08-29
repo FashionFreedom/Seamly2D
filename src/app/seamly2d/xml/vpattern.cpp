@@ -267,14 +267,14 @@ void VPattern::Parse(const Document &parse)
  * @brief setCurrentData set current data set.
  *
  * Each time after parsing need set correct data set for current pattern piece. After parsing it is always last.
- * Current data set for pattern pice it is data set for last object in pattern pice (point, arc, spline, spline path so
+ * Current data set for pattern piece it is data set for last object in pattern piece (point, arc, spline, spline path so
  * on).
  */
 void VPattern::setCurrentData()
 {
     if (*mode == Draw::Calculation)
     {
-        if (CountPP() > 1)//don't need upadate data if we have only one pattern piece
+        if (CountPP() > 1)//don't need to update data if we have only one pattern piece
         {
             qCDebug(vXML, "Setting current data");
             qCDebug(vXML, "Current PP name %s", qUtf8Printable(activeDraftBlock));

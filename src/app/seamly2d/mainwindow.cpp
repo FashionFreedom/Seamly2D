@@ -259,7 +259,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 #if defined(Q_OS_MAC)
-    // On Mac deafault icon size is 32x32.
+    // On Mac default icon size is 32x32.
     ui->draft_ToolBar->setIconSize(QSize(24, 24));
     ui->status_ToolBar->setIconSize(QSize(24, 24));
     ui->mode_ToolBar->setIconSize(QSize(24, 24));
@@ -636,7 +636,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         auto cursorResource = cursor;
         if (qApp->devicePixelRatio() >= 2)
         {
-            // Try to load HiDPI versions of the cursors if availible
+            // Try to load HiDPI versions of the cursors if available
             auto cursorHidpiResource = QString(cursor).replace(".png", "@2x.png");
             if (QFileInfo(cursorResource).exists())
             {
@@ -1350,7 +1350,7 @@ void MainWindow::handleEllipticalArcTool(bool checked)
         checked,
         Tool::EllipticalArc,
         ":/cursor/el_arc_cursor.png",
-        tr("<b>Tool::Eliptical Arcs - Elliptical Arc:</b> Select point of center of elliptical arc"),
+        tr("<b>Tool::Elliptical Arcs - Elliptical Arc:</b> Select point of center of elliptical arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolEllipticalArc>,
         &MainWindow::ApplyDrawDialog<VToolEllipticalArc>
     );
@@ -2228,7 +2228,7 @@ void MainWindow::initToolsToolBar()
 {
     /*First we will try use Standard Shortcuts from Qt, but because keypad "-" and "+" not the same keys like in main
     keypad, shortcut Ctrl+"-" or "+" from keypad will not working with standard shortcut (QKeySequence::ZoomIn or
-    QKeySequence::ZoomOut). For examle "+" is Qt::Key_Plus + Qt::KeypadModifier for keypad.
+    QKeySequence::ZoomOut). For example "+" is Qt::Key_Plus + Qt::KeypadModifier for keypad.
     Also for me don't work Qt:CTRL and work Qt::ControlModifier.*/
 
     QList<QKeySequence> zoomInShortcuts;
@@ -3598,7 +3598,7 @@ bool MainWindow::SaveAs()
     if (f.exists())
     {
         // Temporary try to lock the file before saving
-        // Also help to rewite current read-only pattern
+        // Also help to rewrite current read-only pattern
         VLockGuard<char> tmp(fileName);
         if (not tmp.IsLocked())
         {
@@ -4653,7 +4653,7 @@ void MainWindow::ReadSettings()
     // Stack limit
     qApp->getUndoStack()->setUndoLimit(settings->GetUndoCount());
 
-    // Text under tool buton icon
+    // Text under tool button icon
     ToolBarStyles();
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
@@ -5767,7 +5767,7 @@ QString MainWindow::PatternPieceName(const QString &text)
         {
             break; //exit dialog
         }
-        //repeate show dialog
+        //repeat show dialog
         QMessageBox messageBox;
         messageBox.setWindowTitle(tr("Name Exists"));
         messageBox.setIcon(QMessageBox::Warning);
@@ -5825,7 +5825,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     try
     {
         // Here comes undocumented Seamly2D's feature.
-        // Because app bundle in Mac OS X doesn't allow setup assosiation for SeamlyMe we must do this through Seamly2D
+        // Because app bundle in Mac OS X doesn't allow setup association for SeamlyMe we must do this through Seamly2D
         VMeasurements measurements(pattern);
         measurements.SetSize(VContainer::rsize());
         measurements.SetHeight(VContainer::rheight());
@@ -5982,7 +5982,7 @@ QStringList MainWindow::GetUnlokedRestoreFileList() const
     {
         for (int i = 0; i < files.size(); ++i)
         {
-            // Seeking file that realy need reopen
+            // Seeking file that really needs reopen
             VLockGuard<char> tmp(files.at(i));
             if (tmp.IsLocked())
             {

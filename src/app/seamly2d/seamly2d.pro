@@ -45,7 +45,7 @@ DESTDIR = bin
 # Directory for files created moc
 MOC_DIR = moc
 
-# Directory for objecs files
+# Directory for objects files
 OBJECTS_DIR = obj
 
 # Directory for files created rcc
@@ -54,7 +54,7 @@ RCC_DIR = rcc
 # Directory for files created uic
 UI_DIR = uic
 
-# Suport subdirectories. Just better project code tree.
+# Support subdirectories. Just better project code tree.
 include(seamly2d.pri)
 
 # Resource files. This files will be included in binary.
@@ -99,7 +99,7 @@ DVCS_HESH=$$FindBuildRevision()
 message("seamly2d.pro: Build revision:" $${DVCS_HESH})
 DEFINES += "BUILD_REVISION=$${DVCS_HESH}" # Make available build revision number in sources.
 
-# Some extra information about Qt. Can be usefull.
+# Some extra information about Qt. Can be useful.
 message(seamly2d.pro: Qt version: $$[QT_VERSION])
 message(seamly2d.pro: Qt is installed in $$[QT_INSTALL_PREFIX])
 message(seamly2d.pro: Qt resources can be found in the following locations:)
@@ -115,7 +115,7 @@ message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 
 
 
-# Path to recource file.
+# Path to resource file.
 win32:RC_FILE = share/resources/seamly2d.rc
 
 # INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
@@ -244,7 +244,7 @@ unix{
         seamlyme.path = $$MACOS_DIR
         seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$$MACOS_DIR/seamlyme
 
-        # Utility pdftops need for saving a layout image to PS and EPS formates.
+        # Utility pdftops need for saving a layout image to PS and EPS formats.
         xpdf.path = $$MACOS_DIR
         xpdf.files += $${PWD}/../../../dist/macx/bin64/pdftops
 
@@ -596,7 +596,7 @@ noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
     noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
         # do nothing
     } else {
-        # Strip after you link all libaries.
+        # Strip after you link all libraries.
         CONFIG(release, debug|release){
             win32:!*msvc*{
                 # Strip debug symbols.
