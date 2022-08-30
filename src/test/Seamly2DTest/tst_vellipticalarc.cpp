@@ -86,7 +86,7 @@ void TST_VEllipticalArc::CompareTwoWays()
     const qreal lengthEps = ToPixel(0.1, Unit::Mm); // computing error
 
     const QString errorLengthMsg =
-            QString("Difference between real and computing lengthes bigger than eps = %1. l1 = %2; l2 = %3");
+            QString("Difference between real and computing lengths bigger than eps = %1. l1 = %2; l2 = %3");
     QVERIFY2(qAbs(arc2.GetLength() - length) <= lengthEps,
              qUtf8Printable(errorLengthMsg.arg(lengthEps).arg(arc2.GetLength()).arg(length)));
     QVERIFY2(qAbs(arc1.GetLength() - arc2.GetLength()) <= lengthEps,
@@ -119,7 +119,7 @@ void TST_VEllipticalArc::NegativeArc()
 
     const qreal eps = ToPixel(0.45, Unit::Mm); // computing error
     const QString errorMsg =
-            QString("Difference between real and computing lengthes bigger than eps = %1.  v1 = %2; v2 = %3");
+            QString("Difference between real and computing lengths bigger than eps = %1.  v1 = %2; v2 = %3");
 
 
             QVERIFY2(qAbs(arc.GetLength() + length) <= eps,
@@ -361,7 +361,7 @@ void TST_VEllipticalArc::TestGetPoints2()
         const qreal diff = qAbs(resultingDistance - distance);
         const QString errorMsg = QString("Broken the first rule, part 2. Distance from the any point to the focus1"
                                          " plus distance from this point to the focus2 should be the same. Problem"
-                                         " with point '%1'. The disired distance is '%2', but resulting distance"
+                                         " with point '%1'. The desired distance is '%2', but resulting distance"
                                          " is '%3'. Difference is '%4' and it biggest than eps '%5')").number(i)
                                          .number(distance).number(resultingDistance).number(diff).number(eps);
         QVERIFY2( diff <= eps, qUtf8Printable(errorMsg));
@@ -417,7 +417,7 @@ void TST_VEllipticalArc::TestGetPoints4()
         VEllipticalArc arc(center, radius1, radius2, 0, 360, 0);
         const qreal arcLength = arc.GetLength();
         const qreal diffLength = qAbs(arcLength - ellipseLength);
-        const QString errorMsg2 = QString("Difference between real and computing lengthes "
+        const QString errorMsg2 = QString("Difference between real and computing lengths "
                                           "(diff = '%1') bigger than eps = '%2'.").arg(diffLength).arg(epsLength);
         QVERIFY2(diffLength <= epsLength, qUtf8Printable(errorMsg2));
     }
@@ -469,7 +469,7 @@ void TST_VEllipticalArc::TestRotation()
             qUtf8Printable(QString("a1 = %1, a2 - %2").arg(arcOrigin.AngleArc()).arg(rotatedArc.AngleArc())));
 
     QString errorLengthMsg =
-            QString("Difference between real and computing lengthes bigger than eps = %1. l1 = %2; l2 = %3");
+            QString("Difference between real and computing lengths bigger than eps = %1. l1 = %2; l2 = %3");
     QVERIFY2(qAbs(arcOrigin.GetLength() - rotatedArc.GetLength()) <= ToPixel(1, Unit::Mm),
              qUtf8Printable(errorLengthMsg.arg(ToPixel(1, Unit::Mm))
                             .arg(arcOrigin.GetLength())

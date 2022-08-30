@@ -180,7 +180,7 @@ signals:
     /**
      * @brief mouseRelease help catch mouse release event.
      *
-     * Usefull when you need show dialog after working with tool visualization.
+     * Useful when you need show dialog after working with tool visualization.
      */
     void                  mouseRelease();
     void                  itemClicked(QGraphicsItem *item);

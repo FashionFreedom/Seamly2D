@@ -274,7 +274,7 @@ QVector<QPointF> VArc::GetPoints() const
         }
 
         if (angle > 360 || angle < 0)
-        {// Filter incorect value
+        {// Filter incorrect value
             QLineF dummy(0,0, 100, 0);
             dummy.setAngle(angle);
             angle = dummy.angle();

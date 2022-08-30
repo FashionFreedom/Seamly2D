@@ -57,7 +57,7 @@ public:
     //! Adds the property to the model and attaches it to the parentid. Note that if the property has a parent which is
     //! not part of this set, it will be removed from that parent.
     //! \param property The property to add
-    //! \param id The property ID. If id is empty, the property will not be accessable by it's id but still be added.
+    //! \param id The property ID. If id is empty, the property will not be accessible by its id but still be added.
     //! If the property was filed under another ID before, that will no longer be valid.
     //! \param parentid The property's ID to which to add the property as child. Pass empty string to add it to the
     //! root properties.
@@ -65,7 +65,7 @@ public:
 
     //! Adds the property to the model and attaches it to the parent property.
     //! \param property The property to add
-    //! \param id The property ID. If id is empty, the property will not be accessable by it's id but still be added.
+    //! \param id The property ID. If id is empty, the property will not be accessible by its id but still be added.
     //! If the property was filed under another ID before, that will no longer be valid.
     //! \param parent_property The property to which to add the property as child. Pass NULL to add it to the root
     //! properties.
@@ -88,7 +88,7 @@ public:
     //! Removes a property from the set and deletes it optionally
     virtual void removeProperty(VProperty* prop, bool delete_property = true);
 
-    //! Returns the number of properties with in ID that are directly accessable by getProperty()
+    //! Returns the number of properties with in ID that are directly accessible by getProperty()
     virtual int count() const;
 
     //! Clears the set and (optionally) deletes all properties
@@ -129,7 +129,7 @@ protected:
     //! Clones a property into another property set
     void cloneProperty(VProperty* property_to_clone, VProperty* parent_property, VPropertySet* output_set) const;
 
-    //! Recursivly removes a property's child properties from the set, but not from the parent
+    //! Recursively removes a property's child properties from the set, but not from the parent
     virtual void removePropertyFromSet(VProperty* prop);
 
     //! The data

@@ -219,7 +219,7 @@ void VToolSeamAllowance::InsertNode(VPieceNode node, quint32 pieceId, VMainGraph
         node.SetId(id);
         newPiece.GetPath().Append(node);
 
-        // Seam allowance tool already initializated and can't init the node
+        // Seam allowance tool already initialized and can't init the node
         VToolSeamAllowance *patternPiece = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(pieceId));
         SCASSERT(patternPiece != nullptr);
 
@@ -702,7 +702,7 @@ void VToolSeamAllowance::SaveRotationDetail(qreal dRot)
     newPiece.GetPatternPieceData().SetPos(m_dataLabel->pos());
     newPiece.GetPatternPieceData().SetFontSize(m_dataLabel->getFontSize());
 
-    // Tranform angle to anticlockwise
+    // Transform angle to anticlockwise
     QLineF line(0, 0, 100, 0);
     line.setAngle(-dRot);
     newPiece.GetPatternPieceData().SetRotation(QString().setNum(line.angle()));
@@ -760,7 +760,7 @@ void VToolSeamAllowance::SaveRotationPattern(qreal dRot)
     newPiece.GetPatternInfo().SetPos(m_patternInfo->pos());
     newPiece.GetPatternInfo().SetFontSize(m_patternInfo->getFontSize());
 
-    // Tranform angle to anticlockwise
+    // Transform angle to anticlockwise
     QLineF line(0, 0, 100, 0);
     line.setAngle(-dRot);
     newPiece.GetPatternInfo().SetRotation(QString().setNum(line.angle()));
@@ -1737,7 +1737,7 @@ void VToolSeamAllowance::deleteTool(bool ask)
     // If UnionDetails tool delete the piece this object will be deleted only after full parse.
     // Deleting inside UnionDetails cause crash.
     // Because this object should be inactive from no one we disconnect all signals that may cause a crash
-    // KEEP THIS LIST ACTUALL!!!
+    // KEEP THIS LIST ACTUAL!!!
     disconnect(doc, nullptr, this, nullptr);
     if (QGraphicsScene *toolScene = scene())
     {

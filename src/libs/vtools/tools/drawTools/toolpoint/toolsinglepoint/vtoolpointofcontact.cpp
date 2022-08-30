@@ -176,7 +176,7 @@ QPointF VToolPointOfContact::FindPoint(const qreal &radius, const QPointF &cente
             }
         }
         default:
-            qDebug() << "Unxpected value" << res;
+            qDebug() << "Unexpected value" << res;
             break;
     }
     return QPointF();

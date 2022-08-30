@@ -221,7 +221,7 @@ void VAbstractConverter::ReserveFile() const
 
         if (not IsReadOnly() && isFileWritable)
         {
-            const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
+            const QString errorMsg(tr("Error creating a reserve copy: %1.").arg(error));
             throw VException(errorMsg);
         }
     }

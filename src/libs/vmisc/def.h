@@ -324,7 +324,7 @@ enum class GSizes : unsigned char { ALL,
  * This macros SCASSERT (for Stop and Continue Assert) will break into the debugger on the line of the assert and allow
  * you to continue afterwards should you choose to.
  * idea: Q_ASSERT no longer pauses debugger - http://qt-project.org/forums/viewthread/13148
- * Usefull links:
+ * Useful links:
  * 1. What's the difference between __PRETTY_FUNCTION__, __FUNCTION__, __func__? -
  *    https://stackoverflow.com/questions/4384765/whats-the-difference-between-pretty-function-function-func
  *

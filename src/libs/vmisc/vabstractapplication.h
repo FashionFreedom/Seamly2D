@@ -135,7 +135,7 @@ protected:
     QUndoStack         *undoStack;
 
     /**
-     * @brief mainWindow pointer to main window. Usefull if need create modal dialog. Without pointer to main window
+     * @brief mainWindow pointer to main window. Useful if need create modal dialog. Without pointer to main window
      * modality doesn't work.
      */
     QWidget            *mainWindow;

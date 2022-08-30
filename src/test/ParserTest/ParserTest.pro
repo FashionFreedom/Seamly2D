@@ -12,7 +12,7 @@ include(../../../common.pri)
 # We use many core functions.
 QT       += core
 
-# Consol application doesn't need gui.
+# Console application doesn't need gui.
 QT       -= gui
 
 # Name of binary file.
@@ -21,7 +21,7 @@ TARGET = ParserTest
 # Console application, we use C++11 standard.
 CONFIG   += console c++11
 
-# CONFIG += testcase adds a  'make check' which is great. But by default it also
+# CONFIG += testcase adds a 'make check' which is great. But by default it also
 # adds a 'make install' that installs the test cases, which we do not want.
 # Can configure it not to do that with 'no_testcase_installs'
 CONFIG += testcase no_testcase_installs
@@ -35,7 +35,7 @@ TEMPLATE = app
 # directory for executable file
 DESTDIR = bin
 
-# objecs files
+# objects files
 OBJECTS_DIR = obj
 
 HEADERS += \
@@ -78,7 +78,7 @@ noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
     noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
         # do nothing
     } else {
-        # Strip after you link all libaries.
+        # Strip after you link all libraries.
         CONFIG(release, debug|release){
             unix:!macx{
                 # Strip debug symbols.

@@ -527,12 +527,12 @@ QVector<qreal> VSpline::CalcT (qreal curveCoord1, qreal curveCoord2, qreal curve
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VSpline::ParamT calculate t coeffient that reprezent point on curve.
+ * @brief VSpline::ParamT calculate t coefficient that represents point on curve.
  *
  * Each point that belongs to Cubic Bézier curve can be shown by coefficient in interval [0; 1].
  *
  * @param pBt point on curve
- * @return t coeffient that reprezent this point on curve. Return -1 if point doesn't belongs to curve.
+ * @return t coefficient that represents this point on curve. Return -1 if point doesn't belongs to curve.
  */
 qreal VSpline::ParamT (const QPointF &pBt) const
 {

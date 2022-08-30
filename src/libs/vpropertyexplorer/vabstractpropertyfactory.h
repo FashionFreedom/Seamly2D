@@ -39,7 +39,7 @@ public:
     //! Empty virtual destructor
     virtual ~VAbstractPropertyFactory() {}
 
-    //! Creates a new property of a certain type and assigns a name and description (otionally)
+    //! Creates a new property of a certain type and assigns a name and description (optionally)
     //! \param type The type of the property as string
     //! \param name The property's name
     //! \return Returns the created property or NULL if it couldn't be be created

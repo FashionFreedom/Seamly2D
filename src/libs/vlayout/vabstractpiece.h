@@ -280,7 +280,7 @@ QVector<T> VAbstractPiece::CorrectEquidistantPoints(const QVector<T> &points, bo
     //Remove point on line
     for (qint32 i = 0; i < buf1.size(); ++i)
     {// In this case we alwayse will have bounded intersection, so all is need is to check if point i is on line.
-     // Unfortunatelly QLineF::intersect can't be used in this case because of the floating-point accuraccy problem.
+     // Unfortunately QLineF::intersect can't be used in this case because of the floating-point accuracy problem.
         if (prev == -1)
         {
             i == 0 ? prev = buf1.size() - 1 : prev = i-1;

@@ -110,7 +110,7 @@ VToolInternalPath *VToolInternalPath::Create(quint32 _id, const VPiecePath &path
         else
         {
             if (typeCreation == Source::FromGui && path.GetType() == PiecePathType::InternalPath)
-            { // Seam allowance tool already initializated and can't init the path
+            { // Seam allowance tool already initialized and can't init the path
                 SCASSERT(pieceId > NULL_ID);
                 VToolSeamAllowance *saTool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(pieceId));
                 SCASSERT(saTool != nullptr);

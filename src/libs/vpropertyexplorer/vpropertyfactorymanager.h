@@ -68,7 +68,7 @@ public:
     //! \return Returns NULL, if there is none registered for this type
     VAbstractPropertyFactory* getFactory(const QString& type);
 
-    //! Creates a new property of a certain type and assigns a name and description (otionally)
+    //! Creates a new property of a certain type and assigns a name and description (optionally)
     //! \param type The type of the property as string
     //! \param name The name of the property
     //! \param description The property's description. Optional.

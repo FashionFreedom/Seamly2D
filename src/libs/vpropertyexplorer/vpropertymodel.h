@@ -122,14 +122,14 @@ public:
     virtual const VPropertySet* getPropertySet() const;
 
     //! Clears the model, deletes the property set managed by this model.
-    //! \param emit_signals Default: true. Set this to false if you want to prevent the model from emmiting the reset
+    //! \param emit_signals Default: true. Set this to false if you want to prevent the model from emitting the reset
     //! model signals
     virtual void clear(bool emit_signals = true);
 
     //! Removes the current property set and returns it. If new_property_set is set, the old one will be replaced by the
     //! new one
     //! \param new_property_set The new property set to replace the old one with. Default: NULL
-    //! \param emit_signals Default: true. Set this to false if you want to prevent the model from emmiting the reset
+    //! \param emit_signals Default: true. Set this to false if you want to prevent the model from emitting the reset
     //! model signals
     //! \return A constant pointer to the property set or NULL if there currently is none.
     virtual VPropertySet* takePropertySet(VPropertySet* new_property_set = nullptr, bool emit_signals = true);
@@ -137,7 +137,7 @@ public:
     //! Sets a new property set. The model will take ownership of the property set. The old property set will be
     //! deleted.
     //! \param property_set The new property set. Setting this to NULL has the same effect as calling clear.
-    //! \param emit_signals Default: true. Set this to false if you want to prevent the model from emmiting the reset
+    //! \param emit_signals Default: true. Set this to false if you want to prevent the model from emitting the reset
     //! model signals
     virtual void setPropertySet(VPropertySet* property_set, bool emit_signals = true);
 

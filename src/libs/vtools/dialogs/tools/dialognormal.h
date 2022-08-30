@@ -123,7 +123,7 @@ private:
     /** @brief formula formula */
     QString          formula;
 
-    /** @brief angle aditional angle of normal */
+    /** @brief angle additional angle of normal */
     qreal            angle;
 
     /** @brief formulaBaseHeight base height defined by dialogui */

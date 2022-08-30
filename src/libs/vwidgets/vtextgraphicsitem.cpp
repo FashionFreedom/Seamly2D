@@ -540,7 +540,7 @@ void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event )
     else if (m_eMode == mRotate && m_moveType & IsRotatable)
     {
         qDebug() << " Item is Rotatable\n";
-        // if the angle from the original position is small (0.5 degrees), just remeber the new angle
+        // if the angle from the original position is small (0.5 degrees), just remember the new angle
         // new angle will be the starting angle for rotation
         if (fabs(m_angle) < 0.01)
         {

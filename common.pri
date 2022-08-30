@@ -49,7 +49,7 @@ macx{
 CONFIG(release, debug|release){
     !noDebugSymbols:win32:!*msvc*{
         unset(QMAKE_STRIP)
-        QMAKE_STRIP = echo # we do striping manualy
+        QMAKE_STRIP = echo # we do stripping manually
     }
 }
 
@@ -220,8 +220,8 @@ CONFIG(debug, debug|release){
 # Default prefix. Use for creation install path.
 DEFAULT_PREFIX = /usr
 
-# In debug mode on Unix system we use all usefull for us compilers keys for checking errors.
-# Also trying make all possible for speed up build time.
+# In debug mode on Unix systems we use all useful compilers keys for checking errors.
+# Also trying make it as possible to speed-up build time.
 unix {
 
 !macx{
@@ -265,12 +265,12 @@ ISYSTEM += \
     -isystem "$$[QT_INSTALL_LIBS]/QtOpenGL.framework/Versions/5/Headers/"
 }
 
-# Usefull GCC warnings keys.
+# Useful GCC warnings keys.
 GCC_DEBUG_CXXFLAGS += \
-    -O0 \ # Turn off oprimization.
+    -O0 \ # Turn off optimization.
     $$ISYSTEM \ # Ignore warnings Qt headers.
     # Last gdb doesn't show debug symbols with Qt Creator (issue with Python 3 and debug scripts that use Python 2.7).
-    # Solution to use older version gdb, that's why we use old standard of debug information.
+    # Solution to use an older version of gdb, that's why we use older formatting of debug information.
     -gdwarf-3 \
     -Wall \
     -Wextra \
@@ -343,12 +343,12 @@ g++7:GCC_DEBUG_CXXFLAGS += \
     -Walloc-zero \
     -Wnonnull
 
-# Usefull Clang warnings keys.
+# Useful Clang warnings keys.
 CLANG_DEBUG_CXXFLAGS += \
-    -O0 \ # Turn off oprimization.
+    -O0 \ # Turn off optimization.
     $$ISYSTEM \ # Ignore warnings in Qt headers.
     # Last gdb doesn't show debug symbols with Qt Creator (issue with Python 3 and debug scripts that use Python 2.7).
-    # Solution to use older version gdb, that's why we use old standard of debug information.
+    # Solution to use older version gdb, that's why we use older formatting of debug information.
     -gdwarf-3 \
     -fparse-all-comments \
     -Wabi \

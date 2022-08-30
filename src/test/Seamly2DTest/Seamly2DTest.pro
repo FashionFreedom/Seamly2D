@@ -35,7 +35,7 @@ DESTDIR = bin
 # Directory for files created moc
 MOC_DIR = moc
 
-# objecs files
+# objects files
 OBJECTS_DIR = obj
 
 DEFINES += SRCDIR=\\\"$$PWD/\\\"

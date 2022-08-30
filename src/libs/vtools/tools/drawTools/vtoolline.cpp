@@ -309,7 +309,7 @@ void VToolLine::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief AddToFile add tag with informations about tool into file.
+ * @brief AddToFile add tag with information about tool into file.
  */
 void VToolLine::AddToFile()
 {

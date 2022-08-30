@@ -52,7 +52,7 @@ bool VPE::VPropertyModel::addProperty(VProperty* property, const QString& id, co
         return false;
     }
 
-    if (!d_ptr->Properties) // If not existant, create property set
+    if (!d_ptr->Properties) // If not existent, create property set
     {
         d_ptr->Properties = new VPropertySet();
     }
@@ -172,7 +172,7 @@ bool VPE::VPropertyModel::setData (const QModelIndex& index, const QVariant& val
     {
         bool tmpHasChanged = tmpProperty->setData(value, role);
         if (tmpProperty->getUpdateParent() && tmpHasChanged)
-        {   // If neccessary, update the parent as well
+        {   // If necessary, update the parent as well
             QModelIndex tmpParentIndex = parent(index);
             emit dataChanged(tmpParentIndex, tmpParentIndex);
         }

@@ -329,7 +329,7 @@ QPainterPath VPiece::SeamAllowancePath(const QVector<QPointF> &points) const
 {
     QPainterPath ekv;
 
-    // seam allowence
+    // seam allowance
     if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
     {
         if (not points.isEmpty())
@@ -353,7 +353,7 @@ QPainterPath VPiece::getNotchesPath(const VContainer *data, const QVector<QPoint
     const QVector<QLineF> notches = createNotchLines(data, pathPoints);
     QPainterPath path;
 
-    // seam allowence
+    // seam allowance
     if (IsSeamAllowance())
     {
         if (not notches.isEmpty())

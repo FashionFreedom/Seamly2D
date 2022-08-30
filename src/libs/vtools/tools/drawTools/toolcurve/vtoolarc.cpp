@@ -83,7 +83,7 @@ const QString VToolArc::ToolType = QStringLiteral("simple");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VToolArc constuctor.
+ * @brief VToolArc constructor.
  * @param doc dom document container
  * @param data container with variables
  * @param id object id in container

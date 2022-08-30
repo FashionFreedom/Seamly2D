@@ -40,7 +40,7 @@ DESTDIR = bin
 # files created moc
 MOC_DIR = moc
 
-# objecs files
+# objects files
 OBJECTS_DIR = obj
 
 # Allow MAC OS X to find library inside a bundle

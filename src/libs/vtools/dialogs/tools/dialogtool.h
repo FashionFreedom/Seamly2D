@@ -184,14 +184,14 @@ protected:
     /** @brief flagFormula true if formula correct */
     bool             flagFormula;
 
-    /** @brief flagError use this flag if for you do not enought @see flagName and @see flagFormula.
+    /** @brief flagError use this flag if for you do not @see flagName and @see flagFormula enough.
      *
-     * In many cases you will need more flags fore checking if all data are valid.
+     * In many cases you will need more flags for checking if all data is valid.
      * By default this flag is true.
      */
     bool             flagError;
 
-    /** @brief timerFormula timer for check formula */
+    /** @brief timerFormula timer to check formula */
     QTimer           *timerFormula;
 
     /** @brief bOk button ok */
