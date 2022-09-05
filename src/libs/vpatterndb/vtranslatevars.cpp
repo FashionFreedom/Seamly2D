@@ -221,7 +221,7 @@ void VTranslateVars::InitPatternMakingSystems()
     //=================================================================================================================
     name = translate("VTranslateVars", "Rohr", "System name");
     author = translate("VTranslateVars", "M. Rohr", "Author name");
-    book = translate("VTranslateVars", "Pattern Drafting and Grading: Women's nd Misses' Garment Design", "Book name");
+    book = translate("VTranslateVars", "Pattern Drafting and Grading: Women's and Misses' Garment Design", "Book name");
     InitSystem(p23_S, name, author, book);
     //=================================================================================================================
     name = translate("VTranslateVars", "Moore", "System name");

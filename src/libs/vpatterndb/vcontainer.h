@@ -258,7 +258,7 @@ private:
 Q_DECLARE_TYPEINFO(VContainer, Q_MOVABLE_TYPE);
 
 /*
-*  Defintion of templated member functions of VContainer
+*  Definition of templated member functions of VContainer
 */
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -295,7 +295,7 @@ const QSharedPointer<T> VContainer::GeometricObject(const quint32 &id) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
-* @brief GetVariable return varible by name
+* @brief GetVariable return variable by name
 * @param name variable's name
 * @return variable
 */

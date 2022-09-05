@@ -2004,7 +2004,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
 
     path.removeLast();
 
-    QTest::newRow("Corect unclosed a path, point on line (four unique points)") << path << path;
+    QTest::newRow("Correct unclosed a path, point on line (four unique points)") << path << path;
 
     path.clear();
     path << QPointF(20, 10);
@@ -2021,7 +2021,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
 
     path.removeLast();
 
-    QTest::newRow("Corect unclosed a path, point on line (six unique points)") << path << path;
+    QTest::newRow("Correct unclosed a path, point on line (six unique points)") << path << path;
 
     path.clear();
     path << QPointF(100.96979100571033, 1797.6153764073072);
@@ -2415,7 +2415,7 @@ void TST_VAbstractPiece::BrokenDetailEquidistant_data() const
     QTest::addColumn<QVector<QPointF>>("ekvOrig");
 
     // For more details see the file "collection/bugs/GAVAUDAN Laure - corsage - figure 4.val".
-    // We will test only one detail. The second require too accurate data that we cannot get from debuger.
+    // We will test only one detail. The second require too accurate data that we cannot get from debugger.
     // The test check an open equdistant of correct detail.
     QVector<VSAPoint> points;// Input points.
 

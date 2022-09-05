@@ -191,7 +191,7 @@ const QStringList labelTemplatePlaceholders = QStringList() << pl_size
 const QString cursorArrowOpenHand = QStringLiteral("://cursor/cursor-arrow-openhand.png");
 const QString cursorArrowCloseHand = QStringLiteral("://cursor/cursor-arrow-closehand.png");
 
-// From documantation: If you use QStringLiteral you should avoid declaring the same literal in multiple places: This
+// From documentation: If using QStringLiteral, avoid declaring the same literal in multiple places: This
 // furthermore blows up the binary sizes.
 const QString degreeSymbol = QStringLiteral("°");
 const QString trueStr = QStringLiteral("true");
@@ -684,7 +684,7 @@ Unit StrToUnits(const QString &unit)
  * @brief UnitsToStr translate unit to string.
  *
  * This method used when need write unit in xml file and for showing unit in dialogs.
- * @param unit curent unit
+ * @param unit current unit
  * @param translate true if need show translated name. Default value false.
  * @return string reprezantation for unit.
  */
@@ -749,7 +749,7 @@ void InitLanguages(QComboBox *combobox)
 
     if (combobox->count() == 0 || not englishUS)
     {
-        // English language is internal and doens't have own *.qm file.
+        // English language is internal and doesn't have its own *.qm file.
         QIcon ico(QString(":/flags/United States.png"));
         QString lang = QLocale(en_US).nativeLanguageName();
         combobox->addItem(ico, lang, en_US);

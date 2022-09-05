@@ -62,10 +62,10 @@
 #include <QSharedPointer>
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Calculator class wraper for QMuParser. Make easy initialization math parser.
+ * @brief Calculator class wrapper for QMuParser. Make easy initialization math parser.
  *
- * This constructor hide initialization variables, operators, character sets.
- * Use this constuctor for evaluation formula. All formulas must be converted to internal look.
+ * This constructor hides initialization variables, operators, character sets.
+ * Use this constructor for evaluation formula. All formulas must be converted to internal look.
  * Example:
  *
  * const QString formula = qApp->FormulaFromUser(edit->text());
@@ -87,7 +87,7 @@ Calculator::Calculator()
 /**
  * @brief eval calculate formula.
  *
- * First we try eval expression without adding variables. If it fail, we take tokens from expression and add variables
+ * First we try eval expression without adding variables. If it fails, we take tokens from expression and add variables
  * to parser and try again.
  *
  * @param formula string of formula.
@@ -95,7 +95,7 @@ Calculator::Calculator()
  */
 qreal Calculator::EvalFormula(const QHash<QString, QSharedPointer<VInternalVariable>> *vars, const QString &formula)
 {
-    // Parser doesn't know any variable on this stage. So, we just use variable factory that for each unknown variable
+    // Parser doesn't know any variable at this stage. So, we just use variable factory that for each unknown variable
     // set value to 0.
     SetVarFactory(AddVariable, this);
     SetSepForEval();//Reset separators options
@@ -107,7 +107,7 @@ qreal Calculator::EvalFormula(const QHash<QString, QSharedPointer<VInternalVaria
 
     QMap<int, QString> tokens = this->GetTokens();
 
-    // Remove "-" from tokens list if exist. If don't do that unary minus operation will broken.
+    // Remove "-" from tokens list if exist or else unary minus operation will broken.
     RemoveAll(tokens, QStringLiteral("-"));
 
     for (int i = 0; i < builInFunctions.size(); ++i)
@@ -133,10 +133,10 @@ qreal Calculator::EvalFormula(const QHash<QString, QSharedPointer<VInternalVaria
 /**
  * @brief Calculator::InitVariables add variables to parser.
  *
- * For optimization purpose we try don't add variables that we don't need.
+ * For optimization purpose we try not to add variables that we don't need.
  *
  * @param vars list of variables.
- * @param tokens all tokens (measurements names, variables with lengths) that parser have found in expression.
+ * @param tokens all tokens (measurements names, variables with lengths) that parser has found in expression.
  * @param formula expression, need for throwing better error message.
  */
 void Calculator::InitVariables(const QHash<QString, QSharedPointer<VInternalVariable> > *vars,

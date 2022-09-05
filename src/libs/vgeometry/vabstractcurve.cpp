@@ -363,7 +363,7 @@ QVector<DirectionArrow> VAbstractCurve::DirectionArrows() const
         for (qint32 i = 1; i <= points.size()-1; ++i)
         {
             arrow = QLineF(points.at(i-1), points.at(i));
-            found_length += arrow.length();//Length that we aready find
+            found_length += arrow.length();//Length that we already found
 
             if (seek_length <= found_length)// if have found more that need stop.
             {

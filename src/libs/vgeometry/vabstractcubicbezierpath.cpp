@@ -89,7 +89,7 @@ VAbstractCubicBezierPath::~VAbstractCubicBezierPath()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetPath return QPainterPath which reprezent spline path.
+ * @brief GetPath return QPainterPath which represents spline path.
  * @return path.
  */
 QPainterPath VAbstractCubicBezierPath::GetPath() const

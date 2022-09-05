@@ -25,7 +25,7 @@ do
 	basename=${var##*/} # remove the path from a path-string
 	basename=${basename%.png} # remove the extension from a path-string
 	basename=${basename%@2x} # remove optional @2x suffix
-	if [ ! -f $basename@2x.png ]; then # always prefere hidpi version
+	if [ ! -f $basename@2x.png ]; then # always prefer hidpi version
 		sed "s/<<basename>>/$basename@2x/" $OUTPATH/template_cursor.svg > $OUTPATH/${basename}_cursor.svg
 	else
 		sed "s/<<basename>>/$basename/" $OUTPATH/template_cursor.svg > $OUTPATH/${basename}_cursor.svg

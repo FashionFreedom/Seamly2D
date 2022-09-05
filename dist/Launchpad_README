@@ -53,7 +53,7 @@ If all goes well, you can leave your pbuilder environment by typing:
 	exit
 - Tell the pbuilder environment that it is going to act just like the Launchpad build farm
 Still in our terminal:
-    sudo pbuilder create --debootstrapopts --variant=buildd
+    sudo pbuilder create --debootstrapopts --variant=build
 -  Update our environment with these new packages
 Still in our terminal, type:
 	sudo pbuilder --update --override-config
@@ -86,7 +86,7 @@ DEBEMAIL="<Your email address>"
         lp:seamly2d
         merge packaging lp:~dismine/seamly2d/debian
 
-	Next command usefull for local testing creation recipe.
+	Next command useful for local testing creation recipe.
 - Run command
     cd bzr
     bzr dailydeb --allow-fallback-to-native seamly2d.recipe working-dir

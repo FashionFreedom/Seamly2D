@@ -34,7 +34,7 @@
 - [#689] Grainline default values swapped around.
 - [#688] Difficult to enter numbers in SeamlyMe.
 - Fixed bug in SeamlyMe app. SeamlyMe showed birth date in wrong locale.
-- Fixed bug in dialog Internal Piece Path. Value from the field After rewrited data in the field Before.
+- Fixed bug in dialog Internal Piece Path. Value from the field After rewritten data in the field Before.
 - Tab Pins moved to be second in the list after tab Paths. 
 - Added tooltip for tab Passmark. Explained meaning of check box "Show the second passmark on seam line". 
 - [#696] Wrong grainline position on layout.
@@ -45,7 +45,7 @@
 - [#703] Seamly2D warns about format rewriting for unsaved files.
 - [#704] Seamly2D crashes if click on detail.
 - [#706] Default unit in preferences not changing new file unit.
-- Fix bug. Seamly2D overrids exported file even if a user said no.
+- Fix bug. Seamly2D overrides exported file even if a user said no.
 - Fix bug. Date on label doesn't obey GUI language locale.
 - Tool Seam allowance's bounding box should not include passmarks.
 - Fix grainline position on layout.
@@ -151,7 +151,7 @@
 ## Version 0.4.4 April 12, 2016
 - Updated measurement templates with all measurements. Added new template Aldrich/Women measurements.
 - Updated description measurements N06 and N07. Add new measurements A23 and J10.
-- Fixed GUI issue. After full parse some widgets was incorrectly reseted.
+- Fixed GUI issue. After full parse some widgets was incorrectly reset.
 - [#464] Crash. Issue with modeling node objects.
 - [#463] Wrong export to DXF format.
 - Fixed issue with deleting detail nodes.
@@ -178,7 +178,7 @@
 - Regesign dialogs tool 'Spline' and 'Spline Path' for avoiding text squeeze.
 - Fixed getting correct reversed segment for single in the list curve.
 - Fixed triggering validation a detail. Two new cases: has been changed Reverse option and the list 
-has been scrolled. Fixed validation when the list conatains only curve.
+has been scrolled. Fixed validation when the list contains only curve.
 - Fixed broken path to measurements after using Save As option.
 - Tool line. Block selecting the same point twice.
 - [#443] Not valid dxf file. libdxf updated to version 3.12.2.0. Fixed drawing subpaths.

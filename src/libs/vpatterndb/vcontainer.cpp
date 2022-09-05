@@ -250,7 +250,7 @@ quint32 VContainer::getId()
 quint32 VContainer::getNextId()
 {
     //TODO. Current count of ids are very big and allow us save time before someone will reach its max value.
-    //Better way, of cource, is to seek free ids inside the set of values and reuse them.
+    //Better way, of course, is to seek free ids inside the set of values and reuse them.
     //But for now better to keep it as it is now.
     if (_id == UINT_MAX)
     {

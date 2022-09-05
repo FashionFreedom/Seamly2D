@@ -59,7 +59,7 @@ signals:
     //! This signal is emitted when the user changed the current shortcut
     void dataChangedByUser(const QKeySequence& sequence, VShortcutEditWidget* editor);
 
-    //! This signal is emitted whenever dataChangedByUser() gets emmitted
+    //! This signal is emitted whenever dataChangedByUser() gets emitted
     //! and is connected to the delegate's commitData() signal
     void commitData(QWidget* editor);
 

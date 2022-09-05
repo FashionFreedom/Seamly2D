@@ -71,13 +71,13 @@ public:
     virtual QString ErrorMessage() const Q_DECL_OVERRIDE;
     QString         String() const;
 protected:
-    /** @brief str string, where happend error */
+    /** @brief str string, where the error happened */
     QString         str;
 };
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief String return string, where happend error
+ * @brief String return string, where the error happened
  * @return string
  */
 inline QString VExceptionConversionError::String() const

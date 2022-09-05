@@ -802,7 +802,7 @@ void DialogInternalPath::InitSeamAllowanceTab()
     m_timerWidthAfter = new QTimer(this);
     connect(m_timerWidthAfter, &QTimer::timeout, this, &DialogInternalPath::evaluateAfterWidth);
 
-    // Default value for seam allowence is 1 cm. But pattern have different units, so just set 1 in dialog not enough.
+    // Default value for seam allowance is 1 cm. But pattern have different units, so just set 1 in dialog not enough.
     m_saWidth = UnitConvertor(1, Unit::Cm, qApp->patternUnit());
     ui->widthFormula_PlainTextEdit->setPlainText(qApp->LocaleToString(m_saWidth));
 

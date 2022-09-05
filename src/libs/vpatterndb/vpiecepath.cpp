@@ -549,7 +549,7 @@ bool VPiecePath::Contains(quint32 id) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief OnEdge checks if two poins located on the edge. Edge is line between two points. If between two points
+ * @brief OnEdge checks if two points located on the edge. Edge is line between two points. If between two points
  * located arcs or splines ignore this.
  * @param p1 id first point.
  * @param p2 id second point.

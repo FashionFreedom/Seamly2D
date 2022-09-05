@@ -78,7 +78,7 @@ public:
 
     virtual ~VGObjectData();
 
-    /** @brief _id id in container. Ned for arcs, spline and spline paths. */
+    /** @brief _id id in container. Needed for arcs, spline and spline paths. */
     quint32 _id;
 
     /** @brief type type of graphical object */

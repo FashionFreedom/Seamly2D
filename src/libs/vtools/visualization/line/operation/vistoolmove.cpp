@@ -138,7 +138,7 @@ void VisToolMove::RefreshGeometry()
         if (QGuiApplication::keyboardModifiers() == Qt::ShiftModifier)
         {
             line = QLineF(m_origin, Visualization::scenePos);
-            line.setAngle(CorrectAngle(line.angle()));    //contrain move line angle to preference setting
+            line.setAngle(CorrectAngle(line.angle()));    //constrain move line angle to preference setting
         }
         else
         {
@@ -176,7 +176,7 @@ void VisToolMove::RefreshGeometry()
 
             if (QGuiApplication::keyboardModifiers() == Qt::ShiftModifier)
             {
-                rotationLine.setAngle(CorrectAngle(rotationLine.angle())); //contrain rotation line angle to preference
+                rotationLine.setAngle(CorrectAngle(rotationLine.angle())); //constrain rotation line angle to preference
             }
 
             qreal cursorLength = rotationLine.length();

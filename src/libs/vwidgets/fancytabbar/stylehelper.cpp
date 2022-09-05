@@ -134,7 +134,7 @@ void StyleHelper::drawIconWithShadow(const QIcon &icon, const QRect &rect, QPain
         // High-dpi support: The in parameters (rect, radius, offset) are in
         // device-independent pixels. The call to QIcon::pixmap() below might
         // return a high-dpi pixmap, which will in that case have a devicePixelRatio
-        // different than 1. The shadow drawing caluculations are done in device
+        // different than 1. The shadow drawing calculations are done in device
         // pixels.
         QPixmap px = icon.pixmap(rect.size());
         int devicePixelRatio = qCeil(px.devicePixelRatio());

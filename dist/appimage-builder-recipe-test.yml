@@ -57,7 +57,7 @@ script:
   - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
   - sudo ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
 
-  # assign ownership of AppDir and subdirs & files to onwer 'runner' and group 'docker'
+  # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
   - sudo chown -R runner:docker AppDir && ls -al AppDir
 
   - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="

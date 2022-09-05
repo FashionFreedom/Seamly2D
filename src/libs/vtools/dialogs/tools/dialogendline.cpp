@@ -249,7 +249,7 @@ void DialogEndLine::SetTypeLine(const QString &value)
 void DialogEndLine::SetFormula(const QString &value)
 {
     formulaLength = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
+    // increase height if needed. TODO : see if I can get the max number of characters in one line
     // of this PlainTextEdit to change 80 to this value
     if (formulaLength.length() > 80)
     {
@@ -272,7 +272,7 @@ void DialogEndLine::SetFormula(const QString &value)
 void DialogEndLine::SetAngle(const QString &value)
 {
     formulaAngle = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
-    // increase height if needed. TODO : see if I can get the max number of caracters in one line
+    // increase height if needed. TODO : see if I can get the max number of characters in one line
     // of this PlainTextEdit to change 80 to this value
     if (formulaAngle.length() > 80)
     {

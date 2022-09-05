@@ -80,7 +80,7 @@ void VPE::VPropertyFactoryManager::unregisterFactory(VAbstractPropertyFactory* f
 
     if (!type.isEmpty())
     {
-        // Remove all occurances
+        // Remove all occurrences
         QString tmpKey;
         do
         {

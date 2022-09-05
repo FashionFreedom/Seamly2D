@@ -8,7 +8,7 @@ if %ARCHITECTURE%==32BIT set nsis_path="C:/Program Files/Inno Setup 5/iscc.exe"
 if %ARCHITECTURE%==64BIT set nsis_path="C:/Program Files (x86)/Inno Setup 5/iscc.exe"
 
 if not exist %nsis_path% (
-  echo Coudn't find Inno Setup. Package will not be created.
+  echo Couldn't find Inno Setup. Package will not be created.
 )
 
 :CONTINUE

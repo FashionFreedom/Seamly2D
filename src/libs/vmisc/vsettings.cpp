@@ -662,7 +662,7 @@ QMarginsF VSettings::GetTiledPDFMargins(const Unit &unit) const
  * @brief VSettings::SetTiledPDFMargins sets the setting tiled pdf margins to the given value.
  * @param value the margins to save
  * @param unit the unit in which are the value. Necessary because we save the values
- * internaly as mm so there is conversion beeing made.
+ * internally as mm so there is conversion being made.
  */
 void VSettings::SetTiledPDFMargins(const QMarginsF &value, const Unit &unit)
 {

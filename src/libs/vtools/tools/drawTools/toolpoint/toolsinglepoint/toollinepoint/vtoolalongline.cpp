@@ -83,7 +83,7 @@ const QString VToolAlongLine::ToolType = QStringLiteral("alongLine");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VToolAlongLine constuctor.
+ * @brief VToolAlongLine constructor.
  * @param doc dom document container.
  * @param data container with variables.
  * @param id object id in container.

@@ -569,7 +569,7 @@ bool VAbstractPattern::ChangeNamePP(const QString &oldName, const QString &newNa
  * @brief appendPP add new pattern piece.
  *
  * Method check if not exist pattern piece with the same name and change name active pattern piece name, send signal
- * about change pattern piece. Doen't add pattern piece to file structure. This task make SPoint tool.
+ * about change pattern piece. Doesn't add pattern piece to file structure. This task make SPoint tool.
  * @param name pattern peace name.
  * @return true if success.
  */

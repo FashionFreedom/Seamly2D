@@ -157,7 +157,7 @@ void DialogTool::keyPressEvent(QKeyEvent *event)
     {
         case Qt::Key_Escape:
             DialogRejected();
-            return; // After reject the dialog will be destroyed, exit imidiately
+            return; // After reject the dialog will be destroyed, exit immediately
         default:
             break;
     }
@@ -166,7 +166,7 @@ void DialogTool::keyPressEvent(QKeyEvent *event)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief closeEvent handle when dialog cloded
+ * @brief closeEvent handle when dialog closed
  * @param event event
  */
 void DialogTool::closeEvent(QCloseEvent *event)
@@ -177,7 +177,7 @@ void DialogTool::closeEvent(QCloseEvent *event)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief showEvent handle when window show
+ * @brief showEvent handle when window shown
  * @param event event
  */
 void DialogTool::showEvent(QShowEvent *event)
@@ -785,7 +785,7 @@ void DialogTool::ValFormulaChanged(bool &flag, QPlainTextEdit *edit, QTimer *tim
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief Eval evaluate formula and show result
- * @param text expresion that we parse
+ * @param text expression that we parse
  * @param flag flag state of eval formula
  * @param label label for signal error
  * @param postfix unit name
@@ -797,7 +797,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
     SCASSERT(label != nullptr)
     SCASSERT(labelEditFormula != nullptr)
 
-    qreal result = INT_MIN;//Value can be 0, so use max imposible value
+    qreal result = INT_MIN;//Value can be 0, so use max impossible value
 
     if (text.isEmpty())
     {
@@ -1264,7 +1264,7 @@ void DialogTool::EvalFormula()
 {
     SCASSERT(plainTextEditFormula != nullptr)
     SCASSERT(labelResultCalculation != nullptr)
-    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog lable (cm, mm or inch)
+    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog label (cm, mm or inch)
     Eval(plainTextEditFormula->toPlainText(), flagFormula, labelResultCalculation, postfix, false);
 }
 

@@ -403,7 +403,7 @@ public slots:
     void           SelectedDetail(quint32 id);
 
 protected:
-    /** @brief nameActivDraw name current pattern peace. */
+    /** @brief nameActivDraw name current pattern piece. */
     QString        activeDraftBlock;
 
     QString        lastSavedExportFormat;
@@ -416,7 +416,7 @@ protected:
     /** @brief history history records. */
     QVector<VToolRecord> history;
 
-    /** @brief patternPieces list of patern pieces names for combobox*/
+    /** @brief patternPieces list of pattern pieces names for combobox*/
     QStringList    patternPieces;
 
     /** @brief modified keep state of the document for cases that do not cover QUndoStack*/

@@ -63,7 +63,7 @@ signals:
     //! to select a new file or changing the file path in the line edit.
     void dataChangedByUser(const QString &getFile, VFileEditWidget* editor);
 
-    //! This signal is emitted whenever dataChangedByUser() gets emmitted
+    //! This signal is emitted whenever dataChangedByUser() gets emitted
     //! and is connected to the delegate's commitData() signal
     void commitData(QWidget* editor);
 

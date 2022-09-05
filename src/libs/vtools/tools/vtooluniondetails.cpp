@@ -666,7 +666,7 @@ void FindIndexJ(qint32 pointsD2, const VPiecePath &d2Path, quint32 indexD2, qint
         const int k = removedD2.indexOfNode(node2.GetId());
         SCASSERT(k != -1)
         if (k == removedD2.CountNodes()-1)
-        {//We have last node in detail, we wil begin from 0
+        {// We have last node in detail, we will begin from 0
             j = 0;
         }
         else
@@ -1372,7 +1372,7 @@ void UniteDetails(quint32 id, const VToolUnionDetailsInitData &initData)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VToolUnionDetails costructor.
+ * @brief VToolUnionDetails constructor.
  * @param id object id in container.
  * @param initData global init data.
  * @param parent parent object.
@@ -1509,7 +1509,7 @@ VToolUnionDetails* VToolUnionDetails::Create(const quint32 _id, const VToolUnion
         //Scene doesn't show this tool, so doc will destroy this object.
         unionDetails = new VToolUnionDetails(id, initData);
         VAbstractPattern::AddTool(id, unionDetails);
-        // Unfortunatelly doc will destroy all objects only in the end, but we should delete them before each FullParse
+        // Unfortunately doc will destroy all objects only in the end, but we should delete them before each FullParse
         initData.doc->AddToolOnRemove(unionDetails);
     }
     UniteDetails(id, initData);

@@ -59,7 +59,7 @@
 /**
  * @brief VExceptionConversionError exception conversion error
  * @param error string with error
- * @param str string, where happend error
+ * @param str string, where the error happened
  */
 VExceptionConversionError::VExceptionConversionError(const QString &error, const QString &str)
     :VException(error), str(str)

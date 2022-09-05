@@ -517,7 +517,7 @@ bool VGObject::IsPointOnLineviaPDP(const QPointF &t, const QPointF &p1, const QP
 {
     const double p = qAbs(PerpDotProduct(p1, p2, t));
     const double e = GetEpsilon(p1, p2);
-    // We can't use common "<=" here because of the floating-point accuraccy problem
+    // We can't use common "<=" here because of the floating-point accuracy problem
     return p < e || VFuzzyComparePossibleNulls(p, e);
 }
 
@@ -534,13 +534,13 @@ double VGObject::PerpDotProduct(const QPointF &p1, const QPointF &p2, const QPoi
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetEpsilon solve the floating-point accuraccy problem.
+ * @brief GetEpsilon solve the floating-point accuracy problem.
  *
- * There is the floating-point accuraccy problem, so instead of checking against zero, some epsilon value has to be
+ * There is the floating-point accuracy problem, so instead of checking against zero, some epsilon value has to be
  * used. Because the size of the pdp value depends on the length of the vectors, no static value can be used. One
  * approach is to compare the pdp/area value to the fraction of another area which also depends on the length of the
- * line e1=(p1, p2), e.g. the minimal area calucalted with PerpDotProduc() if point still not on the line. This distance
- * is controled by variable accuracyPointOnLine
+ * line e1=(p1, p2), e.g. the minimal area calculated with PerpDotProduc() if point still isn't on the line. This
+ * distance is controlled by variable accuracyPointOnLine
  */
 double VGObject::GetEpsilon(const QPointF &p1, const QPointF &p2)
 {
@@ -570,7 +570,7 @@ int VGObject::PointInCircle(const QPointF &p, const QPointF &center, qreal radiu
 /**
  * @brief GetLengthContour return length of contour.
  * @param contour container with points of contour.
- * @param newPoints point whos we try to add to contour.
+ * @param newPoints point we try to add to contour.
  * @return length length of contour.
  */
 // cppcheck-suppress unusedFunction

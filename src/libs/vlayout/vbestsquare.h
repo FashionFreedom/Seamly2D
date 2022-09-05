@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -77,7 +77,7 @@ public:
     bool IsSaveLength() const;
 
 private:
-    // All nedded information about best result
+    // All needed information for best result
     int resI; // Edge of global contour
     int resJ; // Edge of detail
     QTransform resTransform; // Transform for rotation and translation detail

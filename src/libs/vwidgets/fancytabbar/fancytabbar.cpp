@@ -171,7 +171,7 @@ QPoint FancyTabBar::GetCorner(const QRect& rect, const Corner corner) const
 // You can pass this method a QRect and tell it to move its edges to the outside (+)
 // or inside (-) of the rect. For example, with a TabBar at the Above,
 //
-//      adjustRect(QRect(0,0,10,10), 1, 2, 3, -4)  // thats a 10 by 10 QRect, starting at 0/0
+//      adjustRect(QRect(0,0,10,10), 1, 2, 3, -4)  // that's a 10 by 10 QRect, starting at 0/0
 //
 //  gives
 //

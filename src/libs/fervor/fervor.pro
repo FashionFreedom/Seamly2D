@@ -38,7 +38,7 @@ DESTDIR = bin
 # files created moc
 MOC_DIR = moc
 
-# objecs files
+# objects files
 OBJECTS_DIR = obj
 
 # Directory for files created uic

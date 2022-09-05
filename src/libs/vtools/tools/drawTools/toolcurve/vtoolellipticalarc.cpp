@@ -60,7 +60,7 @@ const QString VToolEllipticalArc::ToolType = QStringLiteral("simple");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VToolEllipticalArc constuctor.
+ * @brief VToolEllipticalArc constructor.
  * @param doc dom document container
  * @param data container with variables
  * @param id object id in container
