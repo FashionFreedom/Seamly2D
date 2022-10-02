@@ -57,7 +57,6 @@ jobs:
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1.11.0
         with:
-          vsversion: "2019"
           # use SVC 2019 latest, 14.29.xxxx
           toolset: '14.29'
 
