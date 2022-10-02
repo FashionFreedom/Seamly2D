@@ -62,9 +62,9 @@ jobs:
 
     steps:
       - name: check upload URL
+        # display upload_url
         run: |
           echo ${{ env.UPLOAD_URL }}
-          echo $UPLOAD_URL
 
       - name: checkout code
         uses: actions/checkout@v2.3.5
