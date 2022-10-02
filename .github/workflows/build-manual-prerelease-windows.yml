@@ -32,6 +32,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: create release data
+        # output is 'upload_url'
         id: create-release-data
         uses: actions/create-release@v1
         env:
@@ -43,11 +44,15 @@ jobs:
           draft: false
           prerelease: true
 
+      - name: show UPLOAD_URL
+        run: |
+          echo ${{ steps.create-release-data.outputs.upload_url }}
+
   windows:
     runs-on: windows-latest
     needs: release-data
     env:
-      UPLOAD_URL: "${{ needs.create-release.outputs.upload_url }}"
+      UPLOAD_URL: "${{ needs.create-release-data.outputs.upload_url }}"
 
     steps:
 
