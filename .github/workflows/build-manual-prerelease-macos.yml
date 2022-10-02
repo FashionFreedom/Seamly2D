@@ -1,4 +1,4 @@
-name: Build manual macos zip
+name: Build manual MacOs zip
 
 on:
   workflow_dispatch:
@@ -39,10 +39,17 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Manual test of macos build, creates pre-release
+          body: Manual test of MacOs build, creates pre-release
+          # create unpublished
           draft: false
+          # create pre-release
           prerelease: true
 
+      - name: show UPLOAD_URL
+        #display upload_url then save it as a GITHUB ENV VARIABLE
+        run: |
+          echo ${{ steps.create-release-data.outputs.upload_url }} 
+  
   macos:
     runs-on: macos-latest
     needs: release-data
@@ -50,16 +57,21 @@ jobs:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
+      - name: check upload URL
+        # display upload_url
+        run: |
+          echo "${{ needs.release-data.outputs.upload_url }}"
+          echo "${{ env.UPLOAD_URL }}"
 
       - name: checkout code
         uses: actions/checkout@v2.4.2
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
 
-      - name: make Seamly2D for macos
+      - name: qmake Seamly2D and SeamlyMe
         run: |
           qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           make
