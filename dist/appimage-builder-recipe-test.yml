@@ -10,6 +10,8 @@ script:
   # must clear & recreate AppDir directory so that it is completely empty
   - sudo rm -rf AppDir || true && ls -la  && echo '--- AppDir has been removed ---'
   - sudo mkdir -p AppDir && pwd && ls -la  && echo '--- AppDir has been recreated ---'
+    # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
+  - sudo chown -R runner:docker AppDir && ls -la AppDir
   
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
   - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
@@ -53,9 +55,6 @@ script:
   - echo "=== Copy icon files ==="
   - sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/ && ls -la AppDir/usr/share/icons/hicolor/64x64/apps/
   - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png && ls -la AppDir/usr/share/icons/hicolor/256x256/
-
-  # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
-  - sudo chown -R runner:docker AppDir && ls -la AppDir
 
   - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
 
