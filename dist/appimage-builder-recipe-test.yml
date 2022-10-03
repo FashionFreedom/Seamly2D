@@ -28,11 +28,8 @@ script:
   - sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256 && ls -Rla AppDir
 
   - echo "=== Add AppDir & subdirs to PATH ==="
-  - sudo export APPDIR=home/runner/work/Seamly2D/Seamly2D/AppDir
-  - sudo export APPDIR_USR=home/runner/work/Seamly2D/Seamly2D/AppDir/usr
-  - sudo export APPDIR_USR_SHARE=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share
-  - sudo export APPDIR_USR_BIN=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin  
-  - sudo export PATH=${PATH}:${APPDIR}:${APPDIR_USR}:${APPDIR_USR_SHARE}:${APPDIR_USR_BIN} && echo $PATH
+  - echo $PATH
+  - sudo export PATH=${PATH}:home/runner/work/Seamly2D/Seamly2D/AppDir:home/runner/work/Seamly2D/Seamly2D/AppDir/usr:home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share:home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin && echo $PATH
 
   # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
   - echo " === Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ==="
