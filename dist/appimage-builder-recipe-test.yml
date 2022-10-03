@@ -10,14 +10,6 @@ script:
   # must clear & recreate AppDir directory so that it is completely empty
   - sudo rm -rf AppDir || true && ls -la  && echo '--- AppDir has been removed ---'
   - sudo mkdir -p AppDir && pwd && ls -la  && echo '--- AppDir has been recreated ---'
-
-  - echo "=== Add APPDIR to PATH ==="
-  - sudo export BASHDIR=/usr/bin
-  - sudo export APPDIR=home/runner/work/Seamly2D/Seamly2D/AppDir
-  - sudo export APPDIR_USR=home/runner/work/Seamly2D/Seamly2D/AppDir/usr
-  - sudo export APPDIR_USR_SHARE=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share
-  - sudo export APPDIR_USR_BIN=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin  
-  - sudo export PATH=${PATH}:${BASHDIR}:${APPDIR}:${APPDIR_USR}:${APPDIR_USR_SHARE}:${APPDIR_USR_BIN} && echo $PATH
   
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
   - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
@@ -27,10 +19,20 @@ script:
 
   # create directories for diagrams, translations, desktop, and icons
   - echo "=== Create AppDir/usr subdirectories ===" > console.log
+  - sudo mkdir -p AppDir/usr
+  - sudo mkdir -p AppDir/usr/bin
+  - sudo mkdir -p AppDir/usr/share
   - sudo mkdir -p AppDir/usr/share/translations
   - sudo mkdir -p AppDir/usr/share/applications
   - sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
   - sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256 && ls -Rla AppDir
+
+  - echo "=== Add AppDir & subdirs to PATH ==="
+  - sudo export APPDIR=home/runner/work/Seamly2D/Seamly2D/AppDir
+  - sudo export APPDIR_USR=home/runner/work/Seamly2D/Seamly2D/AppDir/usr
+  - sudo export APPDIR_USR_SHARE=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share
+  - sudo export APPDIR_USR_BIN=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin  
+  - sudo export PATH=${PATH}:${APPDIR}:${APPDIR_USR}:${APPDIR_USR_SHARE}:${APPDIR_USR_BIN} && echo $PATH
 
   # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
   - echo " === Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ==="
