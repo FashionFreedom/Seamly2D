@@ -1,4 +1,4 @@
-name: Build manual linux appimage - test 3
+name: Build manual Linux
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Build manual Linux AppImage - Test'
+        description: 'Build manual Linux'
 
 env:
   QT_SELECT: 5
@@ -40,9 +40,16 @@ jobs:
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Manual test of linux appimage build, creates pre-release
+          body: Manual test of Linux build, creates pre-release
+          # create unpublished
           draft: false
+          # create pre-release
           prerelease: true
+
+      - name: show UPLOAD_URL
+        #display upload_url then save it as a GITHUB ENV VARIABLE
+        run: |
+          echo ${{ steps.create-release-data.outputs.upload_url }} 
 
   linux:
     runs-on: ubuntu-20.04
@@ -51,11 +58,17 @@ jobs:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
+      - name: check upload URL
+        # display upload_url
+        run: |
+          echo "${{ needs.release-data.outputs.upload_url }}"
+          echo "${{ env.UPLOAD_URL }}"
+
       - name: checkout code
         uses: actions/checkout@v2.4.2
-        with:
-          submodules: true
-          fetch-depth: 0  
+        #with:
+          #submodules: true
+          #fetch-depth: 0  
 
       - name: install kde
         run: |  
@@ -74,9 +87,9 @@ jobs:
 
       - name: install new qt 5.15.2
         # install-qt-action uses default qt v 5.15.2
-        uses: jurplel/install-qt-action@v3 
+        uses: jurplel/install-qt-action@v3.0.0 
         with:
-          version: '5.15.2'
+          version: ${{ env.QT_VERSION }}
           
       - name: install build dependencies
         run: |  
@@ -108,10 +121,11 @@ jobs:
           echo "-- run appimage-builder with appimage-builder-recipe-test.yml --"
           appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log INFO --skip-test
 
-      - name: copy to final file tag_name
+      - name: copy to final file name Seamly2D-x86_64.AppImage
         run: |
           # ---------------------------------
-          echo "-- find the Seamly2D appimage file & rename it --"        
+          echo "-- find the Seamly2D appimage file & rename it --"   
+          sudo ls -Rla ./AppDir | grep '*.AppImage'    
           ls Seamly2D-continuous-x86_64.AppImage
           sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 

@@ -15,10 +15,10 @@ script:
   - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==================="
   #- INSTALL_ROOT=AppDir make install
   - sudo make -j$(nproc) && echo "=== END MAKE ==================="
-  - sudo make install DESTDIR=AppDir && ls -R AppDir && echo "=== END MAKE INSTALL ==================="
+  - sudo make install DESTDIR=AppDir && ls -Rla AppDir && echo "=== END MAKE INSTALL ==================="
 
   # create directories for diagrams, translations, desktop, and icons
-  - echo "=== create directories =====================" > console.log
+  - echo "=== create AppDir/usr subdirectories =====================" > console.log
   - sudo mkdir -p AppDir/usr/share/translations
   - sudo mkdir -p AppDir/usr/share/applications
   - sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
@@ -30,10 +30,10 @@ script:
 
   # list the contents of the AppDir directory
   - echo "=== list Appdir files ========================"
-  - sudo ls AppDir
+  - sudo ls -Rla AppDir
 
   # list the contents of the src/app/seamlyme/share directory
-  - echo "=== list src/app/seamlyme/share/resouorces directory files ======="
+  - echo "=== list src/app/seamlyme/share/resources directory files ======="
   - sudo ls -Rla ./src/app/seamlyme/share/resources | grep '\.rcc$'
 
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
@@ -49,15 +49,16 @@ script:
   - echo "=== copy .desktop files ==============================="
   - sudo cp dist/seamly2d.desktop AppDir/usr/share/applications
   - sudo cp dist/seamlyme.desktop AppDir/usr/share/applications
-  - sudo ls AppDir/usr/share/applications/*.desktop
+  - sudo ls AppDir/usr/share/applications/seamly*.desktop
 
   # copy icons to the correct directories
   - echo "=== copy icon files ==================================="
   - sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
+  - sudo ls AppDir/usr/share/icons/hicolor/64x64/apps/seamly2d.png
   - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
   - sudo ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
 
-  # assign ownership of AppDir and subdirs & files to onwer 'runner' and group 'docker'
+  # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
   - sudo chown -R runner:docker AppDir && ls -al AppDir
 
   - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="
