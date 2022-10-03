@@ -138,7 +138,7 @@ AppDir:
       command: ./AppRun
       use_host_x: true
 AppImage:
-  arch: x86_64
+  arch: amd64
   update-information: guess
   sign-key: None
 
