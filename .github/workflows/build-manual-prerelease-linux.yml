@@ -96,16 +96,30 @@ jobs:
           # ---------------------------------
           echo "-- install build dependencies --"
           sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
           #----------------------------------
           echo "-- install support for Wayland --"
-          sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev 
+          sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev
+
+          # --------------------------------
+          echo "-- install additional packages ---"
+          sudo apt install -y nickle wish kde-standard kimageformat-plugins libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler97 
+          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
+          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
+          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
 
           # ---------------------------------
           echo "-- create AppDir, will be erased & recreated in appimage-builder script ------"
           sudo mkdir -p AppDir && pwd && ls -la
+
+      - name: compile diagrams.qrc to diagrams.rcc
+        # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
+        run: |
+          echo " =-- Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
+          rcc -no-compress -binary home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources/diagrams.qrc -o home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources.rcc
+          sudo ls -Rla home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources | grep '\.rcc$'    
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
@@ -121,13 +135,12 @@ jobs:
           echo "-- run appimage-builder with appimage-builder-recipe-test.yml --"
           appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log INFO --skip-test
 
-      - name: copy to final file name Seamly2D-x86_64.AppImage
+      - name: copy to final file name Seamly2D-amd64.AppImage
         run: |
           # ---------------------------------
           echo "-- find the Seamly2D appimage file & rename it --"   
-          sudo ls -Rla ./AppDir | grep '*.AppImage'    
-          ls Seamly2D-continuous-x86_64.AppImage
-          sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
+          sudo ls -Rla ./AppDir | grep 'Seamly2D-continuous-x86_64.*'    
+          sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-amd_64.AppImage
 
       - name: upload seamly2d-x86_64.tar.gz artifact
         # upload ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
