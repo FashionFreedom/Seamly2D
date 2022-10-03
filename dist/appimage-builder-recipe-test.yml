@@ -2,66 +2,63 @@
 version: 1
 
 script:
-  - echo "=== BEGIN APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="
+  - echo "=== BEGIN APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
   # get the neon public key into the keyring BEFORE getting the deb package in the next step
   # ---------------------------------
 
-  - echo "=== recreate AppDir, pwd, & ls ========================="
+  - echo "=== Recreate AppDir ==="
   # must clear & recreate AppDir directory so that it is completely empty
-  - sudo rm -rf AppDir || true
-  - sudo mkdir -p AppDir && pwd && ls -la
+  - sudo rm -rf AppDir || true && ls -la  && echo '--- AppDir has been removed ---'
+  - sudo mkdir -p AppDir && pwd && ls -la  && echo '--- AppDir has been recreated ---'
 
-  - echo "=== build Seamly2D & SeamlyMe ====================="
-  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "=== END QMAKE ==================="
+  - echo "=== Add APPDIR to PATH ==="
+  - sudo export BASHDIR=/usr/bin
+  - sudo export APPDIR=home/runner/work/Seamly2D/Seamly2D/AppDir
+  - sudo export APPDIR_USR=home/runner/work/Seamly2D/Seamly2D/AppDir/usr
+  - sudo export APPDIR_USR_SHARE=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share
+  - sudo export APPDIR_USR_BIN=home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin  
+  - sudo export PATH=${PATH}:${BASHDIR}:${APPDIR}:${APPDIR_USR}:${APPDIR_USR_SHARE}:${APPDIR_USR_BIN} && echo $PATH
+  
+  - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
+  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
   #- INSTALL_ROOT=AppDir make install
-  - sudo make -j$(nproc) && echo "=== END MAKE ==================="
-  - sudo make install DESTDIR=AppDir && ls -Rla AppDir && echo "=== END MAKE INSTALL ==================="
+  - sudo make -j$(nproc) && echo "--- END MAKE ---"
+  - sudo make install DESTDIR=AppDir && ls -Rla AppDir && echo "--- END MAKE INSTALL ---"
 
   # create directories for diagrams, translations, desktop, and icons
-  - echo "=== create AppDir/usr subdirectories =====================" > console.log
+  - echo "=== Create AppDir/usr subdirectories ===" > console.log
   - sudo mkdir -p AppDir/usr/share/translations
   - sudo mkdir -p AppDir/usr/share/applications
   - sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
-  - sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
+  - sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256 && ls -Rla AppDir
 
   # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
-  - echo " === compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ==="
+  - echo " === Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ==="
   - rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
-
-  # list the contents of the AppDir directory
-  - echo "=== list Appdir files ========================"
-  - sudo ls -Rla AppDir
-
-  # list the contents of the src/app/seamlyme/share directory
-  - echo "=== list src/app/seamlyme/share/resources directory files ======="
   - sudo ls -Rla ./src/app/seamlyme/share/resources | grep '\.rcc$'
 
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
-  - echo "=== copy measurement diagrams ========================="
-  - sudo cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
-  - sudo ls AppDir/usr/share/diagrams.rcc
+  - echo "=== Copy measurement diagrams ==="
+  - sudo cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share && ls -la AppDir/usr/share/*.rcc
 
   # copy translations (qt's .qm translation files) into $build/share/translations directory
-  - echo "=== copy translation files ============================"
+  - echo "=== Copy translation files ==="
   - sudo cp share/translations/*.qm AppDir/usr/share/translations
 
   # copy .desktop files from $build/dist directory to $build/share/applications directory
-  - echo "=== copy .desktop files ==============================="
-  - sudo cp dist/seamly2d.desktop AppDir/usr/share/applications
-  - sudo cp dist/seamlyme.desktop AppDir/usr/share/applications
-  - sudo ls AppDir/usr/share/applications/seamly*.desktop
+  - echo "=== Copy .desktop files ==="
+  - sudo ls -la dist/seamly*.desktop
+  - sudo cp dist/seamly2d.desktop AppDir/usr/share/applications && cp dist/seamlyme.desktop AppDir/usr/share/applications && ls -la AppDir/usr/share/applications 
 
   # copy icons to the correct directories
-  - echo "=== copy icon files ==================================="
-  - sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
-  - sudo ls AppDir/usr/share/icons/hicolor/64x64/apps/seamly2d.png
-  - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
-  - sudo ls AppDir/usr/share/icons/hicolor/256x256/seamly2d.png
+  - echo "=== Copy icon files ==="
+  - sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/ && ls -la AppDir/usr/share/icons/hicolor/64x64/apps/
+  - sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png && ls -la AppDir/usr/share/icons/hicolor/256x256/
 
   # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
-  - sudo chown -R runner:docker AppDir && ls -al AppDir
+  - sudo chown -R runner:docker AppDir && ls -la AppDir
 
-  - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==================================="
+  - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
 
 AppDir:
   path: ./AppDir
