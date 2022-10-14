@@ -78,7 +78,7 @@
 #include "../vtools/dialogs/tooldialogs.h"
 #include "tools/vtoolseamallowance.h"
 #include "tools/nodeDetails/vtoolinternalpath.h"
-#include "tools/nodeDetails/vtoolpin.h"
+#include "tools/nodeDetails/anchorpoint_tool.h"
 #include "tools/vtooluniondetails.h"
 #include "dialogs/dialogs.h"
 
@@ -656,7 +656,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
                 dialogTool->Build(t);
                 break;
             case Tool::InternalPath:
-            case Tool::Pin:
+            case Tool::AnchorPoint:
             case Tool::InsertNode:
                 dialogTool->SetPiecesList(doc->GetActivePPPieces());
                 break;
@@ -1513,10 +1513,10 @@ void MainWindow::handlePatternPieceTool(bool checked)
 void MainWindow::handleAnchorPointTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButton<DialogPin>
+    SetToolButton<AnchorPointDialog>
     (
         checked,
-        Tool::Pin,
+        Tool::AnchorPoint,
         ":/cursor/anchor_point_cursor.png",
         tr("<b>Tool::Add Details - Add Anchor Point:</b> Select anchor point"),
         &MainWindow::ClosedDialogAnchorPoint);
@@ -1528,7 +1528,7 @@ void MainWindow::ClosedDialogAnchorPoint(int result)
     SCASSERT(dialogTool != nullptr);
     if (result == QDialog::Accepted)
     {
-        VToolPin::Create(dialogTool, doc, pattern);
+        AnchorPointTool::Create(dialogTool, doc, pattern);
     }
     handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
@@ -3109,7 +3109,7 @@ void MainWindow::CancelTool()
         case Tool::EllipticalArc:
             ui->ellipticalArc_ToolButton->setChecked(false);
             break;
-        case Tool::Pin:
+        case Tool::AnchorPoint:
             ui->anchorPoint_ToolButton->setChecked(false);
             break;
         case Tool::InsertNode:
@@ -5035,7 +5035,7 @@ void MainWindow::LastUsedTool()
             ui->ellipticalArc_ToolButton->setChecked(true);
             handleEllipticalArcTool(true);
             break;
-        case Tool::Pin:
+        case Tool::AnchorPoint:
             ui->anchorPoint_ToolButton->setChecked(true);
             handleAnchorPointTool(true);
             break;

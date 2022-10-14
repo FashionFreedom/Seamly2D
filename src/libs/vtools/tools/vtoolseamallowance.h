@@ -81,7 +81,7 @@ public:
     static const QString TagCSA;
     static const QString TagRecord;
     static const QString TagIPaths;
-    static const QString TagPins;
+    static const QString TagAnchors;
 
     static const QString AttrVersion;
     static const QString AttrForbidFlipping;
@@ -91,11 +91,11 @@ public:
     static const QString AttrHeight;
     static const QString AttrUnited;
     static const QString AttrFont;
-    static const QString AttrTopLeftPin;
-    static const QString AttrBottomRightPin;
-    static const QString AttrCenterPin;
-    static const QString AttrTopPin;
-    static const QString AttrBottomPin;
+    static const QString AttrTopLeftAnchor;
+    static const QString AttrBottomRightAnchor;
+    static const QString AttrCenterAnchor;
+    static const QString AttrTopAnchorPoint;
+    static const QString AttrBottomAnchorPoint;
 
     void Remove(bool ask);
 
@@ -106,7 +106,7 @@ public:
     static void AddCSARecord(VAbstractPattern *doc, QDomElement &domElement, const CustomSARecord &record);
     static void AddCSARecords(VAbstractPattern *doc, QDomElement &domElement, const QVector<CustomSARecord> &records);
     static void AddInternalPaths(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &paths);
-    static void AddPins(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &pins);
+    static void addAnchors(VAbstractPattern *doc, QDomElement &domElement, const QVector<quint32> &anchors);
     static void AddPatternPieceData(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
     static void AddPatternInfo(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
     static void AddGrainline(VAbstractPattern *doc, QDomElement &domElement, const VPiece &piece);
@@ -198,7 +198,7 @@ private:
                          VToolSeamAllowance *parent);
     void InitCSAPaths(const VPiece &detail);
     void InitInternalPaths(const VPiece &detail);
-    void InitPins(const VPiece &detail);
+    void initializeAnchorPoints(const VPiece &detail);
 
     bool PrepareLabelData(const VPatternLabelData &labelData, VTextGraphicsItem *labelItem, QPointF &pos,
                           qreal &labelAngle);

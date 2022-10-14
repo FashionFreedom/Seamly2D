@@ -214,8 +214,8 @@ void DialogInternalPath::ShowDialog(bool click)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::CheckState()
 {
-    SCASSERT(bOk != nullptr);
-    bOk->setEnabled(flagName && flagError);
+    SCASSERT(ok_Button != nullptr);
+    ok_Button->setEnabled(flagName && flagError);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -573,12 +573,12 @@ void DialogSpline::ShowDialog(bool click)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSpline::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagError);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagError);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 

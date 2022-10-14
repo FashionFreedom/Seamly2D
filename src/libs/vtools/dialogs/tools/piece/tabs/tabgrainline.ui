@@ -436,7 +436,7 @@
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="grainlineCenterPin_ComboBox"/>
+             <widget class="QComboBox" name="centerGrainlineAnchor_ComboBox"/>
             </item>
            </layout>
           </item>
@@ -453,24 +453,24 @@
              <enum>QFormLayout::ExpandingFieldsGrow</enum>
             </property>
             <item row="0" column="0">
-             <widget class="QLabel" name="labelGrainlineTopPin">
+             <widget class="QLabel" name="topGrainlineAnchor_Label">
               <property name="text">
                <string>Top anchor point:</string>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QComboBox" name="grainlineTopPin_ComboBox"/>
+             <widget class="QComboBox" name="topGrainlineAnchor_ComboBox"/>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="labelGrainlineBottomPin">
+             <widget class="QLabel" name="bottomGrainlineAnchor_Label">
               <property name="text">
                <string>Bottom anchor point:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QComboBox" name="grainlineBottomPin_ComboBox"/>
+             <widget class="QComboBox" name="bottomGrainlineAnchor_ComboBox"/>
             </item>
            </layout>
           </item>

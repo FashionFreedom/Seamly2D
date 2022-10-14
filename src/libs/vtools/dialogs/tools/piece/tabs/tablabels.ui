@@ -770,7 +770,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="dLabelCenterPin_ComboBox"/>
+                  <widget class="QComboBox" name="dLabelCenterAnchor_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -800,24 +800,24 @@
                   <enum>QFormLayout::ExpandingFieldsGrow</enum>
                  </property>
                  <item row="0" column="0">
-                  <widget class="QLabel" name="labelDLTopLeftPin">
+                  <widget class="QLabel" name="labelDLTopLeftAnchor">
                    <property name="text">
                     <string>Top left anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="dLabelTopLeftPin_ComboBox"/>
+                  <widget class="QComboBox" name="dLabelTopLeftAnchor_ComboBox"/>
                  </item>
                  <item row="1" column="0">
-                  <widget class="QLabel" name="labelDLBottomRightPin">
+                  <widget class="QLabel" name="labelDLBottomRightAnchor">
                    <property name="text">
                     <string>Bottom right anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="dLabelBottomRightPin_ComboBox"/>
+                  <widget class="QComboBox" name="dLabelBottomRightAnchor_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -1476,7 +1476,7 @@
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="pLabelCenterPin_ComboBox"/>
+                  <widget class="QComboBox" name="pLabelCenterAnchor_ComboBox"/>
                  </item>
                 </layout>
                </item>
@@ -1506,24 +1506,24 @@
                   <enum>QFormLayout::ExpandingFieldsGrow</enum>
                  </property>
                  <item row="0" column="0">
-                  <widget class="QLabel" name="labelPLTopLeftPin">
+                  <widget class="QLabel" name="labelPLTopLeftAnchor">
                    <property name="text">
                     <string>Top left anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="pLabelTopLeftPin_ComboBox"/>
+                  <widget class="QComboBox" name="pLabelTopLeftAnchor_ComboBox"/>
                  </item>
                  <item row="1" column="0">
-                  <widget class="QLabel" name="labelPLBottomRightPin">
+                  <widget class="QLabel" name="labelPLBottomRightAnchor">
                    <property name="text">
                     <string>Bottom right anchor point:</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="pLabelBottomRightPin_ComboBox"/>
+                  <widget class="QComboBox" name="pLabelBottomRightAnchor_ComboBox"/>
                  </item>
                 </layout>
                </item>

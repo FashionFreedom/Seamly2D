@@ -1,27 +1,4 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogseamallowance.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -31,7 +8,7 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
+ **  Copyright (C) 2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -64,11 +41,11 @@ namespace Ui
     class PathsTab;
     class LabelsTab;
     class GrainlineTab;
-    class PinsTab;
+    class AnchorPointsTab;
     class NotchesTab;
 }
 
-class VisPiecePins;
+class PieceAnchorPointVisual;
 class FancyTabBar;
 
 class DialogSeamAllowance : public DialogTool
@@ -103,7 +80,7 @@ private slots:
     void                        ShowMainPathContextMenu(const QPoint &pos);
     void                        ShowCustomSAContextMenu(const QPoint &pos);
     void                        ShowInternalPathsContextMenu(const QPoint &pos);
-    void                        ShowPinsContextMenu(const QPoint &pos);
+    void                        showAnchorsContextMenu(const QPoint &pos);
 
     void                        ListChanged();
     void                        EnableSeamAllowance(bool enable);
@@ -120,6 +97,7 @@ private slots:
     void                        PathDialogClosed(int result);
     void                        FancyTabChanged(int index);
     void                        TabChanged(int index);
+
     void                        notchTypeChanged(int id);
     void                        notchSubTypeChanged(int id);
     void                        showNotchChanged(int state);
@@ -174,9 +152,9 @@ private slots:
     void                        DeployWidthBeforeFormulaTextEdit();
     void                        DeployWidthAfterFormulaTextEdit();
 
-    void                        GrainlinePinPointChanged();
-    void                        DetailPinPointChanged();
-    void                        PatternPinPointChanged();
+    void                        grainlineAnchorChanged();
+    void                        pieceLabelAnchorChanged();
+    void                        patternLabelAnchorChanged();
 
     void                        EditLabel();
 
@@ -189,35 +167,36 @@ private:
     Ui::PathsTab               *uiPathsTab;
     Ui::LabelsTab              *uiLabelsTab;
     Ui::GrainlineTab           *uiGrainlineTab;
-    Ui::PinsTab                *uiPinsTab;
-    Ui::NotchesTab           *uiNotchesTab;
+    Ui::AnchorPointsTab        *uiAnchorPointsTab;
+    Ui::NotchesTab             *uiNotchesTab;
 
     QWidget                    *m_pathsTab;
     QWidget                    *m_labelsTab;
     QWidget                    *m_grainlineTab;
-    QWidget                    *m_pinsTab;
+    QWidget                    *m_anchorPointsTab;
     QWidget                    *m_notchesTab;
 
     FancyTabBar                *m_ftb;
 
     bool                        applyAllowed;
-    bool                        flagGPin;
-    bool                        flagDPin;
-    bool                        flagPPin;
-    bool                        flagGFormulas;
-    bool                        flagDLAngle;
-    bool                        flagDLFormulas;
-    bool                        flagPLAngle;
-    bool                        flagPLFormulas;
+    bool                        flagGrainlineAnchor;
+    bool                        flagPieceLabelAnchor;
+    bool                        flagPatternLabelAnchor;
+    bool                        flagGrainlineFormula;
+    bool                        flagPieceLabelAngle;
+    bool                        flagPieceLabelFormula;
+    bool                        flagPatternLabelAngle;
+    bool                        flagPatternLabelFormula;
     bool                        flagBeforeFormula;
     bool                        flagAfterFormula;
+    bool                        flagMainPath;
 
     bool                        m_bAddMode;
     qreal                       m_mx;
     qreal                       m_my;
 
     QPointer<DialogTool>        m_dialog;
-    QPointer<VisPiecePins>      m_visPins;
+    QPointer<PieceAnchorPointVisual> m_anchorPoints;
 
     VPieceLabelData             m_oldData;
     VPatternLabelData           m_oldGeom;
@@ -246,7 +225,7 @@ private:
     void                        NewMainPathItem(const VPieceNode &node);
     void                        NewCustomSA(const CustomSARecord &record);
     void                        NewInternalPath(quint32 path);
-    void                        NewPin(quint32 pinPoint);
+    void                        newAnchorPoint(quint32 anchorPoint);
     QString                     GetPathName(quint32 path, bool reverse = false) const;
     bool                        MainPathIsValid() const;
     void                        ValidObjects(bool value);
@@ -270,15 +249,15 @@ private:
     void                        InitNodesList();
     void                        InitNotchesList();
     void                        InitCSAPoint(QComboBox *box);
-    void                        InitPinPoint(QComboBox *box);
+    void                        initAnchorPoint(QComboBox *box);
     void                        InitSAIncludeType();
     void                        InitInternalPathsTab();
     void                        InitPatternPieceDataTab();
     void                        InitLabelsTab();
     void                        InitGrainlineTab();
-    void                        InitPinsTab();
+    void                        initializeAnchorsTab();
     void                        InitNotchesTab();
-    void                        InitAllPinComboboxes();
+    void                        initAnchorPointComboboxes();
 
     void                        SetFormulaSAWidth(const QString &formula);
 
@@ -293,7 +272,7 @@ private:
     void                        SetPLHeight(QString heightFormula);
     void                        SetPLAngle(QString angleFormula);
 
-    void                        ShowPins();
+    void                        showAnchorPoints();
     void                        setMoveExclusions();
 
     QString                     createPieceName() const;

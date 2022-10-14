@@ -23,7 +23,7 @@
 
  ************************************************************************
  **
- **  @file
+ **  @file   anchorpoint_dialog.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   31 1, 2017
  **
@@ -49,42 +49,48 @@
  **
  *************************************************************************/
 
-#ifndef VTOOLPIN_H
-#define VTOOLPIN_H
+#ifndef DIALOGPIN_H
+#define DIALOGPIN_H
 
-#include <QtGlobal>
+#include "dialogtool.h"
 
-#include "vabstractnode.h"
+namespace Ui
+{
+    class AnchorPointDialog;
+}
 
-class DialogTool;
-
-class VToolPin : public VAbstractNode
+class AnchorPointDialog : public DialogTool
 {
     Q_OBJECT
 public:
-    static VToolPin *Create(QSharedPointer<DialogTool> dialog, VAbstractPattern *doc, VContainer *data);
-    static VToolPin *Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstractPattern *doc, VContainer *data,
-                            const Document &parse, const Source &typeCreation, const QString &drawName = QString(),
-                            const quint32 &idTool = 0);
+    explicit AnchorPointDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
+    virtual ~AnchorPointDialog();
 
-    static const QString ToolType;
-    virtual QString getTagName() const Q_DECL_OVERRIDE;
+    void EnbleShowMode(bool disable);
+
+    quint32 GetPieceId() const;
+    void    SetPieceId(quint32 id);
+
+    quint32 GetPointId() const;
+    void    SetPointId(quint32 id);
+
+    virtual void SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
+
 public slots:
-    virtual void FullUpdateFromFile () Q_DECL_OVERRIDE {}
-    virtual void AllowHover(bool enabled) Q_DECL_OVERRIDE;
-    virtual void AllowSelecting(bool enabled) Q_DECL_OVERRIDE;
+    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+
 protected:
-    virtual void AddToFile() Q_DECL_OVERRIDE;
-    virtual void ShowNode() Q_DECL_OVERRIDE {}
-    virtual void HideNode() Q_DECL_OVERRIDE {}
+    virtual void CheckState() Q_DECL_FINAL;
+    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+
 private:
-    Q_DISABLE_COPY(VToolPin)
+    Q_DISABLE_COPY(AnchorPointDialog)
+    Ui::AnchorPointDialog *ui;
+    bool  m_showMode;
+    bool  m_flagPoint;
 
-    quint32 m_pieceId;
-
-    VToolPin(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pointId, quint32 pieceId,
-             const Source &typeCreation, const QString &drawName = QString(), const quint32 &idTool = 0,
-             QObject *qoParent = nullptr);
+    void CheckPieces();
+    void CheckPoint();
 };
 
-#endif // VTOOLPIN_H
+#endif // DIALOGPIN_H

@@ -446,21 +446,21 @@ void VPiece::SetCustomSARecords(const QVector<CustomSARecord> &records)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VPiece::GetPins() const
+QVector<quint32> VPiece::getAnchors() const
 {
-    return d->m_pins;
+    return d->m_anchors;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> &VPiece::GetPins()
+QVector<quint32> &VPiece::getAnchors()
 {
-    return d->m_pins;
+    return d->m_anchors;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPiece::SetPins(const QVector<quint32> &pins)
+void VPiece::setAnchors(const QVector<quint32> &anchors)
 {
-    d->m_pins = pins;
+    d->m_anchors = anchors;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -500,9 +500,9 @@ QVector<quint32> VPiece::MissingInternalPaths(const VPiece &det) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VPiece::MissingPins(const VPiece &det) const
+QVector<quint32> VPiece::missingAnchors(const VPiece &det) const
 {
-    return PieceMissingNodes(d->m_pins, det.GetPins());
+    return PieceMissingNodes(d->m_anchors, det.getAnchors());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

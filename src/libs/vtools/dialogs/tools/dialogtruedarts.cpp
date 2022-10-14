@@ -394,12 +394,12 @@ void DialogTrueDarts::SaveData()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTrueDarts::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName1 && flagName2 && flagError);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName1 && flagName2 && flagError);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 

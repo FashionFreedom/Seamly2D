@@ -140,8 +140,8 @@ private:
 
     VNodeDetail    ParseDetailNode(const QDomElement &domElement) const;
 
-    void           ParseDrawElement(const QDomNode& node, const Document &parse);
-    void           ParseDrawMode(const QDomNode& node, const Document &parse, const Draw &mode);
+    void           ParseDrawElement(const QDomNode &node, const Document &parse);
+    void           ParseDrawMode(const QDomNode &node, const Document &parse, const Draw &mode);
     void           ParseDetailElement(QDomElement &domElement, const Document &parse);
     void           ParseDetailNodes(const QDomElement &domElement, VPiece &detail, qreal width, bool closed) const;
     void           ParsePieceDataTag(const QDomElement &domElement, VPiece &detail) const;
@@ -151,22 +151,22 @@ private:
 
     void           ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElement,
                                      const Document &parse, const QString &type);
-    void           ParseLineElement(VMainGraphicsScene *scene, const QDomElement& domElement,
+    void           ParseLineElement(VMainGraphicsScene *scene, const QDomElement &domElement,
                                     const Document &parse);
     void           ParseSplineElement(VMainGraphicsScene *scene, QDomElement &domElement,
-                                      const Document &parse, const QString& type);
+                                      const Document &parse, const QString &type);
     void           ParseArcElement(VMainGraphicsScene *scene, QDomElement &domElement,
-                                   const Document &parse, const QString& type);
+                                   const Document &parse, const QString &type);
     void           ParseEllipticalArcElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse,
                                              const QString &type);
-    void           ParseToolsElement(VMainGraphicsScene *scene, const QDomElement& domElement,
-                                     const Document &parse, const QString& type);
+    void           ParseToolsElement(VMainGraphicsScene *scene, const QDomElement &domElement,
+                                     const Document &parse, const QString &type);
     void           ParseOperationElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse,
-                                         const QString& type);
+                                         const QString &type);
 
     void           ParsePathElement(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
 
-    void           ParseIncrementsElement(const QDomNode& node);
+    void           ParseIncrementsElement(const QDomNode &node);
     void           PrepareForParse(const Document &parse);
     void           ToolsCommonAttributes(const QDomElement &domElement, quint32 &id);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
@@ -190,7 +190,7 @@ private:
     void ParseToolLineIntersect(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
     void ParseToolPointOfContact(VMainGraphicsScene *scene, QDomElement &domElement, const Document &parse);
     void ParseNodePoint(const QDomElement &domElement, const Document &parse);
-    void ParsePinPoint(const QDomElement &domElement, const Document &parse);
+    void ParseAnchorPoint(const QDomElement &domElement, const Document &parse);
     void ParseToolHeight(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
     void ParseToolTriangle(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
     void ParseToolPointOfIntersection(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);

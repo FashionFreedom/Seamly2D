@@ -90,7 +90,7 @@ DialogCubicBezierPath::DialogCubicBezierPath(const VContainer *data, const quint
     ui->setupUi(this);
 
     InitOkCancelApply(ui);
-    bOk->setEnabled(false);
+    ok_Button->setEnabled(false);
 
     FillComboBoxPoints(ui->comboBoxPoint);
     FillComboBoxLineColors(ui->comboBoxColor);
@@ -310,8 +310,8 @@ void DialogCubicBezierPath::NewItem(const VPointF &point)
     ui->listWidget->setCurrentItem(item);
     if (ui->listWidget->count() >= 7)
     {
-        bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-        bOk->setEnabled(true);
+        ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+        ok_Button->setEnabled(true);
     }
 
     DataPoint(point);

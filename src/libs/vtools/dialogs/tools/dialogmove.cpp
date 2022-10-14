@@ -500,10 +500,10 @@ void DialogMove::originChanged(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(angleFlag && lengthFlag && rotationFlag && flagName);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(bOk->isEnabled());
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(angleFlag && lengthFlag && rotationFlag && flagName);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(ok_Button->isEnabled());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

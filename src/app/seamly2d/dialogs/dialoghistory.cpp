@@ -89,8 +89,8 @@ DialogHistory::DialogHistory(VContainer *data, VPattern *doc, QWidget *parent)
 
     qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    connect(bOk, &QPushButton::clicked, this, &DialogHistory::DialogAccepted);
+    ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    connect(ok_Button, &QPushButton::clicked, this, &DialogHistory::DialogAccepted);
     FillTable();
     InitialTable();
     connect(ui->tableWidget,   &QTableWidget::cellClicked,      this, &DialogHistory::cellClicked);
@@ -456,7 +456,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
             case Tool::NodeSplinePath:
             case Tool::Group:
             case Tool::InternalPath:
-            case Tool::Pin:
+            case Tool::AnchorPoint:
             case Tool::InsertNode:
                 return QString();
         }

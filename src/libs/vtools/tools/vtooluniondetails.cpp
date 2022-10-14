@@ -90,7 +90,7 @@
 #include "nodeDetails/vnodespline.h"
 #include "nodeDetails/vnodesplinepath.h"
 #include "nodeDetails/vtoolinternalpath.h"
-#include "nodeDetails/vtoolpin.h"
+#include "nodeDetails/anchorpoint_tool.h"
 #include "vdatatool.h"
 #include "vnodedetail.h"
 #include "vtoolseamallowance.h"
@@ -223,7 +223,7 @@ QVector<quint32> GetPiece2InternalPaths(VAbstractPattern *doc, quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> GetPiece2Pins(VAbstractPattern *doc, quint32 id)
+QVector<quint32> GetPiece2Anchors(VAbstractPattern *doc, quint32 id)
 {
     const QDomElement tool = doc->elementById(id, VAbstractPattern::TagTools);
     if (tool.isNull())
@@ -242,9 +242,9 @@ QVector<quint32> GetPiece2Pins(VAbstractPattern *doc, quint32 id)
             for (qint32 j = 0; j < detList.size(); ++j)
             {
                 const QDomElement element = detList.at(j).toElement();
-                if (not element.isNull() && element.tagName() == VToolSeamAllowance::TagPins)
+                if (not element.isNull() && element.tagName() == VToolSeamAllowance::TagAnchors)
                 {
-                    return VAbstractPattern::ParsePiecePins(element);
+                    return VAbstractPattern::ParsePieceAnchors(element);
                 }
             }
         }
@@ -407,7 +407,7 @@ quint32 AddNodePoint(const VPieceNode &node, const VToolUnionDetailsInitData &in
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 AddPin(quint32 id, const VToolUnionDetailsInitData &initData, quint32 idTool, QVector<quint32> &children,
+quint32 AddAnchorPoint(quint32 id, const VToolUnionDetailsInitData &initData, quint32 idTool, QVector<quint32> &children,
                const QString &drawName, qreal dx, qreal dy, quint32 pRotate, qreal angle)
 {
     QScopedPointer<VPointF> point(new VPointF(*initData.data->GeometricObject<VPointF>(id)));
@@ -424,10 +424,10 @@ quint32 AddPin(quint32 id, const VToolUnionDetailsInitData &initData, quint32 id
     const quint32 idObject = initData.data->AddGObject(point.take());
     children.append(idObject);
     point1->setMode(Draw::Modeling);
-    const quint32 idPin = initData.data->AddGObject(point1.take());
-    VToolPin::Create(idPin, idObject, 0, initData.doc, initData.data, Document::FullParse, Source::FromTool, drawName,
-                     idTool);
-    return idPin;
+    const quint32 anchorId = initData.data->AddGObject(point1.take());
+    AnchorPointTool::Create(anchorId, idObject, 0, initData.doc, initData.data, Document::FullParse,
+                            Source::FromTool, drawName, idTool);
+    return anchorId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -732,9 +732,9 @@ void SaveInternalPathsChildren(VAbstractPattern *doc, quint32 id, const QVector<
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void SavePinsChildren(VAbstractPattern *doc, quint32 id, const QVector<quint32> &children)
+void SaveAnchorsChildren(VAbstractPattern *doc, quint32 id, const QVector<quint32> &children)
 {
-    SaveChildren(doc, id, doc->createElement(VToolSeamAllowance::TagPins), children);
+    SaveChildren(doc, id, doc->createElement(VToolSeamAllowance::TagAnchors), children);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -790,9 +790,9 @@ QVector<quint32> GetInternalPathsChildren(VAbstractPattern *doc, quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> GetPinChildren(VAbstractPattern *doc, quint32 id)
+QVector<quint32> getAnchorChildren(VAbstractPattern *doc, quint32 id)
 {
-    return GetChildren(doc, id, VToolSeamAllowance::TagPins);
+    return GetChildren(doc, id, VToolSeamAllowance::TagAnchors);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1125,32 +1125,32 @@ void CreateUnitedInternalPaths(VPiece &newDetail, const VPiece &d1, const VPiece
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void CreateUnitedDetailPins(VPiece &newDetail, const VPiece &d, QVector<quint32> &children, quint32 idTool,
+void CreateUnitedDetailAnchors(VPiece &newDetail, const VPiece &d, QVector<quint32> &children, quint32 idTool,
                             const QString &drawName, const VToolUnionDetailsInitData &initData, qreal dx, qreal dy,
                             quint32 pRotate, qreal angle)
 {
     QVector<quint32> nodeChildren;
-    for(int i=0; i < d.GetPins().size(); ++i)
+    for(int i=0; i < d.getAnchors().size(); ++i)
     {
-        const quint32 id = AddPin(d.GetPins().at(i), initData, idTool, children, drawName, dx, dy, pRotate, angle);
-        newDetail.GetPins().append(id);
+        const quint32 id = AddAnchorPoint(d.getAnchors().at(i), initData, idTool, children, drawName, dx, dy, pRotate, angle);
+        newDetail.getAnchors().append(id);
         nodeChildren.prepend(id);
     }
     children += nodeChildren;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void CreateUnitedPins(VPiece &newDetail, const VPiece &d1, const VPiece &d2, quint32 id, const QString &drawName,
+void createUnitedAnchors(VPiece &newDetail, const VPiece &d1, const VPiece &d2, quint32 id, const QString &drawName,
                       const VToolUnionDetailsInitData &initData, qreal dx, qreal dy, quint32 pRotate, qreal angle)
 {
-    for (int i = 0; i < d1.GetPins().size(); ++i)
+    for (int i = 0; i < d1.getAnchors().size(); ++i)
     {
-        newDetail.GetPins().append(d1.GetPins().at(i));
+        newDetail.getAnchors().append(d1.getAnchors().at(i));
     }
 
     QVector<quint32> children;
-    CreateUnitedDetailPins(newDetail, d2, children, id, drawName, initData, dx, dy, pRotate, angle);
-    SavePinsChildren(initData.doc, id, children);
+    CreateUnitedDetailAnchors(newDetail, d2, children, id, drawName, initData, dx, dy, pRotate, angle);
+    SaveAnchorsChildren(initData.doc, id, children);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1273,10 +1273,10 @@ void UpdateUnitedDetailInternalPaths(quint32 id, const VToolUnionDetailsInitData
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void UpdateUnitedDetailPins(quint32 id, const VToolUnionDetailsInitData &initData, qreal dx, qreal dy,
+void UpdateUnitedDetailAnchors(quint32 id, const VToolUnionDetailsInitData &initData, qreal dx, qreal dy,
                             quint32 pRotate, qreal angle, const QVector<quint32> &records)
 {
-    QVector<quint32> children = GetPinChildren(initData.doc, id);
+    QVector<quint32> children = getAnchorChildren(initData.doc, id);
 
     for (int i = 0; i < records.size(); ++i)
     {
@@ -1306,7 +1306,7 @@ void CreateUnitedDetail(quint32 id, const VToolUnionDetailsInitData &initData, q
     CreateUnitedNodes(newDetail, d1, d2, id, drawName, initData, dx, dy, pRotate, angle);
     CreateUnitedCSA(newDetail, d1, d2, id, drawName, initData, dx, dy, pRotate, angle);
     CreateUnitedInternalPaths(newDetail, d1, d2, id, drawName, initData, dx, dy, pRotate, angle);
-    CreateUnitedPins(newDetail, d1, d2, id, drawName, initData, dx, dy, pRotate, angle);
+    createUnitedAnchors(newDetail, d1, d2, id, drawName, initData, dx, dy, pRotate, angle);
 
     newDetail.SetName(QObject::tr("United detail"));
     QString formulaSAWidth = d1.GetFormulaSAWidth();
@@ -1342,7 +1342,7 @@ void UpdateUnitedDetail(quint32 id, const VToolUnionDetailsInitData &initData, q
     UpdateUnitedNodes(id, initData, dx, dy, pRotate, angle);
     UpdateUnitedDetailCSA(id, initData, dx, dy, pRotate, angle, GetPiece2CSAPaths(initData.doc, id));
     UpdateUnitedDetailInternalPaths(id, initData, dx, dy, pRotate, angle, GetPiece2InternalPaths(initData.doc, id));
-    UpdateUnitedDetailPins(id, initData, dx, dy, pRotate, angle, GetPiece2Pins(initData.doc, id));
+    UpdateUnitedDetailAnchors(id, initData, dx, dy, pRotate, angle, GetPiece2Anchors(initData.doc, id));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1550,7 +1550,7 @@ void VToolUnionDetails::AddDetail(QDomElement &domElement, const VPiece &d) cons
     //custom seam allowance
     VToolSeamAllowance::AddCSARecords(doc, det, d.GetCustomSARecords());
     VToolSeamAllowance::AddInternalPaths(doc, det, d.GetInternalPaths());
-    VToolSeamAllowance::AddPins(doc, det, d.GetPins());
+    VToolSeamAllowance::addAnchors(doc, det, d.getAnchors());
 
     domElement.appendChild(det);
 }
@@ -1590,7 +1590,7 @@ QVector<quint32> VToolUnionDetails::GetReferenceObjects() const
     const QStringList parts = QStringList() << VAbstractPattern::TagNodes     /*0*/
                                             << VToolSeamAllowance::TagCSA     /*1*/
                                             << VToolSeamAllowance::TagIPaths  /*2*/
-                                            << VToolSeamAllowance::TagPins;   /*3*/
+                                            << VToolSeamAllowance::TagAnchors;   /*3*/
 
     const QDomNodeList nodesList = tool.childNodes();
     for (qint32 i = 0; i < nodesList.size(); ++i)
@@ -1614,7 +1614,7 @@ QVector<quint32> VToolUnionDetails::GetReferenceObjects() const
                             list += ReferenceObjects(element, VToolSeamAllowance::TagRecord,
                                                      VAbstractPattern::AttrPath);
                             break;
-                        case 3://VToolSeamAllowance::TagPins
+                        case 3://VToolSeamAllowance::TagAnchors
                         {
                             const QDomNodeList children = element.childNodes();
                             for (qint32 i = 0; i < children.size(); ++i)

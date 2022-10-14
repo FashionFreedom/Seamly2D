@@ -243,12 +243,12 @@ void DialogPointOfIntersectionCurves::SaveData()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfIntersectionCurves::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName && flagError);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName && flagError);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 

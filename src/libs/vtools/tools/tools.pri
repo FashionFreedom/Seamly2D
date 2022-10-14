@@ -7,6 +7,7 @@ HEADERS += \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.h \
+    $$PWD/nodeDetails/anchorpoint_tool.h \
     $$PWD/vdatatool.h \
     $$PWD/vabstracttool.h \
     $$PWD/tools.h \
@@ -59,7 +60,6 @@ HEADERS += \
     $$PWD/nodeDetails/vnodeellipticalarc.h \
     $$PWD/vtoolseamallowance.h \
     $$PWD/nodeDetails/vtoolinternalpath.h \
-    $$PWD/nodeDetails/vtoolpin.h \
     $$PWD/vinteractivetool.h
 
 SOURCES += \
@@ -68,6 +68,7 @@ SOURCES += \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.cpp \
+    $$PWD/nodeDetails/anchorpoint_tool.cpp \
     $$PWD/vdatatool.cpp \
     $$PWD/vabstracttool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtooltriangle.cpp \
@@ -116,6 +117,5 @@ SOURCES += \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.cpp \
     $$PWD/nodeDetails/vnodeellipticalarc.cpp \
     $$PWD/vtoolseamallowance.cpp \
-    $$PWD/nodeDetails/vtoolpin.cpp \
     $$PWD/vinteractivetool.cpp \
     $$PWD/nodeDetails/vtoolinternalpath.cpp
