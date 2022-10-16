@@ -184,8 +184,8 @@ void DialogInsertNode::ChosenObject(quint32 id, const SceneObject &type)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInsertNode::CheckState()
 {
-    SCASSERT(bOk != nullptr);
-    bOk->setEnabled(m_flagItem && flagError);
+    SCASSERT(ok_Button != nullptr);
+    ok_Button->setEnabled(m_flagItem && flagError);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

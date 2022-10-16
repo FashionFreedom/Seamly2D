@@ -122,7 +122,7 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     ui->plainTextEditLength2F->installEventFilter(this);
 
     InitOkCancelApply(ui);
-    bOk->setEnabled(false);
+    ok_Button->setEnabled(false);
 
     FillComboBoxPoints(ui->comboBoxPoint);
     FillComboBoxLineColors(ui->comboBoxColor);
@@ -278,7 +278,7 @@ void DialogSplinePath::SaveData()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::CheckState()
 {
-    SCASSERT(bOk != nullptr)
+    SCASSERT(ok_Button != nullptr)
 
     bool fAngle1 = true, fAngle2 = true, fLength1 = true, fLength2 = true;
 
@@ -290,11 +290,11 @@ void DialogSplinePath::CheckState()
         fLength2 = fLength2 && flagLength2.at(i);
     }
 
-    bOk->setEnabled(fAngle1 && fAngle2 && fLength1 && fLength2 && flagError);
+    ok_Button->setEnabled(fAngle1 && fAngle2 && fLength1 && fLength2 && flagError);
     // In case dialog hasn't apply button
-    if (bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 
@@ -808,8 +808,8 @@ void DialogSplinePath::NewItem(const VSplinePoint &point)
     ui->listWidget->setCurrentItem(item);
     if (ui->listWidget->count() >= 2)
     {
-        bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-        bOk->setEnabled(true);
+        ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+        ok_Button->setEnabled(true);
     }
 
     DataPoint(point);

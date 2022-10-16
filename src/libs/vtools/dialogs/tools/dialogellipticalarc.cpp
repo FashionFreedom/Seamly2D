@@ -622,10 +622,10 @@ void DialogEllipticalArc::ChosenObject(quint32 id, const SceneObject &type)
  */
 void DialogEllipticalArc::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagRadius1 && flagRadius2 && flagF1 && flagF2 && flagRotationAngle);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(flagRadius1 && flagRadius2 && flagF1 && flagF2 && flagRotationAngle);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagRadius1 && flagRadius2 && flagF1 && flagF2 && flagRotationAngle);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(flagRadius1 && flagRadius2 && flagF1 && flagF2 && flagRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

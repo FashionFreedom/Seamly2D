@@ -369,8 +369,8 @@ void DialogEditWrongFormula::Functions()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEditWrongFormula::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagFormula);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagFormula);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

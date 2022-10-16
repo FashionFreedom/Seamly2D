@@ -434,11 +434,11 @@ void IntersectCirclesDialog::closeEvent(QCloseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagFormula && flagName && flagError && flagCircle1Radius && flagCircle2Radius);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagFormula && flagName && flagError && flagCircle1Radius && flagCircle2Radius);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if ( apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }

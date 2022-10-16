@@ -340,12 +340,12 @@ void DialogArcWithLength::FXLength()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagRadius && flagF1 && flagLength);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagRadius && flagF1 && flagLength);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if ( apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 

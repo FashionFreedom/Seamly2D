@@ -336,11 +336,11 @@ void IntersectCircleTangentDialog::closeEvent(QCloseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if ( apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
