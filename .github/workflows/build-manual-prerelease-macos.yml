@@ -1,4 +1,4 @@
-name: Build manual macos zip
+name: Build manual MacOs
 
 on:
   workflow_dispatch:
@@ -33,16 +33,23 @@ jobs:
 
       - name: create release data
         id: create-release-data
-        uses: actions/create-release@v1.10.0
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ env.TAG_NAME }}
           release_name: ${{ env.RELEASE_NAME }}
-          body: Manual test of macos build, creates pre-release
+          body: Manual test of MacOs build, creates pre-release
+          # create unpublished
           draft: false
+          # create pre-release
           prerelease: true
 
+      - name: show UPLOAD_URL
+        #display upload_url then save it as a GITHUB ENV VARIABLE
+        run: |
+          echo ${{ steps.create-release-data.outputs.upload_url }} 
+  
   macos:
     runs-on: macos-latest
     needs: release-data
@@ -50,16 +57,21 @@ jobs:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
+      - name: check upload URL
+        # display upload_url
+        run: |
+          echo "${{ needs.release-data.outputs.upload_url }}"
+          echo "${{ env.UPLOAD_URL }}"
 
       - name: checkout code
         uses: actions/checkout@v2.4.2
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3.0.0
         with:
           version: ${{ env.QT_VERSION }}
 
-      - name: make Seamly2D for macos
+      - name: qmake Seamly2D and SeamlyMe
         run: |
           qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
           make
@@ -74,7 +86,8 @@ jobs:
           zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.1.3
+        uses: actions/upload-release-asset@v1.0.2
+        # uses: softprops/action-gh-release@v0.1.14
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
