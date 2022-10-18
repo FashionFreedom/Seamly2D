@@ -279,8 +279,8 @@ void DialogLineIntersect::ShowVisualization()
  */
 void DialogLineIntersect::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName && flagPoint);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName && flagPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

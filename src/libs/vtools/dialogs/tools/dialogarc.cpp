@@ -389,10 +389,10 @@ void DialogArc::FXF2()
  */
 void DialogArc::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagRadius && flagF1 && flagF2);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(flagRadius && flagF1 && flagF2);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagRadius && flagF1 && flagF2);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(flagRadius && flagF1 && flagF2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -161,8 +161,8 @@ void DialogPin::ChosenObject(quint32 id, const SceneObject &type)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogPin::CheckState()
 {
-    SCASSERT(bOk != nullptr);
-    bOk->setEnabled(m_flagPoint && flagError);
+    SCASSERT(ok_Button != nullptr);
+    ok_Button->setEnabled(m_flagPoint && flagError);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

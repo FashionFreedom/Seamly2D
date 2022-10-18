@@ -83,9 +83,9 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
 
     qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(false);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(false);
 
     ui->lineEditFileName->setValidator( new QRegularExpressionValidator(QRegularExpression(baseFilenameRegExp), this));
 
@@ -153,7 +153,7 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
         ui->checkBoxTextAsPaths->setVisible(false);
     }
 
-    connect(bOk, &QPushButton::clicked, this, &DialogSaveLayout::Save);
+    connect(ok_Button, &QPushButton::clicked, this, &DialogSaveLayout::Save);
     connect(ui->lineEditFileName, &QLineEdit::textChanged, this, &DialogSaveLayout::ShowExample);
     connect(ui->comboBoxFormat, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogSaveLayout::ShowExample);
@@ -473,8 +473,8 @@ void DialogSaveLayout::Save()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSaveLayout::PathChanged(const QString &text)
 {
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
 
     QPalette palette = ui->lineEditPath->palette();
 
@@ -482,12 +482,12 @@ void DialogSaveLayout::PathChanged(const QString &text)
     dir.setPath(text);
     if (dir.exists(text))
     {
-        bOk->setEnabled(true);
+        ok_Button->setEnabled(true);
         palette.setColor(ui->lineEditPath->foregroundRole(), Qt::black);
     }
     else
     {
-        bOk->setEnabled(false);
+        ok_Button->setEnabled(false);
         palette.setColor(ui->lineEditPath->foregroundRole(), Qt::red);
     }
 

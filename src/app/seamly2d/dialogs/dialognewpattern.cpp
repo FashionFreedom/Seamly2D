@@ -105,9 +105,9 @@ void DialogNewPattern::CheckState()
         flagName = true;
     }
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

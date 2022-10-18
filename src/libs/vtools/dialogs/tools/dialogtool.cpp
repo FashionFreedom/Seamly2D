@@ -118,8 +118,8 @@ DialogTool::DialogTool(const VContainer *data, const quint32 &toolId, QWidget *p
       flagFormula(true),
       flagError(true),
       timerFormula(nullptr),
-      bOk(nullptr),
-      bApply(nullptr),
+      ok_Button(nullptr),
+      apply_Button(nullptr),
       spinBoxAngle(nullptr),
       plainTextEditFormula(nullptr),
       labelResultCalculation(nullptr),
@@ -1063,12 +1063,12 @@ bool DialogTool::IsSpline(const QSharedPointer<VGObject> &obj) const
  */
 void DialogTool::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagFormula && flagName && flagError);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagFormula && flagName && flagError);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if ( apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 

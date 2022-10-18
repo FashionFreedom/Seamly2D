@@ -70,13 +70,13 @@ DialogSeamlyMePreferences::DialogSeamlyMePreferences(QWidget *parent)
 
     qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    connect(bOk, &QPushButton::clicked, this, &DialogSeamlyMePreferences::Ok);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    connect(ok_Button, &QPushButton::clicked, this, &DialogSeamlyMePreferences::Ok);
 
-    QPushButton *bApply = ui->buttonBox->button(QDialogButtonBox::Apply);
-    SCASSERT(bApply != nullptr)
-    connect(bApply, &QPushButton::clicked, this, &DialogSeamlyMePreferences::Apply);
+    QPushButton *apply_Button = ui->buttonBox->button(QDialogButtonBox::Apply);
+    SCASSERT(apply_Button != nullptr)
+    connect(apply_Button, &QPushButton::clicked, this, &DialogSeamlyMePreferences::Apply);
 
     ui->pagesWidget->insertWidget(0, m_configurationPage);
     ui->pagesWidget->insertWidget(1, m_pathPage);

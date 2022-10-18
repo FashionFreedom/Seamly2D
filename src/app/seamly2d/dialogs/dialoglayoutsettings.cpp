@@ -120,8 +120,8 @@ DialogLayoutSettings::DialogLayoutSettings(VLayoutGenerator *generator, QWidget 
     connect(ui->comboBoxLayoutUnit,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLayoutSettings::ConvertLayoutSize);
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    connect(bOk, &QPushButton::clicked, this, &DialogLayoutSettings::DialogAccepted);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    connect(ok_Button, &QPushButton::clicked, this, &DialogLayoutSettings::DialogAccepted);
 
     QPushButton *bRestoreDefaults = ui->buttonBox->button(QDialogButtonBox::RestoreDefaults);
     connect(bRestoreDefaults, &QPushButton::clicked, this, &DialogLayoutSettings::RestoreDefaults);

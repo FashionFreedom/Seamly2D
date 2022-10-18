@@ -404,10 +404,10 @@ void DialogRotation::suffixChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(angleFlag && flagName && flagError);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(bOk->isEnabled());
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(angleFlag && flagName && flagError);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(ok_Button->isEnabled());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
