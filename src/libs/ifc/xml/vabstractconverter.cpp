@@ -180,6 +180,65 @@ int VAbstractConverter::GetVersion(const QString &version)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VAbstractConverter::removeVersionNumber(const QString& fileName)
+{
+    // This method removes different instances of version numbers for the filename:
+    // 1. Regular, old format version: myPattern(v0.6.0).val
+    // 2. Messed up, "recursive" old format: myPattern(v0(v0.6.0).6.0).val.bak
+    // 3. New format: myPattern_v060.val
+    // For all the above cases the return value should be: myPattern.<ext>
+
+    const QRegularExpression newVersionRx(QStringLiteral("_v\\d\\d\\d"));
+    QString ret;
+    int dotPos = fileName.lastIndexOf(QLatin1Char('.'));
+    int versionPos = fileName.indexOf(QLatin1String("(v"));
+
+    if (versionPos > 0)
+    {
+        // Old format version number should be removed until the last ')' if present
+        int lastParenthesisPos = fileName.lastIndexOf(QLatin1Char(')'));
+        if (lastParenthesisPos > versionPos && lastParenthesisPos < dotPos)
+        {
+            dotPos = lastParenthesisPos + 1;
+        }
+
+        ret = fileName.left(versionPos);
+    }
+    else if ((versionPos = fileName.indexOf(newVersionRx)) > -1)
+    {
+        // New format version number should be removed until the first '.' (if present)
+        dotPos = fileName.indexOf(QLatin1Char('.'), versionPos);
+        ret = fileName.left(versionPos);
+    }
+    else
+    {
+        ret = fileName;
+    }
+
+    if (versionPos > -1 && dotPos > versionPos)
+    {
+        ret += fileName.mid(dotPos);
+    }
+
+    return ret;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractConverter::removeBakExtension(const QString &fileName)
+{
+    QString ret = fileName;
+    int dotPos = ret.lastIndexOf(QLatin1Char('.'));
+
+    while (dotPos > -1 && ret.mid(dotPos) == QLatin1String(".bak"))
+    {
+        ret = ret.left(dotPos);
+        dotPos = ret.lastIndexOf(QLatin1Char('.'));
+    }
+
+    return ret;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VAbstractConverter::ValidateVersion(const QString &version)
 {
     const QRegularExpression rx(QStringLiteral("^(0|([1-9][0-9]*)).(0|([1-9][0-9]*)).(0|([1-9][0-9]*))$"));
@@ -203,12 +262,25 @@ void VAbstractConverter::ReserveFile() const
     //It's not possible in all cases make conversion without lose data.
     //For such cases we will store old version in a reserve file.
     QString error;
-    QFileInfo info(m_convertedFileName);
-    const QString reserveFileName = QString("%1/%2(v%3).%4.bak")
-            .arg(info.absoluteDir().absolutePath())
-            .arg(info.baseName())
-            .arg(GetVersionStr())
-            .arg(info.completeSuffix());
+    const QFileInfo info(removeVersionNumber(removeBakExtension(m_convertedFileName)));
+    const QString baseNameWithoutVersion = info.baseName();
+    const QString versionWithoutDots = GetVersionStr().remove(QLatin1Char('.'));
+    const QString baseFileName = QString("%1_v%2")
+            .arg(baseNameWithoutVersion)
+            .arg(versionWithoutDots);
+    QString sequencePart;
+    int sequenceNumber = 1;
+    QString reserveFileName;
+
+    do {
+        reserveFileName = QString("%1/%2%3.%4")
+                              .arg(info.absoluteDir().absolutePath())
+                              .arg(baseFileName)
+                              .arg(sequencePart)
+                              .arg(info.completeSuffix());
+        sequencePart = QString(" (%1)").arg(++sequenceNumber);
+    } while (QFileInfo(reserveFileName).exists());
+
     if (not SafeCopy(m_convertedFileName, reserveFileName, error))
     {
 #ifdef Q_OS_WIN32

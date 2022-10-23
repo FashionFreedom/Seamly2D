@@ -117,6 +117,10 @@ private:
     static void     ValidateVersion(const QString &version);
 
     void            ReserveFile() const;
+
+    static QString  removeVersionNumber(const QString& fileName);
+
+    static QString  removeBakExtension(const QString& fileName);
 };
 
 #endif // VABSTRACTCONVERTER_H
