@@ -189,7 +189,7 @@ QString VAbstractConverter::removeVersionNumber(const QString& fileName)
     // For all the above cases the return value should be: myPattern.<ext>
 
     const QRegularExpression newVersionRx(QStringLiteral("_v\\d\\d\\d"));
-    QString ret;
+    QString fileNameWithoutVersion;
     int dotPos = fileName.lastIndexOf(QLatin1Char('.'));
     int versionPos = fileName.indexOf(QLatin1String("(v"));
 
@@ -202,40 +202,40 @@ QString VAbstractConverter::removeVersionNumber(const QString& fileName)
             dotPos = lastParenthesisPos + 1;
         }
 
-        ret = fileName.left(versionPos);
+        fileNameWithoutVersion = fileName.left(versionPos);
     }
     else if ((versionPos = fileName.indexOf(newVersionRx)) > -1)
     {
         // New format version number should be removed until the first '.' (if present)
         dotPos = fileName.indexOf(QLatin1Char('.'), versionPos);
-        ret = fileName.left(versionPos);
+        fileNameWithoutVersion = fileName.left(versionPos);
     }
     else
     {
-        ret = fileName;
+        fileNameWithoutVersion = fileName;
     }
 
     if (versionPos > -1 && dotPos > versionPos)
     {
-        ret += fileName.mid(dotPos);
+        fileNameWithoutVersion += fileName.mid(dotPos);
     }
 
-    return ret;
+    return fileNameWithoutVersion;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString VAbstractConverter::removeBakExtension(const QString &fileName)
 {
-    QString ret = fileName;
-    int dotPos = ret.lastIndexOf(QLatin1Char('.'));
+    QString newFileName = fileName;
+    int dotPos = newFileName.lastIndexOf(QLatin1Char('.'));
 
-    while (dotPos > -1 && ret.mid(dotPos) == QLatin1String(".bak"))
+    while (dotPos > -1 && newFileName.mid(dotPos) == QLatin1String(".bak"))
     {
-        ret = ret.left(dotPos);
-        dotPos = ret.lastIndexOf(QLatin1Char('.'));
+        newFileName = newFileName.left(dotPos);
+        dotPos = newFileName.lastIndexOf(QLatin1Char('.'));
     }
 
-    return ret;
+    return newFileName;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -278,7 +278,7 @@ void VAbstractConverter::ReserveFile() const
                               .arg(baseFileName)
                               .arg(sequencePart)
                               .arg(info.completeSuffix());
-        sequencePart = QString(" (%1)").arg(++sequenceNumber);
+        sequencePart = QString("_(%1)").arg(++sequenceNumber);
     } while (QFileInfo(reserveFileName).exists());
 
     if (not SafeCopy(m_convertedFileName, reserveFileName, error))
