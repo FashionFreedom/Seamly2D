@@ -117,6 +117,16 @@ private:
     static void     ValidateVersion(const QString &version);
 
     void            ReserveFile() const;
+
+    /**
+     *  \brief Removes version number from \arg fileName
+     *
+     *  It removes both, "old style" ie. "(v0.6.0)" and new style "v060" patterns.
+     */
+    static QString  removeVersionNumber(const QString& fileName);
+
+    /** \brief Removes single or repeated '.bak' extension (as long as it is at the end of \arg fileName) */
+    static QString  removeBakExtension(const QString& fileName);
 };
 
 #endif // VABSTRACTCONVERTER_H
