@@ -267,14 +267,14 @@ void VPattern::Parse(const Document &parse)
  * @brief setCurrentData set current data set.
  *
  * Each time after parsing need set correct data set for current pattern piece. After parsing it is always last.
- * Current data set for pattern pice it is data set for last object in pattern pice (point, arc, spline, spline path so
+ * Current data set for pattern piece it is data set for last object in pattern piece (point, arc, spline, spline path so
  * on).
  */
 void VPattern::setCurrentData()
 {
     if (*mode == Draw::Calculation)
     {
-        if (CountPP() > 1)//don't need upadate data if we have only one pattern piece
+        if (CountPP() > 1)//don't need to update data if we have only one pattern piece
         {
             qCDebug(vXML, "Setting current data");
             qCDebug(vXML, "Current PP name %s", qUtf8Printable(activeDraftBlock));
@@ -814,12 +814,12 @@ void VPattern::ParseDetailElement(QDomElement &domElement, const Document &parse
         detail.SetMx(qApp->toPixel(GetParametrDouble(domElement, AttrMx, "0.0")));
         detail.SetMy(qApp->toPixel(GetParametrDouble(domElement, AttrMy, "0.0")));
         detail.SetSeamAllowance(getParameterBool(domElement, VToolSeamAllowance::AttrSeamAllowance, falseStr));
-        detail.SetHideMainPath(getParameterBool(domElement, VToolSeamAllowance::AttrHideMainPath,
-                                               QString().setNum(qApp->Seamly2DSettings()->IsHideMainPath())));
+        detail.setHideSeamLine(getParameterBool(domElement, VToolSeamAllowance::AttrHideSeamLine,
+                                               QString().setNum(qApp->Seamly2DSettings()->isHideSeamLine())));
         detail.SetSeamAllowanceBuiltIn(getParameterBool(domElement, VToolSeamAllowance::AttrSeamAllowanceBuiltIn,
                                                        falseStr));
         detail.SetForbidFlipping(getParameterBool(domElement, VToolSeamAllowance::AttrForbidFlipping,
-                                           QString().setNum(qApp->Seamly2DSettings()->GetForbidWorkpieceFlipping())));
+                                           QString().setNum(qApp->Seamly2DSettings()->getForbidPieceFlipping())));
         detail.SetInLayout(getParameterBool(domElement, AttrInLayout, trueStr));
         detail.SetUnited(getParameterBool(domElement, VToolSeamAllowance::AttrUnited, falseStr));
 
@@ -1056,8 +1056,8 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << VToolLineIntersectAxis::ToolType          /*15*/
                                        << VToolCurveIntersectAxis::ToolType         /*16*/
                                        << VToolPointOfIntersectionArcs::ToolType    /*17*/
-                                       << VToolPointOfIntersectionCircles::ToolType /*18*/
-                                       << VToolPointFromCircleAndTangent::ToolType  /*19*/
+                                       << IntersectCirclesTool::ToolType /*18*/
+                                       << IntersectCircleTangentTool::ToolType  /*19*/
                                        << VToolPointFromArcAndTangent::ToolType     /*20*/
                                        << VToolTrueDarts::ToolType                  /*21*/
                                        << VToolPointOfIntersectionCurves::ToolType  /*22*/
@@ -1118,10 +1118,10 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
         case 17: //VToolPointOfIntersectionArcs::ToolType
             ParseToolPointOfIntersectionArcs(scene, domElement, parse);
             break;
-        case 18: //VToolPointOfIntersectionCircles::ToolType
+        case 18: //IntersectCirclesTool::ToolType
             ParseToolPointOfIntersectionCircles(scene, domElement, parse);
             break;
-        case 19: //VToolPointFromCircleAndTangent::ToolType
+        case 19: //IntersectCircleTangentTool::ToolType
             ParseToolPointFromCircleAndTangent(scene, domElement, parse);
             break;
         case 20: //VToolPointFromArcAndTangent::ToolType
@@ -2048,7 +2048,7 @@ void VPattern::ParseToolPointOfIntersectionCircles(VMainGraphicsScene *scene, QD
         const CrossCirclesPoint crossPoint = static_cast<CrossCirclesPoint>(GetParametrUInt(domElement,
                                                                                   AttrCrossPoint, "1"));
 
-        VToolPointOfIntersectionCircles::Create(id, name, c1CenterId, c2CenterId, c1R, c2R, crossPoint, mx, my,
+        IntersectCirclesTool::Create(id, name, c1CenterId, c2CenterId, c1R, c2R, crossPoint, mx, my,
                                                 showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (c1R != c1Radius || c2R != c2Radius)
@@ -2123,7 +2123,7 @@ void VPattern::ParseToolPointFromCircleAndTangent(VMainGraphicsScene *scene, QDo
                                                                                   AttrCrossPoint,
                                                                                   "1"));
 
-        VToolPointFromCircleAndTangent::Create(id, name, cCenterId, cR, tangentId, crossPoint, mx, my,
+        IntersectCircleTangentTool::Create(id, name, cCenterId, cR, tangentId, crossPoint, mx, my,
                                                showPointName, scene, this, data, parse, Source::FromFile);
         //Rewrite attribute formula. Need for situation when we have wrong formula.
         if (cR != cRadius)

@@ -132,6 +132,7 @@ signals:
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
+    virtual void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
     virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
     virtual void closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
@@ -228,8 +229,8 @@ private slots:
     void ClosedDialogInsertNode(int result);
 
     void zoomToPrevious();
-    void zoomToArea();
-    void zoomPan();
+    void zoomToArea(bool checked);
+    void zoomPan(bool checked);
 
     void LoadIndividual();
     void LoadMultisize();
@@ -433,6 +434,7 @@ private:
     void               UpdateWindowTitle();
     void               upDateScenes();
     void               updateViewToolbar();
+    void               resetPanShortcuts();
 
     bool               IgnoreLocking(int error, const QString &path);
 

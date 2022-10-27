@@ -194,11 +194,11 @@ protected:
     /** @brief timerFormula timer for check formula */
     QTimer           *timerFormula;
 
-    /** @brief bOk button ok */
-    QPushButton      *bOk;
+    /** @brief ok_Button button ok */
+    QPushButton      *ok_Button;
 
-    /** @brief bApply button apply */
-    QPushButton      *bApply;
+    /** @brief apply_Button button apply */
+    QPushButton      *apply_Button;
 
     /** @brief spinBoxAngle spinbox for angle */
     QDoubleSpinBox   *spinBoxAngle;
@@ -381,9 +381,9 @@ template <typename T>
 inline void DialogTool::InitOkCancelApply(T *ui)
 {
     InitOkCancel(ui);
-    bApply = ui->buttonBox->button(QDialogButtonBox::Apply);
-    SCASSERT(bApply != nullptr)
-    connect(bApply, &QPushButton::clicked, this, &DialogTool::DialogApply);
+    apply_Button = ui->buttonBox->button(QDialogButtonBox::Apply);
+    SCASSERT(apply_Button != nullptr)
+    connect(apply_Button, &QPushButton::clicked, this, &DialogTool::DialogApply);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -394,9 +394,9 @@ template <typename T>
  */
 inline void DialogTool::InitOkCancel(T *ui)
 {
-    bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    connect(bOk, &QPushButton::clicked, this, &DialogTool::DialogAccepted);
+    ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    connect(ok_Button, &QPushButton::clicked, this, &DialogTool::DialogAccepted);
 
     QPushButton *bCancel = ui->buttonBox->button(QDialogButtonBox::Cancel);
     SCASSERT(bCancel != nullptr)

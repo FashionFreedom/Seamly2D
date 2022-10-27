@@ -114,9 +114,9 @@ const QString settingGraphicsViewPixelDelta              = QStringLiteral("graph
 const QString settingGraphicsViewAngleDelta              = QStringLiteral("graphicsview/angleDelta");
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
+const QString settingGraphicsViewPanActiveSpaceKey       = QStringLiteral("graphicsview/panActiveSpaceKey");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
-
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
 const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
 const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
@@ -141,7 +141,7 @@ const QString settingGraphicsUseToolColor                = QStringLiteral("graph
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
 const QString settingPatternForbidFlipping               = QStringLiteral("pattern/forbidFlipping");
-const QString settingPatternHideMainPath                 = QStringLiteral("pattern/hideMainPath");
+const QString settingPatternHideSeamLine                 = QStringLiteral("pattern/hideMainPath");
 
 const QString settingDefaultNotchLength                  = QStringLiteral("pattern/defaultNotchLength");
 const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
@@ -163,6 +163,7 @@ const QString settingDefaultCutoutColor                  = QStringLiteral("patte
 const QString settingDefaultCutoutLinetype               = QStringLiteral("pattern/defaultCutoutLinetype");
 const QString settingDefaultCutoutLineweight             = QStringLiteral("pattern/defaultCutoutLineweight");
 
+const QString settingShowSeamAllowances                  = QStringLiteral("pattern/showShowSeamAllowances");
 const QString settingShowGrainlines                      = QStringLiteral("pattern/showGrainlines");
 const QString settingDefaultGrainlineColor               = QStringLiteral("pattern/defaultGrainlineColor");
 const QString settingDefaultGrainlineLineweight          = QStringLiteral("pattern/defaultGrainlineLineweight");
@@ -829,7 +830,7 @@ void VCommonSettings::setScrollSpeedFactor(const int &factor)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getZoomModKey() const
 {
-    return value(settingGraphicsViewZoomModKey, 1).toBool();
+    return value(settingGraphicsViewZoomModKey, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -841,13 +842,25 @@ void VCommonSettings::setZoomModKey(const bool &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::isZoomDoubleClick() const
 {
-    return value(settingGraphicsViewZoomDoubleClick, 1).toBool();
+    return value(settingGraphicsViewZoomDoubleClick, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setZoomDoubleClick(const bool &value)
 {
     setValue(settingGraphicsViewZoomDoubleClick, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isPanActiveSpaceKey() const
+{
+    return value(settingGraphicsViewPanActiveSpaceKey, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPanActiveSpaceKey(const bool &value)
+{
+    setValue(settingGraphicsViewPanActiveSpaceKey, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1164,27 +1177,27 @@ void VCommonSettings::SetDateOfLastRemind(const QDate &date)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetForbidWorkpieceFlipping() const
+bool VCommonSettings::getForbidPieceFlipping() const
 {
     return value(settingPatternForbidFlipping, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetForbidWorkpieceFlipping(bool value)
+void VCommonSettings::setForbidPieceFlipping(bool value)
 {
     setValue(settingPatternForbidFlipping, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::IsHideMainPath() const
+bool VCommonSettings::isHideSeamLine() const
 {
-    return value(settingPatternHideMainPath, false).toBool();
+    return value(settingPatternHideSeamLine, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetHideMainPath(bool value)
+void VCommonSettings::setHideSeamLine(bool value)
 {
-    setValue(settingPatternHideMainPath, value);
+    setValue(settingPatternHideSeamLine, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1528,6 +1541,18 @@ qreal VCommonSettings::getDefaultCutoutLineweight() const
 void VCommonSettings::setDefaultCutoutLineweight(const qreal &value)
 {
     setValue(settingDefaultCutoutLineweight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showSeamAllowances() const
+{
+    return value(settingShowSeamAllowances, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowSeamAllowances(const bool &value)
+{
+    setValue(settingShowSeamAllowances, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

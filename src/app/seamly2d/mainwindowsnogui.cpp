@@ -508,7 +508,7 @@ void MainWindowsNoGUI::PrintPages(QPrinter *printer)
     VSettings *settings = qApp->Seamly2DSettings();
 
     // Here we try to understand the difference between the printer's dpi and scene dpi.
-    // Get printer rect acording to our dpi.
+    // Get printer rect according to our dpi.
     const QRectF printerPageRect(0, 0, ToPixel(printer->pageRect(QPrinter::Millimeter).width(), Unit::Mm),
                                  ToPixel(printer->pageRect(QPrinter::Millimeter).height(), Unit::Mm));
     QRect pageRect = printer->pageLayout().paintRectPixels(printer->resolution());
@@ -731,6 +731,24 @@ void MainWindowsNoGUI::refreshGrainLines()
         if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
         {
             tool->UpdateGrainline();
+        }
+        ++i;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief refreshSeamAllowances call to show / hide seam allowances.
+ */
+void MainWindowsNoGUI::refreshSeamAllowances()
+{
+    const QHash<quint32, VPiece> *list = pattern->DataPieces();
+    QHash<quint32, VPiece>::const_iterator i = list->constBegin();
+    while (i != list->constEnd())
+    {
+        if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
+        {
+            tool->RefreshGeometry();
         }
         ++i;
     }
@@ -1196,7 +1214,7 @@ void MainWindowsNoGUI::RestorePaper(int index) const
  * @brief PrepareTextForDXF prepare QGraphicsSimpleTextItem items for export to flat dxf.
  *
  * Because QPaintEngine::drawTextItem doesn't pass whole string per time we mark end of each string by adding special
- * placholder. This method append it.
+ * placeholder. This method append it.
  *
  * @param placeholder placeholder that will be appended to each QGraphicsSimpleTextItem item's text string.
  */
@@ -1229,7 +1247,7 @@ void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
  * @brief MainWindowsNoGUI::RestoreTextAfterDXF restore QGraphicsSimpleTextItem items after export to flat dxf.
  *
  * Because QPaintEngine::drawTextItem doesn't pass whole string per time we mark end of each string by adding special
- * placholder. This method remove it.
+ * placeholder. This method remove it.
  *
  * @param placeholder placeholder that will be removed from each QGraphicsSimpleTextItem item's text string.
  */

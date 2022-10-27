@@ -259,7 +259,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 #if defined(Q_OS_MAC)
-    // On Mac deafault icon size is 32x32.
+    // On Mac default icon size is 32x32.
     ui->draft_ToolBar->setIconSize(QSize(24, 24));
     ui->status_ToolBar->setIconSize(QSize(24, 24));
     ui->mode_ToolBar->setIconSize(QSize(24, 24));
@@ -636,7 +636,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
         auto cursorResource = cursor;
         if (qApp->devicePixelRatio() >= 2)
         {
-            // Try to load HiDPI versions of the cursors if availible
+            // Try to load HiDPI versions of the cursors if available
             auto cursorHidpiResource = QString(cursor).replace(".png", "@2x.png");
             if (QFileInfo(cursorResource).exists())
             {
@@ -1278,14 +1278,14 @@ void MainWindow::handlePointOfIntersectionArcsTool(bool checked)
 void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointOfIntersectionCircles>
+    SetToolButtonWithApply<IntersectCirclesDialog>
     (
         checked,
         Tool::PointOfIntersectionCircles,
         "://cursor/point_of_intersection_circles.png",
         tr("<b>Tool::Arc - Intersection Point of Circles:</b> Select first circle center"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionCircles>,
-        &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionCircles>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectCirclesTool>,
+        &MainWindow::ApplyDrawDialog<IntersectCirclesTool>
     );
 }
 
@@ -1295,14 +1295,14 @@ void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
 void MainWindow::handlePointFromCircleAndTangentTool(bool checked)
 {
     ToolSelectPointByRelease();
-    SetToolButtonWithApply<DialogPointFromCircleAndTangent>
+    SetToolButtonWithApply<IntersectCircleTangentDialog>
     (
         checked,
         Tool::PointFromCircleAndTangent,
         "://cursor/point_from_circle_and_tangent_cursor.png",
         tr("<b>Tool::Arc - Tangency Point of Circle and Tangent:</b> Select point on tangent"),
-        &MainWindow::ClosedDrawDialogWithApply<VToolPointFromCircleAndTangent>,
-        &MainWindow::ApplyDrawDialog<VToolPointFromCircleAndTangent>
+        &MainWindow::ClosedDrawDialogWithApply<IntersectCircleTangentTool>,
+        &MainWindow::ApplyDrawDialog<IntersectCircleTangentTool>
     );
 }
 
@@ -1350,7 +1350,7 @@ void MainWindow::handleEllipticalArcTool(bool checked)
         checked,
         Tool::EllipticalArc,
         ":/cursor/el_arc_cursor.png",
-        tr("<b>Tool::Eliptical Arcs - Elliptical Arc:</b> Select point of center of elliptical arc"),
+        tr("<b>Tool::Elliptical Arcs - Elliptical Arc:</b> Select point of center of elliptical arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolEllipticalArc>,
         &MainWindow::ApplyDrawDialog<VToolEllipticalArc>
     );
@@ -2228,7 +2228,7 @@ void MainWindow::initToolsToolBar()
 {
     /*First we will try use Standard Shortcuts from Qt, but because keypad "-" and "+" not the same keys like in main
     keypad, shortcut Ctrl+"-" or "+" from keypad will not working with standard shortcut (QKeySequence::ZoomIn or
-    QKeySequence::ZoomOut). For examle "+" is Qt::Key_Plus + Qt::KeypadModifier for keypad.
+    QKeySequence::ZoomOut). For example "+" is Qt::Key_Plus + Qt::KeypadModifier for keypad.
     Also for me don't work Qt:CTRL and work Qt::ControlModifier.*/
 
     QList<QKeySequence> zoomInShortcuts;
@@ -2267,9 +2267,10 @@ void MainWindow::initToolsToolBar()
     QList<QKeySequence> zoomToAreaShortcuts;
     zoomToAreaShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_A));
     ui->zoomToArea_Action->setShortcuts(zoomToAreaShortcuts);
-    connect(ui->zoomToArea_Action, &QAction::triggered, this, &MainWindow::zoomToArea);
+    connect(ui->zoomToArea_Action, &QAction::toggled, this, &MainWindow::zoomToArea);
 
-    connect(ui->zoomPan_Action, &QAction::triggered, this, &MainWindow::zoomPan);
+    resetPanShortcuts();
+    connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
     if (zoomScaleSpinBox != nullptr)
     {
@@ -2404,9 +2405,9 @@ void MainWindow::zoomToPrevious()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::zoomToArea()
+void MainWindow::zoomToArea(bool checked)
 {
-      ui->view->zoomToAreaEnabled((ui->zoomToArea_Action->isChecked())?true:false);
+      ui->view->zoomToAreaEnabled(checked);
 
       if (ui->zoomToArea_Action->isChecked())
       {
@@ -2415,11 +2416,10 @@ void MainWindow::zoomToArea()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::zoomPan()
+void MainWindow::zoomPan(bool checked)
 {
-    ui->view->zoomPanEnabled((ui->zoomPan_Action->isChecked())?true:false);
-
-    if (ui->zoomPan_Action->isChecked())
+    ui->view->zoomPanEnabled(checked);
+    if (checked)
     {
         ui->zoomToArea_Action->setChecked(false);
     }
@@ -3183,7 +3183,7 @@ void  MainWindow::handleArrowTool(bool checked)
  * @brief keyPressEvent handle key press events.
  * @param event key event.
  */
-void MainWindow::keyPressEvent ( QKeyEvent * event )
+void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     switch (event->key())
     {
@@ -3194,10 +3194,36 @@ void MainWindow::keyPressEvent ( QKeyEvent * event )
         case Qt::Key_Enter:
             EndVisualization();
             break;
+        case Qt::Key_Space:
+            if (qApp->Seamly2DSettings()->isPanActiveSpaceKey())
+            {
+                ui->zoomPan_Action->setChecked(true);
+            }
+            break;
         default:
             break;
     }
-    QMainWindow::keyPressEvent ( event );
+    QMainWindow::keyPressEvent (event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief keyReleaseEvent handle key press events.
+ * @param event key event.
+ */
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    switch (event->key())
+    {
+        case Qt::Key_Space:
+            if (qApp->Seamly2DSettings()->isPanActiveSpaceKey())
+            {
+                ui->zoomPan_Action->setChecked(false);
+            }
+        default:
+            break;
+    }
+    QMainWindow::keyReleaseEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3571,7 +3597,7 @@ bool MainWindow::SaveAs()
     if (f.exists())
     {
         // Temporary try to lock the file before saving
-        // Also help to rewite current read-only pattern
+        // Also help to rewrite current read-only pattern
         VLockGuard<char> tmp(fileName);
         if (not tmp.IsLocked())
         {
@@ -3801,6 +3827,7 @@ void MainWindow::Clear()
     ui->toggleWireframe_Action->setEnabled(false);
     ui->toggleControlPoints_Action->setEnabled(false);
     ui->toggleAxisOrigin_Action->setEnabled(false);
+    ui->toggleSeamAllowances_Action->setEnabled(false);
     ui->toggleGrainLines_Action->setEnabled(false);
     ui->toggleLabels_Action->setEnabled(false);
     //ui->toggleAnchorPoints_Action->setEnabled(false);
@@ -4072,6 +4099,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleWireframe_Action->setEnabled(enable);
     ui->toggleControlPoints_Action->setEnabled(enable && draftStage);
     ui->toggleAxisOrigin_Action->setEnabled(enable);
+    ui->toggleSeamAllowances_Action->setEnabled(enable && pieceStage);
     ui->toggleGrainLines_Action->setEnabled(enable && pieceStage);
     ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
@@ -4624,7 +4652,7 @@ void MainWindow::ReadSettings()
     // Stack limit
     qApp->getUndoStack()->setUndoLimit(settings->GetUndoCount());
 
-    // Text under tool buton icon
+    // Text under tool button icon
     ToolBarStyles();
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
@@ -5176,6 +5204,13 @@ void MainWindow::CreateActions()
         qApp->Seamly2DSettings()->setShowAxisOrigin(checked);
         draftScene->setOriginsVisible(checked);
         pieceScene->setOriginsVisible(checked);
+    });
+
+    connect(ui->toggleSeamAllowances_Action, &QAction::triggered, this, [this](bool checked)
+    {
+        qApp->Seamly2DSettings()->setShowSeamAllowances(checked);
+        ui->view->itemClicked(nullptr);
+        refreshSeamAllowances();
     });
 
     connect(ui->toggleGrainLines_Action, &QAction::triggered, this, [this](bool checked)
@@ -5731,7 +5766,7 @@ QString MainWindow::PatternPieceName(const QString &text)
         {
             break; //exit dialog
         }
-        //repeate show dialog
+        //repeat show dialog
         QMessageBox messageBox;
         messageBox.setWindowTitle(tr("Name Exists"));
         messageBox.setIcon(QMessageBox::Warning);
@@ -5789,7 +5824,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     try
     {
         // Here comes undocumented Seamly2D's feature.
-        // Because app bundle in Mac OS X doesn't allow setup assosiation for SeamlyMe we must do this through Seamly2D
+        // Because app bundle in Mac OS X doesn't allow setup association for SeamlyMe we must do this through Seamly2D
         VMeasurements measurements(pattern);
         measurements.SetSize(VContainer::rsize());
         measurements.SetHeight(VContainer::rheight());
@@ -5946,7 +5981,7 @@ QStringList MainWindow::GetUnlokedRestoreFileList() const
     {
         for (int i = 0; i < files.size(); ++i)
         {
-            // Seeking file that realy need reopen
+            // Seeking file that really needs reopen
             VLockGuard<char> tmp(files.at(i));
             if (tmp.IsLocked())
             {
@@ -6032,12 +6067,14 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
         connect(dialog.data(), &DialogPreferences::updateProperties,
                 toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
 
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
+
 
         QGuiApplication::restoreOverrideCursor();
 
@@ -6902,7 +6939,20 @@ void MainWindow::updateViewToolbar()
     ui->toggleControlPoints_Action->setChecked(qApp->Settings()->getShowControlPoints());
     ui->toggleAxisOrigin_Action->setChecked(qApp->Settings()->getShowAxisOrigin());
     ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
+    ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
+}
+
+void MainWindow::resetPanShortcuts()
+{
+    QList<QKeySequence> zoomPanShortcuts;
+    zoomPanShortcuts = ui->zoomPan_Action->shortcuts();
+    zoomPanShortcuts.removeAll(QKeySequence(Qt::Key_Space));
+    if (!qApp->Seamly2DSettings()->isPanActiveSpaceKey())
+    {
+        zoomPanShortcuts.append(QKeySequence(Qt::Key_Space));
+    }
+    ui->zoomPan_Action->setShortcuts(zoomPanShortcuts);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

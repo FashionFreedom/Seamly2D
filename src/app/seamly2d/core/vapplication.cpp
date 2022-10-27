@@ -299,7 +299,7 @@ VApplication::VApplication(int &argc, char **argv)
 VApplication::~VApplication()
 {
     qCDebug(vApp, "Application closing.");
-    qInstallMessageHandler(nullptr); // Resore the message handler
+    qInstallMessageHandler(nullptr); // Restore the message handler
     delete trVars;
     VCommandLine::Reset();
 }

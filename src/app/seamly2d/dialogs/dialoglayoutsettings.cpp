@@ -120,8 +120,8 @@ DialogLayoutSettings::DialogLayoutSettings(VLayoutGenerator *generator, QWidget 
     connect(ui->comboBoxLayoutUnit,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLayoutSettings::ConvertLayoutSize);
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    connect(bOk, &QPushButton::clicked, this, &DialogLayoutSettings::DialogAccepted);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    connect(ok_Button, &QPushButton::clicked, this, &DialogLayoutSettings::DialogAccepted);
 
     QPushButton *bRestoreDefaults = ui->buttonBox->button(QDialogButtonBox::RestoreDefaults);
     connect(bRestoreDefaults, &QPushButton::clicked, this, &DialogLayoutSettings::RestoreDefaults);
@@ -728,7 +728,7 @@ void DialogLayoutSettings::IgnoreAllFields(int state)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLayoutSettings::InitPaperUnits()
 {
-    ui->comboBoxPaperSizeUnit->addItem(tr("Millimiters"), QVariant(UnitsToStr(Unit::Mm)));
+    ui->comboBoxPaperSizeUnit->addItem(tr("Millimeters"), QVariant(UnitsToStr(Unit::Mm)));
     ui->comboBoxPaperSizeUnit->addItem(tr("Centimeters"), QVariant(UnitsToStr(Unit::Cm)));
     ui->comboBoxPaperSizeUnit->addItem(tr("Inches"), QVariant(UnitsToStr(Unit::Inch)));
     ui->comboBoxPaperSizeUnit->addItem(tr("Pixels"), QVariant(UnitsToStr(Unit::Px)));
@@ -746,7 +746,7 @@ void DialogLayoutSettings::InitPaperUnits()
 void DialogLayoutSettings::InitLayoutUnits()
 {
     ui->comboBoxLayoutUnit->addItem(tr("Centimeters"), QVariant(UnitsToStr(Unit::Cm)));
-    ui->comboBoxLayoutUnit->addItem(tr("Millimiters"), QVariant(UnitsToStr(Unit::Mm)));
+    ui->comboBoxLayoutUnit->addItem(tr("Millimeters"), QVariant(UnitsToStr(Unit::Mm)));
     ui->comboBoxLayoutUnit->addItem(tr("Inches"), QVariant(UnitsToStr(Unit::Inch)));
 
     // set default unit

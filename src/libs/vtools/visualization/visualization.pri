@@ -2,6 +2,8 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/line/intersect_circles_visual.h \
+    $$PWD/line/intersect_circletangent_visual.h \
     $$PWD/line/operation/vistoolmirrorbyaxis.h \
     $$PWD/line/operation/vistoolmirrorbyline.h \
     $$PWD/line/point_intersectxy_visual.h \
@@ -21,8 +23,6 @@ HEADERS += \
     $$PWD/line/vistooltruedarts.h \
     $$PWD/line/vistoolcurveintersectaxis.h \
     $$PWD/line/vistoolpointofintersectionarcs.h \
-    $$PWD/line/vistoolpointofintersectioncircles.h \
-    $$PWD/line/vistoolpointfromcircleandtangent.h \
     $$PWD/line/vistoolpointfromarcandtangent.h \
     $$PWD/line/operation/vistoolrotation.h \
     $$PWD/path/vispath.h \
@@ -45,6 +45,8 @@ HEADERS += \
     $$PWD/path/vispiecepins.h
 
 SOURCES += \
+    $$PWD/line/intersect_circles_visual.cpp \
+    $$PWD/line/intersect_circletangent_visual.cpp \
     $$PWD/line/operation/vistoolmirrorbyaxis.cpp \
     $$PWD/line/operation/vistoolmirrorbyline.cpp \
     $$PWD/line/point_intersectxy_visual.cpp \
@@ -64,8 +66,6 @@ SOURCES += \
     $$PWD/line/vistooltruedarts.cpp \
     $$PWD/line/vistoolcurveintersectaxis.cpp \
     $$PWD/line/vistoolpointofintersectionarcs.cpp \
-    $$PWD/line/vistoolpointofintersectioncircles.cpp \
-    $$PWD/line/vistoolpointfromcircleandtangent.cpp \
     $$PWD/line/vistoolpointfromarcandtangent.cpp \
     $$PWD/line/operation/vistoolrotation.cpp \
     $$PWD/path/vispath.cpp \

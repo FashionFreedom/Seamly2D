@@ -105,9 +105,9 @@ void DialogNewPattern::CheckState()
         flagName = true;
     }
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ void DialogNewPattern::showEvent(QShowEvent *event)
 void DialogNewPattern::InitUnits()
 {
     ui->comboBoxUnits->addItem(tr("Centimeters"), QVariant(UnitsToStr(Unit::Cm)));
-    ui->comboBoxUnits->addItem(tr("Millimiters"), QVariant(UnitsToStr(Unit::Mm)));
+    ui->comboBoxUnits->addItem(tr("Millimeters"), QVariant(UnitsToStr(Unit::Mm)));
     ui->comboBoxUnits->addItem(tr("Inches"), QVariant(UnitsToStr(Unit::Inch)));
 
     // set default unit

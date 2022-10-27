@@ -114,16 +114,17 @@ DialogSeamAllowance::DialogSeamAllowance(const VContainer *data, const quint32 &
       m_notchesTab(new QWidget),
       m_ftb(new FancyTabBar(FancyTabBar::Left, this)),
       applyAllowed(false),// By default disabled
-      flagGPin(true),
-      flagDPin(true),
-      flagPPin(true),
-      flagGFormulas(true),
-      flagDLAngle(true),
-      flagDLFormulas(true),
-      flagPLAngle(true),
-      flagPLFormulas(true),
+      flagGrainlineAnchor(true),
+      flagPieceLabelAnchor(true),
+      flagPatternLabelAnchor(true),
+      flagGrainlineFormula(true),
+      flagPieceLabelAngle(true),
+      flagPieceLabelFormula(true),
+      flagPatternLabelAngle(true),
+      flagPatternLabelFormula(true),
       flagBeforeFormula(true),
       flagAfterFormula(true),
+      flagMainPath(true),
       m_bAddMode(true),
       m_mx(0),
       m_my(0),
@@ -168,10 +169,10 @@ DialogSeamAllowance::DialogSeamAllowance(const VContainer *data, const quint32 &
 
     flagName = true;//We have default name of piece.
     ChangeColor(uiLabelsTab->labelEditName, okColor);
-    flagError = MainPathIsValid();
+    flagMainPath = MainPathIsValid();
     CheckState();
 
-    if (not applyAllowed)
+    if (!applyAllowed)
     {
         vis = new VisToolPiece(data);
     }
@@ -199,8 +200,8 @@ DialogSeamAllowance::~DialogSeamAllowance()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::EnableApply(bool enable)
 {
-    SCASSERT(bApply != nullptr);
-    bApply->setEnabled(enable);
+    SCASSERT(apply_Button != nullptr);
+    apply_Button->setEnabled(enable);
     applyAllowed = enable;
 
     uiPathsTab->seamAllowance_Tab->setEnabled(applyAllowed);
@@ -226,7 +227,7 @@ void DialogSeamAllowance::SetPiece(const VPiece &piece)
         NewMainPathItem(piece.GetPath().at(i));
     }
 
-    uiPathsTab->hideMainPath_CheckBox->setChecked(piece.IsHideMainPath());
+    uiPathsTab->hideSeamLine_CheckBox->setChecked(piece.isHideSeamLine());
     uiPathsTab->customSeamAllowance_ListWidget->blockSignals(true);
     uiPathsTab->customSeamAllowance_ListWidget->clear();
     for (int i = 0; i < piece.GetCustomSARecords().size(); ++i)
@@ -284,7 +285,7 @@ void DialogSeamAllowance::SetPiece(const VPiece &piece)
 
     uiGrainlineTab->arrow_ComboBox->setCurrentIndex(int(piece.GetGrainlineGeometry().GetArrowType()));
 
-    uiLabelsTab->detailLabel_GroupBox->setChecked(m_oldData.IsVisible());
+    uiLabelsTab->pieceLabel_GroupBox->setChecked(m_oldData.IsVisible());
     ChangeCurrentData(uiLabelsTab->dLabelCenterPin_ComboBox, m_oldData.CenterPin());
     ChangeCurrentData(uiLabelsTab->dLabelTopLeftPin_ComboBox, m_oldData.TopLeftPin());
     ChangeCurrentData(uiLabelsTab->dLabelBottomRightPin_ComboBox, m_oldData.BottomRightPin());
@@ -325,7 +326,7 @@ void DialogSeamAllowance::SetPiece(const VPiece &piece)
  */
 void DialogSeamAllowance::ChosenObject(quint32 id, const SceneObject &type)
 {
-    if (not prepare)
+    if (!prepare)
     {
         bool reverse = false;
         if (QGuiApplication::keyboardModifiers() == Qt::ShiftModifier)
@@ -369,7 +370,7 @@ void DialogSeamAllowance::ChosenObject(quint32 id, const SceneObject &type)
 
         ValidObjects(MainPathIsValid());
 
-        if (not applyAllowed)
+        if (!applyAllowed)
         {
             auto visPath = qobject_cast<VisToolPiece *>(vis);
             SCASSERT(visPath != nullptr);
@@ -381,7 +382,7 @@ void DialogSeamAllowance::ChosenObject(quint32 id, const SceneObject &type)
                 emit ToolTip(tr("Select main path objects clockwise, Use <b>SHIFT</b> to reverse curve direction, "
                                 "Press <b>ENTER</b> to finish piece creation "));
 
-                if (not qApp->getCurrentScene()->items().contains(visPath))
+                if (!qApp->getCurrentScene()->items().contains(visPath))
                 {
                     visPath->VisualMode(NULL_ID);
                 }
@@ -406,7 +407,7 @@ void DialogSeamAllowance::ShowDialog(bool click)
         emit ToolTip("");
         prepare = true;
 
-        if (not applyAllowed)
+        if (!applyAllowed)
         {
             auto visPath = qobject_cast<VisToolPiece *>(vis);
             SCASSERT(visPath != nullptr);
@@ -427,19 +428,38 @@ void DialogSeamAllowance::SaveData()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::CheckState()
 {
-    SCASSERT(bOk != nullptr);
-    bOk->setEnabled(flagName
-                    && flagError
+    SCASSERT(ok_Button != nullptr);
+    ok_Button->setEnabled(flagName
                     && flagFormula
-                    && flagBeforeFormula
-                    && flagAfterFormula
-                    && (flagGFormulas || flagGPin)
-                    && flagDLAngle && (flagDLFormulas || flagDPin)
-                    && flagPLAngle && (flagPLFormulas || flagPPin));
-    // In case dialog hasn't apply button
-    if ( bApply != nullptr && applyAllowed)
+                    && flagMainPath
+                    && (flagGrainlineFormula || flagGrainlineAnchor)
+                    && flagPieceLabelAngle && (flagPieceLabelFormula || flagPieceLabelAnchor)
+                    && flagPatternLabelAngle && (flagPatternLabelFormula || flagPatternLabelAnchor));
+
+    if (applyAllowed)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        ok_Button->setEnabled(flagBeforeFormula && flagAfterFormula);
+        // In case dialog does not have an apply button
+        if (apply_Button != nullptr)
+        {
+            apply_Button->setEnabled(ok_Button->isEnabled());
+        }
+    }
+
+    if (flagMainPath)
+    {
+        m_ftb->SetTabText(TabOrder::Paths, tr("Paths"));
+        QString tooltip = tr("Ready!");
+        if (!applyAllowed)
+        {
+            tooltip = tooltip + QLatin1String("  <b>") +
+                    tr("Press OK to create pattern piece") + QLatin1String("</b>");
+        }
+        uiPathsTab->status_Label->setText(tooltip);
+    }
+    else
+    {
+        m_ftb->SetTabText(TabOrder::Paths, tr("Paths") + QLatin1String("*"));
     }
 }
 
@@ -470,7 +490,7 @@ void DialogSeamAllowance::showEvent(QShowEvent *event)
     // do your init stuff here
 
     const QSize sz = qApp->Settings()->GetToolSeamAllowanceDialogSize();
-    if (not sz.isEmpty())
+    if (!sz.isEmpty())
     {
         resize(sz);
     }
@@ -560,7 +580,7 @@ void DialogSeamAllowance::ShowMainPathContextMenu(const QPoint &pos)
     }
     else if (rowNode.GetTypeTool() != Tool::NodePoint && selectedAction == actionReverse)
     {
-        rowNode.SetReverse(not rowNode.GetReverse());
+        rowNode.SetReverse(!rowNode.GetReverse());
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
         rowItem->setIcon(QIcon(info.icon));
@@ -568,7 +588,7 @@ void DialogSeamAllowance::ShowMainPathContextMenu(const QPoint &pos)
     }
     else if (selectedAction == actionExcluded)
     {
-        rowNode.SetExcluded(not rowNode.isExcluded());
+        rowNode.SetExcluded(!rowNode.isExcluded());
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
         rowItem->setIcon(QIcon(info.icon));
@@ -577,7 +597,7 @@ void DialogSeamAllowance::ShowMainPathContextMenu(const QPoint &pos)
     }
     else if (selectedAction == actionNotch)
     {
-        rowNode.setNotch(not rowNode.isNotch());
+        rowNode.setNotch(!rowNode.isNotch());
         info = getNodeInfo(rowNode, true);
         rowItem->setData(Qt::UserRole, QVariant::fromValue(rowNode));
         rowItem->setIcon(QIcon(info.icon));
@@ -698,7 +718,7 @@ void DialogSeamAllowance::ShowPinsContextMenu(const QPoint &pos)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::ListChanged()
 {
-    if (not applyAllowed)
+    if (!applyAllowed)
     {
         auto visPath = qobject_cast<VisToolPiece *>(vis);
         SCASSERT(visPath != nullptr);
@@ -714,8 +734,9 @@ void DialogSeamAllowance::ListChanged()
 void DialogSeamAllowance::EnableSeamAllowance(bool enable)
 {
     uiPathsTab->builtIn_CheckBox->setEnabled(enable);
+    uiPathsTab->hideSeamLine_CheckBox->setEnabled(enable);
 
-    if (not enable)
+    if (!enable)
     {
         uiPathsTab->groupBoxAutomatic->setEnabled(enable);
         uiPathsTab->groupBoxCustom->setEnabled(enable);
@@ -729,8 +750,8 @@ void DialogSeamAllowance::EnableSeamAllowance(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::enableBuiltIn(bool enable)
 {
-    uiPathsTab->groupBoxAutomatic->setEnabled(not enable);
-    uiPathsTab->groupBoxCustom->setEnabled(not enable);
+    uiPathsTab->groupBoxAutomatic->setEnabled(!enable);
+    uiPathsTab->groupBoxCustom->setEnabled(!enable);
 
     if (enable)
     {
@@ -761,7 +782,7 @@ void DialogSeamAllowance::NodeChanged(int index)
         {
             const VPieceNode &node = piece.GetPath().at(nodeIndex);
 
-            // Seam alowance before
+            // Seam allowance before
             uiPathsTab->beforeWidthFormula_PlainTextEdit->setEnabled(true);
             uiPathsTab->beforeExpr_ToolButton->setEnabled(true);
 
@@ -775,7 +796,7 @@ void DialogSeamAllowance::NodeChanged(int index)
             uiPathsTab->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(uiPathsTab->beforeWidthFormula_PlainTextEdit);
 
-            // Seam alowance after
+            // Seam allowance after
             uiPathsTab->afterWidthFormula_PlainTextEdit->setEnabled(true);
             uiPathsTab->afterExpr_ToolButton->setEnabled(true);
 
@@ -1079,7 +1100,7 @@ void DialogSeamAllowance::PathDialogClosed(int result)
 {
     if (result == QDialog::Accepted)
     {
-        SCASSERT(not m_dialog.isNull());
+        SCASSERT(!m_dialog.isNull());
         DialogInternalPath *dialogTool = qobject_cast<DialogInternalPath*>(m_dialog.data());
         SCASSERT(dialogTool != nullptr);
         try
@@ -1147,7 +1168,7 @@ QT_WARNING_POP
     }
     else
     {
-        if (not m_visPins.isNull())
+        if (!m_visPins.isNull())
         {
             delete m_visPins;
         }
@@ -1163,7 +1184,7 @@ void DialogSeamAllowance::TabChanged(int index)
     }
     else
     {
-        if (not m_visPins.isNull())
+        if (!m_visPins.isNull())
         {
             delete m_visPins;
         }
@@ -1437,7 +1458,7 @@ void DialogSeamAllowance::UpdateGrainlineValues()
         catch (qmu::QmuParserError &e)
         {
             qsVal = tr("Error");
-            not flagGPin ? ChangeColor(plbText, Qt::red) : ChangeColor(plbText, okColor);
+            not flagGrainlineAnchor ? ChangeColor(plbText, Qt::red) : ChangeColor(plbText, okColor);
             bFormulasOK[i] = false;
             plbVal->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
         }
@@ -1449,8 +1470,8 @@ void DialogSeamAllowance::UpdateGrainlineValues()
         plbVal->setText(qsVal);
     }
 
-    flagGFormulas = bFormulasOK[0] && bFormulasOK[1];
-    if (not flagGFormulas && not flagGPin)
+    flagGrainlineFormula = bFormulasOK[0] && bFormulasOK[1];
+    if (!flagGrainlineFormula && not flagGrainlineAnchor)
     {
         m_ftb->SetTabText(TabOrder::Grainline, tr("Grainline") + QLatin1String("*"));
     }
@@ -1519,7 +1540,7 @@ void DialogSeamAllowance::UpdateDetailLabelValues()
         catch (qmu::QmuParserError &e)
         {
             qsVal = tr("Error");
-            not flagDPin ? ChangeColor(plbText, Qt::red) : ChangeColor(plbText, okColor);
+            not flagPieceLabelAnchor ? ChangeColor(plbText, Qt::red) : ChangeColor(plbText, okColor);
             bFormulasOK[i] = false;
             plbVal->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
         }
@@ -1531,9 +1552,9 @@ void DialogSeamAllowance::UpdateDetailLabelValues()
         plbVal->setText(qsVal);
     }
 
-    flagDLAngle = bFormulasOK[2];
-    flagDLFormulas = bFormulasOK[0] && bFormulasOK[1];
-    if (not flagDLAngle || not (flagDLFormulas || flagDPin) || not flagPLAngle || not (flagPLFormulas || flagPPin))
+    flagPieceLabelAngle = bFormulasOK[2];
+    flagPieceLabelFormula = bFormulasOK[0] && bFormulasOK[1];
+    if (!flagPieceLabelAngle || not (flagPieceLabelFormula || flagPieceLabelAnchor) || not flagPatternLabelAngle || not (flagPatternLabelFormula || flagPatternLabelAnchor))
     {
         m_ftb->SetTabText(TabOrder::Labels, tr("Labels") + QLatin1String("*"));
         QIcon icon(":/icons/win.icon.theme/16x16/status/dialog-warning.png");
@@ -1604,7 +1625,7 @@ void DialogSeamAllowance::UpdatePatternLabelValues()
         catch (qmu::QmuParserError &e)
         {
             qsVal = tr("Error");
-            not flagPPin ? ChangeColor(plbText, Qt::red) : ChangeColor(plbText, okColor);
+            not flagPatternLabelAnchor ? ChangeColor(plbText, Qt::red) : ChangeColor(plbText, okColor);
             bFormulasOK[i] = false;
             plbVal->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
         }
@@ -1616,9 +1637,9 @@ void DialogSeamAllowance::UpdatePatternLabelValues()
         plbVal->setText(qsVal);
     }
 
-    flagPLAngle = bFormulasOK[2];
-    flagPLFormulas = bFormulasOK[0] && bFormulasOK[1];
-    if (not flagDLAngle || not (flagDLFormulas || flagDPin) || not flagPLAngle || not (flagPLFormulas || flagPPin))
+    flagPatternLabelAngle = bFormulasOK[2];
+    flagPatternLabelFormula = bFormulasOK[0] && bFormulasOK[1];
+    if (!flagPieceLabelAngle || not (flagPieceLabelFormula || flagPieceLabelAnchor) || not flagPatternLabelAngle || not (flagPatternLabelFormula || flagPatternLabelAnchor))
     {
         m_ftb->SetTabText(TabOrder::Labels, tr("Labels") + QLatin1String("*"));
         QIcon icon(":/icons/win.icon.theme/16x16/status/dialog-warning.png");
@@ -1641,7 +1662,7 @@ void DialogSeamAllowance::EnabledGrainline()
     }
     else
     {
-        flagGFormulas = true;
+        flagGrainlineFormula = true;
         ResetGrainlineWarning();
         CheckState();
     }
@@ -1650,15 +1671,15 @@ void DialogSeamAllowance::EnabledGrainline()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::EnabledDetailLabel()
 {
-    if (uiLabelsTab->detailLabel_GroupBox->isChecked() == true)
+    if (uiLabelsTab->pieceLabel_GroupBox->isChecked() == true)
     {
         UpdateDetailLabelValues();
         DetailPinPointChanged();
     }
     else
     {
-        flagDLAngle = true;
-        flagDLFormulas = true;
+        flagPieceLabelAngle = true;
+        flagPieceLabelFormula = true;
         ResetLabelsWarning();
         CheckState();
     }
@@ -1674,8 +1695,8 @@ void DialogSeamAllowance::EnabledPatternLabel()
     }
     else
     {
-        flagPLAngle = true;
-        flagPLFormulas = true;
+        flagPatternLabelAngle = true;
+        flagPatternLabelFormula = true;
         ResetLabelsWarning();
         CheckState();
     }
@@ -1903,7 +1924,7 @@ void DialogSeamAllowance::DeployPLAngle()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::ResetGrainlineWarning()
 {
-    if (flagGFormulas || flagGPin)
+    if (flagGrainlineFormula || flagGrainlineAnchor)
     {
         m_ftb->SetTabText(TabOrder::Grainline, tr("Grainline"));
     }
@@ -1912,7 +1933,7 @@ void DialogSeamAllowance::ResetGrainlineWarning()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::ResetLabelsWarning()
 {
-    if (flagDLAngle && (flagDLFormulas || flagDPin) && flagPLAngle && (flagPLFormulas || flagPPin))
+    if (flagPieceLabelAngle && (flagPieceLabelFormula || flagPieceLabelAnchor) && flagPatternLabelAngle && (flagPatternLabelFormula || flagPatternLabelAnchor))
     {
         m_ftb->SetTabText(TabOrder::Labels, tr("Labels"));
         uiLabelsTab->tabWidget->setTabIcon(uiLabelsTab->tabWidget->indexOf(uiLabelsTab->labels_Tab), QIcon());
@@ -2067,17 +2088,17 @@ void DialogSeamAllowance::GrainlinePinPointChanged()
     const quint32 bottomPinId = getCurrentObjectId(uiGrainlineTab->grainlineBottomPin_ComboBox);
     if (topPinId != NULL_ID && bottomPinId != NULL_ID && topPinId != bottomPinId)
     {
-        flagGPin = true;
+        flagGrainlineAnchor = true;
         color = okColor;
 
         ResetGrainlineWarning();
     }
     else
     {
-        flagGPin = false;
+        flagGrainlineAnchor = false;
         topPinId == NULL_ID && bottomPinId == NULL_ID ? color = okColor : color = errorColor;
 
-        if (not flagGFormulas && not flagGPin)
+        if (!flagGrainlineFormula && not flagGrainlineAnchor)
         {
             m_ftb->SetTabText(TabOrder::Grainline, tr("Grainline"));
         }
@@ -2096,10 +2117,10 @@ void DialogSeamAllowance::DetailPinPointChanged()
     const quint32 bottomPinId = getCurrentObjectId(uiLabelsTab->dLabelBottomRightPin_ComboBox);
     if (topPinId != NULL_ID && bottomPinId != NULL_ID && topPinId != bottomPinId)
     {
-        flagDPin = true;
+        flagPieceLabelAnchor = true;
         color = okColor;
 
-        if (flagPPin)
+        if (flagPatternLabelAnchor)
         {
             m_ftb->SetTabText(TabOrder::Labels, tr("Labels"));
             uiLabelsTab->tabWidget->setTabIcon(uiLabelsTab->tabWidget->indexOf(uiLabelsTab->labels_Tab), QIcon());
@@ -2107,7 +2128,7 @@ void DialogSeamAllowance::DetailPinPointChanged()
     }
     else
     {
-        flagDPin = false;
+        flagPieceLabelAnchor = false;
         topPinId == NULL_ID && bottomPinId == NULL_ID ? color = okColor : color = errorColor;
 
         m_ftb->SetTabText(TabOrder::Labels, tr("Labels") + QLatin1String("*"));
@@ -2128,10 +2149,10 @@ void DialogSeamAllowance::PatternPinPointChanged()
     const quint32 bottomPinId = getCurrentObjectId(uiLabelsTab->pLabelBottomRightPin_ComboBox);
     if (topPinId != NULL_ID && bottomPinId != NULL_ID && topPinId != bottomPinId)
     {
-        flagPPin = true;
+        flagPatternLabelAnchor = true;
         color = okColor;
 
-        if (flagDPin)
+        if (flagPieceLabelAnchor)
         {
             m_ftb->SetTabText(TabOrder::Labels, tr("Labels"));
             uiLabelsTab->tabWidget->setTabIcon(uiLabelsTab->tabWidget->indexOf(uiLabelsTab->labels_Tab), QIcon());
@@ -2139,7 +2160,7 @@ void DialogSeamAllowance::PatternPinPointChanged()
     }
     else
     {
-        flagPPin = false;
+        flagPatternLabelAnchor = false;
         topPinId == NULL_ID && bottomPinId == NULL_ID ? color = okColor : color = errorColor;
 
         m_ftb->SetTabText(TabOrder::Labels, tr("Labels") + QLatin1String("*"));
@@ -2176,7 +2197,7 @@ VPiece DialogSeamAllowance::CreatePiece() const
     piece.SetForbidFlipping(uiPathsTab->forbidFlipping_CheckBox->isChecked());
     piece.SetSeamAllowance(uiPathsTab->seams_CheckBox->isChecked());
     piece.SetSeamAllowanceBuiltIn(uiPathsTab->builtIn_CheckBox->isChecked());
-    piece.SetHideMainPath(uiPathsTab->hideMainPath_CheckBox->isChecked());
+    piece.setHideSeamLine(uiPathsTab->hideSeamLine_CheckBox->isChecked());
     piece.SetName(uiLabelsTab->detailName_LineEdit->text());
     piece.SetMx(m_mx);
     piece.SetMy(m_my);
@@ -2195,7 +2216,7 @@ VPiece DialogSeamAllowance::CreatePiece() const
     piece.GetPatternPieceData().SetLabelHeight(GetFormulaFromUser(uiLabelsTab->dLabelHeightFormula_LineEdit));
     piece.GetPatternPieceData().SetFontSize(m_oldData.getFontSize());
     piece.GetPatternPieceData().SetRotation(GetFormulaFromUser(uiLabelsTab->dLabelAngleFormula_LineEdit));
-    piece.GetPatternPieceData().SetVisible(uiLabelsTab->detailLabel_GroupBox->isChecked());
+    piece.GetPatternPieceData().SetVisible(uiLabelsTab->pieceLabel_GroupBox->isChecked());
     piece.GetPatternPieceData().SetCenterPin(getCurrentObjectId(uiLabelsTab->dLabelCenterPin_ComboBox));
     piece.GetPatternPieceData().SetTopLeftPin(getCurrentObjectId(uiLabelsTab->dLabelTopLeftPin_ComboBox));
     piece.GetPatternPieceData().SetBottomRightPin(getCurrentObjectId(uiLabelsTab->dLabelBottomRightPin_ComboBox));
@@ -2304,7 +2325,7 @@ bool DialogSeamAllowance::MainPathIsValid() const
     }
     else
     {
-        if(not MainPathIsClockwise())
+        if(!MainPathIsClockwise())
         {
             url += tr("You have to choose points in a clockwise direction!");
             uiPathsTab->status_Label->setText(url);
@@ -2312,7 +2333,7 @@ bool DialogSeamAllowance::MainPathIsValid() const
         }
         if (FirstPointEqualLast(uiPathsTab->mainPath_ListWidget))
         {
-            url += tr("First point cannot be equal to the last point!");
+            url += tr("First point cannot be same as last point!");
             uiPathsTab->status_Label->setText(url);
             valid = false;
         }
@@ -2322,28 +2343,12 @@ bool DialogSeamAllowance::MainPathIsValid() const
             uiPathsTab->status_Label->setText(url);
             valid = false;
         }
-        else if (not EachPointLabelIsUnique(uiPathsTab->mainPath_ListWidget))
+        else if (!EachPointLabelIsUnique(uiPathsTab->mainPath_ListWidget))
         {
             url += tr("Each point in the path must be unique!");
             uiPathsTab->status_Label->setText(url);
             valid = false;
         }
-    }
-
-    if (valid)
-    {
-        m_ftb->SetTabText(TabOrder::Paths, tr("Paths"));
-        QString tooltip = tr("Ready!");
-        if (not applyAllowed)
-        {
-            tooltip = tooltip + QLatin1String("  <b>") +
-                    tr("To open all detail's features complete creating the main path.") + QLatin1String("</b>");
-        }
-        uiPathsTab->status_Label->setText(tooltip);
-    }
-    else
-    {
-        m_ftb->SetTabText(TabOrder::Paths, tr("Paths") + QLatin1String("*"));
     }
 
     return valid;
@@ -2352,7 +2357,7 @@ bool DialogSeamAllowance::MainPathIsValid() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::ValidObjects(bool value)
 {
-    flagError = value;
+    flagMainPath = value;
     CheckState();
 }
 
@@ -2523,11 +2528,11 @@ void DialogSeamAllowance::UpdateNodeSAAfter(const QString &formula)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::InitFancyTabBar()
 {
-    m_ftb->InsertTab(TabOrder::Paths, QIcon("://icon/32x32/paths.png"), tr("Paths"));
-    m_ftb->InsertTab(TabOrder::Pins, QIcon("://icon/32x32/anchor_point.png"), tr("Anchor Points"));
-    m_ftb->InsertTab(TabOrder::Labels, QIcon("://icon/32x32/labels.png"), tr("Labels"));
-    m_ftb->InsertTab(TabOrder::Grainline, QIcon("://icon/32x32/grainline.png"), tr("Grainline"));
-    m_ftb->InsertTab(TabOrder::Notches, QIcon("://icon/32x32/notches.png"), tr("Notches"));
+    m_ftb->InsertTab(TabOrder::Paths, QIcon("://icon/32x32/paths@2x.png"), tr("Paths"));
+    m_ftb->InsertTab(TabOrder::Pins, QIcon("://icon/32x32/anchor_point@2x.png"), tr("Anchor Points"));
+    m_ftb->InsertTab(TabOrder::Labels, QIcon("://icon/32x32/labels@2x.png"), tr("Labels"));
+    m_ftb->InsertTab(TabOrder::Grainline, QIcon("://icon/32x32/grainline@2x.png"), tr("Grainlines"));
+    m_ftb->InsertTab(TabOrder::Notches, QIcon("://icon/32x32/notches@2x.png"), tr("Notches"));
 
     ui->horizontalLayout->addWidget(m_ftb, 0, Qt::AlignLeft);
 
@@ -2560,25 +2565,41 @@ void DialogSeamAllowance::InitFancyTabBar()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::InitMainPathTab()
 {
-    uiPathsTab->forbidFlipping_CheckBox->setChecked(qApp->Settings()->GetForbidWorkpieceFlipping());
-    uiPathsTab->hideMainPath_CheckBox->setChecked(qApp->Settings()->IsHideMainPath());
+    uiPathsTab->forbidFlipping_CheckBox->setChecked(qApp->Settings()->getForbidPieceFlipping());
+    uiPathsTab->hideSeamLine_CheckBox->setChecked(qApp->Settings()->isHideSeamLine());
 
     uiPathsTab->mainPath_ListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(uiPathsTab->mainPath_ListWidget, &QListWidget::customContextMenuRequested, this,
             &DialogSeamAllowance::ShowMainPathContextMenu);
-    connect(uiPathsTab->mainPath_ListWidget->model(), &QAbstractItemModel::rowsMoved, this,
-            &DialogSeamAllowance::ListChanged);
+
+    connect(uiPathsTab->mainPath_ListWidget->model(), &QAbstractItemModel::rowsMoved, this, [this]()
+    {
+      ListChanged();
+      ValidObjects(MainPathIsValid());
+    });
 
     connect(uiPathsTab->mainPath_ListWidget, &QListWidget::itemSelectionChanged,
             this, &DialogSeamAllowance::setMoveExclusions);
-    connect(uiPathsTab->moveTop_ToolButton,    &QToolButton::clicked,
-            this, [this](){moveListRowTop(uiPathsTab->mainPath_ListWidget);});
-    connect(uiPathsTab->moveUp_ToolButton,     &QToolButton::clicked,
-            this, [this](){moveListRowUp(uiPathsTab->mainPath_ListWidget);});
-    connect(uiPathsTab->moveDown_ToolButton,   &QToolButton::clicked,
-            this, [this](){moveListRowDown(uiPathsTab->mainPath_ListWidget);});
-    connect(uiPathsTab->moveBottom_ToolButton, &QToolButton::clicked,
-            this, [this](){moveListRowBottom(uiPathsTab->mainPath_ListWidget);});
+    connect(uiPathsTab->moveTop_ToolButton,&QToolButton::clicked, this, [this]()
+    {
+        moveListRowTop(uiPathsTab->mainPath_ListWidget);
+        ValidObjects(MainPathIsValid());
+    });
+    connect(uiPathsTab->moveUp_ToolButton, &QToolButton::clicked, this, [this]()
+    {
+        moveListRowUp(uiPathsTab->mainPath_ListWidget);
+        ValidObjects(MainPathIsValid());
+    });
+    connect(uiPathsTab->moveDown_ToolButton, &QToolButton::clicked, this, [this]()
+    {
+        moveListRowDown(uiPathsTab->mainPath_ListWidget);
+        ValidObjects(MainPathIsValid());
+    });
+    connect(uiPathsTab->moveBottom_ToolButton, &QToolButton::clicked, this, [this]()
+    {
+        moveListRowBottom(uiPathsTab->mainPath_ListWidget);
+        ValidObjects(MainPathIsValid());
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2743,7 +2764,7 @@ void DialogSeamAllowance::InitLabelsTab()
     m_dLabelHeightBaseHeight = uiLabelsTab->dLabelHeightFormula_LineEdit->height();
     m_dLabelAngleBaseHeight = uiLabelsTab->dLabelAngleFormula_LineEdit->height();
 
-    connect(uiLabelsTab->detailLabel_GroupBox, &QGroupBox::toggled, this, &DialogSeamAllowance::EnabledDetailLabel);
+    connect(uiLabelsTab->pieceLabel_GroupBox, &QGroupBox::toggled, this, &DialogSeamAllowance::EnabledDetailLabel);
     InitPinPoint(uiLabelsTab->dLabelCenterPin_ComboBox);
     InitPinPoint(uiLabelsTab->dLabelTopLeftPin_ComboBox);
     InitPinPoint(uiLabelsTab->dLabelBottomRightPin_ComboBox);
@@ -3135,7 +3156,7 @@ void DialogSeamAllowance::ShowPins()
 
     m_visPins->SetPins(GetListInternals<quint32>(uiPinsTab->pins_ListWidget));
 
-    if (not qApp->getCurrentScene()->items().contains(m_visPins))
+    if (!qApp->getCurrentScene()->items().contains(m_visPins))
     {
         m_visPins->VisualMode(NULL_ID);
         m_visPins->setZValue(10); // pins should be on top

@@ -74,13 +74,13 @@ DialogPreferences::DialogPreferences(QWidget *parent)
 
     qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    QPushButton *bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    connect(bOk, &QPushButton::clicked, this, &DialogPreferences::Ok);
+    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    connect(ok_Button, &QPushButton::clicked, this, &DialogPreferences::Ok);
 
-    QPushButton *bApply = ui->buttonBox->button(QDialogButtonBox::Apply);
-    SCASSERT(bApply != nullptr)
-    connect(bApply, &QPushButton::clicked, this, &DialogPreferences::Apply);
+    QPushButton *apply_Button = ui->buttonBox->button(QDialogButtonBox::Apply);
+    SCASSERT(apply_Button != nullptr)
+    connect(apply_Button, &QPushButton::clicked, this, &DialogPreferences::Apply);
 
     ui->pages_StackedWidget->insertWidget(0, m_configurePage);
     ui->pages_StackedWidget->insertWidget(1, m_patternPage);

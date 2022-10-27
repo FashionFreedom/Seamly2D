@@ -201,16 +201,17 @@ private:
     FancyTabBar                *m_ftb;
 
     bool                        applyAllowed;
-    bool                        flagGPin;
-    bool                        flagDPin;
-    bool                        flagPPin;
-    bool                        flagGFormulas;
-    bool                        flagDLAngle;
-    bool                        flagDLFormulas;
-    bool                        flagPLAngle;
-    bool                        flagPLFormulas;
+    bool                        flagGrainlineAnchor;
+    bool                        flagPieceLabelAnchor;
+    bool                        flagPatternLabelAnchor;
+    bool                        flagGrainlineFormula;
+    bool                        flagPieceLabelAngle;
+    bool                        flagPieceLabelFormula;
+    bool                        flagPatternLabelAngle;
+    bool                        flagPatternLabelFormula;
     bool                        flagBeforeFormula;
     bool                        flagAfterFormula;
+    bool                        flagMainPath;
 
     bool                        m_bAddMode;
     qreal                       m_mx;

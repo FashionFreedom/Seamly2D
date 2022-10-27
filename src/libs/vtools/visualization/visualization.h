@@ -9,15 +9,16 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  Copyright (C) 2013-2022 Seamly2D project.
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
+ **
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -37,8 +38,8 @@
 #include "../vmisc/def.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vabstractapplication.h"
-#include "../vwidgets/scalesceneitems.h"
 #include "../vwidgets/global.h"
+#include "../vwidgets/scalesceneitems.h"
 #include "../vwidgets/vcurvepathitem.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 
@@ -107,7 +108,7 @@ protected:
     virtual void           AddOnScene()=0;
 
     VScaledEllipse        *InitPoint(const QColor &color, QGraphicsItem *parent, qreal z = 0) const;
-    void                   DrawPoint(VScaledEllipse *point, const QPointF &pos, const QColor &color,
+    void                   DrawPoint(QGraphicsEllipseItem *point, const QPointF &pos, const QColor &color,
                                      Qt::PenStyle style = Qt::SolidLine);
     virtual void           DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
                                     Qt::PenStyle style = Qt::SolidLine);

@@ -244,7 +244,7 @@ void DialogNewMeasurements::InitUnits(const MeasurementsType &type)
     ui->comboBoxUnit->blockSignals(true);
     ui->comboBoxUnit->clear();
     ui->comboBoxUnit->addItem(tr("Centimeters"), static_cast<int>(Unit::Cm));
-    ui->comboBoxUnit->addItem(tr("Millimiters"), static_cast<int>(Unit::Mm));
+    ui->comboBoxUnit->addItem(tr("Millimeters"), static_cast<int>(Unit::Mm));
     if (type == MeasurementsType::Individual)
     {
         ui->comboBoxUnit->addItem(tr("Inches"), static_cast<int>(Unit::Inch));

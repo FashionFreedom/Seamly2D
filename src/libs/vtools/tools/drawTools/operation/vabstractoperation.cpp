@@ -272,7 +272,7 @@ void VAbstractOperation::ExtractData(const QDomElement &domElement, QVector<Sour
                     d.id = VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR);
                     d.mx = qApp->toPixel(VDomDocument::GetParametrDouble(element, AttrMx, QString::number(INT_MAX)));
                     d.my = qApp->toPixel(VDomDocument::GetParametrDouble(element, AttrMy, QString::number(INT_MAX)));
-                    d.showPointName = VDomDocument::getParameterBool(element, AttrShowPointName1, trueStr);
+                    d.showPointName = VDomDocument::getParameterBool(element, AttrShowPointName, trueStr);
                     destination.append(d);
                 }
             }

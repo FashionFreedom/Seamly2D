@@ -19,36 +19,46 @@ jobs:
 
     steps:
       - name: checkout code
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.2
 
-      - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+      - name: install qt  
+          # install-qt-action uses default qt v 5.15.2
+        uses: jurplel/install-qt-action@v2.14.0 
         with:
           version: ${{ env.QT_VERSION }}
 
       - name: install kde and dependencies
         run: |
-          # show git event values
+          # *********************************
+          echo "-- show git event values --"
           echo " github event = ${{ github.event }}"
           echo " github event action = ${{ github.event.action }}"
           echo " github event pull_request merged = ${{ github.event.pull_request.merged }}"
 
-          # register kde neon repository
+          # *********************************
+          echo "-- register kde neon repository --"
           # search the keyserver to get kde key, add to keyring with gpg
           echo "* register kde neon repository*"
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
-          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg 
+          #curl -SL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' -o | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
+          #sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg
+          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
           
-          # install build dependencies
-          echo "* install build dependencies *"
+          # *********************************
+          echo "-- install build dependencies --"
           sudo apt update
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
           sudo apt install -y libdrm-dev
 
-      - name: build Seamly2D.exe
+      - name: build Seamly2D & SeamlyMe
         run: |
+          # *********************************
+          echo "-- show current directory --"
+          echo $PWD
+          
+          # *********************************
+          echo "-- make Seamly2D & SeamlyMe --"
           mkdir /home/runner/local
           qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache
           make -j$(nproc) && make install
@@ -56,11 +66,15 @@ jobs:
       - name: install test dependencies
         # xvfb use to test built application within a framebuffer
         run: |
+          # *********************************
+          echo "-- install test dependencies (xvfb) --"
           sudo apt update
           sudo apt install -y xvfb
 
       # run the tests
       - name: test Seamly2D.exe
         run: |
+          # *********************************
+          echo "-- test Seamly2D with xvfb --"
           export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
           xvfb-run -a make --silent check TESTARGS="-silent"

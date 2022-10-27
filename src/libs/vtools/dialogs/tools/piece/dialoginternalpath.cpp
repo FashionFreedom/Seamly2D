@@ -214,8 +214,8 @@ void DialogInternalPath::ShowDialog(bool click)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::CheckState()
 {
-    SCASSERT(bOk != nullptr);
-    bOk->setEnabled(flagName && flagError);
+    SCASSERT(ok_Button != nullptr);
+    ok_Button->setEnabled(flagName && flagError);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -356,7 +356,7 @@ void DialogInternalPath::NodeChanged(int index)
         {
             const VPieceNode &node = path.at(nodeIndex);
 
-            // Seam alowance before
+            // Seam allowance before
             ui->beforeWidthFormula_PlainTextEdit->setEnabled(true);
             ui->beforeExpr_ToolButton->setEnabled(true);
 
@@ -373,7 +373,7 @@ void DialogInternalPath::NodeChanged(int index)
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
 
-            // Seam alowance after
+            // Seam allowance after
             ui->afterWidthFormula_PlainTextEdit->setEnabled(true);
             ui->afterExpr_ToolButton->setEnabled(true);
 
@@ -618,7 +618,7 @@ void DialogInternalPath::evaluateDefaultWidth()
         VContainer *locData = const_cast<VContainer *> (data);
         locData->AddVariable(currentSeamAllowance, new VIncrement(locData, currentSeamAllowance, 0, m_saWidth,
                                                                   QString().setNum(m_saWidth), true,
-                                                                  tr("Current seam aloowance")));
+                                                                  tr("Current seam allowance")));
 
         evaluateBeforeWidth();
         evaluateAfterWidth();

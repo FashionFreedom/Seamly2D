@@ -171,6 +171,7 @@
     <addaction name="toggleWireframe_Action"/>
     <addaction name="toggleControlPoints_Action"/>
     <addaction name="toggleAxisOrigin_Action"/>
+    <addaction name="toggleSeamAllowances_Action"/>
     <addaction name="toggleGrainLines_Action"/>
     <addaction name="toggleLabels_Action"/>
     <addaction name="separator"/>
@@ -454,7 +455,7 @@
     </size>
    </property>
    <property name="windowTitle">
-    <string>Property Ediitor</string>
+    <string>Property Editor</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
@@ -591,8 +592,8 @@
    <addaction name="zoomOut_Action"/>
    <addaction name="zoom100Percent_Action"/>
    <addaction name="zoomToFit_Action"/>
-   <addaction name="zoomToSelected_Action"/>
    <addaction name="zoomToPrevious_Action"/>
+   <addaction name="zoomToSelected_Action"/>
    <addaction name="zoomToArea_Action"/>
    <addaction name="zoomPan_Action"/>
   </widget>
@@ -1776,7 +1777,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of 2 Circles (IC)</string>
+                <string>Intersection Point of Circles (IC)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1802,7 +1803,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Tangency Point of Circle and Tangent (CT)</string>
+                <string>Intersection Point of Circle and Tangent (CT)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2572,6 +2573,7 @@
    <addaction name="toggleWireframe_Action"/>
    <addaction name="toggleControlPoints_Action"/>
    <addaction name="toggleAxisOrigin_Action"/>
+   <addaction name="toggleSeamAllowances_Action"/>
    <addaction name="toggleGrainLines_Action"/>
    <addaction name="toggleLabels_Action"/>
   </widget>
@@ -3448,7 +3450,7 @@
     <string>Intersection Point of Circles</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of 2 Circles (IC)</string>
+    <string>Intersection Point of Circles (IC)</string>
    </property>
    <property name="shortcut">
     <string>I, C</string>
@@ -3463,10 +3465,10 @@
      <normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</iconset>
    </property>
    <property name="text">
-    <string>Tangency Point of Circle and Tangent</string>
+    <string>Intersection Point of Circle and Tangent</string>
    </property>
    <property name="toolTip">
-    <string>Tangency Point of Circle and Tangent (CT)</string>
+    <string>Intersection Point of Circle and Tangent (CT)</string>
    </property>
    <property name="shortcut">
     <string>C, T</string>
@@ -3714,6 +3716,18 @@
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="shortcuts_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/2d_key_icon.png</normaloff>:/icon/32x32/2d_key_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Shortcuts</string>
+   </property>
+   <property name="shortcut">
+    <string>K</string>
    </property>
   </action>
   <action name="lastTool_Action">
@@ -3988,7 +4002,7 @@
     <string>Selected</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to Selected (CTRL+M)</string>
+    <string>Zoom to Selected (CTRL+Right)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Right</string>
@@ -4035,7 +4049,7 @@
     <string>Area</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to selected Area (CTRL+Right)</string>
+    <string>Zoom to selected Area (CTRL+A)</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+A</string>
@@ -4589,16 +4603,25 @@
     <string>Export</string>
    </property>
   </action>
-  <action name="shortcuts_Action">
+  <action name="toggleSeamAllowances_Action">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-     <normaloff>:/icon/32x32/2d_key_icon.png</normaloff>:/icon/32x32/2d_key_icon.png</iconset>
+     <normaloff>:/icon/32x32/seaml_allowance@2x.png</normaloff>:/icon/32x32/seaml_allowance@2x.png</iconset>
    </property>
    <property name="text">
-    <string>Shortcuts</string>
+    <string>Seam Allowance</string>
    </property>
    <property name="shortcut">
-    <string>K</string>
+    <string>V, S</string>
    </property>
   </action>
  </widget>

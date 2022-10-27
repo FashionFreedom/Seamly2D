@@ -53,6 +53,9 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v2.4.2
+        with:
+          submodules: true
+          fetch-depth: 0        
 
       - name: install kde and build dependencies
         run: |  
@@ -65,19 +68,20 @@ jobs:
           echo "-- register kde neon repository --"
           sudo apt install -y debsig-verify           
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          curl -sL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
-          sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg  
+          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add - 
           
           # *********************************
           echo "-- install build dependencies --"
           sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
         
-      - name: build
+      - name: build Seamly2D & SeamlyMe
         run: |
           # *********************************
           echo "-- show current directory --"
-          echo $PWD
+          pwd
+          echo "-- find the .rcc files recursively, before building Seamly2D & SeamlyMe-- "
+          ls -Rla ./src/app | grep '\.rcc$' | wc -l
                     
           # *********************************
           echo "-- make Seamly2D & SeamlyMe --"
@@ -95,48 +99,54 @@ jobs:
           sudo mkdir -p AppDir/usr/share/applications
           sudo mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps
           sudo mkdir -p AppDir/usr/share/icons/hicolor/256x256
-          
-      - name: find rcc files setup
-        id: find-rcc-files-setup
-        uses: Rishabh510/Path-lister-action@1.0
-        with:
-          path: "."
-          type: ".rcc"
-          
-      - name: find rcc files
-        id: find-resource-files
+
+      - name: compile diagramqrc to diagramrcc
+        id: compile-diagramqrc-to-diagramrcc
         run: |
-          echo "Found ${{ steps.find-resource-files-setup.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.find-resource-files-setup.outputs.paths }}; do
-          echo $i
-          done          
+          # ********************************************
+          echo " --- compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
+          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
+
+          # ********************************************
+          echo "-- find the .rcc files recursively, after compiling diagrams.rcc "
+          ls -Rla ./src/app/seamlyme/share | grep '\.rcc$' | wc -l   && echo "--- END COMPILE DIAGRAM.QRC TO DIAGRAM.RCC ---"     
 
       - name: copy resource files
         id: copy-resource-files
         run: |
+          echo "_______BEGIN DEBUGGING ___________________________"
           #********************************************
           # when copying files we get this error: 
           # ls: cannot access 'AppDir/usr/share/diagrams.rcc': No such file or directory
+          # cp: cannot stat 'src/app/seamlyme/bin/diagrams.rcc': No such file or directory
+
+          #********************************************
+          echo "-- show the current directory and list files --"
+          echo "------ then list files in the src/app subdirectory --"
+          pwd && ls -la && ls -la ./src/app
+
+          #********************************************
+          echo "-- find the .rcc files recursively -- "
+          ls -Rla ./src/app/seamlyme/share/ | grep '\.rcc$' && echo "_______END DEBUGGING ___________________________"
           
           #********************************************
-          echo "-- copy measurement diagrams.rcc file --"
-          cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
+          echo "-- copy measurement diagrams.rcc file from new location --"
+          #cp src/app/seamlyme/bin/diagrams.rcc AppDir/usr/share
+          sudo cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share
           
           #********************************************
           echo "-- copy translation *.qm files --"
-          cp share/translations/*.qm AppDir/usr/share/translations
+          sudo cp share/translations/*.qm AppDir/usr/share/translations
           
           #********************************************
           echo "-- copy .desktop files --"
-          cp dist/seamly2d.desktop AppDir/usr/share/applications
-          cp dist/seamlyme.desktop AppDir/usr/share/applications
+          sudo cp dist/seamly2d.desktop AppDir/usr/share/applications
+          sudo cp dist/seamlyme.desktop AppDir/usr/share/applications
           
           #********************************************
           echo "-- copy icon .png files --"
-          cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
-          cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png 
-          
-          #********************************************
+          sudo cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/
+          sudo cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png 
         
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
@@ -149,11 +159,14 @@ jobs:
           sudo chmod +x /usr/local/bin/appimage-builder
           
           #********************************************
-          echo "-- run appimage-builder --"
+          echo "-- run appimage-builder with appimage-builder-recipe-test.yml --"
           appimage-builder --recipe dist/appimage-builder-recipe-test.yml --log DEBUG --generate --skip-test
 
       - name: copy to final file tag_name
         run: |
+          #********************************************
+          echo "-- find the Seamly2D appimage file & rename it --"        
+          ls Seamly2D-continuous-x86_64.AppImage
           sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
 
       - name: upload seamly2d-x86_64.tar.gz artifact
@@ -172,6 +185,8 @@ jobs:
 
       - name: show file path
         run: |
+          #********************************************
+          echo "-- show current directory --"          
           pwd
           echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
           for i in ${{ steps.path-lister.outputs.paths }}; do

@@ -18,10 +18,8 @@ HEADERS += \
     $$PWD/tools/dialoglineintersectaxis.h \
     $$PWD/tools/dialognormal.h \
     $$PWD/tools/dialogpointfromarcandtangent.h \
-    $$PWD/tools/dialogpointfromcircleandtangent.h \
     $$PWD/tools/dialogpointofcontact.h \
     $$PWD/tools/dialogpointofintersectionarcs.h \
-    $$PWD/tools/dialogpointofintersectioncircles.h \
     $$PWD/tools/dialogshoulderpoint.h \
     $$PWD/tools/dialogsinglepoint.h \
     $$PWD/tools/dialogspline.h \
@@ -41,6 +39,8 @@ HEADERS += \
     $$PWD/tools/dialogmirrorbyaxis.h \
     $$PWD/tools/dialogmove.h \
     $$PWD/tools/dialogellipticalarc.h \
+    $$PWD/tools/intersect_circles_dialog.h \
+    $$PWD/tools/intersect_circletangent_dialog.h \
     $$PWD/tools/piece/dialogseamallowance.h \
     $$PWD/tools/piece/dialoginternalpath.h \
     $$PWD/tools/dialogpin.h \
@@ -64,10 +64,8 @@ SOURCES += \
     $$PWD/tools/dialoglineintersectaxis.cpp \
     $$PWD/tools/dialognormal.cpp \
     $$PWD/tools/dialogpointfromarcandtangent.cpp \
-    $$PWD/tools/dialogpointfromcircleandtangent.cpp \
     $$PWD/tools/dialogpointofcontact.cpp \
     $$PWD/tools/dialogpointofintersectionarcs.cpp \
-    $$PWD/tools/dialogpointofintersectioncircles.cpp \
     $$PWD/tools/dialogshoulderpoint.cpp \
     $$PWD/tools/dialogsinglepoint.cpp \
     $$PWD/tools/dialogspline.cpp \
@@ -87,6 +85,8 @@ SOURCES += \
     $$PWD/tools/dialogmirrorbyaxis.cpp \
     $$PWD/tools/dialogmove.cpp \
     $$PWD/tools/dialogellipticalarc.cpp \
+    $$PWD/tools/intersect_circles_dialog.cpp \
+    $$PWD/tools/intersect_circletangent_dialog.cpp \
     $$PWD/tools/piece/dialogseamallowance.cpp \
     $$PWD/tools/dialogpin.cpp \
     $$PWD/tools/dialoginsertnode.cpp \
@@ -110,10 +110,8 @@ FORMS += \
     $$PWD/tools/dialoglineintersectaxis.ui \
     $$PWD/tools/dialognormal.ui \
     $$PWD/tools/dialogpointfromarcandtangent.ui \
-    $$PWD/tools/dialogpointfromcircleandtangent.ui \
     $$PWD/tools/dialogpointofcontact.ui \
     $$PWD/tools/dialogpointofintersectionarcs.ui \
-    $$PWD/tools/dialogpointofintersectioncircles.ui \
     $$PWD/tools/dialogshoulderpoint.ui \
     $$PWD/tools/dialogsinglepoint.ui \
     $$PWD/tools/dialogspline.ui \
@@ -132,6 +130,8 @@ FORMS += \
     $$PWD/tools/dialogmirrorbyaxis.ui \
     $$PWD/tools/dialogmove.ui \
     $$PWD/tools/dialogellipticalarc.ui \
+    $$PWD/tools/intersect_circles_dialog.ui \
+    $$PWD/tools/intersect_circletangent_dialog.ui \
     $$PWD/tools/piece/dialogseamallowance.ui \
     $$PWD/tools/piece/dialoginternalpath.ui \
     $$PWD/tools/dialogpin.ui \

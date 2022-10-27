@@ -322,10 +322,10 @@ void DialogMirrorByAxis::suffixChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMirrorByAxis::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagError && flagName);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(bOk->isEnabled());
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagError && flagName);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(ok_Button->isEnabled());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

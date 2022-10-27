@@ -5,7 +5,7 @@
     <unit>cm</unit>
     <author>Timo Virtaneva</author>
     <description>Female Basic Block</description>
-    <notes>Differen Dart locations available</notes>
+    <notes>Different Dart locations available</notes>
     <patternName>Female Basic Block</patternName>
     <patternNumber>F-Basic-Bloack-2016</patternNumber>
     <company>Stinde Design</company>
@@ -20,17 +20,17 @@
         <increment name="#CG" description="Chest girth&#xa;Measure the fulles part of the bust&#xa;&#xa;Seamly2D: bust_circ" formula="92"/>
         <increment name="#WG" description="Waist girth&#xa;Measure the narrowest part of the waist&#xa;&#xa;Seamly2D: waist_circ" formula="74"/>
         <increment name="#HG" description="Hip Girth&#xa;Measure the fullest part of the hip&#xa;&#xa;Seamly2D: hip_circ" formula="98"/>
-        <increment name="#SL" description="Sleeve lenght&#xa;Measure over the bend elbow from shoulder tip to the wristbone&#xa;&#xa;Seamly2D:  arm_shoulder_tip_to_wrist_bent" formula="60"/>
+        <increment name="#SL" description="Sleeve length&#xa;Measure over the bend elbow from shoulder tip to the wristbone&#xa;&#xa;Seamly2D:  arm_shoulder_tip_to_wrist_bent" formula="60"/>
         <increment name="#Auxiliarymeasurements" description="" formula="0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0"/>
         <increment name="#SD" description="Skye depth&#xa;Measured from the neck &#xa;Calculated&#xa;CG &lt; 116  SD=CG/10+11, other wise CG/10+10,5 &#xa;&#xa;Seamly2D: height_neck_back - height_armpit" formula="#CG/10+(#CG&lt;116?11:10.5 )"/>
-        <increment name="#BWL" description="Back waist lenght&#xa;Measured from the neck&#xa;Calculated:&#xa;BH/4-0...1&#xa;&#xa;Seamly2D: height_neck_back - height_waist_side" formula="#BH/4-1"/>
+        <increment name="#BWL" description="Back waist length&#xa;Measured from the neck&#xa;Calculated:&#xa;BH/4-0...1&#xa;&#xa;Seamly2D: height_neck_back - height_waist_side" formula="#BH/4-1"/>
         <increment name="#HD" description="Hip depth&#xa;Measured from the neck&#xa;Calculated: SD+BWL&#xa;Seamly2D: height_neck_back - height_hip" formula="#SD+#BWL"/>
         <increment name="#L" description="Length" formula="106"/>
         <increment name="#NW" description="Nech width&#xa;Calculated: CG/20+2" formula="#CG/20+2"/>
-        <increment name="#BL_I" description="Bust lenght I&#xa;Measured from the nape of the neck&#xa;Seamly2D: bustpoint_to_bustpoint_halter/2" formula="34"/>
-        <increment name="#BL_II" description="Bust lenght II&#xa;Measured BL_I-NW&#xa;Calculated&#xa;CG &lt; 96 BL_II=CG/4+6&#xa;CG &lt; 116 BL_II=CG/4+5&#xa;other wise CG/4+4&#xa;" formula="#CG/4+6-(#CG>96?1:0)-(#CG>116?1:0)"/>
-        <increment name="#FWL_I" description="Front waist length I&#xa;Measured fron the nape of the neck&#xa;Seamly2D: " formula="52"/>
-        <increment name="#FWL_II" description="Front waist lenght II&#xa;Measured FWL_I-NW&#xa;Calculated&#xa;CG &lt; 90: BWL+4&#xa;CG &lt; 100: BWL+4+0,5&#xa;CG &lt; 110: BWL+4+0,5+(CG-100)/10&#xa;CG &lt; 120: BWL+4+0,5+0,5+(CG-100)/10&#xa;CG &lt; 130: BWL+4+0,5+0,5+0,5+(CG-100)/10&#xa;CG > 130: BWL+4+0,5+0,5+0,5+0,5+(CG-100)/10&#xa;&#xa;" formula="#BWL+4+(#CG > 90?0.5:0)+(#CG > 100?(#CG-100)/10:0)+(#CG >110?0.5:0)+(#CG >120?0.5:0)+(#CG >130?0.5:0)"/>
+        <increment name="#BL_I" description="Bust length I&#xa;Measured from the nape of the neck&#xa;Seamly2D: bustpoint_to_bustpoint_halter/2" formula="34"/>
+        <increment name="#BL_II" description="Bust length II&#xa;Measured BL_I-NW&#xa;Calculated&#xa;CG &lt; 96 BL_II=CG/4+6&#xa;CG &lt; 116 BL_II=CG/4+5&#xa;other wise CG/4+4&#xa;" formula="#CG/4+6-(#CG>96?1:0)-(#CG>116?1:0)"/>
+        <increment name="#FWL_I" description="Front waist length I&#xa;Measured from the nape of the neck&#xa;Seamly2D: " formula="52"/>
+        <increment name="#FWL_II" description="Front waist length II&#xa;Measured FWL_I-NW&#xa;Calculated&#xa;CG &lt; 90: BWL+4&#xa;CG &lt; 100: BWL+4+0,5&#xa;CG &lt; 110: BWL+4+0,5+(CG-100)/10&#xa;CG &lt; 120: BWL+4+0,5+0,5+(CG-100)/10&#xa;CG &lt; 130: BWL+4+0,5+0,5+0,5+(CG-100)/10&#xa;CG > 130: BWL+4+0,5+0,5+0,5+0,5+(CG-100)/10&#xa;&#xa;" formula="#BWL+4+(#CG > 90?0.5:0)+(#CG > 100?(#CG-100)/10:0)+(#CG >110?0.5:0)+(#CG >120?0.5:0)+(#CG >130?0.5:0)"/>
         <increment name="#BW" description="Back width&#xa;CG/8+5,5" formula="#CG/8+5.5"/>
         <increment name="#SW" description="Skye width&#xa;CG/8-1,5" formula="#CG/8-1.5"/>
         <increment name="#CW" description="Chest width&#xa;CG/4-4" formula="#CG/4-4"/>
@@ -49,8 +49,8 @@
         <increment name="#BackShoulderDrop" description="" formula="1.5"/>
         <increment name="#BackShoulderLineExtension" description="Larger sizes 0...1&#xa;Medium Sizes 1...1,5&#xa;Small Sizes 1,5...2" formula="1.5"/>
         <increment name="#BackDartLocation" description="" formula="#BW/3+1"/>
-        <increment name="#BackDartHight1" description="14...16" formula="14"/>
-        <increment name="#BackDartHight2" description="12...14" formula="12"/>
+        <increment name="#BackDartHeight1" description="14...16" formula="14"/>
+        <increment name="#BackDartHeight2" description="12...14" formula="12"/>
         <increment name="#WaistSideIntake" description="1...2" formula="1"/>
         <increment name="#ShoulderDartLocation" description="3...5" formula="5"/>
         <increment name="#Fixes" description="" formula="0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0-0"/>
@@ -116,9 +116,9 @@
             <point type="alongLine" typeLine="none" id="55" name="A45" firstPoint="6" secondPoint="16" mx="0.132292" lineColor="black" my="0.264583" length="#BackDartLocation"/>
             <point type="pointOfIntersection" id="56" name="A46" firstPoint="11" secondPoint="4" mx="-0.738003" my="0.264583"/>
             <point type="alongLine" typeLine="none" id="57" name="A47" firstPoint="56" secondPoint="11" mx="-0.650974" lineColor="black" my="-1.56304" length="0.5"/>
-            <point type="normal" typeLine="none" id="58" name="A48" firstPoint="55" secondPoint="4" mx="0.132292" lineColor="black" my="0.264583" angle="0" length="#BackDartHight1"/>
+            <point type="normal" typeLine="none" id="58" name="A48" firstPoint="55" secondPoint="4" mx="0.132292" lineColor="black" my="0.264583" angle="0" length="#BackDartHeight1"/>
             <point type="alongLine" typeLine="dashLine" id="59" name="A49" firstPoint="58" secondPoint="55" mx="0.132292" lineColor="black" my="0.264583" length="CurrentLength*2"/>
-            <point type="normal" typeLine="none" id="60" name="A50" firstPoint="57" secondPoint="56" mx="0.132292" lineColor="black" my="0.264583" angle="90" length="#BackDartHight2"/>
+            <point type="normal" typeLine="none" id="60" name="A50" firstPoint="57" secondPoint="56" mx="0.132292" lineColor="black" my="0.264583" angle="90" length="#BackDartHeight2"/>
             <point type="alongLine" typeLine="dashLine" id="61" name="A51" firstPoint="60" secondPoint="57" mx="0.132292" lineColor="black" my="0.264583" length="CurrentLength*2"/>
             <point type="alongLine" typeLine="none" id="62" name="A52" firstPoint="55" secondPoint="6" mx="0.132292" lineColor="black" my="0.264583" length="min(2;(max(0;((Line_A17_A42+Line_A42_A13-2*Line_A15_A43+Line_A11_A1)-(#WG/2+#WG_ease))/2)))"/>
             <point type="alongLine" typeLine="none" id="63" name="A53" firstPoint="55" secondPoint="16" mx="0.132292" lineColor="black" my="0.264583" length="Line_A45_A52"/>

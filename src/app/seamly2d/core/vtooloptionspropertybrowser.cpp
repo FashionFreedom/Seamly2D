@@ -151,7 +151,7 @@ void VToolOptionsPropertyBrowser::ShowItemOptions(QGraphicsItem *item)
         case VToolPointOfIntersectionArcs::Type:
             ShowOptionsToolPointOfIntersectionArcs(item);
             break;
-        case VToolPointOfIntersectionCircles::Type:
+        case IntersectCirclesTool::Type:
             ShowOptionsToolPointOfIntersectionCircles(item);
             break;
         case VToolPointOfIntersectionCurves::Type:
@@ -188,7 +188,7 @@ void VToolOptionsPropertyBrowser::ShowItemOptions(QGraphicsItem *item)
         case VToolCurveIntersectAxis::Type:
             ShowOptionsToolCurveIntersectAxis(item);
             break;
-        case VToolPointFromCircleAndTangent::Type:
+        case IntersectCircleTangentTool::Type:
             ShowOptionsToolPointFromCircleAndTangent(item);
             break;
         case VToolPointFromArcAndTangent::Type:
@@ -278,7 +278,7 @@ void VToolOptionsPropertyBrowser::UpdateOptions()
         case VToolPointOfIntersectionArcs::Type:
             UpdateOptionsToolPointOfIntersectionArcs();
             break;
-        case VToolPointOfIntersectionCircles::Type:
+        case IntersectCirclesTool::Type:
             UpdateOptionsToolPointOfIntersectionCircles();
             break;
         case VToolPointOfIntersectionCurves::Type:
@@ -312,7 +312,7 @@ void VToolOptionsPropertyBrowser::UpdateOptions()
         case VToolCurveIntersectAxis::Type:
             UpdateOptionsToolCurveIntersectAxis();
             break;
-        case VToolPointFromCircleAndTangent::Type:
+        case IntersectCircleTangentTool::Type:
             UpdateOptionsToolPointFromCircleAndTangent();
             break;
         case VToolPointFromArcAndTangent::Type:
@@ -423,7 +423,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         case VToolPointOfIntersectionArcs::Type:
             ChangeDataToolPointOfIntersectionArcs(prop);
             break;
-        case VToolPointOfIntersectionCircles::Type:
+        case IntersectCirclesTool::Type:
             ChangeDataToolPointOfIntersectionCircles(prop);
             break;
         case VToolPointOfIntersectionCurves::Type:
@@ -453,7 +453,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         case VToolCurveIntersectAxis::Type:
             ChangeDataToolCurveIntersectAxis(prop);
             break;
-        case VToolPointFromCircleAndTangent::Type:
+        case IntersectCircleTangentTool::Type:
             ChangeDataToolPointFromCircleAndTangent(prop);
             break;
         case VToolPointFromArcAndTangent::Type:
@@ -1392,17 +1392,17 @@ void VToolOptionsPropertyBrowser::ChangeDataToolPointOfIntersectionCircles(VPE::
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolPointOfIntersectionCircles *i = qgraphicsitem_cast<VToolPointOfIntersectionCircles *>(currentItem);
+    IntersectCirclesTool *i = qgraphicsitem_cast<IntersectCirclesTool *>(currentItem);
     SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointOfIntersectionCircles>(value.toString());
+            SetPointName<IntersectCirclesTool>(value.toString());
             break;
         case 28: // AttrCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetCrossCirclesPoint<VToolPointOfIntersectionCircles>(value);
+            SetCrossCirclesPoint<IntersectCirclesTool>(value);
             break;
         }
         case 29: // AttrC1Radius
@@ -1462,12 +1462,12 @@ void VToolOptionsPropertyBrowser::ChangeDataToolPointFromCircleAndTangent(VPE::V
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolPointFromCircleAndTangent *i = qgraphicsitem_cast<VToolPointFromCircleAndTangent *>(currentItem);
+    IntersectCircleTangentTool *i = qgraphicsitem_cast<IntersectCircleTangentTool *>(currentItem);
     SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointFromCircleAndTangent>(value.toString());
+            SetPointName<IntersectCircleTangentTool>(value.toString());
             break;
         case 31: // AttrCRadius
             i->SetCircleRadius(value.value<VFormula>());
@@ -1475,7 +1475,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolPointFromCircleAndTangent(VPE::V
         case 28: // AttrCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetCrossCirclesPoint<VToolPointFromCircleAndTangent>(value);
+            SetCrossCirclesPoint<IntersectCircleTangentTool>(value);
             break;
         }
         case 53: // AttrCCenter (read only)
@@ -2184,7 +2184,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersectionArcs(QGraphi
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersectionCircles(QGraphicsItem *item)
 {
-    VToolPointOfIntersectionCircles *i = qgraphicsitem_cast<VToolPointOfIntersectionCircles *>(item);
+    IntersectCirclesTool *i = qgraphicsitem_cast<IntersectCirclesTool *>(item);
     i->ShowVisualization(true);
     formView->setTitle(tr("Tool to make point from intersection two circles"));
 
@@ -2213,7 +2213,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersectionCurves(QGrap
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::ShowOptionsToolPointFromCircleAndTangent(QGraphicsItem *item)
 {
-    VToolPointFromCircleAndTangent *i = qgraphicsitem_cast<VToolPointFromCircleAndTangent *>(item);
+    IntersectCircleTangentTool *i = qgraphicsitem_cast<IntersectCircleTangentTool *>(item);
     i->ShowVisualization(true);
     formView->setTitle(tr("Tool to make point from circle and tangent"));
 
@@ -2865,7 +2865,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersectionArcs()
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersectionCircles()
 {
-    VToolPointOfIntersectionCircles *i = qgraphicsitem_cast<VToolPointOfIntersectionCircles *>(currentItem);
+    IntersectCirclesTool *i = qgraphicsitem_cast<IntersectCirclesTool *>(currentItem);
 
     idToProperty[AttrName]->setValue(i->name());
     idToProperty[AttrCrossPoint]->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);
@@ -2908,7 +2908,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersectionCurves()
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::UpdateOptionsToolPointFromCircleAndTangent()
 {
-    VToolPointFromCircleAndTangent *i = qgraphicsitem_cast<VToolPointFromCircleAndTangent *>(currentItem);
+    IntersectCircleTangentTool *i = qgraphicsitem_cast<IntersectCircleTangentTool *>(currentItem);
 
     idToProperty[AttrName]->setValue(i->name());
     idToProperty[AttrCrossPoint]->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);

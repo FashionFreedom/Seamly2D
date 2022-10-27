@@ -189,6 +189,9 @@ public:
     bool                 isZoomDoubleClick() const;
     void                 setZoomDoubleClick(const bool &value);
 
+    bool                 isPanActiveSpaceKey() const;
+    void                 setPanActiveSpaceKey(const bool &value);
+
     int                  getZoomSpeedFactor() const;
     void                 setZoomSpeedFactor(const int &factor);
 
@@ -261,11 +264,11 @@ public:
     QDate                GetDateOfLastRemind() const;
     void                 SetDateOfLastRemind(const QDate &date);
 
-    bool                 GetForbidWorkpieceFlipping() const;
-    void                 SetForbidWorkpieceFlipping(bool value);
+    bool                 getForbidPieceFlipping() const;
+    void                 setForbidPieceFlipping(bool value);
 
-    bool                 IsHideMainPath() const;
-    void                 SetHideMainPath(bool value);
+    bool                 isHideSeamLine() const;
+    void                 setHideSeamLine(bool value);
 
     bool                 showSecondNotch() const;
     void                 setShowSecondNotch(bool value);
@@ -332,6 +335,9 @@ public:
 
     qreal                getDefaultCutoutLineweight() const;
     void                 setDefaultCutoutLineweight(const qreal &value);
+
+    bool                 showSeamAllowances() const;
+    void                 setShowSeamAllowances(const bool &value);
 
     bool                 showGrainlines() const;
     void                 setShowGrainlines(const bool &value);
