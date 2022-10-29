@@ -29,17 +29,17 @@
 #include "shortcuts_dialog.h"
 #include "ui_shortcuts_dialog.h"
 
-#include <QFont>
-#include <QShowEvent>
-#include <QClipboard>
 #include <QApplication>
+#include <QClipboard>
+#include <QFileDialog>
+#include <QFont>
 #include <QTextDocument>
+#include <QPageLayout>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QPrintDialog>
-#include <QFileDialog>
+#include <QShowEvent>
 #include <QString>
-
 #include <QtWidgets>
 
 #include "../core/vapplication.h"
@@ -126,11 +126,11 @@ void ShortcutsDialog::exportPdf()
     }
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
-    printer.setPaperSize(QPrinter::A4);
+    printer.setPageSize(printer.pageLayout().pageSize());
     printer.setOutputFileName(filename);
 
     QTextDocument textDocument;
     textDocument.setHtml(ui->shortcuts_TextBrowser->toHtml());
-    textDocument.setPageSize(printer.pageRect().size());
+    textDocument.setPageSize(printer.pageLayout().paintRectPixels(printer.resolution()).size());
     textDocument.print(&printer);
 }

@@ -37,7 +37,6 @@ signals:
 private:
     void     init();
     QString  m_currentColor;
-    int      m_colorIndexStart;
     int      m_iconWidth;
     int      m_iconHeight;
 };

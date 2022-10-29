@@ -84,7 +84,7 @@ private:
     QPointF                       m_ptCenter;
     qreal                         m_dAngle;
     ArrowType                     m_eArrowType;
-    int                           m_penWidth;
+    qreal                         m_penWidth;
 
     qreal GetScale() const;
 
