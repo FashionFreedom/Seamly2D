@@ -698,7 +698,7 @@
   </xs:simpleType>
   <xs:simpleType name="units">
     <xs:restriction base="xs:string">
-      <xs:enumeration value=""/>
+      <xs:enumeration value="mm"/>
       <xs:enumeration value="cm"/>
       <xs:enumeration value="inch"/>
     </xs:restriction>
