@@ -66,6 +66,7 @@ CalculatorUtil::CalculatorUtil(QWidget *parent)
     , pendingMultiplicativeOperator(QString())
     , waitingForOperand(true)
     , display(new QLineEdit("0"))
+    , digitButtons()
 {
 //! [0]
 //! [1]
