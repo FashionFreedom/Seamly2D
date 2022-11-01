@@ -118,8 +118,8 @@ jobs:
         # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
         run: |
           echo " =-- Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
-          rcc -no-compress -binary home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources/diagrams.qrc -o home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources.rcc
-          sudo ls -Rla home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources | grep '\.rcc$'    
+          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources.rcc
+          sudo ls -Rla src/app/seamlyme/share/resources | grep '\.rcc$'    
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
