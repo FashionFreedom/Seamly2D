@@ -12,7 +12,7 @@ script:
   - sudo rm -rf AppDir || true && install -g docker -o runner -d AppDir AppDir/usr && pwd && ls -la && echo '--- AppDir has been recreated ---'
   
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
-  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG -= debug && echo "--- END QMAKE ---"
+  - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG-=debug && echo "--- END QMAKE ---"
   #- INSTALL_ROOT=AppDir make install
   - sudo make -j$(nproc) && echo "--- END MAKE ---"
   - sudo make install DESTDIR=AppDir && chown runner:docker AppDir/usr AppDir/usr/*.* && ls -Rla AppDir && echo "--- END MAKE INSTALL ---
