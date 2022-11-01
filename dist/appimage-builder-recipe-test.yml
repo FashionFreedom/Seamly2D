@@ -16,21 +16,10 @@ script:
   - make -j$(nproc) && echo "--- END MAKE ---"
   - make INSTALL_ROOT=AppDir install && echo "--- END MAKE INSTALL ---"
 
-  # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
-  - echo "=== Copy measurement diagrams ==="
-  - cp src/app/seamlyme/share/resources/diagrams.rcc AppDir/usr/share && ls -Rla AppDir/usr/share
-
-  # copy translations (qt's .qm translation files) into $build/share/translations directory
-  - echo "=== Copy translation files ==="
-  - cp share/translations/*.qm AppDir/usr/share/translations
-
-  # copy .desktop files from $build/dist directory to $build/share/applications directory
-  - echo "=== Copy .desktop files from dist/seamly ==="
-  - ls -la dist/seamly*.desktop
-  - cp dist/seamly2d.desktop AppDir/usr/share/applications && cp dist/seamlyme.desktop AppDir/usr/share/applications && ls -la AppDir/usr/share/applications 
-
   # copy icons to the correct directories
   - echo "=== Copy icon files ==="
+  - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps/
+  - mkdir -p AppDir/usr/share/icons/hicolor/256x256/
   - cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/ && ls -la AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png && ls -la AppDir/usr/share/icons/hicolor/256x256/
 
@@ -65,7 +54,8 @@ AppDir:
     include:
     - bash
     - kde-standard
-    - kimageformat-plugins      
+    - kimageformat-plugins
+    - libdrm
     - libgcrypt20  
     - libglu1-mesa-dev
     - libjpeg-turbo8    
