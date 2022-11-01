@@ -19,11 +19,18 @@ jobs:
 
     steps:
       - name: checkout code
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3
+
+      - name: remove default installed version of qt5  
+        run: |  
+          #----------------------------------
+          echo "-- remove default version of qt5 and config files --"
+          sudo apt purge -y qtchooser && sudo apt purge -y qtcreator && sudo apt purge -y *qt5*
+
 
       - name: install qt  
-          # install-qt-action uses default qt v 5.15.2
-        uses: jurplel/install-qt-action@v2.14.0 
+        # install-qt-action's default version is qt 5.15.2
+        uses: jurplel/install-qt-action@v3.0.0 
         with:
           version: ${{ env.QT_VERSION }}
 
