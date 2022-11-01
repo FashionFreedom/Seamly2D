@@ -34,7 +34,7 @@ jobs:
       - name: create release data
         # produces upload_url
         id: create-release-data
-        uses: actions/create-release@v1.11.1
+        uses: ncipollo/release-action@v1.11.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
