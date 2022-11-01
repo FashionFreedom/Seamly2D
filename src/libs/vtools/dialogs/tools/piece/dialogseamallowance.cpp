@@ -1324,7 +1324,7 @@ void DialogSeamAllowance::notchLengthChanged(qreal value)
   const int i = uiNotchesTab->notches_ComboBox->currentIndex();
   if (i != -1)
   {
-      QListWidgetItem *rowItem = GetItemById(uiNotchesTab->notches_ComboBox->currentData().toReal());
+      QListWidgetItem *rowItem = GetItemById(uiNotchesTab->notches_ComboBox->currentData().toUInt());
       if (rowItem)
       {
           VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
@@ -1348,7 +1348,7 @@ void DialogSeamAllowance::notchWidthChanged(qreal value)
   const int i = uiNotchesTab->notches_ComboBox->currentIndex();
   if (i != -1)
   {
-      QListWidgetItem *rowItem = GetItemById(uiNotchesTab->notches_ComboBox->currentData().toReal());
+      QListWidgetItem *rowItem = GetItemById(uiNotchesTab->notches_ComboBox->currentData().toUInt());
       if (rowItem)
       {
           VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));
@@ -1372,7 +1372,7 @@ void DialogSeamAllowance::notchAngleChanged(qreal value)
   const int i = uiNotchesTab->notches_ComboBox->currentIndex();
   if (i != -1)
   {
-      QListWidgetItem *rowItem = GetItemById(uiNotchesTab->notches_ComboBox->currentData().toReal());
+      QListWidgetItem *rowItem = GetItemById(uiNotchesTab->notches_ComboBox->currentData().toUInt());
       if (rowItem)
       {
           VPieceNode rowNode = qvariant_cast<VPieceNode>(rowItem->data(Qt::UserRole));

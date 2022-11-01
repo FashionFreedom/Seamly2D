@@ -84,8 +84,8 @@
 
 struct NodeInfo
 {
-     QString icon;
-     QString name;
+     QString icon{};
+     QString name{};
 };
 
 template <class T> class QSharedPointer;
@@ -260,7 +260,7 @@ protected:
     qreal            Eval(const QString &text, bool &flag, QLabel *label, const QString &postfix,
                           bool checkZero = true, bool checkLessThanZero = false);
 
-    qreal            normalize(const qreal value, const qreal start, const qreal end) ;                          
+    qreal            normalize(const qreal value, const qreal start, const qreal end) ;
 
     void             setCurrentPointId(QComboBox *box, const quint32 &value,
                                        FillComboBox rule = FillComboBox::NoChildren,

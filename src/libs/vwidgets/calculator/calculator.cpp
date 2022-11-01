@@ -49,6 +49,7 @@
 ****************************************************************************/
 
 #include <QtWidgets>
+#include <QtGlobal>
 
 #include <cmath>
 
@@ -58,15 +59,17 @@
 //! [0]
 CalculatorUtil::CalculatorUtil(QWidget *parent)
     : QWidget(parent)
+    , sumInMemory(0.0)
+    , sumSoFar(0.0)
+    , factorSoFar(0.0)
+    , pendingAdditiveOperator(QString())
+    , pendingMultiplicativeOperator(QString())
+    , waitingForOperand(true)
+    , display(new QLineEdit("0"))
+    , digitButtons()
 {
-    sumInMemory = 0.0;
-    sumSoFar = 0.0;
-    factorSoFar = 0.0;
-    waitingForOperand = true;
 //! [0]
-
 //! [1]
-    display = new QLineEdit("0");
 //! [1] //! [2]
     display->setReadOnly(true);
     display->setAlignment(Qt::AlignRight);
@@ -153,7 +156,7 @@ void CalculatorUtil::digitClicked()
 {
     Button *clickedButton = qobject_cast<Button *>(sender());
     int digitValue = clickedButton->text().toInt();
-    if (display->text() == "0" && digitValue == 0.0)
+    if (display->text() == "0" && digitValue == 0 )
         return;
 
     if (waitingForOperand) {
@@ -182,7 +185,8 @@ void CalculatorUtil::unaryOperatorClicked()
     } else if (clickedOperator == tr("x\302\262")) {
         result = std::pow(operand, 2.0);
     } else if (clickedOperator == tr("1/x")) {
-        if (operand == 0.0) {
+        if (qFuzzyIsNull(operand))
+        {
             abortOperation();
             return;
         }
@@ -401,7 +405,7 @@ bool CalculatorUtil::calculate(double rightOperand, const QString &pendingOperat
     } else if (pendingOperator == tr("\303\227")) {
         factorSoFar *= rightOperand;
     } else if (pendingOperator == tr("\303\267")) {
-        if (rightOperand == 0.0)
+        if (qFuzzyIsNull(rightOperand))
             return false;
         factorSoFar /= rightOperand;
     }

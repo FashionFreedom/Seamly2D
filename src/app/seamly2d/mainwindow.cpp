@@ -2368,7 +2368,7 @@ void MainWindow::zoomScaleChanged(qreal scale)
     zoomScaleSpinBox->blockSignals(true);
     zoomScaleSpinBox->setValue(qFloor(scale*1000)/10.0);
     zoomScaleSpinBox->blockSignals(false);
-    qCDebug(vMainWindow, "Value %f\n", (qreal)(qFloor(scale*1000)/10.0));
+    qCDebug(vMainWindow, "Value %f\n", (qreal(qFloor(scale*1000)/10.0)));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
