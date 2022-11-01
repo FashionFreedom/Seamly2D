@@ -977,10 +977,10 @@ void MainWindow::handleTriangleTool(bool checked)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief handlePointIntersectXyTool handler for pointOfIntersection tool.
+ * @brief handlePointIntersectXYTool handler for pointOfIntersection tool.
  * @param checked true - button checked.
  */
-void MainWindow::handlePointIntersectXyTool(bool checked)
+void MainWindow::handlePointIntersectXYTool(bool checked)
 {
     ToolSelectPointByRelease();
     SetToolButtonWithApply<PointIntersectXYDialog>
@@ -2451,7 +2451,7 @@ void MainWindow::InitToolButtons()
     connect(ui->internalPath_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleInternalPathTool);
     connect(ui->height_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleHeightTool);
     connect(ui->triangle_ToolButton,       &QToolButton::clicked, this, &MainWindow::handleTriangleTool);
-    connect(ui->pointIntersectXY_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointIntersectXyTool);
+    connect(ui->pointIntersectXY_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointIntersectXYTool);
     connect(ui->pointAlongCurve_ToolButton,     &QToolButton::clicked, this, &MainWindow::handlePointAlongCurveTool);
     connect(ui->pointAlongSpline_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointAlongSplineTool);
     connect(ui->unitePieces_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleUnionDetailsTool);
@@ -2562,7 +2562,7 @@ void MainWindow::handlePointsMenu()
     {
         ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointIntersectXY_ToolButton->setChecked(true);
-        handlePointIntersectXyTool(true);
+        handlePointIntersectXYTool(true);
     }
     else if (selectedAction == action_PerpendicularPoint)
     {
@@ -4952,7 +4952,7 @@ void MainWindow::LastUsedTool()
             break;
         case Tool::PointOfIntersection:
             ui->pointIntersectXY_ToolButton->setChecked(true);
-            handlePointIntersectXyTool(true);
+            handlePointIntersectXYTool(true);
             break;
         case Tool::PointOfIntersectionArcs:
             ui->pointOfIntersectionArcs_ToolButton->setChecked(true);
@@ -5332,7 +5332,7 @@ void MainWindow::CreateActions()
     {
         ui->draft_ToolBox->setCurrentWidget(ui->points_Page);
         ui->pointIntersectXY_ToolButton->setChecked(true);
-        handlePointIntersectXyTool(true);
+        handlePointIntersectXYTool(true);
     });
     connect(ui->perpendicularPoint_Action, &QAction::triggered, this, [this]
     {
