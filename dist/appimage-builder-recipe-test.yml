@@ -2,7 +2,7 @@
 version: 1
 
 script:
-  - echo "=== BEGIN APPIMAGE RECIPE BEFORE SCRIPT ==="
+  - echo "=== BEGIN APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
   # get the neon public key into the keyring BEFORE getting the deb package in the next step
   # ---------------------------------
 
@@ -15,7 +15,7 @@ script:
   - sudo qmake PREFIX=/usr Seamly2D.pro -r -d CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
   #- INSTALL_ROOT=AppDir make install
   - sudo make -j$(nproc) DEBUG=0 && echo "--- END MAKE ---"
-  - sudo make install DESTDIR=AppDir && chown runner:docker AppDir/usr AppDir/usr/*.* && ls -Rla AppDir && echo "--- END MAKE INSTALL ---
+  - sudo make install DESTDIR=AppDir && chown runner:docker AppDir/usr AppDir/usr/*.* && ls -Rla AppDir && echo "--- END MAKE INSTALL ---"
 
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
   - echo "=== Copy measurement diagrams ==="
@@ -41,7 +41,7 @@ script:
   - sudo chown runner:docker AppDir/usr/bin
   - export PATH=${PATH}:/home/runner/work/Seamly2D/Seamly2D/AppDir:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin && echo $PATH
 
-  - echo "=== END APPIMAGE RECIPE BEFORE SCRIPT ==="
+  - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
 
 AppDir:
 
