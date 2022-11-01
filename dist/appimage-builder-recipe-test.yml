@@ -39,7 +39,7 @@ script:
   - echo $PATH
   - echo pwd
   - sudo chown runner:docker AppDir/usr/bin
-  - sudo export PATH=${PATH}:home/runner/work/Seamly2D/Seamly2D/AppDir:home/runner/work/Seamly2D/Seamly2D/AppDir/usr:home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share:home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin && echo $PATH
+  - export PATH=${PATH}:/home/runner/work/Seamly2D/Seamly2D/AppDir:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin && echo $PATH
 
   - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
 
