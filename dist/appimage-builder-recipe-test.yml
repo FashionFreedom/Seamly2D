@@ -13,9 +13,8 @@ script:
   
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
-  #- INSTALL_ROOT=AppDir make install
   - make -j$(nproc) && echo "--- END MAKE ---"
-  - make install DESTDIR=/home/runner/work/Seamly2D/Seamly2D/AppDir && echo "--- END MAKE INSTALL ---"
+  - make INSTALL_ROOT=AppDir install && echo "--- END MAKE INSTALL ---"
 
   # copy measurement diagrams (qt's .rcc resource file) into $build/share directory
   - echo "=== Copy measurement diagrams ==="
