@@ -96,7 +96,7 @@ jobs:
           # ---------------------------------
           echo "-- install build dependencies --"
           sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev
+          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
           sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
           #----------------------------------
