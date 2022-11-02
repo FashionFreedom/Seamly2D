@@ -4,9 +4,10 @@
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 8, 2014
  **
- **  @author Douglas S. Caskey
- **  @date   7.16.2022
+ **  @author Douglas S Caskey
+ **  @date   7.23.2022
  **
+ **  @brief
  **  @copyright
  **  Copyright (C) 2013-2022 Seamly2D project.
  **  This source code is part of the Seamly2D project, a pattern making
@@ -36,8 +37,8 @@
 #include "../tools/drawTools/vdrawtool.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/calculator.h"
-#include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vtranslatevars.h"
 #include "../vwidgets/scalesceneitems.h"
 #include "../vwidgets/vcurvepathitem.h"
 #include "../vwidgets/vmaingraphicsscene.h"
@@ -70,6 +71,7 @@ Visualization::Visualization(const VContainer *data)
     , mainColor(Qt::red)
     , supportColor(QColor(qApp->Settings()->getPrimarySupportColor()))
     , lineStyle(Qt::SolidLine)
+    , lineWeight(0.35)
     , object1Id(NULL_ID)
     , toolTip(QString())
     , mode(Mode::Creation)
@@ -85,7 +87,14 @@ void Visualization::setObject1Id(const quint32 &value)
 void Visualization::setLineStyle(const Qt::PenStyle &value)
 {
     lineStyle = value;
-    InitPen();
+    initPen();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void Visualization::setLineWeight(const QString &value)
+{
+    lineWeight = ToPixel(value.toDouble(), Unit::Mm);
+    initPen();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -113,23 +122,23 @@ void Visualization::VisualMode(const quint32 &pointId)
 void Visualization::setMainColor(const QColor &value)
 {
     mainColor = value;
-    InitPen();
+    initPen();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VContainer *Visualization::GetData() const
+const VContainer *Visualization::getData() const
 {
     return data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::SetData(const VContainer *data)
+void Visualization::setData(const VContainer *data)
 {
     this->data = data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::MousePos(const QPointF &scenePos)
+void Visualization::mousePos(const QPointF &scenePos)
 {
     this->scenePos = scenePos;
     RefreshGeometry();
@@ -142,7 +151,7 @@ void Visualization::MousePos(const QPointF &scenePos)
 //---------------------------------------------------------------------------------------------------------------------
 VScaledEllipse *Visualization::InitPoint(const QColor &color, QGraphicsItem *parent, qreal z) const
 {
-    return InitPointItem(color, parent, z);
+    return initPointItem(color, parent, z);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -318,7 +327,7 @@ VScaledEllipse *Visualization::GetPointItem(QVector<VScaledEllipse *> &points, q
     }
     else
     {
-        auto point = InitPointItem(color, parent);
+        auto point = initPointItem(color, parent);
         points.append(point);
         return point;
     }
@@ -326,7 +335,7 @@ VScaledEllipse *Visualization::GetPointItem(QVector<VScaledEllipse *> &points, q
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VScaledEllipse *Visualization::InitPointItem(const QColor &color, QGraphicsItem *parent, qreal z)
+VScaledEllipse *Visualization::initPointItem(const QColor &color, QGraphicsItem *parent, qreal z)
 {
     VScaledEllipse *point = new VScaledEllipse(parent);
     point->setZValue(1);

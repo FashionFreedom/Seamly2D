@@ -1,37 +1,17 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
+/**************************************************************************
  **
  **  @file   vdrawtool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
+ **  @author Douglas S Caskey
+ **  @date   7.23.2022
+ **
  **  @brief
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -51,6 +31,16 @@
 
 #include "vdrawtool.h"
 
+#include "../vabstracttool.h"
+#include "../ifc/ifcdef.h"
+#include "../ifc/xml/vdomdocument.h"
+#include "../ifc/xml/vabstractpattern.h"
+#include "../qmuparser/qmuparsererror.h"
+#include "../vmisc/logging.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../../undocommands/addtocalc.h"
+#include "../../undocommands/savetooloptions.h"
+
 #include <QDialog>
 #include <QDomNode>
 #include <QMessageLogger>
@@ -59,16 +49,6 @@
 #include <QUndoStack>
 #include <Qt>
 #include <QtDebug>
-
-#include "../ifc/ifcdef.h"
-#include "../ifc/xml/vdomdocument.h"
-#include "../ifc/xml/vabstractpattern.h"
-#include "../../undocommands/addtocalc.h"
-#include "../../undocommands/savetooloptions.h"
-#include "../qmuparser/qmuparsererror.h"
-#include "../vpatterndb/vcontainer.h"
-#include "../vmisc/logging.h"
-#include "../vabstracttool.h"
 
 template <class T> class QSharedPointer;
 
@@ -80,9 +60,10 @@ template <class T> class QSharedPointer;
  * @param id object id in container.
  */
 VDrawTool::VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
-    : VInteractiveTool(doc, data, id, parent),
-      nameActivDraw(doc->getActiveDraftBlockName()),
-      m_lineType(LineTypeSolidLine)
+    : VInteractiveTool(doc, data, id, parent)
+    , nameActivDraw(doc->getActiveDraftBlockName())
+    , m_lineType(LineTypeSolidLine)
+    , m_lineWeight("0.35")
 {
     connect(this->doc, &VAbstractPattern::ChangedActivPP, this, &VDrawTool::ChangedActivDraw);
     connect(this->doc, &VAbstractPattern::ChangedNameDraw, this, &VDrawTool::ChangedNameDraw);
@@ -272,6 +253,21 @@ QString VDrawTool::getLineType() const
 void VDrawTool::SetTypeLine(const QString &value)
 {
     m_lineType = value;
+
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VDrawTool::getLineWeight() const
+{
+    return m_lineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VDrawTool::setLineWeight(const QString &value)
+{
+    m_lineWeight = value;
 
     QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
     SaveOption(obj);

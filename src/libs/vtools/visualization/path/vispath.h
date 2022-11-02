@@ -75,7 +75,7 @@ public:
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Vis::Path)};
 protected:
-    virtual void InitPen() Q_DECL_OVERRIDE;
+    virtual void initPen() Q_DECL_OVERRIDE;
     virtual void AddOnScene() Q_DECL_OVERRIDE;
 
     VSimplePoint *GetPoint(QVector<VSimplePoint *> &points, quint32 i, const QColor &color);
