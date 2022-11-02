@@ -81,7 +81,7 @@ jobs:
 
           # --------------------------------
           echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler97 
+          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118 libpoppler-qt5-dev
           sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
           sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
           sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
