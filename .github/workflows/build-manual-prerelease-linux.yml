@@ -34,7 +34,7 @@ jobs:
 
       - name: create release data
         id: create-release-data
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1.11.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -65,7 +65,7 @@ jobs:
           echo "${{ env.UPLOAD_URL }}"
 
       - name: checkout code
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3
         #with:
           #submodules: true
           #fetch-depth: 0  
@@ -144,7 +144,7 @@ jobs:
 
       - name: upload seamly2d-x86_64.tar.gz artifact
         # upload ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
@@ -168,11 +168,9 @@ jobs:
 
       - name: upload file as pre-release
         # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: upload file as pre-release
+        # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
+        uses: softprops/action-gh-release@v0.1.14
         with:
-          upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./Seamly2D-x86_64.AppImage
-          asset_name: ./Seamly2D-x86_64.AppImage
-          asset_content_type: application/octet-stream
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./Seamly2D-x86_64.AppImage
