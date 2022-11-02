@@ -34,12 +34,11 @@ jobs:
       - name: create release data
         # produces upload_url
         id: create-release-data
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1.11.1
         with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.RELEASE_NAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}        
+          tag: ${{ env.TAG_NAME }}
+          name: ${{ env.RELEASE_NAME }}
           body: Automated pre-release from pull request
           draft: false
           prerelease: true
@@ -58,7 +57,7 @@ jobs:
 
     steps:
       - name: checkout code
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v3
 
       - name: install kde and dependencies
         run: |
@@ -89,7 +88,7 @@ jobs:
 
       - name: upload seamly2d-x86_64.AppImage artifact
         # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
@@ -111,7 +110,7 @@ jobs:
 
       - name: upload file as pre-release
         # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.0.2
+        uses: tanyagray/action-upload-release-asset@v1.1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -131,10 +130,10 @@ jobs:
     steps:
 
       - name: checkout code
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v3
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3.0.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -153,7 +152,7 @@ jobs:
           zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.0.2
+        uses: tanyagray/action-upload-release-asset@v1.1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -173,17 +172,17 @@ jobs:
     steps:
 
       - name: checkout code
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v3
 
       - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1.10.0
+        uses: ilammy/msvc-dev-cmd@v1.12.0
         with:
           version: ${{ env.QT_VERSION }}
           # use SVC 2019 latest, 14.29.xxxx
           toolset: '14.29'
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3.0.0
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -219,7 +218,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
 
       - name: upload unsigned Seamly2D-windows.zip as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.0.2
+        uses: tanyagray/action-upload-release-asset@v1.1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

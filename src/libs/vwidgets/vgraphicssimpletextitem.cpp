@@ -101,6 +101,7 @@ VGraphicsSimpleTextItem::VGraphicsSimpleTextItem(const QString &text, QColor tex
     , m_fontSize(qApp->Settings()->getPointNameSize())
     , m_scale(1)
     , m_textColor(textColor)
+    , m_isNameHovered(false)
     , selectionType(SelectionType::ByMouseRelease)
     , m_showParentTooltip(true)
 {
