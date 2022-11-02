@@ -27,7 +27,7 @@ VAbstractLayoutDialog::VAbstractLayoutDialog(QWidget *parent) : QDialog(parent)
 
 //---------------------------------------------------------------------------------------------------------------------
 
-void VAbstractLayoutDialog::InitTemplates(QComboBox *comboBoxTemplates)
+void VAbstractLayoutDialog::initTemplates(QComboBox *comboBoxTemplates)
 {
     SCASSERT(comboBoxTemplates != nullptr)
     const QIcon icoPaper("://icon/16x16/template.png");
@@ -61,7 +61,7 @@ void VAbstractLayoutDialog::InitTemplates(QComboBox *comboBoxTemplates)
  * @param unit
  * @return
  */
-QSizeF VAbstractLayoutDialog::GetTemplateSize(const PaperSizeTemplate &tmpl, const Unit &unit) const
+QSizeF VAbstractLayoutDialog::getTemplateSize(const PaperSizeTemplate &tmpl, const Unit &unit) const
 {
     qreal width = 0;
     qreal height = 0;

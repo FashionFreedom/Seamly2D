@@ -23,7 +23,7 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
-        <widget class="QGroupBox" name="groupBoxPaperFormat">
+        <widget class="QGroupBox" name="paperFormat_GroupBox">
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
@@ -75,7 +75,7 @@
             <item row="2" column="0">
              <layout class="QHBoxLayout" name="horizontalLayout">
               <item>
-               <widget class="QToolButton" name="toolButtonPortrait">
+               <widget class="QToolButton" name="portrait_ToolButton">
                 <property name="text">
                  <string notr="true">...</string>
                 </property>
@@ -98,7 +98,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QToolButton" name="toolButtonLandscape">
+               <widget class="QToolButton" name="landscape_ToolButton">
                 <property name="text">
                  <string notr="true">...</string>
                 </property>
@@ -244,7 +244,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBoxLeftField">
+           <widget class="QDoubleSpinBox" name="leftField_DoubleSpinBox">
             <property name="decimals">
              <number>5</number>
             </property>
@@ -258,7 +258,7 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBoxRightField">
+           <widget class="QDoubleSpinBox" name="rightField_DoubleSpinBox">
             <property name="decimals">
              <number>5</number>
             </property>
@@ -272,7 +272,7 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBoxTopField">
+           <widget class="QDoubleSpinBox" name="topField_DoubleSpinBox">
             <property name="decimals">
              <number>5</number>
             </property>
@@ -286,7 +286,7 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBoxBottomField">
+           <widget class="QDoubleSpinBox" name="bottomField_DoubleSpinBox">
             <property name="decimals">
              <number>5</number>
             </property>
@@ -317,7 +317,7 @@
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_6">
             <item>
-             <widget class="QCheckBox" name="checkBoxTextAsPaths">
+             <widget class="QCheckBox" name="textAsPaths_Checkbox">
               <property name="toolTip">
                <string>Text will be converted to paths</string>
               </property>

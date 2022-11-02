@@ -6119,7 +6119,7 @@ void MainWindow::exportLayoutAs()
 
     try
     {
-        DialogSaveLayout dialog(scenes.size(), Draw::Layout, FileName(), this);
+        ExportLayoutDialog dialog(scenes.size(), Draw::Layout, FileName(), this);
 
         if (dialog.exec() == QDialog::Rejected)
         {
@@ -6181,7 +6181,7 @@ void MainWindow::exportPiecesAs()
 
     try
     {
-        DialogSaveLayout dialog(1, Draw::Modeling, FileName(), this);
+        ExportLayoutDialog dialog(1, Draw::Modeling, FileName(), this);
         dialog.setWindowTitle("Export Pattern Pieces");
 
         if (dialog.exec() == QDialog::Rejected)
@@ -6234,13 +6234,15 @@ void MainWindow::exportDraftBlocksAs()
     draftScene->setOriginsVisible(false);
 
     //Open a file dialog to save export
-    DialogSaveLayout dialog(1, Draw::Calculation, FileName(), this);
+    ExportLayoutDialog dialog(1, Draw::Calculation, FileName(), this);
     dialog.setWindowTitle("Export Draft Blocks");
 
     if (dialog.exec() == QDialog::Accepted)
     {
-        QString filename = dialog.Path() + QLatin1String("/") + dialog.FileName() + QString::number(1)
-                + DialogSaveLayout::exportFormatSuffix(dialog.Format());
+        const QString filename = QString("%1/%2%3")
+        .arg(dialog.path())                                          //1
+        .arg(dialog.fileName())                                      //2
+        .arg(ExportLayoutDialog::exportFormatSuffix(dialog.format())); //3
 
         QRectF rect;
         rect = draftScene->itemsBoundingRect();
@@ -6248,7 +6250,7 @@ void MainWindow::exportDraftBlocksAs()
         QGraphicsRectItem *paper = new QGraphicsRectItem(rect);
         QMarginsF margins = QMarginsF(0, 0, 0, 0);
 
-        switch(dialog.Format())
+        switch(dialog.format())
         {
             case LayoutExportFormat::SVG:
                 {
@@ -6632,11 +6634,11 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     {
         try
         {
-            DialogSaveLayout dialog(1, Draw::Modeling, expParams->OptBaseName(), this);
-            dialog.SetDestinationPath(expParams->OptDestinationPath());
-            dialog.SelectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
-            dialog.SetBinaryDXFFormat(expParams->IsBinaryDXF());
-            dialog.SetTextAsPaths(expParams->IsTextAsPaths());
+            ExportLayoutDialog dialog(1, Draw::Modeling, expParams->OptBaseName(), this);
+            dialog.setDestinationPath(expParams->OptDestinationPath());
+            dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
+            dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
+            dialog.setTextAsPaths(expParams->isTextAsPaths());
 
             ExportData(listDetails, dialog);
         }
@@ -6650,16 +6652,16 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
     else
     {
         auto settings = expParams->DefaultGenerator();
-        settings->SetTestAsPaths(expParams->IsTextAsPaths());
+        settings->SetTestAsPaths(expParams->isTextAsPaths());
 
         if (LayoutSettings(*settings.get()))
         {
             try
             {
-                DialogSaveLayout dialog(scenes.size(), Draw::Layout, expParams->OptBaseName(), this);
-                dialog.SetDestinationPath(expParams->OptDestinationPath());
-                dialog.SelectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
-                dialog.SetBinaryDXFFormat(expParams->IsBinaryDXF());
+                ExportLayoutDialog dialog(scenes.size(), Draw::Layout, expParams->OptBaseName(), this);
+                dialog.setDestinationPath(expParams->OptDestinationPath());
+                dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
+                dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
 
                 ExportData(listDetails, dialog);
             }

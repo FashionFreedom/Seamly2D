@@ -147,7 +147,7 @@ void PreferencesPathPage::EditPath()
             path = qApp->Seamly2DSettings()->GetPathPattern();
             break;
         case 3: // layout path
-            path = qApp->Seamly2DSettings()->GetPathLayout();
+            path = qApp->Seamly2DSettings()->getLayoutPath();
             break;
         case 4: // templates
             path = qApp->Seamly2DSettings()->GetPathTemplate();
@@ -222,8 +222,8 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(3, 0, new QTableWidgetItem(tr("My Layouts")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathLayout());
-        item->setToolTip(settings->GetPathLayout());
+        QTableWidgetItem *item = new QTableWidgetItem(settings->getLayoutPath());
+        item->setToolTip(settings->getLayoutPath());
         ui->pathTable->setItem(3, 1, item);
     }
 

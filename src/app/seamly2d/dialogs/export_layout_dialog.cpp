@@ -1,37 +1,17 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   dialogsavelayout.cpp
+ **  @file   export_layout_dialog.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   22 1, 2015
  **
+ **  @author Douglas S Caskey
+ **  @date   Nov 4, 2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,8 +29,8 @@
  **
  *************************************************************************/
 
-#include "dialogsavelayout.h"
-#include "ui_dialogsavelayout.h"
+#include "export_layout_dialog.h"
+#include "ui_export_layout_dialog.h"
 #include "../options.h"
 #include "../core/vapplication.h"
 #include "../vmisc/vsettings.h"
@@ -63,42 +43,44 @@
 #include <QProcess>
 #include <QtDebug>
 #include <QRegularExpression>
+#include <QSpinBox>
 #include <QtDebug>
 
-const QString baseFilenameRegExp = QStringLiteral("^[\\p{L}\\p{Nd}\\-. _]+$");
+const QString fileNameRegExp = QStringLiteral("^[\\p{L}\\p{Nd}\\-. _]+$");
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName, QWidget *parent)
+ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &fileName, QWidget *parent)
     : VAbstractLayoutDialog(parent)
-    , ui(new Ui::DialogSaveLAyout)
-    , count(count)
-    , isInitialized(false)
+    , ui(new Ui::ExportLayoutDialog)
+    , m_count(count)
+    , m_isInitialized(false)
     , m_mode(mode)
+    , m_SaveButton(nullptr)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    ui->lineEditPath->setClearButtonEnabled(true);
-    ui->lineEditFileName->setClearButtonEnabled(true);
+    ui->path_LineEdit->setClearButtonEnabled(true);
+    ui->filename_LineEdit->setClearButtonEnabled(true);
 
     qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(ok_Button != nullptr)
-    ok_Button->setEnabled(false);
+    m_SaveButton = ui->buttonBox->button(QDialogButtonBox::Save);
+    SCASSERT(m_SaveButton != nullptr)
+    m_SaveButton->setEnabled(false);
 
-    ui->lineEditFileName->setValidator( new QRegularExpressionValidator(QRegularExpression(baseFilenameRegExp), this));
+    ui->filename_LineEdit->setValidator( new QRegularExpressionValidator(QRegularExpression(fileNameRegExp), this));
 
-    const QString mask = fileName+QLatin1String("_");
+    const QString mask = fileName + modeString();
     if (VApplication::IsGUIMode())
     {
-        ui->lineEditFileName->setText(mask);
+        ui->filename_LineEdit->setText(mask);
     }
     else
     {
-        if (QRegularExpression(baseFilenameRegExp).match(mask).hasMatch())
+        if (QRegularExpression(fileNameRegExp).match(mask).hasMatch())
         {
-            ui->lineEditFileName->setText(mask);
+            ui->filename_LineEdit->setText(mask);
         }
         else
         {
@@ -109,60 +91,60 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
 
     if (m_mode == Draw::Calculation)
     {
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1006_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1009_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1012_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1014_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1015_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1018_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1021_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1024_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1027_Flat);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1006_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1009_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1012_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1014_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1015_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1018_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1021_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1024_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1027_AAMA);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1006_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1009_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1012_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1014_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1015_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1018_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1021_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1024_ASTM);
-        RemoveFormatFromList(LayoutExportFormat::DXF_AC1027_ASTM);
-        //RemoveFormatFromList(LayoutExportFormat::PS);
-        //RemoveFormatFromList(LayoutExportFormat::PDF);
-        //RemoveFormatFromList(LayoutExportFormat::EPS);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1006_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1009_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1012_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1014_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1015_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1018_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1021_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1024_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1027_Flat);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1006_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1009_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1012_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1014_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1015_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1018_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1021_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1024_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1027_AAMA);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1006_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1009_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1012_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1014_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1015_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1018_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1021_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1024_ASTM);
+        removeFormatFromList(LayoutExportFormat::DXF_AC1027_ASTM);
+        //removeFormatFromList(LayoutExportFormat::PS);
+        //removeFormatFromList(LayoutExportFormat::PDF);
+        //removeFormatFromList(LayoutExportFormat::EPS);
     }
 #ifdef V_NO_ASSERT // Temporarily unavailable
-    RemoveFormatFromList(LayoutExportFormat::OBJ);
+    removeFormatFromList(LayoutExportFormat::OBJ);
 #endif
 
     if (m_mode != Draw::Layout)
     {
-        RemoveFormatFromList(LayoutExportFormat::PDFTiled);
+        removeFormatFromList(LayoutExportFormat::PDFTiled);
     }
     else
     {
-        ui->checkBoxTextAsPaths->setVisible(false);
+        ui->textAsPaths_Checkbox->setVisible(false);
     }
 
-    connect(ok_Button, &QPushButton::clicked, this, &DialogSaveLayout::Save);
-    connect(ui->lineEditFileName, &QLineEdit::textChanged, this, &DialogSaveLayout::ShowExample);
-    connect(ui->comboBoxFormat, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
-            this, &DialogSaveLayout::ShowExample);
-    connect(ui->pushButtonBrowse, &QPushButton::clicked, this, [this]()
+    connect(m_SaveButton, &QPushButton::clicked, this, &ExportLayoutDialog::save);
+    connect(ui->filename_LineEdit, &QLineEdit::textChanged, this, &ExportLayoutDialog::showExportFiles);
+    connect(ui->format_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+            this, &ExportLayoutDialog::showExportFiles);
+    connect(ui->browse_PushButton, &QPushButton::clicked, this, [this]()
     {
-        const QString dirPath = qApp->Seamly2DSettings()->GetPathLayout();
+        const QString dirPath = qApp->Seamly2DSettings()->getLayoutPath();
         bool usedNotExistedDir = false;
         QDir directory(dirPath);
-        if (not directory.exists())
+        if (!directory.exists())
         {
             usedNotExistedDir = directory.mkpath(".");
         }
@@ -171,9 +153,9 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
                                                               QFileDialog::ShowDirsOnly
                                                               | QFileDialog::DontResolveSymlinks
                                                               | QFileDialog::DontUseNativeDialog);
-        if (not dir.isEmpty())
-        {// If paths equal the signal will not be called, we will do this manually
-            dir == ui->lineEditPath->text() ? PathChanged(dir) : ui->lineEditPath->setText(dir);
+        if (!dir.isEmpty())
+        {// If the paths are equal the slot will not be called, we will do this manually
+            dir == ui->path_LineEdit->text() ? pathChanged(dir) : ui->path_LineEdit->setText(dir);
         }
 
         if (usedNotExistedDir)
@@ -182,30 +164,38 @@ DialogSaveLayout::DialogSaveLayout(int count, Draw mode, const QString &fileName
             directory.rmpath(".");
         }
     });
-    connect(ui->lineEditPath, &QLineEdit::textChanged, this, &DialogSaveLayout::PathChanged);
+    connect(ui->path_LineEdit, &QLineEdit::textChanged, this, &ExportLayoutDialog::pathChanged);
+    connect(ui->quality_Slider, &QSlider::valueChanged, this, [this]()
+    {
+        ui->percent_SpinBox->setValue(ui->quality_Slider->value());
+    });
+    connect(ui->percent_SpinBox, QOverload<int>::of(&QSpinBox::valueChanged), [=](int i)
+    {
+        ui->quality_Slider->setValue(i);
+    });
 
-    ui->lineEditPath->setText(qApp->Seamly2DSettings()->GetPathLayout());
+    ui->path_LineEdit->setText(qApp->Seamly2DSettings()->getLayoutPath());
 
-    InitTemplates(ui->comboBoxTemplates);
+    initTemplates(ui->templates_ComboBox);
 
-    ReadSettings();
-    ShowExample();//Show example for current format.
+    readSettings();
+    showExportFiles();//Show example for current format.
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::InitTemplates(QComboBox *comboBoxTemplates)
+void ExportLayoutDialog::initTemplates(QComboBox *templates_ComboBox)
 {
-    VAbstractLayoutDialog::InitTemplates(comboBoxTemplates);
+    VAbstractLayoutDialog::initTemplates(templates_ComboBox);
 
     // remove the custom format,
-    int indexCustom = comboBoxTemplates->count() -1;
-    comboBoxTemplates->removeItem(indexCustom);
+    int indexCustom = templates_ComboBox->count() -1;
+    templates_ComboBox->removeItem(indexCustom);
 }
 
 
 //---------------------------------------------------------------------------------------------------------------------
 
-void DialogSaveLayout::SelectFormat(LayoutExportFormat format)
+void ExportLayoutDialog::selectFormat(LayoutExportFormat format)
 {
     if (static_cast<int>(format) < 0 || format >= LayoutExportFormat::COUNT)
     {
@@ -213,19 +203,19 @@ void DialogSaveLayout::SelectFormat(LayoutExportFormat format)
         throw e;
     }
 
-    const int i = ui->comboBoxFormat->findData(static_cast<int>(format));
+    const int i = ui->format_ComboBox->findData(static_cast<int>(format));
     if (i < 0)
     {
         VException e(tr("Selected not present format."));
         throw e;
     }
-    ui->comboBoxFormat->setCurrentIndex(i);
+    ui->format_ComboBox->setCurrentIndex(i);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::SetBinaryDXFFormat(bool binary)
+void ExportLayoutDialog::setBinaryDXFFormat(bool binary)
 {
-    switch(Format())
+    switch(format())
     {
         case LayoutExportFormat::DXF_AC1006_Flat:
         case LayoutExportFormat::DXF_AC1009_Flat:
@@ -254,7 +244,7 @@ void DialogSaveLayout::SetBinaryDXFFormat(bool binary)
         case LayoutExportFormat::DXF_AC1021_ASTM:
         case LayoutExportFormat::DXF_AC1024_ASTM:
         case LayoutExportFormat::DXF_AC1027_ASTM:
-            ui->checkBoxBinaryDXF->setChecked(binary);
+            ui->binaryDXF_CheckBox->setChecked(binary);
             break;
         case LayoutExportFormat::SVG:
         case LayoutExportFormat::PDF:
@@ -268,15 +258,15 @@ void DialogSaveLayout::SetBinaryDXFFormat(bool binary)
         case LayoutExportFormat::EPS:
         case LayoutExportFormat::TIF:
         default:
-            ui->checkBoxBinaryDXF->setChecked(false);
+            ui->binaryDXF_CheckBox->setChecked(false);
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogSaveLayout::IsBinaryDXFFormat() const
+bool ExportLayoutDialog::isBinaryDXFFormat() const
 {
-    switch(Format())
+    switch(format())
     {
         case LayoutExportFormat::DXF_AC1006_Flat:
         case LayoutExportFormat::DXF_AC1009_Flat:
@@ -305,7 +295,7 @@ bool DialogSaveLayout::IsBinaryDXFFormat() const
         case LayoutExportFormat::DXF_AC1021_ASTM:
         case LayoutExportFormat::DXF_AC1024_ASTM:
         case LayoutExportFormat::DXF_AC1027_ASTM:
-            return ui->checkBoxBinaryDXF->isChecked();
+            return ui->binaryDXF_CheckBox->isChecked();
         case LayoutExportFormat::SVG:
         case LayoutExportFormat::PDF:
         case LayoutExportFormat::PDFTiled:
@@ -323,7 +313,7 @@ bool DialogSaveLayout::IsBinaryDXFFormat() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::SetDestinationPath(const QString &cmdDestinationPath)
+void ExportLayoutDialog::setDestinationPath(const QString &cmdDestinationPath)
 {
     QString path;
     if (cmdDestinationPath.isEmpty())
@@ -337,26 +327,26 @@ void DialogSaveLayout::SetDestinationPath(const QString &cmdDestinationPath)
     else
     {
         QDir dir;
-        if (not dir.cd(cmdDestinationPath))
+        if (!dir.cd(cmdDestinationPath))
         {
-            VException e(tr("The destination directory doesn't exists or is not readable."));
+            VException e(tr("The destination directory doesn't exist or is not readable."));
             throw e;
         }
         path = dir.absolutePath();
     }
 
-    qDebug() << "Output full path: " << path << "\n";
-    ui->lineEditPath->setText(path);
+    qDebug() << "Full output path: " << path << "\n";
+    ui->path_LineEdit->setText(path);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Draw DialogSaveLayout::Mode() const
+Draw ExportLayoutDialog::mode() const
 {
     return m_mode;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::exportFormatSuffix(LayoutExportFormat format)
+QString ExportLayoutDialog::exportFormatSuffix(LayoutExportFormat format)
 {
     switch(format)
     {
@@ -415,47 +405,76 @@ QString DialogSaveLayout::exportFormatSuffix(LayoutExportFormat format)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogSaveLayout::~DialogSaveLayout()
+ExportLayoutDialog::~ExportLayoutDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::Path() const
+QString ExportLayoutDialog::path() const
 {
-    return ui->lineEditPath->text();
+    return ui->path_LineEdit->text();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::FileName() const
+QString ExportLayoutDialog::fileName() const
 {
-    return ui->lineEditFileName->text();
+    return ui->filename_LineEdit->text();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-LayoutExportFormat DialogSaveLayout::Format() const
+LayoutExportFormat ExportLayoutDialog::format() const
 {
-    return static_cast<LayoutExportFormat>(ui->comboBoxFormat->currentData().toInt());
+    return static_cast<LayoutExportFormat>(ui->format_ComboBox->currentData().toInt());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSaveLayout::formatText() const
+QString ExportLayoutDialog::formatText() const
 {
-    return ui->comboBoxFormat->currentText();
+    return ui->format_ComboBox->currentText();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::Save()
+void ExportLayoutDialog::save()
 {
-    for (int i=0; i < count; ++i)
+        QString text = tr("%1 already exists.").arg(fileName() + exportFormatSuffix(format()));
+        QString infoText = QStringLiteral("Do you want to replace it?");
+
+        if (ui->exportFiles_ListWidget->count() > 1)
+        {
+            text     = tr("%1 files with basename %2 already exist.")
+                          .arg(ui->exportFiles_ListWidget->count())
+                          .arg(fileName());
+            infoText = tr("Do you want to replace them?");
+        }
+
+        QString increment;
+
+    for (int i=0; i < m_count; ++i)
     {
-        const QString name = Path()+QLatin1String("/")+FileName()+QString::number(i+1)+exportFormatSuffix(Format());
+        if (m_mode == Draw::Layout)
+        {
+            increment = QStringLiteral("_0") + QString::number(i+1);
+        }
+
+        const QString name = QString("%1/%2%3%4")
+        .arg(path())                        //1
+        .arg(fileName())                    //2
+        .arg(increment)                     //3
+        .arg(exportFormatSuffix(format())); //4
+
         if (QFile::exists(name))
         {
-            QMessageBox::StandardButton res = QMessageBox::question(this, tr("Name conflict"),
-                                  tr("Folder already contains file with name %1. Rewrite all conflict file names?")
-                                  .arg(name), QMessageBox::Yes|QMessageBox::No, QMessageBox::Yes);
-            if (res == QMessageBox::No)
+            QMessageBox messageBox(this);
+            messageBox.setWindowTitle(tr("Confirm Export"));
+            messageBox.setIcon(QMessageBox::Question);
+            messageBox.setText(text);
+            messageBox.setInformativeText(infoText);
+            messageBox.setStandardButtons(QMessageBox::Yes | QMessageBox::No);
+            messageBox.setDefaultButton(QMessageBox::Yes);
+            int result = messageBox.exec();
+
+            if (result == QMessageBox::No)
             {
                 reject();
                 return;
@@ -466,43 +485,76 @@ void DialogSaveLayout::Save()
             }
         }
     }
-    WriteSettings();
+    writeSettings();
     accept();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::PathChanged(const QString &text)
+void ExportLayoutDialog::pathChanged(const QString &text)
 {
-    QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(ok_Button != nullptr)
-
-    QPalette palette = ui->lineEditPath->palette();
+    QPalette palette = ui->path_LineEdit->palette();
 
     QDir dir(text);
     dir.setPath(text);
     if (dir.exists(text))
     {
-        ok_Button->setEnabled(true);
-        palette.setColor(ui->lineEditPath->foregroundRole(), Qt::black);
+        m_SaveButton->setEnabled(true);
+        palette.setColor(ui->path_LineEdit->foregroundRole(), Qt::black);
     }
     else
     {
-        ok_Button->setEnabled(false);
-        palette.setColor(ui->lineEditPath->foregroundRole(), Qt::red);
+        m_SaveButton->setEnabled(false);
+        palette.setColor(ui->path_LineEdit->foregroundRole(), Qt::red);
     }
 
-    ui->lineEditPath->setPalette(palette);
+    ui->path_LineEdit->setPalette(palette);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::ShowExample()
+void ExportLayoutDialog::showExportFiles()
 {
-    const LayoutExportFormat currentFormat = Format();
-    ui->checkBoxTextAsPaths->setEnabled(true);
-    ui->exportQuality_Slider->setEnabled(false);
-    ui->groupBoxPaperFormat->setEnabled(false);
-    ui->groupBoxMargins->setEnabled(false);
-    ui->labelExample->setText(FileName() + QLatin1String("1") + exportFormatSuffix(currentFormat));
+    ui->exportFiles_ListWidget->clear();
+
+    if (m_mode != Draw::Layout)
+    {
+
+        ui->export_GroupBox->hide();
+        adjustSize();
+        return;
+    }
+
+    const LayoutExportFormat currentFormat = format();
+    ui->textAsPaths_Checkbox->setEnabled(true);
+    ui->quality_Slider->setEnabled(false);
+    ui->paperFormat_GroupBox->setEnabled(false);
+    ui->margins_GroupBox->setEnabled(false);
+    ui->export_GroupBox->show();
+    adjustSize();
+
+    if (currentFormat == LayoutExportFormat::PDFTiled)
+    {
+        const QString name = QString("%1%2")
+        .arg(fileName())                     //1
+        .arg(exportFormatSuffix(format()));  //2
+
+        QListWidgetItem *item = new QListWidgetItem(name);
+        SCASSERT(item != nullptr)
+        ui->exportFiles_ListWidget->addItem(item);
+    }
+    else
+    {
+        for (int i=0; i < m_count; ++i)
+        {
+            const QString name = QString("%1_0%2%3")
+            .arg(fileName())                     //1
+            .arg(QString::number(i+1))           //2
+            .arg(exportFormatSuffix(format()));  //3
+
+            QListWidgetItem *item = new QListWidgetItem(name);
+            SCASSERT(item != nullptr)
+            ui->exportFiles_ListWidget->addItem(item);
+        }
+    }
 
     switch(currentFormat)
     {
@@ -533,17 +585,17 @@ void DialogSaveLayout::ShowExample()
         case LayoutExportFormat::DXF_AC1021_ASTM:
         case LayoutExportFormat::DXF_AC1024_ASTM:
         case LayoutExportFormat::DXF_AC1027_ASTM:
-            ui->checkBoxBinaryDXF->setEnabled(true);
+            ui->binaryDXF_CheckBox->setEnabled(true);
             break;
         case LayoutExportFormat::PDFTiled:
-            ui->groupBoxPaperFormat->setEnabled(true);
-            ui->groupBoxMargins->setEnabled(true);
+            ui->paperFormat_GroupBox->setEnabled(true);
+            ui->margins_GroupBox->setEnabled(true);
             break;
         case LayoutExportFormat::PNG:
-            ui->exportQuality_Slider->setEnabled(true);
+            ui->quality_Slider->setEnabled(true);
             break;
         case LayoutExportFormat::JPG:
-            ui->exportQuality_Slider->setEnabled(true);
+            ui->quality_Slider->setEnabled(true);
             break;
         case LayoutExportFormat::PDF:
         case LayoutExportFormat::SVG:
@@ -554,32 +606,32 @@ void DialogSaveLayout::ShowExample()
         case LayoutExportFormat::EPS:
         case LayoutExportFormat::TIF:
         default:
-            ui->checkBoxBinaryDXF->setEnabled(false);
+            ui->binaryDXF_CheckBox->setEnabled(false);
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogSaveLayout::IsTextAsPaths() const
+bool ExportLayoutDialog::isTextAsPaths() const
 {
-    return ui->checkBoxTextAsPaths->isChecked();
+    return ui->textAsPaths_Checkbox->isChecked();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::SetTextAsPaths(bool textAsPaths)
+void ExportLayoutDialog::setTextAsPaths(bool textAsPaths)
 {
     if (m_mode != Draw::Layout)
     {
-        ui->checkBoxTextAsPaths->setChecked(textAsPaths);
+        ui->textAsPaths_Checkbox->setChecked(textAsPaths);
     }
     else
     {
-        ui->checkBoxTextAsPaths->setChecked(false);
+        ui->textAsPaths_Checkbox->setChecked(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::showEvent(QShowEvent *event)
+void ExportLayoutDialog::showEvent(QShowEvent *event)
 {
     QDialog::showEvent( event );
     if ( event->spontaneous() )
@@ -587,25 +639,24 @@ void DialogSaveLayout::showEvent(QShowEvent *event)
         return;
     }
 
-    if (isInitialized)
+    if (m_isInitialized)
     {
         return;
     }
-    // do your init stuff here
 
     setFixedHeight(size().height());
 
-    isInitialized = true;//first show windows are held
+    m_isInitialized = true;//first show windows are held
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSaveLayout::RemoveFormatFromList(LayoutExportFormat format)
+void ExportLayoutDialog::removeFormatFromList(LayoutExportFormat format)
 {
-    const int index = ui->comboBoxFormat->findData(static_cast<int>(format));
+    const int index = ui->format_ComboBox->findData(static_cast<int>(format));
     if (index != -1)
     {
-        ui->comboBoxFormat->removeItem(index);
-        ui->comboBoxFormat->setCurrentToDefault();
+        ui->format_ComboBox->removeItem(index);
+        ui->format_ComboBox->setCurrentToDefault();
     }
 }
 
@@ -615,9 +666,9 @@ void DialogSaveLayout::RemoveFormatFromList(LayoutExportFormat format)
  * the margins, teamplte and orientation of tiled pdf. Then sets the corresponding
  * elements of the dialog to these values.
  *
- * @brief DialogSaveLayout::ReadSettings
+ * @brief ExportLayoutDialog::readSettings
  */
-void DialogSaveLayout::ReadSettings()
+void ExportLayoutDialog::readSettings()
 {
     VSettings *settings = qApp->Seamly2DSettings();
     const Unit unit = qApp->patternUnit();
@@ -625,35 +676,36 @@ void DialogSaveLayout::ReadSettings()
     // read Margins top, right, bottom, left
     QMarginsF margins = settings->GetTiledPDFMargins(unit);
 
-    ui->doubleSpinBoxLeftField->setValue(margins.left());
-    ui->doubleSpinBoxTopField->setValue(margins.top());
-    ui->doubleSpinBoxRightField->setValue(margins.right());
-    ui->doubleSpinBoxBottomField->setValue(margins.bottom());
-    ui->exportQuality_Slider->setValue(settings->getExportQuality());
+    ui->leftField_DoubleSpinBox->setValue(margins.left());
+    ui->topField_DoubleSpinBox->setValue(margins.top());
+    ui->rightField_DoubleSpinBox->setValue(margins.right());
+    ui->bottomField_DoubleSpinBox->setValue(margins.bottom());
+    ui->quality_Slider->setValue(settings->getExportQuality());
+    ui->percent_SpinBox->setValue(ui->quality_Slider->value());
 
     // read Template
-    QSizeF size = QSizeF(settings->GetTiledPDFPaperWidth(Unit::Mm), settings->GetTiledPDFPaperHeight(Unit::Mm));
+    QSizeF size = QSizeF(settings->getTiledPDFPaperWidth(Unit::Mm), settings->getTiledPDFPaperHeight(Unit::Mm));
 
     const int max = static_cast<int>(PaperSizeTemplate::Custom);
     for (int i=0; i < max; ++i)
     {
 
-        const QSizeF tmplSize = GetTemplateSize(static_cast<PaperSizeTemplate>(i), Unit::Mm);
+        const QSizeF tmplSize = getTemplateSize(static_cast<PaperSizeTemplate>(i), Unit::Mm);
         if (size == tmplSize)
         {
-            ui->comboBoxTemplates->setCurrentIndex(i);
+            ui->templates_ComboBox->setCurrentIndex(i);
             break;
         }
     }
 
     // read Orientation
-    if(settings->GetTiledPDFOrientation() == PageOrientation::Portrait)
+    if(settings->getTiledPDFOrientation() == PageOrientation::Portrait)
     {
-        ui->toolButtonPortrait->setChecked(true);
+        ui->portrait_ToolButton->setChecked(true);
     }
     else
     {
-        ui->toolButtonLandscape->setChecked(true);
+        ui->landscape_ToolButton->setChecked(true);
     }
 
 }
@@ -663,39 +715,38 @@ void DialogSaveLayout::ReadSettings()
  * Writes the values of some variables (like the margins, template and orientation of tiled pdf).
  * of the save layout dialog into the settings.
  *
- * @brief DialogSaveLayout::WriteSettings
+ * @brief ExportLayoutDialog::writeSettings
  */
-void DialogSaveLayout::WriteSettings() const
+void ExportLayoutDialog::writeSettings() const
 {
     VSettings *settings = qApp->Seamly2DSettings();
     const Unit unit = qApp->patternUnit();
 
-    // write Margins top, right, bottom, left
-    QMarginsF margins = QMarginsF(
-        ui->doubleSpinBoxLeftField->value(),
-        ui->doubleSpinBoxTopField->value(),
-        ui->doubleSpinBoxRightField->value(),
-        ui->doubleSpinBoxBottomField->value()
-    );
-    settings->SetTiledPDFMargins(margins,unit);
-    settings->setExportQuality(ui->exportQuality_Slider->value());
+    // Margins:  left, top, right, bottom
+    QMarginsF margins = QMarginsF(ui->leftField_DoubleSpinBox->value(),
+                                  ui->topField_DoubleSpinBox->value(),
+                                  ui->rightField_DoubleSpinBox->value(),
+                                  ui->bottomField_DoubleSpinBox->value());
+
+    settings->setTiledPDFMargins(margins,unit);
+    settings->setExportQuality(ui->quality_Slider->value());
 
     // write Template
     PaperSizeTemplate temp;
-    temp = static_cast<PaperSizeTemplate>(ui->comboBoxTemplates->currentData().toInt());
-    const QSizeF size = GetTemplateSize(temp, Unit::Mm);
+    temp = static_cast<PaperSizeTemplate>(ui->templates_ComboBox->currentData().toInt());
+    const QSizeF size = getTemplateSize(temp, Unit::Mm);
 
-    settings->SetTiledPDFPaperHeight(size.height(),Unit::Mm);
-    settings->SetTiledPDFPaperWidth(size.width(),Unit::Mm);
+    settings->setTiledPDFPaperHeight(size.height(),Unit::Mm);
+    settings->setTiledPDFPaperWidth(size.width(),Unit::Mm);
 
     // write Orientation
-    if(ui->toolButtonPortrait->isChecked())
+    if(ui->portrait_ToolButton->isChecked())
     {
-        settings->SetTiledPDFOrientation(PageOrientation::Portrait);
+        settings->setTiledPDFOrientation(PageOrientation::Portrait);
     }
     else
     {
-        settings->SetTiledPDFOrientation(PageOrientation::Landscape);
+        settings->setTiledPDFOrientation(PageOrientation::Landscape);
     }
 
     //Export Format
@@ -703,4 +754,37 @@ void DialogSaveLayout::WriteSettings() const
     {
         qApp->Settings()->setExportFormat(formatText());
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief modeString()
+ * @return Returns a string that is the mode type
+ */
+QString ExportLayoutDialog::modeString() const
+{
+    QString modeStr = QStringLiteral();
+    if (qApp->Seamly2DSettings()->useModeType())
+    {
+        switch (m_mode)
+        {
+            case Draw::Calculation:
+            {
+                modeStr = QStringLiteral("_block");
+                break;
+            }
+            case Draw::Modeling:
+            {
+                modeStr = QStringLiteral("_pieces");
+                break;
+            }
+            case Draw::Layout:
+            default:
+            {
+                modeStr = QStringLiteral("_layout");
+                break;
+            }
+        }
+    }
+    return modeStr;
 }

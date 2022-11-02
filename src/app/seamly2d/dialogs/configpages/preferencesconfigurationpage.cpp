@@ -171,6 +171,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     ui->autoInterval_Spinbox->setValue(qApp->Seamly2DSettings()->getAutosaveInterval());
 
     // Export Format
+    ui->useModeType_CheckBox->setChecked(qApp->Seamly2DSettings()->useModeType());
     ui->uselastExportFormat_CheckBox->setChecked(qApp->Seamly2DSettings()->useLastExportFormat());
     index = ui->defaultExportFormat_ComboBox->findText(qApp->Seamly2DSettings()->getExportFormat());
     if (index != -1)
@@ -181,7 +182,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     {
         m_defaultExportFormatChanged = true;
     });
- 
+
     // Language
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -237,6 +238,7 @@ void PreferencesConfigurationPage::Apply()
 
     ui->autoSave_CheckBox->isChecked() ? autoSaveTimer->start(ui->autoInterval_Spinbox->value()*60000) : autoSaveTimer->stop();
 
+    settings->setUseModeType(ui->useModeType_CheckBox->isChecked());
     settings->setUseLastExportFormat(ui->uselastExportFormat_CheckBox->isChecked());
     if (m_defaultExportFormatChanged)
     {

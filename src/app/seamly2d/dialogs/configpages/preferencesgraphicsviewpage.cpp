@@ -195,7 +195,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->zoomSpeedFactor_Slider->setValue(qApp->Seamly2DSettings()->getZoomSpeedFactor());
 
     // Export Quality
-    ui->exportQuality_Slider->setValue(qApp->Seamly2DSettings()->getExportQuality());
+    ui->quality_Slider->setValue(qApp->Seamly2DSettings()->getExportQuality());
 
 // Behavior preferences
     // Constrain Angle Value & Modifier Key
@@ -359,7 +359,7 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setZoomSpeedFactor(ui->zoomSpeedFactor_Slider->value());
 
     // Export Quality
-    settings->setExportQuality(ui->exportQuality_Slider->value());
+    settings->setExportQuality(ui->quality_Slider->value());
 
     // Behavior preferences
     // Constrain Angle Value & Modifier Key

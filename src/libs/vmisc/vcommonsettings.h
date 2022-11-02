@@ -102,6 +102,9 @@ public:
     int                  getAutosaveInterval() const;
     void                 setAutosaveInterval(const int &value);
 
+    bool                 useModeType() const;
+    void                 setUseModeType(const bool &value);
+
     bool                 useLastExportFormat() const;
     void                 setUseLastExportFormat(const bool &value);
 

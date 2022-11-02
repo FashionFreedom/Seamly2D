@@ -76,7 +76,7 @@ public:
     int OptExportType() const;
 
     int IsBinaryDXF() const;
-    int IsTextAsPaths() const;
+    int isTextAsPaths() const;
     int IsExportOnlyDetails() const;
 
     //generator creation is moved here ... because most options are for it only, so no need to create extra getters...
