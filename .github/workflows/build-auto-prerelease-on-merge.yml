@@ -35,11 +35,10 @@ jobs:
         # produces upload_url
         id: create-release-data
         uses: ncipollo/release-action@v1.11.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: ${{ env.RELEASE_NAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}        
+          tag: ${{ env.TAG_NAME }}
+          name: ${{ env.RELEASE_NAME }}
           body: Automated pre-release from pull request
           draft: false
           prerelease: true
@@ -89,7 +88,7 @@ jobs:
 
       - name: upload seamly2d-x86_64.AppImage artifact
         # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v2.2.4
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
