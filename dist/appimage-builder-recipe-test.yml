@@ -47,8 +47,6 @@ AppDir:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xf6ecb3762474eda9d21b7022871920d1991bc93c'
     include:
-    - bash
-    - tk
     - libdrm-common
     - libgcrypt20
     - libjpeg-turbo8
@@ -72,13 +70,10 @@ AppDir:
     - libxrender1
     - libxshmfence1
     - libxxf86vm1
-    - nickle
-    - python3
     - qt5-gtk-platformtheme         
     - qt5-image-formats-plugins
-    - qttools5-dev     
     - qttranslations5-l10n
-    - qtwayland5   
+    - qtwayland5
     exclude:
     - dbus
     - ubuntu-mono
