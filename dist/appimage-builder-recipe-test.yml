@@ -49,45 +49,30 @@ AppDir:
     include:
     - bash
     - tk
-    - kde-standard
-    - kimageformat-plugins
     - libdrm-common
-    - libgcrypt20  
-    - libglu1-mesa-dev
-    - libjpeg-turbo8    
-    - liblz4-1    
+    - libgcrypt20
+    - libjpeg-turbo8
+    - liblz4-1
     - libpoppler97
     - libqt5core5a
     - libqt5svg5
-    - libqt5svg5-dev
     - libqt5xml5
     - libqt5xmlpatterns5
-    - libqt5xmlpatterns5-dev   
     - libsm6
-    - libwayland-bin  
-    - libwayland-dev 
-    - libmirwayland-dev
-    - libx11-xcb-dev  
-    - libxau6 
-    - '^libxcb.*-dev'          
-    - libxcb-render-util0    
+    - libwayland-bin
+    - libxau6
+    - libxcb-render-util0
     - libxcb-sync1
-    - libxcb-util-dev
     - libxcb-xinerama0
-    - libxcb-xkb1 
-    - libxdmcp6   
+    - libxcb-xkb1
+    - libxdmcp6
     - libxext6
     - libxfixes3
-    - libxi-dev        
-    - libxkbcommon-dev
-    - libxkbcommon-x11-dev
-    - libxrender1    
-    - libxrender-dev
-    - libxshmfence1    
+    - libxrender1
+    - libxshmfence1
     - libxxf86vm1
-    - make  
-    - nickle      
-    - python 
+    - nickle
+    - python
     - qt5-gtk-platformtheme         
     - qt5-image-formats-plugins
     - qttools5-dev     
