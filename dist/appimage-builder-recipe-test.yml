@@ -112,7 +112,7 @@ AppDir:
 
   runtime:
     env:
-      APPDIR_LIBRARY_PATH: $APPDIR/usr/lib/x86_64-linux-gnu:$APPDIR/lib/x86_64-linux-gnu
+      APPDIR_LIBRARY_PATH: $APPDIR/usr/lib64/Seamly2D:$APPDIR/usr/lib/x86_64-linux-gnu:$APPDIR/lib/x86_64-linux-gnu
       PATH: '${APPDIR}/bin:${APPDIR}/usr/bin:${PATH}:'
       APP_SRC_DIR: '${APPDIR}/usr/src'
 
