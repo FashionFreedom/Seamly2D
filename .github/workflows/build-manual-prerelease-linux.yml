@@ -139,11 +139,11 @@ jobs:
         run: |
           # ---------------------------------
           echo "-- find the Seamly2D appimage file & rename it --"   
-          sudo ls -Rla ./AppDir | grep 'Seamly2D-continuous-x86_64.*'    
-          sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-amd_64.AppImage
+          ls -la . | grep 'Seamly2D-continuous-x86_64.*'    
+          mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
 
-      - name: upload seamly2d-x86_64.tar.gz artifact
-        # upload ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
+      - name: Upload Seamly2D-x86_64.AppImage artifact
+        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
         uses: actions/upload-artifact@v3.1.0
         with:
           name: Seamly2D-x86_64.AppImage
@@ -167,7 +167,7 @@ jobs:
           done
 
       - name: upload file as pre-release
-        # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
+        # uploads Seamly2D-x86_64.AppImage as pre-release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
