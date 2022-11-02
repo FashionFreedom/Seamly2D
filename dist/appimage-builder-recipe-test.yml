@@ -14,7 +14,7 @@ script:
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
   - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
   - make -j$(nproc) && echo "--- END MAKE ---"
-  - make INSTALL_ROOT=AppDir install && echo "--- END MAKE INSTALL ---"
+  - make INSTALL_ROOT=/home/runner/work/Seamly2D/Seamly2D/AppDir install && echo "--- END MAKE INSTALL ---"
 
   # copy icons to the correct directories
   - echo "=== Copy icon files ==="
@@ -27,7 +27,7 @@ script:
 
 AppDir:
 
-  path: AppDir
+  path: /home/runner/work/Seamly2D/Seamly2D/AppDir
 
   app_info:
     # name & version will be used to name the appimage: Seamly2D-continuous-x86_64.AppImage
@@ -48,6 +48,7 @@ AppDir:
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     include:
     - bash
+    - tk
     - kde-standard
     - kimageformat-plugins
     - libdrm-common
