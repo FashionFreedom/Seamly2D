@@ -42,9 +42,9 @@ AppDir:
   apt:
     arch: amd64
     sources:
-    - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
-    - sourceline: deb http://security.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse
-    - sourceline: deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse
+    - sourceline: deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
+    - sourceline: deb http://security.ubuntu.com/ubuntu/ jammy-security main restricted universe multiverse
+    - sourceline: deb http://archive.ubuntu.com/ubuntu/ jammy-updates main restricted universe multiverse
       key_url: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x3b4fe6acc0b21f32'
     include:
     - bash
@@ -53,7 +53,8 @@ AppDir:
     - libgcrypt20
     - libjpeg-turbo8
     - liblz4-1
-    - libpoppler97
+    - libpoppler118
+    - libpoppler-qt5-1
     - libqt5core5a
     - libqt5svg5
     - libqt5xml5
