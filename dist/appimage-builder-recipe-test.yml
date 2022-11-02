@@ -55,7 +55,7 @@ AppDir:
     - bash
     - kde-standard
     - kimageformat-plugins
-    - libdrm
+    - libdrm-common
     - libgcrypt20  
     - libglu1-mesa-dev
     - libjpeg-turbo8    
@@ -96,8 +96,7 @@ AppDir:
     - qttools5-dev     
     - qttranslations5-l10n
     - qtwayland5   
-    - sh
-    - wish  
+    - bash
     exclude:
     - dbus
     - ubuntu-mono
