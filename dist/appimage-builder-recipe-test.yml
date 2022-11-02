@@ -23,16 +23,11 @@ script:
   - cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/ && ls -la AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png && ls -la AppDir/usr/share/icons/hicolor/256x256/
 
-  - echo "=== Add AppDir & subdirs to PATH ==="
-  - echo $PATH
-  - echo pwd
-  - export PATH=${PATH}:/home/runner/work/Seamly2D/Seamly2D/AppDir:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr/share:/home/runner/work/Seamly2D/Seamly2D/AppDir/usr/bin && echo $PATH
-
   - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
 
 AppDir:
 
-  path: ./AppDir
+  path: AppDir
 
   app_info:
     # name & version will be used to name the appimage: Seamly2D-continuous-x86_64.AppImage
@@ -96,7 +91,6 @@ AppDir:
     - qttools5-dev     
     - qttranslations5-l10n
     - qtwayland5   
-    - bash
     exclude:
     - dbus
     - ubuntu-mono
