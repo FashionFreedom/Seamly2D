@@ -70,7 +70,6 @@ jobs:
       - name: install kde and dependencies
         run: |
           # register kde neon repository
-          sudo apt install -y debsig-verify
           echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
           curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
           # install build dependencies

@@ -10,11 +10,15 @@ on:
       tags:
         description: 'Build manual Linux'
 
+env:
+  QT_SELECT: 5
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
+
 # The tag name is Test-weekly-YYmmdd-HHMM to enable multiple tests per day
 jobs:
 
   release-data:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     outputs:
       upload_url: ${{ steps.create-release-data.outputs.upload_url }}
 
@@ -48,7 +52,7 @@ jobs:
           echo ${{ steps.create-release-data.outputs.upload_url }} 
 
   linux:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     needs: release-data
     env:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
@@ -65,16 +69,34 @@ jobs:
         #with:
           #submodules: true
           #fetch-depth: 0  
+
+      - name: install kde
+        run: |  
+          # ---------------------------------
+          echo "-- register kde neon repository --"
+          sudo apt install -y debsig-verify           
+          echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
+          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add - 
+          sudo apt update
+
+      - name: remove old qt 5.12.8  
+        run: |  
+          #----------------------------------
+          echo "-- remove previous qt 5.12.8 and config files --"
+          sudo apt purge -y qtchooser && sudo apt purge -y qtcreator && sudo apt purge -y *qt5*
+
+      - name: install new qt 5.15.2
+        # install-qt-action uses default qt v 5.15.2
+        uses: jurplel/install-qt-action@v3.0.0 
+        with:
+          version: ${{ env.QT_VERSION }}
           
       - name: install build dependencies
         run: |  
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo add-apt-repository universe
-          sudo apt update
-          sudo apt install -y libfuse2
           sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
+          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev
           sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
 
           #----------------------------------
@@ -83,7 +105,7 @@ jobs:
 
           # --------------------------------
           echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118 libpoppler-qt5-dev
+          sudo apt install -y nickle wish kde-standard kimageformat-plugins libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler97 
           sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
           sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
           sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
@@ -96,8 +118,8 @@ jobs:
         # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
         run: |
           echo " =-- Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
-          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
-          sudo ls -Rla src/app/seamlyme/share/resources | grep '\.rcc$'    
+          rcc -no-compress -binary home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources/diagrams.qrc -o home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources.rcc
+          sudo ls -Rla home/runner/work/Seamly2D/Seamly2D/src/app/seamlyme/share/resources | grep '\.rcc$'    
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
@@ -117,11 +139,11 @@ jobs:
         run: |
           # ---------------------------------
           echo "-- find the Seamly2D appimage file & rename it --"   
-          ls -la . | grep 'Seamly2D-continuous-x86_64.*'    
-          mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
+          sudo ls -Rla ./AppDir | grep 'Seamly2D-continuous-x86_64.*'    
+          sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-amd_64.AppImage
 
-      - name: Upload Seamly2D-x86_64.AppImage artifact
-        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
+      - name: upload seamly2d-x86_64.tar.gz artifact
+        # upload ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
         uses: actions/upload-artifact@v3.1.0
         with:
           name: Seamly2D-x86_64.AppImage
@@ -145,7 +167,7 @@ jobs:
           done
 
       - name: upload file as pre-release
-        # uploads Seamly2D-x86_64.AppImage as pre-release to Github Releases
+        # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
