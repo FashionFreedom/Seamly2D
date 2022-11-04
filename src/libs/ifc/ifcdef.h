@@ -105,6 +105,7 @@ extern const QString AttrDartP3;
 extern const QString AttrX;
 extern const QString AttrY;
 extern const QString AttrLineType;
+extern const QString AttrLineWeight;
 extern const QString AttrCut;
 extern const QString AttrLength;
 extern const QString AttrBasePoint;
