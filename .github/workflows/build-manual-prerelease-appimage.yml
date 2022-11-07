@@ -64,7 +64,7 @@ jobs:
           echo "${{ env.UPLOAD_URL }}"
 
       - name: checkout code
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3
         #with:
           #submodules: true
           #fetch-depth: 0  
@@ -90,10 +90,6 @@ jobs:
           sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
           sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
           sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
-
-          # ---------------------------------
-          echo "-- create AppDir, will be erased & recreated in appimage-builder script ------"
-          sudo mkdir -p AppDir && pwd && ls -la
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage

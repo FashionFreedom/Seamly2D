@@ -68,7 +68,7 @@ jobs:
           echo "${{ env.UPLOAD_URL }}"
 
       - name: checkout code
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3
 
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1.11.0
