@@ -109,7 +109,7 @@ jobs:
           echo "-- run appimage-builder with appimage-builder-recipe-jammy.yml --"
           appimage-builder --recipe dist/appimage-builder-recipe-jammy.yml --log INFO --skip-test
 
-      - name: copy to final file name Seamly2D-amd64.AppImage
+      - name: copy to final file name Seamly2D-x86_64.AppImage
         run: |
           # ---------------------------------
           echo "-- find the Seamly2D appimage file & rename it --"   
