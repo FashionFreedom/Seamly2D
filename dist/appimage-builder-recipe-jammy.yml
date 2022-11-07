@@ -100,7 +100,7 @@ AppDir:
 
   test:
     fedora:
-      image: appimagecrafters/tests-env:fedora-36
+      image: appimagecrafters/tests-env:fedora-33
       command: ./AppRun
       use_host_x: true
     debian:
@@ -116,7 +116,7 @@ AppDir:
       command: ./AppRun
       use_host_x: true
     ubuntu:
-      image: appimagecrafters/tests-env:ubuntu-jammy
+      image: appimagecrafters/tests-env:ubuntu-bionic
       command: ./AppRun
       use_host_x: true
 
