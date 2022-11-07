@@ -92,7 +92,7 @@ jobs:
           sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
 
       - name: build Seamly2D appimage
-        # uses parameters from appimage-builder-recipe.yml to build appimage
+        # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
         run: |
           # ---------------------------------
