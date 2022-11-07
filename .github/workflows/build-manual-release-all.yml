@@ -111,19 +111,15 @@ jobs:
           name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
 
-      # Use path-lister to confirm where the appimage file was created...
-      # ... so that the file can be uploaded. Takes a lot of time.
-      # Don't delete, might need this someday
-      #- name: find file path
-      #  id: path-lister
-      #  uses: Rishabh510/Path-lister-action@master
-      #  with:
-      #    path: "."
-      #    type: ".AppImage"
+      - name: find file path
+        id: path-lister
+        uses: Rishabh510/Path-lister-action@1.0
+        with:
+          path: "."
+          type: ".AppImage"
 
       - name: show file path
         run: |
-          pwd
           echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
           for i in ${{ steps.path-lister.outputs.paths }}; do
           echo $i
