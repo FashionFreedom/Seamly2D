@@ -12,7 +12,7 @@ script:
   - sudo rm -rf AppDir || true && install -g docker -o runner -d AppDir AppDir/usr && pwd && ls -la && echo '--- AppDir has been recreated ---'
   
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
-  - qmake PREFIX=/usr Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
+  - qmake PREFIX=/usr Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols && echo "--- END QMAKE ---"
   - make -j$(nproc) && echo "--- END MAKE ---"
   - make INSTALL_ROOT=/home/runner/work/Seamly2D/Seamly2D/AppDir install && echo "--- END MAKE INSTALL ---"
 
@@ -52,7 +52,6 @@ AppDir:
     - libjpeg-turbo8
     - liblz4-1
     - libpoppler118
-    - libpoppler-qt5-1
     - libqt5core5a
     - libqt5svg5
     - libqt5xml5

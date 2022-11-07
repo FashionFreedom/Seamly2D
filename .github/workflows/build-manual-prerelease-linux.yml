@@ -83,7 +83,7 @@ jobs:
 
           # --------------------------------
           echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118 libpoppler-qt5-dev
+          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
           sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
           sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
           sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
@@ -91,13 +91,6 @@ jobs:
           # ---------------------------------
           echo "-- create AppDir, will be erased & recreated in appimage-builder script ------"
           sudo mkdir -p AppDir && pwd && ls -la
-
-      - name: compile diagrams.qrc to diagrams.rcc
-        # compile diagrams.qrc to diagrams.rc using rcc resources compiler tool
-        run: |
-          echo " =-- Compile src/app/seamlyme/share/resources/diagrams.qrc to src/app/seamlyme/share/resources/diagrams.rcc ---"
-          rcc -no-compress -binary src/app/seamlyme/share/resources/diagrams.qrc -o src/app/seamlyme/share/resources/diagrams.rcc
-          sudo ls -Rla src/app/seamlyme/share/resources | grep '\.rcc$'    
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe.yml to build appimage
