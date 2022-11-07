@@ -22,7 +22,7 @@ env:
 jobs:
 
   release-data:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       upload_url: ${{ steps.release-data.outputs.upload_url }}
 
@@ -58,61 +58,77 @@ jobs:
           echo ${{ steps.release-data.outputs.upload_url }}
 
   linux:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: release-data
     env:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
       - name: checkout code
-        uses: actions/checkout@v2.3.5
-
-      - name: install kde and dependencies
-        run: |
-          # register kde neon repository
-          echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
-          # install build dependencies
+        uses: actions/checkout@v2.4.2
+          
+      - name: install build dependencies
+        run: |  
+          # ---------------------------------
+          echo "-- install build dependencies --"
+          sudo add-apt-repository universe
           sudo apt update
-          sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
-          sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+          sudo apt install -y libfuse2
+          sudo apt install -y build-essential gettext git
+          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
+          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+          #----------------------------------
+          echo "-- install support for Wayland --"
+          sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev
+
+          # --------------------------------
+          echo "-- install additional packages ---"
+          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
+          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
+          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
+          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
 
       - name: build Seamly2D appimage
-        # uses parameters from appimage-build.yml to build appimage
+        # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
         # Seamly2D-continuous-x86_64.AppImage
         run: |
-          sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v0.8.8/appimage-builder-0.8.8-4e7c15f-x86_64.AppImage -O /usr/local/bin/appimage-builder
+          # ---------------------------------
+          echo "-- get appimage-builder --"
+          sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
-          appimage-builder --recipe dist/appimage-builder-recipe.yml --skip-test
+          
+          # ---------------------------------
+          echo "-- run appimage-builder with appimage-builder-recipe-jammy.yml --"
+          appimage-builder --recipe dist/appimage-builder-recipe-jammy.yml --log INFO --skip-test
 
-      - name: copy to Seamly2D-x86_64.AppImage
+      - name: copy to final file name Seamly2D-x86_64.AppImage
         run: |
-          sudo mv ./Seamly2D-continuous-x86_64.AppImage ./Seamly2D-x86_64.AppImage
+          mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
 
-      - name: upload seamly2d-x86_64.tar.gz artifact
-        # uploads ./Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v2.2.4
+      - name: Upload Seamly2D-x86_64.AppImage artifact
+        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: Seamly2D-x86_64.AppImage
           path: './*AppImage*'
 
       - name: find file path
         id: path-lister
-        uses: Rishabh510/Path-lister-action@master
+        uses: Rishabh510/Path-lister-action@1.0
         with:
           path: "."
           type: ".AppImage"
 
       - name: show file path
-        run: |
+        run: | 
           pwd
           echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
           for i in ${{ steps.path-lister.outputs.paths }}; do
           echo $i
           done
 
-      - name: upload file as pre-release
-        # uploads seamly2d-x86_64.tar.gz as pre-release to Github Releases
+      - name: upload file as release
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
