@@ -14,7 +14,7 @@ Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is
 
 ## Supported platforms:  
    * Windows 10 (64-bit)
-   * Most current Linux distros with KDE desktop
+   * Most current Linux distros via [Flathub](https://flathub.org/apps/details/net.seamly.seamly2d)
    * Mac OS X 10.8 (64-bit) or later
 
 ## Download Seamly2D
