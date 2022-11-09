@@ -9,7 +9,7 @@ on:
 
 env:
   QT_SELECT: 5
-  QT_VERSION: '5.15.3' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 
 jobs:
