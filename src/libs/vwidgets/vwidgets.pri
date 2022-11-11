@@ -66,3 +66,5 @@ HEADERS += \
     $$PWD/scalesceneitems.h \
     $$PWD/vlineedit.h
 
+FORMS += \
+    $$PWD/mouse_coordinates.ui
