@@ -15,48 +15,29 @@ jobs:
     # run job 'build-test' for open pull_request that hasn't been merged yet
     if: ( github.event.pull_request.merged == false )
     name: 'Create Qt build'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: checkout code
         uses: actions/checkout@v3
 
-      - name: remove default installed version of qt5  
+      - name: install build dependencies
         run: |  
-          #----------------------------------
-          echo "-- remove default version of qt5 and config files --"
-          sudo apt purge -y qtchooser && sudo apt purge -y qtcreator && sudo apt purge -y *qt5*
-
-
-      - name: install qt  
-        # install-qt-action's default version is qt 5.15.2
-        uses: jurplel/install-qt-action@v3.0.0 
-        with:
-          version: ${{ env.QT_VERSION }}
-
-      - name: install kde and dependencies
-        run: |
-          # *********************************
-          echo "-- show git event values --"
-          echo " github event = ${{ github.event }}"
-          echo " github event action = ${{ github.event.action }}"
-          echo " github event pull_request merged = ${{ github.event.pull_request.merged }}"
-
-          # *********************************
-          echo "-- register kde neon repository --"
-          # search the keyserver to get kde key, add to keyring with gpg
-          echo "* register kde neon repository*"
-          echo 'deb http://archive.neon.kde.org/user focal main' | sudo tee /etc/apt/sources.list.d/neon.list
-          #curl -SL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search="neon"' -o | sudo -H gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/neon-release.gpg --import
-          #sudo chmod 644 /etc/apt/trusted.gpg.d/neon-release.gpg
-          curl https://origin.archive.neon.kde.org/public.key -o - | sudo apt-key add -
-          
-          # *********************************
+          # ---------------------------------
           echo "-- install build dependencies --"
+          sudo add-apt-repository universe
           sudo apt update
-          sudo apt install -y build-essential gettext git qt5-default qttools5-dev libqt5svg5-dev libqt5xmlpatterns5-dev
-          sudo apt install -y '^libxcb.*-dev' libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-          sudo apt install -y libdrm-dev
+          sudo apt install -y libfuse2
+          sudo apt install -y build-essential gettext git
+          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
+          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+          # --------------------------------
+          echo "-- install additional packages ---"
+          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
+          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
+          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
+          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
 
       - name: build Seamly2D & SeamlyMe
         run: |
@@ -67,7 +48,7 @@ jobs:
           # *********************************
           echo "-- make Seamly2D & SeamlyMe --"
           mkdir /home/runner/local
-          qmake PREFIX=/home/runner/local Seamly2D.pro -r CONFIG+=no_ccache
+          qmake PREFIX=/home/runner/local Seamly2D.pro CONFIG+=no_ccache
           make -j$(nproc) && make install
 
       - name: install test dependencies

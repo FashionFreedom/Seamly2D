@@ -145,7 +145,7 @@ void VToolOptionsPropertyBrowser::ShowItemOptions(QGraphicsItem *item)
         case VToolPointOfContact::Type:
             ShowOptionsToolPointOfContact(item);
             break;
-        case VToolPointOfIntersection::Type:
+        case PointIntersectXYTool::Type:
             ShowOptionsToolPointOfIntersection(item);
             break;
         case VToolPointOfIntersectionArcs::Type:
@@ -272,7 +272,7 @@ void VToolOptionsPropertyBrowser::UpdateOptions()
         case VToolPointOfContact::Type:
             UpdateOptionsToolPointOfContact();
             break;
-        case VToolPointOfIntersection::Type:
+        case PointIntersectXYTool::Type:
             UpdateOptionsToolPointOfIntersection();
             break;
         case VToolPointOfIntersectionArcs::Type:
@@ -417,7 +417,7 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         case VToolPointOfContact::Type:
             ChangeDataToolPointOfContact(prop);
             break;
-        case VToolPointOfIntersection::Type:
+        case PointIntersectXYTool::Type:
             ChangeDataToolPointOfIntersection(prop);
             break;
         case VToolPointOfIntersectionArcs::Type:
@@ -1334,13 +1334,21 @@ void VToolOptionsPropertyBrowser::ChangeDataToolPointOfIntersection(VPE::VProper
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
+    PointIntersectXYTool *i = qgraphicsitem_cast<PointIntersectXYTool *>(currentItem);
+    SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointOfIntersection>(value.toString());
+            SetPointName<PointIntersectXYTool>(value.toString());
             break;
         case 6:  // AttrFirstPoint (read only)
         case 7:  // AttrSecondPoint (read only)
+            break;
+        case 3: // AttrLineType
+            i->SetTypeLine(value.toString());
+            break;
+        case 26: // AttrLineColor
+            i->SetLineColor(value.toString());
             break;
         default:
             qWarning()<<"Unknown property type. id = "<<id;
@@ -2149,13 +2157,15 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfContact(QGraphicsItem *i
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersection(QGraphicsItem *item)
 {
-    VToolPointOfIntersection *i = qgraphicsitem_cast<VToolPointOfIntersection *>(item);
+    PointIntersectXYTool *i = qgraphicsitem_cast<PointIntersectXYTool *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from x & y of two other points"));
+    formView->setTitle(tr("Point - Intersect XY"));
 
     AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->FirstPointName(), tr("X: vertical point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Y: horizontal point:"), AttrSecondPoint);
+    AddPropertyParentPointName(i->firstPointName(), tr("Point 1:"), AttrFirstPoint);
+    AddPropertyParentPointName(i->secondPointName(), tr("Point 2:"), AttrSecondPoint);
+    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
+    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2390,7 +2400,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolMove(QGraphicsItem *item)
     AddPropertyParentPointName(i->getOriginPointName(), tr("Rotation origin point:"), AttrCenter);
     AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
     AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyFormula(tr("Rotation angle:"), i->getFormulaRotation(), AttrRotationAngle);    
+    AddPropertyFormula(tr("Rotation angle:"), i->getFormulaRotation(), AttrRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2812,17 +2822,27 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfContact()
 //---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersection()
 {
-    VToolPointOfIntersection *i = qgraphicsitem_cast<VToolPointOfIntersection *>(currentItem);
+    PointIntersectXYTool *i = qgraphicsitem_cast<PointIntersectXYTool *>(currentItem);
 
     idToProperty[AttrName]->setValue(i->name());
 
     QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
+    valueFirstPoint.setValue(i->firstPointName());
     idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
 
     QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
+    valueSecondPoint.setValue(i->secondPointName());
     idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
+
+    {
+    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
+    idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
+    idToProperty[AttrLineColor]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

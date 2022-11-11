@@ -218,7 +218,7 @@
      <addaction name="pointOnShoulder_Action"/>
      <addaction name="pointOfContact_Action"/>
      <addaction name="triangle_Action"/>
-     <addaction name="pointOfIntersection_Action"/>
+     <addaction name="pointIntersectXY_Action"/>
      <addaction name="perpendicularPoint_Action"/>
      <addaction name="pointIntersectAxis_Action"/>
      <addaction name="midpoint_Action"/>
@@ -620,7 +620,7 @@
    <addaction name="pointOnShoulder_Action"/>
    <addaction name="pointOfContact_Action"/>
    <addaction name="triangle_Action"/>
-   <addaction name="pointOfIntersection_Action"/>
+   <addaction name="pointIntersectXY_Action"/>
    <addaction name="perpendicularPoint_Action"/>
    <addaction name="pointIntersectAxis_Action"/>
    <addaction name="midpoint_Action"/>
@@ -854,7 +854,7 @@
           </size>
          </property>
          <property name="currentIndex">
-          <number>2</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="draftMode_Page">
           <widget class="QToolBox" name="draft_ToolBox">
@@ -896,7 +896,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>4</number>
+            <number>0</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -906,8 +906,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>118</width>
-              <height>288</height>
+              <width>124</width>
+              <height>293</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1065,19 +1065,19 @@
               </widget>
              </item>
              <item row="9" column="1">
-              <widget class="QToolButton" name="pointOfIntersection_ToolButton">
+              <widget class="QToolButton" name="pointIntersectXY_ToolButton">
                <property name="enabled">
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point XY from 2 Points (XY)</string>
+                <string>Intersect XY (X, Y)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
                 <iconset resource="share/resources/toolicon.qrc">
-                 <normaloff>:/toolicon/32x32/point_of_intersection.png</normaloff>:/toolicon/32x32/point_of_intersection.png</iconset>
+                 <normaloff>:/toolicon/32x32/point_intersectxy_icon.png</normaloff>:/toolicon/32x32/point_intersectxy_icon.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1253,7 +1253,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
+              <width>124</width>
               <height>58</height>
              </rect>
             </property>
@@ -1351,7 +1351,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>118</width>
+              <width>124</width>
               <height>196</height>
              </rect>
             </property>
@@ -1611,7 +1611,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
+              <width>124</width>
               <height>226</height>
              </rect>
             </property>
@@ -2113,7 +2113,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
+              <width>124</width>
               <height>96</height>
              </rect>
             </property>
@@ -3127,19 +3127,19 @@
     <string>P, T</string>
    </property>
   </action>
-  <action name="pointOfIntersection_Action">
+  <action name="pointIntersectXY_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/point_of_intersection.png</normaloff>:/toolicon/32x32/point_of_intersection.png</iconset>
+     <normaloff>:/toolicon/32x32/point_intersectxy_icon.png</normaloff>:/toolicon/32x32/point_intersectxy_icon.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point XY from 2 Points</string>
+    <string>Intersect XY</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point XY from 2 Points (XY)</string>
+    <string>Intersect  XY  (XY)</string>
    </property>
    <property name="shortcut">
     <string>X, Y</string>
