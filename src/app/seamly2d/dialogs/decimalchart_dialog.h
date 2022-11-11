@@ -51,8 +51,6 @@ private:
     Ui::DecimalChartDialog *ui;
     bool isInitialized;
     Q_DISABLE_COPY(DecimalChartDialog)
-
-    void setFontPointSize(QWidget *w, int pointSize);
 };
 
 #endif // DIALOGDECIMALCHART_H

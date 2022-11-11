@@ -74,6 +74,7 @@
 #include "../ifc/xml/vvitconverter.h"
 #include "../vwidgets/vwidgetpopup.h"
 #include "../vwidgets/vmaingraphicsscene.h"
+#include "../vwidgets/mouse_coordinates.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/dialogs/tooldialogs.h"
 #include "tools/vtoolseamallowance.h"
@@ -142,7 +143,8 @@ MainWindow::MainWindow(QWidget *parent)
     , lastUsedTool(Tool::Arrow)
     , draftScene(nullptr)
     , pieceScene(nullptr)
-    , mouseCoordinate(nullptr)
+    , mouseCoordinates(nullptr)
+    , infoToolButton(nullptr)
     , helpLabel(nullptr)
     , isInitialized(false)
     , mChanges(false)
@@ -261,7 +263,6 @@ MainWindow::MainWindow(QWidget *parent)
 #if defined(Q_OS_MAC)
     // On Mac default icon size is 32x32.
     ui->draft_ToolBar->setIconSize(QSize(24, 24));
-    ui->status_ToolBar->setIconSize(QSize(24, 24));
     ui->mode_ToolBar->setIconSize(QSize(24, 24));
     ui->edit_Toolbar->setIconSize(QSize(24, 24));
     ui->zoom_ToolBar->setIconSize(QSize(24, 24));
@@ -509,7 +510,7 @@ bool MainWindow::LoadMeasurements(const QString &path)
     try
     {
         qApp->setPatternType(measurements->Type());
-        initStatusToolBar();
+        initStatusBar();
         pattern->ClearVariables(VarType::Measurement);
         measurements->ReadMeasurements();
     }
@@ -1909,7 +1910,7 @@ void MainWindow::UnloadMeasurements()
         watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            initStatusToolBar();
+            initStatusBar();
         }
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
@@ -2046,28 +2047,31 @@ void MainWindow::OpenAt(QAction *where)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initStatusToolBar enable option toolbar.
+ * @brief initStatusBar initialize horizontal bar for presenting status information
  */
-void MainWindow::initStatusToolBar()
+void MainWindow::initStatusBar()
 {
-    ui->status_ToolBar->clear();
-    if (not mouseCoordinate.isNull())
+    if (!mouseCoordinates.isNull())
     {
-        delete mouseCoordinate;
+        delete mouseCoordinates;
     }
-    if (not gradationHeights.isNull())
+    if (!infoToolButton.isNull())
+    {
+        delete infoToolButton;
+    }
+    if (!gradationHeights.isNull())
     {
         delete gradationHeights;
     }
-    if (not gradationSizes.isNull())
+    if (!gradationSizes.isNull())
     {
         delete gradationSizes;
     }
-    if (not gradationHeightsLabel.isNull())
+    if (!gradationHeightsLabel.isNull())
     {
         delete gradationHeightsLabel;
     }
-    if (not gradationSizesLabel.isNull())
+    if (!gradationSizesLabel.isNull())
     {
         delete gradationSizesLabel;
     }
@@ -2095,21 +2099,23 @@ void MainWindow::initStatusToolBar()
         connect(gradationSizes.data(), static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
                 this, &MainWindow::ChangedSize);
 
-        ui->status_ToolBar->addSeparator();
     }
 
-    mouseCoordinate = new QLabel(QString("XPos: 0, YPos: 0 (%1) ").arg(UnitsToStr(qApp->patternUnit(), true)));
-    ui->status_ToolBar->addWidget(mouseCoordinate);
+    mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
+    ui->statusBar->addPermanentWidget((mouseCoordinates));
+
+    infoToolButton = new QToolButton();
+    infoToolButton->setDefaultAction(ui->documentInfo_Action);
+    ui->statusBar->addPermanentWidget((infoToolButton));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QComboBox *MainWindow::SetGradationList(QLabel *label, const QStringList &list)
 {
-    ui->status_ToolBar->addWidget(label);
-
     QComboBox *comboBox = new QComboBox(this);
     comboBox->addItems(list);
-    ui->status_ToolBar->addWidget(comboBox);
+    ui->statusBar->addPermanentWidget(label);
+    ui->statusBar->addPermanentWidget(comboBox);
 
     return comboBox;
 }
@@ -2930,13 +2936,9 @@ void MainWindow::handleLayoutMenu()
  */
 void MainWindow::MouseMove(const QPointF &scenePos)
 {
-    if (mouseCoordinate)
+    if (mouseCoordinates)
     {
-        //: Coords in status line: "X, Y (units)"
-        mouseCoordinate->setText(QString("XPos: %1, YPos: %2 (%3)")
-                                 .arg(QString::number(qApp->fromPixel(scenePos.x()), 'f', 2 ))
-                                 .arg(QString::number(qApp->fromPixel(scenePos.y()), 'f', 2 ))
-                                 .arg(UnitsToStr(qApp->patternUnit(), true)));
+        mouseCoordinates->updateCoordinates(scenePos);
     }
 }
 
@@ -3314,7 +3316,10 @@ void MainWindow::draftMode_Action(bool checked)
 
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            ui->status_ToolBar->setVisible(true);
+            gradationHeightsLabel->setVisible(true);
+            gradationHeights->setVisible(true);
+            gradationSizesLabel->setVisible(true);
+            gradationSizes->setVisible(true);
         }
         ui->layoutPages_DockWidget->blockSignals(true);
         ui->layoutPages_DockWidget->setVisible(false);
@@ -3397,7 +3402,10 @@ void MainWindow::ActionDetails(bool checked)
 
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            ui->status_ToolBar->setVisible(true);
+            gradationHeightsLabel->setVisible(true);
+            gradationHeights->setVisible(true);
+            gradationSizesLabel->setVisible(true);
+            gradationSizes->setVisible(true);
         }
 
         ui->layoutPages_DockWidget->blockSignals(true);
@@ -3513,11 +3521,14 @@ void MainWindow::ActionLayout(bool checked)
         SetEnableWidgets(true);
         ui->layout_ToolBox->setCurrentIndex(ui->layout_ToolBox->indexOf(ui->layout_Page));
 
-        mouseCoordinate->setText("");
+        mouseCoordinates->updateCoordinates(QPointF());
 
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
-            ui->status_ToolBar->setVisible(false);
+            gradationHeightsLabel->setVisible(false);
+            gradationHeights->setVisible(false);
+            gradationSizesLabel->setVisible(false);
+            gradationSizes->setVisible(false);
         }
 
         ui->layoutPages_DockWidget->setVisible(isLayoutsDockVisible);
@@ -3843,7 +3854,7 @@ void MainWindow::Clear()
     setEnableTools(false);
     qApp->setPatternUnit(Unit::Cm);
     qApp->setPatternType(MeasurementsType::Unknown);
-    ui->status_ToolBar->clear();
+
 #ifndef QT_NO_CURSOR
     QGuiApplication::restoreOverrideCursor();
 #endif
@@ -4048,7 +4059,7 @@ void MainWindow::SetEnabledGUI(bool enabled)
         guiEnabled = enabled;
 
         setEnableTools(enabled);
-        ui->status_ToolBar->setEnabled(enabled);
+        ui->statusBar->setEnabled(enabled);
     #ifndef QT_NO_CURSOR
         QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
     #endif
@@ -4219,8 +4230,8 @@ void MainWindow::New()
 
         AddPP(patternPieceName);
 
-        mouseCoordinate = new QLabel(QString("XPos: 0, YPos: 0 (%1) ").arg(UnitsToStr(qApp->patternUnit(), true)));
-        ui->status_ToolBar->addWidget(mouseCoordinate);
+        mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
+        ui->statusBar->addPermanentWidget((mouseCoordinates));
 
         m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
         m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
@@ -4822,11 +4833,6 @@ void MainWindow::CreateMenus()
         ui->draft_ToolBar->setVisible(visible);
     });
 
-    menu->addAction(ui->status_ToolBar->toggleViewAction());
-    connect(ui->status_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
-    {
-        ui->status_ToolBar->setVisible(visible);
-    });
     menu->addAction(ui->zoom_ToolBar->toggleViewAction());
     connect(ui->zoom_ToolBar, &QToolBar::visibilityChanged, this, [this](bool visible)
     {
@@ -5171,6 +5177,14 @@ void MainWindow::CreateActions()
             }
         });
     }
+
+    connect(ui->documentInfo_Action, &QAction::triggered, this, [this]()
+    {
+        ShowInfoDialog *infoDialog = new ShowInfoDialog(doc, this);
+        infoDialog->setAttribute(Qt::WA_DeleteOnClose, true);
+        infoDialog->adjustSize();
+        infoDialog->show();
+    });
 
     connect(ui->exit_Action, &QAction::triggered, this, &MainWindow::close);
 
@@ -5931,7 +5945,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         if (qApp->patternType() == MeasurementsType::Unknown)
         {// Show toolbar only if was not uploaded any measurements.
-            initStatusToolBar();
+            initStatusBar();
         }
     }
     catch (VException &e)
@@ -6015,7 +6029,6 @@ QStringList MainWindow::GetUnlokedRestoreFileList() const
 void MainWindow::ToolBarStyles()
 {
     ToolBarStyle(ui->draft_ToolBar);
-    ToolBarStyle(ui->status_ToolBar);
     ToolBarStyle(ui->mode_ToolBar);
     ToolBarStyle(ui->edit_Toolbar);
     ToolBarStyle(ui->zoom_ToolBar);

@@ -67,8 +67,8 @@ ShortcutsDialog::~ShortcutsDialog()
 //---------------------------------------------------------------------------------------------------------------------
 void ShortcutsDialog::showEvent(QShowEvent *event)
 {
-    QDialog::showEvent( event );
-    if ( event->spontaneous() )
+    QDialog::showEvent(event);
+    if (event->spontaneous())
     {
         return;
     }
@@ -85,21 +85,8 @@ void ShortcutsDialog::showEvent(QShowEvent *event)
     isInitialized = true;//first show windows are held
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void ShortcutsDialog::setFontPointSize(QWidget *w, int pointSize)
-{
-    SCASSERT(w != nullptr)
-
-    QFont font = w->font();
-    font.setPointSize(pointSize);
-    w->setFont(font);
-}
-
 void ShortcutsDialog::copyToClipboard()
 {
-    //QClipboard *clipboard = QApplication::clipboard();
-    //clipboard->setText(ui->shortcuts_TextBrowser->toPlainText());
-
     ui->shortcuts_TextBrowser->selectAll();
     ui->shortcuts_TextBrowser->copy();
 }

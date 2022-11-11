@@ -77,13 +77,3 @@ void CalculatorDialog::showEvent(QShowEvent *event)
 
     isInitialized = true;//first show windows are held
 }
-
-//---------------------------------------------------------------------------------------------------------------------
-void CalculatorDialog::setFontPointSize(QWidget *w, int pointSize)
-{
-    SCASSERT(w != nullptr)
-
-    QFont font = w->font();
-    font.setPointSize(pointSize);
-    w->setFont(font);
-}

@@ -14,6 +14,7 @@ HEADERS += \
     $$PWD/dialogsavelayout.h \
     $$PWD/dialogvariables.h \
     $$PWD/shortcuts_dialog.h \
+    $$PWD/show_info_dialog.h \
     $$PWD/vwidgetgroups.h \
     $$PWD/vwidgetdetails.h \
     $$PWD/dialogpreferences.h \
@@ -36,6 +37,7 @@ SOURCES += \
     $$PWD/dialogsavelayout.cpp \
     $$PWD/dialogvariables.cpp \
     $$PWD/shortcuts_dialog.cpp \
+    $$PWD/show_info_dialog.cpp \
     $$PWD/vwidgetgroups.cpp \
     $$PWD/vwidgetdetails.cpp \
     $$PWD/dialogpreferences.cpp \
@@ -58,6 +60,7 @@ FORMS += \
     $$PWD/dialogsavelayout.ui \
     $$PWD/dialogvariables.ui \
     $$PWD/shortcuts_dialog.ui \
+    $$PWD/show_info_dialog.ui \
     $$PWD/vwidgetgroups.ui \
     $$PWD/vwidgetdetails.ui \
     $$PWD/dialogpreferences.ui \

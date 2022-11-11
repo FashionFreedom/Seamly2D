@@ -1,8 +1,8 @@
 /************************************************************************
  **
- **  @file   shortcuts_dialog.h
+ **  @file   show_info_dialog.h
  **  @author DSCaskey <dscaskey@gmail.com>
- **  @date   5 11, 2022
+ **  @date   Nov 6, 2022
  **
  **  @brief
  **  @copyright
@@ -26,35 +26,39 @@
  **
  *************************************************************************/
 
-#ifndef SHORTCUTS_DIALOG_H
-#define SHORTCUTS_DIALOG_H
+#ifndef SHOW_INFO_DIALOG_INFO
+#define SHOW_INFO_DIALOG_INFO
 
 #include <QDialog>
+#include <QImage>
+
+#include "../xml/vpattern.h"
 
 namespace Ui
 {
-    class ShortcutsDialog;
+    class ShowInfoDialog;
 }
 
-class ShortcutsDialog : public QDialog
+class ShowInfoDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ShortcutsDialog(QWidget *parent = nullptr);
-    virtual ~ShortcutsDialog();
+    explicit            ShowInfoDialog(VPattern *doc, QWidget *parent = nullptr);
+    virtual            ~ShowInfoDialog();
 
 protected:
-    virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
+    virtual void        showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
 
 private:
-    Ui::ShortcutsDialog *ui;
-    bool isInitialized;
-    Q_DISABLE_COPY(ShortcutsDialog)
+    Ui::ShowInfoDialog *ui;
+    VPattern           *doc;
+    bool                m_isInitialized;
+    Q_DISABLE_COPY(ShowInfoDialog)
 
-    void copyToClipboard();
-    void sendToPrinter();
-    void exportPdf();
+    void                copyToClipboard();
+    void                sendToPrinter();
+    void                exportPdf();
 };
 
-#endif // SHORTCUTS_DIALOG_H
+#endif // SHOW_INFO_DIALOG_INFO

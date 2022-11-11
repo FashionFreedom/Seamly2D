@@ -67,3 +67,10 @@ CONFIG(release, debug|release){
 }
 
 include (../libs.pri)
+
+FORMS += \
+    mouse_coordinates.ui
+
+HEADERS +=
+
+SOURCES +=

@@ -109,6 +109,8 @@
     <addaction name="separator"/>
     <addaction name="labelTemplateEditor_Action"/>
     <addaction name="separator"/>
+    <addaction name="documentInfo_Action"/>
+    <addaction name="separator"/>
     <addaction name="exit_Action"/>
    </widget>
    <widget class="QMenu" name="help_Menu">
@@ -405,25 +407,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="newDraft_Action"/>
-  </widget>
-  <widget class="QToolBar" name="status_ToolBar">
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="windowTitle">
-    <string>Status Toolbar</string>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QToolBar" name="edit_Toolbar">
    <property name="enabled">
@@ -4624,6 +4607,24 @@
     <string>V, S</string>
    </property>
   </action>
+  <action name="documentInfo_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/16x16/show_info_icon.png</normaloff>:/icon/16x16/show_info_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Document Info...</string>
+   </property>
+   <property name="iconText">
+    <string>Document Info</string>
+   </property>
+   <property name="toolTip">
+    <string>Display document Info</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -4635,8 +4636,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>
