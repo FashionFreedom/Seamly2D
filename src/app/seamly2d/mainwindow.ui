@@ -2310,8 +2310,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>83</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2444,8 +2444,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>83</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -4610,7 +4610,7 @@
   <action name="documentInfo_Action">
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-     <normaloff>:/icon/16x16/show_info_icon.png</normaloff>:/icon/16x16/show_info_icon.png</iconset>
+     <normaloff>:/icon/16x16/show_info16_icon.png</normaloff>:/icon/16x16/show_info16_icon.png</iconset>
    </property>
    <property name="text">
     <string>Document Info...</string>
