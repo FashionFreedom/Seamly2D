@@ -74,7 +74,7 @@
 #include "tools/dialogcutsplinepath.h"
 #include "tools/dialoguniondetails.h"
 #include "tools/dialogtriangle.h"
-#include "tools/dialogpointofintersection.h"
+#include "tools/point_intersectxy_dialog.h"
 #include "tools/dialoglineintersectaxis.h"
 #include "tools/dialogcurveintersectaxis.h"
 #include "tools/dialogpointofintersectionarcs.h"

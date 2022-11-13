@@ -45,13 +45,13 @@ CalculatorDialog::CalculatorDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::CalculatorDialog)
     , isInitialized(false)
+    , calc(new CalculatorUtil(this))
 {
 
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon("://icon/32x32/calculator.png"));
 
-    CalculatorUtil* calc = new CalculatorUtil(this);
     ui->calculatorLayout->addWidget(calc);
 }
 

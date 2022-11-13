@@ -60,7 +60,7 @@ private:
 
     void setFontPointSize(QWidget *w, int pointSize);
 
-    Calculator* calc;
+    CalculatorUtil *calc;
 };
 
 #endif // DIALOGCALCULATOR_H

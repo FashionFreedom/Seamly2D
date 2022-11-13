@@ -83,7 +83,7 @@ protected:
     QPointF      Ray(const QPointF &firstPoint) const;
     QLineF       Axis(const QPointF &p, const qreal &angle) const;
     QLineF       Axis(const QPointF &p1, const QPointF &p2) const;
-    virtual void InitPen() Q_DECL_OVERRIDE;
+    virtual void initPen() Q_DECL_OVERRIDE;
     virtual void AddOnScene() Q_DECL_OVERRIDE;
 
     void         DrawRay(VScaledLine *lineItem, const QPointF &p, const QPointF &pTangent,

@@ -1371,7 +1371,7 @@ void DialogTool::SetAssociatedTool(VAbstractTool *tool)
         data = tool->getData();
         if (not vis.isNull())
         {
-            vis->SetData(data);
+            vis->setData(data);
         }
     }
     else

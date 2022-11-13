@@ -164,12 +164,12 @@ unix{
         seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme
 
         # .desktop file
-        desktop.path = /usr/share/applications/
+        desktop.path = $$PREFIX/share/applications/
         desktop.files += ../../../dist/$${TARGET}.desktop \
         desktop.files += ../../../dist/seamlyme.desktop
 
         # logo
-        pixmaps.path = /usr/share/pixmaps/
+        pixmaps.path = $$PREFIX/share/pixmaps/
         pixmaps.files += \
             ../../../dist/$${TARGET}.png \
             ../../../dist/seamlyme.png \
@@ -178,19 +178,19 @@ unix{
             ../../../dist/application-x-seamly2d-s-measurements.png \
 
         # Path to translation files after installation
-        translations.path = /usr/share/$${TARGET}/translations/
+        translations.path = $$PREFIX/share/$${TARGET}/translations/
         translations.files = $$INSTALL_TRANSLATIONS
 
         # Path to multisize measurement after installation
-        multisize.path = /usr/share/$${TARGET}/tables/multisize/
+        multisize.path = $$PREFIX/share/$${TARGET}/tables/multisize/
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
 
         # Path to templates after installation
-        templates.path = /usr/share/$${TARGET}/tables/templates/
+        templates.path = $$PREFIX/share/$${TARGET}/tables/templates/
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
         # Path to label templates after installation
-        label.path = /usr/share/$${TARGET}/labels/
+        label.path = $$PREFIX/share/$${TARGET}/labels/
         label.files = $$INSTALL_LABEL_TEMPLATES
 
         INSTALLS += \
