@@ -71,7 +71,7 @@ const quint8 VToolSeamAllowance::pieceVersion = 2;
 const QString VToolSeamAllowance::TagCSA     = QStringLiteral("csa");
 const QString VToolSeamAllowance::TagRecord  = QStringLiteral("record");
 const QString VToolSeamAllowance::TagIPaths  = QStringLiteral("iPaths");
-const QString VToolSeamAllowance::TagAnchors = QStringLiteral("pins");
+const QString VToolSeamAllowance::TagAnchors = QStringLiteral("anchors");
 
 const QString VToolSeamAllowance::AttrVersion              = QStringLiteral("version");
 const QString VToolSeamAllowance::AttrForbidFlipping       = QStringLiteral("forbidFlipping");
@@ -81,11 +81,11 @@ const QString VToolSeamAllowance::AttrSeamAllowanceBuiltIn = QStringLiteral("sea
 const QString VToolSeamAllowance::AttrHeight               = QStringLiteral("height");
 const QString VToolSeamAllowance::AttrUnited               = QStringLiteral("united");
 const QString VToolSeamAllowance::AttrFont                 = QStringLiteral("fontSize");
-const QString VToolSeamAllowance::AttrTopLeftAnchor        = QStringLiteral("topLeftPin");
-const QString VToolSeamAllowance::AttrBottomRightAnchor    = QStringLiteral("bottomRightPin");
-const QString VToolSeamAllowance::AttrCenterAnchor         = QStringLiteral("centerPin");
-const QString VToolSeamAllowance::AttrTopAnchorPoint       = QStringLiteral("topPin");
-const QString VToolSeamAllowance::AttrBottomAnchorPoint    = QStringLiteral("bottomPin");
+const QString VToolSeamAllowance::AttrTopLeftAnchor        = QStringLiteral("topLeftAnchor");
+const QString VToolSeamAllowance::AttrBottomRightAnchor    = QStringLiteral("bottomRightAnchor");
+const QString VToolSeamAllowance::AttrCenterAnchor         = QStringLiteral("centerAnchor");
+const QString VToolSeamAllowance::AttrTopAnchorPoint       = QStringLiteral("topAnchor");
+const QString VToolSeamAllowance::AttrBottomAnchorPoint    = QStringLiteral("bottomAnchor");
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolSeamAllowance *VToolSeamAllowance::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,

@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>579</width>
+    <width>612</width>
     <height>500</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>612</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string notr="true">Form</string>
@@ -28,15 +40,21 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>559</width>
-        <height>480</height>
+        <width>618</width>
+        <height>463</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QTabWidget" name="tabWidget">
+         <property name="minimumSize">
+          <size>
+           <width>600</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="pieceLabelData_Tab">
           <attribute name="title">
@@ -330,7 +348,7 @@
           <attribute name="title">
            <string>Labels</string>
           </attribute>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
+          <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QSplitter" name="splitter_2">
              <property name="orientation">
@@ -341,7 +359,7 @@
                <bool>true</bool>
               </property>
               <property name="title">
-               <string>Detail label visible</string>
+               <string>Piece label visible</string>
               </property>
               <property name="flat">
                <bool>true</bool>
@@ -362,6 +380,12 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
                    </property>
                    <property name="palette">
                     <palette>
@@ -403,6 +427,37 @@
                    <property name="text">
                     <string>Width:</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelDLWidth">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>87</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="baseSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Value</string>
+                   </property>
+                   <property name="text">
+                    <string notr="true">_</string>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -438,44 +493,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelEqual_3">
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../../../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelDLWidth">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>87</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="baseSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="toolTip">
-                    <string>Value</string>
-                   </property>
-                   <property name="text">
-                    <string notr="true">_</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
                <item>
@@ -501,7 +518,7 @@
                     <bool>true</bool>
                    </property>
                    <property name="plainText">
-                    <string notr="true">1</string>
+                    <string notr="true">3</string>
                    </property>
                   </widget>
                  </item>
@@ -526,8 +543,8 @@
                     <string notr="true"/>
                    </property>
                    <property name="icon">
-                    <iconset theme="go-down">
-                     <normaloff>../</normaloff>../</iconset>
+                    <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                     <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -564,6 +581,12 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
                    </property>
                    <property name="palette">
                     <palette>
@@ -605,6 +628,37 @@
                    <property name="text">
                     <string>Height:</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelDLHeight">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>87</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="baseSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Value</string>
+                   </property>
+                   <property name="text">
+                    <string notr="true">_</string>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -640,44 +694,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelEqual_4">
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../../../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelDLHeight">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>87</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="baseSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="toolTip">
-                    <string>Value</string>
-                   </property>
-                   <property name="text">
-                    <string notr="true">_</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
                <item>
@@ -703,7 +719,7 @@
                     <bool>true</bool>
                    </property>
                    <property name="plainText">
-                    <string notr="true">1</string>
+                    <string notr="true">2</string>
                    </property>
                   </widget>
                  </item>
@@ -728,8 +744,8 @@
                     <string notr="true"/>
                    </property>
                    <property name="icon">
-                    <iconset theme="go-down">
-                     <normaloff>../</normaloff>../</iconset>
+                    <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                     <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -764,13 +780,29 @@
                  </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelDLCenter">
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Center anchor point:</string>
+                    <string>Center anchor:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="dLabelCenterAnchor_ComboBox"/>
+                  <widget class="QComboBox" name="dLabelCenterAnchor_ComboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -801,23 +833,55 @@
                  </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelDLTopLeftAnchor">
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Top left anchor point:</string>
+                    <string>Top left anchor:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="dLabelTopLeftAnchor_ComboBox"/>
+                  <widget class="QComboBox" name="dLabelTopLeftAnchor_ComboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="labelDLBottomRightAnchor">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Bottom right anchor point:</string>
+                    <string>Bottom right anchor:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="dLabelBottomRightAnchor_ComboBox"/>
+                  <widget class="QComboBox" name="dLabelBottomRightAnchor_ComboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -850,6 +914,12 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
                    </property>
                    <property name="palette">
                     <palette>
@@ -891,6 +961,9 @@
                    <property name="text">
                     <string>Angle:</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -923,16 +996,6 @@
                      <width>24</width>
                      <height>24</height>
                     </size>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelEqual_5">
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../../../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
                    </property>
                   </widget>
                  </item>
@@ -1014,8 +1077,8 @@
                     <string notr="true"/>
                    </property>
                    <property name="icon">
-                    <iconset theme="go-down">
-                     <normaloff>../</normaloff>../</iconset>
+                    <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                     <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1069,6 +1132,12 @@
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="palette">
                     <palette>
                      <active>
@@ -1109,6 +1178,37 @@
                    <property name="text">
                     <string>Width:</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelPLWidth">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>87</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="baseSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Value</string>
+                   </property>
+                   <property name="text">
+                    <string notr="true">_</string>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -1144,44 +1244,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelEqual_7">
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../../../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelPLWidth">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>87</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="baseSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="toolTip">
-                    <string>Value</string>
-                   </property>
-                   <property name="text">
-                    <string notr="true">_</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
                <item>
@@ -1207,7 +1269,7 @@
                     <bool>true</bool>
                    </property>
                    <property name="plainText">
-                    <string notr="true">1</string>
+                    <string notr="true">3</string>
                    </property>
                   </widget>
                  </item>
@@ -1232,8 +1294,8 @@
                     <string notr="true"/>
                    </property>
                    <property name="icon">
-                    <iconset theme="go-down">
-                     <normaloff>../</normaloff>../</iconset>
+                    <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                     <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1270,6 +1332,12 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
                    </property>
                    <property name="palette">
                     <palette>
@@ -1311,6 +1379,37 @@
                    <property name="text">
                     <string>Height:</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelPLHeight">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>87</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="baseSize">
+                    <size>
+                     <width>0</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                   <property name="toolTip">
+                    <string>Value</string>
+                   </property>
+                   <property name="text">
+                    <string notr="true">_</string>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -1346,44 +1445,6 @@
                    </property>
                   </widget>
                  </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelEqual_6">
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../../../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelPLHeight">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>87</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="baseSize">
-                    <size>
-                     <width>0</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="toolTip">
-                    <string>Value</string>
-                   </property>
-                   <property name="text">
-                    <string notr="true">_</string>
-                   </property>
-                  </widget>
-                 </item>
                 </layout>
                </item>
                <item>
@@ -1409,7 +1470,7 @@
                     <bool>true</bool>
                    </property>
                    <property name="plainText">
-                    <string notr="true">1</string>
+                    <string notr="true">2</string>
                    </property>
                   </widget>
                  </item>
@@ -1434,8 +1495,8 @@
                     <string notr="true"/>
                    </property>
                    <property name="icon">
-                    <iconset theme="go-down">
-                     <normaloff>../</normaloff>../</iconset>
+                    <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                     <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1470,13 +1531,29 @@
                  </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelPLCenter">
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Center anchor point:</string>
+                    <string>Center anchort:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="pLabelCenterAnchor_ComboBox"/>
+                  <widget class="QComboBox" name="pLabelCenterAnchor_ComboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -1507,23 +1584,55 @@
                  </property>
                  <item row="0" column="0">
                   <widget class="QLabel" name="labelPLTopLeftAnchor">
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Top left anchor point:</string>
+                    <string>Top left anchor:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="0" column="1">
-                  <widget class="QComboBox" name="pLabelTopLeftAnchor_ComboBox"/>
+                  <widget class="QComboBox" name="pLabelTopLeftAnchor_ComboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                  <item row="1" column="0">
                   <widget class="QLabel" name="labelPLBottomRightAnchor">
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
+                   </property>
                    <property name="text">
-                    <string>Bottom right anchor point:</string>
+                    <string>Bottom right anchor:</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="pLabelBottomRightAnchor_ComboBox"/>
+                  <widget class="QComboBox" name="pLabelBottomRightAnchor_ComboBox">
+                   <property name="minimumSize">
+                    <size>
+                     <width>100</width>
+                     <height>0</height>
+                    </size>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </item>
@@ -1556,6 +1665,12 @@
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>125</width>
+                     <height>0</height>
+                    </size>
                    </property>
                    <property name="palette">
                     <palette>
@@ -1597,6 +1712,9 @@
                    <property name="text">
                     <string>Angle:</string>
                    </property>
+                   <property name="alignment">
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -1629,16 +1747,6 @@
                      <width>24</width>
                      <height>24</height>
                     </size>
-                   </property>
-                  </widget>
-                 </item>
-                 <item alignment="Qt::AlignRight">
-                  <widget class="QLabel" name="labelEqual_8">
-                   <property name="text">
-                    <string/>
-                   </property>
-                   <property name="pixmap">
-                    <pixmap resource="../../../../../vmisc/share/resources/icon.qrc">:/icon/24x24/equal.png</pixmap>
                    </property>
                   </widget>
                  </item>
@@ -1720,8 +1828,8 @@
                     <string notr="true"/>
                    </property>
                    <property name="icon">
-                    <iconset theme="go-down">
-                     <normaloff>../</normaloff>../</iconset>
+                    <iconset resource="../../../../../vmisc/share/resources/theme.qrc">
+                     <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
                    </property>
                    <property name="iconSize">
                     <size>
@@ -1771,6 +1879,7 @@
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>

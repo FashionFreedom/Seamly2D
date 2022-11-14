@@ -32,7 +32,7 @@
 #include "../vtoolseamallowance.h"
 #include "../vgeometry/vpointf.h"
 
-const QString AnchorPointTool::ToolType = QStringLiteral("pin");
+const QString AnchorPointTool::ToolType = QStringLiteral("anchor");
 
 //---------------------------------------------------------------------------------------------------------------------
 AnchorPointTool *AnchorPointTool::Create(QSharedPointer<DialogTool> dialog, VAbstractPattern *doc, VContainer *data)
