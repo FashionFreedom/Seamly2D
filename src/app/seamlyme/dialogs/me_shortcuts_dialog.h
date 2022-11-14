@@ -52,7 +52,6 @@ private:
     bool isInitialized;
     Q_DISABLE_COPY(MeShortcutsDialog)
 
-    void setFontPointSize(QWidget *w, int pointSize);
     void copyToClipboard();
     void sendToPrinter();
     void exportPdf();

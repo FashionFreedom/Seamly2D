@@ -72,6 +72,7 @@ class DialogTool;
 class DialogHistory;
 class CalculatorDialog;
 class DecimalChartDialog;
+class ShowInfoDialog;
 class ShortcutsDialog;
 class VWidgetGroups;
 class VWidgetDetails;
@@ -81,6 +82,7 @@ class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
+class MouseCoordinates;
 
 /**
  * @brief The MainWindow class main windows.
@@ -264,8 +266,10 @@ private:
     /** @brief pieceScene pattern piece scene. */
     VMainGraphicsScene               *pieceScene;
 
-    /** @brief mouseCoordinate pointer to label who show mouse coordinate. */
-    QPointer<QLabel>                  mouseCoordinate;
+    /** @brief mouseCoordinates pointer to label who show mouse coordinate. */
+    QPointer<MouseCoordinates>        mouseCoordinates;
+
+    QPointer<QToolButton>             infoToolButton;
 
     /** @brief helpLabel help show tooltip. */
     QLabel                           *helpLabel;
@@ -329,7 +333,7 @@ private:
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
 
-    void                              initStatusToolBar();
+    void                              initStatusBar();
     void                              initModesToolBar();
     void                              initDraftToolBar();
     void                              initPointNameToolBar();

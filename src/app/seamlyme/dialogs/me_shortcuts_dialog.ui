@@ -108,8 +108,8 @@
          <string notr="true">border: none;background-color:transparent;</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>../../../../../qcad/scripts/Help/About/BuiltWithQt.png</normaloff>../../../../../qcad/scripts/Help/About/BuiltWithQt.png</iconset>
+         <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
+          <normaloff>:/icon/BuiltWithQt.png</normaloff>:/icon/BuiltWithQt.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -151,6 +151,9 @@
                <height>30</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Copy shortcuts to the clipboard</string>
+             </property>
              <property name="autoFillBackground">
               <bool>false</bool>
              </property>
@@ -177,6 +180,9 @@
                <height>30</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Export shortcuts as a PDF</string>
+             </property>
              <property name="text">
               <string>...</string>
              </property>
@@ -199,6 +205,9 @@
                <width>30</width>
                <height>30</height>
               </size>
+             </property>
+             <property name="toolTip">
+              <string>Send shortcuts to the printer</string>
              </property>
              <property name="text">
               <string/>
