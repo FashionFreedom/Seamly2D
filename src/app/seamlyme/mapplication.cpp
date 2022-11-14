@@ -247,15 +247,15 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
 //---------------------------------------------------------------------------------------------------------------------
 MApplication::MApplication(int &argc, char **argv)
-    :VAbstractApplication(argc, argv),
-      mainWindows(),
-      localServer(nullptr),
-      trVars(nullptr),
-      dataBase(QPointer<MeasurementDatabaseDialog>()),
-      testMode(false)
+    : VAbstractApplication(argc, argv)
+    , mainWindows()
+    , localServer(nullptr)
+    , trVars(nullptr)
+    , dataBase(QPointer<MeasurementDatabaseDialog>())
+    , testMode(false)
 {
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
-    setApplicationName(VER_INTERNALNAME_STR);
+    setApplicationName(VER_INTERNALNAME_ME_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     setOrganizationDomain(VER_COMPANYDOMAIN_STR);
     // Setting the Application version

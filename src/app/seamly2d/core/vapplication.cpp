@@ -273,11 +273,11 @@ const QString VApplication::GistFileName = QStringLiteral("gist.json");
  * @param argv command line.
  */
 VApplication::VApplication(int &argc, char **argv)
-    : VAbstractApplication(argc, argv),
-      trVars(nullptr),
-      autoSaveTimer(nullptr),
-      lockLog(),
-      out(nullptr)
+    : VAbstractApplication(argc, argv)
+    , trVars(nullptr)
+    , autoSaveTimer(nullptr)
+    , lockLog()
+    , out(nullptr)
 {
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
