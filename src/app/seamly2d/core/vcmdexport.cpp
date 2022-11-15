@@ -638,7 +638,7 @@ int VCommandLine::IsBinaryDXF() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VCommandLine::IsTextAsPaths() const
+int VCommandLine::isTextAsPaths() const
 {
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_TEXT2PATHS)));
 }

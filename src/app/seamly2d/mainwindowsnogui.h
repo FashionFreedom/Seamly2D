@@ -58,7 +58,7 @@
 
 #include "../vlayout/vlayoutpiece.h"
 #include "xml/vpattern.h"
-#include "dialogs/dialogsavelayout.h"
+#include "dialogs/export_layout_dialog.h"
 #include "../vlayout/vlayoutgenerator.h"
 #include "../vwidgets/vabstractmainwindow.h"
 
@@ -131,7 +131,7 @@ protected:
 
     static QVector<VLayoutPiece> PrepareDetailsForLayout(const QHash<quint32, VPiece> &details);
 
-    void ExportData(const QVector<VLayoutPiece> &listDetails, const DialogSaveLayout &dialog);
+    void ExportData(const QVector<VLayoutPiece> &listDetails, const ExportLayoutDialog &dialog);
 
     void InitTempLayoutScene();
     virtual void CleanLayout()=0;
@@ -187,26 +187,26 @@ private:
     bool isPagesUniform() const;
     bool IsPagesFit(const QSizeF &printPaper) const;
 
-    void ExportScene(const DialogSaveLayout &dialog,
+    void ExportScene(const ExportLayoutDialog &dialog,
                      const QList<QGraphicsScene *> &scenes,
                      const QList<QGraphicsItem *> &papers,
                      const QList<QGraphicsItem *> &shadows,
                      const QList<QList<QGraphicsItem *> > &details,
                      bool ignoreMargins, const QMarginsF &margins) const;
 
-    void ExportApparelLayout(const DialogSaveLayout &dialog, const QVector<VLayoutPiece> &details, const QString &name,
+    void ExportApparelLayout(const ExportLayoutDialog &dialog, const QVector<VLayoutPiece> &details, const QString &name,
                              const QSize &size) const;
 
-    void ExportDetailsAsApparelLayout(const DialogSaveLayout &dialog, QVector<VLayoutPiece> listDetails);
+    void ExportDetailsAsApparelLayout(const ExportLayoutDialog &dialog, QVector<VLayoutPiece> listDetails);
 
-    void ExportFlatLayout(const DialogSaveLayout &dialog,
+    void ExportFlatLayout(const ExportLayoutDialog &dialog,
                           const QList<QGraphicsScene *> &scenes,
                           const QList<QGraphicsItem *> &papers,
                           const QList<QGraphicsItem *> &shadows,
                           const QList<QList<QGraphicsItem *> > &details,
                           bool ignoreMargins, const QMarginsF &margins);
 
-    void ExportDetailsAsFlatLayout(const DialogSaveLayout &dialog, const QVector<VLayoutPiece> &listDetails);
+    void ExportDetailsAsFlatLayout(const ExportLayoutDialog &dialog, const QVector<VLayoutPiece> &listDetails);
 };
 
 #endif // MAINWINDOWSNOGUI_H

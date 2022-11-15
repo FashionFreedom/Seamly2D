@@ -140,7 +140,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="general_Tab">
       <attribute name="title">
@@ -806,7 +806,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>100</height>
+           <height>120</height>
           </size>
          </property>
          <property name="maximumSize">
@@ -819,6 +819,13 @@
           <string>Export Format</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QCheckBox" name="useModeType_CheckBox">
+            <property name="text">
+             <string>Include mode type in filename</string>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QCheckBox" name="uselastExportFormat_CheckBox">
             <property name="text">

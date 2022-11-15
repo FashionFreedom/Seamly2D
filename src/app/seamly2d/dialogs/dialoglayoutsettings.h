@@ -116,8 +116,8 @@ public:
     bool IsIgnoreAllFields() const;
     void SetIgnoreAllFields(bool value);
 
-    bool IsTextAsPaths() const;
-    void SetTextAsPaths(bool value);
+    bool isTextAsPaths() const;
+    void setTextAsPaths(bool value);
 
     QString SelectedPrinter() const;
 
@@ -131,7 +131,7 @@ public:
     static QString MakeGroupsHelp();
 protected:
     virtual void showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
-    QSizeF GetTemplateSize(const PaperSizeTemplate &tmpl, const Unit &unit) const;
+    QSizeF getTemplateSize(const PaperSizeTemplate &tmpl, const Unit &unit) const;
 
 public slots:
     void DialogAccepted();

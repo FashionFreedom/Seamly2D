@@ -80,6 +80,7 @@ const QString settingConfigurationOsSeparator            = QStringLiteral("confi
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
 
+const QString settingConfigurationUseModeType            = QStringLiteral("configuration/autosave/useModeType");
 const QString settingConfigurationUseLastExportFormat    = QStringLiteral("configuration/autosave/useLastExportFormat");
 const QString settingConfigurationExportFormat           = QStringLiteral("configuration/autosave/exportFormat");
 
@@ -498,6 +499,18 @@ int VCommonSettings::getAutosaveInterval() const
 void VCommonSettings::setAutosaveInterval(const int &value)
 {
     setValue(settingConfigurationAutosaveTime, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useModeType() const
+{
+    return value(settingConfigurationUseModeType, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseModeType(const bool &value)
+{
+    setValue(settingConfigurationUseModeType, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

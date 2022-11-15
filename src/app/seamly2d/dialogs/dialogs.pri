@@ -11,8 +11,8 @@ HEADERS += \
     $$PWD/dialogaboutapp.h \
     $$PWD/dialoglayoutsettings.h \
     $$PWD/dialoglayoutprogress.h \
-    $$PWD/dialogsavelayout.h \
     $$PWD/dialogvariables.h \
+    $$PWD/export_layout_dialog.h \
     $$PWD/shortcuts_dialog.h \
     $$PWD/show_info_dialog.h \
     $$PWD/vwidgetgroups.h \
@@ -34,8 +34,8 @@ SOURCES += \
     $$PWD/dialogaboutapp.cpp \
     $$PWD/dialoglayoutsettings.cpp \
     $$PWD/dialoglayoutprogress.cpp \
-    $$PWD/dialogsavelayout.cpp \
     $$PWD/dialogvariables.cpp \
+    $$PWD/export_layout_dialog.cpp \
     $$PWD/shortcuts_dialog.cpp \
     $$PWD/show_info_dialog.cpp \
     $$PWD/vwidgetgroups.cpp \
@@ -57,8 +57,8 @@ FORMS += \
     $$PWD/dialogaboutapp.ui \
     $$PWD/dialoglayoutsettings.ui \
     $$PWD/dialoglayoutprogress.ui \
-    $$PWD/dialogsavelayout.ui \
     $$PWD/dialogvariables.ui \
+    $$PWD/export_layout_dialog.ui \
     $$PWD/shortcuts_dialog.ui \
     $$PWD/show_info_dialog.ui \
     $$PWD/vwidgetgroups.ui \

@@ -75,7 +75,7 @@ DialogLayoutSettings::DialogLayoutSettings(VLayoutGenerator *generator, QWidget 
     //even cleanse lists before adding
     InitPaperUnits();
     InitLayoutUnits();
-    InitTemplates(ui->comboBoxTemplates);
+    initTemplates(ui->comboBoxTemplates);
     MinimumPaperSize();
     MinimumLayoutSize();
     InitPrinter();
@@ -115,8 +115,8 @@ DialogLayoutSettings::DialogLayoutSettings(VLayoutGenerator *generator, QWidget 
 
     connect(ui->checkBoxIgnoreFileds, &QCheckBox::stateChanged, this, &DialogLayoutSettings::IgnoreAllFields);
 
-    connect(ui->toolButtonPortrait, &QToolButton::toggled, this, &DialogLayoutSettings::Swap);
-    connect(ui->toolButtonLandscape, &QToolButton::toggled, this, &DialogLayoutSettings::Swap);
+    connect(ui->portrait_ToolButton, &QToolButton::toggled, this, &DialogLayoutSettings::Swap);
+    connect(ui->landscape_ToolButton, &QToolButton::toggled, this, &DialogLayoutSettings::Swap);
     connect(ui->comboBoxLayoutUnit,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, &DialogLayoutSettings::ConvertLayoutSize);
 
@@ -187,20 +187,20 @@ void DialogLayoutSettings::SetLayoutWidth(qreal value)
 QMarginsF DialogLayoutSettings::GetFields() const
 {
     QMarginsF fields;
-    fields.setLeft(UnitConvertor(ui->doubleSpinBoxLeftField->value(), oldLayoutUnit, Unit::Px));
-    fields.setRight(UnitConvertor(ui->doubleSpinBoxRightField->value(), oldLayoutUnit, Unit::Px));
-    fields.setTop(UnitConvertor(ui->doubleSpinBoxTopField->value(), oldLayoutUnit, Unit::Px));
-    fields.setBottom(UnitConvertor(ui->doubleSpinBoxBottomField->value(), oldLayoutUnit, Unit::Px));
+    fields.setLeft(UnitConvertor(ui->leftField_DoubleSpinBox->value(), oldLayoutUnit, Unit::Px));
+    fields.setRight(UnitConvertor(ui->rightField_DoubleSpinBox->value(), oldLayoutUnit, Unit::Px));
+    fields.setTop(UnitConvertor(ui->topField_DoubleSpinBox->value(), oldLayoutUnit, Unit::Px));
+    fields.setBottom(UnitConvertor(ui->bottomField_DoubleSpinBox->value(), oldLayoutUnit, Unit::Px));
     return fields;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLayoutSettings::SetFields(const QMarginsF &value)
 {
-    ui->doubleSpinBoxLeftField->setValue(UnitConvertor(value.left(), Unit::Px, LayoutUnit()));
-    ui->doubleSpinBoxRightField->setValue(UnitConvertor(value.right(), Unit::Px, LayoutUnit()));
-    ui->doubleSpinBoxTopField->setValue(UnitConvertor(value.top(), Unit::Px, LayoutUnit()));
-    ui->doubleSpinBoxBottomField->setValue(UnitConvertor(value.bottom(), Unit::Px, LayoutUnit()));
+    ui->leftField_DoubleSpinBox->setValue(UnitConvertor(value.left(), Unit::Px, LayoutUnit()));
+    ui->rightField_DoubleSpinBox->setValue(UnitConvertor(value.right(), Unit::Px, LayoutUnit()));
+    ui->topField_DoubleSpinBox->setValue(UnitConvertor(value.top(), Unit::Px, LayoutUnit()));
+    ui->bottomField_DoubleSpinBox->setValue(UnitConvertor(value.bottom(), Unit::Px, LayoutUnit()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -346,15 +346,15 @@ void DialogLayoutSettings::SetIgnoreAllFields(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogLayoutSettings::IsTextAsPaths() const
+bool DialogLayoutSettings::isTextAsPaths() const
 {
-    return ui->checkBoxTextAsPaths->isChecked();
+    return ui->textAsPaths_Checkbox->isChecked();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogLayoutSettings::SetTextAsPaths(bool value)
+void DialogLayoutSettings::setTextAsPaths(bool value)
 {
-    ui->checkBoxTextAsPaths->setChecked(value);
+    ui->textAsPaths_Checkbox->setChecked(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -381,7 +381,7 @@ void DialogLayoutSettings::FindTemplate()
     const int max = static_cast<int>(PaperSizeTemplate::Custom);
     for (int i=0; i < max; ++i)
     {
-        const QSizeF tmplSize = GetTemplateSize(static_cast<PaperSizeTemplate>(i), paperUnit);
+        const QSizeF tmplSize = getTemplateSize(static_cast<PaperSizeTemplate>(i), paperUnit);
         if (size == tmplSize)
         {
             ui->comboBoxTemplates->blockSignals(true);
@@ -411,10 +411,10 @@ void DialogLayoutSettings::ConvertPaperSize()
     const qreal width = ui->doubleSpinBoxPaperWidth->value();
     const qreal height = ui->doubleSpinBoxPaperHeight->value();
 
-    const qreal left = ui->doubleSpinBoxLeftField->value();
-    const qreal right = ui->doubleSpinBoxRightField->value();
-    const qreal top = ui->doubleSpinBoxTopField->value();
-    const qreal bottom = ui->doubleSpinBoxBottomField->value();
+    const qreal left = ui->leftField_DoubleSpinBox->value();
+    const qreal right = ui->rightField_DoubleSpinBox->value();
+    const qreal top = ui->topField_DoubleSpinBox->value();
+    const qreal bottom = ui->bottomField_DoubleSpinBox->value();
 
     ui->doubleSpinBoxPaperWidth->blockSignals(true);
     ui->doubleSpinBoxPaperHeight->blockSignals(true);
@@ -438,10 +438,10 @@ void DialogLayoutSettings::ConvertPaperSize()
     ui->doubleSpinBoxPaperWidth->setValue(newWidth);
     ui->doubleSpinBoxPaperHeight->setValue(newHeight);
 
-    ui->doubleSpinBoxLeftField->setValue(newLeft);
-    ui->doubleSpinBoxRightField->setValue(newRight);
-    ui->doubleSpinBoxTopField->setValue(newTop);
-    ui->doubleSpinBoxBottomField->setValue(newBottom);
+    ui->leftField_DoubleSpinBox->setValue(newLeft);
+    ui->rightField_DoubleSpinBox->setValue(newRight);
+    ui->topField_DoubleSpinBox->setValue(newTop);
+    ui->bottomField_DoubleSpinBox->setValue(newBottom);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -532,15 +532,15 @@ void DialogLayoutSettings::PaperSizeChanged()
 {
     if (ui->doubleSpinBoxPaperHeight->value() > ui->doubleSpinBoxPaperWidth->value())
     {
-        ui->toolButtonPortrait->blockSignals(true);
-        ui->toolButtonPortrait->setChecked(true);
-        ui->toolButtonPortrait->blockSignals(false);
+        ui->portrait_ToolButton->blockSignals(true);
+        ui->portrait_ToolButton->setChecked(true);
+        ui->portrait_ToolButton->blockSignals(false);
     }
     else
     {
-        ui->toolButtonLandscape->blockSignals(true);
-        ui->toolButtonLandscape->setChecked(true);
-        ui->toolButtonLandscape->blockSignals(false);
+        ui->landscape_ToolButton->blockSignals(true);
+        ui->landscape_ToolButton->setChecked(true);
+        ui->landscape_ToolButton->blockSignals(false);
     }
 }
 
@@ -590,7 +590,7 @@ void DialogLayoutSettings::DialogAccepted()
     generator->SetUnitePages(IsUnitePages());
     generator->SetStripOptimization(IsStripOptimization());
     generator->SetMultiplier(GetMultiplier());
-    generator->SetTestAsPaths(IsTextAsPaths());
+    generator->SetTestAsPaths(isTextAsPaths());
 
     if (IsIgnoreAllFields())
     {
@@ -618,22 +618,22 @@ void DialogLayoutSettings::DialogAccepted()
                 {
                     if (fields.left() < minFields.left())
                     {
-                        ui->doubleSpinBoxLeftField->setValue(UnitConvertor(minFields.left(), Unit::Px, LayoutUnit()));
+                        ui->leftField_DoubleSpinBox->setValue(UnitConvertor(minFields.left(), Unit::Px, LayoutUnit()));
                     }
 
                     if (fields.right() < minFields.right())
                     {
-                        ui->doubleSpinBoxRightField->setValue(UnitConvertor(minFields.right(), Unit::Px, LayoutUnit()));
+                        ui->rightField_DoubleSpinBox->setValue(UnitConvertor(minFields.right(), Unit::Px, LayoutUnit()));
                     }
 
                     if (fields.top() < minFields.top())
                     {
-                        ui->doubleSpinBoxTopField->setValue(UnitConvertor(minFields.top(), Unit::Px, LayoutUnit()));
+                        ui->topField_DoubleSpinBox->setValue(UnitConvertor(minFields.top(), Unit::Px, LayoutUnit()));
                     }
 
                     if (fields.bottom() < minFields.bottom())
                     {
-                        ui->doubleSpinBoxBottomField->setValue(UnitConvertor(minFields.bottom(), Unit::Px,
+                        ui->bottomField_DoubleSpinBox->setValue(UnitConvertor(minFields.bottom(), Unit::Px,
                                                                              LayoutUnit()));
                     }
 
@@ -683,7 +683,7 @@ void DialogLayoutSettings::RestoreDefaults()
     CorrectMaxFileds();
     IgnoreAllFields(ui->checkBoxIgnoreFileds->isChecked());
 
-    ui->checkBoxTextAsPaths->setChecked(false);
+    ui->textAsPaths_Checkbox->setChecked(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -710,19 +710,19 @@ void DialogLayoutSettings::CorrectMaxFileds()
     const qreal widthField = (width*80.0/100.0)/2.0;
     const qreal heightField = (height*80.0/100.0)/2.0;
 
-    ui->doubleSpinBoxLeftField->setMaximum(widthField);
-    ui->doubleSpinBoxRightField->setMaximum(widthField);
-    ui->doubleSpinBoxTopField->setMaximum(heightField);
-    ui->doubleSpinBoxBottomField->setMaximum(heightField);
+    ui->leftField_DoubleSpinBox->setMaximum(widthField);
+    ui->rightField_DoubleSpinBox->setMaximum(widthField);
+    ui->topField_DoubleSpinBox->setMaximum(heightField);
+    ui->bottomField_DoubleSpinBox->setMaximum(heightField);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLayoutSettings::IgnoreAllFields(int state)
 {
-    ui->doubleSpinBoxLeftField->setDisabled(state);
-    ui->doubleSpinBoxRightField->setDisabled(state);
-    ui->doubleSpinBoxTopField->setDisabled(state);
-    ui->doubleSpinBoxBottomField->setDisabled(state);
+    ui->leftField_DoubleSpinBox->setDisabled(state);
+    ui->rightField_DoubleSpinBox->setDisabled(state);
+    ui->topField_DoubleSpinBox->setDisabled(state);
+    ui->bottomField_DoubleSpinBox->setDisabled(state);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -818,7 +818,7 @@ QSizeF DialogLayoutSettings::Template()
         case PaperSizeTemplate::A4:
         case PaperSizeTemplate::Letter:
             SetAdditionalOptions(false);
-            return GetTemplateSize(temp, paperUnit);
+            return getTemplateSize(temp, paperUnit);
         case PaperSizeTemplate::Legal:
         case PaperSizeTemplate::Roll24in:
         case PaperSizeTemplate::Roll30in:
@@ -826,9 +826,9 @@ QSizeF DialogLayoutSettings::Template()
         case PaperSizeTemplate::Roll42in:
         case PaperSizeTemplate::Roll44in:
             SetAdditionalOptions(true);
-            return GetTemplateSize(temp, paperUnit);
+            return getTemplateSize(temp, paperUnit);
         case PaperSizeTemplate::Custom:
-            return GetTemplateSize(temp, paperUnit);
+            return getTemplateSize(temp, paperUnit);
         default:
             break;
     }
@@ -841,7 +841,7 @@ QSizeF DialogLayoutSettings::Template()
  * @param unit
  * @return
  */
-QSizeF DialogLayoutSettings::GetTemplateSize(const PaperSizeTemplate &tmpl, const Unit &unit) const
+QSizeF DialogLayoutSettings::getTemplateSize(const PaperSizeTemplate &tmpl, const Unit &unit) const
 {
     qreal width = 0;
     qreal height = 0;
@@ -853,7 +853,7 @@ QSizeF DialogLayoutSettings::GetTemplateSize(const PaperSizeTemplate &tmpl, cons
             height = ui->doubleSpinBoxPaperHeight->value();
             return RoundTemplateSize(width, height, unit);
         default:
-            return VAbstractLayoutDialog::GetTemplateSize(tmpl, unit);
+            return VAbstractLayoutDialog::getTemplateSize(tmpl, unit);
     }
 }
 
@@ -912,19 +912,19 @@ void DialogLayoutSettings::CorrectPaperDecimals()
             ui->doubleSpinBoxPaperWidth->setDecimals(2);
             ui->doubleSpinBoxPaperHeight->setDecimals(2);
 
-            ui->doubleSpinBoxLeftField->setDecimals(4);
-            ui->doubleSpinBoxRightField->setDecimals(4);
-            ui->doubleSpinBoxTopField->setDecimals(4);
-            ui->doubleSpinBoxBottomField->setDecimals(4);
+            ui->leftField_DoubleSpinBox->setDecimals(4);
+            ui->rightField_DoubleSpinBox->setDecimals(4);
+            ui->topField_DoubleSpinBox->setDecimals(4);
+            ui->bottomField_DoubleSpinBox->setDecimals(4);
             break;
         case Unit::Inch:
             ui->doubleSpinBoxPaperWidth->setDecimals(5);
             ui->doubleSpinBoxPaperHeight->setDecimals(5);
 
-            ui->doubleSpinBoxLeftField->setDecimals(5);
-            ui->doubleSpinBoxRightField->setDecimals(5);
-            ui->doubleSpinBoxTopField->setDecimals(5);
-            ui->doubleSpinBoxBottomField->setDecimals(5);
+            ui->leftField_DoubleSpinBox->setDecimals(5);
+            ui->rightField_DoubleSpinBox->setDecimals(5);
+            ui->topField_DoubleSpinBox->setDecimals(5);
+            ui->bottomField_DoubleSpinBox->setDecimals(5);
             break;
         default:
             break;
@@ -986,7 +986,7 @@ void DialogLayoutSettings::ReadSettings()
     SetIgnoreAllFields(settings->GetIgnoreAllFields());
     SetStripOptimization(settings->GetStripOptimization());
     SetMultiplier(settings->GetMultiplier());
-    SetTextAsPaths(settings->GetTextAsPaths());
+    setTextAsPaths(settings->GetTextAsPaths());
 
     FindTemplate();
 
@@ -1012,7 +1012,7 @@ void DialogLayoutSettings::WriteSettings() const
     settings->SetIgnoreAllFields(IsIgnoreAllFields());
     settings->SetStripOptimization(IsStripOptimization());
     settings->SetMultiplier(GetMultiplier());
-    settings->SetTextAsPaths(IsTextAsPaths());
+    settings->setTextAsPaths(isTextAsPaths());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
