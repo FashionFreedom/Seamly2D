@@ -54,6 +54,7 @@
 #include "../fervor/fvupdater.h"
 #include "../vpatterndb/vpiecenode.h"
 
+#include <QApplication>
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QTimer>
 

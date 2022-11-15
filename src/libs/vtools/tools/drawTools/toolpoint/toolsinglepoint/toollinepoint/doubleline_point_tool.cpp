@@ -109,7 +109,7 @@ void DoubleLinePointTool::paint(QPainter *painter, const QStyleOptionGraphicsIte
     QPen pen = firstLine->pen();
     pen.setColor(correctColor(this, lineColor));
     pen.setStyle(lineTypeToPenStyle(m_lineType));
-    pen.setWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
+    pen.setWidthF(ToPixel(m_lineWeight.toDouble(), Unit::Mm)); 
 
     firstLine->setPen(pen);
     secondLine->setPen(pen);

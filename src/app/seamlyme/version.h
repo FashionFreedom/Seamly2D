@@ -54,7 +54,7 @@
 
 #include "../../libs/vmisc/projectversion.h"
 
-#define VER_INTERNALNAME_STR        "SeamlyMe"
+#define VER_INTERNALNAME_ME_STR     "SeamlyMe"
 #define VER_ORIGINALFILENAME_STR    "seamlyme.exe"
 #define VER_PRODUCTNAME_STR         "SeamlyMe"
 #define VER_FILEDESCRIPTION_STR     "Seamly2D's measurements editor."

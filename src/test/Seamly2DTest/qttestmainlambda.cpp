@@ -95,7 +95,7 @@ public:
 TestVApplication::TestVApplication(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
 {
-    setApplicationName(VER_INTERNALNAME_STR);
+    setApplicationName(VER_INTERNALNAME_2D_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     OpenSettings();
 }

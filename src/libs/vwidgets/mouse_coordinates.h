@@ -33,6 +33,10 @@ namespace Ui
     class MouseCoordinates;
 }
 
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_GCC("-Weffc++")
+QT_WARNING_DISABLE_GCC("-Wnon-virtual-dtor")
+
 class MouseCoordinates: public QWidget
 {
     Q_OBJECT
@@ -48,5 +52,7 @@ private:
     Ui::MouseCoordinates *ui;
     Unit                  m_units;
 };
+
+QT_WARNING_POP
 
 #endif

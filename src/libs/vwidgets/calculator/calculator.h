@@ -58,6 +58,10 @@ class QLineEdit;
 //QT_END_NAMESPACE
 class Button;
 
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_GCC("-Weffc++")
+QT_WARNING_DISABLE_GCC("-Wnon-virtual-dtor")
+
 //! [0]
 class CalculatorUtil : public QWidget
 {
@@ -114,5 +118,7 @@ private:
     Button *digitButtons[NumDigitButtons];
 };
 //! [10]
+
+QT_WARNING_POP
 
 #endif
