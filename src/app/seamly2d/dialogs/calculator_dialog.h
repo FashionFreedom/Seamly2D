@@ -58,8 +58,6 @@ private:
     bool isInitialized;
     Q_DISABLE_COPY(CalculatorDialog)
 
-    void setFontPointSize(QWidget *w, int pointSize);
-
     CalculatorUtil *calc;
 };
 
