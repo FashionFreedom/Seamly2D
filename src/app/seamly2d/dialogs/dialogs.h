@@ -63,5 +63,6 @@
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
 #include "dialogs/shortcuts_dialog.h"
+#include "dialogs/show_info_dialog.h"
 
 #endif // DIALOGS_H
