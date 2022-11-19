@@ -156,7 +156,7 @@ jobs:
       - name: make Seamly2D for macos
         run: |
           qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols
-          make -j
+          make -j$(sysctl -n hw.logicalcpu)
 
       - name: build dmg packages
         run: |
