@@ -73,8 +73,8 @@ jobs:
 
       - name: qmake Seamly2D and SeamlyMe
         run: |
-          qmake Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
-          make
+          qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          make -j
 
       - name: build dmg packages
         run: |
