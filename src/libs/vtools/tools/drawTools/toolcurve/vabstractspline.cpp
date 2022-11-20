@@ -93,7 +93,7 @@ VAbstractSpline::VAbstractSpline(VAbstractPattern *doc, VContainer *data, quint3
 QPainterPath VAbstractSpline::shape() const
 {
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
-    const QVector<QPointF> points = curve->GetPoints();
+    const QVector<QPointF> points = curve->getPoints();
 
     QPainterPath path;
     for (qint32 i = 0; i < points.count()-1; ++i)

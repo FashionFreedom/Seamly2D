@@ -197,7 +197,7 @@ VEllipticalArc::~VEllipticalArc()
  */
 qreal VEllipticalArc::GetLength() const
 {
-    qreal length = PathLength(GetPoints());
+    qreal length = PathLength(getPoints());
 
     if (IsFlipped())
     {
@@ -287,7 +287,7 @@ QPointF VEllipticalArc::getPoint(qreal angle) const
  * @brief GetPoints return list of points needed for drawing arc.
  * @return list of points
  */
-QVector<QPointF> VEllipticalArc::GetPoints() const
+QVector<QPointF> VEllipticalArc::getPoints() const
 {
     const QPointF center = VAbstractArc::GetCenter().toQPointF();
     QRectF box(center.x() - d->radius1, center.y() - d->radius2, d->radius1*2, d->radius2*2);

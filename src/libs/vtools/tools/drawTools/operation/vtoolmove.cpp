@@ -125,7 +125,7 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
             case GOType::SplinePath:
             case GOType::CubicBezier:
             case GOType::CubicBezierPath:
-                originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->GetPoints());
+                originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->getPoints());
                 break;
             case GOType::Unknown:
                 Q_UNREACHABLE();

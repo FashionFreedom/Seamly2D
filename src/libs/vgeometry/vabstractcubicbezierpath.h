@@ -83,7 +83,7 @@ public:
     virtual QVector<VSplinePoint> GetSplinePath() const =0;
 
     virtual QPainterPath     GetPath() const Q_DECL_OVERRIDE;
-    virtual QVector<QPointF> GetPoints() const Q_DECL_OVERRIDE;
+    virtual QVector<QPointF> getPoints() const Q_DECL_OVERRIDE;
     virtual qreal            GetLength() const Q_DECL_OVERRIDE;
 
     virtual QVector<DirectionArrow> DirectionArrows() const Q_DECL_OVERRIDE;

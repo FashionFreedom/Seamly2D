@@ -457,7 +457,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
             case Tool::Group:
             case Tool::InternalPath:
             case Tool::Pin:
-            case Tool::InsertNode:
+            case Tool::InsertNodes:
                 return QString();
         }
     }

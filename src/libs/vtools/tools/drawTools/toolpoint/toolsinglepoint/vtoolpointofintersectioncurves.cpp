@@ -145,7 +145,7 @@ VToolPointOfIntersectionCurves *VToolPointOfIntersectionCurves::Create(const qui
     auto curve1 = data->GeometricObject<VAbstractCurve>(firstCurveId);
     auto curve2 = data->GeometricObject<VAbstractCurve>(secondCurveId);
 
-    const QPointF point = VToolPointOfIntersectionCurves::FindPoint(curve1->GetPoints(), curve2->GetPoints(),
+    const QPointF point = VToolPointOfIntersectionCurves::FindPoint(curve1->getPoints(), curve2->getPoints(),
                                                                     vCrossPoint, hCrossPoint);
     quint32 id = _id;
 

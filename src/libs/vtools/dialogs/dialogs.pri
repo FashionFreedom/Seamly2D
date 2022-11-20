@@ -39,12 +39,12 @@ HEADERS += \
     $$PWD/tools/dialogmirrorbyaxis.h \
     $$PWD/tools/dialogmove.h \
     $$PWD/tools/dialogellipticalarc.h \
+    $$PWD/tools/insert_nodes_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
     $$PWD/tools/piece/dialogseamallowance.h \
     $$PWD/tools/piece/dialoginternalpath.h \
     $$PWD/tools/dialogpin.h \
-    $$PWD/tools/dialoginsertnode.h \
     $$PWD/support/dialogeditlabel.h \
     $$PWD/tools/point_intersectxy_dialog.h
 
@@ -85,11 +85,11 @@ SOURCES += \
     $$PWD/tools/dialogmirrorbyaxis.cpp \
     $$PWD/tools/dialogmove.cpp \
     $$PWD/tools/dialogellipticalarc.cpp \
+    $$PWD/tools/insert_nodes_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
     $$PWD/tools/piece/dialogseamallowance.cpp \
     $$PWD/tools/dialogpin.cpp \
-    $$PWD/tools/dialoginsertnode.cpp \
     $$PWD/support/dialogeditlabel.cpp \
     $$PWD/tools/piece/dialoginternalpath.cpp \
     $$PWD/tools/point_intersectxy_dialog.cpp
@@ -130,6 +130,7 @@ FORMS += \
     $$PWD/tools/dialogmirrorbyaxis.ui \
     $$PWD/tools/dialogmove.ui \
     $$PWD/tools/dialogellipticalarc.ui \
+    $$PWD/tools/insert_nodes_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \
     $$PWD/tools/piece/dialogseamallowance.ui \
@@ -140,6 +141,5 @@ FORMS += \
     $$PWD/tools/piece/tabs/tablabels.ui \
     $$PWD/tools/piece/tabs/tabgrainline.ui \
     $$PWD/tools/piece/tabs/tabpins.ui \
-    $$PWD/tools/dialoginsertnode.ui \
     $$PWD/support/dialogeditlabel.ui \
     $$PWD/tools/point_intersectxy_dialog.ui

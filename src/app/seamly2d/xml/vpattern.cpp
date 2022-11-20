@@ -4011,7 +4011,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::Group:
                 case Tool::InternalPath:
                 case Tool::Pin:
-                case Tool::InsertNode:
+                case Tool::InsertNodes:
                     break;
             }
         }
