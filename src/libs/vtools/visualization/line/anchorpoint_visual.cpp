@@ -1,29 +1,6 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file
+ **  @file   anchorpoint_visual.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   31 1, 2017
  **
@@ -49,15 +26,15 @@
  **
  *************************************************************************/
 
-#include "vistoolpin.h"
+#include "anchorpoint_visual.h"
 #include "../vwidgets/vsimplepoint.h"
 #include "../vgeometry/vpointf.h"
 #include "../vpatterndb/vcontainer.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-VisToolPin::VisToolPin(const VContainer *data, QGraphicsItem *parent)
-    : VisLine(data, parent),
-      m_point()
+AnchorPointVisual::AnchorPointVisual(const VContainer *data, QGraphicsItem *parent)
+    : VisLine(data, parent)
+    , m_point()
 {
     this->mainColor = Qt::red;
     this->setZValue(2);// Show on top real tool
@@ -70,7 +47,7 @@ VisToolPin::VisToolPin(const VContainer *data, QGraphicsItem *parent)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VisToolPin::~VisToolPin()
+AnchorPointVisual::~AnchorPointVisual()
 {
     if (not m_point.isNull())
     {
@@ -79,7 +56,7 @@ VisToolPin::~VisToolPin()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolPin::RefreshGeometry()
+void AnchorPointVisual::RefreshGeometry()
 {
     if (object1Id > NULL_ID)
     {
@@ -90,4 +67,3 @@ void VisToolPin::RefreshGeometry()
         m_point->setVisible(true);
     }
 }
-

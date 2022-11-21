@@ -58,6 +58,6 @@
 #include "vnodespline.h"
 #include "vnodesplinepath.h"
 #include "vtoolinternalpath.h"
-#include "vtoolpin.h"
+#include "anchorpoint_tool.h"
 
 #endif // NODEDETAILS_H

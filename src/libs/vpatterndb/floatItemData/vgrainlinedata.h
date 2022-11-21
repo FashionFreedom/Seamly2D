@@ -66,14 +66,14 @@ public:
     ArrowType GetArrowType() const;
     void      SetArrowType(ArrowType eAT);
 
-    quint32 CenterPin() const;
-    void    SetCenterPin(quint32 centerPin);
+    quint32 centerAnchorPoint() const;
+    void    setCenterAnchorPoint(quint32 centerAnchor);
 
-    quint32 TopPin() const;
-    void    SetTopPin(quint32 topPin);
+    quint32 topAnchorPoint() const;
+    void    setTopAnchorPoint(quint32 topAnchorPoint);
 
-    quint32 BottomPin() const;
-    void    SetBottomPin(quint32 bottomPin);
+    quint32 bottomAnchorPoint() const;
+    void    setBottomAnchorPoint(quint32 bottomAnchorPoint);
 
 private:
     QSharedDataPointer<VGrainlineDataPrivate> d;

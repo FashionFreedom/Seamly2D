@@ -98,12 +98,12 @@ void SavePieceOptions::undo()
         VToolSeamAllowance::AddNodes(doc, domElement, m_oldDet);
         VToolSeamAllowance::AddCSARecords(doc, domElement, m_oldDet.GetCustomSARecords());
         VToolSeamAllowance::AddInternalPaths(doc, domElement, m_oldDet.GetInternalPaths());
-        VToolSeamAllowance::AddPins(doc, domElement, m_oldDet.GetPins());
+        VToolSeamAllowance::addAnchors(doc, domElement, m_oldDet.getAnchors());
 
         IncrementReferences(m_oldDet.MissingNodes(m_newDet));
         IncrementReferences(m_oldDet.MissingCSAPath(m_newDet));
         IncrementReferences(m_oldDet.MissingInternalPaths(m_newDet));
-        IncrementReferences(m_oldDet.MissingPins(m_newDet));
+        IncrementReferences(m_oldDet.missingAnchors(m_newDet));
         emit NeedLiteParsing(Document::LiteParse);
     }
     else
@@ -129,12 +129,12 @@ void SavePieceOptions::redo()
         VToolSeamAllowance::AddNodes(doc, domElement, m_newDet);
         VToolSeamAllowance::AddCSARecords(doc, domElement, m_newDet.GetCustomSARecords());
         VToolSeamAllowance::AddInternalPaths(doc, domElement, m_newDet.GetInternalPaths());
-        VToolSeamAllowance::AddPins(doc, domElement, m_newDet.GetPins());
+        VToolSeamAllowance::addAnchors(doc, domElement, m_newDet.getAnchors());
 
         DecrementReferences(m_oldDet.MissingNodes(m_newDet));
         DecrementReferences(m_oldDet.MissingCSAPath(m_newDet));
         DecrementReferences(m_oldDet.MissingInternalPaths(m_newDet));
-        DecrementReferences(m_oldDet.MissingPins(m_newDet));
+        DecrementReferences(m_oldDet.missingAnchors(m_newDet));
 
         emit NeedLiteParsing(Document::LiteParse);
     }

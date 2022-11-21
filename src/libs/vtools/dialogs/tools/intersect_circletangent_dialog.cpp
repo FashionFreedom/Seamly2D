@@ -339,7 +339,7 @@ void IntersectCircleTangentDialog::CheckState()
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);
     // In case dialog hasn't apply button
-    if ( apply_Button != nullptr)
+    if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());
     }

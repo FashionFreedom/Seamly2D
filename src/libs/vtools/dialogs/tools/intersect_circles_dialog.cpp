@@ -437,7 +437,7 @@ void IntersectCirclesDialog::CheckState()
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagFormula && flagName && flagError && flagCircle1Radius && flagCircle2Radius);
     // In case dialog hasn't apply button
-    if ( apply_Button != nullptr)
+    if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());
     }

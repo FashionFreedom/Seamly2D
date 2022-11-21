@@ -103,37 +103,37 @@ void VGrainlineData::SetArrowType(ArrowType eAT)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VGrainlineData::CenterPin() const
+quint32 VGrainlineData::centerAnchorPoint() const
 {
-    return d->m_centerPin;
+    return d->m_centerAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineData::SetCenterPin(quint32 centerPin)
+void VGrainlineData::setCenterAnchorPoint(quint32 centerAnchor)
 {
-    d->m_centerPin = centerPin;
+    d->m_centerAnchorPoint = centerAnchor;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VGrainlineData::TopPin() const
+quint32 VGrainlineData::topAnchorPoint() const
 {
-    return d->m_topPin;
+    return d->m_topAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineData::SetTopPin(quint32 topPin)
+void VGrainlineData::setTopAnchorPoint(quint32 topAnchorPoint)
 {
-    d->m_topPin = topPin;
+    d->m_topAnchorPoint = topAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VGrainlineData::BottomPin() const
+quint32 VGrainlineData::bottomAnchorPoint() const
 {
-    return d->m_bottomPin;
+    return d->m_bottomAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VGrainlineData::SetBottomPin(quint32 bottomPin)
+void VGrainlineData::setBottomAnchorPoint(quint32 bottomAnchorPoint)
 {
-    d->m_bottomPin = bottomPin;
+    d->m_bottomAnchorPoint = bottomAnchorPoint;
 }
