@@ -229,6 +229,7 @@ extern const QString bustpointToShoulderTip_M;     // J07
 extern const QString bustpointToWaistFront_M;      // J08
 extern const QString bustpointToBustpointHalter_M; // J09
 extern const QString bustpointToShoulderCenter_M;  // J10
+extern const QString bustpointToNeckFront_M;       // J11
 // K
 extern const QString shoulderTipToWaistFront_M;       // K01
 extern const QString neckFrontToWaistSide_M;          // K02

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>PinsTab</class>
- <widget class="QWidget" name="PinsTab">
+ <class>AnchorPointsTab</class>
+ <widget class="QWidget" name="AnchorPointsTab">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -19,7 +19,7 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QListWidget" name="pins_ListWidget">
+    <widget class="QListWidget" name="anchorPoints_ListWidget">
      <property name="dragDropMode">
       <enum>QAbstractItemView::InternalMove</enum>
      </property>

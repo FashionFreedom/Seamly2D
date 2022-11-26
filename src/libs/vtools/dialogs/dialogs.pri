@@ -3,6 +3,7 @@
 
 HEADERS += \
     $$PWD/tooldialogs.h \
+    $$PWD/tools/anchorpoint_dialog.h \
     $$PWD/tools/dialogalongline.h \
     $$PWD/tools/dialogarc.h \
     $$PWD/tools/dialogarcwithlength.h \
@@ -44,11 +45,11 @@ HEADERS += \
     $$PWD/tools/intersect_circletangent_dialog.h \
     $$PWD/tools/piece/dialogseamallowance.h \
     $$PWD/tools/piece/dialoginternalpath.h \
-    $$PWD/tools/dialogpin.h \
     $$PWD/support/dialogeditlabel.h \
     $$PWD/tools/point_intersectxy_dialog.h
 
 SOURCES += \
+    $$PWD/tools/anchorpoint_dialog.cpp \
     $$PWD/tools/dialogalongline.cpp \
     $$PWD/tools/dialogarc.cpp \
     $$PWD/tools/dialogarcwithlength.cpp \
@@ -89,12 +90,12 @@ SOURCES += \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
     $$PWD/tools/piece/dialogseamallowance.cpp \
-    $$PWD/tools/dialogpin.cpp \
     $$PWD/support/dialogeditlabel.cpp \
     $$PWD/tools/piece/dialoginternalpath.cpp \
     $$PWD/tools/point_intersectxy_dialog.cpp
 
 FORMS += \
+    $$PWD/tools/anchorpoint_dialog.ui \
     $$PWD/tools/dialogalongline.ui \
     $$PWD/tools/dialogarc.ui \
     $$PWD/tools/dialogarcwithlength.ui \
@@ -135,11 +136,10 @@ FORMS += \
     $$PWD/tools/intersect_circletangent_dialog.ui \
     $$PWD/tools/piece/dialogseamallowance.ui \
     $$PWD/tools/piece/dialoginternalpath.ui \
-    $$PWD/tools/dialogpin.ui \
+    $$PWD/tools/piece/tabs/tabanchors.ui \
     $$PWD/tools/piece/tabs/tabnotches.ui \
     $$PWD/tools/piece/tabs/tabpaths.ui \
     $$PWD/tools/piece/tabs/tablabels.ui \
     $$PWD/tools/piece/tabs/tabgrainline.ui \
-    $$PWD/tools/piece/tabs/tabpins.ui \
     $$PWD/support/dialogeditlabel.ui \
     $$PWD/tools/point_intersectxy_dialog.ui

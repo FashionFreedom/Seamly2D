@@ -8,7 +8,7 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -40,14 +40,14 @@ void VPatternLabelData::Swap(VPatternLabelData &data) Q_DECL_NOTHROW
 
 //---------------------------------------------------------------------------------------------------------------------
 VPatternLabelData::VPatternLabelData()
-    : VAbstractFloatItemData(),
-      d(new VPatternLabelDataPrivate())
+    : VAbstractFloatItemData()
+    , d(new VPatternLabelDataPrivate())
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VPatternLabelData::VPatternLabelData(const VPatternLabelData &data)
-    : VAbstractFloatItemData(data),
-      d (data.d)
+    : VAbstractFloatItemData(data)
+    , d (data.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -115,37 +115,37 @@ void VPatternLabelData::SetRotation(const QString &dRot)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VPatternLabelData::CenterPin() const
+quint32 VPatternLabelData::centerAnchorPoint() const
 {
-    return d->m_centerPin;
+    return d->m_centerAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPatternLabelData::SetCenterPin(const quint32 &centerPin)
+void VPatternLabelData::setCenterAnchorPoint(const quint32 &centerAnchorPoint)
 {
-    d->m_centerPin = centerPin;
+    d->m_centerAnchorPoint = centerAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VPatternLabelData::TopLeftPin() const
+quint32 VPatternLabelData::topLeftAnchorPoint() const
 {
-    return d->m_topLeftPin;
+    return d->m_topLeftAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPatternLabelData::SetTopLeftPin(const quint32 &topLeftPin)
+void VPatternLabelData::setTopLeftAnchorPoint(const quint32 &topLeftAnchorPoint)
 {
-    d->m_topLeftPin = topLeftPin;
+    d->m_topLeftAnchorPoint = topLeftAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VPatternLabelData::BottomRightPin() const
+quint32 VPatternLabelData::bottomRightAnchorPoint() const
 {
-    return d->m_bottomRightPin;
+    return d->m_bottomRightAnchorPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPatternLabelData::SetBottomRightPin(const quint32 &bottomRightPin)
+void VPatternLabelData::setBottomRightAnchorPoint(const quint32 &bottomRightAnchorPoint)
 {
-    d->m_bottomRightPin = bottomRightPin;
+    d->m_bottomRightAnchorPoint = bottomRightAnchorPoint;
 }

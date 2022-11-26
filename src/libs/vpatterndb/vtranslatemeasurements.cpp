@@ -1446,6 +1446,12 @@ void VTranslateMeasurements::InitGroupJ()
     d = translate("VTranslateMeasurements", "From center of Shoulder to Bustpoint.", "Full measurement description.");
     InitMeasurement(bustpointToShoulderCenter_M, m, g, d, "J10");
     //=================================================================================================================
+    m = translate("VTranslateMeasurements", "bustpoint_to_neck_front",
+                  "Name in a formula. Don't use math symbols and space in name!!!!");
+    g = translate("VTranslateMeasurements", "Bustpoint to Neck Front", "Full measurement name.");
+    d = translate("VTranslateMeasurements", "From Neck Front to Bustpoint.", "Full measurement description.");
+    InitMeasurement(bustpointToNeckFront_M, m, g, d, "J11");
+    //=================================================================================================================
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -227,6 +227,7 @@ const QString bustpointToShoulderTip_M     = QStringLiteral("bustpoint_to_should
 const QString bustpointToWaistFront_M      = QStringLiteral("bustpoint_to_waist_front");      // J08
 const QString bustpointToBustpointHalter_M = QStringLiteral("bustpoint_to_bustpoint_halter"); // J09
 const QString bustpointToShoulderCenter_M  = QStringLiteral("bustpoint_to_shoulder_center");  // J10
+const QString bustpointToNeckFront_M       = QStringLiteral("bustpoint_to_neck_front");       // J11
 // K
 const QString shoulderTipToWaistFront_M       = QStringLiteral("shoulder_tip_to_waist_front");        // K01
 const QString neckFrontToWaistSide_M          = QStringLiteral("neck_front_to_waist_side");           // K02
@@ -548,8 +549,8 @@ QStringList ListGroupJ()
                                            << bustpointToShoulderTip_M      // J07
                                            << bustpointToWaistFront_M       // J08
                                            << bustpointToBustpointHalter_M  // J09
-                                           << bustpointToShoulderCenter_M;  // J10
-
+                                           << bustpointToShoulderCenter_M   // J10
+                                           << bustpointToNeckFront_M;       // J11
     return list;
 }
 
@@ -977,6 +978,7 @@ QString MapDiagrams(const VTranslateMeasurements *trM, const QString &number)
         case 8: // J09
             return QStringLiteral("Jp5");
         case 9: // J10
+        case 10: //J11
             return QStringLiteral("Jp6");
         default:
             break;
