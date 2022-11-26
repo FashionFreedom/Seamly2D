@@ -2,10 +2,12 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/line/anchorpoint_visual.h \
     $$PWD/line/intersect_circles_visual.h \
     $$PWD/line/intersect_circletangent_visual.h \
     $$PWD/line/operation/vistoolmirrorbyaxis.h \
     $$PWD/line/operation/vistoolmirrorbyline.h \
+    $$PWD/path/pieceanchorpoint_visual.h \
     $$PWD/line/point_intersectxy_visual.h \
     $$PWD/visualization.h \
     $$PWD/line/visline.h \
@@ -40,15 +42,15 @@ HEADERS += \
     $$PWD/line/operation/vistoolmove.h \
     $$PWD/path/vistoolellipticalarc.h \
     $$PWD/path/vistoolpiece.h \
-    $$PWD/path/vistoolinternalpath.h \
-    $$PWD/line/vistoolpin.h \
-    $$PWD/path/vispiecepins.h
+    $$PWD/path/vistoolinternalpath.h
 
 SOURCES += \
+    $$PWD/line/anchorpoint_visual.cpp \
     $$PWD/line/intersect_circles_visual.cpp \
     $$PWD/line/intersect_circletangent_visual.cpp \
     $$PWD/line/operation/vistoolmirrorbyaxis.cpp \
     $$PWD/line/operation/vistoolmirrorbyline.cpp \
+    $$PWD/path/pieceanchorpoint_visual.cpp \
     $$PWD/line/point_intersectxy_visual.cpp \
     $$PWD/visualization.cpp \
     $$PWD/line/visline.cpp \
@@ -83,6 +85,4 @@ SOURCES += \
     $$PWD/line/operation/vistoolmove.cpp \
     $$PWD/path/vistoolellipticalarc.cpp \
     $$PWD/path/vistoolpiece.cpp \
-    $$PWD/path/vistoolinternalpath.cpp \
-    $$PWD/line/vistoolpin.cpp \
-    $$PWD/path/vispiecepins.cpp
+    $$PWD/path/vistoolinternalpath.cpp

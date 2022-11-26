@@ -108,16 +108,16 @@ public:
 
     virtual void   CreateEmptyFile()=0;
 
-    void           changeActiveDraftBlock(const QString& name, const Document &parse = Document::FullParse);
+    void           changeActiveDraftBlock(const QString &name, const Document &parse = Document::FullParse);
     QString        getActiveDraftBlockName() const;
 
-    bool           CheckExistNamePP(const QString& name) const;
+    bool           CheckExistNamePP(const QString &name) const;
     int            CountPP() const;
     QDomElement    GetPPElement(const QString &name);
-    bool           ChangeNamePP(const QString& oldName, const QString &newName);
-    bool           appendPP(const QString& name);
+    bool           ChangeNamePP(const QString &oldName, const QString &newName);
+    bool           appendPP(const QString &name);
 
-    bool           GetActivNodeElement(const QString& name, QDomElement& element) const;
+    bool           GetActivNodeElement(const QString &name, QDomElement &element) const;
 
     quint32        getCursor() const;
     void           setCursor(const quint32 &value);
@@ -130,14 +130,14 @@ public:
 
     virtual void   UpdateToolData(const quint32 &id, VContainer *data)=0;
 
-    static VDataTool* getTool(quint32 id);
+    static VDataTool *getTool(quint32 id);
     static void       AddTool(quint32 id, VDataTool *tool);
     static void       RemoveTool(quint32 id);
 
     static VPiecePath              ParsePieceNodes(const QDomElement &domElement);
     static QVector<CustomSARecord> ParsePieceCSARecords(const QDomElement &domElement);
     static QVector<quint32>        ParsePieceInternalPaths(const QDomElement &domElement);
-    static QVector<quint32>        ParsePiecePins(const QDomElement &domElement);
+    static QVector<quint32>        ParsePieceAnchors(const QDomElement &domElement);
 
     void           AddToolOnRemove(VDataTool *tool);
 
@@ -164,16 +164,16 @@ public:
     void           SetNotes(const QString &text);
 
     QString        GetPatternName() const;
-    void           SetPatternName(const QString& qsName);
+    void           SetPatternName(const QString &qsName);
 
     QString        GetCompanyName() const;
-    void           SetCompanyName(const QString& qsName);
+    void           SetCompanyName(const QString &qsName);
 
     QString        GetPatternNumber() const;
     void           SetPatternNumber(const QString &qsNum);
 
     QString        GetCustomerName() const;
-    void           SetCustomerName(const QString& qsName);
+    void           SetCustomerName(const QString &qsName);
 
     QString        GetLabelDateFormat() const;
     void           SetLabelDateFormat(const QString &format);
@@ -432,12 +432,12 @@ protected:
     static VPiecePath ParsePathNodes(const QDomElement &domElement);
     static VPieceNode ParseSANode(const QDomElement &domElement);
 
-    void           SetActivPP(const QString& name);
+    void           SetActivPP(const QString &name);
 
     QDomElement    CheckTagExists(const QString &tag);
     void           InsertTag(const QStringList &tags, const QDomElement &element);
 
-    void           SetChildTag(const QString& qsParent, const QString& qsChild, const QString& qsValue);
+    void           SetChildTag(const QString &qsParent, const QString &qsChild, const QString &qsValue);
 
     int  GetIndexActivPP() const;
     bool GetActivDrawElement(QDomElement &element) const;
@@ -456,9 +456,9 @@ private:
     QVector<VFormulaField> ListGrainlineExpressions(const QDomElement &element) const;
     QVector<VFormulaField> ListPieceExpressions() const;
 
-    bool IsVariable(const QString& token) const;
-    bool IsPostfixOperator(const QString& token) const;
-    bool IsFunction(const QString& token) const;
+    bool IsVariable(const QString &token) const;
+    bool IsPostfixOperator(const QString &token) const;
+    bool IsFunction(const QString &token) const;
 
     QPair<bool, QMap<quint32, quint32> > ParseItemElement(const QDomElement &domElement);
 

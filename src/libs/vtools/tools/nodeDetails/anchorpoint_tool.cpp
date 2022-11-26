@@ -1,29 +1,6 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/************************************************************************
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file
+ **  @file   anchorpoint_tool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   31 1, 2017
  **
@@ -31,7 +8,7 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
+ **  Copyright (C) 2013 - 2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,19 +26,19 @@
  **
  *************************************************************************/
 
-#include "vtoolpin.h"
-#include "../../dialogs/tools/dialogpin.h"
+#include "anchorpoint_tool.h"
+#include "../../dialogs/tools/anchorpoint_dialog.h"
 #include "../../undocommands/savepieceoptions.h"
 #include "../vtoolseamallowance.h"
 #include "../vgeometry/vpointf.h"
 
-const QString VToolPin::ToolType = QStringLiteral("pin");
+const QString AnchorPointTool::ToolType = QStringLiteral("anchor");
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPin *VToolPin::Create(QSharedPointer<DialogTool> dialog, VAbstractPattern *doc, VContainer *data)
+AnchorPointTool *AnchorPointTool::Create(QSharedPointer<DialogTool> dialog, VAbstractPattern *doc, VContainer *data)
 {
     SCASSERT(not dialog.isNull());
-    QSharedPointer<DialogPin> dialogTool = dialog.objectCast<DialogPin>();
+    QSharedPointer<AnchorPointDialog> dialogTool = dialog.objectCast<AnchorPointDialog>();
     SCASSERT(not dialogTool.isNull())
     const quint32 pointId = dialogTool->GetPointId();
     const quint32 pieceId = dialogTool->GetPieceId();
@@ -70,7 +47,7 @@ VToolPin *VToolPin::Create(QSharedPointer<DialogTool> dialog, VAbstractPattern *
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPin *VToolPin::Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstractPattern *doc, VContainer *data,
+AnchorPointTool *AnchorPointTool::Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstractPattern *doc, VContainer *data,
                            const Document &parse, const Source &typeCreation, const QString &drawName,
                            const quint32 &idTool)
 {
@@ -92,19 +69,19 @@ VToolPin *VToolPin::Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstr
             data->UpdateId(id);
             return nullptr;// Just ignore
         }
-        VPointF *pinPoint = new VPointF(*point);
-        pinPoint->setMode(Draw::Modeling);
-        data->UpdateGObject(id, pinPoint);
+        VPointF *anchorPoint = new VPointF(*point);
+        anchorPoint->setMode(Draw::Modeling);
+        data->UpdateGObject(id, anchorPoint);
         if (parse != Document::FullParse)
         {
             doc->UpdateToolData(id, data);
         }
     }
-    VAbstractTool::AddRecord(id, Tool::Pin, doc);
-    VToolPin *point = nullptr;
+    VAbstractTool::AddRecord(id, Tool::AnchorPoint, doc);
+    AnchorPointTool *point = nullptr;
     if (parse == Document::FullParse)
     {
-        point = new VToolPin(doc, data, id, pointId, pieceId, typeCreation, drawName, idTool, doc);
+        point = new AnchorPointTool(doc, data, id, pointId, pieceId, typeCreation, drawName, idTool, doc);
 
         VAbstractPattern::AddTool(id, point);
         if (idTool != NULL_ID)
@@ -128,27 +105,27 @@ VToolPin *VToolPin::Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstr
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolPin::getTagName() const
+QString AnchorPointTool::getTagName() const
 {
     return VAbstractPattern::TagPoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPin::AllowHover(bool enabled)
+void AnchorPointTool::AllowHover(bool enabled)
 {
     Q_UNUSED(enabled)
     // do nothing
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPin::AllowSelecting(bool enabled)
+void AnchorPointTool::AllowSelecting(bool enabled)
 {
     Q_UNUSED(enabled)
     // do nothing
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPin::AddToFile()
+void AnchorPointTool::AddToFile()
 {
     QDomElement domElement = doc->createElement(getTagName());
 
@@ -167,7 +144,7 @@ void VToolPin::AddToFile()
         const VPiece oldDet = VAbstractTool::data.GetPiece(m_pieceId);
         VPiece newDet = oldDet;
 
-        newDet.GetPins().append(m_id);
+        newDet.getAnchors().append(m_id);
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldDet, newDet, doc, m_pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
@@ -177,7 +154,7 @@ void VToolPin::AddToFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolPin::VToolPin(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pointId, quint32 pieceId,
+AnchorPointTool::AnchorPointTool(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pointId, quint32 pieceId,
                    const Source &typeCreation, const QString &drawName, const quint32 &idTool, QObject *qoParent)
     : VAbstractNode(doc, data, id, pointId, drawName, idTool, qoParent)
     , m_pieceId(pieceId)

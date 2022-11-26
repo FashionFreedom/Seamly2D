@@ -576,7 +576,7 @@ void DialogSpline::CheckState()
     SCASSERT(ok_Button != nullptr)
     ok_Button->setEnabled(flagAngle1 && flagAngle2 && flagLength1 && flagLength2 && flagError);
     // In case dialog hasn't apply button
-    if ( apply_Button != nullptr)
+    if (apply_Button != nullptr)
     {
         apply_Button->setEnabled(ok_Button->isEnabled());
     }

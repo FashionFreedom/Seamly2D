@@ -833,7 +833,7 @@ void VPattern::ParseDetailElement(QDomElement &domElement, const Document &parse
                                                << TagGrainline
                                                << VToolSeamAllowance::TagCSA
                                                << VToolSeamAllowance::TagIPaths
-                                               << VToolSeamAllowance::TagPins;
+                                               << VToolSeamAllowance::TagAnchors;
 
         const QDomNodeList nodeList = domElement.childNodes();
         for (qint32 i = 0; i < nodeList.size(); ++i)
@@ -873,8 +873,8 @@ void VPattern::ParseDetailElement(QDomElement &domElement, const Document &parse
                     case 5:// VToolSeamAllowance::TagIPaths
                         detail.SetInternalPaths(ParsePieceInternalPaths(element));
                         break;
-                    case 6:// VToolSeamAllowance::TagPins
-                        detail.SetPins(ParsePiecePins(element));
+                    case 6:// VToolSeamAllowance::TagAnchors
+                        detail.setAnchors(ParsePieceAnchors(element));
                         break;
                     default:
                         break;
@@ -934,9 +934,9 @@ void VPattern::ParsePieceDataTag(const QDomElement &domElement, VPiece &detail) 
     ppData.SetLabelHeight(GetParametrString(domElement, VToolSeamAllowance::AttrHeight, "1"));
     ppData.SetFontSize(static_cast<int>(GetParametrUInt(domElement, VToolSeamAllowance::AttrFont, "0")));
     ppData.SetRotation(GetParametrString(domElement, AttrRotation, "0"));
-    ppData.SetCenterPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrCenterPin, NULL_ID_STR));
-    ppData.SetTopLeftPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrTopLeftPin, NULL_ID_STR));
-    ppData.SetBottomRightPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrBottomRightPin, NULL_ID_STR));
+    ppData.setCenterAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrCenterAnchor, NULL_ID_STR));
+    ppData.setTopLeftAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrTopLeftAnchor, NULL_ID_STR));
+    ppData.setBottomRightAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrBottomRightAnchor, NULL_ID_STR));
     ppData.SetLabelTemplate(GetLabelTemplate(domElement));
 }
 
@@ -950,9 +950,9 @@ void VPattern::ParsePiecePatternInfo(const QDomElement &domElement, VPiece &deta
     patternInfo.SetLabelHeight(GetParametrString(domElement, VToolSeamAllowance::AttrHeight, "1"));
     patternInfo.SetFontSize(static_cast<int>(GetParametrUInt(domElement, VToolSeamAllowance::AttrFont, "0")));
     patternInfo.SetRotation(GetParametrString(domElement, AttrRotation, "0"));
-    patternInfo.SetCenterPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrCenterPin, NULL_ID_STR));
-    patternInfo.SetTopLeftPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrTopLeftPin, NULL_ID_STR));
-    patternInfo.SetBottomRightPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrBottomRightPin, NULL_ID_STR));
+    patternInfo.setCenterAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrCenterAnchor, NULL_ID_STR));
+    patternInfo.setTopLeftAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrTopLeftAnchor, NULL_ID_STR));
+    patternInfo.setBottomRightAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrBottomRightAnchor, NULL_ID_STR));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -964,9 +964,9 @@ void VPattern::ParsePieceGrainline(const QDomElement &domElement, VPiece &detail
     gGeometry.SetLength(GetParametrString(domElement, AttrLength, "1"));
     gGeometry.SetRotation(GetParametrString(domElement, AttrRotation, "90"));
     gGeometry.SetArrowType(static_cast<ArrowType>(GetParametrUInt(domElement, AttrArrows, "0")));
-    gGeometry.SetCenterPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrCenterPin, NULL_ID_STR));
-    gGeometry.SetTopPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrTopPin, NULL_ID_STR));
-    gGeometry.SetBottomPin(GetParametrUInt(domElement, VToolSeamAllowance::AttrBottomPin, NULL_ID_STR));
+    gGeometry.setCenterAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrCenterAnchor, NULL_ID_STR));
+    gGeometry.setTopAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrTopAnchorPoint, NULL_ID_STR));
+    gGeometry.setBottomAnchorPoint(GetParametrUInt(domElement, VToolSeamAllowance::AttrBottomAnchorPoint, NULL_ID_STR));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1056,12 +1056,12 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
                                        << VToolLineIntersectAxis::ToolType          /*15*/
                                        << VToolCurveIntersectAxis::ToolType         /*16*/
                                        << VToolPointOfIntersectionArcs::ToolType    /*17*/
-                                       << IntersectCirclesTool::ToolType /*18*/
-                                       << IntersectCircleTangentTool::ToolType  /*19*/
+                                       << IntersectCirclesTool::ToolType            /*18*/
+                                       << IntersectCircleTangentTool::ToolType      /*19*/
                                        << VToolPointFromArcAndTangent::ToolType     /*20*/
                                        << VToolTrueDarts::ToolType                  /*21*/
                                        << VToolPointOfIntersectionCurves::ToolType  /*22*/
-                                       << VToolPin::ToolType;                       /*23*/
+                                       << AnchorPointTool::ToolType;                /*23*/
     switch (points.indexOf(type))
     {
         case 0: //VToolBasePoint::ToolType
@@ -1133,8 +1133,8 @@ void VPattern::ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElem
         case 22: //VToolPointOfIntersectionCurves::ToolType
             ParseToolPointOfIntersectionCurves(scene, domElement, parse);
             break;
-        case 23: //VToolPin::ToolType
-            ParsePinPoint(domElement, parse);
+        case 23: //AnchorPointTool::ToolType
+            ParseAnchorPoint(domElement, parse);
             break;
         default:
             VException e(tr("Unknown point type '%1'.").arg(type));
@@ -1644,7 +1644,7 @@ void VPattern::ParseNodePoint(const QDomElement &domElement, const Document &par
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::ParsePinPoint(const QDomElement &domElement, const Document &parse)
+void VPattern::ParseAnchorPoint(const QDomElement &domElement, const Document &parse)
 {
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
@@ -1655,11 +1655,11 @@ void VPattern::ParsePinPoint(const QDomElement &domElement, const Document &pars
         ToolsCommonAttributes(domElement, id);
         const quint32 idObject = GetParametrUInt(domElement, AttrIdObject, NULL_ID_STR);
         const quint32 idTool = GetParametrUInt(domElement, VAbstractNode::AttrIdTool, NULL_ID_STR);
-        VToolPin::Create(id, idObject, NULL_ID, this, data, parse, Source::FromFile, "", idTool);
+        AnchorPointTool::Create(id, idObject, NULL_ID, this, data, parse, Source::FromFile, "", idTool);
     }
     catch (const VExceptionBadId &e)
     {
-        VExceptionObjectError excep(tr("Error creating or updating pin point"), domElement);
+        VExceptionObjectError excep(tr("Error creating or updating anchor point"), domElement);
         excep.AddMoreInformation(e.ErrorMessage());
         throw excep;
     }
@@ -4010,7 +4010,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::NodeSplinePath:
                 case Tool::Group:
                 case Tool::InternalPath:
-                case Tool::Pin:
+                case Tool::AnchorPoint:
                 case Tool::InsertNode:
                     break;
             }

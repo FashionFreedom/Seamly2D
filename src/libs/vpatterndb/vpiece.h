@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -132,14 +132,14 @@ public:
     QVector<CustomSARecord>  &GetCustomSARecords();
     void                     SetCustomSARecords(const QVector<CustomSARecord> &records);
 
-    QVector<quint32>         GetPins() const;
-    QVector<quint32>        &GetPins();
-    void                     SetPins(const QVector<quint32> &pins);
+    QVector<quint32>         getAnchors() const;
+    QVector<quint32>        &getAnchors();
+    void                     setAnchors(const QVector<quint32> &anchors);
 
     QVector<quint32>         MissingNodes(const VPiece &det) const;
     QVector<quint32>         MissingCSAPath(const VPiece &det) const;
     QVector<quint32>         MissingInternalPaths(const VPiece &det) const;
-    QVector<quint32>         MissingPins(const VPiece &det) const;
+    QVector<quint32>         missingAnchors(const VPiece &det) const;
 
     void                     SetPatternPieceData(const VPieceLabelData &data);
     VPieceLabelData&         GetPatternPieceData();

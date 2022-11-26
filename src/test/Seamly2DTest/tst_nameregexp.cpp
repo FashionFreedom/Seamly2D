@@ -378,6 +378,7 @@ void TST_NameRegExp::TestCorrectOrderMeasurement_data()
     QTest::newRow("J08") << bustpointToWaistFront_M << "bustpoint_to_waist_front";
     QTest::newRow("J09") << bustpointToBustpointHalter_M << "bustpoint_to_bustpoint_halter";
     QTest::newRow("J10") << bustpointToShoulderCenter_M  << "bustpoint_to_shoulder_center";
+    QTest::newRow("J10") << bustpointToNeckFront_M  << "bustpoint_to_neck_front";
     QTest::newRow("K01") << shoulderTipToWaistFront_M << "shoulder_tip_to_waist_front";
     QTest::newRow("K02") << neckFrontToWaistSide_M << "neck_front_to_waist_side";
     QTest::newRow("K03") << neckSideToWaistSideF_M << "neck_side_to_waist_side_f";

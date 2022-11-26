@@ -76,7 +76,7 @@ public:
           m_united(false),
           m_customSARecords(),
           m_internalPaths(),
-          m_pins(),
+          m_anchors(),
           m_ppData(),
           m_piPatternInfo(),
           m_glGrainline(),
@@ -90,7 +90,7 @@ public:
           m_united(detail.m_united),
           m_customSARecords(detail.m_customSARecords),
           m_internalPaths(detail.m_internalPaths),
-          m_pins(detail.m_pins),
+          m_anchors(detail.m_anchors),
           m_ppData(detail.m_ppData),
           m_piPatternInfo(detail.m_piPatternInfo),
           m_glGrainline(detail.m_glGrainline),
@@ -104,7 +104,7 @@ public:
     bool                    m_united;
     QVector<CustomSARecord> m_customSARecords;
     QVector<quint32>        m_internalPaths;
-    QVector<quint32>        m_pins;
+    QVector<quint32>        m_anchors;
     VPieceLabelData         m_ppData;        //! @brief Pattern piece data
     VPatternLabelData       m_piPatternInfo; //! @brief Pattern info coordinates
     VGrainlineData          m_glGrainline;   //! @brief m_glGrainline grainline geometry object

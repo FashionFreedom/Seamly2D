@@ -90,7 +90,7 @@
 #include "tools/dialogmove.h"
 #include "tools/dialogellipticalarc.h"
 #include "tools/piece/dialoginternalpath.h"
-#include "tools/dialogpin.h"
+#include "tools/anchorpoint_dialog.h"
 #include "tools/dialoginsertnode.h"
 
 #include "support/dialogeditwrongformula.h"

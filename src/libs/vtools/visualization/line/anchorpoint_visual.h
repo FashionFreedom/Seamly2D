@@ -1,6 +1,6 @@
 /************************************************************************
  **
- **  @file   anchorpoint_dialog.h
+ **  @file   anchorpoint_visual.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   31 1, 2017
  **
@@ -8,7 +8,7 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2022 Seamly2D project
+ **  Copyright (C) 2017 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -26,48 +26,27 @@
  **
  *************************************************************************/
 
-#ifndef ANCHORPOINT_DIALOG_H
-#define ANCHORPOINT_DIALOG_H
+#ifndef ANCHOR_POINT_VISUAL_H
+#define ANCHOR_POINT_VISUAL_H
 
-#include "dialogtool.h"
+#include "visline.h"
 
-namespace Ui
-{
-    class AnchorPointDialog;
-}
+class VSimplePoint;
 
-class AnchorPointDialog : public DialogTool
+class AnchorPointVisual : public VisLine
 {
     Q_OBJECT
 public:
-    explicit     AnchorPointDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
-    virtual     ~AnchorPointDialog();
+    explicit               AnchorPointVisual(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual               ~AnchorPointVisual();
 
-    void         EnbleShowMode(bool disable);
-
-    quint32      GetPieceId() const;
-    void         SetPieceId(quint32 id);
-
-    quint32      GetPointId() const;
-    void         SetPointId(quint32 id);
-
-    virtual void SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
-
-public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-
-protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+    virtual void           RefreshGeometry() Q_DECL_OVERRIDE;
+    virtual int            type() const Q_DECL_OVERRIDE {return Type;}
+    enum                   {Type = UserType + static_cast<int>(Vis::ToolAnchorPoint)};
 
 private:
-                 Q_DISABLE_COPY(AnchorPointDialog)
-    Ui::AnchorPointDialog *ui;
-    bool         m_showMode;
-    bool         m_flagPoint;
-
-    void         CheckPieces();
-    void         CheckPoint();
+                           Q_DISABLE_COPY(AnchorPointVisual)
+    QPointer<VSimplePoint> m_point;
 };
 
-#endif // ANCHORPOINT_DIALOG_H
+#endif // ANCHOR_POINT_VISUAL_H

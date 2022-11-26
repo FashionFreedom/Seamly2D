@@ -1,8 +1,7 @@
 /************************************************************************
- **
- **  @file   anchorpoint_dialog.h
+ **  @file pieceanchorpoint_visual.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   31 1, 2017
+ **  @date   14 2, 2017
  **
  **  @brief
  **  @copyright
@@ -26,48 +25,34 @@
  **
  *************************************************************************/
 
-#ifndef ANCHORPOINT_DIALOG_H
-#define ANCHORPOINT_DIALOG_H
+#ifndef PIECE_ANCHOR_POINT_VISUAL_H
+#define PIECE_ANCHOR_POINT_VISUAL_H
 
-#include "dialogtool.h"
+#include "vispath.h"
 
-namespace Ui
-{
-    class AnchorPointDialog;
-}
+class VSimplePoint;
 
-class AnchorPointDialog : public DialogTool
+class PieceAnchorPointVisual : public VisPath
 {
     Q_OBJECT
+
 public:
-    explicit     AnchorPointDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
-    virtual     ~AnchorPointDialog();
+                             PieceAnchorPointVisual(const VContainer *data, QGraphicsItem *parent = nullptr);
+    virtual                 ~PieceAnchorPointVisual() Q_DECL_EQ_DEFAULT;
 
-    void         EnbleShowMode(bool disable);
-
-    quint32      GetPieceId() const;
-    void         SetPieceId(quint32 id);
-
-    quint32      GetPointId() const;
-    void         SetPointId(quint32 id);
-
-    virtual void SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
-
-public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
-
-protected:
-    virtual void CheckState() Q_DECL_FINAL;
-    virtual void ShowVisualization() Q_DECL_OVERRIDE;
+    virtual void             RefreshGeometry() Q_DECL_OVERRIDE;
+    void                     setAnchors(const QVector<quint32> &anchors);
+    virtual int              type() const Q_DECL_OVERRIDE {return Type;}
+    enum { Type = UserType + static_cast<int>(Vis::PieceAnchors)};
 
 private:
-                 Q_DISABLE_COPY(AnchorPointDialog)
-    Ui::AnchorPointDialog *ui;
-    bool         m_showMode;
-    bool         m_flagPoint;
+                             Q_DISABLE_COPY(PieceAnchorPointVisual)
+    QVector<VSimplePoint *>  m_points;
+    QVector<quint32>         m_anchors;
 
-    void         CheckPieces();
-    void         CheckPoint();
+    VSimplePoint            *GetPoint(quint32 i, const QColor &color);
+
+    void                     HideAllItems();
 };
 
-#endif // ANCHORPOINT_DIALOG_H
+#endif // PIECE_ANCHOR_POINT_VISUAL_H

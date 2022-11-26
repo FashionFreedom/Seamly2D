@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogPin</class>
- <widget class="QDialog" name="DialogPin">
+ <class>AnchorPointDialog</class>
+ <widget class="QDialog" name="AnchorPointDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,14 +11,14 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Pin</string>
+   <string>Anchor Point</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
   </property>
   <property name="toolTip">
-   <string>Pin tool</string>
+   <string>Anchor Point tool</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -64,7 +64,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogPin</receiver>
+   <receiver>AnchorPointDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -80,7 +80,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogPin</receiver>
+   <receiver>AnchorPointDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

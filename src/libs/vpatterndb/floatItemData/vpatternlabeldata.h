@@ -8,7 +8,7 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -51,7 +51,7 @@ public:
 	VPatternLabelData &operator=(VPatternLabelData &&data) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VPatternLabelData &data) Q_DECL_NOTHROW;
+	void    Swap(VPatternLabelData &data) Q_DECL_NOTHROW;
 
     // methods, which set up label parameters
     QString GetLabelWidth() const;
@@ -60,20 +60,20 @@ public:
     QString GetLabelHeight() const;
     void    SetLabelHeight(const QString &dLabelH);
 
-    int   getFontSize() const;
-    void  SetFontSize(int iSize);
+    int     getFontSize() const;
+    void    SetFontSize(int iSize);
 
     QString GetRotation() const;
     void    SetRotation(const QString &dRot);
 
-    quint32 CenterPin() const;
-    void    SetCenterPin(const quint32 &centerPin);
+    quint32 centerAnchorPoint() const;
+    void    setCenterAnchorPoint(const quint32 &centerAnchorPoint);
 
-    quint32 TopLeftPin() const;
-    void    SetTopLeftPin(const quint32 &topLeftPin);
+    quint32 topLeftAnchorPoint() const;
+    void    setTopLeftAnchorPoint(const quint32 &topLeftAnchorPoint);
 
-    quint32 BottomRightPin() const;
-    void    SetBottomRightPin(const quint32 &bottomRightPin);
+    quint32 bottomRightAnchorPoint() const;
+    void    setBottomRightAnchorPoint(const quint32 &bottomRightAnchorPoint);
 
 private:
     QSharedDataPointer<VPatternLabelDataPrivate> d;
