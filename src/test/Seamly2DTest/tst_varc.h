@@ -64,7 +64,7 @@ private slots:
     void CompareTwoWays();
     void NegativeArc();
     void TestGetPoints_data();
-    void TestgetPoints();
+    void TestGetPoints();
     void TestRotation_data();
     void TestRotation();
     void TestFlip_data();

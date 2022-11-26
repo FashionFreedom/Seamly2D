@@ -188,7 +188,7 @@ void TST_VArc::TestGetPoints_data()
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-void TST_VArc::TestgetPoints()
+void TST_VArc::TestGetPoints()
 {
     QFETCH(qreal, radius);
     QFETCH(qreal, startAngle);

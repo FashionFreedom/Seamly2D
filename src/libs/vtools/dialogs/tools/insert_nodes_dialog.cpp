@@ -505,12 +505,6 @@ bool InsertNodesDialog::correctCurveDirection(quint32 curveObjId)
 {
     const QSharedPointer<VGObject> curveObj = data->GetGObject(curveObjId);
     const QString curveName = curveObj->name();
-    if (curveObj->getType() == GOType::Arc || curveObj->getType() == GOType::EllipticalArc)
-    {
-        ui->statusMsg_Label->setText(ui->statusMsg_Label->text() + curveName + tr(" was auto reversed.") + "\n");
-        return true;
-    }
-
     quint32 nodeId;
     const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(curveObjId);
 
@@ -548,6 +542,7 @@ void InsertNodesDialog::insertCurveNodes(VPieceNode curveNode)
     quint32 nodeId;
     quint32 prevNodeId;
     quint32 curveNodeId = curveNode.GetId();
+
     const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(curveNodeId);
     for (int i = 0; i < m_nodes.size(); ++i)
     {
