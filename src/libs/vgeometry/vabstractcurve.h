@@ -85,7 +85,7 @@ public:
 
 	void Swap(VAbstractCurve &curve) Q_DECL_NOTHROW;
 
-    virtual QVector<QPointF> GetPoints() const =0;
+    virtual QVector<QPointF> getPoints() const =0;
     static QVector<QPointF>  GetSegmentPoints(const QVector<QPointF> &points, const QPointF &begin, const QPointF &end,
                                               bool reverse = false);
     QVector<QPointF>         GetSegmentPoints(const QPointF &begin, const QPointF &end, bool reverse = false) const;
@@ -96,8 +96,8 @@ public:
     virtual QVector<QPointF> IntersectLine(const QLineF &line) const;
     virtual bool             IsIntersectLine(const QLineF &line) const;
 
-    static bool              IsPointOnCurve(const QVector<QPointF> &points, const QPointF &p);
-    bool                     IsPointOnCurve(const QPointF &p) const;
+    static bool              isPointOnCurve(const QVector<QPointF> &points, const QPointF &p);
+    bool                     isPointOnCurve(const QPointF &p) const;
 
     virtual qreal            GetStartAngle () const=0;
     virtual qreal            GetEndAngle () const=0;
@@ -112,6 +112,9 @@ public:
     void                     SetPenStyle(const QString &penStyle);
 
     static qreal             PathLength(const QVector<QPointF> &path);
+
+    QPointF                  getFirstPoint();
+    QPointF                  getLastPoint();
 
     static QVector<QPointF>  CurveIntersectLine(const QVector<QPointF> &points, const QLineF &line);
 

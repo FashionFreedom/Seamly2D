@@ -617,11 +617,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
 
         if (node.GetReverse())
         {
-            info.icon = "://icon/24x24/counter_clockwise.png";
-        }
-        else
-        {
-            info.icon = "://icon/24x24/clockwise.png";
+            info.icon = "://icon/24x24/reverse.png";
         }
     }
     else if (showNotch && node.isNotch())
@@ -658,7 +654,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
+void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bool nodeExcluded)
 {
     SCASSERT(listWidget != nullptr);
     SCASSERT(node.GetId() > NULL_ID);
@@ -694,7 +690,7 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
     if(canAddNewPoint)
     {
         QListWidgetItem *item = new QListWidgetItem(info.name);
-        item->setFont(NodeFont(node.isExcluded()));
+        item->setFont(NodeFont(nodeExcluded ? node.isExcluded() : false));
         item->setData(Qt::UserRole, QVariant::fromValue(node));
         item->setIcon(QIcon(info.icon));
         listWidget->addItem(item);

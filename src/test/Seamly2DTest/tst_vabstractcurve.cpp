@@ -61,7 +61,7 @@ TST_VAbstractCurve::TST_VAbstractCurve(QObject *parent)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VAbstractCurve::IsPointOnCurve_data() const
+void TST_VAbstractCurve::isPointOnCurve_data() const
 {
     QTest::addColumn<QVector<QPointF>>("points");
     QTest::addColumn<QPointF>("point");
@@ -182,12 +182,12 @@ void TST_VAbstractCurve::IsPointOnCurve_data() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VAbstractCurve::IsPointOnCurve() const
+void TST_VAbstractCurve::isPointOnCurve() const
 {
     QFETCH(QVector<QPointF>, points);
     QFETCH(QPointF, point);
     QFETCH(bool, expectedResult);
 
-    bool result = VAbstractCurve::IsPointOnCurve(points, point);
+    bool result = VAbstractCurve::isPointOnCurve(points, point);
     QCOMPARE(result, expectedResult);
 }

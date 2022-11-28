@@ -166,14 +166,14 @@ void VToolSeamAllowance::Remove(bool ask)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolSeamAllowance::InsertNode(VPieceNode node, quint32 pieceId, VMainGraphicsScene *scene,
+void VToolSeamAllowance::insertNodes(const QVector<VPieceNode> &nodes, quint32 pieceId, VMainGraphicsScene *scene,
                                     VContainer *data, VAbstractPattern *doc)
 {
     SCASSERT(scene != nullptr)
     SCASSERT(data != nullptr)
     SCASSERT(doc != nullptr)
 
-    if (pieceId > NULL_ID)
+    if (pieceId > NULL_ID && !nodes.isEmpty())
     {
         VPiece oldPiece;
         try
@@ -187,20 +187,23 @@ void VToolSeamAllowance::InsertNode(VPieceNode node, quint32 pieceId, VMainGraph
 
         VPiece newPiece = oldPiece;
 
-        const quint32 id = PrepareNode(node, scene, doc, data);
-        if (id == NULL_ID)
+        for (auto node : nodes)
         {
-            return;
+            const quint32 id = PrepareNode(node, scene, doc, data);
+            if (id == NULL_ID)
+            {
+                return;
+            }
+
+            node.SetId(id);
+            newPiece.GetPath().Append(node);
+
+            // Seam allowance tool already initializated and can't init the node
+            VToolSeamAllowance *patternPiece = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(pieceId));
+            SCASSERT(patternPiece != nullptr);
+
+            InitNode(node, scene, data, doc, patternPiece);
         }
-
-        node.SetId(id);
-        newPiece.GetPath().Append(node);
-
-        // Seam allowance tool already initializated and can't init the node
-        VToolSeamAllowance *patternPiece = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(pieceId));
-        SCASSERT(patternPiece != nullptr);
-
-        InitNode(node, scene, data, doc, patternPiece);
 
         SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect

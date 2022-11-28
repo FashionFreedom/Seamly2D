@@ -197,7 +197,7 @@ void TST_VArc::TestGetPoints()
     const VPointF center;
     VArc arc(center, radius, startAngle, endAngle);
 
-    QVector<QPointF> points = arc.GetPoints();
+    QVector<QPointF> points = arc.getPoints();
 
     {
         const qreal epsRadius = 1.5; // computing error

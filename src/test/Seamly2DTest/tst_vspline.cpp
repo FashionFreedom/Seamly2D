@@ -476,5 +476,5 @@ void TST_VSpline::CompareSplines(const VSpline &spl1, const VSpline &spl2) const
     QCOMPARE(spl1.GetKcurve(), spl2.GetKcurve());
 
     // Compare points
-    Comparison(spl1.GetPoints(), spl2.GetPoints());
+    Comparison(spl1.getPoints(), spl2.getPoints());
 }

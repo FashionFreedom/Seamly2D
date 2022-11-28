@@ -256,7 +256,7 @@ QPointF VArc::GetP2 () const
  * @brief GetPoints return list of points needed for drawing arc.
  * @return list of points
  */
-QVector<QPointF> VArc::GetPoints() const
+QVector<QPointF> VArc::getPoints() const
 {
     QVector<QPointF> points;
     QVector<qreal> sectionAngle;
@@ -312,7 +312,7 @@ QVector<QPointF> VArc::GetPoints() const
         lineP4P3.setLength(lDistance);
 
         VSpline spl(VPointF(pStart), lineP1P2.p2(), lineP4P3.p2(), VPointF(lineP4P3.p1()), 1.0);
-        QVector<QPointF> splPoints = spl.GetPoints();
+        QVector<QPointF> splPoints = spl.getPoints();
         if (not splPoints.isEmpty() && i != sectionAngle.size() - 1)
         {
             splPoints.removeLast();
@@ -327,7 +327,7 @@ QVector<QPointF> VArc::GetPoints() const
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QLineF> VArc::getSegments() const
 {
-    QVector<QPointF> points = GetPoints();
+    QVector<QPointF> points = getPoints();
     QVector<QLineF> lines;
     if (points.size() >= 2)
     {

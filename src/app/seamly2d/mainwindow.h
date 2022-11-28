@@ -208,7 +208,7 @@ private slots:
 
     void handleInternalPathTool(bool checked);
     void handleAnchorPointTool(bool checked);
-    void handleInsertNodeTool(bool checked);
+    void handleInsertNodesTool(bool checked);
 
     void handlePatternPieceTool(bool checked);
     void handleUnionDetailsTool(bool checked);
@@ -228,7 +228,7 @@ private slots:
     void ClosedDialogGroup(int result);
     void ClosedDialogInternalPath(int result);
     void ClosedDialogAnchorPoint(int result);
-    void ClosedDialogInsertNode(int result);
+    void ClosedInsertNodesDialog(int result);
 
     void zoomToPrevious();
     void zoomToArea(bool checked);
@@ -348,9 +348,9 @@ private:
     void                              handleArcsMenu();
     void                              handleCurvesMenu();
     void                              handleCirclesMenu();
-    void                              handleModifyMenu();
-    void                              handlePatternPiecesMenu();
+    void                              handleOperationsMenu();
     void                              handleDetailsMenu();
+    void                              handlePieceMenu();
     void                              handleLayoutMenu();
     void                              handleImagesMenu();
 

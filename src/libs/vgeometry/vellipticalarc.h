@@ -101,7 +101,7 @@ public:
     void            setTransform(const QTransform &matrix, bool combine = false);
 
     virtual VPointF GetCenter () const Q_DECL_OVERRIDE;
-    virtual QVector<QPointF> GetPoints () const Q_DECL_OVERRIDE;
+    virtual QVector<QPointF> getPoints() const Q_DECL_OVERRIDE;
     virtual qreal   GetStartAngle () const Q_DECL_OVERRIDE;
     virtual qreal   GetEndAngle () const Q_DECL_OVERRIDE;
 

@@ -658,7 +658,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
                 break;
             case Tool::InternalPath:
             case Tool::AnchorPoint:
-            case Tool::InsertNode:
+            case Tool::InsertNodes:
                 dialogTool->SetPiecesList(doc->GetActivePPPieces());
                 break;
             default:
@@ -813,10 +813,10 @@ void MainWindow::ClosedDetailsDialogWithApply(int result)
     {
         ui->anchorPoint_ToolButton->setEnabled(true);
         ui->internalPath_ToolButton->setEnabled(true);
-        ui->insertNode_ToolButton->setEnabled(true);
+        ui->insertNodes_ToolButton->setEnabled(true);
         ui->anchorPoint_Action->setEnabled(true);
         ui->internalPath_Action->setEnabled(true);
-        ui->insertNode_Action->setEnabled(true);
+        ui->insertNodes_Action->setEnabled(true);
     }
 }
 
@@ -1562,28 +1562,33 @@ void MainWindow::ClosedDialogInternalPath(int result)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::handleInsertNodeTool(bool checked)
+void MainWindow::handleInsertNodesTool(bool checked)
 {
-    ToolSelectAllDrawObjects();
-    SetToolButton<DialogInsertNode>
+    ToolSelectOperationObjects();
+    const QString tooltip = tr("<b>Tool::Add Details - Insert Nodes:</b> Select one or more objects -"
+                               " Hold <b>%1</b> for multiple selection, "
+                               "Press <b>ENTER</b> to confirm selection")
+                               .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
+                                                                strCtrl.toUtf8().constData()));
+    SetToolButton<InsertNodesDialog>
     (
         checked,
-        Tool::InsertNode,
-        "://cursor/insert_node_cursor.png",
-        tr("<b>Tool::Add Details - Insert Node:</b> Select an object to insert"),
-        &MainWindow::ClosedDialogInsertNode
+        Tool::InsertNodes,
+        "://cursor/insert_nodes_cursor.png",
+        tooltip,
+        &MainWindow::ClosedInsertNodesDialog
     );
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ClosedDialogInsertNode(int result)
+void MainWindow::ClosedInsertNodesDialog(int result)
 {
     SCASSERT(dialogTool != nullptr);
     if (result == QDialog::Accepted)
     {
-        QSharedPointer<DialogInsertNode> dTool = dialogTool.objectCast<DialogInsertNode>();
-        SCASSERT(dTool != nullptr)
-        VToolSeamAllowance::InsertNode(dTool->GetNode(), dTool->GetPieceId(), pieceScene, pattern, doc);
+        QSharedPointer<InsertNodesDialog> tool = dialogTool.objectCast<InsertNodesDialog>();
+        SCASSERT(tool != nullptr)
+        VToolSeamAllowance::insertNodes(tool->getNodes(), tool->getPieceId(), pieceScene, pattern, doc);
     }
     handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
@@ -2489,7 +2494,7 @@ void MainWindow::InitToolButtons()
     connect(ui->exportPiecesAs_ToolButton, &QToolButton::clicked, this, &MainWindow::exportPiecesAs);
     connect(ui->ellipticalArc_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleEllipticalArcTool);
     connect(ui->anchorPoint_ToolButton,    &QToolButton::clicked, this, &MainWindow::handleAnchorPointTool);
-    connect(ui->insertNode_ToolButton,     &QToolButton::clicked, this, &MainWindow::handleInsertNodeTool);
+    connect(ui->insertNodes_ToolButton,     &QToolButton::clicked, this, &MainWindow::handleInsertNodesTool);
 }
 
 void MainWindow::handlePointsMenu()
@@ -2765,9 +2770,9 @@ void MainWindow::handleCirclesMenu()
 
 }
 
-void MainWindow::handleModifyMenu()
+void MainWindow::handleOperationsMenu()
 {
-    qCDebug(vMainWindow, "Modify Menu selected. \n");
+    qCDebug(vMainWindow, "Operations Menu selected. \n");
     QMenu menu;
 
     QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group"));
@@ -2827,7 +2832,7 @@ void MainWindow::handleModifyMenu()
     }
 }
 
-void MainWindow::handleDetailsMenu()
+void MainWindow::handlePieceMenu()
 {
     qCDebug(vMainWindow, "Add Details Menu selected. \n");
     QMenu menu;
@@ -2835,11 +2840,11 @@ void MainWindow::handleDetailsMenu()
     QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_detail.png"),   tr("New Pattern Piece"));
     QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint"));
     QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path"));
-    QAction *action_InsertNode   = menu.addAction(QIcon(":/toolicon/32x32/insert_node.png"),  tr("Insert Node in Path"));
+    QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path"));
 
     action_AnchorPoint->setEnabled(pattern->DataPieces()->size() > 0);
     action_InternalPath->setEnabled(pattern->DataPieces()->size() > 0);
-    action_InsertNode->setEnabled(pattern->DataPieces()->size() > 0);
+    action_InsertNodes->setEnabled(pattern->DataPieces()->size() > 0);
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2865,15 +2870,15 @@ void MainWindow::handleDetailsMenu()
         ui->internalPath_ToolButton->setChecked(true);
         handleInternalPathTool(true);
     }
-    else if (selectedAction == action_InsertNode)
+    else if (selectedAction == action_InsertNodes)
     {
         ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
-        ui->insertNode_ToolButton->setChecked(true);
-        handleInsertNodeTool(true);
+        ui->insertNodes_ToolButton->setChecked(true);
+        handleInsertNodesTool(true);
     }
 }
 
-void MainWindow::handlePatternPiecesMenu()
+void MainWindow::handleDetailsMenu()
 {
     qCDebug(vMainWindow, "PatternPieces Menu selected. \n");
     QMenu menu;
@@ -3113,8 +3118,8 @@ void MainWindow::CancelTool()
         case Tool::AnchorPoint:
             ui->anchorPoint_ToolButton->setChecked(false);
             break;
-        case Tool::InsertNode:
-            ui->insertNode_ToolButton->setChecked(false);
+        case Tool::InsertNodes:
+            ui->insertNodes_ToolButton->setChecked(false);
             break;
     }
 
@@ -4434,17 +4439,17 @@ void MainWindow::setEnableTools(bool enable)
     ui->trueDarts_ToolButton->setEnabled(draftTools);
     ui->exportDraftBlocks_ToolButton->setEnabled(draftTools);
 
-    //Add Details
+    //Piece
     ui->addPatternPiece_ToolButton->setEnabled(draftTools);
     ui->anchorPoint_ToolButton->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
     ui->internalPath_ToolButton->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
-    ui->insertNode_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
+    ui->insertNodes_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
 
-    //Pattern Piece Tools
+    //Details
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
     ui->exportPiecesAs_ToolButton->setEnabled(pieceTools);
 
-    //Layout tools
+    //Layout
     ui->layoutSettings_ToolButton->setEnabled(layoutTools);
 
     //enable Toolbox Toolbar actions
@@ -4506,13 +4511,13 @@ void MainWindow::setEnableTools(bool enable)
     ui->trueDarts_Action->setEnabled(draftTools);
     ui->exportDraftBlocks_Action->setEnabled(draftTools);
 
-    //Add Details
+    //Piece
     ui->addPiece_Action->setEnabled(draftTools);
     ui->anchorPoint_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
-    ui->internalPath_Action->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
-    ui->insertNode_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->internalPath_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+    ui->insertNodes_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
 
-    //Pattern Pieces
+    //Details
     ui->union_Action->setEnabled(pieceTools);
     ui->exportPieces_Action->setEnabled(pieceTools);
 
@@ -5044,9 +5049,9 @@ void MainWindow::LastUsedTool()
             ui->anchorPoint_ToolButton->setChecked(true);
             handleAnchorPointTool(true);
             break;
-        case Tool::InsertNode:
-            ui->insertNode_ToolButton->setChecked(true);
-            handleInsertNodeTool(true);
+        case Tool::InsertNodes:
+            ui->insertNodes_ToolButton->setChecked(true);
+            handleInsertNodesTool(true);
             break;
     }
 }
@@ -5490,7 +5495,7 @@ void MainWindow::CreateActions()
          handleEllipticalArcTool(true);
      });
 
-    //Tools->Modify submenu actions
+    //Tools->Operations submenu actions
     connect(ui->group_Action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->operations_Page);
@@ -5551,7 +5556,7 @@ void MainWindow::CreateActions()
         exportPiecesAs();
     });
 
-    //Tools->Pattern Piece submenu actions
+    //Tools->Piece submenu actions
     connect(ui->addPiece_Action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
@@ -5570,11 +5575,11 @@ void MainWindow::CreateActions()
         ui->internalPath_ToolButton->setChecked(true);
         handleInternalPathTool(true);
     });
-    connect(ui->insertNode_Action, &QAction::triggered, this, [this]
+    connect(ui->insertNodes_Action, &QAction::triggered, this, [this]
     {
         ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
-        ui->insertNode_ToolButton->setChecked(true);
-        handleInsertNodeTool(true);
+        ui->insertNodes_ToolButton->setChecked(true);
+        handleInsertNodesTool(true);
     });
 
     //Tools->Layout submenu actions
@@ -5726,9 +5731,9 @@ void MainWindow::CreateActions()
     connect(ui->lines_Action,         &QAction::triggered, this, &MainWindow::handleLinesMenu);
     connect(ui->arcs_Action,          &QAction::triggered, this, &MainWindow::handleArcsMenu);
     connect(ui->curves_Action,        &QAction::triggered, this, &MainWindow::handleCurvesMenu);
-    connect(ui->modifications_Action, &QAction::triggered, this, &MainWindow::handleModifyMenu);
-    connect(ui->details_Action,       &QAction::triggered, this, &MainWindow::handlePatternPiecesMenu);
-    connect(ui->pieces_Action,        &QAction::triggered, this, &MainWindow::handleDetailsMenu);
+    connect(ui->modifications_Action, &QAction::triggered, this, &MainWindow::handleOperationsMenu);
+    connect(ui->details_Action,       &QAction::triggered, this, &MainWindow::handleDetailsMenu);
+    connect(ui->pieces_Action,        &QAction::triggered, this, &MainWindow::handlePieceMenu);
     connect(ui->layout_Action,        &QAction::triggered, this, &MainWindow::handleLayoutMenu);
 }
 

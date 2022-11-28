@@ -1244,7 +1244,7 @@ void DialogInternalPath::ValidObjects(bool value)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::NewItem(const VPieceNode &node)
 {
-    NewNodeItem(ui->listWidget, node);
+    newNodeItem(ui->listWidget, node);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -107,7 +107,7 @@ QPainterPath VAbstractCubicBezierPath::GetPath() const
  * @brief GetPathPoints return list of points what located on path.
  * @return list.
  */
-QVector<QPointF> VAbstractCubicBezierPath::GetPoints() const
+QVector<QPointF> VAbstractCubicBezierPath::getPoints() const
 {
     QVector<QPointF> pathPoints;
     for (qint32 i = 1; i <= CountSubSpl(); ++i)
@@ -117,7 +117,7 @@ QVector<QPointF> VAbstractCubicBezierPath::GetPoints() const
             pathPoints.removeLast();
         }
 
-        pathPoints += GetSpline(i).GetPoints();
+        pathPoints += GetSpline(i).getPoints();
     }
     return pathPoints;
 }

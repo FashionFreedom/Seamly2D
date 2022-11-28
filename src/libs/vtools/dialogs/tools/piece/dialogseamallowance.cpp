@@ -2229,7 +2229,7 @@ VPiece DialogSeamAllowance::CreatePiece() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSeamAllowance::NewMainPathItem(const VPieceNode &node)
 {
-    NewNodeItem(uiPathsTab->mainPath_ListWidget, node);
+    newNodeItem(uiPathsTab->mainPath_ListWidget, node);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

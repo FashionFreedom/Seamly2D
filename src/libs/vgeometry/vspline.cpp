@@ -222,7 +222,7 @@ QPointF VSpline::CutSpline(qreal length, VSpline &spl1, VSpline &spl2) const
  * @brief GetPoints return list with spline points.
  * @return list of points.
  */
-QVector<QPointF> VSpline::GetPoints () const
+QVector<QPointF> VSpline::getPoints() const
 {
     return GetCubicBezierPoints(static_cast<QPointF>(GetP1()), static_cast<QPointF>(GetP2()),
                                 static_cast<QPointF>(GetP3()), static_cast<QPointF>(GetP4()));

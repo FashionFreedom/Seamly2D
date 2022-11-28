@@ -336,27 +336,27 @@ void VisToolMove::createOriginObjects(int &iPoint, int &iCurve)
             }
             case GOType::Arc:
                 AddOriginCurve<VArc>(id, iCurve);
-                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->GetPoints());
+                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::EllipticalArc:
                 AddOriginCurve<VEllipticalArc>(id, iCurve);
-                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->GetPoints());
+                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::Spline:
                 AddOriginCurve<VSpline>(id, iCurve);
-                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->GetPoints());
+                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::SplinePath:
                 AddOriginCurve<VSplinePath>(id, iCurve);
-                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->GetPoints());
+                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::CubicBezier:
                 AddOriginCurve<VCubicBezier>(id, iCurve);
-                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->GetPoints());
+                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::CubicBezierPath:
                 AddOriginCurve<VCubicBezierPath>(id, iCurve);
-                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->GetPoints());
+                sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::Unknown:
                 break;

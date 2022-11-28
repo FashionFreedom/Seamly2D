@@ -317,7 +317,7 @@ protected:
     static QFont     NodeFont(bool nodeExcluded);
 
     NodeInfo         getNodeInfo(const VPieceNode &node, bool showNotch = false) const;
-    void             NewNodeItem(QListWidget *listWidget, const VPieceNode &node);
+    void             newNodeItem(QListWidget *listWidget, const VPieceNode &node, bool nodeExcluded = true);
 
     void             InitNodeAngles(QComboBox *box);
 private:

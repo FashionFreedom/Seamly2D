@@ -122,7 +122,7 @@ QVector<QPointF> VAbstractCurve::GetSegmentPoints(const QVector<QPointF> &points
 //---------------------------------------------------------------------------------------------------------------------
 QVector<QPointF> VAbstractCurve::GetSegmentPoints(const QPointF &begin, const QPointF &end, bool reverse) const
 {
-    return GetSegmentPoints(GetPoints(), begin, end, reverse);
+    return GetSegmentPoints(getPoints(), begin, end, reverse);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -210,7 +210,7 @@ QPainterPath VAbstractCurve::GetPath() const
 {
     QPainterPath path;
 
-    const QVector<QPointF> points = GetPoints();
+    const QVector<QPointF> points = getPoints();
     if (points.count() >= 2)
     {
         path.addPolygon(QPolygonF(points));
@@ -225,7 +225,7 @@ QPainterPath VAbstractCurve::GetPath() const
 //---------------------------------------------------------------------------------------------------------------------
 qreal VAbstractCurve::GetLengthByPoint(const QPointF &point) const
 {
-    const QVector<QPointF> points = GetPoints();
+    const QVector<QPointF> points = getPoints();
     if (points.size() < 2)
     {
         return -1;
@@ -253,7 +253,7 @@ qreal VAbstractCurve::GetLengthByPoint(const QPointF &point) const
  */
 QVector<QPointF> VAbstractCurve::IntersectLine(const QLineF &line) const
 {
-    return CurveIntersectLine(this->GetPoints(), line);
+    return CurveIntersectLine(this->getPoints(), line);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -264,7 +264,7 @@ bool VAbstractCurve::IsIntersectLine(const QLineF &line) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractCurve::IsPointOnCurve(const QVector<QPointF> &points, const QPointF &p)
+bool VAbstractCurve::isPointOnCurve(const QVector<QPointF> &points, const QPointF &p)
 {
     if (points.isEmpty())
     {
@@ -289,9 +289,9 @@ bool VAbstractCurve::IsPointOnCurve(const QVector<QPointF> &points, const QPoint
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractCurve::IsPointOnCurve(const QPointF &p) const
+bool VAbstractCurve::isPointOnCurve(const QPointF &p) const
 {
-    return IsPointOnCurve(GetPoints(), p);
+    return isPointOnCurve(getPoints(), p);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -352,7 +352,7 @@ QVector<DirectionArrow> VAbstractCurve::DirectionArrows() const
 {
     QVector<DirectionArrow> arrows;
 
-    const QVector<QPointF> points = GetPoints();
+    const QVector<QPointF> points = getPoints();
     if (points.count() >= 2)
     {
         /*Need find coordinate midle of curve.
@@ -434,4 +434,26 @@ qreal VAbstractCurve::PathLength(const QVector<QPointF> &path)
         splinePath.lineTo(path.at(i));
     }
     return splinePath.length();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/*
+ * @brief Gets first point in a curve.
+  * @return QPointF
+ */
+QPointF VAbstractCurve::getFirstPoint()
+{
+    const QVector<QPointF> points = getPoints();
+    return points.at(0);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/*
+ * @brief Gets last point in a curve.
+ * @return QPointF
+ */
+QPointF VAbstractCurve::getLastPoint()
+{
+    const QVector<QPointF> points = getPoints();
+    return points.at(points.count() - 1);
 }

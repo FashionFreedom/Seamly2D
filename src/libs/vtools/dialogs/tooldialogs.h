@@ -91,7 +91,7 @@
 #include "tools/dialogellipticalarc.h"
 #include "tools/piece/dialoginternalpath.h"
 #include "tools/anchorpoint_dialog.h"
-#include "tools/dialoginsertnode.h"
+#include "tools/insert_nodes_dialog.h"
 
 #include "support/dialogeditwrongformula.h"
 #include "support/dialogundo.h"

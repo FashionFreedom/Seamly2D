@@ -94,7 +94,7 @@ void VisToolPointOfIntersectionCurves::RefreshGeometry()
             DrawPath(visCurve2, curve2->GetPath(), curve2->DirectionArrows(), supportColor, Qt::SolidLine,
                      Qt::RoundCap);
 
-            auto p = VToolPointOfIntersectionCurves::FindPoint(curve1->GetPoints(), curve2->GetPoints(), vCrossPoint,
+            auto p = VToolPointOfIntersectionCurves::FindPoint(curve1->getPoints(), curve2->getPoints(), vCrossPoint,
                                                                hCrossPoint);
             DrawPoint(point, p, mainColor);
         }

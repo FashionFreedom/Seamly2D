@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -23,7 +23,7 @@
 
  ************************************************************************
  **
- **  @file   dialoginsertnode.h
+ **  @file   insert_nodes_dialog.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   21 3, 2017
  **
@@ -55,42 +55,51 @@
 #include "dialogtool.h"
 #include "../vpatterndb/vpiecenode.h"
 
+class VPieceNode;
+
 namespace Ui
 {
-    class DialogInsertNode;
+    class InsertNodesDialog;
 }
 
-class DialogInsertNode : public DialogTool
+class InsertNodesDialog : public DialogTool
 {
     Q_OBJECT
 
 public:
-    explicit DialogInsertNode(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
-    virtual ~DialogInsertNode();
+    explicit              InsertNodesDialog(const VContainer *data, quint32 toolId, QWidget *parent = nullptr);
+    virtual              ~InsertNodesDialog();
 
-    virtual void SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
+    virtual void          SetPiecesList(const QVector<quint32> &list) Q_DECL_OVERRIDE;
 
-    quint32 GetPieceId() const;
-    void    SetPieceId(quint32 id);
+    quint32               getPieceId() const;
 
-    VPieceNode GetNode() const;
-    void       SetNode(const VPieceNode &node);
+    QVector<VPieceNode>   getNodes() const;
+
+    virtual void          ShowDialog(bool click) Q_DECL_OVERRIDE;
 
 public slots:
-    virtual void ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void          SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+
+private slots:
+    void                  showContextMenu(const QPoint &pos);
 
 protected:
-    virtual void CheckState() Q_DECL_FINAL;
+    virtual void          checkState() Q_DECL_FINAL;
+    virtual bool          eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
 
 private:
-    Q_DISABLE_COPY(DialogInsertNode)
-    Ui::DialogInsertNode *ui;
+                          Q_DISABLE_COPY(InsertNodesDialog)
+    Ui::InsertNodesDialog *ui;
 
-    VPieceNode m_node;
-    bool m_flagItem;
-
-    void CheckPieces();
-    void CheckItem();
+    QVector<VPieceNode>   m_nodes;
+    bool                  m_nodeFlag;
+    bool                  m_piecesFlag;
+    void                  validatePieces();
+    void                  validateNodes();
+    quint32               getLastNodeId() const;
+    bool                  correctCurveDirection(quint32 objectId);
+    void                  insertCurveNodes(VPieceNode curveNode);
 };
 
 #endif // DIALOGINSERTNODE_H

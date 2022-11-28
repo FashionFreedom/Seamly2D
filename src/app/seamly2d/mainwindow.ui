@@ -280,9 +280,9 @@
      <addaction name="arcWithLength_Action"/>
      <addaction name="ellipticalArc_Action"/>
     </widget>
-    <widget class="QMenu" name="addDetails_Menu">
+    <widget class="QMenu" name="piece_Menu">
      <property name="title">
-      <string>Pattern Piece</string>
+      <string>Piece</string>
      </property>
      <property name="icon">
       <iconset resource="share/resources/toolicon.qrc">
@@ -291,7 +291,7 @@
      <addaction name="addPiece_Action"/>
      <addaction name="anchorPoint_Action"/>
      <addaction name="internalPath_Action"/>
-     <addaction name="insertNode_Action"/>
+     <addaction name="insertNodes_Action"/>
     </widget>
     <widget class="QMenu" name="layouts_Menu">
      <property name="enabled">
@@ -315,7 +315,7 @@
     <addaction name="curves_Menu"/>
     <addaction name="arcs_Menu"/>
     <addaction name="operations_Menu"/>
-    <addaction name="addDetails_Menu"/>
+    <addaction name="piece_Menu"/>
     <addaction name="details_Menu"/>
     <addaction name="layouts_Menu"/>
     <addaction name="separator"/>
@@ -703,7 +703,7 @@
     <bool>true</bool>
    </property>
    <property name="windowTitle">
-    <string>Details ToolBar</string>
+    <string>Piece ToolBar</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -713,12 +713,12 @@
    </attribute>
    <addaction name="addPiece_Action"/>
    <addaction name="anchorPoint_Action"/>
-   <addaction name="insertNode_Action"/>
+   <addaction name="insertNodes_Action"/>
    <addaction name="internalPath_Action"/>
   </widget>
   <widget class="QToolBar" name="details_ToolBar">
    <property name="windowTitle">
-    <string>Pieces ToolBar</string>
+    <string>Details ToolBar</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -896,7 +896,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>5</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -2205,19 +2205,19 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QToolButton" name="insertNode_ToolButton">
+              <widget class="QToolButton" name="insertNodes_ToolButton">
                <property name="enabled">
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Insert Node (IN)</string>
+                <string>Insert Nodes (IN)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
                 <iconset resource="share/resources/toolicon.qrc">
-                 <normaloff>:/toolicon/32x32/insert_node.png</normaloff>:/toolicon/32x32/insert_node.png</iconset>
+                 <normaloff>:/toolicon/32x32/insert_nodes_icon.png</normaloff>:/toolicon/32x32/insert_nodes_icon.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2310,8 +2310,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>120</width>
+              <height>83</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2444,8 +2444,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
-              <height>54</height>
+              <width>120</width>
+              <height>83</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -4302,19 +4302,19 @@
     <string>I, P</string>
    </property>
   </action>
-  <action name="insertNode_Action">
+  <action name="insertNodes_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/insert_node.png</normaloff>:/toolicon/32x32/insert_node.png</iconset>
+     <normaloff>:/toolicon/32x32/insert_nodes_icon.png</normaloff>:/toolicon/32x32/insert_nodes_icon.png</iconset>
    </property>
    <property name="text">
-    <string>Insert Node</string>
+    <string>Insert Nodes</string>
    </property>
    <property name="toolTip">
-    <string>Insert Node (IN)</string>
+    <string>Insert Nodes (IN)</string>
    </property>
    <property name="shortcut">
     <string>I, N</string>
@@ -4636,8 +4636,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

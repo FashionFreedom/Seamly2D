@@ -218,7 +218,7 @@ qreal VCubicBezier::GetLength() const
  * @brief GetPoints return list with cubic bezier curve points.
  * @return list of points.
  */
-QVector<QPointF> VCubicBezier::GetPoints() const
+QVector<QPointF> VCubicBezier::getPoints() const
 {
     return GetCubicBezierPoints(static_cast<QPointF>(GetP1()), static_cast<QPointF>(GetP2()),
                                 static_cast<QPointF>(GetP3()), static_cast<QPointF>(GetP4()));
