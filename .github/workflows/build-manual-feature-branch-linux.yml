@@ -1,4 +1,4 @@
-name: Test Build manual Linux AppImage
+name: Build manual feature branch - Linux AppImage
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Test Build manual Linux AppImage'
+        description: 'Build manual feature branch - Linux AppImage'
 
 
 env:
