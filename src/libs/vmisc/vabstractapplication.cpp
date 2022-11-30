@@ -135,20 +135,20 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     QString mainPath;
     if (locale.isEmpty())
     {
-        qDebug( "----> A. mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath;");
         mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath;
+        qDebug( "----> A. " + mainPath );
     }
     else
     {
-        qDebug( "----> B. mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath + QLatin1String("/")
-                + locale + QLatin1String(".lproj")");
+
         mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath + QLatin1String("/")
                 + locale + QLatin1String(".lproj");
+        qDebug( "----> B. " + mainPath );       
     }
     QDir dirBundle(mainPath);
     if (dirBundle.exists())
     {
-        qDebug( "----> C. return dirBundle.absolutePath()");
+        qDebug( "----> C. " + dirBundle.absolutePath() );
         return dirBundle.absolutePath();
     }
     else
@@ -160,19 +160,18 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
         QDir dir(appDir.absolutePath() + trPath);
         if (dir.exists())
         {
-            qDebug( "----> D. return dir.absolutePath()");
+            qDebug( "----> D. " + dir.absolutePath() );
             return dir.absolutePath();
         }
         else
         {
-            qDebug("----> E. return QStringLiteral("/usr/share/seamly2d/translations")");
+            qDebug("----> E. " + QStringLiteral("/usr/share/seamly2d/translations") );
             return QStringLiteral("/usr/share/seamly2d/translations");
         }
     }
 #else // Unix
     Q_UNUSED(locale)
-    qDebug( "----> QCoreApplication::applicationDirPath() = " + QCoreApplication::applicationDirPath() );
-    qDebug( "trPath = " + trPath );
+    qDebug( "----> F. " + QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + trPath );
     return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + trPath;
 #endif
 }
