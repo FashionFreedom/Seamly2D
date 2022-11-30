@@ -1,8 +1,8 @@
 /***************************************************************************
  *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
+ *   Copyright (C) 2017-2022  Seamly, LLC                                  *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -64,6 +64,9 @@
 #include "../vmisc/def.h"
 #include "../vmisc/logging.h"
 
+#include <string>
+#include <iostream>
+
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractApplication::VAbstractApplication(int &argc, char **argv)
     :QApplication(argc, argv),
@@ -117,10 +120,10 @@ VAbstractApplication::~VAbstractApplication()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief translationsPath return path to the root directory that contain QM files.
- * @param locale used only in Mac OS. If empty return path to the root directory. If not - return path to locale
+ * @brief translationsPath returns the path to the directory that contains QM translation files.
+ * @param locale used only in Mac OS. If empty, return the path to the root directory. If not - return path to locale
  * subdirectory inside an app bundle.
- * @return path to a directory that contain QM files.
+ * @return path to a directory that contains QM translation files.
  */
 QString VAbstractApplication::translationsPath(const QString &locale) const
 {
@@ -132,16 +135,20 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     QString mainPath;
     if (locale.isEmpty())
     {
+        qDebug( "----> A. mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath;");
         mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath;
     }
     else
     {
+        qDebug( "----> B. mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath + QLatin1String("/")
+                + locale + QLatin1String(".lproj")");
         mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath + QLatin1String("/")
                 + locale + QLatin1String(".lproj");
     }
     QDir dirBundle(mainPath);
     if (dirBundle.exists())
     {
+        qDebug( "----> C. return dirBundle.absolutePath()");
         return dirBundle.absolutePath();
     }
     else
@@ -153,15 +160,19 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
         QDir dir(appDir.absolutePath() + trPath);
         if (dir.exists())
         {
+            qDebug( "----> D. return dir.absolutePath()");
             return dir.absolutePath();
         }
         else
         {
+            qDebug("----> E. return QStringLiteral("/usr/share/seamly2d/translations")");
             return QStringLiteral("/usr/share/seamly2d/translations");
         }
     }
 #else // Unix
     Q_UNUSED(locale)
+    qDebug( "----> QCoreApplication::applicationDirPath() = " + QCoreApplication::applicationDirPath() );
+    qDebug( "trPath = " + trPath );
     return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + trPath;
 #endif
 }
