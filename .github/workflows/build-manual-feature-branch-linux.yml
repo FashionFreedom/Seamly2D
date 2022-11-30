@@ -68,7 +68,9 @@ jobs:
 
       - name: checkout code
         uses: actions/checkout@v3
-        #with:
+        with:
+          # change this for each test build of a feature branch
+          ref: fix-issue-718
           #submodules: true
           #fetch-depth: 0  
           
