@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vlayoutpaper.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vlayoutpaper.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -213,7 +214,7 @@ void VLayoutPaper::SetPaperIndex(quint32 index)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VLayoutPaper::ArrangeDetail(const VLayoutPiece &detail, std::atomic_bool &stop)
+bool VLayoutPaper::arrangePiece(const VLayoutPiece &piece, std::atomic_bool &stop)
 {
     // First need set size of paper
     if (d->globalContour.GetHeight() <= 0 || d->globalContour.GetWidth() <= 0)
@@ -221,12 +222,12 @@ bool VLayoutPaper::ArrangeDetail(const VLayoutPiece &detail, std::atomic_bool &s
         return false;
     }
 
-    if (detail.LayoutEdgesCount() < 3 || detail.DetailEdgesCount() < 3)
+    if (piece.LayoutEdgesCount() < 3 || piece.pieceEdgesCount() < 3)
     {
         return false;//Not enough edges
     }
 
-    if (detail.IsForbidFlipping() && not d->globalRotate)
+    if (piece.IsForbidFlipping() && not d->globalRotate)
     { // Compensate forbidden flipping by rotating. 180 degree will be enough.
         d->localRotate = true;
         d->localRotationIncrease = 180;
@@ -239,47 +240,47 @@ bool VLayoutPaper::ArrangeDetail(const VLayoutPiece &detail, std::atomic_bool &s
 
     d->frame = 0;
 
-    return AddToSheet(detail, stop);
+    return AddToSheet(piece, stop);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 int VLayoutPaper::Count() const
 {
-    return d->details.count();
+    return d->pieces.count();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VLayoutPaper::AddToSheet(const VLayoutPiece &detail, std::atomic_bool &stop)
+bool VLayoutPaper::AddToSheet(const VLayoutPiece &piece, std::atomic_bool &stop)
 {
     VBestSquare bestResult(d->globalContour.GetSize(), d->saveLength);
     QThreadPool *thread_pool = QThreadPool::globalInstance();
     thread_pool->setExpiryTimeout(1000);
     QVector<VPosition *> threads;
 
-    int detailEdgesCount = 0;
+    int pieceEdgesCount = 0;
 
     if (d->globalContour.GetContour().isEmpty())
     {
-        detailEdgesCount = detail.DetailEdgesCount();
+        pieceEdgesCount = piece.pieceEdgesCount();
     }
     else
     {
-        detailEdgesCount = detail.LayoutEdgesCount();
+        pieceEdgesCount = piece.LayoutEdgesCount();
     }
 
     for (int j=1; j <= d->globalContour.GlobalEdgesCount(); ++j)
     {
-        for (int i=1; i<= detailEdgesCount; ++i)
+        for (int i=1; i<= pieceEdgesCount; ++i)
         {
-            VPosition *thread = new VPosition(d->globalContour, j, detail, i, &stop, d->localRotate,
+            VPosition *thread = new VPosition(d->globalContour, j, piece, i, &stop, d->localRotate,
                                               d->localRotationIncrease,
                                               d->saveLength);
             //Info for debug
             #ifdef LAYOUT_DEBUG
                 thread->setPaperIndex(d->paperIndex);
                 thread->setFrame(d->frame);
-                thread->setDetailsCount(d->details.count());
-                thread->setDetails(d->details);
+                thread->setPieceCount(d->pieces.count());
+                thread->setPieces(d->pieces);
             #endif
 
             thread->setAutoDelete(false);
@@ -313,30 +314,30 @@ bool VLayoutPaper::AddToSheet(const VLayoutPiece &detail, std::atomic_bool &stop
     qDeleteAll(threads.begin(), threads.end());
     threads.clear();
 
-    return SaveResult(bestResult, detail);
+    return SaveResult(bestResult, piece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VLayoutPaper::SaveResult(const VBestSquare &bestResult, const VLayoutPiece &detail)
+bool VLayoutPaper::SaveResult(const VBestSquare &bestResult, const VLayoutPiece &piece)
 {
     if (bestResult.ValidResult())
     {
-        VLayoutPiece workDetail = detail;
+        VLayoutPiece workDetail = piece;
         workDetail.setTransform(bestResult.Transform());// Don't forget set transform
         workDetail.SetMirror(bestResult.isMirror());
         const QVector<QPointF> newGContour = d->globalContour.UniteWithContour(workDetail, bestResult.GContourEdge(),
-                                                                               bestResult.DetailEdge(),
+                                                                               bestResult.pieceEdge(),
                                                                                bestResult.Type());
         if (newGContour.isEmpty())
         {
             return false;
         }
-        d->details.append(workDetail);
+        d->pieces.append(workDetail);
         d->globalContour.SetContour(newGContour);
 
 #ifdef LAYOUT_DEBUG
 #   ifdef SHOW_BEST
-        VPosition::DrawDebug(d->globalContour, workDetail, UINT_MAX, d->paperIndex, d->details.count(), d->details);
+        VPosition::DrawDebug(d->globalContour, workDetail, UINT_MAX, d->paperIndex, d->pieces.count(), d->pieces);
 #   endif
 #endif
     }
@@ -351,7 +352,7 @@ QGraphicsRectItem *VLayoutPaper::GetPaperItem(bool autoCrop, bool textAsPaths) c
     if (autoCrop)
     {
         QScopedPointer<QGraphicsScene> scene(new QGraphicsScene());
-        QList<QGraphicsItem *> list = GetItemDetails(textAsPaths);
+        QList<QGraphicsItem *> list = getPieceItems(textAsPaths);
         for (int i=0; i < list.size(); ++i)
         {
             scene->addItem(list.at(i));
@@ -376,35 +377,35 @@ QGraphicsRectItem *VLayoutPaper::GetPaperItem(bool autoCrop, bool textAsPaths) c
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QList<QGraphicsItem *> VLayoutPaper::GetItemDetails(bool textAsPaths) const
+QList<QGraphicsItem *> VLayoutPaper::getPieceItems(bool textAsPaths) const
 {
     QList<QGraphicsItem *> list;
-    for (int i=0; i < d->details.count(); ++i)
+    for (int i=0; i < d->pieces.count(); ++i)
     {
-        list.append(d->details.at(i).GetItem(textAsPaths));
+        list.append(d->pieces.at(i).GetItem(textAsPaths));
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VLayoutPiece> VLayoutPaper::GetDetails() const
+QVector<VLayoutPiece> VLayoutPaper::getPieces() const
 {
-    return d->details;
+    return d->pieces;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPaper::SetDetails(const QList<VLayoutPiece> &details)
+void VLayoutPaper::setPieces(const QList<VLayoutPiece> &pieces)
 {
-    d->details = details.toVector();
+    d->pieces = pieces.toVector();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QRectF VLayoutPaper::DetailsBoundingRect() const
+QRectF VLayoutPaper::piecesBoundingRect() const
 {
     QRectF rec;
-    for (int i=0; i < d->details.count(); ++i)
+    for (int i=0; i < d->pieces.count(); ++i)
     {
-        rec = rec.united(d->details.at(i).DetailBoundingRect());
+        rec = rec.united(d->pieces.at(i).pieceBoundingRect());
     }
 
     return rec;

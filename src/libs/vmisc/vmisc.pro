@@ -8,7 +8,7 @@
 message("Entering vmisc.pro")
 include(../../../common.pri)
 
-QT += widgets printsupport testlib gui
+QT += widgets printsupport testlib gui multimedia
 
 # Name of library
 TARGET = vmisc
@@ -37,6 +37,7 @@ include(vmisc.pri)
 
 # Resource files. This files will be included in binary.
 RESOURCES += \
+    share/resources/sounds.qrc \
     share/resources/theme.qrc \ # Windows theme icons.
     share/resources/icon.qrc \ # All other icons except cursors and Windows theme.
     share/resources/flags.qrc

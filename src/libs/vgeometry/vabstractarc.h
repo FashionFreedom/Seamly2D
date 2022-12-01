@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -67,48 +67,57 @@ class VPointF;
 class VAbstractArc : public VAbstractCurve
 {
 public:
-    explicit VAbstractArc(const GOType &type, const quint32 &idObject = NULL_ID, const Draw &mode = Draw::Calculation);
-    VAbstractArc (const GOType &type, const VPointF &center, qreal f1, const QString &formulaF1, qreal f2,
-                  const QString &formulaF2, quint32 idObject = 0, Draw mode = Draw::Calculation);
-    VAbstractArc (const GOType &type, const VPointF &center, qreal f1, qreal f2, quint32 idObject = 0,
-                  Draw mode = Draw::Calculation);
-    VAbstractArc (const GOType &type, const QString &formulaLength, const VPointF &center, qreal f1,
-                  const QString &formulaF1, quint32 idObject = 0, Draw mode = Draw::Calculation);
-    VAbstractArc (const GOType &type, const VPointF &center, qreal f1, quint32 idObject = 0,
-                  Draw mode = Draw::Calculation);
-    explicit VAbstractArc(const VAbstractArc &arc);
-    virtual ~VAbstractArc();
+    explicit         VAbstractArc(const GOType &type, const quint32 &idObject = NULL_ID,
+                                  const Draw &mode = Draw::Calculation);
 
-    VAbstractArc& operator= (const VAbstractArc &arc);
+                     VAbstractArc (const GOType &type, const VPointF &center, qreal f1, const QString &formulaF1,
+                                   qreal f2, const QString &formulaF2, quint32 idObject = 0,
+                                   Draw mode = Draw::Calculation);
+
+                     VAbstractArc (const GOType &type, const VPointF &center, qreal f1, qreal f2, quint32 idObject = 0,
+                                   Draw mode = Draw::Calculation);
+
+                     VAbstractArc (const GOType &type, const QString &formulaLength, const VPointF &center, qreal f1,
+                                   const QString &formulaF1, quint32 idObject = 0, Draw mode = Draw::Calculation);
+
+                     VAbstractArc (const GOType &type, const VPointF &center, qreal f1, quint32 idObject = 0,
+                                   Draw mode = Draw::Calculation);
+
+    explicit         VAbstractArc(const VAbstractArc &arc);
+    virtual         ~VAbstractArc();
+
+    VAbstractArc    &operator= (const VAbstractArc &arc);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VAbstractArc &operator=(VAbstractArc &&arc) Q_DECL_NOTHROW ;
+	VAbstractArc    &operator=(VAbstractArc &&arc) Q_DECL_NOTHROW ;
 #endif
 
-	void Swap(VAbstractArc &arc) Q_DECL_NOTHROW;
+	void             Swap(VAbstractArc &arc) Q_DECL_NOTHROW;
 
-    QString       GetFormulaF1 () const;
-    void          SetFormulaF1 (const QString &formula, qreal value);
-    virtual qreal GetStartAngle () const Q_DECL_OVERRIDE;
+    QString          GetFormulaF1 () const;
+    void             SetFormulaF1 (const QString &formula, qreal value);
+    virtual qreal    GetStartAngle () const Q_DECL_OVERRIDE;
 
-    QString       GetFormulaF2 () const;
-    void          SetFormulaF2 (const QString &formula, qreal value);
-    virtual qreal GetEndAngle () const Q_DECL_OVERRIDE;
+    QString          GetFormulaF2 () const;
+    void             SetFormulaF2 (const QString &formula, qreal value);
+    virtual qreal    GetEndAngle () const Q_DECL_OVERRIDE;
 
-    virtual VPointF GetCenter () const;
-    void    SetCenter (const VPointF &point);
+    virtual VPointF  GetCenter () const;
+    void             SetCenter (const VPointF &point);
 
-    QString GetFormulaLength () const;
-    void    SetFormulaLength (const QString &formula, qreal value);
+    QString          GetFormulaLength () const;
+    void             SetFormulaLength (const QString &formula, qreal value);
 
-    virtual void    setId(const quint32 &id) Q_DECL_OVERRIDE;
-    virtual QString NameForHistory(const QString &toolName) const Q_DECL_OVERRIDE;
+    virtual void     setId(const quint32 &id) Q_DECL_OVERRIDE;
+    virtual QString  NameForHistory(const QString &toolName) const Q_DECL_OVERRIDE;
 
-    bool IsFlipped() const;
-    qreal AngleArc() const;
+    bool             IsFlipped() const;
+    qreal            AngleArc() const;
+
 protected:
-    void SetFlipped(bool value);
-    virtual void FindF2(qreal length)=0;
-    void SetFormulaLength(const QString &formula);
+    void             SetFlipped(bool value);
+    virtual void     FindF2(qreal length)=0;
+    void             SetFormulaLength(const QString &formula);
+
 private:
     QSharedDataPointer<VAbstractArcData> d;
 };

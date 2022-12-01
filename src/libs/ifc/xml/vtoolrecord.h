@@ -72,7 +72,7 @@ public:
     void    setId(const quint32 &value);
     Tool    getTypeTool() const;
     void    setTypeTool(const Tool &value);
-    QString getNameDraw() const;
+    QString getDraftBlockName() const;
     void    setNameDraw(const QString &value);
     ~VToolRecord() Q_DECL_EQ_DEFAULT;
 private:
@@ -128,10 +128,10 @@ inline void VToolRecord::setTypeTool(const Tool &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief getNameDraw return pattern peace name.
+ * @brief getDraftBlockName return pattern peace name.
  * @return pattern peace name.
  */
-inline QString VToolRecord::getNameDraw() const
+inline QString VToolRecord::getDraftBlockName() const
 {
     return nameDraw;
 }
@@ -150,7 +150,7 @@ inline void VToolRecord::setNameDraw(const QString &value)
 inline bool VToolRecord::operator==(const VToolRecord &record) const
 {
     // Id should be enough
-    return id == record.getId()/* && typeTool == record.getTypeTool() && nameDraw == record.getNameDraw()*/;
+    return id == record.getId()/* && typeTool == record.getTypeTool() && nameDraw == record.getDraftBlockName()*/;
 }
 
 #endif // VTOOLRECORD_H

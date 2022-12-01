@@ -68,8 +68,10 @@ public:
     virtual ~PreferencesConfigurationPage();
 
     void Apply();
+    
 protected:
     virtual void changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(PreferencesConfigurationPage)
     Ui::PreferencesConfigurationPage *ui;
@@ -77,6 +79,7 @@ private:
     bool m_systemChanged;
     bool m_unitChanged;
     bool m_labelLangChanged;
+    bool m_selectionSoundChanged;
     bool m_moveSuffixChanged;
     bool m_rotateSuffixChanged;
     bool m_mirrorByAxisSuffixChanged;

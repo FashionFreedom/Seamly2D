@@ -73,7 +73,7 @@ signals:
     void UpdateGroups();
 private:
     Q_DISABLE_COPY(AddGroup)
-    const QString nameActivDraw;
+    const QString activeBlockName;
 };
 
 #endif // ADDGROUP_H

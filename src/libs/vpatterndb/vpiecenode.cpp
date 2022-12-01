@@ -218,7 +218,7 @@ QString VPieceNode::GetFormulaSABefore() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::SetFormulaSABefore(const QString &formula)
+void VPieceNode::setBeforeSAFormula(const QString &formula)
 {
     if (d->m_typeTool == Tool::NodePoint)
     {
@@ -260,7 +260,7 @@ QString VPieceNode::GetFormulaSAAfter() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::SetFormulaSAAfter(const QString &formula)
+void VPieceNode::setAfterSAFormula(const QString &formula)
 {
     if (d->m_typeTool == Tool::NodePoint)
     {
@@ -347,15 +347,15 @@ void VPieceNode::setShowNotch(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPieceNode::showSecondNotch() const
+bool VPieceNode::showSeamlineNotch() const
 {
-    return d->m_showSecondNotch;
+    return d->m_showSeamlineNotch;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPieceNode::setShowSecondNotch(bool value)
+void VPieceNode::setShowSeamlineNotch(bool value)
 {
-    d->m_showSecondNotch = value;
+    d->m_showSeamlineNotch = value;
 }
 
 

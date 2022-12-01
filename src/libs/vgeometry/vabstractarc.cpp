@@ -59,7 +59,9 @@
 
 #ifdef Q_COMPILER_RVALUE_REFS
 VAbstractArc &VAbstractArc::operator=(VAbstractArc &&arc) Q_DECL_NOTHROW
-{ Swap(arc); return *this; }
+{
+    Swap(arc); return *this;
+}
 #endif
 
 void VAbstractArc::Swap(VAbstractArc &arc) Q_DECL_NOTHROW
@@ -73,28 +75,33 @@ VAbstractArc::VAbstractArc(const GOType &type, const quint32 &idObject, const Dr
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractArc::VAbstractArc(const GOType &type, const VPointF &center, qreal f1, const QString &formulaF1, qreal f2,
                            const QString &formulaF2, quint32 idObject, Draw mode)
-    : VAbstractCurve(type, idObject, mode), d (new VAbstractArcData(center, f1, formulaF1, f2, formulaF2))
+    : VAbstractCurve(type, idObject, mode)
+    , d (new VAbstractArcData(center, f1, formulaF1, f2, formulaF2))
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractArc::VAbstractArc(const GOType &type, const VPointF &center, qreal f1, qreal f2, quint32 idObject, Draw mode)
-    : VAbstractCurve(type, idObject, mode), d (new VAbstractArcData(center, f1, f2))
+    : VAbstractCurve(type, idObject, mode)
+    , d (new VAbstractArcData(center, f1, f2))
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractArc::VAbstractArc(const GOType &type, const QString &formulaLength, const VPointF &center,
                            qreal f1, const QString &formulaF1, quint32 idObject, Draw mode)
-    : VAbstractCurve(type, idObject, mode), d (new VAbstractArcData(formulaLength, center, f1, formulaF1))
+    : VAbstractCurve(type, idObject, mode)
+    , d (new VAbstractArcData(formulaLength, center, f1, formulaF1))
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractArc::VAbstractArc(const GOType &type, const VPointF &center, qreal f1, quint32 idObject, Draw mode)
-    : VAbstractCurve(type, idObject, mode), d (new VAbstractArcData(center, f1))
+    : VAbstractCurve(type, idObject, mode)
+    , d (new VAbstractArcData(center, f1))
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractArc::VAbstractArc(const VAbstractArc &arc)
-    : VAbstractCurve(arc), d (arc.d)
+    : VAbstractCurve(arc)
+    , d (arc.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------

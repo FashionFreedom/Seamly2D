@@ -79,8 +79,8 @@ public:
         , m_angleType(PieceNodeAngle::ByLength)
         , m_notchType(stringToNotchType(qApp->Settings()->getDefaultNotchType()))
         , m_notchSubType(NotchSubType::Straightforward)
-        , m_showNotch(true)
-        , m_showSecondNotch(true)
+        , m_showNotch(qApp->Settings()->showSeamAllowanceNotch())
+        , m_showSeamlineNotch(qApp->Settings()->showSeamlineNotch())
         , m_notchLength(qApp->Settings()->getDefaultNotchLength())
         , m_notchWidth(qApp->Settings()->getDefaultNotchWidth())
         , m_notchAngle(.000)
@@ -99,8 +99,8 @@ public:
         , m_angleType(PieceNodeAngle::ByLength)
         , m_notchType(stringToNotchType(qApp->Settings()->getDefaultNotchType()))
         , m_notchSubType(NotchSubType::Straightforward)
-        , m_showNotch(true)
-        , m_showSecondNotch(true)
+        , m_showNotch(qApp->Settings()->showSeamAllowanceNotch())
+        , m_showSeamlineNotch(qApp->Settings()->showSeamlineNotch())
         , m_notchLength(qApp->Settings()->getDefaultNotchLength())
         , m_notchWidth(qApp->Settings()->getDefaultNotchWidth())
         , m_notchAngle(.000)
@@ -126,7 +126,7 @@ public:
         , m_notchType(node.m_notchType)
         , m_notchSubType(node.m_notchSubType)
         , m_showNotch(node.m_showNotch)
-        , m_showSecondNotch(node.m_showSecondNotch)
+        , m_showSeamlineNotch(node.m_showSeamlineNotch)
         , m_notchLength(node.m_notchLength)
         , m_notchWidth(node.m_notchWidth)
         , m_notchAngle(node.m_notchAngle)
@@ -156,7 +156,7 @@ public:
     NotchType      m_notchType;
     NotchSubType   m_notchSubType;
     bool           m_showNotch;
-    bool           m_showSecondNotch;
+    bool           m_showSeamlineNotch;
     qreal          m_notchLength;
     qreal          m_notchWidth;
     qreal          m_notchAngle;
@@ -181,7 +181,7 @@ QDataStream &operator<<(QDataStream &out, const VPieceNodeData &p)
         << static_cast<int>(p.m_notchType)
         << static_cast<int>(p.m_notchSubType)
         << p.m_showNotch
-        << p.m_showSecondNotch
+        << p.m_showSeamlineNotch
         << p.m_notchLength
         << p.m_notchWidth
         << p.m_notchAngle
@@ -208,7 +208,7 @@ QDataStream &operator>>(QDataStream &in, VPieceNodeData &p)
        >> notchType
        >> notchSubType
        >> p.m_showNotch
-       >> p.m_showSecondNotch
+       >> p.m_showSeamlineNotch
        >> p.m_notchLength
        >> p.m_notchWidth
        >> p.m_notchAngle

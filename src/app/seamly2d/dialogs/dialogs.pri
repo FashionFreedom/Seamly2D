@@ -13,10 +13,10 @@ HEADERS += \
     $$PWD/dialoglayoutprogress.h \
     $$PWD/dialogvariables.h \
     $$PWD/export_layout_dialog.h \
+    $$PWD/pieces_widget.h \
     $$PWD/shortcuts_dialog.h \
     $$PWD/show_info_dialog.h \
     $$PWD/vwidgetgroups.h \
-    $$PWD/vwidgetdetails.h \
     $$PWD/dialogpreferences.h \
     $$PWD/configpages/preferencesconfigurationpage.h \
     $$PWD/configpages/preferencespatternpage.h \
@@ -36,10 +36,10 @@ SOURCES += \
     $$PWD/dialoglayoutprogress.cpp \
     $$PWD/dialogvariables.cpp \
     $$PWD/export_layout_dialog.cpp \
+    $$PWD/pieces_widget.cpp \
     $$PWD/shortcuts_dialog.cpp \
     $$PWD/show_info_dialog.cpp \
     $$PWD/vwidgetgroups.cpp \
-    $$PWD/vwidgetdetails.cpp \
     $$PWD/dialogpreferences.cpp \
     $$PWD/configpages/preferencesconfigurationpage.cpp \
     $$PWD/configpages/preferencespatternpage.cpp \
@@ -59,10 +59,10 @@ FORMS += \
     $$PWD/dialoglayoutprogress.ui \
     $$PWD/dialogvariables.ui \
     $$PWD/export_layout_dialog.ui \
+    $$PWD/pieces_widget.ui \
     $$PWD/shortcuts_dialog.ui \
     $$PWD/show_info_dialog.ui \
     $$PWD/vwidgetgroups.ui \
-    $$PWD/vwidgetdetails.ui \
     $$PWD/dialogpreferences.ui \
     $$PWD/configpages/preferencesconfigurationpage.ui \
     $$PWD/configpages/preferencespatternpage.ui \

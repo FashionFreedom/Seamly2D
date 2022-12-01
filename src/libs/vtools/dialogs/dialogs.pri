@@ -2,6 +2,7 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/support/editlabeltemplate_dialog.h \
     $$PWD/tooldialogs.h \
     $$PWD/tools/anchorpoint_dialog.h \
     $$PWD/tools/dialogalongline.h \
@@ -27,7 +28,6 @@ HEADERS += \
     $$PWD/tools/dialogsplinepath.h \
     $$PWD/tools/dialogtool.h \
     $$PWD/tools/dialogtriangle.h \
-    $$PWD/tools/dialoguniondetails.h \
     $$PWD/support/dialogeditwrongformula.h \
     $$PWD/support/dialogundo.h \
     $$PWD/tools/dialogtruedarts.h \
@@ -43,12 +43,13 @@ HEADERS += \
     $$PWD/tools/insert_nodes_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
-    $$PWD/tools/piece/dialogseamallowance.h \
     $$PWD/tools/piece/dialoginternalpath.h \
-    $$PWD/support/dialogeditlabel.h \
-    $$PWD/tools/point_intersectxy_dialog.h
+    $$PWD/tools/piece/pattern_piece_dialog.h \
+    $$PWD/tools/point_intersectxy_dialog.h \
+    $$PWD/tools/union_dialog.h
 
 SOURCES += \
+    $$PWD/support/editlabeltemplate_dialog.cpp \
     $$PWD/tools/anchorpoint_dialog.cpp \
     $$PWD/tools/dialogalongline.cpp \
     $$PWD/tools/dialogarc.cpp \
@@ -73,7 +74,6 @@ SOURCES += \
     $$PWD/tools/dialogsplinepath.cpp \
     $$PWD/tools/dialogtool.cpp \
     $$PWD/tools/dialogtriangle.cpp \
-    $$PWD/tools/dialoguniondetails.cpp \
     $$PWD/support/dialogeditwrongformula.cpp \
     $$PWD/support/dialogundo.cpp \
     $$PWD/tools/dialogtruedarts.cpp \
@@ -89,12 +89,13 @@ SOURCES += \
     $$PWD/tools/insert_nodes_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
-    $$PWD/tools/piece/dialogseamallowance.cpp \
-    $$PWD/support/dialogeditlabel.cpp \
     $$PWD/tools/piece/dialoginternalpath.cpp \
-    $$PWD/tools/point_intersectxy_dialog.cpp
+    $$PWD/tools/piece/pattern_piece_dialog.cpp \
+    $$PWD/tools/point_intersectxy_dialog.cpp \
+    $$PWD/tools/union_dialog.cpp
 
 FORMS += \
+    $$PWD/support/editlabeltemplate_dialog.ui \
     $$PWD/tools/anchorpoint_dialog.ui \
     $$PWD/tools/dialogalongline.ui \
     $$PWD/tools/dialogarc.ui \
@@ -118,7 +119,6 @@ FORMS += \
     $$PWD/tools/dialogspline.ui \
     $$PWD/tools/dialogsplinepath.ui \
     $$PWD/tools/dialogtriangle.ui \
-    $$PWD/tools/dialoguniondetails.ui \
     $$PWD/support/dialogeditwrongformula.ui \
     $$PWD/support/dialogundo.ui \
     $$PWD/tools/dialogtruedarts.ui \
@@ -134,12 +134,7 @@ FORMS += \
     $$PWD/tools/insert_nodes_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \
-    $$PWD/tools/piece/dialogseamallowance.ui \
     $$PWD/tools/piece/dialoginternalpath.ui \
-    $$PWD/tools/piece/tabs/tabanchors.ui \
-    $$PWD/tools/piece/tabs/tabnotches.ui \
-    $$PWD/tools/piece/tabs/tabpaths.ui \
-    $$PWD/tools/piece/tabs/tablabels.ui \
-    $$PWD/tools/piece/tabs/tabgrainline.ui \
-    $$PWD/support/dialogeditlabel.ui \
-    $$PWD/tools/point_intersectxy_dialog.ui
+    $$PWD/tools/piece/pattern_piece_dialog.ui \
+    $$PWD/tools/point_intersectxy_dialog.ui \
+    $$PWD/tools/union_dialog.ui

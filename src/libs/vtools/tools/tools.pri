@@ -10,6 +10,7 @@ HEADERS += \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.h \
     $$PWD/nodeDetails/anchorpoint_tool.h \
+    $$PWD/pattern_piece_tool.h \
     $$PWD/vdatatool.h \
     $$PWD/vabstracttool.h \
     $$PWD/tools.h \
@@ -39,7 +40,7 @@ HEADERS += \
     $$PWD/nodeDetails/nodedetails.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h \
-    $$PWD/vtooluniondetails.h \
+    $$PWD/union_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h \
     $$PWD/drawTools/toolcurve/vabstractspline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcut.h \
@@ -59,7 +60,6 @@ HEADERS += \
     $$PWD/drawTools/operation/vtoolmove.h \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.h \
     $$PWD/nodeDetails/vnodeellipticalarc.h \
-    $$PWD/vtoolseamallowance.h \
     $$PWD/nodeDetails/vtoolinternalpath.h \
     $$PWD/vinteractivetool.h
 
@@ -72,6 +72,8 @@ SOURCES += \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.cpp \
     $$PWD/nodeDetails/anchorpoint_tool.cpp \
+    $$PWD/pattern_piece_tool.cpp \
+    $$PWD/union_tool.cpp \
     $$PWD/vdatatool.cpp \
     $$PWD/vabstracttool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtooltriangle.cpp \
@@ -98,7 +100,6 @@ SOURCES += \
     $$PWD/nodeDetails/vabstractnode.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.cpp \
-    $$PWD/vtooluniondetails.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.cpp \
     $$PWD/drawTools/toolcurve/vabstractspline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcut.cpp \
@@ -118,6 +119,5 @@ SOURCES += \
     $$PWD/drawTools/operation/vtoolmove.cpp \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.cpp \
     $$PWD/nodeDetails/vnodeellipticalarc.cpp \
-    $$PWD/vtoolseamallowance.cpp \
     $$PWD/vinteractivetool.cpp \
     $$PWD/nodeDetails/vtoolinternalpath.cpp

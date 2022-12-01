@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolsinglepoint.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtoolsinglepoint.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -71,26 +72,25 @@
 #include <QUndoStack>
 #include <new>
 
-#include "../../../../dialogs/tools/dialogtool.h"
-#include "../../../../dialogs/tools/dialogsinglepoint.h"
-#include "../../../../undocommands/addpatternpiece.h"
-#include "../../../../undocommands/deletepatternpiece.h"
-#include "../../../../undocommands/movespoint.h"
+#include "vtoolsinglepoint.h"
 #include "../ifc/exception/vexception.h"
 #include "../ifc/ifcdef.h"
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
+#include "../vmisc/logging.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vgraphicssimpletextitem.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vmaingraphicsview.h"
-#include "../vmisc/logging.h"
-#include "../vmisc/vabstractapplication.h"
+#include "../../vdrawtool.h"
 #include "../../../vabstracttool.h"
 #include "../../../vdatatool.h"
-#include "../../vdrawtool.h"
-#include "vtoolsinglepoint.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../dialogs/tools/dialogsinglepoint.h"
+#include "../../../../undocommands/add_draftblock.h"
+#include "../../../../undocommands/delete_draftblock.h"
+#include "../../../../undocommands/movespoint.h"
 
 const QString VToolBasePoint::ToolType = QStringLiteral("single");
 
@@ -181,7 +181,7 @@ void VToolBasePoint::AddToFile()
     SaveOptions(sPoint, obj);
 
     //Create pattern piece structure
-    QDomElement patternPiece = doc->createElement(VAbstractPattern::TagDraw);
+    QDomElement patternPiece = doc->createElement(VAbstractPattern::TagDraftBlock);
     doc->SetAttribute(patternPiece, AttrName, draftBlockName);
 
     QDomElement calcElement = doc->createElement(VAbstractPattern::TagCalculation);
@@ -189,11 +189,11 @@ void VToolBasePoint::AddToFile()
 
     patternPiece.appendChild(calcElement);
     patternPiece.appendChild(doc->createElement(VAbstractPattern::TagModeling));
-    patternPiece.appendChild(doc->createElement(VAbstractPattern::TagDetails));
+    patternPiece.appendChild(doc->createElement(VAbstractPattern::TagPieces));
 
-    AddPatternPiece *addPP = new AddPatternPiece(patternPiece, doc, draftBlockName);
-    connect(addPP, &AddPatternPiece::ClearScene, doc, &VAbstractPattern::ClearScene);
-    connect(addPP, &AddPatternPiece::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
+    AddDraftBlock *addPP = new AddDraftBlock(patternPiece, doc, draftBlockName);
+    connect(addPP, &AddDraftBlock::ClearScene, doc, &VAbstractPattern::ClearScene);
+    connect(addPP, &AddDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
     qApp->getUndoStack()->push(addPP);
 }
 
@@ -301,8 +301,8 @@ void VToolBasePoint::deleteTool(bool ask)
     }
 
     qCDebug(vTool, "Begin deleting.");
-    DeletePatternPiece *deletePP = new DeletePatternPiece(doc, nameActivDraw);
-    connect(deletePP, &DeletePatternPiece::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
+    DeleteDraftBlock *deletePP = new DeleteDraftBlock(doc, activeBlockName);
+    connect(deletePP, &DeleteDraftBlock::NeedFullParsing, doc, &VAbstractPattern::NeedFullParsing);
     qApp->getUndoStack()->push(deletePP);
 
     // Throw exception, this will help prevent case when we forget to immediately quit function.
@@ -422,7 +422,7 @@ void VToolBasePoint::showContextMenu(QGraphicsSceneContextMenuEvent *event, quin
 
     try
     {
-        if (doc->CountPP() > 1)
+        if (doc->draftBlockCount() > 1)
         {
             qCDebug(vTool, "Draft Block count > 1");
             ContextMenu<DialogSinglePoint>(event, id, RemoveOption::Enable, Referens::Ignore);

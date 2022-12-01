@@ -77,7 +77,7 @@ public:
 
     int IsBinaryDXF() const;
     int isTextAsPaths() const;
-    int IsExportOnlyDetails() const;
+    int exportOnlyPieces() const;
 
     //generator creation is moved here ... because most options are for it only, so no need to create extra getters...
     //@brief creates VLayoutGenerator

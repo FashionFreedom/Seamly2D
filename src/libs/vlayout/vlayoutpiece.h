@@ -141,16 +141,16 @@ public:
     void                      Rotate(const QPointF &originPoint, qreal degrees);
     void                      Mirror(const QLineF &edge);
 
-    int                       DetailEdgesCount() const;
+    int                       pieceEdgesCount() const;
     int                       LayoutEdgesCount() const;
 
-    QLineF                    DetailEdge(int i) const;
+    QLineF                    pieceEdge(int i) const;
     QLineF                    LayoutEdge(int i) const;
 
-    int                       DetailEdgeByPoint(const QPointF &p1) const;
+    int                       pieceEdgeByPoint(const QPointF &p1) const;
     int                       LayoutEdgeByPoint(const QPointF &p1) const;
 
-    QRectF                    DetailBoundingRect() const;
+    QRectF                    pieceBoundingRect() const;
     QRectF                    LayoutBoundingRect() const;
     qreal                     Diagonal() const;
 
@@ -168,7 +168,7 @@ public:
 private:
     QSharedDataPointer<VLayoutPieceData> d;
 
-    QVector<QPointF>                     DetailPath() const;
+    QVector<QPointF>                     piecePath() const;
 
     Q_REQUIRED_RESULT QGraphicsPathItem *createMainItem() const;
     void                                 createAllowanceItem(QGraphicsItem *parent) const;

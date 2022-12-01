@@ -146,7 +146,7 @@ private:
     bool                             evalVariableFormula(const QString &formula, bool fromUser,
                                                           VContainer *data, QLabel *label);
     void                             setMoveControls();
-    void                             enableDetails(bool enabled);
+    void                             enablePieces(bool enabled);
 
     void                             localUpdateTree();
 
