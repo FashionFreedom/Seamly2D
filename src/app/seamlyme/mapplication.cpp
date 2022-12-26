@@ -509,10 +509,12 @@ QString MApplication::diagramsPath() const
 
     if (appDirFile.exists())
     {
+        qDebug() << "diagrams.rcc exists in" << appDirFile << ", loading from there";
         return appDirFile.absoluteFilePath();
     }
     else if (usrShareFile.exists())
     {
+        qDebug() << "diagrams.rcc exists in" << usrShareFile << ", loading from there";
         return usrShareFile.absoluteFilePath();
     }
     else

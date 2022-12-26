@@ -162,6 +162,7 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     }
 #else // Unix
     Q_UNUSED(locale)
+    qDebug() << "translations: " << QStringLiteral("/usr/share/seamly2d") + trPath;
     return QStringLiteral("/usr/share/seamly2d") + trPath;
 #endif
 }
