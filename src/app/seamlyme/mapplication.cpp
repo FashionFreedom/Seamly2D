@@ -519,6 +519,7 @@ QString MApplication::diagramsPath() const
     }
     else
     {
+        qDebug() << "diagrams.rcc AppDataLocation:" << QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
         return QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
     }
 }
