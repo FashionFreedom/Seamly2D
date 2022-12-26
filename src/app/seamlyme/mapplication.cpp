@@ -520,7 +520,10 @@ QString MApplication::diagramsPath() const
     else
     {
         qDebug() << "diagrams.rcc AppDataLocation:" << QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
-        return QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
+
+        QString diagramsFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
+        qDebug() << "diagrams.rcc exists in" << diagramsFile << ", loading from there";
+        return diagramsFile;
     }
 }
 
