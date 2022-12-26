@@ -101,30 +101,6 @@ jobs:
         run: |
           mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
 
-      - name: Upload Seamly2D-x86_64.AppImage artifact
-        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: Seamly2D-x86_64.AppImage
-          path: './*AppImage*'
-
-      - name: find file path
-        id: path-lister
-        uses: Rishabh510/Path-lister-action@1.0
-        with:
-          path: "."
-          type: ".AppImage"
-
-      - name: show file path
-        run: |
-          # ---------------------------------
-          echo "-- show current directory --"          
-          pwd
-          echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.path-lister.outputs.paths }}; do
-          echo $i
-          done
-
       - name: upload file as pre-release
         uses: actions/upload-release-asset@v1.0.2
         env:
