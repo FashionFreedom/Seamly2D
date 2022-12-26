@@ -1,5 +1,5 @@
 name: Build qttest on pull_request
-# DOES NOT CREATE A RELEASE - BUILDS SEAMLY2D.EXE ON VIRTUAL SERVER TO RUN PRE-DEFINED TESTS
+# DOES NOT CREATE A RELEASE - builds Seamly2D AppImage and attaches to GH action run, runs unit tests
 # DOES NOT TEST SEAMLYME.EXE
 
 # Trigger on pull requests before merge
@@ -11,10 +11,10 @@ env:
 
 jobs:
 
-  build-test:
-    # run job 'build-test' for open pull_request that hasn't been merged yet
+  build-appimage:
+    # run job 'build-appimage' for open pull_request that hasn't been merged yet
     if: ( github.event.pull_request.merged == false )
-    name: 'Create Qt build'
+    name: 'Build AppImage'
     runs-on: ubuntu-22.04
 
     steps:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: install build dependencies
-        run: |  
+        run: |
           # ---------------------------------
           echo "-- install build dependencies --"
           sudo add-apt-repository universe
@@ -39,7 +39,59 @@ jobs:
           sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
           sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
 
-      - name: build Seamly2D & SeamlyMe
+      - name: build Seamly2D appimage
+        # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
+        # Seamly2D-continuous-x86_64.AppImage
+        run: |
+          # ---------------------------------
+          echo "-- get appimage-builder --"
+          sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
+          sudo chmod +x /usr/local/bin/appimage-builder
+          
+          # ---------------------------------
+          echo "-- run appimage-builder with appimage-builder-recipe-jammy.yml --"
+          appimage-builder --recipe dist/appimage-builder-recipe-jammy.yml --log INFO --skip-test
+
+      - name: copy to final file name Seamly2D-x86_64.AppImage
+        run: |
+          mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
+
+      - name: Upload Seamly2D-x86_64.AppImage artifact
+        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
+        uses: actions/upload-artifact@v3
+        with:
+          name: Seamly2D-x86_64.AppImage
+          path: './*AppImage*'
+
+  build-test:
+    # run job 'build-test' for open pull_request that hasn't been merged yet
+    if: ( github.event.pull_request.merged == false )
+    name: 'Create Qt build'
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: install build dependencies
+        run: |
+          # ---------------------------------
+          echo "-- install build dependencies --"
+          sudo add-apt-repository universe
+          sudo apt update
+          sudo apt install -y libfuse2
+          sudo apt install -y build-essential gettext git
+          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
+          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
+
+          # --------------------------------
+          echo "-- install additional packages ---"
+          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
+          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
+          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
+          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
+
+      - name: build Seamly2D & SeamlyMe for tests
         run: |
           # *********************************
           echo "-- show current directory --"
