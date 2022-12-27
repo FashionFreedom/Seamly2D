@@ -32,8 +32,8 @@ jobs:
         id: names
         run: |
           version_date_time="$(date +v%F.%H%M)"
-          echo "::set-output name=TAG_NAME::$version_date_time"
-          echo "::set-output name=RELEASE_NAME::$version_date_time"
+          echo "TAG_NAME=$version_date_time" >> $GITHUB_OUTPUT
+          echo "RELEASE_NAME:=$version_date_time" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
