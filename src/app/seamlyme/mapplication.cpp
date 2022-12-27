@@ -505,22 +505,20 @@ QString MApplication::diagramsPath() const
     const QString dPath = QStringLiteral("diagrams.rcc");
     QDir appDirectory(QCoreApplication::applicationDirPath());
     QFileInfo appDirFile(appDirectory.filePath(dPath));
-    QFileInfo usrShareFile(QStringLiteral("/usr/share/seamly2d/") + dPath);
-
+    QFileInfo appDirPath2(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/diagrams.rcc"));
     if (appDirFile.exists())
     {
         qDebug() << "diagrams.rcc exists in" << appDirFile << ", loading from there";
         return appDirFile.absoluteFilePath();
     }
-    else if (usrShareFile.exists())
+    else if (appDirPath2.exists())
     {
-        qDebug() << "diagrams.rcc exists in" << usrShareFile << ", loading from there";
-        return usrShareFile.absoluteFilePath();
+        qDebug() << "diagrams.rcc exists in" << appDirPath2 << ", loading from there";
+        return appDirPath2.absoluteFilePath();
     }
     else
     {
-        qDebug() << "diagrams.rcc AppDataLocation:" << QStandardPaths::standardLocations(QStandardPaths::AppDataLocation);
-
+        qDebug() << "diagrams.rcc not found, trying to locate via QStandardPaths";
         QString diagramsFile = QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
         qDebug() << "diagrams.rcc exists in" << diagramsFile << ", loading from there";
         return diagramsFile;
