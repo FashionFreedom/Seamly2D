@@ -504,10 +504,15 @@ QString MApplication::diagramsPath() const
 {
     const QString dPath = QStringLiteral("diagrams.rcc");
     QDir appDirectory(QCoreApplication::applicationDirPath());
-    QFileInfo file(appDirectory.filePath(dPath));
-    if (file.exists())
+    QFileInfo appDirFile(appDirectory.filePath(dPath));
+    QFileInfo appDirPath2(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/") + dPath);
+    if (appDirFile.exists())
     {
-        return file.absoluteFilePath();
+        return appDirFile.absoluteFilePath();
+    }
+    else if (appDirPath2.exists())
+    {
+        return appDirPath2.absoluteFilePath();
     }
     else
     {

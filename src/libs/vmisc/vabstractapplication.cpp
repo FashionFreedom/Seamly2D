@@ -162,7 +162,15 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     }
 #else // Unix
     Q_UNUSED(locale)
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + trPath;
+    QFileInfo appDirPath(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/translations/"));
+    if (appDirPath.exists())
+    {
+        return appDirPath.absolutePath();
+    }
+    else
+    {
+        return QStringLiteral("/usr/share/seamly2d/translations/");
+    }
 #endif
 }
 
