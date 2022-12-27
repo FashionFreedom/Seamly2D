@@ -165,8 +165,8 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     QFileInfo appDirPath(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/translations/"));
     if (appDirPath.exists())
     {
-        qDebug() << "translations: " << appDirPath.canonicalPath();
-        return appDirPath.canonicalPath();
+        qDebug() << "translations: " << appDirPath.absolutePath();
+        return appDirPath.absolutePath();
     }
     else
     {
