@@ -162,15 +162,14 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     }
 #else // Unix
     Q_UNUSED(locale)
-    QFileInfo appDirPath(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/translations/"));
+    QFileInfo appDirPath(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d") + trPath);
     if (appDirPath.exists())
     {
-        qDebug() << "translations: " << appDirPath.absolutePath();
         return appDirPath.absolutePath();
     }
     else
     {
-        qDebug() << "translations fallback: " << QStringLiteral("/usr/share/seamly2d") + trPath;
+        qCDebug() << "translations fallback: " << QStringLiteral("/usr/share/seamly2d") + trPath;
         return QStringLiteral("/usr/share/seamly2d") + trPath;
     }
 #endif
