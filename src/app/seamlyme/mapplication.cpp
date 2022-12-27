@@ -516,7 +516,6 @@ QString MApplication::diagramsPath() const
     }
     else
     {
-        qCDebug() << "diagrams.rcc not found, trying to locate via QStandardPaths";
         return QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
     }
 }

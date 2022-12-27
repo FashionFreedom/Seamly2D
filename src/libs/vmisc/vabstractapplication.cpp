@@ -169,7 +169,6 @@ QString VAbstractApplication::translationsPath(const QString &locale) const
     }
     else
     {
-        qCDebug() << "translations fallback: " << QStringLiteral("/usr/share/seamly2d") + trPath;
         return QStringLiteral("/usr/share/seamly2d") + trPath;
     }
 #endif
