@@ -50,130 +50,8 @@ UI_DIR = uic
 include(seamlyme.pri)
 
 RESOURCES += \
-    share/resources/seamlymeicon.qrc
-
-DATA_RESOURCE = share/resources/diagrams.qrc # External Binary Resource
-
-# The list helps to check that all files are exist.
-# Don't forget to convert text to curves.
-DIAGRAMS += \
-        $${PWD}/share/resources/diagrams/Ap1.svg \
-        $${PWD}/share/resources/diagrams/Ap2.svg \
-        $${PWD}/share/resources/diagrams/Bp1.svg \
-        $${PWD}/share/resources/diagrams/Bp2.svg \
-        $${PWD}/share/resources/diagrams/Cp1.svg \
-        $${PWD}/share/resources/diagrams/Cp2.svg \
-        $${PWD}/share/resources/diagrams/Dp1.svg \
-        $${PWD}/share/resources/diagrams/Dp2.svg \
-        $${PWD}/share/resources/diagrams/Dp3.svg \
-        $${PWD}/share/resources/diagrams/Ep1.svg \
-        $${PWD}/share/resources/diagrams/Ep2.svg \
-        $${PWD}/share/resources/diagrams/Fp1.svg \
-        $${PWD}/share/resources/diagrams/Fp2.svg \
-        $${PWD}/share/resources/diagrams/Fp3.svg \
-        $${PWD}/share/resources/diagrams/Gp1.svg \
-        $${PWD}/share/resources/diagrams/Gp2.svg \
-        $${PWD}/share/resources/diagrams/Gp3.svg \
-        $${PWD}/share/resources/diagrams/Gp4.svg \
-        $${PWD}/share/resources/diagrams/Gp5.svg \
-        $${PWD}/share/resources/diagrams/Gp6.svg \
-        $${PWD}/share/resources/diagrams/Gp7.svg \
-        $${PWD}/share/resources/diagrams/Gp8.svg \
-        $${PWD}/share/resources/diagrams/Gp9.svg \
-        $${PWD}/share/resources/diagrams/Hp1.svg \
-        $${PWD}/share/resources/diagrams/Hp2.svg \
-        $${PWD}/share/resources/diagrams/Hp3.svg \
-        $${PWD}/share/resources/diagrams/Hp4.svg \
-        $${PWD}/share/resources/diagrams/Hp5.svg \
-        $${PWD}/share/resources/diagrams/Hp6.svg \
-        $${PWD}/share/resources/diagrams/Hp7.svg \
-        $${PWD}/share/resources/diagrams/Hp8.svg \
-        $${PWD}/share/resources/diagrams/Hp9.svg \
-        $${PWD}/share/resources/diagrams/Hp10.svg \
-        $${PWD}/share/resources/diagrams/Hp11.svg \
-        $${PWD}/share/resources/diagrams/Hp12.svg \
-        $${PWD}/share/resources/diagrams/Hp13.svg \
-        $${PWD}/share/resources/diagrams/Ip1.svg \
-        $${PWD}/share/resources/diagrams/Ip2.svg \
-        $${PWD}/share/resources/diagrams/Ip3.svg \
-        $${PWD}/share/resources/diagrams/Ip4.svg \
-        $${PWD}/share/resources/diagrams/Ip5.svg \
-        $${PWD}/share/resources/diagrams/Ip6.svg \
-        $${PWD}/share/resources/diagrams/Ip7.svg \
-        $${PWD}/share/resources/diagrams/Jp1.svg \
-        $${PWD}/share/resources/diagrams/Jp2.svg \
-        $${PWD}/share/resources/diagrams/Jp3.svg \
-        $${PWD}/share/resources/diagrams/Jp4.svg \
-        $${PWD}/share/resources/diagrams/Jp5.svg \
-        $${PWD}/share/resources/diagrams/Jp6.svg \
-        $${PWD}/share/resources/diagrams/Kp1.svg \
-        $${PWD}/share/resources/diagrams/Kp2.svg \
-        $${PWD}/share/resources/diagrams/Kp3.svg \
-        $${PWD}/share/resources/diagrams/Kp4.svg \
-        $${PWD}/share/resources/diagrams/Kp5.svg \
-        $${PWD}/share/resources/diagrams/Kp6.svg \
-        $${PWD}/share/resources/diagrams/Kp7.svg \
-        $${PWD}/share/resources/diagrams/Kp8.svg \
-        $${PWD}/share/resources/diagrams/Kp9.svg \
-        $${PWD}/share/resources/diagrams/Kp10.svg \
-        $${PWD}/share/resources/diagrams/Kp11.svg \
-        $${PWD}/share/resources/diagrams/Lp1.svg \
-        $${PWD}/share/resources/diagrams/Lp2.svg \
-        $${PWD}/share/resources/diagrams/Lp3.svg \
-        $${PWD}/share/resources/diagrams/Lp4.svg \
-        $${PWD}/share/resources/diagrams/Lp5.svg \
-        $${PWD}/share/resources/diagrams/Lp6.svg \
-        $${PWD}/share/resources/diagrams/Lp7.svg \
-        $${PWD}/share/resources/diagrams/Lp8.svg \
-        $${PWD}/share/resources/diagrams/Lp9.svg \
-        $${PWD}/share/resources/diagrams/Lp10.svg \
-        $${PWD}/share/resources/diagrams/Mp1.svg \
-        $${PWD}/share/resources/diagrams/Mp2.svg \
-        $${PWD}/share/resources/diagrams/Mp3.svg \
-        $${PWD}/share/resources/diagrams/Np1.svg \
-        $${PWD}/share/resources/diagrams/Np2.svg \
-        $${PWD}/share/resources/diagrams/Np3.svg \
-        $${PWD}/share/resources/diagrams/Np4.svg \
-        $${PWD}/share/resources/diagrams/Np5.svg \
-        $${PWD}/share/resources/diagrams/Op1.svg \
-        $${PWD}/share/resources/diagrams/Op2.svg \
-        $${PWD}/share/resources/diagrams/Op3.svg \
-        $${PWD}/share/resources/diagrams/Op4.svg \
-        $${PWD}/share/resources/diagrams/Op5.svg \
-        $${PWD}/share/resources/diagrams/Op6.svg \
-        $${PWD}/share/resources/diagrams/Op7.svg \
-        $${PWD}/share/resources/diagrams/Op8.svg \
-        $${PWD}/share/resources/diagrams/Op9.svg \
-        $${PWD}/share/resources/diagrams/Op10.svg \
-        $${PWD}/share/resources/diagrams/Op11.svg \
-        $${PWD}/share/resources/diagrams/Pp1.svg \
-        $${PWD}/share/resources/diagrams/Pp2.svg \
-        $${PWD}/share/resources/diagrams/Pp3.svg \
-        $${PWD}/share/resources/diagrams/Pp4.svg \
-        $${PWD}/share/resources/diagrams/Pp5.svg \
-        $${PWD}/share/resources/diagrams/Pp6.svg \
-        $${PWD}/share/resources/diagrams/Pp7.svg \
-        $${PWD}/share/resources/diagrams/Pp8.svg \
-        $${PWD}/share/resources/diagrams/Pp9.svg \
-        $${PWD}/share/resources/diagrams/Pp10.svg \
-        $${PWD}/share/resources/diagrams/Pp11.svg \
-        $${PWD}/share/resources/diagrams/Pp12.svg \
-        $${PWD}/share/resources/diagrams/Qp1.svg \
-        $${PWD}/share/resources/diagrams/Qp2.svg \
-        $${PWD}/share/resources/diagrams/Qp3.svg
-
-!exists($${OUT_PWD}/$${DESTDIR}/diagrams.rcc) {
-    diagrams.name = resource diagrams
-    diagrams.CONFIG += no_link target_predeps
-    diagrams.depends = $$DIAGRAMS # expects a list of files
-    diagrams.input = DATA_RESOURCE # expects the name of a variable
-    diagrams.output = ${QMAKE_FILE_BASE}.rcc
-    diagrams.commands = $$shell_path($$[QT_INSTALL_BINS]/rcc) -binary -no-compress ${QMAKE_FILE_IN} -o $${OUT_PWD}/$${DESTDIR}/${QMAKE_FILE_OUT}
-
-QMAKE_EXTRA_COMPILERS += diagrams
-}
-
-QMAKE_CLEAN += $${OUT_PWD}/$${DESTDIR}/diagrams.rcc
+    share/resources/seamlymeicon.qrc \
+    share/resources/diagrams.qrc
 
 # INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
 include(../tables.pri)
@@ -214,13 +92,8 @@ unix{
         # Path to bin file after installation
         target.path = $$PREFIX/bin
 
-        rcc_diagrams.path = $$PREFIX/share/seamly2d/
-        rcc_diagrams.files = $${OUT_PWD}/$${DESTDIR}/diagrams.rcc
-        rcc_diagrams.CONFIG = no_check_exist
-
         INSTALLS += \
-            target \
-            rcc_diagrams
+            target
     }
     macx{
         # Some macx stuff
@@ -273,10 +146,6 @@ unix{
         templates.path = $$RESOURCES_DIR/tables/templates/
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
-        # Copy to bundle multisize measurements files
-        # We cannot add none exist files to bundle through QMAKE_BUNDLE_DATA. That's why we must do this manually.
-        QMAKE_POST_LINK += $$VCOPY $$quote($${OUT_PWD}/$${DESTDIR}/diagrams.rcc) $$quote($$shell_path($${OUT_PWD}/$$DESTDIR/$${TARGET}.app/$$RESOURCES_DIR/)) $$escape_expand(\\n\\t)
-
         format.path = $$RESOURCES_DIR/
         format.files += $$PWD/../../../dist/macx/i-measurements.icns
         format.files += $$PWD/../../../dist/macx/s-measurements.icns
@@ -300,8 +169,7 @@ win32 {
 
 # Compilation will fail without this files after we added them to this section.
 OTHER_FILES += \
-    share/resources/seamlymeicon/64x64/logo.ico \ # SeamlyMe's logo.
-    $$DATA_RESOURCE
+    share/resources/seamlymeicon/64x64/logo.ico # SeamlyMe's logo.
 
 # Set using ccache. Function enable_ccache() defined in common.pri.
 $$enable_ccache()

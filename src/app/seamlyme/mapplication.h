@@ -92,8 +92,6 @@ public:
     virtual void  OpenSettings() Q_DECL_OVERRIDE;
     VSeamlyMeSettings *SeamlyMeSettings();
 
-    QString diagramsPath() const;
-
     void ShowDataBase();
     void retranslateGroups();
     void RetranslateTables();

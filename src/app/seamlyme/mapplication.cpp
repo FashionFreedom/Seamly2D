@@ -422,8 +422,6 @@ void MApplication::InitOptions()
        //This does not happen under GNOME or KDE
        QIcon::setThemeName("win.icon.theme");
     }
-
-    QResource::registerResource(diagramsPath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -497,27 +495,6 @@ VSeamlyMeSettings *MApplication::SeamlyMeSettings()
 {
     SCASSERT(settings != nullptr)
     return qobject_cast<VSeamlyMeSettings *>(settings);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QString MApplication::diagramsPath() const
-{
-    const QString dPath = QStringLiteral("diagrams.rcc");
-    QDir appDirectory(QCoreApplication::applicationDirPath());
-    QFileInfo appDirFile(appDirectory.filePath(dPath));
-    QFileInfo appDirPath2(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/") + dPath);
-    if (appDirFile.exists())
-    {
-        return appDirFile.absoluteFilePath();
-    }
-    else if (appDirPath2.exists())
-    {
-        return appDirPath2.absoluteFilePath();
-    }
-    else
-    {
-        return QStandardPaths::locate(QStandardPaths::AppDataLocation, dPath);
-    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
