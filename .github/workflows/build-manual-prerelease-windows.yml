@@ -103,7 +103,6 @@ jobs:
           copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
           New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
           Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
-          Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
