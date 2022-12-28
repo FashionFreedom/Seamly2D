@@ -25,19 +25,8 @@ jobs:
         run: |
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo add-apt-repository universe
           sudo apt update
-          sudo apt install -y libfuse2
-          sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
-          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-
-          # --------------------------------
-          echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
-          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
-          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
-          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
@@ -79,17 +68,7 @@ jobs:
           echo "-- install build dependencies --"
           sudo add-apt-repository universe
           sudo apt update
-          sudo apt install -y libfuse2
-          sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
-          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-
-          # --------------------------------
-          echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
-          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
-          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
-          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
