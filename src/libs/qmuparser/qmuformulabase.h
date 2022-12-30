@@ -26,16 +26,14 @@
 #include <QString>
 #include <QtGlobal>
 
-#include "../qmuparser/qmuparser_global.h"
 #include "qmuparser.h"
-#include "qmuparser_global.h"
 
 template <class Key, class T> class QMap;
 
 namespace qmu
 {
 
-class QMUPARSERSHARED_EXPORT QmuFormulaBase : public QmuParser
+class QmuFormulaBase : public QmuParser
 {
 public:
     QmuFormulaBase();

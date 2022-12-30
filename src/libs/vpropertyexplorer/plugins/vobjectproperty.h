@@ -33,14 +33,13 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 class QComboBox;
 
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VObjectProperty : public VProperty
+class VObjectProperty : public VProperty
 {
     Q_OBJECT
 public:

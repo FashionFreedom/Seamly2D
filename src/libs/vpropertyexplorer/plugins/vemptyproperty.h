@@ -31,7 +31,6 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
@@ -41,7 +40,7 @@ class VPropertyPrivate;
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VEmptyProperty : public VProperty
+class VEmptyProperty : public VProperty
 {
     Q_OBJECT
 public:

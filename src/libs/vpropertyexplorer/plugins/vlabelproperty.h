@@ -63,14 +63,13 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
 
 //! Class for holding a string property
-class VPROPERTYEXPLORERSHARED_EXPORT VLabelProperty : public VProperty
+class VLabelProperty : public VProperty
 {
     Q_OBJECT
 public:

@@ -18,7 +18,6 @@ SOURCES += \
 
 HEADERS += \
     $$PWD/qmuparser.h\
-    $$PWD/qmuparser_global.h \
     $$PWD/qmuparsertokenreader.h \
     $$PWD/qmuparsertoken.h \
     $$PWD/qmuparserfixes.h \

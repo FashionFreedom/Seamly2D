@@ -31,12 +31,11 @@
 #include <QtGlobal>
 
 #include "../../vproperty.h"
-#include "../../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
-struct VPROPERTYEXPLORERSHARED_EXPORT Vector3D //-V690
+struct Vector3D //-V690
 {
 public:
     Vector3D()
@@ -70,7 +69,7 @@ Q_DECLARE_METATYPE(QPE::Vector3D)   // todo
 
 */
 
-class VPROPERTYEXPLORERSHARED_EXPORT QVector3DProperty : public VProperty
+class QVector3DProperty : public VProperty
 {
     Q_OBJECT
 public:

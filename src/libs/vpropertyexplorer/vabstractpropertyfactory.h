@@ -21,7 +21,6 @@
 #ifndef VABSTRACTPROPERTYFACTORY_H
 #define VABSTRACTPROPERTYFACTORY_H
 
-#include "vpropertyexplorer_global.h"
 #include "../vmisc/diagnostic.h"
 #include <QObject>
 
@@ -33,7 +32,7 @@ class VProperty;
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wweak-vtables")
 
-class VPROPERTYEXPLORERSHARED_EXPORT VAbstractPropertyFactory
+class VAbstractPropertyFactory
 {
 public:
     //! Empty virtual destructor

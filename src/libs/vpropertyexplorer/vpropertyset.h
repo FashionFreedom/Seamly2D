@@ -27,7 +27,6 @@
 #include <QtGlobal>
 
 #include "vproperty.h"
-#include "vpropertyexplorer_global.h"
 
 template <class Key, class T> class QMap;
 template <typename T> class QList;
@@ -45,7 +44,7 @@ class VPropertySetPrivate;
 //!
 
 //!
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertySet
+class VPropertySet
 {
 public:
     //! Default constructor, creating an empty property set

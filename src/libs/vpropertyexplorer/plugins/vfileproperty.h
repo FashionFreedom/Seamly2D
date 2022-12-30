@@ -33,12 +33,11 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VFileProperty : public VProperty
+class VFileProperty : public VProperty
 {
     Q_OBJECT
 public:

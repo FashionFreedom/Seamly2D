@@ -65,12 +65,13 @@ CONFIG(release, debug|release){
     }
 }
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../../libs/qmuparser/bin/ -lqmuparser2
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../../libs/qmuparser/bin/ -lqmuparser2
-else:unix: LIBS += -L$$OUT_PWD/../../libs/qmuparser/bin/ -lqmuparser
+unix|win32: LIBS += -L$$OUT_PWD/../../libs/qmuparser/bin/ -lqmuparser
 
 INCLUDEPATH += $$PWD/../../libs/qmuparser
 DEPENDPATH += $$PWD/../../libs/qmuparser
+
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR}/qmuparser.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR}/libqmuparser.a
 
 noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
     # do nothing

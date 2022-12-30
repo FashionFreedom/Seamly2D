@@ -33,14 +33,13 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
 
 //! Class for holding an integer property
-class VPROPERTYEXPLORERSHARED_EXPORT VIntegerProperty : public VProperty
+class VIntegerProperty : public VProperty
 {
     Q_OBJECT
 public:
@@ -95,7 +94,7 @@ private:
 
 
 //! Class for holding a double property
-class VPROPERTYEXPLORERSHARED_EXPORT VDoubleProperty : public VIntegerProperty
+class VDoubleProperty : public VIntegerProperty
 {
     Q_OBJECT
 public:

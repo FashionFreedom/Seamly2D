@@ -29,8 +29,6 @@
 #include <QString>
 #include <QtGlobal>
 
-#include "vpropertyexplorer_global.h"
-
 class QSettings;
 
 namespace Utils
@@ -38,7 +36,7 @@ namespace Utils
 
 class CheckableMessageBoxPrivate;
 
-class VPROPERTYEXPLORERSHARED_EXPORT CheckableMessageBox : public QDialog
+class CheckableMessageBox : public QDialog
 {
     Q_OBJECT
     Q_PROPERTY(QString text READ text WRITE setText)

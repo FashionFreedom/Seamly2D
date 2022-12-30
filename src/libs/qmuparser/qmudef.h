@@ -22,8 +22,6 @@
 #ifndef QMUDEF_H
 #define QMUDEF_H
 
-#include "qmuparser_global.h"
-
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wattributes")
 
@@ -52,7 +50,7 @@ const QChar expLower       = (locale).exponential().toLower(); \
 const QChar decimalPoint   = (locale).decimalPoint();          \
 const QChar groupSeparator = (locale).groupSeparator()         \
 
-QMUPARSERSHARED_EXPORT QString NameRegExp();
+QString NameRegExp();
 
 QT_WARNING_POP
 
@@ -73,7 +71,7 @@ static inline bool QmuFuzzyComparePossibleNulls(double p1, double p2)
     }
 }
 
-QMUPARSERSHARED_EXPORT int ReadVal(const QString &formula, qreal &val, const QLocale &locale, const QChar &decimal,
+int ReadVal(const QString &formula, qreal &val, const QLocale &locale, const QChar &decimal,
                                    const QChar &thousand);
 
 #endif // QMUDEF_H

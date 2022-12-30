@@ -32,9 +32,7 @@
 #include <locale>
 #include <QRandomGenerator>
 
-#include "../qmuparser/qmuparser_global.h"
 #include "qmuparser.h"
-#include "qmuparser_global.h"
 #include "qmuparserdef.h"
 #include "qmuparsererror.h"
 
@@ -56,7 +54,7 @@ namespace Test
  *
  * (C) 2004-2011 Ingo Berg
  */
-class QMUPARSERSHARED_EXPORT QmuParserTester : public QObject // final
+class QmuParserTester : public QObject // final
 {
     Q_OBJECT
 public:

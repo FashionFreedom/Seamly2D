@@ -33,7 +33,6 @@
 #include <QtGlobal>
 
 #include "vproperty.h"
-#include "vpropertyexplorer_global.h"
 
 namespace VPE
 {
@@ -60,7 +59,7 @@ class VPropertySet;
 //! to work with. Thus, instead of subclassing VPropertyModel, it is also
 //! possible to use VPropertyModel directly (as it is not an abstract class).
 //! This might be more convenient in some cases.
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyModel : public QAbstractItemModel
+class VPropertyModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:

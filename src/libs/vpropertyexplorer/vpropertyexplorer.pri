@@ -35,7 +35,6 @@ SOURCES += \
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS +=\
-    $$PWD/vpropertyexplorer_global.h \
     $$PWD/vpropertyfactorymanager_p.h \
     $$PWD/vpropertytreeview_p.h \
     $$PWD/vpropertyset_p.h \

@@ -26,13 +26,12 @@
 #include <QVariant>
 
 #include "vproperty.h"
-#include "vpropertyexplorer_global.h"
 #include "vpropertyset.h"
 
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VSerializedProperty
+class VSerializedProperty
 {
 public:
     //! Constructor

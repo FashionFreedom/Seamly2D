@@ -32,14 +32,13 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
 
 //! Class for holding a string property
-class VPROPERTYEXPLORERSHARED_EXPORT VStringProperty : public VProperty
+class VStringProperty : public VProperty
 {
     Q_OBJECT
 public:

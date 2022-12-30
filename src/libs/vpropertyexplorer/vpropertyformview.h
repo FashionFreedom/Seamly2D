@@ -28,7 +28,6 @@
 #include <QString>
 #include <QtGlobal>
 
-#include "vpropertyexplorer_global.h"
 #include "vpropertyformwidget.h"
 
 namespace VPE
@@ -37,7 +36,7 @@ namespace VPE
 class VPropertyModel;
 
 //! This class populates a form layout with the properties in a model
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyFormView : public VPropertyFormWidget
+class VPropertyFormView : public VPropertyFormWidget
 {
     Q_OBJECT
 public:
