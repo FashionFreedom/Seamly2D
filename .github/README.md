@@ -13,12 +13,16 @@ Unlike other pattern design software, Seamly2D allows designers to have complete
 Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, MacOS, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
 
 ## Supported platforms:  
-   * Windows 10 (64-bit)
+   * Windows 10 & 11 (64-bit)
    * Most current Linux distros via [Flathub](https://flathub.org/apps/details/net.seamly.seamly2d)
    * Mac OS X 10.8 (64-bit) or later
 
-## Download Seamly2D
-Download from our Releases page [here:](https://github.com/fashionfreedom/seamly2d/releases/latest)
+## Download Seamly2D:
+
+| Windows | macOS | Linux |
+| ---     | ---   | ---   |
+| [Seamly2D-windows.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [Seamly2D-macos.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
+
 ___________________________________________________
 ## Seamly2D Community Resources:
    * [Website and downloads](https://seamly.net)  
