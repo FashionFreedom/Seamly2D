@@ -158,8 +158,6 @@ Name: "lang_files\chinese"; Description: "Chinese (China)"; Types: full custom; 
 ; Signing
 Source: ".\Seamly2D\seamly2d.exe"; DestDir: "{app}"; Flags: ignoreversion sign
 Source: ".\Seamly2D\seamlyme.exe"; DestDir: "{app}"; Flags: ignoreversion sign
-Source: ".\Seamly2D\vpropertyexplorer.dll"; DestDir: "{app}"; Flags: ignoreversion sign
-Source: ".\Seamly2D\qmuparser2.dll"; DestDir: "{app}"; Flags: ignoreversion sign
 ; Localizations
 Source: ".\Seamly2D\translations\*_en_US.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\english\us
 Source: ".\Seamly2D\translations\*_en_IN.qm"; DestDir: "{app}\translations"; Flags: ignoreversion; Components: lang_files\english\in
