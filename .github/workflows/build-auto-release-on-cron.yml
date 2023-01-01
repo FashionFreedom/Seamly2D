@@ -33,7 +33,7 @@ jobs:
         run: |
           version_date_time="$(date +v%F.%H%M)"
           echo "TAG_NAME=$version_date_time" >> $GITHUB_OUTPUT
-          echo "RELEASE_NAME:=$version_date_time" >> $GITHUB_OUTPUT
+          echo "RELEASE_NAME=$version_date_time" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
