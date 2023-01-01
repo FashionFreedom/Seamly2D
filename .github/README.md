@@ -63,9 +63,9 @@ ___________________________________________________
 ```
 * The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:  
 ```
-    qmake PREFIX=/usr/local Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
 ```
-where `/usr/local` is a new prefix for installation binary files.
+where `/usr/local` is a new prefix for installation binary files and `/usr/lib/i386-linux-gnu` is new prefix for install libraries.
 Add path to Qt using `.bashrc`
 
 #### Ubuntu 22.04
