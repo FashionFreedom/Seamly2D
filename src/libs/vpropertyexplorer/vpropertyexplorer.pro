@@ -20,8 +20,6 @@ TARGET = vpropertyexplorer
 # We want create library
 TEMPLATE = lib
 
-CONFIG += staticlib
-
 # Since Q5.4 available support C++14
 greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
     CONFIG += c++14
@@ -50,6 +48,24 @@ macx:QMAKE_SONAME_PREFIX = @rpath
 
 include(vpropertyexplorer.pri)
 
+# Set "make install" command for Unix-like systems.
+unix:!macx{
+    isEmpty(PREFIX_LIB){
+        isEmpty(PREFIX){
+            PR_LIB = $$DEFAULT_PREFIX
+        } else {
+            PR_LIB = $$PREFIX
+        }
+        contains(QMAKE_HOST.arch, x86_64) {
+            PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
+        } else {
+            PREFIX_LIB = $$PR_LIB/lib/Seamly2D
+        }
+    }
+    target.path = $$PREFIX_LIB
+    INSTALLS += target
+}
+
 # Set using ccache. Function enable_ccache() defined in common.pri.
 $$enable_ccache()
 
@@ -76,6 +92,17 @@ CONFIG(release, debug|release){
             QMAKE_CXXFLAGS_RELEASE += -g -gdwarf-3
             QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
             QMAKE_LFLAGS_RELEASE =
+
+            noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
+                # do nothing
+            } else {
+                # Strip debug symbols.
+                QMAKE_POST_LINK += objcopy --only-keep-debug bin/${TARGET} bin/${TARGET}.dbg &&
+                QMAKE_POST_LINK += objcopy --strip-debug bin/${TARGET} &&
+                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="bin/${TARGET}.dbg" bin/${TARGET}
+            }
+
+            QMAKE_DISTCLEAN += bin/${TARGET}.dbg
         }
     }
 }
