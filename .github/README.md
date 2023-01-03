@@ -49,35 +49,35 @@ Development methods and styles:
    * Github issue description style guide: https://guides.github.com/features/issues/
 
 Build method:
-   * Building with Qt: https://forum.seamly.net/t/how-to-build-with-qt/1833
    * Read more about code styles, issues, and other developer items of interest here: https://github.com/FashionFreedom/Seamly2D/wiki
 ___________________________________________________
 ## Install Additional Libraries and Programs:
 
-### to build Seamly code on Linux (general)
+### to build Seamly code on Linux
+
+These instructions apply in general, with Ubuntu 22.04 as example:
+
 * Install QtCreator for your distribution: https://wiki.qt.io/VendorPackages.
-* For Linux in general, these additional tools and libraries may be required:
-- gnu compiler
-- poppler (pdftops)
-- OpenGL libraries
-- XMLpatterns:  https://command-not-found.com/xmlpatterns
-* All Qt-tools come as qmake-qt5, etc. If you build from command line instead of within Qt Creator, run the following prior to running *qmake-qt5*:
+* For Linux in general, these additional tools and libraries are required:
+  - gnu compiler
+  - poppler (pdftops)
+  - OpenGL libraries
+* Install Qt 5.15
+  - Example for Ubuntu 22.04: Install the following packages to have Qt5 build environment ready:
 ```
-    export QT_SELECT=5
+  sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
+```
+* Build and install:  
+```
+    qmake Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    make -j$(nproc)
+    sudo make install
 ```
 * The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:  
 ```
     qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
 ```
 where `/usr/local` is a new prefix for installation binary files and `/usr/lib/i386-linux-gnu` is new prefix for install libraries.
-Add path to Qt using `.bashrc`
-
-#### Ubuntu 22.04
-* Install the following packages to have Qt5 build environment ready:
-```
-  sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
-  sudo apt install -y poppler-utils
-```
 
 In doubt check how the github action CI [does it](workflows/build-auto-release-on-cron.yml).
 
@@ -101,9 +101,8 @@ ___________________________________________________
 ## Additional Information about Qt
 
 * Add Seamly2d, gcc, g++, xpdf, and QtCreator directories to your operating system's `PATH` environment variable via Linux `.bashrc` or Windows' Control Panel.(example: for Windows add  `c:\Qt\%VERSION%\bin`)
-* Use *QtChooser* to update and set the latest QT version as default.
 * In *QtCreator* create your compiler kit (eg MSVC 2019, g++, gdb) and assign the compiler kit to your project. This automatically defines your Qt variables for compilers, debuggers, etc.
-* Build Seamly2D from within *QtCreator* (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake-qtx* from a terminal window:
+* Build Seamly2D from within *QtCreator* (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake* from a terminal window:
 ```
 cd $SOURCE_DIRECTORY\build
 qmake ..\Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
