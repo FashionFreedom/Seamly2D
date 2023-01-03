@@ -32,8 +32,8 @@ jobs:
         id: names
         run: |
           version_date_time="$(date +v%F.%H%M)"
-          echo "::set-output name=TAG_NAME::$version_date_time"
-          echo "::set-output name=RELEASE_NAME::$version_date_time"
+          echo "TAG_NAME=$version_date_time" >> $GITHUB_OUTPUT
+          echo "RELEASE_NAME=$version_date_time" >> $GITHUB_OUTPUT
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -71,23 +71,8 @@ jobs:
         run: |  
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo add-apt-repository universe
           sudo apt update
-          sudo apt install -y libfuse2
-          sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
-          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-
-          #----------------------------------
-          echo "-- install support for Wayland --"
-          sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev
-
-          # --------------------------------
-          echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
-          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
-          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
-          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
@@ -105,28 +90,6 @@ jobs:
       - name: copy to final file name Seamly2D-x86_64.AppImage
         run: |
           mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
-
-      - name: Upload Seamly2D-x86_64.AppImage artifact
-        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v3.1.1
-        with:
-          name: Seamly2D-x86_64.AppImage
-          path: './*AppImage*'
-
-      - name: find file path
-        id: path-lister
-        uses: Rishabh510/Path-lister-action@1.0
-        with:
-          path: "."
-          type: ".AppImage"
-
-      - name: show file path
-        run: | 
-          pwd
-          echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.path-lister.outputs.paths }}; do
-          echo $i
-          done
 
       - name: upload file as release
         uses: actions/upload-release-asset@v1.0.2
@@ -147,7 +110,7 @@ jobs:
     steps:
 
       - name: checkout code
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v3
 
       - name: install qt
         uses: jurplel/install-qt-action@v2.14.0
@@ -187,7 +150,7 @@ jobs:
     steps:
 
       - name: checkout code
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v3
 
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1.10.0
@@ -223,7 +186,6 @@ jobs:
           copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
           New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
           Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
-          Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
@@ -237,7 +199,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-
           upload_url: ${{ env.UPLOAD_URL }}
           asset_path: ../windows-build/Seamly2D-windows.zip
           asset_name: Seamly2D-windows.zip

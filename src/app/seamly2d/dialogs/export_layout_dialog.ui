@@ -736,7 +736,7 @@ border-radius: 4px;
             <item>
              <widget class="QToolButton" name="portrait_ToolButton">
               <property name="text">
-               <string>...</string>
+               <string notr="true">...</string>
               </property>
               <property name="icon">
                <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
@@ -756,7 +756,7 @@ border-radius: 4px;
             <item>
              <widget class="QToolButton" name="landscape_ToolButton">
               <property name="text">
-               <string>...</string>
+               <string notr="true">...</string>
               </property>
               <property name="icon">
                <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">

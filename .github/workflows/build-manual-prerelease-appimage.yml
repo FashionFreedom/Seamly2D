@@ -73,23 +73,8 @@ jobs:
         run: |  
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo add-apt-repository universe
           sudo apt update
-          sudo apt install -y libfuse2
-          sudo apt install -y build-essential gettext git
-          sudo apt install -y qttools5-dev libqt5xml5 libqt5svg5-dev libqt5xmlpatterns5-dev libdrm-dev
-          sudo apt install -y '^libxcb.*-dev' libxcb-util-dev libx11-xcb-dev libglu1-mesa-dev libxrender-dev libxi-dev libxkbcommon-dev libxkbcommon-x11-dev
-
-          #----------------------------------
-          echo "-- install support for Wayland --"
-          sudo apt install -y libwayland-bin libwayland-dev libmirwayland-dev
-
-          # --------------------------------
-          echo "-- install additional packages ---"
-          sudo apt install -y nickle wish libgcrypt20 libjpeg-turbo8 liblz4-1 libpoppler118
-          sudo apt install -y libsm6 libx11-xcb-dev libxau6 libxcb-render-util0 libxcb-sync1 libxcb-xinerama0 libxcb-xkb1 
-          sudo apt install -y libxdmcp6 libxext6 libxfixes3 libxrender1 libxshmfence1 libxxf86vm1
-          sudo apt install -y qt5-gtk-platformtheme qt5-image-formats-plugins qttranslations5-l10n qtwayland5
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
@@ -110,30 +95,6 @@ jobs:
           echo "-- find the Seamly2D appimage file & rename it --"   
           ls -la . | grep 'Seamly2D-continuous-x86_64.*'    
           mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
-
-      - name: Upload Seamly2D-x86_64.AppImage artifact
-        # upload Seamly2D-x86_64.AppImage as artifact to Github Workflows
-        uses: actions/upload-artifact@v3.1.0
-        with:
-          name: Seamly2D-x86_64.AppImage
-          path: './*AppImage*'
-
-      - name: find file path
-        id: path-lister
-        uses: Rishabh510/Path-lister-action@1.0
-        with:
-          path: "."
-          type: ".AppImage"
-
-      - name: show file path
-        run: |
-          # ---------------------------------
-          echo "-- show current directory --"          
-          pwd
-          echo "Found ${{ steps.path-lister.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.path-lister.outputs.paths }}; do
-          echo $i
-          done
 
       - name: upload file as pre-release
         # uploads Seamly2D-x86_64.AppImage as pre-release to Github Releases

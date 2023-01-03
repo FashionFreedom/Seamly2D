@@ -271,10 +271,6 @@ unix{
         icns_resources.files += $$PWD/../../../dist/macx/s-measurements.icns
         icns_resources.files += $$PWD/../../../dist/macx/pattern.icns
 
-        # Copy to bundle multisize measurements files
-        # We cannot add none exist files to bundle through QMAKE_BUNDLE_DATA. That's why we must do this manually.
-        QMAKE_POST_LINK += $$VCOPY $$quote($${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$$RESOURCES_DIR/diagrams.rcc) $$quote($$shell_path($${OUT_PWD}/$$DESTDIR/$${TARGET}.app/$$RESOURCES_DIR/)) $$escape_expand(\\n\\t)
-
         QMAKE_BUNDLE_DATA += \
             templates \
             multisize \
@@ -293,7 +289,6 @@ win32:*g++* {
     package.files += \
         $${OUT_PWD}/$${DESTDIR}/seamly2d.exe \
         $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.exe \
-        $${OUT_PWD}/../seamlyme/$${DESTDIR}/diagrams.rcc \
         $$PWD/../../../dist/win/seamly2d.ico \
         $$PWD/../../../dist/win/i-measurements.ico \
         $$PWD/../../../dist/win/s-measurements.ico \

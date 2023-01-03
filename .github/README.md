@@ -13,12 +13,16 @@ Unlike other pattern design software, Seamly2D allows designers to have complete
 Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, MacOS, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
 
 ## Supported platforms:  
-   * Windows 10 (64-bit)
+   * Windows 10 & 11 (64-bit)
    * Most current Linux distros via [Flathub](https://flathub.org/apps/details/net.seamly.seamly2d)
    * Mac OS X 10.8 (64-bit) or later
 
-## Download Seamly2D
-Download from our Releases page [here:](https://github.com/fashionfreedom/seamly2d/releases/latest)
+## Download Seamly2D:
+
+| Windows | macOS | Linux |
+| ---     | ---   | ---   |
+| [Seamly2D-windows.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [Seamly2D-macos.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
+
 ___________________________________________________
 ## Seamly2D Community Resources:
    * [Website and downloads](https://seamly.net)  
@@ -59,31 +63,19 @@ ___________________________________________________
 ```
 * The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:  
 ```
-    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
 ```
 where `/usr/local` is a new prefix for installation binary files and `/usr/lib/i386-linux-gnu` is new prefix for install libraries.
 Add path to Qt using `.bashrc`
 
-#### Ubuntu
-* If Qt is not completely installed on your distribution, follow instructions here https://wiki.qt.io/Install_Qt_5_on_Ubuntu#Install_Qt_5_on_Ubuntu
-* Install the following additional packages:
+#### Ubuntu 22.04
+* Install the following packages to have Qt5 build environment ready:
 ```
-  sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test     
-  sudo apt-get -qq update  
-  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7  
-  sudo apt-get install -y build-essential mesa-utils mesa-common-dev libgl1-mesa-dev  
-  sudo apt-get install -y poppler-utils  
-  sudo apt-get install -y xvfb  
-  sudo apt-get install -y libfontconfig1-dev libfreetype6-dev  
-  sudo apt-get install -y libx11-devlibxext-dev libxfixes-dev libxi-dev  
-  sudo apt-get install -y libxrender-dev libxcb1-dev libx11-xcb-dev libxcb-glx0-dev
-  sudo apt-get install -y libqt5xmlpatterns5-dev
+  sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
+  sudo apt install -y poppler-utils
 ```
-* Manually retrieve and install `ccache`
-```
-wget https://launchpad.net/ubuntu/+archive/primary/+files/ccache_3.7.7-1_amd64.deb.html
-sudo dpkg -i ccache_3.7.7-1_amd64.deb.html
-```
+
+In doubt check how the github action CI [does it](workflows/build-auto-release-on-cron.yml).
 
 ### MAC OSX
 * Download Xcode 11 - https://developer.apple.com/download/all/
@@ -110,7 +102,7 @@ ___________________________________________________
 * Build Seamly2D from within *QtCreator* (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake-qtx* from a terminal window:
 ```
 cd $SOURCE_DIRECTORY\build
-qmake ..\Seamly2D.pro -r CONFIG+=noDebugSymbols CONFIG+=no_ccache
+qmake ..\Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
 make (or nmake or jom, depending on your platform)
 ```
 ___________________________________________________

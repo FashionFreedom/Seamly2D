@@ -103,19 +103,11 @@ jobs:
           copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
           New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
           Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
-          Copy-Item 'src\app\seamlyme\bin\diagrams.rcc' '..\windows-build'
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      #- name: code sign seamly2d-installer.exe
-      #  run: |
-      #    echo "${{ secrets.PFX_BASE64 }}" > cert.pfx.base64
-      #    certutil -decode cert.pfx.base64 cert.pfx
-      #    & 'C:\Program Files (x86)\Windows Kits\10\bin\x86\signtool.exe' sign /f cert.pfx /p ${{ secrets.PFX_PASSWORD }}  /fd sha256 /tr http://timestamp.comodoca.com/?td=sha256 /td sha256 /as /debug .\seamly2d-installer.exe
-
       - name: upload seamly2d-installer.exe
         uses: actions/upload-release-asset@v1.0.2
-        #uses: softprops/action-gh-release@v0.1.14
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
