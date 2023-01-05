@@ -28,16 +28,14 @@
 #include <QTreeView>
 #include <QtGlobal>
 
-#include "vpropertyexplorer_global.h"
-
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyDelegate;
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyModel;
+class VPropertyDelegate;
+class VPropertyModel;
 class VPropertyTreeViewPrivate;
 
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyTreeView : public QTreeView
+class VPropertyTreeView : public QTreeView
 {
     Q_OBJECT
 public:

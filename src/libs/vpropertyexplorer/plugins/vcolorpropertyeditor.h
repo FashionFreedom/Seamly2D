@@ -34,12 +34,10 @@
 #include <QWidget>
 #include <QtGlobal>
 
-#include "../vpropertyexplorer_global.h"
-
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VColorPropertyEditor : public QWidget
+class VColorPropertyEditor : public QWidget
 {
     Q_OBJECT
 

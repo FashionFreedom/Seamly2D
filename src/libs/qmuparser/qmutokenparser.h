@@ -26,14 +26,12 @@
 #include <QString>
 #include <QtGlobal>
 
-#include "../qmuparser/qmuparser_global.h"
 #include "qmuformulabase.h"
-#include "qmuparser_global.h"
 
 namespace qmu
 {
 
-class QMUPARSERSHARED_EXPORT QmuTokenParser : public QmuFormulaBase
+class QmuTokenParser : public QmuFormulaBase
 {
 public:
     QmuTokenParser(const QString &formula, bool osSeparator, bool fromUser = true);

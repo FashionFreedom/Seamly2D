@@ -32,13 +32,11 @@
 #include <QWidget>
 #include <QtGlobal>
 
-#include "../vpropertyexplorer_global.h"
-
 namespace VPE
 {
 
 
-class VPROPERTYEXPLORERSHARED_EXPORT VShortcutEditWidget : public QWidget
+class VShortcutEditWidget : public QWidget
 {
     Q_OBJECT
 

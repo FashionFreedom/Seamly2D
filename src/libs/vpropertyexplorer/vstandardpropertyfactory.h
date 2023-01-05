@@ -25,7 +25,6 @@
 #include <QString>
 
 #include "vabstractpropertyfactory.h"
-#include "vpropertyexplorer_global.h"
 
 namespace VPE
 {
@@ -34,7 +33,7 @@ class VPropertyFactoryManager;
 
 //! The standard property factory is able to create all the properties that are included in VPropertyExplorer
 //! by default.
-class VPROPERTYEXPLORERSHARED_EXPORT VStandardPropertyFactory : public VAbstractPropertyFactory
+class VStandardPropertyFactory : public VAbstractPropertyFactory
 {
 public:
     //! Constructor

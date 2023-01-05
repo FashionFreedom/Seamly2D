@@ -27,7 +27,6 @@
 #include <QtGlobal>
 #include <locale>
 
-#include "qmuparser_global.h"
 #include "qmuparserbase.h"
 
 /**
@@ -47,7 +46,7 @@ namespace qmu
     * muparser(at)gmx.de
     * </small>
     */
-    /* final */ class QMUPARSERSHARED_EXPORT QmuParser : public QmuParserBase
+    /* final */ class QmuParser : public QmuParserBase
     {
     public:
         QmuParser();

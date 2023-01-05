@@ -75,9 +75,9 @@ These instructions apply in general, with Ubuntu 22.04 as example:
 ```
 * The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:  
 ```
-    qmake PREFIX=/usr/local PREFIX_LIB=/usr/lib/i386-linux-gnu Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    qmake PREFIX=/usr/local Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
 ```
-where `/usr/local` is a new prefix for installation binary files and `/usr/lib/i386-linux-gnu` is new prefix for install libraries.
+where `/usr/local` is a new prefix for installation binary files.
 
 In doubt check how the github action CI [does it](workflows/build-auto-release-on-cron.yml).
 

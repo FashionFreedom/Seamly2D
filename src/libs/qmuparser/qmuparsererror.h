@@ -31,8 +31,6 @@
 #include <QtGlobal>
 #include <sstream>
 
-#include "../qmuparser/qmuparser_global.h"
-#include "qmuparser_global.h"
 #include "qmuparserdef.h"
 #include "qmutranslation.h"
 
@@ -99,7 +97,7 @@ enum EErrorCodes
 //---------------------------------------------------------------------------
 /** @brief A class that handles the error messages.
 */
-class QMUPARSERSHARED_EXPORT QmuParserErrorMsg
+class QmuParserErrorMsg
 {
 public:
     typedef QmuParserErrorMsg self_type;
@@ -135,7 +133,7 @@ inline QString QmuParserErrorMsg::operator[] ( int a_iIdx ) const
 
   Part of the math parser package.
 */
-class QMUPARSERSHARED_EXPORT QmuParserError : public QException
+class QmuParserError : public QException
 {
 public:
     QmuParserError();

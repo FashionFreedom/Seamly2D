@@ -64,12 +64,11 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VLineColorProperty : public VProperty
+class VLineColorProperty : public VProperty
 {
     Q_OBJECT
 public:

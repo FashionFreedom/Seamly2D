@@ -25,7 +25,6 @@
 #include <QPointer>
 #include <QString>
 
-#include "../vpropertyexplorer_global.h"
 #include "vemptyproperty.h"
 
 namespace VPE {
@@ -40,7 +39,7 @@ namespace VPE
 
 //! This property holds a QWidget and displays it, if the view supports that. If not, it will behave like an empty
 //! property
-class VPROPERTYEXPLORERSHARED_EXPORT VWidgetProperty : public VEmptyProperty
+class VWidgetProperty : public VEmptyProperty
 {
 public:
     //! Constructor

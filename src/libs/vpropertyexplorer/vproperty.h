@@ -35,8 +35,6 @@
 #include <Qt>
 #include <QtGlobal>
 
-#include "vpropertyexplorer_global.h"
-
 template <typename T> class QList;
 
 namespace VPE
@@ -46,7 +44,7 @@ enum class Property : char{Simple, Complex};
 
 static const int MyCustomEventType = 1099;
 
-class VPROPERTYEXPLORERSHARED_EXPORT UserChangeEvent : public QEvent
+class UserChangeEvent : public QEvent
 {
 public:
     UserChangeEvent() : QEvent(static_cast<QEvent::Type>(MyCustomEventType)) {}
@@ -55,7 +53,7 @@ public:
 
 class VPropertyPrivate;
 
-class VPROPERTYEXPLORERSHARED_EXPORT VProperty : public QObject
+class VProperty : public QObject
 {
     Q_OBJECT
 public:

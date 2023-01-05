@@ -22,7 +22,6 @@
 #ifndef QMUTRANSLATION_H
 #define QMUTRANSLATION_H
 
-#include "../qmuparser/qmuparser_global.h"
 #include <QString>
 
 namespace qmu
@@ -49,7 +48,7 @@ namespace qmu
  *
  * Don't forget to undef macros later!
  */
-class QMUPARSERSHARED_EXPORT QmuTranslation
+class QmuTranslation
 {
 public:
     QmuTranslation();

@@ -40,7 +40,7 @@ class VPropertyFormWidgetPrivate;
 class VPropertySet;
 
 //! Class that displays the sub properties of a property using a form layout
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyFormWidget : public QGroupBox
+class VPropertyFormWidget : public QGroupBox
 {
     Q_OBJECT
 public:
