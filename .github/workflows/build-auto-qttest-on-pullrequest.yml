@@ -123,7 +123,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
           nmake
 
       - name: create seamly2d-installer.exe
@@ -177,7 +177,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
-          qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
           make -j$(sysctl -n hw.logicalcpu)
 
       - name: build dmg packages
