@@ -17,7 +17,6 @@ on:
   workflow_dispatch:
 
 env:
-  QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
@@ -27,36 +26,29 @@ jobs:
     outputs:
       upload_url: ${{ steps.release-data.outputs.upload_url }}
 
-# The tag name is vYYYY-MM-DD.hhmm to create simple, easy-to-read "rolling release" versioning
+    # The tag name is vYYYY-MM-DD.hhmm to create simple, easy-to-read "rolling release" versioning
     steps:
-      - name: create env vars for release name and tag
-        id: names
+      - name: create name and tag
+        id: create-name-and-tag
         run: |
           version_date_time="$(date +v%F.%H%M)"
-          echo "TAG_NAME=$version_date_time" >> $GITHUB_OUTPUT
-          echo "RELEASE_NAME=$version_date_time" >> $GITHUB_OUTPUT
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "TAG_NAME=$version_date_time" >> $GITHUB_ENV
+          echo "RELEASE_NAME=$version_date_time" >> $GITHUB_ENV
 
-      # create the release
-      - name: release data
+      - name: create release data
         # output is 'upload_url'
         id: release-data
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name:  ${{ steps.names.outputs.TAG_NAME }}
-          release_name: ${{ steps.names.outputs.RELEASE_NAME }}
+          tag_name:  ${{ env.TAG_NAME }}
+          release_name: ${{ env.RELEASE_NAME }}
           body: Build auto weekly release - Published full release
-          # create upublished
+          # create published
           draft: false
           # create a full release, not a pre-release
           prerelease: false
-
-      - name: show UPLOAD_URL
-        run: |
-          echo ${{ steps.release-data.outputs.upload_url }}
 
   linux:
     runs-on: ubuntu-22.04
@@ -93,7 +85,7 @@ jobs:
           mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
 
       - name: upload file as release
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -109,12 +101,11 @@ jobs:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
-
       - name: checkout code
         uses: actions/checkout@v3
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -133,7 +124,7 @@ jobs:
           zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -149,19 +140,17 @@ jobs:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
 
     steps:
-
       - name: checkout code
         uses: actions/checkout@v3
 
       - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1.10.0
+        uses: ilammy/msvc-dev-cmd@v1
         with:
-          version: ${{ env.QT_VERSION }}
           # use SVC 2019 latest, 14.29.xxxx
           toolset: '14.29'
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -196,7 +185,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
 
       - name: upload unsigned Seamly2D-windows.zip as release to Github Releases
-        uses: actions/upload-release-asset@v1.0.2
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

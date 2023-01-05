@@ -6,14 +6,11 @@ name: CI
 on: [ pull_request ]
 
 env:
-  QT_SELECT: 5
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
 
   build-appimage:
-    # run job 'build-appimage' for open pull_request that hasn't been merged yet
-    if: ( github.event.pull_request.merged == false )
     name: 'Linux: Build AppImage'
     runs-on: ubuntu-22.04
 
@@ -53,8 +50,6 @@ jobs:
           path: './*AppImage*'
 
   build-linux-test:
-    # run job 'build-test' for open pull_request that hasn't been merged yet
-    if: ( github.event.pull_request.merged == false )
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-22.04
 
@@ -99,25 +94,21 @@ jobs:
           xvfb-run -a make --silent check TESTARGS="-silent"
 
   build-windows:
-    # run job 'build-test' for open pull_request that hasn't been merged yet
-    if: ( github.event.pull_request.merged == false )
     name: 'Windows: Build'
     runs-on: windows-latest
 
     steps:
-
       - name: checkout code
         uses: actions/checkout@v3
 
       - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1.10.0
+        uses: ilammy/msvc-dev-cmd@v1
         with:
-          version: ${{ env.QT_VERSION }}
           # use SVC 2019 latest, 14.29.xxxx
           toolset: '14.29'
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
 
@@ -160,18 +151,15 @@ jobs:
           path: Seamly2D-windows.zip
 
   build-macos:
-    # run job 'build-test' for open pull_request that hasn't been merged yet
-    if: ( github.event.pull_request.merged == false )
     name: 'macOS: Build'
     runs-on: macos-latest
 
     steps:
-
       - name: checkout code
         uses: actions/checkout@v3
 
       - name: install qt
-        uses: jurplel/install-qt-action@v2.14.0
+        uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
 
