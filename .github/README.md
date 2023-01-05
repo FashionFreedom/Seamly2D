@@ -40,7 +40,7 @@ Basic Software Prerequisites:
 * Qt 5.15.2  - https://www.qt.io/download-open-source (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
 * Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
 * Compiler - MSVC 2019, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool.
-* XpdfWidget/Qt - https://www.xpdfreader.com/XpdfWidget.html
+* pdftops - To convert PDF to PS or EPS. Bundled for mac and in win in dist folder
 * Check the sections below for your operating system to find additional installation requirements
 
 Development methods and styles:
