@@ -57,19 +57,19 @@ class QString;
 extern const int MAJOR_VERSION;
 extern const int MINOR_VERSION;
 extern const int DEBUG_VERSION;
+extern const int SUPER_MINOR__VERSION;
 
 extern const QString APP_VERSION_STR;
 
 /*
    APP_VERSION is (major << 16) + (minor << 8) + patch.
 */
-#define APP_VERSION 0x000600
+#define APP_VERSION ((MAJOR_VERSION << 16) + (MINOR_VERSION << 8) + DEBUG_VERSION)
 
-// Change version number in projectversion.cpp too.
-// Synchronize seamly2d.nsi
-
-#define VER_FILEVERSION             0,6,0,1
-#define VER_FILEVERSION_STR         "0.6.0.1\0"
+// Start: Do not edit here, use scripts/version.sh to update
+#define VER_FILEVERSION 0,6,0,1
+#define VER_FILEVERSION_STR "0.6.0.1"
+// End: Do not edit here
 
 #define V_PRERELEASE // Mark prerelease builds
 
