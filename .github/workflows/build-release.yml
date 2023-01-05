@@ -1,4 +1,4 @@
-name: Build auto release on cron
+name: Build and publish release
 
 # cron format:
 # ┌───────────── minute (0 - 59)
@@ -14,6 +14,7 @@ name: Build auto release on cron
 on:
   schedule:
     - cron: '30 1 * * MON'
+  workflow_dispatch:
 
 env:
   QT_SELECT: 5
