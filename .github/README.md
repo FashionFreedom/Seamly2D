@@ -79,7 +79,7 @@ These instructions apply in general, with Ubuntu 22.04 as example:
 ```
 where `/usr/local` is a new prefix for installation binary files.
 
-In doubt check how the github action CI [does it](workflows/build-auto-release-on-cron.yml).
+In doubt check how the github action CI [does it](workflows/build-release.yml).
 
 ### MAC OSX
 * Download Xcode 11 - https://developer.apple.com/download/all/
