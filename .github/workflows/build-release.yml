@@ -108,6 +108,7 @@ jobs:
         uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
+          cache: true
 
       - name: make Seamly2D for macos
         run: |
@@ -153,6 +154,7 @@ jobs:
         uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
+          cache: true
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
