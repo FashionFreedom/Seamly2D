@@ -1,7 +1,7 @@
 ![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner_700x200.png)
 # Seamly2D
 [![GitHub release (latest)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?logo=github?color=blue&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/releases/latest)
-[![GitHub weekly build](https://img.shields.io/github/actions/workflow/status/fashionfreedom/seamly2d/build-auto-release-on-cron.yml?logo=github&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/actions/workflows/build-auto-release-on-cron.yml)
+[![GitHub weekly build](https://img.shields.io/github/actions/workflow/status/fashionfreedom/seamly2d/build-release.yml?logo=github&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/actions/workflows/build-release.yml)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?logo=github&color=brightgreen&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square&logo=github)](https://github.com/FashionFreedom/Seamly2D/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square&logo=creativecommons)](../LICENSE)
