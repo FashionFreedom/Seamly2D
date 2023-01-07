@@ -2,10 +2,9 @@ name: build pre-release on merge
 
 # trigger this workflow on merging a pull request into develop branch
 on:
-  pull_request:
-    branch:
+  push:
+    branches:
     - develop
-    types: [closed]
 
 env:
   QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
