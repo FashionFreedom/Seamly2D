@@ -125,8 +125,8 @@ jobs:
           windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
           windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
           # get latest msvc++ redistributable files
-          curl -v https://aka.ms/vs/17/release/vc_redist.x64.exe --output ..\windows-build\vc_redist.x64.exe
-          curl -v https://aka.ms/vs/17/release/vc_redist.x32.exe --output ..\windows-build\vc_redist.x32.exe
+          curl -v https://aka.ms/vs/17/release/VC_redist.x64.exe --output ..\windows-build\VC_redist.x64.exe
+          curl -v https://aka.ms/vs/17/release/VC_redist.x32.exe --output ..\windows-build\VC_redist.x32.exe
           # copy SSL libraries
           copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
