@@ -159,9 +159,6 @@ jobs:
 
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1
-        with:
-          # use SVC 2019 latest, 14.29.xxxx
-          toolset: '14.29'
 
       - name: install qt
         uses: jurplel/install-qt-action@v3
@@ -180,17 +177,22 @@ jobs:
         run: |
           mkdir ..\windows-build
           Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
+          # build executables
           windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
           windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
-          copy .\dist\seamly2d-installer.nsi ..\windows-build\
-          copy .\dist\win\VC_redist.x86.exe ..\windows-build\
-          copy .\dist\win\VC_redist.x64.exe ..\windows-build\
+          # get latest msvc++ redistributable files
+          curl https://aka.ms/vs/17/release/vc_redist.x64.exe --output ..\windows-build\vc_redist.x64.exe
+          curl https://aka.ms/vs/17/release/vc_redist.x32.exe --output ..\windows-build\vc_redist.x32.exe          
+          # copy SSL libraries
           copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
           copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
+          # copy translations
           New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
           Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
+          # create the installer file
+          copy .\dist\seamly2d-installer.nsi ..\windows-build\
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
