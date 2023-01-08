@@ -43,4 +43,8 @@ unix {
 }
 
 TEMPLATE = subdirs
-SUBDIRS = src
+SUBDIRS = \
+    src \
+    out
+
+out.depends = src

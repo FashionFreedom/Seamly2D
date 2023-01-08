@@ -170,18 +170,9 @@ jobs:
           qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
           make -j$(sysctl -n hw.logicalcpu)
 
-      - name: build dmg packages
-        run: |
-          hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
-          hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
-
-      - name: pack package files into .zip
-        run: |
-          zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
-
       - name: Upload Seamly2D-macos.zip artifact
         # upload Seamly2D-installer.exe as artifact to Github Workflows
         uses: actions/upload-artifact@v3
         with:
           name: Seamly2D-macos.zip
-          path: Seamly2D-macos.zip
+          path: out/Seamly2D-macos.zip

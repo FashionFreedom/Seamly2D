@@ -123,22 +123,13 @@ jobs:
           qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols
           make -j$(sysctl -n hw.logicalcpu)
 
-      - name: build dmg packages
-        run: |
-          hdiutil create -fs HFS+ -srcfolder src/app/seamly2d/bin/Seamly2D.app -volname "Seamly2D" Seamly2D.dmg
-          hdiutil create -fs HFS+ -srcfolder src/app/seamlyme/bin/seamlyme.app -volname "SeamlyME" SeamlyME.dmg
-
-      - name: pack package files into .zip
-        run: |
-          zip Seamly2D-macos.zip Seamly2D.dmg SeamlyME.dmg
-
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ env.UPLOAD_URL }}
-          asset_path: ./Seamly2D-macos.zip
+          asset_path: ./out/Seamly2D-macos.zip
           asset_name: Seamly2D-macos.zip
           asset_content_type: application/zip
 
