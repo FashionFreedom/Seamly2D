@@ -27,7 +27,7 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 | Windows | MacOS | Linux |
 | ---     | ---   | ---   |
-| [Seamly2D-windows.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](.github\img\Apple-Logo-cropped-52x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
+| [![Seamly2d-windows.zip](img\Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](img\Apple-Logo-cropped-52x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
