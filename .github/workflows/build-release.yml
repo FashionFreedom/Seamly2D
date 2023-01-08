@@ -160,8 +160,8 @@ jobs:
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          # use SVC 2019 latest, 14.29.xxxx
-          toolset: '14.29'
+          # use Visual C++ 2022 latest, 14.34.xxxx
+          toolset: '14.34'
 
       - name: install qt
         uses: jurplel/install-qt-action@v3
@@ -171,26 +171,17 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake.exe Seamly2D.pro -r CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          qmake.exe Seamly2D.pro -config release CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
           nmake
 
       - name: create seamly2d-installer.exe
-        # seamly2d.exe, seamlyme.exe, VC_redist, OpenSSL dlls, and create + code sign installer
+        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
         # uses parameters in seamly2d-installer.nsi to create the installer exe
         run: |
           mkdir ..\windows-build
-          Get-ChildItem -Recurse -Include *.exe,*.dll | % { Copy-Item $_.FullName -force -destination ..\windows-build }
-          windeployqt.exe --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamly2d.exe
-          windeployqt.exe --force --libdir ..\windows-build --plugindir ..\windows-build --release ..\windows-build\seamlyme.exe
-          copy .\dist\seamly2d-installer.nsi ..\windows-build\
-          copy .\dist\win\VC_redist.x86.exe ..\windows-build\
-          copy .\dist\win\VC_redist.x64.exe ..\windows-build\
-          copy 'c:\Program Files\OpenSSL\libcrypto-1_1-x64.dll' ..\windows-build\
-          copy 'c:\Program Files\OpenSSL\libssl-1_1-x64.dll' ..\windows-build\
-          copy 'c:\Program Files\OpenSSL\bin\capi.dll' ..\windows-build\
-          copy 'c:\Program Files\OpenSSL\bin\dasync.dll' ..\windows-build\
-          New-Item '..\windows-build\translations' -ItemType Directory -Force | Out-Null
-          Copy-Item 'share\translations\*.qm' '..\windows-build\translations' -Force -Recurse
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
