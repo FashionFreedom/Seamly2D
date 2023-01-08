@@ -1,14 +1,17 @@
-![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner_700x200.png)
-# Seamly2D
+![Seamly Banner](../share/img/Seamly2D_banner_700x200.png)
+
+
 [![GitHub release (latest)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?logo=github?color=blue&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/releases/latest)
 [![GitHub weekly build](https://img.shields.io/github/actions/workflow/status/fashionfreedom/seamly2d/build-release.yml?logo=github&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/actions/workflows/build-release.yml)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?logo=github&color=brightgreen&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square&logo=github)](https://github.com/FashionFreedom/Seamly2D/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square&logo=creativecommons)](../LICENSE)
-![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)  
+![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)
 [![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.net&logo=wordpress)](https://seamly.net/)
 [![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.net&style=flat-square&logo=discourse)](https://forum.seamly.net/)   
 [![Qt](img/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)
+
+# Seamly2D
 
 <big>Seamly2D</big> is pattern design software to create scalable, sharable custom-fit patterns using bespoke tailoring, haute couture, and historical pattern drafting techniques. Seamly2D saves time and improves fit by creating patterns as reusable, editable parametric CAD engineering documents.
 
@@ -27,20 +30,21 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 | Windows | MacOS | Linux |
 | ---     | ---   | ---   |
-| [![Seamly2d-windows.zip](img\Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](img\Apple-Logo-cropped-52x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
+| [![Seamly2d-windows.zip](img\Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](img\white-apple-logo-transparent-49x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
-   * [Website and downloads](https://seamly.net)  
+   * [Website and downloads](https://seamly.net) - _current_  
    * [User Forum](https://forum.seamly.net/) - _current_
    * [User Wiki Manual](https://wiki.seamly.net) - _needs updating_
 ___________________________________________________
 
 ## Seamly2D Developer Resources:
-   * [Developer README](README-DEVELOPER.md)
+   * [Developer README](README-DEVELOPER.md) - _current_
    * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki) - _needs updating_
 ___________________________________________________
 ## LICENSING
+[![GPLv3](img\GPLv3_Logo-121x60px.png)]
 Seamly2D is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
