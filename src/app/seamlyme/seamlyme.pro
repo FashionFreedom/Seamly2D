@@ -336,3 +336,8 @@ macx{
    # run macdeployqt to include all qt libraries in packet
    QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
 }
+
+win32{
+    # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
+    QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
+}

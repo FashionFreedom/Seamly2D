@@ -36,9 +36,8 @@ win32{
 # Qt from scratch without OpenSSL support.
 win32 {
     INSTALL_OPENSSL += \
-                       ../../../dist/win/libeay32.dll \
-                       ../../../dist/win/ssleay32.dll \
-                       ../../../dist/win/msvcr120.dll
+                       ../../../dist/win/libcrypto-1_1-x64.dll \
+                       ../../../dist/win/libssl-1_1-x64.dll
 }
 
 macx{
