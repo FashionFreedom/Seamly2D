@@ -41,9 +41,6 @@ MOC_DIR = moc
 # objecs files
 OBJECTS_DIR = obj
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){

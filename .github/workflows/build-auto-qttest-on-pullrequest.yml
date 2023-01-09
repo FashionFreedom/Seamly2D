@@ -74,7 +74,7 @@ jobs:
           # *********************************
           echo "-- make Seamly2D & SeamlyMe --"
           mkdir /home/runner/local
-          qmake PREFIX=/home/runner/local Seamly2D.pro CONFIG+=no_ccache
+          qmake PREFIX=/home/runner/local Seamly2D.pro
           make -j$(nproc) && make install
 
       - name: install test dependencies
@@ -115,7 +115,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
+          qmake.exe Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests
           nmake
 
       - name: create seamly2d-installer.exe
@@ -158,7 +158,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
-          qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
+          qmake Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=noTests
           make -j$(sysctl -n hw.logicalcpu)
 
       - name: Upload Seamly2D-macos.zip artifact

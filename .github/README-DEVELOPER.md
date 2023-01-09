@@ -35,13 +35,13 @@ ___________________________________________________
     ```
 * Build and install:  
   ```
-  $ qmake Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
+  $ qmake Seamly2D.pro CONFIG+=noDebugSymbols
   $ make -j$(nproc)
   $ sudo make install
   ```
   _Note: The default prefix for command `make install` is `/usr`.  To define another prefix, build with qmake's PREFIX option. This example sets `/usr/local` as the new prefix for Seamly's installation binary files:_
     ```
-    $ qmake PREFIX=/usr/local Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
+    $ qmake PREFIX=/usr/local Seamly2D.pro CONFIG+=noDebugSymbols
     ```
 * Copy pdftops to Seamly build directory if you need to create post script (.ps and .eps) pattern piece layouts.
 
@@ -88,7 +88,7 @@ ___________________________________________________
         * Read more about nmake [here](https://learn.microsoft.com/en-us/cpp/build/reference/nmake-reference?view=msvc-170)
           ```
           cd $SOURCE_DIRECTORY\build
-          qmake ..\Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
+          qmake ..\Seamly2D.pro CONFIG+=noDebugSymbols
           nmake      # (or jom. Assign multiple CPUs to speed up compilation time but don't use all - leave at least one CPU for your OS.) 
           ```
       * Copy the `C:\Program Files\Xpdf\bin64\pdftops.exe` (or bin32) file to the Seamly build directory to enable creation of post script (.ps and .eps) pattern piece layouts.

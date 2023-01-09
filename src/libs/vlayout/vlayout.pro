@@ -43,9 +43,6 @@ OBJECTS_DIR = obj
 # Directory for files created rcc
 RCC_DIR = rcc
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){
