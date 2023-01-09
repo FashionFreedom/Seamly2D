@@ -66,9 +66,6 @@ RESOURCES += \
 OTHER_FILES += \
     share/resources/icon/64x64/icon64x64.ico # Seamly2D's logo.
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){

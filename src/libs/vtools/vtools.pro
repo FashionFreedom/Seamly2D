@@ -46,9 +46,6 @@ OBJECTS_DIR = obj
 # Directory for files created uic
 UI_DIR = uic
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 INCLUDEPATH += $$PWD/../vpatterndb
 
 include(warnings.pri)

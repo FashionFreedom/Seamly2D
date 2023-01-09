@@ -54,9 +54,6 @@ HEADERS += \
     tst_seamlymecommandline.h \
     tst_seamly2dcommandline.h
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){

@@ -60,9 +60,6 @@ HEADERS += \
     tst_buitinregexp.h \
     tst_abstractregexp.h
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 DEFINES += TS_DIR=\\\"$${PWD}/../../../share/translations\\\"
 
 include(warnings.pri)

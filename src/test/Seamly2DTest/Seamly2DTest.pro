@@ -90,9 +90,6 @@ HEADERS += \
     tst_vtranslatevars.h \
     tst_vabstractpiece.h
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){

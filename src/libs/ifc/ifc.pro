@@ -52,9 +52,6 @@ RCC_DIR = rcc
 RESOURCES += \
     schema.qrc  # Schemas for validation xml files.
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){

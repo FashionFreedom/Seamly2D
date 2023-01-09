@@ -101,7 +101,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
-          qmake Seamly2D.pro CONFIG+=no_ccache CONFIG+=noDebugSymbols
+          qmake Seamly2D.pro CONFIG+=noDebugSymbols
           make -j$(sysctl -n hw.logicalcpu)
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
@@ -138,7 +138,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=no_ccache CONFIG+=noDebugSymbols CONFIG+=noTests
+          qmake.exe Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests
           nmake
 
       - name: create seamly2d-installer.exe

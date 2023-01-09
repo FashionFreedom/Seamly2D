@@ -164,9 +164,6 @@ win32 {
 OTHER_FILES += \
     share/resources/seamlymeicon/64x64/logo.ico # SeamlyMe's logo.
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
 
 CONFIG(release, debug|release){
