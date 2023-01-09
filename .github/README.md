@@ -8,7 +8,8 @@
 [![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square&logo=creativecommons)](../LICENSE)
 ![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)
 [![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.net&logo=wordpress)](https://seamly.net/)
-[![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.net&style=flat-square&logo=discourse)](https://forum.seamly.net/)   
+[![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.net&style=flat-square&logo=discourse)](https://forum.seamly.net/)
+![GitHub Repo stars](https://img.shields.io/github/stars/fashionfreedom/seamly2d?style=social)  
 [![Qt](img/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)
 
 # Seamly2D
