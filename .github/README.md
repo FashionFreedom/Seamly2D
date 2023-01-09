@@ -1,20 +1,25 @@
-![Seamly Banner](https://github.com/FashionFreedom/Seamly2D/blob/develop/share/img/Seamly2D_banner_700x200.png)
-# Seamly2D
+![Seamly Banner](../share/img/Seamly2D_banner_700x200.png)
+
+
 [![GitHub release (latest)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?logo=github?color=blue&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/releases/latest)
 [![GitHub weekly build](https://img.shields.io/github/actions/workflow/status/fashionfreedom/seamly2d/build-release.yml?logo=github&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/actions/workflows/build-release.yml)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/fashionfreedom/seamly2d?logo=github&color=brightgreen&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/graphs/commit-activity)
 [![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square&logo=github)](https://github.com/FashionFreedom/Seamly2D/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square&logo=creativecommons)](../LICENSE)
-![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)  
+![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)
 [![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.net&logo=wordpress)](https://seamly.net/)
 [![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.net&style=flat-square&logo=discourse)](https://forum.seamly.net/)   
-[![Qt](https://github.com/FashionFreedom/Seamly2D/blob/develop/.github/img/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)
+[![Qt](img/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)
 
-Seamly2D is pattern design software to create reusable, scalable, sharable custom-fit patterns using bespoke tailoring, haute couture, and historical pattern drafting techniques. Seamly2D saves time and improves fit by creating patterns that are reusable parametric CAD engineering documents.
+# Seamly2D
 
-Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each reusable, scalable pattern can read multi-size tables for boutique sizing, *and* read individual measurement files for custom-fit.
+<big>Seamly2D</big> is pattern design software to create scalable, sharable custom-fit patterns using bespoke tailoring, haute couture, and historical pattern drafting techniques. Seamly2D saves time and improves fit by creating patterns as reusable, editable parametric CAD engineering documents.
 
-Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, MacOS, and Linux.  Learn more about Seamly2D by joining our active, friendly community at https://forum.seamly.net
+Unlike other pattern design software, Seamly2D allows designers to have complete control of the patternmaking process. Each Seamly2D pattern can read multi-size tables for boutique sizing *and* read individual measurement files for custom-fit.
+
+Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, MacOS, and Linux.  
+
+Learn more about Seamly2D by joining our friendly, active user [forum](https://forum.seamly.net) and reading our [Code of Conduct](CODE_OF_CONDUCT.md). On our forum you may post questions about patternmaking and Seamly2D in any language you choose, as sewing terms are rich with idioms that are not always translatable word-for-word.
 
 ## Supported platforms:  
    * Windows 10 & 11 (64-bit)
@@ -23,105 +28,37 @@ Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is
 
 ## Download Seamly2D:
 
-| Windows | macOS | Linux |
+| Windows | MacOS | Linux |
 | ---     | ---   | ---   |
-| [Seamly2D-windows.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [Seamly2D-macos.zip](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
+| [![Seamly2d-windows.zip](img\Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](img\white-apple-logo-transparent-49x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://flathub.org/apps/details/net.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
-   * [Website and downloads](https://seamly.net)  
-   * [User Wiki Manual](https://wiki.seamly.net)  
-   * [User Forum](https://forum.seamly.net/)  
-   * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki)
+   * [Website and downloads](https://seamly.net) - _current_  
+   * [User Forum](https://forum.seamly.net/) - _current_
+   * [User Wiki Manual](https://wiki.seamly.net) - _needs updating_
 ___________________________________________________
-## Build Seamly2D
 
-Basic Software Prerequisites:  
-* Qt 5.15.2  - https://www.qt.io/download-open-source (includes Qt, QtCreator, QtChooser, and Qt Maintenance Tool)
-* Git - either Git from https://git-scm.com/downloads or Github Desktop (recommended for Windows and Mac) from https://desktop.github.com/
-* Compiler - MSVC 2019, gcc, and g++ are included with QtCreator, and you can add or update them using the Qt Maintenance Tool.
-* pdftops - To convert PDF to PS or EPS. Bundled for mac and in win in dist folder
-* Check the sections below for your operating system to find additional installation requirements
-
-Development methods and styles:
-   * GitHub Flow workflow: https://githubflow.github.io/
-   * Gibhub commit message style guide: https://www.conventionalcommits.org/en/v1.0.0/
-   * Github issue description style guide: https://guides.github.com/features/issues/
-
-Build method:
-   * Read more about code styles, issues, and other developer items of interest here: https://github.com/FashionFreedom/Seamly2D/wiki
-___________________________________________________
-## Install Additional Libraries and Programs:
-
-### to build Seamly code on Linux
-
-These instructions apply in general, with Ubuntu 22.04 as example:
-
-* Install QtCreator for your distribution: https://wiki.qt.io/VendorPackages.
-* For Linux in general, these additional tools and libraries are required:
-  - gnu compiler
-  - poppler (pdftops)
-  - OpenGL libraries
-* Install Qt 5.15
-  - Example for Ubuntu 22.04: Install the following packages to have Qt5 build environment ready:
-```
-  sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
-```
-* Build and install:  
-```
-    qmake Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
-    make -j$(nproc)
-    sudo make install
-```
-* The default prefix for command `make install` is `/usr`. For using another prefix build with qmake command:  
-```
-    qmake PREFIX=/usr/local Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
-```
-where `/usr/local` is a new prefix for installation binary files.
-
-In doubt check how the github action CI [does it](workflows/build-release.yml).
-
-### MAC OSX
-* Download Xcode 11 - https://developer.apple.com/download/all/
-* Download QtCreator - https://www.qt.io/download-thank-you
-* Setup/validate build environment - https://doc.qt.io/qt-5/macos.html#build-environment:
-   * Switch to Xcode: `sudo xcode-select --switch /Applications/Xcode.app`
-   * Validate clang compiler points to Xcode: `xcrun -sdk macosx -find clang`
-   * Validate SDK version (macOS 10.15): `xcrun -sdk macosx --show-sdk-path`
-
-### Windows 10
-* Download QtCreator - https://www.qt.io/download-thank-you
-* Configure Qt & QtCreator- https://stackoverflow.com/questions/60245433/how-to-install-qt5-libraries-for-windows-10-for-cmake-development  
-- Xpdf v4.0.0 (xpdftools) from http://www.xpdfreader.com/download.html. Put tool pdftops.exe in the same directory with Seamly2D's binary file.
-* Add the Qt directory to the Windows PATH environment variable through Control Panel:
-```
-     [Control Panel|System And Security|System|Advanced Tab|Environment Variables button]
-```
-___________________________________________________
-## Additional Information about Qt
-
-* Add Seamly2d, gcc, g++, xpdf, and QtCreator directories to your operating system's `PATH` environment variable via Linux `.bashrc` or Windows' Control Panel.(example: for Windows add  `c:\Qt\%VERSION%\bin`)
-* In *QtCreator* create your compiler kit (eg MSVC 2019, g++, gdb) and assign the compiler kit to your project. This automatically defines your Qt variables for compilers, debuggers, etc.
-* Build Seamly2D from within *QtCreator* (see [forum post](https://forum.seamly.net/t/how-to-build-with-qt/183)) **OR** from command line using Qt's *qmake* from a terminal window:
-```
-cd $SOURCE_DIRECTORY\build
-qmake ..\Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=no_ccache
-make (or nmake or jom, depending on your platform)
-```
+## Seamly2D Developer Resources:
+   * [Developer README](README-DEVELOPER.md) - _current_
+   * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki) - _needs updating_
 ___________________________________________________
 ## LICENSING
+
 Seamly2D is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+(at your option) any later version.  
 
 Seamly2D is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-See LICENSE_GPL.txt file for further information
+![GPLv3](img\GPLv3_Logo-121x60px.png) 
+
+See [LICENSE.md](..\LICENSE.md) file or [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
 
 Other components released under:  
-* QMuParser - BSD license  
-* VPropertyExplorer - LGPLv2.1 license
+* QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)
+* VPropertyExplorer - [LGPLv2.1 license](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
