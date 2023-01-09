@@ -22,15 +22,18 @@
 #ifndef QMUDEF_H
 #define QMUDEF_H
 
+#include <qcompilerdetection.h>
+#include <QtGlobal>
+#include <QChar>
+#include <QString>
+#include <QLocale>
+
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wattributes")
 
 #ifdef Q_CC_MSVC
     #include <ciso646>
 #endif /* Q_CC_MSVC */
-
-class QLocale;
-class QChar;
 
 #define INIT_LOCALE_VARIABLES(locale)                          \
 const QChar positiveSign   = (locale).positiveSign();          \
