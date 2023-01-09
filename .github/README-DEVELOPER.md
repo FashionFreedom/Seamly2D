@@ -23,17 +23,15 @@ ___________________________________________________
 * Install Qt 5.15.2
   * Example for Ubuntu 22.04: Install the following packages to have Qt5 build environment ready: 
       ```
-      $ sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
+      $ sudo apt install -y libfuse2 qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
       ```
 * Install QtCreator https://wiki.qt.io/VendorPackages
 * Install Additional libraries
   - gnu compiler
   - poppler (pdftops)
-  - OpenGL libraries
-  - graphic libraries for your distro desktop
   - Example for Ubuntu 22.04:
     ```
-    $ sudo apt install -ylibdrm-common, libgcrypt20, libjpeg-turbo8, liblz4-1, libpoppler118, libqt5core5a, libqt5printsupport5, libqt5svg5, libqt5xml5, libqt5xmlpatterns5, libsm6, libwayland-bin, libxau6, libxcb-render-util0, libxcb-sync1, libxcb-xinerama0, libxcb-xkb1, libxdmcp6, libxext6, libxfixes3,libxrender1, libxshmfence1, libxxf86vm1, qt5-gtk-platformtheme, qt5-image-formats-plugins, qttranslations5-l10n, qtwayland5
+    $ sudo apt install -y build-essential git poppler-tools
     ```
 * Build and install:  
   ```
