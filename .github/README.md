@@ -30,7 +30,7 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 | Windows | MacOS | Linux |
 | ---     | ---   | ---   |
-| [![Seamly2d-windows.zip](img\Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](img\white-apple-logo-transparent-49x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://github.com/flathub/net.seamly.seamly2d) |
+| [![Seamly2d-windows.zip](img\Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [![Seamly2d-macos.zip](img\white-apple-logo-transparent-49x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://flathub.org/apps/details/net.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
@@ -44,19 +44,21 @@ ___________________________________________________
    * [Developer Wiki](https://github.com/FashionFreedom/Seamly2D/wiki) - _needs updating_
 ___________________________________________________
 ## LICENSING
-[![GPLv3](img\GPLv3_Logo-121x60px.png)]
+
 Seamly2D is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+(at your option) any later version.  
 
 Seamly2D is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
-See LICENSE_GPL.txt file for further information
+![GPLv3](img\GPLv3_Logo-121x60px.png) 
+
+See [LICENSE.md](..\LICENSE.md) file or [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html) for further information.
 
 Other components released under:  
-* QMuParser - BSD license  
-* VPropertyExplorer - LGPLv2.1 license
+* QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)
+* VPropertyExplorer - [LGPLv2.1 license](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
