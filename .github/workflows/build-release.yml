@@ -62,7 +62,7 @@ jobs:
 
       - name: update version
         run: |
-          ./scripts/version.sh $(date +%Y.%m.%d.%H%M)
+          ./scripts/version.sh $(date +%Y.%-m.%-d.%-H%M)
           
       - name: install build dependencies
         run: |  
@@ -110,7 +110,7 @@ jobs:
 
       - name: update version
         run: |
-          ./scripts/version.sh $(date +%Y.%m.%d.%H%M)
+          ./scripts/version.sh $(date +%Y.%-m.%-d.%-H%M)
 
       - name: install qt
         uses: jurplel/install-qt-action@v3
@@ -146,7 +146,7 @@ jobs:
       - name: update version
         shell: bash
         run: |
-          ./scripts/version.sh $(date +%Y.%m.%d.%H%M)
+          ./scripts/version.sh $(date +%Y.%-m.%-d.%-H%M)
 
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1
