@@ -530,7 +530,7 @@ void DialogEditWrongFormula::ShowVariable(const QMap<key, val> &var)
         {// If we create this variable don't show
             ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
             QTableWidgetItem *item = new QTableWidgetItem(iMap.key());
-            item->setFont(QFont("Times", 12, QFont::Bold));
+            item->setFont(QFont("Arial", 12, QFont::Bold));
             ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, item);
         }
     }
@@ -564,11 +564,11 @@ void DialogEditWrongFormula::ShowMeasurements(const QMap<QString, QSharedPointer
         {// If we create this variable don't show
             ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
             QTableWidgetItem *itemName = new QTableWidgetItem(iMap.key());
-            itemName->setFont(QFont("Times", 12, QFont::Bold));
+            itemName->setFont(QFont("Arial", 12, QFont::Bold));
             itemName->setToolTip(itemName->text());
 
             QTableWidgetItem *itemFullName = new QTableWidgetItem();
-            itemFullName->setFont(QFont("Times", 12, QFont::Bold));
+            itemFullName->setFont(QFont("Arial", 12, QFont::Bold));
             if (iMap.value()->IsCustom())
             {
                 itemFullName->setText(iMap.value()->GetGuiText());
@@ -605,7 +605,7 @@ void DialogEditWrongFormula::ShowFunctions()
     {
         ui->tableWidget->setRowCount(ui->tableWidget->rowCount() + 1);
         QTableWidgetItem *item = new QTableWidgetItem(i.value().translate());
-        item->setFont(QFont("Times", 12, QFont::Bold));
+        item->setFont(QFont("Arial", 12, QFont::Bold));
         ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, ColumnName, item);
         item->setToolTip(i.value().getMdisambiguation());
         ++i;

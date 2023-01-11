@@ -2240,7 +2240,7 @@ void DialogSeamAllowance::NewCustomSA(const CustomSARecord &record)
         const QString name = GetPathName(record.path, record.reverse);
 
         QListWidgetItem *item = new QListWidgetItem(name);
-        item->setFont(QFont("Times", 12, QFont::Bold));
+        item->setFont(QFont("Arial", 12, QFont::Bold));
         item->setData(Qt::UserRole, QVariant::fromValue(record));
         uiPathsTab->customSeamAllowance_ListWidget->addItem(item);
         uiPathsTab->customSeamAllowance_ListWidget->setCurrentRow(uiPathsTab->customSeamAllowance_ListWidget->count()-1);
@@ -2255,7 +2255,7 @@ void DialogSeamAllowance::NewInternalPath(quint32 path)
         const QString name = GetPathName(path);
 
         QListWidgetItem *item = new QListWidgetItem(name);
-        item->setFont(QFont("Times", 12, QFont::Bold));
+        item->setFont(QFont("Arial", 12, QFont::Bold));
         item->setData(Qt::UserRole, QVariant::fromValue(path));
         uiPathsTab->internalPaths_ListWidget->addItem(item);
         uiPathsTab->internalPaths_ListWidget->setCurrentRow(uiPathsTab->internalPaths_ListWidget->count()-1);
@@ -2270,7 +2270,7 @@ void DialogSeamAllowance::newAnchorPoint(quint32 anchorPoint)
         const QSharedPointer<VGObject> anchor = data->GetGObject(anchorPoint);
 
         QListWidgetItem *item = new QListWidgetItem(anchor->name());
-        item->setFont(QFont("Times", 12, QFont::Bold));
+        item->setFont(QFont("Arial", 12, QFont::Bold));
         item->setData(Qt::UserRole, QVariant::fromValue(anchorPoint));
         uiAnchorPointsTab->anchorPoints_ListWidget->addItem(item);
         uiAnchorPointsTab->anchorPoints_ListWidget->setCurrentRow(uiAnchorPointsTab->anchorPoints_ListWidget->count()-1);

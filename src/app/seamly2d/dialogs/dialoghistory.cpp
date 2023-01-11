@@ -217,7 +217,7 @@ void DialogHistory::FillTable()
             }
 
             QTableWidgetItem *item = new QTableWidgetItem(historyRecord);
-            item->setFont(QFont("Times", 10, QFont::Bold));
+            item->setFont(QFont("Arial", 10, QFont::Bold));
             item->setFlags(item->flags() ^ Qt::ItemIsEditable);
             ui->tableWidget->setItem(currentRow, 1, item);//2nd column is Tool history description
             ++count;

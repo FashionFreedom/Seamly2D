@@ -801,7 +801,7 @@ void DialogSplinePath::NewItem(const VSplinePoint &point)
     flagLength2.append(true);
 
     auto item = new QListWidgetItem(point.P().name());
-    item->setFont(QFont("Times", 12, QFont::Bold));
+    item->setFont(QFont("Arial", 12, QFont::Bold));
     item->setData(Qt::UserRole, QVariant::fromValue(point));
 
     ui->listWidget->addItem(item);
