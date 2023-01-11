@@ -144,7 +144,7 @@ jobs:
 
   build-macos:
     name: 'macOS: Build'
-    runs-on: macos-latest
+    runs-on: macos-11
 
     steps:
       - name: checkout code
@@ -158,6 +158,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
+          sudo xcode-select -s /Applications/Xcode_11.7.app
           qmake Seamly2D.pro CONFIG+=noDebugSymbols CONFIG+=noTests
           make -j$(sysctl -n hw.logicalcpu)
 

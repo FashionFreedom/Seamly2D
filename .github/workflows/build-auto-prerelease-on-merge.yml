@@ -84,7 +84,7 @@ jobs:
           asset_content_type: application/octet-stream
 
   macos:
-    runs-on: macos-latest
+    runs-on: macos-11
     needs: release-data
     env:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
@@ -101,6 +101,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
+          sudo xcode-select -s /Applications/Xcode_11.7.app
           qmake Seamly2D.pro CONFIG+=noDebugSymbols
           make -j$(sysctl -n hw.logicalcpu)
 

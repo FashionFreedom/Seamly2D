@@ -25,6 +25,11 @@ win32{
     VCOPY = $$QMAKE_COPY /D
 }
 
+macx{
+    QMAKE_MAC_SDK = macosx10.15
+    QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.15
+}
+
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
 # Copy of answer:
 # We occasionally had customers getting very similar warning messages but the software was also crashing.
