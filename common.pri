@@ -305,7 +305,6 @@ CLANG_DEBUG_CXXFLAGS += \
     -Wabstract-final-class \
     -Wabstract-vbase-init \
     -Waddress \
-    -Waddress-of-array-temporary \
     -Waddress-of-temporary \
     -Waggregate-return \
     -Wall \
@@ -416,7 +415,6 @@ CLANG_DEBUG_CXXFLAGS += \
     -Wenum-compare \
     -Wenum-conversion \
     -Wexplicit-ownership-type \
-    -Wextended-offsetof \
     -Wextern-initializer \
     -Wextra \
     -Wextra-semi \
