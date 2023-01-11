@@ -737,8 +737,10 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
                                                           trueStr);
     const bool showSecond = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeShowSecondNotch,
                                                           trueStr);
-    const qreal  notchLength = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchLength, ".25");
-    const qreal   notchWidth = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchWidth, ".25");
+    const qreal  notchLength = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchLength,
+                                                               QString::number(qApp->Settings()->getDefaultNotchLength()));
+    const qreal   notchWidth = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchWidth,
+                                                               QString::number(qApp->Settings()->getDefaultNotchWidth()));
     const qreal   notchAngle = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchAngle, ".00");
     const quint32 notchCount = VDomDocument::GetParametrUInt(domElement,   VAbstractPattern::AttrNodeNotchCount, "1");
 
