@@ -120,7 +120,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
-          qmake Seamly2D.pro CONFIG+=noDebugSymbols
+          qmake Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests
           make -j$(sysctl -n hw.logicalcpu)
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
