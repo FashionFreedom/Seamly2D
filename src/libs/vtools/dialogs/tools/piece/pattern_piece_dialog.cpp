@@ -52,11 +52,6 @@
 
 #include "pattern_piece_dialog.h"
 #include "ui_pattern_piece_dialog.h"
-#include "ui_tabpaths.h"
-#include "ui_tablabels.h"
-#include "ui_tabgrainline.h"
-#include "ui_tabanchors.h"
-#include "ui_tabnotches.h"
 
 #include "dialoginternalpath.h"
 #include "vpointf.h"
