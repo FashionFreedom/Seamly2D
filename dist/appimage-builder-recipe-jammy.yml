@@ -8,9 +8,9 @@ script:
 
   - echo "=== Recreate AppDir ==="
   # must clear & recreate AppDir directory so that it is completely empty
-  # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker' 
+  # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
   - sudo rm -rf AppDir || true && install -g docker -o runner -d AppDir AppDir/usr && pwd && ls -la && echo '--- AppDir has been recreated ---'
-  
+
   - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
   - qmake Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests && echo "--- END QMAKE ---"
   - make -j$(nproc) && echo "--- END MAKE ---"
@@ -70,10 +70,11 @@ AppDir:
     - libxrender1
     - libxshmfence1
     - libxxf86vm1
-    - qt5-gtk-platformtheme         
+    - qt5-gtk-platformtheme
     - qt5-image-formats-plugins
     - qttranslations5-l10n
     - qtwayland5
+    - ubuntu-restricted-extras
     exclude:
     - dbus
     - ubuntu-mono
