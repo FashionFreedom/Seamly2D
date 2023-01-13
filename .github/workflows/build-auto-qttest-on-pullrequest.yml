@@ -22,8 +22,11 @@ jobs:
         run: |
           # ---------------------------------
           echo "-- install build dependencies --"
+          sudo add-apt-repository universe
+          sudo add-apt-repository multiverse
+          sudo add-apt-repository restricted
           sudo apt update
-          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools ubuntu-restricted-extras
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
@@ -33,7 +36,7 @@ jobs:
           echo "-- get appimage-builder --"
           sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
           sudo chmod +x /usr/local/bin/appimage-builder
-          
+
           # ---------------------------------
           echo "-- run appimage-builder with appimage-builder-recipe-jammy.yml --"
           appimage-builder --recipe dist/appimage-builder-recipe-jammy.yml --log INFO --skip-test
@@ -62,15 +65,17 @@ jobs:
           # ---------------------------------
           echo "-- install build dependencies --"
           sudo add-apt-repository universe
+          sudo add-apt-repository multiverse
+          sudo add-apt-repository restricted
           sudo apt update
-          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools ubuntu-restricted-extras
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
           # *********************************
           echo "-- show current directory --"
           echo $PWD
-          
+
           # *********************************
           echo "-- make Seamly2D & SeamlyMe --"
           mkdir /home/runner/local
@@ -134,7 +139,7 @@ jobs:
           cd ..\windows-build\
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
-    
+
       - name: Upload Seamly2D-windows.zip artifact
         # upload Seamly2D-windows.zip as artifact to Github Workflows
         uses: actions/upload-artifact@v3
