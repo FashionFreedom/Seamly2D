@@ -8536,7 +8536,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Fill:</source>
@@ -10134,7 +10134,7 @@ Haluatko tallentaa muutokset?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Piece label:</source>

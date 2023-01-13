@@ -10153,7 +10153,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Fill:</source>
@@ -11783,7 +11783,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Piece label:</source>

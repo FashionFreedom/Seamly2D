@@ -7250,10 +7250,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fill:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8841,10 +8837,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pattern label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

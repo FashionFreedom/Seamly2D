@@ -10488,7 +10488,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Fill:</source>
@@ -12114,7 +12114,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Piece label:</source>

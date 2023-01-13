@@ -969,7 +969,7 @@ QListWidget::item:selected {
               <item>
                <widget class="QToolButton" name="colorPicker_ToolButton">
                 <property name="text">
-                 <string>...</string>
+                 <string notr="true">...</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../../../../vmisc/share/resources/icon.qrc">
@@ -1115,7 +1115,7 @@ QListWidget::item:selected {
                   <string>Move row to top of list</string>
                  </property>
                  <property name="text">
-                  <string>...</string>
+                  <string notr="true">...</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../../../../vmisc/share/resources/theme.qrc">
@@ -1129,7 +1129,7 @@ QListWidget::item:selected {
                   <string>Move row up one row</string>
                  </property>
                  <property name="text">
-                  <string>...</string>
+                  <string notr="true">...</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../../../../vmisc/share/resources/theme.qrc">
@@ -1143,7 +1143,7 @@ QListWidget::item:selected {
                   <string>Move row down one row</string>
                  </property>
                  <property name="text">
-                  <string>...</string>
+                  <string notr="true">...</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../../../../vmisc/share/resources/theme.qrc">
@@ -1157,7 +1157,7 @@ QListWidget::item:selected {
                   <string>Molve row to botton of list</string>
                  </property>
                  <property name="text">
-                  <string>...</string>
+                  <string notr="true">...</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../../../../vmisc/share/resources/theme.qrc">
