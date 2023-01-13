@@ -29,6 +29,9 @@
    <string notr="true">background-color: rgb(240, 240, 240);</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
+   <property name="formAlignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+   </property>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="minimumSize">
