@@ -2544,7 +2544,6 @@ void PatternPieceDialog::newCustomSeamAllowance(const CustomSARecord &record)
         const QString name = getPathName(record.path, record.reverse);
 
         QListWidgetItem *item = new QListWidgetItem(name);
-        //item->setFont(QFont("Times", 12, QFont::Bold));
         item->setData(Qt::UserRole, QVariant::fromValue(record));
         ui->customSeamAllowance_ListWidget->addItem(item);
         ui->customSeamAllowance_ListWidget->setCurrentRow(ui->customSeamAllowance_ListWidget->count()-1);
@@ -2559,7 +2558,6 @@ void PatternPieceDialog::newInternalPath(quint32 path)
         const QString name = getPathName(path);
 
         QListWidgetItem *item = new QListWidgetItem(name);
-        //item->setFont(QFont("Times", 12, QFont::Bold));
         item->setData(Qt::UserRole, QVariant::fromValue(path));
         ui->internalPaths_ListWidget->addItem(item);
         ui->internalPaths_ListWidget->setCurrentRow(ui->internalPaths_ListWidget->count()-1);
