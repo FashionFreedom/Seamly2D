@@ -46,28 +46,9 @@ RCC_DIR = rcc
 include(warnings.pri)
 
 CONFIG(release, debug|release){
-    # Release mode
-    !*msvc*:CONFIG += silent
-    DEFINES += V_NO_ASSERT
-    !unix:*g++*{
-        QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
-    }
-
     !*msvc* {
         QMAKE_CXXFLAGS -= -O2 # Disable default optimization level
         QMAKE_CXXFLAGS += -O3 # For vlayout library enable speed optimizations
-    }
-
-    noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-        # do nothing
-    } else {
-        !macx:!*msvc*{
-            # Turn on debug symbols in release mode on Unix systems.
-            # On Mac OS X temporarily disabled. TODO: find way how to strip binary file.
-            QMAKE_CXXFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_LFLAGS_RELEASE =
-        }
     }
 }
 

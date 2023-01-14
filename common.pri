@@ -41,10 +41,9 @@ win32 {
 }
 
 CONFIG(release, debug|release){
-    !noDebugSymbols:win32:!*msvc*{
-        unset(QMAKE_STRIP)
-        QMAKE_STRIP = echo # we do striping manualy
-    }
+    # Release mode
+    !*msvc*:CONFIG += silent
+    DEFINES += V_NO_ASSERT V_NO_DEBUG
 }
 
 defineTest(minQtVersion) {
@@ -136,24 +135,6 @@ CONFIG(debug, debug|release){
 
     #build revision number for using in version
     #get the short form of the latest commit's changeset hash, i.e. a 12-character hexadecimal string
-
-    #macx{
-    #    HG = /usr/local/bin/hg # Can't defeat PATH variable on Mac OS.
-    ##}else {
-        HG = hg # All other platforms are OK.
-    #}
-    macx{
-        GIT = /usr/local/bin/git # Can't defeat PATH variable on Mac OS.
-    }else {
-        GIT = git # All other platforms are OK.
-    }
-
-    #unix {
-    #    DVCS_HESH=$$system("$${HG} log -r. --template '{node|short}'")
-    #} else {
-    #    # Use escape character before "|" on Windows
-    #    DVCS_HESH=$$system($${HG} log -r. --template "{node^|short}")
-    #}
     DVCS_HESH=$$system("git rev-parse --short=12 HEAD") #get SHA1 commit hash
     message("common.pri: Latest commit hash:" $${DVCS_HESH})
 
