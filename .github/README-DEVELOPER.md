@@ -18,13 +18,9 @@
 ___________________________________________________
 ## Build on Linux
 
-  _These instructions apply in general, with Ubuntu 22.04 as example_
+  _These instructions apply in general_
 
-* Install Qt 5.15.2
-  * Example for Ubuntu 22.04: Install the following packages to have Qt5 build environment ready: 
-      ```
-      $ sudo apt install -y libfuse2 qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
-      ```
+* Install Qt 5.15.2, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or https://github.com/miurahr/aqtinstall
 * Install QtCreator https://wiki.qt.io/VendorPackages
 * Install Additional libraries
   - gnu compiler
