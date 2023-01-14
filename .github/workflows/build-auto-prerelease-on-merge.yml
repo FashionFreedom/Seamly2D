@@ -16,14 +16,13 @@ jobs:
     outputs:
       upload_url: ${{ steps.release-data.outputs.upload_url }}
 
-    # The tag name is Pre-release-vYYYY-mm-dd.HHMM to distinguish between builds if there  are multiple pull-requests per day
+    # The tag name is vYYYY.mm.dd.HHMM-prerelease to distinguish between builds if there  are multiple pull-requests per day
     steps:
       - name: create name and tag
         id: create-name-and-tag
         run: |
-          version_date_time="Pre-release-$(date +v%F.%H%M)"
-          echo "TAG_NAME=$version_date_time" >> $GITHUB_ENV
-          echo "RELEASE_NAME=$version_date_time" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +v%Y.%-m.%-d.%-H%M-prerelease)" >> $GITHUB_ENV
+          echo "RELEASE_NAME=$(date +%Y.%-m.%-d.%-H%M-prerelease)" >> $GITHUB_ENV
 
       - name: create release data
         # output is 'upload_url'

@@ -338,7 +338,7 @@ void FvUpdater::httpFeedDownloadFinished() {
 			for (const QJsonValueRef jsonResp : jsonDoc.array()) {
 				auto tag = jsonResp.toObject()["tag_name"].toString();
 
-				QRegularExpression regexp{"v\\d+\\-\\d+\\-\\d+\\.\\d+"};
+				QRegularExpression regexp{"v\\d+\\.\\d+\\.\\d+\\.\\d+"};
 				auto matcher = regexp.match(tag);
 				qDebug() << "Found the following tag" << matcher.captured();
 
