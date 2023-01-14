@@ -118,60 +118,13 @@ VAbstractApplication::~VAbstractApplication()
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief translationsPath return path to the root directory that contain QM files.
- * @param locale used only in Mac OS. If empty return path to the root directory. If not - return path to locale
- * subdirectory inside an app bundle.
- * @return path to a directory that contain QM files.
+ * @param locale historic, not used
+ * @return path to a directory that contain QM files, default from CONFIG+=embed_translations as set in translations.pri
  */
 QString VAbstractApplication::translationsPath(const QString &locale) const
 {
-    const QString trPath = QStringLiteral("/translations");
-#ifdef Q_OS_WIN
     Q_UNUSED(locale)
-    return QCoreApplication::applicationDirPath() + trPath;
-#elif defined(Q_OS_MAC)
-    QString mainPath;
-    if (locale.isEmpty())
-    {
-        mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath;
-    }
-    else
-    {
-        mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath + QLatin1String("/")
-                + locale + QLatin1String(".lproj");
-    }
-    QDir dirBundle(mainPath);
-    if (dirBundle.exists())
-    {
-        return dirBundle.absolutePath();
-    }
-    else
-    {
-        QDir appDir = QDir(qApp->applicationDirPath());
-        appDir.cdUp();
-        appDir.cdUp();
-        appDir.cdUp();
-        QDir dir(appDir.absolutePath() + trPath);
-        if (dir.exists())
-        {
-            return dir.absolutePath();
-        }
-        else
-        {
-            return QStringLiteral("/usr/share/seamly2d/translations");
-        }
-    }
-#else // Unix
-    Q_UNUSED(locale)
-    QFileInfo appDirPath(QCoreApplication::applicationDirPath() + QStringLiteral("/../share/seamly2d/translations/"));
-    if (appDirPath.exists())
-    {
-        return appDirPath.absolutePath();
-    }
-    else
-    {
-        return QStringLiteral("/usr/share/seamly2d/translations/");
-    }
-#endif
+    return QStringLiteral(":/i18n/");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

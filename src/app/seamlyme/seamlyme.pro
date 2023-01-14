@@ -57,11 +57,7 @@ RESOURCES += \
 include(../tables.pri)
 copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
 
-noTranslations{ # For enable run qmake with CONFIG+=noTranslations
-    # do nothing
-} else {
 include(../translations.pri)
-}
 
 # Set "make install" command for Unix-like systems.
 unix{

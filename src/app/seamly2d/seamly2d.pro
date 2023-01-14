@@ -122,11 +122,7 @@ win32 {
     INSTALL_PDFTOPS += ../../../dist/win/pdftops.exe
 }
 
-noTranslations{ # For enable run qmake with CONFIG+=noTranslations
-    # do nothing
-} else {
 include(../translations.pri)
-}
 
 # Set "make install" command for Unix-like systems.
 unix{
