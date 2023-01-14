@@ -72,31 +72,19 @@ jobs:
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
-          # *********************************
-          echo "-- show current directory --"
-          echo $PWD
-
-          # *********************************
-          echo "-- make Seamly2D & SeamlyMe --"
-          mkdir /home/runner/local
-          qmake PREFIX=/home/runner/local Seamly2D.pro
-          make -j$(nproc) && make install
+          qmake Seamly2D.pro
+          make -j$(nproc)
 
       - name: install test dependencies
         # xvfb use to test built application within a framebuffer
         run: |
-          # *********************************
-          echo "-- install test dependencies (xvfb) --"
           sudo apt update
           sudo apt install -y xvfb
 
       # run the tests
       - name: test Seamly2D.exe
         run: |
-          # *********************************
-          echo "-- test Seamly2D with xvfb --"
-          export LD_LIBRARY_PATH=/home/runner/local/lib64/Seamly2D
-          xvfb-run -a make --silent check TESTARGS="-silent"
+          xvfb-run -a make check
 
   build-windows:
     name: 'Windows: Build'
