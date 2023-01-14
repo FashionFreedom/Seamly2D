@@ -118,7 +118,7 @@ QString AbstractTest::Seamly2DPath() const
 #if defined(Q_OS_WIN)
     return QCoreApplication::applicationDirPath() + path + QLatin1String("seamly2d.exe");
 #elif defined(Q_OS_MACOS)
-    return QCoreApplication::applicationDirPath() + path + QLatin1String("Seamly2D/Contents/MacOS/seamly2d");
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("Seamly2D.app/Contents/MacOS/seamly2d");
 #else
     return QCoreApplication::applicationDirPath() + path + QLatin1String("seamly2d");
 #endif
@@ -131,7 +131,7 @@ QString AbstractTest::SeamlyMePath() const
 #if defined(Q_OS_WIN)
     return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme.exe");
 #elif defined(Q_OS_MACOS)
-    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme/Contents/MacOS/seamlyme");
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme.app/Contents/MacOS/seamlyme");
 #else
     return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme");
 #endif
