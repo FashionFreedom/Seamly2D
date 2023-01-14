@@ -2,28 +2,18 @@
 version: 1
 
 script:
-  - echo "=== BEGIN APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
-  # get the neon public key into the keyring BEFORE getting the deb package in the next step
-  # ---------------------------------
-
-  - echo "=== Recreate AppDir ==="
   # must clear & recreate AppDir directory so that it is completely empty
   # assign ownership of AppDir and subdirs & files to owner 'runner' and group 'docker'
-  - sudo rm -rf AppDir || true && install -g docker -o runner -d AppDir AppDir/usr && pwd && ls -la && echo '--- AppDir has been recreated ---'
-
-  - echo "=== Qmake/make Seamly2D & SeamlyMe ==="
-  - qmake Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests && echo "--- END QMAKE ---"
+  - sudo rm -rf AppDir || true && install -g docker -o runner -d AppDir AppDir/usr && pwd && ls -la
+  - qmake Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests
   - make -j$(nproc) && echo "--- END MAKE ---"
-  - make INSTALL_ROOT=/home/runner/work/Seamly2D/Seamly2D/AppDir install && echo "--- END MAKE INSTALL ---"
+  - make INSTALL_ROOT=/home/runner/work/Seamly2D/Seamly2D/AppDir install
 
   # copy icons to the correct directories
-  - echo "=== Copy icon files ==="
   - mkdir -p AppDir/usr/share/icons/hicolor/64x64/apps/
   - mkdir -p AppDir/usr/share/icons/hicolor/256x256/
   - cp dist/seamly2d.png AppDir/usr/share/icons/hicolor/64x64/apps/ && ls -la AppDir/usr/share/icons/hicolor/64x64/apps/
   - cp share/img/Seamly2D_logo_256x256.png AppDir/usr/share/icons/hicolor/256x256/seamly2d.png && ls -la AppDir/usr/share/icons/hicolor/256x256/
-
-  - echo "=== END APPIMAGE RECIPE 'BEFORE' SCRIPT ==="
 
 AppDir:
 
