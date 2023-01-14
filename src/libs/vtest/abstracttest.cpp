@@ -136,7 +136,7 @@ QString AbstractTest::SeamlyMePath() const
 //---------------------------------------------------------------------------------------------------------------------
 QString AbstractTest::TranslationsPath() const
 {
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/../../../app/seamly2d/bin/translations");
+    return QCoreApplication::applicationDirPath() + QStringLiteral("/../../../app/seamly2d/.qm");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

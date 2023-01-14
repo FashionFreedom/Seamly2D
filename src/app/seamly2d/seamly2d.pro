@@ -170,10 +170,6 @@ unix{
             ../../../dist/application-x-seamly2d-i-measurements.png \
             ../../../dist/application-x-seamly2d-s-measurements.png \
 
-        # Path to translation files after installation
-        translations.path = $$PREFIX/share/$${TARGET}/translations/
-        translations.files = $$INSTALL_TRANSLATIONS
-
         # Path to multisize measurement after installation
         multisize.path = $$PREFIX/share/$${TARGET}/tables/multisize/
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
@@ -191,7 +187,6 @@ unix{
             seamlyme \
             desktop \
             pixmaps \
-            translations \
             multisize \
             templates \
             label
