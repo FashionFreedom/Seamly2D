@@ -67,10 +67,12 @@
 //---------------------------------------------------------------------------------------------------------------------
 DialogPointOfIntersectionCurves::DialogPointOfIntersectionCurves(const VContainer *data, const quint32 &toolId,
                                                                  QWidget *parent)
-    :DialogTool(data, toolId, parent),
-    ui(new Ui::DialogPointOfIntersectionCurves)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogPointOfIntersectionCurves)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/intersection_curves.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
@@ -82,8 +84,8 @@ DialogPointOfIntersectionCurves::DialogPointOfIntersectionCurves(const VContaine
 
     FillComboBoxCurves(ui->comboBoxCurve1);
     FillComboBoxCurves(ui->comboBoxCurve2);
-    FillComboBoxVCrossCurvesPoint(ui->comboBoxVCorrection);
-    FillComboBoxHCrossCurvesPoint(ui->comboBoxHCorrection);
+    FillComboBoxVCrossCurvesPoint(ui->verticalTake_ComboBox);
+    FillComboBoxHCrossCurvesPoint(ui->horizontalTake_ComboBox);
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged, this, &DialogPointOfIntersectionCurves::NamePointChanged);
     connect(ui->comboBoxCurve1, &QComboBox::currentTextChanged, this, &DialogPointOfIntersectionCurves::CurveChanged);
@@ -140,16 +142,16 @@ void DialogPointOfIntersectionCurves::SetSecondCurveId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 VCrossCurvesPoint DialogPointOfIntersectionCurves::GetVCrossPoint() const
 {
-    return getCurrentCrossPoint<VCrossCurvesPoint>(ui->comboBoxVCorrection);
+    return getCurrentCrossPoint<VCrossCurvesPoint>(ui->verticalTake_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfIntersectionCurves::SetVCrossPoint(const VCrossCurvesPoint &vP)
 {
-    auto index = ui->comboBoxVCorrection->findData(static_cast<int>(vP));
+    auto index = ui->verticalTake_ComboBox->findData(static_cast<int>(vP));
     if (index != -1)
     {
-        ui->comboBoxVCorrection->setCurrentIndex(index);
+        ui->verticalTake_ComboBox->setCurrentIndex(index);
 
         auto point = qobject_cast<VisToolPointOfIntersectionCurves *>(vis);
         SCASSERT(point != nullptr)
@@ -160,16 +162,16 @@ void DialogPointOfIntersectionCurves::SetVCrossPoint(const VCrossCurvesPoint &vP
 //---------------------------------------------------------------------------------------------------------------------
 HCrossCurvesPoint DialogPointOfIntersectionCurves::GetHCrossPoint() const
 {
-    return getCurrentCrossPoint<HCrossCurvesPoint>(ui->comboBoxHCorrection);
+    return getCurrentCrossPoint<HCrossCurvesPoint>(ui->horizontalTake_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfIntersectionCurves::SetHCrossPoint(const HCrossCurvesPoint &hP)
 {
-    auto index = ui->comboBoxHCorrection->findData(static_cast<int>(hP));
+    auto index = ui->horizontalTake_ComboBox->findData(static_cast<int>(hP));
     if (index != -1)
     {
-        ui->comboBoxHCorrection->setCurrentIndex(index);
+        ui->horizontalTake_ComboBox->setCurrentIndex(index);
 
         auto point = qobject_cast<VisToolPointOfIntersectionCurves *>(vis);
         SCASSERT(point != nullptr)

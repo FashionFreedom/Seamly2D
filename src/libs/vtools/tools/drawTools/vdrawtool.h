@@ -68,7 +68,7 @@ public:
     virtual         ~VDrawTool() Q_DECL_EQ_DEFAULT;
 
     QString          getLineType() const;
-    virtual void     SetTypeLine(const QString &value);
+    virtual void     setLineType(const QString &value);
 
     QString          getLineWeight() const;
     virtual void     setLineWeight(const QString &value);

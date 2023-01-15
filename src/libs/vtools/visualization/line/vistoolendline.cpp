@@ -100,9 +100,9 @@ void VisToolEndLine::RefreshGeometry()
         line = VGObject::BuildLine(static_cast<QPointF>(*first), length, angle);
         DrawPoint(point, line.p2(), mainColor);
     }
-    DrawLine(this, line, mainColor, lineStyle);
+    DrawLine(this, line, mainColor, lineWeight, lineStyle);
     static const QString prefix = UnitsToStr(qApp->patternUnit(), true);
-    Visualization::toolTip = tr("<b>Point at distance and angle</b>: angle = %1°, length = %2%3; "
+    Visualization::toolTip = tr("<b>Point Length and Angle</b>: angle = %1°, length = %2%3; "
                                 "Hold <b>SHIFT</b> to constrain angle, Press <b>ENTER</b> to finish tool creation")
             .arg(this->line().angle())
             .arg(qApp->TrVars()->FormulaToUser(QString::number(qApp->fromPixel(this->line().length())),

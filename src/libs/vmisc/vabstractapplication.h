@@ -64,6 +64,7 @@
 #include <QtGlobal>
 
 #include "../vmisc/def.h"
+#include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "def.h"
 #include "vcommonsettings.h"
@@ -73,6 +74,7 @@
 class QUndoStack;
 class VAbstractApplication;// use in define
 class VAbstractPattern;
+class VContainer;
 class VMainGraphicsView;
 
 #if defined(qApp)
@@ -117,6 +119,9 @@ public:
 
     void             setCurrentDocument(VAbstractPattern *doc);
     VAbstractPattern *getCurrentDocument()const;
+
+    void             setCurrentData(VContainer *data);
+    VContainer      *getCurrentData()const;
 
     bool             getOpeningPattern() const;
     void             setOpeningPattern();
@@ -163,6 +168,7 @@ private:
     VMainGraphicsView  *sceneView;
 
     VAbstractPattern   *doc;
+    VContainer         *data;
 
     /**
      * @brief openingPattern true when we opening pattern. If something will be wrong in formula this help understand if

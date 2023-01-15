@@ -186,6 +186,10 @@ void VisOperation::refreshMirroredObjects(const QPointF &firstPoint, const QPoin
                 break;
             }
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+            default:
                 break;
         }
     }

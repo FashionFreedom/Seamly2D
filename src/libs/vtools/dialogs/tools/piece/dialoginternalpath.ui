@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="path_Tab">
       <attribute name="title">
@@ -120,7 +120,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QComboBox" name="penType_ComboBox">
+          <widget class="LineTypeComboBox" name="penType_ComboBox">
            <property name="minimumSize">
             <size>
              <width>150</width>
@@ -129,7 +129,7 @@
            </property>
            <property name="iconSize">
             <size>
-             <width>80</width>
+             <width>40</width>
              <height>14</height>
             </size>
            </property>
@@ -181,7 +181,7 @@
             <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</iconset>
            </property>
           </widget>
@@ -195,7 +195,7 @@
             <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</iconset>
            </property>
           </widget>
@@ -209,7 +209,7 @@
             <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
            </property>
           </widget>
@@ -223,7 +223,7 @@
             <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</iconset>
            </property>
           </widget>
@@ -1661,6 +1661,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LineTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>linetype_combobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../vmisc/share/resources/icon.qrc"/>
@@ -1700,7 +1707,7 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchSubType_ButtonGroup"/>
   <buttongroup name="notchType_ButtonGroup"/>
+  <buttongroup name="notchSubType_ButtonGroup"/>
  </buttongroups>
 </ui>

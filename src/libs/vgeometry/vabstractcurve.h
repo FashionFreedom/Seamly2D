@@ -78,12 +78,12 @@ public:
     explicit VAbstractCurve(const VAbstractCurve &curve);
     virtual ~VAbstractCurve() Q_DECL_OVERRIDE;
 
-    VAbstractCurve& operator= (const VAbstractCurve &curve);
+    VAbstractCurve &operator = (const VAbstractCurve &curve);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VAbstractCurve &operator=(VAbstractCurve &&curve) Q_DECL_NOTHROW;
+	VAbstractCurve &operator = (VAbstractCurve &&curve) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VAbstractCurve &curve) Q_DECL_NOTHROW;
+	void                     Swap(VAbstractCurve &curve) Q_DECL_NOTHROW;
 
     virtual QVector<QPointF> getPoints() const =0;
     static QVector<QPointF>  GetSegmentPoints(const QVector<QPointF> &points, const QPointF &begin, const QPointF &end,
@@ -105,11 +105,14 @@ public:
     quint32                  GetDuplicate() const;
     void                     SetDuplicate(quint32 number);
 
-    QString                  GetColor() const;
-    void                     SetColor(const QString &color);
+    QString                  getLineColor() const;
+    void                     setLineColor(const QString &color);
 
     QString                  GetPenStyle() const;
     void                     SetPenStyle(const QString &penStyle);
+
+    QString                  getLineWeight() const;
+    void                     setLineWeight(const QString &lineWeight);
 
     static qreal             PathLength(const QVector<QPointF> &path);
 
@@ -122,9 +125,11 @@ public:
     virtual QVector<DirectionArrow> DirectionArrows() const;
     static QPainterPath      ShowDirection(const QVector<DirectionArrow> &arrows, qreal width);
 
-    static const qreal lengthCurveDirectionArrow;
+    static const qreal       lengthCurveDirectionArrow;
+
 protected:
     virtual void             CreateName() =0;
+
 private:
     QSharedDataPointer<VAbstractCurveData> d;
 

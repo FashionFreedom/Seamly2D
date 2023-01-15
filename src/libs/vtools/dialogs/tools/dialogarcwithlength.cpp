@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -62,21 +62,36 @@
 #include <Qt>
 
 #include "../ifc/xml/vdomdocument.h"
-#include "../vpatterndb/vtranslatevars.h"
-#include "../../visualization/path/vistoolarcwithlength.h"
 #include "../support/dialogeditwrongformula.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
+#include "../vpatterndb/vtranslatevars.h"
 #include "../../visualization/visualization.h"
+#include "../../visualization/path/vistoolarcwithlength.h"
+
 #include "ui_dialogarcwithlength.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogArcWithLength), flagRadius(false), flagF1(false),
-      flagLength(false), timerRadius(nullptr), timerF1(nullptr), timerLength(nullptr), radius(QString()), f1(QString()),
-      length(QString()),formulaBaseHeightRadius(0), formulaBaseHeightF1(0), formulaBaseHeightLength(0), angleF1(INT_MIN)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogArcWithLength)
+    , flagRadius(false)
+    , flagF1(false)
+    , flagLength(false)
+    , timerRadius(nullptr)
+    , timerF1(nullptr)
+    , timerLength(nullptr)
+    , radius(QString())
+    , f1(QString())
+    , length(QString())
+    , formulaBaseHeightRadius(0)
+    , formulaBaseHeightF1(0)
+    , formulaBaseHeightLength(0)
+    , angleF1(INT_MIN)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/arc_with_length.png"));
 
     plainTextEditFormula = ui->plainTextEditRadius;
     this->formulaBaseHeightLength = ui->plainTextEditRadius->height();
@@ -99,21 +114,43 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     InitOkCancelApply(ui);
 
     FillComboBoxPoints(ui->comboBoxCenter);
-    FillComboBoxLineColors(ui->comboBoxColor);
-    FillComboBoxTypeLine(ui->comboBoxPenStyle, CurvePenStylesPics());
+
+    int index = ui->lineType_ComboBox->findData(LineTypeNone);
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->removeItem(index);
+    }
+
+    index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     CheckState();
 
     connect(ui->toolButtonExprRadius, &QPushButton::clicked, this, &DialogArcWithLength::FXRadius);
-    connect(ui->toolButtonExprF1, &QPushButton::clicked, this, &DialogArcWithLength::FXF1);
+    connect(ui->toolButtonExprF1,     &QPushButton::clicked, this, &DialogArcWithLength::FXF1);
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogArcWithLength::FXLength);
 
     connect(ui->plainTextEditRadius, &QPlainTextEdit::textChanged, this, &DialogArcWithLength::RadiusChanged);
-    connect(ui->plainTextEditF1, &QPlainTextEdit::textChanged, this, &DialogArcWithLength::F1Changed);
+    connect(ui->plainTextEditF1,     &QPlainTextEdit::textChanged, this, &DialogArcWithLength::F1Changed);
     connect(ui->plainTextEditLength, &QPlainTextEdit::textChanged, this, &DialogArcWithLength::LengthChanged);
 
-    connect(ui->pushButtonGrowLengthRadius, &QPushButton::clicked, this, &DialogArcWithLength::DeployRadiusTextEdit);
-    connect(ui->pushButtonGrowLengthF1, &QPushButton::clicked, this, &DialogArcWithLength::DeployF1TextEdit);
+    connect(ui->pushButtonGrowLengthRadius,    &QPushButton::clicked, this, &DialogArcWithLength::DeployRadiusTextEdit);
+    connect(ui->pushButtonGrowLengthF1,        &QPushButton::clicked, this, &DialogArcWithLength::DeployF1TextEdit);
     connect(ui->pushButtonGrowLengthArcLength, &QPushButton::clicked, this, &DialogArcWithLength::DeployLengthTextEdit);
 
     vis = new VisToolArcWithLength(data);
@@ -210,27 +247,47 @@ void DialogArcWithLength::SetLength(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogArcWithLength::GetPenStyle() const
+QString DialogArcWithLength::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogArcWithLength::SetPenStyle(const QString &value)
+void DialogArcWithLength::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxPenStyle, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogArcWithLength::GetColor() const
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogArcWithLength::getLineWeight() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxColor, ColorBlack);
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogArcWithLength::SetColor(const QString &value)
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogArcWithLength::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxColor, value);
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogArcWithLength::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogArcWithLength::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -80,10 +80,12 @@
  * @param parent parent widget
  */
 DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogShoulderPoint), formula(QString()),
+    : DialogTool(data, toolId, parent), ui(new Ui::DialogShoulderPoint), formula(QString()),
       formulaBaseHeight(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/shoulder.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
@@ -97,11 +99,27 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
     flagFormula = false;
     DialogTool::CheckState();
 
-    FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
     FillComboBoxPoints(ui->comboBoxP1Line);
     FillComboBoxPoints(ui->comboBoxP2Line);
     FillComboBoxPoints(ui->comboBoxP3);
-    FillComboBoxLineColors(ui->comboBoxLineColor);
+
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     connect(ui->toolButtonExprLength, &QPushButton::clicked,        this, &DialogShoulderPoint::FXLength);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,      this, &DialogShoulderPoint::NamePointChanged);
@@ -112,6 +130,10 @@ DialogShoulderPoint::DialogShoulderPoint(const VContainer *data, const quint32 &
     connect(ui->comboBoxP3,           &QComboBox::currentTextChanged, this, &DialogShoulderPoint::PointNameChanged);
 
     vis = new VisToolShoulderPoint(data);
+
+    // Call after initialization vis!!!!
+    setLineType(LineTypeDashLine);
+    setLineWeight("0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -253,7 +275,8 @@ void DialogShoulderPoint::SaveData()
     line->setLineP1Id(GetP1Line());
     line->setLineP2Id(GetP2Line());
     line->setLength(formula);
-    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(getLineType()));
+    line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
 }
 
@@ -279,15 +302,15 @@ void DialogShoulderPoint::SetP3(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogShoulderPoint::GetLineColor() const
+QString DialogShoulderPoint::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineColor, ColorBlack);
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogShoulderPoint::SetLineColor(const QString &value)
+void DialogShoulderPoint::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineColor, value);
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -341,13 +364,44 @@ void DialogShoulderPoint::SetFormula(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetTypeLine set type of line
+ * @brief getLineType return type of line
+ * @return type
+ */
+QString DialogShoulderPoint::getLineType() const
+{
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineType set type of line
  * @param value type
  */
-void DialogShoulderPoint::SetTypeLine(const QString &value)
+void DialogShoulderPoint::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineType, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogShoulderPoint::getLineWeight() const
+{
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogShoulderPoint::setLineWeight(const QString &value)
+{
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -359,16 +413,6 @@ void DialogShoulderPoint::SetPointName(const QString &value)
 {
     pointName = value;
     ui->lineEditNamePoint->setText(pointName);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetTypeLine return type of line
- * @return type
- */
-QString DialogShoulderPoint::GetTypeLine() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

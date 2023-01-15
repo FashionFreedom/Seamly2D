@@ -33,7 +33,11 @@
 #include "../vproperty_p.h"
 
 VPE::VStringProperty::VStringProperty(const QString &name, const QMap<QString, QVariant> &settings)
-    : VProperty(name, QVariant::String), readOnly(false), typeForParent(0), clearButton(false), m_osSeparator(false)
+    : VProperty(name, QVariant::String)
+    , readOnly(false)
+    , typeForParent(0)
+    , clearButton(false)
+    , m_osSeparator(false)
 {
     VProperty::setSettings(settings);
     d_ptr->VariantValue.setValue(QString());
@@ -41,7 +45,11 @@ VPE::VStringProperty::VStringProperty(const QString &name, const QMap<QString, Q
 }
 
 VPE::VStringProperty::VStringProperty(const QString &name)
-    : VProperty(name), readOnly(false), typeForParent(0), clearButton(false), m_osSeparator(false)
+    : VProperty(name)
+    , readOnly(false)
+    , typeForParent(0)
+    , clearButton(false)
+    , m_osSeparator(false)
 {
     d_ptr->VariantValue.setValue(QString());
     d_ptr->VariantValue.convert(QVariant::String);
@@ -53,12 +61,14 @@ QWidget *VPE::VStringProperty::createEditor(QWidget *parent, const QStyleOptionV
     Q_UNUSED(options)
     Q_UNUSED(delegate)
 
-    QLineEdit* tmpEditor = new QLineEdit(parent);
+    QLineEdit *tmpEditor = new QLineEdit(parent);
+    tmpEditor->setMinimumWidth(140);
+    tmpEditor->setAlignment(Qt::AlignTop);
     tmpEditor->setLocale(parent->locale());
     tmpEditor->setReadOnly(readOnly);
     tmpEditor->installEventFilter(this);
     tmpEditor->setClearButtonEnabled(clearButton);
-    tmpEditor->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    tmpEditor->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     tmpEditor->setText(d_ptr->VariantValue.toString());
 
     d_ptr->editor = tmpEditor;
@@ -67,7 +77,7 @@ QWidget *VPE::VStringProperty::createEditor(QWidget *parent, const QStyleOptionV
 
 QVariant VPE::VStringProperty::getEditorData(const QWidget *editor) const
 {
-    const QLineEdit* tmpEditor = qobject_cast<const QLineEdit*>(editor);
+    const QLineEdit *tmpEditor = qobject_cast<const QLineEdit*>(editor);
     if (tmpEditor)
     {
         return tmpEditor->text();
@@ -134,7 +144,7 @@ VPE::VProperty *VPE::VStringProperty::clone(bool include_children, VPE::VPropert
     return VProperty::clone(include_children, container ? container : new VStringProperty(getName(), getSettings()));
 }
 
-void VPE::VStringProperty::UpdateParent(const QVariant &value)
+void VPE::VStringProperty::updateParent(const QVariant &value)
 {
     emit childChanged(value, typeForParent);
 }

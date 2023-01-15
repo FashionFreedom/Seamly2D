@@ -128,6 +128,10 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
                 originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->getPoints());
                 break;
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+            default:
                 Q_UNREACHABLE();
                 break;
         }
@@ -294,6 +298,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                                          data));
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -347,6 +355,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                               rotationOrigin, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -462,6 +474,21 @@ QString VToolMove::getOriginPointName() const
     {
         return tr("Center point");
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VToolMove::getOriginPointId() const
+{
+    return m_originPointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMove::setOriginPointId(const quint32 &value)
+{
+    m_originPointId = value;
+
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetFakeGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

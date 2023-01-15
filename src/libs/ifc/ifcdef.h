@@ -1,10 +1,14 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   ifcdef.h
+ **  @author DS Caskey
+ **  @date   Feb 7, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -19,9 +23,8 @@
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
-
- ************************************************************************
+ *************************************************************************/
+/************************************************************************
  **
  **  @file   ifcdef.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -177,11 +180,13 @@ extern const QString LineTypeDotLine;
 extern const QString LineTypeDashDotLine;
 extern const QString LineTypeDashDotDotLine;
 
-QStringList          StylesList();
-Qt::PenStyle         lineTypeToPenStyle(const QString &lineType);
-QString              PenStyleToLineStyle(Qt::PenStyle penStyle);
-QMap<QString, QIcon> LineStylesPics();
-QMap<QString, QIcon> CurvePenStylesPics();
+QStringList            LineTypes();
+Qt::PenStyle           lineTypeToPenStyle(const QString &lineType);
+QString                PenStyleToLineType(Qt::PenStyle penStyle);
+QMap<QString, QString> LineTypeList();
+QMap<QString, QString> CurveLineTypeList();
+
+QMap<QString, QString> lineWeightList();
 
 extern const QString ColorByGroup;
 extern const QString ColorNone;

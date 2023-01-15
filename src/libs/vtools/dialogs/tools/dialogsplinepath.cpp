@@ -94,20 +94,22 @@
  * @param parent parent widget
  */
 DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    : DialogTool(data, toolId, parent),
-      ui(new Ui::DialogSplinePath),
-      path(),
-      newDuplicate(-1),
-      formulaBaseHeightAngle1(0),
-      formulaBaseHeightAngle2(0),
-      formulaBaseHeightLength1(0),
-      formulaBaseHeightLength2(0),
-      flagAngle1(),
-      flagAngle2(),
-      flagLength1(),
-      flagLength2()
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogSplinePath)
+    , path()
+    , newDuplicate(-1)
+    , formulaBaseHeightAngle1(0)
+    , formulaBaseHeightAngle2(0)
+    , formulaBaseHeightLength1(0)
+    , formulaBaseHeightLength2(0)
+    , flagAngle1()
+    , flagAngle2()
+    , flagLength1()
+    , flagLength2()
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/splinePath.png"));
 
     plainTextEditFormula = ui->plainTextEditAngle1F;
 
@@ -125,8 +127,30 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     ok_Button->setEnabled(false);
 
     FillComboBoxPoints(ui->comboBoxPoint);
-    FillComboBoxLineColors(ui->comboBoxColor);
-    FillComboBoxTypeLine(ui->comboBoxPenStyle, CurvePenStylesPics());
+
+    int index = ui->lineType_ComboBox->findData(LineTypeNone);
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->removeItem(index);
+    }
+
+    index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     connect(ui->listWidget, &QListWidget::currentRowChanged, this, &DialogSplinePath::PointChanged);
     connect(ui->comboBoxPoint,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
@@ -192,27 +216,47 @@ void DialogSplinePath::SetPath(const VSplinePath &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSplinePath::GetPenStyle() const
+QString DialogSplinePath::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::SetPenStyle(const QString &value)
+void DialogSplinePath::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxPenStyle, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogSplinePath::GetColor() const
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogSplinePath::getLineWeight() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxColor, ColorBlack);
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogSplinePath::SetColor(const QString &value)
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogSplinePath::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxColor, value);
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogSplinePath::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSplinePath::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -312,24 +356,36 @@ void DialogSplinePath::closeEvent(QCloseEvent *event)
 void DialogSplinePath::DeployAngle1TextEdit()
 {
     DeployFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
+    collapseFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
+    collapseFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
+    collapseFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::DeployAngle2TextEdit()
 {
     DeployFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
+    collapseFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
+    collapseFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
+    collapseFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::DeployLength1TextEdit()
 {
     DeployFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
+    collapseFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
+    collapseFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
+    collapseFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::DeployLength2TextEdit()
 {
     DeployFormula(ui->plainTextEditLength2F, ui->pushButtonGrowLength2, formulaBaseHeightLength2);
+    collapseFormula(ui->plainTextEditAngle1F, ui->pushButtonGrowAngle1, formulaBaseHeightAngle1);
+    collapseFormula(ui->plainTextEditAngle2F, ui->pushButtonGrowAngle2, formulaBaseHeightAngle2);
+    collapseFormula(ui->plainTextEditLength1F, ui->pushButtonGrowLength1, formulaBaseHeightLength1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -801,7 +857,6 @@ void DialogSplinePath::NewItem(const VSplinePoint &point)
     flagLength2.append(true);
 
     auto item = new QListWidgetItem(point.P().name());
-    item->setFont(QFont("Times", 12, QFont::Bold));
     item->setData(Qt::UserRole, QVariant::fromValue(point));
 
     ui->listWidget->addItem(item);
@@ -827,27 +882,30 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
     ui->comboBoxPoint->blockSignals(false);
 
     int row = ui->listWidget->currentRow();
-    const QString field = tr("Not used");
-    const QString emptyRes = QString("_");
+    const QString notUsed = tr("Not used");
+    const QString result = tr("Result value");
+    const QString emptyResult = QString("NA");
 
     if (row == 0)
     {
         ui->toolButtonExprAngle1->setEnabled(false);
-        ui->labelResultAngle1->setText(emptyRes);
-        ui->labelResultAngle1->setToolTip(tr("Value"));
+        ui->labelResultAngle1->setText(emptyResult);
+        ui->labelResultAngle1->setToolTip(result);
         ChangeColor(ui->labelEditAngle1, okColor);
         ui->plainTextEditAngle1F->blockSignals(true);
-        ui->plainTextEditAngle1F->setPlainText(field);
+        ui->plainTextEditAngle1F->setPlainText(notUsed);
         ui->plainTextEditAngle1F->setEnabled(false);
+        ui->pushButtonGrowAngle1->setEnabled(false);
         ui->plainTextEditAngle1F->blockSignals(false);
 
         ui->toolButtonExprLength1->setEnabled(false);
-        ui->labelResultLength1->setText(emptyRes);
-        ui->labelResultLength1->setToolTip(tr("Value"));
+        ui->labelResultLength1->setText(emptyResult);
+        ui->labelResultLength1->setToolTip(result);
         ChangeColor(ui->labelEditLength1, okColor);
         ui->plainTextEditLength1F->blockSignals(true);
-        ui->plainTextEditLength1F->setPlainText(field);
+        ui->plainTextEditLength1F->setPlainText(notUsed);
         ui->plainTextEditLength1F->setEnabled(false);
+        ui->pushButtonGrowLength1->setEnabled(false);
         ui->plainTextEditLength1F->blockSignals(false);
 
         ui->plainTextEditAngle2F->setEnabled(true);
@@ -870,21 +928,23 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
     else if (row == ui->listWidget->count()-1)
     {
         ui->toolButtonExprAngle2->setEnabled(false);
-        ui->labelResultAngle2->setText(emptyRes);
-        ui->labelResultAngle2->setToolTip(tr("Value"));
+        ui->labelResultAngle2->setText(emptyResult);
+        ui->labelResultAngle2->setToolTip(result);
         ChangeColor(ui->labelEditAngle2, okColor);
         ui->plainTextEditAngle2F->blockSignals(true);
-        ui->plainTextEditAngle2F->setPlainText(field);
+        ui->plainTextEditAngle2F->setPlainText(notUsed);
         ui->plainTextEditAngle2F->setEnabled(false);
+        ui->pushButtonGrowAngle2->setEnabled(false);
         ui->plainTextEditAngle2F->blockSignals(false);
 
         ui->toolButtonExprLength2->setEnabled(false);
-        ui->labelResultLength2->setText(emptyRes);
-        ui->labelResultLength2->setToolTip(tr("Value"));
+        ui->labelResultLength2->setText(emptyResult);
+        ui->labelResultLength2->setToolTip(result);
         ChangeColor(ui->labelEditLength2, okColor);
         ui->plainTextEditLength2F->blockSignals(true);
-        ui->plainTextEditLength2F->setPlainText(field);
+        ui->plainTextEditLength2F->setPlainText(notUsed);
         ui->plainTextEditLength2F->setEnabled(false);
+        ui->pushButtonGrowLength2->setEnabled(false);
         ui->plainTextEditLength2F->blockSignals(false);
 
         ui->plainTextEditAngle1F->setEnabled(true);
@@ -906,6 +966,11 @@ void DialogSplinePath::DataPoint(const VSplinePoint &p)
     }
     else
     {
+        ui->pushButtonGrowAngle1->setEnabled(true);
+        ui->pushButtonGrowAngle2->setEnabled(true);
+        ui->pushButtonGrowLength1->setEnabled(true);
+        ui->pushButtonGrowLength2->setEnabled(true);
+
         ui->toolButtonExprAngle1->setEnabled(true);
         ui->toolButtonExprLength1->setEnabled(true);
         ui->toolButtonExprAngle2->setEnabled(true);
@@ -1003,4 +1068,22 @@ void DialogSplinePath::ShowPointIssue(const QString &pName)
     {
        item->setText(pName + QLatin1String("(!)"));
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSplinePath::collapseFormula(QPlainTextEdit *textEdit, QPushButton *pushButton, int height)
+{
+    SCASSERT(textEdit != nullptr)
+    SCASSERT(pushButton != nullptr)
+
+    const QTextCursor cursor = textEdit->textCursor();
+
+    setMaximumWidth(260);
+    textEdit->setFixedHeight(height);
+    pushButton->setIcon(QIcon::fromTheme("go-down", QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
+    setUpdatesEnabled(false);
+    repaint();
+    setUpdatesEnabled(true);
+    textEdit->setFocus();
+    textEdit->setTextCursor(cursor);
 }

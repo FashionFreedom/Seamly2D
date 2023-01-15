@@ -9,6 +9,7 @@ SOURCES += \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
     $$PWD/mouse_coordinates.cpp \
+    $$PWD/pen_toolbar.cpp \
     $$PWD/scene_rect.cpp \
     $$PWD/vmaingraphicsscene.cpp \
     $$PWD/vmaingraphicsview.cpp \
@@ -42,6 +43,7 @@ HEADERS += \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
     $$PWD/mouse_coordinates.h \
+    $$PWD/pen_toolbar.h \
     $$PWD/scene_rect.h \
     $$PWD/stable.h \
     $$PWD/vmaingraphicsscene.h \

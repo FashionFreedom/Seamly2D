@@ -83,6 +83,7 @@ class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
 class MouseCoordinates;
+class PenToolBar;
 
 /**
  * @brief The MainWindow class main windows.
@@ -98,6 +99,7 @@ public:
 
 public slots:
     void ProcessCMD();
+    void penChanged(Pen pen);
 
     virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
     virtual void zoomToSelected() Q_DECL_OVERRIDE;
@@ -329,6 +331,8 @@ private:
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
+    PenToolBar                       *m_penToolBar; //!< for selecting the current pen
+    PenToolBar                       *m_penReset;
 
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
@@ -339,6 +343,7 @@ private:
     void                              initPointNameToolBar();
     void                              initToolsToolBar();
     void                              initToolBarVisibility();
+    void                              initPenToolBar();
     void                              updateToolBarVisibility();
     void                              setToolBarVisibility(QToolBar *toolbar, bool visible);
     void                              InitToolButtons();

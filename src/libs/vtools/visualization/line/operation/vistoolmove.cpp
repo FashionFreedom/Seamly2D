@@ -200,7 +200,7 @@ void VisToolMove::RefreshGeometry()
             tempRotation = rotationAngle;
         }
 
-        DrawLine(rotationLineItem, rotationLine, supportColor3, Qt::DashLine);
+        DrawLine(rotationLineItem, rotationLine, supportColor3, lineWeight, Qt::DashLine);
     }
 
     drawArrowedLine(moveLineItem, line, supportColor2, Qt::DashLine);
@@ -286,7 +286,8 @@ QGraphicsPathItem *VisToolMove::AddOriginCurve(quint32 id, int &i)
 
     ++i;
     VCurvePathItem *path = GetCurve(static_cast<quint32>(i), supportColor2);
-    DrawPath(path, curve->GetPath(), curve->DirectionArrows(), supportColor2, Qt::SolidLine, Qt::RoundCap);
+    DrawPath(path, curve->GetPath(), curve->DirectionArrows(), supportColor2, Qt::SolidLine,
+             lineWeight,  Qt::RoundCap);
 
     return path;
 }
@@ -301,7 +302,8 @@ int VisToolMove::AddDestinationCurve(qreal angle, qreal length, quint32 id, int 
     ++i;
     VCurvePathItem *path = GetCurve(static_cast<quint32>(i), supportColor);
     const Item moved = curve->Move(length, angle).Rotate(rotationOrigin, rotationAngle);
-    DrawPath(path, moved.GetPath(), moved.DirectionArrows(), supportColor, Qt::SolidLine, Qt::RoundCap);
+    DrawPath(path, moved.GetPath(), moved.DirectionArrows(), supportColor, Qt::SolidLine,
+             lineWeight,  Qt::RoundCap);
 
     return i;
 }
@@ -359,6 +361,10 @@ void VisToolMove::createOriginObjects(int &iPoint, int &iCurve)
                 sourceObjects.append(Visualization::data->GeometricObject<VAbstractCurve>(id)->getPoints());
                 break;
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+            default:
                 break;
         }
     }

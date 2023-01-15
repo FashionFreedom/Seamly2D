@@ -213,6 +213,7 @@
      </property>
      <addaction name="pointAtDistanceAngle_Action"/>
      <addaction name="pointAlongLine_Action"/>
+     <addaction name="midpoint_Action"/>
      <addaction name="pointAlongPerpendicular_Action"/>
      <addaction name="bisector_Action"/>
      <addaction name="pointOnShoulder_Action"/>
@@ -221,7 +222,6 @@
      <addaction name="pointIntersectXY_Action"/>
      <addaction name="perpendicularPoint_Action"/>
      <addaction name="pointIntersectAxis_Action"/>
-     <addaction name="midpoint_Action"/>
     </widget>
     <widget class="QMenu" name="details_Menu">
      <property name="title">
@@ -615,6 +615,7 @@
    </attribute>
    <addaction name="pointAtDistanceAngle_Action"/>
    <addaction name="pointAlongLine_Action"/>
+   <addaction name="midpoint_Action"/>
    <addaction name="pointAlongPerpendicular_Action"/>
    <addaction name="bisector_Action"/>
    <addaction name="pointOnShoulder_Action"/>
@@ -623,7 +624,6 @@
    <addaction name="pointIntersectXY_Action"/>
    <addaction name="perpendicularPoint_Action"/>
    <addaction name="pointIntersectAxis_Action"/>
-   <addaction name="midpoint_Action"/>
   </widget>
   <widget class="QToolBar" name="lines_ToolBar">
    <property name="windowTitle">
@@ -966,7 +966,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point along Bisector (PB)</string>
+                <string>Point - On Bisector (O, B)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -992,7 +992,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point on Shoulder (PS)</string>
+                <string>Point - Length to Line (P, S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1018,7 +1018,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Line and Arc (PC)</string>
+                <string>Point - Intersect Arc and Line (A, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1044,7 +1044,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Triangle (PT)</string>
+                <string>Point - Intersect Axis and Triangle (X, T)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1070,7 +1070,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersect XY (X, Y)</string>
+                <string>Point - Intersect XY (X, Y)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1096,7 +1096,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Line and Perpendicular (PL)</string>
+                <string>Point - Intersect Line and Perpendicular (L, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1122,7 +1122,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Line and Axis (IX)</string>
+                <string>Point - Intersect Line and Axis (I, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1148,7 +1148,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point on Perpendicular (PP)</string>
+                <string>Point - On Perpendicular (O, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1174,7 +1174,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point at Distance and Angle (DA)</string>
+                <string>Point - Length and Angle (L, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1200,7 +1200,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point at Distance along Line (PA)</string>
+                <string>Point - On Line (O, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1226,7 +1226,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Midpoint between 2 Points (MP)</string>
+                <string>Point - Midpoint on Line (Shift+O, Shift+L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1324,7 +1324,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of 2 Lines (IL)</string>
+                <string>Point - Intersect Lines (I, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1402,7 +1402,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Curve (Alt+C)</string>
+                <string>Curve - Interactive (Alt+C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1428,7 +1428,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Spline (Alt+S)</string>
+                <string>Spline - Interactive (Alt+S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1454,7 +1454,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Curve with Control Points (CP)</string>
+                <string>Curve - Fixed (Alt+Shift+C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1480,7 +1480,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Spline with Control Points (SP)</string>
+                <string>Spline - Fixed (Alt+Shift+S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1500,39 +1500,13 @@
                </property>
               </widget>
              </item>
-             <item row="6" column="0">
-              <widget class="QToolButton" name="pointAlongCurve_ToolButton">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="toolTip">
-                <string>Point along Curve (AC)</string>
-               </property>
-               <property name="text">
-                <string notr="true">...</string>
-               </property>
-               <property name="icon">
-                <iconset resource="share/resources/toolicon.qrc">
-                 <normaloff>:/toolicon/32x32/spline_cut_point.png</normaloff>:/toolicon/32x32/spline_cut_point.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>32</width>
-                 <height>32</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
              <item row="6" column="1">
               <widget class="QToolButton" name="pointAlongSpline_ToolButton">
                <property name="enabled">
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point along Spline (AS)</string>
+                <string>Point - On Spline (O, S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1558,7 +1532,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Curves (CC)</string>
+                <string>Point - Intersect Curves (I, C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1584,7 +1558,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Curve and Axis (CA)</string>
+                <string>Point - Intersect Curve and Axis (C, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1592,6 +1566,32 @@
                <property name="icon">
                 <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/curve_intersect_axis.png</normaloff>:/toolicon/32x32/curve_intersect_axis.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QToolButton" name="pointAlongCurve_ToolButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Point - On Curve (O, C)</string>
+               </property>
+               <property name="text">
+                <string notr="true">...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="share/resources/toolicon.qrc">
+                 <normaloff>:/toolicon/32x32/spline_cut_point.png</normaloff>:/toolicon/32x32/spline_cut_point.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1656,7 +1656,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Arc (Alt+A)</string>
+                <string>Arc - Radius and Angles (Alt+A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1682,7 +1682,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point along Arc (AA)</string>
+                <string>Point - On Arc (O, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1708,7 +1708,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Arc and Axis (AX)</string>
+                <string>Point - Intersect Arc and Axis (A, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1734,7 +1734,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Arcs (IA)</string>
+                <string>Point - Intersect Arcs (I, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1760,7 +1760,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Circles (IC)</string>
+                <string>Point - Intersect Circles (Shift+I, Shift+C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1786,7 +1786,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Circle and Tangent (CT)</string>
+                <string>Point - Intersect Circle and Tangent (C, T)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1812,7 +1812,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Tangency Point of Arc and Tangent (AT)</string>
+                <string>Point - Intersect Arc and Tangent (A, T)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1838,7 +1838,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Arc with Length (AL)</string>
+                <string>Arc - Radius and Length (Alt+Shift+A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1864,7 +1864,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Elliptical Arc (E,A)</string>
+                <string>Arc - Elliptical (Alt+E)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1930,7 +1930,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Create New Group (G)</string>
+                <string>New Group (G)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -1982,7 +1982,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Mirror Objects by Line (ML)</string>
+                <string>Mirror Objects by Line (M, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2008,7 +2008,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Mirror Objects by Axis (MA)</string>
+                <string>Mirror Objects by Axis (M, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2034,7 +2034,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Move Objects (MM)</string>
+                <string>Move Objects (Alt+M)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2060,7 +2060,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>True Darts (TD)</string>
+                <string>True Darts (T, D)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2158,7 +2158,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Add New Pattern Piece (NP)</string>
+                <string>Add New Pattern Piece (N, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2184,7 +2184,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Add Anchor Point (AP)</string>
+                <string>Add Anchor Point (A, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2210,7 +2210,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Insert Nodes (IN)</string>
+                <string>Insert Nodes (I, N)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2236,7 +2236,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Add Internal Path (IP)</string>
+                <string>Add Internal Path (I, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2372,7 +2372,7 @@
               </rect>
              </property>
              <property name="toolTip">
-              <string>Export Pieces (EP)</string>
+              <string>Export Pieces (E, P)</string>
              </property>
              <property name="text">
               <string notr="true">...</string>
@@ -2483,7 +2483,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>New Print Layout (NL)</string>
+                <string>New Print Layout (N, L)</string>
                </property>
                <property name="text">
                 <string>Settings</string>
@@ -2509,7 +2509,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Export Layout (EL)</string>
+                <string>Export Layout (E, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2902,7 +2902,7 @@
     <string>Mirror by Line</string>
    </property>
    <property name="toolTip">
-    <string>Mirror Objects by Line (ML)</string>
+    <string>Mirror Objects by Line (M, L)</string>
    </property>
    <property name="shortcut">
     <string>M, L</string>
@@ -2920,7 +2920,7 @@
     <string>Mirror by Axis</string>
    </property>
    <property name="toolTip">
-    <string>Mirror Objects by Axis (MA)</string>
+    <string>Mirror Objects by Axis (M, A)</string>
    </property>
    <property name="shortcut">
     <string>M, A</string>
@@ -2938,10 +2938,10 @@
     <string>Move</string>
    </property>
    <property name="toolTip">
-    <string>Move Objects (MM)</string>
+    <string>Move Objects (Alt+M)</string>
    </property>
    <property name="shortcut">
-    <string>M, M</string>
+    <string>Alt+M</string>
    </property>
   </action>
   <action name="trueDarts_Action">
@@ -2956,7 +2956,7 @@
     <string>True Darts</string>
    </property>
    <property name="toolTip">
-    <string>True Darts (TD)</string>
+    <string>True Darts (T, D)</string>
    </property>
    <property name="shortcut">
     <string>T, D</string>
@@ -2971,13 +2971,16 @@
      <normaloff>:/toolicon/32x32/el_arc.png</normaloff>:/toolicon/32x32/el_arc.png</iconset>
    </property>
    <property name="text">
-    <string>Elliptical Arc</string>
+    <string>Elliptical</string>
+   </property>
+   <property name="iconText">
+    <string>Arc -Elliptical</string>
    </property>
    <property name="toolTip">
-    <string>Elliptical Arc (EA)</string>
+    <string>Arc - Elliptical (Alt+E)</string>
    </property>
    <property name="shortcut">
-    <string>E, A</string>
+    <string>Alt+E</string>
    </property>
   </action>
   <action name="midpoint_Action">
@@ -2989,13 +2992,13 @@
      <normaloff>:/toolicon/32x32/midpoint.png</normaloff>:/toolicon/32x32/midpoint.png</iconset>
    </property>
    <property name="text">
-    <string>Midpoint</string>
+    <string>Midpoint on Line</string>
    </property>
    <property name="toolTip">
-    <string>Midpoint between 2 Points (MP)</string>
+    <string>Point - Mispoint on Line (Shift+O, Shift+L)</string>
    </property>
    <property name="shortcut">
-    <string>M, P</string>
+    <string>Shift+O, Shift+L</string>
    </property>
   </action>
   <action name="pointAlongLine_Action">
@@ -3007,13 +3010,13 @@
      <normaloff>:/toolicon/32x32/along_line.png</normaloff>:/toolicon/32x32/along_line.png</iconset>
    </property>
    <property name="text">
-    <string>Point at Distance along Line</string>
+    <string>On Line</string>
    </property>
    <property name="toolTip">
-    <string>Point at Distance along Line (PA)</string>
+    <string>Point - On Line (O, L)</string>
    </property>
    <property name="shortcut">
-    <string>P, A</string>
+    <string>O, L</string>
    </property>
   </action>
   <action name="pointAtDistanceAngle_Action">
@@ -3025,16 +3028,16 @@
      <normaloff>:/toolicon/32x32/segment.png</normaloff>:/toolicon/32x32/segment.png</iconset>
    </property>
    <property name="text">
-    <string>Point at Distance and Angle</string>
+    <string>Length and Angle</string>
    </property>
    <property name="iconText">
-    <string>Point at Distance and Angle</string>
+    <string>Length and Angle</string>
    </property>
    <property name="toolTip">
-    <string>Point at Distance and Angle (DA)</string>
+    <string>Point - Length and Angle (L, A)</string>
    </property>
    <property name="shortcut">
-    <string>D, A</string>
+    <string>L, A</string>
    </property>
   </action>
   <action name="pointAlongPerpendicular_Action">
@@ -3046,13 +3049,13 @@
      <normaloff>:/toolicon/32x32/normal.png</normaloff>:/toolicon/32x32/normal.png</iconset>
    </property>
    <property name="text">
-    <string>Point on Perpendicular</string>
+    <string>On Perpendicular</string>
    </property>
    <property name="toolTip">
-    <string>Point on Perpendicular (PP)</string>
+    <string>Point - On Perpendicular (O, P)</string>
    </property>
    <property name="shortcut">
-    <string>P, P</string>
+    <string>O, P</string>
    </property>
   </action>
   <action name="bisector_Action">
@@ -3064,13 +3067,13 @@
      <normaloff>:/toolicon/32x32/bisector.png</normaloff>:/toolicon/32x32/bisector.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Bisector</string>
+    <string>On Bisector</string>
    </property>
    <property name="toolTip">
-    <string>Point along Bisector (PB)</string>
+    <string>Point - On Bisector (O, B)</string>
    </property>
    <property name="shortcut">
-    <string>P, B</string>
+    <string>O, B</string>
    </property>
   </action>
   <action name="pointOnShoulder_Action">
@@ -3082,10 +3085,10 @@
      <normaloff>:/toolicon/32x32/shoulder.png</normaloff>:/toolicon/32x32/shoulder.png</iconset>
    </property>
    <property name="text">
-    <string>Point on Shoulder</string>
+    <string>Point Length to Line</string>
    </property>
    <property name="toolTip">
-    <string>Point on Shoulder (PS)</string>
+    <string>Point - Length to Line (P, S)</string>
    </property>
    <property name="shortcut">
     <string>P, S</string>
@@ -3100,13 +3103,13 @@
      <normaloff>:/toolicon/32x32/point_of_contact.png</normaloff>:/toolicon/32x32/point_of_contact.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Line and Arc</string>
+    <string>Intersect  Arc and Line</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Line and Arc (PC)</string>
+    <string>Point - Intersect Arc and Line (A, L)</string>
    </property>
    <property name="shortcut">
-    <string>P, C</string>
+    <string>A, L</string>
    </property>
   </action>
   <action name="triangle_Action">
@@ -3118,13 +3121,13 @@
      <normaloff>:/toolicon/32x32/triangle.png</normaloff>:/toolicon/32x32/triangle.png</iconset>
    </property>
    <property name="text">
-    <string>Triangle</string>
+    <string>Intersect Axis and Triangle</string>
    </property>
    <property name="toolTip">
-    <string>Triangle (PT)</string>
+    <string>Point - Intersect Axis and Triangle (X, T)</string>
    </property>
    <property name="shortcut">
-    <string>P, T</string>
+    <string>X, T</string>
    </property>
   </action>
   <action name="pointIntersectXY_Action">
@@ -3139,7 +3142,7 @@
     <string>Intersect XY</string>
    </property>
    <property name="toolTip">
-    <string>Intersect  XY  (XY)</string>
+    <string>Point - Intersect XY (X, Y)</string>
    </property>
    <property name="shortcut">
     <string>X, Y</string>
@@ -3154,13 +3157,13 @@
      <normaloff>:/toolicon/32x32/height.png</normaloff>:/toolicon/32x32/height.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Line and Perpendicular</string>
+    <string>Intersect Line and Perpendicular</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Line and Perpendicular (PL)</string>
+    <string>Point - Intersect Line and Perpendicular (L, P)</string>
    </property>
    <property name="shortcut">
-    <string>P, L</string>
+    <string>L, P</string>
    </property>
   </action>
   <action name="pointIntersectAxis_Action">
@@ -3172,13 +3175,13 @@
      <normaloff>:/toolicon/32x32/line_intersect_axis.png</normaloff>:/toolicon/32x32/line_intersect_axis.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Line and Axis</string>
+    <string>Intersect Line and Axis</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Line and Axis (IX)</string>
+    <string>Point - Intersect Line and Axis (L, X)</string>
    </property>
    <property name="shortcut">
-    <string>I, X</string>
+    <string>L, X</string>
    </property>
   </action>
   <action name="lineIntersect_Action">
@@ -3190,10 +3193,10 @@
      <normaloff>:/toolicon/32x32/intersect.png</normaloff>:/toolicon/32x32/intersect.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of 2  Lines</string>
+    <string>Intersect Lines</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of 2 Lines (IL)</string>
+    <string>Point - Intersect Lines (I, L)</string>
    </property>
    <property name="shortcut">
     <string>I, L</string>
@@ -3208,10 +3211,10 @@
      <normaloff>:/toolicon/32x32/spline.png</normaloff>:/toolicon/32x32/spline.png</iconset>
    </property>
    <property name="text">
-    <string>Curve</string>
+    <string>Curve - Interactive</string>
    </property>
    <property name="toolTip">
-    <string>Curve (Alt+C)</string>
+    <string>Curve - Interactive (Alt+C)</string>
    </property>
    <property name="shortcut">
     <string>Alt+C</string>
@@ -3226,13 +3229,13 @@
      <normaloff>:/toolicon/32x32/spline_cut_point.png</normaloff>:/toolicon/32x32/spline_cut_point.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Curve</string>
+    <string>Point on Curve</string>
    </property>
    <property name="toolTip">
-    <string>Point along Curve (AC)</string>
+    <string>Point on Curve (A, C)</string>
    </property>
    <property name="shortcut">
-    <string>A, C</string>
+    <string>O, C</string>
    </property>
   </action>
   <action name="curveWithCPs_Action">
@@ -3244,13 +3247,13 @@
      <normaloff>:/toolicon/32x32/cubic_bezier.png</normaloff>:/toolicon/32x32/cubic_bezier.png</iconset>
    </property>
    <property name="text">
-    <string>Curve with Control Points</string>
+    <string>Curve - Fixed</string>
    </property>
    <property name="toolTip">
-    <string>Curve with Control Points (CP)</string>
+    <string>Curve - Fixed (Alt+Shift+C)</string>
    </property>
    <property name="shortcut">
-    <string>C, P</string>
+    <string>Alt+Shift+C</string>
    </property>
   </action>
   <action name="spline_Action">
@@ -3262,10 +3265,10 @@
      <normaloff>:/toolicon/32x32/splinePath.png</normaloff>:/toolicon/32x32/splinePath.png</iconset>
    </property>
    <property name="text">
-    <string>Spline</string>
+    <string>Spline - Interactive</string>
    </property>
    <property name="toolTip">
-    <string>Spline (Alt+S)</string>
+    <string>Spline - Interactive (Alt+S)</string>
    </property>
    <property name="shortcut">
     <string>Alt+S</string>
@@ -3280,13 +3283,13 @@
      <normaloff>:/toolicon/32x32/splinePath_cut_point.png</normaloff>:/toolicon/32x32/splinePath_cut_point.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Spline</string>
+    <string>Point on Spline</string>
    </property>
    <property name="toolTip">
-    <string>Point along Spline (AS)</string>
+    <string>Point on Spline (O, S)</string>
    </property>
    <property name="shortcut">
-    <string>A, S</string>
+    <string>O, S</string>
    </property>
   </action>
   <action name="splineWithCPs_Action">
@@ -3298,13 +3301,13 @@
      <normaloff>:/toolicon/32x32/cubic_bezier_path.png</normaloff>:/toolicon/32x32/cubic_bezier_path.png</iconset>
    </property>
    <property name="text">
-    <string>Spline with Control Points</string>
+    <string>Spline - Fixed</string>
    </property>
    <property name="toolTip">
-    <string>Spline with Control Points (SP)</string>
+    <string>Spline - Fixed (Alt+Shift+S)</string>
    </property>
    <property name="shortcut">
-    <string>S, P</string>
+    <string>Alt+Shift+S</string>
    </property>
   </action>
   <action name="curveIntersectCurve_Action">
@@ -3316,16 +3319,16 @@
      <normaloff>:/toolicon/32x32/intersection_curves.png</normaloff>:/toolicon/32x32/intersection_curves.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Curves</string>
+    <string>Intersect Curves</string>
    </property>
    <property name="iconText">
-    <string>Intersection Point of Curves</string>
+    <string>Intersect Curves</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Curves (CC)</string>
+    <string>Point - Intersect Curves (I, C)</string>
    </property>
    <property name="shortcut">
-    <string>C, C</string>
+    <string>I, C</string>
    </property>
   </action>
   <action name="splineIntersectAxis_Action">
@@ -3337,16 +3340,16 @@
      <normaloff>:/toolicon/32x32/curve_intersect_axis.png</normaloff>:/toolicon/32x32/curve_intersect_axis.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Curve and Axis</string>
+    <string>Intersect Curve and Axis</string>
    </property>
    <property name="iconText">
-    <string>Intersection Point of Curve and Axis</string>
+    <string>Intersect Curve and Axis</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Curve and Axis (CA)</string>
+    <string>Point - Intersect Curve and Axis (C, X)</string>
    </property>
    <property name="shortcut">
-    <string>C, A</string>
+    <string>C, X</string>
    </property>
   </action>
   <action name="arcTool_Action">
@@ -3358,10 +3361,13 @@
      <normaloff>:/toolicon/32x32/arc.png</normaloff>:/toolicon/32x32/arc.png</iconset>
    </property>
    <property name="text">
-    <string>Arc</string>
+    <string>Radius and Angles</string>
+   </property>
+   <property name="iconText">
+    <string>Arc - Radius and Angles</string>
    </property>
    <property name="toolTip">
-    <string>Arc (Alt+A)</string>
+    <string>Arc - Radius and Angles (Alt+A)</string>
    </property>
    <property name="shortcut">
     <string>Alt+A</string>
@@ -3376,13 +3382,13 @@
      <normaloff>:/toolicon/32x32/arc_cut.png</normaloff>:/toolicon/32x32/arc_cut.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Arc</string>
+    <string>Point on Arc</string>
    </property>
    <property name="toolTip">
-    <string>Point along Arc (AA)</string>
+    <string>Point on Arc (O, A)</string>
    </property>
    <property name="shortcut">
-    <string>A, A</string>
+    <string>O, A</string>
    </property>
   </action>
   <action name="arcIntersectAxis_Action">
@@ -3394,10 +3400,10 @@
      <normaloff>:/toolicon/32x32/arc_intersect_axis.png</normaloff>:/toolicon/32x32/arc_intersect_axis.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Arc and Axis</string>
+    <string>Intersect Arc and Axis</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Arc and Axis (AX)</string>
+    <string>Intersect Arc and Axis (A, X)</string>
    </property>
    <property name="shortcut">
     <string>A, X</string>
@@ -3412,10 +3418,10 @@
      <normaloff>:/toolicon/32x32/point_of_intersection_arcs.png</normaloff>:/toolicon/32x32/point_of_intersection_arcs.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Arcs</string>
+    <string>Intersect Arcs</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Arcs (IA)</string>
+    <string>Intersect Arcs (I, A)</string>
    </property>
    <property name="shortcut">
     <string>I, A</string>
@@ -3430,13 +3436,13 @@
      <normaloff>:/toolicon/32x32/point_of_intersection_circles.png</normaloff>:/toolicon/32x32/point_of_intersection_circles.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Circles</string>
+    <string>Intersect Circles</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Circles (IC)</string>
+    <string>Intersect Circles (Shift+I, Shift+C)</string>
    </property>
    <property name="shortcut">
-    <string>I, C</string>
+    <string>Shift+I, Shift+C</string>
    </property>
   </action>
   <action name="circleTangent_Action">
@@ -3448,10 +3454,10 @@
      <normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Circle and Tangent</string>
+    <string>Intersect Circle and Tangent</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Circle and Tangent (CT)</string>
+    <string>Intersect Circle and Tangent (C, T)</string>
    </property>
    <property name="shortcut">
     <string>C, T</string>
@@ -3466,10 +3472,10 @@
      <normaloff>:/toolicon/32x32/point_from_arc_and_tangent.png</normaloff>:/toolicon/32x32/point_from_arc_and_tangent.png</iconset>
    </property>
    <property name="text">
-    <string>Tangency Point of Arc and Tangent</string>
+    <string>Intersect Arc and Tangent</string>
    </property>
    <property name="toolTip">
-    <string>Tangency Point of Arc and Tangent (AT)</string>
+    <string>Intersect Arc and Tangent (A, T)</string>
    </property>
    <property name="shortcut">
     <string>A, T</string>
@@ -3484,13 +3490,16 @@
      <normaloff>:/toolicon/32x32/arc_with_length.png</normaloff>:/toolicon/32x32/arc_with_length.png</iconset>
    </property>
    <property name="text">
-    <string>Arc with Length</string>
+    <string>Radius and Length</string>
+   </property>
+   <property name="iconText">
+    <string>Arc - Radius and Length</string>
    </property>
    <property name="toolTip">
-    <string>Arc with Length (AL)</string>
+    <string>Arc - Radius and Length (Alt+Shift+A)</string>
    </property>
    <property name="shortcut">
-    <string>A, L</string>
+    <string>Alt+Shift+A</string>
    </property>
   </action>
   <action name="aboutQt_Action">
@@ -3838,7 +3847,7 @@
     <string>Export As...</string>
    </property>
    <property name="toolTip">
-    <string>Export Layout (EL)</string>
+    <string>Export Layout (E, L)</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>
@@ -3985,7 +3994,7 @@
     <string>Selected</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to Selected (CTRL+Right)</string>
+    <string>Zoom to Selected (Ctrl+Right)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Right</string>
@@ -4032,7 +4041,7 @@
     <string>Area</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to selected Area (CTRL+A)</string>
+    <string>Zoom to selected Area (Ctrl+A)</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+A</string>
@@ -4053,7 +4062,7 @@
     <string>Pan</string>
    </property>
    <property name="toolTip">
-    <string>Pan Work Area (Z,P)</string>
+    <string>Pan Work Area (Z, P)</string>
    </property>
    <property name="shortcut">
     <string>Z, P</string>
@@ -4224,7 +4233,7 @@
     <string>New Pattern Piece</string>
    </property>
    <property name="toolTip">
-    <string>Add New Pattern Piece (NP)</string>
+    <string>Add New Pattern Piece (N, P)</string>
    </property>
    <property name="shortcut">
     <string>N, P</string>
@@ -4242,7 +4251,7 @@
     <string>New Print Layout</string>
    </property>
    <property name="toolTip">
-    <string>Create New Print Layout (NL)</string>
+    <string>Create New Print Layout (N, L)</string>
    </property>
    <property name="shortcut">
     <string>N, L</string>
@@ -4260,7 +4269,7 @@
     <string>Export Layout</string>
    </property>
    <property name="toolTip">
-    <string>Export Layout (EL)</string>
+    <string>Export Layout (E, L)</string>
    </property>
    <property name="shortcut">
     <string>E, L</string>
@@ -4278,7 +4287,7 @@
     <string>Anchor Point</string>
    </property>
    <property name="toolTip">
-    <string>Add Anchor Point (AP)</string>
+    <string>Add Anchor Point (A, P)</string>
    </property>
    <property name="shortcut">
     <string>A, P</string>
@@ -4296,7 +4305,7 @@
     <string>Internal Path</string>
    </property>
    <property name="toolTip">
-    <string>Add Internal Path (IP)</string>
+    <string>Add Internal Path (I, P)</string>
    </property>
    <property name="shortcut">
     <string>I, P</string>
@@ -4314,7 +4323,7 @@
     <string>Insert Nodes</string>
    </property>
    <property name="toolTip">
-    <string>Insert Nodes (IN)</string>
+    <string>Insert Nodes (I, N)</string>
    </property>
    <property name="shortcut">
     <string>I, N</string>
@@ -4347,7 +4356,7 @@
     <string>Export Pieces</string>
    </property>
    <property name="toolTip">
-    <string>Export Pieces (EP)</string>
+    <string>Export Pieces (E, P)</string>
    </property>
    <property name="shortcut">
     <string>E, P</string>
@@ -4575,7 +4584,7 @@
     <string>Export Draft Blocks</string>
    </property>
    <property name="toolTip">
-    <string>Export Draft Blocks (ED)</string>
+    <string>Export Draft Blocks (E, D)</string>
    </property>
    <property name="shortcut">
     <string>E, D</string>
@@ -4636,8 +4645,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

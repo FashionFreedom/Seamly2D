@@ -37,7 +37,7 @@ class VPropertyModelPrivate
 {
 public:
     //! The property set holding the properties
-    VPropertySet* Properties;
+    VPropertySet *Properties;
 
     //! The header data for the property name column
     QString HeadlineProperty;

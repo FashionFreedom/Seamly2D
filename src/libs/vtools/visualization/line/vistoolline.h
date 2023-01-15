@@ -78,6 +78,7 @@ public:
     enum { Type = UserType + static_cast<int>(Vis::ToolLine)};
 protected:
     virtual void DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
+                          const qreal &lineWeight,
                           Qt::PenStyle style = Qt::SolidLine) Q_DECL_OVERRIDE;
 private:
     Q_DISABLE_COPY(VisToolLine)

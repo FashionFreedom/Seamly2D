@@ -306,10 +306,10 @@ CrossCirclesPoint VToolPointOfIntersectionArcs::GetCrossCirclesPoint() const
 //---------------------------------------------------------------------------------------------------------------------
 void VToolPointOfIntersectionArcs::SetCrossCirclesPoint(const CrossCirclesPoint &value)
 {
-    crossPoint = value;
+        crossPoint = value;
 
-    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
-    SaveOption(obj);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+        SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

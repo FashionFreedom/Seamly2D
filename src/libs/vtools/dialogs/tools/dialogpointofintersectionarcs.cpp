@@ -66,9 +66,12 @@
 //---------------------------------------------------------------------------------------------------------------------
 DialogPointOfIntersectionArcs::DialogPointOfIntersectionArcs(const VContainer *data, const quint32 &toolId,
                                                              QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogPointOfIntersectionArcs)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogPointOfIntersectionArcs)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 

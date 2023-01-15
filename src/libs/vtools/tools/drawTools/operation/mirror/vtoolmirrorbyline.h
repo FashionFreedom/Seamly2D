@@ -79,6 +79,12 @@ public:
     QString                   firstLinePointName() const;
     QString                   secondLinePointName() const;
 
+    quint32                   getFirstLinePointId() const;
+    void                      setFirstLinePointId(const quint32 &value);
+
+    quint32                   getSecondLinePointId() const;
+    void                      setSecondLinePointId(const quint32 &value);
+
     virtual void              ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
 protected slots:

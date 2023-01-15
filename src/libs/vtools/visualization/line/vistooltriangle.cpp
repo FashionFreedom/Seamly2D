@@ -116,15 +116,16 @@ void VisToolTriangle::RefreshGeometry()
                 if (hypotenuseP2Id <= NULL_ID)
                 {
                     DrawLine(this, QLineF(static_cast<QPointF>(*third), Visualization::scenePos), supportColor,
-                             Qt::DashLine);
+                             lineWeight, Qt::DashLine);
 
                     QPointF trPoint = VToolTriangle::FindPoint(static_cast<QPointF>(*first),
                                                                static_cast<QPointF>(*second),
                                                                static_cast<QPointF>(*third), Visualization::scenePos);
                     DrawPoint(point, trPoint, mainColor);
 
-                    DrawLine(foot1, QLineF(static_cast<QPointF>(*third), trPoint), supportColor, Qt::DashLine);
-                    DrawLine(foot2, QLineF(Visualization::scenePos, trPoint), supportColor, Qt::DashLine);
+                    DrawLine(foot1, QLineF(static_cast<QPointF>(*third), trPoint), supportColor,
+                                           lineWeight, Qt::DashLine);
+                    DrawLine(foot2, QLineF(Visualization::scenePos, trPoint), supportColor, lineWeight, Qt::DashLine);
                 }
                 else
                 {
@@ -132,7 +133,7 @@ void VisToolTriangle::RefreshGeometry()
                     DrawPoint(hypotenuseP2, static_cast<QPointF>(*forth), supportColor);
 
                     DrawLine(this, QLineF(static_cast<QPointF>(*third), static_cast<QPointF>(*forth)), supportColor,
-                                          Qt::DashLine);
+                                          lineWeight, Qt::DashLine);
 
                     QPointF trPoint = VToolTriangle::FindPoint(static_cast<QPointF>(*first),
                                                                static_cast<QPointF>(*second),
@@ -140,8 +141,10 @@ void VisToolTriangle::RefreshGeometry()
                                                                static_cast<QPointF>(*forth));
                     DrawPoint(point, trPoint, mainColor);
 
-                    DrawLine(foot1, QLineF(static_cast<QPointF>(*third), trPoint), supportColor, Qt::DashLine);
-                    DrawLine(foot2, QLineF(static_cast<QPointF>(*forth), trPoint), supportColor, Qt::DashLine);
+                    DrawLine(foot1, QLineF(static_cast<QPointF>(*third), trPoint), supportColor,
+                                           lineWeight, Qt::DashLine);
+                    DrawLine(foot2, QLineF(static_cast<QPointF>(*forth), trPoint), supportColor,
+                                           lineWeight, Qt::DashLine);
                 }
             }
         }

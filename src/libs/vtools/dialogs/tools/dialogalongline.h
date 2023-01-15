@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -78,11 +78,14 @@ public:
 
     void                SetPointName(const QString &value);
 
-    QString             GetTypeLine() const;
-    void                SetTypeLine(const QString &value);
+    QString             getLineType() const;
+    void                setLineType(const QString &value);
 
-    QString             GetLineColor() const;
-    void                SetLineColor(const QString &value);
+    QString             getLineWeight() const;
+    void                setLineWeight(const QString &value);
+
+    QString             getLineColor() const;
+    void                setLineColor(const QString &value);
 
     QString             GetFormula() const;
     void                SetFormula(const QString &value);
@@ -107,6 +110,7 @@ public slots:
     void                PointChanged();
 
     void                FXLength();
+
 protected:
     virtual void        ShowVisualization() Q_DECL_OVERRIDE;
     /**
@@ -114,6 +118,7 @@ protected:
      */
     virtual void        SaveData() Q_DECL_OVERRIDE;
     virtual void        closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(DialogAlongLine)
 

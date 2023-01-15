@@ -207,9 +207,9 @@ void VSimpleCurve::ScalePenWidth()
     }
     else
     {
-        width = widthHairLine;
+        width = ToPixel(m_curve->getLineWeight().toDouble(), Unit::Mm);
     }
 
     width = scaleWidth(width, sceneScale(scene()));
-    setPen(QPen(correctColor(this, m_curve->GetColor()), width, lineTypeToPenStyle(m_curve->GetPenStyle())));
+    setPen(QPen(correctColor(this, m_curve->getLineColor()), width, lineTypeToPenStyle(m_curve->GetPenStyle())));
 }

@@ -86,7 +86,7 @@ void VisToolMirrorByAxis::RefreshGeometry()
             secondPoint = QPointF(firstPoint.x() + 100, firstPoint.y());
         }
 
-        DrawLine(this, Axis(firstPoint, secondPoint), supportColor2, Qt::DashLine);
+        DrawLine(this, Axis(firstPoint, secondPoint), supportColor2, lineWeight, Qt::DashLine);
     }
 
     refreshMirroredObjects(firstPoint, secondPoint);

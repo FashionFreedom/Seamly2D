@@ -62,19 +62,20 @@
 #include <QStringDataPtr>
 #include <QtDebug>
 
+#include "vdomdocument.h"
+#include "vpatternconverter.h"
+#include "vtoolrecord.h"
 #include "../exception/vexceptionemptyparameter.h"
 #include "../exception/vexceptionobjecterror.h"
 #include "../exception/vexceptionconversionerror.h"
-#include "../qmuparser/qmutokenparser.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/ifcdef.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../qmuparser/qmutokenparser.h"
 #include "../vtools/tools/vdatatool.h"
-#include "vpatternconverter.h"
-#include "vdomdocument.h"
-#include "vtoolrecord.h"
-#include "../vmisc/vabstractapplication.h"
 
 class QDomElement;
 
@@ -250,14 +251,17 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractPattern::VAbstractPattern(QObject *parent)
     : QObject(parent)
-    ,  VDomDocument()
-    ,  activeDraftBlock(QString())
-    ,  lastSavedExportFormat(QString())
-    ,  cursor(0)
-    ,  toolsOnRemove(QVector<VDataTool*>())
-    ,  history(QVector<VToolRecord>())
-    ,  patternPieces(QStringList())
-     , modified(false)
+    , VDomDocument()
+    , activeDraftBlock(QString())
+    , m_DefaultLineColor(qApp->Settings()->getDefaultLineColor())
+    , m_DefaultLineWeight(qApp->Settings()->getDefaultLineWeight())
+    , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
+    , lastSavedExportFormat(QString())
+    , cursor(0)
+    , toolsOnRemove(QVector<VDataTool*>())
+    , history(QVector<VToolRecord>())
+    , patternPieces(QStringList())
+    , modified(false)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -602,6 +606,33 @@ void VAbstractPattern::setCursor(const quint32 &value)
         cursor = value;
         emit ChangedCursor(cursor);
     }
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setDefaultPen(Pen pen)
+{
+  m_DefaultLineColor  = pen.color;
+  m_DefaultLineWeight = pen.lineWeight;
+  m_DefaultLineType   = pen.lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPattern::getDefaultLineColor() const
+{
+  return m_DefaultLineColor;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VAbstractPattern::getDefaultLineWeight() const
+{
+  return m_DefaultLineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPattern::getDefaultLineType() const
+{
+  return m_DefaultLineType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

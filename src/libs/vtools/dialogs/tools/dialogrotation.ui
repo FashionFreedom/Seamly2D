@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>260</width>
+    <width>270</width>
     <height>290</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>260</width>
+    <width>270</width>
     <height>290</height>
    </size>
   </property>
@@ -38,6 +38,13 @@
        <height>50</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="title">
       <string>Selection</string>
      </property>
@@ -54,7 +61,7 @@
          <widget class="QLabel" name="originPoint_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -63,6 +70,13 @@
             <width>55</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="text">
            <string>Rotation pt:</string>
@@ -76,9 +90,16 @@
          <widget class="QComboBox" name="rotation_ComboBox">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>140</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
           </property>
          </widget>
         </item>
@@ -86,7 +107,7 @@
          <widget class="QLabel" name="suffix_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -95,6 +116,13 @@
             <width>55</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="text">
            <string>Suffix:</string>
@@ -108,9 +136,16 @@
          <widget class="QLineEdit" name="suffix_LineEdit">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>140</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
           </property>
          </widget>
         </item>
@@ -133,6 +168,13 @@
        <height>0</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="title">
       <string>Geometry</string>
      </property>
@@ -149,7 +191,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -196,6 +238,13 @@
             </disabled>
            </palette>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Angle:</string>
           </property>
@@ -217,6 +266,13 @@
             <width>87</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="toolTip">
            <string>Value</string>
@@ -282,6 +338,13 @@
             <width>16777215</width>
             <height>60</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="toolTip">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
