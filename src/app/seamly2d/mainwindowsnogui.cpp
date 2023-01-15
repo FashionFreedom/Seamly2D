@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   mainwindowsnogui.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 31, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   mainwindowsnogui.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -65,7 +66,7 @@
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
 #include "../vpatterndb/measurements.h"
 #include "../vtools/tools/vabstracttool.h"
-#include "../vtools/tools/vtoolseamallowance.h"
+#include "../vtools/tools/pattern_piece_tool.h"
 
 #include <QFileDialog>
 #include <QFileInfo>
@@ -112,7 +113,7 @@ void RemoveLayoutPath(const QString &path, bool usedNotExistedDir)
 //---------------------------------------------------------------------------------------------------------------------
 MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
     : VAbstractMainWindow(parent),
-      listDetails(),
+      pieceList(),
       currentScene(nullptr),
       tempSceneLayout(nullptr),
       pattern(new VContainer(qApp->TrVars(), qApp->patternUnitP())),
@@ -120,8 +121,8 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
       papers(),
       shadows(),
       scenes(),
-      details(),
-      detailsOnLayout(),
+      pieces(),
+      piecesOnLayout(),
       undoAction(nullptr),
       redoAction(nullptr),
       actionDockWidgetToolOptions(nullptr),
@@ -178,15 +179,15 @@ void MainWindowsNoGUI::toolLayoutSettings(QToolButton *tButton, bool checked)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
 {
-    lGenerator.SetDetails(listDetails);
-    DialogLayoutProgress progress(listDetails.count(), this);
+    lGenerator.setPieces(pieceList);
+    DialogLayoutProgress progress(pieceList.count(), this);
     if (VApplication::IsGUIMode())
     {
-        connect(&lGenerator, &VLayoutGenerator::Start, &progress, &DialogLayoutProgress::Start);
-        connect(&lGenerator, &VLayoutGenerator::Arranged, &progress, &DialogLayoutProgress::Arranged);
-        connect(&lGenerator, &VLayoutGenerator::Error, &progress, &DialogLayoutProgress::Error);
-        connect(&lGenerator, &VLayoutGenerator::Finished, &progress, &DialogLayoutProgress::Finished);
-        connect(&progress, &DialogLayoutProgress::Abort, &lGenerator, &VLayoutGenerator::Abort);
+        connect(&lGenerator, &VLayoutGenerator::Start,     &progress,   &DialogLayoutProgress::Start);
+        connect(&lGenerator, &VLayoutGenerator::Arranged,  &progress,   &DialogLayoutProgress::Arranged);
+        connect(&lGenerator, &VLayoutGenerator::Error,     &progress,   &DialogLayoutProgress::Error);
+        connect(&lGenerator, &VLayoutGenerator::Finished,  &progress,   &DialogLayoutProgress::Finished);
+        connect(&progress,   &DialogLayoutProgress::Abort, &lGenerator, &VLayoutGenerator::Abort);
     }
     else
     {
@@ -199,10 +200,10 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
         case LayoutErrors::NoError:
             CleanLayout();
             papers = lGenerator.GetPapersItems();// Blank sheets
-            details = lGenerator.GetAllDetailsItems();// All details items
-            detailsOnLayout = lGenerator.GetAllDetails();// All details items
+            pieces = lGenerator.getAllPieceItems();// All pieces items
+            piecesOnLayout = lGenerator.getAllPieces();// All pieces items
             shadows = CreateShadows(papers);
-            scenes = CreateScenes(papers, shadows, details);
+            scenes = CreateScenes(papers, shadows, pieces);
             PrepareSceneList();
             ignoreMargins = not lGenerator.IsUsePrinterFields();
             margins = lGenerator.GetPrinterFields();
@@ -251,7 +252,7 @@ void MainWindowsNoGUI::ErrorConsoleMode(const LayoutErrors &state)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::ExportData(const QVector<VLayoutPiece> &listDetails, const ExportLayoutDialog &dialog)
+void MainWindowsNoGUI::ExportData(const QVector<VLayoutPiece> &pieceList, const ExportLayoutDialog &dialog)
 {
     const LayoutExportFormat format = dialog.format();
 
@@ -267,7 +268,7 @@ void MainWindowsNoGUI::ExportData(const QVector<VLayoutPiece> &listDetails, cons
     {
         if (dialog.mode() == Draw::Layout)
         {
-            for (int i = 0; i < detailsOnLayout.size(); ++i)
+            for (int i = 0; i < piecesOnLayout.size(); ++i)
             {
                 const QString name = QString("%1/%2_0%3%4")
                 .arg(dialog.path())                                          //1
@@ -278,23 +279,23 @@ void MainWindowsNoGUI::ExportData(const QVector<VLayoutPiece> &listDetails, cons
                 QGraphicsRectItem *paper = qgraphicsitem_cast<QGraphicsRectItem *>(papers.at(i));
                 SCASSERT(paper != nullptr)
 
-                ExportApparelLayout(dialog, detailsOnLayout.at(i), name, paper->rect().size().toSize());
+                ExportApparelLayout(dialog, piecesOnLayout.at(i), name, paper->rect().size().toSize());
             }
         }
         else
         {
-            ExportDetailsAsApparelLayout(dialog, listDetails);
+            exportPiecesAsApparelLayout(dialog, pieceList);
         }
     }
     else
     {
         if (dialog.mode() == Draw::Layout)
         {
-            ExportFlatLayout(dialog, scenes, papers, shadows, details, ignoreMargins, margins);
+            ExportFlatLayout(dialog, scenes, papers, shadows, pieces, ignoreMargins, margins);
         }
         else
         {
-            ExportDetailsAsFlatLayout(dialog, listDetails);
+            exportPiecesAsFlatLayout(dialog, pieceList);
         }
     }
 }
@@ -302,7 +303,7 @@ void MainWindowsNoGUI::ExportData(const QVector<VLayoutPiece> &listDetails, cons
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::ExportFlatLayout(const ExportLayoutDialog &dialog, const QList<QGraphicsScene *> &scenes,
                                         const QList<QGraphicsItem *> &papers, const QList<QGraphicsItem *> &shadows,
-                                        const QList<QList<QGraphicsItem *> > &details, bool ignoreMargins,
+                                        const QList<QList<QGraphicsItem *> > &pieces, bool ignoreMargins,
                                         const QMarginsF &margins)
 {
     const QString path = dialog.path();
@@ -327,17 +328,17 @@ void MainWindowsNoGUI::ExportFlatLayout(const ExportLayoutDialog &dialog, const 
     }
     else
     {
-        ExportScene(dialog, scenes, papers, shadows, details, ignoreMargins, margins);
+        ExportScene(dialog, scenes, papers, shadows, pieces, ignoreMargins, margins);
     }
 
     RemoveLayoutPath(path, usedNotExistedDir);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::ExportDetailsAsFlatLayout(const ExportLayoutDialog &dialog,
-                                                 const QVector<VLayoutPiece> &listDetails)
+void MainWindowsNoGUI::exportPiecesAsFlatLayout(const ExportLayoutDialog &dialog,
+                                                 const QVector<VLayoutPiece> &pieceList)
 {
-    if (listDetails.isEmpty())
+    if (pieceList.isEmpty())
     {
         return;
     }
@@ -345,10 +346,10 @@ void MainWindowsNoGUI::ExportDetailsAsFlatLayout(const ExportLayoutDialog &dialo
     QScopedPointer<QGraphicsScene> scene(new QGraphicsScene());
 
     QList<QGraphicsItem *> list;
-    for (int i=0; i < listDetails.count(); ++i)
+    for (int i=0; i < pieceList.count(); ++i)
     {
-        QGraphicsItem *item = listDetails.at(i).GetItem(dialog.isTextAsPaths());
-        item->setPos(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
+        QGraphicsItem *item = pieceList.at(i).GetItem(dialog.isTextAsPaths());
+        item->setPos(pieceList.at(i).GetMx(), pieceList.at(i).GetMy());
         list.append(item);
     }
 
@@ -378,22 +379,22 @@ void MainWindowsNoGUI::ExportDetailsAsFlatLayout(const ExportLayoutDialog &dialo
     paper->setBrush(QBrush(Qt::white));
     papers.append(paper);
 
-    QList<QList<QGraphicsItem *> > details;// All details
-    details.append(list);
+    QList<QList<QGraphicsItem *> > pieces;// All pieces
+    pieces.append(list);
 
     QList<QGraphicsItem *> shadows = CreateShadows(papers);
-    QList<QGraphicsScene *> scenes = CreateScenes(papers, shadows, details);
+    QList<QGraphicsScene *> scenes = CreateScenes(papers, shadows, pieces);
 
     const bool ignoreMargins = false;
     const qreal margin = ToPixel(1, Unit::Cm);
-    ExportFlatLayout(dialog, scenes, papers, shadows, details, ignoreMargins,
+    ExportFlatLayout(dialog, scenes, papers, shadows, pieces, ignoreMargins,
                      QMarginsF(margin, margin, margin, margin));
 
     qDeleteAll(scenes);//Scene will clear all other items
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, const QVector<VLayoutPiece> &details,
+void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, const QVector<VLayoutPiece> &pieces,
                                            const QString &name, const QSize &size) const
 {
     const QString path = dialog.path();
@@ -421,31 +422,31 @@ void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, con
             Q_UNREACHABLE(); // For now not supported
             break;
         case LayoutExportFormat::DXF_AC1006_AAMA:
-            AAMADxfFile(name, DRW::AC1006, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1006, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1009_AAMA:
-            AAMADxfFile(name, DRW::AC1009, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1009, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1012_AAMA:
-            AAMADxfFile(name, DRW::AC1012, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1012, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1014_AAMA:
-            AAMADxfFile(name, DRW::AC1014, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1014, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1015_AAMA:
-            AAMADxfFile(name, DRW::AC1015, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1015, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1018_AAMA:
-            AAMADxfFile(name, DRW::AC1018, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1018, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1021_AAMA:
-            AAMADxfFile(name, DRW::AC1021, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1021, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1024_AAMA:
-            AAMADxfFile(name, DRW::AC1024, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1024, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         case LayoutExportFormat::DXF_AC1027_AAMA:
-            AAMADxfFile(name, DRW::AC1027, dialog.isBinaryDXFFormat(), size, details);
+            AAMADxfFile(name, DRW::AC1027, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         default:
             qDebug() << "Can't recognize file type." << Q_FUNC_INFO;
@@ -456,10 +457,10 @@ void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, con
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const ExportLayoutDialog &dialog,
-                                                    QVector<VLayoutPiece> listDetails)
+void MainWindowsNoGUI::exportPiecesAsApparelLayout(const ExportLayoutDialog &dialog,
+                                                    QVector<VLayoutPiece> pieceList)
 {
-    if (listDetails.isEmpty())
+    if (pieceList.isEmpty())
     {
         return;
     }
@@ -467,10 +468,10 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const ExportLayoutDialog &di
     QScopedPointer<QGraphicsScene> scene(new QGraphicsScene());
 
     QList<QGraphicsItem *> list;
-    for (int i=0; i < listDetails.count(); ++i)
+    for (int i=0; i < pieceList.count(); ++i)
     {
-        QGraphicsItem *item = listDetails.at(i).GetItem(dialog.isTextAsPaths());
-        item->setPos(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
+        QGraphicsItem *item = pieceList.at(i).GetItem(dialog.isTextAsPaths());
+        item->setPos(pieceList.at(i).GetMx(), pieceList.at(i).GetMy());
         list.append(item);
     }
 
@@ -494,12 +495,12 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const ExportLayoutDialog &di
 
     rect = scene->itemsBoundingRect().toRect();
 
-    for (int i=0; i < listDetails.count(); ++i)
+    for (int i=0; i < pieceList.count(); ++i)
     {
-        QTransform moveTransform = listDetails[i].getTransform();
-        moveTransform = moveTransform.translate(listDetails.at(i).GetMx(), listDetails.at(i).GetMy());
+        QTransform moveTransform = pieceList[i].getTransform();
+        moveTransform = moveTransform.translate(pieceList.at(i).GetMx(), pieceList.at(i).GetMy());
         moveTransform = moveTransform.translate(-mx, -my);
-        listDetails[i].setTransform(moveTransform);
+        pieceList[i].setTransform(moveTransform);
     }
 
     QString increment  = QStringLiteral("");
@@ -514,7 +515,7 @@ void MainWindowsNoGUI::ExportDetailsAsApparelLayout(const ExportLayoutDialog &di
     .arg(increment)                                              //3
     .arg(ExportLayoutDialog::exportFormatSuffix(dialog.format())); //4
 
-    ExportApparelLayout(dialog, listDetails, name, rect.size());
+    ExportApparelLayout(dialog, pieceList, name, rect.size());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -716,18 +717,18 @@ void MainWindowsNoGUI::PrintTiled()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief RefreshDetailsLabel call to recalculate piece labels. For example after changing a font.
+ * @brief refreshLabels call to recalculate piece labels. For example after changing a font.
  */
-void MainWindowsNoGUI::RefreshDetailsLabel()
+void MainWindowsNoGUI::refreshLabels()
 {
     const QHash<quint32, VPiece> *list = pattern->DataPieces();
     QHash<quint32, VPiece>::const_iterator i = list->constBegin();
     while (i != list->constEnd())
     {
-        if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
+        if (PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(i.key())))
         {
-            tool->UpdatePatternInfo();
-            tool->UpdateDetailLabel();
+            tool->UpdatePatternLabel();
+            tool->UpdatePieceLabel();
         }
         ++i;
     }
@@ -743,7 +744,7 @@ void MainWindowsNoGUI::refreshGrainLines()
     QHash<quint32, VPiece>::const_iterator i = list->constBegin();
     while (i != list->constEnd())
     {
-        if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
+        if (PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(i.key())))
         {
             tool->UpdateGrainline();
         }
@@ -761,7 +762,7 @@ void MainWindowsNoGUI::refreshSeamAllowances()
     QHash<quint32, VPiece>::const_iterator i = list->constBegin();
     while (i != list->constEnd())
     {
-        if (VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(i.key())))
+        if (PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(i.key())))
         {
             tool->RefreshGeometry();
         }
@@ -770,22 +771,22 @@ void MainWindowsNoGUI::refreshSeamAllowances()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VLayoutPiece> MainWindowsNoGUI::PrepareDetailsForLayout(const QHash<quint32, VPiece> &details)
+QVector<VLayoutPiece> MainWindowsNoGUI::preparePiecesForLayout(const QHash<quint32, VPiece> &pieces)
 {
-    QVector<VLayoutPiece> listDetails;
-    if (not details.isEmpty())
+    QVector<VLayoutPiece> pieceList;
+    if (not pieces.isEmpty())
     {
-        QHash<quint32, VPiece>::const_iterator i = details.constBegin();
-        while (i != details.constEnd())
+        QHash<quint32, VPiece>::const_iterator i = pieces.constBegin();
+        while (i != pieces.constEnd())
         {
             VAbstractTool *tool = qobject_cast<VAbstractTool*>(VAbstractPattern::getTool(i.key()));
             SCASSERT(tool != nullptr)
-            listDetails.append(VLayoutPiece::Create(i.value(), tool->getData()));
+            pieceList.append(VLayoutPiece::Create(i.value(), tool->getData()));
             ++i;
         }
     }
 
-    return listDetails;
+    return pieceList;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -858,7 +859,7 @@ QList<QGraphicsItem *> MainWindowsNoGUI::CreateShadows(const QList<QGraphicsItem
 //---------------------------------------------------------------------------------------------------------------------
 QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem *> &papers,
                                                        const QList<QGraphicsItem *> &shadows,
-                                                       const QList<QList<QGraphicsItem *> > &details)
+                                                       const QList<QList<QGraphicsItem *> > &pieces)
 {
     QList<QGraphicsScene *> scenes;
     for (int i=0; i<papers.size(); ++i)
@@ -868,10 +869,10 @@ QList<QGraphicsScene *> MainWindowsNoGUI::CreateScenes(const QList<QGraphicsItem
         scene->addItem(shadows.at(i));
         scene->addItem(papers.at(i));
 
-        QList<QGraphicsItem *> paperDetails = details.at(i);
-        for (int i=0; i < paperDetails.size(); ++i)
+        QList<QGraphicsItem *> item = pieces.at(i);
+        for (int i=0; i < item.size(); ++i)
         {
-            scene->addItem(paperDetails.at(i));
+            scene->addItem(item.at(i));
         }
 
         scenes.append(scene);
@@ -1160,9 +1161,9 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
 
 void MainWindowsNoGUI::FlatDxfFile(const QString &name, int version, bool binary, QGraphicsRectItem *paper,
-                               QGraphicsScene *scene, const QList<QList<QGraphicsItem *> > &details) const
+                               QGraphicsScene *scene, const QList<QList<QGraphicsItem *> > &pieces) const
 {
-    PrepareTextForDXF(endStringPlaceholder, details);
+    PrepareTextForDXF(endStringPlaceholder, pieces);
     VDxfPaintDevice generator;
     generator.setFileName(name);
     generator.setSize(paper->rect().size().toSize());
@@ -1177,12 +1178,12 @@ void MainWindowsNoGUI::FlatDxfFile(const QString &name, int version, bool binary
         scene->render(&painter, paper->rect(), paper->rect(), Qt::IgnoreAspectRatio);
         painter.end();
     }
-    RestoreTextAfterDXF(endStringPlaceholder, details);
+    RestoreTextAfterDXF(endStringPlaceholder, pieces);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::AAMADxfFile(const QString &name, int version, bool binary, const QSize &size,
-                                   const QVector<VLayoutPiece> &details) const
+                                   const QVector<VLayoutPiece> &pieces) const
 {
     VDxfPaintDevice generator;
     generator.setFileName(name);
@@ -1191,7 +1192,7 @@ void MainWindowsNoGUI::AAMADxfFile(const QString &name, int version, bool binary
     generator.SetVersion(static_cast<DRW::Version>(version));
     generator.SetBinaryFormat(binary);
     generator.setInsunits(VarInsunits::Millimeters);// Decided to always use mm. See issue #745
-    generator.ExportToAAMA(details);
+    generator.ExportToAAMA(pieces);
 }
 
 QT_WARNING_POP
@@ -1234,11 +1235,11 @@ void MainWindowsNoGUI::RestorePaper(int index) const
  * @param placeholder placeholder that will be appended to each QGraphicsSimpleTextItem item's text string.
  */
 void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
-                                         const QList<QList<QGraphicsItem *> > &details) const
+                                         const QList<QList<QGraphicsItem *> > &pieces) const
 {
-    for (int i = 0; i < details.size(); ++i)
+    for (int i = 0; i < pieces.size(); ++i)
     {
-        const QList<QGraphicsItem *> &paperItems = details.at(i);
+        const QList<QGraphicsItem *> &paperItems = pieces.at(i);
         for (int j = 0; j < paperItems.size(); ++j)
         {
             QList<QGraphicsItem *> pieceChildren = paperItems.at(j)->childItems();
@@ -1267,11 +1268,11 @@ void MainWindowsNoGUI::PrepareTextForDXF(const QString &placeholder,
  * @param placeholder placeholder that will be removed from each QGraphicsSimpleTextItem item's text string.
  */
 void MainWindowsNoGUI::RestoreTextAfterDXF(const QString &placeholder,
-                                           const QList<QList<QGraphicsItem *> > &details) const
+                                           const QList<QList<QGraphicsItem *> > &pieces) const
 {
-    for (int i = 0; i < details.size(); ++i)
+    for (int i = 0; i < pieces.size(); ++i)
     {
-        const QList<QGraphicsItem *> &paperItems = details.at(i);
+        const QList<QGraphicsItem *> &paperItems = pieces.at(i);
         for (int j = 0; j < paperItems.size(); ++j)
         {
             QList<QGraphicsItem *> pieceChildren = paperItems.at(i)->childItems();
@@ -1601,7 +1602,7 @@ bool MainWindowsNoGUI::IsPagesFit(const QSizeF &printPaper) const
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList<QGraphicsScene *> &scenes,
                                    const QList<QGraphicsItem *> &papers, const QList<QGraphicsItem *> &shadows,
-                                   const QList<QList<QGraphicsItem *> > &details, bool ignoreMargins,
+                                   const QList<QList<QGraphicsItem *> > &pieces, bool ignoreMargins,
                                    const QMarginsF &margins) const
 {
     for (int i=0; i < scenes.size(); ++i)
@@ -1665,47 +1666,47 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
                     break;
                 case LayoutExportFormat::DXF_AC1006_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1006, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1006, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1009_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1009, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1009, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1012_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1012, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1012, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1014_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1014, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1014, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1015_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1015, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1015, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1018_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1018, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1018, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1021_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1021, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1021, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1024_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1024, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1024, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 case LayoutExportFormat::DXF_AC1027_Flat:
                     paper->setVisible(false);
-                    FlatDxfFile(name, DRW::AC1027, dialog.isBinaryDXFFormat(), paper, scene, details);
+                    FlatDxfFile(name, DRW::AC1027, dialog.isBinaryDXFFormat(), paper, scene, pieces);
                     paper->setVisible(true);
                     break;
                 default:

@@ -74,12 +74,13 @@ public:
 
 private slots:
     void     editDateTimeFormats();
+    void     setDefaultTemplate();
 
 private:
     Q_DISABLE_COPY(PreferencesPatternPage)
     Ui::PreferencesPatternPage *ui;
 
-    void     initLabelDateTimeFormats();
+    void     initializeLabelsTab();
     void     initNotches();
     void     initGrainlines();
     void     initComboBoxFormats(QComboBox *box, const QStringList &items, const QString &currentFormat);

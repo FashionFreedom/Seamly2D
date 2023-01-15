@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vposition.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vposition.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -66,7 +67,7 @@
 class VPosition : public QRunnable
 {
 public:
-    VPosition(const VContour &gContour, int j, const VLayoutPiece &detail, int i, std::atomic_bool *stop, bool rotate,
+    VPosition(const VContour &gContour, int j, const VLayoutPiece &piece, int i, std::atomic_bool *stop, bool rotate,
               int rotationIncrease, bool saveLength);
     virtual ~VPosition() Q_DECL_OVERRIDE{}
 
@@ -76,15 +77,15 @@ public:
     quint32 getFrame() const;
     void setFrame(const quint32 &value);
 
-    quint32 getDetailsCount() const;
-    void setDetailsCount(const quint32 &value);
+    quint32 getPieceCount() const;
+    void setPieceCount(const quint32 &value);
 
-    void setDetails(const QVector<VLayoutPiece> &details);
+    void setPieces(const QVector<VLayoutPiece> &pieces);
 
     VBestSquare getBestResult() const;
 
-    static void DrawDebug(const VContour &contour, const VLayoutPiece &detail, int frame, quint32 paperIndex,
-                          int detailsCount, const QVector<VLayoutPiece> &details = QVector<VLayoutPiece>());
+    static void DrawDebug(const VContour &contour, const VLayoutPiece &piece, int frame, quint32 paperIndex,
+                          int piecesCount, const QVector<VLayoutPiece> &pieces = QVector<VLayoutPiece>());
 
     static int Bias(int length, int maxLength);
 
@@ -92,18 +93,18 @@ private:
     Q_DISABLE_COPY(VPosition)
     VBestSquare bestResult;
     const VContour gContour;
-    const VLayoutPiece detail;
+    const VLayoutPiece piece;
     int i;
     int j;
     quint32 paperIndex;
     quint32 frame;
-    quint32 detailsCount;
-    QVector<VLayoutPiece> details;
+    quint32 piecesCount;
+    QVector<VLayoutPiece> pieces;
     std::atomic_bool *stop;
     bool rotate;
     int rotationIncrease;
     /**
-     * @brief angle_between keep angle between global edge and detail edge. Need for optimization rotation.
+     * @brief angle_between keep angle between global edge and piece edge. Need for optimization rotation.
      */
     qreal angle_between;
 
@@ -123,20 +124,20 @@ private:
 
     virtual void run() Q_DECL_OVERRIDE;
 
-    void SaveCandidate(VBestSquare &bestResult, const VLayoutPiece &detail, int globalI, int detJ, BestFrom type);
+    void SaveCandidate(VBestSquare &bestResult, const VLayoutPiece &piece, int globalI, int detJ, BestFrom type);
 
-    bool CheckCombineEdges(VLayoutPiece &detail, int j, int &dEdge);
-    bool CheckRotationEdges(VLayoutPiece &detail, int j, int dEdge, int angle) const;
+    bool CheckCombineEdges(VLayoutPiece &piece, int j, int &dEdge);
+    bool CheckRotationEdges(VLayoutPiece &piece, int j, int dEdge, int angle) const;
 
-    CrossingType Crossing(const VLayoutPiece &detail) const;
+    CrossingType Crossing(const VLayoutPiece &piece) const;
     bool         SheetContains(const QRectF &rect) const;
 
-    void CombineEdges(VLayoutPiece &detail, const QLineF &globalEdge, const int &dEdge);
-    void RotateEdges(VLayoutPiece &detail, const QLineF &globalEdge, int dEdge, int angle) const;
+    void CombineEdges(VLayoutPiece &piece, const QLineF &globalEdge, const int &dEdge);
+    void RotateEdges(VLayoutPiece &piece, const QLineF &globalEdge, int dEdge, int angle) const;
 
     static QPainterPath ShowDirection(const QLineF &edge);
     static QPainterPath DrawContour(const QVector<QPointF> &points);
-    static QPainterPath DrawDetails(const QVector<VLayoutPiece> &details);
+    static QPainterPath drawPieces(const QVector<VLayoutPiece> &pieces);
 
     void Rotate(int increase);
 };

@@ -383,7 +383,8 @@ int VTextGraphicsItem::getFontSize() const
 void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     qDebug() << "VTextGraphicsItem::mousePressEvent\n";
-    if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
+    if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick
+        && (flags() & QGraphicsItem::ItemIsMovable))
     {
         if (m_moveType == NotMovable)
         {
@@ -571,7 +572,7 @@ void VTextGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event )
     if (event ->button() == Qt::LeftButton)
     {
         // restore the cursor
-        if (m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize)
+        if ((m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize) && (flags() & QGraphicsItem::ItemIsMovable))
         {
             SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         }

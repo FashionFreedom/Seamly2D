@@ -59,7 +59,7 @@
 #include "dialogaboutapp.h"
 #include "dialogpreferences.h"
 #include "dialogs/vwidgetgroups.h"
-#include "dialogs/vwidgetdetails.h"
+#include "dialogs/pieces_widget.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"
 #include "dialogs/shortcuts_dialog.h"

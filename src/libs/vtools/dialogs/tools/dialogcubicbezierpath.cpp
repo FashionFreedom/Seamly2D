@@ -303,7 +303,6 @@ void DialogCubicBezierPath::currentPointChanged(int index)
 void DialogCubicBezierPath::NewItem(const VPointF &point)
 {
     auto item = new QListWidgetItem(point.name());
-    item->setFont(QFont("Times", 12, QFont::Bold));
     item->setData(Qt::UserRole, QVariant::fromValue(point));
 
     ui->listWidget->addItem(item);

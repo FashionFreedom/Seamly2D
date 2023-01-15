@@ -80,8 +80,8 @@ signals:
 
 public slots:
     virtual void     ShowTool(quint32 id, bool enable);
-    virtual void     ChangedActivDraw(const QString &newName);
-    void             ChangedNameDraw(const QString &oldName, const QString &newName);
+    virtual void     activeBlockChanged(const QString &newName);
+    void             blockNameChanged(const QString &oldName, const QString &newName);
     virtual void     EnableToolMove(bool move);
     virtual void     Disable(bool disable, const QString &draftBlockName)=0;
     virtual void     piecesMode(bool mode);
@@ -94,7 +94,7 @@ protected:
     enum class       Referens : bool {Follow = true, Ignore = false};
 
 
-    QString          nameActivDraw;   /** @brief nameActivDraw name of tool's pattern peace. */
+    QString          activeBlockName;   /** @brief activeBlockName name of tool's pattern peace. */
     QString          m_lineType;      /** @brief typeLine line type. */
     QString          m_lineWeight;    /** @brief typeLine line weight. */
 

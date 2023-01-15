@@ -1,39 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2022  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License  more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
  **  @file   insert_nodes_dialog.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   21 3, 2017
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -45,7 +19,34 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/************************************************************************
+ **
+ **  @file   dialoginsertnode.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   21 3, 2017
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -58,6 +59,7 @@
 
 #include <QMenu>
 #include <QKeyEvent>
+#include <QSound>
 
 //---------------------------------------------------------------------------------------------------------------------
 InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWidget *parent)
@@ -66,6 +68,7 @@ InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWi
     , m_nodes({})
     , m_nodeFlag(false)
     , m_piecesFlag(false)
+    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -128,7 +131,7 @@ void InsertNodesDialog::ShowDialog(bool click)
 
         for (auto &node : m_nodes)
         {
-            newNodeItem(ui->nodes_ListWidget, node, false);
+            newNodeItem(ui->nodes_ListWidget, node, false, false);
         }
 
         m_nodes.clear();
@@ -174,7 +177,7 @@ void InsertNodesDialog::SelectedObject(bool selected, quint32 objId, quint32 too
                 qDebug() << "Cannot find an object with id" << objId;
                 return;
             }
-
+            m_beep->play();
             bool appendCurve = false;
             QSharedPointer<VGObject> previousObj = nullptr;
             quint32 previousObjId = getLastNodeId();
@@ -261,9 +264,7 @@ void InsertNodesDialog::SelectedObject(bool selected, quint32 objId, quint32 too
             if (objType != GOType::Point)
             {
                 insertCurveNodes(node);
-
             }
-            QApplication::beep();
         }
     }
     else

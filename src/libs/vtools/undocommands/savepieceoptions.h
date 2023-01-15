@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   savepieceoptions.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -31,21 +32,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -60,33 +61,35 @@
 class SavePieceOptions : public VUndoCommand
 {
 public:
-    SavePieceOptions(const VPiece &oldDet, const VPiece &newDet, VAbstractPattern *doc, quint32 id,
-                     QUndoCommand *parent = nullptr);
-    virtual ~SavePieceOptions();
+                  SavePieceOptions(const VPiece &oldPiece, const VPiece &newPiece, VAbstractPattern *doc,
+                                   quint32 id, QUndoCommand *parent = nullptr);
 
-    virtual void undo() Q_DECL_OVERRIDE;
-    virtual void redo() Q_DECL_OVERRIDE;
-    virtual bool mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
-    virtual int  id() const Q_DECL_OVERRIDE;
-    quint32      DetId() const;
-    VPiece       NewDet() const;
+    virtual      ~SavePieceOptions();
+
+    virtual void  undo() Q_DECL_OVERRIDE;
+    virtual void  redo() Q_DECL_OVERRIDE;
+    virtual bool  mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
+    virtual int   id() const Q_DECL_OVERRIDE;
+    quint32       pieceId() const;
+    VPiece        getNewPiece() const;
+
 private:
     Q_DISABLE_COPY(SavePieceOptions)
 
-    const VPiece    m_oldDet;
-    VPiece          m_newDet;
+    const VPiece  m_oldPiece;
+    VPiece        m_newPiece;
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline quint32 SavePieceOptions::DetId() const
+inline quint32 SavePieceOptions::pieceId() const
 {
     return nodeId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline VPiece SavePieceOptions::NewDet() const
+inline VPiece SavePieceOptions::getNewPiece() const
 {
-    return m_newDet;
+    return m_newPiece;
 }
 
 #endif // SAVEPIECEOPTIONS_H

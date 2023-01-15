@@ -144,8 +144,9 @@ const QString AttrArc         = QStringLiteral("arc");
 const QString AttrSuffix      = QStringLiteral("suffix");
 const QString AttrIdObject    = QStringLiteral("idObject");
 const QString AttrInLayout    = QStringLiteral("inLayout");
-const QString AttrRotationAngle = QStringLiteral("rotationAngle");
-const QString AttrClosed      = QStringLiteral("closed");
+const QString AttrPieceLocked = QStringLiteral("locked");
+const QString AttrRotationAngle   = QStringLiteral("rotationAngle");
+const QString AttrClosed          = QStringLiteral("closed");
 const QString AttrShowPointName   = QStringLiteral("showPointName");
 const QString AttrShowPointName1  = QStringLiteral("showPointName1");
 const QString AttrShowPointName2  = QStringLiteral("showPointName2");
@@ -278,6 +279,22 @@ const QString ColorGray             = QStringLiteral("gray");
 const QString ColorDarkGray         = QStringLiteral("darkgray");
 const QString ColorLightGray        = QStringLiteral("lightgray");
 const QString ColorWhite            = QStringLiteral("white");
+
+const QString FillNone              = QStringLiteral("nobrush");
+const QString FillSolid             = QStringLiteral("solidpattern");
+const QString FillDense1            = QStringLiteral("dense1pattern");
+const QString FillDense2            = QStringLiteral("dense2pattern");
+const QString FillDense3            = QStringLiteral("dense3pattern");
+const QString FillDense4            = QStringLiteral("dense4pattern");
+const QString FillDense5            = QStringLiteral("dense5pattern");
+const QString FillDense6            = QStringLiteral("dense6pattern");
+const QString FillDense7            = QStringLiteral("dense7pattern");
+const QString FillHorizLines        = QStringLiteral("horpattern");
+const QString FillVertLines         = QStringLiteral("verpattern");
+const QString FillCross             = QStringLiteral("crosspattern");
+const QString FillBackwardDiagonal  = QStringLiteral("bdiagpattern");
+const QString FillForwardDiagonal   = QStringLiteral("fdiagpattern");
+const QString FilldDiagonalCross    = QStringLiteral("diagcrosspattern");
 
 //variables
 const QString measurement_         = QStringLiteral("M_");

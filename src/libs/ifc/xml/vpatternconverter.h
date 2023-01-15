@@ -1,19 +1,13 @@
-/**************************************************************************
- **
+/***************************************************************************
  **  @file   vpatternconverter.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   11 12, 2014
- **
  **  @author Douglas S Caskey
- **  @date   7.23.2022
+ **  @date   Dec 27, 2022
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -25,7 +19,34 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/**************************************************************************
+ **
+ **  @file   vpatternconverter.h
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   11 12, 2014
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -56,7 +77,7 @@ public:
     static const QString PatternMaxVerStr;
     static const QString CurrentSchema;
     static Q_DECL_CONSTEXPR const int PatternMinVer = CONVERTER_VERSION_CHECK(0, 1, 0);
-    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 5);
+    static Q_DECL_CONSTEXPR const int PatternMaxVer = CONVERTER_VERSION_CHECK(0, 6, 6);
 
 protected:
     virtual int     MinVer() const Q_DECL_OVERRIDE;
@@ -114,6 +135,7 @@ private:
     void          toVersion0_6_3();
     void          toVersion0_6_4();
     void          toVersion0_6_5();
+    void          toVersion0_6_6();
 
     void          TagUnitToV0_2_0();
     void          TagIncrementToV0_2_0();

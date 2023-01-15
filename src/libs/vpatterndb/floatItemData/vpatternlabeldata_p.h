@@ -43,9 +43,9 @@ class VPatternLabelDataPrivate : public QSharedData
 {
 public:
     VPatternLabelDataPrivate()
-        : m_dLabelWidth()
-        , m_dLabelHeight()
-        , m_dLabelAngle()
+        : m_pieceLabelWidth()
+        , m_pieceLabelHeight()
+        , m_pieceLabelAngle()
         , m_iFontSize(0)
         , m_centerAnchorPoint(NULL_ID)
         , m_topLeftAnchorPoint(NULL_ID)
@@ -54,9 +54,9 @@ public:
 
     VPatternLabelDataPrivate(const VPatternLabelDataPrivate &data)
         : QSharedData(data)
-        , m_dLabelWidth(data.m_dLabelWidth)
-        , m_dLabelHeight(data.m_dLabelHeight)
-        , m_dLabelAngle(data.m_dLabelAngle)
+        , m_pieceLabelWidth(data.m_pieceLabelWidth)
+        , m_pieceLabelHeight(data.m_pieceLabelHeight)
+        , m_pieceLabelAngle(data.m_pieceLabelAngle)
         , m_iFontSize(data.m_iFontSize)
         , m_centerAnchorPoint(data.m_centerAnchorPoint)
         , m_topLeftAnchorPoint(data.m_topLeftAnchorPoint)
@@ -65,9 +65,9 @@ public:
 
     ~VPatternLabelDataPrivate() Q_DECL_EQ_DEFAULT;
 
-    QString m_dLabelWidth;            /** @brief m_dLabelWidth formula to calculate the width of label */
-    QString m_dLabelHeight;           /** @brief m_dLabelHeight formula to calculate the height of label */
-    QString m_dLabelAngle;            /** @brief m_dLabelAngle formula to calculate the rotation angle of label */
+    QString m_pieceLabelWidth;            /** @brief m_pieceLabelWidth formula to calculate the width of label */
+    QString m_pieceLabelHeight;           /** @brief m_pieceLabelHeight formula to calculate the height of label */
+    QString m_pieceLabelAngle;            /** @brief m_pieceLabelAngle formula to calculate the rotation angle of label */
     int     m_iFontSize;              /** @brief m_iFontSize label text base font size */
     quint32 m_centerAnchorPoint;      /** @brief m_centerAnchorPoint center pin id */
     quint32 m_topLeftAnchorPoint;     /** @brief m_topLeftAnchorPoint top left corner pin id */

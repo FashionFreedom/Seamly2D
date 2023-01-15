@@ -52,11 +52,8 @@ jobs:
         run: |
           # ---------------------------------
           echo "-- install build dependencies --"
-          sudo add-apt-repository universe
-          sudo add-apt-repository multiverse
-          sudo add-apt-repository restricted
           sudo apt update
-          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools ubuntu-restricted-extras
+          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qtmultimedia5-dev qttools5-dev-tools
 
       - name: build Seamly2D appimage
         # uses parameters from appimage-builder-recipe-jammy.yml to build appimage

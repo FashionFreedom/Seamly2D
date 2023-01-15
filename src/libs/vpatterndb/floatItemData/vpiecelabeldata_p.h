@@ -33,9 +33,10 @@
 #include <QString>
 #include <QVector>
 
-#include "../vmisc/diagnostic.h"
+
 #include "floatitemdef.h"
 #include "../ifc/ifcdef.h"
+#include "../vmisc/diagnostic.h"
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Weffc++")
@@ -48,7 +49,7 @@ public:
         : m_qsLetter()
         ,  m_annotation()
         ,  m_orientation()
-        ,  m_rotationWay()
+        ,  m_rotation()
         ,  m_tilt()
         ,  m_foldPosition()
         ,  m_quantity(1)
@@ -61,7 +62,7 @@ public:
         ,  m_qsLetter(data.m_qsLetter)
         ,  m_annotation(data.m_annotation)
         ,  m_orientation(data.m_orientation)
-        ,  m_rotationWay(data.m_rotationWay)
+        ,  m_rotation(data.m_rotation)
         ,  m_tilt(data.m_tilt)
         ,  m_foldPosition(data.m_foldPosition)
         ,  m_quantity(data.m_quantity)
@@ -71,11 +72,11 @@ public:
 
     ~VPieceLabelDataPrivate() Q_DECL_EQ_DEFAULT;
 
-    /** @brief m_qsLetter Detail letter (should be no more than 3 characters) */
-    QString m_qsLetter;
+
+    QString m_qsLetter;    /** @brief m_qsLetter Piece letter (should be no more than 3 characters) */
     QString m_annotation;
     QString m_orientation;
-    QString m_rotationWay;
+    QString m_rotation;
     QString m_tilt;
     QString m_foldPosition;
 

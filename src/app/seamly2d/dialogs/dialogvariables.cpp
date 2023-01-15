@@ -476,7 +476,7 @@ void DialogVariables::setMoveControls()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogVariables::enableDetails(bool enabled)
+void DialogVariables::enablePieces(bool enabled)
 {
     if (enabled)
     {
@@ -668,7 +668,7 @@ void DialogVariables::removeCustomVariable()
     }
     else
     {
-        enableDetails(false);
+        enablePieces(false);
     }
 }
 
@@ -966,7 +966,7 @@ void DialogVariables::showCustomVariableDetails()
 {
     if (ui->variables_TableWidget->rowCount() > 0)
     {
-        enableDetails(true);
+        enablePieces(true);
 
         // name
         const QTableWidgetItem *name = ui->variables_TableWidget->item(ui->variables_TableWidget->currentRow(), 0);
@@ -979,7 +979,7 @@ void DialogVariables::showCustomVariableDetails()
         catch(const VExceptionBadId &e)
         {
             Q_UNUSED(e)
-            enableDetails(false);
+            enablePieces(false);
             return;
         }
 
@@ -1010,7 +1010,7 @@ void DialogVariables::showCustomVariableDetails()
     }
     else
     {
-        enableDetails(false);
+        enablePieces(false);
     }
 }
 

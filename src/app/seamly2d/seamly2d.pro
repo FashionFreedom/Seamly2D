@@ -12,7 +12,7 @@ include(../../../common.pri)
 
 # Here we don't see "network" library, but, i think, "printsupport" depend on this library, so we still need this
 # library in installer.
-QT       += core gui widgets xml svg printsupport xmlpatterns
+QT       += core gui widgets xml svg printsupport xmlpatterns multimedia
 
 # We want create executable file
 TEMPLATE = app
@@ -61,6 +61,7 @@ include(seamly2d.pri)
 RESOURCES += \
     share/resources/cursor.qrc \ # Tools cursor icons.
     share/resources/toolicon.qrc
+    share/resources/sounds.qrc
 
 # Compilation will fail without this files after we added them to this section.
 OTHER_FILES += \

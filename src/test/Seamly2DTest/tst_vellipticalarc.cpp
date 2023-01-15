@@ -387,7 +387,7 @@ void TST_VEllipticalArc::TestGetPoints3()
     {// calculated full ellipse square
         const qreal ellipseSquare = M_PI * radius1 * radius2;
         const qreal epsSquare = ellipseSquare * 1.7 / 100; // computing error 0.5 % from origin squere
-        const qreal arcSquare = qAbs(VAbstractPiece::SumTrapezoids(points)/2.0);
+        const qreal arcSquare = qAbs(VAbstractPiece::sumTrapezoids(points)/2.0);
         const qreal diffSquare = qAbs(ellipseSquare - arcSquare);
         const QString errorMsg1 = QString("Broken the second rule. Interpolation has too big computing error. "
                                           "Difference ='%1' bigger than eps = '%2'.").arg(diffSquare).arg(epsSquare);

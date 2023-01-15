@@ -6,9 +6,11 @@ SOURCES += \
     $$PWD/calculator/calculator.cpp \
     $$PWD/color_combobox.cpp \
     $$PWD/export_format_combobox.cpp \
+    $$PWD/fill_combobox.cpp \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
     $$PWD/mouse_coordinates.cpp \
+    $$PWD/piece_tablewidgetitem.cpp \
     $$PWD/scene_rect.cpp \
     $$PWD/vmaingraphicsscene.cpp \
     $$PWD/vmaingraphicsview.cpp \
@@ -23,9 +25,6 @@ SOURCES += \
     $$PWD/vtextgraphicsitem.cpp \
     $$PWD/vgrainlineitem.cpp \
     $$PWD/vpieceitem.cpp \
-    $$PWD/fancytabbar/fancytab.cpp \
-    $$PWD/fancytabbar/fancytabbar.cpp \
-    $$PWD/fancytabbar/stylehelper.cpp \
     $$PWD/vcurvepathitem.cpp \
     $$PWD/global.cpp \
     $$PWD/vscenepoint.cpp \
@@ -39,9 +38,11 @@ HEADERS += \
     $$PWD/calculator/calculator.h \
     $$PWD/color_combobox.h \
     $$PWD/export_format_combobox.h \
+    $$PWD/fill_combobox.h \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
     $$PWD/mouse_coordinates.h \
+    $$PWD/piece_tablewidgetitem.h \
     $$PWD/scene_rect.h \
     $$PWD/stable.h \
     $$PWD/vmaingraphicsscene.h \
@@ -57,9 +58,6 @@ HEADERS += \
     $$PWD/vtextgraphicsitem.h \
     $$PWD/vgrainlineitem.h \
     $$PWD/vpieceitem.h \
-    $$PWD/fancytabbar/fancytab.h \
-    $$PWD/fancytabbar/fancytabbar.h \
-    $$PWD/fancytabbar/stylehelper.h \
     $$PWD/vcurvepathitem.h \
     $$PWD/global.h \
     $$PWD/vscenepoint.h \

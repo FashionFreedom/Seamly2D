@@ -80,12 +80,12 @@ const QString VAbstractNode::AttrIdTool = QStringLiteral("idTool");
  * @param parent parent object.
  */
 VAbstractNode::VAbstractNode(VAbstractPattern *doc, VContainer *data, const quint32 &id, const quint32 &idNode,
-                             const QString &drawName, const quint32 &idTool, QObject *parent)
+                             const QString &blockName, const quint32 &idTool, QObject *parent)
     : VAbstractTool(doc, data, id, parent)
     , parentType(ParentType::Item)
     , idNode(idNode)
     , idTool(idTool)
-    , m_drawName(drawName)
+    , m_blockName(blockName)
     , m_exluded(false)
 {
     _referens = 0;
@@ -199,6 +199,6 @@ void VAbstractNode::ToolCreation(const Source &typeCreation)
  */
 void VAbstractNode::AddToModeling(const QDomElement &domElement)
 {
-    AddDetNode *addNode = new AddDetNode(domElement, doc, m_drawName);
+    AddDetNode *addNode = new AddDetNode(domElement, doc, m_blockName);
     qApp->getUndoStack()->push(addNode);
 }

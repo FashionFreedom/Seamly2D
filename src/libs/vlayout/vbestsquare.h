@@ -68,7 +68,7 @@ public:
 
     QSizeF     BestSize() const;
     int        GContourEdge() const;
-    int        DetailEdge() const;
+    int        pieceEdge() const;
     QTransform Transform() const;
     bool       ValidResult() const;
     bool       isMirror() const;

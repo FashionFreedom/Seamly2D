@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vbank.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vbank.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -75,9 +76,14 @@ QT_WARNING_POP
 
 //---------------------------------------------------------------------------------------------------------------------
 VBank::VBank()
-    :details(QVector<VLayoutPiece>()), unsorted(QHash<int, qint64>()), big(QHash<int, qint64>()),
-      middle(QHash<int, qint64>()), small(QHash<int, qint64>()), layoutWidth(0), caseType(Cases::CaseDesc),
-      prepare(false), diagonal(0)
+    : pieces(QVector<VLayoutPiece>())
+    , unsorted(QHash<int, qint64>())
+    , big(QHash<int, qint64>())
+    , middle(QHash<int, qint64>())
+    , small(QHash<int, qint64>())
+    , layoutWidth(0)
+    , caseType(Cases::CaseDesc)
+    , prepare(false), diagonal(0)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -94,9 +100,9 @@ void VBank::SetLayoutWidth(const qreal &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VBank::SetDetails(const QVector<VLayoutPiece> &details)
+void VBank::setPieces(const QVector<VLayoutPiece> &pieces)
 {
-    this->details = details;
+    this->pieces = pieces;
     Reset();
 }
 
@@ -134,11 +140,11 @@ int VBank::GetTiket()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VLayoutPiece VBank::GetDetail(int i) const
+VLayoutPiece VBank::getPiece(int i) const
 {
-    if (i >= 0 && i < details.size())
+    if (i >= 0 && i < pieces.size())
     {
-        return details.at(i);
+        return pieces.at(i);
     }
     else
     {
@@ -201,26 +207,26 @@ bool VBank::Prepare()
         return prepare;
     }
 
-    if (details.isEmpty())
+    if (pieces.isEmpty())
     {
-        qCDebug(lBank, "Preparing data for layout error: List of details is empty");
+        qCDebug(lBank, "Preparing data for layout error: List of pieces is empty");
         prepare = false;
         return prepare;
     }
 
     diagonal = 0;
-    for (int i=0; i < details.size(); ++i)
+    for (int i=0; i < pieces.size(); ++i)
     {
-        details[i].SetLayoutWidth(layoutWidth);
-        details[i].SetLayoutAllowancePoints();
+        pieces[i].SetLayoutWidth(layoutWidth);
+        pieces[i].SetLayoutAllowancePoints();
 
-        const qreal d = details.at(i).Diagonal();
+        const qreal d = pieces.at(i).Diagonal();
         if (d > diagonal)
         {
             diagonal = d;
         }
 
-        const qint64 square = details.at(i).Square();
+        const qint64 square = pieces.at(i).Square();
         if (square <= 0)
         {
             qCDebug(lBank, "Preparing data for layout error: Detail squere <= 0");
@@ -254,7 +260,7 @@ void VBank::SetCaseType(Cases caseType)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VBank::AllDetailsCount() const
+int VBank::allPieceCount() const
 {
     return unsorted.count() + big.count() + middle.count() + small.count();
 }
@@ -274,7 +280,7 @@ qreal VBank::GetBiggestDiagonal() const
 //---------------------------------------------------------------------------------------------------------------------
 int VBank::ArrangedCount() const
 {
-    return details.size() - AllDetailsCount();
+    return pieces.size() - allPieceCount();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

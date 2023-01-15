@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vlayoutpaper.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vlayoutpaper.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -83,48 +84,45 @@ public:
 	VLayoutPaper &operator=(VLayoutPaper &&paper) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VLayoutPaper &paper) Q_DECL_NOTHROW;
+	void    Swap(VLayoutPaper &paper) Q_DECL_NOTHROW;
 
-    int  GetHeight() const;
-    void SetHeight(int height);
+    int     GetHeight() const;
+    void    SetHeight(int height);
 
-    int  GetWidth() const;
-    void SetWidth(int width);
+    int     GetWidth() const;
+    void    SetWidth(int width);
 
-    qreal GetLayoutWidth() const;
-    void  SetLayoutWidth(qreal width);
+    qreal   GetLayoutWidth() const;
+    void    SetLayoutWidth(qreal width);
 
     quint32 GetShift() const;
     void    SetShift(quint32 shift);
 
-    bool GetRotate() const;
-    void SetRotate(bool value);
+    bool    GetRotate() const;
+    void    SetRotate(bool value);
 
-    int GetRotationIncrease() const;
-    void SetRotationIncrease(int value);
+    int     GetRotationIncrease() const;
+    void    SetRotationIncrease(int value);
 
-    bool IsSaveLength() const;
-    void SetSaveLength(bool value);
+    bool    IsSaveLength() const;
+    void    SetSaveLength(bool value);
 
-    void SetPaperIndex(quint32 index);
+    void    SetPaperIndex(quint32 index);
 
-    bool ArrangeDetail(const VLayoutPiece &detail, std::atomic_bool &stop);
-    int  Count() const;
-    Q_REQUIRED_RESULT QGraphicsRectItem *GetPaperItem(bool autoCrop, bool textAsPaths) const;
-    Q_REQUIRED_RESULT QList<QGraphicsItem *> GetItemDetails(bool textAsPaths) const;
+    bool    arrangePiece(const VLayoutPiece &piece, std::atomic_bool &stop);
+    int     Count() const;
+    Q_REQUIRED_RESULT QGraphicsRectItem     *GetPaperItem(bool autoCrop, bool textAsPaths) const;
+    Q_REQUIRED_RESULT QList<QGraphicsItem *> getPieceItems(bool textAsPaths) const;
 
-    QVector<VLayoutPiece> GetDetails() const;
-    void                   SetDetails(const QList<VLayoutPiece>& details);
+    QVector<VLayoutPiece> getPieces() const;
+    void                  setPieces(const QList<VLayoutPiece>& pieces);
 
-    QRectF DetailsBoundingRect() const;
+    QRectF                piecesBoundingRect() const;
 
 private:
     QSharedDataPointer<VLayoutPaperData> d;
-
-    bool AddToSheet(const VLayoutPiece &detail, std::atomic_bool &stop);
-
-    bool SaveResult(const VBestSquare &bestResult, const VLayoutPiece &detail);
-
+    bool AddToSheet(const VLayoutPiece &piece, std::atomic_bool &stop);
+    bool SaveResult(const VBestSquare &bestResult, const VLayoutPiece &piece);
 };
 
 Q_DECLARE_TYPEINFO(VLayoutPaper, Q_MOVABLE_TYPE);

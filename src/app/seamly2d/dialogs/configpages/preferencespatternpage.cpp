@@ -51,14 +51,16 @@
 
 #include "preferencespatternpage.h"
 #include "ui_preferencespatternpage.h"
-#include "../../core/vapplication.h"
-#include "../ifc/xml/vabstractpattern.h"
-#include "../dialogdatetimeformats.h"
 
-#include <QMessageBox>
-#include <QDate>
-#include <QTime>
+#include "../dialogdatetimeformats.h"
+#include "../ifc/xml/vabstractpattern.h"
+#include "../../core/vapplication.h"
+
 #include <QComboBox>
+#include <QDate>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QTime>
 
 namespace
 {
@@ -85,13 +87,9 @@ PreferencesPatternPage::PreferencesPatternPage(QWidget *parent)
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     initDefaultSeamAllowance();
-    initLabelDateTimeFormats();
+    initializeLabelsTab();
     initNotches();
     initGrainlines();
-
-    ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->getForbidPieceFlipping());
-    ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
-    ui->hideSeamLine_CheckBox->setChecked(qApp->Seamly2DSettings()->isHideSeamLine());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -128,31 +126,20 @@ void PreferencesPatternPage::Apply()
     settings->setDefaultNotchColor(ui->defaultNotchColor_ComboBox->currentData().toString());
     settings->setDefaultNotchLength(ui->defaultNotchLength_DoubleSpinBox->value());
     settings->setDefaultNotchWidth(ui->defaultNotchWidth_DoubleSpinBox->value());
-    if (settings->showSecondNotch() != ui->showSecondNotch_CheckBox->isChecked())
-    {
-        settings->setShowSecondNotch(ui->showSecondNotch_CheckBox->isChecked());
-        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
-    }
+    settings->setShowSeamAllowanceNotch(ui->showSeamAllowanceNotch_CheckBox->isChecked());
+    settings->setShowSeamlineNotch(ui->showSeamlineNotch_CheckBox->isChecked());
 
-    if (settings->showSeamAllowances() != ui->showSeamAllowances_CheckBox->isChecked())
-    {
-        settings->setShowSeamAllowances(ui->showSeamAllowances_CheckBox->isChecked());
-        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
-    }
-    
-    if (settings->showGrainlines() != ui->showGrainlines_CheckBox->isChecked())
-    {
-        settings->setShowGrainlines(ui->showGrainlines_CheckBox->isChecked());
-        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
-    }
+    settings->setDefaultSeamAllowanceVisibilty(ui->showSeamAllowances_CheckBox->isChecked());
+    settings->setDefaultGrainlineVisibilty(ui->showGrainlines_CheckBox->isChecked());
+    settings->setDefaultGrainlineLength(ui->defaultGrainlineLength_DoubleSpinBox->value());
     settings->setDefaultGrainlineColor(ui->defaultGrainlineColor_ComboBox->currentData().toString());
     settings->setDefaultGrainlineLineweight(ui->defaultGrainlineLineweight_ComboBox->currentData().toReal());
 
-    if (settings->showLabels() != ui->showLabels_CheckBox->isChecked())
-    {
-        settings->setShowLabels(ui->showLabels_CheckBox->isChecked());
-        qApp->getCurrentDocument()->LiteParseTree(Document::LiteParse);
-    }
+
+    settings->setShowPatternLabels(ui->showPatternLabels_CheckBox->isChecked());
+    settings->setShowPieceLabels(ui->showPieceLabels_CheckBox->isChecked());
+    settings->setDefaultLabelWidth(ui->defaultLabelWidth_DoubleSpinBox->value());
+    settings->setDefaultLabelHeight(ui->defaultLabelHeight_DoubleSpinBox->value());
     settings->setDefaultLabelColor(ui->defaultLabelColor_ComboBox->currentData().toString());
     settings->SetLabelDateFormat(ui->dateFormats_ComboBox->currentText());
     settings->SetLabelTimeFormat(ui->timeFormats_ComboBox->currentText());
@@ -164,6 +151,9 @@ void PreferencesPatternPage::Apply()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initDefaultSeamAllowance()
 {
+    ui->forbidFlipping_CheckBox->setChecked(qApp->Seamly2DSettings()->getForbidPieceFlipping());
+    ui->hideSeamLine_CheckBox->setChecked(qApp->Seamly2DSettings()->isHideSeamLine());
+    ui->showSeamAllowances_CheckBox->setChecked(qApp->Seamly2DSettings()->getDefaultSeamAllowanceVisibilty());
     ui->defaultSeamAllowance_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->GetDefaultSeamAllowance());
     ui->defaultSeamAllowance_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
 
@@ -252,11 +242,42 @@ void PreferencesPatternPage::editDateTimeFormats()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesPatternPage::initLabelDateTimeFormats()
+void PreferencesPatternPage::setDefaultTemplate()
+{
+    QToolButton *button = qobject_cast<QToolButton *>(sender());
+    VSettings *settings = qApp->Seamly2DSettings();
+
+    QString filter(tr("Label template") + QLatin1String("(*.xml)"));
+    const QString fileName = QFileDialog::getOpenFileName(this, tr("Import template"),
+                                                          settings->GetPathLabelTemplate(), filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
+
+
+    if (button == ui->patternTemplate_ToolButton)
+    {
+        ui->patternTemplate_LineEdit->setText(fileName);
+        settings->setDefaultPatternTemplate(fileName);
+    }
+    else if (button == ui->pieceTemplate_ToolButton)
+    {
+        ui->pieceTemplate_LineEdit->setText(fileName);
+        settings->setDefaultPieceTemplate(fileName);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesPatternPage::initializeLabelsTab()
 {
     VSettings *settings = qApp->Seamly2DSettings();
 
-    ui->showLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showLabels());
+    ui->showPatternLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showPatternLabels());
+    ui->showPieceLabels_CheckBox->setChecked(qApp->Seamly2DSettings()->showPieceLabels());
+
+    ui->defaultLabelWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultLabelWidth());
+    ui->defaultLabelWidth_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+    ui->defaultLabelHeight_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultLabelHeight());
+    ui->defaultLabelHeight_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+
     int index = ui->defaultLabelColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultLabelColor());
     if (index != -1)
     {
@@ -272,6 +293,11 @@ void PreferencesPatternPage::initLabelDateTimeFormats()
 
     connect(ui->editDateFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::editDateTimeFormats);
     connect(ui->editTimeFormats_PushButton, &QPushButton::clicked, this, &PreferencesPatternPage::editDateTimeFormats);
+
+    ui->patternTemplate_LineEdit->setText(settings->getDefaultPatternTemplate());
+    ui->pieceTemplate_LineEdit->setText(settings->getDefaultPieceTemplate());
+    connect(ui->patternTemplate_ToolButton, &QToolButton::clicked, this, &PreferencesPatternPage::setDefaultTemplate);
+    connect(ui->pieceTemplate_ToolButton,   &QToolButton::clicked, this, &PreferencesPatternPage::setDefaultTemplate);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -297,7 +323,8 @@ void PreferencesPatternPage::initNotches()
     {
         ui->defaultNotchColor_ComboBox->setCurrentIndex(index);
     }
-    ui->showSecondNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSecondNotch());
+    ui->showSeamlineNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSeamlineNotch());
+    ui->showSeamAllowanceNotch_CheckBox->setChecked(qApp->Seamly2DSettings()->showSeamAllowanceNotch());
     ui->defaultNotchLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchLength());
     ui->defaultNotchLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
     ui->defaultNotchWidth_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultNotchWidth());
@@ -307,7 +334,11 @@ void PreferencesPatternPage::initNotches()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPatternPage::initGrainlines()
 {
-    ui->showGrainlines_CheckBox->setChecked(qApp->Seamly2DSettings()->showGrainlines());
+    ui->showGrainlines_CheckBox->setChecked(qApp->Seamly2DSettings()->getDefaultGrainlineVisibilty());
+
+    ui->defaultGrainlineLength_DoubleSpinBox->setValue(qApp->Seamly2DSettings()->getDefaultGrainlineLength());
+    ui->defaultGrainlineLength_DoubleSpinBox->setSuffix(" " + UnitsToStr(StrToUnits(qApp->Seamly2DSettings()->GetUnit()), true));
+
     int index = ui->defaultGrainlineColor_ComboBox->findData(qApp->Seamly2DSettings()->getDefaultGrainlineColor());
     if (index != -1)
     {

@@ -143,7 +143,7 @@
       <enum>QTabWidget::West</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="general_Tab">
       <attribute name="title">
@@ -254,6 +254,169 @@
         </widget>
        </item>
        <item>
+        <widget class="QGroupBox" name="selectionSound_GroupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+          </font>
+         </property>
+         <property name="title">
+          <string>Selection sound</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="selectionSound__Label">
+              <property name="minimumSize">
+               <size>
+                <width>140</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="text">
+               <string>Sound:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="selectionSound_ComboBox">
+              <property name="minimumSize">
+               <size>
+                <width>200</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <item>
+               <property name="text">
+                <string>silent</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>button_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mouse1_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mouse2_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>mouse3_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>camera_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>camera_buzz</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>clock_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>clock_beep</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>microwave.beep</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>coffeemaker_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>coffeemaker2_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>inspirstar_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>phone2_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>phone1_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>scissors_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>wallswitch_click</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>buzz_click</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
         <widget class="QGroupBox" name="patternEditing_GroupBox">
          <property name="minimumSize">
           <size>
@@ -308,7 +471,7 @@
          <property name="minimumSize">
           <size>
            <width>420</width>
-           <height>170</height>
+           <height>160</height>
           </size>
          </property>
          <property name="maximumSize">

@@ -100,7 +100,7 @@ enum class LayoutExportFormat : char
 };
 
 enum class NodeDetail : char { Contour, Modeling };
-enum class SceneObject : char { Point, Line, Spline, Arc, ElArc, SplinePath, Detail, Unknown };
+enum class SceneObject : char { Point, Line, Spline, Arc, ElArc, SplinePath, Piece, Unknown };
 enum class MeasurementsType : char { Multisize, Individual , Unknown};
 enum class Unit : char { Mm = 0, Cm, Inch, Px, LAST_UNIT_DO_NOT_USE};
 enum class Source : char { FromGui, FromFile, FromTool };
@@ -202,7 +202,7 @@ enum class Tool : ToolVisHolderType
     PointFromCircleAndTangent,
     PointFromArcAndTangent,
     TrueDarts,
-    UnionDetails,
+    Union,
     Group,
     Rotation,
     MirrorByLine,

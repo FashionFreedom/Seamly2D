@@ -66,13 +66,13 @@ const QString VNodeEllipticalArc::ToolType = QStringLiteral("modeling");
 
 //---------------------------------------------------------------------------------------------------------------------
 void VNodeEllipticalArc::Create(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 idArc,
-                                const Document &parse, const Source &typeCreation, const QString &drawName,
+                                const Document &parse, const Source &typeCreation, const QString &blockName,
                                 const quint32 &idTool)
 {
     if (parse == Document::FullParse)
     {
         VAbstractTool::AddRecord(id, Tool::NodeElArc, doc);
-        VNodeEllipticalArc *arc = new VNodeEllipticalArc(doc, data, id, idArc, typeCreation, drawName, idTool, doc);
+        VNodeEllipticalArc *arc = new VNodeEllipticalArc(doc, data, id, idArc, typeCreation, blockName, idTool, doc);
 
         VAbstractPattern::AddTool(id, arc);
         if (idTool != NULL_ID)
@@ -132,9 +132,9 @@ void VNodeEllipticalArc::AddToFile()
 
 //---------------------------------------------------------------------------------------------------------------------
 VNodeEllipticalArc::VNodeEllipticalArc(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 idArc,
-                                       const Source &typeCreation, const QString &drawName, const quint32 &idTool,
+                                       const Source &typeCreation, const QString &blockName, const quint32 &idTool,
                                        QObject *qoParent)
-    :VAbstractNode(doc, data, id, idArc, drawName, idTool, qoParent)
+    :VAbstractNode(doc, data, id, idArc, blockName, idTool, qoParent)
 {
     ToolCreation(typeCreation);
 }

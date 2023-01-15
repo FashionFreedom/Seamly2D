@@ -67,31 +67,40 @@ class VAbstractPieceData : public QSharedData
     Q_DECLARE_TR_FUNCTIONS(VAbstractPieceData)
 public:
     VAbstractPieceData()
-        : m_name(tr("Detail")),
-          m_forbidFlipping(false),
-          m_seamAllowance(false),
-          m_seamAllowanceBuiltIn(false),
-          m_hideMainPath(false),
-          m_width(0),
-          m_mx(0),
-          m_my(0)
+        : m_name(tr("Piece"))
+        , m_color("white")
+        , m_fill()
+        , m_pieceLock(false)
+        , m_forbidFlipping(false)
+        , m_seamAllowance(false)
+        , m_seamAllowanceBuiltIn(false)
+        , m_hideMainPath(false)
+        , m_width(0)
+        , m_mx(0)
+        , m_my(0)
     {}
 
     VAbstractPieceData(const VAbstractPieceData &piece)
-        : QSharedData(piece),
-          m_name(piece.m_name),
-          m_forbidFlipping(piece.m_forbidFlipping),
-          m_seamAllowance(piece.m_seamAllowance),
-          m_seamAllowanceBuiltIn(piece.m_seamAllowanceBuiltIn),
-          m_hideMainPath(piece.m_hideMainPath),
-          m_width(piece.m_width),
-          m_mx(piece.m_mx),
-          m_my(piece.m_my)
+        : QSharedData(piece)
+        , m_name(piece.m_name)
+        , m_color(piece.m_color)
+        , m_fill(piece.m_fill)
+        , m_pieceLock(piece.m_pieceLock)
+        , m_forbidFlipping(piece.m_forbidFlipping)
+        , m_seamAllowance(piece.m_seamAllowance)
+        , m_seamAllowanceBuiltIn(piece.m_seamAllowanceBuiltIn)
+        , m_hideMainPath(piece.m_hideMainPath)
+        , m_width(piece.m_width)
+        , m_mx(piece.m_mx)
+        , m_my(piece.m_my)
     {}
 
     ~VAbstractPieceData() Q_DECL_EQ_DEFAULT;
 
     QString m_name;
+    QString m_color;
+    QString m_fill;
+    bool    m_pieceLock;
     /** @brief forbidFlipping forbid piece be mirrored in a layout. */
     bool    m_forbidFlipping;
     bool    m_seamAllowance;
@@ -108,4 +117,3 @@ private:
 QT_WARNING_POP
 
 #endif // VABSTRACTPIECE_P_H
-

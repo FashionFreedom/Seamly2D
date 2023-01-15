@@ -7,6 +7,7 @@ HEADERS += \
     $$PWD/line/intersect_circletangent_visual.h \
     $$PWD/line/operation/vistoolmirrorbyaxis.h \
     $$PWD/line/operation/vistoolmirrorbyline.h \
+    $$PWD/path/pattern_piece_visual.h \
     $$PWD/path/pieceanchorpoint_visual.h \
     $$PWD/line/point_intersectxy_visual.h \
     $$PWD/visualization.h \
@@ -41,7 +42,6 @@ HEADERS += \
     $$PWD/line/operation/visoperation.h \
     $$PWD/line/operation/vistoolmove.h \
     $$PWD/path/vistoolellipticalarc.h \
-    $$PWD/path/vistoolpiece.h \
     $$PWD/path/vistoolinternalpath.h
 
 SOURCES += \
@@ -50,6 +50,7 @@ SOURCES += \
     $$PWD/line/intersect_circletangent_visual.cpp \
     $$PWD/line/operation/vistoolmirrorbyaxis.cpp \
     $$PWD/line/operation/vistoolmirrorbyline.cpp \
+    $$PWD/path/pattern_piece_visual.cpp \
     $$PWD/path/pieceanchorpoint_visual.cpp \
     $$PWD/line/point_intersectxy_visual.cpp \
     $$PWD/visualization.cpp \
@@ -84,5 +85,4 @@ SOURCES += \
     $$PWD/line/operation/visoperation.cpp \
     $$PWD/line/operation/vistoolmove.cpp \
     $$PWD/path/vistoolellipticalarc.cpp \
-    $$PWD/path/vistoolpiece.cpp \
     $$PWD/path/vistoolinternalpath.cpp

@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vpattern.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vpattern.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -80,9 +81,9 @@ public:
     virtual void   IncrementReferens(quint32 id) const Q_DECL_OVERRIDE;
     virtual void   DecrementReferens(quint32 id) const Q_DECL_OVERRIDE;
 
-    quint32        SPointActiveDraw();
+    quint32        getActiveBasePoint();
 
-    QVector<quint32> GetActivePPPieces() const;
+    QVector<quint32> getActivePatternPieces() const;
 
     virtual void   setXMLContent(const QString &fileName) Q_DECL_OVERRIDE;
     virtual bool   SaveDocument(const QString &fileName, QString &error) Q_DECL_OVERRIDE;
@@ -129,25 +130,21 @@ protected:
 private:
     Q_DISABLE_COPY(VPattern)
 
-    /** @brief data container with data. */
-    VContainer     *data;
-
-    /** @brief mode current draw mode. */
-    Draw           *mode;
-
+    VContainer         *data;        /** @brief data container with data. */
+    Draw               *mode;        /** @brief mode current draw mode. */
     VMainGraphicsScene *draftScene;
     VMainGraphicsScene *pieceScene;
 
-    VNodeDetail    ParseDetailNode(const QDomElement &domElement) const;
+    VNodeDetail    parsePieceNode(const QDomElement &domElement) const;
 
-    void           ParseDrawElement(const QDomNode &node, const Document &parse);
+    void           parseDraftBlockElement(const QDomNode &node, const Document &parse);
     void           ParseDrawMode(const QDomNode &node, const Document &parse, const Draw &mode);
-    void           ParseDetailElement(QDomElement &domElement, const Document &parse);
-    void           ParseDetailNodes(const QDomElement &domElement, VPiece &detail, qreal width, bool closed) const;
-    void           ParsePieceDataTag(const QDomElement &domElement, VPiece &detail) const;
-    void           ParsePiecePatternInfo(const QDomElement &domElement, VPiece &detail) const;
-    void           ParsePieceGrainline(const QDomElement &domElement, VPiece &detail) const;
-    void           ParseDetails(const QDomElement &domElement, const Document &parse);
+    void           parsePieceElement(QDomElement &domElement, const Document &parse);
+    void           parsePieceNodes(const QDomElement &domElement, VPiece &piece, qreal width, bool closed) const;
+    void           ParsePieceDataTag(const QDomElement &domElement, VPiece &piece) const;
+    void           ParsePiecePatternInfo(const QDomElement &domElement, VPiece &piece) const;
+    void           ParsePieceGrainline(const QDomElement &domElement, VPiece &piece) const;
+    void           parsePatternPieces(const QDomElement &domElement, const Document &parse);
 
     void           ParsePointElement(VMainGraphicsScene *scene, QDomElement &domElement,
                                      const Document &parse, const QString &type);
@@ -178,7 +175,7 @@ private:
                                            quint32 &idTool);
     template <typename T>
     QRectF         ToolBoundingRect(const QRectF &rec, const quint32 &id) const;
-    void           ParseCurrentPP();
+    void           parseCurrentDraftBlock();
     QString        GetLabelBase(quint32 index)const;
 
     void ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);

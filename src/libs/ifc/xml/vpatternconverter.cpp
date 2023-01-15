@@ -1,19 +1,13 @@
-/**************************************************************************
- **
+/***************************************************************************
  **  @file   vpatternconverter.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   11 12, 2014
- **
  **  @author Douglas S Caskey
- **  @date   7.23.2022
+ **  @date   Dec 27, 2022
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -25,7 +19,34 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/**************************************************************************
+ **
+ **  @file   vpatternconverter.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   11 12, 2014
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -64,8 +85,8 @@ Q_LOGGING_CATEGORY(PatternConverter, "patternConverter")
  */
 
 const QString VPatternConverter::PatternMinVerStr = QStringLiteral("0.1.0");
-const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.5");
-const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.5.xsd");
+const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.6");
+const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.6.xsd");
 
 //VPatternConverter::PatternMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //VPatternConverter::PatternMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -121,7 +142,14 @@ static const QString strPointFromArcAndTangent    = QStringLiteral("pointFromArc
 static const QString strPointOfIntersectionArcs   = QStringLiteral("pointOfIntersectionArcs");
 static const QString strFirstArc                  = QStringLiteral("firstArc");
 static const QString strSecondArc                 = QStringLiteral("secondArc");
+static const QString strDraw                      = QStringLiteral("draw");
+static const QString strDraftBlock                = QStringLiteral("draftBlock");
+static const QString strDetails                   = QStringLiteral("details");
+static const QString strPieces                    = QStringLiteral("pieces");
 static const QString strDetail                    = QStringLiteral("detail");
+static const QString strPiece                     = QStringLiteral("piece");
+static const QString strUnionDetail               = QStringLiteral("unionDetail");
+static const QString strUnion                     = QStringLiteral("union");
 static const QString strSupplement                = QStringLiteral("supplement");
 static const QString strClosed                    = QStringLiteral("closed");
 static const QString strWidth                     = QStringLiteral("width");
@@ -301,7 +329,9 @@ QString VPatternConverter::XSDSchema(int ver) const
         case (0x000604):
             return QStringLiteral("://schema/pattern/v0.6.4.xsd");;
         case (0x000605):
-                qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.5.xsd");
+            return QStringLiteral("://schema/pattern/v0.6.5.xsd");;
+        case (0x000606):
+                qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.6.xsd");
                 return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -472,6 +502,10 @@ void VPatternConverter::ApplyPatches()
             ValidateXML(XSDSchema(0x000605), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000605):
+            toVersion0_6_6();
+            ValidateXML(XSDSchema(0x000606), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000606):
             break;
         default:
             InvalidVersion(m_ver);
@@ -490,7 +524,7 @@ void VPatternConverter::DowngradeToCurrentMaxVersion()
 bool VPatternConverter::IsReadOnly() const
 {
     // Check if attribute readOnly was not changed in file format
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 5),
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 6),
                       "Check attribute readOnly.");
 
     // Possibly in future attribute readOnly will change position etc.
@@ -1188,6 +1222,75 @@ void VPatternConverter::toVersion0_6_5()
             {
                 renameAttribute(element, strBottomPin, strBottomAnchor, attribute.value());
             }
+        }
+    }
+    Save();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPatternConverter::toVersion0_6_6()
+{
+    // TODO. Delete if minimal supported version is 0.6.6
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 6),
+                      "Time to refactor the code.");
+    SetVersion(QStringLiteral("0.6.6"));
+
+    // Convert draw to draftBlock
+    const QDomNodeList list = elementsByTagName(strDraw);
+    for (int i=0; i < list.size(); ++i)
+    {
+        QDomElement element = list.at(i).toElement();
+        if (!element.isNull())
+        {
+            element.setTagName(strDraftBlock);
+        }
+    }
+
+    // Convert details to pieces
+    const QDomNodeList detailsList = elementsByTagName(strDetails);
+    for (int i=0; i < detailsList.size(); ++i)
+    {
+        QDomElement element = detailsList.at(i).toElement();
+        if (!element.isNull())
+        {
+            element.setTagName(strPieces);
+        }
+    }
+
+    // Convert detail to piece
+    const QDomNodeList detailList = elementsByTagName(strDetail);
+    for (int i=0; i < detailList.size(); ++i)
+    {
+        QDomElement element = detailList.at(i).toElement();
+        if (!element.isNull())
+        {
+            element.setTagName(strPiece);
+        }
+    }
+
+    // Convert unionDetail to union
+    const QDomNodeList unionList = elementsByTagName(strTools);
+    for (int i=0; i < unionList.size(); ++i)
+    {
+        QDomElement element = unionList.at(i).toElement();
+        if (!element.isNull())
+        {
+            QDomAttr attribute = element.attributeNode(strType);
+            if (!attribute.isNull())
+            {
+                attribute.setValue(strUnion);
+            }
+        }
+    }
+
+    // Convert det to unionPiece
+    const QDomNodeList detList = elementsByTagName(QStringLiteral("det"));
+    for (int i=0; i < detList.size(); ++i)
+    {
+        QDomElement element = detList.at(i).toElement();
+        if (!element.isNull())
+        {
+            element.setTagName(QStringLiteral("unionPiece"));
         }
     }
     Save();
@@ -2360,13 +2463,13 @@ void VPatternConverter::TagDetailToV0_4_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPatternConverter::GetUnionDetailNodesV0_4_0(const QDomElement &detail)
+QDomElement VPatternConverter::GetUnionDetailNodesV0_4_0(const QDomElement &piece)
 {
     QDomElement tagNodes = createElement(strNodes);
 
-    if (not detail.isNull())
+    if (not piece.isNull())
     {
-        const QDomNodeList childList = detail.childNodes();
+        const QDomNodeList childList = piece.childNodes();
         for (qint32 i = 0; i < childList.size(); ++i)
         {
             const QDomElement node = childList.at(i).toElement();
@@ -2392,13 +2495,13 @@ QDomElement VPatternConverter::GetUnionDetailNodesV0_4_0(const QDomElement &deta
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPatternConverter::GetUnionChildrenNodesV0_4_0(const QDomElement &detail)
+QDomElement VPatternConverter::GetUnionChildrenNodesV0_4_0(const QDomElement &piece)
 {
     QDomElement tagNodes = createElement(strNodes);
 
-    if (not detail.isNull())
+    if (not piece.isNull())
     {
-        const QDomNodeList childList = detail.childNodes();
+        const QDomNodeList childList = piece.childNodes();
         for (qint32 i = 0; i < childList.size(); ++i)
         {
             const QDomElement node = childList.at(i).toElement();
@@ -2688,7 +2791,7 @@ void VPatternConverter::TagUnionDetailsToV0_4_0()
     const QDomNodeList list = elementsByTagName(strTools);
     for (int i=0; i < list.size(); ++i)
     {
-        // Tag 'tools' used only for union details, so no need to check any additional attributes
+        // Tag 'tools' used only for union pieces, so no need to check any additional attributes
         QDomElement toolDOM = list.at(i).toElement();
         if (not toolDOM.isNull())
         {

@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   move_pece.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   movedetail.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -65,18 +66,18 @@
 //---------------------------------------------------------------------------------------------------------------------
 MovePiece::MovePiece(VAbstractPattern *doc, const double &x, const double &y, const quint32 &id,
                      QGraphicsScene *scene, QUndoCommand *parent)
-    : VUndoCommand(QDomElement(), doc, parent),
-      m_oldX(0.0),
-      m_oldY(0.0),
-      m_newX(x),
-      m_newY(y),
-      m_scene(scene)
+    : VUndoCommand(QDomElement(), doc, parent)
+    , m_oldX(0.0)
+    , m_oldY(0.0)
+    , m_newX(x)
+    , m_newY(y)
+    , m_scene(scene)
 {
-    setText(QObject::tr("move detail"));
+    setText(QObject::tr("move piece"));
     nodeId = id;
 
     SCASSERT(scene != nullptr)
-    QDomElement domElement = doc->elementById(id, VAbstractPattern::TagDetail);
+    QDomElement domElement = doc->elementById(id, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
         m_oldX = qApp->toPixel(doc->GetParametrDouble(domElement, AttrMx, "0.0"));
@@ -98,7 +99,7 @@ void MovePiece::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagDetail);
+    QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
         SaveCoordinates(domElement, m_oldX, m_oldY);
@@ -116,7 +117,7 @@ void MovePiece::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagDetail);
+    QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
         SaveCoordinates(domElement, m_newX, m_newY);
@@ -143,7 +144,7 @@ bool MovePiece::mergeWith(const QUndoCommand *command)
 {
     const MovePiece *moveCommand = static_cast<const MovePiece *>(command);
     SCASSERT(moveCommand != nullptr)
-    const quint32 id = moveCommand->getDetId();
+    const quint32 id = moveCommand->getPieceId();
 
     if (id != nodeId)
     {

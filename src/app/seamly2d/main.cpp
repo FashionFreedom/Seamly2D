@@ -69,6 +69,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(flags);
     Q_INIT_RESOURCE(icons);
     Q_INIT_RESOURCE(toolicon);
+    Q_INIT_RESOURCE(sounds);
 
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 

@@ -63,10 +63,10 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 AddGroup::AddGroup(const QDomElement &xml, VAbstractPattern *doc, QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent), nameActivDraw(doc->getActiveDraftBlockName())
+    : VUndoCommand(xml, doc, parent), activeBlockName(doc->getActiveDraftBlockName())
 {
     setText(tr("add group"));
-    nodeId = doc->GetParametrId(xml);
+    nodeId = doc->getParameterId(xml);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -79,7 +79,7 @@ void AddGroup::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(activeBlockName);//Without this user will not see this change
 
     QDomElement groups = doc->CreateGroups();
     if (not groups.isNull())
@@ -115,7 +115,7 @@ void AddGroup::undo()
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    doc->setCurrentDraftBlock(nameActivDraw);//Return current pattern piece after undo
+    doc->setCurrentDraftBlock(activeBlockName);//Return current pattern piece after undo
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -123,7 +123,7 @@ void AddGroup::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(activeBlockName);//Without this user will not see this change
 
     QDomElement groups = doc->CreateGroups();
     if (not groups.isNull())

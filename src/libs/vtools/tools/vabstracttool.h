@@ -95,7 +95,7 @@ public:
     static QMap<QString, QString> supportColorsList();
     static QMap<QString, QString> backgroundColorsList();
     static QPixmap                createColorIcon(const int w, const int h, const QString &color);
-
+    static const QStringList      fills();
 
     static void                   AddRecord(const quint32 id, const Tool &toolType, VAbstractPattern *doc);
     static void                   AddNodes(VAbstractPattern *doc, QDomElement &domElement, const VPiecePath &path);

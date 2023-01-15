@@ -66,7 +66,7 @@ public:
                                   VContainer *data);
     static VToolInternalPath *Create(quint32 _id, const VPiecePath &path, quint32 pieceId, VMainGraphicsScene *scene,
                                   VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                  const Source &typeCreation, const QString &drawName = QString(),
+                                  const Source &typeCreation, const QString &blockName = QString(),
                                   const quint32 &idTool = 0);
 
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
@@ -95,7 +95,7 @@ private:
     quint32 m_pieceId;
 
     VToolInternalPath(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pieceId,  const Source &typeCreation,
-                   const QString &drawName = QString(), const quint32 &idTool = 0, QObject *qoParent = nullptr,
+                   const QString &blockName = QString(), const quint32 &idTool = 0, QObject *qoParent = nullptr,
                    QGraphicsItem * parent = nullptr );
 
     void RefreshGeometry();
