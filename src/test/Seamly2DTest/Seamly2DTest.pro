@@ -16,13 +16,6 @@ include(../../../common.pri)
 # Can configure it not to do that with 'no_testcase_installs'
 CONFIG += testcase no_testcase_installs
 
-CONFIG += c++14
-
-# Use out-of-source builds (shadow builds)
-CONFIG -= app_bundle debug_and_release debug_and_release_target
-
-TEMPLATE = app
-
 # directory for executable file
 DESTDIR = bin
 

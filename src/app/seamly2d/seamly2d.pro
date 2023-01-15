@@ -24,21 +24,6 @@ macx{
     TARGET = seamly2d
 }
 
-# Use out-of-source builds (shadow builds)
-CONFIG -= debug_and_release debug_and_release_target
-
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Since Qt 5.4.0 the source code location is recorded only in debug builds.
-# We need this information also in release builds. For this need define QT_MESSAGELOGCONTEXT.
-DEFINES += QT_MESSAGELOGCONTEXT
-
 # Directory for executable file
 DESTDIR = bin
 
@@ -86,8 +71,6 @@ message(seamly2d.pro: Data files: $$[QT_INSTALL_DATA])
 message(seamly2d.pro: Translation files: $$[QT_INSTALL_TRANSLATIONS])
 message(seamly2d.pro: Settings: $$[QT_INSTALL_SETTINGS])
 message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
-
-
 
 # Path to resource file.
 win32:RC_FILE = share/resources/seamly2d.rc

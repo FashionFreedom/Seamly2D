@@ -22,18 +22,6 @@ TEMPLATE = lib
 
 CONFIG += staticlib
 
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Since Qt 5.4.0 the source code location is recorded only in debug builds.
-# We need this information also in release builds. For this need define QT_MESSAGELOGCONTEXT.
-DEFINES += QT_MESSAGELOGCONTEXT
-
 # directory for executable file
 DESTDIR = bin
 
