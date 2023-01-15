@@ -113,6 +113,9 @@ OTHER_FILES += \
 
 include(warnings.pri)
 
+# precompiled headers clash with the BUILD_REVISION define, thus disable here
+CONFIG -= precompile_header
+
 DVCS_HESH=$$FindBuildRevision()
 message("seamlyme.pro: Build revision:" $${DVCS_HESH})
 DEFINES += "BUILD_REVISION=$${DVCS_HESH}" # Make available build revision number in sources.
