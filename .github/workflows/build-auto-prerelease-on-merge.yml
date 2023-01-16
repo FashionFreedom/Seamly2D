@@ -39,7 +39,7 @@ jobs:
           prerelease: true
 
   linux:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-18.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: release-data
     env:
       UPLOAD_URL: "${{ needs.release-data.outputs.upload_url }}"
@@ -48,29 +48,31 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v3
 
-      - name: install build dependencies
+      - name: install appimage dependencies
         run: |
-          # ---------------------------------
-          echo "-- install build dependencies --"
-          sudo apt update
-          sudo apt install -y libfuse2 build-essential git qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qtmultimedia5-dev qttools5-dev-tools
+          sudo apt update && sudo apt install -y libfuse2
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+
+      - name: install qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
 
       - name: build Seamly2D appimage
-        # uses parameters from appimage-builder-recipe-jammy.yml to build appimage
-        # Seamly2D-continuous-x86_64.AppImage
+        env:
+          OUTPUT: Seamly2D-x86_64.AppImage
         run: |
-          # ---------------------------------
-          echo "-- get appimage-builder --"
-          sudo wget -q https://github.com/AppImageCrafters/appimage-builder/releases/download/v1.1.0/appimage-builder-1.1.0-x86_64.AppImage -O /usr/local/bin/appimage-builder
-          sudo chmod +x /usr/local/bin/appimage-builder
-
-          # ---------------------------------
-          echo "-- run appimage-builder with appimage-builder-recipe-jammy.yml --"
-          appimage-builder --recipe dist/appimage-builder-recipe-jammy.yml --log INFO --skip-test
-
-      - name: copy to final file name Seamly2D-x86_64.AppImage
-        run: |
-          mv Seamly2D-continuous-x86_64.AppImage Seamly2D-x86_64.AppImage
+          qmake -config release CONFIG+=noTests
+          make -j$(nproc)
+          make INSTALL_ROOT=`pwd`/AppDir install
+          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
+          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base
+          cp /usr/bin/pdftops AppDir/usr/bin
+          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - name: upload file as pre-release
         uses: actions/upload-release-asset@v1
@@ -100,7 +102,7 @@ jobs:
 
       - name: make Seamly2D for macos
         run: |
-          qmake Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests
+          qmake Seamly2D.pro -config release CONFIG+=noTests
           make -j$(sysctl -n hw.logicalcpu)
 
       - name: upload Seamly2D-macos.zip as pre-release to Github Releases
@@ -137,7 +139,7 @@ jobs:
 
       - name: make seamly2d.exe and seamlyme.exe
         run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=noDebugSymbols CONFIG+=noTests
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
           nmake
 
       - name: create seamly2d-installer.exe

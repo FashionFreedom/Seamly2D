@@ -18,13 +18,9 @@
 ___________________________________________________
 ## Build on Linux
 
-  _These instructions apply in general, with Ubuntu 22.04 as example_
+  _These instructions apply in general_
 
-* Install Qt 5.15.2
-  * Example for Ubuntu 22.04: Install the following packages to have Qt5 build environment ready: 
-      ```
-      $ sudo apt install -y libfuse2 qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev libqt5svg5-dev qttools5-dev-tools
-      ```
+* Install Qt 5.15.2, eg via [Qt unified installer](https://www.qt.io/download-qt-installer) or https://github.com/miurahr/aqtinstall
 * Install QtCreator https://wiki.qt.io/VendorPackages
 * Install Additional libraries
   - gnu compiler
@@ -35,13 +31,13 @@ ___________________________________________________
     ```
 * Build and install:  
   ```
-  $ qmake Seamly2D.pro CONFIG+=noDebugSymbols
+  $ qmake
   $ make -j$(nproc)
   $ sudo make install
   ```
   _Note: The default prefix for command `make install` is `/usr`.  To define another prefix, build with qmake's PREFIX option. This example sets `/usr/local` as the new prefix for Seamly's installation binary files:_
     ```
-    $ qmake PREFIX=/usr/local Seamly2D.pro CONFIG+=noDebugSymbols
+    $ qmake PREFIX=/usr/local Seamly2D.pro
     ```
 * Copy pdftops to Seamly build directory if you need to create post script (.ps and .eps) pattern piece layouts.
 
@@ -88,7 +84,7 @@ ___________________________________________________
         * Read more about nmake [here](https://learn.microsoft.com/en-us/cpp/build/reference/nmake-reference?view=msvc-170)
           ```
           cd $SOURCE_DIRECTORY\build
-          qmake ..\Seamly2D.pro CONFIG+=noDebugSymbols
+          qmake ..\Seamly2D.pro
           nmake      # (or jom. Assign multiple CPUs to speed up compilation time but don't use all - leave at least one CPU for your OS.) 
           ```
       * Copy the `C:\Program Files\Xpdf\bin64\pdftops.exe` (or bin32) file to the Seamly build directory to enable creation of post script (.ps and .eps) pattern piece layouts.

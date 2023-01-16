@@ -16,21 +16,6 @@ TARGET = seamlyme
 # We want create executable file
 TEMPLATE = app
 
-# Use out-of-source builds (shadow builds)
-CONFIG -= debug_and_release debug_and_release_target
-
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Since Qt 5.4.0 the source code location is recorded only in debug builds.
-# We need this information also in release builds. For this need define QT_MESSAGELOGCONTEXT.
-DEFINES += QT_MESSAGELOGCONTEXT
-
 # Directory for executable file
 DESTDIR = bin
 
@@ -67,20 +52,6 @@ unix{
     }
 
     unix:!macx{
-        isEmpty(PREFIX_LIB){
-            isEmpty(PREFIX){
-                PR_LIB = $$DEFAULT_PREFIX
-            } else {
-                PR_LIB = $$PREFIX
-            }
-            contains(QMAKE_HOST.arch, x86_64) {
-                PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
-            } else {
-                PREFIX_LIB = $$PR_LIB/lib/Seamly2D
-            }
-        }
-        QMAKE_RPATHDIR += $$PREFIX_LIB
-
         QMAKE_RPATHDIR += $$[QT_INSTALL_LIBS]
         DATADIR =$$PREFIX/share
         DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
@@ -142,29 +113,8 @@ OTHER_FILES += \
 
 include(warnings.pri)
 
-CONFIG(release, debug|release){
-    # Release mode
-    !*msvc*:CONFIG += silent
-    DEFINES += V_NO_ASSERT
-    !unix:*g++*{
-        QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
-    }
-
-    noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-        DEFINES += V_NO_DEBUG
-    } else {
-        noCrashReports{
-            DEFINES += V_NO_DEBUG
-        }
-        # Turn on debug symbols in release mode on Unix systems.
-        # On Mac OS X temporarily disabled. Need find way how to strip binary file.
-        !macx:!*msvc*{
-            QMAKE_CXXFLAGS_RELEASE   += -g -gdwarf-3
-            QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_LFLAGS_RELEASE =
-        }
-    }
-}
+# precompiled headers clash with the BUILD_REVISION define, thus disable here
+CONFIG -= precompile_header
 
 DVCS_HESH=$$FindBuildRevision()
 message("seamlyme.pro: Build revision:" $${DVCS_HESH})
@@ -275,35 +225,6 @@ DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
-
-noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-    # do nothing
-} else {
-    noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
-        # do nothing
-    } else {
-        # Strip after you link all libraries.
-        CONFIG(release, debug|release){
-            win32:!*msvc*{
-                # Strip debug symbols.
-                QMAKE_POST_LINK += objcopy --only-keep-debug bin/${TARGET} bin/${TARGET}.dbg &&
-                QMAKE_POST_LINK += objcopy --strip-debug bin/${TARGET} &&
-                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="bin/${TARGET}.dbg" bin/${TARGET}
-            }
-
-            unix:!macx{
-                # Strip debug symbols.
-                QMAKE_POST_LINK += objcopy --only-keep-debug ${TARGET} ${TARGET}.dbg &&
-                QMAKE_POST_LINK += objcopy --strip-debug ${TARGET} &&
-                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="${TARGET}.dbg" ${TARGET}
-            }
-
-            !macx:!*msvc*{
-                QMAKE_DISTCLEAN += bin/${TARGET}.dbg
-            }
-        }
-    }
-}
 
 macx{
    # run macdeployqt to include all qt libraries in packet
