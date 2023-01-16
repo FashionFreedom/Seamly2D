@@ -993,7 +993,8 @@ void PatternPieceDialog::showAnchorsContextMenu(const QPoint &pos)
         return;
     }
 
-    QScopedPointer<QMenu> menu(new QMenu());
+    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
+    QScopedPointer<QMenu> menu(new QMenu(ui->anchorPoints_ListWidget));
     QAction *actionDelete = menu->addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
 
     QAction *selectedAction = menu->exec(ui->anchorPoints_ListWidget->viewport()->mapToGlobal(pos));
