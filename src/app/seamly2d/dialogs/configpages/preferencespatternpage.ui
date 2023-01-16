@@ -70,7 +70,7 @@
     <enum>QTabWidget::West</enum>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
@@ -221,8 +221,13 @@
        <layout class="QVBoxLayout" name="verticalLayout_6">
         <item>
          <widget class="QCheckBox" name="showSeamAllowanceNotch_CheckBox">
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
           <property name="text">
-           <string>Show notch on seam allowance</string>
+           <string>Show notch on cut line</string>
           </property>
          </widget>
         </item>
@@ -261,7 +266,7 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>100</height>
+         <height>150</height>
         </size>
        </property>
        <property name="title">
@@ -370,8 +375,7 @@
                </size>
               </property>
               <property name="font">
-               <font>
-               </font>
+               <font/>
               </property>
              </widget>
             </item>
@@ -1085,7 +1089,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1513,7 +1517,7 @@
       </widget>
       <widget class="QWidget" name="tab_8">
        <attribute name="title">
-        <string>Internal</string>
+        <string>Internals</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_18">
         <item>
