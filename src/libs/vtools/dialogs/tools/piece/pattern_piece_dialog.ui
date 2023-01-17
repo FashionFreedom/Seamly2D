@@ -305,12 +305,18 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>6</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
          <item>
           <widget class="QGroupBox" name="labelData_GroupBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -2315,8 +2321,7 @@ QListWidget::item:selected {
                 </size>
                </property>
                <property name="font">
-                <font>
-                </font>
+                <font/>
                </property>
               </widget>
              </widget>
@@ -4760,8 +4765,8 @@ QListWidget::item:selected {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>235</width>
-              <height>542</height>
+              <width>292</width>
+              <height>559</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -5042,10 +5047,10 @@ QListWidget::item:selected {
                    </sizepolicy>
                   </property>
                   <property name="toolTip">
-                   <string>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</string>
+                   <string>Show notch on the cut line.</string>
                   </property>
                   <property name="text">
-                   <string>Show notch on seam allowance</string>
+                   <string>Show notch on Cut Line</string>
                   </property>
                  </widget>
                 </item>
@@ -5055,10 +5060,10 @@ QListWidget::item:selected {
                    <bool>false</bool>
                   </property>
                   <property name="toolTip">
-                   <string>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</string>
+                   <string>Show notch on the seam line.</string>
                   </property>
                   <property name="text">
-                   <string>Show notch on seam line</string>
+                   <string>Show notch on Seam Line</string>
                   </property>
                  </widget>
                 </item>
