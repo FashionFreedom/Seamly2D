@@ -1,4 +1,4 @@
-![Seamly2D-Purple-Logo-Tagline-1200px-271px](https://user-images.githubusercontent.com/578399/212587500-8b902b48-ec42-4ea0-9126-9c4726f78297.png)
+![Seamly2D banner](../share/img/Seamly2D_banner_1202x271.png)
 
 [![GitHub release (latest)](https://img.shields.io/github/v/release/fashionfreedom/seamly2d?logo=github?color=blue&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/releases/latest)
 [![GitHub weekly build](https://img.shields.io/github/actions/workflow/status/fashionfreedom/seamly2d/build-release.yml?logo=github&style=flat-square)](https://github.com/FashionFreedom/Seamly2D/actions/workflows/build-release.yml)
