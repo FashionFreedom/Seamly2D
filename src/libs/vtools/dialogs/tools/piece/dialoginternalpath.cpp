@@ -251,7 +251,8 @@ void DialogInternalPath::ShowContextMenu(const QPoint &pos)
         return;
     }
 
-    QScopedPointer<QMenu> menu(new QMenu());
+    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
+    QScopedPointer<QMenu> menu(new QMenu(ui->listWidget));
 
     NodeInfo info;
 

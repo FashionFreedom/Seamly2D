@@ -13,3 +13,8 @@ SUBDIRS = \
     out
 
 out.depends = src
+
+lupdate.commands = lupdate -recursive $$shell_path($${PWD}/share/translations/translations.pro)
+lupdate.commands += && lupdate -recursive $$shell_path($${PWD}/share/translations/measurements.pro)
+
+QMAKE_EXTRA_TARGETS += lupdate

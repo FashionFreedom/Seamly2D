@@ -7522,18 +7522,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show notch on seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show notch on seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source> Width:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7699,6 +7687,22 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Just rear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on the cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on the seam line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8760,10 +8764,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Internal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cutouts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8804,14 +8804,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show notch on seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show  notch on seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8849,6 +8841,18 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Import template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internals</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -129,7 +129,8 @@ void VWidgetGroups::CtxMenu(const QPoint &pos)
     item = ui->tableWidget->item(row, 0);
     const quint32 id = item->data(Qt::UserRole).toUInt();
 
-    QScopedPointer<QMenu> menu(new QMenu());
+    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
+    QScopedPointer<QMenu> menu(new QMenu(ui->tableWidget));
     QAction *actionRename = menu->addAction(tr("Rename"));
     QAction *actionDelete = menu->addAction(tr("Delete"));
     QAction *selectedAction = menu->exec(ui->tableWidget->viewport()->mapToGlobal(pos));

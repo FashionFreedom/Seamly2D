@@ -350,7 +350,8 @@ void PiecesWidget::showContextMenu(const QPoint &pos)
     ui->tableWidget->setSortingEnabled(false);
     ui->tableWidget->blockSignals(true);
 
-    QScopedPointer<QMenu> menu(new QMenu());
+    // workaround for https://bugreports.qt.io/browse/QTBUG-97559: assign parent to QMenu
+    QScopedPointer<QMenu> menu(new QMenu(ui->tableWidget));
     QAction *selectAll = menu->addAction(tr("Include all pieces"));
     QAction *selectNone = menu->addAction(tr("Exclude all pieces"));
     QAction *invertSelection = menu->addAction(tr("Invert included pieces"));
