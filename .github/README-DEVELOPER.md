@@ -14,7 +14,7 @@
 
 ## Build method:
    * Read more about code styles and other developer items of interest on our [Developer wiki](https://github.com/FashionFreedom/Seamly2D/wiki).
-   * Review our [GitHub Action CI script](workflows/build-release.yml).
+   * Review our [GitHub Action CI script](workflows/ci.yml).
 ___________________________________________________
 ## Build on Linux
 
