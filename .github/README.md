@@ -28,9 +28,9 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 ## Download Seamly2D:
 
-| Windows | MacOS | Linux |
-| ---     | ---   | ---   |
-| [![Seamly2d-windows.zip](img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [<picture><source media="(prefers-color-scheme: dark)" srcset="img/white-apple-logo-transparent-49x60px.png"><source media="(prefers-color-scheme: light)" srcset="img/Apple_logo_black.png" ><img src="img/Apple_logo_black.png" height="60"></picture>](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://flathub.org/apps/details/net.seamly.seamly2d) |
+| Windows | MacOS | Linux AppImage | Linux Flatpak |
+| :---:     | :---:   | :---:      | :---:           |
+| [![Seamly2d-windows.zip](img/Microsoft_logo-60x60px.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-windows.zip) | [<picture><source media="(prefers-color-scheme: dark)" srcset="img/white-apple-logo-transparent-49x60px.png"><source media="(prefers-color-scheme: light)" srcset="img/Apple_logo_black.png" ><img src="img/Apple_logo_black.png" height="60"></picture>](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-macos.zip) | [![Seamly2D-x86_64.AppImage](img/Tux_Mono_60x60.png)](https://github.com/FashionFreedom/Seamly2D/releases/latest/download/Seamly2D-x86_64.AppImage) | [<img src="https://flathub.org/assets/badges/flathub-badge-en.svg" alt="Download On Flathub" height="60">](https://flathub.org/apps/details/net.seamly.seamly2d) |
 
 ___________________________________________________
 ## Seamly2D Community Resources:
