@@ -2282,6 +2282,11 @@ void MainWindow::initToolsToolBar()
     resetPanShortcuts();
     connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
+    QList<QKeySequence> zoomToPointShortcuts;
+    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_P));
+    ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
+    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::zoomToPoint);
+
     if (zoomScaleSpinBox != nullptr)
     {
         delete zoomScaleSpinBox;
@@ -2432,6 +2437,41 @@ void MainWindow::zoomPan(bool checked)
     if (checked)
     {
         ui->zoomToArea_Action->setChecked(false);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void MainWindow::zoomToPoint()
+{
+    if (qApp->getCurrentScene() != draftScene) return;
+
+    QStringList items;
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator it = pattern->DataGObjects()->begin(); it != pattern->DataGObjects()->end(); ++it)
+    {
+        if (it.value()->getType() == GOType::Point)
+            items << it.value()->name();
+    }
+
+    items.sort();
+
+
+    bool ok;
+    QString item = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), items, 0, false, &ok);
+    if (!ok || item.isEmpty()) return;
+
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator it = pattern->DataGObjects()->begin(); it != pattern->DataGObjects()->end(); ++it)
+    {
+        if (it.value()->name() == item)
+        {
+            VPointF* point = (VPointF*)it.value().data();
+            qDebug() << "zoom to point " << point->x() << " " << point->y();
+
+            double sceneWidth = ui->view->width();
+            QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
+            ui->view->zoomToRect(rect);
+            //this->ui->view->centerOn(point->x(), point->y());
+            return;
+        }
     }
 }
 
@@ -3828,6 +3868,7 @@ void MainWindow::Clear()
     ui->zoomToPrevious_Action->setEnabled(false);
     ui->zoomToArea_Action->setEnabled(false);
     ui->zoomPan_Action->setEnabled(false);
+    ui->zoomToPoint_Action->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -4105,6 +4146,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToPrevious_Action->setEnabled(enable);
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
+    ui->zoomToPoint_Action->setEnabled(enable);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);

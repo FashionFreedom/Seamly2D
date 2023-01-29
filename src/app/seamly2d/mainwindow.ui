@@ -579,6 +579,7 @@
    <addaction name="zoomToSelected_Action"/>
    <addaction name="zoomToArea_Action"/>
    <addaction name="zoomPan_Action"/>
+   <addaction name="zoomToPoint_Action"/>
   </widget>
   <widget class="QToolBar" name="tools_ToolBox_ToolBar">
    <property name="contextMenuPolicy">
@@ -4623,6 +4624,24 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="zoomToPoint_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_100_percent.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_100_percent.png</iconset>
+   </property>
+   <property name="text">
+    <string>Point</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to point</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
    </property>
   </action>
  </widget>

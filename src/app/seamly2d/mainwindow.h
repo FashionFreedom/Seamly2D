@@ -234,6 +234,7 @@ private slots:
     void zoomToPrevious();
     void zoomToArea(bool checked);
     void zoomPan(bool checked);
+    void zoomToPoint();
 
     void LoadIndividual();
     void LoadMultisize();
