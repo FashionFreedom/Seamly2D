@@ -64,7 +64,7 @@
 #include "../vwidgets/vgrainlineitem.h"
 
 class DialogTool;
-class VNoBrushScalePathItem;
+class NonScalingFillPathItem;
 
 class PatternPieceTool : public VInteractiveTool, public QGraphicsPathItem
 {
@@ -179,8 +179,8 @@ private:
     QPainterPath           m_cutPath;
     VMainGraphicsScene    *m_pieceScene;  /** @brief pieceScene pointer to the scene. */
     QString                m_blockName;
-    VNoBrushScalePathItem *m_cutLine;
-    VNoBrushScalePathItem *m_seamLine;
+    NonScalingFillPathItem *m_cutLine;
+    NonScalingFillPathItem *m_seamLine;
     VTextGraphicsItem     *m_dataLabel;
     VTextGraphicsItem     *m_patternInfo;
     VGrainlineItem        *m_grainLine;

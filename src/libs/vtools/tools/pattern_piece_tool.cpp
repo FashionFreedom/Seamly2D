@@ -82,7 +82,7 @@
 #include "../undocommands/toggle_piecelock.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsview.h"
-#include "../vwidgets/vnobrushscalepathitem.h"
+#include "../vwidgets/nonscalingfill_pathitem.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
@@ -1440,8 +1440,8 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
     , m_cutPath()
     , m_pieceScene(scene)
     , m_blockName(blockName)
-    , m_cutLine(new VNoBrushScalePathItem(this))
-    , m_seamLine(new VNoBrushScalePathItem(this))
+    , m_cutLine(new NonScalingFillPathItem(this))
+    , m_seamLine(new NonScalingFillPathItem(this))
     , m_dataLabel(new VTextGraphicsItem(this))
     , m_patternInfo(new VTextGraphicsItem(this))
     , m_grainLine(new VGrainlineItem(this))

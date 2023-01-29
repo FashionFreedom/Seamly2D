@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   nonscalingfill_pathitem.h
+ **  @author Douglas S Caskey
+ **  @date   Jan 29, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vnobrushscalepathitem.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,28 +30,28 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
+ **  Copyright (C) 2016 Valentina project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
-#ifndef VNOBRUSHSCALEPATHITEM_H
-#define VNOBRUSHSCALEPATHITEM_H
+#ifndef  NONSCALINGFILL_PATHITEM_H
+#define  NONSCALINGFILL_PATHITEM_H
 
 #include <qcompilerdetection.h>
 #include <QGraphicsPathItem>
@@ -58,20 +59,20 @@
 
 #include "../vmisc/def.h"
 
-class VNoBrushScalePathItem : public QGraphicsPathItem
+class NonScalingFillPathItem : public QGraphicsPathItem
 {
 public:
-    explicit VNoBrushScalePathItem(QGraphicsItem *parent = nullptr);
+    explicit     NonScalingFillPathItem(QGraphicsItem *parent = nullptr);
 
 protected:
     virtual void paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
                        QWidget * widget = nullptr) Q_DECL_OVERRIDE;
 
     virtual int  type() const Q_DECL_OVERRIDE {return Type;}
-    enum { Type = UserType + static_cast<int>(Vis::NoBrush)};
+    enum         {Type = UserType + static_cast<int>(Vis::NoBrush)};
 
 private:
-    Q_DISABLE_COPY(VNoBrushScalePathItem)
+    Q_DISABLE_COPY(NonScalingFillPathItem)
 };
 
-#endif // VNOBRUSHSCALEPATHITEM_H
+#endif // NONSCALINGFILL_PATHITEM_H
