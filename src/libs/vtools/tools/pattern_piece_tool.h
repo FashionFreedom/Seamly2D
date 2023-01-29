@@ -176,10 +176,11 @@ private:
 
     QPainterPath           m_mainPath;    // Must be first to prevent crash
     QRectF                 m_pieceRect;
-    QPainterPath           m_cutPath;     // Must be first to prevent crash
+    QPainterPath           m_cutPath;
     VMainGraphicsScene    *m_pieceScene;  /** @brief pieceScene pointer to the scene. */
     QString                m_blockName;
     VNoBrushScalePathItem *m_cutLine;
+    VNoBrushScalePathItem *m_seamLine;
     VTextGraphicsItem     *m_dataLabel;
     VTextGraphicsItem     *m_patternInfo;
     VGrainlineItem        *m_grainLine;
