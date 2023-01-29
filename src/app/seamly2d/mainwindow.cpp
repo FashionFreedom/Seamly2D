@@ -2464,12 +2464,11 @@ void MainWindow::zoomToPoint()
         if (it.value()->name() == item)
         {
             VPointF* point = (VPointF*)it.value().data();
-            qDebug() << "zoom to point " << point->x() << " " << point->y();
+            //qDebug() << "zoom to point " << point->x() << " " << point->y();
 
             double sceneWidth = ui->view->width();
             QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
             ui->view->zoomToRect(rect);
-            //this->ui->view->centerOn(point->x(), point->y());
             return;
         }
     }
