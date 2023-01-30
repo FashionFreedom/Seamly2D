@@ -82,15 +82,16 @@
 #include "../undocommands/toggle_piecelock.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsview.h"
-#include "../vwidgets/vnobrushscalepathitem.h"
+#include "../vwidgets/nonscalingfill_pathitem.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QGraphicsView>
+#include <QInputDialog>
 #include <QKeyEvent>
 #include <QMenu>
 #include <QMessageBox>
-#include <QInputDialog>
+#include <QPainterPathStroker>
 
 
 // Current version of seam allowance tag need for backward compatibility
@@ -613,7 +614,7 @@ void PatternPieceTool::retranslateUi()
 void PatternPieceTool::Highlight(quint32 id)
 {
     setSelected(m_id == id);
-    VPiece piece = VAbstractTool::data.GetPiece(m_id);
+    RefreshGeometry();
 }
 
 void PatternPieceTool::updatePieceDetails()
@@ -889,10 +890,10 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
     lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
 
     m_cutLine->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
-                            lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+                           lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
     m_cutLine->setZValue(-10);
 
-    //set seamline, grainline, & labels pen
+    //set seamline pen
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
 
     if (qApp->Settings()->showSeamAllowances())
@@ -910,21 +911,22 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
             lineWeight = ToPixel(qApp->Settings()->getDefaultCutLineweight(), Unit::Mm);
         }
 
-
-        this->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
-                       lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
+        m_seamLine->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
+                                lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 
         QBrush brush = QBrush(QColor(piece.getColor()));
         brush.setStyle(static_cast<Qt::BrushStyle>(fills().indexOf(QRegExp(piece.getFill()))));
         brush.setTransform(brush.transform().scale(150.0, 150.0));
         brush.setTransform(painter->combinedTransform().inverted());
+        m_seamLine->setBrush(brush);
         this->setBrush(brush);
-
-        //set notches pen
-        color = QColor(qApp->Settings()->getDefaultNotchColor());
-        m_notches->setPen(QPen(color, scaleWidth(lineWeight,
-        sceneScale(scene())), Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     }
+
+    //set notches pen
+    color = QColor(qApp->Settings()->getDefaultNotchColor());
+    m_notches->setPen(QPen(color, scaleWidth(lineWeight, sceneScale(scene())),
+                           Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+
 
     if ((m_dataLabel->IsIdle() == false
             || m_patternInfo->IsIdle() == false
@@ -951,13 +953,13 @@ QRectF PatternPieceTool::boundingRect() const
 //---------------------------------------------------------------------------------------------------------------------
 QPainterPath PatternPieceTool::shape() const
 {
-    if (m_mainPath == QPainterPath())
+    if (m_mainPath == QPainterPath() && m_cutPath == QPainterPath())
     {
         return QGraphicsPathItem::shape();
     }
     else
     {
-        return ItemShapeFromPath(m_mainPath, pen());
+        return ItemShapeFromPath(m_mainPath + m_cutPath, pen());
     }
 }
 
@@ -1438,7 +1440,8 @@ PatternPieceTool::PatternPieceTool(VAbstractPattern *doc, VContainer *data, cons
     , m_cutPath()
     , m_pieceScene(scene)
     , m_blockName(blockName)
-    , m_cutLine(new VNoBrushScalePathItem(this))
+    , m_cutLine(new NonScalingFillPathItem(this))
+    , m_seamLine(new NonScalingFillPathItem(this))
     , m_dataLabel(new VTextGraphicsItem(this))
     , m_patternInfo(new VTextGraphicsItem(this))
     , m_grainLine(new VGrainlineItem(this))
@@ -1508,32 +1511,23 @@ void PatternPieceTool::RefreshGeometry()
 
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
 
-    QString pieceColor = piece.getColor();
-
-    QString pieceFill = piece.getFill();
-    const QStringList fillNames = fills();
-    int index = fillNames.indexOf(QRegExp(pieceFill));
-
-    QBrush newBrush = QBrush(QColor(pieceColor), static_cast<Qt::BrushStyle>(index));
-    this->setBrush(newBrush);   //set pattern piece color & brush style
-
     QPainterPath path = piece.MainPathPath(this->getData());
-    path.setFillRule(Qt::OddEvenFill);
 
     if (!piece.isHideSeamLine() || !piece.IsSeamAllowance() || piece.IsSeamAllowanceBuiltIn())
     {
         m_mainPath = QPainterPath();
-        m_pieceRect = QRectF();
+        m_seamLine->setPath(m_mainPath);
         m_cutLine->setBrush(QBrush(QColor(qApp->Settings()->getDefaultCutColor()), Qt::Dense7Pattern));
     }
     else
     {
-        m_cutLine->setBrush(QBrush(Qt::NoBrush)); // Disable if the main path was hidden
-        // need for returning a bounding rect when main path is not visible
-        m_mainPath = path;
-        m_pieceRect = m_mainPath.controlPointRect();
+        m_mainPath = path; // need for returning a bounding rect when main path is not visible
         path = QPainterPath();
+        m_seamLine->setPath(QPainterPath());
+        m_cutLine->setBrush(QBrush(Qt::NoBrush)); // Disable if the main path was hidden
     }
+
+    this->setPath(path);
 
     QVector<QPointF> seamAllowancePoints;
 
@@ -1546,18 +1540,25 @@ void PatternPieceTool::RefreshGeometry()
 
     if (piece.IsSeamAllowance() && !piece.IsSeamAllowanceBuiltIn() && qApp->Settings()->showSeamAllowances())
     {
-        //m_cutPath = piece.SeamAllowancePath(seamAllowancePoints);
-        m_cutPath = piece.SeamAllowancePath(seamAllowancePoints).subtracted(path);
-        m_cutPath.setFillRule(Qt::OddEvenFill);
+        path.addPath(piece.SeamAllowancePath(seamAllowancePoints));
+        path.setFillRule(Qt::OddEvenFill);
+        m_cutPath = path;
         m_cutLine->setPath(m_cutPath);
-        m_pieceRect = m_cutLine->boundingRect();
+        if (piece.isHideSeamLine())
+        {
+            m_seamLine->setPath(QPainterPath());
+        }
+        else
+        {
+            m_seamLine->setPath(m_mainPath);
+        }
     }
     else
     {
         m_cutLine->setPath(QPainterPath());
     }
 
-    this->setPath(path);
+    m_pieceRect = path.boundingRect();
     this->setPos(piece.GetMx(), piece.GetMy());
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
 }

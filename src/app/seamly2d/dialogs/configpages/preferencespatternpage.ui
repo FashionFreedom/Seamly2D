@@ -70,7 +70,7 @@
     <enum>QTabWidget::West</enum>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_4">
     <attribute name="title">
@@ -116,7 +116,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Show seam allowances</string>
+             <string>Show Cut Line</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -140,7 +140,13 @@
              <string>By default hide the main path if the seam allowance was enabled</string>
             </property>
             <property name="text">
-             <string>Hide seam line</string>
+             <string>Hide Seam Line</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
             </property>
            </widget>
           </item>

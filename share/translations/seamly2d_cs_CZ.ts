@@ -7922,10 +7922,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show which groups in the list are visible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Piece mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7935,10 +7931,6 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show which pattern pieces will included in layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8561,10 +8553,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The seam allowance is part of main path</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8574,10 +8562,6 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Hide the main path if the seam allowance is enabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide seam line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8976,6 +8960,14 @@ Chcete uložit své změny?</translation>
         <source>Show notch on Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -9180,6 +9172,10 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle inclusion of pattern piece in layout</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9979,14 +9975,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show seam allowances</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10140,6 +10128,14 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Internals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15038,6 +15034,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Delete</source>
         <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Toggle visibility of group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

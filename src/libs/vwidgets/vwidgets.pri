@@ -10,6 +10,7 @@ SOURCES += \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
     $$PWD/mouse_coordinates.cpp \
+    $$PWD/nonscalingfill_pathitem.cpp \
     $$PWD/piece_tablewidgetitem.cpp \
     $$PWD/scene_rect.cpp \
     $$PWD/vmaingraphicsscene.cpp \
@@ -19,7 +20,6 @@ SOURCES += \
     $$PWD/vgraphicssimpletextitem.cpp \
     $$PWD/vsimplepoint.cpp \
     $$PWD/vabstractsimple.cpp \
-    $$PWD/vnobrushscalepathitem.cpp \
     $$PWD/vsimplecurve.cpp \
     $$PWD/vabstractmainwindow.cpp \
     $$PWD/vtextgraphicsitem.cpp \
@@ -42,6 +42,7 @@ HEADERS += \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
     $$PWD/mouse_coordinates.h \
+    $$PWD/nonscalingfill_pathitem.h \
     $$PWD/piece_tablewidgetitem.h \
     $$PWD/scene_rect.h \
     $$PWD/stable.h \
@@ -52,7 +53,6 @@ HEADERS += \
     $$PWD/vgraphicssimpletextitem.h \
     $$PWD/vsimplepoint.h \
     $$PWD/vabstractsimple.h \
-    $$PWD/vnobrushscalepathitem.h \
     $$PWD/vsimplecurve.h \
     $$PWD/vabstractmainwindow.h \
     $$PWD/vtextgraphicsitem.h \

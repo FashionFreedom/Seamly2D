@@ -305,7 +305,7 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>6</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -1259,24 +1259,9 @@ QListWidget::item:selected {
        <widget class="QWidget" name="seamAllowance_Page">
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QCheckBox" name="seams_CheckBox">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-            </font>
-           </property>
-           <property name="text">
-            <string>Show seam allowance</string>
-           </property>
-           <property name="checked">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QCheckBox" name="builtIn_CheckBox">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="font">
             <font>
@@ -1292,6 +1277,21 @@ QListWidget::item:selected {
           </widget>
          </item>
          <item>
+          <widget class="QCheckBox" name="seams_CheckBox">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Show Cut Line</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QCheckBox" name="hideSeamLine_CheckBox">
            <property name="font">
             <font>
@@ -1302,7 +1302,7 @@ QListWidget::item:selected {
             <string>Hide the main path if the seam allowance is enabled</string>
            </property>
            <property name="text">
-            <string>Hide seam line</string>
+            <string>Hide Seam Line</string>
            </property>
           </widget>
          </item>
@@ -5502,8 +5502,8 @@ QListWidget::item:selected {
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../vmisc/share/resources/icon.qrc"/>
+  <include location="../../../../vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

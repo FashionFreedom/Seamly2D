@@ -10086,10 +10086,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show which groups in the list are visible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Piece mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10099,10 +10095,6 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show which pattern pieces will included in layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10920,10 +10912,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished">Internal paths</translation>
     </message>
     <message>
-        <source>Show seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The seam allowance is part of main path</source>
         <translation type="unfinished">The seam allowance is part of main path</translation>
     </message>
@@ -10934,10 +10922,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Hide the main path if the seam allowance is enabled</source>
         <translation type="unfinished">Hide the main path if the seam allowance is enabled</translation>
-    </message>
-    <message>
-        <source>Hide seam line</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Automatic</source>
@@ -11335,6 +11319,14 @@ Do you want to save your changes?</translation>
         <source>Show notch on Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Show Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -11539,6 +11531,10 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Invert locked pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle inclusion of pattern piece in layout</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12386,14 +12382,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show seam allowances</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Notches</source>
         <translation type="unfinished">Notches</translation>
     </message>
@@ -12547,6 +12535,14 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Internals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18447,6 +18443,10 @@ Do you want to save your changes?</translation>
     <message>
         <source>Delete</source>
         <translation>Delete</translation>
+    </message>
+    <message>
+        <source>Toggle visibility of group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
