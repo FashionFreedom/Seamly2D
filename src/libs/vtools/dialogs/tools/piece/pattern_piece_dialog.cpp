@@ -76,7 +76,7 @@
 #include <QMenu>
 #include <QPixmap>
 #include <QScreen>
-#include <QSound>
+// #include <QSound>
 #include <QtDebug>
 #include <QTimer>
 #include <QtNumeric>
@@ -139,7 +139,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , m_saWidth(0)
     , m_patternLabelLines()
     , m_pieceLabelLines()
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , //m_beep(new QSound(qApp->Settings()->getSelectionSound()))
     , m_undoStack()
 {
     ui->setupUi(this);
@@ -437,23 +437,23 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
             {
                 case SceneObject::Arc:
                     newMainPathItem(VPieceNode(id, Tool::NodeArc, reverse));
-                    m_beep->play();
+                    // m_beep->play();
                     break;
                 case SceneObject::ElArc:
                     newMainPathItem(VPieceNode(id, Tool::NodeElArc, reverse));
-                    m_beep->play();
+                    // m_beep->play();
                     break;
                 case SceneObject::Point:
                     newMainPathItem(VPieceNode(id, Tool::NodePoint));
-                    m_beep->play();
+                    // m_beep->play();
                     break;
                 case SceneObject::Spline:
                     newMainPathItem(VPieceNode(id, Tool::NodeSpline, reverse));
-                    m_beep->play();
+                    // m_beep->play();
                     break;
                 case SceneObject::SplinePath:
                     newMainPathItem(VPieceNode(id, Tool::NodeSplinePath, reverse));
-                    m_beep->play();
+                    // m_beep->play();
                     break;
                 case (SceneObject::Line):
                 case (SceneObject::Piece):

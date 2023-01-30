@@ -57,7 +57,7 @@
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 
-#include <QSound>
+// #include <QSound>
 
 enum TabOrder {Properties=0, Paths=1, SeamAllowance= 2, Labels=3, AnchorPoints=4, Grainline=5, Notches=6, Count=7};
 
@@ -211,8 +211,7 @@ private:
     qreal                       m_saWidth;
     QVector<VLabelTemplateLine> m_patternLabelLines;
     QVector<VLabelTemplateLine> m_pieceLabelLines;
-    QSound                     *m_beep;
-    QVector<QPointer<VUndoCommand>> m_undoStack;
+    // QSound                     *m_beep;
 
     VPiece                      CreatePiece() const;
 

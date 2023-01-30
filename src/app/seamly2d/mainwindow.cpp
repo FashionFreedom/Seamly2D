@@ -95,6 +95,13 @@
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vwidgetpopup.h"
 
+#include <QInputDialog>
+#include <QtDebug>
+#include <QMessageBox>
+#include <QShowEvent>
+#include <QScrollBar>
+#include <QFileDialog>
+// #include <QSourceLocation>
 #include <chrono>
 #include <thread>
 #include <QAction>
