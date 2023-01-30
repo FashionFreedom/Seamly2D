@@ -128,9 +128,37 @@ jobs:
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: make Seamly2D for macos
+      - name: setup signing and notarization
+        env:
+          KEYCHAIN_FILE: ~/seamly2d.keychain
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        if: ${{ env.APPLE_SIGN_IDENTITY }}
         run: |
-          qmake Seamly2D.pro -config release CONFIG+=noTests
+          security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          security set-keychain-settings $KEYCHAIN_FILE
+          security list-keychains -d user -s $KEYCHAIN_FILE
+          echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
+          security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
+          security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
+
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
+          echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
+          echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
+          echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
+
+      - name: make Seamly2D for macos
+        env:
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        run: |
+          # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+          if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
+            qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
+          else
+            qmake Seamly2D.pro -config release CONFIG+=noTests
+          fi
           make -j$(sysctl -n hw.logicalcpu)
 
       - uses: actions/upload-artifact@v3

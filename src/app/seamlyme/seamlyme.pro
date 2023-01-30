@@ -38,9 +38,12 @@ RESOURCES += \
     share/resources/seamlymeicon.qrc \
     share/resources/diagrams.qrc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
 include(../tables.pri)
-copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
+
+win32 {
+    copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
+}
 
 include(../translations.pri)
 
@@ -68,6 +71,7 @@ unix{
         # Path to resources in app bundle
         FRAMEWORKS_DIR = "Contents/Frameworks"
         MACOS_DIR = "Contents/MacOS"
+        RESOURCES_DIR = "Contents/Resources"
         # On macx we will use app bundle. Bundle doesn't need bin directory inside.
         # See issue #166: Creating OSX Homebrew (Mac OS X package manager) formula.
         target.path = $$MACOS_DIR
@@ -75,19 +79,19 @@ unix{
         #languages added inside translations.pri
 
         # logo on macx.
-        ICON = $$PWD/../../../dist/SeamlyMe.icns
+        ICON = $${PWD}/../../../dist/SeamlyMe.icns
 
-        QMAKE_INFO_PLIST = $$PWD/../../../dist/macx/seamlyme/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamlyme/Info.plist
 
         # Copy to bundle multisize measurements files
-        multisize.path = $$RESOURCES_DIR/tables/multisize/
+        multisize.path = $${RESOURCES_DIR}/tables/multisize
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
 
         # Copy to bundle templates files
-        templates.path = $$RESOURCES_DIR/tables/templates/
+        templates.path = $${RESOURCES_DIR}/tables/templates
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
-        format.path = $$RESOURCES_DIR/
+        format.path = $${RESOURCES_DIR}
         format.files += $$PWD/../../../dist/macx/i-measurements.icns
         format.files += $$PWD/../../../dist/macx/s-measurements.icns
 
@@ -227,8 +231,14 @@ win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DE
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
 macx{
-   # run macdeployqt to include all qt libraries in packet
-   QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
+
+    QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+
+    macSign {
+        QMAKE_POST_LINK += && codesign --deep --timestamp --options runtime -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += && codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    }
 }
 
 win32{
