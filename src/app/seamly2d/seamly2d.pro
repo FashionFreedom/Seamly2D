@@ -12,7 +12,7 @@ include(../../../common.pri)
 
 # Here we don't see "network" library, but, i think, "printsupport" depend on this library, so we still need this
 # library in installer.
-QT       += core gui widgets xml svg printsupport xmlpatterns multimedia
+QT       += core gui widgets xml svg printsupport network
 
 # We want create executable file
 TEMPLATE = app

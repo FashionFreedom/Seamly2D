@@ -57,7 +57,7 @@
 #include <QFont>
 #include <QLocale>
 #include <QMessageLogger>
-#include <QSound>
+// #include <QSound>
 #include <QStaticStringData>
 #include <QStringData>
 #include <QStringDataPtr>

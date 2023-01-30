@@ -137,7 +137,7 @@ public:
 
     Unit           MUnit() const;
 
-    static void    ValidateXML(const QString &schema, const QString &fileName);
+    // static void    ValidateXML(const QString &schema, const QString &fileName);
     virtual void   setXMLContent(const QString &fileName);
     static QString UnitsHelpString();
 

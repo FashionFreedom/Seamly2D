@@ -56,7 +56,7 @@
 #include <qcompilerdetection.h>
 #include <QMetaObject>
 #include <QObject>
-#include <QSound>
+// #include <QSound>
 #include <QString>
 #include <QtGlobal>
 
@@ -102,7 +102,7 @@ private:
     qint32   numberP;      /** @brief numberP number of points, what we already have */
     quint32  p1;           /** @brief p1 id first point of piece */
     quint32  p2;           /** @brief p2 id second point of piece */
-    QSound  *m_beep;
+    // QSound  *m_beep;
 
     bool     CheckObject(const quint32 &id, const quint32 &pieceId) const;
     bool     checkPiece(const quint32 &pieceId) const;

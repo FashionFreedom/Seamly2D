@@ -376,7 +376,7 @@ void VAbstractConverter::ValidateInputFile(const QString &currentSchema) const
         { // Version bigger than maximum supported version. We still have a chance to open the file.
             try
             { // Try to open like the current version.
-                ValidateXML(currentSchema, m_convertedFileName);
+                // ValidateXML(currentSchema, m_convertedFileName);
             }
             catch(const VException &exp)
             { // Nope, we can't.
@@ -392,7 +392,7 @@ void VAbstractConverter::ValidateInputFile(const QString &currentSchema) const
         return; // All is fine and we can try to convert to current max version.
     }
 
-    ValidateXML(schema, m_convertedFileName);
+    // ValidateXML(schema, m_convertedFileName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

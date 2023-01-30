@@ -95,7 +95,7 @@
 #include <QShowEvent>
 #include <QScrollBar>
 #include <QFileDialog>
-#include <QSourceLocation>
+// #include <QSourceLocation>
 #include <QUndoStack>
 #include <QAction>
 #include <QProcess>

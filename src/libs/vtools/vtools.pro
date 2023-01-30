@@ -8,7 +8,7 @@
 message("Entering vtools.pro")
 include(../../../common.pri)
 
-QT       += widgets xml printsupport multimedia
+QT       += widgets xml printsupport network
 
 # Name of the library
 TARGET = vtools
