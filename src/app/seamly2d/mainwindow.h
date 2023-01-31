@@ -234,7 +234,9 @@ private slots:
     void zoomToPrevious();
     void zoomToArea(bool checked);
     void zoomPan(bool checked);
-    void zoomToPoint();
+
+    void zoomToPoint(const QString& pointName);
+    void showZoomToPointDialog();
 
     void LoadIndividual();
     void LoadMultisize();
@@ -320,6 +322,8 @@ private:
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
+    /** @brief zoomToPointComboBox pointer to combobox that allows to focus on a point in draft mode. */
+    QComboBox                        *zoomToPointComboBox;
 
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
@@ -430,6 +434,11 @@ private:
     void               upDateScenes();
     void               updateViewToolbar();
     void               resetPanShortcuts();
+
+
+    QStringList       draftPointNamesList();
+
+    void               updateZoomToPointComboBox(QStringList namesList);
 
     bool               IgnoreLocking(int error, const QString &path);
 

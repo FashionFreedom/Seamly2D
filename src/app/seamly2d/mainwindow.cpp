@@ -765,6 +765,10 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
             dialogHistory->updateHistory();
         }
     }
+
+    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
+    updateZoomToPointComboBox(draftPointNamesList());
+    zoomToPointComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2283,9 +2287,15 @@ void MainWindow::initToolsToolBar()
     connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
     QList<QKeySequence> zoomToPointShortcuts;
-    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_P));
+    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::AltModifier + Qt::Key_P));
     ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
-    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::zoomToPoint);
+    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
+
+    zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
+    zoomToPointComboBox->setEnabled(false);
+    zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    ui->zoom_ToolBar->addWidget(zoomToPointComboBox);
+    connect(zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
 
     if (zoomScaleSpinBox != nullptr)
     {
@@ -2441,30 +2451,34 @@ void MainWindow::zoomPan(bool checked)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::zoomToPoint()
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::showZoomToPointDialog()
 {
-    if (qApp->getCurrentScene() != draftScene) return;
-
-    QStringList items;
-    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator it = pattern->DataGObjects()->begin(); it != pattern->DataGObjects()->end(); ++it)
-    {
-        if (it.value()->getType() == GOType::Point)
-            items << it.value()->name();
-    }
-
-    items.sort();
-
+    QStringList pointNames = draftPointNamesList();
 
     bool ok;
-    QString item = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), items, 0, false, &ok);
-    if (!ok || item.isEmpty()) return;
+    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, false, &ok,
+                                              Qt::WindowSystemMenuHint | Qt::WindowTitleHint);
+    if (!ok || pointName.isEmpty()) return;
 
-    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator it = pattern->DataGObjects()->begin(); it != pattern->DataGObjects()->end(); ++it)
+    zoomToPoint(pointName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::zoomToPoint(const QString& pointName)
+{
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
     {
-        if (it.value()->name() == item)
+        if (item.value()->name() == pointName)
         {
-            VPointF* point = (VPointF*)it.value().data();
-            //qDebug() << "zoom to point " << point->x() << " " << point->y();
+            VPointF* point = (VPointF*)item.value().data();
 
             double sceneWidth = ui->view->width();
             QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
@@ -4145,7 +4159,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToPrevious_Action->setEnabled(enable);
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
-    ui->zoomToPoint_Action->setEnabled(enable);
+    ui->zoomToPoint_Action->setEnabled(enable && draftStage);
+    zoomToPointComboBox->setEnabled(enable && draftStage);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);
@@ -7000,6 +7015,10 @@ void MainWindow::updateViewToolbar()
     ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
     ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
+
+    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
+    updateZoomToPointComboBox(draftPointNamesList());
+    zoomToPointComboBox->blockSignals(false);
 }
 
 void MainWindow::resetPanShortcuts()
@@ -7079,6 +7098,34 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
         return false;
     }
     return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief draftPointNamesList gets the list of points in draft mode.
+ */
+QStringList MainWindow::draftPointNamesList()
+{
+    QStringList pointNames;
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
+    {
+        if (item.value()->getType() == GOType::Point && !pointNames.contains(item.value()->name()))
+            pointNames << item.value()->name();
+    }
+    pointNames.sort();
+    return pointNames;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief updateZoomToPointComboBox updates the list of points included in the toolbar combobox.
+ */
+void MainWindow::updateZoomToPointComboBox(QStringList namesList)
+{
+    zoomToPointComboBox->clear();
+    zoomToPointComboBox->addItems(namesList);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
