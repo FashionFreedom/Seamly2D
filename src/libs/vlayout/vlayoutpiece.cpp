@@ -431,7 +431,7 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     layoutPiece.SetName(piece.GetName());
 
     // Very important to set main path first!
-    if (layoutPiece.createMainPath().isEmpty())
+    if (layoutPiece.createMainPath().isEmpty() && layoutPiece.createAllowancePath().isEmpty())
     {
         throw VException (tr("Piece %1 doesn't have shape.").arg(piece.GetName()));
     }
