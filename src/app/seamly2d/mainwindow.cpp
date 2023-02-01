@@ -766,9 +766,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
         }
     }
 
-    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
     updateZoomToPointComboBox(draftPointNamesList());
-    zoomToPointComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -7016,9 +7014,7 @@ void MainWindow::updateViewToolbar()
     ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
 
-    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
     updateZoomToPointComboBox(draftPointNamesList());
-    zoomToPointComboBox->blockSignals(false);
 }
 
 void MainWindow::resetPanShortcuts()
@@ -7124,8 +7120,10 @@ QStringList MainWindow::draftPointNamesList()
  */
 void MainWindow::updateZoomToPointComboBox(QStringList namesList)
 {
+    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
     zoomToPointComboBox->clear();
     zoomToPointComboBox->addItems(namesList);
+    zoomToPointComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
