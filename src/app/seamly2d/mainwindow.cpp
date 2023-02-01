@@ -3360,6 +3360,8 @@ void MainWindow::showDraftMode(bool checked)
 
         updateViewToolbar();
 
+        updateZoomToPointComboBox(draftPointNamesList());
+
         //ui->toggleAnchorPoints_Action->setChecked(qApp->Settings()->getShowAnchorPoints());
         //draftScene->setOriginsVisible(qApp->Settings()->getShowAnchorPoints());
 
@@ -7013,8 +7015,6 @@ void MainWindow::updateViewToolbar()
     ui->toggleGrainLines_Action->setChecked(qApp->Settings()->showGrainlines());
     ui->toggleSeamAllowances_Action->setChecked(qApp->Settings()->showSeamAllowances());
     ui->toggleLabels_Action->setChecked(qApp->Settings()->showLabels());
-
-    updateZoomToPointComboBox(draftPointNamesList());
 }
 
 void MainWindow::resetPanShortcuts()
