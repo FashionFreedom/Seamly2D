@@ -60,7 +60,7 @@
 
 class QGraphicsItem;
 class QPrinter;
-template <class T> class QVector;
+// template <class T> class QVector;
 
 struct PosterData
 {

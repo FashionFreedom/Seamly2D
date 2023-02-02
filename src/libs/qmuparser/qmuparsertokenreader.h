@@ -193,7 +193,7 @@ inline void QmuParserTokenReader::IgnoreUndefVar ( bool bIgnore )
 //---------------------------------------------------------------------------------------------------------------------
 inline void QmuParserTokenReader::SetArgSep ( char_type cArgSep )
 {
-    m_cArgSep = cArgSep;
+    m_cArgSep = QChar(cArgSep);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

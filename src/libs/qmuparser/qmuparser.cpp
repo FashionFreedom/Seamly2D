@@ -22,9 +22,7 @@
 #include "qmuparser.h"
 
 #include <QCoreApplication>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtGlobal>
 #include <sstream>
 #include <string>
@@ -333,17 +331,17 @@ void QmuParser::InitFun()
     DefineFun("radTodeg",   RadianToDegree);
 
     // trigonometric functions
-    DefineFun("sin",   qSin);
-    DefineFun("cos",   qCos);
-    DefineFun("tan",   qTan);
+    DefineFun("sin",   qSin<qreal>);
+    DefineFun("cos",   qCos<qreal>);
+    DefineFun("tan",   qTan<qreal>);
     DefineFun("sinD",   SinD);
     DefineFun("cosD",   CosD);
     DefineFun("tanD",   TanD);
     // inverse functions
-    DefineFun("asin",  qAsin);
-    DefineFun("acos",  qAcos);
-    DefineFun("atan",  qAtan);
-    DefineFun("atan2", qAtan2);
+    DefineFun("asin",  qAsin<qreal>);
+    DefineFun("acos",  qAcos<qreal>);
+    DefineFun("atan",  qAtan<qreal>);
+    DefineFun("atan2", qAtan2<qreal, qreal>);
     DefineFun("asinD",  ASinD);
     DefineFun("acosD",  ACosD);
     DefineFun("atanD",  ATanD);
@@ -359,10 +357,10 @@ void QmuParser::InitFun()
     DefineFun("log2",  Log2);
     DefineFun("log10", Log10);
     DefineFun("log",   Log10);
-    DefineFun("ln",    qLn);
+    DefineFun("ln",    qLn<qreal>);
     // misc
-    DefineFun("exp",   qExp);
-    DefineFun("sqrt",  qSqrt);
+    DefineFun("exp",   qExp<qreal>);
+    DefineFun("sqrt",  qSqrt<qreal>);
     DefineFun("sign",  Sign);
     DefineFun("rint",  Rint);
     DefineFun("abs",   Abs);

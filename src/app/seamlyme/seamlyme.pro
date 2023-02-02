@@ -8,7 +8,7 @@ message("Entering seamlyme.pro")
 # File with common stuff for whole project
 include(../../../common.pri)
 
-QT       += core gui widgets network xml printsupport svg
+QT       += core gui widgets network xml printsupport svg core5compat
 
 # Name of binary file
 TARGET = seamlyme

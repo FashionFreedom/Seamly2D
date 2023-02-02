@@ -59,9 +59,7 @@
 #include <QLineF>
 #include <QMessageLogger>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QUndoStack>
 #include <QtDebug>
 #include <new>

@@ -78,7 +78,7 @@
 #include <QComboBox>
 #include <QProcess>
 #include <QtNumeric>
-#include <QTextCodec>
+#include <QtCore5Compat/QTextCodec>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>

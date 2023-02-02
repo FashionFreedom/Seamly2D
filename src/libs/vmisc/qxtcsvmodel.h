@@ -45,6 +45,7 @@
 #include <QVariant>
 #include <Qt>
 #include <QtGlobal>
+#include <QtCore5Compat/QTextCodec>
 
 #include "def.h"
 

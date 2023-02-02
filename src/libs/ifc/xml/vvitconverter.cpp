@@ -59,9 +59,7 @@
 #include <QList>
 #include <QMap>
 #include <QMultiMap>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "../exception/vexception.h"
 #include "../vmisc/def.h"

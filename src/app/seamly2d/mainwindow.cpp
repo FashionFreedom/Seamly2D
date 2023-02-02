@@ -102,14 +102,14 @@
 #include <QSettings>
 #include <QTimer>
 #include <QtGlobal>
-#include <QDesktopWidget>
+// #include <QDesktopWidget>
 #include <QDesktopServices>
 #include <chrono>
 #include <thread>
 #include <QFileSystemWatcher>
 #include <QComboBox>
 #include <QFontComboBox>
-#include <QTextCodec>
+#include <QtCore5Compat/QTextCodec>
 #include <QDoubleSpinBox>
 
 #if defined(Q_OS_MAC)
@@ -2243,19 +2243,19 @@ void MainWindow::initToolsToolBar()
 
     QList<QKeySequence> zoomInShortcuts;
     zoomInShortcuts.append(QKeySequence(QKeySequence::ZoomIn));
-    zoomInShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Plus + Qt::KeypadModifier));
+    zoomInShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_Plus, Qt::KeypadModifier));
     ui->zoomIn_Action->setShortcuts(zoomInShortcuts);
     connect(ui->zoomIn_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomIn);
 
     QList<QKeySequence> zoomOutShortcuts;
     zoomOutShortcuts.append(QKeySequence(QKeySequence::ZoomOut));
-    zoomOutShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Minus + Qt::KeypadModifier));
+    zoomOutShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_Minus, Qt::KeypadModifier));
     ui->zoomOut_Action->setShortcuts(zoomOutShortcuts);
     connect(ui->zoomOut_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoomOut);
 
     QList<QKeySequence> zoom100PercentShortcuts;
     zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0));
-    zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_0 + Qt::KeypadModifier));
+    zoom100PercentShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::Key_0, Qt::KeypadModifier));
     ui->zoom100Percent_Action->setShortcuts(zoom100PercentShortcuts);
     connect(ui->zoom100Percent_Action, &QAction::triggered, ui->view, &VMainGraphicsView::zoom100Percent);
 
@@ -4785,8 +4785,8 @@ void MainWindow::CreateMenus()
 
     QList<QKeySequence> redoShortcuts;
     redoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::Key_Y));
-    redoShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::ShiftModifier + Qt::Key_Z));
-    redoShortcuts.append(QKeySequence(Qt::AltModifier + Qt::ShiftModifier + Qt::Key_Backspace));
+    redoShortcuts.append(QKeySequence(Qt::ControlModifier, Qt::ShiftModifier, Qt::Key_Z));
+    redoShortcuts.append(QKeySequence(Qt::AltModifier, Qt::ShiftModifier, Qt::Key_Backspace));
 
     redoAction = qApp->getUndoStack()->createRedoAction(this, tr("&Redo"));
     redoAction->setShortcuts(redoShortcuts);

@@ -68,7 +68,7 @@ class QGraphicsRectItem;
 class QRectF;
 class QGraphicsItem;
 template <typename T> class QList;
-template <typename T> class QVector;
+// template <typename T> class QVector;
 
 class VLayoutPaper
 {

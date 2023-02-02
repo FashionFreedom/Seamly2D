@@ -55,9 +55,7 @@
 #include <QCoreApplication>
 #include <QLocale>
 #include <QSize>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QWidget>
 
 #include "../vproperty_p.h"

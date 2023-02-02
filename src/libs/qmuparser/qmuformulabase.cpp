@@ -25,9 +25,7 @@
 #include <QList>
 #include <QLocale>
 #include <QMap>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QStringList>
 
 namespace qmu
@@ -112,8 +110,8 @@ void QmuFormulaBase::SetSepForTr(bool osSeparator, bool fromUser)
         SetArgSep(';');
         if (osSeparator)
         {
-            setDecimalPoint(loc.decimalPoint());
-            setThousandsSeparator(loc.groupSeparator());
+            setDecimalPoint(loc.decimalPoint()[0]);
+            setThousandsSeparator(loc.groupSeparator()[0]);
             return;
         }
     }

@@ -57,9 +57,7 @@
 #include <QPainter>
 #include <QPen>
 #include <QPixmap>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "../vmisc/diagnostic.h"
 

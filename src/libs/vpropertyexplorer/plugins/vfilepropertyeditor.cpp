@@ -32,7 +32,7 @@
 #include <QLineEdit>
 #include <QList>
 #include <QMimeData>
-#include <QRegExp>
+#include <QtCore5Compat/QRegExp>
 #include <QSizePolicy>
 #include <QToolButton>
 #include <QUrl>
@@ -61,7 +61,7 @@ VPE::VFileEditWidget::VFileEditWidget(QWidget *parent, bool is_directory)
     // The layout (a horizontal layout)
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->setSpacing(0);
-    layout->setMargin(0);
+    // layout->setMargin(0); Obsolete?
     layout->addWidget(FileLineEdit);
     layout->addWidget(ToolButton);
 

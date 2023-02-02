@@ -53,9 +53,7 @@
 
 #include <QLine>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <new>
 
 #include "../../../../../dialogs/tools/dialoglineintersectaxis.h"

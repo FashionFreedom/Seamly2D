@@ -58,9 +58,7 @@
 #include <QList>
 #include <QMessageLogger>
 #include <QSet>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtDebug>
 
 #include "../exception/vexceptionemptyparameter.h"
