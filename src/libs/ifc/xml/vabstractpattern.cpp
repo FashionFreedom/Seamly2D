@@ -81,9 +81,7 @@
 #include <QMessageBox>
 #include <QMessageLogger>
 #include <QSet>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtDebug>
 
 class QDomElement;

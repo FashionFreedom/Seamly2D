@@ -62,9 +62,7 @@
 #include <QMap>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QStringList>
 
 #include "vdomdocument.h"
@@ -371,7 +369,7 @@ void VAbstractConverter::Save()
     m_tmpFile.resize(0);//clear previous content
     const int indent = 4;
     QTextStream out(&m_tmpFile);
-    out.setCodec("UTF-8");
+    out.setEncoding(QStringConverter::Encoding::Utf8);
     save(out, indent);
 
     if (!m_tmpFile.flush())

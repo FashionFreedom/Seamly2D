@@ -39,6 +39,7 @@
 #include <QIODevice>
 #include <QList>
 #include <QTextStream>
+#include <QStringConverter>
 
 #include "../vmisc/diagnostic.h"
 
@@ -214,9 +215,10 @@ void QxtCsvModel::setSource(QIODevice *file, bool withHeader, QChar separator, Q
     QChar ch, buffer(0);
     bool readCR = false;
     QTextStream stream(file);
-    if (codec)
+    std::optional<QStringConverter::Encoding> text_encoding = QStringConverter::encodingForName(codec->name());
+    if (text_encoding.has_value())
     {
-        stream.setCodec(codec);
+        stream.setEncoding(text_encoding.value());
     }
     else
     {
@@ -603,9 +605,10 @@ void QxtCsvModel::toCSV(QIODevice* dest, bool withHeader, QChar separator, QText
         dest->open(QIODevice::WriteOnly | QIODevice::Truncate);
     }
     QTextStream stream(dest);
-    if (codec)
+    std::optional<QStringConverter::Encoding> text_encoding = QStringConverter::encodingForName(codec->name());
+    if (text_encoding.has_value())
     {
-        stream.setCodec(codec);
+        stream.setEncoding(text_encoding.value());
     }
     if (withHeader)
     {

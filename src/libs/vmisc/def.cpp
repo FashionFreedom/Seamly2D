@@ -52,9 +52,7 @@
 #include <QPrinterInfo>
 #include <QProcess>
 #include <QRgb>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QtDebug>
 #include <QPixmapCache>
 #include <QGraphicsItem>

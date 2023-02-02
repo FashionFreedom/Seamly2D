@@ -238,8 +238,8 @@ int ReadVal(const QString &formula, qreal &val, const QLocale &locale, const QCh
         {
             // Convert to C locale
             QLocale cLocale(QLocale::C);
-            const QChar cDecimal = cLocale.decimalPoint();
-            const QChar cThousand = cLocale.groupSeparator();
+            const QChar cDecimal = cLocale.decimalPoint()[0];
+            const QChar cThousand = cLocale.groupSeparator()[0];
             if (locale != cLocale && (cDecimal != decimal || cThousand != thousand))
             {
                 if (decimal == cThousand)

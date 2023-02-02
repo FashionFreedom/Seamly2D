@@ -90,7 +90,7 @@
 #include <QMenu>
 #include <QMessageBox>
 #include <QPainterPathStroker>
-
+#include <QtCore5Compat/QRegExp>
 
 // Current version of seam allowance tag need for backward compatibility
 const quint8 PatternPieceTool::pieceVersion = 2;
@@ -893,7 +893,7 @@ void PatternPieceTool::paint(QPainter *painter, const QStyleOptionGraphicsItem *
                                 lineTypeToPenStyle(lineType), Qt::RoundCap, Qt::RoundJoin));
 
         QBrush brush = QBrush(QColor(piece.getColor()));
-        brush.setStyle(static_cast<Qt::BrushStyle>(fills().indexOf(QRegExp(piece.getFill()))));
+        brush.setStyle(static_cast<Qt::BrushStyle>(fills().indexOf(QRegExp(piece.getFill()).cap(1))));
         brush.setTransform(brush.transform().scale(150.0, 150.0));
         brush.setTransform(painter->combinedTransform().inverted());
         this->setBrush(brush);
@@ -1520,6 +1520,15 @@ void PatternPieceTool::RefreshGeometry()
     m_cutLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 
     const VPiece piece = VAbstractTool::data.GetPiece(m_id);
+
+    QString pieceColor = piece.getColor();
+
+    QString pieceFill = piece.getFill();
+    const QStringList fillNames = fills();
+    int index = fillNames.indexOf(QRegExp(pieceFill).cap(1));
+
+    QBrush newBrush = QBrush(QColor(pieceColor), static_cast<Qt::BrushStyle>(index));
+    this->setBrush(newBrush);   //set pattern piece color & brush style
 
     QPainterPath path = piece.MainPathPath(this->getData());
 

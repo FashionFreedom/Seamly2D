@@ -56,9 +56,7 @@
 #include <QMetaType>
 #include <QPrinter>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QVariant>
 #include <QPrinterInfo>
 #include <QtDebug>
@@ -115,7 +113,7 @@ VSettings::VSettings(Format format, Scope scope, const QString &organization, co
                      QObject *parent)
     :VCommonSettings(format, scope, organization, application, parent)
 {
-    qRegisterMetaTypeStreamOperators<QMarginsF>("QMarginsF");
+    // FIXME qRegisterMetaTypeStreamOperators<QMarginsF>("QMarginsF"); ???
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -51,9 +51,7 @@
 
 #include "vseamlymesettings.h"
 
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QVariant>
 
 const QString settingDataBaseGeometry = QStringLiteral("database/geometry");

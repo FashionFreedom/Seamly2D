@@ -61,7 +61,7 @@
 
 #include <QPushButton>
 #include <QShowEvent>
-#include <QTextCodec>
+#include <QtCore5Compat/QTextCodec>
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogExportToCSV::DialogExportToCSV(QWidget *parent)

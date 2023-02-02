@@ -55,9 +55,7 @@
 #include <QDir>
 #include <QLibraryInfo>
 #include <QMessageLogger>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QTranslator>
 #include <Qt>
 #include <QtDebug>

@@ -163,7 +163,7 @@ void TST_ReadVal::TestVal()
     qreal resVal = 0;
     QLocale::setDefault(locale);
 
-    const int resCount = ReadVal(formula, resVal, locale, locale.decimalPoint(), locale.groupSeparator());
+    const int resCount = ReadVal(formula, resVal, locale, locale.decimalPoint()[0], locale.groupSeparator()[0]);
 
     QString errorMsg = QString("Conversion failed. Locale: '%1'.").arg(locale.name());
     QVERIFY2(resCount == expCount, qUtf8Printable(errorMsg));
