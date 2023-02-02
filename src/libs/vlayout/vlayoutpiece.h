@@ -55,7 +55,7 @@
 #include <qcompilerdetection.h>
 #include <QDate>
 #include <QLineF>
-#include <QMatrix>
+#include <QTransform>
 #include <QPointF>
 #include <QRectF>
 #include <QSharedDataPointer>

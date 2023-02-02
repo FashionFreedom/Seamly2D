@@ -58,10 +58,7 @@
 #include <QRect>
 #include <QRectF>
 #include <QSizeF>
-#include <QStaticStringData>
 #include <QString>
-#include <QStringData>
-#include <QStringDataPtr>
 #include <Qt>
 
 #include "../vmisc/def.h"

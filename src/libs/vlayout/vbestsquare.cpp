@@ -51,7 +51,7 @@
 
 #include "vbestsquare.h"
 
-#include <QMatrix>
+#include <QTransform>
 
 //---------------------------------------------------------------------------------------------------------------------
 VBestSquare::VBestSquare(const QSizeF &sheetSize, bool saveLength)

@@ -52,9 +52,7 @@
 #include "vnodeellipticalarc.h"
 
 #include <QDomElement>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "../ifc/xml/vdomdocument.h"
 #include "../ifc/ifcdef.h"

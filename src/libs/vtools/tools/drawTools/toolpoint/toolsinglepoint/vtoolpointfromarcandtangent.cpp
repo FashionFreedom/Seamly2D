@@ -75,6 +75,7 @@
 #include <QMessageBox>
 #include <QSharedPointer>
 #include <QStaticStringData>
+#include <QString>
 #include <QStringData>
 #include <QStringDataPtr>
 #include <new>

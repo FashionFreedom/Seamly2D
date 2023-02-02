@@ -56,7 +56,7 @@
 #include <QObject>
 #include <QString>
 
-template <class T> class QVector;
+// template <class T> class QVector;
 
 #ifdef Q_CC_MSVC
 #include <ciso646>

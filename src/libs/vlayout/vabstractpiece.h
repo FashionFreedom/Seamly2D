@@ -61,7 +61,7 @@
 #include "../vmisc/def.h"
 #include "../vgeometry/vgobject.h"
 
-template <class T> class QVector;
+// template <class T> class QVector;
 
 class VAbstractPieceData;
 

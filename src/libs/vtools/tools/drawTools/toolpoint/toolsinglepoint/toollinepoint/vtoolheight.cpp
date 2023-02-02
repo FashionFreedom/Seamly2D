@@ -52,9 +52,7 @@
 #include "vtoolheight.h"
 
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <new>
 
 #include "../../../../../dialogs/tools/dialogheight.h"

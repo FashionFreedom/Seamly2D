@@ -3,13 +3,16 @@
 #include <iomanip>
 #include <algorithm>
 #include <QString>
-#include <QTextCodec>
+//#include <QTextCodec>
+#include <QStringEncoder>
+#include <QStringDecoder>
+#include <QStringConverter>
 #include "../drw_base.h"
 
 DRW_TextCodec::DRW_TextCodec()
     : version(DRW::AC1021),
       cp(),
-      conv(nullptr)
+      conv(std::nullopt)
 {}
 
 void DRW_TextCodec::setVersion(int v, bool dxfFormat){
@@ -56,39 +59,41 @@ void DRW_TextCodec::setCodePage(const std::string *c, bool dxfFormat){
         { //DXF older than 2007 are write in win codepages
             cp = "ANSI_1252";
         }
-        conv = QTextCodec::codecForName(cp.c_str());
+        conv = QStringConverter::encodingForName(cp.c_str());
     }
     else
     {
         if (dxfFormat)
         {
-            conv = QTextCodec::codecForName("UTF-8");
+            conv = QStringConverter::Encoding::Utf8;
         }
         else
         {
-            conv = QTextCodec::codecForName("UTF-16");
+            conv = QStringConverter::Encoding::Utf16;
         }
     }
 }
 
 std::string DRW_TextCodec::toUtf8(const std::string &s) {
-    if (conv == nullptr)
+    if (!conv.has_value())
     {
         return s;
     }
 
-    const QString encodedString = conv->toUnicode(s.c_str());
+    QStringEncoder encoder = QStringEncoder(QStringEncoder::Utf8);
+    const QByteArray encodedString = encoder(QString::fromStdString(s));
     return encodedString.toStdString();
 }
 
 std::string DRW_TextCodec::fromUtf8(const std::string &s) {
-    if (conv == nullptr)
+    if (!conv.has_value())
     {
         return s;
     }
 
-    const QByteArray encodedString = conv->fromUnicode(QString::fromStdString(s));
-    return std::string(encodedString.constData());
+    QStringDecoder decoder = QStringDecoder(QStringDecoder::Utf8);
+    QString encodedString = decoder(QByteArray(s.c_str()));
+    return encodedString.toStdString();
 }
 
 std::string DRW_TextCodec::correctCodePage(const std::string& s) {

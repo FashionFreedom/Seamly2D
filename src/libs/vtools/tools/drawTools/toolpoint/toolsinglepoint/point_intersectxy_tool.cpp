@@ -68,9 +68,7 @@
 
 #include <QPointF>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <new>
 
 template <class T> class QSharedPointer;

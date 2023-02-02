@@ -58,10 +58,7 @@
 #include <QDomNode>
 #include <QHash>
 #include <QLatin1String>
-#include <QStaticStringData>
 #include <QString>
-#include <QStringData>
-#include <QStringDataPtr>
 #include <QtGlobal>
 #include <QLocale>
 
@@ -72,7 +69,7 @@
 
 class QDomElement;
 class QDomNode;
-template <typename T> class QVector;
+// template <typename T> class QVector;
 
 Q_DECLARE_LOGGING_CATEGORY(vXML)
 

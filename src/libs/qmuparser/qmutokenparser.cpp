@@ -45,9 +45,7 @@
 #include "qmutokenparser.h"
 
 #include <QMap>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "qmuparsererror.h"
 
