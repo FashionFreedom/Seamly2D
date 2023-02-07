@@ -205,6 +205,9 @@ MainWindow::MainWindow(QWidget *parent)
         }
     });
     connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
+    connect(doc, &VPattern::CheckLayout, this, [&](){
+        this->updateZoomToPointComboBox(draftPointNamesList());
+    });
     qApp->setCurrentDocument(doc);
 
     InitDocksContain();
