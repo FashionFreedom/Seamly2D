@@ -189,7 +189,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     CreateActions();
     InitScenes();
-
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
     connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
@@ -765,8 +764,6 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
             dialogHistory->updateHistory();
         }
     }
-
-    updateZoomToPointComboBox(draftPointNamesList());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2457,7 +2454,7 @@ void MainWindow::showZoomToPointDialog()
     QStringList pointNames = draftPointNamesList();
 
     bool ok;
-    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, false, &ok,
+    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, true, &ok,
                                               Qt::WindowSystemMenuHint | Qt::WindowTitleHint);
     if (!ok || pointName.isEmpty()) return;
 
