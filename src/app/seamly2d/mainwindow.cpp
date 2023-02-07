@@ -85,6 +85,7 @@
 #include "dialogs/dialogs.h"
 
 #include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/label/showpointname.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
@@ -2477,6 +2478,9 @@ void MainWindow::zoomToPoint(const QString& pointName)
         if (item.value()->name() == pointName)
         {
             VPointF* point = (VPointF*)item.value().data();
+
+            // show point name if it's hidden
+            qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
 
             double sceneWidth = ui->view->width();
             QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
