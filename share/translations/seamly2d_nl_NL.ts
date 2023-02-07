@@ -347,16 +347,15 @@
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;2/8 = .250&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3/8 = .375&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;4/8 = .500&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;5/8 = .625&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;6/8 = .750&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = .0625&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = .1875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = .3125&lt;/span&gt;&lt;/p&gt;
@@ -10882,7 +10881,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Forbid flipping:</source>
-        <translation type="unfinished">Omdraaien niet toegestaan:</translation>
+        <translation>Omdraaien niet toegestaan:</translation>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
@@ -11030,7 +11029,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Label template:</source>
-        <translation>Labelsjabloon</translation>
+        <translation>Labelsjabloon:</translation>
     </message>
     <message>
         <source>Edit pattern label</source>
@@ -11126,7 +11125,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>V Internal </source>
-        <translation>Interne V</translation>
+        <translation>Interne V </translation>
     </message>
     <message>
         <source>V External</source>
@@ -11166,7 +11165,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source> Width:</source>
-        <translation>Breedte:</translation>
+        <translation> Breedte:</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
@@ -11186,7 +11185,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren. Druk &lt;b&gt;ENTER&lt;/b&gt; om het maken van het patroondeel te beëindigen</translation>
+        <translation>Selecteer het pad van objecten met de klok mee, Gebruik &lt;b&gt;SHIFT&lt;/b&gt; om de richting van krommes om te draaien, of &lt;b&gt;Ctrl&lt;/b&gt; om de richting te bewaren. Druk &lt;b&gt;ENTER&lt;/b&gt; om het maken van het patroondeel te beëindigen </translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -11298,7 +11297,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>First point cannot be same as last point!</source>
-        <translation>Eerste en laatste punt kunnen niet hetzelfde zijn</translation>
+        <translation>Eerste en laatste punt kunnen niet hetzelfde zijn!</translation>
     </message>
     <message>
         <source>You have double points!</source>
