@@ -7113,6 +7113,7 @@ QStringList MainWindow::draftPointNamesList()
             pointNames << item.value()->name();
     }
     pointNames.sort();
+    pointNames.removeDuplicates();
     return pointNames;
 }
 
