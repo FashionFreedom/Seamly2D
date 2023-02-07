@@ -3364,8 +3364,6 @@ void MainWindow::showDraftMode(bool checked)
 
         updateViewToolbar();
 
-        updateZoomToPointComboBox(draftPointNamesList());
-
         //ui->toggleAnchorPoints_Action->setChecked(qApp->Settings()->getShowAnchorPoints());
         //draftScene->setOriginsVisible(qApp->Settings()->getShowAnchorPoints());
 
