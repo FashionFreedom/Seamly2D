@@ -9491,11 +9491,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Application Preferences...</source>
-        <translation>Programmavoorkeuren</translation>
+        <translation>Programmavoorkeuren...</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Patroonvoorkeuren</translation>
+        <translation>Patroonvoorkeuren...</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -10175,7 +10175,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>U hebt nog geen patroondelen om uit te voeren. Voeg tenminste één patroondeel toe aan de Opmaak</translation>
+        <translation>U hebt nog geen patroondelen om uit te voeren. Voeg tenminste één patroondeel toe aan de Opmaak.</translation>
     </message>
     <message>
         <source>Export pieces</source>
@@ -10183,7 +10183,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>Kan patroondelen niet exporteren</translation>
+        <translation>Kan patroondelen niet exporteren.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
