@@ -19,7 +19,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="216"/>
         <source>Vertical distance from crown of head to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand van kruin tot vloer</translation>
+        <translation>Verticale afstand van kruin tot vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="220"/>
@@ -91,7 +91,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="244"/>
         <source>Vertical distance from the Waist Side to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf de zijkant van de taille naar de vloer</translation>
+        <translation>Verticale afstand vanaf de zijkant van de taille naar de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="248"/>
@@ -109,7 +109,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="251"/>
         <source>Vertical distance from the Hip level to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf de heup naar de vloer </translation>
+        <translation>Verticale afstand vanaf de heup naar de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="255"/>
@@ -127,7 +127,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="258"/>
         <source>Vertical distance from the Gluteal fold, where the Gluteal muscle meets the top of the back thigh, to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf de bilspierronding, waar de spier Gluteus samenkomt met de bovenkant van het dijbeen, naar de vloer. </translation>
+        <translation>Verticale afstand vanaf de bilspierronding, waar de spier Gluteus samenkomt met de bovenkant van het dijbeen, naar de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="262"/>
@@ -307,7 +307,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="328"/>
         <source>Vertical distance from the Neck Side to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf de zijkant van de nek tot aan de vloer</translation>
+        <translation>Verticale afstand vanaf de zijkant van de nek tot aan de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="332"/>
@@ -511,7 +511,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="436"/>
         <source>Horizontal distance from Scapula (Blade point) to the Neck Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Horizontale afstand van het schouderblad( blad punt) tot aan de rugzijde van de nek</translation>
+        <translation>Horizontale afstand van het schouderblad( blad punt) tot aan de rugzijde van de nek.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="440"/>
@@ -672,7 +672,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="520"/>
         <source>Measure from back of heel to end of longest toe.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meten vanaf de achterkant van de hiel tot aan het einde van de langste teen</translation>
+        <translation>Meten vanaf de achterkant van de hiel tot aan het einde van de langste teen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="524"/>
@@ -828,7 +828,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="607"/>
         <source>Neck circumference, midsection</source>
         <comment>Full measurement name.</comment>
-        <translation>Nek omtrek, midden gedeelte.</translation>
+        <translation>Nek omtrek, midden gedeelte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="608"/>
@@ -983,7 +983,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="660"/>
         <source>Circumference around Highhip, where Abdomen protrusion is  greatest, parallel to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation> Omtrek rond de Hogeheup, waar buik het meest vooruitsteekt, parallel aan de vloer.</translation>
+        <translation>Omtrek rond de Hogeheup, waar buik het meest vooruitsteekt, parallel aan de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="665"/>
@@ -1109,7 +1109,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="711"/>
         <source>From Rib Side to Rib Side, across front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van Ribzijkant naar Ribzijkant, via voorkant</translation>
+        <translation>Van Ribzijkant naar Ribzijkant, via voorkant.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="715"/>
@@ -1505,7 +1505,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="874"/>
         <source>Half of &apos;Bust arc, back&apos;. (&apos;Bust arc, back&apos; / 2).</source>
         <comment>Full measurement description.</comment>
-        <translation> Helft van &apos;busteronding, rug&apos;. (&apos;Busteronding, rug&apos; / 2).</translation>
+        <translation>Helft van &apos;busteronding, rug&apos;. (&apos;Busteronding, rug&apos; / 2).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="878"/>
@@ -1666,7 +1666,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="939"/>
         <source>Circumference around torso from mid-shoulder around crotch back up to mid-shoulder.</source>
         <comment>Full measurement description.</comment>
-        <translation>Omtrek rond torso van midden schouder via kruis en weer terug naar midden schouder</translation>
+        <translation>Omtrek rond torso van midden schouder via kruis en weer terug naar midden schouder.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="944"/>
@@ -1791,7 +1791,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1001"/>
         <source>From Neck Side over Bustpoint to Waist level, forming a straight line.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek over bustepunt naar taillelevel, een rechte lijn vormend</translation>
+        <translation>Van zijkant nek over bustepunt naar taillelevel, een rechte lijn vormend.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1005"/>
@@ -1838,7 +1838,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1021"/>
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Voorkant nek naar voorkant buste.</translation>
+        <translation>Voorkant nek naar voorkant buste</translation>
     </message>
     <message>
         <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
@@ -1927,7 +1927,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1057"/>
         <source>Neck Side to Bust level, front</source>
         <comment>Full measurement name.</comment>
-        <translation>Zijkant nek tot borstlijn, voorkant.</translation>
+        <translation>Zijkant nek tot borstlijn, voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1058"/>
@@ -1963,7 +1963,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1071"/>
         <source>Shoulder center to Highbust level, front</source>
         <comment>Full measurement name.</comment>
-        <translation>Midden van schouder tot hogeborstlijn, voorkant.</translation>
+        <translation>Midden van schouder tot hogeborstlijn, voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1072"/>
@@ -2167,7 +2167,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1148"/>
         <source>From Neck Side straight down back to Bust level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nek zijde direct naar rug beneden naar buste level</translation>
+        <translation>Van nek zijde direct naar rug beneden naar buste niveau.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1152"/>
@@ -2203,7 +2203,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1162"/>
         <source>From mid-Shoulder down back to Highbust level, aimed through Scapula.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van mid-schouder naar rug beneden naar hogebuste level, gericht door schouderblad</translation>
+        <translation>Van mid-schouder naar rug beneden naar hogebuste level, gericht door schouderblad.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1166"/>
@@ -2382,7 +2382,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1230"/>
         <source>Vertical distance between Neck Back and Shoulder Tip.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand tussen nek rug en schouder punt. </translation>
+        <translation>Verticale afstand tussen nek rug en schouder punt.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1234"/>
@@ -3336,7 +3336,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1653"/>
         <source>Arm circumference at Bicep level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Arm omtrek op biceps level</translation>
+        <translation>Arm omtrek op biceps level.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1656"/>
@@ -3552,7 +3552,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1860"/>
         <source>Put tape across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1873"/>
@@ -3580,7 +3580,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2159"/>
         <source>This information is pulled from pattern charts in some  patternmaking systems, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</source>
         <comment>Full measurement description.</comment>
-        <translation>Deze is informatie komt uit patroontabellen van verschillende patroonteken systemen, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;. </translation>
+        <translation>Deze is informatie komt uit patroontabellen van verschillende patroonteken systemen, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1747"/>
@@ -3949,7 +3949,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1885"/>
         <source>Measure from Waist Side diagonally to a string tied at the top of the leg, seated on a hard surface.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meet vanaf zijkant taille diagonaal naar een lint vastgebonden aan het begin van een been, zittend op een harde rechte ondergrond</translation>
+        <translation>Meet vanaf zijkant taille diagonaal naar een lint vastgebonden aan het begin van een been, zittend op een harde rechte ondergrond.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1889"/>
@@ -4163,7 +4163,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1990"/>
         <source>Bend Arm with Elbow out, hand in front. Measure from Neck Side to Elbow Tip.</source>
         <comment>Full measurement description.</comment>
-        <translation>Gebogen arm met elleboog omhoog, hand aan de vookant. Meet vanaf zijkant rug naar elleboogpunt</translation>
+        <translation>Gebogen arm met elleboog omhoog, hand aan de vookant. Meet vanaf zijkant rug naar elleboogpunt.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1994"/>
@@ -4470,7 +4470,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2151"/>
         <source>This information is pulled from pattern charts in some patternmaking systems, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</source>
         <comment>Full measurement description.</comment>
-        <translation>Deze is informatie komt uit patroontabellen van verschillende patroonteken systemen, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;. </translation>
+        <translation>Deze is informatie komt uit patroontabellen van verschillende patroonteken systemen, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2148"/>
