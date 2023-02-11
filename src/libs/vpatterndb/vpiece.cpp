@@ -1032,7 +1032,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
         pathPoints.isEmpty() ? seamPoints = SeamAllowancePoints(data) : seamPoints = pathPoints;
 
         {
-            // first notch
+            // After notch
             QLineF line(previousSAPoint, notchSAPoint);
             line.setLength(line.length()*100); // Hope 100 is enough
 
@@ -1050,7 +1050,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
         }
 
         {
-            // second notch
+            // Before notch
             QLineF line(nextSAPoint, notchSAPoint);
             line.setLength(line.length()*100); // Hope 100 is enough
 
@@ -1061,7 +1061,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
                 return QVector<QLineF>(); // Something wrong
             }
 
-            line = QLineF(intersections.last(), notchSAPoint);
+            line = QLineF(intersections.first(), notchSAPoint);
             line.setLength(notchData.length);
 
             notchData.line = line;
