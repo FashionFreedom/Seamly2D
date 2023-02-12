@@ -1034,7 +1034,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
         {
             // After notch
             QLineF line(notchSAPoint, previousSAPoint);
-            line.setAngle(line() - 180.0);
+            line.setAngle(line.angle() - 180.0);
             line.setLength(40000.0); 
 
             QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
