@@ -538,11 +538,6 @@
         <translation>Положення корпусу: щиколотка</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Горизонтальна відстань між плоскою палицею, що розміщена перпендикулярно до п&apos;яти, і найбільшим відступом щиколотки.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="466"/>
         <source>hand_palm_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>

@@ -544,11 +544,6 @@
         <translation>Отступ: Лодыжки наибольший</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Горизонтальное Расстояние между плоской палкой, расположенной перпендикулярно к пятке, и наибольшим углублением лодыжки.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="466"/>
         <source>hand_palm_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -969,11 +964,6 @@
         <translation>Высота: Талия Сзади</translation>
     </message>
     <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Вертикальное расстояние от талии сзади до пола. (&apos;Высота: Талия Спереди&apos;&apos; - &apos;Нога: от промежности до пола&apos;&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>
         <source>Horizontal Distance between a flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
         <comment>Full measurement description.</comment>
@@ -1037,8 +1027,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="683"/>
         <source>From Highbust Side (Armpit) to HIghbust Side (Armpit) across chest.</source>
         <comment>Full measurement description.</comment>
-        <translation>Ленту накладывают на лопатки. По спине лента должна проходить горизонтально, касаясь верхним краем задних углов подмышечной впадин, затем по подмышечным впадинам. Спереди лента должна проходить на уровне передних углов подмышечных впадин и замыкаться на правой стороне груди. По верхнему краю ленты делают отметку спереди над правой сосковой точкой.
-Мерка записывается в половинном размере.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="687"/>
@@ -1609,12 +1598,6 @@
         <source>Hip arc with Abdomen, front</source>
         <comment>Full measurement name.</comment>
         <translation>Полуобхват бедер с учетом выступания живота</translation>
-    </message>
-    <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Ленту накладывают на ягодичные точки. Лента должна проходить горизонтально вокруг туловища, спереди - по гибкой пластине, приложенной вертикально к животу для учета выступа живота, и замыкаться на правой стороне туловища
-</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
@@ -3825,11 +3808,6 @@
         <translation>Длина промежности</translation>
     </message>
     <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Номер размерного признака в стандарте №77. Измеряют в вертикальной плоскости от линии талии спереди через выступающую точку живота, левую сторону паховой области и тонкую пластину шириной до 2 см, наложенную на ягодичные точки, до линии талии сзади.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1857"/>
         <source>crotch_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3894,11 +3872,6 @@
         <source>Rise length, side</source>
         <comment>Full measurement name.</comment>
         <translation>Расстояние от линии талии до подъягодичной складки</translation>
-    </message>
-    <message>
-        <source>From Waist Side down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Номер размерного признака в стандарте №104. Измеряют по поверхности тела от линии талии через ягодичную точку по подъягодичной складки.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1882"/>

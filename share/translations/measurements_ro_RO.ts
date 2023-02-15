@@ -397,8 +397,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="364"/>
         <source>Vertical distance from Neck Back to Waist Side. (&apos;Height: Neck Back&apos; - &apos;Height: Waist Side&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Distanța verticală de la Gât la Talie
-(&apos;Înălțime: Gât&apos; - &apos;Înălțime: Talie&apos;).</translation>
+        <translation>Distanța verticală de la Gât la Talie. (&apos;Înălțime: Gât&apos; - &apos;Înălțime: Talie&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="386"/>
@@ -539,11 +538,6 @@
         <translation>Marcare: înălțime Gleznă</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distanța orizontală dintre un băț drept, plasat perpendicular pe toc, și cea mai mare proeminență a gleznei.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="466"/>
         <source>hand_palm_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -631,8 +625,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="495"/>
         <source>Tuck thumb toward smallest finger, bring fingers close together. Measure circumference around widest part of hand.</source>
         <comment>Full measurement description.</comment>
-        <translation>Îndreaptă degetul mare spre degetul mic, adu degetele aproape împreună.
-Măsura circumferinta in jurul celei mai mare parți ale mâinii.</translation>
+        <translation>Îndreaptă degetul mare spre degetul mic, adu degetele aproape împreună. Măsura circumferinta in jurul celei mai mare parți ale mâinii.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="511"/>
@@ -794,8 +787,7 @@ Măsura circumferinta in jurul celei mai mare parți ale mâinii.</translation>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="581"/>
         <source>Vertical distance from Crown to Neck Back. (&apos;Height: Total&apos; - &apos;Height: Neck Back&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Distanța verticală de la Creștet la spatele gâtului.
-(&apos;Înălțime: Total&apos; - &apos;Înălțime: Spate Gât&apos;).</translation>
+        <translation>Distanța verticală de la Creștet la spatele gâtului. (&apos;Înălțime: Total&apos; - &apos;Înălțime: Spate Gât&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="585"/>
@@ -813,8 +805,7 @@ Măsura circumferinta in jurul celei mai mare parți ale mâinii.</translation>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="588"/>
         <source>Vertical distance from Chin to Neck Back. (&apos;Height&apos; - &apos;Height: Neck Back&apos; - &apos;Head: Length&apos;)</source>
         <comment>Full measurement description.</comment>
-        <translation>Distanța verticală de la bărbie până la spatele gâtului.
-(&apos;Înălțime&apos; - &apos;Înălțime: Spate Gât&apos; - &apos;Cap: Lungime&apos;)</translation>
+        <translation>Distanța verticală de la bărbie până la spatele gâtului. (&apos;Înălțime&apos; - &apos;Înălțime: Spate Gât&apos; - &apos;Cap: Lungime&apos;)</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="605"/>
@@ -1603,12 +1594,6 @@ Măsura circumferinta in jurul celei mai mare parți ale mâinii.</translation>
         <translation>Șold curbură cu Abdomenul, față</translation>
     </message>
     <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Curbează o bucată de hârtie rigidă în jurul abdomenului în partea din fața, și se fixează lateral.
-Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1691,11 +1676,6 @@ Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
         <source>Neck Front to Waist Front</source>
         <comment>Full measurement name.</comment>
         <translation>Gât anterior până la talie anterior</translation>
-    </message>
-    <message>
-        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">De la gât anterior, peste bandă printre sâni, până la talie față.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
@@ -1818,11 +1798,6 @@ Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
         <translation>Piept superior față la Talie față</translation>
     </message>
     <message>
-        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">De la Piept superior față la Talie Față. Se folosește o banda de legatură intre Punctele Pieptului. (&apos;Gât față la Talie față&apos; - &apos;Gât față la Piept superior față&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
         <source>neck_front_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1833,11 +1808,6 @@ Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
         <translation>Gât față la Piept față</translation>
-    </message>
-    <message>
-        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">De la Gât față în jos pâna la Piept față. Necesar o banda de a face legătura între Punctele Pieptului.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1027"/>
@@ -2071,8 +2041,7 @@ Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1113"/>
         <source>From Highbust Back down to Waist Back. (&apos;Neck Back to Waist Back&apos; - &apos;Neck Back to Highbust Back&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>De la Piept superior spate la Talie spate.
-(&apos;Gât spate la Talie spate&apos; - &apos;Gât spate la Piept superior spate&apos;).</translation>
+        <translation>De la Piept superior spate la Talie spate. (&apos;Gât spate la Talie spate&apos; - &apos;Gât spate la Piept superior spate&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1118"/>
@@ -2108,8 +2077,7 @@ Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1127"/>
         <source>From Bust Back down to Waist level. (&apos;Neck Back to Waist Back&apos; - &apos;Neck Back to Bust Back&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>De la Piept spate în jos la nivelul Taliei.
-(&apos;Gât spate la Talie spate&apos; - &apos;Gât spate la Piept spate&apos;).</translation>
+        <translation>De la Piept spate în jos la nivelul Taliei. (&apos;Gât spate la Talie spate&apos; - &apos;Gât spate la Piept spate&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1132"/>
@@ -2284,11 +2252,6 @@ Măsoară dintr-o parte pâna in cealaltă peste hârtie.</translation>
         <source>Waist Back to Hip Back</source>
         <comment>Full measurement name.</comment>
         <translation>Talie spate la Șold spate</translation>
-    </message>
-    <message>
-        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">De la Talie spate în jos pâna la Șold spate. Necesar o banda de a face legătura între Punctele șezutului.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1198"/>

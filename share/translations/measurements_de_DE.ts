@@ -217,12 +217,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="293"/>
         <source>Vertical distance from the Highhip level, where front abdomen is most prominent, to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>
-
-
-
-Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Bauches, bis zum Boden.
-</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="297"/>
@@ -417,9 +412,10 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation>Höhe: Taille hinten</translation>
     </message>
     <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Senkrechter Abstand von der Taillenrückseite zum Boden. (&apos;Höhe: Taille vorne&apos; - &apos;Bein: Schritt zum Boden&apos;)</translation>
+        <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="371"/>
+        <source>Vertical height from Waist Back to floor.</source>
+        <comment>Full measurement name.</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="386"/>
@@ -560,11 +556,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation>Vertiefung: Knöchel</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Horizontale Abstand zwischen einer flachen Linie senkrecht aufgestellt, um Ferse und tiefste Einbuchtung am Knöchel.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>
         <source>Horizontal Distance between a flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
         <comment>Full measurement description.</comment>
@@ -586,8 +577,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="469"/>
         <source>Length from Wrist line to base of middle finger.</source>
         <comment>Full measurement description.</comment>
-        <translation>Länge vom Handgelenk bis zum Ansatz des Mittelfingers.
-</translation>
+        <translation>Länge vom Handgelenk bis zum Ansatz des Mittelfingers.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="473"/>
@@ -725,8 +715,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="533"/>
         <source>Foot: Instep circumference</source>
         <comment>Full measurement name.</comment>
-        <translation>Fuß: Spannumfang
-</translation>
+        <translation>Fuß: Spannumfang</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="534"/>
@@ -768,8 +757,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="560"/>
         <source>Vertical distance from Head Crown to bottom of jaw.</source>
         <comment>Full measurement description.</comment>
-        <translation>Vertikale Abmessung vom Scheitel zur Unterseite des Kiefers.
-</translation>
+        <translation>Vertikale Abmessung vom Scheitel zur Unterseite des Kiefers.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="564"/>
@@ -787,7 +775,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="567"/>
         <source>Horizontal distance from front of forehead to back of head.</source>
         <comment>Full measurement description.</comment>
-        <translation>Horizontalen Abstand vor der Stirn zum Hinterkopf .</translation>
+        <translation>Horizontalen Abstand vor der Stirn zum Hinterkopf.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="571"/>
@@ -805,8 +793,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="574"/>
         <source>Horizontal distance from Head Side to Head Side, where Head is widest.</source>
         <comment>Full measurement description.</comment>
-        <translation>Horizontale Abstand von Schläfe zu Schläfe , wo der Kopf am breitesten ist .
-</translation>
+        <translation>Horizontale Abstand von Schläfe zu Schläfe , wo der Kopf am breitesten ist.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="578"/>
@@ -986,8 +973,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="660"/>
         <source>Circumference around Highhip, where Abdomen protrusion is  greatest, parallel to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Umfang der hohen Höfte , Stelle des stärksten Bauchumfanges, parallel zum Boden gemessen.
-</translation>
+        <translation>Umfang der hohen Höfte , Stelle des stärksten Bauchumfanges, parallel zum Boden gemessen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="665"/>
@@ -1005,8 +991,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="668"/>
         <source>Circumference around Hip where Hip protrusion is greatest, parallel to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Stärkste Stelle des Hüftumfanges, parallel zum Boden gemessen.
-</translation>
+        <translation>Stärkste Stelle des Hüftumfanges, parallel zum Boden gemessen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="673"/>
@@ -1615,11 +1600,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation>Vorderer Hüftumfang mit Bauch</translation>
     </message>
     <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Festes Papier über die Vorderseite des Bauchs legen und an den Seiten festkleben. Über das Papier vorne von Hüftseite zu Hüftseite messen.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1702,11 +1682,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <source>Neck Front to Waist Front</source>
         <comment>Full measurement name.</comment>
         <translation>Hals vorne zu Taille vorne</translation>
-    </message>
-    <message>
-        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Von der Vorderseite des Nackens über ein Band über den Brustpunkten runter zur Taille messen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
@@ -1829,11 +1804,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation>Oberbrust vorne zur Taille vorne</translation>
     </message>
     <message>
-        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Von der Vorderseite der Oberbrust bis zur Taille messen. Die Lücke zwischen den Brustpunkten z.B. mit Band schließen. (&apos;Hals vorne zur Taille vorne&apos; - &apos;Hals vorne zur Oberbrust vorne&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
         <source>neck_front_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1844,11 +1814,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
         <translation>Hals vorne zur Brust vorne</translation>
-    </message>
-    <message>
-        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Von der Vorderseite des Halses zur Brust messen. Dabei den Raum zwischen den Brustpunkten mit Band abdecken.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1027"/>
@@ -2293,17 +2258,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <source>Waist Back to Hip Back</source>
         <comment>Full measurement name.</comment>
         <translation>Taille hinten zur Hüfte hinten</translation>
-    </message>
-    <message>
-        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Auf dem Rücken von der Taillenhöhe zur Hüfthöhe messen. Bei Bedarf den Po mit Band überdecken.</translation>
-    </message>
-    <message>
-        <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="371"/>
-        <source>Vertical height from Waist Back to floor.</source>
-        <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="917"/>
@@ -3575,8 +3529,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1742"/>
         <source>Stand feet close together. Measure from crotch level (touching body, no extra space) down to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Füße eng zusammen stellen. Messen Sie vom Schritt-Höhe (Körper berühren, keine zusätzlichen Platz ) bis zum Boden.
-</translation>
+        <translation>Füße eng zusammen stellen. Messen Sie vom Schritt-Höhe (Körper berühren, keine zusätzlichen Platz) bis zum Boden.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1747"/>
@@ -3594,8 +3547,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1750"/>
         <source>From Waist Side along curve to Hip level then straight down to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Von der Taille entlang der Seite und Hüftkurve, ab Hüfthöhe gerade nach unten bis zum Boden .
-</translation>
+        <translation>Von der Taille entlang der Seite und Hüftkurve, ab Hüfthöhe gerade nach unten bis zum Boden.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1754"/>
@@ -3649,8 +3601,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1772"/>
         <source>Knee circumference with straight leg.</source>
         <comment>Full measurement description.</comment>
-        <translation>Knie Umfang mit geradem Bein.
-</translation>
+        <translation>Knie Umfang mit geradem Bein.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1775"/>
@@ -3722,8 +3673,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1799"/>
         <source>Ankle circumference where front of leg meets the top of the foot.</source>
         <comment>Full measurement description.</comment>
-        <translation>
-</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1803"/>
@@ -3840,11 +3790,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Den Spalt zwischen den Pobacken mit Klebeband überbrücken. Von der Rückseite der Taille zur Mitte des Schritts messen, entweder zur Scheide oder zwischen Anus und Testikeln.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1857"/>
         <source>crotch_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3855,11 +3800,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <source>Crotch length, back</source>
         <comment>Full measurement name.</comment>
         <translation>Schrittlänge, hinten</translation>
-    </message>
-    <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Den Spalt zwischen den Pobacken auf Hüfthöhe mit Klebeband überbrücken. Von der Rückseite der Taille zur Mitte des Schritts messen, entweder zur Scheide oder zwischen Anus und Testikeln.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1865"/>
@@ -3898,16 +3838,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation>Leibhöhe. Von Taille über die Seite bis zur Sitzfläche (auf festem Untergrund) gemessen.</translation>
     </message>
     <message>
-        <source>Sit on hard surface. Rise length, side, taken from waist over hip curve down to surface</source>
-        <comment>Full measurement name.</comment>
-        <translation type="vanished">Auf eine feste Oberfläche setzen. Von der Taille über die Kurve der Hüfte zur Oberfläche messen.</translation>
-    </message>
-    <message>
-        <source>From Waist Side around hp curve down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Beim Sitzen auf einer festen Oberfläche von der Taillenseite über die Kurve der Hüfte zur Oberfläche messen.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1892"/>
         <source>Vertical distance from Waist Back to Crotch level. (&apos;Height: Waist Back&apos; - &apos;Leg: Crotch to Floor&apos;)</source>
         <comment>Full measurement description.</comment>
@@ -3930,11 +3860,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <source>Rise length, side</source>
         <comment>Full measurement name.</comment>
         <translation>Leibhöhe,  an der Seite gemessen</translation>
-    </message>
-    <message>
-        <source>From Waist Side down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Beim Sitzen auf einer festen Oberfläche von der Taillenseite runter zur Oberfläche messen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1882"/>
@@ -3967,11 +3892,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <translation>Leibhöhe, hinten</translation>
     </message>
     <message>
-        <source>Vertical distance from Waist Back to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Senkrechter Abstand von der Taillenrückseite zur Schritthöhe. </translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1896"/>
         <source>rise_length_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3982,11 +3902,6 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <source>Rise length, front</source>
         <comment>Full measurement name.</comment>
         <translation>Leibhöhe, von vorne gemessen</translation>
-    </message>
-    <message>
-        <source>Vertical Distance from Waist Front to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Senkrechter Abstand von der Taille vorne zur Schritthöhe.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1906"/>
@@ -4040,8 +3955,7 @@ Vertikalen Abstand von der hohen Hüfte Ebene, stärkste Stelle des  vorderen Ba
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1938"/>
         <source>Natural Waist circumference</source>
         <comment>Full measurement name.</comment>
-        <translation>Umfang der natürlichen Taille
-</translation>
+        <translation>Umfang der natürlichen Taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1939"/>

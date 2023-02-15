@@ -412,9 +412,10 @@
         <translation>Height: Waist Back</translation>
     </message>
     <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</translation>
+        <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="371"/>
+        <source>Vertical height from Waist Back to floor.</source>
+        <comment>Full measurement name.</comment>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="386"/>
@@ -553,11 +554,6 @@
         <source>Indent: Ankle High</source>
         <comment>Full measurement name.</comment>
         <translation>Indent: Ankle High</translation>
-    </message>
-    <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>
@@ -1604,11 +1600,6 @@
         <translation>Hip arc with Abdomen, front</translation>
     </message>
     <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1691,11 +1682,6 @@
         <source>Neck Front to Waist Front</source>
         <comment>Full measurement name.</comment>
         <translation>Neck Front to Waist Front</translation>
-    </message>
-    <message>
-        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">From Neck Front, over tape_ between Breastpoints, down to Waist Front.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
@@ -1818,11 +1804,6 @@
         <translation>Highbust Front to Waist Front</translation>
     </message>
     <message>
-        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
         <source>neck_front_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1833,11 +1814,6 @@
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
         <translation>Neck Front to Bust Front</translation>
-    </message>
-    <message>
-        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1027"/>
@@ -2282,17 +2258,6 @@
         <source>Waist Back to Hip Back</source>
         <comment>Full measurement name.</comment>
         <translation>Waist Back to Hip Back</translation>
-    </message>
-    <message>
-        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</translation>
-    </message>
-    <message>
-        <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="371"/>
-        <source>Vertical height from Waist Back to floor.</source>
-        <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="917"/>
@@ -3825,11 +3790,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1857"/>
         <source>crotch_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3840,11 +3800,6 @@
         <source>Crotch length, back</source>
         <comment>Full measurement name.</comment>
         <translation>Crotch length, back</translation>
-    </message>
-    <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1865"/>
@@ -3883,16 +3838,6 @@
         <translation>From Waist Side around hip curve down to surface, while seated on hard surface.</translation>
     </message>
     <message>
-        <source>Sit on hard surface. Rise length, side, taken from waist over hip curve down to surface</source>
-        <comment>Full measurement name.</comment>
-        <translation type="vanished">Sit on hard surface. Rise length, side, taken from waist over hip curve down to surface</translation>
-    </message>
-    <message>
-        <source>From Waist Side around hp curve down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">From Waist Side around hp curve down to surface, while seated on hard surface.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1892"/>
         <source>Vertical distance from Waist Back to Crotch level. (&apos;Height: Waist Back&apos; - &apos;Leg: Crotch to Floor&apos;)</source>
         <comment>Full measurement description.</comment>
@@ -3915,11 +3860,6 @@
         <source>Rise length, side</source>
         <comment>Full measurement name.</comment>
         <translation>Rise length, side</translation>
-    </message>
-    <message>
-        <source>From Waist Side down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">From Waist Side down to surface, while seated on hard surface.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1882"/>
@@ -3952,11 +3892,6 @@
         <translation>Rise length, back</translation>
     </message>
     <message>
-        <source>Vertical distance from Waist Back to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Vertical distance from Waist Back to Crotch level.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1896"/>
         <source>rise_length_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3967,11 +3902,6 @@
         <source>Rise length, front</source>
         <comment>Full measurement name.</comment>
         <translation>Rise length, front</translation>
-    </message>
-    <message>
-        <source>Vertical Distance from Waist Front to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Vertical Distance from Waist Front to Crotch level.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1906"/>

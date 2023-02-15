@@ -538,11 +538,6 @@
         <translation>Tacca: Caviglia Alta</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distanza orizzontale tra un bastoncino piatto, posto perpendicolare al tallone e la rientranza più profonda della caviglia.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="466"/>
         <source>hand_palm_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -961,11 +956,6 @@
         <source>Height: Waist Back</source>
         <comment>Full measurement name.</comment>
         <translation>Altezza: Anca Posteriore</translation>
-    </message>
-    <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Altezza verticale dalla vita dietro al pavimento. (&apos;Altezza: Vita Davanti&quot; - &apos;Gamba: Cavallo al pavimento&quot;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>

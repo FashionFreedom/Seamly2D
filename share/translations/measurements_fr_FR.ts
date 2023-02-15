@@ -412,11 +412,6 @@
         <translation>Hauteur taille dos</translation>
     </message>
     <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">hauteur_taille_dos</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="386"/>
         <source>width_shoulder</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -522,7 +517,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="436"/>
         <source>Horizontal distance from Scapula (Blade point) to the Neck Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Distance horizontale entre le sommet des homoplates et le creux de la nuque</translation>
+        <translation>Distance horizontale entre le sommet des homoplates et le creux de la nuque.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="440"/>
@@ -553,11 +548,6 @@
         <source>Indent: Ankle High</source>
         <comment>Full measurement name.</comment>
         <translation>Creux talon d&apos;achille</translation>
-    </message>
-    <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distance horizontale entre un support plat placé perpendiculairement au talon et le point le plus rentré de la cheville.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>
@@ -1604,11 +1594,6 @@
         <translation>Segment de hanche, devant passant par les fesses.</translation>
     </message>
     <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Feuille de papier autour du ventre, scotché sur les cotés. La mesure s&apos;effectue d&apos;un coté à l&apos;autre de la hanche en passant par la feuille de papier.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1691,11 +1676,6 @@
         <source>Neck Front to Waist Front</source>
         <comment>Full measurement name.</comment>
         <translation>Distance entre l&apos;encolure et la taille , devant</translation>
-    </message>
-    <message>
-        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">De l&apos;encolure devant à la taille devant, en passant entre les seins.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
@@ -1818,11 +1798,6 @@
         <translation>ligne de sur-poitrine devant à ligne de taille</translation>
     </message>
     <message>
-        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Du milieu de la ligne de sur-poitrine devant à la ligne de taille , devant, vertical. On utilise un bloduc entre les pointes de sein. (&apos;Distance entre l&apos;encolure et la taille , devant&apos; - &apos;Encolure devant à ligne sur-poitrinaire, devant&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
         <source>neck_front_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1833,11 +1808,6 @@
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
         <translation>Encolure devant à ligne  de poitrine, devant</translation>
-    </message>
-    <message>
-        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Point d&apos;encolure au milieu devant à la ligne de sur-poitrine, vertical. On utilise un bolduc entre les pointes de sein.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1027"/>
@@ -2282,11 +2252,6 @@
         <source>Waist Back to Hip Back</source>
         <comment>Full measurement name.</comment>
         <translation>Distance de la ligne de taille dans le dos à la ligne de hanches dos.</translation>
-    </message>
-    <message>
-        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distance de la ligne de taille dans le dos à la ligne de hanches dos. Nécessite un bolduc tendu au sommet des fesses.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="371"/>
@@ -3825,11 +3790,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Faire passer le Ruban sur le creux des Fesses commençant au niveau de Hanches. Mesurer de la Taille Devant, en descendant par l&apos;entrejambe et en remontant jusqu&apos;à la Taille Dos.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1857"/>
         <source>crotch_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3840,11 +3800,6 @@
         <source>Crotch length, back</source>
         <comment>Full measurement name.</comment>
         <translation>Longueur Entrejambe, dos</translation>
-    </message>
-    <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Faire passer le Ruban sur le creux des Fesses se dessinant au niveau de Hanches. Mesurer à partir de la Taille Dos jusqu&apos;au milieu de la fourche, se point se situer au Vagin chez la femme ou entre les testicules et l&apos;anus chez l&apos;homme).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1865"/>
@@ -3883,16 +3838,6 @@
         <translation>Du Côté de la Taille le long de la courbe des hanches jusqu&apos;à la surface, en étant assis sur une surface dure</translation>
     </message>
     <message>
-        <source>Sit on hard surface. Rise length, side, taken from waist over hip curve down to surface</source>
-        <comment>Full measurement name.</comment>
-        <translation type="vanished">Assis sur une surface dure. Hauteur du Montant sur le côté, mesuré de la taille au dessus de la courbure des hanches jusqu&apos;au sol</translation>
-    </message>
-    <message>
-        <source>From Waist Side around hp curve down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Du Côté de la Taille le long de la courbe des hanches jusqu&apos;à la surface, en étant assis sur une surface dure</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1892"/>
         <source>Vertical distance from Waist Back to Crotch level. (&apos;Height: Waist Back&apos; - &apos;Leg: Crotch to Floor&apos;)</source>
         <comment>Full measurement description.</comment>
@@ -3915,11 +3860,6 @@
         <source>Rise length, side</source>
         <comment>Full measurement name.</comment>
         <translation>Longueur Montant, côté</translation>
-    </message>
-    <message>
-        <source>From Waist Side down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">A partir de la Taille Côté jusqu&apos;à la surface visible de la fesse, mesurer en ligne droite, en position assise sur une surface dure.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1882"/>
@@ -3952,11 +3892,6 @@
         <translation>Longueur Montant, dos</translation>
     </message>
     <message>
-        <source>Vertical distance from Waist Back to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distance Verticale à partir de la Taille Dos jusqu&apos;au au niveau de Fourche.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1896"/>
         <source>rise_length_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3967,11 +3902,6 @@
         <source>Rise length, front</source>
         <comment>Full measurement name.</comment>
         <translation>Longueur Montant, devant</translation>
-    </message>
-    <message>
-        <source>Vertical Distance from Waist Front to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distance verticale partant de la Taille Devant jusqu&apos;au niveau de Fourche.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1906"/>
@@ -4488,7 +4418,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2158"/>
         <source>Dart Width: Waist</source>
         <comment>Full measurement name.</comment>
-        <translation>Largeur de pince.</translation>
+        <translation>Largeur de pince</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2159"/>

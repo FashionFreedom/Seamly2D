@@ -538,11 +538,6 @@
         <translation>Marcar: Tobillo Alto</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Distancia horizontal entre un palo liso, puesto perpendicular al talón, y la mayor marca del Tobillo.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="466"/>
         <source>hand_palm_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -961,11 +956,6 @@
         <source>Height: Waist Back</source>
         <comment>Full measurement name.</comment>
         <translation>Altura: Cintura posterior</translation>
-    </message>
-    <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Altura vertical desde la espalda de la cintura hasta el suelo. (&apos;Altura: Frente de la cintura&apos;&apos; - &apos;Pierna: De entrepierna al suelo&apos;&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>
@@ -1604,11 +1594,6 @@
         <translation>Arco de cadera con Abdomen, parte frontal</translation>
     </message>
     <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Curvar el papel rígido alrededor de la parte frontal del abdomen, pegar a los lados. Medir desde el lado de la cadera hasta el lado de la cadera sobre el papel a través de la parte frontal.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1691,11 +1676,6 @@
         <source>Neck Front to Waist Front</source>
         <comment>Full measurement name.</comment>
         <translation>Parte frontal del cuello hasta parte frontal de la cintura</translation>
-    </message>
-    <message>
-        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Desde parte frontal del cuello, a través de entre los Pechos, hasta la parte frontal de la cintura.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
@@ -1818,11 +1798,6 @@
         <translation>Desde la parte frontal del busto alto hasta la parte frontal de la cintura</translation>
     </message>
     <message>
-        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Desde la parte frontal del busto alto hasta la parte frontal de la cintura. Utilice cinta adhesiva para puentear la brecha entre los extremos de los pechos. (&apos;Desde la parte frontal del cuello hasta la parte frontal de la cintura&apos; - &apos;Desde la parte frontal del cuello hasta la parte frontal del busto alto&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
         <source>neck_front_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1833,11 +1808,6 @@
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
         <translation>Desde la parte frontal del cuello hasta la parte frontal del busto</translation>
-    </message>
-    <message>
-        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Desde la parte frontal del cuello hasta la parte frontal del busto. Requiere cinta adhesiva para cubrir el espacio entre los pechos.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1027"/>
@@ -2282,11 +2252,6 @@
         <source>Waist Back to Hip Back</source>
         <comment>Full measurement name.</comment>
         <translation>Desde la parte trasera de la cintura hasta la parte trasera de la cadera</translation>
-    </message>
-    <message>
-        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Desde la parte trasera de la cintura hasta la parte trasera de la cadera. Requiere cinta para cubrir el hueco entre las nalgas.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1198"/>

@@ -544,11 +544,6 @@
         <translation>Inham: Enkel hoog</translation>
     </message>
     <message>
-        <source>Horizontal Distance betwee a  flat stick, placed perpendicular to Heel, and the greatest indentation of Ankle.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Horizontale afstand op een platte lat welke loodrecht tegen de hiel en de grootste inham van de enkel geplaatst is.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="466"/>
         <source>hand_palm_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -967,11 +962,6 @@
         <source>Height: Waist Back</source>
         <comment>Full measurement name.</comment>
         <translation>Hoogte: Taille Rug</translation>
-    </message>
-    <message>
-        <source>Vertical height from Waist Back to floor. (&apos;Height: Waist Front&apos;&apos; - &apos;Leg: Crotch to floor&apos;&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Verticale hoogte van Taille op Rug. (&apos;Hoogte: Voorkant Taille&quot; - &apos;Been: Kruis tot aan de vloer&quot;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="450"/>
@@ -1610,11 +1600,6 @@
         <translation>Heupronding met onderbuik, voorkant</translation>
     </message>
     <message>
-        <source>Curve stiff paper around front of abdomen, tape_ at sides. Measure from Hip Side to Hip Side over paper across front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Plak stevig papier rond voorkant van de onderbuik aan beide zijde. Meet van heup zijde naar heup zijde over het papier langs de voorkant.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1697,11 +1682,6 @@
         <source>Neck Front to Waist Front</source>
         <comment>Full measurement name.</comment>
         <translation>Nek voorkant naar taille voorkant</translation>
-    </message>
-    <message>
-        <source>From Neck Front, over tape_ between Breastpoints, down to Waist Front.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Van voorkant nek, over meetlint tussen borstpunten, naar beneden naar voorkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
@@ -1824,11 +1804,6 @@
         <translation>Voorkant hogebuste naar voorkant taille</translation>
     </message>
     <message>
-        <source>From Highbust Front to Waist Front. Use tape_ to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Van voorkant hogebuste naar voorkant taille. Gebruik meetlint om het gat tussen bustepunten te overbruggen.(&apos;Voorkant nek naar voorkant taille&apos; - &apos;Voorkant nek naar voorkant hogebuste&apos;).</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1019"/>
         <source>neck_front_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -1839,11 +1814,6 @@
         <source>Neck Front to Bust Front</source>
         <comment>Full measurement name.</comment>
         <translation>Voorkant nek naar voorkant buste</translation>
-    </message>
-    <message>
-        <source>From Neck Front down to Bust Front. Requires tape_ to cover gap between Bustpoints.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Van voorkant naar beneden naar voorkant buste. Vergt meetlint om het gat tussen bustepunten te dekken.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1027"/>
@@ -2288,11 +2258,6 @@
         <source>Waist Back to Hip Back</source>
         <comment>Full measurement name.</comment>
         <translation>Taille rug naar Heup rug</translation>
-    </message>
-    <message>
-        <source>From Waist Back down to Hip Back. Requires tape_ to cover the gap between buttocks.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Van taille rug naar beneden naar heup rug. Vereist meetlint om de ruimte tussen billen te overbruggen.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1198"/>
@@ -3561,16 +3526,6 @@
         <translation>zit_hoogte_zijkant_zittend</translation>
     </message>
     <message>
-        <source>Sit on hard surface. Rise length, side, taken from waist over hip curve down to surface</source>
-        <comment>Full measurement name.</comment>
-        <translation type="vanished">Zit op een harde ondergrond. Zithoogte, zijkant, gemeten vanaf taille over de heupronding naar beneden tot aan ondergrond.</translation>
-    </message>
-    <message>
-        <source>From Waist Side around hp curve down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Van zijkant taille via heupronding naar beneden naar oppervlakte, zittend op een harde ondergrond</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1906"/>
         <source>Vertical distance from Waist side down to Crotch level. Use formula (Height: Waist side - Leg: Crotch to floor).</source>
         <comment>Full measurement description.</comment>
@@ -3853,11 +3808,6 @@
         <translation>Kruis lengte</translation>
     </message>
     <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Plaats meetlint over ruimte tussen de billen op heup level. Meet vanaf voorkant taille naar beneden tussen de benen en terug naar boven naar taille aan de rugkant.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1857"/>
         <source>crotch_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3868,11 +3818,6 @@
         <source>Crotch length, back</source>
         <comment>Full measurement name.</comment>
         <translation>Kruislengte, rug</translation>
-    </message>
-    <message>
-        <source>Put tape_ across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Plaats meetlint over ruimte tussen de billen op heup level. Meet vanaf taille rugkant naar midden kruis, op de vagina of tussen de testikels en anus.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1865"/>
@@ -3929,11 +3874,6 @@
         <translation>Zithoogte, zijkant</translation>
     </message>
     <message>
-        <source>From Waist Side down to surface, while seated on hard surface.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Vanaf zijkant taille naar beneden naar oppervlakte, zittend op een harde rechte ondergrond.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1882"/>
         <source>rise_length_diag</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3964,11 +3904,6 @@
         <translation>Zithoogte, rug</translation>
     </message>
     <message>
-        <source>Vertical distance from Waist Back to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Verticale afstand van taille rug naar kruis level.</translation>
-    </message>
-    <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1896"/>
         <source>rise_length_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
@@ -3979,11 +3914,6 @@
         <source>Rise length, front</source>
         <comment>Full measurement name.</comment>
         <translation>Zithoogte, voorkant</translation>
-    </message>
-    <message>
-        <source>Vertical Distance from Waist Front to Crotch level.</source>
-        <comment>Full measurement description.</comment>
-        <translation type="vanished">Verticale afstand van voorkant taille naar kruis level.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1922"/>
