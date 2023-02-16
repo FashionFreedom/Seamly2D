@@ -85,6 +85,7 @@
 #include "dialogs/dialogs.h"
 
 #include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/label/showpointname.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
@@ -189,7 +190,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     CreateActions();
     InitScenes();
-
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
     connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
@@ -206,6 +206,9 @@ MainWindow::MainWindow(QWidget *parent)
         }
     });
     connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
+    connect(doc, &VPattern::CheckLayout, this, [&](){
+        this->updateZoomToPointComboBox(draftPointNamesList());
+    });
     qApp->setCurrentDocument(doc);
 
     InitDocksContain();
@@ -2282,6 +2285,17 @@ void MainWindow::initToolsToolBar()
     resetPanShortcuts();
     connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
+    QList<QKeySequence> zoomToPointShortcuts;
+    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::AltModifier + Qt::Key_P));
+    ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
+    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
+
+    zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
+    zoomToPointComboBox->setEnabled(false);
+    zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    ui->zoom_ToolBar->addWidget(zoomToPointComboBox);
+    connect(zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
+
     if (zoomScaleSpinBox != nullptr)
     {
         delete zoomScaleSpinBox;
@@ -2432,6 +2446,47 @@ void MainWindow::zoomPan(bool checked)
     if (checked)
     {
         ui->zoomToArea_Action->setChecked(false);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::showZoomToPointDialog()
+{
+    QStringList pointNames = draftPointNamesList();
+
+    bool ok;
+    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, true, &ok,
+                                              Qt::WindowSystemMenuHint | Qt::WindowTitleHint);
+    if (!ok || pointName.isEmpty()) return;
+
+    zoomToPoint(pointName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::zoomToPoint(const QString& pointName)
+{
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
+    {
+        if (item.value()->name() == pointName)
+        {
+            VPointF* point = (VPointF*)item.value().data();
+
+            // show point name if it's hidden
+            qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
+
+            double sceneWidth = ui->view->width();
+            QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
+            ui->view->zoomToRect(rect);
+            return;
+        }
     }
 }
 
@@ -3826,6 +3881,7 @@ void MainWindow::Clear()
     ui->zoomToPrevious_Action->setEnabled(false);
     ui->zoomToArea_Action->setEnabled(false);
     ui->zoomPan_Action->setEnabled(false);
+    ui->zoomToPoint_Action->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -4103,6 +4159,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToPrevious_Action->setEnabled(enable);
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
+    ui->zoomToPoint_Action->setEnabled(enable && draftStage);
+    zoomToPointComboBox->setEnabled(enable && draftStage);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);
@@ -7036,6 +7094,37 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
         return false;
     }
     return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief draftPointNamesList gets the list of points in draft mode.
+ */
+QStringList MainWindow::draftPointNamesList()
+{
+    QStringList pointNames;
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
+    {
+        if (item.value()->getType() == GOType::Point && !pointNames.contains(item.value()->name()))
+            pointNames << item.value()->name();
+    }
+    pointNames.sort();
+    pointNames.removeDuplicates();
+    return pointNames;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief updateZoomToPointComboBox updates the list of points included in the toolbar combobox.
+ */
+void MainWindow::updateZoomToPointComboBox(QStringList namesList)
+{
+    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
+    zoomToPointComboBox->clear();
+    zoomToPointComboBox->addItems(namesList);
+    zoomToPointComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
