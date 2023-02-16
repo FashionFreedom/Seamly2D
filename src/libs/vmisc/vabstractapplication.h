@@ -91,7 +91,7 @@ public:
 
     QString          translationsPath(const QString &locale = QString()) const;
 
-    void             LoadTranslation(const QString &locale);
+    void             loadTranslations(const QString &locale);
 
     Unit             patternUnit() const;
     const Unit      *patternUnitP() const;

@@ -290,7 +290,7 @@ VApplication::VApplication(int &argc, char **argv)
 
     // making sure will create new instance...just in case we will ever do 2 objects of VApplication
     VCommandLine::Reset();
-    LoadTranslation(QLocale().name());// By default the console version uses system locale
+    loadTranslations(QLocale().name());// By default the console version uses system locale
     VCommandLine::Get(*this);
     undoStack = new QUndoStack(this);
 }
@@ -587,7 +587,7 @@ void VApplication::InitOptions()
 
     if (VApplication::IsGUIMode())// By default console version uses system locale
     {
-        LoadTranslation(Seamly2DSettings()->GetLocale());
+        loadTranslations(Seamly2DSettings()->GetLocale());
     }
 
     static const char * GENERIC_ICON_TO_CHECK = "document-open";

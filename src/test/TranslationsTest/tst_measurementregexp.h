@@ -88,13 +88,10 @@ private:
     Q_DISABLE_COPY(TST_MeasurementRegExp)
 
     quint32               m_systemCode;
-    QString               m_system;
     QPointer<QTranslator> m_pmsTranslator;
 
-    void    TestCombinations(int systemCounts, const QStringList &locales) const;
-
-    int     LoadMeasurements(const QString &checkedSystem, const QString &checkedLocale);
-    void    RemoveTrMeasurements(const QString &checkedSystem, const QString &checkedLocale);
+    int     LoadMeasurements(const QString &checkedLocale);
+    void    RemoveTrMeasurements(const QString &checkedLocale);
 };
 
 #endif // TST_MEASUREMENTREGEXP_H

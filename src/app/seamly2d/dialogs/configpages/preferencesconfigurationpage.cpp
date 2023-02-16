@@ -91,7 +91,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     }
     connect(ui->selectionSound_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
-        m_selectionSoundChanged = true;        
+        m_selectionSoundChanged = true;
         QSound::play("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav");
     });
 
@@ -280,7 +280,7 @@ void PreferencesConfigurationPage::Apply()
         settings->SetPMSystemCode(code);
         m_systemChanged = false;
 
-        qApp->LoadTranslation(locale);
+        qApp->loadTranslations(locale);
     }
     if (m_unitChanged)
     {
