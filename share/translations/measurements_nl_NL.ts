@@ -13,7 +13,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="215"/>
         <source>Height: Total</source>
         <comment>Full measurement name.</comment>
-        <translation>hoogteTotaal</translation>
+        <translation>Hoogte: Totaal</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="216"/>
@@ -37,25 +37,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="223"/>
         <source>Vertical distance from the Neck Back (cervicale vertebra) to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand van rugnek(cervicale vertebra) naar vloer.</translation>
+        <translation>Verticale afstand van rugnek(nekwervel) naar vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="227"/>
         <source>height_scapula</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hoogte_scapula</translation>
+        <translation>hoogte_schouderblad</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="229"/>
         <source>Height: Scapula</source>
         <comment>Full measurement name.</comment>
-        <translation>Hoogte: Scapula</translation>
+        <translation>Hoogte: Schouderblad</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="230"/>
         <source>Vertical distance from the Scapula (Blade point) to the floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf de Scapula( schouderbladpunt) naar de vloer.</translation>
+        <translation>Verticale afstand vanaf de schouderbladpunt naar de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="234"/>
@@ -97,7 +97,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="248"/>
         <source>height_hip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Heup_hoogte</translation>
+        <translation>hoogte_heup</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="250"/>
@@ -133,7 +133,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="262"/>
         <source>height_knee</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Knie_hoogte</translation>
+        <translation>hoogte_knie</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="264"/>
@@ -151,7 +151,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="269"/>
         <source>height_calf</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Kuit_hoogte</translation>
+        <translation>hoogte_kuit</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="271"/>
@@ -169,7 +169,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="276"/>
         <source>height_ankle_high</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Hoge_enkel_hoogte</translation>
+        <translation>hoogte_enkel_hoog</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="278"/>
@@ -187,7 +187,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="283"/>
         <source>height_ankle</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>enkel_hoogte</translation>
+        <translation>hoogte_enkel</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="285"/>
@@ -211,7 +211,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="292"/>
         <source>Height: Highhip</source>
         <comment>Full measurement name.</comment>
-        <translation>Hoogte: Hogeheup</translation>
+        <translation>Hoogte: Hoge heup</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="293"/>
@@ -241,7 +241,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="304"/>
         <source>height_bustpoint</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>bustpunt_hoogte</translation>
+        <translation>hoogte_bustepunt</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="306"/>
@@ -325,7 +325,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="335"/>
         <source>Vertical distance from the Neck Back (cervicale vertebra) to the fold at the back of the knee.</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf de rugzijde van de nek( cervicale vertebra)tot aan vouw van de achterkant van de knie.</translation>
+        <translation>Verticale afstand vanaf de rugzijde van de nek(nekwervel) tot aan vouw van de achterkant van de knie.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="339"/>
@@ -355,7 +355,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="349"/>
         <source>Height: Waist Side to Hip</source>
         <comment>Full measurement name.</comment>
-        <translation>hoogtezijkant taille naar heup</translation>
+        <translation>Hoogte: zijkant Taille naar Heup</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="350"/>
@@ -403,19 +403,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="371"/>
         <source>Vertical height from Waist Back to floor.</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Verticale afstand van Taille achter tot de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="386"/>
         <source>width_shoulder</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_breedte</translation>
+        <translation>breedte_schouder</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="388"/>
         <source>Width: Shoulder</source>
         <comment>Full measurement name.</comment>
-        <translation>Breedte: schouder</translation>
+        <translation>Breedte: Schouder</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="389"/>
@@ -427,13 +427,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="393"/>
         <source>width_bust</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>buste_wijdte</translation>
+        <translation>breedte_buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="395"/>
         <source>Width: Bust</source>
         <comment>Full measurement name.</comment>
-        <translation>Wijdte: Buste</translation>
+        <translation>Breedte: Buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="396"/>
@@ -445,13 +445,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="400"/>
         <source>width_waist</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>taille_wijdte</translation>
+        <translation>breedte_taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="402"/>
         <source>Width: Waist</source>
         <comment>Full measurement name.</comment>
-        <translation>Wijdte: Taille</translation>
+        <translation>Breedte: Taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="403"/>
@@ -463,13 +463,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="407"/>
         <source>width_hip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>heup_wijdte</translation>
+        <translation>breedte_heup</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="409"/>
         <source>Width: Hip</source>
         <comment>Full measurement name.</comment>
-        <translation>Wijdte: Heup</translation>
+        <translation>Breedte: Heup</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="410"/>
@@ -481,7 +481,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="414"/>
         <source>width_abdomen_to_hip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>breedte_van_buik_naar_heup</translation>
+        <translation>breedte_buik_naar_heup</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="416"/>
@@ -583,13 +583,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="480"/>
         <source>hand_palm_width</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hand_palm_wijdte</translation>
+        <translation>hand_palm_breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="482"/>
         <source>Hand: Palm width</source>
         <comment>Full measurement name.</comment>
-        <translation>Hand: Palm wijdte</translation>
+        <translation>Hand: Palm breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="483"/>
@@ -613,7 +613,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="489"/>
         <source>Circumference where Palm is widest.</source>
         <comment>Full measurement description.</comment>
-        <translation>Omtrek van de palm van de hand waar het breedst is.</translation>
+        <translation>Omtrek waar de palm van de hand het breedst is.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="492"/>
@@ -637,13 +637,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="511"/>
         <source>foot_width</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>voet_wijdte</translation>
+        <translation>voet_breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="513"/>
         <source>Foot: Width</source>
         <comment>Full measurement name.</comment>
-        <translation>Voet: Wijdte</translation>
+        <translation>Voet: Breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="514"/>
@@ -655,7 +655,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="517"/>
         <source>foot_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Voet_lengte</translation>
+        <translation>voet_lengte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="519"/>
@@ -691,19 +691,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="531"/>
         <source>foot_instep_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>voet_instap_omtrek</translation>
+        <translation>voet_wreef_omtrek</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="533"/>
         <source>Foot: Instep circumference</source>
         <comment>Full measurement name.</comment>
-        <translation>Voet: Instap omtrek</translation>
+        <translation>Voet: omtrek wreef</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="534"/>
         <source>Measure circumference at tallest part of instep.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meet de omtrek op het grootste deel van de instap.</translation>
+        <translation>Meet de omtrek op het hoogste deel van de wreef.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="550"/>
@@ -721,7 +721,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="553"/>
         <source>Measure circumference at largest level of head.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meet de omtrek op het grootste deel van het hoofd.</translation>
+        <translation>Meet de omtrek van het hoofd waar die het wijdst is.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="557"/>
@@ -757,19 +757,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="567"/>
         <source>Horizontal distance from front of forehead to back of head.</source>
         <comment>Full measurement description.</comment>
-        <translation>Horizontale afstand van voorkant tot aan de achterkant van het hoofd.</translation>
+        <translation>Horizontale afstand van voorhoofd tot aan de achterkant van het hoofd.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="571"/>
         <source>head_width</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hoofd_wijdte</translation>
+        <translation>hoofd_breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="573"/>
         <source>Head: Width</source>
         <comment>Full measurement name.</comment>
-        <translation>Hoofd: Wijdte</translation>
+        <translation>Hoofd: Breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="574"/>
@@ -781,7 +781,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="578"/>
         <source>head_crown_to_neck_back</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hoofd_kuin_naar_rug_nek</translation>
+        <translation>hoofd_kruin_naar_rug_nek</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="580"/>
@@ -865,7 +865,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="623"/>
         <source>Circumference at Highbust, following shortest distance between Armfolds across chest, high under armpits.</source>
         <comment>Full measurement description.</comment>
-        <translation>Omtrek van het hoge gedeelte van de borstkas, langs de kortste afstand kruislings langs de hoge borst, hoog onder de oksels.</translation>
+        <translation>Omtrek van het hoge gedeelte van de borstkas, langs de kortste afstand over de hoge borst, hoog onder de oksels.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="627"/>
@@ -955,7 +955,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="368"/>
         <source>height_waist_back</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hoog_taille_rug</translation>
+        <translation>hoogte_taille_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="370"/>
@@ -997,7 +997,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="673"/>
         <source>neck_arc_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_ronding_v</translation>
+        <translation>nek_ronding_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="675"/>
@@ -1033,7 +1033,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="687"/>
         <source>bust_arc_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>buste_boog_voorkant</translation>
+        <translation>buste_ronding_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="689"/>
@@ -1051,19 +1051,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="694"/>
         <source>size</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>maat</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="696"/>
         <source>Size</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Maat</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="697"/>
         <source>Same as bust_arc_f.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Zelfde als buste_ronding_voorkant.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="701"/>
@@ -1141,7 +1141,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="729"/>
         <source>hip_arc_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>heu_ronding_voorkan</translation>
+        <translation>heup_ronding_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="731"/>
@@ -1219,7 +1219,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="760"/>
         <source>Lowbust arc, front, half</source>
         <comment>Full measurement name.</comment>
-        <translation>Lagebusteronding, voorkant, voorkant</translation>
+        <translation>Lagebusteronding, voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="761"/>
@@ -1573,7 +1573,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="907"/>
         <source>hip_arc_half_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>halve_heup_ronding_</translation>
+        <translation>halve_heup_ronding</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="909"/>
@@ -1603,19 +1603,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="922"/>
         <source>body_armfold_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>romp_armvouw_omtrek</translation>
+        <translation>romp_armplooi_omtrek</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="924"/>
         <source>Body circumference at Armfold level</source>
         <comment>Full measurement name.</comment>
-        <translation>Romp omtrek op armvouw level</translation>
+        <translation>Romp omtrek op de hoogte van de armplooi</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="925"/>
         <source>Measure around arms and torso at Armfold level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meten rond armen en torso op armvouw level.</translation>
+        <translation>Meten rond armen en torso ter hoogte van de armplooi.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="929"/>
@@ -1627,13 +1627,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="931"/>
         <source>Body circumference at Bust level</source>
         <comment>Full measurement name.</comment>
-        <translation>Romp omtrek op buste level</translation>
+        <translation>Romp omtrek ter hoogte van de buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="932"/>
         <source>Measure around arms and torso at Bust level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meten rond armen en torso op buste level.</translation>
+        <translation>Meten rond armen en torso ter hoogte van de buste.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="936"/>
@@ -1669,7 +1669,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="947"/>
         <source>Measurement at Hip level, including the depth of the Abdomen. (Hip arc, back + Hip arc with abdomen, front).</source>
         <comment>Full measurement description.</comment>
-        <translation>Meten op heup level, inclusief de diepte( lees uitsteken) van de onderbuik.( Heup ronding, rug + heup ronding met onderbuik, voorkant).</translation>
+        <translation>Meten ter hoogte van de heup, inclusief het uitsteken van de onderbuik.( Heup ronding, rug + heup ronding met onderbuik, voorkant).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="964"/>
@@ -1687,13 +1687,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="971"/>
         <source>neck_front_to_waist_flat_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_voorkant_naar_platte_voorkant</translation>
+        <translation>nek_naar_taille_vlak_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="973"/>
         <source>Neck Front to Waist Front flat</source>
         <comment>Full measurement name.</comment>
-        <translation>Voorkant nek naar platte voorkant taille</translation>
+        <translation>Voorkant nek naar voorkant taille, vlak gemeten</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="974"/>
@@ -1711,7 +1711,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="980"/>
         <source>Armpit to Waist Side</source>
         <comment>Full measurement name.</comment>
-        <translation>Oksel naar zijkant TAille</translation>
+        <translation>Oksel naar zijkant Taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="981"/>
@@ -1723,7 +1723,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="984"/>
         <source>shoulder_tip_to_waist_side_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_punt_naar_zijkant_taille_voorkant</translation>
+        <translation>schouderpunt_naar_zijkant_taille_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="986"/>
@@ -1735,7 +1735,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="987"/>
         <source>From Shoulder Tip, curving around Armscye Front, then down to Waist Side.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt, om de voorkant armvouw gedraaid, daarna naar beneden naar zijkant taille.</translation>
+        <translation>Van schouderpunt, om de voorkant armplooi gedraaid, daarna naar beneden naar zijkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="991"/>
@@ -1747,13 +1747,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="993"/>
         <source>Neck Side to Waist level, front</source>
         <comment>Full measurement name.</comment>
-        <translation>Zijkant nek naar taille level, voorkant</translation>
+        <translation>Zijkant nek naar taille, voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="994"/>
         <source>From Neck Side straight down front to Waist level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek direct naar beneden voorkant taille leve.</translation>
+        <translation>Van zijkant nek direct naar beneden tot voorkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="998"/>
@@ -1771,7 +1771,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1001"/>
         <source>From Neck Side over Bustpoint to Waist level, forming a straight line.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek over bustepunt naar taillelevel, een rechte lijn vormend.</translation>
+        <translation>Van zijkant nek over bustepunt naar taille, een rechte lijn vormend.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1005"/>
@@ -1789,7 +1789,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1008"/>
         <source>Neck Front down to Highbust Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Voorkant hogebuste naar beneden naar voorkant hogebuste.</translation>
+        <translation>Voorkant nek naar beneden naar voorkant hogebuste.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1011"/>
@@ -1831,7 +1831,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1030"/>
         <source>From Bust Front down to Waist level. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Bust Front&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van voorkant buste naar beneden naar taille level. (&apos;voorkant nek naar voorkant taille&apos; - &apos;Voorkant nek naar voorkant buste&apos;).</translation>
+        <translation>Van voorkant buste naar beneden naar taille. (&apos;voorkant nek naar voorkant taille&apos; - &apos;Voorkant nek naar voorkant buste&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1035"/>
@@ -1873,25 +1873,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1048"/>
         <source>shoulder_tip_to_armfold_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_punt_naar_armvouw_voorkant</translation>
+        <translation>schouder_punt_naar_armplooi_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1050"/>
         <source>Shoulder Tip to Armfold Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouderpunt naar voorkant armvouw</translation>
+        <translation>Schouderpunt naar voorkant armplooi</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1051"/>
         <source>From Shoulder Tip around Armscye down to Armfold Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt tot voorkant armplooi over lijn mouwinzet.</translation>
+        <translation>Van schouderpunt tot voorkant armplooi over lijn armsgat.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1055"/>
         <source>neck_side_to_bust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_zijkant_tot_borst_v</translation>
+        <translation>nek_zijkant_tot_borst_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1057"/>
@@ -1927,7 +1927,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1069"/>
         <source>shoulder_center_to_highbust_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_midden_tot_hogeborst_v</translation>
+        <translation>schouder_midden_tot_hogeborst_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1071"/>
@@ -1945,7 +1945,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1076"/>
         <source>shoulder_tip_to_waist_side_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_punt_tot_taille_zijkant</translation>
+        <translation>schouderpunt_tot_taille_zijkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1078"/>
@@ -1957,25 +1957,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1079"/>
         <source>From Shoulder Tip, curving around Armscye Back, then down to Waist Side.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt, rondom armplooi rug, tot aan zijkant taille.</translation>
+        <translation>Van schouderpunt, rondom armsgat rug, tot aan zijkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1083"/>
         <source>neck_side_to_waist_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_zijkant_tot_taille_a</translation>
+        <translation>nek_zijkant_tot_taille_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1085"/>
         <source>Neck Side to Waist level, back</source>
         <comment>Full measurement name.</comment>
-        <translation>Zijkant nek tot taille, achter</translation>
+        <translation>Zijkant nek tot taille, rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1086"/>
         <source>From Neck Side straight down back to Waist level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek direct naar beneden achterkant taille level.</translation>
+        <translation>Van zijkant nek direct naar beneden achterkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1090"/>
@@ -1993,7 +1993,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1093"/>
         <source>From Neck Back down to Waist Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van Nek rug naar beneden naar achterkant van taille level.</translation>
+        <translation>Van Nek rug naar taille rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1096"/>
@@ -2005,13 +2005,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1098"/>
         <source>Neck Side to Waist level, through Scapula</source>
         <comment>Full measurement name.</comment>
-        <translation>Nek zijde naar taille level, via schouderblad</translation>
+        <translation>Nek zijde naar taille, over schouderblad</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1099"/>
         <source>From Neck Side across Scapula down to Waist level, forming a straight line.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nekzijde schouderblad kruisend naar beneden naar taille level, een rechte lijn vormend.</translation>
+        <translation>Van nekzijde schouderblad kruisend naar beneden naar taille, een rechte lijn vormend.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1104"/>
@@ -2047,7 +2047,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1113"/>
         <source>From Highbust Back down to Waist Back. (&apos;Neck Back to Waist Back&apos; - &apos;Neck Back to Highbust Back&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van hogebust rug naar beneden naar taille rug.(&apos;Nek rug naar taille rug&apos; - &apos;Nek rug naar hogebust rug&apos;).</translation>
+        <translation>Van hogebuste rug naar beneden naar taille rug.(&apos;Nek rug naar taille rug&apos; - &apos;Nek rug naar hogebust rug&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1118"/>
@@ -2065,7 +2065,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1121"/>
         <source>From Neck Back down to Bust Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nek rug naar beneden buste rug.</translation>
+        <translation>Van nek rug naar buste rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1124"/>
@@ -2083,7 +2083,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1127"/>
         <source>From Bust Back down to Waist level. (&apos;Neck Back to Waist Back&apos; - &apos;Neck Back to Bust Back&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van hogebust rug naar beneden naar taille rug. (&apos;Nek rug naar taille rug&apos; - &apos;Nek rug naar hogebust rug&apos;).</translation>
+        <translation>Van hogebuste rug naar taille rug. (&apos;Nek rug naar taille rug&apos; - &apos;Nek rug naar hogebust rug&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1132"/>
@@ -2101,25 +2101,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1135"/>
         <source>From Lowbust Back down to Waist Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van lagebuste rug naar beneden taille rug.</translation>
+        <translation>Van lagebuste rug naar taille rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1138"/>
         <source>shoulder_tip_to_armfold_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_punt_naar_armvouw_rug</translation>
+        <translation>schouderpunt_naar_armplooi_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1140"/>
         <source>Shoulder Tip to Armfold Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouderpunt naar armvouw rug</translation>
+        <translation>Schouderpunt naar armplooi rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1141"/>
         <source>From Shoulder Tip around Armscye down to Armfold Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt rond armplooi naar beneden naar armvouw rug.</translation>
+        <translation>Van schouderpunt rond armsgat naar armplooi rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1145"/>
@@ -2131,13 +2131,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1147"/>
         <source>Neck Side to Bust level, back</source>
         <comment>Full measurement name.</comment>
-        <translation>Nek zijde naar buste level, rug</translation>
+        <translation>Nek zijde naar buste rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1148"/>
         <source>From Neck Side straight down back to Bust level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nek zijde direct naar rug beneden naar buste niveau.</translation>
+        <translation>Van nek zijde direct naar rug buste niveau.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1152"/>
@@ -2149,13 +2149,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1154"/>
         <source>Neck Side to Highbust level, back</source>
         <comment>Full measurement name.</comment>
-        <translation>Nek zijde naar hogebuste level, rug</translation>
+        <translation>Nek zijde naar hogebuste niveau, rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1155"/>
         <source>From Neck Side straight down back to Highbust level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nek zijde direct naar rug beneden naar hogebuste level.</translation>
+        <translation>Van nek zijde direct naar rug hogebuste niveau.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1159"/>
@@ -2167,13 +2167,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1161"/>
         <source>Shoulder center to Highbust level, back</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouder midden naar hogebuste level, rug</translation>
+        <translation>Schouder midden naar hogebuste, rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1162"/>
         <source>From mid-Shoulder down back to Highbust level, aimed through Scapula.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van mid-schouder naar rug beneden naar hogebuste level, gericht door schouderblad.</translation>
+        <translation>Van mid-schouder naar hogebuste niveau, over schouderblad.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1166"/>
@@ -2245,7 +2245,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1187"/>
         <source>From Waist Back down to Highhip Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van Taille rug naar beneden naar hogeheup rug.</translation>
+        <translation>Van Taille rug naar hogeheup rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1190"/>
@@ -2287,7 +2287,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1206"/>
         <source>Shoulder Slope Angle from Neck Side</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouderhelling hoek van nek zijde</translation>
+        <translation>Hoek van Schouderhelling aan nekzijde</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1207"/>
@@ -2323,7 +2323,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1221"/>
         <source>Shoulder Slope Angle from Neck Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouder helling hoek van nek rug</translation>
+        <translation>Schouder helling hoek aan nek rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1222"/>
@@ -2341,7 +2341,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1229"/>
         <source>Shoulder Slope length from Neck Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouder helling lengte van nek rug</translation>
+        <translation>Schouder helling lengte aan nek rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1230"/>
@@ -2359,7 +2359,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1236"/>
         <source>Shoulder Slope Angle from Shoulder Tip</source>
         <comment>Full measurement name.</comment>
-        <translation>Schouder helling hoek van schouder punt</translation>
+        <translation>Schouder helling hoek aan schouder punt</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1238"/>
@@ -2371,37 +2371,37 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1243"/>
         <source>neck_back_to_across_back</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_rug_gekruist_naar_rug</translation>
+        <translation>nek_rug_naar_rugbreedtelijn</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1245"/>
         <source>Neck Back to Across Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Nek rug gekruist naar rug</translation>
+        <translation>Nek rug verticaal naar de lijn van rugbreedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1246"/>
         <source>From neck back, down to level of Across Back measurement.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nek rug, naar beneden naar level van gekruiste gemeten rug.</translation>
+        <translation>Van nek rug, verticaal naar de lijn waarover rugbreedte wordt gemeten.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1250"/>
         <source>across_back_to_waist_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Gekruist_rug_naar_taille_rug</translation>
+        <translation>rugbreedte_lijn_naar_taille_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1252"/>
         <source>Across Back to Waist back</source>
         <comment>Full measurement name.</comment>
-        <translation>Gekruiste rug naar taille rug</translation>
+        <translation>Rugbreedtelijn naar taille rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1253"/>
         <source>From middle of Across Back down to Waist back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van het midden van gekruiste rug naar beneden naar taille rug.</translation>
+        <translation>Van het midden van de lijn waarover rugbreedte wordt gemeten verticaal naar taille rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1269"/>
@@ -2437,43 +2437,43 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1278"/>
         <source>From Shoulder Tip to Shoulder Tip, across front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt naar schouderpunt, kruislings voorkant.</translation>
+        <translation>Van schouderpunt naar schouderpunt, langs voorkant.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1282"/>
         <source>across_chest_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Gekruist_borst_voorkant</translation>
+        <translation>Breedte_borst_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1284"/>
         <source>Across Chest</source>
         <comment>Full measurement name.</comment>
-        <translation>Gekruist borst</translation>
+        <translation>Breedte borst</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1285"/>
         <source>From Armscye to Armscye at narrowest width across chest.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van oksel naar oksel op het smalste breedte gekruist over borst.</translation>
+        <translation>Van armsgat naar armsgat op de smalste breedte over borst.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1289"/>
         <source>armfold_to_armfold_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Armvouw_naar_armvouw_voorkant</translation>
+        <translation>Armplooi_naar_armplooi_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1291"/>
         <source>Armfold to Armfold, front</source>
         <comment>Full measurement name.</comment>
-        <translation>Armvouw naar armvouw, voorkant</translation>
+        <translation>Armplooi naar armplooi, voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1292"/>
         <source>From Armfold to Armfold, shortest distance between Armfolds, not parallel to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van armvouw naar Armvouw, kortste afstand tussen armvouw, niet paralell aan de vloer.</translation>
+        <translation>Van armplooi naar Armplooi, kortste afstand tussen armplooien, niet paralell aan de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1297"/>
@@ -2497,19 +2497,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1305"/>
         <source>across_chest_half_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>gekruist_chest_helft_voorkant</translation>
+        <translation>breedte_borst_helft_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1307"/>
         <source>Across Chest, half</source>
         <comment>Full measurement name.</comment>
-        <translation>Over borst, helft</translation>
+        <translation>Breedte borst, helft</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1308"/>
         <source>Half of &apos;Across Chest&apos;. (&apos;Across Chest&apos; / 2).</source>
         <comment>Full measurement description.</comment>
-        <translation>Helft van &apos;Over borst&apos;. (&apos;Over borst&apos; / 2).</translation>
+        <translation>Helft van &apos;Breedte borst&apos;. (&apos;Breedte borst&apos; / 2).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1312"/>
@@ -2527,43 +2527,43 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1315"/>
         <source>From Shoulder Tip to Shoulder Tip, across the back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt naar schouderpunt, kruislings langs de rug.</translation>
+        <translation>Van schouderpunt naar schouderpunt, over de rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1319"/>
         <source>across_back_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>over_rug_rug</translation>
+        <translation>breedte_rug_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1321"/>
         <source>Across Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Over borst</translation>
+        <translation>Breedte Rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1322"/>
         <source>From Armscye to Armscye at the narrowest width of the back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van oksel naar oksel op het smalste breedte van de rug.</translation>
+        <translation>Van armsgat naar armsgat op de smalste breedte van de rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1326"/>
         <source>armfold_to_armfold_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>armvouw_naar_armvouw_rug</translation>
+        <translation>armplooi_naar_armplooi_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1328"/>
         <source>Armfold to Armfold, back</source>
         <comment>Full measurement name.</comment>
-        <translation>Armvouw naar armvouw, rug</translation>
+        <translation>Armplooi naar armplooi, rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1329"/>
         <source>From Armfold to Armfold across the back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van armvouw naar armvouw gekruist langs de rug.</translation>
+        <translation>Van armplooi naar armplooi over de rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1333"/>
@@ -2587,19 +2587,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1341"/>
         <source>across_back_half_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>gekruist_rug_helft_rug</translation>
+        <translation>breedte_rug_helft_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1343"/>
         <source>Across Back, half</source>
         <comment>Full measurement name.</comment>
-        <translation>Gekruist rug, helft</translation>
+        <translation>Breedte rug, helft</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1344"/>
         <source>Half of &apos;Across Back&apos;. (&apos;Across Back&apos; / 2).</source>
         <comment>Full measurement description.</comment>
-        <translation>Helft van &apos;gekruist rug&apos;. (&apos;Gekruist rug&apos; / 2).</translation>
+        <translation>Helft van &apos;breedte rug&apos;. (&apos;Breedte rug&apos; / 2).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1348"/>
@@ -2641,19 +2641,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1360"/>
         <source>neck_width</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_wijdte</translation>
+        <translation>nek_breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1362"/>
         <source>Neck Width</source>
         <comment>Full measurement name.</comment>
-        <translation>Nek wijdte</translation>
+        <translation>Nek breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1363"/>
         <source>Measure between the &apos;legs&apos; of an unclosed necklace or chain draped around the neck.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meten tussen de uiteinde van een niet-afgesloten halsband of ketting gedrapeerd rond de nek.</translation>
+        <translation>Meten tussen de uiteinden van een niet-afgesloten halsband of ketting gedrapeerd rond de nek.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1380"/>
@@ -2707,7 +2707,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1395"/>
         <source>From Bustpoint down to Lowbust level, following curve of bust or chest.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van bustepunt naar beneden naar lage buste level, de ronding volgend van de buste of borstkas.</translation>
+        <translation>Van bustepunt verticaal naarlage buste, de ronding volgend van de buste of borstkas.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1399"/>
@@ -2719,13 +2719,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1401"/>
         <source>Bustpoint to Waist level</source>
         <comment>Full measurement name.</comment>
-        <translation>Bustepunt naar taille level</translation>
+        <translation>Bustepunt naar taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1402"/>
         <source>From Bustpoint to straight down to Waist level, forming a straight line (not curving along the body).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van bustepunt naar recht naar beneden tot taille level, een rechte lijn vormend (niet gebogen langs het lichaam).</translation>
+        <translation>Van bustepunt recht naar beneden tot tailleniveau, een rechte lijn vormend (niet gebogen langs het lichaam).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1407"/>
@@ -2755,13 +2755,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1416"/>
         <source>Bustpoint, Neck Side to Waist level</source>
         <comment>Full measurement name.</comment>
-        <translation>Bustepunt, zijkant nek naar taille level</translation>
+        <translation>Bustepunt, zijkant nek naar taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1417"/>
         <source>From Neck Side to Bustpoint, then straight down to Waist level. (&apos;Neck Side to Bustpoint&apos; + &apos;Bustpoint to Waist level&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van de zijkant van de nek naar Bustepunt, dan recht naar beneden tot taille level. (&apos;Zijkant nek naar bustepunt&apos; + &apos;Bustepunt op taille level&apos;).</translation>
+        <translation>Van de zijkant van de nek naar Bustepunt, dan recht naar beneden tot niveau taille. (&apos;Zijkant nek naar bustepunt&apos; + &apos;Bustepunt naar taille&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1422"/>
@@ -2839,19 +2839,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1449"/>
         <source>bustpoint_to_neck_front</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation type="unfinished"></translation>
+        <translation>bustepunt_naar_nek_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1451"/>
         <source>Bustpoint to Neck Front</source>
         <comment>Full measurement name.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Bustepunt naar voorkant nek (hals)</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1452"/>
         <source>From Neck Front to Bustpoint.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Van voorkant nek (hals) naar bustepunt.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1467"/>
@@ -2911,7 +2911,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1488"/>
         <source>shoulder_tip_to_waist_back</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_punt_naar_taille_rug</translation>
+        <translation>schouderpunt_naar_taille_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1490"/>
@@ -2929,7 +2929,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1495"/>
         <source>shoulder_tip_to_waist_b_1in_offset</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>schouder_punt_naar_taille_rug_1in_offset</translation>
+        <translation>schouderpunt_naar_taille_rug_1in_offset</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1497"/>
@@ -2941,7 +2941,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1499"/>
         <source>Mark 1in (2.54cm) outward from Waist Back along Waist level. Measure from Shoulder Tip diagonal to mark.</source>
         <comment>Full measurement description.</comment>
-        <translation>Markeer 1 inh (2.54cm) naar buiten van taille rug terug via taille level. Meet van het schouderpunt diagonaal naar markeerpunt.</translation>
+        <translation>Markeer 1 inch (2.54cm) naar buiten van taille rug op de taillelijn. Meet van het schouderpunt diagonaal naar markeerpunt.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1503"/>
@@ -2959,7 +2959,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1506"/>
         <source>From Neck Back diagonal across back to Waist Side.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van nek rug diagonaal via rug naar zjikant taille.</translation>
+        <translation>Van nek rug diagonaal over rug naar zijkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1510"/>
@@ -2983,19 +2983,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1517"/>
         <source>neck_side_to_armfold_f</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_zijkant_naar_armvouw_voorkant</translation>
+        <translation>nek_zijkant_naar_armplooi_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1519"/>
         <source>Neck Side to Armfold Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Zijkant nek naar voorkant armvouw</translation>
+        <translation>Zijkant nek naar voorkant armplooi</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1520"/>
         <source>From Neck Side diagonal to Armfold Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek diagonaal naar voorkant armvouw.</translation>
+        <translation>Van zijkant nek diagonaal naar voorkant armplooi.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1524"/>
@@ -3037,19 +3037,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1538"/>
         <source>neck_side_to_armfold_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_zijkant_naar_armvouw_rug</translation>
+        <translation>nek_zijkant_naar_armplooi_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1540"/>
         <source>Neck Side to Armfold Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Zjikant nek naar rugkant armvouw</translation>
+        <translation>Zjikant nek naar rugkant armplooi</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1541"/>
         <source>From Neck Side diagonal to Armfold Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek diagonaal naar rugkant armvouw.</translation>
+        <translation>Van zijkant nek diagonaal naar rugkant armplooi.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1545"/>
@@ -3091,7 +3091,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1571"/>
         <source>arm_shoulder_tip_to_wrist_bent</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Arm_schouder_punt_naar_pols_gebogen</translation>
+        <translation>Arm_schouderpunt_naar_pols_gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1573"/>
@@ -3109,7 +3109,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1578"/>
         <source>arm_shoulder_tip_to_elbow_bent</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_schouder_punt_naar_elleboog_gebogen</translation>
+        <translation>arm_schouderpunt_naar_elleboog_gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1580"/>
@@ -3145,13 +3145,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1594"/>
         <source>arm_elbow_circ_bent</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_elleboog_circulair_gebogen</translation>
+        <translation>arm_elleboog_omtrek_gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1596"/>
         <source>Arm: Elbow circumference, bent</source>
         <comment>Full measurement name.</comment>
-        <translation>Arm: Omtrek ellebogen, gebogen</translation>
+        <translation>Arm: Omtrek elleboog, gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1597"/>
@@ -3163,7 +3163,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1600"/>
         <source>arm_shoulder_tip_to_wrist</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_schouder_punt_naar_pols</translation>
+        <translation>arm_schouderpunt_naar_pols</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1602"/>
@@ -3181,7 +3181,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1607"/>
         <source>arm_shoulder_tip_to_elbow</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_schouder_punt_naar_ellebooog</translation>
+        <translation>arm_schouderpunt_naar_ellebooog</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1609"/>
@@ -3283,7 +3283,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1647"/>
         <source>Arm circumference at Armpit level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Arm: omtrek op oksel level.</translation>
+        <translation>Arm omtrek ter hoogte van de oksel.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1650"/>
@@ -3301,7 +3301,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1653"/>
         <source>Arm circumference at Bicep level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Arm omtrek op biceps level.</translation>
+        <translation>Arm omtrek op de biceps.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1656"/>
@@ -3355,25 +3355,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1672"/>
         <source>Wrist circumference.</source>
         <comment>Full measurement description.</comment>
-        <translation>Pols omtrek.</translation>
+        <translation>Polsomtrek.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1675"/>
         <source>arm_shoulder_tip_to_armfold_line</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_schouder_punt_naar_armvouw_ljin</translation>
+        <translation>arm_schouder_punt_naar_armplooi_ljin</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1677"/>
         <source>Arm: Shoulder Tip to Armfold line</source>
         <comment>Full measurement name.</comment>
-        <translation>Arm: schouderpunt naar armvouwlijn</translation>
+        <translation>Arm: schouderpunt naar armplooilijn</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1678"/>
         <source>From Shoulder Tip down to Armpit level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van schouderpunt naar beneden tot op oksel level.</translation>
+        <translation>Van schouderpunt naar beneden tot het niveau van de oksel.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1681"/>
@@ -3397,49 +3397,49 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1689"/>
         <source>arm_neck_side_to_finger_tip</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_nek_zijkant_naar_vinger_tip</translation>
+        <translation>arm_nek_zijkant_naar_vingertop</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1691"/>
         <source>Arm: Neck Side to Finger Tip</source>
         <comment>Full measurement name.</comment>
-        <translation>Arm: zijkant nek naar vingertip</translation>
+        <translation>Arm: zijkant nek naar vingertop</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1692"/>
         <source>From Neck Side down arm to tip of middle finger. (&apos;Shoulder Length&apos; + &apos;Arm: Shoulder Tip to Wrist&apos; + &apos;Hand: Length&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek naar beneden via tot tip van de middelvinger. (&apos;Schouderlengte&apos; + &apos;Arm: schouderpunt naar pols&apos; + &apos;Hand: lengte&apos;).</translation>
+        <translation>Van zijkant nek naar beneden via de arm tot top van de middelvinger. (&apos;Schouderlengte&apos; + &apos;Arm: schouderpunt naar pols&apos; + &apos;Hand: lengte&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1698"/>
         <source>armscye_circ</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>oksel_omtrek</translation>
+        <translation>armsgat_omtrek</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1700"/>
         <source>Armscye: Circumference</source>
         <comment>Full measurement name.</comment>
-        <translation>Arminzet: omtrek</translation>
+        <translation>Armsgat: omtrek</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1701"/>
         <source>Let arm hang at side. Measure Armscye circumference through Shoulder Tip and Armpit.</source>
         <comment>Full measurement description.</comment>
-        <translation>Laat de arm langs je zijde hangen. Meet de omtrek van je arminzet via schouderpunt en oksel.</translation>
+        <translation>Laat de arm langs je zijde hangen. Meet de omtrek van de armsgat via schouderpunt en oksel.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1706"/>
         <source>armscye_length</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arminzet_lengte</translation>
+        <translation>armsgat_lengte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1708"/>
         <source>Armscye: Length</source>
         <comment>Full measurement name.</comment>
-        <translation>Arminzet: lengte</translation>
+        <translation>Armsgat: lengte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1709"/>
@@ -3451,19 +3451,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1713"/>
         <source>armscye_width</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>Arminzet_wijdte</translation>
+        <translation>Armsgat_breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1715"/>
         <source>Armscye: Width</source>
         <comment>Full measurement name.</comment>
-        <translation>Arminzet: wijdte</translation>
+        <translation>Armsgat: breedte</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1716"/>
         <source>Horizontal distance between Armscye Front and Armscye Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Horizontale afstand tussen voorkant arminzet en rugkant arminzet.</translation>
+        <translation>Horizontale afstand tussen voorkant armsgat en rugkant armsgat.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1720"/>
@@ -3481,7 +3481,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1723"/>
         <source>From Neck Side over Shoulder Tip down to Elbow. (Shoulder length + Arm: Shoulder Tip to Elbow).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant nek over het schouderpunt naar beneden tot elleboog. (Schouderlengte + Arm: schouderpunt tot elleboog).</translation>
+        <translation>Van zijkant nek over de schouderpunt tot elleboog. (Schouderlengte + Arm: schouderpunt tot elleboog).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1739"/>
@@ -3499,25 +3499,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1742"/>
         <source>Stand feet close together. Measure from crotch level (touching body, no extra space) down to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Zet je voeten tegen elkaar. Meet vanaf kruis level (op het lichaam, zonder extra ruimte) naar beneden naar de vloer.</translation>
+        <translation>Zet je voeten tegen elkaar. Meet vanaf het kruis (op het lichaam, zonder extra ruimte) tot de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1833"/>
         <source>From Waist Side along curve to Hip level then straight down to  Knee level. (&apos;Leg: Waist Side to Floor&apos; - &apos;Height Knee&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation>Vanaf zijkant taille via ronding naar heup level en dan rechtstreeks naar beneden tot knie level. (&apos;Been: zijkant taille naar vloer&apos; - &apos;Kniehoogte&apos;).</translation>
+        <translation>Vanaf zijkant taille via ronding naar heup en dan recht naar beneden tot het niveau van de knie. (&apos;Been: zijkant taille naar vloer&apos; - &apos;Kniehoogte&apos;).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1853"/>
         <source>Put tape across gap between buttocks at Hip level. Measure from Waist Front down between legs and up to Waist Back.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Breng tape aan over bilspleet ter hoogte van de heup. Meet van taille voorkant tussen de benen tot taille rug.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1860"/>
         <source>Put tape across gap between buttocks at Hip level. Measure from Waist Back to mid-Crotch, either at the vagina or between testicles and anus).</source>
         <comment>Full measurement description.</comment>
-        <translation></translation>
+        <translation>Breng tape aan over bilspleet ter hoogte van de heup. Meet van taille rug naar het midden van het kruis, ter hoogte van de vagina of tussen de testikels en de anus.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1873"/>
@@ -3529,13 +3529,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1906"/>
         <source>Vertical distance from Waist side down to Crotch level. Use formula (Height: Waist side - Leg: Crotch to floor).</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf zijkant taille naar beneden naar kruis level. Gebruik formule (Hoogte: zijkant taille - Been: Kruis naar vloer).</translation>
+        <translation>Verticale afstand vanaf zijkant taille naar beneden naar kruis hoogte. Gebruik formule (Hoogte: zijkant taille - Been: Kruis naar vloer).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2159"/>
         <source>This information is pulled from pattern charts in some  patternmaking systems, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</source>
         <comment>Full measurement description.</comment>
-        <translation>Deze is informatie komt uit patroontabellen van verschillende patroonteken systemen, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</translation>
+        <translation>Deze informatie komt uit patroontabellen van verschillende patroontekensystemen, bv. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1747"/>
@@ -3547,31 +3547,31 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="917"/>
         <source>Curve stiff paper around front of abdomen, tape at sides. Measure from Hip Side to Hip Side over paper across front.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Buig stijf karton rond de voorkant van de buik, maak aan de zijkant vast met tape. Meet van zijkant heup naar zijkant heup over het karton langs de voorkant.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="967"/>
         <source>From Neck Front, over tape between Breastpoints, down to Waist Front.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Van voorkant hals, over tape tussen bustepunten, naar voorkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1014"/>
         <source>From Highbust Front to Waist Front. Use tape to bridge gap between Bustpoints. (&apos;Neck Front to Waist Front&apos; - &apos;Neck Front to Highbust Front&apos;).</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Van voorkant hogebuste naar voorkant taille, over tape die overbrugt tussen bustepunten.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1022"/>
         <source>From Neck Front down to Bust Front. Requires tape to cover gap between Bustpoints.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Van voorkant hals naar voorkant buste. Overbrug met tape tussen bustepunten.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1193"/>
         <source>From Waist Back down to Hip Back. Requires tape to cover the gap between buttocks.</source>
         <comment>Full measurement description.</comment>
-        <translation type="unfinished"></translation>
+        <translation>Van taille rug naar heup rug. Gebruik tape om te overbruggen over bilspleet.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1749"/>
@@ -3583,7 +3583,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1750"/>
         <source>From Waist Side along curve to Hip level then straight down to floor.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant taille via ronding naar heup level en dan rechtstreeks naar beneden naar de vloer.</translation>
+        <translation>Van zijkant taille via ronding naar heup en dan recht naar beneden naar de vloer.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1754"/>
@@ -3595,7 +3595,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1756"/>
         <source>Leg: Thigh Upper circumference</source>
         <comment>Full measurement name.</comment>
-        <translation>Been: omtrek bovenbeen</translation>
+        <translation>Been: omtrek bovenbeen (dij)</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1757"/>
@@ -3637,7 +3637,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1772"/>
         <source>Knee circumference with straight leg.</source>
         <comment>Full measurement description.</comment>
-        <translation>Knie omtrek met gestrekte been.</translation>
+        <translation>Knie omtrek met gestrekt been.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1775"/>
@@ -3853,13 +3853,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1892"/>
         <source>Vertical distance from Waist Back to Crotch level. (&apos;Height: Waist Back&apos; - &apos;Leg: Crotch to Floor&apos;)</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf taille rug naar kruis level. (&apos;Hoogte: taille rug&apos; - &apos;Been: kruis naar vloer&apos;)</translation>
+        <translation>Verticale afstand vanaf taille rug naar kruishoogte. (&apos;Hoogte: taille rug&apos; - &apos;Been: kruis naar vloer&apos;)</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1899"/>
         <source>Vertical Distance from Waist Front to Crotch level. (&apos;Height: Waist Front&apos; - &apos;Leg: Crotch to Floor&apos;)</source>
         <comment>Full measurement description.</comment>
-        <translation>Verticale afstand vanaf voorkant taille naar kruis level. (&apos;Hoogte: voorkant taille&apos; - &apos;Been: kruis naar vloer&apos;)</translation>
+        <translation>Verticale afstand vanaf voorkant taille naar kruishoogte. (&apos;Hoogte: voorkant taille&apos; - &apos;Been: kruis naar vloer&apos;)</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1903"/>
@@ -3895,7 +3895,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1889"/>
         <source>rise_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>zithoogte_lente_rug</translation>
+        <translation>zithoogte_lengte_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1891"/>
@@ -3949,7 +3949,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1932"/>
         <source>From Waist level around Neck Back to Waist level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Vanaf taille level via rugnek naar taille level.</translation>
+        <translation>Vanaf taille niveau via rugnek naar taille niveau.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1936"/>
@@ -3967,7 +3967,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1939"/>
         <source>Torso circumference at men&apos;s natural side Abdominal Obliques indentation, if Oblique indentation isn&apos;t found then just below the Navel level.</source>
         <comment>Full measurement description.</comment>
-        <translation>Torso omtrek ter hoogte van man&apos;s natuurlijke schuine buikspierenrondingen, wanneer schuine buikspierrondingen er niet zijn dan net onder de navel level.</translation>
+        <translation>Torso omtrek ter hoogte van &apos;s mans natuurlijke schuine buikspierenrondingen, wanneer schuine buikspierrondingen er niet zijn dan net onder de navel.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1944"/>
@@ -3985,7 +3985,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1947"/>
         <source>From Side to Side at the Natural Waist level, across the front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant naar zijkant op natuurlijke taille level, via de voorkant.</translation>
+        <translation>Van zijkant naar zijkant op natuurlijke taillelijn, via de voorkant.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1951"/>
@@ -4003,7 +4003,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1954"/>
         <source>From Side to Side at Natural Waist level, across the back. Calculate as ( Natural Waist circumference  - Natural Waist arc (front) ).</source>
         <comment>Full measurement description.</comment>
-        <translation>Van zijkant naar zijkant op natuurlijke taille level, via de rug. Bereken als ( Natuurlijke taille omtrek - Natuurlijke taille boog (voorkant) ).</translation>
+        <translation>Van zijkant naar zijkant op natuurlijke taillelijn, via de rug. Bereken als ( Natuurlijke taille omtrek - Natuurlijke taille boog (voorkant) ).</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1958"/>
@@ -4021,7 +4021,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1961"/>
         <source>Length from Waist Front to Natural Waist Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Lengte van voorkant taille naar natuurlijk voorkant taille.</translation>
+        <translation>Lengte van voorkant taille naar voorkant natuurlijke taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1965"/>
@@ -4033,13 +4033,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1967"/>
         <source>Waist Back to Natural Waist Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Taille rugkant naar natuurlijke rugkant taille</translation>
+        <translation>Taille rugkant naar rugkant natuurlijke taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1968"/>
         <source>Length from Waist Back to Natural Waist Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Lengte van rugkant taille naar natuurlijke rugkant taille.</translation>
+        <translation>Lengte van rugkant taille naar rugkant natuurlijke taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1972"/>
@@ -4093,7 +4093,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1990"/>
         <source>Bend Arm with Elbow out, hand in front. Measure from Neck Side to Elbow Tip.</source>
         <comment>Full measurement description.</comment>
-        <translation>Gebogen arm met elleboog omhoog, hand aan de vookant. Meet vanaf zijkant rug naar elleboogpunt.</translation>
+        <translation>Gebogen arm met elleboog omhoog, hand aan de voorkant. Meet vanaf zijkant rug naar elleboogpunt.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1994"/>
@@ -4117,13 +4117,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2002"/>
         <source>arm_across_back_center_to_elbow_bent</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_kruislings_rug_midden_naar_elleboog_gebogen</translation>
+        <translation>arm_midden_rugbreedtelijn_naar_elleboog_gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2004"/>
         <source>Arm: Across Back Center to Elbow, high bend</source>
         <comment>Full measurement name.</comment>
-        <translation>Arm: kruislings rug midden naar elleboog, hoog gebogen</translation>
+        <translation>Arm: midden rugbreedtelijn naar elleboog, hoog gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2005"/>
@@ -4135,13 +4135,13 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2010"/>
         <source>arm_across_back_center_to_wrist_bent</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_kruislings_rug_midden_naar_pols_gebogen</translation>
+        <translation>arm_midden_rugbreedtelijn_naar_pols_gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2012"/>
         <source>Arm: Across Back Center to Wrist, high bend</source>
         <comment>Full measurement name.</comment>
-        <translation>Arm: kruislings rug midden naar pols. hoog gebogen</translation>
+        <translation>Arm: midden rugbreedtelijn naar pols. hoog gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2013"/>
@@ -4153,19 +4153,19 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2018"/>
         <source>arm_armscye_back_center_to_wrist_bent</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arm_arminzet_rug_midden_naar_pols_gebogen</translation>
+        <translation>arm_armsgat_rug_midden_naar_pols_gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2020"/>
         <source>Arm: Armscye Back Center to Wrist, high bend</source>
         <comment>Full measurement name.</comment>
-        <translation>Arm: arminzet rug midden naar pols, hoog gebogen</translation>
+        <translation>Arm: armsgat rug midden naar pols, hoog gebogen</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2021"/>
         <source>Bend Arm with Elbow out, hand in front. Measure from Armscye Back to Elbow Tip.</source>
         <comment>Full measurement description.</comment>
-        <translation>Gebogen arm met elleboog omhoog, hand aan de voorkant. Meet vanaf arminzet rugkant naar elleboogpunt.</translation>
+        <translation>Gebogen arm met elleboog omhoog, hand aan de voorkant. Meet vanaf armsgat rugkant naar elleboogpunt.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2038"/>
@@ -4189,25 +4189,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2045"/>
         <source>neck_back_to_armfold_front</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_rug_naar_armvouw_voorkant</translation>
+        <translation>nek_rug_naar_armplooi_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2047"/>
         <source>Neck Back to Armfold Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Rugnek naar voorkant armvouw</translation>
+        <translation>Rugnek naar voorkant armplooi</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2048"/>
         <source>From Neck Back over Shoulder to Armfold Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van rugnek over schouder naar voorkant armvouw.</translation>
+        <translation>Van rugnek over schouder naar voorkant armplooi.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2052"/>
         <source>neck_back_to_armfold_front_to_waist_side</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_rug_naar_armvouw_voorkant_naar_taille_zijkant</translation>
+        <translation>nek_rug_naar_armplooi_voorkant_naar_taille_zijkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2054"/>
@@ -4219,25 +4219,25 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2055"/>
         <source>From Neck Back, over Shoulder, down chest to Waist Side.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van rugnek, over schouder, naar beneden over borstkas naar zijkant taille.</translation>
+        <translation>Van rug nek, over schouder, naar beneden over borstkas naar zijkant taille.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2059"/>
         <source>highbust_back_over_shoulder_to_armfold_front</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>hogebuste_rug_over_schouder_naar_armvouw_voorkant</translation>
+        <translation>hogebuste_rug_over_schouder_naar_armplooi_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2061"/>
         <source>Highbust Back, over Shoulder, to Armfold Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Rugkant hogebuste, over schouder, naar voorkant armvouw</translation>
+        <translation>Rugkant hogebuste, over schouder, naar voorkant armplooi</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2062"/>
         <source>From Highbust Back over Shoulder to Armfold Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van rugkant hogebuste over schouder naar voorkant armvouw.</translation>
+        <translation>Van rugkant hogebuste over schouder naar voorkant armplooi.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2066"/>
@@ -4261,91 +4261,91 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2073"/>
         <source>neck_back_to_armfold_front_to_neck_back</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_rug_naar_armvouw_voorkant_naar_nek_rug</translation>
+        <translation>nek_rug_naar_armplooi_voorkant_naar_nek_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2075"/>
         <source>Neck Back, to Armfold Front, to Neck Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Rugnek, naar voorkant armvouw, naar rugnek</translation>
+        <translation>Rugnek, naar voorkant armplooi, naar rugnek</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2076"/>
         <source>From Neck Back, over Shoulder to Armfold Front, under arm and return to start.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van rugnek, over schouder naar voorkant armvouw, onder arm en terug naar het begin.</translation>
+        <translation>Van rugnek, over schouder naar voorkant armplooi, onder arm en terug naar het begin.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2081"/>
         <source>across_back_center_to_armfold_front_to_across_back_center</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>kruislings_rug_midden_naar_armvouw_voorkant_naar_rug_midden</translation>
+        <translation>midden_rugbreedtelijn_naar_armplooi_voorkant_naar_midden_rugbreedtelijn</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2083"/>
         <source>Across Back Center, circled around Shoulder</source>
         <comment>Full measurement name.</comment>
-        <translation>Kruislings rug midden, cirkelend rond schouder</translation>
+        <translation>Midden rugbreedtelijn, cirkelend rond schouder</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2084"/>
         <source>From center of Across Back, over Shoulder, under Arm, and return to start.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van midden van kruislingse rug, over schouder, onder arm, en terug naar het begin.</translation>
+        <translation>Van midden van de lijn waarover rugbreedte wordt gemeten, over schouder, onder arm, en terug naar het begin.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2089"/>
         <source>neck_back_to_armfold_front_to_highbust_back</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>nek_rug_naar_armvou_voorkant_naar_hogebuste_rug</translation>
+        <translation>nek_rug_naar_armplooi_voorkant_naar_hogebuste_rug</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2091"/>
         <source>Neck Back, to Armfold Front, to Highbust Back</source>
         <comment>Full measurement name.</comment>
-        <translation>Rugnek, naar voorkant armvouw, naar rugkant hogebuste</translation>
+        <translation>Rugnek, naar voorkant armplooi, naar rugkant hogebuste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2092"/>
         <source>From Neck Back over Shoulder to Armfold Front, under arm to Highbust Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van rugnek over schouder naar voorkant armvouw, onder arm naar rugkant hogebuste.</translation>
+        <translation>Van rugnek over schouder naar voorkant armplooi, onder arm naar rugkant hogebuste.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2097"/>
         <source>armfold_to_armfold_bust</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>armvouw_naar_armvouw_buste</translation>
+        <translation>armplooi_naar_armplooi_buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2099"/>
         <source>Armfold to Armfold, front, curved through Bust Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Armvouw naar armvouw, voorkant, gekromd door voorkant buste</translation>
+        <translation>Armplooi naar armplooi, voorkant, gekromd langs voorkant buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2101"/>
         <source>Measure in a curve from Armfold Left Front through Bust Front curved back up to Armfold Right Front.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meet in een boog van armvouw linker voorkant via voorkant buste gekromd naar boven naar armvouw rechter voorkant.</translation>
+        <translation>Meet in een boog van armplooi linker voorkant via voorkant buste gekromd naar boven naar armplooi rechter voorkant.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2105"/>
         <source>armfold_to_bust_front</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>armvou_naar_buste_voorkant</translation>
+        <translation>armplooi_naar_buste_voorkant</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2107"/>
         <source>Armfold to Bust Front</source>
         <comment>Full measurement name.</comment>
-        <translation>Armvouw naar voorkant buste</translation>
+        <translation>Armplooi naar voorkant buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2108"/>
         <source>Measure from Armfold Front to Bust Front, shortest distance between the two, as straight as possible.</source>
         <comment>Full measurement description.</comment>
-        <translation>Meet van voorkant armvouw naar voorkant buste, kortste afstand tussen de twee, zo gestrekt mogelijk.</translation>
+        <translation>Meet van voorkant armplooi naar voorkant buste, kortste afstand tussen de twee, zo gestrekt mogelijk.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2112"/>
@@ -4369,62 +4369,62 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2121"/>
         <source>armscye_arc</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>arminzet_boog</translation>
+        <translation>armsgat_boog</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2123"/>
         <source>Armscye: Arc</source>
         <comment>Full measurement name.</comment>
-        <translation>Arminzet: boog</translation>
+        <translation>Armsgat: boog</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2124"/>
         <source>From Armscye at Across Chest over ShoulderTip  to Armscye at Across Back.</source>
         <comment>Full measurement description.</comment>
-        <translation>Van arminzet op gekruiste borstkas over schouderpunt naar arminzet op gekruiste rug.</translation>
+        <translation>Van armsgat op borstbreedtelijn over schouderpunt naar armsgat op rugbreedtelijn.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2140"/>
         <source>dart_width_shoulder</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>figuurnaad_wijdte_schouder</translation>
+        <translation>figuurnaad_breedte_schouder</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2142"/>
         <source>Dart Width: Shoulder</source>
         <comment>Full measurement name.</comment>
-        <translation>Figuurnaadwijdte: schouder</translation>
+        <translation>Figuurnaadbreedte: schouder</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2143"/>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2151"/>
         <source>This information is pulled from pattern charts in some patternmaking systems, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</source>
         <comment>Full measurement description.</comment>
-        <translation>Deze is informatie komt uit patroontabellen van verschillende patroonteken systemen, e.g. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</translation>
+        <translation>Deze informatie komt uit patroontabellen van verschillende patroontekensystemen, bv. Winifred P. Aldrich&apos;s &quot;Metric Pattern Cutting&quot;.</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2148"/>
         <source>dart_width_bust</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>figuurnaad_wijdte_buste</translation>
+        <translation>figuurnaad_breedte_buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2150"/>
         <source>Dart Width: Bust</source>
         <comment>Full measurement name.</comment>
-        <translation>Figuurnaadwijdte: buste</translation>
+        <translation>Figuurnaadbreedte: buste</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2156"/>
         <source>dart_width_waist</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>figuurnaad_wijdte_taille</translation>
+        <translation>figuurnaad_breedte_taille</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="2158"/>
         <source>Dart Width: Waist</source>
         <comment>Full measurement name.</comment>
-        <translation>Figuurnaadwijdte: taille</translation>
+        <translation>Figuurnaadbreedte: taille</translation>
     </message>
 </context>
 </TS>
