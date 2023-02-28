@@ -74,26 +74,12 @@ void PatternPieceVisual::RefreshGeometry()
 
     if (m_piece.GetPath().CountNodes() > 0)
     {
-        DrawPath(this, m_piece.MainPathPath(Visualization::data), mainColor, Qt::SolidLine, lineWeight, Qt::RoundCap);
+        DrawPath(this, m_piece.MainPathPath(Visualization::data), mainColor, Qt::SolidLine, Qt::RoundCap);
 
         const QVector<VPointF> nodes = m_piece.MainPathNodePoints(Visualization::data);
 
         for (int i = 0; i < nodes.size(); ++i)
         {
-            VScaledEllipse *point = GetPoint(static_cast<quint32>(i), supportColor);
-            DrawPoint(point, nodes.at(i).toQPointF(), supportColor);
-        }
-
-        if (mode == Mode::Creation)
-        {
-            const QVector<QPointF> points = m_piece.MainPathPoints(Visualization::data);
-            DrawLine(m_line1, QLineF(points.first(), Visualization::scenePos), supportColor, lineWeight, Qt::DashLine);
-
-            if (points.size() > 1)
-            {
-                DrawLine(m_line2, QLineF(points.last(), Visualization::scenePos), supportColor,
-                                         lineWeight, Qt::DashLine);
-            }
             VScaledEllipse *point = GetPoint(static_cast<quint32>(i), mainColor);
             point->setBrush(QBrush(mainColor, Qt::SolidPattern));
             DrawPoint(point, nodes.at(i).toQPointF(), mainColor);

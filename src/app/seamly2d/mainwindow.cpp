@@ -184,7 +184,7 @@ MainWindow::MainWindow(QWidget *parent)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
-    , m_zoomToPointComboBox(nullptr);
+    , m_zoomToPointComboBox(nullptr)
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
     {

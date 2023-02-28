@@ -207,6 +207,7 @@
                           <xs:attribute name="firstPoint" type="xs:unsignedInt"/>
                           <xs:attribute name="secondPoint" type="xs:unsignedInt"/>
                           <xs:attribute name="lineType" type="linePenStyle"/>
+                          <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="lineColor" type="colors"/>
                         </xs:complexType>
                       </xs:element>
@@ -264,6 +265,7 @@
                           <xs:attribute name="type" type="xs:string"/>
                           <xs:attribute name="color" type="colors"/>
                           <xs:attribute name="penStyle" type="curvePenStyle"/>
+                          <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="length" type="xs:string"/>
                         </xs:complexType>
                       </xs:element>
@@ -279,6 +281,7 @@
                           <xs:attribute name="type" type="xs:string"/>
                           <xs:attribute name="color" type="colors"/>
                           <xs:attribute name="penStyle" type="curvePenStyle"/>
+                          <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="length" type="xs:string"/>
                         </xs:complexType>
                       </xs:element>
@@ -313,6 +316,7 @@
                           <xs:attribute name="point4" type="xs:unsignedInt"/>
                           <xs:attribute name="color" type="colors"/>
                           <xs:attribute name="penStyle" type="curvePenStyle"/>
+                          <xs:attribute name="lineWeight" type="lineWeights"/>
                           <xs:attribute name="duplicate" type="xs:unsignedInt"/>
                         </xs:complexType>
                       </xs:element>
