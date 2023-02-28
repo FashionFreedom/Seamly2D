@@ -156,7 +156,7 @@
      <addaction name="decreaseSize_Action"/>
      <addaction name="useToolColor_Action"/>
     </widget>
-    <addaction name="draftMode_Action"/>
+    <addaction name="showDraftMode"/>
     <addaction name="pieceMode_Action"/>
     <addaction name="layoutMode_Action"/>
     <addaction name="separator"/>
@@ -168,6 +168,7 @@
     <addaction name="zoomToSelected_Action"/>
     <addaction name="zoomToArea_Action"/>
     <addaction name="zoomPan_Action"/>
+    <addaction name="zoomToPoint_Action"/>
     <addaction name="separator"/>
     <addaction name="pointNames_Menu"/>
     <addaction name="toggleWireframe_Action"/>
@@ -381,7 +382,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="draftMode_Action"/>
+   <addaction name="showDraftMode"/>
    <addaction name="pieceMode_Action"/>
    <addaction name="layoutMode_Action"/>
   </widget>
@@ -579,6 +580,7 @@
    <addaction name="zoomToSelected_Action"/>
    <addaction name="zoomToArea_Action"/>
    <addaction name="zoomPan_Action"/>
+   <addaction name="zoomToPoint_Action"/>
   </widget>
   <widget class="QToolBar" name="tools_ToolBox_ToolBar">
    <property name="contextMenuPolicy">
@@ -2165,7 +2167,7 @@
                </property>
                <property name="icon">
                 <iconset resource="share/resources/toolicon.qrc">
-                 <normaloff>:/toolicon/32x32/new_detail.png</normaloff>:/toolicon/32x32/new_detail.png</iconset>
+                 <normaloff>:/toolicon/32x32/new_piece.png</normaloff>:/toolicon/32x32/new_piece.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2647,7 +2649,7 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="draftMode_Action">
+  <action name="showDraftMode">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -4227,7 +4229,7 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/new_detail@2x.png</normaloff>:/toolicon/32x32/new_detail@2x.png</iconset>
+     <normaloff>:/toolicon/32x32/new_piece@2x.png</normaloff>:/toolicon/32x32/new_piece@2x.png</iconset>
    </property>
    <property name="text">
     <string>New Pattern Piece</string>
@@ -4607,7 +4609,7 @@
    </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-     <normaloff>:/icon/32x32/seaml_allowance@2x.png</normaloff>:/icon/32x32/seaml_allowance@2x.png</iconset>
+     <normaloff>:/icon/32x32/seam_allowance@2x.png</normaloff>:/icon/32x32/seam_allowance@2x.png</iconset>
    </property>
    <property name="text">
     <string>Seam Allowance</string>
@@ -4632,6 +4634,24 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="zoomToPoint_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_point.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_point.png</iconset>
+   </property>
+   <property name="text">
+    <string>Point</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to point (Ctrl + Alt + P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+P</string>
    </property>
   </action>
  </widget>

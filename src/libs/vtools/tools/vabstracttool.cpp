@@ -487,6 +487,17 @@ QPixmap VAbstractTool::createColorIcon(const int w, const int h, const QString &
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+const QStringList VAbstractTool::fills()
+{
+    const QStringList fills = QStringList() << FillNone              << FillSolid            << FillDense1
+                                            << FillDense2            << FillDense3           << FillDense4
+                                            << FillDense5            << FillDense6           << FillDense7
+                                            << FillHorizLines        << FillVertLines        << FillCross
+                                            << FillBackwardDiagonal  << FillForwardDiagonal  << FilldDiagonalCross;
+    return fills;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
 QMap<QString, quint32> VAbstractTool::PointsList() const
 {
@@ -678,7 +689,7 @@ QDomElement VAbstractTool::AddSANode(VAbstractPattern *doc, const QString &tagNa
         {
             doc->SetAttribute(nod, VAbstractPattern::AttrNodeIsNotch,         node.isNotch());
             doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowNotch,       node.showNotch());
-            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowSecondNotch, node.showSecondNotch());
+            doc->SetAttribute(nod, VAbstractPattern::AttrNodeShowSecondNotch, node.showSeamlineNotch());
             doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchType,    notchTypeToString(node.getNotchType()));
             doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchSubType, notchSubTypeToString(node.getNotchSubType()));
             doc->SetAttribute(nod, VAbstractPattern::AttrNodeNotchLength,     node.getNotchLength());
@@ -718,12 +729,12 @@ QVector<VPieceNode> VAbstractTool::PrepareNodes(const VPiecePath &path, VMainGra
     QVector<VPieceNode> nodes;
     for (int i = 0; i< path.CountNodes(); ++i)
     {
-        VPieceNode nodeD = path.at(i);
-        const quint32 id = PrepareNode(nodeD, scene, doc, data);
+        VPieceNode node = path.at(i);
+        const quint32 id = PrepareNode(node, scene, doc, data);
         if (id > NULL_ID)
         {
-            nodeD.SetId(id);
-            nodes.append(nodeD);
+            node.SetId(id);
+            nodes.append(node);
         }
     }
     return nodes;

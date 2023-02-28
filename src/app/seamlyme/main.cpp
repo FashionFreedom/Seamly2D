@@ -51,7 +51,6 @@
 
 #include "tmainwindow.h"
 #include "mapplication.h"
-#include "../fervor/fvupdater.h"
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
 #include <QTimer>

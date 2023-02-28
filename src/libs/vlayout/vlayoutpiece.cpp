@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vlayoutpiece.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vlayoutdetail.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -344,7 +345,7 @@ QVector<VSAPoint> PrepareAllowance(const QVector<QPointF> &points)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VLayoutDetail::RotatePoint rotates a point around the center for given angle
+ * @brief VLayoutPiece::RotatePoint rotates a point around the center for given angle
  * @param ptCenter center around which the point is rotated
  * @param pt point, which is rotated around the center
  * @param rotationAngle angle of rotation
@@ -378,11 +379,11 @@ QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManage
 //---------------------------------------------------------------------------------------------------------------------
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&detail) Q_DECL_NOTHROW { Swap(detail); return *this; }
+VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&piece) Q_DECL_NOTHROW { Swap(piece); return *this; }
 #endif
 
-void VLayoutPiece::Swap(VLayoutPiece &detail) Q_DECL_NOTHROW
-{ VAbstractPiece::Swap(detail); std::swap(d, detail.d); }
+void VLayoutPiece::Swap(VLayoutPiece &piece) Q_DECL_NOTHROW
+{ VAbstractPiece::Swap(piece); std::swap(d, piece.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece::VLayoutPiece()
@@ -391,20 +392,20 @@ VLayoutPiece::VLayoutPiece()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VLayoutPiece::VLayoutPiece(const VLayoutPiece &detail)
-    : VAbstractPiece(detail),
-      d(detail.d)
+VLayoutPiece::VLayoutPiece(const VLayoutPiece &piece)
+    : VAbstractPiece(piece),
+      d(piece.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VLayoutPiece &VLayoutPiece::operator=(const VLayoutPiece &detail)
+VLayoutPiece &VLayoutPiece::operator=(const VLayoutPiece &piece)
 {
-    if ( &detail == this )
+    if ( &piece == this )
     {
         return *this;
     }
-    VAbstractPiece::operator=(detail);
-    d = detail.d;
+    VAbstractPiece::operator=(piece);
+    d = piece.d;
     return *this;
 }
 
@@ -415,22 +416,22 @@ VLayoutPiece::~VLayoutPiece()
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern)
 {
-    VLayoutPiece det;
+    VLayoutPiece layoutPiece;
 
-    det.SetMx(piece.GetMx());
-    det.SetMy(piece.GetMy());
+    layoutPiece.SetMx(piece.GetMx());
+    layoutPiece.SetMy(piece.GetMy());
 
-    det.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
-    det.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
+    layoutPiece.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
+    layoutPiece.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
                                piece.IsSeamAllowanceBuiltIn());
-    det.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
-    det.setCutoutPaths(ConvertInternalPaths(piece, pattern, true));
-    det.setNotches(piece.createNotchLines(pattern));
+    layoutPiece.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
+    layoutPiece.setCutoutPaths(ConvertInternalPaths(piece, pattern, true));
+    layoutPiece.setNotches(piece.createNotchLines(pattern));
 
-    det.SetName(piece.GetName());
+    layoutPiece.SetName(piece.GetName());
 
     // Very important to set main path first!
-    if (det.createMainPath().isEmpty())
+    if (layoutPiece.createMainPath().isEmpty() && layoutPiece.createAllowancePath().isEmpty())
     {
         throw VException (tr("Piece %1 doesn't have shape.").arg(piece.GetName()));
     }
@@ -438,26 +439,26 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
     if (pieceLabelData.IsVisible() == true)
     {
-        det.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
+        layoutPiece.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VPatternLabelData& patternLabelData = piece.GetPatternInfo();
     if (patternLabelData.IsVisible() == true)
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
-        det.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
+        layoutPiece.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
     if (grainlineGeom.IsVisible() == true)
     {
-        det.setGrainline(grainlineGeom, pattern);
+        layoutPiece.setGrainline(grainlineGeom, pattern);
     }
 
-    det.SetSAWidth(qApp->toPixel(piece.GetSAWidth()));
-    det.SetForbidFlipping(piece.IsForbidFlipping());
+    layoutPiece.SetSAWidth(qApp->toPixel(piece.GetSAWidth()));
+    layoutPiece.SetForbidFlipping(piece.IsForbidFlipping());
 
-    return det;
+    return layoutPiece;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -510,9 +511,9 @@ QVector<QPointF> VLayoutPiece::getLayoutAllowancePoints() const
 //---------------------------------------------------------------------------------------------------------------------
 QPointF VLayoutPiece::GetPieceTextPosition() const
 {
-    if (d->detailLabel.count() > 2)
+    if (d->pieceLabel.count() > 2)
     {
-        return d->transform.map(d->detailLabel.first());
+        return d->transform.map(d->pieceLabel.first());
     }
     else
     {
@@ -523,7 +524,7 @@ QPointF VLayoutPiece::GetPieceTextPosition() const
 //---------------------------------------------------------------------------------------------------------------------
 QStringList VLayoutPiece::GetPieceText() const
 {
-    return PieceLabelText(d->detailLabel, d->m_tmDetail);
+    return PieceLabelText(d->pieceLabel, d->m_tmPiece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -557,15 +558,15 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
     }
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->detailLabel = CorrectPosition(item->boundingRect(), v);
+    d->pieceLabel = CorrectPosition(item->boundingRect(), v);
 
     // generate text
-    d->m_tmDetail.setFont(font);
-    d->m_tmDetail.SetFontSize(data.getFontSize());
-    d->m_tmDetail.Update(qsName, data);
+    d->m_tmPiece.setFont(font);
+    d->m_tmPiece.SetFontSize(data.getFontSize());
+    d->m_tmPiece.Update(qsName, data);
     // this will generate the lines of text
-    d->m_tmDetail.SetFontSize(data.getFontSize());
-    d->m_tmDetail.FitFontSize(labelWidth, labelHeight);
+    d->m_tmPiece.SetFontSize(data.getFontSize());
+    d->m_tmPiece.FitFontSize(labelWidth, labelHeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -762,9 +763,9 @@ void VLayoutPiece::Mirror(const QLineF &edge)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VLayoutPiece::DetailEdgesCount() const
+int VLayoutPiece::pieceEdgesCount() const
 {
-    return DetailPath().count();
+    return piecePath().count();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -774,9 +775,9 @@ int VLayoutPiece::LayoutEdgesCount() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QLineF VLayoutPiece::DetailEdge(int i) const
+QLineF VLayoutPiece::pieceEdge(int i) const
 {
-    return Edge(DetailPath(), i);
+    return Edge(piecePath(), i);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -786,9 +787,9 @@ QLineF VLayoutPiece::LayoutEdge(int i) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VLayoutPiece::DetailEdgeByPoint(const QPointF &p1) const
+int VLayoutPiece::pieceEdgeByPoint(const QPointF &p1) const
 {
-    return EdgeByPoint(DetailPath(), p1);
+    return EdgeByPoint(piecePath(), p1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -798,7 +799,7 @@ int VLayoutPiece::LayoutEdgeByPoint(const QPointF &p1) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QRectF VLayoutPiece::DetailBoundingRect() const
+QRectF VLayoutPiece::pieceBoundingRect() const
 {
     QVector<QPointF> points;
     if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
@@ -857,7 +858,7 @@ qint64 VLayoutPiece::Square() const
         return 0;
     }
 
-    const qreal res = SumTrapezoids(d->layoutAllowance);
+    const qreal res = sumTrapezoids(d->layoutAllowance);
 
     const qint64 sq = qFloor(qAbs(res/2.0));
     return sq;
@@ -1100,7 +1101,7 @@ QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
         createCutoutPathItem(i, item);
     }
 
-    createLabelItem(item, d->detailLabel, d->m_tmDetail, textAsPaths);
+    createLabelItem(item, d->pieceLabel, d->m_tmPiece, textAsPaths);
     createLabelItem(item, d->patternInfo, d->m_tmPattern, textAsPaths);
     createGrainlineItem(item, textAsPaths);
 
@@ -1229,7 +1230,7 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> VLayoutPiece::DetailPath() const
+QVector<QPointF> VLayoutPiece::piecePath() const
 {
     if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
     {

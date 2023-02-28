@@ -527,11 +527,11 @@ qreal VDomDocument::GetParametrDouble(const QDomElement &domElement, const QStri
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetParametrId return value id attribute.
+ * @brief getParameterId return value id attribute.
  * @param domElement tag in xml tree.
  * @return id value.
  */
-quint32 VDomDocument::GetParametrId(const QDomElement &domElement)
+quint32 VDomDocument::getParameterId(const QDomElement &domElement)
 {
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
@@ -614,7 +614,7 @@ void VDomDocument::CollectId(const QDomElement &node, QVector<quint32> &vector) 
 {
     if (node.hasAttribute(VDomDocument::AttrId))
     {
-        const quint32 id = GetParametrId(node);
+        const quint32 id = getParameterId(node);
         if (vector.contains(id))
         {
             throw VExceptionWrongId(tr("This id is not unique."), node);

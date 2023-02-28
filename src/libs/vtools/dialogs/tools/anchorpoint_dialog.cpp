@@ -53,7 +53,7 @@
 #include "ui_anchorpoint_dialog.h"
 #include "visualization/line/anchorpoint_visual.h"
 #include "../../tools/vabstracttool.h"
-#include "../../tools/vtoolseamallowance.h"
+#include "../../tools/pattern_piece_tool.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 AnchorPointDialog::AnchorPointDialog(const VContainer *data, quint32 toolId, QWidget *parent)
@@ -175,7 +175,7 @@ void AnchorPointDialog::ShowVisualization()
 
     if (m_showMode)
     {
-        VToolSeamAllowance *tool = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(GetPieceId()));
+        PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(GetPieceId()));
         SCASSERT(tool != nullptr);
         auto visPoint = qobject_cast<AnchorPointVisual *>(vis);
         SCASSERT(visPoint != nullptr);

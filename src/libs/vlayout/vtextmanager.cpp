@@ -364,7 +364,7 @@ void VTextManager::Update(VAbstractPattern *pDoc)
 
     if (m_patternLabelLines.isEmpty() || pDoc->GetPatternWasChanged())
     {
-        QVector<VLabelTemplateLine> lines = pDoc->GetPatternLabelTemplate();
+        QVector<VLabelTemplateLine> lines = pDoc->getPatternLabelTemplate();
         if (lines.isEmpty() && m_patternLabelLines.isEmpty())
         {
             return; // Nothing to parse

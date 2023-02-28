@@ -73,7 +73,7 @@ private:
     Q_DISABLE_COPY(DelTool)
     QDomNode      parentNode;
     quint32       siblingId;
-    const QString nameActivDraw;
+    const QString activeBlockName;
 };
 
 #endif // DELTOOL_H

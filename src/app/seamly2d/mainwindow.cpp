@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   mainwindow.cpp
+ **  @author Douglas S Caskey
+ **  @date   Jan 1, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   mainwindow.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -31,7 +32,7 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -64,7 +65,7 @@
 #include "../vmisc/def.h"
 #include "../vmisc/qxtcsvmodel.h"
 #include "../vmisc/dialogs/dialogexporttocsv.h"
-#include "undocommands/renamepp.h"
+#include "undocommands/rename_draftblock.h"
 #include "core/vtooloptionspropertybrowser.h"
 #include "options.h"
 #include "../ifc/xml/vpatternconverter.h"
@@ -77,16 +78,17 @@
 #include "../vwidgets/mouse_coordinates.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/dialogs/tooldialogs.h"
-#include "tools/vtoolseamallowance.h"
+#include "tools/pattern_piece_tool.h"
 #include "tools/nodeDetails/vtoolinternalpath.h"
 #include "tools/nodeDetails/anchorpoint_tool.h"
-#include "tools/vtooluniondetails.h"
+#include "tools/union_tool.h"
 #include "dialogs/dialogs.h"
 
 #include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/label/showpointname.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
-#include "../vtools/dialogs/support/dialogeditlabel.h"
+#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
 
 #include <QInputDialog>
 #include <QtDebug>
@@ -155,10 +157,10 @@ MainWindow::MainWindow(QWidget *parent)
     , dialogHistory(nullptr)
     , fontComboBox(nullptr)
     , fontSizeComboBox(nullptr)
-    , comboBoxDraws(nullptr)
-    , patternPieceLabel(nullptr)
+    , draftBlockComboBox(nullptr)
+    , draftBlockLabel(nullptr)
     , mode(Draw::Calculation)
-    , currentDrawIndex(0)
+    , currentBlockIndex(0)
     , currentToolBoxIndex(0)
     , isToolOptionsDockVisible(true)
     , isGroupsDockVisible(true)
@@ -182,6 +184,7 @@ MainWindow::MainWindow(QWidget *parent)
     , zoomScaleSpinBox(nullptr)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
+    , m_zoomToPointComboBox(nullptr);
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
     {
@@ -190,7 +193,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     CreateActions();
     InitScenes();
-
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
     connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
@@ -200,13 +202,16 @@ MainWindow::MainWindow(QWidget *parent)
     {
         if (pattern->DataPieces()->count() == 0)
         {
-            if(not ui->draftMode_Action->isChecked())
+            if(not ui->showDraftMode->isChecked())
             {
-                draftMode_Action(true);
+                showDraftMode(true);
             }
         }
     });
     connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
+    connect(doc, &VPattern::CheckLayout, this, [&](){
+        this->updateZoomToPointComboBox(draftPointNamesList());
+    });
     qApp->setCurrentDocument(doc);
     qApp->setCurrentData(pattern);
 
@@ -297,47 +302,47 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::AddPP(const QString &PPName)
+void MainWindow::addDraftBlock(const QString &blockName)
 {
-    if (doc->appendPP(PPName) == false)
+    if (doc->appendDraftBlock(blockName) == false)
     {
-        qCDebug(vMainWindow, "Error creating pattern piece with the name %s.", qUtf8Printable(PPName));
+        qCDebug(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
         return;
     }
 
-    if (comboBoxDraws->count() == 0)
+    if (draftBlockComboBox->count() == 0)
     {
         draftScene->InitOrigins();
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
         pieceScene->InitOrigins();
     }
 
-    comboBoxDraws->blockSignals(true);
-    comboBoxDraws->addItem(PPName);
+    draftBlockComboBox->blockSignals(true);
+    draftBlockComboBox->addItem(blockName);
 
     pattern->ClearGObjects();
     //Create single point
     ui->view->itemClicked(nullptr);//hide options previous tool
     const QString label = doc->GenerateLabel(LabelType::NewPatternPiece);
-    const QPointF startPosition = StartPositionNewPP();
+    const QPointF startPosition = draftBlockStartPosition();
     VPointF *point = new VPointF(startPosition.x(), startPosition.y(), label, 5, 10);
-    auto spoint = VToolBasePoint::Create(0, PPName, point, draftScene, doc, pattern, Document::FullParse,
+    auto spoint = VToolBasePoint::Create(0, blockName, point, draftScene, doc, pattern, Document::FullParse,
                                          Source::FromGui);
     ui->view->itemClicked(spoint);
 
     setEnableTools(true);
     SetEnableWidgets(true);
 
-    const qint32 index = comboBoxDraws->findText(PPName);
+    const qint32 index = draftBlockComboBox->findText(blockName);
     if ( index != -1 )
     { // -1 for not found
-        comboBoxDraws->setCurrentIndex(index);
+        draftBlockComboBox->setCurrentIndex(index);
     }
     else
     {
-        comboBoxDraws->setCurrentIndex(0);
+        draftBlockComboBox->setCurrentIndex(0);
     }
-    comboBoxDraws->blockSignals(false);
+    draftBlockComboBox->blockSignals(false);
 
     // Show best for new PP
     VMainGraphicsView::NewSceneRect(ui->view->scene(), ui->view, spoint);
@@ -348,12 +353,12 @@ void MainWindow::AddPP(const QString &PPName)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPointF MainWindow::StartPositionNewPP() const
+QPointF MainWindow::draftBlockStartPosition() const
 {
     const qreal originX = 30.0;
     const qreal originY = 40.0;
     const qreal margin = 40.0;
-    if (comboBoxDraws->count() > 1)
+    if (draftBlockComboBox->count() > 1)
     {
         const QRectF rect = draftScene->visibleItemsBoundingRect();
         if (rect.width() <= rect.height())
@@ -403,11 +408,11 @@ void MainWindow::InitScenes()
 
     connect(this, &MainWindow::EnableNodeLabelSelection, pieceScene, &VMainGraphicsScene::ToggleNodeLabelSelection);
     connect(this, &MainWindow::EnableNodePointSelection, pieceScene, &VMainGraphicsScene::ToggleNodePointSelection);
-    connect(this, &MainWindow::EnableDetailSelection, pieceScene, &VMainGraphicsScene::ToggleDetailSelection);
+    connect(this, &MainWindow::enablePieceSelection, pieceScene, &VMainGraphicsScene::togglePieceSelection);
 
     connect(this, &MainWindow::EnableNodeLabelHover, pieceScene, &VMainGraphicsScene::ToggleNodeLabelHover);
     connect(this, &MainWindow::EnableNodePointHover, pieceScene, &VMainGraphicsScene::ToggleNodePointHover);
-    connect(this, &MainWindow::EnableDetailHover, pieceScene, &VMainGraphicsScene::ToggleDetailHover);
+    connect(this, &MainWindow::enablePieceHover, pieceScene, &VMainGraphicsScene::togglePieceHover);
 
     connect(pieceScene, &VMainGraphicsScene::mouseMove, this, &MainWindow::MouseMove);
 
@@ -666,7 +671,7 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
             case Tool::InternalPath:
             case Tool::AnchorPoint:
             case Tool::InsertNodes:
-                dialogTool->SetPiecesList(doc->GetActivePPPieces());
+                dialogTool->SetPiecesList(doc->getActivePatternPieces());
                 break;
             default:
                 break;
@@ -813,7 +818,7 @@ void MainWindow::ApplyDrawDialog()
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename DrawTool>
-void MainWindow::ClosedDetailsDialogWithApply(int result)
+void MainWindow::ClosedPiecesDialogWithApply(int result)
 {
     ClosedDialogWithApply<DrawTool>(result, pieceScene);
     if (pattern->DataPieces()->size() > 0)
@@ -829,7 +834,7 @@ void MainWindow::ClosedDetailsDialogWithApply(int result)
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename DrawTool>
-void MainWindow::ApplyDetailsDialog()
+void MainWindow::applyPiecesDialog()
 {
     ApplyDialog<DrawTool>(pieceScene);
 }
@@ -1200,7 +1205,7 @@ void MainWindow::handleCurveIntersectCurveTool(bool checked)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleCurveIntersectAxisTool(bool checked)
 {
-    ToolSelectAllDrawObjects();
+    selectAllDraftObjectsTool();
     SetToolButtonWithApply<DialogCurveIntersectAxis>
     (
         checked,
@@ -1254,7 +1259,7 @@ void MainWindow::handlePointAlongArcTool(bool checked)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleArcIntersectAxisTool(bool checked)
 {
-    ToolSelectAllDrawObjects();
+    selectAllDraftObjectsTool();
     // Reuse handleCurveIntersectAxisTool but with different cursor and tool tip
     SetToolButtonWithApply<DialogCurveIntersectAxis>
     (
@@ -1497,7 +1502,6 @@ void MainWindow::handleTrueDartTool(bool checked)
     );
 }
 
-//Add Details
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief handlePatternPieceTool handler for pattern piece tool.
@@ -1505,15 +1509,15 @@ void MainWindow::handleTrueDartTool(bool checked)
  */
 void MainWindow::handlePatternPieceTool(bool checked)
 {
-    ToolSelectAllDrawObjects();
-    SetToolButtonWithApply<DialogSeamAllowance>
+    selectAllDraftObjectsTool();
+    SetToolButtonWithApply<PatternPieceDialog>
     (
         checked,
         Tool::Piece,
-        ":/cursor/new_detail_cursor.png",
+        ":/cursor/new_piece_cursor.png",
         tr("<b>Tool::Piece - Add New Pattern Piece:</b> Select main path of objects clockwise."),
-        &MainWindow::ClosedDetailsDialogWithApply<VToolSeamAllowance>,
-        &MainWindow::ApplyDetailsDialog<VToolSeamAllowance>
+        &MainWindow::ClosedPiecesDialogWithApply<PatternPieceTool>,
+        &MainWindow::applyPiecesDialog<PatternPieceTool>
     );
 }
 
@@ -1545,7 +1549,7 @@ void MainWindow::ClosedDialogAnchorPoint(int result)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleInternalPathTool(bool checked)
 {
-    ToolSelectAllDrawObjects();
+    selectAllDraftObjectsTool();
     SetToolButton<DialogInternalPath>
     (
         checked,
@@ -1595,39 +1599,38 @@ void MainWindow::ClosedInsertNodesDialog(int result)
     {
         QSharedPointer<InsertNodesDialog> tool = dialogTool.objectCast<InsertNodesDialog>();
         SCASSERT(tool != nullptr)
-        VToolSeamAllowance::insertNodes(tool->getNodes(), tool->getPieceId(), pieceScene, pattern, doc);
+        PatternPieceTool::insertNodes(tool->getNodes(), tool->getPieceId(), pieceScene, pattern, doc);
     }
     handleArrowTool(true);
     doc->LiteParseTree(Document::LiteParse);
 }
 
-//Pieces
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief handleUnionDetailsTool handler for unionDetails tool.
+ * @brief handleUnionTool handler for Union tool.
  * @param checked true - button checked.
  */
-void MainWindow::handleUnionDetailsTool(bool checked)
+void MainWindow::handleUnionTool(bool checked)
 {
-    ToolSelectDetail();
-    SetToolButton<DialogUnionDetails>
+    selectPieceTool();
+    SetToolButton<UnionDialog>
     (
         checked,
-        Tool::UnionDetails,
+        Tool::Union,
         ":/cursor/union_cursor.png",
         tr("<b>Tool::Details - Union:</b> Select pattern piece"),
-        &MainWindow::ClosedDialogUnionDetails
+        &MainWindow::closeUnionDialog
     );
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ClosedDialogUnionDetails actions after closing DialogUnionDetails.
+ * @brief closeUnionDialog actions after closing Union tool dialog.
  * @param result result of dialog working.
  */
-void MainWindow::ClosedDialogUnionDetails(int result)
+void MainWindow::closeUnionDialog(int result)
 {
-    ClosedDialog<VToolUnionDetails>(result);
+    ClosedDialog<UnionTool>(result);
     doc->LiteParseTree(Document::LiteParse);
 }
 
@@ -1686,7 +1689,7 @@ void MainWindow::changeEvent(QEvent *event)
         undoAction->setText(tr("&Undo"));
         redoAction->setText(tr("&Redo"));
         helpLabel->setText(QObject::tr("Changes applied."));
-        patternPieceLabel->setText(tr("Draft Block:"));
+        draftBlockLabel->setText(tr("Draft Block:"));
         UpdateWindowTitle();
         emit pieceScene->LanguageChanged();
     }
@@ -2216,27 +2219,27 @@ void MainWindow::initPointNameToolBar()
  */
 void MainWindow::initDraftToolBar()
 {
-    patternPieceLabel = new QLabel(tr("Draft Block:"));
-    ui->draft_ToolBar->addWidget(patternPieceLabel);
+    draftBlockLabel = new QLabel(tr("Draft Block:"));
+    ui->draft_ToolBar->addWidget(draftBlockLabel);
 
     // By using Qt UI Designer we can't add QComboBox to toolbar
-    comboBoxDraws = new QComboBox;
-    ui->draft_ToolBar->addWidget(comboBoxDraws);
-    comboBoxDraws->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    comboBoxDraws->setEnabled(false);
+    draftBlockComboBox = new QComboBox;
+    ui->draft_ToolBar->addWidget(draftBlockComboBox);
+    draftBlockComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    draftBlockComboBox->setEnabled(false);
 
-    connect(comboBoxDraws,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
+    connect(draftBlockComboBox,  static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, [this](int index){changeDraftBlock(index);});
 
     connect(ui->renameDraft_Action, &QAction::triggered, this, [this]()
     {
         const QString activeDraftBlock = doc->getActiveDraftBlockName();
-        const QString draftBlockName = PatternPieceName(activeDraftBlock);
+        const QString draftBlockName = createDraftBlockName(activeDraftBlock);
         if (draftBlockName.isEmpty())
         {
             return;
         }
-        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, comboBoxDraws);
+        RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, draftBlockComboBox);
         qApp->getUndoStack()->push(draftBlock);
     });
 }
@@ -2289,6 +2292,17 @@ void MainWindow::initToolsToolBar()
 
     resetPanShortcuts();
     connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
+
+    QList<QKeySequence> zoomToPointShortcuts;
+    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::AltModifier + Qt::Key_P));
+    ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
+    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
+
+    m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
+    m_zoomToPointComboBox->setEnabled(false);
+    m_zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
+    connect(m_zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
 
     if (zoomScaleSpinBox != nullptr)
     {
@@ -2471,6 +2485,47 @@ void MainWindow::zoomPan(bool checked)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::showZoomToPointDialog()
+{
+    QStringList pointNames = draftPointNamesList();
+
+    bool ok;
+    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, true, &ok,
+                                              Qt::WindowSystemMenuHint | Qt::WindowTitleHint);
+    if (!ok || pointName.isEmpty()) return;
+
+    zoomToPoint(pointName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::zoomToPoint(const QString& pointName)
+{
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
+    {
+        if (item.value()->name() == pointName)
+        {
+            VPointF* point = (VPointF*)item.value().data();
+
+            // show point name if it's hidden
+            qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
+
+            double sceneWidth = ui->view->width();
+            QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
+            ui->view->zoomToRect(rect);
+            return;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitToolButtons()
 {
     connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
@@ -2499,7 +2554,7 @@ void MainWindow::InitToolButtons()
     connect(ui->pointIntersectXY_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointIntersectXYTool);
     connect(ui->pointAlongCurve_ToolButton,     &QToolButton::clicked, this, &MainWindow::handlePointAlongCurveTool);
     connect(ui->pointAlongSpline_ToolButton,    &QToolButton::clicked, this, &MainWindow::handlePointAlongSplineTool);
-    connect(ui->unitePieces_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleUnionDetailsTool);
+    connect(ui->unitePieces_ToolButton,         &QToolButton::clicked, this, &MainWindow::handleUnionTool);
     connect(ui->pointAlongArc_ToolButton,       &QToolButton::clicked, this, &MainWindow::handlePointAlongArcTool);
     connect(ui->lineIntersectAxis_ToolButton,   &QToolButton::clicked, this, &MainWindow::handleLineIntersectAxisTool);
     connect(ui->curveIntersectAxis_ToolButton,  &QToolButton::clicked, this, &MainWindow::handleCurveIntersectAxisTool);
@@ -2868,7 +2923,6 @@ void MainWindow::handleOperationsMenu()
 
 void MainWindow::handlePieceMenu()
 {
-    qCDebug(vMainWindow, "Add Details Menu selected. \n");
     QMenu menu;
 
     QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_detail.png"),   tr("New Pattern Piece") + "\tN, P");
@@ -2912,7 +2966,7 @@ void MainWindow::handlePieceMenu()
     }
 }
 
-void MainWindow::handleDetailsMenu()
+void MainWindow::handlePatternPiecesMenu()
 {
     qCDebug(vMainWindow, "PatternPieces Menu selected. \n");
     QMenu menu;
@@ -2929,7 +2983,7 @@ void MainWindow::handleDetailsMenu()
     {
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         ui->unitePieces_ToolButton->setChecked(true);
-        handleUnionDetailsTool(true);
+        handleUnionTool(true);
     }
     else if (selectedAction == action_ExportPieces)
     {
@@ -3098,7 +3152,7 @@ void MainWindow::CancelTool()
         case Tool::CutSplinePath:
             ui->pointAlongSpline_ToolButton->setChecked(false);
             break;
-        case Tool::UnionDetails:
+        case Tool::Union:
             ui->unitePieces_ToolButton->setChecked(false);
             break;
         case Tool::CutArc:
@@ -3191,7 +3245,7 @@ void  MainWindow::handleArrowTool(bool checked)
         emit EnableSplinePathSelection(false);
         emit EnableNodeLabelSelection(true);
         emit EnableNodePointSelection(true);
-        emit EnableDetailSelection(true);// Disable when done visualization details
+        emit enablePieceSelection(true);// Disable when done with pattern piece visualization
 
         // Hovering
         emit EnableLabelHover(true);
@@ -3203,7 +3257,7 @@ void  MainWindow::handleArrowTool(bool checked)
         emit EnableSplinePathHover(true);
         emit EnableNodeLabelHover(true);
         emit EnableNodePointHover(true);
-        emit EnableDetailHover(true);
+        emit enablePieceHover(true);
 
         ui->view->allowRubberBand(true);
 
@@ -3309,10 +3363,10 @@ void MainWindow::RestoreCurrentScene()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief draftMode_Action show draw scene.
+ * @brief showDraftMode show draw scene.
  * @param checked true - button checked.
  */
-void MainWindow::draftMode_Action(bool checked)
+void MainWindow::showDraftMode(bool checked)
 {
     if (checked)
     {
@@ -3323,7 +3377,7 @@ void MainWindow::draftMode_Action(bool checked)
         leftGoToStage->setPixmap(QPixmap("://icon/24x24/fast_forward_left_to_right_arrow.png"));
         rightGoToStage->setPixmap(QPixmap("://icon/24x24/left_to_right_arrow.png"));
 
-        ui->draftMode_Action->setChecked(true);
+        ui->showDraftMode->setChecked(true);
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(false);
 
@@ -3334,7 +3388,7 @@ void MainWindow::draftMode_Action(bool checked)
         RestoreCurrentScene();
 
         mode = Draw::Calculation;
-        comboBoxDraws->setCurrentIndex(currentDrawIndex);//restore current pattern peace
+        draftBlockComboBox->setCurrentIndex(currentBlockIndex); //restore current draft block
         drawMode = true;
 
         setEnableTools(true);
@@ -3367,21 +3421,20 @@ void MainWindow::draftMode_Action(bool checked)
 
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        ui->groups_DockWidget->setToolTip(tr("Show which groups in the list are visible"));
         ui->groups_DockWidget->setVisible(isGroupsDockVisible);
     }
     else
     {
-        ui->draftMode_Action->setChecked(true);
+        ui->showDraftMode->setChecked(true);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ActionDetails show details scene.
+ * @brief showPieceMode show Piece scene.
  * @param checked true - button checked.
  */
-void MainWindow::ActionDetails(bool checked)
+void MainWindow::showPieceMode(bool checked)
 {
     if (checked)
     {
@@ -3390,15 +3443,15 @@ void MainWindow::ActionDetails(bool checked)
 
         if(drawMode)
         {
-            currentDrawIndex = comboBoxDraws->currentIndex();//save current pattern piece
+            currentBlockIndex = draftBlockComboBox->currentIndex();         // Save current draftf block.
             drawMode = false;
         }
-        comboBoxDraws->setCurrentIndex(comboBoxDraws->count()-1);// Need to get data about all details
+        draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1); // Need to get data about all blocks.
 
         leftGoToStage->setPixmap(QPixmap("://icon/24x24/right_to_left_arrow.png"));
         rightGoToStage->setPixmap(QPixmap("://icon/24x24/left_to_right_arrow.png"));
 
-        ui->draftMode_Action->setChecked(false);
+        ui->showDraftMode->setChecked(false);
         ui->pieceMode_Action->setChecked(true);
         ui->layoutMode_Action->setChecked(false);
 
@@ -3409,12 +3462,12 @@ void MainWindow::ActionDetails(bool checked)
                 QMessageBox::information(this, tr("Piece mode"), tr("You can't use Piece mode yet. "
                                                                      "Please, create at least one pattern piece."),
                                          QMessageBox::Ok, QMessageBox::Ok);
-                draftMode_Action(true);
+                showDraftMode(true);
                 return;
             }
         }
 
-        patternPiecesWidget->UpdateList();
+        patternPiecesWidget->updateList();
 
         qCDebug(vMainWindow, "Show piece scene");
         SaveCurrentScene();
@@ -3454,7 +3507,6 @@ void MainWindow::ActionDetails(bool checked)
 
         ui->groups_DockWidget->setWidget(patternPiecesWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        ui->groups_DockWidget->setToolTip(tr("Show which pattern pieces will included in layout"));
         ui->groups_DockWidget->setVisible(isGroupsDockVisible);
 
         helpLabel->setText("");
@@ -3467,10 +3519,10 @@ void MainWindow::ActionDetails(bool checked)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ActionLayout begin creation layout.
+ * @brief showLayoutMode show layout scene.
  * @param checked true - button checked.
  */
-void MainWindow::ActionLayout(bool checked)
+void MainWindow::showLayoutMode(bool checked)
 {
     if (checked)
     {
@@ -3479,54 +3531,54 @@ void MainWindow::ActionLayout(bool checked)
 
         if(drawMode)
         {
-            currentDrawIndex = comboBoxDraws->currentIndex();//save current pattern piece
+            currentBlockIndex = draftBlockComboBox->currentIndex();//save current drfat block
             drawMode = false;
         }
-        comboBoxDraws->setCurrentIndex(comboBoxDraws->count()-1);// Need to get data about all details
+        draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1);// Need to get data about all draft blocks
 
         leftGoToStage->setPixmap(QPixmap("://icon/24x24/right_to_left_arrow.png"));
         rightGoToStage->setPixmap(QPixmap("://icon/24x24/fast_forward_right_to_left_arrow.png"));
 
-        ui->draftMode_Action->setChecked(false);
+        ui->showDraftMode->setChecked(false);
         ui->pieceMode_Action->setChecked(false);
         ui->layoutMode_Action->setChecked(true);
 
-        QHash<quint32, VPiece> details;
+        QHash<quint32, VPiece> pieces;
         if(not qApp->getOpeningPattern())
         {
-            const QHash<quint32, VPiece> *allDetails = pattern->DataPieces();
-            if (allDetails->count() == 0)
+            const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
+            if (allPieces->count() == 0)
             {
                 QMessageBox::information(this, tr("Layout mode"), tr("You can't use Layout mode yet. "
                                                                      "Please, create at least one pattern piece."),
                                          QMessageBox::Ok, QMessageBox::Ok);
-                draftMode_Action(true);
+                showDraftMode(true);
                 return;
             }
             else
             {
-                QHash<quint32, VPiece>::const_iterator i = allDetails->constBegin();
-                while (i != allDetails->constEnd())
+                QHash<quint32, VPiece>::const_iterator i = allPieces->constBegin();
+                while (i != allPieces->constEnd())
                 {
-                    if (i.value().IsInLayout())
+                    if (i.value().isInLayout())
                     {
-                        details.insert(i.key(), i.value());
+                        pieces.insert(i.key(), i.value());
                     }
                     ++i;
                 }
 
-                if (details.count() == 0)
+                if (pieces.count() == 0)
                 {
                     QMessageBox::information(this, tr("Layout mode"),  tr("You can't use Layout mode yet. Please, "
                                                                           "include at least one pattern piece in layout."),
                                              QMessageBox::Ok, QMessageBox::Ok);
-                    mode == Draw::Calculation ? draftMode_Action(true) : ActionDetails(true);
+                    mode == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
                     return;
                 }
             }
         }
 
-        comboBoxDraws->setCurrentIndex(-1);// Hide pattern pieces
+        draftBlockComboBox->setCurrentIndex(-1);// Hide pattern pieces
 
         qCDebug(vMainWindow, "Show layout scene");
 
@@ -3534,15 +3586,15 @@ void MainWindow::ActionLayout(bool checked)
 
         try
         {
-            listDetails = PrepareDetailsForLayout(details);
+            pieceList = preparePiecesForLayout(pieces);
         }
         catch (VException &e)
         {
-            listDetails.clear();
+            pieceList.clear();
             QMessageBox::warning(this, tr("Layout mode"),
                                  tr("You can't use Layout mode yet.") + QLatin1String(" \n") + e.ErrorMessage(),
                                  QMessageBox::Ok, QMessageBox::Ok);
-            mode == Draw::Calculation ? draftMode_Action(true) : ActionDetails(true);
+            mode == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
             return;
         }
 
@@ -3830,8 +3882,8 @@ void MainWindow::Clear()
     qCDebug(vMainWindow, "Resetting main window.");
     lock.reset();
     qCDebug(vMainWindow, "Unlocked pattern file.");
-    draftMode_Action(true);
-    qCDebug(vMainWindow, "Returned to Draw mode.");
+    showDraftMode(true);
+    qCDebug(vMainWindow, "Returned to Draft mode.");
     setCurrentFile(QString());
     pattern->Clear();
     qCDebug(vMainWindow, "Clearing pattern.");
@@ -3844,8 +3896,8 @@ void MainWindow::Clear()
     draftScene->clear();
     pieceScene->clear();
     handleArrowTool(true);
-    comboBoxDraws->clear();
-    ui->draftMode_Action->setEnabled(false);
+    draftBlockComboBox->clear();
+    ui->showDraftMode->setEnabled(false);
     ui->pieceMode_Action->setEnabled(false);
     ui->layoutMode_Action->setEnabled(false);
     ui->newDraft_Action->setEnabled(false);
@@ -3864,6 +3916,7 @@ void MainWindow::Clear()
     ui->zoomToPrevious_Action->setEnabled(false);
     ui->zoomToArea_Action->setEnabled(false);
     ui->zoomPan_Action->setEnabled(false);
+    ui->zoomToPoint_Action->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -3897,7 +3950,7 @@ void MainWindow::Clear()
     QGuiApplication::restoreOverrideCursor();
 #endif
     CleanLayout();
-    listDetails.clear(); // don't move to CleanLayout()
+    pieceList.clear(); // don't move to CleanLayout()
     qApp->getUndoStack()->clear();
     toolProperties->ClearPropertyBrowser();
     toolProperties->itemClicked(nullptr);
@@ -4008,36 +4061,36 @@ void MainWindow::FullParseFile()
     }
 
     QString patternPiece;
-    if (comboBoxDraws->currentIndex() != -1)
+    if (draftBlockComboBox->currentIndex() != -1)
     {
-        patternPiece = comboBoxDraws->itemText(comboBoxDraws->currentIndex());
+        patternPiece = draftBlockComboBox->itemText(draftBlockComboBox->currentIndex());
     }
-    comboBoxDraws->blockSignals(true);
-    comboBoxDraws->clear();
+    draftBlockComboBox->blockSignals(true);
+    draftBlockComboBox->clear();
 
-    QStringList patternPieceNames = doc->getPatternPieces();
-    patternPieceNames.sort();
-    comboBoxDraws->addItems(patternPieceNames);
+    QStringList draftBlockNames = doc->getPatternPieces();
+    draftBlockNames.sort();
+    draftBlockComboBox->addItems(draftBlockNames);
 
     if (not drawMode)
     {
-        comboBoxDraws->setCurrentIndex(comboBoxDraws->count()-1);
+        draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1);
     }
     else
     {
-        const qint32 index = comboBoxDraws->findText(patternPiece);
+        const qint32 index = draftBlockComboBox->findText(patternPiece);
         if ( index != -1 )
         {
-            comboBoxDraws->setCurrentIndex(index);
+            draftBlockComboBox->setCurrentIndex(index);
         }
     }
-    comboBoxDraws->blockSignals(false);
+    draftBlockComboBox->blockSignals(false);
     ui->patternPreferences_Action->setEnabled(true);
 
     GlobalchangeDraftBlock(patternPiece);
 
-    setEnableTools(comboBoxDraws->count() > 0);
-    patternPiecesWidget->UpdateList();
+    setEnableTools(draftBlockComboBox->count() > 0);
+    patternPiecesWidget->updateList();
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
     VMainGraphicsView::NewSceneRect(pieceScene, qApp->getSceneView());
@@ -4046,7 +4099,7 @@ void MainWindow::FullParseFile()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
 {
-    const qint32 index = comboBoxDraws->findText(patternPiece);
+    const qint32 index = draftBlockComboBox->findText(patternPiece);
     try
     {
         if ( index != -1 )
@@ -4116,7 +4169,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     const bool designStage = (draftStage || pieceStage);
     const bool layoutStage = (mode == Draw::Layout);
 
-    comboBoxDraws->setEnabled(enable && draftStage);
+    draftBlockComboBox->setEnabled(enable && draftStage);
     ui->arrow_Action->setEnabled(enable && designStage);
 
     // enable file menu actions
@@ -4129,7 +4182,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     redoAction->setEnabled(enable && designStage && qApp->getUndoStack()->canRedo());
 
     // enable view menu actions
-    ui->draftMode_Action->setEnabled(enable);
+    ui->showDraftMode->setEnabled(enable);
     ui->pieceMode_Action->setEnabled(enable);
     ui->layoutMode_Action->setEnabled(enable);
     zoomScaleSpinBox->setEnabled(enable);
@@ -4141,6 +4194,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToPrevious_Action->setEnabled(enable);
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
+    ui->zoomToPoint_Action->setEnabled(enable && draftStage);
+    m_zoomToPointComboBox->setEnabled(enable && draftStage);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);
@@ -4241,24 +4296,24 @@ void MainWindow::UpdateSizesList(const QStringList &list)
  */
 void MainWindow::New()
 {
-    if (comboBoxDraws->count() == 0)
+    if (draftBlockComboBox->count() == 0)
     {
-        // Creating a new pattern design requires creating a new pattern piece
-        qCDebug(vMainWindow, "New Pattern Piece.");
-        QString patternPieceName = tr("Pattern piece %1").arg(comboBoxDraws->count()+1);
-        qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
+        // Creating a new pattern design requires creating a new draft block
+        qCDebug(vMainWindow, "New Draft Block.");
+        QString draftBlockName = tr("Draft block %1").arg(draftBlockComboBox->count()+1);
+        qCDebug(vMainWindow, "Generated Draft Block name: %s", qUtf8Printable(draftBlockName));
 
-        qCDebug(vMainWindow, "First Pattern Piece");
-        DialogNewPattern newPattern(pattern, patternPieceName, this);
+        qCDebug(vMainWindow, "First Draft Block");
+        DialogNewPattern newPattern(pattern, draftBlockName, this);
         if (newPattern.exec() == QDialog::Accepted)
         {
-            patternPieceName = newPattern.name();
+            draftBlockName = newPattern.name();
             qApp->setPatternUnit(newPattern.PatternUnit());
-            qCDebug(vMainWindow, "Pattern Piece name: %s", qUtf8Printable(patternPieceName));
+            qCDebug(vMainWindow, "Draft Block name: %s", qUtf8Printable(draftBlockName));
         }
         else
         {
-            qCDebug(vMainWindow, "Creating new Pattern Piece was canceled.");
+            qCDebug(vMainWindow, "Creating new Draft Block was canceled.");
             return;
         }
 
@@ -4266,7 +4321,7 @@ void MainWindow::New()
         VMainGraphicsView::NewSceneRect(draftScene, ui->view);
         VMainGraphicsView::NewSceneRect(pieceScene, ui->view);
 
-        AddPP(patternPieceName);
+        addDraftBlock(draftBlockName);
 
         mouseCoordinates = new MouseCoordinates(qApp->patternUnit());
         ui->statusBar->addPermanentWidget((mouseCoordinates));
@@ -4425,7 +4480,7 @@ void MainWindow::setEnableTools(bool enable)
     // This check helps to find missed tools
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were handled.");
 
-    //Toolbox Drawing Tools
+    //Toolbox Drafting Tools
     //Points
     ui->pointAtDistanceAngle_ToolButton->setEnabled(draftTools);
     ui->alongLine_ToolButton->setEnabled(draftTools);
@@ -4717,7 +4772,7 @@ void MainWindow::ReadSettings()
  */
 void MainWindow::WriteSettings()
 {
-    draftMode_Action(true);
+    showDraftMode(true);
 
     VSettings *setings = qApp->Seamly2DSettings();
     setings->SetGeometry(saveGeometry());
@@ -5011,9 +5066,9 @@ void MainWindow::LastUsedTool()
             ui->pointAlongSpline_ToolButton->setChecked(true);
             handlePointAlongSplineTool(true);
             break;
-        case Tool::UnionDetails:
+        case Tool::Union:
             ui->unitePieces_ToolButton->setChecked(true);
-            handleUnionDetailsTool(true);
+            handleUnionTool(true);
             break;
         case Tool::CutArc:
             ui->pointAlongArc_ToolButton->setChecked(true);
@@ -5138,11 +5193,11 @@ void MainWindow::InitDocksContain()
     groupsWidget = new VWidgetGroups(doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
 
-    patternPiecesWidget = new VWidgetDetails(pattern, doc, this);
-    connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &VWidgetDetails::UpdateList);
-    connect(doc, &VPattern::UpdateInLayoutList, patternPiecesWidget, &VWidgetDetails::UpdateList);
-    connect(doc, &VPattern::ShowDetail, patternPiecesWidget, &VWidgetDetails::SelectDetail);
-    connect(patternPiecesWidget, &VWidgetDetails::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
+    patternPiecesWidget = new PiecesWidget(pattern, doc, this);
+    connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
+    connect(doc, &VPattern::UpdateInLayoutList, patternPiecesWidget, &PiecesWidget::togglePiece);
+    connect(doc, &VPattern::showPiece, patternPiecesWidget, &PiecesWidget::selectPiece);
+    connect(patternPiecesWidget, &PiecesWidget::Highlight, pieceScene, &VMainGraphicsScene::HighlightItem);
     patternPiecesWidget->setVisible(false);
 
     ui->toolbox_StackedWidget->setCurrentIndex(0);
@@ -5229,14 +5284,14 @@ void MainWindow::CreateActions()
     //Edit Menu
     connect(ui->labelTemplateEditor_Action, &QAction::triggered, this, [this]()
     {
-        DialogEditLabel editor(doc);
+        EditLabelTemplateDialog editor(doc);
         editor.exec();
     });
 
     //View menu
-    connect(ui->draftMode_Action, &QAction::triggered, this, &MainWindow::draftMode_Action);
-    connect(ui->pieceMode_Action, &QAction::triggered, this, &MainWindow::ActionDetails);
-    connect(ui->layoutMode_Action, &QAction::triggered, this, &MainWindow::ActionLayout);
+    connect(ui->showDraftMode, &QAction::triggered, this, &MainWindow::showDraftMode);
+    connect(ui->pieceMode_Action, &QAction::triggered, this, &MainWindow::showPieceMode);
+    connect(ui->layoutMode_Action, &QAction::triggered, this, &MainWindow::showLayoutMode);
 
     connect(ui->toggleWireframe_Action, &QAction::triggered, this, [this](bool checked)
     {
@@ -5277,7 +5332,7 @@ void MainWindow::CreateActions()
     {
         qApp->Seamly2DSettings()->setShowLabels(checked);
         ui->view->itemClicked(nullptr);
-        RefreshDetailsLabel();
+        refreshLabels();
     });
 /**
     connect(ui->toggleAnchorPoints_Action, &QAction::triggered, this, [this](bool checked)
@@ -5316,20 +5371,20 @@ void MainWindow::CreateActions()
     //Tools menu
     connect(ui->newDraft_Action, &QAction::triggered, this, [this]()
     {
-        qCDebug(vMainWindow, "New Pattern Piece.");
-        QString patternPieceName = tr("Pattern Piece %1").arg(comboBoxDraws->count()+1);
-        qCDebug(vMainWindow, "Generated Pattern Piece name: %s", qUtf8Printable(patternPieceName));
+        qCDebug(vMainWindow, "New Draft Block.");
+        QString draftBlockName = tr("Draft Block %1").arg(draftBlockComboBox->count()+1);
+        qCDebug(vMainWindow, "Generated Draft Block name: %s", qUtf8Printable(draftBlockName));
 
-        qCDebug(vMainWindow, "Pattern Piece count %d", comboBoxDraws->count());
-        patternPieceName = PatternPieceName(patternPieceName);
-        qCDebug(vMainWindow, "Pattern Piece name: %s", qUtf8Printable(patternPieceName));
-        if (patternPieceName.isEmpty())
+        qCDebug(vMainWindow, "Draft Block count %d", draftBlockComboBox->count());
+        draftBlockName = createDraftBlockName(draftBlockName);
+        qCDebug(vMainWindow, "Draft Block name: %s", qUtf8Printable(draftBlockName));
+        if (draftBlockName.isEmpty())
         {
-            qCDebug(vMainWindow, "Pattern Piece name is empty.");
+            qCDebug(vMainWindow, "Draft Block name is empty.");
             return;
         }
 
-        AddPP(patternPieceName);
+        addDraftBlock(draftBlockName);
     });
 
     //Tools->Point submenu actions
@@ -5576,12 +5631,12 @@ void MainWindow::CreateActions()
         exportDraftBlocksAs();
     });
 
-    //Tools->Add Details submenu actions
+    //Tools->Details submenu actions
     connect(ui->union_Action, &QAction::triggered, this, [this]
     {
         ui->piece_ToolBox->setCurrentWidget(ui->details_Page);
         ui->unitePieces_ToolButton->setChecked(true);
-        handleUnionDetailsTool(true);
+        handleUnionTool(true);
     });
 
     connect(ui->exportPieces_Action, &QAction::triggered, this, [this]
@@ -5693,7 +5748,7 @@ void MainWindow::CreateActions()
                     delete dialogHistory;
                 }
             });
-            // Fix issue #526. Dialog Detail is not on top after selection second object on Mac.
+            // Fix issue #526. Dialog is not on top after selection second object on Mac.
             dialogHistory->setWindowFlags(dialogHistory->windowFlags() | Qt::WindowStaysOnTopHint);
             dialogHistory->show();
         }
@@ -5766,7 +5821,7 @@ void MainWindow::CreateActions()
     connect(ui->arcs_Action,          &QAction::triggered, this, &MainWindow::handleArcsMenu);
     connect(ui->curves_Action,        &QAction::triggered, this, &MainWindow::handleCurvesMenu);
     connect(ui->modifications_Action, &QAction::triggered, this, &MainWindow::handleOperationsMenu);
-    connect(ui->details_Action,       &QAction::triggered, this, &MainWindow::handleDetailsMenu);
+    connect(ui->details_Action,       &QAction::triggered, this, &MainWindow::handlePatternPiecesMenu);
     connect(ui->pieces_Action,        &QAction::triggered, this, &MainWindow::handlePieceMenu);
     connect(ui->layout_Action,        &QAction::triggered, this, &MainWindow::handleLayoutMenu);
 }
@@ -5793,7 +5848,7 @@ void MainWindow::InitAutoSave()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString MainWindow::PatternPieceName(const QString &text)
+QString MainWindow::createDraftBlockName(const QString &text)
 {
     QInputDialog *dialog = new QInputDialog(this);
     dialog->setInputMode( QInputDialog::TextInput );
@@ -5815,7 +5870,7 @@ QString MainWindow::PatternPieceName(const QString &text)
             delete dialog;
             return QString();
         }
-        if (comboBoxDraws->findText(draftBlockName) == -1)
+        if (draftBlockComboBox->findText(draftBlockName) == -1)
         {
             break; //exit dialog
         }
@@ -6012,7 +6067,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         //Fit scene size to best size for first show
         zoomFirstShow();
 
-        draftMode_Action(true);
+        showDraftMode(true);
 
         qApp->setOpeningPattern();// End opening file
         return true;
@@ -6115,7 +6170,7 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::WindowsLocale); // Must be first
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::ToolBarStyles);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateToolBarVisibility);
-        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::RefreshDetailsLabel);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::refreshLabels);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetOrigins);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::upDateScenes);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
@@ -6197,19 +6252,19 @@ void MainWindow::exportPiecesAs()
     ui->arrow_Action->setChecked(false);
     ui->exportPiecesAs_ToolButton->setChecked(true);
 
-    const QHash<quint32, VPiece> *allDetails = pattern->DataPieces();
-    QHash<quint32, VPiece>::const_iterator i = allDetails->constBegin();
-    QHash<quint32, VPiece> detailsInLayout;
-    while (i != allDetails->constEnd())
+    const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
+    QHash<quint32, VPiece>::const_iterator i = allPieces->constBegin();
+    QHash<quint32, VPiece> piecesInLayout;
+    while (i != allPieces->constEnd())
     {
-        if (i.value().IsInLayout())
+        if (i.value().isInLayout())
         {
-            detailsInLayout.insert(i.key(), i.value());
+            piecesInLayout.insert(i.key(), i.value());
         }
         ++i;
     }
 
-    if (detailsInLayout.count() == 0)
+    if (piecesInLayout.count() == 0)
     {
         QMessageBox::information(this, tr("Layout mode"),  tr("You don't have any pieces to export. Please, "
                                                               "include at least one piece in layout."),
@@ -6217,10 +6272,10 @@ void MainWindow::exportPiecesAs()
         return;
     }
 
-    QVector<VLayoutPiece> listDetails;
+    QVector<VLayoutPiece> pieceList;
     try
     {
-        listDetails = PrepareDetailsForLayout(detailsInLayout);
+        pieceList = preparePiecesForLayout(piecesInLayout);
     }
     catch (VException &e)
     {
@@ -6241,7 +6296,7 @@ void MainWindow::exportPiecesAs()
             return;
         }
 
-        ExportData(listDetails, dialog);
+        ExportData(pieceList, dialog);
     }
     catch (const VException &e)
     {
@@ -6291,8 +6346,8 @@ void MainWindow::exportDraftBlocksAs()
     if (dialog.exec() == QDialog::Accepted)
     {
         const QString filename = QString("%1/%2%3")
-        .arg(dialog.path())                                          //1
-        .arg(dialog.fileName())                                      //2
+        .arg(dialog.path())                                            //1
+        .arg(dialog.fileName())                                        //2
         .arg(ExportLayoutDialog::exportFormatSuffix(dialog.format())); //3
 
         QRectF rect;
@@ -6605,7 +6660,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
 {
     if (index != -1)
     {
-        doc->changeActiveDraftBlock(comboBoxDraws->itemText(index));
+        doc->changeActiveDraftBlock(draftBlockComboBox->itemText(index));
         doc->setCurrentData();
         emit RefreshHistory();
         if (drawMode)
@@ -6641,12 +6696,12 @@ void MainWindow::zoomFirstShow()
      */
     if (pattern->DataPieces()->size() > 0)
     {
-        ActionDetails(true);
+        showPieceMode(true);
         ui->view->zoomToFit();
     }
-    if (not ui->draftMode_Action->isChecked())
+    if (not ui->showDraftMode->isChecked())
     {
-        draftMode_Action(true);
+        showDraftMode(true);
     }
     zoomToSelected();
 
@@ -6655,33 +6710,33 @@ void MainWindow::zoomFirstShow()
 
     if (pattern->DataPieces()->size() > 0)
     {
-        ActionDetails(true);
+        showPieceMode(true);
         ui->view->zoomToFit();
     }
 
-    if (not ui->draftMode_Action->isChecked())
+    if (not ui->showDraftMode->isChecked())
     {
-        draftMode_Action(true);
+        showDraftMode(true);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::DoExport(const VCommandLinePtr &expParams)
 {
-    const QHash<quint32, VPiece> *details = pattern->DataPieces();
+    const QHash<quint32, VPiece> *pieces = pattern->DataPieces();
     if(not qApp->getOpeningPattern())
     {
-        if (details->count() == 0)
+        if (pieces->count() == 0)
         {
             qCCritical(vMainWindow, "%s", qUtf8Printable(tr("You can't export empty scene.")));
             qApp->exit(V_EX_DATAERR);
             return;
         }
     }
-    listDetails = PrepareDetailsForLayout(*details);
+    pieceList = preparePiecesForLayout(*pieces);
 
-    const bool exportOnlyDetails = expParams->IsExportOnlyDetails();
-    if (exportOnlyDetails)
+    const bool exportOnlyPieces = expParams->exportOnlyPieces();
+    if (exportOnlyPieces)
     {
         try
         {
@@ -6691,7 +6746,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
             dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
             dialog.setTextAsPaths(expParams->isTextAsPaths());
 
-            ExportData(listDetails, dialog);
+            ExportData(pieceList, dialog);
         }
         catch (const VException &e)
         {
@@ -6714,7 +6769,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
                 dialog.selectFormat(static_cast<LayoutExportFormat>(expParams->OptExportType()));
                 dialog.setBinaryDXFFormat(expParams->IsBinaryDXF());
 
-                ExportData(listDetails, dialog);
+                ExportData(pieceList, dialog);
             }
             catch (const VException &e)
             {
@@ -7077,6 +7132,37 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief draftPointNamesList gets the list of points in draft mode.
+ */
+QStringList MainWindow::draftPointNamesList()
+{
+    QStringList pointNames;
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
+    {
+        if (item.value()->getType() == GOType::Point && !pointNames.contains(item.value()->name()))
+            pointNames << item.value()->name();
+    }
+    pointNames.sort();
+    pointNames.removeDuplicates();
+    return pointNames;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief updateZoomToPointComboBox updates the list of points included in the toolbar combobox.
+ */
+void MainWindow::updateZoomToPointComboBox(QStringList namesList)
+{
+    m_zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
+    m_zoomToPointComboBox->clear();
+    m_zoomToPointComboBox->addItems(namesList);
+    m_zoomToPointComboBox->blockSignals(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::ToolSelectPoint() const
 {
     // Only true for rubber band selection
@@ -7245,7 +7331,7 @@ void MainWindow::ToolSelectCurve() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ToolSelectAllDrawObjects() const
+void MainWindow::selectAllDraftObjectsTool() const
 {
     // Only true for rubber band selection
     emit EnableLabelSelection(false);
@@ -7308,17 +7394,17 @@ void MainWindow::ToolSelectGroupObjects() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ToolSelectDetail() const
+void MainWindow::selectPieceTool() const
 {
     // Only true for rubber band selection
     emit EnableNodeLabelSelection(false);
     emit EnableNodePointSelection(false);
-    emit EnableDetailSelection(true);// Disable when done visualization details
+    emit enablePieceSelection(true); // Disable when done with pattern piece visualization.
 
     // Hovering
     emit EnableNodeLabelHover(true);
     emit EnableNodePointHover(true);
-    emit EnableDetailHover(true);
+    emit enablePieceHover(true);
 
     emit ItemsSelection(SelectionType::ByMouseRelease);
 

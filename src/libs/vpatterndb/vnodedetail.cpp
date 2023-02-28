@@ -94,12 +94,12 @@ void ConvertBefore(VPieceNode &node, const QLineF &line, qreal mX, qreal mY)
     if (not qFuzzyIsNull(mX) && IsOX(line))
     {
         const QLineF movedLine(line.p1().x(), line.p1().y(), line.p2().x() + mX, line.p2().y());
-        node.SetFormulaSABefore(LocalWidth(line, movedLine));
+        node.setBeforeSAFormula(LocalWidth(line, movedLine));
     }
     else if (not qFuzzyIsNull(mY) && IsOY(line))
     {
         const QLineF movedLine(line.p1().x(), line.p1().y(), line.p2().x(), line.p2().y() + mY);
-        node.SetFormulaSABefore(LocalWidth(line, movedLine));
+        node.setBeforeSAFormula(LocalWidth(line, movedLine));
     }
 }
 
@@ -109,12 +109,12 @@ void ConvertAfter(VPieceNode &node, const QLineF &line, qreal mX, qreal mY)
     if (not qFuzzyIsNull(mX) && IsOX(line))
     {
         const QLineF movedLine(line.p1().x(), line.p1().y(), line.p2().x() + mX, line.p2().y());
-        node.SetFormulaSAAfter(LocalWidth(line, movedLine));
+        node.setAfterSAFormula(LocalWidth(line, movedLine));
     }
     else if (not qFuzzyIsNull(mY) && IsOY(line))
     {
         const QLineF movedLine(line.p1().x(), line.p1().y(), line.p2().x(), line.p2().y() + mY);
-        node.SetFormulaSAAfter(LocalWidth(line, movedLine));
+        node.setAfterSAFormula(LocalWidth(line, movedLine));
     }
 }
 }//static functions
@@ -293,8 +293,8 @@ QVector<VPieceNode> VNodeDetail::Convert(const VContainer *data, const QVector<V
 
     if (not closed && path.CountNodes() > 1)
     {
-        path[0].SetFormulaSABefore("0");
-        path[path.CountNodes()-1].SetFormulaSAAfter("0");
+        path[0].setBeforeSAFormula("0");
+        path[path.CountNodes()-1].setAfterSAFormula("0");
     }
 
     return path.GetNodes();

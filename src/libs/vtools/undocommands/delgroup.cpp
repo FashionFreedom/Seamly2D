@@ -64,7 +64,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DelGroup::DelGroup(VAbstractPattern *doc, quint32 id, QUndoCommand *parent)
-    : VUndoCommand(QDomElement(), doc, parent), nameActivDraw(doc->getActiveDraftBlockName())
+    : VUndoCommand(QDomElement(), doc, parent), activeBlockName(doc->getActiveDraftBlockName())
 {
     setText(tr("delete group"));
     nodeId = id;
@@ -81,7 +81,7 @@ void DelGroup::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    doc->setCurrentDraftBlock(nameActivDraw);//Without this user will not see this change
+    doc->setCurrentDraftBlock(activeBlockName);//Without this user will not see this change
 
     QDomElement groups = doc->CreateGroups();
     if (not groups.isNull())
@@ -105,7 +105,7 @@ void DelGroup::redo()
     qCDebug(vUndo, "Redo.");
 
     //Keep first!
-    doc->setCurrentDraftBlock(nameActivDraw);//Without this user will not see this change
+    doc->setCurrentDraftBlock(activeBlockName);//Without this user will not see this change
     QDomElement groups = doc->CreateGroups();
     if (not groups.isNull())
     {

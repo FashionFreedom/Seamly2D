@@ -178,6 +178,15 @@ public:
     QString GetName() const;
     void    SetName(const QString &value);
 
+    QString getColor() const;
+    void    setColor(const QString &value);
+
+    QString getFill() const;
+    void    setFill(const QString &value);
+
+    bool    getLock() const;
+    void    setLock(bool value);
+
     bool IsForbidFlipping() const;
     void SetForbidFlipping(bool value);
 
@@ -200,7 +209,8 @@ public:
     void  SetMy(qreal value);
 
     static QVector<QPointF> Equidistant(const QVector<VSAPoint> &points, qreal width);
-    static qreal            SumTrapezoids(const QVector<QPointF> &points);
+    static qreal            sumTrapezoids(const QVector<QPointF> &points);
+    static bool             isClockwise(const QVector<QPointF> &points);
     static QVector<QPointF> CheckLoops(const QVector<QPointF> &points);
     static QVector<QPointF> EkvPoint(const VSAPoint &p1Line1, const VSAPoint &p2Line1,
                                      const VSAPoint &p1Line2, const VSAPoint &p2Line2, qreal width);

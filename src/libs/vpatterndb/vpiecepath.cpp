@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vpiecepath.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+ /************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -91,7 +92,7 @@ VSAPoint CurveStartPoint(VSAPoint candidate, const VContainer *data, const VPiec
         const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(node.GetId());
 
         const QVector<QPointF> points = curve->getPoints();
-        if (not points.isEmpty())
+        if (!points.isEmpty())
         {
             QPointF end; // Last point for this curve show start of next segment
             node.GetReverse() ? end = points.first() : end = points.last();
@@ -118,7 +119,7 @@ VSAPoint CurveEndPoint(VSAPoint candidate, const VContainer *data, const VPieceN
         const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(node.GetId());
 
         const QVector<QPointF> points = curve->getPoints();
-        if (not points.isEmpty())
+        if (!points.isEmpty())
         {
             QPointF begin;// First point for this curve show finish of previous segment
             node.GetReverse() ? begin = points.last() : begin = points.first();
@@ -296,26 +297,26 @@ QVector<QPointF> VPiecePath::PathPoints(const VContainer *data) const
         switch (at(i).GetTypeTool())
         {
             case (Tool::NodePoint):
-            {
-                const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(at(i).GetId());
-                points.append(static_cast<QPointF>(*point));
-            }
-            break;
+                {
+                    const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(at(i).GetId());
+                    points.append(static_cast<QPointF>(*point));
+                }
+                break;
             case (Tool::NodeArc):
             case (Tool::NodeElArc):
             case (Tool::NodeSpline):
             case (Tool::NodeSplinePath):
-            {
-                const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(at(i).GetId());
+                {
+                    const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(at(i).GetId());
 
-                const QPointF begin = StartSegment(data, i, at(i).GetReverse());
-                const QPointF end = EndSegment(data, i, at(i).GetReverse());
+                    const QPointF begin = StartSegment(data, i, at(i).GetReverse());
+                    const QPointF end = EndSegment(data, i, at(i).GetReverse());
 
-                points << curve->GetSegmentPoints(begin, end, at(i).GetReverse());
-            }
-            break;
+                    points << curve->GetSegmentPoints(begin, end, at(i).GetReverse());
+                }
+                break;
             default:
-                qDebug()<<"Get wrong tool type. Ignore."<< static_cast<char>(at(i).GetTypeTool());
+                qDebug() << "Got wrong tool type. Ignore." << static_cast<char>(at(i).GetTypeTool());
                 break;
         }
     }
@@ -332,14 +333,14 @@ QVector<VPointF> VPiecePath::PathNodePoints(const VContainer *data, bool showExc
         switch (at(i).GetTypeTool())
         {
             case Tool::NodePoint:
-            {
-                if (showExcluded || not at(i).isExcluded())
                 {
-                    const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(at(i).GetId());
-                    points.append(*point);
+                    if (showExcluded || not at(i).isExcluded())
+                    {
+                        const QSharedPointer<VPointF> point = data->GeometricObject<VPointF>(at(i).GetId());
+                        points.append(*point);
+                    }
                 }
-            }
-            break;
+                break;
             case Tool::NodeArc:
             case Tool::NodeElArc:
             case Tool::NodeSpline:
@@ -364,21 +365,21 @@ QVector<VSAPoint> VPiecePath::SeamAllowancePoints(const VContainer *data, qreal 
         switch (node.GetTypeTool())
         {
             case (Tool::NodePoint):
-            {
-                pointsEkv.append(PreparePointEkv(node, data));
-            }
-            break;
+                {
+                    pointsEkv.append(PreparePointEkv(node, data));
+                }
+                break;
             case (Tool::NodeArc):
             case (Tool::NodeElArc):
             case (Tool::NodeSpline):
             case (Tool::NodeSplinePath):
-            {
-                const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(node.GetId());
-                pointsEkv += CurveSeamAllowanceSegment(data, d->m_nodes, curve, i, node.GetReverse(), width);
-            }
-            break;
+                {
+                    const QSharedPointer<VAbstractCurve> curve = data->GeometricObject<VAbstractCurve>(node.GetId());
+                    pointsEkv += CurveSeamAllowanceSegment(data, d->m_nodes, curve, i, node.GetReverse(), width);
+                }
+                break;
             default:
-                qDebug()<<"Get wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
+                qDebug() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -397,7 +398,7 @@ QPainterPath VPiecePath::PainterPath(const VContainer *data) const
     const QVector<QPointF> points = PathPoints(data);
     QPainterPath path;
 
-    if (not points.isEmpty())
+    if (!points.isEmpty())
     {
         path.addPolygon(QPolygonF(points));
         path.setFillRule(Qt::WindingFill);
@@ -739,7 +740,7 @@ QPointF VPiecePath::NodePreviousPoint(const VContainer *data, int i) const
             }
                 break;
             default:
-                qDebug()<<"Get wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
+                qDebug() << "Got wrong tool type. Ignore." << static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -791,7 +792,7 @@ QPointF VPiecePath::NodeNextPoint(const VContainer *data, int i) const
             }
                 break;
             default:
-                qDebug()<<"Get wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
+                qDebug()<<"Got wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -832,7 +833,7 @@ int VPiecePath::FindInLoopNotExcludedUp(int start, const QVector<VPieceNode> &no
     bool found = false;
     do
     {
-        if (not nodes.at(i).isExcluded())
+        if (!nodes.at(i).isExcluded())
         {
             found = true;
             break;
@@ -846,7 +847,7 @@ int VPiecePath::FindInLoopNotExcludedUp(int start, const QVector<VPieceNode> &no
         }
     } while (checked < nodes.size());
 
-    return (not found) ? -1 : i;
+    return (!found) ? -1 : i;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -868,7 +869,7 @@ int VPiecePath::FindInLoopNotExcludedDown(int start, const QVector<VPieceNode> &
     bool found = false;
     do
     {
-        if (not nodes.at(i).isExcluded())
+        if (!nodes.at(i).isExcluded())
         {
             found = true;
             break;
@@ -882,7 +883,7 @@ int VPiecePath::FindInLoopNotExcludedDown(int start, const QVector<VPieceNode> &
         }
     } while (checked < nodes.size());
 
-    return (not found) ? -1 : i;
+    return (!found) ? -1 : i;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

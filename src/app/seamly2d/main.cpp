@@ -51,7 +51,6 @@
 
 #include "mainwindow.h"
 #include "core/vapplication.h"
-#include "../fervor/fvupdater.h"
 #include "../vpatterndb/vpiecenode.h"
 
 #include <QApplication>
@@ -69,6 +68,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(flags);
     Q_INIT_RESOURCE(icons);
     Q_INIT_RESOURCE(toolicon);
+    Q_INIT_RESOURCE(sounds);
 
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 
@@ -89,19 +89,6 @@ int main(int argc, char *argv[])
     VApplication app(argc, argv);
 
     app.InitOptions();
-
-    // Due to unknown reasons version checker cause a crash. See issue #633.
-    // Before we will find what cause such crashes it will stay disabled in Release mode.
-#ifndef V_NO_ASSERT
-    if (VApplication::IsGUIMode())
-    {
-        // Set feed URL before doing anything else
-        FvUpdater::sharedUpdater()->SetFeedURL(defaultFeedURL);
-
-        // Check for updates automatically
-        FvUpdater::sharedUpdater()->CheckForUpdatesSilent();
-    }
-#endif // V_NO_ASSERT
 
     MainWindow w;
 #if !defined(Q_OS_MAC)

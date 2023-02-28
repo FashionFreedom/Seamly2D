@@ -1,23 +1,17 @@
-/**************************************************************************
- **
+/***************************************************************************
  **  @file   dialogtool.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @author Douglas S. Caskey
- **  @date   7.17.2022
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
  **  @copyright
- **  Copyright (C) 2013-2022 Seamly2D project.
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published
- **  by the Free Software Foundation, either version 3 of the License,
- **  or (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -25,7 +19,33 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/**************************************************************************
+ **
+ **  @file   dialogtool.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @copyright
+ **  Copyright (C) 2013 Valentina project.
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -527,7 +547,7 @@ int DialogTool::FindNotExcludedNodeUp(QListWidget *listWidget, int candidate)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogTool::FirstPointEqualLast(QListWidget *listWidget)
+bool DialogTool::isFirstPointSameAsLast(QListWidget *listWidget)
 {
     SCASSERT(listWidget != nullptr);
     if (listWidget->count() > 1)
@@ -540,7 +560,7 @@ bool DialogTool::FirstPointEqualLast(QListWidget *listWidget)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogTool::DoublePoints(QListWidget *listWidget)
+bool DialogTool::doublePointsExist(QListWidget *listWidget)
 {
     SCASSERT(listWidget != nullptr);
     for (int i=0, sz = listWidget->count()-1; i<sz; ++i)
@@ -558,7 +578,7 @@ bool DialogTool::DoublePoints(QListWidget *listWidget)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogTool::EachPointLabelIsUnique(QListWidget *listWidget)
+bool DialogTool::isEachPointNameUnique(QListWidget *listWidget)
 {
     SCASSERT(listWidget != nullptr);
     QSet<quint32> pointLabels;
@@ -654,7 +674,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bool nodeExcluded)
+void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bool nodeExcluded, bool isDuplicate)
 {
     SCASSERT(listWidget != nullptr);
     SCASSERT(node.GetId() > NULL_ID);
@@ -673,21 +693,14 @@ void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bo
             return;
     }
 
-    bool canAddNewPoint = false;
+    bool newNodeAllowed = false;
 
-    if(listWidget->count() == 0)
+    if(listWidget->count() == 0 || isDuplicate || RowId(listWidget, listWidget->count()-1) != node.GetId())
     {
-        canAddNewPoint = true;
-    }
-    else
-    {
-        if(RowId(listWidget, listWidget->count()-1) != node.GetId())
-        {
-            canAddNewPoint = true;
-        }
+        newNodeAllowed = true;
     }
 
-    if(canAddNewPoint)
+    if(newNodeAllowed)
     {
         QListWidgetItem *item = new QListWidgetItem(info.name);
         item->setFont(NodeFont(nodeExcluded ? node.isExcluded() : false));
@@ -699,7 +712,7 @@ void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bo
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::InitNodeAngles(QComboBox *box)
+void DialogTool::initializeNodeAngles(QComboBox *box)
 {
     SCASSERT(box != nullptr);
     box->clear();

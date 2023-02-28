@@ -127,7 +127,7 @@
             <xs:field xpath="@name"/>
           </xs:unique>
         </xs:element>
-        <xs:element name="draw" minOccurs="1" maxOccurs="unbounded">
+        <xs:element name="draftBlock" minOccurs="1" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="calculation" minOccurs="1" maxOccurs="unbounded">
@@ -409,7 +409,7 @@
                       <xs:element name="tools" minOccurs="0" maxOccurs="unbounded">
                         <xs:complexType>
                           <xs:sequence>
-                            <xs:element name="det" minOccurs="2" maxOccurs="2">
+                            <xs:element name="unionPiece" minOccurs="2" maxOccurs="2">
                               <xs:complexType>
                                 <xs:sequence>
                                   <xs:element name="nodes" minOccurs="1" maxOccurs="1">
@@ -520,24 +520,24 @@
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="details" minOccurs="1" maxOccurs="unbounded">
+              <xs:element name="pieces" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="detail" minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="piece" minOccurs="0" maxOccurs="unbounded">
                       <xs:complexType>
                         <xs:sequence>
                           <xs:element name="data" minOccurs="0" maxOccurs="1">
                             <xs:complexType>
                               <xs:sequence>
                                 <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
-				  <xs:complexType>
-				    <xs:attribute name="text" type="xs:string" use="required"/>
-				    <xs:attribute name="bold" type="xs:boolean"/>
-				    <xs:attribute name="italic" type="xs:boolean"/>
-				    <xs:attribute name="alignment" type="alignmentType"/>
-				    <xs:attribute name="sfIncrement" type="xs:unsignedInt"/>
-				  </xs:complexType>
-			        </xs:element>
+				                  <xs:complexType>
+				                  <xs:attribute name="text" type="xs:string" use="required"/>
+				                  <xs:attribute name="bold" type="xs:boolean"/>
+				                  <xs:attribute name="italic" type="xs:boolean"/>
+				                  <xs:attribute name="alignment" type="alignmentType"/>
+				                  <xs:attribute name="sfIncrement" type="xs:unsignedInt"/>
+				                  </xs:complexType>
+			                    </xs:element>
                               </xs:sequence>
                               <xs:attribute name="letter" type="xs:string"/>
                               <xs:attribute name="annotation" type="xs:string"/>
@@ -653,6 +653,8 @@
                         <xs:attribute name="mx" type="xs:double"/>
                         <xs:attribute name="my" type="xs:double"/>
                         <xs:attribute name="name" type="xs:string"/>
+                        <xs:attribute name="color" type="xs:string"/>
+                        <xs:attribute name="fill" type="xs:string"/>
                         <xs:attribute name="inLayout" type="xs:boolean"/>
                         <xs:attribute name="forbidFlipping" type="xs:boolean"/>
                         <xs:attribute name="width" type="xs:string"/>
@@ -661,6 +663,7 @@
                         <xs:attribute name="united" type="xs:boolean"/>
                         <xs:attribute name="closed" type="xs:unsignedInt"/>
                         <xs:attribute name="hideMainPath" type="xs:boolean"/>
+                        <xs:attribute name="locked" type="xs:boolean"/>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>

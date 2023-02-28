@@ -61,12 +61,12 @@ template <class T> class QSharedPointer;
  */
 VDrawTool::VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
     : VInteractiveTool(doc, data, id, parent)
-    , nameActivDraw(doc->getActiveDraftBlockName())
+    , activeBlockName(doc->getActiveDraftBlockName())
     , m_lineType(LineTypeSolidLine)
     , m_lineWeight("0.35")
 {
-    connect(this->doc, &VAbstractPattern::ChangedActivPP, this, &VDrawTool::ChangedActivDraw);
-    connect(this->doc, &VAbstractPattern::ChangedNameDraw, this, &VDrawTool::ChangedNameDraw);
+    connect(this->doc, &VAbstractPattern::activeDraftBlockChanged, this, &VDrawTool::activeBlockChanged);
+    connect(this->doc, &VAbstractPattern::draftBlockNameChanged, this, &VDrawTool::blockNameChanged);
     connect(this->doc, &VAbstractPattern::ShowTool, this, &VDrawTool::ShowTool);
 }
 
@@ -84,25 +84,25 @@ void VDrawTool::ShowTool(quint32 id, bool enable)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangedActivDraw disable or enable context menu after change active pattern peace.
- * @param newName new name active pattern peace.
+ * @brief activeBlockChanged disable or enable context menu after change active draft block.
+ * @param newName new name active draft block.
  */
-void VDrawTool::ChangedActivDraw(const QString &newName)
+void VDrawTool::activeBlockChanged(const QString &newName)
 {
-    Disable(!(nameActivDraw == newName), newName);
+    Disable(!(activeBlockName == newName), newName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangedNameDraw save new name active pattern peace.
+ * @brief blockNameChanged save new name active draft block.
  * @param oldName old name.
- * @param newName new name active pattern peace. new name.
+ * @param newName new name active draft block. new name.
  */
-void VDrawTool::ChangedNameDraw(const QString &oldName, const QString &newName)
+void VDrawTool::blockNameChanged(const QString &oldName, const QString &newName)
 {
-    if (nameActivDraw == oldName)
+    if (activeBlockName == oldName)
     {
-        nameActivDraw = newName;
+        activeBlockName = newName;
     }
 }
 
@@ -182,7 +182,7 @@ bool VDrawTool::CorrectDisable(bool disable, const QString &draftBlockName) cons
     }
     else
     {
-        return !(nameActivDraw == draftBlockName);
+        return !(activeBlockName == draftBlockName);
     }
 }
 

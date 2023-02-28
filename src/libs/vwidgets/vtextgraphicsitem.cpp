@@ -249,10 +249,14 @@ void VTextGraphicsItem::paint(QPainter *painter, const QStyleOptionGraphicsItem 
  */
 void VTextGraphicsItem::setSize(qreal width, qreal height)
 {
+    // Take into account the rotation of the bounding rectangle
+    QTransform transform = QTransform().rotate(-rotation());
+    QRectF bbRect = transform.map(parentItem()->boundingRect()).boundingRect();
+
     // don't allow resize under specific size
-    if (width > parentItem()->boundingRect().width())
+    if (width > bbRect.width())
     {
-        width = parentItem()->boundingRect().width();
+        width = bbRect.width();
         qDebug() << "Setting label width to parent item width" << width;
     }
     if (width < minW)
@@ -260,9 +264,9 @@ void VTextGraphicsItem::setSize(qreal width, qreal height)
         width = minW;
         qDebug() << "Setting label width to min width" << width;
     }
-    if (height > parentItem()->boundingRect().height())
+    if (height > bbRect.height())
     {
-        height = parentItem()->boundingRect().height();
+        height = bbRect.height();
         qDebug() << "Setting label height to parent item height" << width;
     }
     if (height < minH)
@@ -383,7 +387,8 @@ int VTextGraphicsItem::getFontSize() const
 void VTextGraphicsItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     qDebug() << "VTextGraphicsItem::mousePressEvent\n";
-    if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
+    if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick
+        && (flags() & QGraphicsItem::ItemIsMovable))
     {
         if (m_moveType == NotMovable)
         {
@@ -517,7 +522,12 @@ void VTextGraphicsItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event )
         }
 
         rectBB.setTopLeft(pt);
-        QSizeF size(m_startSize.width() + ptDiff.x(), m_startSize.height() + ptDiff.y());
+
+        // Apply rotation to ptDiff in order to resize based on current rotation
+        QTransform transform = QTransform().rotate(-rotation());
+        QPointF ptDiff2 = transform.map(ptDiff);
+
+        QSizeF size(m_startSize.width() + ptDiff2.x(), m_startSize.height() + ptDiff2.y());
         rectBB.setSize(size);
         // before resizing the label to a new size, check if it will still be inside the parent item
         if (isContained(rectBB, rotation(), xPos, yPos) == false)
@@ -571,7 +581,7 @@ void VTextGraphicsItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event )
     if (event ->button() == Qt::LeftButton)
     {
         // restore the cursor
-        if (m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize)
+        if ((m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize) && (flags() & QGraphicsItem::ItemIsMovable))
         {
             SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         }

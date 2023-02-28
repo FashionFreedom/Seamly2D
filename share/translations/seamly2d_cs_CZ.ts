@@ -9,6 +9,13 @@
     </message>
 </context>
 <context>
+    <name>AddDraftBlock</name>
+    <message>
+        <source>add draft block %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddGroup</name>
     <message>
         <source>add group</source>
@@ -19,14 +26,18 @@
     <name>AddPatternPiece</name>
     <message>
         <source>add pattern piece %1</source>
-        <translation>Přidat díl střihu %1</translation>
+        <translation type="vanished">Přidat díl střihu %1</translation>
     </message>
 </context>
 <context>
     <name>AddPiece</name>
     <message>
         <source>add detail</source>
-        <translation type="unfinished">Přidat detail</translation>
+        <translation type="obsolete">Přidat detail</translation>
+    </message>
+    <message>
+        <source>add piece</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -246,15 +257,14 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;2/8 = .250&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;3/8 = .375&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;4/8 = .500&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;5/8 = .625&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;6/8 = .750&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = .0625&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = .1875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = .3125&lt;/span&gt;&lt;/p&gt;
@@ -281,9 +291,9 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DeletePatternPiece</name>
+    <name>DeleteDraftBlock</name>
     <message>
-        <source>delete pattern piece %1</source>
+        <source>delete draft block %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -621,16 +631,16 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Linetype:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Linetype:</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -737,12 +747,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Linetype:</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1034,16 +1044,16 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1345,238 +1355,24 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEditLabel</name>
     <message>
-        <source>Edit label template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Clear current and begin new label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import from label template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export label as template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit</source>
-        <translation type="unfinished">Upravit</translation>
-    </message>
-    <message>
-        <source>Bold</source>
-        <comment>Font formatting</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Italic</source>
-        <comment>Font formatting</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aligns with the left edge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Centers horizontally in the available space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Aligns with the right edge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Additional font size. Use to make a line bigger.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line of text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Insert placeholders</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Insert...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Preview</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;empty&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Create new template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Creating new template will overwrite the current, do you want to continue?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Label template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export label template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>template</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Upravit</translation>
     </message>
     <message>
         <source>Could not save file</source>
-        <translation type="unfinished">Nepodařilo se uložit soubor</translation>
-    </message>
-    <message>
-        <source>Import template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Import template will overwrite the current, do you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Nepodařilo se uložit soubor</translation>
     </message>
     <message>
         <source>File error.</source>
-        <translation type="unfinished">Chyba souboru.</translation>
-    </message>
-    <message>
-        <source>Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Company name or designer name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Customer name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern file name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurments file name</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Chyba souboru.</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished">Velikost</translation>
+        <translation type="obsolete">Velikost</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation type="unfinished">Výška</translation>
-    </message>
-    <message>
-        <source>Measurments extension</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece letter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece annotation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece orientation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece rotation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece tilt</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece fold position</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Quantity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Material: Fabric</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fabric</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Material: Lining</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Lining</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Material: Interfacing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Interfacing</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Material: Interlining</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Interlining</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Word: Cut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Word: on fold</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>on fold</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Výška</translation>
     </message>
 </context>
 <context>
@@ -1821,19 +1617,19 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Linetype:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1932,16 +1728,16 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2571,10 +2367,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Převrátit</translation>
     </message>
     <message>
-        <source>Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation type="unfinished">Smazat</translation>
     </message>
@@ -3092,16 +2884,16 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3131,10 +2923,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seletion</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Axis point:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3160,6 +2948,10 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Horizontal axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3257,16 +3049,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3275,6 +3058,15 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Edit rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3352,10 +3144,6 @@ Apply settings anyway?</source>
         <translation>Palce</translation>
     </message>
     <message>
-        <source>Pattern piece name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique pattern piece name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3369,6 +3157,10 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Millimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft block name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4227,16 +4019,16 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select rotation point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4281,172 +4073,32 @@ Apply settings anyway?</source>
 <context>
     <name>DialogSeamAllowance</name>
     <message>
-        <source>Ready!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Value</source>
-        <translation type="unfinished">Hodnota</translation>
-    </message>
-    <message>
-        <source>Grainline</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Hodnota</translation>
     </message>
     <message>
         <source>Reverse</source>
-        <translation type="unfinished">Převrátit</translation>
+        <translation type="obsolete">Převrátit</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Smazat</translation>
+        <translation type="obsolete">Smazat</translation>
     </message>
     <message>
         <source>Options</source>
-        <translation type="unfinished">Volby</translation>
-    </message>
-    <message>
-        <source>Error. Can&apos;t save piece path.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Infinite/undefined result</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length should be positive</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Volby</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
-        <translation type="unfinished">Chyba zpracování: %1</translation>
-    </message>
-    <message>
-        <source>Current seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width before</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit seam allowance width after</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>main path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>custom seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Both</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Just front</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Just rear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Chyba zpracování: %1</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Chyba</translation>
-    </message>
-    <message>
-        <source>Edit length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit angle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit height</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit width</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Chyba</translation>
     </message>
     <message>
         <source>Paths</source>
-        <translation type="unfinished">Cesty</translation>
-    </message>
-    <message>
-        <source>Excluded</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Notch</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Each point in the path must be unique!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Notches</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern Piece Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Press OK to create pattern piece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You must choose points in a clockwise direction!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point cannot be same as last point!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Anchor Points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Grainlines</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>None</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>PatternPiece</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Cesty</translation>
     </message>
 </context>
 <context>
@@ -5139,7 +4791,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Union tool</source>
-        <translation>Nástroj Spojení</translation>
+        <translation type="vanished">Nástroj Spojení</translation>
     </message>
     <message>
         <source>Select a first point</source>
@@ -5151,35 +4803,15 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Select a second point</source>
-        <translation>Vyberte druhý bod</translation>
+        <translation type="vanished">Vyberte druhý bod</translation>
     </message>
     <message>
         <source>Select a unique point</source>
-        <translation>Vyberte jedinečný bod</translation>
+        <translation type="vanished">Vyberte jedinečný bod</translation>
     </message>
     <message>
         <source>Select a detail</source>
-        <translation>Vyberte detail</translation>
-    </message>
-    <message>
-        <source>Select a point on edge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Retain original pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select the first point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern piece should have at least two points and three objects</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Vyberte detail</translation>
     </message>
 </context>
 <context>
@@ -5361,6 +4993,243 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>EditLabelTemplateDialog</name>
+    <message>
+        <source>Edit label template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear current and begin new label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import from label template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export label as template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Upravit</translation>
+    </message>
+    <message>
+        <source>Bold</source>
+        <comment>Font formatting</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Italic</source>
+        <comment>Font formatting</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aligns with the left edge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Centers horizontally in the available space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Aligns with the right edge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Additional font size. Use to make a line bigger.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line of text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert placeholders</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;empty&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create new template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Creating new template will overwrite the current, do you want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export label template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not save file</source>
+        <translation type="unfinished">Nepodařilo se uložit soubor</translation>
+    </message>
+    <message>
+        <source>Import template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import template will overwrite the current, do you want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File error.</source>
+        <translation type="unfinished">Chyba souboru.</translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company name or designer name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Customer name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern file name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurments file name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished">Velikost</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation type="unfinished">Výška</translation>
+    </message>
+    <message>
+        <source>Measurments extension</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece annotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece orientation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece tilt</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece fold position</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quantity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Material: Fabric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fabric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Material: Lining</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lining</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Material: Interfacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interfacing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Material: Interlining</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Interlining</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Word: Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Word: on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
@@ -5534,48 +5403,12 @@ Do you want to download it?</source>
 <context>
     <name>GrainlineTab</name>
     <message>
-        <source>Grainline visible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Value</source>
-        <translation type="unfinished">Hodnota</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Hodnota</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center anchor point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top anchor point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom anchor point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arrows:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -5836,136 +5669,20 @@ Do you want to download it?</source>
 <context>
     <name>LabelsTab</name>
     <message>
-        <source>Piece label data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Label template:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit pattern label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Label data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Letter:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Letter of pattern piece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>PatternPiece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name can&apos;t be empty</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Quantity:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Placement:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>on fold</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Annotation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A text field to add comments in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Orientation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotation:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tilt:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fold position:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Labels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece label visible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Width:</source>
-        <translation type="unfinished">Šířka:</translation>
+        <translation type="obsolete">Šířka:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Hodnota</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Hodnota</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="unfinished">Výška:</translation>
-    </message>
-    <message>
-        <source>Center anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern label visible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center anchort:</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Výška:</translation>
     </message>
 </context>
 <context>
@@ -6347,7 +6064,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Pattern piece %1</source>
-        <translation>Díl střihu %1</translation>
+        <translation type="vanished">Díl střihu %1</translation>
     </message>
     <message>
         <source>Select point</source>
@@ -8156,26 +7873,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Add Details - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Add Details - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Add Details - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Add Details - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Pattern Piece - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Draft Block:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8224,10 +7921,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show which groups in the list are visible</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Piece mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8237,10 +7930,6 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show which pattern pieces will included in layout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8257,10 +7946,6 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Failed to lock. This file is already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern Piece %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8289,6 +7974,34 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft block %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft Block %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8543,6 +8256,462 @@ Chcete uložit své změny?</translation>
 <context>
     <name>NotchesTab</name>
     <message>
+        <source>Type</source>
+        <translation type="obsolete">Typ</translation>
+    </message>
+</context>
+<context>
+    <name>PathPage</name>
+    <message>
+        <source>Open Directory</source>
+        <translation type="vanished">Otevřít adresář</translation>
+    </message>
+    <message>
+        <source>Path that use Seamly2D</source>
+        <translation type="vanished">Cesta, kterou používá Seamly2D</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="vanished">Výchozí</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="vanished">Upravit</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="vanished">Typ</translation>
+    </message>
+    <message>
+        <source>Path</source>
+        <translation type="vanished">Cesta</translation>
+    </message>
+    <message>
+        <source>Individual measurements</source>
+        <translation type="vanished">Individuální míry</translation>
+    </message>
+    <message>
+        <source>Patterns</source>
+        <translation type="vanished">Střihy</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="vanished">Rozvržení</translation>
+    </message>
+</context>
+<context>
+    <name>PathsTab</name>
+    <message>
+        <source>Seam allowance</source>
+        <translation type="obsolete">Přídavek na šev</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="obsolete">Hodnota</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="obsolete">Výchozí</translation>
+    </message>
+</context>
+<context>
+    <name>PatternPage</name>
+    <message>
+        <source>User</source>
+        <translation type="vanished">Uživatel</translation>
+    </message>
+    <message>
+        <source>User name</source>
+        <translation type="vanished">Uživatelské jméno</translation>
+    </message>
+    <message>
+        <source>Graphical output</source>
+        <translation type="vanished">Obrazový výstup</translation>
+    </message>
+    <message>
+        <source>Use antialiasing</source>
+        <translation type="vanished">Použít vyhlazování</translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="vanished">Zpět</translation>
+    </message>
+    <message>
+        <source>Count steps (0 - no limit)</source>
+        <translation type="vanished">Počítat kroky (0 - bez omezení)</translation>
+    </message>
+</context>
+<context>
+    <name>PatternPieceDialog</name>
+    <message>
+        <source>Pattern Piece Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paths </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Allowance </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anchors </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grainline </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notches </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Poperties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>PatternPiece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name can&apos;t be empty</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letter:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letter of pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Quantity:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Placement:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fold position:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undefined</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Up/Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left/Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Orientation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1-Way</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2-Way</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>4-Way</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tilt:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CW X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CCW X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Annotation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A text field to add comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forbid flipping:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forbid piece be mirrored in a layout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>hex Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="obsolete">...</translation>
+    </message>
+    <message>
+        <source>Fill:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Main path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All objects in path should follow in clockwise direction.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row to top of list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row up one row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move row down one row</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Molve row to botton of list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ready!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internal paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The seam allowance is part of main path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Built in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide the main path if the seam allowance is enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Výchozí</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation type="unfinished">Šířka:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Hodnota</translation>
+    </message>
+    <message>
+        <source>Formula wizard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Node:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Before:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Return to default width</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>After:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include as:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label template:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit pattern label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show piece label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation type="unfinished">Výška:</translation>
+    </message>
+    <message>
+        <source>Anchor points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center anchor:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top left anchor:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom right anchor:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show pattern label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show grainline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arrows</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8607,26 +8776,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show notch on seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reset notch with to default.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Count:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source> Width:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8635,217 +8784,398 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Reset notch with to default.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Reset notch angle to default.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Angle:</source>
+        <source>Count:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show notch on seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PathPage</name>
-    <message>
-        <source>Open Directory</source>
-        <translation type="vanished">Otevřít adresář</translation>
-    </message>
-    <message>
-        <source>Path that use Seamly2D</source>
-        <translation type="vanished">Cesta, kterou používá Seamly2D</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="vanished">Výchozí</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="vanished">Upravit</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="vanished">Typ</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation type="vanished">Cesta</translation>
-    </message>
-    <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Individuální míry</translation>
-    </message>
-    <message>
-        <source>Patterns</source>
-        <translation type="vanished">Střihy</translation>
-    </message>
-    <message>
-        <source>Layout</source>
-        <translation type="vanished">Rozvržení</translation>
-    </message>
-</context>
-<context>
-    <name>PathsTab</name>
-    <message>
-        <source>Main path</source>
+        <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All objects in path should follow in clockwise direction.</source>
+        <source>Press OK to create pattern piece</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forbid piece be mirrored in a layout.</source>
+        <source>Reverse</source>
+        <translation type="unfinished">Převrátit</translation>
+    </message>
+    <message>
+        <source>Duplicate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forbid flipping</source>
+        <source>Notch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide the main path if the seam allowance is enabled</source>
+        <source>TNotch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Hide seam line</source>
+        <source>UNotch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Move row to top of list</source>
+        <source>VInternal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Move row up one row</source>
+        <source>VExternal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Move row down one row</source>
+        <source>Excluded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Molve row to botton of list</source>
+        <source>Delete</source>
+        <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Options</source>
+        <translation type="unfinished">Volby</translation>
+    </message>
+    <message>
+        <source>Error. Can&apos;t save piece path.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Status:</source>
+        <source>Infinite/undefined result</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ready!</source>
+        <source>Length should be positive</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seam allowance</source>
-        <translation type="unfinished">Přídavek na šev</translation>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
     </message>
     <message>
-        <source>The seam allowance is part of main path</source>
+        <source>Parser error: %1</source>
+        <translation type="unfinished">Chyba zpracování: %1</translation>
+    </message>
+    <message>
+        <source>Edit length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Built in</source>
+        <source>Edit angle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Automatic</source>
+        <source>Edit height</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default width:</source>
+        <source>Edit width</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Formula wizard</source>
+        <source>Current seam allowance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Value</source>
-        <translation type="unfinished">Hodnota</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
+        <source>Edit seam allowance width</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ukázat celý výpočet v okně se zprávami&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Nodes</source>
+        <source>Edit seam allowance width before</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Node:</source>
+        <source>Edit seam allowance width after</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Before:</source>
+        <source>Grainline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Return to default width</source>
+        <source>You need more points!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default</source>
-        <translation type="unfinished">Výchozí</translation>
-    </message>
-    <message>
-        <source>After:</source>
+        <source>You must choose points in a clockwise direction!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Angle:</source>
+        <source>First point cannot be same as last point!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom</source>
+        <source>You have double points!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Start point:</source>
+        <source>Each point in the path must be unique!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>End point:</source>
+        <source>Empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Include as:</source>
+        <source>main path</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Internal paths</source>
+        <source>custom seam allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Both</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Just front</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Just rear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on the cut line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on the seam line.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>PatternPage</name>
+    <name>PatternPieceTool</name>
     <message>
-        <source>User</source>
-        <translation type="vanished">Uživatel</translation>
+        <source>Current seam allowance</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>User name</source>
-        <translation type="vanished">Uživatelské jméno</translation>
+        <source>move pattern piece label</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Graphical output</source>
-        <translation type="vanished">Obrazový výstup</translation>
+        <source>resize pattern piece label</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use antialiasing</source>
-        <translation type="vanished">Použít vyhlazování</translation>
+        <source>rotate pattern piece label</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Undo</source>
-        <translation type="vanished">Zpět</translation>
+        <source>move pattern info label</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Count steps (0 - no limit)</source>
-        <translation type="vanished">Počítat kroky (0 - bez omezení)</translation>
+        <source>resize pattern info label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rotate pattern info label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>move grainline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>resize grainline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rotate grainline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock Pattern Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include in Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forbid Flipping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Raise to top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower to bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Seam Allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Grainline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Pattern Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Piece Label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Forbid Flipping changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam line visibility changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show seam allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam allowance visibility changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show grainline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grainline visibility changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show pattern label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern label visibility changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show piece label</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece label visibility changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Pattern Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece renamed to: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PiecesWidget</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unnamed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Název</translation>
+    </message>
+    <message>
+        <source>Include all pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exclude all pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invert included pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock all pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock all pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invert locked pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle inclusion of pattern piece in layout</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9099,6 +9429,86 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Millimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection sound</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>silent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>button_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mouse1_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mouse2_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>mouse3_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>camera_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>camera_buzz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>clock_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>clock_beep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>microwave.beep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>coffeemaker_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>coffeemaker2_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>inspirstar_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>phone2_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>phone1_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>scissors_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>wallswitch_click</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>buzz_click</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9564,23 +9974,11 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show seam allowances</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide seam line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Notches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show second notch on seam line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9636,19 +10034,11 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Internal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cutouts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show labels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9681,6 +10071,70 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Diamond</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show pattern labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show piece labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Width</source>
+        <translation type="unfinished">Šířka</translation>
+    </message>
+    <message>
+        <source>Height</source>
+        <translation type="unfinished">Výška</translation>
+    </message>
+    <message>
+        <source>Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="obsolete">...</translation>
+    </message>
+    <message>
+        <source>Piece label:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Label template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Import template</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show notch on Seam Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internals</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Cut Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9771,10 +10225,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>move detail</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Changes applied.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9803,10 +10253,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished">Obdržen chybný identifikátor parametru. Vyžaduje pouze identifikátor &gt; 0.</translation>
     </message>
     <message>
-        <source>United detail</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Fabric</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9828,6 +10274,14 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>on fold</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Union piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>move piece</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10154,6 +10608,17 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>My Templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SetPieceColor</name>
+    <message>
+        <source>Change piece color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece color changed: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11020,6 +11485,37 @@ Do you want to save your changes?</source>
         <source>Piece in Layout List</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Include piece in layout changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exclude</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TogglePieceLock</name>
+    <message>
+        <source>Pattern piece lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece lock changed: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlocked</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Tool</name>
@@ -11053,6 +11549,52 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Horizontal axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UnionDialog</name>
+    <message>
+        <source>Union tool</source>
+        <translation type="unfinished">Nástroj Spojení</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Retain original pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select the first point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece should have at least two points and three objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a second point</source>
+        <translation type="unfinished">Vyberte druhý bod</translation>
+    </message>
+    <message>
+        <source>Select a unique point</source>
+        <translation type="unfinished">Vyberte jedinečný bod</translation>
+    </message>
+    <message>
+        <source>Select a piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a point on edge</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UnionTool</name>
+    <message>
+        <source>union pieces</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11155,7 +11697,11 @@ Do you want to save your changes?</source>
     <name>VAbstractPieceData</name>
     <message>
         <source>Detail</source>
-        <translation type="unfinished">Detail</translation>
+        <translation type="obsolete">Detail</translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11981,7 +12527,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating detail</source>
-        <translation>Chyba při vytváření nebo aktualizaci detailu</translation>
+        <translation type="vanished">Chyba při vytváření nebo aktualizaci detailu</translation>
     </message>
     <message>
         <source>Error creating or updating single point</source>
@@ -12081,7 +12627,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating union details</source>
-        <translation>Chyba při vytváření nebo aktualizaci detailu spojení</translation>
+        <translation type="vanished">Chyba při vytváření nebo aktualizaci detailu spojení</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection arcs</source>
@@ -12177,7 +12723,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Detail</source>
-        <translation type="unfinished">Detail</translation>
+        <translation type="obsolete">Detail</translation>
     </message>
     <message>
         <source>Unnamed path</source>
@@ -12201,6 +12747,26 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>white</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>nobrush</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error creating or updating piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error creating or updating union pieces</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13040,172 +13606,12 @@ Do you want to save your changes?</source>
 <context>
     <name>VToolSeamAllowance</name>
     <message>
-        <source>Current seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>move pattern piece label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>resize pattern piece label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>rotate pattern piece label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>move pattern info label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>resize pattern info label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>rotate pattern info label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>move grainline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>resize grainline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>rotate grainline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Options</source>
         <translation type="obsolete">Volby</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Smazat</translation>
-    </message>
-    <message>
-        <source>Properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Include in Layout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forbid Flipping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide Seam Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Seam Allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Grainline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Pattern Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Piece Label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rename...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Include piece in layout changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Include</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exclude</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Forbid Flipping changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Seam line visibility changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show seam allowance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Seam allowance visibility changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show grainline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Grainline visibility changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show pattern label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern label visibility changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show piece label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece label visibility changed: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rename Pattern Piece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rename pattern piece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece renamed to: </source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Smazat</translation>
     </message>
 </context>
 <context>
@@ -13221,13 +13627,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Name</source>
         <translation type="unfinished">Název</translation>
-    </message>
-</context>
-<context>
-    <name>VToolUnionDetails</name>
-    <message>
-        <source>union details</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14626,41 +15025,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VWidgetDetails</name>
-    <message>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unnamed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select all</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select none</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>select all details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>select none details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Invert selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>invert selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>VWidgetGroups</name>
     <message>
         <source>Rename</source>
@@ -14669,6 +15033,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Delete</source>
         <translation type="unfinished">Smazat</translation>
+    </message>
+    <message>
+        <source>Toggle visibility of group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

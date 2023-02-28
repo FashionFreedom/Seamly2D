@@ -167,6 +167,7 @@ extern const QString AttrArc;
 extern const QString AttrSuffix;
 extern const QString AttrIdObject;
 extern const QString AttrInLayout;
+extern const QString AttrPieceLocked;
 extern const QString AttrClosed;
 extern const QString AttrShowPointName;
 extern const QString AttrShowPointName1;
@@ -211,6 +212,22 @@ extern const QString ColorGray;
 extern const QString ColorDarkGray;
 extern const QString ColorLightGray;
 extern const QString ColorWhite;
+
+extern const QString FillNone;
+extern const QString FillSolid;
+extern const QString FillDense1;
+extern const QString FillDense2;
+extern const QString FillDense3;
+extern const QString FillDense4;
+extern const QString FillDense5;
+extern const QString FillDense6;
+extern const QString FillDense7;
+extern const QString FillHorizLines;
+extern const QString FillVertLines;
+extern const QString FillCross;
+extern const QString FillBackwardDiagonal;
+extern const QString FillForwardDiagonal;
+extern const QString FilldDiagonalCross;
 
 // variables name
 // Hacks for avoiding the linker error "undefined reference to"

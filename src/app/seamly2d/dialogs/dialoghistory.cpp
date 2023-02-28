@@ -217,7 +217,6 @@ void DialogHistory::FillTable()
             }
 
             QTableWidgetItem *item = new QTableWidgetItem(historyRecord);
-            item->setFont(QFont("Times", 10, QFont::Bold));
             item->setFlags(item->flags() ^ Qt::ItemIsEditable);
             ui->tableWidget->setItem(currentRow, 1, item);//2nd column is Tool history description
             ++count;
@@ -448,7 +447,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
             //Because "history" not only show history of pattern, but help restore current data for each pattern's
             //piece, we need add record about details and nodes, but don't show them.
             case Tool::Piece:
-            case Tool::UnionDetails:
+            case Tool::Union:
             case Tool::NodeArc:
             case Tool::NodeElArc:
             case Tool::NodePoint:

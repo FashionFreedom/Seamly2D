@@ -12,7 +12,7 @@ include(../../../common.pri)
 
 # Here we don't see "network" library, but, i think, "printsupport" depend on this library, so we still need this
 # library in installer.
-QT       += core gui widgets xml svg printsupport xmlpatterns
+QT       += core gui widgets xml svg printsupport xmlpatterns multimedia
 
 # We want create executable file
 TEMPLATE = app
@@ -23,21 +23,6 @@ macx{
 } else {
     TARGET = seamly2d
 }
-
-# Use out-of-source builds (shadow builds)
-CONFIG -= debug_and_release debug_and_release_target
-
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Since Qt 5.4.0 the source code location is recorded only in debug builds.
-# We need this information also in release builds. For this need define QT_MESSAGELOGCONTEXT.
-DEFINES += QT_MESSAGELOGCONTEXT
 
 # Directory for executable file
 DESTDIR = bin
@@ -61,6 +46,7 @@ include(seamly2d.pri)
 RESOURCES += \
     share/resources/cursor.qrc \ # Tools cursor icons.
     share/resources/toolicon.qrc
+    share/resources/sounds.qrc
 
 # Compilation will fail without this files after we added them to this section.
 OTHER_FILES += \
@@ -68,29 +54,8 @@ OTHER_FILES += \
 
 include(warnings.pri)
 
-CONFIG(release, debug|release){
-    # Release mode
-    !*msvc*:CONFIG += silent
-    DEFINES += V_NO_ASSERT
-    !unix:*g++*{
-        QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
-    }
-
-    noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-        DEFINES += V_NO_DEBUG
-    } else {
-        noCrashReports{
-            DEFINES += V_NO_DEBUG
-        }
-        # Turn on debug symbols in release mode on Unix systems.
-        # On Mac OS X temporarily disabled. Need find way how to strip binary file.
-        !macx:!*msvc*{
-            QMAKE_CXXFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_LFLAGS_RELEASE =
-        }
-    }
-}
+# precompiled headers clash with the BUILD_REVISION define, thus disable here
+CONFIG -= precompile_header
 
 DVCS_HESH=$$FindBuildRevision()
 message("seamly2d.pro: Build revision:" $${DVCS_HESH})
@@ -110,23 +75,17 @@ message(seamly2d.pro: Translation files: $$[QT_INSTALL_TRANSLATIONS])
 message(seamly2d.pro: Settings: $$[QT_INSTALL_SETTINGS])
 message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 
-
-
 # Path to resource file.
 win32:RC_FILE = share/resources/seamly2d.rc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
 include(../tables.pri)
 
 win32 {
     INSTALL_PDFTOPS += ../../../dist/win/pdftops.exe
 }
 
-noTranslations{ # For enable run qmake with CONFIG+=noTranslations
-    # do nothing
-} else {
 include(../translations.pri)
-}
 
 # Set "make install" command for Unix-like systems.
 unix{
@@ -136,20 +95,6 @@ unix{
     }
 
     unix:!macx{
-        isEmpty(PREFIX_LIB){
-            isEmpty(PREFIX){
-                PR_LIB = $$DEFAULT_PREFIX
-            } else {
-                PR_LIB = $$PREFIX
-            }
-            contains(QMAKE_HOST.arch, x86_64) {
-                PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
-            } else {
-                PREFIX_LIB = $$PR_LIB/lib/Seamly2D
-            }
-        }
-        QMAKE_RPATHDIR += $$PREFIX_LIB
-
         QMAKE_RPATHDIR += $$[QT_INSTALL_LIBS]
         DATADIR =$$PREFIX/share
         DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
@@ -174,10 +119,6 @@ unix{
             ../../../dist/application-x-seamly2d-i-measurements.png \
             ../../../dist/application-x-seamly2d-s-measurements.png \
 
-        # Path to translation files after installation
-        translations.path = $$PREFIX/share/$${TARGET}/translations/
-        translations.files = $$INSTALL_TRANSLATIONS
-
         # Path to multisize measurement after installation
         multisize.path = $$PREFIX/share/$${TARGET}/tables/multisize/
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
@@ -195,7 +136,6 @@ unix{
             seamlyme \
             desktop \
             pixmaps \
-            translations \
             multisize \
             templates \
             label
@@ -206,6 +146,7 @@ unix{
         # Path to resources in app bundle
         FRAMEWORKS_DIR = "Contents/Frameworks"
         MACOS_DIR = "Contents/MacOS"
+        RESOURCES_DIR = "Contents/Resources"
         # On macx we will use app bundle. Bundle doesn't need bin directory inside.
         # See issue #166: Creating OSX Homebrew (Mac OS X package manager) formula.
         target.path = $$MACOS_DIR
@@ -213,7 +154,7 @@ unix{
         #languages added inside translations.pri
 
         seamlyme.path = $$MACOS_DIR
-        seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$$MACOS_DIR/seamlyme
+        seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$${MACOS_DIR}/seamlyme
 
         # Utility pdftops need for saving a layout image to PS and EPS formats.
         xpdf.path = $$MACOS_DIR
@@ -222,22 +163,21 @@ unix{
         # logo on macx.
         ICON = ../../../dist/Seamly2D.icns
 
-        QMAKE_INFO_PLIST = $$PWD/../../../dist/macx/seamly2d/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/Info.plist
 
         # Copy to bundle multisize measurements files
-        multisize.path = $$RESOURCES_DIR/tables/multisize/
+        multisize.path = $${RESOURCES_DIR}/tables/multisize
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
 
         # Copy to bundle templates files
-        templates.path = $$RESOURCES_DIR/tables/templates/
+        templates.path = $${RESOURCES_DIR}/tables/templates
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
         # Path to label templates after installation
-        label.path = $$RESOURCES_DIR/labels/
-        #label.path = /usr/share/$${TARGET}/labels/
+        label.path = $${RESOURCES_DIR}/labels
         label.files = $$INSTALL_LABEL_TEMPLATES
 
-        icns_resources.path = $$RESOURCES_DIR/
+        icns_resources.path = $${RESOURCES_DIR}
         icns_resources.files += $$PWD/../../../dist/macx/i-measurements.icns
         icns_resources.files += $$PWD/../../../dist/macx/s-measurements.icns
         icns_resources.files += $$PWD/../../../dist/macx/pattern.icns
@@ -389,38 +329,20 @@ DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
-noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-    # do nothing
-} else {
-    noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
-        # do nothing
-    } else {
-        # Strip after you link all libraries.
-        CONFIG(release, debug|release){
-            win32:!*msvc*{
-                # Strip debug symbols.
-                QMAKE_POST_LINK += objcopy --only-keep-debug bin/${TARGET} bin/${TARGET}.dbg &&
-                QMAKE_POST_LINK += objcopy --strip-debug bin/${TARGET} &&
-                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="bin/${TARGET}.dbg" bin/${TARGET}
-            }
-
-            unix:!macx{
-                # Strip debug symbols.
-                QMAKE_POST_LINK += objcopy --only-keep-debug ${TARGET} ${TARGET}.dbg &&
-                QMAKE_POST_LINK += objcopy --strip-debug ${TARGET} &&
-                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="${TARGET}.dbg" ${TARGET}
-            }
-
-            !macx:!*msvc*{
-                QMAKE_DISTCLEAN += bin/${TARGET}.dbg
-            }
-        }
-    }
-}
-
 macx{
-   # run macdeployqt to include all qt libraries in packet
-   QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    APPLE_SIGN_IDENTITY_UNQUOTED = $(APPLE_SIGN_IDENTITY)
+    APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
+
+    !macSign {
+        # run macdeployqt to include all qt libraries in packet
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    } else {
+        # we need to manually sign with codesign --deep as pdftops otherwise will not get signed by macdeployqt
+        # we need --force as seamlyme is already signed, but we need to resign it
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    }
 }
 
 win32{

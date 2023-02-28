@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vpiece.cpp
+ **  @author Douglas S Caskey
+ **  @date   Jan 3, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,13 +19,12 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
- **  @file
+ **  @file   vpiece.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   3 11, 2016
  **
@@ -31,21 +32,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -132,7 +133,7 @@ VPiece::VPiece()
 //---------------------------------------------------------------------------------------------------------------------
 VPiece::VPiece(const VPiece &piece)
     : VAbstractPiece(piece)
-    , d (piece.d)
+    , d(piece.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -372,7 +373,7 @@ QPainterPath VPiece::getNotchesPath(const VContainer *data, const QVector<QPoint
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPiece::IsInLayout() const
+bool VPiece::isInLayout() const
 {
     return d->m_inLayout;
 }
@@ -381,6 +382,18 @@ bool VPiece::IsInLayout() const
 void VPiece::SetInLayout(bool inLayout)
 {
     d->m_inLayout = inLayout;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VPiece::isLocked() const
+{
+    return d->m_isLocked;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPiece::setIsLocked(bool isLocked)
+{
+    d->m_isLocked = isLocked;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -396,13 +409,13 @@ void VPiece::SetUnited(bool united)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPiece::GetFormulaSAWidth() const
+QString VPiece::getSeamAllowanceWidthFormula() const
 {
     return d->m_formulaWidth;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPiece::SetFormulaSAWidth(const QString &formula, qreal value)
+void VPiece::setSeamAllowanceWidthFormula(const QString &formula, qreal value)
 {
     SetSAWidth(value);
     const qreal width = GetSAWidth();
@@ -465,18 +478,18 @@ void VPiece::setAnchors(const QVector<quint32> &anchors)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief MissingNodes find missing nodes in detail. When we deleted object in detail and return this detail need
+ * @brief MissingNodes find missing nodes in piece. When we deleted object in piece and return this piece need
  * understand, what nodes need make invisible.
- * @param det changed detail.
+ * @param piece changed piece.
  * @return  list with missing nodes.
  */
-QVector<quint32> VPiece::MissingNodes(const VPiece &det) const
+QVector<quint32> VPiece::MissingNodes(const VPiece &piece) const
 {
-    return d->m_path.MissingNodes(det.GetPath());
+    return d->m_path.MissingNodes(piece.GetPath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VPiece::MissingCSAPath(const VPiece &det) const
+QVector<quint32> VPiece::MissingCSAPath(const VPiece &piece) const
 {
     QVector<quint32> oldCSARecords;
     for (qint32 i = 0; i < d->m_customSARecords.size(); ++i)
@@ -485,24 +498,24 @@ QVector<quint32> VPiece::MissingCSAPath(const VPiece &det) const
     }
 
     QVector<quint32> newCSARecords;
-    for (qint32 i = 0; i < det.GetCustomSARecords().size(); ++i)
+    for (qint32 i = 0; i < piece.GetCustomSARecords().size(); ++i)
     {
-        newCSARecords.append(det.GetCustomSARecords().at(i).path);
+        newCSARecords.append(piece.GetCustomSARecords().at(i).path);
     }
 
     return PieceMissingNodes(oldCSARecords, newCSARecords);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VPiece::MissingInternalPaths(const VPiece &det) const
+QVector<quint32> VPiece::MissingInternalPaths(const VPiece &piece) const
 {
-    return PieceMissingNodes(d->m_internalPaths, det.GetInternalPaths());
+    return PieceMissingNodes(d->m_internalPaths, piece.GetInternalPaths());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VPiece::missingAnchors(const VPiece &det) const
+QVector<quint32> VPiece::missingAnchors(const VPiece &piece) const
 {
-    return PieceMissingNodes(d->m_anchors, det.getAnchors());
+    return PieceMissingNodes(d->m_anchors, piece.getAnchors());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -951,11 +964,10 @@ QVector<QLineF> VPiece::createNotch(const QVector<VPieceNode> &path, int previou
             lines += createSeamAllowanceNotch(path, previousSAPoint, notchSAPoint,  nextSAPoint,
                                               data, notchIndex, pathPoints);
         }
-        if (qApp->Settings()->showSecondNotch()
-                && not isHideSeamLine()
+        if (not isHideSeamLine()
                 && path.at(notchIndex).IsMainPathNode()
                 && path.at(notchIndex).getNotchSubType() != NotchSubType::Intersection
-                && path.at(notchIndex).showSecondNotch())
+                && path.at(notchIndex).showSeamlineNotch())
         {
             lines += createBuiltInSaNotch(path, previousSAPoint, notchSAPoint, nextSAPoint, data,
                                           notchIndex, mainPathPoints);
@@ -1020,40 +1032,38 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
         pathPoints.isEmpty() ? seamPoints = SeamAllowancePoints(data) : seamPoints = pathPoints;
 
         {
-            // first notch
-            QLineF line(previousSAPoint, notchSAPoint);
-            line.setLength(line.length()*100); // Hope 100 is enough
+            // After notch
+            QLineF line(notchSAPoint, previousSAPoint);
+            line.setAngle(line.angle() - 180.0);
+            line.setLength(40000.0); 
 
-            const QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
-            if (intersections.isEmpty())
+            QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
+            intersections.removeOne(notchSAPoint);
+            if (!intersections.isEmpty())
             {
-                return QVector<QLineF>(); // Something wrong
+                line = QLineF(intersections.last(), notchSAPoint);
+                line.setLength(notchData.length);
+                notchData.line = line;
+                notches += createNotches(notchData, pathPoints);
             }
-
-            line = QLineF(intersections.first(), notchSAPoint);
-            line.setLength(notchData.length);
-
-            notchData.line = line;
-            notches += createNotches(notchData, pathPoints);
         }
+        
 
         {
-            // second notch
-            QLineF line(nextSAPoint, notchSAPoint);
-            line.setLength(line.length()*100); // Hope 100 is enough
+            // Before notch
+            QLineF line(notchSAPoint, nextSAPoint);
+            line.setAngle(line.angle() - 180.0);
+            line.setLength(40000.0);
 
-            const QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
-
-            if (intersections.isEmpty())
+            QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
+            intersections.removeOne(notchSAPoint);
+            if (!intersections.isEmpty())
             {
-                return QVector<QLineF>(); // Something wrong
+                line = QLineF(intersections.last(), notchSAPoint);
+                line.setLength(notchData.length);
+                notchData.line = line;
+                notches += createNotches(notchData, pathPoints);
             }
-
-            line = QLineF(intersections.last(), notchSAPoint);
-            line.setLength(notchData.length);
-
-            notchData.line = line;
-            notches += createNotches(notchData, pathPoints);
         }
     }
 

@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialogtool.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogtool.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -293,7 +294,7 @@ protected:
     void             AddVisualization();
 
     template <typename T>
-    QVector<T> GetListInternals(const QListWidget *list) const;
+    QVector<T>       GetListInternals(const QListWidget *list) const;
 
     void             ChangeColor(QWidget *widget, const QColor &color);
     virtual void     ShowVisualization() {}
@@ -307,28 +308,30 @@ protected:
 
     static int       FindNotExcludedNodeDown(QListWidget *listWidget, int candidate);
     static int       FindNotExcludedNodeUp(QListWidget *listWidget, int candidate);
-    static bool      FirstPointEqualLast(QListWidget *listWidget);
-    static bool      DoublePoints(QListWidget *listWidget);
-    static bool      EachPointLabelIsUnique(QListWidget *listWidget);
+    static bool      isFirstPointSameAsLast(QListWidget *listWidget);
+    static bool      doublePointsExist(QListWidget *listWidget);
+    static bool      isEachPointNameUnique(QListWidget *listWidget);
     static QString   DialogWarningIcon();
     static QFont     NodeFont(bool nodeExcluded);
 
     NodeInfo         getNodeInfo(const VPieceNode &node, bool showNotch = false) const;
-    void             newNodeItem(QListWidget *listWidget, const VPieceNode &node, bool nodeExcluded = true);
+    void             newNodeItem(QListWidget *listWidget, const VPieceNode &node,
+                                 bool nodeExcluded = true, bool isDuplicate = false);
 
-    void             InitNodeAngles(QComboBox *box);
+    void             initializeNodeAngles(QComboBox *box);
+
 private:
-    void FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
+    void             FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
 
     template <typename T>
-    void PrepareList(QMap<QString, quint32> &list, quint32 id) const;
+    void             PrepareList(QMap<QString, quint32> &list, quint32 id) const;
 
-    bool IsSpline(const QSharedPointer<VGObject> &obj) const;
-    bool IsSplinePath(const QSharedPointer<VGObject> &obj) const;
+    bool             IsSpline(const QSharedPointer<VGObject> &obj) const;
+    bool             IsSplinePath(const QSharedPointer<VGObject> &obj) const;
 
     template <typename GObject>
-    void FillCombo(QComboBox *box, GOType gType, FillComboBox rule = FillComboBox::Whole,
-                   const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID) const;
+    void             FillCombo(QComboBox *box, GOType gType, FillComboBox rule = FillComboBox::Whole,
+                               const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID) const;
 
 
 };

@@ -644,7 +644,7 @@ int VCommandLine::isTextAsPaths() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VCommandLine::IsExportOnlyDetails() const
+int VCommandLine::exportOnlyPieces() const
 {
     return parser.isSet(*optionsUsed.value(optionsIndex.value(LONG_OPTION_EXPORTONLYDETAILS)));
 }

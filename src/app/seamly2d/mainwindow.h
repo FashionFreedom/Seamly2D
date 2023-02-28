@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   mainwindow.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   mainwindow.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -75,7 +76,7 @@ class DecimalChartDialog;
 class ShowInfoDialog;
 class ShortcutsDialog;
 class VWidgetGroups;
-class VWidgetDetails;
+class PiecesWidget;
 class DraftToolBox;
 class PieceToolBox;
 class LayoutToolBox;
@@ -118,7 +119,7 @@ signals:
     void EnableSplinePathSelection(bool enable) const;
     void EnableNodeLabelSelection(bool enable) const;
     void EnableNodePointSelection(bool enable) const;
-    void EnableDetailSelection(bool enable) const;
+    void enablePieceSelection(bool enable) const;
 
     void EnableLabelHover(bool enable) const;
     void EnablePointHover(bool enable) const;
@@ -129,7 +130,7 @@ signals:
     void EnableSplinePathHover(bool enable) const;
     void EnableNodeLabelHover(bool enable) const;
     void EnableNodePointHover(bool enable) const;
-    void EnableDetailHover(bool enable) const;
+    void enablePieceHover(bool enable) const;
 
     void signalZoomToAreaActive(bool enable) const;
     void signalZoomPanActive(bool enable) const;
@@ -213,20 +214,20 @@ private slots:
     void handleInsertNodesTool(bool checked);
 
     void handlePatternPieceTool(bool checked);
-    void handleUnionDetailsTool(bool checked);
+    void handleUnionTool(bool checked);
 
     void handleNewLayout(bool checked);
 
-    void draftMode_Action(bool checked);
-    void ActionDetails(bool checked);
-    void ActionLayout(bool checked);
+    void showDraftMode(bool checked);
+    void showPieceMode(bool checked);
+    void showLayoutMode(bool checked);
 
     void New();
     bool SaveAs();
     bool Save();
     void Open();
 
-    void ClosedDialogUnionDetails(int result);
+    void closeUnionDialog(int result);
     void ClosedDialogGroup(int result);
     void ClosedDialogInternalPath(int result);
     void ClosedDialogAnchorPoint(int result);
@@ -235,6 +236,9 @@ private slots:
     void zoomToPrevious();
     void zoomToArea(bool checked);
     void zoomPan(bool checked);
+
+    void zoomToPoint(const QString& pointName);
+    void showZoomToPointDialog();
 
     void LoadIndividual();
     void LoadMultisize();
@@ -291,27 +295,16 @@ private:
 
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
-
-    /** @brief comboBoxDraws comboc who show name of pattern peaces. */
-    QComboBox                        *comboBoxDraws;
-    QLabel                           *patternPieceLabel;
-
-    /** @brief mode keep current draw mode. */
-    Draw                              mode;
-
-    /** @brief currentDrawIndex save current selected pattern peace. */
-    qint32                            currentDrawIndex;
-
-    /** @brief currentToolBoxIndex save current set of tools. */
-    qint32                            currentToolBoxIndex;
-
+    QComboBox                        *draftBlockComboBox;  /** @brief draftBlockComboBox stores names of draft blocks.*/
+    QLabel                           *draftBlockLabel;
+    Draw                              mode;                /** @brief mode stores current draw mode. */
+    qint32                            currentBlockIndex;   /** @brief currentBlockIndex  current selected draft block.*/
+    qint32                            currentToolBoxIndex; /** @brief currentToolBoxIndex  current set of tools. */
     bool                              isToolOptionsDockVisible;
     bool                              isGroupsDockVisible;
     bool                              isLayoutsDockVisible;
     bool                              isToolboxDockVisible;
-
-    /** @brief drawMode true if we current draw scene. */
-    bool                              drawMode;
+    bool                              drawMode;            /** @brief drawMode true if draft scene active. */
 
     enum { MaxRecentFiles = 5 };
     QAction                          *recentFileActs[MaxRecentFiles];
@@ -327,12 +320,13 @@ private:
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
     VWidgetGroups                    *groupsWidget;
-    VWidgetDetails                   *patternPiecesWidget;
+    PiecesWidget                     *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
     PenToolBar                       *m_penToolBar; //!< for selecting the current pen
     PenToolBar                       *m_penReset;
+    QComboBox                        *m_zoomToPointComboBox;
 
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
@@ -354,7 +348,7 @@ private:
     void                              handleCurvesMenu();
     void                              handleCirclesMenu();
     void                              handleOperationsMenu();
-    void                              handleDetailsMenu();
+    void                              handlePatternPiecesMenu();
     void                              handlePieceMenu();
     void                              handleLayoutMenu();
     void                              handleImagesMenu();
@@ -387,9 +381,9 @@ private:
     template <typename DrawTool>
     void ApplyDrawDialog();
     template <typename DrawTool>
-    void ClosedDetailsDialogWithApply(int result);
+    void ClosedPiecesDialogWithApply(int result);
     template <typename DrawTool>
-    void ApplyDetailsDialog();
+    void applyPiecesDialog();
 
     bool               SavePattern(const QString &fileName, QString &error);
     void               AutoSavePattern();
@@ -403,7 +397,7 @@ private:
     void               CreateMenus();
     void               CreateActions();
     void               InitAutoSave();
-    QString            PatternPieceName(const QString &text);
+    QString            createDraftBlockName(const QString &text);
     QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
     QComboBox          *SetGradationList(QLabel *label, const QStringList &list);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
@@ -421,8 +415,8 @@ private:
     void               FileClosedCorrect();
     QStringList        GetUnlokedRestoreFileList()const;
 
-    void               AddPP(const QString &PPName);
-    QPointF            StartPositionNewPP() const;
+    void               addDraftBlock(const QString &blockName);
+    QPointF            draftBlockStartPosition() const;
 
     void               InitScenes();
 
@@ -445,6 +439,11 @@ private:
     void               updateViewToolbar();
     void               resetPanShortcuts();
 
+
+    QStringList       draftPointNamesList();
+
+    void               updateZoomToPointComboBox(QStringList namesList);
+
     bool               IgnoreLocking(int error, const QString &path);
 
     void ToolSelectPoint() const;
@@ -455,10 +454,10 @@ private:
     void ToolSelectArc() const;
     void ToolSelectPointArc() const;
     void ToolSelectCurve() const;
-    void ToolSelectAllDrawObjects() const;
+    void selectAllDraftObjectsTool() const;
     void ToolSelectOperationObjects() const;
     void ToolSelectGroupObjects() const;
-    void ToolSelectDetail() const;
+    void selectPieceTool() const;
 };
 
 #endif // MAINWINDOW_H

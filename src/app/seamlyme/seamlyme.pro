@@ -16,21 +16,6 @@ TARGET = seamlyme
 # We want create executable file
 TEMPLATE = app
 
-# Use out-of-source builds (shadow builds)
-CONFIG -= debug_and_release debug_and_release_target
-
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Since Qt 5.4.0 the source code location is recorded only in debug builds.
-# We need this information also in release builds. For this need define QT_MESSAGELOGCONTEXT.
-DEFINES += QT_MESSAGELOGCONTEXT
-
 # Directory for executable file
 DESTDIR = bin
 
@@ -53,15 +38,14 @@ RESOURCES += \
     share/resources/seamlymeicon.qrc \
     share/resources/diagrams.qrc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
 include(../tables.pri)
-copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
 
-noTranslations{ # For enable run qmake with CONFIG+=noTranslations
-    # do nothing
-} else {
-include(../translations.pri)
+win32 {
+    copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
 }
+
+include(../translations.pri)
 
 # Set "make install" command for Unix-like systems.
 unix{
@@ -71,20 +55,6 @@ unix{
     }
 
     unix:!macx{
-        isEmpty(PREFIX_LIB){
-            isEmpty(PREFIX){
-                PR_LIB = $$DEFAULT_PREFIX
-            } else {
-                PR_LIB = $$PREFIX
-            }
-            contains(QMAKE_HOST.arch, x86_64) {
-                PREFIX_LIB = $$PR_LIB/lib64/Seamly2D
-            } else {
-                PREFIX_LIB = $$PR_LIB/lib/Seamly2D
-            }
-        }
-        QMAKE_RPATHDIR += $$PREFIX_LIB
-
         QMAKE_RPATHDIR += $$[QT_INSTALL_LIBS]
         DATADIR =$$PREFIX/share
         DEFINES += DATADIR=\\\"$$DATADIR\\\" PKGDATADIR=\\\"$$PKGDATADIR\\\"
@@ -101,6 +71,7 @@ unix{
         # Path to resources in app bundle
         FRAMEWORKS_DIR = "Contents/Frameworks"
         MACOS_DIR = "Contents/MacOS"
+        RESOURCES_DIR = "Contents/Resources"
         # On macx we will use app bundle. Bundle doesn't need bin directory inside.
         # See issue #166: Creating OSX Homebrew (Mac OS X package manager) formula.
         target.path = $$MACOS_DIR
@@ -108,19 +79,19 @@ unix{
         #languages added inside translations.pri
 
         # logo on macx.
-        ICON = $$PWD/../../../dist/SeamlyMe.icns
+        ICON = $${PWD}/../../../dist/SeamlyMe.icns
 
-        QMAKE_INFO_PLIST = $$PWD/../../../dist/macx/seamlyme/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamlyme/Info.plist
 
         # Copy to bundle multisize measurements files
-        multisize.path = $$RESOURCES_DIR/tables/multisize/
+        multisize.path = $${RESOURCES_DIR}/tables/multisize
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
 
         # Copy to bundle templates files
-        templates.path = $$RESOURCES_DIR/tables/templates/
+        templates.path = $${RESOURCES_DIR}/tables/templates
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
-        format.path = $$RESOURCES_DIR/
+        format.path = $${RESOURCES_DIR}
         format.files += $$PWD/../../../dist/macx/i-measurements.icns
         format.files += $$PWD/../../../dist/macx/s-measurements.icns
 
@@ -146,29 +117,8 @@ OTHER_FILES += \
 
 include(warnings.pri)
 
-CONFIG(release, debug|release){
-    # Release mode
-    !*msvc*:CONFIG += silent
-    DEFINES += V_NO_ASSERT
-    !unix:*g++*{
-        QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
-    }
-
-    noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-        DEFINES += V_NO_DEBUG
-    } else {
-        noCrashReports{
-            DEFINES += V_NO_DEBUG
-        }
-        # Turn on debug symbols in release mode on Unix systems.
-        # On Mac OS X temporarily disabled. Need find way how to strip binary file.
-        !macx:!*msvc*{
-            QMAKE_CXXFLAGS_RELEASE   += -g -gdwarf-3
-            QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_LFLAGS_RELEASE =
-        }
-    }
-}
+# precompiled headers clash with the BUILD_REVISION define, thus disable here
+CONFIG -= precompile_header
 
 DVCS_HESH=$$FindBuildRevision()
 message("seamlyme.pro: Build revision:" $${DVCS_HESH})
@@ -280,38 +230,15 @@ DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
-noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-    # do nothing
-} else {
-    noStripDebugSymbols { # For enable run qmake with CONFIG+=noStripDebugSymbols
-        # do nothing
-    } else {
-        # Strip after you link all libraries.
-        CONFIG(release, debug|release){
-            win32:!*msvc*{
-                # Strip debug symbols.
-                QMAKE_POST_LINK += objcopy --only-keep-debug bin/${TARGET} bin/${TARGET}.dbg &&
-                QMAKE_POST_LINK += objcopy --strip-debug bin/${TARGET} &&
-                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="bin/${TARGET}.dbg" bin/${TARGET}
-            }
-
-            unix:!macx{
-                # Strip debug symbols.
-                QMAKE_POST_LINK += objcopy --only-keep-debug ${TARGET} ${TARGET}.dbg &&
-                QMAKE_POST_LINK += objcopy --strip-debug ${TARGET} &&
-                QMAKE_POST_LINK += objcopy --add-gnu-debuglink="${TARGET}.dbg" ${TARGET}
-            }
-
-            !macx:!*msvc*{
-                QMAKE_DISTCLEAN += bin/${TARGET}.dbg
-            }
-        }
-    }
-}
-
 macx{
-   # run macdeployqt to include all qt libraries in packet
-   QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
+
+    QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+
+    macSign {
+        QMAKE_POST_LINK += && codesign --deep --timestamp --options runtime -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+        QMAKE_POST_LINK += && codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    }
 }
 
 win32{

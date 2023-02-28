@@ -339,7 +339,7 @@ void VMainGraphicsScene::ItemsSelection(const SelectionType &type)
 //---------------------------------------------------------------------------------------------------------------------
 void VMainGraphicsScene::HighlightItem(quint32 id)
 {
-    emit HighlightDetail(id);
+    emit highlightPiece(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -397,7 +397,7 @@ void VMainGraphicsScene::ToggleNodePointSelection(bool enabled)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::ToggleDetailSelection(bool enabled)
+void VMainGraphicsScene::togglePieceSelection(bool enabled)
 {
     emit EnableDetailItemSelection(enabled);
 }
@@ -457,7 +457,7 @@ void VMainGraphicsScene::ToggleNodePointHover(bool enabled)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::ToggleDetailHover(bool enabled)
+void VMainGraphicsScene::togglePieceHover(bool enabled)
 {
     emit EnableDetailItemHover(enabled);
 }

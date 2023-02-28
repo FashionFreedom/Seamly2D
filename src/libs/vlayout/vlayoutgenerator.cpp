@@ -95,9 +95,9 @@ VLayoutGenerator::~VLayoutGenerator()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutGenerator::SetDetails(const QVector<VLayoutPiece> &details)
+void VLayoutGenerator::setPieces(const QVector<VLayoutPiece> &pieces)
 {
-    bank->SetDetails(details);
+    bank->setPieces(pieces);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -114,9 +114,9 @@ void VLayoutGenerator::SetCaseType(Cases caseType)
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-int VLayoutGenerator::DetailsCount()
+int VLayoutGenerator::PieceCount()
 {
-    return bank->AllDetailsCount();
+    return bank->allPieceCount();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -151,7 +151,7 @@ void VLayoutGenerator::Generate()
             }
         }
 
-        while (bank->AllDetailsCount() > 0)
+        while (bank->allPieceCount() > 0)
         {
             if (stopGeneration.load())
             {
@@ -168,7 +168,7 @@ void VLayoutGenerator::Generate()
             do
             {
                 const int index = bank->GetTiket();
-                if (paper.ArrangeDetail(bank->GetDetail(index), stopGeneration))
+                if (paper.arrangePiece(bank->getPiece(index), stopGeneration))
                 {
                     bank->Arranged(index);
                     emit Arranged(bank->ArrangedCount());
@@ -239,23 +239,23 @@ QList<QGraphicsItem *> VLayoutGenerator::GetPapersItems() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QList<QList<QGraphicsItem *> > VLayoutGenerator::GetAllDetailsItems() const
+QList<QList<QGraphicsItem *> > VLayoutGenerator::getAllPieceItems() const
 {
     QList<QList<QGraphicsItem *> > list;
     for (int i=0; i < papers.count(); ++i)
     {
-        list.append(papers.at(i).GetItemDetails(IsTestAsPaths()));
+        list.append(papers.at(i).getPieceItems(IsTestAsPaths()));
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QVector<VLayoutPiece> > VLayoutGenerator::GetAllDetails() const
+QVector<QVector<VLayoutPiece> > VLayoutGenerator::getAllPieces() const
 {
     QVector<QVector<VLayoutPiece> > list;
     for (int i=0; i < papers.count(); ++i)
     {
-        list.append(papers.at(i).GetDetails());
+        list.append(papers.at(i).getPieces());
     }
     return list;
 }
@@ -335,13 +335,13 @@ void VLayoutGenerator::GatherPages()
         return;
     }
 
-    QList<QList<VLayoutPiece>> nDetails;
+    QList<QList<VLayoutPiece>> pieces;
     qreal length = 0;
     int j = 0; // papers count
 
     for (int i = 0; i < papers.size(); ++i)
     {
-        int paperHeight = qRound(papers.at(i).DetailsBoundingRect().height());
+        int paperHeight = qRound(papers.at(i).piecesBoundingRect().height());
 
         if (i != papers.size()-1)
         {
@@ -350,20 +350,20 @@ void VLayoutGenerator::GatherPages()
 
         if (length + paperHeight <= PageHeight())
         {
-            UniteDetails(j, nDetails, length, i);
+            unitePieces(j, pieces, length, i);
             length += paperHeight;
         }
         else
         {
             length = 0; // Start new paper
             ++j;// New paper
-            UniteDetails(j, nDetails, length, i);
+            unitePieces(j, pieces, length, i);
             length += paperHeight;
         }
     }
 
     QVector<VLayoutPaper> nPapers;
-    for (int i = 0; i < nDetails.size(); ++i)
+    for (int i = 0; i < pieces.size(); ++i)
     {
         VLayoutPaper paper(PageHeight(), PageWidth());
         paper.SetShift(shift);
@@ -372,7 +372,7 @@ void VLayoutGenerator::GatherPages()
         paper.SetRotate(rotate);
         paper.SetRotationIncrease(rotationIncrease);
         paper.SetSaveLength(saveLength);
-        paper.SetDetails(nDetails.at(i));
+        paper.setPieces(pieces.at(i));
 
         nPapers.append(paper);
     }
@@ -390,7 +390,7 @@ void VLayoutGenerator::UnitePages()
     }
 
     QList<qreal> papersLength;
-    QList<QList<VLayoutPiece> > nDetails;
+    QList<QList<VLayoutPiece> > pieces;
     qreal length = 0;
     int j = 0; // papers count
 
@@ -399,7 +399,7 @@ void VLayoutGenerator::UnitePages()
         int paperHeight = 0;
         if (autoCrop)
         {
-            paperHeight = qRound(papers.at(i).DetailsBoundingRect().height());
+            paperHeight = qRound(papers.at(i).piecesBoundingRect().height());
         }
         else
         {
@@ -413,7 +413,7 @@ void VLayoutGenerator::UnitePages()
 
         if (length + paperHeight <= QIMAGE_MAX)
         {
-            UniteDetails(j, nDetails, length, i);
+            unitePieces(j, pieces, length, i);
             length += paperHeight;
             UnitePapers(j, papersLength, length);
         }
@@ -421,14 +421,14 @@ void VLayoutGenerator::UnitePages()
         {
             length = 0; // Start new paper
             ++j;// New paper
-            UniteDetails(j, nDetails, length, i);
+            unitePieces(j, pieces, length, i);
             length += paperHeight;
             UnitePapers(j, papersLength, length);
         }
     }
 
     QVector<VLayoutPaper> nPapers;
-    for (int i = 0; i < nDetails.size(); ++i)
+    for (int i = 0; i < pieces.size(); ++i)
     {
         VLayoutPaper paper(qFloor(papersLength.at(i)), PageWidth());
         paper.SetShift(shift);
@@ -437,7 +437,7 @@ void VLayoutGenerator::UnitePages()
         paper.SetRotate(rotate);
         paper.SetRotationIncrease(rotationIncrease);
         paper.SetSaveLength(saveLength);
-        paper.SetDetails(nDetails.at(i));
+        paper.setPieces(pieces.at(i));
 
         nPapers.append(paper);
     }
@@ -447,15 +447,15 @@ void VLayoutGenerator::UnitePages()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutGenerator::UniteDetails(int j, QList<QList<VLayoutPiece> > &nDetails, qreal length, int i)
+void VLayoutGenerator::unitePieces(int j, QList<QList<VLayoutPiece> > &pieces, qreal length, int i)
 {
-    if ((j == 0 && nDetails.isEmpty()) || j >= nDetails.size())
-    {//First or new details in paper
-        nDetails.insert(j, MoveDetails(length, papers.at(i).GetDetails()));
+    if ((j == 0 && pieces.isEmpty()) || j >= pieces.size())
+    {//First or new pieces in paper
+        pieces.insert(j, movePieces(length, papers.at(i).getPieces()));
     }
     else
     {
-        nDetails[j].append(MoveDetails(length, papers.at(i).GetDetails()));
+        pieces[j].append(movePieces(length, papers.at(i).getPieces()));
     }
 }
 
@@ -473,22 +473,22 @@ void VLayoutGenerator::UnitePapers(int j, QList<qreal> &papersLength, qreal leng
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QList<VLayoutPiece> VLayoutGenerator::MoveDetails(qreal length, const QVector<VLayoutPiece> &details)
+QList<VLayoutPiece> VLayoutGenerator::movePieces(qreal length, const QVector<VLayoutPiece> &pieces)
 {
     if (qFuzzyIsNull(length))
     {
-        return details.toList();
+        return pieces.toList();
     }
 
-    QList<VLayoutPiece> newDetails;
-    for (int i = 0; i < details.size(); ++i)
+    QList<VLayoutPiece> newPieces;
+    for (int i = 0; i < pieces.size(); ++i)
     {
-        VLayoutPiece d = details.at(i);
+        VLayoutPiece d = pieces.at(i);
         d.Translate(0, length);
-        newDetails.append(d);
+        newPieces.append(d);
     }
 
-    return newDetails;
+    return newPieces;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

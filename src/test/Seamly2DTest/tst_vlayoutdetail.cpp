@@ -77,11 +77,11 @@ void TST_VLayoutDetail::RemoveDublicates() const
 void TST_VLayoutDetail::Case1() const
 {
 
-    VLayoutPiece det = VLayoutPiece();
-    det.SetCountourPoints(InputPointsCase1());
+    VLayoutPiece piece = VLayoutPiece();
+    piece.SetCountourPoints(InputPointsCase1());
 
     // Begin comparison
-    Comparison(det.getContourPoints(), OutputPointsCase1());
+    Comparison(piece.getContourPoints(), OutputPointsCase1());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -139,11 +139,11 @@ QVector<QPointF> TST_VLayoutDetail::OutputPointsCase1() const //-V524
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VLayoutDetail::Case2() const
 {
-    VLayoutPiece det = VLayoutPiece();
-    det.SetCountourPoints(InputPointsCase2());
+    VLayoutPiece piece = VLayoutPiece();
+    piece.SetCountourPoints(InputPointsCase2());
 
     // Begin comparison
-    Comparison(det.getContourPoints(), OutputPointsCase2());
+    Comparison(piece.getContourPoints(), OutputPointsCase2());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -180,11 +180,11 @@ QVector<QPointF> TST_VLayoutDetail::OutputPointsCase2() const
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VLayoutDetail::Case3() const
 {
-    VLayoutPiece det = VLayoutPiece();
-    det.SetCountourPoints(InputPointsCase3());
+    VLayoutPiece piece = VLayoutPiece();
+    piece.SetCountourPoints(InputPointsCase3());
 
     // Begin comparison
-    Comparison(det.getContourPoints(), OutputPointsCase3());
+    Comparison(piece.getContourPoints(), OutputPointsCase3());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

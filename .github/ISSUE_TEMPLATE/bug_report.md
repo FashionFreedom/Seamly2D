@@ -11,5 +11,5 @@ assignees: ''
 * How To Reproduce the bug 
 * What should have happened 
 * Screenshots 
-* What's your Desktop OS? _Windows 10_ 
-* What's your Seamly version from **Help/About**? _Seamly v0.6.0.1 built on Wed Sep 29 2020_
+* What's your Desktop OS? _Windows 11_ 
+* What's your Seamly version from **Help/About**? _Seamly 2023.2.2.2156_

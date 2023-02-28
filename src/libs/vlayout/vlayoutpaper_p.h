@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vlayoutpaper_p.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
 **
 **  @file   vlayoutpaper_p.h
 **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
 **
 **  @brief
 **  @copyright
-**  This source code is part of the Valentine project, a pattern making
+**  This source code is part of the Valentina project, a pattern making
 **  program, whose allow create and modeling patterns of clothing.
-**  Copyright (C) 2013-2015 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**  Copyright (C) 2013-2015 Valentina project
+**  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
 **
-**  Seamly2D is free software: you can redistribute it and/or modify
+**  Valentina is free software: you can redistribute it and/or modify
 **  it under the terms of the GNU General Public License as published by
 **  the Free Software Foundation, either version 3 of the License, or
 **  (at your option) any later version.
 **
-**  Seamly2D is distributed in the hope that it will be useful,
+**  Valentina is distributed in the hope that it will be useful,
 **  but WITHOUT ANY WARRANTY; without even the implied warranty of
 **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 **  GNU General Public License for more details.
 **
 **  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
 **
 *************************************************************************/
 
@@ -67,7 +68,7 @@ class VLayoutPaperData : public QSharedData
 {
 public:
     VLayoutPaperData()
-        : details(QVector<VLayoutPiece>()),
+        : pieces(QVector<VLayoutPiece>()),
           globalContour(VContour()),
           paperIndex(0),
           frame(0),
@@ -79,9 +80,8 @@ public:
           saveLength(false)
     {}
 
-    VLayoutPaperData(int height,
-                     int width)
-        : details(QVector<VLayoutPiece>()),
+    VLayoutPaperData(int height, int width)
+        : pieces(QVector<VLayoutPiece>()),
           globalContour(VContour(height, width)),
           paperIndex(0),
           frame(0),
@@ -95,7 +95,7 @@ public:
 
     VLayoutPaperData(const VLayoutPaperData &paper)
         : QSharedData(paper),
-          details(paper.details),
+          pieces(paper.pieces),
           globalContour(paper.globalContour),
           paperIndex(paper.paperIndex),
           frame(paper.frame),
@@ -109,20 +109,20 @@ public:
 
     ~VLayoutPaperData() {}
 
-    /** @brief details list of arranged details. */
-    QVector<VLayoutPiece> details;
+    /** @brief pieces list of arranged pieces. */
+    QVector<VLayoutPiece> pieces;
 
     /** @brief globalContour list of global points contour. */
     VContour globalContour;
 
-    quint32 paperIndex;
-    quint32 frame;
-    qreal layoutWidth;
-    bool globalRotate;
-    bool localRotate;
-    int globalRotationIncrease;
-    int localRotationIncrease;
-    bool saveLength;
+    quint32  paperIndex;
+    quint32  frame;
+    qreal    layoutWidth;
+    bool     globalRotate;
+    bool     localRotate;
+    int      globalRotationIncrease;
+    int      localRotationIncrease;
+    bool     saveLength;
 
 private:
     VLayoutPaperData& operator=(const VLayoutPaperData&) Q_DECL_EQ_DELETE;

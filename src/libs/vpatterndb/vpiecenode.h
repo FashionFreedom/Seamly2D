@@ -97,13 +97,13 @@ public:
     qreal               GetSABefore(const VContainer *data, Unit unit) const;
 
     QString             GetFormulaSABefore() const;
-    void                SetFormulaSABefore(const QString &formula);
+    void                setBeforeSAFormula(const QString &formula);
 
     qreal               GetSAAfter(const VContainer *data) const;
     qreal               GetSAAfter(const VContainer *data, Unit unit) const;
 
     QString             GetFormulaSAAfter() const;
-    void                SetFormulaSAAfter(const QString &formula);
+    void                setAfterSAFormula(const QString &formula);
 
     PieceNodeAngle      GetAngleType() const;
     void                SetAngleType(PieceNodeAngle type);
@@ -120,8 +120,8 @@ public:
     NotchSubType        getNotchSubType() const;
     void                setNotchSubType(NotchSubType notchSubType);
 
-    bool                showSecondNotch() const;
-    void                setShowSecondNotch(bool value);
+    bool                showSeamlineNotch() const;
+    void                setShowSeamlineNotch(bool value);
 
     bool                showNotch() const;
     void                setShowNotch(bool value);

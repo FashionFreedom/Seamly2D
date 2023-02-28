@@ -93,6 +93,12 @@ public:
     QString              GetPathLabelTemplate() const;
     void                 SetPathLabelTemplate(const QString &value);
 
+    QString              getDefaultPatternTemplate() const;
+    void                 setDefaultPatternTemplate(const QString &text);
+
+    QString              getDefaultPieceTemplate() const;
+    void                 setDefaultPieceTemplate(const QString &text);
+
     bool                 GetOsSeparator() const;
     void                 SetOsSeparator(const bool &value);
 
@@ -243,6 +249,10 @@ public:
     int                  GetUndoCount() const;
     void                 SetUndoCount(const int &value);
 
+    QString              getSound() const;
+    QString              getSelectionSound() const;
+    void                 setSelectionSound(const QString &value);
+
     QStringList          GetRecentFileList() const;
     void                 SetRecentFileList(const QStringList &value);
 
@@ -261,8 +271,8 @@ public:
     QSize                getPreferenceDialogSize() const;
     void                 setPreferenceDialogSize(const QSize& sz);
 
-    QSize                GetToolSeamAllowanceDialogSize() const;
-    void                 SetToolSeamAllowanceDialogSize(const QSize& sz);
+    QSize                getPatternPieceDialogSize() const;
+    void                 setPatternPieceDialogSize(const QSize& sz);
 
     QSize                GetFormulaWizardDialogSize() const;
     void                 SetFormulaWizardDialogSize(const QSize& sz);
@@ -282,8 +292,11 @@ public:
     bool                 isHideSeamLine() const;
     void                 setHideSeamLine(bool value);
 
-    bool                 showSecondNotch() const;
-    void                 setShowSecondNotch(bool value);
+    bool                 showSeamlineNotch() const;
+    void                 setShowSeamlineNotch(bool value);
+
+    bool                 showSeamAllowanceNotch() const;
+    void                 setShowSeamAllowanceNotch(bool value);
 
     qreal                getDefaultNotchLength() const;
     void                 setDefaultNotchLength(const qreal &value);
@@ -351,8 +364,17 @@ public:
     bool                 showSeamAllowances() const;
     void                 setShowSeamAllowances(const bool &value);
 
+    bool                 getDefaultSeamAllowanceVisibilty() const;
+    void                 setDefaultSeamAllowanceVisibilty(const bool &value);
+
     bool                 showGrainlines() const;
     void                 setShowGrainlines(const bool &value);
+
+    bool                 getDefaultGrainlineVisibilty() const;
+    void                 setDefaultGrainlineVisibilty(const bool &value);
+
+    qreal                getDefaultGrainlineLength() const;
+    void                 setDefaultGrainlineLength(const qreal &value);
 
     QString              getDefaultGrainlineColor() const;
     void                 setDefaultGrainlineColor(const QString &value);
@@ -362,6 +384,18 @@ public:
 
     bool                 showLabels() const;
     void                 setShowLabels(const bool &value);
+
+    bool                 showPatternLabels() const;
+    void                 setShowPatternLabels(const bool &value);
+
+    bool                 showPieceLabels() const;
+    void                 setShowPieceLabels(const bool &value);
+
+    qreal                getDefaultLabelWidth() const;
+    void                 setDefaultLabelWidth(const qreal &value);
+
+    qreal                getDefaultLabelHeight() const;
+    void                 setDefaultLabelHeight(const qreal &value);
 
     QString              getDefaultLabelColor() const;
     void                 setDefaultLabelColor(const QString &value);

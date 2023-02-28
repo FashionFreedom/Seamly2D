@@ -59,11 +59,11 @@
 #include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-AddDetNode::AddDetNode(const QDomElement &xml, VAbstractPattern *doc, const QString &drawName, QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent), m_drawName(drawName)
+AddDetNode::AddDetNode(const QDomElement &xml, VAbstractPattern *doc, const QString &blockName, QUndoCommand *parent)
+    : VUndoCommand(xml, doc, parent), m_blockName(blockName)
 {
     setText(QObject::tr("add node"));
-    nodeId = doc->GetParametrId(xml);
+    nodeId = doc->getParameterId(xml);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -121,13 +121,13 @@ void AddDetNode::redo()
 QDomElement AddDetNode::GetModelingSection() const
 {
     QDomElement modeling;
-    if (m_drawName.isEmpty())
+    if (m_blockName.isEmpty())
     {
-        doc->GetActivNodeElement(VAbstractPattern::TagModeling, modeling);
+        doc->getActiveNodeElement(VAbstractPattern::TagModeling, modeling);
     }
     else
     {
-        modeling = doc->GetDraw(m_drawName).firstChildElement(VAbstractPattern::TagModeling);
+        modeling = doc->getDraftBlockElement(m_blockName).firstChildElement(VAbstractPattern::TagModeling);
     }
     return modeling;
 }

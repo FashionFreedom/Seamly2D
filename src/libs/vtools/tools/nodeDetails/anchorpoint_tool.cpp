@@ -1,16 +1,13 @@
-/************************************************************************
- **
+/***************************************************************************
  **  @file   anchorpoint_tool.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   31 1, 2017
+ **  @author Douglas S Caskey
+ **  @date   Jan 3, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013 - 2022 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -22,14 +19,41 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/************************************************************************
+ **
+ **  @file   vtoolpin.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   31 1, 2017
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "anchorpoint_tool.h"
 #include "../../dialogs/tools/anchorpoint_dialog.h"
 #include "../../undocommands/savepieceoptions.h"
-#include "../vtoolseamallowance.h"
+#include "../pattern_piece_tool.h"
 #include "../vgeometry/vpointf.h"
 
 const QString AnchorPointTool::ToolType = QStringLiteral("anchor");
@@ -48,7 +72,7 @@ AnchorPointTool *AnchorPointTool::Create(QSharedPointer<DialogTool> dialog, VAbs
 
 //---------------------------------------------------------------------------------------------------------------------
 AnchorPointTool *AnchorPointTool::Create(quint32 _id, quint32 pointId, quint32 pieceId, VAbstractPattern *doc, VContainer *data,
-                           const Document &parse, const Source &typeCreation, const QString &drawName,
+                           const Document &parse, const Source &typeCreation, const QString &blockName,
                            const quint32 &idTool)
 {
     quint32 id = _id;
@@ -81,7 +105,7 @@ AnchorPointTool *AnchorPointTool::Create(quint32 _id, quint32 pointId, quint32 p
     AnchorPointTool *point = nullptr;
     if (parse == Document::FullParse)
     {
-        point = new AnchorPointTool(doc, data, id, pointId, pieceId, typeCreation, drawName, idTool, doc);
+        point = new AnchorPointTool(doc, data, id, pointId, pieceId, typeCreation, blockName, idTool, doc);
 
         VAbstractPattern::AddTool(id, point);
         if (idTool != NULL_ID)
@@ -141,22 +165,22 @@ void AnchorPointTool::AddToFile()
 
     if (m_pieceId > NULL_ID)
     {
-        const VPiece oldDet = VAbstractTool::data.GetPiece(m_pieceId);
-        VPiece newDet = oldDet;
+        const VPiece oldPiece = VAbstractTool::data.GetPiece(m_pieceId);
+        VPiece newPiece = oldPiece;
 
-        newDet.getAnchors().append(m_id);
+        newPiece.getAnchors().append(m_id);
 
-        SavePieceOptions *saveCommand = new SavePieceOptions(oldDet, newDet, doc, m_pieceId);
+        SavePieceOptions *saveCommand = new SavePieceOptions(oldPiece, newPiece, doc, m_pieceId);
         qApp->getUndoStack()->push(saveCommand);// First push then make a connect
-        VAbstractTool::data.UpdatePiece(m_pieceId, newDet);// Update piece because first save will not call lite update
+        VAbstractTool::data.UpdatePiece(m_pieceId, newPiece);// Update piece because first save will not call lite update
         connect(saveCommand, &SavePieceOptions::NeedLiteParsing, doc, &VAbstractPattern::LiteParseTree);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 AnchorPointTool::AnchorPointTool(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 pointId, quint32 pieceId,
-                   const Source &typeCreation, const QString &drawName, const quint32 &idTool, QObject *qoParent)
-    : VAbstractNode(doc, data, id, pointId, drawName, idTool, qoParent)
+                   const Source &typeCreation, const QString &blockName, const quint32 &idTool, QObject *qoParent)
+    : VAbstractNode(doc, data, id, pointId, blockName, idTool, qoParent)
     , m_pieceId(pieceId)
 {
     ToolCreation(typeCreation);

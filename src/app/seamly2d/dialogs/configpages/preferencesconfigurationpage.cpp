@@ -58,6 +58,7 @@
 #include <QDir>
 #include <QDirIterator>
 #include <QMessageBox>
+#include <QSound>
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -68,6 +69,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     , m_systemChanged()
     , m_unitChanged(false)
     , m_labelLangChanged(false)
+    , m_selectionSoundChanged(false)
     , m_moveSuffixChanged(false)
     , m_rotateSuffixChanged(false)
     , m_mirrorByAxisSuffixChanged(false)
@@ -80,6 +82,18 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     //Editing
     // Undo
     ui->undoCount_SpinBox->setValue(qApp->Seamly2DSettings()->GetUndoCount());
+
+    //Selection sound
+    int index = ui->selectionSound_ComboBox->findText(qApp->Seamly2DSettings()->getSound());
+    if (index != -1)
+    {
+        ui->selectionSound_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->selectionSound_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_selectionSoundChanged = true;
+        QSound::play("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav");
+    });
 
     // Warnings
     ui->confirmItemDelete_CheckBox->setChecked(qApp->Seamly2DSettings()->getConfirmItemDelete());
@@ -107,7 +121,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // set default pattern making system
-    int index = ui->systemCombo->findData(qApp->Seamly2DSettings()->GetPMSystemCode());
+    index = ui->systemCombo->findData(qApp->Seamly2DSettings()->GetPMSystemCode());
     if (index != -1)
     {
         ui->systemCombo->setCurrentIndex(index);
@@ -227,6 +241,12 @@ void PreferencesConfigurationPage::Apply()
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
     settings->SetUndoCount(ui->undoCount_SpinBox->value());
+    if (m_selectionSoundChanged)
+    {
+        const QString locale = qvariant_cast<QString>(ui->selectionSound_ComboBox->currentText());
+        settings->setSelectionSound(locale);
+        m_selectionSoundChanged = false;
+    }
     settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
     settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
 
@@ -260,7 +280,7 @@ void PreferencesConfigurationPage::Apply()
         settings->SetPMSystemCode(code);
         m_systemChanged = false;
 
-        qApp->LoadTranslation(locale);
+        qApp->loadTranslations(locale);
     }
     if (m_unitChanged)
     {

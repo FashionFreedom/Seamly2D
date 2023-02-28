@@ -106,6 +106,43 @@ void VAbstractPiece::SetName(const QString &value)
     d->m_name = value;
 }
 
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPiece::getColor() const
+{
+    return d->m_color;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPiece::setColor(const QString &value)
+{
+    d->m_color = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPiece::getFill() const
+{
+    return d->m_fill;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPiece::setFill(const QString &value)
+{
+    d->m_fill = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VAbstractPiece::getLock() const
+{
+    return d->m_pieceLock;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPiece::setLock(bool value)
+{
+    d->m_pieceLock = value;
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPiece::IsForbidFlipping() const
 {
@@ -216,7 +253,7 @@ QVector<QPointF> VAbstractPiece::Equidistant(const QVector<VSAPoint> &points, qr
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VAbstractPiece::SumTrapezoids(const QVector<QPointF> &points)
+qreal VAbstractPiece::sumTrapezoids(const QVector<QPointF> &points)
 {
     // Calculation a polygon area through the sum of the areas of trapezoids
     qreal s, res = 0;
@@ -251,6 +288,24 @@ qreal VAbstractPiece::SumTrapezoids(const QVector<QPointF> &points)
     return res;
 }
 
+/*
+ * @brief Checks for direction of a vector of points.
+ * @param points QVector of QPointF.
+ * @return true for clockwise direction.
+ * return false for counterclock-wise direction.
+ */
+bool VAbstractPiece::isClockwise(const QVector<QPointF> &points)
+{
+    if(points.count() < 3)
+    {
+        return false;
+    }
+    else if (sumTrapezoids(points) < 0)
+    {
+        return true;
+    }
+    return false;
+}
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief CheckLoops seek and delete loops in equidistant.
@@ -418,7 +473,7 @@ qreal VAbstractPiece::MaxLocalSA(const VSAPoint &p, qreal width)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief EkvPoint return seam allowance points in place of intersection of two edges. Last points of two edges 
+ * @brief EkvPoint return seam allowance points in place of intersection of two edges. Last points of two edges
  * should be equal.
  * @param width global seam allowance width.
  * @return seam allowance points.
@@ -884,12 +939,12 @@ bool VAbstractPiece::CheckIntersection(const QVector<QPointF> &points, int i, in
     QVector<QPointF> sub1 = SubPath(points, iNext, j);
     sub1.append(crossPoint);
     sub1 = CheckLoops(CorrectEquidistantPoints(sub1, false));
-    const qreal sub1Sum = SumTrapezoids(sub1);
+    const qreal sub1Sum = sumTrapezoids(sub1);
 
     QVector<QPointF> sub2 = SubPath(points, jNext, i);
     sub2.append(crossPoint);
     sub2 = CheckLoops(CorrectEquidistantPoints(sub2, false));
-    const qreal sub2Sum = SumTrapezoids(sub2);
+    const qreal sub2Sum = sumTrapezoids(sub2);
 
     if (sub1Sum < 0 && sub2Sum < 0)
     {

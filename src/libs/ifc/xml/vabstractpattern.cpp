@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vabstractpattern.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vabstractpattern.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -82,15 +83,15 @@ class QDomElement;
 const QString VAbstractPattern::TagPattern              = QStringLiteral("pattern");
 const QString VAbstractPattern::TagCalculation          = QStringLiteral("calculation");
 const QString VAbstractPattern::TagModeling             = QStringLiteral("modeling");
-const QString VAbstractPattern::TagDetails              = QStringLiteral("details");
-const QString VAbstractPattern::TagDetail               = QStringLiteral("detail");
+const QString VAbstractPattern::TagPieces               = QStringLiteral("pieces");
+const QString VAbstractPattern::TagPiece                = QStringLiteral("piece");
 const QString VAbstractPattern::TagDescription          = QStringLiteral("description");
 const QString VAbstractPattern::TagNotes                = QStringLiteral("notes");
 const QString VAbstractPattern::TagImage                = QStringLiteral("image");
 const QString VAbstractPattern::TagMeasurements         = QStringLiteral("measurements");
 const QString VAbstractPattern::TagIncrements           = QStringLiteral("increments");
 const QString VAbstractPattern::TagIncrement            = QStringLiteral("increment");
-const QString VAbstractPattern::TagDraw                 = QStringLiteral("draw");
+const QString VAbstractPattern::TagDraftBlock           = QStringLiteral("draftBlock");
 const QString VAbstractPattern::TagGroups               = QStringLiteral("groups");
 const QString VAbstractPattern::TagGroup                = QStringLiteral("group");
 const QString VAbstractPattern::TagGroupItem            = QStringLiteral("item");
@@ -318,27 +319,27 @@ QStringList VAbstractPattern::ListMeasurements() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief changeActiveDraftBlock set new active pattern piece name.
+ * @brief changeActiveDraftBlock set new active draft block name.
  * @param name new name.
  * @param parse parser file mode.
  */
 void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Document &parse)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
-    if (CheckExistNamePP(name))
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
+    if (draftBlockNameExists(name))
     {
         this->activeDraftBlock = name;
         if (parse == Document::FullParse)
         {
-            emit ChangedActivPP(name);
+            emit activeDraftBlockChanged(name);
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief getActiveDraftBlockName return current pattern piece name.
- * @return pattern piece name.
+ * @brief getActiveDraftBlockName return current draft block name.
+ * @return draft block name.
  */
 QString VAbstractPattern::getActiveDraftBlockName() const
 {
@@ -347,15 +348,15 @@ QString VAbstractPattern::getActiveDraftBlockName() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetActivDrawElement return draw tag for current pattern peace.
- * @param element draw tag.
+ * @brief getActiveDraftElement return draftBlock element for current draft block.
+ * @param element draftBlock element.
  * @return true if found.
  */
-bool VAbstractPattern::GetActivDrawElement(QDomElement &element) const
+bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
 {
     if (activeDraftBlock.isEmpty() == false)
     {
-        const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
+        const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
         if (elements.size() == 0)
         {
             return false;
@@ -379,14 +380,14 @@ bool VAbstractPattern::GetActivDrawElement(QDomElement &element) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief CheckNameDraw check if exist pattern peace with this name.
- * @param name pattern peace name.
+ * @brief draftBlockNameExists check if draft block with this name exists.
+ * @param name draft block name.
  * @return true if exist.
  */
-bool VAbstractPattern::CheckExistNamePP(const QString &name) const
+bool VAbstractPattern::draftBlockNameExists(const QString &name) const
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draw is empty");
-    const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
+    const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
     if (elements.size() == 0)
     {
         return false;
@@ -407,18 +408,18 @@ bool VAbstractPattern::CheckExistNamePP(const QString &name) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetActivNodeElement find element in current pattern piece by name.
+ * @brief getActiveNodeElement find element in current draft block by name.
  * @param name name tag.
  * @param element element.
  * @return true if found.
  */
-bool VAbstractPattern::GetActivNodeElement(const QString &name, QDomElement &element) const
+bool VAbstractPattern::getActiveNodeElement(const QString &name, QDomElement &element) const
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draw is empty");
-    QDomElement drawElement;
-    if (GetActivDrawElement(drawElement))
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
+    QDomElement draftBlockElement;
+    if (getActiveDraftElement(draftBlockElement))
     {
-        const QDomNodeList listElement = drawElement.elementsByTagName(name);
+        const QDomNodeList listElement = draftBlockElement.elementsByTagName(name);
         if (listElement.size() != 1)
         {
             return false;
@@ -489,7 +490,7 @@ void VAbstractPattern::ParseGroups(const QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VAbstractPattern::CountPP() const
+int VAbstractPattern::draftBlockCount() const
 {
     const QDomElement rootElement = this->documentElement();
     if (rootElement.isNull())
@@ -497,15 +498,15 @@ int VAbstractPattern::CountPP() const
         return 0;
     }
 
-    return rootElement.elementsByTagName( TagDraw ).count();
+    return rootElement.elementsByTagName(TagDraftBlock).count();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::GetPPElement(const QString &name)
+QDomElement VAbstractPattern::getDraftBlockElement(const QString &name)
 {
     if (name.isEmpty() == false)
     {
-        const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
+        const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
         if (elements.size() == 0)
         {
             return QDomElement();
@@ -527,29 +528,29 @@ QDomElement VAbstractPattern::GetPPElement(const QString &name)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangeNamePP change pattern piece name.
- * @param oldName old pattern piece name.
- * @param newName new pattern piece name.
+ * @brief renameDraftBlock change draft block name.
+ * @param oldName old draft block name.
+ * @param newName new draft block name.
  * @return true if success.
  */
-bool VAbstractPattern::ChangeNamePP(const QString &oldName, const QString &newName)
+bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &newName)
 {
-    Q_ASSERT_X(not newName.isEmpty(), Q_FUNC_INFO, "new name pattern piece is empty");
-    Q_ASSERT_X(not oldName.isEmpty(), Q_FUNC_INFO, "old name pattern piece is empty");
+    Q_ASSERT_X(not newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
+    Q_ASSERT_X(not oldName.isEmpty(), Q_FUNC_INFO, "old name draft block is empty");
 
-    if (CheckExistNamePP(oldName) == false)
+    if (draftBlockNameExists(oldName) == false)
     {
-        qDebug()<<"Do not exist pattern piece with name"<<oldName;
+        qDebug()<<"Do not exist draft block with name"<<oldName;
         return false;
     }
 
-    if (CheckExistNamePP(newName))
+    if (draftBlockNameExists(newName))
     {
-        qDebug()<<"Already exist pattern piece with name"<<newName;
+        qDebug()<<"Already exist draft block with name"<<newName;
         return false;
     }
 
-    QDomElement ppElement = GetPPElement(oldName);
+    QDomElement ppElement = getDraftBlockElement(oldName);
     if (ppElement.isElement())
     {
         if (activeDraftBlock == oldName)
@@ -558,35 +559,35 @@ bool VAbstractPattern::ChangeNamePP(const QString &oldName, const QString &newNa
         }
         ppElement.setAttribute(AttrName, newName);
         emit patternChanged(false);//For situation when we change name directly, without undocommands.
-        emit ChangedNameDraw(oldName, newName);
+        emit draftBlockNameChanged(oldName, newName);
         return true;
     }
     else
     {
-        qDebug()<<"Can't find pattern piece node with name"<<oldName<<Q_FUNC_INFO;
+        qDebug()<<"Can't find draft block node with name"<<oldName<<Q_FUNC_INFO;
         return false;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief appendPP add new pattern piece.
+ * @brief appendDraftBlock add new draft block.
  *
- * Method check if not exist pattern piece with the same name and change name active pattern piece name, send signal
- * about change pattern piece. Doen't add pattern piece to file structure. This task make SPoint tool.
- * @param name pattern peace name.
+ * Method check if not exist draft block with the same name and change name active draft block name, send signal
+ * about change draft block. Doen't add draft block to file structure. This task make SPoint tool.
+ * @param name draft block name.
  * @return true if success.
  */
-bool VAbstractPattern::appendPP(const QString &name)
+bool VAbstractPattern::appendDraftBlock(const QString &name)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
     if (name.isEmpty())
     {
         return false;
     }
-    if (CheckExistNamePP(name) == false)
+    if (draftBlockNameExists(name) == false)
     {
-        SetActivPP(name);
+        setActiveDraftBlock(name);
         return true;
     }
     return false;
@@ -807,15 +808,15 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
             throw e;
     }
     VPieceNode node(id, tool, reverse);
-    node.SetFormulaSABefore(saBefore);
-    node.SetFormulaSAAfter(saAfter);
+    node.setBeforeSAFormula(saBefore);
+    node.setAfterSAFormula(saAfter);
     node.SetAngleType(angle);
     node.SetExcluded(excluded);
     node.setNotch(notch);
     node.setNotchType(notchType);
     node.setNotchSubType(notchSubType);
     node.setShowNotch(showNotch);
-    node.setShowSecondNotch(showSecond);
+    node.setShowSeamlineNotch(showSecond);
     node.setNotchLength(notchLength);
     node.setNotchWidth(notchWidth);
     node.setNotchAngle(notchAngle);
@@ -847,7 +848,7 @@ QVector<VToolRecord> VAbstractPattern::getLocalHistory() const
     for (qint32 i = 0; i< history.size(); ++i)
     {
         const VToolRecord tool = history.at(i);
-        if (tool.getNameDraw() != getActiveDraftBlockName())
+        if (tool.getDraftBlockName() != getActiveDraftBlockName())
         {
             continue;
         }
@@ -899,7 +900,7 @@ quint32 VAbstractPattern::SiblingNodeId(const quint32 &nodeId) const
                     switch ( tool.getTypeTool() )
                     {
                         case Tool::Piece:
-                        case Tool::UnionDetails:
+                        case Tool::Union:
                         case Tool::NodeArc:
                         case Tool::NodeElArc:
                         case Tool::NodePoint:
@@ -1458,7 +1459,7 @@ void VAbstractPattern::SetLabelTimeFormat(const QString &format)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetPatternLabelTemplate(const QVector<VLabelTemplateLine> &lines)
+void VAbstractPattern::setPatternLabelTemplate(const QVector<VLabelTemplateLine> &lines)
 {
     QDomElement tag = CheckTagExists(TagPatternLabel);
     RemoveAllChildren(tag);
@@ -1470,7 +1471,7 @@ void VAbstractPattern::SetPatternLabelTemplate(const QVector<VLabelTemplateLine>
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VLabelTemplateLine> VAbstractPattern::GetPatternLabelTemplate() const
+QVector<VLabelTemplateLine> VAbstractPattern::getPatternLabelTemplate() const
 {
     if (patternLabelLines.isEmpty())
     {
@@ -1583,15 +1584,15 @@ void VAbstractPattern::ClearScene()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::CheckInLayoutList()
+void VAbstractPattern::updatePieceList(quint32 id)
 {
-    emit UpdateInLayoutList();
+    emit UpdateInLayoutList(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SelectedDetail(quint32 id)
+void VAbstractPattern::selectedPiece(quint32 id)
 {
-    emit ShowDetail(id);
+    emit showPiece(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1621,14 +1622,14 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetActivPP set current pattern piece.
- * @param name pattern peace name.
+ * @brief setActiveDraftBlock set current draft block.
+ * @param name draft block name.
  */
-void VAbstractPattern::SetActivPP(const QString &name)
+void VAbstractPattern::setActiveDraftBlock(const QString &name)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
     this->activeDraftBlock = name;
-    emit ChangedActivPP(name);
+    emit activeDraftBlockChanged(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1707,16 +1708,16 @@ void VAbstractPattern::InsertTag(const QStringList &tags, const QDomElement &ele
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VAbstractPattern::GetIndexActivPP() const
+int VAbstractPattern::getActiveDraftBlockIndex() const
 {
-    const QDomNodeList drawList = elementsByTagName(TagDraw);
+    const QDomNodeList blockList = elementsByTagName(TagDraftBlock);
 
     int index = 0;
-    if (not drawList.isEmpty())
+    if (not blockList.isEmpty())
     {
-        for (int i = 0; i < drawList.size(); ++i)
+        for (int i = 0; i < blockList.size(); ++i)
         {
-            QDomElement node = drawList.at(i).toElement();
+            QDomElement node = blockList.at(i).toElement();
             if (node.attribute(AttrName) == activeDraftBlock)
             {
                 index = i;
@@ -1983,7 +1984,7 @@ QVector<VFormulaField> VAbstractPattern::ListPieceExpressions() const
     Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
 
     QVector<VFormulaField> expressions;
-    const QDomNodeList list = elementsByTagName(TagDetail);
+    const QDomNodeList list = elementsByTagName(TagPiece);
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement dom = list.at(i).toElement();
@@ -2106,37 +2107,17 @@ void VAbstractPattern::SetModified(bool modified)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::GetDraw(const QString &name) const
-{
-    const QDomNodeList draws = documentElement().elementsByTagName(TagDraw);
-    for (int i=0; i < draws.size(); ++i)
-    {
-        QDomElement draw = draws.at(i).toElement();
-        if (draw.isNull())
-        {
-            continue;
-        }
-
-        if (draw.attribute(AttrName) == name)
-        {
-            return draw;
-        }
-    }
-    return QDomElement();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 QDomElement VAbstractPattern::CreateGroups()
 {
-    QDomElement draw;
-    if (GetActivDrawElement(draw))
+    QDomElement draftBlock;
+    if (getActiveDraftElement(draftBlock))
     {
-        QDomElement groups = draw.firstChildElement(TagGroups);
+        QDomElement groups = draftBlock.firstChildElement(TagGroups);
 
         if (groups.isNull())
         {
             groups = createElement(TagGroups);
-            draw.appendChild(groups);
+            draftBlock.appendChild(groups);
         }
 
         return groups;

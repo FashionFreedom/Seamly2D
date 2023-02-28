@@ -61,7 +61,7 @@
 #include "../xml/vpattern.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../core/vapplication.h"
-#include "../vtools/dialogs/support/dialogeditlabel.h"
+#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
 
 // calc how many combinations we have
 static const int heightsCount = (static_cast<int>(GHeights::H200) -
@@ -632,7 +632,7 @@ void DialogPatternProperties::SaveTemplateData()
 {
     if (templateDataChanged)
     {
-        doc->SetPatternLabelTemplate(templateLines);
+        doc->setPatternLabelTemplate(templateLines);
         templateDataChanged = false;
         emit doc->patternChanged(false);
         emit doc->UpdatePatternLabel();
@@ -913,9 +913,9 @@ void DialogPatternProperties::EditLabel()
         }
     }
 
-    DialogEditLabel editor(doc);
+    EditLabelTemplateDialog editor(doc);
 
-    templateDataChanged ? editor.SetTemplate(templateLines) : editor.SetTemplate(doc->GetPatternLabelTemplate());
+    templateDataChanged ? editor.SetTemplate(templateLines) : editor.SetTemplate(doc->getPatternLabelTemplate());
 
     if (QDialog::Accepted == editor.exec())
     {
