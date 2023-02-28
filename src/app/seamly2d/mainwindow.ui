@@ -898,7 +898,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>5</number>
+            <number>0</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -1124,7 +1124,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point - Intersect Line and Axis (I, X)</string>
+                <string>Point - Intersect Line and Axis (L, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -3087,7 +3087,7 @@
      <normaloff>:/toolicon/32x32/shoulder.png</normaloff>:/toolicon/32x32/shoulder.png</iconset>
    </property>
    <property name="text">
-    <string>Point Length to Line</string>
+    <string>Length to Line</string>
    </property>
    <property name="toolTip">
     <string>Point - Length to Line (P, S)</string>
@@ -3732,10 +3732,10 @@
     <string>Last tool</string>
    </property>
    <property name="toolTip">
-    <string>Activate last used tool (L)</string>
+    <string>Activate last used tool (Ctrl+Shift+L)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">L</string>
+    <string notr="true">Ctrl+Shift+L</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -4665,8 +4665,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
