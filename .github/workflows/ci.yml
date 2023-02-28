@@ -76,7 +76,7 @@ jobs:
           cp /usr/bin/pdftops AppDir/usr/bin
           # install xkb keyboard mapping for custom keyboard layouts, copy from /usr/share/X11/xkb directory
           sudo apt update && sudo apt install -y libxkbcommon0 libxkbcommon-x11-0
-          mkdir -p "Appdir/usr/share/X11/xkb" 
+          mkdir -p -- "Appdir/usr/share/X11/xkb" 
           cp -r /usr/share/X11/xkb/ AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
