@@ -189,6 +189,8 @@ QMap<QString, QString> CurveLineTypeList();
 
 QMap<QString, QString> lineWeightList();
 
+extern const QString LineWeightByGroup;
+extern const QString LineTypeByGroup;
 extern const QString ColorByGroup;
 extern const QString ColorNone;
 extern const QString ColorBlack;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogGroup</class>
- <widget class="QDialog" name="DialogGroup">
+ <class>EditGroupDialog</class>
+ <widget class="QDialog" name="EditGroupDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -58,7 +58,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogGroup</receiver>
+   <receiver>EditGroupDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -74,7 +74,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogGroup</receiver>
+   <receiver>EditGroupDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

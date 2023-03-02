@@ -34,12 +34,12 @@ HEADERS += \
     $$PWD/tools/dialogpointofintersectioncurves.h \
     $$PWD/tools/dialogcubicbezier.h \
     $$PWD/tools/dialogcubicbezierpath.h \
-    $$PWD/tools/dialoggroup.h \
     $$PWD/tools/dialogrotation.h \
     $$PWD/tools/dialogmirrorbyline.h \
     $$PWD/tools/dialogmirrorbyaxis.h \
     $$PWD/tools/dialogmove.h \
     $$PWD/tools/dialogellipticalarc.h \
+    $$PWD/tools/editgroup_dialog.h \
     $$PWD/tools/insert_nodes_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
@@ -80,12 +80,12 @@ SOURCES += \
     $$PWD/tools/dialogpointofintersectioncurves.cpp \
     $$PWD/tools/dialogcubicbezier.cpp \
     $$PWD/tools/dialogcubicbezierpath.cpp \
-    $$PWD/tools/dialoggroup.cpp \
     $$PWD/tools/dialogrotation.cpp \
     $$PWD/tools/dialogmirrorbyline.cpp \
     $$PWD/tools/dialogmirrorbyaxis.cpp \
     $$PWD/tools/dialogmove.cpp \
     $$PWD/tools/dialogellipticalarc.cpp \
+    $$PWD/tools/editgroup_dialog.cpp \
     $$PWD/tools/insert_nodes_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
@@ -125,12 +125,12 @@ FORMS += \
     $$PWD/tools/dialogpointofintersectioncurves.ui \
     $$PWD/tools/dialogcubicbezier.ui \
     $$PWD/tools/dialogcubicbezierpath.ui \
-    $$PWD/tools/dialoggroup.ui \
     $$PWD/tools/dialogrotation.ui \
     $$PWD/tools/dialogmirrorbyline.ui \
     $$PWD/tools/dialogmirrorbyaxis.ui \
     $$PWD/tools/dialogmove.ui \
     $$PWD/tools/dialogellipticalarc.ui \
+    $$PWD/tools/editgroup_dialog.ui \
     $$PWD/tools/insert_nodes_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \

@@ -5,6 +5,7 @@ HEADERS += \
     $$PWD/add_draftblock.h \
     $$PWD/addtocalc.h \
     $$PWD/delete_draftblock.h \
+    $$PWD/delete_groupitem.h \
     $$PWD/label/moveoperationlabel.h \
     $$PWD/label/showoperationpointname.h \
     $$PWD/movespoint.h \
@@ -35,6 +36,7 @@ SOURCES += \
     $$PWD/add_draftblock.cpp \
     $$PWD/addtocalc.cpp \
     $$PWD/delete_draftblock.cpp \
+    $$PWD/delete_groupitem.cpp \
     $$PWD/label/moveoperationlabel.cpp \
     $$PWD/label/showoperationpointname.cpp \
     $$PWD/movespoint.cpp \

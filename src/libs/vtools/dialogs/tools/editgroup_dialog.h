@@ -1,10 +1,10 @@
 /***************************************************************************
- **  @file   dialogs.h
+ **  @file   editgroup_dialog.h
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   Mar 1, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -24,15 +24,15 @@
 
 /************************************************************************
  **
- **  @file   dialogs.h
+ **  @file   dialog_editgroup.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   16 6, 2015
+ **  @date   4 4, 2016
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2016 Valentina project
  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
@@ -50,51 +50,56 @@
  **
  *************************************************************************/
 
-#ifndef TOOLDIALOGS_H
-#define TOOLDIALOGS_H
+#ifndef EDIT_GROUP_DIALOG_H
+#define EDIT_GROUP_DIALOG_H
 
-#include "tools/dialogalongline.h"
-#include "tools/dialogarc.h"
-#include "tools/dialogarcwithlength.h"
-#include "tools/dialogbisector.h"
-#include "tools/piece/pattern_piece_dialog.h"
-#include "tools/dialogendline.h"
-#include "tools/dialogline.h"
-#include "tools/dialoglineintersect.h"
-#include "tools/dialognormal.h"
-#include "tools/dialogpointofcontact.h"
-#include "tools/dialogshoulderpoint.h"
-#include "tools/dialogsinglepoint.h"
-#include "tools/dialogspline.h"
-#include "tools/dialogcubicbezier.h"
-#include "tools/dialogsplinepath.h"
-#include "tools/dialogcubicbezierpath.h"
-#include "tools/dialogheight.h"
-#include "tools/dialogcutarc.h"
-#include "tools/dialogcutspline.h"
-#include "tools/dialogcutsplinepath.h"
-#include "tools/union_dialog.h"
-#include "tools/dialogtriangle.h"
-#include "tools/point_intersectxy_dialog.h"
-#include "tools/dialoglineintersectaxis.h"
-#include "tools/dialogcurveintersectaxis.h"
-#include "tools/dialogpointofintersectionarcs.h"
-#include "tools/intersect_circles_dialog.h"
-#include "tools/dialogpointofintersectioncurves.h"
-#include "tools/intersect_circletangent_dialog.h"
-#include "tools/dialogpointfromarcandtangent.h"
-#include "tools/dialogtruedarts.h"
-#include "tools/editgroup_dialog.h"
-#include "tools/dialogrotation.h"
-#include "tools/dialogmirrorbyline.h"
-#include "tools/dialogmirrorbyaxis.h"
-#include "tools/dialogmove.h"
-#include "tools/dialogellipticalarc.h"
-#include "tools/piece/dialoginternalpath.h"
-#include "tools/anchorpoint_dialog.h"
-#include "tools/insert_nodes_dialog.h"
+#include <qcompilerdetection.h>
+#include <QMap>
+#include <QMetaObject>
+#include <QObject>
+#include <QString>
+#include <QtGlobal>
 
-#include "support/dialogeditwrongformula.h"
-#include "support/dialogundo.h"
+#include "dialogtool.h"
 
-#endif // TOOLDIALOGS_H
+namespace Ui
+{
+    class EditGroupDialog;
+}
+
+class EditGroupDialog : public DialogTool
+{
+    Q_OBJECT
+
+public:
+    explicit                  EditGroupDialog(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+    virtual                  ~EditGroupDialog();
+
+    void                      setName(const QString &name);
+    QString                   getName() const;
+
+    QMap<quint32, quint32>    getGroupData() const;
+    QString                   getColor() const;
+    void                      setColor(const QString &color);
+    QString                   getLineType() const;
+    void                      setLineType(const QString &type);
+    QString                   getLineWeight() const;
+    void                      setLineWeight(const QString &weight);
+
+    virtual void              ShowDialog(bool click) Q_DECL_OVERRIDE;
+
+public slots:
+    virtual void              SelectedObject(bool selected, quint32 object, quint32 tool) Q_DECL_OVERRIDE;
+
+private slots:
+    void                      nameChanged();
+
+private:
+                              Q_DISABLE_COPY(EditGroupDialog)
+    Ui::EditGroupDialog      *ui;
+    VAbstractPattern         *m_doc;
+    QMap<quint32, quint32>    m_groupData;
+    QString                   m_oldGroupName;
+};
+
+#endif // EDIT_GROUP_DIALOG_H

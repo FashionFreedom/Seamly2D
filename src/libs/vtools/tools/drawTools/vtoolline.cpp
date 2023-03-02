@@ -225,10 +225,11 @@ void VToolLine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 {
     //const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
 
-    const qreal weight = ToPixel(m_lineWeight.toDouble(), Unit::Mm);
+    const qreal weight = ToPixel(doc->useGroupLineWeight(m_id, m_lineWeight).toDouble(), Unit::Mm);
     const qreal width  = scaleWidth(m_isHovered ? weight + 4 : weight, sceneScale(scene()));
 
-    setPen(QPen(correctColor(this, lineColor), width, lineTypeToPenStyle(m_lineType)));
+    setPen(QPen(correctColor(this, doc->useGroupColor(m_id, lineColor)),
+           width, lineTypeToPenStyle(doc->useGroupLineType(m_id, m_lineType))));
 
     QGraphicsLineItem::paint(painter, option, widget);
 }

@@ -195,7 +195,7 @@ void DialogHistory::updateHistory()
 void DialogHistory::FillTable()
 {
     ui->tableWidget->clear();
-    QVector<VToolRecord> history = doc->getLocalHistory();
+    QVector<VToolRecord> history = doc->getBlockHistory();
     qint32 currentRow = -1;
     qint32 count = 0;
     ui->tableWidget->setRowCount(history.size());//Set Row count to number of Tool history records

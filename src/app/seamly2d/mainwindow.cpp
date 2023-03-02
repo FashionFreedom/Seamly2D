@@ -350,6 +350,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
 
     ui->newDraft_Action->setEnabled(true);
     helpLabel->setText("");
+    groupsWidget->updateGroups();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1379,29 +1380,36 @@ void MainWindow::handleGroupTool(bool checked)
                                "Press <b>ENTER</b> to finish group creation ")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButton<DialogGroup>
+    SetToolButton<EditGroupDialog>
     (
         checked,
         Tool::Group,
         ":/cursor/group_cursor.png",
         tooltip,
-        &MainWindow::ClosedDialogGroup
+        &MainWindow::ClosedEditGroupDialog
     );
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ClosedDialogGroup(int result)
+void MainWindow::ClosedEditGroupDialog(int result)
 {
     SCASSERT(dialogTool != nullptr)
     if (result == QDialog::Accepted)
     {
-        QSharedPointer<DialogGroup> dialog = dialogTool.objectCast<DialogGroup>();
+        QSharedPointer<EditGroupDialog> dialog = dialogTool.objectCast<EditGroupDialog>();
         SCASSERT(dialog != nullptr)
-        const QDomElement group = doc->CreateGroup(VContainer::getNextId(), dialog->GetName(), dialog->GetGroup());
-        if (not group.isNull())
+        //const QDomElement group = doc->createGroup(VContainer::getNextId(), dialog->getName(), dialog->getColor(),
+        //                                           dialog->getLineType(), dialog->getLineWeight(),
+        //                                           dialog->getGroupData());
+
+        const QString gname = dialog->getName();
+        qCDebug(vMainWindow, "Getting Group Name %s.", qUtf8Printable(gname));
+        const QDomElement group = doc->addGroupItems(gname, dialog->getGroupData());
+
+        if (!group.isNull())
         {
             AddGroup *addGroup = new AddGroup(group, doc);
-            connect(addGroup, &AddGroup::UpdateGroups, groupsWidget, &VWidgetGroups::UpdateGroups);
+            connect(addGroup, &AddGroup::updateGroups, groupsWidget, &GroupsWidget::updateGroups);
             qApp->getUndoStack()->push(addGroup);
         }
     }
@@ -1653,6 +1661,54 @@ void MainWindow::handleNewLayout(bool checked)
 void MainWindow::ShowToolTip(const QString &toolTip)
 {
     helpLabel->setText(toolTip);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief triggers the update of the groups
+ */
+void MainWindow::updateGroups()
+{
+    groupsWidget->updateGroups();
+}
+
+void MainWindow::showAllGroups()
+{
+    groupsWidget->showAllGroups();
+}
+
+void MainWindow::hideAllGroups()
+{
+    groupsWidget->hideAllGroups();
+}
+
+void MainWindow::lockAllGroups()
+{
+    groupsWidget->lockAllGroups();
+}
+
+void MainWindow::unlockAllGroups()
+{
+    groupsWidget->unlockAllGroups();
+}
+
+void MainWindow::addGroupToList()
+{
+    groupsWidget->addGroupToList();
+}
+void MainWindow::deleteGroupFromList()
+{
+    groupsWidget->deleteGroupFromList();
+}
+
+void MainWindow::editGroup()
+{
+    groupsWidget->editGroup();
+}
+
+void MainWindow::addSelectedItemsToGroup()
+{
+    qCDebug(vMainWindow, "Add Selected items to Group.");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3422,6 +3478,8 @@ void MainWindow::showDraftMode(bool checked)
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
         ui->groups_DockWidget->setVisible(isGroupsDockVisible);
+        ui->groups_DockWidget->setToolTip(tr("Show which groups in the list are visible"));
+
     }
     else
     {
@@ -3918,6 +3976,9 @@ void MainWindow::Clear()
     ui->zoomPan_Action->setEnabled(false);
     ui->zoomToPoint_Action->setEnabled(false);
 
+    //disable group actions
+    ui->groups_DockWidget->setEnabled(false);
+
     //disable history menu actions
     ui->history_Action->setEnabled(false);
     ui->table_Action->setEnabled(false);
@@ -4209,6 +4270,9 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
+    //enable group actions
+    groupsWidget->setEnabled(enable && draftStage);
+    groupsWidget->setAddGroupEnabled(enable && draftStage);
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
@@ -5190,8 +5254,10 @@ void MainWindow::InitDocksContain()
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
-    groupsWidget = new VWidgetGroups(doc, this);
+    groupsWidget = new GroupsWidget(pattern, doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
+    connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
+
 
     patternPiecesWidget = new PiecesWidget(pattern, doc, this);
     connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
@@ -6672,7 +6738,8 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
             }
         }
         toolProperties->itemClicked(nullptr);//hide options for tool in previous pattern piece
-        groupsWidget->UpdateGroups();
+        groupsWidget->updateGroups();
+        SetEnableWidgets(true);
     }
 }
 

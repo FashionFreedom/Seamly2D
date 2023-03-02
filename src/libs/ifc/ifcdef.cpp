@@ -365,6 +365,8 @@ QMap<QString, QString> lineWeightList()
     }
     return map;
 }
+const QString LineWeightByGroup     = QStringLiteral("byGroup");
+const QString LineTypeByGroup       = QStringLiteral("byGroup");
 const QString ColorByGroup          = QStringLiteral("byGroup");
 const QString ColorNone             = QStringLiteral("none");
 const QString ColorBlack            = QStringLiteral("black");

@@ -47,6 +47,7 @@ public:
 
 public slots:
     virtual void  ShowToolTip(const QString &toolTip)=0;
+    virtual void  updateGroups()=0;
     virtual void  zoomToSelected()=0;
 
 protected slots:

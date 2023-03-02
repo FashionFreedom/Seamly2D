@@ -211,6 +211,51 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         actionRemove->setEnabled(false);
     }
 
+    // Add Group Item menu item
+    QMap<quint32,QString> groupsContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, true);
+    QMap<quint32,QString> groupsNotContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, false);
+    QActionGroup* actionAddGroupMenu= new QActionGroup(this);
+
+    if(groupsContainingItem.empty())
+    {
+        if(not groupsNotContainingItem.empty())
+        {
+            QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/list-add_32.PNG"), tr("Insert Group Item"));
+            QStringList list = QStringList(groupsNotContainingItem.values());
+            list.sort(Qt::CaseInsensitive);
+
+            for(int i=0; i<list.count(); ++i)
+            {
+                QAction *actionAddGroupItem = menuAddGroupItem->addAction(list[i]);
+                actionAddGroupMenu->addAction(actionAddGroupItem);
+                const quint32 groupId = groupsNotContainingItem.key(list[i]);
+                actionAddGroupItem->setData(groupId);
+                groupsNotContainingItem.remove(groupId);   // delete any duplicate groups
+            }
+        }
+    }
+
+    // Delete Group Item menu item
+    groupsContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, true);
+    QActionGroup* actionDeleteGroupMenu = new QActionGroup(this);
+
+        if(not groupsContainingItem.empty())
+        {
+            QMenu *menuDeleteGroupItem = menu.addMenu(QIcon("://icon/32x32/list-remove_32.png"), tr("Delete Group Item"));
+
+            QStringList list = QStringList(groupsContainingItem.values());
+            list.sort(Qt::CaseInsensitive);
+
+            for(int i=0; i<list.count(); ++i)
+            {
+                QAction *actionDeleteGroupItem = menuDeleteGroupItem->addAction(list[i]);
+                actionDeleteGroupMenu->addAction(actionDeleteGroupItem);
+                const quint32 groupId = groupsContainingItem.key(list[i]);
+                actionDeleteGroupItem->setData(groupId);
+                groupsContainingItem.remove(groupId);
+            }
+        }
+
     QAction *selectedAction = menu.exec(event->screenPos());
     if (selectedAction == actionOption)
     {
