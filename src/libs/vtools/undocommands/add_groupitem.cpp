@@ -1,10 +1,10 @@
 /***************************************************************************
- **  @file   delete_groupitem.cpp
+ **  @file   add_groupitem.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   Mar 2, 2023
  **
  **  @copyright
- **  Copyright (C) 2023 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -22,7 +22,7 @@
  **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-#include "delete_groupitem.h"
+#include "add_groupitem.h"
 
 #include <QDomNode>
 #include <QDomNodeList>
@@ -36,65 +36,25 @@
 #include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-
-DeleteGroupItem::DeleteGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent)
+AddGroupItem::AddGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent)
     : VUndoCommand(xml, doc, parent)
-    , m_activeDrawName(doc->getActiveDraftBlockName())
+    , nameActivDraw(doc->getActiveDraftBlockName())
 {
-    setText(tr("Delete group item"));
+    setText(tr("Add item to group"));
     nodeId = groupId;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DeleteGroupItem::~DeleteGroupItem()
+AddGroupItem::~AddGroupItem()
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DeleteGroupItem::undo()
+void AddGroupItem::undo()
 {
-    qCDebug(vUndo, "Undo delete group item");
-    doc->changeActiveDraftBlock(m_activeDrawName);//Without this user will not see this change
+    qCDebug(vUndo, "Undo add group item");
 
-    QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
-    if (group.isElement())
-    {
-        if (group.appendChild(xml).isNull())
-        {
-            qCDebug(vUndo, "Can't add the item.");
-            return;
-        }
-
-        doc->SetModified(true);
-        emit qApp->getCurrentDocument()->patternChanged(false);
-
-        QDomElement groups = doc->createGroups();
-        if (not groups.isNull())
-        {
-            doc->parseGroups(groups);
-        } else
-        {
-            qCDebug(vUndo, "Can't get tag Groups.");
-            return;
-        }
-
-        emit updateGroups();
-    }
-    else
-    {
-        qCDebug(vUndo, "Can't get group by id = %u.", nodeId);
-        return;
-    }
-
-    VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    emit doc->setCurrentDraftBlock(m_activeDrawName); //Return current draft Block after undo
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DeleteGroupItem::redo()
-{
-    qCDebug(vUndo, "Redo add group item");
-    doc->changeActiveDraftBlock(m_activeDrawName);//Without this user will not see this change
+    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
 
     QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
     if (group.isElement())
@@ -108,8 +68,8 @@ void DeleteGroupItem::redo()
         doc->SetModified(true);
         emit qApp->getCurrentDocument()->patternChanged(false);
 
-        // set the item visible. Because if the undo is done when unvisibile and it's not in any group after the
-        // undo, it stays unvisible until the entire drawing is completly rerendered.
+        // set the item visible. Because if the undo is done when invisibile and it's not in any group after the
+        // undo, it stays invisible until the entire drawing is completly rerendered.
         quint32 objectId = doc->GetParametrUInt(xml,QString("object"),NULL_ID_STR);
         quint32 toolId = doc->GetParametrUInt(xml,QString("tool"),NULL_ID_STR);
         VDataTool* tool = doc->getTool(toolId);
@@ -134,5 +94,45 @@ void DeleteGroupItem::redo()
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    emit doc->setCurrentDraftBlock(m_activeDrawName); //Return current draft Block after undo
+    emit doc->setCurrentDraftBlock(nameActivDraw);//Return current draft Block after undo
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void AddGroupItem::redo()
+{
+    qCDebug(vUndo, "Redo add group item");
+    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
+
+    QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
+    if (group.isElement())
+    {
+        if (group.appendChild(xml).isNull())
+        {
+            qCDebug(vUndo, "Can't add item.");
+            return;
+        }
+
+        doc->SetModified(true);
+        emit qApp->getCurrentDocument()->patternChanged(false);
+
+        QDomElement groups = doc->createGroups();
+        if (not groups.isNull())
+        {
+            doc->parseGroups(groups);
+        } else
+        {
+            qCDebug(vUndo, "Can't get tag Groups.");
+            return;
+        }
+
+        emit updateGroups();
+    }
+    else
+    {
+        qCDebug(vUndo, "Can't get group by id = %u.", nodeId);
+        return;
+    }
+
+    VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
+    emit doc->setCurrentDraftBlock(nameActivDraw);//Return current draft Block after undo
 }

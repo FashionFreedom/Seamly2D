@@ -36,10 +36,15 @@
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../vdatatool.h"
 #include "../vgeometry/vpointf.h"
+#include "../vmisc/vabstractapplication.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vwidgets/vabstractmainwindow.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vwidgets/vmaingraphicsview.h"
+#include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/add_groupitem.h"
+#include "../vtools/undocommands/delete_groupitem.h"
 
 #include <qcompilerdetection.h>
 #include <QAction>
@@ -220,7 +225,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     {
         if(not groupsNotContainingItem.empty())
         {
-            QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/list-add_32.PNG"), tr("Insert Group Item"));
+            QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.PNG"), tr("Insert Group Item"));
             QStringList list = QStringList(groupsNotContainingItem.values());
             list.sort(Qt::CaseInsensitive);
 
@@ -241,7 +246,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
         if(not groupsContainingItem.empty())
         {
-            QMenu *menuDeleteGroupItem = menu.addMenu(QIcon("://icon/32x32/list-remove_32.png"), tr("Delete Group Item"));
+            QMenu *menuDeleteGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Delete Group Item"));
 
             QStringList list = QStringList(groupsContainingItem.values());
             list.sort(Qt::CaseInsensitive);
@@ -273,13 +278,47 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     }
     else if (selectedAction == actionRemove)
     {
-        qCDebug(vTool, "Deleting tool.");
+        qCDebug(vTool, "Deleting Object.");
         deleteTool(); // do not catch exception here
         return; //Leave this method immediately after call!!!
     }
     else if (selectedAction == actionShowPointName)
     {
         updatePointNameVisibility(itemId, selectedAction->isChecked());
+    }
+    else if (selectedAction->actionGroup() == actionAddGroupMenu)
+    {
+        quint32 groupId = selectedAction->data().toUInt();
+        QDomElement item = doc->addGroupItem(this->getId(), itemId, groupId);
+
+        VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
+        SCASSERT(scene != nullptr)
+        scene->clearSelection();
+
+        VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
+        SCASSERT(window != nullptr)
+        {
+            AddGroupItem *command = new AddGroupItem(item, doc, groupId);
+            connect(command, &AddGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
+            qApp->getUndoStack()->push(command);
+        }
+    }
+    else if (selectedAction->actionGroup() == actionDeleteGroupMenu)
+    {
+        quint32 groupId = selectedAction->data().toUInt();
+        QDomElement item = doc->deleteGroupItem(this->getId(), itemId, groupId);
+
+        VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
+        SCASSERT(scene != nullptr)
+        scene->clearSelection();
+
+        VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
+        SCASSERT(window != nullptr)
+        {
+            DeleteGroupItem *command = new DeleteGroupItem(item, doc, groupId);
+            connect(command, &DeleteGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
+            qApp->getUndoStack()->push(command);
+        }
     }
 }
 

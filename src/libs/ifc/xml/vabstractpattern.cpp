@@ -2147,11 +2147,12 @@ QDomElement VAbstractPattern::createGroups()
 QDomElement VAbstractPattern::createGroup(quint32 groupId, const QString &name, const QString &color, const QString &type,
                                           const QString &weight, const QMap<quint32, quint32> &groupData)
 {
-    if (groupId == NULL_ID || groupData.isEmpty())
+    if (groupId == NULL_ID)
     {
         return QDomElement();
     }
 
+    //Create new empty group
     QDomElement group = createElement(TagGroup);
     SetAttribute(group, AttrId, groupId);
     SetAttribute(group, AttrName, name);
@@ -2198,6 +2199,7 @@ QDomElement VAbstractPattern::addGroupItems(const QString &name, const QMap<quin
     }
 
     QDomElement group = getGroupByName(name);
+
     //qDebug("addGroupItems:");
     //qDebug("Name = %s",qUtf8Printable(name));
     //qDebug("Group = %s",group.text());
@@ -2571,7 +2573,7 @@ bool VAbstractPattern::hasGroupItem(const QDomElement &groupDomElement, quint32 
 }
 
 /**
- * @brief Adds an item to the given group with the given toolId and objectId
+ * @brief Deletes an item from the group containing the toolId
  * @param toolId
  */
 void VAbstractPattern::deleteToolFromGroup(quint32 toolId)
@@ -2588,7 +2590,6 @@ void VAbstractPattern::deleteToolFromGroup(quint32 toolId)
     }
 
     QDomElement group = deleteGroupItem(toolId, 0, groupId);
-    //qCDebug(vbstractPattern, "Tool Id = %d deleted from Group %s - ID %d\n", toolId, qUtf8Printable(listGroupName), groupId);
 }
 
 /**

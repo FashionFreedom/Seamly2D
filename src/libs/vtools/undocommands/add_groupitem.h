@@ -1,10 +1,10 @@
 /***************************************************************************
- **  @file   delete_groupitem.h
+ **  @file   add_groupitem.h
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   Mar 2, 2023
  **
  **  @copyright
- **  Copyright (C) 2023 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -22,8 +22,8 @@
  **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-#ifndef DELETE_GROUPITEM_H
-#define DELETE_GROUPITEM_H
+#ifndef ADD_GROUPITEM_H
+#define ADD_GROUPITEM_H
 
 #include <qcompilerdetection.h>
 #include <QDomElement>
@@ -34,12 +34,13 @@
 
 #include "vundocommand.h"
 
-class DeleteGroupItem : public VUndoCommand
+class AddGroupItem : public VUndoCommand
 {
     Q_OBJECT
 public:
-                  DeleteGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent = nullptr);
-    virtual      ~DeleteGroupItem();
+                  AddGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 nodeId,
+                                      QUndoCommand *parent = nullptr);
+    virtual      ~AddGroupItem();
     virtual void  undo() Q_DECL_OVERRIDE;
     virtual void  redo() Q_DECL_OVERRIDE;
 
@@ -47,8 +48,8 @@ signals:
     void          updateGroups();
 
 private:
-                  Q_DISABLE_COPY(DeleteGroupItem)
-    const QString m_activeDrawName;
+                  Q_DISABLE_COPY(AddGroupItem)
+    const QString nameActivDraw;
 };
 
-#endif // DELETE_GROUPITEM_H
+#endif // ADD_GROUPITEM_H

@@ -1009,7 +1009,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolSinglePoint(VPE::VProperty *prop
         case 0: // AttrName
             SetPointName<VToolBasePoint>(value.toString());
             break;
-        case 1: // QLatin1String("position")
+        case 1: // QLatin1String("Coordinates")
             i->SetBasePointPos(value.toPointF());
             break;
         default:
@@ -2244,9 +2244,9 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSinglePoint(QGraphicsItem *item
     AddPropertyLabel(tr("Selection"), AttrName);
     AddPropertyObjectName(i, tr("Point name:"));
 
-    VPE::VPointFProperty* itemPosition = new VPE::VPointFProperty(tr("Coordinates"));
-    itemPosition->setValue(i->GetBasePointPos());
-    AddProperty(itemPosition, QLatin1String("Coordinates"));
+    VPE::VPointFProperty* itemCoordinates = new VPE::VPointFProperty(tr("Coordinates"));
+    itemCoordinates->setValue(i->GetBasePointPos());
+    AddProperty(itemCoordinates, QLatin1String("Coordinates"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2885,7 +2885,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolSinglePoint()
 {
     VToolBasePoint *i = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
     idToProperty[AttrName]->setValue(i->name());
-    idToProperty[QLatin1String("position")]->setValue(i->GetBasePointPos());
+    idToProperty[QLatin1String("Coordinates")]->setValue(i->GetBasePointPos());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3944,7 +3944,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolEllipticalArc()
 QStringList VToolOptionsPropertyBrowser::PropertiesList() const
 {
     static QStringList attr = QStringList() << AttrName                           /* 0 */
-                                            << QLatin1String("position")          /* 1 */
+                                            << QLatin1String("Coordinates")          /* 1 */
                                             << AttrBasePoint                      /* 2 */
                                             << AttrLineType                       /* 3 */
                                             << AttrLength                         /* 4 */

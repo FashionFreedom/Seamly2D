@@ -3,6 +3,7 @@
 
 HEADERS += \
     $$PWD/add_draftblock.h \
+    $$PWD/add_groupitem.h \
     $$PWD/addtocalc.h \
     $$PWD/delete_draftblock.h \
     $$PWD/delete_groupitem.h \
@@ -34,6 +35,7 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/add_draftblock.cpp \
+    $$PWD/add_groupitem.cpp \
     $$PWD/addtocalc.cpp \
     $$PWD/delete_draftblock.cpp \
     $$PWD/delete_groupitem.cpp \

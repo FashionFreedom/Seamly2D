@@ -87,6 +87,7 @@ public slots:
     quint32           getGroupId();
     QString           getCurrentGroupName();
     void              setAddGroupEnabled(bool value);
+    void              clear();
 
 private slots:
     void              groupVisibilityChanged(int row, int column);

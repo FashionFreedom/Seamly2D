@@ -1398,13 +1398,12 @@ void MainWindow::ClosedEditGroupDialog(int result)
     {
         QSharedPointer<EditGroupDialog> dialog = dialogTool.objectCast<EditGroupDialog>();
         SCASSERT(dialog != nullptr)
-        //const QDomElement group = doc->createGroup(VContainer::getNextId(), dialog->getName(), dialog->getColor(),
-        //                                           dialog->getLineType(), dialog->getLineWeight(),
-        //                                           dialog->getGroupData());
+        QDomElement group = doc->createGroup(VContainer::getNextId(), dialog->getName(), dialog->getColor(),
+                                                   dialog->getLineType(), dialog->getLineWeight(),
+                                                   dialog->getGroupData());
 
-        const QString gname = dialog->getName();
-        qCDebug(vMainWindow, "Getting Group Name %s.", qUtf8Printable(gname));
-        const QDomElement group = doc->addGroupItems(gname, dialog->getGroupData());
+        //const QString gname = dialog->getName();
+        //group = doc->addGroupItems(gname, dialog->getGroupData());
 
         if (!group.isNull())
         {
@@ -1792,6 +1791,7 @@ void MainWindow::CleanLayout()
     shadows.clear();
     papers.clear();
     ui->listWidget->clear();
+    groupsWidget->clear();
     SetLayoutModeActions();
 }
 
@@ -4271,7 +4271,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
     //enable group actions
-    groupsWidget->setEnabled(enable && draftStage);
+    ui->groups_DockWidget->setEnabled(enable && designStage);
     groupsWidget->setAddGroupEnabled(enable && draftStage);
 
     //enable tool menu actions
@@ -6739,7 +6739,6 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
         }
         toolProperties->itemClicked(nullptr);//hide options for tool in previous pattern piece
         groupsWidget->updateGroups();
-        SetEnableWidgets(true);
     }
 }
 

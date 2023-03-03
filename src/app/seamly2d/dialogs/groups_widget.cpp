@@ -633,6 +633,12 @@ void GroupsWidget::setAddGroupEnabled(bool value)
     ui->addGroup_ToolButton->setEnabled(value);
 }
 
+void GroupsWidget::clear()
+{
+    ui->groups_TableWidget->clearContents();
+    ui->groupItems_ListWidget->clear();
+}
+
 quint32 GroupsWidget::getGroupId()
 {
     QTableWidgetItem *item = ui->groups_TableWidget->currentItem();
@@ -1092,29 +1098,29 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
             VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
             SCASSERT(window != nullptr)
             {
-                DeleteGroupItemUndoCmd *command = new DeleteGroupItemUndoCmd(item, m_doc, groupId);
-                connect(command, &DeleteGroupItemUndoCmd::updateGroups, window, &VAbstractMainWindow::updateGroups);
+                DeleteGroupItem *command = new DeleteGroupItem(item, m_doc, groupId);
+                connect(command, &DeleteGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
                 qApp->getUndoStack()->push(command);
             }
         }
     }
     else if (selectedAction->actionGroup() == actionMoveGroupMenu)
     {
-      const quint32 newGroupId = selectedAction->data().toUInt();
-      const bool locked = m_doc->getGroupLock(groupId);
-      const bool newLocked = m_doc->getGroupLock(newGroupId);
-      if ((locked == false) && (newLocked == false))      //only move if both groups are unlocked
+      const quint32 destinationGroupId = selectedAction->data().toUInt();
+      const bool sourceLock = m_doc->getGroupLock(groupId);
+      const bool destinationLock = m_doc->getGroupLock(destinationGroupId);
+      if ((sourceLock == false) && (destinationLock == false))      //only move if both groups are unlocked
       {
 
           qCDebug(WidgetGroups, "Move Tool %s from Group %s to Group %s.",
                   qUtf8Printable(QString().setNum(toolId)),
                   qUtf8Printable(QString().setNum(groupId)),
-                  qUtf8Printable(QString().setNum(newGroupId)));
+                  qUtf8Printable(QString().setNum(destinationGroupId)));
 
           delete ui->groupItems_ListWidget->item(row);
 
           QDomElement item = m_doc->deleteGroupItem(toolId, 0, groupId);
-          QDomElement newitem = m_doc->addGroupItem(toolId, 0, newGroupId);
+          QDomElement newitem = m_doc->addGroupItem(toolId, 0, destinationGroupId);
       }
     }
 }
