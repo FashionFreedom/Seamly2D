@@ -39,7 +39,7 @@ jobs:
 
   linux:
     name: 'Linux: Build AppImage'
-    runs-on: ubuntu-18.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
+    runs-on: ubuntu-20.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -71,13 +71,11 @@ jobs:
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
           make INSTALL_ROOT=`pwd`/AppDir install
-          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
-          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base
+          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia, libxkbcommon for Qt xcb
+          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base libxkbcommon-x11-0
           cp /usr/bin/pdftops AppDir/usr/bin
-          # install xkb keyboard mapping for custom keyboard layouts, copy from /usr/share/X11/xkb directory
-          sudo apt update && sudo apt install -y libxkbcommon0 libxkbcommon-x11-0
-          mkdir -p -- "Appdir/usr/share/X11/xkb" 
-          cp -r /usr/share/X11/xkb/ AppDir/usr/share/X11/xkb
+          mkdir -p AppDir/usr/share/X11/xkb
+          cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - uses: actions/upload-artifact@v3
@@ -89,7 +87,7 @@ jobs:
   linux-test:
     if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
@@ -108,7 +106,7 @@ jobs:
         # xvfb use to test built application within a framebuffer
         run: |
           sudo apt update
-          sudo apt install -y xvfb
+          sudo apt install -y xvfb libxkbcommon-x11-0
 
       - name: run Seamly2D tests
         run: |
