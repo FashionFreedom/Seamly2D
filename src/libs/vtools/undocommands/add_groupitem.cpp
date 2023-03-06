@@ -38,7 +38,7 @@
 //---------------------------------------------------------------------------------------------------------------------
 AddGroupItem::AddGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent)
     : VUndoCommand(xml, doc, parent)
-    , nameActivDraw(doc->getActiveDraftBlockName())
+    , m_activeDraftblockName(doc->getActiveDraftBlockName())
 {
     setText(tr("Add item to group"));
     nodeId = groupId;
@@ -54,7 +54,7 @@ void AddGroupItem::undo()
 {
     qCDebug(vUndo, "Undo add group item");
 
-    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(m_activeDraftblockName);//Without this user will not see this change
 
     QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
     if (group.isElement())
@@ -94,14 +94,14 @@ void AddGroupItem::undo()
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    emit doc->setCurrentDraftBlock(nameActivDraw);//Return current draft Block after undo
+    emit doc->setCurrentDraftBlock(m_activeDraftblockName);//Return current draft Block after undo
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void AddGroupItem::redo()
 {
     qCDebug(vUndo, "Redo add group item");
-    doc->changeActiveDraftBlock(nameActivDraw);//Without this user will not see this change
+    doc->changeActiveDraftBlock(m_activeDraftblockName);//Without this user will not see this change
 
     QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
     if (group.isElement())
@@ -134,5 +134,5 @@ void AddGroupItem::redo()
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    emit doc->setCurrentDraftBlock(nameActivDraw);//Return current draft Block after undo
+    emit doc->setCurrentDraftBlock(m_activeDraftblockName);//Return current draft Block after undo
 }

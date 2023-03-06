@@ -672,25 +672,25 @@
               <xs:element name="groups" minOccurs="0" maxOccurs="1">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element name="group" minOccurs="0" maxOccurs="unbounded">
-                      <xs:complexType>
-                        <xs:sequence>
-                          <xs:element name="item" maxOccurs="unbounded">
-                            <xs:complexType>
-                              <xs:attribute name="object" type="xs:unsignedInt"/>
-                              <xs:attribute name="tool" type="xs:unsignedInt"/>
-                            </xs:complexType>
-                          </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
-                        <xs:attribute name="name" type="xs:string"/>
-                        <xs:attribute name="visible" type="xs:boolean"/>
-                        <xs:attribute name="locked" type="xs:boolean"/>
-                        <xs:attribute name="groupColor" type="colors"/>
-                        <xs:attribute name="lineType" type="linePenStyle"/>
-                        <xs:attribute name="lineWeight" type="lineWeights"/>
-                      </xs:complexType>
-                    </xs:element>
+                      <xs:element name="group" minOccurs="0" maxOccurs="unbounded">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="item" minOccurs="0" maxOccurs="unbounded">
+                              <xs:complexType>
+                                <xs:attribute name="object" type="xs:unsignedInt"/>
+                                <xs:attribute name="tool" type="xs:unsignedInt"/>
+                              </xs:complexType>
+                            </xs:element>
+                          </xs:sequence>
+                          <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+                          <xs:attribute name="name" type="xs:string"/>
+                          <xs:attribute name="visible" type="xs:boolean"/>
+                          <xs:attribute name="locked" type="xs:boolean"/>
+                          <xs:attribute name="groupColor" type="colors"/>
+                          <xs:attribute name="lineType" type="linePenStyle"/>
+                          <xs:attribute name="lineWeight" type="lineWeights"/>
+                        </xs:complexType>
+                      </xs:element>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>

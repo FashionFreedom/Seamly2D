@@ -9,6 +9,7 @@ HEADERS += \
     $$PWD/delete_groupitem.h \
     $$PWD/label/moveoperationlabel.h \
     $$PWD/label/showoperationpointname.h \
+    $$PWD/move_groupitem.h \
     $$PWD/movespoint.h \
     $$PWD/movespline.h \
     $$PWD/movesplinepath.h \
@@ -41,6 +42,7 @@ SOURCES += \
     $$PWD/delete_groupitem.cpp \
     $$PWD/label/moveoperationlabel.cpp \
     $$PWD/label/showoperationpointname.cpp \
+    $$PWD/move_groupitem.cpp \
     $$PWD/movespoint.cpp \
     $$PWD/movespline.cpp \
     $$PWD/movesplinepath.cpp \

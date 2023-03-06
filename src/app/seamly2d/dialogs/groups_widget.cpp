@@ -58,7 +58,9 @@
 #include "../vtools/dialogs/tools/editgroup_dialog.h"
 #include "../vtools/undocommands/delgroup.h"
 #include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/add_groupitem.h"
 #include "../vtools/undocommands/delete_groupitem.h"
+#include "../vtools/undocommands/move_groupitem.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h"
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h"
@@ -602,9 +604,6 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
         item = new QTableWidgetItem(data.name);
         item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         item->setIcon(QIcon(pixmap));
-        //Qt::ItemFlags flags = item->flags();
-        //flags &= ~(Qt::ItemIsEditable); // reset/clear the flag
-        //item->setFlags(flags);
         ui->groups_TableWidget->setItem(currentRow, 3, item);
 
         ++i;
@@ -729,7 +728,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                     break;
 
                 case Tool::BasePoint:
-                    iconFileName = ":/toolicon/32x32/segment.png";
+                    iconFileName = ":/toolicon/32x32/point_basepoint_icon.png";
                     objName = tr("%1 - Base point").arg(getPointName(toolId));
                     break;
 
@@ -1070,20 +1069,20 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
             //groupsNotContainingItem.remove(groupId);   // delete any duplicate groups
         }
     }
-    // Add Remove Group Item menu
-    QAction *actionRemove = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Remove"));
+    // Add Delete Group Item menu
+    QAction *actionDelete = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
 
     QAction *selectedAction = menu.exec(ui->groupItems_ListWidget->viewport()->mapToGlobal(pos));
     if(selectedAction == nullptr)
     {
         return;
     }
-    else if (selectedAction == actionRemove)
+    else if (selectedAction == actionDelete)
     {
         const bool locked = m_doc->getGroupLock(groupId);
         if (locked == false)
         {
-            qCDebug(WidgetGroups, "Remove Tool %s from Group %s.",
+            qCDebug(WidgetGroups, "Delete Tool %s from Group %s.",
                     qUtf8Printable(QString().setNum(toolId)),
                     qUtf8Printable(QString().setNum(groupId)));
 
@@ -1117,10 +1116,22 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
                   qUtf8Printable(QString().setNum(groupId)),
                   qUtf8Printable(QString().setNum(destinationGroupId)));
 
-          delete ui->groupItems_ListWidget->item(row);
+         QDomElement sourceItem = m_doc->deleteGroupItem(toolId, 0, groupId);
+         QDomElement destItem = m_doc->addGroupItem(toolId, 0, destinationGroupId);
 
-          QDomElement item = m_doc->deleteGroupItem(toolId, 0, groupId);
-          QDomElement newitem = m_doc->addGroupItem(toolId, 0, destinationGroupId);
+         updateGroups();
+
+         VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
+         SCASSERT(scene != nullptr)
+         scene->clearSelection();
+
+         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
+         SCASSERT(window != nullptr)
+         {
+             MoveGroupItem *command = new MoveGroupItem(sourceItem, destItem, m_doc, groupId, destinationGroupId);
+             connect(command, &MoveGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
+             qApp->getUndoStack()->push(command);
+         }
       }
     }
 }

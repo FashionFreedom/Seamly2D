@@ -1,5 +1,5 @@
 /***************************************************************************
- **  @file   add_groupitem.h
+ **  @file   move_groupitem.h
  **  @author Douglas S Caskey
  **  @date   Mar 2, 2023
  **
@@ -22,8 +22,8 @@
  **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-#ifndef ADD_GROUPITEM_H
-#define ADD_GROUPITEM_H
+#ifndef MOVE_GROUPITEM_H
+#define MOVE_GROUPITEM_H
 
 #include <qcompilerdetection.h>
 #include <QDomElement>
@@ -34,22 +34,26 @@
 
 #include "vundocommand.h"
 
-class AddGroupItem : public VUndoCommand
+class MoveGroupItem : public VUndoCommand
 {
     Q_OBJECT
 public:
-                  AddGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 nodeId,
-                                      QUndoCommand *parent = nullptr);
-    virtual      ~AddGroupItem();
-    virtual void  undo() Q_DECL_OVERRIDE;
-    virtual void  redo() Q_DECL_OVERRIDE;
+                   MoveGroupItem(const QDomElement &source, const QDomElement &dest, VAbstractPattern *doc, quint32 sourceId,
+                                 quint32 destinationId, QUndoCommand *parent = nullptr);
+    virtual       ~MoveGroupItem();
+    virtual void   undo() Q_DECL_OVERRIDE;
+    virtual void   redo() Q_DECL_OVERRIDE;
 
 signals:
-    void          updateGroups();
+    void           updateGroups();
 
 private:
-                  Q_DISABLE_COPY(AddGroupItem)
-    const QString m_activeDraftblockName;
+                   Q_DISABLE_COPY(MoveGroupItem)
+    QDomElement    m_source;
+    QDomElement    m_dest;
+    const QString  m_activeDraftblockName;
+    quint32        m_sourceGroupId;
+    quint32        m_destinationGroupId;
 };
 
-#endif // ADD_GROUPITEM_H
+#endif // MOVE_GROUPITEM_H

@@ -2168,19 +2168,13 @@ QDomElement VAbstractPattern::createGroup(quint32 groupId, const QString &name, 
         auto i = groupData.constBegin();
         while (i != groupData.constEnd())
         {
-           QMap<quint32,QString> groupsNotContainingItem = getGroupsContainingItem(i.value(), i.key(), true);
-           if(groupsNotContainingItem.empty())
-           {
-               QDomElement item = createElement(TagGroupItem);
-               item.setAttribute(AttrObject, i.key());
-               item.setAttribute(AttrTool, i.value());
-               //qDebug("   Object = %u, tool = %u",i.key(),i.value());
-               group.appendChild(item);
-           }
-           ++i;
-       }
-       qDebug("\n");
-       return group;
+            QDomElement item = createElement(TagGroupItem);
+            item.setAttribute(AttrObject, i.key());
+            item.setAttribute(AttrTool, i.value());
+            group.appendChild(item);
+            ++i;
+        }
+        return group;
     }
     else
     {
@@ -2190,7 +2184,6 @@ QDomElement VAbstractPattern::createGroup(quint32 groupId, const QString &name, 
 
 QDomElement VAbstractPattern::addGroupItems(const QString &name, const QMap<quint32, quint32> &groupData)
 {
-
     quint32 groupId = getGroupIdByName(name);
     const bool locked = getGroupLock(groupId);
     if (locked)
@@ -2200,30 +2193,20 @@ QDomElement VAbstractPattern::addGroupItems(const QString &name, const QMap<quin
 
     QDomElement group = getGroupByName(name);
 
-    //qDebug("addGroupItems:");
-    //qDebug("Name = %s",qUtf8Printable(name));
-    //qDebug("Group = %s",group.text());
     if (! getParameterBool(group, AttrGroupLocked, trueStr))
     {
         if (!groupData.isEmpty())
         {
-            //QMap<quint32,QString> groupsNotContainingItem;
             auto i = groupData.constBegin();
             while (i != groupData.constEnd())
             {
-               QMap<quint32,QString> groupsNotContainingItem = getGroupsContainingItem(i.value(), i.key(), true);
-               if(groupsNotContainingItem.empty())
-               {
-                   QDomElement item = createElement(TagGroupItem);
-                   item.setAttribute(AttrObject, i.key());
-                   item.setAttribute(AttrTool, i.value());
-                   //qDebug("   Object = %u, tool = %u",i.key(),i.value());
-                   group.appendChild(item);
-              }
-              ++i;
-          }
-          qDebug("\n");
-       }
+                QDomElement item = createElement(TagGroupItem);
+                item.setAttribute(AttrObject, i.key());
+                item.setAttribute(AttrTool, i.value());
+                group.appendChild(item);
+            }
+            ++i;
+        }
     }
     return group;
 }
@@ -2612,7 +2595,6 @@ void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QS
     groupId = groupsContainingItem.key(listGroupName);
 
     QDomElement group = deleteGroupItem(toolId, objectId, groupId);
-    //qCDebug(vbstractPattern, "Tool Id = %d deleted from Group %s - ID %d\n", toolId, qUtf8Printable(listGroupName), groupId);
 
     //Add to new Group.
     QMap<quint32,QString> groupsNotContainingItem = getGroupsContainingItem(toolId, objectId, false);
@@ -2621,12 +2603,10 @@ void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QS
     for(int i=0; i<list.count(); ++i)
     {
         const QString  listGroupName = list.value(i);
-        //qCDebug(vbstractPattern, "Count = %d - listGroupName = %s\n", i, qUtf8Printable(listGroupName));
         if (groupName == listGroupName)
         {
             const quint32 groupId = groupsNotContainingItem.key(list[i]);
             QDomElement group = addGroupItem(toolId, objectId, groupId);
-            //qCDebug(vbstractPattern, "Tool Id =%d added to Group %s - ID %d\n", toolId, qUtf8Printable(listGroupName), groupId);
             modified = true;
             emit patternChanged(false);
             emit updateGroups();
@@ -2659,7 +2639,7 @@ QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, qui
 
     QDomElement group = elementById(groupId, TagGroup);
 
-    if (group.isNull() == false)
+    if (!group.isNull())
     {
         if(objectId == 0)
         {
@@ -2671,10 +2651,8 @@ QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, qui
         item.setAttribute(AttrObject, objectId);
         group.appendChild(item);
 
-
         modified = true;
         emit patternChanged(false);
-
 
         emit updateGroups();
 
@@ -2711,7 +2689,7 @@ QDomElement VAbstractPattern::deleteGroupItem(quint32 toolId, quint32 objectId, 
       return QDomElement();
     }
 
-    if (group.isNull() == false)
+    if (!group.isNull())
     {
         if(objectId == 0)
         {
@@ -2880,7 +2858,6 @@ QString VAbstractPattern::getGroupColor(quint32 id)
     {
 
         color = GetParametrString(group, AttrGroupColor, ColorBlack);
-        //qDebug("VAbstractPattern::GetGroupColor - Color = %s.", qUtf8Printable(color));
         return color;
     }
     else

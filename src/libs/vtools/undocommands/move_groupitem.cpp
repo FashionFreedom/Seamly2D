@@ -1,10 +1,10 @@
 /***************************************************************************
- **  @file   delete_groupitem.cpp
+ **  @file   move_groupitem.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   Mar 2, 2023
  **
  **  @copyright
- **  Copyright (C) 2023 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -22,7 +22,7 @@
  **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-#include "delete_groupitem.h"
+#include "move_groupitem.h"
 
 #include <QDomNode>
 #include <QDomNodeList>
@@ -33,35 +33,46 @@
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../vtools/tools/vdatatool.h"
-#include "vundocommand.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 
-DeleteGroupItem::DeleteGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent)
-    , m_activeDrawName(doc->getActiveDraftBlockName())
+MoveGroupItem::MoveGroupItem(const QDomElement &source, const QDomElement &dest, VAbstractPattern *doc,
+                             quint32 sourceId, quint32 destinationId, QUndoCommand *parent)
+    : VUndoCommand(source, doc, parent)
+    , m_source(source)
+    , m_dest(dest)
+    , m_activeDraftblockName(doc->getActiveDraftBlockName())
+    , m_sourceGroupId(sourceId)
+    , m_destinationGroupId(destinationId)
 {
-    setText(tr("Delete group item"));
-    nodeId = groupId;
+    setText(tr("Move group item"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DeleteGroupItem::~DeleteGroupItem()
+MoveGroupItem::~MoveGroupItem()
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DeleteGroupItem::undo()
+void MoveGroupItem::undo()
 {
-    qCDebug(vUndo, "Undo delete group item");
-    doc->changeActiveDraftBlock(m_activeDrawName);//Without this user will not see this change
+    qCDebug(vUndo, "Undo move group item");
+    doc->changeActiveDraftBlock(m_activeDraftblockName);//Without this user will not see this change
 
-    QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
-    if (group.isElement())
+    QDomElement sourceGroup = doc->elementById(m_sourceGroupId, VAbstractPattern::TagGroup);
+    QDomElement destintationGroup = doc->elementById(m_destinationGroupId, VAbstractPattern::TagGroup);
+    if (sourceGroup.isElement() && destintationGroup.isElement())
     {
-        if (group.appendChild(xml).isNull())
+        if (sourceGroup.appendChild(m_source).isNull())
         {
-            qCDebug(vUndo, "Can't add the item.");
+            qCDebug(vUndo, "Can't move the item.");
+            return;
+        }
+
+        if (destintationGroup.removeChild(m_dest).isNull())
+        {
+            qCDebug(vUndo, "Can't move item.");
+            //sourceGroup.removeChild(m_source);
             return;
         }
 
@@ -82,38 +93,40 @@ void DeleteGroupItem::undo()
     }
     else
     {
-        qCDebug(vUndo, "Can't get group by id = %u.", nodeId);
+        qCDebug(vUndo, "Can't get group by id = %u.", m_sourceGroupId);
         return;
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    emit doc->setCurrentDraftBlock(m_activeDrawName); //Return current draft Block after undo
+    emit doc->setCurrentDraftBlock(m_activeDraftblockName);//Return current draft Block after undo
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DeleteGroupItem::redo()
+void MoveGroupItem::redo()
 {
-    qCDebug(vUndo, "Redo add group item");
-    doc->changeActiveDraftBlock(m_activeDrawName);//Without this user will not see this change
+    qCDebug(vUndo, "Redo move group item");
+    doc->changeActiveDraftBlock(m_activeDraftblockName);//Without this user will not see this change
 
-    QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
-    if (group.isElement())
+    QDomElement sourceGroup = doc->elementById(m_sourceGroupId, VAbstractPattern::TagGroup);
+    QDomElement destintationGroup = doc->elementById(m_destinationGroupId, VAbstractPattern::TagGroup);
+    if (sourceGroup.isElement() && destintationGroup.isElement())
     {
-        if (group.removeChild(xml).isNull())
+        if (destintationGroup.appendChild(m_dest).isNull())
         {
-            qCDebug(vUndo, "Can't delete item.");
+            qCDebug(vUndo, "Can't move the item.");
             return;
         }
 
-        doc->SetModified(true);
-        emit qApp->getCurrentDocument()->patternChanged(false);
+        if (sourceGroup.removeChild(m_source).isNull())
+        {
+            qCDebug(vUndo, "Can't move item.");
+            //destintationGroup.removeChild(m_dest);
+            return;
+        }
 
-        // set the item visible. Because if the undo is done when unvisibile and it's not in any group after the
-        // undo, it stays unvisible until the entire drawing is completly rerendered.
-        quint32 objectId = doc->GetParametrUInt(xml,QString("object"),NULL_ID_STR);
-        quint32 toolId = doc->GetParametrUInt(xml,QString("tool"),NULL_ID_STR);
-        VDataTool* tool = doc->getTool(toolId);
-        tool->GroupVisibility(objectId,true);
+        doc->SetModified(false);
+        emit qApp->getCurrentDocument()->patternChanged(true);
 
         QDomElement groups = doc->createGroups();
         if (not groups.isNull())
@@ -129,10 +142,10 @@ void DeleteGroupItem::redo()
     }
     else
     {
-        qCDebug(vUndo, "Can't get group by id = %u.", nodeId);
+        qCDebug(vUndo, "Can't get group by id = %u.", m_sourceGroupId);
         return;
     }
 
     VMainGraphicsView::NewSceneRect(qApp->getCurrentScene(), qApp->getSceneView());
-    emit doc->setCurrentDraftBlock(m_activeDrawName); //Return current draft Block after undo
+    emit doc->setCurrentDraftBlock(m_activeDraftblockName); //Return current draft Block after undo
 }
