@@ -258,6 +258,10 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     }
 
     QAction *selectedAction = menu.exec(event->screenPos());
+    if(selectedAction == nullptr)
+    {
+        return;
+    }
     if (selectedAction == actionOption)
     {
         qCDebug(vTool, "Show options.");

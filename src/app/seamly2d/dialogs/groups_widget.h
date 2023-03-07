@@ -108,6 +108,8 @@ private:
     void              fillGroupItemList();
     void              addGroupItem(const quint32 &id, const Tool &tool);
     void              groupItemContextMenu(const QPoint &pos);
+    void              itemDoubleClicked(QListWidgetItem *item);
+    void              zoomToObject(QSharedPointer<VPointF> point);
     QString           getPointName(quint32 pointId);
     quint32           attrUInt(const QDomElement &domElement, const QString &name);
     QString           getObjName(quint32 id);

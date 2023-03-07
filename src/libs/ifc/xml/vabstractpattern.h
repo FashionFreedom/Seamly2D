@@ -301,6 +301,7 @@ public:
     static const QString TagPath;
     static const QString TagNodes;
     static const QString TagNode;
+    static const QString TagLine;
 
     static const QString AttrName;
     static const QString AttrVisible;

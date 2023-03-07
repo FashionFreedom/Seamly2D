@@ -133,6 +133,7 @@ GroupsWidget::GroupsWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
 
     ui->groupItems_ListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->groupItems_ListWidget, &QListWidget::customContextMenuRequested, this, &GroupsWidget::groupItemContextMenu);
+    connect(ui->groupItems_ListWidget, &QListWidget::itemDoubleClicked,          this, &GroupsWidget::itemDoubleClicked);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -204,7 +205,6 @@ void GroupsWidget::renameGroup(int row, int column)
     }
 }
 
-
 void GroupsWidget::showAllGroups()
 {
      qCDebug(WidgetGroups, "Show All Groups");
@@ -264,6 +264,7 @@ void GroupsWidget::lockAllGroups()
         item->setIcon(QIcon("://icon/32x32/lock_on.png"));
     }
 }
+
 void GroupsWidget::unlockAllGroups()
 {
     qCDebug(WidgetGroups, "Unlock All Groups");
@@ -679,11 +680,12 @@ void GroupsWidget::fillGroupItemList()
     const QMap<quint32, quint32> groupData = group.second;
     if (!groupData.isEmpty())
     {
-        auto i = groupData.constBegin();
-        while (i != groupData.constEnd())
+        auto i = groupData.begin();
+        while (i != groupData.end())
         {
-           Tool tooltype = history.value(i.key());
-           addGroupItem(i.key(), tooltype);
+           quint32 id = i.value();
+           Tool tooltype = history.value(id);
+           addGroupItem(id, tooltype);
            ++i;
         }
     }
@@ -696,7 +698,8 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
 /**
  * @brief Add description for group item in listwidget
- * @param tool Tooltype
+ * @param toolID ToolID of item to add to list
+ * @param tooltype Tooltype of item to add to list
  */
 void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
 {
@@ -705,8 +708,8 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
 
     QString iconFileName = "";
     QString objName = "Unknown";
-    const QDomElement domElem = m_doc->elementById(toolId);
-    if (domElem.isElement() == false)
+    const QDomElement domElement = m_doc->elementById(toolId);
+    if (domElement.isElement() == false)
     {
         qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
         return;
@@ -734,56 +737,39 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
 
                 case Tool::EndLine:
                     iconFileName = ":/toolicon/32x32/segment.png";
-                    objName = tr("Point - Length and Angle of Line %1_%2")
-                             .arg(getPointName(attrUInt(domElem, AttrBasePoint)))
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point Length and Angle").arg(getPointName(toolId));
                     break;
 
                 case Tool::Line:
                     iconFileName = ":/toolicon/32x32/line.png";
                     objName = tr("Line %1_%2")
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)));
+                             .arg(getPointName(attrUInt(domElement, AttrFirstPoint)))
+                             .arg(getPointName(attrUInt(domElement, AttrSecondPoint)));
                     break;
 
                 case Tool::AlongLine:
                     iconFileName = ":/toolicon/32x32/along_line.png";
-                    objName = tr("%3 - Point - On Line %1_%2")
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)))
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point On Line").arg(getPointName(toolId));
                     break;
 
                 case Tool::ShoulderPoint:
                     iconFileName = ":/toolicon/32x32/shoulder.png";
-                    objName = tr("%1 - Point - Length to Line").arg(getPointName(toolId));
+                    objName = tr("%1 - Point Length to Line").arg(getPointName(toolId));
                     break;
 
                 case Tool::Normal:
                     iconFileName = ":/toolicon/32x32/normal.png";
-                    objName = tr("%3 - Point - On Perpendicular to Line %1_%2")
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)))
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point On Perpendicular").arg(getPointName(toolId));
                     break;
 
                 case Tool::Bisector:
                     iconFileName = ":/toolicon/32x32/bisector.png";
-                    objName = tr("%4 - Point - On Bisector of Angle %1_%2_%3")
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrThirdPoint)))
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point On Bisector").arg(getPointName(toolId));
                     break;
 
                 case Tool::LineIntersect:
                     iconFileName = ":/toolicon/32x32/intersect.png";
-                    objName = tr("%5 - Point - Intersect Lines %1_%2 & %3_%4")
-                             .arg(getPointName(attrUInt(domElem, AttrP1Line1)))
-                             .arg(getPointName(attrUInt(domElem, AttrP2Line1)))
-                             .arg(getPointName(attrUInt(domElem, AttrP1Line2)))
-                             .arg(getPointName(attrUInt(domElem, AttrP2Line2)))
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Lines").arg(getPointName(toolId));
                     break;
 
                case Tool::Spline:
@@ -791,173 +777,145 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                     const QSharedPointer<VSpline> spl = m_data->GeometricObject<VSpline>(toolId);
                     SCASSERT(not spl.isNull())
                     iconFileName = ":/toolicon/32x32/spline.png";
-                    objName = spl->NameForHistory(tr("Curve - Interactive"));
+                    objName = tr("%1 - Curve Interactive").arg(spl->NameForHistory(tr("Spl_")));
                     break;
-
                 }
+
                 case Tool::CubicBezier:
                 {
                     const QSharedPointer<VCubicBezier> spl = m_data->GeometricObject<VCubicBezier>(toolId);
                     SCASSERT(not spl.isNull())
                     iconFileName = ":/toolicon/32x32/cubic_bezier.png";
-                    objName = spl->NameForHistory(tr("Curve - Fixed"));
+                    objName = tr("%1 - Curve Fixed").arg(spl->NameForHistory(tr("Spl_")));
                     break;
-
                 }
+
                 case Tool::Arc:
                 {
                     const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(toolId);
                     SCASSERT(not arc.isNull())
                     iconFileName = ":/toolicon/32x32/arc.png";
-                    objName = tr("%1").arg(arc->NameForHistory(tr("Arc")));
+                    objName = tr("%1 - Arc Radius & Angles").arg(arc->NameForHistory(tr("Arc_")));
                     break;
-
                 }
                 case Tool::ArcWithLength:
                 {
                     const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(toolId);
                     SCASSERT(not arc.isNull())
                     iconFileName = ":/toolicon/32x32/arc_with_length.png";
-                    objName = tr("%1 - Arc - Length = %2 %3")
-                                 .arg(arc->NameForHistory(tr("Arc")))
-                                 .arg(qApp->fromPixel(arc->GetLength()))
-                                 .arg(UnitsToStr(qApp->patternUnit()));
+                    objName = tr("%1 - Arc Radius & Length").arg(arc->NameForHistory(tr("Arc_")));
                     break;
                 }
+
                 case Tool::SplinePath:
                 {
                     const QSharedPointer<VSplinePath> splPath = m_data->GeometricObject<VSplinePath>(toolId);
                     SCASSERT(not splPath.isNull())
                     iconFileName = ":/toolicon/32x32/splinePath.png";
-                    objName = splPath->NameForHistory(tr("Spline - Interactive"));
+                    objName = tr("%1 - Spline Interactive").arg(splPath->NameForHistory(tr("SplPath_")));
                     break;
-
                 }
+
                 case Tool::CubicBezierPath:
                 {
                    const QSharedPointer<VCubicBezierPath> splPath = m_data->GeometricObject<VCubicBezierPath>(toolId);
                     SCASSERT(not splPath.isNull())
                     iconFileName = ":/toolicon/32x32/cubic_bezier_path.png";
-                    objName = splPath->NameForHistory(tr("Spline - Fixed"));
+                    objName = tr("%1 - Spline Fixed").arg(splPath->NameForHistory(tr("SplPath_")));
                     break;
-
                 }
+
                 case Tool::PointOfContact:
                     iconFileName = ":/toolicon/32x32/point_of_contact.png";
-                    objName = tr("%4 - Point - Intersect Arc with Center Point %1 & Line %2_%3")
-                             .arg(getPointName(attrUInt(domElem, AttrCenter)))
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)))
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Arc & Line").arg(getPointName(toolId));
                     break;
 
                 case Tool::Height:
                     iconFileName = ":/toolicon/32x32/height.png";
-                    objName = tr("Point - Intersect Line & Perpendicular %1 to Line %2_%3")
-                             .arg(getPointName(attrUInt(domElem, AttrBasePoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrP1Line)))
-                             .arg(getPointName(attrUInt(domElem, AttrP2Line)));
+                    objName = tr("%1 - Point Intersect Line & Perpendicular").arg(getPointName(toolId));
                     break;
 
                 case Tool::Triangle:
                     iconFileName = ":/toolicon/32x32/triangle.png";
-                    objName = tr("Point - Intersect Axis Axis %1_%2 & Triangle Points %3 & %4")
-                             .arg(getPointName(attrUInt(domElem, AttrAxisP1)))
-                             .arg(getPointName(attrUInt(domElem, AttrAxisP2)))
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)));
+                    objName = tr("%1 - Point Intersect Axis & Triangle").arg(getPointName(toolId));
                     break;
 
                 case Tool::PointOfIntersection:
                     iconFileName = ":/toolicon/32x32/point_intersectxy_icon.png";
-                    objName = tr("%1 - Point - Intersect XY from Points %2 & %3")
-                             .arg(getPointName(toolId))
-                             .arg(getPointName(attrUInt(domElem, AttrFirstPoint)))
-                             .arg(getPointName(attrUInt(domElem, AttrSecondPoint)));
+                    objName = tr("%1 - Point Intersect XY").arg(getPointName(toolId));
                     break;
 
                 case Tool::CutArc:
                 {
-                    const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(attrUInt(domElem, AttrArc));
+                    const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(attrUInt(domElement, AttrArc));
                     SCASSERT(not arc.isNull())
                     iconFileName = ":/toolicon/32x32/arc_cut.png";
-                    objName = tr("%1 - Point - On Arc %2")
-                             .arg(getPointName(toolId))
-                             .arg(arc->NameForHistory(tr("Arc")));
+                    objName = tr("%1 - Point On Arc").arg(getPointName(toolId));
                     break;
 
                 }
                 case Tool::CutSpline:
                 {
-                    const quint32 splineId = attrUInt(domElem, VToolCutSpline::AttrSpline);
+                    const quint32 splineId = attrUInt(domElement, VToolCutSpline::AttrSpline);
                     const QSharedPointer<VAbstractCubicBezier> spl = m_data->GeometricObject<VAbstractCubicBezier>(splineId);
                     SCASSERT(not spl.isNull())
                     iconFileName = ":/toolicon/32x32/spline_cut_point.png";
-                    objName = tr("%1 - Point - On Curve %2")
-                             .arg(getPointName(toolId))
-                             .arg(spl->NameForHistory(tr("Curve")));
+                    objName = tr("%1 - Point On Curve").arg(getPointName(toolId));
                     break;
 
                 }
                 case Tool::CutSplinePath:
                 {
-                    const quint32 splinePathId = attrUInt(domElem, VToolCutSplinePath::AttrSplinePath);
+                    const quint32 splinePathId = attrUInt(domElement, VToolCutSplinePath::AttrSplinePath);
                     const QSharedPointer<VAbstractCubicBezierPath> splPath =
                     m_data->GeometricObject<VAbstractCubicBezierPath>(splinePathId);
                     SCASSERT(not splPath.isNull())
                     iconFileName = ":/toolicon/32x32/splinePath_cut_point.png";
-                    objName = tr("%1 - Point - On Spline %2")
-                             .arg(getPointName(toolId))
-                             .arg(splPath->NameForHistory(tr("Curve Path")));
+                    objName = tr("%1 - Point On Spline").arg(getPointName(toolId));
                     break;
 
                 }
                 case Tool::LineIntersectAxis:
                     iconFileName = ":/toolicon/32x32/line_intersect_axis.png";
-                    objName = tr("%1 - Point - Intersect Line %2_%3 & Axis through Point %4")
-                             .arg(getPointName(toolId))
-                             .arg(getPointName(attrUInt(domElem, AttrP1Line)))
-                             .arg(getPointName(attrUInt(domElem, AttrP2Line)))
-                             .arg(getPointName(attrUInt(domElem, AttrBasePoint)));
+                    objName = tr("%1 - Point Intersect Line & Axis").arg(getPointName(toolId));
                     break;
 
                 case Tool::CurveIntersectAxis:
                     iconFileName = ":/toolicon/32x32/arc_intersect_axis.png";
-                    objName = tr("%1 - Point - Intersect Curve & Axis")
-                             .arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Curve & Axis").arg(getPointName(toolId));
                   break;
 
                 case Tool::PointOfIntersectionArcs:
                     iconFileName = ":/toolicon/32x32/point_of_intersection_arcs.png";
-                    objName = tr("%1 - Point - Intersect Arcs").arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Arcs").arg(getPointName(toolId));
                     break;
 
                 case Tool::PointOfIntersectionCircles:
                     iconFileName = ":/toolicon/32x32/point_of_intersection_circles.png";
-                    objName = tr("%1 - Point - Intersect Circles").arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Circles").arg(getPointName(toolId));
                     break;
 
                 case Tool::PointOfIntersectionCurves:
                     iconFileName = ":/toolicon/32x32/intersection_curves.png";
-                    objName = tr("%1 - Point - Intersect Curves").arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Curves").arg(getPointName(toolId));
                     break;
 
                 case Tool::PointFromCircleAndTangent:
                     iconFileName = ":/toolicon/32x32/point_from_circle_and_tangent.png";
-                    objName = tr("%1 - Point - Intersect Circle & Tangent").arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Circle & Tangent").arg(getPointName(toolId));
                     break;
 
                 case Tool::PointFromArcAndTangent:
                     iconFileName = ":/toolicon/32x32/point_from_arc_and_tangent.png";
-                    objName = tr("%1 - Point - Intersect Arc & Tangent ").arg(getPointName(toolId));
+                    objName = tr("%1 - Point Intersect Arc & Tangent").arg(getPointName(toolId));
                     break;
 
                 case Tool::TrueDarts:
                     iconFileName = ":/toolicon/32x32/true_darts.png";
                     objName = tr("True Dart %1_%2_%3")
-                             .arg(getPointName(attrUInt(domElem, AttrDartP1)))
-                             .arg(getPointName(attrUInt(domElem, AttrDartP2)))
-                             .arg(getPointName(attrUInt(domElem, AttrDartP2)));
+                             .arg(getPointName(attrUInt(domElement, AttrDartP1)))
+                             .arg(getPointName(attrUInt(domElement, AttrDartP2)))
+                             .arg(getPointName(attrUInt(domElement, AttrDartP2)));
                     break;
 
                 case Tool::EllipticalArc:
@@ -965,11 +923,36 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                     const QSharedPointer<VEllipticalArc> elArc = m_data->GeometricObject<VEllipticalArc>(toolId);
                     SCASSERT(not elArc.isNull())
                     iconFileName = ":/toolicon/32x32/el_arc.png";
-                    objName = tr("%1")
-                             .arg(elArc->NameForHistory(tr("Arc - Elliptical")));
+                    objName = tr("%1 - Arc Elliptical").arg(elArc->NameForHistory(tr("ElArc_")));
                     break;
                 }
-                //Because "history" not only show history of pattern, but help restore current data for each pattern's
+                case Tool::Rotation:
+                {
+                    iconFileName = ":/toolicon/32x32/rotation.png";
+                    objName = tr("Rotation");
+                    //QString name = getPointName(toolId);
+                    //objName = tr("%1 - Rotation").arg(name);
+                    break;
+                }
+                case Tool::Move:
+                {
+                    iconFileName = ":/toolicon/32x32/move.png";
+                    objName = tr("Move");
+                    break;
+                }
+                case Tool::MirrorByLine:
+                {
+                    iconFileName = ":/toolicon/32x32/mirror_by_line.png";
+                    objName = tr("Mirror by line");
+                    break;
+                }
+                case Tool::MirrorByAxis:
+                {
+                    iconFileName = ":/toolicon/32x32/mirror_by_axis.png";
+                    objName = tr("Mirror by axis");
+                    break;
+                }
+                //Because "history" not only shows history of pattern, but helps restore current data for each pattern's
                 //piece, we need add record about details and nodes, but don't show them.
                 case Tool::Piece:
                 case Tool::Union:
@@ -979,10 +962,6 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::NodeSpline:
                 case Tool::NodeSplinePath:
                 case Tool::Group:
-                case Tool::Rotation:
-                case Tool::MirrorByLine:
-                case Tool::MirrorByAxis:
-                case Tool::Move:
                 case Tool::InternalPath:
                 case Tool::AnchorPoint:
                 case Tool::InsertNodes:
@@ -1134,4 +1113,155 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
          }
       }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Handle double clicking of list item
+ * @param item selected list widget item
+ */
+void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
+{
+    GOType toolType;
+    const auto objects = m_data->DataGObjects();
+    quint32 toolId = item->data(Qt::UserRole).toUInt();
+
+    if (objects->contains(toolId))
+    {
+        toolType = m_data->GetGObject(toolId)->getType();
+    }
+    else
+    {
+        //Some tools are not GObjects in the container. Need to look in the Dom Doc instead
+        const QDomElement domElement = m_doc->elementById(toolId);
+        if (domElement.tagName() == VAbstractPattern::TagLine)
+        {
+            //Use the line's FirstPoint as toolId and reset toolType
+            toolId = attrUInt(domElement, AttrFirstPoint);
+        }
+        else if (domElement.tagName() == VAbstractPattern::TagOperation)
+        {
+            if (VDomDocument::GetParametrString(domElement, AttrType, "") == "rotation")
+            {
+                //Use rotation or move Center point as toolId and reset toolType
+                toolId = attrUInt(domElement, AttrCenter);
+            }
+            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "moving" )
+            {
+                //toolId = attrUInt(domElement, AttrCenter);
+                return;
+            }
+            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "flippingByAxis")
+            {
+                //Use axis Center point as toolId and reset toolType
+                toolId = attrUInt(domElement, AttrCenter);
+            }
+            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "flippingByLine")
+            {
+                //toolId = attrUInt(domElement, AttrCenter);
+                return;
+            }
+            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "trueDarts")
+            {
+                //Use dart First point as toolId and reset toolType
+                toolId = attrUInt(domElement, AttrPoint1);
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            return;
+        }
+        toolType = m_data->GetGObject(toolId)->getType();
+    }
+
+    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
+    {
+        GOType objType = static_cast<GOType>(i.value()->getType());
+        switch(objType)
+        {
+            case GOType::Point:
+            {
+                if (objType == toolType)
+                {
+                    if (i.value()->name() == getPointName(toolId))
+                    {
+                        QSharedPointer<VPointF> point = m_data->GeometricObject<VPointF>(toolId);
+                        zoomToObject(point);
+                        return;
+                    }
+                }
+                break;
+            }
+
+            case GOType::Arc:
+            case GOType::EllipticalArc:
+            {
+                if (objType == toolType)
+                {
+                    const QSharedPointer<VAbstractArc> toolCurve = m_data->GeometricObject<VAbstractArc>(toolId);
+                    const QSharedPointer<VAbstractArc> curve = m_data->GeometricObject<VAbstractArc>(i.key());
+                    QSharedPointer<VPointF>point(new VPointF(curve->GetCenter()));
+                    if (curve->name() == toolCurve->name())
+                    {
+                        zoomToObject(point);
+                        return;
+                    }
+                }
+                break;
+            }
+
+            case GOType::Spline:
+            case GOType::SplinePath:
+            case GOType::CubicBezier:
+            case GOType::CubicBezierPath:
+            {
+                if (objType == toolType)
+                {
+                    const QSharedPointer<VAbstractCurve> toolCurve = m_data->GeometricObject<VAbstractCurve>(toolId);
+                    const QSharedPointer<VAbstractCurve> curve = m_data->GeometricObject<VAbstractCurve>(i.key());
+                    QSharedPointer<VPointF>point(new VPointF(curve->getFirstPoint()));
+                    if (curve->name() == toolCurve->name())
+                    {
+                        zoomToObject(point);
+                        return;
+                    }
+                }
+                break;
+            }
+            case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+                default:
+                break;
+        }
+    }
+
+    return;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToObject zoom to selected (point) object
+ * @param point If selected list item is a point use the item's toolId. if the list item is a curve or line then
+                use the tool's first point.
+ */void GroupsWidget::zoomToObject(QSharedPointer<VPointF> point)
+{
+    // show point name if it's hidden
+    //qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
+
+    VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
+    SCASSERT(scene != nullptr)
+    scene->clearSelection();
+
+    VMainGraphicsView *view = qobject_cast<VMainGraphicsView *>(scene->views().first());
+    view->zoomByScale(1.3);
+    view->centerOn(point->toQPointF());
+
+    return;
 }

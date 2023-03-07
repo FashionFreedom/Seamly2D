@@ -115,6 +115,7 @@ const QString VAbstractPattern::TagGrainline            = QStringLiteral("grainl
 const QString VAbstractPattern::TagPath                 = QStringLiteral("path");
 const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes");
 const QString VAbstractPattern::TagNode                 = QStringLiteral("node");
+const QString VAbstractPattern::TagLine                 = QStringLiteral("line");
 
 const QString VAbstractPattern::AttrName                = QStringLiteral("name");
 const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");
