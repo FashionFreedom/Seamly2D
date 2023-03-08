@@ -420,6 +420,9 @@ void VisToolMove::createRotatedObjects(int &iPoint, int &iCurve, qreal length, q
                 iCurve = AddDestinationCurve<VCubicBezierPath>(angle, length, id, iCurve, rotationAngle, rotationOrigin);
                 break;
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
                 break;
         }
     }
