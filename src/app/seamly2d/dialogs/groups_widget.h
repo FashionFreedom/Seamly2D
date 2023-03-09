@@ -53,10 +53,12 @@
 #ifndef GROUPS_WIDGET_H
 #define GROUPS_WIDGET_H
 
-#include <QWidget>
-#include <QColor>
 #include "../ifc/xml/vabstractpattern.h"
 #include "../vtools/dialogs/tools/editgroup_dialog.h"
+
+#include <QColor>
+#include <QTableWidget>
+#include <QWidget>
 
 class VAbstractPattern;
 class VContainer;
@@ -110,6 +112,7 @@ private:
     void              groupItemContextMenu(const QPoint &pos);
     void              itemDoubleClicked(QListWidgetItem *item);
     void              zoomToObject(QSharedPointer<VPointF> point);
+    void              setGroupVisibility(QTableWidgetItem *item, const quint32 &groupId, const bool &visible);
     QString           getPointName(quint32 pointId);
     quint32           attrUInt(const QDomElement &domElement, const QString &name);
     QString           getObjName(quint32 id);

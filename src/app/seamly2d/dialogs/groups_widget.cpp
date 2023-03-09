@@ -153,15 +153,7 @@ void GroupsWidget::groupVisibilityChanged(int row, int column)
     if (locked == false)
     {
         const bool visible = !m_doc->getGroupVisivility(groupId);
-        m_doc->setGroupVisivility(groupId, visible);
-        if (visible)
-        {
-            item->setIcon(QIcon("://icon/32x32/visible_on.png"));
-        }
-        else
-        {
-            item->setIcon(QIcon("://icon/32x32/visible_off.png"));
-        }
+        setGroupVisibility(item, groupId, visible);
     }
 }
 
@@ -221,8 +213,7 @@ void GroupsWidget::showAllGroups()
          locked = m_doc->getGroupLock(groupId);
          if (item && locked == false)
          {
-             m_doc->setGroupVisivility(groupId, true);
-             item->setIcon(QIcon("://icon/32x32/visible_on.png"));
+             setGroupVisibility(item, groupId, true);
          }
      }
 }
@@ -232,9 +223,9 @@ void GroupsWidget::hideAllGroups()
     qCDebug(WidgetGroups, "Hide All Groups");
     quint32 groupId;
     bool locked;
-    for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
+    for (int row = 0; row < ui->groups_TableWidget->rowCount(); ++row)
     {
-        QTableWidgetItem *item = ui->groups_TableWidget->item(i, 0);
+        QTableWidgetItem *item = ui->groups_TableWidget->item(row, 0);
         if (!item)
         {
             return;
@@ -243,8 +234,7 @@ void GroupsWidget::hideAllGroups()
         locked = m_doc->getGroupLock(groupId);
         if (item && locked == false)
         {
-            m_doc->setGroupVisivility(groupId, false);
-            item->setIcon(QIcon("://icon/32x32/visible_off.png"));
+            setGroupVisibility(item, groupId, false);
         }
     }
 }
@@ -252,9 +242,9 @@ void GroupsWidget::hideAllGroups()
 void GroupsWidget::lockAllGroups()
 {
     qCDebug(WidgetGroups, "Lock All Groups");
-    for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
+    for (int row = 0; row < ui->groups_TableWidget->rowCount(); ++row)
     {
-        QTableWidgetItem *item = ui->groups_TableWidget->item(i, 1);
+        QTableWidgetItem *item = ui->groups_TableWidget->item(row, 1);
         if (!item)
         {
             return;
@@ -268,9 +258,9 @@ void GroupsWidget::lockAllGroups()
 void GroupsWidget::unlockAllGroups()
 {
     qCDebug(WidgetGroups, "Unlock All Groups");
-    for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
+    for (int row = 0; row < ui->groups_TableWidget->rowCount(); ++row)
     {
-        QTableWidgetItem *item = ui->groups_TableWidget->item(i, 1);
+        QTableWidgetItem *item = ui->groups_TableWidget->item(row, 1);
         if (!item)
         {
             return;
@@ -558,14 +548,7 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
         QTableWidgetItem *item = new QTableWidgetItem();
         item->setTextAlignment(Qt::AlignHCenter);
 
-        if (data.visible)
-        {
-            item->setIcon(QIcon("://icon/32x32/visible_on.png"));
-        }
-        else
-        {
-            item->setIcon(QIcon("://icon/32x32/visible_off.png"));
-        }
+        setGroupVisibility(item, i.key(), data.visible);
 
         item->setData(Qt::UserRole, i.key());
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
@@ -1255,11 +1238,9 @@ void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
  * @brief zoomToObject zoom to selected (point) object
  * @param point If selected list item is a point use the item's toolId. if the list item is a curve or line then
                 use the tool's first point.
- */void GroupsWidget::zoomToObject(QSharedPointer<VPointF> point)
+ */
+void GroupsWidget::zoomToObject(QSharedPointer<VPointF> point)
 {
-    // show point name if it's hidden
-    //qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
-
     VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
     SCASSERT(scene != nullptr)
     scene->clearSelection();
@@ -1268,5 +1249,21 @@ void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
     view->zoomByScale(1.3);
     view->centerOn(point->toQPointF());
 
+    int row = ui->groups_TableWidget->currentRow();
+    setGroupVisibility(ui->groups_TableWidget->item(row, 0), getGroupId(), true);
+
     return;
+}
+
+void GroupsWidget::setGroupVisibility(QTableWidgetItem *item, const quint32 &groupId, const bool &visible)
+{
+    m_doc->setGroupVisivility(groupId, visible);
+    if (visible)
+    {
+        item->setIcon(QIcon("://icon/32x32/visible_on.png"));
+    }
+    else
+    {
+        item->setIcon(QIcon("://icon/32x32/visible_off.png"));
+    }
 }
