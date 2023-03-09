@@ -64,29 +64,35 @@ class QDockWidget;
 class QGraphicsItem;
 class QScrollArea;
 class VFormula;
+class VContainer;
 
 class VToolOptionsPropertyBrowser : public QObject
 {
     Q_OBJECT
 public:
-    explicit VToolOptionsPropertyBrowser(QDockWidget *parent);
+    explicit VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent);
     void ClearPropertyBrowser();
+
 public slots:
     void itemClicked(QGraphicsItem *item);
     void UpdateOptions();
     void RefreshOptions();
+
 private slots:
     void userChangedData(VPE::VProperty *property);
-private:
+
+protected:
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
 
-    VPE::VPropertyModel    *propertyModel;
-    VPE::VPropertyFormView *formView;
+    const VContainer                *m_data;
+    VPE::VPropertyModel             *propertyModel;
+    VPE::VPropertyFormView          *formView;
 
-    QGraphicsItem *currentItem;
-    QMap<VPE::VProperty *, QString> propertyToId;
-    QMap<QString, VPE::VProperty *> idToProperty;
+    QGraphicsItem                   *currentItem;
+    QMap<VPE::VProperty *, QString>  propertyToId;
+    QMap<QString, VPE::VProperty *>  idToProperty;
 
+private:
     void AddProperty(VPE::VProperty *property, const QString &id);
     void ShowItemOptions(QGraphicsItem *item);
 
