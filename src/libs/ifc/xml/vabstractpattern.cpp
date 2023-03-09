@@ -2778,7 +2778,7 @@ bool VAbstractPattern::getGroupVisivility(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::setGroupVisivility(quint32 id, bool visible)
+void VAbstractPattern::setGroupVisibility(quint32 id, bool visible)
 {
     QDomElement group = elementById(id, TagGroup);
     if (group.isElement())

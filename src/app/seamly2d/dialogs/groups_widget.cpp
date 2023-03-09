@@ -1257,7 +1257,7 @@ void GroupsWidget::zoomToObject(QSharedPointer<VPointF> point)
 
 void GroupsWidget::setGroupVisibility(QTableWidgetItem *item, const quint32 &groupId, const bool &visible)
 {
-    m_doc->setGroupVisivility(groupId, visible);
+    m_doc->setGroupVisibility(groupId, visible);
     if (visible)
     {
         item->setIcon(QIcon("://icon/32x32/visible_on.png"));

@@ -244,7 +244,7 @@ public:
     bool                           isGroupEmpty(quint32 id);
 
     bool                           getGroupVisivility(quint32 id);
-    void                           setGroupVisivility(quint32 id, bool visible);
+    void                           setGroupVisibility(quint32 id, bool visible);
 
     bool                           getGroupLock(quint32 id);
     void                           setGroupLock(quint32 id, bool locked);
