@@ -1806,9 +1806,9 @@ void VToolOptionsPropertyBrowser::ChangeDataToolSpline(VPE::VProperty *property)
     SCASSERT(i != nullptr)
 
     auto spl = i->getSpline();
-    const VFormula f = value.value<VFormula>();
+    VPointF point;
 
-    const auto point = *m_data->GeometricObject<VPointF>(value.toInt());
+    const VFormula f = value.value<VFormula>();
 
     switch (PropertiesList().indexOf(id))
     {
@@ -1816,10 +1816,12 @@ void VToolOptionsPropertyBrowser::ChangeDataToolSpline(VPE::VProperty *property)
             Q_UNREACHABLE();//The attribute is read only
             break;
         case 6:  // AttrFirstPoint
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
             spl.SetP1(point);
             i->setSpline(spl);
             break;
         case 7:  // AttrSecondPoint
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
             spl.SetP4(point);
             i->setSpline(spl);
             break;
@@ -1878,8 +1880,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolCubicBezier(VPE::VProperty *prop
     SCASSERT(i != nullptr)
 
     auto spline = i->getSpline();
-
-    const auto point = *m_data->GeometricObject<VPointF>(value.toInt());
+    VPointF point;
 
     switch (PropertiesList().indexOf(id))
     {
@@ -1896,18 +1897,22 @@ void VToolOptionsPropertyBrowser::ChangeDataToolCubicBezier(VPE::VProperty *prop
             i->setLineWeight(value.toString());
             break;
         case 55: // AttrPoint1
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
             spline.SetP1(point);
             i->setSpline(spline);
             break;
         case 56: // AttrPoint2
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
             spline.SetP2(point);
             i->setSpline(spline);
             break;
         case 57: // AttrPoint3
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
             spline.SetP3(point);
             i->setSpline(spline);
             break;
         case 58: // AttrPoint4
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
             spline.SetP4(point);
             i->setSpline(spline);
             break;
