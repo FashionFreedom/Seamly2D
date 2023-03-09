@@ -152,7 +152,7 @@ void GroupsWidget::groupVisibilityChanged(int row, int column)
     const bool locked = m_doc->getGroupLock(groupId);
     if (locked == false)
     {
-        const bool visible = not m_doc->getGroupVisivility(groupId);
+        const bool visible = !m_doc->getGroupVisivility(groupId);
         m_doc->setGroupVisivility(groupId, visible);
         if (visible)
         {
@@ -174,9 +174,9 @@ void GroupsWidget::groupLockChanged(int row, int column)
     }
 
     QTableWidgetItem *item = ui->groups_TableWidget->item(row, column);
-    if (not item) return;
+    if (!item) return;
     const quint32 groupId = item->data(Qt::UserRole).toUInt();
-    const bool locked = not m_doc->getGroupLock(groupId);
+    const bool locked = !m_doc->getGroupLock(groupId);
     m_doc->setGroupLock(groupId, locked);
     if (locked)
     {
@@ -213,7 +213,7 @@ void GroupsWidget::showAllGroups()
      for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
      {
          QTableWidgetItem *item = ui->groups_TableWidget->item(i, 0);
-         if (not item)
+         if (!item)
          {
              return;
          }
@@ -235,7 +235,7 @@ void GroupsWidget::hideAllGroups()
     for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
     {
         QTableWidgetItem *item = ui->groups_TableWidget->item(i, 0);
-        if (not item)
+        if (!item)
         {
             return;
         }
@@ -255,7 +255,7 @@ void GroupsWidget::lockAllGroups()
     for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
     {
         QTableWidgetItem *item = ui->groups_TableWidget->item(i, 1);
-        if (not item)
+        if (!item)
         {
             return;
         }
@@ -271,7 +271,7 @@ void GroupsWidget::unlockAllGroups()
     for (int i = 0; i < ui->groups_TableWidget->rowCount(); ++i)
     {
         QTableWidgetItem *item = ui->groups_TableWidget->item(i, 1);
-        if (not item)
+        if (!item)
         {
             return;
         }
@@ -328,7 +328,7 @@ void GroupsWidget::addGroupToList()
     const QDomElement group = m_doc->createGroup(nextId, groupName, dialog->getColor(), dialog->getLineType(),
                                                   dialog->getLineWeight(), dialog->getGroupData());
 
-    if (not group.isNull())
+    if (!group.isNull())
     {
         qCDebug(WidgetGroups, "Add a Group to List");
         AddGroup *command = new AddGroup(group, m_doc);
@@ -343,7 +343,7 @@ void GroupsWidget::deleteGroupFromList()
     qCDebug(WidgetGroups, "Remove Group %d from List", groupId);
     const bool locked = m_doc->getGroupLock(groupId);
     QTableWidgetItem *item = ui->groups_TableWidget->currentItem();
-    if (not item)
+    if (!item)
     {
         return;
     }
@@ -440,7 +440,7 @@ void GroupsWidget::editGroup()
 void GroupsWidget::groupContextMenu(const QPoint &pos)
 {
     QTableWidgetItem *item = ui->groups_TableWidget->itemAt(pos);
-    if (not item)
+    if (!item)
     {
         return;
     }
@@ -642,7 +642,7 @@ void GroupsWidget::clear()
 quint32 GroupsWidget::getGroupId()
 {
     QTableWidgetItem *item = ui->groups_TableWidget->currentItem();
-    if (not item)
+    if (!item)
     {
         return 0;
     }
@@ -655,7 +655,7 @@ quint32 GroupsWidget::getGroupId()
 QString GroupsWidget::getCurrentGroupName()
 {
     QTableWidgetItem *item = ui->groups_TableWidget->currentItem();
-    if (not item)
+    if (!item)
     {
         return QString();
     }
@@ -775,7 +775,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                case Tool::Spline:
                 {
                     const QSharedPointer<VSpline> spl = m_data->GeometricObject<VSpline>(toolId);
-                    SCASSERT(not spl.isNull())
+                    SCASSERT(!spl.isNull())
                     iconFileName = ":/toolicon/32x32/spline.png";
                     objName = tr("%1 - Curve Interactive").arg(spl->NameForHistory(tr("Spl_")));
                     break;
@@ -784,7 +784,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::CubicBezier:
                 {
                     const QSharedPointer<VCubicBezier> spl = m_data->GeometricObject<VCubicBezier>(toolId);
-                    SCASSERT(not spl.isNull())
+                    SCASSERT(!spl.isNull())
                     iconFileName = ":/toolicon/32x32/cubic_bezier.png";
                     objName = tr("%1 - Curve Fixed").arg(spl->NameForHistory(tr("Spl_")));
                     break;
@@ -793,15 +793,16 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::Arc:
                 {
                     const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(toolId);
-                    SCASSERT(not arc.isNull())
+                    SCASSERT(!arc.isNull())
                     iconFileName = ":/toolicon/32x32/arc.png";
                     objName = tr("%1 - Arc Radius & Angles").arg(arc->NameForHistory(tr("Arc_")));
                     break;
                 }
+
                 case Tool::ArcWithLength:
                 {
                     const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(toolId);
-                    SCASSERT(not arc.isNull())
+                    SCASSERT(!arc.isNull())
                     iconFileName = ":/toolicon/32x32/arc_with_length.png";
                     objName = tr("%1 - Arc Radius & Length").arg(arc->NameForHistory(tr("Arc_")));
                     break;
@@ -810,7 +811,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::SplinePath:
                 {
                     const QSharedPointer<VSplinePath> splPath = m_data->GeometricObject<VSplinePath>(toolId);
-                    SCASSERT(not splPath.isNull())
+                    SCASSERT(!splPath.isNull())
                     iconFileName = ":/toolicon/32x32/splinePath.png";
                     objName = tr("%1 - Spline Interactive").arg(splPath->NameForHistory(tr("SplPath_")));
                     break;
@@ -819,7 +820,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::CubicBezierPath:
                 {
                    const QSharedPointer<VCubicBezierPath> splPath = m_data->GeometricObject<VCubicBezierPath>(toolId);
-                    SCASSERT(not splPath.isNull())
+                    SCASSERT(!splPath.isNull())
                     iconFileName = ":/toolicon/32x32/cubic_bezier_path.png";
                     objName = tr("%1 - Spline Fixed").arg(splPath->NameForHistory(tr("SplPath_")));
                     break;
@@ -848,33 +849,33 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::CutArc:
                 {
                     const QSharedPointer<VArc> arc = m_data->GeometricObject<VArc>(attrUInt(domElement, AttrArc));
-                    SCASSERT(not arc.isNull())
+                    SCASSERT(!arc.isNull())
                     iconFileName = ":/toolicon/32x32/arc_cut.png";
                     objName = tr("%1 - Point On Arc").arg(getPointName(toolId));
                     break;
-
                 }
+
                 case Tool::CutSpline:
                 {
                     const quint32 splineId = attrUInt(domElement, VToolCutSpline::AttrSpline);
                     const QSharedPointer<VAbstractCubicBezier> spl = m_data->GeometricObject<VAbstractCubicBezier>(splineId);
-                    SCASSERT(not spl.isNull())
+                    SCASSERT(!spl.isNull())
                     iconFileName = ":/toolicon/32x32/spline_cut_point.png";
                     objName = tr("%1 - Point On Curve").arg(getPointName(toolId));
                     break;
-
                 }
+
                 case Tool::CutSplinePath:
                 {
                     const quint32 splinePathId = attrUInt(domElement, VToolCutSplinePath::AttrSplinePath);
                     const QSharedPointer<VAbstractCubicBezierPath> splPath =
                     m_data->GeometricObject<VAbstractCubicBezierPath>(splinePathId);
-                    SCASSERT(not splPath.isNull())
+                    SCASSERT(!splPath.isNull())
                     iconFileName = ":/toolicon/32x32/splinePath_cut_point.png";
                     objName = tr("%1 - Point On Spline").arg(getPointName(toolId));
                     break;
-
                 }
+
                 case Tool::LineIntersectAxis:
                     iconFileName = ":/toolicon/32x32/line_intersect_axis.png";
                     objName = tr("%1 - Point Intersect Line & Axis").arg(getPointName(toolId));
@@ -921,11 +922,12 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::EllipticalArc:
                 {
                     const QSharedPointer<VEllipticalArc> elArc = m_data->GeometricObject<VEllipticalArc>(toolId);
-                    SCASSERT(not elArc.isNull())
+                    SCASSERT(!elArc.isNull())
                     iconFileName = ":/toolicon/32x32/el_arc.png";
                     objName = tr("%1 - Arc Elliptical").arg(elArc->NameForHistory(tr("ElArc_")));
                     break;
                 }
+
                 case Tool::Rotation:
                 {
                     iconFileName = ":/toolicon/32x32/rotation.png";
@@ -934,18 +936,21 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                     //objName = tr("%1 - Rotation").arg(name);
                     break;
                 }
+
                 case Tool::Move:
                 {
                     iconFileName = ":/toolicon/32x32/move.png";
                     objName = tr("Move");
                     break;
                 }
+
                 case Tool::MirrorByLine:
                 {
                     iconFileName = ":/toolicon/32x32/mirror_by_line.png";
                     objName = tr("Mirror by line");
                     break;
                 }
+
                 case Tool::MirrorByAxis:
                 {
                     iconFileName = ":/toolicon/32x32/mirror_by_axis.png";
@@ -1033,7 +1038,7 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
     QMap<quint32,QString> groupsNotContainingItem =  m_doc->getGroupsContainingItem(toolId, 0, false);
     QActionGroup *actionMoveGroupMenu= new QActionGroup(this);
 
-    if(not groupsNotContainingItem.empty())
+    if(!groupsNotContainingItem.empty())
     {
         QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/32x32/list-move_32.png"), tr("Move to group"));
         QStringList list = QStringList(groupsNotContainingItem.values());
