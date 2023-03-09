@@ -78,8 +78,9 @@
 #include <QRegularExpression>
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(QDockWidget *parent)
+VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent)
     : QObject(parent)
+    , m_data(data)
     , propertyModel(nullptr)
     , formView(nullptr)
     , currentItem(nullptr)
@@ -727,57 +728,76 @@ void VToolOptionsPropertyBrowser::AddObjectProperty(Tool *tool, const QString &p
 template<class Tool>
 QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GOType objType)
 {
-    const quint32 toolId = tool->getId();
-    VContainer *data = qApp->getCurrentData();
-    const QHash<quint32, QSharedPointer<VGObject> > *objects = data->DataGObjects();
-    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+
+    quint32 toolId = tool->getId();
+    QHash<quint32, QSharedPointer<VGObject>> objects;
+
+    QVector<VToolRecord> *history = qApp->getCurrentDocument()->getHistory();
+    for (qint32 i = 0; i<history->size(); ++i)
+    {
+        VToolRecord record = history->at(i);
+        quint32 id = record.getId();
+        if (id == toolId)
+        {
+            break;
+        }
+        QSharedPointer<VGObject> obj = m_data->GetGObject(id);
+        objects.insert(id, obj);
+    }
+
     QMap<QString, quint32> list;
-    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
+    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+    for (i = objects.constBegin(); i != objects.constEnd(); ++i)
     {
         QSharedPointer<VGObject> obj = i.value();
-        switch (objType)
+        if (obj->getMode() == Draw::Calculation)
         {
-            case GOType::Point:
-            case GOType::Arc:
-            case GOType::Spline:
-            case GOType::CubicBezier:
-            case GOType::SplinePath:
-            case GOType::CubicBezierPath:
-                if (obj->getType() == objType && obj->getMode() == Draw::Calculation && i.key() < toolId)
-                {
-                    list.insert(obj->name(), i.key());
-                }
-                break;
-            case GOType::Curve:
-                if ((obj->getType() == GOType::Spline || obj->getType() == GOType::CubicBezier) &&
-                    obj->getMode() == Draw::Calculation && i.key() < toolId)
-                {
-                    list.insert(obj->name(), i.key());
-                }
-                break;
-            case GOType::Path:
-                if ((obj->getType() == GOType::SplinePath || obj->getType() == GOType::CubicBezierPath) &&
-                   obj->getMode() == Draw::Calculation && i.key() < toolId)
-                {
-                    list.insert(obj->name(), i.key());
-                }
-                break;
-            case GOType::AllCurves:
-                if ((obj->getType() == GOType::Spline ||
-                     obj->getType() == GOType::SplinePath ||
-                     obj->getType() == GOType::CubicBezier ||
-                     obj->getType() == GOType::CubicBezierPath ||
-                     obj->getType() == GOType::Arc ||
-                     obj->getType() == GOType::EllipticalArc) &&
-                     obj->getMode() == Draw::Calculation && i.key() < toolId)
-                {
-                    list.insert(obj->name(), i.key());
-                }
-                break;
-            case GOType::EllipticalArc:
-            case GOType::Unknown:
-            default:
-                break;
+            switch (objType)
+            {
+                case GOType::Point:
+                case GOType::Arc:
+                case GOType::Spline:
+                case GOType::CubicBezier:
+                case GOType::SplinePath:
+                case GOType::CubicBezierPath:
+                    if (obj->getType() == objType)
+                    {
+                        list.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::Curve:
+                    if (obj->getType() == GOType::Spline || obj->getType() == GOType::CubicBezier)
+                    {
+                        list.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::Path:
+                    if (obj->getType() == GOType::SplinePath || obj->getType() == GOType::CubicBezierPath)
+                    {
+                        list.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::AllCurves:
+                    if ((obj->getType() == GOType::Spline ||
+                        obj->getType() == GOType::SplinePath ||
+                        obj->getType() == GOType::CubicBezier ||
+                        obj->getType() == GOType::CubicBezierPath ||
+                        obj->getType() == GOType::Arc ||
+                        obj->getType() == GOType::EllipticalArc) &&
+                        obj->getMode() == Draw::Calculation)
+                    {
+                        list.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::EllipticalArc:
+                case GOType::Unknown:
+                default:
+                    break;
+            }
         }
     }
 
@@ -1788,8 +1808,7 @@ void VToolOptionsPropertyBrowser::ChangeDataToolSpline(VPE::VProperty *property)
     auto spl = i->getSpline();
     const VFormula f = value.value<VFormula>();
 
-    VContainer *data = qApp->getCurrentData();
-    const auto point = *data->GeometricObject<VPointF>(value.toInt());
+    const auto point = *m_data->GeometricObject<VPointF>(value.toInt());
 
     switch (PropertiesList().indexOf(id))
     {
@@ -1859,8 +1878,8 @@ void VToolOptionsPropertyBrowser::ChangeDataToolCubicBezier(VPE::VProperty *prop
     SCASSERT(i != nullptr)
 
     auto spline = i->getSpline();
-    VContainer *data = qApp->getCurrentData();
-    const auto point = *data->GeometricObject<VPointF>(value.toInt());
+
+    const auto point = *m_data->GeometricObject<VPointF>(value.toInt());
 
     switch (PropertiesList().indexOf(id))
     {
