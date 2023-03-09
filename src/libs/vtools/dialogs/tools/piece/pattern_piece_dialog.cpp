@@ -549,16 +549,16 @@ void PatternPieceDialog::CheckState()
 
     if (flagFormula && flagBeforeFormula && flagAfterFormula)
     {
-        clearErrorText(TabOrder::SeamAllowance, "Seam Allowance ");
+        clearErrorText(TabOrder::SeamAllowance, tr("Seam Allowance "));
     }
     else
     {
-        setErrorText(TabOrder::SeamAllowance, "Seam Allowance");
+        setErrorText(TabOrder::SeamAllowance, tr("Seam Allowance"));
     }
 
     if (flagMainPath)
     {
-        clearErrorText(TabOrder::Paths, "Paths ");
+        clearErrorText(TabOrder::Paths, tr("Paths "));
         QString tooltip = tr("Ready!");
         if (!applyAllowed)
         {
@@ -569,7 +569,7 @@ void PatternPieceDialog::CheckState()
     }
     else
     {
-        setErrorText(TabOrder::Paths, "Paths");
+        setErrorText(TabOrder::Paths, tr("Paths"));
     }
 
 }
@@ -742,13 +742,13 @@ void PatternPieceDialog::pieceNameChanged()
         {
             flagName = false;
             ChangeColor(ui->editName_Label, Qt::red);
-            setErrorText(TabOrder::Properties, "Properties");
+            setErrorText(TabOrder::Properties, tr("Properties"));
         }
         else
         {
             flagName = true;
             ChangeColor(ui->editName_Label, okColor);
-            clearErrorText(TabOrder::Properties, "Properties ");
+            clearErrorText(TabOrder::Properties, tr("Properties "));
         }
     }
     CheckState();
@@ -1703,7 +1703,7 @@ void PatternPieceDialog::updateGrainlineValues()
     flagGrainlineFormula = formulasOK[0] && formulasOK[1];
     if (!flagGrainlineFormula && !flagGrainlineAnchor)
     {
-        setErrorText(TabOrder::Grainline, "Grainline");
+        setErrorText(TabOrder::Grainline, tr("Grainline"));
     }
     else
     {
@@ -1786,7 +1786,7 @@ void PatternPieceDialog::updatePieceLabelValues()
     flagPieceLabelFormula = formulasOK[0] && formulasOK[1];
     if (!flagPieceLabelAngle || !(flagPieceLabelFormula || flagPieceLabelAnchor))
     {
-        setErrorText(TabOrder::Labels, "Labels");
+        setErrorText(TabOrder::Labels, tr("Labels"));
         QIcon icon(":/icons/win.icon.theme/16x16/status/dialog-warning.png");
         ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->pieceLabel_Tab), icon);
     }
@@ -1871,7 +1871,7 @@ void PatternPieceDialog::updatePatternLabelValues()
     flagPatternLabelFormula = formulasOK[0] && formulasOK[1];
     if (!flagPatternLabelAngle || !(flagPatternLabelFormula || flagPatternLabelAnchor))
     {
-        setErrorText(TabOrder::Labels, "Labels");
+        setErrorText(TabOrder::Labels, tr("Labels"));
         QIcon icon(":/icons/win.icon.theme/16x16/status/dialog-warning.png");
         ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->patternLabel_Tab), icon);
     }
@@ -2162,7 +2162,7 @@ void PatternPieceDialog::resetGrainlineWarning()
 {
     if (flagGrainlineFormula || flagGrainlineAnchor)
     {
-        clearErrorText(TabOrder::Grainline, "Grainline ");
+        clearErrorText(TabOrder::Grainline, tr("Grainline "));
     }
 }
 
@@ -2171,13 +2171,13 @@ void PatternPieceDialog::resetLabelsWarning()
 {
     if (flagPieceLabelAngle && (flagPieceLabelFormula || flagPieceLabelAnchor))
     {
-        clearErrorText(TabOrder::Labels, "Labels ");
+        clearErrorText(TabOrder::Labels, tr("Labels "));
         QIcon icon(":/icon/32x32/piece_label.png");
         ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->pieceLabel_Tab), icon);
     }
     if (flagPatternLabelAngle && (flagPatternLabelFormula || flagPatternLabelAnchor))
     {
-        clearErrorText(TabOrder::Labels, "Labels ");
+        clearErrorText(TabOrder::Labels, tr("Labels "));
         QIcon icon(":/icon/32x32/pattern_label.png");
         ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->patternLabel_Tab), icon);
     }
@@ -2371,7 +2371,7 @@ void PatternPieceDialog::pieceLabelAnchorChanged()
 
         if (flagPatternLabelAnchor)
         {
-            clearErrorText(TabOrder::Labels, "Labels ");
+            clearErrorText(TabOrder::Labels, tr("Labels "));
             QIcon icon(":/icon/32x32/piece_label.png");
             ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->pieceLabel_Tab), icon);
         }
@@ -2381,7 +2381,7 @@ void PatternPieceDialog::pieceLabelAnchorChanged()
         flagPieceLabelAnchor = false;
         topAnchorId == NULL_ID && bottomAnchorId == NULL_ID ? color = okColor : color = errorColor;
 
-        setErrorText(TabOrder::Labels, "Labels");
+        setErrorText(TabOrder::Labels, tr("Labels"));
         QIcon icon(":/icons/win.icon.theme/16x16/status/dialog-warning.png");
         ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->pieceLabel_Tab), icon);
     }
@@ -2404,7 +2404,7 @@ void PatternPieceDialog::patternLabelAnchorChanged()
 
         if (flagPieceLabelAnchor)
         {
-            clearErrorText(TabOrder::Labels, "Labels ");
+            clearErrorText(TabOrder::Labels, tr("Labels "));
             QIcon icon(":/icon/32x32/pattern_label.png");
             ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->patternLabel_Tab), icon);
         }
@@ -2414,7 +2414,7 @@ void PatternPieceDialog::patternLabelAnchorChanged()
         flagPatternLabelAnchor = false;
         topAnchorId == NULL_ID && bottomAnchorId == NULL_ID ? color = okColor : color = errorColor;
 
-        setErrorText(TabOrder::Labels, "Labels");
+        setErrorText(TabOrder::Labels, tr("Labels"));
         QIcon icon(":/icons/win.icon.theme/16x16/status/dialog-warning.png");
         ui->labels_TabWidget->setTabIcon(ui->labels_TabWidget->indexOf(ui->patternLabel_Tab), icon);
     }
