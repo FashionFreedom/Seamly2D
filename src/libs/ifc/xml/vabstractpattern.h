@@ -63,6 +63,7 @@
 #include <QStringList>
 #include <QVector>
 #include <QtGlobal>
+#include <QVector>
 
 #include "vdomdocument.h"
 #include "vtoolrecord.h"
@@ -203,6 +204,8 @@ public:
 
     QString        GetVersion() const;
     void           SetVersion();
+
+    QVector<quint32> getOpItems(const quint32 &toolId);
 
     bool           IsModified() const;
     void           SetModified(bool modified);

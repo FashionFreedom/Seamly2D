@@ -1563,6 +1563,34 @@ void VAbstractPattern::SetVersion()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId)
+{
+    QVector<quint32> items;
+    quint32 objId;
+    const QDomElement domElement = elementById(toolId);
+    const QDomNodeList nodeList = domElement.childNodes();
+    for (qint32 i = 0; i < nodeList.size(); ++i)
+    {
+        const QDomElement dataElement = nodeList.at(i).toElement();
+        if (!dataElement.isNull() && dataElement.tagName() == QStringLiteral("destination"))
+        {
+            const QDomNodeList srcList = dataElement.childNodes();
+            for (qint32 j = 0; j < srcList.size(); ++j)
+            {
+                const QDomElement element = srcList.at(j).toElement();
+                if (!element.isNull())
+                {
+                    objId = VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR);
+                    items.append(objId);
+                }
+            }
+        }
+    }
+
+    return items;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief haveLiteChange we have unsaved change.
  */
@@ -2091,7 +2119,7 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::ParseItemElement(const QD
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
+/*
  * @brief IsModified state of the document for cases that do not cover QUndoStack.
  * @return true if the document was modified without using QUndoStack.
  */
