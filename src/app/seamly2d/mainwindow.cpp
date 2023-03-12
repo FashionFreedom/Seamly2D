@@ -154,7 +154,7 @@ MainWindow::MainWindow(QWidget *parent)
     , patternReadOnly(false)
     , dialogTable(nullptr)
     , dialogTool()
-    , dialogHistory(nullptr)
+    , historyDialog(nullptr)
     , fontComboBox(nullptr)
     , fontSizeComboBox(nullptr)
     , draftBlockComboBox(nullptr)
@@ -763,9 +763,9 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     if (doc->getCursor() > 0)
     {
         doc->LiteParseTree(Document::LiteParse);
-        if (dialogHistory)
+        if (historyDialog)
         {
-            dialogHistory->updateHistory();
+            historyDialog->updateHistory();
         }
     }
 }
@@ -5702,25 +5702,22 @@ void MainWindow::CreateActions()
     {
         if (checked)
         {
-            dialogHistory = new DialogHistory(pattern, doc, this);
-            dialogHistory->setWindowFlags(Qt::Window);
-            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::updateHistory);
-            connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
+            historyDialog = new HistoryDialog(pattern, doc, this);
+            connect(this, &MainWindow::RefreshHistory, historyDialog.data(), &HistoryDialog::updateHistory);
+            connect(historyDialog.data(), &HistoryDialog::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
-                if (dialogHistory != nullptr)
+                if (historyDialog != nullptr)
                 {
-                    delete dialogHistory;
+                    delete historyDialog;
                 }
             });
-            // Fix issue #526. Dialog is not on top after selection second object on Mac.
-            dialogHistory->setWindowFlags(dialogHistory->windowFlags() | Qt::WindowStaysOnTopHint);
-            dialogHistory->show();
+            historyDialog->show();
         }
         else
         {
             ui->history_Action->setChecked(true);
-            dialogHistory->activateWindow();
+            historyDialog->activateWindow();
         }
     });
 

@@ -52,7 +52,7 @@
 #ifndef DIALOGS_H
 #define DIALOGS_H
 
-#include "dialoghistory.h"
+#include "history_dialog.h"
 #include "dialogvariables.h"
 #include "dialogpatternproperties.h"
 #include "dialognewpattern.h"

@@ -70,7 +70,7 @@ class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
 class DialogTool;
-class DialogHistory;
+class HistoryDialog;
 class CalculatorDialog;
 class DecimalChartDialog;
 class ShowInfoDialog;
@@ -289,7 +289,7 @@ private:
 
     QPointer<DialogVariables>         dialogTable;
     QSharedPointer<DialogTool>        dialogTool;
-    QPointer<DialogHistory>           dialogHistory;
+    QPointer<HistoryDialog>           historyDialog;
 
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
