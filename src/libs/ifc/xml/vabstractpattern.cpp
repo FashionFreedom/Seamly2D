@@ -2573,7 +2573,7 @@ void VAbstractPattern::deleteToolFromGroup(quint32 toolId)
       return;
     }
 
-    QDomElement group = deleteGroupItem(toolId, 0, groupId);
+    QDomElement group = removeGroupItem(toolId, 0, groupId);
 }
 
 /**
@@ -2595,7 +2595,7 @@ void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QS
     QString  listGroupName = list.value(0);
     groupId = groupsContainingItem.key(listGroupName);
 
-    QDomElement group = deleteGroupItem(toolId, objectId, groupId);
+    QDomElement group = removeGroupItem(toolId, objectId, groupId);
 
     //Add to new Group.
     QMap<quint32,QString> groupsNotContainingItem = getGroupsContainingItem(toolId, objectId, false);
@@ -2680,7 +2680,7 @@ QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, qui
  * @param objectId
  * @param groupId
  */
-QDomElement VAbstractPattern::deleteGroupItem(quint32 toolId, quint32 objectId, quint32 groupId)
+QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, quint32 groupId)
 {
     QDomElement group = elementById(groupId, TagGroup);
 

@@ -44,7 +44,7 @@
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vtools/undocommands/addgroup.h"
 #include "../vtools/undocommands/add_groupitem.h"
-#include "../vtools/undocommands/delete_groupitem.h"
+#include "../vtools/undocommands/remove_groupitem.h"
 
 #include <qcompilerdetection.h>
 #include <QAction>
@@ -188,32 +188,32 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
        actionShowPointName->setVisible(false);
     }
 
-    QAction *actionRemove = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
+    QAction *actionDelete = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Delete"));
     if (showRemove == RemoveOption::Enable)
     {
         if (ref == Referens::Follow)
         {
             if (_referens > 1)
             {
-                qCDebug(vTool, "Remove disabled. Tool has children.");
-                actionRemove->setEnabled(false);
+                qCDebug(vTool, "Delete disabled. Tool has children.");
+                actionDelete->setEnabled(false);
             }
             else
             {
-                qCDebug(vTool, "Remove enabled. Tool has no children.");
-                actionRemove->setEnabled(true);
+                qCDebug(vTool, "Delete enabled. Tool has no children.");
+                actionDelete->setEnabled(true);
             }
         }
         else
         {
-            qCDebug(vTool, "Remove enabled. Ignore referens value.");
-            actionRemove->setEnabled(true);
+            qCDebug(vTool, "Delete enabled. Ignore referens value.");
+            actionDelete->setEnabled(true);
         }
     }
     else
     {
-        qCDebug(vTool, "Remove disabled.");
-        actionRemove->setEnabled(false);
+        qCDebug(vTool, "Delete disabled.");
+        actionDelete->setEnabled(false);
     }
 
     // Add Group Item menu item
@@ -236,23 +236,23 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         }
     }
 
-    // Delete Group Item menu item
+    // Remove Group Item menu item
     QMap<quint32,QString> groupsContainingItem =  doc->getGroupsContainingItem(this->getId(), itemId, true);
     QActionGroup* actionDeleteGroupMenu = new QActionGroup(this);
 
     if(not groupsContainingItem.empty())
     {
-        QMenu *menuDeleteGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Delete Group Item"));
+        QMenu *menuRemoveGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Remove Group Item"));
 
         QStringList list = QStringList(groupsContainingItem.values());
         list.sort(Qt::CaseInsensitive);
 
         for(int i=0; i<list.count(); ++i)
         {
-            QAction *actionDeleteGroupItem = menuDeleteGroupItem->addAction(list[i]);
-            actionDeleteGroupMenu->addAction(actionDeleteGroupItem);
+            QAction *actionRemoveGroupItem = menuRemoveGroupItem->addAction(list[i]);
+            actionDeleteGroupMenu->addAction(actionRemoveGroupItem);
             const quint32 groupId = groupsContainingItem.key(list[i]);
-            actionDeleteGroupItem->setData(groupId);
+            actionRemoveGroupItem->setData(groupId);
             groupsContainingItem.remove(groupId);
         }
     }
@@ -276,7 +276,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
         m_dialog->show();
     }
-    else if (selectedAction == actionRemove)
+    else if (selectedAction == actionDelete)
     {
         qCDebug(vTool, "Deleting Object.");
         deleteTool(); // do not catch exception here
@@ -306,7 +306,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     else if (selectedAction->actionGroup() == actionDeleteGroupMenu)
     {
         quint32 groupId = selectedAction->data().toUInt();
-        QDomElement item = doc->deleteGroupItem(this->getId(), itemId, groupId);
+        QDomElement item = doc->removeGroupItem(this->getId(), itemId, groupId);
 
         VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
         SCASSERT(scene != nullptr)
@@ -315,8 +315,8 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
         VAbstractMainWindow *window = qobject_cast<VAbstractMainWindow *>(qApp->getMainWindow());
         SCASSERT(window != nullptr)
         {
-            DeleteGroupItem *command = new DeleteGroupItem(item, doc, groupId);
-            connect(command, &DeleteGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
+            RemoveGroupItem *command = new RemoveGroupItem(item, doc, groupId);
+            connect(command, &RemoveGroupItem::updateGroups, window, &VAbstractMainWindow::updateGroups);
             qApp->getUndoStack()->push(command);
         }
     }

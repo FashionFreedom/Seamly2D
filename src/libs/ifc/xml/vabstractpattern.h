@@ -240,7 +240,7 @@ public:
     void                           addToolToGroup(quint32 toolId, quint32 objectId, const QString &groupName );
 
     QDomElement                    addGroupItem(quint32 toolId, quint32 objectId, quint32 groupId);
-    QDomElement                    deleteGroupItem(quint32 toolId, quint32 objectId, quint32 groupId);
+    QDomElement                    removeGroupItem(quint32 toolId, quint32 objectId, quint32 groupId);
     bool                           isGroupEmpty(quint32 id);
 
     bool                           getGroupVisivility(quint32 id);

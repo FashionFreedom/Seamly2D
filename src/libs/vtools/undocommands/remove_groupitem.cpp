@@ -1,5 +1,5 @@
 /***************************************************************************
- **  @file   delete_groupitem.cpp
+ **  @file   remove_groupitem.cpp
  **  @author Douglas S Caskey
  **  @date   Mar 1, 2023
  **
@@ -22,7 +22,7 @@
  **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-#include "delete_groupitem.h"
+#include "remove_groupitem.h"
 
 #include <QDomNode>
 #include <QDomNodeList>
@@ -37,7 +37,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 
-DeleteGroupItem::DeleteGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent)
+RemoveGroupItem::RemoveGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent)
     : VUndoCommand(xml, doc, parent)
     , m_activeDrawName(doc->getActiveDraftBlockName())
 {
@@ -46,12 +46,12 @@ DeleteGroupItem::DeleteGroupItem(const QDomElement &xml, VAbstractPattern *doc, 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DeleteGroupItem::~DeleteGroupItem()
+RemoveGroupItem::~RemoveGroupItem()
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DeleteGroupItem::undo()
+void RemoveGroupItem::undo()
 {
     qCDebug(vUndo, "Undo delete group item");
     doc->changeActiveDraftBlock(m_activeDrawName);//Without this user will not see this change
@@ -91,7 +91,7 @@ void DeleteGroupItem::undo()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DeleteGroupItem::redo()
+void RemoveGroupItem::redo()
 {
     qCDebug(vUndo, "Redo add group item");
     doc->changeActiveDraftBlock(m_activeDrawName);//Without this user will not see this change

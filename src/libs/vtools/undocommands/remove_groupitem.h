@@ -1,5 +1,5 @@
 /***************************************************************************
- **  @file   delete_groupitem.h
+ **  @file   remove_groupitem.h
  **  @author Douglas S Caskey
  **  @date   Mar 1, 2023
  **
@@ -22,8 +22,8 @@
  **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
  **************************************************************************/
 
-#ifndef DELETE_GROUPITEM_H
-#define DELETE_GROUPITEM_H
+#ifndef REMOVE_GROUPITEM_H
+#define REMOVE_GROUPITEM_H
 
 #include <qcompilerdetection.h>
 #include <QDomElement>
@@ -34,12 +34,12 @@
 
 #include "vundocommand.h"
 
-class DeleteGroupItem : public VUndoCommand
+class RemoveGroupItem : public VUndoCommand
 {
     Q_OBJECT
 public:
-                  DeleteGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent = nullptr);
-    virtual      ~DeleteGroupItem();
+                  RemoveGroupItem(const QDomElement &xml, VAbstractPattern *doc, quint32 groupId, QUndoCommand *parent = nullptr);
+    virtual      ~RemoveGroupItem();
     virtual void  undo() Q_DECL_OVERRIDE;
     virtual void  redo() Q_DECL_OVERRIDE;
 
@@ -47,8 +47,8 @@ signals:
     void          updateGroups();
 
 private:
-                  Q_DISABLE_COPY(DeleteGroupItem)
+                  Q_DISABLE_COPY(RemoveGroupItem)
     const QString m_activeDrawName;
 };
 
-#endif // DELETE_GROUPITEM_H
+#endif // REMOVE_GROUPITEM_H
