@@ -622,6 +622,7 @@ void GroupsWidget::setAddGroupEnabled(bool value)
 
 void GroupsWidget::clear()
 {
+    ui->groups_TableWidget->setRowCount(0);
     ui->groups_TableWidget->clearContents();
     ui->groupItems_ListWidget->clear();
 }
