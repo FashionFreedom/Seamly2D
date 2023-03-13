@@ -728,24 +728,59 @@ void VToolOptionsPropertyBrowser::AddObjectProperty(Tool *tool, const QString &p
 template<class Tool>
 QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GOType objType)
 {
-
     quint32 toolId = tool->getId();
     QHash<quint32, QSharedPointer<VGObject>> objects;
 
-    QVector<VToolRecord> *history = qApp->getCurrentDocument()->getHistory();
-    for (qint32 i = 0; i<history->size(); ++i)
+    QVector<VToolRecord> history = qApp->getCurrentDocument()->getLocalHistory();
+    for (qint32 i = 0; i < history.size(); ++i)
     {
-        VToolRecord record = history->at(i);
-        quint32 id = record.getId();
-        if (id == toolId)
+        const VToolRecord record = history.at(i);
+        quint32 recId = record.getId();
+        if (recId != toolId)
         {
-            break;
+            switch (static_cast<int>(record.getTypeTool()))
+            {
+                case 45:    //Tool::Rotation
+                case 46:    //Tool::MirrorByLine
+                case 47:    //Tool::MirrorByAxis
+                case 48:    //Tool::Move
+                {
+                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId);
+                    for (qint32 j = 0; j < list.size(); ++j)
+                    {
+                        quint32 id = list.at(j);
+                            VToolRecord newRecord = VToolRecord(id, record.getTypeTool(),
+                                                        qApp->getCurrentDocument()->getActiveDraftBlockName());
+
+                        const QHash<quint32, QSharedPointer<VGObject> > *objs = m_data->DataGObjects();
+                        if (objs->contains(id)) //Avoid badId Get GObject only if not a line tool which is not an object
+                        {
+                            QSharedPointer<VGObject> obj = m_data->GetGObject(id);
+                            objects.insert(id, obj);
+                        }
+                    }
+                    break;
+                }
+                default:
+                {
+                    const QHash<quint32, QSharedPointer<VGObject> > *objs = m_data->DataGObjects();
+                    if (objs->contains(recId)) //Avoid badId Get GObject only if not a line tool which is not an object
+                    {
+                        QSharedPointer<VGObject> obj = m_data->GetGObject(recId);
+                        objects.insert(recId, obj);
+                    }
+                    break;
+                }
+            }
         }
-        QSharedPointer<VGObject> obj = m_data->GetGObject(id);
-        objects.insert(id, obj);
+        else
+        {
+            goto endLoop; //Copied objects upto selected tool - exit switch and for loops
+        }
     }
 
-    QMap<QString, quint32> list;
+endLoop:
+    QMap<QString, quint32> map;
     QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
     for (i = objects.constBegin(); i != objects.constEnd(); ++i)
     {
@@ -762,34 +797,34 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
                 case GOType::CubicBezierPath:
                     if (obj->getType() == objType)
                     {
-                        list.insert(obj->name(), i.key());
+                        map.insert(obj->name(), i.key());
                     }
                     break;
 
                 case GOType::Curve:
                     if (obj->getType() == GOType::Spline || obj->getType() == GOType::CubicBezier)
                     {
-                        list.insert(obj->name(), i.key());
+                        map.insert(obj->name(), i.key());
                     }
                     break;
 
                 case GOType::Path:
                     if (obj->getType() == GOType::SplinePath || obj->getType() == GOType::CubicBezierPath)
                     {
-                        list.insert(obj->name(), i.key());
+                        map.insert(obj->name(), i.key());
                     }
                     break;
 
                 case GOType::AllCurves:
                     if ((obj->getType() == GOType::Spline ||
-                        obj->getType() == GOType::SplinePath ||
-                        obj->getType() == GOType::CubicBezier ||
-                        obj->getType() == GOType::CubicBezierPath ||
-                        obj->getType() == GOType::Arc ||
-                        obj->getType() == GOType::EllipticalArc) &&
-                        obj->getMode() == Draw::Calculation)
+                         obj->getType() == GOType::SplinePath ||
+                         obj->getType() == GOType::CubicBezier ||
+                         obj->getType() == GOType::CubicBezierPath ||
+                         obj->getType() == GOType::Arc ||
+                         obj->getType() == GOType::EllipticalArc) &&
+                         obj->getMode() == Draw::Calculation)
                     {
-                        list.insert(obj->name(), i.key());
+                        map.insert(obj->name(), i.key());
                     }
                     break;
 
@@ -803,9 +838,9 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
 
     if (tool->type() == VToolMove::Type)
     {
-        list.insert("Center point", NULL_ID);
+        map.insert("Center point", NULL_ID);
     }
-    return list;
+    return map;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
