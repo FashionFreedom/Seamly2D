@@ -56,32 +56,6 @@
     </message>
 </context>
 <context>
-    <name>CommunityPage</name>
-    <message>
-        <source>Server</source>
-        <translation type="vanished">שרת</translation>
-    </message>
-    <message>
-        <source>Server name/IP</source>
-        <translation type="vanished">שם שרת/IP</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigurationPage</name>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">שמור</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="vanished">סנטימטרים</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">מילימטר</translation>
-    </message>
-</context>
-<context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
@@ -224,40 +198,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">נקודה ראשונה בקו</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">נקודה שנייה בקו</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -331,20 +273,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">רדיוס</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">ערך הרדיוס</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">נקודת מרכז</translation>
     </message>
     <message>
         <source>Error</source>
@@ -427,24 +357,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">רדיוס</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">ערך הרדיוס</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">נקודת מרכז</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -515,32 +429,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogBisector</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
@@ -696,18 +586,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Curve</source>
-        <translation type="vanished">עקומה</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -768,20 +646,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
     </message>
     <message>
         <source>Segment an arc</source>
@@ -827,24 +693,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">עקומה</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
     </message>
     <message>
         <source>Segmenting a simple curve</source>
@@ -890,24 +740,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSplinePath</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">עקומה</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
     </message>
     <message>
         <source>Segment a curved path</source>
@@ -970,25 +804,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogDetail</name>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">אפשרויות</translation>
-    </message>
-    <message>
-        <source>Width</source>
-        <translation type="vanished">רוחב</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">למחוק</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-</context>
-<context>
     <name>DialogEditWrongFormula</name>
     <message>
         <source>Edit formula</source>
@@ -1009,14 +824,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Measurements</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length of lines</source>
-        <translation type="vanished">אורך הקווים</translation>
-    </message>
-    <message>
-        <source>Length of curves</source>
-        <translation type="vanished">אורך העקומות</translation>
     </message>
     <message>
         <source>Hide empty measurements</source>
@@ -1213,28 +1020,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEndLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">נקודה ראשונה בשורה</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
     </message>
     <message>
         <source>Point at distance and angle</source>
@@ -1363,22 +1150,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">נקודה ראשונה בשורה</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">נקודה שנייה בשורה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>לבחור נקודה ראשונה</translation>
     </message>
@@ -1421,188 +1192,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Color:</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogHistory</name>
-    <message>
-        <source>History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool</source>
-        <translation>כלי</translation>
-    </message>
-    <message>
-        <source>%1 - Base point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1_%2 - Line from point %1 to point %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%3 - Point along line %1_%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - Point of shoulder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%3 - normal to line %1_%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%4 - bisector of angle %1_%2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%5 - intersection of lines %1_%2 and %3_%4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%4 - point of contact of arc with the center in point %1 and line %2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point of perpendicular from point %1 to line %2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Triangle: axis %1_%2, points %3 and %4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection %2 and %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection line %2_%3 and axis through point %4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection curve and axis through point %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of arcs intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of circles intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point from circle and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point from arc and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Correction the dart %1_%2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of curves intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="unfinished">עקומה</translation>
-    </message>
-    <message>
-        <source>Cubic bezier curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 with length %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spline path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cubic bezier curve path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - cut %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>curve path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Elliptical arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Find:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate objects around point %1. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror by line %1_%2. Suffix &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror by axis through %1 point. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move objects, rotate around point %1. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogIncrements</name>
-    <message>
-        <source>The calculated value</source>
-        <translation type="vanished">הערך המחושב</translation>
-    </message>
-    <message>
-        <source>Lines</source>
-        <translation type="vanished">קווים</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation type="vanished">קו</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">עקומה</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">רדיוס</translation>
     </message>
 </context>
 <context>
@@ -1942,10 +1531,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">מילימטר</translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>סנטימטרים</translation>
     </message>
@@ -2111,18 +1696,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLine</name>
     <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
-    </message>
-    <message>
         <source>Select second point</source>
         <translation>לבחור נקודה שנייה</translation>
     </message>
@@ -2150,20 +1723,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLineIntersect</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
         <source>First line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
     </message>
     <message>
         <source>Second line</source>
@@ -2215,14 +1776,6 @@ Apply settings anyway?</source>
     <message>
         <source>First point of line</source>
         <translation>נקודה ראשונה בשורה</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
     </message>
     <message>
         <source>Show line from first point to this point</source>
@@ -2502,10 +2055,6 @@ Apply settings anyway?</source>
         <translation>סנטימטרים</translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">מילימטר</translation>
-    </message>
-    <message>
         <source>Inches</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2527,10 +2076,6 @@ Apply settings anyway?</source>
     <message>
         <source>Centimeters</source>
         <translation>סנטימטרים</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">מילימטר</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -2560,32 +2105,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -2594,14 +2115,6 @@ Apply settings anyway?</source>
     <message>
         <source>Point along perpendicular</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">נקודה ראשונה בשורה</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">נקודה שנייה בשורה</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -2824,21 +2337,10 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPiecePath</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">למחוק</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Point from arc and tangent</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
     </message>
     <message>
         <source>Select an arc</source>
@@ -2870,33 +2372,10 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointFromCircleAndTangent</name>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">רדיוס</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfContact</name>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">רדיוס</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">ערך הרדיוס</translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
     </message>
     <message>
         <source>Select point of center of arc</source>
@@ -2956,18 +2435,7 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointOfIntersection</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
     <message>
         <source>Select second an arc</source>
         <translation type="unfinished"></translation>
@@ -2999,13 +2467,6 @@ Apply settings anyway?</source>
     <message>
         <source>Tool point of intersetion arcs</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogPointOfIntersectionCircles</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
     </message>
 </context>
 <context>
@@ -3123,17 +2584,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogSeamAllowance</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">למחוק</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">אפשרויות</translation>
-    </message>
-</context>
-<context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
@@ -3151,32 +2601,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">ערך האורך</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">סוג הקו</translation>
     </message>
     <message>
         <source>Select first point of line</source>
@@ -3280,14 +2706,6 @@ Apply settings anyway?</source>
 </context>
 <context>
     <name>DialogSpline</name>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
     <message>
         <source>Select last point of curve</source>
         <translation type="unfinished"></translation>
@@ -3550,22 +2968,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogTriangle</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">נקודה ראשונה בשורה</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
-    </message>
-    <message>
         <source>Select second point of axis</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3580,10 +2982,6 @@ Apply settings anyway?</source>
     <message>
         <source>Triangle tool</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">נקודה שנייה בשורה</translation>
     </message>
     <message>
         <source>Point label:</source>
@@ -4287,6 +3685,201 @@ Do you want to download it?</source>
     </message>
 </context>
 <context>
+    <name>HistoryDialog</name>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <source>Find:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decription</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Length and Angle from point %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line_%1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line from %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Line %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Perpendicular %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Bisector %1_%2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Lines %1_%2 and %3_%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radius &amp; Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radius &amp; Length %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect XY of points %1 and %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curve &amp; Axis through point %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Circle &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True Dart %1_%2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Elliptical with length %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation around point %1. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Line %1_%2. Suffix %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Axis through %1 point. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move - rotate around point %1. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Insert nodes</source>
@@ -4769,14 +4362,6 @@ Do you want to download it?</source>
     <message>
         <source>Show online help</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select first point</source>
-        <translation type="vanished">לבחור נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Select first point of line</source>
-        <translation type="vanished">לבחור נקודה ראשונה</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -6575,6 +6160,22 @@ Do you want to save your changes?</source>
         <source>Draft Block %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Zoom to point (Ctrl + Alt + P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -6981,10 +6582,6 @@ Do you want to save your changes?</source>
     <message>
         <source>hex Value</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Fill:</source>
@@ -7442,6 +7039,22 @@ Do you want to save your changes?</source>
         <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Seam Allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -7707,10 +7320,6 @@ Do you want to save your changes?</source>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
-        <source>Save</source>
-        <translation type="obsolete">שמור</translation>
-    </message>
-    <message>
         <source>Interval:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7753,10 +7362,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Centimeters</source>
         <translation type="unfinished">סנטימטרים</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="obsolete">מילימטר</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -8547,10 +8152,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Pattern label:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Piece label:</source>
@@ -10550,10 +10151,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VDrawTool</name>
     <message>
-        <source>Options</source>
-        <translation type="vanished">אפשרויות</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>למחוק</translation>
     </message>
@@ -10936,14 +10533,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VToolArc</name>
     <message>
-        <source>Length</source>
-        <translation type="obsolete">אורך</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">רדיוס</translation>
-    </message>
-    <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10966,14 +10555,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolArcWithLength</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">אורך</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">רדיוס</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -11011,13 +10592,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolCut</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">אורך</translation>
     </message>
 </context>
 <context>
@@ -11078,17 +10652,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VToolDetail</name>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">אפשרויות</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">למחוק</translation>
-    </message>
-</context>
-<context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
@@ -11097,14 +10660,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">אורך</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">רדיוס</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -11237,16 +10792,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">תווית הנקודה</translation>
-    </message>
-    <message>
         <source>Point at distance and angle</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">אורך</translation>
     </message>
     <message>
         <source>Point at distance along line</source>
@@ -11255,10 +10802,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Arc</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">רדיוס</translation>
     </message>
     <message>
         <source>Point along bisector</source>
@@ -11319,14 +10862,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point intersection curve and axis</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">נקודה ראשונה</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">נקודה שנייה</translation>
     </message>
     <message>
         <source>Arc with given length</source>
@@ -11657,17 +11192,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Rotation angle</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolSeamAllowance</name>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">אפשרויות</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">למחוק</translation>
     </message>
 </context>
 <context>

@@ -56,163 +56,6 @@
     </message>
 </context>
 <context>
-    <name>CommunityPage</name>
-    <message>
-        <source>Server</source>
-        <translation type="vanished">Server</translation>
-    </message>
-    <message>
-        <source>Server name/IP</source>
-        <translation type="vanished">Nama Server/IP</translation>
-    </message>
-    <message>
-        <source>Secure connection</source>
-        <translation type="vanished">Sambungan Aman</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation type="vanished">Setingan Proxy</translation>
-    </message>
-    <message>
-        <source>Use Proxy</source>
-        <translation type="vanished">Gunakan Proxy</translation>
-    </message>
-    <message>
-        <source>Proxy address</source>
-        <translation type="vanished">Alamat Proxy</translation>
-    </message>
-    <message>
-        <source>Proxy port</source>
-        <translation type="vanished">Saluran Proxy</translation>
-    </message>
-    <message>
-        <source>Proxy user</source>
-        <translation type="vanished">Pengguna Proxy</translation>
-    </message>
-    <message>
-        <source>User settings</source>
-        <translation type="vanished">Pengaturan Pengguna</translation>
-    </message>
-    <message>
-        <source>User Name</source>
-        <translation type="vanished">Nama Pengguna</translation>
-    </message>
-    <message>
-        <source>Save password</source>
-        <translation type="vanished">Simpan sandi</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Sandi</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Terapkan</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Batalkan</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">&amp;Ok</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">Dialog konfigurasi</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">Konfigurasi</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="vanished">Pola</translation>
-    </message>
-    <message>
-        <source>Community</source>
-        <translation type="vanished">Komunitas</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigurationPage</name>
-    <message>
-        <source>Setup user interface language updated and will be used the next time start</source>
-        <translation type="vanished">Pengaturan bahasa antarmuka pengguna diperbarui dan akan digunakan waktu mulai berikutnya</translation>
-    </message>
-    <message>
-        <source>Default unit updated and will be used the next pattern creation</source>
-        <translation type="vanished">Unit standar diperbarui dan akan digunakan pada pembuatan pola berikutnya</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Simpan</translation>
-    </message>
-    <message>
-        <source>Auto-save modified pattern</source>
-        <translation type="vanished">Simpan otomatis Pola yang telah dimodifikasi</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="vanished">minimal</translation>
-    </message>
-    <message>
-        <source>Interval:</source>
-        <translation type="vanished">Selang waktu:</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Bahasa</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">Bahasa GUI</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts</source>
-        <translation type="vanished">komponen pemisah desimal</translation>
-    </message>
-    <message>
-        <source>With OS options (%1)</source>
-        <translation type="vanished">dengan pilihan OS (%1)</translation>
-    </message>
-    <message>
-        <source>Default unit</source>
-        <translation type="vanished">Unit Standar</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="vanished">Centimeter</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimeter</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation type="vanished">Inchi</translation>
-    </message>
-    <message>
-        <source>Label language</source>
-        <translation type="vanished">label bahasa</translation>
-    </message>
-    <message>
-        <source>Send crash reports</source>
-        <translation type="vanished">Kirim laporan kerusakan</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="vanished">Kirim laporan kerusakan (disarankan)</translation>
-    </message>
-    <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Setelah setiap kerusakan Seamly2D mengumpulkan informasi yang dapat membantu kami memperbaiki suatu masalah. Kami tidak mengumpulkan informasi pribadi apapun. Temukan lebih lanjut tentang apa &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt; jenis informasi &lt;/a&gt; kami kumpulkan.</translation>
-    </message>
-</context>
-<context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
@@ -285,10 +128,6 @@ p, li { white-space: pre-wrap; }
         <translation>para kontributor</translation>
     </message>
     <message>
-        <source>Built on %3 at %4</source>
-        <translation type="vanished">Dibuat pada %3 at %4</translation>
-    </message>
-    <message>
         <source>Web site : %1</source>
         <translation>Situs web : %1</translation>
     </message>
@@ -357,65 +196,10 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogAboutTape</name>
-    <message>
-        <source>Built on %3 at %4</source>
-        <translation type="vanished">Dibuat pada %3 at %4</translation>
-    </message>
-    <message>
-        <source>Web site : %1</source>
-        <translation type="vanished">Situs web : %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation type="vanished">Tidak dapat membuka peramban bawaan Anda</translation>
-    </message>
-    <message>
-        <source>Built on %1 at %2</source>
-        <translation type="obsolete">Dibuat pada %3 at %2 {1 ?}</translation>
-    </message>
-</context>
-<context>
     <name>DialogAlongLine</name>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Titik pertama dari baris</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">titik kedua dari baris</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik pertama ke titik ini</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -489,40 +273,8 @@ p, li { white-space: pre-wrap; }
         <translation>busur</translation>
     </message>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">Radius</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Nilai radius</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan penuh dalam kotak pesa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">sudut pertama</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">nilai dari sudut pertama</translation>
-    </message>
-    <message>
-        <source>Second angle</source>
-        <translation type="vanished">sudut kedua</translation>
-    </message>
-    <message>
-        <source>Value of second angle</source>
-        <translation type="vanished">nilai dari sudut kedua</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">titik tengah</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">pilih titik tengah dari busur</translation>
     </message>
     <message>
         <source>Error</source>
@@ -605,36 +357,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">Radius</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Nilai radius</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">sudut pertama</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">nilai dari sudut pertama</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">titik tengah</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">pilih titik tengah dari busur</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -705,52 +429,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogBisector</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Titik pertama dari sudut</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">titik kedua dari sudut</translation>
-    </message>
-    <message>
-        <source>Third point</source>
-        <translation type="vanished">titik ketiga</translation>
-    </message>
-    <message>
-        <source>Third point of angle</source>
-        <translation type="vanished">titik ketiga dari sudut</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
-        <source>Show line from second point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik kedua ke titik ini</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
@@ -902,36 +582,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
-        <source>Angle</source>
-        <translation type="vanished">sudut</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">nilai dari sudut</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan penuh perhitungan dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Axis point</source>
-        <translation type="vanished">titik sumbu</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">kurva</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik pertama ke titik ini</translation>
     </message>
     <message>
         <source>Select axis point</source>
@@ -994,24 +646,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">busur</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
     </message>
     <message>
         <source>Segment an arc</source>
@@ -1057,28 +693,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">kurva</translation>
-    </message>
-    <message>
-        <source>Selected curve</source>
-        <translation type="vanished">kurva yang telah dipilih</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
     </message>
     <message>
         <source>Segmenting a simple curve</source>
@@ -1124,28 +740,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSplinePath</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">kurva</translation>
-    </message>
-    <message>
-        <source>Selected curve path</source>
-        <translation type="vanished">jalur kurva yang telah dipilih</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
     </message>
     <message>
         <source>Segment a curved path</source>
@@ -1208,57 +804,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogDetail</name>
-    <message>
-        <source>Detail</source>
-        <translation type="vanished">rincial</translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <translation type="vanished">cm</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">pilihan</translation>
-    </message>
-    <message>
-        <source>Name of detail</source>
-        <translation type="vanished">nama rincian</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="vanished">kampuh</translation>
-    </message>
-    <message>
-        <source>Width</source>
-        <translation type="vanished">lebar</translation>
-    </message>
-    <message>
-        <source>Closed</source>
-        <translation type="vanished">tertutup</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">hapus</translation>
-    </message>
-</context>
-<context>
     <name>DialogEditWrongFormula</name>
     <message>
         <source>Edit formula</source>
         <translation>edit rumus</translation>
     </message>
     <message>
-        <source>Formula</source>
-        <translation type="vanished">rumus</translation>
-    </message>
-    <message>
         <source>Insert variable into formula</source>
         <translation>sisipkan variabel ke dalam rumus</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">nilai dari sudut pertama</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1269,32 +822,8 @@ p, li { white-space: pre-wrap; }
         <translation>masukan data</translation>
     </message>
     <message>
-        <source>Size and height</source>
-        <translation type="vanished">ukuran dan panjang</translation>
-    </message>
-    <message>
         <source>Measurements</source>
         <translation>pengukuran</translation>
-    </message>
-    <message>
-        <source>Increments</source>
-        <translation type="vanished">tambahan</translation>
-    </message>
-    <message>
-        <source>Length of lines</source>
-        <translation type="vanished">panjang garis</translation>
-    </message>
-    <message>
-        <source>Length of arcs</source>
-        <translation type="vanished">panjang busur</translation>
-    </message>
-    <message>
-        <source>Length of curves</source>
-        <translation type="vanished">Panjang kurva</translation>
-    </message>
-    <message>
-        <source>Angle of lines</source>
-        <translation type="vanished">Sudut garis</translation>
     </message>
     <message>
         <source>Hide empty measurements</source>
@@ -1491,40 +1020,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEndLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">sudut</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">nilai dari sudut</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Titik pertama dari baris</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik pertama ke titik ini</translation>
     </message>
     <message>
         <source>Point at distance and angle</source>
@@ -1653,22 +1150,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Titik pertama dari baris</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">titik kedua dari baris</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1711,200 +1192,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Color:</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogHistory</name>
-    <message>
-        <source>History</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - Base point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1_%2 - Line from point %1 to point %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%3 - Point along line %1_%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - Point of shoulder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%3 - normal to line %1_%2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%4 - bisector of angle %1_%2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%5 - intersection of lines %1_%2 and %3_%4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%4 - point of contact of arc with the center in point %1 and line %2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point of perpendicular from point %1 to line %2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Triangle: axis %1_%2, points %3 and %4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection %2 and %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection line %2_%3 and axis through point %4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection curve and axis through point %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of arcs intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of circles intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point from circle and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point from arc and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Correction the dart %1_%2_%3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - point of curves intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="unfinished">kurva</translation>
-    </message>
-    <message>
-        <source>Cubic bezier curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="unfinished">busur</translation>
-    </message>
-    <message>
-        <source>%1 with length %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spline path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cubic bezier curve path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - cut %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>curve path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Elliptical arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Find:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate objects around point %1. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror by line %1_%2. Suffix &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror by axis through %1 point. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move objects, rotate around point %1. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogIncrements</name>
-    <message>
-        <source>Increments</source>
-        <translation type="vanished">tambahan</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Nama</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">kurva</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">busur</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">sudut</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Radius</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">rumus</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2244,10 +1531,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimeter</translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Centimeter</translation>
     </message>
@@ -2413,22 +1696,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLine</name>
     <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik pertama ke titik ini</translation>
-    </message>
-    <message>
         <source>Select second point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2456,20 +1723,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLineIntersect</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
         <source>First line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
     </message>
     <message>
         <source>Second line</source>
@@ -2515,32 +1770,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>Angle</source>
-        <translation type="vanished">sudut</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">nilai dari sudut</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Axis point</source>
-        <translation type="vanished">titik sumbu</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Titik pertama dari baris</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
     </message>
     <message>
         <source>Show line from first point to this point</source>
@@ -2820,10 +2055,6 @@ Apply settings anyway?</source>
         <translation>Centimeter</translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimeter</translation>
-    </message>
-    <message>
         <source>Inches</source>
         <translation>Inchi</translation>
     </message>
@@ -2839,20 +2070,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNewPattern</name>
     <message>
-        <source>Pattern piece name</source>
-        <translation type="vanished">Nama potongan pola</translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Centimeters</source>
         <translation>Centimeter</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimeter</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -2882,36 +2105,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik pertama ke titik ini</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -2920,14 +2115,6 @@ Apply settings anyway?</source>
     <message>
         <source>Point along perpendicular</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Titik pertama dari baris</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">titik kedua dari baris</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -2985,16 +2172,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogPatternProperties</name>
     <message>
-        <source>Author name</source>
-        <translation type="vanished">Nama Pembuat</translation>
-    </message>
-    <message>
         <source>Pattern description</source>
         <translation>Keterangan Pola</translation>
-    </message>
-    <message>
-        <source>For technical notes.</source>
-        <translation type="vanished">Untuk catatan teknis.</translation>
     </message>
     <message>
         <source>Heights and Sizes</source>
@@ -3158,37 +2337,10 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPiecePath</name>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">kampuh</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">hapus</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="obsolete">sudut</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Point from arc and tangent</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">busur</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">pilih titik tengah dari busur</translation>
     </message>
     <message>
         <source>Select an arc</source>
@@ -3220,45 +2372,10 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointFromCircleAndTangent</name>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Radius</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">pilih titik tengah dari busur</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation type="vanished">Radius:</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfContact</name>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Radius</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Nilai radius</translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
     </message>
     <message>
         <source>Select point of center of arc</source>
@@ -3318,26 +2435,7 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointOfIntersection</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Titik pertama dari sudut</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">titik kedua dari sudut</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
     <message>
         <source>Select second an arc</source>
         <translation type="unfinished"></translation>
@@ -3369,21 +2467,6 @@ Apply settings anyway?</source>
     <message>
         <source>Tool point of intersetion arcs</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogPointOfIntersectionCircles</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">pilih titik tengah dari busur</translation>
     </message>
 </context>
 <context>
@@ -3427,10 +2510,6 @@ Apply settings anyway?</source>
 </context>
 <context>
     <name>DialogPreferences</name>
-    <message>
-        <source>Configuration</source>
-        <translation type="obsolete">Konfigurasi</translation>
-    </message>
     <message>
         <source>Pattern</source>
         <translation type="unfinished">Pola</translation>
@@ -3505,17 +2584,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogSeamAllowance</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">hapus</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">pilihan</translation>
-    </message>
-</context>
-<context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
@@ -3533,36 +2601,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Nilai panjang</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tampilkan perhitungan  penuh dalam kotak pesan&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
-    <message>
-        <source>Third point</source>
-        <translation type="vanished">titik ketiga</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Jenis baris</translation>
     </message>
     <message>
         <source>Select first point of line</source>
@@ -3666,14 +2706,6 @@ Apply settings anyway?</source>
 </context>
 <context>
     <name>DialogSpline</name>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
     <message>
         <source>Select last point of curve</source>
         <translation type="unfinished"></translation>
@@ -3855,13 +2887,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogTapePreferences</name>
-    <message>
-        <source>Configuration</source>
-        <translation type="obsolete">Konfigurasi</translation>
-    </message>
-</context>
-<context>
     <name>DialogTool</name>
     <message>
         <source>Error</source>
@@ -3943,22 +2968,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogTriangle</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Titik pertama dari baris</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
-    </message>
-    <message>
         <source>Select second point of axis</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3973,10 +2982,6 @@ Apply settings anyway?</source>
     <message>
         <source>Triangle tool</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">titik kedua dari baris</translation>
     </message>
     <message>
         <source>Point label:</source>
@@ -4012,22 +3017,6 @@ Apply settings anyway?</source>
     <message>
         <source>True darts</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Titik pertama dari sudut</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">titik kedua dari sudut</translation>
-    </message>
-    <message>
-        <source>Third point of angle</source>
-        <translation type="vanished">titik ketiga dari sudut</translation>
-    </message>
-    <message>
-        <source>Show line from second point to this point</source>
-        <translation type="vanished">Tampilkan garis dari titik kedua ke titik ini</translation>
     </message>
     <message>
         <source>Select the second base point</source>
@@ -4696,6 +3685,201 @@ Do you want to download it?</source>
     </message>
 </context>
 <context>
+    <name>HistoryDialog</name>
+    <message>
+        <source>History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nama</translation>
+    </message>
+    <message>
+        <source>Decription</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Length and Angle from point %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line_%1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line from %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Line %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Perpendicular %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Bisector %1_%2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Lines %1_%2 and %3_%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radius &amp; Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radius &amp; Length %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect XY of points %1 and %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curve &amp; Axis through point %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Circle &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True Dart %1_%2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Elliptical with length %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation around point %1. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Line %1_%2. Suffix %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Axis through %1 point. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move - rotate around point %1. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Insert nodes</source>
@@ -5088,10 +4272,6 @@ Do you want to download it?</source>
         <translation>busur</translation>
     </message>
     <message>
-        <source>Detail</source>
-        <translation type="vanished">rincial</translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5182,10 +4362,6 @@ Do you want to download it?</source>
     <message>
         <source>Show online help</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">pilih titik tengah dari busur</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -6985,6 +6161,22 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <source>Draft Block %1</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Zoom to point (Ctrl + Alt + P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7228,13 +6420,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>move spline path</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PathsTab</name>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">kampuh</translation>
     </message>
 </context>
 <context>
@@ -7855,6 +7040,22 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Seam Allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -8120,20 +7321,8 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
-        <source>Save</source>
-        <translation type="obsolete">Simpan</translation>
-    </message>
-    <message>
-        <source>Auto-save modified pattern</source>
-        <translation type="obsolete">Simpan otomatis Pola yang telah dimodifikasi</translation>
-    </message>
-    <message>
         <source>Interval:</source>
         <translation type="unfinished">Selang waktu:</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="obsolete">minimal</translation>
     </message>
     <message>
         <source>Language</source>
@@ -8164,14 +7353,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send crash reports</source>
-        <translation type="obsolete">Kirim laporan kerusakan</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="obsolete">Kirim laporan kerusakan (disarankan)</translation>
-    </message>
-    <message>
         <source>With OS options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8182,10 +7363,6 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
     <message>
         <source>Centimeters</source>
         <translation type="unfinished">Centimeter</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="obsolete">Milimeter</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -10118,76 +9295,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>TabLabels</name>
-    <message>
-        <source>Detail</source>
-        <translation type="obsolete">rincial</translation>
-    </message>
-</context>
-<context>
-    <name>TabPassmarks</name>
-    <message>
-        <source>Angle</source>
-        <translation type="obsolete">sudut</translation>
-    </message>
-</context>
-<context>
-    <name>TabPaths</name>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">kampuh</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Terapkan</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Batalkan</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">&amp;Ok</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">Dialog konfigurasi</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">Konfigurasi</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Bahasa</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">Bahasa GUI</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts</source>
-        <translation type="vanished">komponen pemisah desimal</translation>
-    </message>
-    <message>
-        <source>With OS options (%1)</source>
-        <translation type="vanished">dengan pilihan OS (%1)</translation>
-    </message>
-</context>
-<context>
-    <name>TapePreferencesConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Bahasa</translation>
-    </message>
-</context>
-<context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
@@ -10403,10 +9510,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VAbstractPieceData</name>
-    <message>
-        <source>Detail</source>
-        <translation type="obsolete">rincial</translation>
-    </message>
     <message>
         <source>Piece</source>
         <translation type="unfinished"></translation>
@@ -11049,10 +10152,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VDrawTool</name>
     <message>
-        <source>Options</source>
-        <translation type="vanished">pilihan</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>hapus</translation>
     </message>
@@ -11081,10 +10180,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VFormulaProperty</name>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">rumus</translation>
-    </message>
     <message>
         <source>Formula:</source>
         <translation type="unfinished"></translation>
@@ -11340,10 +10435,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Detail</source>
-        <translation type="obsolete">rincial</translation>
-    </message>
-    <message>
         <source>Unnamed path</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11443,14 +10534,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VToolArc</name>
     <message>
-        <source>Length</source>
-        <translation type="obsolete">panjang</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Radius</translation>
-    </message>
-    <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11473,14 +10556,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolArcWithLength</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">panjang</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Radius</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -11518,13 +10593,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolCut</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">panjang</translation>
     </message>
 </context>
 <context>
@@ -11585,17 +10653,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VToolDetail</name>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">pilihan</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">hapus</translation>
-    </message>
-</context>
-<context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
@@ -11604,14 +10661,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">panjang</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Radius</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -11744,20 +10793,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">label titik</translation>
-    </message>
-    <message>
         <source>Point at distance and angle</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">panjang</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">sudut</translation>
     </message>
     <message>
         <source>Point at distance along line</source>
@@ -11766,18 +10803,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Arc</source>
         <translation>busur</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Radius</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">sudut pertama</translation>
-    </message>
-    <message>
-        <source>Second angle</source>
-        <translation type="vanished">sudut kedua</translation>
     </message>
     <message>
         <source>Point along bisector</source>
@@ -11838,14 +10863,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Point intersection curve and axis</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Titik pertama</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">titik kedua</translation>
     </message>
     <message>
         <source>Arc with given length</source>
@@ -12176,17 +11193,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Rotation angle</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolSeamAllowance</name>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">pilihan</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">hapus</translation>
     </message>
 </context>
 <context>
