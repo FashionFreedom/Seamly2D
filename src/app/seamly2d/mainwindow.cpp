@@ -241,7 +241,6 @@ MainWindow::MainWindow(QWidget *parent)
     WindowsLocale();
 
     connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
-    ui->layoutPages_DockWidget->setVisible(false);
 
     connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
     connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
@@ -3469,15 +3468,8 @@ void MainWindow::showDraftMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->layoutPages_DockWidget->blockSignals(true);
-        ui->layoutPages_DockWidget->setVisible(false);
-        ui->layoutPages_DockWidget->blockSignals(false);
-
-        ui->toolProperties_DockWidget->setVisible(isToolOptionsDockVisible);
-
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        ui->groups_DockWidget->setVisible(isGroupsDockVisible);
     }
     else
     {
@@ -3554,16 +3546,8 @@ void MainWindow::showPieceMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-
-        ui->layoutPages_DockWidget->blockSignals(true);
-        ui->layoutPages_DockWidget->setVisible(false);
-        ui->layoutPages_DockWidget->blockSignals(false);
-
-        ui->toolProperties_DockWidget->setVisible(isToolOptionsDockVisible);
-
         ui->groups_DockWidget->setWidget(patternPiecesWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        ui->groups_DockWidget->setVisible(isGroupsDockVisible);
 
         helpLabel->setText("");
     }
@@ -3676,16 +3660,6 @@ void MainWindow::showLayoutMode(bool checked)
             gradationSizesLabel->setVisible(false);
             gradationSizes->setVisible(false);
         }
-
-        ui->layoutPages_DockWidget->setVisible(isLayoutsDockVisible);
-
-        ui->toolProperties_DockWidget->blockSignals(true);
-        ui->toolProperties_DockWidget->setVisible(false);
-        ui->toolProperties_DockWidget->blockSignals(false);
-
-        ui->groups_DockWidget->blockSignals(true);
-        ui->groups_DockWidget->setVisible(false);
-        ui->groups_DockWidget->blockSignals(false);
 
         showLayoutPages(ui->listWidget->currentRow());
 
@@ -4269,7 +4243,6 @@ void MainWindow::SetEnableWidgets(bool enable)
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
     //enable group actions
-    ui->groups_DockWidget->setEnabled(enable && designStage);
     groupsWidget->setAddGroupEnabled(enable && draftStage);
 
     //enable tool menu actions
@@ -4293,6 +4266,9 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->shortcuts_Action->setEnabled(enable);
 
     //enable dock widget actions
+    ui->groups_DockWidget->setEnabled(enable && designStage);
+    ui->toolProperties_DockWidget->setEnabled(enable && draftStage);
+    ui->layoutPages_DockWidget->setEnabled(enable && layoutStage);
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
     actionDockWidgetGroups->setEnabled(enable && designStage);
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
@@ -4823,9 +4799,9 @@ void MainWindow::ReadSettings()
     ToolBarStyles();
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
-    isGroupsDockVisible = ui->groups_DockWidget->isVisible();
-    isLayoutsDockVisible = ui->layoutPages_DockWidget->isVisible();
-    isToolboxDockVisible = ui->layoutPages_DockWidget->isVisible();
+    isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
+    isLayoutsDockVisible     = ui->layoutPages_DockWidget->isVisible();
+    isToolboxDockVisible     = ui->toolbox_DockWidget->isVisible();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5245,6 +5221,9 @@ void MainWindow::AddDocks()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitDocksContain()
 {
+    setTabPosition(Qt::RightDockWidgetArea, QTabWidget::West);
+    setTabPosition(Qt::LeftDockWidgetArea, QTabWidget::East);
+
     qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
     toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
@@ -5255,7 +5234,6 @@ void MainWindow::InitDocksContain()
     groupsWidget = new GroupsWidget(pattern, doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
     connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
-
 
     patternPiecesWidget = new PiecesWidget(pattern, doc, this);
     connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);

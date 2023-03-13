@@ -454,7 +454,7 @@
     </size>
    </property>
    <property name="features">
-    <set>QDockWidget::DockWidgetClosable</set>
+    <set>QDockWidget::AllDockWidgetFeatures</set>
    </property>
    <property name="allowedAreas">
     <set>Qt::RightDockWidgetArea</set>
@@ -2312,8 +2312,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>83</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2446,8 +2446,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>83</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -4665,8 +4665,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>
