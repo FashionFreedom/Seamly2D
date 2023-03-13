@@ -552,6 +552,7 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
 
         item->setData(Qt::UserRole, i.key());
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip(tr("Show which groups in the list are visible"));
         ui->groups_TableWidget->setItem(currentRow, 0, item);
 
         // Add locked item
@@ -569,6 +570,7 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
 
         item->setData(Qt::UserRole, i.key());
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip(tr("Show which groups in the list are locked"));
         ui->groups_TableWidget->setItem(currentRow, 1, item);
 
         // Add Edit Item
@@ -579,6 +581,7 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
             item->setIcon(QIcon("://icon/32x32/history.png"));
             item->setData(Qt::UserRole, i.key());
             item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+            item->setToolTip(tr("Show which groups contain objects"));
             ui->groups_TableWidget->setItem(currentRow, 2, item);
         }
 
@@ -588,6 +591,7 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
         item = new QTableWidgetItem(data.name);
         item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         item->setIcon(QIcon(pixmap));
+        item->setToolTip(tr("Group color and name"));
         ui->groups_TableWidget->setItem(currentRow, 3, item);
 
         ++i;
@@ -914,30 +918,32 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::Rotation:
                 {
                     iconFileName = ":/toolicon/32x32/rotation.png";
-                    objName = tr("Rotation");
-                    //QString name = getPointName(toolId);
-                    //objName = tr("%1 - Rotation").arg(name);
+                    objName = tr("Rotation - Suffix %1")
+                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
                     break;
                 }
 
                 case Tool::Move:
                 {
                     iconFileName = ":/toolicon/32x32/move.png";
-                    objName = tr("Move");
+                    objName = tr("Move - Suffix %1")
+                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
                     break;
                 }
 
                 case Tool::MirrorByLine:
                 {
                     iconFileName = ":/toolicon/32x32/mirror_by_line.png";
-                    objName = tr("Mirror by line");
+                    objName = tr("Mirror by line - Suffix %1")
+                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
                     break;
                 }
 
                 case Tool::MirrorByAxis:
                 {
                     iconFileName = ":/toolicon/32x32/mirror_by_axis.png";
-                    objName = tr("Mirror by axis");
+                    objName = tr("Mirror by axis - Suffix %1")
+                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
                     break;
                 }
                 //Because "history" not only shows history of pattern, but helps restore current data for each pattern's

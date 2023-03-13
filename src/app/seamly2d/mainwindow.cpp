@@ -3478,8 +3478,6 @@ void MainWindow::showDraftMode(bool checked)
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
         ui->groups_DockWidget->setVisible(isGroupsDockVisible);
-        ui->groups_DockWidget->setToolTip(tr("Show which groups in the list are visible"));
-
     }
     else
     {

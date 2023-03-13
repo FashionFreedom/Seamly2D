@@ -23,6 +23,9 @@
    <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
   </property>
+  <property name="toolTip">
+   <string>Group Manager</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="group_HorizontalLayout">
@@ -197,6 +200,9 @@
    </item>
    <item>
     <widget class="QTableWidget" name="groups_TableWidget">
+     <property name="toolTip">
+      <string>Group list</string>
+     </property>
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>
@@ -252,6 +258,9 @@
        <height>16777215</height>
       </size>
      </property>
+     <property name="toolTip">
+      <string>Group object list</string>
+     </property>
      <property name="title">
       <string>Objects</string>
      </property>
@@ -281,6 +290,9 @@
           <family>MS Shell Dlg 2</family>
           <pointsize>10</pointsize>
          </font>
+        </property>
+        <property name="toolTip">
+         <string>Double clicking zooms to object.</string>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color: rgb(230, 230, 230);</string>
