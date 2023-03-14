@@ -36,5 +36,5 @@ LANGUAGES += \
     el_GR
 
 for(lang, LANGUAGES) {
-    TRANSLATIONS += seamly2d_$${lang}.ts
+    TRANSLATIONS += measurements_$${lang}.ts
 }

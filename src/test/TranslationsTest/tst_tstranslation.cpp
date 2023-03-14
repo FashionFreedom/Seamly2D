@@ -142,7 +142,7 @@ void TST_TSTranslation::CheckEmptyToolButton_data()
     QTest::addColumn<QString>("source");
     QTest::addColumn<QDomElement>("message");
 
-    const QString fileName = QStringLiteral("seamly2d.ts");
+    const QString fileName = QStringLiteral("seamly2d_en_US.ts");
     const QDomNodeList messages = LoadTSFile(fileName);
     if (messages.isEmpty())
     {
@@ -209,8 +209,8 @@ void TST_TSTranslation::CheckPlaceMarkerExist_data()
 
     {
         QDir dir(TS_DIR);
-        const QStringList fileNames = dir.entryList(QStringList("seamly2d*.ts"));
-        QVERIFY2(locales.size() == fileNames.size()-1, "Unexpected count of files.");
+        const QStringList fileNames = dir.entryList(QStringList("seamly2d_*.ts"));
+        QVERIFY2(locales.size() == fileNames.size(), "Unexpected count of files.");
     }
 
     QTest::addColumn<QString>("source");
@@ -321,8 +321,8 @@ void TST_TSTranslation::TestPunctuation_data()
 
     {
         QDir dir(TS_DIR);
-        const QStringList fileNames = dir.entryList(QStringList("seamly2d*.ts"));
-        QVERIFY2(locales.size() == fileNames.size()-1, "Unexpected count of files.");
+        const QStringList fileNames = dir.entryList(QStringList("seamly2d_*.ts"));
+        QVERIFY2(locales.size() == fileNames.size(), "Unexpected count of files.");
     }
 
     QTest::addColumn<QString>("locale");
@@ -432,8 +432,8 @@ void TST_TSTranslation::TestHTMLTags_data()
 
     {
         QDir dir(TS_DIR);
-        const QStringList fileNames = dir.entryList(QStringList("seamly2d*.ts"));
-        QVERIFY2(locales.size() == fileNames.size()-1, "Unexpected count of files.");
+        const QStringList fileNames = dir.entryList(QStringList("seamly2d_*.ts"));
+        QVERIFY2(locales.size() == fileNames.size(), "Unexpected count of files.");
     }
 
     QTest::addColumn<QString>("source");
