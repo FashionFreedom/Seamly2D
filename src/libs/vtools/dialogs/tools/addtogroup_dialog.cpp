@@ -29,6 +29,7 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "../tools/dialogtool.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vtools/undocommands/addgroup.h"
 
@@ -41,6 +42,7 @@ AddToGroupDialog::AddToGroupDialog(VContainer *data, const quint32 &toolId, QWid
     , ui(new Ui::AddToGroupDialog)
     , m_doc(qApp->getCurrentDocument())
     , m_groupData()
+    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -107,6 +109,7 @@ void  AddToGroupDialog::SelectedObject(bool selected, quint32 object, quint32 to
     if (selected)
     {
         m_groupData.insert(object, tool);
+        m_beep->play();
     }
     else
     {

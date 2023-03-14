@@ -32,6 +32,7 @@
 #include <QMap>
 #include <QMetaObject>
 #include <QObject>
+#include <QSound>
 #include <QString>
 #include <QtGlobal>
 
@@ -66,6 +67,7 @@ private:
     Ui::AddToGroupDialog     *ui;
     VAbstractPattern         *m_doc;
     QMap<quint32, quint32>    m_groupData;
+    QSound                   *m_beep;
 };
 
 #endif // ADD_TO_GROUP_DIALOG_H
