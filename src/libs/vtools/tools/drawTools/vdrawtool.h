@@ -222,7 +222,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     if(not groupsNotContainingItem.empty())
     {
-        QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.PNG"), tr("Insert Group Item"));
+        QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.PNG"), tr("Add Group Object"));
         QStringList list = QStringList(groupsNotContainingItem.values());
         list.sort(Qt::CaseInsensitive);
 
@@ -242,7 +242,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     if(not groupsContainingItem.empty())
     {
-        QMenu *menuRemoveGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Remove Group Item"));
+        QMenu *menuRemoveGroupItem = menu.addMenu(QIcon("://icon/32x32/remove.png"), tr("Remove Group Object"));
 
         QStringList list = QStringList(groupsContainingItem.values());
         list.sort(Qt::CaseInsensitive);

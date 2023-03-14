@@ -422,8 +422,8 @@ void GroupsWidget::editGroup()
         m_doc->setGroupLineWeight(groupId, groupLineWeight);
 
         updateGroups();
-        ui->groups_TableWidget->blockSignals(false);
     }
+    ui->groups_TableWidget->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -993,6 +993,12 @@ quint32 GroupsWidget::attrUInt(const QDomElement &domElement, const QString &nam
     return m_doc->GetParametrUInt(domElement, name, "0");
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getObjName get the name of the graphics object.
+ * @param toolId  Id of the tool the object belongs to;
+ * @return name of object
+ */
 QString GroupsWidget::getObjName(quint32 toolId)
 {
     try
@@ -1010,7 +1016,11 @@ QString GroupsWidget::getObjName(quint32 toolId)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void GroupsWidget::groupItemContextMenu(const QPoint &pos)
+/**
+ * @brief ContextMenu show context menu for group objects.
+ * @param pos Mouse of right click;
+ */
+ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
 {
     const quint32 groupId = getGroupId();
     const int row = ui->groupItems_ListWidget->currentRow();
@@ -1030,7 +1040,7 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
 
     if(!groupsNotContainingItem.empty())
     {
-        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/32x32/list-move_32.png"), tr("Move to group"));
+        QMenu *menuMoveGroupItem = menu.addMenu(QIcon("://icon/32x32/list-move_32.png"), tr("Move Group Object"));
         QStringList list = QStringList(groupsNotContainingItem.values());
         list.sort(Qt::CaseInsensitive);
 
@@ -1040,11 +1050,10 @@ void GroupsWidget::groupItemContextMenu(const QPoint &pos)
             actionMoveGroupMenu->addAction(actionMoveGroupItem);
             const quint32 groupId = groupsNotContainingItem.key(list[i]);
             actionMoveGroupItem->setData(groupId);
-            //groupsNotContainingItem.remove(groupId);   // delete any duplicate groups
         }
     }
     // Add Remove Group Item menu
-    QAction *actionRemove = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Remove Group Item"));
+    QAction *actionRemove = menu.addAction(QIcon::fromTheme("edit-delete"), tr("Remove Group Object"));
 
     QAction *selectedAction = menu.exec(ui->groupItems_ListWidget->viewport()->mapToGlobal(pos));
     if(selectedAction == nullptr)

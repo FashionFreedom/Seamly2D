@@ -1379,7 +1379,7 @@ void MainWindow::handleGroupTool(bool checked)
                                "Press <b>ENTER</b> to finish group creation ")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButton<EditGroupDialog>
+    SetToolButton<AddToGroupDialog>
     (
         checked,
         Tool::Group,
@@ -1395,21 +1395,12 @@ void MainWindow::ClosedEditGroupDialog(int result)
     SCASSERT(dialogTool != nullptr)
     if (result == QDialog::Accepted)
     {
-        QSharedPointer<EditGroupDialog> dialog = dialogTool.objectCast<EditGroupDialog>();
+        QSharedPointer<AddToGroupDialog> dialog = dialogTool.objectCast<AddToGroupDialog>();
         SCASSERT(dialog != nullptr)
-        QDomElement group = doc->createGroup(VContainer::getNextId(), dialog->getName(), dialog->getColor(),
-                                                   dialog->getLineType(), dialog->getLineWeight(),
-                                                   dialog->getGroupData());
 
-        //const QString gname = dialog->getName();
-        //group = doc->addGroupItems(gname, dialog->getGroupData());
-
-        if (!group.isNull())
-        {
-            AddGroup *addGroup = new AddGroup(group, doc);
-            connect(addGroup, &AddGroup::updateGroups, groupsWidget, &GroupsWidget::updateGroups);
-            qApp->getUndoStack()->push(addGroup);
-        }
+        QString gName = dialog->getName();
+        QMap<quint32, quint32>  gData = dialog->getGroupData();
+        QDomElement group = doc->addGroupItems(gName, gData);
     }
     handleArrowTool(true);
 }
@@ -2919,7 +2910,7 @@ void MainWindow::handleOperationsMenu()
     qCDebug(vMainWindow, "Operations Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group") + "\tG");
+    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("Add Objects to Group") + "\tG");
     QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate") + "\tR");
     QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line") + "\tM, L");
     QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis") + "\tM, A");

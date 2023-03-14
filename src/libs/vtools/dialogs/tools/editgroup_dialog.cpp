@@ -87,6 +87,7 @@ EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, 
     ui->groupLineType_ComboBox->removeItem(ui->groupLineType_ComboBox->findData(LineTypeNone));          //remove linetype "No Pen" item
     ui->groupLineWeight_ComboBox->removeItem(ui->groupLineWeight_ComboBox->findData(LineWeightByGroup)); //remove lineweight "BY Group" item
     m_oldGroupName = ui->groupName_LineEdit->text();
+
     InitOkCancel(ui);
     DialogTool::CheckState();
     connect(ui->groupName_LineEdit, &QLineEdit::textChanged, this, &EditGroupDialog::nameChanged);

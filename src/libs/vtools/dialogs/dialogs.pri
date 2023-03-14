@@ -4,6 +4,7 @@
 HEADERS += \
     $$PWD/support/editlabeltemplate_dialog.h \
     $$PWD/tooldialogs.h \
+    $$PWD/tools/addtogroup_dialog.h \
     $$PWD/tools/anchorpoint_dialog.h \
     $$PWD/tools/dialogalongline.h \
     $$PWD/tools/dialogarc.h \
@@ -50,6 +51,7 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/support/editlabeltemplate_dialog.cpp \
+    $$PWD/tools/addtogroup_dialog.cpp \
     $$PWD/tools/anchorpoint_dialog.cpp \
     $$PWD/tools/dialogalongline.cpp \
     $$PWD/tools/dialogarc.cpp \
@@ -96,6 +98,7 @@ SOURCES += \
 
 FORMS += \
     $$PWD/support/editlabeltemplate_dialog.ui \
+    $$PWD/tools/addtogroup_dialog.ui \
     $$PWD/tools/anchorpoint_dialog.ui \
     $$PWD/tools/dialogalongline.ui \
     $$PWD/tools/dialogarc.ui \

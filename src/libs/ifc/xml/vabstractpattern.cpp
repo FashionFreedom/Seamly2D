@@ -2233,8 +2233,12 @@ QDomElement VAbstractPattern::addGroupItems(const QString &name, const QMap<quin
                 item.setAttribute(AttrObject, i.key());
                 item.setAttribute(AttrTool, i.value());
                 group.appendChild(item);
+                ++i;
             }
-            ++i;
+            modified = true;
+            emit patternChanged(false);
+
+            emit updateGroups();
         }
     }
     return group;

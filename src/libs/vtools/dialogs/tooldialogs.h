@@ -85,6 +85,7 @@
 #include "tools/dialogpointfromarcandtangent.h"
 #include "tools/dialogtruedarts.h"
 #include "tools/editgroup_dialog.h"
+#include "tools/addtogroup_dialog.h"
 #include "tools/dialogrotation.h"
 #include "tools/dialogmirrorbyline.h"
 #include "tools/dialogmirrorbyaxis.h"
