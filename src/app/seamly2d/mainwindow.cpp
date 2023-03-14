@@ -1401,6 +1401,11 @@ void MainWindow::ClosedEditGroupDialog(int result)
         QString gName = dialog->getName();
         QMap<quint32, quint32>  gData = dialog->getGroupData();
         QDomElement group = doc->addGroupItems(gName, gData);
+        if (group.isNull())
+        {
+            QMessageBox::information(this, tr("Add Group Objects"), tr("Group is Locked. Unlock to add objects"),
+                                        QMessageBox::Ok, QMessageBox::Ok);
+        }
     }
     handleArrowTool(true);
 }
@@ -3314,6 +3319,7 @@ void  MainWindow::handleArrowTool(bool checked)
     }
     else
     {
+        ui->view->viewport()->setCursor(QCursor(Qt::ArrowCursor));
         ui->arrowPointer_ToolButton->setChecked(true);
         ui->arrow_Action->setChecked(true);
     }

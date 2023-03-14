@@ -56,6 +56,7 @@
 #include <QDomNodeList>
 #include <QLatin1String>
 #include <QList>
+#include <QMessageBox>
 #include <QMessageLogger>
 #include <QSet>
 #include <QStaticStringData>
