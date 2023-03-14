@@ -66,7 +66,8 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VisToolLine::VisToolLine(const VContainer *data, QGraphicsItem *parent)
-    :VisLine(data, parent), point2Id(NULL_ID)
+    : VisLine(data, parent)
+    , point2Id(NULL_ID)
 {
     this->mainColor = Qt::red;
 }
@@ -85,7 +86,7 @@ void VisToolLine::RefreshGeometry()
         const QSharedPointer<VPointF> second = Visualization::data->GeometricObject<VPointF>(point2Id);
         line = QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
     }
-    DrawLine(this, line, mainColor, lineStyle);
+    DrawLine(this, line, mainColor, lineWeight, lineStyle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -95,13 +96,15 @@ void VisToolLine::setPoint2Id(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisToolLine::DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color, Qt::PenStyle style)
+void VisToolLine::DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
+                           const qreal &lineWeight, Qt::PenStyle style)
 {
     SCASSERT (lineItem != nullptr)
 
     QPen visPen = lineItem->pen();
     visPen.setColor(color);
     visPen.setStyle(style);
+    visPen.setWidthF(lineWeight);
 
     lineItem->setPen(visPen);
     lineItem->setLine(line);

@@ -55,33 +55,35 @@
  * @param parent parent widget
  */
 DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    : DialogTool(data, toolId, parent),
-      ui(new Ui::DialogEllipticalArc),
-      flagRadius1(false),
-      flagRadius2(false),
-      flagF1(false),
-      flagF2(false),
-      flagRotationAngle(false),
-      timerRadius1(nullptr),
-      timerRadius2(nullptr),
-      timerF1(nullptr),
-      timerF2(nullptr),
-      timerRotationAngle(nullptr),
-      radius1(),
-      radius2(),
-      f1(),
-      f2(),
-      rotationAngle(),
-      formulaBaseHeightRadius1(0),
-      formulaBaseHeightRadius2(0),
-      formulaBaseHeightF1(0),
-      formulaBaseHeightF2(0),
-      formulaBaseHeightRotationAngle(0),
-      angleF1(INT_MIN),
-      angleF2(INT_MIN),
-      angleRotation(INT_MIN)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogEllipticalArc)
+    , flagRadius1(false)
+    , flagRadius2(false)
+    , flagF1(false)
+    , flagF2(false)
+    , flagRotationAngle(false)
+    , timerRadius1(nullptr)
+    , timerRadius2(nullptr)
+    , timerF1(nullptr)
+    , timerF2(nullptr)
+    , timerRotationAngle(nullptr)
+    , radius1()
+    , radius2()
+    , f1()
+    , f2()
+    , rotationAngle()
+    , formulaBaseHeightRadius1(0)
+    , formulaBaseHeightRadius2(0)
+    , formulaBaseHeightF1(0)
+    , formulaBaseHeightF2(0)
+    , formulaBaseHeightRotationAngle(0)
+    , angleF1(INT_MIN)
+    , angleF2(INT_MIN)
+    , angleRotation(INT_MIN)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/el_arc.png"));
 
     this->formulaBaseHeightRadius1 = ui->plainTextEditRadius1->height();
     this->formulaBaseHeightRadius2 = ui->plainTextEditRadius2->height();
@@ -113,8 +115,30 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
     InitOkCancelApply(ui);
 
     FillComboBoxPoints(ui->comboBoxBasePoint);
-    FillComboBoxLineColors(ui->comboBoxColor);
-    FillComboBoxTypeLine(ui->comboBoxPenStyle, CurvePenStylesPics());
+
+    int index = ui->lineType_ComboBox->findData(LineTypeNone);
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->removeItem(index);
+    }
+
+    index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     CheckState();
 
@@ -329,35 +353,55 @@ void DialogEllipticalArc::SetRotationAngle(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogEllipticalArc::GetPenStyle() const
+QString DialogEllipticalArc::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogEllipticalArc::SetPenStyle(const QString &value)
+void DialogEllipticalArc::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxPenStyle, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogEllipticalArc::getLineWeight() const
+{
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogEllipticalArc::setLineWeight(const QString &value)
+{
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
+}
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief GetColor return color of elliptical arc
  * @return formula
  */
-QString DialogEllipticalArc::GetColor() const
+QString DialogEllipticalArc::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxColor, ColorBlack);
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetColor set color of elliptical arc
+ * @brief setLineColor set color of elliptical arc
  * @param value formula
  */
-void DialogEllipticalArc::SetColor(const QString &value)
+void DialogEllipticalArc::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxColor, value);
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -567,29 +611,49 @@ void DialogEllipticalArc::RotationAngleChanged()
 void DialogEllipticalArc::DeployRadius1TextEdit()
 {
     DeployFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
+    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::DeployRadius2TextEdit()
 {
+    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
     DeployFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
+    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::DeployF1TextEdit()
 {
+    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
     DeployFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
+    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::DeployF2TextEdit()
 {
+    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
     DeployFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
+    collapseFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEllipticalArc::DeployRotationAngleTextEdit()
 {
+    collapseFormula(ui->plainTextEditRadius1, ui->pushButtonGrowLengthRadius1, formulaBaseHeightRadius1);
+    collapseFormula(ui->plainTextEditRadius2, ui->pushButtonGrowLengthRadius2, formulaBaseHeightRadius2);
+    collapseFormula(ui->plainTextEditF1, ui->pushButtonGrowLengthF1, formulaBaseHeightF1);
+    collapseFormula(ui->plainTextEditF2, ui->pushButtonGrowLengthF2, formulaBaseHeightF2);
     DeployFormula(ui->plainTextEditRotationAngle, ui->pushButtonGrowLengthRotationAngle,formulaBaseHeightRotationAngle);
 }
 
@@ -669,4 +733,22 @@ void DialogEllipticalArc::closeEvent(QCloseEvent *event)
     ui->plainTextEditF2->blockSignals(true);
     ui->plainTextEditRotationAngle->blockSignals(true);
     DialogTool::closeEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::collapseFormula(QPlainTextEdit *textEdit, QPushButton *pushButton, int height)
+{
+    SCASSERT(textEdit != nullptr)
+    SCASSERT(pushButton != nullptr)
+
+    const QTextCursor cursor = textEdit->textCursor();
+
+    setMaximumWidth(260);
+    textEdit->setFixedHeight(height);
+    pushButton->setIcon(QIcon::fromTheme("go-down", QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
+    setUpdatesEnabled(false);
+    repaint();
+    setUpdatesEnabled(true);
+    textEdit->setFocus();
+    textEdit->setTextCursor(cursor);
 }

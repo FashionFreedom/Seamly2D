@@ -82,7 +82,8 @@ public:
     static VToolBisector *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                                  VContainer *data);
     static VToolBisector *Create(const quint32 _id, QString &formula, quint32 firstPointId, quint32 secondPointId,
-                                 quint32 thirdPointId, const QString &typeLine, const QString &lineColor,
+                                 quint32 thirdPointId, const QString &lineType, const QString &lineWeight,
+                                 const QString &lineColor,
                                  const QString &pointName,  qreal mx, qreal my,  bool showPointName,
                                  VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                  const Document &parse, const Source &typeCreation);
@@ -121,7 +122,8 @@ private:
     quint32        thirdPointId;
 
                    VToolBisector(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                 const QString &typeLine, const QString &lineColor, const QString &formula,
+                                 const QString &lineType, const QString &lineWeight,
+                                 const QString &lineColor, const QString &formula,
                                  const quint32 &firstPointId, const quint32 &secondPointId,
                                  const quint32 &thirdPointId, const Source &typeCreation,
                                  QGraphicsItem * parent = nullptr);

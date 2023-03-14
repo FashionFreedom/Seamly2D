@@ -282,9 +282,6 @@ protected:
     void             DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowLength, int formulaBaseHeight);
 
     template <typename T>
-    void             InitArrow(T *ui);
-
-    template <typename T>
     void             InitOkCancelApply(T *ui);
 
     template <typename T>
@@ -357,22 +354,6 @@ QVector<T> DialogTool::GetListInternals(const QListWidget *list) const
 inline VAbstractTool *DialogTool::GetAssociatedTool()
 {
     return this->associatedTool;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-template <typename T>
-inline void DialogTool::InitArrow(T *ui)
-{
-    SCASSERT(ui != nullptr)
-    spinBoxAngle = ui->doubleSpinBoxAngle;
-    connect(ui->toolButtonArrowDown, &QPushButton::clicked, this, &DialogTool::ArrowDown);
-    connect(ui->toolButtonArrowUp, &QPushButton::clicked, this, &DialogTool::ArrowUp);
-    connect(ui->toolButtonArrowLeft, &QPushButton::clicked, this, &DialogTool::ArrowLeft);
-    connect(ui->toolButtonArrowRight, &QPushButton::clicked, this, &DialogTool::ArrowRight);
-    connect(ui->toolButtonArrowLeftUp, &QPushButton::clicked, this, &DialogTool::ArrowLeftUp);
-    connect(ui->toolButtonArrowLeftDown, &QPushButton::clicked, this, &DialogTool::ArrowLeftDown);
-    connect(ui->toolButtonArrowRightUp, &QPushButton::clicked, this, &DialogTool::ArrowRightUp);
-    connect(ui->toolButtonArrowRightDown, &QPushButton::clicked, this, &DialogTool::ArrowRightDown);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

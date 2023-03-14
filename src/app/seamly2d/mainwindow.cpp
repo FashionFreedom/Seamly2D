@@ -182,6 +182,9 @@ MainWindow::MainWindow(QWidget *parent)
     , patternPiecesWidget(nullptr)
     , lock(nullptr)
     , zoomScaleSpinBox(nullptr)
+    , m_penToolBar(nullptr)
+    , m_penReset(nullptr)
+    , m_zoomToPointComboBox(nullptr)
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
     {
@@ -210,6 +213,7 @@ MainWindow::MainWindow(QWidget *parent)
         this->updateZoomToPointComboBox(draftPointNamesList());
     });
     qApp->setCurrentDocument(doc);
+    qApp->setCurrentData(pattern);
 
     InitDocksContain();
     CreateMenus();
@@ -217,6 +221,7 @@ MainWindow::MainWindow(QWidget *parent)
     initPointNameToolBar();
     initModesToolBar();
     InitToolButtons();
+    initPenToolBar();
 
     helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
     ui->statusBar->addWidget(helpLabel);
@@ -615,7 +620,7 @@ void MainWindow::CheckRequiredMeasurements(const VMeasurements *measurements)
         }
 
         VException e(tr("Measurement file doesn't include all the required measurements."));
-        e.AddMoreInformation(tr("Please, additionally provide: %1").arg(QStringList(list).join(", ")));
+        e.AddMoreInformation(tr("Please provide additional measurements: %1").arg(QStringList(list).join(", ")));
         throw e;
     }
 }
@@ -657,6 +662,9 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
 
         switch(t)
         {
+            case Tool::ArcIntersectAxis:
+                dialogTool->setWindowTitle("Point - Intersect Arc and Axis");
+                break;
             case Tool::Midpoint:
                 dialogTool->Build(t);
                 break;
@@ -842,7 +850,7 @@ void MainWindow::handleMidpointTool(bool checked)
         checked,
         Tool::Midpoint,
         ":/cursor/midpoint_cursor.png",
-        tr("<b>Tool::Points - Midpoint along Line</b>: Select first point"),
+        tr("<b>Tool::Point - Midpoint on Line</b>: Select first point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolAlongLine>,
         &MainWindow::ApplyDrawDialog<VToolAlongLine>
     );
@@ -861,7 +869,7 @@ void MainWindow::handlePointAtDistanceAngleTool(bool checked)
         checked,
         Tool::EndLine,
         ":/cursor/endline_cursor.png",
-        tr("<b>Tool::Points - Point at Distance & Angle</b>: Select point"),
+        tr("<b>Tool::Point - Length and Angle</b>: Select point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolEndLine>,
         &MainWindow::ApplyDrawDialog<VToolEndLine>
     );
@@ -880,7 +888,7 @@ void MainWindow::handleAlongLineTool(bool checked)
         checked,
         Tool::AlongLine,
         ":/cursor/alongline_cursor.png",
-        tr("<b>Tool::Points - Point along Line:</b> Select first point"),
+        tr("<b>Tool::Point - On Line:</b> Select first point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolAlongLine>,
         &MainWindow::ApplyDrawDialog<VToolAlongLine>
     );
@@ -899,7 +907,7 @@ void MainWindow::handleNormalTool(bool checked)
         checked,
         Tool::Normal,
         ":/cursor/normal_cursor.png",
-        tr("<b>Tool::Points - Point on Perpendicular:</b> Select first point of line"),
+        tr("<b>Tool::Point - On Perpendicular:</b> Select first point of line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolNormal>,
         &MainWindow::ApplyDrawDialog<VToolNormal>
     );
@@ -918,7 +926,7 @@ void MainWindow::handleBisectorTool(bool checked)
         checked,
         Tool::Bisector,
         ":/cursor/bisector_cursor.png",
-        tr("<b>Tool::Points - Point along Bisector:</b> Select first point of angle"),
+        tr("<b>Tool::Point - On Bisector:</b> Select first point of angle"),
         &MainWindow::ClosedDrawDialogWithApply<VToolBisector>,
         &MainWindow::ApplyDrawDialog<VToolBisector>
     );
@@ -937,7 +945,7 @@ void MainWindow::handleShoulderPointTool(bool checked)
         checked,
         Tool::ShoulderPoint,
         ":/cursor/shoulder_cursor.png",
-        tr("<b>Tool::Points - Shoulder Point:</b> Select point"),
+        tr("<b>Tool::Point - Length to Line:</b> Select point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolShoulderPoint>,
         &MainWindow::ApplyDrawDialog<VToolShoulderPoint>
     );
@@ -955,7 +963,7 @@ void MainWindow::handlePointOfContactTool(bool checked)
     (
         checked, Tool::PointOfContact,
         ":/cursor/pointcontact_cursor.png",
-        tr("<b>Tool::Points - Intersection Point of Line and Arc:</b> Select first point of line"),
+        tr("<b>Tool::Point - Intersect Arc and Line:</b> Select first point of line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointOfContact>,
         &MainWindow::ApplyDrawDialog<VToolPointOfContact>
     );
@@ -963,7 +971,7 @@ void MainWindow::handlePointOfContactTool(bool checked)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief handleTriangleTool handler tool triangle.
+ * @brief handleTriangleTool handler Point - Intersect Axis and Triangle.
  * @param checked true - button checked.
  */
 void MainWindow::handleTriangleTool(bool checked)
@@ -974,7 +982,7 @@ void MainWindow::handleTriangleTool(bool checked)
         checked,
         Tool::Triangle,
         ":/cursor/triangle_cursor.png",
-        tr("<b>Tool::Points - Triangle:</b> Select first point of axis"),
+        tr("<b>Tool::Point - Intersect Axis and Triangle:</b> Select first point of axis"),
         &MainWindow::ClosedDrawDialogWithApply<VToolTriangle>,
         &MainWindow::ApplyDrawDialog<VToolTriangle>
     );
@@ -993,7 +1001,7 @@ void MainWindow::handlePointIntersectXYTool(bool checked)
         checked,
         Tool::PointOfIntersection,
         ":/cursor/pointofintersect_cursor.png",
-        tr("<b>Tool::Points - Intersection Point XY from 2 Points:</b> Select point for X value (vertical)"),
+        tr("<b>Tool::Point - Intersect XY</b> Select point for X value (vertical)"),
         &MainWindow::ClosedDrawDialogWithApply<PointIntersectXYTool>,
         &MainWindow::ApplyDrawDialog<PointIntersectXYTool>
     );
@@ -1012,7 +1020,7 @@ void MainWindow::handleHeightTool(bool checked)
         checked,
         Tool::Height,
         ":/cursor/height_cursor.png",
-        tr("<b>Tool::Points - Intersection Point of Line and Perpendicular:</b> Select base point"),
+        tr("<b>Tool::Point - Intersect Line and Perpendicular:</b> Select base point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolHeight>,
         &MainWindow::ApplyDrawDialog<VToolHeight>
     );
@@ -1027,7 +1035,7 @@ void MainWindow::handleLineIntersectAxisTool(bool checked)
         checked,
         Tool::LineIntersectAxis,
         ":/cursor/line_intersect_axis_cursor.png",
-        tr("<b>Tool::Points - Intersection Point of Line and Axis:</b> Select first point of line"),
+        tr("<b>Tool::Point - Intersect Line and Axis:</b> Select first point of line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLineIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolLineIntersectAxis>
     );
@@ -1047,7 +1055,7 @@ void MainWindow::handleLineTool(bool checked)
         checked,
         Tool::Line,
         ":/cursor/line_cursor.png",
-        tr("<b>Tool::Lines - Line:</b>:Select first point"),
+        tr("<b>Tool::Line:</b>:Select first point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLine>,
         &MainWindow::ApplyDrawDialog<VToolLine>
     );
@@ -1066,7 +1074,7 @@ void MainWindow::handleLineIntersectTool(bool checked)
         checked,
         Tool::LineIntersect,
         ":/cursor/intersect_cursor.png",
-        tr("<b>Tool::Lines - Intersection Point of 2 Lines:</b> Select first point of first line"),
+        tr("<b>Tool::Point - Intersect Lines:</b> Select first point of first line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLineIntersect>,
         &MainWindow::ApplyDrawDialog<VToolLineIntersect>
     );
@@ -1086,7 +1094,7 @@ void MainWindow::handleCurveTool(bool checked)
         checked,
         Tool::Spline,
         ":/cursor/spline_cursor.png",
-        tr("<b>Tool::Curves - Curve:</b> Select start point of curve"),
+        tr("<b>Tool::Curve - Interactive:</b> Select start point of curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolSpline>,
         &MainWindow::ApplyDrawDialog<VToolSpline>
     );
@@ -1105,7 +1113,7 @@ void MainWindow::handleSplineTool(bool checked)
         checked,
         Tool::SplinePath,
         ":/cursor/splinepath_cursor.png",
-        tr("<b>Tool::Curves - Spline:</b> Select start point of spline"),
+        tr("<b>Tool::Spline - Interactive:</b> Select start point of spline"),
         &MainWindow::ClosedDrawDialogWithApply<VToolSplinePath>,
         &MainWindow::ApplyDrawDialog<VToolSplinePath>
     );
@@ -1120,7 +1128,7 @@ void MainWindow::handleCurveWithControlPointsTool(bool checked)
         checked,
         Tool::CubicBezier,
         ":/cursor/cubic_bezier_cursor.png",
-        tr("<b>Tool::Curves - Curve with Control Points:</b> Select first point of curve"),
+        tr("<b>Tool::Curve - Fixed:</b> Select first point of curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCubicBezier>,
         &MainWindow::ApplyDrawDialog<VToolCubicBezier>
     );
@@ -1135,7 +1143,7 @@ void MainWindow::handleSplineWithControlPointsTool(bool checked)
         checked,
         Tool::CubicBezierPath,
         ":/cursor/cubic_bezier_path_cursor.png",
-        tr("<b>Tool::Curves - Spline with Control Points:</b> Select first point of spline"),
+        tr("<b>Tool::Spline - Fixed:</b> Select first point of spline"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCubicBezierPath>,
         &MainWindow::ApplyDrawDialog<VToolCubicBezierPath>
     );
@@ -1154,7 +1162,7 @@ void MainWindow::handlePointAlongCurveTool(bool checked)
         checked,
         Tool::CutSpline,
         ":/cursor/spline_cut_point_cursor.png",
-        tr("<b>Tool::Curves - Point along Curve:</b> Select first point of curve"),
+        tr("<b>Tool::Point - On Curve:</b> Select first point of curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutSpline>,
         &MainWindow::ApplyDrawDialog<VToolCutSpline>
     );
@@ -1173,7 +1181,7 @@ void MainWindow::handlePointAlongSplineTool(bool checked)
         checked,
         Tool::CutSplinePath,
         ":/cursor/splinepath_cut_point_cursor.png",
-        tr("<b>Tool::Curves - Point along Spline:</b> Select spline"),
+        tr("<b>Tool::Point - On Spline:</b> Select spline"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutSplinePath>,
         &MainWindow::ApplyDrawDialog<VToolCutSplinePath>
     );
@@ -1188,7 +1196,7 @@ void MainWindow::handleCurveIntersectCurveTool(bool checked)
         checked,
         Tool::PointOfIntersectionCurves,
         "://cursor/intersection_curves_cursor.png",
-        tr("<b>Tool::Curves - Intersection Point of Curves:</b> Select first curve"),
+        tr("<b>Tool::Point - Intersect Curves:</b> Select first curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionCurves>,
         &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionCurves>
     );
@@ -1203,7 +1211,7 @@ void MainWindow::handleCurveIntersectAxisTool(bool checked)
         checked,
         Tool::CurveIntersectAxis,
         ":/cursor/curve_intersect_axis_cursor.png",
-        tr("<b>Tool::Curves - Intersection Point of Curve and Axis:</b> Select curve"),
+        tr("<b>Tool::Point - Intersect Curve and Axis:</b> Select curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCurveIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolCurveIntersectAxis>
     );
@@ -1223,7 +1231,7 @@ void MainWindow::handleArcTool(bool checked)
         checked,
         Tool::Arc,
         ":/cursor/arc_cursor.png",
-        tr("<b>Tool::Arcs - Arc:</b> Select point of center of arc"),
+        tr("<b>Tool::Arc - Radius and Angles:</b> Select point of center of arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolArc>,
         &MainWindow::ApplyDrawDialog<VToolArc>
     );
@@ -1242,7 +1250,7 @@ void MainWindow::handlePointAlongArcTool(bool checked)
         checked,
         Tool::CutArc,
         ":/cursor/arc_cut_cursor.png",
-        tr("<b>Tool::Arc - Point along Arc:</b> Select arc"),
+        tr("<b>Tool::Point - On Arc:</b> Select arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutArc>,
         &MainWindow::ApplyDrawDialog<VToolCutArc>
     );
@@ -1258,7 +1266,7 @@ void MainWindow::handleArcIntersectAxisTool(bool checked)
         checked,
         Tool::ArcIntersectAxis,
         ":/cursor/arc_intersect_axis_cursor.png",
-        tr("<b>Tool::Arc - Intersection Point of Arc and Axis:</b> Select arc"),
+        tr("<b>Tool::Point - Intersect Arc and Axis:</b> Select arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCurveIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolCurveIntersectAxis>
     );
@@ -1273,7 +1281,7 @@ void MainWindow::handlePointOfIntersectionArcsTool(bool checked)
         checked,
         Tool::PointOfIntersectionArcs,
         "://cursor/point_of_intersection_arcs.png",
-        tr("<b>Tool::Arc - Intersection Point of Arcs:</b> Select first an arc"),
+        tr("<b>Tool::Point - Intersect Arcs:</b> Select first an arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionArcs>,
         &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionArcs>
     );
@@ -1288,7 +1296,7 @@ void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
         checked,
         Tool::PointOfIntersectionCircles,
         "://cursor/point_of_intersection_circles.png",
-        tr("<b>Tool::Arc - Intersection Point of Circles:</b> Select first circle center"),
+        tr("<b>Tool::Point - Intersect Circles:</b> Select first circle center"),
         &MainWindow::ClosedDrawDialogWithApply<IntersectCirclesTool>,
         &MainWindow::ApplyDrawDialog<IntersectCirclesTool>
     );
@@ -1305,7 +1313,7 @@ void MainWindow::handlePointFromCircleAndTangentTool(bool checked)
         checked,
         Tool::PointFromCircleAndTangent,
         "://cursor/point_from_circle_and_tangent_cursor.png",
-        tr("<b>Tool::Arc - Tangency Point of Circle and Tangent:</b> Select point on tangent"),
+        tr("<b>Tool::Point - Intersect Circle and Tangent:</b> Select point on tangent"),
         &MainWindow::ClosedDrawDialogWithApply<IntersectCircleTangentTool>,
         &MainWindow::ApplyDrawDialog<IntersectCircleTangentTool>
     );
@@ -1320,7 +1328,7 @@ void MainWindow::handlePointFromArcAndTangentTool(bool checked)
         checked,
         Tool::PointFromArcAndTangent,
         "://cursor/point_from_arc_and_tangent_cursor.png",
-        tr("<b>Tool::Arc - Tangency Point of Arc and Tangent:</b> Select point on tangent"),
+        tr("<b>Tool::Point - Intersect Arc and Tangent:</b> Select point on tangent"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointFromArcAndTangent>,
         &MainWindow::ApplyDrawDialog<VToolPointFromArcAndTangent>
     );
@@ -1335,7 +1343,7 @@ void MainWindow::handleArcWithLengthTool(bool checked)
         checked,
         Tool::ArcWithLength,
         "://cursor/arc_with_length_cursor.png",
-        tr("<b>Tool::Arc - Arc with Length:</b> Select point of the center of the arc"),
+        tr("<b>Tool::Arc - Radius and Length:</b> Select point of the center of the arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolArcWithLength>,
         &MainWindow::ApplyDrawDialog<VToolArcWithLength>
     );
@@ -1355,7 +1363,7 @@ void MainWindow::handleEllipticalArcTool(bool checked)
         checked,
         Tool::EllipticalArc,
         ":/cursor/el_arc_cursor.png",
-        tr("<b>Tool::Elliptical Arcs - Elliptical Arc:</b> Select point of center of elliptical arc"),
+        tr("<b>Tool::Arc - Elliptical:</b> Select point of center of elliptical arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolEllipticalArc>,
         &MainWindow::ApplyDrawDialog<VToolEllipticalArc>
     );
@@ -2290,11 +2298,11 @@ void MainWindow::initToolsToolBar()
     ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
     connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
 
-    zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
-    zoomToPointComboBox->setEnabled(false);
-    zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
-    ui->zoom_ToolBar->addWidget(zoomToPointComboBox);
-    connect(zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
+    m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
+    m_zoomToPointComboBox->setEnabled(false);
+    m_zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
+    connect(m_zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
 
     if (zoomScaleSpinBox != nullptr)
     {
@@ -2365,6 +2373,33 @@ void MainWindow::initToolBarVisibility()
         ui->layout_ToolBar->setVisible(visible);
         qApp->Settings()->setShowLayoutToolBar(visible);
     });
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief initPenToolBar enable default color, line wight & type toolbar.
+ */
+void MainWindow::initPenToolBar()
+{
+    if (m_penToolBar != nullptr)
+    {
+        delete m_penToolBar;
+    }
+    m_penToolBar = new PenToolBar("Toolbar Pen", this);
+    m_penToolBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_penToolBar->setObjectName("penToolBar");
+    this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
+
+    connect(m_penToolBar, &PenToolBar::penChanged, this, &MainWindow::penChanged);
+}
+
+/**
+ * Called when something changed in the pen tool bar
+ * (e.g. color, weight, or type).
+ */
+void MainWindow::penChanged(Pen pen)
+{
+    doc->setDefaultPen(pen);
 }
 
 void MainWindow::updateToolBarVisibility()
@@ -2557,17 +2592,17 @@ void MainWindow::handlePointsMenu()
 
     QMenu menu;
 
-    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint"));
-    QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Point at Distance and Angle"));
-    QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("Point at Distance along Line"));
-    QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("Point on Perpendicular"));
-    QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("Point along Bisector"));
-    QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Point on Shoulder"));
-    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_of_contact.png"),       tr("Intersection Point of Line and Arc"));
-    QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),               tr("Triangle"));
-    QAction *action_PointIntersectXY    = menu.addAction(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"), tr("Intersect XY") + "\tXY");
-    QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                 tr("Intersection Point of Line and Perpendicular"));
-    QAction *action_PointIntersectAxis  = menu.addAction(QIcon(":/toolicon/32x32/line_intersect_axis.png"),    tr("Intersection Point of Line and Axis"));
+    QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Length and Angle") + "\tL, A");
+    QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("On Line") + "\tO, L");
+    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint") + "\tShift+O, Shift+L");
+    QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("On Perpendicular") + "\tO, P");
+    QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("On Bisector") + "\tO, B");
+    QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Length to Line") + "\tP, S");
+    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_of_contact.png"),       tr("Intersect Arc and Line") + "\tA, L");
+    QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),               tr("Intersect Axis and Triangle") + "\tX, T");
+    QAction *action_PointIntersectXY    = menu.addAction(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"), tr("Intersect XY") + "\tX, Y");
+    QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                 tr("Intersect Line and Perpendicular") + "\tL, P");
+    QAction *action_PointIntersectAxis  = menu.addAction(QIcon(":/toolicon/32x32/line_intersect_axis.png"),    tr("Intersect Line and Axis") + "\tL, X");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2648,8 +2683,8 @@ void MainWindow::handleLinesMenu()
     qCDebug(vMainWindow, "Lines Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),          tr("Line Between 2 Points"));
-    QAction *action_LineIntersect = menu.addAction(QIcon(":/toolicon/32x32/intersect.png"), tr("Point Intersect of 2 Lines"));
+    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),      tr("Line") + "\tAlt+L");
+    QAction *action_LineIntersect = menu.addAction(QIcon(":/toolicon/32x32/intersect.png"), tr("Intersect Lines") + "\tI, L");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2676,15 +2711,15 @@ void MainWindow::handleArcsMenu()
     qCDebug(vMainWindow, "Arcs Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Arc"));
-    QAction *action_PointAlongArc    = menu.addAction(QIcon(":/toolicon/32x32/arc_cut.png"),                       tr("Point along Arc"));
-    QAction *action_ArcIntersectAxis = menu.addAction(QIcon(":/toolicon/32x32/arc_intersect_axis.png"),            tr("Intersection Point of Arc and Axis"));
-    QAction *action_ArcIntersectArc  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"),    tr("Intersection Point of Arcs"));
-    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersection Point of Circles"));
-    QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Tangency Point of Circle and Tangent"));
-    QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Tangency Point of Arc and Tangent"));
-    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Arc with Length"));
-    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical Arc"));
+    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Radius and Angles") + "\tAlt+A");
+    QAction *action_PointAlongArc    = menu.addAction(QIcon(":/toolicon/32x32/arc_cut.png"),                       tr("Point on Arc") + "\tO, A");
+    QAction *action_ArcIntersectAxis = menu.addAction(QIcon(":/toolicon/32x32/arc_intersect_axis.png"),            tr("Intersect Arc and Axis") + "\tA, X");
+    QAction *action_ArcIntersectArc  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"),    tr("Intersect Arcs") + "\tI, A");
+    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersect Circles") + "\tShift+I, Shift+C");
+    QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Intersect Circle and Tangent") + "\tC, T");
+    QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Intersect Arc and Tangent") + "\tA, T");
+    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Radius and Length") + "\tAlt+Shift+A");
+    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical") + "\tAlt+E");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2753,14 +2788,14 @@ void MainWindow::handleCurvesMenu()
     qCDebug(vMainWindow, "Curves Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve"));
-    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline"));
-    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve with Control Points"));
-    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline with Control Points"));
-    QAction *action_PointAlongCurve      = menu.addAction(QIcon(":/toolicon/32x32/spline_cut_point.png"),     tr("Point along Curve"));
-    QAction *action_PointAlongSpline     = menu.addAction(QIcon(":/toolicon/32x32/splinePath_cut_point.png"), tr("Point along Spline"));
-    QAction *action_CurveIntersectCurve  = menu.addAction(QIcon(":/toolicon/32x32/intersection_curves.png"),  tr("Intersection Point of Curves"));
-    QAction *action_CurveIntersectAxis   = menu.addAction(QIcon(":/toolicon/32x32/curve_intersect_axis.png"), tr("Intersection Point of Curve & Axis"));
+    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve - Interactive") + "\tAlt+C");
+    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline - Interactive") + "\tAlt+S");
+    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve - Fixed") + "\tAlt+Shift+C");
+    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline - Fixed") + "\tAlt+Shift+S");
+    QAction *action_PointAlongCurve      = menu.addAction(QIcon(":/toolicon/32x32/spline_cut_point.png"),     tr("Point on Curve") + "\tO, C");
+    QAction *action_PointAlongSpline     = menu.addAction(QIcon(":/toolicon/32x32/splinePath_cut_point.png"), tr("Point on Spline") + "\tO, S");
+    QAction *action_CurveIntersectCurve  = menu.addAction(QIcon(":/toolicon/32x32/intersection_curves.png"),  tr("Intersect Curves") + "\tI, C");
+    QAction *action_CurveIntersectAxis   = menu.addAction(QIcon(":/toolicon/32x32/curve_intersect_axis.png"), tr("Intersect Curve & Axis") + "\tC, X");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2829,13 +2864,13 @@ void MainWindow::handleOperationsMenu()
     qCDebug(vMainWindow, "Operations Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group"));
-    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate"));
-    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line"));
-    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis"));
-    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move"));
-    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts"));
-    QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Draft Blocks"));
+    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group") + "\tG");
+    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate") + "\tR");
+    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line") + "\tM, L");
+    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis") + "\tM, A");
+    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move") + "\tAlt+M");
+    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts") + "\tT, D");
+    QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"),    tr("Export Draft Blocks") + "\tE, D");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2890,10 +2925,10 @@ void MainWindow::handlePieceMenu()
 {
     QMenu menu;
 
-    QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_piece.png"),   tr("New Pattern Piece"));
-    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint"));
-    QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path"));
-    QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path"));
+    QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_detail.png"),   tr("New Pattern Piece") + "\tN, P");
+    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint") + "\tA, P");
+    QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path") + "\tI, N");
+    QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path") + "\tI, P");
 
     action_AnchorPoint->setEnabled(pattern->DataPieces()->size() > 0);
     action_InternalPath->setEnabled(pattern->DataPieces()->size() > 0);
@@ -2936,8 +2971,8 @@ void MainWindow::handlePatternPiecesMenu()
     qCDebug(vMainWindow, "PatternPieces Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool"));
-    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces"));
+    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool") + "\tU");
+    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces") + "\tE, P");
     QAction *selectedAction      = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
@@ -2964,8 +2999,8 @@ void MainWindow::handleLayoutMenu()
 
     QMenu menu;
 
-    QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layout_settings.png"), tr("New Print Layout (NL)"));
-    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout (EL)"));
+    QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layout_settings.png"), tr("New Print Layout") + "\tN, L");
+    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout") + "\tE, L");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -4160,7 +4195,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
     ui->zoomToPoint_Action->setEnabled(enable && draftStage);
-    zoomToPointComboBox->setEnabled(enable && draftStage);
+    m_zoomToPointComboBox->setEnabled(enable && draftStage);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);
@@ -5149,7 +5184,7 @@ void MainWindow::AddDocks()
 void MainWindow::InitDocksContain()
 {
     qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
-    toolProperties = new VToolOptionsPropertyBrowser(ui->toolProperties_DockWidget);
+    toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
@@ -7121,10 +7156,10 @@ QStringList MainWindow::draftPointNamesList()
  */
 void MainWindow::updateZoomToPointComboBox(QStringList namesList)
 {
-    zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
-    zoomToPointComboBox->clear();
-    zoomToPointComboBox->addItems(namesList);
-    zoomToPointComboBox->blockSignals(false);
+    m_zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
+    m_zoomToPointComboBox->clear();
+    m_zoomToPointComboBox->addItems(namesList);
+    m_zoomToPointComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

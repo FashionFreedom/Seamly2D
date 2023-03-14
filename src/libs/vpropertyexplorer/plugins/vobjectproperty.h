@@ -1,20 +1,27 @@
-/************************************************************************
- **
- **  @file   vobjectproperty.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   28 8, 2014
+/******************************************************************************
+ *   @file   vobjectproperty.h
+ **  @author DS Caskey
+ **  @date   Feb 7, 2023
  **
  **  @brief
  **  @copyright
- **  All rights reserved. This program and the accompanying materials
- **  are made available under the terms of the GNU Lesser General Public License
- **  (LGPL) version 2.1 which accompanies this distribution, and is available at
- **  http://www.gnu.org/licenses/lgpl-2.1.html
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
- **  This library is distributed in the hope that it will be useful,
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- **  Lesser General Public License for more details.
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -44,39 +51,36 @@ class VObjectProperty : public VProperty
     Q_OBJECT
 public:
     //! Constructor
-    explicit VObjectProperty(const QString& name);
+    explicit               VObjectProperty(const QString& name);
 
     //! Destructor
-    virtual ~VObjectProperty() Q_DECL_OVERRIDE {}
+    virtual               ~VObjectProperty() Q_DECL_OVERRIDE {}
 
     //! Get the data how it should be displayed
-    virtual QVariant data (int column = DPC_Name, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    virtual                QVariant data (int column = DPC_Name, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
     //! Returns an editor widget, or NULL if it doesn't supply one
     //! \param parent The widget to which the editor will be added as a child
     //! \options Render options
     //! \delegate A pointer to the QAbstractItemDelegate requesting the editor. This can be used to connect signals and
     //! slots.
-    virtual QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& options,
-                                  const QAbstractItemDelegate* delegate) Q_DECL_OVERRIDE;
-
-    //! Sets the property's data to the editor (returns false, if the standard delegate should do that)
-    virtual bool setEditorData(QWidget* editor) Q_DECL_OVERRIDE;
+    virtual QWidget*       createEditor(QWidget* parent, const QStyleOptionViewItem& options,
+                                               const QAbstractItemDelegate* delegate) Q_DECL_OVERRIDE;
 
     //! Gets the data from the widget
-    virtual QVariant getEditorData(const QWidget* editor) const Q_DECL_OVERRIDE;
+    virtual QVariant       getEditorData(const QWidget* editor) const Q_DECL_OVERRIDE;
 
     //! Sets the objects list
-    void setObjectsList(const QMap<QString, quint32> &objects);
+    void                   setObjectsList(const QMap<QString, quint32> &objects);
 
     //! Get the settings. This function has to be implemented in a subclass in order to have an effect
     virtual QMap<QString, quint32> getObjects() const;
 
     //! Sets the value of the property
-    virtual void setValue(const QVariant& value) Q_DECL_OVERRIDE;
+    virtual void           setValue(const QVariant& value) Q_DECL_OVERRIDE;
 
     //! Returns a string containing the type of the property
-    virtual QString type() const Q_DECL_OVERRIDE;
+    virtual QString        type() const Q_DECL_OVERRIDE;
 
     //! Clones this property
     //! \param include_children Indicates whether to also clone the children
@@ -86,14 +90,17 @@ public:
     Q_REQUIRED_RESULT virtual VProperty* clone(bool include_children = true,
                                                VProperty* container = nullptr) const Q_DECL_OVERRIDE;
 
+    static int             indexOfObject(const QMap<QString, quint32> &objects, const QString &object);
+
 public slots:
-    void currentIndexChanged(int index);
+    void                   currentIndexChanged(int index);
 
 protected:
     //! The list of possible objects
-    QMap<QString, quint32> objects;
+    QMap<QString, quint32> m_objects;
+    QVector<QString>       m_indexList;
 
-    void FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
+    void                   fillListItems(QComboBox *box, const QMap<QString, quint32> &list)const;
     // No use of d-pointer in this case, because it is unlikely this will change. If it does, we can still add other
     //members by reimplementing the VPropertyPrivate class without touching this header file.
 

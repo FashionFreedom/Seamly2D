@@ -156,8 +156,9 @@ void VToolSpline::setDialog()
     SCASSERT(not dialogTool.isNull())
     const auto spl = VAbstractTool::data.GeometricObject<VSpline>(m_id);
     dialogTool->SetSpline(*spl);
-    dialogTool->SetColor(spl->GetColor());
-    dialogTool->SetPenStyle(spl->GetPenStyle());
+    dialogTool->setLineColor(spl->getLineColor());
+    dialogTool->setLineWeight(spl->getLineWeight());
+    dialogTool->setPenStyle(spl->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -177,8 +178,9 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     SCASSERT(not dialogTool.isNull())
 
     VSpline *spline = new VSpline(dialogTool->GetSpline());
-    spline->SetColor(dialogTool->GetColor());
-    spline->SetPenStyle(dialogTool->GetPenStyle());
+    spline->setLineColor(dialogTool->getLineColor());
+    spline->SetPenStyle(dialogTool->getPenStyle());
+    spline->setLineWeight(dialogTool->getLineWeight());
 
     auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
 
@@ -238,8 +240,9 @@ VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphi
 //---------------------------------------------------------------------------------------------------------------------
 VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2,
                                  QString &l1, QString &l2, quint32 duplicate, const QString &color,
-                                 const QString &penStyle, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                 VContainer *data, const Document &parse, const Source &typeCreation)
+                                 const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
+                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
+                                 const Source &typeCreation)
 {
     const qreal calcAngle1 = CheckFormula(_id, a1, data);
     const qreal calcAngle2 = CheckFormula(_id, a2, data);
@@ -256,8 +259,9 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
         spline->SetDuplicate(duplicate);
     }
 
-    spline->SetColor(color);
+    spline->setLineColor(color);
     spline->SetPenStyle(penStyle);
+    spline->setLineWeight(lineWeight);
 
     return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation);
 }
@@ -362,8 +366,9 @@ void VToolSpline::SaveDialog(QDomElement &domElement)
     controlPoints[1]->blockSignals(false);
 
     SetSplineAttributes(domElement, spl);
-    doc->SetAttribute(domElement, AttrColor,   dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

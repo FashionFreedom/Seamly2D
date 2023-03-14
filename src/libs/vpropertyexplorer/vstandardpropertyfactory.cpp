@@ -82,11 +82,11 @@ VPE::VProperty *VPE::VStandardPropertyFactory::createProperty(const QString &typ
     }
     else if (type == QString("integer"))
     {
-        return new VIntegerProperty(name);
+        return new SpinboxProperty(name);
     }
     else if (type == QString("double"))
     {
-        return new VDoubleProperty(name);
+        return new DoubleSpinboxProperty(name);
     }
     else if (type == QString("shortcut"))
     {

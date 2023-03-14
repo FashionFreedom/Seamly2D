@@ -81,6 +81,8 @@ public:
     void                 setAxisType(AxisType value);
 
     QString              getOriginPointName() const;
+    quint32              getOriginPointId() const;
+    void                 setOriginPointId(const quint32 &value);
 
     virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
 

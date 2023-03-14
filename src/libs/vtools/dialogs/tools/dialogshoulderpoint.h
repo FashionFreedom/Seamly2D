@@ -78,8 +78,14 @@ public:
 
     void           SetPointName(const QString &value);
 
-    QString        GetTypeLine() const;
-    void           SetTypeLine(const QString &value);
+    QString        getLineType() const;
+    void           setLineType(const QString &value);
+
+    QString        getLineWeight() const;
+    void           setLineWeight(const QString &value);
+
+    QString        getLineColor() const;
+    void           setLineColor(const QString &value);
 
     QString        GetFormula() const;
     void           SetFormula(const QString &value);
@@ -93,8 +99,6 @@ public:
     quint32        GetP3() const;
     void           SetP3(const quint32 &value);
 
-    QString        GetLineColor() const;
-    void           SetLineColor(const QString &value);
 public slots:
     virtual void   ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**
@@ -107,6 +111,7 @@ public slots:
     void           FormulaTextChanged();
     virtual void   PointNameChanged() Q_DECL_OVERRIDE;
     void           FXLength();
+
 protected:
     virtual void   ShowVisualization() Q_DECL_OVERRIDE;
     /**
@@ -114,6 +119,7 @@ protected:
      */
     virtual void   SaveData() Q_DECL_OVERRIDE;
     virtual void   closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(DialogShoulderPoint)
 

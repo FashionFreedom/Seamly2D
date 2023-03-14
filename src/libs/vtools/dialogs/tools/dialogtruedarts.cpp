@@ -74,8 +74,14 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogTrueDarts), d1PointName(), d2PointName(), ch1(NULL_ID),
-      ch2(NULL_ID), flagName1(true), flagName2(true)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogTrueDarts)
+    , d1PointName()
+    , d2PointName()
+    , ch1(NULL_ID)
+    , ch2(NULL_ID)
+    , flagName1(true)
+    , flagName2(true)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);

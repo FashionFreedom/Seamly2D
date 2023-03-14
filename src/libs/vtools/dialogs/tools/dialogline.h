@@ -82,20 +82,26 @@ public:
     quint32        GetSecondPoint() const;
     void           SetSecondPoint(const quint32 &value);
 
-    QString        GetTypeLine() const;
-    void           SetTypeLine(const QString &value);
+    QString        getLineType() const;
+    void           setLineType(const QString &value);
 
-    QString        GetLineColor() const;
-    void           SetLineColor(const QString &value);
+    QString        getLineWeight() const;
+    void           setLineWeight(const QString &value);
+
+    QString        getLineColor() const;
+    void           setLineColor(const QString &value);
+
 public slots:
     virtual void   ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     virtual void   PointNameChanged() Q_DECL_OVERRIDE;
+
 protected:
     virtual void   ShowVisualization() Q_DECL_OVERRIDE;
     /**
      * @brief SaveData Put dialog data in local variables
      */
     virtual void   SaveData() Q_DECL_OVERRIDE;
+    
 private:
     Q_DISABLE_COPY(DialogLine)
 

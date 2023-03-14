@@ -80,7 +80,8 @@ public:
     static VToolLine *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                              VContainer *data);
     static VToolLine *Create(const quint32 &_id, const quint32 &firstPoint, const quint32 &secondPoint,
-                             const QString &typeLine, const QString &lineColor, VMainGraphicsScene  *scene,
+                             const QString &typeLine, const QString &lineWeight,
+                             const QString &lineColor, VMainGraphicsScene  *scene,
                              VAbstractPattern *doc, VContainer *data, const Document &parse,
                              const Source &typeCreation);
 
@@ -100,12 +101,14 @@ public:
     quint32           GetSecondPoint() const;
     void              SetSecondPoint(const quint32 &value);
 
-    QString           GetLineColor() const;
-    void              SetLineColor(const QString &value);
+    QString           getLineColor() const;
+    void              setLineColor(const QString &value);
 
     virtual void      ShowVisualization(bool show) Q_DECL_OVERRIDE;
 
-    virtual void      SetTypeLine(const QString &value) Q_DECL_OVERRIDE;
+    virtual void      setLineType(const QString &value) Q_DECL_OVERRIDE;
+    void              setLineWeight(const QString &value) Q_DECL_OVERRIDE;
+    
     virtual void      GroupVisibility(quint32 object, bool visible) Q_DECL_OVERRIDE;
 
 public slots:
@@ -147,7 +150,8 @@ private:
     bool              m_isHovered;
 
                       VToolLine(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 firstPoint,
-                                quint32 secondPoint, const QString &typeLine, const QString &lineColor,
+                                quint32 secondPoint, const QString &typeLine, const QString &lineWeight,
+                                const QString &lineColor,
                                 const Source &typeCreation, QGraphicsItem * parent = nullptr);
 
     void              RefreshGeometry();

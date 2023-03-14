@@ -308,13 +308,13 @@ void VAbstractCurve::SetDuplicate(quint32 number)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VAbstractCurve::GetColor() const
+QString VAbstractCurve::getLineColor() const
 {
     return d->color;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractCurve::SetColor(const QString &color)
+void VAbstractCurve::setLineColor(const QString &color)
 {
     d->color = color;
 }
@@ -329,6 +329,26 @@ QString VAbstractCurve::GetPenStyle() const
 void VAbstractCurve::SetPenStyle(const QString &penStyle)
 {
     d->penStyle = penStyle;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return lineWeight
+ */
+QString VAbstractCurve::getLineWeight() const
+{
+        return d->lineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param lineWeight type
+ */
+void VAbstractCurve::setLineWeight(const QString &lineWeight)
+{
+    d->lineWeight = lineWeight;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

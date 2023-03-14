@@ -77,11 +77,26 @@
  * @param parent parent widget
  */
 DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogArc), flagRadius(false), flagF1(false), flagF2(false),
-      timerRadius(nullptr), timerF1(nullptr), timerF2(nullptr), radius(QString()), f1(QString()), f2(QString()),
-      formulaBaseHeight(0), formulaBaseHeightF1(0), formulaBaseHeightF2(0), angleF1(INT_MIN), angleF2(INT_MIN)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogArc)
+    , flagRadius(false)
+    , flagF1(false)
+    , flagF2(false)
+    , timerRadius(nullptr)
+    , timerF1(nullptr)
+    , timerF2(nullptr)
+    , radius(QString())
+    , f1(QString())
+    , f2(QString())
+    , formulaBaseHeight(0)
+    , formulaBaseHeightF1(0)
+    , formulaBaseHeightF2(0)
+    , angleF1(INT_MIN)
+    , angleF2(INT_MIN)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/arc.png"));
 
     plainTextEditFormula = ui->plainTextEditFormula;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
@@ -104,8 +119,30 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
     InitOkCancelApply(ui);
 
     FillComboBoxPoints(ui->comboBoxBasePoint);
-    FillComboBoxLineColors(ui->comboBoxColor);
-    FillComboBoxTypeLine(ui->comboBoxPenStyle, CurvePenStylesPics());
+
+    int index = ui->lineType_ComboBox->findData(LineTypeNone);
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->removeItem(index);
+    }
+
+    index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     CheckState();
 
@@ -182,27 +219,47 @@ void DialogArc::SetF2(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogArc::GetPenStyle() const
+QString DialogArc::getPenStyle() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxPenStyle, LineTypeSolidLine);
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogArc::SetPenStyle(const QString &value)
+void DialogArc::setPenStyle(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxPenStyle, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogArc::GetColor() const
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogArc::getLineWeight() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxColor, ColorBlack);
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogArc::SetColor(const QString &value)
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogArc::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxColor, value);
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogArc::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogArc::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

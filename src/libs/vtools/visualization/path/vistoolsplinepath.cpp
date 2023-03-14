@@ -127,7 +127,7 @@ void VisToolSplinePath::RefreshGeometry()
 
         if (size > 1)
         {
-            DrawPath(this, path.GetPath(), path.DirectionArrows(), mainColor, lineStyle, Qt::RoundCap);
+            DrawPath(this, path.GetPath(), path.DirectionArrows(), mainColor, lineStyle, lineWeight, Qt::RoundCap);
         }
 
         if (path.CountPoints() < 3)
@@ -319,6 +319,6 @@ void VisToolSplinePath::Creating(const QPointF &pSpl, int size)
         }
         emit PathChanged(path);
 
-        DrawPath(newCurveSegment, spline.GetPath(), mainColor, Qt::SolidLine, Qt::RoundCap);
+        DrawPath(newCurveSegment, spline.GetPath(), mainColor, Qt::SolidLine, lineWeight, Qt::RoundCap);
     }
 }
