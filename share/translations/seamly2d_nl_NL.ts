@@ -1686,7 +1686,7 @@ p, li { white-space: pre-wrap; }
         <translation>Opmaak adrukinstellingen</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation>Afdrukmarges buiten het afdrukgebied. Instellingen toch toepassen?</translation>
@@ -3658,10 +3658,10 @@ Apply settings anyway?</source>
         <translation>Informatie</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Kan geen exclusieve rechten op bestand 
+        <translation>Kan geen exclusieve rechten op bestand
 %1
 verkrijgen. Het bestand wordt misschien al gedownload.</translation>
     </message>
@@ -3694,10 +3694,6 @@ Do you want to download it?</source>
     <message>
         <source>History</source>
         <translation type="unfinished">Geschiedenis</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Find:</source>

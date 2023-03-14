@@ -1686,7 +1686,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -3658,7 +3658,7 @@ Apply settings anyway?</source>
         <translation>Інформація</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -3692,10 +3692,6 @@ Do you want to download it?</source>
     <message>
         <source>History</source>
         <translation type="unfinished">Історія</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -10116,7 +10112,7 @@ Do you want to save your changes?</source>
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Не можу відкрити файл%1: 
+        <translation>Не можу відкрити файл%1:
 %2.</translation>
     </message>
     <message>
