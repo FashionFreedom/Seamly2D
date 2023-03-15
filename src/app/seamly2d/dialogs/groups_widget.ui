@@ -320,7 +320,7 @@
          <property name="font">
           <font>
            <family>MS Shell Dlg 2</family>
-           <pointsize>10</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="toolTip">
@@ -346,6 +346,9 @@
            <width>16</width>
            <height>16</height>
           </size>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
