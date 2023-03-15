@@ -142,7 +142,7 @@ private:
 template <typename Dialog>
 /**
  * @brief ContextMenu show context menu for tool.
- * @param itemId id of point. 0 if not a point
+ * @param itemId id of point. 
  * @param event context menu event.
  * @param showRemove true - tool enable option delete.
  * @param ref true - do not ignore referens value.
@@ -177,7 +177,6 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
     // Show object name menu item
     QAction *actionShowPointName = menu.addAction(QIcon("://icon/16x16/open_eye.png"), tr("Show Point Name"));
     actionShowPointName->setCheckable(true);
-    actionShowPointName->setChecked(isPointNameVisible(itemId));
 
     if (itemType == GOType::Point)
     {

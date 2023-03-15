@@ -216,7 +216,7 @@ public:
     QString                        GetVersion() const;
     void                           SetVersion();
 
-    QVector<quint32>               getOpItems(const quint32 &toolId);
+    QVector<quint32>               getOpItems(const quint32 &toolId, const QString &itemType);
 
     bool                           IsModified() const;
     void                           SetModified(bool modified);

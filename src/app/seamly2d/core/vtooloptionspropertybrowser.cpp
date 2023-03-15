@@ -745,7 +745,7 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
                 case 47:    //Tool::MirrorByAxis
                 case 48:    //Tool::Move
                 {
-                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId);
+                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId, QStringLiteral("destination"));
                     for (qint32 j = 0; j < list.size(); ++j)
                     {
                         quint32 id = list.at(j);

@@ -671,9 +671,10 @@ void GroupsWidget::fillGroupItemList()
         auto i = groupData.begin();
         while (i != groupData.end())
         {
-           quint32 id = i.value();
-           Tool tooltype = history.value(id);
-           addGroupItem(id, tooltype);
+           quint32 toolId = i.value();
+           quint32 objId = i.key();
+           Tool tooltype = history.value(toolId);
+           addGroupItem(toolId, objId, tooltype);
            ++i;
         }
     }
@@ -689,13 +690,13 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
  * @param toolID ToolID of item to add to list
  * @param tooltype Tooltype of item to add to list
  */
-void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
+void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype)
 {
     // This check helps to find missing tools in the switch
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in history.");
 
     QString iconFileName = "";
-    QString objName = "Unknown";
+    QString objName = tr("Unknown Object");
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
@@ -846,7 +847,8 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::CutSpline:
                 {
                     const quint32 splineId = attrUInt(domElement, VToolCutSpline::AttrSpline);
-                    const QSharedPointer<VAbstractCubicBezier> spl = m_data->GeometricObject<VAbstractCubicBezier>(splineId);
+                    const QSharedPointer<VAbstractCubicBezier> spl =
+                    m_data->GeometricObject<VAbstractCubicBezier>(splineId);
                     SCASSERT(!spl.isNull())
                     iconFileName = ":/toolicon/32x32/spline_cut_point.png";
                     objName = tr("%1 - Point On Curve").arg(getPointName(toolId));
@@ -901,10 +903,11 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
 
                 case Tool::TrueDarts:
                     iconFileName = ":/toolicon/32x32/true_darts.png";
-                    objName = tr("True Dart %1_%2_%3")
-                             .arg(getPointName(attrUInt(domElement, AttrDartP1)))
-                             .arg(getPointName(attrUInt(domElement, AttrDartP2)))
-                             .arg(getPointName(attrUInt(domElement, AttrDartP2)));
+                    objName = tr("%1 - True Dart %2_%3_%4")
+                                 .arg(getObjName(objId))
+                                 .arg(getPointName(attrUInt(domElement, AttrDartP1)))
+                                 .arg(getPointName(attrUInt(domElement, AttrDartP2)))
+                                 .arg(getPointName(attrUInt(domElement, AttrDartP3)));
                     break;
 
                 case Tool::EllipticalArc:
@@ -919,32 +922,35 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::Rotation:
                 {
                     iconFileName = ":/toolicon/32x32/rotation.png";
-                    objName = tr("Rotation - Suffix %1")
-                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                    objName = tr("%1 - Rotation")
+                                 .arg(getObjName(objId == NULL_ID ? toolId : objId));
                     break;
                 }
 
                 case Tool::Move:
                 {
+                    const QSharedPointer<VGObject> obj = m_data->GetGObject(objId);
                     iconFileName = ":/toolicon/32x32/move.png";
-                    objName = tr("Move - Suffix %1")
-                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                    objName = tr("%1 - Move")
+                                 .arg(getObjName(objId == NULL_ID ? toolId : objId));
                     break;
                 }
 
                 case Tool::MirrorByLine:
                 {
+                    const QSharedPointer<VGObject> obj = m_data->GetGObject(objId);
                     iconFileName = ":/toolicon/32x32/mirror_by_line.png";
-                    objName = tr("Mirror by line - Suffix %1")
-                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                    objName = tr("%1 - Mirror by Line")
+                                 .arg(getObjName(objId == NULL_ID ? toolId : objId));
                     break;
                 }
 
                 case Tool::MirrorByAxis:
                 {
+                    const QSharedPointer<VGObject> obj = m_data->GetGObject(objId);
                     iconFileName = ":/toolicon/32x32/mirror_by_axis.png";
-                    objName = tr("Mirror by axis - Suffix %1")
-                                 .arg(m_doc->GetParametrString(domElement, AttrSuffix, QString()));
+                    objName = tr("%1 - Mirror by Axis")
+                                 .arg(getObjName(objId == NULL_ID ? toolId : objId));
                     break;
                 }
                 //Because "history" not only shows history of pattern, but helps restore current data for each pattern's
@@ -962,20 +968,28 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const Tool &tooltype)
                 case Tool::InsertNodes:
                     return;
             }
+            QList<quint32>itemData;
+            itemData.append(objId);
+            itemData.append(toolId);
+
             qCDebug(WidgetGroups, "Icon Name = %s", qUtf8Printable(iconFileName));
             QListWidgetItem *item = new QListWidgetItem(objName);
             item->setIcon(QIcon(iconFileName));
-            item->setData(Qt::UserRole, toolId);
+            item->setData(Qt::UserRole,  QVariant::fromValue(itemData));
             ui->groupItems_ListWidget->addItem(item);
             return;
         }
 
         catch (const VExceptionBadId &e)
         {
+            QList<quint32>itemData;
+            itemData.append(objId);
+            itemData.append(toolId);
+
             qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
-            QListWidgetItem *item = new QListWidgetItem(tr("Unknown Object"));
+            QListWidgetItem *item = new QListWidgetItem(objName);
             item->setIcon(QIcon(":/icons/win.icon.theme/16x16/status/dialog-warning.png"));
-            item->setData(Qt::UserRole, toolId);
+            item->setData(Qt::UserRole,  QVariant::fromValue(itemData));
             ui->groupItems_ListWidget->addItem(item);
             return;
         }
@@ -1011,7 +1025,7 @@ QString GroupsWidget::getObjName(quint32 toolId)
         qCDebug(WidgetGroups, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(toolId)),
             qUtf8Printable(e.ErrorMessage()),
             qUtf8Printable(e.DetailedInformation()));
-        return QString("Unknown");// Return Unknown string
+        return QString("Unknown Object");// Return Unknown string
     }
 }
 
@@ -1031,11 +1045,13 @@ QString GroupsWidget::getObjName(quint32 toolId)
 
     QListWidgetItem *rowItem = ui->groupItems_ListWidget->item(row);
     SCASSERT(rowItem != nullptr);
-    const quint32 toolId = rowItem->data(Qt::UserRole).toUInt();
+    QList<quint32> itemData = rowItem->data(Qt::UserRole).value<QList<quint32>>();
+    const quint32 toolId = itemData.last();
+    const quint32 objId =  itemData.first();
 
     QMenu menu;
     // Add Move Group Item menu
-    QMap<quint32,QString> groupsNotContainingItem =  m_doc->getGroupsContainingItem(toolId, 0, false);
+    QMap<quint32,QString> groupsNotContainingItem =  m_doc->getGroupsContainingItem(toolId, objId, false);
     QActionGroup *actionMoveGroupMenu= new QActionGroup(this);
 
     if(!groupsNotContainingItem.empty())
@@ -1069,9 +1085,12 @@ QString GroupsWidget::getObjName(quint32 toolId)
                     qUtf8Printable(QString().setNum(toolId)),
                     qUtf8Printable(QString().setNum(groupId)));
 
+            QListWidgetItem *rowItem = ui->groupItems_ListWidget->item(row);
+            SCASSERT(rowItem != nullptr);
+            QList<quint32> itemData = rowItem->data(Qt::UserRole).value<QList<quint32>>();
             delete ui->groupItems_ListWidget->item(row);
 
-            QDomElement item = m_doc->removeGroupItem(toolId, 0, groupId);
+            QDomElement item = m_doc->removeGroupItem(itemData.last(), itemData.first(), groupId);
 
             VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
             SCASSERT(scene != nullptr)
@@ -1099,8 +1118,13 @@ QString GroupsWidget::getObjName(quint32 toolId)
                   qUtf8Printable(QString().setNum(groupId)),
                   qUtf8Printable(QString().setNum(destinationGroupId)));
 
-         QDomElement sourceItem = m_doc->removeGroupItem(toolId, 0, groupId);
-         QDomElement destItem = m_doc->addGroupItem(toolId, 0, destinationGroupId);
+        QListWidgetItem *rowItem = ui->groupItems_ListWidget->item(row);
+        SCASSERT(rowItem != nullptr);
+        QList<quint32> itemData = rowItem->data(Qt::UserRole).value<QList<quint32>>();
+        delete ui->groupItems_ListWidget->item(row);
+
+         QDomElement sourceItem = m_doc->removeGroupItem(itemData.last(), itemData.first(), groupId);
+         QDomElement destItem = m_doc->addGroupItem(itemData.last(), itemData.first(), destinationGroupId);
 
          updateGroups();
 
@@ -1128,7 +1152,13 @@ void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
 {
     GOType toolType;
     const auto objects = m_data->DataGObjects();
-    quint32 toolId = item->data(Qt::UserRole).toUInt();
+    QList<quint32> itemData = item->data(Qt::UserRole).value<QList<quint32>>();
+    quint32 toolId = itemData.last();
+    quint32 objId =  itemData.first();
+    if (objId != NULL_ID)
+    {
+        toolId = objId;
+    }
 
     if (objects->contains(toolId))
     {
@@ -1142,38 +1172,6 @@ void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
         {
             //Use the line's FirstPoint as toolId and reset toolType
             toolId = attrUInt(domElement, AttrFirstPoint);
-        }
-        else if (domElement.tagName() == VAbstractPattern::TagOperation)
-        {
-            if (VDomDocument::GetParametrString(domElement, AttrType, "") == "rotation")
-            {
-                //Use rotation or move Center point as toolId and reset toolType
-                toolId = attrUInt(domElement, AttrCenter);
-            }
-            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "moving" )
-            {
-                //toolId = attrUInt(domElement, AttrCenter);
-                return;
-            }
-            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "flippingByAxis")
-            {
-                //Use axis Center point as toolId and reset toolType
-                toolId = attrUInt(domElement, AttrCenter);
-            }
-            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "flippingByLine")
-            {
-                //toolId = attrUInt(domElement, AttrCenter);
-                return;
-            }
-            else if (VDomDocument::GetParametrString(domElement, AttrType, "") == "trueDarts")
-            {
-                //Use dart First point as toolId and reset toolType
-                toolId = attrUInt(domElement, AttrPoint1);
-            }
-            else
-            {
-                return;
-            }
         }
         else
         {

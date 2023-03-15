@@ -1583,7 +1583,7 @@ void VAbstractPattern::SetVersion()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId)
+QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId, const QString &itemType)
 {
     QVector<quint32> items;
     quint32 objId;

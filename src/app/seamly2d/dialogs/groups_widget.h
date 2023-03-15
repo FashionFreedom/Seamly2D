@@ -108,7 +108,7 @@ private:
 
     void              fillTable(const QMap<quint32, GroupAttributes> &groups);
     void              fillGroupItemList();
-    void              addGroupItem(const quint32 &id, const Tool &tool);
+    void              addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype);
     void              groupItemContextMenu(const QPoint &pos);
     void              itemDoubleClicked(QListWidgetItem *item);
     void              zoomToObject(QSharedPointer<VPointF> point);

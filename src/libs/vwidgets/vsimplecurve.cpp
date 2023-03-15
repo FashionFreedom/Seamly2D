@@ -181,7 +181,7 @@ QVariant VSimpleCurve::itemChange(QGraphicsItem::GraphicsItemChange change, cons
 //---------------------------------------------------------------------------------------------------------------------
 void VSimpleCurve::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit showContextMenu(event);
+    emit showContextMenu(event, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
