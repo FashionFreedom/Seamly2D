@@ -75,12 +75,6 @@ void  AddToGroupDialog::fillNameBox()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void  AddToGroupDialog::setName(const QString &name)
-{
-    //ui->groupName_ComboBox->setText(name);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 QString  AddToGroupDialog::getName() const
 {
     return ui->groupName_ComboBox->currentText();

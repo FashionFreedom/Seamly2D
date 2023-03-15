@@ -52,7 +52,7 @@ public:
     virtual                  ~AddToGroupDialog();
 
     void                      fillNameBox();
-    void                      setName(const QString &name);
+
     QString                   getName() const;
 
     QMap<quint32, quint32>    getGroupData() const;
