@@ -79,6 +79,7 @@ public:
 
 public slots:
     void              updateGroups();
+    void              showGroups(QMap<quint32,QString> groups);
     void              showAllGroups();
     void              hideAllGroups();
     void              lockAllGroups();

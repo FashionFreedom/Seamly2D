@@ -123,10 +123,11 @@ GroupsWidget::GroupsWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     connect(ui->deleteGroup_ToolButton,     &QToolButton::clicked, this,  &GroupsWidget::deleteGroupFromList);
     connect(ui->editGroup_ToolButton,       &QToolButton::clicked, this,  &GroupsWidget::editGroup);
 
-    connect(ui->groups_TableWidget, &QTableWidget::cellClicked, this, &GroupsWidget::groupVisibilityChanged);
-    connect(ui->groups_TableWidget, &QTableWidget::cellClicked, this, &GroupsWidget::groupLockChanged);
-    connect(ui->groups_TableWidget, &QTableWidget::cellChanged, this, &GroupsWidget::renameGroup);
-    connect(ui->groups_TableWidget, &QTableWidget::cellClicked, this, &GroupsWidget::fillGroupItemList);
+    connect(ui->groups_TableWidget, &QTableWidget::cellClicked,        this, &GroupsWidget::groupVisibilityChanged);
+    connect(ui->groups_TableWidget, &QTableWidget::cellClicked,        this, &GroupsWidget::groupLockChanged);
+    connect(ui->groups_TableWidget, &QTableWidget::cellChanged,        this, &GroupsWidget::renameGroup);
+    connect(ui->groups_TableWidget, &QTableWidget::cellClicked,        this, &GroupsWidget::fillGroupItemList);
+    connect(ui->groups_TableWidget, &QTableWidget::currentCellChanged, this, &GroupsWidget::fillGroupItemList);
 
     ui->groups_TableWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->groups_TableWidget, &QTableWidget::customContextMenuRequested, this, &GroupsWidget::groupContextMenu);
@@ -152,7 +153,7 @@ void GroupsWidget::groupVisibilityChanged(int row, int column)
     const bool locked = m_doc->getGroupLock(groupId);
     if (locked == false)
     {
-        const bool visible = !m_doc->getGroupVisivility(groupId);
+        const bool visible = !m_doc->getGroupVisibility(groupId);
         setGroupVisibility(item, groupId, visible);
     }
 }
@@ -195,6 +196,27 @@ void GroupsWidget::renameGroup(int row, int column)
         m_doc->setGroupName(groupId, ui->groups_TableWidget->item(row, column)->text());
         updateGroups();
     }
+}
+
+void GroupsWidget::showGroups(QMap<quint32,QString> groups)
+{
+    QMap<quint32,QString>::const_iterator i;
+    for (i = groups.constBegin(); i != groups.constEnd(); ++i)
+    {
+        for (int j = 0; j < ui->groups_TableWidget->rowCount(); ++j)
+        {
+            QTableWidgetItem *item = ui->groups_TableWidget->item(j, 0);
+            if (item)
+            {
+                quint32 groupId = item->data(Qt::UserRole).toUInt();
+                if (groupId == i.key())
+                {
+                    setGroupVisibility(item, groupId, true);
+                }
+            }
+        }
+    }
+    updateGroups();
 }
 
 void GroupsWidget::showAllGroups()
@@ -686,9 +708,10 @@ void GroupsWidget::fillGroupItemList()
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
 /**
- * @brief Add description for group item in listwidget
- * @param toolID ToolID of item to add to list
- * @param tooltype Tooltype of item to add to list
+ * @brief addGroupItem Add group item with description in listwidget.
+ * @param toolID ToolID of item to add to list.
+ * @param objId ObjectID of item to add to list.
+ * @param tooltype Tooltype of item to add to list.
  */
 void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype)
 {
@@ -713,8 +736,8 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
                 case Tool::LinePoint:
                 case Tool::AbstractSpline:
                 case Tool::Cut:
-                case Tool::Midpoint:// Same as Tool::AlongLine, but tool will never have such type
-                case Tool::ArcIntersectAxis:// Same as Tool::CurveIntersectAxis, but tool will never have such type
+                case Tool::Midpoint:            // Same as Tool::AlongLine, but tool will never have such type
+                case Tool::ArcIntersectAxis:    // Same as Tool::CurveIntersectAxis, but tool will never have such type
                 case Tool::LAST_ONE_DO_NOT_USE:
                     Q_UNREACHABLE(); //-V501
                     break;
@@ -953,8 +976,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
                                  .arg(getObjName(objId == NULL_ID ? toolId : objId));
                     break;
                 }
-                //Because "history" not only shows history of pattern, but helps restore current data for each pattern's
-                //piece, we need add record about details and nodes, but don't show them.
+
                 case Tool::Piece:
                 case Tool::Union:
                 case Tool::NodeArc:
@@ -997,11 +1019,24 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
 
 QT_WARNING_POP
 
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getPointName get the name of the point by tool id.
+ * @param toolId Id of the tool the object belongs to.
+ * @return name of point.
+ */
 QString GroupsWidget::getPointName(quint32 toolId)
 {
     return m_data->GeometricObject<VPointF>(toolId)->name();
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief attrUInt get unsigned integer attribute.
+ * @param domElement Dom Element.
+ * @param name  Name of Attribute.
+ * @return unsigned interger.
+ */
 quint32 GroupsWidget::attrUInt(const QDomElement &domElement, const QString &name)
 {
     return m_doc->GetParametrUInt(domElement, name, "0");
@@ -1010,8 +1045,8 @@ quint32 GroupsWidget::attrUInt(const QDomElement &domElement, const QString &nam
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief getObjName get the name of the graphics object.
- * @param toolId  Id of the tool the object belongs to;
- * @return name of object
+ * @param toolId Id of the tool the object belongs to.
+ * @return name of object.
  */
 QString GroupsWidget::getObjName(quint32 toolId)
 {
@@ -1032,7 +1067,7 @@ QString GroupsWidget::getObjName(quint32 toolId)
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ContextMenu show context menu for group objects.
- * @param pos Mouse of right click;
+ * @param pos Mouse position of right click.
  */
  void GroupsWidget::groupItemContextMenu(const QPoint &pos)
 {
@@ -1145,12 +1180,12 @@ QString GroupsWidget::getObjName(quint32 toolId)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Handle double clicking of list item
- * @param item selected list widget item
+ * @brief Handle double clicking of list item.
+ * @param item selected list widget item.
  */
 void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
 {
-    GOType toolType;
+    GOType objType;
     const auto objects = m_data->DataGObjects();
     QList<quint32> itemData = item->data(Qt::UserRole).value<QList<quint32>>();
     quint32 toolId = itemData.last();
@@ -1162,7 +1197,7 @@ void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
 
     if (objects->contains(toolId))
     {
-        toolType = m_data->GetGObject(toolId)->getType();
+        objType = m_data->GetGObject(toolId)->getType();
     }
     else
     {
@@ -1177,79 +1212,53 @@ void GroupsWidget::itemDoubleClicked(QListWidgetItem *item)
         {
             return;
         }
-        toolType = m_data->GetGObject(toolId)->getType();
+        objType = m_data->GetGObject(toolId)->getType();
     }
 
-    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
-    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
+    switch(objType)
     {
-        GOType objType = static_cast<GOType>(i.value()->getType());
-        switch(objType)
+        case GOType::Point:
         {
-            case GOType::Point:
-            {
-                if (objType == toolType)
-                {
-                    if (i.value()->name() == getPointName(toolId))
-                    {
-                        QSharedPointer<VPointF> point = m_data->GeometricObject<VPointF>(toolId);
-                        zoomToObject(point);
-                        return;
-                    }
-                }
-                break;
-            }
-
-            case GOType::Arc:
-            case GOType::EllipticalArc:
-            {
-                if (objType == toolType)
-                {
-                    const QSharedPointer<VAbstractArc> toolCurve = m_data->GeometricObject<VAbstractArc>(toolId);
-                    const QSharedPointer<VAbstractArc> curve = m_data->GeometricObject<VAbstractArc>(i.key());
-                    QSharedPointer<VPointF>point(new VPointF(curve->GetCenter()));
-                    if (curve->name() == toolCurve->name())
-                    {
-                        zoomToObject(point);
-                        return;
-                    }
-                }
-                break;
-            }
-
-            case GOType::Spline:
-            case GOType::SplinePath:
-            case GOType::CubicBezier:
-            case GOType::CubicBezierPath:
-            {
-                if (objType == toolType)
-                {
-                    const QSharedPointer<VAbstractCurve> toolCurve = m_data->GeometricObject<VAbstractCurve>(toolId);
-                    const QSharedPointer<VAbstractCurve> curve = m_data->GeometricObject<VAbstractCurve>(i.key());
-                    QSharedPointer<VPointF>point(new VPointF(curve->getFirstPoint()));
-                    if (curve->name() == toolCurve->name())
-                    {
-                        zoomToObject(point);
-                        return;
-                    }
-                }
-                break;
-            }
-            case GOType::Unknown:
-            case GOType::Curve:
-            case GOType::Path:
-            case GOType::AllCurves:
-                default:
-                break;
+            QSharedPointer<VPointF> point = m_data->GeometricObject<VPointF>(toolId);
+            zoomToObject(point);
+            return;
         }
-    }
+
+        case GOType::Arc:
+        case GOType::EllipticalArc:
+        {
+            const QSharedPointer<VAbstractArc> curve = m_data->GeometricObject<VAbstractArc>(toolId);
+            QSharedPointer<VPointF>point(new VPointF(curve->GetCenter()));
+
+            zoomToObject(point);
+            return;
+        }
+
+        case GOType::Spline:
+        case GOType::SplinePath:
+        case GOType::CubicBezier:
+        case GOType::CubicBezierPath:
+        {
+            const QSharedPointer<VAbstractCurve> curve = m_data->GeometricObject<VAbstractCurve>(toolId);
+            QSharedPointer<VPointF>point(new VPointF(curve->getFirstPoint()));
+            zoomToObject(point);
+            return;
+        }
+
+        case GOType::Unknown:
+        case GOType::Curve:
+        case GOType::Path:
+        case GOType::AllCurves:
+            default:
+            break;
+        }
 
     return;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief zoomToObject zoom to selected (point) object
+ * @brief zoomToObject zoom to selected (point) object.
  * @param point If selected list item is a point use the item's toolId. if the list item is a curve or line then
                 use the tool's first point.
  */
@@ -1265,6 +1274,24 @@ void GroupsWidget::zoomToObject(QSharedPointer<VPointF> point)
 
     int row = ui->groups_TableWidget->currentRow();
     setGroupVisibility(ui->groups_TableWidget->item(row, 0), getGroupId(), true);
+
+    // show point name if it's hidden
+    quint32 toolId = point->getIdTool();
+    const quint32 objectId = point->getIdObject();
+    if (objectId != NULL_ID)
+    {
+        toolId = objectId;
+    }
+    if (toolId != NULL_ID)
+    {
+        if (VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId)))
+        {
+            tool->setPointNameVisiblity(toolId, true);
+        }
+    }
+
+    // show any hiden groups containing object
+    showGroups(m_doc->getGroupsContainingItem(toolId, objectId, true));
 
     return;
 }

@@ -1583,6 +1583,12 @@ void VAbstractPattern::SetVersion()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getOpItems get vector of operation tool obects.
+ * @param toolId operation tool id.
+ * @param itemType  type of item - either source or destination.
+ * @return vector of item element object ids.
+ */
 QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId, const QString &itemType)
 {
     QVector<quint32> items;
@@ -1592,7 +1598,7 @@ QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId, const QStri
     for (qint32 i = 0; i < nodeList.size(); ++i)
     {
         const QDomElement dataElement = nodeList.at(i).toElement();
-        if (!dataElement.isNull() && dataElement.tagName() == QStringLiteral("destination"))
+        if (!dataElement.isNull() && dataElement.tagName() == itemType)
         {
             const QDomNodeList srcList = dataElement.childNodes();
             for (qint32 j = 0; j < srcList.size(); ++j)
@@ -2509,7 +2515,7 @@ quint32 VAbstractPattern::getGroupIdByName(const QString &name)
  * @brief Returns the groups that contain or do not contain the item identified by the toolid and the objectid
  * @param toolId
  * @param objectId
- * @param containsItem |true if the groups contain the given item, false if they contain the item
+ * @param containsItem |true if the groups contain the given item, false if they don't contain the item
  * @return
  */
 QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId, quint32 objectId, bool containsItem)
@@ -2538,7 +2544,7 @@ QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId,
                         if((containsItem && groupHasItem) || (not containsItem && not groupHasItem))
                         {
                             const quint32 groupId = GetParametrUInt(group, AttrId, "0");
-                            const QString name = GetParametrString(group, AttrName, tr("New group 3"));
+                            const QString name = GetParametrString(group, AttrName, tr("New group"));
                             data.insert(groupId, name);
                         }
                     }
@@ -2796,7 +2802,7 @@ bool VAbstractPattern::isGroupEmpty(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractPattern::getGroupVisivility(quint32 id)
+bool VAbstractPattern::getGroupVisibility(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
     if (group.isElement())
@@ -2836,7 +2842,7 @@ void VAbstractPattern::setGroupVisibility(quint32 id, bool visible)
 /*---------------------------------------------------------------------------------------------------------------------
  * @brief  Gets whether a Group is locked or not
  * @param  id - Tool Id.
- * @return AttrGroupLocked - True if Visible False if Invisible.
+ * @return AttrGroupLocked - True if locked False if unlocked.
  * @return True if can't find group by id.
 */
 

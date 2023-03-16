@@ -2554,23 +2554,47 @@ void MainWindow::showZoomToPointDialog()
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ * @param pointName name of to zoom into.
  */
-void MainWindow::zoomToPoint(const QString& pointName)
+void MainWindow::zoomToPoint(const QString &pointName)
 {
-    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
-         item != pattern->DataGObjects()->end();
-         ++item)
+    const QHash<quint32, QSharedPointer<VGObject> > *objects = pattern->DataGObjects();
+    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+
+    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
     {
-        if (item.value()->name() == pointName)
+        QSharedPointer<VGObject> object = i.value();
+        const quint32 objectId = object->getIdObject();
+        const QString objectName = object->name();
+
+        if (objectName == pointName)
         {
-            VPointF* point = (VPointF*)item.value().data();
+            VPointF *point = (VPointF*)object.data();
+            ui->view->zoom100Percent();
+            ui->view->centerOn(point->toQPointF());
 
             // show point name if it's hidden
-            qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
+            // TODO: Need to make this work with operation's and dart tools 
+            quint32 toolId = point->getIdTool();
+            const quint32 objId = point->getIdObject();
+            if (objId != NULL_ID)
+            {
+                toolId = objId;
+            }
+            if (VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId)))
+            {
+                tool->setPointNameVisiblity(toolId, true);
+            }
 
-            double sceneWidth = ui->view->width();
-            QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
-            ui->view->zoomToRect(rect);
+            // show any hiden groups containing object
+            QMap<quint32,QString> groups = doc->getGroupsContainingItem(toolId, objectId, true);
+            groupsWidget->showGroups(groups);
+
+            // Reset combobox so same point can be selected again
+            m_zoomToPointComboBox->blockSignals(true);
+            m_zoomToPointComboBox->setCurrentIndex(-1);
+            m_zoomToPointComboBox->blockSignals(false);
+
             return;
         }
     }
