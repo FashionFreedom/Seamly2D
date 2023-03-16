@@ -42,7 +42,7 @@
      , m_idTool(idTool)
  {
      nodeId = idPoint;
-     setText(tr("Toggle point name visibilty"));
+     setText(tr("toggle label"));
 
      const QDomElement element = getDestinationObject(m_idTool, nodeId);
      if (element.isElement())
