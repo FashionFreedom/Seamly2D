@@ -246,7 +246,7 @@ public:
     QDomElement                    removeGroupItem(quint32 toolId, quint32 objectId, quint32 groupId);
     bool                           isGroupEmpty(quint32 id);
 
-    bool                           getGroupVisivility(quint32 id);
+    bool                           getGroupVisibility(quint32 id);
     void                           setGroupVisibility(quint32 id, bool visible);
 
     bool                           getGroupLock(quint32 id);
