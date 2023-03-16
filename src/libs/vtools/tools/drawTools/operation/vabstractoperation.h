@@ -150,6 +150,8 @@ public slots:
     void                 ObjectSelected(bool selected, quint32 objId);
     void                 deletePoint();
     void                 pointNamePositionChanged(const QPointF &pos, quint32 labelId);
+    virtual void         updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
+
 
 protected:
     QString                          suffix;
@@ -167,7 +169,7 @@ protected:
     virtual void         SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj) Q_DECL_OVERRIDE;
 
 
-    virtual void         updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
+    //virtual void         updatePointNameVisibility(quint32 id, bool visible) Q_DECL_OVERRIDE;
     void                 updatePointNamePosition(quint32 id, const QPointF &pos);
 
     void                 SaveSourceDestination(QDomElement &tag);
