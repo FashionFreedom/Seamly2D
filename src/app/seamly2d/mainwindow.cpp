@@ -2574,7 +2574,7 @@ void MainWindow::zoomToPoint(const QString &pointName)
             ui->view->centerOn(point->toQPointF());
 
             // show point name if it's hidden
-            // TODO: Need to make this work with operation's and dart tools 
+            // TODO: Need to make this work with operation's and dart tools
             quint32 toolId = point->getIdTool();
             const quint32 objId = point->getIdObject();
             if (objId != NULL_ID)
@@ -6129,6 +6129,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         //Fit scene size to best size for first show
         zoomFirstShow();
+        updateZoomToPointComboBox(draftPointNamesList());
 
         showDraftMode(true);
 
