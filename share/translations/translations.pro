@@ -36,7 +36,7 @@ include(../../src/libs/vtools/vtools.pri)
 include(../../src/libs/vformat/vformat.pri)
 include(../../src/libs/fervor/fervor.pri)
 
-# Add here path to new translation file with name "measurements_*_*.ts" if you want to add new language.
+# Add here path to new translation file with name "seamly2d_*_*.ts" if you want to add new language.
 # Same paths in variable INSTALL_TRANSLATIONS (translations.pri).
 
 LANGUAGES += \
