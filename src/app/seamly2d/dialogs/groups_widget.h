@@ -117,6 +117,7 @@ private:
     QString           getPointName(quint32 pointId);
     quint32           attrUInt(const QDomElement &domElement, const QString &name);
     QString           getObjName(quint32 id);
+    void              splitterMoved(int pos, int index);
 };
 
 #endif // GROUPS_WIDGET_H

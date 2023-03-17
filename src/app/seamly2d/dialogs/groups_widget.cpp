@@ -83,19 +83,19 @@
 
 #include <Qt>
 #include <QApplication>
-#include <QMenu>
-#include <QObject>
-#include <QMetaObject>
-#include <QPointer>
-#include <QtDebug>
-#include <QTableWidget>
+#include <QColor>
+#include <QIcon>
 #include <QListWidget>
 #include <QListWidgetItem>
-#include <QColor>
+#include <QMenu>
 #include <QMessageBox>
-#include <QIcon>
+#include <QMetaObject>
+#include <QObject>
+#include <QPointer>
 #include <QScopedPointer>
-
+#include <QSettings>
+#include <QTableWidget>
+#include <QtDebug>
 
 Q_LOGGING_CATEGORY(WidgetGroups, "vwidgetgroups")
 
@@ -110,6 +110,8 @@ GroupsWidget::GroupsWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
 
 {
     ui->setupUi(this);
+    QSettings settings;
+    ui->groups_Splitter->restoreState(settings.value("splitterSizes").toByteArray());
 
     fillTable(m_doc->getGroups());
 
@@ -135,6 +137,8 @@ GroupsWidget::GroupsWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     ui->groupItems_ListWidget->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(ui->groupItems_ListWidget, &QListWidget::customContextMenuRequested, this, &GroupsWidget::groupItemContextMenu);
     connect(ui->groupItems_ListWidget, &QListWidget::itemDoubleClicked,          this, &GroupsWidget::itemDoubleClicked);
+
+    connect(ui->groups_Splitter, &QSplitter::splitterMoved, this, &GroupsWidget::splitterMoved);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1307,4 +1311,19 @@ void GroupsWidget::setGroupVisibility(QTableWidgetItem *item, const quint32 &gro
     {
         item->setIcon(QIcon("://icon/32x32/visible_off.png"));
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief splitterMoved Save splitter state whenever it's moved.
+ * @param pos
+ * @param index
+ */
+void GroupsWidget::splitterMoved(int pos, int index)
+{
+    Q_UNUSED(pos)
+    Q_UNUSED(index)
+
+    QSettings settings;
+    settings.setValue("splitterSizes", ui->groups_Splitter->saveState());
 }
