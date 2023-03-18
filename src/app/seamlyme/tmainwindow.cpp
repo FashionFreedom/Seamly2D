@@ -2617,7 +2617,7 @@ void TMainWindow::UpdateWindowTitle()
 #ifdef Q_OS_WIN32
 		qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
-		showName = StrippedName(curFile);
+		showName = strippedName(curFile);
 	}
 	else
 	{
@@ -2958,7 +2958,7 @@ void TMainWindow::UpdateRecentFileActions()
 
 	for (int i = 0; i < numRecentFiles; ++i)
 	{
-		const QString text = QString("&%1. %2").arg(i + 1).arg(StrippedName(files.at(i)));
+		const QString text = QString("&%1. %2").arg(i + 1).arg(strippedName(files.at(i)));
 		qCDebug(tMainWindow, "file %i = %s", numRecentFiles, qUtf8Printable(text));
 		recentFileActs[i]->setText(text);
 		recentFileActs[i]->setData(files.at(i));

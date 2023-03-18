@@ -388,7 +388,7 @@ QStringList SupportedLocales()
  * @param fullFileName full path to the file.
  * @return file name.
  */
-QString StrippedName(const QString &fullFileName)
+QString strippedName(const QString &fullFileName)
 {
     return QFileInfo(fullFileName).fileName();
 }

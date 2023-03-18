@@ -99,7 +99,7 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     VSettings *settings = qApp->Seamly2DSettings();
     settings->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    if (qApp->GetPPath().isEmpty())
+    if (qApp->getFilePath().isEmpty())
     {
         ui->lineEditPathToFile->setText(tr("<Empty>"));
         ui->lineEditPathToFile->setToolTip(tr("File was not saved yet."));
@@ -107,15 +107,15 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     }
     else
     {
-        ui->lineEditPathToFile->setText(QDir::toNativeSeparators(qApp->GetPPath()));
-        ui->lineEditPathToFile->setToolTip(QDir::toNativeSeparators(qApp->GetPPath()));
+        ui->lineEditPathToFile->setText(QDir::toNativeSeparators(qApp->getFilePath()));
+        ui->lineEditPathToFile->setToolTip(QDir::toNativeSeparators(qApp->getFilePath()));
         ui->pushButtonShowInExplorer->setEnabled(true);
     }
     ui->lineEditPathToFile->setCursorPosition(0);
 
     connect(ui->pushButtonShowInExplorer, &QPushButton::clicked, this, [this]()
     {
-        ShowInGraphicalShell(qApp->GetPPath());
+        ShowInGraphicalShell(qApp->getFilePath());
     });
 #if defined(Q_OS_MAC)
     ui->pushButtonShowInExplorer->setText(tr("Show in Finder"));

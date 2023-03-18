@@ -133,8 +133,8 @@ public:
 
     virtual bool     IsAppInGUIMode()const =0;
 
-    QString         GetPPath() const;
-    void            SetPPath(const QString &value);
+    QString         getFilePath() const;
+    void            setFilePath(const QString &value);
 
 protected:
     QUndoStack         *undoStack;
@@ -180,13 +180,13 @@ private:
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString VAbstractApplication::GetPPath() const
+inline QString VAbstractApplication::getFilePath() const
 {
     return patternFilePath;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline void VAbstractApplication::SetPPath(const QString &value)
+inline void VAbstractApplication::setFilePath(const QString &value)
 {
     patternFilePath = value;
 }
