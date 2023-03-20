@@ -71,8 +71,8 @@ public:
     quint32           getSecondPointId() const;
     void              setSecondPointId(const quint32 &value);
 
-    QString           GetLineColor() const;
-    void              SetLineColor(const QString &value);
+    QString           getLineColor() const;
+    void              setLineColor(const QString &value);
 
 public slots:
     virtual void      Disable(bool disable, const QString &draftBlockName) Q_DECL_OVERRIDE;

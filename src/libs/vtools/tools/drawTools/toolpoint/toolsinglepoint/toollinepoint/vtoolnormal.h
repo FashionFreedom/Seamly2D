@@ -79,12 +79,13 @@ public:
     static VToolNormal *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                                VContainer *data);
     static VToolNormal *Create(const quint32 _id, QString &formula, quint32 firstPointId,
-                               quint32 secondPointId, const QString &typeLine, const QString &lineColor,
+                               quint32 secondPointId, const QString &typeLine, const QString &lineWeight,
+                               const QString &lineColor,
                                const QString &pointName, const qreal angle, qreal mx, qreal my, bool showPointName,
                                VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
                                const Document &parse,
                                const Source &typeCreation);
-                               
+
     static QPointF       FindPoint(const QPointF &firstPoint, const QPointF &secondPoint, const qreal &length,
                                    const qreal &angle = 0);
     static const QString ToolType;
@@ -115,7 +116,7 @@ private:
     quint32              secondPointId;
 
     VToolNormal(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
-                const QString &lineColor,
+                const QString &lineWeight, const QString &lineColor,
                 const QString &formula, const qreal &angle, const quint32 &firstPointId, const quint32 &secondPointId,
                 const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };

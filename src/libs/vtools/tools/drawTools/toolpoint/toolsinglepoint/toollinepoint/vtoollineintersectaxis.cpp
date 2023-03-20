@@ -80,12 +80,16 @@ const QString VToolLineIntersectAxis::ToolType = QStringLiteral("lineIntersectAx
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolLineIntersectAxis::VToolLineIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                               const QString &typeLine, const QString &lineColor,
+                                               const QString &lineType, const QString &lineWeight,
+                                               const QString &lineColor,
                                                const QString &formulaAngle, const quint32 &basePointId,
                                                const quint32 &firstPointId, const quint32 &secondPointId,
                                                const Source &typeCreation, QGraphicsItem *parent)
-    :VToolLinePoint(doc, data, id, typeLine, lineColor, QString(), basePointId, 0, parent), formulaAngle(formulaAngle),
-      firstPointId(firstPointId), secondPointId(secondPointId)
+    : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, QString()
+    , basePointId, 0, parent)
+    , formulaAngle(formulaAngle)
+    , firstPointId(firstPointId)
+    , secondPointId(secondPointId)
 {
     ToolCreation(typeCreation);
 }
@@ -98,8 +102,9 @@ void VToolLineIntersectAxis::setDialog()
     QSharedPointer<DialogLineIntersectAxis> dialogTool = m_dialog.objectCast<DialogLineIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
-    dialogTool->SetTypeLine(m_lineType);
-    dialogTool->SetLineColor(lineColor);
+    dialogTool->setLineType(m_lineType);
+    dialogTool->setLineWeight(m_lineWeight);
+    dialogTool->setLineColor(lineColor);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->SetBasePointId(basePointId);
     dialogTool->SetFirstPointId(firstPointId);
@@ -114,15 +119,16 @@ VToolLineIntersectAxis *VToolLineIntersectAxis::Create(QSharedPointer<DialogTool
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogLineIntersectAxis> dialogTool = dialog.objectCast<DialogLineIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
-    const QString pointName = dialogTool->getPointName();
-    const QString typeLine = dialogTool->GetTypeLine();
-    const QString lineColor = dialogTool->GetLineColor();
-    QString formulaAngle = dialogTool->GetAngle();
-    const quint32 basePointId = dialogTool->GetBasePointId();
-    const quint32 firstPointId = dialogTool->GetFirstPointId();
+    const QString pointName     = dialogTool->getPointName();
+    const QString lineType      = dialogTool->getLineType();
+    const QString lineWeight    = dialogTool->getLineWeight();
+    const QString lineColor     = dialogTool->getLineColor();
+    QString formulaAngle        = dialogTool->GetAngle();
+    const quint32 basePointId   = dialogTool->GetBasePointId();
+    const quint32 firstPointId  = dialogTool->GetFirstPointId();
     const quint32 secondPointId = dialogTool->GetSecondPointId();
 
-    VToolLineIntersectAxis *point = Create(0, pointName, typeLine, lineColor, formulaAngle,
+    VToolLineIntersectAxis *point = Create(0, pointName, lineType, lineWeight, lineColor, formulaAngle,
                                            basePointId, firstPointId, secondPointId, 5, 10, true,
                                            scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
@@ -134,7 +140,8 @@ VToolLineIntersectAxis *VToolLineIntersectAxis::Create(QSharedPointer<DialogTool
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolLineIntersectAxis *VToolLineIntersectAxis::Create(const quint32 _id, const QString &pointName,
-                                                       const QString &typeLine, const QString &lineColor,
+                                                       const QString &lineType, const QString &lineWeight,
+                                                       const QString &lineColor,
                                                        QString &formulaAngle, quint32 basePointId,
                                                        quint32 firstPointId, quint32 secondPointId,
                                                        qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
@@ -176,7 +183,7 @@ VToolLineIntersectAxis *VToolLineIntersectAxis::Create(const quint32 _id, const 
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::LineIntersectAxis, doc);
-        VToolLineIntersectAxis *point = new VToolLineIntersectAxis(doc, data, id, typeLine, lineColor, formulaAngle,
+        VToolLineIntersectAxis *point = new VToolLineIntersectAxis(doc, data, id, lineType, lineWeight, lineColor, formulaAngle,
                                                                    basePointId, firstPointId, secondPointId,
                                                                    typeCreation);
         scene->addItem(point);
@@ -309,13 +316,14 @@ void VToolLineIntersectAxis::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogLineIntersectAxis> dialogTool = m_dialog.objectCast<DialogLineIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
-    doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
-    doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
-    doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
-    doc->SetAttribute(domElement, AttrP1Line, QString().setNum(dialogTool->GetFirstPointId()));
-    doc->SetAttribute(domElement, AttrP2Line, QString().setNum(dialogTool->GetSecondPointId()));
+    doc->SetAttribute(domElement, AttrName,       dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrAngle,      dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrBasePoint,  QString().setNum(dialogTool->GetBasePointId()));
+    doc->SetAttribute(domElement, AttrP1Line,     QString().setNum(dialogTool->GetFirstPointId()));
+    doc->SetAttribute(domElement, AttrP2Line,     QString().setNum(dialogTool->GetSecondPointId()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -323,22 +331,23 @@ void VToolLineIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObje
 {
     VToolLinePoint::SaveOptions(tag, obj);
 
-    doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrAngle, formulaAngle);
+    doc->SetAttribute(tag, AttrType,      ToolType);
+    doc->SetAttribute(tag, AttrAngle,     formulaAngle);
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
-    doc->SetAttribute(tag, AttrP1Line, firstPointId);
-    doc->SetAttribute(tag, AttrP2Line, secondPointId);
+    doc->SetAttribute(tag, AttrP1Line,    firstPointId);
+    doc->SetAttribute(tag, AttrP2Line,    secondPointId);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLineIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
-    firstPointId = doc->GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
-    secondPointId = doc->GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
-    formulaAngle = doc->GetParametrString(domElement, AttrAngle, "");
+    m_lineType    = doc->GetParametrString(domElement, AttrLineType,   LineTypeSolidLine);
+    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight, "0.35");
+    lineColor     = doc->GetParametrString(domElement, AttrLineColor,  ColorBlack);
+    basePointId   = doc->GetParametrUInt(domElement,   AttrBasePoint,  NULL_ID_STR);
+    firstPointId  = doc->GetParametrUInt(domElement,   AttrP1Line,     NULL_ID_STR);
+    secondPointId = doc->GetParametrUInt(domElement,   AttrP2Line,     NULL_ID_STR);
+    formulaAngle  = doc->GetParametrString(domElement, AttrAngle,      "");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -354,6 +363,7 @@ void VToolLineIntersectAxis::SetVisualization()
         visual->setAxisPointId(basePointId);
         visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
+        visual->setLineWeight(m_lineWeight);
         visual->RefreshGeometry();
     }
 }

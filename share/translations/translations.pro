@@ -62,4 +62,3 @@ LANGUAGES += \
 for(lang, LANGUAGES) {
     TRANSLATIONS += seamly2d_$${lang}.ts
 }
-

@@ -40,11 +40,11 @@ public:
     struct SEditorWidget
     {
         SEditorWidget() : FormWidget(nullptr), Editor(nullptr) {}
-        explicit SEditorWidget(VPropertyFormWidget* form_widget) : FormWidget(form_widget), Editor(nullptr) {}
-        explicit SEditorWidget(QWidget* editor_widget) : FormWidget(nullptr), Editor(editor_widget) {}
+        explicit SEditorWidget(VPropertyFormWidget *form_widget) : FormWidget(form_widget), Editor(nullptr) {}
+        explicit SEditorWidget(QWidget *editor_widget) : FormWidget(nullptr), Editor(editor_widget) {}
 
-        VPropertyFormWidget* FormWidget;
-        QWidget* Editor;
+        VPropertyFormWidget *FormWidget;
+        QWidget *Editor;
     };
 
     //! The root property to use
@@ -63,7 +63,7 @@ public:
     {}
 
     //! Constructor
-    explicit VPropertyFormWidgetPrivate(const QList<VProperty*>& properties)
+    explicit VPropertyFormWidgetPrivate(const QList<VProperty*> &properties)
         : Properties(properties), EditorWidgets(QList<SEditorWidget>()), UpdateEditors(true)
     {}
 

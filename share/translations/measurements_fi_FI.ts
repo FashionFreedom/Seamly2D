@@ -4001,7 +4001,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1954"/>
-        <source>From Side to Side at Natural Waist level, across the back. Calculate as ( Natural Waist circumference  - Natural Waist arc (front) ).</source>
+        <source>From Side to Side at Natural Waist level, across the back. Calculate as ( Natural Waist circumference - Natural Waist arc (front) ).</source>
         <comment>Full measurement description.</comment>
         <translation>Sivulta toiselle luonnollisella vyötärön tasolla, selän poikki. Laske muodossa ( Luonnollinen vyötärön ympärysmitta - Luonnollinen vyötärön kaari (edessä) ).</translation>
     </message>

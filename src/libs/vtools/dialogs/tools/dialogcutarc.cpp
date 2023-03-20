@@ -75,9 +75,14 @@
  * @param parent parent widget
  */
 DialogCutArc::DialogCutArc(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    : DialogTool(data, toolId, parent), ui(new Ui::DialogCutArc), formula(QString()), formulaBaseHeight(0)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogCutArc)
+    , formula(QString())
+    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/arc_cut.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 

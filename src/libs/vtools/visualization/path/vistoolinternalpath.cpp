@@ -73,7 +73,8 @@ void VisToolInternalPath::RefreshGeometry()
 
     if (m_path.CountNodes() > 0)
     {
-        DrawPath(this, m_path.PainterPath(Visualization::data), mainColor, m_path.GetPenType(), Qt::RoundCap);
+        DrawPath(this, m_path.PainterPath(Visualization::data), mainColor, m_path.GetPenType(),
+                 lineWeight, Qt::RoundCap);
 
         const QVector<VPointF> nodes = m_path.PathNodePoints(Visualization::data);
 
@@ -90,7 +91,8 @@ void VisToolInternalPath::RefreshGeometry()
             const QVector<QPointF> points = m_path.PathPoints(Visualization::data);
             if (points.size() > 0)
             {
-                DrawLine(m_line, QLineF(points.last(), Visualization::scenePos), supportColor, Qt::DashLine);
+                DrawLine(m_line, QLineF(points.last(), Visualization::scenePos), supportColor,
+                                        lineWeight, Qt::DashLine);
             }
         }
     }

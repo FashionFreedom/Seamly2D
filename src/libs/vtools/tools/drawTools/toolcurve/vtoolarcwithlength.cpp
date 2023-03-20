@@ -104,8 +104,9 @@ void VToolArcWithLength::setDialog()
     dialogTool->SetF1(arc->GetFormulaF1());
     dialogTool->SetLength(arc->GetFormulaLength());
     dialogTool->SetRadius(arc->GetFormulaRadius());
-    dialogTool->SetColor(arc->GetColor());
-    dialogTool->SetPenStyle(arc->GetPenStyle());
+    dialogTool->setLineColor(arc->getLineColor());
+    dialogTool->setLineWeight(arc->getLineWeight());
+    dialogTool->setPenStyle(arc->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -115,13 +116,15 @@ VToolArcWithLength *VToolArcWithLength::Create(QSharedPointer<DialogTool> dialog
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogArcWithLength> dialogTool = dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
-    const quint32 center = dialogTool->GetCenter();
-    QString radius = dialogTool->GetRadius();
-    QString f1 = dialogTool->GetF1();
-    QString length = dialogTool->GetLength();
-    const QString color = dialogTool->GetColor();
-    const QString penStyle = dialogTool->GetPenStyle();
-    VToolArcWithLength* point = Create(0, center, radius, f1, length, color, penStyle, scene, doc, data,
+    const quint32 center     = dialogTool->GetCenter();
+    QString radius           = dialogTool->GetRadius();
+    QString f1               = dialogTool->GetF1();
+    QString length           = dialogTool->GetLength();
+    const QString color      = dialogTool->getLineColor();
+    const QString penStyle   = dialogTool->getPenStyle();
+    const QString lineWeight = dialogTool->getLineWeight();
+
+    VToolArcWithLength* point = Create(0, center, radius, f1, length, color, penStyle, lineWeight, scene, doc, data,
                                        Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -133,7 +136,7 @@ VToolArcWithLength *VToolArcWithLength::Create(QSharedPointer<DialogTool> dialog
 //---------------------------------------------------------------------------------------------------------------------
 VToolArcWithLength *VToolArcWithLength::Create(const quint32 _id, const quint32 &center, QString &radius, QString &f1,
                                                QString &length, const QString &color, const QString &penStyle,
-                                               VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
+                                               const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                                const Document &parse, const Source &typeCreation)
 {
     qreal calcRadius = 0, calcF1 = 0, calcLength = 0;
@@ -144,8 +147,9 @@ VToolArcWithLength *VToolArcWithLength::Create(const quint32 _id, const quint32 
 
     const VPointF c = *data->GeometricObject<VPointF>(center);
     VArc *arc = new VArc(calcLength, length, c, calcRadius, radius, calcF1, f1);
-    arc->SetColor(color);
+    arc->setLineColor(color);
     arc->SetPenStyle(penStyle);
+    arc->setLineWeight(lineWeight);
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {
@@ -327,12 +331,13 @@ void VToolArcWithLength::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogArcWithLength> dialogTool = m_dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->GetCenter()));
-    doc->SetAttribute(domElement, AttrRadius, dialogTool->GetRadius());
-    doc->SetAttribute(domElement, AttrAngle1, dialogTool->GetF1());
-    doc->SetAttribute(domElement, AttrLength, dialogTool->GetLength());
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrCenter,     QString().setNum(dialogTool->GetCenter()));
+    doc->SetAttribute(domElement, AttrRadius,     dialogTool->GetRadius());
+    doc->SetAttribute(domElement, AttrAngle1,     dialogTool->GetF1());
+    doc->SetAttribute(domElement, AttrLength,     dialogTool->GetLength());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -365,6 +370,7 @@ void VToolArcWithLength::SetVisualization()
         visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
         visual->setLength(trVars->FormulaToUser(arc->GetFormulaLength(), qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(arc->GetPenStyle()));
+        visual->setLineWeight(arc->getLineWeight());
         visual->RefreshGeometry();
     }
 }
@@ -375,11 +381,30 @@ QString VToolArcWithLength::makeToolTip() const
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
 
     const QString toolTip = QString("<table>"
-                                    "<tr> <td><b>%10:</b> %11</td> </tr>"
-                                    "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
-                                    "<tr> <td><b>%4:</b> %5 %3</td> </tr>"
-                                    "<tr> <td><b>%6:</b> %7°</td> </tr>"
-                                    "<tr> <td><b>%8:</b> %9°</td> </tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%12: </b></td>" // Tool name
+                                        "<td align ='left'>%13</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%10: </b></td>" // Point Name
+                                        "<td align ='left'>%11</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%1: </b></td>" // Length
+                                        "<td align ='left'>%2 %3</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%4: </b></td>" // Radius
+                                        "<td align ='left'>%5 %3</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%6: </b></td>" // Start angle
+                                        "<td align ='left'>%7</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%8: </b></td>" // End angle
+                                        "<td align ='left'>%9</td>"
+                                    "</tr>"
                                     "</table>")
             .arg(tr("     Length"))
             .arg(qApp->fromPixel(arc->GetLength()))
@@ -390,7 +415,9 @@ QString VToolArcWithLength::makeToolTip() const
             .arg(arc->GetStartAngle())
             .arg(tr("  End angle"))
             .arg(arc->GetEndAngle())
-            .arg(tr("      Label"))
-            .arg(arc->name());
+            .arg(tr("      Name"))
+            .arg(arc->name())
+            .arg(tr("      Tool"))
+            .arg(tr("Arc - Radius and Length"));
     return toolTip;
 }

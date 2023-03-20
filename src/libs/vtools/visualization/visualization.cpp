@@ -215,13 +215,15 @@ void Visualization::DrawPoint(QGraphicsEllipseItem *point, const QPointF &pos, c
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color, Qt::PenStyle style)
+void Visualization::DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
+                             const qreal &lineWeight, Qt::PenStyle style)
 {
     SCASSERT (lineItem != nullptr)
 
     QPen visPen = lineItem->pen();
     visPen.setColor(color);
     visPen.setStyle(style);
+    visPen.setWidthF(lineWeight);
 
     lineItem->setPen(visPen);
     lineItem->setLine(line);
@@ -230,21 +232,22 @@ void Visualization::DrawLine(VScaledLine *lineItem, const QLineF &line, const QC
 
 //---------------------------------------------------------------------------------------------------------------------
 void Visualization::DrawPath(VCurvePathItem *pathItem, const QPainterPath &path, const QColor &color,
-                             Qt::PenStyle style, Qt::PenCapStyle cap)
+                             Qt::PenStyle style, const qreal &lineWeight, Qt::PenCapStyle cap)
 {
-    DrawPath(pathItem, path, QVector<DirectionArrow>(), color, style, cap);
+    DrawPath(pathItem, path, QVector<DirectionArrow>(), color, style, lineWeight, cap);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void Visualization::DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
                              const QVector<DirectionArrow> &directionArrows, const QColor &color, Qt::PenStyle style,
-                             Qt::PenCapStyle cap)
+                             const qreal &lineWeight, Qt::PenCapStyle cap)
 {
     SCASSERT (pathItem != nullptr)
 
     QPen visPen = pathItem->pen();
     visPen.setColor(color);
     visPen.setStyle(style);
+    visPen.setWidthF(lineWeight);
     visPen.setCapStyle(cap);
 
     pathItem->setPen(visPen);

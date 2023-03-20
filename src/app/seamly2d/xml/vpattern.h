@@ -167,7 +167,8 @@ private:
     void           PrepareForParse(const Document &parse);
     void           ToolsCommonAttributes(const QDomElement &domElement, quint32 &id);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
-                                          qreal &my, bool &labelVisible, QString &typeLine, QString &lineColor);
+                                          qreal &my, bool &labelVisible, QString &lineType,
+                                          QString &lineWeight, QString &lineColor);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, QString &name, qreal &mx,
                                           qreal &my, bool &labelVisible);
     void           PointsCommonAttributes(const QDomElement &domElement, quint32 &id, qreal &mx, qreal &my);

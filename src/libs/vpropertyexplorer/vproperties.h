@@ -27,6 +27,7 @@
 #include "plugins/Vector3d/vvector3dproperty.h"
 #include "plugins/vemptyproperty.h"
 #include "plugins/vlinetypeproperty.h"
+#include "plugins/lineweight_property.h"
 #include "plugins/venumproperty.h"
 #include "plugins/vfileproperty.h"
 #include "plugins/vnumberproperty.h"
@@ -37,5 +38,6 @@
 #include "plugins/vwidgetproperty.h"
 #include "plugins/vlinecolorproperty.h"
 #include "plugins/vlabelproperty.h"
+#include "plugins/plaintext_property.h"
 
 #endif // VPROPERTIES_H

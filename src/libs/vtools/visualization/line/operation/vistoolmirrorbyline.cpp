@@ -89,7 +89,7 @@ void VisToolMirrorByLine::RefreshGeometry()
             DrawPoint(point2, secondPoint, supportColor2);
         }
 
-        DrawLine(this, QLineF(firstPoint, secondPoint), supportColor2, Qt::DashLine);
+        DrawLine(this, QLineF(firstPoint, secondPoint), supportColor2, lineWeight, Qt::DashLine);
     }
 
     refreshMirroredObjects(firstPoint, secondPoint);

@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   ifcdef.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   11 6, 2015
+/******************************************************************************
+ *   @file   ifcdef.cpp
+ **  @author DS Caskey
+ **  @date   Feb 7, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -46,6 +22,34 @@
  **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+/************************************************************************
+ **
+ **  @file   ifcdef.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   11 6, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -65,8 +69,6 @@
 
 const QString CustomMSign    = QStringLiteral("@");
 const QString CustomIncrSign = QStringLiteral("#");
-
-
 
 const QString AttrType        = QStringLiteral("type");
 const QString AttrMx          = QStringLiteral("mx");
@@ -161,15 +163,15 @@ const QString LineTypeDashDotDotLine = QStringLiteral("dashDotDotLine");
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief Styles return list of all line styles.
- * @return list of all line styles.
+ * @brief LineTypeList return list of all line types.
+ * @return list of all line types.
  */
-QStringList StylesList()
+QStringList LineTypes()
 {
-    const QStringList styles = QStringList() << LineTypeNone    << LineTypeSolidLine << LineTypeDashLine
-                                             << LineTypeDotLine << LineTypeDashDotLine
-                                             << LineTypeDashDotDotLine;
-    return styles;
+    const QStringList lineTypes = QStringList() << LineTypeNone    << LineTypeSolidLine << LineTypeDashLine
+                                                << LineTypeDotLine << LineTypeDashDotLine
+                                                << LineTypeDashDotDotLine;
+    return lineTypes;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -179,8 +181,8 @@ QStringList StylesList()
  */
 Qt::PenStyle lineTypeToPenStyle(const QString &lineType)
 {
-    const QStringList styles = StylesList();
-    switch (styles.indexOf(lineType))
+    const QStringList lineTypes = LineTypes();
+    switch (lineTypes.indexOf(lineType))
     {
         case 0: // LineTypeNone
             return Qt::NoPen;
@@ -198,7 +200,7 @@ Qt::PenStyle lineTypeToPenStyle(const QString &lineType)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString PenStyleToLineStyle(Qt::PenStyle penStyle)
+QString PenStyleToLineType(Qt::PenStyle penStyle)
 {
     QT_WARNING_PUSH
     QT_WARNING_DISABLE_GCC("-Wswitch-default")
@@ -225,37 +227,144 @@ QString PenStyleToLineStyle(Qt::PenStyle penStyle)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<QString, QIcon> LineStylesPics()
+QMap<QString, QString> CurveLineTypeList()
 {
-    QMap<QString, QIcon> map;
-    const QStringList styles = StylesList();
+    QMap<QString, QString> map = LineTypeList();
+    map.remove(LineTypeNone);
+    return map;
+}
 
-    for (int i=0; i < styles.size(); ++i)
+//---------------------------------------------------------------------------------------------------------------------
+QMap<QString, QString> LineTypeList()
+{
+    QMap<QString, QString> map;
+
+    const QStringList lineTypeNames = LineTypes();
+    for (int i = 0; i < lineTypeNames.size(); ++i)
     {
-        const Qt::PenStyle style = lineTypeToPenStyle(styles.at(i));
-        QPixmap pix(80, 14);
-        pix.fill(Qt::white);
+        QString name;
+        switch (i)
+        {
+            case 1: // LineTypeSolidLine
+                name = QObject::tr("Solidline");
+                break;
+            case 2: // LineTypeDashLine
+                name = QObject::tr("Dash");
+                break;
+            case 3: // LineTypeDotLine
+                name = QObject::tr("Dot");
+                break;
+            case 4: // LineTypeDashDotLine
+                name = QObject::tr("Dash Dot");
+                break;
+            case 5: // LineTypeDashDotDotLine
+                name = QObject::tr("Dash Dot Dot");
+                break;
+            case 0: // LineTypeNone
+            default:
+                name = QObject::tr("No Pen");
+                break;
+        }
 
-        QBrush brush(Qt::black);
-        QPen pen(brush, 2.5, style);
-
-        QPainter painter(&pix);
-        painter.setPen(pen);
-        painter.drawLine(2, 7, 78, 7);
-
-        map.insert(styles.at(i), QIcon(pix));
+        map.insert(lineTypeNames.at(i), name);
     }
     return map;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<QString, QIcon> CurvePenStylesPics()
+QMap<QString, QString> lineWeightList()
 {
-    QMap<QString, QIcon> map = LineStylesPics();
-    map.remove(LineTypeNone);
+    QMap<QString, QString> map;
+
+    const QStringList lineWeights = QStringList() << "0" << "0.05" << "0.09" << "0.13" << "0.15" << "0.18"
+                                                  << "0.2" << "0.25" << "0.3" << "0.35" << "0.4" << "0.5"
+                                                  << "0.53" << "0.6" << "0.7" << "0.8" << "0.90" << "1"
+                                                  << "1.06" << "1.2" << "1.4" << "1.58" << "2" << "2.11";
+
+    for (int i = 0; i < lineWeights.size(); ++i)
+    {
+        QString name;
+        switch (i)
+        {
+            case 1:
+                name = "0.05mm";
+                break;
+            case 2:
+                name = "0.09";
+                break;
+            case 3:
+                name = "0.13mm (ISO)";
+                break;
+            case 4:
+                name = "0.15mm";
+                break;
+            case 5:
+                name = "0.18mm (ISO)";
+                break;
+            case 6:
+                name ="0.20mm";
+                break;
+            case 7:
+                name = "0.25mm (ISO)";
+                break;
+            case 8:
+                name = "0.30mm";
+                break;
+            case 9:
+                name = "0.35mm (ISO)";
+                break;
+            case 10:
+                name = "0.40mm";
+                break;
+            case 11:
+                name = "0.50mm (ISO)";
+                break;
+            case 12:
+                name ="0.53mm";
+                break;
+            case 13:
+                name = "0.60mm";
+                break;
+            case 14:
+                name = "0.70mm (ISO)";
+                break;
+            case 15:
+                name = "0.80mm";
+                break;
+            case 16:
+                name ="0.90mm";
+                break;
+            case 17:
+                name = "1.00mm (ISO)";
+                break;
+            case 18:
+                name = "1.06mm";
+                break;
+            case 19:
+                name = "1.20mm";
+                break;
+            case 20:
+                name = "1.40mm (ISO)";
+                break;
+            case 21:
+                name = "1.58mm";
+                break;
+            case 22:
+                name = "2.00mm (ISO)";
+                break;
+            case 23:
+                name = "2.11mm";
+                break;
+            case 0:
+            default:
+                name = "0.00mm";
+                break;
+        }
+
+        map.insert(lineWeights.at(i), name);
+    }
     return map;
 }
-
 const QString ColorByGroup          = QStringLiteral("byGroup");
 const QString ColorNone             = QStringLiteral("none");
 const QString ColorBlack            = QStringLiteral("black");

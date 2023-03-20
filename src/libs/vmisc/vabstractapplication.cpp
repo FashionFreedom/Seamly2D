@@ -81,6 +81,7 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
       currentScene(nullptr),
       sceneView(nullptr),
       doc(nullptr),
+      data(nullptr),
       openingPattern(false)
 {
     QString rules;
@@ -150,6 +151,19 @@ VAbstractPattern *VAbstractApplication::getCurrentDocument() const
 {
     SCASSERT(doc != nullptr)
     return doc;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractApplication::setCurrentData(VContainer *data)
+{
+    this->data = data;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+VContainer *VAbstractApplication::getCurrentData() const
+{
+    SCASSERT(data != nullptr)
+    return data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

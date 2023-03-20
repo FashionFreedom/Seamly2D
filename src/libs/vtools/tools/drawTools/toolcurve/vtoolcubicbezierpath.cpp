@@ -101,8 +101,9 @@ void VToolCubicBezierPath::setDialog()
     SCASSERT(dialogTool != nullptr)
     const QSharedPointer<VCubicBezierPath> splPath = VAbstractTool::data.GeometricObject<VCubicBezierPath>(m_id);
     dialogTool->SetPath(*splPath);
-    dialogTool->SetColor(splPath->GetColor());
-    dialogTool->SetPenStyle(splPath->GetPenStyle());
+    dialogTool->setLineColor(splPath->getLineColor());
+    dialogTool->setPenStyle(splPath->GetPenStyle());
+    dialogTool->setLineWeight(splPath->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -113,14 +114,16 @@ VToolCubicBezierPath *VToolCubicBezierPath::Create(QSharedPointer<DialogTool> di
     QSharedPointer<DialogCubicBezierPath> dialogTool = dialog.objectCast<DialogCubicBezierPath>();
     SCASSERT(not dialogTool.isNull())
     auto path = new VCubicBezierPath(dialogTool->GetPath());
-    const QString color = dialogTool->GetColor();
-    const QString penStyle = dialogTool->GetPenStyle();
+    const QString color      = dialogTool->getLineColor();
+    const QString penStyle   = dialogTool->getPenStyle();
+    const QString lineWeight = dialogTool->getLineWeight();
     for (qint32 i = 0; i < path->CountPoints(); ++i)
     {
         doc->IncrementReferens((*path)[i].getIdTool());
     }
-    path->SetColor(color);
+    path->setLineColor(color);
     path->SetPenStyle(penStyle);
+    path->setLineWeight(lineWeight);
 
     VToolCubicBezierPath* spl = Create(0, path, scene, doc, data, Document::FullParse, Source::FromGui);
     if (spl != nullptr)
@@ -228,8 +231,9 @@ void VToolCubicBezierPath::SaveDialog(QDomElement &domElement)
     const auto dialogTool = qobject_cast<DialogCubicBezierPath*>(m_dialog);
     SCASSERT(dialogTool != nullptr)
 
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,       dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrPenStyle,    dialogTool->getPenStyle());
+    doc->SetAttribute(domElement, AttrLineWeight,  dialogTool->getLineWeight());
     SetSplinePathAttributes(domElement, dialogTool->GetPath());
 }
 

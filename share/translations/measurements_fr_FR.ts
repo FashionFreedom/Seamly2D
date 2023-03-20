@@ -3995,7 +3995,7 @@
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1954"/>
-        <source>From Side to Side at Natural Waist level, across the back. Calculate as ( Natural Waist circumference  - Natural Waist arc (front) ).</source>
+        <source>From Side to Side at Natural Waist level, across the back. Calculate as ( Natural Waist circumference - Natural Waist arc (front) ).</source>
         <comment>Full measurement description.</comment>
         <translation>Au niveau de la Taille Naturelle, mesurer du côté jusqu&apos;à l&apos;autre en passant par le dos. Vérifier en calculant (Circonférence Taille Naturelle - Arc Taille Naturel (devant) ).</translation>
     </message>

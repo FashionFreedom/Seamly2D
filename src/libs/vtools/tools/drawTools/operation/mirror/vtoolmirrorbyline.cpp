@@ -172,6 +172,42 @@ QString VToolMirrorByLine::secondLinePointName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+quint32 VToolMirrorByLine::getFirstLinePointId() const
+{
+    return m_firstLinePointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMirrorByLine::setFirstLinePointId(const quint32 &value)
+{
+    if (value != NULL_ID)
+    {
+        m_firstLinePointId = value;
+
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
+        SaveOption(obj);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VToolMirrorByLine::getSecondLinePointId() const
+{
+    return m_secondLinePointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMirrorByLine::setSecondLinePointId(const quint32 &value)
+{
+    if (value != NULL_ID)
+    {
+        m_secondLinePointId = value;
+
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
+        SaveOption(obj);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolMirrorByLine::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolMirrorByLine>(show);

@@ -406,10 +406,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point at distance along line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line color</source>
         <translation type="vanished">线颜色</translation>
     </message>
@@ -432,10 +428,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Calculation</source>
         <translation>打算</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>First point:</source>
@@ -462,14 +454,6 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">线颜色:</translation>
     </message>
     <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -477,13 +461,41 @@ p, li { white-space: pre-wrap; }
         <source>Color:</source>
         <translation type="unfinished">颜色:</translation>
     </message>
+    <message>
+        <source>Point - On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogArc</name>
-    <message>
-        <source>Arc</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
@@ -561,21 +573,37 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Arc - Radius and Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogArcWithLength</name>
-    <message>
-        <source>Dialog</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
@@ -649,8 +677,28 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Arc - Radius and Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -685,10 +733,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point along bisector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line color</source>
         <translation type="vanished">线颜色</translation>
     </message>
@@ -711,18 +755,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Calculation</source>
         <translation>打算</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>First point:</source>
@@ -751,6 +783,38 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Color:</source>
         <translation type="unfinished">颜色:</translation>
+    </message>
+    <message>
+        <source>Point - On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -796,11 +860,23 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tool cubic bezier</source>
+        <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Linetype:</source>
+        <source>Curve - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -827,11 +903,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tool cubic bezier path</source>
+        <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Linetype:</source>
+        <source>Spline - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -847,10 +939,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select axis point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point intersect curve and axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -886,18 +974,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Type of line:</source>
         <translation type="vanished">线类型:</translation>
     </message>
@@ -914,8 +990,40 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">颜色:</translation>
     </message>
     <message>
+        <source>Intersect - Curve and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -927,10 +1035,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Segment an arc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -962,20 +1066,32 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color:</source>
         <translation type="vanished">颜色:</translation>
+    </message>
+    <message>
+        <source>Point - On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -989,10 +1105,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Segmenting a simple curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color</source>
         <translation type="vanished">颜色</translation>
     </message>
@@ -1021,20 +1133,32 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color:</source>
         <translation type="vanished">颜色:</translation>
+    </message>
+    <message>
+        <source>Point - On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1048,10 +1172,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Segment a curved path</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color</source>
         <translation type="vanished">颜色</translation>
     </message>
@@ -1080,20 +1200,32 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Color:</source>
         <translation type="vanished">颜色:</translation>
+    </message>
+    <message>
+        <source>Point - On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1347,23 +1479,39 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Elliptical arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Arc - Elliptical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1380,10 +1528,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Type of line</source>
         <translation type="vanished">线类型</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Line color</source>
@@ -1422,18 +1566,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Type of line:</source>
         <translation type="vanished">线类型:</translation>
     </message>
@@ -1450,8 +1582,40 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">颜色:</translation>
     </message>
     <message>
+        <source>Point - Length and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1532,35 +1696,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Perpendicular point along line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line color</source>
         <translation type="vanished">线颜色</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Base point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point of line:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second point of line:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1578,6 +1718,42 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Color:</source>
         <translation type="unfinished">颜色:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Line and Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First point:</source>
+        <translation type="unfinished">第一点:</translation>
+    </message>
+    <message>
+        <source>Second point:</source>
+        <translation type="unfinished">第二点:</translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2284,10 +2460,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Line between points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line color</source>
         <translation type="vanished">线颜色</translation>
     </message>
@@ -2314,6 +2486,22 @@ Apply settings anyway?</source>
     <message>
         <source>Color:</source>
         <translation type="unfinished">颜色:</translation>
+    </message>
+    <message>
+        <source>Line - Between Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2347,28 +2535,32 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point at line intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>第一点:</translation>
     </message>
     <message>
         <source>Second point:</source>
         <translation>第二点:</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2386,19 +2578,11 @@ Apply settings anyway?</source>
         <translation type="vanished">线类型</translation>
     </message>
     <message>
-        <source>Show line from first point to this point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select axis point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point intersect line and axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2438,26 +2622,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>First line point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second line point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Type of line:</source>
         <translation type="vanished">线类型:</translation>
     </message>
@@ -2474,8 +2638,48 @@ Apply settings anyway?</source>
         <translation type="unfinished">颜色:</translation>
     </message>
     <message>
+        <source>Intersect - Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First point:</source>
+        <translation type="unfinished">第一点:</translation>
+    </message>
+    <message>
+        <source>Second point:</source>
+        <translation type="unfinished">第二点:</translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2761,10 +2965,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point along perpendicular</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line color</source>
         <translation type="vanished">线颜色</translation>
     </message>
@@ -2789,28 +2989,12 @@ Apply settings anyway?</source>
         <translation>打算</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>第一点:</translation>
     </message>
     <message>
         <source>Second point:</source>
         <translation>第二点:</translation>
-    </message>
-    <message>
-        <source>Additional angle degrees:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Type of line:</source>
@@ -2827,6 +3011,50 @@ Apply settings anyway?</source>
     <message>
         <source>Color:</source>
         <translation type="unfinished">颜色:</translation>
+    </message>
+    <message>
+        <source>Point - On Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> deg</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3018,23 +3246,7 @@ Apply settings anyway?</source>
 <context>
     <name>DialogPointFromArcAndTangent</name>
     <message>
-        <source>Point from arc and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select an arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3047,6 +3259,26 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Take:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3080,10 +3312,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point at intersection of arc and line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3104,27 +3332,39 @@ Apply settings anyway?</source>
         <translation>打算</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Center of arc:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Top of the line:</source>
+        <source>Point - Intersect Arc and Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>End of the line:</source>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2nd line point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3132,18 +3372,6 @@ Apply settings anyway?</source>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3159,7 +3387,23 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tool point of intersetion arcs</source>
+        <source>Point - Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3177,10 +3421,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogPointOfIntersectionCurves</name>
     <message>
-        <source>Tool point of intersection curves</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First curve:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3189,27 +3429,35 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vertical correction:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Horizontal correction:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select second curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical take:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal take:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3380,10 +3628,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Special point on shoulder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line color</source>
         <translation type="vanished">线颜色</translation>
     </message>
@@ -3406,18 +3650,6 @@ Apply settings anyway?</source>
     <message>
         <source>Calculation</source>
         <translation>打算</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>First point:</source>
@@ -3447,13 +3679,41 @@ Apply settings anyway?</source>
         <source>Color:</source>
         <translation type="unfinished">颜色:</translation>
     </message>
+    <message>
+        <source>Point - Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogSinglePoint</name>
-    <message>
-        <source>Single point</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Coordinates on the sheet</source>
         <translation type="unfinished"></translation>
@@ -3463,23 +3723,31 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Y coordinate</source>
+        <source>Base Point</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>X coordinate</source>
+        <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label</source>
+        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unique label</source>
+        <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Choose unique label.</source>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X coordinate:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Y coordinate:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3487,18 +3755,14 @@ Apply settings anyway?</source>
     <name>DialogSpline</name>
     <message>
         <source>First point</source>
-        <translation type="vanished">第一点</translation>
+        <translation>第一点</translation>
     </message>
     <message>
         <source>Second point</source>
-        <translation type="vanished">第二点</translation>
+        <translation>第二点</translation>
     </message>
     <message>
         <source>Select last point of curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Simple curve</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3512,10 +3776,6 @@ Apply settings anyway?</source>
     <message>
         <source>First point:</source>
         <translation>第一点:</translation>
-    </message>
-    <message>
-        <source>Control point</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle:</source>
@@ -3581,13 +3841,29 @@ Apply settings anyway?</source>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Curve - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogSplinePath</name>
-    <message>
-        <source>Curved path</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>List of points</source>
         <translation type="unfinished"></translation>
@@ -3680,6 +3956,34 @@ Apply settings anyway?</source>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Spline - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result value</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogTapePreferences</name>
@@ -3704,10 +4008,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Value can&apos;t be 0</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Value</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3770,6 +4070,10 @@ Apply settings anyway?</source>
         <source>Value can&apos;t be less than 0</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Result Value</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogTriangle</name>
@@ -3794,30 +4098,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Triangle tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point of axis:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second point of axis:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>第一点:</translation>
     </message>
@@ -3825,13 +4105,37 @@ Apply settings anyway?</source>
         <source>Second point:</source>
         <translation>第二点:</translation>
     </message>
+    <message>
+        <source>Point - Intersect Axis and Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1st axis point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2nd axis point:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogTrueDarts</name>
-    <message>
-        <source>True darts</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Select the second base point</source>
         <translation type="unfinished"></translation>
@@ -3846,14 +4150,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Select the third dart point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3886,6 +4182,18 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>2nd new dart point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True Darts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -4512,10 +4820,6 @@ Do you want to download it?</source>
 <context>
     <name>InsertNodesDialog</name>
     <message>
-        <source>Insert nodes</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4591,6 +4895,10 @@ Do you want to download it?</source>
         <source> may need to be manually reversed.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Insert Nodes</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>InternalStrings</name>
@@ -4602,23 +4910,11 @@ Do you want to download it?</source>
 <context>
     <name>IntersectCircleTangentDialog</name>
     <message>
-        <source>Intersect Circle and Tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4669,6 +4965,18 @@ Do you want to download it?</source>
         <source>Radius can&apos;t be negative</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Point - Intersect Circle and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>IntersectCircleTangentTool</name>
@@ -4684,23 +4992,7 @@ Do you want to download it?</source>
 <context>
     <name>IntersectCirclesDialog</name>
     <message>
-        <source>Intersect Circles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4761,6 +5053,22 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Radius can&apos;t be negative</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -5310,10 +5618,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Elliptical Arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The document has no write permissions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5430,10 +5734,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please, additionally provide: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Preview</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5542,123 +5842,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point along Bisector (PB)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point on Shoulder (PS)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Line and Arc (PC)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Triangle (PT)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersect XY (X, Y)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Line and Perpendicular (PL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Line and Axis (IX)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point on Perpendicular (PP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point at Distance and Angle (DA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point at Distance along Line (PA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Midpoint between 2 Points (MP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line between 2 Points (Alt+L)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of 2 Lines (IL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve (Alt+C)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spline (Alt+S)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve with Control Points (CP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spline with Control Points (SP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along Curve (AC)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along Spline (AS)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Curves (CC)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Curve and Axis (CA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc (Alt+A)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along Arc (AA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Arc and Axis (AX)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Arcs (IA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Circles (IC)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Circle and Tangent (CT)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tangency Point of Arc and Tangent (AT)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc with Length (AL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Elliptical Arc (E,A)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5666,27 +5850,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Create New Group (G)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotate Selected Objects (R)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror Objects by Line (ML)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror Objects by Axis (MA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move Objects (MM)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>True Darts (TD)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5702,39 +5866,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add New Pattern Piece (NP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add Anchor Point (AP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Insert Nodes (IN)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add Internal Path (IP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tools for adding details to pattern pieces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export Pieces (EP)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Print Layout (NL)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export Layout (EL)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5830,10 +5966,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>M, M</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>True Darts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5842,55 +5974,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Elliptical Arc (EA)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>E, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Midpoint</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point at Distance along Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point at Distance and Angle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>D, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point on Perpendicular</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along Bisector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P, B</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point on Shoulder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5898,51 +5982,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Intersection Point of Line and Arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Triangle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Intersect XY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Intersect  XY  (XY)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>X, Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Line and Perpendicular</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>P, L</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Line and Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>I, X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of 2  Lines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5954,59 +5998,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point along Curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve with Control Points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Alt+S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along Spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, S</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Spline with Control Points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>S, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Curves</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Curve and Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6014,23 +6006,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point along Arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Arc and Axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>A, X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Arcs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6038,15 +6014,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Intersection Point of Circles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>I, C</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Circle and Tangent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6054,15 +6022,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tangency Point of Arc and Tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>A, T</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc with Length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6142,10 +6102,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Activate last used tool (L)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Curve Control Points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6170,10 +6126,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to Selected (CTRL+Right)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Label Template Editor...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6194,19 +6146,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to selected Area (CTRL+A)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ctrl+A</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pan</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pan Work Area (Z,P)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6303,10 +6247,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Create New Print Layout (NL)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6486,10 +6426,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Export Draft Blocks (ED)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>E, D</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6526,126 +6462,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;Tool::Points - Midpoint along Line&lt;/b&gt;: Select first point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Point at Distance &amp; Angle&lt;/b&gt;: Select point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Point along Line:&lt;/b&gt; Select first point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Point on Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Point along Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Shoulder Point:&lt;/b&gt; Select point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Intersection Point of Line and Arc:&lt;/b&gt; Select first point of line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Intersection Point XY from 2 Points:&lt;/b&gt; Select point for X value (vertical)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Intersection Point of Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Points - Intersection Point of Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Lines - Line:&lt;/b&gt;:Select first point</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Lines - Intersection Point of 2 Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Curve:&lt;/b&gt; Select start point of curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Spline:&lt;/b&gt; Select start point of spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Curve with Control Points:&lt;/b&gt; Select first point of curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Spline with Control Points:&lt;/b&gt; Select first point of spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Point along Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Point along Spline:&lt;/b&gt; Select spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Intersection Point of Curves:&lt;/b&gt; Select first curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Curves - Intersection Point of Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arcs - Arc:&lt;/b&gt; Select point of center of arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Point along Arc:&lt;/b&gt; Select arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Intersection Point of Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Intersection Point of Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Intersection Point of Circles:&lt;/b&gt; Select first circle center</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Tangency Point of Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Tangency Point of Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Arc - Arc with Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Elliptical Arcs - Elliptical Arc:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
         <translation type="unfinished"></translation>
     </message>
@@ -6671,22 +6487,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line Between 2 Points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point Intersect of 2 Lines</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tangency Point of Circle and Tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Intersection Point of Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6799,6 +6599,570 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft Block %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Bisector (O, B)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Length to Line (P, S)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line (A, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Axis and Triangle (X, T)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect XY (X, Y)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Line and Perpendicular (L, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Line and Axis (L, X)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Perpendicular (O, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Length and Angle (L, A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Line (O, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Lines (I, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Interactive (Alt+C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Interactive (Alt+S)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Fixed (Alt+Shift+C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Fixed (Alt+Shift+S)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Spline (O, S)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curves (I, C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curve and Axis (C, X)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Curve (O, C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Angles (Alt+A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Arc (O, A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Axis (A, X)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arcs (I, A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circles (Shift+I, Shift+C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circle and Tangent (C, T)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Tangent (A, T)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Length (Alt+Shift+A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Elliptical (Alt+E)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Group (G)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror Objects by Line (M, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror Objects by Axis (M, A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move Objects (Alt+M)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True Darts (T, D)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add New Pattern Piece (N, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Anchor Point (A, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert Nodes (I, N)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Internal Path (I, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Pieces (E, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Print Layout (N, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Layout (E, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elliptical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc -Elliptical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Midpoint on Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+O, Shift+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, B</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect  Arc and Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Axis and Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Line and Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Curve (A, C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Shift+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Spline (O, S)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Curve and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C, X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius and Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point on Arc (O, A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Axis (A, X)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arcs (I, A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Circles (Shift+I, Shift+C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+I, Shift+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Circle and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Circle and Tangent (C, T)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Tangent (A, T)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius and Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Shift+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Activate last used tool (Ctrl+Shift+L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Selected (Ctrl+Right)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to selected Area (Ctrl+A)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pan Work Area (Z, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create New Print Layout (N, L)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to point (Ctrl + Alt + P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please provide additional measurements: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7922,14 +8286,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unique label</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>1st point:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7955,6 +8311,14 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Select point for Y value (horizontal)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8952,6 +9316,30 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>move piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Solidline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No Pen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11390,7 +11778,15 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>      Label</source>
+        <source>      Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>      Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Length</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11628,76 +12024,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point at distance and angle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Length</source>
         <translation type="vanished">长度</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cut arc tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool for segmenting a curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool segment a pathed curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Perpendicular point along line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point at line intersection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point along perpendicular</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point at intersection of arc and line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve tool</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool for path curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool triangle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point intersection line and axis</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Line color</source>
@@ -11708,10 +12036,6 @@ Do you want to save your changes?</source>
         <translation type="vanished">颜色</translation>
     </message>
     <message>
-        <source>Point intersection curve and axis</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First point</source>
         <translation type="vanished">第一点</translation>
     </message>
@@ -11720,51 +12044,7 @@ Do you want to save your changes?</source>
         <translation type="vanished">第二点</translation>
     </message>
     <message>
-        <source>Arc with given length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>True darts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool to make point from intersection two arcs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool to make point from intersection two circles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool to make point from circle and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool to make point from arc and tangent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool to make point from intersection two curves</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cubic bezier curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tool cubic bezier curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Elliptical arc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Position:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11852,35 +12132,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>First line (first point):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First line (second point):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second line (first point):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second line (second point):</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Additional angle degrees:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Center of arc:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top of the line:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>End of the line:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11896,39 +12148,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Center of the first circle:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center of the second circle:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First circle radius:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second circle radius:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>First curve:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Second curve:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vertical correction:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Horizontal correction:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Center of the circle:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11960,14 +12184,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>First point of axis:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Second point of axis:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Axis point:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11996,14 +12212,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point 1:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point 2:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotation</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12016,15 +12224,203 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rotation origin point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Mirror by Line</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Coordinates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Length and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attributes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second dart point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Third dart point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Line and Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="unfinished">线</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1st line point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2nd line point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First circle:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Second circle:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical take:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal take:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circle and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Axis and Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>1st axis point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>2nd axis point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curve and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Origin point:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Elliptical</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13379,7 +13775,7 @@ Do you want to save your changes?</source>
 <context>
     <name>VisToolEndLine</name>
     <message>
-        <source>&lt;b&gt;Point at distance and angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
+        <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

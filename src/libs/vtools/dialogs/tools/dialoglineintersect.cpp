@@ -80,9 +80,13 @@
  * @param parent parent widget
  */
 DialogLineIntersect::DialogLineIntersect(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogLineIntersect), flagPoint(true)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogLineIntersect)
+    , flagPoint(true)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/intersect.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 

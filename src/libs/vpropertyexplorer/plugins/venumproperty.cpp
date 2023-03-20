@@ -161,5 +161,5 @@ void VPE::VEnumProperty::currentIndexChanged(int index)
 {
     Q_UNUSED(index)
     UserChangeEvent *event = new UserChangeEvent();
-    QCoreApplication::postEvent ( VProperty::d_ptr->editor, event );
+    QCoreApplication::postEvent (VProperty::d_ptr->editor, event );
 }

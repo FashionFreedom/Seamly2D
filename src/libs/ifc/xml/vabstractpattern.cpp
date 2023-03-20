@@ -63,19 +63,20 @@
 #include <QStringDataPtr>
 #include <QtDebug>
 
+#include "vdomdocument.h"
+#include "vpatternconverter.h"
+#include "vtoolrecord.h"
 #include "../exception/vexceptionemptyparameter.h"
 #include "../exception/vexceptionobjecterror.h"
 #include "../exception/vexceptionconversionerror.h"
-#include "../qmuparser/qmutokenparser.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/ifcdef.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vpiecenode.h"
+#include "../qmuparser/qmutokenparser.h"
 #include "../vtools/tools/vdatatool.h"
-#include "vpatternconverter.h"
-#include "vdomdocument.h"
-#include "vtoolrecord.h"
-#include "../vmisc/vabstractapplication.h"
 
 class QDomElement;
 
@@ -251,14 +252,17 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractPattern::VAbstractPattern(QObject *parent)
     : QObject(parent)
-    ,  VDomDocument()
-    ,  activeDraftBlock(QString())
-    ,  lastSavedExportFormat(QString())
-    ,  cursor(0)
-    ,  toolsOnRemove(QVector<VDataTool*>())
-    ,  history(QVector<VToolRecord>())
-    ,  patternPieces(QStringList())
-     , modified(false)
+    , VDomDocument()
+    , activeDraftBlock(QString())
+    , m_DefaultLineColor(qApp->Settings()->getDefaultLineColor())
+    , m_DefaultLineWeight(qApp->Settings()->getDefaultLineWeight())
+    , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
+    , lastSavedExportFormat(QString())
+    , cursor(0)
+    , toolsOnRemove(QVector<VDataTool*>())
+    , history(QVector<VToolRecord>())
+    , patternPieces(QStringList())
+    , modified(false)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -603,6 +607,33 @@ void VAbstractPattern::setCursor(const quint32 &value)
         cursor = value;
         emit ChangedCursor(cursor);
     }
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setDefaultPen(Pen pen)
+{
+  m_DefaultLineColor  = pen.color;
+  m_DefaultLineWeight = pen.lineWeight;
+  m_DefaultLineType   = pen.lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPattern::getDefaultLineColor() const
+{
+  return m_DefaultLineColor;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VAbstractPattern::getDefaultLineWeight() const
+{
+  return m_DefaultLineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPattern::getDefaultLineType() const
+{
+  return m_DefaultLineType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1532,6 +1563,34 @@ void VAbstractPattern::SetVersion()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId)
+{
+    QVector<quint32> items;
+    quint32 objId;
+    const QDomElement domElement = elementById(toolId);
+    const QDomNodeList nodeList = domElement.childNodes();
+    for (qint32 i = 0; i < nodeList.size(); ++i)
+    {
+        const QDomElement dataElement = nodeList.at(i).toElement();
+        if (!dataElement.isNull() && dataElement.tagName() == QStringLiteral("destination"))
+        {
+            const QDomNodeList srcList = dataElement.childNodes();
+            for (qint32 j = 0; j < srcList.size(); ++j)
+            {
+                const QDomElement element = srcList.at(j).toElement();
+                if (!element.isNull())
+                {
+                    objId = VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR);
+                    items.append(objId);
+                }
+            }
+        }
+    }
+
+    return items;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief haveLiteChange we have unsaved change.
  */
@@ -2060,7 +2119,7 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::ParseItemElement(const QD
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
+/*
  * @brief IsModified state of the document for cases that do not cover QUndoStack.
  * @return true if the document was modified without using QUndoStack.
  */

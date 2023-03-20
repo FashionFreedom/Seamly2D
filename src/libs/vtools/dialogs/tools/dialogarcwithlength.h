@@ -86,20 +86,23 @@ public:
     QString       GetLength() const;
     void          SetLength(const QString &value);
 
-    QString       GetPenStyle() const;
-    void          SetPenStyle(const QString &value);
+    QString       getPenStyle() const;
+    void          setPenStyle(const QString &value);
 
-    QString       GetColor() const;
-    void          SetColor(const QString &value);
+    QString       getLineWeight() const;
+    void          setLineWeight(const QString &value);
+
+    QString       getLineColor() const;
+    void          setLineColor(const QString &value);
 
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**
      * @brief DeployFormulaTextEdit grow or shrink formula input
      */
-    void DeployRadiusTextEdit();
-    void DeployF1TextEdit();
-    void DeployLengthTextEdit();
+    void          DeployRadiusTextEdit();
+    void          DeployF1TextEdit();
+    void          DeployLengthTextEdit();
 
     void          RadiusChanged();
     void          F1Changed();
