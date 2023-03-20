@@ -1,7 +1,4 @@
-# Don't use this pro file for building project!!!
-# I made this hack for creation one TS file for whole project.
-# Because we have several libraries that also have strings for translation, have several TS files for each
-# subproject annoying.
+# This pro file is used to run lupdate from top level pro file.
 #
 # Original idea "How to generate a single translation file for a large Qt project?"
 # https://stackoverflow.com/questions/1829474/how-to-generate-a-single-translation-file-for-a-large-qt-project
