@@ -89,14 +89,15 @@ void VisToolLineIntersect::RefreshGeometry()
 
         if (line1P2Id <= NULL_ID)
         {
-            DrawLine(line1, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor);
+            DrawLine(line1, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor, lineWeight);
         }
         else
         {
             const QSharedPointer<VPointF> second = Visualization::data->GeometricObject<VPointF>(line1P2Id);
             DrawPoint(line1P2, static_cast<QPointF>(*second), supportColor);
 
-            DrawLine(line1, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor);
+            DrawLine(line1, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)),
+                                   supportColor, lineWeight);
 
             if (line2P1Id <= NULL_ID)
             {
@@ -109,7 +110,8 @@ void VisToolLineIntersect::RefreshGeometry()
 
                 if (line2P2Id <= NULL_ID)
                 {
-                    DrawLine(this, QLineF(static_cast<QPointF>(*third), Visualization::scenePos), supportColor);
+                    DrawLine(this, QLineF(static_cast<QPointF>(*third), Visualization::scenePos),
+                                          supportColor, lineWeight);
 
                     QLineF l1(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
                     QLineF l2(static_cast<QPointF>(*third), Visualization::scenePos);
@@ -125,7 +127,8 @@ void VisToolLineIntersect::RefreshGeometry()
                     const QSharedPointer<VPointF> forth = Visualization::data->GeometricObject<VPointF>(line2P2Id);
                     DrawPoint(line2P2, static_cast<QPointF>(*forth), supportColor);
 
-                    DrawLine(this, QLineF(static_cast<QPointF>(*third), static_cast<QPointF>(*forth)), supportColor);
+                    DrawLine(this, QLineF(static_cast<QPointF>(*third), static_cast<QPointF>(*forth)),
+                                          supportColor, lineWeight);
 
                     QLineF l1(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
                     QLineF l2(static_cast<QPointF>(*third), static_cast<QPointF>(*forth));

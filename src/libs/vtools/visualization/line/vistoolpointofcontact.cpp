@@ -88,13 +88,14 @@ void VisToolPointOfContact::RefreshGeometry()
 
         if (lineP2Id <= NULL_ID)
         {
-            DrawLine(this, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor);
+            DrawLine(this, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor, lineWeight);
         }
         else
         {
             const QSharedPointer<VPointF> second = Visualization::data->GeometricObject<VPointF>(lineP2Id);
             DrawPoint(lineP2, static_cast<QPointF>(*second), supportColor);
-            DrawLine(this, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor);
+            DrawLine(this, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)),
+                     supportColor, lineWeight);
 
             if (radiusId <= NULL_ID)
             {

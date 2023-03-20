@@ -68,22 +68,26 @@ public:
     QString       GetRotationAngle() const;
     void          SetRotationAngle(const QString &value);
 
-    QString       GetPenStyle() const;
-    void          SetPenStyle(const QString &value);
+    QString       getPenStyle() const;
+    void          setPenStyle(const QString &value);
 
-    QString       GetColor() const;
-    void          SetColor(const QString &value);
+    QString       getLineWeight() const;
+    void          setLineWeight(const QString &value);
+
+    QString       getLineColor() const;
+    void          setLineColor(const QString &value);
+
 
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**
      * @brief DeployFormulaTextEdit grow or shrink formula input
      */
-    void DeployRadius1TextEdit();
-    void DeployRadius2TextEdit();
-    void DeployF1TextEdit();
-    void DeployF2TextEdit();
-    void DeployRotationAngleTextEdit();
+    void          DeployRadius1TextEdit();
+    void          DeployRadius2TextEdit();
+    void          DeployF1TextEdit();
+    void          DeployF2TextEdit();
+    void          DeployRotationAngleTextEdit();
 
     void          Radius1Changed();
     void          Radius2Changed();
@@ -171,6 +175,7 @@ private:
     void          EvalRadiuses();
     void          EvalAngles();
     void          CheckAngles();
+    void          collapseFormula(QPlainTextEdit *textEdit, QPushButton *pushButton, int height);
 };
 
 #endif // DIALOGELLIPTICALARC_H

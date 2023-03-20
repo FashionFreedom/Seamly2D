@@ -63,14 +63,17 @@
 #include <QStringList>
 #include <QVector>
 #include <QtGlobal>
+#include <QVector>
 
-#include "../vmisc/def.h"
 #include "vdomdocument.h"
 #include "vtoolrecord.h"
+#include "../vmisc/def.h"
+#include "../vwidgets/pen_toolbar.h"
 
 class QDomElement;
 class VPiecePath;
 class VPieceNode;
+class PenToolBar;
 
 enum class Document : char { LiteParse, LiteBlockParse, FullParse };
 enum class LabelType : char {NewPatternPiece, NewLabel};
@@ -122,6 +125,11 @@ public:
 
     quint32           getCursor() const;
     void              setCursor(const quint32 &value);
+
+    void              setDefaultPen(Pen pen);
+    QString           getDefaultLineColor() const;
+    qreal             getDefaultLineWeight() const;
+    QString           getDefaultLineType() const;
 
     virtual void      IncrementReferens(quint32 id) const=0;
     virtual void      DecrementReferens(quint32 id) const=0;
@@ -196,6 +204,8 @@ public:
 
     QString        GetVersion() const;
     void           SetVersion();
+
+    QVector<quint32> getOpItems(const quint32 &toolId);
 
     bool           IsModified() const;
     void           SetModified(bool modified);
@@ -407,6 +417,10 @@ public slots:
 protected:
     /** @brief activeBlockName name current pattern peace. */
     QString        activeDraftBlock;
+
+    QString        m_DefaultLineColor;
+    qreal          m_DefaultLineWeight;
+    QString        m_DefaultLineType;
 
     QString        lastSavedExportFormat;
 

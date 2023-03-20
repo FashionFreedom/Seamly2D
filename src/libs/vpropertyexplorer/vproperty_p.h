@@ -37,48 +37,64 @@ public:
     //! This does not have to be used by subclasses, but it makes sense in cases where QVariant supports
     //! the data type. Also, this can be used as cache, so that when the data() function gets called by
     //! the model, the data does not have to be converted in a QVariant every time.
-    QVariant VariantValue;
+    QVariant          VariantValue;
 
     //! Property name
-    QString Name;
+    QString           Name;
 
     //! Description
-    QString Description;
+    QString           Description;
 
     //! Specifies whether the property is empty or not
-    bool IsEmpty;
+    bool              IsEmpty;
 
     //! Stores the property type
-    QVariant::Type PropertyVariantType;
+    QVariant::Type    PropertyVariantType;
 
     //! Stores whether the views have to update the parent of this property if it changes
-    bool UpdateParent;
+    bool              updateParent;
 
     //! Stores whether the views have to update the children of this property if it changes
-    bool UpdateChildren;
+    bool              UpdateChildren;
 
     //! The parent property
-    VProperty* Parent;
+    VProperty        *Parent;
 
-    QWidget* editor;
+    QWidget          *editor;
 
-    Property type;
+    Property          type;
 
     //! List of child properties
     QList<VProperty*> Children;
 
     //! Constructor passing name and type
-    VPropertyPrivate(const QString& name, QVariant::Type type)
-        : VariantValue(type), Name(name), Description(QString()), IsEmpty(false), PropertyVariantType(type),
-          UpdateParent(false), UpdateChildren(false), Parent(nullptr), editor(nullptr), type(Property::Simple),
-          Children(QList<VProperty*>())
+    VPropertyPrivate(const QString &name, QVariant::Type type)
+        : VariantValue(type)
+        , Name(name)
+        , Description(QString())
+        , IsEmpty(false)
+        , PropertyVariantType(type)
+        , updateParent(false)
+        , UpdateChildren(false)
+        , Parent(nullptr)
+        , editor(nullptr)
+        , type(Property::Simple)
+        , Children(QList<VProperty*>())
     {}
 
     //! Constructor
     VPropertyPrivate()
-        : VariantValue(), Name(), Description(QString()), IsEmpty(false), PropertyVariantType(QVariant::Invalid),
-          UpdateParent(false), UpdateChildren(false), Parent(nullptr), editor(nullptr), type(Property::Simple),
-          Children(QList<VProperty*>())
+        : VariantValue()
+        , Name()
+        , Description(QString())
+        , IsEmpty(false)
+        , PropertyVariantType(QVariant::Invalid)
+        , updateParent(false)
+        , UpdateChildren(false)
+        , Parent(nullptr)
+        , editor(nullptr)
+        , type(Property::Simple)
+        , Children(QList<VProperty*>())
     {}
 
     virtual ~VPropertyPrivate();

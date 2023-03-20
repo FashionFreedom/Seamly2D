@@ -89,7 +89,8 @@ void VisToolCurveIntersectAxis::RefreshGeometry()
     if (object1Id > NULL_ID)
     {
         const QSharedPointer<VAbstractCurve> curve = Visualization::data->GeometricObject<VAbstractCurve>(object1Id);
-        DrawPath(visCurve, curve->GetPath(), curve->DirectionArrows(), supportColor, Qt::SolidLine, Qt::RoundCap);
+        DrawPath(visCurve, curve->GetPath(), curve->DirectionArrows(), supportColor, Qt::SolidLine,
+                 lineWeight,  Qt::RoundCap);
 
         if (axisPointId > NULL_ID)
         {
@@ -104,7 +105,7 @@ void VisToolCurveIntersectAxis::RefreshGeometry()
                 axis = Axis(static_cast<QPointF>(*first), angle);
             }
             DrawPoint(basePoint, static_cast<QPointF>(*first), mainColor);
-            DrawLine(axisLine, axis, supportColor, Qt::DashLine);
+            DrawLine(axisLine, axis, supportColor, lineWeight, Qt::DashLine);
 
             QPointF intersectPoint;
             const bool isIntersect = VToolCurveIntersectAxis::FindPoint(static_cast<QPointF>(*first), axis.angle(),
@@ -112,7 +113,7 @@ void VisToolCurveIntersectAxis::RefreshGeometry()
             if (isIntersect)
             {
                 QLineF axis_line(static_cast<QPointF>(*first), intersectPoint);
-                DrawLine(this, axis_line, mainColor, lineStyle);
+                DrawLine(this, axis_line, mainColor, lineWeight, lineStyle);
                 DrawPoint(point, intersectPoint, mainColor);
             }
 

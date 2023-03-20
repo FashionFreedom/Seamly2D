@@ -54,25 +54,25 @@ QVariant VPE::VColorProperty::data (int column, int role) const
 }
 
 //! Returns an editor widget, or NULL if it doesn't supply one
-QWidget* VPE::VColorProperty::createEditor(QWidget* parent, const QStyleOptionViewItem& options,
-                                           const QAbstractItemDelegate* delegate)
+QWidget *VPE::VColorProperty::createEditor(QWidget *parent, const QStyleOptionViewItem& options,
+                                           const QAbstractItemDelegate *delegate)
 {
     Q_UNUSED(options)
     Q_UNUSED(delegate)
 
-    VColorPropertyEditor* tmpWidget = new VColorPropertyEditor(parent);
+    VColorPropertyEditor *tmpWidget = new VColorPropertyEditor(parent);
     tmpWidget->setLocale(parent->locale());
-    tmpWidget->SetColor(d_ptr->VariantValue.value<QColor>());
+    tmpWidget->setLineColor(d_ptr->VariantValue.value<QColor>());
     return tmpWidget;
 }
 
 //! Sets the property's data to the editor (returns false, if the standard delegate should do that)
-bool VPE::VColorProperty::setEditorData(QWidget* editor)
+bool VPE::VColorProperty::setEditorData(QWidget *editor)
 {
-    VColorPropertyEditor* tmpWidget = qobject_cast<VColorPropertyEditor*>(editor);
+    VColorPropertyEditor *tmpWidget = qobject_cast<VColorPropertyEditor*>(editor);
     if (tmpWidget)
     {
-        tmpWidget->SetColor(d_ptr->VariantValue.value<QColor>());
+        tmpWidget->setLineColor(d_ptr->VariantValue.value<QColor>());
     }
     else
         return false;
@@ -83,10 +83,10 @@ bool VPE::VColorProperty::setEditorData(QWidget* editor)
 //! Gets the data from the widget
 QVariant VPE::VColorProperty::getEditorData(const QWidget *editor) const
 {
-    const VColorPropertyEditor* tmpWidget = qobject_cast<const VColorPropertyEditor*>(editor);
+    const VColorPropertyEditor *tmpWidget = qobject_cast<const VColorPropertyEditor*>(editor);
     if (tmpWidget)
     {
-        return tmpWidget->GetColor();
+        return tmpWidget->getLineColor();
     }
 
     return QVariant();

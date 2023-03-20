@@ -52,8 +52,9 @@
 #ifndef VGEOMETRYDEF_H
 #define VGEOMETRYDEF_H
 
-enum class Draw : char { Calculation, Modeling, Layout };
-enum class GOType : char { Point, Arc, EllipticalArc, Spline, SplinePath, CubicBezier, CubicBezierPath, Unknown };
-enum class SplinePointPosition : char { FirstPoint, LastPoint };
+enum class Draw : char {Calculation, Modeling, Layout};
+enum class GOType : char {Point, Arc, EllipticalArc, Spline, SplinePath, CubicBezier, CubicBezierPath, Unknown,
+                          Curve, Path, AllCurves};
+enum class SplinePointPosition : char {FirstPoint, LastPoint};
 
 #endif // VGEOMETRYDEF_H

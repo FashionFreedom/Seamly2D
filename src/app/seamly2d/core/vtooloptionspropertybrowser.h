@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -55,6 +55,7 @@
 #include <QObject>
 #include <QMap>
 
+#include "../vgeometry/vgeometrydef.h"
 #include "../vpropertyexplorer/vproperty.h"
 #include "../vpropertyexplorer/vpropertymodel.h"
 #include "../vpropertyexplorer/vpropertyformview.h"
@@ -63,31 +64,40 @@ class QDockWidget;
 class QGraphicsItem;
 class QScrollArea;
 class VFormula;
+class VContainer;
 
 class VToolOptionsPropertyBrowser : public QObject
 {
     Q_OBJECT
 public:
-    explicit VToolOptionsPropertyBrowser(QDockWidget *parent);
+    explicit VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent);
     void ClearPropertyBrowser();
+
 public slots:
     void itemClicked(QGraphicsItem *item);
     void UpdateOptions();
     void RefreshOptions();
+
 private slots:
-    void userChangedData(VPE::VProperty* property);
-private:
+    void userChangedData(VPE::VProperty *property);
+
+protected:
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
 
-    VPE::VPropertyModel* PropertyModel;
-    VPE::VPropertyFormView* formView;
+    const VContainer                *m_data;
+    VPE::VPropertyModel             *propertyModel;
+    VPE::VPropertyFormView          *formView;
 
-    QGraphicsItem *currentItem;
-    QMap<VPE::VProperty *, QString> propertyToId;
-    QMap<QString, VPE::VProperty *> idToProperty;
+    QGraphicsItem                   *currentItem;
+    QMap<VPE::VProperty *, QString>  propertyToId;
+    QMap<QString, VPE::VProperty *>  idToProperty;
 
+private:
     void AddProperty(VPE::VProperty *property, const QString &id);
     void ShowItemOptions(QGraphicsItem *item);
+
+    template<class Tool>
+    QMap<QString, quint32> getObjectList(Tool *tool, GOType objType);
 
     template<class Tool>
     void SetPointName(const QString &name);
@@ -141,18 +151,26 @@ private:
     void AddPropertyAxisType(Tool *i, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyLineType(Tool *i, const QString &propertyName, const QMap<QString, QIcon> &styles);
+    void AddPropertyLineType(Tool *i, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyCurvePenStyle(Tool *i, const QString &propertyName, const QMap<QString, QIcon> &styles);
+    void AddPropertyCurveLineType(Tool *i, const QString &propertyName);
 
     template<class Tool>
-    void AddPropertyLineColor(Tool *i, const QString &propertyName, const QMap<QString, QString> &colors,
-                              const QString &id);
+    void AddPropertyLineWeight(Tool *i, const QString &propertyName);
+
+    template<class Tool>
+    void AddPropertyLineColor(Tool *i, const QString &propertyName,  const QString &id);
+
+    template<class Tool>
+    void AddObjectProperty(Tool *tool, const QString &pointName, const QString &propertyName,
+                           const QString &id, GOType objType);
 
     void AddPropertyFormula(const QString &propertyName, const VFormula &formula, const QString &attrName);
     void AddPropertyParentPointName(const QString &pointName, const QString &propertyName,
-                                    const QString &propertyAttribure);
+                                    const QString &propertyAttribute);
+
+    void AddPropertyLabel(const QString &propertyName, const QString &propertyAttribute);
 
     QStringList PropertiesList() const;
 

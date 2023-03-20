@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vlinetypeproperty.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   29 1, 2015
+/******************************************************************************
+ *   @file   vlinetypeproperty.cpp
+ **  @author DS Caskey
+ **  @date   Feb 7, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,43 +25,80 @@
  **
  *************************************************************************/
 
+/************************************************************************
+ **
+ **  @file   vlinetypeproperty.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   29 1, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://github.com/fashionfreedom/Valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
 #include "vlinetypeproperty.h"
 
+#include <QBrush>
 #include <QComboBox>
 #include <QCoreApplication>
 #include <QLocale>
+#include <QPainter>
+#include <QPen>
+#include <QPixmap>
 #include <QSize>
 #include <QStaticStringData>
 #include <QStringData>
 #include <QStringDataPtr>
 #include <QWidget>
 
+#include "../ifc/ifcdef.h"
 #include "../vproperty_p.h"
 
-VPE::VLineTypeProperty::VLineTypeProperty(const QString &name)
-    : VProperty(name, QVariant::Int), styles(), indexList()
+VPE::LineTypeProperty::LineTypeProperty(const QString &name)
+    : VProperty(name, QVariant::Int)
+    , m_lineTypes()
+    , m_indexList()
+    , m_iconWidth(40)
+    , m_iconHeight(14)
 {
     VProperty::d_ptr->VariantValue = 0;
     VProperty::d_ptr->VariantValue.convert(QVariant::Int);
 }
 
-QVariant VPE::VLineTypeProperty::data(int column, int role) const
+QVariant VPE::LineTypeProperty::data(int column, int role) const
 {
-    if (styles.empty())
+    if (m_lineTypes.empty())
     {
         return QVariant();
     }
 
     int tmpIndex = VProperty::d_ptr->VariantValue.toInt();
 
-    if (tmpIndex < 0 || tmpIndex >= indexList.count())
+    if (tmpIndex < 0 || tmpIndex >= m_indexList.count())
     {
         tmpIndex = 0;
     }
 
     if (column == DPC_Data && Qt::DisplayRole == role)
     {
-        return indexList.at(tmpIndex);
+        return m_indexList.at(tmpIndex);
     }
     else if (column == DPC_Data && Qt::EditRole == role)
     {
@@ -97,67 +110,73 @@ QVariant VPE::VLineTypeProperty::data(int column, int role) const
     }
 }
 
-QWidget *VPE::VLineTypeProperty::createEditor(QWidget *parent, const QStyleOptionViewItem &options,
+QWidget *VPE::LineTypeProperty::createEditor(QWidget *parent, const QStyleOptionViewItem &options,
                                          const QAbstractItemDelegate *delegate)
 {
     Q_UNUSED(options)
     Q_UNUSED(delegate)
-    QComboBox* tmpEditor = new QComboBox(parent);
-    tmpEditor->clear();
-    tmpEditor->setLocale(parent->locale());
-    tmpEditor->setIconSize(QSize(80, 14));
-    tmpEditor->setMinimumWidth(80);
-    tmpEditor->setMaximumWidth(110);
+    QComboBox *lineTypeEditor = new QComboBox(parent);
 
-    QMap<QString, QIcon>::const_iterator i = styles.constBegin();
-    while (i != styles.constEnd())
+#if defined(Q_OS_MAC)
+    // Mac pixmap should be little bit smaller
+    lineTypeEditor->setIconSize(QSize(m_iconWidth-= 2 ,m_iconHeight-= 2));
+#else
+    // Windows
+    lineTypeEditor->setIconSize(QSize(m_iconWidth, m_iconHeight));
+#endif
+    lineTypeEditor->clear();
+    lineTypeEditor->setMinimumWidth(140);
+    lineTypeEditor->setLocale(parent->locale());
+
+    QMap<QString, QString>::const_iterator i = m_lineTypes.constBegin();
+    while (i != m_lineTypes.constEnd())
     {
-        tmpEditor->addItem(i.value(), "", QVariant(i.key()));
+        const QString lineType = QVariant(i.key()).toString();
+        lineTypeEditor->addItem(createIcon(lineType), i.value(), QVariant(i.key()));
         ++i;
     }
+    lineTypeEditor->setCurrentIndex(VProperty::d_ptr->VariantValue.toInt());
+    connect(lineTypeEditor, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
+                     &LineTypeProperty::currentIndexChanged);
 
-    tmpEditor->setCurrentIndex(VProperty::d_ptr->VariantValue.toInt());
-    connect(tmpEditor, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
-                     &VLineTypeProperty::currentIndexChanged);
-
-    VProperty::d_ptr->editor = tmpEditor;
+    VProperty::d_ptr->editor = lineTypeEditor;
     return VProperty::d_ptr->editor;
 }
 
-QVariant VPE::VLineTypeProperty::getEditorData(const QWidget *editor) const
+QVariant VPE::LineTypeProperty::getEditorData(const QWidget *editor) const
 {
-    const QComboBox* tmpEditor = qobject_cast<const QComboBox*>(editor);
-    if (tmpEditor)
+    const QComboBox *lineTypeEditor = qobject_cast<const QComboBox*>(editor);
+    if (lineTypeEditor)
     {
-        return tmpEditor->currentIndex();
+        return lineTypeEditor->currentIndex();
     }
 
     return QVariant(0);
 }
 
-void VPE::VLineTypeProperty::setStyles(const QMap<QString, QIcon> &styles)
+void VPE::LineTypeProperty::setLineTypes(const QMap<QString, QString> &lineTypes)
 {
-    this->styles = styles;
-    indexList.clear();
-    QMap<QString, QIcon>::const_iterator i = styles.constBegin();
-    while (i != styles.constEnd())
+    this->m_lineTypes = lineTypes;
+    m_indexList.clear();
+    QMap<QString, QString>::const_iterator i = m_lineTypes.constBegin();
+    while (i != lineTypes.constEnd())
     {
-        indexList.append(i.key());
+        m_indexList.append(i.key());
         ++i;
     }
 }
 
 // cppcheck-suppress unusedFunction
-QMap<QString, QIcon> VPE::VLineTypeProperty::getStyles() const
+QMap<QString, QString> VPE::LineTypeProperty::getLineTypes() const
 {
-    return styles;
+    return m_lineTypes;
 }
 
-void VPE::VLineTypeProperty::setValue(const QVariant &value)
+void VPE::LineTypeProperty::setValue(const QVariant &value)
 {
     int tmpIndex = value.toInt();
 
-    if (tmpIndex < 0 || tmpIndex >= indexList.count())
+    if (tmpIndex < 0 || tmpIndex >= m_indexList.count())
     {
         tmpIndex = 0;
     }
@@ -171,31 +190,51 @@ void VPE::VLineTypeProperty::setValue(const QVariant &value)
     }
 }
 
-QString VPE::VLineTypeProperty::type() const
+QString VPE::LineTypeProperty::type() const
 {
     return QStringLiteral("lineType");
 }
 
-VPE::VProperty *VPE::VLineTypeProperty::clone(bool include_children, VProperty *container) const
+VPE::VProperty *VPE::LineTypeProperty::clone(bool include_children, VProperty *container) const
 {
-    return VProperty::clone(include_children, container ? container : new VLineTypeProperty(getName()));
+    return VProperty::clone(include_children, container ? container : new LineTypeProperty(getName()));
 }
 
-int VPE::VLineTypeProperty::IndexOfStyle(const QMap<QString, QIcon> &styles, const QString &style)
+int VPE::LineTypeProperty::indexOfLineType(const QMap<QString, QString> &lineTypes, const QString &lineType)
 {
-    QVector<QString> indexList;
-    QMap<QString, QIcon>::const_iterator i = styles.constBegin();
-    while (i != styles.constEnd())
+    QVector<QString> m_indexList;
+    QMap<QString, QString>::const_iterator i = lineTypes.constBegin();
+    while (i != lineTypes.constEnd())
     {
-        indexList.append(i.key());
+        m_indexList.append(i.key());
         ++i;
     }
-    return indexList.indexOf(style);
+    return m_indexList.indexOf(lineType);
 }
 
-void VPE::VLineTypeProperty::currentIndexChanged(int index)
+void VPE::LineTypeProperty::currentIndexChanged(int index)
 {
     Q_UNUSED(index)
     UserChangeEvent *event = new UserChangeEvent();
-    QCoreApplication::postEvent ( VProperty::d_ptr->editor, event );
+    QCoreApplication::postEvent (VProperty::d_ptr->editor, event );
+}
+
+QIcon VPE::LineTypeProperty::createIcon(const QString &type)
+{
+    const Qt::PenStyle style = lineTypeToPenStyle(type);
+    QPixmap pixmap(m_iconWidth, m_iconHeight);
+    pixmap.fill(Qt::black);
+
+    QBrush brush(Qt::black);
+    QPen pen(brush, 2.5, style);
+
+    QPainter painter(&pixmap);
+    painter.fillRect(QRect(1, 1, m_iconWidth-2, m_iconHeight-2), QColor(Qt::white));
+    if (style != Qt::NoPen)
+    {
+        painter.setPen(pen);
+        painter.drawLine(0, m_iconHeight/2, m_iconWidth, m_iconHeight/2);
+    }
+
+    return QIcon(pixmap);
 }

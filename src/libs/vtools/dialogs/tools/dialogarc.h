@@ -88,19 +88,23 @@ public:
     QString       GetF2() const;
     void          SetF2(const QString &value);
 
-    QString       GetPenStyle() const;
-    void          SetPenStyle(const QString &value);
+    QString       getPenStyle() const;
+    void          setPenStyle(const QString &value);
 
-    QString       GetColor() const;
-    void          SetColor(const QString &value);
+    QString       getLineWeight() const;
+    void          setLineWeight(const QString &value);
+
+    QString       getLineColor() const;
+    void          setLineColor(const QString &value);
+
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**
      * @brief DeployFormulaTextEdit grow or shrink formula input
      */
-    void DeployFormulaTextEdit();
-    void DeployF1TextEdit();
-    void DeployF2TextEdit();
+    void          DeployFormulaTextEdit();
+    void          DeployF1TextEdit();
+    void          DeployF2TextEdit();
     void          RadiusChanged();
     void          F1Changed();
     void          F2Changed();

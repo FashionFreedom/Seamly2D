@@ -94,8 +94,9 @@ void VToolEllipticalArc::setDialog()
     dialogTool->SetRadius1(elArc->GetFormulaRadius1());
     dialogTool->SetRadius2(elArc->GetFormulaRadius2());
     dialogTool->SetRotationAngle(elArc->GetFormulaRotationAngle());
-    dialogTool->SetColor(elArc->GetColor());
-    dialogTool->SetPenStyle(elArc->GetPenStyle());
+    dialogTool->setLineColor(elArc->getLineColor());
+    dialogTool->setLineWeight(elArc->getLineWeight());
+    dialogTool->setPenStyle(elArc->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -114,15 +115,16 @@ VToolEllipticalArc* VToolEllipticalArc::Create(QSharedPointer<DialogTool> dialog
     SCASSERT(not dialogTool.isNull())
 
     const quint32 center = dialogTool->GetCenter();
-    QString radius1 = dialogTool->GetRadius1();
-    QString radius2 = dialogTool->GetRadius2();
-    QString f1 = dialogTool->GetF1();
-    QString f2 = dialogTool->GetF2();
-    QString rotationAngle = dialogTool->GetRotationAngle();
-    const QString color = dialogTool->GetColor();
-    const QString penStyle = dialogTool->GetPenStyle();
-    VToolEllipticalArc* point = Create(0, center, radius1, radius2, f1, f2, rotationAngle, color, penStyle, scene, doc,
-                                       data, Document::FullParse, Source::FromGui);
+    QString radius1          = dialogTool->GetRadius1();
+    QString radius2          = dialogTool->GetRadius2();
+    QString f1               = dialogTool->GetF1();
+    QString f2               = dialogTool->GetF2();
+    QString rotationAngle    = dialogTool->GetRotationAngle();
+    const QString color      = dialogTool->getLineColor();
+    const QString penStyle   = dialogTool->getPenStyle();
+    const QString lineWeight = dialogTool->getLineWeight();
+    VToolEllipticalArc* point = Create(0, center, radius1, radius2, f1, f2, rotationAngle, color, penStyle, lineWeight,
+                                       scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -149,9 +151,9 @@ VToolEllipticalArc* VToolEllipticalArc::Create(QSharedPointer<DialogTool> dialog
  */
 VToolEllipticalArc* VToolEllipticalArc::Create(const quint32 _id, const quint32 &center, QString &radius1,
                                                QString &radius2, QString &f1, QString &f2, QString &rotationAngle,
-                                               const QString &color, const QString &penStyle, VMainGraphicsScene *scene,
-                                               VAbstractPattern *doc, VContainer *data, const Document &parse,
-                                               const Source &typeCreation)
+                                               const QString &color, const QString &penStyle, const QString &lineWeight,
+                                               VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                               VContainer *data, const Document &parse, const Source &typeCreation)
 {
     qreal calcRadius1 = 0, calcRadius2 = 0, calcF1 = 0, calcF2 = 0, calcRotationAngle = 0;
 
@@ -165,8 +167,9 @@ VToolEllipticalArc* VToolEllipticalArc::Create(const quint32 _id, const quint32 
     const VPointF c = *data->GeometricObject<VPointF>(center);
     VEllipticalArc *elArc = new VEllipticalArc(c, calcRadius1, calcRadius2, radius1, radius2, calcF1, f1, calcF2, f2,
                                                calcRotationAngle, rotationAngle);
-    elArc->SetColor(color);
+    elArc->setLineColor(color);
     elArc->SetPenStyle(penStyle);
+    elArc->setLineWeight(lineWeight);
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {
@@ -414,14 +417,15 @@ void VToolEllipticalArc::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogEllipticalArc> dialogTool = m_dialog.objectCast<DialogEllipticalArc>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->GetCenter()));
-    doc->SetAttribute(domElement, AttrRadius1, dialogTool->GetRadius1());
-    doc->SetAttribute(domElement, AttrRadius2, dialogTool->GetRadius2());
-    doc->SetAttribute(domElement, AttrAngle1, dialogTool->GetF1());
-    doc->SetAttribute(domElement, AttrAngle2, dialogTool->GetF2());
+    doc->SetAttribute(domElement, AttrCenter,        QString().setNum(dialogTool->GetCenter()));
+    doc->SetAttribute(domElement, AttrRadius1,       dialogTool->GetRadius1());
+    doc->SetAttribute(domElement, AttrRadius2,       dialogTool->GetRadius2());
+    doc->SetAttribute(domElement, AttrAngle1,        dialogTool->GetF1());
+    doc->SetAttribute(domElement, AttrAngle2,        dialogTool->GetF2());
     doc->SetAttribute(domElement, AttrRotationAngle, dialogTool->GetRotationAngle());
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,         dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrPenStyle,      dialogTool->getPenStyle());
+    doc->SetAttribute(domElement, AttrLineWeight,    dialogTool->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -433,11 +437,11 @@ void VToolEllipticalArc::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> 
     SCASSERT(elArc.isNull() == false)
 
     doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrCenter, elArc->GetCenter().id());
-    doc->SetAttribute(tag, AttrRadius1, elArc->GetFormulaRadius1());
-    doc->SetAttribute(tag, AttrRadius2, elArc->GetFormulaRadius2());
-    doc->SetAttribute(tag, AttrAngle1, elArc->GetFormulaF1());
-    doc->SetAttribute(tag, AttrAngle2, elArc->GetFormulaF2());
+    doc->SetAttribute(tag, AttrCenter,        elArc->GetCenter().id());
+    doc->SetAttribute(tag, AttrRadius1,       elArc->GetFormulaRadius1());
+    doc->SetAttribute(tag, AttrRadius2,       elArc->GetFormulaRadius2());
+    doc->SetAttribute(tag, AttrAngle1,        elArc->GetFormulaF1());
+    doc->SetAttribute(tag, AttrAngle2,        elArc->GetFormulaF2());
     doc->SetAttribute(tag, AttrRotationAngle, elArc->GetFormulaRotationAngle());
 }
 
@@ -459,6 +463,7 @@ void VToolEllipticalArc::SetVisualization()
         visual->setRotationAngle(trVars->FormulaToUser(elArc->GetFormulaRotationAngle(),
                                                        qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(elArc->GetPenStyle()));
+        visual->setLineWeight(elArc->getLineWeight());
         visual->RefreshGeometry();
     }
 }

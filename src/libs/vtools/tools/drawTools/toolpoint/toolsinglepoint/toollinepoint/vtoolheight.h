@@ -79,7 +79,8 @@ public:
 
     static VToolHeight  *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                                 VContainer *data);
-    static VToolHeight  *Create(const quint32 _id, const QString &pointName, const QString &typeLine,
+    static VToolHeight  *Create(const quint32 _id, const QString &pointName, const QString &lineType,
+                                const QString &lineWeight,
                                 const QString &lineColor, quint32 basePointId, quint32 p1LineId,
                                 quint32 p2LineId, qreal mx, qreal my, bool showPointName, VMainGraphicsScene  *scene,
                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
@@ -118,9 +119,9 @@ private:
     quint32              p2LineId; /** @brief p2LineId id second point of line. */
 
                          VToolHeight(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                     const QString &typeLine, const QString &lineColor, const quint32 &basePointId,
-                                     const quint32 &p1LineId, const quint32 &p2LineId, const Source &typeCreation,
-                                     QGraphicsItem * parent = nullptr);
+                                     const QString &lineType, const QString &lineWeight, const QString &lineColor,
+                                     const quint32 &basePointId, const quint32 &p1LineId, const quint32 &p2LineId,
+                                     const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 
 #endif // VTOOLHEIGHT_H

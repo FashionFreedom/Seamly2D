@@ -72,18 +72,37 @@
  * @param parent parent widget
  */
 DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogLine)
+    : DialogTool(data, toolId, parent), ui(new Ui::DialogLine)
 {
     ui->setupUi(this);
     InitOkCancelApply(ui);
 
     FillComboBoxPoints(ui->comboBoxFirstPoint);
     FillComboBoxPoints(ui->comboBoxSecondPoint);
-    FillComboBoxLineColors(ui->comboBoxLineColor);
 
-    QMap<QString, QIcon> stylesPics = LineStylesPics();
-    stylesPics.remove(LineTypeNone);// Prevent hiding line
-    FillComboBoxTypeLine(ui->comboBoxLineType, stylesPics);
+    int index = ui->lineType_ComboBox->findData(LineTypeNone);
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->removeItem(index);
+    }
+
+    index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     number = 0;
 
@@ -115,25 +134,56 @@ void DialogLine::SetSecondPoint(const quint32 &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetTypeLine set type of line
+ * @brief getLineType return type of line
+ * @return type
+ */
+QString DialogLine::getLineType() const
+{
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineType set type of line
  * @param value type
  */
-void DialogLine::SetTypeLine(const QString &value)
+void DialogLine::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineType, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogLine::GetLineColor() const
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogLine::getLineWeight() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineColor, ColorBlack);
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogLine::SetLineColor(const QString &value)
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogLine::setLineWeight(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineColor, value);
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogLine::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogLine::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -183,7 +233,8 @@ void DialogLine::SaveData()
 
     line->setObject1Id(GetFirstPoint());
     line->setPoint2Id(GetSecondPoint());
-    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(getLineType()));
+    line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
 }
 
@@ -247,14 +298,4 @@ quint32 DialogLine::GetFirstPoint() const
 quint32 DialogLine::GetSecondPoint() const
 {
     return qvariant_cast<quint32>(ui->comboBoxSecondPoint->currentData());
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetTypeLine return type of line
- * @return type
- */
-QString DialogLine::GetTypeLine() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
