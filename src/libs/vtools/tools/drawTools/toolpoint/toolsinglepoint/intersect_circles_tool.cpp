@@ -48,6 +48,7 @@
 #include "../../../../visualization/visualization.h"
 #include "../../../../visualization/line/intersect_circles_visual.h"
 
+#include <QMessageBox>
 #include <QSharedPointer>
 #include <QStaticStringData>
 #include <QStringData>
@@ -140,6 +141,22 @@ IntersectCirclesTool *IntersectCirclesTool::Create(const quint32 _id, const QStr
 
     const QPointF point = FindPoint(static_cast<QPointF>(c1Point), static_cast<QPointF>(c2Point), calcC1Radius,
                                     calcC2Radius, crossPoint);
+    if (point == QPointF())
+    {
+        const QString msg = tr("<b><big>Can't find intersection point %1 of Circles</big></b><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName);
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Point Intersect Circles"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     quint32 id = _id;
 
     VPointF *p = new VPointF(point, pointName, mx, my);
