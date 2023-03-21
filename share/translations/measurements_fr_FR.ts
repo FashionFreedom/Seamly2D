@@ -3793,7 +3793,7 @@
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1857"/>
         <source>crotch_length_b</source>
         <comment>Name in a formula. Don&apos;t use math symbols and space in name!!!!</comment>
-        <translation>longueur_entrejambe</translation>
+        <translation type="unfinished">longueur_entrejambe_dos</translation>
     </message>
     <message>
         <location filename="../../src/libs/vpatterndb/vtranslatemeasurements.cpp" line="1859"/>
