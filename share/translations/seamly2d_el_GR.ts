@@ -7592,10 +7592,6 @@ Do you want to download it?</source>
         <translation type="unfinished">Βασικό σημείο</translation>
     </message>
     <message>
-        <source>Point Length and Angle from point %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line_%1_%2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7746,6 +7742,10 @@ Do you want to download it?</source>
     <message>
         <source>Description</source>
         <translation type="unfinished">Περιγραφή</translation>
+    </message>
+    <message>
+        <source>Point Length and Angle from point %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

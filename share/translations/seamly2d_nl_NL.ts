@@ -7905,7 +7905,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Point Length and Angle from point %2</source>
-        <translation>Punt Lengte en Hoek van punt %2</translation>
+        <translation type="vanished">Punt Lengte en Hoek van punt %2</translation>
     </message>
     <message>
         <source>Line_%1_%2</source>
@@ -8058,6 +8058,10 @@ Do you want to download it?</source>
     <message>
         <source>Description</source>
         <translation>Beschrijving</translation>
+    </message>
+    <message>
+        <source>Point Length and Angle from point %1</source>
+        <translation>Punt Lengte en Hoek van punt %1</translation>
     </message>
 </context>
 <context>
@@ -13392,71 +13396,75 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>silent</source>
-        <translation type="vanished">stil</translation>
+        <translation>stil</translation>
     </message>
     <message>
         <source>button_click</source>
-        <translation type="vanished">knop_klik</translation>
+        <translation>knop_klik</translation>
     </message>
     <message>
         <source>mouse1_click</source>
-        <translation type="vanished">muis1_klik</translation>
+        <translation>muis1_klik</translation>
     </message>
     <message>
         <source>mouse2_click</source>
-        <translation type="vanished">muis2_klik</translation>
+        <translation>muis2_klik</translation>
     </message>
     <message>
         <source>mouse3_click</source>
-        <translation type="vanished">muis3_klik</translation>
+        <translation>muis3_klik</translation>
     </message>
     <message>
         <source>camera_click</source>
-        <translation type="vanished">camera_klik</translation>
+        <translation>camera_klik</translation>
     </message>
     <message>
         <source>camera_buzz</source>
-        <translation type="vanished">camera_zoem</translation>
+        <translation>camera_zoem</translation>
     </message>
     <message>
         <source>clock_click</source>
-        <translation type="vanished">klok_klik</translation>
+        <translation>klok_klik</translation>
     </message>
     <message>
         <source>clock_beep</source>
-        <translation type="vanished">klok_piep</translation>
+        <translation>klok_piep</translation>
     </message>
     <message>
         <source>microwave.beep</source>
-        <translation type="vanished">microwave.piep</translation>
+        <translation>microwave.piep</translation>
     </message>
     <message>
         <source>coffeemaker_click</source>
-        <translation type="vanished">koffiezet_klik</translation>
+        <translation>koffiezet_klik</translation>
     </message>
     <message>
         <source>coffeemaker2_click</source>
-        <translation type="vanished">koffiezet2_klik</translation>
+        <translation>koffiezet2_klik</translation>
     </message>
     <message>
         <source>phone2_click</source>
-        <translation type="vanished">telefoon2_klik</translation>
+        <translation>telefoon2_klik</translation>
     </message>
     <message>
         <source>phone1_click</source>
-        <translation type="vanished">telefoon1_klik</translation>
+        <translation>telefoon1_klik</translation>
     </message>
     <message>
         <source>scissors_click</source>
-        <translation type="vanished">schaar_klik</translation>
+        <translation>schaar_klik</translation>
     </message>
     <message>
         <source>wallswitch_click</source>
-        <translation type="vanished">muurschakelaar_klik</translation>
+        <translation>muurschakelaar_klik</translation>
     </message>
     <message>
         <source>buzz_click</source>
-        <translation type="vanished">zoem_klik</translation>
+        <translation>zoem_klik</translation>
+    </message>
+    <message>
+        <source>inspirstar_click</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

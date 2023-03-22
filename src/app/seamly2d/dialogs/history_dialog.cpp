@@ -301,7 +301,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
             case Tool::EndLine:
                 rowData.icon = ":/toolicon/32x32/segment.png";
                 rowData.name = tr("%1").arg(getPointName(toolId));
-                rowData.tool = tr("Point Length and Angle from point %2")
+                rowData.tool = tr("Point Length and Angle from point %1")
                                   .arg(getPointName(attrUInt(domElement, AttrBasePoint)));
                 break;
 
