@@ -2528,7 +2528,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLine(QGraphicsItem *item)
     formView->setTitle(tr("Line"));
 
     AddPropertyLabel(tr("Selection"), AttrName);
-    AddPropertyLineName(i, AttrName, true);
+    AddPropertyLineName(i, AttrObjName, true);
     AddObjectProperty(i, i->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     AddObjectProperty(i, i->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
