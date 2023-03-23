@@ -1,3 +1,20 @@
+/******************************************************************************
+ *   @file   dialogellipticalarc.cpp
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *****************************************************************************/
 /************************************************************************
  **
  **  @file   dialogellipticalarc.cpp
@@ -80,10 +97,15 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
     , angleF1(INT_MIN)
     , angleF2(INT_MIN)
     , angleRotation(INT_MIN)
+    , m_arc()
+    , m_Id()
+    , newDuplicate(-1)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/el_arc.png"));
+
+    m_Id  = data->getId() + 1;
 
     this->formulaBaseHeightRadius1 = ui->plainTextEditRadius1->height();
     this->formulaBaseHeightRadius2 = ui->plainTextEditRadius2->height();
@@ -114,7 +136,7 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
 
     InitOkCancelApply(ui);
 
-    FillComboBoxPoints(ui->comboBoxBasePoint);
+    FillComboBoxPoints(ui->centerPoint_ComboBox);
 
     int index = ui->lineType_ComboBox->findData(LineTypeNone);
     if (index != -1)
@@ -162,6 +184,8 @@ DialogEllipticalArc::DialogEllipticalArc(const VContainer *data, const quint32 &
     connect(ui->pushButtonGrowLengthRotationAngle, &QPushButton::clicked,
             this, &DialogEllipticalArc::DeployRotationAngleTextEdit);
 
+    connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogEllipticalArc::pointNameChanged);
+
     vis = new VisToolEllipticalArc(data);
 }
 
@@ -172,13 +196,26 @@ DialogEllipticalArc::~DialogEllipticalArc()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+VEllipticalArc DialogEllipticalArc::getArc() const
+{
+    return m_arc;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::setArc(const VEllipticalArc &arc)
+{
+    m_arc = arc;
+    ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(m_arc.name()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief GetCenter return id of center point
  * @return id id
  */
 quint32 DialogEllipticalArc::GetCenter() const
 {
-    return getCurrentObjectId(ui->comboBoxBasePoint);
+    return getCurrentObjectId(ui->centerPoint_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -188,7 +225,7 @@ quint32 DialogEllipticalArc::GetCenter() const
  */
 void DialogEllipticalArc::SetCenter(const quint32 &value)
 {
-    ChangeCurrentData(ui->comboBoxBasePoint, value);
+    ChangeCurrentData(ui->centerPoint_ComboBox, value);
     vis->setObject1Id(value);
 }
 
@@ -669,7 +706,7 @@ void DialogEllipticalArc::ChosenObject(quint32 id, const SceneObject &type)
     {
         if (type == SceneObject::Point)
         {
-            if (SetObject(id, ui->comboBoxBasePoint, ""))
+            if (SetObject(id, ui->centerPoint_ComboBox, ""))
             {
                 vis->VisualMode(id);
                 prepare = true;
@@ -678,6 +715,41 @@ void DialogEllipticalArc::ChosenObject(quint32 id, const SceneObject &type)
             }
         }
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogEllipticalArc::pointNameChanged()
+{
+    QColor color = okColor;
+
+    flagError = true;
+    color = okColor;
+
+    if (getCurrentObjectId(ui->centerPoint_ComboBox) == m_arc.GetCenter().id())
+    {
+        newDuplicate = -1;
+        ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(m_arc.name()));
+    }
+    else
+    {
+        VEllipticalArc arc(*data->GeometricObject<VPointF>(getCurrentObjectId(ui->centerPoint_ComboBox)),
+                           GetRadius1().toDouble(),
+                           GetRadius2().toDouble(),
+                           GetF1().toDouble(),
+                           GetF2().toDouble(),
+                           GetRotationAngle().toDouble());
+
+        if (!data->IsUnique(arc.name()))
+        {
+            newDuplicate = static_cast<qint32>(DNumber(arc.name()));
+            arc.SetDuplicate(static_cast<quint32>(newDuplicate));
+        }
+        ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(arc.name() + "_" + QString().setNum(m_Id)));
+    }
+
+    ChangeColor(ui->name_Label, color);
+    ChangeColor(ui->centerPoint_Label, color);
+    CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -2748,11 +2748,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogHistory</name>
     <message>
         <source>History</source>
-        <translation>Historique</translation>
+        <translation type="vanished">Historique</translation>
     </message>
     <message>
         <source>Tool</source>
-        <translation>Outil</translation>
+        <translation type="vanished">Outil</translation>
     </message>
     <message>
         <source>Can&apos;t create record.</source>
@@ -2760,31 +2760,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 - Base point</source>
-        <translation>%1 - Point de départ</translation>
+        <translation type="vanished">%1 - Point de départ</translation>
     </message>
     <message>
         <source>%1_%2 - Line from point %1 to point %2</source>
-        <translation>%1_%2 - Ligne du point %1 au point %2</translation>
+        <translation type="vanished">%1_%2 - Ligne du point %1 au point %2</translation>
     </message>
     <message>
         <source>%3 - Point along line %1_%2</source>
-        <translation>%3 - Point le long d&apos;une ligne %1_%2</translation>
+        <translation type="vanished">%3 - Point le long d&apos;une ligne %1_%2</translation>
     </message>
     <message>
         <source>%1 - Point of shoulder</source>
-        <translation>%1 - Point d&apos;épaule</translation>
+        <translation type="vanished">%1 - Point d&apos;épaule</translation>
     </message>
     <message>
         <source>%3 - normal to line %1_%2</source>
-        <translation>%3 - normal à la ligne %1_%2</translation>
+        <translation type="vanished">%3 - normal à la ligne %1_%2</translation>
     </message>
     <message>
         <source>%4 - bisector of angle %1_%2_%3</source>
-        <translation>%4 - bissectrice de l&apos;angle %1_%2_%3</translation>
+        <translation type="vanished">%4 - bissectrice de l&apos;angle %1_%2_%3</translation>
     </message>
     <message>
         <source>%5 - intersection of lines %1_%2 and %3_%4</source>
-        <translation>%5 - intersection des lignes %1_%2 et %3_%4</translation>
+        <translation type="vanished">%5 - intersection des lignes %1_%2 et %3_%4</translation>
     </message>
     <message>
         <source>Curve %1_%2</source>
@@ -2800,19 +2800,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%4 - point of contact of arc with the center in point %1 and line %2_%3</source>
-        <translation>%4 - point de contact de l&apos;arc avec le centre au point %1 et à la ligne %2_%3</translation>
+        <translation type="vanished">%4 - point de contact de l&apos;arc avec le centre au point %1 et à la ligne %2_%3</translation>
     </message>
     <message>
         <source>Point of perpendicular from point %1 to line %2_%3</source>
-        <translation>Point de la perpendiculaire du point %1 à la ligne %2_%3</translation>
+        <translation type="vanished">Point de la perpendiculaire du point %1 à la ligne %2_%3</translation>
     </message>
     <message>
         <source>Triangle: axis %1_%2, points %3 and %4</source>
-        <translation>Triangle : axe %1_%2, points %3 et %4</translation>
+        <translation type="vanished">Triangle : axe %1_%2, points %3 et %4</translation>
     </message>
     <message>
         <source>%1 - point of intersection %2 and %3</source>
-        <translation>%1 - point d&apos;intersection %2 et %3</translation>
+        <translation type="vanished">%1 - point d&apos;intersection %2 et %3</translation>
     </message>
     <message>
         <source>%1 - cut arc with center %2</source>
@@ -2828,11 +2828,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 - point of intersection line %2_%3 and axis through point %4</source>
-        <translation>%1- point d&apos;intersection ligne%2_%3 et l&apos;axe en passant par le point %4</translation>
+        <translation type="vanished">%1- point d&apos;intersection ligne%2_%3 et l&apos;axe en passant par le point %4</translation>
     </message>
     <message>
         <source>%1 - point of intersection curve and axis through point %2</source>
-        <translation>%1 - point d&apos;intersection entre courbe et axe passant par %2</translation>
+        <translation type="vanished">%1 - point d&apos;intersection entre courbe et axe passant par %2</translation>
     </message>
     <message>
         <source>Arc with center in point %1 and length %2</source>
@@ -2840,95 +2840,71 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>%1 - point of arcs intersection</source>
-        <translation>%1 - Point à l&apos;intersection des arcs</translation>
+        <translation type="vanished">%1 - Point à l&apos;intersection des arcs</translation>
     </message>
     <message>
         <source>%1 - point of circles intersection</source>
-        <translation>%1 - Point à l&apos;intersection des cercles</translation>
+        <translation type="vanished">%1 - Point à l&apos;intersection des cercles</translation>
     </message>
     <message>
         <source>%1 - point from circle and tangent</source>
-        <translation>%1 - point à partir d&apos;un cercle et d&apos;une tangente</translation>
+        <translation type="vanished">%1 - point à partir d&apos;un cercle et d&apos;une tangente</translation>
     </message>
     <message>
         <source>%1 - point from arc and tangent</source>
-        <translation>%1 - point à partir d&apos;un arc et d&apos;une tangente</translation>
+        <translation type="vanished">%1 - point à partir d&apos;un arc et d&apos;une tangente</translation>
     </message>
     <message>
         <source>Correction the dart %1_%2_%3</source>
-        <translation>Corriger la pince %1_%2_%3</translation>
+        <translation type="vanished">Corriger la pince %1_%2_%3</translation>
     </message>
     <message>
         <source>%1 - point of curves intersection</source>
-        <translation>%1 - Intersection de point de courbe</translation>
+        <translation type="vanished">%1 - Intersection de point de courbe</translation>
     </message>
     <message>
         <source>Curve</source>
-        <translation>Courbe</translation>
+        <translation type="vanished">Courbe</translation>
     </message>
     <message>
         <source>Cubic bezier curve</source>
-        <translation>Courbe de Bezier Cubique</translation>
+        <translation type="vanished">Courbe de Bezier Cubique</translation>
     </message>
     <message>
         <source>Arc</source>
-        <translation>Arc</translation>
+        <translation type="vanished">Arc</translation>
     </message>
     <message>
         <source>%1 with length %2</source>
-        <translation>%1 de longueur %2</translation>
+        <translation type="vanished">%1 de longueur %2</translation>
     </message>
     <message>
         <source>Spline path</source>
-        <translation>Trajectoire de spline</translation>
+        <translation type="vanished">Trajectoire de spline</translation>
     </message>
     <message>
         <source>Cubic bezier curve path</source>
-        <translation>Trajectoire de la courbe de bezier cubique</translation>
+        <translation type="vanished">Trajectoire de la courbe de bezier cubique</translation>
     </message>
     <message>
         <source>%1 - cut %2</source>
-        <translation>%1 - coupe %2</translation>
+        <translation type="vanished">%1 - coupe %2</translation>
     </message>
     <message>
         <source>arc</source>
-        <translation>arc</translation>
+        <translation type="vanished">arc</translation>
     </message>
     <message>
         <source>curve</source>
-        <translation>courbe</translation>
+        <translation type="vanished">courbe</translation>
     </message>
     <message>
         <source>curve path</source>
-        <translation>Trajectoire de courbe</translation>
+        <translation type="vanished">Trajectoire de courbe</translation>
     </message>
     <message>
         <source>Elliptical arc</source>
-        <translation>Arc éliptique</translation>
-    </message>
-    <message>
-        <source>Find:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Search text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rotate objects around point %1. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror by line %1_%2. Suffix &apos;%3&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mirror by axis through %1 point. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move objects, rotate around point %1. Suffix &apos;%2&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Arc éliptique</translation>
     </message>
 </context>
 <context>
@@ -7633,6 +7609,197 @@ Do you want to download it?</source>
     </message>
 </context>
 <context>
+    <name>HistoryDialog</name>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Historique</translation>
+    </message>
+    <message>
+        <source>Find:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Search text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nom</translation>
+    </message>
+    <message>
+        <source>Decription</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base Point</source>
+        <translation type="unfinished">Point de base</translation>
+    </message>
+    <message>
+        <source>Line_%1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line from %1 to %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Line %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Perpendicular %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Bisector %1_%2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Lines %1_%2 and %3_%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Arc_</translation>
+    </message>
+    <message>
+        <source>Arc Radius &amp; Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radius &amp; Length %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect XY of points %1 and %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curve &amp; Axis through point %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Circle &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arc &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True Dart %1_%2_%3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Elliptical with length %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation around point %1. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Line %1_%2. Suffix %3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Axis through %1 point. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move - rotate around point %1. Suffix %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Description</source>
+        <translation type="unfinished">Description du patron</translation>
+    </message>
+    <message>
+        <source>Point Length and Angle from point %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InsertNodesDialog</name>
     <message>
         <source>Selection</source>
@@ -7800,11 +7967,11 @@ Do you want to download it?</source>
 <context>
     <name>IntersectCircleTangentTool</name>
     <message>
-        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;circle and tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+        <source>Intersect Circle and Tangent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Intersect Circle and Tangent</source>
+        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Circle and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7896,6 +8063,17 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>IntersectCirclesTool</name>
+    <message>
+        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Circles&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Circles</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11709,6 +11887,22 @@ Voulez-vous sauvegarder les changements?</translation>
         <source>Hide Seam Line</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Seam Allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paths</source>
+        <translation type="unfinished">Chemins</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -12199,78 +12393,6 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Sound:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>silent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>button_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mouse1_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mouse2_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mouse3_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>camera_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>camera_buzz</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>clock_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>clock_beep</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>microwave.beep</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>coffeemaker_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>coffeemaker2_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>inspirstar_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>phone2_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>phone1_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>scissors_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>wallswitch_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>buzz_click</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14239,6 +14361,14 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Imprimer</translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -16372,6 +16502,14 @@ Voulez-vous enregistrer les changements?</translation>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
+    <message>
+        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>VToolLinePoint</name>
@@ -17133,6 +17271,17 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
 </context>
 <context>
+    <name>VToolPointFromArcAndTangent</name>
+    <message>
+        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;%2 and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VToolPointOfContact</name>
     <message>
         <source>Length</source>
@@ -17145,6 +17294,28 @@ Voulez-vous enregistrer les changements?</translation>
     <message>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
+    </message>
+</context>
+<context>
+    <name>VToolPointOfIntersectionArcs</name>
+    <message>
+        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VToolPointOfIntersectionCurves</name>
+    <message>
+        <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point Intersect Curves</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

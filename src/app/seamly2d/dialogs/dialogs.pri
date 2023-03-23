@@ -5,7 +5,6 @@ HEADERS += \
     $$PWD/calculator_dialog.h \
     $$PWD/decimalchart_dialog.h \
     $$PWD/dialogs.h \
-    $$PWD/dialoghistory.h \
     $$PWD/dialogpatternproperties.h \
     $$PWD/dialognewpattern.h \
     $$PWD/dialogaboutapp.h \
@@ -14,6 +13,7 @@ HEADERS += \
     $$PWD/dialogvariables.h \
     $$PWD/export_layout_dialog.h \
     $$PWD/groups_widget.h \
+    $$PWD/history_dialog.h \
     $$PWD/pieces_widget.h \
     $$PWD/shortcuts_dialog.h \
     $$PWD/show_info_dialog.h \
@@ -28,7 +28,6 @@ HEADERS += \
 SOURCES += \
     $$PWD/calculator_dialog.cpp \
     $$PWD/decimalchart_dialog.cpp \
-    $$PWD/dialoghistory.cpp \
     $$PWD/dialogpatternproperties.cpp \
     $$PWD/dialognewpattern.cpp \
     $$PWD/dialogaboutapp.cpp \
@@ -37,6 +36,7 @@ SOURCES += \
     $$PWD/dialogvariables.cpp \
     $$PWD/export_layout_dialog.cpp \
     $$PWD/groups_widget.cpp \
+    $$PWD/history_dialog.cpp \
     $$PWD/pieces_widget.cpp \
     $$PWD/shortcuts_dialog.cpp \
     $$PWD/show_info_dialog.cpp \
@@ -51,7 +51,6 @@ SOURCES += \
 FORMS += \
     $$PWD/calculator_dialog.ui \
     $$PWD/decimalchart_dialog.ui \
-    $$PWD/dialoghistory.ui \
     $$PWD/dialogpatternproperties.ui \
     $$PWD/dialognewpattern.ui \
     $$PWD/dialogaboutapp.ui \
@@ -60,6 +59,7 @@ FORMS += \
     $$PWD/dialogvariables.ui \
     $$PWD/export_layout_dialog.ui \
     $$PWD/groups_widget.ui \
+    $$PWD/history_dialog.ui \
     $$PWD/pieces_widget.ui \
     $$PWD/shortcuts_dialog.ui \
     $$PWD/show_info_dialog.ui \

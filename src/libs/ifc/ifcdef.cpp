@@ -89,6 +89,7 @@ const QString AttrX           = QStringLiteral("x");
 const QString AttrY           = QStringLiteral("y");
 const QString AttrLineType    = QStringLiteral("lineType");
 const QString AttrLineWeight  = QStringLiteral("lineWeight");
+const QString AttrObjName     = QStringLiteral("objName");
 const QString AttrCut         = QStringLiteral("cut");
 const QString AttrLength      = QStringLiteral("length");
 const QString AttrBasePoint   = QStringLiteral("basePoint");

@@ -1,18 +1,39 @@
-# Don't use this pro file for building project!!!
-# I made this hack for creation one TS file for whole project.
-# Because we have several libraries that also have strings for translation, have several TS files for each
-# subproject annoying.
+# This pro file is used to run lupdate from top level pro file.
 #
 # Original idea "How to generate a single translation file for a large Qt project?"
 # https://stackoverflow.com/questions/1829474/how-to-generate-a-single-translation-file-for-a-large-qt-project
 
 TEMPLATE = app
 DEPENDPATH +=  \
-            ../../src/libs/vpatterndb
+            ../../src/app/seamly2d \
+            ../../src/app/seamlyme \
+            ../../src/libs/qmuparser \
+            ../../src/libs/vpropertyexplorer \
+            ../../src/libs/ifc \
+            ../../src/libs/vobj \
+            ../../src/libs/vlayout \
+            ../../src/libs/vgeometry \
+            ../../src/libs/vpatterndb \
+            ../../src/libs/vmisc \
+            ../../src/libs/vtools \
+            ../../src/libs/vformat \
+            ../../src/libs/fervor
 
-include(../../src/libs/vpatterndb/trmeasurements.pri)
+include(../../src/app/seamly2d/seamly2d.pri)
+include(../../src/app/seamlyme/seamlyme.pri)
+include(../../src/libs/qmuparser/qmuparser.pri)
+include(../../src/libs/vpropertyexplorer/vpropertyexplorer.pri)
+include(../../src/libs/ifc/ifc.pri)
+include(../../src/libs/vobj/vobj.pri)
+include(../../src/libs/vlayout/vlayout.pri)
+include(../../src/libs/vgeometry/vgeometry.pri)
+include(../../src/libs/vpatterndb/vpatterndb.pri)
+include(../../src/libs/vmisc/vmisc.pri)
+include(../../src/libs/vtools/vtools.pri)
+include(../../src/libs/vformat/vformat.pri)
+include(../../src/libs/fervor/fervor.pri)
 
-# Add here path to new translation file with name "measurements_*_*.ts" if you want to add new language.
+# Add here path to new translation file with name "seamly2d_*_*.ts" if you want to add new language.
 # Same paths in variable INSTALL_TRANSLATIONS (translations.pri).
 
 LANGUAGES += \
