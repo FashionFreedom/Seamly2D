@@ -72,13 +72,16 @@
 #include "version.h"
 #include "mapplication.h" // Should be last because of definning qApp
 
+#include <QComboBox>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QLabel>
 #include <QMessageBox>
-#include <QComboBox>
+#include <QPrinter>
+#include <QPrintPreviewDialog>
 #include <QProcess>
-#include <QtNumeric>
 #include <QTextCodec>
+#include <QtNumeric>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -734,6 +737,119 @@ void TMainWindow::ExportToCSVData(const QString &fileName, const DialogExportToC
 	}
 
 	csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), QTextCodec::codecForMib(dialog.SelectedMib()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::print()
+{
+    int width = 0;
+    int height = 0;
+    int columns;
+    if (mType == MeasurementsType::Multisize)
+    {
+        columns = ui->tableWidget->columnCount();
+    }
+    else
+    {
+        columns = 4;
+    }
+    int rows = ui->tableWidget->rowCount();
+
+    for( int i = 0; i < columns; ++i ) {
+            width += ui->tableWidget->columnWidth(i);
+    }
+
+    for( int i = 0; i < rows; ++i ) {
+        height += ui->tableWidget->rowHeight(i);
+    }
+
+    ui->tableWidget->setFixedSize(width, height);
+    ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    QPrintPreviewDialog  *dialog = new QPrintPreviewDialog(this);
+    connect(dialog, &QPrintPreviewDialog::paintRequested, this, &TMainWindow::printPages);
+
+    dialog->showMaximized();
+    dialog->setWindowFlags(dialog->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    dialog->exec();
+}
+
+void TMainWindow::printPages(QPrinter *printer)
+{
+    int columns;
+    if (mType == MeasurementsType::Multisize)
+    {
+        columns = ui->tableWidget->columnCount();
+    }
+    else
+    {
+        columns = 4;
+    }
+
+    QTextDocument doc;
+
+    QString text("<h2>" + CurrentFile() + "</h2>");
+    text.append("<table>");
+    if (mType == MeasurementsType::Multisize)
+    {
+        text.append("<tr><td align = left><b>Base Size:</b></td><td>" + ui->labelBaseSizeValue->text()     + "</td></tr>");
+        text.append("<tr><td align = left><b>Base Height:</b></td><td>" + ui->labelBaseHeightValue->text() + "</td></tr>");
+    }
+    else
+    {
+        text.append("<tr><td align = left><b>Units:</b></td><td>"      + UnitsToStr(mUnit)                 + "</td></tr>");
+        text.append("<tr><td align = left><b>First Name:</b></td><td>" + ui->lineEditGivenName->text()     + "</td></tr>");
+        text.append("<tr><td align = left><b>Last Name:</b></td><td>"  + ui->lineEditFamilyName->text()    + "</td></tr>");
+        text.append("<tr><td align = left><b>Gender:</b></td><td>"     + ui->comboBoxGender->currentText() + "</td></tr>");
+        text.append("<tr><td align = left><b>Email:</b></td><td>"      + ui->lineEditEmail->text()         + "</td></tr>");
+    }
+    text.append("<tr><td align = left><b>Notes:</b></td><td>"      + ui->plainTextEditNotes->toPlainText() + "</td></tr></table>");
+    text.append("<p>");
+
+    text.append("<table><thead>");
+    text.append("<tr>");
+    for (int i = 0; i < columns; i++)
+    {
+        text.append("<th>").append(ui->tableWidget->horizontalHeaderItem(i)->data(Qt::DisplayRole).toString()).append("</th>");
+    }
+    text.append("</tr></thead>");
+    text.append("<tbody>");
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++)
+    {
+        text.append("<tr>");
+        for (int j = 0; j < columns; j++)
+        {
+            QTableWidgetItem *item = ui->tableWidget->item(i, j);
+            if (!item || item->text().isEmpty())
+            {
+
+                if (j > 1)
+                {
+                    ui->tableWidget->setItem(i, j, new QTableWidgetItem("0"));
+                }
+                else
+                {
+                    ui->tableWidget->setItem(i, j, new QTableWidgetItem(""));
+                }
+            }
+            if (j > 1)
+            {
+                text.append("<td align = center>").append(ui->tableWidget->item(i, j)->text()).append("</td>");
+            }
+            else
+            {
+                text.append("<td align = left>").append(ui->tableWidget->item(i, j)->text()).append("</td>");
+            }
+        }
+        text.append("</tr>");
+    }
+    text.append("</tbody></table>");
+
+        printer->setPageMargins(QMarginsF(10, 10, 10, 10), QPageLayout::Millimeter);
+        doc.setHtml(text);
+        doc.setPageSize(printer->pageLayout().paintRectPixels(static_cast<int>(PrintDPI)).size());
+        doc.print(printer);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1920,7 +2036,8 @@ void TMainWindow::SetupMenu()
 	connect(ui->actionOpenMultisize, &QAction::triggered, this, &TMainWindow::OpenMultisize);
 	connect(ui->actionOpenTemplate, &QAction::triggered, this, &TMainWindow::OpenTemplate);
 	connect(ui->actionCreateFromExisting, &QAction::triggered, this, &TMainWindow::CreateFromExisting);
-	connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
+	connect(ui->print_Action, &QAction::triggered, this, &TMainWindow::print);
+    connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
 	connect(ui->actionSaveAs, &QAction::triggered, this, &TMainWindow::FileSaveAs);
 	connect(ui->actionExportToCSV, &QAction::triggered, this, &TMainWindow::ExportToCSV);
 	connect(ui->actionReadOnly, &QAction::triggered, this, [this](bool ro)

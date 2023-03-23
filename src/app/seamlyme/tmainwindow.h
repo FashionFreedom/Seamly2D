@@ -107,6 +107,9 @@ private slots:
     void                Preferences();
     void                ToolBarStyles();
 
+    void                print();
+    void                printPages(QPrinter *printer);
+
     bool                FileSave();
     bool                FileSaveAs();
     void                AboutToShowWindowMenu();

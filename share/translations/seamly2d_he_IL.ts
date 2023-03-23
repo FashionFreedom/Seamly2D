@@ -10085,6 +10085,14 @@ Do you want to save your changes?</source>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
