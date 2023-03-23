@@ -12395,78 +12395,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <source>Sound:</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>silent</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>button_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mouse1_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mouse2_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>mouse3_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>camera_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>camera_buzz</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>clock_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>clock_beep</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>microwave.beep</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>coffeemaker_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>coffeemaker2_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>inspirstar_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>phone2_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>phone1_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>scissors_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>wallswitch_click</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>buzz_click</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -14433,6 +14361,14 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Imprimer</translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

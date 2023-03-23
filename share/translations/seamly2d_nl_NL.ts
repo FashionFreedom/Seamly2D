@@ -13396,47 +13396,47 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>silent</source>
-        <translation>stil</translation>
+        <translation type="vanished">stil</translation>
     </message>
     <message>
         <source>button_click</source>
-        <translation>knop_klik</translation>
+        <translation type="vanished">knop_klik</translation>
     </message>
     <message>
         <source>mouse1_click</source>
-        <translation>muis1_klik</translation>
+        <translation type="vanished">muis1_klik</translation>
     </message>
     <message>
         <source>mouse2_click</source>
-        <translation>muis2_klik</translation>
+        <translation type="vanished">muis2_klik</translation>
     </message>
     <message>
         <source>mouse3_click</source>
-        <translation>muis3_klik</translation>
+        <translation type="vanished">muis3_klik</translation>
     </message>
     <message>
         <source>camera_click</source>
-        <translation>camera_klik</translation>
+        <translation type="vanished">camera_klik</translation>
     </message>
     <message>
         <source>camera_buzz</source>
-        <translation>camera_zoem</translation>
+        <translation type="vanished">camera_zoem</translation>
     </message>
     <message>
         <source>clock_click</source>
-        <translation>klok_klik</translation>
+        <translation type="vanished">klok_klik</translation>
     </message>
     <message>
         <source>clock_beep</source>
-        <translation>klok_piep</translation>
+        <translation type="vanished">klok_piep</translation>
     </message>
     <message>
         <source>microwave.beep</source>
-        <translation>microwave.piep</translation>
+        <translation type="vanished">microwave.piep</translation>
     </message>
     <message>
         <source>coffeemaker_click</source>
-        <translation>koffiezet_klik</translation>
+        <translation type="vanished">koffiezet_klik</translation>
     </message>
     <message>
         <source>coffeemaker2_click</source>
@@ -13444,23 +13444,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>phone2_click</source>
-        <translation>telefoon2_klik</translation>
+        <translation type="vanished">telefoon2_klik</translation>
     </message>
     <message>
         <source>phone1_click</source>
-        <translation>telefoon1_klik</translation>
+        <translation type="vanished">telefoon1_klik</translation>
     </message>
     <message>
         <source>scissors_click</source>
-        <translation>schaar_klik</translation>
+        <translation type="vanished">schaar_klik</translation>
     </message>
     <message>
         <source>wallswitch_click</source>
-        <translation>muurschakelaar_klik</translation>
+        <translation type="vanished">muurschakelaar_klik</translation>
     </message>
     <message>
         <source>buzz_click</source>
-        <translation>zoem_klik</translation>
+        <translation type="vanished">zoem_klik</translation>
     </message>
     <message>
         <source>inspirstar_click</source>
@@ -15453,6 +15453,14 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
         <translation>Kon bestand niet exclusief openen. Dit bestand wordt al gebruikt in een ander venster. Verwacht botsingen als er twee copieën van het programma draaien.</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Afdrukken</translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

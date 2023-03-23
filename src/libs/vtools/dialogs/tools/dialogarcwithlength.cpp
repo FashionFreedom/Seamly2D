@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   dialogarcwithlength.cpp
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogarcwithlength.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -88,10 +83,15 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     , formulaBaseHeightF1(0)
     , formulaBaseHeightLength(0)
     , angleF1(INT_MIN)
+    , m_arc()
+    , m_Id()
+    , newDuplicate(-1)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/arc_with_length.png"));
+
+    m_Id  = data->getId() + 1;
 
     plainTextEditFormula = ui->plainTextEditRadius;
     this->formulaBaseHeightLength = ui->plainTextEditRadius->height();
@@ -113,7 +113,7 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
 
     InitOkCancelApply(ui);
 
-    FillComboBoxPoints(ui->comboBoxCenter);
+    FillComboBoxPoints(ui->centerPoint_ComboBox);
 
     int index = ui->lineType_ComboBox->findData(LineTypeNone);
     if (index != -1)
@@ -153,6 +153,8 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     connect(ui->pushButtonGrowLengthF1,        &QPushButton::clicked, this, &DialogArcWithLength::DeployF1TextEdit);
     connect(ui->pushButtonGrowLengthArcLength, &QPushButton::clicked, this, &DialogArcWithLength::DeployLengthTextEdit);
 
+    connect(ui->centerPoint_ComboBox, &QComboBox::currentTextChanged, this, &DialogArcWithLength::pointNameChanged);
+
     vis = new VisToolArcWithLength(data);
 }
 
@@ -163,15 +165,28 @@ DialogArcWithLength::~DialogArcWithLength()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+VArc DialogArcWithLength::getArc() const
+{
+    return m_arc;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogArcWithLength::setArc(const VArc &arc)
+{
+    m_arc = arc;
+    ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(m_arc.name()));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 quint32 DialogArcWithLength::GetCenter() const
 {
-    return getCurrentObjectId(ui->comboBoxCenter);
+    return getCurrentObjectId(ui->centerPoint_ComboBox);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::SetCenter(const quint32 &value)
 {
-    ChangeCurrentData(ui->comboBoxCenter, value);
+    ChangeCurrentData(ui->centerPoint_ComboBox, value);
     vis->setObject1Id(value);
 }
 
@@ -297,7 +312,7 @@ void DialogArcWithLength::ChosenObject(quint32 id, const SceneObject &type)
     {
         if (type == SceneObject::Point)
         {
-            if (SetObject(id, ui->comboBoxCenter, ""))
+            if (SetObject(id, ui->centerPoint_ComboBox, ""))
             {
                 vis->VisualMode(id);
                 prepare = true;
@@ -392,6 +407,39 @@ void DialogArcWithLength::FXLength()
         SetLength(dialog->GetFormula());
     }
     delete dialog;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogArcWithLength::pointNameChanged()
+{
+    QColor color = okColor;
+
+    flagError = true;
+    color = okColor;
+
+    if (getCurrentObjectId(ui->centerPoint_ComboBox) == m_arc.GetCenter().id())
+    {
+        newDuplicate = -1;
+        ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(m_arc.name()));
+    }
+    else
+    {
+        VArc arc(*data->GeometricObject<VPointF>(getCurrentObjectId(ui->centerPoint_ComboBox)),
+             GetRadius().toDouble(),
+             GetF1().toDouble(),
+             GetLength().toDouble());
+
+        if (!data->IsUnique(arc.name()))
+        {
+            newDuplicate = static_cast<qint32>(DNumber(arc.name()));
+            arc.SetDuplicate(static_cast<quint32>(newDuplicate));
+        }
+        ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(arc.name() + "_" + QString().setNum(m_Id)));
+    }
+
+    ChangeColor(ui->name_Label, color);
+    ChangeColor(ui->centerPoint_Label, color);
+    CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
