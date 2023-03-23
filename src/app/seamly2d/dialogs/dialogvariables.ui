@@ -85,7 +85,7 @@
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>6</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tabVariables">
       <attribute name="title">
@@ -129,10 +129,10 @@
            <bool>false</bool>
           </attribute>
           <attribute name="horizontalHeaderMinimumSectionSize">
-           <number>70</number>
+           <number>180</number>
           </attribute>
           <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>120</number>
+           <number>180</number>
           </attribute>
           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
            <bool>true</bool>
