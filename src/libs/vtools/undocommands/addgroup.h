@@ -70,7 +70,7 @@ public:
     virtual void undo() Q_DECL_OVERRIDE;
     virtual void redo() Q_DECL_OVERRIDE;
 signals:
-    void UpdateGroups();
+    void updateGroups();
 private:
     Q_DISABLE_COPY(AddGroup)
     const QString activeBlockName;

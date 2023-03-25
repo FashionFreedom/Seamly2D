@@ -58,7 +58,7 @@
 #include "dialognewpattern.h"
 #include "dialogaboutapp.h"
 #include "dialogpreferences.h"
-#include "dialogs/vwidgetgroups.h"
+#include "dialogs/groups_widget.h"
 #include "dialogs/pieces_widget.h"
 #include "dialogs/calculator_dialog.h"
 #include "dialogs/decimalchart_dialog.h"

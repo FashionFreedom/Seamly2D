@@ -374,6 +374,12 @@ void TMainWindow::ShowToolTip(const QString &toolTip)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::updateGroups()
+{
+    // do nothing
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::FileNew()
 {
 	if (individualMeasurements == nullptr)

@@ -744,7 +744,7 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
     quint32 toolId = tool->getId();
     QHash<quint32, QSharedPointer<VGObject>> objects;
 
-    QVector<VToolRecord> history = qApp->getCurrentDocument()->getLocalHistory();
+    QVector<VToolRecord> history = qApp->getCurrentDocument()->getBlockHistory();
     for (qint32 i = 0; i < history.size(); ++i)
     {
         const VToolRecord record = history.at(i);
@@ -758,7 +758,7 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
                 case 47:    //Tool::MirrorByAxis
                 case 48:    //Tool::Move
                 {
-                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId);
+                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId, QStringLiteral("destination"));
                     for (qint32 j = 0; j < list.size(); ++j)
                     {
                         quint32 id = list.at(j);

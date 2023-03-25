@@ -422,7 +422,9 @@ void DialogTool::ChangeCurrentData(QComboBox *box, const QVariant &value) const
     const qint32 index = box->findData(value);
     if (index != -1)
     {
+        box->blockSignals(true);
         box->setCurrentIndex(index);
+        box->blockSignals(false);
     }
 }
 

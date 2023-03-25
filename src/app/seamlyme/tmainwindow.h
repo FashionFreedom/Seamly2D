@@ -90,6 +90,7 @@ public:
 public slots:
     virtual void        ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
     virtual void        zoomToSelected() Q_DECL_OVERRIDE;
+    virtual void        updateGroups() Q_DECL_OVERRIDE;
 
 protected:
     virtual void        closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;

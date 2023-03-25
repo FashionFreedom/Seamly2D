@@ -241,7 +241,6 @@ MainWindow::MainWindow(QWidget *parent)
     WindowsLocale();
 
     connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
-    ui->layoutPages_DockWidget->setVisible(false);
 
     connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
     connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
@@ -350,6 +349,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
 
     ui->newDraft_Action->setEnabled(true);
     helpLabel->setText("");
+    groupsWidget->updateGroups();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1379,30 +1379,32 @@ void MainWindow::handleGroupTool(bool checked)
                                "Press <b>ENTER</b> to finish group creation ")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButton<DialogGroup>
+    SetToolButton<AddToGroupDialog>
     (
         checked,
         Tool::Group,
         ":/cursor/group_cursor.png",
         tooltip,
-        &MainWindow::ClosedDialogGroup
+        &MainWindow::ClosedEditGroupDialog
     );
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ClosedDialogGroup(int result)
+void MainWindow::ClosedEditGroupDialog(int result)
 {
     SCASSERT(dialogTool != nullptr)
     if (result == QDialog::Accepted)
     {
-        QSharedPointer<DialogGroup> dialog = dialogTool.objectCast<DialogGroup>();
+        QSharedPointer<AddToGroupDialog> dialog = dialogTool.objectCast<AddToGroupDialog>();
         SCASSERT(dialog != nullptr)
-        const QDomElement group = doc->CreateGroup(VContainer::getNextId(), dialog->GetName(), dialog->GetGroup());
-        if (not group.isNull())
+
+        QString gName = dialog->getName();
+        QMap<quint32, quint32>  gData = dialog->getGroupData();
+        QDomElement group = doc->addGroupItems(gName, gData);
+        if (group.isNull())
         {
-            AddGroup *addGroup = new AddGroup(group, doc);
-            connect(addGroup, &AddGroup::UpdateGroups, groupsWidget, &VWidgetGroups::UpdateGroups);
-            qApp->getUndoStack()->push(addGroup);
+            QMessageBox::information(this, tr("Add Group Objects"), tr("Group is Locked. Unlock to add objects"),
+                                        QMessageBox::Ok, QMessageBox::Ok);
         }
     }
     handleArrowTool(true);
@@ -1657,6 +1659,54 @@ void MainWindow::ShowToolTip(const QString &toolTip)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
+ * @brief triggers the update of the groups
+ */
+void MainWindow::updateGroups()
+{
+    groupsWidget->updateGroups();
+}
+
+void MainWindow::showAllGroups()
+{
+    groupsWidget->showAllGroups();
+}
+
+void MainWindow::hideAllGroups()
+{
+    groupsWidget->hideAllGroups();
+}
+
+void MainWindow::lockAllGroups()
+{
+    groupsWidget->lockAllGroups();
+}
+
+void MainWindow::unlockAllGroups()
+{
+    groupsWidget->unlockAllGroups();
+}
+
+void MainWindow::addGroupToList()
+{
+    groupsWidget->addGroupToList();
+}
+void MainWindow::deleteGroupFromList()
+{
+    groupsWidget->deleteGroupFromList();
+}
+
+void MainWindow::editGroup()
+{
+    groupsWidget->editGroup();
+}
+
+void MainWindow::addSelectedItemsToGroup()
+{
+    qCDebug(vMainWindow, "Add Selected items to Group.");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
  * @brief showEvent handle after show window.
  * @param event show event.
  */
@@ -1736,6 +1786,7 @@ void MainWindow::CleanLayout()
     shadows.clear();
     papers.clear();
     ui->listWidget->clear();
+    groupsWidget->clear();
     SetLayoutModeActions();
 }
 
@@ -2503,23 +2554,47 @@ void MainWindow::showZoomToPointDialog()
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ * @param pointName name of to zoom into.
  */
-void MainWindow::zoomToPoint(const QString& pointName)
+void MainWindow::zoomToPoint(const QString &pointName)
 {
-    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
-         item != pattern->DataGObjects()->end();
-         ++item)
+    const QHash<quint32, QSharedPointer<VGObject> > *objects = pattern->DataGObjects();
+    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+
+    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
     {
-        if (item.value()->name() == pointName)
+        QSharedPointer<VGObject> object = i.value();
+        const quint32 objectId = object->getIdObject();
+        const QString objectName = object->name();
+
+        if (objectName == pointName)
         {
-            VPointF* point = (VPointF*)item.value().data();
+            VPointF *point = (VPointF*)object.data();
+            ui->view->zoom100Percent();
+            ui->view->centerOn(point->toQPointF());
 
             // show point name if it's hidden
-            qApp->getUndoStack()->push(new ShowPointName(doc, point->getIdTool(), true));
+            // TODO: Need to make this work with operation's and dart tools
+            quint32 toolId = point->getIdTool();
+            const quint32 objId = point->getIdObject();
+            if (objId != NULL_ID)
+            {
+                toolId = objId;
+            }
+            if (VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId)))
+            {
+                tool->setPointNameVisiblity(toolId, true);
+            }
 
-            double sceneWidth = ui->view->width();
-            QRectF rect(point->x()-sceneWidth/4, point->y()-sceneWidth/4, sceneWidth/2, sceneWidth/2);
-            ui->view->zoomToRect(rect);
+            // show any hiden groups containing object
+            QMap<quint32,QString> groups = doc->getGroupsContainingItem(toolId, objectId, true);
+            groupsWidget->showGroups(groups);
+
+            // Reset combobox so same point can be selected again
+            m_zoomToPointComboBox->blockSignals(true);
+            m_zoomToPointComboBox->setCurrentIndex(-1);
+            m_zoomToPointComboBox->blockSignals(false);
+
             return;
         }
     }
@@ -2864,7 +2939,7 @@ void MainWindow::handleOperationsMenu()
     qCDebug(vMainWindow, "Operations Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group") + "\tG");
+    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("Add Objects to Group") + "\tG");
     QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate") + "\tR");
     QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line") + "\tM, L");
     QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis") + "\tM, A");
@@ -3268,6 +3343,7 @@ void  MainWindow::handleArrowTool(bool checked)
     }
     else
     {
+        ui->view->viewport()->setCursor(QCursor(Qt::ArrowCursor));
         ui->arrowPointer_ToolButton->setChecked(true);
         ui->arrow_Action->setChecked(true);
     }
@@ -3413,15 +3489,8 @@ void MainWindow::showDraftMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->layoutPages_DockWidget->blockSignals(true);
-        ui->layoutPages_DockWidget->setVisible(false);
-        ui->layoutPages_DockWidget->blockSignals(false);
-
-        ui->toolProperties_DockWidget->setVisible(isToolOptionsDockVisible);
-
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        ui->groups_DockWidget->setVisible(isGroupsDockVisible);
     }
     else
     {
@@ -3498,16 +3567,8 @@ void MainWindow::showPieceMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-
-        ui->layoutPages_DockWidget->blockSignals(true);
-        ui->layoutPages_DockWidget->setVisible(false);
-        ui->layoutPages_DockWidget->blockSignals(false);
-
-        ui->toolProperties_DockWidget->setVisible(isToolOptionsDockVisible);
-
         ui->groups_DockWidget->setWidget(patternPiecesWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        ui->groups_DockWidget->setVisible(isGroupsDockVisible);
 
         helpLabel->setText("");
     }
@@ -3620,16 +3681,6 @@ void MainWindow::showLayoutMode(bool checked)
             gradationSizesLabel->setVisible(false);
             gradationSizes->setVisible(false);
         }
-
-        ui->layoutPages_DockWidget->setVisible(isLayoutsDockVisible);
-
-        ui->toolProperties_DockWidget->blockSignals(true);
-        ui->toolProperties_DockWidget->setVisible(false);
-        ui->toolProperties_DockWidget->blockSignals(false);
-
-        ui->groups_DockWidget->blockSignals(true);
-        ui->groups_DockWidget->setVisible(false);
-        ui->groups_DockWidget->blockSignals(false);
 
         showLayoutPages(ui->listWidget->currentRow());
 
@@ -3917,6 +3968,9 @@ void MainWindow::Clear()
     ui->zoomToArea_Action->setEnabled(false);
     ui->zoomPan_Action->setEnabled(false);
     ui->zoomToPoint_Action->setEnabled(false);
+
+    //disable group actions
+    ui->groups_DockWidget->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -4209,6 +4263,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
+    //enable group actions
+    groupsWidget->setAddGroupEnabled(enable && draftStage);
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
@@ -4231,6 +4287,9 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->shortcuts_Action->setEnabled(enable);
 
     //enable dock widget actions
+    ui->groups_DockWidget->setEnabled(enable && designStage);
+    ui->toolProperties_DockWidget->setEnabled(enable && draftStage);
+    ui->layoutPages_DockWidget->setEnabled(enable && layoutStage);
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
     actionDockWidgetGroups->setEnabled(enable && designStage);
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
@@ -4761,9 +4820,9 @@ void MainWindow::ReadSettings()
     ToolBarStyles();
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
-    isGroupsDockVisible = ui->groups_DockWidget->isVisible();
-    isLayoutsDockVisible = ui->layoutPages_DockWidget->isVisible();
-    isToolboxDockVisible = ui->layoutPages_DockWidget->isVisible();
+    isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
+    isLayoutsDockVisible     = ui->layoutPages_DockWidget->isVisible();
+    isToolboxDockVisible     = ui->toolbox_DockWidget->isVisible();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5183,6 +5242,9 @@ void MainWindow::AddDocks()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitDocksContain()
 {
+    setTabPosition(Qt::RightDockWidgetArea, QTabWidget::West);
+    setTabPosition(Qt::LeftDockWidgetArea, QTabWidget::East);
+
     qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
     toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
@@ -5190,8 +5252,9 @@ void MainWindow::InitDocksContain()
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
-    groupsWidget = new VWidgetGroups(doc, this);
+    groupsWidget = new GroupsWidget(pattern, doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
+    connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
 
     patternPiecesWidget = new PiecesWidget(pattern, doc, this);
     connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
@@ -6063,6 +6126,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         //Fit scene size to best size for first show
         zoomFirstShow();
+        updateZoomToPointComboBox(draftPointNamesList());
 
         showDraftMode(true);
 
@@ -6669,7 +6733,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
             }
         }
         toolProperties->itemClicked(nullptr);//hide options for tool in previous pattern piece
-        groupsWidget->UpdateGroups();
+        groupsWidget->updateGroups();
     }
 }
 

@@ -1,10 +1,10 @@
 /***************************************************************************
  **  @file   vpatternconverter.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
+ **  @date   Mar 2, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -85,8 +85,8 @@ Q_LOGGING_CATEGORY(PatternConverter, "patternConverter")
  */
 
 const QString VPatternConverter::PatternMinVerStr = QStringLiteral("0.1.0");
-const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.7");
-const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.7.xsd");
+const QString VPatternConverter::PatternMaxVerStr = QStringLiteral("0.6.8");
+const QString VPatternConverter::CurrentSchema    = QStringLiteral("://schema/pattern/v0.6.8.xsd");
 
 //VPatternConverter::PatternMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //VPatternConverter::PatternMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -333,7 +333,9 @@ QString VPatternConverter::XSDSchema(int ver) const
         case (0x000606):
             return QStringLiteral("://schema/pattern/v0.6.6.xsd");;
         case (0x000607):
-            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.7.xsd");
+            return QStringLiteral("://schema/pattern/v0.6.7.xsd");;
+        case (0x000608):
+            qCDebug(PatternConverter, "Current schema - ://schema/pattern/v0.6.8.xsd");
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -507,11 +509,15 @@ void VPatternConverter::ApplyPatches()
             toVersion0_6_6();
             ValidateXML(XSDSchema(0x000606), m_convertedFileName);
             V_FALLTHROUGH
-            case (0x000606):
+        case (0x000606):
             toVersion0_6_7();
             ValidateXML(XSDSchema(0x000607), m_convertedFileName);
             V_FALLTHROUGH
-            case (0x000607):
+        case (0x000607):
+            toVersion0_6_8();
+            ValidateXML(XSDSchema(0x000608), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000608):
             break;
         default:
             InvalidVersion(m_ver);
@@ -530,7 +536,7 @@ void VPatternConverter::DowngradeToCurrentMaxVersion()
 bool VPatternConverter::IsReadOnly() const
 {
     // Check if attribute readOnly was not changed in file format
-    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 7),
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMaxVer == CONVERTER_VERSION_CHECK(0, 6, 8),
                       "Check attribute readOnly.");
 
     // Possibly in future attribute readOnly will change position etc.
@@ -1309,6 +1315,16 @@ void VPatternConverter::toVersion0_6_7()
     Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 7),
                       "Time to refactor the code.");
     SetVersion(QStringLiteral("0.6.7"));
+    Save();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VPatternConverter::toVersion0_6_8()
+{
+    // TODO. Delete if minimal supported version is 0.6.8
+    Q_STATIC_ASSERT_X(VPatternConverter::PatternMinVer < CONVERTER_VERSION_CHECK(0, 6, 8),
+                      "Time to refactor the code.");
+    SetVersion(QStringLiteral("0.6.8"));
     Save();
 }
 
