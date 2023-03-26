@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   tmainwindow.cpp
+ **  @author Douglas S Caskey
+ **  @date   Mar 25, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2015 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
-﻿ ************************************************************************
+ /************************************************************************
  **
  **  @file   tmainwindow.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -72,6 +73,7 @@
 #include "version.h"
 #include "mapplication.h" // Should be last because of definning qApp
 
+#include <QClipboard>
 #include <QComboBox>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -99,7 +101,7 @@ Q_LOGGING_CATEGORY(tMainWindow, "t.mainwindow")
 QT_WARNING_POP
 
 // We need this enum in case we will add or delete a column. And also make code more readable.
-enum {ColumnName = 0, ColumnFullName, ColumnCalcValue, ColumnFormula, ColumnBaseValue, ColumnInSizes, ColumnInHeights};
+enum {ColumnName = 0, ColumnNumber, ColumnFullName, ColumnCalcValue, ColumnFormula, ColumnBaseValue, ColumnInSizes, ColumnInHeights};
 
 //---------------------------------------------------------------------------------------------------------------------
 TMainWindow::TMainWindow(QWidget *parent)
@@ -751,7 +753,7 @@ void TMainWindow::print()
     }
     else
     {
-        columns = 4;
+        columns = 5;
     }
     int rows = ui->tableWidget->rowCount();
 
@@ -762,10 +764,6 @@ void TMainWindow::print()
     for( int i = 0; i < rows; ++i ) {
         height += ui->tableWidget->rowHeight(i);
     }
-
-    ui->tableWidget->setFixedSize(width, height);
-    ui->tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->tableWidget->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     QPrintPreviewDialog  *dialog = new QPrintPreviewDialog(this);
     connect(dialog, &QPrintPreviewDialog::paintRequested, this, &TMainWindow::printPages);
@@ -784,7 +782,7 @@ void TMainWindow::printPages(QPrinter *printer)
     }
     else
     {
-        columns = 4;
+        columns = 5;
     }
 
     QTextDocument doc;
@@ -833,7 +831,7 @@ void TMainWindow::printPages(QPrinter *printer)
                     ui->tableWidget->setItem(i, j, new QTableWidgetItem(""));
                 }
             }
-            if (j > 1)
+            if (j == 1 || j > 2)
             {
                 text.append("<td align = center>").append(ui->tableWidget->item(i, j)->text()).append("</td>");
             }
@@ -1680,6 +1678,14 @@ void TMainWindow::ShowNewMData(bool fresh)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString TMainWindow::getMeasurementNumber(const QString &name)
+{
+	const VTranslateVars *trv = qApp->TrVars();
+	const QString numberStr = trv->MNumber(name);
+    return numberStr;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::ShowMDiagram(const QString &name)
 {
 	const VTranslateVars *trv = qApp->TrVars();
@@ -2267,6 +2273,7 @@ void TMainWindow::InitWindow()
 	{
 		ui->toolButtonFindPrevious->setEnabled(state);
 	});
+    connect(ui->clipboard_ToolButton, &QToolButton::clicked, this, &TMainWindow::copyToClipboard);
 	connect(search.data(), &VTableSearch::HasResult, this, [this] (bool state)
 	{
 		ui->toolButtonFindNext->setEnabled(state);
@@ -2563,7 +2570,9 @@ void TMainWindow::RefreshTable(bool freshCall)
 			}
 			else
 			{
-				AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+
+				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*meash->GetValue(), mUnit, pUnit);
@@ -2595,7 +2604,8 @@ void TMainWindow::RefreshTable(bool freshCall)
 			}
 			else
 			{
-				AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*data->DataVariables()->value(meash->GetName())->GetValue(), mUnit,
@@ -3286,4 +3296,43 @@ void TMainWindow::HackWidget(T **widget)
 void TMainWindow::zoomToSelected()
 {
     // do nothing
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief copyToClipboard copy dialog selection to clipboard as comma separated values.
+ */
+void TMainWindow::copyToClipboard()
+{
+    QItemSelectionModel *model = ui->tableWidget->selectionModel();
+    QModelIndexList selectedIndexes = model->selectedIndexes();
+
+    QString clipboardString;
+
+    for (int i = 0; i < selectedIndexes.count(); ++i)
+    {
+        QModelIndex current = selectedIndexes[i];
+        QString displayText = current.data(Qt::DisplayRole).toString();
+
+        // Check if another column exists beyond this one.
+        if (i + 1 < selectedIndexes.count())
+        {
+            QModelIndex next = selectedIndexes[i+1];
+
+            // If the column is on different row, the clipboard should take note.
+            if (next.row() != current.row())
+            {
+                displayText.append("\n");
+            }
+            else
+            {
+                // Otherwise append a comma separator.
+                displayText.append(" , ");
+            }
+        }
+        clipboardString.append(displayText);
+    }
+
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(clipboardString);
 }
