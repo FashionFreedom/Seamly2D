@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   tmainwindow.h
+ **  @author Douglas S Caskey
+ **  @date   Mar 25, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2015 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+ /************************************************************************
  **
  **  @file   tmainwindow.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -219,6 +220,7 @@ private:
     QString             ClearCustomName(const QString &name) const;
 
     bool                EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
+    QString             getMeasurementNumber(const QString &name);
     void                ShowMDiagram(const QString &name);
 
     void                Open(const QString &pathTo, const QString &filter);
@@ -243,6 +245,7 @@ private:
 
     template <class T>
     void                HackWidget(T **widget);
+    void                copyToClipboard();
 };
 
 #endif // TMAINWINDOW_H
