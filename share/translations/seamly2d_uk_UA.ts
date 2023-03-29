@@ -23,6 +23,13 @@
     </message>
 </context>
 <context>
+    <name>AddGroupItem</name>
+    <message>
+        <source>Add item to group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPatternPiece</name>
     <message>
         <source>add pattern piece %1</source>
@@ -45,6 +52,17 @@
     <message>
         <source>add object</source>
         <translation>додати об&apos;єкт</translation>
+    </message>
+</context>
+<context>
+    <name>AddToGroupDialog</name>
+    <message>
+        <source>Add to Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Імя:</translation>
     </message>
 </context>
 <context>
@@ -855,6 +873,10 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Імя:</translation>
+    </message>
 </context>
 <context>
     <name>DialogArcWithLength</name>
@@ -990,6 +1012,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Імя:</translation>
     </message>
 </context>
 <context>
@@ -2372,6 +2398,10 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Імя:</translation>
+    </message>
 </context>
 <context>
     <name>DialogEndLine</name>
@@ -2642,23 +2672,23 @@ p, li { white-space: pre-wrap; }
     <name>DialogGroup</name>
     <message>
         <source>Group</source>
-        <translation>Група</translation>
+        <translation type="vanished">Група</translation>
     </message>
     <message>
         <source>Group name:</source>
-        <translation>Ім&apos;я групи:</translation>
+        <translation type="vanished">Ім&apos;я групи:</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Унікальне ім&apos;я лекала</translation>
+        <translation type="vanished">Унікальне ім&apos;я лекала</translation>
     </message>
     <message>
         <source>Choose group name</source>
-        <translation>Виберіть ім&apos;я групи</translation>
+        <translation type="vanished">Виберіть ім&apos;я групи</translation>
     </message>
     <message>
         <source>New group</source>
-        <translation>Нова група</translation>
+        <translation type="vanished">Нова група</translation>
     </message>
 </context>
 <context>
@@ -3780,6 +3810,14 @@ Apply settings anyway?</source>
     <message>
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Імя:</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Лінія_</translation>
     </message>
 </context>
 <context>
@@ -7321,6 +7359,37 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>EditGroupDialog</name>
+    <message>
+        <source>Add Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Імя:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Колір:</translation>
+    </message>
+    <message>
+        <source>Unique pattern piece name</source>
+        <translation type="unfinished">Унікальне ім&apos;я лекала</translation>
+    </message>
+    <message>
+        <source>Unique group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>EditLabelTemplateDialog</name>
     <message>
         <source>Edit label template</source>
@@ -7796,6 +7865,265 @@ Do you want to download it?</source>
     <message>
         <source>Arrows:</source>
         <translation type="obsolete">Стрільки:</translation>
+    </message>
+</context>
+<context>
+    <name>GroupsWidget</name>
+    <message>
+        <source>Group Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show All Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide all groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock all groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished">...</translation>
+    </message>
+    <message>
+        <source>Unlock all groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete active group from the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit group properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Групи</translation>
+    </message>
+    <message>
+        <source>Group list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group object list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double clicking zooms to object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">Перейменувати</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Видалити</translation>
+    </message>
+    <message>
+        <source>Show which groups in the list are visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show which groups in the list are locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show which groups contain objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group color and name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Base point</source>
+        <translation type="unfinished">%1 - Базова точка</translation>
+    </message>
+    <message>
+        <source>%1 - Point Length and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Curve Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Спл_</translation>
+    </message>
+    <message>
+        <source>%1 - Curve Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Arc Radius &amp; Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Дуга_</translation>
+    </message>
+    <message>
+        <source>%1 - Arc Radius &amp; Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Spline Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Spline Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Arc &amp; Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Line &amp; Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Axis &amp; Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect XY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Line &amp; Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Curve &amp; Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circle &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Arc &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - True Dart %2_%3_%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Arc Elliptical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Mirror by Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Mirror by Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Group Object</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8793,7 +9121,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>pattern</source>
-        <translation>Лекало</translation>
+        <translation type="vanished">Лекало</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -9858,14 +10186,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Create New Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Create a New Group (G)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10422,10 +10742,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New Group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Rotate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10467,14 +10783,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Failed to lock. This file is already opened in another window.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Failed to lock. This file is already opened in another window. Expect collisions when running 2 copies of the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -10647,10 +10955,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Group (G)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11097,6 +11401,34 @@ Do you want to save your changes?</source>
         <source>Intersect Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Add Objects to Group (G)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Objects to Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Group Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is Locked. Unlock to add objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can not save file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern is read only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to lock. File with this name is opened in another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -11341,6 +11673,13 @@ Do you want to save your changes?</source>
     <message>
         <source>move the second dart label</source>
         <translation>переміщення другої мітки виточки</translation>
+    </message>
+</context>
+<context>
+    <name>MoveGroupItem</name>
+    <message>
+        <source>Move group item</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13816,6 +14155,13 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>RemoveGroupItem</name>
+    <message>
+        <source>Delete group item</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
@@ -14007,11 +14353,11 @@ Do you want to save your changes?</source>
 <context>
     <name>ShowDoublePointName</name>
     <message>
-        <source>toggle the first dart label</source>
+        <source>toggle the first dart visibility</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>toggle the second dart label</source>
+        <source>toggle the second dart visibility</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -14053,14 +14399,14 @@ Do you want to save your changes?</source>
 <context>
     <name>ShowOperationPointName</name>
     <message>
-        <source>toggle label</source>
+        <source>toggle point visibility</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ShowPointName</name>
     <message>
-        <source>toggle label</source>
+        <source>toggle point visibility</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -15378,6 +15724,10 @@ Do you want to save your changes?</source>
         <source>Horizontal axis</source>
         <translation type="unfinished">Горизонтальна вісь</translation>
     </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Лінія_</translation>
+    </message>
 </context>
 <context>
     <name>UnionDialog</name>
@@ -15526,6 +15876,10 @@ Do you want to save your changes?</source>
     <message>
         <source>New group</source>
         <translation>Нова група</translation>
+    </message>
+    <message>
+        <source>New group 2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16382,6 +16736,14 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Show Point Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Group Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Group Object</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -17932,6 +18294,22 @@ Do you want to save your changes?</source>
     <message>
         <source>Arc - Elliptical</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Дуга_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished">Спл_</translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Лінія_</translation>
     </message>
 </context>
 <context>
@@ -19562,15 +19940,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Перейменувати</translation>
+        <translation type="vanished">Перейменувати</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Видалити</translation>
-    </message>
-    <message>
-        <source>Toggle visibility of group</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Видалити</translation>
     </message>
 </context>
 <context>
