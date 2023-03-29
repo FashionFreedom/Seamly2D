@@ -83,12 +83,12 @@ void DelGroup::undo()
 
     doc->setCurrentDraftBlock(activeBlockName);//Without this user will not see this change
 
-    QDomElement groups = doc->CreateGroups();
+    QDomElement groups = doc->createGroups();
     if (not groups.isNull())
     {
         groups.appendChild(xml);
-        doc->ParseGroups(groups);
-        emit UpdateGroups();
+        doc->parseGroups(groups);
+        emit updateGroups();
     }
     else
     {
@@ -106,20 +106,20 @@ void DelGroup::redo()
 
     //Keep first!
     doc->setCurrentDraftBlock(activeBlockName);//Without this user will not see this change
-    QDomElement groups = doc->CreateGroups();
+    QDomElement groups = doc->createGroups();
     if (not groups.isNull())
     {
         QDomElement group = doc->elementById(nodeId, VAbstractPattern::TagGroup);
         if (group.isElement())
         {
             group.setAttribute(VAbstractPattern::AttrVisible, trueStr);
-            doc->ParseGroups(groups);
+            doc->parseGroups(groups);
             if (groups.removeChild(group).isNull())
             {
                 qCDebug(vUndo, "Can't delete group.");
                 return;
             }
-            emit UpdateGroups();
+            emit updateGroups();
 
             if (groups.childNodes().isEmpty())
             {

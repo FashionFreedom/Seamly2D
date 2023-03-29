@@ -709,7 +709,7 @@ void VPattern::parseDraftBlockElement(const QDomNode &node, const Document &pars
                         break;
                     case 3: // TagGroups
                         qCDebug(vXML, "Tag groups.");
-                        ParseGroups(domElement);
+                        parseGroups(domElement);
                         break;
                     default:
                         VException e(tr("Wrong tag name '%1'.").arg(domElement.tagName()));

@@ -3,13 +3,16 @@
 
 HEADERS += \
     $$PWD/add_draftblock.h \
+    $$PWD/add_groupitem.h \
     $$PWD/addtocalc.h \
     $$PWD/delete_draftblock.h \
     $$PWD/label/moveoperationlabel.h \
     $$PWD/label/showoperationpointname.h \
+    $$PWD/move_groupitem.h \
     $$PWD/movespoint.h \
     $$PWD/movespline.h \
     $$PWD/movesplinepath.h \
+    $$PWD/remove_groupitem.h \
     $$PWD/rename_draftblock.h \
     $$PWD/savetooloptions.h \
     $$PWD/deltool.h \
@@ -33,13 +36,16 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/add_draftblock.cpp \
+    $$PWD/add_groupitem.cpp \
     $$PWD/addtocalc.cpp \
     $$PWD/delete_draftblock.cpp \
     $$PWD/label/moveoperationlabel.cpp \
     $$PWD/label/showoperationpointname.cpp \
+    $$PWD/move_groupitem.cpp \
     $$PWD/movespoint.cpp \
     $$PWD/movespline.cpp \
     $$PWD/movesplinepath.cpp \
+    $$PWD/remove_groupitem.cpp \
     $$PWD/rename_draftblock.cpp \
     $$PWD/savetooloptions.cpp \
     $$PWD/deltool.cpp \

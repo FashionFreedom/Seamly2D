@@ -1,29 +1,20 @@
 /******************************************************************************
  *   @file   vtooloptionspropertybrowser.cpp
- **  @author DS Caskey
- **  @date   Feb 18, 2023
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
+ **  program to create and model patterns of clothing.
  **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- *************************************************************************/
+ *****************************************************************************/
 
 /************************************************************************
  **
@@ -59,6 +50,7 @@
 #include "../core/vapplication.h"
 #include "../ifc/ifcdef.h"
 #include "../vgeometry/vcubicbezier.h"
+#include "../vgeometry/vcubicbezierpath.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
@@ -360,8 +352,8 @@ void VToolOptionsPropertyBrowser::UpdateOptions()
 void VToolOptionsPropertyBrowser::RefreshOptions()
 {
     QGraphicsItem *item = currentItem;
-    itemClicked(nullptr);//close options
-    itemClicked(item);//reopen options
+    itemClicked(nullptr); //close options
+    itemClicked(item);    //reopen options
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -519,7 +511,6 @@ void VToolOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
     propertyToId.clear();
     idToProperty.clear();
 
-
     if (currentItem != nullptr)
     {
         VAbstractTool *previousTool = dynamic_cast<VAbstractTool *>(currentItem);
@@ -553,7 +544,7 @@ template<class Tool>
 void VToolOptionsPropertyBrowser::AddPropertyObjectName(Tool *i, const QString &propertyName, bool readOnly)
 {
     auto itemName = new VPE::VStringProperty(propertyName);
-    itemName->setClearButtonEnable(true);
+    readOnly == true ? itemName->setClearButtonEnable(false) : itemName->setClearButtonEnable(true);
     itemName->setValue(qApp->TrVars()->VarToUser(i->name()));
     itemName->setReadOnly(readOnly);
     AddProperty(itemName, AttrName);
@@ -588,6 +579,28 @@ void VToolOptionsPropertyBrowser::AddPropertyOperationSuffix(Tool *i, const QStr
     itemSuffix->setValue(i->Suffix());
     itemSuffix->setReadOnly(readOnly);
     AddProperty(itemSuffix, AttrSuffix);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template<class Tool>
+void VToolOptionsPropertyBrowser::AddPropertyLineName(Tool *i, const QString &propertyName, bool readOnly)
+{
+    auto lineName = new VPE::VStringProperty(propertyName);
+    lineName->setValue(tr("Line_") + i->FirstPointName() + "_" + i->SecondPointName());
+    lineName->setReadOnly(readOnly);
+    AddProperty(lineName, AttrObjName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template<class Tool>
+void VToolOptionsPropertyBrowser::AddPropertyCurveName(Tool *i, const QString &propertyName, const QString &prefix,
+                                                       const QString &firstPoint, const QString &secondPoint,
+                                                       bool readOnly)
+{
+    auto arcName = new VPE::VStringProperty(propertyName);
+    arcName->setValue(prefix + firstPoint + "_" + secondPoint);
+    arcName->setReadOnly(readOnly);
+    AddProperty(arcName, AttrObjName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -731,7 +744,7 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
     quint32 toolId = tool->getId();
     QHash<quint32, QSharedPointer<VGObject>> objects;
 
-    QVector<VToolRecord> history = qApp->getCurrentDocument()->getLocalHistory();
+    QVector<VToolRecord> history = qApp->getCurrentDocument()->getBlockHistory();
     for (qint32 i = 0; i < history.size(); ++i)
     {
         const VToolRecord record = history.at(i);
@@ -745,7 +758,7 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
                 case 47:    //Tool::MirrorByAxis
                 case 48:    //Tool::Move
                 {
-                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId);
+                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId, QStringLiteral("destination"));
                     for (qint32 j = 0; j < list.size(); ++j)
                     {
                         quint32 id = list.at(j);
@@ -1161,8 +1174,12 @@ void VToolOptionsPropertyBrowser::ChangeDataToolArc(VPE::VProperty *property)
 
     VToolArc *i = qgraphicsitem_cast<VToolArc *>(currentItem);
     SCASSERT(i != nullptr)
+
     switch (PropertiesList().indexOf(id))
     {
+        case 0: // AttrName
+            Q_UNREACHABLE();//The attribute is read only
+            break;
         case 8: // AttrRadius
             i->SetFormulaRadius(value.value<VFormula>());
             break;
@@ -1202,6 +1219,9 @@ void VToolOptionsPropertyBrowser::ChangeDataToolArcWithLength(VPE::VProperty *pr
     SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
+        case 0: // AttrName
+            Q_UNREACHABLE();//The attribute is read only
+            break;
         case 8: // AttrRadius
             i->SetFormulaRadius(value.value<VFormula>());
             break;
@@ -2260,6 +2280,9 @@ void VToolOptionsPropertyBrowser::ChangeDataToolEllipticalArc(VPE::VProperty *pr
     SCASSERT(i != nullptr)
     switch (PropertiesList().indexOf(id))
     {
+        case 0: // AttrName
+            Q_UNREACHABLE();//The attribute is read only
+            break;
         case 40: // AttrRadius1
             i->SetFormulaRadius1(value.value<VFormula>());
             break;
@@ -2358,6 +2381,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolArc(QGraphicsItem *item)
     formView->setTitle(tr("Arc - Radius and Angles"));
 
     AddPropertyLabel(tr("Selection"), AttrName);
+    AddPropertyCurveName(i, tr("Name:"), tr("Arc_"), i->CenterPointName(), QString().setNum(i->getId()), true);
     AddObjectProperty(i, i->CenterPointName(), tr("Center point:"), AttrCenter, GOType::Point);
 
     AddPropertyLabel(tr("Geometry"), AttrName);
@@ -2379,6 +2403,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolArcWithLength(QGraphicsItem *it
     formView->setTitle(tr("Arc - Radius and Length"));
 
     AddPropertyLabel(tr("Selection"), AttrName);
+    AddPropertyCurveName(i, tr("Name:"), tr("Arc_"), i->CenterPointName(), QString().setNum(i->getId()), true);
     AddObjectProperty(i, i->CenterPointName(), tr("Center point:"), AttrCenter, GOType::Point);
 
     AddPropertyLabel(tr("Geometry"), AttrName);
@@ -2503,6 +2528,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolLine(QGraphicsItem *item)
     formView->setTitle(tr("Line"));
 
     AddPropertyLabel(tr("Selection"), AttrName);
+    AddPropertyLineName(i, AttrObjName, true);
     AddObjectProperty(i, i->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     AddObjectProperty(i, i->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
@@ -2702,12 +2728,12 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSpline(QGraphicsItem *item)
 {
     auto i = qgraphicsitem_cast<VToolSpline *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Curve - Interactive"));
-
     const auto spl = i->getSpline();
 
+    formView->setTitle(tr("Curve - Interactive"));
+
     AddPropertyLabel(tr("Selection"), AttrName);
-    AddPropertyObjectName(i, tr("Name:"), true);
+    AddPropertyCurveName(i, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
 
     AddObjectProperty(i, spl.GetP1().name(), tr("First point:"), AttrFirstPoint, GOType::Point);
     AddObjectProperty(i, spl.GetP4().name(), tr("Second point:"), AttrSecondPoint, GOType::Point);
@@ -2748,12 +2774,11 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezier(QGraphicsItem *item
 {
     auto i = qgraphicsitem_cast<VToolCubicBezier *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Curve - Fixed"));
-
     const auto spl = i->getSpline();
 
+    formView->setTitle(tr("Curve - Fixed"));
     AddPropertyLabel(tr("Selection"), AttrName);
-    AddPropertyObjectName(i, tr("Name:"), true);
+    AddPropertyCurveName(i, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
     AddObjectProperty(i, spl.GetP1().name(), tr("First point:"),  AttrPoint1, GOType::Point);
     AddObjectProperty(i, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
     AddObjectProperty(i, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
@@ -2770,11 +2795,12 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolSplinePath(QGraphicsItem *item)
 {
     VToolSplinePath *i = qgraphicsitem_cast<VToolSplinePath *>(item);
     i->ShowVisualization(true);
+
+    const auto spl = i->getSplinePath();
+
     formView->setTitle(tr("Spline - Interactive"));
-
     AddPropertyLabel(tr("Selection"), AttrName);
-    AddPropertyObjectName(i, tr("Name:"), true);
-
+    AddPropertyCurveName(i, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
     AddPropertyLabel(tr("Attributes"), AttrName);
     AddPropertyLineColor(i, tr("Color:"), AttrColor);
     AddPropertyCurveLineType(i, tr("Linetype:"));
@@ -2786,11 +2812,11 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezierPath(QGraphicsItem *
 {
     VToolCubicBezierPath *i = qgraphicsitem_cast<VToolCubicBezierPath *>(item);
     i->ShowVisualization(true);
+    const auto spl = i->getSplinePath();
+
     formView->setTitle(tr("Spline - Fixed"));
-
     AddPropertyLabel(tr("Selection"), AttrName);
-    AddPropertyObjectName(i, tr("Name:"), true);
-
+    AddPropertyCurveName(i, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
     AddPropertyLabel(tr("Attributes"), AttrName);
     AddPropertyLineColor(i, tr("Color:"), AttrColor);
     AddPropertyCurveLineType(i, tr("Linetype:"));
@@ -2802,8 +2828,8 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolTriangle(QGraphicsItem *item)
 {
     VToolTriangle *i = qgraphicsitem_cast<VToolTriangle *>(item);
     i->ShowVisualization(true);
-    formView->setTitle(tr("Point - Intersect Axis and Triangle"));
 
+    formView->setTitle(tr("Point - Intersect Axis and Triangle"));
     AddPropertyLabel(tr("Selection"), AttrName);
     AddPropertyObjectName(i, tr("Point name:"));
     AddObjectProperty(i, i->AxisP1Name(), tr("1st axis point:"), AttrAxisP1, GOType::Point);
@@ -2924,6 +2950,7 @@ void VToolOptionsPropertyBrowser::ShowOptionsToolEllipticalArc(QGraphicsItem *it
     formView->setTitle(tr("Arc - Elliptical"));
 
     AddPropertyLabel(tr("Selection"), AttrName);
+    AddPropertyCurveName(i, tr("Name:"), tr("Arc_"), i->CenterPointName(), QString().setNum(i->getId()), true);
     AddObjectProperty(i, i->CenterPointName(), tr("Center point:"), AttrCenter, GOType::Point);
 
     AddPropertyLabel(tr("Geometry"), AttrName);
@@ -3025,6 +3052,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolAlongLine()
 void VToolOptionsPropertyBrowser::UpdateOptionsToolArc()
 {
     VToolArc *i = qgraphicsitem_cast<VToolArc *>(currentItem);
+    idToProperty[AttrObjName]->setValue(tr("Arc_") + i->CenterPointName() + "_" + QString().setNum(i->getId()));
 
     QVariant valueRadius;
     valueRadius.setValue(i->GetFormulaRadius());
@@ -3064,6 +3092,8 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolArc()
 void VToolOptionsPropertyBrowser::UpdateOptionsToolArcWithLength()
 {
     VToolArcWithLength *i = qgraphicsitem_cast<VToolArcWithLength *>(currentItem);
+
+    idToProperty[AttrObjName]->setValue(tr("Arc_") + i->CenterPointName() + "_" + QString().setNum(i->getId()));
 
     QVariant valueRadius;
     valueRadius.setValue(i->GetFormulaRadius());
@@ -3278,6 +3308,8 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolHeight()
 void VToolOptionsPropertyBrowser::UpdateOptionsToolLine()
 {
     VToolLine *i = qgraphicsitem_cast<VToolLine *>(currentItem);
+
+    idToProperty[AttrObjName]->setValue(tr("Line_") + i->FirstPointName() + "_" + i->SecondPointName());
 
     {
         const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), i->getLineColor());
@@ -3612,8 +3644,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolSpline()
 {
     auto i = qgraphicsitem_cast<VToolSpline *>(currentItem);
     const VSpline spl = i->getSpline();
-
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(i->name()));
+    idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
 
     {
         const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(i, GOType::Point),
@@ -3680,8 +3711,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolCubicBezier()
 {
     auto i = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
     const auto spl = i->getSpline();
-
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(i->name()));
+    idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             i->getLineColor()));
@@ -3740,6 +3770,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolSplinePath()
         const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), i->getLineWeight());
         idToProperty[AttrLineWeight]->setValue(index);
     }
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3957,6 +3988,8 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolEllipticalArc()
 {
     VToolEllipticalArc *i = qgraphicsitem_cast<VToolEllipticalArc *>(currentItem);
 
+    idToProperty[AttrObjName]->setValue(tr("Arc_") + i->CenterPointName() + "_" + QString().setNum(i->getId()));
+
     QVariant valueFormulaRadius1;
     valueFormulaRadius1.setValue(i->GetFormulaRadius1());
     idToProperty[AttrRadius1]->setValue(valueFormulaRadius1);
@@ -4003,7 +4036,7 @@ void VToolOptionsPropertyBrowser::UpdateOptionsToolEllipticalArc()
 QStringList VToolOptionsPropertyBrowser::PropertiesList() const
 {
     static QStringList attr = QStringList() << AttrName                           /* 0 */
-                                            << QLatin1String("Coordinates")          /* 1 */
+                                            << QLatin1String("Coordinates")       /* 1 */
                                             << AttrBasePoint                      /* 2 */
                                             << AttrLineType                       /* 3 */
                                             << AttrLength                         /* 4 */
@@ -4062,6 +4095,7 @@ QStringList VToolOptionsPropertyBrowser::PropertiesList() const
                                             << AttrPoint3                         /* 57 */
                                             << AttrPoint4                         /* 58 */
                                             << AttrPenStyle                       /* 59 */
-                                            << AttrLineWeight;                    /* 60 */
+                                            << AttrLineWeight                     /* 60 */
+                                            << AttrObjName;                      /* 61 */
     return attr;
 }

@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   dialogline.cpp
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogline.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -77,6 +72,7 @@ DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *p
     ui->setupUi(this);
     InitOkCancelApply(ui);
 
+
     FillComboBoxPoints(ui->comboBoxFirstPoint);
     FillComboBoxPoints(ui->comboBoxSecondPoint);
 
@@ -106,6 +102,8 @@ DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *p
 
     number = 0;
 
+    ui->name_LineEdit->setText(tr("Line_") + ui->comboBoxFirstPoint->currentText() +
+                                  "_" + ui->comboBoxSecondPoint->currentText());
     connect(ui->comboBoxFirstPoint,  &QComboBox::currentTextChanged, this, &DialogLine::PointNameChanged);
     connect(ui->comboBoxSecondPoint, &QComboBox::currentTextChanged, this, &DialogLine::PointNameChanged);
 
@@ -120,10 +118,10 @@ DialogLine::~DialogLine()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetSecondPoint set id second point
+ * @brief setSecondPoint set id second point
  * @param value id
  */
-void DialogLine::SetSecondPoint(const quint32 &value)
+void DialogLine::setSecondPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxSecondPoint, value);
 
@@ -188,10 +186,10 @@ void DialogLine::setLineColor(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetFirstPoint set id first point
+ * @brief setFirstPoint set id first point
  * @param value id
  */
-void DialogLine::SetFirstPoint(const quint32 &value)
+void DialogLine::setFirstPoint(const quint32 &value)
 {
     setCurrentPointId(ui->comboBoxFirstPoint, value);
 
@@ -214,6 +212,10 @@ void DialogLine::PointNameChanged()
         flagError = true;
         color = okColor;
     }
+
+    ui->name_LineEdit->setText(tr("Line_") + ui->comboBoxFirstPoint->currentText() +
+                                  "_" + ui->comboBoxSecondPoint->currentText());
+
     ChangeColor(ui->labelFirstPoint, color);
     ChangeColor(ui->labelSecondPoint, color);
     CheckState();
@@ -231,8 +233,8 @@ void DialogLine::SaveData()
     VisToolLine *line = qobject_cast<VisToolLine *>(vis);
     SCASSERT(line != nullptr)
 
-    line->setObject1Id(GetFirstPoint());
-    line->setPoint2Id(GetSecondPoint());
+    line->setObject1Id(getFirstPoint());
+    line->setPoint2Id(getSecondPoint());
     line->setLineStyle(lineTypeToPenStyle(getLineType()));
     line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
@@ -282,20 +284,20 @@ void DialogLine::ChosenObject(quint32 id, const SceneObject &type)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetFirstPoint return id first point
+ * @brief getFirstPoint return id first point
  * @return id
  */
-quint32 DialogLine::GetFirstPoint() const
+quint32 DialogLine::getFirstPoint() const
 {
     return qvariant_cast<quint32>(ui->comboBoxFirstPoint->currentData());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetSecondPoint return id second point
+ * @brief getSecondPoint return id second point
  * @return id
  */
-quint32 DialogLine::GetSecondPoint() const
+quint32 DialogLine::getSecondPoint() const
 {
     return qvariant_cast<quint32>(ui->comboBoxSecondPoint->currentData());
 }

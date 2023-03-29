@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   vtoolline.cpp
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtoolline.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -119,8 +114,8 @@ void VToolLine::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogLine> dialogTool = m_dialog.objectCast<DialogLine>();
     SCASSERT(not dialogTool.isNull())
-    dialogTool->SetFirstPoint(firstPoint);
-    dialogTool->SetSecondPoint(secondPoint);
+    dialogTool->setFirstPoint(firstPoint);
+    dialogTool->setSecondPoint(secondPoint);
     dialogTool->setLineType(m_lineType);
     dialogTool->setLineWeight(m_lineWeight);
     dialogTool->setLineColor(lineColor);
@@ -140,8 +135,8 @@ VToolLine *VToolLine::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsSce
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogLine> dialogTool = dialog.objectCast<DialogLine>();
     SCASSERT(not dialogTool.isNull())
-    const quint32 firstPoint  = dialogTool->GetFirstPoint();
-    const quint32 secondPoint = dialogTool->GetSecondPoint();
+    const quint32 firstPoint  = dialogTool->getFirstPoint();
+    const quint32 secondPoint = dialogTool->getSecondPoint();
     const QString lineType    = dialogTool->getLineType();
     const QString lineWeight  = dialogTool->getLineWeight();
     const QString lineColor   = dialogTool->getLineColor();
@@ -225,10 +220,11 @@ void VToolLine::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 {
     //const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
 
-    const qreal weight = ToPixel(m_lineWeight.toDouble(), Unit::Mm);
+    const qreal weight = ToPixel(doc->useGroupLineWeight(m_id, m_lineWeight).toDouble(), Unit::Mm);
     const qreal width  = scaleWidth(m_isHovered ? weight + 4 : weight, sceneScale(scene()));
 
-    setPen(QPen(correctColor(this, lineColor), width, lineTypeToPenStyle(m_lineType)));
+    setPen(QPen(correctColor(this, doc->useGroupColor(m_id, lineColor)),
+           width, lineTypeToPenStyle(doc->useGroupLineType(m_id, m_lineType))));
 
     QGraphicsLineItem::paint(painter, option, widget);
 }
@@ -418,8 +414,8 @@ void VToolLine::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogLine> dialogTool = m_dialog.objectCast<DialogLine>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrFirstPoint,  QString().setNum(dialogTool->GetFirstPoint()));
-    doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->GetSecondPoint()));
+    doc->SetAttribute(domElement, AttrFirstPoint,  QString().setNum(dialogTool->getFirstPoint()));
+    doc->SetAttribute(domElement, AttrSecondPoint, QString().setNum(dialogTool->getSecondPoint()));
     doc->SetAttribute(domElement, AttrLineType,    dialogTool->getLineType());
     doc->SetAttribute(domElement, AttrLineWeight,  dialogTool->getLineWeight());
     doc->SetAttribute(domElement, AttrLineColor,   dialogTool->getLineColor());

@@ -70,12 +70,12 @@ class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
 class DialogTool;
-class DialogHistory;
+class HistoryDialog;
 class CalculatorDialog;
 class DecimalChartDialog;
 class ShowInfoDialog;
 class ShortcutsDialog;
-class VWidgetGroups;
+class GroupsWidget;
 class PiecesWidget;
 class DraftToolBox;
 class PieceToolBox;
@@ -103,7 +103,16 @@ public slots:
     void penChanged(Pen pen);
 
     virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void updateGroups() Q_DECL_OVERRIDE;
     virtual void zoomToSelected() Q_DECL_OVERRIDE;
+    void         showAllGroups();
+    void         hideAllGroups();
+    void         lockAllGroups();
+    void         unlockAllGroups();
+    void         addGroupToList();
+    void         deleteGroupFromList();
+    void         editGroup();
+    void         addSelectedItemsToGroup();
 
 signals:
     void RefreshHistory();
@@ -228,7 +237,7 @@ private slots:
     void Open();
 
     void closeUnionDialog(int result);
-    void ClosedDialogGroup(int result);
+    void ClosedEditGroupDialog(int result);
     void ClosedDialogInternalPath(int result);
     void ClosedDialogAnchorPoint(int result);
     void ClosedInsertNodesDialog(int result);
@@ -291,7 +300,7 @@ private:
 
     QPointer<DialogVariables>         dialogTable;
     QSharedPointer<DialogTool>        dialogTool;
-    QPointer<DialogHistory>           dialogHistory;
+    QPointer<HistoryDialog>           historyDialog;
 
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
@@ -319,7 +328,7 @@ private:
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
-    VWidgetGroups                    *groupsWidget;
+    GroupsWidget                     *groupsWidget;
     PiecesWidget                     *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
@@ -399,7 +408,7 @@ private:
     void               InitAutoSave();
     QString            createDraftBlockName(const QString &text);
     QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
-    QComboBox          *SetGradationList(QLabel *label, const QStringList &list);
+    QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
     /**
      * @brief EndVisualization try show dialog after and working with tool visualization.
@@ -439,8 +448,7 @@ private:
     void               updateViewToolbar();
     void               resetPanShortcuts();
 
-
-    QStringList       draftPointNamesList();
+    QStringList        draftPointNamesList();
 
     void               updateZoomToPointComboBox(QStringList namesList);
 

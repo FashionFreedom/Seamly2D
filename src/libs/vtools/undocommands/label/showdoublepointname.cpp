@@ -46,11 +46,11 @@ ShowDoublePointName::ShowDoublePointName(VAbstractPattern *doc, quint32 toolId, 
 
     if (type == ShowDoublePoint::FirstPoint)
     {
-        setText(tr("toggle the first dart label"));
+        setText(tr("toggle the first dart visibility"));
     }
     else
     {
-        setText(tr("toggle the second dart label"));
+        setText(tr("toggle the second dart visibility"));
     }
 
     const QDomElement domElement = doc->elementById(m_idTool, VAbstractPattern::TagPoint);

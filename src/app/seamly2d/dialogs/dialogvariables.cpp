@@ -231,7 +231,7 @@ void DialogVariables::fillCustomVariables(bool freshCall)
         ui->variables_TableWidget->resizeRowsToContents();
     }
 
-    ui->variables_TableWidget->setColumnWidth(0, 120);
+    ui->variables_TableWidget->setColumnWidth(0, 350);
     ui->variables_TableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->variables_TableWidget->blockSignals(false);
 }

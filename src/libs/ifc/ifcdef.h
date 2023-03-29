@@ -109,6 +109,7 @@ extern const QString AttrX;
 extern const QString AttrY;
 extern const QString AttrLineType;
 extern const QString AttrLineWeight;
+extern const QString AttrObjName;
 extern const QString AttrCut;
 extern const QString AttrLength;
 extern const QString AttrBasePoint;
@@ -189,6 +190,8 @@ QMap<QString, QString> CurveLineTypeList();
 
 QMap<QString, QString> lineWeightList();
 
+extern const QString LineWeightByGroup;
+extern const QString LineTypeByGroup;
 extern const QString ColorByGroup;
 extern const QString ColorNone;
 extern const QString ColorBlack;

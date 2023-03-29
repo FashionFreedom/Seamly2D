@@ -454,7 +454,7 @@
     </size>
    </property>
    <property name="features">
-    <set>QDockWidget::DockWidgetClosable</set>
+    <set>QDockWidget::AllDockWidgetFeatures</set>
    </property>
    <property name="allowedAreas">
     <set>Qt::RightDockWidgetArea</set>
@@ -898,7 +898,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>4</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -1932,7 +1932,7 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>New Group (G)</string>
+                <string>Add Objects to Group (G)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
@@ -2862,10 +2862,10 @@
      <normaloff>:/toolicon/32x32/group.png</normaloff>:/toolicon/32x32/group.png</iconset>
    </property>
    <property name="text">
-    <string>Create New Group</string>
+    <string>Add Objects to Group</string>
    </property>
    <property name="toolTip">
-    <string>Create a New Group (G)</string>
+    <string>Add Objects to Group (G)</string>
    </property>
    <property name="shortcut">
     <string>G</string>
@@ -4665,8 +4665,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

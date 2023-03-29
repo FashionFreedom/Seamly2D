@@ -89,6 +89,7 @@ const QString AttrX           = QStringLiteral("x");
 const QString AttrY           = QStringLiteral("y");
 const QString AttrLineType    = QStringLiteral("lineType");
 const QString AttrLineWeight  = QStringLiteral("lineWeight");
+const QString AttrObjName     = QStringLiteral("objName");
 const QString AttrCut         = QStringLiteral("cut");
 const QString AttrLength      = QStringLiteral("length");
 const QString AttrBasePoint   = QStringLiteral("basePoint");
@@ -365,6 +366,8 @@ QMap<QString, QString> lineWeightList()
     }
     return map;
 }
+const QString LineWeightByGroup     = QStringLiteral("byGroup");
+const QString LineTypeByGroup       = QStringLiteral("byGroup");
 const QString ColorByGroup          = QStringLiteral("byGroup");
 const QString ColorNone             = QStringLiteral("none");
 const QString ColorBlack            = QStringLiteral("black");

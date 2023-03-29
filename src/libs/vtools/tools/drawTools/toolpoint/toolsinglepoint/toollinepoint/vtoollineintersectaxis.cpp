@@ -51,28 +51,29 @@
 
 #include "vtoollineintersectaxis.h"
 
-#include <QLine>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
-
-#include "../../../../../dialogs/tools/dialoglineintersectaxis.h"
-#include "../../../../../dialogs/tools/dialogtool.h"
-#include "../../../../../visualization/visualization.h"
-#include "../../../../../visualization/line/vistoollineintersectaxis.h"
-#include "../ifc/exception/vexception.h"
+#include "vtoollinepoint.h"
 #include "../ifc/ifcdef.h"
+#include "../ifc/exception/vexception.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../../../../vabstracttool.h"
 #include "../../../vdrawtool.h"
-#include "vtoollinepoint.h"
+#include "../../../../vabstracttool.h"
+#include "../../../../../dialogs/tools/dialogtool.h"
+#include "../../../../../dialogs/tools/dialoglineintersectaxis.h"
+#include "../../../../../visualization/visualization.h"
+#include "../../../../../visualization/line/vistoollineintersectaxis.h"
+
+#include <QLine>
+#include <QMessageBox>
+#include <QSharedPointer>
+#include <QStaticStringData>
+#include <QStringData>
+#include <QStringDataPtr>
+#include <new>
 
 template <class T> class QSharedPointer;
 
@@ -157,6 +158,24 @@ VToolLineIntersectAxis *VToolLineIntersectAxis::Create(const quint32 _id, const 
     QLineF line(static_cast<QPointF>(*firstPoint), static_cast<QPointF>(*secondPoint));
 
     QPointF fPoint = FindPoint(axis, line);
+
+    if (fPoint == QPointF())
+    {
+        const QString msg = tr("<b><big>Can't find intersection point %1 of</big></b><br>"
+                               "<b><big>Line and Axis</big></b><br><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName);
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Intersect Line and Axis"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/line_intersect_axis.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     quint32 id = _id;
     VPointF *p = new VPointF(fPoint, pointName, mx, my);
     p->setShowPointName(showPointName);
