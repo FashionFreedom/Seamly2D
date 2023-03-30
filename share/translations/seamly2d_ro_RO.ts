@@ -1771,10 +1771,6 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Derulați în jos lista</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
         <source>Scroll up the list</source>
         <translation type="vanished">Derula în sus lista</translation>
     </message>
@@ -3125,7 +3121,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6183,7 +6179,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -6252,10 +6248,6 @@ Do you want to download it?</source>
     <message>
         <source>Lock all groups</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Unlock all groups</source>
@@ -9840,10 +9832,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
         <source>Fill:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11384,10 +11372,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Pattern label:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Piece label:</source>

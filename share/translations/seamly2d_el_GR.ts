@@ -1790,10 +1790,6 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Κύλιση λίστας προς τα κάτω</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
         <source>Scroll up the list</source>
         <translation type="vanished">Κύλιση λίστας προς τα πάνω</translation>
     </message>
@@ -3536,10 +3532,10 @@ p, li { white-space: pre-wrap; }
         <translation>Λανθασμένα πεδία.</translation>
     </message>
     <message>
-        <source>Fields go beyond printing. 
+        <source>Fields go beyond printing.
 
 Apply settings anyway?</source>
-        <translation type="vanished">Τα πεδία υπερβαίνουν την εκτύπωση. 
+        <translation type="vanished">Τα πεδία υπερβαίνουν την εκτύπωση.
 
 Εφαρμογή των ρυθμίσεων ούτως ή άλλως;</translation>
     </message>
@@ -3620,7 +3616,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -7566,7 +7562,7 @@ Apply settings anyway?</source>
         <translation>Πληροφορίες</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -7643,10 +7639,6 @@ Do you want to download it?</source>
     <message>
         <source>Lock all groups</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Unlock all groups</source>
@@ -11723,10 +11715,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
         <source>Fill:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13291,10 +13279,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Pattern label:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Piece label:</source>
