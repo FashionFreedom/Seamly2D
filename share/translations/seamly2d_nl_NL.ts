@@ -23,6 +23,13 @@
     </message>
 </context>
 <context>
+    <name>AddGroupItem</name>
+    <message>
+        <source>Add item to group</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddPatternPiece</name>
     <message>
         <source>add pattern piece %1</source>
@@ -45,6 +52,17 @@
     <message>
         <source>add object</source>
         <translation>voeg object toe</translation>
+    </message>
+</context>
+<context>
+    <name>AddToGroupDialog</name>
+    <message>
+        <source>Add to Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -856,6 +874,10 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
+    </message>
 </context>
 <context>
     <name>DialogArcWithLength</name>
@@ -992,6 +1014,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -1811,10 +1837,6 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Rol naar beneden op de lijst</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="vanished">...</translation>
-    </message>
-    <message>
         <source>Scroll up the list</source>
         <translation type="vanished">Rol naar boven op de lijst</translation>
     </message>
@@ -2379,6 +2401,10 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Draaiingshoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
+    </message>
 </context>
 <context>
     <name>DialogEndLine</name>
@@ -2650,23 +2676,23 @@ p, li { white-space: pre-wrap; }
     <name>DialogGroup</name>
     <message>
         <source>Group</source>
-        <translation>Groep</translation>
+        <translation type="vanished">Groep</translation>
     </message>
     <message>
         <source>Group name:</source>
-        <translation>Groep naam:</translation>
+        <translation type="vanished">Groep naam:</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Unieke naam van het patroondeel</translation>
+        <translation type="vanished">Unieke naam van het patroondeel</translation>
     </message>
     <message>
         <source>Choose group name</source>
-        <translation>Kies groep naam</translation>
+        <translation type="vanished">Kies groep naam</translation>
     </message>
     <message>
         <source>New group</source>
-        <translation>Nieuwe groep</translation>
+        <translation type="vanished">Nieuwe groep</translation>
     </message>
 </context>
 <context>
@@ -3650,10 +3676,10 @@ p, li { white-space: pre-wrap; }
         <translation>Verkeerde velden.</translation>
     </message>
     <message>
-        <source>Fields go beyond printing. 
+        <source>Fields go beyond printing.
 
 Apply settings anyway?</source>
-        <translation type="vanished">Velden zijn groter dan het afdrukkbereik. 
+        <translation type="vanished">Velden zijn groter dan het afdrukkbereik.
 
 Toch de instellingen aanpassen?</translation>
     </message>
@@ -3737,7 +3763,7 @@ Toch de instellingen aanpassen?</translation>
         <translation>Opmaak adrukinstellingen</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation>Afdrukmarges buiten het afdrukgebied. Instellingen toch toepassen?</translation>
@@ -3816,6 +3842,14 @@ Apply settings anyway?</source>
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Lijn_</translation>
     </message>
 </context>
 <context>
@@ -7386,6 +7420,37 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>EditGroupDialog</name>
+    <message>
+        <source>Add Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
+    </message>
+    <message>
+        <source>Color:</source>
+        <translation type="unfinished">Kleur:</translation>
+    </message>
+    <message>
+        <source>Unique pattern piece name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unique group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Linetype:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lineweight:</source>
+        <translation type="unfinished">Lijnbreedte:</translation>
+    </message>
+</context>
+<context>
     <name>EditLabelTemplateDialog</name>
     <message>
         <source>Edit label template</source>
@@ -7807,10 +7872,10 @@ Apply settings anyway?</source>
         <translation>Informatie</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Kan geen exclusieve rechten op bestand 
+        <translation>Kan geen exclusieve rechten op bestand
 %1
 verkrijgen. Het bestand wordt misschien al gedownload.</translation>
     </message>
@@ -7867,6 +7932,261 @@ Do you want to download it?</source>
     <message>
         <source>Arrows:</source>
         <translation type="obsolete">Pijlen:</translation>
+    </message>
+</context>
+<context>
+    <name>GroupsWidget</name>
+    <message>
+        <source>Group Manager</source>
+        <translation type="unfinished">Groepenbeheer</translation>
+    </message>
+    <message>
+        <source>Show All Groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide all groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lock all groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unlock all groups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add a new group to the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete active group from the list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit group properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Groepen</translation>
+    </message>
+    <message>
+        <source>Group list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group object list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double clicking zooms to object.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name Exists</source>
+        <translation type="unfinished">Naam Bestaat</translation>
+    </message>
+    <message>
+        <source>The action can&apos;t be completed because the group name already exists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">Hernoem</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show which groups in the list are visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show which groups in the list are locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show which groups contain objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group color and name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Base point</source>
+        <translation type="unfinished">%1 - Basis punt</translation>
+    </message>
+    <message>
+        <source>%1 - Point Length and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line %1_%2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Curve Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Curve Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Arc Radius &amp; Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Boog_</translation>
+    </message>
+    <message>
+        <source>%1 - Arc Radius &amp; Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Spline Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished">Splinepad_</translation>
+    </message>
+    <message>
+        <source>%1 - Spline Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Arc &amp; Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Line &amp; Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Axis &amp; Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect XY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point On Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Line &amp; Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Curve &amp; Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circles</source>
+        <translation type="unfinished">%1 - Snijpunt van Cirkels</translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Circle &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Point Intersect Arc &amp; Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - True Dart %2_%3_%4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Arc Elliptical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <translation type="unfinished">EllBoog_</translation>
+    </message>
+    <message>
+        <source>%1 - Rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Mirror by Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - Mirror by Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move Group Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Group Object</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8896,7 +9216,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>pattern</source>
-        <translation>patroon</translation>
+        <translation type="vanished">patroon</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -10154,11 +10474,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Create New Group</source>
-        <translation>Maak Nieuwe Groep</translation>
+        <translation type="vanished">Maak Nieuwe Groep</translation>
     </message>
     <message>
         <source>Create a New Group (G)</source>
-        <translation>Maak een nieuwe Groep (G)</translation>
+        <translation type="vanished">Maak een nieuwe Groep (G)</translation>
     </message>
     <message>
         <source>G</source>
@@ -11054,7 +11374,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Group</source>
-        <translation>Nieuwe Groep</translation>
+        <translation type="vanished">Nieuwe Groep</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -11102,11 +11422,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Failed to lock. This file is already opened in another window.</source>
-        <translation>Kan bestand niet exclusief openen. Het bestand is al geopend in een ander venster.</translation>
+        <translation type="vanished">Kan bestand niet exclusief openen. Het bestand is al geopend in een ander venster.</translation>
     </message>
     <message>
         <source>Failed to lock. This file is already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Kan bestand niet exclusief openen. Het bestand is al geopend in een ander venster. Verwacht botsingen als 2 kopieën van het programma tegelijk lopen.</translation>
+        <translation type="vanished">Kan bestand niet exclusief openen. Het bestand is al geopend in een ander venster. Verwacht botsingen als 2 kopieën van het programma tegelijk lopen.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -11282,7 +11602,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Group (G)</source>
-        <translation>Nieuwe groep (G)</translation>
+        <translation type="vanished">Nieuwe groep (G)</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
@@ -11728,6 +12048,34 @@ Do you want to save your changes?</source>
         <source>Intersect Curve &amp; Axis</source>
         <translation>Snijpunt Kromme &amp; As</translation>
     </message>
+    <message>
+        <source>Add Objects to Group (G)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Objects to Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Group Objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is Locked. Unlock to add objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Can not save file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern is read only.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to lock. File with this name is opened in another window.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -11972,6 +12320,13 @@ Do you want to save your changes?</source>
     <message>
         <source>move the second dart label</source>
         <translation>verplaats de tweede figuurnaad label</translation>
+    </message>
+</context>
+<context>
+    <name>MoveGroupItem</name>
+    <message>
+        <source>Move group item</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12409,10 +12764,6 @@ Do you want to save your changes?</source>
     <message>
         <source>hex Value</source>
         <translation>Hex Waarde</translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Fill:</source>
@@ -13440,7 +13791,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>coffeemaker2_click</source>
-        <translation>koffiezet2_klik</translation>
+        <translation type="vanished">koffiezet2_klik</translation>
     </message>
     <message>
         <source>phone2_click</source>
@@ -13461,10 +13812,6 @@ Do you want to save your changes?</source>
     <message>
         <source>buzz_click</source>
         <translation type="vanished">zoem_klik</translation>
-    </message>
-    <message>
-        <source>inspirstar_click</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14081,10 +14428,6 @@ Do you want to save your changes?</source>
         <translation>Patroonlabel:</translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="obsolete">...</translation>
-    </message>
-    <message>
         <source>Piece label:</source>
         <translation>Patroondeel label:</translation>
     </message>
@@ -14519,6 +14862,13 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>RemoveGroupItem</name>
+    <message>
+        <source>Delete group item</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RenameDraftBlock</name>
     <message>
         <source>rename pattern piece</source>
@@ -14711,11 +15061,19 @@ Do you want to save your changes?</source>
     <name>ShowDoublePointName</name>
     <message>
         <source>toggle the first dart label</source>
-        <translation>Schakel eerste figuurnaad label om</translation>
+        <translation type="vanished">Schakel eerste figuurnaad label om</translation>
     </message>
     <message>
         <source>toggle the second dart label</source>
-        <translation>schakel tweede figuurnaad label om</translation>
+        <translation type="vanished">schakel tweede figuurnaad label om</translation>
+    </message>
+    <message>
+        <source>toggle the first dart visibility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>toggle the second dart visibility</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14757,14 +15115,22 @@ Do you want to save your changes?</source>
     <name>ShowOperationPointName</name>
     <message>
         <source>toggle label</source>
-        <translation>Schakel label om</translation>
+        <translation type="vanished">Schakel label om</translation>
+    </message>
+    <message>
+        <source>toggle point visibility</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ShowPointName</name>
     <message>
         <source>toggle label</source>
-        <translation>Schakel label om</translation>
+        <translation type="vanished">Schakel label om</translation>
+    </message>
+    <message>
+        <source>toggle point visibility</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -16081,6 +16447,10 @@ Wil je deze veranderingen opslaan?</translation>
         <source>Horizontal axis</source>
         <translation>Horizontale as</translation>
     </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Lijn_</translation>
+    </message>
 </context>
 <context>
     <name>UnionDialog</name>
@@ -16229,6 +16599,10 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>New group</source>
         <translation>Nieuwe groep</translation>
+    </message>
+    <message>
+        <source>New group 2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -17087,6 +17461,14 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Show Point Name</source>
         <translation>Toon Puntnaam</translation>
+    </message>
+    <message>
+        <source>Add Group Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remove Group Object</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -18652,6 +19034,22 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Arc - Elliptical</source>
         <translation>Boog - Ellipsvormig</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <translation type="unfinished">Boog_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SplPath_</source>
+        <translation type="unfinished">Splinepad_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <translation type="unfinished">Lijn_</translation>
     </message>
 </context>
 <context>
@@ -20282,15 +20680,15 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Hernoem</translation>
+        <translation type="vanished">Hernoem</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Verwijder</translation>
+        <translation type="vanished">Verwijder</translation>
     </message>
     <message>
         <source>Toggle visibility of group</source>
-        <translation>Schakel zichtbaarheid groep om</translation>
+        <translation type="vanished">Schakel zichtbaarheid groep om</translation>
     </message>
 </context>
 <context>

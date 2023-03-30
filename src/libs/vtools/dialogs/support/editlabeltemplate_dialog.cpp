@@ -506,7 +506,7 @@ void EditLabelTemplateDialog::InitPlaceholders()
     m_placeholders.insert(pl_customer, qMakePair(tr("Customer name"), m_doc->GetCustomerName()));
     m_placeholders.insert(pl_pExt, qMakePair(tr("Pattern extension"), QString("val")));
 
-    const QString patternFilePath = QFileInfo(qApp->GetPPath()).baseName();
+    const QString patternFilePath = QFileInfo(qApp->getFilePath()).baseName();
     m_placeholders.insert(pl_pFileName, qMakePair(tr("Pattern file name"), patternFilePath));
 
     const QString measurementsFilePath = QFileInfo(m_doc->MPath()).baseName();
