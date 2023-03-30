@@ -3795,6 +3795,18 @@ bool MainWindow::SaveAs()
     m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
     m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
 
+    if (fileName != filePath)
+    {
+        VlpCreateLock(lock, fileName);
+	    if (!lock->IsLocked())
+        {
+            qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
+														    "Expect collisions when running 2 copies of the program.")));
+		    RemoveTempDir();
+	        return false;
+	    }
+    }
+
     RemoveTempDir();
     return result;
 }
