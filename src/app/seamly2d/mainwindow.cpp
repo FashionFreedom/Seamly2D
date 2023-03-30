@@ -1,26 +1,20 @@
-/***************************************************************************
- **  @file   mainwindow.cpp
+/******************************************************************************
+ *   @file   mainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   Jan 1, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
+ **  @date   29 Mar, 2023
  **
  **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *****************************************************************************/
 
 /************************************************************************
  **
@@ -3756,20 +3750,20 @@ bool MainWindow::SaveAs()
         return false;
     }
 
-    QFileInfo fleInfo(fileName);
-    if (fleInfo.suffix().isEmpty() && fleInfo.suffix() != QLatin1String("val"))
+    QFileInfo fileInfo(fileName);
+    if (fileInfo.suffix().isEmpty() && fileInfo.suffix() != QLatin1String("val"))
     {
         fileName += QLatin1String(".val");
     }
 
-    if (fleInfo.exists() && fileName != filePath)
+    if (fileInfo.exists() && fileName != filePath)
     {
-        // Temporary try to lock the file before saving
+        // Temporarily try to lock the file before saving
         // Also help to rewrite current read-only pattern
         VLockGuard<char> tmp(fileName);
         if (!tmp.IsLocked())
         {
-            qCCritical(vMainWindow, "%s",
+            qCWarning(vMainWindow, "%s",
                        qUtf8Printable(tr("Failed to lock. File with this name is opened in another window.")));
             RemoveTempDir();
             return false;
@@ -7018,7 +7012,7 @@ QString MainWindow::GetPatternFileName()
     QString shownName = tr("untitled.val");
     if(not qApp->getFilePath().isEmpty())
     {
-        shownName = strippedName(qApp->getFilePath());
+        shownName = qApp->getFilePath();
     }
     shownName += QLatin1String("[*]");
     return shownName;
@@ -7033,7 +7027,7 @@ QString MainWindow::GetMeasurementFileName()
     }
     else
     {
-        QString shownName(" [");
+        QString shownName(" - [");
         shownName += strippedName(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
 
         if(mChanges)
@@ -7050,7 +7044,7 @@ QString MainWindow::GetMeasurementFileName()
 void MainWindow::UpdateWindowTitle()
 {
     bool isFileWritable = true;
-    if (not qApp->getFilePath().isEmpty())
+    if (!qApp->getFilePath().isEmpty())
     {
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup++; // turn checking on
@@ -7061,14 +7055,14 @@ void MainWindow::UpdateWindowTitle()
 #endif /*Q_OS_WIN32*/
     }
 
-    if (not patternReadOnly && isFileWritable)
+    if (!patternReadOnly && isFileWritable)
     {
-        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() + QString(" - ") + VER_INTERNALNAME_STR);
+        setWindowTitle(VER_INTERNALNAME_STR + QString(" - ") + GetPatternFileName() + GetMeasurementFileName());
     }
     else
     {
-        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() +QLatin1String(" (") +
-                       tr("read only") + QLatin1String(")") + QString(" - ") + VER_INTERNALNAME_STR);
+        setWindowTitle(VER_INTERNALNAME_STR + QString(" - ") + GetPatternFileName() +
+                       GetMeasurementFileName() + QString(" - ") + tr("read only"));
     }
     setWindowFilePath(qApp->getFilePath());
 
@@ -7076,9 +7070,9 @@ void MainWindow::UpdateWindowTitle()
     static QIcon fileIcon = QIcon(QCoreApplication::applicationDirPath() +
                                   QLatin1String("/../Resources/Seamly2D.icns"));
     QIcon icon;
-    if (not qApp->getFilePath().isEmpty())
+    if (!qApp->getFilePath().isEmpty())
     {
-        if (not isWindowModified())
+        if (!isWindowModified())
         {
             icon = fileIcon;
         }
