@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   tmainwindow.cpp
+ **  @author Douglas S Caskey
+ **  @date   29 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
-﻿ ************************************************************************
+/************************************************************************
  **
  **  @file   tmainwindow.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -958,23 +953,55 @@ bool TMainWindow::FileSave()
 //---------------------------------------------------------------------------------------------------------------------
 bool TMainWindow::FileSaveAs()
 {
-	QString filters;
-	QString fName = tr("measurements");
-	QString suffix;
+	QString dir;
+    QString filters;
+    QString suffix;
+    QString filePath = CurrentFile();
+    QString fileName = QLatin1String("measurements");
+    if (!filePath.isEmpty())
+    {
+        dir = QFileInfo(filePath).path();
+        fileName = QFileInfo(filePath).baseName();
+        if (mType == MeasurementsType::Individual)
+        {
+            filters = tr("Individual measurements") + QLatin1String(" (*.vit)");
+            suffix = QLatin1String("vit");
+        }
+        else
+        {
+            filters = tr("Multisize measurements") + QLatin1String(" (*.vst)");
+            suffix = QLatin1String("vst");
+        }
+    }
+    else
+    {
+        if (mType == MeasurementsType::Individual)
+        {
+            dir = qApp->SeamlyMeSettings()->GetDefPathIndividualMeasurements();
+            filters = tr("Individual measurements") + QLatin1String(" (*.vit)");
+            suffix = QLatin1String("vit");
+        }
+        else
+        {
+            dir = qApp->SeamlyMeSettings()->GetDefPathMultisizeMeasurements();
+            filters = tr("Multisize measurements") + QLatin1String(" (*.vst)");
+            suffix = QLatin1String("vst");
+        }
+    }
+
 	if (mType == MeasurementsType::Individual)
 	{
 		filters = tr("Individual measurements") + QLatin1String(" (*.vit)");
 		suffix = QLatin1String("vit");
-		fName += QLatin1String(".") + suffix;
 	}
 	else
 	{
 		filters = tr("Multisize measurements") + QLatin1String(" (*.vst)");
 		suffix = QLatin1String("vst");
-		fName += QLatin1String(".") + suffix;
 	}
 
-	QString dir;
+    fileName += QLatin1String(".") + suffix;
+
 	if (curFile.isEmpty())
 	{
 		if (mType == MeasurementsType::Individual)
@@ -999,7 +1026,8 @@ bool TMainWindow::FileSaveAs()
 		usedNotExistedDir = directory.mkpath(".");
 	}
 
-	QString fileName = QFileDialog::getSaveFileName(this, tr("Save as"), dir + QLatin1String("/") + fName, filters);
+	fileName = QFileDialog::getSaveFileName(this, tr("Save as"), dir + QLatin1String("/") + fileName,
+                                            filters, nullptr, QFileDialog::DontUseNativeDialog);
 
 	auto RemoveTempDir = [usedNotExistedDir, dir]()
 	{
@@ -1016,19 +1044,19 @@ bool TMainWindow::FileSaveAs()
 		return false;
 	}
 
-	QFileInfo f( fileName );
-	if (f.suffix().isEmpty() && f.suffix() != suffix)
+	QFileInfo fileInfo(fileName);
+	if (fileInfo.suffix().isEmpty() && fileInfo.suffix() != suffix)
 	{
 		fileName += QLatin1String(".") + suffix;
 	}
 
-	if (QFileInfo(fileName).exists())
+	if (fileInfo.exists() && fileName != filePath)
 	{
-		// Temporary try to lock the file before saving
+		// Temporarily try to lock the file before saving
 		VLockGuard<char> tmp(fileName);
-		if (not tmp.IsLocked())
+		if (!tmp.IsLocked())
 		{
-			qCCritical(tMainWindow, "%s",
+			qCWarning(tMainWindow, "%s",
 					   qUtf8Printable(tr("Failed to lock. This file already opened in another window.")));
 			RemoveTempDir();
 			return false;
@@ -1063,14 +1091,18 @@ bool TMainWindow::FileSaveAs()
 	UpdatePadlock(false);
 	UpdateWindowTitle();
 
-	VlpCreateLock(lock, fileName);
-	if (not lock->IsLocked())
-	{
-		qCCritical(tMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
-														"Expect collisions when running 2 copies of the program.")));
-		RemoveTempDir();
-		return false;
-	}
+    if (fileName != filePath)
+    {
+        VlpCreateLock(lock, fileName);
+	    if (!lock->IsLocked())
+        {
+            qCCritical(tMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
+														    "Expect collisions when running 2 copies of the program.")));
+		    RemoveTempDir();
+	        return false;
+	    }
+    }
+
 	RemoveTempDir();
 	return true;
 }
@@ -2729,9 +2761,9 @@ void TMainWindow::MFields(bool enabled)
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::UpdateWindowTitle()
 {
-	QString showName;
+	QString fileName;
 	bool isFileWritable = true;
-	if (not curFile.isEmpty())
+	if (!curFile.isEmpty())
 	{
 #ifdef Q_OS_WIN32
 		qt_ntfs_permission_lookup++; // turn checking on
@@ -2740,29 +2772,29 @@ void TMainWindow::UpdateWindowTitle()
 #ifdef Q_OS_WIN32
 		qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
-		showName = strippedName(curFile);
+		fileName = curFile;
 	}
 	else
 	{
-		showName = tr("untitled %1").arg(qApp->MainWindows().size()+1);
-		mType == MeasurementsType::Multisize ? showName += QLatin1String(".vst") : showName += QLatin1String(".vit");
+		fileName = tr("untitled %1").arg(qApp->MainWindows().size() + 1);
+		mType == MeasurementsType::Multisize ? fileName += QLatin1String(".vst") : fileName += QLatin1String(".vit");
 	}
 
-	showName += QLatin1String("[*]");
+	fileName += QLatin1String("[*]");
 
 	if (mIsReadOnly || not isFileWritable)
 	{
-		showName += QLatin1String(" (") + tr("read only") + QLatin1String(")");
+		fileName += QLatin1String(" (") + tr("read only") + QLatin1String(")");
 	}
 
-	setWindowTitle(showName + QString(" - ") + VER_INTERNALNAME_ME_STR);
+	setWindowTitle( VER_INTERNALNAME_ME_STR + QString(" - ") + fileName);
 	setWindowFilePath(curFile);
 
 #if defined(Q_OS_MAC)
 	static QIcon fileIcon = QIcon(QCoreApplication::applicationDirPath() +
 								  QLatin1String("/../Resources/measurements.icns"));
 	QIcon icon;
-	if (not curFile.isEmpty())
+	if (!curFile.isEmpty())
 	{
 		if (not isWindowModified())
 		{
