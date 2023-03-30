@@ -16,7 +16,7 @@
  **
  *****************************************************************************/
 
-/************************************************************************
+ /************************************************************************
  **
  **  @file   tmainwindow.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -214,6 +214,7 @@ private:
     QString             ClearCustomName(const QString &name) const;
 
     bool                EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
+    QString             getMeasurementNumber(const QString &name);
     void                ShowMDiagram(const QString &name);
 
     void                Open(const QString &pathTo, const QString &filter);
@@ -238,6 +239,7 @@ private:
 
     template <class T>
     void                HackWidget(T **widget);
+    void                copyToClipboard();
 };
 
 #endif // TMAINWINDOW_H
