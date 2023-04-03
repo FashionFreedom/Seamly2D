@@ -49,6 +49,7 @@ jobs:
       - name: install appimage dependencies
         run: |
           sudo apt update && sudo apt install -y libfuse2
+          sudo apt install -y libxkbcommon-dev
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
@@ -128,6 +129,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
+          modules: qt5compat
 
       - name: update version
         run: |
@@ -192,6 +194,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
+          modules: qt5compat
 
       - name: update version
         shell: bash
