@@ -10,8 +10,6 @@ on:
     branches:
     - develop
     - test
-    - qt6-ci-fix
-    - qt6-ci-fix-missing-files
   pull_request:
 
 permissions:
@@ -120,52 +118,46 @@ jobs:
         run: |
           xvfb-run -a make check
 
-  macos:
-    name: 'macOS: Build'
-    runs-on: macos-13
-    needs: version
-    env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+  # macos:
+  #   name: 'macOS: Build'
+  #   runs-on: macos-latest
+  #   needs: version
+  #   env:
+  #     VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
-    steps:
-      - uses: actions/checkout@v4
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: xcode version
-        # Qt 5.15.2 currently fails with qglobal.h:45:12: fatal error: 'type_traits' file not found
-        # when using Xcode 15.1+, thus lock working version while we are on Qt5
-        run: |
-          sudo xcode-select -s /Applications/Xcode_14.2.app
+  #     - uses: jurplel/install-qt-action@v3
+  #       with:
+  #         version: ${{ env.QT_VERSION }}
+  #         cache: true
+  #         modules: qt5compat
 
-      - uses: jurplel/install-qt-action@v3
-        with:
-          version: ${{ env.QT_VERSION }}
-          cache: true
-          modules: qt5compat
+  #     - name: update version
+  #       run: |
+  #         ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: update version
-        run: |
-          ./scripts/version.sh ${VERSION_NUMBER}
+  #     - name: setup signing and notarization
+  #       env:
+  #         KEYCHAIN_FILE: ~/seamly2d.keychain
+  #         APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+  #       if: ${{ env.APPLE_SIGN_IDENTITY }}
+  #       run: |
+  #         security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+  #         security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+  #         security set-keychain-settings $KEYCHAIN_FILE
+  #         security list-keychains -d user -s $KEYCHAIN_FILE
+  #         echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
+  #         security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
+  #         security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+  #         echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
 
-      - name: setup signing and notarization
-        env:
-          KEYCHAIN_FILE: ~/seamly2d.keychain
-          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
-        if: ${{ env.APPLE_SIGN_IDENTITY }}
-        run: |
-          security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
-          security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
-          security set-keychain-settings $KEYCHAIN_FILE
-          security list-keychains -d user -s $KEYCHAIN_FILE
-          echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
-          security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
-          security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
-          echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
-
-          mkdir -p ~/private_keys/
-          echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
-          echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
-          echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
-          echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
+  #         mkdir -p ~/private_keys/
+  #         echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
+  #         echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
+  #         echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
+  #         echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
 
       - name: make Seamly2D for macos
         env:
@@ -199,32 +191,32 @@ jobs:
 
       - uses: ilammy/msvc-dev-cmd@v1
 
-      - uses: jurplel/install-qt-action@v3
-        with:
-          version: ${{ env.QT_VERSION }}
-          cache: true
-          modules: qt5compat
+       - uses: jurplel/install-qt-action@v3
+         with:
+           version: ${{ env.QT_VERSION }}
+           cache: true
+           modules: qt5compat
 
-      - name: update version
-        shell: bash
-        run: |
-          ./scripts/version.sh ${VERSION_NUMBER}
+       - name: update version
+         shell: bash
+         run: |
+           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: make seamly2d.exe and seamlyme.exe
-        run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-          nmake
+       - name: make seamly2d.exe and seamlyme.exe
+         run: |
+           qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+           nmake
 
-      - name: create seamly2d-installer.exe
-        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-        # uses parameters in seamly2d-installer.nsi to create the installer exe
-        run: |
-          mkdir ..\windows-build
-          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-          cd ..\windows-build\
-          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+       - name: create seamly2d-installer.exe
+         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+         # uses parameters in seamly2d-installer.nsi to create the installer exe
+         run: |
+           mkdir ..\windows-build
+           Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+           Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+           Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+           cd ..\windows-build\
+           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
       - name: Authenticate to Google Cloud (for signing)
         uses: google-github-actions/auth@v2
