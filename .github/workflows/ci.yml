@@ -8,14 +8,14 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - develop
+    - qt6-ci-fix
   pull_request:
 
 permissions:
   contents: write
 
 env:
-  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.2.0' # quotes required or YAML parser will interpret as float
 
 jobs:
 
@@ -38,7 +38,7 @@ jobs:
 
   linux:
     name: 'Linux: Build AppImage'
-    runs-on: ubuntu-18.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
+    runs-on: ubuntu-20.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
     needs: version
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
@@ -53,14 +53,19 @@ jobs:
           sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo apt-get update
+          sudo apt-get install libc6
 
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
+          dir: .
           cache: true
+          modules: qt5compat
 
       - name: update version
         run: |
+          chmod +x ./scripts/version.sh
           ./scripts/version.sh ${VERSION_NUMBER}
 
       - name: build Seamly2D appimage
@@ -84,7 +89,7 @@ jobs:
   linux-test:
     if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
@@ -128,9 +133,37 @@ jobs:
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: make Seamly2D for macos
+      - name: setup signing and notarization
+        env:
+          KEYCHAIN_FILE: ~/seamly2d.keychain
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        if: ${{ env.APPLE_SIGN_IDENTITY }}
         run: |
-          qmake Seamly2D.pro -config release CONFIG+=noTests
+          security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          security set-keychain-settings $KEYCHAIN_FILE
+          security list-keychains -d user -s $KEYCHAIN_FILE
+          echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
+          security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
+          security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
+
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
+          echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
+          echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
+          echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
+
+      - name: make Seamly2D for macos
+        env:
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        run: |
+          # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+          if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
+            qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
+          else
+            qmake Seamly2D.pro -config release CONFIG+=noTests
+          fi
           make -j$(sysctl -n hw.logicalcpu)
 
       - uses: actions/upload-artifact@v3
