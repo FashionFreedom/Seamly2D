@@ -5,10 +5,10 @@ name: CI
 on:
   schedule:
     - cron: '30 1 * * MON'
-  # workflow_dispatch:
-  # push:
-  #   branches:
-  #   - qt6-ci-fix-missing-files
+  workflow_dispatch:
+  push:
+    branches:
+    - qt6-ci-fix-missing-files
   pull_request:
 
 permissions:
@@ -115,147 +115,147 @@ jobs:
         run: |
           xvfb-run -a make check
 
-  macos:
-    name: 'macOS: Build'
-    runs-on: macos-latest
-    needs: version
-    env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+  # macos:
+  #   name: 'macOS: Build'
+  #   runs-on: macos-latest
+  #   needs: version
+  #   env:
+  #     VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
-    steps:
-      - uses: actions/checkout@v3
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - uses: jurplel/install-qt-action@v3
-        with:
-          version: ${{ env.QT_VERSION }}
-          cache: true
-          modules: qt5compat
+  #     - uses: jurplel/install-qt-action@v3
+  #       with:
+  #         version: ${{ env.QT_VERSION }}
+  #         cache: true
+  #         modules: qt5compat
 
-      - name: update version
-        run: |
-          ./scripts/version.sh ${VERSION_NUMBER}
+  #     - name: update version
+  #       run: |
+  #         ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: setup signing and notarization
-        env:
-          KEYCHAIN_FILE: ~/seamly2d.keychain
-          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
-        if: ${{ env.APPLE_SIGN_IDENTITY }}
-        run: |
-          security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
-          security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
-          security set-keychain-settings $KEYCHAIN_FILE
-          security list-keychains -d user -s $KEYCHAIN_FILE
-          echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
-          security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
-          security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
-          echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
+  #     - name: setup signing and notarization
+  #       env:
+  #         KEYCHAIN_FILE: ~/seamly2d.keychain
+  #         APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+  #       if: ${{ env.APPLE_SIGN_IDENTITY }}
+  #       run: |
+  #         security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+  #         security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+  #         security set-keychain-settings $KEYCHAIN_FILE
+  #         security list-keychains -d user -s $KEYCHAIN_FILE
+  #         echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
+  #         security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
+  #         security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+  #         echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
 
-          mkdir -p ~/private_keys/
-          echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
-          echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
-          echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
-          echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
+  #         mkdir -p ~/private_keys/
+  #         echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
+  #         echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
+  #         echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
+  #         echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
 
-      - name: make Seamly2D for macos
-        env:
-          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
-        run: |
-          # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
-          if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
-            qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
-          else
-            qmake Seamly2D.pro -config release CONFIG+=noTests
-          fi
-          make -j$(sysctl -n hw.logicalcpu)
+  #     - name: make Seamly2D for macos
+  #       env:
+  #         APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+  #       run: |
+  #         # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+  #         if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
+  #           qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
+  #         else
+  #           qmake Seamly2D.pro -config release CONFIG+=noTests
+  #         fi
+  #         make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Seamly2D-macos.zip
-          path: out/Seamly2D-macos.zip
-          if-no-files-found: error
+  #     - uses: actions/upload-artifact@v3
+  #       with:
+  #         name: Seamly2D-macos.zip
+  #         path: out/Seamly2D-macos.zip
+  #         if-no-files-found: error
 
-  windows:
-    name: 'Windows: Build'
-    runs-on: windows-latest
-    needs: version
-    env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+  # windows:
+  #   name: 'Windows: Build'
+  #   runs-on: windows-latest
+  #   needs: version
+  #   env:
+  #     VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
-    steps:
-      - uses: actions/checkout@v3
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          # use Visual C++ 2022 latest, 14.34.xxxx
-          toolset: '14.34'
+  #     - name: install msvc
+  #       uses: ilammy/msvc-dev-cmd@v1
+  #       with:
+  #         # use Visual C++ 2022 latest, 14.34.xxxx
+  #         toolset: '14.34'
 
-      - uses: jurplel/install-qt-action@v3
-        with:
-          version: ${{ env.QT_VERSION }}
-          cache: true
-          modules: qt5compat
+  #     - uses: jurplel/install-qt-action@v3
+  #       with:
+  #         version: ${{ env.QT_VERSION }}
+  #         cache: true
+  #         modules: qt5compat
 
-      - name: update version
-        shell: bash
-        run: |
-          ./scripts/version.sh ${VERSION_NUMBER}
+  #     - name: update version
+  #       shell: bash
+  #       run: |
+  #         ./scripts/version.sh ${VERSION_NUMBER}
 
-      - name: make seamly2d.exe and seamlyme.exe
-        run: |
-          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-          nmake
+  #     - name: make seamly2d.exe and seamlyme.exe
+  #       run: |
+  #         qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+  #         nmake
 
-      - name: create seamly2d-installer.exe
-        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-        # uses parameters in seamly2d-installer.nsi to create the installer exe
-        run: |
-          mkdir ..\windows-build
-          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-          cd ..\windows-build\
-          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+  #     - name: create seamly2d-installer.exe
+  #       # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+  #       # uses parameters in seamly2d-installer.nsi to create the installer exe
+  #       run: |
+  #         mkdir ..\windows-build
+  #         Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+  #         Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+  #         Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+  #         cd ..\windows-build\
+  #         & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
-      - name: pack installer file into .zip
-        run: |
-          cd ..\windows-build\
-          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
-          copy Seamly2D-windows.zip ..\Seamly2D\
+  #     - name: pack installer file into .zip
+  #       run: |
+  #         cd ..\windows-build\
+  #         C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
+  #         copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Seamly2D-windows.zip
-          path: Seamly2D-windows.zip
-          if-no-files-found: error
+  #     - uses: actions/upload-artifact@v3
+  #       with:
+  #         name: Seamly2D-windows.zip
+  #         path: Seamly2D-windows.zip
+  #         if-no-files-found: error
 
-  publish:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
-    runs-on: ubuntu-latest
-    needs: [version, windows, linux, macos]
-    env:
-      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+  # publish:
+  #   if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+  #   runs-on: ubuntu-latest
+  #   needs: [version, windows, linux, macos]
+  #   env:
+  #     VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v3
-        with:
-          name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v3
-        with:
-          name: Seamly2D-windows.zip
-      - uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v${{ env.VERSION_NUMBER }}
-          name: ${{ env.VERSION_NUMBER }}
-          generate_release_notes: true
-          fail_on_unmatched_files: true
-          # push event is triggered after pull request is merged, and in these cases mark as prerelease
-          # all other (schedule and manual) are not marked as prerelease
-          prerelease: ${{ github.event_name == 'push' }}
-          files: |
-            Seamly2D-x86_64.AppImage
-            Seamly2D-macos.zip
-            Seamly2D-windows.zip
+  #   steps:
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: Seamly2D-x86_64.AppImage
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: Seamly2D-macos.zip
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: Seamly2D-windows.zip
+  #     - uses: softprops/action-gh-release@v1
+  #       with:
+  #         tag_name: v${{ env.VERSION_NUMBER }}
+  #         name: ${{ env.VERSION_NUMBER }}
+  #         generate_release_notes: true
+  #         fail_on_unmatched_files: true
+  #         # push event is triggered after pull request is merged, and in these cases mark as prerelease
+  #         # all other (schedule and manual) are not marked as prerelease
+  #         prerelease: ${{ github.event_name == 'push' }}
+  #         files: |
+  #           Seamly2D-x86_64.AppImage
+  #           Seamly2D-macos.zip
+  #           Seamly2D-windows.zip
