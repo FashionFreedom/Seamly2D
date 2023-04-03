@@ -91,7 +91,7 @@ jobs:
           if-no-files-found: error
 
   linux-test:
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-22.04
 
@@ -102,6 +102,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
+          modules: qt5compat
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
