@@ -5,10 +5,10 @@ name: CI
 on:
   schedule:
     - cron: '30 1 * * MON'
-  workflow_dispatch:
-  push:
-    branches:
-    - qt6-ci-fix-missing-files
+  # workflow_dispatch:
+  # push:
+  #   branches:
+  #   - qt6-ci-fix-missing-files
   pull_request:
 
 permissions:
@@ -49,7 +49,7 @@ jobs:
       - name: install appimage dependencies
         run: |
           sudo apt update && sudo apt install -y libfuse2
-          sudo apt install -y libxkbcommon-dev
+          sudo apt install -y libxkbcommon-x11-0
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
