@@ -11,6 +11,7 @@ on:
     - develop
     - test
     - qt6-ci-fix
+    - qt6-ci-fix-missing-files
   pull_request:
 
 permissions:
