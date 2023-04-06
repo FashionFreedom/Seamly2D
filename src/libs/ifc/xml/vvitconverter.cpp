@@ -118,19 +118,19 @@ void VVITConverter::ApplyPatches()
     {
         case (0x000200):
             ToV0_3_0();
-            // ValidateXML(XSDSchema(0x000300), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000300), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000300):
             ToV0_3_1();
-            // ValidateXML(XSDSchema(0x000301), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000301), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000301):
             ToV0_3_2();
-            // ValidateXML(XSDSchema(0x000302), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000302), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000302):
             ToV0_3_3();
-            // ValidateXML(XSDSchema(0x000303), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000303), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000303):
             break;
