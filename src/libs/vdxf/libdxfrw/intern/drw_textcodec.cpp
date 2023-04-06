@@ -3,7 +3,6 @@
 #include <iomanip>
 #include <algorithm>
 #include <QString>
-//#include <QTextCodec>
 #include <QStringEncoder>
 #include <QStringDecoder>
 #include <QStringConverter>

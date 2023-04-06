@@ -116,7 +116,7 @@ public:
     const QString&     ValidInfixOprtChars() const;
     void               SetArgSep(char_type cArgSep);
     QChar              GetArgSep() const;
-    void Q_NORETURN    Error(EErrorCodes a_iErrc, int a_iPos = -1, const QString &a_sTok = QString() ) const;
+    Q_NORETURN void    Error(EErrorCodes a_iErrc, int a_iPos = -1, const QString &a_sTok = QString() ) const;
 
     template<typename T>
     void DefineFun(const QString &a_strName, T a_pFun, bool a_bAllowOpt = true);
