@@ -4,7 +4,7 @@
 #include <string>
 #include <QtGlobal>
 
-class QStringConverter;
+#include <QStringConverter>
 
 class DRW_TextCodec
 {

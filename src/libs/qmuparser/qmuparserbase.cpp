@@ -1642,7 +1642,7 @@ qreal QmuParserBase::ParseString() const
 * @param a_sTok [in] The token string representation associated with the error.
 * @throw ParserException always throws thats the only purpose of this function.
 */
-void Q_NORETURN QmuParserBase::Error(EErrorCodes a_iErrc, int a_iPos, const QString &a_sTok) const
+Q_NORETURN void QmuParserBase::Error(EErrorCodes a_iErrc, int a_iPos, const QString &a_sTok) const
 {
     throw qmu::QmuParserError (a_iErrc, a_sTok, m_pTokenReader->GetExpr(), a_iPos);
 }
