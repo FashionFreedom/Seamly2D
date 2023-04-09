@@ -32,12 +32,16 @@ win32{
 # customer's computer and tried interfacing with it. The version it found was too old though (from Qt 5.2 onwards v1.0.0
 # or later is required).
 #
-# Our solution was to distribute the OpenSSL DLLs along with our application (~1.65 MB). The alternative is to compile
+# Our solution was to distribute the OpenSSL DLLs along with our application (~7 MB). The alternative is to compile
 # Qt from scratch without OpenSSL support.
+#
+# Source of the openssl binaries: http://wiki.overbyte.eu/wiki/index.php/ICS_Download
 win32 {
     INSTALL_OPENSSL += \
                        ../../../dist/win/libcrypto-1_1-x64.dll \
-                       ../../../dist/win/libssl-1_1-x64.dll
+                       ../../../dist/win/libcrypto-1_1.dll \
+                       ../../../dist/win/libssl-1_1-x64.dll \
+                       ../../../dist/win/libssl-1_1.dll
 }
 
 CONFIG(debug, debug|release){
