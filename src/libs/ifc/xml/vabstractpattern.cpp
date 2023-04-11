@@ -1617,6 +1617,22 @@ QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId, const QStri
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QVector<quint32> VAbstractPattern::getDartItems(const quint32 &toolId)
+{
+    QVector<quint32> items;
+    quint32 objId;
+    const QDomElement domElement = elementById(toolId);
+
+    objId = VDomDocument::GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
+    items.append(objId);
+
+    objId = VDomDocument::GetParametrUInt(domElement, AttrPoint2, NULL_ID_STR);
+    items.append(objId);
+
+    return items;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief haveLiteChange we have unsaved change.
  */

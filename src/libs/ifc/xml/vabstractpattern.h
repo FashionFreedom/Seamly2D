@@ -217,6 +217,7 @@ public:
     void                           SetVersion();
 
     QVector<quint32>               getOpItems(const quint32 &toolId, const QString &itemType);
+    QVector<quint32>               getDartItems(const quint32 &toolId);
 
     bool                           IsModified() const;
     void                           SetModified(bool modified);

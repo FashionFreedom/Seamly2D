@@ -753,6 +753,25 @@ QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GO
         {
             switch (static_cast<int>(record.getTypeTool()))
             {
+                case 42:    //Tool::True Darts
+                {
+                    QVector<quint32> list = qApp->getCurrentDocument()->getDartItems(recId);
+                    for (qint32 j = 0; j < list.size(); ++j)
+                    {
+                        quint32 id = list.at(j);
+                            VToolRecord newRecord = VToolRecord(id, record.getTypeTool(),
+                                                        qApp->getCurrentDocument()->getActiveDraftBlockName());
+
+                        const QHash<quint32, QSharedPointer<VGObject> > *objs = m_data->DataGObjects();
+                        if (objs->contains(id)) //Avoid badId Get GObject only if not a line tool which is not an object
+                        {
+                            QSharedPointer<VGObject> obj = m_data->GetGObject(id);
+                            objects.insert(id, obj);
+                        }
+                    }
+                    break;
+                }
+
                 case 45:    //Tool::Rotation
                 case 46:    //Tool::MirrorByLine
                 case 47:    //Tool::MirrorByAxis
