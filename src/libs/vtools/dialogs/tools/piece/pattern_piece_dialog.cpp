@@ -76,7 +76,7 @@
 #include <QMenu>
 #include <QPixmap>
 #include <QScreen>
-// #include <QSound>
+#include <QSoundEffect>
 #include <QTimer>
 #include <QtNumeric>
 
@@ -149,8 +149,10 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     , m_saWidth(0)
     , m_patternLabelLines()
     , m_pieceLabelLines()
-    //, m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
+
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/new_piece.png"));

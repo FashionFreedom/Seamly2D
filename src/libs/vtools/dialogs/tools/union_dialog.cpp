@@ -79,8 +79,10 @@ UnionDialog::UnionDialog(const VContainer *data, const quint32 &toolId, QWidget 
     , numberP(0)
     , p1(NULL_ID)
     , p2(NULL_ID)
-    // , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
+
     ui->setupUi(this);
     InitOkCancel(ui);
 }
@@ -170,7 +172,7 @@ void UnionDialog::chosenPiece(const quint32 &id, const SceneObject &type, quint3
     {
         if (type == SceneObject::Piece)
         {
-            // m_beep->play();
+            m_beep->play();
             if (checkPiece(id))
             {
                 pieceId = id;

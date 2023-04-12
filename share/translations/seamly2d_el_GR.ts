@@ -11443,7 +11443,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>microwave.beep</source>
+        <source>microwave_beep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
