@@ -81,6 +81,8 @@
 
 #include <xercesc/parsers/XercesDOMParser.hpp>
 #include <xercesc/framework/MemBufInputSource.hpp>
+#include <xercesc/sax/ErrorHandler.hpp>
+#include <xercesc/sax/SAXParseException.hpp>
 
 namespace
 {
@@ -575,6 +577,39 @@ void VDomDocument::CollectId(const QDomElement &node, QVector<quint32> &vector) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+class CErrorHandler : public xercesc::ErrorHandler
+{
+public:
+   void warning(const xercesc::SAXParseException& ex);
+   void error(const xercesc::SAXParseException& ex);
+   void fatalError(const xercesc::SAXParseException& ex);
+   void resetErrors();
+private:
+   void throwException(const xercesc::SAXParseException& ex);
+};
+void CErrorHandler::throwException(const xercesc::SAXParseException& ex)
+{
+   char* message = xercesc::XMLString::transcode(ex.getMessage());
+   const QString errorMsg(message);
+   throw VException(errorMsg);
+}
+void CErrorHandler::warning(const xercesc::SAXParseException& ex)
+{
+   throwException(ex);
+}
+void CErrorHandler::error(const xercesc::SAXParseException& ex)
+{
+   throwException(ex);
+}
+void CErrorHandler::fatalError(const xercesc::SAXParseException& ex)
+{
+   throwException(ex);
+}
+void CErrorHandler::resetErrors()
+{
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ValidateXML validate xml file by xsd schema.
  * @param schema path to schema file.
@@ -589,33 +624,42 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
     xercesc::XercesDOMParser* domParser;
     domParser = new xercesc::XercesDOMParser();
 
+    xercesc::ErrorHandler *handler = new CErrorHandler();
+
     QFile fileSchema(schema);
     if (fileSchema.open(QIODevice::ReadOnly) == false)
     {
         const QString errorMsg(tr("Can't open schema file %1:\n%2.").arg(schema).arg(fileSchema.errorString()));
         throw VException(errorMsg);
     }
-    qCDebug(vXML, "Schema loaded.");
 
     QTextStream in(&fileSchema);
     std::string fileSchemaString = in.readAll().toStdString();
     fileSchema.close();
 
-    xercesc::MemBufInputSource memBuffer((XMLByte*)fileSchemaString.c_str(), fileSchemaString.size(), "xsd");
-    if (domParser->loadGrammar(memBuffer, xercesc::Grammar::SchemaGrammarType) == NULL)
+    xercesc::MemBufInputSource memBuffer((XMLByte*)fileSchemaString.c_str(), fileSchemaString.size(), "/schema.xsd");
+    xercesc::Grammar* loadedSchema = domParser->loadGrammar(memBuffer, xercesc::Grammar::SchemaGrammarType, true);
+    if (loadedSchema == NULL)
     {
         const QString errorMsg(tr("Couldn't load schema"));
         throw VException(errorMsg);
     }
+    qCDebug(vXML, "Schema loaded.");
 
-    domParser->setValidationScheme(xercesc::XercesDOMParser::Val_Auto);
-    domParser->setDoNamespaces(true);
-    domParser->setDoSchema(true);
-    domParser->setValidationConstraintFatal(true);
+    domParser->setLoadSchema(false);
+    domParser->useCachedGrammarInParse(true);
     domParser->setExternalNoNamespaceSchemaLocation("");
 
-    domParser->parse(xercesc::XMLString::transcode(fileName.toStdString().c_str()));
+    domParser->setDoNamespaces(true);
+    domParser->setDoSchema(true);
+    domParser->setValidationSchemaFullChecking(true);
 
+    domParser->setValidationScheme(xercesc::XercesDOMParser::Val_Always);
+    domParser->setValidationConstraintFatal(true);
+    domParser->setExitOnFirstFatalError(true);
+    domParser->setErrorHandler(handler);
+
+    domParser->parse(xercesc::XMLString::transcode(fileName.toStdString().c_str()));
     if (domParser->getErrorCount() != 0) {
         const QString errorMsg(tr("Validation error file %1").arg(fileName));
         throw VException(errorMsg);
