@@ -61,7 +61,7 @@
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
-//#include <QSound>
+#include <QSoundEffect>
 #include <QTimer>
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -112,8 +112,10 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     }
     connect(ui->selectionSound_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
-        m_selectionSoundChanged = true;        
-        // QSound::play("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav");
+        m_selectionSoundChanged = true;
+        QSoundEffect effect;
+        effect.setSource(QUrl("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav"));
+        effect.play();
     });
 
     // Warnings
