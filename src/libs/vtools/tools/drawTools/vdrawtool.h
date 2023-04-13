@@ -221,7 +221,7 @@ void VDrawTool::ContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 itemI
 
     if(not groupsNotContainingItem.empty())
     {
-        QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.PNG"), tr("Add Group Object"));
+        QMenu *menuAddGroupItem = menu.addMenu(QIcon("://icon/32x32/add.png"), tr("Add Group Object"));
         QStringList list = QStringList(groupsNotContainingItem.values());
         list.sort(Qt::CaseInsensitive);
 
