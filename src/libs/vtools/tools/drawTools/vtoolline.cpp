@@ -116,6 +116,7 @@ void VToolLine::setDialog()
     SCASSERT(not dialogTool.isNull())
     dialogTool->setFirstPoint(firstPoint);
     dialogTool->setSecondPoint(secondPoint);
+    dialogTool->setLineName();
     dialogTool->setLineType(m_lineType);
     dialogTool->setLineWeight(m_lineWeight);
     dialogTool->setLineColor(lineColor);

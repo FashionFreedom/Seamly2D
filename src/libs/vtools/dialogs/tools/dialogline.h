@@ -77,6 +77,8 @@ public:
     quint32        getSecondPoint() const;
     void           setSecondPoint(const quint32 &value);
 
+    void           setLineName();
+
     QString        getLineType() const;
     void           setLineType(const QString &value);
 
