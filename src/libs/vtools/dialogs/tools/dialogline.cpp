@@ -102,8 +102,6 @@ DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *p
 
     number = 0;
 
-    ui->name_LineEdit->setText(tr("Line_") + ui->comboBoxFirstPoint->currentText() +
-                                  "_" + ui->comboBoxSecondPoint->currentText());
     connect(ui->comboBoxFirstPoint,  &QComboBox::currentTextChanged, this, &DialogLine::PointNameChanged);
     connect(ui->comboBoxSecondPoint, &QComboBox::currentTextChanged, this, &DialogLine::PointNameChanged);
 
@@ -128,6 +126,17 @@ void DialogLine::setSecondPoint(const quint32 &value)
     VisToolLine *line = qobject_cast<VisToolLine *>(vis);
     SCASSERT(line != nullptr)
     line->setPoint2Id(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineName set the name of the line
+ * @param value id
+ */
+void DialogLine::setLineName()
+{
+    ui->name_LineEdit->setText(tr("Line_") + ui->comboBoxFirstPoint->currentText() +
+                                  "_" + ui->comboBoxSecondPoint->currentText());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
