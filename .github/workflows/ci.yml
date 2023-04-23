@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - qt6-ci-fix-missing-files
+    - qt6-ci
   pull_request:
 
 permissions:
