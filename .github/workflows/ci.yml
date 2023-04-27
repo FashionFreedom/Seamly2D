@@ -88,7 +88,7 @@ jobs:
           if-no-files-found: error
 
   linux-test:
-    if: github.event_name == 'pull_request'
+    # if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-20.04
 
