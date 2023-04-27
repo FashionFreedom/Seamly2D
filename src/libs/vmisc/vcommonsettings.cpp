@@ -57,7 +57,6 @@
 #include <QFont>
 #include <QLocale>
 #include <QMessageLogger>
-// #include <QSound>
 #include <QString>
 #include <QVariant>
 #include <QtDebug>

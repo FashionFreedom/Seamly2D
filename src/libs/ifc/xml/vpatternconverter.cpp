@@ -345,163 +345,163 @@ void VPatternConverter::ApplyPatches()
     {
         case (0x000100):
             toVersion0_1_1();
-            // ValidateXML(XSDSchema(0x000101), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000101), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000101):
             toVersion0_1_2();
-            // ValidateXML(XSDSchema(0x000102), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000102), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000102):
             toVersion0_1_3();
-            // ValidateXML(XSDSchema(0x000103), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000103), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000103):
             toVersion0_1_4();
-            // ValidateXML(XSDSchema(0x000104), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000104), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000104):
             toVersion0_2_0();
-            // ValidateXML(XSDSchema(0x000200), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000200), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000200):
             toVersion0_2_1();
-            // ValidateXML(XSDSchema(0x000201), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000201), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000201):
             toVersion0_2_2();
-            // ValidateXML(XSDSchema(0x000202), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000202), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000202):
             toVersion0_2_3();
-            // ValidateXML(XSDSchema(0x000203), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000203), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000203):
             toVersion0_2_4();
-            // ValidateXML(XSDSchema(0x000204), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000204), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000204):
             toVersion0_2_5();
-            // ValidateXML(XSDSchema(0x000205), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000205), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000205):
             toVersion0_2_6();
-            // ValidateXML(XSDSchema(0x000206), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000206), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000206):
             toVersion0_2_7();
-            // ValidateXML(XSDSchema(0x000207), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000207), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000207):
             toVersion0_3_0();
-            // ValidateXML(XSDSchema(0x000300), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000300), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000300):
             toVersion0_3_1();
-            // ValidateXML(XSDSchema(0x000301), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000301), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000301):
             toVersion0_3_2();
-            // ValidateXML(XSDSchema(0x000302), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000302), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000302):
             toVersion0_3_3();
-            // ValidateXML(XSDSchema(0x000303), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000303), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000303):
             toVersion0_3_4();
-            // ValidateXML(XSDSchema(0x000304), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000304), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000304):
             toVersion0_3_5();
-            // ValidateXML(XSDSchema(0x000305), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000305), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000305):
             toVersion0_3_6();
-            // ValidateXML(XSDSchema(0x000306), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000306), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000306):
             toVersion0_3_7();
-            // ValidateXML(XSDSchema(0x000307), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000307), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000307):
             toVersion0_3_8();
-            // ValidateXML(XSDSchema(0x000308), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000308), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000308):
             toVersion0_3_9();
-            // ValidateXML(XSDSchema(0x000309), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000309), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000309):
             toVersion0_4_0();
-            // ValidateXML(XSDSchema(0x000400), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000400), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000400):
             toVersion0_4_1();
-            // ValidateXML(XSDSchema(0x000401), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000401), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000401):
             toVersion0_4_2();
-            // ValidateXML(XSDSchema(0x000402), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000402), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000402):
             toVersion0_4_3();
-            // ValidateXML(XSDSchema(0x000403), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000403), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000403):
             toVersion0_4_4();
-            // ValidateXML(XSDSchema(0x000404), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000404), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000404):
             toVersion0_4_5();
-            // ValidateXML(XSDSchema(0x000405), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000405), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000405):
             toVersion0_4_6();
-            // ValidateXML(XSDSchema(0x000406), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000406), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000406):
             toVersion0_4_7();
-            // ValidateXML(XSDSchema(0x000407), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000407), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000407):
             toVersion0_4_8();
-            // ValidateXML(XSDSchema(0x000408), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000408), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000408):
             toVersion0_5_0();
-            // ValidateXML(XSDSchema(0x000500), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000500), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000500):
             toVersion0_5_1();
-            // ValidateXML(XSDSchema(0x000501), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000501), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000501):
             toVersion0_6_0();
-            // ValidateXML(XSDSchema(0x000600), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000600), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000600):
             toVersion0_6_1();
-            // ValidateXML(XSDSchema(0x000601), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000601), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000601):
             toVersion0_6_2();
-            // ValidateXML(XSDSchema(0x000602), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000602), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000602):
             toVersion0_6_3();
-            // ValidateXML(XSDSchema(0x000603), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000603), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000603):
             toVersion0_6_4();
-            // ValidateXML(XSDSchema(0x000604), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000604), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000604):
             toVersion0_6_5();
-            // ValidateXML(XSDSchema(0x000605), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000605), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000605):
             toVersion0_6_6();
-            // ValidateXML(XSDSchema(0x000606), m_convertedFileName);
+            ValidateXML(XSDSchema(0x000606), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000606):
             break;

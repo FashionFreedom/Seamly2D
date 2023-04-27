@@ -56,7 +56,7 @@
 #include "dialogtool.h"
 #include "../vpatterndb/vpiecenode.h"
 
-// #include <QSound>
+#include <QSoundEffect>
 
 class VPieceNode;
 
@@ -98,7 +98,7 @@ private:
     QVector<VPieceNode>   m_nodes;
     bool                  m_nodeFlag;
     bool                  m_piecesFlag;
-    // QSound               *m_beep;
+    QSoundEffect          *m_beep;
     void                  validatePieces();
     void                  validateNodes();
     quint32               getLastNodeId() const;

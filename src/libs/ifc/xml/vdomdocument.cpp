@@ -63,7 +63,6 @@
 #include "../vmisc/logging.h"
 #include "../ifcdef.h"
 
-// #include <QAbstractMessageHandler>
 #include <QByteArray>
 #include <QDomNodeList>
 #include <QDomText>
@@ -71,17 +70,19 @@
 #include <QIODevice>
 #include <QMessageLogger>
 #include <QObject>
-// #include <QSourceLocation>
 #include <QStringList>
 #include <QTemporaryFile>
 #include <QTextDocument>
 #include <QTextStream>
 #include <QUrl>
 #include <QVector>
-// #include <QXmlSchema>
-// #include <QXmlSchemaValidator>
 #include <QtDebug>
 #include <QXmlStreamWriter>
+
+#include <xercesc/parsers/XercesDOMParser.hpp>
+#include <xercesc/framework/MemBufInputSource.hpp>
+#include <xercesc/sax/ErrorHandler.hpp>
+#include <xercesc/sax/SAXParseException.hpp>
 
 namespace
 {
@@ -141,63 +142,6 @@ void SaveNodeCanonically(QXmlStreamWriter &stream, const QDomNode &domNode)
     }
 }
 }
-
-//This class need for validation pattern file using XSD shema
-// class MessageHandler : public QAbstractMessageHandler
-// {
-// public:
-//     MessageHandler()
-//         : QAbstractMessageHandler(),
-//           m_messageType(QtMsgType()),
-//           m_description(),
-//           m_sourceLocation(QSourceLocation())
-//     {}
-
-//     QString statusMessage() const;
-//     qint64  line() const;
-//     qint64  column() const;
-// protected:
-//     // cppcheck-suppress unusedFunction
-//     virtual void handleMessage(QtMsgType type, const QString &description,
-//                                const QUrl &identifier, const QSourceLocation &sourceLocation) Q_DECL_OVERRIDE;
-// private:
-//     QtMsgType       m_messageType;
-//     QString         m_description;
-//     QSourceLocation m_sourceLocation;
-// };
-
-//---------------------------------------------------------------------------------------------------------------------
-// QString MessageHandler::statusMessage() const
-// {
-//     QTextDocument doc;
-//     doc.setHtml(m_description);
-//     return doc.toPlainText();
-// }
-
-//---------------------------------------------------------------------------------------------------------------------
-// inline qint64  MessageHandler::line() const
-// {
-//     return m_sourceLocation.line();
-// }
-
-//---------------------------------------------------------------------------------------------------------------------
-// inline qint64  MessageHandler::column() const
-// {
-//     return m_sourceLocation.column();
-// }
-
-//---------------------------------------------------------------------------------------------------------------------
-// cppcheck-suppress unusedFunction
-// void MessageHandler::handleMessage(QtMsgType type, const QString &description, const QUrl &identifier,
-//                                    const QSourceLocation &sourceLocation)
-// {
-//     Q_UNUSED(type)
-//     Q_UNUSED(identifier)
-
-//     m_messageType = type;
-//     m_description = description;
-//     m_sourceLocation = sourceLocation;
-// }
 
 Q_LOGGING_CATEGORY(vXML, "v.xml")
 
@@ -633,70 +577,94 @@ void VDomDocument::CollectId(const QDomElement &node, QVector<quint32> &vector) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+class CErrorHandler : public xercesc::ErrorHandler
+{
+public:
+   void warning(const xercesc::SAXParseException& ex);
+   void error(const xercesc::SAXParseException& ex);
+   void fatalError(const xercesc::SAXParseException& ex);
+   void resetErrors();
+private:
+   void throwException(const xercesc::SAXParseException& ex);
+};
+void CErrorHandler::throwException(const xercesc::SAXParseException& ex)
+{
+   char* message = xercesc::XMLString::transcode(ex.getMessage());
+   const QString errorMsg(message);
+   throw VException(errorMsg);
+}
+void CErrorHandler::warning(const xercesc::SAXParseException& ex)
+{
+   throwException(ex);
+}
+void CErrorHandler::error(const xercesc::SAXParseException& ex)
+{
+   throwException(ex);
+}
+void CErrorHandler::fatalError(const xercesc::SAXParseException& ex)
+{
+   throwException(ex);
+}
+void CErrorHandler::resetErrors()
+{
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ValidateXML validate xml file by xsd schema.
  * @param schema path to schema file.
  * @param fileName name of xml file.
  */
-// void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
-// {
-//     qCDebug(vXML, "Validation xml file %s.", qUtf8Printable(fileName));
-//     QFile pattern(fileName);
-//     // cppcheck-suppress ConfigurationNotChecked
-//     if (pattern.open(QIODevice::ReadOnly) == false)
-//     {
-//         const QString errorMsg(tr("Can't open file %1:\n%2.").arg(fileName).arg(pattern.errorString()));
-//         throw VException(errorMsg);
-//     }
+void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
+{
+    qCDebug(vXML, "Validation xml file %s.", qUtf8Printable(fileName));
 
-//     QFile fileSchema(schema);
-//     // cppcheck-suppress ConfigurationNotChecked
-//     if (fileSchema.open(QIODevice::ReadOnly) == false)
-//     {
-//         pattern.close();
-//         const QString errorMsg(tr("Can't open schema file %1:\n%2.").arg(schema).arg(fileSchema.errorString()));
-//         throw VException(errorMsg);
-//     }
+    xercesc::XMLPlatformUtils::Initialize();
 
-//     MessageHandler messageHandler;
-//     QXmlSchema sch;
-//     sch.setMessageHandler(&messageHandler);
-//     if (sch.load(&fileSchema, QUrl::fromLocalFile(fileSchema.fileName()))==false)
-//     {
-//         pattern.close();
-//         fileSchema.close();
-//         VException e(messageHandler.statusMessage());
-//         e.AddMoreInformation(tr("Could not load schema file '%1'.").arg(fileSchema.fileName()));
-//         throw e;
-//     }
-//     qCDebug(vXML, "Schema loaded.");
+    xercesc::XercesDOMParser* domParser;
+    domParser = new xercesc::XercesDOMParser();
 
-//     bool errorOccurred = false;
-//     if (sch.isValid() == false)
-//     {
-//         errorOccurred = true;
-//     }
-//     else
-//     {
-//         QXmlSchemaValidator validator(sch);
-//         if (validator.validate(&pattern, QUrl::fromLocalFile(pattern.fileName())) == false)
-//         {
-//             errorOccurred = true;
-//         }
-//     }
+    xercesc::ErrorHandler *handler = new CErrorHandler();
 
-//     if (errorOccurred)
-//     {
-//         pattern.close();
-//         fileSchema.close();
-//         VException e(messageHandler.statusMessage());
-//         e.AddMoreInformation(tr("Validation error file %3 in line %1 column %2").arg(messageHandler.line())
-//                              .arg(messageHandler.column()).arg(fileName));
-//         throw e;
-//     }
-//     pattern.close();
-//     fileSchema.close();
-// }
+    QFile fileSchema(schema);
+    if (fileSchema.open(QIODevice::ReadOnly) == false)
+    {
+        const QString errorMsg(tr("Can't open schema file %1:\n%2.").arg(schema).arg(fileSchema.errorString()));
+        throw VException(errorMsg);
+    }
+
+    QTextStream in(&fileSchema);
+    std::string fileSchemaString = in.readAll().toStdString();
+    fileSchema.close();
+
+    xercesc::MemBufInputSource memBuffer((XMLByte*)fileSchemaString.c_str(), fileSchemaString.size(), "/schema.xsd");
+    xercesc::Grammar* loadedSchema = domParser->loadGrammar(memBuffer, xercesc::Grammar::SchemaGrammarType, true);
+    if (loadedSchema == NULL)
+    {
+        const QString errorMsg(tr("Couldn't load schema"));
+        throw VException(errorMsg);
+    }
+    qCDebug(vXML, "Schema loaded.");
+
+    domParser->setLoadSchema(false);
+    domParser->useCachedGrammarInParse(true);
+    domParser->setExternalNoNamespaceSchemaLocation("");
+
+    domParser->setDoNamespaces(true);
+    domParser->setDoSchema(true);
+    domParser->setValidationSchemaFullChecking(true);
+
+    domParser->setValidationScheme(xercesc::XercesDOMParser::Val_Always);
+    domParser->setValidationConstraintFatal(true);
+    domParser->setExitOnFirstFatalError(true);
+    domParser->setErrorHandler(handler);
+
+    domParser->parse(xercesc::XMLString::transcode(fileName.toStdString().c_str()));
+    if (domParser->getErrorCount() != 0) {
+        const QString errorMsg(tr("Validation error file %1").arg(fileName));
+        throw VException(errorMsg);
+    }
+}
 
 // //---------------------------------------------------------------------------------------------------------------------
 void VDomDocument::setXMLContent(const QString &fileName)
