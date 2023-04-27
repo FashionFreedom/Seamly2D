@@ -99,6 +99,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: install test build dependencies
+        run: |
+          sudo apt-get install libxerces-c-dev
+  
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
