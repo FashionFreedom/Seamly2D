@@ -25,7 +25,9 @@ win32{
     VCOPY = $$QMAKE_COPY /D
 }
 
-LIBS += -L/usr/lib/ -lxerces-c
+unix{
+    LIBS += -L/usr/lib/x86_64-linux-gnu/ -lxerces-c
+}
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
 # Copy of answer:
