@@ -115,6 +115,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y xvfb libxkbcommon-x11-0
+          sudo apt-get install libxerces-c-dev
 
       - name: run Seamly2D tests
         run: |
