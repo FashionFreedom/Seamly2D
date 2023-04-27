@@ -112,6 +112,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y xvfb
+          sudo apt-get install libxerces-c-dev
 
       - name: run Seamly2D tests
         run: |
