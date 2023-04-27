@@ -31,7 +31,8 @@ unix{
 
 win32{
     INCLUDEPATH += ../../../extern/xerces-c/include
-    LIBS += -L../../../extern/xerces-c/lib/ -lxerces-c_3D
+    LIBS += -L$$OUT_PWD/../../../extern/xerces-c/lib/ -lxerces-c_3D
+    PRE_TARGETDEPS += -L$$OUT_PWD/../../../extern/xerces-c/lib/ -lxerces-c_3D
 }
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
@@ -138,7 +139,7 @@ CONFIG(debug, debug|release){
     DVCS_HESH=$$system("git rev-parse --short=12 HEAD") #get SHA1 commit hash
     message("common.pri: Latest commit hash:" $${DVCS_HESH})
 
-    isEmpty(DVCS_HESH){       
+    isEmpty(DVCS_HESH){
        DVCS_HESH = \\\"unknown\\\" # if we can't find build revision left unknown.
     } else {
        DVCS_HESH=\\\"Git:$${DVCS_HESH}\\\"
