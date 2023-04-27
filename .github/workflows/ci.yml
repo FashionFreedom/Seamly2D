@@ -63,7 +63,7 @@ jobs:
           version: ${{ env.QT_VERSION }}
           dir: .
           cache: true
-          modules: qt5compat, qtmultimedia
+          modules: qt5compat qtmultimedia
 
       - name: update version
         run: |
@@ -100,7 +100,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qt5compat, qtmultimedia
+          modules: qt5compat qtmultimedia
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
@@ -136,7 +136,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qt5compat, qtmultimedia
+          modules: qt5compat qtmultimedia
 
       - name: update version
         run: |
@@ -201,7 +201,7 @@ jobs:
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
-          modules: qt5compat, qtmultimedia
+          modules: qt5compat qtmultimedia
 
       - name: update version
         shell: bash
