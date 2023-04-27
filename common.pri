@@ -29,6 +29,11 @@ unix{
     LIBS += -L/usr/lib/x86_64-linux-gnu/ -lxerces-c
 }
 
+win32{
+    INCLUDEPATH += ../../../extern/xerces-c/include
+    LIBS += -L../../../extern/xerces-c/lib/ -lxerces-c_3D.lib
+}
+
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
 # Copy of answer:
 # We occasionally had customers getting very similar warning messages but the software was also crashing.
