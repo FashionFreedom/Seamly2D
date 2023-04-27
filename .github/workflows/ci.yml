@@ -57,7 +57,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install libc6
           sudo apt-get install libxerces-c-dev
-          sudo apt-get install gstreamer1.0-qt6
+          sudo apt-get install libgstreamer-plugins-base1.0-dev
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -100,8 +100,8 @@ jobs:
       - name: install test build dependencies
         run: |
           sudo apt-get install libxerces-c-dev
-          sudo apt-get install gstreamer1.0-qt6
-  
+          sudo apt-get install libgstreamer-plugins-base1.0-dev
+
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
@@ -132,7 +132,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: install appimage dependencies
         run: |
           brew install xerces-c
