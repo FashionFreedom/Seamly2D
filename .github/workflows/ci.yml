@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 env:
-  QT_VERSION: '6.5.0' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.2.0' # quotes required or YAML parser will interpret as float
 
 jobs:
 
