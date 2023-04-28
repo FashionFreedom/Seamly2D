@@ -165,3 +165,7 @@ target_wrapper.sh
 # QT creator files
 .qtc_clangd/
 .vscode/
+.qmake.stash
+
+# Allow xerces lib
+!xerces-c_3D.lib
