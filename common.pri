@@ -26,7 +26,7 @@ win32{
 }
 
 unix{
-    LIBS += -L/usr/lib/x86_64-linux-gnu/ -lxerces-c usr/lib/x86_64-linux-gnu/libxerces-c.so
+    LIBS += -L/usr/lib/x86_64-linux-gnu/ -lxerces-c /usr/lib/x86_64-linux-gnu/libxerces-c.so
 }
 
 win32{
