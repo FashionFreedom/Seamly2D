@@ -206,6 +206,13 @@ win32 {
         openssl_path += $${PWD}/$$DIR
     }
     copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
+
+    for(DIR, INSTALL_XERCES) {
+        #add these absolute paths to a variable which
+        #ends up as 'mkcommands = path1 path2 path3 ...'
+        openssl_path += $${PWD}/$$DIR
+    }
+    copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
 }
 
 # When the GNU linker sees a library, it discards all symbols that it doesn't need.
