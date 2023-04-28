@@ -30,13 +30,14 @@ unix{
         INCLUDEPATH += ../../../extern/xerces-c/include
     } else {
         LIBS += -L/usr/lib/x86_64-linux-gnu/ -lxerces-c /usr/lib/x86_64-linux-gnu/libxerces-c.so
+        LD_LIBRARY_PATH += /usr/lib/x86_64-linux-gnu/
     }
 }
 
 win32{
     INCLUDEPATH += ../../../extern/xerces-c/include
     LIBS += -L$$_PRO_FILE_PWD_/../../../extern/xerces-c/lib/ -lxerces-c_3D
-    INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll \
+    INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll
 }
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
