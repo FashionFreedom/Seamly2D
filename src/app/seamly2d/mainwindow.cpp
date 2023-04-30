@@ -4015,7 +4015,7 @@ void MainWindow::Clear()
     CleanLayout();
     pieceList.clear(); // don't move to CleanLayout()
     qApp->getUndoStack()->clear();
-    toolProperties->ClearPropertyBrowser();
+    toolProperties->clearPropertyBrowser();
     toolProperties->itemClicked(nullptr);
 }
 
@@ -4043,7 +4043,7 @@ void MainWindow::FullParseFile()
 {
     qCDebug(vMainWindow, "Full parsing file");
 
-    toolProperties->ClearPropertyBrowser();
+    toolProperties->clearPropertyBrowser();
     try
     {
         SetEnabledGUI(true);
@@ -4942,7 +4942,7 @@ void MainWindow::CreateMenus()
     undoAction = qApp->getUndoStack()->createUndoAction(this, tr("&Undo"));
     undoAction->setShortcuts(undoShortcuts);
     undoAction->setIcon(QIcon::fromTheme("edit-undo"));
-    connect(undoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
+    connect(undoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
     ui->edit_Menu->addAction(undoAction);
     ui->edit_Toolbar->addAction(undoAction);
 
@@ -4954,7 +4954,7 @@ void MainWindow::CreateMenus()
     redoAction = qApp->getUndoStack()->createRedoAction(this, tr("&Redo"));
     redoAction->setShortcuts(redoShortcuts);
     redoAction->setIcon(QIcon::fromTheme("edit-redo"));
-    connect(redoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
+    connect(redoAction, &QAction::triggered, toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
     ui->edit_Menu->addAction(redoAction);
     ui->edit_Toolbar->addAction(redoAction);
 
@@ -5262,7 +5262,7 @@ void MainWindow::InitDocksContain()
     toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
-    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
+    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
     groupsWidget = new GroupsWidget(pattern, doc, this);
@@ -5789,7 +5789,7 @@ void MainWindow::CreateActions()
         {
             dialogTable = new DialogVariables(pattern, doc, this);
             connect(dialogTable.data(), &DialogVariables::updateProperties, toolProperties,
-                    &VToolOptionsPropertyBrowser::RefreshOptions);
+                    &VToolOptionsPropertyBrowser::refreshOptions);
             connect(dialogTable.data(), &DialogVariables::DialogClosed, this, [this]()
             {
                 ui->table_Action->setChecked(false);
@@ -6251,7 +6251,7 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
         connect(dialog.data(), &DialogPreferences::updateProperties,
-                toolProperties, &VToolOptionsPropertyBrowser::RefreshOptions);
+                toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
 
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
