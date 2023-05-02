@@ -145,6 +145,15 @@ DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
+# xerces library
+unix{
+    macx{
+
+    } else{
+        LIBS += /usr/lib/x86_64-linux-gnu/libxerces-c.so
+    }
+}
+
 SEAMLYME_TEST_FILES += \
     tst_seamlyme/keiko.vit \
     tst_seamlyme/empty.vit \
