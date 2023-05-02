@@ -25,13 +25,8 @@ win32{
     VCOPY = $$QMAKE_COPY /D
 }
 
-unix{
-    macx{
-        INCLUDEPATH += ../../../extern/xerces-c/include
-    } else {
-        LIBS += -L/usr/lib/x86_64-linux-gnu/ -lxerces-c /usr/lib/x86_64-linux-gnu/libxerces-c.so
-        LD_LIBRARY_PATH += /usr/lib/x86_64-linux-gnu/
-    }
+macx{
+    INCLUDEPATH += ../../../extern/xerces-c/include
 }
 
 win32{
