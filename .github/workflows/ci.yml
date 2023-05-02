@@ -96,8 +96,7 @@ jobs:
 
       - name: install test build dependencies
         run: |
-          sudo apt-get install libxerces-c-dev
-          sudo apt-get install libgstreamer-plugins-base1.0-dev
+          sudo apt-get install libxerces-c-dev libgstreamer-plugins-base1.0-dev libxkbcommon-x11-0 libxcb-composite0-dev -y
 
       - uses: jurplel/install-qt-action@v3
         with:
