@@ -731,6 +731,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 InitCurve(item.id, &(VAbstractTool::data), object->getType(), SceneObject::SplinePath);
                 break;
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+            default:
                 break;
         }
 QT_WARNING_POP

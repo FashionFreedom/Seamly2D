@@ -130,7 +130,7 @@ quint32 RowId(QListWidget *listWidget, int i)
  * @param data container with data
  * @param parent parent widget
  */
-DialogTool::DialogTool(const VContainer *data, const quint32 &toolId, QWidget *parent)
+DialogTool:: DialogTool(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : QDialog(parent),
       data(data),
       isInitialized(false),
@@ -422,7 +422,9 @@ void DialogTool::ChangeCurrentData(QComboBox *box, const QVariant &value) const
     const qint32 index = box->findData(value);
     if (index != -1)
     {
+        box->blockSignals(true);
         box->setCurrentIndex(index);
+        box->blockSignals(false);
     }
 }
 
@@ -856,7 +858,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
                     label->setText(qApp->LocaleToString(result) + " " +postfix);
                     flag = true;
                     ChangeColor(labelEditFormula, okColor);
-                    label->setToolTip(tr("Value"));
+                    label->setToolTip(tr("Result Value"));
                     emit ToolTip("");
                 }
             }

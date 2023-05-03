@@ -66,16 +66,19 @@ class VAbstractCurveData : public QSharedData
 public:
 
     VAbstractCurveData ()
-        : duplicate(0),
-          color(ColorBlack),
-          penStyle(LineTypeSolidLine)
+        : duplicate(0)
+        , color(ColorBlack)
+        , penStyle(LineTypeSolidLine)
+        , lineWeight("0.35")
     {}
 
     VAbstractCurveData(const VAbstractCurveData &curve)
-        : QSharedData(curve),
-          duplicate(curve.duplicate),
-          color(curve.color),
-          penStyle(curve.penStyle)
+        : QSharedData(curve)
+        , duplicate(curve.duplicate)
+        , color(curve.color)
+        , penStyle(curve.penStyle)
+        , lineWeight(curve.lineWeight)
+
     {}
 
     virtual ~VAbstractCurveData();
@@ -85,6 +88,7 @@ public:
 
     QString color;
     QString penStyle;
+    QString lineWeight;
 
 private:
     VAbstractCurveData &operator=(const VAbstractCurveData &) Q_DECL_EQ_DELETE;

@@ -131,9 +131,10 @@ IntersectCircleTangentTool *IntersectCircleTangentTool::Create(const quint32 _id
 
     if (point == QPointF())
     {
-        const QString msg = tr("<b><big>Can't find intersection point of</big></b><br>"
-                               "<b><big>circle and tangent</big></b><br><br>"
-                               "Using origin point as a place holder until pattern is corrected.");
+        const QString msg = tr("<b><big>Can't find intersection point %1 of</big></b><br>"
+                               "<b><big>Circle and Tangent</big></b><br><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName);
 
         QMessageBox msgBox(qApp->getMainWindow());
         msgBox.setWindowTitle(tr("Intersect Circle and Tangent"));

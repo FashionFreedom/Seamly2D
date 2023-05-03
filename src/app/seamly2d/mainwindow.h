@@ -1,26 +1,20 @@
-/***************************************************************************
- **  @file   mainwindow.h
+/******************************************************************************
+ *   @file   mainwindow.h
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
- **
- **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
+ **  @date   29 Mar, 2023
  **
  **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *****************************************************************************/
 
 /************************************************************************
  **
@@ -70,12 +64,12 @@ class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
 class DialogTool;
-class DialogHistory;
+class HistoryDialog;
 class CalculatorDialog;
 class DecimalChartDialog;
 class ShowInfoDialog;
 class ShortcutsDialog;
-class VWidgetGroups;
+class GroupsWidget;
 class PiecesWidget;
 class DraftToolBox;
 class PieceToolBox;
@@ -84,6 +78,7 @@ class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
 class MouseCoordinates;
+class PenToolBar;
 
 /**
  * @brief The MainWindow class main windows.
@@ -99,9 +94,19 @@ public:
 
 public slots:
     void ProcessCMD();
+    void penChanged(Pen pen);
 
     virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
+    virtual void updateGroups() Q_DECL_OVERRIDE;
     virtual void zoomToSelected() Q_DECL_OVERRIDE;
+    void         showAllGroups();
+    void         hideAllGroups();
+    void         lockAllGroups();
+    void         unlockAllGroups();
+    void         addGroupToList();
+    void         deleteGroupFromList();
+    void         editGroup();
+    void         addSelectedItemsToGroup();
 
 signals:
     void RefreshHistory();
@@ -226,7 +231,7 @@ private slots:
     void Open();
 
     void closeUnionDialog(int result);
-    void ClosedDialogGroup(int result);
+    void ClosedEditGroupDialog(int result);
     void ClosedDialogInternalPath(int result);
     void ClosedDialogAnchorPoint(int result);
     void ClosedInsertNodesDialog(int result);
@@ -234,6 +239,9 @@ private slots:
     void zoomToPrevious();
     void zoomToArea(bool checked);
     void zoomPan(bool checked);
+
+    void zoomToPoint(const QString& pointName);
+    void showZoomToPointDialog();
 
     void LoadIndividual();
     void LoadMultisize();
@@ -286,7 +294,7 @@ private:
 
     QPointer<DialogVariables>         dialogTable;
     QSharedPointer<DialogTool>        dialogTool;
-    QPointer<DialogHistory>           dialogHistory;
+    QPointer<HistoryDialog>           historyDialog;
 
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
@@ -314,11 +322,14 @@ private:
     QPointer<QLabel>                  gradationHeightsLabel;
     QPointer<QLabel>                  gradationSizesLabel;
     VToolOptionsPropertyBrowser      *toolProperties;
-    VWidgetGroups                    *groupsWidget;
-    PiecesWidget                   *patternPiecesWidget;
+    GroupsWidget                     *groupsWidget;
+    PiecesWidget                     *patternPiecesWidget;
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
+    PenToolBar                       *m_penToolBar; //!< for selecting the current pen
+    PenToolBar                       *m_penReset;
+    QComboBox                        *m_zoomToPointComboBox;
 
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
@@ -329,6 +340,7 @@ private:
     void                              initPointNameToolBar();
     void                              initToolsToolBar();
     void                              initToolBarVisibility();
+    void                              initPenToolBar();
     void                              updateToolBarVisibility();
     void                              setToolBarVisibility(QToolBar *toolbar, bool visible);
     void                              InitToolButtons();
@@ -390,7 +402,7 @@ private:
     void               InitAutoSave();
     QString            createDraftBlockName(const QString &text);
     QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
-    QComboBox          *SetGradationList(QLabel *label, const QStringList &list);
+    QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
     /**
      * @brief EndVisualization try show dialog after and working with tool visualization.
@@ -429,6 +441,10 @@ private:
     void               upDateScenes();
     void               updateViewToolbar();
     void               resetPanShortcuts();
+
+    QStringList        draftPointNamesList();
+
+    void               updateZoomToPointComboBox(QStringList namesList);
 
     bool               IgnoreLocking(int error, const QString &path);
 

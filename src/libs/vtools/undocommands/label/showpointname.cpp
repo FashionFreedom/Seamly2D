@@ -39,7 +39,7 @@ ShowPointName::ShowPointName(VAbstractPattern *doc, quint32 id, bool visible, QU
     , m_oldVisible(true)
     , m_scene(qApp->getCurrentScene())
 {
-    setText(tr("toggle label"));
+    setText(tr("toggle point visibility"));
 
     nodeId = id;
 

@@ -78,6 +78,7 @@ public:
     static VToolAlongLine *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                   VAbstractPattern *doc, VContainer *data);
     static VToolAlongLine *Create(const quint32 _id, const QString &pointName, const QString &typeLine,
+                                  const QString &lineWeight,
                                   const QString &lineColor, QString &formula, const quint32 &firstPointId,
                                   quint32 secondPointId, qreal mx, qreal my, bool showPointName,
                                   VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
@@ -112,7 +113,7 @@ private:
 
                          VToolAlongLine(VAbstractPattern *doc, VContainer *data, quint32 id, const QString &formula,
                                         const quint32 &firstPointId, const quint32 &secondPointId,
-                                        const QString &typeLine, const QString &lineColor,
+                                        const QString &typeLine, const QString &lineWeight, const QString &lineColor,
                                         const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };
 

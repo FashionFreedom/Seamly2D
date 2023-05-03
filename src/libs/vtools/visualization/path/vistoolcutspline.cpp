@@ -89,7 +89,7 @@ void VisToolCutSpline::RefreshGeometry()
     if (object1Id > NULL_ID)
     {
         const auto spl = Visualization::data->GeometricObject<VAbstractCubicBezier>(object1Id);
-        DrawPath(this, spl->GetPath(), spl->DirectionArrows(), supportColor, lineStyle, Qt::RoundCap);
+        DrawPath(this, spl->GetPath(), spl->DirectionArrows(), supportColor, lineStyle, lineWeight, Qt::RoundCap);
 
         if (not qFuzzyIsNull(length))
         {
@@ -104,8 +104,8 @@ void VisToolCutSpline::RefreshGeometry()
 
             DrawPoint(point, p, mainColor);
 
-            DrawPath(spl1, sp1.GetPath(), sp1.DirectionArrows(), Qt::darkGreen, lineStyle, Qt::RoundCap);
-            DrawPath(spl2, sp2.GetPath(), sp2.DirectionArrows(), Qt::darkRed, lineStyle, Qt::RoundCap);
+            DrawPath(spl1, sp1.GetPath(), sp1.DirectionArrows(), Qt::darkGreen, lineStyle, lineWeight, Qt::RoundCap);
+            DrawPath(spl2, sp2.GetPath(), sp2.DirectionArrows(), Qt::darkRed, lineStyle, lineWeight, Qt::RoundCap);
         }
     }
 }

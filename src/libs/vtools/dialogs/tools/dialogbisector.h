@@ -79,8 +79,14 @@ public:
 
     void               SetPointName(const QString &value);
 
-    QString            GetTypeLine() const;
-    void               SetTypeLine(const QString &value);
+    QString            getLineType() const;
+    void               setLineType(const QString &value);
+
+    QString            getLineWeight() const;
+    void               setLineWeight(const QString &value);
+
+    QString            getLineColor() const;
+    void               setLineColor(const QString &value);
 
     QString            GetFormula() const;
     void               SetFormula(const QString &value);
@@ -94,8 +100,6 @@ public:
     quint32            GetThirdPointId() const;
     void               SetThirdPointId(const quint32 &value);
 
-    QString            GetLineColor() const;
-    void               SetLineColor(const QString &value);
 public slots:
     virtual void       ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**

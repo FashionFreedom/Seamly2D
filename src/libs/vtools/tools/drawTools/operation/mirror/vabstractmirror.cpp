@@ -114,7 +114,11 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                 case GOType::CubicBezierPath:
                     dest.append(createCurveWithSegments<VCubicBezierPath>(id, objectId, fPoint, sPoint, suffix, data));
                     break;
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
                 case GOType::Unknown:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -162,6 +166,9 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
                     break;
             }
 QT_WARNING_POP

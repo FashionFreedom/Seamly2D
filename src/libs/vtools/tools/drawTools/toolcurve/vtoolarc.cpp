@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   vtoolarc.cpp
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtoolarc.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -66,7 +61,6 @@
 #include "../ifc/exception/vexception.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../ifc/ifcdef.h"
-#include "../vgeometry/varc.h"
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
@@ -107,16 +101,18 @@ VToolArc::VToolArc(VAbstractPattern *doc, VContainer *data, quint32 id, const So
  */
 void VToolArc::setDialog()
 {
-    SCASSERT(not m_dialog.isNull())
+    SCASSERT(!m_dialog.isNull())
     QSharedPointer<DialogArc> dialogTool = m_dialog.objectCast<DialogArc>();
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
-    dialogTool->SetCenter(arc->GetCenter().id());
-    dialogTool->SetF1(arc->GetFormulaF1());
-    dialogTool->SetF2(arc->GetFormulaF2());
-    dialogTool->SetRadius(arc->GetFormulaRadius());
-    dialogTool->SetColor(arc->GetColor());
-    dialogTool->SetPenStyle(arc->GetPenStyle());
+    dialogTool->setArc(*arc);
+    dialogTool->setCenter(arc->GetCenter().id());
+    dialogTool->setF1(arc->GetFormulaF1());
+    dialogTool->setF2(arc->GetFormulaF2());
+    dialogTool->setRadius(arc->GetFormulaRadius());
+    dialogTool->setLineColor(arc->getLineColor());
+    dialogTool->setLineWeight(arc->getLineWeight());
+    dialogTool->setPenStyle(arc->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -133,14 +129,15 @@ VToolArc* VToolArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogArc> dialogTool = dialog.objectCast<DialogArc>();
     SCASSERT(not dialogTool.isNull())
-    const quint32 center = dialogTool->GetCenter();
-    QString radius = dialogTool->GetRadius();
-    QString f1 = dialogTool->GetF1();
-    QString f2 = dialogTool->GetF2();
-    const QString color = dialogTool->GetColor();
-    const QString penStyle = dialogTool->GetPenStyle();
-    VToolArc* point = Create(0, center, radius, f1, f2, color, penStyle, scene, doc, data, Document::FullParse,
-                             Source::FromGui);
+    const quint32 center     = dialogTool->getCenter();
+    QString radius           = dialogTool->getRadius();
+    QString f1               = dialogTool->getF1();
+    QString f2               = dialogTool->getF2();
+    const QString color      = dialogTool->getLineColor();
+    const QString penStyle   = dialogTool->getPenStyle();
+    const QString lineWeight = dialogTool->getLineWeight();
+    VToolArc* point = Create(0, center, radius, f1, f2, color, penStyle, lineWeight, scene, doc, data,
+                             Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
         point->m_dialog = dialogTool;
@@ -163,8 +160,9 @@ VToolArc* VToolArc::Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene
  * @param typeCreation way we create this tool.
  */
 VToolArc* VToolArc::Create(const quint32 _id, const quint32 &center, QString &radius, QString &f1, QString &f2,
-                           const QString &color, const QString &penStyle, VMainGraphicsScene *scene,
-                           VAbstractPattern *doc, VContainer *data, const Document &parse, const Source &typeCreation)
+                           const QString &color, const QString &penStyle, const QString &lineWeight,
+                           VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
+                           const Document &parse, const Source &typeCreation)
 {
     qreal calcRadius = 0, calcF1 = 0, calcF2 = 0;
 
@@ -175,8 +173,9 @@ VToolArc* VToolArc::Create(const quint32 _id, const quint32 &center, QString &ra
 
     const VPointF c = *data->GeometricObject<VPointF>(center);
     VArc *arc = new VArc(c, calcRadius, radius, calcF1, f1, calcF2, f2 );
-    arc->SetColor(color);
+    arc->setLineColor(color);
     arc->SetPenStyle(penStyle);
+    arc->setLineWeight(lineWeight);
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {
@@ -327,6 +326,22 @@ void VToolArc::SetFormulaF2(const VFormula &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+VArc VToolArc::getArc() const
+{
+    auto arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
+    return *arc.data();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolArc::setArc(const VArc &arc)
+{
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    QSharedPointer<VArc> arc2 = qSharedPointerDynamicCast<VArc>(obj);
+    *arc2.data() = arc;
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolArc::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolArc>(show);
@@ -371,13 +386,15 @@ void VToolArc::SaveDialog(QDomElement &domElement)
 {
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogArc> dialogTool = m_dialog.objectCast<DialogArc>();
-    SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->GetCenter()));
-    doc->SetAttribute(domElement, AttrRadius, dialogTool->GetRadius());
-    doc->SetAttribute(domElement, AttrAngle1, dialogTool->GetF1());
-    doc->SetAttribute(domElement, AttrAngle2, dialogTool->GetF2());
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    SCASSERT(!dialogTool.isNull())
+    doc->SetAttribute(domElement, AttrType,       ToolType);
+    doc->SetAttribute(domElement, AttrCenter,     QString().setNum(dialogTool->getCenter()));
+    doc->SetAttribute(domElement, AttrRadius,     dialogTool->getRadius());
+    doc->SetAttribute(domElement, AttrAngle1,     dialogTool->getF1());
+    doc->SetAttribute(domElement, AttrAngle2,     dialogTool->getF2());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -410,6 +427,7 @@ void VToolArc::SetVisualization()
         visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
         visual->setF2(trVars->FormulaToUser(arc->GetFormulaF2(), qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(arc->GetPenStyle()));
+        visual->setLineWeight(arc->getLineWeight());
         visual->RefreshGeometry();
     }
 }

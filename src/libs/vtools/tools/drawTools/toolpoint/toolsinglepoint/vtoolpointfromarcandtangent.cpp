@@ -51,28 +51,29 @@
 
 #include "vtoolpointfromarcandtangent.h"
 
-#include <QLineF>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
-
-#include "../../../../dialogs/tools/dialogpointfromarcandtangent.h"
-#include "../../../../dialogs/tools/dialogtool.h"
-#include "../../../../visualization/visualization.h"
-#include "../../../../visualization/line/vistoolpointfromarcandtangent.h"
-#include "../ifc/exception/vexception.h"
+#include "vtoolsinglepoint.h"
 #include "../ifc/ifcdef.h"
+#include "../ifc/exception/vexception.h"
 #include "../vgeometry/varc.h"
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../../../vabstracttool.h"
 #include "../../vdrawtool.h"
-#include "vtoolsinglepoint.h"
+#include "../../../vabstracttool.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../dialogs/tools/dialogpointfromarcandtangent.h"
+#include "../../../../visualization/visualization.h"
+#include "../../../../visualization/line/vistoolpointfromarcandtangent.h"
+
+#include <QLineF>
+#include <QMessageBox>
+#include <QSharedPointer>
+#include <QStaticStringData>
+#include <QStringData>
+#include <QStringDataPtr>
+#include <new>
 
 template <class T> class QSharedPointer;
 
@@ -143,6 +144,25 @@ VToolPointFromArcAndTangent *VToolPointFromArcAndTangent::Create(const quint32 _
     const VPointF tPoint = *data->GeometricObject<VPointF>(tangentPointId);
 
     const QPointF point = VToolPointFromArcAndTangent::FindPoint(static_cast<QPointF>(tPoint), &arc, crossPoint);
+
+    if (point == QPointF())
+    {
+        const QString msg = tr("<b><big>Can't find intersection point %1 of</big></b><br>"
+                               "<b><big>%2 and Tangent</big></b><br><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName)
+                               .arg(arc.name());
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Intersect Arc and Tangent"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     quint32 id = _id;
 
     VPointF *p = new VPointF(point, pointName, mx, my);
@@ -166,6 +186,7 @@ VToolPointFromArcAndTangent *VToolPointFromArcAndTangent::Create(const quint32 _
         VDrawTool::AddRecord(id, Tool::PointFromArcAndTangent, doc);
         VToolPointFromArcAndTangent *point = new VToolPointFromArcAndTangent(doc, data, id, arcId, tangentPointId,
                                                                              crossPoint, typeCreation);
+
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);

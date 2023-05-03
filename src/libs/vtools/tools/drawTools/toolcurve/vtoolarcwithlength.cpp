@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   vtoolarcwithlength.cpp
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtoolarcwithlength.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -100,12 +95,14 @@ void VToolArcWithLength::setDialog()
     QSharedPointer<DialogArcWithLength> dialogTool = m_dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
+    dialogTool->setArc(*arc);
     dialogTool->SetCenter(arc->GetCenter().id());
     dialogTool->SetF1(arc->GetFormulaF1());
     dialogTool->SetLength(arc->GetFormulaLength());
     dialogTool->SetRadius(arc->GetFormulaRadius());
-    dialogTool->SetColor(arc->GetColor());
-    dialogTool->SetPenStyle(arc->GetPenStyle());
+    dialogTool->setLineColor(arc->getLineColor());
+    dialogTool->setLineWeight(arc->getLineWeight());
+    dialogTool->setPenStyle(arc->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -115,13 +112,15 @@ VToolArcWithLength *VToolArcWithLength::Create(QSharedPointer<DialogTool> dialog
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogArcWithLength> dialogTool = dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
-    const quint32 center = dialogTool->GetCenter();
-    QString radius = dialogTool->GetRadius();
-    QString f1 = dialogTool->GetF1();
-    QString length = dialogTool->GetLength();
-    const QString color = dialogTool->GetColor();
-    const QString penStyle = dialogTool->GetPenStyle();
-    VToolArcWithLength* point = Create(0, center, radius, f1, length, color, penStyle, scene, doc, data,
+    const quint32 center     = dialogTool->GetCenter();
+    QString radius           = dialogTool->GetRadius();
+    QString f1               = dialogTool->GetF1();
+    QString length           = dialogTool->GetLength();
+    const QString color      = dialogTool->getLineColor();
+    const QString penStyle   = dialogTool->getPenStyle();
+    const QString lineWeight = dialogTool->getLineWeight();
+
+    VToolArcWithLength* point = Create(0, center, radius, f1, length, color, penStyle, lineWeight, scene, doc, data,
                                        Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -133,7 +132,7 @@ VToolArcWithLength *VToolArcWithLength::Create(QSharedPointer<DialogTool> dialog
 //---------------------------------------------------------------------------------------------------------------------
 VToolArcWithLength *VToolArcWithLength::Create(const quint32 _id, const quint32 &center, QString &radius, QString &f1,
                                                QString &length, const QString &color, const QString &penStyle,
-                                               VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
+                                               const QString &lineWeight, VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                                const Document &parse, const Source &typeCreation)
 {
     qreal calcRadius = 0, calcF1 = 0, calcLength = 0;
@@ -144,8 +143,9 @@ VToolArcWithLength *VToolArcWithLength::Create(const quint32 _id, const quint32 
 
     const VPointF c = *data->GeometricObject<VPointF>(center);
     VArc *arc = new VArc(calcLength, length, c, calcRadius, radius, calcF1, f1);
-    arc->SetColor(color);
+    arc->setLineColor(color);
     arc->SetPenStyle(penStyle);
+    arc->setLineWeight(lineWeight);
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {
@@ -327,12 +327,13 @@ void VToolArcWithLength::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogArcWithLength> dialogTool = m_dialog.objectCast<DialogArcWithLength>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrCenter, QString().setNum(dialogTool->GetCenter()));
-    doc->SetAttribute(domElement, AttrRadius, dialogTool->GetRadius());
-    doc->SetAttribute(domElement, AttrAngle1, dialogTool->GetF1());
-    doc->SetAttribute(domElement, AttrLength, dialogTool->GetLength());
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrCenter,     QString().setNum(dialogTool->GetCenter()));
+    doc->SetAttribute(domElement, AttrRadius,     dialogTool->GetRadius());
+    doc->SetAttribute(domElement, AttrAngle1,     dialogTool->GetF1());
+    doc->SetAttribute(domElement, AttrLength,     dialogTool->GetLength());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -365,6 +366,7 @@ void VToolArcWithLength::SetVisualization()
         visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
         visual->setLength(trVars->FormulaToUser(arc->GetFormulaLength(), qApp->Settings()->GetOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(arc->GetPenStyle()));
+        visual->setLineWeight(arc->getLineWeight());
         visual->RefreshGeometry();
     }
 }
@@ -375,11 +377,30 @@ QString VToolArcWithLength::makeToolTip() const
     const QSharedPointer<VArc> arc = VAbstractTool::data.GeometricObject<VArc>(m_id);
 
     const QString toolTip = QString("<table>"
-                                    "<tr> <td><b>%10:</b> %11</td> </tr>"
-                                    "<tr> <td><b>%1:</b> %2 %3</td> </tr>"
-                                    "<tr> <td><b>%4:</b> %5 %3</td> </tr>"
-                                    "<tr> <td><b>%6:</b> %7°</td> </tr>"
-                                    "<tr> <td><b>%8:</b> %9°</td> </tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%12: </b></td>" // Tool name
+                                        "<td align ='left'>%13</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%10: </b></td>" // Point Name
+                                        "<td align ='left'>%11</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%1: </b></td>" // Length
+                                        "<td align ='left'>%2 %3</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%4: </b></td>" // Radius
+                                        "<td align ='left'>%5 %3</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%6: </b></td>" // Start angle
+                                        "<td align ='left'>%7</td>"
+                                    "</tr>"
+                                    "<tr>"
+                                        "<td align ='right'><b>%8: </b></td>" // End angle
+                                        "<td align ='left'>%9</td>"
+                                    "</tr>"
                                     "</table>")
             .arg(tr("     Length"))
             .arg(qApp->fromPixel(arc->GetLength()))
@@ -390,7 +411,9 @@ QString VToolArcWithLength::makeToolTip() const
             .arg(arc->GetStartAngle())
             .arg(tr("  End angle"))
             .arg(arc->GetEndAngle())
-            .arg(tr("      Label"))
-            .arg(arc->name());
+            .arg(tr("      Name"))
+            .arg(arc->name())
+            .arg(tr("      Tool"))
+            .arg(tr("Arc - Radius and Length"));
     return toolTip;
 }

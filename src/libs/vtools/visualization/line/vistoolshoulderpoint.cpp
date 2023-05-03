@@ -92,25 +92,28 @@ void VisToolShoulderPoint::RefreshGeometry()
 
         if (lineP1Id <= NULL_ID)
         {
-            DrawLine(line1, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor);
+            DrawLine(line1, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor, lineWeight);
         }
         else
         {
             const QSharedPointer<VPointF> second = Visualization::data->GeometricObject<VPointF>(lineP1Id);
             DrawPoint(line1P2, static_cast<QPointF>(*second), supportColor);
 
-            DrawLine(line1, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor);
+            DrawLine(line1, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)),
+                                   supportColor, lineWeight);
 
             if (lineP2Id <= NULL_ID)
             {
-                DrawLine(line2, QLineF(static_cast<QPointF>(*second), Visualization::scenePos), supportColor);
+                DrawLine(line2, QLineF(static_cast<QPointF>(*second), Visualization::scenePos),
+                                       supportColor, lineWeight);
             }
             else
             {
                 const QSharedPointer<VPointF> third = Visualization::data->GeometricObject<VPointF>(lineP2Id);
                 DrawPoint(line2P2, static_cast<QPointF>(*third), supportColor);
 
-                DrawLine(line2, QLineF(static_cast<QPointF>(*second), static_cast<QPointF>(*third)), supportColor);
+                DrawLine(line2, QLineF(static_cast<QPointF>(*second), static_cast<QPointF>(*third)),
+                                       supportColor, lineWeight);
 
                 if (not qFuzzyIsNull(length))
                 {
@@ -118,10 +121,11 @@ void VisToolShoulderPoint::RefreshGeometry()
                                                                    static_cast<QPointF>(*third),
                                                                    static_cast<QPointF>(*first), length);
                     QLineF mainLine = QLineF(static_cast<QPointF>(*second), fPoint);
-                    DrawLine(this, mainLine, mainColor, lineStyle);
+                    DrawLine(this, mainLine, mainColor, lineWeight, lineStyle);
 
                     DrawPoint(point, mainLine.p2(), mainColor);
-                    DrawLine(line3, QLineF(static_cast<QPointF>(*first), mainLine.p2()), supportColor, Qt::DashLine);
+                    DrawLine(line3, QLineF(static_cast<QPointF>(*first), mainLine.p2()), supportColor,
+                                           lineWeight, Qt::DashLine);
                 }
                 else
                 {
@@ -130,7 +134,7 @@ void VisToolShoulderPoint::RefreshGeometry()
                     QLineF mainLine = VGObject::BuildLine(static_cast<QPointF>(*second),
                                                           QLineF(static_cast<QPointF>(*second), endRay).length(),
                                                           angle);
-                    DrawLine(this, mainLine, mainColor, lineStyle);
+                    DrawLine(this, mainLine, mainColor, lineWeight, lineStyle);
                 }
             }
         }

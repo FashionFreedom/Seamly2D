@@ -111,12 +111,14 @@ protected:
     void                   DrawPoint(QGraphicsEllipseItem *point, const QPointF &pos, const QColor &color,
                                      Qt::PenStyle style = Qt::SolidLine);
     virtual void           DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
-                                    Qt::PenStyle style = Qt::SolidLine);
+                                    const qreal &lineWeight, Qt::PenStyle style = Qt::SolidLine);
     void                   DrawPath(VCurvePathItem *pathItem, const QPainterPath &path, const QColor &color,
-                                    Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
+                                    Qt::PenStyle style = Qt::SolidLine, const qreal &weight = 0.35,
+                                    Qt::PenCapStyle cap = Qt::SquareCap);
     void                   DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
                                     const QVector<DirectionArrow> &directionArrows, const QColor &color,
-                                    Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
+                                    Qt::PenStyle style = Qt::SolidLine, const qreal &weight = 0.35,
+                                    Qt::PenCapStyle cap = Qt::SquareCap);
 
     void                   drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
                                            Qt::PenStyle style = Qt::SolidLine);

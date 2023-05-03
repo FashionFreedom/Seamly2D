@@ -63,16 +63,16 @@
 
 namespace Ui
 {
-    class DialogGroup;
+    class EditGroupDialog;
 }
 
-class DialogGroup : public DialogTool
+class EditGroupDialog : public DialogTool
 {
     Q_OBJECT
 
 public:
-    explicit DialogGroup(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
-    ~DialogGroup();
+    explicit EditGroupDialog(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
+    ~EditGroupDialog();
 
     void    SetName(const QString &name);
     QString GetName() const;
@@ -88,8 +88,8 @@ private slots:
     void NameChanged();
 
 private:
-    Q_DISABLE_COPY(DialogGroup)
-    Ui::DialogGroup *ui;
+    Q_DISABLE_COPY(EditGroupDialog)
+    Ui::EditGroupDialog *ui;
     QMap<quint32, quint32> group;
 };
 

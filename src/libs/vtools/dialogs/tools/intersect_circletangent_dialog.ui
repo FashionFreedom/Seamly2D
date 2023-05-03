@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>260</width>
+    <width>270</width>
     <height>400</height>
    </rect>
   </property>
@@ -18,12 +18,12 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>260</width>
+    <width>270</width>
     <height>400</height>
    </size>
   </property>
   <property name="windowTitle">
-   <string>Intersect Circle and Tangent</string>
+   <string>Point - Intersect Circle and Tangent</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -107,10 +107,10 @@
              </font>
             </property>
             <property name="toolTip">
-             <string>Unique label</string>
+             <string>Unique name</string>
             </property>
             <property name="placeholderText">
-             <string>Choose unique label.</string>
+             <string>Choose unique name.</string>
             </property>
            </widget>
           </item>

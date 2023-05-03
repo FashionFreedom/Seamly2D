@@ -1,7 +1,10 @@
 # ADD TO EACH PATH $$PWD VARIABLE!!!!!!
-# This need for corect working file translations.pro
+# This is needed for correct working of file translations.pro
 
 SOURCES += \
+    $$PWD/plugins/expandingtextedit.cpp \
+    $$PWD/plugins/lineweight_property.cpp \
+    $$PWD/plugins/plaintext_property.cpp \
     $$PWD/vproperty.cpp \
     $$PWD/vpropertydelegate.cpp \
     $$PWD/vpropertyfactorymanager.cpp \
@@ -35,6 +38,9 @@ SOURCES += \
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS +=\
+    $$PWD/plugins/expandingtextedit.h \
+    $$PWD/plugins/lineweight_property.h \
+    $$PWD/plugins/plaintext_property.h \
     $$PWD/vpropertyfactorymanager_p.h \
     $$PWD/vpropertytreeview_p.h \
     $$PWD/vpropertyset_p.h \

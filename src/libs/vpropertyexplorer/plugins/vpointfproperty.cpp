@@ -33,13 +33,13 @@ VPE::VPointFProperty::VPointFProperty(const QString &name)
     d_ptr->VariantValue.setValue(0);
     d_ptr->VariantValue.convert(QVariant::PointF);
 
-    VDoubleProperty* tmpX = new VDoubleProperty("X");
-    addChild(tmpX);
-    tmpX->setUpdateBehaviour(true, false);
+    DoubleSpinboxProperty *tempX = new DoubleSpinboxProperty("X coordinate:");
+    addChild(tempX);
+    tempX->setUpdateBehaviour(true, false);
 
-    VDoubleProperty* tmpY = new VDoubleProperty("Y");
-    addChild(tmpY);
-    tmpY->setUpdateBehaviour(true, false);
+    DoubleSpinboxProperty *tempY = new DoubleSpinboxProperty("Y coordinate:");
+    addChild(tempY);
+    tempY->setUpdateBehaviour(true, false);
 
     setValue(QPointF());
 }
@@ -66,17 +66,17 @@ Qt::ItemFlags VPE::VPointFProperty::flags(int column) const
 
 QPointF VPE::VPointFProperty::getPointF() const
 {
-    QPointF tmpValue;
+    QPointF tempValue;
 
     if (d_ptr->Children.count() < 2)
     {
-        return tmpValue;
+        return tempValue;
     }
 
-    tmpValue.setX(d_ptr->Children.at(0)->getValue().toDouble());
-    tmpValue.setY(d_ptr->Children.at(1)->getValue().toDouble());
+    tempValue.setX(d_ptr->Children.at(0)->getValue().toDouble());
+    tempValue.setY(d_ptr->Children.at(1)->getValue().toDouble());
 
-    return tmpValue;
+    return tempValue;
 }
 
 void VPE::VPointFProperty::setPointF(const QPointF &point)
@@ -91,14 +91,14 @@ void VPE::VPointFProperty::setPointF(qreal x, qreal y)
         return;
     }
 
-    QVariant tmpX(x);
-    tmpX.convert(QVariant::Double);
+    QVariant tempX(x);
+    tempX.convert(QVariant::Double);
 
-    QVariant tmpY(y);
-    tmpY.convert(QVariant::Double);
+    QVariant tempY(y);
+    tempY.convert(QVariant::Double);
 
-    d_ptr->Children.at(0)->setValue(tmpX);
-    d_ptr->Children.at(1)->setValue(tmpY);
+    d_ptr->Children.at(0)->setValue(tempX);
+    d_ptr->Children.at(1)->setValue(tempY);
 }
 
 QString VPE::VPointFProperty::type() const
@@ -114,11 +114,11 @@ VPE::VProperty *VPE::VPointFProperty::clone(bool include_children, VProperty *co
 
         if (!include_children)
         {
-            QList<VProperty*> tmpChildren = container->getChildren();
-            foreach(VProperty* tmpChild, tmpChildren)
+            QList<VProperty*> tempChildren = container->getChildren();
+            foreach(VProperty *tempChild, tempChildren)
             {
-                container->removeChild(tmpChild);
-                delete tmpChild;
+                container->removeChild(tempChild);
+                delete tempChild;
             }
         }
     }
@@ -128,12 +128,12 @@ VPE::VProperty *VPE::VPointFProperty::clone(bool include_children, VProperty *co
 
 void VPE::VPointFProperty::setValue(const QVariant &value)
 {
-    QPointF tmpPoint = value.toPointF();
-    setPointF(tmpPoint);
+    QPointF tempPoint = value.toPointF();
+    setPointF(tempPoint);
 }
 
 QVariant VPE::VPointFProperty::getValue() const
 {
-    QPointF tmpValue = getPointF();
-    return QString("%1,%2").arg(QString::number(tmpValue.x()), QString::number(tmpValue.y()));
+    QPointF tempValue = getPointF();
+    return QString("%1,%2").arg(QString::number(tempValue.x()), QString::number(tempValue.y()));
 }

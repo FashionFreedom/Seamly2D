@@ -78,8 +78,14 @@ public:
 
     void             SetPointName(const QString &value);
 
-    QString          GetTypeLine() const;
-    void             SetTypeLine(const QString &value);
+    QString          getLineType() const;
+    void             setLineType(const QString &value);
+
+    QString          getLineWeight() const;
+    void             setLineWeight(const QString &value);
+
+    QString          getLineColor() const;
+    void             setLineColor(const QString &value);
 
     quint32          GetBasePointId() const;
     void             SetBasePointId(const quint32 &value);
@@ -90,17 +96,17 @@ public:
     quint32          GetP2LineId() const;
     void             SetP2LineId(const quint32 &value);
 
-    QString          GetLineColor() const;
-    void             SetLineColor(const QString &value);
 public slots:
     virtual void     ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     virtual void     PointNameChanged() Q_DECL_OVERRIDE;
+
 protected:
     virtual void     ShowVisualization() Q_DECL_OVERRIDE;
     /**
      * @brief SaveData Put dialog data in local variables
      */
     virtual void     SaveData() Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(DialogHeight)
 

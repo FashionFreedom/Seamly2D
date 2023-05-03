@@ -1,26 +1,20 @@
-/***************************************************************************
- **  @file   mainwindow.cpp
+/******************************************************************************
+ *   @file   mainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   Jan 1, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
+ **  @date   29 Mar, 2023
  **
  **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *****************************************************************************/
 
 /************************************************************************
  **
@@ -85,6 +79,7 @@
 #include "dialogs/dialogs.h"
 
 #include "../vtools/undocommands/addgroup.h"
+#include "../vtools/undocommands/label/showpointname.h"
 #include "../vpatterndb/vpiecepath.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
@@ -153,7 +148,7 @@ MainWindow::MainWindow(QWidget *parent)
     , patternReadOnly(false)
     , dialogTable(nullptr)
     , dialogTool()
-    , dialogHistory(nullptr)
+    , historyDialog(nullptr)
     , fontComboBox(nullptr)
     , fontSizeComboBox(nullptr)
     , draftBlockComboBox(nullptr)
@@ -181,6 +176,9 @@ MainWindow::MainWindow(QWidget *parent)
     , patternPiecesWidget(nullptr)
     , lock(nullptr)
     , zoomScaleSpinBox(nullptr)
+    , m_penToolBar(nullptr)
+    , m_penReset(nullptr)
+    , m_zoomToPointComboBox(nullptr)
 {
     for (int i = 0; i < MaxRecentFiles; ++i)
     {
@@ -189,7 +187,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     CreateActions();
     InitScenes();
-
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
     connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
@@ -206,7 +203,11 @@ MainWindow::MainWindow(QWidget *parent)
         }
     });
     connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
+    connect(doc, &VPattern::CheckLayout, this, [&](){
+        this->updateZoomToPointComboBox(draftPointNamesList());
+    });
     qApp->setCurrentDocument(doc);
+    qApp->setCurrentData(pattern);
 
     InitDocksContain();
     CreateMenus();
@@ -214,6 +215,7 @@ MainWindow::MainWindow(QWidget *parent)
     initPointNameToolBar();
     initModesToolBar();
     InitToolButtons();
+    initPenToolBar();
 
     helpLabel = new QLabel(QObject::tr("Create new pattern piece to start working."));
     ui->statusBar->addWidget(helpLabel);
@@ -233,7 +235,6 @@ MainWindow::MainWindow(QWidget *parent)
     WindowsLocale();
 
     connect(ui->listWidget, &QListWidget::currentRowChanged, this, &MainWindow::showLayoutPages);
-    ui->layoutPages_DockWidget->setVisible(false);
 
     connect(watcher, &QFileSystemWatcher::fileChanged, this, &MainWindow::MeasurementsChanged);
     connect(qApp, &QApplication::focusChanged, this, [this](QWidget *old, QWidget *now)
@@ -342,6 +343,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
 
     ui->newDraft_Action->setEnabled(true);
     helpLabel->setText("");
+    groupsWidget->updateGroups();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -612,7 +614,7 @@ void MainWindow::CheckRequiredMeasurements(const VMeasurements *measurements)
         }
 
         VException e(tr("Measurement file doesn't include all the required measurements."));
-        e.AddMoreInformation(tr("Please, additionally provide: %1").arg(QStringList(list).join(", ")));
+        e.AddMoreInformation(tr("Please provide additional measurements: %1").arg(QStringList(list).join(", ")));
         throw e;
     }
 }
@@ -654,6 +656,9 @@ void MainWindow::SetToolButton(bool checked, Tool t, const QString &cursor, cons
 
         switch(t)
         {
+            case Tool::ArcIntersectAxis:
+                dialogTool->setWindowTitle("Point - Intersect Arc and Axis");
+                break;
             case Tool::Midpoint:
                 dialogTool->Build(t);
                 break;
@@ -760,9 +765,9 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
     if (doc->getCursor() > 0)
     {
         doc->LiteParseTree(Document::LiteParse);
-        if (dialogHistory)
+        if (historyDialog)
         {
-            dialogHistory->updateHistory();
+            historyDialog->updateHistory();
         }
     }
 }
@@ -839,7 +844,7 @@ void MainWindow::handleMidpointTool(bool checked)
         checked,
         Tool::Midpoint,
         ":/cursor/midpoint_cursor.png",
-        tr("<b>Tool::Points - Midpoint along Line</b>: Select first point"),
+        tr("<b>Tool::Point - Midpoint on Line</b>: Select first point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolAlongLine>,
         &MainWindow::ApplyDrawDialog<VToolAlongLine>
     );
@@ -858,7 +863,7 @@ void MainWindow::handlePointAtDistanceAngleTool(bool checked)
         checked,
         Tool::EndLine,
         ":/cursor/endline_cursor.png",
-        tr("<b>Tool::Points - Point at Distance & Angle</b>: Select point"),
+        tr("<b>Tool::Point - Length and Angle</b>: Select point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolEndLine>,
         &MainWindow::ApplyDrawDialog<VToolEndLine>
     );
@@ -877,7 +882,7 @@ void MainWindow::handleAlongLineTool(bool checked)
         checked,
         Tool::AlongLine,
         ":/cursor/alongline_cursor.png",
-        tr("<b>Tool::Points - Point along Line:</b> Select first point"),
+        tr("<b>Tool::Point - On Line:</b> Select first point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolAlongLine>,
         &MainWindow::ApplyDrawDialog<VToolAlongLine>
     );
@@ -896,7 +901,7 @@ void MainWindow::handleNormalTool(bool checked)
         checked,
         Tool::Normal,
         ":/cursor/normal_cursor.png",
-        tr("<b>Tool::Points - Point on Perpendicular:</b> Select first point of line"),
+        tr("<b>Tool::Point - On Perpendicular:</b> Select first point of line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolNormal>,
         &MainWindow::ApplyDrawDialog<VToolNormal>
     );
@@ -915,7 +920,7 @@ void MainWindow::handleBisectorTool(bool checked)
         checked,
         Tool::Bisector,
         ":/cursor/bisector_cursor.png",
-        tr("<b>Tool::Points - Point along Bisector:</b> Select first point of angle"),
+        tr("<b>Tool::Point - On Bisector:</b> Select first point of angle"),
         &MainWindow::ClosedDrawDialogWithApply<VToolBisector>,
         &MainWindow::ApplyDrawDialog<VToolBisector>
     );
@@ -934,7 +939,7 @@ void MainWindow::handleShoulderPointTool(bool checked)
         checked,
         Tool::ShoulderPoint,
         ":/cursor/shoulder_cursor.png",
-        tr("<b>Tool::Points - Shoulder Point:</b> Select point"),
+        tr("<b>Tool::Point - Length to Line:</b> Select point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolShoulderPoint>,
         &MainWindow::ApplyDrawDialog<VToolShoulderPoint>
     );
@@ -952,7 +957,7 @@ void MainWindow::handlePointOfContactTool(bool checked)
     (
         checked, Tool::PointOfContact,
         ":/cursor/pointcontact_cursor.png",
-        tr("<b>Tool::Points - Intersection Point of Line and Arc:</b> Select first point of line"),
+        tr("<b>Tool::Point - Intersect Arc and Line:</b> Select first point of line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointOfContact>,
         &MainWindow::ApplyDrawDialog<VToolPointOfContact>
     );
@@ -960,7 +965,7 @@ void MainWindow::handlePointOfContactTool(bool checked)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief handleTriangleTool handler tool triangle.
+ * @brief handleTriangleTool handler Point - Intersect Axis and Triangle.
  * @param checked true - button checked.
  */
 void MainWindow::handleTriangleTool(bool checked)
@@ -971,7 +976,7 @@ void MainWindow::handleTriangleTool(bool checked)
         checked,
         Tool::Triangle,
         ":/cursor/triangle_cursor.png",
-        tr("<b>Tool::Points - Triangle:</b> Select first point of axis"),
+        tr("<b>Tool::Point - Intersect Axis and Triangle:</b> Select first point of axis"),
         &MainWindow::ClosedDrawDialogWithApply<VToolTriangle>,
         &MainWindow::ApplyDrawDialog<VToolTriangle>
     );
@@ -990,7 +995,7 @@ void MainWindow::handlePointIntersectXYTool(bool checked)
         checked,
         Tool::PointOfIntersection,
         ":/cursor/pointofintersect_cursor.png",
-        tr("<b>Tool::Points - Intersection Point XY from 2 Points:</b> Select point for X value (vertical)"),
+        tr("<b>Tool::Point - Intersect XY</b> Select point for X value (vertical)"),
         &MainWindow::ClosedDrawDialogWithApply<PointIntersectXYTool>,
         &MainWindow::ApplyDrawDialog<PointIntersectXYTool>
     );
@@ -1009,7 +1014,7 @@ void MainWindow::handleHeightTool(bool checked)
         checked,
         Tool::Height,
         ":/cursor/height_cursor.png",
-        tr("<b>Tool::Points - Intersection Point of Line and Perpendicular:</b> Select base point"),
+        tr("<b>Tool::Point - Intersect Line and Perpendicular:</b> Select base point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolHeight>,
         &MainWindow::ApplyDrawDialog<VToolHeight>
     );
@@ -1024,7 +1029,7 @@ void MainWindow::handleLineIntersectAxisTool(bool checked)
         checked,
         Tool::LineIntersectAxis,
         ":/cursor/line_intersect_axis_cursor.png",
-        tr("<b>Tool::Points - Intersection Point of Line and Axis:</b> Select first point of line"),
+        tr("<b>Tool::Point - Intersect Line and Axis:</b> Select first point of line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLineIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolLineIntersectAxis>
     );
@@ -1044,7 +1049,7 @@ void MainWindow::handleLineTool(bool checked)
         checked,
         Tool::Line,
         ":/cursor/line_cursor.png",
-        tr("<b>Tool::Lines - Line:</b>:Select first point"),
+        tr("<b>Tool::Line:</b>:Select first point"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLine>,
         &MainWindow::ApplyDrawDialog<VToolLine>
     );
@@ -1063,7 +1068,7 @@ void MainWindow::handleLineIntersectTool(bool checked)
         checked,
         Tool::LineIntersect,
         ":/cursor/intersect_cursor.png",
-        tr("<b>Tool::Lines - Intersection Point of 2 Lines:</b> Select first point of first line"),
+        tr("<b>Tool::Point - Intersect Lines:</b> Select first point of first line"),
         &MainWindow::ClosedDrawDialogWithApply<VToolLineIntersect>,
         &MainWindow::ApplyDrawDialog<VToolLineIntersect>
     );
@@ -1083,7 +1088,7 @@ void MainWindow::handleCurveTool(bool checked)
         checked,
         Tool::Spline,
         ":/cursor/spline_cursor.png",
-        tr("<b>Tool::Curves - Curve:</b> Select start point of curve"),
+        tr("<b>Tool::Curve - Interactive:</b> Select start point of curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolSpline>,
         &MainWindow::ApplyDrawDialog<VToolSpline>
     );
@@ -1102,7 +1107,7 @@ void MainWindow::handleSplineTool(bool checked)
         checked,
         Tool::SplinePath,
         ":/cursor/splinepath_cursor.png",
-        tr("<b>Tool::Curves - Spline:</b> Select start point of spline"),
+        tr("<b>Tool::Spline - Interactive:</b> Select start point of spline"),
         &MainWindow::ClosedDrawDialogWithApply<VToolSplinePath>,
         &MainWindow::ApplyDrawDialog<VToolSplinePath>
     );
@@ -1117,7 +1122,7 @@ void MainWindow::handleCurveWithControlPointsTool(bool checked)
         checked,
         Tool::CubicBezier,
         ":/cursor/cubic_bezier_cursor.png",
-        tr("<b>Tool::Curves - Curve with Control Points:</b> Select first point of curve"),
+        tr("<b>Tool::Curve - Fixed:</b> Select first point of curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCubicBezier>,
         &MainWindow::ApplyDrawDialog<VToolCubicBezier>
     );
@@ -1132,7 +1137,7 @@ void MainWindow::handleSplineWithControlPointsTool(bool checked)
         checked,
         Tool::CubicBezierPath,
         ":/cursor/cubic_bezier_path_cursor.png",
-        tr("<b>Tool::Curves - Spline with Control Points:</b> Select first point of spline"),
+        tr("<b>Tool::Spline - Fixed:</b> Select first point of spline"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCubicBezierPath>,
         &MainWindow::ApplyDrawDialog<VToolCubicBezierPath>
     );
@@ -1151,7 +1156,7 @@ void MainWindow::handlePointAlongCurveTool(bool checked)
         checked,
         Tool::CutSpline,
         ":/cursor/spline_cut_point_cursor.png",
-        tr("<b>Tool::Curves - Point along Curve:</b> Select first point of curve"),
+        tr("<b>Tool::Point - On Curve:</b> Select first point of curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutSpline>,
         &MainWindow::ApplyDrawDialog<VToolCutSpline>
     );
@@ -1170,7 +1175,7 @@ void MainWindow::handlePointAlongSplineTool(bool checked)
         checked,
         Tool::CutSplinePath,
         ":/cursor/splinepath_cut_point_cursor.png",
-        tr("<b>Tool::Curves - Point along Spline:</b> Select spline"),
+        tr("<b>Tool::Point - On Spline:</b> Select spline"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutSplinePath>,
         &MainWindow::ApplyDrawDialog<VToolCutSplinePath>
     );
@@ -1185,7 +1190,7 @@ void MainWindow::handleCurveIntersectCurveTool(bool checked)
         checked,
         Tool::PointOfIntersectionCurves,
         "://cursor/intersection_curves_cursor.png",
-        tr("<b>Tool::Curves - Intersection Point of Curves:</b> Select first curve"),
+        tr("<b>Tool::Point - Intersect Curves:</b> Select first curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionCurves>,
         &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionCurves>
     );
@@ -1200,7 +1205,7 @@ void MainWindow::handleCurveIntersectAxisTool(bool checked)
         checked,
         Tool::CurveIntersectAxis,
         ":/cursor/curve_intersect_axis_cursor.png",
-        tr("<b>Tool::Curves - Intersection Point of Curve and Axis:</b> Select curve"),
+        tr("<b>Tool::Point - Intersect Curve and Axis:</b> Select curve"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCurveIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolCurveIntersectAxis>
     );
@@ -1220,7 +1225,7 @@ void MainWindow::handleArcTool(bool checked)
         checked,
         Tool::Arc,
         ":/cursor/arc_cursor.png",
-        tr("<b>Tool::Arcs - Arc:</b> Select point of center of arc"),
+        tr("<b>Tool::Arc - Radius and Angles:</b> Select point of center of arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolArc>,
         &MainWindow::ApplyDrawDialog<VToolArc>
     );
@@ -1239,7 +1244,7 @@ void MainWindow::handlePointAlongArcTool(bool checked)
         checked,
         Tool::CutArc,
         ":/cursor/arc_cut_cursor.png",
-        tr("<b>Tool::Arc - Point along Arc:</b> Select arc"),
+        tr("<b>Tool::Point - On Arc:</b> Select arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCutArc>,
         &MainWindow::ApplyDrawDialog<VToolCutArc>
     );
@@ -1255,7 +1260,7 @@ void MainWindow::handleArcIntersectAxisTool(bool checked)
         checked,
         Tool::ArcIntersectAxis,
         ":/cursor/arc_intersect_axis_cursor.png",
-        tr("<b>Tool::Arc - Intersection Point of Arc and Axis:</b> Select arc"),
+        tr("<b>Tool::Point - Intersect Arc and Axis:</b> Select arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolCurveIntersectAxis>,
         &MainWindow::ApplyDrawDialog<VToolCurveIntersectAxis>
     );
@@ -1270,7 +1275,7 @@ void MainWindow::handlePointOfIntersectionArcsTool(bool checked)
         checked,
         Tool::PointOfIntersectionArcs,
         "://cursor/point_of_intersection_arcs.png",
-        tr("<b>Tool::Arc - Intersection Point of Arcs:</b> Select first an arc"),
+        tr("<b>Tool::Point - Intersect Arcs:</b> Select first an arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointOfIntersectionArcs>,
         &MainWindow::ApplyDrawDialog<VToolPointOfIntersectionArcs>
     );
@@ -1285,7 +1290,7 @@ void MainWindow::handlePointOfIntersectionCirclesTool(bool checked)
         checked,
         Tool::PointOfIntersectionCircles,
         "://cursor/point_of_intersection_circles.png",
-        tr("<b>Tool::Arc - Intersection Point of Circles:</b> Select first circle center"),
+        tr("<b>Tool::Point - Intersect Circles:</b> Select first circle center"),
         &MainWindow::ClosedDrawDialogWithApply<IntersectCirclesTool>,
         &MainWindow::ApplyDrawDialog<IntersectCirclesTool>
     );
@@ -1302,7 +1307,7 @@ void MainWindow::handlePointFromCircleAndTangentTool(bool checked)
         checked,
         Tool::PointFromCircleAndTangent,
         "://cursor/point_from_circle_and_tangent_cursor.png",
-        tr("<b>Tool::Arc - Tangency Point of Circle and Tangent:</b> Select point on tangent"),
+        tr("<b>Tool::Point - Intersect Circle and Tangent:</b> Select point on tangent"),
         &MainWindow::ClosedDrawDialogWithApply<IntersectCircleTangentTool>,
         &MainWindow::ApplyDrawDialog<IntersectCircleTangentTool>
     );
@@ -1317,7 +1322,7 @@ void MainWindow::handlePointFromArcAndTangentTool(bool checked)
         checked,
         Tool::PointFromArcAndTangent,
         "://cursor/point_from_arc_and_tangent_cursor.png",
-        tr("<b>Tool::Arc - Tangency Point of Arc and Tangent:</b> Select point on tangent"),
+        tr("<b>Tool::Point - Intersect Arc and Tangent:</b> Select point on tangent"),
         &MainWindow::ClosedDrawDialogWithApply<VToolPointFromArcAndTangent>,
         &MainWindow::ApplyDrawDialog<VToolPointFromArcAndTangent>
     );
@@ -1332,7 +1337,7 @@ void MainWindow::handleArcWithLengthTool(bool checked)
         checked,
         Tool::ArcWithLength,
         "://cursor/arc_with_length_cursor.png",
-        tr("<b>Tool::Arc - Arc with Length:</b> Select point of the center of the arc"),
+        tr("<b>Tool::Arc - Radius and Length:</b> Select point of the center of the arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolArcWithLength>,
         &MainWindow::ApplyDrawDialog<VToolArcWithLength>
     );
@@ -1352,7 +1357,7 @@ void MainWindow::handleEllipticalArcTool(bool checked)
         checked,
         Tool::EllipticalArc,
         ":/cursor/el_arc_cursor.png",
-        tr("<b>Tool::Elliptical Arcs - Elliptical Arc:</b> Select point of center of elliptical arc"),
+        tr("<b>Tool::Arc - Elliptical:</b> Select point of center of elliptical arc"),
         &MainWindow::ClosedDrawDialogWithApply<VToolEllipticalArc>,
         &MainWindow::ApplyDrawDialog<VToolEllipticalArc>
     );
@@ -1368,30 +1373,32 @@ void MainWindow::handleGroupTool(bool checked)
                                "Press <b>ENTER</b> to finish group creation ")
                                .arg(QCoreApplication::translate(strQShortcut.toUtf8().constData(),
                                                                 strCtrl.toUtf8().constData()));
-    SetToolButton<DialogGroup>
+    SetToolButton<AddToGroupDialog>
     (
         checked,
         Tool::Group,
         ":/cursor/group_cursor.png",
         tooltip,
-        &MainWindow::ClosedDialogGroup
+        &MainWindow::ClosedEditGroupDialog
     );
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ClosedDialogGroup(int result)
+void MainWindow::ClosedEditGroupDialog(int result)
 {
     SCASSERT(dialogTool != nullptr)
     if (result == QDialog::Accepted)
     {
-        QSharedPointer<DialogGroup> dialog = dialogTool.objectCast<DialogGroup>();
+        QSharedPointer<AddToGroupDialog> dialog = dialogTool.objectCast<AddToGroupDialog>();
         SCASSERT(dialog != nullptr)
-        const QDomElement group = doc->CreateGroup(VContainer::getNextId(), dialog->GetName(), dialog->GetGroup());
-        if (not group.isNull())
+
+        QString gName = dialog->getName();
+        QMap<quint32, quint32>  gData = dialog->getGroupData();
+        QDomElement group = doc->addGroupItems(gName, gData);
+        if (group.isNull())
         {
-            AddGroup *addGroup = new AddGroup(group, doc);
-            connect(addGroup, &AddGroup::UpdateGroups, groupsWidget, &VWidgetGroups::UpdateGroups);
-            qApp->getUndoStack()->push(addGroup);
+            QMessageBox::information(this, tr("Add Group Objects"), tr("Group is Locked. Unlock to add objects"),
+                                        QMessageBox::Ok, QMessageBox::Ok);
         }
     }
     handleArrowTool(true);
@@ -1646,6 +1653,54 @@ void MainWindow::ShowToolTip(const QString &toolTip)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
+ * @brief triggers the update of the groups
+ */
+void MainWindow::updateGroups()
+{
+    groupsWidget->updateGroups();
+}
+
+void MainWindow::showAllGroups()
+{
+    groupsWidget->showAllGroups();
+}
+
+void MainWindow::hideAllGroups()
+{
+    groupsWidget->hideAllGroups();
+}
+
+void MainWindow::lockAllGroups()
+{
+    groupsWidget->lockAllGroups();
+}
+
+void MainWindow::unlockAllGroups()
+{
+    groupsWidget->unlockAllGroups();
+}
+
+void MainWindow::addGroupToList()
+{
+    groupsWidget->addGroupToList();
+}
+void MainWindow::deleteGroupFromList()
+{
+    groupsWidget->deleteGroupFromList();
+}
+
+void MainWindow::editGroup()
+{
+    groupsWidget->editGroup();
+}
+
+void MainWindow::addSelectedItemsToGroup()
+{
+    qCDebug(vMainWindow, "Add Selected items to Group.");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
  * @brief showEvent handle after show window.
  * @param event show event.
  */
@@ -1725,6 +1780,7 @@ void MainWindow::CleanLayout()
     shadows.clear();
     papers.clear();
     ui->listWidget->clear();
+    groupsWidget->clear();
     SetLayoutModeActions();
 }
 
@@ -1823,10 +1879,10 @@ void MainWindow::LoadIndividual()
         {
             if (not doc->MPath().isEmpty())
             {
-                watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
+                watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
             ui->unloadMeasurements_Action->setEnabled(true);
-            doc->SetMPath(RelativeMPath(qApp->GetPPath(), mPath));
+            doc->SetMPath(RelativeMPath(qApp->getFilePath(), mPath));
             watcher->addPath(mPath);
             PatternChangesWereSaved(false);
             ui->editCurrent_Action->setEnabled(true);
@@ -1872,10 +1928,10 @@ void MainWindow::LoadMultisize()
         {
             if (not doc->MPath().isEmpty())
             {
-                watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
+                watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
             ui->unloadMeasurements_Action->setEnabled(true);
-            doc->SetMPath(RelativeMPath(qApp->GetPPath(), mPath));
+            doc->SetMPath(RelativeMPath(qApp->getFilePath(), mPath));
             watcher->addPath(mPath);
             PatternChangesWereSaved(false);
             ui->editCurrent_Action->setEnabled(true);
@@ -1911,7 +1967,7 @@ void MainWindow::UnloadMeasurements()
 
     if (doc->ListMeasurements().isEmpty())
     {
-        watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
+        watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
         if (qApp->patternType() == MeasurementsType::Multisize)
         {
             initStatusBar();
@@ -1938,7 +1994,7 @@ void MainWindow::ShowMeasurements()
 {
     if (not doc->MPath().isEmpty())
     {
-        const QString absoluteMPath = AbsoluteMPath(qApp->GetPPath(), doc->MPath());
+        const QString absoluteMPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
 
         QStringList arguments;
         if (qApp->patternType() == MeasurementsType::Multisize)
@@ -2010,7 +2066,7 @@ void MainWindow::SyncMeasurements()
 {
     if (mChanges)
     {
-        const QString path = AbsoluteMPath(qApp->GetPPath(), doc->MPath());
+        const QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
         if(UpdateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
         {
             if (not watcher->files().contains(path))
@@ -2038,8 +2094,8 @@ void MainWindow::SyncMeasurements()
 #if defined(Q_OS_MAC)
 void MainWindow::OpenAt(QAction *where)
 {
-    const QString path = qApp->GetPPath().left(qApp->GetPPath().indexOf(where->text())) + where->text();
-    if (path == qApp->GetPPath())
+    const QString path = qApp->getFilePath().left(qApp->getFilePath().indexOf(where->text())) + where->text();
+    if (path == qApp->getFilePath())
     {
         return;
     }
@@ -2282,6 +2338,17 @@ void MainWindow::initToolsToolBar()
     resetPanShortcuts();
     connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
+    QList<QKeySequence> zoomToPointShortcuts;
+    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::AltModifier + Qt::Key_P));
+    ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
+    connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
+
+    m_zoomToPointComboBox = new QComboBox(ui->zoom_ToolBar);
+    m_zoomToPointComboBox->setEnabled(false);
+    m_zoomToPointComboBox->setToolTip(ui->zoomToPoint_Action->toolTip());
+    ui->zoom_ToolBar->addWidget(m_zoomToPointComboBox);
+    connect(m_zoomToPointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::zoomToPoint);
+
     if (zoomScaleSpinBox != nullptr)
     {
         delete zoomScaleSpinBox;
@@ -2351,6 +2418,33 @@ void MainWindow::initToolBarVisibility()
         ui->layout_ToolBar->setVisible(visible);
         qApp->Settings()->setShowLayoutToolBar(visible);
     });
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief initPenToolBar enable default color, line wight & type toolbar.
+ */
+void MainWindow::initPenToolBar()
+{
+    if (m_penToolBar != nullptr)
+    {
+        delete m_penToolBar;
+    }
+    m_penToolBar = new PenToolBar("Toolbar Pen", this);
+    m_penToolBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_penToolBar->setObjectName("penToolBar");
+    this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
+
+    connect(m_penToolBar, &PenToolBar::penChanged, this, &MainWindow::penChanged);
+}
+
+/**
+ * Called when something changed in the pen tool bar
+ * (e.g. color, weight, or type).
+ */
+void MainWindow::penChanged(Pen pen)
+{
+    doc->setDefaultPen(pen);
 }
 
 void MainWindow::updateToolBarVisibility()
@@ -2436,6 +2530,71 @@ void MainWindow::zoomPan(bool checked)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ */
+void MainWindow::showZoomToPointDialog()
+{
+    QStringList pointNames = draftPointNamesList();
+
+    bool ok;
+    QString pointName = QInputDialog::getItem(this, tr("Zoom to Point"), tr("Point:"), pointNames, 0, true, &ok,
+                                              Qt::WindowSystemMenuHint | Qt::WindowTitleHint);
+    if (!ok || pointName.isEmpty()) return;
+
+    zoomToPoint(pointName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief zoomToPoint show dialog for choosing a point and update the graphics view to focus on it.
+ * @param pointName name of to zoom into.
+ */
+void MainWindow::zoomToPoint(const QString &pointName)
+{
+    const QHash<quint32, QSharedPointer<VGObject> > *objects = pattern->DataGObjects();
+    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+
+    for (i = objects->constBegin(); i != objects->constEnd(); ++i)
+    {
+        QSharedPointer<VGObject> object = i.value();
+        const quint32 objectId = object->getIdObject();
+        const QString objectName = object->name();
+
+        if (objectName == pointName)
+        {
+            VPointF *point = (VPointF*)object.data();
+            ui->view->zoom100Percent();
+            ui->view->centerOn(point->toQPointF());
+
+            // show point name if it's hidden
+            // TODO: Need to make this work with operation's and dart tools
+            quint32 toolId = point->getIdTool();
+            const quint32 objId = point->getIdObject();
+            if (objId != NULL_ID)
+            {
+                toolId = objId;
+            }
+            if (VAbstractTool *tool = qobject_cast<VAbstractTool *>(VAbstractPattern::getTool(toolId)))
+            {
+                tool->setPointNameVisiblity(toolId, true);
+            }
+
+            // show any hiden groups containing object
+            QMap<quint32,QString> groups = doc->getGroupsContainingItem(toolId, objectId, true);
+            groupsWidget->showGroups(groups);
+
+            // Reset combobox so same point can be selected again
+            m_zoomToPointComboBox->blockSignals(true);
+            m_zoomToPointComboBox->setCurrentIndex(-1);
+            m_zoomToPointComboBox->blockSignals(false);
+
+            return;
+        }
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitToolButtons()
 {
     connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
@@ -2502,17 +2661,17 @@ void MainWindow::handlePointsMenu()
 
     QMenu menu;
 
-    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint"));
-    QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Point at Distance and Angle"));
-    QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("Point at Distance along Line"));
-    QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("Point on Perpendicular"));
-    QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("Point along Bisector"));
-    QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Point on Shoulder"));
-    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_of_contact.png"),       tr("Intersection Point of Line and Arc"));
-    QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),               tr("Triangle"));
-    QAction *action_PointIntersectXY    = menu.addAction(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"), tr("Intersect XY") + "\tXY");
-    QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                 tr("Intersection Point of Line and Perpendicular"));
-    QAction *action_PointIntersectAxis  = menu.addAction(QIcon(":/toolicon/32x32/line_intersect_axis.png"),    tr("Intersection Point of Line and Axis"));
+    QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Length and Angle") + "\tL, A");
+    QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("On Line") + "\tO, L");
+    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint") + "\tShift+O, Shift+L");
+    QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("On Perpendicular") + "\tO, P");
+    QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("On Bisector") + "\tO, B");
+    QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Length to Line") + "\tP, S");
+    QAction *action_PointOfContact      = menu.addAction(QIcon(":/toolicon/32x32/point_of_contact.png"),       tr("Intersect Arc and Line") + "\tA, L");
+    QAction *action_Triangle            = menu.addAction(QIcon(":/toolicon/32x32/triangle.png"),               tr("Intersect Axis and Triangle") + "\tX, T");
+    QAction *action_PointIntersectXY    = menu.addAction(QIcon(":/toolicon/32x32/point_intersectxy_icon.png"), tr("Intersect XY") + "\tX, Y");
+    QAction *action_PerpendicularPoint  = menu.addAction(QIcon(":/toolicon/32x32/height.png"),                 tr("Intersect Line and Perpendicular") + "\tL, P");
+    QAction *action_PointIntersectAxis  = menu.addAction(QIcon(":/toolicon/32x32/line_intersect_axis.png"),    tr("Intersect Line and Axis") + "\tL, X");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2593,8 +2752,8 @@ void MainWindow::handleLinesMenu()
     qCDebug(vMainWindow, "Lines Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),          tr("Line Between 2 Points"));
-    QAction *action_LineIntersect = menu.addAction(QIcon(":/toolicon/32x32/intersect.png"), tr("Point Intersect of 2 Lines"));
+    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),      tr("Line") + "\tAlt+L");
+    QAction *action_LineIntersect = menu.addAction(QIcon(":/toolicon/32x32/intersect.png"), tr("Intersect Lines") + "\tI, L");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2621,15 +2780,15 @@ void MainWindow::handleArcsMenu()
     qCDebug(vMainWindow, "Arcs Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Arc"));
-    QAction *action_PointAlongArc    = menu.addAction(QIcon(":/toolicon/32x32/arc_cut.png"),                       tr("Point along Arc"));
-    QAction *action_ArcIntersectAxis = menu.addAction(QIcon(":/toolicon/32x32/arc_intersect_axis.png"),            tr("Intersection Point of Arc and Axis"));
-    QAction *action_ArcIntersectArc  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"),    tr("Intersection Point of Arcs"));
-    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersection Point of Circles"));
-    QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Tangency Point of Circle and Tangent"));
-    QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Tangency Point of Arc and Tangent"));
-    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Arc with Length"));
-    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical Arc"));
+    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Radius and Angles") + "\tAlt+A");
+    QAction *action_PointAlongArc    = menu.addAction(QIcon(":/toolicon/32x32/arc_cut.png"),                       tr("Point on Arc") + "\tO, A");
+    QAction *action_ArcIntersectAxis = menu.addAction(QIcon(":/toolicon/32x32/arc_intersect_axis.png"),            tr("Intersect Arc and Axis") + "\tA, X");
+    QAction *action_ArcIntersectArc  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"),    tr("Intersect Arcs") + "\tI, A");
+    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersect Circles") + "\tShift+I, Shift+C");
+    QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Intersect Circle and Tangent") + "\tC, T");
+    QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Intersect Arc and Tangent") + "\tA, T");
+    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Radius and Length") + "\tAlt+Shift+A");
+    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical") + "\tAlt+E");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2698,14 +2857,14 @@ void MainWindow::handleCurvesMenu()
     qCDebug(vMainWindow, "Curves Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve"));
-    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline"));
-    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve with Control Points"));
-    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline with Control Points"));
-    QAction *action_PointAlongCurve      = menu.addAction(QIcon(":/toolicon/32x32/spline_cut_point.png"),     tr("Point along Curve"));
-    QAction *action_PointAlongSpline     = menu.addAction(QIcon(":/toolicon/32x32/splinePath_cut_point.png"), tr("Point along Spline"));
-    QAction *action_CurveIntersectCurve  = menu.addAction(QIcon(":/toolicon/32x32/intersection_curves.png"),  tr("Intersection Point of Curves"));
-    QAction *action_CurveIntersectAxis   = menu.addAction(QIcon(":/toolicon/32x32/curve_intersect_axis.png"), tr("Intersection Point of Curve & Axis"));
+    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve - Interactive") + "\tAlt+C");
+    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline - Interactive") + "\tAlt+S");
+    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve - Fixed") + "\tAlt+Shift+C");
+    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline - Fixed") + "\tAlt+Shift+S");
+    QAction *action_PointAlongCurve      = menu.addAction(QIcon(":/toolicon/32x32/spline_cut_point.png"),     tr("Point on Curve") + "\tO, C");
+    QAction *action_PointAlongSpline     = menu.addAction(QIcon(":/toolicon/32x32/splinePath_cut_point.png"), tr("Point on Spline") + "\tO, S");
+    QAction *action_CurveIntersectCurve  = menu.addAction(QIcon(":/toolicon/32x32/intersection_curves.png"),  tr("Intersect Curves") + "\tI, C");
+    QAction *action_CurveIntersectAxis   = menu.addAction(QIcon(":/toolicon/32x32/curve_intersect_axis.png"), tr("Intersect Curve & Axis") + "\tC, X");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2774,13 +2933,13 @@ void MainWindow::handleOperationsMenu()
     qCDebug(vMainWindow, "Operations Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("New Group"));
-    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate"));
-    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line"));
-    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis"));
-    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move"));
-    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts"));
-    QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Draft Blocks"));
+    QAction *action_Group        = menu.addAction(QIcon(":/toolicon/32x32/group.png"),          tr("Add Objects to Group") + "\tG");
+    QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate") + "\tR");
+    QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line") + "\tM, L");
+    QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis") + "\tM, A");
+    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move") + "\tAlt+M");
+    QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts") + "\tT, D");
+    QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"),    tr("Export Draft Blocks") + "\tE, D");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2835,10 +2994,10 @@ void MainWindow::handlePieceMenu()
 {
     QMenu menu;
 
-    QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_piece.png"),   tr("New Pattern Piece"));
-    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint"));
-    QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path"));
-    QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path"));
+    QAction *action_Piece        = menu.addAction(QIcon(":/toolicon/32x32/new_detail.png"),   tr("New Pattern Piece") + "\tN, P");
+    QAction *action_AnchorPoint  = menu.addAction(QIcon(":/toolicon/32x32/anchor_point.png"), tr("Add AnchorPoint") + "\tA, P");
+    QAction *action_InternalPath = menu.addAction(QIcon(":/toolicon/32x32/path.png"),         tr("Create Internal Path") + "\tI, N");
+    QAction *action_InsertNodes  = menu.addAction(QIcon(":/toolicon/32x32/insert_nodes_icon.png"), tr("Insert Nodes in Path") + "\tI, P");
 
     action_AnchorPoint->setEnabled(pattern->DataPieces()->size() > 0);
     action_InternalPath->setEnabled(pattern->DataPieces()->size() > 0);
@@ -2881,8 +3040,8 @@ void MainWindow::handlePatternPiecesMenu()
     qCDebug(vMainWindow, "PatternPieces Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool"));
-    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces"));
+    QAction *action_Union        = menu.addAction(QIcon(":/toolicon/32x32/union.png"),  tr("Union Tool") + "\tU");
+    QAction *action_ExportPieces = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Pattern Pieces") + "\tE, P");
     QAction *selectedAction      = menu.exec(QCursor::pos());
 
     if(selectedAction == nullptr)
@@ -2909,8 +3068,8 @@ void MainWindow::handleLayoutMenu()
 
     QMenu menu;
 
-    QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layout_settings.png"), tr("New Print Layout (NL)"));
-    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout (EL)"));
+    QAction *action_NewLayout    = menu.addAction(QIcon(":/toolicon/32x32/layout_settings.png"), tr("New Print Layout") + "\tN, L");
+    QAction *action_ExportLayout = menu.addAction(QIcon(":/toolicon/32x32/export.png"), tr("Export Layout") + "\tE, L");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -3178,6 +3337,7 @@ void  MainWindow::handleArrowTool(bool checked)
     }
     else
     {
+        ui->view->viewport()->setCursor(QCursor(Qt::ArrowCursor));
         ui->arrowPointer_ToolButton->setChecked(true);
         ui->arrow_Action->setChecked(true);
     }
@@ -3323,15 +3483,8 @@ void MainWindow::showDraftMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-        ui->layoutPages_DockWidget->blockSignals(true);
-        ui->layoutPages_DockWidget->setVisible(false);
-        ui->layoutPages_DockWidget->blockSignals(false);
-
-        ui->toolProperties_DockWidget->setVisible(isToolOptionsDockVisible);
-
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        ui->groups_DockWidget->setVisible(isGroupsDockVisible);
     }
     else
     {
@@ -3408,16 +3561,8 @@ void MainWindow::showPieceMode(bool checked)
             gradationSizesLabel->setVisible(true);
             gradationSizes->setVisible(true);
         }
-
-        ui->layoutPages_DockWidget->blockSignals(true);
-        ui->layoutPages_DockWidget->setVisible(false);
-        ui->layoutPages_DockWidget->blockSignals(false);
-
-        ui->toolProperties_DockWidget->setVisible(isToolOptionsDockVisible);
-
         ui->groups_DockWidget->setWidget(patternPiecesWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        ui->groups_DockWidget->setVisible(isGroupsDockVisible);
 
         helpLabel->setText("");
     }
@@ -3531,16 +3676,6 @@ void MainWindow::showLayoutMode(bool checked)
             gradationSizes->setVisible(false);
         }
 
-        ui->layoutPages_DockWidget->setVisible(isLayoutsDockVisible);
-
-        ui->toolProperties_DockWidget->blockSignals(true);
-        ui->toolProperties_DockWidget->setVisible(false);
-        ui->toolProperties_DockWidget->blockSignals(false);
-
-        ui->groups_DockWidget->blockSignals(true);
-        ui->groups_DockWidget->setVisible(false);
-        ui->groups_DockWidget->blockSignals(false);
-
         showLayoutPages(ui->listWidget->currentRow());
 
         if (scenes.isEmpty())
@@ -3563,26 +3698,41 @@ void MainWindow::showLayoutMode(bool checked)
  */
 bool MainWindow::SaveAs()
 {
+    if (patternReadOnly)
+    {
+        QMessageBox messageBox(this);
+        messageBox.setIcon(QMessageBox::Warning);
+        messageBox.setText(tr("Can not save file."));
+        messageBox.setInformativeText(tr("Pattern is read only."));
+        messageBox.setDefaultButton(QMessageBox::Ok);
+        messageBox.setStandardButtons(QMessageBox::Ok);
+        messageBox.exec();
+        return false;
+    }
     QString filters(tr("Pattern files") + QLatin1String("(*.val)"));
+    QString filePath = qApp->getFilePath();
     QString dir;
-    if (qApp->GetPPath().isEmpty())
+    QString fileName;
+    if (filePath.isEmpty())
     {
         dir = qApp->Seamly2DSettings()->GetPathPattern();
+        fileName = QLatin1String("pattern");
     }
     else
     {
-        dir = QFileInfo(qApp->GetPPath()).absolutePath();
+        dir = QFileInfo(filePath).path();
+        fileName = QFileInfo(filePath).baseName();
     }
 
     bool usedNotExistedDir = false;
     QDir directory(dir);
-    if (not directory.exists())
+    if (!directory.exists())
     {
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    QString fileName = QFileDialog::getSaveFileName(this, tr("Save as"),
-                                                    dir + QLatin1String("/") + tr("pattern") + QLatin1String(".val"),
+    fileName = QFileDialog::getSaveFileName(this, tr("Save as"),
+                                                    dir + QLatin1String("/") + fileName + QLatin1String(".val"),
                                                     filters, nullptr, QFileDialog::DontUseNativeDialog);
 
     auto RemoveTempDir = [usedNotExistedDir, dir]()
@@ -3600,21 +3750,21 @@ bool MainWindow::SaveAs()
         return false;
     }
 
-    QFileInfo f( fileName );
-    if (f.suffix().isEmpty() && f.suffix() != QLatin1String("val"))
+    QFileInfo fileInfo(fileName);
+    if (fileInfo.suffix().isEmpty() && fileInfo.suffix() != QLatin1String("val"))
     {
         fileName += QLatin1String(".val");
     }
 
-    if (f.exists())
+    if (fileInfo.exists() && fileName != filePath)
     {
-        // Temporary try to lock the file before saving
+        // Temporarily try to lock the file before saving
         // Also help to rewrite current read-only pattern
         VLockGuard<char> tmp(fileName);
-        if (not tmp.IsLocked())
+        if (!tmp.IsLocked())
         {
-            qCCritical(vMainWindow, "%s",
-                       qUtf8Printable(tr("Failed to lock. This file is already opened in another window.")));
+            qCWarning(vMainWindow, "%s",
+                       qUtf8Printable(tr("Failed to lock. File with this name is opened in another window.")));
             RemoveTempDir();
             return false;
         }
@@ -3622,9 +3772,6 @@ bool MainWindow::SaveAs()
 
     // Need for restoring previous state in case of failure
     const bool wasModified = doc->IsModified(); // Need because SetReadOnly() will change internal state
-    const bool readOnly = doc->IsReadOnly();
-
-    doc->SetReadOnly(false);// Save as... disable read only state
     QString error;
     const bool result = SavePattern(fileName, error);
     if (result == false)
@@ -3638,29 +3785,26 @@ bool MainWindow::SaveAs()
         messageBox.exec();
 
         // Restoring previous state
-        doc->SetReadOnly(readOnly);
         doc->SetModified(wasModified);
 
         RemoveTempDir();
         return result;
     }
 
-    patternReadOnly = false;
+    QFile::remove(qApp->getFilePath() + autosavePrefix);
+    m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
+    m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
 
-    qCDebug(vMainWindow, "Locking file");
-    VlpCreateLock(lock, fileName);
-
-    if (lock->IsLocked())
+    if (fileName != filePath)
     {
-        qCDebug(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
-    }
-    else
-    {
-        qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(fileName));
-        qCDebug(vMainWindow, "Error type: %d", lock->GetLockError());
-        qCCritical(vMainWindow, "%s",
-                   qUtf8Printable(tr("Failed to lock. This file is already opened in another window. Expect "
-                                     "collisions when running 2 copies of the program.")));
+        VlpCreateLock(lock, fileName);
+	    if (!lock->IsLocked())
+        {
+            qCWarning(vMainWindow, "%s", qUtf8Printable(tr("Failed to lock. This file already opened in another window. "
+														    "Expect collisions when running 2 copies of the program.")));
+		    RemoveTempDir();
+	        return false;
+	    }
     }
 
     RemoveTempDir();
@@ -3674,7 +3818,18 @@ bool MainWindow::SaveAs()
  */
 bool MainWindow::Save()
 {
-    if (qApp->GetPPath().isEmpty() || patternReadOnly)
+    if (patternReadOnly)
+    {
+        QMessageBox messageBox(this);
+        messageBox.setIcon(QMessageBox::Warning);
+        messageBox.setText(tr("Can not save file."));
+        messageBox.setInformativeText(tr("Pattern is read only."));
+        messageBox.setDefaultButton(QMessageBox::Ok);
+        messageBox.setStandardButtons(QMessageBox::Ok);
+        messageBox.exec();
+        return false;
+    }
+    if (qApp->getFilePath().isEmpty())
     {
         return SaveAs();
     }
@@ -3685,15 +3840,13 @@ bool MainWindow::Save()
         {
             return false;
         }
+
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup++; // turn checking on
 #endif /*Q_OS_WIN32*/
-        const bool isFileWritable = QFileInfo(qApp->GetPPath()).isWritable();
-#ifdef Q_OS_WIN32
-        qt_ntfs_permission_lookup--; // turn it off again
-#endif /*Q_OS_WIN32*/
+        const bool isFileWritable = QFileInfo(qApp->getFilePath()).isWritable();
 
-        if (not isFileWritable)
+        if (!isFileWritable)
         {
             QMessageBox messageBox(this);
             messageBox.setIcon(QMessageBox::Question);
@@ -3704,20 +3857,17 @@ bool MainWindow::Save()
 
             if (messageBox.exec() == QMessageBox::Yes)
             {
-#ifdef Q_OS_WIN32
-                qt_ntfs_permission_lookup++; // turn checking on
-#endif /*Q_OS_WIN32*/
-                bool changed = QFile::setPermissions(qApp->GetPPath(),
-                                                    QFileInfo(qApp->GetPPath()).permissions() | QFileDevice::WriteUser);
+                bool changed = QFile::setPermissions(qApp->getFilePath(),
+                                                    QFileInfo(qApp->getFilePath()).permissions() | QFileDevice::WriteUser);
 #ifdef Q_OS_WIN32
                 qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
 
-                if (not changed)
+                if (!changed)
                 {
                     QMessageBox messageBox(this);
                     messageBox.setIcon(QMessageBox::Warning);
-                    messageBox.setText(tr("Cannot set permissions for %1 to writable.").arg(qApp->GetPPath()));
+                    messageBox.setText(tr("Cannot set permissions for %1 to writable.").arg(qApp->getFilePath()));
                     messageBox.setInformativeText(tr("Could not save the file."));
                     messageBox.setDefaultButton(QMessageBox::Ok);
                     messageBox.setStandardButtons(QMessageBox::Ok);
@@ -3732,10 +3882,10 @@ bool MainWindow::Save()
         }
 
         QString error;
-        bool result = SavePattern(qApp->GetPPath(), error);
+        bool result = SavePattern(qApp->getFilePath(), error);
         if (result)
         {
-            QFile::remove(qApp->GetPPath() + autosavePrefix);
+            QFile::remove(qApp->getFilePath() + autosavePrefix);
             m_curFileFormatVersion = VPatternConverter::PatternMaxVer;
             m_curFileFormatVersionStr = VPatternConverter::PatternMaxVerStr;
         }
@@ -3797,9 +3947,9 @@ void MainWindow::Clear()
     setCurrentFile(QString());
     pattern->Clear();
     qCDebug(vMainWindow, "Clearing pattern.");
-    if (not qApp->GetPPath().isEmpty() && not doc->MPath().isEmpty())
+    if (not qApp->getFilePath().isEmpty() && not doc->MPath().isEmpty())
     {
-        watcher->removePath(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
+        watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
     }
     doc->clear();
     qCDebug(vMainWindow, "Clearing scenes.");
@@ -3826,6 +3976,10 @@ void MainWindow::Clear()
     ui->zoomToPrevious_Action->setEnabled(false);
     ui->zoomToArea_Action->setEnabled(false);
     ui->zoomPan_Action->setEnabled(false);
+    ui->zoomToPoint_Action->setEnabled(false);
+
+    //disable group actions
+    ui->groups_DockWidget->setEnabled(false);
 
     //disable history menu actions
     ui->history_Action->setEnabled(false);
@@ -3872,16 +4026,16 @@ void MainWindow::FileClosedCorrect()
 
     //File was closed correct.
     QStringList restoreFiles = qApp->Seamly2DSettings()->GetRestoreFileList();
-    restoreFiles.removeAll(qApp->GetPPath());
+    restoreFiles.removeAll(qApp->getFilePath());
     qApp->Seamly2DSettings()->SetRestoreFileList(restoreFiles);
 
     // Remove autosave file
-    QFile autofile(qApp->GetPPath() + autosavePrefix);
+    QFile autofile(qApp->getFilePath() + autosavePrefix);
     if (autofile.exists())
     {
         autofile.remove();
     }
-    qCDebug(vMainWindow, "File %s closed correct.", qUtf8Printable(qApp->GetPPath()));
+    qCDebug(vMainWindow, "File %s closed correct.", qUtf8Printable(qApp->getFilePath()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4103,6 +4257,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->zoomToPrevious_Action->setEnabled(enable);
     ui->zoomToArea_Action->setEnabled(enable);
     ui->zoomPan_Action->setEnabled(enable);
+    ui->zoomToPoint_Action->setEnabled(enable && draftStage);
+    m_zoomToPointComboBox->setEnabled(enable && draftStage);
 
     ui->increaseSize_Action->setEnabled(enable);
     ui->decreaseSize_Action->setEnabled(enable);
@@ -4116,6 +4272,8 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->toggleLabels_Action->setEnabled(enable && pieceStage);
     //ui->toggleAnchorPoints_Action->setEnabled(enable && draftStage);
 
+    //enable group actions
+    groupsWidget->setAddGroupEnabled(enable && draftStage);
 
     //enable tool menu actions
     ui->newDraft_Action->setEnabled(enable && draftStage);
@@ -4138,6 +4296,9 @@ void MainWindow::SetEnableWidgets(bool enable)
     ui->shortcuts_Action->setEnabled(enable);
 
     //enable dock widget actions
+    ui->groups_DockWidget->setEnabled(enable && designStage);
+    ui->toolProperties_DockWidget->setEnabled(enable && draftStage);
+    ui->layoutPages_DockWidget->setEnabled(enable && layoutStage);
     actionDockWidgetToolOptions->setEnabled(enable && designStage);
     actionDockWidgetGroups->setEnabled(enable && designStage);
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
@@ -4265,7 +4426,7 @@ void MainWindow::PatternChangesWereSaved(bool saved)
 void MainWindow::ChangedSize(int index)
 {
     const int size = static_cast<int>(VContainer::size());
-    if (UpdateMeasurements(AbsoluteMPath(qApp->GetPPath(), doc->MPath()),
+    if (UpdateMeasurements(AbsoluteMPath(qApp->getFilePath(), doc->MPath()),
                            gradationSizes.data()->itemText(index).toInt(),
                            static_cast<int>(VContainer::height())))
     {
@@ -4296,7 +4457,7 @@ void MainWindow::ChangedSize(int index)
 void MainWindow::ChangedHeight(int index)
 {
     const int height = static_cast<int>(VContainer::height());
-    if (UpdateMeasurements(AbsoluteMPath(qApp->GetPPath(), doc->MPath()), static_cast<int>(VContainer::size()),
+    if (UpdateMeasurements(AbsoluteMPath(qApp->getFilePath(), doc->MPath()), static_cast<int>(VContainer::size()),
                            gradationHeights.data()->itemText(index).toInt()))
     {
         doc->LiteParseTree(Document::LiteParse);
@@ -4563,8 +4724,8 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     qCDebug(vMainWindow, "Saving pattern file %s.", qUtf8Printable(fileName));
     QFileInfo tempInfo(fileName);
 
-    const QString mPath = AbsoluteMPath(qApp->GetPPath(), doc->MPath());
-    if (not mPath.isEmpty() && qApp->GetPPath() != fileName)
+    const QString mPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
+    if (not mPath.isEmpty() && qApp->getFilePath() != fileName)
     {
         doc->SetMPath(RelativeMPath(fileName, mPath));
     }
@@ -4595,11 +4756,15 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
  */
 void MainWindow::AutoSavePattern()
 {
+    if (patternReadOnly)
+    {
+        return;
+    }
     qCDebug(vMainWindow, "Autosaving pattern.");
 
-    if (qApp->GetPPath().isEmpty() == false && this->isWindowModified() == true)
+    if (qApp->getFilePath().isEmpty() == false && this->isWindowModified() == true)
     {
-        QString autofile = qApp->GetPPath() + autosavePrefix;
+        QString autofile = qApp->getFilePath() + autosavePrefix;
         QString error;
         SavePattern(autofile, error);
     }
@@ -4614,12 +4779,12 @@ void MainWindow::AutoSavePattern()
 void MainWindow::setCurrentFile(const QString &fileName)
 {
     qCDebug(vMainWindow, "Set current name to \"%s\"", qUtf8Printable(fileName));
-    qApp->SetPPath(fileName);
+    qApp->setFilePath(fileName);
     doc->SetPatternWasChanged(true);
     emit doc->UpdatePatternLabel();
     qApp->getUndoStack()->setClean();
 
-    if (not qApp->GetPPath().isEmpty() && VApplication::IsGUIMode())
+    if (not qApp->getFilePath().isEmpty() && VApplication::IsGUIMode())
     {
         qCDebug(vMainWindow, "Updating recent file list.");
         VSettings *settings = qApp->Seamly2DSettings();
@@ -4668,9 +4833,9 @@ void MainWindow::ReadSettings()
     ToolBarStyles();
 
     isToolOptionsDockVisible = ui->toolProperties_DockWidget->isVisible();
-    isGroupsDockVisible = ui->groups_DockWidget->isVisible();
-    isLayoutsDockVisible = ui->layoutPages_DockWidget->isVisible();
-    isToolboxDockVisible = ui->layoutPages_DockWidget->isVisible();
+    isGroupsDockVisible      = ui->groups_DockWidget->isVisible();
+    isLayoutsDockVisible     = ui->layoutPages_DockWidget->isVisible();
+    isToolboxDockVisible     = ui->toolbox_DockWidget->isVisible();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -4706,7 +4871,7 @@ bool MainWindow::MaybeSave()
         messageBox->setEscapeButton(QMessageBox::Cancel);
 
         messageBox->setButtonText(QMessageBox::Yes,
-                                  qApp->GetPPath().isEmpty() || patternReadOnly ? tr("Save...") : tr("Save"));
+                                  qApp->getFilePath().isEmpty() || patternReadOnly ? tr("Save...") : tr("Save"));
         messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
         messageBox->setWindowModality(Qt::ApplicationModal);
@@ -4743,7 +4908,7 @@ void MainWindow::UpdateRecentFileActions()
 
     for (int i = 0; i < numRecentFiles; ++i)
     {
-       QString text = QString("&%1. %2").arg(i + 1).arg(StrippedName(files.at(i)));
+       QString text = QString("&%1. %2").arg(i + 1).arg(strippedName(files.at(i)));
        recentFileActs[i]->setText(text);
        recentFileActs[i]->setData(files.at(i));
        recentFileActs[i]->setVisible(true);
@@ -5090,15 +5255,19 @@ void MainWindow::AddDocks()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitDocksContain()
 {
+    setTabPosition(Qt::RightDockWidgetArea, QTabWidget::West);
+    setTabPosition(Qt::LeftDockWidgetArea, QTabWidget::East);
+
     qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
-    toolProperties = new VToolOptionsPropertyBrowser(ui->toolProperties_DockWidget);
+    toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
 
     connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
     connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::UpdateOptions);
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
-    groupsWidget = new VWidgetGroups(doc, this);
+    groupsWidget = new GroupsWidget(pattern, doc, this);
     ui->groups_DockWidget->setWidget(groupsWidget);
+    connect(doc, &VAbstractPattern::updateGroups, this, &MainWindow::updateGroups);
 
     patternPiecesWidget = new PiecesWidget(pattern, doc, this);
     connect(doc, &VPattern::FullUpdateFromFile, patternPiecesWidget, &PiecesWidget::updateList);
@@ -5113,7 +5282,7 @@ void MainWindow::InitDocksContain()
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::OpenNewSeamly2D(const QString &fileName) const
 {
-    if (this->isWindowModified() || qApp->GetPPath().isEmpty() == false)
+    if (this->isWindowModified() || qApp->getFilePath().isEmpty() == false)
     {
         VApplication::NewSeamly2D(fileName);
         return true;
@@ -5644,25 +5813,22 @@ void MainWindow::CreateActions()
     {
         if (checked)
         {
-            dialogHistory = new DialogHistory(pattern, doc, this);
-            dialogHistory->setWindowFlags(Qt::Window);
-            connect(this, &MainWindow::RefreshHistory, dialogHistory.data(), &DialogHistory::updateHistory);
-            connect(dialogHistory.data(), &DialogHistory::DialogClosed, this, [this]()
+            historyDialog = new HistoryDialog(pattern, doc, this);
+            connect(this, &MainWindow::RefreshHistory, historyDialog.data(), &HistoryDialog::updateHistory);
+            connect(historyDialog.data(), &HistoryDialog::DialogClosed, this, [this]()
             {
                 ui->history_Action->setChecked(false);
-                if (dialogHistory != nullptr)
+                if (historyDialog != nullptr)
                 {
-                    delete dialogHistory;
+                    delete historyDialog;
                 }
             });
-            // Fix issue #526. Dialog is not on top after selection second object on Mac.
-            dialogHistory->setWindowFlags(dialogHistory->windowFlags() | Qt::WindowStaysOnTopHint);
-            dialogHistory->show();
+            historyDialog->show();
         }
         else
         {
             ui->history_Action->setChecked(true);
-            dialogHistory->activateWindow();
+            historyDialog->activateWindow();
         }
     });
 
@@ -5973,6 +6139,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         //Fit scene size to best size for first show
         zoomFirstShow();
+        updateZoomToPointComboBox(draftPointNamesList());
 
         showDraftMode(true);
 
@@ -6579,7 +6746,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
             }
         }
         toolProperties->itemClicked(nullptr);//hide options for tool in previous pattern piece
-        groupsWidget->UpdateGroups();
+        groupsWidget->updateGroups();
     }
 }
 
@@ -6699,7 +6866,7 @@ bool MainWindow::SetSize(const QString &text)
 {
     if (not VApplication::IsGUIMode())
     {
-        if (this->isWindowModified() || not qApp->GetPPath().isEmpty())
+        if (this->isWindowModified() || not qApp->getFilePath().isEmpty())
         {
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
@@ -6742,7 +6909,7 @@ bool MainWindow::SetHeight(const QString &text)
 {
     if (not VApplication::IsGUIMode())
     {
-        if (this->isWindowModified() || not qApp->GetPPath().isEmpty())
+        if (this->isWindowModified() || not qApp->getFilePath().isEmpty())
         {
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
@@ -6855,9 +7022,9 @@ void MainWindow::ProcessCMD()
 QString MainWindow::GetPatternFileName()
 {
     QString shownName = tr("untitled.val");
-    if(not qApp->GetPPath().isEmpty())
+    if(not qApp->getFilePath().isEmpty())
     {
-        shownName = StrippedName(qApp->GetPPath());
+        shownName = qApp->getFilePath();
     }
     shownName += QLatin1String("[*]");
     return shownName;
@@ -6872,8 +7039,8 @@ QString MainWindow::GetMeasurementFileName()
     }
     else
     {
-        QString shownName(" [");
-        shownName += StrippedName(AbsoluteMPath(qApp->GetPPath(), doc->MPath()));
+        QString shownName(" - [");
+        shownName += strippedName(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
 
         if(mChanges)
         {
@@ -6889,35 +7056,35 @@ QString MainWindow::GetMeasurementFileName()
 void MainWindow::UpdateWindowTitle()
 {
     bool isFileWritable = true;
-    if (not qApp->GetPPath().isEmpty())
+    if (!qApp->getFilePath().isEmpty())
     {
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup++; // turn checking on
 #endif /*Q_OS_WIN32*/
-        isFileWritable = QFileInfo(qApp->GetPPath()).isWritable();
+        isFileWritable = QFileInfo(qApp->getFilePath()).isWritable();
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
     }
 
-    if (not patternReadOnly && isFileWritable)
+    if (!patternReadOnly && isFileWritable)
     {
-        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() + QString(" - ") + VER_INTERNALNAME_STR);
+        setWindowTitle(VER_INTERNALNAME_STR + QString(" - ") + GetPatternFileName() + GetMeasurementFileName());
     }
     else
     {
-        setWindowTitle(GetPatternFileName()+GetMeasurementFileName() +QLatin1String(" (") +
-                       tr("read only") + QLatin1String(")") + QString(" - ") + VER_INTERNALNAME_STR);
+        setWindowTitle(VER_INTERNALNAME_STR + QString(" - ") + GetPatternFileName() +
+                       GetMeasurementFileName() + QString(" - ") + tr("read only"));
     }
-    setWindowFilePath(qApp->GetPPath());
+    setWindowFilePath(qApp->getFilePath());
 
 #if defined(Q_OS_MAC)
     static QIcon fileIcon = QIcon(QCoreApplication::applicationDirPath() +
                                   QLatin1String("/../Resources/Seamly2D.icns"));
     QIcon icon;
-    if (not qApp->GetPPath().isEmpty())
+    if (!qApp->getFilePath().isEmpty())
     {
-        if (not isWindowModified())
+        if (!isWindowModified())
         {
             icon = fileIcon;
         }
@@ -7036,6 +7203,37 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
         return false;
     }
     return true;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief draftPointNamesList gets the list of points in draft mode.
+ */
+QStringList MainWindow::draftPointNamesList()
+{
+    QStringList pointNames;
+    for (QHash<quint32, QSharedPointer<VGObject>>::const_iterator item = pattern->DataGObjects()->begin();
+         item != pattern->DataGObjects()->end();
+         ++item)
+    {
+        if (item.value()->getType() == GOType::Point && !pointNames.contains(item.value()->name()))
+            pointNames << item.value()->name();
+    }
+    pointNames.sort();
+    pointNames.removeDuplicates();
+    return pointNames;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief updateZoomToPointComboBox updates the list of points included in the toolbar combobox.
+ */
+void MainWindow::updateZoomToPointComboBox(QStringList namesList)
+{
+    m_zoomToPointComboBox->blockSignals(true); // prevent this UI update from zooming to the first point
+    m_zoomToPointComboBox->clear();
+    m_zoomToPointComboBox->addItems(namesList);
+    m_zoomToPointComboBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

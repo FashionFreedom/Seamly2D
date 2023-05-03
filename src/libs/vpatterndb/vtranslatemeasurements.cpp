@@ -1952,7 +1952,7 @@ void VTranslateMeasurements::InitGroupO()
                   "Name in a formula. Don't use math symbols and space in name!!!!");
     g = translate("VTranslateMeasurements", "Natural Waist arc, back", "Full measurement name.");
     d = translate("VTranslateMeasurements", "From Side to Side at Natural Waist level, across the back. Calculate as "
-                  "( Natural Waist circumference  - Natural Waist arc (front) ).", "Full measurement description.");
+                  "( Natural Waist circumference - Natural Waist arc (front) ).", "Full measurement description.");
     InitMeasurement(waistNaturalArcB_M, m, g, d, "O05", "(waist_natural_circ - waist_natural_arc_f)");
     //=================================================================================================================
     m = translate("VTranslateMeasurements", "waist_to_natural_waist_f",

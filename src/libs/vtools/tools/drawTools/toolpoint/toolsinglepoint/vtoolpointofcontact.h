@@ -69,7 +69,7 @@ class VFormula;
 template <class T> class QSharedPointer;
 
 /**
- * @brief The VToolPointOfContact class tool for creation point intersection line and arc.
+ * @brief The VToolPointOfContact class tool for creation point intersection arc ad line.
  */
 class VToolPointOfContact : public VToolSinglePoint
 {

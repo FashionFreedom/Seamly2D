@@ -102,19 +102,19 @@ void VisToolAlongLine::RefreshGeometry()
 
         if (object2Id <= NULL_ID)
         {
-            DrawLine(line, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor);
+            DrawLine(line, QLineF(static_cast<QPointF>(*first), Visualization::scenePos), supportColor, lineWeight);
         }
         else
         {
             const QSharedPointer<VPointF> second = Visualization::data->GeometricObject<VPointF>(object2Id);
             DrawPoint(lineP2, static_cast<QPointF>(*second), supportColor);
 
-            DrawLine(line, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor);
+            DrawLine(line, QLineF(static_cast<QPointF>(*first), static_cast<QPointF>(*second)), supportColor, lineWeight);
 
             if (not qFuzzyIsNull(length))
             {
                 QLineF mainLine = VGObject::BuildLine(static_cast<QPointF>(*first), length, line->line().angle());
-                DrawLine(this, mainLine, mainColor, lineStyle);
+                DrawLine(this, mainLine, mainColor, lineWeight, lineStyle);
 
                 DrawPoint(point, mainLine.p2(), mainColor);
             }

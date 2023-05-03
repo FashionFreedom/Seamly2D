@@ -65,6 +65,7 @@
 #include "global.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../ifc/xml/vabstractpattern.h"
 
 template <class T> class QSharedPointer;
 
@@ -180,7 +181,7 @@ QVariant VSimpleCurve::itemChange(QGraphicsItem::GraphicsItemChange change, cons
 //---------------------------------------------------------------------------------------------------------------------
 void VSimpleCurve::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit showContextMenu(event);
+    emit showContextMenu(event, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -207,9 +208,11 @@ void VSimpleCurve::ScalePenWidth()
     }
     else
     {
-        width = widthHairLine;
+        width = ToPixel(qApp->getCurrentDocument()->useGroupLineWeight(id, m_curve->getLineWeight()).toDouble(), Unit::Mm);
     }
 
     width = scaleWidth(width, sceneScale(scene()));
-    setPen(QPen(correctColor(this, m_curve->GetColor()), width, lineTypeToPenStyle(m_curve->GetPenStyle())));
+    setPen(QPen(correctColor(this, qApp->getCurrentDocument()->useGroupColor(id, m_curve->getLineColor())),
+                width,
+                lineTypeToPenStyle(qApp->getCurrentDocument()->useGroupLineType(id, m_curve->GetPenStyle()))));
 }

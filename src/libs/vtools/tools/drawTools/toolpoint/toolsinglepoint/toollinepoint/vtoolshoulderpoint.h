@@ -68,7 +68,7 @@
 template <class T> class QSharedPointer;
 
 /**
- * @brief The VToolShoulderPoint class tool for creation point on shoulder. This tool for special situation, when you
+ * @brief The VToolShoulderPoint class tool for creation of point  Length to Line. This tool for special situation, when you
  * want find point along line, but have only length from another point (shoulder).
  */
 class VToolShoulderPoint : public VToolLinePoint
@@ -82,12 +82,13 @@ public:
     static VToolShoulderPoint *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene,
                                       VAbstractPattern *doc, VContainer *data);
     static VToolShoulderPoint *Create(const quint32 _id, QString &formula, quint32 p1Line, quint32 p2Line,
-                                      quint32 pShoulder, const QString &typeLine, const QString &lineColor,
+                                      quint32 pShoulder, const QString &typeLine, const QString &lineWeight,
+                                      const QString &lineColor,
                                       const QString &pointName, qreal mx, qreal my, bool showPointName,
                                       VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
                                       const Document &parse,
                                       const Source &typeCreation);
-                                      
+
     static const QString       ToolType;
     virtual int                type() const Q_DECL_OVERRIDE {return Type;}
     enum { Type = UserType + static_cast<int>(Tool::ShoulderPoint) };
@@ -122,6 +123,7 @@ private:
     quint32                    pShoulder;     /** @brief pShoulder id shoulder line point. */
 
     VToolShoulderPoint(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
+                       const QString &lineWeight,
                        const QString &lineColor, const QString &formula, const quint32 &p1Line, const quint32 &p2Line,
                        const quint32 &pShoulder, const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };

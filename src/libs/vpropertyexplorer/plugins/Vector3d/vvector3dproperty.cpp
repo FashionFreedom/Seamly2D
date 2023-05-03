@@ -31,9 +31,9 @@ VPE::QVector3DProperty::QVector3DProperty(const QString& name)
     : VProperty(name, QVariant::String) // todo: QVariant::Vector3D??
 {
     QVariant tmpFloat(0); tmpFloat.convert(QVariant::Double);
-    VDoubleProperty* tmpX = new VDoubleProperty("X"); addChild(tmpX); tmpX->setUpdateBehaviour(true, false);
-    VDoubleProperty* tmpY = new VDoubleProperty("Y"); addChild(tmpY); tmpY->setUpdateBehaviour(true, false);
-    VDoubleProperty* tmpZ = new VDoubleProperty("Z"); addChild(tmpZ); tmpZ->setUpdateBehaviour(true, false);
+    DoubleSpinboxProperty* tmpX = new DoubleSpinboxProperty("X"); addChild(tmpX); tmpX->setUpdateBehaviour(true, false);
+    DoubleSpinboxProperty* tmpY = new DoubleSpinboxProperty("Y"); addChild(tmpY); tmpY->setUpdateBehaviour(true, false);
+    DoubleSpinboxProperty* tmpZ = new DoubleSpinboxProperty("Z"); addChild(tmpZ); tmpZ->setUpdateBehaviour(true, false);
     setVector(Vector3D());
 }
 
