@@ -64,6 +64,7 @@
 
 #include <QColorDialog>
 #include <QMenu>
+#include <QPixmap>
 #include <QTableWidget>
 #include <QUndoStack>
 
@@ -119,8 +120,9 @@ void PiecesWidget::togglePiece(quint32 id)
                            : lockItem->setIcon(QIcon("://icon/32x32/lock_off.png"));
 
                     QTableWidgetItem *colorItem = ui->tableWidget->item(row, 2);
-                    colorItem->setBackground(QBrush(QColor(piece.getColor())));
-                    colorItem->setForeground(QBrush(QColor(piece.getColor())));
+                    QPixmap pixmap(20, 20);
+                    pixmap.fill(QColor(piece.getColor()));
+                    colorItem->setIcon(QIcon(pixmap));
 
                     QTableWidgetItem *nameItem = ui->tableWidget->item(row, 3);
                     nameItem->setText(piece.GetName());
@@ -163,7 +165,6 @@ void PiecesWidget::cellClicked(int row, int column)
 
     const quint32 id = item->data(Qt::UserRole).toUInt();
     const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
-    emit Highlight(id);
 
     if (column == 0)
     {
@@ -185,6 +186,11 @@ void PiecesWidget::cellClicked(int row, int column)
         SCASSERT(scene != nullptr)
         emit scene->pieceLockedChanged(id, !lock);
     }
+    else if (column == 3)
+    {
+        emit Highlight(id);
+    }
+    ui->tableWidget->clearSelection();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -194,6 +200,13 @@ void PiecesWidget::cellDoubleClicked(int row, int column)
     if (!item) return;
 
     const quint32 id = item->data(Qt::UserRole).toUInt();
+    const QHash<quint32, VPiece> *allPieces = m_data->DataPieces();
+    if (allPieces->value(id).isLocked())
+    {
+        QApplication::beep();
+        ui->tableWidget->clearSelection();
+        return;
+    }
 
     if (column == 2)
     {
@@ -204,6 +217,7 @@ void PiecesWidget::cellDoubleClicked(int row, int column)
             SetPieceColor *command = new SetPieceColor(id, color.name(), m_data, m_doc);
             connect(command, &SetPieceColor::updateList, this, &PiecesWidget::togglePiece);
             qApp->getUndoStack()->push(command);
+            emit Highlight(id);
         }
     }
     else if (column == 3)
@@ -212,6 +226,7 @@ void PiecesWidget::cellDoubleClicked(int row, int column)
         SCASSERT(tool != nullptr);
         tool->editPieceProperties();
     }
+    ui->tableWidget->clearSelection();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -239,6 +254,8 @@ void PiecesWidget::fillTable(const QHash<quint32, VPiece> *pieces)
         item->setIcon(piece.isInLayout() ? QIcon("://icon/32x32/checkmark.png") : QIcon());
         item->setData(Qt::UserRole, i.key());
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable)); // set the item non-editable (view only), and non-selectable
+        item->setToolTip(tr("Toggle inclusion of pattern piece in layout"));
+
         ui->tableWidget->setItem(currentRow, 0, item);
 
         // Add locked item
@@ -248,15 +265,18 @@ void PiecesWidget::fillTable(const QHash<quint32, VPiece> *pieces)
         item->setIcon(piece.isLocked() ? QIcon("://icon/32x32/lock_on.png") : QIcon("://icon/32x32/lock_off.png"));
         item->setData(Qt::UserRole, i.key());
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip("Toggle lock on pattern piece");
         ui->tableWidget->setItem(currentRow, 1, item);
 
         // Add color item
         item = new PieceTableWidgetItem(m_data);
         item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         item->setSizeHint(QSize(20, 20));
-        item->setBackground(QBrush(QColor(piece.getColor())));
-        item->setForeground(QBrush(QColor(piece.getColor())));
+        QPixmap pixmap(20, 20);
+        pixmap.fill(QColor(piece.getColor()));
+        item->setIcon(QIcon(pixmap));
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip("Double click opens color selector");
         ui->tableWidget->setItem(currentRow, 2, item);
 
         // Add name item
@@ -268,6 +288,7 @@ void PiecesWidget::fillTable(const QHash<quint32, VPiece> *pieces)
         QTableWidgetItem *nameItem = new QTableWidgetItem(name);
         nameItem->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
         nameItem->setFlags(nameItem->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        nameItem->setToolTip("Double click opens pattern piece properties dialog");
         ui->tableWidget->setItem(currentRow, 3, nameItem);
 
         ++i;

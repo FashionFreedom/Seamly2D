@@ -3331,7 +3331,6 @@ void MainWindow::showDraftMode(bool checked)
 
         ui->groups_DockWidget->setWidget(groupsWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
-        ui->groups_DockWidget->setToolTip(tr("Show which groups in the list are visible"));
         ui->groups_DockWidget->setVisible(isGroupsDockVisible);
     }
     else
@@ -3418,7 +3417,6 @@ void MainWindow::showPieceMode(bool checked)
 
         ui->groups_DockWidget->setWidget(patternPiecesWidget);
         ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
-        ui->groups_DockWidget->setToolTip(tr("Show which pattern pieces will included in layout"));
         ui->groups_DockWidget->setVisible(isGroupsDockVisible);
 
         helpLabel->setText("");

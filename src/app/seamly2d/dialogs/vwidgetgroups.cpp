@@ -192,6 +192,7 @@ void VWidgetGroups::FillTable(const QMap<quint32, QPair<QString, bool> > &groups
         // set the item non-editable (view only), and non-selectable
         Qt::ItemFlags flags = item->flags();
         flags &= ~(Qt::ItemIsEditable); // reset/clear the flag
+        item->setToolTip(tr("Toggle visibility of group"));
         item->setFlags(flags);
 
         ui->tableWidget->setItem(currentRow, 0, item);

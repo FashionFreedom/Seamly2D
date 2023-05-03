@@ -78,7 +78,7 @@ message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 # Path to resource file.
 win32:RC_FILE = share/resources/seamly2d.rc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES inside tables.pri
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
 include(../tables.pri)
 
 win32 {
@@ -146,6 +146,7 @@ unix{
         # Path to resources in app bundle
         FRAMEWORKS_DIR = "Contents/Frameworks"
         MACOS_DIR = "Contents/MacOS"
+        RESOURCES_DIR = "Contents/Resources"
         # On macx we will use app bundle. Bundle doesn't need bin directory inside.
         # See issue #166: Creating OSX Homebrew (Mac OS X package manager) formula.
         target.path = $$MACOS_DIR
@@ -153,7 +154,7 @@ unix{
         #languages added inside translations.pri
 
         seamlyme.path = $$MACOS_DIR
-        seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$$MACOS_DIR/seamlyme
+        seamlyme.files += $${OUT_PWD}/../seamlyme/$${DESTDIR}/seamlyme.app/$${MACOS_DIR}/seamlyme
 
         # Utility pdftops need for saving a layout image to PS and EPS formats.
         xpdf.path = $$MACOS_DIR
@@ -162,22 +163,21 @@ unix{
         # logo on macx.
         ICON = ../../../dist/Seamly2D.icns
 
-        QMAKE_INFO_PLIST = $$PWD/../../../dist/macx/seamly2d/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/Info.plist
 
         # Copy to bundle multisize measurements files
-        multisize.path = $$RESOURCES_DIR/tables/multisize/
+        multisize.path = $${RESOURCES_DIR}/tables/multisize
         multisize.files = $$INSTALL_MULTISIZE_MEASUREMENTS
 
         # Copy to bundle templates files
-        templates.path = $$RESOURCES_DIR/tables/templates/
+        templates.path = $${RESOURCES_DIR}/tables/templates
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
         # Path to label templates after installation
-        label.path = $$RESOURCES_DIR/labels/
-        #label.path = /usr/share/$${TARGET}/labels/
+        label.path = $${RESOURCES_DIR}/labels
         label.files = $$INSTALL_LABEL_TEMPLATES
 
-        icns_resources.path = $$RESOURCES_DIR/
+        icns_resources.path = $${RESOURCES_DIR}
         icns_resources.files += $$PWD/../../../dist/macx/i-measurements.icns
         icns_resources.files += $$PWD/../../../dist/macx/s-measurements.icns
         icns_resources.files += $$PWD/../../../dist/macx/pattern.icns
@@ -346,8 +346,19 @@ win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DE
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
 macx{
-   # run macdeployqt to include all qt libraries in packet
-   QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    APPLE_SIGN_IDENTITY_UNQUOTED = $(APPLE_SIGN_IDENTITY)
+    APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))
+
+    !macSign {
+        # run macdeployqt to include all qt libraries in packet
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    } else {
+        # we need to manually sign with codesign --deep as pdftops otherwise will not get signed by macdeployqt
+        # we need --force as seamlyme is already signed, but we need to resign it
+        QMAKE_POST_LINK += $$[QT_INSTALL_BINS]/macdeployqt $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += codesign --deep --timestamp --options runtime --force -s $${APPLE_SIGN_IDENTITY} $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app &&
+        QMAKE_POST_LINK += codesign --verify $${OUT_PWD}/$${DESTDIR}/$${TARGET}.app
+    }
 }
 
 win32{
