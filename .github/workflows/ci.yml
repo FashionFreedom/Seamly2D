@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - qt6-ci
+    - develop
   pull_request:
 
 permissions:
@@ -68,6 +68,7 @@ jobs:
           chmod +x ./scripts/version.sh
           ./scripts/version.sh ${VERSION_NUMBER}
 
+
       - name: build Seamly2D appimage
         env:
           OUTPUT: Seamly2D-x86_64.AppImage  # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
@@ -87,7 +88,7 @@ jobs:
           if-no-files-found: error
 
   linux-test:
-    # if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-20.04
 
