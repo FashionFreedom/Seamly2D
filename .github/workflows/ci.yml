@@ -212,6 +212,24 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
       - name: pack installer file into .zip
         run: |
           cd ..\windows-build\
@@ -267,6 +285,24 @@ jobs:
           Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
 
       - name: pack installer file into .zip
         run: |
