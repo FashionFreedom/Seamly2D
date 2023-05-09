@@ -79,7 +79,8 @@ public:
 
     static VToolEndLine *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene  *scene, VAbstractPattern *doc,
                                 VContainer *data);
-    static VToolEndLine *Create(const quint32 _id, const QString &pointName, const QString &typeLine,
+    static VToolEndLine *Create(const quint32 _id, const QString &pointName,
+                                const QString &lineType, const QString &lineWeight,
                                 const QString &lineColor, QString &formulaLength, QString &formulaAngle,
                                 quint32 basePointId, qreal mx, qreal my, bool showPointName,
                                 VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
@@ -109,7 +110,8 @@ private:
     QString formulaAngle;
 
                          VToolEndLine(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                      const QString &typeLine, const QString &lineColor, const QString &formulaLength,
+                                      const QString &lineType, const QString &lineWeight,
+                                      const QString &lineColor, const QString &formulaLength,
                                       const QString &formulaAngle, const quint32 &basePointId,
                                       const Source &typeCreation, QGraphicsItem * parent = nullptr);
 };

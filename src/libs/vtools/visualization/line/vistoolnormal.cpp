@@ -91,11 +91,11 @@ void VisToolNormal::RefreshGeometry()
         if (object2Id <= NULL_ID)
         {
             QLineF line_mouse(static_cast<QPointF>(*first), Visualization::scenePos);
-            DrawLine(line, line_mouse, supportColor);
+            DrawLine(line, line_mouse, supportColor, lineWeight);
 
             QLineF normal = line_mouse.normalVector();
             QPointF endRay = Ray(normal.p1(), normal.angle());
-            DrawLine(this, QLineF(normal.p1(), endRay), mainColor);
+            DrawLine(this, QLineF(normal.p1(), endRay), mainColor, lineWeight);
         }
         else
         {
@@ -103,20 +103,20 @@ void VisToolNormal::RefreshGeometry()
             DrawPoint(lineP2, static_cast<QPointF>(*second), supportColor);
 
             QLineF line_mouse(static_cast<QPointF>(*first), static_cast<QPointF>(*second));
-            DrawLine(line, line_mouse, supportColor);
+            DrawLine(line, line_mouse, supportColor, lineWeight);
 
             if (qFuzzyIsNull(length))
             {
                 QLineF normal = line_mouse.normalVector();
                 QPointF endRay = Ray(normal.p1(), normal.angle());
-                DrawLine(this, QLineF(normal.p1(), endRay), mainColor);
+                DrawLine(this, QLineF(normal.p1(), endRay), mainColor, lineWeight);
             }
             else
             {
                 QPointF fPoint = VToolNormal::FindPoint(static_cast<QPointF>(*first), static_cast<QPointF>(*second),
                                                         length, angle);
                 QLineF mainLine = QLineF(static_cast<QPointF>(*first), fPoint);
-                DrawLine(this, mainLine, mainColor, lineStyle);
+                DrawLine(this, mainLine, mainColor, lineWeight, lineStyle);
 
                 DrawPoint(point, mainLine.p2(), mainColor);
             }

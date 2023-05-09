@@ -94,11 +94,14 @@ public:
     virtual QString      getTagName() const Q_DECL_OVERRIDE;
     void                 ShowHandles(bool show);
 
-    QString              GetLineColor() const;
-    void                 SetLineColor(const QString &value);
+    QString              getLineColor() const;
+    void                 setLineColor(const QString &value);
 
     QString              GetPenStyle() const;
     void                 SetPenStyle(const QString &value);
+
+    QString              getLineWeight() const;
+    void                 setLineWeight(const QString &value);
 
     QString              name() const;
 

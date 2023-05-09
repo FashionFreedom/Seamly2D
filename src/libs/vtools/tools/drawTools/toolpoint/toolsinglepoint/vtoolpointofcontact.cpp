@@ -126,7 +126,7 @@ void VToolPointOfContact::setDialog()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief FindPoint return point intersection line and arc.
+ * @brief FindPoint return point intersection arc and line.
  * @param radius string with formula arc radius.
  * @param center center arc point.
  * @param firstPoint first line point.
@@ -426,7 +426,13 @@ quint32 VToolPointOfContact::GetSecondPointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void VToolPointOfContact::SetSecondPointId(const quint32 &value)
 {
-    secondPointId = value;
+    if (value != NULL_ID)
+    {
+        secondPointId = value;
+
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+        SaveOption(obj);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -444,7 +450,13 @@ quint32 VToolPointOfContact::GetFirstPointId() const
 //---------------------------------------------------------------------------------------------------------------------
 void VToolPointOfContact::SetFirstPointId(const quint32 &value)
 {
-    firstPointId = value;
+    if (value != NULL_ID)
+    {
+        firstPointId = value;
+
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+        SaveOption(obj);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

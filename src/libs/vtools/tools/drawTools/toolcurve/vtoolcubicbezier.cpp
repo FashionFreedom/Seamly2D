@@ -97,8 +97,9 @@ void VToolCubicBezier::setDialog()
     SCASSERT(dialogTool != nullptr)
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     dialogTool->SetSpline(*spl);
-    dialogTool->SetColor(spl->GetColor());
-    dialogTool->SetPenStyle(spl->GetPenStyle());
+    dialogTool->setLineColor(spl->getLineColor());
+    dialogTool->setPenStyle(spl->GetPenStyle());
+    dialogTool->setLineWeight(spl->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -110,8 +111,9 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
     SCASSERT(not dialogTool.isNull())
 
     VCubicBezier *spline = new VCubicBezier(dialogTool->GetSpline());
-    spline->SetColor(dialogTool->GetColor());
-    spline->SetPenStyle(dialogTool->GetPenStyle());
+    spline->setLineColor(dialogTool->getLineColor());
+    spline->SetPenStyle(dialogTool->getPenStyle());
+    spline->setLineWeight(dialogTool->getLineWeight());
 
     auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
 
@@ -245,8 +247,9 @@ void VToolCubicBezier::SaveDialog(QDomElement &domElement)
     const VCubicBezier spl = dialogTool->GetSpline();
 
     SetSplineAttributes(domElement, spl);
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -273,6 +276,7 @@ void VToolCubicBezier::SetVisualization()
         visual->setObject3Id(spl->GetP3().id());
         visual->setObject4Id(spl->GetP4().id());
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
+        visual->setLineWeight(spl->getLineWeight());
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }

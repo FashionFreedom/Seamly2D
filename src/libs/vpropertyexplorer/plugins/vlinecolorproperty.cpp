@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vlinecolorproperty.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   7 2, 2015
+/******************************************************************************
+ *   @file   vlinecolorproperty.cpp
+ **  @author DS Caskey
+ **  @date   Feb 2, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,6 +25,34 @@
  **
  *************************************************************************/
 
+/************************************************************************
+ **
+ **  @file   vlinecolorproperty.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   7 2, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://github.com/fashionfreedom/Valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
 #include "vlinecolorproperty.h"
 
 #include <QColor>
@@ -61,10 +65,16 @@
 #include <QString>
 #include <QWidget>
 
+#include "../ifc/ifcdef.h"
+#include "../vtools/tools/vabstracttool.h"
 #include "../vproperty_p.h"
 
 VPE::VLineColorProperty::VLineColorProperty(const QString &name)
-    : VProperty(name, QVariant::Int), colors(), indexList()
+    : VProperty(name, QVariant::Int)
+    , colors()
+    , indexList()
+    , m_iconWidth(40)
+    , m_iconHeight(14)
 {
     VProperty::d_ptr->VariantValue = 0;
     VProperty::d_ptr->VariantValue.convert(QVariant::Int);
@@ -103,38 +113,41 @@ QWidget *VPE::VLineColorProperty::createEditor(QWidget *parent, const QStyleOpti
 {
     Q_UNUSED(options)
     Q_UNUSED(delegate)
-    QComboBox* tmpEditor = new QComboBox(parent);
+    QComboBox *colorEditor = new QComboBox(parent);
+    colorEditor->clear();
 
-    int size = tmpEditor->iconSize().height();
-    // On Mac pixmap should be little bit smaller.
 #if defined(Q_OS_MAC)
-    size -= 2; // Two pixels should be enough.
-#endif //defined(Q_OS_MAC)
+    // Mac pixmap should be little bit smaller
+    colorEditor->setIconSize(QSize(m_iconWidth-= 2 ,m_iconHeight-= 2));
+#else
+    // Windows
+    colorEditor->setIconSize(QSize(m_iconWidth, m_iconHeight));
+#endif
 
     QMap<QString, QString>::const_iterator i = colors.constBegin();
     while (i != colors.constEnd())
     {
-        QPixmap pix(size, size);
-        pix.fill(QColor(i.key()));
-        tmpEditor->addItem(QIcon(pix), i.value(), QVariant(i.key()));
+        QPixmap pixmap = VAbstractTool::createColorIcon(m_iconWidth, m_iconHeight, i.key());
+        colorEditor->addItem(QIcon(pixmap), i.value(), QVariant(i.key()));
         ++i;
     }
 
-    tmpEditor->setLocale(parent->locale());
-    tmpEditor->setCurrentIndex(VProperty::d_ptr->VariantValue.toInt());
-    connect(tmpEditor, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
+    colorEditor->setMinimumWidth(140);
+    colorEditor->setLocale(parent->locale());
+    colorEditor->setCurrentIndex(VProperty::d_ptr->VariantValue.toInt());
+    connect(colorEditor, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
                      &VLineColorProperty::currentIndexChanged);
 
-    VProperty::d_ptr->editor = tmpEditor;
+    VProperty::d_ptr->editor = colorEditor;
     return VProperty::d_ptr->editor;
 }
 
 QVariant VPE::VLineColorProperty::getEditorData(const QWidget *editor) const
 {
-    const QComboBox* tmpEditor = qobject_cast<const QComboBox*>(editor);
-    if (tmpEditor)
+    const QComboBox *colorEditor = qobject_cast<const QComboBox*>(editor);
+    if (colorEditor)
     {
-        return tmpEditor->currentIndex();
+        return colorEditor->currentIndex();
     }
 
     return QVariant(0);
@@ -186,7 +199,7 @@ VPE::VProperty *VPE::VLineColorProperty::clone(bool include_children, VProperty 
     return VProperty::clone(include_children, container ? container : new VLineColorProperty(getName()));
 }
 
-int VPE::VLineColorProperty::IndexOfColor(const QMap<QString, QString> &colors, const QString &color)
+int VPE::VLineColorProperty::indexOfColor(const QMap<QString, QString> &colors, const QString &color)
 {
     QVector<QString> indexList;
     QMap<QString, QString>::const_iterator i = colors.constBegin();
@@ -202,5 +215,5 @@ void VPE::VLineColorProperty::currentIndexChanged(int index)
 {
     Q_UNUSED(index)
     UserChangeEvent *event = new UserChangeEvent();
-    QCoreApplication::postEvent ( VProperty::d_ptr->editor, event );
+    QCoreApplication::postEvent (VProperty::d_ptr->editor, event );
 }

@@ -80,6 +80,7 @@ public:
     static VToolCurveIntersectAxis *Create(QSharedPointer<DialogTool> dialog, VMainGraphicsScene *scene,
                                            VAbstractPattern *doc, VContainer *data);
     static VToolCurveIntersectAxis *Create(const quint32 _id, const QString &pointName, const QString &lineType,
+                                           const QString &lineWeight,
                                            const QString &lineColor, QString &formulaAngle, quint32 basePointId,
                                            quint32 curveId, qreal mx, qreal my, bool showPointName,
                                            VMainGraphicsScene  *scene, VAbstractPattern *doc, VContainer *data,
@@ -117,7 +118,8 @@ private:
     quint32              curveId;
 
                          VToolCurveIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                                 const QString &lineType, const QString &lineColor,
+                                                 const QString &lineType, const QString &lineWeight,
+                                                 const QString &lineColor,
                                                  const QString &formulaAngle, const quint32 &basePointId,
                                                  const quint32 &curveId, const Source &typeCreation,
                                                  QGraphicsItem * parent = nullptr);

@@ -9,6 +9,7 @@ on:
   push:
     branches:
     - develop
+    - test
   pull_request:
 
 permissions:
@@ -76,9 +77,11 @@ jobs:
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
           make INSTALL_ROOT=`pwd`/AppDir install
-          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia
-          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base
+          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia, libxkbcommon for Qt xcb
+          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base libxkbcommon-x11-0
           cp /usr/bin/pdftops AppDir/usr/bin
+          mkdir -p AppDir/usr/share/X11/xkb
+          cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
       - uses: actions/upload-artifact@v3
@@ -114,7 +117,7 @@ jobs:
         # xvfb use to test built application within a framebuffer
         run: |
           sudo apt update
-          sudo apt install -y xvfb
+          sudo apt install -y xvfb libxkbcommon-x11-0
 
       - name: run Seamly2D tests
         run: |
@@ -184,7 +187,7 @@ jobs:
           if-no-files-found: error
 
   windows:
-    name: 'Windows: Build'
+    name: 'Windows 64-Bit: Build'
     runs-on: windows-latest
     needs: version
     env:
@@ -238,10 +241,66 @@ jobs:
           path: Seamly2D-windows.zip
           if-no-files-found: error
 
+  win32:
+    name: 'Windows 32-Bit: Build'
+    runs-on: windows-latest
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install msvc
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          # use Visual C++ 2022 latest, 14.34.xxxx
+          toolset: '14.34'
+          arch: amd64_x86
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          arch: win32_msvc2019
+          cache: true
+
+      - name: update version
+        shell: bash
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          nmake
+
+      - name: create seamly2d-installer.exe
+        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+        # uses parameters in seamly2d-installer.nsi to create the installer exe
+        run: |
+          mkdir ..\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+      - name: pack installer file into .zip
+        run: |
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
+          copy Seamly2D-win32.zip ..\Seamly2D\
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Seamly2D-win32.zip
+          path: Seamly2D-win32.zip
+          if-no-files-found: error
+
   publish:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
-    needs: [version, windows, linux, macos]
+    needs: [version, windows, win32, linux, macos]
     env:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
@@ -255,6 +314,9 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: Seamly2D-windows.zip
+      - uses: actions/download-artifact@v3
+        with:
+          name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ env.VERSION_NUMBER }}
@@ -268,3 +330,4 @@ jobs:
             Seamly2D-x86_64.AppImage
             Seamly2D-macos.zip
             Seamly2D-windows.zip
+            Seamly2D-win32.zip

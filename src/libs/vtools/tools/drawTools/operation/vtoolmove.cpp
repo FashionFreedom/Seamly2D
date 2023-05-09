@@ -110,7 +110,7 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
         qCDebug(vTool, "Object:  %d", item.id);
         const QSharedPointer<VGObject> object = data->GetGObject(item.id);
 
-        Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
+        Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
         switch(static_cast<GOType>(object->getType()))
         {
@@ -126,6 +126,10 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
                 originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->getPoints());
                 break;
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+                default:
                 Q_UNREACHABLE();
                 break;
         }
@@ -240,7 +244,7 @@ VToolMove *VToolMove::Create(quint32 _id, QString &formulaAngle, QString &formul
             const QSharedPointer<VGObject> object = data->GetGObject(item.id);
 
             // This check helps to find missed objects in the switch
-            Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
+            Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
@@ -292,6 +296,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                                          data));
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -308,7 +316,7 @@ QT_WARNING_POP
             const QSharedPointer<VGObject> object = data->GetGObject(item.id);
 
             // This check helps to find missed objects in the switch
-            Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
+            Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
@@ -345,6 +353,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                               rotationOrigin, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -460,6 +472,21 @@ QString VToolMove::getOriginPointName() const
     {
         return tr("Center point");
     }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VToolMove::getOriginPointId() const
+{
+    return m_originPointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMove::setOriginPointId(const quint32 &value)
+{
+    m_originPointId = value;
+
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetFakeGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

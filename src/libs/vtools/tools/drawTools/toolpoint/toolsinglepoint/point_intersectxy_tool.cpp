@@ -183,7 +183,7 @@ PointIntersectXYTool *PointIntersectXYTool::Create(const quint32 _id, const QStr
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::PointOfIntersection, doc);
-        PointIntersectXYTool *point = new PointIntersectXYTool(doc, data, id, lineType, lineWeight,lineColor,
+        PointIntersectXYTool *point = new PointIntersectXYTool(doc, data, id, lineType, lineWeight, lineColor,
                                                                firstPointId, secondPointId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);

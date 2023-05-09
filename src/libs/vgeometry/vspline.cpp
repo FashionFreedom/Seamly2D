@@ -151,8 +151,9 @@ VSpline VSpline::Rotate(const QPointF &originPoint, qreal degrees, const QString
 
     VSpline spl(p1, p2, p3, p4);
     spl.setName(name() + prefix);
-    spl.SetColor(GetColor());
+    spl.setLineColor(getLineColor());
     spl.SetPenStyle(GetPenStyle());
+    spl.setLineWeight(getLineWeight());
     return spl;
 }
 
@@ -167,8 +168,9 @@ VSpline VSpline::Flip(const QLineF &axis, const QString &prefix) const
 
     VSpline spl(p1, p2, p3, p4);
     spl.setName(name() + prefix);
-    spl.SetColor(GetColor());
+    spl.setLineColor(getLineColor());
     spl.SetPenStyle(GetPenStyle());
+    spl.setLineWeight(getLineWeight());
     return spl;
 }
 
@@ -183,8 +185,9 @@ VSpline VSpline::Move(qreal length, qreal angle, const QString &prefix) const
 
     VSpline spl(p1, p2, p3, p4);
     spl.setName(name() + prefix);
-    spl.SetColor(GetColor());
+    spl.setLineColor(getLineColor());
     spl.SetPenStyle(GetPenStyle());
+    spl.setLineWeight(getLineWeight());
     return spl;
 }
 

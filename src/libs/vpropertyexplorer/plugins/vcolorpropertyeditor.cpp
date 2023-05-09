@@ -60,7 +60,7 @@ VPE::VColorPropertyEditor::VColorPropertyEditor(QWidget *parent)
     Spacer = new QSpacerItem(1, 0, QSizePolicy::Expanding, QSizePolicy::Ignored);
 
     // The layout (a horizontal layout)
-    QHBoxLayout* layout = new QHBoxLayout(this);
+    QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setSpacing(3);
     // layout->setMargin(0); Obsolete?
     layout->addWidget(ColorLabel);
@@ -71,7 +71,7 @@ VPE::VColorPropertyEditor::VColorPropertyEditor(QWidget *parent)
     //ColorLabel->hide();   // for now, we just use the standard display and only add the button
 }
 
-void VPE::VColorPropertyEditor::SetColor(const QColor& color_)
+void VPE::VColorPropertyEditor::setLineColor(const QColor &color_)
 {
     if (Color != color_)
     {
@@ -81,7 +81,7 @@ void VPE::VColorPropertyEditor::SetColor(const QColor& color_)
     }
 }
 
-QPixmap VPE::VColorPropertyEditor::GetColorPixmap(const QColor& color, quint32 size)
+QPixmap VPE::VColorPropertyEditor::GetColorPixmap(const QColor &color, quint32 size)
 {
     QImage tmpImgage(static_cast<int>(size), static_cast<int>(size), QImage::Format_ARGB32_Premultiplied);
     tmpImgage.fill(static_cast<quint32>(color.rgb()));
@@ -89,7 +89,7 @@ QPixmap VPE::VColorPropertyEditor::GetColorPixmap(const QColor& color, quint32 s
     // todo: support alpha channel
 }
 
-QString VPE::VColorPropertyEditor::GetColorString(const QColor& color)
+QString VPE::VColorPropertyEditor::GetColorString(const QColor &color)
 {
     return QString("[%1, %2, %3] (%4)").arg(color.red()).arg(color.green()).arg(color.blue()).arg(color.alpha());
 }
@@ -99,7 +99,7 @@ void VPE::VColorPropertyEditor::onToolButtonClicked()
     const QColor newColor = QColorDialog::getColor(Color, this, QString(), QColorDialog::ShowAlphaChannel);
     if (newColor.isValid() && newColor != Color)
     {
-        SetColor(newColor);
+        setLineColor(newColor);
         emit dataChangedByUser(Color, this);
         UserChangeEvent *event = new UserChangeEvent();
         QCoreApplication::postEvent ( this, event );
@@ -124,7 +124,7 @@ VPE::VColorPropertyEditor::~VColorPropertyEditor()
     //
 }
 
-QColor VPE::VColorPropertyEditor::GetColor() const
+QColor VPE::VColorPropertyEditor::getLineColor() const
 {
     return Color;
 }

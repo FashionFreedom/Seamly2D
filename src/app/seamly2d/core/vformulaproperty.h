@@ -106,7 +106,7 @@ public:
     void SetFormula(const VFormula &formula);
 
 public slots:
-    virtual void ValueChildChanged(const QVariant &value, int typeForParent) Q_DECL_OVERRIDE;
+    virtual void childValueChanged(const QVariant &value, int typeForParent) Q_DECL_OVERRIDE;
 
 };
 

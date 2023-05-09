@@ -250,13 +250,13 @@ void DoubleLinePointTool::FullUpdateFromFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DoubleLinePointTool::GetLineColor() const
+QString DoubleLinePointTool::getLineColor() const
 {
     return lineColor;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DoubleLinePointTool::SetLineColor(const QString &value)
+void DoubleLinePointTool::setLineColor(const QString &value)
 {
     lineColor = value;
 

@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   dialogarcwithlength.h
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogarcwithlength.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -58,8 +53,9 @@
 #include <QString>
 #include <QtGlobal>
 
-#include "../vmisc/def.h"
 #include "dialogtool.h"
+#include "../vgeometry/varc.h"
+#include "../vmisc/def.h"
 
 namespace Ui
 {
@@ -74,6 +70,9 @@ public:
     DialogArcWithLength(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
     ~DialogArcWithLength();
 
+    VArc          getArc() const;
+    void          setArc(const VArc &arc);
+
     quint32       GetCenter() const;
     void          SetCenter(const quint32 &value);
 
@@ -86,20 +85,23 @@ public:
     QString       GetLength() const;
     void          SetLength(const QString &value);
 
-    QString       GetPenStyle() const;
-    void          SetPenStyle(const QString &value);
+    QString       getPenStyle() const;
+    void          setPenStyle(const QString &value);
 
-    QString       GetColor() const;
-    void          SetColor(const QString &value);
+    QString       getLineWeight() const;
+    void          setLineWeight(const QString &value);
+
+    QString       getLineColor() const;
+    void          setLineColor(const QString &value);
 
 public slots:
     virtual void  ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**
      * @brief DeployFormulaTextEdit grow or shrink formula input
      */
-    void DeployRadiusTextEdit();
-    void DeployF1TextEdit();
-    void DeployLengthTextEdit();
+    void          DeployRadiusTextEdit();
+    void          DeployF1TextEdit();
+    void          DeployLengthTextEdit();
 
     void          RadiusChanged();
     void          F1Changed();
@@ -110,6 +112,7 @@ public slots:
     void          FXLength();
 
 protected:
+    void          pointNameChanged();
     virtual void  CheckState() Q_DECL_FINAL;
     virtual void  ShowVisualization() Q_DECL_OVERRIDE;
     /**
@@ -152,6 +155,9 @@ private:
     int           formulaBaseHeightLength;
 
     qreal         angleF1;
+    VArc          m_arc;
+    qint32        m_Id;
+    qint32        newDuplicate;
 
     void          Radius();
     void          Length();

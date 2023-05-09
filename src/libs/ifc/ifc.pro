@@ -46,3 +46,5 @@ RESOURCES += \
 include(warnings.pri)
 
 include (../libs.pri)
+
+DISTFILES +=

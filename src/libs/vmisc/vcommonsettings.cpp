@@ -121,10 +121,12 @@ const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graph
 const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
 const QString settingGraphicsViewPointNameHoverColor     = QStringLiteral("graphicsview/pointNameHoverColor");
 const QString settingGraphicsViewAxisOrginColor          = QStringLiteral("graphicsview/axisOrginColor");
+const QString settingGraphicsViewDefaultLineColor        = QStringLiteral("graphicsview/defaultLineColor");
+const QString settingGraphicsViewDefaultLineWeight       = QStringLiteral("graphicsview/defaultLineWeight");
+const QString settingGraphicsViewDefaultLineType         = QStringLiteral("graphicsview/defaultLineType");
 const QString settingGraphicsViewPrimaryColor            = QStringLiteral("graphicsview/primarySupportColor");
 const QString settingGraphicsViewSecondaryColor          = QStringLiteral("graphicsview/secondarySupportColor");
 const QString settingGraphicsViewTertiaryColor           = QStringLiteral("graphicsview/tertiarySupportColor");
-
 
 const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
 const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
@@ -991,6 +993,42 @@ QString VCommonSettings::getAxisOrginColor() const
 void VCommonSettings::setAxisOrginColor(const QString &value)
 {
     setValue(settingGraphicsViewAxisOrginColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLineColor() const
+{
+    return value(settingGraphicsViewDefaultLineColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLineColor(const QString &value)
+{
+    setValue(settingGraphicsViewDefaultLineColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultLineWeight() const
+{
+    return value(settingGraphicsViewDefaultLineWeight, 1.20).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLineWeight(const qreal &value)
+{
+    setValue(settingGraphicsViewDefaultLineWeight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLineType() const
+{
+    return value(settingGraphicsViewDefaultLineType, "solidLine").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLineType(const QString &value)
+{
+    setValue(settingGraphicsViewDefaultLineType, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

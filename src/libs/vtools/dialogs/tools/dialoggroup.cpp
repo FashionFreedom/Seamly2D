@@ -56,9 +56,9 @@
 #include "ui_dialoggroup.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogGroup::DialogGroup(const VContainer *data, const quint32 &toolId, QWidget *parent)
+EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : DialogTool(data, toolId, parent),
-      ui(new Ui::DialogGroup),
+      ui(new Ui::EditGroupDialog),
       group()
 {
     ui->setupUi(this);
@@ -68,29 +68,29 @@ DialogGroup::DialogGroup(const VContainer *data, const quint32 &toolId, QWidget 
     InitOkCancel(ui);
     DialogTool::CheckState();
 
-    connect(ui->lineEditName, &QLineEdit::textChanged, this, &DialogGroup::NameChanged);
+    connect(ui->lineEditName, &QLineEdit::textChanged, this, &EditGroupDialog::NameChanged);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-DialogGroup::~DialogGroup()
+EditGroupDialog::~EditGroupDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogGroup::SetName(const QString &name)
+void EditGroupDialog::SetName(const QString &name)
 {
     ui->lineEditName->setText(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogGroup::GetName() const
+QString EditGroupDialog::GetName() const
 {
     return ui->lineEditName->text();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogGroup::ShowDialog(bool click)
+void EditGroupDialog::ShowDialog(bool click)
 {
     if (not click)
     {
@@ -108,7 +108,7 @@ void DialogGroup::ShowDialog(bool click)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogGroup::SelectedObject(bool selected, quint32 object, quint32 tool)
+void EditGroupDialog::SelectedObject(bool selected, quint32 object, quint32 tool)
 {
     if (selected)
     {
@@ -121,14 +121,14 @@ void DialogGroup::SelectedObject(bool selected, quint32 object, quint32 tool)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogGroup::NameChanged()
+void EditGroupDialog::NameChanged()
 {
     ui->lineEditName->text().isEmpty() ? flagName = false : flagName = true;
     CheckState();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<quint32, quint32> DialogGroup::GetGroup() const
+QMap<quint32, quint32> EditGroupDialog::GetGroup() const
 {
     return group;
 }

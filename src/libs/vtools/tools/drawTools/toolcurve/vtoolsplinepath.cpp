@@ -163,8 +163,9 @@ void VToolSplinePath::setDialog()
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VSplinePath> splPath = VAbstractTool::data.GeometricObject<VSplinePath>(m_id);
     dialogTool->SetPath(*splPath);
-    dialogTool->SetColor(splPath->GetColor());
-    dialogTool->SetPenStyle(splPath->GetPenStyle());
+    dialogTool->setLineColor(splPath->getLineColor());
+    dialogTool->setLineWeight(splPath->getLineWeight());
+    dialogTool->setPenStyle(splPath->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -187,8 +188,9 @@ VToolSplinePath* VToolSplinePath::Create(QSharedPointer<DialogTool> dialog, VMai
         doc->IncrementReferens((*path)[i].P().getIdTool());
     }
 
-    path->SetColor(dialogTool->GetColor());
-    path->SetPenStyle(dialogTool->GetPenStyle());
+    path->setLineColor(dialogTool->getLineColor());
+    path->SetPenStyle(dialogTool->getPenStyle());
+    path->setLineWeight(dialogTool->getLineWeight());
 
     VToolSplinePath* spl = Create(0, path, scene, doc, data, Document::FullParse, Source::FromGui);
     if (spl != nullptr)
@@ -245,9 +247,9 @@ VToolSplinePath* VToolSplinePath::Create(const quint32 _id, VSplinePath *path, V
 //---------------------------------------------------------------------------------------------------------------------
 VToolSplinePath *VToolSplinePath::Create(const quint32 _id, const QVector<quint32> &points, QVector<QString> &a1,
                                          QVector<QString> &a2, QVector<QString> &l1, QVector<QString> &l2,
-                                         const QString &color, const QString &penStyle, quint32 duplicate,
-                                         VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
-                                         const Document &parse, const Source &typeCreation)
+                                         const QString &color, const QString &penStyle, const QString &lineWeight,
+                                         quint32 duplicate, VMainGraphicsScene *scene, VAbstractPattern *doc,
+                                         VContainer *data, const Document &parse, const Source &typeCreation)
 {
     auto path = new VSplinePath();
 
@@ -270,8 +272,9 @@ VToolSplinePath *VToolSplinePath::Create(const quint32 _id, const QVector<quint3
                                   l2.at(i)));
     }
 
-    path->SetColor(color);
+    path->setLineColor(color);
     path->SetPenStyle(penStyle);
+    path->setLineWeight(lineWeight);
 
     return VToolSplinePath::Create(_id, path, scene, doc, data, parse, typeCreation);
 }
@@ -479,8 +482,9 @@ void VToolSplinePath::SaveDialog(QDomElement &domElement)
         controlPoints[j-1]->blockSignals(false);
     }
 
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
     SetSplinePathAttributes(domElement, splPath);
 }
 
@@ -651,6 +655,7 @@ void VToolSplinePath::SetVisualization()
         QSharedPointer<VSplinePath> splPath = VAbstractTool::data.GeometricObject<VSplinePath>(m_id);
         visual->setPath(*splPath.data());
         visual->setLineStyle(lineTypeToPenStyle(splPath->GetPenStyle()));
+        visual->setLineWeight(splPath->getLineWeight());
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }

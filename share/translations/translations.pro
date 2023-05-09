@@ -1,7 +1,4 @@
-# Don't use this pro file for building project!!!
-# I made this hack for creation one TS file for whole project.
-# Because we have several libraries that also have strings for translation, have several TS files for each
-# subproject annoying.
+# This pro file is used to run lupdate from top level pro file.
 #
 # Original idea "How to generate a single translation file for a large Qt project?"
 # https://stackoverflow.com/questions/1829474/how-to-generate-a-single-translation-file-for-a-large-qt-project
@@ -39,10 +36,6 @@ include(../../src/libs/fervor/fervor.pri)
 # Add here path to new translation file with name "seamly2d_*_*.ts" if you want to add new language.
 # Same paths in variable INSTALL_TRANSLATIONS (translations.pri).
 
-# File seamly2d.ts we use in transifex.com. It is empty translation file only with english inside. transifex.com use
-# this file like base for new language. Don't add path to seamly2d.ts to INSTALL_TRANSLATIONS variable (translations.pri).
-# When adding a translation here, also add it in the macx part (translations.pri).
-
 LANGUAGES += \
     ru_RU \
     uk_UA \
@@ -63,9 +56,6 @@ LANGUAGES += \
     pt_BR \
     el_GR
 
-TRANSLATIONS += seamly2d.ts
-
 for(lang, LANGUAGES) {
     TRANSLATIONS += seamly2d_$${lang}.ts
 }
-

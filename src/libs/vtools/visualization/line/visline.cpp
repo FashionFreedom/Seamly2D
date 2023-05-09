@@ -160,5 +160,5 @@ void VisLine::DrawRay(VScaledLine *lineItem, const QPointF &p, const QPointF &pT
     const qreal angle = QLineF(p, pTangent).angle();
     const QPointF endRay = Ray(p, angle);
     const QLineF tangent = VGObject::BuildLine(p, QLineF(p, endRay).length(), angle);
-    DrawLine(lineItem, tangent, color, style);
+    DrawLine(lineItem, tangent, color, 0.35, style);
 }

@@ -45,11 +45,11 @@ class VPropertyFormWidget : public QGroupBox
     Q_OBJECT
 public:
     //! Constructor
-    VPropertyFormWidget(const QString& title, const QString& description, const QList<VProperty*>& properties,
+    VPropertyFormWidget(const QString &title, const QString &description, const QList<VProperty*> &properties,
                         QWidget* parent);
 
     //! Constructor
-    VPropertyFormWidget(VProperty* parent_property, QWidget* parent);
+    VPropertyFormWidget(VProperty *parent_property, QWidget *parent);
 
     //! Destructor
     ~VPropertyFormWidget();
@@ -83,21 +83,21 @@ public slots:
 
 signals:
     //! Emitted whenever a property data changes
-    void propertyDataSubmitted(VProperty* property);
+    void propertyDataSubmitted(VProperty *property);
 
 protected:
     //! Protected Constructor
-    VPropertyFormWidget(VPropertyFormWidgetPrivate* d_pointer, QWidget* parent, const QString &title = QString(),
+    VPropertyFormWidget(VPropertyFormWidgetPrivate *d_pointer, QWidget *parent, const QString &title = QString(),
                         const QString &description = QString());
 
     //! The protected data
-    VPropertyFormWidgetPrivate* d_ptr;
+    VPropertyFormWidgetPrivate *d_ptr;
 
     //! Event filter for the editor widgets
     bool eventFilter(QObject *object, QEvent *event);
 
     //! Commits data of an editor
-    void commitData(const QWidget* editor);
+    void commitData(const QWidget *editor);
 
 private:
     Q_DISABLE_COPY(VPropertyFormWidget)

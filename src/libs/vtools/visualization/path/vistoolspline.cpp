@@ -145,7 +145,7 @@ void VisToolSpline::RefreshGeometry()
         if (object4Id <= NULL_ID)
         {
             VSpline spline(*first, p2, Visualization::scenePos, VPointF(Visualization::scenePos));
-            DrawPath(this, spline.GetPath(), mainColor, lineStyle, Qt::RoundCap);
+            DrawPath(this, spline.GetPath(), mainColor, lineStyle, lineWeight, Qt::RoundCap);
         }
         else
         {
@@ -183,12 +183,13 @@ void VisToolSpline::RefreshGeometry()
             if (VFuzzyComparePossibleNulls(angle1, EMPTY_ANGLE) || VFuzzyComparePossibleNulls(angle2, EMPTY_ANGLE))
             {
                 VSpline spline(*first, p2, p3, *second);
-                DrawPath(this, spline.GetPath(), mainColor, lineStyle, Qt::RoundCap);
+                DrawPath(this, spline.GetPath(), mainColor, lineStyle, lineWeight, Qt::RoundCap);
             }
             else
             {
                 VSpline spline(*first, *second, angle1, angle2, kAsm1, kAsm2, kCurve);
-                DrawPath(this, spline.GetPath(), spline.DirectionArrows(), mainColor, lineStyle, Qt::RoundCap);
+                DrawPath(this, spline.GetPath(), spline.DirectionArrows(), mainColor, lineStyle,
+                         lineWeight, Qt::RoundCap);
                 Visualization::toolTip = tr("Hold <b>SHIFT</b> to constrain angle");
                 emit ToolTip(Visualization::toolTip);
             }

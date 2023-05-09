@@ -28,19 +28,19 @@
 #include "vpropertymodel.h"
 #include "vpropertyset.h"
 
-VPE::VPropertyFormView::VPropertyFormView(QWidget* parent)
+VPE::VPropertyFormView::VPropertyFormView(QWidget *parent)
     : VPropertyFormWidget(new VPropertyFormViewPrivate(), parent)
 {
     //
 }
 
-VPE::VPropertyFormView::VPropertyFormView(VPropertyModel* model, QWidget *parent)
+VPE::VPropertyFormView::VPropertyFormView(VPropertyModel *model, QWidget *parent)
     : VPropertyFormWidget(new VPropertyFormViewPrivate(), parent)
 {
     setModel(model);
 }
 
-VPE::VPropertyFormView::VPropertyFormView(VPropertySet* property_set, QWidget *parent)
+VPE::VPropertyFormView::VPropertyFormView(VPropertySet *property_set, QWidget *parent)
     : VPropertyFormWidget(new VPropertyFormViewPrivate(), parent)
 {
     setPropertySet(property_set);
@@ -85,7 +85,7 @@ void VPE::VPropertyFormView::setModel(VPropertyModel *model)
     updatePropertyList();
 }
 
-void VPE::VPropertyFormView::setPropertySet(VPropertySet* property_set)
+void VPE::VPropertyFormView::setPropertySet(VPropertySet *property_set)
 {
     // Remove old model or set
     removeModelAndSet();
@@ -144,7 +144,7 @@ void VPE::VPropertyFormView::dataChanged(const QModelIndex &top_left, const QMod
 
 void VPE::VPropertyFormView::dataSubmitted(VProperty *property)
 {
-    VPropertyModel* tmpModel = static_cast<VPropertyFormViewPrivate*>(d_ptr)->Model;
+    VPropertyModel *tmpModel = static_cast<VPropertyFormViewPrivate*>(d_ptr)->Model;
 
     if (tmpModel && d_ptr->UpdateEditors)
     {
@@ -166,8 +166,8 @@ void VPE::VPropertyFormView::showEvent(QShowEvent *event)
 
 void VPE::VPropertyFormView::updatePropertyList()
 {
-    VPropertyModel* tmpModel = static_cast<VPropertyFormViewPrivate*>(d_ptr)->Model;
-    VPropertySet* tmpSet = static_cast<VPropertyFormViewPrivate*>(d_ptr)->PropertySet;
+    VPropertyModel *tmpModel = static_cast<VPropertyFormViewPrivate*>(d_ptr)->Model;
+    VPropertySet *tmpSet = static_cast<VPropertyFormViewPrivate*>(d_ptr)->PropertySet;
 
     if (tmpModel && tmpModel->getPropertySet())
     {
@@ -212,7 +212,7 @@ void VPE::VPropertyFormView::connectPropertyFormWidget(VPropertyFormWidget *widg
             Qt::UniqueConnection);
     QList<VPropertyFormWidget*> tmpList = widget->getChildPropertyFormWidgets();
 
-    foreach(VPropertyFormWidget* tmpEditorWidget, tmpList)
+    foreach(VPropertyFormWidget *tmpEditorWidget, tmpList)
     {
         connectPropertyFormWidget(tmpEditorWidget);
     }

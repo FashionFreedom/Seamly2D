@@ -54,9 +54,9 @@ void VisPath::initPen()
     QPen visPen = pen();
     visPen.setColor(mainColor);
     visPen.setStyle(lineStyle);
-    visPen.setWidthF(lineWeight); 
+    visPen.setWidthF(lineWeight);
 
-    setPen(visPen);
+    this->setPen(visPen);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

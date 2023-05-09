@@ -759,7 +759,11 @@ void DialogInternalPath::InitPathTab()
 {
     ui->pathName_LineEdit->setClearButtonEnabled(true);
 
-    FillComboBoxTypeLine(ui->penType_ComboBox, CurvePenStylesPics());
+    int index = ui->penType_ComboBox->findData(LineTypeNone);
+    if (index != -1)
+    {
+        ui->penType_ComboBox->removeItem(index);
+    }
 
     connect(ui->pathName_LineEdit, &QLineEdit::textChanged, this, &DialogInternalPath::NameChanged);
 
@@ -999,7 +1003,7 @@ Qt::PenStyle DialogInternalPath::GetPenType() const
 //---------------------------------------------------------------------------------------------------------------------
 void DialogInternalPath::SetPenType(const Qt::PenStyle &type)
 {
-    ChangeCurrentData(ui->penType_ComboBox, PenStyleToLineStyle(type));
+    ChangeCurrentData(ui->penType_ComboBox, PenStyleToLineType(type));
     vis->setLineStyle(type);
 }
 

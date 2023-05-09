@@ -88,6 +88,8 @@ public:
     enum                   { Type = UserType + static_cast<int>(Tool::Rotation)};
 
     QString                getOriginPointName() const;
+    quint32                getOriginPointId() const;
+    void                   setOriginPointId(const quint32 &value);
 
     VFormula               GetFormulaAngle() const;
     void                   SetFormulaAngle(const VFormula &value);
@@ -106,11 +108,11 @@ protected:
 
 private:
     Q_DISABLE_COPY(VToolRotation)
-    quint32                origPointId;
+    quint32                m_originPointId;
     QString                formulaAngle;
 
                            VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id,
-                                         quint32 origPointId, const QString &angle, const QString &suffix,
+                                         quint32 originPointId, const QString &angle, const QString &suffix,
                                          const QVector<SourceItem> &source, const QVector<DestinationItem> &destination,
                                          const Source &typeCreation, QGraphicsItem *parent = nullptr);
 

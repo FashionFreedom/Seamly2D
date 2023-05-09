@@ -1729,7 +1729,7 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
 QString MainWindowsNoGUI::FileName() const
 {
     QString fileName;
-    qApp->GetPPath().isEmpty() ? fileName = tr("unnamed") : fileName = qApp->GetPPath();
+    qApp->getFilePath().isEmpty() ? fileName = tr("unnamed") : fileName = qApp->getFilePath();
     return QFileInfo(fileName).baseName();
 }
 

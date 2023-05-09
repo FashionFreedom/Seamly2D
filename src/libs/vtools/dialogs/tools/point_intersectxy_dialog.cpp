@@ -71,6 +71,24 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     FillComboBoxPoints(ui->firstPoint_ComboBox);
     FillComboBoxPoints(ui->secondPoint_ComboBox);
 
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
+
     connect(ui->pointName_LineEdit,   &QLineEdit::textChanged,        this, &PointIntersectXYDialog::NamePointChanged);
     connect(ui->firstPoint_ComboBox,  &QComboBox::currentTextChanged, this, &PointIntersectXYDialog::pointChanged);
     connect(ui->secondPoint_ComboBox, &QComboBox::currentTextChanged, this, &PointIntersectXYDialog::pointChanged);

@@ -1032,40 +1032,38 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
         pathPoints.isEmpty() ? seamPoints = SeamAllowancePoints(data) : seamPoints = pathPoints;
 
         {
-            // first notch
-            QLineF line(previousSAPoint, notchSAPoint);
-            line.setLength(line.length()*100); // Hope 100 is enough
+            // After notch
+            QLineF line(notchSAPoint, previousSAPoint);
+            line.setAngle(line.angle() - 180.0);
+            line.setLength(40000.0); 
 
-            const QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
-            if (intersections.isEmpty())
+            QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
+            intersections.removeOne(notchSAPoint);
+            if (!intersections.isEmpty())
             {
-                return QVector<QLineF>(); // Something wrong
+                line = QLineF(intersections.last(), notchSAPoint);
+                line.setLength(notchData.length);
+                notchData.line = line;
+                notches += createNotches(notchData, pathPoints);
             }
-
-            line = QLineF(intersections.first(), notchSAPoint);
-            line.setLength(notchData.length);
-
-            notchData.line = line;
-            notches += createNotches(notchData, pathPoints);
         }
+        
 
         {
-            // second notch
-            QLineF line(nextSAPoint, notchSAPoint);
-            line.setLength(line.length()*100); // Hope 100 is enough
+            // Before notch
+            QLineF line(notchSAPoint, nextSAPoint);
+            line.setAngle(line.angle() - 180.0);
+            line.setLength(40000.0);
 
-            const QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
-
-            if (intersections.isEmpty())
+            QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
+            intersections.removeOne(notchSAPoint);
+            if (!intersections.isEmpty())
             {
-                return QVector<QLineF>(); // Something wrong
+                line = QLineF(intersections.last(), notchSAPoint);
+                line.setLength(notchData.length);
+                notchData.line = line;
+                notches += createNotches(notchData, pathPoints);
             }
-
-            line = QLineF(intersections.last(), notchSAPoint);
-            line.setLength(notchData.length);
-
-            notchData.line = line;
-            notches += createNotches(notchData, pathPoints);
         }
     }
 

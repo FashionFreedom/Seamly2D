@@ -184,6 +184,24 @@ QString VToolMirrorByAxis::getOriginPointName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+quint32 VToolMirrorByAxis::getOriginPointId() const
+{
+    return m_originPointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMirrorByAxis::setOriginPointId(const quint32 &value)
+{
+    if (value != NULL_ID)
+    {
+        m_originPointId = value;
+
+        QSharedPointer<VGObject> obj = VContainer::GetFakeGObject(m_id);
+        SaveOption(obj);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void VToolMirrorByAxis::ShowVisualization(bool show)
 {
     ShowToolVisualization<VisToolMirrorByAxis>(show);

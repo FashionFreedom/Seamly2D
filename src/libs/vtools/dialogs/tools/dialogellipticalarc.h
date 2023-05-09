@@ -1,3 +1,20 @@
+/******************************************************************************
+ *   @file   dialogellipticalarc.h
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *****************************************************************************/
 /************************************************************************
  **
  **  @file   dialogellipticalarc.h
@@ -35,6 +52,7 @@
 #include <QString>
 #include <QtGlobal>
 
+#include "../vgeometry/vellipticalarc.h"
 #include "../vmisc/def.h"
 #include "dialogtool.h"
 
@@ -50,61 +68,69 @@ public:
     DialogEllipticalArc(const VContainer *data, const quint32 &toolId, QWidget *parent = nullptr);
     virtual ~DialogEllipticalArc() Q_DECL_OVERRIDE;
 
-    quint32       GetCenter() const;
-    void          SetCenter(const quint32 &value);
+    VEllipticalArc getArc() const;
+    void           setArc(const VEllipticalArc &arc);
 
-    QString       GetRadius1() const;
-    void          SetRadius1(const QString &value);
+    quint32        GetCenter() const;
+    void           SetCenter(const quint32 &value);
 
-    QString       GetRadius2() const;
-    void          SetRadius2(const QString &value);
+    QString        GetRadius1() const;
+    void           SetRadius1(const QString &value);
 
-    QString       GetF1() const;
-    void          SetF1(const QString &value);
+    QString        GetRadius2() const;
+    void           SetRadius2(const QString &value);
 
-    QString       GetF2() const;
-    void          SetF2(const QString &value);
+    QString        GetF1() const;
+    void           SetF1(const QString &value);
 
-    QString       GetRotationAngle() const;
-    void          SetRotationAngle(const QString &value);
+    QString        GetF2() const;
+    void           SetF2(const QString &value);
 
-    QString       GetPenStyle() const;
-    void          SetPenStyle(const QString &value);
+    QString        GetRotationAngle() const;
+    void           SetRotationAngle(const QString &value);
 
-    QString       GetColor() const;
-    void          SetColor(const QString &value);
+    QString        getPenStyle() const;
+    void           setPenStyle(const QString &value);
+
+    QString        getLineWeight() const;
+    void           setLineWeight(const QString &value);
+
+    QString        getLineColor() const;
+    void           setLineColor(const QString &value);
+
 
 public slots:
-    virtual void  ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
+    virtual void   ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     /**
      * @brief DeployFormulaTextEdit grow or shrink formula input
      */
-    void DeployRadius1TextEdit();
-    void DeployRadius2TextEdit();
-    void DeployF1TextEdit();
-    void DeployF2TextEdit();
-    void DeployRotationAngleTextEdit();
+    void           DeployRadius1TextEdit();
+    void           DeployRadius2TextEdit();
+    void           DeployF1TextEdit();
+    void           DeployF2TextEdit();
+    void           DeployRotationAngleTextEdit();
 
-    void          Radius1Changed();
-    void          Radius2Changed();
-    void          F1Changed();
-    void          F2Changed();
-    void          RotationAngleChanged();
+    void           Radius1Changed();
+    void           Radius2Changed();
+    void           F1Changed();
+    void           F2Changed();
+    void           RotationAngleChanged();
 
-    void          FXRadius1();
-    void          FXRadius2();
-    void          FXF1();
-    void          FXF2();
-    void          FXRotationAngle();
+    void           FXRadius1();
+    void           FXRadius2();
+    void           FXF1();
+    void           FXF2();
+    void           FXRotationAngle();
 
 protected:
-    virtual void  CheckState() Q_DECL_FINAL;
-    virtual void  ShowVisualization() Q_DECL_OVERRIDE;
+    void           pointNameChanged();
+    virtual void   CheckState() Q_DECL_FINAL;
+    virtual void   ShowVisualization() Q_DECL_OVERRIDE;
     /**
      * @brief SaveData Put dialog data in local variables
      */
-    virtual void  SaveData() Q_DECL_OVERRIDE;
-    virtual void  closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
+    virtual void   SaveData() Q_DECL_OVERRIDE;
+    virtual void   closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(DialogEllipticalArc)
@@ -113,64 +139,68 @@ private:
     Ui::DialogEllipticalArc *ui;
 
     /** @brief flagRadius1 true if value of radius1 is correct */
-    bool          flagRadius1;
+    bool           flagRadius1;
 
     /** @brief flagRadius2 true if value of radius2 is correct */
-    bool          flagRadius2;
+    bool           flagRadius2;
 
     /** @brief flagF1 true if value of first angle is correct */
-    bool          flagF1;
+    bool           flagF1;
 
     /** @brief flagF2 true if value of second angle is correct */
-    bool          flagF2;
+    bool           flagF2;
 
     /** @brief flagRotationAngle true if value of rotation angle is correct */
-    bool          flagRotationAngle;
+    bool           flagRotationAngle;
 
     /** @brief timerRadius1 timer of check formula of radius1 */
-    QTimer        *timerRadius1;
+    QTimer         *timerRadius1;
 
     /** @brief timerRadius2 timer of check formula of radius2 */
-    QTimer        *timerRadius2;
+    QTimer         *timerRadius2;
 
     /** @brief timerF1 timer of check formula of first angle */
-    QTimer        *timerF1;
+    QTimer         *timerF1;
 
     /** @brief timerF2 timer of check formula of second angle */
-    QTimer        *timerF2;
+    QTimer         *timerF2;
 
     /** @brief timerRotationAngle timer of check formula of rotation angle */
-    QTimer        *timerRotationAngle;
+    QTimer         *timerRotationAngle;
 
     /** @brief radius1 formula of radius1 */
-    QString       radius1;
+    QString        radius1;
 
     /** @brief radius2 formula of radius2 */
-    QString       radius2;
+    QString        radius2;
 
     /** @brief f1 formula of first angle */
-    QString       f1;
+    QString        f1;
 
     /** @brief f2 formula of second angle */
-    QString       f2;
+    QString        f2;
 
     /** @brief rotationAngle formula of rotation angle */
-    QString       rotationAngle;
+    QString        rotationAngle;
 
     /** @brief formulaBaseHeight base height defined by dialogui */
-    int           formulaBaseHeightRadius1;
-    int           formulaBaseHeightRadius2;
-    int           formulaBaseHeightF1;
-    int           formulaBaseHeightF2;
-    int           formulaBaseHeightRotationAngle;
+    int            formulaBaseHeightRadius1;
+    int            formulaBaseHeightRadius2;
+    int            formulaBaseHeightF1;
+    int            formulaBaseHeightF2;
+    int            formulaBaseHeightRotationAngle;
 
-    qreal         angleF1;
-    qreal         angleF2;
-    qreal         angleRotation;
+    qreal          angleF1;
+    qreal          angleF2;
+    qreal          angleRotation;
+    VEllipticalArc m_arc;
+    qint32         m_Id;
+    qint32         newDuplicate;
 
-    void          EvalRadiuses();
-    void          EvalAngles();
-    void          CheckAngles();
+    void           EvalRadiuses();
+    void           EvalAngles();
+    void           CheckAngles();
+    void           collapseFormula(QPlainTextEdit *textEdit, QPushButton *pushButton, int height);
 };
 
 #endif // DIALOGELLIPTICALARC_H

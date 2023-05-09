@@ -61,6 +61,17 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
+           <widget class="QToolButton" name="clipboard_ToolButton">
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/32x32/clipboard_icon.png</normaloff>:/icon/32x32/clipboard_icon.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="labelFind">
             <property name="text">
              <string>Find:</string>
@@ -142,6 +153,11 @@
           <column>
            <property name="text">
             <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Number</string>
            </property>
           </column>
           <column>
@@ -864,6 +880,7 @@
     <addaction name="actionOpenTemplate"/>
     <addaction name="actionCreateFromExisting"/>
     <addaction name="separator"/>
+    <addaction name="print_Action"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
     <addaction name="actionExportToCSV"/>
@@ -922,6 +939,7 @@
    </attribute>
    <addaction name="actionNew"/>
    <addaction name="actionOpenIndividual"/>
+   <addaction name="print_Action"/>
    <addaction name="actionSave"/>
    <addaction name="actionSaveAs"/>
    <addaction name="actionAddKnown"/>
@@ -1244,12 +1262,24 @@
     <string>K</string>
    </property>
   </action>
+  <action name="print_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/32x32/actions/document-print.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-print.png</iconset>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="share/resources/seamlymeicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

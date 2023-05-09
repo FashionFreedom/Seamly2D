@@ -67,7 +67,7 @@ void PointIntersectXYVisual::RefreshGeometry()
     if (object1Id <= NULL_ID)
     {
         axisL1 = Axis(Visualization::scenePos, 90);
-        DrawLine(this, axisL1, supportColor, Qt::DashLine);
+        DrawLine(this, axisL1, supportColor, lineWeight, Qt::DashLine);
     }
     else
     {
@@ -75,7 +75,7 @@ void PointIntersectXYVisual::RefreshGeometry()
         DrawPoint(axisP1, static_cast<QPointF>(*first), supportColor);
 
         axisL1 = Axis(static_cast<QPointF>(*first), 90);
-        DrawLine(this, axisL1, supportColor, Qt::DashLine);
+        DrawLine(this, axisL1, supportColor, lineWeight, Qt::DashLine);
 
         QLineF axisL2;
         if (point2Id <= NULL_ID)
@@ -90,7 +90,7 @@ void PointIntersectXYVisual::RefreshGeometry()
             axisL2 = Axis(static_cast<QPointF>(*second), 180);
             showIntersection(axisL1, axisL2, mainColor);
         }
-        DrawLine(axis2, axisL2, supportColor, Qt::DashLine);
+        DrawLine(axis2, axisL2, supportColor, lineWeight, Qt::DashLine);
     }
 }
 

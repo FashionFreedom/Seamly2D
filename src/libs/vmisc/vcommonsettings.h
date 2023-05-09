@@ -222,6 +222,15 @@ public:
     QString              getAxisOrginColor() const;
     void                 setAxisOrginColor(const QString &value);
 
+    QString              getDefaultLineColor() const;
+    void                 setDefaultLineColor(const QString &value);
+
+    qreal                getDefaultLineWeight() const;
+    void                 setDefaultLineWeight(const qreal &value);
+
+    QString              getDefaultLineType() const;
+    void                 setDefaultLineType(const QString &value);
+
     QString              getPrimarySupportColor() const;
     void                 setPrimarySupportColor(const QString &value);
 

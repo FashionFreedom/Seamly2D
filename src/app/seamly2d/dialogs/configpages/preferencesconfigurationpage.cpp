@@ -282,7 +282,7 @@ void PreferencesConfigurationPage::Apply()
         settings->SetPMSystemCode(code);
         m_systemChanged = false;
 
-        qApp->LoadTranslation(locale);
+        qApp->loadTranslations(locale);
     }
     if (m_unitChanged)
     {

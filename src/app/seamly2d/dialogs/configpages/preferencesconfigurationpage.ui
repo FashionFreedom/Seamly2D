@@ -306,94 +306,103 @@
                 <pointsize>9</pointsize>
                </font>
               </property>
+              <property name="locale">
+               <locale language="English" country="UnitedStates"/>
+              </property>
+              <property name="currentText">
+               <string notr="true">silent</string>
+              </property>
+              <property name="placeholderText">
+               <string notr="true"/>
+              </property>
               <item>
                <property name="text">
-                <string>silent</string>
+                <string notr="true">silent</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>button_click</string>
+                <string notr="true">button_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>mouse1_click</string>
+                <string notr="true">mouse1_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>mouse2_click</string>
+                <string notr="true">mouse2_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>mouse3_click</string>
+                <string notr="true">mouse3_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>camera_click</string>
+                <string notr="true">camera_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>camera_buzz</string>
+                <string notr="true">camera_buzz</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>clock_click</string>
+                <string notr="true">clock_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>clock_beep</string>
+                <string notr="true">clock_beep</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>microwave_beep</string>
+                <string notr="true">microwave_beep</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>coffeemaker_click</string>
+                <string notr="true">coffeemaker_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>coffeemaker2_click</string>
+                <string notr="true">coffeemaker2_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>inspirstar_click</string>
+                <string notr="true">inspirstar_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>phone2_click</string>
+                <string notr="true">phone2_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>phone1_click</string>
+                <string notr="true">phone1_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>scissors_click</string>
+                <string notr="true">scissors_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>wallswitch_click</string>
+                <string notr="true">wallswitch_click</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>buzz_click</string>
+                <string notr="true">buzz_click</string>
                </property>
               </item>
              </widget>
@@ -856,7 +865,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -880,7 +888,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -909,7 +916,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>

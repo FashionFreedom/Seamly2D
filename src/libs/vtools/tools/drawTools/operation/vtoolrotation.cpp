@@ -101,13 +101,13 @@ template <class T> class QSharedPointer;
 const QString VToolRotation::ToolType = QStringLiteral("rotation");
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolRotation::VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 origPointId,
+VToolRotation::VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 originPointId,
                              const QString &angle, const QString &suffix, const QVector<SourceItem> &source,
                              const QVector<DestinationItem> &destination, const Source &typeCreation,
                              QGraphicsItem *parent)
-    : VAbstractOperation(doc, data, id, suffix, source, destination, parent),
-      origPointId(origPointId),
-      formulaAngle(angle)
+    : VAbstractOperation(doc, data, id, suffix, source, destination, parent)
+    , m_originPointId(originPointId)
+    , formulaAngle(angle)
 {
     InitOperatedObjects();
     ToolCreation(typeCreation);
@@ -119,7 +119,7 @@ void VToolRotation::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogRotation> dialogTool = m_dialog.objectCast<DialogRotation>();
     SCASSERT(not dialogTool.isNull())
-    dialogTool->setOriginPointId(origPointId);
+    dialogTool->setOriginPointId(m_originPointId);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->setSuffix(suffix);
 }
@@ -204,6 +204,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                                           data));
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -250,6 +254,9 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
                     break;
             }
 QT_WARNING_POP
@@ -281,7 +288,25 @@ QT_WARNING_POP
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolRotation::getOriginPointName() const
 {
-    return VAbstractTool::data.GetGObject(origPointId)->name();
+    return VAbstractTool::data.GetGObject(m_originPointId)->name();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VToolRotation::getOriginPointId() const
+{
+    return m_originPointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolRotation::setOriginPointId(const quint32 &value)
+{
+    if (value != NULL_ID)
+    {
+        m_originPointId = value;
+
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetFakeGObject(m_id);
+        SaveOption(obj);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -321,7 +346,7 @@ void VToolRotation::SetVisualization()
         SCASSERT(visual != nullptr)
 
         visual->setObjects(sourceToObjects(source));
-        visual->SetOriginPointId(origPointId);
+        visual->SetOriginPointId(m_originPointId);
         visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
         visual->RefreshGeometry();
     }
@@ -342,7 +367,7 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolRotation::ReadToolAttributes(const QDomElement &domElement)
 {
-    origPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
+    m_originPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
     formulaAngle = doc->GetParametrString(domElement, AttrAngle, "0");
     suffix = doc->GetParametrString(domElement, AttrSuffix);
 }
@@ -353,7 +378,7 @@ void VToolRotation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     VDrawTool::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrCenter, QString().setNum(origPointId));
+    doc->SetAttribute(tag, AttrCenter, QString().setNum(m_originPointId));
     doc->SetAttribute(tag, AttrAngle, formulaAngle);
     doc->SetAttribute(tag, AttrSuffix, suffix);
 
