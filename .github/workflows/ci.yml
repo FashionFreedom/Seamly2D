@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - develop
+    - qt6-ci-updated
     - test
   pull_request:
 
