@@ -55,6 +55,8 @@
 #include <QSharedPointer>
 #include <QString>
 #include <new>
+#include <QMessageBox>
+#include <new>
 
 #include "../../../../dialogs/tools/dialogpointfromarcandtangent.h"
 #include "../../../../dialogs/tools/dialogtool.h"
@@ -76,14 +78,6 @@
 #include "../../../../dialogs/tools/dialogpointfromarcandtangent.h"
 #include "../../../../visualization/visualization.h"
 #include "../../../../visualization/line/vistoolpointfromarcandtangent.h"
-
-#include <QLineF>
-#include <QMessageBox>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
 
 template <class T> class QSharedPointer;
 
