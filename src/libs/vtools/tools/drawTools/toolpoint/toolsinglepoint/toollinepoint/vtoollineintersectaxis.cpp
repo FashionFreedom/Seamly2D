@@ -67,7 +67,6 @@
 #include "../../../../../visualization/visualization.h"
 #include "../../../../../visualization/line/vistoollineintersectaxis.h"
 
-#include <QLine>
 #include <QMessageBox>
 #include <QSharedPointer>
 #include <QStaticStringData>

@@ -76,6 +76,7 @@
 
 #include <qcompilerdetection.h>
 #include <QAction>
+#include <QActionGroup>
 #include <QByteArray>
 #include <QClipboard>
 #include <QColor>
