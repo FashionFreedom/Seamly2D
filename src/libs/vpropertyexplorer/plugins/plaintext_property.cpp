@@ -32,9 +32,7 @@
 #include <QLatin1String>
 #include <QLocale>
 #include <QSizePolicy>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QWidget>
 
 #include "expandingtextedit.h"

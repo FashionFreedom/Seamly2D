@@ -48,6 +48,7 @@
 
 #include <qcompilerdetection.h>
 #include <QAction>
+#include <QActionGroup>
 #include <QByteArray>
 #include <QColor>
 #include <QDomElement>

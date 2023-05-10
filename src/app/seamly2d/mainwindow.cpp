@@ -2339,7 +2339,7 @@ void MainWindow::initToolsToolBar()
     connect(ui->zoomPan_Action, &QAction::toggled, this, &MainWindow::zoomPan);
 
     QList<QKeySequence> zoomToPointShortcuts;
-    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier + Qt::AltModifier + Qt::Key_P));
+    zoomToPointShortcuts.append(QKeySequence(Qt::ControlModifier | Qt::AltModifier | Qt::Key_P));
     ui->zoomToPoint_Action->setShortcuts(zoomToPointShortcuts);
     connect(ui->zoomToPoint_Action, &QAction::triggered, this, &MainWindow::showZoomToPointDialog);
 
