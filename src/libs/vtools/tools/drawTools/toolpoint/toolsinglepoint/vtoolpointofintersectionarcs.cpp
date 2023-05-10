@@ -71,12 +71,7 @@
 #include "../../../../visualization/visualization.h"
 #include "../../../../visualization/line/vistoolpointofintersectionarcs.h"
 
-#include <QLineF>
 #include <QMessageBox>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
 #include <new>
 
 template <class T> class QSharedPointer;
