@@ -1801,7 +1801,7 @@ void MainWindow::PrepareSceneList()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
+void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
 {
     QxtCsvModel csv;
 
@@ -1853,6 +1853,17 @@ void MainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCS
     }
 
     csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), QTextCodec::codecForMib(dialog.SelectedMib()));
+}
+
+void MainWindow::handleExportToCSV()
+{
+    QString file = tr("untitled");
+    if(!qApp->getFilePath().isEmpty())
+    {
+        QString filePath = qApp->getFilePath();
+        file = QFileInfo(filePath).baseName();
+    }
+    exportToCSV(file);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -5806,7 +5817,7 @@ void MainWindow::CreateActions()
             dialogTable->activateWindow();
         }
     });
-    connect(ui->exportVariablesToCSV_Action, &QAction::triggered, this, &MainWindow::ExportToCSV);
+    connect(ui->exportVariablesToCSV_Action, &QAction::triggered, this, &MainWindow::handleExportToCSV);
 
     //History menu
     connect(ui->history_Action, &QAction::triggered, this, [this](bool checked)

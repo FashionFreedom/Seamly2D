@@ -147,7 +147,8 @@ protected:
     virtual void customEvent(QEvent * event) Q_DECL_OVERRIDE;
     virtual void CleanLayout() Q_DECL_OVERRIDE;
     virtual void PrepareSceneList() Q_DECL_OVERRIDE;
-    virtual void ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    virtual void exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    void         handleExportToCSV();
 
 private slots:
     void zoomScaleChanged(qreal scale);

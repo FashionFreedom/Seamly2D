@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_Menu">
@@ -453,9 +453,6 @@
      <height>113</height>
     </size>
    </property>
-   <property name="features">
-    <set>QDockWidget::AllDockWidgetFeatures</set>
-   </property>
    <property name="allowedAreas">
     <set>Qt::RightDockWidgetArea</set>
    </property>
@@ -541,7 +538,7 @@
    <property name="minimumSize">
     <size>
      <width>220</width>
-     <height>38</height>
+     <height>40</height>
     </size>
    </property>
    <property name="toolTip">
@@ -766,7 +763,7 @@
    <property name="minimumSize">
     <size>
      <width>140</width>
-     <height>522</height>
+     <height>524</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -908,8 +905,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>124</width>
-              <height>293</height>
+              <width>118</width>
+              <height>288</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1894,7 +1891,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>293</height>
+              <height>287</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2312,8 +2309,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>83</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2446,8 +2443,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>120</width>
-              <height>83</height>
+              <width>100</width>
+              <height>54</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -3977,6 +3974,9 @@
    <property name="text">
     <string>Export Variables to CSV</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
    </property>
@@ -4665,8 +4665,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
