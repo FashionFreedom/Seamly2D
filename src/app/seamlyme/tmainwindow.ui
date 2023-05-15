@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>835</width>
-    <height>726</height>
+    <height>782</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -866,7 +866,7 @@
      <x>0</x>
      <y>0</y>
      <width>835</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1245,6 +1245,9 @@
    </property>
    <property name="text">
     <string>Export to CSV</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
