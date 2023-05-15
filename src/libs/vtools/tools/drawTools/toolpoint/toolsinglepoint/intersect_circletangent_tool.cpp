@@ -81,7 +81,7 @@ void IntersectCircleTangentTool::setDialog()
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
     dialogTool->SetCircleCenterId(circleCenterId);
     dialogTool->SetCircleRadius(circleRadius);
-    dialogTool->SetCrossCirclesPoint(crossPoint);
+    dialogTool->setCirclesCrossPoint(crossPoint);
     dialogTool->SetTangentPointId(tangentPointId);
     dialogTool->SetPointName(p->name());
 }
@@ -284,7 +284,7 @@ CrossCirclesPoint IntersectCircleTangentTool::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IntersectCircleTangentTool::SetCrossCirclesPoint(const CrossCirclesPoint &value)
+void IntersectCircleTangentTool::setCirclesCrossPoint(const CrossCirclesPoint &value)
 {
     crossPoint = value;
 

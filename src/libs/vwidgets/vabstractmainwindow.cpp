@@ -1,14 +1,13 @@
-/************************************************************************
- **
- **  @file
- **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
- **  @date   19 7, 2016
+/******************************************************************************
+ *   @file   vabstractmainwindow.cpp
+ **  @author Douglas S Caskey
+ **  @date   13 May, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -23,6 +22,34 @@
  **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+/************************************************************************
+ **
+ **  @file
+ **  @author Valentina Zhuravska <zhuravska19(at)gmail.com>
+ **  @date   19 7, 2016
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -93,11 +120,11 @@ void VAbstractMainWindow::WindowsLocale()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractMainWindow::ExportToCSV()
+void VAbstractMainWindow::exportToCSV(QString &file)
 {
     const QString filters = tr("Comma-Separated Values") + QLatin1String(" (*.csv)");
     const QString suffix("csv");
-    const QString path = QDir::homePath()  + QLatin1String("/") + tr("values") + QLatin1String(".") + suffix;
+    const QString path = QDir::homePath() + QLatin1String("/") + file + QLatin1String(".") + suffix;
 
     QString fileName = QFileDialog::getSaveFileName(this, tr("Export to CSV"), path, filters, nullptr,
                                                     QFileDialog::DontUseNativeDialog);
@@ -116,7 +143,7 @@ void VAbstractMainWindow::ExportToCSV()
     DialogExportToCSV dialog(this);
     if (dialog.exec() == QDialog::Accepted)
     {
-        ExportToCSVData(fileName, dialog);
+        exportToCSVData(fileName, dialog);
 
         qApp->Settings()->SetCSVSeparator(dialog.Separator());
         qApp->Settings()->SetCSVCodec(dialog.SelectedMib());

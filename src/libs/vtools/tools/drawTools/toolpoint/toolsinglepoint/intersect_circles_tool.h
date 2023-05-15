@@ -89,7 +89,7 @@ public:
     void                 SetSecondCircleRadius(const VFormula &value);
 
     CrossCirclesPoint    GetCrossCirclesPoint() const;
-    void                 SetCrossCirclesPoint(const CrossCirclesPoint &value);
+    void                 setCirclesCrossPoint(const CrossCirclesPoint &value);
 
     virtual void         ShowVisualization(bool show) Q_DECL_OVERRIDE;
 

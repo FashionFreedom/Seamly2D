@@ -229,6 +229,24 @@ jobs:
           cd ..\windows-build\
           & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
 
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
       - name: pack installer file into .zip
         run: |
           cd ..\windows-build\
@@ -240,64 +258,6 @@ jobs:
           name: Seamly2D-windows.zip
           path: Seamly2D-windows.zip
           if-no-files-found: error
-
-  # win32 not supported for qt6
-  # win32:
-  #   name: 'Windows 32-Bit: Build'
-  #   runs-on: windows-latest
-  #   needs: version
-  #   env:
-  #     VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
-
-  #   steps:
-  #     - uses: actions/checkout@v3
-
-  #     - name: install msvc
-  #       uses: ilammy/msvc-dev-cmd@v1
-  #       with:
-  #         # use Visual C++ 2022 latest, 14.34.xxxx
-  #         toolset: '14.34'
-  #         arch: amd64_x86
-
-  #     - uses: jurplel/install-qt-action@v3
-  #       with:
-  #         version: ${{ env.QT_VERSION }}
-  #         arch: win32_msvc2019
-  #         cache: true
-  #         modules: qt5compat qtmultimedia
-
-  #     - name: update version
-  #       shell: bash
-  #       run: |
-  #         ./scripts/version.sh ${VERSION_NUMBER}
-
-  #     - name: make seamly2d.exe and seamlyme.exe
-  #       run: |
-  #         qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-  #         nmake
-
-  #     - name: create seamly2d-installer.exe
-  #       # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
-  #       # uses parameters in seamly2d-installer.nsi to create the installer exe
-  #       run: |
-  #         mkdir ..\windows-build
-  #         Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
-  #         Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
-  #         Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
-  #         cd ..\windows-build\
-  #         & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
-
-  #     - name: pack installer file into .zip
-  #       run: |
-  #         cd ..\windows-build\
-  #         C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
-  #         copy Seamly2D-win32.zip ..\Seamly2D\
-
-  #     - uses: actions/upload-artifact@v3
-  #       with:
-  #         name: Seamly2D-win32.zip
-  #         path: Seamly2D-win32.zip
-  #         if-no-files-found: error
 
   publish:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
@@ -316,9 +276,6 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: Seamly2D-windows.zip
-      # - uses: actions/download-artifact@v3
-      #   with:
-      #     name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ env.VERSION_NUMBER }}

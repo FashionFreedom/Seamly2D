@@ -88,7 +88,7 @@ void IntersectCirclesTool::setDialog()
     dialogTool->SetSecondCircleCenterId(secondCircleCenterId);
     dialogTool->SetFirstCircleRadius(firstCircleRadius);
     dialogTool->SetSecondCircleRadius(secondCircleRadius);
-    dialogTool->SetCrossCirclesPoint(crossPoint);
+    dialogTool->setCirclesCrossPoint(crossPoint);
     dialogTool->SetPointName(p->name());
 }
 
@@ -321,7 +321,7 @@ CrossCirclesPoint IntersectCirclesTool::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IntersectCirclesTool::SetCrossCirclesPoint(const CrossCirclesPoint &value)
+void IntersectCirclesTool::setCirclesCrossPoint(const CrossCirclesPoint &value)
 {
     crossPoint = value;
 

@@ -1,31 +1,13 @@
 /******************************************************************************
  *   @file   tmainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   29 Mar, 2023
+ **  @date   13 May, 2023
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program to create and model patterns of clothing.
  **  Copyright (C) 2017-2023 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
-
- /************************************************************************
- **
- **  @file   tmainwindow.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   10 7, 2015
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -40,6 +22,34 @@
  **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+ /************************************************************************
+ **
+ **  @file   tmainwindow.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   10 7, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -692,10 +702,18 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
+void TMainWindow::exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog)
 {
 	QxtCsvModel csv;
-	const int columns = ui->tableWidget->columnCount();
+    int columns;
+    if (mType == MeasurementsType::Multisize)
+    {
+        columns = ui->tableWidget->columnCount();
+    }
+    else
+    {
+        columns = 5;
+    }
 	{
 		int colCount = 0;
 		for (int column = 0; column < columns; ++column)
@@ -738,6 +756,16 @@ void TMainWindow::ExportToCSVData(const QString &fileName, const DialogExportToC
 	}
 
 	csv.toCSV(fileName, dialog.WithHeader(), dialog.Separator(), QTextCodec::codecForMib(dialog.SelectedMib()));
+}
+
+void TMainWindow::handleExportToCSV()
+{
+    QString file = tr("untitled");
+    if(!curFile.isEmpty())
+    {
+        file = QFileInfo(curFile).baseName();
+    }
+    exportToCSV(file);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1716,9 +1744,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 //---------------------------------------------------------------------------------------------------------------------
 QString TMainWindow::getMeasurementNumber(const QString &name)
 {
-	const VTranslateVars *trv = qApp->TrVars();
-	const QString numberStr = trv->MNumber(name);
-    return numberStr;
+	return  qApp->TrVars()->MNumber(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1736,7 +1762,7 @@ void TMainWindow::ShowMDiagram(const QString &name)
 	{
 		ui->labelDiagram->setText(QString("<html><head/><body><p align=\"center\">%1</p>"
 										  "<p align=\"center\"><b>%2</b>. <i>%3</i></p></body></html>")
-										  .arg(MeasurementDatabaseDialog::imageUrl(number)).arg(number).arg(trv->GuiText(name)));
+										  .arg(MeasurementDatabaseDialog::imageUrl(number), number, trv->GuiText(name)));
 	}
 	// This part is very ugly, can't find better way to resize dockWidget.
 	ui->labelDiagram->adjustSize();
@@ -2081,7 +2107,7 @@ void TMainWindow::SetupMenu()
 	connect(ui->print_Action, &QAction::triggered, this, &TMainWindow::print);
     connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
 	connect(ui->actionSaveAs, &QAction::triggered, this, &TMainWindow::FileSaveAs);
-	connect(ui->actionExportToCSV, &QAction::triggered, this, &TMainWindow::ExportToCSV);
+	connect(ui->actionExportToCSV, &QAction::triggered, this, &TMainWindow::handleExportToCSV);
 	connect(ui->actionReadOnly, &QAction::triggered, this, [this](bool ro)
 	{
 		if (not mIsReadOnly)
@@ -2393,7 +2419,7 @@ void TMainWindow::ShowHeaderUnits(QTableWidget *table, int column, const QString
 	{
 		header.remove(index-1, 100);
 	}
-	const QString unitHeader = QString("%1 (%2)").arg(header).arg(unit);
+	const QString unitHeader = QString("%1 (%2)").arg(header, unit);
 	table->horizontalHeaderItem(column)->setText(unitHeader);
 }
 
@@ -2602,6 +2628,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 
 			if (meash->IsCustom())
 			{
+                AddCell(QStringLiteral("na"), currentRow, ColumnNumber, Qt::AlignVCenter);
 				AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 			else
@@ -2636,7 +2663,8 @@ void TMainWindow::RefreshTable(bool freshCall)
 
 			if (meash->IsCustom())
 			{
-				AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
+				AddCell(QStringLiteral("na"), currentRow, ColumnNumber, Qt::AlignVCenter);
+                AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 			else
 			{
