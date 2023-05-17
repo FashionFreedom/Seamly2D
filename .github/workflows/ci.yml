@@ -352,7 +352,7 @@ jobs:
             Seamly2D-win32.zip
 
   document:
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push' || $GITHUB_EVENT_NAME = 'pull_request'
+    if: $GITHUB_EVENT_NAME == 'schedule' || $GITHUB_EVENT_NAME == 'workflow_dispatch' || $GITHUB_EVENT_NAME == 'push' || $GITHUB_EVENT_NAME = 'pull_request'
     runs-on: ubuntu-latest
     needs: [version, windows, win32, linux, macos, publish]
     env:
