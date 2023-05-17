@@ -350,3 +350,20 @@ jobs:
             Seamly2D-macos.zip
             Seamly2D-windows.zip
             Seamly2D-win32.zip
+
+  document:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push' || $GITHUB_EVENT_NAME = 'pull_request'
+    runs-on: ubuntu-latest
+    needs: [version, windows, win32, linux, macos, publish]
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - name: Doxygen GitHub Pages Deploy Action
+        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/doxygen
+          config_file: Doxyfile
+
