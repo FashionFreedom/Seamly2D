@@ -7,6 +7,8 @@ on:
     branches:
     - qt6
   pull_request:
+    branches:
+    - qt6
 
 permissions:
   contents: write
@@ -46,12 +48,10 @@ jobs:
       - name: install appimage dependencies
         run: |
           sudo apt update && sudo apt install -y libfuse2
-          sudo apt install -y libxkbcommon-x11-0
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
           sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
           sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
-          sudo apt update && sudo apt install -y libc6 libxerces-c-dev libgstreamer-plugins-base1.0-dev
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -59,6 +59,10 @@ jobs:
           dir: .
           cache: true
           modules: qt5compat qtmultimedia
+
+      - name: install build dependencies
+        run: |
+          sudo apt update && sudo apt install -y libxerces-c-dev
 
       - name: update version
         run: |
@@ -87,22 +91,22 @@ jobs:
           if-no-files-found: error
 
   linux-test:
-    # if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request'
     name: 'Linux: Run unit tests'
     runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: install test build dependencies
-        run: |
-          sudo apt-get install libxerces-c-dev libgstreamer-plugins-base1.0-dev libxkbcommon-x11-0 libxcb-composite0-dev -y
-
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
           modules: qt5compat qtmultimedia
+
+      - name: install build dependencies
+        run: |
+          sudo apt update && sudo apt install -y libxerces-c-dev
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
@@ -113,7 +117,7 @@ jobs:
         # xvfb use to test built application within a framebuffer
         run: |
           sudo apt update
-          sudo apt install -y xvfb libxkbcommon-x11-0
+          sudo apt install -y xvfb libxkbcommon-x11-0 gstreamer1.0-plugins-base
 
       - name: run Seamly2D tests
         run: |
@@ -129,15 +133,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: install appimage dependencies
-        run: |
-          brew install xerces-c
-
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
           cache: true
           modules: qt5compat qtmultimedia
+
+      - name: install build dependencies
+        run: |
+          brew install xerces-c
 
       - name: update version
         run: |
@@ -183,7 +187,7 @@ jobs:
           if-no-files-found: error
 
   windows:
-    name: 'Windows 64-Bit: Build'
+    name: 'Windows: Build'
     runs-on: windows-latest
     needs: version
     env:

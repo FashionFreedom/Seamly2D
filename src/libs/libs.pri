@@ -33,3 +33,9 @@ INCLUDEPATH += $${PWD}/vpropertyexplorer
 
 #VTools static library
 INCLUDEPATH += $${PWD}/vtest
+
+#xerces shared library, bundled on windows locally
+win32:INCLUDEPATH += $${PWD}/../../extern/xerces-c/include
+#xerces headers and library on linux via package manager, no extra include path required
+#xerces headers and library on mac via brew
+macx:INCLUDEPATH += /usr/local/include

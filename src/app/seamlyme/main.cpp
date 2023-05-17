@@ -65,13 +65,6 @@ int main(int argc, char *argv[])
 
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 
-    //------------------------------------------------------------------------
-    // On macOS, correct WebView / QtQuick compositing and stacking requires running
-    // Qt in layer-backed mode, which again requires rendering on the Gui thread.
-    qWarning("SeamlyME: Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic");
-    qputenv("QT_MAC_WANTS_LAYER", "1");
-    //------------------------------------------------------------------------
-
 #ifndef Q_OS_MAC // supports natively
     InitHighDpiScaling(argc, argv);
 #endif //Q_OS_MAC
