@@ -14,15 +14,12 @@ win32{
 
     VCOPY = $$QMAKE_COPY /D
 
-    INCLUDEPATH += ../../../extern/xerces-c/include
-    LIBS += -L$$_PRO_FILE_PWD_/../../../extern/xerces-c/lib/ -lxerces-c_3D
     INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll
 }
 
 unix{
     macx{
         VCOPY = $$QMAKE_COPY
-        INCLUDEPATH += ../../../extern/xerces-c/include
     } else {
         VCOPY = $$QMAKE_COPY -u
     }
