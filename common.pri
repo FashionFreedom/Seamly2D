@@ -11,28 +11,21 @@ win32{
 
     unset(QMAKE_INSTALL_PROGRAM)
     QMAKE_INSTALL_PROGRAM = xcopy /y
+
+    VCOPY = $$QMAKE_COPY /D
+
+    INCLUDEPATH += ../../../extern/xerces-c/include
+    LIBS += -L$$_PRO_FILE_PWD_/../../../extern/xerces-c/lib/ -lxerces-c_3D
+    INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll
 }
 
 unix{
     macx{
         VCOPY = $$QMAKE_COPY
+        INCLUDEPATH += ../../../extern/xerces-c/include
     } else {
         VCOPY = $$QMAKE_COPY -u
     }
-}
-
-win32{
-    VCOPY = $$QMAKE_COPY /D
-}
-
-macx{
-    INCLUDEPATH += ../../../extern/xerces-c/include
-}
-
-win32{
-    INCLUDEPATH += ../../../extern/xerces-c/include
-    LIBS += -L$$_PRO_FILE_PWD_/../../../extern/xerces-c/lib/ -lxerces-c_3D
-    INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll
 }
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
