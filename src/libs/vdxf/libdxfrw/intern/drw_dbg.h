@@ -16,7 +16,6 @@
 #include <string>
 #include <iostream>
 #include <QtGlobal>
-//#include <iomanip>
 
 #define DRW_DBGSL(a) DRW_dbg::getInstance()->setLevel(a)
 #define DRW_DBGGL DRW_dbg::getInstance()->getLevel()
