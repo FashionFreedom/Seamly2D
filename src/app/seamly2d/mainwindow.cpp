@@ -101,14 +101,12 @@
 #include <QShowEvent>
 #include <QScrollBar>
 #include <QFileDialog>
-// #include <QSourceLocation>
 #include <QUndoStack>
 #include <QAction>
 #include <QProcess>
 #include <QSettings>
 #include <QTimer>
 #include <QtGlobal>
-// #include <QDesktopWidget>
 #include <QDesktopServices>
 #include <chrono>
 #include <thread>
