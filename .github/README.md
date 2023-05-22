@@ -54,3 +54,4 @@ See [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl
 Other components and licensing:
 * QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)
 * VPropertyExplorer - [LGPLv2.1 license](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
+* xerces-c - [Apache License, Version 2.0](https://apache.org/licenses/LICENSE-2.0)
