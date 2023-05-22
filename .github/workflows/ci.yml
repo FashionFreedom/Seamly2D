@@ -1,15 +1,11 @@
-name: CI
+name: CI-qt6
 
 # for a description, see README.md in this folder
 
 on:
-  schedule:
-    - cron: '30 1 * * MON'
-  workflow_dispatch:
   push:
     branches:
-    - develop
-    - test
+    - qt6
   pull_request:
 
 permissions:
