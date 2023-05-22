@@ -62,13 +62,13 @@ jobs:
 
       - name: install build dependencies
         run: |
-          sudo apt update && sudo apt install -y libxerces-c-dev
+          # libgstreamer-plugins-base1.0-0 required to link against QtMultimedia
+          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0
 
       - name: update version
         run: |
           chmod +x ./scripts/version.sh
           ./scripts/version.sh ${VERSION_NUMBER}
-
 
       - name: build Seamly2D appimage
         env:
@@ -77,8 +77,8 @@ jobs:
           qmake -config release CONFIG+=noTests
           make -j$(nproc)
           make INSTALL_ROOT=`pwd`/AppDir install
-          # install poppler-utils for pdftops, gstreamer1.0-plugins-base and libgstreamer-plugins-base1.0-0 for QtMultimedia, libxkbcommon for Qt xcb
-          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-0 libxkbcommon-x11-0
+          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia, libxkbcommon for Qt xcb
+          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base libxkbcommon-x11-0
           cp /usr/bin/pdftops AppDir/usr/bin
           mkdir -p AppDir/usr/share/X11/xkb
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
@@ -117,7 +117,7 @@ jobs:
         # xvfb use to test built application within a framebuffer
         run: |
           sudo apt update
-          sudo apt install -y xvfb libxkbcommon-x11-0 gstreamer1.0-plugins-base
+          sudo apt install -y xvfb libxkbcommon-x11-0 gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-0
 
       - name: run Seamly2D tests
         run: |
