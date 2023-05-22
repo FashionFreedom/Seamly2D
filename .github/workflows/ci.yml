@@ -289,3 +289,20 @@ jobs:
             Seamly2D-x86_64.AppImage
             Seamly2D-macos.zip
             Seamly2D-windows.zip
+
+  document:
+    # Create documents for releases (scheduled) and pre-releases
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    needs: [version, publish]
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - name: Doxygen GitHub Pages Deploy Action
+        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/doxygen
+          config_file: Doxyfile
