@@ -113,9 +113,9 @@ win32 {
     for(DIR, INSTALL_XERCES) {
         #add these absolute paths to a variable which
         #ends up as 'mkcommands = path1 path2 path3 ...'
-        openssl_path += $${PWD}/$$DIR
+        xerces_path += $${PWD}/$$DIR
     }
-    copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
+    copyToDestdir($$xerces_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
 }
 
 # Compilation will fail without this files after we added them to this section.
@@ -231,20 +231,16 @@ else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR
 # VPropertyExplorer library
 unix|win32: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
 
-# xerces library
-unix{
-    macx{
-
-    } else{
-        LIBS += /usr/lib/x86_64-linux-gnu/libxerces-c.so
-    }
-}
-
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
+
+# xerces library
+win32: LIBS += -L$$PWD/../../../extern/xerces-c/lib/ -lxerces-c_3D
+macx: LIBS += -L/usr/local/lib -lxerces-c-3.2
+else:unix|win32-g++: LIBS += -lxerces-c-3.2
 
 macx{
     APPLE_SIGN_IDENTITY = $$shell_quote($(APPLE_SIGN_IDENTITY))

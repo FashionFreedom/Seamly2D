@@ -330,20 +330,16 @@ else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR
 # VPropertyExplorer library
 unix|win32: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
 
-# xerces library
-unix{
-    macx{
-
-    } else{
-        LIBS += /usr/lib/x86_64-linux-gnu/libxerces-c.so
-    }
-}
-
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 
 win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
+
+# xerces library
+win32: LIBS += -L$$PWD/../../../extern/xerces-c/lib/ -lxerces-c_3D
+macx: LIBS += -L/usr/local/lib -lxerces-c-3.2
+else:unix|win32-g++: LIBS += -lxerces-c-3.2
 
 macx{
     APPLE_SIGN_IDENTITY_UNQUOTED = $(APPLE_SIGN_IDENTITY)
