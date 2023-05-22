@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 env:
-  QT_VERSION: '6.2.0' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.2.4' # quotes required or YAML parser will interpret as float
 
 jobs:
 
@@ -56,18 +56,16 @@ jobs:
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
-          dir: .
           cache: true
           modules: qt5compat qtmultimedia
 
       - name: install build dependencies
         run: |
-          # libgstreamer-plugins-base1.0-0 required to link against QtMultimedia
-          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0
+          # libgstreamer-plugins-base1.0-0 and libgstreamer-gl1.0-0 required to link against QtMultimedia
+          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0 libgstreamer-gl1.0-0
 
       - name: update version
         run: |
-          chmod +x ./scripts/version.sh
           ./scripts/version.sh ${VERSION_NUMBER}
 
       - name: build Seamly2D appimage
@@ -106,7 +104,8 @@ jobs:
 
       - name: install build dependencies
         run: |
-          sudo apt update && sudo apt install -y libxerces-c-dev
+          # libgstreamer-plugins-base1.0-0 and libgstreamer-gl1.0-0 required to link against QtMultimedia
+          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0 libgstreamer-gl1.0-0
 
       - name: build Seamly2D & SeamlyMe for tests
         run: |
@@ -117,7 +116,7 @@ jobs:
         # xvfb use to test built application within a framebuffer
         run: |
           sudo apt update
-          sudo apt install -y xvfb libxkbcommon-x11-0 gstreamer1.0-plugins-base libgstreamer-plugins-base1.0-0
+          sudo apt install -y xvfb libxkbcommon-x11-0 gstreamer1.0-plugins-base
 
       - name: run Seamly2D tests
         run: |
