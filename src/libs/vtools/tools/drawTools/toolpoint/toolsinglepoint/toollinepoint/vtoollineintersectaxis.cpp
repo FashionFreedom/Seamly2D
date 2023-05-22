@@ -51,6 +51,16 @@
 
 #include "vtoollineintersectaxis.h"
 
+#include <QLine>
+#include <QSharedPointer>
+#include <QString>
+#include <new>
+
+#include "../../../../../dialogs/tools/dialoglineintersectaxis.h"
+#include "../../../../../dialogs/tools/dialogtool.h"
+#include "../../../../../visualization/visualization.h"
+#include "../../../../../visualization/line/vistoollineintersectaxis.h"
+#include "../ifc/exception/vexception.h"
 #include "vtoollinepoint.h"
 #include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
@@ -67,13 +77,7 @@
 #include "../../../../../visualization/visualization.h"
 #include "../../../../../visualization/line/vistoollineintersectaxis.h"
 
-#include <QLine>
 #include <QMessageBox>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
 
 template <class T> class QSharedPointer;
 

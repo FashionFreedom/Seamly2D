@@ -22,7 +22,7 @@
 #include "qmuparsertokenreader.h"
 
 #include <assert.h>
-#include <QCharRef>
+#include <QString>
 #include <QList>
 #include <QMessageLogger>
 #include <QStringList>
@@ -498,10 +498,7 @@ bool QmuParserTokenReader::IsArgSep ( token_type &a_Tok )
 {
     if ( m_strFormula.at ( m_iPos ) == m_cArgSep )
     {
-        // copy the separator into null terminated string
-        QString szSep;
-        szSep[0] = m_cArgSep;
-        szSep[1] = 0;
+        QString szSep = QString(m_cArgSep);
 
         if ( m_iSynFlags & noARG_SEP )
         {
@@ -1018,7 +1015,7 @@ bool QmuParserTokenReader::IsString ( token_type &a_Tok )
  * @param a_sTok [in] The token string representation associated with the error.
  * @throw ParserException always throws thats the only purpose of this function.
  */
-void Q_NORETURN QmuParserTokenReader::Error ( EErrorCodes a_iErrc, int a_iPos, const QString &a_sTok ) const
+Q_NORETURN void QmuParserTokenReader::Error ( EErrorCodes a_iErrc, int a_iPos, const QString &a_sTok ) const
 {
     m_pParser->Error ( a_iErrc, a_iPos, a_sTok );
 }

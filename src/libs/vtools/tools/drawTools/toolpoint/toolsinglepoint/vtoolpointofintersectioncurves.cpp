@@ -51,6 +51,16 @@
 
 #include "vtoolpointofintersectioncurves.h"
 
+#include <QLineF>
+#include <QSharedPointer>
+#include <QString>
+#include <new>
+
+#include "../../../../dialogs/tools/dialogpointofintersectioncurves.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../visualization/path/../visualization.h"
+#include "../../../../visualization/path/vistoolpointofintersectioncurves.h"
+#include "../ifc/exception/vexception.h"
 #include "vtoolsinglepoint.h"
 #include "../ifc/ifcdef.h"
 #include "../ifc/exception/vexception.h"
@@ -67,12 +77,7 @@
 #include "../../../../visualization/visualization.h"
 #include "../../../../visualization/path/vistoolpointofintersectioncurves.h"
 
-#include <QLineF>
 #include <QMessageBox>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
 #include <new>
 
 template <class T> class QSharedPointer;

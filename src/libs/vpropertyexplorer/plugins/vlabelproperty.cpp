@@ -59,9 +59,7 @@
 #include <QLatin1String>
 #include <QLabel>
 #include <QSizePolicy>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 
 #include "../vproperty_p.h"
 

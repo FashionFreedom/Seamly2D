@@ -116,7 +116,7 @@ void TST_SeamlyMeCommandLine::OpenMeasurements_data() const
     QTest::newRow("Broken file. Not unique name.")                                 << "broken1.vit"
                                                                                    << V_EX_NOINPUT;
 
-    QTest::newRow("Broken file. Measurement name can't be empty.")                 << "broken1.vit"
+    QTest::newRow("Broken file. Measurement name can't be empty.")                 << "broken2.vit"
                                                                                    << V_EX_NOINPUT;
 
     QTest::newRow("Broken file. An empty value shouldn't break a file.")           << "broken3.vit"

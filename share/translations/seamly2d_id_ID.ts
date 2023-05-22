@@ -9050,7 +9050,7 @@ Apakah anda ingin menyimpan perubahan anda?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>_R</source>
+        <source>microwave_beep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

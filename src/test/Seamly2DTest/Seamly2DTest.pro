@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core testlib gui printsupport xml xmlpatterns
+QT       += core testlib gui printsupport xml core5compat
 
 TARGET = Seamly2DTests
 
@@ -171,6 +171,15 @@ else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR
 
 # VPropertyExplorer library
 unix|win32: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
+
+# xerces library
+unix{
+    macx{
+
+    } else{
+        LIBS += /usr/lib/x86_64-linux-gnu/libxerces-c.so
+    }
+}
 
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer

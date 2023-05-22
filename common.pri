@@ -11,18 +11,21 @@ win32{
 
     unset(QMAKE_INSTALL_PROGRAM)
     QMAKE_INSTALL_PROGRAM = xcopy /y
+
+    VCOPY = $$QMAKE_COPY /D
+
+    INCLUDEPATH += ../../../extern/xerces-c/include
+    LIBS += -L$$_PRO_FILE_PWD_/../../../extern/xerces-c/lib/ -lxerces-c_3D
+    INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll
 }
 
 unix{
     macx{
         VCOPY = $$QMAKE_COPY
+        INCLUDEPATH += ../../../extern/xerces-c/include
     } else {
         VCOPY = $$QMAKE_COPY -u
     }
-}
-
-win32{
-    VCOPY = $$QMAKE_COPY /D
 }
 
 # See question on StackOwerflow "QSslSocket error when SSL is NOT used" (http://stackoverflow.com/a/31277055/3045403)
@@ -133,7 +136,7 @@ CONFIG(debug, debug|release){
     DVCS_HESH=$$system("git rev-parse --short=12 HEAD") #get SHA1 commit hash
     message("common.pri: Latest commit hash:" $${DVCS_HESH})
 
-    isEmpty(DVCS_HESH){       
+    isEmpty(DVCS_HESH){
        DVCS_HESH = \\\"unknown\\\" # if we can't find build revision left unknown.
     } else {
        DVCS_HESH=\\\"Git:$${DVCS_HESH}\\\"

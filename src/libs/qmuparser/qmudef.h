@@ -35,23 +35,23 @@ QT_WARNING_DISABLE_GCC("-Wattributes")
     #include <ciso646>
 #endif /* Q_CC_MSVC */
 
-#define INIT_LOCALE_VARIABLES(locale)                          \
-const QChar positiveSign   = (locale).positiveSign();          \
-const QChar negativeSign   = (locale).negativeSign();          \
-const QChar sign0          = (locale).toString(0).at(0);       \
-const QChar sign1          = (locale).toString(1).at(0);       \
-const QChar sign2          = (locale).toString(2).at(0);       \
-const QChar sign3          = (locale).toString(3).at(0);       \
-const QChar sign4          = (locale).toString(4).at(0);       \
-const QChar sign5          = (locale).toString(5).at(0);       \
-const QChar sign6          = (locale).toString(6).at(0);       \
-const QChar sign7          = (locale).toString(7).at(0);       \
-const QChar sign8          = (locale).toString(8).at(0);       \
-const QChar sign9          = (locale).toString(9).at(0);       \
-const QChar expUpper       = (locale).exponential().toUpper(); \
-const QChar expLower       = (locale).exponential().toLower(); \
-const QChar decimalPoint   = (locale).decimalPoint();          \
-const QChar groupSeparator = (locale).groupSeparator()         \
+#define INIT_LOCALE_VARIABLES(locale)                             \
+const QChar positiveSign   = (locale).positiveSign()[0];          \
+const QChar negativeSign   = (locale).negativeSign()[0];          \
+const QChar sign0          = (locale).toString(0).at(0);          \
+const QChar sign1          = (locale).toString(1).at(0);          \
+const QChar sign2          = (locale).toString(2).at(0);          \
+const QChar sign3          = (locale).toString(3).at(0);          \
+const QChar sign4          = (locale).toString(4).at(0);          \
+const QChar sign5          = (locale).toString(5).at(0);          \
+const QChar sign6          = (locale).toString(6).at(0);          \
+const QChar sign7          = (locale).toString(7).at(0);          \
+const QChar sign8          = (locale).toString(8).at(0);          \
+const QChar sign9          = (locale).toString(9).at(0);          \
+const QChar expUpper       = (locale).exponential().toUpper()[0]; \
+const QChar expLower       = (locale).exponential().toLower()[0]; \
+const QChar decimalPoint   = (locale).decimalPoint()[0];          \
+const QChar groupSeparator = (locale).groupSeparator()[0]         \
 
 QString NameRegExp();
 

@@ -63,8 +63,8 @@ const QStringList QmuParserBase::c_DefaultOprt = QStringList()<< "<=" << ">=" <<
  */
 QmuParserBase::QmuParserBase()
     : m_locale(QLocale::c()),
-      m_decimalPoint(QLocale::c().decimalPoint()),
-      m_thousandsSeparator(QLocale::c().groupSeparator()),
+      m_decimalPoint(QLocale::c().decimalPoint()[0]),
+      m_thousandsSeparator(QLocale::c().groupSeparator()[0]),
       m_pParseFormula(&QmuParserBase::ParseString),
       m_vRPN(),
       m_vStringBuf(),
@@ -203,8 +203,8 @@ void QmuParserBase::Assign(const QmuParserBase &a_Parser)
 void QmuParserBase::ResetLocale()
 {
     setLocale(QLocale::c());
-    m_decimalPoint = m_locale.decimalPoint();
-    m_thousandsSeparator = m_locale.groupSeparator();
+    m_decimalPoint = m_locale.decimalPoint()[0];
+    m_thousandsSeparator = m_locale.groupSeparator()[0];
     SetArgSep(';');
 }
 
@@ -432,7 +432,7 @@ void QmuParserBase::SetExpr(const QString &a_sExpr)
 {
     // Check locale compatibility
     std::locale loc;
-    if (m_pTokenReader->GetArgSep()==std::use_facet<std::numpunct<char_type> >(loc).decimal_point())
+    if (m_pTokenReader->GetArgSep()==(char)std::use_facet<std::numpunct<char_type> >(loc).decimal_point())
     {
         Error(ecLOCALE);
     }
@@ -1642,7 +1642,7 @@ qreal QmuParserBase::ParseString() const
 * @param a_sTok [in] The token string representation associated with the error.
 * @throw ParserException always throws thats the only purpose of this function.
 */
-void Q_NORETURN QmuParserBase::Error(EErrorCodes a_iErrc, int a_iPos, const QString &a_sTok) const
+Q_NORETURN void QmuParserBase::Error(EErrorCodes a_iErrc, int a_iPos, const QString &a_sTok) const
 {
     throw qmu::QmuParserError (a_iErrc, a_sTok, m_pTokenReader->GetExpr(), a_iPos);
 }

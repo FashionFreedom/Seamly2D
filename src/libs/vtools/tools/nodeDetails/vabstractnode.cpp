@@ -52,9 +52,7 @@
 #include "vabstractnode.h"
 
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QUndoStack>
 #include <Qt>
 

@@ -116,7 +116,7 @@ private:
     bool            IsStrVarTok(token_type &a_Tok);
     bool            IsUndefVarTok(token_type &a_Tok);
     bool            IsString(token_type &a_Tok);
-    void Q_NORETURN Error(EErrorCodes a_iErrc, int a_iPos = -1, const QString &a_sTok = QString() ) const;
+    Q_NORETURN void Error(EErrorCodes a_iErrc, int a_iPos = -1, const QString &a_sTok = QString() ) const;
 
     token_type& SaveBeforeReturn(const token_type &tok);
 
@@ -193,7 +193,7 @@ inline void QmuParserTokenReader::IgnoreUndefVar ( bool bIgnore )
 //---------------------------------------------------------------------------------------------------------------------
 inline void QmuParserTokenReader::SetArgSep ( char_type cArgSep )
 {
-    m_cArgSep = cArgSep;
+    m_cArgSep = QChar(cArgSep);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

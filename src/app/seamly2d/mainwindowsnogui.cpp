@@ -79,6 +79,8 @@
 #include <QPrintDialog>
 #include <QPrinterInfo>
 #include <QImageWriter>
+#include <QSpacerItem>
+#include <QGridLayout>
 
 #ifdef Q_OS_WIN
 #   define PDFTOPS "pdftops.exe"

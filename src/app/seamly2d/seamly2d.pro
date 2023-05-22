@@ -12,7 +12,7 @@ include(../../../common.pri)
 
 # Here we don't see "network" library, but, i think, "printsupport" depend on this library, so we still need this
 # library in installer.
-QT       += core gui widgets xml svg printsupport xmlpatterns multimedia
+QT       += core gui widgets xml svg printsupport network core5compat multimedia
 
 # We want create executable file
 TEMPLATE = app
@@ -206,6 +206,13 @@ win32 {
         openssl_path += $${PWD}/$$DIR
     }
     copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
+
+    for(DIR, INSTALL_XERCES) {
+        #add these absolute paths to a variable which
+        #ends up as 'mkcommands = path1 path2 path3 ...'
+        openssl_path += $${PWD}/$$DIR
+    }
+    copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
 }
 
 # When the GNU linker sees a library, it discards all symbols that it doesn't need.
@@ -322,6 +329,15 @@ else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR
 
 # VPropertyExplorer library
 unix|win32: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
+
+# xerces library
+unix{
+    macx{
+
+    } else{
+        LIBS += /usr/lib/x86_64-linux-gnu/libxerces-c.so
+    }
+}
 
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer

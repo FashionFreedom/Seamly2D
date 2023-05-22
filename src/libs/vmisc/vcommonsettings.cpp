@@ -57,13 +57,10 @@
 #include <QFont>
 #include <QLocale>
 #include <QMessageLogger>
-#include <QSound>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QVariant>
 #include <QtDebug>
-#include <QTextCodec>
+#include <QtCore5Compat/QTextCodec>
 
 #include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"

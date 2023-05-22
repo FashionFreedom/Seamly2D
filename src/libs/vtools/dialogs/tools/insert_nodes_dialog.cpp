@@ -59,7 +59,7 @@
 
 #include <QMenu>
 #include <QKeyEvent>
-#include <QSound>
+#include <QSoundEffect>
 
 //---------------------------------------------------------------------------------------------------------------------
 InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWidget *parent)
@@ -68,8 +68,10 @@ InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWi
     , m_nodes({})
     , m_nodeFlag(false)
     , m_piecesFlag(false)
-    , m_beep(new QSound(qApp->Settings()->getSelectionSound()))
+    , m_beep(new QSoundEffect())
 {
+    m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
+
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/insert_nodes_icon.png"));

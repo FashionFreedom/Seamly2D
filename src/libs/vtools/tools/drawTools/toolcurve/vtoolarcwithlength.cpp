@@ -48,9 +48,7 @@
 
 #include <QPen>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <Qt>
 #include <new>
 

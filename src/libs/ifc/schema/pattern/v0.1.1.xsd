@@ -31,7 +31,7 @@
 														 <xs:attribute name="h176" type="xs:boolean"></xs:attribute>
 														 <xs:attribute name="h182" type="xs:boolean"></xs:attribute>
 														 <xs:attribute name="h188" type="xs:boolean"></xs:attribute>
-														 <xs:attribute name="h194" type="xs:boolean"></xs:attribute>	   
+														 <xs:attribute name="h194" type="xs:boolean"></xs:attribute>
                                                    </xs:complexType>
                                              </xs:element>
                                              <xs:element name="sizes">
@@ -54,7 +54,7 @@
 														 <xs:attribute name="s50" type="xs:boolean"></xs:attribute>
 														 <xs:attribute name="s52" type="xs:boolean"></xs:attribute>
 														 <xs:attribute name="s54" type="xs:boolean"></xs:attribute>
-														 <xs:attribute name="s56" type="xs:boolean"></xs:attribute>	   
+														 <xs:attribute name="s56" type="xs:boolean"></xs:attribute>
                                                    </xs:complexType>
                                              </xs:element>
                                        </xs:sequence>
@@ -64,7 +64,7 @@
 								<xs:complexType>
 									<xs:attribute name="type" type="measurementsTypes" use="required"></xs:attribute>
 									<xs:attribute name="path" type="xs:string" use="required"></xs:attribute>
-									<xs:attribute name="unit" type="units" use="required"></xs:attribute>   
+									<xs:attribute name="unit" type="units" use="required"></xs:attribute>
 							   	</xs:complexType>
 							</xs:element>
                            <xs:element name="increments" minOccurs="0" maxOccurs="1">
@@ -77,7 +77,7 @@
 														 <xs:attribute name="description" type="xs:string" use="required"></xs:attribute>
 														 <xs:attribute name="kgrowth" type="xs:double" use="required"></xs:attribute>
 														 <xs:attribute name="name" type="shortName" use="required"></xs:attribute>
-														 <xs:attribute name="base" type="xs:double" use="required"></xs:attribute>	   
+														 <xs:attribute name="base" type="xs:double" use="required"></xs:attribute>
                                                    </xs:complexType>
                                              </xs:element>
                                        </xs:sequence>
@@ -89,7 +89,7 @@
                                              <xs:element name="calculation" minOccurs="1" maxOccurs="unbounded">
                                                    <xs:complexType>
                                                          <xs:sequence>
-														       <xs:choice minOccurs="0" maxOccurs="unbounded">	 
+														       <xs:choice minOccurs="0" maxOccurs="unbounded">
                                                                      <xs:element name="point" minOccurs="0" maxOccurs="unbounded">
 																	       <xs:complexType>
 																		         <xs:attribute name="id" type="xs:unsignedInt" use="required"></xs:attribute>
@@ -122,7 +122,7 @@
 																			     <xs:attribute name="arc" type="xs:unsignedInt"></xs:attribute>
 																			     <xs:attribute name="curve" type="xs:unsignedInt"></xs:attribute>
 																	       </xs:complexType>
-                                                                     </xs:element>                                                              
+                                                                     </xs:element>
 																     <xs:element name="line" minOccurs="0" maxOccurs="unbounded">
 																		   <xs:complexType>
 																			     <xs:attribute name="id" type="xs:unsignedInt" use="required"></xs:attribute>
@@ -130,7 +130,7 @@
 																			     <xs:attribute name="secondPoint" type="xs:unsignedInt"></xs:attribute>
 																			     <xs:attribute name="typeLine" type="xs:string"></xs:attribute>
 																		   </xs:complexType>
-																     </xs:element> 
+																     </xs:element>
 																     <xs:element name="arc" minOccurs="0" maxOccurs="unbounded">
 																		   <xs:complexType>
 																			     <xs:attribute name="angle1" type="xs:string"></xs:attribute>
@@ -226,7 +226,7 @@
                                                                              <xs:attribute name="indexD2" type="xs:unsignedInt"></xs:attribute>
                                                                        </xs:complexType>
                                                                     </xs:element>
-                                                               </xs:choice>           
+                                                               </xs:choice>
                                                          </xs:sequence>
                                                    </xs:complexType>
                                              </xs:element>
@@ -266,8 +266,8 @@
                </xs:complexType>
          </xs:element>
 	<xs:simpleType name="shortName">
-		<xs:restriction base="xs:string">   
-			<xs:pattern value="^([^0-9-*/^+=\s\(\)%:;!.,`'\&quot;]){1,1}([^-*/^+=\s\(\)%:;!.,`'\&quot;]){0,}$"/>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([^0-9-*/^+=\s\(\)%:;!.,`'&quot;]){1,1}([^-*/^+=\s\(\)%:;!.,`'&quot;]){0,}"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="units">
@@ -285,7 +285,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="formatVersion">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="^(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))$"/>
+			<xs:pattern value="(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))\.(0|([1-9][0-9]*))"/>
 		</xs:restriction>
 	</xs:simpleType>
    </xs:schema>

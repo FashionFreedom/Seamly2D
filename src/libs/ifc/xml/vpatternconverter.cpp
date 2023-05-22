@@ -67,9 +67,7 @@
 #include <QFileInfo>
 #include <QLatin1String>
 #include <QList>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <algorithm>
 
 class QDomElement;

@@ -161,3 +161,12 @@ $RECYCLE.BIN/
 # target_wrapper.sh files are generated/updated automatically
 target_wrapper.sh
 *.bak
+
+# QT creator files
+.qtc_clangd/
+.vscode/
+.qmake.stash
+
+# Allow xerces lib
+!xerces-c_3D.lib
+!xerces-c_3_2D.dll

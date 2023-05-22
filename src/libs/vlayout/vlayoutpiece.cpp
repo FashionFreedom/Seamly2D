@@ -58,7 +58,7 @@
 #include <QFontMetrics>
 #include <QGraphicsPathItem>
 #include <QList>
-#include <QMatrix>
+#include <QTransform>
 #include <QMessageLogger>
 #include <QPainterPath>
 #include <QPoint>

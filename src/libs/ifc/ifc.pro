@@ -10,7 +10,7 @@ message("Entering ifc.pro")
 include(../../../common.pri)
 
 # Library work with xml.
-QT       += xml xmlpatterns printsupport
+QT       += xml printsupport
 
 # We don't need gui library.
 QT       -= gui

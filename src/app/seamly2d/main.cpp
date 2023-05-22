@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
     QT_REQUIRE_VERSION(argc, argv, "5.15.2");
 
     // Need to internally move a node inside a piece main path
-    qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode");
+    // FIXME qRegisterMetaTypeStreamOperators<VPieceNode>("VPieceNode"); is this needed?
 
     //------------------------------------------------------------------------
     // On macOS, correct WebView / QtQuick compositing and stacking requires running

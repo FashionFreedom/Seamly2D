@@ -53,7 +53,7 @@
 #include "nonscalingfill_pathitem.h"
 
 #include <QBrush>
-#include <QMatrix>
+#include <QTransform>
 #include <QPainter>
 
 //---------------------------------------------------------------------------------------------------------------------

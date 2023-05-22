@@ -85,8 +85,8 @@
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QProcess>
-#include <QTextCodec>
 #include <QtNumeric>
+#include <QtCore5Compat/QTextCodec>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>

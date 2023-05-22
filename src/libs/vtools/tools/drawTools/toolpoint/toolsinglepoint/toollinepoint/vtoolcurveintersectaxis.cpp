@@ -56,9 +56,7 @@
 #include <QMap>
 #include <QRectF>
 #include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
+#include <QString>
 #include <QVector>
 #include <QMessageBox>
 #include <new>
