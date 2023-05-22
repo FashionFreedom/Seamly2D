@@ -62,3 +62,4 @@ See our [LICENSE.md](..\LICENSE.md) file or go to [https://www.gnu.org/licenses/
 Other components released under:  
 * QMuParser - [Simplified BSD license](https://opensource.org/licenses/BSD-2-Clause)
 * VPropertyExplorer - [LGPLv2.1 license](https://www.gnu.org/licenses/old-licenses/lgpl-2.1.en.html)
+* xerces-c - [Apache License, Version 2.0](https://apache.org/licenses/LICENSE-2.0)
