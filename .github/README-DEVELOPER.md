@@ -77,12 +77,14 @@ ___________________________________________________
     * Read about Qt for Windows [here](https://doc.qt.io/qt-5/windows.html).
     * Add Qt and QtCreator directories to the Windows PATH environment variable through Control Panel:  
       `[Control Panel | System And Security | System | Advanced Tab | Environment Variables button]`
-3. Mac only for signing and notarizing:
+
+4. Mac only for signing and notarizing:
     * Enable signing and notarizing at qmake step:
       ```
       qmake Seamly2D.pro CONFIG+=macSign
       ```
-4. Both MacOS and Windows: 
+      
+5. Both MacOS and Windows: 
     * Build the Seamly2D project
       * To build with Qt's *QtCreator* IDE:
         * Create your compiler kit.  Read more about adding compilers [on the Qt website](https://doc.qt.io/qtcreator/creator-tool-chains.html).  
