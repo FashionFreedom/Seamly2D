@@ -180,11 +180,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1
-        with:
-          # use Visual C++ 2022 latest, 14.34.xxxx
-          toolset: '14.34'
+      - uses: ilammy/msvc-dev-cmd@v1
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -252,11 +248,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: install msvc
-        uses: ilammy/msvc-dev-cmd@v1
+      - uses: ilammy/msvc-dev-cmd@v1
         with:
-          # use Visual C++ 2022 latest, 14.34.xxxx
-          toolset: '14.34'
           arch: amd64_x86
 
       - uses: jurplel/install-qt-action@v3
