@@ -7,6 +7,7 @@ SOURCES += \
     $$PWD/color_combobox.cpp \
     $$PWD/export_format_combobox.cpp \
     $$PWD/fill_combobox.cpp \
+    $$PWD/group_tablewidgetitem.cpp \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
     $$PWD/mouse_coordinates.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     $$PWD/color_combobox.h \
     $$PWD/export_format_combobox.h \
     $$PWD/fill_combobox.h \
+    $$PWD/group_tablewidgetitem.h \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
     $$PWD/mouse_coordinates.h \
