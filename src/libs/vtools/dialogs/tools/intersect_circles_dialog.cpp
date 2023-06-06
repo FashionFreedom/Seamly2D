@@ -33,7 +33,7 @@
 #include "ui_intersect_circles_dialog.h"
 
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vtranslatevars.h"
@@ -88,7 +88,7 @@ IntersectCirclesDialog::IntersectCirclesDialog(const VContainer *data, const qui
     timerCircle2Radius = new QTimer(this);
     connect(timerCircle2Radius, &QTimer::timeout, this, &IntersectCirclesDialog::EvalCircle2Radius);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxPoints(ui->comboBoxCircle1Center);
@@ -332,7 +332,7 @@ void IntersectCirclesDialog::Circle2RadiusChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::FXCircle1Radius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit first circle radius"));
     dialog->SetFormula(GetFirstCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -346,7 +346,7 @@ void IntersectCirclesDialog::FXCircle1Radius()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::FXCircle2Radius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit second circle radius"));
     dialog->SetFormula(GetSecondCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

@@ -95,7 +95,7 @@
 #include "tools/anchorpoint_dialog.h"
 #include "tools/insert_nodes_dialog.h"
 
-#include "support/dialogeditwrongformula.h"
+#include "support/edit_formula_dialog.h"
 #include "support/dialogundo.h"
 
 #endif // TOOLDIALOGS_H

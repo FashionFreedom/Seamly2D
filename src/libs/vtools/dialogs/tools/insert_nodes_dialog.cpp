@@ -77,7 +77,7 @@ InsertNodesDialog::InsertNodesDialog(const VContainer *data, quint32 toolId, QWi
 
     ui->nodes_ListWidget->installEventFilter(this);
 
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 
     validatePieces();
 

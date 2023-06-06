@@ -358,7 +358,7 @@ void MeasurementDatabaseDialog::showDescription(QTreeWidgetItem *item, int colum
                                  "normal\">%4</p>")
                                  .arg(imageUrl(number))
                                  .arg(number)
-                                 .arg(trv->GuiText(name))
+                                 .arg(trv->guiText(name))
                                  .arg(trv->Description(name));
 
     ui->textEdit->setHtml(text);

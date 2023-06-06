@@ -78,7 +78,7 @@ DialogSinglePoint::DialogSinglePoint(const VContainer *data, const quint32 &tool
     ui->doubleSpinBoxX->setRange(0, qApp->fromPixel(SceneSize));
     ui->doubleSpinBoxY->setRange(0, qApp->fromPixel(SceneSize));
     labelEditNamePoint = ui->labelEditName;
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 
     flagName = true;
     DialogTool::CheckState();

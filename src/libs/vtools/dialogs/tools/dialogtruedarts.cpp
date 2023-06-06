@@ -95,7 +95,7 @@ DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, 
     ui->lineEditFirstNewDartPoint->setText(name1);
     ui->lineEditSecondNewDartPoint->setText(name2);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxs(ch1, ch2);

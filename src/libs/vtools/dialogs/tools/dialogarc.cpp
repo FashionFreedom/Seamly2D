@@ -63,7 +63,7 @@
 #include "../vpatterndb/vtranslatevars.h"
 #include "../../visualization/path/vistoolarc.h"
 #include "../../visualization/visualization.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialogarc.h"
@@ -118,7 +118,7 @@ DialogArc::DialogArc(const VContainer *data, const quint32 &toolId, QWidget *par
     timerF2 = new QTimer(this);
     connect(timerF2, &QTimer::timeout, this, &DialogArc::EvalF);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->centerPoint_ComboBox);
 
@@ -418,7 +418,7 @@ void DialogArc::F2Changed()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::FXRadius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(getRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -432,7 +432,7 @@ void DialogArc::FXRadius()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::FXF1()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit first angle"));
     dialog->SetFormula(getF1());
     dialog->setPostfix(degreeSymbol);
@@ -446,7 +446,7 @@ void DialogArc::FXF1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArc::FXF2()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit second angle"));
     dialog->SetFormula(getF2());
     dialog->setPostfix(degreeSymbol);

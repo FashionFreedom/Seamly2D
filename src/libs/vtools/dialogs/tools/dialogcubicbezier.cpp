@@ -77,7 +77,7 @@ DialogCubicBezier::DialogCubicBezier(const VContainer *data, const quint32 &tool
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon(":/toolicon/32x32/cubic_bezier.png"));
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->comboBoxP1);
     FillComboBoxPoints(ui->comboBoxP2);

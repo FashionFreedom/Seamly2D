@@ -79,7 +79,7 @@ DialogPointOfIntersectionCurves::DialogPointOfIntersectionCurves(const VContaine
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxCurves(ui->comboBoxCurve1);

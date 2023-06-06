@@ -65,7 +65,7 @@ PointIntersectXYDialog::PointIntersectXYDialog(const VContainer *data, const qui
     ui->pointName_LineEdit->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->pointName_Label;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxPoints(ui->firstPoint_ComboBox);

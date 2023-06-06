@@ -40,6 +40,7 @@
 #include "expandingtextedit.h"
 #include "../vproperty_p.h"
 
+
 VPE::PlainTextProperty::PlainTextProperty(const QString &name, const QMap<QString, QVariant> &settings)
     : VProperty(name, QVariant::String)
     , m_readOnly(false)

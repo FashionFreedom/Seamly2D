@@ -88,7 +88,7 @@ EditGroupDialog::EditGroupDialog(const VContainer *data, const quint32 &toolId, 
     ui->groupLineWeight_ComboBox->removeItem(ui->groupLineWeight_ComboBox->findData(LineWeightByGroup)); //remove lineweight "BY Group" item
     m_oldGroupName = ui->groupName_LineEdit->text();
 
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
     DialogTool::CheckState();
     connect(ui->groupName_LineEdit, &QLineEdit::textChanged, this, &EditGroupDialog::nameChanged);
 }

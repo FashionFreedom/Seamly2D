@@ -64,7 +64,7 @@
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/vpiecepath.h"
-#include "../../support/dialogeditwrongformula.h"
+#include "../../support/edit_formula_dialog.h"
 #include "../../support/editlabeltemplate_dialog.h"
 #include "../../../tools/pattern_piece_tool.h"
 #include "../../../undocommands/savepiecepathoptions.h"
@@ -158,7 +158,7 @@ PatternPieceDialog::PatternPieceDialog(const VContainer *data, const quint32 &to
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     enableApply(applyAllowed);
 
     initializeMainPathTab();
@@ -1957,7 +1957,7 @@ void PatternPieceDialog::editGrainlineFormula()
         return;
     }
 
-    DialogEditWrongFormula dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
     dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->GetOsSeparator()));
     dialog.setCheckZero(checkForZero);
@@ -2014,7 +2014,7 @@ void PatternPieceDialog::editPieceLabelFormula()
         return;
     }
 
-    DialogEditWrongFormula dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
     dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->GetOsSeparator()));
     dialog.setCheckZero(checkForZero);
@@ -2074,7 +2074,7 @@ void PatternPieceDialog::editPatternLabelFormula()
         return;
     }
 
-    DialogEditWrongFormula dialog(data, NULL_ID, this);
+    EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
     dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->GetOsSeparator()));
     dialog.setCheckZero(checkForZero);
@@ -2238,7 +2238,7 @@ void PatternPieceDialog::evaluateAfterWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editDefaultSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width"));
     dialog->SetFormula(getSeamAllowanceWidthFormula());
     dialog->setCheckLessThanZero(true);
@@ -2253,7 +2253,7 @@ void PatternPieceDialog::editDefaultSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editBeforeSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width before"));
     dialog->SetFormula(getFormulaFromUser(ui->beforeWidthFormula_PlainTextEdit));
     dialog->setCheckLessThanZero(true);
@@ -2268,7 +2268,7 @@ void PatternPieceDialog::editBeforeSeamAllowanceWidth()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::editAfterSeamAllowanceWidth()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit seam allowance width after"));
     dialog->SetFormula(getFormulaFromUser(ui->afterWidthFormula_PlainTextEdit));
     dialog->setCheckLessThanZero(true);

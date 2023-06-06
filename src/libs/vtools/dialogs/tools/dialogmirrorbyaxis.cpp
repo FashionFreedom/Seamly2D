@@ -94,7 +94,7 @@ DialogMirrorByAxis::DialogMirrorByAxis(const VContainer *data, const quint32 &to
 
     ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByAxisSuffix()));
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->originPoint_ComboBox);
     fillComboBoxAxisType(ui->axisType_ComboBox);
