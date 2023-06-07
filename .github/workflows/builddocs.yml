@@ -1,0 +1,35 @@
+name: BuildDocs
+
+# for a description, see README.md in this folder
+
+on:
+  schedule:
+    - cron: '30 1 * * MON'
+  workflow_dispatch:
+  push:
+    branches:
+    - develop
+    - test
+  pull_request:
+
+permissions:
+  contents: write
+
+env:
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
+
+jobs:
+
+  document:
+    # Create documents for releases (scheduled) and pre-releases
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Doxygen GitHub Pages Deploy Action
+        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/doxygen
+          config_file: Doxyfile
+
