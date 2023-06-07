@@ -36,6 +36,7 @@ uic/
 rcc/
 man/
 build/
+.vscode/*
 
 # Ignore Coverity Scan Build Tool
 cov-int/
@@ -161,3 +162,4 @@ $RECYCLE.BIN/
 # target_wrapper.sh files are generated/updated automatically
 target_wrapper.sh
 *.bak
+
