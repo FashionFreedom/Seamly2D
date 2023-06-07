@@ -1,0 +1,162 @@
+\hypertarget{union__tool_8cpp}{}\doxysection{src/libs/vtools/tools/union\+\_\+tool.cpp File Reference}
+\label{union__tool_8cpp}\index{src/libs/vtools/tools/union\_tool.cpp@{src/libs/vtools/tools/union\_tool.cpp}}
+{\ttfamily \#include \char`\"{}union\+\_\+tool.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QByte\+Array$>$}\newline
+{\ttfamily \#include $<$QDom\+Node\+List$>$}\newline
+{\ttfamily \#include $<$QFile\+Info$>$}\newline
+{\ttfamily \#include $<$QHash$>$}\newline
+{\ttfamily \#include $<$QLineF$>$}\newline
+{\ttfamily \#include $<$QMessage\+Logger$>$}\newline
+{\ttfamily \#include $<$QShared\+Pointer$>$}\newline
+{\ttfamily \#include $<$QStatic\+String\+Data$>$}\newline
+{\ttfamily \#include $<$QString\+Data$>$}\newline
+{\ttfamily \#include $<$QString\+Data\+Ptr$>$}\newline
+{\ttfamily \#include $<$QUndo\+Stack$>$}\newline
+{\ttfamily \#include $<$Qt\+Debug$>$}\newline
+{\ttfamily \#include $<$new$>$}\newline
+{\ttfamily \#include \char`\"{}pattern\+\_\+piece\+\_\+tool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vdatatool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vnodedetail.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/anchorpoint\+\_\+tool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/vnodearc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/vnodeellipticalarc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/vnodepoint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/vnodespline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/vnodesplinepath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}node\+Details/vtoolinternalpath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../dialogs/tools/dialogtool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../dialogs/tools/union\+\_\+dialog.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vabstractconverter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vdomdocument.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vlabeltemplateconverter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vpatternconverter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vformat/vlabeltemplate.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/varc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vellipticalarc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vsplinepath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vabstractcubicbezier.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vabstractcubicbezierpath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vgeometrydef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vpointf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vspline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vsplinepoint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/vcommonsettings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/diagnostic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/logging.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/vabstractapplication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/vcontainer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/vpiecepath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/vpiecenode.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/float\+Item\+Data/vgrainlinedata.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/float\+Item\+Data/vpatternlabeldata.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/float\+Item\+Data/vpiecelabeldata.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceQT__WARNING__POP}{QT\+\_\+\+WARNING\+\_\+\+POP}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{namespaceQT__WARNING__POP_a3e7f4f3f85b62aa2fb29c336cdef1dc2}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Piece\+Path}} (int piece, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{namespaceQT__WARNING__POP_a4cd01162be10b9883de62bd8b8563c19}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Piece1\+Main\+Path}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{namespaceQT__WARNING__POP_a17d67d1cf67d5a2e78a87a315fffef85}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Piece2\+Main\+Path}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_a1d5ad04a20f7c796d74062f366dda618}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Piece2\+CSAPaths}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_aafe9aaffd8ed9c4bc2562da457fc8015}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Piece2\+Internal\+Paths}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_a58c67fd6a58b88e42e9aa9293e0735b4}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Piece2\+Anchors}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+QString \mbox{\hyperlink{namespaceQT__WARNING__POP_a45cec81b7cea447cfcc3a6591776429c}{QT\+\_\+\+WARNING\+\_\+\+POP\+::get\+Block\+Name}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 piece1\+\_\+\+Id, quint32 piece2\+\_\+\+Id)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_af3cf1695bd87c1b8e150bf4b62c0c90f}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Bias\+Rotate\+Point}} (\mbox{\hyperlink{classVPointF}{VPointF}} $\ast$point, qreal dx, qreal dy, const QPointF \&p\+Rotate, qreal angle)
+\begin{DoxyCompactList}\small\item\em Bias\+Rotate\+Point bias and rotate point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a80b2e5367bdfa51e9ee82c7b62a64422}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Points\+On\+Edge}} (const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&path, quint32 index, \mbox{\hyperlink{classVPointF}{VPointF}} \&p1, \mbox{\hyperlink{classVPointF}{VPointF}} \&p2, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a532e873910f7322e9a2fde0a3be192f2}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Union\+Init\+Parameters}} (const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&piece1\+Path, const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&piece2\+Path, \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&piece1\+\_\+\+Pt1, qreal \&dx, qreal \&dy, qreal \&angle)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_a38a9d0239d54c08d784815b1e7c3e130}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Node\+Point}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_a2b286f4796b5eee87dd0027e705ab661}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Anchor\+Point}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_a58b3398307008a2c928b7e661c94f589}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Node\+Arc}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_ad704af2c56c4705362b3a4dc5ee2a884}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Node\+El\+Arc}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_ad453ba7eb35ddf1d02fcdd860553374e}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Node\+Spline}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_ab61042fa24cf6c51b6ec1bad20be8be0}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Node\+Spline\+Path}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a4ae7c3935926cc7368e77120e031e369}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Add\+Node\+To\+New\+Path}} (const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&new\+Path, \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} node, quint32 id\+Tool, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, const QString \&block\+Name, qreal dx=0, qreal dy=0, quint32 p\+Rotate=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, qreal angle=0)
+\begin{DoxyCompactList}\small\item\em Add\+Node\+To\+New\+Path create union adding one node at a time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_ad42a694ad7f3ce1fcbf0adacbfee47ce}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Find\+IndexJ}} (qint32 piece2\+Points, const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&piece2\+Path, quint32 piece2\+\_\+\+Index, qint32 \&j)
+\item 
+QDom\+Element \mbox{\hyperlink{namespaceQT__WARNING__POP_aa883943a9bc374c576acee6f64627ce4}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Tag\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_af2ca1a54d1abf2b5efc89fab1651f9bd}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Save\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id, QDom\+Element section, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a5e53269ce0fbdc7aecdb3469f0ecd7c6}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Save\+Nodes\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a22de3c87e336141fcdd3787d0546b1e2}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Save\+CSAChildren}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a0c7fe14316f102698e23b5a3b806763d}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Save\+Internal\+Paths\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_af36760762460542ed6876ec4c4d3e17d}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Save\+Anchors\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_a4d92301e6d64e2f90c125187f579e8b7}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id, const QString \&tag\+Name)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_ad03ee948b2d286145c906cb8c35e6f02}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Nodes\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_a45f580e64d1aa76c7aaf8fa6fd6a68f3}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+CSAChildren}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_a337c189181b3e7f6e27a33ad03e77cf6}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Get\+Internal\+Paths\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{namespaceQT__WARNING__POP_aacdd97dcd47d330168bd05b0d945561c}{QT\+\_\+\+WARNING\+\_\+\+POP\+::get\+Anchor\+Children}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, quint32 id)
+\item 
+quint32 \mbox{\hyperlink{namespaceQT__WARNING__POP_ab347dc8b077e2a85dff1313db2994746}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Take\+Next\+Id}} (\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_ac1b17fc23edb8f9a921cef0abf5f48ac}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+Node\+Point}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a1635547618f66bc91d4d5518ea956010}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+Node\+Arc}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a9f7b64e1a31d79685e4b194477e2e2ab}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+Node\+El\+Arc}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a132d173768e8cb04b71877667c70bbc2}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+Node\+Spline}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_afcdb93c8fe03d1b43a08c027a267a495}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+Node\+Spline\+Path}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a25ae4f0d158f8a9d451e61c0be498148}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+Path\+Node}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, qreal dx=0, qreal dy=0, quint32 p\+Rotate=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, qreal angle=0)
+\begin{DoxyCompactList}\small\item\em Update\+Nodes update nodes of union. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_ac41e10d483d2db0d77719abf0b76a888}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Create\+United\+Nodes}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece1, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece2, quint32 id, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a223471d5625478d1d569f7467332c44b}{QT\+\_\+\+WARNING\+\_\+\+POP\+::create\+CSAUnion}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&d, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, quint32 id, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_adf0e17be09e7bf144ea4778f06622e5c}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Create\+United\+CSA}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece1, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece2, quint32 id, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a295bccfed1619e90dfea2a4a312a586d}{QT\+\_\+\+WARNING\+\_\+\+POP\+::create\+Union\+Internal\+Paths}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&d, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, quint32 id, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_aad66367acf9a8653fa6e839ad0e97fb7}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Create\+United\+Internal\+Paths}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece1, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece2, quint32 id, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a8ca9f21c16c63ed731d315af5c94d663}{QT\+\_\+\+WARNING\+\_\+\+POP\+::create\+Union\+Anchors}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&d, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&children, quint32 id\+Tool, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_ae98e656a88fca05c42090608324630ee}{QT\+\_\+\+WARNING\+\_\+\+POP\+::create\+United\+Anchors}} (\mbox{\hyperlink{classVPiece}{VPiece}} \&new\+Piece, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece1, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece2, quint32 id, const QString \&block\+Name, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a5736c077b3b3069a8f171feceae4310f}{QT\+\_\+\+WARNING\+\_\+\+POP\+::\+Update\+United\+Nodes}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a517f1b59f7e127ce69a3f634c2b73ea9}{QT\+\_\+\+WARNING\+\_\+\+POP\+::create\+Union\+Paths}} (const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&records, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ children)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a87a98d38cedbf08597b6e3efb022e94d}{QT\+\_\+\+WARNING\+\_\+\+POP\+::update\+Union\+CSA}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} $>$ \&records)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_aeb3cad6fd9643948b4a44c7a8ba576be}{QT\+\_\+\+WARNING\+\_\+\+POP\+::update\+Union\+Internal\+Paths}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&records)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a3a0a9002b0d871d6e8ced4fbc82b4efb}{QT\+\_\+\+WARNING\+\_\+\+POP\+::update\+Union\+Anchors}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&records)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a4734b4d2e0dfa026a60068bbb834e3ad}{QT\+\_\+\+WARNING\+\_\+\+POP\+::create\+Union}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a0e2790ffc5a7c915eaa541fb8b613f01}{QT\+\_\+\+WARNING\+\_\+\+POP\+::update\+Union}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data, qreal dx, qreal dy, quint32 p\+Rotate, qreal angle)
+\item 
+void \mbox{\hyperlink{namespaceQT__WARNING__POP_a1ae8c757654f20f97229084b94eb415e}{QT\+\_\+\+WARNING\+\_\+\+POP\+::unite\+Pieces}} (quint32 id, const \mbox{\hyperlink{structUnionToolInitData}{Union\+Tool\+Init\+Data}} \&init\+Data)
+\end{DoxyCompactItemize}

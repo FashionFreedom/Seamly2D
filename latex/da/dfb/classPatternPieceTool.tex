@@ -1,0 +1,1146 @@
+\hypertarget{classPatternPieceTool}{}\doxysection{Pattern\+Piece\+Tool Class Reference}
+\label{classPatternPieceTool}\index{PatternPieceTool@{PatternPieceTool}}
+
+
+{\ttfamily \#include $<$pattern\+\_\+piece\+\_\+tool.\+h$>$}
+
+Inheritance diagram for Pattern\+Piece\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{da/dfb/classPatternPieceTool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classPatternPieceTool_ac9bd3818536dbe24a663ff227b01e614a0626ac12d8906472ff29d928a8b8d86e}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Piece)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a956ebb4eff21df4379e0651526160a85}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_aa8a222aaf71327882b8af990473df882}{Enable\+Tool\+Move}} (bool move)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a38eab8ad082d1829574a88524bf9450e}{piece\+Locked\+Changed}} (quint32 id, bool lock)
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_ad17a30134181f75e601954d420997f2c}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a11e31269b52f7aba6a9b581451b96482}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_ae7cb293c3b3c9bcf12fc6965709a5677}{Reset\+Children}} (QGraphics\+Item $\ast$p\+Item)
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a1e7390c7530a7b07cae79bf608a7ee5c}{Update\+All}} ()
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a38afd8e698fa5da2a15aaf9240d073fc}{retranslate\+Ui}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_af398b1d0c7947d5c029dbc827c4d817b}{Highlight}} (quint32 id)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a391fd4e2bc2e89849ca3dec37d45ea72}{update\+Piece\+Details}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a6fba9b61eeb5785f578ba6219b9238d3}{Update\+Piece\+Label}} ()
+\begin{DoxyCompactList}\small\item\em Update\+Label updates the text label, making it just big enough for the text to fit it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_ace3de8d244c970526e84a0545dab3cbd}{Update\+Pattern\+Label}} ()
+\begin{DoxyCompactList}\small\item\em Update\+Pattern\+Label updates the pattern info label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_ac959a9256c20a857d23f9c9a03af3308}{Update\+Grainline}} ()
+\begin{DoxyCompactList}\small\item\em VTool\+Detail\+::\+Update\+Grainline updates the grain line item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_adc2cdaeb162091a4de8908b82e3e0191}{edit\+Piece\+Properties}} ()
+\begin{DoxyCompactList}\small\item\em edit\+Piece\+Properties -\/ routine to edit pattern piece properties . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classPatternPieceTool_a92a377de5161069417e02d4a38e65a3e}{$\sim$\+Pattern\+Piece\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_ae252a7a6e704bde2ed15961fb0e01658}{Remove}} (bool ask)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a94bc484e0cb7992a457667c4ab42a799}{Refresh\+Geometry}} ()
+\item 
+virtual int \mbox{\hyperlink{classPatternPieceTool_a18ce0ac2273a8b3c13f535b9b9e5db67}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classPatternPieceTool_a00ea2549fd333b7dcbcc0d523cfa8e51}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_aa01f11d6179deceb3ff36a692e091ee9}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_aa019972ddbff4af0d165dcc9876d1f76}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a3faa15e26488b9ef37417bd173bc8c36}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em VTool\+Detail\+::paint draws a bounding box around piece, if one of its text or grainline items is not idle. \end{DoxyCompactList}\item 
+virtual QRectF \mbox{\hyperlink{classPatternPieceTool_a0daae5d2b89da5f86cbd62ea25f7686d}{bounding\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QPainter\+Path \mbox{\hyperlink{classPatternPieceTool_a2cd6d14826250c17b65a2323dd5c7c70}{shape}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classPatternPieceTool}{Pattern\+Piece\+Tool}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_a0b6985235102856c90cbcc9746ee4754}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static \mbox{\hyperlink{classPatternPieceTool}{Pattern\+Piece\+Tool}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_a09ca5080ce820ed5ba71a1e7d2d2c861}{Create}} (quint32 id, \mbox{\hyperlink{classVPiece}{VPiece}} new\+Piece, QString \&width, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, const QString \&block\+Name=QString())
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_ab7ba6bb4eccdf8d66f24b0dc6a0656cd}{insert\+Nodes}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes, quint32 piece\+Id, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}})
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_a2fe9309e24101404ee9360622742453d}{Add\+Attributes}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, quint32 id, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_aa7f283a22826c934fdad4d675a90ee6e}{Add\+CSARecord}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} \&record)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_a3d07f8b192f48cd921270f2885206067}{Add\+CSARecords}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} $>$ \&records)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_a5f955c8c86a7da435382856acfc936f0}{Add\+Internal\+Paths}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&paths)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_aaa7339915de99b72cd66e712c9ef81c9}{add\+Anchors}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&anchors)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_a6d281ea87b6d74d744f528046b7d656e}{Add\+Pattern\+Piece\+Data}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_a06aa401f6a29cda1ec55e597c7275899}{Add\+Pattern\+Info}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_a6d5061c462d9b41c7f24b1248d93c234}{Add\+Grainline}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const quint8 \mbox{\hyperlink{classPatternPieceTool_a47cc16ac13512fdfccf0bbd878bec4b4}{piece\+Version}} = 2
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a00b74197ccf92296781f7e8b467ea2cf}{Tag\+CSA}} = QString\+Literal(\char`\"{}csa\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a897285c9793f7abde33c213260bcc60f}{Tag\+Record}} = QString\+Literal(\char`\"{}record\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_acfe891ca8230b59535ebe0a806d1ee77}{Tag\+IPaths}} = QString\+Literal(\char`\"{}i\+Paths\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_acdd6d8452d560f4f5e8114c81122ca79}{Tag\+Anchors}} = QString\+Literal(\char`\"{}anchors\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a6ac47bb5401a72b7cb20628cf8c27670}{Attr\+Version}} = QString\+Literal(\char`\"{}version\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_ae0bac43ce537bc26adb6c8b06ce16b7d}{Attr\+Forbid\+Flipping}} = QString\+Literal(\char`\"{}forbid\+Flipping\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a3300a2706cff94ccf280c4064ca507f9}{Attr\+Piece\+Color}} = QString\+Literal(\char`\"{}color\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_ad1be5818f3e8455c7b3c6b008d94082c}{Attr\+Piece\+Fill}} = QString\+Literal(\char`\"{}fill\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a6ffaa4219ff5be5f924c08ab6627093c}{Attr\+Piece\+Lock}} = QString\+Literal(\char`\"{}locked\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a0c76a8272e485fb363d80b072a6f9c7a}{Attr\+Seam\+Allowance}} = QString\+Literal(\char`\"{}seam\+Allowance\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a0e21739ee97d80829ce3b061090b4d08}{Attr\+Hide\+Seam\+Line}} = QString\+Literal(\char`\"{}hide\+Main\+Path\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_ac2be46b6563500ab1416f3603bbfc3be}{Attr\+Seam\+Allowance\+Built\+In}} = QString\+Literal(\char`\"{}seam\+Allowance\+Built\+In\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a55e0c2668e37e52366370cdb3e36fc88}{Attr\+Height}} = QString\+Literal(\char`\"{}height\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a2bc697f8f37cf552fd9f07e748adca3a}{Attr\+United}} = QString\+Literal(\char`\"{}united\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a85982a98511941bff5537d914ce22042}{Attr\+Font}} = QString\+Literal(\char`\"{}font\+Size\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a8e43e3ee9cb0caeef06a798c85ae8dd9}{Attr\+Top\+Left\+Anchor}} = QString\+Literal(\char`\"{}top\+Left\+Anchor\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_ad6f03b2de8369ca3c6428028d9afe74f}{Attr\+Bottom\+Right\+Anchor}} = QString\+Literal(\char`\"{}bottom\+Right\+Anchor\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a48da70b97146b39e583f287372c6d1ad}{Attr\+Center\+Anchor}} = QString\+Literal(\char`\"{}center\+Anchor\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_aaff699c0c7387e88b128bcdcd5f2a8ca}{Attr\+Top\+Anchor\+Point}} = QString\+Literal(\char`\"{}top\+Anchor\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classPatternPieceTool_a61fd3adf080b52894020aff8777a8e80}{Attr\+Bottom\+Anchor\+Point}} = QString\+Literal(\char`\"{}bottom\+Anchor\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a0e50efc072b05500e5b3f761c5d78850}{save\+Move\+Piece}} (const QPointF \&pt\+Pos)
+\begin{DoxyCompactList}\small\item\em save\+Move\+Piece saves the move piece operation to the undo stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_a3b289516cfa03b3437f61bf3806eaf0c}{save\+Resize\+Piece}} (qreal d\+LabelW, int i\+Font\+Size)
+\begin{DoxyCompactList}\small\item\em save\+Resize\+Piece saves the resize piece label operation to the undo stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_aa10c1f90e24f8b1a26f75ec3e65d4eb1}{save\+Piece\+Rotation}} (qreal d\+Rot)
+\begin{DoxyCompactList}\small\item\em save\+Piece\+Rotation saves the rotation piece label operation to the undo stack \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_a443a15d41832cd83a65c39c06a000f00}{Save\+Move\+Pattern}} (const QPointF \&pt\+Pos)
+\begin{DoxyCompactList}\small\item\em Save\+Move\+Pattern saves the pattern label position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_ad6345df947294c3bb1dcbabca776108d}{Save\+Resize\+Pattern}} (qreal d\+LabelW, int i\+Font\+Size)
+\begin{DoxyCompactList}\small\item\em \+: Save\+Resize\+Pattern saves the pattern label width and font size \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_ae56cd5630c6c1221c7e6c27837cbaecd}{Save\+Rotation\+Pattern}} (qreal d\+Rot)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_ae8e9b65d6a06ce1933346d7ae92401b9}{Save\+Move\+Grainline}} (const QPointF \&pt\+Pos)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a541653fb198efcf2f2ee44b4c82541b1}{Save\+Resize\+Grainline}} (qreal d\+Length)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a910e1b8b913b492446ef8a29d01fdff1}{Save\+Rotate\+Grainline}} (qreal d\+Rot, const QPointF \&pt\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_afe3c810a243973911ce0ad1974e21588}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_af9bb42a6c53207e5fbf3d8268ce16fd5}{Refresh\+Data\+In\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classPatternPieceTool_a95c21d1dac128b23a827d3edcd2cea7e}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a7aed84173e1daf8090c536a63a4ce87d}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a2c059ba3002bace6e83d2e49740df73f}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a3c5f5a7de172f1860c7c7f3c98837e49}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a74cd0caaa878a4685f2346e8bea0082d}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_ad2297fce4d4712d3851e59b5fdc8d3c0}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a0c26dad89d32f95c43ade20b4641d14a}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_af86d4a7f52cbc5c484f0a781198a0a2f}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_ab983e8e73476b95a4dbca5b762dd54b2}{delete\+Tool}} (bool ask=true) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em delete\+Tool full delete object form scene and file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a8ee8fa2e238e4cd632015c96b0241239}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_acdd1688aee82f5f532f01fbab079261f}{Set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceTool_a1ec735cd16371b27c73d4d249fb8e84c}{Save\+Dialog\+Change}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPatternPieceTool_a534a9a05cae77583dc848038f471cd6c}{Pattern\+Piece\+Tool}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QString \&block\+Name, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_ad3444b667f62a7c82e7d8444a87b1786}{Update\+Exclude\+State}} ()
+\item 
+VPiece\+Item\+::\+Move\+Types \mbox{\hyperlink{classPatternPieceTool_a92d4796e23f9f5571ff3687955abd0ae}{Find\+Label\+Geometry}} (const \mbox{\hyperlink{classVPatternLabelData}{VPattern\+Label\+Data}} \&label\+Data, qreal \&rotation\+Angle, qreal \&label\+Width, qreal \&label\+Height, QPointF \&pos)
+\item 
+VPiece\+Item\+::\+Move\+Types \mbox{\hyperlink{classPatternPieceTool_a891ffe13bae664a4577e2a247457744a}{Find\+Grainline\+Geometry}} (const \mbox{\hyperlink{classVGrainlineData}{VGrainline\+Data}} \&geom, qreal \&length, qreal \&rotation\+Angle, QPointF \&pos)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a8ae5f221b9049a4c7805e676221421c6}{initialize\+Nodes}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_ab62a98e8278dfca816cf125282267abf}{Init\+CSAPaths}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a377bbc573882512bb4eee36c859748a2}{Init\+Internal\+Paths}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_af975633183da4670aa8c493aca804ca2}{initialize\+Anchor\+Points}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+bool \mbox{\hyperlink{classPatternPieceTool_ab4365dbb68700822698c4cb3d46a996b}{Prepare\+Label\+Data}} (const \mbox{\hyperlink{classVPatternLabelData}{VPattern\+Label\+Data}} \&label\+Data, \mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}} $\ast$label\+Item, QPointF \&pos, qreal \&label\+Angle)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_aeecb3af95c910cf85031f5efac590c11}{Update\+Label\+Item}} (\mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}} $\ast$label\+Item, QPointF pos, qreal label\+Angle)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a5808a14168ce153aa4941ed5e9b59c8e}{toggle\+In\+Layout}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+In\+Layout -\/ routine to toggle if pattern piece is included and visible in layout. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_a4489e798ced003213fb95b598a2c5e66}{toggle\+Piece\+Lock}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Piece\+Lock -\/ routine to toggle if pattern piece is locked and editiable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_af38ab90534f9e54b1f133b9a97e3a82f}{toggle\+Flipping}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Flipping -\/ routine to toggle forbidding flipping. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_af8e7582adcfa523e576c2b4b2eff9254}{toggle\+Seam\+Line}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Seam\+Line -\/ routine to toggle the visibility of the seam line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_a59348115680b75960ceb26906646bfca}{toggle\+Seam\+Allowance}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Seam\+Allowance -\/ routine to toggle the visibility of the seam allowance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_a7f8eb35e50d9ecf4d0a3883f61617c5a}{toggle\+Grainline}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Grainline -\/ routine to toggle the visibility of the piece grainline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_abf062f29ec53cfce0898499195abd4bd}{toggle\+Pattern\+Label}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Pattern\+Label -\/ routine to toggle the visibility of the pattern label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_a812fb3db49b1d43fdb077ba94531486f}{toggle\+Piece\+Label}} (bool checked)
+\begin{DoxyCompactList}\small\item\em toggle\+Piece\+Label -\/ routine to toggle the visibility of the piece label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_ad46d5de13eefa973a96131c57ff01682}{rename\+Piece}} (\mbox{\hyperlink{classVPiece}{VPiece}} piece)
+\begin{DoxyCompactList}\small\item\em rename\+Piece -\/ routine to rename pattern piece. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPatternPieceTool_af461cfff4e4b93f8d11da29414434230}{show\+Status}} (QString tool\+Tip)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a0228c71afb2d59fbcb651c1751c3e5dd}{raise\+Item\+To\+Top}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classPatternPieceTool_a18f0e1a364d965f1d3acb2b4e9ff712b}{lower\+Item\+To\+Bottom}} (QGraphics\+Item $\ast$item)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classPatternPieceTool_af3b665c26aa654466d0a823034abb8b7}{initialize\+Node}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classPatternPieceTool}{Pattern\+Piece\+Tool}} $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPainter\+Path \mbox{\hyperlink{classPatternPieceTool_ae7a3e5f0c4d1f687de819c40424fbfdf}{m\+\_\+main\+Path}}
+\item 
+QRectF \mbox{\hyperlink{classPatternPieceTool_a7a3746a484125aef30fbb3714eb18769}{m\+\_\+piece\+Rect}}
+\item 
+QPainter\+Path \mbox{\hyperlink{classPatternPieceTool_a4dcfcc921c7895895d63ef6a17a7719a}{m\+\_\+cut\+Path}}
+\item 
+\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_a6e892bb34a3d4bdb6e97abd0bd019690}{m\+\_\+piece\+Scene}}
+\item 
+QString \mbox{\hyperlink{classPatternPieceTool_a25c6a0fd2ca6ae009b187d494406b26d}{m\+\_\+block\+Name}}
+\begin{DoxyCompactList}\small\item\em piece\+Scene pointer to the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNonScalingFillPathItem}{Non\+Scaling\+Fill\+Path\+Item}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_af6c20a7dda6d14843a5412f4e8722a41}{m\+\_\+cut\+Line}}
+\item 
+\mbox{\hyperlink{classNonScalingFillPathItem}{Non\+Scaling\+Fill\+Path\+Item}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_abbff775a28cec1af9637e0d5ac0f84e9}{m\+\_\+seam\+Line}}
+\item 
+\mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_a562aba5be23aa943e1bdad89780a15f7}{m\+\_\+data\+Label}}
+\item 
+\mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_a90e1713baef20b30efe6d680d3fb84fe}{m\+\_\+pattern\+Info}}
+\item 
+\mbox{\hyperlink{classVGrainlineItem}{VGrainline\+Item}} $\ast$ \mbox{\hyperlink{classPatternPieceTool_aeccbdbd69acde398e4c084d160c74c21}{m\+\_\+grain\+Line}}
+\item 
+QGraphics\+Path\+Item $\ast$ \mbox{\hyperlink{classPatternPieceTool_aaa713df9ce315206acc8f4a2b43278ec}{m\+\_\+notches}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPatternPieceTool_ac9bd3818536dbe24a663ff227b01e614}\label{classPatternPieceTool_ac9bd3818536dbe24a663ff227b01e614}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!PatternPieceTool@{PatternPieceTool}}\index{PatternPieceTool@{PatternPieceTool}!Type@{Type}}}\mbox{\Hypertarget{classPatternPieceTool_ac9bd3818536dbe24a663ff227b01e614a0626ac12d8906472ff29d928a8b8d86e}\label{classPatternPieceTool_ac9bd3818536dbe24a663ff227b01e614a0626ac12d8906472ff29d928a8b8d86e}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPatternPieceTool_a92a377de5161069417e02d4a38e65a3e}\label{classPatternPieceTool_a92a377de5161069417e02d4a38e65a3e}} 
+\index{PatternPieceTool@{PatternPieceTool}!````~PatternPieceTool@{$\sim$PatternPieceTool}}
+\index{````~PatternPieceTool@{$\sim$PatternPieceTool}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{$\sim$PatternPieceTool()}{~PatternPieceTool()}}
+{\footnotesize\ttfamily virtual Pattern\+Piece\+Tool\+::$\sim$\+Pattern\+Piece\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a534a9a05cae77583dc848038f471cd6c}\label{classPatternPieceTool_a534a9a05cae77583dc848038f471cd6c}} 
+\index{PatternPieceTool@{PatternPieceTool}!PatternPieceTool@{PatternPieceTool}}
+\index{PatternPieceTool@{PatternPieceTool}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{PatternPieceTool()}{PatternPieceTool()}}
+{\footnotesize\ttfamily Pattern\+Piece\+Tool\+::\+Pattern\+Piece\+Tool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QString \&}]{block\+Name,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPatternPieceTool_aaa7339915de99b72cd66e712c9ef81c9}\label{classPatternPieceTool_aaa7339915de99b72cd66e712c9ef81c9}} 
+\index{PatternPieceTool@{PatternPieceTool}!addAnchors@{addAnchors}}
+\index{addAnchors@{addAnchors}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{addAnchors()}{addAnchors()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::add\+Anchors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&}]{anchors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a2fe9309e24101404ee9360622742453d}\label{classPatternPieceTool_a2fe9309e24101404ee9360622742453d}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddAttributes@{AddAttributes}}
+\index{AddAttributes@{AddAttributes}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddAttributes()}{AddAttributes()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_aa7f283a22826c934fdad4d675a90ee6e}\label{classPatternPieceTool_aa7f283a22826c934fdad4d675a90ee6e}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddCSARecord@{AddCSARecord}}
+\index{AddCSARecord@{AddCSARecord}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddCSARecord()}{AddCSARecord()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+CSARecord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} \&}]{record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a3d07f8b192f48cd921270f2885206067}\label{classPatternPieceTool_a3d07f8b192f48cd921270f2885206067}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddCSARecords@{AddCSARecords}}
+\index{AddCSARecords@{AddCSARecords}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddCSARecords()}{AddCSARecords()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+CSARecords (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} $>$ \&}]{records }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a6d5061c462d9b41c7f24b1248d93c234}\label{classPatternPieceTool_a6d5061c462d9b41c7f24b1248d93c234}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddGrainline@{AddGrainline}}
+\index{AddGrainline@{AddGrainline}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddGrainline()}{AddGrainline()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+Grainline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a5f955c8c86a7da435382856acfc936f0}\label{classPatternPieceTool_a5f955c8c86a7da435382856acfc936f0}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddInternalPaths@{AddInternalPaths}}
+\index{AddInternalPaths@{AddInternalPaths}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddInternalPaths()}{AddInternalPaths()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+Internal\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&}]{paths }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a06aa401f6a29cda1ec55e597c7275899}\label{classPatternPieceTool_a06aa401f6a29cda1ec55e597c7275899}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddPatternInfo@{AddPatternInfo}}
+\index{AddPatternInfo@{AddPatternInfo}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddPatternInfo()}{AddPatternInfo()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+Pattern\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a6d281ea87b6d74d744f528046b7d656e}\label{classPatternPieceTool_a6d281ea87b6d74d744f528046b7d656e}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddPatternPieceData@{AddPatternPieceData}}
+\index{AddPatternPieceData@{AddPatternPieceData}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddPatternPieceData()}{AddPatternPieceData()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+Pattern\+Piece\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_afe3c810a243973911ce0ad1974e21588}\label{classPatternPieceTool_afe3c810a243973911ce0ad1974e21588}} 
+\index{PatternPieceTool@{PatternPieceTool}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a1ec354c69a9e0bc7474a60ff76dd36ac}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_ad17a30134181f75e601954d420997f2c}\label{classPatternPieceTool_ad17a30134181f75e601954d420997f2c}} 
+\index{PatternPieceTool@{PatternPieceTool}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a11e31269b52f7aba6a9b581451b96482}\label{classPatternPieceTool_a11e31269b52f7aba6a9b581451b96482}} 
+\index{PatternPieceTool@{PatternPieceTool}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a0daae5d2b89da5f86cbd62ea25f7686d}\label{classPatternPieceTool_a0daae5d2b89da5f86cbd62ea25f7686d}} 
+\index{PatternPieceTool@{PatternPieceTool}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily QRectF Pattern\+Piece\+Tool\+::bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ad2297fce4d4712d3851e59b5fdc8d3c0}\label{classPatternPieceTool_ad2297fce4d4712d3851e59b5fdc8d3c0}} 
+\index{PatternPieceTool@{PatternPieceTool}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a0b6985235102856c90cbcc9746ee4754}\label{classPatternPieceTool_a0b6985235102856c90cbcc9746ee4754}} 
+\index{PatternPieceTool@{PatternPieceTool}!Create@{Create}}
+\index{Create@{Create}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPatternPieceTool}{Pattern\+Piece\+Tool}} $\ast$ Pattern\+Piece\+Tool\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a09ca5080ce820ed5ba71a1e7d2d2c861}\label{classPatternPieceTool_a09ca5080ce820ed5ba71a1e7d2d2c861}} 
+\index{PatternPieceTool@{PatternPieceTool}!Create@{Create}}
+\index{Create@{Create}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPatternPieceTool}{Pattern\+Piece\+Tool}} $\ast$ Pattern\+Piece\+Tool\+::\+Create (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{\mbox{\hyperlink{classVPiece}{VPiece}}}]{new\+Piece,  }\item[{QString \&}]{width,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{const QString \&}]{block\+Name = {\ttfamily QString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ab983e8e73476b95a4dbca5b762dd54b2}\label{classPatternPieceTool_ab983e8e73476b95a4dbca5b762dd54b2}} 
+\index{PatternPieceTool@{PatternPieceTool}!deleteTool@{deleteTool}}
+\index{deleteTool@{deleteTool}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{deleteTool()}{deleteTool()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::delete\+Tool (\begin{DoxyParamCaption}\item[{bool}]{ask = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+delete\+Tool full delete object form scene and file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a4c7fb8ceeaefd964fa11577b688a7ec1}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_adc2cdaeb162091a4de8908b82e3e0191}\label{classPatternPieceTool_adc2cdaeb162091a4de8908b82e3e0191}} 
+\index{PatternPieceTool@{PatternPieceTool}!editPieceProperties@{editPieceProperties}}
+\index{editPieceProperties@{editPieceProperties}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{editPieceProperties}{editPieceProperties}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::edit\+Piece\+Properties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+edit\+Piece\+Properties -\/ routine to edit pattern piece properties . 
+
+\mbox{\Hypertarget{classPatternPieceTool_aa8a222aaf71327882b8af990473df882}\label{classPatternPieceTool_aa8a222aaf71327882b8af990473df882}} 
+\index{PatternPieceTool@{PatternPieceTool}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove}{EnableToolMove}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a891ffe13bae664a4577e2a247457744a}\label{classPatternPieceTool_a891ffe13bae664a4577e2a247457744a}} 
+\index{PatternPieceTool@{PatternPieceTool}!FindGrainlineGeometry@{FindGrainlineGeometry}}
+\index{FindGrainlineGeometry@{FindGrainlineGeometry}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{FindGrainlineGeometry()}{FindGrainlineGeometry()}}
+{\footnotesize\ttfamily VPiece\+Item\+::\+Move\+Types Pattern\+Piece\+Tool\+::\+Find\+Grainline\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVGrainlineData}{VGrainline\+Data}} \&}]{geom,  }\item[{qreal \&}]{length,  }\item[{qreal \&}]{rotation\+Angle,  }\item[{QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a92d4796e23f9f5571ff3687955abd0ae}\label{classPatternPieceTool_a92d4796e23f9f5571ff3687955abd0ae}} 
+\index{PatternPieceTool@{PatternPieceTool}!FindLabelGeometry@{FindLabelGeometry}}
+\index{FindLabelGeometry@{FindLabelGeometry}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{FindLabelGeometry()}{FindLabelGeometry()}}
+{\footnotesize\ttfamily VPiece\+Item\+::\+Move\+Types Pattern\+Piece\+Tool\+::\+Find\+Label\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPatternLabelData}{VPattern\+Label\+Data}} \&}]{label\+Data,  }\item[{qreal \&}]{rotation\+Angle,  }\item[{qreal \&}]{label\+Width,  }\item[{qreal \&}]{label\+Height,  }\item[{QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a956ebb4eff21df4379e0651526160a85}\label{classPatternPieceTool_a956ebb4eff21df4379e0651526160a85}} 
+\index{PatternPieceTool@{PatternPieceTool}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a00ea2549fd333b7dcbcc0d523cfa8e51}\label{classPatternPieceTool_a00ea2549fd333b7dcbcc0d523cfa8e51}} 
+\index{PatternPieceTool@{PatternPieceTool}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Tool\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_aa019972ddbff4af0d165dcc9876d1f76}\label{classPatternPieceTool_aa019972ddbff4af0d165dcc9876d1f76}} 
+\index{PatternPieceTool@{PatternPieceTool}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDataTool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_af398b1d0c7947d5c029dbc827c4d817b}\label{classPatternPieceTool_af398b1d0c7947d5c029dbc827c4d817b}} 
+\index{PatternPieceTool@{PatternPieceTool}!Highlight@{Highlight}}
+\index{Highlight@{Highlight}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{Highlight}{Highlight}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Highlight (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a3c5f5a7de172f1860c7c7f3c98837e49}\label{classPatternPieceTool_a3c5f5a7de172f1860c7c7f3c98837e49}} 
+\index{PatternPieceTool@{PatternPieceTool}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a74cd0caaa878a4685f2346e8bea0082d}\label{classPatternPieceTool_a74cd0caaa878a4685f2346e8bea0082d}} 
+\index{PatternPieceTool@{PatternPieceTool}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ab62a98e8278dfca816cf125282267abf}\label{classPatternPieceTool_ab62a98e8278dfca816cf125282267abf}} 
+\index{PatternPieceTool@{PatternPieceTool}!InitCSAPaths@{InitCSAPaths}}
+\index{InitCSAPaths@{InitCSAPaths}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{InitCSAPaths()}{InitCSAPaths()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Init\+CSAPaths (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_af975633183da4670aa8c493aca804ca2}\label{classPatternPieceTool_af975633183da4670aa8c493aca804ca2}} 
+\index{PatternPieceTool@{PatternPieceTool}!initializeAnchorPoints@{initializeAnchorPoints}}
+\index{initializeAnchorPoints@{initializeAnchorPoints}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{initializeAnchorPoints()}{initializeAnchorPoints()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::initialize\+Anchor\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_af3b665c26aa654466d0a823034abb8b7}\label{classPatternPieceTool_af3b665c26aa654466d0a823034abb8b7}} 
+\index{PatternPieceTool@{PatternPieceTool}!initializeNode@{initializeNode}}
+\index{initializeNode@{initializeNode}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{initializeNode()}{initializeNode()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::initialize\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{node,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classPatternPieceTool}{Pattern\+Piece\+Tool}} $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a8ae5f221b9049a4c7805e676221421c6}\label{classPatternPieceTool_a8ae5f221b9049a4c7805e676221421c6}} 
+\index{PatternPieceTool@{PatternPieceTool}!initializeNodes@{initializeNodes}}
+\index{initializeNodes@{initializeNodes}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{initializeNodes()}{initializeNodes()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::initialize\+Nodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a377bbc573882512bb4eee36c859748a2}\label{classPatternPieceTool_a377bbc573882512bb4eee36c859748a2}} 
+\index{PatternPieceTool@{PatternPieceTool}!InitInternalPaths@{InitInternalPaths}}
+\index{InitInternalPaths@{InitInternalPaths}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{InitInternalPaths()}{InitInternalPaths()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Init\+Internal\+Paths (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ab7ba6bb4eccdf8d66f24b0dc6a0656cd}\label{classPatternPieceTool_ab7ba6bb4eccdf8d66f24b0dc6a0656cd}} 
+\index{PatternPieceTool@{PatternPieceTool}!insertNodes@{insertNodes}}
+\index{insertNodes@{insertNodes}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{insertNodes()}{insertNodes()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::insert\+Nodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes,  }\item[{quint32}]{piece\+Id,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a95c21d1dac128b23a827d3edcd2cea7e}\label{classPatternPieceTool_a95c21d1dac128b23a827d3edcd2cea7e}} 
+\index{PatternPieceTool@{PatternPieceTool}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant Pattern\+Piece\+Tool\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a0c26dad89d32f95c43ade20b4641d14a}\label{classPatternPieceTool_a0c26dad89d32f95c43ade20b4641d14a}} 
+\index{PatternPieceTool@{PatternPieceTool}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a18f0e1a364d965f1d3acb2b4e9ff712b}\label{classPatternPieceTool_a18f0e1a364d965f1d3acb2b4e9ff712b}} 
+\index{PatternPieceTool@{PatternPieceTool}!lowerItemToBottom@{lowerItemToBottom}}
+\index{lowerItemToBottom@{lowerItemToBottom}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{lowerItemToBottom()}{lowerItemToBottom()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::lower\+Item\+To\+Bottom (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a7aed84173e1daf8090c536a63a4ce87d}\label{classPatternPieceTool_a7aed84173e1daf8090c536a63a4ce87d}} 
+\index{PatternPieceTool@{PatternPieceTool}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a2c059ba3002bace6e83d2e49740df73f}\label{classPatternPieceTool_a2c059ba3002bace6e83d2e49740df73f}} 
+\index{PatternPieceTool@{PatternPieceTool}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a3faa15e26488b9ef37417bd173bc8c36}\label{classPatternPieceTool_a3faa15e26488b9ef37417bd173bc8c36}} 
+\index{PatternPieceTool@{PatternPieceTool}!paint@{paint}}
+\index{paint@{paint}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+VTool\+Detail\+::paint draws a bounding box around piece, if one of its text or grainline items is not idle. 
+
+\mbox{\Hypertarget{classPatternPieceTool_a38eab8ad082d1829574a88524bf9450e}\label{classPatternPieceTool_a38eab8ad082d1829574a88524bf9450e}} 
+\index{PatternPieceTool@{PatternPieceTool}!pieceLockedChanged@{pieceLockedChanged}}
+\index{pieceLockedChanged@{pieceLockedChanged}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{pieceLockedChanged}{pieceLockedChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::piece\+Locked\+Changed (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{lock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ab4365dbb68700822698c4cb3d46a996b}\label{classPatternPieceTool_ab4365dbb68700822698c4cb3d46a996b}} 
+\index{PatternPieceTool@{PatternPieceTool}!PrepareLabelData@{PrepareLabelData}}
+\index{PrepareLabelData@{PrepareLabelData}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{PrepareLabelData()}{PrepareLabelData()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Tool\+::\+Prepare\+Label\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPatternLabelData}{VPattern\+Label\+Data}} \&}]{label\+Data,  }\item[{\mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}} $\ast$}]{label\+Item,  }\item[{QPointF \&}]{pos,  }\item[{qreal \&}]{label\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a0228c71afb2d59fbcb651c1751c3e5dd}\label{classPatternPieceTool_a0228c71afb2d59fbcb651c1751c3e5dd}} 
+\index{PatternPieceTool@{PatternPieceTool}!raiseItemToTop@{raiseItemToTop}}
+\index{raiseItemToTop@{raiseItemToTop}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{raiseItemToTop()}{raiseItemToTop()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::raise\+Item\+To\+Top (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_af9bb42a6c53207e5fbf3d8268ce16fd5}\label{classPatternPieceTool_af9bb42a6c53207e5fbf3d8268ce16fd5}} 
+\index{PatternPieceTool@{PatternPieceTool}!RefreshDataInFile@{RefreshDataInFile}}
+\index{RefreshDataInFile@{RefreshDataInFile}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{RefreshDataInFile()}{RefreshDataInFile()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Refresh\+Data\+In\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_adb481734d9b7052cdcd3b5d112df18e0}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_a94bc484e0cb7992a457667c4ab42a799}\label{classPatternPieceTool_a94bc484e0cb7992a457667c4ab42a799}} 
+\index{PatternPieceTool@{PatternPieceTool}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceTool_ae252a7a6e704bde2ed15961fb0e01658}\label{classPatternPieceTool_ae252a7a6e704bde2ed15961fb0e01658}} 
+\index{PatternPieceTool@{PatternPieceTool}!Remove@{Remove}}
+\index{Remove@{Remove}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Remove (\begin{DoxyParamCaption}\item[{bool}]{ask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceTool_ad46d5de13eefa973a96131c57ff01682}\label{classPatternPieceTool_ad46d5de13eefa973a96131c57ff01682}} 
+\index{PatternPieceTool@{PatternPieceTool}!renamePiece@{renamePiece}}
+\index{renamePiece@{renamePiece}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{renamePiece()}{renamePiece()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::rename\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPiece}{VPiece}}}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+rename\+Piece -\/ routine to rename pattern piece. 
+
+\mbox{\Hypertarget{classPatternPieceTool_ae7cb293c3b3c9bcf12fc6965709a5677}\label{classPatternPieceTool_ae7cb293c3b3c9bcf12fc6965709a5677}} 
+\index{PatternPieceTool@{PatternPieceTool}!ResetChildren@{ResetChildren}}
+\index{ResetChildren@{ResetChildren}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{ResetChildren}{ResetChildren}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Reset\+Children (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{p\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a38afd8e698fa5da2a15aaf9240d073fc}\label{classPatternPieceTool_a38afd8e698fa5da2a15aaf9240d073fc}} 
+\index{PatternPieceTool@{PatternPieceTool}!retranslateUi@{retranslateUi}}
+\index{retranslateUi@{retranslateUi}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{retranslateUi}{retranslateUi}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::retranslate\+Ui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a1ec735cd16371b27c73d4d249fb8e84c}\label{classPatternPieceTool_a1ec735cd16371b27c73d4d249fb8e84c}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveDialogChange@{SaveDialogChange}}
+\index{SaveDialogChange@{SaveDialogChange}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveDialogChange()}{SaveDialogChange()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Dialog\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVInteractiveTool_a0cc935f9208f6decc289a875e550b6c0}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_ae8e9b65d6a06ce1933346d7ae92401b9}\label{classPatternPieceTool_ae8e9b65d6a06ce1933346d7ae92401b9}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveMoveGrainline@{SaveMoveGrainline}}
+\index{SaveMoveGrainline@{SaveMoveGrainline}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveMoveGrainline}{SaveMoveGrainline}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Move\+Grainline (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pt\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a443a15d41832cd83a65c39c06a000f00}\label{classPatternPieceTool_a443a15d41832cd83a65c39c06a000f00}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveMovePattern@{SaveMovePattern}}
+\index{SaveMovePattern@{SaveMovePattern}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveMovePattern}{SaveMovePattern}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Move\+Pattern (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pt\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+Save\+Move\+Pattern saves the pattern label position. 
+
+\mbox{\Hypertarget{classPatternPieceTool_a0e50efc072b05500e5b3f761c5d78850}\label{classPatternPieceTool_a0e50efc072b05500e5b3f761c5d78850}} 
+\index{PatternPieceTool@{PatternPieceTool}!saveMovePiece@{saveMovePiece}}
+\index{saveMovePiece@{saveMovePiece}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{saveMovePiece}{saveMovePiece}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::save\+Move\+Piece (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pt\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+save\+Move\+Piece saves the move piece operation to the undo stack 
+
+\mbox{\Hypertarget{classPatternPieceTool_aa10c1f90e24f8b1a26f75ec3e65d4eb1}\label{classPatternPieceTool_aa10c1f90e24f8b1a26f75ec3e65d4eb1}} 
+\index{PatternPieceTool@{PatternPieceTool}!savePieceRotation@{savePieceRotation}}
+\index{savePieceRotation@{savePieceRotation}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{savePieceRotation}{savePieceRotation}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::save\+Piece\+Rotation (\begin{DoxyParamCaption}\item[{qreal}]{d\+Rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+save\+Piece\+Rotation saves the rotation piece label operation to the undo stack 
+
+\mbox{\Hypertarget{classPatternPieceTool_a541653fb198efcf2f2ee44b4c82541b1}\label{classPatternPieceTool_a541653fb198efcf2f2ee44b4c82541b1}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveResizeGrainline@{SaveResizeGrainline}}
+\index{SaveResizeGrainline@{SaveResizeGrainline}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveResizeGrainline}{SaveResizeGrainline}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Resize\+Grainline (\begin{DoxyParamCaption}\item[{qreal}]{d\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ad6345df947294c3bb1dcbabca776108d}\label{classPatternPieceTool_ad6345df947294c3bb1dcbabca776108d}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveResizePattern@{SaveResizePattern}}
+\index{SaveResizePattern@{SaveResizePattern}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveResizePattern}{SaveResizePattern}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Resize\+Pattern (\begin{DoxyParamCaption}\item[{qreal}]{d\+LabelW,  }\item[{int}]{i\+Font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+\+: Save\+Resize\+Pattern saves the pattern label width and font size 
+
+\mbox{\Hypertarget{classPatternPieceTool_a3b289516cfa03b3437f61bf3806eaf0c}\label{classPatternPieceTool_a3b289516cfa03b3437f61bf3806eaf0c}} 
+\index{PatternPieceTool@{PatternPieceTool}!saveResizePiece@{saveResizePiece}}
+\index{saveResizePiece@{saveResizePiece}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{saveResizePiece}{saveResizePiece}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::save\+Resize\+Piece (\begin{DoxyParamCaption}\item[{qreal}]{d\+LabelW,  }\item[{int}]{i\+Font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+
+
+save\+Resize\+Piece saves the resize piece label operation to the undo stack 
+
+\mbox{\Hypertarget{classPatternPieceTool_a910e1b8b913b492446ef8a29d01fdff1}\label{classPatternPieceTool_a910e1b8b913b492446ef8a29d01fdff1}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveRotateGrainline@{SaveRotateGrainline}}
+\index{SaveRotateGrainline@{SaveRotateGrainline}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveRotateGrainline}{SaveRotateGrainline}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Rotate\+Grainline (\begin{DoxyParamCaption}\item[{qreal}]{d\+Rot,  }\item[{const QPointF \&}]{pt\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ae56cd5630c6c1221c7e6c27837cbaecd}\label{classPatternPieceTool_ae56cd5630c6c1221c7e6c27837cbaecd}} 
+\index{PatternPieceTool@{PatternPieceTool}!SaveRotationPattern@{SaveRotationPattern}}
+\index{SaveRotationPattern@{SaveRotationPattern}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SaveRotationPattern}{SaveRotationPattern}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Save\+Rotation\+Pattern (\begin{DoxyParamCaption}\item[{qreal}]{d\+Rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_acdd1688aee82f5f532f01fbab079261f}\label{classPatternPieceTool_acdd1688aee82f5f532f01fbab079261f}} 
+\index{PatternPieceTool@{PatternPieceTool}!SetDialog@{SetDialog}}
+\index{SetDialog@{SetDialog}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SetDialog()}{SetDialog()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_af86d4a7f52cbc5c484f0a781198a0a2f}\label{classPatternPieceTool_af86d4a7f52cbc5c484f0a781198a0a2f}} 
+\index{PatternPieceTool@{PatternPieceTool}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily virtual void Pattern\+Piece\+Tool\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_a2cd6d14826250c17b65a2323dd5c7c70}\label{classPatternPieceTool_a2cd6d14826250c17b65a2323dd5c7c70}} 
+\index{PatternPieceTool@{PatternPieceTool}!shape@{shape}}
+\index{shape@{shape}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{shape()}{shape()}}
+{\footnotesize\ttfamily QPainter\+Path Pattern\+Piece\+Tool\+::shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_af461cfff4e4b93f8d11da29414434230}\label{classPatternPieceTool_af461cfff4e4b93f8d11da29414434230}} 
+\index{PatternPieceTool@{PatternPieceTool}!showStatus@{showStatus}}
+\index{showStatus@{showStatus}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{showStatus()}{showStatus()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::show\+Status (\begin{DoxyParamCaption}\item[{QString}]{tool\+Tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_aa01f11d6179deceb3ff36a692e091ee9}\label{classPatternPieceTool_aa01f11d6179deceb3ff36a692e091ee9}} 
+\index{PatternPieceTool@{PatternPieceTool}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_af38ab90534f9e54b1f133b9a97e3a82f}\label{classPatternPieceTool_af38ab90534f9e54b1f133b9a97e3a82f}} 
+\index{PatternPieceTool@{PatternPieceTool}!toggleFlipping@{toggleFlipping}}
+\index{toggleFlipping@{toggleFlipping}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{toggleFlipping()}{toggleFlipping()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Flipping (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Flipping -\/ routine to toggle forbidding flipping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if flipping is forbidden. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_a7f8eb35e50d9ecf4d0a3883f61617c5a}\label{classPatternPieceTool_a7f8eb35e50d9ecf4d0a3883f61617c5a}} 
+\index{PatternPieceTool@{PatternPieceTool}!toggleGrainline@{toggleGrainline}}
+\index{toggleGrainline@{toggleGrainline}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{toggleGrainline()}{toggleGrainline()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Grainline (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Grainline -\/ routine to toggle the visibility of the piece grainline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if grainline is visible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_a5808a14168ce153aa4941ed5e9b59c8e}\label{classPatternPieceTool_a5808a14168ce153aa4941ed5e9b59c8e}} 
+\index{PatternPieceTool@{PatternPieceTool}!toggleInLayout@{toggleInLayout}}
+\index{toggleInLayout@{toggleInLayout}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{toggleInLayout()}{toggleInLayout()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+In\+Layout (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+In\+Layout -\/ routine to toggle if pattern piece is included and visible in layout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if piece is included. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_abf062f29ec53cfce0898499195abd4bd}\label{classPatternPieceTool_abf062f29ec53cfce0898499195abd4bd}} 
+\index{PatternPieceTool@{PatternPieceTool}!togglePatternLabel@{togglePatternLabel}}
+\index{togglePatternLabel@{togglePatternLabel}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{togglePatternLabel()}{togglePatternLabel()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Pattern\+Label (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Pattern\+Label -\/ routine to toggle the visibility of the pattern label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if pattern label is visible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_a812fb3db49b1d43fdb077ba94531486f}\label{classPatternPieceTool_a812fb3db49b1d43fdb077ba94531486f}} 
+\index{PatternPieceTool@{PatternPieceTool}!togglePieceLabel@{togglePieceLabel}}
+\index{togglePieceLabel@{togglePieceLabel}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{togglePieceLabel()}{togglePieceLabel()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Piece\+Label (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Piece\+Label -\/ routine to toggle the visibility of the piece label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if piece label is visible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_a4489e798ced003213fb95b598a2c5e66}\label{classPatternPieceTool_a4489e798ced003213fb95b598a2c5e66}} 
+\index{PatternPieceTool@{PatternPieceTool}!togglePieceLock@{togglePieceLock}}
+\index{togglePieceLock@{togglePieceLock}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{togglePieceLock()}{togglePieceLock()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Piece\+Lock (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Piece\+Lock -\/ routine to toggle if pattern piece is locked and editiable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if piece is locked. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_a59348115680b75960ceb26906646bfca}\label{classPatternPieceTool_a59348115680b75960ceb26906646bfca}} 
+\index{PatternPieceTool@{PatternPieceTool}!toggleSeamAllowance@{toggleSeamAllowance}}
+\index{toggleSeamAllowance@{toggleSeamAllowance}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{toggleSeamAllowance()}{toggleSeamAllowance()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Seam\+Allowance -\/ routine to toggle the visibility of the seam allowance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if seam allowance is visible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_af8e7582adcfa523e576c2b4b2eff9254}\label{classPatternPieceTool_af8e7582adcfa523e576c2b4b2eff9254}} 
+\index{PatternPieceTool@{PatternPieceTool}!toggleSeamLine@{toggleSeamLine}}
+\index{toggleSeamLine@{toggleSeamLine}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{toggleSeamLine()}{toggleSeamLine()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::toggle\+Seam\+Line (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+toggle\+Seam\+Line -\/ routine to toggle the visibility of the seam line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em checked} & -\/ true if seam line is visible. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceTool_a8ee8fa2e238e4cd632015c96b0241239}\label{classPatternPieceTool_a8ee8fa2e238e4cd632015c96b0241239}} 
+\index{PatternPieceTool@{PatternPieceTool}!ToolCreation@{ToolCreation}}
+\index{ToolCreation@{ToolCreation}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{ToolCreation()}{ToolCreation()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Tool\+Creation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a981e6bae05ffb564bfac034ccff918da}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceTool_a18ce0ac2273a8b3c13f535b9b9e5db67}\label{classPatternPieceTool_a18ce0ac2273a8b3c13f535b9b9e5db67}} 
+\index{PatternPieceTool@{PatternPieceTool}!type@{type}}
+\index{type@{type}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Pattern\+Piece\+Tool\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a1e7390c7530a7b07cae79bf608a7ee5c}\label{classPatternPieceTool_a1e7390c7530a7b07cae79bf608a7ee5c}} 
+\index{PatternPieceTool@{PatternPieceTool}!UpdateAll@{UpdateAll}}
+\index{UpdateAll@{UpdateAll}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{UpdateAll}{UpdateAll}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Update\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ad3444b667f62a7c82e7d8444a87b1786}\label{classPatternPieceTool_ad3444b667f62a7c82e7d8444a87b1786}} 
+\index{PatternPieceTool@{PatternPieceTool}!UpdateExcludeState@{UpdateExcludeState}}
+\index{UpdateExcludeState@{UpdateExcludeState}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{UpdateExcludeState()}{UpdateExcludeState()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Update\+Exclude\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ac959a9256c20a857d23f9c9a03af3308}\label{classPatternPieceTool_ac959a9256c20a857d23f9c9a03af3308}} 
+\index{PatternPieceTool@{PatternPieceTool}!UpdateGrainline@{UpdateGrainline}}
+\index{UpdateGrainline@{UpdateGrainline}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{UpdateGrainline}{UpdateGrainline}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Update\+Grainline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+VTool\+Detail\+::\+Update\+Grainline updates the grain line item. 
+
+\mbox{\Hypertarget{classPatternPieceTool_aeecb3af95c910cf85031f5efac590c11}\label{classPatternPieceTool_aeecb3af95c910cf85031f5efac590c11}} 
+\index{PatternPieceTool@{PatternPieceTool}!UpdateLabelItem@{UpdateLabelItem}}
+\index{UpdateLabelItem@{UpdateLabelItem}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{UpdateLabelItem()}{UpdateLabelItem()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Update\+Label\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}} $\ast$}]{label\+Item,  }\item[{QPointF}]{pos,  }\item[{qreal}]{label\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ace3de8d244c970526e84a0545dab3cbd}\label{classPatternPieceTool_ace3de8d244c970526e84a0545dab3cbd}} 
+\index{PatternPieceTool@{PatternPieceTool}!UpdatePatternLabel@{UpdatePatternLabel}}
+\index{UpdatePatternLabel@{UpdatePatternLabel}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{UpdatePatternLabel}{UpdatePatternLabel}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Update\+Pattern\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Update\+Pattern\+Label updates the pattern info label. 
+
+\mbox{\Hypertarget{classPatternPieceTool_a391fd4e2bc2e89849ca3dec37d45ea72}\label{classPatternPieceTool_a391fd4e2bc2e89849ca3dec37d45ea72}} 
+\index{PatternPieceTool@{PatternPieceTool}!updatePieceDetails@{updatePieceDetails}}
+\index{updatePieceDetails@{updatePieceDetails}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{updatePieceDetails}{updatePieceDetails}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::update\+Piece\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a6fba9b61eeb5785f578ba6219b9238d3}\label{classPatternPieceTool_a6fba9b61eeb5785f578ba6219b9238d3}} 
+\index{PatternPieceTool@{PatternPieceTool}!UpdatePieceLabel@{UpdatePieceLabel}}
+\index{UpdatePieceLabel@{UpdatePieceLabel}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{UpdatePieceLabel}{UpdatePieceLabel}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Tool\+::\+Update\+Piece\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Update\+Label updates the text label, making it just big enough for the text to fit it. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPatternPieceTool_a61fd3adf080b52894020aff8777a8e80}\label{classPatternPieceTool_a61fd3adf080b52894020aff8777a8e80}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrBottomAnchorPoint@{AttrBottomAnchorPoint}}
+\index{AttrBottomAnchorPoint@{AttrBottomAnchorPoint}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrBottomAnchorPoint}{AttrBottomAnchorPoint}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Bottom\+Anchor\+Point = QString\+Literal(\char`\"{}bottom\+Anchor\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ad6f03b2de8369ca3c6428028d9afe74f}\label{classPatternPieceTool_ad6f03b2de8369ca3c6428028d9afe74f}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrBottomRightAnchor@{AttrBottomRightAnchor}}
+\index{AttrBottomRightAnchor@{AttrBottomRightAnchor}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrBottomRightAnchor}{AttrBottomRightAnchor}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Bottom\+Right\+Anchor = QString\+Literal(\char`\"{}bottom\+Right\+Anchor\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a48da70b97146b39e583f287372c6d1ad}\label{classPatternPieceTool_a48da70b97146b39e583f287372c6d1ad}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrCenterAnchor@{AttrCenterAnchor}}
+\index{AttrCenterAnchor@{AttrCenterAnchor}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrCenterAnchor}{AttrCenterAnchor}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Center\+Anchor = QString\+Literal(\char`\"{}center\+Anchor\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a85982a98511941bff5537d914ce22042}\label{classPatternPieceTool_a85982a98511941bff5537d914ce22042}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrFont@{AttrFont}}
+\index{AttrFont@{AttrFont}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrFont}{AttrFont}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Font = QString\+Literal(\char`\"{}font\+Size\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ae0bac43ce537bc26adb6c8b06ce16b7d}\label{classPatternPieceTool_ae0bac43ce537bc26adb6c8b06ce16b7d}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrForbidFlipping@{AttrForbidFlipping}}
+\index{AttrForbidFlipping@{AttrForbidFlipping}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrForbidFlipping}{AttrForbidFlipping}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Forbid\+Flipping = QString\+Literal(\char`\"{}forbid\+Flipping\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a55e0c2668e37e52366370cdb3e36fc88}\label{classPatternPieceTool_a55e0c2668e37e52366370cdb3e36fc88}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrHeight@{AttrHeight}}
+\index{AttrHeight@{AttrHeight}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrHeight}{AttrHeight}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Height = QString\+Literal(\char`\"{}height\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a0e21739ee97d80829ce3b061090b4d08}\label{classPatternPieceTool_a0e21739ee97d80829ce3b061090b4d08}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrHideSeamLine@{AttrHideSeamLine}}
+\index{AttrHideSeamLine@{AttrHideSeamLine}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrHideSeamLine}{AttrHideSeamLine}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Hide\+Seam\+Line = QString\+Literal(\char`\"{}hide\+Main\+Path\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a3300a2706cff94ccf280c4064ca507f9}\label{classPatternPieceTool_a3300a2706cff94ccf280c4064ca507f9}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrPieceColor@{AttrPieceColor}}
+\index{AttrPieceColor@{AttrPieceColor}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrPieceColor}{AttrPieceColor}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Piece\+Color = QString\+Literal(\char`\"{}color\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ad1be5818f3e8455c7b3c6b008d94082c}\label{classPatternPieceTool_ad1be5818f3e8455c7b3c6b008d94082c}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrPieceFill@{AttrPieceFill}}
+\index{AttrPieceFill@{AttrPieceFill}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrPieceFill}{AttrPieceFill}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Piece\+Fill = QString\+Literal(\char`\"{}fill\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a6ffaa4219ff5be5f924c08ab6627093c}\label{classPatternPieceTool_a6ffaa4219ff5be5f924c08ab6627093c}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrPieceLock@{AttrPieceLock}}
+\index{AttrPieceLock@{AttrPieceLock}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrPieceLock}{AttrPieceLock}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Piece\+Lock = QString\+Literal(\char`\"{}locked\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a0c76a8272e485fb363d80b072a6f9c7a}\label{classPatternPieceTool_a0c76a8272e485fb363d80b072a6f9c7a}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrSeamAllowance@{AttrSeamAllowance}}
+\index{AttrSeamAllowance@{AttrSeamAllowance}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrSeamAllowance}{AttrSeamAllowance}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Seam\+Allowance = QString\+Literal(\char`\"{}seam\+Allowance\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ac2be46b6563500ab1416f3603bbfc3be}\label{classPatternPieceTool_ac2be46b6563500ab1416f3603bbfc3be}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrSeamAllowanceBuiltIn@{AttrSeamAllowanceBuiltIn}}
+\index{AttrSeamAllowanceBuiltIn@{AttrSeamAllowanceBuiltIn}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrSeamAllowanceBuiltIn}{AttrSeamAllowanceBuiltIn}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Seam\+Allowance\+Built\+In = QString\+Literal(\char`\"{}seam\+Allowance\+Built\+In\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_aaff699c0c7387e88b128bcdcd5f2a8ca}\label{classPatternPieceTool_aaff699c0c7387e88b128bcdcd5f2a8ca}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrTopAnchorPoint@{AttrTopAnchorPoint}}
+\index{AttrTopAnchorPoint@{AttrTopAnchorPoint}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrTopAnchorPoint}{AttrTopAnchorPoint}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Top\+Anchor\+Point = QString\+Literal(\char`\"{}top\+Anchor\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a8e43e3ee9cb0caeef06a798c85ae8dd9}\label{classPatternPieceTool_a8e43e3ee9cb0caeef06a798c85ae8dd9}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrTopLeftAnchor@{AttrTopLeftAnchor}}
+\index{AttrTopLeftAnchor@{AttrTopLeftAnchor}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrTopLeftAnchor}{AttrTopLeftAnchor}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Top\+Left\+Anchor = QString\+Literal(\char`\"{}top\+Left\+Anchor\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a2bc697f8f37cf552fd9f07e748adca3a}\label{classPatternPieceTool_a2bc697f8f37cf552fd9f07e748adca3a}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrUnited@{AttrUnited}}
+\index{AttrUnited@{AttrUnited}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrUnited}{AttrUnited}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+United = QString\+Literal(\char`\"{}united\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a6ac47bb5401a72b7cb20628cf8c27670}\label{classPatternPieceTool_a6ac47bb5401a72b7cb20628cf8c27670}} 
+\index{PatternPieceTool@{PatternPieceTool}!AttrVersion@{AttrVersion}}
+\index{AttrVersion@{AttrVersion}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{AttrVersion}{AttrVersion}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Attr\+Version = QString\+Literal(\char`\"{}version\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a25c6a0fd2ca6ae009b187d494406b26d}\label{classPatternPieceTool_a25c6a0fd2ca6ae009b187d494406b26d}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_blockName@{m\_blockName}}
+\index{m\_blockName@{m\_blockName}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_blockName}{m\_blockName}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Tool\+::m\+\_\+block\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+piece\+Scene pointer to the scene. 
+
+\mbox{\Hypertarget{classPatternPieceTool_af6c20a7dda6d14843a5412f4e8722a41}\label{classPatternPieceTool_af6c20a7dda6d14843a5412f4e8722a41}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_cutLine@{m\_cutLine}}
+\index{m\_cutLine@{m\_cutLine}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_cutLine}{m\_cutLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNonScalingFillPathItem}{Non\+Scaling\+Fill\+Path\+Item}}$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+cut\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a4dcfcc921c7895895d63ef6a17a7719a}\label{classPatternPieceTool_a4dcfcc921c7895895d63ef6a17a7719a}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_cutPath@{m\_cutPath}}
+\index{m\_cutPath@{m\_cutPath}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_cutPath}{m\_cutPath}}
+{\footnotesize\ttfamily QPainter\+Path Pattern\+Piece\+Tool\+::m\+\_\+cut\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a562aba5be23aa943e1bdad89780a15f7}\label{classPatternPieceTool_a562aba5be23aa943e1bdad89780a15f7}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_dataLabel@{m\_dataLabel}}
+\index{m\_dataLabel@{m\_dataLabel}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_dataLabel}{m\_dataLabel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}}$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+data\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_aeccbdbd69acde398e4c084d160c74c21}\label{classPatternPieceTool_aeccbdbd69acde398e4c084d160c74c21}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_grainLine@{m\_grainLine}}
+\index{m\_grainLine@{m\_grainLine}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_grainLine}{m\_grainLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVGrainlineItem}{VGrainline\+Item}}$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+grain\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_ae7a3e5f0c4d1f687de819c40424fbfdf}\label{classPatternPieceTool_ae7a3e5f0c4d1f687de819c40424fbfdf}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_mainPath@{m\_mainPath}}
+\index{m\_mainPath@{m\_mainPath}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_mainPath}{m\_mainPath}}
+{\footnotesize\ttfamily QPainter\+Path Pattern\+Piece\+Tool\+::m\+\_\+main\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_aaa713df9ce315206acc8f4a2b43278ec}\label{classPatternPieceTool_aaa713df9ce315206acc8f4a2b43278ec}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_notches@{m\_notches}}
+\index{m\_notches@{m\_notches}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_notches}{m\_notches}}
+{\footnotesize\ttfamily QGraphics\+Path\+Item$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+notches\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a90e1713baef20b30efe6d680d3fb84fe}\label{classPatternPieceTool_a90e1713baef20b30efe6d680d3fb84fe}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_patternInfo@{m\_patternInfo}}
+\index{m\_patternInfo@{m\_patternInfo}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_patternInfo}{m\_patternInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVTextGraphicsItem}{VText\+Graphics\+Item}}$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+pattern\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a7a3746a484125aef30fbb3714eb18769}\label{classPatternPieceTool_a7a3746a484125aef30fbb3714eb18769}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_pieceRect@{m\_pieceRect}}
+\index{m\_pieceRect@{m\_pieceRect}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_pieceRect}{m\_pieceRect}}
+{\footnotesize\ttfamily QRectF Pattern\+Piece\+Tool\+::m\+\_\+piece\+Rect\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a6e892bb34a3d4bdb6e97abd0bd019690}\label{classPatternPieceTool_a6e892bb34a3d4bdb6e97abd0bd019690}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_pieceScene@{m\_pieceScene}}
+\index{m\_pieceScene@{m\_pieceScene}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_pieceScene}{m\_pieceScene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}}$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+piece\+Scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_abbff775a28cec1af9637e0d5ac0f84e9}\label{classPatternPieceTool_abbff775a28cec1af9637e0d5ac0f84e9}} 
+\index{PatternPieceTool@{PatternPieceTool}!m\_seamLine@{m\_seamLine}}
+\index{m\_seamLine@{m\_seamLine}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{m\_seamLine}{m\_seamLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNonScalingFillPathItem}{Non\+Scaling\+Fill\+Path\+Item}}$\ast$ Pattern\+Piece\+Tool\+::m\+\_\+seam\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a47cc16ac13512fdfccf0bbd878bec4b4}\label{classPatternPieceTool_a47cc16ac13512fdfccf0bbd878bec4b4}} 
+\index{PatternPieceTool@{PatternPieceTool}!pieceVersion@{pieceVersion}}
+\index{pieceVersion@{pieceVersion}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{pieceVersion}{pieceVersion}}
+{\footnotesize\ttfamily const quint8 Pattern\+Piece\+Tool\+::piece\+Version = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_acdd6d8452d560f4f5e8114c81122ca79}\label{classPatternPieceTool_acdd6d8452d560f4f5e8114c81122ca79}} 
+\index{PatternPieceTool@{PatternPieceTool}!TagAnchors@{TagAnchors}}
+\index{TagAnchors@{TagAnchors}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{TagAnchors}{TagAnchors}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Tag\+Anchors = QString\+Literal(\char`\"{}anchors\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a00b74197ccf92296781f7e8b467ea2cf}\label{classPatternPieceTool_a00b74197ccf92296781f7e8b467ea2cf}} 
+\index{PatternPieceTool@{PatternPieceTool}!TagCSA@{TagCSA}}
+\index{TagCSA@{TagCSA}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{TagCSA}{TagCSA}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Tag\+CSA = QString\+Literal(\char`\"{}csa\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_acfe891ca8230b59535ebe0a806d1ee77}\label{classPatternPieceTool_acfe891ca8230b59535ebe0a806d1ee77}} 
+\index{PatternPieceTool@{PatternPieceTool}!TagIPaths@{TagIPaths}}
+\index{TagIPaths@{TagIPaths}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{TagIPaths}{TagIPaths}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Tag\+IPaths = QString\+Literal(\char`\"{}i\+Paths\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classPatternPieceTool_a897285c9793f7abde33c213260bcc60f}\label{classPatternPieceTool_a897285c9793f7abde33c213260bcc60f}} 
+\index{PatternPieceTool@{PatternPieceTool}!TagRecord@{TagRecord}}
+\index{TagRecord@{TagRecord}!PatternPieceTool@{PatternPieceTool}}
+\doxysubsubsection{\texorpdfstring{TagRecord}{TagRecord}}
+{\footnotesize\ttfamily const QString Pattern\+Piece\+Tool\+::\+Tag\+Record = QString\+Literal(\char`\"{}record\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/\mbox{\hyperlink{pattern__piece__tool_8h}{pattern\+\_\+piece\+\_\+tool.\+h}}\item 
+src/libs/vtools/tools/\mbox{\hyperlink{pattern__piece__tool_8cpp}{pattern\+\_\+piece\+\_\+tool.\+cpp}}\end{DoxyCompactItemize}

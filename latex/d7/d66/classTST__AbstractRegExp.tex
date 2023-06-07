@@ -1,0 +1,156 @@
+\hypertarget{classTST__AbstractRegExp}{}\doxysection{TST\+\_\+\+Abstract\+Reg\+Exp Class Reference}
+\label{classTST__AbstractRegExp}\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+
+
+{\ttfamily \#include $<$tst\+\_\+abstractregexp.\+h$>$}
+
+Inheritance diagram for TST\+\_\+\+Abstract\+Reg\+Exp\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d7/d66/classTST__AbstractRegExp}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTST__AbstractRegExp_abe3dbbb29bb8a40bcce591f8be36c7a4}{TST\+\_\+\+Abstract\+Reg\+Exp}} (const QString \&locale, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classTST__AbstractRegExp_a3f7a1f86bdbb54df4b9fadc28fcb6824}{$\sim$\+TST\+\_\+\+Abstract\+Reg\+Exp}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classTST__AbstractRegExp_a53c369df823c4695c53647e83a1e4789}{Prepare\+Data}} ()=0
+\item 
+virtual QString\+List \mbox{\hyperlink{classTST__AbstractRegExp_a1a8d71a07093207c7a5dd3d62853668a}{All\+Names}} ()=0
+\item 
+int \mbox{\hyperlink{classTST__AbstractRegExp_a88407b4626b7b3ce343007148ad69d26}{Load\+Variables}} (const QString \&checked\+Locale)
+\item 
+void \mbox{\hyperlink{classTST__AbstractRegExp_a406f2345e9e554ed505d6937d4ca838f}{Remove\+Tr\+Variables}} (const QString \&checked\+Locale)
+\item 
+void \mbox{\hyperlink{classTST__AbstractRegExp_a87ab91660028784a9b4c27f2b5a9b95f}{Init\+Tr\+Ms}} ()
+\item 
+void \mbox{\hyperlink{classTST__AbstractRegExp_a3ea3669bf93d02901c562cd5a25a447d}{Call\+Test\+Check\+No\+End\+Line}} ()
+\item 
+void \mbox{\hyperlink{classTST__AbstractRegExp_a94e1afabe68dedc51a7a2d0d9d51055f}{Call\+Test\+Check\+Reg\+Exp\+Names}} ()
+\item 
+void \mbox{\hyperlink{classTST__AbstractRegExp_aac95399b373326fe6eb7ff6490668f46}{Call\+Test\+Check\+Is\+Names\+Unique}} ()
+\item 
+void \mbox{\hyperlink{classTST__AbstractRegExp_a25e97c8c5389e62789fd170eeb1e06cd}{Call\+Test\+Check\+No\+Original\+Names\+In\+Translation}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classTST__AbstractRegExp_a1e8457a9409277443318b77aaa44170b}{m\+\_\+locale}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{classTST__AbstractRegExp_a80872b96194fc7da8363b0bf7d52b0d2}{m\+\_\+v\+Translator}}
+\item 
+\mbox{\hyperlink{classVTranslateVars}{VTranslate\+Vars}} $\ast$ \mbox{\hyperlink{classTST__AbstractRegExp_a05eab96cafa796fd45c978fc2fe245c6}{m\+\_\+tr\+Ms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTST__AbstractRegExp_abe3dbbb29bb8a40bcce591f8be36c7a4}\label{classTST__AbstractRegExp_abe3dbbb29bb8a40bcce591f8be36c7a4}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{TST\_AbstractRegExp()}{TST\_AbstractRegExp()}}
+{\footnotesize\ttfamily TST\+\_\+\+Abstract\+Reg\+Exp\+::\+TST\+\_\+\+Abstract\+Reg\+Exp (\begin{DoxyParamCaption}\item[{const QString \&}]{locale,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a3f7a1f86bdbb54df4b9fadc28fcb6824}\label{classTST__AbstractRegExp_a3f7a1f86bdbb54df4b9fadc28fcb6824}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!````~TST\_AbstractRegExp@{$\sim$TST\_AbstractRegExp}}
+\index{````~TST\_AbstractRegExp@{$\sim$TST\_AbstractRegExp}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{$\sim$TST\_AbstractRegExp()}{~TST\_AbstractRegExp()}}
+{\footnotesize\ttfamily TST\+\_\+\+Abstract\+Reg\+Exp\+::$\sim$\+TST\+\_\+\+Abstract\+Reg\+Exp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTST__AbstractRegExp_a1a8d71a07093207c7a5dd3d62853668a}\label{classTST__AbstractRegExp_a1a8d71a07093207c7a5dd3d62853668a}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!AllNames@{AllNames}}
+\index{AllNames@{AllNames}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{AllNames()}{AllNames()}}
+{\footnotesize\ttfamily virtual QString\+List TST\+\_\+\+Abstract\+Reg\+Exp\+::\+All\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classTST__MeasurementRegExp_ae08d4d0f18b01c611979a601c37b32b2}{TST\+\_\+\+Measurement\+Reg\+Exp}}, and \mbox{\hyperlink{classTST__BuitInRegExp_ab00c8a775713d7d3c83f39ffdfb52862}{TST\+\_\+\+Buit\+In\+Reg\+Exp}}.
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_aac95399b373326fe6eb7ff6490668f46}\label{classTST__AbstractRegExp_aac95399b373326fe6eb7ff6490668f46}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!CallTestCheckIsNamesUnique@{CallTestCheckIsNamesUnique}}
+\index{CallTestCheckIsNamesUnique@{CallTestCheckIsNamesUnique}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{CallTestCheckIsNamesUnique()}{CallTestCheckIsNamesUnique()}}
+{\footnotesize\ttfamily void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Call\+Test\+Check\+Is\+Names\+Unique (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a3ea3669bf93d02901c562cd5a25a447d}\label{classTST__AbstractRegExp_a3ea3669bf93d02901c562cd5a25a447d}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!CallTestCheckNoEndLine@{CallTestCheckNoEndLine}}
+\index{CallTestCheckNoEndLine@{CallTestCheckNoEndLine}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{CallTestCheckNoEndLine()}{CallTestCheckNoEndLine()}}
+{\footnotesize\ttfamily void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Call\+Test\+Check\+No\+End\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a25e97c8c5389e62789fd170eeb1e06cd}\label{classTST__AbstractRegExp_a25e97c8c5389e62789fd170eeb1e06cd}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!CallTestCheckNoOriginalNamesInTranslation@{CallTestCheckNoOriginalNamesInTranslation}}
+\index{CallTestCheckNoOriginalNamesInTranslation@{CallTestCheckNoOriginalNamesInTranslation}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{CallTestCheckNoOriginalNamesInTranslation()}{CallTestCheckNoOriginalNamesInTranslation()}}
+{\footnotesize\ttfamily void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Call\+Test\+Check\+No\+Original\+Names\+In\+Translation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a94e1afabe68dedc51a7a2d0d9d51055f}\label{classTST__AbstractRegExp_a94e1afabe68dedc51a7a2d0d9d51055f}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!CallTestCheckRegExpNames@{CallTestCheckRegExpNames}}
+\index{CallTestCheckRegExpNames@{CallTestCheckRegExpNames}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{CallTestCheckRegExpNames()}{CallTestCheckRegExpNames()}}
+{\footnotesize\ttfamily void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Call\+Test\+Check\+Reg\+Exp\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a87ab91660028784a9b4c27f2b5a9b95f}\label{classTST__AbstractRegExp_a87ab91660028784a9b4c27f2b5a9b95f}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!InitTrMs@{InitTrMs}}
+\index{InitTrMs@{InitTrMs}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{InitTrMs()}{InitTrMs()}}
+{\footnotesize\ttfamily void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Init\+Tr\+Ms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a88407b4626b7b3ce343007148ad69d26}\label{classTST__AbstractRegExp_a88407b4626b7b3ce343007148ad69d26}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!LoadVariables@{LoadVariables}}
+\index{LoadVariables@{LoadVariables}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{LoadVariables()}{LoadVariables()}}
+{\footnotesize\ttfamily int TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Load\+Variables (\begin{DoxyParamCaption}\item[{const QString \&}]{checked\+Locale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a53c369df823c4695c53647e83a1e4789}\label{classTST__AbstractRegExp_a53c369df823c4695c53647e83a1e4789}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!PrepareData@{PrepareData}}
+\index{PrepareData@{PrepareData}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{PrepareData()}{PrepareData()}}
+{\footnotesize\ttfamily virtual void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Prepare\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classTST__MeasurementRegExp_a2c3a07c748665ade4340c34e01b262fd}{TST\+\_\+\+Measurement\+Reg\+Exp}}, and \mbox{\hyperlink{classTST__BuitInRegExp_af80bae0fa45ac87ff0a554159f31cd3a}{TST\+\_\+\+Buit\+In\+Reg\+Exp}}.
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a406f2345e9e554ed505d6937d4ca838f}\label{classTST__AbstractRegExp_a406f2345e9e554ed505d6937d4ca838f}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!RemoveTrVariables@{RemoveTrVariables}}
+\index{RemoveTrVariables@{RemoveTrVariables}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{RemoveTrVariables()}{RemoveTrVariables()}}
+{\footnotesize\ttfamily void TST\+\_\+\+Abstract\+Reg\+Exp\+::\+Remove\+Tr\+Variables (\begin{DoxyParamCaption}\item[{const QString \&}]{checked\+Locale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTST__AbstractRegExp_a1e8457a9409277443318b77aaa44170b}\label{classTST__AbstractRegExp_a1e8457a9409277443318b77aaa44170b}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!m\_locale@{m\_locale}}
+\index{m\_locale@{m\_locale}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{m\_locale}{m\_locale}}
+{\footnotesize\ttfamily QString TST\+\_\+\+Abstract\+Reg\+Exp\+::m\+\_\+locale\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a05eab96cafa796fd45c978fc2fe245c6}\label{classTST__AbstractRegExp_a05eab96cafa796fd45c978fc2fe245c6}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!m\_trMs@{m\_trMs}}
+\index{m\_trMs@{m\_trMs}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{m\_trMs}{m\_trMs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVTranslateVars}{VTranslate\+Vars}}$\ast$ TST\+\_\+\+Abstract\+Reg\+Exp\+::m\+\_\+tr\+Ms\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTST__AbstractRegExp_a80872b96194fc7da8363b0bf7d52b0d2}\label{classTST__AbstractRegExp_a80872b96194fc7da8363b0bf7d52b0d2}} 
+\index{TST\_AbstractRegExp@{TST\_AbstractRegExp}!m\_vTranslator@{m\_vTranslator}}
+\index{m\_vTranslator@{m\_vTranslator}!TST\_AbstractRegExp@{TST\_AbstractRegExp}}
+\doxysubsubsection{\texorpdfstring{m\_vTranslator}{m\_vTranslator}}
+{\footnotesize\ttfamily QPointer$<$QTranslator$>$ TST\+\_\+\+Abstract\+Reg\+Exp\+::m\+\_\+v\+Translator\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/test/\+Translations\+Test/\mbox{\hyperlink{tst__abstractregexp_8h}{tst\+\_\+abstractregexp.\+h}}\item 
+src/test/\+Translations\+Test/\mbox{\hyperlink{tst__abstractregexp_8cpp}{tst\+\_\+abstractregexp.\+cpp}}\end{DoxyCompactItemize}

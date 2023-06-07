@@ -1,0 +1,1066 @@
+\hypertarget{classTMainWindow}{}\doxysection{TMain\+Window Class Reference}
+\label{classTMainWindow}\index{TMainWindow@{TMainWindow}}
+
+
+{\ttfamily \#include $<$tmainwindow.\+h$>$}
+
+Inheritance diagram for TMain\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d8/d61/classTMainWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_a7896b04a2cc7b260e581a0d9fd61ed8b}{Show\+Tool\+Tip}} (const QString \&tool\+Tip) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_a3b0ff4484c24d5dfb96c0c14d97eada6}{zoom\+To\+Selected}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_add7603a3351a0f41ff664d7b616f0358}{update\+Groups}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTMainWindow_aa9356f17c34e7bc15eaad280b780a839}{TMain\+Window}} (QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classTMainWindow_abe692b7f311303db93e4b2039f680682}{$\sim$\+TMain\+Window}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classTMainWindow_a0e7e5605957cb1d7fb24bc587e86cafa}{Current\+File}} () const
+\item 
+void \mbox{\hyperlink{classTMainWindow_aceddbd1042dd596afd19d61516fee390}{Retranslate\+Table}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a91b1f81aaf4b4e363570bfbcfdd98ee8}{Set\+Base\+MHeight}} (int height)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a0043bdd7863d4d2c25810e68554d4a59}{Set\+Base\+MSize}} (int size)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a897c66ea85d4c2d7c6fc06f1319dcaeb}{Set\+PUnit}} (\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} unit)
+\item 
+bool \mbox{\hyperlink{classTMainWindow_a61adfc3636f92fd73f84b886dff9fa1b}{Load\+File}} (const QString \&path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_a684f1507311e3768cf9365450cf6955d}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_a7049c32d15ecd2e54b82a2a50b2da8e9}{change\+Event}} (QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_ab570e7c5dcdefe1dc2b98bce52a6ec1f}{show\+Event}} (QShow\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classTMainWindow_af9447e0f0d20432b40ff5e330ec32b41}{event\+Filter}} (QObject $\ast$object, QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classTMainWindow_a10cf2465634fcdb7b660b8b4572cfbb1}{export\+To\+CSVData}} (const QString \&file\+Name, const \mbox{\hyperlink{classDialogExportToCSV}{Dialog\+Export\+To\+CSV}} \&dialog) Q\+\_\+\+DECL\+\_\+\+FINAL
+\item 
+void \mbox{\hyperlink{classTMainWindow_a89b4194343ad59dc8cb14e226f4a082a}{handle\+Export\+To\+CSV}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782ea93e479ed8d33820bb57a4cdff04ed8b5}{Max\+Recent\+Files}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTMainWindow_a02ca5a3c621936c90ba60b1e33a28a96}{File\+New}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a3d87f328dbe20fbdca63c769fedd130a}{Open\+Individual}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a374ee45b77b051eb76dc69d73f86243b}{Open\+Multisize}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a868c475d48f2284d7880a59a75ddbede}{Open\+Template}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ac6210f3ab70d5e81b35cc5a71660dbe4}{Create\+From\+Existing}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ae02b949ac7a3a88136ff41ea890732dd}{Preferences}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_aff8064da1b6ae0ff707bdfe3d0627576}{Tool\+Bar\+Styles}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ad704c714fc6cd96e00ac1d79212a8246}{print}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a2aa7abcb5434868ceff980dca393b873}{print\+Pages}} (QPrinter $\ast$printer)
+\item 
+bool \mbox{\hyperlink{classTMainWindow_a01ee12f3f83387269af32433936e7b19}{File\+Save}} ()
+\item 
+bool \mbox{\hyperlink{classTMainWindow_af5a1d8f6beb78ab6f177a65db71fc80d}{File\+Save\+As}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ac6a63f080a95a280e31f73ca98e3a382}{About\+To\+Show\+Window\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ad690a6e383eb1d92c3776aaf2c548e13}{Show\+Window}} () const
+\item 
+void \mbox{\hyperlink{classTMainWindow_a8e165ee115e42f59831fa294d54bb9b1}{Save\+Given\+Name}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_aabc5fca44de4cf56db14365cb586c54c}{Save\+Family\+Name}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a8024a85b1798539474778ee4a485eab7}{Save\+Email}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ac3b873720ae651734e945daa54a59c59}{Save\+Gender}} (int index)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a1fb574f339f0eb40b39beb82cfbf44f1}{Save\+Birth\+Date}} (const QDate \&date)
+\item 
+void \mbox{\hyperlink{classTMainWindow_ad46e5b6f25d87b30d07c5f8ce3f63b9e}{Save\+Notes}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a514eec7050b066740fd378d982c29e1a}{Save\+PMSystem}} (int index)
+\item 
+void \mbox{\hyperlink{classTMainWindow_abe986ff6b4b4a57ef6c468953c592036}{Remove}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a0cda35af53662516f387dc3bc73a4a28}{Move\+Top}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_afcc714fdce4422973bdc72f8029984e6}{Move\+Up}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_aee06e497ebbf54f3d6c3465a6658a94e}{Move\+Down}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a7d33f3d83322b9c646928245084a8605}{Move\+Bottom}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a0abd7f93825c1c121afbde698066f5ad}{Fx}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a7ddff124f32526e056973e720a4c459f}{Add\+Custom}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a91a891e6c0ae2a9fb71e4f920e71b2ad}{Add\+Known}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_aa16223e3ef35905627a33a73750b7500}{Import\+From\+Pattern}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_afcc4002b7f999f4c18f9bb760d136978}{Changed\+Size}} (int index)
+\item 
+void \mbox{\hyperlink{classTMainWindow_ab529739f36b3b7fa1fcf2a56d2997e7f}{Changed\+Height}} (int index)
+\item 
+void \mbox{\hyperlink{classTMainWindow_aa90b2593d6b8edcb31dc9c74db5292fb}{Show\+MData}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_af9a19924beac5e96c8e54db2ee01362f}{Deploy\+Formula}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a6205c4c9d5700a6b3393c17ca03e73a6}{Save\+MName}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a57f43ccb6f33fe78dcfe0094d2f1b1b9}{Save\+MValue}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_aa2bfdcb0732a803e99b73f49a497d761}{Save\+MBase\+Value}} (double value)
+\item 
+void \mbox{\hyperlink{classTMainWindow_aac9bbc243dc1777087c7904b6c70c5c5}{Save\+MSize\+Increase}} (double value)
+\item 
+void \mbox{\hyperlink{classTMainWindow_aee231ebfc48e5791a3bd8cd8ff625032}{Save\+MHeight\+Increase}} (double value)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a9fbaafcbfbe1fbfbb2443002eb35f1be}{Save\+MDescription}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a48669616edf394f90ee8da95517b7b8b}{Save\+MFull\+Name}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a3c93d5e32e7c9dc6e79373a31a58df1b}{Pattern\+Unit\+Changed}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTMainWindow_a1d0dcefc7926b40766fcf702ebe7c03c}{Setup\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a3689ca2513ad4df3c1139ba56c529628}{Init\+Window}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a1192e79228be95cd0982f24607cbc2ce}{Init\+Table}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a836eb87be514a2d79a16d4b17a23f22c}{Set\+Decimals}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_ae463e9fa98d19afbe071b90f5f777c98}{Init\+Units}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a76ee17ae2b293c824181a57a4f68c030}{Init\+Combo\+Box\+Units}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a58cdeb07dab4d2ac164587eec512b5c8}{Init\+Gender}} (QCombo\+Box $\ast$gender)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a2e5344f257a070a0e8eb35b5992e0fd1}{Show\+New\+MData}} (bool fresh)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a67df92de8ca6c50425e58e34f9ba429c}{Show\+Units}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a52d2b0cbfdd7728690418a99609b2aa3}{Show\+Header\+Units}} (QTable\+Widget $\ast$table, int column, const QString \&unit)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a153363a0a6c74a814cdbc78df242be66}{Update\+Recent\+File\+Actions}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a8c65d7fca992e8429d6cc4428745902c}{Measurements\+Was\+Saved}} (bool saved)
+\item 
+void \mbox{\hyperlink{classTMainWindow_aa0eb38bc08fb4cbfbd4e3ec31cfcc08a}{Set\+Current\+File}} (const QString \&file\+Name)
+\item 
+bool \mbox{\hyperlink{classTMainWindow_ac4bcd216e46d37c00466d25669b90c78}{Save\+Measurements}} (const QString \&file\+Name, QString \&error)
+\item 
+bool \mbox{\hyperlink{classTMainWindow_af4628609f0e5e49da8c43185455b6667}{Maybe\+Save}} ()
+\item 
+QTable\+Widget\+Item $\ast$ \mbox{\hyperlink{classTMainWindow_a830472d35eec5cac02eaa722352a5310}{Add\+Cell}} (const QString \&text, int row, int column, int aligment, bool ok=true)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QCombo\+Box $\ast$ \mbox{\hyperlink{classTMainWindow_aaaa2f06695035dfa8d4eacbf0b67b389}{Set\+Gradation\+List}} (QLabel $\ast$label, const QString\+List \&list)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a0c42381917843e80f4778d53130a2d4b}{Set\+Default\+Height}} (int value)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a5402aedf5eb63da7abb664a194dee5d1}{Set\+Default\+Size}} (int value)
+\item 
+void \mbox{\hyperlink{classTMainWindow_aa157c4409890698d07d8cf7dd5a5edc1}{Refresh\+Data}} (bool fresh\+Call=false)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a485203fba37db8f459b8c4fdfce4fd88}{Refresh\+Table}} (bool fresh\+Call=false)
+\item 
+QString \mbox{\hyperlink{classTMainWindow_a0191e75cf46b9235eaec63c8e254841a}{Get\+Custom\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classTMainWindow_a0bf89940dad5e491b7c5d6cb077f9a8c}{Clear\+Custom\+Name}} (const QString \&name) const
+\item 
+bool \mbox{\hyperlink{classTMainWindow_a05cc0eef7326ee97daf117da04480450}{Eval\+Formula}} (const QString \&formula, bool from\+User, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classTMainWindow_a160e232ffd21249944a4fb0628a8f9e3}{data}}, QLabel $\ast$label)
+\item 
+QString \mbox{\hyperlink{classTMainWindow_aec8c750150c9c9ff34fb40a677807535}{get\+Measurement\+Number}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classTMainWindow_ab9abe62057545b7ef233b224787d56b6}{Show\+MDiagram}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classTMainWindow_afffa9950545da13b15780c65c7ee2b18}{Open}} (const QString \&path\+To, const QString \&filter)
+\item 
+void \mbox{\hyperlink{classTMainWindow_ae297426e17d9198df77489e6fd232b0c}{Update\+Padlock}} (bool ro)
+\item 
+void \mbox{\hyperlink{classTMainWindow_ad23cee1b1665e6f352891570c1a40149}{Measurement\+GUI}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a78342a86a73fe219b1ff175658aaf2df}{Controls}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a65820993de7cce0f575d46ced6b139cf}{MFields}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a40fd92b6271025f93257a1c81b976285}{Update\+Window\+Title}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a1b89a35777c6f60baf970b3e27b530e9}{Read\+Settings}} ()
+\item 
+void \mbox{\hyperlink{classTMainWindow_a5b4ea54c3a4cb7c61263aadd10398714}{Write\+Settings}} ()
+\item 
+QString\+List \mbox{\hyperlink{classTMainWindow_a2266ef885b2d1fdda0e3a44c4bacb3c8}{Filter\+Measurements}} (const QString\+List \&m\+New, const QString\+List \&m\+Filter)
+\item 
+void \mbox{\hyperlink{classTMainWindow_abdf2af17c55c6d4b1dd9c49e3e5cdc6c}{Update\+Pattern\+Unit}} ()
+\item 
+bool \mbox{\hyperlink{classTMainWindow_a99468c28429fa36a05c245b4e7f0c043}{Load\+From\+Existing\+File}} (const QString \&path)
+\item 
+void \mbox{\hyperlink{classTMainWindow_a0dbe84c1ef961845beb9125cbdaa022e}{Create\+Window\+Menu}} (QMenu $\ast$menu)
+\item 
+bool \mbox{\hyperlink{classTMainWindow_afdf00baedf5814d713774816996d8864}{Ignore\+Locking}} (int error, const QString \&path)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{classTMainWindow_a70c116fcf394626df69cf37f48c35d13}{Hack\+Widget}} (T $\ast$$\ast$widget)
+\item 
+void \mbox{\hyperlink{classTMainWindow_ac04505ddffb6f4e7d789cc49dc88d947}{copy\+To\+Clipboard}} ()
+\begin{DoxyCompactList}\small\item\em copy\+To\+Clipboard copy dialog selection to clipboard as comma separated values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+TMain\+Window $\ast$ \mbox{\hyperlink{classTMainWindow_a33152f7de184585f840578cb99450bfa}{ui}}
+\item 
+\mbox{\hyperlink{classVMeasurements}{VMeasurements}} $\ast$ \mbox{\hyperlink{classTMainWindow_a59a263ee5e02b1b619560ae2637f769d}{individual\+Measurements}}
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classTMainWindow_a160e232ffd21249944a4fb0628a8f9e3}{data}}
+\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{classTMainWindow_accf238814ac28528249e815ed9b7fad2}{m\+Unit}}
+\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{classTMainWindow_ab9678491127cea66f8c861ea968a794b}{p\+Unit}}
+\item 
+\mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \mbox{\hyperlink{classTMainWindow_a9944451dc8bf731e00d9a3dc2e566e95}{m\+Type}}
+\item 
+qreal \mbox{\hyperlink{classTMainWindow_a2312005fe358d159eea977810e411751}{current\+Size}}
+\item 
+qreal \mbox{\hyperlink{classTMainWindow_a89aba9450e50632020a38fce1634582a}{current\+Height}}
+\item 
+QString \mbox{\hyperlink{classTMainWindow_a104b743dac5652a8eee54bae506ee158}{cur\+File}}
+\item 
+QCombo\+Box $\ast$ \mbox{\hyperlink{classTMainWindow_a89395e0e84f75e7d8472c6be49e3aaf8}{gradation\+Heights}}
+\item 
+QCombo\+Box $\ast$ \mbox{\hyperlink{classTMainWindow_a14ac82f49bb8cc119702962c101b6d3b}{gradation\+Sizes}}
+\item 
+QCombo\+Box $\ast$ \mbox{\hyperlink{classTMainWindow_aa41d79eb8d54afa5159119732b7d3d21}{combo\+Box\+Units}}
+\item 
+int \mbox{\hyperlink{classTMainWindow_a126150f4ac646d1509b4bcbec68e1d28}{formula\+Base\+Height}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classVLockGuard}{VLock\+Guard}}$<$ char $>$ $>$ \mbox{\hyperlink{classTMainWindow_aedb68abec30fcf8edb09d6fe039c5dfd}{lock}}
+\item 
+\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVTableSearch}{VTable\+Search}} $>$ \mbox{\hyperlink{classTMainWindow_afce377405d6da40a1be29b05539714ee}{search}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classTMainWindow_af7a4bb3195161c9d90b103915b2d50ab}{label\+Gradation\+Heights}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classTMainWindow_a0e20ce68bff8a777dbb513527c5c7c2e}{label\+Gradation\+Sizes}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classTMainWindow_aed841e8627190268620c7c1149cf95c8}{label\+Pattern\+Unit}}
+\item 
+QAction $\ast$ \mbox{\hyperlink{classTMainWindow_a0fa4d8c8a8c63f81911cd9be9247b963}{action\+Dock\+Diagram}}
+\item 
+bool \mbox{\hyperlink{classTMainWindow_a274f807d4973e16dce8bb4f4d0df7c92}{dock\+Diagram\+Visible}}
+\item 
+bool \mbox{\hyperlink{classTMainWindow_a7bd330097fd218f428a8a1c34fcc9a66}{is\+Initialized}}
+\item 
+bool \mbox{\hyperlink{classTMainWindow_ad6d989710d406f9feac9eb47bc6ab1b5}{m\+Is\+Read\+Only}}
+\item 
+QAction $\ast$ \mbox{\hyperlink{classTMainWindow_a4bd80077d1d242346b32050522a87c95}{recent\+File\+Acts}} \mbox{[}\mbox{\hyperlink{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782ea93e479ed8d33820bb57a4cdff04ed8b5}{Max\+Recent\+Files}}\mbox{]}
+\item 
+QAction $\ast$ \mbox{\hyperlink{classTMainWindow_a9b157387bff7a5593d85ac9e13256037}{separator\+Act}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QObject $\ast$ $>$ \mbox{\hyperlink{classTMainWindow_a3b0d4c12f6c831035fc5b96944a68c7b}{hacked\+Widgets}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782e}\label{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MaxRecentFiles@{MaxRecentFiles}!TMainWindow@{TMainWindow}}\index{TMainWindow@{TMainWindow}!MaxRecentFiles@{MaxRecentFiles}}}\mbox{\Hypertarget{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782ea93e479ed8d33820bb57a4cdff04ed8b5}\label{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782ea93e479ed8d33820bb57a4cdff04ed8b5}} 
+Max\+Recent\+Files&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTMainWindow_aa9356f17c34e7bc15eaad280b780a839}\label{classTMainWindow_aa9356f17c34e7bc15eaad280b780a839}} 
+\index{TMainWindow@{TMainWindow}!TMainWindow@{TMainWindow}}
+\index{TMainWindow@{TMainWindow}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{TMainWindow()}{TMainWindow()}}
+{\footnotesize\ttfamily TMain\+Window\+::\+TMain\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classTMainWindow_abe692b7f311303db93e4b2039f680682}\label{classTMainWindow_abe692b7f311303db93e4b2039f680682}} 
+\index{TMainWindow@{TMainWindow}!````~TMainWindow@{$\sim$TMainWindow}}
+\index{````~TMainWindow@{$\sim$TMainWindow}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$TMainWindow()}{~TMainWindow()}}
+{\footnotesize\ttfamily TMain\+Window\+::$\sim$\+TMain\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTMainWindow_ac6a63f080a95a280e31f73ca98e3a382}\label{classTMainWindow_ac6a63f080a95a280e31f73ca98e3a382}} 
+\index{TMainWindow@{TMainWindow}!AboutToShowWindowMenu@{AboutToShowWindowMenu}}
+\index{AboutToShowWindowMenu@{AboutToShowWindowMenu}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{AboutToShowWindowMenu}{AboutToShowWindowMenu}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+About\+To\+Show\+Window\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a830472d35eec5cac02eaa722352a5310}\label{classTMainWindow_a830472d35eec5cac02eaa722352a5310}} 
+\index{TMainWindow@{TMainWindow}!AddCell@{AddCell}}
+\index{AddCell@{AddCell}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{AddCell()}{AddCell()}}
+{\footnotesize\ttfamily QTable\+Widget\+Item $\ast$ TMain\+Window\+::\+Add\+Cell (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{int}]{row,  }\item[{int}]{column,  }\item[{int}]{aligment,  }\item[{bool}]{ok = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a7ddff124f32526e056973e720a4c459f}\label{classTMainWindow_a7ddff124f32526e056973e720a4c459f}} 
+\index{TMainWindow@{TMainWindow}!AddCustom@{AddCustom}}
+\index{AddCustom@{AddCustom}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{AddCustom}{AddCustom}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Add\+Custom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a91a891e6c0ae2a9fb71e4f920e71b2ad}\label{classTMainWindow_a91a891e6c0ae2a9fb71e4f920e71b2ad}} 
+\index{TMainWindow@{TMainWindow}!AddKnown@{AddKnown}}
+\index{AddKnown@{AddKnown}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{AddKnown}{AddKnown}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Add\+Known (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ab529739f36b3b7fa1fcf2a56d2997e7f}\label{classTMainWindow_ab529739f36b3b7fa1fcf2a56d2997e7f}} 
+\index{TMainWindow@{TMainWindow}!ChangedHeight@{ChangedHeight}}
+\index{ChangedHeight@{ChangedHeight}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ChangedHeight}{ChangedHeight}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Changed\+Height (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_afcc4002b7f999f4c18f9bb760d136978}\label{classTMainWindow_afcc4002b7f999f4c18f9bb760d136978}} 
+\index{TMainWindow@{TMainWindow}!ChangedSize@{ChangedSize}}
+\index{ChangedSize@{ChangedSize}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ChangedSize}{ChangedSize}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Changed\+Size (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a7049c32d15ecd2e54b82a2a50b2da8e9}\label{classTMainWindow_a7049c32d15ecd2e54b82a2a50b2da8e9}} 
+\index{TMainWindow@{TMainWindow}!changeEvent@{changeEvent}}
+\index{changeEvent@{changeEvent}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{changeEvent()}{changeEvent()}}
+{\footnotesize\ttfamily void TMain\+Window\+::change\+Event (\begin{DoxyParamCaption}\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0bf89940dad5e491b7c5d6cb077f9a8c}\label{classTMainWindow_a0bf89940dad5e491b7c5d6cb077f9a8c}} 
+\index{TMainWindow@{TMainWindow}!ClearCustomName@{ClearCustomName}}
+\index{ClearCustomName@{ClearCustomName}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ClearCustomName()}{ClearCustomName()}}
+{\footnotesize\ttfamily QString TMain\+Window\+::\+Clear\+Custom\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a684f1507311e3768cf9365450cf6955d}\label{classTMainWindow_a684f1507311e3768cf9365450cf6955d}} 
+\index{TMainWindow@{TMainWindow}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void TMain\+Window\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTMainWindow_a78342a86a73fe219b1ff175658aaf2df}\label{classTMainWindow_a78342a86a73fe219b1ff175658aaf2df}} 
+\index{TMainWindow@{TMainWindow}!Controls@{Controls}}
+\index{Controls@{Controls}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{Controls()}{Controls()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ac04505ddffb6f4e7d789cc49dc88d947}\label{classTMainWindow_ac04505ddffb6f4e7d789cc49dc88d947}} 
+\index{TMainWindow@{TMainWindow}!copyToClipboard@{copyToClipboard}}
+\index{copyToClipboard@{copyToClipboard}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{copyToClipboard()}{copyToClipboard()}}
+{\footnotesize\ttfamily void TMain\+Window\+::copy\+To\+Clipboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+copy\+To\+Clipboard copy dialog selection to clipboard as comma separated values. 
+
+\mbox{\Hypertarget{classTMainWindow_ac6210f3ab70d5e81b35cc5a71660dbe4}\label{classTMainWindow_ac6210f3ab70d5e81b35cc5a71660dbe4}} 
+\index{TMainWindow@{TMainWindow}!CreateFromExisting@{CreateFromExisting}}
+\index{CreateFromExisting@{CreateFromExisting}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{CreateFromExisting}{CreateFromExisting}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Create\+From\+Existing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0dbe84c1ef961845beb9125cbdaa022e}\label{classTMainWindow_a0dbe84c1ef961845beb9125cbdaa022e}} 
+\index{TMainWindow@{TMainWindow}!CreateWindowMenu@{CreateWindowMenu}}
+\index{CreateWindowMenu@{CreateWindowMenu}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{CreateWindowMenu()}{CreateWindowMenu()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Create\+Window\+Menu (\begin{DoxyParamCaption}\item[{QMenu $\ast$}]{menu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0e7e5605957cb1d7fb24bc587e86cafa}\label{classTMainWindow_a0e7e5605957cb1d7fb24bc587e86cafa}} 
+\index{TMainWindow@{TMainWindow}!CurrentFile@{CurrentFile}}
+\index{CurrentFile@{CurrentFile}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{CurrentFile()}{CurrentFile()}}
+{\footnotesize\ttfamily QString TMain\+Window\+::\+Current\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTMainWindow_af9a19924beac5e96c8e54db2ee01362f}\label{classTMainWindow_af9a19924beac5e96c8e54db2ee01362f}} 
+\index{TMainWindow@{TMainWindow}!DeployFormula@{DeployFormula}}
+\index{DeployFormula@{DeployFormula}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{DeployFormula}{DeployFormula}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Deploy\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a05cc0eef7326ee97daf117da04480450}\label{classTMainWindow_a05cc0eef7326ee97daf117da04480450}} 
+\index{TMainWindow@{TMainWindow}!EvalFormula@{EvalFormula}}
+\index{EvalFormula@{EvalFormula}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{EvalFormula()}{EvalFormula()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+Eval\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{formula,  }\item[{bool}]{from\+User,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QLabel $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_af9447e0f0d20432b40ff5e330ec32b41}\label{classTMainWindow_af9447e0f0d20432b40ff5e330ec32b41}} 
+\index{TMainWindow@{TMainWindow}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{object,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTMainWindow_a10cf2465634fcdb7b660b8b4572cfbb1}\label{classTMainWindow_a10cf2465634fcdb7b660b8b4572cfbb1}} 
+\index{TMainWindow@{TMainWindow}!exportToCSVData@{exportToCSVData}}
+\index{exportToCSVData@{exportToCSVData}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{exportToCSVData()}{exportToCSVData()}}
+{\footnotesize\ttfamily void TMain\+Window\+::export\+To\+CSVData (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{const \mbox{\hyperlink{classDialogExportToCSV}{Dialog\+Export\+To\+CSV}} \&}]{dialog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractMainWindow_a05b5c4707a62ed5df183415fc44d3d86}{VAbstract\+Main\+Window}}.
+
+\mbox{\Hypertarget{classTMainWindow_a02ca5a3c621936c90ba60b1e33a28a96}\label{classTMainWindow_a02ca5a3c621936c90ba60b1e33a28a96}} 
+\index{TMainWindow@{TMainWindow}!FileNew@{FileNew}}
+\index{FileNew@{FileNew}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{FileNew}{FileNew}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+File\+New (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a01ee12f3f83387269af32433936e7b19}\label{classTMainWindow_a01ee12f3f83387269af32433936e7b19}} 
+\index{TMainWindow@{TMainWindow}!FileSave@{FileSave}}
+\index{FileSave@{FileSave}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{FileSave}{FileSave}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+File\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_af5a1d8f6beb78ab6f177a65db71fc80d}\label{classTMainWindow_af5a1d8f6beb78ab6f177a65db71fc80d}} 
+\index{TMainWindow@{TMainWindow}!FileSaveAs@{FileSaveAs}}
+\index{FileSaveAs@{FileSaveAs}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{FileSaveAs}{FileSaveAs}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+File\+Save\+As (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a2266ef885b2d1fdda0e3a44c4bacb3c8}\label{classTMainWindow_a2266ef885b2d1fdda0e3a44c4bacb3c8}} 
+\index{TMainWindow@{TMainWindow}!FilterMeasurements@{FilterMeasurements}}
+\index{FilterMeasurements@{FilterMeasurements}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{FilterMeasurements()}{FilterMeasurements()}}
+{\footnotesize\ttfamily QString\+List TMain\+Window\+::\+Filter\+Measurements (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{m\+New,  }\item[{const QString\+List \&}]{m\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0abd7f93825c1c121afbde698066f5ad}\label{classTMainWindow_a0abd7f93825c1c121afbde698066f5ad}} 
+\index{TMainWindow@{TMainWindow}!Fx@{Fx}}
+\index{Fx@{Fx}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{Fx}{Fx}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Fx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0191e75cf46b9235eaec63c8e254841a}\label{classTMainWindow_a0191e75cf46b9235eaec63c8e254841a}} 
+\index{TMainWindow@{TMainWindow}!GetCustomName@{GetCustomName}}
+\index{GetCustomName@{GetCustomName}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{GetCustomName()}{GetCustomName()}}
+{\footnotesize\ttfamily QString TMain\+Window\+::\+Get\+Custom\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aec8c750150c9c9ff34fb40a677807535}\label{classTMainWindow_aec8c750150c9c9ff34fb40a677807535}} 
+\index{TMainWindow@{TMainWindow}!getMeasurementNumber@{getMeasurementNumber}}
+\index{getMeasurementNumber@{getMeasurementNumber}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{getMeasurementNumber()}{getMeasurementNumber()}}
+{\footnotesize\ttfamily QString TMain\+Window\+::get\+Measurement\+Number (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a70c116fcf394626df69cf37f48c35d13}\label{classTMainWindow_a70c116fcf394626df69cf37f48c35d13}} 
+\index{TMainWindow@{TMainWindow}!HackWidget@{HackWidget}}
+\index{HackWidget@{HackWidget}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{HackWidget()}{HackWidget()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void TMain\+Window\+::\+Hack\+Widget (\begin{DoxyParamCaption}\item[{T $\ast$$\ast$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a89b4194343ad59dc8cb14e226f4a082a}\label{classTMainWindow_a89b4194343ad59dc8cb14e226f4a082a}} 
+\index{TMainWindow@{TMainWindow}!handleExportToCSV@{handleExportToCSV}}
+\index{handleExportToCSV@{handleExportToCSV}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{handleExportToCSV()}{handleExportToCSV()}}
+{\footnotesize\ttfamily void TMain\+Window\+::handle\+Export\+To\+CSV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTMainWindow_afdf00baedf5814d713774816996d8864}\label{classTMainWindow_afdf00baedf5814d713774816996d8864}} 
+\index{TMainWindow@{TMainWindow}!IgnoreLocking@{IgnoreLocking}}
+\index{IgnoreLocking@{IgnoreLocking}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{IgnoreLocking()}{IgnoreLocking()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+Ignore\+Locking (\begin{DoxyParamCaption}\item[{int}]{error,  }\item[{const QString \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aa16223e3ef35905627a33a73750b7500}\label{classTMainWindow_aa16223e3ef35905627a33a73750b7500}} 
+\index{TMainWindow@{TMainWindow}!ImportFromPattern@{ImportFromPattern}}
+\index{ImportFromPattern@{ImportFromPattern}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ImportFromPattern}{ImportFromPattern}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Import\+From\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a76ee17ae2b293c824181a57a4f68c030}\label{classTMainWindow_a76ee17ae2b293c824181a57a4f68c030}} 
+\index{TMainWindow@{TMainWindow}!InitComboBoxUnits@{InitComboBoxUnits}}
+\index{InitComboBoxUnits@{InitComboBoxUnits}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{InitComboBoxUnits()}{InitComboBoxUnits()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Init\+Combo\+Box\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a58cdeb07dab4d2ac164587eec512b5c8}\label{classTMainWindow_a58cdeb07dab4d2ac164587eec512b5c8}} 
+\index{TMainWindow@{TMainWindow}!InitGender@{InitGender}}
+\index{InitGender@{InitGender}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{InitGender()}{InitGender()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Init\+Gender (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{gender }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a1192e79228be95cd0982f24607cbc2ce}\label{classTMainWindow_a1192e79228be95cd0982f24607cbc2ce}} 
+\index{TMainWindow@{TMainWindow}!InitTable@{InitTable}}
+\index{InitTable@{InitTable}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{InitTable()}{InitTable()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Init\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ae463e9fa98d19afbe071b90f5f777c98}\label{classTMainWindow_ae463e9fa98d19afbe071b90f5f777c98}} 
+\index{TMainWindow@{TMainWindow}!InitUnits@{InitUnits}}
+\index{InitUnits@{InitUnits}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{InitUnits()}{InitUnits()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Init\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a3689ca2513ad4df3c1139ba56c529628}\label{classTMainWindow_a3689ca2513ad4df3c1139ba56c529628}} 
+\index{TMainWindow@{TMainWindow}!InitWindow@{InitWindow}}
+\index{InitWindow@{InitWindow}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{InitWindow()}{InitWindow()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Init\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a61adfc3636f92fd73f84b886dff9fa1b}\label{classTMainWindow_a61adfc3636f92fd73f84b886dff9fa1b}} 
+\index{TMainWindow@{TMainWindow}!LoadFile@{LoadFile}}
+\index{LoadFile@{LoadFile}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{LoadFile()}{LoadFile()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+Load\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTMainWindow_a99468c28429fa36a05c245b4e7f0c043}\label{classTMainWindow_a99468c28429fa36a05c245b4e7f0c043}} 
+\index{TMainWindow@{TMainWindow}!LoadFromExistingFile@{LoadFromExistingFile}}
+\index{LoadFromExistingFile@{LoadFromExistingFile}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{LoadFromExistingFile()}{LoadFromExistingFile()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+Load\+From\+Existing\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_af4628609f0e5e49da8c43185455b6667}\label{classTMainWindow_af4628609f0e5e49da8c43185455b6667}} 
+\index{TMainWindow@{TMainWindow}!MaybeSave@{MaybeSave}}
+\index{MaybeSave@{MaybeSave}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MaybeSave()}{MaybeSave()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+Maybe\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ad23cee1b1665e6f352891570c1a40149}\label{classTMainWindow_ad23cee1b1665e6f352891570c1a40149}} 
+\index{TMainWindow@{TMainWindow}!MeasurementGUI@{MeasurementGUI}}
+\index{MeasurementGUI@{MeasurementGUI}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MeasurementGUI()}{MeasurementGUI()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Measurement\+GUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a8c65d7fca992e8429d6cc4428745902c}\label{classTMainWindow_a8c65d7fca992e8429d6cc4428745902c}} 
+\index{TMainWindow@{TMainWindow}!MeasurementsWasSaved@{MeasurementsWasSaved}}
+\index{MeasurementsWasSaved@{MeasurementsWasSaved}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MeasurementsWasSaved()}{MeasurementsWasSaved()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Measurements\+Was\+Saved (\begin{DoxyParamCaption}\item[{bool}]{saved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a65820993de7cce0f575d46ced6b139cf}\label{classTMainWindow_a65820993de7cce0f575d46ced6b139cf}} 
+\index{TMainWindow@{TMainWindow}!MFields@{MFields}}
+\index{MFields@{MFields}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MFields()}{MFields()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+MFields (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a7d33f3d83322b9c646928245084a8605}\label{classTMainWindow_a7d33f3d83322b9c646928245084a8605}} 
+\index{TMainWindow@{TMainWindow}!MoveBottom@{MoveBottom}}
+\index{MoveBottom@{MoveBottom}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MoveBottom}{MoveBottom}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Move\+Bottom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aee06e497ebbf54f3d6c3465a6658a94e}\label{classTMainWindow_aee06e497ebbf54f3d6c3465a6658a94e}} 
+\index{TMainWindow@{TMainWindow}!MoveDown@{MoveDown}}
+\index{MoveDown@{MoveDown}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MoveDown}{MoveDown}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Move\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0cda35af53662516f387dc3bc73a4a28}\label{classTMainWindow_a0cda35af53662516f387dc3bc73a4a28}} 
+\index{TMainWindow@{TMainWindow}!MoveTop@{MoveTop}}
+\index{MoveTop@{MoveTop}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MoveTop}{MoveTop}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Move\+Top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_afcc714fdce4422973bdc72f8029984e6}\label{classTMainWindow_afcc714fdce4422973bdc72f8029984e6}} 
+\index{TMainWindow@{TMainWindow}!MoveUp@{MoveUp}}
+\index{MoveUp@{MoveUp}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{MoveUp}{MoveUp}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Move\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_afffa9950545da13b15780c65c7ee2b18}\label{classTMainWindow_afffa9950545da13b15780c65c7ee2b18}} 
+\index{TMainWindow@{TMainWindow}!Open@{Open}}
+\index{Open@{Open}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Open (\begin{DoxyParamCaption}\item[{const QString \&}]{path\+To,  }\item[{const QString \&}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a3d87f328dbe20fbdca63c769fedd130a}\label{classTMainWindow_a3d87f328dbe20fbdca63c769fedd130a}} 
+\index{TMainWindow@{TMainWindow}!OpenIndividual@{OpenIndividual}}
+\index{OpenIndividual@{OpenIndividual}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{OpenIndividual}{OpenIndividual}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Open\+Individual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a374ee45b77b051eb76dc69d73f86243b}\label{classTMainWindow_a374ee45b77b051eb76dc69d73f86243b}} 
+\index{TMainWindow@{TMainWindow}!OpenMultisize@{OpenMultisize}}
+\index{OpenMultisize@{OpenMultisize}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{OpenMultisize}{OpenMultisize}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Open\+Multisize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a868c475d48f2284d7880a59a75ddbede}\label{classTMainWindow_a868c475d48f2284d7880a59a75ddbede}} 
+\index{TMainWindow@{TMainWindow}!OpenTemplate@{OpenTemplate}}
+\index{OpenTemplate@{OpenTemplate}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{OpenTemplate}{OpenTemplate}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Open\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a3c93d5e32e7c9dc6e79373a31a58df1b}\label{classTMainWindow_a3c93d5e32e7c9dc6e79373a31a58df1b}} 
+\index{TMainWindow@{TMainWindow}!PatternUnitChanged@{PatternUnitChanged}}
+\index{PatternUnitChanged@{PatternUnitChanged}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{PatternUnitChanged}{PatternUnitChanged}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Pattern\+Unit\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ae02b949ac7a3a88136ff41ea890732dd}\label{classTMainWindow_ae02b949ac7a3a88136ff41ea890732dd}} 
+\index{TMainWindow@{TMainWindow}!Preferences@{Preferences}}
+\index{Preferences@{Preferences}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{Preferences}{Preferences}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Preferences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ad704c714fc6cd96e00ac1d79212a8246}\label{classTMainWindow_ad704c714fc6cd96e00ac1d79212a8246}} 
+\index{TMainWindow@{TMainWindow}!print@{print}}
+\index{print@{print}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{print}{print}}
+{\footnotesize\ttfamily void TMain\+Window\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a2aa7abcb5434868ceff980dca393b873}\label{classTMainWindow_a2aa7abcb5434868ceff980dca393b873}} 
+\index{TMainWindow@{TMainWindow}!printPages@{printPages}}
+\index{printPages@{printPages}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{printPages}{printPages}}
+{\footnotesize\ttfamily void TMain\+Window\+::print\+Pages (\begin{DoxyParamCaption}\item[{QPrinter $\ast$}]{printer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a1b89a35777c6f60baf970b3e27b530e9}\label{classTMainWindow_a1b89a35777c6f60baf970b3e27b530e9}} 
+\index{TMainWindow@{TMainWindow}!ReadSettings@{ReadSettings}}
+\index{ReadSettings@{ReadSettings}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ReadSettings()}{ReadSettings()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Read\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aa157c4409890698d07d8cf7dd5a5edc1}\label{classTMainWindow_aa157c4409890698d07d8cf7dd5a5edc1}} 
+\index{TMainWindow@{TMainWindow}!RefreshData@{RefreshData}}
+\index{RefreshData@{RefreshData}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{RefreshData()}{RefreshData()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Refresh\+Data (\begin{DoxyParamCaption}\item[{bool}]{fresh\+Call = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a485203fba37db8f459b8c4fdfce4fd88}\label{classTMainWindow_a485203fba37db8f459b8c4fdfce4fd88}} 
+\index{TMainWindow@{TMainWindow}!RefreshTable@{RefreshTable}}
+\index{RefreshTable@{RefreshTable}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{RefreshTable()}{RefreshTable()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Refresh\+Table (\begin{DoxyParamCaption}\item[{bool}]{fresh\+Call = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_abe986ff6b4b4a57ef6c468953c592036}\label{classTMainWindow_abe986ff6b4b4a57ef6c468953c592036}} 
+\index{TMainWindow@{TMainWindow}!Remove@{Remove}}
+\index{Remove@{Remove}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{Remove}{Remove}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Remove (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aceddbd1042dd596afd19d61516fee390}\label{classTMainWindow_aceddbd1042dd596afd19d61516fee390}} 
+\index{TMainWindow@{TMainWindow}!RetranslateTable@{RetranslateTable}}
+\index{RetranslateTable@{RetranslateTable}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{RetranslateTable()}{RetranslateTable()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Retranslate\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTMainWindow_a1fb574f339f0eb40b39beb82cfbf44f1}\label{classTMainWindow_a1fb574f339f0eb40b39beb82cfbf44f1}} 
+\index{TMainWindow@{TMainWindow}!SaveBirthDate@{SaveBirthDate}}
+\index{SaveBirthDate@{SaveBirthDate}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveBirthDate}{SaveBirthDate}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+Birth\+Date (\begin{DoxyParamCaption}\item[{const QDate \&}]{date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a8024a85b1798539474778ee4a485eab7}\label{classTMainWindow_a8024a85b1798539474778ee4a485eab7}} 
+\index{TMainWindow@{TMainWindow}!SaveEmail@{SaveEmail}}
+\index{SaveEmail@{SaveEmail}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveEmail}{SaveEmail}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+Email (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aabc5fca44de4cf56db14365cb586c54c}\label{classTMainWindow_aabc5fca44de4cf56db14365cb586c54c}} 
+\index{TMainWindow@{TMainWindow}!SaveFamilyName@{SaveFamilyName}}
+\index{SaveFamilyName@{SaveFamilyName}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveFamilyName}{SaveFamilyName}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+Family\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ac3b873720ae651734e945daa54a59c59}\label{classTMainWindow_ac3b873720ae651734e945daa54a59c59}} 
+\index{TMainWindow@{TMainWindow}!SaveGender@{SaveGender}}
+\index{SaveGender@{SaveGender}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveGender}{SaveGender}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+Gender (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a8e165ee115e42f59831fa294d54bb9b1}\label{classTMainWindow_a8e165ee115e42f59831fa294d54bb9b1}} 
+\index{TMainWindow@{TMainWindow}!SaveGivenName@{SaveGivenName}}
+\index{SaveGivenName@{SaveGivenName}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveGivenName}{SaveGivenName}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+Given\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aa2bfdcb0732a803e99b73f49a497d761}\label{classTMainWindow_aa2bfdcb0732a803e99b73f49a497d761}} 
+\index{TMainWindow@{TMainWindow}!SaveMBaseValue@{SaveMBaseValue}}
+\index{SaveMBaseValue@{SaveMBaseValue}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMBaseValue}{SaveMBaseValue}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MBase\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a9fbaafcbfbe1fbfbb2443002eb35f1be}\label{classTMainWindow_a9fbaafcbfbe1fbfbb2443002eb35f1be}} 
+\index{TMainWindow@{TMainWindow}!SaveMDescription@{SaveMDescription}}
+\index{SaveMDescription@{SaveMDescription}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMDescription}{SaveMDescription}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MDescription (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ac4bcd216e46d37c00466d25669b90c78}\label{classTMainWindow_ac4bcd216e46d37c00466d25669b90c78}} 
+\index{TMainWindow@{TMainWindow}!SaveMeasurements@{SaveMeasurements}}
+\index{SaveMeasurements@{SaveMeasurements}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMeasurements()}{SaveMeasurements()}}
+{\footnotesize\ttfamily bool TMain\+Window\+::\+Save\+Measurements (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{QString \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a48669616edf394f90ee8da95517b7b8b}\label{classTMainWindow_a48669616edf394f90ee8da95517b7b8b}} 
+\index{TMainWindow@{TMainWindow}!SaveMFullName@{SaveMFullName}}
+\index{SaveMFullName@{SaveMFullName}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMFullName}{SaveMFullName}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MFull\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aee231ebfc48e5791a3bd8cd8ff625032}\label{classTMainWindow_aee231ebfc48e5791a3bd8cd8ff625032}} 
+\index{TMainWindow@{TMainWindow}!SaveMHeightIncrease@{SaveMHeightIncrease}}
+\index{SaveMHeightIncrease@{SaveMHeightIncrease}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMHeightIncrease}{SaveMHeightIncrease}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MHeight\+Increase (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a6205c4c9d5700a6b3393c17ca03e73a6}\label{classTMainWindow_a6205c4c9d5700a6b3393c17ca03e73a6}} 
+\index{TMainWindow@{TMainWindow}!SaveMName@{SaveMName}}
+\index{SaveMName@{SaveMName}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMName}{SaveMName}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MName (\begin{DoxyParamCaption}\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aac9bbc243dc1777087c7904b6c70c5c5}\label{classTMainWindow_aac9bbc243dc1777087c7904b6c70c5c5}} 
+\index{TMainWindow@{TMainWindow}!SaveMSizeIncrease@{SaveMSizeIncrease}}
+\index{SaveMSizeIncrease@{SaveMSizeIncrease}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMSizeIncrease}{SaveMSizeIncrease}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MSize\+Increase (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a57f43ccb6f33fe78dcfe0094d2f1b1b9}\label{classTMainWindow_a57f43ccb6f33fe78dcfe0094d2f1b1b9}} 
+\index{TMainWindow@{TMainWindow}!SaveMValue@{SaveMValue}}
+\index{SaveMValue@{SaveMValue}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveMValue}{SaveMValue}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+MValue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ad46e5b6f25d87b30d07c5f8ce3f63b9e}\label{classTMainWindow_ad46e5b6f25d87b30d07c5f8ce3f63b9e}} 
+\index{TMainWindow@{TMainWindow}!SaveNotes@{SaveNotes}}
+\index{SaveNotes@{SaveNotes}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SaveNotes}{SaveNotes}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+Notes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a514eec7050b066740fd378d982c29e1a}\label{classTMainWindow_a514eec7050b066740fd378d982c29e1a}} 
+\index{TMainWindow@{TMainWindow}!SavePMSystem@{SavePMSystem}}
+\index{SavePMSystem@{SavePMSystem}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SavePMSystem}{SavePMSystem}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Save\+PMSystem (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a91b1f81aaf4b4e363570bfbcfdd98ee8}\label{classTMainWindow_a91b1f81aaf4b4e363570bfbcfdd98ee8}} 
+\index{TMainWindow@{TMainWindow}!SetBaseMHeight@{SetBaseMHeight}}
+\index{SetBaseMHeight@{SetBaseMHeight}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetBaseMHeight()}{SetBaseMHeight()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+Base\+MHeight (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTMainWindow_a0043bdd7863d4d2c25810e68554d4a59}\label{classTMainWindow_a0043bdd7863d4d2c25810e68554d4a59}} 
+\index{TMainWindow@{TMainWindow}!SetBaseMSize@{SetBaseMSize}}
+\index{SetBaseMSize@{SetBaseMSize}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetBaseMSize()}{SetBaseMSize()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+Base\+MSize (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTMainWindow_aa0eb38bc08fb4cbfbd4e3ec31cfcc08a}\label{classTMainWindow_aa0eb38bc08fb4cbfbd4e3ec31cfcc08a}} 
+\index{TMainWindow@{TMainWindow}!SetCurrentFile@{SetCurrentFile}}
+\index{SetCurrentFile@{SetCurrentFile}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetCurrentFile()}{SetCurrentFile()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+Current\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a836eb87be514a2d79a16d4b17a23f22c}\label{classTMainWindow_a836eb87be514a2d79a16d4b17a23f22c}} 
+\index{TMainWindow@{TMainWindow}!SetDecimals@{SetDecimals}}
+\index{SetDecimals@{SetDecimals}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetDecimals()}{SetDecimals()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+Decimals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0c42381917843e80f4778d53130a2d4b}\label{classTMainWindow_a0c42381917843e80f4778d53130a2d4b}} 
+\index{TMainWindow@{TMainWindow}!SetDefaultHeight@{SetDefaultHeight}}
+\index{SetDefaultHeight@{SetDefaultHeight}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetDefaultHeight()}{SetDefaultHeight()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+Default\+Height (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a5402aedf5eb63da7abb664a194dee5d1}\label{classTMainWindow_a5402aedf5eb63da7abb664a194dee5d1}} 
+\index{TMainWindow@{TMainWindow}!SetDefaultSize@{SetDefaultSize}}
+\index{SetDefaultSize@{SetDefaultSize}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetDefaultSize()}{SetDefaultSize()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+Default\+Size (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aaaa2f06695035dfa8d4eacbf0b67b389}\label{classTMainWindow_aaaa2f06695035dfa8d4eacbf0b67b389}} 
+\index{TMainWindow@{TMainWindow}!SetGradationList@{SetGradationList}}
+\index{SetGradationList@{SetGradationList}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetGradationList()}{SetGradationList()}}
+{\footnotesize\ttfamily QCombo\+Box $\ast$ TMain\+Window\+::\+Set\+Gradation\+List (\begin{DoxyParamCaption}\item[{QLabel $\ast$}]{label,  }\item[{const QString\+List \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a897c66ea85d4c2d7c6fc06f1319dcaeb}\label{classTMainWindow_a897c66ea85d4c2d7c6fc06f1319dcaeb}} 
+\index{TMainWindow@{TMainWindow}!SetPUnit@{SetPUnit}}
+\index{SetPUnit@{SetPUnit}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetPUnit()}{SetPUnit()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Set\+PUnit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{unit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTMainWindow_a1d0dcefc7926b40766fcf702ebe7c03c}\label{classTMainWindow_a1d0dcefc7926b40766fcf702ebe7c03c}} 
+\index{TMainWindow@{TMainWindow}!SetupMenu@{SetupMenu}}
+\index{SetupMenu@{SetupMenu}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{SetupMenu()}{SetupMenu()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Setup\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ab570e7c5dcdefe1dc2b98bce52a6ec1f}\label{classTMainWindow_ab570e7c5dcdefe1dc2b98bce52a6ec1f}} 
+\index{TMainWindow@{TMainWindow}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily void TMain\+Window\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTMainWindow_a52d2b0cbfdd7728690418a99609b2aa3}\label{classTMainWindow_a52d2b0cbfdd7728690418a99609b2aa3}} 
+\index{TMainWindow@{TMainWindow}!ShowHeaderUnits@{ShowHeaderUnits}}
+\index{ShowHeaderUnits@{ShowHeaderUnits}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowHeaderUnits()}{ShowHeaderUnits()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+Header\+Units (\begin{DoxyParamCaption}\item[{QTable\+Widget $\ast$}]{table,  }\item[{int}]{column,  }\item[{const QString \&}]{unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aa90b2593d6b8edcb31dc9c74db5292fb}\label{classTMainWindow_aa90b2593d6b8edcb31dc9c74db5292fb}} 
+\index{TMainWindow@{TMainWindow}!ShowMData@{ShowMData}}
+\index{ShowMData@{ShowMData}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowMData}{ShowMData}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+MData (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ab9abe62057545b7ef233b224787d56b6}\label{classTMainWindow_ab9abe62057545b7ef233b224787d56b6}} 
+\index{TMainWindow@{TMainWindow}!ShowMDiagram@{ShowMDiagram}}
+\index{ShowMDiagram@{ShowMDiagram}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowMDiagram()}{ShowMDiagram()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+MDiagram (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a2e5344f257a070a0e8eb35b5992e0fd1}\label{classTMainWindow_a2e5344f257a070a0e8eb35b5992e0fd1}} 
+\index{TMainWindow@{TMainWindow}!ShowNewMData@{ShowNewMData}}
+\index{ShowNewMData@{ShowNewMData}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowNewMData()}{ShowNewMData()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+New\+MData (\begin{DoxyParamCaption}\item[{bool}]{fresh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a7896b04a2cc7b260e581a0d9fd61ed8b}\label{classTMainWindow_a7896b04a2cc7b260e581a0d9fd61ed8b}} 
+\index{TMainWindow@{TMainWindow}!ShowToolTip@{ShowToolTip}}
+\index{ShowToolTip@{ShowToolTip}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowToolTip}{ShowToolTip}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+Tool\+Tip (\begin{DoxyParamCaption}\item[{const QString \&}]{tool\+Tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_a67df92de8ca6c50425e58e34f9ba429c}\label{classTMainWindow_a67df92de8ca6c50425e58e34f9ba429c}} 
+\index{TMainWindow@{TMainWindow}!ShowUnits@{ShowUnits}}
+\index{ShowUnits@{ShowUnits}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowUnits()}{ShowUnits()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ad690a6e383eb1d92c3776aaf2c548e13}\label{classTMainWindow_ad690a6e383eb1d92c3776aaf2c548e13}} 
+\index{TMainWindow@{TMainWindow}!ShowWindow@{ShowWindow}}
+\index{ShowWindow@{ShowWindow}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowWindow}{ShowWindow}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Show\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_aff8064da1b6ae0ff707bdfe3d0627576}\label{classTMainWindow_aff8064da1b6ae0ff707bdfe3d0627576}} 
+\index{TMainWindow@{TMainWindow}!ToolBarStyles@{ToolBarStyles}}
+\index{ToolBarStyles@{ToolBarStyles}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ToolBarStyles}{ToolBarStyles}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Tool\+Bar\+Styles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_add7603a3351a0f41ff664d7b616f0358}\label{classTMainWindow_add7603a3351a0f41ff664d7b616f0358}} 
+\index{TMainWindow@{TMainWindow}!updateGroups@{updateGroups}}
+\index{updateGroups@{updateGroups}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{updateGroups}{updateGroups}}
+{\footnotesize\ttfamily void TMain\+Window\+::update\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classTMainWindow_ae297426e17d9198df77489e6fd232b0c}\label{classTMainWindow_ae297426e17d9198df77489e6fd232b0c}} 
+\index{TMainWindow@{TMainWindow}!UpdatePadlock@{UpdatePadlock}}
+\index{UpdatePadlock@{UpdatePadlock}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{UpdatePadlock()}{UpdatePadlock()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Update\+Padlock (\begin{DoxyParamCaption}\item[{bool}]{ro }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_abdf2af17c55c6d4b1dd9c49e3e5cdc6c}\label{classTMainWindow_abdf2af17c55c6d4b1dd9c49e3e5cdc6c}} 
+\index{TMainWindow@{TMainWindow}!UpdatePatternUnit@{UpdatePatternUnit}}
+\index{UpdatePatternUnit@{UpdatePatternUnit}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{UpdatePatternUnit()}{UpdatePatternUnit()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Update\+Pattern\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a153363a0a6c74a814cdbc78df242be66}\label{classTMainWindow_a153363a0a6c74a814cdbc78df242be66}} 
+\index{TMainWindow@{TMainWindow}!UpdateRecentFileActions@{UpdateRecentFileActions}}
+\index{UpdateRecentFileActions@{UpdateRecentFileActions}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{UpdateRecentFileActions()}{UpdateRecentFileActions()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Update\+Recent\+File\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a40fd92b6271025f93257a1c81b976285}\label{classTMainWindow_a40fd92b6271025f93257a1c81b976285}} 
+\index{TMainWindow@{TMainWindow}!UpdateWindowTitle@{UpdateWindowTitle}}
+\index{UpdateWindowTitle@{UpdateWindowTitle}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{UpdateWindowTitle()}{UpdateWindowTitle()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Update\+Window\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a5b4ea54c3a4cb7c61263aadd10398714}\label{classTMainWindow_a5b4ea54c3a4cb7c61263aadd10398714}} 
+\index{TMainWindow@{TMainWindow}!WriteSettings@{WriteSettings}}
+\index{WriteSettings@{WriteSettings}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{WriteSettings()}{WriteSettings()}}
+{\footnotesize\ttfamily void TMain\+Window\+::\+Write\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a3b0ff4484c24d5dfb96c0c14d97eada6}\label{classTMainWindow_a3b0ff4484c24d5dfb96c0c14d97eada6}} 
+\index{TMainWindow@{TMainWindow}!zoomToSelected@{zoomToSelected}}
+\index{zoomToSelected@{zoomToSelected}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{zoomToSelected}{zoomToSelected}}
+{\footnotesize\ttfamily void TMain\+Window\+::zoom\+To\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTMainWindow_a0fa4d8c8a8c63f81911cd9be9247b963}\label{classTMainWindow_a0fa4d8c8a8c63f81911cd9be9247b963}} 
+\index{TMainWindow@{TMainWindow}!actionDockDiagram@{actionDockDiagram}}
+\index{actionDockDiagram@{actionDockDiagram}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{actionDockDiagram}{actionDockDiagram}}
+{\footnotesize\ttfamily QAction$\ast$ TMain\+Window\+::action\+Dock\+Diagram\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aa41d79eb8d54afa5159119732b7d3d21}\label{classTMainWindow_aa41d79eb8d54afa5159119732b7d3d21}} 
+\index{TMainWindow@{TMainWindow}!comboBoxUnits@{comboBoxUnits}}
+\index{comboBoxUnits@{comboBoxUnits}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{comboBoxUnits}{comboBoxUnits}}
+{\footnotesize\ttfamily QCombo\+Box$\ast$ TMain\+Window\+::combo\+Box\+Units\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a104b743dac5652a8eee54bae506ee158}\label{classTMainWindow_a104b743dac5652a8eee54bae506ee158}} 
+\index{TMainWindow@{TMainWindow}!curFile@{curFile}}
+\index{curFile@{curFile}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{curFile}{curFile}}
+{\footnotesize\ttfamily QString TMain\+Window\+::cur\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a89aba9450e50632020a38fce1634582a}\label{classTMainWindow_a89aba9450e50632020a38fce1634582a}} 
+\index{TMainWindow@{TMainWindow}!currentHeight@{currentHeight}}
+\index{currentHeight@{currentHeight}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{currentHeight}{currentHeight}}
+{\footnotesize\ttfamily qreal TMain\+Window\+::current\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a2312005fe358d159eea977810e411751}\label{classTMainWindow_a2312005fe358d159eea977810e411751}} 
+\index{TMainWindow@{TMainWindow}!currentSize@{currentSize}}
+\index{currentSize@{currentSize}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{currentSize}{currentSize}}
+{\footnotesize\ttfamily qreal TMain\+Window\+::current\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a160e232ffd21249944a4fb0628a8f9e3}\label{classTMainWindow_a160e232ffd21249944a4fb0628a8f9e3}} 
+\index{TMainWindow@{TMainWindow}!data@{data}}
+\index{data@{data}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ TMain\+Window\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a274f807d4973e16dce8bb4f4d0df7c92}\label{classTMainWindow_a274f807d4973e16dce8bb4f4d0df7c92}} 
+\index{TMainWindow@{TMainWindow}!dockDiagramVisible@{dockDiagramVisible}}
+\index{dockDiagramVisible@{dockDiagramVisible}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{dockDiagramVisible}{dockDiagramVisible}}
+{\footnotesize\ttfamily bool TMain\+Window\+::dock\+Diagram\+Visible\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a126150f4ac646d1509b4bcbec68e1d28}\label{classTMainWindow_a126150f4ac646d1509b4bcbec68e1d28}} 
+\index{TMainWindow@{TMainWindow}!formulaBaseHeight@{formulaBaseHeight}}
+\index{formulaBaseHeight@{formulaBaseHeight}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeight}{formulaBaseHeight}}
+{\footnotesize\ttfamily int TMain\+Window\+::formula\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a89395e0e84f75e7d8472c6be49e3aaf8}\label{classTMainWindow_a89395e0e84f75e7d8472c6be49e3aaf8}} 
+\index{TMainWindow@{TMainWindow}!gradationHeights@{gradationHeights}}
+\index{gradationHeights@{gradationHeights}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{gradationHeights}{gradationHeights}}
+{\footnotesize\ttfamily QCombo\+Box$\ast$ TMain\+Window\+::gradation\+Heights\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a14ac82f49bb8cc119702962c101b6d3b}\label{classTMainWindow_a14ac82f49bb8cc119702962c101b6d3b}} 
+\index{TMainWindow@{TMainWindow}!gradationSizes@{gradationSizes}}
+\index{gradationSizes@{gradationSizes}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{gradationSizes}{gradationSizes}}
+{\footnotesize\ttfamily QCombo\+Box$\ast$ TMain\+Window\+::gradation\+Sizes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a3b0d4c12f6c831035fc5b96944a68c7b}\label{classTMainWindow_a3b0d4c12f6c831035fc5b96944a68c7b}} 
+\index{TMainWindow@{TMainWindow}!hackedWidgets@{hackedWidgets}}
+\index{hackedWidgets@{hackedWidgets}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{hackedWidgets}{hackedWidgets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QObject $\ast$$>$ TMain\+Window\+::hacked\+Widgets\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a59a263ee5e02b1b619560ae2637f769d}\label{classTMainWindow_a59a263ee5e02b1b619560ae2637f769d}} 
+\index{TMainWindow@{TMainWindow}!individualMeasurements@{individualMeasurements}}
+\index{individualMeasurements@{individualMeasurements}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{individualMeasurements}{individualMeasurements}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVMeasurements}{VMeasurements}}$\ast$ TMain\+Window\+::individual\+Measurements\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a7bd330097fd218f428a8a1c34fcc9a66}\label{classTMainWindow_a7bd330097fd218f428a8a1c34fcc9a66}} 
+\index{TMainWindow@{TMainWindow}!isInitialized@{isInitialized}}
+\index{isInitialized@{isInitialized}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{isInitialized}{isInitialized}}
+{\footnotesize\ttfamily bool TMain\+Window\+::is\+Initialized\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_af7a4bb3195161c9d90b103915b2d50ab}\label{classTMainWindow_af7a4bb3195161c9d90b103915b2d50ab}} 
+\index{TMainWindow@{TMainWindow}!labelGradationHeights@{labelGradationHeights}}
+\index{labelGradationHeights@{labelGradationHeights}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{labelGradationHeights}{labelGradationHeights}}
+{\footnotesize\ttfamily QLabel$\ast$ TMain\+Window\+::label\+Gradation\+Heights\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a0e20ce68bff8a777dbb513527c5c7c2e}\label{classTMainWindow_a0e20ce68bff8a777dbb513527c5c7c2e}} 
+\index{TMainWindow@{TMainWindow}!labelGradationSizes@{labelGradationSizes}}
+\index{labelGradationSizes@{labelGradationSizes}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{labelGradationSizes}{labelGradationSizes}}
+{\footnotesize\ttfamily QLabel$\ast$ TMain\+Window\+::label\+Gradation\+Sizes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aed841e8627190268620c7c1149cf95c8}\label{classTMainWindow_aed841e8627190268620c7c1149cf95c8}} 
+\index{TMainWindow@{TMainWindow}!labelPatternUnit@{labelPatternUnit}}
+\index{labelPatternUnit@{labelPatternUnit}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{labelPatternUnit}{labelPatternUnit}}
+{\footnotesize\ttfamily QLabel$\ast$ TMain\+Window\+::label\+Pattern\+Unit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_aedb68abec30fcf8edb09d6fe039c5dfd}\label{classTMainWindow_aedb68abec30fcf8edb09d6fe039c5dfd}} 
+\index{TMainWindow@{TMainWindow}!lock@{lock}}
+\index{lock@{lock}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{lock}{lock}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classVLockGuard}{VLock\+Guard}}$<$char$>$ $>$ TMain\+Window\+::lock\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ad6d989710d406f9feac9eb47bc6ab1b5}\label{classTMainWindow_ad6d989710d406f9feac9eb47bc6ab1b5}} 
+\index{TMainWindow@{TMainWindow}!mIsReadOnly@{mIsReadOnly}}
+\index{mIsReadOnly@{mIsReadOnly}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{mIsReadOnly}{mIsReadOnly}}
+{\footnotesize\ttfamily bool TMain\+Window\+::m\+Is\+Read\+Only\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a9944451dc8bf731e00d9a3dc2e566e95}\label{classTMainWindow_a9944451dc8bf731e00d9a3dc2e566e95}} 
+\index{TMainWindow@{TMainWindow}!mType@{mType}}
+\index{mType@{mType}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{mType}{mType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} TMain\+Window\+::m\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_accf238814ac28528249e815ed9b7fad2}\label{classTMainWindow_accf238814ac28528249e815ed9b7fad2}} 
+\index{TMainWindow@{TMainWindow}!mUnit@{mUnit}}
+\index{mUnit@{mUnit}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{mUnit}{mUnit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} TMain\+Window\+::m\+Unit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_ab9678491127cea66f8c861ea968a794b}\label{classTMainWindow_ab9678491127cea66f8c861ea968a794b}} 
+\index{TMainWindow@{TMainWindow}!pUnit@{pUnit}}
+\index{pUnit@{pUnit}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{pUnit}{pUnit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} TMain\+Window\+::p\+Unit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a4bd80077d1d242346b32050522a87c95}\label{classTMainWindow_a4bd80077d1d242346b32050522a87c95}} 
+\index{TMainWindow@{TMainWindow}!recentFileActs@{recentFileActs}}
+\index{recentFileActs@{recentFileActs}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{recentFileActs}{recentFileActs}}
+{\footnotesize\ttfamily QAction$\ast$ TMain\+Window\+::recent\+File\+Acts\mbox{[}\mbox{\hyperlink{classTMainWindow_ae8d2b6b8d2c58e95e6cfad2634dd782ea93e479ed8d33820bb57a4cdff04ed8b5}{Max\+Recent\+Files}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_afce377405d6da40a1be29b05539714ee}\label{classTMainWindow_afce377405d6da40a1be29b05539714ee}} 
+\index{TMainWindow@{TMainWindow}!search@{search}}
+\index{search@{search}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{search}{search}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$\mbox{\hyperlink{classVTableSearch}{VTable\+Search}}$>$ TMain\+Window\+::search\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a9b157387bff7a5593d85ac9e13256037}\label{classTMainWindow_a9b157387bff7a5593d85ac9e13256037}} 
+\index{TMainWindow@{TMainWindow}!separatorAct@{separatorAct}}
+\index{separatorAct@{separatorAct}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{separatorAct}{separatorAct}}
+{\footnotesize\ttfamily QAction$\ast$ TMain\+Window\+::separator\+Act\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTMainWindow_a33152f7de184585f840578cb99450bfa}\label{classTMainWindow_a33152f7de184585f840578cb99450bfa}} 
+\index{TMainWindow@{TMainWindow}!ui@{ui}}
+\index{ui@{ui}!TMainWindow@{TMainWindow}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+TMain\+Window$\ast$ TMain\+Window\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamlyme/\mbox{\hyperlink{tmainwindow_8h}{tmainwindow.\+h}}\item 
+src/app/seamlyme/\mbox{\hyperlink{tmainwindow_8cpp}{tmainwindow.\+cpp}}\end{DoxyCompactItemize}

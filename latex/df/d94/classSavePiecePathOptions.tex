@@ -1,0 +1,122 @@
+\hypertarget{classSavePiecePathOptions}{}\doxysection{Save\+Piece\+Path\+Options Class Reference}
+\label{classSavePiecePathOptions}\index{SavePiecePathOptions@{SavePiecePathOptions}}
+
+
+{\ttfamily \#include $<$savepiecepathoptions.\+h$>$}
+
+Inheritance diagram for Save\+Piece\+Path\+Options\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/d94/classSavePiecePathOptions}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSavePiecePathOptions_abb05d13d48e686b82426859a2461fa45}{Save\+Piece\+Path\+Options}} (const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&old\+Path, const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&new\+Path, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVUndoCommand_a59f91873c1db4adde66d943abc043fa0}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, quint32 \mbox{\hyperlink{classSavePiecePathOptions_a8a6f34f372106a15ee7a7a6a41e1973f}{id}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classSavePiecePathOptions_af847b540978a07a6f52a27459ec54d8b}{$\sim$\+Save\+Piece\+Path\+Options}} ()
+\item 
+virtual void \mbox{\hyperlink{classSavePiecePathOptions_a41bf086faa7ab9dc93bd86158616f55e}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classSavePiecePathOptions_a1d116357404d31a6218ad3fbf6412c12}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classSavePiecePathOptions_a4aecf20ac7c3201c30ce2e72fde88c73}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classSavePiecePathOptions_a8a6f34f372106a15ee7a7a6a41e1973f}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{classSavePiecePathOptions_a75235b15378d41717d5ab7ff52498e32}{Path\+Id}} () const
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{classSavePiecePathOptions_aa8a7cc3748d44f89c511f73ce5f21e66}{New\+Path}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{classSavePiecePathOptions_a1f6f4b6ff06bbeddd9044c4c9bffa116}{m\+\_\+old\+Path}}
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{classSavePiecePathOptions_ac58702d8ad8b7b393660857239bd46f7}{m\+\_\+new\+Path}}
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classSavePiecePathOptions_ac948aff489a71f05fd128b1dc916dda7}{m\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSavePiecePathOptions_abb05d13d48e686b82426859a2461fa45}\label{classSavePiecePathOptions_abb05d13d48e686b82426859a2461fa45}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!SavePiecePathOptions@{SavePiecePathOptions}}
+\index{SavePiecePathOptions@{SavePiecePathOptions}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{SavePiecePathOptions()}{SavePiecePathOptions()}}
+{\footnotesize\ttfamily Save\+Piece\+Path\+Options\+::\+Save\+Piece\+Path\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{old\+Path,  }\item[{const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{new\+Path,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_af847b540978a07a6f52a27459ec54d8b}\label{classSavePiecePathOptions_af847b540978a07a6f52a27459ec54d8b}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!````~SavePiecePathOptions@{$\sim$SavePiecePathOptions}}
+\index{````~SavePiecePathOptions@{$\sim$SavePiecePathOptions}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{$\sim$SavePiecePathOptions()}{~SavePiecePathOptions()}}
+{\footnotesize\ttfamily Save\+Piece\+Path\+Options\+::$\sim$\+Save\+Piece\+Path\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSavePiecePathOptions_a8a6f34f372106a15ee7a7a6a41e1973f}\label{classSavePiecePathOptions_a8a6f34f372106a15ee7a7a6a41e1973f}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!id@{id}}
+\index{id@{id}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Save\+Piece\+Path\+Options\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_a4aecf20ac7c3201c30ce2e72fde88c73}\label{classSavePiecePathOptions_a4aecf20ac7c3201c30ce2e72fde88c73}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Save\+Piece\+Path\+Options\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_aa8a7cc3748d44f89c511f73ce5f21e66}\label{classSavePiecePathOptions_aa8a7cc3748d44f89c511f73ce5f21e66}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!NewPath@{NewPath}}
+\index{NewPath@{NewPath}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{NewPath()}{NewPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} Save\+Piece\+Path\+Options\+::\+New\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_a75235b15378d41717d5ab7ff52498e32}\label{classSavePiecePathOptions_a75235b15378d41717d5ab7ff52498e32}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!PathId@{PathId}}
+\index{PathId@{PathId}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{PathId()}{PathId()}}
+{\footnotesize\ttfamily quint32 Save\+Piece\+Path\+Options\+::\+Path\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_a1d116357404d31a6218ad3fbf6412c12}\label{classSavePiecePathOptions_a1d116357404d31a6218ad3fbf6412c12}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!redo@{redo}}
+\index{redo@{redo}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Save\+Piece\+Path\+Options\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_a41bf086faa7ab9dc93bd86158616f55e}\label{classSavePiecePathOptions_a41bf086faa7ab9dc93bd86158616f55e}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!undo@{undo}}
+\index{undo@{undo}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Save\+Piece\+Path\+Options\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSavePiecePathOptions_ac948aff489a71f05fd128b1dc916dda7}\label{classSavePiecePathOptions_ac948aff489a71f05fd128b1dc916dda7}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ Save\+Piece\+Path\+Options\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_ac58702d8ad8b7b393660857239bd46f7}\label{classSavePiecePathOptions_ac58702d8ad8b7b393660857239bd46f7}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!m\_newPath@{m\_newPath}}
+\index{m\_newPath@{m\_newPath}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{m\_newPath}{m\_newPath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} Save\+Piece\+Path\+Options\+::m\+\_\+new\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSavePiecePathOptions_a1f6f4b6ff06bbeddd9044c4c9bffa116}\label{classSavePiecePathOptions_a1f6f4b6ff06bbeddd9044c4c9bffa116}} 
+\index{SavePiecePathOptions@{SavePiecePathOptions}!m\_oldPath@{m\_oldPath}}
+\index{m\_oldPath@{m\_oldPath}!SavePiecePathOptions@{SavePiecePathOptions}}
+\doxysubsubsection{\texorpdfstring{m\_oldPath}{m\_oldPath}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} Save\+Piece\+Path\+Options\+::m\+\_\+old\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/undocommands/\mbox{\hyperlink{savepiecepathoptions_8h}{savepiecepathoptions.\+h}}\item 
+src/libs/vtools/undocommands/\mbox{\hyperlink{savepiecepathoptions_8cpp}{savepiecepathoptions.\+cpp}}\end{DoxyCompactItemize}

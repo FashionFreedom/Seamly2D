@@ -1,0 +1,182 @@
+\hypertarget{classVPE_1_1VBoolProperty}{}\doxysection{VPE\+::VBool\+Property Class Reference}
+\label{classVPE_1_1VBoolProperty}\index{VPE::VBoolProperty@{VPE::VBoolProperty}}
+
+
+The \mbox{\hyperlink{classVPE_1_1VBoolProperty}{VBool\+Property}} can take two states\+: True or False.  
+
+
+
+
+{\ttfamily \#include $<$vboolproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::VBool\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/d02/classVPE_1_1VBoolProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VBoolProperty_aa8a1522574c47f3ac5687948c471b66a}{VBool\+Property}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VBoolProperty_a2570ead346d6cc6ce4cb5fb39d8fce84}{$\sim$\+VBool\+Property}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VBoolProperty_ad0b60ae5bfa07e42d9f9ba428aba2312}{data}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVPE_1_1VBoolProperty_a2062d983db2055ddcd1da9061d0bc365}{set\+Data}} (const QVariant \&\mbox{\hyperlink{classVPE_1_1VBoolProperty_ad0b60ae5bfa07e42d9f9ba428aba2312}{data}}, int role=Qt\+::\+Edit\+Role) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual Qt\+::\+Item\+Flags \mbox{\hyperlink{classVPE_1_1VBoolProperty_a568c75aa31f6397c3c4aba37dbc0ccd4}{flags}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns item flags. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPE_1_1VBoolProperty_a650fb54db76bfa86f7d964448dc65be5}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$ \mbox{\hyperlink{classVPE_1_1VBoolProperty_a49ed2213df114c4febf1abea4d4e006d}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$container=NULL) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static QVariant \mbox{\hyperlink{classVPE_1_1VBoolProperty_ad774968bc111f6af36671b72102f9e2a}{True\+Text}}
+\begin{DoxyCompactList}\small\item\em The (translatable) text displayed when the property is set to true (default\+: \char`\"{}\+True\char`\"{}) \end{DoxyCompactList}\item 
+static QVariant \mbox{\hyperlink{classVPE_1_1VBoolProperty_a7678cd03b526355c7ccf68300e23f5b6}{False\+Text}}
+\begin{DoxyCompactList}\small\item\em The (translatable) text displayed when the property is set to false (default\+: \char`\"{}\+False\char`\"{}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVPE_1_1VBoolProperty}{VBool\+Property}} can take two states\+: True or False. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_aa8a1522574c47f3ac5687948c471b66a}\label{classVPE_1_1VBoolProperty_aa8a1522574c47f3ac5687948c471b66a}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!VBoolProperty@{VBoolProperty}}
+\index{VBoolProperty@{VBoolProperty}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{VBoolProperty()}{VBoolProperty()}}
+{\footnotesize\ttfamily VPE\+::\+VBool\+Property\+::\+VBool\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_a2570ead346d6cc6ce4cb5fb39d8fce84}\label{classVPE_1_1VBoolProperty_a2570ead346d6cc6ce4cb5fb39d8fce84}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!````~VBoolProperty@{$\sim$VBoolProperty}}
+\index{````~VBoolProperty@{$\sim$VBoolProperty}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{$\sim$VBoolProperty()}{~VBoolProperty()}}
+{\footnotesize\ttfamily virtual VPE\+::\+VBool\+Property\+::$\sim$\+VBool\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_a49ed2213df114c4febf1abea4d4e006d}\label{classVPE_1_1VBoolProperty_a49ed2213df114c4febf1abea4d4e006d}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+VBool\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a03865ea193d5465fea60bb7f29ca02bf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_ad0b60ae5bfa07e42d9f9ba428aba2312}\label{classVPE_1_1VBoolProperty_ad0b60ae5bfa07e42d9f9ba428aba2312}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!data@{data}}
+\index{data@{data}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VBool\+Property\+::data (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}},  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the data how it should be displayed. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a21a184d546b92bb2c553ebf7d9d58448}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_a568c75aa31f6397c3c4aba37dbc0ccd4}\label{classVPE_1_1VBoolProperty_a568c75aa31f6397c3c4aba37dbc0ccd4}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!flags@{flags}}
+\index{flags@{flags}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags VPE\+::\+VBool\+Property\+::flags (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns item flags. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a11c4d64c0bcd4c2dd4838d77e9c734e1}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_a2062d983db2055ddcd1da9061d0bc365}\label{classVPE_1_1VBoolProperty_a2062d983db2055ddcd1da9061d0bc365}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!setData@{setData}}
+\index{setData@{setData}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily bool VPE\+::\+VBool\+Property\+::set\+Data (\begin{DoxyParamCaption}\item[{const QVariant \&}]{data,  }\item[{int}]{role = {\ttfamily Qt\+:\+:EditRole} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This is used by the model to set the data 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to set \\
+\hline
+{\em role} & The role. Default is Qt\+::\+Edit\+Role \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true, if the data was changed, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a1804ba55faa0ee9bd0852041db81997b}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_a650fb54db76bfa86f7d964448dc65be5}\label{classVPE_1_1VBoolProperty_a650fb54db76bfa86f7d964448dc65be5}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!type@{type}}
+\index{type@{type}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+VBool\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_a7678cd03b526355c7ccf68300e23f5b6}\label{classVPE_1_1VBoolProperty_a7678cd03b526355c7ccf68300e23f5b6}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!FalseText@{FalseText}}
+\index{FalseText@{FalseText}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{FalseText}{FalseText}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VBool\+Property\+::\+False\+Text\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The (translatable) text displayed when the property is set to false (default\+: \char`\"{}\+False\char`\"{}) 
+
+\mbox{\Hypertarget{classVPE_1_1VBoolProperty_ad774968bc111f6af36671b72102f9e2a}\label{classVPE_1_1VBoolProperty_ad774968bc111f6af36671b72102f9e2a}} 
+\index{VPE::VBoolProperty@{VPE::VBoolProperty}!TrueText@{TrueText}}
+\index{TrueText@{TrueText}!VPE::VBoolProperty@{VPE::VBoolProperty}}
+\doxysubsubsection{\texorpdfstring{TrueText}{TrueText}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VBool\+Property\+::\+True\+Text\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The (translatable) text displayed when the property is set to true (default\+: \char`\"{}\+True\char`\"{}) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vboolproperty_8h}{vboolproperty.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vboolproperty_8cpp}{vboolproperty.\+cpp}}\end{DoxyCompactItemize}

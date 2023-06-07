@@ -1,0 +1,162 @@
+\hypertarget{classVFormulaPropertyEditor}{}\doxysection{VFormula\+Property\+Editor Class Reference}
+\label{classVFormulaPropertyEditor}\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+
+
+{\ttfamily \#include $<$vformulapropertyeditor.\+h$>$}
+
+Inheritance diagram for VFormula\+Property\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d74/classVFormulaPropertyEditor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVFormulaPropertyEditor_a1c1417889591feca1db7205cff223197}{Set\+Formula}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&\mbox{\hyperlink{classVFormulaPropertyEditor_ae171599db97ef1c9c1d25b1ff37022ed}{formula}})
+\begin{DoxyCompactList}\small\item\em Sets the color of the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVFormulaPropertyEditor_a51fc0dd85c1ef82ed420d99bf5fbe7a0}{data\+Changed\+By\+User}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&\mbox{\hyperlink{classVFormulaPropertyEditor_ac7815ca75efffed36b2b35f2722d4c6f}{Get\+Formula}}, \mbox{\hyperlink{classVFormulaPropertyEditor}{VFormula\+Property\+Editor}} $\ast$editor)
+\begin{DoxyCompactList}\small\item\em This is emitted, when the user changes the color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVFormulaPropertyEditor_a13b3ae6da745f2b7fba9d1e8df552f5d}{data\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVFormulaPropertyEditor_a6c0f8bea355bff5f2fce8efc909bf7fe}{VFormula\+Property\+Editor}} (QWidget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor taking a widget as parent. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVFormulaPropertyEditor_ac6c4092d01c2e1f7671cdf68542b6c87}{$\sim$\+VFormula\+Property\+Editor}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVFormulaPropertyEditor_ac7815ca75efffed36b2b35f2722d4c6f}{Get\+Formula}} () const
+\begin{DoxyCompactList}\small\item\em Returns the formula currently set. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVFormulaPropertyEditor_a5dd1a0b84a4659516c71db866199b72d}{event\+Filter}} (QObject $\ast$obj, QEvent $\ast$ev) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Needed for proper event handling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVFormulaPropertyEditor_a5664fe51ceed9eeffa748eb9eb07c005}{on\+Tool\+Button\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVFormulaPropertyEditor_ae171599db97ef1c9c1d25b1ff37022ed}{formula}}
+\item 
+QTool\+Button $\ast$ \mbox{\hyperlink{classVFormulaPropertyEditor_a319dfe52781bcf5fdd50813a5b85aeb2}{tool\+Button}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classVFormulaPropertyEditor_aea64a89fc3c83ab26d7706ce33b1623d}{text\+Label}}
+\item 
+QSpacer\+Item $\ast$ \mbox{\hyperlink{classVFormulaPropertyEditor_aaf46cd8de8eebab5b8277c3a10c0867b}{spacer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a6c0f8bea355bff5f2fce8efc909bf7fe}\label{classVFormulaPropertyEditor_a6c0f8bea355bff5f2fce8efc909bf7fe}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{VFormulaPropertyEditor()}{VFormulaPropertyEditor()}}
+{\footnotesize\ttfamily VFormula\+Property\+Editor\+::\+VFormula\+Property\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor taking a widget as parent. 
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_ac6c4092d01c2e1f7671cdf68542b6c87}\label{classVFormulaPropertyEditor_ac6c4092d01c2e1f7671cdf68542b6c87}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!````~VFormulaPropertyEditor@{$\sim$VFormulaPropertyEditor}}
+\index{````~VFormulaPropertyEditor@{$\sim$VFormulaPropertyEditor}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$VFormulaPropertyEditor()}{~VFormulaPropertyEditor()}}
+{\footnotesize\ttfamily virtual VFormula\+Property\+Editor\+::$\sim$\+VFormula\+Property\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a13b3ae6da745f2b7fba9d1e8df552f5d}\label{classVFormulaPropertyEditor_a13b3ae6da745f2b7fba9d1e8df552f5d}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!dataChanged@{dataChanged}}
+\index{dataChanged@{dataChanged}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{dataChanged}{dataChanged}}
+{\footnotesize\ttfamily void VFormula\+Property\+Editor\+::data\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a51fc0dd85c1ef82ed420d99bf5fbe7a0}\label{classVFormulaPropertyEditor_a51fc0dd85c1ef82ed420d99bf5fbe7a0}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!dataChangedByUser@{dataChangedByUser}}
+\index{dataChangedByUser@{dataChangedByUser}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{dataChangedByUser}{dataChangedByUser}}
+{\footnotesize\ttfamily void VFormula\+Property\+Editor\+::data\+Changed\+By\+User (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{Get\+Formula,  }\item[{\mbox{\hyperlink{classVFormulaPropertyEditor}{VFormula\+Property\+Editor}} $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This is emitted, when the user changes the color. 
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a5dd1a0b84a4659516c71db866199b72d}\label{classVFormulaPropertyEditor_a5dd1a0b84a4659516c71db866199b72d}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool VFormula\+Property\+Editor\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{obj,  }\item[{QEvent $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Needed for proper event handling. 
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_ac7815ca75efffed36b2b35f2722d4c6f}\label{classVFormulaPropertyEditor_ac7815ca75efffed36b2b35f2722d4c6f}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VFormula\+Property\+Editor\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the formula currently set. 
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a5664fe51ceed9eeffa748eb9eb07c005}\label{classVFormulaPropertyEditor_a5664fe51ceed9eeffa748eb9eb07c005}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!onToolButtonClicked@{onToolButtonClicked}}
+\index{onToolButtonClicked@{onToolButtonClicked}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{onToolButtonClicked}{onToolButtonClicked}}
+{\footnotesize\ttfamily void VFormula\+Property\+Editor\+::on\+Tool\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a1c1417889591feca1db7205cff223197}\label{classVFormulaPropertyEditor_a1c1417889591feca1db7205cff223197}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{SetFormula}{SetFormula}}
+{\footnotesize\ttfamily void VFormula\+Property\+Editor\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Sets the color of the widget. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVFormulaPropertyEditor_ae171599db97ef1c9c1d25b1ff37022ed}\label{classVFormulaPropertyEditor_ae171599db97ef1c9c1d25b1ff37022ed}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!formula@{formula}}
+\index{formula@{formula}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{formula}{formula}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VFormula\+Property\+Editor\+::formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_aaf46cd8de8eebab5b8277c3a10c0867b}\label{classVFormulaPropertyEditor_aaf46cd8de8eebab5b8277c3a10c0867b}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!spacer@{spacer}}
+\index{spacer@{spacer}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{spacer}{spacer}}
+{\footnotesize\ttfamily QSpacer\+Item$\ast$ VFormula\+Property\+Editor\+::spacer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_aea64a89fc3c83ab26d7706ce33b1623d}\label{classVFormulaPropertyEditor_aea64a89fc3c83ab26d7706ce33b1623d}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!textLabel@{textLabel}}
+\index{textLabel@{textLabel}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{textLabel}{textLabel}}
+{\footnotesize\ttfamily QLabel$\ast$ VFormula\+Property\+Editor\+::text\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormulaPropertyEditor_a319dfe52781bcf5fdd50813a5b85aeb2}\label{classVFormulaPropertyEditor_a319dfe52781bcf5fdd50813a5b85aeb2}} 
+\index{VFormulaPropertyEditor@{VFormulaPropertyEditor}!toolButton@{toolButton}}
+\index{toolButton@{toolButton}!VFormulaPropertyEditor@{VFormulaPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{toolButton}{toolButton}}
+{\footnotesize\ttfamily QTool\+Button$\ast$ VFormula\+Property\+Editor\+::tool\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vformulapropertyeditor_8h}{vformulapropertyeditor.\+h}}\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vformulapropertyeditor_8cpp}{vformulapropertyeditor.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,197 @@
+\hypertarget{classDRW__3Dface}{}\doxysection{DRW\+\_\+3\+Dface Class Reference}
+\label{classDRW__3Dface}\index{DRW\_3Dface@{DRW\_3Dface}}
+
+
+Class to handle 3dface entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+3\+Dface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{d6/dc5/classDRW__3Dface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0c}{Invisible\+Edge\+Flags}} \{ \newline
+\mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca2f6bfba56a1da6524ddecdbefe83bc7f}{No\+Edge}} = 0x00
+, \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0cace4991f0dac83b051345939c5def0d1d}{First\+Edge}} = 0x01
+, \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0caf555393c18d3c48bf2479aca8db9ef26}{Secod\+Edge}} = 0x02
+, \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca869c4164f2a6b0fca998a62516c36121}{Third\+Edge}} = 0x04
+, \newline
+\mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca3f986c623d6f6cad9dd05b533c1d481c}{Fourth\+Edge}} = 0x08
+, \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca67efca932fc9cf56820bc4052d363ed4}{All\+Edges}} = 0x0F
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__3Dface_a554258e40555075e3c36507a2bad6077}{DRW\+\_\+3\+Dface}} ()
+\item 
+virtual void \mbox{\hyperlink{classDRW__3Dface_ab1632466a8dc3dff5295e09b6a893229}{apply\+Extrusion}} ()
+\item 
+const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{classDRW__3Dface_a2b60773c49fe59454907785d9bbc019a}{first\+Corner}} () const
+\begin{DoxyCompactList}\small\item\em first corner in WCS \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{classDRW__3Dface_a6e74cbfe44a7fc8fd55548d902e7cc97}{second\+Corner}} () const
+\begin{DoxyCompactList}\small\item\em second corner in WCS \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{classDRW__3Dface_aad4a5e830705139b4ebac89f7de1fd3f}{third\+Corner}} () const
+\begin{DoxyCompactList}\small\item\em third corner in WCS \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{classDRW__3Dface_a322a1610f887d99dbe810f901cbcf5bb}{fourth\+Corner}} () const
+\begin{DoxyCompactList}\small\item\em fourth corner in WCS \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0c}{Invisible\+Edge\+Flags}} \mbox{\hyperlink{classDRW__3Dface_ac756697b3504d18985bb945711cc23bd}{edge\+Flags}} () const
+\begin{DoxyCompactList}\small\item\em edge visibility flags \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDRW__3Dface_a0fbb465670025bbd116aef1804fa5b44}{invisibleflag}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__3Dface_a841b20016d7bf6d3221aa690fb477076}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em interpret code in dxf reading process or dispatch to inherited class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle 3dface entity. 
+
+Class to handle 3dface entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0c}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0c}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!InvisibleEdgeFlags@{InvisibleEdgeFlags}}
+\index{InvisibleEdgeFlags@{InvisibleEdgeFlags}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{InvisibleEdgeFlags}{InvisibleEdgeFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0c}{DRW\+\_\+3\+Dface\+::\+Invisible\+Edge\+Flags}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoEdge@{NoEdge}!DRW\_3Dface@{DRW\_3Dface}}\index{DRW\_3Dface@{DRW\_3Dface}!NoEdge@{NoEdge}}}\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca2f6bfba56a1da6524ddecdbefe83bc7f}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca2f6bfba56a1da6524ddecdbefe83bc7f}} 
+No\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FirstEdge@{FirstEdge}!DRW\_3Dface@{DRW\_3Dface}}\index{DRW\_3Dface@{DRW\_3Dface}!FirstEdge@{FirstEdge}}}\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0cace4991f0dac83b051345939c5def0d1d}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0cace4991f0dac83b051345939c5def0d1d}} 
+First\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SecodEdge@{SecodEdge}!DRW\_3Dface@{DRW\_3Dface}}\index{DRW\_3Dface@{DRW\_3Dface}!SecodEdge@{SecodEdge}}}\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0caf555393c18d3c48bf2479aca8db9ef26}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0caf555393c18d3c48bf2479aca8db9ef26}} 
+Secod\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ThirdEdge@{ThirdEdge}!DRW\_3Dface@{DRW\_3Dface}}\index{DRW\_3Dface@{DRW\_3Dface}!ThirdEdge@{ThirdEdge}}}\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca869c4164f2a6b0fca998a62516c36121}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca869c4164f2a6b0fca998a62516c36121}} 
+Third\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FourthEdge@{FourthEdge}!DRW\_3Dface@{DRW\_3Dface}}\index{DRW\_3Dface@{DRW\_3Dface}!FourthEdge@{FourthEdge}}}\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca3f986c623d6f6cad9dd05b533c1d481c}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca3f986c623d6f6cad9dd05b533c1d481c}} 
+Fourth\+Edge&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AllEdges@{AllEdges}!DRW\_3Dface@{DRW\_3Dface}}\index{DRW\_3Dface@{DRW\_3Dface}!AllEdges@{AllEdges}}}\mbox{\Hypertarget{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca67efca932fc9cf56820bc4052d363ed4}\label{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0ca67efca932fc9cf56820bc4052d363ed4}} 
+All\+Edges&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__3Dface_a554258e40555075e3c36507a2bad6077}\label{classDRW__3Dface_a554258e40555075e3c36507a2bad6077}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!DRW\_3Dface@{DRW\_3Dface}}
+\index{DRW\_3Dface@{DRW\_3Dface}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{DRW\_3Dface()}{DRW\_3Dface()}}
+{\footnotesize\ttfamily DRW\+\_\+3\+Dface\+::\+DRW\+\_\+3\+Dface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__3Dface_ab1632466a8dc3dff5295e09b6a893229}\label{classDRW__3Dface_ab1632466a8dc3dff5295e09b6a893229}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily virtual void DRW\+\_\+3\+Dface\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDRW__Trace_ad5c6dedeebd12bc17a93e0d759914fb4}{DRW\+\_\+\+Trace}}.
+
+\mbox{\Hypertarget{classDRW__3Dface_ac756697b3504d18985bb945711cc23bd}\label{classDRW__3Dface_ac756697b3504d18985bb945711cc23bd}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!edgeFlags@{edgeFlags}}
+\index{edgeFlags@{edgeFlags}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{edgeFlags()}{edgeFlags()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__3Dface_a6b85c056450202f2abfad43dbd96df0c}{Invisible\+Edge\+Flags}} DRW\+\_\+3\+Dface\+::edge\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+edge visibility flags 
+
+\mbox{\Hypertarget{classDRW__3Dface_a2b60773c49fe59454907785d9bbc019a}\label{classDRW__3Dface_a2b60773c49fe59454907785d9bbc019a}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!firstCorner@{firstCorner}}
+\index{firstCorner@{firstCorner}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{firstCorner()}{firstCorner()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}\& DRW\+\_\+3\+Dface\+::first\+Corner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+first corner in WCS 
+
+\mbox{\Hypertarget{classDRW__3Dface_a322a1610f887d99dbe810f901cbcf5bb}\label{classDRW__3Dface_a322a1610f887d99dbe810f901cbcf5bb}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!fourthCorner@{fourthCorner}}
+\index{fourthCorner@{fourthCorner}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{fourthCorner()}{fourthCorner()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}\& DRW\+\_\+3\+Dface\+::fourth\+Corner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+fourth corner in WCS 
+
+\mbox{\Hypertarget{classDRW__3Dface_a841b20016d7bf6d3221aa690fb477076}\label{classDRW__3Dface_a841b20016d7bf6d3221aa690fb477076}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+3\+Dface\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+interpret code in dxf reading process or dispatch to inherited class 
+
+\mbox{\Hypertarget{classDRW__3Dface_a6e74cbfe44a7fc8fd55548d902e7cc97}\label{classDRW__3Dface_a6e74cbfe44a7fc8fd55548d902e7cc97}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!secondCorner@{secondCorner}}
+\index{secondCorner@{secondCorner}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{secondCorner()}{secondCorner()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}\& DRW\+\_\+3\+Dface\+::second\+Corner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+second corner in WCS 
+
+\mbox{\Hypertarget{classDRW__3Dface_aad4a5e830705139b4ebac89f7de1fd3f}\label{classDRW__3Dface_aad4a5e830705139b4ebac89f7de1fd3f}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!thirdCorner@{thirdCorner}}
+\index{thirdCorner@{thirdCorner}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{thirdCorner()}{thirdCorner()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}\& DRW\+\_\+3\+Dface\+::third\+Corner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+third corner in WCS 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__3Dface_a0fbb465670025bbd116aef1804fa5b44}\label{classDRW__3Dface_a0fbb465670025bbd116aef1804fa5b44}} 
+\index{DRW\_3Dface@{DRW\_3Dface}!invisibleflag@{invisibleflag}}
+\index{invisibleflag@{invisibleflag}!DRW\_3Dface@{DRW\_3Dface}}
+\doxysubsubsection{\texorpdfstring{invisibleflag}{invisibleflag}}
+{\footnotesize\ttfamily int DRW\+\_\+3\+Dface\+::invisibleflag}
+
+invisible edge flag, code 70 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

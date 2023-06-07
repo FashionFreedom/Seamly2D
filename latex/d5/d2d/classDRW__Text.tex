@@ -1,0 +1,235 @@
+\hypertarget{classDRW__Text}{}\doxysection{DRW\+\_\+\+Text Class Reference}
+\label{classDRW__Text}\index{DRW\_Text@{DRW\_Text}}
+
+
+Class to handle insert entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{d5/d2d/classDRW__Text}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27}{VAlign}} \{ \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27a26e0d96529d0c6edf8fe94c09ffd1661}{VBase\+Line}} = 0
+, \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27a64c2355b0923f0634c45002f571c9fba}{VBottom}}
+, \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27adf2dfb4d3e854d4c660246808495152e}{VMiddle}}
+, \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27ad6c53af0a564a39018d403af25aa97e3}{VTop}}
+ \}
+\begin{DoxyCompactList}\small\item\em Vertical alignments. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2d}{HAlign}} \{ \newline
+\mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2da2fca970851f2bddb3f018307e47f653c}{HLeft}} = 0
+, \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2dacae7fa84a0beaf06577027631f445225}{HCenter}}
+, \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2dafc3e7b70ef3f4cb5bf2228f0fe2dfc8f}{HRight}}
+, \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2da3f5e5f69673e0b948de41c8e16ffd131}{HAligned}}
+, \newline
+\mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2da9705528a85e9416e32dbb959ad22a584}{HMiddle}}
+, \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2da3b8fe44dc62bffe5c97d7b96ef1b3c23}{HFit}}
+ \}
+\begin{DoxyCompactList}\small\item\em Horizontal alignments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Text_a4584477bf2f4b27f27dde8ac481c850a}{DRW\+\_\+\+Text}} ()
+\item 
+virtual void \mbox{\hyperlink{classDRW__Text_acdb987486bf1a47c585bcef48e8c22b5}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classDRW__Text_ad38ec2dfef3ab3c4367423a0d4e49c05}{height}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{classDRW__Text_a87a40d4523371ee0cc250be0fc8834cd}{text}}
+\item 
+double \mbox{\hyperlink{classDRW__Text_aad647ab8b0086a18978dd0b291569e5b}{angle}}
+\item 
+double \mbox{\hyperlink{classDRW__Text_a17468f7c0e1bd0b1c6da87cc9300b7e1}{widthscale}}
+\item 
+double \mbox{\hyperlink{classDRW__Text_ab273757633e67aa82b17b6b1141c8b98}{oblique}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{classDRW__Text_a11fa7c1b5a6fccafe2991bad2413cfa8}{style}}
+\item 
+int \mbox{\hyperlink{classDRW__Text_ada45df3aae10844afc1861261e40869e}{textgen}}
+\item 
+enum \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2d}{HAlign}} \mbox{\hyperlink{classDRW__Text_ace4ad466c2d13111f69b4413c279987e}{alignH}}
+\item 
+enum \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27}{VAlign}} \mbox{\hyperlink{classDRW__Text_a1b3c6431eb7c016e3521a46dc24bd57e}{alignV}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__Text_a4df3b6e6599bed2f735e4bd896f69208}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle insert entries. 
+
+Class to handle insert entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2d}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2d}} 
+\index{DRW\_Text@{DRW\_Text}!HAlign@{HAlign}}
+\index{HAlign@{HAlign}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{HAlign}{HAlign}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2d}{DRW\+\_\+\+Text\+::\+HAlign}}}
+
+
+
+Horizontal alignments. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HLeft@{HLeft}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!HLeft@{HLeft}}}\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2da2fca970851f2bddb3f018307e47f653c}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2da2fca970851f2bddb3f018307e47f653c}} 
+HLeft&Left = 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HCenter@{HCenter}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!HCenter@{HCenter}}}\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2dacae7fa84a0beaf06577027631f445225}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2dacae7fa84a0beaf06577027631f445225}} 
+HCenter&Centered = 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HRight@{HRight}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!HRight@{HRight}}}\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2dafc3e7b70ef3f4cb5bf2228f0fe2dfc8f}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2dafc3e7b70ef3f4cb5bf2228f0fe2dfc8f}} 
+HRight&Right = 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAligned@{HAligned}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!HAligned@{HAligned}}}\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2da3f5e5f69673e0b948de41c8e16ffd131}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2da3f5e5f69673e0b948de41c8e16ffd131}} 
+HAligned&Aligned = 3 (if VAlign==0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HMiddle@{HMiddle}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!HMiddle@{HMiddle}}}\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2da9705528a85e9416e32dbb959ad22a584}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2da9705528a85e9416e32dbb959ad22a584}} 
+HMiddle&middle = 4 (if VAlign==0) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HFit@{HFit}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!HFit@{HFit}}}\mbox{\Hypertarget{classDRW__Text_a66511da21199b0ab967fa951bc339f2da3b8fe44dc62bffe5c97d7b96ef1b3c23}\label{classDRW__Text_a66511da21199b0ab967fa951bc339f2da3b8fe44dc62bffe5c97d7b96ef1b3c23}} 
+HFit&fit into point = 5 (if VAlign==0) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27}\label{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27}} 
+\index{DRW\_Text@{DRW\_Text}!VAlign@{VAlign}}
+\index{VAlign@{VAlign}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{VAlign}{VAlign}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27}{DRW\+\_\+\+Text\+::\+VAlign}}}
+
+
+
+Vertical alignments. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VBaseLine@{VBaseLine}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!VBaseLine@{VBaseLine}}}\mbox{\Hypertarget{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27a26e0d96529d0c6edf8fe94c09ffd1661}\label{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27a26e0d96529d0c6edf8fe94c09ffd1661}} 
+VBase\+Line&Top = 0 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VBottom@{VBottom}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!VBottom@{VBottom}}}\mbox{\Hypertarget{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27a64c2355b0923f0634c45002f571c9fba}\label{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27a64c2355b0923f0634c45002f571c9fba}} 
+VBottom&Bottom = 1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VMiddle@{VMiddle}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!VMiddle@{VMiddle}}}\mbox{\Hypertarget{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27adf2dfb4d3e854d4c660246808495152e}\label{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27adf2dfb4d3e854d4c660246808495152e}} 
+VMiddle&Middle = 2 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VTop@{VTop}!DRW\_Text@{DRW\_Text}}\index{DRW\_Text@{DRW\_Text}!VTop@{VTop}}}\mbox{\Hypertarget{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27ad6c53af0a564a39018d403af25aa97e3}\label{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27ad6c53af0a564a39018d403af25aa97e3}} 
+VTop&Top = 3 \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__Text_a4584477bf2f4b27f27dde8ac481c850a}\label{classDRW__Text_a4584477bf2f4b27f27dde8ac481c850a}} 
+\index{DRW\_Text@{DRW\_Text}!DRW\_Text@{DRW\_Text}}
+\index{DRW\_Text@{DRW\_Text}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{DRW\_Text()}{DRW\_Text()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Text\+::\+DRW\+\_\+\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__Text_acdb987486bf1a47c585bcef48e8c22b5}\label{classDRW__Text_acdb987486bf1a47c585bcef48e8c22b5}} 
+\index{DRW\_Text@{DRW\_Text}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily virtual void DRW\+\_\+\+Text\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDRW__Line_a6aab28594c628f6330bfcb030d1a20c4}{DRW\+\_\+\+Line}}.
+
+\mbox{\Hypertarget{classDRW__Text_a4df3b6e6599bed2f735e4bd896f69208}\label{classDRW__Text_a4df3b6e6599bed2f735e4bd896f69208}} 
+\index{DRW\_Text@{DRW\_Text}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Text\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__Text_ace4ad466c2d13111f69b4413c279987e}\label{classDRW__Text_ace4ad466c2d13111f69b4413c279987e}} 
+\index{DRW\_Text@{DRW\_Text}!alignH@{alignH}}
+\index{alignH@{alignH}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{alignH}{alignH}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__Text_a66511da21199b0ab967fa951bc339f2d}{HAlign}} DRW\+\_\+\+Text\+::alignH}
+
+horizontal align, code 72 \mbox{\Hypertarget{classDRW__Text_a1b3c6431eb7c016e3521a46dc24bd57e}\label{classDRW__Text_a1b3c6431eb7c016e3521a46dc24bd57e}} 
+\index{DRW\_Text@{DRW\_Text}!alignV@{alignV}}
+\index{alignV@{alignV}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{alignV}{alignV}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__Text_a369c571137713ac08c5a5a9b66ff6c27}{VAlign}} DRW\+\_\+\+Text\+::alignV}
+
+vertical align, code 73 \mbox{\Hypertarget{classDRW__Text_aad647ab8b0086a18978dd0b291569e5b}\label{classDRW__Text_aad647ab8b0086a18978dd0b291569e5b}} 
+\index{DRW\_Text@{DRW\_Text}!angle@{angle}}
+\index{angle@{angle}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Text\+::angle}
+
+rotation angle in degrees (360), code 50 \mbox{\Hypertarget{classDRW__Text_ad38ec2dfef3ab3c4367423a0d4e49c05}\label{classDRW__Text_ad38ec2dfef3ab3c4367423a0d4e49c05}} 
+\index{DRW\_Text@{DRW\_Text}!height@{height}}
+\index{height@{height}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Text\+::height}
+
+height text, code 40 \mbox{\Hypertarget{classDRW__Text_ab273757633e67aa82b17b6b1141c8b98}\label{classDRW__Text_ab273757633e67aa82b17b6b1141c8b98}} 
+\index{DRW\_Text@{DRW\_Text}!oblique@{oblique}}
+\index{oblique@{oblique}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{oblique}{oblique}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Text\+::oblique}
+
+oblique angle, code 51 \mbox{\Hypertarget{classDRW__Text_a11fa7c1b5a6fccafe2991bad2413cfa8}\label{classDRW__Text_a11fa7c1b5a6fccafe2991bad2413cfa8}} 
+\index{DRW\_Text@{DRW\_Text}!style@{style}}
+\index{style@{style}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{style}{style}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Text\+::style}
+
+style name, code 7 \mbox{\Hypertarget{classDRW__Text_a87a40d4523371ee0cc250be0fc8834cd}\label{classDRW__Text_a87a40d4523371ee0cc250be0fc8834cd}} 
+\index{DRW\_Text@{DRW\_Text}!text@{text}}
+\index{text@{text}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Text\+::text}
+
+text string, code 1 \mbox{\Hypertarget{classDRW__Text_ada45df3aae10844afc1861261e40869e}\label{classDRW__Text_ada45df3aae10844afc1861261e40869e}} 
+\index{DRW\_Text@{DRW\_Text}!textgen@{textgen}}
+\index{textgen@{textgen}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{textgen}{textgen}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Text\+::textgen}
+
+text generation, code 71 \mbox{\Hypertarget{classDRW__Text_a17468f7c0e1bd0b1c6da87cc9300b7e1}\label{classDRW__Text_a17468f7c0e1bd0b1c6da87cc9300b7e1}} 
+\index{DRW\_Text@{DRW\_Text}!widthscale@{widthscale}}
+\index{widthscale@{widthscale}!DRW\_Text@{DRW\_Text}}
+\doxysubsubsection{\texorpdfstring{widthscale}{widthscale}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Text\+::widthscale}
+
+width factor, code 41 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,379 @@
+\hypertarget{classHistoryDialog}{}\doxysection{History\+Dialog Class Reference}
+\label{classHistoryDialog}\index{HistoryDialog@{HistoryDialog}}
+
+
+The \mbox{\hyperlink{classHistoryDialog}{History\+Dialog}} class show dialog history.  
+
+
+
+
+{\ttfamily \#include $<$history\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for History\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d1/d42/classHistoryDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classHistoryDialog_a5ab4a230b0c02cc3a4eb94e1ec3f80f7}{Dialog\+Accepted}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Dialog\+Accepted save data and emit signal about closed dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classHistoryDialog_ae61fccaed8f633844fd11b78ebf95a6d}{Dialog\+Apply}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Dialog\+Apply apply data and emit signal about applied dialog. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryDialog_a94f298d1b6719c55f9b6d90a60d2e604}{cell\+Clicked}} (int row, int column)
+\begin{DoxyCompactList}\small\item\em cell\+Clicked changed history record \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryDialog_a30dfbcf74878290ebe83482207231019}{changed\+Cursor}} (quint32 id)
+\begin{DoxyCompactList}\small\item\em changed\+Cursor changed cursor of input. Cursor show after which record we will insert new object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryDialog_a060d0c636c6f5e959d6ab21f3589b8c2}{update\+History}} ()
+\begin{DoxyCompactList}\small\item\em update\+History update history table \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHistoryDialog_acc153d967abdc662e17c31f9f24b5cf6}{show\+History\+Tool}} (quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em show\+History\+Tool signal change color of selected in records tool \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHistoryDialog_ac3e217b51508cb35e942d9133b8f2a1d}{History\+Dialog}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, \mbox{\hyperlink{classVPattern}{VPattern}} $\ast$doc, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classHistoryDialog}{History\+Dialog}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classHistoryDialog_a75b48e33e0a7116df806f91b82a4f812}{$\sim$\+History\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classHistoryDialog_ac8d0ae7d5c5e33b970ced33bd3ff98c9}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when windows is closing \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classHistoryDialog_a7999dc24fc8be2378189077f6db80cd4}{change\+Event}} (QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classHistoryDialog_a9077aabd78d9a9cd48d8a76282ba3f2b}{event\+Filter}} (QObject $\ast$object, QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHistoryDialog_ad4f16fecea094cd9b6e3d21e6cc50cdc}{fill\+Table}} ()
+\begin{DoxyCompactList}\small\item\em cursor\+Tool\+Record\+Row save number of row selected record \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRowData}{Row\+Data}} \mbox{\hyperlink{classHistoryDialog_ab371f99d6b839f6872eb945ccc278b5d}{record}} (const \mbox{\hyperlink{classVToolRecord}{VTool\+Record}} \&tool)
+\begin{DoxyCompactList}\small\item\em Record return description for record. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryDialog_a8a4f2727bb6c01f8d33629dfa7e5388e}{initialize\+Table}} ()
+\begin{DoxyCompactList}\small\item\em initialize\+Table set initial option of table \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHistoryDialog_a2784ba399bccaced32339f8d7cfb4a27}{show\+Tool}} ()
+\begin{DoxyCompactList}\small\item\em show\+Tool show selected point \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classHistoryDialog_a3b49e9cb74d1b82927bd74078ddd5fbe}{get\+Point\+Name}} (quint32 point\+Id)
+\begin{DoxyCompactList}\small\item\em History\+Dialog\+::\+Point\+Name return point name by id. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classHistoryDialog_a982877d6f95b130a7fc60259a5a2e3a7}{attr\+UInt}} (const QDom\+Element \&dom\+Element, const QString \&name)
+\item 
+void \mbox{\hyperlink{classHistoryDialog_a14d52b6c7f0a84a8e9ef48d188e06692}{retranslate\+Ui}} ()
+\item 
+int \mbox{\hyperlink{classHistoryDialog_aa5f00566eff226515c1c918bfb280190}{cursor\+Row}} () const
+\item 
+void \mbox{\hyperlink{classHistoryDialog_a32ea69eadcc6ea91b849f09259e6f4be}{find\+Text}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{classHistoryDialog_adf70d197c8be0e3ec11aaa93ba943d54}{copy\+To\+Clipboard}} ()
+\begin{DoxyCompactList}\small\item\em copy\+To\+Clipboard copy dialog selection to clipboard as comma separated values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+History\+Dialog $\ast$ \mbox{\hyperlink{classHistoryDialog_a65882bcb15afc5a159ccc21927cf9356}{ui}}
+\item 
+\mbox{\hyperlink{classVPattern}{VPattern}} $\ast$ \mbox{\hyperlink{classHistoryDialog_a02013ea6d329e60b953dc306a08afb58}{m\+\_\+doc}}
+\begin{DoxyCompactList}\small\item\em ui keeps information about user interface \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{classHistoryDialog_a372a66e7419fb91fd53772ac012f7ff2}{m\+\_\+cursor\+Row}}
+\begin{DoxyCompactList}\small\item\em doc dom document container \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{classHistoryDialog_a47d2bdcebc6039c1398907c0a201f739}{m\+\_\+cursor\+Tool\+Record\+Row}}
+\begin{DoxyCompactList}\small\item\em cursor\+Row save number of row where is cursor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classHistoryDialog}{History\+Dialog}} class show dialog history. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHistoryDialog_ac3e217b51508cb35e942d9133b8f2a1d}\label{classHistoryDialog_ac3e217b51508cb35e942d9133b8f2a1d}} 
+\index{HistoryDialog@{HistoryDialog}!HistoryDialog@{HistoryDialog}}
+\index{HistoryDialog@{HistoryDialog}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{HistoryDialog()}{HistoryDialog()}}
+{\footnotesize\ttfamily History\+Dialog\+::\+History\+Dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{classVPattern}{VPattern}} $\ast$}]{doc,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classHistoryDialog}{History\+Dialog}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em doc} & dom document container \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistoryDialog_a75b48e33e0a7116df806f91b82a4f812}\label{classHistoryDialog_a75b48e33e0a7116df806f91b82a4f812}} 
+\index{HistoryDialog@{HistoryDialog}!````~HistoryDialog@{$\sim$HistoryDialog}}
+\index{````~HistoryDialog@{$\sim$HistoryDialog}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$HistoryDialog()}{~HistoryDialog()}}
+{\footnotesize\ttfamily History\+Dialog\+::$\sim$\+History\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHistoryDialog_a982877d6f95b130a7fc60259a5a2e3a7}\label{classHistoryDialog_a982877d6f95b130a7fc60259a5a2e3a7}} 
+\index{HistoryDialog@{HistoryDialog}!attrUInt@{attrUInt}}
+\index{attrUInt@{attrUInt}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{attrUInt()}{attrUInt()}}
+{\footnotesize\ttfamily quint32 History\+Dialog\+::attr\+UInt (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classHistoryDialog_a94f298d1b6719c55f9b6d90a60d2e604}\label{classHistoryDialog_a94f298d1b6719c55f9b6d90a60d2e604}} 
+\index{HistoryDialog@{HistoryDialog}!cellClicked@{cellClicked}}
+\index{cellClicked@{cellClicked}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{cellClicked}{cellClicked}}
+{\footnotesize\ttfamily void History\+Dialog\+::cell\+Clicked (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+cell\+Clicked changed history record 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & number row in table \\
+\hline
+{\em column} & number column in table \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistoryDialog_a30dfbcf74878290ebe83482207231019}\label{classHistoryDialog_a30dfbcf74878290ebe83482207231019}} 
+\index{HistoryDialog@{HistoryDialog}!changedCursor@{changedCursor}}
+\index{changedCursor@{changedCursor}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{changedCursor}{changedCursor}}
+{\footnotesize\ttfamily void History\+Dialog\+::changed\+Cursor (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+changed\+Cursor changed cursor of input. Cursor show after which record we will insert new object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistoryDialog_a7999dc24fc8be2378189077f6db80cd4}\label{classHistoryDialog_a7999dc24fc8be2378189077f6db80cd4}} 
+\index{HistoryDialog@{HistoryDialog}!changeEvent@{changeEvent}}
+\index{changeEvent@{changeEvent}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{changeEvent()}{changeEvent()}}
+{\footnotesize\ttfamily void History\+Dialog\+::change\+Event (\begin{DoxyParamCaption}\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classHistoryDialog_ac8d0ae7d5c5e33b970ced33bd3ff98c9}\label{classHistoryDialog_ac8d0ae7d5c5e33b970ced33bd3ff98c9}} 
+\index{HistoryDialog@{HistoryDialog}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void History\+Dialog\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when windows is closing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classHistoryDialog_adf70d197c8be0e3ec11aaa93ba943d54}\label{classHistoryDialog_adf70d197c8be0e3ec11aaa93ba943d54}} 
+\index{HistoryDialog@{HistoryDialog}!copyToClipboard@{copyToClipboard}}
+\index{copyToClipboard@{copyToClipboard}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{copyToClipboard()}{copyToClipboard()}}
+{\footnotesize\ttfamily void History\+Dialog\+::copy\+To\+Clipboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+copy\+To\+Clipboard copy dialog selection to clipboard as comma separated values. 
+
+\mbox{\Hypertarget{classHistoryDialog_aa5f00566eff226515c1c918bfb280190}\label{classHistoryDialog_aa5f00566eff226515c1c918bfb280190}} 
+\index{HistoryDialog@{HistoryDialog}!cursorRow@{cursorRow}}
+\index{cursorRow@{cursorRow}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{cursorRow()}{cursorRow()}}
+{\footnotesize\ttfamily int History\+Dialog\+::cursor\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classHistoryDialog_a5ab4a230b0c02cc3a4eb94e1ec3f80f7}\label{classHistoryDialog_a5ab4a230b0c02cc3a4eb94e1ec3f80f7}} 
+\index{HistoryDialog@{HistoryDialog}!DialogAccepted@{DialogAccepted}}
+\index{DialogAccepted@{DialogAccepted}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{DialogAccepted}{DialogAccepted}}
+{\footnotesize\ttfamily void History\+Dialog\+::\+Dialog\+Accepted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Dialog\+Accepted save data and emit signal about closed dialog. 
+
+\mbox{\Hypertarget{classHistoryDialog_ae61fccaed8f633844fd11b78ebf95a6d}\label{classHistoryDialog_ae61fccaed8f633844fd11b78ebf95a6d}} 
+\index{HistoryDialog@{HistoryDialog}!DialogApply@{DialogApply}}
+\index{DialogApply@{DialogApply}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{DialogApply}{DialogApply}}
+{\footnotesize\ttfamily virtual void History\+Dialog\+::\+Dialog\+Apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Dialog\+Apply apply data and emit signal about applied dialog. 
+
+TODO ISSUE 79 \+: create real function \mbox{\Hypertarget{classHistoryDialog_a9077aabd78d9a9cd48d8a76282ba3f2b}\label{classHistoryDialog_a9077aabd78d9a9cd48d8a76282ba3f2b}} 
+\index{HistoryDialog@{HistoryDialog}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool History\+Dialog\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{object,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_acfc81e416e8719ca8c2d78f54ded9ce3}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classHistoryDialog_ad4f16fecea094cd9b6e3d21e6cc50cdc}\label{classHistoryDialog_ad4f16fecea094cd9b6e3d21e6cc50cdc}} 
+\index{HistoryDialog@{HistoryDialog}!fillTable@{fillTable}}
+\index{fillTable@{fillTable}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{fillTable()}{fillTable()}}
+{\footnotesize\ttfamily void History\+Dialog\+::fill\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+cursor\+Tool\+Record\+Row save number of row selected record 
+
+fill\+Table fill table \mbox{\Hypertarget{classHistoryDialog_a32ea69eadcc6ea91b849f09259e6f4be}\label{classHistoryDialog_a32ea69eadcc6ea91b849f09259e6f4be}} 
+\index{HistoryDialog@{HistoryDialog}!findText@{findText}}
+\index{findText@{findText}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{findText()}{findText()}}
+{\footnotesize\ttfamily void History\+Dialog\+::find\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classHistoryDialog_a3b49e9cb74d1b82927bd74078ddd5fbe}\label{classHistoryDialog_a3b49e9cb74d1b82927bd74078ddd5fbe}} 
+\index{HistoryDialog@{HistoryDialog}!getPointName@{getPointName}}
+\index{getPointName@{getPointName}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{getPointName()}{getPointName()}}
+{\footnotesize\ttfamily QString History\+Dialog\+::get\+Point\+Name (\begin{DoxyParamCaption}\item[{quint32}]{point\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+History\+Dialog\+::\+Point\+Name return point name by id. 
+
+Refacoring what hide ugly string getting point name by id. 
+\begin{DoxyParams}{Parameters}
+{\em point\+Id} & point if in data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHistoryDialog_a8a4f2727bb6c01f8d33629dfa7e5388e}\label{classHistoryDialog_a8a4f2727bb6c01f8d33629dfa7e5388e}} 
+\index{HistoryDialog@{HistoryDialog}!initializeTable@{initializeTable}}
+\index{initializeTable@{initializeTable}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{initializeTable()}{initializeTable()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+POP void History\+Dialog\+::initialize\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initialize\+Table set initial option of table 
+
+\mbox{\Hypertarget{classHistoryDialog_ab371f99d6b839f6872eb945ccc278b5d}\label{classHistoryDialog_ab371f99d6b839f6872eb945ccc278b5d}} 
+\index{HistoryDialog@{HistoryDialog}!record@{record}}
+\index{record@{record}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{record()}{record()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH \mbox{\hyperlink{structRowData}{Row\+Data}} History\+Dialog\+::record (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVToolRecord}{VTool\+Record}} \&}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Record return description for record. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tool} & record data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structRowData}{Row\+Data}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHistoryDialog_a14d52b6c7f0a84a8e9ef48d188e06692}\label{classHistoryDialog_a14d52b6c7f0a84a8e9ef48d188e06692}} 
+\index{HistoryDialog@{HistoryDialog}!retranslateUi@{retranslateUi}}
+\index{retranslateUi@{retranslateUi}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{retranslateUi()}{retranslateUi()}}
+{\footnotesize\ttfamily void History\+Dialog\+::retranslate\+Ui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classHistoryDialog_acc153d967abdc662e17c31f9f24b5cf6}\label{classHistoryDialog_acc153d967abdc662e17c31f9f24b5cf6}} 
+\index{HistoryDialog@{HistoryDialog}!showHistoryTool@{showHistoryTool}}
+\index{showHistoryTool@{showHistoryTool}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{showHistoryTool}{showHistoryTool}}
+{\footnotesize\ttfamily void History\+Dialog\+::show\+History\+Tool (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+show\+History\+Tool signal change color of selected in records tool 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of tool \\
+\hline
+{\em enable} & true enable selection, false disable selection \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHistoryDialog_a2784ba399bccaced32339f8d7cfb4a27}\label{classHistoryDialog_a2784ba399bccaced32339f8d7cfb4a27}} 
+\index{HistoryDialog@{HistoryDialog}!showTool@{showTool}}
+\index{showTool@{showTool}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{showTool()}{showTool()}}
+{\footnotesize\ttfamily void History\+Dialog\+::show\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+show\+Tool show selected point 
+
+\mbox{\Hypertarget{classHistoryDialog_a060d0c636c6f5e959d6ab21f3589b8c2}\label{classHistoryDialog_a060d0c636c6f5e959d6ab21f3589b8c2}} 
+\index{HistoryDialog@{HistoryDialog}!updateHistory@{updateHistory}}
+\index{updateHistory@{updateHistory}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{updateHistory}{updateHistory}}
+{\footnotesize\ttfamily void History\+Dialog\+::update\+History (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+History update history table 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classHistoryDialog_a372a66e7419fb91fd53772ac012f7ff2}\label{classHistoryDialog_a372a66e7419fb91fd53772ac012f7ff2}} 
+\index{HistoryDialog@{HistoryDialog}!m\_cursorRow@{m\_cursorRow}}
+\index{m\_cursorRow@{m\_cursorRow}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{m\_cursorRow}{m\_cursorRow}}
+{\footnotesize\ttfamily qint32 History\+Dialog\+::m\+\_\+cursor\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+doc dom document container 
+
+\mbox{\Hypertarget{classHistoryDialog_a47d2bdcebc6039c1398907c0a201f739}\label{classHistoryDialog_a47d2bdcebc6039c1398907c0a201f739}} 
+\index{HistoryDialog@{HistoryDialog}!m\_cursorToolRecordRow@{m\_cursorToolRecordRow}}
+\index{m\_cursorToolRecordRow@{m\_cursorToolRecordRow}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{m\_cursorToolRecordRow}{m\_cursorToolRecordRow}}
+{\footnotesize\ttfamily qint32 History\+Dialog\+::m\+\_\+cursor\+Tool\+Record\+Row\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+cursor\+Row save number of row where is cursor 
+
+\mbox{\Hypertarget{classHistoryDialog_a02013ea6d329e60b953dc306a08afb58}\label{classHistoryDialog_a02013ea6d329e60b953dc306a08afb58}} 
+\index{HistoryDialog@{HistoryDialog}!m\_doc@{m\_doc}}
+\index{m\_doc@{m\_doc}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{m\_doc}{m\_doc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPattern}{VPattern}}$\ast$ History\+Dialog\+::m\+\_\+doc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ui keeps information about user interface 
+
+\mbox{\Hypertarget{classHistoryDialog_a65882bcb15afc5a159ccc21927cf9356}\label{classHistoryDialog_a65882bcb15afc5a159ccc21927cf9356}} 
+\index{HistoryDialog@{HistoryDialog}!ui@{ui}}
+\index{ui@{ui}!HistoryDialog@{HistoryDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+History\+Dialog$\ast$ History\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/dialogs/\mbox{\hyperlink{history__dialog_8h}{history\+\_\+dialog.\+h}}\item 
+src/app/seamly2d/dialogs/\mbox{\hyperlink{history__dialog_8cpp}{history\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

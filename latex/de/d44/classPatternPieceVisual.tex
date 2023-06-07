@@ -1,0 +1,152 @@
+\hypertarget{classPatternPieceVisual}{}\doxysection{Pattern\+Piece\+Visual Class Reference}
+\label{classPatternPieceVisual}\index{PatternPieceVisual@{PatternPieceVisual}}
+
+
+{\ttfamily \#include $<$pattern\+\_\+piece\+\_\+visual.\+h$>$}
+
+Inheritance diagram for Pattern\+Piece\+Visual\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{de/d44/classPatternPieceVisual}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classPatternPieceVisual_a2446773a6058b71f8766d8c4fcfc531fa411b85a7cf8cbc157a2ca5d27c1c0131}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Piece)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPatternPieceVisual_acfdf3e6947bda6b4fdbfae0a1f72dafa}{Pattern\+Piece\+Visual}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classPatternPieceVisual_a273ec613732a996fed575c50bbd177bc}{$\sim$\+Pattern\+Piece\+Visual}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceVisual_a342126d8a430a5a4cdf6bb2777471962}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classPatternPieceVisual_a47996dce9157a9dc6518c8586087d9db}{Set\+Piece}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+virtual int \mbox{\hyperlink{classPatternPieceVisual_aa2cb6aebe7d24775c1175ecf6887e9b1}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classPatternPieceVisual_ab623a35f16c2b585806c40a101304122}{Get\+Point}} (quint32 i, const QColor \&color)
+\item 
+void \mbox{\hyperlink{classPatternPieceVisual_aa2e29fae59610c355f1b92e9d79b2072}{Hide\+All\+Items}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \mbox{\hyperlink{classPatternPieceVisual_a6fe79244cb90917079773e0cdfa1203d}{m\+\_\+points}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classPatternPieceVisual_ae9bb1fabbadfd471b478f84c8ae3db76}{m\+\_\+line1}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classPatternPieceVisual_a463575d8c60fe7767577e6d538a02e6d}{m\+\_\+line2}}
+\item 
+\mbox{\hyperlink{classVPiece}{VPiece}} \mbox{\hyperlink{classPatternPieceVisual_ae558e861b491214d7832de1d27c3fc4c}{m\+\_\+piece}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPatternPieceVisual_a2446773a6058b71f8766d8c4fcfc531f}\label{classPatternPieceVisual_a2446773a6058b71f8766d8c4fcfc531f}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!PatternPieceVisual@{PatternPieceVisual}}\index{PatternPieceVisual@{PatternPieceVisual}!Type@{Type}}}\mbox{\Hypertarget{classPatternPieceVisual_a2446773a6058b71f8766d8c4fcfc531fa411b85a7cf8cbc157a2ca5d27c1c0131}\label{classPatternPieceVisual_a2446773a6058b71f8766d8c4fcfc531fa411b85a7cf8cbc157a2ca5d27c1c0131}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPatternPieceVisual_acfdf3e6947bda6b4fdbfae0a1f72dafa}\label{classPatternPieceVisual_acfdf3e6947bda6b4fdbfae0a1f72dafa}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!PatternPieceVisual@{PatternPieceVisual}}
+\index{PatternPieceVisual@{PatternPieceVisual}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{PatternPieceVisual()}{PatternPieceVisual()}}
+{\footnotesize\ttfamily Pattern\+Piece\+Visual\+::\+Pattern\+Piece\+Visual (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceVisual_a273ec613732a996fed575c50bbd177bc}\label{classPatternPieceVisual_a273ec613732a996fed575c50bbd177bc}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!````~PatternPieceVisual@{$\sim$PatternPieceVisual}}
+\index{````~PatternPieceVisual@{$\sim$PatternPieceVisual}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{$\sim$PatternPieceVisual()}{~PatternPieceVisual()}}
+{\footnotesize\ttfamily virtual Pattern\+Piece\+Visual\+::$\sim$\+Pattern\+Piece\+Visual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPatternPieceVisual_ab623a35f16c2b585806c40a101304122}\label{classPatternPieceVisual_ab623a35f16c2b585806c40a101304122}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ Pattern\+Piece\+Visual\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{quint32}]{i,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceVisual_aa2e29fae59610c355f1b92e9d79b2072}\label{classPatternPieceVisual_aa2e29fae59610c355f1b92e9d79b2072}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!HideAllItems@{HideAllItems}}
+\index{HideAllItems@{HideAllItems}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{HideAllItems()}{HideAllItems()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Visual\+::\+Hide\+All\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceVisual_a342126d8a430a5a4cdf6bb2777471962}\label{classPatternPieceVisual_a342126d8a430a5a4cdf6bb2777471962}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Visual\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classPatternPieceVisual_a47996dce9157a9dc6518c8586087d9db}\label{classPatternPieceVisual_a47996dce9157a9dc6518c8586087d9db}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!SetPiece@{SetPiece}}
+\index{SetPiece@{SetPiece}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{SetPiece()}{SetPiece()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Visual\+::\+Set\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceVisual_aa2cb6aebe7d24775c1175ecf6887e9b1}\label{classPatternPieceVisual_aa2cb6aebe7d24775c1175ecf6887e9b1}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!type@{type}}
+\index{type@{type}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Pattern\+Piece\+Visual\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisPath_aa00ad73e91c41aeb8ed9b432b94ad2f6}{Vis\+Path}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPatternPieceVisual_ae9bb1fabbadfd471b478f84c8ae3db76}\label{classPatternPieceVisual_ae9bb1fabbadfd471b478f84c8ae3db76}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!m\_line1@{m\_line1}}
+\index{m\_line1@{m\_line1}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{m\_line1}{m\_line1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Pattern\+Piece\+Visual\+::m\+\_\+line1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceVisual_a463575d8c60fe7767577e6d538a02e6d}\label{classPatternPieceVisual_a463575d8c60fe7767577e6d538a02e6d}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!m\_line2@{m\_line2}}
+\index{m\_line2@{m\_line2}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{m\_line2}{m\_line2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Pattern\+Piece\+Visual\+::m\+\_\+line2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceVisual_ae558e861b491214d7832de1d27c3fc4c}\label{classPatternPieceVisual_ae558e861b491214d7832de1d27c3fc4c}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!m\_piece@{m\_piece}}
+\index{m\_piece@{m\_piece}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{m\_piece}{m\_piece}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiece}{VPiece}} Pattern\+Piece\+Visual\+::m\+\_\+piece\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceVisual_a6fe79244cb90917079773e0cdfa1203d}\label{classPatternPieceVisual_a6fe79244cb90917079773e0cdfa1203d}} 
+\index{PatternPieceVisual@{PatternPieceVisual}!m\_points@{m\_points}}
+\index{m\_points@{m\_points}!PatternPieceVisual@{PatternPieceVisual}}
+\doxysubsubsection{\texorpdfstring{m\_points}{m\_points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$$>$ Pattern\+Piece\+Visual\+::m\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/path/\mbox{\hyperlink{pattern__piece__visual_8h}{pattern\+\_\+piece\+\_\+visual.\+h}}\item 
+src/libs/vtools/visualization/path/\mbox{\hyperlink{pattern__piece__visual_8cpp}{pattern\+\_\+piece\+\_\+visual.\+cpp}}\end{DoxyCompactItemize}

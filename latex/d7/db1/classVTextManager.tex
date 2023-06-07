@@ -1,0 +1,260 @@
+\hypertarget{classVTextManager}{}\doxysection{VText\+Manager Class Reference}
+\label{classVTextManager}\index{VTextManager@{VTextManager}}
+
+
+The \mbox{\hyperlink{classVTextManager}{VText\+Manager}} class this class is used to determine whether a collection of text lines can fit into specified bounding box and with what font size.  
+
+
+
+
+{\ttfamily \#include $<$vtextmanager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVTextManager_a394ef2e8e4c7769f634da976db928e3e}{VText\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVTextManager_a394ef2e8e4c7769f634da976db928e3e}{VText\+Manager\+::\+VText\+Manager}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVTextManager_aa6cc15de88dfb86f3a56d004fc47bbf9}{$\sim$\+VText\+Manager}} ()=default
+\item 
+\mbox{\hyperlink{classVTextManager_af3e4e26bd3f02bc5f95ccd3300efbec2}{VText\+Manager}} (const \mbox{\hyperlink{classVTextManager}{VText\+Manager}} \&text)
+\item 
+\mbox{\hyperlink{classVTextManager}{VText\+Manager}} \& \mbox{\hyperlink{classVTextManager_a029ffed61db48b11ad7b4142e23bf6f3}{operator=}} (const \mbox{\hyperlink{classVTextManager}{VText\+Manager}} \&text)
+\item 
+virtual int \mbox{\hyperlink{classVTextManager_a2fae4b4a83bf5b35101ceb6d4b579e5f}{Get\+Spacing}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Spacing returns the vertical spacing between the lines. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVTextManager_abd13c96f3b6633f91312e58c4f3ee3ef}{set\+Font}} (const QFont \&font)
+\begin{DoxyCompactList}\small\item\em Set\+Font set the text base font. \end{DoxyCompactList}\item 
+const QFont \& \mbox{\hyperlink{classVTextManager_a7f64e46d190ec246b4f30b14593b1a24}{Get\+Font}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Font returns the text base font. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVTextManager_ae830ff36112ca0560f36249a8921c7d7}{Set\+Font\+Size}} (int i\+FS)
+\begin{DoxyCompactList}\small\item\em Set\+Font\+Size sets the font size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVTextManager_ac90c9ff728ab3c3a3633b700c81c7327}{Fit\+Font\+Size}} (qreal fW, qreal fH)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVTextManager_ac90c9ff728ab3c3a3633b700c81c7327}{VText\+Manager\+::\+Fit\+Font\+Size}} sets the font size just big enough, so that the text fits into rectangle of size (fW, fH) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQList}{QList}}$<$ \mbox{\hyperlink{structTextLine}{Text\+Line}} $>$ \mbox{\hyperlink{classVTextManager_a8e6fcdc09b1acbd9d3b922b8b80cabe5}{Get\+All\+Source\+Lines}} () const
+\item 
+int \mbox{\hyperlink{classVTextManager_a26f52aff711a1edac5192f79c3b7ba89}{Get\+Source\+Lines\+Count}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVTextManager_a26f52aff711a1edac5192f79c3b7ba89}{VText\+Manager\+::\+Get\+Source\+Lines\+Count}} returns the number of input text lines. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structTextLine}{Text\+Line}} \& \mbox{\hyperlink{classVTextManager_a88620b46e6e2d46e84918ba6d28430bd}{Get\+Source\+Line}} (int i) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVTextManager_a88620b46e6e2d46e84918ba6d28430bd}{VText\+Manager\+::\+Get\+Source\+Line}} returns the reference to i-\/th text line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}{Update}} (const QString \&qs\+Name, const \mbox{\hyperlink{classVPieceLabelData}{VPiece\+Label\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}{VText\+Manager\+::\+Update}} updates the text lines with detail data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVTextManager_ae2ac45af706f6b524bfc31a10b9a5a14}{Update}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$p\+Doc)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}{VText\+Manager\+::\+Update}} updates the text lines with pattern info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QFont \mbox{\hyperlink{classVTextManager_ad3ba1c564f6c8d5edeae8aeb7bc46848}{m\+\_\+font}}
+\item 
+\mbox{\hyperlink{classQList}{QList}}$<$ \mbox{\hyperlink{structTextLine}{Text\+Line}} $>$ \mbox{\hyperlink{classVTextManager_aa7ccba6971a1c031ec5df6d5eb93f2e2}{m\+\_\+li\+Lines}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classQList}{QList}}$<$ \mbox{\hyperlink{structTextLine}{Text\+Line}} $>$ \mbox{\hyperlink{classVTextManager_aaf6a2a6467134ff2774c35880941683c}{m\+\_\+pattern\+Label\+Lines}} = \mbox{\hyperlink{classQList}{QList}}$<$\mbox{\hyperlink{structTextLine}{Text\+Line}}$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVTextManager}{VText\+Manager}} class this class is used to determine whether a collection of text lines can fit into specified bounding box and with what font size. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVTextManager_a394ef2e8e4c7769f634da976db928e3e}\label{classVTextManager_a394ef2e8e4c7769f634da976db928e3e}} 
+\index{VTextManager@{VTextManager}!VTextManager@{VTextManager}}
+\index{VTextManager@{VTextManager}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{VTextManager()}{VTextManager()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VText\+Manager\+::\+VText\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVTextManager_a394ef2e8e4c7769f634da976db928e3e}{VText\+Manager\+::\+VText\+Manager}} constructor. 
+
+\mbox{\Hypertarget{classVTextManager_aa6cc15de88dfb86f3a56d004fc47bbf9}\label{classVTextManager_aa6cc15de88dfb86f3a56d004fc47bbf9}} 
+\index{VTextManager@{VTextManager}!````~VTextManager@{$\sim$VTextManager}}
+\index{````~VTextManager@{$\sim$VTextManager}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$VTextManager()}{~VTextManager()}}
+{\footnotesize\ttfamily virtual VText\+Manager\+::$\sim$\+VText\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+\mbox{\Hypertarget{classVTextManager_af3e4e26bd3f02bc5f95ccd3300efbec2}\label{classVTextManager_af3e4e26bd3f02bc5f95ccd3300efbec2}} 
+\index{VTextManager@{VTextManager}!VTextManager@{VTextManager}}
+\index{VTextManager@{VTextManager}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{VTextManager()}{VTextManager()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VText\+Manager\+::\+VText\+Manager (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVTextManager}{VText\+Manager}} \&}]{text }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVTextManager_ac90c9ff728ab3c3a3633b700c81c7327}\label{classVTextManager_ac90c9ff728ab3c3a3633b700c81c7327}} 
+\index{VTextManager@{VTextManager}!FitFontSize@{FitFontSize}}
+\index{FitFontSize@{FitFontSize}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{FitFontSize()}{FitFontSize()}}
+{\footnotesize\ttfamily void VText\+Manager\+::\+Fit\+Font\+Size (\begin{DoxyParamCaption}\item[{qreal}]{fW,  }\item[{qreal}]{fH }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVTextManager_ac90c9ff728ab3c3a3633b700c81c7327}{VText\+Manager\+::\+Fit\+Font\+Size}} sets the font size just big enough, so that the text fits into rectangle of size (fW, fH) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fW} & rectangle width \\
+\hline
+{\em fH} & rectangle height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVTextManager_a8e6fcdc09b1acbd9d3b922b8b80cabe5}\label{classVTextManager_a8e6fcdc09b1acbd9d3b922b8b80cabe5}} 
+\index{VTextManager@{VTextManager}!GetAllSourceLines@{GetAllSourceLines}}
+\index{GetAllSourceLines@{GetAllSourceLines}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{GetAllSourceLines()}{GetAllSourceLines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQList}{QList}}$<$ \mbox{\hyperlink{structTextLine}{Text\+Line}} $>$ VText\+Manager\+::\+Get\+All\+Source\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVTextManager_a7f64e46d190ec246b4f30b14593b1a24}\label{classVTextManager_a7f64e46d190ec246b4f30b14593b1a24}} 
+\index{VTextManager@{VTextManager}!GetFont@{GetFont}}
+\index{GetFont@{GetFont}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{GetFont()}{GetFont()}}
+{\footnotesize\ttfamily const QFont \& VText\+Manager\+::\+Get\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Font returns the text base font. 
+
+\begin{DoxyReturn}{Returns}
+text base font 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVTextManager_a88620b46e6e2d46e84918ba6d28430bd}\label{classVTextManager_a88620b46e6e2d46e84918ba6d28430bd}} 
+\index{VTextManager@{VTextManager}!GetSourceLine@{GetSourceLine}}
+\index{GetSourceLine@{GetSourceLine}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{GetSourceLine()}{GetSourceLine()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structTextLine}{Text\+Line}} \& VText\+Manager\+::\+Get\+Source\+Line (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{classVTextManager_a88620b46e6e2d46e84918ba6d28430bd}{VText\+Manager\+::\+Get\+Source\+Line}} returns the reference to i-\/th text line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & index of the requested line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to the requested \mbox{\hyperlink{structTextLine}{Text\+Line}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVTextManager_a26f52aff711a1edac5192f79c3b7ba89}\label{classVTextManager_a26f52aff711a1edac5192f79c3b7ba89}} 
+\index{VTextManager@{VTextManager}!GetSourceLinesCount@{GetSourceLinesCount}}
+\index{GetSourceLinesCount@{GetSourceLinesCount}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{GetSourceLinesCount()}{GetSourceLinesCount()}}
+{\footnotesize\ttfamily int VText\+Manager\+::\+Get\+Source\+Lines\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{classVTextManager_a26f52aff711a1edac5192f79c3b7ba89}{VText\+Manager\+::\+Get\+Source\+Lines\+Count}} returns the number of input text lines. 
+
+\begin{DoxyReturn}{Returns}
+number of text lines that were added to the list by calling Add\+Line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVTextManager_a2fae4b4a83bf5b35101ceb6d4b579e5f}\label{classVTextManager_a2fae4b4a83bf5b35101ceb6d4b579e5f}} 
+\index{VTextManager@{VTextManager}!GetSpacing@{GetSpacing}}
+\index{GetSpacing@{GetSpacing}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{GetSpacing()}{GetSpacing()}}
+{\footnotesize\ttfamily int VText\+Manager\+::\+Get\+Spacing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+Spacing returns the vertical spacing between the lines. 
+
+\begin{DoxyReturn}{Returns}
+spacing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVTextManager_a029ffed61db48b11ad7b4142e23bf6f3}\label{classVTextManager_a029ffed61db48b11ad7b4142e23bf6f3}} 
+\index{VTextManager@{VTextManager}!operator=@{operator=}}
+\index{operator=@{operator=}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVTextManager}{VText\+Manager}} \& VText\+Manager\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVTextManager}{VText\+Manager}} \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTextManager_abd13c96f3b6633f91312e58c4f3ee3ef}\label{classVTextManager_abd13c96f3b6633f91312e58c4f3ee3ef}} 
+\index{VTextManager@{VTextManager}!setFont@{setFont}}
+\index{setFont@{setFont}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void VText\+Manager\+::set\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font }\end{DoxyParamCaption})}
+
+
+
+Set\+Font set the text base font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & text base font \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVTextManager_ae830ff36112ca0560f36249a8921c7d7}\label{classVTextManager_ae830ff36112ca0560f36249a8921c7d7}} 
+\index{VTextManager@{VTextManager}!SetFontSize@{SetFontSize}}
+\index{SetFontSize@{SetFontSize}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{SetFontSize()}{SetFontSize()}}
+{\footnotesize\ttfamily void VText\+Manager\+::\+Set\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{i\+FS }\end{DoxyParamCaption})}
+
+
+
+Set\+Font\+Size sets the font size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i\+FS} & font size in pixels \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}\label{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}} 
+\index{VTextManager@{VTextManager}!Update@{Update}}
+\index{Update@{Update}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VText\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{const QString \&}]{qs\+Name,  }\item[{const \mbox{\hyperlink{classVPieceLabelData}{VPiece\+Label\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}{VText\+Manager\+::\+Update}} updates the text lines with detail data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em qs\+Name} & detail name \\
+\hline
+{\em data} & reference to the detail data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVTextManager_ae2ac45af706f6b524bfc31a10b9a5a14}\label{classVTextManager_ae2ac45af706f6b524bfc31a10b9a5a14}} 
+\index{VTextManager@{VTextManager}!Update@{Update}}
+\index{Update@{Update}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VText\+Manager\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{p\+Doc }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVTextManager_a8edd1778c1d3d18aaba40ab82a35ae4e}{VText\+Manager\+::\+Update}} updates the text lines with pattern info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Doc} & pointer to the abstract pattern object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVTextManager_ad3ba1c564f6c8d5edeae8aeb7bc46848}\label{classVTextManager_ad3ba1c564f6c8d5edeae8aeb7bc46848}} 
+\index{VTextManager@{VTextManager}!m\_font@{m\_font}}
+\index{m\_font@{m\_font}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{m\_font}{m\_font}}
+{\footnotesize\ttfamily QFont VText\+Manager\+::m\+\_\+font\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVTextManager_aa7ccba6971a1c031ec5df6d5eb93f2e2}\label{classVTextManager_aa7ccba6971a1c031ec5df6d5eb93f2e2}} 
+\index{VTextManager@{VTextManager}!m\_liLines@{m\_liLines}}
+\index{m\_liLines@{m\_liLines}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{m\_liLines}{m\_liLines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQList}{QList}}$<$\mbox{\hyperlink{structTextLine}{Text\+Line}}$>$ VText\+Manager\+::m\+\_\+li\+Lines\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVTextManager_aaf6a2a6467134ff2774c35880941683c}\label{classVTextManager_aaf6a2a6467134ff2774c35880941683c}} 
+\index{VTextManager@{VTextManager}!m\_patternLabelLines@{m\_patternLabelLines}}
+\index{m\_patternLabelLines@{m\_patternLabelLines}!VTextManager@{VTextManager}}
+\doxysubsubsection{\texorpdfstring{m\_patternLabelLines}{m\_patternLabelLines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQList}{QList}}$<$ \mbox{\hyperlink{structTextLine}{Text\+Line}} $>$ VText\+Manager\+::m\+\_\+pattern\+Label\+Lines = \mbox{\hyperlink{classQList}{QList}}$<$\mbox{\hyperlink{structTextLine}{Text\+Line}}$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vlayout/\mbox{\hyperlink{vtextmanager_8h}{vtextmanager.\+h}}\item 
+src/libs/vlayout/\mbox{\hyperlink{vtextmanager_8cpp}{vtextmanager.\+cpp}}\end{DoxyCompactItemize}

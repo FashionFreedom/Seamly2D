@@ -1,0 +1,144 @@
+\hypertarget{classTogglePieceLock}{}\doxysection{Toggle\+Piece\+Lock Class Reference}
+\label{classTogglePieceLock}\index{TogglePieceLock@{TogglePieceLock}}
+
+
+{\ttfamily \#include $<$toggle\+\_\+piecelock.\+h$>$}
+
+Inheritance diagram for Toggle\+Piece\+Lock\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d9/d39/classTogglePieceLock}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTogglePieceLock_a8f0d30813258eab12a6950ab395e3a02}{update\+List}} (quint32 \mbox{\hyperlink{classTogglePieceLock_a73fa080a31b617e192493b155e464e06}{m\+\_\+id}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTogglePieceLock_a1734952269214bf11adc93d6782c009a}{Toggle\+Piece\+Lock}} (quint32 \mbox{\hyperlink{classTogglePieceLock_a1b6c48eb3a8ffe1abd64d68be59c54e9}{id}}, bool lock, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVUndoCommand_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classTogglePieceLock_ad610472f855f047da40ecca275b7f800}{$\sim$\+Toggle\+Piece\+Lock}} ()
+\item 
+virtual void \mbox{\hyperlink{classTogglePieceLock_a71c6ed269b9d4fc79ba62f22fb8e775b}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classTogglePieceLock_ac2a0d987ceec9eb09590742966cc0759}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classTogglePieceLock_a1b6c48eb3a8ffe1abd64d68be59c54e9}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{classTogglePieceLock_a7ab9ddc3cafabcb3b11ba64e68cacf3c}{getpiece\+Id}} () const
+\item 
+bool \mbox{\hyperlink{classTogglePieceLock_a9d217cc8fdd4f17df6eab225fc295350}{get\+New\+Lock}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTogglePieceLock_abbcb4093085e71b9ccdf5734d7342e3d}{do\+Cmd}} (bool lock)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classTogglePieceLock_a73fa080a31b617e192493b155e464e06}{m\+\_\+id}}
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classTogglePieceLock_ac0d42abc549cd1f7a6b6fd13e3dbced6}{m\+\_\+data}}
+\item 
+bool \mbox{\hyperlink{classTogglePieceLock_ad58d58ebc3590e97e86051edbf7ed9ed}{m\+\_\+old\+Lock}}
+\item 
+bool \mbox{\hyperlink{classTogglePieceLock_aa43d8fcd2496ad79297f5edf6b50cc99}{m\+\_\+new\+Lock}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTogglePieceLock_a1734952269214bf11adc93d6782c009a}\label{classTogglePieceLock_a1734952269214bf11adc93d6782c009a}} 
+\index{TogglePieceLock@{TogglePieceLock}!TogglePieceLock@{TogglePieceLock}}
+\index{TogglePieceLock@{TogglePieceLock}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{TogglePieceLock()}{TogglePieceLock()}}
+{\footnotesize\ttfamily Toggle\+Piece\+Lock\+::\+Toggle\+Piece\+Lock (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{lock,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTogglePieceLock_ad610472f855f047da40ecca275b7f800}\label{classTogglePieceLock_ad610472f855f047da40ecca275b7f800}} 
+\index{TogglePieceLock@{TogglePieceLock}!````~TogglePieceLock@{$\sim$TogglePieceLock}}
+\index{````~TogglePieceLock@{$\sim$TogglePieceLock}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{$\sim$TogglePieceLock()}{~TogglePieceLock()}}
+{\footnotesize\ttfamily Toggle\+Piece\+Lock\+::$\sim$\+Toggle\+Piece\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTogglePieceLock_abbcb4093085e71b9ccdf5734d7342e3d}\label{classTogglePieceLock_abbcb4093085e71b9ccdf5734d7342e3d}} 
+\index{TogglePieceLock@{TogglePieceLock}!doCmd@{doCmd}}
+\index{doCmd@{doCmd}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{doCmd()}{doCmd()}}
+{\footnotesize\ttfamily void Toggle\+Piece\+Lock\+::do\+Cmd (\begin{DoxyParamCaption}\item[{bool}]{lock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_a9d217cc8fdd4f17df6eab225fc295350}\label{classTogglePieceLock_a9d217cc8fdd4f17df6eab225fc295350}} 
+\index{TogglePieceLock@{TogglePieceLock}!getNewLock@{getNewLock}}
+\index{getNewLock@{getNewLock}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{getNewLock()}{getNewLock()}}
+{\footnotesize\ttfamily bool Toggle\+Piece\+Lock\+::get\+New\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTogglePieceLock_a7ab9ddc3cafabcb3b11ba64e68cacf3c}\label{classTogglePieceLock_a7ab9ddc3cafabcb3b11ba64e68cacf3c}} 
+\index{TogglePieceLock@{TogglePieceLock}!getpieceId@{getpieceId}}
+\index{getpieceId@{getpieceId}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{getpieceId()}{getpieceId()}}
+{\footnotesize\ttfamily quint32 Toggle\+Piece\+Lock\+::getpiece\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTogglePieceLock_a1b6c48eb3a8ffe1abd64d68be59c54e9}\label{classTogglePieceLock_a1b6c48eb3a8ffe1abd64d68be59c54e9}} 
+\index{TogglePieceLock@{TogglePieceLock}!id@{id}}
+\index{id@{id}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Toggle\+Piece\+Lock\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_ac2a0d987ceec9eb09590742966cc0759}\label{classTogglePieceLock_ac2a0d987ceec9eb09590742966cc0759}} 
+\index{TogglePieceLock@{TogglePieceLock}!redo@{redo}}
+\index{redo@{redo}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Toggle\+Piece\+Lock\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_a71c6ed269b9d4fc79ba62f22fb8e775b}\label{classTogglePieceLock_a71c6ed269b9d4fc79ba62f22fb8e775b}} 
+\index{TogglePieceLock@{TogglePieceLock}!undo@{undo}}
+\index{undo@{undo}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Toggle\+Piece\+Lock\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_a8f0d30813258eab12a6950ab395e3a02}\label{classTogglePieceLock_a8f0d30813258eab12a6950ab395e3a02}} 
+\index{TogglePieceLock@{TogglePieceLock}!updateList@{updateList}}
+\index{updateList@{updateList}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{updateList}{updateList}}
+{\footnotesize\ttfamily void Toggle\+Piece\+Lock\+::update\+List (\begin{DoxyParamCaption}\item[{quint32}]{m\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTogglePieceLock_ac0d42abc549cd1f7a6b6fd13e3dbced6}\label{classTogglePieceLock_ac0d42abc549cd1f7a6b6fd13e3dbced6}} 
+\index{TogglePieceLock@{TogglePieceLock}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ Toggle\+Piece\+Lock\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_a73fa080a31b617e192493b155e464e06}\label{classTogglePieceLock_a73fa080a31b617e192493b155e464e06}} 
+\index{TogglePieceLock@{TogglePieceLock}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily quint32 Toggle\+Piece\+Lock\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_aa43d8fcd2496ad79297f5edf6b50cc99}\label{classTogglePieceLock_aa43d8fcd2496ad79297f5edf6b50cc99}} 
+\index{TogglePieceLock@{TogglePieceLock}!m\_newLock@{m\_newLock}}
+\index{m\_newLock@{m\_newLock}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{m\_newLock}{m\_newLock}}
+{\footnotesize\ttfamily bool Toggle\+Piece\+Lock\+::m\+\_\+new\+Lock\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTogglePieceLock_ad58d58ebc3590e97e86051edbf7ed9ed}\label{classTogglePieceLock_ad58d58ebc3590e97e86051edbf7ed9ed}} 
+\index{TogglePieceLock@{TogglePieceLock}!m\_oldLock@{m\_oldLock}}
+\index{m\_oldLock@{m\_oldLock}!TogglePieceLock@{TogglePieceLock}}
+\doxysubsubsection{\texorpdfstring{m\_oldLock}{m\_oldLock}}
+{\footnotesize\ttfamily bool Toggle\+Piece\+Lock\+::m\+\_\+old\+Lock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/undocommands/\mbox{\hyperlink{toggle__piecelock_8h}{toggle\+\_\+piecelock.\+h}}\item 
+src/libs/vtools/undocommands/\mbox{\hyperlink{toggle__piecelock_8cpp}{toggle\+\_\+piecelock.\+cpp}}\end{DoxyCompactItemize}

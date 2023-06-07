@@ -1,0 +1,154 @@
+\hypertarget{classVIncrement}{}\doxysection{VIncrement Class Reference}
+\label{classVIncrement}\index{VIncrement@{VIncrement}}
+
+
+The \mbox{\hyperlink{classVIncrement}{VIncrement}} class keep data row of increment table.  
+
+
+
+
+{\ttfamily \#include $<$vincrement.\+h$>$}
+
+Inheritance diagram for VIncrement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{dd/d0c/classVIncrement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVIncrement_af274de6b871031a0d6c960ff2c2a8a69}{VIncrement}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVIncrement}{VIncrement}} create enpty increment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVIncrement_af1ebf5540072137d70a323ef4fee4713}{VIncrement}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const QString \&name, quint32 index, qreal base, const QString \&formula, bool ok, const QString \&description=QString())
+\begin{DoxyCompactList}\small\item\em VIncrement\+Table\+Row create increment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVIncrement_adb05f9ef356685debcac2932d543d370}{VIncrement}} (const \mbox{\hyperlink{classVIncrement}{VIncrement}} \&incr)
+\item 
+virtual \mbox{\hyperlink{classVIncrement_aaef3df1505d7a584207668254c4dded5}{$\sim$\+VIncrement}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVIncrement}{VIncrement}} \& \mbox{\hyperlink{classVIncrement_a105de0d212dfb046336f8c67d7c098bf}{operator=}} (const \mbox{\hyperlink{classVIncrement}{VIncrement}} \&incr)
+\item 
+void \mbox{\hyperlink{classVIncrement_a695122d948cffc4e982bc19501600001}{Swap}} (\mbox{\hyperlink{classVIncrement}{VIncrement}} \&incr) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+quint32 \mbox{\hyperlink{classVIncrement_a1b8b64125219d69a58cc1b187b58247a}{get\+Index}} () const
+\begin{DoxyCompactList}\small\item\em get\+Index return index of row \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVIncrement_ae4a702745da68d3289b6bb5833de291b}{Get\+Formula}} () const
+\item 
+bool \mbox{\hyperlink{classVIncrement_abaafa514756d8f5280e7eed096c55bd4}{Is\+Formula\+Ok}} () const
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVIncrement_aae67153ff014368246bad1a6404e1354}{Get\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{classVIncrementData}{VIncrement\+Data}} $>$ \mbox{\hyperlink{classVIncrement_a0613ddd08ad79791af6a20e9c603b8d7}{d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVIncrement}{VIncrement}} class keep data row of increment table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVIncrement_af274de6b871031a0d6c960ff2c2a8a69}\label{classVIncrement_af274de6b871031a0d6c960ff2c2a8a69}} 
+\index{VIncrement@{VIncrement}!VIncrement@{VIncrement}}
+\index{VIncrement@{VIncrement}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{VIncrement()}{VIncrement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VIncrement\+::\+VIncrement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVIncrement}{VIncrement}} create enpty increment. 
+
+\mbox{\Hypertarget{classVIncrement_af1ebf5540072137d70a323ef4fee4713}\label{classVIncrement_af1ebf5540072137d70a323ef4fee4713}} 
+\index{VIncrement@{VIncrement}!VIncrement@{VIncrement}}
+\index{VIncrement@{VIncrement}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{VIncrement()}{VIncrement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VIncrement\+::\+VIncrement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const QString \&}]{name,  }\item[{quint32}]{index,  }\item[{qreal}]{base,  }\item[{const QString \&}]{formula,  }\item[{bool}]{ok,  }\item[{const QString \&}]{description = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+VIncrement\+Table\+Row create increment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & increment\textquotesingle{}s name \\
+\hline
+{\em base} & value \\
+\hline
+{\em description} & description of increment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVIncrement_adb05f9ef356685debcac2932d543d370}\label{classVIncrement_adb05f9ef356685debcac2932d543d370}} 
+\index{VIncrement@{VIncrement}!VIncrement@{VIncrement}}
+\index{VIncrement@{VIncrement}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{VIncrement()}{VIncrement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VIncrement\+::\+VIncrement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVIncrement}{VIncrement}} \&}]{incr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVIncrement_aaef3df1505d7a584207668254c4dded5}\label{classVIncrement_aaef3df1505d7a584207668254c4dded5}} 
+\index{VIncrement@{VIncrement}!````~VIncrement@{$\sim$VIncrement}}
+\index{````~VIncrement@{$\sim$VIncrement}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{$\sim$VIncrement()}{~VIncrement()}}
+{\footnotesize\ttfamily VIncrement\+::$\sim$\+VIncrement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVIncrement_aae67153ff014368246bad1a6404e1354}\label{classVIncrement_aae67153ff014368246bad1a6404e1354}} 
+\index{VIncrement@{VIncrement}!GetData@{GetData}}
+\index{GetData@{GetData}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ VIncrement\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVIncrement_ae4a702745da68d3289b6bb5833de291b}\label{classVIncrement_ae4a702745da68d3289b6bb5833de291b}} 
+\index{VIncrement@{VIncrement}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily QString VIncrement\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVIncrement_a1b8b64125219d69a58cc1b187b58247a}\label{classVIncrement_a1b8b64125219d69a58cc1b187b58247a}} 
+\index{VIncrement@{VIncrement}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily quint32 VIncrement\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Index return index of row 
+
+\begin{DoxyReturn}{Returns}
+index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVIncrement_abaafa514756d8f5280e7eed096c55bd4}\label{classVIncrement_abaafa514756d8f5280e7eed096c55bd4}} 
+\index{VIncrement@{VIncrement}!IsFormulaOk@{IsFormulaOk}}
+\index{IsFormulaOk@{IsFormulaOk}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{IsFormulaOk()}{IsFormulaOk()}}
+{\footnotesize\ttfamily bool VIncrement\+::\+Is\+Formula\+Ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVIncrement_a105de0d212dfb046336f8c67d7c098bf}\label{classVIncrement_a105de0d212dfb046336f8c67d7c098bf}} 
+\index{VIncrement@{VIncrement}!operator=@{operator=}}
+\index{operator=@{operator=}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVIncrement}{VIncrement}} \& VIncrement\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVIncrement}{VIncrement}} \&}]{incr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVIncrement_a695122d948cffc4e982bc19501600001}\label{classVIncrement_a695122d948cffc4e982bc19501600001}} 
+\index{VIncrement@{VIncrement}!Swap@{Swap}}
+\index{Swap@{Swap}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VIncrement\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVIncrement}{VIncrement}} \&}]{incr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVIncrement_a0613ddd08ad79791af6a20e9c603b8d7}\label{classVIncrement_a0613ddd08ad79791af6a20e9c603b8d7}} 
+\index{VIncrement@{VIncrement}!d@{d}}
+\index{d@{d}!VIncrement@{VIncrement}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{classVIncrementData}{VIncrement\+Data}}$>$ VIncrement\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpatterndb/variables/\mbox{\hyperlink{vincrement_8h}{vincrement.\+h}}\item 
+src/libs/vpatterndb/variables/\mbox{\hyperlink{vincrement_8cpp}{vincrement.\+cpp}}\end{DoxyCompactItemize}

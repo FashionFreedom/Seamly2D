@@ -1,0 +1,243 @@
+\hypertarget{classVPE_1_1VLineColorProperty}{}\doxysection{VPE\+::VLine\+Color\+Property Class Reference}
+\label{classVPE_1_1VLineColorProperty}\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+
+
+{\ttfamily \#include $<$vlinecolorproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::VLine\+Color\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d6/d22/classVPE_1_1VLineColorProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VLineColorProperty_aff6671aee355fe1c322911b700841269}{current\+Index\+Changed}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VLineColorProperty_a48376073922cb79104ff8b55c257bcb9}{VLine\+Color\+Property}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a9d97bfd8252f5c7d4784b9dce6ce2c63}{$\sim$\+VLine\+Color\+Property}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a6820e5bff93676cce09054456c766c08}{data}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{classVPE_1_1VLineColorProperty_af896a63cca101046a06d9a47aed9bbaa}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&options, const QAbstract\+Item\+Delegate $\ast$delegate) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VLineColorProperty_acf9c44c566651364407c5f54cab43238}{get\+Editor\+Data}} (const QWidget $\ast$editor) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VLineColorProperty_adfa138d75513dfa0558e7339afd872e5}{set\+Colors}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ \&\mbox{\hyperlink{classVPE_1_1VLineColorProperty_a7f2ebc75c315606de6804d9bf14afaa5}{colors}})
+\begin{DoxyCompactList}\small\item\em Sets the colors. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a5354628006daa5e59e3eccd486310e3b}{get\+Colors}} () const
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a0cf5751f39ffff28bec84045a3f508a2}{set\+Value}} (const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the value of the property. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a1f77b138d04f650de0492bd37b876b34}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$ \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a7c9f263420e8927c58a552dcf72cbf5b}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$container=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classVPE_1_1VLineColorProperty_ab21a7dc4453160759462ea4e1267dc3c}{index\+Of\+Color}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ \&\mbox{\hyperlink{classVPE_1_1VLineColorProperty_a7f2ebc75c315606de6804d9bf14afaa5}{colors}}, const QString \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a7f2ebc75c315606de6804d9bf14afaa5}{colors}}
+\begin{DoxyCompactList}\small\item\em The list of possible options to choose from. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QString $>$ \mbox{\hyperlink{classVPE_1_1VLineColorProperty_abb65322ae95ba799e8f7862a6be8d582}{index\+List}}
+\item 
+int \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a7a376935013ea300afd40781d5700d5a}{m\+\_\+icon\+Width}}
+\item 
+int \mbox{\hyperlink{classVPE_1_1VLineColorProperty_a6e29cf5bc684c9de73a5d02763589a92}{m\+\_\+icon\+Height}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a48376073922cb79104ff8b55c257bcb9}\label{classVPE_1_1VLineColorProperty_a48376073922cb79104ff8b55c257bcb9}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!VLineColorProperty@{VLineColorProperty}}
+\index{VLineColorProperty@{VLineColorProperty}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{VLineColorProperty()}{VLineColorProperty()}}
+{\footnotesize\ttfamily VPE\+::\+VLine\+Color\+Property\+::\+VLine\+Color\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a9d97bfd8252f5c7d4784b9dce6ce2c63}\label{classVPE_1_1VLineColorProperty_a9d97bfd8252f5c7d4784b9dce6ce2c63}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!````~VLineColorProperty@{$\sim$VLineColorProperty}}
+\index{````~VLineColorProperty@{$\sim$VLineColorProperty}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{$\sim$VLineColorProperty()}{~VLineColorProperty()}}
+{\footnotesize\ttfamily virtual VPE\+::\+VLine\+Color\+Property\+::$\sim$\+VLine\+Color\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a7c9f263420e8927c58a552dcf72cbf5b}\label{classVPE_1_1VLineColorProperty_a7c9f263420e8927c58a552dcf72cbf5b}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+VLine\+Color\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$}]{container = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a03865ea193d5465fea60bb7f29ca02bf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_af896a63cca101046a06d9a47aed9bbaa}\label{classVPE_1_1VLineColorProperty_af896a63cca101046a06d9a47aed9bbaa}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VPE\+::\+VLine\+Color\+Property\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{options,  }\item[{const QAbstract\+Item\+Delegate $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one 
+\begin{DoxyParams}{Parameters}
+{\em parent} & The widget to which the editor will be added as a child \textbackslash{}options Render options \textbackslash{}delegate A pointer to the QAbstract\+Item\+Delegate requesting the editor. This can be used to connect signals and slots. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_aea7526e6641c9cb369cc8234881df935}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_aff6671aee355fe1c322911b700841269}\label{classVPE_1_1VLineColorProperty_aff6671aee355fe1c322911b700841269}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!currentIndexChanged@{currentIndexChanged}}
+\index{currentIndexChanged@{currentIndexChanged}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{currentIndexChanged}{currentIndexChanged}}
+{\footnotesize\ttfamily void VPE\+::\+VLine\+Color\+Property\+::current\+Index\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a6820e5bff93676cce09054456c766c08}\label{classVPE_1_1VLineColorProperty_a6820e5bff93676cce09054456c766c08}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!data@{data}}
+\index{data@{data}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VLine\+Color\+Property\+::data (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}},  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the data how it should be displayed. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a21a184d546b92bb2c553ebf7d9d58448}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a5354628006daa5e59e3eccd486310e3b}\label{classVPE_1_1VLineColorProperty_a5354628006daa5e59e3eccd486310e3b}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!getColors@{getColors}}
+\index{getColors@{getColors}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{getColors()}{getColors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ VPE\+::\+VLine\+Color\+Property\+::get\+Colors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the settings. This function has to be implemented in a subclass in order to have an effect. 
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_acf9c44c566651364407c5f54cab43238}\label{classVPE_1_1VLineColorProperty_acf9c44c566651364407c5f54cab43238}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!getEditorData@{getEditorData}}
+\index{getEditorData@{getEditorData}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{getEditorData()}{getEditorData()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VLine\+Color\+Property\+::get\+Editor\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the data from the widget. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a884293b0d13de6f76c3109b8f71a61e0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_ab21a7dc4453160759462ea4e1267dc3c}\label{classVPE_1_1VLineColorProperty_ab21a7dc4453160759462ea4e1267dc3c}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!indexOfColor@{indexOfColor}}
+\index{indexOfColor@{indexOfColor}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{indexOfColor()}{indexOfColor()}}
+{\footnotesize\ttfamily int VPE\+::\+VLine\+Color\+Property\+::index\+Of\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ \&}]{colors,  }\item[{const QString \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_adfa138d75513dfa0558e7339afd872e5}\label{classVPE_1_1VLineColorProperty_adfa138d75513dfa0558e7339afd872e5}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!setColors@{setColors}}
+\index{setColors@{setColors}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{setColors()}{setColors()}}
+{\footnotesize\ttfamily void VPE\+::\+VLine\+Color\+Property\+::set\+Colors (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QString $>$ \&}]{colors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the colors. 
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a0cf5751f39ffff28bec84045a3f508a2}\label{classVPE_1_1VLineColorProperty_a0cf5751f39ffff28bec84045a3f508a2}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!setValue@{setValue}}
+\index{setValue@{setValue}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void VPE\+::\+VLine\+Color\+Property\+::set\+Value (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the value of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a67c7322abd6f7f0306ecdf56ffb0f65d}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a1f77b138d04f650de0492bd37b876b34}\label{classVPE_1_1VLineColorProperty_a1f77b138d04f650de0492bd37b876b34}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!type@{type}}
+\index{type@{type}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+VLine\+Color\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a7f2ebc75c315606de6804d9bf14afaa5}\label{classVPE_1_1VLineColorProperty_a7f2ebc75c315606de6804d9bf14afaa5}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!colors@{colors}}
+\index{colors@{colors}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$QString, QString$>$ VPE\+::\+VLine\+Color\+Property\+::colors\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The list of possible options to choose from. 
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_abb65322ae95ba799e8f7862a6be8d582}\label{classVPE_1_1VLineColorProperty_abb65322ae95ba799e8f7862a6be8d582}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!indexList@{indexList}}
+\index{indexList@{indexList}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{indexList}{indexList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QString$>$ VPE\+::\+VLine\+Color\+Property\+::index\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a6e29cf5bc684c9de73a5d02763589a92}\label{classVPE_1_1VLineColorProperty_a6e29cf5bc684c9de73a5d02763589a92}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!m\_iconHeight@{m\_iconHeight}}
+\index{m\_iconHeight@{m\_iconHeight}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{m\_iconHeight}{m\_iconHeight}}
+{\footnotesize\ttfamily int VPE\+::\+VLine\+Color\+Property\+::m\+\_\+icon\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VLineColorProperty_a7a376935013ea300afd40781d5700d5a}\label{classVPE_1_1VLineColorProperty_a7a376935013ea300afd40781d5700d5a}} 
+\index{VPE::VLineColorProperty@{VPE::VLineColorProperty}!m\_iconWidth@{m\_iconWidth}}
+\index{m\_iconWidth@{m\_iconWidth}!VPE::VLineColorProperty@{VPE::VLineColorProperty}}
+\doxysubsubsection{\texorpdfstring{m\_iconWidth}{m\_iconWidth}}
+{\footnotesize\ttfamily int VPE\+::\+VLine\+Color\+Property\+::m\+\_\+icon\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vlinecolorproperty_8h}{vlinecolorproperty.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vlinecolorproperty_8cpp}{vlinecolorproperty.\+cpp}}\end{DoxyCompactItemize}

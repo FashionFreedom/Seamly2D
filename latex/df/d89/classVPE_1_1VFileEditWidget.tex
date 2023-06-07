@@ -1,0 +1,274 @@
+\hypertarget{classVPE_1_1VFileEditWidget}{}\doxysection{VPE\+::VFile\+Edit\+Widget Class Reference}
+\label{classVPE_1_1VFileEditWidget}\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+
+
+{\ttfamily \#include $<$vfilepropertyeditor.\+h$>$}
+
+Inheritance diagram for VPE\+::VFile\+Edit\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{df/d89/classVPE_1_1VFileEditWidget}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ab3f46a5d12ae9e1223e890e0bcf278f3}{set\+File}} (const QString \&value, bool emit\+\_\+signal=false)
+\item 
+void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_adeb9b293c352331e3d760cb0b0bd630f}{set\+Filter}} (const QString \&dialog\+\_\+filter=QString(), const QString\+List \&filter\+\_\+list=QString\+List())
+\item 
+void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a5b1e1b8a7cc5ed870a9fb69e0279be0f}{set\+Directory}} (bool dir)
+\begin{DoxyCompactList}\small\item\em Sets whether the property stores a directory or a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ac753eca02b685ce2e83005a80382068a}{data\+Changed\+By\+User}} (const QString \&\mbox{\hyperlink{classVPE_1_1VFileEditWidget_ab4cd38732237f9b189d804f9249bff96}{get\+File}}, \mbox{\hyperlink{classVPE_1_1VFileEditWidget}{VFile\+Edit\+Widget}} $\ast$editor)
+\item 
+void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a0cb0cdaf4d338fbfb99311eca0b22722}{commit\+Data}} (QWidget $\ast$editor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VFileEditWidget_a7c1fd17f2077f4934565108887cd3cca}{VFile\+Edit\+Widget}} (QWidget $\ast$parent, bool is\+\_\+directory=false)
+\item 
+virtual \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a33aff352ae514c2bf7e3f75265b6dc0c}{$\sim$\+VFile\+Edit\+Widget}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ab4cd38732237f9b189d804f9249bff96}{get\+File}} () const
+\begin{DoxyCompactList}\small\item\em This function returns the file currently set to this editor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a895262236fc44bd65561fd8863203932}{event\+Filter}} (QObject $\ast$obj, QEvent $\ast$ev) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Needed for proper event handling. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVPE_1_1VFileEditWidget_af70de8d1ec28d384a26c22ce41f163a5}{is\+Directory}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a22392eae8cd6c3a05e58fb76c2a19dfc}{drag\+Enter\+Event}} (QDrag\+Enter\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a6f93063bc46f20146dc842ebebf5b690}{drag\+Move\+Event}} (QDrag\+Move\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a042c9f798df851d47f984beec56a59d0}{drag\+Leave\+Event}} (QDrag\+Leave\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a967a59740344eed10dc9b69c1f7a2ed6}{drop\+Event}} (QDrop\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ad5fddfa9fd6c06a2e0eb44e90e32ba8d}{check\+Mime\+Data}} (const QMime\+Data $\ast$data, QString \&file) const
+\begin{DoxyCompactList}\small\item\em This function checks the mime data, if it is compatible with the filters. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ad8034c392ac9b792fadf460b10b625f0}{check\+File\+Filter}} (const QString \&file) const
+\begin{DoxyCompactList}\small\item\em This checks, if a file is compatible with the filters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a30048348cf6e6cf45451553eda9163e5}{Current\+File\+Path}}
+\item 
+QTool\+Button $\ast$ \mbox{\hyperlink{classVPE_1_1VFileEditWidget_acd4aeb83d26b191a16098ce12945d654}{Tool\+Button}}
+\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a0ef062346f55f1386ef83bf0cbdd1598}{File\+Line\+Edit}}
+\item 
+QString \mbox{\hyperlink{classVPE_1_1VFileEditWidget_aff064e71f91f4886f4f98e2db257bb55}{File\+Dialog\+Filter}}
+\item 
+QString\+List \mbox{\hyperlink{classVPE_1_1VFileEditWidget_af3a9fff0daef7c873ae825088c370509}{Filter\+List}}
+\item 
+bool \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a974325ea74c883edf68f024c19861d87}{Directory}}
+\begin{DoxyCompactList}\small\item\em Specifies whether it is being looked for a directory (true) or a file (false, default) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a2fc6d5c6361efee0263535caff9bbcef}{on\+Tool\+Button\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em This slot gets activated, when the \char`\"{}...\char`\"{} button gets clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a7c1fd17f2077f4934565108887cd3cca}\label{classVPE_1_1VFileEditWidget_a7c1fd17f2077f4934565108887cd3cca}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!VFileEditWidget@{VFileEditWidget}}
+\index{VFileEditWidget@{VFileEditWidget}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{VFileEditWidget()}{VFileEditWidget()}}
+{\footnotesize\ttfamily VPE\+::\+VFile\+Edit\+Widget\+::\+VFile\+Edit\+Widget (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{bool}]{is\+\_\+directory = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a33aff352ae514c2bf7e3f75265b6dc0c}\label{classVPE_1_1VFileEditWidget_a33aff352ae514c2bf7e3f75265b6dc0c}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!````~VFileEditWidget@{$\sim$VFileEditWidget}}
+\index{````~VFileEditWidget@{$\sim$VFileEditWidget}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$VFileEditWidget()}{~VFileEditWidget()}}
+{\footnotesize\ttfamily VPE\+::\+VFile\+Edit\+Widget\+::$\sim$\+VFile\+Edit\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_ad8034c392ac9b792fadf460b10b625f0}\label{classVPE_1_1VFileEditWidget_ad8034c392ac9b792fadf460b10b625f0}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!checkFileFilter@{checkFileFilter}}
+\index{checkFileFilter@{checkFileFilter}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{checkFileFilter()}{checkFileFilter()}}
+{\footnotesize\ttfamily bool VPE\+::\+VFile\+Edit\+Widget\+::check\+File\+Filter (\begin{DoxyParamCaption}\item[{const QString \&}]{file }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+This checks, if a file is compatible with the filters. 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_ad5fddfa9fd6c06a2e0eb44e90e32ba8d}\label{classVPE_1_1VFileEditWidget_ad5fddfa9fd6c06a2e0eb44e90e32ba8d}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!checkMimeData@{checkMimeData}}
+\index{checkMimeData@{checkMimeData}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{checkMimeData()}{checkMimeData()}}
+{\footnotesize\ttfamily bool VPE\+::\+VFile\+Edit\+Widget\+::check\+Mime\+Data (\begin{DoxyParamCaption}\item[{const QMime\+Data $\ast$}]{data,  }\item[{QString \&}]{file }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+This function checks the mime data, if it is compatible with the filters. 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a0cb0cdaf4d338fbfb99311eca0b22722}\label{classVPE_1_1VFileEditWidget_a0cb0cdaf4d338fbfb99311eca0b22722}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!commitData@{commitData}}
+\index{commitData@{commitData}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{commitData}{commitData}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::commit\+Data (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted whenever \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ac753eca02b685ce2e83005a80382068a}{data\+Changed\+By\+User()}} gets emmitted and is connected to the delegate\textquotesingle{}s \mbox{\hyperlink{classVPE_1_1VFileEditWidget_a0cb0cdaf4d338fbfb99311eca0b22722}{commit\+Data()}} signal \mbox{\Hypertarget{classVPE_1_1VFileEditWidget_ac753eca02b685ce2e83005a80382068a}\label{classVPE_1_1VFileEditWidget_ac753eca02b685ce2e83005a80382068a}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!dataChangedByUser@{dataChangedByUser}}
+\index{dataChangedByUser@{dataChangedByUser}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{dataChangedByUser}{dataChangedByUser}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::data\+Changed\+By\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{get\+File,  }\item[{\mbox{\hyperlink{classVPE_1_1VFileEditWidget}{VFile\+Edit\+Widget}} $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted when the user changed the curret file. Actions triggering this signal are either using the file dialog to select a new file or changing the file path in the line edit. \mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a22392eae8cd6c3a05e58fb76c2a19dfc}\label{classVPE_1_1VFileEditWidget_a22392eae8cd6c3a05e58fb76c2a19dfc}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!dragEnterEvent@{dragEnterEvent}}
+\index{dragEnterEvent@{dragEnterEvent}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{dragEnterEvent()}{dragEnterEvent()}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::drag\+Enter\+Event (\begin{DoxyParamCaption}\item[{QDrag\+Enter\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a042c9f798df851d47f984beec56a59d0}\label{classVPE_1_1VFileEditWidget_a042c9f798df851d47f984beec56a59d0}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!dragLeaveEvent@{dragLeaveEvent}}
+\index{dragLeaveEvent@{dragLeaveEvent}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{dragLeaveEvent()}{dragLeaveEvent()}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::drag\+Leave\+Event (\begin{DoxyParamCaption}\item[{QDrag\+Leave\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a6f93063bc46f20146dc842ebebf5b690}\label{classVPE_1_1VFileEditWidget_a6f93063bc46f20146dc842ebebf5b690}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!dragMoveEvent@{dragMoveEvent}}
+\index{dragMoveEvent@{dragMoveEvent}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{dragMoveEvent()}{dragMoveEvent()}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::drag\+Move\+Event (\begin{DoxyParamCaption}\item[{QDrag\+Move\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a967a59740344eed10dc9b69c1f7a2ed6}\label{classVPE_1_1VFileEditWidget_a967a59740344eed10dc9b69c1f7a2ed6}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!dropEvent@{dropEvent}}
+\index{dropEvent@{dropEvent}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{dropEvent()}{dropEvent()}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::drop\+Event (\begin{DoxyParamCaption}\item[{QDrop\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a895262236fc44bd65561fd8863203932}\label{classVPE_1_1VFileEditWidget_a895262236fc44bd65561fd8863203932}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool VPE\+::\+VFile\+Edit\+Widget\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{obj,  }\item[{QEvent $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Needed for proper event handling. 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_ab4cd38732237f9b189d804f9249bff96}\label{classVPE_1_1VFileEditWidget_ab4cd38732237f9b189d804f9249bff96}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!getFile@{getFile}}
+\index{getFile@{getFile}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{getFile()}{getFile()}}
+{\footnotesize\ttfamily QString VPE\+::\+VFile\+Edit\+Widget\+::get\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+This function returns the file currently set to this editor. 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_af70de8d1ec28d384a26c22ce41f163a5}\label{classVPE_1_1VFileEditWidget_af70de8d1ec28d384a26c22ce41f163a5}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!isDirectory@{isDirectory}}
+\index{isDirectory@{isDirectory}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{isDirectory()}{isDirectory()}}
+{\footnotesize\ttfamily bool VPE\+::\+VFile\+Edit\+Widget\+::is\+Directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns the directory/file setting \begin{DoxyReturn}{Returns}
+True, if a directory dialog is being shown, false if a file dialog 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a2fc6d5c6361efee0263535caff9bbcef}\label{classVPE_1_1VFileEditWidget_a2fc6d5c6361efee0263535caff9bbcef}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!onToolButtonClicked@{onToolButtonClicked}}
+\index{onToolButtonClicked@{onToolButtonClicked}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{onToolButtonClicked}{onToolButtonClicked}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::on\+Tool\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This slot gets activated, when the \char`\"{}...\char`\"{} button gets clicked. 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a5b1e1b8a7cc5ed870a9fb69e0279be0f}\label{classVPE_1_1VFileEditWidget_a5b1e1b8a7cc5ed870a9fb69e0279be0f}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!setDirectory@{setDirectory}}
+\index{setDirectory@{setDirectory}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{setDirectory}{setDirectory}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::set\+Directory (\begin{DoxyParamCaption}\item[{bool}]{dir }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Sets whether the property stores a directory or a file. 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_ab3f46a5d12ae9e1223e890e0bcf278f3}\label{classVPE_1_1VFileEditWidget_ab3f46a5d12ae9e1223e890e0bcf278f3}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!setFile@{setFile}}
+\index{setFile@{setFile}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{setFile}{setFile}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::set\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{value,  }\item[{bool}]{emit\+\_\+signal = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Sets the current file, does not check if it is valid 
+\begin{DoxyParams}{Parameters}
+{\em value} & The new filepath the widget should show \\
+\hline
+{\em emit\+\_\+signal} & If true, this will emit the \mbox{\hyperlink{classVPE_1_1VFileEditWidget_ac753eca02b685ce2e83005a80382068a}{data\+Changed\+By\+User()}}-\/signal (if file differs from the current file) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_adeb9b293c352331e3d760cb0b0bd630f}\label{classVPE_1_1VFileEditWidget_adeb9b293c352331e3d760cb0b0bd630f}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!setFilter@{setFilter}}
+\index{setFilter@{setFilter}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{setFilter}{setFilter}}
+{\footnotesize\ttfamily void VPE\+::\+VFile\+Edit\+Widget\+::set\+Filter (\begin{DoxyParamCaption}\item[{const QString \&}]{dialog\+\_\+filter = {\ttfamily QString()},  }\item[{const QString\+List \&}]{filter\+\_\+list = {\ttfamily QStringList()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Sets a filter for the file field 
+\begin{DoxyParams}{Parameters}
+{\em dialog\+\_\+filter} & The filter used for the File Dialog \\
+\hline
+{\em filter\+\_\+list} & The list of file endings. The filters are being checked using regular expressions \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a30048348cf6e6cf45451553eda9163e5}\label{classVPE_1_1VFileEditWidget_a30048348cf6e6cf45451553eda9163e5}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!CurrentFilePath@{CurrentFilePath}}
+\index{CurrentFilePath@{CurrentFilePath}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{CurrentFilePath}{CurrentFilePath}}
+{\footnotesize\ttfamily QString VPE\+::\+VFile\+Edit\+Widget\+::\+Current\+File\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a974325ea74c883edf68f024c19861d87}\label{classVPE_1_1VFileEditWidget_a974325ea74c883edf68f024c19861d87}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!Directory@{Directory}}
+\index{Directory@{Directory}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{Directory}{Directory}}
+{\footnotesize\ttfamily bool VPE\+::\+VFile\+Edit\+Widget\+::\+Directory\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Specifies whether it is being looked for a directory (true) or a file (false, default) 
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_aff064e71f91f4886f4f98e2db257bb55}\label{classVPE_1_1VFileEditWidget_aff064e71f91f4886f4f98e2db257bb55}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!FileDialogFilter@{FileDialogFilter}}
+\index{FileDialogFilter@{FileDialogFilter}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{FileDialogFilter}{FileDialogFilter}}
+{\footnotesize\ttfamily QString VPE\+::\+VFile\+Edit\+Widget\+::\+File\+Dialog\+Filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_a0ef062346f55f1386ef83bf0cbdd1598}\label{classVPE_1_1VFileEditWidget_a0ef062346f55f1386ef83bf0cbdd1598}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!FileLineEdit@{FileLineEdit}}
+\index{FileLineEdit@{FileLineEdit}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{FileLineEdit}{FileLineEdit}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ VPE\+::\+VFile\+Edit\+Widget\+::\+File\+Line\+Edit\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_af3a9fff0daef7c873ae825088c370509}\label{classVPE_1_1VFileEditWidget_af3a9fff0daef7c873ae825088c370509}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!FilterList@{FilterList}}
+\index{FilterList@{FilterList}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{FilterList}{FilterList}}
+{\footnotesize\ttfamily QString\+List VPE\+::\+VFile\+Edit\+Widget\+::\+Filter\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VFileEditWidget_acd4aeb83d26b191a16098ce12945d654}\label{classVPE_1_1VFileEditWidget_acd4aeb83d26b191a16098ce12945d654}} 
+\index{VPE::VFileEditWidget@{VPE::VFileEditWidget}!ToolButton@{ToolButton}}
+\index{ToolButton@{ToolButton}!VPE::VFileEditWidget@{VPE::VFileEditWidget}}
+\doxysubsubsection{\texorpdfstring{ToolButton}{ToolButton}}
+{\footnotesize\ttfamily QTool\+Button$\ast$ VPE\+::\+VFile\+Edit\+Widget\+::\+Tool\+Button\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vfilepropertyeditor_8h}{vfilepropertyeditor.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vfilepropertyeditor_8cpp}{vfilepropertyeditor.\+cpp}}\end{DoxyCompactItemize}

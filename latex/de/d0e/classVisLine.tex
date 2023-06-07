@@ -1,0 +1,157 @@
+\hypertarget{classVisLine}{}\doxysection{Vis\+Line Class Reference}
+\label{classVisLine}\index{VisLine@{VisLine}}
+
+
+{\ttfamily \#include $<$visline.\+h$>$}
+
+Inheritance diagram for Vis\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{de/d0e/classVisLine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisLine_ac9406f2639874624be32499f41f963e1aed90a7174d284927b12b901708d9cb63}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisLine_a3594b9caf48ca88a60a12aaafb9faadf}{Vis\+Line}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisLine_a63a57079a48545d24c40c42088120c52}{$\sim$\+Vis\+Line}} ()=default
+\item 
+virtual int \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{classVisLine_a4f8e6ea00d2ff1d1457a58e42d4f2932}{Correct\+Angle}} (const qreal \&angle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{classVisLine_afcf89cfb13f788641f0385b29e0867c4}{Ray}} (const QPointF \&first\+Point, const qreal \&angle) const
+\item 
+QPointF \mbox{\hyperlink{classVisLine_a751425ae650a84980374e16058f743ee}{Ray}} (const QPointF \&first\+Point) const
+\item 
+QLineF \mbox{\hyperlink{classVisLine_aaecc477dd569efe445d3e4fa60f7fed3}{Axis}} (const QPointF \&p, const qreal \&angle) const
+\item 
+QLineF \mbox{\hyperlink{classVisLine_ad64a3a6cc5530fb0f0cb68b22b20a315}{Axis}} (const QPointF \&p1, const QPointF \&p2) const
+\item 
+virtual void \mbox{\hyperlink{classVisLine_a3d128e18290ca9d6888e8a112c538efc}{init\+Pen}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVisLine_a84d78868f9ff710c0cc364f22609d6d4}{Add\+On\+Scene}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVisLine_a552c99a21ca06c9b5f72eb3f913b8892}{Draw\+Ray}} (\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$line\+Item, const QPointF \&p, const QPointF \&p\+Tangent, const QColor \&color, Qt\+::\+Pen\+Style style)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisLine_ac9406f2639874624be32499f41f963e1}\label{classVisLine_ac9406f2639874624be32499f41f963e1}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisLine@{VisLine}}\index{VisLine@{VisLine}!Type@{Type}}}\mbox{\Hypertarget{classVisLine_ac9406f2639874624be32499f41f963e1aed90a7174d284927b12b901708d9cb63}\label{classVisLine_ac9406f2639874624be32499f41f963e1aed90a7174d284927b12b901708d9cb63}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisLine_a3594b9caf48ca88a60a12aaafb9faadf}\label{classVisLine_a3594b9caf48ca88a60a12aaafb9faadf}} 
+\index{VisLine@{VisLine}!VisLine@{VisLine}}
+\index{VisLine@{VisLine}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{VisLine()}{VisLine()}}
+{\footnotesize\ttfamily Vis\+Line\+::\+Vis\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisLine_a63a57079a48545d24c40c42088120c52}\label{classVisLine_a63a57079a48545d24c40c42088120c52}} 
+\index{VisLine@{VisLine}!````~VisLine@{$\sim$VisLine}}
+\index{````~VisLine@{$\sim$VisLine}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisLine()}{~VisLine()}}
+{\footnotesize\ttfamily virtual Vis\+Line\+::$\sim$\+Vis\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisLine_a84d78868f9ff710c0cc364f22609d6d4}\label{classVisLine_a84d78868f9ff710c0cc364f22609d6d4}} 
+\index{VisLine@{VisLine}!AddOnScene@{AddOnScene}}
+\index{AddOnScene@{AddOnScene}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{AddOnScene()}{AddOnScene()}}
+{\footnotesize\ttfamily void Vis\+Line\+::\+Add\+On\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_abfe137bc2a0b78369361a19726ed728b}{Visualization}}.
+
+\mbox{\Hypertarget{classVisLine_aaecc477dd569efe445d3e4fa60f7fed3}\label{classVisLine_aaecc477dd569efe445d3e4fa60f7fed3}} 
+\index{VisLine@{VisLine}!Axis@{Axis}}
+\index{Axis@{Axis}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{Axis()}{Axis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QLineF Vis\+Line\+::\+Axis (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const qreal \&}]{angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisLine_ad64a3a6cc5530fb0f0cb68b22b20a315}\label{classVisLine_ad64a3a6cc5530fb0f0cb68b22b20a315}} 
+\index{VisLine@{VisLine}!Axis@{Axis}}
+\index{Axis@{Axis}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{Axis()}{Axis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QLineF Vis\+Line\+::\+Axis (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisLine_a4f8e6ea00d2ff1d1457a58e42d4f2932}\label{classVisLine_a4f8e6ea00d2ff1d1457a58e42d4f2932}} 
+\index{VisLine@{VisLine}!CorrectAngle@{CorrectAngle}}
+\index{CorrectAngle@{CorrectAngle}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{CorrectAngle()}{CorrectAngle()}}
+{\footnotesize\ttfamily qreal Vis\+Line\+::\+Correct\+Angle (\begin{DoxyParamCaption}\item[{const qreal \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVisLine_a552c99a21ca06c9b5f72eb3f913b8892}\label{classVisLine_a552c99a21ca06c9b5f72eb3f913b8892}} 
+\index{VisLine@{VisLine}!DrawRay@{DrawRay}}
+\index{DrawRay@{DrawRay}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{DrawRay()}{DrawRay()}}
+{\footnotesize\ttfamily void Vis\+Line\+::\+Draw\+Ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$}]{line\+Item,  }\item[{const QPointF \&}]{p,  }\item[{const QPointF \&}]{p\+Tangent,  }\item[{const QColor \&}]{color,  }\item[{Qt\+::\+Pen\+Style}]{style }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisLine_a3d128e18290ca9d6888e8a112c538efc}\label{classVisLine_a3d128e18290ca9d6888e8a112c538efc}} 
+\index{VisLine@{VisLine}!initPen@{initPen}}
+\index{initPen@{initPen}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{initPen()}{initPen()}}
+{\footnotesize\ttfamily void Vis\+Line\+::init\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aa2477ee93caae188c7a9ae4f9dfeb771}{Visualization}}.
+
+\mbox{\Hypertarget{classVisLine_a751425ae650a84980374e16058f743ee}\label{classVisLine_a751425ae650a84980374e16058f743ee}} 
+\index{VisLine@{VisLine}!Ray@{Ray}}
+\index{Ray@{Ray}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QPointF Vis\+Line\+::\+Ray (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisLine_afcf89cfb13f788641f0385b29e0867c4}\label{classVisLine_afcf89cfb13f788641f0385b29e0867c4}} 
+\index{VisLine@{VisLine}!Ray@{Ray}}
+\index{Ray@{Ray}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{Ray()}{Ray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QPointF Vis\+Line\+::\+Ray (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point,  }\item[{const qreal \&}]{angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}\label{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}} 
+\index{VisLine@{VisLine}!type@{type}}
+\index{type@{type}!VisLine@{VisLine}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Line\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVScaledLine_a3ab1763240ff918be30a44512dc650ff}{VScaled\+Line}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVisToolTrueDarts_ad72c6575eabdb33ebf2aa16b0ce34846}{Vis\+Tool\+True\+Darts}}, \mbox{\hyperlink{classVisToolTriangle_a549a353fb6e4e22afa4efeaad472da4a}{Vis\+Tool\+Triangle}}, \mbox{\hyperlink{classVisToolShoulderPoint_a7aa8533019e45818dbb5d215c416c4a7}{Vis\+Tool\+Shoulder\+Point}}, \mbox{\hyperlink{classVisToolPointOfIntersectionArcs_a9d658199a418db9fd4da735919ac2332}{Vis\+Tool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{classVisToolPointOfContact_ac51af5f5b7f3f6ed8de89192ee7f0d42}{Vis\+Tool\+Point\+Of\+Contact}}, \mbox{\hyperlink{classVisToolPointFromArcAndTangent_a46eb4f473ee4e6b1b69392fc1a078522}{Vis\+Tool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{classVisToolNormal_aa0aa295d0340a3bca835cd3ce64d970a}{Vis\+Tool\+Normal}}, \mbox{\hyperlink{classVisToolLineIntersectAxis_a67c3a16d6a98aa56194fce04dc727b08}{Vis\+Tool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{classVisToolLineIntersect_a47843abc3d0418dc8f60d9b30c3b14a6}{Vis\+Tool\+Line\+Intersect}}, \mbox{\hyperlink{classVisToolLine_a80ebef9a147087c8a6faa2ea6cdb7708}{Vis\+Tool\+Line}}, \mbox{\hyperlink{classVisToolHeight_affb7933548cdfbcfaaf7208a5ae6bb54}{Vis\+Tool\+Height}}, \mbox{\hyperlink{classVisToolEndLine_ae1577eae1a10387f6de68a0fc0c4c354}{Vis\+Tool\+End\+Line}}, \mbox{\hyperlink{classVisToolCurveIntersectAxis_a514a11cbc97eeace27efd921975e47e6}{Vis\+Tool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{classVisToolBisector_add3f2f130fc9625ba6c6c10d03db5a1c}{Vis\+Tool\+Bisector}}, \mbox{\hyperlink{classVisToolAlongLine_acf73b75e67c96a09f8b6f26432de93ec}{Vis\+Tool\+Along\+Line}}, \mbox{\hyperlink{classPointIntersectXYVisual_af7c5a2f2e2774b48f56adedda8f01d0b}{Point\+Intersect\+XYVisual}}, \mbox{\hyperlink{classVisToolRotation_aa5afa3fe628f6fb1c6d60ab6368ee44f}{Vis\+Tool\+Rotation}}, \mbox{\hyperlink{classVisToolMove_a3cbca6d05b12920ec7b10ba4a46c508f}{Vis\+Tool\+Move}}, \mbox{\hyperlink{classVisToolMirrorByLine_a657368303a73c5fab471a288cfe7261f}{Vis\+Tool\+Mirror\+By\+Line}}, \mbox{\hyperlink{classVisToolMirrorByAxis_a7d9b8de9079c433ff212bc260e27d6eb}{Vis\+Tool\+Mirror\+By\+Axis}}, \mbox{\hyperlink{classVisOperation_aa1fd1e3e3034af62c1f3b1691551f50f}{Vis\+Operation}}, \mbox{\hyperlink{classIntersectCircleTangentVisual_ad99c2afbb65c71dd06ca3ecda88d16aa}{Intersect\+Circle\+Tangent\+Visual}}, \mbox{\hyperlink{classIntersectCirclesVisual_ab56269006e2dd8600999f035270fe062}{Intersect\+Circles\+Visual}}, and \mbox{\hyperlink{classAnchorPointVisual_acc7f51fd7af5546e0906472d36cf3fb7}{Anchor\+Point\+Visual}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{visline_8h}{visline.\+h}}\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{visline_8cpp}{visline.\+cpp}}\end{DoxyCompactItemize}

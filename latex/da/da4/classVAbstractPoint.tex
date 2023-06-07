@@ -1,0 +1,130 @@
+\hypertarget{classVAbstractPoint}{}\doxysection{VAbstract\+Point Class Reference}
+\label{classVAbstractPoint}\index{VAbstractPoint@{VAbstractPoint}}
+
+
+{\ttfamily \#include $<$vabstractpoint.\+h$>$}
+
+Inheritance diagram for VAbstract\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{da/da4/classVAbstractPoint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVAbstractPoint_aea25c42d1eab06cafb873a02bbab2d4b}{Show\+Tool}} (quint32 id, bool enable) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Show\+Tool highlight tool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVAbstractPoint_a09d2a74b337ab34734d721d33bb90a77}{delete\+Point}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAbstractPoint_ad96e7ac2f2daa93b374442e86c699803}{VAbstract\+Point}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+virtual \mbox{\hyperlink{classVAbstractPoint_a58248b2ddb095e57def708235f8d42c2}{$\sim$\+VAbstract\+Point}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QString \mbox{\hyperlink{classVAbstractPoint_a206a2792549403683349da708436f5bc}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classVAbstractPoint_aefd4e1d106d6144af0ddc5736219fc27}{Show\+Tool\+Visualization}} (bool show)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVAbstractPoint_a763bd22f7f16d3afb9a2217a91351861}{Set\+Point\+Name}} (quint32 id, const QString \&name)
+\item 
+virtual void \mbox{\hyperlink{classVAbstractPoint_a0e0f8e1154c77deaaaea4443390bfa68}{update\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classVAbstractPoint_a6c0d5eaa87b12506b0e88991c6e97ee7}{Init\+Tool\+Connections}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVAbstractPoint_ad96e7ac2f2daa93b374442e86c699803}\label{classVAbstractPoint_ad96e7ac2f2daa93b374442e86c699803}} 
+\index{VAbstractPoint@{VAbstractPoint}!VAbstractPoint@{VAbstractPoint}}
+\index{VAbstractPoint@{VAbstractPoint}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{VAbstractPoint()}{VAbstractPoint()}}
+{\footnotesize\ttfamily VAbstract\+Point\+::\+VAbstract\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVAbstractPoint_a58248b2ddb095e57def708235f8d42c2}\label{classVAbstractPoint_a58248b2ddb095e57def708235f8d42c2}} 
+\index{VAbstractPoint@{VAbstractPoint}!````~VAbstractPoint@{$\sim$VAbstractPoint}}
+\index{````~VAbstractPoint@{$\sim$VAbstractPoint}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractPoint()}{~VAbstractPoint()}}
+{\footnotesize\ttfamily virtual VAbstract\+Point\+::$\sim$\+VAbstract\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVAbstractPoint_a09d2a74b337ab34734d721d33bb90a77}\label{classVAbstractPoint_a09d2a74b337ab34734d721d33bb90a77}} 
+\index{VAbstractPoint@{VAbstractPoint}!deletePoint@{deletePoint}}
+\index{deletePoint@{deletePoint}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{deletePoint}{deletePoint}}
+{\footnotesize\ttfamily void VAbstract\+Point\+::delete\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractPoint_a206a2792549403683349da708436f5bc}\label{classVAbstractPoint_a206a2792549403683349da708436f5bc}} 
+\index{VAbstractPoint@{VAbstractPoint}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString VAbstract\+Point\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractPoint_a6c0d5eaa87b12506b0e88991c6e97ee7}\label{classVAbstractPoint_a6c0d5eaa87b12506b0e88991c6e97ee7}} 
+\index{VAbstractPoint@{VAbstractPoint}!InitToolConnections@{InitToolConnections}}
+\index{InitToolConnections@{InitToolConnections}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{InitToolConnections()}{InitToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Point\+::\+Init\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractPoint_a763bd22f7f16d3afb9a2217a91351861}\label{classVAbstractPoint_a763bd22f7f16d3afb9a2217a91351861}} 
+\index{VAbstractPoint@{VAbstractPoint}!SetPointName@{SetPointName}}
+\index{SetPointName@{SetPointName}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{SetPointName()}{SetPointName()}}
+{\footnotesize\ttfamily void VAbstract\+Point\+::\+Set\+Point\+Name (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractPoint_aea25c42d1eab06cafb873a02bbab2d4b}\label{classVAbstractPoint_aea25c42d1eab06cafb873a02bbab2d4b}} 
+\index{VAbstractPoint@{VAbstractPoint}!ShowTool@{ShowTool}}
+\index{ShowTool@{ShowTool}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{ShowTool}{ShowTool}}
+{\footnotesize\ttfamily void VAbstract\+Point\+::\+Show\+Tool (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Show\+Tool highlight tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id in container. \\
+\hline
+{\em enable} & enable or disable highlight. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVAbstractPoint_aefd4e1d106d6144af0ddc5736219fc27}\label{classVAbstractPoint_aefd4e1d106d6144af0ddc5736219fc27}} 
+\index{VAbstractPoint@{VAbstractPoint}!ShowToolVisualization@{ShowToolVisualization}}
+\index{ShowToolVisualization@{ShowToolVisualization}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{ShowToolVisualization()}{ShowToolVisualization()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Point\+::\+Show\+Tool\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVAbstractPoint_a0e0f8e1154c77deaaaea4443390bfa68}\label{classVAbstractPoint_a0e0f8e1154c77deaaaea4443390bfa68}} 
+\index{VAbstractPoint@{VAbstractPoint}!updatePointNamePosition@{updatePointNamePosition}}
+\index{updatePointNamePosition@{updatePointNamePosition}!VAbstractPoint@{VAbstractPoint}}
+\doxysubsubsection{\texorpdfstring{updatePointNamePosition()}{updatePointNamePosition()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Point\+::update\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classVToolSinglePoint_a5038c882d4d8a780412d22c9e5d560af}{VTool\+Single\+Point}}, and \mbox{\hyperlink{classVToolDoublePoint_a02291350b1f3097bf64bda70f80b6002}{VTool\+Double\+Point}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/\mbox{\hyperlink{vabstractpoint_8h}{vabstractpoint.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/\mbox{\hyperlink{vabstractpoint_8cpp}{vabstractpoint.\+cpp}}\end{DoxyCompactItemize}

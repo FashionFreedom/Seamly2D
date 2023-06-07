@@ -1,0 +1,484 @@
+\hypertarget{classVDxfEngine}{}\doxysection{VDxf\+Engine Class Reference}
+\label{classVDxfEngine}\index{VDxfEngine@{VDxfEngine}}
+
+
+{\ttfamily \#include $<$vdxfengine.\+h$>$}
+
+Inheritance diagram for VDxf\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{db/dd6/classVDxfEngine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVDxfEngine_a800147f662c8067e40e88689d34e9699}{VDxf\+Engine}} ()
+\item 
+virtual \mbox{\hyperlink{classVDxfEngine_aa6b79ed5488e4c35e190015c43d5f4a5}{$\sim$\+VDxf\+Engine}} ()
+\item 
+virtual bool \mbox{\hyperlink{classVDxfEngine_a0aab4b00e6bc819b3ba818e16bd545f8}{begin}} (QPaint\+Device $\ast$pdev) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVDxfEngine_a82e69d5f37f42e34370b641134f6681b}{end}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_ac34d16cb523840e547d6a58af0686dc7}{update\+State}} (const QPaint\+Engine\+State \&state) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_abc831bfdbcffb4106397bd55381f4fa4}{draw\+Path}} (const QPainter\+Path \&path) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a16988786fc865a7afd7229918575b7d9}{draw\+Lines}} (const QLineF $\ast$lines, int line\+Count) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_ab6d1aaceaa211256de00ce50c018b4ae}{draw\+Lines}} (const QLine $\ast$lines, int line\+Count) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a44cbfbb4da611046da53b674a30e2297}{draw\+Polygon}} (const QPointF $\ast$points, int point\+Count, Polygon\+Draw\+Mode mode) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a36e4222638817a8da62408372362f7be}{draw\+Polygon}} (const QPoint $\ast$points, int point\+Count, Polygon\+Draw\+Mode mode) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a5df7a23e88ea479ed9b8782f4fd93f91}{draw\+Ellipse}} (const QRectF \&rect) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a4a4443d59cf40adedc539983cb5fc87f}{draw\+Ellipse}} (const QRect \&rect) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a393c4e4e354394757d924d6ca18c84f0}{draw\+Text\+Item}} (const QPointF \&p, const QText\+Item \&text\+Item) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual Type \mbox{\hyperlink{classVDxfEngine_af1c0efa0d7fe1ea8111c188d41273743}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVDxfEngine_a12dd43408751ea5643f3c211a5fcdefb}{draw\+Pixmap}} (const QRectF \&r, const QPixmap \&pm, const QRectF \&sr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QSize \mbox{\hyperlink{classVDxfEngine_a8de808994997a4dcbb242d3f3cd17aea}{get\+Size}} () const
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a7eaec96a4c04a0acc933119b4124515d}{set\+Size}} (const QSize \&value)
+\item 
+double \mbox{\hyperlink{classVDxfEngine_a1ae5bfa36e82dcbeaac331e3b6ccb136}{get\+Resolution}} () const
+\item 
+void \mbox{\hyperlink{classVDxfEngine_aad26a240bd94aaec7862f78d7ca32270}{set\+Resolution}} (double value)
+\item 
+QString \mbox{\hyperlink{classVDxfEngine_a1f41aacfbeb5a9675f3a2e114889b484}{get\+File\+Name}} () const
+\item 
+void \mbox{\hyperlink{classVDxfEngine_ad7625c794c7b8a8910d6fcbdc15369cd}{set\+File\+Name}} (const QString \&value)
+\item 
+\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} \mbox{\hyperlink{classVDxfEngine_aa8d4edd46df74f7dab8f53aea728f505}{Get\+Version}} () const
+\item 
+void \mbox{\hyperlink{classVDxfEngine_acc069c048f30926cf124d06ba8e2bbed}{Set\+Version}} (\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} version)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a72aeba49f5229202d9ed93a117399544}{Set\+Binary\+Format}} (bool binary)
+\item 
+bool \mbox{\hyperlink{classVDxfEngine_a6efc7e45591aa2a4d3c2859f5fe9eede}{Is\+Binary\+Format}} () const
+\item 
+std\+::string \mbox{\hyperlink{classVDxfEngine_a1dc57e9692cd7ab5466df69edd51fff0}{get\+Pen\+Style}} ()
+\item 
+int \mbox{\hyperlink{classVDxfEngine_a1ee81740b6ed9eb9156a1f6c3556272c}{get\+Pen\+Color}} ()
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a09437439f2e6d15080a846d1d4c8c46e}{set\+Measurement}} (const \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} \&var)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_ac963f66b03ffa32cb348b410731e792f}{set\+Insunits}} (const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&var)
+\item 
+{\footnotesize template$<$class P , class V $>$ }\\P $\ast$ \mbox{\hyperlink{classVDxfEngine_a9fef8c52c417e42163d69fad35d1ddc2}{Create\+AAMAPolygon}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&polygon, const QString \&layer, bool force\+Closed)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT double \mbox{\hyperlink{classVDxfEngine_a667087f8113c399acf20919ce16289d4}{From\+Pixel}} (double pix, const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&unit) const
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT double \mbox{\hyperlink{classVDxfEngine_abf528d92ab1e5cf2b437349045e920a8}{To\+Pixel}} (double val, const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&unit) const
+\item 
+bool \mbox{\hyperlink{classVDxfEngine_a6e64211dabeb86576cca981aff41a30d}{Export\+To\+AAMA}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} $>$ \&details)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a3829f1344ef540379b614ef79d2352fd}{Export\+AAMAOutline}} (\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$detail\+Block, const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&detail)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_ab1252a7c7cca4b45d6992fd8061f0bbf}{Export\+AAMADraw}} (\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$detail\+Block, const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&detail)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a5a4104922dc7b2a9c3af28da923be145}{Export\+AAMAIntcut}} (\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$detail\+Block, const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&detail)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_aa2084857a315a0df34526b519b28839d}{Export\+AAMANotch}} (\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$detail\+Block, const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&detail)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a897bfd9c60d56146e9068df58250f58b}{Export\+AAMAGrainline}} (\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$detail\+Block, const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&detail)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_ac7da41ae448f5a20827902048a93bb4e}{Export\+AAMAText}} (\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$detail\+Block, const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&detail)
+\item 
+void \mbox{\hyperlink{classVDxfEngine_a6431276b91eb2065053763cb14592c03}{Export\+AAMAGlobal\+Text}} (const \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classdx__iface}{dx\+\_\+iface}} $>$ \&\mbox{\hyperlink{classVDxfEngine_a0debdc8eeb3f4902e4ada89113fb7930}{input}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} $>$ \&details)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classDRW__Entity}{DRW\+\_\+\+Entity}} $\ast$ \mbox{\hyperlink{classVDxfEngine_aa406af3b9e95e6f27da061b909fbc955}{AAMAPolygon}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&polygon, const QString \&layer, bool force\+Closed)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classDRW__Entity}{DRW\+\_\+\+Entity}} $\ast$ \mbox{\hyperlink{classVDxfEngine_afbf3ccc1ce1ad5cce42b46a15412fece}{AAMALine}} (const QLineF \&line, const QString \&layer)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classDRW__Entity}{DRW\+\_\+\+Entity}} $\ast$ \mbox{\hyperlink{classVDxfEngine_a404692e3fa0a39c022fd382ea28aaaff}{AAMAText}} (const QPointF \&pos, const QString \&text, const QString \&layer)
+\item 
+{\footnotesize template$<$class P , class V $>$ }\\Q\+\_\+\+REQUIRED\+\_\+\+RESULT P $\ast$ \mbox{\hyperlink{classVDxfEngine_ac2d0de8bf5d09da997cc6d270b677649}{Create\+AAMAPolygon}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&polygon, const QString \&layer, bool force\+Closed)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QSize \mbox{\hyperlink{classVDxfEngine_a8065f518831c2960e11811b796db8d84}{size}}
+\item 
+double \mbox{\hyperlink{classVDxfEngine_a04b4adc493e543542ba84adbaef954d6}{resolution}}
+\item 
+QString \mbox{\hyperlink{classVDxfEngine_a31bfd9604273698d370d70690bd1ee87}{file\+Name}}
+\item 
+\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} \mbox{\hyperlink{classVDxfEngine_a5a63ef5802868f6b599af06fd6efc25c}{m\+\_\+version}}
+\item 
+bool \mbox{\hyperlink{classVDxfEngine_a38afe93cb78dd28e4369749614c1a52d}{m\+\_\+binary}}
+\item 
+QTransform \mbox{\hyperlink{classVDxfEngine_a95ae747a7b2aa780bdeed29d3ebb5357}{transform}}
+\item 
+\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classdx__iface}{dx\+\_\+iface}} $>$ \mbox{\hyperlink{classVDxfEngine_a0debdc8eeb3f4902e4ada89113fb7930}{input}}
+\item 
+\mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} \mbox{\hyperlink{classVDxfEngine_a7c737a8e38b7561ad6c7e323ff410663}{var\+Measurement}}
+\item 
+\mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \mbox{\hyperlink{classVDxfEngine_af1e065cc637bf9a1439a846f293b3f59}{var\+Insunits}}
+\item 
+\mbox{\hyperlink{classDRW__Text}{DRW\+\_\+\+Text}} $\ast$ \mbox{\hyperlink{classVDxfEngine_aa1d271015fe969ccaef703f276c9f984}{text\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVDxfEngine_a94c3ec535c4c4a67645bfbd837f708cd}{VDxf\+Paint\+Device}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVDxfEngine_a800147f662c8067e40e88689d34e9699}\label{classVDxfEngine_a800147f662c8067e40e88689d34e9699}} 
+\index{VDxfEngine@{VDxfEngine}!VDxfEngine@{VDxfEngine}}
+\index{VDxfEngine@{VDxfEngine}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{VDxfEngine()}{VDxfEngine()}}
+{\footnotesize\ttfamily VDxf\+Engine\+::\+VDxf\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_aa6b79ed5488e4c35e190015c43d5f4a5}\label{classVDxfEngine_aa6b79ed5488e4c35e190015c43d5f4a5}} 
+\index{VDxfEngine@{VDxfEngine}!````~VDxfEngine@{$\sim$VDxfEngine}}
+\index{````~VDxfEngine@{$\sim$VDxfEngine}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{$\sim$VDxfEngine()}{~VDxfEngine()}}
+{\footnotesize\ttfamily VDxf\+Engine\+::$\sim$\+VDxf\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVDxfEngine_afbf3ccc1ce1ad5cce42b46a15412fece}\label{classVDxfEngine_afbf3ccc1ce1ad5cce42b46a15412fece}} 
+\index{VDxfEngine@{VDxfEngine}!AAMALine@{AAMALine}}
+\index{AAMALine@{AAMALine}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{AAMALine()}{AAMALine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Entity}{DRW\+\_\+\+Entity}} $\ast$ VDxf\+Engine\+::\+AAMALine (\begin{DoxyParamCaption}\item[{const QLineF \&}]{line,  }\item[{const QString \&}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_aa406af3b9e95e6f27da061b909fbc955}\label{classVDxfEngine_aa406af3b9e95e6f27da061b909fbc955}} 
+\index{VDxfEngine@{VDxfEngine}!AAMAPolygon@{AAMAPolygon}}
+\index{AAMAPolygon@{AAMAPolygon}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{AAMAPolygon()}{AAMAPolygon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Entity}{DRW\+\_\+\+Entity}} $\ast$ VDxf\+Engine\+::\+AAMAPolygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{polygon,  }\item[{const QString \&}]{layer,  }\item[{bool}]{force\+Closed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a404692e3fa0a39c022fd382ea28aaaff}\label{classVDxfEngine_a404692e3fa0a39c022fd382ea28aaaff}} 
+\index{VDxfEngine@{VDxfEngine}!AAMAText@{AAMAText}}
+\index{AAMAText@{AAMAText}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{AAMAText()}{AAMAText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Entity}{DRW\+\_\+\+Entity}} $\ast$ VDxf\+Engine\+::\+AAMAText (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{const QString \&}]{text,  }\item[{const QString \&}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a0aab4b00e6bc819b3ba818e16bd545f8}\label{classVDxfEngine_a0aab4b00e6bc819b3ba818e16bd545f8}} 
+\index{VDxfEngine@{VDxfEngine}!begin@{begin}}
+\index{begin@{begin}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool VDxf\+Engine\+::begin (\begin{DoxyParamCaption}\item[{QPaint\+Device $\ast$}]{pdev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a9fef8c52c417e42163d69fad35d1ddc2}\label{classVDxfEngine_a9fef8c52c417e42163d69fad35d1ddc2}} 
+\index{VDxfEngine@{VDxfEngine}!CreateAAMAPolygon@{CreateAAMAPolygon}}
+\index{CreateAAMAPolygon@{CreateAAMAPolygon}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{CreateAAMAPolygon()}{CreateAAMAPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class P , class V $>$ \\
+P$\ast$ VDxf\+Engine\+::\+Create\+AAMAPolygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{polygon,  }\item[{const QString \&}]{layer,  }\item[{bool}]{force\+Closed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_ac2d0de8bf5d09da997cc6d270b677649}\label{classVDxfEngine_ac2d0de8bf5d09da997cc6d270b677649}} 
+\index{VDxfEngine@{VDxfEngine}!CreateAAMAPolygon@{CreateAAMAPolygon}}
+\index{CreateAAMAPolygon@{CreateAAMAPolygon}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{CreateAAMAPolygon()}{CreateAAMAPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class P , class V $>$ \\
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT P$\ast$ VDxf\+Engine\+::\+Create\+AAMAPolygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{polygon,  }\item[{const QString \&}]{layer,  }\item[{bool}]{force\+Closed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a4a4443d59cf40adedc539983cb5fc87f}\label{classVDxfEngine_a4a4443d59cf40adedc539983cb5fc87f}} 
+\index{VDxfEngine@{VDxfEngine}!drawEllipse@{drawEllipse}}
+\index{drawEllipse@{drawEllipse}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawEllipse()}{drawEllipse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Ellipse (\begin{DoxyParamCaption}\item[{const QRect \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a5df7a23e88ea479ed9b8782f4fd93f91}\label{classVDxfEngine_a5df7a23e88ea479ed9b8782f4fd93f91}} 
+\index{VDxfEngine@{VDxfEngine}!drawEllipse@{drawEllipse}}
+\index{drawEllipse@{drawEllipse}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawEllipse()}{drawEllipse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Ellipse (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_ab6d1aaceaa211256de00ce50c018b4ae}\label{classVDxfEngine_ab6d1aaceaa211256de00ce50c018b4ae}} 
+\index{VDxfEngine@{VDxfEngine}!drawLines@{drawLines}}
+\index{drawLines@{drawLines}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawLines()}{drawLines()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Lines (\begin{DoxyParamCaption}\item[{const QLine $\ast$}]{lines,  }\item[{int}]{line\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a16988786fc865a7afd7229918575b7d9}\label{classVDxfEngine_a16988786fc865a7afd7229918575b7d9}} 
+\index{VDxfEngine@{VDxfEngine}!drawLines@{drawLines}}
+\index{drawLines@{drawLines}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawLines()}{drawLines()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Lines (\begin{DoxyParamCaption}\item[{const QLineF $\ast$}]{lines,  }\item[{int}]{line\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_abc831bfdbcffb4106397bd55381f4fa4}\label{classVDxfEngine_abc831bfdbcffb4106397bd55381f4fa4}} 
+\index{VDxfEngine@{VDxfEngine}!drawPath@{drawPath}}
+\index{drawPath@{drawPath}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawPath()}{drawPath()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Path (\begin{DoxyParamCaption}\item[{const QPainter\+Path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a12dd43408751ea5643f3c211a5fcdefb}\label{classVDxfEngine_a12dd43408751ea5643f3c211a5fcdefb}} 
+\index{VDxfEngine@{VDxfEngine}!drawPixmap@{drawPixmap}}
+\index{drawPixmap@{drawPixmap}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawPixmap()}{drawPixmap()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Pixmap (\begin{DoxyParamCaption}\item[{const QRectF \&}]{r,  }\item[{const QPixmap \&}]{pm,  }\item[{const QRectF \&}]{sr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a36e4222638817a8da62408372362f7be}\label{classVDxfEngine_a36e4222638817a8da62408372362f7be}} 
+\index{VDxfEngine@{VDxfEngine}!drawPolygon@{drawPolygon}}
+\index{drawPolygon@{drawPolygon}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void VDxf\+Engine\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const QPoint $\ast$}]{points,  }\item[{int}]{point\+Count,  }\item[{Polygon\+Draw\+Mode}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a44cbfbb4da611046da53b674a30e2297}\label{classVDxfEngine_a44cbfbb4da611046da53b674a30e2297}} 
+\index{VDxfEngine@{VDxfEngine}!drawPolygon@{drawPolygon}}
+\index{drawPolygon@{drawPolygon}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const QPointF $\ast$}]{points,  }\item[{int}]{point\+Count,  }\item[{Polygon\+Draw\+Mode}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a393c4e4e354394757d924d6ca18c84f0}\label{classVDxfEngine_a393c4e4e354394757d924d6ca18c84f0}} 
+\index{VDxfEngine@{VDxfEngine}!drawTextItem@{drawTextItem}}
+\index{drawTextItem@{drawTextItem}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{drawTextItem()}{drawTextItem()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::draw\+Text\+Item (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const QText\+Item \&}]{text\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a82e69d5f37f42e34370b641134f6681b}\label{classVDxfEngine_a82e69d5f37f42e34370b641134f6681b}} 
+\index{VDxfEngine@{VDxfEngine}!end@{end}}
+\index{end@{end}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily bool VDxf\+Engine\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_ab1252a7c7cca4b45d6992fd8061f0bbf}\label{classVDxfEngine_ab1252a7c7cca4b45d6992fd8061f0bbf}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMADraw@{ExportAAMADraw}}
+\index{ExportAAMADraw@{ExportAAMADraw}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMADraw()}{ExportAAMADraw()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMADraw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$}]{detail\+Block,  }\item[{const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&}]{detail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a6431276b91eb2065053763cb14592c03}\label{classVDxfEngine_a6431276b91eb2065053763cb14592c03}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMAGlobalText@{ExportAAMAGlobalText}}
+\index{ExportAAMAGlobalText@{ExportAAMAGlobalText}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMAGlobalText()}{ExportAAMAGlobalText()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMAGlobal\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classdx__iface}{dx\+\_\+iface}} $>$ \&}]{input,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} $>$ \&}]{details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a897bfd9c60d56146e9068df58250f58b}\label{classVDxfEngine_a897bfd9c60d56146e9068df58250f58b}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMAGrainline@{ExportAAMAGrainline}}
+\index{ExportAAMAGrainline@{ExportAAMAGrainline}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMAGrainline()}{ExportAAMAGrainline()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMAGrainline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$}]{detail\+Block,  }\item[{const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&}]{detail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a5a4104922dc7b2a9c3af28da923be145}\label{classVDxfEngine_a5a4104922dc7b2a9c3af28da923be145}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMAIntcut@{ExportAAMAIntcut}}
+\index{ExportAAMAIntcut@{ExportAAMAIntcut}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMAIntcut()}{ExportAAMAIntcut()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMAIntcut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$}]{detail\+Block,  }\item[{const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&}]{detail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_aa2084857a315a0df34526b519b28839d}\label{classVDxfEngine_aa2084857a315a0df34526b519b28839d}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMANotch@{ExportAAMANotch}}
+\index{ExportAAMANotch@{ExportAAMANotch}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMANotch()}{ExportAAMANotch()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMANotch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$}]{detail\+Block,  }\item[{const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&}]{detail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a3829f1344ef540379b614ef79d2352fd}\label{classVDxfEngine_a3829f1344ef540379b614ef79d2352fd}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMAOutline@{ExportAAMAOutline}}
+\index{ExportAAMAOutline@{ExportAAMAOutline}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMAOutline()}{ExportAAMAOutline()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMAOutline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$}]{detail\+Block,  }\item[{const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&}]{detail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_ac7da41ae448f5a20827902048a93bb4e}\label{classVDxfEngine_ac7da41ae448f5a20827902048a93bb4e}} 
+\index{VDxfEngine@{VDxfEngine}!ExportAAMAText@{ExportAAMAText}}
+\index{ExportAAMAText@{ExportAAMAText}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportAAMAText()}{ExportAAMAText()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Export\+AAMAText (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__ifaceBlock}{dx\+\_\+iface\+Block}} $\ast$}]{detail\+Block,  }\item[{const \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} \&}]{detail }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a6e64211dabeb86576cca981aff41a30d}\label{classVDxfEngine_a6e64211dabeb86576cca981aff41a30d}} 
+\index{VDxfEngine@{VDxfEngine}!ExportToAAMA@{ExportToAAMA}}
+\index{ExportToAAMA@{ExportToAAMA}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ExportToAAMA()}{ExportToAAMA()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+POP bool VDxf\+Engine\+::\+Export\+To\+AAMA (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} $>$ \&}]{details }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a667087f8113c399acf20919ce16289d4}\label{classVDxfEngine_a667087f8113c399acf20919ce16289d4}} 
+\index{VDxfEngine@{VDxfEngine}!FromPixel@{FromPixel}}
+\index{FromPixel@{FromPixel}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{FromPixel()}{FromPixel()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH double VDxf\+Engine\+::\+From\+Pixel (\begin{DoxyParamCaption}\item[{double}]{pix,  }\item[{const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&}]{unit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a1f41aacfbeb5a9675f3a2e114889b484}\label{classVDxfEngine_a1f41aacfbeb5a9675f3a2e114889b484}} 
+\index{VDxfEngine@{VDxfEngine}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily QString VDxf\+Engine\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfEngine_a1ee81740b6ed9eb9156a1f6c3556272c}\label{classVDxfEngine_a1ee81740b6ed9eb9156a1f6c3556272c}} 
+\index{VDxfEngine@{VDxfEngine}!getPenColor@{getPenColor}}
+\index{getPenColor@{getPenColor}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{getPenColor()}{getPenColor()}}
+{\footnotesize\ttfamily int VDxf\+Engine\+::get\+Pen\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_a1dc57e9692cd7ab5466df69edd51fff0}\label{classVDxfEngine_a1dc57e9692cd7ab5466df69edd51fff0}} 
+\index{VDxfEngine@{VDxfEngine}!getPenStyle@{getPenStyle}}
+\index{getPenStyle@{getPenStyle}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{getPenStyle()}{getPenStyle()}}
+{\footnotesize\ttfamily std\+::string VDxf\+Engine\+::get\+Pen\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_a1ae5bfa36e82dcbeaac331e3b6ccb136}\label{classVDxfEngine_a1ae5bfa36e82dcbeaac331e3b6ccb136}} 
+\index{VDxfEngine@{VDxfEngine}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}}
+{\footnotesize\ttfamily double VDxf\+Engine\+::get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfEngine_a8de808994997a4dcbb242d3f3cd17aea}\label{classVDxfEngine_a8de808994997a4dcbb242d3f3cd17aea}} 
+\index{VDxfEngine@{VDxfEngine}!getSize@{getSize}}
+\index{getSize@{getSize}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily QSize VDxf\+Engine\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfEngine_aa8d4edd46df74f7dab8f53aea728f505}\label{classVDxfEngine_aa8d4edd46df74f7dab8f53aea728f505}} 
+\index{VDxfEngine@{VDxfEngine}!GetVersion@{GetVersion}}
+\index{GetVersion@{GetVersion}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{GetVersion()}{GetVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} VDxf\+Engine\+::\+Get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfEngine_a6efc7e45591aa2a4d3c2859f5fe9eede}\label{classVDxfEngine_a6efc7e45591aa2a4d3c2859f5fe9eede}} 
+\index{VDxfEngine@{VDxfEngine}!IsBinaryFormat@{IsBinaryFormat}}
+\index{IsBinaryFormat@{IsBinaryFormat}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{IsBinaryFormat()}{IsBinaryFormat()}}
+{\footnotesize\ttfamily bool VDxf\+Engine\+::\+Is\+Binary\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfEngine_a72aeba49f5229202d9ed93a117399544}\label{classVDxfEngine_a72aeba49f5229202d9ed93a117399544}} 
+\index{VDxfEngine@{VDxfEngine}!SetBinaryFormat@{SetBinaryFormat}}
+\index{SetBinaryFormat@{SetBinaryFormat}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{SetBinaryFormat()}{SetBinaryFormat()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Set\+Binary\+Format (\begin{DoxyParamCaption}\item[{bool}]{binary }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_ad7625c794c7b8a8910d6fcbdc15369cd}\label{classVDxfEngine_ad7625c794c7b8a8910d6fcbdc15369cd}} 
+\index{VDxfEngine@{VDxfEngine}!setFileName@{setFileName}}
+\index{setFileName@{setFileName}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_ac963f66b03ffa32cb348b410731e792f}\label{classVDxfEngine_ac963f66b03ffa32cb348b410731e792f}} 
+\index{VDxfEngine@{VDxfEngine}!setInsunits@{setInsunits}}
+\index{setInsunits@{setInsunits}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{setInsunits()}{setInsunits()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::set\+Insunits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_a09437439f2e6d15080a846d1d4c8c46e}\label{classVDxfEngine_a09437439f2e6d15080a846d1d4c8c46e}} 
+\index{VDxfEngine@{VDxfEngine}!setMeasurement@{setMeasurement}}
+\index{setMeasurement@{setMeasurement}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{setMeasurement()}{setMeasurement()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::set\+Measurement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_aad26a240bd94aaec7862f78d7ca32270}\label{classVDxfEngine_aad26a240bd94aaec7862f78d7ca32270}} 
+\index{VDxfEngine@{VDxfEngine}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::set\+Resolution (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_a7eaec96a4c04a0acc933119b4124515d}\label{classVDxfEngine_a7eaec96a4c04a0acc933119b4124515d}} 
+\index{VDxfEngine@{VDxfEngine}!setSize@{setSize}}
+\index{setSize@{setSize}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::set\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_acc069c048f30926cf124d06ba8e2bbed}\label{classVDxfEngine_acc069c048f30926cf124d06ba8e2bbed}} 
+\index{VDxfEngine@{VDxfEngine}!SetVersion@{SetVersion}}
+\index{SetVersion@{SetVersion}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{SetVersion()}{SetVersion()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::\+Set\+Version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}}}]{version }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfEngine_abf528d92ab1e5cf2b437349045e920a8}\label{classVDxfEngine_abf528d92ab1e5cf2b437349045e920a8}} 
+\index{VDxfEngine@{VDxfEngine}!ToPixel@{ToPixel}}
+\index{ToPixel@{ToPixel}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{ToPixel()}{ToPixel()}}
+{\footnotesize\ttfamily double VDxf\+Engine\+::\+To\+Pixel (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&}]{unit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_af1c0efa0d7fe1ea8111c188d41273743}\label{classVDxfEngine_af1c0efa0d7fe1ea8111c188d41273743}} 
+\index{VDxfEngine@{VDxfEngine}!type@{type}}
+\index{type@{type}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QPaint\+Engine\+::\+Type VDxf\+Engine\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfEngine_ac34d16cb523840e547d6a58af0686dc7}\label{classVDxfEngine_ac34d16cb523840e547d6a58af0686dc7}} 
+\index{VDxfEngine@{VDxfEngine}!updateState@{updateState}}
+\index{updateState@{updateState}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}}
+{\footnotesize\ttfamily void VDxf\+Engine\+::update\+State (\begin{DoxyParamCaption}\item[{const QPaint\+Engine\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classVDxfEngine_a94c3ec535c4c4a67645bfbd837f708cd}\label{classVDxfEngine_a94c3ec535c4c4a67645bfbd837f708cd}} 
+\index{VDxfEngine@{VDxfEngine}!VDxfPaintDevice@{VDxfPaintDevice}}
+\index{VDxfPaintDevice@{VDxfPaintDevice}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{VDxfPaintDevice}{VDxfPaintDevice}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classVDxfPaintDevice}{VDxf\+Paint\+Device}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVDxfEngine_a31bfd9604273698d370d70690bd1ee87}\label{classVDxfEngine_a31bfd9604273698d370d70690bd1ee87}} 
+\index{VDxfEngine@{VDxfEngine}!fileName@{fileName}}
+\index{fileName@{fileName}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily QString VDxf\+Engine\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a0debdc8eeb3f4902e4ada89113fb7930}\label{classVDxfEngine_a0debdc8eeb3f4902e4ada89113fb7930}} 
+\index{VDxfEngine@{VDxfEngine}!input@{input}}
+\index{input@{input}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$\mbox{\hyperlink{classdx__iface}{dx\+\_\+iface}}$>$ VDxf\+Engine\+::input\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a38afe93cb78dd28e4369749614c1a52d}\label{classVDxfEngine_a38afe93cb78dd28e4369749614c1a52d}} 
+\index{VDxfEngine@{VDxfEngine}!m\_binary@{m\_binary}}
+\index{m\_binary@{m\_binary}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{m\_binary}{m\_binary}}
+{\footnotesize\ttfamily bool VDxf\+Engine\+::m\+\_\+binary\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a5a63ef5802868f6b599af06fd6efc25c}\label{classVDxfEngine_a5a63ef5802868f6b599af06fd6efc25c}} 
+\index{VDxfEngine@{VDxfEngine}!m\_version@{m\_version}}
+\index{m\_version@{m\_version}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{m\_version}{m\_version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} VDxf\+Engine\+::m\+\_\+version\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a04b4adc493e543542ba84adbaef954d6}\label{classVDxfEngine_a04b4adc493e543542ba84adbaef954d6}} 
+\index{VDxfEngine@{VDxfEngine}!resolution@{resolution}}
+\index{resolution@{resolution}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily double VDxf\+Engine\+::resolution\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a8065f518831c2960e11811b796db8d84}\label{classVDxfEngine_a8065f518831c2960e11811b796db8d84}} 
+\index{VDxfEngine@{VDxfEngine}!size@{size}}
+\index{size@{size}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily QSize VDxf\+Engine\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_aa1d271015fe969ccaef703f276c9f984}\label{classVDxfEngine_aa1d271015fe969ccaef703f276c9f984}} 
+\index{VDxfEngine@{VDxfEngine}!textBuffer@{textBuffer}}
+\index{textBuffer@{textBuffer}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{textBuffer}{textBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Text}{DRW\+\_\+\+Text}}$\ast$ VDxf\+Engine\+::text\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a95ae747a7b2aa780bdeed29d3ebb5357}\label{classVDxfEngine_a95ae747a7b2aa780bdeed29d3ebb5357}} 
+\index{VDxfEngine@{VDxfEngine}!transform@{transform}}
+\index{transform@{transform}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily QTransform VDxf\+Engine\+::transform\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_af1e065cc637bf9a1439a846f293b3f59}\label{classVDxfEngine_af1e065cc637bf9a1439a846f293b3f59}} 
+\index{VDxfEngine@{VDxfEngine}!varInsunits@{varInsunits}}
+\index{varInsunits@{varInsunits}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{varInsunits}{varInsunits}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} VDxf\+Engine\+::var\+Insunits\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfEngine_a7c737a8e38b7561ad6c7e323ff410663}\label{classVDxfEngine_a7c737a8e38b7561ad6c7e323ff410663}} 
+\index{VDxfEngine@{VDxfEngine}!varMeasurement@{varMeasurement}}
+\index{varMeasurement@{varMeasurement}!VDxfEngine@{VDxfEngine}}
+\doxysubsubsection{\texorpdfstring{varMeasurement}{varMeasurement}}
+{\footnotesize\ttfamily \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} VDxf\+Engine\+::var\+Measurement\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/\mbox{\hyperlink{vdxfengine_8h}{vdxfengine.\+h}}\item 
+src/libs/vdxf/\mbox{\hyperlink{vdxfengine_8cpp}{vdxfengine.\+cpp}}\end{DoxyCompactItemize}

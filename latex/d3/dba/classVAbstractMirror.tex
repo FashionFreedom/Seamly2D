@@ -1,0 +1,146 @@
+\hypertarget{classVAbstractMirror}{}\doxysection{VAbstract\+Mirror Class Reference}
+\label{classVAbstractMirror}\index{VAbstractMirror@{VAbstractMirror}}
+
+
+{\ttfamily \#include $<$vabstractmirror.\+h$>$}
+
+Inheritance diagram for VAbstract\+Mirror\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{d3/dba/classVAbstractMirror}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classVAbstractMirror_abb452e9eed893670165a46b0a7451d56}{$\sim$\+VAbstract\+Mirror}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAbstractMirror_a919945b0c64acb9ebea692124be0f9b1}{VAbstract\+Mirror}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}}, QGraphics\+Item $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classVAbstractMirror_a02ee008405d4666d0af92e06af542bc7}{create\+Destination}} (\mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} type\+Creation, quint32 \&id, \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&dest, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}, const QPointF \&f\+Point, const QPointF \&s\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVAbstractMirror_a47e0feebffef752cf14629cba085af3b}{create\+Point}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVAbstractMirror_ada9c2859231fcdedb0fd9b38834b89da}{create\+Item}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVAbstractMirror_a0d4017137c3eec9c892fb2554b9a3d96}{create\+Arc}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVAbstractMirror_ae86e6af3085db85a2937acf26ab724aa}{create\+Curve}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVAbstractMirror_accf69c82516588aed6e98f03c7f2b56d}{create\+Curve\+With\+Segments}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static void \mbox{\hyperlink{classVAbstractMirror_a41f9690f366a9f7e4cd64f83dd0c94d0}{update\+Point}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \&item)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVAbstractMirror_a9cb6728f03d81773f1320f91abc55cad}{update\+Item}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVAbstractMirror_a4aa894c960e6d933993544b421e08a0c}{update\+Arc}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVAbstractMirror_a1ce5aaf76f5cf20b6fab6a3e68e1f38a}{update\+Curve}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVAbstractMirror_a450d096ff33270abf1947ea53214cf38}{update\+Curve\+With\+Segments}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&first\+Point, const QPointF \&second\+Point, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVAbstractMirror_abb452e9eed893670165a46b0a7451d56}\label{classVAbstractMirror_abb452e9eed893670165a46b0a7451d56}} 
+\index{VAbstractMirror@{VAbstractMirror}!````~VAbstractMirror@{$\sim$VAbstractMirror}}
+\index{````~VAbstractMirror@{$\sim$VAbstractMirror}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractMirror()}{~VAbstractMirror()}}
+{\footnotesize\ttfamily virtual VAbstract\+Mirror\+::$\sim$\+VAbstract\+Mirror (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a919945b0c64acb9ebea692124be0f9b1}\label{classVAbstractMirror_a919945b0c64acb9ebea692124be0f9b1}} 
+\index{VAbstractMirror@{VAbstractMirror}!VAbstractMirror@{VAbstractMirror}}
+\index{VAbstractMirror@{VAbstractMirror}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{VAbstractMirror()}{VAbstractMirror()}}
+{\footnotesize\ttfamily VAbstract\+Mirror\+::\+VAbstract\+Mirror (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{const QString \&}]{suffix,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{source,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&}]{destination,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVAbstractMirror_a0d4017137c3eec9c892fb2554b9a3d96}\label{classVAbstractMirror_a0d4017137c3eec9c892fb2554b9a3d96}} 
+\index{VAbstractMirror@{VAbstractMirror}!createArc@{createArc}}
+\index{createArc@{createArc}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{createArc()}{createArc()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VAbstract\+Mirror\+::create\+Arc (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_ae86e6af3085db85a2937acf26ab724aa}\label{classVAbstractMirror_ae86e6af3085db85a2937acf26ab724aa}} 
+\index{VAbstractMirror@{VAbstractMirror}!createCurve@{createCurve}}
+\index{createCurve@{createCurve}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{createCurve()}{createCurve()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VAbstract\+Mirror\+::create\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_accf69c82516588aed6e98f03c7f2b56d}\label{classVAbstractMirror_accf69c82516588aed6e98f03c7f2b56d}} 
+\index{VAbstractMirror@{VAbstractMirror}!createCurveWithSegments@{createCurveWithSegments}}
+\index{createCurveWithSegments@{createCurveWithSegments}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{createCurveWithSegments()}{createCurveWithSegments()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VAbstract\+Mirror\+::create\+Curve\+With\+Segments (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a02ee008405d4666d0af92e06af542bc7}\label{classVAbstractMirror_a02ee008405d4666d0af92e06af542bc7}} 
+\index{VAbstractMirror@{VAbstractMirror}!createDestination@{createDestination}}
+\index{createDestination@{createDestination}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{createDestination()}{createDestination()}}
+{\footnotesize\ttfamily void VAbstract\+Mirror\+::create\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}}]{type\+Creation,  }\item[{quint32 \&}]{id,  }\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&}]{dest,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{source,  }\item[{const QPointF \&}]{f\+Point,  }\item[{const QPointF \&}]{s\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_ada9c2859231fcdedb0fd9b38834b89da}\label{classVAbstractMirror_ada9c2859231fcdedb0fd9b38834b89da}} 
+\index{VAbstractMirror@{VAbstractMirror}!createItem@{createItem}}
+\index{createItem@{createItem}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{createItem()}{createItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VAbstract\+Mirror\+::create\+Item (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a47e0feebffef752cf14629cba085af3b}\label{classVAbstractMirror_a47e0feebffef752cf14629cba085af3b}} 
+\index{VAbstractMirror@{VAbstractMirror}!createPoint@{createPoint}}
+\index{createPoint@{createPoint}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{createPoint()}{createPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VAbstract\+Mirror\+::create\+Point (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a4aa894c960e6d933993544b421e08a0c}\label{classVAbstractMirror_a4aa894c960e6d933993544b421e08a0c}} 
+\index{VAbstractMirror@{VAbstractMirror}!updateArc@{updateArc}}
+\index{updateArc@{updateArc}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{updateArc()}{updateArc()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VAbstract\+Mirror\+::update\+Arc (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a1ce5aaf76f5cf20b6fab6a3e68e1f38a}\label{classVAbstractMirror_a1ce5aaf76f5cf20b6fab6a3e68e1f38a}} 
+\index{VAbstractMirror@{VAbstractMirror}!updateCurve@{updateCurve}}
+\index{updateCurve@{updateCurve}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{updateCurve()}{updateCurve()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VAbstract\+Mirror\+::update\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a450d096ff33270abf1947ea53214cf38}\label{classVAbstractMirror_a450d096ff33270abf1947ea53214cf38}} 
+\index{VAbstractMirror@{VAbstractMirror}!updateCurveWithSegments@{updateCurveWithSegments}}
+\index{updateCurveWithSegments@{updateCurveWithSegments}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{updateCurveWithSegments()}{updateCurveWithSegments()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VAbstract\+Mirror\+::update\+Curve\+With\+Segments (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a9cb6728f03d81773f1320f91abc55cad}\label{classVAbstractMirror_a9cb6728f03d81773f1320f91abc55cad}} 
+\index{VAbstractMirror@{VAbstractMirror}!updateItem@{updateItem}}
+\index{updateItem@{updateItem}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{updateItem()}{updateItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VAbstract\+Mirror\+::update\+Item (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMirror_a41f9690f366a9f7e4cd64f83dd0c94d0}\label{classVAbstractMirror_a41f9690f366a9f7e4cd64f83dd0c94d0}} 
+\index{VAbstractMirror@{VAbstractMirror}!updatePoint@{updatePoint}}
+\index{updatePoint@{updatePoint}!VAbstractMirror@{VAbstractMirror}}
+\doxysubsubsection{\texorpdfstring{updatePoint()}{updatePoint()}}
+{\footnotesize\ttfamily void VAbstract\+Mirror\+::update\+Point (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/operation/mirror/\mbox{\hyperlink{vabstractmirror_8h}{vabstractmirror.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/operation/mirror/\mbox{\hyperlink{vabstractmirror_8cpp}{vabstractmirror.\+cpp}}\end{DoxyCompactItemize}

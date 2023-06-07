@@ -1,0 +1,422 @@
+\hypertarget{classVToolDoublePoint}{}\doxysection{VTool\+Double\+Point Class Reference}
+\label{classVToolDoublePoint}\index{VToolDoublePoint@{VToolDoublePoint}}
+
+
+{\ttfamily \#include $<$vtooldoublepoint.\+h$>$}
+
+Inheritance diagram for VTool\+Double\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{d0/dcf/classVToolDoublePoint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolDoublePoint_ac5068ad7e1a3584e29dc9b5efa2ab5b5ae44a46249b455630007e624de108d040}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Double\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a6dd923933b35a26bcb360ec40a270f3b}{change\+Point\+Name1\+Position}} (const QPointF \&pos)
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_aaa24dc2386d9b1c02f64f71e8ec34cfe}{change\+Point\+Name2\+Position}} (const QPointF \&pos)
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a17485cfa92a5a13502f20eb1d05b7a87}{Disable}} (bool disable, const QString \&draft\+Block\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a9b0022bb06db3734477a04deff7f71b1}{Enable\+Tool\+Move}} (bool move) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a305697bd284058a816b907dd184d7ff5}{point1\+Chosen}} ()
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a55ce1fe3e2ab21b74bd4b7890816a8a2}{point2\+Chosen}} ()
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a8d74f017548b1ff6a8d9c18f9fe86861}{point1\+Selected}} (bool selected)
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a9c3a4124cf4bca1846e8071085e13c21}{point2\+Selected}} (bool selected)
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a52a0cb76334c6c733341aac16d806f9b}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_ab153ca5784a920a47ccbe65bba18ee40}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_ac2eea190487785a94f5f70528463aa19}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_ab0bede312a3aaaea81d03156b532b291}{allow\+Text\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a70d278069a00e13eb1241cc1d0cac324}{allow\+Text\+Selectable}} (bool enabled)
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a43935cb40be24c6ce3e13cacc7f2c22a}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&\mbox{\hyperlink{classVToolDoublePoint_a5f3db6d29624f635eab2ed2679f32ca8}{type}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolDoublePoint_a0cf623a7c41d34fdd8d556331f4b5a41}{VTool\+Double\+Point}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, quint32 \mbox{\hyperlink{classVToolDoublePoint_aeefa8dcde69421192a973f595373bd14}{p1id}}, quint32 \mbox{\hyperlink{classVToolDoublePoint_a01fa8144e1657024ca76043cf1e2e676}{p2id}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVToolDoublePoint_aea533a5e418852c96d51843fd942b52a}{$\sim$\+VTool\+Double\+Point}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual int \mbox{\hyperlink{classVToolDoublePoint_a5f3db6d29624f635eab2ed2679f32ca8}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolDoublePoint_a0fb1c54eb6e001d576faa48703ba80d2}{name\+P1}} () const
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a21d8e5ef0e3145160194418156fd0d5c}{set\+Name\+P1}} (const QString \&name)
+\item 
+QString \mbox{\hyperlink{classVToolDoublePoint_a5f4a8f815e4bb70924bcab80229fb0dc}{name\+P2}} () const
+\item 
+void \mbox{\hyperlink{classVToolDoublePoint_a15bd716f0442566015e6fa806e717c14}{set\+Name\+P2}} (const QString \&name)
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a8ed85c139211d65f0347a3ddc3caddfd}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_ae63204f8e2613d6452d97f3658b5ed9f}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVToolDoublePoint_a357bc6ed2703980d90bc80adc13e0e1a}{is\+Point\+Name\+Visible}} (quint32 id) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a9727ca6b3d1400cd003ce7ab4d467042}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a02291350b1f3097bf64bda70f80b6002}{update\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{classVToolDoublePoint_ab3e1da0d5005ea918785394cd278b5fc}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em item\+Change hadle item change. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a99a93492d204add6ed2378860c6c5366}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em key\+Release\+Event handle key release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a5d63b46c416763d147cb420e249cad12}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a36f8638749c7ef12bef629e67e1ec88d}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a470ac7af1695585d017cac6524a892e2}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolDoublePoint_a9f2010f3d084c5428075fdc7264fb0cd}{update\+Point\+Name\+Visibility}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolDoublePoint_ac02c0393ad857e1af3cbe4137e03c5d1}{complex\+Tool\+Tip}} (quint32 item\+Id) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}} $\ast$ \mbox{\hyperlink{classVToolDoublePoint_a5544fd308dc25fcc550c536203e298c2}{first\+Point}}
+\item 
+\mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}} $\ast$ \mbox{\hyperlink{classVToolDoublePoint_a02c08db8feea97bd59575ea6e487a311}{second\+Point}}
+\item 
+quint32 \mbox{\hyperlink{classVToolDoublePoint_aeefa8dcde69421192a973f595373bd14}{p1id}}
+\item 
+quint32 \mbox{\hyperlink{classVToolDoublePoint_a01fa8144e1657024ca76043cf1e2e676}{p2id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolDoublePoint_ac5068ad7e1a3584e29dc9b5efa2ab5b5}\label{classVToolDoublePoint_ac5068ad7e1a3584e29dc9b5efa2ab5b5}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolDoublePoint@{VToolDoublePoint}}\index{VToolDoublePoint@{VToolDoublePoint}!Type@{Type}}}\mbox{\Hypertarget{classVToolDoublePoint_ac5068ad7e1a3584e29dc9b5efa2ab5b5ae44a46249b455630007e624de108d040}\label{classVToolDoublePoint_ac5068ad7e1a3584e29dc9b5efa2ab5b5ae44a46249b455630007e624de108d040}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolDoublePoint_a0cf623a7c41d34fdd8d556331f4b5a41}\label{classVToolDoublePoint_a0cf623a7c41d34fdd8d556331f4b5a41}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!VToolDoublePoint@{VToolDoublePoint}}
+\index{VToolDoublePoint@{VToolDoublePoint}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{VToolDoublePoint()}{VToolDoublePoint()}}
+{\footnotesize\ttfamily VTool\+Double\+Point\+::\+VTool\+Double\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{quint32}]{p1id,  }\item[{quint32}]{p2id,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolDoublePoint_aea533a5e418852c96d51843fd942b52a}\label{classVToolDoublePoint_aea533a5e418852c96d51843fd942b52a}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!````~VToolDoublePoint@{$\sim$VToolDoublePoint}}
+\index{````~VToolDoublePoint@{$\sim$VToolDoublePoint}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$VToolDoublePoint()}{~VToolDoublePoint()}}
+{\footnotesize\ttfamily virtual VTool\+Double\+Point\+::$\sim$\+VTool\+Double\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolDoublePoint_a470ac7af1695585d017cac6524a892e2}\label{classVToolDoublePoint_a470ac7af1695585d017cac6524a892e2}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_acce4d75b32a39d5c61b1b2c176e0b04b}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_ab153ca5784a920a47ccbe65bba18ee40}\label{classVToolDoublePoint_ab153ca5784a920a47ccbe65bba18ee40}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_ac2eea190487785a94f5f70528463aa19}\label{classVToolDoublePoint_ac2eea190487785a94f5f70528463aa19}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_ab0bede312a3aaaea81d03156b532b291}\label{classVToolDoublePoint_ab0bede312a3aaaea81d03156b532b291}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!allowTextHover@{allowTextHover}}
+\index{allowTextHover@{allowTextHover}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextHover}{allowTextHover}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::allow\+Text\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a70d278069a00e13eb1241cc1d0cac324}\label{classVToolDoublePoint_a70d278069a00e13eb1241cc1d0cac324}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!allowTextSelectable@{allowTextSelectable}}
+\index{allowTextSelectable@{allowTextSelectable}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextSelectable}{allowTextSelectable}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::allow\+Text\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a6dd923933b35a26bcb360ec40a270f3b}\label{classVToolDoublePoint_a6dd923933b35a26bcb360ec40a270f3b}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!changePointName1Position@{changePointName1Position}}
+\index{changePointName1Position@{changePointName1Position}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{changePointName1Position}{changePointName1Position}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::change\+Point\+Name1\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_aaa24dc2386d9b1c02f64f71e8ec34cfe}\label{classVToolDoublePoint_aaa24dc2386d9b1c02f64f71e8ec34cfe}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!changePointName2Position@{changePointName2Position}}
+\index{changePointName2Position@{changePointName2Position}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{changePointName2Position}{changePointName2Position}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::change\+Point\+Name2\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_ac02c0393ad857e1af3cbe4137e03c5d1}\label{classVToolDoublePoint_ac02c0393ad857e1af3cbe4137e03c5d1}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!complexToolTip@{complexToolTip}}
+\index{complexToolTip@{complexToolTip}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{complexToolTip()}{complexToolTip()}}
+{\footnotesize\ttfamily QString VTool\+Double\+Point\+::complex\+Tool\+Tip (\begin{DoxyParamCaption}\item[{quint32}]{item\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a5d63b46c416763d147cb420e249cad12}\label{classVToolDoublePoint_a5d63b46c416763d147cb420e249cad12}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a17485cfa92a5a13502f20eb1d05b7a87}\label{classVToolDoublePoint_a17485cfa92a5a13502f20eb1d05b7a87}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!Disable@{Disable}}
+\index{Disable@{Disable}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a9b0022bb06db3734477a04deff7f71b1}\label{classVToolDoublePoint_a9b0022bb06db3734477a04deff7f71b1}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove}{EnableToolMove}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a52a0cb76334c6c733341aac16d806f9b}\label{classVToolDoublePoint_a52a0cb76334c6c733341aac16d806f9b}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a8ed85c139211d65f0347a3ddc3caddfd}\label{classVToolDoublePoint_a8ed85c139211d65f0347a3ddc3caddfd}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDataTool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_a357bc6ed2703980d90bc80adc13e0e1a}\label{classVToolDoublePoint_a357bc6ed2703980d90bc80adc13e0e1a}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!isPointNameVisible@{isPointNameVisible}}
+\index{isPointNameVisible@{isPointNameVisible}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{isPointNameVisible()}{isPointNameVisible()}}
+{\footnotesize\ttfamily bool VTool\+Double\+Point\+::is\+Point\+Name\+Visible (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_a1d47f790e9cddac2a8c2c517f7d99596}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_ab3e1da0d5005ea918785394cd278b5fc}\label{classVToolDoublePoint_ab3e1da0d5005ea918785394cd278b5fc}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VTool\+Double\+Point\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+item\+Change hadle item change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & change. \\
+\hline
+{\em value} & value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolDoublePoint_a99a93492d204add6ed2378860c6c5366}\label{classVToolDoublePoint_a99a93492d204add6ed2378860c6c5366}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+key\+Release\+Event handle key release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & key release event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolDoublePoint_a0fb1c54eb6e001d576faa48703ba80d2}\label{classVToolDoublePoint_a0fb1c54eb6e001d576faa48703ba80d2}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!nameP1@{nameP1}}
+\index{nameP1@{nameP1}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{nameP1()}{nameP1()}}
+{\footnotesize\ttfamily QString VTool\+Double\+Point\+::name\+P1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a5f4a8f815e4bb70924bcab80229fb0dc}\label{classVToolDoublePoint_a5f4a8f815e4bb70924bcab80229fb0dc}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!nameP2@{nameP2}}
+\index{nameP2@{nameP2}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{nameP2()}{nameP2()}}
+{\footnotesize\ttfamily QString VTool\+Double\+Point\+::name\+P2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a305697bd284058a816b907dd184d7ff5}\label{classVToolDoublePoint_a305697bd284058a816b907dd184d7ff5}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!point1Chosen@{point1Chosen}}
+\index{point1Chosen@{point1Chosen}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{point1Chosen}{point1Chosen}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::point1\+Chosen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a8d74f017548b1ff6a8d9c18f9fe86861}\label{classVToolDoublePoint_a8d74f017548b1ff6a8d9c18f9fe86861}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!point1Selected@{point1Selected}}
+\index{point1Selected@{point1Selected}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{point1Selected}{point1Selected}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::point1\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a55ce1fe3e2ab21b74bd4b7890816a8a2}\label{classVToolDoublePoint_a55ce1fe3e2ab21b74bd4b7890816a8a2}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!point2Chosen@{point2Chosen}}
+\index{point2Chosen@{point2Chosen}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{point2Chosen}{point2Chosen}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::point2\+Chosen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a9c3a4124cf4bca1846e8071085e13c21}\label{classVToolDoublePoint_a9c3a4124cf4bca1846e8071085e13c21}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!point2Selected@{point2Selected}}
+\index{point2Selected@{point2Selected}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{point2Selected}{point2Selected}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::point2\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a36f8638749c7ef12bef629e67e1ec88d}\label{classVToolDoublePoint_a36f8638749c7ef12bef629e67e1ec88d}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_a7d08276443940981864477fe86f28090}{VDraw\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolTrueDarts_a1cfa077664b9fbac098ec60e1a383264}{VTool\+True\+Darts}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_a21d8e5ef0e3145160194418156fd0d5c}\label{classVToolDoublePoint_a21d8e5ef0e3145160194418156fd0d5c}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!setNameP1@{setNameP1}}
+\index{setNameP1@{setNameP1}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{setNameP1()}{setNameP1()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::set\+Name\+P1 (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a15bd716f0442566015e6fa806e717c14}\label{classVToolDoublePoint_a15bd716f0442566015e6fa806e717c14}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!setNameP2@{setNameP2}}
+\index{setNameP2@{setNameP2}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{setNameP2()}{setNameP2()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::set\+Name\+P2 (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolDoublePoint_ae63204f8e2613d6452d97f3658b5ed9f}\label{classVToolDoublePoint_ae63204f8e2613d6452d97f3658b5ed9f}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!setPointNamePosition@{setPointNamePosition}}
+\index{setPointNamePosition@{setPointNamePosition}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{setPointNamePosition()}{setPointNamePosition()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::set\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a2993df3110cfbac96c8bf5a6799cc585}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_a9727ca6b3d1400cd003ce7ab4d467042}\label{classVToolDoublePoint_a9727ca6b3d1400cd003ce7ab4d467042}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!setPointNameVisiblity@{setPointNameVisiblity}}
+\index{setPointNameVisiblity@{setPointNameVisiblity}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{setPointNameVisiblity()}{setPointNameVisiblity()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::set\+Point\+Name\+Visiblity (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_af5b3153cb7a4e3023328961be332bcca}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_a43935cb40be24c6ce3e13cacc7f2c22a}\label{classVToolDoublePoint_a43935cb40be24c6ce3e13cacc7f2c22a}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!ToolSelectionType@{ToolSelectionType}}
+\index{ToolSelectionType@{ToolSelectionType}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{ToolSelectionType}{ToolSelectionType}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::\+Tool\+Selection\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a5f3db6d29624f635eab2ed2679f32ca8}\label{classVToolDoublePoint_a5f3db6d29624f635eab2ed2679f32ca8}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!type@{type}}
+\index{type@{type}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Double\+Point\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolTrueDarts_ad1ad6515bcaad1642e97cce6387e2658}{VTool\+True\+Darts}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_a02291350b1f3097bf64bda70f80b6002}\label{classVToolDoublePoint_a02291350b1f3097bf64bda70f80b6002}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!updatePointNamePosition@{updatePointNamePosition}}
+\index{updatePointNamePosition@{updatePointNamePosition}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{updatePointNamePosition()}{updatePointNamePosition()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::update\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractPoint_a0e0f8e1154c77deaaaea4443390bfa68}{VAbstract\+Point}}.
+
+\mbox{\Hypertarget{classVToolDoublePoint_a9f2010f3d084c5428075fdc7264fb0cd}\label{classVToolDoublePoint_a9f2010f3d084c5428075fdc7264fb0cd}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!updatePointNameVisibility@{updatePointNameVisibility}}
+\index{updatePointNameVisibility@{updatePointNameVisibility}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{updatePointNameVisibility()}{updatePointNameVisibility()}}
+{\footnotesize\ttfamily void VTool\+Double\+Point\+::update\+Point\+Name\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_aa4e017c45f376a3d7b570138fb546109}{VDraw\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolDoublePoint_a5544fd308dc25fcc550c536203e298c2}\label{classVToolDoublePoint_a5544fd308dc25fcc550c536203e298c2}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!firstPoint@{firstPoint}}
+\index{firstPoint@{firstPoint}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{firstPoint}{firstPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}}$\ast$ VTool\+Double\+Point\+::first\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_aeefa8dcde69421192a973f595373bd14}\label{classVToolDoublePoint_aeefa8dcde69421192a973f595373bd14}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!p1id@{p1id}}
+\index{p1id@{p1id}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{p1id}{p1id}}
+{\footnotesize\ttfamily quint32 VTool\+Double\+Point\+::p1id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a01fa8144e1657024ca76043cf1e2e676}\label{classVToolDoublePoint_a01fa8144e1657024ca76043cf1e2e676}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!p2id@{p2id}}
+\index{p2id@{p2id}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{p2id}{p2id}}
+{\footnotesize\ttfamily quint32 VTool\+Double\+Point\+::p2id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolDoublePoint_a02c08db8feea97bd59575ea6e487a311}\label{classVToolDoublePoint_a02c08db8feea97bd59575ea6e487a311}} 
+\index{VToolDoublePoint@{VToolDoublePoint}!secondPoint@{secondPoint}}
+\index{secondPoint@{secondPoint}!VToolDoublePoint@{VToolDoublePoint}}
+\doxysubsubsection{\texorpdfstring{secondPoint}{secondPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}}$\ast$ VTool\+Double\+Point\+::second\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/tooldoublepoint/\mbox{\hyperlink{vtooldoublepoint_8h}{vtooldoublepoint.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/tooldoublepoint/\mbox{\hyperlink{vtooldoublepoint_8cpp}{vtooldoublepoint.\+cpp}}\end{DoxyCompactItemize}

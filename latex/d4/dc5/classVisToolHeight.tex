@@ -1,0 +1,184 @@
+\hypertarget{classVisToolHeight}{}\doxysection{Vis\+Tool\+Height Class Reference}
+\label{classVisToolHeight}\index{VisToolHeight@{VisToolHeight}}
+
+
+{\ttfamily \#include $<$vistoolheight.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Height\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d4/dc5/classVisToolHeight}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisToolHeight_aa8f005f3996b9d610bed53a07cc7668ea94cd81abedad2b38dad192dd9a08f407}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Height)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisToolHeight_a13ea4ffef50b097969c51fc61e3f6466}{Vis\+Tool\+Height}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisToolHeight_a0ea2b81f353f93586e1aacc272d2cfe5}{$\sim$\+Vis\+Tool\+Height}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classVisToolHeight_a90089031492eed38a207f16957a29071}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVisToolHeight_ada2c71b3acf8544e49036c8332d433fc}{set\+Line\+P1\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{classVisToolHeight_a5829a7d7c4b193126fc1458460df528a}{set\+Line\+P2\+Id}} (const quint32 \&value)
+\item 
+virtual int \mbox{\hyperlink{classVisToolHeight_affb7933548cdfbcfaaf7208a5ae6bb54}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVisToolHeight_a7240cfa529b500f741f629f84324b406}{Show\+Intersection}} (const QLineF \&height\+\_\+line, const QLineF \&base\+\_\+line)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVisToolHeight_aaf571a519a0d5fd8d7f8447a32d845c3}{line\+P1\+Id}}
+\item 
+quint32 \mbox{\hyperlink{classVisToolHeight_a81bf328f3b37c0eb4d88c030791bbef7}{line\+P2\+Id}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolHeight_ab28091f90fb22a340079d371d8938681}{point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolHeight_a31dd3ba655406da3e177df5d21a7db45}{base\+\_\+point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolHeight_a0810fe95552feac89f4ccd9342bb5ea2}{line\+P1}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolHeight_a2ccdea7563c3971801ee91bbdf104956}{line\+P2}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolHeight_ab4f7f25cc044fe0f00ee824e1da8222b}{line}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolHeight_a2973274215c12251c6c195df5413cddc}{line\+\_\+intersection}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisToolHeight_aa8f005f3996b9d610bed53a07cc7668e}\label{classVisToolHeight_aa8f005f3996b9d610bed53a07cc7668e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolHeight@{VisToolHeight}}\index{VisToolHeight@{VisToolHeight}!Type@{Type}}}\mbox{\Hypertarget{classVisToolHeight_aa8f005f3996b9d610bed53a07cc7668ea94cd81abedad2b38dad192dd9a08f407}\label{classVisToolHeight_aa8f005f3996b9d610bed53a07cc7668ea94cd81abedad2b38dad192dd9a08f407}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisToolHeight_a13ea4ffef50b097969c51fc61e3f6466}\label{classVisToolHeight_a13ea4ffef50b097969c51fc61e3f6466}} 
+\index{VisToolHeight@{VisToolHeight}!VisToolHeight@{VisToolHeight}}
+\index{VisToolHeight@{VisToolHeight}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{VisToolHeight()}{VisToolHeight()}}
+{\footnotesize\ttfamily Vis\+Tool\+Height\+::\+Vis\+Tool\+Height (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisToolHeight_a0ea2b81f353f93586e1aacc272d2cfe5}\label{classVisToolHeight_a0ea2b81f353f93586e1aacc272d2cfe5}} 
+\index{VisToolHeight@{VisToolHeight}!````~VisToolHeight@{$\sim$VisToolHeight}}
+\index{````~VisToolHeight@{$\sim$VisToolHeight}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolHeight()}{~VisToolHeight()}}
+{\footnotesize\ttfamily virtual Vis\+Tool\+Height\+::$\sim$\+Vis\+Tool\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisToolHeight_a90089031492eed38a207f16957a29071}\label{classVisToolHeight_a90089031492eed38a207f16957a29071}} 
+\index{VisToolHeight@{VisToolHeight}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Height\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classVisToolHeight_ada2c71b3acf8544e49036c8332d433fc}\label{classVisToolHeight_ada2c71b3acf8544e49036c8332d433fc}} 
+\index{VisToolHeight@{VisToolHeight}!setLineP1Id@{setLineP1Id}}
+\index{setLineP1Id@{setLineP1Id}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{setLineP1Id()}{setLineP1Id()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Height\+::set\+Line\+P1\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolHeight_a5829a7d7c4b193126fc1458460df528a}\label{classVisToolHeight_a5829a7d7c4b193126fc1458460df528a}} 
+\index{VisToolHeight@{VisToolHeight}!setLineP2Id@{setLineP2Id}}
+\index{setLineP2Id@{setLineP2Id}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{setLineP2Id()}{setLineP2Id()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Height\+::set\+Line\+P2\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolHeight_a7240cfa529b500f741f629f84324b406}\label{classVisToolHeight_a7240cfa529b500f741f629f84324b406}} 
+\index{VisToolHeight@{VisToolHeight}!ShowIntersection@{ShowIntersection}}
+\index{ShowIntersection@{ShowIntersection}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{ShowIntersection()}{ShowIntersection()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Height\+::\+Show\+Intersection (\begin{DoxyParamCaption}\item[{const QLineF \&}]{height\+\_\+line,  }\item[{const QLineF \&}]{base\+\_\+line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_affb7933548cdfbcfaaf7208a5ae6bb54}\label{classVisToolHeight_affb7933548cdfbcfaaf7208a5ae6bb54}} 
+\index{VisToolHeight@{VisToolHeight}!type@{type}}
+\index{type@{type}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Height\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisToolHeight_a31dd3ba655406da3e177df5d21a7db45}\label{classVisToolHeight_a31dd3ba655406da3e177df5d21a7db45}} 
+\index{VisToolHeight@{VisToolHeight}!base\_point@{base\_point}}
+\index{base\_point@{base\_point}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{base\_point}{base\_point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Height\+::base\+\_\+point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_ab4f7f25cc044fe0f00ee824e1da8222b}\label{classVisToolHeight_ab4f7f25cc044fe0f00ee824e1da8222b}} 
+\index{VisToolHeight@{VisToolHeight}!line@{line}}
+\index{line@{line}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Height\+::line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_a2973274215c12251c6c195df5413cddc}\label{classVisToolHeight_a2973274215c12251c6c195df5413cddc}} 
+\index{VisToolHeight@{VisToolHeight}!line\_intersection@{line\_intersection}}
+\index{line\_intersection@{line\_intersection}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{line\_intersection}{line\_intersection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Height\+::line\+\_\+intersection\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_a0810fe95552feac89f4ccd9342bb5ea2}\label{classVisToolHeight_a0810fe95552feac89f4ccd9342bb5ea2}} 
+\index{VisToolHeight@{VisToolHeight}!lineP1@{lineP1}}
+\index{lineP1@{lineP1}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{lineP1}{lineP1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Height\+::line\+P1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_aaf571a519a0d5fd8d7f8447a32d845c3}\label{classVisToolHeight_aaf571a519a0d5fd8d7f8447a32d845c3}} 
+\index{VisToolHeight@{VisToolHeight}!lineP1Id@{lineP1Id}}
+\index{lineP1Id@{lineP1Id}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{lineP1Id}{lineP1Id}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Height\+::line\+P1\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_a2ccdea7563c3971801ee91bbdf104956}\label{classVisToolHeight_a2ccdea7563c3971801ee91bbdf104956}} 
+\index{VisToolHeight@{VisToolHeight}!lineP2@{lineP2}}
+\index{lineP2@{lineP2}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{lineP2}{lineP2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Height\+::line\+P2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_a81bf328f3b37c0eb4d88c030791bbef7}\label{classVisToolHeight_a81bf328f3b37c0eb4d88c030791bbef7}} 
+\index{VisToolHeight@{VisToolHeight}!lineP2Id@{lineP2Id}}
+\index{lineP2Id@{lineP2Id}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{lineP2Id}{lineP2Id}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Height\+::line\+P2\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolHeight_ab28091f90fb22a340079d371d8938681}\label{classVisToolHeight_ab28091f90fb22a340079d371d8938681}} 
+\index{VisToolHeight@{VisToolHeight}!point@{point}}
+\index{point@{point}!VisToolHeight@{VisToolHeight}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Height\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolheight_8h}{vistoolheight.\+h}}\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolheight_8cpp}{vistoolheight.\+cpp}}\end{DoxyCompactItemize}

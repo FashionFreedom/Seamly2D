@@ -1,0 +1,305 @@
+\hypertarget{classDRW__Header}{}\doxysection{DRW\+\_\+\+Header Class Reference}
+\label{classDRW__Header}\index{DRW\_Header@{DRW\_Header}}
+
+
+Class to handle header entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+header.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Header_a5a5c43a3af35801a6ea6b0a6803cd93e}{DRW\+\_\+\+Header}} ()
+\item 
+\mbox{\hyperlink{classDRW__Header_afcf8ccee6986464533f66a3693131c86}{$\sim$\+DRW\+\_\+\+Header}} ()
+\item 
+\mbox{\hyperlink{classDRW__Header_a7f1bbb9b3e61a646796c1d10f57115e4}{DRW\+\_\+\+Header}} (const \mbox{\hyperlink{classDRW__Header}{DRW\+\_\+\+Header}} \&h)
+\item 
+\mbox{\hyperlink{classDRW__Header}{DRW\+\_\+\+Header}} \& \mbox{\hyperlink{classDRW__Header_a6e32022b578e453f4d9c1c588b98591d}{operator=}} (const \mbox{\hyperlink{classDRW__Header}{DRW\+\_\+\+Header}} \&h)
+\item 
+void \mbox{\hyperlink{classDRW__Header_a5f9c7ef954d7ffdce6dec7586e1f0713}{add\+Double}} (std\+::string key, double value, int code)
+\item 
+void \mbox{\hyperlink{classDRW__Header_af784078ba4c52e4913dd0f4de987563d}{add\+Int}} (std\+::string key, int value, int code)
+\item 
+void \mbox{\hyperlink{classDRW__Header_a450db86c5c854f76794588bf52eb65ce}{add\+Str}} (std\+::string key, std\+::string value, int code)
+\item 
+void \mbox{\hyperlink{classDRW__Header_abf9f59f2054efe9201ab559c9b224e05}{add\+Coord}} (std\+::string key, \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} value, int code)
+\item 
+std\+::string \mbox{\hyperlink{classDRW__Header_a661ef7af8d35c7c50acb7ebde75309b3}{get\+Comments}} () const
+\item 
+void \mbox{\hyperlink{classDRW__Header_a4b13419129531edf1a844e78985fd8ad}{write}} (\mbox{\hyperlink{classdxfWriter}{dxf\+Writer}} $\ast$writer, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} ver)
+\item 
+void \mbox{\hyperlink{classDRW__Header_a681e9d94ef951dde31369b30e3a6f718}{add\+Comment}} (const std\+::string \&c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{classDRW__Header_ae56821eadebcdeb7ade94e3657a53213}{vars}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__Header_aee3008b82ee4714d873d6ec58567a8af}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDRW__Header_acbf6ce5845b3bf7394fbaa2a32b07047}{get\+Double}} (std\+::string key, double $\ast$var\+Double)
+\item 
+bool \mbox{\hyperlink{classDRW__Header_a2ad1d080a92d6d43336acaa4c1447aa3}{get\+Int}} (std\+::string key, int $\ast$var\+Int)
+\item 
+bool \mbox{\hyperlink{classDRW__Header_af5c47634f63e6e60d0ce7e7235b26a78}{get\+Str}} (std\+::string key, std\+::string $\ast$var\+Str)
+\item 
+bool \mbox{\hyperlink{classDRW__Header_a8c1a1b0d05e9086bf443fcdaf225ddc6}{get\+Coord}} (std\+::string key, \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} $\ast$var\+Coord)
+\item 
+void \mbox{\hyperlink{classDRW__Header_ada853f329979023aae918d9c06592191}{clear\+Vars}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classDRW__Header_afb0911f3a851ced4f09437e635b3a61c}{comments}}
+\item 
+std\+::string \mbox{\hyperlink{classDRW__Header_a63f1ddb70ccb07f826a68cb826d099a0}{name}}
+\item 
+\mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} $\ast$ \mbox{\hyperlink{classDRW__Header_aaa922b7bb233e0906ca7ed5f05dc3ac1}{curr}}
+\item 
+int \mbox{\hyperlink{classDRW__Header_a3671b25ee0786194720dcf28230d2b3d}{version}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a53d4197f13ee259296a69a14d064e794}{linetype\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_ae8a4bfafca3aaa76ec1e03100bcde2d8}{layer\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a1a4ce041c354bac60cf8cffd9fc99e21}{style\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a50666bbe3f0a49e1456206294a5161b0}{dimstyle\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a0d2fd890109f0d7843011b04200f2d36}{appid\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a313e98e097fc8dd73f22563b716e5e1a}{block\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_ae2bdc61e5d0c03e71a86e04071c08bf7}{view\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a2fe70404841014b5039e0b0158bca511}{ucs\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a30acfe2ffe6ce0847703d6f4a537f67f}{vport\+Ctrl}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Header_a5214e2ac8fb7698744ec1bc17e3babd1}{vp\+Ent\+Header\+Ctrl}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle header entries. 
+
+Class to handle header vars, to read iterate over \char`\"{}std\+::map vars\char`\"{} to write add a DRW\+\_\+\+Variant$\ast$ into \char`\"{}std\+::map vars\char`\"{} (do not delete it, are cleared in dtor) or use add$\ast$ helper functions. \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__Header_a5a5c43a3af35801a6ea6b0a6803cd93e}\label{classDRW__Header_a5a5c43a3af35801a6ea6b0a6803cd93e}} 
+\index{DRW\_Header@{DRW\_Header}!DRW\_Header@{DRW\_Header}}
+\index{DRW\_Header@{DRW\_Header}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{DRW\_Header()}{DRW\_Header()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Header\+::\+DRW\+\_\+\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDRW__Header_afcf8ccee6986464533f66a3693131c86}\label{classDRW__Header_afcf8ccee6986464533f66a3693131c86}} 
+\index{DRW\_Header@{DRW\_Header}!````~DRW\_Header@{$\sim$DRW\_Header}}
+\index{````~DRW\_Header@{$\sim$DRW\_Header}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{$\sim$DRW\_Header()}{~DRW\_Header()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Header\+::$\sim$\+DRW\+\_\+\+Header (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Header_a7f1bbb9b3e61a646796c1d10f57115e4}\label{classDRW__Header_a7f1bbb9b3e61a646796c1d10f57115e4}} 
+\index{DRW\_Header@{DRW\_Header}!DRW\_Header@{DRW\_Header}}
+\index{DRW\_Header@{DRW\_Header}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{DRW\_Header()}{DRW\_Header()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Header\+::\+DRW\+\_\+\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDRW__Header}{DRW\+\_\+\+Header}} \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__Header_a681e9d94ef951dde31369b30e3a6f718}\label{classDRW__Header_a681e9d94ef951dde31369b30e3a6f718}} 
+\index{DRW\_Header@{DRW\_Header}!addComment@{addComment}}
+\index{addComment@{addComment}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{addComment()}{addComment()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::add\+Comment (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDRW__Header_abf9f59f2054efe9201ab559c9b224e05}\label{classDRW__Header_abf9f59f2054efe9201ab559c9b224e05}} 
+\index{DRW\_Header@{DRW\_Header}!addCoord@{addCoord}}
+\index{addCoord@{addCoord}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{addCoord()}{addCoord()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::add\+Coord (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{\mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}}]{value,  }\item[{int}]{code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDRW__Header_a5f9c7ef954d7ffdce6dec7586e1f0713}\label{classDRW__Header_a5f9c7ef954d7ffdce6dec7586e1f0713}} 
+\index{DRW\_Header@{DRW\_Header}!addDouble@{addDouble}}
+\index{addDouble@{addDouble}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{addDouble()}{addDouble()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::add\+Double (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{double}]{value,  }\item[{int}]{code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDRW__Header_af784078ba4c52e4913dd0f4de987563d}\label{classDRW__Header_af784078ba4c52e4913dd0f4de987563d}} 
+\index{DRW\_Header@{DRW\_Header}!addInt@{addInt}}
+\index{addInt@{addInt}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{addInt()}{addInt()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::add\+Int (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{int}]{value,  }\item[{int}]{code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDRW__Header_a450db86c5c854f76794588bf52eb65ce}\label{classDRW__Header_a450db86c5c854f76794588bf52eb65ce}} 
+\index{DRW\_Header@{DRW\_Header}!addStr@{addStr}}
+\index{addStr@{addStr}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{addStr()}{addStr()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::add\+Str (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{std\+::string}]{value,  }\item[{int}]{code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDRW__Header_ada853f329979023aae918d9c06592191}\label{classDRW__Header_ada853f329979023aae918d9c06592191}} 
+\index{DRW\_Header@{DRW\_Header}!clearVars@{clearVars}}
+\index{clearVars@{clearVars}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{clearVars()}{clearVars()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::clear\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a661ef7af8d35c7c50acb7ebde75309b3}\label{classDRW__Header_a661ef7af8d35c7c50acb7ebde75309b3}} 
+\index{DRW\_Header@{DRW\_Header}!getComments@{getComments}}
+\index{getComments@{getComments}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{getComments()}{getComments()}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Header\+::get\+Comments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Header_a8c1a1b0d05e9086bf443fcdaf225ddc6}\label{classDRW__Header_a8c1a1b0d05e9086bf443fcdaf225ddc6}} 
+\index{DRW\_Header@{DRW\_Header}!getCoord@{getCoord}}
+\index{getCoord@{getCoord}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{getCoord()}{getCoord()}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Header\+::get\+Coord (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{\mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} $\ast$}]{var\+Coord }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_acbf6ce5845b3bf7394fbaa2a32b07047}\label{classDRW__Header_acbf6ce5845b3bf7394fbaa2a32b07047}} 
+\index{DRW\_Header@{DRW\_Header}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Header\+::get\+Double (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{double $\ast$}]{var\+Double }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a2ad1d080a92d6d43336acaa4c1447aa3}\label{classDRW__Header_a2ad1d080a92d6d43336acaa4c1447aa3}} 
+\index{DRW\_Header@{DRW\_Header}!getInt@{getInt}}
+\index{getInt@{getInt}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Header\+::get\+Int (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{int $\ast$}]{var\+Int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_af5c47634f63e6e60d0ce7e7235b26a78}\label{classDRW__Header_af5c47634f63e6e60d0ce7e7235b26a78}} 
+\index{DRW\_Header@{DRW\_Header}!getStr@{getStr}}
+\index{getStr@{getStr}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{getStr()}{getStr()}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Header\+::get\+Str (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{std\+::string $\ast$}]{var\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a6e32022b578e453f4d9c1c588b98591d}\label{classDRW__Header_a6e32022b578e453f4d9c1c588b98591d}} 
+\index{DRW\_Header@{DRW\_Header}!operator=@{operator=}}
+\index{operator=@{operator=}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Header}{DRW\+\_\+\+Header}}\& DRW\+\_\+\+Header\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDRW__Header}{DRW\+\_\+\+Header}} \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Header_aee3008b82ee4714d873d6ec58567a8af}\label{classDRW__Header_aee3008b82ee4714d873d6ec58567a8af}} 
+\index{DRW\_Header@{DRW\_Header}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classDRW__Header_a4b13419129531edf1a844e78985fd8ad}\label{classDRW__Header_a4b13419129531edf1a844e78985fd8ad}} 
+\index{DRW\_Header@{DRW\_Header}!write@{write}}
+\index{write@{write}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Header\+::write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdxfWriter}{dxf\+Writer}} $\ast$}]{writer,  }\item[{\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}}}]{ver }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__Header_a0d2fd890109f0d7843011b04200f2d36}\label{classDRW__Header_a0d2fd890109f0d7843011b04200f2d36}} 
+\index{DRW\_Header@{DRW\_Header}!appidCtrl@{appidCtrl}}
+\index{appidCtrl@{appidCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{appidCtrl}{appidCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::appid\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a313e98e097fc8dd73f22563b716e5e1a}\label{classDRW__Header_a313e98e097fc8dd73f22563b716e5e1a}} 
+\index{DRW\_Header@{DRW\_Header}!blockCtrl@{blockCtrl}}
+\index{blockCtrl@{blockCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{blockCtrl}{blockCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::block\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_afb0911f3a851ced4f09437e635b3a61c}\label{classDRW__Header_afb0911f3a851ced4f09437e635b3a61c}} 
+\index{DRW\_Header@{DRW\_Header}!comments@{comments}}
+\index{comments@{comments}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{comments}{comments}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Header\+::comments\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_aaa922b7bb233e0906ca7ed5f05dc3ac1}\label{classDRW__Header_aaa922b7bb233e0906ca7ed5f05dc3ac1}} 
+\index{DRW\_Header@{DRW\_Header}!curr@{curr}}
+\index{curr@{curr}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{curr}{curr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}}$\ast$ DRW\+\_\+\+Header\+::curr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a50666bbe3f0a49e1456206294a5161b0}\label{classDRW__Header_a50666bbe3f0a49e1456206294a5161b0}} 
+\index{DRW\_Header@{DRW\_Header}!dimstyleCtrl@{dimstyleCtrl}}
+\index{dimstyleCtrl@{dimstyleCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{dimstyleCtrl}{dimstyleCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::dimstyle\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_ae8a4bfafca3aaa76ec1e03100bcde2d8}\label{classDRW__Header_ae8a4bfafca3aaa76ec1e03100bcde2d8}} 
+\index{DRW\_Header@{DRW\_Header}!layerCtrl@{layerCtrl}}
+\index{layerCtrl@{layerCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{layerCtrl}{layerCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::layer\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a53d4197f13ee259296a69a14d064e794}\label{classDRW__Header_a53d4197f13ee259296a69a14d064e794}} 
+\index{DRW\_Header@{DRW\_Header}!linetypeCtrl@{linetypeCtrl}}
+\index{linetypeCtrl@{linetypeCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{linetypeCtrl}{linetypeCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::linetype\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a63f1ddb70ccb07f826a68cb826d099a0}\label{classDRW__Header_a63f1ddb70ccb07f826a68cb826d099a0}} 
+\index{DRW\_Header@{DRW\_Header}!name@{name}}
+\index{name@{name}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Header\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a1a4ce041c354bac60cf8cffd9fc99e21}\label{classDRW__Header_a1a4ce041c354bac60cf8cffd9fc99e21}} 
+\index{DRW\_Header@{DRW\_Header}!styleCtrl@{styleCtrl}}
+\index{styleCtrl@{styleCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{styleCtrl}{styleCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::style\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a2fe70404841014b5039e0b0158bca511}\label{classDRW__Header_a2fe70404841014b5039e0b0158bca511}} 
+\index{DRW\_Header@{DRW\_Header}!ucsCtrl@{ucsCtrl}}
+\index{ucsCtrl@{ucsCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{ucsCtrl}{ucsCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::ucs\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_ae56821eadebcdeb7ade94e3657a53213}\label{classDRW__Header_ae56821eadebcdeb7ade94e3657a53213}} 
+\index{DRW\_Header@{DRW\_Header}!vars@{vars}}
+\index{vars@{vars}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{vars}{vars}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string,\mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}}$\ast$$>$ DRW\+\_\+\+Header\+::vars}
+
+\mbox{\Hypertarget{classDRW__Header_a3671b25ee0786194720dcf28230d2b3d}\label{classDRW__Header_a3671b25ee0786194720dcf28230d2b3d}} 
+\index{DRW\_Header@{DRW\_Header}!version@{version}}
+\index{version@{version}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Header\+::version\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_ae2bdc61e5d0c03e71a86e04071c08bf7}\label{classDRW__Header_ae2bdc61e5d0c03e71a86e04071c08bf7}} 
+\index{DRW\_Header@{DRW\_Header}!viewCtrl@{viewCtrl}}
+\index{viewCtrl@{viewCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{viewCtrl}{viewCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::view\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a5214e2ac8fb7698744ec1bc17e3babd1}\label{classDRW__Header_a5214e2ac8fb7698744ec1bc17e3babd1}} 
+\index{DRW\_Header@{DRW\_Header}!vpEntHeaderCtrl@{vpEntHeaderCtrl}}
+\index{vpEntHeaderCtrl@{vpEntHeaderCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{vpEntHeaderCtrl}{vpEntHeaderCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::vp\+Ent\+Header\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Header_a30acfe2ffe6ce0847703d6f4a537f67f}\label{classDRW__Header_a30acfe2ffe6ce0847703d6f4a537f67f}} 
+\index{DRW\_Header@{DRW\_Header}!vportCtrl@{vportCtrl}}
+\index{vportCtrl@{vportCtrl}!DRW\_Header@{DRW\_Header}}
+\doxysubsubsection{\texorpdfstring{vportCtrl}{vportCtrl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Header\+::vport\+Ctrl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__header_8h}{drw\+\_\+header.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__header_8cpp}{drw\+\_\+header.\+cpp}}\end{DoxyCompactItemize}

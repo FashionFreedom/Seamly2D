@@ -1,0 +1,363 @@
+\hypertarget{classVToolRotation}{}\doxysection{VTool\+Rotation Class Reference}
+\label{classVToolRotation}\index{VToolRotation@{VToolRotation}}
+
+
+{\ttfamily \#include $<$vtoolrotation.\+h$>$}
+
+Inheritance diagram for VTool\+Rotation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{d2/d0f/classVToolRotation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolRotation_ab249fef32e8bc918c538628dbf2edfd7a46867e810af6cc47d3441a2cfd00a42a}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Rotation)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classVToolRotation_a5953a469bbd46f9ec9802287f7aa8a4c}{$\sim$\+VTool\+Rotation}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classVToolRotation_a5e28d518995d311722b29d428c110c43}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolRotation_a62b27fbfdd40a875467e1a7d1a2e7c7b}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolRotation_a1d1600a3c982fda5939c24e76d3c10d7}{get\+Origin\+Point\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolRotation_a7c890680fc245eea9d8b0b2b6966a552}{get\+Origin\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolRotation_a8194cc7fe897f38f59c9214f4129165c}{set\+Origin\+Point\+Id}} (const quint32 \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolRotation_a4b5e99f8f5340a28e52dc5735b2e09a7}{Get\+Formula\+Angle}} () const
+\item 
+void \mbox{\hyperlink{classVToolRotation_a4300b45d0b005a7c4ba8d87aa1f0f3fb}{Set\+Formula\+Angle}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+virtual void \mbox{\hyperlink{classVToolRotation_a81bec42ecc6b420fa0b6296878e3f19a}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolRotation}{VTool\+Rotation}} $\ast$ \mbox{\hyperlink{classVToolRotation_a0ff08749acc500753185294064eef26c}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static \mbox{\hyperlink{classVToolRotation}{VTool\+Rotation}} $\ast$ \mbox{\hyperlink{classVToolRotation_a7e7d42d50dd9124644341adb0557b785}{Create}} (const quint32 \+\_\+id, const quint32 \&origin, QString \&angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}}, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolRotation_a837468ebb863be3fdc984a612304f7a7}{Tool\+Type}} = QString\+Literal(\char`\"{}rotation\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolRotation_ab93c140bd462b3f9f586f234c03d2290}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolRotation_ab6c45b6a75d111439909e2996b7ed2ef}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolRotation_aacf0d374e5b73012f98609982aca44ae}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolRotation_a7189b8f2018c021e4121880e67a16418}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolRotation_a862c85b03cfe275ba5049528547b0270}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classVToolRotation_a65724df7083eda6484c0b394fec7fb6e}{make\+Tool\+Tip}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolRotation_ab6711696ea9dc9f3d2b480b5d0390b75}{VTool\+Rotation}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, quint32 origin\+Point\+Id, const QString \&angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}}, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVToolRotation_a80f153c313aac5f5679642d3b8d87b64}{create\+Point}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVToolRotation_aac0873dcdac35963e5ef1617b0c26aa2}{create\+Item}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVToolRotation_af3479ebe84dff653fdf003ddbe539c36}{create\+Arc}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVToolRotation_a6868dfb5c8b11f7eaf7d849d36484653}{create\+Curve}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+{\footnotesize template$<$class Item $>$ }\\static \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \mbox{\hyperlink{classVToolRotation_a37477139ecef7ddc74301d29928764e2}{create\+Curve\+With\+Segments}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static void \mbox{\hyperlink{classVToolRotation_a9a69e6019e375ba9a920f3cb4f6b27fe}{update\+Point}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \&item)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVToolRotation_aa4180caee6f1430e693d4e6cc7477333}{update\+Item}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVToolRotation_afec0ce64807f157781e4da59a9f4e3c9}{update\+Arc}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVToolRotation_ab2090f44a4069c0b0f6dc66771460b6c}{update\+Curve}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+{\footnotesize template$<$class Item $>$ }\\static void \mbox{\hyperlink{classVToolRotation_a603e7058d12ef0c7a312d1d7664cbb61}{update\+Curve\+With\+Segments}} (quint32 id\+Tool, quint32 id\+Item, const QPointF \&origin, qreal angle, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVToolRotation_ab3ffab01423654ae08b2646580d607f4}{m\+\_\+origin\+Point\+Id}}
+\item 
+QString \mbox{\hyperlink{classVToolRotation_a2bcd8d4f925b67a172d2bb94477d2300}{formula\+Angle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolRotation_ab249fef32e8bc918c538628dbf2edfd7}\label{classVToolRotation_ab249fef32e8bc918c538628dbf2edfd7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolRotation@{VToolRotation}}\index{VToolRotation@{VToolRotation}!Type@{Type}}}\mbox{\Hypertarget{classVToolRotation_ab249fef32e8bc918c538628dbf2edfd7a46867e810af6cc47d3441a2cfd00a42a}\label{classVToolRotation_ab249fef32e8bc918c538628dbf2edfd7a46867e810af6cc47d3441a2cfd00a42a}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolRotation_a5953a469bbd46f9ec9802287f7aa8a4c}\label{classVToolRotation_a5953a469bbd46f9ec9802287f7aa8a4c}} 
+\index{VToolRotation@{VToolRotation}!````~VToolRotation@{$\sim$VToolRotation}}
+\index{````~VToolRotation@{$\sim$VToolRotation}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{$\sim$VToolRotation()}{~VToolRotation()}}
+{\footnotesize\ttfamily virtual VTool\+Rotation\+::$\sim$\+VTool\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVToolRotation_ab6711696ea9dc9f3d2b480b5d0390b75}\label{classVToolRotation_ab6711696ea9dc9f3d2b480b5d0390b75}} 
+\index{VToolRotation@{VToolRotation}!VToolRotation@{VToolRotation}}
+\index{VToolRotation@{VToolRotation}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{VToolRotation()}{VToolRotation()}}
+{\footnotesize\ttfamily VTool\+Rotation\+::\+VTool\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{quint32}]{origin\+Point\+Id,  }\item[{const QString \&}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{source,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&}]{destination,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolRotation_a7e7d42d50dd9124644341adb0557b785}\label{classVToolRotation_a7e7d42d50dd9124644341adb0557b785}} 
+\index{VToolRotation@{VToolRotation}!Create@{Create}}
+\index{Create@{Create}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolRotation}{VTool\+Rotation}} $\ast$ VTool\+Rotation\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const quint32 \&}]{origin,  }\item[{QString \&}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{source,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&}]{destination,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolRotation_a0ff08749acc500753185294064eef26c}\label{classVToolRotation_a0ff08749acc500753185294064eef26c}} 
+\index{VToolRotation@{VToolRotation}!Create@{Create}}
+\index{Create@{Create}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolRotation}{VTool\+Rotation}} $\ast$ VTool\+Rotation\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolRotation_af3479ebe84dff653fdf003ddbe539c36}\label{classVToolRotation_af3479ebe84dff653fdf003ddbe539c36}} 
+\index{VToolRotation@{VToolRotation}!createArc@{createArc}}
+\index{createArc@{createArc}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{createArc()}{createArc()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VTool\+Rotation\+::create\+Arc (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a6868dfb5c8b11f7eaf7d849d36484653}\label{classVToolRotation_a6868dfb5c8b11f7eaf7d849d36484653}} 
+\index{VToolRotation@{VToolRotation}!createCurve@{createCurve}}
+\index{createCurve@{createCurve}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{createCurve()}{createCurve()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VTool\+Rotation\+::create\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a37477139ecef7ddc74301d29928764e2}\label{classVToolRotation_a37477139ecef7ddc74301d29928764e2}} 
+\index{VToolRotation@{VToolRotation}!createCurveWithSegments@{createCurveWithSegments}}
+\index{createCurveWithSegments@{createCurveWithSegments}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{createCurveWithSegments()}{createCurveWithSegments()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VTool\+Rotation\+::create\+Curve\+With\+Segments (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_aac0873dcdac35963e5ef1617b0c26aa2}\label{classVToolRotation_aac0873dcdac35963e5ef1617b0c26aa2}} 
+\index{VToolRotation@{VToolRotation}!createItem@{createItem}}
+\index{createItem@{createItem}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{createItem()}{createItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VTool\+Rotation\+::create\+Item (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a80f153c313aac5f5679642d3b8d87b64}\label{classVToolRotation_a80f153c313aac5f5679642d3b8d87b64}} 
+\index{VToolRotation@{VToolRotation}!createPoint@{createPoint}}
+\index{createPoint@{createPoint}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{createPoint()}{createPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} VTool\+Rotation\+::create\+Point (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a4b5e99f8f5340a28e52dc5735b2e09a7}\label{classVToolRotation_a4b5e99f8f5340a28e52dc5735b2e09a7}} 
+\index{VToolRotation@{VToolRotation}!GetFormulaAngle@{GetFormulaAngle}}
+\index{GetFormulaAngle@{GetFormulaAngle}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{GetFormulaAngle()}{GetFormulaAngle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Rotation\+::\+Get\+Formula\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolRotation_a7c890680fc245eea9d8b0b2b6966a552}\label{classVToolRotation_a7c890680fc245eea9d8b0b2b6966a552}} 
+\index{VToolRotation@{VToolRotation}!getOriginPointId@{getOriginPointId}}
+\index{getOriginPointId@{getOriginPointId}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{getOriginPointId()}{getOriginPointId()}}
+{\footnotesize\ttfamily quint32 VTool\+Rotation\+::get\+Origin\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolRotation_a1d1600a3c982fda5939c24e76d3c10d7}\label{classVToolRotation_a1d1600a3c982fda5939c24e76d3c10d7}} 
+\index{VToolRotation@{VToolRotation}!getOriginPointName@{getOriginPointName}}
+\index{getOriginPointName@{getOriginPointName}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{getOriginPointName()}{getOriginPointName()}}
+{\footnotesize\ttfamily QString VTool\+Rotation\+::get\+Origin\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolRotation_a65724df7083eda6484c0b394fec7fb6e}\label{classVToolRotation_a65724df7083eda6484c0b394fec7fb6e}} 
+\index{VToolRotation@{VToolRotation}!makeToolTip@{makeToolTip}}
+\index{makeToolTip@{makeToolTip}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{makeToolTip()}{makeToolTip()}}
+{\footnotesize\ttfamily QString VTool\+Rotation\+::make\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_a3c5e34e70a32b885d9a8863deb7e1e2f}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolRotation_a7189b8f2018c021e4121880e67a16418}\label{classVToolRotation_a7189b8f2018c021e4121880e67a16418}} 
+\index{VToolRotation@{VToolRotation}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractOperation_a90699b27c2b71ae695661c98f1125ece}{VAbstract\+Operation}}.
+
+\mbox{\Hypertarget{classVToolRotation_aacf0d374e5b73012f98609982aca44ae}\label{classVToolRotation_aacf0d374e5b73012f98609982aca44ae}} 
+\index{VToolRotation@{VToolRotation}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolRotation_a862c85b03cfe275ba5049528547b0270}\label{classVToolRotation_a862c85b03cfe275ba5049528547b0270}} 
+\index{VToolRotation@{VToolRotation}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractOperation_a0ac2d9f9cc3218f3736d621ff7145f40}{VAbstract\+Operation}}.
+
+\mbox{\Hypertarget{classVToolRotation_a5e28d518995d311722b29d428c110c43}\label{classVToolRotation_a5e28d518995d311722b29d428c110c43}} 
+\index{VToolRotation@{VToolRotation}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolRotation_a4300b45d0b005a7c4ba8d87aa1f0f3fb}\label{classVToolRotation_a4300b45d0b005a7c4ba8d87aa1f0f3fb}} 
+\index{VToolRotation@{VToolRotation}!SetFormulaAngle@{SetFormulaAngle}}
+\index{SetFormulaAngle@{SetFormulaAngle}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{SetFormulaAngle()}{SetFormulaAngle()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::\+Set\+Formula\+Angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolRotation_a8194cc7fe897f38f59c9214f4129165c}\label{classVToolRotation_a8194cc7fe897f38f59c9214f4129165c}} 
+\index{VToolRotation@{VToolRotation}!setOriginPointId@{setOriginPointId}}
+\index{setOriginPointId@{setOriginPointId}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{setOriginPointId()}{setOriginPointId()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::set\+Origin\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolRotation_ab6c45b6a75d111439909e2996b7ed2ef}\label{classVToolRotation_ab6c45b6a75d111439909e2996b7ed2ef}} 
+\index{VToolRotation@{VToolRotation}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolRotation_ab93c140bd462b3f9f586f234c03d2290}\label{classVToolRotation_ab93c140bd462b3f9f586f234c03d2290}} 
+\index{VToolRotation@{VToolRotation}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolRotation_a81bec42ecc6b420fa0b6296878e3f19a}\label{classVToolRotation_a81bec42ecc6b420fa0b6296878e3f19a}} 
+\index{VToolRotation@{VToolRotation}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolRotation_a62b27fbfdd40a875467e1a7d1a2e7c7b}\label{classVToolRotation_a62b27fbfdd40a875467e1a7d1a2e7c7b}} 
+\index{VToolRotation@{VToolRotation}!type@{type}}
+\index{type@{type}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Rotation\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVToolRotation_afec0ce64807f157781e4da59a9f4e3c9}\label{classVToolRotation_afec0ce64807f157781e4da59a9f4e3c9}} 
+\index{VToolRotation@{VToolRotation}!updateArc@{updateArc}}
+\index{updateArc@{updateArc}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{updateArc()}{updateArc()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VTool\+Rotation\+::update\+Arc (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_ab2090f44a4069c0b0f6dc66771460b6c}\label{classVToolRotation_ab2090f44a4069c0b0f6dc66771460b6c}} 
+\index{VToolRotation@{VToolRotation}!updateCurve@{updateCurve}}
+\index{updateCurve@{updateCurve}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{updateCurve()}{updateCurve()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VTool\+Rotation\+::update\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a603e7058d12ef0c7a312d1d7664cbb61}\label{classVToolRotation_a603e7058d12ef0c7a312d1d7664cbb61}} 
+\index{VToolRotation@{VToolRotation}!updateCurveWithSegments@{updateCurveWithSegments}}
+\index{updateCurveWithSegments@{updateCurveWithSegments}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{updateCurveWithSegments()}{updateCurveWithSegments()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VTool\+Rotation\+::update\+Curve\+With\+Segments (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_aa4180caee6f1430e693d4e6cc7477333}\label{classVToolRotation_aa4180caee6f1430e693d4e6cc7477333}} 
+\index{VToolRotation@{VToolRotation}!updateItem@{updateItem}}
+\index{updateItem@{updateItem}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{updateItem()}{updateItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void VTool\+Rotation\+::update\+Item (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a9a69e6019e375ba9a920f3cb4f6b27fe}\label{classVToolRotation_a9a69e6019e375ba9a920f3cb4f6b27fe}} 
+\index{VToolRotation@{VToolRotation}!updatePoint@{updatePoint}}
+\index{updatePoint@{updatePoint}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{updatePoint()}{updatePoint()}}
+{\footnotesize\ttfamily void VTool\+Rotation\+::update\+Point (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Item,  }\item[{const QPointF \&}]{origin,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{suffix,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolRotation_a2bcd8d4f925b67a172d2bb94477d2300}\label{classVToolRotation_a2bcd8d4f925b67a172d2bb94477d2300}} 
+\index{VToolRotation@{VToolRotation}!formulaAngle@{formulaAngle}}
+\index{formulaAngle@{formulaAngle}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{formulaAngle}{formulaAngle}}
+{\footnotesize\ttfamily QString VTool\+Rotation\+::formula\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_ab3ffab01423654ae08b2646580d607f4}\label{classVToolRotation_ab3ffab01423654ae08b2646580d607f4}} 
+\index{VToolRotation@{VToolRotation}!m\_originPointId@{m\_originPointId}}
+\index{m\_originPointId@{m\_originPointId}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{m\_originPointId}{m\_originPointId}}
+{\footnotesize\ttfamily quint32 VTool\+Rotation\+::m\+\_\+origin\+Point\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolRotation_a837468ebb863be3fdc984a612304f7a7}\label{classVToolRotation_a837468ebb863be3fdc984a612304f7a7}} 
+\index{VToolRotation@{VToolRotation}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolRotation@{VToolRotation}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Rotation\+::\+Tool\+Type = QString\+Literal(\char`\"{}rotation\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/operation/\mbox{\hyperlink{vtoolrotation_8h}{vtoolrotation.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/operation/\mbox{\hyperlink{vtoolrotation_8cpp}{vtoolrotation.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,231 @@
+\hypertarget{classVLayoutPieceData}{}\doxysection{VLayout\+Piece\+Data Class Reference}
+\label{classVLayoutPieceData}\index{VLayoutPieceData@{VLayoutPieceData}}
+
+
+{\ttfamily \#include $<$vlayoutpiece\+\_\+p.\+h$>$}
+
+Inheritance diagram for VLayout\+Piece\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/dcf/classVLayoutPieceData}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVLayoutPieceData_a8f944998eecf4826f4fd47b05394b1df}{VLayout\+Piece\+Data}} ()
+\item 
+\mbox{\hyperlink{classVLayoutPieceData_a55b250b9828f188fa72adb8bde3c7e87}{VLayout\+Piece\+Data}} (const \mbox{\hyperlink{classVLayoutPieceData}{VLayout\+Piece\+Data}} \&piece)
+\item 
+\mbox{\hyperlink{classVLayoutPieceData_ac29190d92271d73ab4eb318c892a6ea0}{$\sim$\+VLayout\+Piece\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPieceData_ae0f394fc4b63cd95e9cd816e0c00d2a1}{contour}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPieceData_a8fa18950be286065806ab2dfb120f361}{seam\+Allowance}}
+\begin{DoxyCompactList}\small\item\em contour list of contour points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPieceData_af36ae32e2c15368c3d268eca26d5f565}{layout\+Allowance}}
+\begin{DoxyCompactList}\small\item\em seam\+Allowance list of seam allowance points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{classVLayoutPieceData_af69c440f98e3d5b22adcf16bec749d08}{notches}}
+\begin{DoxyCompactList}\small\item\em layout\+Allowance list of layout allowance points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} $>$ \mbox{\hyperlink{classVLayoutPieceData_a19af223caf54e6cac1bc243e62216edf}{m\+\_\+internal\+Paths}}
+\begin{DoxyCompactList}\small\item\em notches list of notches. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} $>$ \mbox{\hyperlink{classVLayoutPieceData_a3e3548f81f0a787d22a31662d1820821}{m\+\_\+cutout\+Paths}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+internal\+Paths list of internal paths. \end{DoxyCompactList}\item 
+QTransform \mbox{\hyperlink{classVLayoutPieceData_a8ce76b7c3a713569e0a75a89b68b68c6}{transform}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+cutout\+Paths list of internal cutout paths. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{classVLayoutPieceData_a842b3bca7911d0f58292be3ca1776e4e}{layout\+Width}}
+\begin{DoxyCompactList}\small\item\em transform transformation transform \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVLayoutPieceData_ac028f1955a381593c9c30837720b9f59}{mirror}}
+\begin{DoxyCompactList}\small\item\em layout\+Width value layout allowance width in pixels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPieceData_a6ec237517ae7e21139f2c4b5b8175b50}{piece\+Label}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPieceData_a24e5fd670bea84e7d511f9b9b937194c}{pattern\+Info}}
+\begin{DoxyCompactList}\small\item\em piece\+Label piece label rectangle \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPieceData_a38252972145945b9f9169e7b29584b2a}{grainline\+Points}}
+\begin{DoxyCompactList}\small\item\em pattern\+Info pattern info rectangle \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVTextManager}{VText\+Manager}} \mbox{\hyperlink{classVLayoutPieceData_a663d9c5180d765478d8bf504dc2f2dbc}{m\+\_\+tm\+Piece}}
+\begin{DoxyCompactList}\small\item\em grainline\+Info line \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVTextManager}{VText\+Manager}} \mbox{\hyperlink{classVLayoutPieceData_a3e6d662f5aa0ab129074cb19d04cb261}{m\+\_\+tm\+Pattern}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+tm\+Piece text manager for laying out piece info \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVLayoutPieceData}{VLayout\+Piece\+Data}} \& \mbox{\hyperlink{classVLayoutPieceData_a3f16c68c9b0e1ba39416fbc1db9d198a}{operator=}} (const \mbox{\hyperlink{classVLayoutPieceData}{VLayout\+Piece\+Data}} \&) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DELETE
+\begin{DoxyCompactList}\small\item\em m\+\_\+tm\+Pattern text manager for laying out pattern info $\ast$/ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVLayoutPieceData_a8f944998eecf4826f4fd47b05394b1df}\label{classVLayoutPieceData_a8f944998eecf4826f4fd47b05394b1df}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!VLayoutPieceData@{VLayoutPieceData}}
+\index{VLayoutPieceData@{VLayoutPieceData}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{VLayoutPieceData()}{VLayoutPieceData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VLayout\+Piece\+Data\+::\+VLayout\+Piece\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classVLayoutPieceData_a55b250b9828f188fa72adb8bde3c7e87}\label{classVLayoutPieceData_a55b250b9828f188fa72adb8bde3c7e87}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!VLayoutPieceData@{VLayoutPieceData}}
+\index{VLayoutPieceData@{VLayoutPieceData}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{VLayoutPieceData()}{VLayoutPieceData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VLayout\+Piece\+Data\+::\+VLayout\+Piece\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVLayoutPieceData}{VLayout\+Piece\+Data}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classVLayoutPieceData_ac29190d92271d73ab4eb318c892a6ea0}\label{classVLayoutPieceData_ac29190d92271d73ab4eb318c892a6ea0}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!````~VLayoutPieceData@{$\sim$VLayoutPieceData}}
+\index{````~VLayoutPieceData@{$\sim$VLayoutPieceData}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{$\sim$VLayoutPieceData()}{~VLayoutPieceData()}}
+{\footnotesize\ttfamily VLayout\+Piece\+Data\+::$\sim$\+VLayout\+Piece\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVLayoutPieceData_a3f16c68c9b0e1ba39416fbc1db9d198a}\label{classVLayoutPieceData_a3f16c68c9b0e1ba39416fbc1db9d198a}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!operator=@{operator=}}
+\index{operator=@{operator=}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVLayoutPieceData}{VLayout\+Piece\+Data}}\& VLayout\+Piece\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVLayoutPieceData}{VLayout\+Piece\+Data}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+m\+\_\+tm\+Pattern text manager for laying out pattern info $\ast$/ 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVLayoutPieceData_ae0f394fc4b63cd95e9cd816e0c00d2a1}\label{classVLayoutPieceData_ae0f394fc4b63cd95e9cd816e0c00d2a1}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!contour@{contour}}
+\index{contour@{contour}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{contour}{contour}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QPointF$>$ VLayout\+Piece\+Data\+::contour}
+
+\mbox{\Hypertarget{classVLayoutPieceData_a38252972145945b9f9169e7b29584b2a}\label{classVLayoutPieceData_a38252972145945b9f9169e7b29584b2a}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!grainlinePoints@{grainlinePoints}}
+\index{grainlinePoints@{grainlinePoints}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{grainlinePoints}{grainlinePoints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QPointF$>$ VLayout\+Piece\+Data\+::grainline\+Points}
+
+
+
+pattern\+Info pattern info rectangle 
+
+\mbox{\Hypertarget{classVLayoutPieceData_af36ae32e2c15368c3d268eca26d5f565}\label{classVLayoutPieceData_af36ae32e2c15368c3d268eca26d5f565}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!layoutAllowance@{layoutAllowance}}
+\index{layoutAllowance@{layoutAllowance}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{layoutAllowance}{layoutAllowance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QPointF$>$ VLayout\+Piece\+Data\+::layout\+Allowance}
+
+
+
+seam\+Allowance list of seam allowance points. 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a842b3bca7911d0f58292be3ca1776e4e}\label{classVLayoutPieceData_a842b3bca7911d0f58292be3ca1776e4e}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!layoutWidth@{layoutWidth}}
+\index{layoutWidth@{layoutWidth}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{layoutWidth}{layoutWidth}}
+{\footnotesize\ttfamily qreal VLayout\+Piece\+Data\+::layout\+Width}
+
+
+
+transform transformation transform 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a3e3548f81f0a787d22a31662d1820821}\label{classVLayoutPieceData_a3e3548f81f0a787d22a31662d1820821}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!m\_cutoutPaths@{m\_cutoutPaths}}
+\index{m\_cutoutPaths@{m\_cutoutPaths}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{m\_cutoutPaths}{m\_cutoutPaths}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}}$>$ VLayout\+Piece\+Data\+::m\+\_\+cutout\+Paths}
+
+
+
+m\+\_\+internal\+Paths list of internal paths. 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a19af223caf54e6cac1bc243e62216edf}\label{classVLayoutPieceData_a19af223caf54e6cac1bc243e62216edf}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!m\_internalPaths@{m\_internalPaths}}
+\index{m\_internalPaths@{m\_internalPaths}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{m\_internalPaths}{m\_internalPaths}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}}$>$ VLayout\+Piece\+Data\+::m\+\_\+internal\+Paths}
+
+
+
+notches list of notches. 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a3e6d662f5aa0ab129074cb19d04cb261}\label{classVLayoutPieceData_a3e6d662f5aa0ab129074cb19d04cb261}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!m\_tmPattern@{m\_tmPattern}}
+\index{m\_tmPattern@{m\_tmPattern}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{m\_tmPattern}{m\_tmPattern}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVTextManager}{VText\+Manager}} VLayout\+Piece\+Data\+::m\+\_\+tm\+Pattern}
+
+
+
+m\+\_\+tm\+Piece text manager for laying out piece info 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a663d9c5180d765478d8bf504dc2f2dbc}\label{classVLayoutPieceData_a663d9c5180d765478d8bf504dc2f2dbc}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!m\_tmPiece@{m\_tmPiece}}
+\index{m\_tmPiece@{m\_tmPiece}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{m\_tmPiece}{m\_tmPiece}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVTextManager}{VText\+Manager}} VLayout\+Piece\+Data\+::m\+\_\+tm\+Piece}
+
+
+
+grainline\+Info line 
+
+\mbox{\Hypertarget{classVLayoutPieceData_ac028f1955a381593c9c30837720b9f59}\label{classVLayoutPieceData_ac028f1955a381593c9c30837720b9f59}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!mirror@{mirror}}
+\index{mirror@{mirror}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{mirror}{mirror}}
+{\footnotesize\ttfamily bool VLayout\+Piece\+Data\+::mirror}
+
+
+
+layout\+Width value layout allowance width in pixels. 
+
+\mbox{\Hypertarget{classVLayoutPieceData_af69c440f98e3d5b22adcf16bec749d08}\label{classVLayoutPieceData_af69c440f98e3d5b22adcf16bec749d08}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!notches@{notches}}
+\index{notches@{notches}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{notches}{notches}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QLineF$>$ VLayout\+Piece\+Data\+::notches}
+
+
+
+layout\+Allowance list of layout allowance points. 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a24e5fd670bea84e7d511f9b9b937194c}\label{classVLayoutPieceData_a24e5fd670bea84e7d511f9b9b937194c}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!patternInfo@{patternInfo}}
+\index{patternInfo@{patternInfo}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{patternInfo}{patternInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QPointF$>$ VLayout\+Piece\+Data\+::pattern\+Info}
+
+
+
+piece\+Label piece label rectangle 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a6ec237517ae7e21139f2c4b5b8175b50}\label{classVLayoutPieceData_a6ec237517ae7e21139f2c4b5b8175b50}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!pieceLabel@{pieceLabel}}
+\index{pieceLabel@{pieceLabel}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{pieceLabel}{pieceLabel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QPointF$>$ VLayout\+Piece\+Data\+::piece\+Label}
+
+\mbox{\Hypertarget{classVLayoutPieceData_a8fa18950be286065806ab2dfb120f361}\label{classVLayoutPieceData_a8fa18950be286065806ab2dfb120f361}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!seamAllowance@{seamAllowance}}
+\index{seamAllowance@{seamAllowance}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{seamAllowance}{seamAllowance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QPointF$>$ VLayout\+Piece\+Data\+::seam\+Allowance}
+
+
+
+contour list of contour points. 
+
+\mbox{\Hypertarget{classVLayoutPieceData_a8ce76b7c3a713569e0a75a89b68b68c6}\label{classVLayoutPieceData_a8ce76b7c3a713569e0a75a89b68b68c6}} 
+\index{VLayoutPieceData@{VLayoutPieceData}!transform@{transform}}
+\index{transform@{transform}!VLayoutPieceData@{VLayoutPieceData}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily QTransform VLayout\+Piece\+Data\+::transform}
+
+
+
+m\+\_\+cutout\+Paths list of internal cutout paths. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vlayout/\mbox{\hyperlink{vlayoutpiece__p_8h}{vlayoutpiece\+\_\+p.\+h}}\end{DoxyCompactItemize}

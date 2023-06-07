@@ -1,0 +1,156 @@
+\hypertarget{vabstractpattern_8h}{}\doxysection{src/libs/ifc/xml/vabstractpattern.h File Reference}
+\label{vabstractpattern_8h}\index{src/libs/ifc/xml/vabstractpattern.h@{src/libs/ifc/xml/vabstractpattern.h}}
+{\ttfamily \#include $<$qcompilerdetection.\+h$>$}\newline
+{\ttfamily \#include $<$QHash$>$}\newline
+{\ttfamily \#include $<$QMap$>$}\newline
+{\ttfamily \#include $<$QMeta\+Object$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QPair$>$}\newline
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QString\+List$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include \char`\"{}vdomdocument.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vtoolrecord.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vwidgets/pen\+\_\+toolbar.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structVFormulaField}{VFormula\+Field}}
+\item 
+struct \mbox{\hyperlink{structGroupAttributes}{Group\+Attributes}}
+\item 
+class \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \+: char \{ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202adb22028d495f0deff7064f1471b4933c}{Lite\+Parse}}
+, \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202a6c1e150164cce531fddd70fad7db282f}{Lite\+Block\+Parse}}
+, \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785}{Full\+Parse}}
+ \}
+\item 
+enum class \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{Label\+Type}} \+: char \{ \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa58b2398ca2e7e833e9e0e53b31aee633}{New\+Pattern\+Piece}}
+, \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa337ccf7d7f2dd8d2857b49a78d7d7fc3}{New\+Label}}
+ \}
+\item 
+enum class \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \+: char \{ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7ba7f96422659759463a6faa5a17b7a5554}{First\+Point}} = 1
+, \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7bac8dcbd757e675381f3f7b5d2c75de2e8}{Second\+Point}} = 2
+ \}
+\item 
+enum class \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \+: char \{ \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deafd44f1be21b9031b47d69681f77a2884}{Highest\+Point}} = 1
+, \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deabe1992d4b6d1c95cc5cbd2a422495caf}{Lowest\+Point}} = 2
+ \}
+\item 
+enum class \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \+: char \{ \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2a1127489e32f2f6802c3155a464434d72}{Leftmost\+Point}} = 1
+, \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2ac5357df0bec8a2decc37f2ad9986bf85}{Rightmost\+Point}} = 2
+ \}
+\item 
+enum class \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{Axis\+Type}} \+: char \{ \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263eae513c83b89a32e58750f3874f73204f5}{Vertical\+Axis}} = 1
+, \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263ea43cd3e11a6a791780a930161f4c9ee20}{Horizontal\+Axis}} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}\label{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}} 
+\index{vabstractpattern.h@{vabstractpattern.h}!AxisType@{AxisType}}
+\index{AxisType@{AxisType}!vabstractpattern.h@{vabstractpattern.h}}
+\doxysubsubsection{\texorpdfstring{AxisType}{AxisType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{Axis\+Type}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VerticalAxis@{VerticalAxis}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!VerticalAxis@{VerticalAxis}}}\mbox{\Hypertarget{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263eae513c83b89a32e58750f3874f73204f5}\label{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263eae513c83b89a32e58750f3874f73204f5}} 
+Vertical\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HorizontalAxis@{HorizontalAxis}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!HorizontalAxis@{HorizontalAxis}}}\mbox{\Hypertarget{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263ea43cd3e11a6a791780a930161f4c9ee20}\label{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263ea43cd3e11a6a791780a930161f4c9ee20}} 
+Horizontal\+Axis&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}\label{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}} 
+\index{vabstractpattern.h@{vabstractpattern.h}!CrossCirclesPoint@{CrossCirclesPoint}}
+\index{CrossCirclesPoint@{CrossCirclesPoint}!vabstractpattern.h@{vabstractpattern.h}}
+\doxysubsubsection{\texorpdfstring{CrossCirclesPoint}{CrossCirclesPoint}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FirstPoint@{FirstPoint}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!FirstPoint@{FirstPoint}}}\mbox{\Hypertarget{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7ba7f96422659759463a6faa5a17b7a5554}\label{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7ba7f96422659759463a6faa5a17b7a5554}} 
+First\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SecondPoint@{SecondPoint}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!SecondPoint@{SecondPoint}}}\mbox{\Hypertarget{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7bac8dcbd757e675381f3f7b5d2c75de2e8}\label{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7bac8dcbd757e675381f3f7b5d2c75de2e8}} 
+Second\+Point&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}\label{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}} 
+\index{vabstractpattern.h@{vabstractpattern.h}!Document@{Document}}
+\index{Document@{Document}!vabstractpattern.h@{vabstractpattern.h}}
+\doxysubsubsection{\texorpdfstring{Document}{Document}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LiteParse@{LiteParse}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!LiteParse@{LiteParse}}}\mbox{\Hypertarget{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202adb22028d495f0deff7064f1471b4933c}\label{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202adb22028d495f0deff7064f1471b4933c}} 
+Lite\+Parse&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LiteBlockParse@{LiteBlockParse}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!LiteBlockParse@{LiteBlockParse}}}\mbox{\Hypertarget{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202a6c1e150164cce531fddd70fad7db282f}\label{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202a6c1e150164cce531fddd70fad7db282f}} 
+Lite\+Block\+Parse&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FullParse@{FullParse}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!FullParse@{FullParse}}}\mbox{\Hypertarget{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785}\label{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785}} 
+Full\+Parse&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}\label{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}} 
+\index{vabstractpattern.h@{vabstractpattern.h}!HCrossCurvesPoint@{HCrossCurvesPoint}}
+\index{HCrossCurvesPoint@{HCrossCurvesPoint}!vabstractpattern.h@{vabstractpattern.h}}
+\doxysubsubsection{\texorpdfstring{HCrossCurvesPoint}{HCrossCurvesPoint}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LeftmostPoint@{LeftmostPoint}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!LeftmostPoint@{LeftmostPoint}}}\mbox{\Hypertarget{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2a1127489e32f2f6802c3155a464434d72}\label{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2a1127489e32f2f6802c3155a464434d72}} 
+Leftmost\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RightmostPoint@{RightmostPoint}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!RightmostPoint@{RightmostPoint}}}\mbox{\Hypertarget{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2ac5357df0bec8a2decc37f2ad9986bf85}\label{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2ac5357df0bec8a2decc37f2ad9986bf85}} 
+Rightmost\+Point&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}\label{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}} 
+\index{vabstractpattern.h@{vabstractpattern.h}!LabelType@{LabelType}}
+\index{LabelType@{LabelType}!vabstractpattern.h@{vabstractpattern.h}}
+\doxysubsubsection{\texorpdfstring{LabelType}{LabelType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{Label\+Type}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NewPatternPiece@{NewPatternPiece}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!NewPatternPiece@{NewPatternPiece}}}\mbox{\Hypertarget{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa58b2398ca2e7e833e9e0e53b31aee633}\label{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa58b2398ca2e7e833e9e0e53b31aee633}} 
+New\+Pattern\+Piece&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NewLabel@{NewLabel}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!NewLabel@{NewLabel}}}\mbox{\Hypertarget{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa337ccf7d7f2dd8d2857b49a78d7d7fc3}\label{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa337ccf7d7f2dd8d2857b49a78d7d7fc3}} 
+New\+Label&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}\label{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}} 
+\index{vabstractpattern.h@{vabstractpattern.h}!VCrossCurvesPoint@{VCrossCurvesPoint}}
+\index{VCrossCurvesPoint@{VCrossCurvesPoint}!vabstractpattern.h@{vabstractpattern.h}}
+\doxysubsubsection{\texorpdfstring{VCrossCurvesPoint}{VCrossCurvesPoint}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HighestPoint@{HighestPoint}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!HighestPoint@{HighestPoint}}}\mbox{\Hypertarget{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deafd44f1be21b9031b47d69681f77a2884}\label{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deafd44f1be21b9031b47d69681f77a2884}} 
+Highest\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LowestPoint@{LowestPoint}!vabstractpattern.h@{vabstractpattern.h}}\index{vabstractpattern.h@{vabstractpattern.h}!LowestPoint@{LowestPoint}}}\mbox{\Hypertarget{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deabe1992d4b6d1c95cc5cbd2a422495caf}\label{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deabe1992d4b6d1c95cc5cbd2a422495caf}} 
+Lowest\+Point&\\
+\hline
+
+\end{DoxyEnumFields}

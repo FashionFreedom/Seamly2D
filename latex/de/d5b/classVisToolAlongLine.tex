@@ -1,0 +1,157 @@
+\hypertarget{classVisToolAlongLine}{}\doxysection{Vis\+Tool\+Along\+Line Class Reference}
+\label{classVisToolAlongLine}\index{VisToolAlongLine@{VisToolAlongLine}}
+
+
+{\ttfamily \#include $<$vistoolalongline.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Along\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{de/d5b/classVisToolAlongLine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisToolAlongLine_a4ccbcf96ddc2481725c494f76efcfe28ab610d6e5cbf5b784b86d335ff8be3ec6}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Along\+Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisToolAlongLine_aa175f5da12a7e8582f0010a53ab01bb2}{Vis\+Tool\+Along\+Line}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisToolAlongLine_a50de2772a106f3b08b0cc305d72f6294}{$\sim$\+Vis\+Tool\+Along\+Line}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classVisToolAlongLine_ab96dd41c4f4133145be01d1b9e23fb6c}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVisToolAlongLine_afdd9722099cc06cc1c91063c5590137a}{set\+Object2\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{classVisToolAlongLine_aefd9aeeed09312163662cbb9115619ff}{set\+Length}} (const QString \&expression)
+\item 
+virtual int \mbox{\hyperlink{classVisToolAlongLine_acf73b75e67c96a09f8b6f26432de93ec}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVisToolAlongLine_a4315a636fa7534143c43c359cd841e49}{object2\+Id}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolAlongLine_a4ece2562d27c9f79b40c8633f5b2eb3e}{point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolAlongLine_a0473dce725f1f2d649691f003e233f9d}{line\+P1}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolAlongLine_a7576c16cd0296603caf6cb49b85f8178}{line\+P2}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolAlongLine_a4c243140d6f8d16a8446faed49efa3b4}{line}}
+\item 
+qreal \mbox{\hyperlink{classVisToolAlongLine_ab8591c0dcbdbfeb6b721aff2d43ee2d9}{length}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisToolAlongLine_a4ccbcf96ddc2481725c494f76efcfe28}\label{classVisToolAlongLine_a4ccbcf96ddc2481725c494f76efcfe28}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolAlongLine@{VisToolAlongLine}}\index{VisToolAlongLine@{VisToolAlongLine}!Type@{Type}}}\mbox{\Hypertarget{classVisToolAlongLine_a4ccbcf96ddc2481725c494f76efcfe28ab610d6e5cbf5b784b86d335ff8be3ec6}\label{classVisToolAlongLine_a4ccbcf96ddc2481725c494f76efcfe28ab610d6e5cbf5b784b86d335ff8be3ec6}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisToolAlongLine_aa175f5da12a7e8582f0010a53ab01bb2}\label{classVisToolAlongLine_aa175f5da12a7e8582f0010a53ab01bb2}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!VisToolAlongLine@{VisToolAlongLine}}
+\index{VisToolAlongLine@{VisToolAlongLine}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{VisToolAlongLine()}{VisToolAlongLine()}}
+{\footnotesize\ttfamily Vis\+Tool\+Along\+Line\+::\+Vis\+Tool\+Along\+Line (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisToolAlongLine_a50de2772a106f3b08b0cc305d72f6294}\label{classVisToolAlongLine_a50de2772a106f3b08b0cc305d72f6294}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!````~VisToolAlongLine@{$\sim$VisToolAlongLine}}
+\index{````~VisToolAlongLine@{$\sim$VisToolAlongLine}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolAlongLine()}{~VisToolAlongLine()}}
+{\footnotesize\ttfamily virtual Vis\+Tool\+Along\+Line\+::$\sim$\+Vis\+Tool\+Along\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisToolAlongLine_ab96dd41c4f4133145be01d1b9e23fb6c}\label{classVisToolAlongLine_ab96dd41c4f4133145be01d1b9e23fb6c}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Along\+Line\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classVisToolAlongLine_aefd9aeeed09312163662cbb9115619ff}\label{classVisToolAlongLine_aefd9aeeed09312163662cbb9115619ff}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!setLength@{setLength}}
+\index{setLength@{setLength}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{setLength()}{setLength()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Along\+Line\+::set\+Length (\begin{DoxyParamCaption}\item[{const QString \&}]{expression }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolAlongLine_afdd9722099cc06cc1c91063c5590137a}\label{classVisToolAlongLine_afdd9722099cc06cc1c91063c5590137a}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!setObject2Id@{setObject2Id}}
+\index{setObject2Id@{setObject2Id}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{setObject2Id()}{setObject2Id()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Along\+Line\+::set\+Object2\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolAlongLine_acf73b75e67c96a09f8b6f26432de93ec}\label{classVisToolAlongLine_acf73b75e67c96a09f8b6f26432de93ec}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!type@{type}}
+\index{type@{type}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Along\+Line\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisToolAlongLine_ab8591c0dcbdbfeb6b721aff2d43ee2d9}\label{classVisToolAlongLine_ab8591c0dcbdbfeb6b721aff2d43ee2d9}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!length@{length}}
+\index{length@{length}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Along\+Line\+::length\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolAlongLine_a4c243140d6f8d16a8446faed49efa3b4}\label{classVisToolAlongLine_a4c243140d6f8d16a8446faed49efa3b4}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!line@{line}}
+\index{line@{line}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Along\+Line\+::line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolAlongLine_a0473dce725f1f2d649691f003e233f9d}\label{classVisToolAlongLine_a0473dce725f1f2d649691f003e233f9d}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!lineP1@{lineP1}}
+\index{lineP1@{lineP1}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{lineP1}{lineP1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Along\+Line\+::line\+P1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolAlongLine_a7576c16cd0296603caf6cb49b85f8178}\label{classVisToolAlongLine_a7576c16cd0296603caf6cb49b85f8178}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!lineP2@{lineP2}}
+\index{lineP2@{lineP2}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{lineP2}{lineP2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Along\+Line\+::line\+P2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolAlongLine_a4315a636fa7534143c43c359cd841e49}\label{classVisToolAlongLine_a4315a636fa7534143c43c359cd841e49}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!object2Id@{object2Id}}
+\index{object2Id@{object2Id}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{object2Id}{object2Id}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Along\+Line\+::object2\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolAlongLine_a4ece2562d27c9f79b40c8633f5b2eb3e}\label{classVisToolAlongLine_a4ece2562d27c9f79b40c8633f5b2eb3e}} 
+\index{VisToolAlongLine@{VisToolAlongLine}!point@{point}}
+\index{point@{point}!VisToolAlongLine@{VisToolAlongLine}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Along\+Line\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolalongline_8h}{vistoolalongline.\+h}}\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolalongline_8cpp}{vistoolalongline.\+cpp}}\end{DoxyCompactItemize}

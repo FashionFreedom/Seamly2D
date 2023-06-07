@@ -1,0 +1,181 @@
+\hypertarget{classVisToolPointOfContact}{}\doxysection{Vis\+Tool\+Point\+Of\+Contact Class Reference}
+\label{classVisToolPointOfContact}\index{VisToolPointOfContact@{VisToolPointOfContact}}
+
+
+{\ttfamily \#include $<$vistoolpointofcontact.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Point\+Of\+Contact\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d3/d92/classVisToolPointOfContact}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisToolPointOfContact_a580c6762a2ea4a9a0961550dd9e409f7a05cadd00e268fcdf545cb4b733784bac}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Point\+Of\+Contact)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisToolPointOfContact_aa7f077b7ef12268bef90bd079365b7a5}{Vis\+Tool\+Point\+Of\+Contact}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisToolPointOfContact_ac2d3731e979b3f7241220dc69ed251d4}{$\sim$\+Vis\+Tool\+Point\+Of\+Contact}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classVisToolPointOfContact_a6262f21f537f4df8c044ed78a83b7605}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVisToolPointOfContact_a0807d117e06bbecbf59f9a180df4fa43}{set\+Line\+P2\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{classVisToolPointOfContact_a34bca51f2e506f8041ac1cb6971c611d}{set\+Radius\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{classVisToolPointOfContact_a8685b07687f472b63e13ca4392a2ff0a}{set\+Radius}} (const QString \&expression)
+\item 
+virtual int \mbox{\hyperlink{classVisToolPointOfContact_ac51af5f5b7f3f6ed8de89192ee7f0d42}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVisToolPointOfContact_a3a7b5652aeb9166fb64ba2372fc7d071}{line\+P2\+Id}}
+\item 
+quint32 \mbox{\hyperlink{classVisToolPointOfContact_a4131983c9bec0d19c9fc9b33c005e308}{radius\+Id}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolPointOfContact_adb83ec46ea8fa96af576dc3f16de4439}{point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolPointOfContact_a87cb0021f0c851e905cf0517cd77fb88}{line\+P1}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolPointOfContact_aa68fb344b4450cb35467befcf105c068}{line\+P2}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolPointOfContact_ae1d78aa0ab00ecd8f68b23f29cba9585}{arc\+\_\+point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolPointOfContact_ab62bc0d04703f0a59941416b451ee4ea}{circle}}
+\item 
+qreal \mbox{\hyperlink{classVisToolPointOfContact_a398159cd7273fd517f110b6238482e77}{radius}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisToolPointOfContact_a580c6762a2ea4a9a0961550dd9e409f7}\label{classVisToolPointOfContact_a580c6762a2ea4a9a0961550dd9e409f7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolPointOfContact@{VisToolPointOfContact}}\index{VisToolPointOfContact@{VisToolPointOfContact}!Type@{Type}}}\mbox{\Hypertarget{classVisToolPointOfContact_a580c6762a2ea4a9a0961550dd9e409f7a05cadd00e268fcdf545cb4b733784bac}\label{classVisToolPointOfContact_a580c6762a2ea4a9a0961550dd9e409f7a05cadd00e268fcdf545cb4b733784bac}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisToolPointOfContact_aa7f077b7ef12268bef90bd079365b7a5}\label{classVisToolPointOfContact_aa7f077b7ef12268bef90bd079365b7a5}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!VisToolPointOfContact@{VisToolPointOfContact}}
+\index{VisToolPointOfContact@{VisToolPointOfContact}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{VisToolPointOfContact()}{VisToolPointOfContact()}}
+{\footnotesize\ttfamily Vis\+Tool\+Point\+Of\+Contact\+::\+Vis\+Tool\+Point\+Of\+Contact (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_ac2d3731e979b3f7241220dc69ed251d4}\label{classVisToolPointOfContact_ac2d3731e979b3f7241220dc69ed251d4}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!````~VisToolPointOfContact@{$\sim$VisToolPointOfContact}}
+\index{````~VisToolPointOfContact@{$\sim$VisToolPointOfContact}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolPointOfContact()}{~VisToolPointOfContact()}}
+{\footnotesize\ttfamily virtual Vis\+Tool\+Point\+Of\+Contact\+::$\sim$\+Vis\+Tool\+Point\+Of\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisToolPointOfContact_a6262f21f537f4df8c044ed78a83b7605}\label{classVisToolPointOfContact_a6262f21f537f4df8c044ed78a83b7605}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Point\+Of\+Contact\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a0807d117e06bbecbf59f9a180df4fa43}\label{classVisToolPointOfContact_a0807d117e06bbecbf59f9a180df4fa43}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!setLineP2Id@{setLineP2Id}}
+\index{setLineP2Id@{setLineP2Id}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{setLineP2Id()}{setLineP2Id()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Point\+Of\+Contact\+::set\+Line\+P2\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a8685b07687f472b63e13ca4392a2ff0a}\label{classVisToolPointOfContact_a8685b07687f472b63e13ca4392a2ff0a}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!setRadius@{setRadius}}
+\index{setRadius@{setRadius}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{setRadius()}{setRadius()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Point\+Of\+Contact\+::set\+Radius (\begin{DoxyParamCaption}\item[{const QString \&}]{expression }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a34bca51f2e506f8041ac1cb6971c611d}\label{classVisToolPointOfContact_a34bca51f2e506f8041ac1cb6971c611d}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!setRadiusId@{setRadiusId}}
+\index{setRadiusId@{setRadiusId}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{setRadiusId()}{setRadiusId()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Point\+Of\+Contact\+::set\+Radius\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_ac51af5f5b7f3f6ed8de89192ee7f0d42}\label{classVisToolPointOfContact_ac51af5f5b7f3f6ed8de89192ee7f0d42}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!type@{type}}
+\index{type@{type}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Point\+Of\+Contact\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisToolPointOfContact_ae1d78aa0ab00ecd8f68b23f29cba9585}\label{classVisToolPointOfContact_ae1d78aa0ab00ecd8f68b23f29cba9585}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!arc\_point@{arc\_point}}
+\index{arc\_point@{arc\_point}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{arc\_point}{arc\_point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Point\+Of\+Contact\+::arc\+\_\+point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_ab62bc0d04703f0a59941416b451ee4ea}\label{classVisToolPointOfContact_ab62bc0d04703f0a59941416b451ee4ea}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!circle@{circle}}
+\index{circle@{circle}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{circle}{circle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Point\+Of\+Contact\+::circle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a87cb0021f0c851e905cf0517cd77fb88}\label{classVisToolPointOfContact_a87cb0021f0c851e905cf0517cd77fb88}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!lineP1@{lineP1}}
+\index{lineP1@{lineP1}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{lineP1}{lineP1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Point\+Of\+Contact\+::line\+P1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_aa68fb344b4450cb35467befcf105c068}\label{classVisToolPointOfContact_aa68fb344b4450cb35467befcf105c068}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!lineP2@{lineP2}}
+\index{lineP2@{lineP2}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{lineP2}{lineP2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Point\+Of\+Contact\+::line\+P2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a3a7b5652aeb9166fb64ba2372fc7d071}\label{classVisToolPointOfContact_a3a7b5652aeb9166fb64ba2372fc7d071}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!lineP2Id@{lineP2Id}}
+\index{lineP2Id@{lineP2Id}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{lineP2Id}{lineP2Id}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Point\+Of\+Contact\+::line\+P2\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_adb83ec46ea8fa96af576dc3f16de4439}\label{classVisToolPointOfContact_adb83ec46ea8fa96af576dc3f16de4439}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!point@{point}}
+\index{point@{point}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Point\+Of\+Contact\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a398159cd7273fd517f110b6238482e77}\label{classVisToolPointOfContact_a398159cd7273fd517f110b6238482e77}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!radius@{radius}}
+\index{radius@{radius}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{radius}{radius}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Point\+Of\+Contact\+::radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolPointOfContact_a4131983c9bec0d19c9fc9b33c005e308}\label{classVisToolPointOfContact_a4131983c9bec0d19c9fc9b33c005e308}} 
+\index{VisToolPointOfContact@{VisToolPointOfContact}!radiusId@{radiusId}}
+\index{radiusId@{radiusId}!VisToolPointOfContact@{VisToolPointOfContact}}
+\doxysubsubsection{\texorpdfstring{radiusId}{radiusId}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Point\+Of\+Contact\+::radius\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolpointofcontact_8h}{vistoolpointofcontact.\+h}}\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolpointofcontact_8cpp}{vistoolpointofcontact.\+cpp}}\end{DoxyCompactItemize}

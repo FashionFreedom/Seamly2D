@@ -1,0 +1,139 @@
+\hypertarget{classVLayoutPiecePath}{}\doxysection{VLayout\+Piece\+Path Class Reference}
+\label{classVLayoutPiecePath}\index{VLayoutPiecePath@{VLayoutPiecePath}}
+
+
+{\ttfamily \#include $<$vlayoutpiecepath.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVLayoutPiecePath_ab98c387c5085140c23f99a999d6a94be}{VLayout\+Piece\+Path}} ()
+\item 
+\mbox{\hyperlink{classVLayoutPiecePath_a8b29246321ad38109fa8f64e302e9e75}{VLayout\+Piece\+Path}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&points, bool cut, Qt\+::\+Pen\+Style pen\+Style=Qt\+::\+Solid\+Line)
+\item 
+\mbox{\hyperlink{classVLayoutPiecePath_ad387a5cec048d1b2bd2d3fd1027808fb}{VLayout\+Piece\+Path}} (const \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \&path)
+\item 
+virtual \mbox{\hyperlink{classVLayoutPiecePath_af7c091a785980f35a03ddb2d9aa90fd1}{$\sim$\+VLayout\+Piece\+Path}} ()
+\item 
+\mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \& \mbox{\hyperlink{classVLayoutPiecePath_add55d0eff75bbbbbb2a195f7ad6cf01d}{operator=}} (const \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \&path)
+\item 
+void \mbox{\hyperlink{classVLayoutPiecePath_a0e83ee106775b68c6448426b12ac44f8}{Swap}} (\mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \&path) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+QPainter\+Path \mbox{\hyperlink{classVLayoutPiecePath_a0967f60833e4b2be39007b1da3d77a13}{Get\+Painter\+Path}} () const
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVLayoutPiecePath_a433ae3df57bb0bb8e29f7446ce951894}{Points}} () const
+\item 
+void \mbox{\hyperlink{classVLayoutPiecePath_a5a249f2fcdf0de8a405bce68328f8b41}{Set\+Points}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&points)
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{classVLayoutPiecePath_abe675e9e0c3fec269dfd66a31f6e5114}{Pen\+Style}} () const
+\item 
+void \mbox{\hyperlink{classVLayoutPiecePath_a49e2215edd8313113e5b0e52b2568c92}{Set\+Pen\+Style}} (const Qt\+::\+Pen\+Style \&pen\+Style)
+\item 
+bool \mbox{\hyperlink{classVLayoutPiecePath_af4d6f796cb97f54774beec6bb82a93dc}{Is\+Cut\+Path}} () const
+\item 
+void \mbox{\hyperlink{classVLayoutPiecePath_a678859948a6c3acd9e2a01ef5aa078a5}{Set\+Cut\+Path}} (bool cut)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{classVLayoutPiecePathData}{VLayout\+Piece\+Path\+Data}} $>$ \mbox{\hyperlink{classVLayoutPiecePath_ac84c9063b8e42f8ce7dabc07222c19ac}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVLayoutPiecePath_ab98c387c5085140c23f99a999d6a94be}\label{classVLayoutPiecePath_ab98c387c5085140c23f99a999d6a94be}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\index{VLayoutPiecePath@{VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{VLayoutPiecePath()}{VLayoutPiecePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VLayout\+Piece\+Path\+::\+VLayout\+Piece\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_a8b29246321ad38109fa8f64e302e9e75}\label{classVLayoutPiecePath_a8b29246321ad38109fa8f64e302e9e75}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\index{VLayoutPiecePath@{VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{VLayoutPiecePath()}{VLayoutPiecePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VLayout\+Piece\+Path\+::\+VLayout\+Piece\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{points,  }\item[{bool}]{cut,  }\item[{Qt\+::\+Pen\+Style}]{pen\+Style = {\ttfamily Qt\+:\+:SolidLine} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_ad387a5cec048d1b2bd2d3fd1027808fb}\label{classVLayoutPiecePath_ad387a5cec048d1b2bd2d3fd1027808fb}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\index{VLayoutPiecePath@{VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{VLayoutPiecePath()}{VLayoutPiecePath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VLayout\+Piece\+Path\+::\+VLayout\+Piece\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_af7c091a785980f35a03ddb2d9aa90fd1}\label{classVLayoutPiecePath_af7c091a785980f35a03ddb2d9aa90fd1}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!````~VLayoutPiecePath@{$\sim$VLayoutPiecePath}}
+\index{````~VLayoutPiecePath@{$\sim$VLayoutPiecePath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{$\sim$VLayoutPiecePath()}{~VLayoutPiecePath()}}
+{\footnotesize\ttfamily VLayout\+Piece\+Path\+::$\sim$\+VLayout\+Piece\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVLayoutPiecePath_a0967f60833e4b2be39007b1da3d77a13}\label{classVLayoutPiecePath_a0967f60833e4b2be39007b1da3d77a13}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!GetPainterPath@{GetPainterPath}}
+\index{GetPainterPath@{GetPainterPath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{GetPainterPath()}{GetPainterPath()}}
+{\footnotesize\ttfamily QPainter\+Path VLayout\+Piece\+Path\+::\+Get\+Painter\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_af4d6f796cb97f54774beec6bb82a93dc}\label{classVLayoutPiecePath_af4d6f796cb97f54774beec6bb82a93dc}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!IsCutPath@{IsCutPath}}
+\index{IsCutPath@{IsCutPath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{IsCutPath()}{IsCutPath()}}
+{\footnotesize\ttfamily bool VLayout\+Piece\+Path\+::\+Is\+Cut\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_add55d0eff75bbbbbb2a195f7ad6cf01d}\label{classVLayoutPiecePath_add55d0eff75bbbbbb2a195f7ad6cf01d}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!operator=@{operator=}}
+\index{operator=@{operator=}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \& VLayout\+Piece\+Path\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_abe675e9e0c3fec269dfd66a31f6e5114}\label{classVLayoutPiecePath_abe675e9e0c3fec269dfd66a31f6e5114}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!PenStyle@{PenStyle}}
+\index{PenStyle@{PenStyle}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{PenStyle()}{PenStyle()}}
+{\footnotesize\ttfamily Qt\+::\+Pen\+Style VLayout\+Piece\+Path\+::\+Pen\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_a433ae3df57bb0bb8e29f7446ce951894}\label{classVLayoutPiecePath_a433ae3df57bb0bb8e29f7446ce951894}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!Points@{Points}}
+\index{Points@{Points}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{Points()}{Points()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ VLayout\+Piece\+Path\+::\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_a678859948a6c3acd9e2a01ef5aa078a5}\label{classVLayoutPiecePath_a678859948a6c3acd9e2a01ef5aa078a5}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!SetCutPath@{SetCutPath}}
+\index{SetCutPath@{SetCutPath}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetCutPath()}{SetCutPath()}}
+{\footnotesize\ttfamily void VLayout\+Piece\+Path\+::\+Set\+Cut\+Path (\begin{DoxyParamCaption}\item[{bool}]{cut }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_a49e2215edd8313113e5b0e52b2568c92}\label{classVLayoutPiecePath_a49e2215edd8313113e5b0e52b2568c92}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!SetPenStyle@{SetPenStyle}}
+\index{SetPenStyle@{SetPenStyle}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetPenStyle()}{SetPenStyle()}}
+{\footnotesize\ttfamily void VLayout\+Piece\+Path\+::\+Set\+Pen\+Style (\begin{DoxyParamCaption}\item[{const Qt\+::\+Pen\+Style \&}]{pen\+Style }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_a5a249f2fcdf0de8a405bce68328f8b41}\label{classVLayoutPiecePath_a5a249f2fcdf0de8a405bce68328f8b41}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!SetPoints@{SetPoints}}
+\index{SetPoints@{SetPoints}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetPoints()}{SetPoints()}}
+{\footnotesize\ttfamily void VLayout\+Piece\+Path\+::\+Set\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVLayoutPiecePath_a0e83ee106775b68c6448426b12ac44f8}\label{classVLayoutPiecePath_a0e83ee106775b68c6448426b12ac44f8}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!Swap@{Swap}}
+\index{Swap@{Swap}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VLayout\+Piece\+Path\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVLayoutPiecePath}{VLayout\+Piece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVLayoutPiecePath_ac84c9063b8e42f8ce7dabc07222c19ac}\label{classVLayoutPiecePath_ac84c9063b8e42f8ce7dabc07222c19ac}} 
+\index{VLayoutPiecePath@{VLayoutPiecePath}!d@{d}}
+\index{d@{d}!VLayoutPiecePath@{VLayoutPiecePath}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{classVLayoutPiecePathData}{VLayout\+Piece\+Path\+Data}}$>$ VLayout\+Piece\+Path\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vlayout/\mbox{\hyperlink{vlayoutpiecepath_8h}{vlayoutpiecepath.\+h}}\item 
+src/libs/vlayout/\mbox{\hyperlink{vlayoutpiecepath_8cpp}{vlayoutpiecepath.\+cpp}}\end{DoxyCompactItemize}

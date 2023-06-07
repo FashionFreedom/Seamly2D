@@ -1,0 +1,173 @@
+\hypertarget{classVisToolCurveIntersectAxis}{}\doxysection{Vis\+Tool\+Curve\+Intersect\+Axis Class Reference}
+\label{classVisToolCurveIntersectAxis}\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+
+
+{\ttfamily \#include $<$vistoolcurveintersectaxis.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Curve\+Intersect\+Axis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d4/d67/classVisToolCurveIntersectAxis}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisToolCurveIntersectAxis_a1cfd50badd414f93150cde5699c16818ad0d8eaaaab55e32a718aef74c5863e9d}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Line\+Intersect\+Axis)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisToolCurveIntersectAxis_add54a6dfb8ded2eb625c31c57fded8fa}{Vis\+Tool\+Curve\+Intersect\+Axis}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisToolCurveIntersectAxis_aa15224b48cf7ed32cbbfc8f9ebb1c7a3}{$\sim$\+Vis\+Tool\+Curve\+Intersect\+Axis}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classVisToolCurveIntersectAxis_a213a37fc27ba1d0baaca5e010d37af23}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVisToolCurveIntersectAxis_aed00818142a1a245fad80c26f6367419}{Angle}} () const
+\item 
+void \mbox{\hyperlink{classVisToolCurveIntersectAxis_a68850240ccf3243d17500d5a8ef4c6d3}{Set\+Angle}} (const QString \&expression)
+\item 
+void \mbox{\hyperlink{classVisToolCurveIntersectAxis_a845cf336784013c7add889656a07ba74}{set\+Axis\+Point\+Id}} (const quint32 \&value)
+\item 
+virtual int \mbox{\hyperlink{classVisToolCurveIntersectAxis_a514a11cbc97eeace27efd921975e47e6}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVisToolCurveIntersectAxis_aab12cc5db0be0f1338effe16be254466}{axis\+Point\+Id}}
+\item 
+qreal \mbox{\hyperlink{classVisToolCurveIntersectAxis_a79f0b69922b4ca51be889d43665495d6}{angle}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolCurveIntersectAxis_a2e1c94b2def8c49df21f4977406ae164}{point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolCurveIntersectAxis_a452168d35a490174b892752607cafb1a}{base\+Point}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolCurveIntersectAxis_a47535d348b605af5f635b41a43f4302d}{base\+Line}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolCurveIntersectAxis_a72bc219cab9ccc5cfd04f659375057c2}{axis\+Line}}
+\item 
+\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$ \mbox{\hyperlink{classVisToolCurveIntersectAxis_a87e3528cfc36fafb12b21f32aa22e8ae}{vis\+Curve}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a1cfd50badd414f93150cde5699c16818}\label{classVisToolCurveIntersectAxis_a1cfd50badd414f93150cde5699c16818}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!Type@{Type}}}\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a1cfd50badd414f93150cde5699c16818ad0d8eaaaab55e32a718aef74c5863e9d}\label{classVisToolCurveIntersectAxis_a1cfd50badd414f93150cde5699c16818ad0d8eaaaab55e32a718aef74c5863e9d}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_add54a6dfb8ded2eb625c31c57fded8fa}\label{classVisToolCurveIntersectAxis_add54a6dfb8ded2eb625c31c57fded8fa}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{VisToolCurveIntersectAxis()}{VisToolCurveIntersectAxis()}}
+{\footnotesize\ttfamily Vis\+Tool\+Curve\+Intersect\+Axis\+::\+Vis\+Tool\+Curve\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_aa15224b48cf7ed32cbbfc8f9ebb1c7a3}\label{classVisToolCurveIntersectAxis_aa15224b48cf7ed32cbbfc8f9ebb1c7a3}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!````~VisToolCurveIntersectAxis@{$\sim$VisToolCurveIntersectAxis}}
+\index{````~VisToolCurveIntersectAxis@{$\sim$VisToolCurveIntersectAxis}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolCurveIntersectAxis()}{~VisToolCurveIntersectAxis()}}
+{\footnotesize\ttfamily virtual Vis\+Tool\+Curve\+Intersect\+Axis\+::$\sim$\+Vis\+Tool\+Curve\+Intersect\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_aed00818142a1a245fad80c26f6367419}\label{classVisToolCurveIntersectAxis_aed00818142a1a245fad80c26f6367419}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!Angle@{Angle}}
+\index{Angle@{Angle}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{Angle()}{Angle()}}
+{\footnotesize\ttfamily QString Vis\+Tool\+Curve\+Intersect\+Axis\+::\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a213a37fc27ba1d0baaca5e010d37af23}\label{classVisToolCurveIntersectAxis_a213a37fc27ba1d0baaca5e010d37af23}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Curve\+Intersect\+Axis\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a68850240ccf3243d17500d5a8ef4c6d3}\label{classVisToolCurveIntersectAxis_a68850240ccf3243d17500d5a8ef4c6d3}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!SetAngle@{SetAngle}}
+\index{SetAngle@{SetAngle}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{SetAngle()}{SetAngle()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Curve\+Intersect\+Axis\+::\+Set\+Angle (\begin{DoxyParamCaption}\item[{const QString \&}]{expression }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a845cf336784013c7add889656a07ba74}\label{classVisToolCurveIntersectAxis_a845cf336784013c7add889656a07ba74}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!setAxisPointId@{setAxisPointId}}
+\index{setAxisPointId@{setAxisPointId}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{setAxisPointId()}{setAxisPointId()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Curve\+Intersect\+Axis\+::set\+Axis\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a514a11cbc97eeace27efd921975e47e6}\label{classVisToolCurveIntersectAxis_a514a11cbc97eeace27efd921975e47e6}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!type@{type}}
+\index{type@{type}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Curve\+Intersect\+Axis\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a79f0b69922b4ca51be889d43665495d6}\label{classVisToolCurveIntersectAxis_a79f0b69922b4ca51be889d43665495d6}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!angle@{angle}}
+\index{angle@{angle}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Curve\+Intersect\+Axis\+::angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a72bc219cab9ccc5cfd04f659375057c2}\label{classVisToolCurveIntersectAxis_a72bc219cab9ccc5cfd04f659375057c2}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!axisLine@{axisLine}}
+\index{axisLine@{axisLine}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{axisLine}{axisLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Curve\+Intersect\+Axis\+::axis\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_aab12cc5db0be0f1338effe16be254466}\label{classVisToolCurveIntersectAxis_aab12cc5db0be0f1338effe16be254466}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!axisPointId@{axisPointId}}
+\index{axisPointId@{axisPointId}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{axisPointId}{axisPointId}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Curve\+Intersect\+Axis\+::axis\+Point\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a47535d348b605af5f635b41a43f4302d}\label{classVisToolCurveIntersectAxis_a47535d348b605af5f635b41a43f4302d}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!baseLine@{baseLine}}
+\index{baseLine@{baseLine}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{baseLine}{baseLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Curve\+Intersect\+Axis\+::base\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a452168d35a490174b892752607cafb1a}\label{classVisToolCurveIntersectAxis_a452168d35a490174b892752607cafb1a}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!basePoint@{basePoint}}
+\index{basePoint@{basePoint}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{basePoint}{basePoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Curve\+Intersect\+Axis\+::base\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a2e1c94b2def8c49df21f4977406ae164}\label{classVisToolCurveIntersectAxis_a2e1c94b2def8c49df21f4977406ae164}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!point@{point}}
+\index{point@{point}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Curve\+Intersect\+Axis\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCurveIntersectAxis_a87e3528cfc36fafb12b21f32aa22e8ae}\label{classVisToolCurveIntersectAxis_a87e3528cfc36fafb12b21f32aa22e8ae}} 
+\index{VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}!visCurve@{visCurve}}
+\index{visCurve@{visCurve}!VisToolCurveIntersectAxis@{VisToolCurveIntersectAxis}}
+\doxysubsubsection{\texorpdfstring{visCurve}{visCurve}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}}$\ast$ Vis\+Tool\+Curve\+Intersect\+Axis\+::vis\+Curve\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolcurveintersectaxis_8h}{vistoolcurveintersectaxis.\+h}}\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{vistoolcurveintersectaxis_8cpp}{vistoolcurveintersectaxis.\+cpp}}\end{DoxyCompactItemize}

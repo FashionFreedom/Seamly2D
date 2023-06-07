@@ -1,0 +1,625 @@
+\hypertarget{classDialogSplinePath}{}\doxysection{Dialog\+Spline\+Path Class Reference}
+\label{classDialogSplinePath}\index{DialogSplinePath@{DialogSplinePath}}
+
+
+The \mbox{\hyperlink{classDialogSplinePath}{Dialog\+Spline\+Path}} class dialog for Tool\+Spline\+Path. Help create spline path and edit option.  
+
+
+
+
+{\ttfamily \#include $<$dialogsplinepath.\+h$>$}
+
+Inheritance diagram for Dialog\+Spline\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/d5e/classDialogSplinePath}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogSplinePath_a8db79148384cf91616a00e4ee03d34b1}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogSplinePath_a96461f74c40201a00fdd074ac1ca58a0}{Show\+Dialog}} (bool click) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_abb8b68eda71dbb12359a2c4aff2f8ba2}{Path\+Updated}} (const \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \&\mbox{\hyperlink{classDialogSplinePath_af4b6d364da0c3d78b1188b3ef0565bbd}{path}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogSplinePath_a63ee3cc72ecc3097ac05dd2d622bb893}{Dialog\+Spline\+Path}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDialogSplinePath}{Dialog\+Spline\+Path}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDialogSplinePath_a26be33538f5b6ea7ed42133ee6dee04b}{$\sim$\+Dialog\+Spline\+Path}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \mbox{\hyperlink{classDialogSplinePath_aa063c03b6a2a388c5bb9854e7838f204}{Get\+Path}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Path return spline path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogSplinePath_a4e5fe6ffb7ea2e0a16fd99fcb14dbd61}{Set\+Path}} (const \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Path set spline path. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogSplinePath_a2356e78bb1da061f173df85dbd62c06a}{get\+Pen\+Style}} () const
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a5de4d6d550517eb90dd6ef7777081272}{set\+Pen\+Style}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{classDialogSplinePath_adce00e1fd2e6c0b64150628289713f61}{get\+Line\+Weight}} () const
+\begin{DoxyCompactList}\small\item\em get\+Line\+Weight return weight of the lines \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogSplinePath_aa6a4ade791d6d2bed3a633109623ef16}{set\+Line\+Weight}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em set\+Line\+Weight set weight of the lines \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogSplinePath_a6c3792812bea2b3fa09472b5b79caaa8}{get\+Line\+Color}} () const
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a6c22540cec6c4613c997562dbe07339f}{set\+Line\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogSplinePath_aad64c951ec66796f6943a3e1c17b309f}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogSplinePath_a3c073e753898e1a29148d8ea6432925c}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogSplinePath_a46db7ce8ff1ead50df13558a850d790a}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Check\+State enable, when all is correct, or disable, when something wrong, button ok. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogSplinePath_a56f50afc933aaa8a0a6d5ec78ce311f2}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a4844e2c58b31d5a8c441e6cd3e98aaec}{Point\+Changed}} (int row)
+\begin{DoxyCompactList}\small\item\em Point\+Changed selected another point in list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogSplinePath_ab26f3abd2d86e216f03fc2b7691e00aa}{current\+Point\+Changed}} (int index)
+\begin{DoxyCompactList}\small\item\em current\+Point\+Changed changed point in combo box \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogSplinePath_a1fd0139d31f955a2b0b18603246a857e}{Deploy\+Angle1\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_ad65707a56989e43cf6f8fe46ca79e620}{Deploy\+Angle2\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a99d8bbb8007f010a2c83b4a598babf91}{Deploy\+Length1\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_ac7b0d70a9684850d04a0b0389b61a728}{Deploy\+Length2\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_aa0dcfca382c8f1c2212ca42119b03cc2}{Angle1\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_ab94d2f506d56c25842c0eb1a79bba75b}{Angle2\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_ac440173e2f303cea2bf5e1baf4d04097}{Length1\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_ad8731a83a3696e177bf2be5786bf8734}{Length2\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_ad75039500386dc57cbd89f5182012ac3}{FXAngle1}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a403f0240eb3a85c1dc1351879420856f}{FXAngle2}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a5a585c40b2f3e77150a1c19cc2ee88a2}{FXLength1}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a18ab4adde35dd0fd1e04eb691fd713f6}{FXLength2}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a467a972fef9990f51f92eefdbdb65701}{Eval\+Angle1}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_abf007437d13ff4d54facea694243c97f}{Eval\+Angle2}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a46e680c7717f77450169d490547eb8d3}{Eval\+Length1}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a7169b0690a424407edcb63da81e77afc}{Eval\+Length2}} ()
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a50e897d4f71555f3e7700ae8e433b6b8}{New\+Item}} (const \mbox{\hyperlink{classVSplinePoint}{VSpline\+Point}} \&point)
+\begin{DoxyCompactList}\small\item\em New\+Item add point to list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogSplinePath_aeb2979ea065f076860e48ca0d720d5ca}{Data\+Point}} (const \mbox{\hyperlink{classVSplinePoint}{VSpline\+Point}} \&p)
+\begin{DoxyCompactList}\small\item\em data\+Point show data of point in fields \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogSplinePath_a0092641a36b170084b08c61af0dd3f55}{Save\+Path}} ()
+\item 
+QSet$<$ quint32 $>$ \mbox{\hyperlink{classDialogSplinePath_a0d485cd02b1580ecbd9a86a1bc52c61b}{All\+Ids}} () const
+\item 
+bool \mbox{\hyperlink{classDialogSplinePath_a4fc7631f8b320d0b80073646bcdbdc49}{Is\+Path\+Valid}} () const
+\item 
+\mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \mbox{\hyperlink{classDialogSplinePath_af686ec38bcdb52ccfeb7276c0845b5e0}{Extract\+Path}} () const
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_abd8cd0eac5ebec27f293a0288a630a2f}{Show\+Point\+Issue}} (const QString \&p\+Name)
+\item 
+void \mbox{\hyperlink{classDialogSplinePath_a5a7d3adae4dbe1fa49022dbaa20cf1d2}{collapse\+Formula}} (QPlain\+Text\+Edit $\ast$text\+Edit, QPush\+Button $\ast$push\+Button, int height)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Spline\+Path $\ast$ \mbox{\hyperlink{classDialogSplinePath_a37159aae3a69c1e9121bb6c6a377085d}{ui}}
+\begin{DoxyCompactList}\small\item\em ui keeps information about user interface \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \mbox{\hyperlink{classDialogSplinePath_af4b6d364da0c3d78b1188b3ef0565bbd}{path}}
+\begin{DoxyCompactList}\small\item\em path spline path \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{classDialogSplinePath_a661b395b6f7708658cab0be3fa0b488a}{new\+Duplicate}}
+\item 
+int \mbox{\hyperlink{classDialogSplinePath_a95e8d49027aae122440ab20bc2b2dbff}{formula\+Base\+Height\+Angle1}}
+\begin{DoxyCompactList}\small\item\em formula\+Base\+Height base height defined by dialogui \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDialogSplinePath_ab66bffb85deb7a52bc6767ae740dfdd4}{formula\+Base\+Height\+Angle2}}
+\item 
+int \mbox{\hyperlink{classDialogSplinePath_add151ff24c186c035d0f6d7516f6439f}{formula\+Base\+Height\+Length1}}
+\item 
+int \mbox{\hyperlink{classDialogSplinePath_a0e9d0f55cb30e098be91f82cd6f4ff20}{formula\+Base\+Height\+Length2}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ bool $>$ \mbox{\hyperlink{classDialogSplinePath_a2167ecc72dc9c205cae0584f015705e9}{flag\+Angle1}}
+\begin{DoxyCompactList}\small\item\em flag\+Angle1 true if value of first angle is correct \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ bool $>$ \mbox{\hyperlink{classDialogSplinePath_a07245be56324d5fff510670c4f79dc47}{flag\+Angle2}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ bool $>$ \mbox{\hyperlink{classDialogSplinePath_a2d4c145a98934941a8249e57984afa14}{flag\+Length1}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ bool $>$ \mbox{\hyperlink{classDialogSplinePath_a1d9ce5ec8038732b77fdb19d2b7907bb}{flag\+Length2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDialogSplinePath}{Dialog\+Spline\+Path}} class dialog for Tool\+Spline\+Path. Help create spline path and edit option. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogSplinePath_a63ee3cc72ecc3097ac05dd2d622bb893}\label{classDialogSplinePath_a63ee3cc72ecc3097ac05dd2d622bb893}} 
+\index{DialogSplinePath@{DialogSplinePath}!DialogSplinePath@{DialogSplinePath}}
+\index{DialogSplinePath@{DialogSplinePath}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{DialogSplinePath()}{DialogSplinePath()}}
+{\footnotesize\ttfamily Dialog\+Spline\+Path\+::\+Dialog\+Spline\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDialogSplinePath}{Dialog\+Spline\+Path}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_a26be33538f5b6ea7ed42133ee6dee04b}\label{classDialogSplinePath_a26be33538f5b6ea7ed42133ee6dee04b}} 
+\index{DialogSplinePath@{DialogSplinePath}!````~DialogSplinePath@{$\sim$DialogSplinePath}}
+\index{````~DialogSplinePath@{$\sim$DialogSplinePath}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogSplinePath()}{~DialogSplinePath()}}
+{\footnotesize\ttfamily Dialog\+Spline\+Path\+::$\sim$\+Dialog\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogSplinePath_a0d485cd02b1580ecbd9a86a1bc52c61b}\label{classDialogSplinePath_a0d485cd02b1580ecbd9a86a1bc52c61b}} 
+\index{DialogSplinePath@{DialogSplinePath}!AllIds@{AllIds}}
+\index{AllIds@{AllIds}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{AllIds()}{AllIds()}}
+{\footnotesize\ttfamily QSet$<$ quint32 $>$ Dialog\+Spline\+Path\+::\+All\+Ids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_aa0dcfca382c8f1c2212ca42119b03cc2}\label{classDialogSplinePath_aa0dcfca382c8f1c2212ca42119b03cc2}} 
+\index{DialogSplinePath@{DialogSplinePath}!Angle1Changed@{Angle1Changed}}
+\index{Angle1Changed@{Angle1Changed}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{Angle1Changed}{Angle1Changed}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Angle1\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ab94d2f506d56c25842c0eb1a79bba75b}\label{classDialogSplinePath_ab94d2f506d56c25842c0eb1a79bba75b}} 
+\index{DialogSplinePath@{DialogSplinePath}!Angle2Changed@{Angle2Changed}}
+\index{Angle2Changed@{Angle2Changed}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{Angle2Changed}{Angle2Changed}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Angle2\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a46db7ce8ff1ead50df13558a850d790a}\label{classDialogSplinePath_a46db7ce8ff1ead50df13558a850d790a}} 
+\index{DialogSplinePath@{DialogSplinePath}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State enable, when all is correct, or disable, when something wrong, button ok. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogSplinePath_a8db79148384cf91616a00e4ee03d34b1}\label{classDialogSplinePath_a8db79148384cf91616a00e4ee03d34b1}} 
+\index{DialogSplinePath@{DialogSplinePath}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of point or detail \\
+\hline
+{\em type} & don\textquotesingle{}t show this id in list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_a56f50afc933aaa8a0a6d5ec78ce311f2}\label{classDialogSplinePath_a56f50afc933aaa8a0a6d5ec78ce311f2}} 
+\index{DialogSplinePath@{DialogSplinePath}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogSplinePath_a5a7d3adae4dbe1fa49022dbaa20cf1d2}\label{classDialogSplinePath_a5a7d3adae4dbe1fa49022dbaa20cf1d2}} 
+\index{DialogSplinePath@{DialogSplinePath}!collapseFormula@{collapseFormula}}
+\index{collapseFormula@{collapseFormula}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{collapseFormula()}{collapseFormula()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::collapse\+Formula (\begin{DoxyParamCaption}\item[{QPlain\+Text\+Edit $\ast$}]{text\+Edit,  }\item[{QPush\+Button $\ast$}]{push\+Button,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ab26f3abd2d86e216f03fc2b7691e00aa}\label{classDialogSplinePath_ab26f3abd2d86e216f03fc2b7691e00aa}} 
+\index{DialogSplinePath@{DialogSplinePath}!currentPointChanged@{currentPointChanged}}
+\index{currentPointChanged@{currentPointChanged}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{currentPointChanged}{currentPointChanged}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::current\+Point\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+current\+Point\+Changed changed point in combo box 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index in list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_aeb2979ea065f076860e48ca0d720d5ca}\label{classDialogSplinePath_aeb2979ea065f076860e48ca0d720d5ca}} 
+\index{DialogSplinePath@{DialogSplinePath}!DataPoint@{DataPoint}}
+\index{DataPoint@{DataPoint}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{DataPoint()}{DataPoint()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Data\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVSplinePoint}{VSpline\+Point}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+data\+Point show data of point in fields 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & spline path point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_a1fd0139d31f955a2b0b18603246a857e}\label{classDialogSplinePath_a1fd0139d31f955a2b0b18603246a857e}} 
+\index{DialogSplinePath@{DialogSplinePath}!DeployAngle1TextEdit@{DeployAngle1TextEdit}}
+\index{DeployAngle1TextEdit@{DeployAngle1TextEdit}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{DeployAngle1TextEdit}{DeployAngle1TextEdit}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Deploy\+Angle1\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ad65707a56989e43cf6f8fe46ca79e620}\label{classDialogSplinePath_ad65707a56989e43cf6f8fe46ca79e620}} 
+\index{DialogSplinePath@{DialogSplinePath}!DeployAngle2TextEdit@{DeployAngle2TextEdit}}
+\index{DeployAngle2TextEdit@{DeployAngle2TextEdit}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{DeployAngle2TextEdit}{DeployAngle2TextEdit}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Deploy\+Angle2\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a99d8bbb8007f010a2c83b4a598babf91}\label{classDialogSplinePath_a99d8bbb8007f010a2c83b4a598babf91}} 
+\index{DialogSplinePath@{DialogSplinePath}!DeployLength1TextEdit@{DeployLength1TextEdit}}
+\index{DeployLength1TextEdit@{DeployLength1TextEdit}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{DeployLength1TextEdit}{DeployLength1TextEdit}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Deploy\+Length1\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ac7b0d70a9684850d04a0b0389b61a728}\label{classDialogSplinePath_ac7b0d70a9684850d04a0b0389b61a728}} 
+\index{DialogSplinePath@{DialogSplinePath}!DeployLength2TextEdit@{DeployLength2TextEdit}}
+\index{DeployLength2TextEdit@{DeployLength2TextEdit}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{DeployLength2TextEdit}{DeployLength2TextEdit}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Deploy\+Length2\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a467a972fef9990f51f92eefdbdb65701}\label{classDialogSplinePath_a467a972fef9990f51f92eefdbdb65701}} 
+\index{DialogSplinePath@{DialogSplinePath}!EvalAngle1@{EvalAngle1}}
+\index{EvalAngle1@{EvalAngle1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{EvalAngle1()}{EvalAngle1()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Eval\+Angle1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_abf007437d13ff4d54facea694243c97f}\label{classDialogSplinePath_abf007437d13ff4d54facea694243c97f}} 
+\index{DialogSplinePath@{DialogSplinePath}!EvalAngle2@{EvalAngle2}}
+\index{EvalAngle2@{EvalAngle2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{EvalAngle2()}{EvalAngle2()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Eval\+Angle2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a46e680c7717f77450169d490547eb8d3}\label{classDialogSplinePath_a46e680c7717f77450169d490547eb8d3}} 
+\index{DialogSplinePath@{DialogSplinePath}!EvalLength1@{EvalLength1}}
+\index{EvalLength1@{EvalLength1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{EvalLength1()}{EvalLength1()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Eval\+Length1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a7169b0690a424407edcb63da81e77afc}\label{classDialogSplinePath_a7169b0690a424407edcb63da81e77afc}} 
+\index{DialogSplinePath@{DialogSplinePath}!EvalLength2@{EvalLength2}}
+\index{EvalLength2@{EvalLength2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{EvalLength2()}{EvalLength2()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Eval\+Length2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_af686ec38bcdb52ccfeb7276c0845b5e0}\label{classDialogSplinePath_af686ec38bcdb52ccfeb7276c0845b5e0}} 
+\index{DialogSplinePath@{DialogSplinePath}!ExtractPath@{ExtractPath}}
+\index{ExtractPath@{ExtractPath}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{ExtractPath()}{ExtractPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} Dialog\+Spline\+Path\+::\+Extract\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ad75039500386dc57cbd89f5182012ac3}\label{classDialogSplinePath_ad75039500386dc57cbd89f5182012ac3}} 
+\index{DialogSplinePath@{DialogSplinePath}!FXAngle1@{FXAngle1}}
+\index{FXAngle1@{FXAngle1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{FXAngle1}{FXAngle1}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+FXAngle1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a403f0240eb3a85c1dc1351879420856f}\label{classDialogSplinePath_a403f0240eb3a85c1dc1351879420856f}} 
+\index{DialogSplinePath@{DialogSplinePath}!FXAngle2@{FXAngle2}}
+\index{FXAngle2@{FXAngle2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{FXAngle2}{FXAngle2}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+FXAngle2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a5a585c40b2f3e77150a1c19cc2ee88a2}\label{classDialogSplinePath_a5a585c40b2f3e77150a1c19cc2ee88a2}} 
+\index{DialogSplinePath@{DialogSplinePath}!FXLength1@{FXLength1}}
+\index{FXLength1@{FXLength1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{FXLength1}{FXLength1}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+FXLength1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a18ab4adde35dd0fd1e04eb691fd713f6}\label{classDialogSplinePath_a18ab4adde35dd0fd1e04eb691fd713f6}} 
+\index{DialogSplinePath@{DialogSplinePath}!FXLength2@{FXLength2}}
+\index{FXLength2@{FXLength2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{FXLength2}{FXLength2}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+FXLength2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a6c3792812bea2b3fa09472b5b79caaa8}\label{classDialogSplinePath_a6c3792812bea2b3fa09472b5b79caaa8}} 
+\index{DialogSplinePath@{DialogSplinePath}!getLineColor@{getLineColor}}
+\index{getLineColor@{getLineColor}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{getLineColor()}{getLineColor()}}
+{\footnotesize\ttfamily QString Dialog\+Spline\+Path\+::get\+Line\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogSplinePath_adce00e1fd2e6c0b64150628289713f61}\label{classDialogSplinePath_adce00e1fd2e6c0b64150628289713f61}} 
+\index{DialogSplinePath@{DialogSplinePath}!getLineWeight@{getLineWeight}}
+\index{getLineWeight@{getLineWeight}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{getLineWeight()}{getLineWeight()}}
+{\footnotesize\ttfamily QString Dialog\+Spline\+Path\+::get\+Line\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Line\+Weight return weight of the lines 
+
+\begin{DoxyReturn}{Returns}
+type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogSplinePath_aa063c03b6a2a388c5bb9854e7838f204}\label{classDialogSplinePath_aa063c03b6a2a388c5bb9854e7838f204}} 
+\index{DialogSplinePath@{DialogSplinePath}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} Dialog\+Spline\+Path\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get\+Path return spline path. 
+
+\begin{DoxyReturn}{Returns}
+path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogSplinePath_a2356e78bb1da061f173df85dbd62c06a}\label{classDialogSplinePath_a2356e78bb1da061f173df85dbd62c06a}} 
+\index{DialogSplinePath@{DialogSplinePath}!getPenStyle@{getPenStyle}}
+\index{getPenStyle@{getPenStyle}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{getPenStyle()}{getPenStyle()}}
+{\footnotesize\ttfamily QString Dialog\+Spline\+Path\+::get\+Pen\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogSplinePath_a4fc7631f8b320d0b80073646bcdbdc49}\label{classDialogSplinePath_a4fc7631f8b320d0b80073646bcdbdc49}} 
+\index{DialogSplinePath@{DialogSplinePath}!IsPathValid@{IsPathValid}}
+\index{IsPathValid@{IsPathValid}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{IsPathValid()}{IsPathValid()}}
+{\footnotesize\ttfamily bool Dialog\+Spline\+Path\+::\+Is\+Path\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ac440173e2f303cea2bf5e1baf4d04097}\label{classDialogSplinePath_ac440173e2f303cea2bf5e1baf4d04097}} 
+\index{DialogSplinePath@{DialogSplinePath}!Length1Changed@{Length1Changed}}
+\index{Length1Changed@{Length1Changed}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{Length1Changed}{Length1Changed}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Length1\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_ad8731a83a3696e177bf2be5786bf8734}\label{classDialogSplinePath_ad8731a83a3696e177bf2be5786bf8734}} 
+\index{DialogSplinePath@{DialogSplinePath}!Length2Changed@{Length2Changed}}
+\index{Length2Changed@{Length2Changed}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{Length2Changed}{Length2Changed}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Length2\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a50e897d4f71555f3e7700ae8e433b6b8}\label{classDialogSplinePath_a50e897d4f71555f3e7700ae8e433b6b8}} 
+\index{DialogSplinePath@{DialogSplinePath}!NewItem@{NewItem}}
+\index{NewItem@{NewItem}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{NewItem()}{NewItem()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+New\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVSplinePoint}{VSpline\+Point}} \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+New\+Item add point to list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & spline path point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_abb8b68eda71dbb12359a2c4aff2f8ba2}\label{classDialogSplinePath_abb8b68eda71dbb12359a2c4aff2f8ba2}} 
+\index{DialogSplinePath@{DialogSplinePath}!PathUpdated@{PathUpdated}}
+\index{PathUpdated@{PathUpdated}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{PathUpdated}{PathUpdated}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Path\+Updated (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a4844e2c58b31d5a8c441e6cd3e98aaec}\label{classDialogSplinePath_a4844e2c58b31d5a8c441e6cd3e98aaec}} 
+\index{DialogSplinePath@{DialogSplinePath}!PointChanged@{PointChanged}}
+\index{PointChanged@{PointChanged}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{PointChanged}{PointChanged}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Point\+Changed (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Point\+Changed selected another point in list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & number of row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_a3c073e753898e1a29148d8ea6432925c}\label{classDialogSplinePath_a3c073e753898e1a29148d8ea6432925c}} 
+\index{DialogSplinePath@{DialogSplinePath}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogSplinePath_a0092641a36b170084b08c61af0dd3f55}\label{classDialogSplinePath_a0092641a36b170084b08c61af0dd3f55}} 
+\index{DialogSplinePath@{DialogSplinePath}!SavePath@{SavePath}}
+\index{SavePath@{SavePath}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{SavePath()}{SavePath()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Save\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a6c22540cec6c4613c997562dbe07339f}\label{classDialogSplinePath_a6c22540cec6c4613c997562dbe07339f}} 
+\index{DialogSplinePath@{DialogSplinePath}!setLineColor@{setLineColor}}
+\index{setLineColor@{setLineColor}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{setLineColor()}{setLineColor()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::set\+Line\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogSplinePath_aa6a4ade791d6d2bed3a633109623ef16}\label{classDialogSplinePath_aa6a4ade791d6d2bed3a633109623ef16}} 
+\index{DialogSplinePath@{DialogSplinePath}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Line\+Weight set weight of the lines 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_a4e5fe6ffb7ea2e0a16fd99fcb14dbd61}\label{classDialogSplinePath_a4e5fe6ffb7ea2e0a16fd99fcb14dbd61}} 
+\index{DialogSplinePath@{DialogSplinePath}!SetPath@{SetPath}}
+\index{SetPath@{SetPath}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{SetPath()}{SetPath()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Set\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Path set spline path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & path \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSplinePath_a5de4d6d550517eb90dd6ef7777081272}\label{classDialogSplinePath_a5de4d6d550517eb90dd6ef7777081272}} 
+\index{DialogSplinePath@{DialogSplinePath}!setPenStyle@{setPenStyle}}
+\index{setPenStyle@{setPenStyle}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{setPenStyle()}{setPenStyle()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::set\+Pen\+Style (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogSplinePath_a96461f74c40201a00fdd074ac1ca58a0}\label{classDialogSplinePath_a96461f74c40201a00fdd074ac1ca58a0}} 
+\index{DialogSplinePath@{DialogSplinePath}!ShowDialog@{ShowDialog}}
+\index{ShowDialog@{ShowDialog}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{ShowDialog}{ShowDialog}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Show\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{click }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_abd8cd0eac5ebec27f293a0288a630a2f}\label{classDialogSplinePath_abd8cd0eac5ebec27f293a0288a630a2f}} 
+\index{DialogSplinePath@{DialogSplinePath}!ShowPointIssue@{ShowPointIssue}}
+\index{ShowPointIssue@{ShowPointIssue}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{ShowPointIssue()}{ShowPointIssue()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Show\+Point\+Issue (\begin{DoxyParamCaption}\item[{const QString \&}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_aad64c951ec66796f6943a3e1c17b309f}\label{classDialogSplinePath_aad64c951ec66796f6943a3e1c17b309f}} 
+\index{DialogSplinePath@{DialogSplinePath}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Dialog\+Spline\+Path\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogSplinePath_a2167ecc72dc9c205cae0584f015705e9}\label{classDialogSplinePath_a2167ecc72dc9c205cae0584f015705e9}} 
+\index{DialogSplinePath@{DialogSplinePath}!flagAngle1@{flagAngle1}}
+\index{flagAngle1@{flagAngle1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{flagAngle1}{flagAngle1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$bool$>$ Dialog\+Spline\+Path\+::flag\+Angle1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag\+Angle1 true if value of first angle is correct 
+
+\mbox{\Hypertarget{classDialogSplinePath_a07245be56324d5fff510670c4f79dc47}\label{classDialogSplinePath_a07245be56324d5fff510670c4f79dc47}} 
+\index{DialogSplinePath@{DialogSplinePath}!flagAngle2@{flagAngle2}}
+\index{flagAngle2@{flagAngle2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{flagAngle2}{flagAngle2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$bool$>$ Dialog\+Spline\+Path\+::flag\+Angle2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a2d4c145a98934941a8249e57984afa14}\label{classDialogSplinePath_a2d4c145a98934941a8249e57984afa14}} 
+\index{DialogSplinePath@{DialogSplinePath}!flagLength1@{flagLength1}}
+\index{flagLength1@{flagLength1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{flagLength1}{flagLength1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$bool$>$ Dialog\+Spline\+Path\+::flag\+Length1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a1d9ce5ec8038732b77fdb19d2b7907bb}\label{classDialogSplinePath_a1d9ce5ec8038732b77fdb19d2b7907bb}} 
+\index{DialogSplinePath@{DialogSplinePath}!flagLength2@{flagLength2}}
+\index{flagLength2@{flagLength2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{flagLength2}{flagLength2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$bool$>$ Dialog\+Spline\+Path\+::flag\+Length2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a95e8d49027aae122440ab20bc2b2dbff}\label{classDialogSplinePath_a95e8d49027aae122440ab20bc2b2dbff}} 
+\index{DialogSplinePath@{DialogSplinePath}!formulaBaseHeightAngle1@{formulaBaseHeightAngle1}}
+\index{formulaBaseHeightAngle1@{formulaBaseHeightAngle1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeightAngle1}{formulaBaseHeightAngle1}}
+{\footnotesize\ttfamily int Dialog\+Spline\+Path\+::formula\+Base\+Height\+Angle1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+formula\+Base\+Height base height defined by dialogui 
+
+\mbox{\Hypertarget{classDialogSplinePath_ab66bffb85deb7a52bc6767ae740dfdd4}\label{classDialogSplinePath_ab66bffb85deb7a52bc6767ae740dfdd4}} 
+\index{DialogSplinePath@{DialogSplinePath}!formulaBaseHeightAngle2@{formulaBaseHeightAngle2}}
+\index{formulaBaseHeightAngle2@{formulaBaseHeightAngle2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeightAngle2}{formulaBaseHeightAngle2}}
+{\footnotesize\ttfamily int Dialog\+Spline\+Path\+::formula\+Base\+Height\+Angle2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_add151ff24c186c035d0f6d7516f6439f}\label{classDialogSplinePath_add151ff24c186c035d0f6d7516f6439f}} 
+\index{DialogSplinePath@{DialogSplinePath}!formulaBaseHeightLength1@{formulaBaseHeightLength1}}
+\index{formulaBaseHeightLength1@{formulaBaseHeightLength1}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeightLength1}{formulaBaseHeightLength1}}
+{\footnotesize\ttfamily int Dialog\+Spline\+Path\+::formula\+Base\+Height\+Length1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a0e9d0f55cb30e098be91f82cd6f4ff20}\label{classDialogSplinePath_a0e9d0f55cb30e098be91f82cd6f4ff20}} 
+\index{DialogSplinePath@{DialogSplinePath}!formulaBaseHeightLength2@{formulaBaseHeightLength2}}
+\index{formulaBaseHeightLength2@{formulaBaseHeightLength2}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeightLength2}{formulaBaseHeightLength2}}
+{\footnotesize\ttfamily int Dialog\+Spline\+Path\+::formula\+Base\+Height\+Length2\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_a661b395b6f7708658cab0be3fa0b488a}\label{classDialogSplinePath_a661b395b6f7708658cab0be3fa0b488a}} 
+\index{DialogSplinePath@{DialogSplinePath}!newDuplicate@{newDuplicate}}
+\index{newDuplicate@{newDuplicate}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{newDuplicate}{newDuplicate}}
+{\footnotesize\ttfamily qint32 Dialog\+Spline\+Path\+::new\+Duplicate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogSplinePath_af4b6d364da0c3d78b1188b3ef0565bbd}\label{classDialogSplinePath_af4b6d364da0c3d78b1188b3ef0565bbd}} 
+\index{DialogSplinePath@{DialogSplinePath}!path@{path}}
+\index{path@{path}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSplinePath}{VSpline\+Path}} Dialog\+Spline\+Path\+::path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+path spline path 
+
+\mbox{\Hypertarget{classDialogSplinePath_a37159aae3a69c1e9121bb6c6a377085d}\label{classDialogSplinePath_a37159aae3a69c1e9121bb6c6a377085d}} 
+\index{DialogSplinePath@{DialogSplinePath}!ui@{ui}}
+\index{ui@{ui}!DialogSplinePath@{DialogSplinePath}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Spline\+Path$\ast$ Dialog\+Spline\+Path\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ui keeps information about user interface 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogsplinepath_8h}{dialogsplinepath.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogsplinepath_8cpp}{dialogsplinepath.\+cpp}}\end{DoxyCompactItemize}

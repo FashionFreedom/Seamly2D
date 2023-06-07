@@ -1,0 +1,680 @@
+\hypertarget{namespaceDRW}{}\doxysection{DRW Namespace Reference}
+\label{namespaceDRW}\index{DRW@{DRW}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{Version}} \{ \newline
+\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a0d886f5cff1c9646860a45b14c57b8ed}{UNKNOWNV}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ae99ad1bc8c1eaaff9b817fe056bb659a}{AC1006}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a2a96c2356e4c4ae2518f2f80e1fd3298}{AC1009}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ac19ac26be6dcf463adbecf52244599e1}{AC1012}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8abf011352babb76620ae60f3f7db6b3a9}{AC1014}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ab2e08a9184c6e4de95f4773b8b78dd31}{AC1015}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a226b5de614d93636885b19776e7bad2d}{AC1018}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ae11b14da27aa37436126978fc165337c}{AC1021}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a7d1fcd8c03026a8af10bbd6dcbcb70e0}{AC1024}}
+, \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a46c3c81845dd933ea321acf074e854c9}{AC1027}}
+ \}
+\begin{DoxyCompactList}\small\item\em Version numbers for the DXF Format. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089b}{error}} \{ \newline
+\mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089baef050d5e1d50ca9c2d85044b27daa06b}{BAD\+\_\+\+NONE}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bac17fbe9af04168ade09143960662adde}{BAD\+\_\+\+UNKNOWN}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba7a5f3eb1e1713f9f89dd3fa511120640}{BAD\+\_\+\+OPEN}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba2dccc7d939c6f9c51eadb6b0905d2fda}{BAD\+\_\+\+VERSION}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bae8cd55c2e0ca8f3c19026330572349a4}{BAD\+\_\+\+READ\+\_\+\+METADATA}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba19b80b6b782659388bfc627f66afcf4a}{BAD\+\_\+\+READ\+\_\+\+FILE\+\_\+\+HEADER}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba35ac6ec308b8f3bd9d5915bdc3d52f25}{BAD\+\_\+\+READ\+\_\+\+HEADER}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba8de82bd48766720965f7df6f17370079}{BAD\+\_\+\+READ\+\_\+\+HANDLES}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba1b60131269a72f36c69f1afddd736077}{BAD\+\_\+\+READ\+\_\+\+CLASSES}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089baaa709d6d49765fa019a5d9f23e2a3ba6}{BAD\+\_\+\+READ\+\_\+\+TABLES}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bac5891b481901a81adb4bd37eba992bc4}{BAD\+\_\+\+READ\+\_\+\+BLOCKS}}
+, \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba29d3b222d59d04a3259c84ba54e67eee}{BAD\+\_\+\+READ\+\_\+\+ENTITIES}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba7685b01578a47337ecd3a9b1d4db580b}{BAD\+\_\+\+READ\+\_\+\+OBJECTS}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8}{DBG\+\_\+\+LEVEL}} \{ \mbox{\hyperlink{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8ab501dd75d33142d7de9bdd59b54f8545}{NONE}}
+, \mbox{\hyperlink{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8ad1633dc005e80efeb262a1965f18fb20}{DEBUG}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4}{Color\+Codes}} \{ \newline
+\mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae1226f6ffd1c6138cfca96d8ebb5ddaa}{black}} = 250
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a6ded153bc815e060be4d2f399b0ebd43}{green}} = 3
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4af13932f846db37f64df72f1cf4c85cd8}{red}} = 1
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ab9f16e388770d498a7f15270ad027aec}{brown}} = 15
+, \newline
+\mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a19703d279376e50cfa7a9d4c5b227d91}{yellow}} = 2
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae4edf74a55f4e747000c47f4846f65d2}{cyan}} = 4
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4abc392f783b0c7d8ba83e536b7b0a4320}{magenta}} = 6
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a1391dd0f0bd4c02649cbd26a7bdd1f89}{gray}} = 8
+, \newline
+\mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ada7630192a1df9faf5de621c336efb06}{blue}} = 5
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae6fb7b7293272b3c62949d7705e511a6}{l\+\_\+blue}} = 163
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a8edc9fc2525d36d8e33290350bc24efb}{l\+\_\+green}} = 121
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a8c83f55538bc65388455d0175f337ced}{l\+\_\+cyan}} = 131
+, \newline
+\mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aff32a3db1fa55cc80ff0147454b960c1}{l\+\_\+red}} = 23
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aebdc2d607981d0f3260a9fbeefbab2e1}{l\+\_\+magenta}} = 221
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aab3c16010523209f15e49f440cd1bf7e}{l\+\_\+gray}} = 252
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a2955dc5538811b082ef83128230fc3e5}{white}} = 7
+, \newline
+\mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a4546e3f3312cf29764461b4427b2f7fe}{Color\+By\+Layer}} = 256
+, \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a89af3faf9d524cfb51bfda35df30269a}{Color\+By\+Block}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Special codes for colors. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_af8659f260592217f3b16624b858fe97a}{Space}} \{ \mbox{\hyperlink{namespaceDRW_af8659f260592217f3b16624b858fe97aab7a9f3f26331c439f7421ca2d1e9c9c3}{Model\+Space}} = 0
+, \mbox{\hyperlink{namespaceDRW_af8659f260592217f3b16624b858fe97aa4a87d217648d8da0f375100df4ef5226}{Paper\+Space}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Spaces. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_a18b306d5cb389683300a6767e17a2477}{Handle\+Codes}} \{ \mbox{\hyperlink{namespaceDRW_a18b306d5cb389683300a6767e17a2477a2c1b8af381e4ddf1883df7a3d3820407}{No\+Handle}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Special kinds of handles. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47}{Shadow\+Mode}} \{ \mbox{\hyperlink{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a86ca48aab3b2745f21b7e811d57b0302}{Cast\+And\+Receieve\+Shadows}} = 0
+, \mbox{\hyperlink{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a9adb2dcd389d31546d4ae0ecebd330d5}{Cast\+Shadows}} = 1
+, \mbox{\hyperlink{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a6478ed466ececaa29876bb98a2050a5a}{Receive\+Shadows}} = 2
+, \mbox{\hyperlink{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a8741d10aa98369b34ca6ee4ff8146021}{Ignore\+Shadows}} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Shadow mode. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644e}{Material\+Codes}} \{ \mbox{\hyperlink{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644ea08500e51e24b0b7efb62c6e907496df1}{Material\+By\+Layer}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Special kinds of materials. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_a99e87560fdea81e5ac10dae9b558882f}{Plot\+Style\+Codes}} \{ \mbox{\hyperlink{namespaceDRW_a99e87560fdea81e5ac10dae9b558882fabecd92c6a5a01eac9756062bf9c60793}{Default\+Plot\+Style}} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Special kinds of plot styles. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_af81227027719ed883934164dd2c770ef}{Transparency\+Codes}} \{ \mbox{\hyperlink{namespaceDRW_af81227027719ed883934164dd2c770efa152e753d54b8c8481c1bea1220230252}{Opaque}} = 0
+, \mbox{\hyperlink{namespaceDRW_af81227027719ed883934164dd2c770efadc043ea645c28ca91e13ed6ffc3e2c8a}{Transparent}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em Special kinds of transparencies. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19}{ETYPE}} \{ \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ab930c16747393d31f91f829b1564d4ae}{E3\+DFACE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a0ad7c66a99fcb6889e69cccdc5a93da6}{ARC}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ad5ad2311b326f6b30f1c554d425982eb}{BLOCK}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6f93caf38b79a1df74c45aa9513bb5ff}{CIRCLE}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19abeeb81f7e3cf94f1a27adcc7c82fa7f0}{DIMENSION}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ae83164832463995d0c8e05f3214b5ec3}{DIMALIGNED}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a7f26a2e7a8eecbfd367b1f23cc43be40}{DIMLINEAR}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a94dff5a5c6ba31e430315b7fd2a99484}{DIMRADIAL}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a2985eb7ceb3df15d4c3f52e510da1fed}{DIMDIAMETRIC}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a029e163ade420bf5362e54ca4f7846da}{DIMANGULAR}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6fef6474b0d27e05dc6a7a19211857da}{DIMANGULAR3P}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a3e3060adf1b1890d56e17eab78bb6550}{DIMORDINATE}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aa817279e9f20e8261b63bb5976954a20}{ELLIPSE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ae91d7b6695a8cbc3ddb3c1a04c07363f}{HATCH}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a811ba877d2f0a9f1bcbfe23108e029cd}{IMAGE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a11e5eb43a388552f6be89e8697b48bbb}{INSERT}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a09c466cb0e3ee106217e62f5278bb262}{LEADER}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a5eeb02ca5340237f79214af6e6870694}{LINE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a247a790c0bc0f2e5e95a14e03813b6ec}{LWPOLYLINE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a3e088e6864081a4351781dfd26b112fb}{MTEXT}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aac40b21add9665f9d93341753040609f}{POINT}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aeff567a71d376c879c7b0198f2381973}{POLYLINE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a9b1a166cb8741848dc0d8632e7dcaf3d}{RAY}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a37cfa20e1bf5e623c5524cb0ee4df5ef}{SOLID}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aa4744100ea09b506c269dd1377058029}{SPLINE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a9aab8719c17985f2cb47d1dda8ddbd5e}{TEXT}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6a876881709dd70655d6ae13352d12ad}{TRACE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19acf3c1b2b98c2de5f715f8812e8f39816}{UNDERLAY}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a2d72bd277f61f4cf03d660cc048cdc19}{VERTEX}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a79697c088f08f06f2f1cb28e999319ac}{VIEWPORT}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a78385d1a9dd723abecd06579706e06e9}{XLINE}}
+, \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a73417bca5e3fc5ff124c70a679486222}{UNKNOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Entity\textquotesingle{}s type. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{TTYPE}} \{ \newline
+\mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a5c0bccf61453fa8deac560c50a585c23}{UNKNOWNT}}
+, \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a1b8b148911be0617fba9df378bbc2648}{LTYPE}}
+, \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a3dd49a9f3f9d664aff6ef2737fc17860}{LAYER}}
+, \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a1a97666ddf98d9e0efcf4dec3d175639}{STYLE}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5ab61f451429b9d8c51ddf2ab3a9c2b77a}{DIMSTYLE}}
+, \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a3c34107ffd12d4836656c207e63f94f4}{VPORT}}
+, \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5ab35a787db84d07abc2b2d4216a3dbc71}{BLOCK\+\_\+\+RECORD}}
+, \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5af2933ed6ce0c11a4bfdc854a9f00188d}{APPID}}
+, \newline
+\mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a5f8f5ef30b4ffa16bd45ccc83517f32f}{IMAGEDEF}}
+ \}
+\begin{DoxyCompactList}\small\item\em Table entries type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned char \mbox{\hyperlink{namespaceDRW_a171cb40a34c5ece9cb9e123ab42aee21}{dxf\+Colors}} \mbox{[}$\,$\mbox{]}\mbox{[}3\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4}} 
+\index{DRW@{DRW}!ColorCodes@{ColorCodes}}
+\index{ColorCodes@{ColorCodes}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{ColorCodes}{ColorCodes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4}{DRW\+::\+Color\+Codes}}}
+
+
+
+Special codes for colors. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{black@{black}!DRW@{DRW}}\index{DRW@{DRW}!black@{black}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae1226f6ffd1c6138cfca96d8ebb5ddaa}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae1226f6ffd1c6138cfca96d8ebb5ddaa}} 
+black&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{green@{green}!DRW@{DRW}}\index{DRW@{DRW}!green@{green}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a6ded153bc815e060be4d2f399b0ebd43}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a6ded153bc815e060be4d2f399b0ebd43}} 
+green&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{red@{red}!DRW@{DRW}}\index{DRW@{DRW}!red@{red}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4af13932f846db37f64df72f1cf4c85cd8}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4af13932f846db37f64df72f1cf4c85cd8}} 
+red&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{brown@{brown}!DRW@{DRW}}\index{DRW@{DRW}!brown@{brown}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ab9f16e388770d498a7f15270ad027aec}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ab9f16e388770d498a7f15270ad027aec}} 
+brown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{yellow@{yellow}!DRW@{DRW}}\index{DRW@{DRW}!yellow@{yellow}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a19703d279376e50cfa7a9d4c5b227d91}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a19703d279376e50cfa7a9d4c5b227d91}} 
+yellow&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cyan@{cyan}!DRW@{DRW}}\index{DRW@{DRW}!cyan@{cyan}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae4edf74a55f4e747000c47f4846f65d2}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae4edf74a55f4e747000c47f4846f65d2}} 
+cyan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{magenta@{magenta}!DRW@{DRW}}\index{DRW@{DRW}!magenta@{magenta}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4abc392f783b0c7d8ba83e536b7b0a4320}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4abc392f783b0c7d8ba83e536b7b0a4320}} 
+magenta&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gray@{gray}!DRW@{DRW}}\index{DRW@{DRW}!gray@{gray}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a1391dd0f0bd4c02649cbd26a7bdd1f89}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a1391dd0f0bd4c02649cbd26a7bdd1f89}} 
+gray&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{blue@{blue}!DRW@{DRW}}\index{DRW@{DRW}!blue@{blue}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ada7630192a1df9faf5de621c336efb06}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ada7630192a1df9faf5de621c336efb06}} 
+blue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{l\_blue@{l\_blue}!DRW@{DRW}}\index{DRW@{DRW}!l\_blue@{l\_blue}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae6fb7b7293272b3c62949d7705e511a6}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4ae6fb7b7293272b3c62949d7705e511a6}} 
+l\+\_\+blue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{l\_green@{l\_green}!DRW@{DRW}}\index{DRW@{DRW}!l\_green@{l\_green}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a8edc9fc2525d36d8e33290350bc24efb}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a8edc9fc2525d36d8e33290350bc24efb}} 
+l\+\_\+green&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{l\_cyan@{l\_cyan}!DRW@{DRW}}\index{DRW@{DRW}!l\_cyan@{l\_cyan}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a8c83f55538bc65388455d0175f337ced}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a8c83f55538bc65388455d0175f337ced}} 
+l\+\_\+cyan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{l\_red@{l\_red}!DRW@{DRW}}\index{DRW@{DRW}!l\_red@{l\_red}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aff32a3db1fa55cc80ff0147454b960c1}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aff32a3db1fa55cc80ff0147454b960c1}} 
+l\+\_\+red&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{l\_magenta@{l\_magenta}!DRW@{DRW}}\index{DRW@{DRW}!l\_magenta@{l\_magenta}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aebdc2d607981d0f3260a9fbeefbab2e1}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aebdc2d607981d0f3260a9fbeefbab2e1}} 
+l\+\_\+magenta&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{l\_gray@{l\_gray}!DRW@{DRW}}\index{DRW@{DRW}!l\_gray@{l\_gray}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aab3c16010523209f15e49f440cd1bf7e}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4aab3c16010523209f15e49f440cd1bf7e}} 
+l\+\_\+gray&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{white@{white}!DRW@{DRW}}\index{DRW@{DRW}!white@{white}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a2955dc5538811b082ef83128230fc3e5}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a2955dc5538811b082ef83128230fc3e5}} 
+white&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ColorByLayer@{ColorByLayer}!DRW@{DRW}}\index{DRW@{DRW}!ColorByLayer@{ColorByLayer}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a4546e3f3312cf29764461b4427b2f7fe}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a4546e3f3312cf29764461b4427b2f7fe}} 
+Color\+By\+Layer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ColorByBlock@{ColorByBlock}!DRW@{DRW}}\index{DRW@{DRW}!ColorByBlock@{ColorByBlock}}}\mbox{\Hypertarget{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a89af3faf9d524cfb51bfda35df30269a}\label{namespaceDRW_afafa102c0d4ac8e1c8875af3437504f4a89af3faf9d524cfb51bfda35df30269a}} 
+Color\+By\+Block&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8}\label{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8}} 
+\index{DRW@{DRW}!DBG\_LEVEL@{DBG\_LEVEL}}
+\index{DBG\_LEVEL@{DBG\_LEVEL}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{DBG\_LEVEL}{DBG\_LEVEL}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8}{DRW\+::\+DBG\+\_\+\+LEVEL}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!DRW@{DRW}}\index{DRW@{DRW}!NONE@{NONE}}}\mbox{\Hypertarget{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8ab501dd75d33142d7de9bdd59b54f8545}\label{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8ab501dd75d33142d7de9bdd59b54f8545}} 
+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG@{DEBUG}!DRW@{DRW}}\index{DRW@{DRW}!DEBUG@{DEBUG}}}\mbox{\Hypertarget{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8ad1633dc005e80efeb262a1965f18fb20}\label{namespaceDRW_af2c04f6a6f2a4aacc1620bc2a52786a8ad1633dc005e80efeb262a1965f18fb20}} 
+DEBUG&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089b}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089b}} 
+\index{DRW@{DRW}!error@{error}}
+\index{error@{error}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089b}{DRW\+::error}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_NONE@{BAD\_NONE}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_NONE@{BAD\_NONE}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089baef050d5e1d50ca9c2d85044b27daa06b}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089baef050d5e1d50ca9c2d85044b27daa06b}} 
+BAD\+\_\+\+NONE&No error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_UNKNOWN@{BAD\_UNKNOWN}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_UNKNOWN@{BAD\_UNKNOWN}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bac17fbe9af04168ade09143960662adde}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bac17fbe9af04168ade09143960662adde}} 
+BAD\+\_\+\+UNKNOWN&UNKNOWN. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_OPEN@{BAD\_OPEN}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_OPEN@{BAD\_OPEN}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba7a5f3eb1e1713f9f89dd3fa511120640}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba7a5f3eb1e1713f9f89dd3fa511120640}} 
+BAD\+\_\+\+OPEN&error opening file. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_VERSION@{BAD\_VERSION}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_VERSION@{BAD\_VERSION}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba2dccc7d939c6f9c51eadb6b0905d2fda}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba2dccc7d939c6f9c51eadb6b0905d2fda}} 
+BAD\+\_\+\+VERSION&unsupported version. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_METADATA@{BAD\_READ\_METADATA}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_METADATA@{BAD\_READ\_METADATA}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bae8cd55c2e0ca8f3c19026330572349a4}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bae8cd55c2e0ca8f3c19026330572349a4}} 
+BAD\+\_\+\+READ\+\_\+\+METADATA&error reading matadata. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_FILE\_HEADER@{BAD\_READ\_FILE\_HEADER}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_FILE\_HEADER@{BAD\_READ\_FILE\_HEADER}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba19b80b6b782659388bfc627f66afcf4a}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba19b80b6b782659388bfc627f66afcf4a}} 
+BAD\+\_\+\+READ\+\_\+\+FILE\+\_\+\+HEADER&error in file header read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_HEADER@{BAD\_READ\_HEADER}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_HEADER@{BAD\_READ\_HEADER}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba35ac6ec308b8f3bd9d5915bdc3d52f25}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba35ac6ec308b8f3bd9d5915bdc3d52f25}} 
+BAD\+\_\+\+READ\+\_\+\+HEADER&error in header vars read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_HANDLES@{BAD\_READ\_HANDLES}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_HANDLES@{BAD\_READ\_HANDLES}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba8de82bd48766720965f7df6f17370079}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba8de82bd48766720965f7df6f17370079}} 
+BAD\+\_\+\+READ\+\_\+\+HANDLES&error in object map read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_CLASSES@{BAD\_READ\_CLASSES}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_CLASSES@{BAD\_READ\_CLASSES}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba1b60131269a72f36c69f1afddd736077}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba1b60131269a72f36c69f1afddd736077}} 
+BAD\+\_\+\+READ\+\_\+\+CLASSES&error in classes read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_TABLES@{BAD\_READ\_TABLES}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_TABLES@{BAD\_READ\_TABLES}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089baaa709d6d49765fa019a5d9f23e2a3ba6}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089baaa709d6d49765fa019a5d9f23e2a3ba6}} 
+BAD\+\_\+\+READ\+\_\+\+TABLES&error in tables read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_BLOCKS@{BAD\_READ\_BLOCKS}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_BLOCKS@{BAD\_READ\_BLOCKS}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bac5891b481901a81adb4bd37eba992bc4}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089bac5891b481901a81adb4bd37eba992bc4}} 
+BAD\+\_\+\+READ\+\_\+\+BLOCKS&error in block read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_ENTITIES@{BAD\_READ\_ENTITIES}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_ENTITIES@{BAD\_READ\_ENTITIES}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba29d3b222d59d04a3259c84ba54e67eee}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba29d3b222d59d04a3259c84ba54e67eee}} 
+BAD\+\_\+\+READ\+\_\+\+ENTITIES&error in entities read process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAD\_READ\_OBJECTS@{BAD\_READ\_OBJECTS}!DRW@{DRW}}\index{DRW@{DRW}!BAD\_READ\_OBJECTS@{BAD\_READ\_OBJECTS}}}\mbox{\Hypertarget{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba7685b01578a47337ecd3a9b1d4db580b}\label{namespaceDRW_a834b4ed1eaeb45d79c35863846f4089ba7685b01578a47337ecd3a9b1d4db580b}} 
+BAD\+\_\+\+READ\+\_\+\+OBJECTS&error in objects read process. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19}} 
+\index{DRW@{DRW}!ETYPE@{ETYPE}}
+\index{ETYPE@{ETYPE}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{ETYPE}{ETYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19}{DRW\+::\+ETYPE}}}
+
+
+
+Entity\textquotesingle{}s type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E3DFACE@{E3DFACE}!DRW@{DRW}}\index{DRW@{DRW}!E3DFACE@{E3DFACE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ab930c16747393d31f91f829b1564d4ae}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ab930c16747393d31f91f829b1564d4ae}} 
+E3\+DFACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARC@{ARC}!DRW@{DRW}}\index{DRW@{DRW}!ARC@{ARC}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a0ad7c66a99fcb6889e69cccdc5a93da6}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a0ad7c66a99fcb6889e69cccdc5a93da6}} 
+ARC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLOCK@{BLOCK}!DRW@{DRW}}\index{DRW@{DRW}!BLOCK@{BLOCK}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ad5ad2311b326f6b30f1c554d425982eb}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ad5ad2311b326f6b30f1c554d425982eb}} 
+BLOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CIRCLE@{CIRCLE}!DRW@{DRW}}\index{DRW@{DRW}!CIRCLE@{CIRCLE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6f93caf38b79a1df74c45aa9513bb5ff}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6f93caf38b79a1df74c45aa9513bb5ff}} 
+CIRCLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMENSION@{DIMENSION}!DRW@{DRW}}\index{DRW@{DRW}!DIMENSION@{DIMENSION}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19abeeb81f7e3cf94f1a27adcc7c82fa7f0}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19abeeb81f7e3cf94f1a27adcc7c82fa7f0}} 
+DIMENSION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMALIGNED@{DIMALIGNED}!DRW@{DRW}}\index{DRW@{DRW}!DIMALIGNED@{DIMALIGNED}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ae83164832463995d0c8e05f3214b5ec3}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ae83164832463995d0c8e05f3214b5ec3}} 
+DIMALIGNED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMLINEAR@{DIMLINEAR}!DRW@{DRW}}\index{DRW@{DRW}!DIMLINEAR@{DIMLINEAR}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a7f26a2e7a8eecbfd367b1f23cc43be40}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a7f26a2e7a8eecbfd367b1f23cc43be40}} 
+DIMLINEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMRADIAL@{DIMRADIAL}!DRW@{DRW}}\index{DRW@{DRW}!DIMRADIAL@{DIMRADIAL}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a94dff5a5c6ba31e430315b7fd2a99484}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a94dff5a5c6ba31e430315b7fd2a99484}} 
+DIMRADIAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMDIAMETRIC@{DIMDIAMETRIC}!DRW@{DRW}}\index{DRW@{DRW}!DIMDIAMETRIC@{DIMDIAMETRIC}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a2985eb7ceb3df15d4c3f52e510da1fed}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a2985eb7ceb3df15d4c3f52e510da1fed}} 
+DIMDIAMETRIC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMANGULAR@{DIMANGULAR}!DRW@{DRW}}\index{DRW@{DRW}!DIMANGULAR@{DIMANGULAR}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a029e163ade420bf5362e54ca4f7846da}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a029e163ade420bf5362e54ca4f7846da}} 
+DIMANGULAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMANGULAR3P@{DIMANGULAR3P}!DRW@{DRW}}\index{DRW@{DRW}!DIMANGULAR3P@{DIMANGULAR3P}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6fef6474b0d27e05dc6a7a19211857da}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6fef6474b0d27e05dc6a7a19211857da}} 
+DIMANGULAR3P&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMORDINATE@{DIMORDINATE}!DRW@{DRW}}\index{DRW@{DRW}!DIMORDINATE@{DIMORDINATE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a3e3060adf1b1890d56e17eab78bb6550}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a3e3060adf1b1890d56e17eab78bb6550}} 
+DIMORDINATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ELLIPSE@{ELLIPSE}!DRW@{DRW}}\index{DRW@{DRW}!ELLIPSE@{ELLIPSE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aa817279e9f20e8261b63bb5976954a20}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aa817279e9f20e8261b63bb5976954a20}} 
+ELLIPSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HATCH@{HATCH}!DRW@{DRW}}\index{DRW@{DRW}!HATCH@{HATCH}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ae91d7b6695a8cbc3ddb3c1a04c07363f}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19ae91d7b6695a8cbc3ddb3c1a04c07363f}} 
+HATCH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMAGE@{IMAGE}!DRW@{DRW}}\index{DRW@{DRW}!IMAGE@{IMAGE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a811ba877d2f0a9f1bcbfe23108e029cd}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a811ba877d2f0a9f1bcbfe23108e029cd}} 
+IMAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INSERT@{INSERT}!DRW@{DRW}}\index{DRW@{DRW}!INSERT@{INSERT}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a11e5eb43a388552f6be89e8697b48bbb}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a11e5eb43a388552f6be89e8697b48bbb}} 
+INSERT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEADER@{LEADER}!DRW@{DRW}}\index{DRW@{DRW}!LEADER@{LEADER}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a09c466cb0e3ee106217e62f5278bb262}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a09c466cb0e3ee106217e62f5278bb262}} 
+LEADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINE@{LINE}!DRW@{DRW}}\index{DRW@{DRW}!LINE@{LINE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a5eeb02ca5340237f79214af6e6870694}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a5eeb02ca5340237f79214af6e6870694}} 
+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LWPOLYLINE@{LWPOLYLINE}!DRW@{DRW}}\index{DRW@{DRW}!LWPOLYLINE@{LWPOLYLINE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a247a790c0bc0f2e5e95a14e03813b6ec}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a247a790c0bc0f2e5e95a14e03813b6ec}} 
+LWPOLYLINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MTEXT@{MTEXT}!DRW@{DRW}}\index{DRW@{DRW}!MTEXT@{MTEXT}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a3e088e6864081a4351781dfd26b112fb}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a3e088e6864081a4351781dfd26b112fb}} 
+MTEXT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POINT@{POINT}!DRW@{DRW}}\index{DRW@{DRW}!POINT@{POINT}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aac40b21add9665f9d93341753040609f}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aac40b21add9665f9d93341753040609f}} 
+POINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POLYLINE@{POLYLINE}!DRW@{DRW}}\index{DRW@{DRW}!POLYLINE@{POLYLINE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aeff567a71d376c879c7b0198f2381973}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aeff567a71d376c879c7b0198f2381973}} 
+POLYLINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RAY@{RAY}!DRW@{DRW}}\index{DRW@{DRW}!RAY@{RAY}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a9b1a166cb8741848dc0d8632e7dcaf3d}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a9b1a166cb8741848dc0d8632e7dcaf3d}} 
+RAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SOLID@{SOLID}!DRW@{DRW}}\index{DRW@{DRW}!SOLID@{SOLID}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a37cfa20e1bf5e623c5524cb0ee4df5ef}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a37cfa20e1bf5e623c5524cb0ee4df5ef}} 
+SOLID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPLINE@{SPLINE}!DRW@{DRW}}\index{DRW@{DRW}!SPLINE@{SPLINE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aa4744100ea09b506c269dd1377058029}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19aa4744100ea09b506c269dd1377058029}} 
+SPLINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEXT@{TEXT}!DRW@{DRW}}\index{DRW@{DRW}!TEXT@{TEXT}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a9aab8719c17985f2cb47d1dda8ddbd5e}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a9aab8719c17985f2cb47d1dda8ddbd5e}} 
+TEXT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TRACE@{TRACE}!DRW@{DRW}}\index{DRW@{DRW}!TRACE@{TRACE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6a876881709dd70655d6ae13352d12ad}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a6a876881709dd70655d6ae13352d12ad}} 
+TRACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNDERLAY@{UNDERLAY}!DRW@{DRW}}\index{DRW@{DRW}!UNDERLAY@{UNDERLAY}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19acf3c1b2b98c2de5f715f8812e8f39816}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19acf3c1b2b98c2de5f715f8812e8f39816}} 
+UNDERLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTEX@{VERTEX}!DRW@{DRW}}\index{DRW@{DRW}!VERTEX@{VERTEX}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a2d72bd277f61f4cf03d660cc048cdc19}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a2d72bd277f61f4cf03d660cc048cdc19}} 
+VERTEX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VIEWPORT@{VIEWPORT}!DRW@{DRW}}\index{DRW@{DRW}!VIEWPORT@{VIEWPORT}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a79697c088f08f06f2f1cb28e999319ac}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a79697c088f08f06f2f1cb28e999319ac}} 
+VIEWPORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XLINE@{XLINE}!DRW@{DRW}}\index{DRW@{DRW}!XLINE@{XLINE}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a78385d1a9dd723abecd06579706e06e9}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a78385d1a9dd723abecd06579706e06e9}} 
+XLINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWN@{UNKNOWN}!DRW@{DRW}}\index{DRW@{DRW}!UNKNOWN@{UNKNOWN}}}\mbox{\Hypertarget{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a73417bca5e3fc5ff124c70a679486222}\label{namespaceDRW_aed9c4c5a1029af6370dd34d45e5ccd19a73417bca5e3fc5ff124c70a679486222}} 
+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_a18b306d5cb389683300a6767e17a2477}\label{namespaceDRW_a18b306d5cb389683300a6767e17a2477}} 
+\index{DRW@{DRW}!HandleCodes@{HandleCodes}}
+\index{HandleCodes@{HandleCodes}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{HandleCodes}{HandleCodes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_a18b306d5cb389683300a6767e17a2477}{DRW\+::\+Handle\+Codes}}}
+
+
+
+Special kinds of handles. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoHandle@{NoHandle}!DRW@{DRW}}\index{DRW@{DRW}!NoHandle@{NoHandle}}}\mbox{\Hypertarget{namespaceDRW_a18b306d5cb389683300a6767e17a2477a2c1b8af381e4ddf1883df7a3d3820407}\label{namespaceDRW_a18b306d5cb389683300a6767e17a2477a2c1b8af381e4ddf1883df7a3d3820407}} 
+No\+Handle&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644e}\label{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644e}} 
+\index{DRW@{DRW}!MaterialCodes@{MaterialCodes}}
+\index{MaterialCodes@{MaterialCodes}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{MaterialCodes}{MaterialCodes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644e}{DRW\+::\+Material\+Codes}}}
+
+
+
+Special kinds of materials. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MaterialByLayer@{MaterialByLayer}!DRW@{DRW}}\index{DRW@{DRW}!MaterialByLayer@{MaterialByLayer}}}\mbox{\Hypertarget{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644ea08500e51e24b0b7efb62c6e907496df1}\label{namespaceDRW_a5e19463e7a4fce7f29fdba72f8ee644ea08500e51e24b0b7efb62c6e907496df1}} 
+Material\+By\+Layer&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_a99e87560fdea81e5ac10dae9b558882f}\label{namespaceDRW_a99e87560fdea81e5ac10dae9b558882f}} 
+\index{DRW@{DRW}!PlotStyleCodes@{PlotStyleCodes}}
+\index{PlotStyleCodes@{PlotStyleCodes}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{PlotStyleCodes}{PlotStyleCodes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_a99e87560fdea81e5ac10dae9b558882f}{DRW\+::\+Plot\+Style\+Codes}}}
+
+
+
+Special kinds of plot styles. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DefaultPlotStyle@{DefaultPlotStyle}!DRW@{DRW}}\index{DRW@{DRW}!DefaultPlotStyle@{DefaultPlotStyle}}}\mbox{\Hypertarget{namespaceDRW_a99e87560fdea81e5ac10dae9b558882fabecd92c6a5a01eac9756062bf9c60793}\label{namespaceDRW_a99e87560fdea81e5ac10dae9b558882fabecd92c6a5a01eac9756062bf9c60793}} 
+Default\+Plot\+Style&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47}\label{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47}} 
+\index{DRW@{DRW}!ShadowMode@{ShadowMode}}
+\index{ShadowMode@{ShadowMode}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{ShadowMode}{ShadowMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47}{DRW\+::\+Shadow\+Mode}}}
+
+
+
+Shadow mode. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CastAndReceieveShadows@{CastAndReceieveShadows}!DRW@{DRW}}\index{DRW@{DRW}!CastAndReceieveShadows@{CastAndReceieveShadows}}}\mbox{\Hypertarget{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a86ca48aab3b2745f21b7e811d57b0302}\label{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a86ca48aab3b2745f21b7e811d57b0302}} 
+Cast\+And\+Receieve\+Shadows&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CastShadows@{CastShadows}!DRW@{DRW}}\index{DRW@{DRW}!CastShadows@{CastShadows}}}\mbox{\Hypertarget{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a9adb2dcd389d31546d4ae0ecebd330d5}\label{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a9adb2dcd389d31546d4ae0ecebd330d5}} 
+Cast\+Shadows&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ReceiveShadows@{ReceiveShadows}!DRW@{DRW}}\index{DRW@{DRW}!ReceiveShadows@{ReceiveShadows}}}\mbox{\Hypertarget{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a6478ed466ececaa29876bb98a2050a5a}\label{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a6478ed466ececaa29876bb98a2050a5a}} 
+Receive\+Shadows&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IgnoreShadows@{IgnoreShadows}!DRW@{DRW}}\index{DRW@{DRW}!IgnoreShadows@{IgnoreShadows}}}\mbox{\Hypertarget{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a8741d10aa98369b34ca6ee4ff8146021}\label{namespaceDRW_ab462fce211a98cb90a64d90a053e4d47a8741d10aa98369b34ca6ee4ff8146021}} 
+Ignore\+Shadows&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_af8659f260592217f3b16624b858fe97a}\label{namespaceDRW_af8659f260592217f3b16624b858fe97a}} 
+\index{DRW@{DRW}!Space@{Space}}
+\index{Space@{Space}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{Space}{Space}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_af8659f260592217f3b16624b858fe97a}{DRW\+::\+Space}}}
+
+
+
+Spaces. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ModelSpace@{ModelSpace}!DRW@{DRW}}\index{DRW@{DRW}!ModelSpace@{ModelSpace}}}\mbox{\Hypertarget{namespaceDRW_af8659f260592217f3b16624b858fe97aab7a9f3f26331c439f7421ca2d1e9c9c3}\label{namespaceDRW_af8659f260592217f3b16624b858fe97aab7a9f3f26331c439f7421ca2d1e9c9c3}} 
+Model\+Space&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PaperSpace@{PaperSpace}!DRW@{DRW}}\index{DRW@{DRW}!PaperSpace@{PaperSpace}}}\mbox{\Hypertarget{namespaceDRW_af8659f260592217f3b16624b858fe97aa4a87d217648d8da0f375100df4ef5226}\label{namespaceDRW_af8659f260592217f3b16624b858fe97aa4a87d217648d8da0f375100df4ef5226}} 
+Paper\+Space&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_af81227027719ed883934164dd2c770ef}\label{namespaceDRW_af81227027719ed883934164dd2c770ef}} 
+\index{DRW@{DRW}!TransparencyCodes@{TransparencyCodes}}
+\index{TransparencyCodes@{TransparencyCodes}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{TransparencyCodes}{TransparencyCodes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_af81227027719ed883934164dd2c770ef}{DRW\+::\+Transparency\+Codes}}}
+
+
+
+Special kinds of transparencies. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Opaque@{Opaque}!DRW@{DRW}}\index{DRW@{DRW}!Opaque@{Opaque}}}\mbox{\Hypertarget{namespaceDRW_af81227027719ed883934164dd2c770efa152e753d54b8c8481c1bea1220230252}\label{namespaceDRW_af81227027719ed883934164dd2c770efa152e753d54b8c8481c1bea1220230252}} 
+Opaque&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Transparent@{Transparent}!DRW@{DRW}}\index{DRW@{DRW}!Transparent@{Transparent}}}\mbox{\Hypertarget{namespaceDRW_af81227027719ed883934164dd2c770efadc043ea645c28ca91e13ed6ffc3e2c8a}\label{namespaceDRW_af81227027719ed883934164dd2c770efadc043ea645c28ca91e13ed6ffc3e2c8a}} 
+Transparent&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5}} 
+\index{DRW@{DRW}!TTYPE@{TTYPE}}
+\index{TTYPE@{TTYPE}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{TTYPE}{TTYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{DRW\+::\+TTYPE}}}
+
+
+
+Table entries type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWNT@{UNKNOWNT}!DRW@{DRW}}\index{DRW@{DRW}!UNKNOWNT@{UNKNOWNT}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a5c0bccf61453fa8deac560c50a585c23}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a5c0bccf61453fa8deac560c50a585c23}} 
+UNKNOWNT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LTYPE@{LTYPE}!DRW@{DRW}}\index{DRW@{DRW}!LTYPE@{LTYPE}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a1b8b148911be0617fba9df378bbc2648}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a1b8b148911be0617fba9df378bbc2648}} 
+LTYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAYER@{LAYER}!DRW@{DRW}}\index{DRW@{DRW}!LAYER@{LAYER}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a3dd49a9f3f9d664aff6ef2737fc17860}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a3dd49a9f3f9d664aff6ef2737fc17860}} 
+LAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STYLE@{STYLE}!DRW@{DRW}}\index{DRW@{DRW}!STYLE@{STYLE}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a1a97666ddf98d9e0efcf4dec3d175639}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a1a97666ddf98d9e0efcf4dec3d175639}} 
+STYLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIMSTYLE@{DIMSTYLE}!DRW@{DRW}}\index{DRW@{DRW}!DIMSTYLE@{DIMSTYLE}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5ab61f451429b9d8c51ddf2ab3a9c2b77a}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5ab61f451429b9d8c51ddf2ab3a9c2b77a}} 
+DIMSTYLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VPORT@{VPORT}!DRW@{DRW}}\index{DRW@{DRW}!VPORT@{VPORT}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a3c34107ffd12d4836656c207e63f94f4}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a3c34107ffd12d4836656c207e63f94f4}} 
+VPORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BLOCK\_RECORD@{BLOCK\_RECORD}!DRW@{DRW}}\index{DRW@{DRW}!BLOCK\_RECORD@{BLOCK\_RECORD}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5ab35a787db84d07abc2b2d4216a3dbc71}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5ab35a787db84d07abc2b2d4216a3dbc71}} 
+BLOCK\+\_\+\+RECORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APPID@{APPID}!DRW@{DRW}}\index{DRW@{DRW}!APPID@{APPID}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5af2933ed6ce0c11a4bfdc854a9f00188d}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5af2933ed6ce0c11a4bfdc854a9f00188d}} 
+APPID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IMAGEDEF@{IMAGEDEF}!DRW@{DRW}}\index{DRW@{DRW}!IMAGEDEF@{IMAGEDEF}}}\mbox{\Hypertarget{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a5f8f5ef30b4ffa16bd45ccc83517f32f}\label{namespaceDRW_a3349c66d5ed2c0f8ae7c6fc02072e4d5a5f8f5ef30b4ffa16bd45ccc83517f32f}} 
+IMAGEDEF&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}} 
+\index{DRW@{DRW}!Version@{Version}}
+\index{Version@{Version}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{Version}{Version}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}}}
+
+
+
+Version numbers for the DXF Format. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNKNOWNV@{UNKNOWNV}!DRW@{DRW}}\index{DRW@{DRW}!UNKNOWNV@{UNKNOWNV}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a0d886f5cff1c9646860a45b14c57b8ed}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a0d886f5cff1c9646860a45b14c57b8ed}} 
+UNKNOWNV&UNKNOWN VERSION. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1006@{AC1006}!DRW@{DRW}}\index{DRW@{DRW}!AC1006@{AC1006}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ae99ad1bc8c1eaaff9b817fe056bb659a}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ae99ad1bc8c1eaaff9b817fe056bb659a}} 
+AC1006&R10. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1009@{AC1009}!DRW@{DRW}}\index{DRW@{DRW}!AC1009@{AC1009}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a2a96c2356e4c4ae2518f2f80e1fd3298}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a2a96c2356e4c4ae2518f2f80e1fd3298}} 
+AC1009&R11 \& R12. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1012@{AC1012}!DRW@{DRW}}\index{DRW@{DRW}!AC1012@{AC1012}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ac19ac26be6dcf463adbecf52244599e1}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ac19ac26be6dcf463adbecf52244599e1}} 
+AC1012&R13. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1014@{AC1014}!DRW@{DRW}}\index{DRW@{DRW}!AC1014@{AC1014}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8abf011352babb76620ae60f3f7db6b3a9}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8abf011352babb76620ae60f3f7db6b3a9}} 
+AC1014&R14. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1015@{AC1015}!DRW@{DRW}}\index{DRW@{DRW}!AC1015@{AC1015}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ab2e08a9184c6e4de95f4773b8b78dd31}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ab2e08a9184c6e4de95f4773b8b78dd31}} 
+AC1015&ACAD 2000. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1018@{AC1018}!DRW@{DRW}}\index{DRW@{DRW}!AC1018@{AC1018}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a226b5de614d93636885b19776e7bad2d}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a226b5de614d93636885b19776e7bad2d}} 
+AC1018&ACAD 2004. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1021@{AC1021}!DRW@{DRW}}\index{DRW@{DRW}!AC1021@{AC1021}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ae11b14da27aa37436126978fc165337c}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8ae11b14da27aa37436126978fc165337c}} 
+AC1021&ACAD 2007. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1024@{AC1024}!DRW@{DRW}}\index{DRW@{DRW}!AC1024@{AC1024}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a7d1fcd8c03026a8af10bbd6dcbcb70e0}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a7d1fcd8c03026a8af10bbd6dcbcb70e0}} 
+AC1024&ACAD 2010. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC1027@{AC1027}!DRW@{DRW}}\index{DRW@{DRW}!AC1027@{AC1027}}}\mbox{\Hypertarget{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a46c3c81845dd933ea321acf074e854c9}\label{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8a46c3c81845dd933ea321acf074e854c9}} 
+AC1027&ACAD 2013. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceDRW_a171cb40a34c5ece9cb9e123ab42aee21}\label{namespaceDRW_a171cb40a34c5ece9cb9e123ab42aee21}} 
+\index{DRW@{DRW}!dxfColors@{dxfColors}}
+\index{dxfColors@{dxfColors}!DRW@{DRW}}
+\doxysubsubsection{\texorpdfstring{dxfColors}{dxfColors}}
+{\footnotesize\ttfamily const unsigned char DRW\+::dxf\+Colors\mbox{[}$\,$\mbox{]}\mbox{[}3\mbox{]}}
+

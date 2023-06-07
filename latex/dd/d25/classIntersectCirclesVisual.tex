@@ -1,0 +1,225 @@
+\hypertarget{classIntersectCirclesVisual}{}\doxysection{Intersect\+Circles\+Visual Class Reference}
+\label{classIntersectCirclesVisual}\index{IntersectCirclesVisual@{IntersectCirclesVisual}}
+
+
+{\ttfamily \#include $<$intersect\+\_\+circles\+\_\+visual.\+h$>$}
+
+Inheritance diagram for Intersect\+Circles\+Visual\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{dd/d25/classIntersectCirclesVisual}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classIntersectCirclesVisual_a3e3b268308a771b3b0cd97dc9e1c9913a70c88857c12f8363a229210c4e9a8739}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Point\+Of\+Intersection\+Circles)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIntersectCirclesVisual_ad59dcf4afe6dead1e024660aa507aef4}{Intersect\+Circles\+Visual}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classIntersectCirclesVisual_a13b37a95bedc51d9360d86acfb0c917d}{$\sim$\+Intersect\+Circles\+Visual}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classIntersectCirclesVisual_a09a8255dd4463d86e0785c00ccae1e51}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classIntersectCirclesVisual_ab740b9fa5dc7cd656ea5af37b24cc762}{Visual\+Mode}} (const quint32 \&id) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classIntersectCirclesVisual_a6b832c14896aed8be07e0fe1d828fe90}{set\+Object2\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{classIntersectCirclesVisual_a021e3127a9656326428198d1e6340104}{set\+C1\+Radius}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{classIntersectCirclesVisual_ae529cf48c8480d826565b5eb1ba0a55f}{set\+C2\+Radius}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{classIntersectCirclesVisual_a8d42367df46d713c3ac623386c02aed8}{set\+Cross\+Point}} (const \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \&value)
+\item 
+virtual int \mbox{\hyperlink{classIntersectCirclesVisual_ab56269006e2dd8600999f035270fe062}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classIntersectCirclesVisual_a3e39f023895db0e041963658d5643169}{object2\+Id}}
+\item 
+qreal \mbox{\hyperlink{classIntersectCirclesVisual_ad7fa1566691e0a3173bc33298d771ccc}{c1\+Radius}}
+\item 
+qreal \mbox{\hyperlink{classIntersectCirclesVisual_a037a10798ba0c35642ca31ce78c52c2a}{c2\+Radius}}
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \mbox{\hyperlink{classIntersectCirclesVisual_aebd09a215e649109f48eac647df37844}{cross\+Point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classIntersectCirclesVisual_ae55d0be557f2295c8e3a9130820adf34}{point}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classIntersectCirclesVisual_a7db2846ee3222c7a212a2214cc7014ad}{c1\+Center}}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classIntersectCirclesVisual_a6f73ffdb05cb280f7b5d95f9870a5f78}{c2\+Center}}
+\item 
+QGraphics\+Ellipse\+Item $\ast$ \mbox{\hyperlink{classIntersectCirclesVisual_a55b97675c7989033ccffda578ba734f3}{c1\+Path}}
+\item 
+QGraphics\+Ellipse\+Item $\ast$ \mbox{\hyperlink{classIntersectCirclesVisual_a2da47b6608aa625bbe302b37aaeb6aa9}{c2\+Path}}
+\item 
+QColor \mbox{\hyperlink{classIntersectCirclesVisual_a4036b0a69cad9f5a7c247dbab43fa04e}{m\+\_\+secondry\+Support\+Color}}
+\item 
+QColor \mbox{\hyperlink{classIntersectCirclesVisual_a97db2bdfbb13010edd2fce40c66ba1d0}{m\+\_\+tertiary\+Support\+Color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classIntersectCirclesVisual_a3e3b268308a771b3b0cd97dc9e1c9913}\label{classIntersectCirclesVisual_a3e3b268308a771b3b0cd97dc9e1c9913}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!IntersectCirclesVisual@{IntersectCirclesVisual}}\index{IntersectCirclesVisual@{IntersectCirclesVisual}!Type@{Type}}}\mbox{\Hypertarget{classIntersectCirclesVisual_a3e3b268308a771b3b0cd97dc9e1c9913a70c88857c12f8363a229210c4e9a8739}\label{classIntersectCirclesVisual_a3e3b268308a771b3b0cd97dc9e1c9913a70c88857c12f8363a229210c4e9a8739}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIntersectCirclesVisual_ad59dcf4afe6dead1e024660aa507aef4}\label{classIntersectCirclesVisual_ad59dcf4afe6dead1e024660aa507aef4}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{IntersectCirclesVisual()}{IntersectCirclesVisual()}}
+{\footnotesize\ttfamily Intersect\+Circles\+Visual\+::\+Intersect\+Circles\+Visual (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a13b37a95bedc51d9360d86acfb0c917d}\label{classIntersectCirclesVisual_a13b37a95bedc51d9360d86acfb0c917d}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!````~IntersectCirclesVisual@{$\sim$IntersectCirclesVisual}}
+\index{````~IntersectCirclesVisual@{$\sim$IntersectCirclesVisual}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{$\sim$IntersectCirclesVisual()}{~IntersectCirclesVisual()}}
+{\footnotesize\ttfamily virtual Intersect\+Circles\+Visual\+::$\sim$\+Intersect\+Circles\+Visual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIntersectCirclesVisual_a09a8255dd4463d86e0785c00ccae1e51}\label{classIntersectCirclesVisual_a09a8255dd4463d86e0785c00ccae1e51}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Intersect\+Circles\+Visual\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a021e3127a9656326428198d1e6340104}\label{classIntersectCirclesVisual_a021e3127a9656326428198d1e6340104}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!setC1Radius@{setC1Radius}}
+\index{setC1Radius@{setC1Radius}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{setC1Radius()}{setC1Radius()}}
+{\footnotesize\ttfamily void Intersect\+Circles\+Visual\+::set\+C1\+Radius (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_ae529cf48c8480d826565b5eb1ba0a55f}\label{classIntersectCirclesVisual_ae529cf48c8480d826565b5eb1ba0a55f}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!setC2Radius@{setC2Radius}}
+\index{setC2Radius@{setC2Radius}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{setC2Radius()}{setC2Radius()}}
+{\footnotesize\ttfamily void Intersect\+Circles\+Visual\+::set\+C2\+Radius (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a8d42367df46d713c3ac623386c02aed8}\label{classIntersectCirclesVisual_a8d42367df46d713c3ac623386c02aed8}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!setCrossPoint@{setCrossPoint}}
+\index{setCrossPoint@{setCrossPoint}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{setCrossPoint()}{setCrossPoint()}}
+{\footnotesize\ttfamily void Intersect\+Circles\+Visual\+::set\+Cross\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a6b832c14896aed8be07e0fe1d828fe90}\label{classIntersectCirclesVisual_a6b832c14896aed8be07e0fe1d828fe90}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!setObject2Id@{setObject2Id}}
+\index{setObject2Id@{setObject2Id}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{setObject2Id()}{setObject2Id()}}
+{\footnotesize\ttfamily void Intersect\+Circles\+Visual\+::set\+Object2\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_ab56269006e2dd8600999f035270fe062}\label{classIntersectCirclesVisual_ab56269006e2dd8600999f035270fe062}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!type@{type}}
+\index{type@{type}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Intersect\+Circles\+Visual\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_ab740b9fa5dc7cd656ea5af37b24cc762}\label{classIntersectCirclesVisual_ab740b9fa5dc7cd656ea5af37b24cc762}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!VisualMode@{VisualMode}}
+\index{VisualMode@{VisualMode}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{VisualMode()}{VisualMode()}}
+{\footnotesize\ttfamily void Intersect\+Circles\+Visual\+::\+Visual\+Mode (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisualization_a861d9e8fb92c505f90f6ddb016d72a74}{Visualization}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classIntersectCirclesVisual_a7db2846ee3222c7a212a2214cc7014ad}\label{classIntersectCirclesVisual_a7db2846ee3222c7a212a2214cc7014ad}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!c1Center@{c1Center}}
+\index{c1Center@{c1Center}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{c1Center}{c1Center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Intersect\+Circles\+Visual\+::c1\+Center\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a55b97675c7989033ccffda578ba734f3}\label{classIntersectCirclesVisual_a55b97675c7989033ccffda578ba734f3}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!c1Path@{c1Path}}
+\index{c1Path@{c1Path}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{c1Path}{c1Path}}
+{\footnotesize\ttfamily QGraphics\+Ellipse\+Item$\ast$ Intersect\+Circles\+Visual\+::c1\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_ad7fa1566691e0a3173bc33298d771ccc}\label{classIntersectCirclesVisual_ad7fa1566691e0a3173bc33298d771ccc}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!c1Radius@{c1Radius}}
+\index{c1Radius@{c1Radius}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{c1Radius}{c1Radius}}
+{\footnotesize\ttfamily qreal Intersect\+Circles\+Visual\+::c1\+Radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a6f73ffdb05cb280f7b5d95f9870a5f78}\label{classIntersectCirclesVisual_a6f73ffdb05cb280f7b5d95f9870a5f78}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!c2Center@{c2Center}}
+\index{c2Center@{c2Center}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{c2Center}{c2Center}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Intersect\+Circles\+Visual\+::c2\+Center\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a2da47b6608aa625bbe302b37aaeb6aa9}\label{classIntersectCirclesVisual_a2da47b6608aa625bbe302b37aaeb6aa9}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!c2Path@{c2Path}}
+\index{c2Path@{c2Path}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{c2Path}{c2Path}}
+{\footnotesize\ttfamily QGraphics\+Ellipse\+Item$\ast$ Intersect\+Circles\+Visual\+::c2\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a037a10798ba0c35642ca31ce78c52c2a}\label{classIntersectCirclesVisual_a037a10798ba0c35642ca31ce78c52c2a}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!c2Radius@{c2Radius}}
+\index{c2Radius@{c2Radius}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{c2Radius}{c2Radius}}
+{\footnotesize\ttfamily qreal Intersect\+Circles\+Visual\+::c2\+Radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_aebd09a215e649109f48eac647df37844}\label{classIntersectCirclesVisual_aebd09a215e649109f48eac647df37844}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!crossPoint@{crossPoint}}
+\index{crossPoint@{crossPoint}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{crossPoint}{crossPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} Intersect\+Circles\+Visual\+::cross\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a4036b0a69cad9f5a7c247dbab43fa04e}\label{classIntersectCirclesVisual_a4036b0a69cad9f5a7c247dbab43fa04e}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!m\_secondrySupportColor@{m\_secondrySupportColor}}
+\index{m\_secondrySupportColor@{m\_secondrySupportColor}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{m\_secondrySupportColor}{m\_secondrySupportColor}}
+{\footnotesize\ttfamily QColor Intersect\+Circles\+Visual\+::m\+\_\+secondry\+Support\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a97db2bdfbb13010edd2fce40c66ba1d0}\label{classIntersectCirclesVisual_a97db2bdfbb13010edd2fce40c66ba1d0}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!m\_tertiarySupportColor@{m\_tertiarySupportColor}}
+\index{m\_tertiarySupportColor@{m\_tertiarySupportColor}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{m\_tertiarySupportColor}{m\_tertiarySupportColor}}
+{\footnotesize\ttfamily QColor Intersect\+Circles\+Visual\+::m\+\_\+tertiary\+Support\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_a3e39f023895db0e041963658d5643169}\label{classIntersectCirclesVisual_a3e39f023895db0e041963658d5643169}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!object2Id@{object2Id}}
+\index{object2Id@{object2Id}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{object2Id}{object2Id}}
+{\footnotesize\ttfamily quint32 Intersect\+Circles\+Visual\+::object2\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classIntersectCirclesVisual_ae55d0be557f2295c8e3a9130820adf34}\label{classIntersectCirclesVisual_ae55d0be557f2295c8e3a9130820adf34}} 
+\index{IntersectCirclesVisual@{IntersectCirclesVisual}!point@{point}}
+\index{point@{point}!IntersectCirclesVisual@{IntersectCirclesVisual}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}}$\ast$ Intersect\+Circles\+Visual\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{intersect__circles__visual_8h}{intersect\+\_\+circles\+\_\+visual.\+h}}\item 
+src/libs/vtools/visualization/line/\mbox{\hyperlink{intersect__circles__visual_8cpp}{intersect\+\_\+circles\+\_\+visual.\+cpp}}\end{DoxyCompactItemize}

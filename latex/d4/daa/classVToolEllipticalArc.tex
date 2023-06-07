@@ -1,0 +1,409 @@
+\hypertarget{classVToolEllipticalArc}{}\doxysection{VTool\+Elliptical\+Arc Class Reference}
+\label{classVToolEllipticalArc}\index{VToolEllipticalArc@{VToolEllipticalArc}}
+
+
+The \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} class tool for creation elliptical arc.  
+
+
+
+
+{\ttfamily \#include $<$vtoolellipticalarc.\+h$>$}
+
+Inheritance diagram for VTool\+Elliptical\+Arc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{d4/daa/classVToolEllipticalArc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolEllipticalArc_a137f5b9124c707569a081ec9a20fd36ca087ccd744d9e04b40a0cfbbcd5861d10}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Elliptical\+Arc)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_ac430cd6cc6a3a8f76cd491550e594a74}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolEllipticalArc_a676044c4669443462195b5d346ae4fa7}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classVToolEllipticalArc_a4062d19cb077479b21361c0c99659ef3}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolEllipticalArc_aaa5fd2593c60705e1df8e25f27465460}{Center\+Point\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolEllipticalArc_a9afb9a62f9057a6a5f6e88de59d9899d}{get\+Center}} () const
+\item 
+void \mbox{\hyperlink{classVToolEllipticalArc_a1e0b9d14e1453c94349835492107d6dc}{set\+Center}} (const quint32 \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolEllipticalArc_a8d1fd1885377cac49586135c10c71fbb}{Get\+Formula\+Radius1}} () const
+\item 
+void \mbox{\hyperlink{classVToolEllipticalArc_a76b982558888122b5306da50c9a621d0}{Set\+Formula\+Radius1}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolEllipticalArc_af74906f1697249b51b2898c934239280}{Get\+Formula\+Radius2}} () const
+\item 
+void \mbox{\hyperlink{classVToolEllipticalArc_ae2b83de7f3c504a05108e7de0e9366a0}{Set\+Formula\+Radius2}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolEllipticalArc_af00d023d6fcdb2443430612c4b2d0ddc}{Get\+Formula\+F1}} () const
+\item 
+void \mbox{\hyperlink{classVToolEllipticalArc_aa7bb3f676abc1f5ab8678dfc24ccd685}{Set\+Formula\+F1}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolEllipticalArc_a8b88b9a422fb8f09995fdf85770a6315}{Get\+Formula\+F2}} () const
+\item 
+void \mbox{\hyperlink{classVToolEllipticalArc_a2459aee20444bf36c1b9b78cb5616b0a}{Set\+Formula\+F2}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolEllipticalArc_a6a048066d1a0140871f7826fac6a134e}{Get\+Formula\+Rotation\+Angle}} () const
+\item 
+void \mbox{\hyperlink{classVToolEllipticalArc_a5d5558e3e91a9350b99b44a70ab5b8d7}{Set\+Formula\+Rotation\+Angle}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_a5e6a501cb2fb05bd4691c801927d7e57}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} $\ast$ \mbox{\hyperlink{classVToolEllipticalArc_a9fdef2c407b13e5c47cfb30fbac64f37}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} $\ast$ \mbox{\hyperlink{classVToolEllipticalArc_a177db30be6802801497b604f414db473}{Create}} (const quint32 \+\_\+id, const quint32 \&center, QString \&radius1, QString \&radius2, QString \&f1, QString \&f2, QString \&rotation\+Angle, const QString \&color, const QString \&pen\+Style, const QString \&line\+Weight, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\begin{DoxyCompactList}\small\item\em Create help create tool form GUI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolEllipticalArc_a8ec808ebf149c85e9ee6e3508b68c2b8}{Tool\+Type}} = QString\+Literal(\char`\"{}simple\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_a154a4d9bb7f16c7ecd6c61e9f81d288d}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em context\+Menu\+Event handle context menu events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_a17ca1831b8e4c30058dac3e0033ed058}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_ab9592e76807ac64ea01035710dc728aa}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_a31c8db849de325ea67218bfdaeedebc5}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolEllipticalArc_a95e050219507e4547f3e10783dce31b2}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classVToolEllipticalArc_a5d600cd873a1694ba3e6a418b3f497a9}{make\+Tool\+Tip}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolEllipticalArc_aab4a454e7b6e79a746421d0217012987}{VTool\+Elliptical\+Arc}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} constuctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} class tool for creation elliptical arc. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolEllipticalArc_a137f5b9124c707569a081ec9a20fd36c}\label{classVToolEllipticalArc_a137f5b9124c707569a081ec9a20fd36c}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolEllipticalArc@{VToolEllipticalArc}}\index{VToolEllipticalArc@{VToolEllipticalArc}!Type@{Type}}}\mbox{\Hypertarget{classVToolEllipticalArc_a137f5b9124c707569a081ec9a20fd36ca087ccd744d9e04b40a0cfbbcd5861d10}\label{classVToolEllipticalArc_a137f5b9124c707569a081ec9a20fd36ca087ccd744d9e04b40a0cfbbcd5861d10}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolEllipticalArc_aab4a454e7b6e79a746421d0217012987}\label{classVToolEllipticalArc_aab4a454e7b6e79a746421d0217012987}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!VToolEllipticalArc@{VToolEllipticalArc}}
+\index{VToolEllipticalArc@{VToolEllipticalArc}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{VToolEllipticalArc()}{VToolEllipticalArc()}}
+{\footnotesize\ttfamily VTool\+Elliptical\+Arc\+::\+VTool\+Elliptical\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} constuctor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container \\
+\hline
+{\em data} & container with variables \\
+\hline
+{\em id} & object id in container \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em parent} & parent object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolEllipticalArc_aaa5fd2593c60705e1df8e25f27465460}\label{classVToolEllipticalArc_aaa5fd2593c60705e1df8e25f27465460}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!CenterPointName@{CenterPointName}}
+\index{CenterPointName@{CenterPointName}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{CenterPointName()}{CenterPointName()}}
+{\footnotesize\ttfamily QString VTool\+Elliptical\+Arc\+::\+Center\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a177db30be6802801497b604f414db473}\label{classVToolEllipticalArc_a177db30be6802801497b604f414db473}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!Create@{Create}}
+\index{Create@{Create}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} $\ast$ VTool\+Elliptical\+Arc\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const quint32 \&}]{center,  }\item[{QString \&}]{radius1,  }\item[{QString \&}]{radius2,  }\item[{QString \&}]{f1,  }\item[{QString \&}]{f2,  }\item[{QString \&}]{rotation\+Angle,  }\item[{const QString \&}]{color,  }\item[{const QString \&}]{pen\+Style,  }\item[{const QString \&}]{line\+Weight,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool form GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & tool id, 0 if tool doesn\textquotesingle{}t exist yet. \\
+\hline
+{\em center} & id elliptical arc center point. \\
+\hline
+{\em radius1} & elliptical arc radius1. \\
+\hline
+{\em radius2} & elliptical arc radius2. \\
+\hline
+{\em f1} & start angle of elliptical arc. \\
+\hline
+{\em f2} & end angle of elliptical arc. \\
+\hline
+{\em rotation\+Angle} & rotation angle of elliptical arc. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolEllipticalArc_a9fdef2c407b13e5c47cfb30fbac64f37}\label{classVToolEllipticalArc_a9fdef2c407b13e5c47cfb30fbac64f37}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!Create@{Create}}
+\index{Create@{Create}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolEllipticalArc}{VTool\+Elliptical\+Arc}} $\ast$ VTool\+Elliptical\+Arc\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dialog} & dialog options. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container \\
+\hline
+{\em data} & container with variables \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolEllipticalArc_a9afb9a62f9057a6a5f6e88de59d9899d}\label{classVToolEllipticalArc_a9afb9a62f9057a6a5f6e88de59d9899d}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily quint32 VTool\+Elliptical\+Arc\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_af00d023d6fcdb2443430612c4b2d0ddc}\label{classVToolEllipticalArc_af00d023d6fcdb2443430612c4b2d0ddc}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!GetFormulaF1@{GetFormulaF1}}
+\index{GetFormulaF1@{GetFormulaF1}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaF1()}{GetFormulaF1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Elliptical\+Arc\+::\+Get\+Formula\+F1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a8b88b9a422fb8f09995fdf85770a6315}\label{classVToolEllipticalArc_a8b88b9a422fb8f09995fdf85770a6315}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!GetFormulaF2@{GetFormulaF2}}
+\index{GetFormulaF2@{GetFormulaF2}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaF2()}{GetFormulaF2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Elliptical\+Arc\+::\+Get\+Formula\+F2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a8d1fd1885377cac49586135c10c71fbb}\label{classVToolEllipticalArc_a8d1fd1885377cac49586135c10c71fbb}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!GetFormulaRadius1@{GetFormulaRadius1}}
+\index{GetFormulaRadius1@{GetFormulaRadius1}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaRadius1()}{GetFormulaRadius1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Elliptical\+Arc\+::\+Get\+Formula\+Radius1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_af74906f1697249b51b2898c934239280}\label{classVToolEllipticalArc_af74906f1697249b51b2898c934239280}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!GetFormulaRadius2@{GetFormulaRadius2}}
+\index{GetFormulaRadius2@{GetFormulaRadius2}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaRadius2()}{GetFormulaRadius2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Elliptical\+Arc\+::\+Get\+Formula\+Radius2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a6a048066d1a0140871f7826fac6a134e}\label{classVToolEllipticalArc_a6a048066d1a0140871f7826fac6a134e}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!GetFormulaRotationAngle@{GetFormulaRotationAngle}}
+\index{GetFormulaRotationAngle@{GetFormulaRotationAngle}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaRotationAngle()}{GetFormulaRotationAngle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Elliptical\+Arc\+::\+Get\+Formula\+Rotation\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a4062d19cb077479b21361c0c99659ef3}\label{classVToolEllipticalArc_a4062d19cb077479b21361c0c99659ef3}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString VTool\+Elliptical\+Arc\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_a7476f39c541355ae1a3ba1a408a7b890}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a5d600cd873a1694ba3e6a418b3f497a9}\label{classVToolEllipticalArc_a5d600cd873a1694ba3e6a418b3f497a9}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!makeToolTip@{makeToolTip}}
+\index{makeToolTip@{makeToolTip}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{makeToolTip()}{makeToolTip()}}
+{\footnotesize\ttfamily QString VTool\+Elliptical\+Arc\+::make\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_ab10ed4c1ff02b1bb8b8c3501c33d40ea}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a17ca1831b8e4c30058dac3e0033ed058}\label{classVToolEllipticalArc_a17ca1831b8e4c30058dac3e0033ed058}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_ab9592e76807ac64ea01035710dc728aa}\label{classVToolEllipticalArc_ab9592e76807ac64ea01035710dc728aa}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a31c8db849de325ea67218bfdaeedebc5}\label{classVToolEllipticalArc_a31c8db849de325ea67218bfdaeedebc5}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_a01f2c57f0ce45ef261cd41c0065502e8}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a1e0b9d14e1453c94349835492107d6dc}\label{classVToolEllipticalArc_a1e0b9d14e1453c94349835492107d6dc}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::set\+Center (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_ac430cd6cc6a3a8f76cd491550e594a74}\label{classVToolEllipticalArc_ac430cd6cc6a3a8f76cd491550e594a74}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_aa7bb3f676abc1f5ab8678dfc24ccd685}\label{classVToolEllipticalArc_aa7bb3f676abc1f5ab8678dfc24ccd685}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SetFormulaF1@{SetFormulaF1}}
+\index{SetFormulaF1@{SetFormulaF1}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaF1()}{SetFormulaF1()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Set\+Formula\+F1 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a2459aee20444bf36c1b9b78cb5616b0a}\label{classVToolEllipticalArc_a2459aee20444bf36c1b9b78cb5616b0a}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SetFormulaF2@{SetFormulaF2}}
+\index{SetFormulaF2@{SetFormulaF2}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaF2()}{SetFormulaF2()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Set\+Formula\+F2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a76b982558888122b5306da50c9a621d0}\label{classVToolEllipticalArc_a76b982558888122b5306da50c9a621d0}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SetFormulaRadius1@{SetFormulaRadius1}}
+\index{SetFormulaRadius1@{SetFormulaRadius1}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaRadius1()}{SetFormulaRadius1()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Set\+Formula\+Radius1 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_ae2b83de7f3c504a05108e7de0e9366a0}\label{classVToolEllipticalArc_ae2b83de7f3c504a05108e7de0e9366a0}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SetFormulaRadius2@{SetFormulaRadius2}}
+\index{SetFormulaRadius2@{SetFormulaRadius2}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaRadius2()}{SetFormulaRadius2()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Set\+Formula\+Radius2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a5d5558e3e91a9350b99b44a70ab5b8d7}\label{classVToolEllipticalArc_a5d5558e3e91a9350b99b44a70ab5b8d7}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SetFormulaRotationAngle@{SetFormulaRotationAngle}}
+\index{SetFormulaRotationAngle@{SetFormulaRotationAngle}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaRotationAngle()}{SetFormulaRotationAngle()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Set\+Formula\+Rotation\+Angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a95e050219507e4547f3e10783dce31b2}\label{classVToolEllipticalArc_a95e050219507e4547f3e10783dce31b2}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a154a4d9bb7f16c7ecd6c61e9f81d288d}\label{classVToolEllipticalArc_a154a4d9bb7f16c7ecd6c61e9f81d288d}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+context\+Menu\+Event handle context menu events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolEllipticalArc_a5e6a501cb2fb05bd4691c801927d7e57}\label{classVToolEllipticalArc_a5e6a501cb2fb05bd4691c801927d7e57}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Elliptical\+Arc\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEllipticalArc_a676044c4669443462195b5d346ae4fa7}\label{classVToolEllipticalArc_a676044c4669443462195b5d346ae4fa7}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!type@{type}}
+\index{type@{type}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Elliptical\+Arc\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_ae9aade1d9110d27a0b2716be02ef3f5d}{VAbstract\+Spline}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolEllipticalArc_a8ec808ebf149c85e9ee6e3508b68c2b8}\label{classVToolEllipticalArc_a8ec808ebf149c85e9ee6e3508b68c2b8}} 
+\index{VToolEllipticalArc@{VToolEllipticalArc}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolEllipticalArc@{VToolEllipticalArc}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Elliptical\+Arc\+::\+Tool\+Type = QString\+Literal(\char`\"{}simple\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vtoolellipticalarc_8h}{vtoolellipticalarc.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vtoolellipticalarc_8cpp}{vtoolellipticalarc.\+cpp}}\end{DoxyCompactItemize}

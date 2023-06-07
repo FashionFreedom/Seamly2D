@@ -1,0 +1,202 @@
+\hypertarget{classVPE_1_1DoubleSpinboxProperty}{}\doxysection{VPE\+::Double\+Spinbox\+Property Class Reference}
+\label{classVPE_1_1DoubleSpinboxProperty}\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+
+
+Class for holding a double property.  
+
+
+
+
+{\ttfamily \#include $<$vnumberproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::Double\+Spinbox\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{dc/de2/classVPE_1_1DoubleSpinboxProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a2d92a08b4327f3c9bbfec1725d92b061}{Double\+Spinbox\+Property}} (const QString \&name, const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QVariant $>$ \&settings)
+\item 
+\mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a2aa1c6c8a8f5fa5b23f1a9ba817cc048}{Double\+Spinbox\+Property}} (const QString \&name)
+\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a4fae726adcac4f0cb302d18495aa9bfb}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&options, const QAbstract\+Item\+Delegate $\ast$delegate)
+\begin{DoxyCompactList}\small\item\em Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a27db586774c380d75e3c5d137eca4caf}{get\+Editor\+Data}} (const QWidget $\ast$editor) const
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a9a2cf896d90bd99688d359eaf412717f}{set\+Setting}} (const QString \&key, const QVariant \&value)
+\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a80a4b68298be4f51757ea09da71258b6}{get\+Setting}} (const QString \&key) const
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual QString\+List \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_af864a616195a93e5859a736870db5d7e}{get\+Setting\+Keys}} () const
+\begin{DoxyCompactList}\small\item\em Returns the list of keys of the property\textquotesingle{}s settings. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a125296e3238ee7d19db723108f39144e}{type}} () const
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$ \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a38807dee4d5b9d3e4d8cef743abe7424}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$container=NULL) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a0180f5e882d014b74286bfbc79989c0c}{Precision}}
+\begin{DoxyCompactList}\small\item\em Number of decimals after the decimal point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{classVPE_1_1DoubleSpinboxProperty_a8ee2eba69baa743f806343bcbd84ada7}{Standard\+Precision}} = 5
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for holding a double property. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a2d92a08b4327f3c9bbfec1725d92b061}\label{classVPE_1_1DoubleSpinboxProperty_a2d92a08b4327f3c9bbfec1725d92b061}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!DoubleSpinboxProperty@{DoubleSpinboxProperty}}
+\index{DoubleSpinboxProperty@{DoubleSpinboxProperty}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{DoubleSpinboxProperty()}{DoubleSpinboxProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VPE\+::\+Double\+Spinbox\+Property\+::\+Double\+Spinbox\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QVariant $>$ \&}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a2aa1c6c8a8f5fa5b23f1a9ba817cc048}\label{classVPE_1_1DoubleSpinboxProperty_a2aa1c6c8a8f5fa5b23f1a9ba817cc048}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!DoubleSpinboxProperty@{DoubleSpinboxProperty}}
+\index{DoubleSpinboxProperty@{DoubleSpinboxProperty}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{DoubleSpinboxProperty()}{DoubleSpinboxProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VPE\+::\+Double\+Spinbox\+Property\+::\+Double\+Spinbox\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a38807dee4d5b9d3e4d8cef743abe7424}\label{classVPE_1_1DoubleSpinboxProperty_a38807dee4d5b9d3e4d8cef743abe7424}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+Double\+Spinbox\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_ac777b8a4778a27d71e3cd8fe00bf0407}{VPE\+::\+Spinbox\+Property}}.
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a4fae726adcac4f0cb302d18495aa9bfb}\label{classVPE_1_1DoubleSpinboxProperty_a4fae726adcac4f0cb302d18495aa9bfb}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VPE\+::\+Double\+Spinbox\+Property\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{options,  }\item[{const QAbstract\+Item\+Delegate $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. 
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one 
+\begin{DoxyParams}{Parameters}
+{\em parent} & The widget to which the editor will be added as a child \textbackslash{}options Render options \textbackslash{}delegate A pointer to the QAbstract\+Item\+Delegate requesting the editor. This can be used to connect signals and slots. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_a4fcc92b399fd0e9a719904b397c1d825}{VPE\+::\+Spinbox\+Property}}.
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a27db586774c380d75e3c5d137eca4caf}\label{classVPE_1_1DoubleSpinboxProperty_a27db586774c380d75e3c5d137eca4caf}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!getEditorData@{getEditorData}}
+\index{getEditorData@{getEditorData}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{getEditorData()}{getEditorData()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+Double\+Spinbox\+Property\+::get\+Editor\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the data from the widget. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_a8d45bd0d42e0a054758727d894aa007a}{VPE\+::\+Spinbox\+Property}}.
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a80a4b68298be4f51757ea09da71258b6}\label{classVPE_1_1DoubleSpinboxProperty_a80a4b68298be4f51757ea09da71258b6}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!getSetting@{getSetting}}
+\index{getSetting@{getSetting}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{getSetting()}{getSetting()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+Double\+Spinbox\+Property\+::get\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the settings. This function has to be implemented in a subclass in order to have an effect. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_ac602228d9a9ec95362809065b31b5ae3}{VPE\+::\+Spinbox\+Property}}.
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_af864a616195a93e5859a736870db5d7e}\label{classVPE_1_1DoubleSpinboxProperty_af864a616195a93e5859a736870db5d7e}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!getSettingKeys@{getSettingKeys}}
+\index{getSettingKeys@{getSettingKeys}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{getSettingKeys()}{getSettingKeys()}}
+{\footnotesize\ttfamily QString\+List VPE\+::\+Double\+Spinbox\+Property\+::get\+Setting\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the list of keys of the property\textquotesingle{}s settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_a369b73d1bed0899764f9b29341a87176}{VPE\+::\+Spinbox\+Property}}.
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a9a2cf896d90bd99688d359eaf412717f}\label{classVPE_1_1DoubleSpinboxProperty_a9a2cf896d90bd99688d359eaf412717f}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!setSetting@{setSetting}}
+\index{setSetting@{setSetting}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{setSetting()}{setSetting()}}
+{\footnotesize\ttfamily void VPE\+::\+Double\+Spinbox\+Property\+::set\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{key,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the settings. Available settings\+:
+
+key\+: \char`\"{}\+Min\char`\"{} -\/ value\+: Minimum number as integer key\+: \char`\"{}\+Max\char`\"{} -\/ value\+: Maximum number as integer 
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_a41483b533d9107e25efab949b8277ec1}{VPE\+::\+Spinbox\+Property}}.
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a125296e3238ee7d19db723108f39144e}\label{classVPE_1_1DoubleSpinboxProperty_a125296e3238ee7d19db723108f39144e}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!type@{type}}
+\index{type@{type}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+Double\+Spinbox\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1SpinboxProperty_ae1dafd6c45f3f79d33f72468cdb1df39}{VPE\+::\+Spinbox\+Property}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a0180f5e882d014b74286bfbc79989c0c}\label{classVPE_1_1DoubleSpinboxProperty_a0180f5e882d014b74286bfbc79989c0c}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!Precision@{Precision}}
+\index{Precision@{Precision}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{Precision}{Precision}}
+{\footnotesize\ttfamily int VPE\+::\+Double\+Spinbox\+Property\+::\+Precision\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of decimals after the decimal point. 
+
+\mbox{\Hypertarget{classVPE_1_1DoubleSpinboxProperty_a8ee2eba69baa743f806343bcbd84ada7}\label{classVPE_1_1DoubleSpinboxProperty_a8ee2eba69baa743f806343bcbd84ada7}} 
+\index{VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}!StandardPrecision@{StandardPrecision}}
+\index{StandardPrecision@{StandardPrecision}!VPE::DoubleSpinboxProperty@{VPE::DoubleSpinboxProperty}}
+\doxysubsubsection{\texorpdfstring{StandardPrecision}{StandardPrecision}}
+{\footnotesize\ttfamily const double VPE\+::\+Double\+Spinbox\+Property\+::\+Standard\+Precision = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vnumberproperty_8h}{vnumberproperty.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vnumberproperty_8cpp}{vnumberproperty.\+cpp}}\end{DoxyCompactItemize}

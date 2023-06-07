@@ -1,0 +1,309 @@
+\hypertarget{classVCommandLine}{}\doxysection{VCommand\+Line Class Reference}
+\label{classVCommandLine}\index{VCommandLine@{VCommandLine}}
+
+
+{\ttfamily \#include $<$vcmdexport.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classVCommandLine_ad503fbc8dd0ee22648cb1e979313b33a}{$\sim$\+VCommand\+Line}} ()
+\item 
+bool \mbox{\hyperlink{classVCommandLine_a1c1e829f0ae5cd638c17766d9b2667e6}{Is\+Test\+Mode\+Enabled}} () const
+\item 
+bool \mbox{\hyperlink{classVCommandLine_a8d3cce9fe8102719fc2a597e174d9111}{Is\+No\+Scaling\+Enabled}} () const
+\item 
+bool \mbox{\hyperlink{classVCommandLine_a706457e068420b4d4fab477113bd0f5b}{Is\+Export\+Enabled}} () const
+\item 
+QString \mbox{\hyperlink{classVCommandLine_a87abfdb29ffb704172bff3b27647ed93}{Opt\+Measure\+Path}} () const
+\item 
+QString \mbox{\hyperlink{classVCommandLine_a6c973fe004418eb62f7015a6ca9081dc}{Opt\+Base\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classVCommandLine_a074b6f87e6ef085c0d649bfe02190826}{Opt\+Destination\+Path}} () const
+\item 
+int \mbox{\hyperlink{classVCommandLine_aff33c109c48cbbff27aa5a16b59c0ccd}{Opt\+Export\+Type}} () const
+\item 
+int \mbox{\hyperlink{classVCommandLine_a726e083c6a52d77fb79bf4aa8a7c5f4e}{Is\+Binary\+DXF}} () const
+\item 
+int \mbox{\hyperlink{classVCommandLine_a80c5a70e0f4aa77675b5a1a63192f490}{is\+Text\+As\+Paths}} () const
+\item 
+int \mbox{\hyperlink{classVCommandLine_a6612a9d7665df267486ba7782974fcff}{export\+Only\+Pieces}} () const
+\item 
+\mbox{\hyperlink{vcmdexport_8h_a2a5de723f4f2e702d26026cb3471b1ea}{VLayout\+Generator\+Ptr}} \mbox{\hyperlink{classVCommandLine_ab6633ae9e7716e7b69d9f2c2063a98fd}{Default\+Generator}} () const
+\item 
+QString\+List \mbox{\hyperlink{classVCommandLine_a382ce878ff87c04f1cb78a50702e79e1}{Opt\+Input\+File\+Names}} () const
+\item 
+bool \mbox{\hyperlink{classVCommandLine_ae56e17de2eb6926e72c8617b2c79b298}{Is\+Gui\+Enabled}} () const
+\item 
+bool \mbox{\hyperlink{classVCommandLine_af6fad6ad5512d4987d84f919abda02b7}{Is\+Set\+Gradation\+Size}} () const
+\item 
+bool \mbox{\hyperlink{classVCommandLine_add2cbe8d5202f1fd283363bca5e22190}{Is\+Set\+Gradation\+Height}} () const
+\item 
+QString \mbox{\hyperlink{classVCommandLine_ae9ad6d8619fb7d02f335df04eb305107}{Opt\+Gradation\+Size}} () const
+\item 
+QString \mbox{\hyperlink{classVCommandLine_a3720867519ba7a1a9cf9a4b04d847d2b}{Opt\+Gradation\+Height}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVCommandLine_a6632dbd14b714bd9e40e950edb98390a}{VCommand\+Line}} ()
+\item 
+\mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}{Dialog\+Layout\+Settings\+::\+Paper\+Size\+Template}} \mbox{\hyperlink{classVCommandLine_a7397887d24fe424be8ee68d327cc5e72}{Opt\+Paper\+Size}} () const
+\item 
+int \mbox{\hyperlink{classVCommandLine_a145f6e89c7ee1b51946d50f58d08b16b}{Opt\+Rotation}} () const
+\item 
+\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}} \mbox{\hyperlink{classVCommandLine_a37707851589ee4a26a5dcacec1c52f44}{Opt\+Group}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classVCommandLine_a3a2b8e0d6286a6d9f806f3b0756d23a4}{Reset}} ()
+\item 
+static \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommand\+Line\+Ptr}} \mbox{\hyperlink{classVCommandLine_a9758b8b982c50c953cf2f95b6d53d4e9}{Get}} (const QCore\+Application \&app)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{classVCommandLine_abf39c734ffdc03366993bb66272f467c}{Lo2\+Px}} (const QString \&src, const \mbox{\hyperlink{classDialogLayoutSettings}{Dialog\+Layout\+Settings}} \&converter)
+\item 
+static qreal \mbox{\hyperlink{classVCommandLine_ae6e8e1817bbb36afa24e1568b4a714ee}{Pg2\+Px}} (const QString \&src, const \mbox{\hyperlink{classDialogLayoutSettings}{Dialog\+Layout\+Settings}} \&converter)
+\item 
+static void \mbox{\hyperlink{classVCommandLine_a34868dd737f107850fab35d0fd0f1d37}{Init\+Options}} (\mbox{\hyperlink{vcmdexport_8h_ae120138e297c1ee2e21134edd10e53f0}{VCommand\+Line\+Options}} \&options, \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, int $>$ \&\mbox{\hyperlink{classVCommandLine_af81799ac36c307795352e9591799e1a2}{options\+Index}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QCommand\+Line\+Parser \mbox{\hyperlink{classVCommandLine_a58d314b95b46c89a3284654289366ced}{parser}}
+\item 
+\mbox{\hyperlink{vcmdexport_8h_ae120138e297c1ee2e21134edd10e53f0}{VCommand\+Line\+Options}} \mbox{\hyperlink{classVCommandLine_a029b6fb4ed6697d7b7e414e55ffe63c4}{options\+Used}}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, int $>$ \mbox{\hyperlink{classVCommandLine_af81799ac36c307795352e9591799e1a2}{options\+Index}}
+\item 
+bool \mbox{\hyperlink{classVCommandLine_a384ad7063d35874f4ef39f898c429064}{is\+Gui\+Enabled}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommand\+Line\+Ptr}} \mbox{\hyperlink{classVCommandLine_a4a357d0d1371aa548d5c716196b05066}{instance}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVCommandLine_aff8e996c237959cef20f5253a1641129}{VApplication}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVCommandLine_ad503fbc8dd0ee22648cb1e979313b33a}\label{classVCommandLine_ad503fbc8dd0ee22648cb1e979313b33a}} 
+\index{VCommandLine@{VCommandLine}!````~VCommandLine@{$\sim$VCommandLine}}
+\index{````~VCommandLine@{$\sim$VCommandLine}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{$\sim$VCommandLine()}{~VCommandLine()}}
+{\footnotesize\ttfamily VCommand\+Line\+::$\sim$\+VCommand\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVCommandLine_a6632dbd14b714bd9e40e950edb98390a}\label{classVCommandLine_a6632dbd14b714bd9e40e950edb98390a}} 
+\index{VCommandLine@{VCommandLine}!VCommandLine@{VCommandLine}}
+\index{VCommandLine@{VCommandLine}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{VCommandLine()}{VCommandLine()}}
+{\footnotesize\ttfamily VCommand\+Line\+::\+VCommand\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVCommandLine_ab6633ae9e7716e7b69d9f2c2063a98fd}\label{classVCommandLine_ab6633ae9e7716e7b69d9f2c2063a98fd}} 
+\index{VCommandLine@{VCommandLine}!DefaultGenerator@{DefaultGenerator}}
+\index{DefaultGenerator@{DefaultGenerator}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{DefaultGenerator()}{DefaultGenerator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vcmdexport_8h_a2a5de723f4f2e702d26026cb3471b1ea}{VLayout\+Generator\+Ptr}} VCommand\+Line\+::\+Default\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a6612a9d7665df267486ba7782974fcff}\label{classVCommandLine_a6612a9d7665df267486ba7782974fcff}} 
+\index{VCommandLine@{VCommandLine}!exportOnlyPieces@{exportOnlyPieces}}
+\index{exportOnlyPieces@{exportOnlyPieces}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{exportOnlyPieces()}{exportOnlyPieces()}}
+{\footnotesize\ttfamily int VCommand\+Line\+::export\+Only\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a9758b8b982c50c953cf2f95b6d53d4e9}\label{classVCommandLine_a9758b8b982c50c953cf2f95b6d53d4e9}} 
+\index{VCommandLine@{VCommandLine}!Get@{Get}}
+\index{Get@{Get}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommand\+Line\+Ptr}} VCommand\+Line\+::\+Get (\begin{DoxyParamCaption}\item[{const QCore\+Application \&}]{app }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVCommandLine_a34868dd737f107850fab35d0fd0f1d37}\label{classVCommandLine_a34868dd737f107850fab35d0fd0f1d37}} 
+\index{VCommandLine@{VCommandLine}!InitOptions@{InitOptions}}
+\index{InitOptions@{InitOptions}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{InitOptions()}{InitOptions()}}
+{\footnotesize\ttfamily void VCommand\+Line\+::\+Init\+Options (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vcmdexport_8h_ae120138e297c1ee2e21134edd10e53f0}{VCommand\+Line\+Options}} \&}]{options,  }\item[{\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, int $>$ \&}]{options\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_a726e083c6a52d77fb79bf4aa8a7c5f4e}\label{classVCommandLine_a726e083c6a52d77fb79bf4aa8a7c5f4e}} 
+\index{VCommandLine@{VCommandLine}!IsBinaryDXF@{IsBinaryDXF}}
+\index{IsBinaryDXF@{IsBinaryDXF}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsBinaryDXF()}{IsBinaryDXF()}}
+{\footnotesize\ttfamily int VCommand\+Line\+::\+Is\+Binary\+DXF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a706457e068420b4d4fab477113bd0f5b}\label{classVCommandLine_a706457e068420b4d4fab477113bd0f5b}} 
+\index{VCommandLine@{VCommandLine}!IsExportEnabled@{IsExportEnabled}}
+\index{IsExportEnabled@{IsExportEnabled}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsExportEnabled()}{IsExportEnabled()}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::\+Is\+Export\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_ae56e17de2eb6926e72c8617b2c79b298}\label{classVCommandLine_ae56e17de2eb6926e72c8617b2c79b298}} 
+\index{VCommandLine@{VCommandLine}!IsGuiEnabled@{IsGuiEnabled}}
+\index{IsGuiEnabled@{IsGuiEnabled}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsGuiEnabled()}{IsGuiEnabled()}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::\+Is\+Gui\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a8d3cce9fe8102719fc2a597e174d9111}\label{classVCommandLine_a8d3cce9fe8102719fc2a597e174d9111}} 
+\index{VCommandLine@{VCommandLine}!IsNoScalingEnabled@{IsNoScalingEnabled}}
+\index{IsNoScalingEnabled@{IsNoScalingEnabled}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsNoScalingEnabled()}{IsNoScalingEnabled()}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::\+Is\+No\+Scaling\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_add2cbe8d5202f1fd283363bca5e22190}\label{classVCommandLine_add2cbe8d5202f1fd283363bca5e22190}} 
+\index{VCommandLine@{VCommandLine}!IsSetGradationHeight@{IsSetGradationHeight}}
+\index{IsSetGradationHeight@{IsSetGradationHeight}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsSetGradationHeight()}{IsSetGradationHeight()}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::\+Is\+Set\+Gradation\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_af6fad6ad5512d4987d84f919abda02b7}\label{classVCommandLine_af6fad6ad5512d4987d84f919abda02b7}} 
+\index{VCommandLine@{VCommandLine}!IsSetGradationSize@{IsSetGradationSize}}
+\index{IsSetGradationSize@{IsSetGradationSize}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsSetGradationSize()}{IsSetGradationSize()}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::\+Is\+Set\+Gradation\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a1c1e829f0ae5cd638c17766d9b2667e6}\label{classVCommandLine_a1c1e829f0ae5cd638c17766d9b2667e6}} 
+\index{VCommandLine@{VCommandLine}!IsTestModeEnabled@{IsTestModeEnabled}}
+\index{IsTestModeEnabled@{IsTestModeEnabled}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{IsTestModeEnabled()}{IsTestModeEnabled()}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::\+Is\+Test\+Mode\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a80c5a70e0f4aa77675b5a1a63192f490}\label{classVCommandLine_a80c5a70e0f4aa77675b5a1a63192f490}} 
+\index{VCommandLine@{VCommandLine}!isTextAsPaths@{isTextAsPaths}}
+\index{isTextAsPaths@{isTextAsPaths}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{isTextAsPaths()}{isTextAsPaths()}}
+{\footnotesize\ttfamily int VCommand\+Line\+::is\+Text\+As\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_abf39c734ffdc03366993bb66272f467c}\label{classVCommandLine_abf39c734ffdc03366993bb66272f467c}} 
+\index{VCommandLine@{VCommandLine}!Lo2Px@{Lo2Px}}
+\index{Lo2Px@{Lo2Px}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{Lo2Px()}{Lo2Px()}}
+{\footnotesize\ttfamily qreal VCommand\+Line\+::\+Lo2\+Px (\begin{DoxyParamCaption}\item[{const QString \&}]{src,  }\item[{const \mbox{\hyperlink{classDialogLayoutSettings}{Dialog\+Layout\+Settings}} \&}]{converter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_a6c973fe004418eb62f7015a6ca9081dc}\label{classVCommandLine_a6c973fe004418eb62f7015a6ca9081dc}} 
+\index{VCommandLine@{VCommandLine}!OptBaseName@{OptBaseName}}
+\index{OptBaseName@{OptBaseName}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptBaseName()}{OptBaseName()}}
+{\footnotesize\ttfamily QString VCommand\+Line\+::\+Opt\+Base\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a074b6f87e6ef085c0d649bfe02190826}\label{classVCommandLine_a074b6f87e6ef085c0d649bfe02190826}} 
+\index{VCommandLine@{VCommandLine}!OptDestinationPath@{OptDestinationPath}}
+\index{OptDestinationPath@{OptDestinationPath}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptDestinationPath()}{OptDestinationPath()}}
+{\footnotesize\ttfamily QString VCommand\+Line\+::\+Opt\+Destination\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_aff33c109c48cbbff27aa5a16b59c0ccd}\label{classVCommandLine_aff33c109c48cbbff27aa5a16b59c0ccd}} 
+\index{VCommandLine@{VCommandLine}!OptExportType@{OptExportType}}
+\index{OptExportType@{OptExportType}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptExportType()}{OptExportType()}}
+{\footnotesize\ttfamily int VCommand\+Line\+::\+Opt\+Export\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a3720867519ba7a1a9cf9a4b04d847d2b}\label{classVCommandLine_a3720867519ba7a1a9cf9a4b04d847d2b}} 
+\index{VCommandLine@{VCommandLine}!OptGradationHeight@{OptGradationHeight}}
+\index{OptGradationHeight@{OptGradationHeight}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptGradationHeight()}{OptGradationHeight()}}
+{\footnotesize\ttfamily QString VCommand\+Line\+::\+Opt\+Gradation\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_ae9ad6d8619fb7d02f335df04eb305107}\label{classVCommandLine_ae9ad6d8619fb7d02f335df04eb305107}} 
+\index{VCommandLine@{VCommandLine}!OptGradationSize@{OptGradationSize}}
+\index{OptGradationSize@{OptGradationSize}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptGradationSize()}{OptGradationSize()}}
+{\footnotesize\ttfamily QString VCommand\+Line\+::\+Opt\+Gradation\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a37707851589ee4a26a5dcacec1c52f44}\label{classVCommandLine_a37707851589ee4a26a5dcacec1c52f44}} 
+\index{VCommandLine@{VCommandLine}!OptGroup@{OptGroup}}
+\index{OptGroup@{OptGroup}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptGroup()}{OptGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}} VCommand\+Line\+::\+Opt\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVCommandLine_a382ce878ff87c04f1cb78a50702e79e1}\label{classVCommandLine_a382ce878ff87c04f1cb78a50702e79e1}} 
+\index{VCommandLine@{VCommandLine}!OptInputFileNames@{OptInputFileNames}}
+\index{OptInputFileNames@{OptInputFileNames}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptInputFileNames()}{OptInputFileNames()}}
+{\footnotesize\ttfamily QString\+List VCommand\+Line\+::\+Opt\+Input\+File\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a87abfdb29ffb704172bff3b27647ed93}\label{classVCommandLine_a87abfdb29ffb704172bff3b27647ed93}} 
+\index{VCommandLine@{VCommandLine}!OptMeasurePath@{OptMeasurePath}}
+\index{OptMeasurePath@{OptMeasurePath}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptMeasurePath()}{OptMeasurePath()}}
+{\footnotesize\ttfamily QString VCommand\+Line\+::\+Opt\+Measure\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVCommandLine_a7397887d24fe424be8ee68d327cc5e72}\label{classVCommandLine_a7397887d24fe424be8ee68d327cc5e72}} 
+\index{VCommandLine@{VCommandLine}!OptPaperSize@{OptPaperSize}}
+\index{OptPaperSize@{OptPaperSize}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptPaperSize()}{OptPaperSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}{Dialog\+Layout\+Settings\+::\+Paper\+Size\+Template}} VCommand\+Line\+::\+Opt\+Paper\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVCommandLine_a145f6e89c7ee1b51946d50f58d08b16b}\label{classVCommandLine_a145f6e89c7ee1b51946d50f58d08b16b}} 
+\index{VCommandLine@{VCommandLine}!OptRotation@{OptRotation}}
+\index{OptRotation@{OptRotation}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{OptRotation()}{OptRotation()}}
+{\footnotesize\ttfamily int VCommand\+Line\+::\+Opt\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVCommandLine_ae6e8e1817bbb36afa24e1568b4a714ee}\label{classVCommandLine_ae6e8e1817bbb36afa24e1568b4a714ee}} 
+\index{VCommandLine@{VCommandLine}!Pg2Px@{Pg2Px}}
+\index{Pg2Px@{Pg2Px}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{Pg2Px()}{Pg2Px()}}
+{\footnotesize\ttfamily qreal VCommand\+Line\+::\+Pg2\+Px (\begin{DoxyParamCaption}\item[{const QString \&}]{src,  }\item[{const \mbox{\hyperlink{classDialogLayoutSettings}{Dialog\+Layout\+Settings}} \&}]{converter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_a3a2b8e0d6286a6d9f806f3b0756d23a4}\label{classVCommandLine_a3a2b8e0d6286a6d9f806f3b0756d23a4}} 
+\index{VCommandLine@{VCommandLine}!Reset@{Reset}}
+\index{Reset@{Reset}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void VCommand\+Line\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classVCommandLine_aff8e996c237959cef20f5253a1641129}\label{classVCommandLine_aff8e996c237959cef20f5253a1641129}} 
+\index{VCommandLine@{VCommandLine}!VApplication@{VApplication}}
+\index{VApplication@{VApplication}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{VApplication}{VApplication}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classVApplication}{VApplication}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVCommandLine_a4a357d0d1371aa548d5c716196b05066}\label{classVCommandLine_a4a357d0d1371aa548d5c716196b05066}} 
+\index{VCommandLine@{VCommandLine}!instance@{instance}}
+\index{instance@{instance}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommand\+Line\+Ptr}} VCommand\+Line\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_a384ad7063d35874f4ef39f898c429064}\label{classVCommandLine_a384ad7063d35874f4ef39f898c429064}} 
+\index{VCommandLine@{VCommandLine}!isGuiEnabled@{isGuiEnabled}}
+\index{isGuiEnabled@{isGuiEnabled}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{isGuiEnabled}{isGuiEnabled}}
+{\footnotesize\ttfamily bool VCommand\+Line\+::is\+Gui\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_af81799ac36c307795352e9591799e1a2}\label{classVCommandLine_af81799ac36c307795352e9591799e1a2}} 
+\index{VCommandLine@{VCommandLine}!optionsIndex@{optionsIndex}}
+\index{optionsIndex@{optionsIndex}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{optionsIndex}{optionsIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$QString, int$>$ VCommand\+Line\+::options\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_a029b6fb4ed6697d7b7e414e55ffe63c4}\label{classVCommandLine_a029b6fb4ed6697d7b7e414e55ffe63c4}} 
+\index{VCommandLine@{VCommandLine}!optionsUsed@{optionsUsed}}
+\index{optionsUsed@{optionsUsed}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{optionsUsed}{optionsUsed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vcmdexport_8h_ae120138e297c1ee2e21134edd10e53f0}{VCommand\+Line\+Options}} VCommand\+Line\+::options\+Used\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVCommandLine_a58d314b95b46c89a3284654289366ced}\label{classVCommandLine_a58d314b95b46c89a3284654289366ced}} 
+\index{VCommandLine@{VCommandLine}!parser@{parser}}
+\index{parser@{parser}!VCommandLine@{VCommandLine}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily QCommand\+Line\+Parser VCommand\+Line\+::parser\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vcmdexport_8h}{vcmdexport.\+h}}\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vcmdexport_8cpp}{vcmdexport.\+cpp}}\end{DoxyCompactItemize}

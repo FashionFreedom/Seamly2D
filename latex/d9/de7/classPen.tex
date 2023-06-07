@@ -1,0 +1,183 @@
+\hypertarget{classPen}{}\doxysection{Pen Struct Reference}
+\label{classPen}\index{Pen@{Pen}}
+
+
+{\ttfamily \#include $<$pen.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPen_a35bb787978cb795bd371c65ece6baa21}{Pen}} ()
+\item 
+\mbox{\hyperlink{classPen_a2c269a4b7c71971946697f9173743176}{Pen}} (const QString \&\mbox{\hyperlink{classPen_a1b81ceddf168867acbefd28d40fa2ab9}{color}}, const qreal \&weight, const QString \&type)
+\item 
+virtual \mbox{\hyperlink{classPen_abfc9f0341296d606189ff282f3eeebe1}{$\sim$\+Pen}} ()
+\item 
+QString \mbox{\hyperlink{classPen_ad28c352c979d055bcb2550a50e104831}{get\+Line\+Type}} () const
+\item 
+void \mbox{\hyperlink{classPen_a62099dd76a95a672603ccfd46717a701}{set\+Line\+Type}} (const QString \&type)
+\item 
+qreal \mbox{\hyperlink{classPen_af6c952a80a83302c1af9a45c1e023ca0}{get\+Line\+Weight}} () const
+\item 
+void \mbox{\hyperlink{classPen_aee490957207303df16a3183984e2af21}{set\+Line\+Weight}} (const qreal \&weight)
+\item 
+QString \mbox{\hyperlink{classPen_adcca887057f7a085d289b1a0a78fab2d}{get\+Color}} () const
+\item 
+void \mbox{\hyperlink{classPen_a602dfef32d494f112f1b1644e17190e3}{set\+Color}} (const QString \&\mbox{\hyperlink{classPen_a1b81ceddf168867acbefd28d40fa2ab9}{color}})
+\item 
+bool \mbox{\hyperlink{classPen_a441a93bb15cd47ad3d767f228fff4c8f}{operator==}} (const \mbox{\hyperlink{classPen}{Pen}} \&pen) const
+\item 
+bool \mbox{\hyperlink{classPen_ae2edbfae457ef9d5bd3df9e1494e8e28}{operator!=}} (const \mbox{\hyperlink{classPen}{Pen}} \&pen) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classPen_a1b81ceddf168867acbefd28d40fa2ab9}{color}} \{QString(\char`\"{}black\char`\"{})\}
+\item 
+qreal \mbox{\hyperlink{classPen_a8b8e10b8a87731d9dd7afbfdf750a92c}{line\+Weight}} \{1.\+20\}
+\item 
+QString \mbox{\hyperlink{classPen_aa0a6c0530ec9fe6b855cc35b1645fe9e}{line\+Type}} \{QString(\char`\"{}solidline\char`\"{})\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classPen_a465dfc78cf2887e2f9bba41d6e417a76}{m\+\_\+color}}
+\item 
+qreal \mbox{\hyperlink{classPen_a3e2f28c016c2d6c71d4f633930005eba}{m\+\_\+line\+Weight}}
+\item 
+QString \mbox{\hyperlink{classPen_aab20c4a7725c21a37b69bc081045957b}{m\+\_\+line\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classPen_ab049c3231b09759ad421903a1c730d16}{operator$<$$<$}} (std\+::ostream \&stream, const \mbox{\hyperlink{classPen}{Pen}} \&pen)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pen stores attributes for painting such as line weight, linetype, color, ... 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPen_a35bb787978cb795bd371c65ece6baa21}\label{classPen_a35bb787978cb795bd371c65ece6baa21}} 
+\index{Pen@{Pen}!Pen@{Pen}}
+\index{Pen@{Pen}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{Pen()}{Pen()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Pen\+::\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a default pen (black, solid, weight 0). \mbox{\Hypertarget{classPen_a2c269a4b7c71971946697f9173743176}\label{classPen_a2c269a4b7c71971946697f9173743176}} 
+\index{Pen@{Pen}!Pen@{Pen}}
+\index{Pen@{Pen}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{Pen()}{Pen()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Pen\+::\+Pen (\begin{DoxyParamCaption}\item[{const QString \&}]{color,  }\item[{const qreal \&}]{weight,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Creates a pen with the given attributes. \mbox{\Hypertarget{classPen_abfc9f0341296d606189ff282f3eeebe1}\label{classPen_abfc9f0341296d606189ff282f3eeebe1}} 
+\index{Pen@{Pen}!````~Pen@{$\sim$Pen}}
+\index{````~Pen@{$\sim$Pen}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{$\sim$Pen()}{~Pen()}}
+{\footnotesize\ttfamily virtual Pen\+::$\sim$\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPen_adcca887057f7a085d289b1a0a78fab2d}\label{classPen_adcca887057f7a085d289b1a0a78fab2d}} 
+\index{Pen@{Pen}!getColor@{getColor}}
+\index{getColor@{getColor}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily QString Pen\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_ad28c352c979d055bcb2550a50e104831}\label{classPen_ad28c352c979d055bcb2550a50e104831}} 
+\index{Pen@{Pen}!getLineType@{getLineType}}
+\index{getLineType@{getLineType}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{getLineType()}{getLineType()}}
+{\footnotesize\ttfamily QString Pen\+::get\+Line\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_af6c952a80a83302c1af9a45c1e023ca0}\label{classPen_af6c952a80a83302c1af9a45c1e023ca0}} 
+\index{Pen@{Pen}!getLineWeight@{getLineWeight}}
+\index{getLineWeight@{getLineWeight}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{getLineWeight()}{getLineWeight()}}
+{\footnotesize\ttfamily qreal Pen\+::get\+Line\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_ae2edbfae457ef9d5bd3df9e1494e8e28}\label{classPen_ae2edbfae457ef9d5bd3df9e1494e8e28}} 
+\index{Pen@{Pen}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Pen\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPen}{Pen}} \&}]{pen }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_a441a93bb15cd47ad3d767f228fff4c8f}\label{classPen_a441a93bb15cd47ad3d767f228fff4c8f}} 
+\index{Pen@{Pen}!operator==@{operator==}}
+\index{operator==@{operator==}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Pen\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPen}{Pen}} \&}]{pen }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_a602dfef32d494f112f1b1644e17190e3}\label{classPen_a602dfef32d494f112f1b1644e17190e3}} 
+\index{Pen@{Pen}!setColor@{setColor}}
+\index{setColor@{setColor}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Pen\+::set\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_a62099dd76a95a672603ccfd46717a701}\label{classPen_a62099dd76a95a672603ccfd46717a701}} 
+\index{Pen@{Pen}!setLineType@{setLineType}}
+\index{setLineType@{setLineType}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{setLineType()}{setLineType()}}
+{\footnotesize\ttfamily void Pen\+::set\+Line\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classPen_aee490957207303df16a3183984e2af21}\label{classPen_aee490957207303df16a3183984e2af21}} 
+\index{Pen@{Pen}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void Pen\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const qreal \&}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classPen_ab049c3231b09759ad421903a1c730d16}\label{classPen_ab049c3231b09759ad421903a1c730d16}} 
+\index{Pen@{Pen}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \mbox{\hyperlink{classPen}{Pen}} \&}]{pen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPen_a1b81ceddf168867acbefd28d40fa2ab9}\label{classPen_a1b81ceddf168867acbefd28d40fa2ab9}} 
+\index{Pen@{Pen}!color@{color}}
+\index{color@{color}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily QString Pen\+::color \{QString(\char`\"{}black\char`\"{})\}}
+
+\mbox{\Hypertarget{classPen_aa0a6c0530ec9fe6b855cc35b1645fe9e}\label{classPen_aa0a6c0530ec9fe6b855cc35b1645fe9e}} 
+\index{Pen@{Pen}!lineType@{lineType}}
+\index{lineType@{lineType}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{lineType}{lineType}}
+{\footnotesize\ttfamily QString Pen\+::line\+Type \{QString(\char`\"{}solidline\char`\"{})\}}
+
+\mbox{\Hypertarget{classPen_a8b8e10b8a87731d9dd7afbfdf750a92c}\label{classPen_a8b8e10b8a87731d9dd7afbfdf750a92c}} 
+\index{Pen@{Pen}!lineWeight@{lineWeight}}
+\index{lineWeight@{lineWeight}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{lineWeight}{lineWeight}}
+{\footnotesize\ttfamily qreal Pen\+::line\+Weight \{1.\+20\}}
+
+\mbox{\Hypertarget{classPen_a465dfc78cf2887e2f9bba41d6e417a76}\label{classPen_a465dfc78cf2887e2f9bba41d6e417a76}} 
+\index{Pen@{Pen}!m\_color@{m\_color}}
+\index{m\_color@{m\_color}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{m\_color}{m\_color}}
+{\footnotesize\ttfamily QString Pen\+::m\+\_\+color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classPen_aab20c4a7725c21a37b69bc081045957b}\label{classPen_aab20c4a7725c21a37b69bc081045957b}} 
+\index{Pen@{Pen}!m\_lineType@{m\_lineType}}
+\index{m\_lineType@{m\_lineType}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{m\_lineType}{m\_lineType}}
+{\footnotesize\ttfamily QString Pen\+::m\+\_\+line\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classPen_a3e2f28c016c2d6c71d4f633930005eba}\label{classPen_a3e2f28c016c2d6c71d4f633930005eba}} 
+\index{Pen@{Pen}!m\_lineWeight@{m\_lineWeight}}
+\index{m\_lineWeight@{m\_lineWeight}!Pen@{Pen}}
+\doxysubsubsection{\texorpdfstring{m\_lineWeight}{m\_lineWeight}}
+{\footnotesize\ttfamily qreal Pen\+::m\+\_\+line\+Weight\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vwidgets/\mbox{\hyperlink{pen_8h}{pen.\+h}}\item 
+src/libs/vwidgets/\mbox{\hyperlink{pen__toolbar_8h}{pen\+\_\+toolbar.\+h}}\end{DoxyCompactItemize}

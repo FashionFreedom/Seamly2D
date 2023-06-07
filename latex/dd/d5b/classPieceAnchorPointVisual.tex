@@ -1,0 +1,136 @@
+\hypertarget{classPieceAnchorPointVisual}{}\doxysection{Piece\+Anchor\+Point\+Visual Class Reference}
+\label{classPieceAnchorPointVisual}\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+
+
+{\ttfamily \#include $<$pieceanchorpoint\+\_\+visual.\+h$>$}
+
+Inheritance diagram for Piece\+Anchor\+Point\+Visual\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{dd/d5b/classPieceAnchorPointVisual}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classPieceAnchorPointVisual_a5ac1434b4ef29ebfde493caa03f218dbadccf8aebeedd8c571e48d703927bd53c}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Piece\+Anchors)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPieceAnchorPointVisual_a72f833b1856989da2cda3feda621dabc}{Piece\+Anchor\+Point\+Visual}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classPieceAnchorPointVisual_a623c38cc3bdbafabc8dd1f7f62b62062}{$\sim$\+Piece\+Anchor\+Point\+Visual}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classPieceAnchorPointVisual_a0ebf852d203f87dd2eb9d3b39d0ac894}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classPieceAnchorPointVisual_a43ab78a716306d67e577ae2530043ebb}{set\+Anchors}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&anchors)
+\item 
+virtual int \mbox{\hyperlink{classPieceAnchorPointVisual_adf2a0ba8e1545d1150e87199d0b42b42}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}} $\ast$ \mbox{\hyperlink{classPieceAnchorPointVisual_af937f14d763e8bd7751c9b6cfebcdc35}{Get\+Point}} (quint32 i, const QColor \&color)
+\item 
+void \mbox{\hyperlink{classPieceAnchorPointVisual_ab7680d636d5a0f256d0575c98d0e19a8}{Hide\+All\+Items}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}} $\ast$ $>$ \mbox{\hyperlink{classPieceAnchorPointVisual_a6231eda63c826e4572bd1f739a06bd72}{m\+\_\+points}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{classPieceAnchorPointVisual_ab325794f4ce666679cad1087b7358f50}{m\+\_\+anchors}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPieceAnchorPointVisual_a5ac1434b4ef29ebfde493caa03f218db}\label{classPieceAnchorPointVisual_a5ac1434b4ef29ebfde493caa03f218db}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!Type@{Type}}}\mbox{\Hypertarget{classPieceAnchorPointVisual_a5ac1434b4ef29ebfde493caa03f218dbadccf8aebeedd8c571e48d703927bd53c}\label{classPieceAnchorPointVisual_a5ac1434b4ef29ebfde493caa03f218dbadccf8aebeedd8c571e48d703927bd53c}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPieceAnchorPointVisual_a72f833b1856989da2cda3feda621dabc}\label{classPieceAnchorPointVisual_a72f833b1856989da2cda3feda621dabc}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{PieceAnchorPointVisual()}{PieceAnchorPointVisual()}}
+{\footnotesize\ttfamily Piece\+Anchor\+Point\+Visual\+::\+Piece\+Anchor\+Point\+Visual (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPieceAnchorPointVisual_a623c38cc3bdbafabc8dd1f7f62b62062}\label{classPieceAnchorPointVisual_a623c38cc3bdbafabc8dd1f7f62b62062}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!````~PieceAnchorPointVisual@{$\sim$PieceAnchorPointVisual}}
+\index{````~PieceAnchorPointVisual@{$\sim$PieceAnchorPointVisual}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{$\sim$PieceAnchorPointVisual()}{~PieceAnchorPointVisual()}}
+{\footnotesize\ttfamily virtual Piece\+Anchor\+Point\+Visual\+::$\sim$\+Piece\+Anchor\+Point\+Visual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPieceAnchorPointVisual_af937f14d763e8bd7751c9b6cfebcdc35}\label{classPieceAnchorPointVisual_af937f14d763e8bd7751c9b6cfebcdc35}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}} $\ast$ Piece\+Anchor\+Point\+Visual\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{quint32}]{i,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPieceAnchorPointVisual_ab7680d636d5a0f256d0575c98d0e19a8}\label{classPieceAnchorPointVisual_ab7680d636d5a0f256d0575c98d0e19a8}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!HideAllItems@{HideAllItems}}
+\index{HideAllItems@{HideAllItems}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{HideAllItems()}{HideAllItems()}}
+{\footnotesize\ttfamily void Piece\+Anchor\+Point\+Visual\+::\+Hide\+All\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPieceAnchorPointVisual_a0ebf852d203f87dd2eb9d3b39d0ac894}\label{classPieceAnchorPointVisual_a0ebf852d203f87dd2eb9d3b39d0ac894}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Piece\+Anchor\+Point\+Visual\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classPieceAnchorPointVisual_a43ab78a716306d67e577ae2530043ebb}\label{classPieceAnchorPointVisual_a43ab78a716306d67e577ae2530043ebb}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!setAnchors@{setAnchors}}
+\index{setAnchors@{setAnchors}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{setAnchors()}{setAnchors()}}
+{\footnotesize\ttfamily void Piece\+Anchor\+Point\+Visual\+::set\+Anchors (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&}]{anchors }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPieceAnchorPointVisual_adf2a0ba8e1545d1150e87199d0b42b42}\label{classPieceAnchorPointVisual_adf2a0ba8e1545d1150e87199d0b42b42}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!type@{type}}
+\index{type@{type}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Piece\+Anchor\+Point\+Visual\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisPath_aa00ad73e91c41aeb8ed9b432b94ad2f6}{Vis\+Path}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPieceAnchorPointVisual_ab325794f4ce666679cad1087b7358f50}\label{classPieceAnchorPointVisual_ab325794f4ce666679cad1087b7358f50}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!m\_anchors@{m\_anchors}}
+\index{m\_anchors@{m\_anchors}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{m\_anchors}{m\_anchors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$quint32$>$ Piece\+Anchor\+Point\+Visual\+::m\+\_\+anchors\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPieceAnchorPointVisual_a6231eda63c826e4572bd1f739a06bd72}\label{classPieceAnchorPointVisual_a6231eda63c826e4572bd1f739a06bd72}} 
+\index{PieceAnchorPointVisual@{PieceAnchorPointVisual}!m\_points@{m\_points}}
+\index{m\_points@{m\_points}!PieceAnchorPointVisual@{PieceAnchorPointVisual}}
+\doxysubsubsection{\texorpdfstring{m\_points}{m\_points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVSimplePoint}{VSimple\+Point}} $\ast$$>$ Piece\+Anchor\+Point\+Visual\+::m\+\_\+points\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/path/\mbox{\hyperlink{pieceanchorpoint__visual_8h}{pieceanchorpoint\+\_\+visual.\+h}}\item 
+src/libs/vtools/visualization/path/\mbox{\hyperlink{pieceanchorpoint__visual_8cpp}{pieceanchorpoint\+\_\+visual.\+cpp}}\end{DoxyCompactItemize}

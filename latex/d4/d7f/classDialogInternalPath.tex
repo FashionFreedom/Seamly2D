@@ -1,0 +1,643 @@
+\hypertarget{classDialogInternalPath}{}\doxysection{Dialog\+Internal\+Path Class Reference}
+\label{classDialogInternalPath}\index{DialogInternalPath@{DialogInternalPath}}
+
+
+{\ttfamily \#include $<$dialoginternalpath.\+h$>$}
+
+Inheritance diagram for Dialog\+Internal\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d4/d7f/classDialogInternalPath}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogInternalPath_a112ec8e310f233ff4a6468ca253143b9}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogInternalPath_a2953e4b9f3a308e948c52890376673ca}{Show\+Dialog}} (bool click) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogInternalPath_adf819ff463fef59a746ef7079e341887}{Dialog\+Internal\+Path}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, quint32 \mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classDialogInternalPath_a21ffbd298cf6b300fbf9f480ba10087f}{$\sim$\+Dialog\+Internal\+Path}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a89a75deeb1386fbf9e339dbbc9f632fb}{Enble\+Show\+Mode}} (bool disable)
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{classDialogInternalPath_aa61656361cd2eccb0a172dfd353a93f9}{Get\+Piece\+Path}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a002d12fa006ccc4910415126b70e0f76}{Set\+Piece\+Path}} (const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&path)
+\item 
+quint32 \mbox{\hyperlink{classDialogInternalPath_a5704a9c83aa4a98f83b7315a9a07904c}{Get\+Piece\+Id}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_ae902053a8d11214351105b1b626014db}{Set\+Piece\+Id}} (quint32 id)
+\item 
+QString \mbox{\hyperlink{classDialogInternalPath_af8b06926546a0c617ef770b61967d4f8}{get\+Seam\+Allowance\+Width\+Formula}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a94ae60c341fe4e2d434273c5d443e070}{set\+Seam\+Allowance\+Width\+Formula}} (const QString \&formula)
+\item 
+virtual void \mbox{\hyperlink{classDialogInternalPath_afc1ab0a65ee6f4bd6690890942d36c03}{Set\+Pieces\+List}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&list) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogInternalPath_a0e88d4458efc81e940c0fae432289316}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Check\+State enable, when all is correct, or disable, when something wrong, button ok. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogInternalPath_a8cadbff0e7d5daba4d7b6486a84e20d9}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogInternalPath_a760c267e9d4e87167521ad9c90515fff}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_ab52d8375d7b900c4dec8bed2961debbf}{Show\+Context\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a5e90934d638077ffaae5a684bf8453bc}{List\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a799ebc1534b287ea9481079cc73c9309}{Name\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a6a10c1d6a41bef4b6e46dbbd315af695}{node\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a72781f136d102e5a767ab8bc112bed4f}{notch\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a2e1927e1e74974603312f82672b9de29}{enable\+Default\+Before\+Button}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_acb868e27590346cc7592d4cc9d129695}{enable\+Default\+After\+Button}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a8c5a93ccb021ee95e40029ec6802e15a}{notch\+Type\+Changed}} (int id)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a23a24c6e7c1bd85dd1cae9ca33bfd6f8}{notch\+Sub\+Type\+Changed}} (int id)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_ae49dc173c008b80bea4d5fe4c6c331b7}{evaluate\+Default\+Width}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_af2a8337b41957cf6bd374a9526db7554}{evaluate\+Before\+Width}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a41338f454670e77671babfaa5bc3d93c}{evaluate\+After\+Width}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a05262c5ff85a420cfe6b463132bc855c}{edit\+Default\+Seam\+Allowance\+Width}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a0a236c92171ed4efb0aa2452f6fc7d32}{edit\+Before\+Seam\+Allowance\+Width}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a0450bd7cd6492b5cfe764d803f6a74d6}{edit\+After\+Seam\+Allowance\+Width}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a9dd6d95577c9f5952108f5eac152e6bb}{default\+Width\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a6396b400b8c374419318df708fa017f9}{before\+Width\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a76a1e655a77e77559d3d06074522edf1}{after\+Width\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_acbf03e6e27902431941bdf67a51d78cd}{expand\+Width\+Formula\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_af8c8377b6a589375edf503501eb9e7f4}{expand\+Width\+Before\+Formula\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_aab8941379855a8ca02b1701d46227bf6}{expand\+Width\+After\+Formula\+Text\+Edit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_ab04b7ade6ef30ea70ff2d1d937706d50}{Init\+Path\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a385a2a0be3b834b2866de9071422bb88}{Init\+Seam\+Allowance\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a4ac09186a7862b9a6476bf99982bb663}{Init\+Notches\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_aeff86f67f0130416fe227a217448e520}{Init\+Path\+Types}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a20cd4d978cafdb9137ad3af694100efe}{initialize\+Nodes\+List}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a1a37200e8e3a4c7e50aceb17992744bc}{initialize\+Notches\+List}} ()
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_aa5a36fdde18c453880fc2aaaf9638b12}{node\+Angle\+Changed}} (int index)
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{classDialogInternalPath_a6680cb04fb8e2d29586c24b5c4fd4e91}{Create\+Path}} () const
+\item 
+bool \mbox{\hyperlink{classDialogInternalPath_ae6d6c8e519750d56de755bccf1e9c410}{Path\+Is\+Valid}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a0d679c89cf4648b51f56dd2f9786e493}{Valid\+Objects}} (bool value)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a8b36c4dbb3ea39a77a06838caf4231fd}{New\+Item}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node)
+\item 
+\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} \mbox{\hyperlink{classDialogInternalPath_adf41f41775c58d2e829082dbc43ade5b}{Get\+Type}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_aa33e5787aa4c8d59769b215985040a6d}{Set\+Type}} (\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} type)
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{classDialogInternalPath_abd849854b9f42928818ca722d2c7457f}{Get\+Pen\+Type}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_af58ae08a65335708dcda4e83ab6b9987}{Set\+Pen\+Type}} (const Qt\+::\+Pen\+Style \&type)
+\item 
+bool \mbox{\hyperlink{classDialogInternalPath_a0daa98fd39caf25ae19ebd31e3cc04d5}{Is\+Cut\+Path}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a9689074a1ef31c9933069204c4c3d725}{Set\+Cut\+Path}} (bool value)
+\item 
+QList\+Widget\+Item $\ast$ \mbox{\hyperlink{classDialogInternalPath_ad6e8c467bb852b3bbc81dff7e3b2ca87}{get\+Item\+By\+Id}} (quint32 id)
+\item 
+quint32 \mbox{\hyperlink{classDialogInternalPath_af4c83a9c7326ef31bb3d8692c63e17d2}{Get\+Last\+Id}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a3eb0080eea1a7ad304bd0e066fe5eb62}{Set\+Current\+SABefore}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a82282466eafd372e3aa1c1ff5ebca4e0}{set\+Current\+After\+Seam\+Allowance}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a76105b1f55c7139565f01de23846c162}{update\+Node\+Before\+Seam\+Allowance}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_ab3692c9046f803d78f49b6d8069c8e34}{update\+Node\+After\+Seam\+Allowance}} (const QString \&formula)
+\item 
+QString \mbox{\hyperlink{classDialogInternalPath_a9b9c394c8d173fe1cacc0be1ba4a6a77}{get\+Seam\+Allowance\+Width\+Formula\+Before}} () const
+\item 
+QString \mbox{\hyperlink{classDialogInternalPath_aeac7be333c5c1a2d5e35e7a63ddcd1ad}{get\+Seam\+Allowance\+Width\+Formula\+After}} () const
+\item 
+void \mbox{\hyperlink{classDialogInternalPath_a19e4502f8aae71ff6b4980bb93b937e9}{set\+Move\+Exclusions}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Internal\+Path $\ast$ \mbox{\hyperlink{classDialogInternalPath_a6dd21edfb743b6c11ddf619b8dde96a3}{ui}}
+\item 
+bool \mbox{\hyperlink{classDialogInternalPath_a826873a438fee6b956a2f1a860f69a12}{m\+\_\+show\+Mode}}
+\item 
+qreal \mbox{\hyperlink{classDialogInternalPath_a65887981ddfe597ee886aa97bd2080dc}{m\+\_\+sa\+Width}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classDialogInternalPath_a261ed0065f1e97e6a4067618885329ed}{m\+\_\+timer\+Width}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classDialogInternalPath_a88a3e197051abdf0a59ff0baa66a6f00}{m\+\_\+timer\+Width\+Before}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classDialogInternalPath_a93c638971538e644c1c8a3ca9c364e00}{m\+\_\+timer\+Width\+After}}
+\item 
+int \mbox{\hyperlink{classDialogInternalPath_a688e2a892be19292da40fbcfa81860a7}{m\+\_\+width\+Formula}}
+\item 
+int \mbox{\hyperlink{classDialogInternalPath_a688fcf297eadd46af1a35cb0ace99659}{m\+\_\+before\+Width\+Formula}}
+\item 
+int \mbox{\hyperlink{classDialogInternalPath_a59a788b5cfe68ae0ee50d0edeeb5c8ec}{m\+\_\+after\+Width\+Formula}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogInternalPath_adf819ff463fef59a746ef7079e341887}\label{classDialogInternalPath_adf819ff463fef59a746ef7079e341887}} 
+\index{DialogInternalPath@{DialogInternalPath}!DialogInternalPath@{DialogInternalPath}}
+\index{DialogInternalPath@{DialogInternalPath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{DialogInternalPath()}{DialogInternalPath()}}
+{\footnotesize\ttfamily Dialog\+Internal\+Path\+::\+Dialog\+Internal\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a21ffbd298cf6b300fbf9f480ba10087f}\label{classDialogInternalPath_a21ffbd298cf6b300fbf9f480ba10087f}} 
+\index{DialogInternalPath@{DialogInternalPath}!````~DialogInternalPath@{$\sim$DialogInternalPath}}
+\index{````~DialogInternalPath@{$\sim$DialogInternalPath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogInternalPath()}{~DialogInternalPath()}}
+{\footnotesize\ttfamily Dialog\+Internal\+Path\+::$\sim$\+Dialog\+Internal\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogInternalPath_a76a1e655a77e77559d3d06074522edf1}\label{classDialogInternalPath_a76a1e655a77e77559d3d06074522edf1}} 
+\index{DialogInternalPath@{DialogInternalPath}!afterWidthChanged@{afterWidthChanged}}
+\index{afterWidthChanged@{afterWidthChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{afterWidthChanged}{afterWidthChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::after\+Width\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a6396b400b8c374419318df708fa017f9}\label{classDialogInternalPath_a6396b400b8c374419318df708fa017f9}} 
+\index{DialogInternalPath@{DialogInternalPath}!beforeWidthChanged@{beforeWidthChanged}}
+\index{beforeWidthChanged@{beforeWidthChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{beforeWidthChanged}{beforeWidthChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::before\+Width\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a0e88d4458efc81e940c0fae432289316}\label{classDialogInternalPath_a0e88d4458efc81e940c0fae432289316}} 
+\index{DialogInternalPath@{DialogInternalPath}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State enable, when all is correct, or disable, when something wrong, button ok. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogInternalPath_a112ec8e310f233ff4a6468ca253143b9}\label{classDialogInternalPath_a112ec8e310f233ff4a6468ca253143b9}} 
+\index{DialogInternalPath@{DialogInternalPath}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a760c267e9d4e87167521ad9c90515fff}\label{classDialogInternalPath_a760c267e9d4e87167521ad9c90515fff}} 
+\index{DialogInternalPath@{DialogInternalPath}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogInternalPath_a6680cb04fb8e2d29586c24b5c4fd4e91}\label{classDialogInternalPath_a6680cb04fb8e2d29586c24b5c4fd4e91}} 
+\index{DialogInternalPath@{DialogInternalPath}!CreatePath@{CreatePath}}
+\index{CreatePath@{CreatePath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{CreatePath()}{CreatePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} Dialog\+Internal\+Path\+::\+Create\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a9dd6d95577c9f5952108f5eac152e6bb}\label{classDialogInternalPath_a9dd6d95577c9f5952108f5eac152e6bb}} 
+\index{DialogInternalPath@{DialogInternalPath}!defaultWidthChanged@{defaultWidthChanged}}
+\index{defaultWidthChanged@{defaultWidthChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{defaultWidthChanged}{defaultWidthChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::default\+Width\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a0450bd7cd6492b5cfe764d803f6a74d6}\label{classDialogInternalPath_a0450bd7cd6492b5cfe764d803f6a74d6}} 
+\index{DialogInternalPath@{DialogInternalPath}!editAfterSeamAllowanceWidth@{editAfterSeamAllowanceWidth}}
+\index{editAfterSeamAllowanceWidth@{editAfterSeamAllowanceWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{editAfterSeamAllowanceWidth}{editAfterSeamAllowanceWidth}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::edit\+After\+Seam\+Allowance\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a0a236c92171ed4efb0aa2452f6fc7d32}\label{classDialogInternalPath_a0a236c92171ed4efb0aa2452f6fc7d32}} 
+\index{DialogInternalPath@{DialogInternalPath}!editBeforeSeamAllowanceWidth@{editBeforeSeamAllowanceWidth}}
+\index{editBeforeSeamAllowanceWidth@{editBeforeSeamAllowanceWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{editBeforeSeamAllowanceWidth}{editBeforeSeamAllowanceWidth}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::edit\+Before\+Seam\+Allowance\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a05262c5ff85a420cfe6b463132bc855c}\label{classDialogInternalPath_a05262c5ff85a420cfe6b463132bc855c}} 
+\index{DialogInternalPath@{DialogInternalPath}!editDefaultSeamAllowanceWidth@{editDefaultSeamAllowanceWidth}}
+\index{editDefaultSeamAllowanceWidth@{editDefaultSeamAllowanceWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{editDefaultSeamAllowanceWidth}{editDefaultSeamAllowanceWidth}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::edit\+Default\+Seam\+Allowance\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_acb868e27590346cc7592d4cc9d129695}\label{classDialogInternalPath_acb868e27590346cc7592d4cc9d129695}} 
+\index{DialogInternalPath@{DialogInternalPath}!enableDefaultAfterButton@{enableDefaultAfterButton}}
+\index{enableDefaultAfterButton@{enableDefaultAfterButton}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{enableDefaultAfterButton}{enableDefaultAfterButton}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::enable\+Default\+After\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a2e1927e1e74974603312f82672b9de29}\label{classDialogInternalPath_a2e1927e1e74974603312f82672b9de29}} 
+\index{DialogInternalPath@{DialogInternalPath}!enableDefaultBeforeButton@{enableDefaultBeforeButton}}
+\index{enableDefaultBeforeButton@{enableDefaultBeforeButton}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{enableDefaultBeforeButton}{enableDefaultBeforeButton}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::enable\+Default\+Before\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a89a75deeb1386fbf9e339dbbc9f632fb}\label{classDialogInternalPath_a89a75deeb1386fbf9e339dbbc9f632fb}} 
+\index{DialogInternalPath@{DialogInternalPath}!EnbleShowMode@{EnbleShowMode}}
+\index{EnbleShowMode@{EnbleShowMode}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{EnbleShowMode()}{EnbleShowMode()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Enble\+Show\+Mode (\begin{DoxyParamCaption}\item[{bool}]{disable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogInternalPath_a41338f454670e77671babfaa5bc3d93c}\label{classDialogInternalPath_a41338f454670e77671babfaa5bc3d93c}} 
+\index{DialogInternalPath@{DialogInternalPath}!evaluateAfterWidth@{evaluateAfterWidth}}
+\index{evaluateAfterWidth@{evaluateAfterWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{evaluateAfterWidth}{evaluateAfterWidth}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::evaluate\+After\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_af2a8337b41957cf6bd374a9526db7554}\label{classDialogInternalPath_af2a8337b41957cf6bd374a9526db7554}} 
+\index{DialogInternalPath@{DialogInternalPath}!evaluateBeforeWidth@{evaluateBeforeWidth}}
+\index{evaluateBeforeWidth@{evaluateBeforeWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{evaluateBeforeWidth}{evaluateBeforeWidth}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::evaluate\+Before\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_ae49dc173c008b80bea4d5fe4c6c331b7}\label{classDialogInternalPath_ae49dc173c008b80bea4d5fe4c6c331b7}} 
+\index{DialogInternalPath@{DialogInternalPath}!evaluateDefaultWidth@{evaluateDefaultWidth}}
+\index{evaluateDefaultWidth@{evaluateDefaultWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{evaluateDefaultWidth}{evaluateDefaultWidth}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::evaluate\+Default\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_aab8941379855a8ca02b1701d46227bf6}\label{classDialogInternalPath_aab8941379855a8ca02b1701d46227bf6}} 
+\index{DialogInternalPath@{DialogInternalPath}!expandWidthAfterFormulaTextEdit@{expandWidthAfterFormulaTextEdit}}
+\index{expandWidthAfterFormulaTextEdit@{expandWidthAfterFormulaTextEdit}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{expandWidthAfterFormulaTextEdit}{expandWidthAfterFormulaTextEdit}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::expand\+Width\+After\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_af8c8377b6a589375edf503501eb9e7f4}\label{classDialogInternalPath_af8c8377b6a589375edf503501eb9e7f4}} 
+\index{DialogInternalPath@{DialogInternalPath}!expandWidthBeforeFormulaTextEdit@{expandWidthBeforeFormulaTextEdit}}
+\index{expandWidthBeforeFormulaTextEdit@{expandWidthBeforeFormulaTextEdit}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{expandWidthBeforeFormulaTextEdit}{expandWidthBeforeFormulaTextEdit}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::expand\+Width\+Before\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_acbf03e6e27902431941bdf67a51d78cd}\label{classDialogInternalPath_acbf03e6e27902431941bdf67a51d78cd}} 
+\index{DialogInternalPath@{DialogInternalPath}!expandWidthFormulaTextEdit@{expandWidthFormulaTextEdit}}
+\index{expandWidthFormulaTextEdit@{expandWidthFormulaTextEdit}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{expandWidthFormulaTextEdit}{expandWidthFormulaTextEdit}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::expand\+Width\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_ad6e8c467bb852b3bbc81dff7e3b2ca87}\label{classDialogInternalPath_ad6e8c467bb852b3bbc81dff7e3b2ca87}} 
+\index{DialogInternalPath@{DialogInternalPath}!getItemById@{getItemById}}
+\index{getItemById@{getItemById}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{getItemById()}{getItemById()}}
+{\footnotesize\ttfamily QList\+Widget\+Item $\ast$ Dialog\+Internal\+Path\+::get\+Item\+By\+Id (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_af4c83a9c7326ef31bb3d8692c63e17d2}\label{classDialogInternalPath_af4c83a9c7326ef31bb3d8692c63e17d2}} 
+\index{DialogInternalPath@{DialogInternalPath}!GetLastId@{GetLastId}}
+\index{GetLastId@{GetLastId}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{GetLastId()}{GetLastId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Internal\+Path\+::\+Get\+Last\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_abd849854b9f42928818ca722d2c7457f}\label{classDialogInternalPath_abd849854b9f42928818ca722d2c7457f}} 
+\index{DialogInternalPath@{DialogInternalPath}!GetPenType@{GetPenType}}
+\index{GetPenType@{GetPenType}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{GetPenType()}{GetPenType()}}
+{\footnotesize\ttfamily Qt\+::\+Pen\+Style Dialog\+Internal\+Path\+::\+Get\+Pen\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a5704a9c83aa4a98f83b7315a9a07904c}\label{classDialogInternalPath_a5704a9c83aa4a98f83b7315a9a07904c}} 
+\index{DialogInternalPath@{DialogInternalPath}!GetPieceId@{GetPieceId}}
+\index{GetPieceId@{GetPieceId}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{GetPieceId()}{GetPieceId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Internal\+Path\+::\+Get\+Piece\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogInternalPath_aa61656361cd2eccb0a172dfd353a93f9}\label{classDialogInternalPath_aa61656361cd2eccb0a172dfd353a93f9}} 
+\index{DialogInternalPath@{DialogInternalPath}!GetPiecePath@{GetPiecePath}}
+\index{GetPiecePath@{GetPiecePath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{GetPiecePath()}{GetPiecePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} Dialog\+Internal\+Path\+::\+Get\+Piece\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogInternalPath_af8b06926546a0c617ef770b61967d4f8}\label{classDialogInternalPath_af8b06926546a0c617ef770b61967d4f8}} 
+\index{DialogInternalPath@{DialogInternalPath}!getSeamAllowanceWidthFormula@{getSeamAllowanceWidthFormula}}
+\index{getSeamAllowanceWidthFormula@{getSeamAllowanceWidthFormula}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{getSeamAllowanceWidthFormula()}{getSeamAllowanceWidthFormula()}}
+{\footnotesize\ttfamily QString Dialog\+Internal\+Path\+::get\+Seam\+Allowance\+Width\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogInternalPath_aeac7be333c5c1a2d5e35e7a63ddcd1ad}\label{classDialogInternalPath_aeac7be333c5c1a2d5e35e7a63ddcd1ad}} 
+\index{DialogInternalPath@{DialogInternalPath}!getSeamAllowanceWidthFormulaAfter@{getSeamAllowanceWidthFormulaAfter}}
+\index{getSeamAllowanceWidthFormulaAfter@{getSeamAllowanceWidthFormulaAfter}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{getSeamAllowanceWidthFormulaAfter()}{getSeamAllowanceWidthFormulaAfter()}}
+{\footnotesize\ttfamily QString Dialog\+Internal\+Path\+::get\+Seam\+Allowance\+Width\+Formula\+After (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a9b9c394c8d173fe1cacc0be1ba4a6a77}\label{classDialogInternalPath_a9b9c394c8d173fe1cacc0be1ba4a6a77}} 
+\index{DialogInternalPath@{DialogInternalPath}!getSeamAllowanceWidthFormulaBefore@{getSeamAllowanceWidthFormulaBefore}}
+\index{getSeamAllowanceWidthFormulaBefore@{getSeamAllowanceWidthFormulaBefore}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{getSeamAllowanceWidthFormulaBefore()}{getSeamAllowanceWidthFormulaBefore()}}
+{\footnotesize\ttfamily QString Dialog\+Internal\+Path\+::get\+Seam\+Allowance\+Width\+Formula\+Before (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_adf41f41775c58d2e829082dbc43ade5b}\label{classDialogInternalPath_adf41f41775c58d2e829082dbc43ade5b}} 
+\index{DialogInternalPath@{DialogInternalPath}!GetType@{GetType}}
+\index{GetType@{GetType}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} Dialog\+Internal\+Path\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a20cd4d978cafdb9137ad3af694100efe}\label{classDialogInternalPath_a20cd4d978cafdb9137ad3af694100efe}} 
+\index{DialogInternalPath@{DialogInternalPath}!initializeNodesList@{initializeNodesList}}
+\index{initializeNodesList@{initializeNodesList}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{initializeNodesList()}{initializeNodesList()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::initialize\+Nodes\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a1a37200e8e3a4c7e50aceb17992744bc}\label{classDialogInternalPath_a1a37200e8e3a4c7e50aceb17992744bc}} 
+\index{DialogInternalPath@{DialogInternalPath}!initializeNotchesList@{initializeNotchesList}}
+\index{initializeNotchesList@{initializeNotchesList}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{initializeNotchesList()}{initializeNotchesList()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::initialize\+Notches\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a4ac09186a7862b9a6476bf99982bb663}\label{classDialogInternalPath_a4ac09186a7862b9a6476bf99982bb663}} 
+\index{DialogInternalPath@{DialogInternalPath}!InitNotchesTab@{InitNotchesTab}}
+\index{InitNotchesTab@{InitNotchesTab}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{InitNotchesTab()}{InitNotchesTab()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Init\+Notches\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_ab04b7ade6ef30ea70ff2d1d937706d50}\label{classDialogInternalPath_ab04b7ade6ef30ea70ff2d1d937706d50}} 
+\index{DialogInternalPath@{DialogInternalPath}!InitPathTab@{InitPathTab}}
+\index{InitPathTab@{InitPathTab}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{InitPathTab()}{InitPathTab()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Init\+Path\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_aeff86f67f0130416fe227a217448e520}\label{classDialogInternalPath_aeff86f67f0130416fe227a217448e520}} 
+\index{DialogInternalPath@{DialogInternalPath}!InitPathTypes@{InitPathTypes}}
+\index{InitPathTypes@{InitPathTypes}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{InitPathTypes()}{InitPathTypes()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Init\+Path\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a385a2a0be3b834b2866de9071422bb88}\label{classDialogInternalPath_a385a2a0be3b834b2866de9071422bb88}} 
+\index{DialogInternalPath@{DialogInternalPath}!InitSeamAllowanceTab@{InitSeamAllowanceTab}}
+\index{InitSeamAllowanceTab@{InitSeamAllowanceTab}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{InitSeamAllowanceTab()}{InitSeamAllowanceTab()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Init\+Seam\+Allowance\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a0daa98fd39caf25ae19ebd31e3cc04d5}\label{classDialogInternalPath_a0daa98fd39caf25ae19ebd31e3cc04d5}} 
+\index{DialogInternalPath@{DialogInternalPath}!IsCutPath@{IsCutPath}}
+\index{IsCutPath@{IsCutPath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{IsCutPath()}{IsCutPath()}}
+{\footnotesize\ttfamily bool Dialog\+Internal\+Path\+::\+Is\+Cut\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a5e90934d638077ffaae5a684bf8453bc}\label{classDialogInternalPath_a5e90934d638077ffaae5a684bf8453bc}} 
+\index{DialogInternalPath@{DialogInternalPath}!ListChanged@{ListChanged}}
+\index{ListChanged@{ListChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ListChanged}{ListChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+List\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a799ebc1534b287ea9481079cc73c9309}\label{classDialogInternalPath_a799ebc1534b287ea9481079cc73c9309}} 
+\index{DialogInternalPath@{DialogInternalPath}!NameChanged@{NameChanged}}
+\index{NameChanged@{NameChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{NameChanged}{NameChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Name\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a8b36c4dbb3ea39a77a06838caf4231fd}\label{classDialogInternalPath_a8b36c4dbb3ea39a77a06838caf4231fd}} 
+\index{DialogInternalPath@{DialogInternalPath}!NewItem@{NewItem}}
+\index{NewItem@{NewItem}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{NewItem()}{NewItem()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+New\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_aa5a36fdde18c453880fc2aaaf9638b12}\label{classDialogInternalPath_aa5a36fdde18c453880fc2aaaf9638b12}} 
+\index{DialogInternalPath@{DialogInternalPath}!nodeAngleChanged@{nodeAngleChanged}}
+\index{nodeAngleChanged@{nodeAngleChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{nodeAngleChanged()}{nodeAngleChanged()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::node\+Angle\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a6a10c1d6a41bef4b6e46dbbd315af695}\label{classDialogInternalPath_a6a10c1d6a41bef4b6e46dbbd315af695}} 
+\index{DialogInternalPath@{DialogInternalPath}!nodeChanged@{nodeChanged}}
+\index{nodeChanged@{nodeChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{nodeChanged}{nodeChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::node\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a72781f136d102e5a767ab8bc112bed4f}\label{classDialogInternalPath_a72781f136d102e5a767ab8bc112bed4f}} 
+\index{DialogInternalPath@{DialogInternalPath}!notchChanged@{notchChanged}}
+\index{notchChanged@{notchChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{notchChanged}{notchChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::notch\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a23a24c6e7c1bd85dd1cae9ca33bfd6f8}\label{classDialogInternalPath_a23a24c6e7c1bd85dd1cae9ca33bfd6f8}} 
+\index{DialogInternalPath@{DialogInternalPath}!notchSubTypeChanged@{notchSubTypeChanged}}
+\index{notchSubTypeChanged@{notchSubTypeChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{notchSubTypeChanged}{notchSubTypeChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::notch\+Sub\+Type\+Changed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a8c5a93ccb021ee95e40029ec6802e15a}\label{classDialogInternalPath_a8c5a93ccb021ee95e40029ec6802e15a}} 
+\index{DialogInternalPath@{DialogInternalPath}!notchTypeChanged@{notchTypeChanged}}
+\index{notchTypeChanged@{notchTypeChanged}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{notchTypeChanged}{notchTypeChanged}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::notch\+Type\+Changed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_ae6d6c8e519750d56de755bccf1e9c410}\label{classDialogInternalPath_ae6d6c8e519750d56de755bccf1e9c410}} 
+\index{DialogInternalPath@{DialogInternalPath}!PathIsValid@{PathIsValid}}
+\index{PathIsValid@{PathIsValid}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{PathIsValid()}{PathIsValid()}}
+{\footnotesize\ttfamily bool Dialog\+Internal\+Path\+::\+Path\+Is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a82282466eafd372e3aa1c1ff5ebca4e0}\label{classDialogInternalPath_a82282466eafd372e3aa1c1ff5ebca4e0}} 
+\index{DialogInternalPath@{DialogInternalPath}!setCurrentAfterSeamAllowance@{setCurrentAfterSeamAllowance}}
+\index{setCurrentAfterSeamAllowance@{setCurrentAfterSeamAllowance}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{setCurrentAfterSeamAllowance()}{setCurrentAfterSeamAllowance()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::set\+Current\+After\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a3eb0080eea1a7ad304bd0e066fe5eb62}\label{classDialogInternalPath_a3eb0080eea1a7ad304bd0e066fe5eb62}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetCurrentSABefore@{SetCurrentSABefore}}
+\index{SetCurrentSABefore@{SetCurrentSABefore}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetCurrentSABefore()}{SetCurrentSABefore()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Current\+SABefore (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a9689074a1ef31c9933069204c4c3d725}\label{classDialogInternalPath_a9689074a1ef31c9933069204c4c3d725}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetCutPath@{SetCutPath}}
+\index{SetCutPath@{SetCutPath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetCutPath()}{SetCutPath()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Cut\+Path (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a19e4502f8aae71ff6b4980bb93b937e9}\label{classDialogInternalPath_a19e4502f8aae71ff6b4980bb93b937e9}} 
+\index{DialogInternalPath@{DialogInternalPath}!setMoveExclusions@{setMoveExclusions}}
+\index{setMoveExclusions@{setMoveExclusions}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{setMoveExclusions()}{setMoveExclusions()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::set\+Move\+Exclusions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_af58ae08a65335708dcda4e83ab6b9987}\label{classDialogInternalPath_af58ae08a65335708dcda4e83ab6b9987}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetPenType@{SetPenType}}
+\index{SetPenType@{SetPenType}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetPenType()}{SetPenType()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Pen\+Type (\begin{DoxyParamCaption}\item[{const Qt\+::\+Pen\+Style \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_ae902053a8d11214351105b1b626014db}\label{classDialogInternalPath_ae902053a8d11214351105b1b626014db}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetPieceId@{SetPieceId}}
+\index{SetPieceId@{SetPieceId}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetPieceId()}{SetPieceId()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Piece\+Id (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogInternalPath_a002d12fa006ccc4910415126b70e0f76}\label{classDialogInternalPath_a002d12fa006ccc4910415126b70e0f76}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetPiecePath@{SetPiecePath}}
+\index{SetPiecePath@{SetPiecePath}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetPiecePath()}{SetPiecePath()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Piece\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogInternalPath_afc1ab0a65ee6f4bd6690890942d36c03}\label{classDialogInternalPath_afc1ab0a65ee6f4bd6690890942d36c03}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetPiecesList@{SetPiecesList}}
+\index{SetPiecesList@{SetPiecesList}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetPiecesList()}{SetPiecesList()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Pieces\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_ae8a522bc8cd5063cf17cb29d2c14e453}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogInternalPath_a94ae60c341fe4e2d434273c5d443e070}\label{classDialogInternalPath_a94ae60c341fe4e2d434273c5d443e070}} 
+\index{DialogInternalPath@{DialogInternalPath}!setSeamAllowanceWidthFormula@{setSeamAllowanceWidthFormula}}
+\index{setSeamAllowanceWidthFormula@{setSeamAllowanceWidthFormula}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{setSeamAllowanceWidthFormula()}{setSeamAllowanceWidthFormula()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::set\+Seam\+Allowance\+Width\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogInternalPath_aa33e5787aa4c8d59769b215985040a6d}\label{classDialogInternalPath_aa33e5787aa4c8d59769b215985040a6d}} 
+\index{DialogInternalPath@{DialogInternalPath}!SetType@{SetType}}
+\index{SetType@{SetType}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Set\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_ab52d8375d7b900c4dec8bed2961debbf}\label{classDialogInternalPath_ab52d8375d7b900c4dec8bed2961debbf}} 
+\index{DialogInternalPath@{DialogInternalPath}!ShowContextMenu@{ShowContextMenu}}
+\index{ShowContextMenu@{ShowContextMenu}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ShowContextMenu}{ShowContextMenu}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Show\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a2953e4b9f3a308e948c52890376673ca}\label{classDialogInternalPath_a2953e4b9f3a308e948c52890376673ca}} 
+\index{DialogInternalPath@{DialogInternalPath}!ShowDialog@{ShowDialog}}
+\index{ShowDialog@{ShowDialog}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ShowDialog}{ShowDialog}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Show\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{click }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a8cadbff0e7d5daba4d7b6486a84e20d9}\label{classDialogInternalPath_a8cadbff0e7d5daba4d7b6486a84e20d9}} 
+\index{DialogInternalPath@{DialogInternalPath}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogInternalPath_ab3692c9046f803d78f49b6d8069c8e34}\label{classDialogInternalPath_ab3692c9046f803d78f49b6d8069c8e34}} 
+\index{DialogInternalPath@{DialogInternalPath}!updateNodeAfterSeamAllowance@{updateNodeAfterSeamAllowance}}
+\index{updateNodeAfterSeamAllowance@{updateNodeAfterSeamAllowance}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{updateNodeAfterSeamAllowance()}{updateNodeAfterSeamAllowance()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::update\+Node\+After\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a76105b1f55c7139565f01de23846c162}\label{classDialogInternalPath_a76105b1f55c7139565f01de23846c162}} 
+\index{DialogInternalPath@{DialogInternalPath}!updateNodeBeforeSeamAllowance@{updateNodeBeforeSeamAllowance}}
+\index{updateNodeBeforeSeamAllowance@{updateNodeBeforeSeamAllowance}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{updateNodeBeforeSeamAllowance()}{updateNodeBeforeSeamAllowance()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::update\+Node\+Before\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a0d679c89cf4648b51f56dd2f9786e493}\label{classDialogInternalPath_a0d679c89cf4648b51f56dd2f9786e493}} 
+\index{DialogInternalPath@{DialogInternalPath}!ValidObjects@{ValidObjects}}
+\index{ValidObjects@{ValidObjects}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ValidObjects()}{ValidObjects()}}
+{\footnotesize\ttfamily void Dialog\+Internal\+Path\+::\+Valid\+Objects (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogInternalPath_a59a788b5cfe68ae0ee50d0edeeb5c8ec}\label{classDialogInternalPath_a59a788b5cfe68ae0ee50d0edeeb5c8ec}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_afterWidthFormula@{m\_afterWidthFormula}}
+\index{m\_afterWidthFormula@{m\_afterWidthFormula}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_afterWidthFormula}{m\_afterWidthFormula}}
+{\footnotesize\ttfamily int Dialog\+Internal\+Path\+::m\+\_\+after\+Width\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a688fcf297eadd46af1a35cb0ace99659}\label{classDialogInternalPath_a688fcf297eadd46af1a35cb0ace99659}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_beforeWidthFormula@{m\_beforeWidthFormula}}
+\index{m\_beforeWidthFormula@{m\_beforeWidthFormula}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_beforeWidthFormula}{m\_beforeWidthFormula}}
+{\footnotesize\ttfamily int Dialog\+Internal\+Path\+::m\+\_\+before\+Width\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a65887981ddfe597ee886aa97bd2080dc}\label{classDialogInternalPath_a65887981ddfe597ee886aa97bd2080dc}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_saWidth@{m\_saWidth}}
+\index{m\_saWidth@{m\_saWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_saWidth}{m\_saWidth}}
+{\footnotesize\ttfamily qreal Dialog\+Internal\+Path\+::m\+\_\+sa\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a826873a438fee6b956a2f1a860f69a12}\label{classDialogInternalPath_a826873a438fee6b956a2f1a860f69a12}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_showMode@{m\_showMode}}
+\index{m\_showMode@{m\_showMode}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_showMode}{m\_showMode}}
+{\footnotesize\ttfamily bool Dialog\+Internal\+Path\+::m\+\_\+show\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a261ed0065f1e97e6a4067618885329ed}\label{classDialogInternalPath_a261ed0065f1e97e6a4067618885329ed}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_timerWidth@{m\_timerWidth}}
+\index{m\_timerWidth@{m\_timerWidth}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_timerWidth}{m\_timerWidth}}
+{\footnotesize\ttfamily QTimer$\ast$ Dialog\+Internal\+Path\+::m\+\_\+timer\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a93c638971538e644c1c8a3ca9c364e00}\label{classDialogInternalPath_a93c638971538e644c1c8a3ca9c364e00}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_timerWidthAfter@{m\_timerWidthAfter}}
+\index{m\_timerWidthAfter@{m\_timerWidthAfter}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_timerWidthAfter}{m\_timerWidthAfter}}
+{\footnotesize\ttfamily QTimer$\ast$ Dialog\+Internal\+Path\+::m\+\_\+timer\+Width\+After\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a88a3e197051abdf0a59ff0baa66a6f00}\label{classDialogInternalPath_a88a3e197051abdf0a59ff0baa66a6f00}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_timerWidthBefore@{m\_timerWidthBefore}}
+\index{m\_timerWidthBefore@{m\_timerWidthBefore}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_timerWidthBefore}{m\_timerWidthBefore}}
+{\footnotesize\ttfamily QTimer$\ast$ Dialog\+Internal\+Path\+::m\+\_\+timer\+Width\+Before\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a688e2a892be19292da40fbcfa81860a7}\label{classDialogInternalPath_a688e2a892be19292da40fbcfa81860a7}} 
+\index{DialogInternalPath@{DialogInternalPath}!m\_widthFormula@{m\_widthFormula}}
+\index{m\_widthFormula@{m\_widthFormula}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{m\_widthFormula}{m\_widthFormula}}
+{\footnotesize\ttfamily int Dialog\+Internal\+Path\+::m\+\_\+width\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogInternalPath_a6dd21edfb743b6c11ddf619b8dde96a3}\label{classDialogInternalPath_a6dd21edfb743b6c11ddf619b8dde96a3}} 
+\index{DialogInternalPath@{DialogInternalPath}!ui@{ui}}
+\index{ui@{ui}!DialogInternalPath@{DialogInternalPath}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Internal\+Path$\ast$ Dialog\+Internal\+Path\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/piece/\mbox{\hyperlink{dialoginternalpath_8h}{dialoginternalpath.\+h}}\item 
+src/libs/vtools/dialogs/tools/piece/\mbox{\hyperlink{dialoginternalpath_8cpp}{dialoginternalpath.\+cpp}}\end{DoxyCompactItemize}

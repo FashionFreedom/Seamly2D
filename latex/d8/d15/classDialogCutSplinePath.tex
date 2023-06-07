@@ -1,0 +1,280 @@
+\hypertarget{classDialogCutSplinePath}{}\doxysection{Dialog\+Cut\+Spline\+Path Class Reference}
+\label{classDialogCutSplinePath}\index{DialogCutSplinePath@{DialogCutSplinePath}}
+
+
+The \mbox{\hyperlink{classDialogCutSplinePath}{Dialog\+Cut\+Spline\+Path}} class dialog for Tool\+Cut\+Spline\+Path.  
+
+
+
+
+{\ttfamily \#include $<$dialogcutsplinepath.\+h$>$}
+
+Inheritance diagram for Dialog\+Cut\+Spline\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d8/d15/classDialogCutSplinePath}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogCutSplinePath_a91f3ec388bcd004f2aab802b730c9885}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogCutSplinePath_aecc8fe1224800e6e3a2a5ed30c3cd1db}{Deploy\+Formula\+Text\+Edit}} ()
+\begin{DoxyCompactList}\small\item\em Deploy\+Formula\+Text\+Edit grow or shrink formula input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogCutSplinePath_a2faa33e7661d3a27ebd621424229920a}{FXLength}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogCutSplinePath_ac8931b60934ab7befe95003e475b265d}{Dialog\+Cut\+Spline\+Path}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDialogCutSplinePath}{Dialog\+Cut\+Spline\+Path}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDialogCutSplinePath_a07ce429d2e263b425a90140da76ae872}{$\sim$\+Dialog\+Cut\+Spline\+Path}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classDialogCutSplinePath_a9b122c75ef04efb2d567382bb57cf921}{Set\+Point\+Name}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Point\+Name set name of point. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogCutSplinePath_a81ca1f9963365856ca487cc202fa0bb5}{Get\+Formula}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Formula return string of formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogCutSplinePath_a0087850e97d312402989aea41210a543}{Set\+Formula}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Formula set string of formula. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogCutSplinePath_a2b9172b32b4b84bdb4adfbe4b341e5c5}{get\+Spline\+Path\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Spline\+Id return id base point of line \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogCutSplinePath_a59d3c21cbc9a147830ff6a286e1bde8d}{set\+Spline\+Path\+Id}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em set\+Spline\+Id set id spline \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogCutSplinePath_a8ca021a07b04bc573579262e38951847}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogCutSplinePath_a966087640fd591ba36631a7f60f174b8}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogCutSplinePath_a94f7338e137a5fd9238a9d43864ccd3e}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Cut\+Spline\+Path $\ast$ \mbox{\hyperlink{classDialogCutSplinePath_ad4a81fe856385a30b417cb2481aa74d0}{ui}}
+\begin{DoxyCompactList}\small\item\em ui keeps information about user interface \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogCutSplinePath_a49dbae76ffc69bf136ca327d9c036844}{formula}}
+\begin{DoxyCompactList}\small\item\em formula string with formula \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDialogCutSplinePath_a31bb0aed6521e9d171134412c6ab4a05}{formula\+Base\+Height}}
+\begin{DoxyCompactList}\small\item\em formula\+Base\+Height base height defined by dialogui \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDialogCutSplinePath}{Dialog\+Cut\+Spline\+Path}} class dialog for Tool\+Cut\+Spline\+Path. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogCutSplinePath_ac8931b60934ab7befe95003e475b265d}\label{classDialogCutSplinePath_ac8931b60934ab7befe95003e475b265d}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!DialogCutSplinePath@{DialogCutSplinePath}}
+\index{DialogCutSplinePath@{DialogCutSplinePath}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{DialogCutSplinePath()}{DialogCutSplinePath()}}
+{\footnotesize\ttfamily Dialog\+Cut\+Spline\+Path\+::\+Dialog\+Cut\+Spline\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDialogCutSplinePath}{Dialog\+Cut\+Spline\+Path}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogCutSplinePath_a07ce429d2e263b425a90140da76ae872}\label{classDialogCutSplinePath_a07ce429d2e263b425a90140da76ae872}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!````~DialogCutSplinePath@{$\sim$DialogCutSplinePath}}
+\index{````~DialogCutSplinePath@{$\sim$DialogCutSplinePath}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogCutSplinePath()}{~DialogCutSplinePath()}}
+{\footnotesize\ttfamily Dialog\+Cut\+Spline\+Path\+::$\sim$\+Dialog\+Cut\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogCutSplinePath_a91f3ec388bcd004f2aab802b730c9885}\label{classDialogCutSplinePath_a91f3ec388bcd004f2aab802b730c9885}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of point or detail \\
+\hline
+{\em type} & type of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogCutSplinePath_a94f7338e137a5fd9238a9d43864ccd3e}\label{classDialogCutSplinePath_a94f7338e137a5fd9238a9d43864ccd3e}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogCutSplinePath_aecc8fe1224800e6e3a2a5ed30c3cd1db}\label{classDialogCutSplinePath_aecc8fe1224800e6e3a2a5ed30c3cd1db}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!DeployFormulaTextEdit@{DeployFormulaTextEdit}}
+\index{DeployFormulaTextEdit@{DeployFormulaTextEdit}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{DeployFormulaTextEdit}{DeployFormulaTextEdit}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+Deploy\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Deploy\+Formula\+Text\+Edit grow or shrink formula input. 
+
+\mbox{\Hypertarget{classDialogCutSplinePath_a2faa33e7661d3a27ebd621424229920a}\label{classDialogCutSplinePath_a2faa33e7661d3a27ebd621424229920a}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!FXLength@{FXLength}}
+\index{FXLength@{FXLength}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{FXLength}{FXLength}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+FXLength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogCutSplinePath_a81ca1f9963365856ca487cc202fa0bb5}\label{classDialogCutSplinePath_a81ca1f9963365856ca487cc202fa0bb5}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily QString Dialog\+Cut\+Spline\+Path\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Formula return string of formula. 
+
+\begin{DoxyReturn}{Returns}
+formula 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogCutSplinePath_a2b9172b32b4b84bdb4adfbe4b341e5c5}\label{classDialogCutSplinePath_a2b9172b32b4b84bdb4adfbe4b341e5c5}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!getSplinePathId@{getSplinePathId}}
+\index{getSplinePathId@{getSplinePathId}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{getSplinePathId()}{getSplinePathId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Cut\+Spline\+Path\+::get\+Spline\+Path\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Spline\+Id return id base point of line 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogCutSplinePath_a966087640fd591ba36631a7f60f174b8}\label{classDialogCutSplinePath_a966087640fd591ba36631a7f60f174b8}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogCutSplinePath_a0087850e97d312402989aea41210a543}\label{classDialogCutSplinePath_a0087850e97d312402989aea41210a543}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Formula set string of formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & formula \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogCutSplinePath_a9b122c75ef04efb2d567382bb57cf921}\label{classDialogCutSplinePath_a9b122c75ef04efb2d567382bb57cf921}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!SetPointName@{SetPointName}}
+\index{SetPointName@{SetPointName}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{SetPointName()}{SetPointName()}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+Set\+Point\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Point\+Name set name of point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogCutSplinePath_a59d3c21cbc9a147830ff6a286e1bde8d}\label{classDialogCutSplinePath_a59d3c21cbc9a147830ff6a286e1bde8d}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!setSplinePathId@{setSplinePathId}}
+\index{setSplinePathId@{setSplinePathId}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{setSplinePathId()}{setSplinePathId()}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::set\+Spline\+Path\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Spline\+Id set id spline 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogCutSplinePath_a8ca021a07b04bc573579262e38951847}\label{classDialogCutSplinePath_a8ca021a07b04bc573579262e38951847}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Dialog\+Cut\+Spline\+Path\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogCutSplinePath_a49dbae76ffc69bf136ca327d9c036844}\label{classDialogCutSplinePath_a49dbae76ffc69bf136ca327d9c036844}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!formula@{formula}}
+\index{formula@{formula}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{formula}{formula}}
+{\footnotesize\ttfamily QString Dialog\+Cut\+Spline\+Path\+::formula\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+formula string with formula 
+
+\mbox{\Hypertarget{classDialogCutSplinePath_a31bb0aed6521e9d171134412c6ab4a05}\label{classDialogCutSplinePath_a31bb0aed6521e9d171134412c6ab4a05}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!formulaBaseHeight@{formulaBaseHeight}}
+\index{formulaBaseHeight@{formulaBaseHeight}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeight}{formulaBaseHeight}}
+{\footnotesize\ttfamily int Dialog\+Cut\+Spline\+Path\+::formula\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+formula\+Base\+Height base height defined by dialogui 
+
+\mbox{\Hypertarget{classDialogCutSplinePath_ad4a81fe856385a30b417cb2481aa74d0}\label{classDialogCutSplinePath_ad4a81fe856385a30b417cb2481aa74d0}} 
+\index{DialogCutSplinePath@{DialogCutSplinePath}!ui@{ui}}
+\index{ui@{ui}!DialogCutSplinePath@{DialogCutSplinePath}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Cut\+Spline\+Path$\ast$ Dialog\+Cut\+Spline\+Path\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ui keeps information about user interface 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogcutsplinepath_8h}{dialogcutsplinepath.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogcutsplinepath_8cpp}{dialogcutsplinepath.\+cpp}}\end{DoxyCompactItemize}

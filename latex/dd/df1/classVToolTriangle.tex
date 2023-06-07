@@ -1,0 +1,484 @@
+\hypertarget{classVToolTriangle}{}\doxysection{VTool\+Triangle Class Reference}
+\label{classVToolTriangle}\index{VToolTriangle@{VToolTriangle}}
+
+
+The \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} class for tool that find point intersection two foots right triangle (triangle with 90 degree).  
+
+
+
+
+{\ttfamily \#include $<$vtooltriangle.\+h$>$}
+
+Inheritance diagram for VTool\+Triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{dd/df1/classVToolTriangle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolTriangle_aecf6943a8acb6b4af106c50afce2b58da77ee7a63f0c5905f8041a2a0f43ef3cd}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Triangle)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_aad780f1a0d6d37b962148d322fdbe78f}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolTriangle_a8831309638105834dd2d87d87c68ee56}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolTriangle_ae8bc206fab00cf66c8951e5b57a66428}{Axis\+P1\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classVToolTriangle_a5102909bdbc42040046da8b781c0d9ec}{Axis\+P2\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classVToolTriangle_abffa067276ba9dd6d1f89aff2c629abb}{First\+Point\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classVToolTriangle_a43aba13cc5f1c86fc12e84f76456bc9a}{Second\+Point\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_ad929f4ba203c26b8102fb235ec018d20}{Get\+Axis\+P1\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolTriangle_a18abceb4169e5203ba9289dadf414fe6}{Set\+Axis\+P1\+Id}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_aa23ec6fd93c1bef4730c4ea55c038147}{Get\+Axis\+P2\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolTriangle_ad70bd6e02046899d3ca5cf45fe353cff}{Set\+Axis\+P2\+Id}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_ada681c31b6e1d6f52f97b485164feb60}{Get\+First\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolTriangle_adee55fd7d228ff5cf75f42a018d3f638}{Set\+First\+Point\+Id}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_a12d14c00aab2dc98e9a2a5bdaad15cf7}{Get\+Second\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolTriangle_a5e606e8f7176431da1d9b13ca0aec2f6}{Set\+Second\+Point\+Id}} (const quint32 \&value)
+\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_adc01a0bc9935cb1d2abfdfcc182d0748}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} $\ast$ \mbox{\hyperlink{classVToolTriangle_a62ecbbb286d326b152853aff88a5fe33}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Create help create tool from GUI. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} $\ast$ \mbox{\hyperlink{classVToolTriangle_a56597a8d058472f1df83e6b6ea85d7bf}{Create}} (const quint32 \+\_\+id, const QString \&point\+Name, quint32 \mbox{\hyperlink{classVToolTriangle_a188d102f2869eeb312e68b43a3bcf65f}{axis\+P1\+Id}}, quint32 \mbox{\hyperlink{classVToolTriangle_a0cd0547c97090ce05530436c7621168a}{axis\+P2\+Id}}, quint32 \mbox{\hyperlink{classVToolTriangle_a584d15b2b8b5959cd1199ca5f276dd9d}{first\+Point\+Id}}, quint32 \mbox{\hyperlink{classVToolTriangle_a1fb885adb6fbdd01ceb873da4592a7ef}{second\+Point\+Id}}, qreal mx, qreal my, bool show\+Point\+Name, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{classVToolTriangle_aa10c246fe48122a04ac53f3a730011a6}{Find\+Point}} (const QPointF \&axis\+P1, const QPointF \&axis\+P2, const QPointF \&first\+Point, const QPointF \&second\+Point)
+\begin{DoxyCompactList}\small\item\em Find\+Point find point intersection two foots right triangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolTriangle_a377f632b36c96d0a912aa8ebe81ecca1}{Tool\+Type}} = QString\+Literal(\char`\"{}triangle\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_a2f80cbc340774fd5f7ec2d58a5193d73}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em context\+Menu\+Event handle context menu events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_ae6c2024644fa89009416642df9714cb8}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_a305ea03ee587efbee018df963d6ee29e}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_a0130f55bbb0b46acb7d43aa506aa794b}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_ac42f7751c08c6e64e4b81d582c5745b2}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolTriangle_a3442db0c43c41ea3ff069ec381814076}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolTriangle_adae2d97e315c51ee082febd5f86cb069}{VTool\+Triangle}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const quint32 \&\mbox{\hyperlink{classVToolTriangle_a188d102f2869eeb312e68b43a3bcf65f}{axis\+P1\+Id}}, const quint32 \&\mbox{\hyperlink{classVToolTriangle_a0cd0547c97090ce05530436c7621168a}{axis\+P2\+Id}}, const quint32 \&\mbox{\hyperlink{classVToolTriangle_a584d15b2b8b5959cd1199ca5f276dd9d}{first\+Point\+Id}}, const quint32 \&\mbox{\hyperlink{classVToolTriangle_a1fb885adb6fbdd01ceb873da4592a7ef}{second\+Point\+Id}}, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_a188d102f2869eeb312e68b43a3bcf65f}{axis\+P1\+Id}}
+\begin{DoxyCompactList}\small\item\em axis\+P1\+Id id first axis point. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_a0cd0547c97090ce05530436c7621168a}{axis\+P2\+Id}}
+\begin{DoxyCompactList}\small\item\em axis\+P2\+Id id second axis point. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_a584d15b2b8b5959cd1199ca5f276dd9d}{first\+Point\+Id}}
+\begin{DoxyCompactList}\small\item\em first\+Point\+Id id first triangle point, what lies on the hypotenuse. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVToolTriangle_a1fb885adb6fbdd01ceb873da4592a7ef}{second\+Point\+Id}}
+\begin{DoxyCompactList}\small\item\em second\+Point\+Id id second triangle point, what lies on the hypotenuse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} class for tool that find point intersection two foots right triangle (triangle with 90 degree). 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolTriangle_aecf6943a8acb6b4af106c50afce2b58d}\label{classVToolTriangle_aecf6943a8acb6b4af106c50afce2b58d}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolTriangle@{VToolTriangle}}\index{VToolTriangle@{VToolTriangle}!Type@{Type}}}\mbox{\Hypertarget{classVToolTriangle_aecf6943a8acb6b4af106c50afce2b58da77ee7a63f0c5905f8041a2a0f43ef3cd}\label{classVToolTriangle_aecf6943a8acb6b4af106c50afce2b58da77ee7a63f0c5905f8041a2a0f43ef3cd}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolTriangle_adae2d97e315c51ee082febd5f86cb069}\label{classVToolTriangle_adae2d97e315c51ee082febd5f86cb069}} 
+\index{VToolTriangle@{VToolTriangle}!VToolTriangle@{VToolTriangle}}
+\index{VToolTriangle@{VToolTriangle}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{VToolTriangle()}{VToolTriangle()}}
+{\footnotesize\ttfamily VTool\+Triangle\+::\+VTool\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const quint32 \&}]{axis\+P1\+Id,  }\item[{const quint32 \&}]{axis\+P2\+Id,  }\item[{const quint32 \&}]{first\+Point\+Id,  }\item[{const quint32 \&}]{second\+Point\+Id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em axis\+P1\+Id} & id first axis point. \\
+\hline
+{\em axis\+P2\+Id} & id second axis point. \\
+\hline
+{\em first\+Point\+Id} & id first triangle point, what lies on the hypotenuse. \\
+\hline
+{\em second\+Point\+Id} & id second triangle point, what lies on the hypotenuse. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolTriangle_ae8bc206fab00cf66c8951e5b57a66428}\label{classVToolTriangle_ae8bc206fab00cf66c8951e5b57a66428}} 
+\index{VToolTriangle@{VToolTriangle}!AxisP1Name@{AxisP1Name}}
+\index{AxisP1Name@{AxisP1Name}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{AxisP1Name()}{AxisP1Name()}}
+{\footnotesize\ttfamily QString VTool\+Triangle\+::\+Axis\+P1\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_a5102909bdbc42040046da8b781c0d9ec}\label{classVToolTriangle_a5102909bdbc42040046da8b781c0d9ec}} 
+\index{VToolTriangle@{VToolTriangle}!AxisP2Name@{AxisP2Name}}
+\index{AxisP2Name@{AxisP2Name}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{AxisP2Name()}{AxisP2Name()}}
+{\footnotesize\ttfamily QString VTool\+Triangle\+::\+Axis\+P2\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_a56597a8d058472f1df83e6b6ea85d7bf}\label{classVToolTriangle_a56597a8d058472f1df83e6b6ea85d7bf}} 
+\index{VToolTriangle@{VToolTriangle}!Create@{Create}}
+\index{Create@{Create}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} $\ast$ VTool\+Triangle\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const QString \&}]{point\+Name,  }\item[{quint32}]{axis\+P1\+Id,  }\item[{quint32}]{axis\+P2\+Id,  }\item[{quint32}]{first\+Point\+Id,  }\item[{quint32}]{second\+Point\+Id,  }\item[{qreal}]{mx,  }\item[{qreal}]{my,  }\item[{bool}]{show\+Point\+Name,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & tool id, 0 if tool doesn\textquotesingle{}t exist yet. \\
+\hline
+{\em point\+Name} & point name. \\
+\hline
+{\em axis\+P1\+Id} & id first axis point. \\
+\hline
+{\em axis\+P2\+Id} & id second axis point. \\
+\hline
+{\em first\+Point\+Id} & id first triangle point, what lies on the hypotenuse. \\
+\hline
+{\em second\+Point\+Id} & id second triangle point, what lies on the hypotenuse. \\
+\hline
+{\em mx} & label bias x axis. \\
+\hline
+{\em my} & label bias y axis. \\
+\hline
+{\em show\+Point\+Name} & show/hide point name text. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the created tool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolTriangle_a62ecbbb286d326b152853aff88a5fe33}\label{classVToolTriangle_a62ecbbb286d326b152853aff88a5fe33}} 
+\index{VToolTriangle@{VToolTriangle}!Create@{Create}}
+\index{Create@{Create}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolTriangle}{VTool\+Triangle}} $\ast$ VTool\+Triangle\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool from GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dialog} & dialog. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the created tool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolTriangle_aa10c246fe48122a04ac53f3a730011a6}\label{classVToolTriangle_aa10c246fe48122a04ac53f3a730011a6}} 
+\index{VToolTriangle@{VToolTriangle}!FindPoint@{FindPoint}}
+\index{FindPoint@{FindPoint}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{FindPoint()}{FindPoint()}}
+{\footnotesize\ttfamily QPointF VTool\+Triangle\+::\+Find\+Point (\begin{DoxyParamCaption}\item[{const QPointF \&}]{axis\+P1,  }\item[{const QPointF \&}]{axis\+P2,  }\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find\+Point find point intersection two foots right triangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis\+P1} & first axis point. \\
+\hline
+{\em axis\+P2} & second axis point. \\
+\hline
+{\em first\+Point} & first triangle point, what lies on the hypotenuse. \\
+\hline
+{\em second\+Point} & second triangle point, what lies on the hypotenuse. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point intersection two foots right triangle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolTriangle_abffa067276ba9dd6d1f89aff2c629abb}\label{classVToolTriangle_abffa067276ba9dd6d1f89aff2c629abb}} 
+\index{VToolTriangle@{VToolTriangle}!FirstPointName@{FirstPointName}}
+\index{FirstPointName@{FirstPointName}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{FirstPointName()}{FirstPointName()}}
+{\footnotesize\ttfamily QString VTool\+Triangle\+::\+First\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_ad929f4ba203c26b8102fb235ec018d20}\label{classVToolTriangle_ad929f4ba203c26b8102fb235ec018d20}} 
+\index{VToolTriangle@{VToolTriangle}!GetAxisP1Id@{GetAxisP1Id}}
+\index{GetAxisP1Id@{GetAxisP1Id}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{GetAxisP1Id()}{GetAxisP1Id()}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::\+Get\+Axis\+P1\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_aa23ec6fd93c1bef4730c4ea55c038147}\label{classVToolTriangle_aa23ec6fd93c1bef4730c4ea55c038147}} 
+\index{VToolTriangle@{VToolTriangle}!GetAxisP2Id@{GetAxisP2Id}}
+\index{GetAxisP2Id@{GetAxisP2Id}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{GetAxisP2Id()}{GetAxisP2Id()}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::\+Get\+Axis\+P2\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_ada681c31b6e1d6f52f97b485164feb60}\label{classVToolTriangle_ada681c31b6e1d6f52f97b485164feb60}} 
+\index{VToolTriangle@{VToolTriangle}!GetFirstPointId@{GetFirstPointId}}
+\index{GetFirstPointId@{GetFirstPointId}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{GetFirstPointId()}{GetFirstPointId()}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::\+Get\+First\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_a12d14c00aab2dc98e9a2a5bdaad15cf7}\label{classVToolTriangle_a12d14c00aab2dc98e9a2a5bdaad15cf7}} 
+\index{VToolTriangle@{VToolTriangle}!GetSecondPointId@{GetSecondPointId}}
+\index{GetSecondPointId@{GetSecondPointId}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{GetSecondPointId()}{GetSecondPointId()}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::\+Get\+Second\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_ac42f7751c08c6e64e4b81d582c5745b2}\label{classVToolTriangle_ac42f7751c08c6e64e4b81d582c5745b2}} 
+\index{VToolTriangle@{VToolTriangle}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a95795603f1fa62ffacc4fb5fb8fae984}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolTriangle_ae6c2024644fa89009416642df9714cb8}\label{classVToolTriangle_ae6c2024644fa89009416642df9714cb8}} 
+\index{VToolTriangle@{VToolTriangle}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolTriangle_a305ea03ee587efbee018df963d6ee29e}\label{classVToolTriangle_a305ea03ee587efbee018df963d6ee29e}} 
+\index{VToolTriangle@{VToolTriangle}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolTriangle_a0130f55bbb0b46acb7d43aa506aa794b}\label{classVToolTriangle_a0130f55bbb0b46acb7d43aa506aa794b}} 
+\index{VToolTriangle@{VToolTriangle}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a768712ef8d8b98350d1af66ebee6e63e}{VTool\+Single\+Point}}.
+
+\mbox{\Hypertarget{classVToolTriangle_a43aba13cc5f1c86fc12e84f76456bc9a}\label{classVToolTriangle_a43aba13cc5f1c86fc12e84f76456bc9a}} 
+\index{VToolTriangle@{VToolTriangle}!SecondPointName@{SecondPointName}}
+\index{SecondPointName@{SecondPointName}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SecondPointName()}{SecondPointName()}}
+{\footnotesize\ttfamily QString VTool\+Triangle\+::\+Second\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolTriangle_a18abceb4169e5203ba9289dadf414fe6}\label{classVToolTriangle_a18abceb4169e5203ba9289dadf414fe6}} 
+\index{VToolTriangle@{VToolTriangle}!SetAxisP1Id@{SetAxisP1Id}}
+\index{SetAxisP1Id@{SetAxisP1Id}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SetAxisP1Id()}{SetAxisP1Id()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Set\+Axis\+P1\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolTriangle_ad70bd6e02046899d3ca5cf45fe353cff}\label{classVToolTriangle_ad70bd6e02046899d3ca5cf45fe353cff}} 
+\index{VToolTriangle@{VToolTriangle}!SetAxisP2Id@{SetAxisP2Id}}
+\index{SetAxisP2Id@{SetAxisP2Id}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SetAxisP2Id()}{SetAxisP2Id()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Set\+Axis\+P2\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolTriangle_aad780f1a0d6d37b962148d322fdbe78f}\label{classVToolTriangle_aad780f1a0d6d37b962148d322fdbe78f}} 
+\index{VToolTriangle@{VToolTriangle}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolTriangle_adee55fd7d228ff5cf75f42a018d3f638}\label{classVToolTriangle_adee55fd7d228ff5cf75f42a018d3f638}} 
+\index{VToolTriangle@{VToolTriangle}!SetFirstPointId@{SetFirstPointId}}
+\index{SetFirstPointId@{SetFirstPointId}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SetFirstPointId()}{SetFirstPointId()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Set\+First\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolTriangle_a5e606e8f7176431da1d9b13ca0aec2f6}\label{classVToolTriangle_a5e606e8f7176431da1d9b13ca0aec2f6}} 
+\index{VToolTriangle@{VToolTriangle}!SetSecondPointId@{SetSecondPointId}}
+\index{SetSecondPointId@{SetSecondPointId}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SetSecondPointId()}{SetSecondPointId()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Set\+Second\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolTriangle_a3442db0c43c41ea3ff069ec381814076}\label{classVToolTriangle_a3442db0c43c41ea3ff069ec381814076}} 
+\index{VToolTriangle@{VToolTriangle}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolTriangle_a2f80cbc340774fd5f7ec2d58a5193d73}\label{classVToolTriangle_a2f80cbc340774fd5f7ec2d58a5193d73}} 
+\index{VToolTriangle@{VToolTriangle}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+context\+Menu\+Event handle context menu events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolTriangle_adc01a0bc9935cb1d2abfdfcc182d0748}\label{classVToolTriangle_adc01a0bc9935cb1d2abfdfcc182d0748}} 
+\index{VToolTriangle@{VToolTriangle}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Triangle\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolTriangle_a8831309638105834dd2d87d87c68ee56}\label{classVToolTriangle_a8831309638105834dd2d87d87c68ee56}} 
+\index{VToolTriangle@{VToolTriangle}!type@{type}}
+\index{type@{type}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Triangle\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a6eccae4469cb594716c86dc5011b99eb}{VTool\+Single\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolTriangle_a188d102f2869eeb312e68b43a3bcf65f}\label{classVToolTriangle_a188d102f2869eeb312e68b43a3bcf65f}} 
+\index{VToolTriangle@{VToolTriangle}!axisP1Id@{axisP1Id}}
+\index{axisP1Id@{axisP1Id}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{axisP1Id}{axisP1Id}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::axis\+P1\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+axis\+P1\+Id id first axis point. 
+
+\mbox{\Hypertarget{classVToolTriangle_a0cd0547c97090ce05530436c7621168a}\label{classVToolTriangle_a0cd0547c97090ce05530436c7621168a}} 
+\index{VToolTriangle@{VToolTriangle}!axisP2Id@{axisP2Id}}
+\index{axisP2Id@{axisP2Id}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{axisP2Id}{axisP2Id}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::axis\+P2\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+axis\+P2\+Id id second axis point. 
+
+\mbox{\Hypertarget{classVToolTriangle_a584d15b2b8b5959cd1199ca5f276dd9d}\label{classVToolTriangle_a584d15b2b8b5959cd1199ca5f276dd9d}} 
+\index{VToolTriangle@{VToolTriangle}!firstPointId@{firstPointId}}
+\index{firstPointId@{firstPointId}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{firstPointId}{firstPointId}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::first\+Point\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+first\+Point\+Id id first triangle point, what lies on the hypotenuse. 
+
+\mbox{\Hypertarget{classVToolTriangle_a1fb885adb6fbdd01ceb873da4592a7ef}\label{classVToolTriangle_a1fb885adb6fbdd01ceb873da4592a7ef}} 
+\index{VToolTriangle@{VToolTriangle}!secondPointId@{secondPointId}}
+\index{secondPointId@{secondPointId}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{secondPointId}{secondPointId}}
+{\footnotesize\ttfamily quint32 VTool\+Triangle\+::second\+Point\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+second\+Point\+Id id second triangle point, what lies on the hypotenuse. 
+
+\mbox{\Hypertarget{classVToolTriangle_a377f632b36c96d0a912aa8ebe81ecca1}\label{classVToolTriangle_a377f632b36c96d0a912aa8ebe81ecca1}} 
+\index{VToolTriangle@{VToolTriangle}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolTriangle@{VToolTriangle}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Triangle\+::\+Tool\+Type = QString\+Literal(\char`\"{}triangle\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/\mbox{\hyperlink{vtooltriangle_8h}{vtooltriangle.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/\mbox{\hyperlink{vtooltriangle_8cpp}{vtooltriangle.\+cpp}}\end{DoxyCompactItemize}

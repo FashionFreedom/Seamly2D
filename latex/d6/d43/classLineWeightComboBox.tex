@@ -1,0 +1,141 @@
+\hypertarget{classLineWeightComboBox}{}\doxysection{Line\+Weight\+Combo\+Box Class Reference}
+\label{classLineWeightComboBox}\index{LineWeightComboBox@{LineWeightComboBox}}
+
+
+{\ttfamily \#include $<$lineweight\+\_\+combobox.\+h$>$}
+
+Inheritance diagram for Line\+Weight\+Combo\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/d43/classLineWeightComboBox}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLineWeightComboBox_af80520a1454698dfc7e08992346d6ce8}{line\+Weight\+Changed}} (const qreal \&weight)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLineWeightComboBox_a58f78002bab6d93c62bb87d8f1e2eceb}{Line\+Weight\+Combo\+Box}} (QWidget $\ast$parent=nullptr, const char $\ast$name=nullptr)
+\item 
+\mbox{\hyperlink{classLineWeightComboBox_a92325a40c993ee47e15b2c8b4b9aa759}{Line\+Weight\+Combo\+Box}} (int width, int height, QWidget $\ast$parent=nullptr, const char $\ast$name=nullptr)
+\item 
+virtual \mbox{\hyperlink{classLineWeightComboBox_a57d4914bce781901e500f389d800f2af}{$\sim$\+Line\+Weight\+Combo\+Box}} ()
+\item 
+void \mbox{\hyperlink{classLineWeightComboBox_a09116c564b8e390ddf0d9653481d9a09}{init}} ()
+\item 
+qreal \mbox{\hyperlink{classLineWeightComboBox_a957a8b8f40e0533e354170660bdcf722}{get\+Line\+Weight}} () const
+\item 
+void \mbox{\hyperlink{classLineWeightComboBox_a965e1cca884a1c38a54aaf17fedb1a53}{set\+Line\+Weight}} (const qreal \&weight)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLineWeightComboBox_a01795caa0b53608670f8b4b75a3d0f5b}{update\+Line\+Weight}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QIcon \mbox{\hyperlink{classLineWeightComboBox_a4a9d8f8c28a93ebfdffb10322ab164e8}{create\+Icon}} (const qreal \&width)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+qreal \mbox{\hyperlink{classLineWeightComboBox_a4c309705109e72def15f9848f47fa89b}{m\+\_\+current\+Weight}}
+\item 
+int \mbox{\hyperlink{classLineWeightComboBox_aef98b03ac098cefdaed6c37e0ccefe24}{m\+\_\+icon\+Width}}
+\item 
+int \mbox{\hyperlink{classLineWeightComboBox_a967f1ca9926dc4be3f2d7094d641849d}{m\+\_\+icon\+Height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A combo\+Box for choosing a line weight. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLineWeightComboBox_a58f78002bab6d93c62bb87d8f1e2eceb}\label{classLineWeightComboBox_a58f78002bab6d93c62bb87d8f1e2eceb}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!LineWeightComboBox@{LineWeightComboBox}}
+\index{LineWeightComboBox@{LineWeightComboBox}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{LineWeightComboBox()}{LineWeightComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Line\+Weight\+Combo\+Box\+::\+Line\+Weight\+Combo\+Box (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr},  }\item[{const char $\ast$}]{name = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor with name. \mbox{\Hypertarget{classLineWeightComboBox_a92325a40c993ee47e15b2c8b4b9aa759}\label{classLineWeightComboBox_a92325a40c993ee47e15b2c8b4b9aa759}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!LineWeightComboBox@{LineWeightComboBox}}
+\index{LineWeightComboBox@{LineWeightComboBox}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{LineWeightComboBox()}{LineWeightComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Line\+Weight\+Combo\+Box\+::\+Line\+Weight\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr},  }\item[{const char $\ast$}]{name = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Constructor that provides a width and height for the icon. \mbox{\Hypertarget{classLineWeightComboBox_a57d4914bce781901e500f389d800f2af}\label{classLineWeightComboBox_a57d4914bce781901e500f389d800f2af}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!````~LineWeightComboBox@{$\sim$LineWeightComboBox}}
+\index{````~LineWeightComboBox@{$\sim$LineWeightComboBox}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{$\sim$LineWeightComboBox()}{~LineWeightComboBox()}}
+{\footnotesize\ttfamily Line\+Weight\+Combo\+Box\+::$\sim$\+Line\+Weight\+Combo\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLineWeightComboBox_a4a9d8f8c28a93ebfdffb10322ab164e8}\label{classLineWeightComboBox_a4a9d8f8c28a93ebfdffb10322ab164e8}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!createIcon@{createIcon}}
+\index{createIcon@{createIcon}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{createIcon()}{createIcon()}}
+{\footnotesize\ttfamily QIcon Line\+Weight\+Combo\+Box\+::create\+Icon (\begin{DoxyParamCaption}\item[{const qreal \&}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLineWeightComboBox_a957a8b8f40e0533e354170660bdcf722}\label{classLineWeightComboBox_a957a8b8f40e0533e354170660bdcf722}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!getLineWeight@{getLineWeight}}
+\index{getLineWeight@{getLineWeight}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{getLineWeight()}{getLineWeight()}}
+{\footnotesize\ttfamily qreal Line\+Weight\+Combo\+Box\+::get\+Line\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classLineWeightComboBox_a09116c564b8e390ddf0d9653481d9a09}\label{classLineWeightComboBox_a09116c564b8e390ddf0d9653481d9a09}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!init@{init}}
+\index{init@{init}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Line\+Weight\+Combo\+Box\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialisation called from constructor or manually but only once. \mbox{\Hypertarget{classLineWeightComboBox_af80520a1454698dfc7e08992346d6ce8}\label{classLineWeightComboBox_af80520a1454698dfc7e08992346d6ce8}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!lineWeightChanged@{lineWeightChanged}}
+\index{lineWeightChanged@{lineWeightChanged}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{lineWeightChanged}{lineWeightChanged}}
+{\footnotesize\ttfamily void Line\+Weight\+Combo\+Box\+::line\+Weight\+Changed (\begin{DoxyParamCaption}\item[{const qreal \&}]{weight }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classLineWeightComboBox_a965e1cca884a1c38a54aaf17fedb1a53}\label{classLineWeightComboBox_a965e1cca884a1c38a54aaf17fedb1a53}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void Line\+Weight\+Combo\+Box\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const qreal \&}]{weight }\end{DoxyParamCaption})}
+
+Sets the currently selected weight item to the given weight. \mbox{\Hypertarget{classLineWeightComboBox_a01795caa0b53608670f8b4b75a3d0f5b}\label{classLineWeightComboBox_a01795caa0b53608670f8b4b75a3d0f5b}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!updateLineWeight@{updateLineWeight}}
+\index{updateLineWeight@{updateLineWeight}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{updateLineWeight}{updateLineWeight}}
+{\footnotesize\ttfamily void Line\+Weight\+Combo\+Box\+::update\+Line\+Weight (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Called when the width has changed. This method sets the current width to the value chosen or even offers a dialog to the user that allows him/ her to choose an individual width. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLineWeightComboBox_a4c309705109e72def15f9848f47fa89b}\label{classLineWeightComboBox_a4c309705109e72def15f9848f47fa89b}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!m\_currentWeight@{m\_currentWeight}}
+\index{m\_currentWeight@{m\_currentWeight}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{m\_currentWeight}{m\_currentWeight}}
+{\footnotesize\ttfamily qreal Line\+Weight\+Combo\+Box\+::m\+\_\+current\+Weight\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLineWeightComboBox_a967f1ca9926dc4be3f2d7094d641849d}\label{classLineWeightComboBox_a967f1ca9926dc4be3f2d7094d641849d}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!m\_iconHeight@{m\_iconHeight}}
+\index{m\_iconHeight@{m\_iconHeight}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{m\_iconHeight}{m\_iconHeight}}
+{\footnotesize\ttfamily int Line\+Weight\+Combo\+Box\+::m\+\_\+icon\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classLineWeightComboBox_aef98b03ac098cefdaed6c37e0ccefe24}\label{classLineWeightComboBox_aef98b03ac098cefdaed6c37e0ccefe24}} 
+\index{LineWeightComboBox@{LineWeightComboBox}!m\_iconWidth@{m\_iconWidth}}
+\index{m\_iconWidth@{m\_iconWidth}!LineWeightComboBox@{LineWeightComboBox}}
+\doxysubsubsection{\texorpdfstring{m\_iconWidth}{m\_iconWidth}}
+{\footnotesize\ttfamily int Line\+Weight\+Combo\+Box\+::m\+\_\+icon\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vwidgets/\mbox{\hyperlink{lineweight__combobox_8h}{lineweight\+\_\+combobox.\+h}}\item 
+src/libs/vwidgets/\mbox{\hyperlink{lineweight__combobox_8cpp}{lineweight\+\_\+combobox.\+cpp}}\end{DoxyCompactItemize}

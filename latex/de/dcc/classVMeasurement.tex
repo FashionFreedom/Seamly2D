@@ -1,0 +1,409 @@
+\hypertarget{classVMeasurement}{}\doxysection{VMeasurement Class Reference}
+\label{classVMeasurement}\index{VMeasurement@{VMeasurement}}
+
+
+The \mbox{\hyperlink{classVMeasurement}{VMeasurement}} class keep data row of multisize table.  
+
+
+
+
+{\ttfamily \#include $<$vmeasurement.\+h$>$}
+
+Inheritance diagram for VMeasurement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{de/dcc/classVMeasurement}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVMeasurement_a27a5eb399bbc83c315450a7fb04a0027}{VMeasurement}} (quint32 index, const QString \&name, qreal base\+Size, qreal base\+Height, const qreal \&base, const qreal \&ksize, const qreal \&kheight, const QString \&gui\+\_\+text=QString(), const QString \&description=QString(), const QString \&tag\+Name=QString())
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVMeasurement}{VMeasurement}} create measurement for multisize table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVMeasurement_a0381499cad0c9eb09debce243169a6ba}{VMeasurement}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, quint32 index, const QString \&name, const qreal \&base, const QString \&formula, bool ok, const QString \&gui\+\_\+text=QString(), const QString \&description=QString(), const QString \&tag\+Name=QString())
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVMeasurement}{VMeasurement}} create measurement for individual table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVMeasurement_a92757fb73720f581dab4517157d8346f}{VMeasurement}} (const \mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&m)
+\item 
+virtual \mbox{\hyperlink{classVMeasurement_a9036f2842c26a6b2a4771d65a43c1454}{$\sim$\+VMeasurement}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVMeasurement}{VMeasurement}} \& \mbox{\hyperlink{classVMeasurement_ac8fd2ae932880e84fe24360a08d6eb0e}{operator=}} (const \mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&m)
+\item 
+void \mbox{\hyperlink{classVMeasurement_a876bc2624d67057740495bae91cb7072}{Swap}} (\mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&m) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+QString \mbox{\hyperlink{classVMeasurement_a2f3eecd7889fb336ed6c3a0066b5e7d1}{Get\+Gui\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Gui\+Text measurement name for tooltip. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVMeasurement_a0c61865b2fbeee8ab49ec29bebb3d00c}{Tag\+Name}} () const
+\item 
+void \mbox{\hyperlink{classVMeasurement_a5cd0af99b4c736018a2949a97f696ab7}{set\+Tag\+Name}} (const QString \&tag\+Name)
+\item 
+QString \mbox{\hyperlink{classVMeasurement_a099d0809b57a9b25e9b700f044f50ef5}{Get\+Formula}} () const
+\item 
+bool \mbox{\hyperlink{classVMeasurement_a410d93b15ac2125823ec2305bbdb79e9}{Is\+Custom}} () const
+\item 
+int \mbox{\hyperlink{classVMeasurement_ad4df1d37874b92bb4921922d7ab00baf}{Index}} () const
+\item 
+bool \mbox{\hyperlink{classVMeasurement_a9724601d8e1d2fd98c331474ca4d41d3}{Is\+Formula\+Ok}} () const
+\item 
+virtual bool \mbox{\hyperlink{classVMeasurement_a340758b1101bf4a88c91728aae0ec7f0}{Is\+Not\+Used}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual qreal \mbox{\hyperlink{classVMeasurement_a4a736c32ff9ea86432cafd66502d6b11}{Get\+Value}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual qreal $\ast$ \mbox{\hyperlink{classVMeasurement_afea48d8433278e2b05b3a74edaa3d150}{Get\+Value}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVMeasurement_acbdc9fe3085ed46841f194bbb89b5fbc}{Get\+Data}} ()
+\item 
+void \mbox{\hyperlink{classVMeasurement_a2d3f02373534eb6bca9fe6da797500cb}{Set\+Size}} (qreal $\ast$size)
+\item 
+void \mbox{\hyperlink{classVMeasurement_a2f5cf53f18af067b05e808ac36208e5b}{Set\+Height}} (qreal $\ast$height)
+\item 
+void \mbox{\hyperlink{classVMeasurement_a4f6d47fd6f8163f85e628d6304d63e41}{Set\+Unit}} (const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$unit)
+\item 
+qreal \mbox{\hyperlink{classVMeasurement_af91cad231c900742b8aadad921d03dea}{Get\+Base}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Base return value in base size and height. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVMeasurement_a55cfb522e94f9eb463d74acadec64234}{Set\+Base}} (const qreal \&value)
+\item 
+qreal \mbox{\hyperlink{classVMeasurement_ab17e8684b6699adede8a18986e9dd640}{Get\+Ksize}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Ksize return increment in sizes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVMeasurement_a4ef4484ff2a2a1ae98077c7f1dd64d54}{Set\+Ksize}} (const qreal \&value)
+\item 
+qreal \mbox{\hyperlink{classVMeasurement_a0d66ada55ec0af5aa33ba82389949e44}{Get\+Kheight}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Kheight return increment in heights. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVMeasurement_aa18648b73f18b3c42de1fc4d55f9611c}{Set\+Kheight}} (const qreal \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString\+List \mbox{\hyperlink{classVMeasurement_ab465255e0c7f66cdb45790bb5217f9cb}{List\+Heights}} (\mbox{\hyperlink{classQMap}{QMap}}$<$ \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}{GHeights}}, bool $>$ heights, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} pattern\+Unit)
+\item 
+static QString\+List \mbox{\hyperlink{classVMeasurement_a8d6bf8b59f3fd6d804f2742613127cd7}{List\+Sizes}} (\mbox{\hyperlink{classQMap}{QMap}}$<$ \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}{GSizes}}, bool $>$ sizes, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} pattern\+Unit)
+\item 
+static QString\+List \mbox{\hyperlink{classVMeasurement_a891ea22ce5f477a4e10c24acedf1e2dd}{Whole\+List\+Heights}} (\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} pattern\+Unit)
+\item 
+static QString\+List \mbox{\hyperlink{classVMeasurement_a55e2d87f37f7d5951548fe158831f39d}{Whole\+List\+Sizes}} (\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} pattern\+Unit)
+\item 
+static bool \mbox{\hyperlink{classVMeasurement_aa75fd624434ab5635229eca294eeda89}{Is\+Gradation\+Size\+Valid}} (const QString \&size)
+\item 
+static bool \mbox{\hyperlink{classVMeasurement_af2e983265269daea0305fa2e03a991a3}{Is\+Gradation\+Height\+Valid}} (const QString \&height)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+qreal \mbox{\hyperlink{classVMeasurement_a7d980cce21cc7600e8146ce3cb95278d}{Calc\+Value}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classVMeasurement_a8ce4cea6fcb0696ed4fb2c1e7217ff80}{List\+Value}} (QString\+List \&list, qreal value, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} pattern\+Unit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{classVMeasurementData}{VMeasurement\+Data}} $>$ \mbox{\hyperlink{classVMeasurement_a2c28848c47731621a51de2f3345a66a9}{d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVMeasurement}{VMeasurement}} class keep data row of multisize table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVMeasurement_a27a5eb399bbc83c315450a7fb04a0027}\label{classVMeasurement_a27a5eb399bbc83c315450a7fb04a0027}} 
+\index{VMeasurement@{VMeasurement}!VMeasurement@{VMeasurement}}
+\index{VMeasurement@{VMeasurement}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{VMeasurement()}{VMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VMeasurement\+::\+VMeasurement (\begin{DoxyParamCaption}\item[{quint32}]{index,  }\item[{const QString \&}]{name,  }\item[{qreal}]{base\+Size,  }\item[{qreal}]{base\+Height,  }\item[{const qreal \&}]{base,  }\item[{const qreal \&}]{ksize,  }\item[{const qreal \&}]{kheight,  }\item[{const QString \&}]{gui\+\_\+text = {\ttfamily QString()},  }\item[{const QString \&}]{description = {\ttfamily QString()},  }\item[{const QString \&}]{tag\+Name = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVMeasurement}{VMeasurement}} create measurement for multisize table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & measurement\textquotesingle{}s name \\
+\hline
+{\em base} & value in base size and height \\
+\hline
+{\em ksize} & increment in sizes \\
+\hline
+{\em kheight} & increment in heights \\
+\hline
+{\em gui\+\_\+text} & shor tooltip for user \\
+\hline
+{\em description} & measurement full description \\
+\hline
+{\em tag\+Name} & measurement\textquotesingle{}s tag name in file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVMeasurement_a0381499cad0c9eb09debce243169a6ba}\label{classVMeasurement_a0381499cad0c9eb09debce243169a6ba}} 
+\index{VMeasurement@{VMeasurement}!VMeasurement@{VMeasurement}}
+\index{VMeasurement@{VMeasurement}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{VMeasurement()}{VMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VMeasurement\+::\+VMeasurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{index,  }\item[{const QString \&}]{name,  }\item[{const qreal \&}]{base,  }\item[{const QString \&}]{formula,  }\item[{bool}]{ok,  }\item[{const QString \&}]{gui\+\_\+text = {\ttfamily QString()},  }\item[{const QString \&}]{description = {\ttfamily QString()},  }\item[{const QString \&}]{tag\+Name = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVMeasurement}{VMeasurement}} create measurement for individual table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & measurement\textquotesingle{}s name \\
+\hline
+{\em base} & value in base size and height \\
+\hline
+{\em gui\+\_\+text} & shor tooltip for user \\
+\hline
+{\em description} & measurement full description \\
+\hline
+{\em tag\+Name} & measurement\textquotesingle{}s tag name in file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVMeasurement_a92757fb73720f581dab4517157d8346f}\label{classVMeasurement_a92757fb73720f581dab4517157d8346f}} 
+\index{VMeasurement@{VMeasurement}!VMeasurement@{VMeasurement}}
+\index{VMeasurement@{VMeasurement}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{VMeasurement()}{VMeasurement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VMeasurement\+::\+VMeasurement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a9036f2842c26a6b2a4771d65a43c1454}\label{classVMeasurement_a9036f2842c26a6b2a4771d65a43c1454}} 
+\index{VMeasurement@{VMeasurement}!````~VMeasurement@{$\sim$VMeasurement}}
+\index{````~VMeasurement@{$\sim$VMeasurement}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{$\sim$VMeasurement()}{~VMeasurement()}}
+{\footnotesize\ttfamily VMeasurement\+::$\sim$\+VMeasurement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVMeasurement_a7d980cce21cc7600e8146ce3cb95278d}\label{classVMeasurement_a7d980cce21cc7600e8146ce3cb95278d}} 
+\index{VMeasurement@{VMeasurement}!CalcValue@{CalcValue}}
+\index{CalcValue@{CalcValue}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{CalcValue()}{CalcValue()}}
+{\footnotesize\ttfamily qreal VMeasurement\+::\+Calc\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVMeasurement_af91cad231c900742b8aadad921d03dea}\label{classVMeasurement_af91cad231c900742b8aadad921d03dea}} 
+\index{VMeasurement@{VMeasurement}!GetBase@{GetBase}}
+\index{GetBase@{GetBase}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetBase()}{GetBase()}}
+{\footnotesize\ttfamily qreal VMeasurement\+::\+Get\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Base return value in base size and height. 
+
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVMeasurement_acbdc9fe3085ed46841f194bbb89b5fbc}\label{classVMeasurement_acbdc9fe3085ed46841f194bbb89b5fbc}} 
+\index{VMeasurement@{VMeasurement}!GetData@{GetData}}
+\index{GetData@{GetData}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ VMeasurement\+::\+Get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a099d0809b57a9b25e9b700f044f50ef5}\label{classVMeasurement_a099d0809b57a9b25e9b700f044f50ef5}} 
+\index{VMeasurement@{VMeasurement}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily QString VMeasurement\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVMeasurement_a2f3eecd7889fb336ed6c3a0066b5e7d1}\label{classVMeasurement_a2f3eecd7889fb336ed6c3a0066b5e7d1}} 
+\index{VMeasurement@{VMeasurement}!GetGuiText@{GetGuiText}}
+\index{GetGuiText@{GetGuiText}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetGuiText()}{GetGuiText()}}
+{\footnotesize\ttfamily QString VMeasurement\+::\+Get\+Gui\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Gui\+Text measurement name for tooltip. 
+
+\begin{DoxyReturn}{Returns}
+measurement name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVMeasurement_a0d66ada55ec0af5aa33ba82389949e44}\label{classVMeasurement_a0d66ada55ec0af5aa33ba82389949e44}} 
+\index{VMeasurement@{VMeasurement}!GetKheight@{GetKheight}}
+\index{GetKheight@{GetKheight}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetKheight()}{GetKheight()}}
+{\footnotesize\ttfamily qreal VMeasurement\+::\+Get\+Kheight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Kheight return increment in heights. 
+
+\begin{DoxyReturn}{Returns}
+increment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVMeasurement_ab17e8684b6699adede8a18986e9dd640}\label{classVMeasurement_ab17e8684b6699adede8a18986e9dd640}} 
+\index{VMeasurement@{VMeasurement}!GetKsize@{GetKsize}}
+\index{GetKsize@{GetKsize}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetKsize()}{GetKsize()}}
+{\footnotesize\ttfamily qreal VMeasurement\+::\+Get\+Ksize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Ksize return increment in sizes. 
+
+\begin{DoxyReturn}{Returns}
+increment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVMeasurement_a4a736c32ff9ea86432cafd66502d6b11}\label{classVMeasurement_a4a736c32ff9ea86432cafd66502d6b11}} 
+\index{VMeasurement@{VMeasurement}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily qreal VMeasurement\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInternalVariable_a57a52bbf211801eb1b86580352bbf727}{VInternal\+Variable}}.
+
+\mbox{\Hypertarget{classVMeasurement_afea48d8433278e2b05b3a74edaa3d150}\label{classVMeasurement_afea48d8433278e2b05b3a74edaa3d150}} 
+\index{VMeasurement@{VMeasurement}!GetValue@{GetValue}}
+\index{GetValue@{GetValue}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{GetValue()}{GetValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily qreal $\ast$ VMeasurement\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInternalVariable_a21d7960f0395eebd2685c71880dfbc23}{VInternal\+Variable}}.
+
+\mbox{\Hypertarget{classVMeasurement_ad4df1d37874b92bb4921922d7ab00baf}\label{classVMeasurement_ad4df1d37874b92bb4921922d7ab00baf}} 
+\index{VMeasurement@{VMeasurement}!Index@{Index}}
+\index{Index@{Index}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily int VMeasurement\+::\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVMeasurement_a410d93b15ac2125823ec2305bbdb79e9}\label{classVMeasurement_a410d93b15ac2125823ec2305bbdb79e9}} 
+\index{VMeasurement@{VMeasurement}!IsCustom@{IsCustom}}
+\index{IsCustom@{IsCustom}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{IsCustom()}{IsCustom()}}
+{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Custom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVMeasurement_a9724601d8e1d2fd98c331474ca4d41d3}\label{classVMeasurement_a9724601d8e1d2fd98c331474ca4d41d3}} 
+\index{VMeasurement@{VMeasurement}!IsFormulaOk@{IsFormulaOk}}
+\index{IsFormulaOk@{IsFormulaOk}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{IsFormulaOk()}{IsFormulaOk()}}
+{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Formula\+Ok (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVMeasurement_af2e983265269daea0305fa2e03a991a3}\label{classVMeasurement_af2e983265269daea0305fa2e03a991a3}} 
+\index{VMeasurement@{VMeasurement}!IsGradationHeightValid@{IsGradationHeightValid}}
+\index{IsGradationHeightValid@{IsGradationHeightValid}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{IsGradationHeightValid()}{IsGradationHeightValid()}}
+{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Gradation\+Height\+Valid (\begin{DoxyParamCaption}\item[{const QString \&}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVMeasurement_aa75fd624434ab5635229eca294eeda89}\label{classVMeasurement_aa75fd624434ab5635229eca294eeda89}} 
+\index{VMeasurement@{VMeasurement}!IsGradationSizeValid@{IsGradationSizeValid}}
+\index{IsGradationSizeValid@{IsGradationSizeValid}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{IsGradationSizeValid()}{IsGradationSizeValid()}}
+{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Gradation\+Size\+Valid (\begin{DoxyParamCaption}\item[{const QString \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVMeasurement_a340758b1101bf4a88c91728aae0ec7f0}\label{classVMeasurement_a340758b1101bf4a88c91728aae0ec7f0}} 
+\index{VMeasurement@{VMeasurement}!IsNotUsed@{IsNotUsed}}
+\index{IsNotUsed@{IsNotUsed}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{IsNotUsed()}{IsNotUsed()}}
+{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Not\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInternalVariable_ae6f71246c47d4a35b9f05d5bbc8c95e5}{VInternal\+Variable}}.
+
+\mbox{\Hypertarget{classVMeasurement_ab465255e0c7f66cdb45790bb5217f9cb}\label{classVMeasurement_ab465255e0c7f66cdb45790bb5217f9cb}} 
+\index{VMeasurement@{VMeasurement}!ListHeights@{ListHeights}}
+\index{ListHeights@{ListHeights}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{ListHeights()}{ListHeights()}}
+{\footnotesize\ttfamily QString\+List VMeasurement\+::\+List\+Heights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQMap}{QMap}}$<$ \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}{GHeights}}, bool $>$}]{heights,  }\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{pattern\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVMeasurement_a8d6bf8b59f3fd6d804f2742613127cd7}\label{classVMeasurement_a8d6bf8b59f3fd6d804f2742613127cd7}} 
+\index{VMeasurement@{VMeasurement}!ListSizes@{ListSizes}}
+\index{ListSizes@{ListSizes}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{ListSizes()}{ListSizes()}}
+{\footnotesize\ttfamily QString\+List VMeasurement\+::\+List\+Sizes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQMap}{QMap}}$<$ \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}{GSizes}}, bool $>$}]{sizes,  }\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{pattern\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVMeasurement_a8ce4cea6fcb0696ed4fb2c1e7217ff80}\label{classVMeasurement_a8ce4cea6fcb0696ed4fb2c1e7217ff80}} 
+\index{VMeasurement@{VMeasurement}!ListValue@{ListValue}}
+\index{ListValue@{ListValue}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{ListValue()}{ListValue()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+List\+Value (\begin{DoxyParamCaption}\item[{QString\+List \&}]{list,  }\item[{qreal}]{value,  }\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{pattern\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVMeasurement_ac8fd2ae932880e84fe24360a08d6eb0e}\label{classVMeasurement_ac8fd2ae932880e84fe24360a08d6eb0e}} 
+\index{VMeasurement@{VMeasurement}!operator=@{operator=}}
+\index{operator=@{operator=}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVMeasurement}{VMeasurement}} \& VMeasurement\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a55cfb522e94f9eb463d74acadec64234}\label{classVMeasurement_a55cfb522e94f9eb463d74acadec64234}} 
+\index{VMeasurement@{VMeasurement}!SetBase@{SetBase}}
+\index{SetBase@{SetBase}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{SetBase()}{SetBase()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Set\+Base (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a2f5cf53f18af067b05e808ac36208e5b}\label{classVMeasurement_a2f5cf53f18af067b05e808ac36208e5b}} 
+\index{VMeasurement@{VMeasurement}!SetHeight@{SetHeight}}
+\index{SetHeight@{SetHeight}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{SetHeight()}{SetHeight()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Set\+Height (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_aa18648b73f18b3c42de1fc4d55f9611c}\label{classVMeasurement_aa18648b73f18b3c42de1fc4d55f9611c}} 
+\index{VMeasurement@{VMeasurement}!SetKheight@{SetKheight}}
+\index{SetKheight@{SetKheight}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{SetKheight()}{SetKheight()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Set\+Kheight (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a4ef4484ff2a2a1ae98077c7f1dd64d54}\label{classVMeasurement_a4ef4484ff2a2a1ae98077c7f1dd64d54}} 
+\index{VMeasurement@{VMeasurement}!SetKsize@{SetKsize}}
+\index{SetKsize@{SetKsize}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{SetKsize()}{SetKsize()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Set\+Ksize (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a2d3f02373534eb6bca9fe6da797500cb}\label{classVMeasurement_a2d3f02373534eb6bca9fe6da797500cb}} 
+\index{VMeasurement@{VMeasurement}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Set\+Size (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a5cd0af99b4c736018a2949a97f696ab7}\label{classVMeasurement_a5cd0af99b4c736018a2949a97f696ab7}} 
+\index{VMeasurement@{VMeasurement}!setTagName@{setTagName}}
+\index{setTagName@{setTagName}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{setTagName()}{setTagName()}}
+{\footnotesize\ttfamily void VMeasurement\+::set\+Tag\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{tag\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a4f6d47fd6f8163f85e628d6304d63e41}\label{classVMeasurement_a4f6d47fd6f8163f85e628d6304d63e41}} 
+\index{VMeasurement@{VMeasurement}!SetUnit@{SetUnit}}
+\index{SetUnit@{SetUnit}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{SetUnit()}{SetUnit()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Set\+Unit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$}]{unit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a876bc2624d67057740495bae91cb7072}\label{classVMeasurement_a876bc2624d67057740495bae91cb7072}} 
+\index{VMeasurement@{VMeasurement}!Swap@{Swap}}
+\index{Swap@{Swap}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VMeasurement\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVMeasurement_a0c61865b2fbeee8ab49ec29bebb3d00c}\label{classVMeasurement_a0c61865b2fbeee8ab49ec29bebb3d00c}} 
+\index{VMeasurement@{VMeasurement}!TagName@{TagName}}
+\index{TagName@{TagName}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{TagName()}{TagName()}}
+{\footnotesize\ttfamily QString VMeasurement\+::\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVMeasurement_a891ea22ce5f477a4e10c24acedf1e2dd}\label{classVMeasurement_a891ea22ce5f477a4e10c24acedf1e2dd}} 
+\index{VMeasurement@{VMeasurement}!WholeListHeights@{WholeListHeights}}
+\index{WholeListHeights@{WholeListHeights}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{WholeListHeights()}{WholeListHeights()}}
+{\footnotesize\ttfamily QString\+List VMeasurement\+::\+Whole\+List\+Heights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{pattern\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVMeasurement_a55e2d87f37f7d5951548fe158831f39d}\label{classVMeasurement_a55e2d87f37f7d5951548fe158831f39d}} 
+\index{VMeasurement@{VMeasurement}!WholeListSizes@{WholeListSizes}}
+\index{WholeListSizes@{WholeListSizes}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{WholeListSizes()}{WholeListSizes()}}
+{\footnotesize\ttfamily QString\+List VMeasurement\+::\+Whole\+List\+Sizes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{pattern\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVMeasurement_a2c28848c47731621a51de2f3345a66a9}\label{classVMeasurement_a2c28848c47731621a51de2f3345a66a9}} 
+\index{VMeasurement@{VMeasurement}!d@{d}}
+\index{d@{d}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{classVMeasurementData}{VMeasurement\+Data}}$>$ VMeasurement\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpatterndb/variables/\mbox{\hyperlink{vmeasurement_8h}{vmeasurement.\+h}}\item 
+src/libs/vpatterndb/variables/\mbox{\hyperlink{vmeasurement_8cpp}{vmeasurement.\+cpp}}\end{DoxyCompactItemize}

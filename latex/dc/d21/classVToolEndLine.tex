@@ -1,0 +1,338 @@
+\hypertarget{classVToolEndLine}{}\doxysection{VTool\+End\+Line Class Reference}
+\label{classVToolEndLine}\index{VToolEndLine@{VToolEndLine}}
+
+
+The \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} class tool for creation point on the line end.  
+
+
+
+
+{\ttfamily \#include $<$vtoolendline.\+h$>$}
+
+Inheritance diagram for VTool\+End\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{dc/d21/classVToolEndLine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolEndLine_a73d85ddb905f82ff48c1639a2d3d89eca5030af8c28d196644ddbdb1218cdcbcc}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::End\+Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classVToolEndLine_a137adbdf2768c237064a00faf2f01b3e}{$\sim$\+VTool\+End\+Line}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_a541b5608cb90e576f162dc9a46737121}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolEndLine_aa18524e406654a1fc3995b9efb35ab8e}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolEndLine_a2f64920884ed1b01141356bca6f4a6c7}{Get\+Formula\+Angle}} () const
+\item 
+void \mbox{\hyperlink{classVToolEndLine_af433ec0db549e6f837c3685ce4653884}{Set\+Formula\+Angle}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_a042df3bb76f38bfc5b8fc48a713bf350}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} $\ast$ \mbox{\hyperlink{classVToolEndLine_a371447ccab9e0f20fe8a74cb3a3b78d6}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Create help create tool from GUI. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} $\ast$ \mbox{\hyperlink{classVToolEndLine_ad218dff22e98c863e9e51b4a47333db2}{Create}} (const quint32 \+\_\+id, const QString \&point\+Name, const QString \&line\+Type, const QString \&line\+Weight, const QString \&\mbox{\hyperlink{classVToolLinePoint_ad9e9a45931794ebc35ceb35f45e8385f}{line\+Color}}, QString \&\mbox{\hyperlink{classVToolLinePoint_af1ec7fe40363e81a0a0aa3b9753f1deb}{formula\+Length}}, QString \&\mbox{\hyperlink{classVToolEndLine_a4eb32c0f406fdd280dc77c66d1bc5004}{formula\+Angle}}, quint32 \mbox{\hyperlink{classVToolLinePoint_ac3d74f9d5dd276f692c12c6aed1e2635}{base\+Point\+Id}}, qreal mx, qreal my, bool show\+Point\+Name, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolEndLine_a950e4bc3e2b3a6dfddabd9188edf90e5}{Tool\+Type}} = QString\+Literal(\char`\"{}end\+Line\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_a98126b4e6d29bc680a8e5370c2cf1941}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em context\+Menu\+Event handle context menu events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_ad22a3fcdf736a9b492a5c669f6c11631}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_a5ac37adae45ae8012c50cccd60eeb0de}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_a90a08481dd1212e0d6e083f86a5b1198}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolEndLine_a51583a8a4a8339bcd326a07da2b4ba3c}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolEndLine_a102c9accb92a639acb1c482670b2a9f8}{VTool\+End\+Line}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const QString \&line\+Type, const QString \&line\+Weight, const QString \&\mbox{\hyperlink{classVToolLinePoint_ad9e9a45931794ebc35ceb35f45e8385f}{line\+Color}}, const QString \&\mbox{\hyperlink{classVToolLinePoint_af1ec7fe40363e81a0a0aa3b9753f1deb}{formula\+Length}}, const QString \&\mbox{\hyperlink{classVToolEndLine_a4eb32c0f406fdd280dc77c66d1bc5004}{formula\+Angle}}, const quint32 \&\mbox{\hyperlink{classVToolLinePoint_ac3d74f9d5dd276f692c12c6aed1e2635}{base\+Point\+Id}}, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classVToolEndLine_a4eb32c0f406fdd280dc77c66d1bc5004}{formula\+Angle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} class tool for creation point on the line end. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolEndLine_a73d85ddb905f82ff48c1639a2d3d89ec}\label{classVToolEndLine_a73d85ddb905f82ff48c1639a2d3d89ec}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolEndLine@{VToolEndLine}}\index{VToolEndLine@{VToolEndLine}!Type@{Type}}}\mbox{\Hypertarget{classVToolEndLine_a73d85ddb905f82ff48c1639a2d3d89eca5030af8c28d196644ddbdb1218cdcbcc}\label{classVToolEndLine_a73d85ddb905f82ff48c1639a2d3d89eca5030af8c28d196644ddbdb1218cdcbcc}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolEndLine_a137adbdf2768c237064a00faf2f01b3e}\label{classVToolEndLine_a137adbdf2768c237064a00faf2f01b3e}} 
+\index{VToolEndLine@{VToolEndLine}!````~VToolEndLine@{$\sim$VToolEndLine}}
+\index{````~VToolEndLine@{$\sim$VToolEndLine}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{$\sim$VToolEndLine()}{~VToolEndLine()}}
+{\footnotesize\ttfamily virtual VTool\+End\+Line\+::$\sim$\+VTool\+End\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVToolEndLine_a102c9accb92a639acb1c482670b2a9f8}\label{classVToolEndLine_a102c9accb92a639acb1c482670b2a9f8}} 
+\index{VToolEndLine@{VToolEndLine}!VToolEndLine@{VToolEndLine}}
+\index{VToolEndLine@{VToolEndLine}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{VToolEndLine()}{VToolEndLine()}}
+{\footnotesize\ttfamily VTool\+End\+Line\+::\+VTool\+End\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const QString \&}]{line\+Type,  }\item[{const QString \&}]{line\+Weight,  }\item[{const QString \&}]{line\+Color,  }\item[{const QString \&}]{formula\+Length,  }\item[{const QString \&}]{formula\+Angle,  }\item[{const quint32 \&}]{base\+Point\+Id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em line\+Type} & line type. \\
+\hline
+{\em line\+Weight} & line weight. \\
+\hline
+{\em line\+Color} & line color. \\
+\hline
+{\em formula\+Length} & string with formula length of line. \\
+\hline
+{\em formula\+Angle} & formula angle of line. \\
+\hline
+{\em base\+Point\+Id} & id first point of line. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolEndLine_ad218dff22e98c863e9e51b4a47333db2}\label{classVToolEndLine_ad218dff22e98c863e9e51b4a47333db2}} 
+\index{VToolEndLine@{VToolEndLine}!Create@{Create}}
+\index{Create@{Create}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} $\ast$ VTool\+End\+Line\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const QString \&}]{point\+Name,  }\item[{const QString \&}]{line\+Type,  }\item[{const QString \&}]{line\+Weight,  }\item[{const QString \&}]{line\+Color,  }\item[{QString \&}]{formula\+Length,  }\item[{QString \&}]{formula\+Angle,  }\item[{quint32}]{base\+Point\+Id,  }\item[{qreal}]{mx,  }\item[{qreal}]{my,  }\item[{bool}]{show\+Point\+Name,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & tool id, 0 if tool doesn\textquotesingle{}t exist yet. \\
+\hline
+{\em point\+Name} & point name. \\
+\hline
+{\em line\+Type} & line type. \\
+\hline
+{\em line\+Weight} & line weight. \\
+\hline
+{\em line\+Color} & line color. \\
+\hline
+{\em formula\+Length} & string with formula length of line. \\
+\hline
+{\em formula\+Angle} & formula angle of line. \\
+\hline
+{\em base\+Point\+Id} & id first point of line. \\
+\hline
+{\em mx} & label bias x axis. \\
+\hline
+{\em my} & label bias y axis. \\
+\hline
+{\em show\+Point\+Name} & show/hide point name text \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the created tool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolEndLine_a371447ccab9e0f20fe8a74cb3a3b78d6}\label{classVToolEndLine_a371447ccab9e0f20fe8a74cb3a3b78d6}} 
+\index{VToolEndLine@{VToolEndLine}!Create@{Create}}
+\index{Create@{Create}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolEndLine}{VTool\+End\+Line}} $\ast$ VTool\+End\+Line\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool from GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dialog} & dialog. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the created tool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolEndLine_a2f64920884ed1b01141356bca6f4a6c7}\label{classVToolEndLine_a2f64920884ed1b01141356bca6f4a6c7}} 
+\index{VToolEndLine@{VToolEndLine}!GetFormulaAngle@{GetFormulaAngle}}
+\index{GetFormulaAngle@{GetFormulaAngle}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{GetFormulaAngle()}{GetFormulaAngle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+End\+Line\+::\+Get\+Formula\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolEndLine_a90a08481dd1212e0d6e083f86a5b1198}\label{classVToolEndLine_a90a08481dd1212e0d6e083f86a5b1198}} 
+\index{VToolEndLine@{VToolEndLine}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a95795603f1fa62ffacc4fb5fb8fae984}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEndLine_ad22a3fcdf736a9b492a5c669f6c11631}\label{classVToolEndLine_ad22a3fcdf736a9b492a5c669f6c11631}} 
+\index{VToolEndLine@{VToolEndLine}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEndLine_a5ac37adae45ae8012c50cccd60eeb0de}\label{classVToolEndLine_a5ac37adae45ae8012c50cccd60eeb0de}} 
+\index{VToolEndLine@{VToolEndLine}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolLinePoint_aeb690c0edbb55cb5e2e61fdd7e906a4c}{VTool\+Line\+Point}}.
+
+\mbox{\Hypertarget{classVToolEndLine_a541b5608cb90e576f162dc9a46737121}\label{classVToolEndLine_a541b5608cb90e576f162dc9a46737121}} 
+\index{VToolEndLine@{VToolEndLine}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEndLine_af433ec0db549e6f837c3685ce4653884}\label{classVToolEndLine_af433ec0db549e6f837c3685ce4653884}} 
+\index{VToolEndLine@{VToolEndLine}!SetFormulaAngle@{SetFormulaAngle}}
+\index{SetFormulaAngle@{SetFormulaAngle}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{SetFormulaAngle()}{SetFormulaAngle()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::\+Set\+Formula\+Angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolEndLine_a51583a8a4a8339bcd326a07da2b4ba3c}\label{classVToolEndLine_a51583a8a4a8339bcd326a07da2b4ba3c}} 
+\index{VToolEndLine@{VToolEndLine}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEndLine_a98126b4e6d29bc680a8e5370c2cf1941}\label{classVToolEndLine_a98126b4e6d29bc680a8e5370c2cf1941}} 
+\index{VToolEndLine@{VToolEndLine}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+context\+Menu\+Event handle context menu events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolEndLine_a042df3bb76f38bfc5b8fc48a713bf350}\label{classVToolEndLine_a042df3bb76f38bfc5b8fc48a713bf350}} 
+\index{VToolEndLine@{VToolEndLine}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+End\+Line\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolEndLine_aa18524e406654a1fc3995b9efb35ab8e}\label{classVToolEndLine_aa18524e406654a1fc3995b9efb35ab8e}} 
+\index{VToolEndLine@{VToolEndLine}!type@{type}}
+\index{type@{type}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+End\+Line\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolLinePoint_ad22cd5cd868ad0481b2a3b6cbab589db}{VTool\+Line\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolEndLine_a4eb32c0f406fdd280dc77c66d1bc5004}\label{classVToolEndLine_a4eb32c0f406fdd280dc77c66d1bc5004}} 
+\index{VToolEndLine@{VToolEndLine}!formulaAngle@{formulaAngle}}
+\index{formulaAngle@{formulaAngle}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{formulaAngle}{formulaAngle}}
+{\footnotesize\ttfamily QString VTool\+End\+Line\+::formula\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolEndLine_a950e4bc3e2b3a6dfddabd9188edf90e5}\label{classVToolEndLine_a950e4bc3e2b3a6dfddabd9188edf90e5}} 
+\index{VToolEndLine@{VToolEndLine}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolEndLine@{VToolEndLine}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+End\+Line\+::\+Tool\+Type = QString\+Literal(\char`\"{}end\+Line\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toollinepoint/\mbox{\hyperlink{vtoolendline_8h}{vtoolendline.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toollinepoint/\mbox{\hyperlink{vtoolendline_8cpp}{vtoolendline.\+cpp}}\end{DoxyCompactItemize}

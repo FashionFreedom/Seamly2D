@@ -1,0 +1,426 @@
+\hypertarget{classVToolBisector}{}\doxysection{VTool\+Bisector Class Reference}
+\label{classVToolBisector}\index{VToolBisector@{VToolBisector}}
+
+
+The \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} class tool for creation bisector point.  
+
+
+
+
+{\ttfamily \#include $<$vtoolbisector.\+h$>$}
+
+Inheritance diagram for VTool\+Bisector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{d6/d6b/classVToolBisector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolBisector_a8c686f65551ae8a7e23383a00f2be1dea1b62d2ef9134620138d49b0725d7d92f}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Bisector)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolBisector_a7b47c2640bda3fe2d75fd54ea107cc99}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolBisector_a69538b9018fd514789a774b71296b7b8}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolBisector_a1c6b3f6d7c7de121a98b849981828905}{First\+Point\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classVToolBisector_ad475d56d64d7781f6b219aa7b8bdaa6a}{Third\+Point\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolBisector_a03774901ba31118f217b74af44f0718c}{Get\+First\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolBisector_a18f8bac393baa4062fce2f1eb22a7061}{Set\+First\+Point\+Id}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{classVToolBisector_ac60afef8eb73963eb0b22b7de3f2bb10}{Get\+Third\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolBisector_ac547d7fd7f6bc696f25f0830773f7952}{Set\+Third\+Point\+Id}} (const quint32 \&value)
+\item 
+virtual void \mbox{\hyperlink{classVToolBisector_a645b33445485d8fc54c908b7f3880816}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{classVToolBisector_a9c3a0602d5992c7915e4c58650b456d3}{Bisector\+Angle}} (const QPointF \&first\+Point, const QPointF \&second\+Point, const QPointF \&third\+Point)
+\item 
+static QPointF \mbox{\hyperlink{classVToolBisector_a9abaefaca71d7f8628c0b45a00955fb5}{Find\+Point}} (const QPointF \&first\+Point, const QPointF \&second\+Point, const QPointF \&third\+Point, const qreal \&length)
+\begin{DoxyCompactList}\small\item\em Find\+Point find bisector point. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} $\ast$ \mbox{\hyperlink{classVToolBisector_a19f6f30fc581f0573f2dc7c2ca4bb466}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Create help create tool form GUI. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} $\ast$ \mbox{\hyperlink{classVToolBisector_a7a8e1cd4ad35aadff2cfe03cdef2e719}{Create}} (const quint32 \+\_\+id, QString \&formula, quint32 \mbox{\hyperlink{classVToolBisector_a70fc61b9efbf072c659eaa6007a90793}{first\+Point\+Id}}, quint32 second\+Point\+Id, quint32 \mbox{\hyperlink{classVToolBisector_a7416014f2c94c13b0d765b9c78842487}{third\+Point\+Id}}, const QString \&line\+Type, const QString \&line\+Weight, const QString \&\mbox{\hyperlink{classVToolLinePoint_ad9e9a45931794ebc35ceb35f45e8385f}{line\+Color}}, const QString \&point\+Name, qreal mx, qreal my, bool show\+Point\+Name, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolBisector_a0c09eeda900b693867ca283b6fae2042}{Tool\+Type}} = QString\+Literal(\char`\"{}bisector\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolBisector_a2f65c2dd7084a175c822d72a27c04043}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em context\+Menu\+Event handle context menu events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolBisector_a428d27b40f09f18feff28add16292c59}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolBisector_ad676e3d401b0b047edc984bb1d25cbfe}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolBisector_a277cfa4f6d3938cf0b58e4a6920db0e8}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolBisector_ab4803575e978023975f4946216825e1f}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolBisector_aed774b7d21664cdeca3c099ed734f1ab}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolBisector_a31c2f4dbd71c548eeaf8eedd7fd4581d}{VTool\+Bisector}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const QString \&line\+Type, const QString \&line\+Weight, const QString \&\mbox{\hyperlink{classVToolLinePoint_ad9e9a45931794ebc35ceb35f45e8385f}{line\+Color}}, const QString \&formula, const quint32 \&\mbox{\hyperlink{classVToolBisector_a70fc61b9efbf072c659eaa6007a90793}{first\+Point\+Id}}, const quint32 \&second\+Point\+Id, const quint32 \&\mbox{\hyperlink{classVToolBisector_a7416014f2c94c13b0d765b9c78842487}{third\+Point\+Id}}, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVToolBisector_a70fc61b9efbf072c659eaa6007a90793}{first\+Point\+Id}}
+\begin{DoxyCompactList}\small\item\em first\+Point\+Id id first point of angle. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVToolBisector_a7416014f2c94c13b0d765b9c78842487}{third\+Point\+Id}}
+\begin{DoxyCompactList}\small\item\em third\+Point\+Id id third point of angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} class tool for creation bisector point. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolBisector_a8c686f65551ae8a7e23383a00f2be1de}\label{classVToolBisector_a8c686f65551ae8a7e23383a00f2be1de}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolBisector@{VToolBisector}}\index{VToolBisector@{VToolBisector}!Type@{Type}}}\mbox{\Hypertarget{classVToolBisector_a8c686f65551ae8a7e23383a00f2be1dea1b62d2ef9134620138d49b0725d7d92f}\label{classVToolBisector_a8c686f65551ae8a7e23383a00f2be1dea1b62d2ef9134620138d49b0725d7d92f}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolBisector_a31c2f4dbd71c548eeaf8eedd7fd4581d}\label{classVToolBisector_a31c2f4dbd71c548eeaf8eedd7fd4581d}} 
+\index{VToolBisector@{VToolBisector}!VToolBisector@{VToolBisector}}
+\index{VToolBisector@{VToolBisector}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{VToolBisector()}{VToolBisector()}}
+{\footnotesize\ttfamily VTool\+Bisector\+::\+VTool\+Bisector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const QString \&}]{line\+Type,  }\item[{const QString \&}]{line\+Weight,  }\item[{const QString \&}]{line\+Color,  }\item[{const QString \&}]{formula,  }\item[{const quint32 \&}]{first\+Point\+Id,  }\item[{const quint32 \&}]{second\+Point\+Id,  }\item[{const quint32 \&}]{third\+Point\+Id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em line\+Type} & line type. \\
+\hline
+{\em line\+Weight} & line weight. \\
+\hline
+{\em line\+Color} & line color. \\
+\hline
+{\em formula} & string with formula length of bisector. \\
+\hline
+{\em first\+Point\+Id} & id first point of angle. \\
+\hline
+{\em second\+Point\+Id} & id second point of angle. \\
+\hline
+{\em third\+Point\+Id} & id third point of angle. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolBisector_a9c3a0602d5992c7915e4c58650b456d3}\label{classVToolBisector_a9c3a0602d5992c7915e4c58650b456d3}} 
+\index{VToolBisector@{VToolBisector}!BisectorAngle@{BisectorAngle}}
+\index{BisectorAngle@{BisectorAngle}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{BisectorAngle()}{BisectorAngle()}}
+{\footnotesize\ttfamily qreal VTool\+Bisector\+::\+Bisector\+Angle (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QPointF \&}]{third\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolBisector_a7a8e1cd4ad35aadff2cfe03cdef2e719}\label{classVToolBisector_a7a8e1cd4ad35aadff2cfe03cdef2e719}} 
+\index{VToolBisector@{VToolBisector}!Create@{Create}}
+\index{Create@{Create}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} $\ast$ VTool\+Bisector\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{QString \&}]{formula,  }\item[{quint32}]{first\+Point\+Id,  }\item[{quint32}]{second\+Point\+Id,  }\item[{quint32}]{third\+Point\+Id,  }\item[{const QString \&}]{line\+Type,  }\item[{const QString \&}]{line\+Weight,  }\item[{const QString \&}]{line\+Color,  }\item[{const QString \&}]{point\+Name,  }\item[{qreal}]{mx,  }\item[{qreal}]{my,  }\item[{bool}]{show\+Point\+Name,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & tool id, 0 if tool doesn\textquotesingle{}t exist yet. \\
+\hline
+{\em formula} & string with formula. \\
+\hline
+{\em first\+Point\+Id} & id first point of angle. \\
+\hline
+{\em second\+Point\+Id} & id second point of angle. \\
+\hline
+{\em third\+Point\+Id} & id third point of angle. \\
+\hline
+{\em line\+Type} & line type. \\
+\hline
+{\em line\+Weight} & line weight. \\
+\hline
+{\em line\+Color} & line color. \\
+\hline
+{\em point\+Name} & point name. \\
+\hline
+{\em mx} & label bias x axis. \\
+\hline
+{\em my} & label bias y axis. \\
+\hline
+{\em show\+Point\+Name} & show/hide point name text. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolBisector_a19f6f30fc581f0573f2dc7c2ca4bb466}\label{classVToolBisector_a19f6f30fc581f0573f2dc7c2ca4bb466}} 
+\index{VToolBisector@{VToolBisector}!Create@{Create}}
+\index{Create@{Create}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolBisector}{VTool\+Bisector}} $\ast$ VTool\+Bisector\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool form GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dialog} & dialog. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolBisector_a9abaefaca71d7f8628c0b45a00955fb5}\label{classVToolBisector_a9abaefaca71d7f8628c0b45a00955fb5}} 
+\index{VToolBisector@{VToolBisector}!FindPoint@{FindPoint}}
+\index{FindPoint@{FindPoint}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{FindPoint()}{FindPoint()}}
+{\footnotesize\ttfamily QPointF VTool\+Bisector\+::\+Find\+Point (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{const QPointF \&}]{third\+Point,  }\item[{const qreal \&}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find\+Point find bisector point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Point} & first point of angle. \\
+\hline
+{\em second\+Point} & second point of angle. \\
+\hline
+{\em third\+Point} & third point of angle. \\
+\hline
+{\em length} & bisector length. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bisector point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVToolBisector_a1c6b3f6d7c7de121a98b849981828905}\label{classVToolBisector_a1c6b3f6d7c7de121a98b849981828905}} 
+\index{VToolBisector@{VToolBisector}!FirstPointName@{FirstPointName}}
+\index{FirstPointName@{FirstPointName}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{FirstPointName()}{FirstPointName()}}
+{\footnotesize\ttfamily QString VTool\+Bisector\+::\+First\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolBisector_a03774901ba31118f217b74af44f0718c}\label{classVToolBisector_a03774901ba31118f217b74af44f0718c}} 
+\index{VToolBisector@{VToolBisector}!GetFirstPointId@{GetFirstPointId}}
+\index{GetFirstPointId@{GetFirstPointId}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{GetFirstPointId()}{GetFirstPointId()}}
+{\footnotesize\ttfamily quint32 VTool\+Bisector\+::\+Get\+First\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolBisector_ac60afef8eb73963eb0b22b7de3f2bb10}\label{classVToolBisector_ac60afef8eb73963eb0b22b7de3f2bb10}} 
+\index{VToolBisector@{VToolBisector}!GetThirdPointId@{GetThirdPointId}}
+\index{GetThirdPointId@{GetThirdPointId}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{GetThirdPointId()}{GetThirdPointId()}}
+{\footnotesize\ttfamily quint32 VTool\+Bisector\+::\+Get\+Third\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolBisector_ab4803575e978023975f4946216825e1f}\label{classVToolBisector_ab4803575e978023975f4946216825e1f}} 
+\index{VToolBisector@{VToolBisector}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a95795603f1fa62ffacc4fb5fb8fae984}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolBisector_a428d27b40f09f18feff28add16292c59}\label{classVToolBisector_a428d27b40f09f18feff28add16292c59}} 
+\index{VToolBisector@{VToolBisector}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolLinePoint_acc3e3e69085b63ac01c5e002d93da0ef}{VTool\+Line\+Point}}.
+
+\mbox{\Hypertarget{classVToolBisector_ad676e3d401b0b047edc984bb1d25cbfe}\label{classVToolBisector_ad676e3d401b0b047edc984bb1d25cbfe}} 
+\index{VToolBisector@{VToolBisector}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolBisector_a277cfa4f6d3938cf0b58e4a6920db0e8}\label{classVToolBisector_a277cfa4f6d3938cf0b58e4a6920db0e8}} 
+\index{VToolBisector@{VToolBisector}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolLinePoint_aeb690c0edbb55cb5e2e61fdd7e906a4c}{VTool\+Line\+Point}}.
+
+\mbox{\Hypertarget{classVToolBisector_a7b47c2640bda3fe2d75fd54ea107cc99}\label{classVToolBisector_a7b47c2640bda3fe2d75fd54ea107cc99}} 
+\index{VToolBisector@{VToolBisector}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolBisector_a18f8bac393baa4062fce2f1eb22a7061}\label{classVToolBisector_a18f8bac393baa4062fce2f1eb22a7061}} 
+\index{VToolBisector@{VToolBisector}!SetFirstPointId@{SetFirstPointId}}
+\index{SetFirstPointId@{SetFirstPointId}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{SetFirstPointId()}{SetFirstPointId()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Set\+First\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolBisector_ac547d7fd7f6bc696f25f0830773f7952}\label{classVToolBisector_ac547d7fd7f6bc696f25f0830773f7952}} 
+\index{VToolBisector@{VToolBisector}!SetThirdPointId@{SetThirdPointId}}
+\index{SetThirdPointId@{SetThirdPointId}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{SetThirdPointId()}{SetThirdPointId()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Set\+Third\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolBisector_aed774b7d21664cdeca3c099ed734f1ab}\label{classVToolBisector_aed774b7d21664cdeca3c099ed734f1ab}} 
+\index{VToolBisector@{VToolBisector}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolBisector_a2f65c2dd7084a175c822d72a27c04043}\label{classVToolBisector_a2f65c2dd7084a175c822d72a27c04043}} 
+\index{VToolBisector@{VToolBisector}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+context\+Menu\+Event handle context menu events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolBisector_a645b33445485d8fc54c908b7f3880816}\label{classVToolBisector_a645b33445485d8fc54c908b7f3880816}} 
+\index{VToolBisector@{VToolBisector}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Bisector\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolBisector_ad475d56d64d7781f6b219aa7b8bdaa6a}\label{classVToolBisector_ad475d56d64d7781f6b219aa7b8bdaa6a}} 
+\index{VToolBisector@{VToolBisector}!ThirdPointName@{ThirdPointName}}
+\index{ThirdPointName@{ThirdPointName}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{ThirdPointName()}{ThirdPointName()}}
+{\footnotesize\ttfamily QString VTool\+Bisector\+::\+Third\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolBisector_a69538b9018fd514789a774b71296b7b8}\label{classVToolBisector_a69538b9018fd514789a774b71296b7b8}} 
+\index{VToolBisector@{VToolBisector}!type@{type}}
+\index{type@{type}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Bisector\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolLinePoint_ad22cd5cd868ad0481b2a3b6cbab589db}{VTool\+Line\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolBisector_a70fc61b9efbf072c659eaa6007a90793}\label{classVToolBisector_a70fc61b9efbf072c659eaa6007a90793}} 
+\index{VToolBisector@{VToolBisector}!firstPointId@{firstPointId}}
+\index{firstPointId@{firstPointId}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{firstPointId}{firstPointId}}
+{\footnotesize\ttfamily quint32 VTool\+Bisector\+::first\+Point\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+first\+Point\+Id id first point of angle. 
+
+\mbox{\Hypertarget{classVToolBisector_a7416014f2c94c13b0d765b9c78842487}\label{classVToolBisector_a7416014f2c94c13b0d765b9c78842487}} 
+\index{VToolBisector@{VToolBisector}!thirdPointId@{thirdPointId}}
+\index{thirdPointId@{thirdPointId}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{thirdPointId}{thirdPointId}}
+{\footnotesize\ttfamily quint32 VTool\+Bisector\+::third\+Point\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+third\+Point\+Id id third point of angle. 
+
+\mbox{\Hypertarget{classVToolBisector_a0c09eeda900b693867ca283b6fae2042}\label{classVToolBisector_a0c09eeda900b693867ca283b6fae2042}} 
+\index{VToolBisector@{VToolBisector}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolBisector@{VToolBisector}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Bisector\+::\+Tool\+Type = QString\+Literal(\char`\"{}bisector\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toollinepoint/\mbox{\hyperlink{vtoolbisector_8h}{vtoolbisector.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toollinepoint/\mbox{\hyperlink{vtoolbisector_8cpp}{vtoolbisector.\+cpp}}\end{DoxyCompactItemize}

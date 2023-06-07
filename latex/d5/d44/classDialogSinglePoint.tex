@@ -1,0 +1,166 @@
+\hypertarget{classDialogSinglePoint}{}\doxysection{Dialog\+Single\+Point Class Reference}
+\label{classDialogSinglePoint}\index{DialogSinglePoint@{DialogSinglePoint}}
+
+
+The \mbox{\hyperlink{classDialogSinglePoint}{Dialog\+Single\+Point}} class dialog for Tool\+Single\+Point. Help create point and edit option.  
+
+
+
+
+{\ttfamily \#include $<$dialogsinglepoint.\+h$>$}
+
+Inheritance diagram for Dialog\+Single\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d5/d44/classDialogSinglePoint}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDialogSinglePoint_a3ef96886594c9ca88de0a774a8063c82}{mouse\+Press}} (const QPointF \&scene\+Pos)
+\begin{DoxyCompactList}\small\item\em mouse\+Press get mouse position \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogSinglePoint_a2208e8dffef3c513e58d6e88bb44bf1a}{Dialog\+Single\+Point}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDialogSinglePoint}{Dialog\+Single\+Point}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDialogSinglePoint_ab8f6e1de2245636337e10938d928d963}{$\sim$\+Dialog\+Single\+Point}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classDialogSinglePoint_a37b31d44e4929643af22722e3b4bbd73}{Set\+Data}} (const QString \&name, const QPointF \&\mbox{\hyperlink{classDialogSinglePoint_a5942ad44c649b6f53bb0be666f004bb1}{point}})
+\begin{DoxyCompactList}\small\item\em set\+Data set name and point \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{classDialogSinglePoint_a33230f3295c5602f7f87d563ba01f0dc}{Get\+Point}} () const
+\begin{DoxyCompactList}\small\item\em get\+Point return point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogSinglePoint_a6d7ec96a47d486ec6ff05e85a005bb1b}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Single\+Point $\ast$ \mbox{\hyperlink{classDialogSinglePoint_a818010db5ece525f08bdd4b89c28df64}{ui}}
+\begin{DoxyCompactList}\small\item\em ui keeps information about user interface \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{classDialogSinglePoint_a5942ad44c649b6f53bb0be666f004bb1}{point}}
+\begin{DoxyCompactList}\small\item\em point data of point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDialogSinglePoint}{Dialog\+Single\+Point}} class dialog for Tool\+Single\+Point. Help create point and edit option. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogSinglePoint_a2208e8dffef3c513e58d6e88bb44bf1a}\label{classDialogSinglePoint_a2208e8dffef3c513e58d6e88bb44bf1a}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!DialogSinglePoint@{DialogSinglePoint}}
+\index{DialogSinglePoint@{DialogSinglePoint}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{DialogSinglePoint()}{DialogSinglePoint()}}
+{\footnotesize\ttfamily Dialog\+Single\+Point\+::\+Dialog\+Single\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDialogSinglePoint}{Dialog\+Single\+Point}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSinglePoint_ab8f6e1de2245636337e10938d928d963}\label{classDialogSinglePoint_ab8f6e1de2245636337e10938d928d963}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!````~DialogSinglePoint@{$\sim$DialogSinglePoint}}
+\index{````~DialogSinglePoint@{$\sim$DialogSinglePoint}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogSinglePoint()}{~DialogSinglePoint()}}
+{\footnotesize\ttfamily Dialog\+Single\+Point\+::$\sim$\+Dialog\+Single\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogSinglePoint_a33230f3295c5602f7f87d563ba01f0dc}\label{classDialogSinglePoint_a33230f3295c5602f7f87d563ba01f0dc}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily QPointF Dialog\+Single\+Point\+::\+Get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Point return point 
+
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogSinglePoint_a3ef96886594c9ca88de0a774a8063c82}\label{classDialogSinglePoint_a3ef96886594c9ca88de0a774a8063c82}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!mousePress@{mousePress}}
+\index{mousePress@{mousePress}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{mousePress}{mousePress}}
+{\footnotesize\ttfamily void Dialog\+Single\+Point\+::mouse\+Press (\begin{DoxyParamCaption}\item[{const QPointF \&}]{scene\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+mouse\+Press get mouse position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene\+Pos} & position of cursor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogSinglePoint_a6d7ec96a47d486ec6ff05e85a005bb1b}\label{classDialogSinglePoint_a6d7ec96a47d486ec6ff05e85a005bb1b}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Dialog\+Single\+Point\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogSinglePoint_a37b31d44e4929643af22722e3b4bbd73}\label{classDialogSinglePoint_a37b31d44e4929643af22722e3b4bbd73}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!SetData@{SetData}}
+\index{SetData@{SetData}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
+{\footnotesize\ttfamily void Dialog\+Single\+Point\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const QPointF \&}]{point }\end{DoxyParamCaption})}
+
+
+
+set\+Data set name and point 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of point \\
+\hline
+{\em point} & data for point \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogSinglePoint_a5942ad44c649b6f53bb0be666f004bb1}\label{classDialogSinglePoint_a5942ad44c649b6f53bb0be666f004bb1}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!point@{point}}
+\index{point@{point}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily QPointF Dialog\+Single\+Point\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+point data of point 
+
+\mbox{\Hypertarget{classDialogSinglePoint_a818010db5ece525f08bdd4b89c28df64}\label{classDialogSinglePoint_a818010db5ece525f08bdd4b89c28df64}} 
+\index{DialogSinglePoint@{DialogSinglePoint}!ui@{ui}}
+\index{ui@{ui}!DialogSinglePoint@{DialogSinglePoint}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Single\+Point$\ast$ Dialog\+Single\+Point\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ui keeps information about user interface 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogsinglepoint_8h}{dialogsinglepoint.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogsinglepoint_8cpp}{dialogsinglepoint.\+cpp}}\end{DoxyCompactItemize}

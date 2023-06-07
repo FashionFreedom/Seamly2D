@@ -1,0 +1,198 @@
+\hypertarget{classSceneRect}{}\doxysection{Scene\+Rect Class Reference}
+\label{classSceneRect}\index{SceneRect@{SceneRect}}
+
+
+{\ttfamily \#include $<$scene\+\_\+rect.\+h$>$}
+
+Inheritance diagram for Scene\+Rect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d3/db3/classSceneRect}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classSceneRect_ae072eeb2bda11180dce595f2cc5eed0ca7d1fe139281727cd2df095907657cc18}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Scene\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSceneRect_af8894584fc83ce3deaf143171f46a6a5}{Scene\+Rect}} (const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classSceneRect_a89834fc76165fd7d4e169c8c1caedd95}{$\sim$\+Scene\+Rect}} ()=default
+\item 
+virtual int \mbox{\hyperlink{classSceneRect_a8b96d4e5e355cd1073f88a142a6577ad}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classSceneRect_a43036c626d002e8cb5c1b183cb501ea4}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classSceneRect_ac47a2379e49e4b0d6c80c82900c68741}{refresh\+Point\+Geometry}} (const \mbox{\hyperlink{classVPointF}{VPointF}} \&point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classSceneRect_a6fc0de5f66f244b08bcb08420dc0c1a4}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classSceneRect_a7632ef38d888a3805c76d4fd86f46218}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classSceneRect_a6f3b1c3eaa782f9f2c4c230b3d668f29}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{classSceneRect_afdfb2396e7ca893c76ec0d8710f6dfca}{is\+Only\+Point}} () const
+\item 
+void \mbox{\hyperlink{classSceneRect_a93d9ebb517a2bf5cdcfb044460c096eb}{set\+Point\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classSceneRect_a91e46b85ce194104b384c302bfc31c53}{m\+\_\+rect\+Color}}
+\item 
+bool \mbox{\hyperlink{classSceneRect_aba7730d776853c33a9e62431de1eb52d}{m\+\_\+only\+Point}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+rect\+Color color of point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSceneRect_a9cc239b109d776f8692900d0827ff549}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{classSceneRect_ad1f09a15d11d234cf8c2fe7c6cf49a5b}{m\+\_\+show\+Point\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSceneRect_abea41f2f6ea73c51c6d8b4157021cb93}{set\+Rect\+Pen}} (qreal scale)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSceneRect_ae072eeb2bda11180dce595f2cc5eed0c}\label{classSceneRect_ae072eeb2bda11180dce595f2cc5eed0c}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!SceneRect@{SceneRect}}\index{SceneRect@{SceneRect}!Type@{Type}}}\mbox{\Hypertarget{classSceneRect_ae072eeb2bda11180dce595f2cc5eed0ca7d1fe139281727cd2df095907657cc18}\label{classSceneRect_ae072eeb2bda11180dce595f2cc5eed0ca7d1fe139281727cd2df095907657cc18}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSceneRect_af8894584fc83ce3deaf143171f46a6a5}\label{classSceneRect_af8894584fc83ce3deaf143171f46a6a5}} 
+\index{SceneRect@{SceneRect}!SceneRect@{SceneRect}}
+\index{SceneRect@{SceneRect}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{SceneRect()}{SceneRect()}}
+{\footnotesize\ttfamily Scene\+Rect\+::\+Scene\+Rect (\begin{DoxyParamCaption}\item[{const QColor \&}]{line\+Color,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classSceneRect_a89834fc76165fd7d4e169c8c1caedd95}\label{classSceneRect_a89834fc76165fd7d4e169c8c1caedd95}} 
+\index{SceneRect@{SceneRect}!````~SceneRect@{$\sim$SceneRect}}
+\index{````~SceneRect@{$\sim$SceneRect}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneRect()}{~SceneRect()}}
+{\footnotesize\ttfamily virtual Scene\+Rect\+::$\sim$\+Scene\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSceneRect_a6fc0de5f66f244b08bcb08420dc0c1a4}\label{classSceneRect_a6fc0de5f66f244b08bcb08420dc0c1a4}} 
+\index{SceneRect@{SceneRect}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVControlPointSpline_ab2a0907d0d99855085cac8ae1600052b}{VControl\+Point\+Spline}}.
+
+\mbox{\Hypertarget{classSceneRect_a7632ef38d888a3805c76d4fd86f46218}\label{classSceneRect_a7632ef38d888a3805c76d4fd86f46218}} 
+\index{SceneRect@{SceneRect}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVControlPointSpline_ae951a273cb147384857f02174e56dc40}{VControl\+Point\+Spline}}.
+
+\mbox{\Hypertarget{classSceneRect_afdfb2396e7ca893c76ec0d8710f6dfca}\label{classSceneRect_afdfb2396e7ca893c76ec0d8710f6dfca}} 
+\index{SceneRect@{SceneRect}!isOnlyPoint@{isOnlyPoint}}
+\index{isOnlyPoint@{isOnlyPoint}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{isOnlyPoint()}{isOnlyPoint()}}
+{\footnotesize\ttfamily bool Scene\+Rect\+::is\+Only\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSceneRect_a43036c626d002e8cb5c1b183cb501ea4}\label{classSceneRect_a43036c626d002e8cb5c1b183cb501ea4}} 
+\index{SceneRect@{SceneRect}!paint@{paint}}
+\index{paint@{paint}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVControlPointSpline_ac376aa16ff0f3ee22df98af9cb6ebe2e}{VControl\+Point\+Spline}}.
+
+\mbox{\Hypertarget{classSceneRect_ac47a2379e49e4b0d6c80c82900c68741}\label{classSceneRect_ac47a2379e49e4b0d6c80c82900c68741}} 
+\index{SceneRect@{SceneRect}!refreshPointGeometry@{refreshPointGeometry}}
+\index{refreshPointGeometry@{refreshPointGeometry}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{refreshPointGeometry()}{refreshPointGeometry()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::refresh\+Point\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPointF}{VPointF}} \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSceneRect_a6f3b1c3eaa782f9f2c4c230b3d668f29}\label{classSceneRect_a6f3b1c3eaa782f9f2c4c230b3d668f29}} 
+\index{SceneRect@{SceneRect}!setOnlyPoint@{setOnlyPoint}}
+\index{setOnlyPoint@{setOnlyPoint}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{setOnlyPoint()}{setOnlyPoint()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::set\+Only\+Point (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSceneRect_a93d9ebb517a2bf5cdcfb044460c096eb}\label{classSceneRect_a93d9ebb517a2bf5cdcfb044460c096eb}} 
+\index{SceneRect@{SceneRect}!setPointColor@{setPointColor}}
+\index{setPointColor@{setPointColor}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{setPointColor()}{setPointColor()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::set\+Point\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSceneRect_abea41f2f6ea73c51c6d8b4157021cb93}\label{classSceneRect_abea41f2f6ea73c51c6d8b4157021cb93}} 
+\index{SceneRect@{SceneRect}!setRectPen@{setRectPen}}
+\index{setRectPen@{setRectPen}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{setRectPen()}{setRectPen()}}
+{\footnotesize\ttfamily void Scene\+Rect\+::set\+Rect\+Pen (\begin{DoxyParamCaption}\item[{qreal}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSceneRect_a8b96d4e5e355cd1073f88a142a6577ad}\label{classSceneRect_a8b96d4e5e355cd1073f88a142a6577ad}} 
+\index{SceneRect@{SceneRect}!type@{type}}
+\index{type@{type}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Scene\+Rect\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVControlPointSpline_ab8cc9041fdbe0ffdf5b6f4eebb127e46}{VControl\+Point\+Spline}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSceneRect_a9cc239b109d776f8692900d0827ff549}\label{classSceneRect_a9cc239b109d776f8692900d0827ff549}} 
+\index{SceneRect@{SceneRect}!m\_isHovered@{m\_isHovered}}
+\index{m\_isHovered@{m\_isHovered}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{m\_isHovered}{m\_isHovered}}
+{\footnotesize\ttfamily bool Scene\+Rect\+::m\+\_\+is\+Hovered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSceneRect_aba7730d776853c33a9e62431de1eb52d}\label{classSceneRect_aba7730d776853c33a9e62431de1eb52d}} 
+\index{SceneRect@{SceneRect}!m\_onlyPoint@{m\_onlyPoint}}
+\index{m\_onlyPoint@{m\_onlyPoint}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{m\_onlyPoint}{m\_onlyPoint}}
+{\footnotesize\ttfamily bool Scene\+Rect\+::m\+\_\+only\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+m\+\_\+rect\+Color color of point. 
+
+\mbox{\Hypertarget{classSceneRect_a91e46b85ce194104b384c302bfc31c53}\label{classSceneRect_a91e46b85ce194104b384c302bfc31c53}} 
+\index{SceneRect@{SceneRect}!m\_rectColor@{m\_rectColor}}
+\index{m\_rectColor@{m\_rectColor}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{m\_rectColor}{m\_rectColor}}
+{\footnotesize\ttfamily QColor Scene\+Rect\+::m\+\_\+rect\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSceneRect_ad1f09a15d11d234cf8c2fe7c6cf49a5b}\label{classSceneRect_ad1f09a15d11d234cf8c2fe7c6cf49a5b}} 
+\index{SceneRect@{SceneRect}!m\_showPointName@{m\_showPointName}}
+\index{m\_showPointName@{m\_showPointName}!SceneRect@{SceneRect}}
+\doxysubsubsection{\texorpdfstring{m\_showPointName}{m\_showPointName}}
+{\footnotesize\ttfamily bool Scene\+Rect\+::m\+\_\+show\+Point\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vwidgets/\mbox{\hyperlink{scene__rect_8h}{scene\+\_\+rect.\+h}}\item 
+src/libs/vwidgets/\mbox{\hyperlink{scene__rect_8cpp}{scene\+\_\+rect.\+cpp}}\end{DoxyCompactItemize}

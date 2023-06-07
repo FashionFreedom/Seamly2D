@@ -1,0 +1,213 @@
+\hypertarget{classVExceptionObjectError}{}\doxysection{VException\+Object\+Error Class Reference}
+\label{classVExceptionObjectError}\index{VExceptionObjectError@{VExceptionObjectError}}
+
+
+The \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} class for exception object error.  
+
+
+
+
+{\ttfamily \#include $<$vexceptionobjecterror.\+h$>$}
+
+Inheritance diagram for VException\+Object\+Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d7/d41/classVExceptionObjectError}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVExceptionObjectError_a914c0ef0d3e080694e40392995eac29d}{VException\+Object\+Error}} (const QString \&\mbox{\hyperlink{classVException_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}}, const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} exception object error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVExceptionObjectError_ace00f1d1cc3e86bc3ec5b2dad9d698d9}{VException\+Object\+Error}} (const \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} \&e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} \& \mbox{\hyperlink{classVExceptionObjectError_a394fc3399ba23af97a9180d0bb0c497e}{operator=}} (const \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} \&e)
+\item 
+virtual \mbox{\hyperlink{classVExceptionObjectError_ac1113d6df47338f08de65b84c5c2c58d}{$\sim$\+VException\+Object\+Error}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QString \mbox{\hyperlink{classVExceptionObjectError_a9ed0496c22f96e239ca0a23c362603bf}{Error\+Message}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Error\+Message return main error message. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVExceptionObjectError_ac855cf13f002a34f2fe612edc74c94c6}{Detailed\+Information}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Detailed\+Information return detailed information about error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVExceptionObjectError_aea08b4e87b088a34d091ae045c3a1f85}{Tag\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Tag\+Text return tag text. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVExceptionObjectError_a6bb25f364d7c7ec111ea83d0a4169c2c}{Tag\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Tag\+Name return tag name. \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{classVExceptionObjectError_aed882340706bbee6a4a1ae226bff70bd}{Line\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Line\+Number return line number in file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classVExceptionObjectError_adfd835876b8892daebe168d1ca0398ce}{tag\+Text}}
+\begin{DoxyCompactList}\small\item\em tag\+Text tag text \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVExceptionObjectError_a9dc842477fdd076de4fc9a23dbd5c32d}{tag\+Name}}
+\begin{DoxyCompactList}\small\item\em tag\+Name tag name \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{classVExceptionObjectError_a961a386a39d5a8e712555e156b4e2dd5}{line\+Number}}
+\begin{DoxyCompactList}\small\item\em line\+Number line number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} class for exception object error. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVExceptionObjectError_a914c0ef0d3e080694e40392995eac29d}\label{classVExceptionObjectError_a914c0ef0d3e080694e40392995eac29d}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!VExceptionObjectError@{VExceptionObjectError}}
+\index{VExceptionObjectError@{VExceptionObjectError}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{VExceptionObjectError()}{VExceptionObjectError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VException\+Object\+Error\+::\+VException\+Object\+Error (\begin{DoxyParamCaption}\item[{const QString \&}]{what,  }\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} exception object error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em what} & string with error \\
+\hline
+{\em dom\+Element} & dom element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVExceptionObjectError_ace00f1d1cc3e86bc3ec5b2dad9d698d9}\label{classVExceptionObjectError_ace00f1d1cc3e86bc3ec5b2dad9d698d9}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!VExceptionObjectError@{VExceptionObjectError}}
+\index{VExceptionObjectError@{VExceptionObjectError}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{VExceptionObjectError()}{VExceptionObjectError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VException\+Object\+Error\+::\+VException\+Object\+Error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} \&}]{e }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & exception \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVExceptionObjectError_ac1113d6df47338f08de65b84c5c2c58d}\label{classVExceptionObjectError_ac1113d6df47338f08de65b84c5c2c58d}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!````~VExceptionObjectError@{$\sim$VExceptionObjectError}}
+\index{````~VExceptionObjectError@{$\sim$VExceptionObjectError}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{$\sim$VExceptionObjectError()}{~VExceptionObjectError()}}
+{\footnotesize\ttfamily virtual VException\+Object\+Error\+::$\sim$\+VException\+Object\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVExceptionObjectError_ac855cf13f002a34f2fe612edc74c94c6}\label{classVExceptionObjectError_ac855cf13f002a34f2fe612edc74c94c6}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!DetailedInformation@{DetailedInformation}}
+\index{DetailedInformation@{DetailedInformation}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{DetailedInformation()}{DetailedInformation()}}
+{\footnotesize\ttfamily QString VException\+Object\+Error\+::\+Detailed\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Detailed\+Information return detailed information about error. 
+
+\begin{DoxyReturn}{Returns}
+detailed information 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVException_aca8103cef3ea50128d4c65cc75568bd2}{VException}}.
+
+\mbox{\Hypertarget{classVExceptionObjectError_a9ed0496c22f96e239ca0a23c362603bf}\label{classVExceptionObjectError_a9ed0496c22f96e239ca0a23c362603bf}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!ErrorMessage@{ErrorMessage}}
+\index{ErrorMessage@{ErrorMessage}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{ErrorMessage()}{ErrorMessage()}}
+{\footnotesize\ttfamily QString VException\+Object\+Error\+::\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Error\+Message return main error message. 
+
+\begin{DoxyReturn}{Returns}
+main error message 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVException_a68239f5b9fd12b5f739c5101e616a8a5}{VException}}.
+
+\mbox{\Hypertarget{classVExceptionObjectError_aed882340706bbee6a4a1ae226bff70bd}\label{classVExceptionObjectError_aed882340706bbee6a4a1ae226bff70bd}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!LineNumber@{LineNumber}}
+\index{LineNumber@{LineNumber}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{LineNumber()}{LineNumber()}}
+{\footnotesize\ttfamily qint32 VException\+Object\+Error\+::\+Line\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Line\+Number return line number in file. 
+
+\begin{DoxyReturn}{Returns}
+line number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVExceptionObjectError_a394fc3399ba23af97a9180d0bb0c497e}\label{classVExceptionObjectError_a394fc3399ba23af97a9180d0bb0c497e}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!operator=@{operator=}}
+\index{operator=@{operator=}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} \& VException\+Object\+Error\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVExceptionObjectError}{VException\+Object\+Error}} \&}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVExceptionObjectError_a6bb25f364d7c7ec111ea83d0a4169c2c}\label{classVExceptionObjectError_a6bb25f364d7c7ec111ea83d0a4169c2c}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!TagName@{TagName}}
+\index{TagName@{TagName}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{TagName()}{TagName()}}
+{\footnotesize\ttfamily QString VException\+Object\+Error\+::\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tag\+Name return tag name. 
+
+\begin{DoxyReturn}{Returns}
+tag name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVExceptionObjectError_aea08b4e87b088a34d091ae045c3a1f85}\label{classVExceptionObjectError_aea08b4e87b088a34d091ae045c3a1f85}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!TagText@{TagText}}
+\index{TagText@{TagText}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{TagText()}{TagText()}}
+{\footnotesize\ttfamily QString VException\+Object\+Error\+::\+Tag\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tag\+Text return tag text. 
+
+\begin{DoxyReturn}{Returns}
+tag text 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVExceptionObjectError_a961a386a39d5a8e712555e156b4e2dd5}\label{classVExceptionObjectError_a961a386a39d5a8e712555e156b4e2dd5}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!lineNumber@{lineNumber}}
+\index{lineNumber@{lineNumber}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{lineNumber}{lineNumber}}
+{\footnotesize\ttfamily qint32 VException\+Object\+Error\+::line\+Number\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+line\+Number line number 
+
+\mbox{\Hypertarget{classVExceptionObjectError_a9dc842477fdd076de4fc9a23dbd5c32d}\label{classVExceptionObjectError_a9dc842477fdd076de4fc9a23dbd5c32d}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!tagName@{tagName}}
+\index{tagName@{tagName}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{tagName}{tagName}}
+{\footnotesize\ttfamily QString VException\+Object\+Error\+::tag\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tag\+Name tag name 
+
+\mbox{\Hypertarget{classVExceptionObjectError_adfd835876b8892daebe168d1ca0398ce}\label{classVExceptionObjectError_adfd835876b8892daebe168d1ca0398ce}} 
+\index{VExceptionObjectError@{VExceptionObjectError}!tagText@{tagText}}
+\index{tagText@{tagText}!VExceptionObjectError@{VExceptionObjectError}}
+\doxysubsubsection{\texorpdfstring{tagText}{tagText}}
+{\footnotesize\ttfamily QString VException\+Object\+Error\+::tag\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tag\+Text tag text 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/ifc/exception/\mbox{\hyperlink{vexceptionobjecterror_8h}{vexceptionobjecterror.\+h}}\item 
+src/libs/ifc/exception/\mbox{\hyperlink{vexceptionobjecterror_8cpp}{vexceptionobjecterror.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,522 @@
+\hypertarget{classVAbstractOperation}{}\doxysection{VAbstract\+Operation Class Reference}
+\label{classVAbstractOperation}\index{VAbstractOperation@{VAbstractOperation}}
+
+
+{\ttfamily \#include $<$vabstractoperation.\+h$>$}
+
+Inheritance diagram for VAbstract\+Operation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{d7/d15/classVAbstractOperation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a081ff794ffcb84697f6e9f894e2f1418}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a03b6e0b4b292010a10e9d5536fc20d05}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a78a51fae11f13996cdb1c57927ee27b8}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_ac09e475132898fb05d842076374d8e8a}{Enable\+Tool\+Move}} (bool move) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_ab01bad83d9a61a8ae580ae94ca7f2d65}{Allow\+Point\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a683d226e956e6d793819f01d5525e94a}{Allow\+Point\+Selecting}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a97538719c3a7addfbd296655435fd6d8}{Allow\+Point\+Label\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a62e377a88133ed2d502268cfeb7e3472}{Allow\+Point\+Label\+Selecting}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_aa11d2b45aea2684f7770320120dbd03c}{Allow\+Spline\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_aef335d89e0c63bf9f0e417ab40c2e16f}{Allow\+Spline\+Selecting}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a854a0877266cc8114dddafba966ac495}{Allow\+Spline\+Path\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_ad4d78046c829eda69bd837a31aae8377}{Allow\+Spline\+Path\+Selecting}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a452ac57cee944d64fbcbeca9e43c0cb8}{Allow\+Arc\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a00bb3cd6f1581d472cd7633461c4f903}{Allow\+Arc\+Selecting}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_af9853eeddc968b7fbc4b0aec079db200}{Allow\+El\+Arc\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a3260c8913efcb469c9a68243aa0fdfcf}{Allow\+El\+Arc\+Selecting}} (bool enabled)
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a0faca8af234d1e3926aac6dcb6b5ca1a}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a7bdde26e2001ec7a55513da0f43aa6ed}{Disable}} (bool disable, const QString \&draft\+Block\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a828d50958e48bbacb9d9b2e79e182142}{Object\+Selected}} (bool selected, quint32 obj\+Id)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_abcb9513c6905562264a95a19b310be51}{delete\+Point}} ()
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a438b93dc4f74e7133d35c26f8d9c69f8}{point\+Name\+Position\+Changed}} (const QPointF \&pos, quint32 label\+Id)
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_ad649087b44b61abc1fd96aa25e8ebc32}{update\+Point\+Name\+Visibility}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classVAbstractOperation_a11d3eb1b736f458392684e32d64d721c}{$\sim$\+VAbstract\+Operation}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QString \mbox{\hyperlink{classVAbstractOperation_ae6811501562ef2fbc96215fe92f0c935}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVAbstractOperation_a5ecb225f6a0748691cc5719e679ffb67}{Suffix}} () const
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a90e22eb5f0db615248ace4b97827d816}{set\+Suffix}} (const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}})
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a9d1896119c335b5e127aeaaa936a8cf8}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a3adbb087f483750c51f717355c362a0f}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVAbstractOperation_ad73e132904ef1e840e8135329acb825c}{is\+Point\+Name\+Visible}} (quint32 id) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_ad3f720c1c31edf913c95653697b0d72a}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a274c7b952f9c4f39fd357cf90c2f0c12}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classVAbstractOperation_a69af12f2a15653bbb7cbb47e796448d5}{Extract\+Data}} (const QDom\+Element \&dom\+Element, \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}, \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVAbstractOperation_a50fe4cc317215b1cb13db158bf8e61f4}{Tag\+Item}} = QString\+Literal(\char`\"{}item\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVAbstractOperation_acb0723a66b1755ffce7ede29a24aa66e}{Tag\+Source}} = QString\+Literal(\char`\"{}source\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVAbstractOperation_a3756aa9875a51ebaf78f90ee5113a7c2}{Tag\+Destination}} = QString\+Literal(\char`\"{}destination\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAbstractOperation_a188cf40dc5fe5a8cb09f643731e8282e}{VAbstract\+Operation}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, const QString \&\mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&\mbox{\hyperlink{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a3488839503157457a43266614ac8502a}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a90699b27c2b71ae695661c98f1125ece}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractOperation_a0ac2d9f9cc3218f3736d621ff7145f40}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a23bec697d687ee362e8a0ad2bddda052}{update\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a5c2e51bad743404e2441ce70556254dc}{Save\+Source\+Destination}} (QDom\+Element \&tag)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classVAbstractOperation_a840a25bafb09b44bd517f0f464297c7e}{Show\+Tool\+Visualization}} (bool show)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_af557ca3465b2a72087d3ccee5d32f0b1}{Init\+Curve}} (quint32 id, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} curve\+Type, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} scene\+Type)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a87dae16379a82f7e7ec456b6677b6c22}{Init\+Operated\+Objects}} ()
+\item 
+QString \mbox{\hyperlink{classVAbstractOperation_aa85e5cc38ba47f9be4ec0a0c20ccb9b5}{complex\+Point\+Tool\+Tip}} (quint32 item\+Id) const
+\item 
+QString \mbox{\hyperlink{classVAbstractOperation_ad8bb6b3321ee60ad5860adf92343c16d}{complex\+Curve\+Tool\+Tip}} (quint32 item\+Id) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{classVAbstractOperation_a45bbe90a890d74868ab602472b6c6a79}{init\+Operation\+Tool\+Connections}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \mbox{\hyperlink{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}{source}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \mbox{\hyperlink{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, \mbox{\hyperlink{classVAbstractSimple}{VAbstract\+Simple}} $\ast$ $>$ \mbox{\hyperlink{classVAbstractOperation_a158c102f9fd61a3209edcfecd7af04db}{operated\+Objects}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_adf817b79fa39252b3bfa6de2fd987fbc}{Allow\+Curve\+Hover}} (bool enabled, \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} type)
+\item 
+void \mbox{\hyperlink{classVAbstractOperation_a77f4fc36571f724a0ce956f8cdd957f3}{Allow\+Curve\+Selecting}} (bool enabled, \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVAbstractOperation_a11d3eb1b736f458392684e32d64d721c}\label{classVAbstractOperation_a11d3eb1b736f458392684e32d64d721c}} 
+\index{VAbstractOperation@{VAbstractOperation}!````~VAbstractOperation@{$\sim$VAbstractOperation}}
+\index{````~VAbstractOperation@{$\sim$VAbstractOperation}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractOperation()}{~VAbstractOperation()}}
+{\footnotesize\ttfamily virtual VAbstract\+Operation\+::$\sim$\+VAbstract\+Operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a188cf40dc5fe5a8cb09f643731e8282e}\label{classVAbstractOperation_a188cf40dc5fe5a8cb09f643731e8282e}} 
+\index{VAbstractOperation@{VAbstractOperation}!VAbstractOperation@{VAbstractOperation}}
+\index{VAbstractOperation@{VAbstractOperation}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{VAbstractOperation()}{VAbstractOperation()}}
+{\footnotesize\ttfamily VAbstract\+Operation\+::\+VAbstract\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{const QString \&}]{suffix,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{source,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&}]{destination,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVAbstractOperation_a3488839503157457a43266614ac8502a}\label{classVAbstractOperation_a3488839503157457a43266614ac8502a}} 
+\index{VAbstractOperation@{VAbstractOperation}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_acce4d75b32a39d5c61b1b2c176e0b04b}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_a452ac57cee944d64fbcbeca9e43c0cb8}\label{classVAbstractOperation_a452ac57cee944d64fbcbeca9e43c0cb8}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowArcHover@{AllowArcHover}}
+\index{AllowArcHover@{AllowArcHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowArcHover}{AllowArcHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Arc\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a00bb3cd6f1581d472cd7633461c4f903}\label{classVAbstractOperation_a00bb3cd6f1581d472cd7633461c4f903}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowArcSelecting@{AllowArcSelecting}}
+\index{AllowArcSelecting@{AllowArcSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowArcSelecting}{AllowArcSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Arc\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_adf817b79fa39252b3bfa6de2fd987fbc}\label{classVAbstractOperation_adf817b79fa39252b3bfa6de2fd987fbc}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowCurveHover@{AllowCurveHover}}
+\index{AllowCurveHover@{AllowCurveHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowCurveHover()}{AllowCurveHover()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Curve\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a77f4fc36571f724a0ce956f8cdd957f3}\label{classVAbstractOperation_a77f4fc36571f724a0ce956f8cdd957f3}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowCurveSelecting@{AllowCurveSelecting}}
+\index{AllowCurveSelecting@{AllowCurveSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowCurveSelecting()}{AllowCurveSelecting()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Curve\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_af9853eeddc968b7fbc4b0aec079db200}\label{classVAbstractOperation_af9853eeddc968b7fbc4b0aec079db200}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowElArcHover@{AllowElArcHover}}
+\index{AllowElArcHover@{AllowElArcHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowElArcHover}{AllowElArcHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+El\+Arc\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a3260c8913efcb469c9a68243aa0fdfcf}\label{classVAbstractOperation_a3260c8913efcb469c9a68243aa0fdfcf}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowElArcSelecting@{AllowElArcSelecting}}
+\index{AllowElArcSelecting@{AllowElArcSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowElArcSelecting}{AllowElArcSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+El\+Arc\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a03b6e0b4b292010a10e9d5536fc20d05}\label{classVAbstractOperation_a03b6e0b4b292010a10e9d5536fc20d05}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ab01bad83d9a61a8ae580ae94ca7f2d65}\label{classVAbstractOperation_ab01bad83d9a61a8ae580ae94ca7f2d65}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowPointHover@{AllowPointHover}}
+\index{AllowPointHover@{AllowPointHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowPointHover}{AllowPointHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Point\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a97538719c3a7addfbd296655435fd6d8}\label{classVAbstractOperation_a97538719c3a7addfbd296655435fd6d8}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowPointLabelHover@{AllowPointLabelHover}}
+\index{AllowPointLabelHover@{AllowPointLabelHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowPointLabelHover}{AllowPointLabelHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Point\+Label\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a62e377a88133ed2d502268cfeb7e3472}\label{classVAbstractOperation_a62e377a88133ed2d502268cfeb7e3472}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowPointLabelSelecting@{AllowPointLabelSelecting}}
+\index{AllowPointLabelSelecting@{AllowPointLabelSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowPointLabelSelecting}{AllowPointLabelSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Point\+Label\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a683d226e956e6d793819f01d5525e94a}\label{classVAbstractOperation_a683d226e956e6d793819f01d5525e94a}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowPointSelecting@{AllowPointSelecting}}
+\index{AllowPointSelecting@{AllowPointSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowPointSelecting}{AllowPointSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Point\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a78a51fae11f13996cdb1c57927ee27b8}\label{classVAbstractOperation_a78a51fae11f13996cdb1c57927ee27b8}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_aa11d2b45aea2684f7770320120dbd03c}\label{classVAbstractOperation_aa11d2b45aea2684f7770320120dbd03c}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowSplineHover@{AllowSplineHover}}
+\index{AllowSplineHover@{AllowSplineHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowSplineHover}{AllowSplineHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Spline\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a854a0877266cc8114dddafba966ac495}\label{classVAbstractOperation_a854a0877266cc8114dddafba966ac495}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowSplinePathHover@{AllowSplinePathHover}}
+\index{AllowSplinePathHover@{AllowSplinePathHover}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowSplinePathHover}{AllowSplinePathHover}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Spline\+Path\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ad4d78046c829eda69bd837a31aae8377}\label{classVAbstractOperation_ad4d78046c829eda69bd837a31aae8377}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowSplinePathSelecting@{AllowSplinePathSelecting}}
+\index{AllowSplinePathSelecting@{AllowSplinePathSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowSplinePathSelecting}{AllowSplinePathSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Spline\+Path\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_aef335d89e0c63bf9f0e417ab40c2e16f}\label{classVAbstractOperation_aef335d89e0c63bf9f0e417ab40c2e16f}} 
+\index{VAbstractOperation@{VAbstractOperation}!AllowSplineSelecting@{AllowSplineSelecting}}
+\index{AllowSplineSelecting@{AllowSplineSelecting}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{AllowSplineSelecting}{AllowSplineSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Allow\+Spline\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ad8bb6b3321ee60ad5860adf92343c16d}\label{classVAbstractOperation_ad8bb6b3321ee60ad5860adf92343c16d}} 
+\index{VAbstractOperation@{VAbstractOperation}!complexCurveToolTip@{complexCurveToolTip}}
+\index{complexCurveToolTip@{complexCurveToolTip}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{complexCurveToolTip()}{complexCurveToolTip()}}
+{\footnotesize\ttfamily QString VAbstract\+Operation\+::complex\+Curve\+Tool\+Tip (\begin{DoxyParamCaption}\item[{quint32}]{item\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_aa85e5cc38ba47f9be4ec0a0c20ccb9b5}\label{classVAbstractOperation_aa85e5cc38ba47f9be4ec0a0c20ccb9b5}} 
+\index{VAbstractOperation@{VAbstractOperation}!complexPointToolTip@{complexPointToolTip}}
+\index{complexPointToolTip@{complexPointToolTip}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{complexPointToolTip()}{complexPointToolTip()}}
+{\footnotesize\ttfamily QString VAbstract\+Operation\+::complex\+Point\+Tool\+Tip (\begin{DoxyParamCaption}\item[{quint32}]{item\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_abcb9513c6905562264a95a19b310be51}\label{classVAbstractOperation_abcb9513c6905562264a95a19b310be51}} 
+\index{VAbstractOperation@{VAbstractOperation}!deletePoint@{deletePoint}}
+\index{deletePoint@{deletePoint}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{deletePoint}{deletePoint}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::delete\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a7bdde26e2001ec7a55513da0f43aa6ed}\label{classVAbstractOperation_a7bdde26e2001ec7a55513da0f43aa6ed}} 
+\index{VAbstractOperation@{VAbstractOperation}!Disable@{Disable}}
+\index{Disable@{Disable}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ac09e475132898fb05d842076374d8e8a}\label{classVAbstractOperation_ac09e475132898fb05d842076374d8e8a}} 
+\index{VAbstractOperation@{VAbstractOperation}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove}{EnableToolMove}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a69af12f2a15653bbb7cbb47e796448d5}\label{classVAbstractOperation_a69af12f2a15653bbb7cbb47e796448d5}} 
+\index{VAbstractOperation@{VAbstractOperation}!ExtractData@{ExtractData}}
+\index{ExtractData@{ExtractData}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{ExtractData()}{ExtractData()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Extract\+Data (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{source,  }\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structDestinationItem}{Destination\+Item}} $>$ \&}]{destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a081ff794ffcb84697f6e9f894e2f1418}\label{classVAbstractOperation_a081ff794ffcb84697f6e9f894e2f1418}} 
+\index{VAbstractOperation@{VAbstractOperation}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ae6811501562ef2fbc96215fe92f0c935}\label{classVAbstractOperation_ae6811501562ef2fbc96215fe92f0c935}} 
+\index{VAbstractOperation@{VAbstractOperation}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString VAbstract\+Operation\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_a9d1896119c335b5e127aeaaa936a8cf8}\label{classVAbstractOperation_a9d1896119c335b5e127aeaaa936a8cf8}} 
+\index{VAbstractOperation@{VAbstractOperation}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDataTool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_af557ca3465b2a72087d3ccee5d32f0b1}\label{classVAbstractOperation_af557ca3465b2a72087d3ccee5d32f0b1}} 
+\index{VAbstractOperation@{VAbstractOperation}!InitCurve@{InitCurve}}
+\index{InitCurve@{InitCurve}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{InitCurve()}{InitCurve()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Init\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}}]{curve\+Type,  }\item[{\mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}}}]{scene\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a87dae16379a82f7e7ec456b6677b6c22}\label{classVAbstractOperation_a87dae16379a82f7e7ec456b6677b6c22}} 
+\index{VAbstractOperation@{VAbstractOperation}!InitOperatedObjects@{InitOperatedObjects}}
+\index{InitOperatedObjects@{InitOperatedObjects}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{InitOperatedObjects()}{InitOperatedObjects()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Init\+Operated\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a45bbe90a890d74868ab602472b6c6a79}\label{classVAbstractOperation_a45bbe90a890d74868ab602472b6c6a79}} 
+\index{VAbstractOperation@{VAbstractOperation}!initOperationToolConnections@{initOperationToolConnections}}
+\index{initOperationToolConnections@{initOperationToolConnections}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{initOperationToolConnections()}{initOperationToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Operation\+::init\+Operation\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ad73e132904ef1e840e8135329acb825c}\label{classVAbstractOperation_ad73e132904ef1e840e8135329acb825c}} 
+\index{VAbstractOperation@{VAbstractOperation}!isPointNameVisible@{isPointNameVisible}}
+\index{isPointNameVisible@{isPointNameVisible}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{isPointNameVisible()}{isPointNameVisible()}}
+{\footnotesize\ttfamily bool VAbstract\+Operation\+::is\+Point\+Name\+Visible (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_a1d47f790e9cddac2a8c2c517f7d99596}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_a828d50958e48bbacb9d9b2e79e182142}\label{classVAbstractOperation_a828d50958e48bbacb9d9b2e79e182142}} 
+\index{VAbstractOperation@{VAbstractOperation}!ObjectSelected@{ObjectSelected}}
+\index{ObjectSelected@{ObjectSelected}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{ObjectSelected}{ObjectSelected}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Object\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{obj\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a3adbb087f483750c51f717355c362a0f}\label{classVAbstractOperation_a3adbb087f483750c51f717355c362a0f}} 
+\index{VAbstractOperation@{VAbstractOperation}!paint@{paint}}
+\index{paint@{paint}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a438b93dc4f74e7133d35c26f8d9c69f8}\label{classVAbstractOperation_a438b93dc4f74e7133d35c26f8d9c69f8}} 
+\index{VAbstractOperation@{VAbstractOperation}!pointNamePositionChanged@{pointNamePositionChanged}}
+\index{pointNamePositionChanged@{pointNamePositionChanged}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{pointNamePositionChanged}{pointNamePositionChanged}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::point\+Name\+Position\+Changed (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{quint32}]{label\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a90699b27c2b71ae695661c98f1125ece}\label{classVAbstractOperation_a90699b27c2b71ae695661c98f1125ece}} 
+\index{VAbstractOperation@{VAbstractOperation}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a95795603f1fa62ffacc4fb5fb8fae984}{VDraw\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolRotation_a7189b8f2018c021e4121880e67a16418}{VTool\+Rotation}}, \mbox{\hyperlink{classVToolMove_add7fb511df986d7247d5506d6a1568ba}{VTool\+Move}}, \mbox{\hyperlink{classVToolMirrorByLine_abcdd9d772c6b9a98561ffc1d1ccb19dd}{VTool\+Mirror\+By\+Line}}, and \mbox{\hyperlink{classVToolMirrorByAxis_a1e0e56b31f008aa655b3d766401060b6}{VTool\+Mirror\+By\+Axis}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_a0ac2d9f9cc3218f3736d621ff7145f40}\label{classVAbstractOperation_a0ac2d9f9cc3218f3736d621ff7145f40}} 
+\index{VAbstractOperation@{VAbstractOperation}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_a7d08276443940981864477fe86f28090}{VDraw\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolRotation_a862c85b03cfe275ba5049528547b0270}{VTool\+Rotation}}, \mbox{\hyperlink{classVToolMove_af0ad53a47691f9506e38b710be6630b4}{VTool\+Move}}, \mbox{\hyperlink{classVToolMirrorByLine_ab00fc53bf7cd2600b052ccc36b9a55e5}{VTool\+Mirror\+By\+Line}}, and \mbox{\hyperlink{classVToolMirrorByAxis_adddafec02825cd6ccaed7d71efb6fee4}{VTool\+Mirror\+By\+Axis}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_a5c2e51bad743404e2441ce70556254dc}\label{classVAbstractOperation_a5c2e51bad743404e2441ce70556254dc}} 
+\index{VAbstractOperation@{VAbstractOperation}!SaveSourceDestination@{SaveSourceDestination}}
+\index{SaveSourceDestination@{SaveSourceDestination}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{SaveSourceDestination()}{SaveSourceDestination()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Save\+Source\+Destination (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a274c7b952f9c4f39fd357cf90c2f0c12}\label{classVAbstractOperation_a274c7b952f9c4f39fd357cf90c2f0c12}} 
+\index{VAbstractOperation@{VAbstractOperation}!setPointNamePosition@{setPointNamePosition}}
+\index{setPointNamePosition@{setPointNamePosition}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{setPointNamePosition()}{setPointNamePosition()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::set\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a2993df3110cfbac96c8bf5a6799cc585}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_ad3f720c1c31edf913c95653697b0d72a}\label{classVAbstractOperation_ad3f720c1c31edf913c95653697b0d72a}} 
+\index{VAbstractOperation@{VAbstractOperation}!setPointNameVisiblity@{setPointNameVisiblity}}
+\index{setPointNameVisiblity@{setPointNameVisiblity}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{setPointNameVisiblity()}{setPointNameVisiblity()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::set\+Point\+Name\+Visiblity (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_af5b3153cb7a4e3023328961be332bcca}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractOperation_a90e22eb5f0db615248ace4b97827d816}\label{classVAbstractOperation_a90e22eb5f0db615248ace4b97827d816}} 
+\index{VAbstractOperation@{VAbstractOperation}!setSuffix@{setSuffix}}
+\index{setSuffix@{setSuffix}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{setSuffix()}{setSuffix()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::set\+Suffix (\begin{DoxyParamCaption}\item[{const QString \&}]{suffix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVAbstractOperation_a840a25bafb09b44bd517f0f464297c7e}\label{classVAbstractOperation_a840a25bafb09b44bd517f0f464297c7e}} 
+\index{VAbstractOperation@{VAbstractOperation}!ShowToolVisualization@{ShowToolVisualization}}
+\index{ShowToolVisualization@{ShowToolVisualization}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{ShowToolVisualization()}{ShowToolVisualization()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Operation\+::\+Show\+Tool\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a5ecb225f6a0748691cc5719e679ffb67}\label{classVAbstractOperation_a5ecb225f6a0748691cc5719e679ffb67}} 
+\index{VAbstractOperation@{VAbstractOperation}!Suffix@{Suffix}}
+\index{Suffix@{Suffix}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{Suffix()}{Suffix()}}
+{\footnotesize\ttfamily QString VAbstract\+Operation\+::\+Suffix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVAbstractOperation_a0faca8af234d1e3926aac6dcb6b5ca1a}\label{classVAbstractOperation_a0faca8af234d1e3926aac6dcb6b5ca1a}} 
+\index{VAbstractOperation@{VAbstractOperation}!ToolSelectionType@{ToolSelectionType}}
+\index{ToolSelectionType@{ToolSelectionType}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{ToolSelectionType}{ToolSelectionType}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::\+Tool\+Selection\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a23bec697d687ee362e8a0ad2bddda052}\label{classVAbstractOperation_a23bec697d687ee362e8a0ad2bddda052}} 
+\index{VAbstractOperation@{VAbstractOperation}!updatePointNamePosition@{updatePointNamePosition}}
+\index{updatePointNamePosition@{updatePointNamePosition}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{updatePointNamePosition()}{updatePointNamePosition()}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::update\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_ad649087b44b61abc1fd96aa25e8ebc32}\label{classVAbstractOperation_ad649087b44b61abc1fd96aa25e8ebc32}} 
+\index{VAbstractOperation@{VAbstractOperation}!updatePointNameVisibility@{updatePointNameVisibility}}
+\index{updatePointNameVisibility@{updatePointNameVisibility}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{updatePointNameVisibility}{updatePointNameVisibility}}
+{\footnotesize\ttfamily void VAbstract\+Operation\+::update\+Point\+Name\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}\label{classVAbstractOperation_ac236d46103710e9fdb8d7cd4c92b83fe}} 
+\index{VAbstractOperation@{VAbstractOperation}!destination@{destination}}
+\index{destination@{destination}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{destination}{destination}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{structDestinationItem}{Destination\+Item}}$>$ VAbstract\+Operation\+::destination\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a158c102f9fd61a3209edcfecd7af04db}\label{classVAbstractOperation_a158c102f9fd61a3209edcfecd7af04db}} 
+\index{VAbstractOperation@{VAbstractOperation}!operatedObjects@{operatedObjects}}
+\index{operatedObjects@{operatedObjects}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{operatedObjects}{operatedObjects}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$quint32, \mbox{\hyperlink{classVAbstractSimple}{VAbstract\+Simple}} $\ast$$>$ VAbstract\+Operation\+::operated\+Objects\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}\label{classVAbstractOperation_a32ebf1e51b611edcfea02644f4e00b38}} 
+\index{VAbstractOperation@{VAbstractOperation}!source@{source}}
+\index{source@{source}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{source}{source}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{structSourceItem}{Source\+Item}}$>$ VAbstract\+Operation\+::source\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}\label{classVAbstractOperation_a8014c2b8b09588353ae8f1e5290ab57f}} 
+\index{VAbstractOperation@{VAbstractOperation}!suffix@{suffix}}
+\index{suffix@{suffix}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{suffix}{suffix}}
+{\footnotesize\ttfamily QString VAbstract\+Operation\+::suffix\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a3756aa9875a51ebaf78f90ee5113a7c2}\label{classVAbstractOperation_a3756aa9875a51ebaf78f90ee5113a7c2}} 
+\index{VAbstractOperation@{VAbstractOperation}!TagDestination@{TagDestination}}
+\index{TagDestination@{TagDestination}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{TagDestination}{TagDestination}}
+{\footnotesize\ttfamily const QString VAbstract\+Operation\+::\+Tag\+Destination = QString\+Literal(\char`\"{}destination\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_a50fe4cc317215b1cb13db158bf8e61f4}\label{classVAbstractOperation_a50fe4cc317215b1cb13db158bf8e61f4}} 
+\index{VAbstractOperation@{VAbstractOperation}!TagItem@{TagItem}}
+\index{TagItem@{TagItem}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{TagItem}{TagItem}}
+{\footnotesize\ttfamily const QString VAbstract\+Operation\+::\+Tag\+Item = QString\+Literal(\char`\"{}item\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVAbstractOperation_acb0723a66b1755ffce7ede29a24aa66e}\label{classVAbstractOperation_acb0723a66b1755ffce7ede29a24aa66e}} 
+\index{VAbstractOperation@{VAbstractOperation}!TagSource@{TagSource}}
+\index{TagSource@{TagSource}!VAbstractOperation@{VAbstractOperation}}
+\doxysubsubsection{\texorpdfstring{TagSource}{TagSource}}
+{\footnotesize\ttfamily const QString VAbstract\+Operation\+::\+Tag\+Source = QString\+Literal(\char`\"{}source\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/operation/\mbox{\hyperlink{vabstractoperation_8h}{vabstractoperation.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/operation/\mbox{\hyperlink{vabstractoperation_8cpp}{vabstractoperation.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,391 @@
+\hypertarget{classVToolArc}{}\doxysection{VTool\+Arc Class Reference}
+\label{classVToolArc}\index{VToolArc@{VToolArc}}
+
+
+The \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} class tool for creation arc.  
+
+
+
+
+{\ttfamily \#include $<$vtoolarc.\+h$>$}
+
+Inheritance diagram for VTool\+Arc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{d4/dd5/classVToolArc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolArc_a40376065bb19b0c55d65a8e4a16fba19a6a12dc14a3f85fca343187f650d40702}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Arc)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolArc_ade4e523ad07ef5579be4e533af2fa0a1}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolArc_a426a97d9841eed15d0cf01b17fc583cc}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classVToolArc_aad5bf058c73f41e60c407dc83cb04a61}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolArc_a1b872d79fb81c5e00d5cfcf39fdfd5eb}{Center\+Point\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolArc_ac7f8f3fe46c6a55d48ea6d0011893ba1}{get\+Center}} () const
+\item 
+void \mbox{\hyperlink{classVToolArc_a9cfb26fae296895edbf821249807d859}{set\+Center}} (const quint32 \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolArc_a418d61612c1e687e7cc52790c0066fa2}{Get\+Formula\+Radius}} () const
+\item 
+void \mbox{\hyperlink{classVToolArc_a1731de3829935464f99ed2137dd2e8be}{Set\+Formula\+Radius}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolArc_a363fba787090be2825376529b4096f52}{Get\+Formula\+F1}} () const
+\item 
+void \mbox{\hyperlink{classVToolArc_a3cd068a9088dee823f143de95629a34e}{Set\+Formula\+F1}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolArc_a4bb542eea4831a245243578d479aaea3}{Get\+Formula\+F2}} () const
+\item 
+void \mbox{\hyperlink{classVToolArc_a16bffa6dcc97616c34dd1babe06c310a}{Set\+Formula\+F2}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+\mbox{\hyperlink{classVArc}{VArc}} \mbox{\hyperlink{classVToolArc_a4be3e145882d0076d6683497c4aeb4cd}{get\+Arc}} () const
+\item 
+void \mbox{\hyperlink{classVToolArc_a0fc20c9417c02fdab1c1e8d8923b29be}{set\+Arc}} (const \mbox{\hyperlink{classVArc}{VArc}} \&arc)
+\item 
+virtual void \mbox{\hyperlink{classVToolArc_a1a5de2c7d35c0cd3ae5478e9361d90bc}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} $\ast$ \mbox{\hyperlink{classVToolArc_a22a4e79a0da4205bd6e2c530b6ffab27}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} $\ast$ \mbox{\hyperlink{classVToolArc_a4598531f0660ecceb35768cd3912aed8}{Create}} (const quint32 \+\_\+id, const quint32 \&center, QString \&radius, QString \&f1, QString \&f2, const QString \&color, const QString \&pen\+Style, const QString \&line\+Weight, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\begin{DoxyCompactList}\small\item\em Create help create tool form GUI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolArc_a6bb1dd53939d259f5e5bbca67223a614}{Tool\+Type}} = QString\+Literal(\char`\"{}simple\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolArc_adba6b28c234cfdc2e98f15a693620713}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em show\+Context\+Menu handle context menu events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolArc_a5811dc3502e56935f78b74983b0b88c2}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolArc_a5a4790c6927c119b82e1773e01702122}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolArc_a7594d8a0980a0f86b53d4f6ffc5b520a}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolArc_aa296334b5922a799a356880d5c8cda7e}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classVToolArc_a610280c9989cc927a58678173081e70e}{make\+Tool\+Tip}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolArc_a655dec5cc9cb13bad028ab38ce36a201}{VTool\+Arc}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} constuctor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} class tool for creation arc. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolArc_a40376065bb19b0c55d65a8e4a16fba19}\label{classVToolArc_a40376065bb19b0c55d65a8e4a16fba19}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolArc@{VToolArc}}\index{VToolArc@{VToolArc}!Type@{Type}}}\mbox{\Hypertarget{classVToolArc_a40376065bb19b0c55d65a8e4a16fba19a6a12dc14a3f85fca343187f650d40702}\label{classVToolArc_a40376065bb19b0c55d65a8e4a16fba19a6a12dc14a3f85fca343187f650d40702}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolArc_a655dec5cc9cb13bad028ab38ce36a201}\label{classVToolArc_a655dec5cc9cb13bad028ab38ce36a201}} 
+\index{VToolArc@{VToolArc}!VToolArc@{VToolArc}}
+\index{VToolArc@{VToolArc}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{VToolArc()}{VToolArc()}}
+{\footnotesize\ttfamily VTool\+Arc\+::\+VTool\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classVToolArc}{VTool\+Arc}} constuctor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container \\
+\hline
+{\em data} & container with variables \\
+\hline
+{\em id} & object id in container \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em parent} & parent object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolArc_a1b872d79fb81c5e00d5cfcf39fdfd5eb}\label{classVToolArc_a1b872d79fb81c5e00d5cfcf39fdfd5eb}} 
+\index{VToolArc@{VToolArc}!CenterPointName@{CenterPointName}}
+\index{CenterPointName@{CenterPointName}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{CenterPointName()}{CenterPointName()}}
+{\footnotesize\ttfamily QString VTool\+Arc\+::\+Center\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolArc_a4598531f0660ecceb35768cd3912aed8}\label{classVToolArc_a4598531f0660ecceb35768cd3912aed8}} 
+\index{VToolArc@{VToolArc}!Create@{Create}}
+\index{Create@{Create}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} $\ast$ VTool\+Arc\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const quint32 \&}]{center,  }\item[{QString \&}]{radius,  }\item[{QString \&}]{f1,  }\item[{QString \&}]{f2,  }\item[{const QString \&}]{color,  }\item[{const QString \&}]{pen\+Style,  }\item[{const QString \&}]{line\+Weight,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool form GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & tool id, 0 if tool doesn\textquotesingle{}t exist yet. \\
+\hline
+{\em center} & id arc center point. \\
+\hline
+{\em radius} & arc radius. \\
+\hline
+{\em f1} & start angle of arc. \\
+\hline
+{\em f2} & end angle of arc. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolArc_a22a4e79a0da4205bd6e2c530b6ffab27}\label{classVToolArc_a22a4e79a0da4205bd6e2c530b6ffab27}} 
+\index{VToolArc@{VToolArc}!Create@{Create}}
+\index{Create@{Create}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolArc}{VTool\+Arc}} $\ast$ VTool\+Arc\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dialog} & dialog options. \\
+\hline
+{\em scene} & pointer to scene. \\
+\hline
+{\em doc} & dom document container \\
+\hline
+{\em data} & container with variables \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolArc_a4be3e145882d0076d6683497c4aeb4cd}\label{classVToolArc_a4be3e145882d0076d6683497c4aeb4cd}} 
+\index{VToolArc@{VToolArc}!getArc@{getArc}}
+\index{getArc@{getArc}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{getArc()}{getArc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVArc}{VArc}} VTool\+Arc\+::get\+Arc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolArc_ac7f8f3fe46c6a55d48ea6d0011893ba1}\label{classVToolArc_ac7f8f3fe46c6a55d48ea6d0011893ba1}} 
+\index{VToolArc@{VToolArc}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily quint32 VTool\+Arc\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolArc_a363fba787090be2825376529b4096f52}\label{classVToolArc_a363fba787090be2825376529b4096f52}} 
+\index{VToolArc@{VToolArc}!GetFormulaF1@{GetFormulaF1}}
+\index{GetFormulaF1@{GetFormulaF1}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaF1()}{GetFormulaF1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Arc\+::\+Get\+Formula\+F1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolArc_a4bb542eea4831a245243578d479aaea3}\label{classVToolArc_a4bb542eea4831a245243578d479aaea3}} 
+\index{VToolArc@{VToolArc}!GetFormulaF2@{GetFormulaF2}}
+\index{GetFormulaF2@{GetFormulaF2}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaF2()}{GetFormulaF2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Arc\+::\+Get\+Formula\+F2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolArc_a418d61612c1e687e7cc52790c0066fa2}\label{classVToolArc_a418d61612c1e687e7cc52790c0066fa2}} 
+\index{VToolArc@{VToolArc}!GetFormulaRadius@{GetFormulaRadius}}
+\index{GetFormulaRadius@{GetFormulaRadius}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{GetFormulaRadius()}{GetFormulaRadius()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Arc\+::\+Get\+Formula\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolArc_aad5bf058c73f41e60c407dc83cb04a61}\label{classVToolArc_aad5bf058c73f41e60c407dc83cb04a61}} 
+\index{VToolArc@{VToolArc}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString VTool\+Arc\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_a7476f39c541355ae1a3ba1a408a7b890}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolArc_a610280c9989cc927a58678173081e70e}\label{classVToolArc_a610280c9989cc927a58678173081e70e}} 
+\index{VToolArc@{VToolArc}!makeToolTip@{makeToolTip}}
+\index{makeToolTip@{makeToolTip}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{makeToolTip()}{makeToolTip()}}
+{\footnotesize\ttfamily QString VTool\+Arc\+::make\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_ab10ed4c1ff02b1bb8b8c3501c33d40ea}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolArc_a5811dc3502e56935f78b74983b0b88c2}\label{classVToolArc_a5811dc3502e56935f78b74983b0b88c2}} 
+\index{VToolArc@{VToolArc}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolArc_a5a4790c6927c119b82e1773e01702122}\label{classVToolArc_a5a4790c6927c119b82e1773e01702122}} 
+\index{VToolArc@{VToolArc}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolArc_a7594d8a0980a0f86b53d4f6ffc5b520a}\label{classVToolArc_a7594d8a0980a0f86b53d4f6ffc5b520a}} 
+\index{VToolArc@{VToolArc}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_a01f2c57f0ce45ef261cd41c0065502e8}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolArc_a0fc20c9417c02fdab1c1e8d8923b29be}\label{classVToolArc_a0fc20c9417c02fdab1c1e8d8923b29be}} 
+\index{VToolArc@{VToolArc}!setArc@{setArc}}
+\index{setArc@{setArc}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{setArc()}{setArc()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::set\+Arc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVArc}{VArc}} \&}]{arc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolArc_a9cfb26fae296895edbf821249807d859}\label{classVToolArc_a9cfb26fae296895edbf821249807d859}} 
+\index{VToolArc@{VToolArc}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::set\+Center (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolArc_ade4e523ad07ef5579be4e533af2fa0a1}\label{classVToolArc_ade4e523ad07ef5579be4e533af2fa0a1}} 
+\index{VToolArc@{VToolArc}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolArc_a3cd068a9088dee823f143de95629a34e}\label{classVToolArc_a3cd068a9088dee823f143de95629a34e}} 
+\index{VToolArc@{VToolArc}!SetFormulaF1@{SetFormulaF1}}
+\index{SetFormulaF1@{SetFormulaF1}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaF1()}{SetFormulaF1()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Set\+Formula\+F1 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolArc_a16bffa6dcc97616c34dd1babe06c310a}\label{classVToolArc_a16bffa6dcc97616c34dd1babe06c310a}} 
+\index{VToolArc@{VToolArc}!SetFormulaF2@{SetFormulaF2}}
+\index{SetFormulaF2@{SetFormulaF2}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaF2()}{SetFormulaF2()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Set\+Formula\+F2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolArc_a1731de3829935464f99ed2137dd2e8be}\label{classVToolArc_a1731de3829935464f99ed2137dd2e8be}} 
+\index{VToolArc@{VToolArc}!SetFormulaRadius@{SetFormulaRadius}}
+\index{SetFormulaRadius@{SetFormulaRadius}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{SetFormulaRadius()}{SetFormulaRadius()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Set\+Formula\+Radius (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolArc_aa296334b5922a799a356880d5c8cda7e}\label{classVToolArc_aa296334b5922a799a356880d5c8cda7e}} 
+\index{VToolArc@{VToolArc}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolArc_adba6b28c234cfdc2e98f15a693620713}\label{classVToolArc_adba6b28c234cfdc2e98f15a693620713}} 
+\index{VToolArc@{VToolArc}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Arc\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+show\+Context\+Menu handle context menu events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+{\em id} & tool id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVToolArc_a1a5de2c7d35c0cd3ae5478e9361d90bc}\label{classVToolArc_a1a5de2c7d35c0cd3ae5478e9361d90bc}} 
+\index{VToolArc@{VToolArc}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Arc\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolArc_a426a97d9841eed15d0cf01b17fc583cc}\label{classVToolArc_a426a97d9841eed15d0cf01b17fc583cc}} 
+\index{VToolArc@{VToolArc}!type@{type}}
+\index{type@{type}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Arc\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_ae9aade1d9110d27a0b2716be02ef3f5d}{VAbstract\+Spline}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolArc_a6bb1dd53939d259f5e5bbca67223a614}\label{classVToolArc_a6bb1dd53939d259f5e5bbca67223a614}} 
+\index{VToolArc@{VToolArc}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolArc@{VToolArc}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Arc\+::\+Tool\+Type = QString\+Literal(\char`\"{}simple\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vtoolarc_8h}{vtoolarc.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vtoolarc_8cpp}{vtoolarc.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\hypertarget{classqmu_1_1QmuFormulaBase}{}\doxysection{qmu\+::Qmu\+Formula\+Base Class Reference}
+\label{classqmu_1_1QmuFormulaBase}\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+
+
+{\ttfamily \#include $<$qmuformulabase.\+h$>$}
+
+Inheritance diagram for qmu\+::Qmu\+Formula\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{df/de8/classqmu_1_1QmuFormulaBase}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1QmuFormulaBase_aa5b11c2949af3c642bef6de730f438de}{Qmu\+Formula\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_a547981dee704b30b003187f2d90593a9}{$\sim$\+Qmu\+Formula\+Base}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_a1e386679e18f12d74ec5ec6180b187b5}{Init\+Char\+Sets}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Init\+Char\+Sets init character set for parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_adc64036bb3f89e6e93d8641393ddb7b6}{Remove\+All}} (\mbox{\hyperlink{classQMap}{QMap}}$<$ int, QString $>$ \&map, const QString \&val)
+\begin{DoxyCompactList}\small\item\em Remove\+All remove token from token list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_ab4b56013bcac92d276bab421686214e6}{Set\+Sep\+For\+Tr}} (bool os\+Separator, bool from\+User)
+\begin{DoxyCompactList}\small\item\em Set\+Sep\+For\+Tr set separators for translation expression. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_ad0a8e5a957a193ccf7505481770e910a}{Set\+Sep\+For\+Eval}} ()
+\begin{DoxyCompactList}\small\item\em Set\+Sep\+For\+Eval set separators for eval. Each expression eval in internal (C) locale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qreal $\ast$ \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_ae90bc59e4c70f84fdb44c2839a3292d3}{Add\+Variable}} (const QString \&a\+\_\+sz\+Name, void $\ast$a\+\_\+p\+User\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_aa5b11c2949af3c642bef6de730f438de}\label{classqmu_1_1QmuFormulaBase_aa5b11c2949af3c642bef6de730f438de}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!QmuFormulaBase@{QmuFormulaBase}}
+\index{QmuFormulaBase@{QmuFormulaBase}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{QmuFormulaBase()}{QmuFormulaBase()}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Formula\+Base\+::\+Qmu\+Formula\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_a547981dee704b30b003187f2d90593a9}\label{classqmu_1_1QmuFormulaBase_a547981dee704b30b003187f2d90593a9}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!````~QmuFormulaBase@{$\sim$QmuFormulaBase}}
+\index{````~QmuFormulaBase@{$\sim$QmuFormulaBase}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$QmuFormulaBase()}{~QmuFormulaBase()}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Formula\+Base\+::$\sim$\+Qmu\+Formula\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_ae90bc59e4c70f84fdb44c2839a3292d3}\label{classqmu_1_1QmuFormulaBase_ae90bc59e4c70f84fdb44c2839a3292d3}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!AddVariable@{AddVariable}}
+\index{AddVariable@{AddVariable}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{AddVariable()}{AddVariable()}}
+{\footnotesize\ttfamily qreal $\ast$ qmu\+::\+Qmu\+Formula\+Base\+::\+Add\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+sz\+Name,  }\item[{void $\ast$}]{a\+\_\+p\+User\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_a1e386679e18f12d74ec5ec6180b187b5}\label{classqmu_1_1QmuFormulaBase_a1e386679e18f12d74ec5ec6180b187b5}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!InitCharSets@{InitCharSets}}
+\index{InitCharSets@{InitCharSets}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{InitCharSets()}{InitCharSets()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Init\+Char\+Sets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Init\+Char\+Sets init character set for parser. 
+
+QMu\+Parser require setting character set for legal characters. Because we try make our expresion language independent we set all posible unique characters from all alphabets. 
+
+Reimplemented from \mbox{\hyperlink{classqmu_1_1QmuParser_ae6bed8b51928071ee9c368ea06d71d34}{qmu\+::\+Qmu\+Parser}}.
+
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_adc64036bb3f89e6e93d8641393ddb7b6}\label{classqmu_1_1QmuFormulaBase_adc64036bb3f89e6e93d8641393ddb7b6}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!RemoveAll@{RemoveAll}}
+\index{RemoveAll@{RemoveAll}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{RemoveAll()}{RemoveAll()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Remove\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQMap}{QMap}}$<$ int, QString $>$ \&}]{map,  }\item[{const QString \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove\+All remove token from token list. 
+
+Standard Qt class \mbox{\hyperlink{classQMap}{QMap}} doesn\textquotesingle{}t have method Remove\+All. Example\+: remove \char`\"{}-\/\char`\"{} from tokens list if exist. If don\textquotesingle{}t do that unary minus operation will broken.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & map with tokens \\
+\hline
+{\em val} & token that need delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_ad0a8e5a957a193ccf7505481770e910a}\label{classqmu_1_1QmuFormulaBase_ad0a8e5a957a193ccf7505481770e910a}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!SetSepForEval@{SetSepForEval}}
+\index{SetSepForEval@{SetSepForEval}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{SetSepForEval()}{SetSepForEval()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Set\+Sep\+For\+Eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set\+Sep\+For\+Eval set separators for eval. Each expression eval in internal (C) locale. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuFormulaBase_ab4b56013bcac92d276bab421686214e6}\label{classqmu_1_1QmuFormulaBase_ab4b56013bcac92d276bab421686214e6}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!SetSepForTr@{SetSepForTr}}
+\index{SetSepForTr@{SetSepForTr}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{SetSepForTr()}{SetSepForTr()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Set\+Sep\+For\+Tr (\begin{DoxyParamCaption}\item[{bool}]{os\+Separator,  }\item[{bool}]{from\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set\+Sep\+For\+Tr set separators for translation expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+User} & true if expression come from user (from dialog). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuformulabase_8h}{qmuformulabase.\+h}}\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuformulabase_8cpp}{qmuformulabase.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{classDRW__Line}{}\doxysection{DRW\+\_\+\+Line Class Reference}
+\label{classDRW__Line}\index{DRW\_Line@{DRW\_Line}}
+
+
+Class to handle line entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.861111cm]{d3/dab/classDRW__Line}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Line_a9f377c7b274d1485d4962b04e489488d}{DRW\+\_\+\+Line}} ()
+\item 
+virtual void \mbox{\hyperlink{classDRW__Line_a6aab28594c628f6330bfcb030d1a20c4}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{classDRW__Line_afba62212864227b610be3e2a4e7ac307}{sec\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__Line_a4f9ccc26eb9f6e4b7cd8cdb743fd681a}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle line entity. 
+
+Class to handle line entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__Line_a9f377c7b274d1485d4962b04e489488d}\label{classDRW__Line_a9f377c7b274d1485d4962b04e489488d}} 
+\index{DRW\_Line@{DRW\_Line}!DRW\_Line@{DRW\_Line}}
+\index{DRW\_Line@{DRW\_Line}!DRW\_Line@{DRW\_Line}}
+\doxysubsubsection{\texorpdfstring{DRW\_Line()}{DRW\_Line()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Line\+::\+DRW\+\_\+\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__Line_a6aab28594c628f6330bfcb030d1a20c4}\label{classDRW__Line_a6aab28594c628f6330bfcb030d1a20c4}} 
+\index{DRW\_Line@{DRW\_Line}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Line@{DRW\_Line}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily virtual void DRW\+\_\+\+Line\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDRW__Point_a6922b7e506b81509fc4369e5e89301a4}{DRW\+\_\+\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classDRW__Text_acdb987486bf1a47c585bcef48e8c22b5}{DRW\+\_\+\+Text}}, \mbox{\hyperlink{classDRW__3Dface_ab1632466a8dc3dff5295e09b6a893229}{DRW\+\_\+3\+Dface}}, \mbox{\hyperlink{classDRW__Trace_ad5c6dedeebd12bc17a93e0d759914fb4}{DRW\+\_\+\+Trace}}, and \mbox{\hyperlink{classDRW__Ellipse_a0f6b2a379597a4cf33c37007f39fd667}{DRW\+\_\+\+Ellipse}}.
+
+\mbox{\Hypertarget{classDRW__Line_a4f9ccc26eb9f6e4b7cd8cdb743fd681a}\label{classDRW__Line_a4f9ccc26eb9f6e4b7cd8cdb743fd681a}} 
+\index{DRW\_Line@{DRW\_Line}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Line@{DRW\_Line}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Line\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__Line_afba62212864227b610be3e2a4e7ac307}\label{classDRW__Line_afba62212864227b610be3e2a4e7ac307}} 
+\index{DRW\_Line@{DRW\_Line}!secPoint@{secPoint}}
+\index{secPoint@{secPoint}!DRW\_Line@{DRW\_Line}}
+\doxysubsubsection{\texorpdfstring{secPoint}{secPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Line\+::sec\+Point}
+
+second point, code 11, 21 \& 31 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

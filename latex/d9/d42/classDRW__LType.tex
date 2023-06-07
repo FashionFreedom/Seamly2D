@@ -1,0 +1,138 @@
+\hypertarget{classDRW__LType}{}\doxysection{DRW\+\_\+\+LType Class Reference}
+\label{classDRW__LType}\index{DRW\_LType@{DRW\_LType}}
+
+
+Class to handle line type entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+objects.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+LType\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d9/d42/classDRW__LType}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__LType_a2284cfb0d69e0005d3167d5e7c097d27}{DRW\+\_\+\+LType}} ()
+\item 
+void \mbox{\hyperlink{classDRW__LType_a04278a37e58c3ee13a1a4392cc675d28}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{classDRW__LType_ae6f6458c8c9ac100908259558c7e22d2}{desc}}
+\item 
+int \mbox{\hyperlink{classDRW__LType_acb78cd0a105ac8b44e19313a4bf90f50}{size}}
+\item 
+double \mbox{\hyperlink{classDRW__LType_a438510524566f0deaf77ea694f171762}{length}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{classDRW__LType_afb0702d3edab2948fdba2fb861fd3a4b}{path}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__LType_a7c1bcdc02c5aa43262221ad55dfac6ff}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Class to handle line type entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDRW__LType_a9cebdfa5d1ae14720c4fcd50f45dab5a}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update line type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDRW__LType_a86ca28af8124ca042098b03e0ac537af}{path\+Idx}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle line type entries. 
+
+Class to handle line type symbol table entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__LType_a2284cfb0d69e0005d3167d5e7c097d27}\label{classDRW__LType_a2284cfb0d69e0005d3167d5e7c097d27}} 
+\index{DRW\_LType@{DRW\_LType}!DRW\_LType@{DRW\_LType}}
+\index{DRW\_LType@{DRW\_LType}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{DRW\_LType()}{DRW\_LType()}}
+{\footnotesize\ttfamily DRW\+\_\+\+LType\+::\+DRW\+\_\+\+LType (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__LType_a7c1bcdc02c5aa43262221ad55dfac6ff}\label{classDRW__LType_a7c1bcdc02c5aa43262221ad55dfac6ff}} 
+\index{DRW\_LType@{DRW\_LType}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+LType\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Class to handle line type entries. 
+
+Class to handle line type symbol table entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{classDRW__LType_a04278a37e58c3ee13a1a4392cc675d28}\label{classDRW__LType_a04278a37e58c3ee13a1a4392cc675d28}} 
+\index{DRW\_LType@{DRW\_LType}!reset@{reset}}
+\index{reset@{reset}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+LType\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__LType_a9cebdfa5d1ae14720c4fcd50f45dab5a}\label{classDRW__LType_a9cebdfa5d1ae14720c4fcd50f45dab5a}} 
+\index{DRW\_LType@{DRW\_LType}!update@{update}}
+\index{update@{update}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+LType\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Update line type. 
+
+Update the size and length of line type acording to the path \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__LType_ae6f6458c8c9ac100908259558c7e22d2}\label{classDRW__LType_ae6f6458c8c9ac100908259558c7e22d2}} 
+\index{DRW\_LType@{DRW\_LType}!desc@{desc}}
+\index{desc@{desc}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{desc}{desc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+LType\+::desc}
+
+descriptive string, code 3 \mbox{\Hypertarget{classDRW__LType_a438510524566f0deaf77ea694f171762}\label{classDRW__LType_a438510524566f0deaf77ea694f171762}} 
+\index{DRW\_LType@{DRW\_LType}!length@{length}}
+\index{length@{length}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily double DRW\+\_\+\+LType\+::length}
+
+total length of pattern, code 40 \mbox{\Hypertarget{classDRW__LType_afb0702d3edab2948fdba2fb861fd3a4b}\label{classDRW__LType_afb0702d3edab2948fdba2fb861fd3a4b}} 
+\index{DRW\_LType@{DRW\_LType}!path@{path}}
+\index{path@{path}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ DRW\+\_\+\+LType\+::path}
+
+trace, point or space length sequence, code 49 \mbox{\Hypertarget{classDRW__LType_a86ca28af8124ca042098b03e0ac537af}\label{classDRW__LType_a86ca28af8124ca042098b03e0ac537af}} 
+\index{DRW\_LType@{DRW\_LType}!pathIdx@{pathIdx}}
+\index{pathIdx@{pathIdx}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{pathIdx}{pathIdx}}
+{\footnotesize\ttfamily int DRW\+\_\+\+LType\+::path\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__LType_acb78cd0a105ac8b44e19313a4bf90f50}\label{classDRW__LType_acb78cd0a105ac8b44e19313a4bf90f50}} 
+\index{DRW\_LType@{DRW\_LType}!size@{size}}
+\index{size@{size}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int DRW\+\_\+\+LType\+::size}
+
+element number, code 73 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8h}{drw\+\_\+objects.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8cpp}{drw\+\_\+objects.\+cpp}}\end{DoxyCompactItemize}

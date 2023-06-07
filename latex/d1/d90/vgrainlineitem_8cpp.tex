@@ -1,0 +1,77 @@
+\hypertarget{vgrainlineitem_8cpp}{}\doxysection{src/libs/vwidgets/vgrainlineitem.cpp File Reference}
+\label{vgrainlineitem_8cpp}\index{src/libs/vwidgets/vgrainlineitem.cpp@{src/libs/vwidgets/vgrainlineitem.cpp}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+{\ttfamily \#include $<$QPainter$>$}\newline
+{\ttfamily \#include $<$QGraphics\+Scene\+Mouse\+Event$>$}\newline
+{\ttfamily \#include $<$QStyle\+Option\+Graphics\+Item$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QGraphics\+Scene$>$}\newline
+{\ttfamily \#include $<$QGraphics\+View$>$}\newline
+{\ttfamily \#include \char`\"{}../vmisc/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/vmath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/vcommonsettings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/vabstractapplication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vgrainlineitem.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_a9eb1a69ce9c00755742c70089405d21c}{ARROW\+\_\+\+ANGLE}}~\mbox{\hyperlink{drw__base_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}/9
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_aef7d94c0b40402c28bdf1297262c6034}{ARROW\+\_\+\+LENGTH}}~15
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_aaa1f54c8e582cfd4b850874539359473}{RECT\+\_\+\+WIDTH}}~30
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_ae98e727b176227b5d2dd561bbe787d5c}{RESIZE\+\_\+\+RECT\+\_\+\+SIZE}}~10
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_a60c6de9607a5d41273c61ab8462c42a4}{ROTATE\+\_\+\+CIRC\+\_\+R}}~7
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_a6834de284a54d457181fe0b3ab265fb9}{ACTIVE\+\_\+Z}}~10
+\item 
+\#define \mbox{\hyperlink{vgrainlineitem_8cpp_ac88245a2b9bbeb702bbb65caf3e9c7e1}{LINE\+\_\+\+PEN\+\_\+\+WIDTH}}~3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{vgrainlineitem_8cpp_a6834de284a54d457181fe0b3ab265fb9}\label{vgrainlineitem_8cpp_a6834de284a54d457181fe0b3ab265fb9}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!ACTIVE\_Z@{ACTIVE\_Z}}
+\index{ACTIVE\_Z@{ACTIVE\_Z}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{ACTIVE\_Z}{ACTIVE\_Z}}
+{\footnotesize\ttfamily \#define ACTIVE\+\_\+Z~10}
+
+\mbox{\Hypertarget{vgrainlineitem_8cpp_a9eb1a69ce9c00755742c70089405d21c}\label{vgrainlineitem_8cpp_a9eb1a69ce9c00755742c70089405d21c}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!ARROW\_ANGLE@{ARROW\_ANGLE}}
+\index{ARROW\_ANGLE@{ARROW\_ANGLE}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{ARROW\_ANGLE}{ARROW\_ANGLE}}
+{\footnotesize\ttfamily \#define ARROW\+\_\+\+ANGLE~\mbox{\hyperlink{drw__base_8h_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}/9}
+
+\mbox{\Hypertarget{vgrainlineitem_8cpp_aef7d94c0b40402c28bdf1297262c6034}\label{vgrainlineitem_8cpp_aef7d94c0b40402c28bdf1297262c6034}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!ARROW\_LENGTH@{ARROW\_LENGTH}}
+\index{ARROW\_LENGTH@{ARROW\_LENGTH}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{ARROW\_LENGTH}{ARROW\_LENGTH}}
+{\footnotesize\ttfamily \#define ARROW\+\_\+\+LENGTH~15}
+
+\mbox{\Hypertarget{vgrainlineitem_8cpp_ac88245a2b9bbeb702bbb65caf3e9c7e1}\label{vgrainlineitem_8cpp_ac88245a2b9bbeb702bbb65caf3e9c7e1}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!LINE\_PEN\_WIDTH@{LINE\_PEN\_WIDTH}}
+\index{LINE\_PEN\_WIDTH@{LINE\_PEN\_WIDTH}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{LINE\_PEN\_WIDTH}{LINE\_PEN\_WIDTH}}
+{\footnotesize\ttfamily \#define LINE\+\_\+\+PEN\+\_\+\+WIDTH~3}
+
+\mbox{\Hypertarget{vgrainlineitem_8cpp_aaa1f54c8e582cfd4b850874539359473}\label{vgrainlineitem_8cpp_aaa1f54c8e582cfd4b850874539359473}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!RECT\_WIDTH@{RECT\_WIDTH}}
+\index{RECT\_WIDTH@{RECT\_WIDTH}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{RECT\_WIDTH}{RECT\_WIDTH}}
+{\footnotesize\ttfamily \#define RECT\+\_\+\+WIDTH~30}
+
+\mbox{\Hypertarget{vgrainlineitem_8cpp_ae98e727b176227b5d2dd561bbe787d5c}\label{vgrainlineitem_8cpp_ae98e727b176227b5d2dd561bbe787d5c}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!RESIZE\_RECT\_SIZE@{RESIZE\_RECT\_SIZE}}
+\index{RESIZE\_RECT\_SIZE@{RESIZE\_RECT\_SIZE}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{RESIZE\_RECT\_SIZE}{RESIZE\_RECT\_SIZE}}
+{\footnotesize\ttfamily \#define RESIZE\+\_\+\+RECT\+\_\+\+SIZE~10}
+
+\mbox{\Hypertarget{vgrainlineitem_8cpp_a60c6de9607a5d41273c61ab8462c42a4}\label{vgrainlineitem_8cpp_a60c6de9607a5d41273c61ab8462c42a4}} 
+\index{vgrainlineitem.cpp@{vgrainlineitem.cpp}!ROTATE\_CIRC\_R@{ROTATE\_CIRC\_R}}
+\index{ROTATE\_CIRC\_R@{ROTATE\_CIRC\_R}!vgrainlineitem.cpp@{vgrainlineitem.cpp}}
+\doxysubsubsection{\texorpdfstring{ROTATE\_CIRC\_R}{ROTATE\_CIRC\_R}}
+{\footnotesize\ttfamily \#define ROTATE\+\_\+\+CIRC\+\_\+R~7}
+

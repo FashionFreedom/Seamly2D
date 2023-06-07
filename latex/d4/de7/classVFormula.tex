@@ -1,0 +1,262 @@
+\hypertarget{classVFormula}{}\doxysection{VFormula Class Reference}
+\label{classVFormula}\index{VFormula@{VFormula}}
+
+
+{\ttfamily \#include $<$vformula.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVFormula_a7d5e762a7099e46385d4f4c939982adb}{VFormula}} ()
+\item 
+\mbox{\hyperlink{classVFormula_a916c3a2fb34e1fa4a7a29e275b524e5c}{VFormula}} (const QString \&\mbox{\hyperlink{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}{formula}}, const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$container)
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \& \mbox{\hyperlink{classVFormula_ae5d92d8392e215bbc122c998cb996784}{operator=}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&\mbox{\hyperlink{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}{formula}})
+\item 
+\mbox{\hyperlink{classVFormula_acc70377e207c5001452cd837cfd9206f}{VFormula}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&\mbox{\hyperlink{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}{formula}})
+\item 
+bool \mbox{\hyperlink{classVFormula_a8d0354e176f4957a6c61757f54c71b83}{operator==}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&\mbox{\hyperlink{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}{formula}}) const
+\item 
+bool \mbox{\hyperlink{classVFormula_a7083202bda0510ab43dcc85f5824b77f}{operator!=}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&\mbox{\hyperlink{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}{formula}}) const
+\item 
+QString \mbox{\hyperlink{classVFormula_a63bdefdf0da925f463be007f10425fea}{Get\+Formula}} (\mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5c}{Formula\+Type}} type=\mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5cab1b78a476b35207ecd94d86cd450de2a}{Formula\+Type\+::\+To\+User}}) const
+\item 
+void \mbox{\hyperlink{classVFormula_ae5f68fb1623ec494941f4096d28c4758}{Set\+Formula}} (const QString \&\mbox{\hyperlink{classVFormula_a3fcb124fd85b1e6985793f2922748233}{value}}, \mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5c}{Formula\+Type}} type=\mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5cab1b78a476b35207ecd94d86cd450de2a}{Formula\+Type\+::\+To\+User}})
+\item 
+QString \mbox{\hyperlink{classVFormula_a809b0a7b46169d15f65c5a590d4583df}{get\+String\+Value}} () const
+\item 
+qreal \mbox{\hyperlink{classVFormula_a3d4462229de76570b7e49bfac2247c42}{get\+Double\+Value}} () const
+\item 
+bool \mbox{\hyperlink{classVFormula_a2657fa31122d1b2ec15c088e7c81135e}{get\+Check\+Zero}} () const
+\item 
+void \mbox{\hyperlink{classVFormula_abea4440452016a2d9f78c18d81763bc2}{set\+Check\+Zero}} (bool \mbox{\hyperlink{classVFormula_a3fcb124fd85b1e6985793f2922748233}{value}})
+\item 
+const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVFormula_a2211183d1ed3fad10e40f68b056a9abd}{get\+Data}} () const
+\item 
+void \mbox{\hyperlink{classVFormula_a16040acef24e2cc648e1f711a8b67a65}{set\+Data}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVFormula_a3fcb124fd85b1e6985793f2922748233}{value}})
+\item 
+quint32 \mbox{\hyperlink{classVFormula_a95bfc6dca9e05f902042f141d273115c}{get\+Tool\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVFormula_abe56b73f898ef88f571923e00845abdd}{set\+Tool\+Id}} (const quint32 \&\mbox{\hyperlink{classVFormula_a3fcb124fd85b1e6985793f2922748233}{value}})
+\item 
+QString \mbox{\hyperlink{classVFormula_a1aac1d4a77f28abbd19a722860853c3e}{get\+Postfix}} () const
+\item 
+void \mbox{\hyperlink{classVFormula_aeb9cd2ca6daf81f1f252e6190fa477c7}{set\+Postfix}} (const QString \&\mbox{\hyperlink{classVFormula_a3fcb124fd85b1e6985793f2922748233}{value}})
+\item 
+bool \mbox{\hyperlink{classVFormula_a2bd9827b67eee1f34460561ccf0a2ba2}{error}} () const
+\item 
+void \mbox{\hyperlink{classVFormula_a007a0545ed8c24d908ce2ebc1aa5349b}{Eval}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classVFormula_a66195a097097186031fb1c242893ca13}{Formula\+Type\+Id}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}{formula}}
+\item 
+QString \mbox{\hyperlink{classVFormula_a3fcb124fd85b1e6985793f2922748233}{value}}
+\item 
+bool \mbox{\hyperlink{classVFormula_a163d57ed3b7b6dd341144ff693a04204}{check\+Zero}}
+\item 
+const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVFormula_a82ffde36a0ae47f31e8ef1d9603290ce}{data}}
+\item 
+quint32 \mbox{\hyperlink{classVFormula_a8b1a6ebf655d90423ab8561bc71696d5}{tool\+Id}}
+\item 
+QString \mbox{\hyperlink{classVFormula_a0fc4b942b9b5d099aeedc351a241cc08}{postfix}}
+\item 
+bool \mbox{\hyperlink{classVFormula_a02e4f8ec8a65d22d9f58fc7bc5778c2d}{\+\_\+error}}
+\item 
+qreal \mbox{\hyperlink{classVFormula_a0670cddbb1efb379dafe42db5b3ced78}{d\+Value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVFormula_a7d5e762a7099e46385d4f4c939982adb}\label{classVFormula_a7d5e762a7099e46385d4f4c939982adb}} 
+\index{VFormula@{VFormula}!VFormula@{VFormula}}
+\index{VFormula@{VFormula}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{VFormula()}{VFormula()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VFormula\+::\+VFormula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_a916c3a2fb34e1fa4a7a29e275b524e5c}\label{classVFormula_a916c3a2fb34e1fa4a7a29e275b524e5c}} 
+\index{VFormula@{VFormula}!VFormula@{VFormula}}
+\index{VFormula@{VFormula}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{VFormula()}{VFormula()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VFormula\+::\+VFormula (\begin{DoxyParamCaption}\item[{const QString \&}]{formula,  }\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{container }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_acc70377e207c5001452cd837cfd9206f}\label{classVFormula_acc70377e207c5001452cd837cfd9206f}} 
+\index{VFormula@{VFormula}!VFormula@{VFormula}}
+\index{VFormula@{VFormula}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{VFormula()}{VFormula()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VFormula\+::\+VFormula (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVFormula_a2bd9827b67eee1f34460561ccf0a2ba2}\label{classVFormula_a2bd9827b67eee1f34460561ccf0a2ba2}} 
+\index{VFormula@{VFormula}!error@{error}}
+\index{error@{error}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily bool VFormula\+::error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a007a0545ed8c24d908ce2ebc1aa5349b}\label{classVFormula_a007a0545ed8c24d908ce2ebc1aa5349b}} 
+\index{VFormula@{VFormula}!Eval@{Eval}}
+\index{Eval@{Eval}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily void VFormula\+::\+Eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_a66195a097097186031fb1c242893ca13}\label{classVFormula_a66195a097097186031fb1c242893ca13}} 
+\index{VFormula@{VFormula}!FormulaTypeId@{FormulaTypeId}}
+\index{FormulaTypeId@{FormulaTypeId}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{FormulaTypeId()}{FormulaTypeId()}}
+{\footnotesize\ttfamily int VFormula\+::\+Formula\+Type\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVFormula_a2657fa31122d1b2ec15c088e7c81135e}\label{classVFormula_a2657fa31122d1b2ec15c088e7c81135e}} 
+\index{VFormula@{VFormula}!getCheckZero@{getCheckZero}}
+\index{getCheckZero@{getCheckZero}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{getCheckZero()}{getCheckZero()}}
+{\footnotesize\ttfamily bool VFormula\+::get\+Check\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a2211183d1ed3fad10e40f68b056a9abd}\label{classVFormula_a2211183d1ed3fad10e40f68b056a9abd}} 
+\index{VFormula@{VFormula}!getData@{getData}}
+\index{getData@{getData}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ VFormula\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a3d4462229de76570b7e49bfac2247c42}\label{classVFormula_a3d4462229de76570b7e49bfac2247c42}} 
+\index{VFormula@{VFormula}!getDoubleValue@{getDoubleValue}}
+\index{getDoubleValue@{getDoubleValue}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{getDoubleValue()}{getDoubleValue()}}
+{\footnotesize\ttfamily qreal VFormula\+::get\+Double\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a63bdefdf0da925f463be007f10425fea}\label{classVFormula_a63bdefdf0da925f463be007f10425fea}} 
+\index{VFormula@{VFormula}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily QString VFormula\+::\+Get\+Formula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5c}{Formula\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5cab1b78a476b35207ecd94d86cd450de2a}{Formula\+Type\+::\+To\+User}}} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a1aac1d4a77f28abbd19a722860853c3e}\label{classVFormula_a1aac1d4a77f28abbd19a722860853c3e}} 
+\index{VFormula@{VFormula}!getPostfix@{getPostfix}}
+\index{getPostfix@{getPostfix}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{getPostfix()}{getPostfix()}}
+{\footnotesize\ttfamily QString VFormula\+::get\+Postfix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a809b0a7b46169d15f65c5a590d4583df}\label{classVFormula_a809b0a7b46169d15f65c5a590d4583df}} 
+\index{VFormula@{VFormula}!getStringValue@{getStringValue}}
+\index{getStringValue@{getStringValue}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{getStringValue()}{getStringValue()}}
+{\footnotesize\ttfamily QString VFormula\+::get\+String\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a95bfc6dca9e05f902042f141d273115c}\label{classVFormula_a95bfc6dca9e05f902042f141d273115c}} 
+\index{VFormula@{VFormula}!getToolId@{getToolId}}
+\index{getToolId@{getToolId}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{getToolId()}{getToolId()}}
+{\footnotesize\ttfamily quint32 VFormula\+::get\+Tool\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_a7083202bda0510ab43dcc85f5824b77f}\label{classVFormula_a7083202bda0510ab43dcc85f5824b77f}} 
+\index{VFormula@{VFormula}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool VFormula\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_ae5d92d8392e215bbc122c998cb996784}\label{classVFormula_ae5d92d8392e215bbc122c998cb996784}} 
+\index{VFormula@{VFormula}!operator=@{operator=}}
+\index{operator=@{operator=}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} \& VFormula\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_a8d0354e176f4957a6c61757f54c71b83}\label{classVFormula_a8d0354e176f4957a6c61757f54c71b83}} 
+\index{VFormula@{VFormula}!operator==@{operator==}}
+\index{operator==@{operator==}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool VFormula\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVFormula_abea4440452016a2d9f78c18d81763bc2}\label{classVFormula_abea4440452016a2d9f78c18d81763bc2}} 
+\index{VFormula@{VFormula}!setCheckZero@{setCheckZero}}
+\index{setCheckZero@{setCheckZero}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{setCheckZero()}{setCheckZero()}}
+{\footnotesize\ttfamily void VFormula\+::set\+Check\+Zero (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_a16040acef24e2cc648e1f711a8b67a65}\label{classVFormula_a16040acef24e2cc648e1f711a8b67a65}} 
+\index{VFormula@{VFormula}!setData@{setData}}
+\index{setData@{setData}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void VFormula\+::set\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_ae5f68fb1623ec494941f4096d28c4758}\label{classVFormula_ae5f68fb1623ec494941f4096d28c4758}} 
+\index{VFormula@{VFormula}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void VFormula\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{value,  }\item[{\mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5c}{Formula\+Type}}}]{type = {\ttfamily \mbox{\hyperlink{vformula_8h_a6aae6ae899c773f46678c91a20defb5cab1b78a476b35207ecd94d86cd450de2a}{Formula\+Type\+::\+To\+User}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_aeb9cd2ca6daf81f1f252e6190fa477c7}\label{classVFormula_aeb9cd2ca6daf81f1f252e6190fa477c7}} 
+\index{VFormula@{VFormula}!setPostfix@{setPostfix}}
+\index{setPostfix@{setPostfix}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{setPostfix()}{setPostfix()}}
+{\footnotesize\ttfamily void VFormula\+::set\+Postfix (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVFormula_abe56b73f898ef88f571923e00845abdd}\label{classVFormula_abe56b73f898ef88f571923e00845abdd}} 
+\index{VFormula@{VFormula}!setToolId@{setToolId}}
+\index{setToolId@{setToolId}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{setToolId()}{setToolId()}}
+{\footnotesize\ttfamily void VFormula\+::set\+Tool\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVFormula_a02e4f8ec8a65d22d9f58fc7bc5778c2d}\label{classVFormula_a02e4f8ec8a65d22d9f58fc7bc5778c2d}} 
+\index{VFormula@{VFormula}!\_error@{\_error}}
+\index{\_error@{\_error}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{\_error}{\_error}}
+{\footnotesize\ttfamily bool VFormula\+::\+\_\+error\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a163d57ed3b7b6dd341144ff693a04204}\label{classVFormula_a163d57ed3b7b6dd341144ff693a04204}} 
+\index{VFormula@{VFormula}!checkZero@{checkZero}}
+\index{checkZero@{checkZero}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{checkZero}{checkZero}}
+{\footnotesize\ttfamily bool VFormula\+::check\+Zero\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a82ffde36a0ae47f31e8ef1d9603290ce}\label{classVFormula_a82ffde36a0ae47f31e8ef1d9603290ce}} 
+\index{VFormula@{VFormula}!data@{data}}
+\index{data@{data}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ VFormula\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a0670cddbb1efb379dafe42db5b3ced78}\label{classVFormula_a0670cddbb1efb379dafe42db5b3ced78}} 
+\index{VFormula@{VFormula}!dValue@{dValue}}
+\index{dValue@{dValue}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{dValue}{dValue}}
+{\footnotesize\ttfamily qreal VFormula\+::d\+Value\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}\label{classVFormula_a12b2fa8809eff552dfabb17ce4c24fbc}} 
+\index{VFormula@{VFormula}!formula@{formula}}
+\index{formula@{formula}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{formula}{formula}}
+{\footnotesize\ttfamily QString VFormula\+::formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a0fc4b942b9b5d099aeedc351a241cc08}\label{classVFormula_a0fc4b942b9b5d099aeedc351a241cc08}} 
+\index{VFormula@{VFormula}!postfix@{postfix}}
+\index{postfix@{postfix}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{postfix}{postfix}}
+{\footnotesize\ttfamily QString VFormula\+::postfix\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a8b1a6ebf655d90423ab8561bc71696d5}\label{classVFormula_a8b1a6ebf655d90423ab8561bc71696d5}} 
+\index{VFormula@{VFormula}!toolId@{toolId}}
+\index{toolId@{toolId}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{toolId}{toolId}}
+{\footnotesize\ttfamily quint32 VFormula\+::tool\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVFormula_a3fcb124fd85b1e6985793f2922748233}\label{classVFormula_a3fcb124fd85b1e6985793f2922748233}} 
+\index{VFormula@{VFormula}!value@{value}}
+\index{value@{value}!VFormula@{VFormula}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily QString VFormula\+::value\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpatterndb/\mbox{\hyperlink{vformula_8h}{vformula.\+h}}\item 
+src/libs/vpatterndb/\mbox{\hyperlink{vformula_8cpp}{vformula.\+cpp}}\end{DoxyCompactItemize}

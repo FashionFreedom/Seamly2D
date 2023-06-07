@@ -1,0 +1,216 @@
+\hypertarget{classVToolCut}{}\doxysection{VTool\+Cut Class Reference}
+\label{classVToolCut}\index{VToolCut@{VToolCut}}
+
+
+{\ttfamily \#include $<$vtoolcut.\+h$>$}
+
+Inheritance diagram for VTool\+Cut\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{d0/d8a/classVToolCut}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolCut_a360b85b47b771487c91dc3cc298fcac2a82a04b50f30fc3f93ea26ae3ead464be}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Cut)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolCut_a82b4ee74d684203b9c61725c07f0f7d3}{Disable}} (bool disable, const QString \&draft\+Block\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolCut_a835eefc0ba60e122926869b16121d692}{pieces\+Mode}} (bool mode) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolCut_a5fe79d93bc5ddd8a58f8bb18dc3995f7}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolCut_ad509770708139e0309d009a4d877f22a}{VTool\+Cut}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const QString \&\mbox{\hyperlink{classVToolCut_a05531a4cd6dc67bf537b30c9cf5f5c2d}{formula}}, const quint32 \&\mbox{\hyperlink{classVToolCut_aff94dde7935bc3bc0f8e5824420a5cac}{curve\+Cut\+Id}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual int \mbox{\hyperlink{classVToolCut_a16c23c0f4772aafa2bc288b37c1612eb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVToolCut_abf169480ad8afbd80d5c26a2cbf20743}{Get\+Formula}} () const
+\item 
+void \mbox{\hyperlink{classVToolCut_a1faa23f2bcac616e08d65543d18dac4e}{Set\+Formula}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&value)
+\item 
+QString \mbox{\hyperlink{classVToolCut_adc1947f3ba92a354f6102c6dcf94cf3b}{Curve\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolCut_a1323b2f2154a1832b4773e0b9f031a61}{get\+Curve\+Cut\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolCut_a590dc4d85049ddbc18a77d9a07868161}{set\+Curve\+Cut\+Id}} (const quint32 \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVToolCut_a6d3e83554787ed058e98376f83c587ed}{Refresh\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Geometry refresh item on scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolCut_a0b67caf294f7dc10fba2b5446ae1bc1d}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement referens value for used objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classVToolCut_ac36ef16fcb27c8743c58ede63323b51a}{Show\+Tool\+Visualization}} (bool show)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classVToolCut_a05531a4cd6dc67bf537b30c9cf5f5c2d}{formula}}
+\begin{DoxyCompactList}\small\item\em formula keep formula of length \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVToolCut_aff94dde7935bc3bc0f8e5824420a5cac}{curve\+Cut\+Id}}
+\item 
+bool \mbox{\hyperlink{classVToolCut_ad45b32b33d318516782422ee29ffaa1f}{m\+\_\+pieces\+Mode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolCut_a360b85b47b771487c91dc3cc298fcac2}\label{classVToolCut_a360b85b47b771487c91dc3cc298fcac2}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolCut@{VToolCut}}\index{VToolCut@{VToolCut}!Type@{Type}}}\mbox{\Hypertarget{classVToolCut_a360b85b47b771487c91dc3cc298fcac2a82a04b50f30fc3f93ea26ae3ead464be}\label{classVToolCut_a360b85b47b771487c91dc3cc298fcac2a82a04b50f30fc3f93ea26ae3ead464be}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolCut_ad509770708139e0309d009a4d877f22a}\label{classVToolCut_ad509770708139e0309d009a4d877f22a}} 
+\index{VToolCut@{VToolCut}!VToolCut@{VToolCut}}
+\index{VToolCut@{VToolCut}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{VToolCut()}{VToolCut()}}
+{\footnotesize\ttfamily VTool\+Cut\+::\+VTool\+Cut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const QString \&}]{formula,  }\item[{const quint32 \&}]{curve\+Cut\+Id,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolCut_adc1947f3ba92a354f6102c6dcf94cf3b}\label{classVToolCut_adc1947f3ba92a354f6102c6dcf94cf3b}} 
+\index{VToolCut@{VToolCut}!CurveName@{CurveName}}
+\index{CurveName@{CurveName}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{CurveName()}{CurveName()}}
+{\footnotesize\ttfamily QString VTool\+Cut\+::\+Curve\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolCut_a82b4ee74d684203b9c61725c07f0f7d3}\label{classVToolCut_a82b4ee74d684203b9c61725c07f0f7d3}} 
+\index{VToolCut@{VToolCut}!Disable@{Disable}}
+\index{Disable@{Disable}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily void VTool\+Cut\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolCut_a5fe79d93bc5ddd8a58f8bb18dc3995f7}\label{classVToolCut_a5fe79d93bc5ddd8a58f8bb18dc3995f7}} 
+\index{VToolCut@{VToolCut}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void VTool\+Cut\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Full\+Update\+From\+File update tool data form file. 
+
+\mbox{\Hypertarget{classVToolCut_a1323b2f2154a1832b4773e0b9f031a61}\label{classVToolCut_a1323b2f2154a1832b4773e0b9f031a61}} 
+\index{VToolCut@{VToolCut}!getCurveCutId@{getCurveCutId}}
+\index{getCurveCutId@{getCurveCutId}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{getCurveCutId()}{getCurveCutId()}}
+{\footnotesize\ttfamily quint32 VTool\+Cut\+::get\+Curve\+Cut\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolCut_abf169480ad8afbd80d5c26a2cbf20743}\label{classVToolCut_abf169480ad8afbd80d5c26a2cbf20743}} 
+\index{VToolCut@{VToolCut}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VTool\+Cut\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolCut_a835eefc0ba60e122926869b16121d692}\label{classVToolCut_a835eefc0ba60e122926869b16121d692}} 
+\index{VToolCut@{VToolCut}!piecesMode@{piecesMode}}
+\index{piecesMode@{piecesMode}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{piecesMode}{piecesMode}}
+{\footnotesize\ttfamily void VTool\+Cut\+::pieces\+Mode (\begin{DoxyParamCaption}\item[{bool}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolCut_a6d3e83554787ed058e98376f83c587ed}\label{classVToolCut_a6d3e83554787ed058e98376f83c587ed}} 
+\index{VToolCut@{VToolCut}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void VTool\+Cut\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Refresh\+Geometry refresh item on scene. 
+
+\mbox{\Hypertarget{classVToolCut_a0b67caf294f7dc10fba2b5446ae1bc1d}\label{classVToolCut_a0b67caf294f7dc10fba2b5446ae1bc1d}} 
+\index{VToolCut@{VToolCut}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Cut\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement referens value for used objects. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolCut_a590dc4d85049ddbc18a77d9a07868161}\label{classVToolCut_a590dc4d85049ddbc18a77d9a07868161}} 
+\index{VToolCut@{VToolCut}!setCurveCutId@{setCurveCutId}}
+\index{setCurveCutId@{setCurveCutId}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{setCurveCutId()}{setCurveCutId()}}
+{\footnotesize\ttfamily void VTool\+Cut\+::set\+Curve\+Cut\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolCut_a1faa23f2bcac616e08d65543d18dac4e}\label{classVToolCut_a1faa23f2bcac616e08d65543d18dac4e}} 
+\index{VToolCut@{VToolCut}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void VTool\+Cut\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolCut_ac36ef16fcb27c8743c58ede63323b51a}\label{classVToolCut_ac36ef16fcb27c8743c58ede63323b51a}} 
+\index{VToolCut@{VToolCut}!ShowToolVisualization@{ShowToolVisualization}}
+\index{ShowToolVisualization@{ShowToolVisualization}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{ShowToolVisualization()}{ShowToolVisualization()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VTool\+Cut\+::\+Show\+Tool\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolCut_a16c23c0f4772aafa2bc288b37c1612eb}\label{classVToolCut_a16c23c0f4772aafa2bc288b37c1612eb}} 
+\index{VToolCut@{VToolCut}!type@{type}}
+\index{type@{type}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Cut\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a6eccae4469cb594716c86dc5011b99eb}{VTool\+Single\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolCutSplinePath_a044cdeb5e1cf2eee0f51a898f90cbb35}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{classVToolCutSpline_ae270bee43b25c04574f7799753830640}{VTool\+Cut\+Spline}}, and \mbox{\hyperlink{classVToolCutArc_a7c1e634d8c0b02f28618bace60fee4f1}{VTool\+Cut\+Arc}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolCut_aff94dde7935bc3bc0f8e5824420a5cac}\label{classVToolCut_aff94dde7935bc3bc0f8e5824420a5cac}} 
+\index{VToolCut@{VToolCut}!curveCutId@{curveCutId}}
+\index{curveCutId@{curveCutId}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{curveCutId}{curveCutId}}
+{\footnotesize\ttfamily quint32 VTool\+Cut\+::curve\+Cut\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolCut_a05531a4cd6dc67bf537b30c9cf5f5c2d}\label{classVToolCut_a05531a4cd6dc67bf537b30c9cf5f5c2d}} 
+\index{VToolCut@{VToolCut}!formula@{formula}}
+\index{formula@{formula}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{formula}{formula}}
+{\footnotesize\ttfamily QString VTool\+Cut\+::formula\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+formula keep formula of length 
+
+\mbox{\Hypertarget{classVToolCut_ad45b32b33d318516782422ee29ffaa1f}\label{classVToolCut_ad45b32b33d318516782422ee29ffaa1f}} 
+\index{VToolCut@{VToolCut}!m\_piecesMode@{m\_piecesMode}}
+\index{m\_piecesMode@{m\_piecesMode}!VToolCut@{VToolCut}}
+\doxysubsubsection{\texorpdfstring{m\_piecesMode}{m\_piecesMode}}
+{\footnotesize\ttfamily bool VTool\+Cut\+::m\+\_\+pieces\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toolcut/\mbox{\hyperlink{vtoolcut_8h}{vtoolcut.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toolcut/\mbox{\hyperlink{vtoolcut_8cpp}{vtoolcut.\+cpp}}\end{DoxyCompactItemize}

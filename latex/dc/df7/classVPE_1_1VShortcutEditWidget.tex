@@ -1,0 +1,176 @@
+\hypertarget{classVPE_1_1VShortcutEditWidget}{}\doxysection{VPE\+::VShortcut\+Edit\+Widget Class Reference}
+\label{classVPE_1_1VShortcutEditWidget}\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+
+
+{\ttfamily \#include $<$vshortcutpropertyeditor.\+h$>$}
+
+Inheritance diagram for VPE\+::VShortcut\+Edit\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/df7/classVPE_1_1VShortcutEditWidget}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a03128359d2a9f8b1a1f4ea967d8c6c63}{set\+Shortcut}} (const QString \&shortcut, bool emit\+\_\+signal)
+\item 
+void \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a79b083b0feae8f7c1bf56252ff7cdbbc}{set\+Shortcut}} (const QKey\+Sequence \&shortcut, bool emit\+\_\+signal)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_afd0b6c1c0f3da9aacc05c29cb94cea92}{data\+Changed\+By\+User}} (const QKey\+Sequence \&sequence, \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget}{VShortcut\+Edit\+Widget}} $\ast$editor)
+\begin{DoxyCompactList}\small\item\em This signal is emitted when the user changed the current shortcut. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a1fe65a3ff0bcb5fa8a5c1a9fb0e98e46}{commit\+Data}} (QWidget $\ast$editor)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a14a2bf29f66956aa1b0cb40899dd667b}{VShortcut\+Edit\+Widget}} (QWidget $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a6a95d3a898229b1559e6b8b3f8c2fa0b}{$\sim$\+VShortcut\+Edit\+Widget}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a85a74331658019dcec8518023e97ff8d}{event\+Filter}} (QObject $\ast$obj, QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Needed for proper event handling. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_ab46321a527ea3935e38808d1d522e8d2}{get\+Shortcut\+As\+String}} () const
+\begin{DoxyCompactList}\small\item\em Returns the currently set shortcut. \end{DoxyCompactList}\item 
+QKey\+Sequence \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a9d1e2459359794ae0c0b20b9d4dd9c5e}{get\+Shortcut}} ()
+\begin{DoxyCompactList}\small\item\em Returns the currently set shortcut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QKey\+Sequence \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_acba46dfd330b2825dd1cdd55197e5693}{Current\+Key\+Sequence}}
+\begin{DoxyCompactList}\small\item\em The current key sequence. \end{DoxyCompactList}\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a2c45abbced3a5afaa0d7075970c60a6e}{Line\+Edit}}
+\begin{DoxyCompactList}\small\item\em The line to display and edit the key sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a4ea768118a4e5ed9888633c54fd435df}{on\+Text\+Edited}} (const QString \&text)
+\begin{DoxyCompactList}\small\item\em This slot is called when the user edits the line edit (e.\+g. by removing or pasting text using the mouse) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a14a2bf29f66956aa1b0cb40899dd667b}\label{classVPE_1_1VShortcutEditWidget_a14a2bf29f66956aa1b0cb40899dd667b}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!VShortcutEditWidget@{VShortcutEditWidget}}
+\index{VShortcutEditWidget@{VShortcutEditWidget}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{VShortcutEditWidget()}{VShortcutEditWidget()}}
+{\footnotesize\ttfamily VPE\+::\+VShortcut\+Edit\+Widget\+::\+VShortcut\+Edit\+Widget (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a6a95d3a898229b1559e6b8b3f8c2fa0b}\label{classVPE_1_1VShortcutEditWidget_a6a95d3a898229b1559e6b8b3f8c2fa0b}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!````~VShortcutEditWidget@{$\sim$VShortcutEditWidget}}
+\index{````~VShortcutEditWidget@{$\sim$VShortcutEditWidget}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$VShortcutEditWidget()}{~VShortcutEditWidget()}}
+{\footnotesize\ttfamily VPE\+::\+VShortcut\+Edit\+Widget\+::$\sim$\+VShortcut\+Edit\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a1fe65a3ff0bcb5fa8a5c1a9fb0e98e46}\label{classVPE_1_1VShortcutEditWidget_a1fe65a3ff0bcb5fa8a5c1a9fb0e98e46}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!commitData@{commitData}}
+\index{commitData@{commitData}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{commitData}{commitData}}
+{\footnotesize\ttfamily void VPE\+::\+VShortcut\+Edit\+Widget\+::commit\+Data (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+This signal is emitted whenever \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_afd0b6c1c0f3da9aacc05c29cb94cea92}{data\+Changed\+By\+User()}} gets emmitted and is connected to the delegate\textquotesingle{}s \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_a1fe65a3ff0bcb5fa8a5c1a9fb0e98e46}{commit\+Data()}} signal \mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_afd0b6c1c0f3da9aacc05c29cb94cea92}\label{classVPE_1_1VShortcutEditWidget_afd0b6c1c0f3da9aacc05c29cb94cea92}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!dataChangedByUser@{dataChangedByUser}}
+\index{dataChangedByUser@{dataChangedByUser}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{dataChangedByUser}{dataChangedByUser}}
+{\footnotesize\ttfamily void VPE\+::\+VShortcut\+Edit\+Widget\+::data\+Changed\+By\+User (\begin{DoxyParamCaption}\item[{const QKey\+Sequence \&}]{sequence,  }\item[{\mbox{\hyperlink{classVPE_1_1VShortcutEditWidget}{VShortcut\+Edit\+Widget}} $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This signal is emitted when the user changed the current shortcut. 
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a85a74331658019dcec8518023e97ff8d}\label{classVPE_1_1VShortcutEditWidget_a85a74331658019dcec8518023e97ff8d}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool VPE\+::\+VShortcut\+Edit\+Widget\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{obj,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Needed for proper event handling. 
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a9d1e2459359794ae0c0b20b9d4dd9c5e}\label{classVPE_1_1VShortcutEditWidget_a9d1e2459359794ae0c0b20b9d4dd9c5e}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!getShortcut@{getShortcut}}
+\index{getShortcut@{getShortcut}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{getShortcut()}{getShortcut()}}
+{\footnotesize\ttfamily QKey\+Sequence VPE\+::\+VShortcut\+Edit\+Widget\+::get\+Shortcut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the currently set shortcut. 
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_ab46321a527ea3935e38808d1d522e8d2}\label{classVPE_1_1VShortcutEditWidget_ab46321a527ea3935e38808d1d522e8d2}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!getShortcutAsString@{getShortcutAsString}}
+\index{getShortcutAsString@{getShortcutAsString}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{getShortcutAsString()}{getShortcutAsString()}}
+{\footnotesize\ttfamily QString VPE\+::\+VShortcut\+Edit\+Widget\+::get\+Shortcut\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the currently set shortcut. 
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a4ea768118a4e5ed9888633c54fd435df}\label{classVPE_1_1VShortcutEditWidget_a4ea768118a4e5ed9888633c54fd435df}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!onTextEdited@{onTextEdited}}
+\index{onTextEdited@{onTextEdited}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{onTextEdited}{onTextEdited}}
+{\footnotesize\ttfamily void VPE\+::\+VShortcut\+Edit\+Widget\+::on\+Text\+Edited (\begin{DoxyParamCaption}\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+This slot is called when the user edits the line edit (e.\+g. by removing or pasting text using the mouse) 
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a79b083b0feae8f7c1bf56252ff7cdbbc}\label{classVPE_1_1VShortcutEditWidget_a79b083b0feae8f7c1bf56252ff7cdbbc}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!setShortcut@{setShortcut}}
+\index{setShortcut@{setShortcut}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{setShortcut}{setShortcut}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VPE\+::\+VShortcut\+Edit\+Widget\+::set\+Shortcut (\begin{DoxyParamCaption}\item[{const QKey\+Sequence \&}]{shortcut,  }\item[{bool}]{emit\+\_\+signal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Sets the shortcut 
+\begin{DoxyParams}{Parameters}
+{\em shortcut} & The new shortcut \textbackslash{}emit\+\_\+signal If true, this will emit the \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_afd0b6c1c0f3da9aacc05c29cb94cea92}{data\+Changed\+By\+User()}}-\/signal \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a03128359d2a9f8b1a1f4ea967d8c6c63}\label{classVPE_1_1VShortcutEditWidget_a03128359d2a9f8b1a1f4ea967d8c6c63}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!setShortcut@{setShortcut}}
+\index{setShortcut@{setShortcut}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{setShortcut}{setShortcut}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VPE\+::\+VShortcut\+Edit\+Widget\+::set\+Shortcut (\begin{DoxyParamCaption}\item[{const QString \&}]{shortcut,  }\item[{bool}]{emit\+\_\+signal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Sets the shortcut 
+\begin{DoxyParams}{Parameters}
+{\em shortcut} & The new shortcut \textbackslash{}emit\+\_\+signal If true, this will emit the \mbox{\hyperlink{classVPE_1_1VShortcutEditWidget_afd0b6c1c0f3da9aacc05c29cb94cea92}{data\+Changed\+By\+User()}}-\/signal \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_acba46dfd330b2825dd1cdd55197e5693}\label{classVPE_1_1VShortcutEditWidget_acba46dfd330b2825dd1cdd55197e5693}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!CurrentKeySequence@{CurrentKeySequence}}
+\index{CurrentKeySequence@{CurrentKeySequence}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{CurrentKeySequence}{CurrentKeySequence}}
+{\footnotesize\ttfamily QKey\+Sequence VPE\+::\+VShortcut\+Edit\+Widget\+::\+Current\+Key\+Sequence\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current key sequence. 
+
+\mbox{\Hypertarget{classVPE_1_1VShortcutEditWidget_a2c45abbced3a5afaa0d7075970c60a6e}\label{classVPE_1_1VShortcutEditWidget_a2c45abbced3a5afaa0d7075970c60a6e}} 
+\index{VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}!LineEdit@{LineEdit}}
+\index{LineEdit@{LineEdit}!VPE::VShortcutEditWidget@{VPE::VShortcutEditWidget}}
+\doxysubsubsection{\texorpdfstring{LineEdit}{LineEdit}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ VPE\+::\+VShortcut\+Edit\+Widget\+::\+Line\+Edit\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The line to display and edit the key sequence. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vshortcutpropertyeditor_8h}{vshortcutpropertyeditor.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vshortcutpropertyeditor_8cpp}{vshortcutpropertyeditor.\+cpp}}\end{DoxyCompactItemize}

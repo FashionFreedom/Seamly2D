@@ -1,0 +1,450 @@
+\hypertarget{classVPiecePath}{}\doxysection{VPiece\+Path Class Reference}
+\label{classVPiecePath}\index{VPiecePath@{VPiecePath}}
+
+
+{\ttfamily \#include $<$vpiecepath.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPiecePath_aa3fd6256f610dcfd2f4e61ce990c3770}{VPiece\+Path}} ()
+\item 
+\mbox{\hyperlink{classVPiecePath_a5fef27e07553410719e5003c556005aa}{VPiece\+Path}} (\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} type)
+\item 
+\mbox{\hyperlink{classVPiecePath_a3ba6cf48ebc025596ef9107b74a85566}{VPiece\+Path}} (const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&path)
+\item 
+\mbox{\hyperlink{classVPiecePath_a734ca8f5125f579a0650ec693ffa7a07}{$\sim$\+VPiece\+Path}} ()
+\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \& \mbox{\hyperlink{classVPiecePath_a3651c6075a0d01ad0faf0c9620b7c720}{operator=}} (const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&path)
+\item 
+void \mbox{\hyperlink{classVPiecePath_a5e4052067aa6b95f51de7f788dbce3fe}{Swap}} (\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&path) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+void \mbox{\hyperlink{classVPiecePath_a504b69c93055d888b2f7016aeb18f4a4}{Append}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node)
+\item 
+void \mbox{\hyperlink{classVPiecePath_a43b8cdb75aeef28b1641918a61798408}{Clear}} ()
+\item 
+qint32 \mbox{\hyperlink{classVPiecePath_a2b39cff77bc37b6aed42c846a62fff2f}{Count\+Nodes}} () const
+\item 
+\mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \& \mbox{\hyperlink{classVPiecePath_a6616532129e32dc068ce4560588fe417}{operator\mbox{[}$\,$\mbox{]}}} (int indx)
+\item 
+const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \& \mbox{\hyperlink{classVPiecePath_abd0995a22aa10c9e26423b36ef151518}{at}} (int indx) const
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \mbox{\hyperlink{classVPiecePath_a7473074b22fb8c7d8221ac5c16c9c93f}{Get\+Nodes}} () const
+\item 
+void \mbox{\hyperlink{classVPiecePath_a85d983785b92ff08bdf59b1ec55ce949}{Set\+Nodes}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes)
+\item 
+\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} \mbox{\hyperlink{classVPiecePath_a15bacee01dc0c93f44361393557ef348}{Get\+Type}} () const
+\item 
+void \mbox{\hyperlink{classVPiecePath_a243839cb4f0a01d685cc9089e79d56f0}{Set\+Type}} (\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} type)
+\item 
+QString \mbox{\hyperlink{classVPiecePath_afde87be9430a339c040e3ac6516c8d8c}{Get\+Name}} () const
+\item 
+void \mbox{\hyperlink{classVPiecePath_a985d9f676d9ff99c50ab992364215381}{Set\+Name}} (const QString \&name)
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{classVPiecePath_aa4d2609c1aff9e8aae57b639c23dabe9}{Get\+Pen\+Type}} () const
+\item 
+void \mbox{\hyperlink{classVPiecePath_a9296c27fe396030b03d1d2ca47d302d1}{Set\+Pen\+Type}} (const Qt\+::\+Pen\+Style \&type)
+\item 
+bool \mbox{\hyperlink{classVPiecePath_ace9309b15391177c29f3d48f276eddca}{Is\+Cut\+Path}} () const
+\item 
+void \mbox{\hyperlink{classVPiecePath_a4a0e0e0de7ac8b65a198890e5ffb3d67}{Set\+Cut\+Path}} (bool cut)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{classVPiecePath_a0f0c429ad1410eb8ae3e0a2fe280bf2e}{Path\+Points}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data) const
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPointF}{VPointF}} $>$ \mbox{\hyperlink{classVPiecePath_a6c420b73d839af901a9ce69409227e63}{Path\+Node\+Points}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, bool show\+Excluded=true) const
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVSAPoint}{VSAPoint}} $>$ \mbox{\hyperlink{classVPiecePath_a26e7457c663da9d1d5b8c5e61c2a9cab}{Seam\+Allowance\+Points}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, qreal width, bool reverse) const
+\item 
+QPainter\+Path \mbox{\hyperlink{classVPiecePath_afa5aa57c418da11a6dace9d51bf8529b}{Painter\+Path}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data) const
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{classVPiecePath_a7c376b30fa8e8f4bce22239f4b304cad}{Missing\+Nodes}} (const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&path) const
+\item 
+int \mbox{\hyperlink{classVPiecePath_af5553b684d938ee8b94da301f3704cd9}{index\+Of\+Node}} (quint32 id) const
+\item 
+void \mbox{\hyperlink{classVPiecePath_a30b6a17eddf617ab390f2c15422e4ae7}{Node\+On\+Edge}} (quint32 index, \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&p1, \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&p2) const
+\begin{DoxyCompactList}\small\item\em Node\+On\+Edge return nodes located on edge with index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVPiecePath_a1fee36c6b3cacef7e1acd292270d8b57}{Contains}} (quint32 id) const
+\item 
+bool \mbox{\hyperlink{classVPiecePath_aa07edfea9583daf9e9e1ff6ddec0e6df}{On\+Edge}} (quint32 p1, quint32 p2) const
+\begin{DoxyCompactList}\small\item\em On\+Edge checks if two poins located on the edge. Edge is line between two points. If between two points located arcs or splines ignore this. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classVPiecePath_a6497733c635eb09fe44a8e4d710bf481}{Edge}} (quint32 p1, quint32 p2) const
+\begin{DoxyCompactList}\small\item\em Edge return edge index in detail. Edge is line between two points. If between two points located arcs or splines ignore this. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \mbox{\hyperlink{classVPiecePath_ad91576230d24ca1eb7d4f95b9b573887}{List\+Node\+Point}} () const
+\begin{DoxyCompactList}\small\item\em list\+Node\+Point return list nodes only with points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \mbox{\hyperlink{classVPiecePath_a79057988f7123dc94c7d949465ee2217}{Remove\+Edge}} (quint32 index) const
+\begin{DoxyCompactList}\small\item\em Remove\+Edge return path without edge with index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVSAPoint}{VSAPoint}} \mbox{\hyperlink{classVPiecePath_ade8786c18a64d99ba1356c7b115dc9b6}{Start\+Segment}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, int i, bool reverse) const
+\item 
+\mbox{\hyperlink{classVSAPoint}{VSAPoint}} \mbox{\hyperlink{classVPiecePath_af9920700731879dc087d68611edaf6de}{End\+Segment}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, int i, bool reverse) const
+\item 
+QPointF \mbox{\hyperlink{classVPiecePath_a9ebebfe2f4a0a1783099f77a376562f4}{Node\+Previous\+Point}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, int i) const
+\item 
+QPointF \mbox{\hyperlink{classVPiecePath_aa11dc7d39175e8911befd9df89d84288}{Node\+Next\+Point}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, int i) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classVPiecePath_a47675226e49878c44a1248b26f45a4cc}{index\+Of\+Node}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes, quint32 id)
+\item 
+static int \mbox{\hyperlink{classVPiecePath_a64514076b2ee3b23f2926ce07c42401f}{Find\+In\+Loop\+Not\+Excluded\+Up}} (int start, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes)
+\item 
+static int \mbox{\hyperlink{classVPiecePath_ac19fef16ad974f9246dcba1541ada400}{Find\+In\+Loop\+Not\+Excluded\+Down}} (int start, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes)
+\item 
+static \mbox{\hyperlink{classVSAPoint}{VSAPoint}} \mbox{\hyperlink{classVPiecePath_a6cae1535d9644811ce0638b81b487232}{Start\+Segment}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes, int i, bool reverse)
+\item 
+static \mbox{\hyperlink{classVSAPoint}{VSAPoint}} \mbox{\hyperlink{classVPiecePath_a913fb715d0e1c9acfb470a3cabcd3d0d}{End\+Segment}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes, int i, bool reverse)
+\item 
+static \mbox{\hyperlink{classVSAPoint}{VSAPoint}} \mbox{\hyperlink{classVPiecePath_ac15092cd74e77bdf9d488f9baa253ba3}{Prepare\+Point\+Ekv}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node, const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data)
+\item 
+static \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVSAPoint}{VSAPoint}} $>$ \mbox{\hyperlink{classVPiecePath_a4deb68aafa7edcae4a8daf1ced1c24ba}{Curve\+Seam\+Allowance\+Segment}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&nodes, const \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVAbstractCurve}{VAbstract\+Curve}} $>$ \&curve, int i, bool reverse, qreal width)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{classVPiecePathData}{VPiece\+Path\+Data}} $>$ \mbox{\hyperlink{classVPiecePath_a34baef8e83f5d6ff1b49ad62b01c5d4b}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPiecePath_aa3fd6256f610dcfd2f4e61ce990c3770}\label{classVPiecePath_aa3fd6256f610dcfd2f4e61ce990c3770}} 
+\index{VPiecePath@{VPiecePath}!VPiecePath@{VPiecePath}}
+\index{VPiecePath@{VPiecePath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{VPiecePath()}{VPiecePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VPiece\+Path\+::\+VPiece\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a5fef27e07553410719e5003c556005aa}\label{classVPiecePath_a5fef27e07553410719e5003c556005aa}} 
+\index{VPiecePath@{VPiecePath}!VPiecePath@{VPiecePath}}
+\index{VPiecePath@{VPiecePath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{VPiecePath()}{VPiecePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VPiece\+Path\+::\+VPiece\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVPiecePath_a3ba6cf48ebc025596ef9107b74a85566}\label{classVPiecePath_a3ba6cf48ebc025596ef9107b74a85566}} 
+\index{VPiecePath@{VPiecePath}!VPiecePath@{VPiecePath}}
+\index{VPiecePath@{VPiecePath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{VPiecePath()}{VPiecePath()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VPiece\+Path\+::\+VPiece\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a734ca8f5125f579a0650ec693ffa7a07}\label{classVPiecePath_a734ca8f5125f579a0650ec693ffa7a07}} 
+\index{VPiecePath@{VPiecePath}!````~VPiecePath@{$\sim$VPiecePath}}
+\index{````~VPiecePath@{$\sim$VPiecePath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPiecePath()}{~VPiecePath()}}
+{\footnotesize\ttfamily VPiece\+Path\+::$\sim$\+VPiece\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPiecePath_a504b69c93055d888b2f7016aeb18f4a4}\label{classVPiecePath_a504b69c93055d888b2f7016aeb18f4a4}} 
+\index{VPiecePath@{VPiecePath}!Append@{Append}}
+\index{Append@{Append}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{Append()}{Append()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Append (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_abd0995a22aa10c9e26423b36ef151518}\label{classVPiecePath_abd0995a22aa10c9e26423b36ef151518}} 
+\index{VPiecePath@{VPiecePath}!at@{at}}
+\index{at@{at}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \& VPiece\+Path\+::at (\begin{DoxyParamCaption}\item[{int}]{indx }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a43b8cdb75aeef28b1641918a61798408}\label{classVPiecePath_a43b8cdb75aeef28b1641918a61798408}} 
+\index{VPiecePath@{VPiecePath}!Clear@{Clear}}
+\index{Clear@{Clear}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a1fee36c6b3cacef7e1acd292270d8b57}\label{classVPiecePath_a1fee36c6b3cacef7e1acd292270d8b57}} 
+\index{VPiecePath@{VPiecePath}!Contains@{Contains}}
+\index{Contains@{Contains}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{Contains()}{Contains()}}
+{\footnotesize\ttfamily bool VPiece\+Path\+::\+Contains (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a2b39cff77bc37b6aed42c846a62fff2f}\label{classVPiecePath_a2b39cff77bc37b6aed42c846a62fff2f}} 
+\index{VPiecePath@{VPiecePath}!CountNodes@{CountNodes}}
+\index{CountNodes@{CountNodes}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{CountNodes()}{CountNodes()}}
+{\footnotesize\ttfamily qint32 VPiece\+Path\+::\+Count\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a4deb68aafa7edcae4a8daf1ced1c24ba}\label{classVPiecePath_a4deb68aafa7edcae4a8daf1ced1c24ba}} 
+\index{VPiecePath@{VPiecePath}!CurveSeamAllowanceSegment@{CurveSeamAllowanceSegment}}
+\index{CurveSeamAllowanceSegment@{CurveSeamAllowanceSegment}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{CurveSeamAllowanceSegment()}{CurveSeamAllowanceSegment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVSAPoint}{VSAPoint}} $>$ VPiece\+Path\+::\+Curve\+Seam\+Allowance\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes,  }\item[{const \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVAbstractCurve}{VAbstract\+Curve}} $>$ \&}]{curve,  }\item[{int}]{i,  }\item[{bool}]{reverse,  }\item[{qreal}]{width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_a6497733c635eb09fe44a8e4d710bf481}\label{classVPiecePath_a6497733c635eb09fe44a8e4d710bf481}} 
+\index{VPiecePath@{VPiecePath}!Edge@{Edge}}
+\index{Edge@{Edge}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{Edge()}{Edge()}}
+{\footnotesize\ttfamily int VPiece\+Path\+::\+Edge (\begin{DoxyParamCaption}\item[{quint32}]{p1,  }\item[{quint32}]{p2 }\end{DoxyParamCaption}) const}
+
+
+
+Edge return edge index in detail. Edge is line between two points. If between two points located arcs or splines ignore this. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & id first point. \\
+\hline
+{\em p2} & id second point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+edge index or -\/1 if points don\textquotesingle{}t located on edge 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPiecePath_a913fb715d0e1c9acfb470a3cabcd3d0d}\label{classVPiecePath_a913fb715d0e1c9acfb470a3cabcd3d0d}} 
+\index{VPiecePath@{VPiecePath}!EndSegment@{EndSegment}}
+\index{EndSegment@{EndSegment}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{EndSegment()}{EndSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSAPoint}{VSAPoint}} VPiece\+Path\+::\+End\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes,  }\item[{int}]{i,  }\item[{bool}]{reverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_af9920700731879dc087d68611edaf6de}\label{classVPiecePath_af9920700731879dc087d68611edaf6de}} 
+\index{VPiecePath@{VPiecePath}!EndSegment@{EndSegment}}
+\index{EndSegment@{EndSegment}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{EndSegment()}{EndSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSAPoint}{VSAPoint}} VPiece\+Path\+::\+End\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{int}]{i,  }\item[{bool}]{reverse }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_ac19fef16ad974f9246dcba1541ada400}\label{classVPiecePath_ac19fef16ad974f9246dcba1541ada400}} 
+\index{VPiecePath@{VPiecePath}!FindInLoopNotExcludedDown@{FindInLoopNotExcludedDown}}
+\index{FindInLoopNotExcludedDown@{FindInLoopNotExcludedDown}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{FindInLoopNotExcludedDown()}{FindInLoopNotExcludedDown()}}
+{\footnotesize\ttfamily int VPiece\+Path\+::\+Find\+In\+Loop\+Not\+Excluded\+Down (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_a64514076b2ee3b23f2926ce07c42401f}\label{classVPiecePath_a64514076b2ee3b23f2926ce07c42401f}} 
+\index{VPiecePath@{VPiecePath}!FindInLoopNotExcludedUp@{FindInLoopNotExcludedUp}}
+\index{FindInLoopNotExcludedUp@{FindInLoopNotExcludedUp}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{FindInLoopNotExcludedUp()}{FindInLoopNotExcludedUp()}}
+{\footnotesize\ttfamily int VPiece\+Path\+::\+Find\+In\+Loop\+Not\+Excluded\+Up (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_afde87be9430a339c040e3ac6516c8d8c}\label{classVPiecePath_afde87be9430a339c040e3ac6516c8d8c}} 
+\index{VPiecePath@{VPiecePath}!GetName@{GetName}}
+\index{GetName@{GetName}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily QString VPiece\+Path\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a7473074b22fb8c7d8221ac5c16c9c93f}\label{classVPiecePath_a7473074b22fb8c7d8221ac5c16c9c93f}} 
+\index{VPiecePath@{VPiecePath}!GetNodes@{GetNodes}}
+\index{GetNodes@{GetNodes}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{GetNodes()}{GetNodes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ VPiece\+Path\+::\+Get\+Nodes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_aa4d2609c1aff9e8aae57b639c23dabe9}\label{classVPiecePath_aa4d2609c1aff9e8aae57b639c23dabe9}} 
+\index{VPiecePath@{VPiecePath}!GetPenType@{GetPenType}}
+\index{GetPenType@{GetPenType}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{GetPenType()}{GetPenType()}}
+{\footnotesize\ttfamily Qt\+::\+Pen\+Style VPiece\+Path\+::\+Get\+Pen\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a15bacee01dc0c93f44361393557ef348}\label{classVPiecePath_a15bacee01dc0c93f44361393557ef348}} 
+\index{VPiecePath@{VPiecePath}!GetType@{GetType}}
+\index{GetType@{GetType}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} VPiece\+Path\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a47675226e49878c44a1248b26f45a4cc}\label{classVPiecePath_a47675226e49878c44a1248b26f45a4cc}} 
+\index{VPiecePath@{VPiecePath}!indexOfNode@{indexOfNode}}
+\index{indexOfNode@{indexOfNode}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{indexOfNode()}{indexOfNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int VPiece\+Path\+::index\+Of\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_af5553b684d938ee8b94da301f3704cd9}\label{classVPiecePath_af5553b684d938ee8b94da301f3704cd9}} 
+\index{VPiecePath@{VPiecePath}!indexOfNode@{indexOfNode}}
+\index{indexOfNode@{indexOfNode}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{indexOfNode()}{indexOfNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int VPiece\+Path\+::index\+Of\+Node (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_ace9309b15391177c29f3d48f276eddca}\label{classVPiecePath_ace9309b15391177c29f3d48f276eddca}} 
+\index{VPiecePath@{VPiecePath}!IsCutPath@{IsCutPath}}
+\index{IsCutPath@{IsCutPath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{IsCutPath()}{IsCutPath()}}
+{\footnotesize\ttfamily bool VPiece\+Path\+::\+Is\+Cut\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_ad91576230d24ca1eb7d4f95b9b573887}\label{classVPiecePath_ad91576230d24ca1eb7d4f95b9b573887}} 
+\index{VPiecePath@{VPiecePath}!ListNodePoint@{ListNodePoint}}
+\index{ListNodePoint@{ListNodePoint}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{ListNodePoint()}{ListNodePoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ VPiece\+Path\+::\+List\+Node\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+list\+Node\+Point return list nodes only with points. 
+
+\begin{DoxyReturn}{Returns}
+list points node. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPiecePath_a7c376b30fa8e8f4bce22239f4b304cad}\label{classVPiecePath_a7c376b30fa8e8f4bce22239f4b304cad}} 
+\index{VPiecePath@{VPiecePath}!MissingNodes@{MissingNodes}}
+\index{MissingNodes@{MissingNodes}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{MissingNodes()}{MissingNodes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ VPiece\+Path\+::\+Missing\+Nodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_aa11dc7d39175e8911befd9df89d84288}\label{classVPiecePath_aa11dc7d39175e8911befd9df89d84288}} 
+\index{VPiecePath@{VPiecePath}!NodeNextPoint@{NodeNextPoint}}
+\index{NodeNextPoint@{NodeNextPoint}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{NodeNextPoint()}{NodeNextPoint()}}
+{\footnotesize\ttfamily QPointF VPiece\+Path\+::\+Node\+Next\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a30b6a17eddf617ab390f2c15422e4ae7}\label{classVPiecePath_a30b6a17eddf617ab390f2c15422e4ae7}} 
+\index{VPiecePath@{VPiecePath}!NodeOnEdge@{NodeOnEdge}}
+\index{NodeOnEdge@{NodeOnEdge}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{NodeOnEdge()}{NodeOnEdge()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Node\+On\+Edge (\begin{DoxyParamCaption}\item[{quint32}]{index,  }\item[{\mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{p1,  }\item[{\mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{p2 }\end{DoxyParamCaption}) const}
+
+
+
+Node\+On\+Edge return nodes located on edge with index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index of edge. \\
+\hline
+{\em p1} & first node. \\
+\hline
+{\em p2} & second node. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPiecePath_a9ebebfe2f4a0a1783099f77a376562f4}\label{classVPiecePath_a9ebebfe2f4a0a1783099f77a376562f4}} 
+\index{VPiecePath@{VPiecePath}!NodePreviousPoint@{NodePreviousPoint}}
+\index{NodePreviousPoint@{NodePreviousPoint}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{NodePreviousPoint()}{NodePreviousPoint()}}
+{\footnotesize\ttfamily QPointF VPiece\+Path\+::\+Node\+Previous\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_aa07edfea9583daf9e9e1ff6ddec0e6df}\label{classVPiecePath_aa07edfea9583daf9e9e1ff6ddec0e6df}} 
+\index{VPiecePath@{VPiecePath}!OnEdge@{OnEdge}}
+\index{OnEdge@{OnEdge}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{OnEdge()}{OnEdge()}}
+{\footnotesize\ttfamily bool VPiece\+Path\+::\+On\+Edge (\begin{DoxyParamCaption}\item[{quint32}]{p1,  }\item[{quint32}]{p2 }\end{DoxyParamCaption}) const}
+
+
+
+On\+Edge checks if two poins located on the edge. Edge is line between two points. If between two points located arcs or splines ignore this. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & id first point. \\
+\hline
+{\em p2} & id second point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ on edge, false -\/ no. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPiecePath_a3651c6075a0d01ad0faf0c9620b7c720}\label{classVPiecePath_a3651c6075a0d01ad0faf0c9620b7c720}} 
+\index{VPiecePath@{VPiecePath}!operator=@{operator=}}
+\index{operator=@{operator=}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \& VPiece\+Path\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a6616532129e32dc068ce4560588fe417}\label{classVPiecePath_a6616532129e32dc068ce4560588fe417}} 
+\index{VPiecePath@{VPiecePath}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \& VPiece\+Path\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{indx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_afa5aa57c418da11a6dace9d51bf8529b}\label{classVPiecePath_afa5aa57c418da11a6dace9d51bf8529b}} 
+\index{VPiecePath@{VPiecePath}!PainterPath@{PainterPath}}
+\index{PainterPath@{PainterPath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{PainterPath()}{PainterPath()}}
+{\footnotesize\ttfamily QPainter\+Path VPiece\+Path\+::\+Painter\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a6c420b73d839af901a9ce69409227e63}\label{classVPiecePath_a6c420b73d839af901a9ce69409227e63}} 
+\index{VPiecePath@{VPiecePath}!PathNodePoints@{PathNodePoints}}
+\index{PathNodePoints@{PathNodePoints}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{PathNodePoints()}{PathNodePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPointF}{VPointF}} $>$ VPiece\+Path\+::\+Path\+Node\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{bool}]{show\+Excluded = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a0f0c429ad1410eb8ae3e0a2fe280bf2e}\label{classVPiecePath_a0f0c429ad1410eb8ae3e0a2fe280bf2e}} 
+\index{VPiecePath@{VPiecePath}!PathPoints@{PathPoints}}
+\index{PathPoints@{PathPoints}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{PathPoints()}{PathPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ VPiece\+Path\+::\+Path\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_ac15092cd74e77bdf9d488f9baa253ba3}\label{classVPiecePath_ac15092cd74e77bdf9d488f9baa253ba3}} 
+\index{VPiecePath@{VPiecePath}!PreparePointEkv@{PreparePointEkv}}
+\index{PreparePointEkv@{PreparePointEkv}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{PreparePointEkv()}{PreparePointEkv()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSAPoint}{VSAPoint}} VPiece\+Path\+::\+Prepare\+Point\+Ekv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{node,  }\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_a79057988f7123dc94c7d949465ee2217}\label{classVPiecePath_a79057988f7123dc94c7d949465ee2217}} 
+\index{VPiecePath@{VPiecePath}!RemoveEdge@{RemoveEdge}}
+\index{RemoveEdge@{RemoveEdge}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{RemoveEdge()}{RemoveEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} VPiece\+Path\+::\+Remove\+Edge (\begin{DoxyParamCaption}\item[{quint32}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Remove\+Edge return path without edge with index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & idex of edge. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+path without edge with index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPiecePath_a26e7457c663da9d1d5b8c5e61c2a9cab}\label{classVPiecePath_a26e7457c663da9d1d5b8c5e61c2a9cab}} 
+\index{VPiecePath@{VPiecePath}!SeamAllowancePoints@{SeamAllowancePoints}}
+\index{SeamAllowancePoints@{SeamAllowancePoints}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{SeamAllowancePoints()}{SeamAllowancePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVSAPoint}{VSAPoint}} $>$ VPiece\+Path\+::\+Seam\+Allowance\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{qreal}]{width,  }\item[{bool}]{reverse }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a4a0e0e0de7ac8b65a198890e5ffb3d67}\label{classVPiecePath_a4a0e0e0de7ac8b65a198890e5ffb3d67}} 
+\index{VPiecePath@{VPiecePath}!SetCutPath@{SetCutPath}}
+\index{SetCutPath@{SetCutPath}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetCutPath()}{SetCutPath()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Set\+Cut\+Path (\begin{DoxyParamCaption}\item[{bool}]{cut }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a985d9f676d9ff99c50ab992364215381}\label{classVPiecePath_a985d9f676d9ff99c50ab992364215381}} 
+\index{VPiecePath@{VPiecePath}!SetName@{SetName}}
+\index{SetName@{SetName}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetName()}{SetName()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a85d983785b92ff08bdf59b1ec55ce949}\label{classVPiecePath_a85d983785b92ff08bdf59b1ec55ce949}} 
+\index{VPiecePath@{VPiecePath}!SetNodes@{SetNodes}}
+\index{SetNodes@{SetNodes}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetNodes()}{SetNodes()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Set\+Nodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a9296c27fe396030b03d1d2ca47d302d1}\label{classVPiecePath_a9296c27fe396030b03d1d2ca47d302d1}} 
+\index{VPiecePath@{VPiecePath}!SetPenType@{SetPenType}}
+\index{SetPenType@{SetPenType}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetPenType()}{SetPenType()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Set\+Pen\+Type (\begin{DoxyParamCaption}\item[{const Qt\+::\+Pen\+Style \&}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a243839cb4f0a01d685cc9089e79d56f0}\label{classVPiecePath_a243839cb4f0a01d685cc9089e79d56f0}} 
+\index{VPiecePath@{VPiecePath}!SetType@{SetType}}
+\index{SetType@{SetType}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{SetType()}{SetType()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Set\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPiecePath_a6cae1535d9644811ce0638b81b487232}\label{classVPiecePath_a6cae1535d9644811ce0638b81b487232}} 
+\index{VPiecePath@{VPiecePath}!StartSegment@{StartSegment}}
+\index{StartSegment@{StartSegment}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{StartSegment()}{StartSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSAPoint}{VSAPoint}} VPiece\+Path\+::\+Start\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} $>$ \&}]{nodes,  }\item[{int}]{i,  }\item[{bool}]{reverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPiecePath_ade8786c18a64d99ba1356c7b115dc9b6}\label{classVPiecePath_ade8786c18a64d99ba1356c7b115dc9b6}} 
+\index{VPiecePath@{VPiecePath}!StartSegment@{StartSegment}}
+\index{StartSegment@{StartSegment}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{StartSegment()}{StartSegment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVSAPoint}{VSAPoint}} VPiece\+Path\+::\+Start\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{int}]{i,  }\item[{bool}]{reverse }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPiecePath_a5e4052067aa6b95f51de7f788dbce3fe}\label{classVPiecePath_a5e4052067aa6b95f51de7f788dbce3fe}} 
+\index{VPiecePath@{VPiecePath}!Swap@{Swap}}
+\index{Swap@{Swap}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VPiece\+Path\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPiecePath}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPiecePath_a34baef8e83f5d6ff1b49ad62b01c5d4b}\label{classVPiecePath_a34baef8e83f5d6ff1b49ad62b01c5d4b}} 
+\index{VPiecePath@{VPiecePath}!d@{d}}
+\index{d@{d}!VPiecePath@{VPiecePath}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{classVPiecePathData}{VPiece\+Path\+Data}}$>$ VPiece\+Path\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpatterndb/\mbox{\hyperlink{vpiecepath_8h}{vpiecepath.\+h}}\item 
+src/libs/vpatterndb/\mbox{\hyperlink{vpiecepath_8cpp}{vpiecepath.\+cpp}}\end{DoxyCompactItemize}

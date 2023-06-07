@@ -1,0 +1,1567 @@
+\hypertarget{classPatternPieceDialog}{}\doxysection{Pattern\+Piece\+Dialog Class Reference}
+\label{classPatternPieceDialog}\index{PatternPieceDialog@{PatternPieceDialog}}
+
+
+{\ttfamily \#include $<$pattern\+\_\+piece\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Pattern\+Piece\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d5/d41/classPatternPieceDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_a1e3bda330760b820eab05f2e350f186d}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Chosen\+Object adds selected object of id and type to list of path items. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_aaf949768e724e2b4c009b2a16262887a}{Show\+Dialog}} (bool click) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPatternPieceDialog_aaa166326487eb22f5cf9cc53ff1df44f}{Pattern\+Piece\+Dialog}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classPatternPieceDialog_ab2faf62b5584104478c90784d091a356}{$\sim$\+Pattern\+Piece\+Dialog}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad9254a93aae694d33bf0408e9a10bc2d}{page\+Changed}} (QList\+Widget\+Item $\ast$current, QList\+Widget\+Item $\ast$previous)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a4655e26b81ee23d818a7d55bbad8edbd}{enable\+Apply}} (bool enable)
+\item 
+\mbox{\hyperlink{classVPiece}{VPiece}} \mbox{\hyperlink{classPatternPieceDialog_a594d1ee03f6b7ce976467ff2958d4ca7}{Get\+Piece}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a969de9132317739c23f48977834a6017}{Set\+Piece}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\item 
+QString \mbox{\hyperlink{classPatternPieceDialog_a9d82ca576cdf82583e0388141b1593db}{get\+Seam\+Allowance\+Width\+Formula}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_a5b61fd0480c0bb8d55d4a13ff99dee47}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_a09f926983075de232999b990e48a4df8}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPatternPieceDialog_a38a6020e9a5d5576a01e2d5dadae5727}{event\+Filter}} (QObject $\ast$object, QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_a0c9c06f8293aefe4176fd65c4301da4e}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_abd6963706325033527135e575d754506}{show\+Event}} (QShow\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em show\+Event handle when window show \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPatternPieceDialog_ae3600b115bc8a36f585bc0dcdd325deb}{resize\+Event}} (QResize\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a0c860c4a3c90f07270942dc9f8a98edb}{set\+Error\+Text}} (\mbox{\hyperlink{pattern__piece__dialog_8h_a99e233a1cb0213a420b931b50195e09e}{Tab\+Order}} tab, QString text)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a8e37b51fe38735f86e5a8ae497ecbaef}{clear\+Error\+Text}} (\mbox{\hyperlink{pattern__piece__dialog_8h_a99e233a1cb0213a420b931b50195e09e}{Tab\+Order}} tab, QString text)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a2c6db2c62d15d8d655e31fe8a6489f44}{piece\+Name\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab2ff91ab989353e3b49025d386cb06ff}{piece\+Color\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_af352fe63d7fee0b321264d03af649888}{show\+Main\+Path\+Context\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a58b751bf27b0c99bae0da0d596085238}{show\+Custom\+SAContext\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a9f95910bd059e2223dc25ce72bebc5ab}{show\+Internal\+Paths\+Context\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a0fd657a26cfc14bc520111208dfb984f}{show\+Anchors\+Context\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a3a304a8b3d2513579f8c6396cdbf8a3d}{node\+List\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a62cce89d2bc5e292755b494fbe04e7d9}{enable\+Seam\+Allowance}} (bool enable)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a4cc63dbcebd2da66160e452bc8067588}{enable\+Built\+In}} (bool enable)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad1d93b63f14ee1f9f0c730d56fdc76fe}{node\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a741effd334809e25b7fcd6e3cb9017ff}{notch\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1e545696ef4d44d6b471acde1f5b539c}{custom\+SAStart\+Point\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a13729794e966c17ebd5028810ba67c03}{custom\+SAEnd\+Point\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_af473cfe0a34255d8430751399e318a87}{custom\+SAInclude\+Type\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab96bfb50ba5385f4e8a8b721fa356038}{node\+Angle\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a543a997c92d2d20b5a6000341ed47879}{enable\+Default\+Before\+Button}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab88ecda2bf341856763d26f9ecc13b06}{enable\+Default\+After\+Button}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a5aa04b7d66f73fbb53b72cdb89cb33dd}{custom\+Seam\+Allowance\+Changed}} (int row)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aaaf29bc5ac330e7460736813bfcd8418}{path\+Dialog\+Closed}} (int result)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a29b3d7759ba466e6fbf54f781694da25}{notch\+Type\+Changed}} (int id)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab045c8551847c55048be06765ab7c51b}{notch\+Sub\+Type\+Changed}} (int id)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a84ab4cdeb0702d0fc7aff10bcca36853}{show\+Notch\+Changed}} (int state)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aa36dfbb8ba5a33fae0d272696857a340}{show\+Seamline\+Notch\+Changed}} (int state)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a045b8dd1d9dec11c5fd44e6eec8f366e}{notch\+Length\+Changed}} (qreal value)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a823e729570715b89d1a765698afae98c}{reset\+Notch\+Length}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a66f9d85bbe3622aad323b705575f772f}{notch\+Width\+Changed}} (qreal value)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a65ba39ac3015a69795c21b85cfc70354}{reset\+Notch\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_afdc90c6732fab0fc005b05af30f6c4a7}{notch\+Angle\+Changed}} (qreal value)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ada3f47764c7516d98526c1745e8c72b8}{reset\+Notch\+Angle}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1d99be82e832a84e09118dff0d56e580}{notch\+Count\+Changed}} (int value)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_abf55889f7c42623220f59836be1b2da5}{update\+Grainline\+Values}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a90af6c135e6a89878598850320287cca}{update\+Piece\+Label\+Values}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad63351c1082cf0b05a6938663d66fc9e}{update\+Pattern\+Label\+Values}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a12739d2820234629baaddd3cfa12e74b}{edit\+Grainline\+Formula}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1ae470a1024c2e41afa9f9e2e7e4c8d1}{edit\+Piece\+Label\+Formula}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a67b5e6adffaada274d93dd1c5b0e52cf}{edit\+Pattern\+Label\+Formula}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a29cd1ee4a5cf98db01466713716a7658}{expand\+Grainline\+Rotation}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_afb4de2ae0e2efb5892c9224d6bcac058}{expand\+Grainline\+Length}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a4bb4d43aeea6316472b6d3e690f40d63}{expand\+Piece\+Label\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a03a9abf40d1588e158370d90db955943}{expand\+Piece\+Label\+Height}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad20f84fda1944a99a778647c6b601354}{expand\+Piece\+Label\+Angle}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a06da484b05a65b422e5d4cfe4fd83df4}{expand\+Pattern\+Label\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_af107a958b8923ee8807a0917c64211ca}{expand\+Pattern\+Label\+Height}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab35a105b6183d3dcdbb064439c865087}{expand\+Pattern\+Label\+Angle}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aebc200c1ff577b369e306d5a2e3e788f}{reset\+Grainline\+Warning}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_abc3e6a042756f4cfc24253884c126c42}{reset\+Labels\+Warning}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_abeeda94bc71e89318818f3b6e694c69e}{enabled\+Grainline}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a817cddf46284776d5dbd868943680d0f}{enabled\+Piece\+Label}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a9f38143fcc618dab5afce3c958842dcc}{enabled\+Pattern\+Label}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_adf1ad7877ec404da1853c5c82c98e5ee}{evaluate\+Default\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1482e56b4576b62f687ead272f6ee43b}{evaluate\+Before\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a407c84956bb2985843123bcd8a79d906}{evaluate\+After\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a30323fd95b23b60531660795b26786fe}{edit\+Default\+Seam\+Allowance\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aae74da4e4fbcc51ae73b844a54bc9ee4}{edit\+Before\+Seam\+Allowance\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a744cb7c44ec17e07d314be971d943b16}{edit\+After\+Seam\+Allowance\+Width}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a26128b4ba9b91f763816559fef808269}{default\+Width\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a8110e6295efe4825df7cc93723eca182}{before\+Width\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad18f5e4f1624f0050f4f6f0c69fbd825}{after\+Width\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ac4e3b4a867b5162caee31573703bba39}{expand\+Width\+Formula\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a74ca5561ab2a5fdc3b0496a562c103f5}{expand\+Width\+Before\+Formula\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a450466b113cc9c34395dc8b58b1a147f}{expand\+Width\+After\+Formula\+Text\+Edit}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab698f80837a8a80f1aa14552456621e6}{grainline\+Anchor\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aa2e62ff9fefa83ad30138cb9eb57ab29}{piece\+Label\+Anchor\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a578d368e703c720d4bc980a349be8c67}{pattern\+Label\+Anchor\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad941cc536e5c48ae3d77a75c2966ed80}{edit\+Piece\+Label}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a7299f206bb7c7f548bcc398fb301b7c9}{edit\+Pattern\+Label}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPiece}{VPiece}} \mbox{\hyperlink{classPatternPieceDialog_a909ed6edc5edd454a8e0479769c46c26}{Create\+Piece}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ab5abe5631f3cdf2782ca18b6881e5bc0}{new\+Main\+Path\+Item}} (const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&node)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a9c69a621c14b43e1eae64eaacacb1099}{new\+Custom\+Seam\+Allowance}} (const \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} \&record)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a9864472bee083b4645acf492a67d8ac9}{new\+Internal\+Path}} (quint32 path)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aae8045f9f250e428d660a7a912a8fe95}{new\+Anchor\+Point}} (quint32 anchor\+Point)
+\item 
+QString \mbox{\hyperlink{classPatternPieceDialog_a1fbe73da682456dadcac5bf378e48d14}{get\+Path\+Name}} (quint32 path, bool reverse=false) const
+\item 
+QString \mbox{\hyperlink{classPatternPieceDialog_a2fb45903ab2ec94970f07760929786b2}{get\+Piece\+Color}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1d9684110568beaffb20bdb8c5deb649}{set\+Piece\+Color}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{classPatternPieceDialog_abd9caf91037b8c04d4bba1c092a1340d}{get\+Piece\+Fill}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ac64b5fb0104726ae2384448e45eaa776}{set\+Piece\+Fill}} (const QString \&value)
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a8f4a68b4e9897dfcff9245aa7b0773b1}{is\+In\+Layout}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a8d32918b585c061eb7bd21e243260c4c}{set\+In\+Layout}} (const bool \&state)
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_ae6310a089147fc4745c2f1b9b3b16500}{get\+Piece\+Lock}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a18fae5514b4c037cccccadf195ea6983}{set\+Piece\+Lock}} (const bool \&state)
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_af499e8bcca209e42f6af5a7baf3c669d}{is\+Main\+Path\+Valid}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a7bc409a803d71a6bb9adf8a08c72f410}{validate\+Objects}} (bool value)
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a394dd2077af6f6de3a73d1d62c6ca234}{is\+Main\+Path\+Clockwise}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aa663544d60f67bbd6b0fc0cbe4ce6f5b}{update\+Current\+Custom\+SARecord}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a951fc8f26251708acd4700ae1fd00cb9}{update\+Current\+Internal\+Path\+Record}} ()
+\item 
+QList\+Widget\+Item $\ast$ \mbox{\hyperlink{classPatternPieceDialog_ab865590ee77560ca098482479da95a05}{get\+Item\+By\+Id}} (quint32 id)
+\item 
+quint32 \mbox{\hyperlink{classPatternPieceDialog_adca16264ef8e4a7e48fbe782d6136f5e}{get\+Previous\+Id}} () const
+\item 
+\mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \mbox{\hyperlink{classPatternPieceDialog_a0b1f125667db35be87a84ae5492bcb3e}{get\+Last\+Node}} () const
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a71fecfb244439faa7b88dc2dc3d02357}{point\+Nodes\+Exist}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a55e07278654a5ab77efe18ab718997e5}{set\+Current\+Before\+Seam\+Allowance}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a5146f108601f07e38933f397bd6cd901}{set\+Current\+After\+Seam\+Allowance}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a0206c6d96edb13427cbf7ac5e8e0b0d1}{update\+Node\+Before\+Seam\+Allowance}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a3cdbd8c2a5b22c1fd10421e22fb70b30}{update\+Node\+After\+Seam\+Allowance}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ae9bbcb486d9251d8deaf7360039a8a75}{initialize\+Main\+Path\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a722dfd9939f8db0a7d6abe43cf43b37d}{initialize\+Seam\+Allowance\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aac39aea636670069402c68335584a8f4}{initialize\+Nodes\+List}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a2fe43d4cdac84552a180c2f24eb70856}{initialize\+Notches\+List}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aa98e145e2c6e19c5c790d45307076f01}{initialize\+CSAPoint}} (QCombo\+Box $\ast$box)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a25bb38dd5a85adc1a92d4eb6595cf33a}{init\+Anchor\+Point}} (QCombo\+Box $\ast$box)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a8c1c127cbb453c907bf9a16dca74e097}{initialize\+SAInclude\+Type}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aa015159bc0aecbc7238926cab8bf86c9}{initialize\+Internal\+Paths\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a0bcd4e5cc0402c6c1d234c6f431f76dc}{initialize\+Properties\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a4176c9334fa1ad8055c9117c49e46dcf}{initialize\+Labels\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a740eecfdb4d5e0fa7c8c2ac0c031b072}{initialize\+Grainline\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_aedfe7bcaac945986510aeb74005809db}{initialize\+Anchors\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a8e1865359df2699be4f7fc22a2d498ca}{initialize\+Notches\+Tab}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a10a3f9368b99d0e8ef2ff59cf75bbbc4}{init\+Anchor\+Point\+Comboboxes}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a0ca1a37393e250083a922b19891b6cc8}{set\+Seam\+Allowance\+Width\+Formula}} (const QString \&formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_adbf51331be6b5d8d527a9d40ae2d14e2}{set\+Grainline\+Angle}} (QString angle\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a230f46d200ad43e411d243902e62a3be}{set\+Grainline\+Length}} (QString length\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1e06ac3e290b2743e495ddcc5a6e67fa}{set\+Piece\+Label\+Width}} (QString width\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a5c93061a01b58bda922e9235f2d5feb9}{set\+Piece\+Label\+Height}} (QString height\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a06eff3e74f2d81691f6b5535d0081aa0}{set\+Piece\+Label\+Angle}} (QString angle\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a336147fd5c20cf7738da40d59f3a30d5}{set\+Pattern\+Label\+Width}} (QString width\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a1295390124e49e734983fb157a6ec866}{set\+Pattern\+Label\+Height}} (QString height\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a8cdc2a45e51bbb6bac952e85e9d6bcd4}{set\+Pattern\+Label\+Angle}} (QString angle\+Formula)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a01521e5947c6a3c9c31a0f90f2eb9818}{show\+Anchor\+Points}} ()
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ae8fe211c6245dd4c49f7a2a307830996}{set\+Move\+Exclusions}} ()
+\item 
+QString \mbox{\hyperlink{classPatternPieceDialog_a59c2322db24e3aba2d0624a3725fff4b}{create\+Piece\+Name}} () const
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ad89ae56378cddaf6add09ddb0f318b8e}{reverse\+Node}} (QList\+Widget\+Item $\ast$row\+Item)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a5e06487df33cac06c73c9b4bc735540c}{duplicate\+Node}} (QList\+Widget\+Item $\ast$row\+Item)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_ae12abc28cb62add069f7925f5380db8b}{exclude\+Node}} (QList\+Widget\+Item $\ast$row\+Item)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a421184133377572388253f88bd271f53}{set\+Notch}} (QList\+Widget\+Item $\ast$row\+Item, bool is\+Notch, \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} notch\+Type)
+\item 
+void \mbox{\hyperlink{classPatternPieceDialog_a706e514243b99402b4ecafec7e24e87d}{set\+Current\+Text}} (QCombo\+Box $\ast$box, const QString \&text) const
+\item 
+qreal \mbox{\hyperlink{classPatternPieceDialog_a5b5db4c53e548e94ad026fb6cd8df594}{get\+Formula\+Value}} (QPlain\+Text\+Edit $\ast$text) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Pattern\+Piece\+Dialog $\ast$ \mbox{\hyperlink{classPatternPieceDialog_a608d5461bbbb88e5bfbe2f08409156a5}{ui}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a27540714ba57a37ac66c9f7256e71196}{apply\+Allowed}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a5642bfd3425837b01faab436fe156a14}{flag\+Grainline\+Anchor}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a7e72c6edfbaa141b03f55f29faeeb01c}{flag\+Piece\+Label\+Anchor}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a1f832859037331f5dac78e0f937449d5}{flag\+Pattern\+Label\+Anchor}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_ac7bdfadb0233328ea9e12b7105d12b5d}{flag\+Grainline\+Formula}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a0a2d384ac461c63c793db44aaf8878d5}{flag\+Piece\+Label\+Angle}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a42dbcc55330ad90e327cc224bd1e0b58}{flag\+Piece\+Label\+Formula}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a3154fe6d192d4792a55334f7e13c1f40}{flag\+Pattern\+Label\+Angle}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a5f23142d7fbec82bd40891f03686f723}{flag\+Pattern\+Label\+Formula}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_ab0221f3e160886d0c53a793066a36fbe}{flag\+Before\+Formula}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a9473cdaff882097218c3d98aa5ef7630}{flag\+After\+Formula}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_a2e2bdb1842ecc05380c23bf9e5017648}{flag\+Main\+Path}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_afaf76ec7ad21bfcb38fcb28094002131}{m\+\_\+b\+Add\+Mode}}
+\item 
+qreal \mbox{\hyperlink{classPatternPieceDialog_a4481c21f402b723acd162312a8fcda48}{m\+\_\+mx}}
+\item 
+qreal \mbox{\hyperlink{classPatternPieceDialog_adfc5f86259ddb823740bad27f2579f44}{m\+\_\+my}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_aa376688ccd5cde7cdbf0ea28250e1ebe}{m\+\_\+in\+Layout}}
+\item 
+bool \mbox{\hyperlink{classPatternPieceDialog_aab9391d424cf313b35d666a6afb9d90b}{m\+\_\+is\+Locked}}
+\item 
+QPointer$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ \mbox{\hyperlink{classPatternPieceDialog_a2e9d0b2ccd9f42de606b36ca8c6b307c}{m\+\_\+dialog}}
+\item 
+QPointer$<$ \mbox{\hyperlink{classPieceAnchorPointVisual}{Piece\+Anchor\+Point\+Visual}} $>$ \mbox{\hyperlink{classPatternPieceDialog_a2c8540f673dd04e3b85fd525e6645acc}{m\+\_\+anchor\+Points}}
+\item 
+\mbox{\hyperlink{classVPieceLabelData}{VPiece\+Label\+Data}} \mbox{\hyperlink{classPatternPieceDialog_a44cad74fc2cf7fed5d6839a41f32ceac}{m\+\_\+old\+Data}}
+\item 
+\mbox{\hyperlink{classVPatternLabelData}{VPattern\+Label\+Data}} \mbox{\hyperlink{classPatternPieceDialog_a2123c538ea823510c4859ca10326be4f}{m\+\_\+old\+Geom}}
+\item 
+\mbox{\hyperlink{classVGrainlineData}{VGrainline\+Data}} \mbox{\hyperlink{classPatternPieceDialog_affc11b2a59967a22949037609766bb50}{m\+\_\+old\+Grainline}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a194b23996f7ee5832e93b39ad8e24dc6}{m\+\_\+rotation\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a2fe6b22d59c131706242c4c3a24a9dae}{m\+\_\+length\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a232198b7a73e4251697c9d59608012b4}{m\+\_\+piece\+Label\+Width\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a95be0c40095b277b73789b86d4a95d45}{m\+\_\+piece\+Label\+Height\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a8c13f2a7b9f9d42b7223f7827f10d903}{m\+\_\+piece\+Label\+Angle\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a3caad503c49ade2ce48db0c26661df5c}{m\+\_\+pattern\+Label\+Width\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a0d6a4ae676156f45510ee1c24203f3de}{m\+\_\+pattern\+Label\+Height\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a7eb95b2e7ca4f7a2326c53cbc165b056}{m\+\_\+pattern\+Label\+Angle\+Base\+Height}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a72ed231889880ad62f5a4fee0a197015}{m\+\_\+width\+Formula}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_ac3eb282ea4b12dc553e8dd8513bd8e25}{m\+\_\+before\+Width\+Formula}}
+\item 
+int \mbox{\hyperlink{classPatternPieceDialog_a735704111752a573ff846207710cffe9}{m\+\_\+after\+Width\+Formula}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classPatternPieceDialog_af54f0eff4fc930468489492e1c56223e}{m\+\_\+timer\+Width}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classPatternPieceDialog_a2f14848281d76825396266988556b93a}{m\+\_\+timer\+Width\+Before}}
+\item 
+QTimer $\ast$ \mbox{\hyperlink{classPatternPieceDialog_afcc2b19213d78242e565b894fed7d317}{m\+\_\+timer\+Width\+After}}
+\item 
+qreal \mbox{\hyperlink{classPatternPieceDialog_aa7eae1d085a23f39a57cd424936d4a5e}{m\+\_\+sa\+Width}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \mbox{\hyperlink{classPatternPieceDialog_a9c491a8c321ac26edd03e0df3a613091}{m\+\_\+pattern\+Label\+Lines}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \mbox{\hyperlink{classPatternPieceDialog_a49909997ce8dbf62cc112df5bcd5f08c}{m\+\_\+piece\+Label\+Lines}}
+\item 
+QSound $\ast$ \mbox{\hyperlink{classPatternPieceDialog_a35a477898406e1c768fd4a6a1522f26a}{m\+\_\+beep}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPatternPieceDialog_aaa166326487eb22f5cf9cc53ff1df44f}\label{classPatternPieceDialog_aaa166326487eb22f5cf9cc53ff1df44f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!PatternPieceDialog@{PatternPieceDialog}}
+\index{PatternPieceDialog@{PatternPieceDialog}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{PatternPieceDialog()}{PatternPieceDialog()}}
+{\footnotesize\ttfamily Pattern\+Piece\+Dialog\+::\+Pattern\+Piece\+Dialog (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab2faf62b5584104478c90784d091a356}\label{classPatternPieceDialog_ab2faf62b5584104478c90784d091a356}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!````~PatternPieceDialog@{$\sim$PatternPieceDialog}}
+\index{````~PatternPieceDialog@{$\sim$PatternPieceDialog}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$PatternPieceDialog()}{~PatternPieceDialog()}}
+{\footnotesize\ttfamily Pattern\+Piece\+Dialog\+::$\sim$\+Pattern\+Piece\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPatternPieceDialog_ad18f5e4f1624f0050f4f6f0c69fbd825}\label{classPatternPieceDialog_ad18f5e4f1624f0050f4f6f0c69fbd825}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!afterWidthChanged@{afterWidthChanged}}
+\index{afterWidthChanged@{afterWidthChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{afterWidthChanged}{afterWidthChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::after\+Width\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8110e6295efe4825df7cc93723eca182}\label{classPatternPieceDialog_a8110e6295efe4825df7cc93723eca182}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!beforeWidthChanged@{beforeWidthChanged}}
+\index{beforeWidthChanged@{beforeWidthChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{beforeWidthChanged}{beforeWidthChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::before\+Width\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a09f926983075de232999b990e48a4df8}\label{classPatternPieceDialog_a09f926983075de232999b990e48a4df8}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1e3bda330760b820eab05f2e350f186d}\label{classPatternPieceDialog_a1e3bda330760b820eab05f2e350f186d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Chosen\+Object adds selected object of id and type to list of path items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of object (points, arcs, splines, spline paths) \\
+\hline
+{\em type} & type of scene object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPatternPieceDialog_a8e37b51fe38735f86e5a8ae497ecbaef}\label{classPatternPieceDialog_a8e37b51fe38735f86e5a8ae497ecbaef}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!clearErrorText@{clearErrorText}}
+\index{clearErrorText@{clearErrorText}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{clearErrorText}{clearErrorText}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::clear\+Error\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pattern__piece__dialog_8h_a99e233a1cb0213a420b931b50195e09e}{Tab\+Order}}}]{tab,  }\item[{QString}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0c9c06f8293aefe4176fd65c4301da4e}\label{classPatternPieceDialog_a0c9c06f8293aefe4176fd65c4301da4e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceDialog_a909ed6edc5edd454a8e0479769c46c26}\label{classPatternPieceDialog_a909ed6edc5edd454a8e0479769c46c26}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!CreatePiece@{CreatePiece}}
+\index{CreatePiece@{CreatePiece}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{CreatePiece()}{CreatePiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiece}{VPiece}} Pattern\+Piece\+Dialog\+::\+Create\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a59c2322db24e3aba2d0624a3725fff4b}\label{classPatternPieceDialog_a59c2322db24e3aba2d0624a3725fff4b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!createPieceName@{createPieceName}}
+\index{createPieceName@{createPieceName}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{createPieceName()}{createPieceName()}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Dialog\+::create\+Piece\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a13729794e966c17ebd5028810ba67c03}\label{classPatternPieceDialog_a13729794e966c17ebd5028810ba67c03}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!customSAEndPointChanged@{customSAEndPointChanged}}
+\index{customSAEndPointChanged@{customSAEndPointChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{customSAEndPointChanged}{customSAEndPointChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::custom\+SAEnd\+Point\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_af473cfe0a34255d8430751399e318a87}\label{classPatternPieceDialog_af473cfe0a34255d8430751399e318a87}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!customSAIncludeTypeChanged@{customSAIncludeTypeChanged}}
+\index{customSAIncludeTypeChanged@{customSAIncludeTypeChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{customSAIncludeTypeChanged}{customSAIncludeTypeChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::custom\+SAInclude\+Type\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1e545696ef4d44d6b471acde1f5b539c}\label{classPatternPieceDialog_a1e545696ef4d44d6b471acde1f5b539c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!customSAStartPointChanged@{customSAStartPointChanged}}
+\index{customSAStartPointChanged@{customSAStartPointChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{customSAStartPointChanged}{customSAStartPointChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::custom\+SAStart\+Point\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5aa04b7d66f73fbb53b72cdb89cb33dd}\label{classPatternPieceDialog_a5aa04b7d66f73fbb53b72cdb89cb33dd}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!customSeamAllowanceChanged@{customSeamAllowanceChanged}}
+\index{customSeamAllowanceChanged@{customSeamAllowanceChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{customSeamAllowanceChanged}{customSeamAllowanceChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::custom\+Seam\+Allowance\+Changed (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a26128b4ba9b91f763816559fef808269}\label{classPatternPieceDialog_a26128b4ba9b91f763816559fef808269}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!defaultWidthChanged@{defaultWidthChanged}}
+\index{defaultWidthChanged@{defaultWidthChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{defaultWidthChanged}{defaultWidthChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::default\+Width\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5e06487df33cac06c73c9b4bc735540c}\label{classPatternPieceDialog_a5e06487df33cac06c73c9b4bc735540c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!duplicateNode@{duplicateNode}}
+\index{duplicateNode@{duplicateNode}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{duplicateNode()}{duplicateNode()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::duplicate\+Node (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{row\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a744cb7c44ec17e07d314be971d943b16}\label{classPatternPieceDialog_a744cb7c44ec17e07d314be971d943b16}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editAfterSeamAllowanceWidth@{editAfterSeamAllowanceWidth}}
+\index{editAfterSeamAllowanceWidth@{editAfterSeamAllowanceWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editAfterSeamAllowanceWidth}{editAfterSeamAllowanceWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+After\+Seam\+Allowance\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aae74da4e4fbcc51ae73b844a54bc9ee4}\label{classPatternPieceDialog_aae74da4e4fbcc51ae73b844a54bc9ee4}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editBeforeSeamAllowanceWidth@{editBeforeSeamAllowanceWidth}}
+\index{editBeforeSeamAllowanceWidth@{editBeforeSeamAllowanceWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editBeforeSeamAllowanceWidth}{editBeforeSeamAllowanceWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Before\+Seam\+Allowance\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a30323fd95b23b60531660795b26786fe}\label{classPatternPieceDialog_a30323fd95b23b60531660795b26786fe}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editDefaultSeamAllowanceWidth@{editDefaultSeamAllowanceWidth}}
+\index{editDefaultSeamAllowanceWidth@{editDefaultSeamAllowanceWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editDefaultSeamAllowanceWidth}{editDefaultSeamAllowanceWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Default\+Seam\+Allowance\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a12739d2820234629baaddd3cfa12e74b}\label{classPatternPieceDialog_a12739d2820234629baaddd3cfa12e74b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editGrainlineFormula@{editGrainlineFormula}}
+\index{editGrainlineFormula@{editGrainlineFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editGrainlineFormula}{editGrainlineFormula}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Grainline\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a7299f206bb7c7f548bcc398fb301b7c9}\label{classPatternPieceDialog_a7299f206bb7c7f548bcc398fb301b7c9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editPatternLabel@{editPatternLabel}}
+\index{editPatternLabel@{editPatternLabel}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editPatternLabel}{editPatternLabel}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Pattern\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a67b5e6adffaada274d93dd1c5b0e52cf}\label{classPatternPieceDialog_a67b5e6adffaada274d93dd1c5b0e52cf}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editPatternLabelFormula@{editPatternLabelFormula}}
+\index{editPatternLabelFormula@{editPatternLabelFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editPatternLabelFormula}{editPatternLabelFormula}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Pattern\+Label\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ad941cc536e5c48ae3d77a75c2966ed80}\label{classPatternPieceDialog_ad941cc536e5c48ae3d77a75c2966ed80}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editPieceLabel@{editPieceLabel}}
+\index{editPieceLabel@{editPieceLabel}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editPieceLabel}{editPieceLabel}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Piece\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1ae470a1024c2e41afa9f9e2e7e4c8d1}\label{classPatternPieceDialog_a1ae470a1024c2e41afa9f9e2e7e4c8d1}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!editPieceLabelFormula@{editPieceLabelFormula}}
+\index{editPieceLabelFormula@{editPieceLabelFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{editPieceLabelFormula}{editPieceLabelFormula}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::edit\+Piece\+Label\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a4655e26b81ee23d818a7d55bbad8edbd}\label{classPatternPieceDialog_a4655e26b81ee23d818a7d55bbad8edbd}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enableApply@{enableApply}}
+\index{enableApply@{enableApply}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enableApply()}{enableApply()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enable\+Apply (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a4cc63dbcebd2da66160e452bc8067588}\label{classPatternPieceDialog_a4cc63dbcebd2da66160e452bc8067588}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enableBuiltIn@{enableBuiltIn}}
+\index{enableBuiltIn@{enableBuiltIn}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enableBuiltIn}{enableBuiltIn}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enable\+Built\+In (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab88ecda2bf341856763d26f9ecc13b06}\label{classPatternPieceDialog_ab88ecda2bf341856763d26f9ecc13b06}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enableDefaultAfterButton@{enableDefaultAfterButton}}
+\index{enableDefaultAfterButton@{enableDefaultAfterButton}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enableDefaultAfterButton}{enableDefaultAfterButton}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enable\+Default\+After\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a543a997c92d2d20b5a6000341ed47879}\label{classPatternPieceDialog_a543a997c92d2d20b5a6000341ed47879}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enableDefaultBeforeButton@{enableDefaultBeforeButton}}
+\index{enableDefaultBeforeButton@{enableDefaultBeforeButton}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enableDefaultBeforeButton}{enableDefaultBeforeButton}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enable\+Default\+Before\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_abeeda94bc71e89318818f3b6e694c69e}\label{classPatternPieceDialog_abeeda94bc71e89318818f3b6e694c69e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enabledGrainline@{enabledGrainline}}
+\index{enabledGrainline@{enabledGrainline}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enabledGrainline}{enabledGrainline}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enabled\+Grainline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9f38143fcc618dab5afce3c958842dcc}\label{classPatternPieceDialog_a9f38143fcc618dab5afce3c958842dcc}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enabledPatternLabel@{enabledPatternLabel}}
+\index{enabledPatternLabel@{enabledPatternLabel}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enabledPatternLabel}{enabledPatternLabel}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enabled\+Pattern\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a817cddf46284776d5dbd868943680d0f}\label{classPatternPieceDialog_a817cddf46284776d5dbd868943680d0f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enabledPieceLabel@{enabledPieceLabel}}
+\index{enabledPieceLabel@{enabledPieceLabel}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enabledPieceLabel}{enabledPieceLabel}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enabled\+Piece\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a62cce89d2bc5e292755b494fbe04e7d9}\label{classPatternPieceDialog_a62cce89d2bc5e292755b494fbe04e7d9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!enableSeamAllowance@{enableSeamAllowance}}
+\index{enableSeamAllowance@{enableSeamAllowance}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{enableSeamAllowance}{enableSeamAllowance}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::enable\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a407c84956bb2985843123bcd8a79d906}\label{classPatternPieceDialog_a407c84956bb2985843123bcd8a79d906}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!evaluateAfterWidth@{evaluateAfterWidth}}
+\index{evaluateAfterWidth@{evaluateAfterWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{evaluateAfterWidth}{evaluateAfterWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::evaluate\+After\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1482e56b4576b62f687ead272f6ee43b}\label{classPatternPieceDialog_a1482e56b4576b62f687ead272f6ee43b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!evaluateBeforeWidth@{evaluateBeforeWidth}}
+\index{evaluateBeforeWidth@{evaluateBeforeWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{evaluateBeforeWidth}{evaluateBeforeWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::evaluate\+Before\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_adf1ad7877ec404da1853c5c82c98e5ee}\label{classPatternPieceDialog_adf1ad7877ec404da1853c5c82c98e5ee}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!evaluateDefaultWidth@{evaluateDefaultWidth}}
+\index{evaluateDefaultWidth@{evaluateDefaultWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{evaluateDefaultWidth}{evaluateDefaultWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::evaluate\+Default\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a38a6020e9a5d5576a01e2d5dadae5727}\label{classPatternPieceDialog_a38a6020e9a5d5576a01e2d5dadae5727}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{object,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_acfc81e416e8719ca8c2d78f54ded9ce3}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceDialog_ae12abc28cb62add069f7925f5380db8b}\label{classPatternPieceDialog_ae12abc28cb62add069f7925f5380db8b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!excludeNode@{excludeNode}}
+\index{excludeNode@{excludeNode}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{excludeNode()}{excludeNode()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::exclude\+Node (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{row\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_afb4de2ae0e2efb5892c9224d6bcac058}\label{classPatternPieceDialog_afb4de2ae0e2efb5892c9224d6bcac058}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandGrainlineLength@{expandGrainlineLength}}
+\index{expandGrainlineLength@{expandGrainlineLength}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandGrainlineLength}{expandGrainlineLength}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Grainline\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a29cd1ee4a5cf98db01466713716a7658}\label{classPatternPieceDialog_a29cd1ee4a5cf98db01466713716a7658}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandGrainlineRotation@{expandGrainlineRotation}}
+\index{expandGrainlineRotation@{expandGrainlineRotation}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandGrainlineRotation}{expandGrainlineRotation}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Grainline\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab35a105b6183d3dcdbb064439c865087}\label{classPatternPieceDialog_ab35a105b6183d3dcdbb064439c865087}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandPatternLabelAngle@{expandPatternLabelAngle}}
+\index{expandPatternLabelAngle@{expandPatternLabelAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandPatternLabelAngle}{expandPatternLabelAngle}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Pattern\+Label\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_af107a958b8923ee8807a0917c64211ca}\label{classPatternPieceDialog_af107a958b8923ee8807a0917c64211ca}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandPatternLabelHeight@{expandPatternLabelHeight}}
+\index{expandPatternLabelHeight@{expandPatternLabelHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandPatternLabelHeight}{expandPatternLabelHeight}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Pattern\+Label\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a06da484b05a65b422e5d4cfe4fd83df4}\label{classPatternPieceDialog_a06da484b05a65b422e5d4cfe4fd83df4}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandPatternLabelWidth@{expandPatternLabelWidth}}
+\index{expandPatternLabelWidth@{expandPatternLabelWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandPatternLabelWidth}{expandPatternLabelWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Pattern\+Label\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ad20f84fda1944a99a778647c6b601354}\label{classPatternPieceDialog_ad20f84fda1944a99a778647c6b601354}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandPieceLabelAngle@{expandPieceLabelAngle}}
+\index{expandPieceLabelAngle@{expandPieceLabelAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandPieceLabelAngle}{expandPieceLabelAngle}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Piece\+Label\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a03a9abf40d1588e158370d90db955943}\label{classPatternPieceDialog_a03a9abf40d1588e158370d90db955943}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandPieceLabelHeight@{expandPieceLabelHeight}}
+\index{expandPieceLabelHeight@{expandPieceLabelHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandPieceLabelHeight}{expandPieceLabelHeight}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Piece\+Label\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a4bb4d43aeea6316472b6d3e690f40d63}\label{classPatternPieceDialog_a4bb4d43aeea6316472b6d3e690f40d63}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandPieceLabelWidth@{expandPieceLabelWidth}}
+\index{expandPieceLabelWidth@{expandPieceLabelWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandPieceLabelWidth}{expandPieceLabelWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Piece\+Label\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a450466b113cc9c34395dc8b58b1a147f}\label{classPatternPieceDialog_a450466b113cc9c34395dc8b58b1a147f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandWidthAfterFormulaTextEdit@{expandWidthAfterFormulaTextEdit}}
+\index{expandWidthAfterFormulaTextEdit@{expandWidthAfterFormulaTextEdit}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandWidthAfterFormulaTextEdit}{expandWidthAfterFormulaTextEdit}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Width\+After\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a74ca5561ab2a5fdc3b0496a562c103f5}\label{classPatternPieceDialog_a74ca5561ab2a5fdc3b0496a562c103f5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandWidthBeforeFormulaTextEdit@{expandWidthBeforeFormulaTextEdit}}
+\index{expandWidthBeforeFormulaTextEdit@{expandWidthBeforeFormulaTextEdit}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandWidthBeforeFormulaTextEdit}{expandWidthBeforeFormulaTextEdit}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Width\+Before\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ac4e3b4a867b5162caee31573703bba39}\label{classPatternPieceDialog_ac4e3b4a867b5162caee31573703bba39}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!expandWidthFormulaTextEdit@{expandWidthFormulaTextEdit}}
+\index{expandWidthFormulaTextEdit@{expandWidthFormulaTextEdit}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{expandWidthFormulaTextEdit}{expandWidthFormulaTextEdit}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::expand\+Width\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5b5db4c53e548e94ad026fb6cd8df594}\label{classPatternPieceDialog_a5b5db4c53e548e94ad026fb6cd8df594}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getFormulaValue@{getFormulaValue}}
+\index{getFormulaValue@{getFormulaValue}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getFormulaValue()}{getFormulaValue()}}
+{\footnotesize\ttfamily qreal Pattern\+Piece\+Dialog\+::get\+Formula\+Value (\begin{DoxyParamCaption}\item[{QPlain\+Text\+Edit $\ast$}]{text }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab865590ee77560ca098482479da95a05}\label{classPatternPieceDialog_ab865590ee77560ca098482479da95a05}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getItemById@{getItemById}}
+\index{getItemById@{getItemById}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getItemById()}{getItemById()}}
+{\footnotesize\ttfamily QList\+Widget\+Item $\ast$ Pattern\+Piece\+Dialog\+::get\+Item\+By\+Id (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0b1f125667db35be87a84ae5492bcb3e}\label{classPatternPieceDialog_a0b1f125667db35be87a84ae5492bcb3e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getLastNode@{getLastNode}}
+\index{getLastNode@{getLastNode}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getLastNode()}{getLastNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} Pattern\+Piece\+Dialog\+::get\+Last\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1fbe73da682456dadcac5bf378e48d14}\label{classPatternPieceDialog_a1fbe73da682456dadcac5bf378e48d14}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getPathName@{getPathName}}
+\index{getPathName@{getPathName}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getPathName()}{getPathName()}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Dialog\+::get\+Path\+Name (\begin{DoxyParamCaption}\item[{quint32}]{path,  }\item[{bool}]{reverse = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a594d1ee03f6b7ce976467ff2958d4ca7}\label{classPatternPieceDialog_a594d1ee03f6b7ce976467ff2958d4ca7}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!GetPiece@{GetPiece}}
+\index{GetPiece@{GetPiece}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{GetPiece()}{GetPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPiece}{VPiece}} Pattern\+Piece\+Dialog\+::\+Get\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2fb45903ab2ec94970f07760929786b2}\label{classPatternPieceDialog_a2fb45903ab2ec94970f07760929786b2}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getPieceColor@{getPieceColor}}
+\index{getPieceColor@{getPieceColor}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getPieceColor()}{getPieceColor()}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Dialog\+::get\+Piece\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_abd9caf91037b8c04d4bba1c092a1340d}\label{classPatternPieceDialog_abd9caf91037b8c04d4bba1c092a1340d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getPieceFill@{getPieceFill}}
+\index{getPieceFill@{getPieceFill}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getPieceFill()}{getPieceFill()}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Dialog\+::get\+Piece\+Fill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ae6310a089147fc4745c2f1b9b3b16500}\label{classPatternPieceDialog_ae6310a089147fc4745c2f1b9b3b16500}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getPieceLock@{getPieceLock}}
+\index{getPieceLock@{getPieceLock}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getPieceLock()}{getPieceLock()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::get\+Piece\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_adca16264ef8e4a7e48fbe782d6136f5e}\label{classPatternPieceDialog_adca16264ef8e4a7e48fbe782d6136f5e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getPreviousId@{getPreviousId}}
+\index{getPreviousId@{getPreviousId}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getPreviousId()}{getPreviousId()}}
+{\footnotesize\ttfamily quint32 Pattern\+Piece\+Dialog\+::get\+Previous\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9d82ca576cdf82583e0388141b1593db}\label{classPatternPieceDialog_a9d82ca576cdf82583e0388141b1593db}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!getSeamAllowanceWidthFormula@{getSeamAllowanceWidthFormula}}
+\index{getSeamAllowanceWidthFormula@{getSeamAllowanceWidthFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{getSeamAllowanceWidthFormula()}{getSeamAllowanceWidthFormula()}}
+{\footnotesize\ttfamily QString Pattern\+Piece\+Dialog\+::get\+Seam\+Allowance\+Width\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab698f80837a8a80f1aa14552456621e6}\label{classPatternPieceDialog_ab698f80837a8a80f1aa14552456621e6}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!grainlineAnchorChanged@{grainlineAnchorChanged}}
+\index{grainlineAnchorChanged@{grainlineAnchorChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{grainlineAnchorChanged}{grainlineAnchorChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::grainline\+Anchor\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a25bb38dd5a85adc1a92d4eb6595cf33a}\label{classPatternPieceDialog_a25bb38dd5a85adc1a92d4eb6595cf33a}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initAnchorPoint@{initAnchorPoint}}
+\index{initAnchorPoint@{initAnchorPoint}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initAnchorPoint()}{initAnchorPoint()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::init\+Anchor\+Point (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a10a3f9368b99d0e8ef2ff59cf75bbbc4}\label{classPatternPieceDialog_a10a3f9368b99d0e8ef2ff59cf75bbbc4}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initAnchorPointComboboxes@{initAnchorPointComboboxes}}
+\index{initAnchorPointComboboxes@{initAnchorPointComboboxes}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initAnchorPointComboboxes()}{initAnchorPointComboboxes()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::init\+Anchor\+Point\+Comboboxes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aedfe7bcaac945986510aeb74005809db}\label{classPatternPieceDialog_aedfe7bcaac945986510aeb74005809db}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeAnchorsTab@{initializeAnchorsTab}}
+\index{initializeAnchorsTab@{initializeAnchorsTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeAnchorsTab()}{initializeAnchorsTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Anchors\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa98e145e2c6e19c5c790d45307076f01}\label{classPatternPieceDialog_aa98e145e2c6e19c5c790d45307076f01}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeCSAPoint@{initializeCSAPoint}}
+\index{initializeCSAPoint@{initializeCSAPoint}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeCSAPoint()}{initializeCSAPoint()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+CSAPoint (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a740eecfdb4d5e0fa7c8c2ac0c031b072}\label{classPatternPieceDialog_a740eecfdb4d5e0fa7c8c2ac0c031b072}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeGrainlineTab@{initializeGrainlineTab}}
+\index{initializeGrainlineTab@{initializeGrainlineTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeGrainlineTab()}{initializeGrainlineTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Grainline\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa015159bc0aecbc7238926cab8bf86c9}\label{classPatternPieceDialog_aa015159bc0aecbc7238926cab8bf86c9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeInternalPathsTab@{initializeInternalPathsTab}}
+\index{initializeInternalPathsTab@{initializeInternalPathsTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeInternalPathsTab()}{initializeInternalPathsTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Internal\+Paths\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a4176c9334fa1ad8055c9117c49e46dcf}\label{classPatternPieceDialog_a4176c9334fa1ad8055c9117c49e46dcf}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeLabelsTab@{initializeLabelsTab}}
+\index{initializeLabelsTab@{initializeLabelsTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeLabelsTab()}{initializeLabelsTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Labels\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ae9bbcb486d9251d8deaf7360039a8a75}\label{classPatternPieceDialog_ae9bbcb486d9251d8deaf7360039a8a75}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeMainPathTab@{initializeMainPathTab}}
+\index{initializeMainPathTab@{initializeMainPathTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeMainPathTab()}{initializeMainPathTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Main\+Path\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aac39aea636670069402c68335584a8f4}\label{classPatternPieceDialog_aac39aea636670069402c68335584a8f4}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeNodesList@{initializeNodesList}}
+\index{initializeNodesList@{initializeNodesList}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeNodesList()}{initializeNodesList()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Nodes\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2fe43d4cdac84552a180c2f24eb70856}\label{classPatternPieceDialog_a2fe43d4cdac84552a180c2f24eb70856}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeNotchesList@{initializeNotchesList}}
+\index{initializeNotchesList@{initializeNotchesList}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeNotchesList()}{initializeNotchesList()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Notches\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8e1865359df2699be4f7fc22a2d498ca}\label{classPatternPieceDialog_a8e1865359df2699be4f7fc22a2d498ca}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeNotchesTab@{initializeNotchesTab}}
+\index{initializeNotchesTab@{initializeNotchesTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeNotchesTab()}{initializeNotchesTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Notches\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0bcd4e5cc0402c6c1d234c6f431f76dc}\label{classPatternPieceDialog_a0bcd4e5cc0402c6c1d234c6f431f76dc}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializePropertiesTab@{initializePropertiesTab}}
+\index{initializePropertiesTab@{initializePropertiesTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializePropertiesTab()}{initializePropertiesTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Properties\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8c1c127cbb453c907bf9a16dca74e097}\label{classPatternPieceDialog_a8c1c127cbb453c907bf9a16dca74e097}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeSAIncludeType@{initializeSAIncludeType}}
+\index{initializeSAIncludeType@{initializeSAIncludeType}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeSAIncludeType()}{initializeSAIncludeType()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+SAInclude\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a722dfd9939f8db0a7d6abe43cf43b37d}\label{classPatternPieceDialog_a722dfd9939f8db0a7d6abe43cf43b37d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!initializeSeamAllowanceTab@{initializeSeamAllowanceTab}}
+\index{initializeSeamAllowanceTab@{initializeSeamAllowanceTab}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{initializeSeamAllowanceTab()}{initializeSeamAllowanceTab()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::initialize\+Seam\+Allowance\+Tab (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8f4a68b4e9897dfcff9245aa7b0773b1}\label{classPatternPieceDialog_a8f4a68b4e9897dfcff9245aa7b0773b1}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!isInLayout@{isInLayout}}
+\index{isInLayout@{isInLayout}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{isInLayout()}{isInLayout()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::is\+In\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a394dd2077af6f6de3a73d1d62c6ca234}\label{classPatternPieceDialog_a394dd2077af6f6de3a73d1d62c6ca234}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!isMainPathClockwise@{isMainPathClockwise}}
+\index{isMainPathClockwise@{isMainPathClockwise}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{isMainPathClockwise()}{isMainPathClockwise()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::is\+Main\+Path\+Clockwise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_af499e8bcca209e42f6af5a7baf3c669d}\label{classPatternPieceDialog_af499e8bcca209e42f6af5a7baf3c669d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!isMainPathValid@{isMainPathValid}}
+\index{isMainPathValid@{isMainPathValid}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{isMainPathValid()}{isMainPathValid()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::is\+Main\+Path\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aae8045f9f250e428d660a7a912a8fe95}\label{classPatternPieceDialog_aae8045f9f250e428d660a7a912a8fe95}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!newAnchorPoint@{newAnchorPoint}}
+\index{newAnchorPoint@{newAnchorPoint}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{newAnchorPoint()}{newAnchorPoint()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::new\+Anchor\+Point (\begin{DoxyParamCaption}\item[{quint32}]{anchor\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9c69a621c14b43e1eae64eaacacb1099}\label{classPatternPieceDialog_a9c69a621c14b43e1eae64eaacacb1099}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!newCustomSeamAllowance@{newCustomSeamAllowance}}
+\index{newCustomSeamAllowance@{newCustomSeamAllowance}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{newCustomSeamAllowance()}{newCustomSeamAllowance()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::new\+Custom\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structCustomSARecord}{Custom\+SARecord}} \&}]{record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9864472bee083b4645acf492a67d8ac9}\label{classPatternPieceDialog_a9864472bee083b4645acf492a67d8ac9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!newInternalPath@{newInternalPath}}
+\index{newInternalPath@{newInternalPath}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{newInternalPath()}{newInternalPath()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::new\+Internal\+Path (\begin{DoxyParamCaption}\item[{quint32}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab5abe5631f3cdf2782ca18b6881e5bc0}\label{classPatternPieceDialog_ab5abe5631f3cdf2782ca18b6881e5bc0}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!newMainPathItem@{newMainPathItem}}
+\index{newMainPathItem@{newMainPathItem}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{newMainPathItem()}{newMainPathItem()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::new\+Main\+Path\+Item (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPieceNode}{VPiece\+Node}} \&}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab96bfb50ba5385f4e8a8b721fa356038}\label{classPatternPieceDialog_ab96bfb50ba5385f4e8a8b721fa356038}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!nodeAngleChanged@{nodeAngleChanged}}
+\index{nodeAngleChanged@{nodeAngleChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{nodeAngleChanged}{nodeAngleChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::node\+Angle\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ad1d93b63f14ee1f9f0c730d56fdc76fe}\label{classPatternPieceDialog_ad1d93b63f14ee1f9f0c730d56fdc76fe}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!nodeChanged@{nodeChanged}}
+\index{nodeChanged@{nodeChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{nodeChanged}{nodeChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::node\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a3a304a8b3d2513579f8c6396cdbf8a3d}\label{classPatternPieceDialog_a3a304a8b3d2513579f8c6396cdbf8a3d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!nodeListChanged@{nodeListChanged}}
+\index{nodeListChanged@{nodeListChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{nodeListChanged}{nodeListChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::node\+List\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_afdc90c6732fab0fc005b05af30f6c4a7}\label{classPatternPieceDialog_afdc90c6732fab0fc005b05af30f6c4a7}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchAngleChanged@{notchAngleChanged}}
+\index{notchAngleChanged@{notchAngleChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchAngleChanged}{notchAngleChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Angle\+Changed (\begin{DoxyParamCaption}\item[{qreal}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a741effd334809e25b7fcd6e3cb9017ff}\label{classPatternPieceDialog_a741effd334809e25b7fcd6e3cb9017ff}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchChanged@{notchChanged}}
+\index{notchChanged@{notchChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchChanged}{notchChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1d99be82e832a84e09118dff0d56e580}\label{classPatternPieceDialog_a1d99be82e832a84e09118dff0d56e580}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchCountChanged@{notchCountChanged}}
+\index{notchCountChanged@{notchCountChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchCountChanged}{notchCountChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Count\+Changed (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a045b8dd1d9dec11c5fd44e6eec8f366e}\label{classPatternPieceDialog_a045b8dd1d9dec11c5fd44e6eec8f366e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchLengthChanged@{notchLengthChanged}}
+\index{notchLengthChanged@{notchLengthChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchLengthChanged}{notchLengthChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Length\+Changed (\begin{DoxyParamCaption}\item[{qreal}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab045c8551847c55048be06765ab7c51b}\label{classPatternPieceDialog_ab045c8551847c55048be06765ab7c51b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchSubTypeChanged@{notchSubTypeChanged}}
+\index{notchSubTypeChanged@{notchSubTypeChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchSubTypeChanged}{notchSubTypeChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Sub\+Type\+Changed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a29b3d7759ba466e6fbf54f781694da25}\label{classPatternPieceDialog_a29b3d7759ba466e6fbf54f781694da25}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchTypeChanged@{notchTypeChanged}}
+\index{notchTypeChanged@{notchTypeChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchTypeChanged}{notchTypeChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Type\+Changed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a66f9d85bbe3622aad323b705575f772f}\label{classPatternPieceDialog_a66f9d85bbe3622aad323b705575f772f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!notchWidthChanged@{notchWidthChanged}}
+\index{notchWidthChanged@{notchWidthChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{notchWidthChanged}{notchWidthChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::notch\+Width\+Changed (\begin{DoxyParamCaption}\item[{qreal}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ad9254a93aae694d33bf0408e9a10bc2d}\label{classPatternPieceDialog_ad9254a93aae694d33bf0408e9a10bc2d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!pageChanged@{pageChanged}}
+\index{pageChanged@{pageChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{pageChanged()}{pageChanged()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::page\+Changed (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{current,  }\item[{QList\+Widget\+Item $\ast$}]{previous }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aaaf29bc5ac330e7460736813bfcd8418}\label{classPatternPieceDialog_aaaf29bc5ac330e7460736813bfcd8418}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!pathDialogClosed@{pathDialogClosed}}
+\index{pathDialogClosed@{pathDialogClosed}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{pathDialogClosed}{pathDialogClosed}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::path\+Dialog\+Closed (\begin{DoxyParamCaption}\item[{int}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a578d368e703c720d4bc980a349be8c67}\label{classPatternPieceDialog_a578d368e703c720d4bc980a349be8c67}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!patternLabelAnchorChanged@{patternLabelAnchorChanged}}
+\index{patternLabelAnchorChanged@{patternLabelAnchorChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{patternLabelAnchorChanged}{patternLabelAnchorChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::pattern\+Label\+Anchor\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab2ff91ab989353e3b49025d386cb06ff}\label{classPatternPieceDialog_ab2ff91ab989353e3b49025d386cb06ff}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!pieceColorChanged@{pieceColorChanged}}
+\index{pieceColorChanged@{pieceColorChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{pieceColorChanged}{pieceColorChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::piece\+Color\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa2e62ff9fefa83ad30138cb9eb57ab29}\label{classPatternPieceDialog_aa2e62ff9fefa83ad30138cb9eb57ab29}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!pieceLabelAnchorChanged@{pieceLabelAnchorChanged}}
+\index{pieceLabelAnchorChanged@{pieceLabelAnchorChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{pieceLabelAnchorChanged}{pieceLabelAnchorChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::piece\+Label\+Anchor\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2c6db2c62d15d8d655e31fe8a6489f44}\label{classPatternPieceDialog_a2c6db2c62d15d8d655e31fe8a6489f44}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!pieceNameChanged@{pieceNameChanged}}
+\index{pieceNameChanged@{pieceNameChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{pieceNameChanged}{pieceNameChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::piece\+Name\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a71fecfb244439faa7b88dc2dc3d02357}\label{classPatternPieceDialog_a71fecfb244439faa7b88dc2dc3d02357}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!pointNodesExist@{pointNodesExist}}
+\index{pointNodesExist@{pointNodesExist}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{pointNodesExist()}{pointNodesExist()}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::point\+Nodes\+Exist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aebc200c1ff577b369e306d5a2e3e788f}\label{classPatternPieceDialog_aebc200c1ff577b369e306d5a2e3e788f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!resetGrainlineWarning@{resetGrainlineWarning}}
+\index{resetGrainlineWarning@{resetGrainlineWarning}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{resetGrainlineWarning}{resetGrainlineWarning}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::reset\+Grainline\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_abc3e6a042756f4cfc24253884c126c42}\label{classPatternPieceDialog_abc3e6a042756f4cfc24253884c126c42}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!resetLabelsWarning@{resetLabelsWarning}}
+\index{resetLabelsWarning@{resetLabelsWarning}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{resetLabelsWarning}{resetLabelsWarning}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::reset\+Labels\+Warning (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ada3f47764c7516d98526c1745e8c72b8}\label{classPatternPieceDialog_ada3f47764c7516d98526c1745e8c72b8}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!resetNotchAngle@{resetNotchAngle}}
+\index{resetNotchAngle@{resetNotchAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{resetNotchAngle}{resetNotchAngle}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::reset\+Notch\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a823e729570715b89d1a765698afae98c}\label{classPatternPieceDialog_a823e729570715b89d1a765698afae98c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!resetNotchLength@{resetNotchLength}}
+\index{resetNotchLength@{resetNotchLength}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{resetNotchLength}{resetNotchLength}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::reset\+Notch\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a65ba39ac3015a69795c21b85cfc70354}\label{classPatternPieceDialog_a65ba39ac3015a69795c21b85cfc70354}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!resetNotchWidth@{resetNotchWidth}}
+\index{resetNotchWidth@{resetNotchWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{resetNotchWidth}{resetNotchWidth}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::reset\+Notch\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ae3600b115bc8a36f585bc0dcdd325deb}\label{classPatternPieceDialog_ae3600b115bc8a36f585bc0dcdd325deb}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ad89ae56378cddaf6add09ddb0f318b8e}\label{classPatternPieceDialog_ad89ae56378cddaf6add09ddb0f318b8e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!reverseNode@{reverseNode}}
+\index{reverseNode@{reverseNode}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{reverseNode()}{reverseNode()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::reverse\+Node (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{row\+Item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5b61fd0480c0bb8d55d4a13ff99dee47}\label{classPatternPieceDialog_a5b61fd0480c0bb8d55d4a13ff99dee47}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5146f108601f07e38933f397bd6cd901}\label{classPatternPieceDialog_a5146f108601f07e38933f397bd6cd901}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setCurrentAfterSeamAllowance@{setCurrentAfterSeamAllowance}}
+\index{setCurrentAfterSeamAllowance@{setCurrentAfterSeamAllowance}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setCurrentAfterSeamAllowance()}{setCurrentAfterSeamAllowance()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Current\+After\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a55e07278654a5ab77efe18ab718997e5}\label{classPatternPieceDialog_a55e07278654a5ab77efe18ab718997e5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setCurrentBeforeSeamAllowance@{setCurrentBeforeSeamAllowance}}
+\index{setCurrentBeforeSeamAllowance@{setCurrentBeforeSeamAllowance}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setCurrentBeforeSeamAllowance()}{setCurrentBeforeSeamAllowance()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Current\+Before\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a706e514243b99402b4ecafec7e24e87d}\label{classPatternPieceDialog_a706e514243b99402b4ecafec7e24e87d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setCurrentText@{setCurrentText}}
+\index{setCurrentText@{setCurrentText}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setCurrentText()}{setCurrentText()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Current\+Text (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const QString \&}]{text }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0c860c4a3c90f07270942dc9f8a98edb}\label{classPatternPieceDialog_a0c860c4a3c90f07270942dc9f8a98edb}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setErrorText@{setErrorText}}
+\index{setErrorText@{setErrorText}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setErrorText}{setErrorText}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Error\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pattern__piece__dialog_8h_a99e233a1cb0213a420b931b50195e09e}{Tab\+Order}}}]{tab,  }\item[{QString}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_adbf51331be6b5d8d527a9d40ae2d14e2}\label{classPatternPieceDialog_adbf51331be6b5d8d527a9d40ae2d14e2}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setGrainlineAngle@{setGrainlineAngle}}
+\index{setGrainlineAngle@{setGrainlineAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setGrainlineAngle()}{setGrainlineAngle()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Grainline\+Angle (\begin{DoxyParamCaption}\item[{QString}]{angle\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a230f46d200ad43e411d243902e62a3be}\label{classPatternPieceDialog_a230f46d200ad43e411d243902e62a3be}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setGrainlineLength@{setGrainlineLength}}
+\index{setGrainlineLength@{setGrainlineLength}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setGrainlineLength()}{setGrainlineLength()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Grainline\+Length (\begin{DoxyParamCaption}\item[{QString}]{length\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8d32918b585c061eb7bd21e243260c4c}\label{classPatternPieceDialog_a8d32918b585c061eb7bd21e243260c4c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setInLayout@{setInLayout}}
+\index{setInLayout@{setInLayout}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setInLayout()}{setInLayout()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+In\+Layout (\begin{DoxyParamCaption}\item[{const bool \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ae8fe211c6245dd4c49f7a2a307830996}\label{classPatternPieceDialog_ae8fe211c6245dd4c49f7a2a307830996}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setMoveExclusions@{setMoveExclusions}}
+\index{setMoveExclusions@{setMoveExclusions}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setMoveExclusions()}{setMoveExclusions()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Move\+Exclusions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a421184133377572388253f88bd271f53}\label{classPatternPieceDialog_a421184133377572388253f88bd271f53}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setNotch@{setNotch}}
+\index{setNotch@{setNotch}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setNotch()}{setNotch()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Notch (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{row\+Item,  }\item[{bool}]{is\+Notch,  }\item[{\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}}}]{notch\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8cdc2a45e51bbb6bac952e85e9d6bcd4}\label{classPatternPieceDialog_a8cdc2a45e51bbb6bac952e85e9d6bcd4}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPatternLabelAngle@{setPatternLabelAngle}}
+\index{setPatternLabelAngle@{setPatternLabelAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPatternLabelAngle()}{setPatternLabelAngle()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Pattern\+Label\+Angle (\begin{DoxyParamCaption}\item[{QString}]{angle\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1295390124e49e734983fb157a6ec866}\label{classPatternPieceDialog_a1295390124e49e734983fb157a6ec866}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPatternLabelHeight@{setPatternLabelHeight}}
+\index{setPatternLabelHeight@{setPatternLabelHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPatternLabelHeight()}{setPatternLabelHeight()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Pattern\+Label\+Height (\begin{DoxyParamCaption}\item[{QString}]{height\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a336147fd5c20cf7738da40d59f3a30d5}\label{classPatternPieceDialog_a336147fd5c20cf7738da40d59f3a30d5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPatternLabelWidth@{setPatternLabelWidth}}
+\index{setPatternLabelWidth@{setPatternLabelWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPatternLabelWidth()}{setPatternLabelWidth()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Pattern\+Label\+Width (\begin{DoxyParamCaption}\item[{QString}]{width\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a969de9132317739c23f48977834a6017}\label{classPatternPieceDialog_a969de9132317739c23f48977834a6017}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!SetPiece@{SetPiece}}
+\index{SetPiece@{SetPiece}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{SetPiece()}{SetPiece()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::\+Set\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1d9684110568beaffb20bdb8c5deb649}\label{classPatternPieceDialog_a1d9684110568beaffb20bdb8c5deb649}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPieceColor@{setPieceColor}}
+\index{setPieceColor@{setPieceColor}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPieceColor()}{setPieceColor()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Piece\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ac64b5fb0104726ae2384448e45eaa776}\label{classPatternPieceDialog_ac64b5fb0104726ae2384448e45eaa776}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPieceFill@{setPieceFill}}
+\index{setPieceFill@{setPieceFill}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPieceFill()}{setPieceFill()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Piece\+Fill (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a06eff3e74f2d81691f6b5535d0081aa0}\label{classPatternPieceDialog_a06eff3e74f2d81691f6b5535d0081aa0}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPieceLabelAngle@{setPieceLabelAngle}}
+\index{setPieceLabelAngle@{setPieceLabelAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPieceLabelAngle()}{setPieceLabelAngle()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Piece\+Label\+Angle (\begin{DoxyParamCaption}\item[{QString}]{angle\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5c93061a01b58bda922e9235f2d5feb9}\label{classPatternPieceDialog_a5c93061a01b58bda922e9235f2d5feb9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPieceLabelHeight@{setPieceLabelHeight}}
+\index{setPieceLabelHeight@{setPieceLabelHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPieceLabelHeight()}{setPieceLabelHeight()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Piece\+Label\+Height (\begin{DoxyParamCaption}\item[{QString}]{height\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1e06ac3e290b2743e495ddcc5a6e67fa}\label{classPatternPieceDialog_a1e06ac3e290b2743e495ddcc5a6e67fa}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPieceLabelWidth@{setPieceLabelWidth}}
+\index{setPieceLabelWidth@{setPieceLabelWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPieceLabelWidth()}{setPieceLabelWidth()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Piece\+Label\+Width (\begin{DoxyParamCaption}\item[{QString}]{width\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a18fae5514b4c037cccccadf195ea6983}\label{classPatternPieceDialog_a18fae5514b4c037cccccadf195ea6983}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setPieceLock@{setPieceLock}}
+\index{setPieceLock@{setPieceLock}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setPieceLock()}{setPieceLock()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Piece\+Lock (\begin{DoxyParamCaption}\item[{const bool \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0ca1a37393e250083a922b19891b6cc8}\label{classPatternPieceDialog_a0ca1a37393e250083a922b19891b6cc8}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!setSeamAllowanceWidthFormula@{setSeamAllowanceWidthFormula}}
+\index{setSeamAllowanceWidthFormula@{setSeamAllowanceWidthFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{setSeamAllowanceWidthFormula()}{setSeamAllowanceWidthFormula()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::set\+Seam\+Allowance\+Width\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a01521e5947c6a3c9c31a0f90f2eb9818}\label{classPatternPieceDialog_a01521e5947c6a3c9c31a0f90f2eb9818}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showAnchorPoints@{showAnchorPoints}}
+\index{showAnchorPoints@{showAnchorPoints}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showAnchorPoints()}{showAnchorPoints()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Anchor\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0fd657a26cfc14bc520111208dfb984f}\label{classPatternPieceDialog_a0fd657a26cfc14bc520111208dfb984f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showAnchorsContextMenu@{showAnchorsContextMenu}}
+\index{showAnchorsContextMenu@{showAnchorsContextMenu}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showAnchorsContextMenu}{showAnchorsContextMenu}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Anchors\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a58b751bf27b0c99bae0da0d596085238}\label{classPatternPieceDialog_a58b751bf27b0c99bae0da0d596085238}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showCustomSAContextMenu@{showCustomSAContextMenu}}
+\index{showCustomSAContextMenu@{showCustomSAContextMenu}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showCustomSAContextMenu}{showCustomSAContextMenu}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Custom\+SAContext\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aaf949768e724e2b4c009b2a16262887a}\label{classPatternPieceDialog_aaf949768e724e2b4c009b2a16262887a}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!ShowDialog@{ShowDialog}}
+\index{ShowDialog@{ShowDialog}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{ShowDialog}{ShowDialog}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::\+Show\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{click }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_abd6963706325033527135e575d754506}\label{classPatternPieceDialog_abd6963706325033527135e575d754506}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+show\+Event handle when window show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a60bf040b63da264b842ebe9b7ef76564}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9f95910bd059e2223dc25ce72bebc5ab}\label{classPatternPieceDialog_a9f95910bd059e2223dc25ce72bebc5ab}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showInternalPathsContextMenu@{showInternalPathsContextMenu}}
+\index{showInternalPathsContextMenu@{showInternalPathsContextMenu}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showInternalPathsContextMenu}{showInternalPathsContextMenu}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Internal\+Paths\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_af352fe63d7fee0b321264d03af649888}\label{classPatternPieceDialog_af352fe63d7fee0b321264d03af649888}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showMainPathContextMenu@{showMainPathContextMenu}}
+\index{showMainPathContextMenu@{showMainPathContextMenu}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showMainPathContextMenu}{showMainPathContextMenu}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Main\+Path\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a84ab4cdeb0702d0fc7aff10bcca36853}\label{classPatternPieceDialog_a84ab4cdeb0702d0fc7aff10bcca36853}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showNotchChanged@{showNotchChanged}}
+\index{showNotchChanged@{showNotchChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showNotchChanged}{showNotchChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Notch\+Changed (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa36dfbb8ba5a33fae0d272696857a340}\label{classPatternPieceDialog_aa36dfbb8ba5a33fae0d272696857a340}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!showSeamlineNotchChanged@{showSeamlineNotchChanged}}
+\index{showSeamlineNotchChanged@{showSeamlineNotchChanged}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{showSeamlineNotchChanged}{showSeamlineNotchChanged}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::show\+Seamline\+Notch\+Changed (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa663544d60f67bbd6b0fc0cbe4ce6f5b}\label{classPatternPieceDialog_aa663544d60f67bbd6b0fc0cbe4ce6f5b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updateCurrentCustomSARecord@{updateCurrentCustomSARecord}}
+\index{updateCurrentCustomSARecord@{updateCurrentCustomSARecord}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updateCurrentCustomSARecord()}{updateCurrentCustomSARecord()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Current\+Custom\+SARecord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a951fc8f26251708acd4700ae1fd00cb9}\label{classPatternPieceDialog_a951fc8f26251708acd4700ae1fd00cb9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updateCurrentInternalPathRecord@{updateCurrentInternalPathRecord}}
+\index{updateCurrentInternalPathRecord@{updateCurrentInternalPathRecord}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updateCurrentInternalPathRecord()}{updateCurrentInternalPathRecord()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Current\+Internal\+Path\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_abf55889f7c42623220f59836be1b2da5}\label{classPatternPieceDialog_abf55889f7c42623220f59836be1b2da5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updateGrainlineValues@{updateGrainlineValues}}
+\index{updateGrainlineValues@{updateGrainlineValues}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updateGrainlineValues}{updateGrainlineValues}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Grainline\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a3cdbd8c2a5b22c1fd10421e22fb70b30}\label{classPatternPieceDialog_a3cdbd8c2a5b22c1fd10421e22fb70b30}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updateNodeAfterSeamAllowance@{updateNodeAfterSeamAllowance}}
+\index{updateNodeAfterSeamAllowance@{updateNodeAfterSeamAllowance}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updateNodeAfterSeamAllowance()}{updateNodeAfterSeamAllowance()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Node\+After\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0206c6d96edb13427cbf7ac5e8e0b0d1}\label{classPatternPieceDialog_a0206c6d96edb13427cbf7ac5e8e0b0d1}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updateNodeBeforeSeamAllowance@{updateNodeBeforeSeamAllowance}}
+\index{updateNodeBeforeSeamAllowance@{updateNodeBeforeSeamAllowance}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updateNodeBeforeSeamAllowance()}{updateNodeBeforeSeamAllowance()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Node\+Before\+Seam\+Allowance (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ad63351c1082cf0b05a6938663d66fc9e}\label{classPatternPieceDialog_ad63351c1082cf0b05a6938663d66fc9e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updatePatternLabelValues@{updatePatternLabelValues}}
+\index{updatePatternLabelValues@{updatePatternLabelValues}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updatePatternLabelValues}{updatePatternLabelValues}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Pattern\+Label\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a90af6c135e6a89878598850320287cca}\label{classPatternPieceDialog_a90af6c135e6a89878598850320287cca}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!updatePieceLabelValues@{updatePieceLabelValues}}
+\index{updatePieceLabelValues@{updatePieceLabelValues}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{updatePieceLabelValues}{updatePieceLabelValues}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::update\+Piece\+Label\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a7bc409a803d71a6bb9adf8a08c72f410}\label{classPatternPieceDialog_a7bc409a803d71a6bb9adf8a08c72f410}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!validateObjects@{validateObjects}}
+\index{validateObjects@{validateObjects}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{validateObjects()}{validateObjects()}}
+{\footnotesize\ttfamily void Pattern\+Piece\+Dialog\+::validate\+Objects (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPatternPieceDialog_a27540714ba57a37ac66c9f7256e71196}\label{classPatternPieceDialog_a27540714ba57a37ac66c9f7256e71196}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!applyAllowed@{applyAllowed}}
+\index{applyAllowed@{applyAllowed}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{applyAllowed}{applyAllowed}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::apply\+Allowed\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9473cdaff882097218c3d98aa5ef7630}\label{classPatternPieceDialog_a9473cdaff882097218c3d98aa5ef7630}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagAfterFormula@{flagAfterFormula}}
+\index{flagAfterFormula@{flagAfterFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagAfterFormula}{flagAfterFormula}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+After\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ab0221f3e160886d0c53a793066a36fbe}\label{classPatternPieceDialog_ab0221f3e160886d0c53a793066a36fbe}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagBeforeFormula@{flagBeforeFormula}}
+\index{flagBeforeFormula@{flagBeforeFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagBeforeFormula}{flagBeforeFormula}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Before\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5642bfd3425837b01faab436fe156a14}\label{classPatternPieceDialog_a5642bfd3425837b01faab436fe156a14}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagGrainlineAnchor@{flagGrainlineAnchor}}
+\index{flagGrainlineAnchor@{flagGrainlineAnchor}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagGrainlineAnchor}{flagGrainlineAnchor}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Grainline\+Anchor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ac7bdfadb0233328ea9e12b7105d12b5d}\label{classPatternPieceDialog_ac7bdfadb0233328ea9e12b7105d12b5d}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagGrainlineFormula@{flagGrainlineFormula}}
+\index{flagGrainlineFormula@{flagGrainlineFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagGrainlineFormula}{flagGrainlineFormula}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Grainline\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2e2bdb1842ecc05380c23bf9e5017648}\label{classPatternPieceDialog_a2e2bdb1842ecc05380c23bf9e5017648}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagMainPath@{flagMainPath}}
+\index{flagMainPath@{flagMainPath}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagMainPath}{flagMainPath}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Main\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a1f832859037331f5dac78e0f937449d5}\label{classPatternPieceDialog_a1f832859037331f5dac78e0f937449d5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagPatternLabelAnchor@{flagPatternLabelAnchor}}
+\index{flagPatternLabelAnchor@{flagPatternLabelAnchor}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagPatternLabelAnchor}{flagPatternLabelAnchor}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Pattern\+Label\+Anchor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a3154fe6d192d4792a55334f7e13c1f40}\label{classPatternPieceDialog_a3154fe6d192d4792a55334f7e13c1f40}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagPatternLabelAngle@{flagPatternLabelAngle}}
+\index{flagPatternLabelAngle@{flagPatternLabelAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagPatternLabelAngle}{flagPatternLabelAngle}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Pattern\+Label\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a5f23142d7fbec82bd40891f03686f723}\label{classPatternPieceDialog_a5f23142d7fbec82bd40891f03686f723}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagPatternLabelFormula@{flagPatternLabelFormula}}
+\index{flagPatternLabelFormula@{flagPatternLabelFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagPatternLabelFormula}{flagPatternLabelFormula}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Pattern\+Label\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a7e72c6edfbaa141b03f55f29faeeb01c}\label{classPatternPieceDialog_a7e72c6edfbaa141b03f55f29faeeb01c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagPieceLabelAnchor@{flagPieceLabelAnchor}}
+\index{flagPieceLabelAnchor@{flagPieceLabelAnchor}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagPieceLabelAnchor}{flagPieceLabelAnchor}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Piece\+Label\+Anchor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0a2d384ac461c63c793db44aaf8878d5}\label{classPatternPieceDialog_a0a2d384ac461c63c793db44aaf8878d5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagPieceLabelAngle@{flagPieceLabelAngle}}
+\index{flagPieceLabelAngle@{flagPieceLabelAngle}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagPieceLabelAngle}{flagPieceLabelAngle}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Piece\+Label\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a42dbcc55330ad90e327cc224bd1e0b58}\label{classPatternPieceDialog_a42dbcc55330ad90e327cc224bd1e0b58}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!flagPieceLabelFormula@{flagPieceLabelFormula}}
+\index{flagPieceLabelFormula@{flagPieceLabelFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{flagPieceLabelFormula}{flagPieceLabelFormula}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::flag\+Piece\+Label\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a735704111752a573ff846207710cffe9}\label{classPatternPieceDialog_a735704111752a573ff846207710cffe9}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_afterWidthFormula@{m\_afterWidthFormula}}
+\index{m\_afterWidthFormula@{m\_afterWidthFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_afterWidthFormula}{m\_afterWidthFormula}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+after\+Width\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2c8540f673dd04e3b85fd525e6645acc}\label{classPatternPieceDialog_a2c8540f673dd04e3b85fd525e6645acc}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_anchorPoints@{m\_anchorPoints}}
+\index{m\_anchorPoints@{m\_anchorPoints}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_anchorPoints}{m\_anchorPoints}}
+{\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{classPieceAnchorPointVisual}{Piece\+Anchor\+Point\+Visual}}$>$ Pattern\+Piece\+Dialog\+::m\+\_\+anchor\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_afaf76ec7ad21bfcb38fcb28094002131}\label{classPatternPieceDialog_afaf76ec7ad21bfcb38fcb28094002131}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_bAddMode@{m\_bAddMode}}
+\index{m\_bAddMode@{m\_bAddMode}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_bAddMode}{m\_bAddMode}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::m\+\_\+b\+Add\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a35a477898406e1c768fd4a6a1522f26a}\label{classPatternPieceDialog_a35a477898406e1c768fd4a6a1522f26a}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_beep@{m\_beep}}
+\index{m\_beep@{m\_beep}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_beep}{m\_beep}}
+{\footnotesize\ttfamily QSound$\ast$ Pattern\+Piece\+Dialog\+::m\+\_\+beep\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_ac3eb282ea4b12dc553e8dd8513bd8e25}\label{classPatternPieceDialog_ac3eb282ea4b12dc553e8dd8513bd8e25}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_beforeWidthFormula@{m\_beforeWidthFormula}}
+\index{m\_beforeWidthFormula@{m\_beforeWidthFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_beforeWidthFormula}{m\_beforeWidthFormula}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+before\+Width\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2e9d0b2ccd9f42de606b36ca8c6b307c}\label{classPatternPieceDialog_a2e9d0b2ccd9f42de606b36ca8c6b307c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_dialog@{m\_dialog}}
+\index{m\_dialog@{m\_dialog}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_dialog}{m\_dialog}}
+{\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{classDialogTool}{Dialog\+Tool}}$>$ Pattern\+Piece\+Dialog\+::m\+\_\+dialog\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa376688ccd5cde7cdbf0ea28250e1ebe}\label{classPatternPieceDialog_aa376688ccd5cde7cdbf0ea28250e1ebe}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_inLayout@{m\_inLayout}}
+\index{m\_inLayout@{m\_inLayout}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_inLayout}{m\_inLayout}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::m\+\_\+in\+Layout\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aab9391d424cf313b35d666a6afb9d90b}\label{classPatternPieceDialog_aab9391d424cf313b35d666a6afb9d90b}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_isLocked@{m\_isLocked}}
+\index{m\_isLocked@{m\_isLocked}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_isLocked}{m\_isLocked}}
+{\footnotesize\ttfamily bool Pattern\+Piece\+Dialog\+::m\+\_\+is\+Locked\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2fe6b22d59c131706242c4c3a24a9dae}\label{classPatternPieceDialog_a2fe6b22d59c131706242c4c3a24a9dae}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_lengthBaseHeight@{m\_lengthBaseHeight}}
+\index{m\_lengthBaseHeight@{m\_lengthBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_lengthBaseHeight}{m\_lengthBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+length\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a4481c21f402b723acd162312a8fcda48}\label{classPatternPieceDialog_a4481c21f402b723acd162312a8fcda48}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_mx@{m\_mx}}
+\index{m\_mx@{m\_mx}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_mx}{m\_mx}}
+{\footnotesize\ttfamily qreal Pattern\+Piece\+Dialog\+::m\+\_\+mx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_adfc5f86259ddb823740bad27f2579f44}\label{classPatternPieceDialog_adfc5f86259ddb823740bad27f2579f44}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_my@{m\_my}}
+\index{m\_my@{m\_my}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_my}{m\_my}}
+{\footnotesize\ttfamily qreal Pattern\+Piece\+Dialog\+::m\+\_\+my\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a44cad74fc2cf7fed5d6839a41f32ceac}\label{classPatternPieceDialog_a44cad74fc2cf7fed5d6839a41f32ceac}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_oldData@{m\_oldData}}
+\index{m\_oldData@{m\_oldData}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_oldData}{m\_oldData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPieceLabelData}{VPiece\+Label\+Data}} Pattern\+Piece\+Dialog\+::m\+\_\+old\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2123c538ea823510c4859ca10326be4f}\label{classPatternPieceDialog_a2123c538ea823510c4859ca10326be4f}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_oldGeom@{m\_oldGeom}}
+\index{m\_oldGeom@{m\_oldGeom}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_oldGeom}{m\_oldGeom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPatternLabelData}{VPattern\+Label\+Data}} Pattern\+Piece\+Dialog\+::m\+\_\+old\+Geom\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_affc11b2a59967a22949037609766bb50}\label{classPatternPieceDialog_affc11b2a59967a22949037609766bb50}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_oldGrainline@{m\_oldGrainline}}
+\index{m\_oldGrainline@{m\_oldGrainline}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_oldGrainline}{m\_oldGrainline}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVGrainlineData}{VGrainline\+Data}} Pattern\+Piece\+Dialog\+::m\+\_\+old\+Grainline\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a7eb95b2e7ca4f7a2326c53cbc165b056}\label{classPatternPieceDialog_a7eb95b2e7ca4f7a2326c53cbc165b056}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_patternLabelAngleBaseHeight@{m\_patternLabelAngleBaseHeight}}
+\index{m\_patternLabelAngleBaseHeight@{m\_patternLabelAngleBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_patternLabelAngleBaseHeight}{m\_patternLabelAngleBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+pattern\+Label\+Angle\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a0d6a4ae676156f45510ee1c24203f3de}\label{classPatternPieceDialog_a0d6a4ae676156f45510ee1c24203f3de}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_patternLabelHeightBaseHeight@{m\_patternLabelHeightBaseHeight}}
+\index{m\_patternLabelHeightBaseHeight@{m\_patternLabelHeightBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_patternLabelHeightBaseHeight}{m\_patternLabelHeightBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+pattern\+Label\+Height\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a9c491a8c321ac26edd03e0df3a613091}\label{classPatternPieceDialog_a9c491a8c321ac26edd03e0df3a613091}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_patternLabelLines@{m\_patternLabelLines}}
+\index{m\_patternLabelLines@{m\_patternLabelLines}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_patternLabelLines}{m\_patternLabelLines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}}$>$ Pattern\+Piece\+Dialog\+::m\+\_\+pattern\+Label\+Lines\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a3caad503c49ade2ce48db0c26661df5c}\label{classPatternPieceDialog_a3caad503c49ade2ce48db0c26661df5c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_patternLabelWidthBaseHeight@{m\_patternLabelWidthBaseHeight}}
+\index{m\_patternLabelWidthBaseHeight@{m\_patternLabelWidthBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_patternLabelWidthBaseHeight}{m\_patternLabelWidthBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+pattern\+Label\+Width\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a8c13f2a7b9f9d42b7223f7827f10d903}\label{classPatternPieceDialog_a8c13f2a7b9f9d42b7223f7827f10d903}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_pieceLabelAngleBaseHeight@{m\_pieceLabelAngleBaseHeight}}
+\index{m\_pieceLabelAngleBaseHeight@{m\_pieceLabelAngleBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_pieceLabelAngleBaseHeight}{m\_pieceLabelAngleBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+piece\+Label\+Angle\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a95be0c40095b277b73789b86d4a95d45}\label{classPatternPieceDialog_a95be0c40095b277b73789b86d4a95d45}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_pieceLabelHeightBaseHeight@{m\_pieceLabelHeightBaseHeight}}
+\index{m\_pieceLabelHeightBaseHeight@{m\_pieceLabelHeightBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_pieceLabelHeightBaseHeight}{m\_pieceLabelHeightBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+piece\+Label\+Height\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a49909997ce8dbf62cc112df5bcd5f08c}\label{classPatternPieceDialog_a49909997ce8dbf62cc112df5bcd5f08c}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_pieceLabelLines@{m\_pieceLabelLines}}
+\index{m\_pieceLabelLines@{m\_pieceLabelLines}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_pieceLabelLines}{m\_pieceLabelLines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}}$>$ Pattern\+Piece\+Dialog\+::m\+\_\+piece\+Label\+Lines\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a232198b7a73e4251697c9d59608012b4}\label{classPatternPieceDialog_a232198b7a73e4251697c9d59608012b4}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_pieceLabelWidthBaseHeight@{m\_pieceLabelWidthBaseHeight}}
+\index{m\_pieceLabelWidthBaseHeight@{m\_pieceLabelWidthBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_pieceLabelWidthBaseHeight}{m\_pieceLabelWidthBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+piece\+Label\+Width\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a194b23996f7ee5832e93b39ad8e24dc6}\label{classPatternPieceDialog_a194b23996f7ee5832e93b39ad8e24dc6}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_rotationBaseHeight@{m\_rotationBaseHeight}}
+\index{m\_rotationBaseHeight@{m\_rotationBaseHeight}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_rotationBaseHeight}{m\_rotationBaseHeight}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+rotation\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_aa7eae1d085a23f39a57cd424936d4a5e}\label{classPatternPieceDialog_aa7eae1d085a23f39a57cd424936d4a5e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_saWidth@{m\_saWidth}}
+\index{m\_saWidth@{m\_saWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_saWidth}{m\_saWidth}}
+{\footnotesize\ttfamily qreal Pattern\+Piece\+Dialog\+::m\+\_\+sa\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_af54f0eff4fc930468489492e1c56223e}\label{classPatternPieceDialog_af54f0eff4fc930468489492e1c56223e}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_timerWidth@{m\_timerWidth}}
+\index{m\_timerWidth@{m\_timerWidth}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_timerWidth}{m\_timerWidth}}
+{\footnotesize\ttfamily QTimer$\ast$ Pattern\+Piece\+Dialog\+::m\+\_\+timer\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_afcc2b19213d78242e565b894fed7d317}\label{classPatternPieceDialog_afcc2b19213d78242e565b894fed7d317}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_timerWidthAfter@{m\_timerWidthAfter}}
+\index{m\_timerWidthAfter@{m\_timerWidthAfter}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_timerWidthAfter}{m\_timerWidthAfter}}
+{\footnotesize\ttfamily QTimer$\ast$ Pattern\+Piece\+Dialog\+::m\+\_\+timer\+Width\+After\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a2f14848281d76825396266988556b93a}\label{classPatternPieceDialog_a2f14848281d76825396266988556b93a}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_timerWidthBefore@{m\_timerWidthBefore}}
+\index{m\_timerWidthBefore@{m\_timerWidthBefore}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_timerWidthBefore}{m\_timerWidthBefore}}
+{\footnotesize\ttfamily QTimer$\ast$ Pattern\+Piece\+Dialog\+::m\+\_\+timer\+Width\+Before\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a72ed231889880ad62f5a4fee0a197015}\label{classPatternPieceDialog_a72ed231889880ad62f5a4fee0a197015}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!m\_widthFormula@{m\_widthFormula}}
+\index{m\_widthFormula@{m\_widthFormula}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{m\_widthFormula}{m\_widthFormula}}
+{\footnotesize\ttfamily int Pattern\+Piece\+Dialog\+::m\+\_\+width\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classPatternPieceDialog_a608d5461bbbb88e5bfbe2f08409156a5}\label{classPatternPieceDialog_a608d5461bbbb88e5bfbe2f08409156a5}} 
+\index{PatternPieceDialog@{PatternPieceDialog}!ui@{ui}}
+\index{ui@{ui}!PatternPieceDialog@{PatternPieceDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Pattern\+Piece\+Dialog$\ast$ Pattern\+Piece\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/piece/\mbox{\hyperlink{pattern__piece__dialog_8h}{pattern\+\_\+piece\+\_\+dialog.\+h}}\item 
+src/libs/vtools/dialogs/tools/piece/\mbox{\hyperlink{pattern__piece__dialog_8cpp}{pattern\+\_\+piece\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

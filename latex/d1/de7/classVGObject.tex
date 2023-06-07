@@ -1,0 +1,580 @@
+\hypertarget{classVGObject}{}\doxysection{VGObject Class Reference}
+\label{classVGObject}\index{VGObject@{VGObject}}
+
+
+The \mbox{\hyperlink{classVGObject}{VGObject}} class keep information graphical objects.  
+
+
+
+
+{\ttfamily \#include $<$vgobject.\+h$>$}
+
+Inheritance diagram for VGObject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.745098cm]{d1/de7/classVGObject}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVGObject_a290ccb753f6a061bbb263d6c2879dfdf}{VGObject}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVGObject}{VGObject}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVGObject_af54a936c1fcd8431e88ed25e9a473027}{VGObject}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type, const quint32 \&id\+Object=0, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1aa3ea4f796f31fb5785da38e1fc6369e93}{Draw\+::\+Calculation}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVGObject}{VGObject}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVGObject_a5b3e92a581ef188fa7dd2977f3c5c3e8}{VGObject}} (const \mbox{\hyperlink{classVGObject}{VGObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVGObject}{VGObject}} copy constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVGObject_a86f1f3ecec079f581b615ef4c5ab2498}{$\sim$\+VGObject}} ()
+\item 
+\mbox{\hyperlink{classVGObject}{VGObject}} \& \mbox{\hyperlink{classVGObject_a3ffc95524099af4edd57b017863fed61}{operator=}} (const \mbox{\hyperlink{classVGObject}{VGObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em operator = assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVGObject_ab487dac4a019d27636e498278363f03b}{Swap}} (\mbox{\hyperlink{classVGObject}{VGObject}} \&obj) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+quint32 \mbox{\hyperlink{classVGObject_ab615b0fb0db689f92cd9c562329cc52b}{get\+Id\+Object}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id\+Object return parent id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVGObject_a1a0486d2fe696c580a1c4d31c7097eb0}{set\+Id\+Object}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em set\+Id\+Object set parent id. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVGObject_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}} () const
+\begin{DoxyCompactList}\small\item\em name return name graphical object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVGObject_ac52a0bdf810d43fb282f65a58933ea75}{set\+Name}} (const QString \&\mbox{\hyperlink{classVGObject_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}})
+\begin{DoxyCompactList}\small\item\em set\+Name set name graphical object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \mbox{\hyperlink{classVGObject_adb3c731522d5eb353f32ded63c2f3d0a}{get\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em get\+Mode return mode creation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVGObject_a1246f01103985c75f71698e60ddcccfa}{set\+Mode}} (const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Mode set mode creation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{classVGObject_a0af4987353bc1def71cfbd2087824764}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em get\+Type return object type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVGObject_a163fca66a2e581abc8a6511156bc766e}{set\+Type}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type)
+\item 
+quint32 \mbox{\hyperlink{classVGObject_adc4efb22ae87dbb029f586f0bc2a074c}{id}} () const
+\begin{DoxyCompactList}\small\item\em id return id object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVGObject_ae7856ac9f6974ee8e0c517f6887bd15b}{set\+Id}} (const quint32 \&\mbox{\hyperlink{classVGObject_adc4efb22ae87dbb029f586f0bc2a074c}{id}})
+\begin{DoxyCompactList}\small\item\em set\+Id set id object. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVGObject_af594a1eb7fb163a99194f5d5b02ffcf7}{get\+Id\+Tool}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QLineF \mbox{\hyperlink{classVGObject_aab2d01aac093c13430d5119abbd52764}{Build\+Line}} (const QPointF \&p1, const qreal \&length, const qreal \&angle)
+\item 
+static QPointF \mbox{\hyperlink{classVGObject_a7e896d2c79a25c2e50df967c6a8b597b}{Build\+Ray}} (const QPointF \&first\+Point, const qreal \&angle, const QRectF \&sc\+Rect)
+\item 
+static QLineF \mbox{\hyperlink{classVGObject_a1e04049160703519875f9647f238eb9c}{Build\+Axis}} (const QPointF \&p, const qreal \&angle, const QRectF \&sc\+Rect)
+\item 
+static QLineF \mbox{\hyperlink{classVGObject_a1ef91cb41647e4bd5a93da616ed5e645}{Build\+Axis}} (const QPointF \&p1, const QPointF \&p2, const QRectF \&sc\+Rect)
+\item 
+static int \mbox{\hyperlink{classVGObject_af4b00190bf3d6d98addbe0c998cd3959}{Contact\+Points}} (const QPointF \&p, const QPointF \&center, qreal radius, QPointF \&p1, QPointF \&p2)
+\item 
+static QPointF \mbox{\hyperlink{classVGObject_ac313f36a13cd183209097a0a780baceb}{Line\+Intersect\+Rect}} (const QRectF \&rec, const QLineF \&line)
+\begin{DoxyCompactList}\small\item\em Line\+Intersect\+Rect find point intersection line and rect. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classVGObject_a503181efc48d49b416daca9480c15793}{Intersection\+Circles}} (const QPointF \&c1, double r1, const QPointF \&c2, double r2, QPointF \&p1, QPointF \&p2)
+\item 
+static qint32 \mbox{\hyperlink{classVGObject_a26474388e3837e3984bf52543aede141}{Line\+Intersect\+Circle}} (const QPointF \&center, qreal radius, const QLineF \&line, QPointF \&p1, QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Line\+Intersect\+Circle find point intersection line and circle. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{classVGObject_a2c4ba515566c606663ce28ca67e01933}{Closest\+Point}} (const QLineF \&line, const QPointF \&point)
+\begin{DoxyCompactList}\small\item\em Closest\+Point find point projection of point onto line. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{classVGObject_ae9510ae75f41b950483054e74ece64fc}{add\+Vector}} (const QPointF \&p, const QPointF \&p1, const QPointF \&p2, qreal k)
+\item 
+static void \mbox{\hyperlink{classVGObject_a502259e60c007a3ad11a738151aa1c0b}{Line\+Coefficients}} (const QLineF \&line, qreal $\ast$a, qreal $\ast$b, qreal $\ast$c)
+\begin{DoxyCompactList}\small\item\em Line\+Coefficients coefficient for equation of segment. Segment equestion ax+by+c=0. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classVGObject_a040e4a0f193e1330e9caa4dd8dcc1201}{Is\+Point\+On\+Line\+Segment}} (const QPointF \&t, const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Is\+Point\+On\+Line\+Segment Check if the point is on the line segment. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classVGObject_a6c36e7396fa9c367730c07453280a413}{Is\+Point\+On\+Linevia\+PDP}} (const QPointF \&t, const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Is\+Point\+On\+Linevia\+PDP use the perp dot product (PDP) way. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{classQVector}{QVector}}$<$ T $>$ \mbox{\hyperlink{classVGObject_a61329d34b5ecd0118974ba1f38803b47}{Get\+Reverse\+Points}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ T $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Get\+Reverse\+Point return revers container of points. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classVGObject_aea5059e80866ae47eaa7f31acb72c486}{Get\+Length\+Contour}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&contour, const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&new\+Points)
+\begin{DoxyCompactList}\small\item\em Get\+Length\+Contour return length of contour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{classVGObject_af893a07c68c71231b5eaeceda31ad368}{accuracy\+Point\+On\+Line}} = (0.\+1555 / 25.\+4) $\ast$ 96.\+0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QTransform \mbox{\hyperlink{classVGObject_a4a0e1a72e7f0a197c5e4e24336350e4f}{flip\+Transform}} (const QLineF \&axis)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classVGObject_a09b2ccf0ac2f51b823221f238d3bcbcc}{Perp\+Dot\+Product}} (const QPointF \&p1, const QPointF \&p2, const QPointF \&t)
+\begin{DoxyCompactList}\small\item\em Perp\+Dot\+Product Calculates the area of the parallelogram of the three points. This is actually the same as the area of the triangle defined by the three points, multiplied by 2. \end{DoxyCompactList}\item 
+static double \mbox{\hyperlink{classVGObject_a0ba945eb32a4bb55b080460a1f92864d}{Get\+Epsilon}} (const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Get\+Epsilon solve the floating-\/point accuraccy problem. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classVGObject_a7b549ec354fbb1ce60a3940cabee4433}{Point\+In\+Circle}} (const QPointF \&p, const QPointF \&center, qreal radius)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{classVGObjectData}{VGObject\+Data}} $>$ \mbox{\hyperlink{classVGObject_ab212fadab50be549bec1636722e6f84b}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVGObject}{VGObject}} class keep information graphical objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVGObject_a290ccb753f6a061bbb263d6c2879dfdf}\label{classVGObject_a290ccb753f6a061bbb263d6c2879dfdf}} 
+\index{VGObject@{VGObject}!VGObject@{VGObject}}
+\index{VGObject@{VGObject}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{VGObject()}{VGObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VGObject\+::\+VGObject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVGObject}{VGObject}} default constructor. 
+
+\mbox{\Hypertarget{classVGObject_af54a936c1fcd8431e88ed25e9a473027}\label{classVGObject_af54a936c1fcd8431e88ed25e9a473027}} 
+\index{VGObject@{VGObject}!VGObject@{VGObject}}
+\index{VGObject@{VGObject}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{VGObject()}{VGObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VGObject\+::\+VGObject (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&}]{type,  }\item[{const quint32 \&}]{id\+Object = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&}]{mode = {\ttfamily \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1aa3ea4f796f31fb5785da38e1fc6369e93}{Draw\+::\+Calculation}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{classVGObject}{VGObject}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & type graphical object. \\
+\hline
+{\em id\+Object} & id parent object. \\
+\hline
+{\em mode} & mode creation. Used in modeling mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVGObject_a5b3e92a581ef188fa7dd2977f3c5c3e8}\label{classVGObject_a5b3e92a581ef188fa7dd2977f3c5c3e8}} 
+\index{VGObject@{VGObject}!VGObject@{VGObject}}
+\index{VGObject@{VGObject}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{VGObject()}{VGObject()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VGObject\+::\+VGObject (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVGObject}{VGObject}} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVGObject}{VGObject}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVGObject_a86f1f3ecec079f581b615ef4c5ab2498}\label{classVGObject_a86f1f3ecec079f581b615ef4c5ab2498}} 
+\index{VGObject@{VGObject}!````~VGObject@{$\sim$VGObject}}
+\index{````~VGObject@{$\sim$VGObject}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{$\sim$VGObject()}{~VGObject()}}
+{\footnotesize\ttfamily VGObject\+::$\sim$\+VGObject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVGObject_ae9510ae75f41b950483054e74ece64fc}\label{classVGObject_ae9510ae75f41b950483054e74ece64fc}} 
+\index{VGObject@{VGObject}!addVector@{addVector}}
+\index{addVector@{addVector}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{addVector()}{addVector()}}
+{\footnotesize\ttfamily QPointF VGObject\+::add\+Vector (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2,  }\item[{qreal}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_a1e04049160703519875f9647f238eb9c}\label{classVGObject_a1e04049160703519875f9647f238eb9c}} 
+\index{VGObject@{VGObject}!BuildAxis@{BuildAxis}}
+\index{BuildAxis@{BuildAxis}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{BuildAxis()}{BuildAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QLineF VGObject\+::\+Build\+Axis (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const qreal \&}]{angle,  }\item[{const QRectF \&}]{sc\+Rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_a1ef91cb41647e4bd5a93da616ed5e645}\label{classVGObject_a1ef91cb41647e4bd5a93da616ed5e645}} 
+\index{VGObject@{VGObject}!BuildAxis@{BuildAxis}}
+\index{BuildAxis@{BuildAxis}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{BuildAxis()}{BuildAxis()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QLineF VGObject\+::\+Build\+Axis (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2,  }\item[{const QRectF \&}]{sc\+Rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_aab2d01aac093c13430d5119abbd52764}\label{classVGObject_aab2d01aac093c13430d5119abbd52764}} 
+\index{VGObject@{VGObject}!BuildLine@{BuildLine}}
+\index{BuildLine@{BuildLine}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{BuildLine()}{BuildLine()}}
+{\footnotesize\ttfamily QLineF VGObject\+::\+Build\+Line (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const qreal \&}]{length,  }\item[{const qreal \&}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_a7e896d2c79a25c2e50df967c6a8b597b}\label{classVGObject_a7e896d2c79a25c2e50df967c6a8b597b}} 
+\index{VGObject@{VGObject}!BuildRay@{BuildRay}}
+\index{BuildRay@{BuildRay}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{BuildRay()}{BuildRay()}}
+{\footnotesize\ttfamily QPointF VGObject\+::\+Build\+Ray (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point,  }\item[{const qreal \&}]{angle,  }\item[{const QRectF \&}]{sc\+Rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_a2c4ba515566c606663ce28ca67e01933}\label{classVGObject_a2c4ba515566c606663ce28ca67e01933}} 
+\index{VGObject@{VGObject}!ClosestPoint@{ClosestPoint}}
+\index{ClosestPoint@{ClosestPoint}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{ClosestPoint()}{ClosestPoint()}}
+{\footnotesize\ttfamily QPointF VGObject\+::\+Closest\+Point (\begin{DoxyParamCaption}\item[{const QLineF \&}]{line,  }\item[{const QPointF \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Closest\+Point find point projection of point onto line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point on line or extended line if origin size too small. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_af4b00190bf3d6d98addbe0c998cd3959}\label{classVGObject_af4b00190bf3d6d98addbe0c998cd3959}} 
+\index{VGObject@{VGObject}!ContactPoints@{ContactPoints}}
+\index{ContactPoints@{ContactPoints}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{ContactPoints()}{ContactPoints()}}
+{\footnotesize\ttfamily int VGObject\+::\+Contact\+Points (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const QPointF \&}]{center,  }\item[{qreal}]{radius,  }\item[{QPointF \&}]{p1,  }\item[{QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_a4a0e1a72e7f0a197c5e4e24336350e4f}\label{classVGObject_a4a0e1a72e7f0a197c5e4e24336350e4f}} 
+\index{VGObject@{VGObject}!flipTransform@{flipTransform}}
+\index{flipTransform@{flipTransform}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{flipTransform()}{flipTransform()}}
+{\footnotesize\ttfamily QTransform VGObject\+::flip\+Transform (\begin{DoxyParamCaption}\item[{const QLineF \&}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVGObject_a0ba945eb32a4bb55b080460a1f92864d}\label{classVGObject_a0ba945eb32a4bb55b080460a1f92864d}} 
+\index{VGObject@{VGObject}!GetEpsilon@{GetEpsilon}}
+\index{GetEpsilon@{GetEpsilon}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{GetEpsilon()}{GetEpsilon()}}
+{\footnotesize\ttfamily double VGObject\+::\+Get\+Epsilon (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Get\+Epsilon solve the floating-\/point accuraccy problem. 
+
+There is the floating-\/point accuraccy problem, so instead of checking against zero, some epsilon value has to be used. Because the size of the pdp value depends on the length of the vectors, no static value can be used. One approach is to compare the pdp/area value to the fraction of another area which also depends on the length of the line e1=(p1, p2), e.\+g. the minimal area calucalted with Perp\+Dot\+Produc() if point still not on the line. This distance is controled by variable accuracy\+Point\+On\+Line \mbox{\Hypertarget{classVGObject_ab615b0fb0db689f92cd9c562329cc52b}\label{classVGObject_ab615b0fb0db689f92cd9c562329cc52b}} 
+\index{VGObject@{VGObject}!getIdObject@{getIdObject}}
+\index{getIdObject@{getIdObject}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{getIdObject()}{getIdObject()}}
+{\footnotesize\ttfamily quint32 VGObject\+::get\+Id\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Id\+Object return parent id. 
+
+\begin{DoxyReturn}{Returns}
+parent id or 0 if object don\textquotesingle{}t have parent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_af594a1eb7fb163a99194f5d5b02ffcf7}\label{classVGObject_af594a1eb7fb163a99194f5d5b02ffcf7}} 
+\index{VGObject@{VGObject}!getIdTool@{getIdTool}}
+\index{getIdTool@{getIdTool}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{getIdTool()}{getIdTool()}}
+{\footnotesize\ttfamily quint32 VGObject\+::get\+Id\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVGObject_aea5059e80866ae47eaa7f31acb72c486}\label{classVGObject_aea5059e80866ae47eaa7f31acb72c486}} 
+\index{VGObject@{VGObject}!GetLengthContour@{GetLengthContour}}
+\index{GetLengthContour@{GetLengthContour}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{GetLengthContour()}{GetLengthContour()}}
+{\footnotesize\ttfamily int VGObject\+::\+Get\+Length\+Contour (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{contour,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{new\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get\+Length\+Contour return length of contour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contour} & container with points of contour. \\
+\hline
+{\em new\+Points} & point whos we try to add to contour. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length length of contour. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_adb3c731522d5eb353f32ded63c2f3d0a}\label{classVGObject_adb3c731522d5eb353f32ded63c2f3d0a}} 
+\index{VGObject@{VGObject}!getMode@{getMode}}
+\index{getMode@{getMode}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{getMode()}{getMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} VGObject\+::get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Mode return mode creation. 
+
+\begin{DoxyReturn}{Returns}
+mode. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a61329d34b5ecd0118974ba1f38803b47}\label{classVGObject_a61329d34b5ecd0118974ba1f38803b47}} 
+\index{VGObject@{VGObject}!GetReversePoints@{GetReversePoints}}
+\index{GetReversePoints@{GetReversePoints}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{GetReversePoints()}{GetReversePoints()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classQVector}{QVector}}$<$ T $>$ VGObject\+::\+Get\+Reverse\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ T $>$ \&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get\+Reverse\+Point return revers container of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & container with points. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reverced points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a0af4987353bc1def71cfbd2087824764}\label{classVGObject_a0af4987353bc1def71cfbd2087824764}} 
+\index{VGObject@{VGObject}!getType@{getType}}
+\index{getType@{getType}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} VGObject\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Type return object type. 
+
+\begin{DoxyReturn}{Returns}
+type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_adc4efb22ae87dbb029f586f0bc2a074c}\label{classVGObject_adc4efb22ae87dbb029f586f0bc2a074c}} 
+\index{VGObject@{VGObject}!id@{id}}
+\index{id@{id}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily quint32 VGObject\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+id return id object. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a503181efc48d49b416daca9480c15793}\label{classVGObject_a503181efc48d49b416daca9480c15793}} 
+\index{VGObject@{VGObject}!IntersectionCircles@{IntersectionCircles}}
+\index{IntersectionCircles@{IntersectionCircles}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{IntersectionCircles()}{IntersectionCircles()}}
+{\footnotesize\ttfamily int VGObject\+::\+Intersection\+Circles (\begin{DoxyParamCaption}\item[{const QPointF \&}]{c1,  }\item[{double}]{r1,  }\item[{const QPointF \&}]{c2,  }\item[{double}]{r2,  }\item[{QPointF \&}]{p1,  }\item[{QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_a040e4a0f193e1330e9caa4dd8dcc1201}\label{classVGObject_a040e4a0f193e1330e9caa4dd8dcc1201}} 
+\index{VGObject@{VGObject}!IsPointOnLineSegment@{IsPointOnLineSegment}}
+\index{IsPointOnLineSegment@{IsPointOnLineSegment}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{IsPointOnLineSegment()}{IsPointOnLineSegment()}}
+{\footnotesize\ttfamily bool VGObject\+::\+Is\+Point\+On\+Line\+Segment (\begin{DoxyParamCaption}\item[{const QPointF \&}]{t,  }\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Is\+Point\+On\+Line\+Segment Check if the point is on the line segment. 
+
+Original idea \href{http://www.sunshine2k.de/coding/java/PointOnLine/PointOnLine.html}{\texttt{ http\+://www.\+sunshine2k.\+de/coding/java/\+Point\+On\+Line/\+Point\+On\+Line.\+html}} \mbox{\Hypertarget{classVGObject_a6c36e7396fa9c367730c07453280a413}\label{classVGObject_a6c36e7396fa9c367730c07453280a413}} 
+\index{VGObject@{VGObject}!IsPointOnLineviaPDP@{IsPointOnLineviaPDP}}
+\index{IsPointOnLineviaPDP@{IsPointOnLineviaPDP}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{IsPointOnLineviaPDP()}{IsPointOnLineviaPDP()}}
+{\footnotesize\ttfamily bool VGObject\+::\+Is\+Point\+On\+Linevia\+PDP (\begin{DoxyParamCaption}\item[{const QPointF \&}]{t,  }\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Is\+Point\+On\+Linevia\+PDP use the perp dot product (PDP) way. 
+
+The pdp is zero only if the t lies on the line e1 = vector from p1 to p2. \begin{DoxyReturn}{Returns}
+true if point is on line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a502259e60c007a3ad11a738151aa1c0b}\label{classVGObject_a502259e60c007a3ad11a738151aa1c0b}} 
+\index{VGObject@{VGObject}!LineCoefficients@{LineCoefficients}}
+\index{LineCoefficients@{LineCoefficients}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{LineCoefficients()}{LineCoefficients()}}
+{\footnotesize\ttfamily void VGObject\+::\+Line\+Coefficients (\begin{DoxyParamCaption}\item[{const QLineF \&}]{line,  }\item[{qreal $\ast$}]{a,  }\item[{qreal $\ast$}]{b,  }\item[{qreal $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Line\+Coefficients coefficient for equation of segment. Segment equestion ax+by+c=0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & line \\
+\hline
+{\em a} & a value \\
+\hline
+{\em b} & b value \\
+\hline
+{\em c} & c value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVGObject_a26474388e3837e3984bf52543aede141}\label{classVGObject_a26474388e3837e3984bf52543aede141}} 
+\index{VGObject@{VGObject}!LineIntersectCircle@{LineIntersectCircle}}
+\index{LineIntersectCircle@{LineIntersectCircle}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{LineIntersectCircle()}{LineIntersectCircle()}}
+{\footnotesize\ttfamily qint32 VGObject\+::\+Line\+Intersect\+Circle (\begin{DoxyParamCaption}\item[{const QPointF \&}]{center,  }\item[{qreal}]{radius,  }\item[{const QLineF \&}]{line,  }\item[{QPointF \&}]{p1,  }\item[{QPointF \&}]{p2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Line\+Intersect\+Circle find point intersection line and circle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & arc center. \\
+\hline
+{\em radius} & arc radius. \\
+\hline
+{\em line} & line \\
+\hline
+{\em p1} & first intersection point. \\
+\hline
+{\em p2} & second intersection point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 -\/ intersection doesn\textquotesingle{}t exist, 1 -\/ one intersection point, 2 -\/ two intersection points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_ac313f36a13cd183209097a0a780baceb}\label{classVGObject_ac313f36a13cd183209097a0a780baceb}} 
+\index{VGObject@{VGObject}!LineIntersectRect@{LineIntersectRect}}
+\index{LineIntersectRect@{LineIntersectRect}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{LineIntersectRect()}{LineIntersectRect()}}
+{\footnotesize\ttfamily QPointF VGObject\+::\+Line\+Intersect\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rec,  }\item[{const QLineF \&}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Line\+Intersect\+Rect find point intersection line and rect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rec} & rect. \\
+\hline
+{\em line} & line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point intersection. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a3015e9c2e0dda69cd4a81e1f25dc1263}\label{classVGObject_a3015e9c2e0dda69cd4a81e1f25dc1263}} 
+\index{VGObject@{VGObject}!name@{name}}
+\index{name@{name}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily QString VGObject\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+name return name graphical object. 
+
+\begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a3ffc95524099af4edd57b017863fed61}\label{classVGObject_a3ffc95524099af4edd57b017863fed61}} 
+\index{VGObject@{VGObject}!operator=@{operator=}}
+\index{operator=@{operator=}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVGObject}{VGObject}} \& VGObject\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVGObject}{VGObject}} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+operator = assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a09b2ccf0ac2f51b823221f238d3bcbcc}\label{classVGObject_a09b2ccf0ac2f51b823221f238d3bcbcc}} 
+\index{VGObject@{VGObject}!PerpDotProduct@{PerpDotProduct}}
+\index{PerpDotProduct@{PerpDotProduct}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{PerpDotProduct()}{PerpDotProduct()}}
+{\footnotesize\ttfamily double VGObject\+::\+Perp\+Dot\+Product (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p2,  }\item[{const QPointF \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Perp\+Dot\+Product Calculates the area of the parallelogram of the three points. This is actually the same as the area of the triangle defined by the three points, multiplied by 2. 
+
+\begin{DoxyReturn}{Returns}
+2 $\ast$ triangle\+Area(a,b,c) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVGObject_a7b549ec354fbb1ce60a3940cabee4433}\label{classVGObject_a7b549ec354fbb1ce60a3940cabee4433}} 
+\index{VGObject@{VGObject}!PointInCircle@{PointInCircle}}
+\index{PointInCircle@{PointInCircle}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{PointInCircle()}{PointInCircle()}}
+{\footnotesize\ttfamily int VGObject\+::\+Point\+In\+Circle (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const QPointF \&}]{center,  }\item[{qreal}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVGObject_ae7856ac9f6974ee8e0c517f6887bd15b}\label{classVGObject_ae7856ac9f6974ee8e0c517f6887bd15b}} 
+\index{VGObject@{VGObject}!setId@{setId}}
+\index{setId@{setId}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void VGObject\+::set\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Id set id object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVAbstractArc_a9aa2bba3798c4ca6c6b1ae7d43e6e13f}{VAbstract\+Arc}}.
+
+\mbox{\Hypertarget{classVGObject_a1a0486d2fe696c580a1c4d31c7097eb0}\label{classVGObject_a1a0486d2fe696c580a1c4d31c7097eb0}} 
+\index{VGObject@{VGObject}!setIdObject@{setIdObject}}
+\index{setIdObject@{setIdObject}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{setIdObject()}{setIdObject()}}
+{\footnotesize\ttfamily void VGObject\+::set\+Id\+Object (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Id\+Object set parent id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & parent id. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVGObject_a1246f01103985c75f71698e60ddcccfa}\label{classVGObject_a1246f01103985c75f71698e60ddcccfa}} 
+\index{VGObject@{VGObject}!setMode@{setMode}}
+\index{setMode@{setMode}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{setMode()}{setMode()}}
+{\footnotesize\ttfamily void VGObject\+::set\+Mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Mode set mode creation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVGObject_ac52a0bdf810d43fb282f65a58933ea75}\label{classVGObject_ac52a0bdf810d43fb282f65a58933ea75}} 
+\index{VGObject@{VGObject}!setName@{setName}}
+\index{setName@{setName}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void VGObject\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+
+
+set\+Name set name graphical object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name graphical object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVGObject_a163fca66a2e581abc8a6511156bc766e}\label{classVGObject_a163fca66a2e581abc8a6511156bc766e}} 
+\index{VGObject@{VGObject}!setType@{setType}}
+\index{setType@{setType}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void VGObject\+::set\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVGObject_ab487dac4a019d27636e498278363f03b}\label{classVGObject_ab487dac4a019d27636e498278363f03b}} 
+\index{VGObject@{VGObject}!Swap@{Swap}}
+\index{Swap@{Swap}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VGObject\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVGObject}{VGObject}} \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVGObject_af893a07c68c71231b5eaeceda31ad368}\label{classVGObject_af893a07c68c71231b5eaeceda31ad368}} 
+\index{VGObject@{VGObject}!accuracyPointOnLine@{accuracyPointOnLine}}
+\index{accuracyPointOnLine@{accuracyPointOnLine}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{accuracyPointOnLine}{accuracyPointOnLine}}
+{\footnotesize\ttfamily const double VGObject\+::accuracy\+Point\+On\+Line = (0.\+1555 / 25.\+4) $\ast$ 96.\+0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVGObject_ab212fadab50be549bec1636722e6f84b}\label{classVGObject_ab212fadab50be549bec1636722e6f84b}} 
+\index{VGObject@{VGObject}!d@{d}}
+\index{d@{d}!VGObject@{VGObject}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{classVGObjectData}{VGObject\+Data}}$>$ VGObject\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vgeometry/\mbox{\hyperlink{vgobject_8h}{vgobject.\+h}}\item 
+src/libs/vgeometry/\mbox{\hyperlink{vgobject_8cpp}{vgobject.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+\hypertarget{classVDxfPaintDevice}{}\doxysection{VDxf\+Paint\+Device Class Reference}
+\label{classVDxfPaintDevice}\index{VDxfPaintDevice@{VDxfPaintDevice}}
+
+
+{\ttfamily \#include $<$vdxfpaintdevice.\+h$>$}
+
+Inheritance diagram for VDxf\+Paint\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/da6/classVDxfPaintDevice}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVDxfPaintDevice_a6089c3fa69f2ca2350079b4ebbafa03a}{VDxf\+Paint\+Device}} ()
+\item 
+virtual \mbox{\hyperlink{classVDxfPaintDevice_a321cb8ce82b476d9e0446035dd46fbe8}{$\sim$\+VDxf\+Paint\+Device}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QPaint\+Engine $\ast$ \mbox{\hyperlink{classVDxfPaintDevice_a3b358c3a0024bec45afd6206a51ccabb}{paint\+Engine}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVDxfPaintDevice_a8c225f3ff614f8635cdbbe18508a5c85}{get\+File\+Name}} () const
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_a726bc1b44892eed695062a8a6aa9d6b3}{set\+File\+Name}} (const QString \&value)
+\item 
+QSize \mbox{\hyperlink{classVDxfPaintDevice_a855ac3d08d09dd972c4b0d8b2c132ee9}{get\+Size}} ()
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_aefb4b62638827786e4b74eea23126014}{set\+Size}} (const QSize \&size)
+\item 
+double \mbox{\hyperlink{classVDxfPaintDevice_afa6f3d1b65d34eecd2e3289d962d20f5}{get\+Resolution}} () const
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_a9b1b6b710536f3c95b2b937ec4b4853e}{set\+Resolution}} (double dpi)
+\item 
+\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} \mbox{\hyperlink{classVDxfPaintDevice_aa73ba51c9da3639eddbbfe05024cc7ee}{Get\+Version}} () const
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_acb34895712b956f08ec8092af9360af7}{Set\+Version}} (\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} version)
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_a8a196029cf54e0ae2f996ea8f98c0f73}{Set\+Binary\+Format}} (bool binary)
+\item 
+bool \mbox{\hyperlink{classVDxfPaintDevice_acb30209a8316d3724fba507c09bbea3a}{Is\+Binary\+Format}} () const
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_ad2db47830068128819e21d783712e1c1}{set\+Measurement}} (const \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} \&var)
+\item 
+void \mbox{\hyperlink{classVDxfPaintDevice_a202b0841da36242a84b46d4af118ef9f}{set\+Insunits}} (const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&var)
+\item 
+bool \mbox{\hyperlink{classVDxfPaintDevice_a655e8e09a7da888f633be417cebc86d4}{Export\+To\+AAMA}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} $>$ \&details) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{classVDxfPaintDevice_a82cc93dd629fbb8bebc6c9e68c39e407}{metric}} (Paint\+Device\+Metric metric) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVDxfEngine}{VDxf\+Engine}} $\ast$ \mbox{\hyperlink{classVDxfPaintDevice_a7079291bad3c0041c37c0f02bae5c136}{engine}}
+\item 
+QString \mbox{\hyperlink{classVDxfPaintDevice_afd14327f7a978f5a3337df94c03ad0f1}{file\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVDxfPaintDevice_a6089c3fa69f2ca2350079b4ebbafa03a}\label{classVDxfPaintDevice_a6089c3fa69f2ca2350079b4ebbafa03a}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!VDxfPaintDevice@{VDxfPaintDevice}}
+\index{VDxfPaintDevice@{VDxfPaintDevice}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{VDxfPaintDevice()}{VDxfPaintDevice()}}
+{\footnotesize\ttfamily VDxf\+Paint\+Device\+::\+VDxf\+Paint\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a321cb8ce82b476d9e0446035dd46fbe8}\label{classVDxfPaintDevice_a321cb8ce82b476d9e0446035dd46fbe8}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!````~VDxfPaintDevice@{$\sim$VDxfPaintDevice}}
+\index{````~VDxfPaintDevice@{$\sim$VDxfPaintDevice}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{$\sim$VDxfPaintDevice()}{~VDxfPaintDevice()}}
+{\footnotesize\ttfamily VDxf\+Paint\+Device\+::$\sim$\+VDxf\+Paint\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVDxfPaintDevice_a655e8e09a7da888f633be417cebc86d4}\label{classVDxfPaintDevice_a655e8e09a7da888f633be417cebc86d4}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!ExportToAAMA@{ExportToAAMA}}
+\index{ExportToAAMA@{ExportToAAMA}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{ExportToAAMA()}{ExportToAAMA()}}
+{\footnotesize\ttfamily bool VDxf\+Paint\+Device\+::\+Export\+To\+AAMA (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVLayoutPiece}{VLayout\+Piece}} $>$ \&}]{details }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a8c225f3ff614f8635cdbbe18508a5c85}\label{classVDxfPaintDevice_a8c225f3ff614f8635cdbbe18508a5c85}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily QString VDxf\+Paint\+Device\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_afa6f3d1b65d34eecd2e3289d962d20f5}\label{classVDxfPaintDevice_afa6f3d1b65d34eecd2e3289d962d20f5}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}}
+{\footnotesize\ttfamily double VDxf\+Paint\+Device\+::get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a855ac3d08d09dd972c4b0d8b2c132ee9}\label{classVDxfPaintDevice_a855ac3d08d09dd972c4b0d8b2c132ee9}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!getSize@{getSize}}
+\index{getSize@{getSize}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily QSize VDxf\+Paint\+Device\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_aa73ba51c9da3639eddbbfe05024cc7ee}\label{classVDxfPaintDevice_aa73ba51c9da3639eddbbfe05024cc7ee}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!GetVersion@{GetVersion}}
+\index{GetVersion@{GetVersion}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{GetVersion()}{GetVersion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} VDxf\+Paint\+Device\+::\+Get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_acb30209a8316d3724fba507c09bbea3a}\label{classVDxfPaintDevice_acb30209a8316d3724fba507c09bbea3a}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!IsBinaryFormat@{IsBinaryFormat}}
+\index{IsBinaryFormat@{IsBinaryFormat}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{IsBinaryFormat()}{IsBinaryFormat()}}
+{\footnotesize\ttfamily bool VDxf\+Paint\+Device\+::\+Is\+Binary\+Format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a82cc93dd629fbb8bebc6c9e68c39e407}\label{classVDxfPaintDevice_a82cc93dd629fbb8bebc6c9e68c39e407}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!metric@{metric}}
+\index{metric@{metric}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{metric()}{metric()}}
+{\footnotesize\ttfamily int VDxf\+Paint\+Device\+::metric (\begin{DoxyParamCaption}\item[{Paint\+Device\+Metric}]{metric }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a3b358c3a0024bec45afd6206a51ccabb}\label{classVDxfPaintDevice_a3b358c3a0024bec45afd6206a51ccabb}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!paintEngine@{paintEngine}}
+\index{paintEngine@{paintEngine}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{paintEngine()}{paintEngine()}}
+{\footnotesize\ttfamily QPaint\+Engine $\ast$ VDxf\+Paint\+Device\+::paint\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a8a196029cf54e0ae2f996ea8f98c0f73}\label{classVDxfPaintDevice_a8a196029cf54e0ae2f996ea8f98c0f73}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!SetBinaryFormat@{SetBinaryFormat}}
+\index{SetBinaryFormat@{SetBinaryFormat}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{SetBinaryFormat()}{SetBinaryFormat()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::\+Set\+Binary\+Format (\begin{DoxyParamCaption}\item[{bool}]{binary }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a726bc1b44892eed695062a8a6aa9d6b3}\label{classVDxfPaintDevice_a726bc1b44892eed695062a8a6aa9d6b3}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!setFileName@{setFileName}}
+\index{setFileName@{setFileName}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a202b0841da36242a84b46d4af118ef9f}\label{classVDxfPaintDevice_a202b0841da36242a84b46d4af118ef9f}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!setInsunits@{setInsunits}}
+\index{setInsunits@{setInsunits}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setInsunits()}{setInsunits()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::set\+Insunits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_ad2db47830068128819e21d783712e1c1}\label{classVDxfPaintDevice_ad2db47830068128819e21d783712e1c1}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!setMeasurement@{setMeasurement}}
+\index{setMeasurement@{setMeasurement}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setMeasurement()}{setMeasurement()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::set\+Measurement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_a9b1b6b710536f3c95b2b937ec4b4853e}\label{classVDxfPaintDevice_a9b1b6b710536f3c95b2b937ec4b4853e}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::set\+Resolution (\begin{DoxyParamCaption}\item[{double}]{dpi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_aefb4b62638827786e4b74eea23126014}\label{classVDxfPaintDevice_aefb4b62638827786e4b74eea23126014}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!setSize@{setSize}}
+\index{setSize@{setSize}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::set\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_acb34895712b956f08ec8092af9360af7}\label{classVDxfPaintDevice_acb34895712b956f08ec8092af9360af7}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!SetVersion@{SetVersion}}
+\index{SetVersion@{SetVersion}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{SetVersion()}{SetVersion()}}
+{\footnotesize\ttfamily void VDxf\+Paint\+Device\+::\+Set\+Version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceDRW_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}}}]{version }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVDxfPaintDevice_a7079291bad3c0041c37c0f02bae5c136}\label{classVDxfPaintDevice_a7079291bad3c0041c37c0f02bae5c136}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!engine@{engine}}
+\index{engine@{engine}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{engine}{engine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVDxfEngine}{VDxf\+Engine}}$\ast$ VDxf\+Paint\+Device\+::engine\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDxfPaintDevice_afd14327f7a978f5a3337df94c03ad0f1}\label{classVDxfPaintDevice_afd14327f7a978f5a3337df94c03ad0f1}} 
+\index{VDxfPaintDevice@{VDxfPaintDevice}!fileName@{fileName}}
+\index{fileName@{fileName}!VDxfPaintDevice@{VDxfPaintDevice}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily QString VDxf\+Paint\+Device\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/\mbox{\hyperlink{vdxfpaintdevice_8h}{vdxfpaintdevice.\+h}}\item 
+src/libs/vdxf/\mbox{\hyperlink{vdxfpaintdevice_8cpp}{vdxfpaintdevice.\+cpp}}\end{DoxyCompactItemize}

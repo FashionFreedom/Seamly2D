@@ -1,0 +1,143 @@
+\hypertarget{classVTableSearch}{}\doxysection{VTable\+Search Class Reference}
+\label{classVTableSearch}\index{VTableSearch@{VTableSearch}}
+
+
+{\ttfamily \#include $<$vtablesearch.\+h$>$}
+
+Inheritance diagram for VTable\+Search\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d1/dd3/classVTableSearch}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVTableSearch_ab4f87bb7e2fd6ea340f54fb46bf65855}{Has\+Result}} (bool state)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVTableSearch_a0f17df910e8cf2443f436e6b46f94b8a}{VTable\+Search}} (QTable\+Widget $\ast$\mbox{\hyperlink{classVTableSearch_a7ff8e77b3b2d6a1ee8b954b2e8271239}{table}}, QObject $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classVTableSearch_a1d8a0c25681b04047d5c7a76726afebc}{Find}} (const QString \&term)
+\item 
+void \mbox{\hyperlink{classVTableSearch_aaee11c3e972002122457392390ec5d06}{Find\+Previous}} ()
+\item 
+void \mbox{\hyperlink{classVTableSearch_ad225dc6eccbd84a1fadf53bad233a42e}{Find\+Next}} ()
+\item 
+void \mbox{\hyperlink{classVTableSearch_a0b7c8a2a594a3f0a64e34537d489f5ed}{Remove\+Row}} (int row)
+\item 
+void \mbox{\hyperlink{classVTableSearch_a0209a710ed39a567b2b55c454e38a198}{Add\+Row}} (int row)
+\item 
+void \mbox{\hyperlink{classVTableSearch_ad098860f29ecf58db3e78a83f61e169a}{Refresh\+List}} (const QString \&term)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVTableSearch_ad849c7582c9d30c649940ae6d135cf53}{Clear}} ()
+\item 
+void \mbox{\hyperlink{classVTableSearch_aa4094d06d6cbf73a1c64728e17c5ff82}{Show\+Next}} (int new\+Index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QTable\+Widget $\ast$ \mbox{\hyperlink{classVTableSearch_a7ff8e77b3b2d6a1ee8b954b2e8271239}{table}}
+\item 
+int \mbox{\hyperlink{classVTableSearch_a4efedb6dc47c39aa6b81d6d4df7ef582}{search\+Index}}
+\item 
+\mbox{\hyperlink{classQList}{QList}}$<$ QTable\+Widget\+Item $\ast$ $>$ \mbox{\hyperlink{classVTableSearch_a72543072028278ee2a19ebf26e3fe27f}{search\+List}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVTableSearch_a0f17df910e8cf2443f436e6b46f94b8a}\label{classVTableSearch_a0f17df910e8cf2443f436e6b46f94b8a}} 
+\index{VTableSearch@{VTableSearch}!VTableSearch@{VTableSearch}}
+\index{VTableSearch@{VTableSearch}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{VTableSearch()}{VTableSearch()}}
+{\footnotesize\ttfamily VTable\+Search\+::\+VTable\+Search (\begin{DoxyParamCaption}\item[{QTable\+Widget $\ast$}]{table,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVTableSearch_a0209a710ed39a567b2b55c454e38a198}\label{classVTableSearch_a0209a710ed39a567b2b55c454e38a198}} 
+\index{VTableSearch@{VTableSearch}!AddRow@{AddRow}}
+\index{AddRow@{AddRow}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{AddRow()}{AddRow()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Add\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTableSearch_ad849c7582c9d30c649940ae6d135cf53}\label{classVTableSearch_ad849c7582c9d30c649940ae6d135cf53}} 
+\index{VTableSearch@{VTableSearch}!Clear@{Clear}}
+\index{Clear@{Clear}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVTableSearch_a1d8a0c25681b04047d5c7a76726afebc}\label{classVTableSearch_a1d8a0c25681b04047d5c7a76726afebc}} 
+\index{VTableSearch@{VTableSearch}!Find@{Find}}
+\index{Find@{Find}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Find (\begin{DoxyParamCaption}\item[{const QString \&}]{term }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTableSearch_ad225dc6eccbd84a1fadf53bad233a42e}\label{classVTableSearch_ad225dc6eccbd84a1fadf53bad233a42e}} 
+\index{VTableSearch@{VTableSearch}!FindNext@{FindNext}}
+\index{FindNext@{FindNext}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{FindNext()}{FindNext()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Find\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTableSearch_aaee11c3e972002122457392390ec5d06}\label{classVTableSearch_aaee11c3e972002122457392390ec5d06}} 
+\index{VTableSearch@{VTableSearch}!FindPrevious@{FindPrevious}}
+\index{FindPrevious@{FindPrevious}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{FindPrevious()}{FindPrevious()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Find\+Previous (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTableSearch_ab4f87bb7e2fd6ea340f54fb46bf65855}\label{classVTableSearch_ab4f87bb7e2fd6ea340f54fb46bf65855}} 
+\index{VTableSearch@{VTableSearch}!HasResult@{HasResult}}
+\index{HasResult@{HasResult}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{HasResult}{HasResult}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Has\+Result (\begin{DoxyParamCaption}\item[{bool}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classVTableSearch_ad098860f29ecf58db3e78a83f61e169a}\label{classVTableSearch_ad098860f29ecf58db3e78a83f61e169a}} 
+\index{VTableSearch@{VTableSearch}!RefreshList@{RefreshList}}
+\index{RefreshList@{RefreshList}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{RefreshList()}{RefreshList()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Refresh\+List (\begin{DoxyParamCaption}\item[{const QString \&}]{term }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTableSearch_a0b7c8a2a594a3f0a64e34537d489f5ed}\label{classVTableSearch_a0b7c8a2a594a3f0a64e34537d489f5ed}} 
+\index{VTableSearch@{VTableSearch}!RemoveRow@{RemoveRow}}
+\index{RemoveRow@{RemoveRow}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{RemoveRow()}{RemoveRow()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Remove\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVTableSearch_aa4094d06d6cbf73a1c64728e17c5ff82}\label{classVTableSearch_aa4094d06d6cbf73a1c64728e17c5ff82}} 
+\index{VTableSearch@{VTableSearch}!ShowNext@{ShowNext}}
+\index{ShowNext@{ShowNext}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{ShowNext()}{ShowNext()}}
+{\footnotesize\ttfamily void VTable\+Search\+::\+Show\+Next (\begin{DoxyParamCaption}\item[{int}]{new\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVTableSearch_a4efedb6dc47c39aa6b81d6d4df7ef582}\label{classVTableSearch_a4efedb6dc47c39aa6b81d6d4df7ef582}} 
+\index{VTableSearch@{VTableSearch}!searchIndex@{searchIndex}}
+\index{searchIndex@{searchIndex}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{searchIndex}{searchIndex}}
+{\footnotesize\ttfamily int VTable\+Search\+::search\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVTableSearch_a72543072028278ee2a19ebf26e3fe27f}\label{classVTableSearch_a72543072028278ee2a19ebf26e3fe27f}} 
+\index{VTableSearch@{VTableSearch}!searchList@{searchList}}
+\index{searchList@{searchList}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{searchList}{searchList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQList}{QList}}$<$QTable\+Widget\+Item $\ast$$>$ VTable\+Search\+::search\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVTableSearch_a7ff8e77b3b2d6a1ee8b954b2e8271239}\label{classVTableSearch_a7ff8e77b3b2d6a1ee8b954b2e8271239}} 
+\index{VTableSearch@{VTableSearch}!table@{table}}
+\index{table@{table}!VTableSearch@{VTableSearch}}
+\doxysubsubsection{\texorpdfstring{table}{table}}
+{\footnotesize\ttfamily QTable\+Widget$\ast$ VTable\+Search\+::table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vmisc/\mbox{\hyperlink{vtablesearch_8h}{vtablesearch.\+h}}\item 
+src/libs/vmisc/\mbox{\hyperlink{vtablesearch_8cpp}{vtablesearch.\+cpp}}\end{DoxyCompactItemize}

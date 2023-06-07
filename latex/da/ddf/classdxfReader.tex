@@ -1,0 +1,370 @@
+\hypertarget{classdxfReader}{}\doxysection{dxf\+Reader Class Reference}
+\label{classdxfReader}\index{dxfReader@{dxfReader}}
+
+
+{\ttfamily \#include $<$dxfreader.\+h$>$}
+
+Inheritance diagram for dxf\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{da/ddf/classdxfReader}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358}{TYPE}} \{ \newline
+\mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358a56b72cb32494ee2a1f568fc6b7d3899d}{STRING}}
+, \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358abaf8de937b69320ec56589cbdeb8628b}{INT32}}
+, \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358af1e0f37db207618a2c4bbbc483e10ce8}{INT64}}
+, \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358a44c854d9714be55472d9c2e542f453fe}{DOUBLE}}
+, \newline
+\mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358a4423b9242cbcdecf475698be1a89c353}{BOOL}}
+, \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358a6a0b49047d5f61c66de431ec1e4491e3}{INVALID}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdxfReader_a12ac6fe714798f897e8a0699b5180c0f}{dxf\+Reader}} (std\+::istream $\ast$stream)
+\item 
+virtual \mbox{\hyperlink{classdxfReader_ac267970431057e00482a5597a9629ead}{$\sim$dxf\+Reader}} ()=default
+\item 
+bool \mbox{\hyperlink{classdxfReader_ad0cb2cb7e209b49cbe583cce0c4b90c3}{read\+Rec}} (int $\ast$code\+Data)
+\item 
+std\+::string \mbox{\hyperlink{classdxfReader_aa5f9aeeb1754e2cdace93a29a4bd7093}{get\+String}} () const
+\item 
+int \mbox{\hyperlink{classdxfReader_a1c9e6b65d6c667e6b38f9fe3adcc211f}{get\+Handle\+String}} ()
+\item 
+std\+::string \mbox{\hyperlink{classdxfReader_ab6365263914b646a302e958eb11eddd0}{to\+Utf8\+String}} (std\+::string t)
+\item 
+std\+::string \mbox{\hyperlink{classdxfReader_a11509c1efc1a40201e41215ddf82ce46}{get\+Utf8\+String}} ()
+\item 
+double \mbox{\hyperlink{classdxfReader_a7e4e6dbc72d1a5c798fa38067217654e}{get\+Double}} () const
+\item 
+int \mbox{\hyperlink{classdxfReader_a5b12a3f85389326954ae55a196d7f24c}{get\+Int32}} () const
+\item 
+unsigned long long int \mbox{\hyperlink{classdxfReader_abf542b6bf56632f9f23f002dc37c1010}{get\+Int64}} () const
+\item 
+bool \mbox{\hyperlink{classdxfReader_aa8b7a482e7eed3972b336990c80ded42}{get\+Bool}} () const
+\item 
+int \mbox{\hyperlink{classdxfReader_aef56fb735b71603ca0cec73dc580f1da}{get\+Version}} () const
+\item 
+void \mbox{\hyperlink{classdxfReader_a13be2ca633fbffc71b4762d138898a89}{set\+Version}} (std\+::string $\ast$v, bool dxf\+Format)
+\item 
+void \mbox{\hyperlink{classdxfReader_a8544c4e9db6a077c1ebb04e3f347abb9}{set\+Code\+Page}} (std\+::string $\ast$c)
+\item 
+std\+::string \mbox{\hyperlink{classdxfReader_a1e9eb327c12de37d4654a306bb7692c9}{get\+Code\+Page}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358}{TYPE}} \mbox{\hyperlink{classdxfReader_afac6df400a8473368f35002b22d8c96b}{type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_afeca6509bc2c9bd366642ed28fefc7c0}{read\+Code}} (int $\ast$code)=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_abc3a1aec30acb5188405bd398be954ce}{read\+String}} (std\+::string $\ast$text)=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_a41ffcc9dfb0fa09593f8216ba1e458a0}{read\+String}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_aa73b81fd042779ef17d33094afd8634d}{read\+Int16}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_a37fcc22ce96d9d15199708fb565fdf57}{read\+Int32}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_a1d82b232678b65ee146d977f7eb0131e}{read\+Int64}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_a5f45136af9496e46c99961069d69c8ab}{read\+Double}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{classdxfReader_a30dc9ed2033e0001383e5f19ffbad971}{read\+Bool}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream $\ast$ \mbox{\hyperlink{classdxfReader_a149e55b7803fa13721e4030fca579678}{filestr}}
+\item 
+std\+::string \mbox{\hyperlink{classdxfReader_ab06bfe2da193f7aaf8b8b75ed224167e}{str\+Data}}
+\item 
+double \mbox{\hyperlink{classdxfReader_ac7783cdeb203ddf3e48c5d9dbe98418d}{double\+Data}}
+\item 
+signed int \mbox{\hyperlink{classdxfReader_af428b2e1747b05b0701368cfff9b30ab}{int\+Data}}
+\item 
+unsigned long long int \mbox{\hyperlink{classdxfReader_a868e866b18e256ba5cc0520f9df27054}{int64}}
+\item 
+bool \mbox{\hyperlink{classdxfReader_a76e657f13de0a3946b9e7d778e67ae3d}{skip}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__TextCodec}{DRW\+\_\+\+Text\+Codec}} \mbox{\hyperlink{classdxfReader_a50df43953e5a3ed98403786e217f2626}{decoder}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358}} 
+\index{dxfReader@{dxfReader}!TYPE@{TYPE}}
+\index{TYPE@{TYPE}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{TYPE}{TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358}{dxf\+Reader\+::\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING@{STRING}!dxfReader@{dxfReader}}\index{dxfReader@{dxfReader}!STRING@{STRING}}}\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358a56b72cb32494ee2a1f568fc6b7d3899d}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358a56b72cb32494ee2a1f568fc6b7d3899d}} 
+STRING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT32@{INT32}!dxfReader@{dxfReader}}\index{dxfReader@{dxfReader}!INT32@{INT32}}}\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358abaf8de937b69320ec56589cbdeb8628b}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358abaf8de937b69320ec56589cbdeb8628b}} 
+INT32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT64@{INT64}!dxfReader@{dxfReader}}\index{dxfReader@{dxfReader}!INT64@{INT64}}}\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358af1e0f37db207618a2c4bbbc483e10ce8}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358af1e0f37db207618a2c4bbbc483e10ce8}} 
+INT64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE@{DOUBLE}!dxfReader@{dxfReader}}\index{dxfReader@{dxfReader}!DOUBLE@{DOUBLE}}}\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358a44c854d9714be55472d9c2e542f453fe}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358a44c854d9714be55472d9c2e542f453fe}} 
+DOUBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOOL@{BOOL}!dxfReader@{dxfReader}}\index{dxfReader@{dxfReader}!BOOL@{BOOL}}}\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358a4423b9242cbcdecf475698be1a89c353}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358a4423b9242cbcdecf475698be1a89c353}} 
+BOOL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID@{INVALID}!dxfReader@{dxfReader}}\index{dxfReader@{dxfReader}!INVALID@{INVALID}}}\mbox{\Hypertarget{classdxfReader_af40399d71d93abe36f931684cbcc6358a6a0b49047d5f61c66de431ec1e4491e3}\label{classdxfReader_af40399d71d93abe36f931684cbcc6358a6a0b49047d5f61c66de431ec1e4491e3}} 
+INVALID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdxfReader_a12ac6fe714798f897e8a0699b5180c0f}\label{classdxfReader_a12ac6fe714798f897e8a0699b5180c0f}} 
+\index{dxfReader@{dxfReader}!dxfReader@{dxfReader}}
+\index{dxfReader@{dxfReader}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{dxfReader()}{dxfReader()}}
+{\footnotesize\ttfamily dxf\+Reader\+::dxf\+Reader (\begin{DoxyParamCaption}\item[{std\+::istream $\ast$}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classdxfReader_ac267970431057e00482a5597a9629ead}\label{classdxfReader_ac267970431057e00482a5597a9629ead}} 
+\index{dxfReader@{dxfReader}!````~dxfReader@{$\sim$dxfReader}}
+\index{````~dxfReader@{$\sim$dxfReader}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{$\sim$dxfReader()}{~dxfReader()}}
+{\footnotesize\ttfamily virtual dxf\+Reader\+::$\sim$dxf\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdxfReader_aa8b7a482e7eed3972b336990c80ded42}\label{classdxfReader_aa8b7a482e7eed3972b336990c80ded42}} 
+\index{dxfReader@{dxfReader}!getBool@{getBool}}
+\index{getBool@{getBool}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getBool()}{getBool()}}
+{\footnotesize\ttfamily bool dxf\+Reader\+::get\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_a1e9eb327c12de37d4654a306bb7692c9}\label{classdxfReader_a1e9eb327c12de37d4654a306bb7692c9}} 
+\index{dxfReader@{dxfReader}!getCodePage@{getCodePage}}
+\index{getCodePage@{getCodePage}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getCodePage()}{getCodePage()}}
+{\footnotesize\ttfamily std\+::string dxf\+Reader\+::get\+Code\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_a7e4e6dbc72d1a5c798fa38067217654e}\label{classdxfReader_a7e4e6dbc72d1a5c798fa38067217654e}} 
+\index{dxfReader@{dxfReader}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily double dxf\+Reader\+::get\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_a1c9e6b65d6c667e6b38f9fe3adcc211f}\label{classdxfReader_a1c9e6b65d6c667e6b38f9fe3adcc211f}} 
+\index{dxfReader@{dxfReader}!getHandleString@{getHandleString}}
+\index{getHandleString@{getHandleString}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getHandleString()}{getHandleString()}}
+{\footnotesize\ttfamily int dxf\+Reader\+::get\+Handle\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdxfReader_a5b12a3f85389326954ae55a196d7f24c}\label{classdxfReader_a5b12a3f85389326954ae55a196d7f24c}} 
+\index{dxfReader@{dxfReader}!getInt32@{getInt32}}
+\index{getInt32@{getInt32}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getInt32()}{getInt32()}}
+{\footnotesize\ttfamily int dxf\+Reader\+::get\+Int32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_abf542b6bf56632f9f23f002dc37c1010}\label{classdxfReader_abf542b6bf56632f9f23f002dc37c1010}} 
+\index{dxfReader@{dxfReader}!getInt64@{getInt64}}
+\index{getInt64@{getInt64}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getInt64()}{getInt64()}}
+{\footnotesize\ttfamily unsigned long long int dxf\+Reader\+::get\+Int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_aa5f9aeeb1754e2cdace93a29a4bd7093}\label{classdxfReader_aa5f9aeeb1754e2cdace93a29a4bd7093}} 
+\index{dxfReader@{dxfReader}!getString@{getString}}
+\index{getString@{getString}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily std\+::string dxf\+Reader\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_a11509c1efc1a40201e41215ddf82ce46}\label{classdxfReader_a11509c1efc1a40201e41215ddf82ce46}} 
+\index{dxfReader@{dxfReader}!getUtf8String@{getUtf8String}}
+\index{getUtf8String@{getUtf8String}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getUtf8String()}{getUtf8String()}}
+{\footnotesize\ttfamily std\+::string dxf\+Reader\+::get\+Utf8\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_aef56fb735b71603ca0cec73dc580f1da}\label{classdxfReader_aef56fb735b71603ca0cec73dc580f1da}} 
+\index{dxfReader@{dxfReader}!getVersion@{getVersion}}
+\index{getVersion@{getVersion}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{getVersion()}{getVersion()}}
+{\footnotesize\ttfamily int dxf\+Reader\+::get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_a30dc9ed2033e0001383e5f19ffbad971}\label{classdxfReader_a30dc9ed2033e0001383e5f19ffbad971}} 
+\index{dxfReader@{dxfReader}!readBool@{readBool}}
+\index{readBool@{readBool}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readBool()}{readBool()}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_a6d98a64d1cbd6a592eb6d632a102bdf3}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_af25ea34ee82be2ce60a415dc5607a4bd}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_afeca6509bc2c9bd366642ed28fefc7c0}\label{classdxfReader_afeca6509bc2c9bd366642ed28fefc7c0}} 
+\index{dxfReader@{dxfReader}!readCode@{readCode}}
+\index{readCode@{readCode}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readCode()}{readCode()}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+Code (\begin{DoxyParamCaption}\item[{int $\ast$}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_ae9da183d42ff6a53d4b9b121888d90cf}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_a6a610831a1b59abc384f53501d5f5d83}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_a5f45136af9496e46c99961069d69c8ab}\label{classdxfReader_a5f45136af9496e46c99961069d69c8ab}} 
+\index{dxfReader@{dxfReader}!readDouble@{readDouble}}
+\index{readDouble@{readDouble}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readDouble()}{readDouble()}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_a2f00bd85c4cd394680cef2777a1aba6b}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_aa341d24a5c3e324397e2bdfc739b31e9}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_aa73b81fd042779ef17d33094afd8634d}\label{classdxfReader_aa73b81fd042779ef17d33094afd8634d}} 
+\index{dxfReader@{dxfReader}!readInt16@{readInt16}}
+\index{readInt16@{readInt16}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readInt16()}{readInt16()}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+Int16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_a496d9514015bf3d3d56eaae1e08c96f1}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_aad35863032d06c7412b289bc7fabe705}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_a37fcc22ce96d9d15199708fb565fdf57}\label{classdxfReader_a37fcc22ce96d9d15199708fb565fdf57}} 
+\index{dxfReader@{dxfReader}!readInt32@{readInt32}}
+\index{readInt32@{readInt32}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readInt32()}{readInt32()}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+Int32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_a0048571bbe199b6f6c37acb2c70f5bea}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_a7dca491a39bbc0bd084d97b8701fa2a8}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_a1d82b232678b65ee146d977f7eb0131e}\label{classdxfReader_a1d82b232678b65ee146d977f7eb0131e}} 
+\index{dxfReader@{dxfReader}!readInt64@{readInt64}}
+\index{readInt64@{readInt64}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readInt64()}{readInt64()}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+Int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_ab9c17a6dafa6069a75648aa19630c2a7}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_ab9a3a775d30dcf181706717f7a51b652}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_ad0cb2cb7e209b49cbe583cce0c4b90c3}\label{classdxfReader_ad0cb2cb7e209b49cbe583cce0c4b90c3}} 
+\index{dxfReader@{dxfReader}!readRec@{readRec}}
+\index{readRec@{readRec}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readRec()}{readRec()}}
+{\footnotesize\ttfamily bool dxf\+Reader\+::read\+Rec (\begin{DoxyParamCaption}\item[{int $\ast$}]{code\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdxfReader_a41ffcc9dfb0fa09593f8216ba1e458a0}\label{classdxfReader_a41ffcc9dfb0fa09593f8216ba1e458a0}} 
+\index{dxfReader@{dxfReader}!readString@{readString}}
+\index{readString@{readString}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readString()}{readString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_a0c906bfcc992bdffab35659bec0907f9}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_ae3ac59eb3866ba413a65eeefb06370db}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_abc3a1aec30acb5188405bd398be954ce}\label{classdxfReader_abc3a1aec30acb5188405bd398be954ce}} 
+\index{dxfReader@{dxfReader}!readString@{readString}}
+\index{readString@{readString}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{readString()}{readString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool dxf\+Reader\+::read\+String (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classdxfReaderAscii_a745e4a9166d36f24e1bf0e4b6f495849}{dxf\+Reader\+Ascii}}, and \mbox{\hyperlink{classdxfReaderBinary_a6ab7e640f83c042c70551021121e75a0}{dxf\+Reader\+Binary}}.
+
+\mbox{\Hypertarget{classdxfReader_a8544c4e9db6a077c1ebb04e3f347abb9}\label{classdxfReader_a8544c4e9db6a077c1ebb04e3f347abb9}} 
+\index{dxfReader@{dxfReader}!setCodePage@{setCodePage}}
+\index{setCodePage@{setCodePage}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{setCodePage()}{setCodePage()}}
+{\footnotesize\ttfamily void dxf\+Reader\+::set\+Code\+Page (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_a13be2ca633fbffc71b4762d138898a89}\label{classdxfReader_a13be2ca633fbffc71b4762d138898a89}} 
+\index{dxfReader@{dxfReader}!setVersion@{setVersion}}
+\index{setVersion@{setVersion}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{setVersion()}{setVersion()}}
+{\footnotesize\ttfamily void dxf\+Reader\+::set\+Version (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{v,  }\item[{bool}]{dxf\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdxfReader_ab6365263914b646a302e958eb11eddd0}\label{classdxfReader_ab6365263914b646a302e958eb11eddd0}} 
+\index{dxfReader@{dxfReader}!toUtf8String@{toUtf8String}}
+\index{toUtf8String@{toUtf8String}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{toUtf8String()}{toUtf8String()}}
+{\footnotesize\ttfamily std\+::string dxf\+Reader\+::to\+Utf8\+String (\begin{DoxyParamCaption}\item[{std\+::string}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdxfReader_a50df43953e5a3ed98403786e217f2626}\label{classdxfReader_a50df43953e5a3ed98403786e217f2626}} 
+\index{dxfReader@{dxfReader}!decoder@{decoder}}
+\index{decoder@{decoder}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{decoder}{decoder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__TextCodec}{DRW\+\_\+\+Text\+Codec}} dxf\+Reader\+::decoder\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdxfReader_ac7783cdeb203ddf3e48c5d9dbe98418d}\label{classdxfReader_ac7783cdeb203ddf3e48c5d9dbe98418d}} 
+\index{dxfReader@{dxfReader}!doubleData@{doubleData}}
+\index{doubleData@{doubleData}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{doubleData}{doubleData}}
+{\footnotesize\ttfamily double dxf\+Reader\+::double\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdxfReader_a149e55b7803fa13721e4030fca579678}\label{classdxfReader_a149e55b7803fa13721e4030fca579678}} 
+\index{dxfReader@{dxfReader}!filestr@{filestr}}
+\index{filestr@{filestr}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{filestr}{filestr}}
+{\footnotesize\ttfamily std\+::istream$\ast$ dxf\+Reader\+::filestr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdxfReader_a868e866b18e256ba5cc0520f9df27054}\label{classdxfReader_a868e866b18e256ba5cc0520f9df27054}} 
+\index{dxfReader@{dxfReader}!int64@{int64}}
+\index{int64@{int64}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{int64}{int64}}
+{\footnotesize\ttfamily unsigned long long int dxf\+Reader\+::int64\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdxfReader_af428b2e1747b05b0701368cfff9b30ab}\label{classdxfReader_af428b2e1747b05b0701368cfff9b30ab}} 
+\index{dxfReader@{dxfReader}!intData@{intData}}
+\index{intData@{intData}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{intData}{intData}}
+{\footnotesize\ttfamily signed int dxf\+Reader\+::int\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdxfReader_a76e657f13de0a3946b9e7d778e67ae3d}\label{classdxfReader_a76e657f13de0a3946b9e7d778e67ae3d}} 
+\index{dxfReader@{dxfReader}!skip@{skip}}
+\index{skip@{skip}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{skip}{skip}}
+{\footnotesize\ttfamily bool dxf\+Reader\+::skip\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdxfReader_ab06bfe2da193f7aaf8b8b75ed224167e}\label{classdxfReader_ab06bfe2da193f7aaf8b8b75ed224167e}} 
+\index{dxfReader@{dxfReader}!strData@{strData}}
+\index{strData@{strData}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{strData}{strData}}
+{\footnotesize\ttfamily std\+::string dxf\+Reader\+::str\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdxfReader_afac6df400a8473368f35002b22d8c96b}\label{classdxfReader_afac6df400a8473368f35002b22d8c96b}} 
+\index{dxfReader@{dxfReader}!type@{type}}
+\index{type@{type}!dxfReader@{dxfReader}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdxfReader_af40399d71d93abe36f931684cbcc6358}{TYPE}} dxf\+Reader\+::type}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/intern/\mbox{\hyperlink{dxfreader_8h}{dxfreader.\+h}}\item 
+src/libs/vdxf/libdxfrw/intern/\mbox{\hyperlink{dxfreader_8cpp}{dxfreader.\+cpp}}\end{DoxyCompactItemize}

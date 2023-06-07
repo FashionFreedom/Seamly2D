@@ -1,0 +1,129 @@
+\hypertarget{classAddToGroupDialog}{}\doxysection{Add\+To\+Group\+Dialog Class Reference}
+\label{classAddToGroupDialog}\index{AddToGroupDialog@{AddToGroupDialog}}
+
+
+{\ttfamily \#include $<$addtogroup\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Add\+To\+Group\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d1/dde/classAddToGroupDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAddToGroupDialog_a51616f0ae02f6559842d5bc51c3bd331}{Selected\+Object}} (bool selected, quint32 object, quint32 tool) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddToGroupDialog_aee26b02e66b0e3e0dbf9c50c31ebfb56}{Add\+To\+Group\+Dialog}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classAddToGroupDialog_af43ea6adf67ecb3a896559ba178f0ff7}{$\sim$\+Add\+To\+Group\+Dialog}} ()
+\item 
+void \mbox{\hyperlink{classAddToGroupDialog_a98acaf8af3189c4edcf0dbaac9e822f9}{fill\+Name\+Box}} ()
+\item 
+QString \mbox{\hyperlink{classAddToGroupDialog_a8972a64037697235eb1ed70fe243e000}{get\+Name}} () const
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, quint32 $>$ \mbox{\hyperlink{classAddToGroupDialog_a7c014b729406c856a6f317f71fea26ce}{get\+Group\+Data}} () const
+\item 
+virtual void \mbox{\hyperlink{classAddToGroupDialog_a47720c76f22bdc9cb8107067bfee6cfc}{Show\+Dialog}} (bool click) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Add\+To\+Group\+Dialog $\ast$ \mbox{\hyperlink{classAddToGroupDialog_aa683f76feef46aedff4d9eadceab4261}{ui}}
+\item 
+\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{classAddToGroupDialog_a2dcae19cc5ad35552bf0cb74470d4e06}{m\+\_\+doc}}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, quint32 $>$ \mbox{\hyperlink{classAddToGroupDialog_a8cba0051056d5266e7ff6dc980420ca5}{m\+\_\+group\+Data}}
+\item 
+QSound $\ast$ \mbox{\hyperlink{classAddToGroupDialog_a9668ae4db4973be5f4528400d9ae79ee}{m\+\_\+beep}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAddToGroupDialog_aee26b02e66b0e3e0dbf9c50c31ebfb56}\label{classAddToGroupDialog_aee26b02e66b0e3e0dbf9c50c31ebfb56}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!AddToGroupDialog@{AddToGroupDialog}}
+\index{AddToGroupDialog@{AddToGroupDialog}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{AddToGroupDialog()}{AddToGroupDialog()}}
+{\footnotesize\ttfamily Add\+To\+Group\+Dialog\+::\+Add\+To\+Group\+Dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAddToGroupDialog_af43ea6adf67ecb3a896559ba178f0ff7}\label{classAddToGroupDialog_af43ea6adf67ecb3a896559ba178f0ff7}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!````~AddToGroupDialog@{$\sim$AddToGroupDialog}}
+\index{````~AddToGroupDialog@{$\sim$AddToGroupDialog}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$AddToGroupDialog()}{~AddToGroupDialog()}}
+{\footnotesize\ttfamily Add\+To\+Group\+Dialog\+::$\sim$\+Add\+To\+Group\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddToGroupDialog_a98acaf8af3189c4edcf0dbaac9e822f9}\label{classAddToGroupDialog_a98acaf8af3189c4edcf0dbaac9e822f9}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!fillNameBox@{fillNameBox}}
+\index{fillNameBox@{fillNameBox}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{fillNameBox()}{fillNameBox()}}
+{\footnotesize\ttfamily void Add\+To\+Group\+Dialog\+::fill\+Name\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAddToGroupDialog_a7c014b729406c856a6f317f71fea26ce}\label{classAddToGroupDialog_a7c014b729406c856a6f317f71fea26ce}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!getGroupData@{getGroupData}}
+\index{getGroupData@{getGroupData}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{getGroupData()}{getGroupData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, quint32 $>$ Add\+To\+Group\+Dialog\+::get\+Group\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAddToGroupDialog_a8972a64037697235eb1ed70fe243e000}\label{classAddToGroupDialog_a8972a64037697235eb1ed70fe243e000}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!getName@{getName}}
+\index{getName@{getName}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily QString Add\+To\+Group\+Dialog\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAddToGroupDialog_a51616f0ae02f6559842d5bc51c3bd331}\label{classAddToGroupDialog_a51616f0ae02f6559842d5bc51c3bd331}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!SelectedObject@{SelectedObject}}
+\index{SelectedObject@{SelectedObject}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{SelectedObject}{SelectedObject}}
+{\footnotesize\ttfamily void Add\+To\+Group\+Dialog\+::\+Selected\+Object (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{object,  }\item[{quint32}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAddToGroupDialog_a47720c76f22bdc9cb8107067bfee6cfc}\label{classAddToGroupDialog_a47720c76f22bdc9cb8107067bfee6cfc}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!ShowDialog@{ShowDialog}}
+\index{ShowDialog@{ShowDialog}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{ShowDialog()}{ShowDialog()}}
+{\footnotesize\ttfamily void Add\+To\+Group\+Dialog\+::\+Show\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{click }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a6da67387057958c9a8de664a86c14efb}{Dialog\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAddToGroupDialog_a9668ae4db4973be5f4528400d9ae79ee}\label{classAddToGroupDialog_a9668ae4db4973be5f4528400d9ae79ee}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!m\_beep@{m\_beep}}
+\index{m\_beep@{m\_beep}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{m\_beep}{m\_beep}}
+{\footnotesize\ttfamily QSound$\ast$ Add\+To\+Group\+Dialog\+::m\+\_\+beep\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAddToGroupDialog_a2dcae19cc5ad35552bf0cb74470d4e06}\label{classAddToGroupDialog_a2dcae19cc5ad35552bf0cb74470d4e06}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!m\_doc@{m\_doc}}
+\index{m\_doc@{m\_doc}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{m\_doc}{m\_doc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}}$\ast$ Add\+To\+Group\+Dialog\+::m\+\_\+doc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAddToGroupDialog_a8cba0051056d5266e7ff6dc980420ca5}\label{classAddToGroupDialog_a8cba0051056d5266e7ff6dc980420ca5}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!m\_groupData@{m\_groupData}}
+\index{m\_groupData@{m\_groupData}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{m\_groupData}{m\_groupData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$quint32, quint32$>$ Add\+To\+Group\+Dialog\+::m\+\_\+group\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAddToGroupDialog_aa683f76feef46aedff4d9eadceab4261}\label{classAddToGroupDialog_aa683f76feef46aedff4d9eadceab4261}} 
+\index{AddToGroupDialog@{AddToGroupDialog}!ui@{ui}}
+\index{ui@{ui}!AddToGroupDialog@{AddToGroupDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Add\+To\+Group\+Dialog$\ast$ Add\+To\+Group\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{addtogroup__dialog_8h}{addtogroup\+\_\+dialog.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{addtogroup__dialog_8cpp}{addtogroup\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

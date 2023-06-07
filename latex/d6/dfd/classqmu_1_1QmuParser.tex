@@ -1,0 +1,444 @@
+\hypertarget{classqmu_1_1QmuParser}{}\doxysection{qmu\+::Qmu\+Parser Class Reference}
+\label{classqmu_1_1QmuParser}\index{qmu::QmuParser@{qmu::QmuParser}}
+
+
+Mathematical expressions parser.  
+
+
+
+
+{\ttfamily \#include $<$qmuparser.\+h$>$}
+
+Inheritance diagram for qmu\+::Qmu\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d6/dfd/classqmu_1_1QmuParser}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1QmuParser_a5f7a5f34255477e7a7c280090766c3fa}{Qmu\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1QmuParser_ae6bed8b51928071ee9c368ea06d71d34}{Init\+Char\+Sets}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Define the character sets. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1QmuParser_a18bc60dcd0dcfc5f67e34cfe05d9531d}{Init\+Fun}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Initialize the default functions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1QmuParser_a34ba9be2fce696c68d1c8da31e43fabf}{Init\+Const}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Initialize constants. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1QmuParser_a0c98d05db96dfd1e2e67879a70b088fb}{Init\+Oprt}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Initialize operators. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1QmuParser_ac77c139b1d1adf5e795f2a828d729cc0}{On\+Detect\+Var}} (const QString \&p\+Expr, int \&n\+Start, int \&n\+End) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+qreal \mbox{\hyperlink{classqmu_1_1QmuParser_ad7bcbeda861ad1331d41f3e0e6e7153e}{Diff}} (qreal $\ast$a\+\_\+\+Var, qreal a\+\_\+f\+Pos, qreal a\+\_\+f\+Epsilon=0) const
+\begin{DoxyCompactList}\small\item\em Numerically differentiate with regard to a variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classqmu_1_1QmuParser_a986d1b38db11d9126c4cb273704ef09e}{Is\+Val}} (const QString \&a\+\_\+sz\+Expr, int $\ast$a\+\_\+i\+Pos, qreal $\ast$a\+\_\+f\+Val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)
+\begin{DoxyCompactList}\small\item\em Default value recognition callback. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a52432e9aad22fde1a28604ba987098b2}{Sinh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_aef225fb1932aa2c96cc9d9c8efc12f3e}{Cosh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a315c23033cfe1ffac90d9827310c8f7f}{Tanh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_aadcc795568eae9042a34bb6b0ceb7c8e}{ASinh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a3c8cedab6d5a3efa0838116c9e3f9fa9}{ACosh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a463e3e07fc37ab203d19184592520bc1}{ATanh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a55b629a57d1c5174f0558a3294347a3a}{Degree\+To\+Radian}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a1b43c66ab5308dc96a792cdb43321e41}{Radian\+To\+Degree}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a9ac131876c0fb63c72cd17c50ec55bd1}{SinD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_ac95b361ae09ef46bbd2a1c976f76ab2c}{CosD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_ad646bdc0938d2edddb3ba35ccae704e5}{TanD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_adc34a118e6b957503cfc4686921b27dc}{ASinD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a21f9ecc52d3e26dc5219f755a265cceb}{ACosD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a6205e16135a0aab1920c7d80ccbc0799}{ATanD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_adc0b82c9263337c536fabb37164c13f1}{Log2}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_af17ab3ea7969ffdce8fe274f63534f56}{Log10}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a786ce5f73534f306880fbb0f7b297ccc}{Abs}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a172ead4c742c2cc6e799fada706fe417}{Rint}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a2bb150872899788253f61c254b94000c}{Sign}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a8820404580463becf996a90090de03db}{FMod}} (qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a286af87c388e426cae5e20813ff9682f}{Unary\+Minus}} (qreal v)
+\begin{DoxyCompactList}\small\item\em Callback for the unary minus operator. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a1c316760b747bd194c4ff3320937aeb0}{Sum}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for adding multiple values. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_abf427bce301624189e115a15517d83a2}{Avg}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for averaging multiple values. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_a0d726b5161ca0b6b4c5390416da473c7}{Min}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for determining the minimum value out of a vector. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1QmuParser_ae80845b01f032e13df81ec1832fcf591}{Max}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for determining the maximum value out of a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Mathematical expressions parser. 
+
+Standard implementation of the mathematical expressions parser. Can be used as a reference implementation for subclassing the parser.
+
+
+\footnotesize  (C) 2011 Ingo Berg~\newline
+ muparser(at)gmx.\+de 
+\normalsize  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a5f7a5f34255477e7a7c280090766c3fa}\label{classqmu_1_1QmuParser_a5f7a5f34255477e7a7c280090766c3fa}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!QmuParser@{QmuParser}}
+\index{QmuParser@{QmuParser}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{QmuParser()}{QmuParser()}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+::\+Qmu\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Call \mbox{\hyperlink{classqmu_1_1QmuParserBase}{Qmu\+Parser\+Base}} class constructor and trigger Function, Operator and Constant initialization. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a786ce5f73534f306880fbb0f7b297ccc}\label{classqmu_1_1QmuParser_a786ce5f73534f306880fbb0f7b297ccc}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Abs@{Abs}}
+\index{Abs@{Abs}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Abs()}{Abs()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Abs (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a21f9ecc52d3e26dc5219f755a265cceb}\label{classqmu_1_1QmuParser_a21f9ecc52d3e26dc5219f755a265cceb}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!ACosD@{ACosD}}
+\index{ACosD@{ACosD}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{ACosD()}{ACosD()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+ACosD (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a3c8cedab6d5a3efa0838116c9e3f9fa9}\label{classqmu_1_1QmuParser_a3c8cedab6d5a3efa0838116c9e3f9fa9}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!ACosh@{ACosh}}
+\index{ACosh@{ACosh}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{ACosh()}{ACosh()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+ACosh (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_adc34a118e6b957503cfc4686921b27dc}\label{classqmu_1_1QmuParser_adc34a118e6b957503cfc4686921b27dc}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!ASinD@{ASinD}}
+\index{ASinD@{ASinD}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{ASinD()}{ASinD()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+ASinD (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_aadcc795568eae9042a34bb6b0ceb7c8e}\label{classqmu_1_1QmuParser_aadcc795568eae9042a34bb6b0ceb7c8e}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!ASinh@{ASinh}}
+\index{ASinh@{ASinh}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{ASinh()}{ASinh()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+ASinh (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a6205e16135a0aab1920c7d80ccbc0799}\label{classqmu_1_1QmuParser_a6205e16135a0aab1920c7d80ccbc0799}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!ATanD@{ATanD}}
+\index{ATanD@{ATanD}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{ATanD()}{ATanD()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+ATanD (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a463e3e07fc37ab203d19184592520bc1}\label{classqmu_1_1QmuParser_a463e3e07fc37ab203d19184592520bc1}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!ATanh@{ATanh}}
+\index{ATanh@{ATanh}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{ATanh()}{ATanh()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+ATanh (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_abf427bce301624189e115a15517d83a2}\label{classqmu_1_1QmuParser_abf427bce301624189e115a15517d83a2}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Avg@{Avg}}
+\index{Avg@{Avg}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Avg()}{Avg()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Avg (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Callback for averaging multiple values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+af\+Arg} & Vector with the function arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+i\+Argc} & The size of a\+\_\+af\+Arg \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_ac95b361ae09ef46bbd2a1c976f76ab2c}\label{classqmu_1_1QmuParser_ac95b361ae09ef46bbd2a1c976f76ab2c}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!CosD@{CosD}}
+\index{CosD@{CosD}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{CosD()}{CosD()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+CosD (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_aef225fb1932aa2c96cc9d9c8efc12f3e}\label{classqmu_1_1QmuParser_aef225fb1932aa2c96cc9d9c8efc12f3e}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Cosh@{Cosh}}
+\index{Cosh@{Cosh}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Cosh()}{Cosh()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Cosh (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a55b629a57d1c5174f0558a3294347a3a}\label{classqmu_1_1QmuParser_a55b629a57d1c5174f0558a3294347a3a}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!DegreeToRadian@{DegreeToRadian}}
+\index{DegreeToRadian@{DegreeToRadian}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{DegreeToRadian()}{DegreeToRadian()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Degree\+To\+Radian (\begin{DoxyParamCaption}\item[{qreal}]{deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_ad7bcbeda861ad1331d41f3e0e6e7153e}\label{classqmu_1_1QmuParser_ad7bcbeda861ad1331d41f3e0e6e7153e}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Diff@{Diff}}
+\index{Diff@{Diff}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Diff()}{Diff()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Diff (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{a\+\_\+\+Var,  }\item[{qreal}]{a\+\_\+f\+Pos,  }\item[{qreal}]{a\+\_\+f\+Epsilon = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Numerically differentiate with regard to a variable. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+\+Var} & Pointer to the differentiation variable. \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+f\+Pos} & Position at which the differentiation should take place. \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+f\+Epsilon} & Epsilon used for the numerical differentiation.\\
+\hline
+\end{DoxyParams}
+Numerical differentiation uses a 5 point operator yielding a 4th order formula. The default value for epsilon is 0.\+00074 which is numeric\+\_\+limits$<$double$>$\+::epsilon() $^\wedge$ (1/5) as suggested in the mu\+Qmu\+Parser forum\+:
+
+\href{http://sourceforge.net/forum/forum.php?thread_id=1994611&forum_id=462843}{\texttt{ http\+://sourceforge.\+net/forum/forum.\+php?thread\+\_\+id=1994611\&forum\+\_\+id=462843}} \mbox{\Hypertarget{classqmu_1_1QmuParser_a8820404580463becf996a90090de03db}\label{classqmu_1_1QmuParser_a8820404580463becf996a90090de03db}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!FMod@{FMod}}
+\index{FMod@{FMod}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{FMod()}{FMod()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+FMod (\begin{DoxyParamCaption}\item[{qreal}]{number,  }\item[{qreal}]{denom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_ae6bed8b51928071ee9c368ea06d71d34}\label{classqmu_1_1QmuParser_ae6bed8b51928071ee9c368ea06d71d34}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!InitCharSets@{InitCharSets}}
+\index{InitCharSets@{InitCharSets}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{InitCharSets()}{InitCharSets()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+::\+Init\+Char\+Sets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Define the character sets. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classqmu_1_1QmuParserBase_afdd560e11c3f0de4bf42a6aac0aa7d4f}{Define\+Name\+Chars}}, \mbox{\hyperlink{classqmu_1_1QmuParserBase_a39ed6263353898809a57ec8f51de1b0c}{Define\+Oprt\+Chars}}, \mbox{\hyperlink{classqmu_1_1QmuParserBase_a818ae77a8f1c9be23913de8bf2bd1ba7}{Define\+Infix\+Oprt\+Chars}}
+\end{DoxySeeAlso}
+This function is used for initializing the default character sets that define the characters to be useable in function and variable names and operators. 
+
+Implements \mbox{\hyperlink{classqmu_1_1QmuParserBase_ad7c076d140abd8b9394b7f62f0d9f442}{qmu\+::\+Qmu\+Parser\+Base}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classqmu_1_1QmuFormulaBase_a1e386679e18f12d74ec5ec6180b187b5}{qmu\+::\+Qmu\+Formula\+Base}}.
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a34ba9be2fce696c68d1c8da31e43fabf}\label{classqmu_1_1QmuParser_a34ba9be2fce696c68d1c8da31e43fabf}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!InitConst@{InitConst}}
+\index{InitConst@{InitConst}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{InitConst()}{InitConst()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+::\+Init\+Const (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialize constants. 
+
+By default the \mbox{\hyperlink{classqmu_1_1QmuParser}{Qmu\+Parser}} recognizes two constants. Pi (\char`\"{}pi\char`\"{}) and the eulerian number (\char`\"{}\+\_\+e\char`\"{}). 
+
+Implements \mbox{\hyperlink{classqmu_1_1QmuParserBase_a6035941ed809ac45aa0351695ebcf38b}{qmu\+::\+Qmu\+Parser\+Base}}.
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a18bc60dcd0dcfc5f67e34cfe05d9531d}\label{classqmu_1_1QmuParser_a18bc60dcd0dcfc5f67e34cfe05d9531d}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!InitFun@{InitFun}}
+\index{InitFun@{InitFun}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{InitFun()}{InitFun()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+::\+Init\+Fun (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialize the default functions. 
+
+
+
+Implements \mbox{\hyperlink{classqmu_1_1QmuParserBase_ab56f539f9514e5570e60257d4eb442f1}{qmu\+::\+Qmu\+Parser\+Base}}.
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a0c98d05db96dfd1e2e67879a70b088fb}\label{classqmu_1_1QmuParser_a0c98d05db96dfd1e2e67879a70b088fb}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!InitOprt@{InitOprt}}
+\index{InitOprt@{InitOprt}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{InitOprt()}{InitOprt()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+::\+Init\+Oprt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialize operators. 
+
+By default only the unary minus operator is added. 
+
+Implements \mbox{\hyperlink{classqmu_1_1QmuParserBase_af41fa956f7fa4405ee6a87dfb22e6531}{qmu\+::\+Qmu\+Parser\+Base}}.
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a986d1b38db11d9126c4cb273704ef09e}\label{classqmu_1_1QmuParser_a986d1b38db11d9126c4cb273704ef09e}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!IsVal@{IsVal}}
+\index{IsVal@{IsVal}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{IsVal()}{IsVal()}}
+{\footnotesize\ttfamily int qmu\+::\+Qmu\+Parser\+::\+Is\+Val (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+sz\+Expr,  }\item[{int $\ast$}]{a\+\_\+i\+Pos,  }\item[{qreal $\ast$}]{a\+\_\+f\+Val,  }\item[{const QLocale \&}]{locale,  }\item[{const QChar \&}]{decimal,  }\item[{const QChar \&}]{thousand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Default value recognition callback. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+sz\+Expr} & Pointer to the expression \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em a\+\_\+i\+Pos} & Pointer to an index storing the current position within the expression \\
+\hline
+\mbox{\texttt{ out}}  & {\em a\+\_\+f\+Val} & Pointer where the value should be stored in case one is found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a value was found 0 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_af17ab3ea7969ffdce8fe274f63534f56}\label{classqmu_1_1QmuParser_af17ab3ea7969ffdce8fe274f63534f56}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Log10@{Log10}}
+\index{Log10@{Log10}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Log10()}{Log10()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Log10 (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_adc0b82c9263337c536fabb37164c13f1}\label{classqmu_1_1QmuParser_adc0b82c9263337c536fabb37164c13f1}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Log2@{Log2}}
+\index{Log2@{Log2}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Log2()}{Log2()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Log2 (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_ae80845b01f032e13df81ec1832fcf591}\label{classqmu_1_1QmuParser_ae80845b01f032e13df81ec1832fcf591}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Max@{Max}}
+\index{Max@{Max}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Max()}{Max()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Max (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Callback for determining the maximum value out of a vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+af\+Arg} & Vector with the function arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+i\+Argc} & The size of a\+\_\+af\+Arg \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a0d726b5161ca0b6b4c5390416da473c7}\label{classqmu_1_1QmuParser_a0d726b5161ca0b6b4c5390416da473c7}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Min@{Min}}
+\index{Min@{Min}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Min()}{Min()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Min (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Callback for determining the minimum value out of a vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+af\+Arg} & Vector with the function arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+i\+Argc} & The size of a\+\_\+af\+Arg \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_ac77c139b1d1adf5e795f2a828d729cc0}\label{classqmu_1_1QmuParser_ac77c139b1d1adf5e795f2a828d729cc0}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!OnDetectVar@{OnDetectVar}}
+\index{OnDetectVar@{OnDetectVar}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{OnDetectVar()}{OnDetectVar()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+::\+On\+Detect\+Var (\begin{DoxyParamCaption}\item[{const QString \&}]{p\+Expr,  }\item[{int \&}]{n\+Start,  }\item[{int \&}]{n\+End }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classqmu_1_1QmuParserBase_acba1aa3824bb417a69d7e20036c9f47f}{qmu\+::\+Qmu\+Parser\+Base}}.
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a1b43c66ab5308dc96a792cdb43321e41}\label{classqmu_1_1QmuParser_a1b43c66ab5308dc96a792cdb43321e41}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!RadianToDegree@{RadianToDegree}}
+\index{RadianToDegree@{RadianToDegree}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{RadianToDegree()}{RadianToDegree()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Radian\+To\+Degree (\begin{DoxyParamCaption}\item[{qreal}]{rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a172ead4c742c2cc6e799fada706fe417}\label{classqmu_1_1QmuParser_a172ead4c742c2cc6e799fada706fe417}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Rint@{Rint}}
+\index{Rint@{Rint}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Rint()}{Rint()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Rint (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a2bb150872899788253f61c254b94000c}\label{classqmu_1_1QmuParser_a2bb150872899788253f61c254b94000c}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Sign@{Sign}}
+\index{Sign@{Sign}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Sign()}{Sign()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Sign (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a9ac131876c0fb63c72cd17c50ec55bd1}\label{classqmu_1_1QmuParser_a9ac131876c0fb63c72cd17c50ec55bd1}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!SinD@{SinD}}
+\index{SinD@{SinD}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{SinD()}{SinD()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+SinD (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a52432e9aad22fde1a28604ba987098b2}\label{classqmu_1_1QmuParser_a52432e9aad22fde1a28604ba987098b2}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Sinh@{Sinh}}
+\index{Sinh@{Sinh}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Sinh()}{Sinh()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Sinh (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a1c316760b747bd194c4ff3320937aeb0}\label{classqmu_1_1QmuParser_a1c316760b747bd194c4ff3320937aeb0}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Sum@{Sum}}
+\index{Sum@{Sum}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Sum()}{Sum()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Sum (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Callback for adding multiple values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+af\+Arg} & Vector with the function arguments \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+i\+Argc} & The size of a\+\_\+af\+Arg \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuParser_ad646bdc0938d2edddb3ba35ccae704e5}\label{classqmu_1_1QmuParser_ad646bdc0938d2edddb3ba35ccae704e5}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!TanD@{TanD}}
+\index{TanD@{TanD}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{TanD()}{TanD()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+TanD (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a315c23033cfe1ffac90d9827310c8f7f}\label{classqmu_1_1QmuParser_a315c23033cfe1ffac90d9827310c8f7f}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!Tanh@{Tanh}}
+\index{Tanh@{Tanh}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{Tanh()}{Tanh()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Tanh (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParser_a286af87c388e426cae5e20813ff9682f}\label{classqmu_1_1QmuParser_a286af87c388e426cae5e20813ff9682f}} 
+\index{qmu::QmuParser@{qmu::QmuParser}!UnaryMinus@{UnaryMinus}}
+\index{UnaryMinus@{UnaryMinus}!qmu::QmuParser@{qmu::QmuParser}}
+\doxysubsubsection{\texorpdfstring{UnaryMinus()}{UnaryMinus()}}
+{\footnotesize\ttfamily qreal qmu\+::\+Qmu\+Parser\+::\+Unary\+Minus (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Callback for the unary minus operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The value to negate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/v 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuparser_8h}{qmuparser.\+h}}\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuparser_8cpp}{qmuparser.\+cpp}}\end{DoxyCompactItemize}

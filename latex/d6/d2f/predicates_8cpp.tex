@@ -1,0 +1,480 @@
+\hypertarget{predicates_8cpp}{}\doxysection{src/libs/vobj/predicates.cpp File Reference}
+\label{predicates_8cpp}\index{src/libs/vobj/predicates.cpp@{src/libs/vobj/predicates.cpp}}
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include \char`\"{}../vmisc/diagnostic.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_ad49beae4f708cdfe26352d865ed2eb95}{INEXACT}}~/$\ast$ Nothing $\ast$/
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a08c32ee2465d67f098ab09bdf0e2eb59}{REALPRINT}}~doubleprint
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a810b77dd5b3d884e1d2641a2e597df22}{REALRAND}}~doublerand
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a573b0e3df6fc0f000607eca1c5569f68}{NARROWRAND}}~narrowdoublerand
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a151c130268f15ea9975886f0750f3079}{UNIFORMRAND}}~uniformdoublerand
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_aef0ab760424f561c08ca685b4fd28a3f}{Absolute}}(a)~((a) $>$= 0.\+0 ? (a) \+: -\/(a))
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_afdb937df435c24d5c402eb0fdd97f6da}{Fast\+\_\+\+Two\+\_\+\+Sum\+\_\+\+Tail}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_ae85afbfee038480d9baf7796514cb121}{Fast\+\_\+\+Two\+\_\+\+Sum}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a367e02bc95e29a48c4815fcd63806f64}{Two\+\_\+\+Sum\+\_\+\+Tail}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_aa559790796899b51e5f0afcb2dfb8ed7}{Two\+\_\+\+Sum}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a636a9c6e1b1171cbf745575166954389}{Two\+\_\+\+Diff\+\_\+\+Tail}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_ac60bb459f7540f5717747fbef47e62b4}{Two\+\_\+\+Diff}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_aeeb6165c4120f8480d2f92fa7e3061ab}{Split}}(a,  ahi,  alo)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_ac9dcc9500c883fdac1acdf11127ae886}{Two\+\_\+\+Product\+\_\+\+Tail}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a27f5145ac554d28b9c257ac0909d055b}{Two\+\_\+\+Product}}(a,  b,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a4b7fb41ff1c60fa3b701bc405a5c5e46}{Two\+\_\+\+Product\+\_\+\+Presplit}}(a,  b,  bhi,  blo,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a6e9ed62b93fa2a55ede246e85507de18}{Square\+\_\+\+Tail}}(a,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a0cce77b99432ef29e32ed7481e470f10}{Square}}(a,  x,  y)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_aac797f696ef3cee9ffd42c36f8990185}{Two\+\_\+\+One\+\_\+\+Sum}}(a1,  a0,  b,  x2,  x1,  x0)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_a5315d6436a90d87938ae9df8a408de67}{Two\+\_\+\+One\+\_\+\+Diff}}(a1,  a0,  b,  x2,  x1,  x0)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_ae3c61622ca0206f23311a66c864f8fff}{Two\+\_\+\+Two\+\_\+\+Sum}}(a1,  a0,  b1,  b0,  x3,  x2,  x1,  x0)
+\item 
+\#define \mbox{\hyperlink{predicates_8cpp_ab4f08ad5dba11bbdf27b64132824b3a3}{Two\+\_\+\+Two\+\_\+\+Diff}}(a1,  a0,  b1,  b0,  x3,  x2,  x1,  x0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{predicates_8cpp_a32edc074e3e366c1748b3a27ea86caed}{exactinit}} ()
+\item 
+int \mbox{\hyperlink{predicates_8cpp_a5c05029ce2519645a66b0ea76e0ca21a}{fast\+\_\+expansion\+\_\+sum\+\_\+zeroelim}} (int elen, qreal $\ast$e, int flen, qreal $\ast$f, qreal $\ast$h)
+\item 
+int \mbox{\hyperlink{predicates_8cpp_a703314e5cbf344d70441046c5f4769a7}{scale\+\_\+expansion\+\_\+zeroelim}} (int elen, qreal $\ast$e, qreal b, qreal $\ast$h)
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a348664fe596855a87aae133a4961851a}{estimate}} (int elen, qreal $\ast$e)
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a976b5a05aa900a1a42f8ceb3971546d2}{incircleadapt}} (qreal $\ast$pa, qreal $\ast$pb, qreal $\ast$pc, qreal $\ast$pd, qreal permanent)
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a40bea706d574b6faf33aaf5c7728ed3b}{incircle}} (qreal $\ast$pa, qreal $\ast$pb, qreal $\ast$pc, qreal $\ast$pd)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a2a7f83ebabe7c0b864e6e4473796826a}{splitter}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a294322d88f49e20954d824785a25bd91}{epsilon}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a6bf1680c4fcd12563d2a527422edda2b}{resulterrbound}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a1bd6045208bce53ae0fea320a9ccce49}{ccwerrboundA}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a258aa970729f4e2f93d652e423ce4aa4}{ccwerrboundB}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a98ece2f18574696a03fd67dcff85857b}{ccwerrboundC}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_aa1e7d496ba49832df11b5fad18abc0fd}{o3derrboundA}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a55b2440f75890829214e34a38b85d694}{o3derrboundB}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a42f609c65efb57b2c0fb95b13ae8d8c4}{o3derrboundC}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_afb7e3e9d4268abafb877ee68f30dd786}{iccerrboundA}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_af059a72ef4d41ef7a9778a5f1a09c36b}{iccerrboundB}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a3da1f0ab7c41f63e1c539ae34dfb576b}{iccerrboundC}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_aaef78f6185fde7aeced9dc5e6ddfaf0f}{isperrboundA}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_aa4f9d6a5af7082d41264b34705e238b1}{isperrboundB}}
+\item 
+qreal \mbox{\hyperlink{predicates_8cpp_a7a706ac9c87f18adb2334b6e2d0a7f66}{isperrboundC}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{predicates_8cpp_aef0ab760424f561c08ca685b4fd28a3f}\label{predicates_8cpp_aef0ab760424f561c08ca685b4fd28a3f}} 
+\index{predicates.cpp@{predicates.cpp}!Absolute@{Absolute}}
+\index{Absolute@{Absolute}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Absolute}{Absolute}}
+{\footnotesize\ttfamily \#define Absolute(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~((a) $>$= 0.\+0 ? (a) \+: -\/(a))}
+
+\mbox{\Hypertarget{predicates_8cpp_ae85afbfee038480d9baf7796514cb121}\label{predicates_8cpp_ae85afbfee038480d9baf7796514cb121}} 
+\index{predicates.cpp@{predicates.cpp}!Fast\_Two\_Sum@{Fast\_Two\_Sum}}
+\index{Fast\_Two\_Sum@{Fast\_Two\_Sum}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Fast\_Two\_Sum}{Fast\_Two\_Sum}}
+{\footnotesize\ttfamily \#define Fast\+\_\+\+Two\+\_\+\+Sum(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  x = (qreal) (a + b); \(\backslash\)}
+\DoxyCodeLine{  Fast\_Two\_Sum\_Tail(a, b, x, y)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_afdb937df435c24d5c402eb0fdd97f6da}\label{predicates_8cpp_afdb937df435c24d5c402eb0fdd97f6da}} 
+\index{predicates.cpp@{predicates.cpp}!Fast\_Two\_Sum\_Tail@{Fast\_Two\_Sum\_Tail}}
+\index{Fast\_Two\_Sum\_Tail@{Fast\_Two\_Sum\_Tail}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Fast\_Two\_Sum\_Tail}{Fast\_Two\_Sum\_Tail}}
+{\footnotesize\ttfamily \#define Fast\+\_\+\+Two\+\_\+\+Sum\+\_\+\+Tail(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  bvirt = x -\/ a; \(\backslash\)}
+\DoxyCodeLine{  y = b -\/ bvirt}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_ad49beae4f708cdfe26352d865ed2eb95}\label{predicates_8cpp_ad49beae4f708cdfe26352d865ed2eb95}} 
+\index{predicates.cpp@{predicates.cpp}!INEXACT@{INEXACT}}
+\index{INEXACT@{INEXACT}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{INEXACT}{INEXACT}}
+{\footnotesize\ttfamily \#define INEXACT~/$\ast$ Nothing $\ast$/}
+
+\mbox{\Hypertarget{predicates_8cpp_a573b0e3df6fc0f000607eca1c5569f68}\label{predicates_8cpp_a573b0e3df6fc0f000607eca1c5569f68}} 
+\index{predicates.cpp@{predicates.cpp}!NARROWRAND@{NARROWRAND}}
+\index{NARROWRAND@{NARROWRAND}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{NARROWRAND}{NARROWRAND}}
+{\footnotesize\ttfamily \#define NARROWRAND~narrowdoublerand}
+
+\mbox{\Hypertarget{predicates_8cpp_a08c32ee2465d67f098ab09bdf0e2eb59}\label{predicates_8cpp_a08c32ee2465d67f098ab09bdf0e2eb59}} 
+\index{predicates.cpp@{predicates.cpp}!REALPRINT@{REALPRINT}}
+\index{REALPRINT@{REALPRINT}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{REALPRINT}{REALPRINT}}
+{\footnotesize\ttfamily \#define REALPRINT~doubleprint}
+
+\mbox{\Hypertarget{predicates_8cpp_a810b77dd5b3d884e1d2641a2e597df22}\label{predicates_8cpp_a810b77dd5b3d884e1d2641a2e597df22}} 
+\index{predicates.cpp@{predicates.cpp}!REALRAND@{REALRAND}}
+\index{REALRAND@{REALRAND}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{REALRAND}{REALRAND}}
+{\footnotesize\ttfamily \#define REALRAND~doublerand}
+
+\mbox{\Hypertarget{predicates_8cpp_aeeb6165c4120f8480d2f92fa7e3061ab}\label{predicates_8cpp_aeeb6165c4120f8480d2f92fa7e3061ab}} 
+\index{predicates.cpp@{predicates.cpp}!Split@{Split}}
+\index{Split@{Split}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Split}{Split}}
+{\footnotesize\ttfamily \#define Split(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{ahi,  }\item[{}]{alo }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  c = (qreal) (\mbox{\hyperlink{predicates_8cpp_a2a7f83ebabe7c0b864e6e4473796826a}{splitter}} * a); \(\backslash\)}
+\DoxyCodeLine{  abig = (qreal) (c -\/ a); \(\backslash\)}
+\DoxyCodeLine{  ahi = c -\/ abig; \(\backslash\)}
+\DoxyCodeLine{  alo = a -\/ ahi}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a0cce77b99432ef29e32ed7481e470f10}\label{predicates_8cpp_a0cce77b99432ef29e32ed7481e470f10}} 
+\index{predicates.cpp@{predicates.cpp}!Square@{Square}}
+\index{Square@{Square}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Square}{Square}}
+{\footnotesize\ttfamily \#define Square(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  x = (qreal) (a * a); \(\backslash\)}
+\DoxyCodeLine{  Square\_Tail(a, x, y)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a6e9ed62b93fa2a55ede246e85507de18}\label{predicates_8cpp_a6e9ed62b93fa2a55ede246e85507de18}} 
+\index{predicates.cpp@{predicates.cpp}!Square\_Tail@{Square\_Tail}}
+\index{Square\_Tail@{Square\_Tail}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Square\_Tail}{Square\_Tail}}
+{\footnotesize\ttfamily \#define Square\+\_\+\+Tail(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{predicates_8cpp_aeeb6165c4120f8480d2f92fa7e3061ab}{Split}}(a, ahi, alo); \(\backslash\)}
+\DoxyCodeLine{  err1 = x -\/ (ahi * ahi); \(\backslash\)}
+\DoxyCodeLine{  err3 = err1 -\/ ((ahi + ahi) * alo); \(\backslash\)}
+\DoxyCodeLine{  y = (alo * alo) -\/ err3}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_ac60bb459f7540f5717747fbef47e62b4}\label{predicates_8cpp_ac60bb459f7540f5717747fbef47e62b4}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Diff@{Two\_Diff}}
+\index{Two\_Diff@{Two\_Diff}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Diff}{Two\_Diff}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Diff(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  x = (qreal) (a -\/ b); \(\backslash\)}
+\DoxyCodeLine{  Two\_Diff\_Tail(a, b, x, y)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a636a9c6e1b1171cbf745575166954389}\label{predicates_8cpp_a636a9c6e1b1171cbf745575166954389}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Diff\_Tail@{Two\_Diff\_Tail}}
+\index{Two\_Diff\_Tail@{Two\_Diff\_Tail}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Diff\_Tail}{Two\_Diff\_Tail}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Diff\+\_\+\+Tail(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  bvirt = (qreal) (a -\/ x); \(\backslash\)}
+\DoxyCodeLine{  avirt = x + bvirt; \(\backslash\)}
+\DoxyCodeLine{  bround = bvirt -\/ b; \(\backslash\)}
+\DoxyCodeLine{  around = a -\/ avirt; \(\backslash\)}
+\DoxyCodeLine{  y = around + bround}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a5315d6436a90d87938ae9df8a408de67}\label{predicates_8cpp_a5315d6436a90d87938ae9df8a408de67}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_One\_Diff@{Two\_One\_Diff}}
+\index{Two\_One\_Diff@{Two\_One\_Diff}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_One\_Diff}{Two\_One\_Diff}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+One\+\_\+\+Diff(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a0,  }\item[{}]{b,  }\item[{}]{x2,  }\item[{}]{x1,  }\item[{}]{x0 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{predicates_8cpp_ac60bb459f7540f5717747fbef47e62b4}{Two\_Diff}}(a0, b , \_i, x0); \(\backslash\)}
+\DoxyCodeLine{  Two\_Sum( a1, \_i, x2, x1)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_aac797f696ef3cee9ffd42c36f8990185}\label{predicates_8cpp_aac797f696ef3cee9ffd42c36f8990185}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_One\_Sum@{Two\_One\_Sum}}
+\index{Two\_One\_Sum@{Two\_One\_Sum}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_One\_Sum}{Two\_One\_Sum}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+One\+\_\+\+Sum(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a0,  }\item[{}]{b,  }\item[{}]{x2,  }\item[{}]{x1,  }\item[{}]{x0 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{predicates_8cpp_aa559790796899b51e5f0afcb2dfb8ed7}{Two\_Sum}}(a0, b , \_i, x0); \(\backslash\)}
+\DoxyCodeLine{  Two\_Sum(a1, \_i, x2, x1)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a27f5145ac554d28b9c257ac0909d055b}\label{predicates_8cpp_a27f5145ac554d28b9c257ac0909d055b}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Product@{Two\_Product}}
+\index{Two\_Product@{Two\_Product}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Product}{Two\_Product}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Product(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  x = (qreal) (a * b); \(\backslash\)}
+\DoxyCodeLine{  Two\_Product\_Tail(a, b, x, y)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a4b7fb41ff1c60fa3b701bc405a5c5e46}\label{predicates_8cpp_a4b7fb41ff1c60fa3b701bc405a5c5e46}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Product\_Presplit@{Two\_Product\_Presplit}}
+\index{Two\_Product\_Presplit@{Two\_Product\_Presplit}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Product\_Presplit}{Two\_Product\_Presplit}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Product\+\_\+\+Presplit(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{bhi,  }\item[{}]{blo,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  x = (qreal) (a * b); \(\backslash\)}
+\DoxyCodeLine{  Split(a, ahi, alo); \(\backslash\)}
+\DoxyCodeLine{  err1 = x -\/ (ahi * bhi); \(\backslash\)}
+\DoxyCodeLine{  err2 = err1 -\/ (alo * bhi); \(\backslash\)}
+\DoxyCodeLine{  err3 = err2 -\/ (ahi * blo); \(\backslash\)}
+\DoxyCodeLine{  y = (alo * blo) -\/ err3}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_ac9dcc9500c883fdac1acdf11127ae886}\label{predicates_8cpp_ac9dcc9500c883fdac1acdf11127ae886}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Product\_Tail@{Two\_Product\_Tail}}
+\index{Two\_Product\_Tail@{Two\_Product\_Tail}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Product\_Tail}{Two\_Product\_Tail}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Product\+\_\+\+Tail(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{predicates_8cpp_aeeb6165c4120f8480d2f92fa7e3061ab}{Split}}(a, ahi, alo); \(\backslash\)}
+\DoxyCodeLine{  Split(b, bhi, blo); \(\backslash\)}
+\DoxyCodeLine{  err1 = x -\/ (ahi * bhi); \(\backslash\)}
+\DoxyCodeLine{  err2 = err1 -\/ (alo * bhi); \(\backslash\)}
+\DoxyCodeLine{  err3 = err2 -\/ (ahi * blo); \(\backslash\)}
+\DoxyCodeLine{  y = (alo * blo) -\/ err3}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_aa559790796899b51e5f0afcb2dfb8ed7}\label{predicates_8cpp_aa559790796899b51e5f0afcb2dfb8ed7}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Sum@{Two\_Sum}}
+\index{Two\_Sum@{Two\_Sum}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Sum}{Two\_Sum}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Sum(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  x = (qreal) (a + b); \(\backslash\)}
+\DoxyCodeLine{  Two\_Sum\_Tail(a, b, x, y)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a367e02bc95e29a48c4815fcd63806f64}\label{predicates_8cpp_a367e02bc95e29a48c4815fcd63806f64}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Sum\_Tail@{Two\_Sum\_Tail}}
+\index{Two\_Sum\_Tail@{Two\_Sum\_Tail}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Sum\_Tail}{Two\_Sum\_Tail}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Sum\+\_\+\+Tail(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b,  }\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  bvirt = (qreal) (x -\/ a); \(\backslash\)}
+\DoxyCodeLine{  avirt = x -\/ bvirt; \(\backslash\)}
+\DoxyCodeLine{  bround = b -\/ bvirt; \(\backslash\)}
+\DoxyCodeLine{  around = a -\/ avirt; \(\backslash\)}
+\DoxyCodeLine{  y = around + bround}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_ab4f08ad5dba11bbdf27b64132824b3a3}\label{predicates_8cpp_ab4f08ad5dba11bbdf27b64132824b3a3}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Two\_Diff@{Two\_Two\_Diff}}
+\index{Two\_Two\_Diff@{Two\_Two\_Diff}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Two\_Diff}{Two\_Two\_Diff}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Two\+\_\+\+Diff(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a0,  }\item[{}]{b1,  }\item[{}]{b0,  }\item[{}]{x3,  }\item[{}]{x2,  }\item[{}]{x1,  }\item[{}]{x0 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{predicates_8cpp_a5315d6436a90d87938ae9df8a408de67}{Two\_One\_Diff}}(a1, a0, b0, \_j, \_0, x0); \(\backslash\)}
+\DoxyCodeLine{  Two\_One\_Diff(\_j, \_0, b1, x3, x2, x1)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_ae3c61622ca0206f23311a66c864f8fff}\label{predicates_8cpp_ae3c61622ca0206f23311a66c864f8fff}} 
+\index{predicates.cpp@{predicates.cpp}!Two\_Two\_Sum@{Two\_Two\_Sum}}
+\index{Two\_Two\_Sum@{Two\_Two\_Sum}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{Two\_Two\_Sum}{Two\_Two\_Sum}}
+{\footnotesize\ttfamily \#define Two\+\_\+\+Two\+\_\+\+Sum(\begin{DoxyParamCaption}\item[{}]{a1,  }\item[{}]{a0,  }\item[{}]{b1,  }\item[{}]{b0,  }\item[{}]{x3,  }\item[{}]{x2,  }\item[{}]{x1,  }\item[{}]{x0 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \mbox{\hyperlink{predicates_8cpp_aac797f696ef3cee9ffd42c36f8990185}{Two\_One\_Sum}}(a1, a0, b0, \_j, \_0, x0); \(\backslash\)}
+\DoxyCodeLine{  Two\_One\_Sum(\_j, \_0, b1, x3, x2, x1)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{predicates_8cpp_a151c130268f15ea9975886f0750f3079}\label{predicates_8cpp_a151c130268f15ea9975886f0750f3079}} 
+\index{predicates.cpp@{predicates.cpp}!UNIFORMRAND@{UNIFORMRAND}}
+\index{UNIFORMRAND@{UNIFORMRAND}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{UNIFORMRAND}{UNIFORMRAND}}
+{\footnotesize\ttfamily \#define UNIFORMRAND~uniformdoublerand}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{predicates_8cpp_a348664fe596855a87aae133a4961851a}\label{predicates_8cpp_a348664fe596855a87aae133a4961851a}} 
+\index{predicates.cpp@{predicates.cpp}!estimate@{estimate}}
+\index{estimate@{estimate}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{estimate()}{estimate()}}
+{\footnotesize\ttfamily qreal estimate (\begin{DoxyParamCaption}\item[{int}]{elen,  }\item[{qreal $\ast$}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{predicates_8cpp_a32edc074e3e366c1748b3a27ea86caed}\label{predicates_8cpp_a32edc074e3e366c1748b3a27ea86caed}} 
+\index{predicates.cpp@{predicates.cpp}!exactinit@{exactinit}}
+\index{exactinit@{exactinit}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{exactinit()}{exactinit()}}
+{\footnotesize\ttfamily void exactinit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{predicates_8cpp_a5c05029ce2519645a66b0ea76e0ca21a}\label{predicates_8cpp_a5c05029ce2519645a66b0ea76e0ca21a}} 
+\index{predicates.cpp@{predicates.cpp}!fast\_expansion\_sum\_zeroelim@{fast\_expansion\_sum\_zeroelim}}
+\index{fast\_expansion\_sum\_zeroelim@{fast\_expansion\_sum\_zeroelim}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{fast\_expansion\_sum\_zeroelim()}{fast\_expansion\_sum\_zeroelim()}}
+{\footnotesize\ttfamily int fast\+\_\+expansion\+\_\+sum\+\_\+zeroelim (\begin{DoxyParamCaption}\item[{int}]{elen,  }\item[{qreal $\ast$}]{e,  }\item[{int}]{flen,  }\item[{qreal $\ast$}]{f,  }\item[{qreal $\ast$}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{predicates_8cpp_a40bea706d574b6faf33aaf5c7728ed3b}\label{predicates_8cpp_a40bea706d574b6faf33aaf5c7728ed3b}} 
+\index{predicates.cpp@{predicates.cpp}!incircle@{incircle}}
+\index{incircle@{incircle}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{incircle()}{incircle()}}
+{\footnotesize\ttfamily qreal incircle (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{pa,  }\item[{qreal $\ast$}]{pb,  }\item[{qreal $\ast$}]{pc,  }\item[{qreal $\ast$}]{pd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{predicates_8cpp_a976b5a05aa900a1a42f8ceb3971546d2}\label{predicates_8cpp_a976b5a05aa900a1a42f8ceb3971546d2}} 
+\index{predicates.cpp@{predicates.cpp}!incircleadapt@{incircleadapt}}
+\index{incircleadapt@{incircleadapt}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{incircleadapt()}{incircleadapt()}}
+{\footnotesize\ttfamily qreal incircleadapt (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{pa,  }\item[{qreal $\ast$}]{pb,  }\item[{qreal $\ast$}]{pc,  }\item[{qreal $\ast$}]{pd,  }\item[{qreal}]{permanent }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{predicates_8cpp_a703314e5cbf344d70441046c5f4769a7}\label{predicates_8cpp_a703314e5cbf344d70441046c5f4769a7}} 
+\index{predicates.cpp@{predicates.cpp}!scale\_expansion\_zeroelim@{scale\_expansion\_zeroelim}}
+\index{scale\_expansion\_zeroelim@{scale\_expansion\_zeroelim}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{scale\_expansion\_zeroelim()}{scale\_expansion\_zeroelim()}}
+{\footnotesize\ttfamily int scale\+\_\+expansion\+\_\+zeroelim (\begin{DoxyParamCaption}\item[{int}]{elen,  }\item[{qreal $\ast$}]{e,  }\item[{qreal}]{b,  }\item[{qreal $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{predicates_8cpp_a1bd6045208bce53ae0fea320a9ccce49}\label{predicates_8cpp_a1bd6045208bce53ae0fea320a9ccce49}} 
+\index{predicates.cpp@{predicates.cpp}!ccwerrboundA@{ccwerrboundA}}
+\index{ccwerrboundA@{ccwerrboundA}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{ccwerrboundA}{ccwerrboundA}}
+{\footnotesize\ttfamily qreal ccwerrboundA}
+
+\mbox{\Hypertarget{predicates_8cpp_a258aa970729f4e2f93d652e423ce4aa4}\label{predicates_8cpp_a258aa970729f4e2f93d652e423ce4aa4}} 
+\index{predicates.cpp@{predicates.cpp}!ccwerrboundB@{ccwerrboundB}}
+\index{ccwerrboundB@{ccwerrboundB}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{ccwerrboundB}{ccwerrboundB}}
+{\footnotesize\ttfamily qreal ccwerrboundB}
+
+\mbox{\Hypertarget{predicates_8cpp_a98ece2f18574696a03fd67dcff85857b}\label{predicates_8cpp_a98ece2f18574696a03fd67dcff85857b}} 
+\index{predicates.cpp@{predicates.cpp}!ccwerrboundC@{ccwerrboundC}}
+\index{ccwerrboundC@{ccwerrboundC}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{ccwerrboundC}{ccwerrboundC}}
+{\footnotesize\ttfamily qreal ccwerrboundC}
+
+\mbox{\Hypertarget{predicates_8cpp_a294322d88f49e20954d824785a25bd91}\label{predicates_8cpp_a294322d88f49e20954d824785a25bd91}} 
+\index{predicates.cpp@{predicates.cpp}!epsilon@{epsilon}}
+\index{epsilon@{epsilon}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{epsilon}{epsilon}}
+{\footnotesize\ttfamily qreal epsilon}
+
+\mbox{\Hypertarget{predicates_8cpp_afb7e3e9d4268abafb877ee68f30dd786}\label{predicates_8cpp_afb7e3e9d4268abafb877ee68f30dd786}} 
+\index{predicates.cpp@{predicates.cpp}!iccerrboundA@{iccerrboundA}}
+\index{iccerrboundA@{iccerrboundA}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{iccerrboundA}{iccerrboundA}}
+{\footnotesize\ttfamily qreal iccerrboundA}
+
+\mbox{\Hypertarget{predicates_8cpp_af059a72ef4d41ef7a9778a5f1a09c36b}\label{predicates_8cpp_af059a72ef4d41ef7a9778a5f1a09c36b}} 
+\index{predicates.cpp@{predicates.cpp}!iccerrboundB@{iccerrboundB}}
+\index{iccerrboundB@{iccerrboundB}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{iccerrboundB}{iccerrboundB}}
+{\footnotesize\ttfamily qreal iccerrboundB}
+
+\mbox{\Hypertarget{predicates_8cpp_a3da1f0ab7c41f63e1c539ae34dfb576b}\label{predicates_8cpp_a3da1f0ab7c41f63e1c539ae34dfb576b}} 
+\index{predicates.cpp@{predicates.cpp}!iccerrboundC@{iccerrboundC}}
+\index{iccerrboundC@{iccerrboundC}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{iccerrboundC}{iccerrboundC}}
+{\footnotesize\ttfamily qreal iccerrboundC}
+
+\mbox{\Hypertarget{predicates_8cpp_aaef78f6185fde7aeced9dc5e6ddfaf0f}\label{predicates_8cpp_aaef78f6185fde7aeced9dc5e6ddfaf0f}} 
+\index{predicates.cpp@{predicates.cpp}!isperrboundA@{isperrboundA}}
+\index{isperrboundA@{isperrboundA}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{isperrboundA}{isperrboundA}}
+{\footnotesize\ttfamily qreal isperrboundA}
+
+\mbox{\Hypertarget{predicates_8cpp_aa4f9d6a5af7082d41264b34705e238b1}\label{predicates_8cpp_aa4f9d6a5af7082d41264b34705e238b1}} 
+\index{predicates.cpp@{predicates.cpp}!isperrboundB@{isperrboundB}}
+\index{isperrboundB@{isperrboundB}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{isperrboundB}{isperrboundB}}
+{\footnotesize\ttfamily qreal isperrboundB}
+
+\mbox{\Hypertarget{predicates_8cpp_a7a706ac9c87f18adb2334b6e2d0a7f66}\label{predicates_8cpp_a7a706ac9c87f18adb2334b6e2d0a7f66}} 
+\index{predicates.cpp@{predicates.cpp}!isperrboundC@{isperrboundC}}
+\index{isperrboundC@{isperrboundC}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{isperrboundC}{isperrboundC}}
+{\footnotesize\ttfamily qreal isperrboundC}
+
+\mbox{\Hypertarget{predicates_8cpp_aa1e7d496ba49832df11b5fad18abc0fd}\label{predicates_8cpp_aa1e7d496ba49832df11b5fad18abc0fd}} 
+\index{predicates.cpp@{predicates.cpp}!o3derrboundA@{o3derrboundA}}
+\index{o3derrboundA@{o3derrboundA}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{o3derrboundA}{o3derrboundA}}
+{\footnotesize\ttfamily qreal o3derrboundA}
+
+\mbox{\Hypertarget{predicates_8cpp_a55b2440f75890829214e34a38b85d694}\label{predicates_8cpp_a55b2440f75890829214e34a38b85d694}} 
+\index{predicates.cpp@{predicates.cpp}!o3derrboundB@{o3derrboundB}}
+\index{o3derrboundB@{o3derrboundB}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{o3derrboundB}{o3derrboundB}}
+{\footnotesize\ttfamily qreal o3derrboundB}
+
+\mbox{\Hypertarget{predicates_8cpp_a42f609c65efb57b2c0fb95b13ae8d8c4}\label{predicates_8cpp_a42f609c65efb57b2c0fb95b13ae8d8c4}} 
+\index{predicates.cpp@{predicates.cpp}!o3derrboundC@{o3derrboundC}}
+\index{o3derrboundC@{o3derrboundC}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{o3derrboundC}{o3derrboundC}}
+{\footnotesize\ttfamily qreal o3derrboundC}
+
+\mbox{\Hypertarget{predicates_8cpp_a6bf1680c4fcd12563d2a527422edda2b}\label{predicates_8cpp_a6bf1680c4fcd12563d2a527422edda2b}} 
+\index{predicates.cpp@{predicates.cpp}!resulterrbound@{resulterrbound}}
+\index{resulterrbound@{resulterrbound}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{resulterrbound}{resulterrbound}}
+{\footnotesize\ttfamily qreal resulterrbound}
+
+\mbox{\Hypertarget{predicates_8cpp_a2a7f83ebabe7c0b864e6e4473796826a}\label{predicates_8cpp_a2a7f83ebabe7c0b864e6e4473796826a}} 
+\index{predicates.cpp@{predicates.cpp}!splitter@{splitter}}
+\index{splitter@{splitter}!predicates.cpp@{predicates.cpp}}
+\doxysubsubsection{\texorpdfstring{splitter}{splitter}}
+{\footnotesize\ttfamily qreal splitter}
+

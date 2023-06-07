@@ -1,0 +1,93 @@
+\hypertarget{classqmu_1_1QmuTokenParser}{}\doxysection{qmu\+::Qmu\+Token\+Parser Class Reference}
+\label{classqmu_1_1QmuTokenParser}\index{qmu::QmuTokenParser@{qmu::QmuTokenParser}}
+
+
+{\ttfamily \#include $<$qmutokenparser.\+h$>$}
+
+Inheritance diagram for qmu\+::Qmu\+Token\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d0/d84/classqmu_1_1QmuTokenParser}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1QmuTokenParser_a7177b5cb813ace77296820393373cf30}{Qmu\+Token\+Parser}} (const QString \&formula, bool os\+Separator, bool from\+User=true)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classqmu_1_1QmuTokenParser}{Qmu\+Token\+Parser}} class constructor. Make easy initialization math parser. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classqmu_1_1QmuTokenParser_aac8bc641e80293fdb2e20c95f028a7fe}{$\sim$\+Qmu\+Token\+Parser}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classqmu_1_1QmuTokenParser_a066ffdd31dd0c0356685f6c4d69bd11a}{Is\+Single}} (const QString \&formula)
+\begin{DoxyCompactList}\small\item\em Is\+Single test formula and return true if it contain only one number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1QmuTokenParser_a7967f405ab593689ea4949b4a983edcd}{Qmu\+Token\+Parser}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuTokenParser_a7177b5cb813ace77296820393373cf30}\label{classqmu_1_1QmuTokenParser_a7177b5cb813ace77296820393373cf30}} 
+\index{qmu::QmuTokenParser@{qmu::QmuTokenParser}!QmuTokenParser@{QmuTokenParser}}
+\index{QmuTokenParser@{QmuTokenParser}!qmu::QmuTokenParser@{qmu::QmuTokenParser}}
+\doxysubsubsection{\texorpdfstring{QmuTokenParser()}{QmuTokenParser()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Token\+Parser\+::\+Qmu\+Token\+Parser (\begin{DoxyParamCaption}\item[{const QString \&}]{formula,  }\item[{bool}]{os\+Separator,  }\item[{bool}]{from\+User = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classqmu_1_1QmuTokenParser}{Qmu\+Token\+Parser}} class constructor. Make easy initialization math parser. 
+
+This constructor hide initialization variables, operators, character sets. Use this constuctor to get tokens from formula. All formulas must be converted to external look. Example\+:
+
+\mbox{\hyperlink{classqmu_1_1QmuTokenParser}{Qmu\+Token\+Parser}} $\ast$cal = new Qmu\+Token\+Parser(formula, os\+Separator, false); tokens = cal-\/$>$\mbox{\hyperlink{classqmu_1_1QmuParserBase_a433d6baeb80504ce413bb173e89a5d79}{Get\+Tokens()}}; numbers = cal-\/$>$\mbox{\hyperlink{classqmu_1_1QmuParserBase_ae56b406c0f3dad7b89d91fa9d99d41ed}{Get\+Numbers()}}; delete cal;
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & string with formula. \\
+\hline
+{\em from\+User} & true if we parse formula from user \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuTokenParser_aac8bc641e80293fdb2e20c95f028a7fe}\label{classqmu_1_1QmuTokenParser_aac8bc641e80293fdb2e20c95f028a7fe}} 
+\index{qmu::QmuTokenParser@{qmu::QmuTokenParser}!````~QmuTokenParser@{$\sim$QmuTokenParser}}
+\index{````~QmuTokenParser@{$\sim$QmuTokenParser}!qmu::QmuTokenParser@{qmu::QmuTokenParser}}
+\doxysubsubsection{\texorpdfstring{$\sim$QmuTokenParser()}{~QmuTokenParser()}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Token\+Parser\+::$\sim$\+Qmu\+Token\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuTokenParser_a7967f405ab593689ea4949b4a983edcd}\label{classqmu_1_1QmuTokenParser_a7967f405ab593689ea4949b4a983edcd}} 
+\index{qmu::QmuTokenParser@{qmu::QmuTokenParser}!QmuTokenParser@{QmuTokenParser}}
+\index{QmuTokenParser@{QmuTokenParser}!qmu::QmuTokenParser@{qmu::QmuTokenParser}}
+\doxysubsubsection{\texorpdfstring{QmuTokenParser()}{QmuTokenParser()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Token\+Parser\+::\+Qmu\+Token\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuTokenParser_a066ffdd31dd0c0356685f6c4d69bd11a}\label{classqmu_1_1QmuTokenParser_a066ffdd31dd0c0356685f6c4d69bd11a}} 
+\index{qmu::QmuTokenParser@{qmu::QmuTokenParser}!IsSingle@{IsSingle}}
+\index{IsSingle@{IsSingle}!qmu::QmuTokenParser@{qmu::QmuTokenParser}}
+\doxysubsubsection{\texorpdfstring{IsSingle()}{IsSingle()}}
+{\footnotesize\ttfamily bool qmu\+::\+Qmu\+Token\+Parser\+::\+Is\+Single (\begin{DoxyParamCaption}\item[{const QString \&}]{formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Is\+Single test formula and return true if it contain only one number. 
+
+Work only with expressions in internal (C) locale. 
+\begin{DoxyParams}{Parameters}
+{\em formula} & expression for test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if fomula has single number 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmutokenparser_8h}{qmutokenparser.\+h}}\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmutokenparser_8cpp}{qmutokenparser.\+cpp}}\end{DoxyCompactItemize}

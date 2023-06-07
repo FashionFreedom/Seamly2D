@@ -1,0 +1,222 @@
+\hypertarget{classVFormulaProperty}{}\doxysection{VFormula\+Property Class Reference}
+\label{classVFormulaProperty}\index{VFormulaProperty@{VFormulaProperty}}
+
+
+{\ttfamily \#include $<$vformulaproperty.\+h$>$}
+
+Inheritance diagram for VFormula\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/d53/classVFormulaProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVFormulaProperty_a9bc6dcd6b15eb151fd3413cfbece56a3}{child\+Value\+Changed}} (const QVariant \&value, int type\+For\+Parent) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVFormulaProperty_a277fdce599a609279dd2b76303b691a5}{VFormula\+Property}} (const QString \&name)
+\item 
+virtual QVariant \mbox{\hyperlink{classVFormulaProperty_a3b7bb54bfeee55c32587b439007d200b}{data}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual Qt\+::\+Item\+Flags \mbox{\hyperlink{classVFormulaProperty_a463fcbe833bc5b29cc1f10c852c67ce6}{flags}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns item flags. \end{DoxyCompactList}\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{classVFormulaProperty_a67d79cd568c8d3d74fbeaea98ae911d5}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&options, const QAbstract\+Item\+Delegate $\ast$delegate) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVFormulaProperty_aa519b7324c128707d7cdf4a5d926da76}{set\+Editor\+Data}} (QWidget $\ast$editor) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the property\textquotesingle{}s data to the editor (returns false, if the standard delegate should do that) \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVFormulaProperty_ac45ecc178eb3481ebe5fbe896b1d4814}{get\+Editor\+Data}} (const QWidget $\ast$editor) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVFormulaProperty_a340f05e1e0894bb41aada36d8616d3d8}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classVPE_1_1VProperty_ad0e928b4f27279a3fbf7aed0503318e4}{VProperty}} $\ast$ \mbox{\hyperlink{classVFormulaProperty_ac397d3c481d1642beab3fe4c41234f1d}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty_ad0e928b4f27279a3fbf7aed0503318e4}{VProperty}} $\ast$container=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVFormulaProperty_a2fe8869d99630cb6b6be3004a3f36c58}{set\+Value}} (const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the value of the property. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVFormulaProperty_ad34eb64e8e4082fab07aa32eb062ac8e}{get\+Value}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns the value of the property as a QVariant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVFormula}{VFormula}} \mbox{\hyperlink{classVFormulaProperty_a5d4ad51c0116d372a993282c43310935}{Get\+Formula}} () const
+\begin{DoxyCompactList}\small\item\em Returns the formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVFormulaProperty_a63cceba0dea7c4ad0dfd7035c574607f}{Set\+Formula}} (const \mbox{\hyperlink{classVFormula}{VFormula}} \&formula)
+\begin{DoxyCompactList}\small\item\em Sets the formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVFormulaProperty_a277fdce599a609279dd2b76303b691a5}\label{classVFormulaProperty_a277fdce599a609279dd2b76303b691a5}} 
+\index{VFormulaProperty@{VFormulaProperty}!VFormulaProperty@{VFormulaProperty}}
+\index{VFormulaProperty@{VFormulaProperty}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{VFormulaProperty()}{VFormulaProperty()}}
+{\footnotesize\ttfamily VFormula\+Property\+::\+VFormula\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVFormulaProperty_a9bc6dcd6b15eb151fd3413cfbece56a3}\label{classVFormulaProperty_a9bc6dcd6b15eb151fd3413cfbece56a3}} 
+\index{VFormulaProperty@{VFormulaProperty}!childValueChanged@{childValueChanged}}
+\index{childValueChanged@{childValueChanged}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{childValueChanged}{childValueChanged}}
+{\footnotesize\ttfamily void VFormula\+Property\+::child\+Value\+Changed (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value,  }\item[{int}]{type\+For\+Parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVFormulaProperty_ac397d3c481d1642beab3fe4c41234f1d}\label{classVFormulaProperty_ac397d3c481d1642beab3fe4c41234f1d}} 
+\index{VFormulaProperty@{VFormulaProperty}!clone@{clone}}
+\index{clone@{clone}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VFormula\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty_ad0e928b4f27279a3fbf7aed0503318e4}{VProperty}} $\ast$}]{container = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new VProperty is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVFormulaProperty_a67d79cd568c8d3d74fbeaea98ae911d5}\label{classVFormulaProperty_a67d79cd568c8d3d74fbeaea98ae911d5}} 
+\index{VFormulaProperty@{VFormulaProperty}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VFormula\+Property\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{options,  }\item[{const QAbstract\+Item\+Delegate $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. 
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one 
+\begin{DoxyParams}{Parameters}
+{\em parent} & The widget to which the editor will be added as a child \textbackslash{}options Render options \textbackslash{}delegate A pointer to the QAbstract\+Item\+Delegate requesting the editor. This can be used to connect signals and slots. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_aea7526e6641c9cb369cc8234881df935}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_a3b7bb54bfeee55c32587b439007d200b}\label{classVFormulaProperty_a3b7bb54bfeee55c32587b439007d200b}} 
+\index{VFormulaProperty@{VFormulaProperty}!data@{data}}
+\index{data@{data}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant VFormula\+Property\+::data (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}},  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the data how it should be displayed. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a21a184d546b92bb2c553ebf7d9d58448}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_a463fcbe833bc5b29cc1f10c852c67ce6}\label{classVFormulaProperty_a463fcbe833bc5b29cc1f10c852c67ce6}} 
+\index{VFormulaProperty@{VFormulaProperty}!flags@{flags}}
+\index{flags@{flags}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags VFormula\+Property\+::flags (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns item flags. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a11c4d64c0bcd4c2dd4838d77e9c734e1}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_ac45ecc178eb3481ebe5fbe896b1d4814}\label{classVFormulaProperty_ac45ecc178eb3481ebe5fbe896b1d4814}} 
+\index{VFormulaProperty@{VFormulaProperty}!getEditorData@{getEditorData}}
+\index{getEditorData@{getEditorData}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{getEditorData()}{getEditorData()}}
+{\footnotesize\ttfamily QVariant VFormula\+Property\+::get\+Editor\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the data from the widget. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a884293b0d13de6f76c3109b8f71a61e0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_a5d4ad51c0116d372a993282c43310935}\label{classVFormulaProperty_a5d4ad51c0116d372a993282c43310935}} 
+\index{VFormulaProperty@{VFormulaProperty}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVFormula}{VFormula}} VFormula\+Property\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the formula. 
+
+\mbox{\Hypertarget{classVFormulaProperty_ad34eb64e8e4082fab07aa32eb062ac8e}\label{classVFormulaProperty_ad34eb64e8e4082fab07aa32eb062ac8e}} 
+\index{VFormulaProperty@{VFormulaProperty}!getValue@{getValue}}
+\index{getValue@{getValue}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily QVariant VFormula\+Property\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the value of the property as a QVariant. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a2f7624cf6c5edf40eb7543dd7479d7d0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_aa519b7324c128707d7cdf4a5d926da76}\label{classVFormulaProperty_aa519b7324c128707d7cdf4a5d926da76}} 
+\index{VFormulaProperty@{VFormulaProperty}!setEditorData@{setEditorData}}
+\index{setEditorData@{setEditorData}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{setEditorData()}{setEditorData()}}
+{\footnotesize\ttfamily bool VFormula\+Property\+::set\+Editor\+Data (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the property\textquotesingle{}s data to the editor (returns false, if the standard delegate should do that) 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a5f6e6bc0d388b5499ae585b7c9d46fcf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_a63cceba0dea7c4ad0dfd7035c574607f}\label{classVFormulaProperty_a63cceba0dea7c4ad0dfd7035c574607f}} 
+\index{VFormulaProperty@{VFormulaProperty}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void VFormula\+Property\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula }\end{DoxyParamCaption})}
+
+
+
+Sets the formula. 
+
+\mbox{\Hypertarget{classVFormulaProperty_a2fe8869d99630cb6b6be3004a3f36c58}\label{classVFormulaProperty_a2fe8869d99630cb6b6be3004a3f36c58}} 
+\index{VFormulaProperty@{VFormulaProperty}!setValue@{setValue}}
+\index{setValue@{setValue}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void VFormula\+Property\+::set\+Value (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the value of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a67c7322abd6f7f0306ecdf56ffb0f65d}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVFormulaProperty_a340f05e1e0894bb41aada36d8616d3d8}\label{classVFormulaProperty_a340f05e1e0894bb41aada36d8616d3d8}} 
+\index{VFormulaProperty@{VFormulaProperty}!type@{type}}
+\index{type@{type}!VFormulaProperty@{VFormulaProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VFormula\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vformulaproperty_8h}{vformulaproperty.\+h}}\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vformulaproperty_8cpp}{vformulaproperty.\+cpp}}\end{DoxyCompactItemize}

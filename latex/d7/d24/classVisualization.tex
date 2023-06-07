@@ -1,0 +1,393 @@
+\hypertarget{classVisualization}{}\doxysection{Visualization Class Reference}
+\label{classVisualization}\index{Visualization@{Visualization}}
+
+
+{\ttfamily \#include $<$visualization.\+h$>$}
+
+Inheritance diagram for Visualization\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{d7/d24/classVisualization}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVisualization_a0ce122004dbfba6e26f0d6351d04e0d6}{mouse\+Pos}} (const QPointF \&\mbox{\hyperlink{classVisualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVisualization_a18b00680e4072f9f56071722e0cf47d4}{Tool\+Tip}} (const QString \&\mbox{\hyperlink{classVisualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisualization_a2463087184767bfb81578f8e3b63077c}{Visualization}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+virtual \mbox{\hyperlink{classVisualization_ac0f658bb8e47eae0c94cc28bb40bf438}{$\sim$\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Refresh\+Geometry}} ()=0
+\item 
+void \mbox{\hyperlink{classVisualization_a9e24acf5c3162cbbeb3652fa9a6e493d}{set\+Object1\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{classVisualization_ac6f3fffeba3ddecac71bd5857d112441}{set\+Line\+Style}} (const Qt\+::\+Pen\+Style \&value)
+\item 
+void \mbox{\hyperlink{classVisualization_a3e8891a967b0070b38fb7944a05bca96}{set\+Line\+Weight}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{classVisualization_a3cc2d4cf3e1c7ac9c99887745b9725ce}{set\+Scene\+Pos}} (const QPointF \&value)
+\item 
+virtual void \mbox{\hyperlink{classVisualization_a861d9e8fb92c505f90f6ddb016d72a74}{Visual\+Mode}} (const quint32 \&point\+Id)
+\item 
+void \mbox{\hyperlink{classVisualization_ad8c250063388c98129072b915422d918}{set\+Main\+Color}} (const QColor \&value)
+\item 
+const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVisualization_aa059d42719891e59f6d6ae626864595f}{get\+Data}} () const
+\item 
+void \mbox{\hyperlink{classVisualization_a92191f09709684b5b1927ab68e136c9c}{set\+Data}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{classVisualization_ac190793c0074c8d149d2fb52136875b4}{Get\+Mode}} () const
+\item 
+void \mbox{\hyperlink{classVisualization_a7c351376e6eea24c27d33e43c4287fea}{Set\+Mode}} (const \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \&value)
+\item 
+QString \mbox{\hyperlink{classVisualization_a07121a63283dbbeeddf5b88df391fc71}{Current\+Tool\+Tip}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{classVisualization_a6479c586e581d8868775eb49aa031f19}{Find\+Length}} (const QString \&expression, const \mbox{\hyperlink{classQHash}{QHash}}$<$ QString, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVInternalVariable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\item 
+static qreal \mbox{\hyperlink{classVisualization_ada5e59b62fca6a9a6e4fd3965b8eae92}{Find\+Val}} (const QString \&expression, const \mbox{\hyperlink{classQHash}{QHash}}$<$ QString, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVInternalVariable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVisualization_aa2477ee93caae188c7a9ae4f9dfeb771}{init\+Pen}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classVisualization_abfe137bc2a0b78369361a19726ed728b}{Add\+On\+Scene}} ()=0
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisualization_abc9b78a7c14e4441b39eb43edf14b72e}{Init\+Point}} (const QColor \&color, QGraphics\+Item $\ast$parent, qreal z=0) const
+\item 
+void \mbox{\hyperlink{classVisualization_a3ddc22b12c0158bc9cc10f77f4f6fe2c}{Draw\+Point}} (QGraphics\+Ellipse\+Item $\ast$point, const QPointF \&pos, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+virtual void \mbox{\hyperlink{classVisualization_ab8a024f82b22c147839e7f2057e3c977}{Draw\+Line}} (\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$line\+Item, const QLineF \&line, const QColor \&color, const qreal \&\mbox{\hyperlink{classVisualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{classVisualization_a9704c6411feed0ae73e2068e230e4678}{Draw\+Path}} (\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{classVisualization_a598d2794b073ee9ade1c69b3862f0879}{Draw\+Path}} (\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \&direction\+Arrows, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{classVisualization_aa9ea2c766a799875af2b79d6400c116b}{draw\+Arrowed\+Line}} (\mbox{\hyperlink{classArrowedLineItem}{Arrowed\+Line\+Item}} $\ast$item, const QLineF \&line, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{classVisualization_a6e2b0cf9513f6e8ee5f6ac1c65265e33}{draw\+Arrow}} (const QLineF \&axis, QPainter\+Path \&path, const qreal \&arrow\+\_\+size)
+\item 
+{\footnotesize template$<$typename Item $>$ }\\void \mbox{\hyperlink{classVisualization_ae9816e2088cc535fd0c956cd0f67ec3d}{add\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item)
+\item 
+{\footnotesize template$<$class Item $>$ }\\\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$ \mbox{\hyperlink{classVisualization_a533ef28c50007971f69483ef4103774a}{Init\+Item}} (const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisualization_a9f13506fd762ba59d26496427327fa52}{Get\+Point\+Item}} (\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \&points, quint32 i, const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}
+\item 
+QPointF \mbox{\hyperlink{classVisualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}}
+\item 
+QColor \mbox{\hyperlink{classVisualization_a19c42b9f6c14d1b1415f8510409d49f7}{main\+Color}}
+\item 
+QColor \mbox{\hyperlink{classVisualization_a07dccd56934096a975a542c908acdde9}{support\+Color}}
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{classVisualization_adb70fdc205739ea12298e4cc607ed2d6}{line\+Style}}
+\item 
+qreal \mbox{\hyperlink{classVisualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}
+\item 
+quint32 \mbox{\hyperlink{classVisualization_ac6d70a998feaf629960293be3b6d8b09}{object1\+Id}}
+\item 
+QString \mbox{\hyperlink{classVisualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}}
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{classVisualization_aa02ec87a8384819f82ad61d08441b44b}{mode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisualization_a8bc9d4d94bed76895bb2dcf50394391d}{init\+Point\+Item}} (const QColor \&color, QGraphics\+Item $\ast$parent, qreal z=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisualization_a2463087184767bfb81578f8e3b63077c}\label{classVisualization_a2463087184767bfb81578f8e3b63077c}} 
+\index{Visualization@{Visualization}!Visualization@{Visualization}}
+\index{Visualization@{Visualization}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{Visualization()}{Visualization()}}
+{\footnotesize\ttfamily Visualization\+::\+Visualization (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisualization_ac0f658bb8e47eae0c94cc28bb40bf438}\label{classVisualization_ac0f658bb8e47eae0c94cc28bb40bf438}} 
+\index{Visualization@{Visualization}!````~Visualization@{$\sim$Visualization}}
+\index{````~Visualization@{$\sim$Visualization}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{$\sim$Visualization()}{~Visualization()}}
+{\footnotesize\ttfamily virtual Visualization\+::$\sim$\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisualization_ae9816e2088cc535fd0c956cd0f67ec3d}\label{classVisualization_ae9816e2088cc535fd0c956cd0f67ec3d}} 
+\index{Visualization@{Visualization}!addItem@{addItem}}
+\index{addItem@{addItem}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{addItem()}{addItem()}}
+{\footnotesize\ttfamily template$<$typename Item $>$ \\
+void Visualization\+::add\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_abfe137bc2a0b78369361a19726ed728b}\label{classVisualization_abfe137bc2a0b78369361a19726ed728b}} 
+\index{Visualization@{Visualization}!AddOnScene@{AddOnScene}}
+\index{AddOnScene@{AddOnScene}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{AddOnScene()}{AddOnScene()}}
+{\footnotesize\ttfamily virtual void Visualization\+::\+Add\+On\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classVisPath_a2db2203ace9494354a920d51c13a35f2}{Vis\+Path}}, and \mbox{\hyperlink{classVisLine_a84d78868f9ff710c0cc364f22609d6d4}{Vis\+Line}}.
+
+\mbox{\Hypertarget{classVisualization_a07121a63283dbbeeddf5b88df391fc71}\label{classVisualization_a07121a63283dbbeeddf5b88df391fc71}} 
+\index{Visualization@{Visualization}!CurrentToolTip@{CurrentToolTip}}
+\index{CurrentToolTip@{CurrentToolTip}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{CurrentToolTip()}{CurrentToolTip()}}
+{\footnotesize\ttfamily QString Visualization\+::\+Current\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classVisualization_a6e2b0cf9513f6e8ee5f6ac1c65265e33}\label{classVisualization_a6e2b0cf9513f6e8ee5f6ac1c65265e33}} 
+\index{Visualization@{Visualization}!drawArrow@{drawArrow}}
+\index{drawArrow@{drawArrow}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{drawArrow()}{drawArrow()}}
+{\footnotesize\ttfamily void Visualization\+::draw\+Arrow (\begin{DoxyParamCaption}\item[{const QLineF \&}]{axis,  }\item[{QPainter\+Path \&}]{path,  }\item[{const qreal \&}]{arrow\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_aa9ea2c766a799875af2b79d6400c116b}\label{classVisualization_aa9ea2c766a799875af2b79d6400c116b}} 
+\index{Visualization@{Visualization}!drawArrowedLine@{drawArrowedLine}}
+\index{drawArrowedLine@{drawArrowedLine}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{drawArrowedLine()}{drawArrowedLine()}}
+{\footnotesize\ttfamily void Visualization\+::draw\+Arrowed\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArrowedLineItem}{Arrowed\+Line\+Item}} $\ast$}]{item,  }\item[{const QLineF \&}]{line,  }\item[{const QColor \&}]{color,  }\item[{Qt\+::\+Pen\+Style}]{style = {\ttfamily Qt\+:\+:SolidLine} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_ab8a024f82b22c147839e7f2057e3c977}\label{classVisualization_ab8a024f82b22c147839e7f2057e3c977}} 
+\index{Visualization@{Visualization}!DrawLine@{DrawLine}}
+\index{DrawLine@{DrawLine}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{DrawLine()}{DrawLine()}}
+{\footnotesize\ttfamily void Visualization\+::\+Draw\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$}]{line\+Item,  }\item[{const QLineF \&}]{line,  }\item[{const QColor \&}]{color,  }\item[{const qreal \&}]{line\+Weight,  }\item[{Qt\+::\+Pen\+Style}]{style = {\ttfamily Qt\+:\+:SolidLine} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVisToolLine_a10d65b7ab6360ff50168e6c3d45679aa}{Vis\+Tool\+Line}}.
+
+\mbox{\Hypertarget{classVisualization_a9704c6411feed0ae73e2068e230e4678}\label{classVisualization_a9704c6411feed0ae73e2068e230e4678}} 
+\index{Visualization@{Visualization}!DrawPath@{DrawPath}}
+\index{DrawPath@{DrawPath}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{DrawPath()}{DrawPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Visualization\+::\+Draw\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$}]{path\+Item,  }\item[{const QPainter\+Path \&}]{path,  }\item[{const QColor \&}]{color,  }\item[{Qt\+::\+Pen\+Style}]{style = {\ttfamily Qt\+:\+:SolidLine},  }\item[{const qreal \&}]{weight = {\ttfamily 0.35},  }\item[{Qt\+::\+Pen\+Cap\+Style}]{cap = {\ttfamily Qt\+:\+:SquareCap} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a598d2794b073ee9ade1c69b3862f0879}\label{classVisualization_a598d2794b073ee9ade1c69b3862f0879}} 
+\index{Visualization@{Visualization}!DrawPath@{DrawPath}}
+\index{DrawPath@{DrawPath}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{DrawPath()}{DrawPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Visualization\+::\+Draw\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$}]{path\+Item,  }\item[{const QPainter\+Path \&}]{path,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \&}]{direction\+Arrows,  }\item[{const QColor \&}]{color,  }\item[{Qt\+::\+Pen\+Style}]{style = {\ttfamily Qt\+:\+:SolidLine},  }\item[{const qreal \&}]{weight = {\ttfamily 0.35},  }\item[{Qt\+::\+Pen\+Cap\+Style}]{cap = {\ttfamily Qt\+:\+:SquareCap} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a3ddc22b12c0158bc9cc10f77f4f6fe2c}\label{classVisualization_a3ddc22b12c0158bc9cc10f77f4f6fe2c}} 
+\index{Visualization@{Visualization}!DrawPoint@{DrawPoint}}
+\index{DrawPoint@{DrawPoint}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{DrawPoint()}{DrawPoint()}}
+{\footnotesize\ttfamily void Visualization\+::\+Draw\+Point (\begin{DoxyParamCaption}\item[{QGraphics\+Ellipse\+Item $\ast$}]{point,  }\item[{const QPointF \&}]{pos,  }\item[{const QColor \&}]{color,  }\item[{Qt\+::\+Pen\+Style}]{style = {\ttfamily Qt\+:\+:SolidLine} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a6479c586e581d8868775eb49aa031f19}\label{classVisualization_a6479c586e581d8868775eb49aa031f19}} 
+\index{Visualization@{Visualization}!FindLength@{FindLength}}
+\index{FindLength@{FindLength}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{FindLength()}{FindLength()}}
+{\footnotesize\ttfamily qreal Visualization\+::\+Find\+Length (\begin{DoxyParamCaption}\item[{const QString \&}]{expression,  }\item[{const \mbox{\hyperlink{classQHash}{QHash}}$<$ QString, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVInternalVariable}{VInternal\+Variable}} $>$ $>$ $\ast$}]{vars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVisualization_ada5e59b62fca6a9a6e4fd3965b8eae92}\label{classVisualization_ada5e59b62fca6a9a6e4fd3965b8eae92}} 
+\index{Visualization@{Visualization}!FindVal@{FindVal}}
+\index{FindVal@{FindVal}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{FindVal()}{FindVal()}}
+{\footnotesize\ttfamily qreal Visualization\+::\+Find\+Val (\begin{DoxyParamCaption}\item[{const QString \&}]{expression,  }\item[{const \mbox{\hyperlink{classQHash}{QHash}}$<$ QString, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVInternalVariable}{VInternal\+Variable}} $>$ $>$ $\ast$}]{vars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVisualization_aa059d42719891e59f6d6ae626864595f}\label{classVisualization_aa059d42719891e59f6d6ae626864595f}} 
+\index{Visualization@{Visualization}!getData@{getData}}
+\index{getData@{getData}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ Visualization\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVisualization_ac190793c0074c8d149d2fb52136875b4}\label{classVisualization_ac190793c0074c8d149d2fb52136875b4}} 
+\index{Visualization@{Visualization}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{GetMode()}{GetMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} Visualization\+::\+Get\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVisualization_a9f13506fd762ba59d26496427327fa52}\label{classVisualization_a9f13506fd762ba59d26496427327fa52}} 
+\index{Visualization@{Visualization}!GetPointItem@{GetPointItem}}
+\index{GetPointItem@{GetPointItem}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{GetPointItem()}{GetPointItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ Visualization\+::\+Get\+Point\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \&}]{points,  }\item[{quint32}]{i,  }\item[{const QColor \&}]{color,  }\item[{QGraphics\+Item $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a533ef28c50007971f69483ef4103774a}\label{classVisualization_a533ef28c50007971f69483ef4103774a}} 
+\index{Visualization@{Visualization}!InitItem@{InitItem}}
+\index{InitItem@{InitItem}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{InitItem()}{InitItem()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$ Visualization\+::\+Init\+Item (\begin{DoxyParamCaption}\item[{const QColor \&}]{color,  }\item[{QGraphics\+Item $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_aa2477ee93caae188c7a9ae4f9dfeb771}\label{classVisualization_aa2477ee93caae188c7a9ae4f9dfeb771}} 
+\index{Visualization@{Visualization}!initPen@{initPen}}
+\index{initPen@{initPen}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{initPen()}{initPen()}}
+{\footnotesize\ttfamily virtual void Visualization\+::init\+Pen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classVisPath_ac9ab0de4fcfaf1982fc1f750120fec47}{Vis\+Path}}, and \mbox{\hyperlink{classVisLine_a3d128e18290ca9d6888e8a112c538efc}{Vis\+Line}}.
+
+\mbox{\Hypertarget{classVisualization_abc9b78a7c14e4441b39eb43edf14b72e}\label{classVisualization_abc9b78a7c14e4441b39eb43edf14b72e}} 
+\index{Visualization@{Visualization}!InitPoint@{InitPoint}}
+\index{InitPoint@{InitPoint}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{InitPoint()}{InitPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ Visualization\+::\+Init\+Point (\begin{DoxyParamCaption}\item[{const QColor \&}]{color,  }\item[{QGraphics\+Item $\ast$}]{parent,  }\item[{qreal}]{z = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a8bc9d4d94bed76895bb2dcf50394391d}\label{classVisualization_a8bc9d4d94bed76895bb2dcf50394391d}} 
+\index{Visualization@{Visualization}!initPointItem@{initPointItem}}
+\index{initPointItem@{initPointItem}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{initPointItem()}{initPointItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ Visualization\+::init\+Point\+Item (\begin{DoxyParamCaption}\item[{const QColor \&}]{color,  }\item[{QGraphics\+Item $\ast$}]{parent,  }\item[{qreal}]{z = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisualization_a0ce122004dbfba6e26f0d6351d04e0d6}\label{classVisualization_a0ce122004dbfba6e26f0d6351d04e0d6}} 
+\index{Visualization@{Visualization}!mousePos@{mousePos}}
+\index{mousePos@{mousePos}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{mousePos}{mousePos}}
+{\footnotesize\ttfamily void Visualization\+::mouse\+Pos (\begin{DoxyParamCaption}\item[{const QPointF \&}]{scene\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}\label{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}} 
+\index{Visualization@{Visualization}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily virtual void Visualization\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classVisToolSplinePath_ac810ec36d56c436fa57864d6278f8602}{Vis\+Tool\+Spline\+Path}}, \mbox{\hyperlink{classVisToolSpline_a7aef8479fcfb504ee71a8dfa1a3159b1}{Vis\+Tool\+Spline}}, \mbox{\hyperlink{classVisToolPointOfIntersectionCurves_a8ecd3450ddd34ec17f0011c9c896dae8}{Vis\+Tool\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{classVisToolInternalPath_a3063b419ef0646f773e91fad323048ec}{Vis\+Tool\+Internal\+Path}}, \mbox{\hyperlink{classVisToolEllipticalArc_a5d7d22132cbe989465f299cc0eb84df5}{Vis\+Tool\+Elliptical\+Arc}}, \mbox{\hyperlink{classVisToolCutSplinePath_a3ad258ae90e97f52b8e7463d800c8b04}{Vis\+Tool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{classVisToolCutSpline_a65eb6b12a566d366dda6d6771a525c37}{Vis\+Tool\+Cut\+Spline}}, \mbox{\hyperlink{classVisToolCutArc_afc1f7ec64c8c56b91ed0005ca0c956f7}{Vis\+Tool\+Cut\+Arc}}, \mbox{\hyperlink{classVisToolCubicBezierPath_a524adc4b43c50fabbd0f42ff6e2cb152}{Vis\+Tool\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{classVisToolCubicBezier_a256f4866fc1700c9c12cd60b5100ee54}{Vis\+Tool\+Cubic\+Bezier}}, \mbox{\hyperlink{classVisToolArcWithLength_a0d9511ff42e52d91d3b31325b9cfe0e1}{Vis\+Tool\+Arc\+With\+Length}}, \mbox{\hyperlink{classVisToolArc_abdc538bac5b47a5d9015fecf0b7d59c0}{Vis\+Tool\+Arc}}, \mbox{\hyperlink{classPieceAnchorPointVisual_a0ebf852d203f87dd2eb9d3b39d0ac894}{Piece\+Anchor\+Point\+Visual}}, \mbox{\hyperlink{classPatternPieceVisual_a342126d8a430a5a4cdf6bb2777471962}{Pattern\+Piece\+Visual}}, \mbox{\hyperlink{classVisToolTrueDarts_ab70ba9accdd4726fc76cd90dc893225d}{Vis\+Tool\+True\+Darts}}, \mbox{\hyperlink{classVisToolTriangle_a68f2e1afe26180f014f7e92c304e8e11}{Vis\+Tool\+Triangle}}, \mbox{\hyperlink{classVisToolShoulderPoint_aa383db30ee00d5b88afc73f8e4aad7b7}{Vis\+Tool\+Shoulder\+Point}}, \mbox{\hyperlink{classVisToolPointOfIntersectionArcs_ae26262103e629c79c5b84d9853020b86}{Vis\+Tool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{classVisToolPointOfContact_a6262f21f537f4df8c044ed78a83b7605}{Vis\+Tool\+Point\+Of\+Contact}}, \mbox{\hyperlink{classVisToolPointFromArcAndTangent_af01ca76410cc1b9f98afb11d29cb9b1d}{Vis\+Tool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{classVisToolNormal_a0a1813c86c63af30a7035e6b79a5b067}{Vis\+Tool\+Normal}}, \mbox{\hyperlink{classVisToolLineIntersectAxis_a406518cb20d4c14be6aac137a203c7c6}{Vis\+Tool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{classVisToolLineIntersect_a5ff7415ab42403b7336af5e198e1c8f8}{Vis\+Tool\+Line\+Intersect}}, \mbox{\hyperlink{classVisToolLine_ad578639bf2402a6a89b880b2a792253d}{Vis\+Tool\+Line}}, \mbox{\hyperlink{classVisToolHeight_a90089031492eed38a207f16957a29071}{Vis\+Tool\+Height}}, \mbox{\hyperlink{classVisToolEndLine_a5e5e1360dc07f2e8f5c4e6546ecc0e07}{Vis\+Tool\+End\+Line}}, \mbox{\hyperlink{classVisToolCurveIntersectAxis_a213a37fc27ba1d0baaca5e010d37af23}{Vis\+Tool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{classVisToolBisector_ab93539fe701ff703e85106c514cdeeea}{Vis\+Tool\+Bisector}}, \mbox{\hyperlink{classVisToolAlongLine_ab96dd41c4f4133145be01d1b9e23fb6c}{Vis\+Tool\+Along\+Line}}, \mbox{\hyperlink{classPointIntersectXYVisual_a69390edbb26a5e3822b6073f524d31f0}{Point\+Intersect\+XYVisual}}, \mbox{\hyperlink{classVisToolRotation_af2e4465794c7723bb843e4562771f562}{Vis\+Tool\+Rotation}}, \mbox{\hyperlink{classVisToolMove_a04364256d28ca72f3427ffa881186cc4}{Vis\+Tool\+Move}}, \mbox{\hyperlink{classVisToolMirrorByLine_aa4115e92a517f3947a43e16ca0549615}{Vis\+Tool\+Mirror\+By\+Line}}, \mbox{\hyperlink{classVisToolMirrorByAxis_a4ccccceef81eb3ab143ab4e6629e0581}{Vis\+Tool\+Mirror\+By\+Axis}}, \mbox{\hyperlink{classIntersectCircleTangentVisual_a1a2b2cf85b6fd24e3cb9826ccf0512ae}{Intersect\+Circle\+Tangent\+Visual}}, \mbox{\hyperlink{classIntersectCirclesVisual_a09a8255dd4463d86e0785c00ccae1e51}{Intersect\+Circles\+Visual}}, and \mbox{\hyperlink{classAnchorPointVisual_a8b7b8fd8f1b4d12916158bd411d20fc1}{Anchor\+Point\+Visual}}.
+
+\mbox{\Hypertarget{classVisualization_a92191f09709684b5b1927ab68e136c9c}\label{classVisualization_a92191f09709684b5b1927ab68e136c9c}} 
+\index{Visualization@{Visualization}!setData@{setData}}
+\index{setData@{setData}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Visualization\+::set\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_ac6f3fffeba3ddecac71bd5857d112441}\label{classVisualization_ac6f3fffeba3ddecac71bd5857d112441}} 
+\index{Visualization@{Visualization}!setLineStyle@{setLineStyle}}
+\index{setLineStyle@{setLineStyle}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{setLineStyle()}{setLineStyle()}}
+{\footnotesize\ttfamily void Visualization\+::set\+Line\+Style (\begin{DoxyParamCaption}\item[{const Qt\+::\+Pen\+Style \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_a3e8891a967b0070b38fb7944a05bca96}\label{classVisualization_a3e8891a967b0070b38fb7944a05bca96}} 
+\index{Visualization@{Visualization}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void Visualization\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_ad8c250063388c98129072b915422d918}\label{classVisualization_ad8c250063388c98129072b915422d918}} 
+\index{Visualization@{Visualization}!setMainColor@{setMainColor}}
+\index{setMainColor@{setMainColor}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{setMainColor()}{setMainColor()}}
+{\footnotesize\ttfamily void Visualization\+::set\+Main\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_a7c351376e6eea24c27d33e43c4287fea}\label{classVisualization_a7c351376e6eea24c27d33e43c4287fea}} 
+\index{Visualization@{Visualization}!SetMode@{SetMode}}
+\index{SetMode@{SetMode}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{SetMode()}{SetMode()}}
+{\footnotesize\ttfamily void Visualization\+::\+Set\+Mode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_a9e24acf5c3162cbbeb3652fa9a6e493d}\label{classVisualization_a9e24acf5c3162cbbeb3652fa9a6e493d}} 
+\index{Visualization@{Visualization}!setObject1Id@{setObject1Id}}
+\index{setObject1Id@{setObject1Id}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{setObject1Id()}{setObject1Id()}}
+{\footnotesize\ttfamily void Visualization\+::set\+Object1\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_a3cc2d4cf3e1c7ac9c99887745b9725ce}\label{classVisualization_a3cc2d4cf3e1c7ac9c99887745b9725ce}} 
+\index{Visualization@{Visualization}!setScenePos@{setScenePos}}
+\index{setScenePos@{setScenePos}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{setScenePos()}{setScenePos()}}
+{\footnotesize\ttfamily void Visualization\+::set\+Scene\+Pos (\begin{DoxyParamCaption}\item[{const QPointF \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisualization_a18b00680e4072f9f56071722e0cf47d4}\label{classVisualization_a18b00680e4072f9f56071722e0cf47d4}} 
+\index{Visualization@{Visualization}!ToolTip@{ToolTip}}
+\index{ToolTip@{ToolTip}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{ToolTip}{ToolTip}}
+{\footnotesize\ttfamily void Visualization\+::\+Tool\+Tip (\begin{DoxyParamCaption}\item[{const QString \&}]{tool\+Tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classVisualization_a861d9e8fb92c505f90f6ddb016d72a74}\label{classVisualization_a861d9e8fb92c505f90f6ddb016d72a74}} 
+\index{Visualization@{Visualization}!VisualMode@{VisualMode}}
+\index{VisualMode@{VisualMode}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{VisualMode()}{VisualMode()}}
+{\footnotesize\ttfamily void Visualization\+::\+Visual\+Mode (\begin{DoxyParamCaption}\item[{const quint32 \&}]{point\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVisOperation_a2d9a92e9bfeb26ce2afedf0d121a6d26}{Vis\+Operation}}, \mbox{\hyperlink{classVisToolPointOfIntersectionCurves_ab381a3d0305d18fc4c9ef1ec40a2e2b0}{Vis\+Tool\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{classVisToolPointOfIntersectionArcs_a4d89c6ea371114049af7fd65023b3272}{Vis\+Tool\+Point\+Of\+Intersection\+Arcs}}, and \mbox{\hyperlink{classIntersectCirclesVisual_ab740b9fa5dc7cd656ea5af37b24cc762}{Intersect\+Circles\+Visual}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}\label{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}} 
+\index{Visualization@{Visualization}!data@{data}}
+\index{data@{data}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ Visualization\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_adb70fdc205739ea12298e4cc607ed2d6}\label{classVisualization_adb70fdc205739ea12298e4cc607ed2d6}} 
+\index{Visualization@{Visualization}!lineStyle@{lineStyle}}
+\index{lineStyle@{lineStyle}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{lineStyle}{lineStyle}}
+{\footnotesize\ttfamily Qt\+::\+Pen\+Style Visualization\+::line\+Style\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a6741617653bafbaec1ada649955974e6}\label{classVisualization_a6741617653bafbaec1ada649955974e6}} 
+\index{Visualization@{Visualization}!lineWeight@{lineWeight}}
+\index{lineWeight@{lineWeight}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{lineWeight}{lineWeight}}
+{\footnotesize\ttfamily qreal Visualization\+::line\+Weight\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a19c42b9f6c14d1b1415f8510409d49f7}\label{classVisualization_a19c42b9f6c14d1b1415f8510409d49f7}} 
+\index{Visualization@{Visualization}!mainColor@{mainColor}}
+\index{mainColor@{mainColor}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{mainColor}{mainColor}}
+{\footnotesize\ttfamily QColor Visualization\+::main\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_aa02ec87a8384819f82ad61d08441b44b}\label{classVisualization_aa02ec87a8384819f82ad61d08441b44b}} 
+\index{Visualization@{Visualization}!mode@{mode}}
+\index{mode@{mode}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} Visualization\+::mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_ac6d70a998feaf629960293be3b6d8b09}\label{classVisualization_ac6d70a998feaf629960293be3b6d8b09}} 
+\index{Visualization@{Visualization}!object1Id@{object1Id}}
+\index{object1Id@{object1Id}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{object1Id}{object1Id}}
+{\footnotesize\ttfamily quint32 Visualization\+::object1\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_aa2bbae2ea80646d9cead20b75f3a524f}\label{classVisualization_aa2bbae2ea80646d9cead20b75f3a524f}} 
+\index{Visualization@{Visualization}!scenePos@{scenePos}}
+\index{scenePos@{scenePos}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{scenePos}{scenePos}}
+{\footnotesize\ttfamily QPointF Visualization\+::scene\+Pos\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_a07dccd56934096a975a542c908acdde9}\label{classVisualization_a07dccd56934096a975a542c908acdde9}} 
+\index{Visualization@{Visualization}!supportColor@{supportColor}}
+\index{supportColor@{supportColor}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{supportColor}{supportColor}}
+{\footnotesize\ttfamily QColor Visualization\+::support\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisualization_abbdc0462042f392ebd52ddc67170aee4}\label{classVisualization_abbdc0462042f392ebd52ddc67170aee4}} 
+\index{Visualization@{Visualization}!toolTip@{toolTip}}
+\index{toolTip@{toolTip}!Visualization@{Visualization}}
+\doxysubsubsection{\texorpdfstring{toolTip}{toolTip}}
+{\footnotesize\ttfamily QString Visualization\+::tool\+Tip\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/\mbox{\hyperlink{visualization_8h}{visualization.\+h}}\item 
+src/libs/vtools/visualization/\mbox{\hyperlink{visualization_8cpp}{visualization.\+cpp}}\end{DoxyCompactItemize}

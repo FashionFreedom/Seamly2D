@@ -1,0 +1,177 @@
+\hypertarget{classDRW__Arc}{}\doxysection{DRW\+\_\+\+Arc Class Reference}
+\label{classDRW__Arc}\index{DRW\_Arc@{DRW\_Arc}}
+
+
+Class to handle arc entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Arc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d8/d4e/classDRW__Arc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Arc_a594a93a1d855c6e95b5ca84e8834ddc9}{DRW\+\_\+\+Arc}} ()
+\item 
+virtual void \mbox{\hyperlink{classDRW__Arc_abbc2d4bdd58b048b22049b546ea87386}{apply\+Extrusion}} ()
+\item 
+const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{classDRW__Arc_ad211cdb78b2118f3a67b631688c520f2}{center}} () const
+\begin{DoxyCompactList}\small\item\em center point in OCS \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDRW__Arc_a25918658679d04295e3c3cdcf1e7e5b3}{radius}} () const
+\begin{DoxyCompactList}\small\item\em the radius of the circle \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDRW__Arc_ac5dc02c672d6ff62da63cbcba8c58b36}{start\+Angle}} () const
+\begin{DoxyCompactList}\small\item\em start angle in radians \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDRW__Arc_a12fcd9d9774fbe3fb04592ff5579ec04}{end\+Angle}} () const
+\begin{DoxyCompactList}\small\item\em end angle in radians \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDRW__Arc_a4fddb335b59d0186ca3260134eb5c676}{thick}} () const
+\begin{DoxyCompactList}\small\item\em thickness \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{classDRW__Arc_a07f70a7dc1ed10e38f3a35b159909ba7}{extrusion}} () const
+\begin{DoxyCompactList}\small\item\em extrusion \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classDRW__Arc_a7718d55eb1ddd3c4038be5798f37570e}{staangle}}
+\item 
+double \mbox{\hyperlink{classDRW__Arc_a3425163b91e875fc7ffad0176e0e8183}{endangle}}
+\item 
+int \mbox{\hyperlink{classDRW__Arc_aaacaac1262bc3e4a2e83c13804d1cb00}{isccw}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__Arc_a837c22a41f1b3eff3c64b10faff85de5}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em interpret code in dxf reading process or dispatch to inherited class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle arc entity. 
+
+Class to handle arc entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__Arc_a594a93a1d855c6e95b5ca84e8834ddc9}\label{classDRW__Arc_a594a93a1d855c6e95b5ca84e8834ddc9}} 
+\index{DRW\_Arc@{DRW\_Arc}!DRW\_Arc@{DRW\_Arc}}
+\index{DRW\_Arc@{DRW\_Arc}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{DRW\_Arc()}{DRW\_Arc()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Arc\+::\+DRW\+\_\+\+Arc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__Arc_abbc2d4bdd58b048b22049b546ea87386}\label{classDRW__Arc_abbc2d4bdd58b048b22049b546ea87386}} 
+\index{DRW\_Arc@{DRW\_Arc}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Arc\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDRW__Circle_a5c0add6ddd14a386a8c73cc4e13ce88c}{DRW\+\_\+\+Circle}}.
+
+\mbox{\Hypertarget{classDRW__Arc_ad211cdb78b2118f3a67b631688c520f2}\label{classDRW__Arc_ad211cdb78b2118f3a67b631688c520f2}} 
+\index{DRW\_Arc@{DRW\_Arc}!center@{center}}
+\index{center@{center}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}\& DRW\+\_\+\+Arc\+::center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+center point in OCS 
+
+\mbox{\Hypertarget{classDRW__Arc_a12fcd9d9774fbe3fb04592ff5579ec04}\label{classDRW__Arc_a12fcd9d9774fbe3fb04592ff5579ec04}} 
+\index{DRW\_Arc@{DRW\_Arc}!endAngle@{endAngle}}
+\index{endAngle@{endAngle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{endAngle()}{endAngle()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::end\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+end angle in radians 
+
+\mbox{\Hypertarget{classDRW__Arc_a07f70a7dc1ed10e38f3a35b159909ba7}\label{classDRW__Arc_a07f70a7dc1ed10e38f3a35b159909ba7}} 
+\index{DRW\_Arc@{DRW\_Arc}!extrusion@{extrusion}}
+\index{extrusion@{extrusion}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{extrusion()}{extrusion()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}}\& DRW\+\_\+\+Arc\+::extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+extrusion 
+
+\mbox{\Hypertarget{classDRW__Arc_a837c22a41f1b3eff3c64b10faff85de5}\label{classDRW__Arc_a837c22a41f1b3eff3c64b10faff85de5}} 
+\index{DRW\_Arc@{DRW\_Arc}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Arc\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+interpret code in dxf reading process or dispatch to inherited class 
+
+\mbox{\Hypertarget{classDRW__Arc_a25918658679d04295e3c3cdcf1e7e5b3}\label{classDRW__Arc_a25918658679d04295e3c3cdcf1e7e5b3}} 
+\index{DRW\_Arc@{DRW\_Arc}!radius@{radius}}
+\index{radius@{radius}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{radius()}{radius()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+the radius of the circle 
+
+\mbox{\Hypertarget{classDRW__Arc_ac5dc02c672d6ff62da63cbcba8c58b36}\label{classDRW__Arc_ac5dc02c672d6ff62da63cbcba8c58b36}} 
+\index{DRW\_Arc@{DRW\_Arc}!startAngle@{startAngle}}
+\index{startAngle@{startAngle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{startAngle()}{startAngle()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::start\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+start angle in radians 
+
+\mbox{\Hypertarget{classDRW__Arc_a4fddb335b59d0186ca3260134eb5c676}\label{classDRW__Arc_a4fddb335b59d0186ca3260134eb5c676}} 
+\index{DRW\_Arc@{DRW\_Arc}!thick@{thick}}
+\index{thick@{thick}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{thick()}{thick()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::thick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+thickness 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__Arc_a3425163b91e875fc7ffad0176e0e8183}\label{classDRW__Arc_a3425163b91e875fc7ffad0176e0e8183}} 
+\index{DRW\_Arc@{DRW\_Arc}!endangle@{endangle}}
+\index{endangle@{endangle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{endangle}{endangle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::endangle}
+
+end angle, code 51 in radians \mbox{\Hypertarget{classDRW__Arc_aaacaac1262bc3e4a2e83c13804d1cb00}\label{classDRW__Arc_aaacaac1262bc3e4a2e83c13804d1cb00}} 
+\index{DRW\_Arc@{DRW\_Arc}!isccw@{isccw}}
+\index{isccw@{isccw}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{isccw}{isccw}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Arc\+::isccw}
+
+is counter clockwise arc?, only used in hatch, code 73 \mbox{\Hypertarget{classDRW__Arc_a7718d55eb1ddd3c4038be5798f37570e}\label{classDRW__Arc_a7718d55eb1ddd3c4038be5798f37570e}} 
+\index{DRW\_Arc@{DRW\_Arc}!staangle@{staangle}}
+\index{staangle@{staangle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{staangle}{staangle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::staangle}
+
+start angle, code 50 in radians 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

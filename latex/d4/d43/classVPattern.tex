@@ -1,0 +1,1222 @@
+\hypertarget{classVPattern}{}\doxysection{VPattern Class Reference}
+\label{classVPattern}\index{VPattern@{VPattern}}
+
+
+The \mbox{\hyperlink{classVPattern}{VPattern}} class working with pattern file.  
+
+
+
+
+{\ttfamily \#include $<$vpattern.\+h$>$}
+
+Inheritance diagram for VPattern\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d4/d43/classVPattern}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVPattern_ad4fb73c93f0028b02295fb1a29bbfac8}{Lite\+Parse\+Tree}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Lite\+Parse\+Tree lite parse file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPattern_a1eab5b998aec3c0e542d81fa8f8ca28b}{VPattern}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVPattern_a39fa904849994626f4fbbbe2071d5381}{data}}, \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} $\ast$\mbox{\hyperlink{classVPattern_a1e24bfa57d1cf090908f88f16d20ca56}{mode}}, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$\mbox{\hyperlink{classVPattern_a048ef2635e666e8fde5b35955fecc012}{draft\+Scene}}, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$\mbox{\hyperlink{classVPattern_a148e6acd29726fecb2203dde2d719a2b}{piece\+Scene}}, QObject $\ast$parent=nullptr)
+\item 
+virtual void \mbox{\hyperlink{classVPattern_a7756dd3ebea99cc496657bb051a57c02}{Create\+Empty\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Create\+Empty\+File create minimal empty file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_af46d35645d7fb00e60d540ad455fe27f}{Parse}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Parse parse file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_af79f2238575f82168b93fbe09513b2d2}{set\+Current\+Data}} ()
+\begin{DoxyCompactList}\small\item\em set\+Current\+Data set current data set. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPattern_ac9761d50f31122c83d71d02bab55cfac}{Update\+Tool\+Data}} (const quint32 \&id, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVPattern_a39fa904849994626f4fbbbe2071d5381}{data}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Update\+Tool\+Data update tool in list tools. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPattern_acf2548e54b6c3073fa3181cded586ae9}{Increment\+Referens}} (quint32 id) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Increment\+Referens increment reference parent objects. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPattern_a6e5e52d2eafef029b6ed92b3637bce19}{Decrement\+Referens}} (quint32 id) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Decrement\+Referens decrement reference parent objects. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVPattern_a19e139b0a879cb5cfafb864563d34573}{get\+Active\+Base\+Point}} ()
+\begin{DoxyCompactList}\small\item\em get\+Active\+Base\+Point return id base point current draft block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{classVPattern_a117c4c20ac04d46cdd73d91381354c87}{get\+Active\+Pattern\+Pieces}} () const
+\item 
+virtual void \mbox{\hyperlink{classVPattern_ac760395c10d311cf1fc63e9591e70383}{set\+XMLContent}} (const QString \&file\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVPattern_acc2c7ce746bd15e5b0c26b3973e6e731}{Save\+Document}} (const QString \&file\+Name, QString \&error) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QRectF \mbox{\hyperlink{classVPattern_a20bd85d98a57ad9e702793573f94d92a}{Active\+Draw\+Bounding\+Rect}} () const
+\item 
+void \mbox{\hyperlink{classVPattern_a688ddc4a60c07bd37cea5186863f4bbf}{add\+Empty\+Custom\+Variable}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classVPattern_aea374a0772b036f75afc1d5268b19b6b}{add\+Empty\+Custom\+Variable\+After}} (const QString \&after, const QString \&name)
+\item 
+void \mbox{\hyperlink{classVPattern_abc5f27642d956ceced33f126393f6213}{remove\+Custom\+Variable}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classVPattern_aafe1def7601c2c1dd0943445cac9d931}{Move\+Up\+Increment}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classVPattern_a07008d7c9eadedb25d09286b22034ce4}{Move\+Down\+Increment}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{classVPattern_ab6480b4f145a1d9978adc19a28f20fe2}{set\+Increment\+Name}} (const QString \&name, const QString \&text)
+\item 
+void \mbox{\hyperlink{classVPattern_a8fd1a3171ae14a2e2c08727f03b21742}{Set\+Increment\+Formula}} (const QString \&name, const QString \&text)
+\item 
+void \mbox{\hyperlink{classVPattern_a1cd5c3acde6f249c62eefe514df7918a}{set\+Increment\+Description}} (const QString \&name, const QString \&text)
+\item 
+void \mbox{\hyperlink{classVPattern_a14d615104b8565dee335270ac62dcb80}{replace\+Name\+In\+Formula}} (\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVFormulaField}{VFormula\+Field}} $>$ \&expressions, const QString \&name, const QString \&new\+Name)
+\item 
+virtual QString \mbox{\hyperlink{classVPattern_aa3fad01c54e8a66d594d13af8fefa1b1}{Generate\+Label}} (const \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{Label\+Type}} \&type, const QString \&reserved\+Name=QString()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Generate\+Label create name for draft block basepoint. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPattern_a398106d3f9107a2ca5a4af2f73fe74bd}{Generate\+Suffix}} (const QString \&type) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{classVPattern_ab137433052e30764de02adfd625457b3}{Is\+Def\+Custom}} () const
+\item 
+void \mbox{\hyperlink{classVPattern_ae72618baa411af70b212d23967fc7160}{Set\+Def\+Custom}} (bool value)
+\item 
+int \mbox{\hyperlink{classVPattern_a2ea567f21f963b131e58568762ae9b94}{Get\+Def\+Custom\+Height}} () const
+\item 
+void \mbox{\hyperlink{classVPattern_ae8a2f6138b1623468e079a5b9430997d}{Set\+Def\+Custom\+Height}} (int value)
+\item 
+int \mbox{\hyperlink{classVPattern_a069fecbafa30c34523e6e3a0609b5033}{Get\+Def\+Custom\+Size}} () const
+\item 
+void \mbox{\hyperlink{classVPattern_a008814a9d8d82c04a96fe5832d1d469b}{Set\+Def\+Custom\+Size}} (int value)
+\item 
+bool \mbox{\hyperlink{classVPattern_a8681e4fdd2df4d64dfd4ccdaa33fe96c}{Is\+Read\+Only}} () const
+\item 
+void \mbox{\hyperlink{classVPattern_aaa819ebe90fa73ddf6e49c78161b0056}{Set\+Read\+Only}} (bool r\+Only)
+\item 
+void \mbox{\hyperlink{classVPattern_a5df4433842644a3cfb3e4340d8c8a0c8}{Lite\+Parse\+Increments}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\QT\+\_\+\+WARNING\+\_\+\+POP QRectF \mbox{\hyperlink{classVPattern_aa0215895a85e43dfef70244162ae12c4}{Tool\+Bounding\+Rect}} (const QRectF \&rect, const quint32 \&id) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVPattern_a1bc942189e2a4247bb420c557e65dac1}{Attr\+Read\+Only}} = QString\+Literal(\char`\"{}read\+Only\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVPattern_a013e4989385c69c57d56d62a48cf6804}{custom\+Event}} (QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVNodeDetail}{VNode\+Detail}} \mbox{\hyperlink{classVPattern_ab4b1fe68b5c69ef78cae172bb28b086b}{parse\+Piece\+Node}} (const QDom\+Element \&dom\+Element) const
+\item 
+void \mbox{\hyperlink{classVPattern_ad3408fd765ead3bee06f5741dd3943b2}{parse\+Draft\+Block\+Element}} (const QDom\+Node \&node, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em parse\+Draft\+Block\+Element parse draw tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_afbe69479d7aac457590223314d9b9c07}{Parse\+Draw\+Mode}} (const QDom\+Node \&node, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&\mbox{\hyperlink{classVPattern_a1e24bfa57d1cf090908f88f16d20ca56}{mode}})
+\begin{DoxyCompactList}\small\item\em Parse\+Draw\+Mode parse draw tag with draw mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_a51ee49250452360fb6436188332516b2}{parse\+Piece\+Element}} (QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em parse\+Piece\+Element parse piece tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_afe3cb10fbcfb0ef0e97b16d96d07cfd0}{parse\+Piece\+Nodes}} (const QDom\+Element \&dom\+Element, \mbox{\hyperlink{classVPiece}{VPiece}} \&piece, qreal width, bool closed) const
+\item 
+void \mbox{\hyperlink{classVPattern_a07788cda32b5f2bbe0573cc4809dc046}{Parse\+Piece\+Data\+Tag}} (const QDom\+Element \&dom\+Element, \mbox{\hyperlink{classVPiece}{VPiece}} \&piece) const
+\item 
+void \mbox{\hyperlink{classVPattern_a0fb26939b0a6a28b564bf66581adc3e3}{Parse\+Piece\+Pattern\+Info}} (const QDom\+Element \&dom\+Element, \mbox{\hyperlink{classVPiece}{VPiece}} \&piece) const
+\item 
+void \mbox{\hyperlink{classVPattern_a8177c4c301f0e9f1febdfe8e545f6a27}{Parse\+Piece\+Grainline}} (const QDom\+Element \&dom\+Element, \mbox{\hyperlink{classVPiece}{VPiece}} \&piece) const
+\item 
+void \mbox{\hyperlink{classVPattern_a70fd49f815f081c3ed98423ad3459712}{parse\+Pattern\+Pieces}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em parse\+Pattern\+Pieces parse pieces tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_aaef8a3722c447c2d7e9c9adde9394cdd}{Parse\+Point\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const QString \&type)
+\begin{DoxyCompactList}\small\item\em Parse\+Point\+Element parse point tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_ad79e70002e3bd0c78bfbf4c91ccdb395}{Parse\+Line\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Parse\+Line\+Element parse line tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_ad2ca1a2ee7f939b9ee9799a91b60c3a4}{Parse\+Spline\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const QString \&type)
+\begin{DoxyCompactList}\small\item\em Parse\+Spline\+Element parse spline tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_a6dfb7573bc85e24958bbb2048d100640}{Parse\+Arc\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const QString \&type)
+\begin{DoxyCompactList}\small\item\em Parse\+Arc\+Element parse arc tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_acfe8e8fdef3053d434ea9a18e738e694}{Parse\+Elliptical\+Arc\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const QString \&type)
+\begin{DoxyCompactList}\small\item\em Parse\+Elliptical\+Arc\+Element parse elliptical arc tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_ab1a3e68f9b62881f25d1a9fe908a1246}{Parse\+Tools\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const QString \&type)
+\begin{DoxyCompactList}\small\item\em Parse\+Tools\+Element parse tools tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_a0c67486cfa3a40f4d2728493f1fce905}{Parse\+Operation\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const QString \&type)
+\item 
+void \mbox{\hyperlink{classVPattern_a18ecd2b695a460dc1579908523f9bb42}{Parse\+Path\+Element}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a1d6f0015a5969848cc91228abff71a24}{Parse\+Increments\+Element}} (const QDom\+Node \&node)
+\begin{DoxyCompactList}\small\item\em Parse\+Increments\+Element parse increments tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPattern_a31685407b356825767175343ad322e8a}{Prepare\+For\+Parse}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a2df613d36145ea64f556316c5bfcc321}{Tools\+Common\+Attributes}} (const QDom\+Element \&dom\+Element, quint32 \&id)
+\item 
+void \mbox{\hyperlink{classVPattern_a7b8692b65f7b164d8633ce3a59a0d469}{Points\+Common\+Attributes}} (const QDom\+Element \&dom\+Element, quint32 \&id, QString \&name, qreal \&mx, qreal \&my, bool \&label\+Visible, QString \&line\+Type, QString \&line\+Weight, QString \&line\+Color)
+\item 
+void \mbox{\hyperlink{classVPattern_a2eeff3ba1f8832cf56cb1d1de2ed7f60}{Points\+Common\+Attributes}} (const QDom\+Element \&dom\+Element, quint32 \&id, QString \&name, qreal \&mx, qreal \&my, bool \&label\+Visible)
+\item 
+void \mbox{\hyperlink{classVPattern_a950bbc6caa46a0f0f1269d16b23f47fc}{Points\+Common\+Attributes}} (const QDom\+Element \&dom\+Element, quint32 \&id, qreal \&mx, qreal \&my)
+\item 
+void \mbox{\hyperlink{classVPattern_ab67ff878805574fc2c1462aeef83ffb0}{Splines\+Common\+Attributes}} (const QDom\+Element \&dom\+Element, quint32 \&id, quint32 \&id\+Object, quint32 \&id\+Tool)
+\item 
+{\footnotesize template$<$typename T $>$ }\\QRectF \mbox{\hyperlink{classVPattern_a4c07606b4257438b868b347b0d69ede5}{Tool\+Bounding\+Rect}} (const QRectF \&rec, const quint32 \&id) const
+\item 
+void \mbox{\hyperlink{classVPattern_a4049c1ad07487c6e65fe5fdcea087a08}{parse\+Current\+Draft\+Block}} ()
+\item 
+QString \mbox{\hyperlink{classVPattern_a127db4af838b0a76a37c14d22f325451}{Get\+Label\+Base}} (quint32 index) const
+\item 
+void \mbox{\hyperlink{classVPattern_ab6cacfbb791d6b2bbfa9a959b429eb73}{Parse\+Tool\+Base\+Point}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a0575f91ef7eb1490388a0c88efe00f42}{Parse\+Tool\+End\+Line}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a501ad3f05a9e9ce8ef305ca6a18c69b7}{Parse\+Tool\+Along\+Line}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_aa22b423020bdf556fe229e8d93358124}{Parse\+Tool\+Shoulder\+Point}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_acf2ecc1469d55ed8a13c43fd59dfcff3}{Parse\+Tool\+Normal}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a2b1591565a5ec5a2d1f9250210a4fb5c}{Parse\+Tool\+Bisector}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a4e00718619366832eea8afd7ffae192c}{Parse\+Tool\+Line\+Intersect}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a71177a9ed212018a6fb3424b0783933f}{Parse\+Tool\+Point\+Of\+Contact}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a5de0491fe99d03e2bb09d5bbc232e0cb}{Parse\+Node\+Point}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a22cc37f6916944cd9060e6575de8244a}{Parse\+Anchor\+Point}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a267ba63e834165e37b190607fa089be4}{Parse\+Tool\+Height}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_ada518c25daf57ce1397cedfe3b859151}{Parse\+Tool\+Triangle}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_aca783bf49194acfc73ef581d2ca831d5}{parse\+Intersect\+XYTool}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_abdd0765df4f8c26bd7f58b88cd9776ff}{Parse\+Tool\+Cut\+Spline}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a2c883d0e6582c6463828b912a0b1b762}{Parse\+Tool\+Cut\+Spline\+Path}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_acba38769417de171aab169ef612d0362}{Parse\+Tool\+Cut\+Arc}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a38c5be94b629eef4387203b544b52fe9}{Parse\+Tool\+Line\+Intersect\+Axis}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a5bd15c1ebe5d4fc061c1f7bbdc760e44}{Parse\+Tool\+Curve\+Intersect\+Axis}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_afc90021710966ad3421abfe33a23fd26}{Parse\+Tool\+Point\+Of\+Intersection\+Arcs}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a16be59c0b918faa29eda52595973d9f2}{Parse\+Tool\+Point\+Of\+Intersection\+Circles}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a1f11bb55ad174167bf3c2e70d76b041d}{Parse\+Tool\+Point\+Of\+Intersection\+Curves}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a724819a7d60ee183e7fdf1eb54c30bdb}{Parse\+Tool\+Point\+From\+Circle\+And\+Tangent}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a1f86bbf92c2483035ab814734747be0d}{Parse\+Tool\+Point\+From\+Arc\+And\+Tangent}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a1e76508accc3c2aeca03845c4af8bbef}{Parse\+Tool\+True\+Darts}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+\mbox{\hyperlink{classVPattern_a31769d83b29194cca8676aefffb455f0}{Q\+\_\+\+STATIC\+\_\+\+ASSERT\+\_\+X}} (\mbox{\hyperlink{classVPatternConverter_ac8ba8b56a2be05751a15f056bea9b6cc}{VPattern\+Converter\+::\+Pattern\+Min\+Ver}}$<$ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\+\_\+\+VERSION\+\_\+\+CHECK}}(0, 2, 7), \char`\"{}Time to refactor the code.\char`\"{})
+\item 
+void \mbox{\hyperlink{classVPattern_af159393ed69bf7af389acd4c62365242}{Parse\+Old\+Tool\+Spline}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_ad50e7ca14a4b8337d1908464fe9fa2de}{Parse\+Tool\+Spline}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a6a71e40065c6a487c437ea58574712d0}{Parse\+Tool\+Cubic\+Bezier}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+\mbox{\hyperlink{classVPattern_a31769d83b29194cca8676aefffb455f0}{Q\+\_\+\+STATIC\+\_\+\+ASSERT\+\_\+X}} (\mbox{\hyperlink{classVPatternConverter_ac8ba8b56a2be05751a15f056bea9b6cc}{VPattern\+Converter\+::\+Pattern\+Min\+Ver}}$<$ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\+\_\+\+VERSION\+\_\+\+CHECK}}(0, 2, 7), \char`\"{}Time to refactor the code.\char`\"{})
+\item 
+void \mbox{\hyperlink{classVPattern_a79f53bf38f13be9d70c3b2bb4c960619}{Parse\+Old\+Tool\+Spline\+Path}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a9174c43e258af7030ca058d3c79815f4}{Parse\+Tool\+Spline\+Path}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_ace8654fb06f87dbb7d71fdad242abd41}{Parse\+Tool\+Cubic\+Bezier\+Path}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a806d6ee4a64d415223b18c60cd736233}{Parse\+Node\+Spline}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a2f30b129fdae891f7477e7047a7add9e}{Parse\+Node\+Spline\+Path}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a98d701ff524aef0e429f098f9c7fd802}{Parse\+Tool\+Arc}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a07ab8240324cdad063170d4cce962f5d}{Parse\+Node\+Arc}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a41c025faaee38593cb85daf81925f66e}{Parse\+Tool\+Arc\+With\+Length}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_ab22bdb8a93f383648d135236a9bfd631}{Parse\+Tool\+Elliptical\+Arc}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_a379b3f26ba0da4da4e1b996dd3ac97e2}{Parse\+Node\+Elliptical\+Arc}} (const QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_ab480ed2ac91adf812daf803bffb62775}{Parse\+Tool\+Rotation}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_aa6bd4ecd1eb9a29e171546536a854568}{Parse\+Tool\+Mirror\+By\+Line}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_affe684902ad78e05ca4af9bd15869a67}{Parse\+Tool\+Mirror\+By\+Axis}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+void \mbox{\hyperlink{classVPattern_ad6c80531bbbcd2ea6ab960ef6170e1f2}{Parse\+Tool\+Move}} (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\item 
+qreal \mbox{\hyperlink{classVPattern_afa7d926ebf2b67fdc0e8c3010d536d41}{Eval\+Formula}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVPattern_a39fa904849994626f4fbbbe2071d5381}{data}}, const QString \&formula, bool $\ast$ok) const
+\item 
+QDom\+Element \mbox{\hyperlink{classVPattern_a7c8de429e2511806815f14d0a584c2b6}{Make\+Empty\+Increment}} (const QString \&name)
+\item 
+QDom\+Element \mbox{\hyperlink{classVPattern_a683a2126c06869df8b12cd9d2712273f}{Find\+Increment}} (const QString \&name) const
+\item 
+void \mbox{\hyperlink{classVPattern_aa5394816d09a7102d49c8e646814c79e}{Garbage\+Collector}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVPattern_a39fa904849994626f4fbbbe2071d5381}{data}}
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} $\ast$ \mbox{\hyperlink{classVPattern_a1e24bfa57d1cf090908f88f16d20ca56}{mode}}
+\begin{DoxyCompactList}\small\item\em data container with data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$ \mbox{\hyperlink{classVPattern_a048ef2635e666e8fde5b35955fecc012}{draft\+Scene}}
+\begin{DoxyCompactList}\small\item\em mode current draw mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$ \mbox{\hyperlink{classVPattern_a148e6acd29726fecb2203dde2d719a2b}{piece\+Scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVPattern}{VPattern}} class working with pattern file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPattern_a1eab5b998aec3c0e542d81fa8f8ca28b}\label{classVPattern_a1eab5b998aec3c0e542d81fa8f8ca28b}} 
+\index{VPattern@{VPattern}!VPattern@{VPattern}}
+\index{VPattern@{VPattern}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{VPattern()}{VPattern()}}
+{\footnotesize\ttfamily VPattern\+::\+VPattern (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} $\ast$}]{mode,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{draft\+Scene,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{piece\+Scene,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPattern_a20bd85d98a57ad9e702793573f94d92a}\label{classVPattern_a20bd85d98a57ad9e702793573f94d92a}} 
+\index{VPattern@{VPattern}!ActiveDrawBoundingRect@{ActiveDrawBoundingRect}}
+\index{ActiveDrawBoundingRect@{ActiveDrawBoundingRect}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ActiveDrawBoundingRect()}{ActiveDrawBoundingRect()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH QRectF VPattern\+::\+Active\+Draw\+Bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a688ddc4a60c07bd37cea5186863f4bbf}\label{classVPattern_a688ddc4a60c07bd37cea5186863f4bbf}} 
+\index{VPattern@{VPattern}!addEmptyCustomVariable@{addEmptyCustomVariable}}
+\index{addEmptyCustomVariable@{addEmptyCustomVariable}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{addEmptyCustomVariable()}{addEmptyCustomVariable()}}
+{\footnotesize\ttfamily void VPattern\+::add\+Empty\+Custom\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_aea374a0772b036f75afc1d5268b19b6b}\label{classVPattern_aea374a0772b036f75afc1d5268b19b6b}} 
+\index{VPattern@{VPattern}!addEmptyCustomVariableAfter@{addEmptyCustomVariableAfter}}
+\index{addEmptyCustomVariableAfter@{addEmptyCustomVariableAfter}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{addEmptyCustomVariableAfter()}{addEmptyCustomVariableAfter()}}
+{\footnotesize\ttfamily void VPattern\+::add\+Empty\+Custom\+Variable\+After (\begin{DoxyParamCaption}\item[{const QString \&}]{after,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_a7756dd3ebea99cc496657bb051a57c02}\label{classVPattern_a7756dd3ebea99cc496657bb051a57c02}} 
+\index{VPattern@{VPattern}!CreateEmptyFile@{CreateEmptyFile}}
+\index{CreateEmptyFile@{CreateEmptyFile}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{CreateEmptyFile()}{CreateEmptyFile()}}
+{\footnotesize\ttfamily void VPattern\+::\+Create\+Empty\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create\+Empty\+File create minimal empty file. 
+
+
+
+Implements \mbox{\hyperlink{classVAbstractPattern_aa4d1f7ce6efd34666ec9dfd453bbef57}{VAbstract\+Pattern}}.
+
+\mbox{\Hypertarget{classVPattern_a013e4989385c69c57d56d62a48cf6804}\label{classVPattern_a013e4989385c69c57d56d62a48cf6804}} 
+\index{VPattern@{VPattern}!customEvent@{customEvent}}
+\index{customEvent@{customEvent}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{customEvent()}{customEvent()}}
+{\footnotesize\ttfamily void VPattern\+::custom\+Event (\begin{DoxyParamCaption}\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVPattern_a6e5e52d2eafef029b6ed92b3637bce19}\label{classVPattern_a6e5e52d2eafef029b6ed92b3637bce19}} 
+\index{VPattern@{VPattern}!DecrementReferens@{DecrementReferens}}
+\index{DecrementReferens@{DecrementReferens}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{DecrementReferens()}{DecrementReferens()}}
+{\footnotesize\ttfamily void VPattern\+::\+Decrement\+Referens (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Decrement\+Referens decrement reference parent objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & parent object id. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classVAbstractPattern_af1c8c3bc15ed22d49354ffb6358ff964}{VAbstract\+Pattern}}.
+
+\mbox{\Hypertarget{classVPattern_afa7d926ebf2b67fdc0e8c3010d536d41}\label{classVPattern_afa7d926ebf2b67fdc0e8c3010d536d41}} 
+\index{VPattern@{VPattern}!EvalFormula@{EvalFormula}}
+\index{EvalFormula@{EvalFormula}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{EvalFormula()}{EvalFormula()}}
+{\footnotesize\ttfamily qreal VPattern\+::\+Eval\+Formula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const QString \&}]{formula,  }\item[{bool $\ast$}]{ok }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a683a2126c06869df8b12cd9d2712273f}\label{classVPattern_a683a2126c06869df8b12cd9d2712273f}} 
+\index{VPattern@{VPattern}!FindIncrement@{FindIncrement}}
+\index{FindIncrement@{FindIncrement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{FindIncrement()}{FindIncrement()}}
+{\footnotesize\ttfamily QDom\+Element VPattern\+::\+Find\+Increment (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_aa5394816d09a7102d49c8e646814c79e}\label{classVPattern_aa5394816d09a7102d49c8e646814c79e}} 
+\index{VPattern@{VPattern}!GarbageCollector@{GarbageCollector}}
+\index{GarbageCollector@{GarbageCollector}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{GarbageCollector()}{GarbageCollector()}}
+{\footnotesize\ttfamily void VPattern\+::\+Garbage\+Collector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_aa3fad01c54e8a66d594d13af8fefa1b1}\label{classVPattern_aa3fad01c54e8a66d594d13af8fefa1b1}} 
+\index{VPattern@{VPattern}!GenerateLabel@{GenerateLabel}}
+\index{GenerateLabel@{GenerateLabel}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{GenerateLabel()}{GenerateLabel()}}
+{\footnotesize\ttfamily QString VPattern\+::\+Generate\+Label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{Label\+Type}} \&}]{type,  }\item[{const QString \&}]{reserved\+Name = {\ttfamily QString()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Generate\+Label create name for draft block basepoint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & type of the label. \\
+\hline
+{\em reserved\+Name} & reversed point name. Use when need reserve name, but point is not in data base yet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unique name for current draft block. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classVAbstractPattern_a0d40e39a61c18c8663d82e3280065859}{VAbstract\+Pattern}}.
+
+\mbox{\Hypertarget{classVPattern_a398106d3f9107a2ca5a4af2f73fe74bd}\label{classVPattern_a398106d3f9107a2ca5a4af2f73fe74bd}} 
+\index{VPattern@{VPattern}!GenerateSuffix@{GenerateSuffix}}
+\index{GenerateSuffix@{GenerateSuffix}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{GenerateSuffix()}{GenerateSuffix()}}
+{\footnotesize\ttfamily QString VPattern\+::\+Generate\+Suffix (\begin{DoxyParamCaption}\item[{const QString \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractPattern_ae5fcc863a494308e7397906d0972bfde}{VAbstract\+Pattern}}.
+
+\mbox{\Hypertarget{classVPattern_a19e139b0a879cb5cfafb864563d34573}\label{classVPattern_a19e139b0a879cb5cfafb864563d34573}} 
+\index{VPattern@{VPattern}!getActiveBasePoint@{getActiveBasePoint}}
+\index{getActiveBasePoint@{getActiveBasePoint}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{getActiveBasePoint()}{getActiveBasePoint()}}
+{\footnotesize\ttfamily quint32 VPattern\+::get\+Active\+Base\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Active\+Base\+Point return id base point current draft block. 
+
+\begin{DoxyReturn}{Returns}
+id base point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPattern_a117c4c20ac04d46cdd73d91381354c87}\label{classVPattern_a117c4c20ac04d46cdd73d91381354c87}} 
+\index{VPattern@{VPattern}!getActivePatternPieces@{getActivePatternPieces}}
+\index{getActivePatternPieces@{getActivePatternPieces}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{getActivePatternPieces()}{getActivePatternPieces()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ VPattern\+::get\+Active\+Pattern\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a2ea567f21f963b131e58568762ae9b94}\label{classVPattern_a2ea567f21f963b131e58568762ae9b94}} 
+\index{VPattern@{VPattern}!GetDefCustomHeight@{GetDefCustomHeight}}
+\index{GetDefCustomHeight@{GetDefCustomHeight}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{GetDefCustomHeight()}{GetDefCustomHeight()}}
+{\footnotesize\ttfamily int VPattern\+::\+Get\+Def\+Custom\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a069fecbafa30c34523e6e3a0609b5033}\label{classVPattern_a069fecbafa30c34523e6e3a0609b5033}} 
+\index{VPattern@{VPattern}!GetDefCustomSize@{GetDefCustomSize}}
+\index{GetDefCustomSize@{GetDefCustomSize}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{GetDefCustomSize()}{GetDefCustomSize()}}
+{\footnotesize\ttfamily int VPattern\+::\+Get\+Def\+Custom\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a127db4af838b0a76a37c14d22f325451}\label{classVPattern_a127db4af838b0a76a37c14d22f325451}} 
+\index{VPattern@{VPattern}!GetLabelBase@{GetLabelBase}}
+\index{GetLabelBase@{GetLabelBase}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{GetLabelBase()}{GetLabelBase()}}
+{\footnotesize\ttfamily QString VPattern\+::\+Get\+Label\+Base (\begin{DoxyParamCaption}\item[{quint32}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_acf2548e54b6c3073fa3181cded586ae9}\label{classVPattern_acf2548e54b6c3073fa3181cded586ae9}} 
+\index{VPattern@{VPattern}!IncrementReferens@{IncrementReferens}}
+\index{IncrementReferens@{IncrementReferens}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{IncrementReferens()}{IncrementReferens()}}
+{\footnotesize\ttfamily void VPattern\+::\+Increment\+Referens (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Increment\+Referens increment reference parent objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & parent object id. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classVAbstractPattern_a698f53614173279191a3f46f5ba5e950}{VAbstract\+Pattern}}.
+
+\mbox{\Hypertarget{classVPattern_ab137433052e30764de02adfd625457b3}\label{classVPattern_ab137433052e30764de02adfd625457b3}} 
+\index{VPattern@{VPattern}!IsDefCustom@{IsDefCustom}}
+\index{IsDefCustom@{IsDefCustom}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{IsDefCustom()}{IsDefCustom()}}
+{\footnotesize\ttfamily bool VPattern\+::\+Is\+Def\+Custom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a8681e4fdd2df4d64dfd4ccdaa33fe96c}\label{classVPattern_a8681e4fdd2df4d64dfd4ccdaa33fe96c}} 
+\index{VPattern@{VPattern}!IsReadOnly@{IsReadOnly}}
+\index{IsReadOnly@{IsReadOnly}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{IsReadOnly()}{IsReadOnly()}}
+{\footnotesize\ttfamily bool VPattern\+::\+Is\+Read\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a5df4433842644a3cfb3e4340d8c8a0c8}\label{classVPattern_a5df4433842644a3cfb3e4340d8c8a0c8}} 
+\index{VPattern@{VPattern}!LiteParseIncrements@{LiteParseIncrements}}
+\index{LiteParseIncrements@{LiteParseIncrements}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{LiteParseIncrements()}{LiteParseIncrements()}}
+{\footnotesize\ttfamily void VPattern\+::\+Lite\+Parse\+Increments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_ad4fb73c93f0028b02295fb1a29bbfac8}\label{classVPattern_ad4fb73c93f0028b02295fb1a29bbfac8}} 
+\index{VPattern@{VPattern}!LiteParseTree@{LiteParseTree}}
+\index{LiteParseTree@{LiteParseTree}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{LiteParseTree}{LiteParseTree}}
+{\footnotesize\ttfamily void VPattern\+::\+Lite\+Parse\+Tree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Lite\+Parse\+Tree lite parse file. 
+
+\mbox{\Hypertarget{classVPattern_a7c8de429e2511806815f14d0a584c2b6}\label{classVPattern_a7c8de429e2511806815f14d0a584c2b6}} 
+\index{VPattern@{VPattern}!MakeEmptyIncrement@{MakeEmptyIncrement}}
+\index{MakeEmptyIncrement@{MakeEmptyIncrement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{MakeEmptyIncrement()}{MakeEmptyIncrement()}}
+{\footnotesize\ttfamily QDom\+Element VPattern\+::\+Make\+Empty\+Increment (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a07008d7c9eadedb25d09286b22034ce4}\label{classVPattern_a07008d7c9eadedb25d09286b22034ce4}} 
+\index{VPattern@{VPattern}!MoveDownIncrement@{MoveDownIncrement}}
+\index{MoveDownIncrement@{MoveDownIncrement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{MoveDownIncrement()}{MoveDownIncrement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Move\+Down\+Increment (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_aafe1def7601c2c1dd0943445cac9d931}\label{classVPattern_aafe1def7601c2c1dd0943445cac9d931}} 
+\index{VPattern@{VPattern}!MoveUpIncrement@{MoveUpIncrement}}
+\index{MoveUpIncrement@{MoveUpIncrement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{MoveUpIncrement()}{MoveUpIncrement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Move\+Up\+Increment (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_af46d35645d7fb00e60d540ad455fe27f}\label{classVPattern_af46d35645d7fb00e60d540ad455fe27f}} 
+\index{VPattern@{VPattern}!Parse@{Parse}}
+\index{Parse@{Parse}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})}
+
+
+
+Parse parse file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parse} & parser file mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a22cc37f6916944cd9060e6575de8244a}\label{classVPattern_a22cc37f6916944cd9060e6575de8244a}} 
+\index{VPattern@{VPattern}!ParseAnchorPoint@{ParseAnchorPoint}}
+\index{ParseAnchorPoint@{ParseAnchorPoint}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseAnchorPoint()}{ParseAnchorPoint()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Anchor\+Point (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a6dfb7573bc85e24958bbb2048d100640}\label{classVPattern_a6dfb7573bc85e24958bbb2048d100640}} 
+\index{VPattern@{VPattern}!ParseArcElement@{ParseArcElement}}
+\index{ParseArcElement@{ParseArcElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseArcElement()}{ParseArcElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Arc\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Arc\+Element parse arc tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & scene. \\
+\hline
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type} & type of spline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a4049c1ad07487c6e65fe5fdcea087a08}\label{classVPattern_a4049c1ad07487c6e65fe5fdcea087a08}} 
+\index{VPattern@{VPattern}!parseCurrentDraftBlock@{parseCurrentDraftBlock}}
+\index{parseCurrentDraftBlock@{parseCurrentDraftBlock}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parseCurrentDraftBlock()}{parseCurrentDraftBlock()}}
+{\footnotesize\ttfamily void VPattern\+::parse\+Current\+Draft\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ad3408fd765ead3bee06f5741dd3943b2}\label{classVPattern_ad3408fd765ead3bee06f5741dd3943b2}} 
+\index{VPattern@{VPattern}!parseDraftBlockElement@{parseDraftBlockElement}}
+\index{parseDraftBlockElement@{parseDraftBlockElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parseDraftBlockElement()}{parseDraftBlockElement()}}
+{\footnotesize\ttfamily void VPattern\+::parse\+Draft\+Block\+Element (\begin{DoxyParamCaption}\item[{const QDom\+Node \&}]{node,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parse\+Draft\+Block\+Element parse draw tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & node. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_afbe69479d7aac457590223314d9b9c07}\label{classVPattern_afbe69479d7aac457590223314d9b9c07}} 
+\index{VPattern@{VPattern}!ParseDrawMode@{ParseDrawMode}}
+\index{ParseDrawMode@{ParseDrawMode}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseDrawMode()}{ParseDrawMode()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Draw\+Mode (\begin{DoxyParamCaption}\item[{const QDom\+Node \&}]{node,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Draw\+Mode parse draw tag with draw mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & node. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em mode} & draw mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_acfe8e8fdef3053d434ea9a18e738e694}\label{classVPattern_acfe8e8fdef3053d434ea9a18e738e694}} 
+\index{VPattern@{VPattern}!ParseEllipticalArcElement@{ParseEllipticalArcElement}}
+\index{ParseEllipticalArcElement@{ParseEllipticalArcElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseEllipticalArcElement()}{ParseEllipticalArcElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Elliptical\+Arc\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Elliptical\+Arc\+Element parse elliptical arc tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & scene. \\
+\hline
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type} & type of spline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a1d6f0015a5969848cc91228abff71a24}\label{classVPattern_a1d6f0015a5969848cc91228abff71a24}} 
+\index{VPattern@{VPattern}!ParseIncrementsElement@{ParseIncrementsElement}}
+\index{ParseIncrementsElement@{ParseIncrementsElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseIncrementsElement()}{ParseIncrementsElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Increments\+Element (\begin{DoxyParamCaption}\item[{const QDom\+Node \&}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Increments\+Element parse increments tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & tag in xml tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_aca783bf49194acfc73ef581d2ca831d5}\label{classVPattern_aca783bf49194acfc73ef581d2ca831d5}} 
+\index{VPattern@{VPattern}!parseIntersectXYTool@{parseIntersectXYTool}}
+\index{parseIntersectXYTool@{parseIntersectXYTool}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parseIntersectXYTool()}{parseIntersectXYTool()}}
+{\footnotesize\ttfamily void VPattern\+::parse\+Intersect\+XYTool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ad79e70002e3bd0c78bfbf4c91ccdb395}\label{classVPattern_ad79e70002e3bd0c78bfbf4c91ccdb395}} 
+\index{VPattern@{VPattern}!ParseLineElement@{ParseLineElement}}
+\index{ParseLineElement@{ParseLineElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseLineElement()}{ParseLineElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Line\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Line\+Element parse line tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & scene. \\
+\hline
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a07ab8240324cdad063170d4cce962f5d}\label{classVPattern_a07ab8240324cdad063170d4cce962f5d}} 
+\index{VPattern@{VPattern}!ParseNodeArc@{ParseNodeArc}}
+\index{ParseNodeArc@{ParseNodeArc}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseNodeArc()}{ParseNodeArc()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Node\+Arc (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a379b3f26ba0da4da4e1b996dd3ac97e2}\label{classVPattern_a379b3f26ba0da4da4e1b996dd3ac97e2}} 
+\index{VPattern@{VPattern}!ParseNodeEllipticalArc@{ParseNodeEllipticalArc}}
+\index{ParseNodeEllipticalArc@{ParseNodeEllipticalArc}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseNodeEllipticalArc()}{ParseNodeEllipticalArc()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Node\+Elliptical\+Arc (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a5de0491fe99d03e2bb09d5bbc232e0cb}\label{classVPattern_a5de0491fe99d03e2bb09d5bbc232e0cb}} 
+\index{VPattern@{VPattern}!ParseNodePoint@{ParseNodePoint}}
+\index{ParseNodePoint@{ParseNodePoint}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseNodePoint()}{ParseNodePoint()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Node\+Point (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a806d6ee4a64d415223b18c60cd736233}\label{classVPattern_a806d6ee4a64d415223b18c60cd736233}} 
+\index{VPattern@{VPattern}!ParseNodeSpline@{ParseNodeSpline}}
+\index{ParseNodeSpline@{ParseNodeSpline}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseNodeSpline()}{ParseNodeSpline()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Node\+Spline (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a2f30b129fdae891f7477e7047a7add9e}\label{classVPattern_a2f30b129fdae891f7477e7047a7add9e}} 
+\index{VPattern@{VPattern}!ParseNodeSplinePath@{ParseNodeSplinePath}}
+\index{ParseNodeSplinePath@{ParseNodeSplinePath}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseNodeSplinePath()}{ParseNodeSplinePath()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Node\+Spline\+Path (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_af159393ed69bf7af389acd4c62365242}\label{classVPattern_af159393ed69bf7af389acd4c62365242}} 
+\index{VPattern@{VPattern}!ParseOldToolSpline@{ParseOldToolSpline}}
+\index{ParseOldToolSpline@{ParseOldToolSpline}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseOldToolSpline()}{ParseOldToolSpline()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Old\+Tool\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a79f53bf38f13be9d70c3b2bb4c960619}\label{classVPattern_a79f53bf38f13be9d70c3b2bb4c960619}} 
+\index{VPattern@{VPattern}!ParseOldToolSplinePath@{ParseOldToolSplinePath}}
+\index{ParseOldToolSplinePath@{ParseOldToolSplinePath}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseOldToolSplinePath()}{ParseOldToolSplinePath()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Old\+Tool\+Spline\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a0c67486cfa3a40f4d2728493f1fce905}\label{classVPattern_a0c67486cfa3a40f4d2728493f1fce905}} 
+\index{VPattern@{VPattern}!ParseOperationElement@{ParseOperationElement}}
+\index{ParseOperationElement@{ParseOperationElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseOperationElement()}{ParseOperationElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Operation\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a18ecd2b695a460dc1579908523f9bb42}\label{classVPattern_a18ecd2b695a460dc1579908523f9bb42}} 
+\index{VPattern@{VPattern}!ParsePathElement@{ParsePathElement}}
+\index{ParsePathElement@{ParsePathElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParsePathElement()}{ParsePathElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Path\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a70fd49f815f081c3ed98423ad3459712}\label{classVPattern_a70fd49f815f081c3ed98423ad3459712}} 
+\index{VPattern@{VPattern}!parsePatternPieces@{parsePatternPieces}}
+\index{parsePatternPieces@{parsePatternPieces}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parsePatternPieces()}{parsePatternPieces()}}
+{\footnotesize\ttfamily void VPattern\+::parse\+Pattern\+Pieces (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parse\+Pattern\+Pieces parse pieces tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a07788cda32b5f2bbe0573cc4809dc046}\label{classVPattern_a07788cda32b5f2bbe0573cc4809dc046}} 
+\index{VPattern@{VPattern}!ParsePieceDataTag@{ParsePieceDataTag}}
+\index{ParsePieceDataTag@{ParsePieceDataTag}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParsePieceDataTag()}{ParsePieceDataTag()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Piece\+Data\+Tag (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{\mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a51ee49250452360fb6436188332516b2}\label{classVPattern_a51ee49250452360fb6436188332516b2}} 
+\index{VPattern@{VPattern}!parsePieceElement@{parsePieceElement}}
+\index{parsePieceElement@{parsePieceElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parsePieceElement()}{parsePieceElement()}}
+{\footnotesize\ttfamily void VPattern\+::parse\+Piece\+Element (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+parse\+Piece\+Element parse piece tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a8177c4c301f0e9f1febdfe8e545f6a27}\label{classVPattern_a8177c4c301f0e9f1febdfe8e545f6a27}} 
+\index{VPattern@{VPattern}!ParsePieceGrainline@{ParsePieceGrainline}}
+\index{ParsePieceGrainline@{ParsePieceGrainline}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParsePieceGrainline()}{ParsePieceGrainline()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Piece\+Grainline (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{\mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ab4b1fe68b5c69ef78cae172bb28b086b}\label{classVPattern_ab4b1fe68b5c69ef78cae172bb28b086b}} 
+\index{VPattern@{VPattern}!parsePieceNode@{parsePieceNode}}
+\index{parsePieceNode@{parsePieceNode}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parsePieceNode()}{parsePieceNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVNodeDetail}{VNode\+Detail}} VPattern\+::parse\+Piece\+Node (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_afe3cb10fbcfb0ef0e97b16d96d07cfd0}\label{classVPattern_afe3cb10fbcfb0ef0e97b16d96d07cfd0}} 
+\index{VPattern@{VPattern}!parsePieceNodes@{parsePieceNodes}}
+\index{parsePieceNodes@{parsePieceNodes}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{parsePieceNodes()}{parsePieceNodes()}}
+{\footnotesize\ttfamily void VPattern\+::parse\+Piece\+Nodes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{\mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece,  }\item[{qreal}]{width,  }\item[{bool}]{closed }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a0fb26939b0a6a28b564bf66581adc3e3}\label{classVPattern_a0fb26939b0a6a28b564bf66581adc3e3}} 
+\index{VPattern@{VPattern}!ParsePiecePatternInfo@{ParsePiecePatternInfo}}
+\index{ParsePiecePatternInfo@{ParsePiecePatternInfo}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParsePiecePatternInfo()}{ParsePiecePatternInfo()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Piece\+Pattern\+Info (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{\mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_aaef8a3722c447c2d7e9c9adde9394cdd}\label{classVPattern_aaef8a3722c447c2d7e9c9adde9394cdd}} 
+\index{VPattern@{VPattern}!ParsePointElement@{ParsePointElement}}
+\index{ParsePointElement@{ParsePointElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParsePointElement()}{ParsePointElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Point\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Point\+Element parse point tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & scene. \\
+\hline
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type} & type of point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_ad2ca1a2ee7f939b9ee9799a91b60c3a4}\label{classVPattern_ad2ca1a2ee7f939b9ee9799a91b60c3a4}} 
+\index{VPattern@{VPattern}!ParseSplineElement@{ParseSplineElement}}
+\index{ParseSplineElement@{ParseSplineElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseSplineElement()}{ParseSplineElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Spline\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Spline\+Element parse spline tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & scene. \\
+\hline
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type} & type of spline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_a501ad3f05a9e9ce8ef305ca6a18c69b7}\label{classVPattern_a501ad3f05a9e9ce8ef305ca6a18c69b7}} 
+\index{VPattern@{VPattern}!ParseToolAlongLine@{ParseToolAlongLine}}
+\index{ParseToolAlongLine@{ParseToolAlongLine}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolAlongLine()}{ParseToolAlongLine()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Along\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a98d701ff524aef0e429f098f9c7fd802}\label{classVPattern_a98d701ff524aef0e429f098f9c7fd802}} 
+\index{VPattern@{VPattern}!ParseToolArc@{ParseToolArc}}
+\index{ParseToolArc@{ParseToolArc}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolArc()}{ParseToolArc()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a41c025faaee38593cb85daf81925f66e}\label{classVPattern_a41c025faaee38593cb85daf81925f66e}} 
+\index{VPattern@{VPattern}!ParseToolArcWithLength@{ParseToolArcWithLength}}
+\index{ParseToolArcWithLength@{ParseToolArcWithLength}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolArcWithLength()}{ParseToolArcWithLength()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Arc\+With\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ab6cacfbb791d6b2bbfa9a959b429eb73}\label{classVPattern_ab6cacfbb791d6b2bbfa9a959b429eb73}} 
+\index{VPattern@{VPattern}!ParseToolBasePoint@{ParseToolBasePoint}}
+\index{ParseToolBasePoint@{ParseToolBasePoint}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolBasePoint()}{ParseToolBasePoint()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Base\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a2b1591565a5ec5a2d1f9250210a4fb5c}\label{classVPattern_a2b1591565a5ec5a2d1f9250210a4fb5c}} 
+\index{VPattern@{VPattern}!ParseToolBisector@{ParseToolBisector}}
+\index{ParseToolBisector@{ParseToolBisector}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolBisector()}{ParseToolBisector()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Bisector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a6a71e40065c6a487c437ea58574712d0}\label{classVPattern_a6a71e40065c6a487c437ea58574712d0}} 
+\index{VPattern@{VPattern}!ParseToolCubicBezier@{ParseToolCubicBezier}}
+\index{ParseToolCubicBezier@{ParseToolCubicBezier}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolCubicBezier()}{ParseToolCubicBezier()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Cubic\+Bezier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ace8654fb06f87dbb7d71fdad242abd41}\label{classVPattern_ace8654fb06f87dbb7d71fdad242abd41}} 
+\index{VPattern@{VPattern}!ParseToolCubicBezierPath@{ParseToolCubicBezierPath}}
+\index{ParseToolCubicBezierPath@{ParseToolCubicBezierPath}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolCubicBezierPath()}{ParseToolCubicBezierPath()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a5bd15c1ebe5d4fc061c1f7bbdc760e44}\label{classVPattern_a5bd15c1ebe5d4fc061c1f7bbdc760e44}} 
+\index{VPattern@{VPattern}!ParseToolCurveIntersectAxis@{ParseToolCurveIntersectAxis}}
+\index{ParseToolCurveIntersectAxis@{ParseToolCurveIntersectAxis}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolCurveIntersectAxis()}{ParseToolCurveIntersectAxis()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Curve\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_acba38769417de171aab169ef612d0362}\label{classVPattern_acba38769417de171aab169ef612d0362}} 
+\index{VPattern@{VPattern}!ParseToolCutArc@{ParseToolCutArc}}
+\index{ParseToolCutArc@{ParseToolCutArc}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolCutArc()}{ParseToolCutArc()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Cut\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_abdd0765df4f8c26bd7f58b88cd9776ff}\label{classVPattern_abdd0765df4f8c26bd7f58b88cd9776ff}} 
+\index{VPattern@{VPattern}!ParseToolCutSpline@{ParseToolCutSpline}}
+\index{ParseToolCutSpline@{ParseToolCutSpline}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolCutSpline()}{ParseToolCutSpline()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Cut\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a2c883d0e6582c6463828b912a0b1b762}\label{classVPattern_a2c883d0e6582c6463828b912a0b1b762}} 
+\index{VPattern@{VPattern}!ParseToolCutSplinePath@{ParseToolCutSplinePath}}
+\index{ParseToolCutSplinePath@{ParseToolCutSplinePath}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolCutSplinePath()}{ParseToolCutSplinePath()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Cut\+Spline\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ab22bdb8a93f383648d135236a9bfd631}\label{classVPattern_ab22bdb8a93f383648d135236a9bfd631}} 
+\index{VPattern@{VPattern}!ParseToolEllipticalArc@{ParseToolEllipticalArc}}
+\index{ParseToolEllipticalArc@{ParseToolEllipticalArc}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolEllipticalArc()}{ParseToolEllipticalArc()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Elliptical\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a0575f91ef7eb1490388a0c88efe00f42}\label{classVPattern_a0575f91ef7eb1490388a0c88efe00f42}} 
+\index{VPattern@{VPattern}!ParseToolEndLine@{ParseToolEndLine}}
+\index{ParseToolEndLine@{ParseToolEndLine}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolEndLine()}{ParseToolEndLine()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+End\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a267ba63e834165e37b190607fa089be4}\label{classVPattern_a267ba63e834165e37b190607fa089be4}} 
+\index{VPattern@{VPattern}!ParseToolHeight@{ParseToolHeight}}
+\index{ParseToolHeight@{ParseToolHeight}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolHeight()}{ParseToolHeight()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a4e00718619366832eea8afd7ffae192c}\label{classVPattern_a4e00718619366832eea8afd7ffae192c}} 
+\index{VPattern@{VPattern}!ParseToolLineIntersect@{ParseToolLineIntersect}}
+\index{ParseToolLineIntersect@{ParseToolLineIntersect}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolLineIntersect()}{ParseToolLineIntersect()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Line\+Intersect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a38c5be94b629eef4387203b544b52fe9}\label{classVPattern_a38c5be94b629eef4387203b544b52fe9}} 
+\index{VPattern@{VPattern}!ParseToolLineIntersectAxis@{ParseToolLineIntersectAxis}}
+\index{ParseToolLineIntersectAxis@{ParseToolLineIntersectAxis}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolLineIntersectAxis()}{ParseToolLineIntersectAxis()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Line\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_affe684902ad78e05ca4af9bd15869a67}\label{classVPattern_affe684902ad78e05ca4af9bd15869a67}} 
+\index{VPattern@{VPattern}!ParseToolMirrorByAxis@{ParseToolMirrorByAxis}}
+\index{ParseToolMirrorByAxis@{ParseToolMirrorByAxis}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolMirrorByAxis()}{ParseToolMirrorByAxis()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Mirror\+By\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_aa6bd4ecd1eb9a29e171546536a854568}\label{classVPattern_aa6bd4ecd1eb9a29e171546536a854568}} 
+\index{VPattern@{VPattern}!ParseToolMirrorByLine@{ParseToolMirrorByLine}}
+\index{ParseToolMirrorByLine@{ParseToolMirrorByLine}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolMirrorByLine()}{ParseToolMirrorByLine()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Mirror\+By\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ad6c80531bbbcd2ea6ab960ef6170e1f2}\label{classVPattern_ad6c80531bbbcd2ea6ab960ef6170e1f2}} 
+\index{VPattern@{VPattern}!ParseToolMove@{ParseToolMove}}
+\index{ParseToolMove@{ParseToolMove}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolMove()}{ParseToolMove()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_acf2ecc1469d55ed8a13c43fd59dfcff3}\label{classVPattern_acf2ecc1469d55ed8a13c43fd59dfcff3}} 
+\index{VPattern@{VPattern}!ParseToolNormal@{ParseToolNormal}}
+\index{ParseToolNormal@{ParseToolNormal}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolNormal()}{ParseToolNormal()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Normal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a1f86bbf92c2483035ab814734747be0d}\label{classVPattern_a1f86bbf92c2483035ab814734747be0d}} 
+\index{VPattern@{VPattern}!ParseToolPointFromArcAndTangent@{ParseToolPointFromArcAndTangent}}
+\index{ParseToolPointFromArcAndTangent@{ParseToolPointFromArcAndTangent}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolPointFromArcAndTangent()}{ParseToolPointFromArcAndTangent()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Point\+From\+Arc\+And\+Tangent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a724819a7d60ee183e7fdf1eb54c30bdb}\label{classVPattern_a724819a7d60ee183e7fdf1eb54c30bdb}} 
+\index{VPattern@{VPattern}!ParseToolPointFromCircleAndTangent@{ParseToolPointFromCircleAndTangent}}
+\index{ParseToolPointFromCircleAndTangent@{ParseToolPointFromCircleAndTangent}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolPointFromCircleAndTangent()}{ParseToolPointFromCircleAndTangent()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Point\+From\+Circle\+And\+Tangent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a71177a9ed212018a6fb3424b0783933f}\label{classVPattern_a71177a9ed212018a6fb3424b0783933f}} 
+\index{VPattern@{VPattern}!ParseToolPointOfContact@{ParseToolPointOfContact}}
+\index{ParseToolPointOfContact@{ParseToolPointOfContact}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolPointOfContact()}{ParseToolPointOfContact()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Point\+Of\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_afc90021710966ad3421abfe33a23fd26}\label{classVPattern_afc90021710966ad3421abfe33a23fd26}} 
+\index{VPattern@{VPattern}!ParseToolPointOfIntersectionArcs@{ParseToolPointOfIntersectionArcs}}
+\index{ParseToolPointOfIntersectionArcs@{ParseToolPointOfIntersectionArcs}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolPointOfIntersectionArcs()}{ParseToolPointOfIntersectionArcs()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Point\+Of\+Intersection\+Arcs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a16be59c0b918faa29eda52595973d9f2}\label{classVPattern_a16be59c0b918faa29eda52595973d9f2}} 
+\index{VPattern@{VPattern}!ParseToolPointOfIntersectionCircles@{ParseToolPointOfIntersectionCircles}}
+\index{ParseToolPointOfIntersectionCircles@{ParseToolPointOfIntersectionCircles}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolPointOfIntersectionCircles()}{ParseToolPointOfIntersectionCircles()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Point\+Of\+Intersection\+Circles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a1f11bb55ad174167bf3c2e70d76b041d}\label{classVPattern_a1f11bb55ad174167bf3c2e70d76b041d}} 
+\index{VPattern@{VPattern}!ParseToolPointOfIntersectionCurves@{ParseToolPointOfIntersectionCurves}}
+\index{ParseToolPointOfIntersectionCurves@{ParseToolPointOfIntersectionCurves}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolPointOfIntersectionCurves()}{ParseToolPointOfIntersectionCurves()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Point\+Of\+Intersection\+Curves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ab480ed2ac91adf812daf803bffb62775}\label{classVPattern_ab480ed2ac91adf812daf803bffb62775}} 
+\index{VPattern@{VPattern}!ParseToolRotation@{ParseToolRotation}}
+\index{ParseToolRotation@{ParseToolRotation}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolRotation()}{ParseToolRotation()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ab1a3e68f9b62881f25d1a9fe908a1246}\label{classVPattern_ab1a3e68f9b62881f25d1a9fe908a1246}} 
+\index{VPattern@{VPattern}!ParseToolsElement@{ParseToolsElement}}
+\index{ParseToolsElement@{ParseToolsElement}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolsElement()}{ParseToolsElement()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tools\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const QString \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Parse\+Tools\+Element parse tools tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & scene. \\
+\hline
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type} & type of spline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVPattern_aa22b423020bdf556fe229e8d93358124}\label{classVPattern_aa22b423020bdf556fe229e8d93358124}} 
+\index{VPattern@{VPattern}!ParseToolShoulderPoint@{ParseToolShoulderPoint}}
+\index{ParseToolShoulderPoint@{ParseToolShoulderPoint}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolShoulderPoint()}{ParseToolShoulderPoint()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Shoulder\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ad50e7ca14a4b8337d1908464fe9fa2de}\label{classVPattern_ad50e7ca14a4b8337d1908464fe9fa2de}} 
+\index{VPattern@{VPattern}!ParseToolSpline@{ParseToolSpline}}
+\index{ParseToolSpline@{ParseToolSpline}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolSpline()}{ParseToolSpline()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a9174c43e258af7030ca058d3c79815f4}\label{classVPattern_a9174c43e258af7030ca058d3c79815f4}} 
+\index{VPattern@{VPattern}!ParseToolSplinePath@{ParseToolSplinePath}}
+\index{ParseToolSplinePath@{ParseToolSplinePath}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolSplinePath()}{ParseToolSplinePath()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Spline\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ada518c25daf57ce1397cedfe3b859151}\label{classVPattern_ada518c25daf57ce1397cedfe3b859151}} 
+\index{VPattern@{VPattern}!ParseToolTriangle@{ParseToolTriangle}}
+\index{ParseToolTriangle@{ParseToolTriangle}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolTriangle()}{ParseToolTriangle()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a1e76508accc3c2aeca03845c4af8bbef}\label{classVPattern_a1e76508accc3c2aeca03845c4af8bbef}} 
+\index{VPattern@{VPattern}!ParseToolTrueDarts@{ParseToolTrueDarts}}
+\index{ParseToolTrueDarts@{ParseToolTrueDarts}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ParseToolTrueDarts()}{ParseToolTrueDarts()}}
+{\footnotesize\ttfamily void VPattern\+::\+Parse\+Tool\+True\+Darts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a950bbc6caa46a0f0f1269d16b23f47fc}\label{classVPattern_a950bbc6caa46a0f0f1269d16b23f47fc}} 
+\index{VPattern@{VPattern}!PointsCommonAttributes@{PointsCommonAttributes}}
+\index{PointsCommonAttributes@{PointsCommonAttributes}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{PointsCommonAttributes()}{PointsCommonAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void VPattern\+::\+Points\+Common\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{quint32 \&}]{id,  }\item[{qreal \&}]{mx,  }\item[{qreal \&}]{my }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a2eeff3ba1f8832cf56cb1d1de2ed7f60}\label{classVPattern_a2eeff3ba1f8832cf56cb1d1de2ed7f60}} 
+\index{VPattern@{VPattern}!PointsCommonAttributes@{PointsCommonAttributes}}
+\index{PointsCommonAttributes@{PointsCommonAttributes}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{PointsCommonAttributes()}{PointsCommonAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void VPattern\+::\+Points\+Common\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{quint32 \&}]{id,  }\item[{QString \&}]{name,  }\item[{qreal \&}]{mx,  }\item[{qreal \&}]{my,  }\item[{bool \&}]{label\+Visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a7b8692b65f7b164d8633ce3a59a0d469}\label{classVPattern_a7b8692b65f7b164d8633ce3a59a0d469}} 
+\index{VPattern@{VPattern}!PointsCommonAttributes@{PointsCommonAttributes}}
+\index{PointsCommonAttributes@{PointsCommonAttributes}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{PointsCommonAttributes()}{PointsCommonAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void VPattern\+::\+Points\+Common\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{quint32 \&}]{id,  }\item[{QString \&}]{name,  }\item[{qreal \&}]{mx,  }\item[{qreal \&}]{my,  }\item[{bool \&}]{label\+Visible,  }\item[{QString \&}]{line\+Type,  }\item[{QString \&}]{line\+Weight,  }\item[{QString \&}]{line\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a31685407b356825767175343ad322e8a}\label{classVPattern_a31685407b356825767175343ad322e8a}} 
+\index{VPattern@{VPattern}!PrepareForParse@{PrepareForParse}}
+\index{PrepareForParse@{PrepareForParse}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{PrepareForParse()}{PrepareForParse()}}
+{\footnotesize\ttfamily void VPattern\+::\+Prepare\+For\+Parse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a31769d83b29194cca8676aefffb455f0}\label{classVPattern_a31769d83b29194cca8676aefffb455f0}} 
+\index{VPattern@{VPattern}!Q\_STATIC\_ASSERT\_X@{Q\_STATIC\_ASSERT\_X}}
+\index{Q\_STATIC\_ASSERT\_X@{Q\_STATIC\_ASSERT\_X}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{Q\_STATIC\_ASSERT\_X()}{Q\_STATIC\_ASSERT\_X()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VPattern\+::\+Q\+\_\+\+STATIC\+\_\+\+ASSERT\+\_\+X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a31769d83b29194cca8676aefffb455f0}\label{classVPattern_a31769d83b29194cca8676aefffb455f0}} 
+\index{VPattern@{VPattern}!Q\_STATIC\_ASSERT\_X@{Q\_STATIC\_ASSERT\_X}}
+\index{Q\_STATIC\_ASSERT\_X@{Q\_STATIC\_ASSERT\_X}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{Q\_STATIC\_ASSERT\_X()}{Q\_STATIC\_ASSERT\_X()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VPattern\+::\+Q\+\_\+\+STATIC\+\_\+\+ASSERT\+\_\+X (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_abc5f27642d956ceced33f126393f6213}\label{classVPattern_abc5f27642d956ceced33f126393f6213}} 
+\index{VPattern@{VPattern}!removeCustomVariable@{removeCustomVariable}}
+\index{removeCustomVariable@{removeCustomVariable}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{removeCustomVariable()}{removeCustomVariable()}}
+{\footnotesize\ttfamily void VPattern\+::remove\+Custom\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_a14d615104b8565dee335270ac62dcb80}\label{classVPattern_a14d615104b8565dee335270ac62dcb80}} 
+\index{VPattern@{VPattern}!replaceNameInFormula@{replaceNameInFormula}}
+\index{replaceNameInFormula@{replaceNameInFormula}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{replaceNameInFormula()}{replaceNameInFormula()}}
+{\footnotesize\ttfamily void VPattern\+::replace\+Name\+In\+Formula (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVFormulaField}{VFormula\+Field}} $>$ \&}]{expressions,  }\item[{const QString \&}]{name,  }\item[{const QString \&}]{new\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_acc2c7ce746bd15e5b0c26b3973e6e731}\label{classVPattern_acc2c7ce746bd15e5b0c26b3973e6e731}} 
+\index{VPattern@{VPattern}!SaveDocument@{SaveDocument}}
+\index{SaveDocument@{SaveDocument}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SaveDocument()}{SaveDocument()}}
+{\footnotesize\ttfamily bool VPattern\+::\+Save\+Document (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{QString \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDomDocument_aeaf681ea2c0d1efb06557f18e00f49c6}{VDom\+Document}}.
+
+\mbox{\Hypertarget{classVPattern_af79f2238575f82168b93fbe09513b2d2}\label{classVPattern_af79f2238575f82168b93fbe09513b2d2}} 
+\index{VPattern@{VPattern}!setCurrentData@{setCurrentData}}
+\index{setCurrentData@{setCurrentData}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{setCurrentData()}{setCurrentData()}}
+{\footnotesize\ttfamily void VPattern\+::set\+Current\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Current\+Data set current data set. 
+
+Each time after parsing need set correct data set for current draft block. After parsing it is always last. Current data set for draft block it is data set for last object in draft block (point, arc, spline, spline path so on). \mbox{\Hypertarget{classVPattern_ae72618baa411af70b212d23967fc7160}\label{classVPattern_ae72618baa411af70b212d23967fc7160}} 
+\index{VPattern@{VPattern}!SetDefCustom@{SetDefCustom}}
+\index{SetDefCustom@{SetDefCustom}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SetDefCustom()}{SetDefCustom()}}
+{\footnotesize\ttfamily void VPattern\+::\+Set\+Def\+Custom (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_ae8a2f6138b1623468e079a5b9430997d}\label{classVPattern_ae8a2f6138b1623468e079a5b9430997d}} 
+\index{VPattern@{VPattern}!SetDefCustomHeight@{SetDefCustomHeight}}
+\index{SetDefCustomHeight@{SetDefCustomHeight}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SetDefCustomHeight()}{SetDefCustomHeight()}}
+{\footnotesize\ttfamily void VPattern\+::\+Set\+Def\+Custom\+Height (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_a008814a9d8d82c04a96fe5832d1d469b}\label{classVPattern_a008814a9d8d82c04a96fe5832d1d469b}} 
+\index{VPattern@{VPattern}!SetDefCustomSize@{SetDefCustomSize}}
+\index{SetDefCustomSize@{SetDefCustomSize}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SetDefCustomSize()}{SetDefCustomSize()}}
+{\footnotesize\ttfamily void VPattern\+::\+Set\+Def\+Custom\+Size (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_a1cd5c3acde6f249c62eefe514df7918a}\label{classVPattern_a1cd5c3acde6f249c62eefe514df7918a}} 
+\index{VPattern@{VPattern}!setIncrementDescription@{setIncrementDescription}}
+\index{setIncrementDescription@{setIncrementDescription}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{setIncrementDescription()}{setIncrementDescription()}}
+{\footnotesize\ttfamily void VPattern\+::set\+Increment\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const QString \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_a8fd1a3171ae14a2e2c08727f03b21742}\label{classVPattern_a8fd1a3171ae14a2e2c08727f03b21742}} 
+\index{VPattern@{VPattern}!SetIncrementFormula@{SetIncrementFormula}}
+\index{SetIncrementFormula@{SetIncrementFormula}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SetIncrementFormula()}{SetIncrementFormula()}}
+{\footnotesize\ttfamily void VPattern\+::\+Set\+Increment\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const QString \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_ab6480b4f145a1d9978adc19a28f20fe2}\label{classVPattern_ab6480b4f145a1d9978adc19a28f20fe2}} 
+\index{VPattern@{VPattern}!setIncrementName@{setIncrementName}}
+\index{setIncrementName@{setIncrementName}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{setIncrementName()}{setIncrementName()}}
+{\footnotesize\ttfamily void VPattern\+::set\+Increment\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const QString \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_aaa819ebe90fa73ddf6e49c78161b0056}\label{classVPattern_aaa819ebe90fa73ddf6e49c78161b0056}} 
+\index{VPattern@{VPattern}!SetReadOnly@{SetReadOnly}}
+\index{SetReadOnly@{SetReadOnly}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SetReadOnly()}{SetReadOnly()}}
+{\footnotesize\ttfamily void VPattern\+::\+Set\+Read\+Only (\begin{DoxyParamCaption}\item[{bool}]{r\+Only }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPattern_ac760395c10d311cf1fc63e9591e70383}\label{classVPattern_ac760395c10d311cf1fc63e9591e70383}} 
+\index{VPattern@{VPattern}!setXMLContent@{setXMLContent}}
+\index{setXMLContent@{setXMLContent}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{setXMLContent()}{setXMLContent()}}
+{\footnotesize\ttfamily void VPattern\+::set\+XMLContent (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDomDocument_ad316cde19d3383a783936544c822b750}{VDom\+Document}}.
+
+\mbox{\Hypertarget{classVPattern_ab67ff878805574fc2c1462aeef83ffb0}\label{classVPattern_ab67ff878805574fc2c1462aeef83ffb0}} 
+\index{VPattern@{VPattern}!SplinesCommonAttributes@{SplinesCommonAttributes}}
+\index{SplinesCommonAttributes@{SplinesCommonAttributes}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{SplinesCommonAttributes()}{SplinesCommonAttributes()}}
+{\footnotesize\ttfamily void VPattern\+::\+Splines\+Common\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{quint32 \&}]{id,  }\item[{quint32 \&}]{id\+Object,  }\item[{quint32 \&}]{id\+Tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a4c07606b4257438b868b347b0d69ede5}\label{classVPattern_a4c07606b4257438b868b347b0d69ede5}} 
+\index{VPattern@{VPattern}!ToolBoundingRect@{ToolBoundingRect}}
+\index{ToolBoundingRect@{ToolBoundingRect}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ToolBoundingRect()}{ToolBoundingRect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+QRectF VPattern\+::\+Tool\+Bounding\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rec,  }\item[{const quint32 \&}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_aa0215895a85e43dfef70244162ae12c4}\label{classVPattern_aa0215895a85e43dfef70244162ae12c4}} 
+\index{VPattern@{VPattern}!ToolBoundingRect@{ToolBoundingRect}}
+\index{ToolBoundingRect@{ToolBoundingRect}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ToolBoundingRect()}{ToolBoundingRect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+QT\+\_\+\+WARNING\+\_\+\+POP QRectF VPattern\+::\+Tool\+Bounding\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect,  }\item[{const quint32 \&}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPattern_a2df613d36145ea64f556316c5bfcc321}\label{classVPattern_a2df613d36145ea64f556316c5bfcc321}} 
+\index{VPattern@{VPattern}!ToolsCommonAttributes@{ToolsCommonAttributes}}
+\index{ToolsCommonAttributes@{ToolsCommonAttributes}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{ToolsCommonAttributes()}{ToolsCommonAttributes()}}
+{\footnotesize\ttfamily void VPattern\+::\+Tools\+Common\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{quint32 \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_ac9761d50f31122c83d71d02bab55cfac}\label{classVPattern_ac9761d50f31122c83d71d02bab55cfac}} 
+\index{VPattern@{VPattern}!UpdateToolData@{UpdateToolData}}
+\index{UpdateToolData@{UpdateToolData}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{UpdateToolData()}{UpdateToolData()}}
+{\footnotesize\ttfamily void VPattern\+::\+Update\+Tool\+Data (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update\+Tool\+Data update tool in list tools. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & tool id. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classVAbstractPattern_a3f3b6ce0527e751e3ce4d89f3f2ec444}{VAbstract\+Pattern}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPattern_a1bc942189e2a4247bb420c557e65dac1}\label{classVPattern_a1bc942189e2a4247bb420c557e65dac1}} 
+\index{VPattern@{VPattern}!AttrReadOnly@{AttrReadOnly}}
+\index{AttrReadOnly@{AttrReadOnly}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{AttrReadOnly}{AttrReadOnly}}
+{\footnotesize\ttfamily const QString VPattern\+::\+Attr\+Read\+Only = QString\+Literal(\char`\"{}read\+Only\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPattern_a39fa904849994626f4fbbbe2071d5381}\label{classVPattern_a39fa904849994626f4fbbbe2071d5381}} 
+\index{VPattern@{VPattern}!data@{data}}
+\index{data@{data}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ VPattern\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPattern_a048ef2635e666e8fde5b35955fecc012}\label{classVPattern_a048ef2635e666e8fde5b35955fecc012}} 
+\index{VPattern@{VPattern}!draftScene@{draftScene}}
+\index{draftScene@{draftScene}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{draftScene}{draftScene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}}$\ast$ VPattern\+::draft\+Scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+mode current draw mode. 
+
+\mbox{\Hypertarget{classVPattern_a1e24bfa57d1cf090908f88f16d20ca56}\label{classVPattern_a1e24bfa57d1cf090908f88f16d20ca56}} 
+\index{VPattern@{VPattern}!mode@{mode}}
+\index{mode@{mode}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}$\ast$ VPattern\+::mode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+data container with data. 
+
+\mbox{\Hypertarget{classVPattern_a148e6acd29726fecb2203dde2d719a2b}\label{classVPattern_a148e6acd29726fecb2203dde2d719a2b}} 
+\index{VPattern@{VPattern}!pieceScene@{pieceScene}}
+\index{pieceScene@{pieceScene}!VPattern@{VPattern}}
+\doxysubsubsection{\texorpdfstring{pieceScene}{pieceScene}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}}$\ast$ VPattern\+::piece\+Scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/xml/\mbox{\hyperlink{vpattern_8h}{vpattern.\+h}}\item 
+src/app/seamly2d/xml/\mbox{\hyperlink{vpattern_8cpp}{vpattern.\+cpp}}\end{DoxyCompactItemize}

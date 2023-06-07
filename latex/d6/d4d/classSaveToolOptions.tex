@@ -1,0 +1,114 @@
+\hypertarget{classSaveToolOptions}{}\doxysection{Save\+Tool\+Options Class Reference}
+\label{classSaveToolOptions}\index{SaveToolOptions@{SaveToolOptions}}
+
+
+{\ttfamily \#include $<$savetooloptions.\+h$>$}
+
+Inheritance diagram for Save\+Tool\+Options\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d6/d4d/classSaveToolOptions}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSaveToolOptions_a2dc6067ebe991c0d3a11e0b46c1aafdc}{Save\+Tool\+Options}} (const QDom\+Element \&\mbox{\hyperlink{classSaveToolOptions_a225fa592d5a483e4e9615433e137f916}{old\+Xml}}, const QDom\+Element \&\mbox{\hyperlink{classSaveToolOptions_a7aae82e339d08d9f387c1c44dc98b8b5}{new\+Xml}}, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVUndoCommand_a59f91873c1db4adde66d943abc043fa0}{doc}}, const quint32 \&\mbox{\hyperlink{classSaveToolOptions_a078353bed073fc4a7cdedd5db68193d8}{id}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classSaveToolOptions_a1b083a74d9c5275587d41fbd5dc9b757}{$\sim$\+Save\+Tool\+Options}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classSaveToolOptions_a1308548920b27eb8da32abfe50675be4}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classSaveToolOptions_a71f94bb07dfd9d11794cff81ee5af2e9}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classSaveToolOptions_acfe5795cfcccf60db4fbb19d8b454c86}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classSaveToolOptions_a078353bed073fc4a7cdedd5db68193d8}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QDom\+Element \mbox{\hyperlink{classSaveToolOptions_a8e950ac14b073a761193626a282ad73a}{get\+New\+Xml}} () const
+\item 
+quint32 \mbox{\hyperlink{classSaveToolOptions_a8f920f6b231e375528841befd5e29b4e}{get\+Tool\+Id}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const QDom\+Element \mbox{\hyperlink{classSaveToolOptions_a225fa592d5a483e4e9615433e137f916}{old\+Xml}}
+\item 
+QDom\+Element \mbox{\hyperlink{classSaveToolOptions_a7aae82e339d08d9f387c1c44dc98b8b5}{new\+Xml}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSaveToolOptions_a2dc6067ebe991c0d3a11e0b46c1aafdc}\label{classSaveToolOptions_a2dc6067ebe991c0d3a11e0b46c1aafdc}} 
+\index{SaveToolOptions@{SaveToolOptions}!SaveToolOptions@{SaveToolOptions}}
+\index{SaveToolOptions@{SaveToolOptions}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{SaveToolOptions()}{SaveToolOptions()}}
+{\footnotesize\ttfamily Save\+Tool\+Options\+::\+Save\+Tool\+Options (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{old\+Xml,  }\item[{const QDom\+Element \&}]{new\+Xml,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const quint32 \&}]{id,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSaveToolOptions_a1b083a74d9c5275587d41fbd5dc9b757}\label{classSaveToolOptions_a1b083a74d9c5275587d41fbd5dc9b757}} 
+\index{SaveToolOptions@{SaveToolOptions}!````~SaveToolOptions@{$\sim$SaveToolOptions}}
+\index{````~SaveToolOptions@{$\sim$SaveToolOptions}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{$\sim$SaveToolOptions()}{~SaveToolOptions()}}
+{\footnotesize\ttfamily Save\+Tool\+Options\+::$\sim$\+Save\+Tool\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSaveToolOptions_a8e950ac14b073a761193626a282ad73a}\label{classSaveToolOptions_a8e950ac14b073a761193626a282ad73a}} 
+\index{SaveToolOptions@{SaveToolOptions}!getNewXml@{getNewXml}}
+\index{getNewXml@{getNewXml}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{getNewXml()}{getNewXml()}}
+{\footnotesize\ttfamily QDom\+Element Save\+Tool\+Options\+::get\+New\+Xml (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSaveToolOptions_a8f920f6b231e375528841befd5e29b4e}\label{classSaveToolOptions_a8f920f6b231e375528841befd5e29b4e}} 
+\index{SaveToolOptions@{SaveToolOptions}!getToolId@{getToolId}}
+\index{getToolId@{getToolId}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{getToolId()}{getToolId()}}
+{\footnotesize\ttfamily quint32 Save\+Tool\+Options\+::get\+Tool\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSaveToolOptions_a078353bed073fc4a7cdedd5db68193d8}\label{classSaveToolOptions_a078353bed073fc4a7cdedd5db68193d8}} 
+\index{SaveToolOptions@{SaveToolOptions}!id@{id}}
+\index{id@{id}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Save\+Tool\+Options\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSaveToolOptions_acfe5795cfcccf60db4fbb19d8b454c86}\label{classSaveToolOptions_acfe5795cfcccf60db4fbb19d8b454c86}} 
+\index{SaveToolOptions@{SaveToolOptions}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Save\+Tool\+Options\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSaveToolOptions_a71f94bb07dfd9d11794cff81ee5af2e9}\label{classSaveToolOptions_a71f94bb07dfd9d11794cff81ee5af2e9}} 
+\index{SaveToolOptions@{SaveToolOptions}!redo@{redo}}
+\index{redo@{redo}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Save\+Tool\+Options\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classSaveToolOptions_a1308548920b27eb8da32abfe50675be4}\label{classSaveToolOptions_a1308548920b27eb8da32abfe50675be4}} 
+\index{SaveToolOptions@{SaveToolOptions}!undo@{undo}}
+\index{undo@{undo}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Save\+Tool\+Options\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSaveToolOptions_a7aae82e339d08d9f387c1c44dc98b8b5}\label{classSaveToolOptions_a7aae82e339d08d9f387c1c44dc98b8b5}} 
+\index{SaveToolOptions@{SaveToolOptions}!newXml@{newXml}}
+\index{newXml@{newXml}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{newXml}{newXml}}
+{\footnotesize\ttfamily QDom\+Element Save\+Tool\+Options\+::new\+Xml\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSaveToolOptions_a225fa592d5a483e4e9615433e137f916}\label{classSaveToolOptions_a225fa592d5a483e4e9615433e137f916}} 
+\index{SaveToolOptions@{SaveToolOptions}!oldXml@{oldXml}}
+\index{oldXml@{oldXml}!SaveToolOptions@{SaveToolOptions}}
+\doxysubsubsection{\texorpdfstring{oldXml}{oldXml}}
+{\footnotesize\ttfamily const QDom\+Element Save\+Tool\+Options\+::old\+Xml\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/undocommands/\mbox{\hyperlink{savetooloptions_8h}{savetooloptions.\+h}}\item 
+src/libs/vtools/undocommands/\mbox{\hyperlink{savetooloptions_8cpp}{savetooloptions.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,254 @@
+\hypertarget{classDialogMirrorByAxis}{}\doxysection{Dialog\+Mirror\+By\+Axis Class Reference}
+\label{classDialogMirrorByAxis}\index{DialogMirrorByAxis@{DialogMirrorByAxis}}
+
+
+{\ttfamily \#include $<$dialogmirrorbyaxis.\+h$>$}
+
+Inheritance diagram for Dialog\+Mirror\+By\+Axis\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d7/d5e/classDialogMirrorByAxis}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogMirrorByAxis_a517aea8a699a079214ddb739b7e93775}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogMirrorByAxis_ae511f4c9f1fea6bca23d0d19e50b3aea}{Selected\+Object}} (bool selected, quint32 id, quint32 tool) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogMirrorByAxis_a383e6763547b8bfa96bdaf4eb75e4e61}{Dialog\+Mirror\+By\+Axis}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classDialogMirrorByAxis_a7daa2b01fdbba4d58715f8c125870648}{$\sim$\+Dialog\+Mirror\+By\+Axis}} ()
+\item 
+quint32 \mbox{\hyperlink{classDialogMirrorByAxis_a2f022285bbb3081c7cc5a3095127bf00}{get\+Origin\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classDialogMirrorByAxis_a7b5dc6d70a628c08f9285c43d649288d}{set\+Origin\+Point\+Id}} (quint32 value)
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{Axis\+Type}} \mbox{\hyperlink{classDialogMirrorByAxis_a691c2e2ffb6a0a2b5c5261041a16c5b0}{get\+Axis\+Type}} () const
+\item 
+void \mbox{\hyperlink{classDialogMirrorByAxis_a94550e24f6238a4089fa1f62833057a6}{set\+Axis\+Type}} (\mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{Axis\+Type}} type)
+\item 
+QString \mbox{\hyperlink{classDialogMirrorByAxis_a5867161d7c553ef9cddb968767734ebb}{get\+Suffix}} () const
+\item 
+void \mbox{\hyperlink{classDialogMirrorByAxis_a849de4e5ff62b18db3907e70b2dc9f20}{set\+Suffix}} (const QString \&value)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \mbox{\hyperlink{classDialogMirrorByAxis_a8b1c4c4bded18adb5851dff31a610e8c}{get\+Source\+Objects}} () const
+\item 
+void \mbox{\hyperlink{classDialogMirrorByAxis_a54ca2d456dd58fa96ba112bfc1993275}{set\+Source\+Objects}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&value)
+\item 
+virtual void \mbox{\hyperlink{classDialogMirrorByAxis_a97ba05689be2049f2a975baa1fc1fd34}{Show\+Dialog}} (bool click) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogMirrorByAxis_a87108d2061f16e669a58c9487c2e751f}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Check\+State enable, when all is correct, or disable, when something wrong, button ok. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogMirrorByAxis_ad98655f75443a6b8f09595c52fcf40ab}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogMirrorByAxis_ad7f19d4d60d8abbc75719dc2d327649c}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDialogMirrorByAxis_ac24eae237b40f0014b6f20463e79e6aa}{suffix\+Changed}} ()
+\item 
+void \mbox{\hyperlink{classDialogMirrorByAxis_a25bc9079c44431773e9c8751393c1693}{point\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classDialogMirrorByAxis_a02509647c608b114c7e70fdc4ef47b29}{fill\+Combo\+Box\+Axis\+Type}} (QCombo\+Box $\ast$box)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Mirror\+By\+Axis $\ast$ \mbox{\hyperlink{classDialogMirrorByAxis_a039cfbbc1abc3eb0f1279a57b86456fe}{ui}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \mbox{\hyperlink{classDialogMirrorByAxis_af6c8402524b366aa0df15f02d6d10d7b}{m\+\_\+objects}}
+\item 
+bool \mbox{\hyperlink{classDialogMirrorByAxis_a4d1a96e74cfbccca0b78e90b432f641c}{stage1}}
+\item 
+QString \mbox{\hyperlink{classDialogMirrorByAxis_a8ef6fc82c37b0d03db506ac0547b87f2}{m\+\_\+suffix}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogMirrorByAxis_a383e6763547b8bfa96bdaf4eb75e4e61}\label{classDialogMirrorByAxis_a383e6763547b8bfa96bdaf4eb75e4e61}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{DialogMirrorByAxis()}{DialogMirrorByAxis()}}
+{\footnotesize\ttfamily Dialog\+Mirror\+By\+Axis\+::\+Dialog\+Mirror\+By\+Axis (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a7daa2b01fdbba4d58715f8c125870648}\label{classDialogMirrorByAxis_a7daa2b01fdbba4d58715f8c125870648}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!````~DialogMirrorByAxis@{$\sim$DialogMirrorByAxis}}
+\index{````~DialogMirrorByAxis@{$\sim$DialogMirrorByAxis}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogMirrorByAxis()}{~DialogMirrorByAxis()}}
+{\footnotesize\ttfamily Dialog\+Mirror\+By\+Axis\+::$\sim$\+Dialog\+Mirror\+By\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogMirrorByAxis_a87108d2061f16e669a58c9487c2e751f}\label{classDialogMirrorByAxis_a87108d2061f16e669a58c9487c2e751f}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State enable, when all is correct, or disable, when something wrong, button ok. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a517aea8a699a079214ddb739b7e93775}\label{classDialogMirrorByAxis_a517aea8a699a079214ddb739b7e93775}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a02509647c608b114c7e70fdc4ef47b29}\label{classDialogMirrorByAxis_a02509647c608b114c7e70fdc4ef47b29}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!fillComboBoxAxisType@{fillComboBoxAxisType}}
+\index{fillComboBoxAxisType@{fillComboBoxAxisType}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{fillComboBoxAxisType()}{fillComboBoxAxisType()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::fill\+Combo\+Box\+Axis\+Type (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a691c2e2ffb6a0a2b5c5261041a16c5b0}\label{classDialogMirrorByAxis_a691c2e2ffb6a0a2b5c5261041a16c5b0}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!getAxisType@{getAxisType}}
+\index{getAxisType@{getAxisType}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{getAxisType()}{getAxisType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{Axis\+Type}} Dialog\+Mirror\+By\+Axis\+::get\+Axis\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a2f022285bbb3081c7cc5a3095127bf00}\label{classDialogMirrorByAxis_a2f022285bbb3081c7cc5a3095127bf00}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!getOriginPointId@{getOriginPointId}}
+\index{getOriginPointId@{getOriginPointId}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{getOriginPointId()}{getOriginPointId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Mirror\+By\+Axis\+::get\+Origin\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a8b1c4c4bded18adb5851dff31a610e8c}\label{classDialogMirrorByAxis_a8b1c4c4bded18adb5851dff31a610e8c}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!getSourceObjects@{getSourceObjects}}
+\index{getSourceObjects@{getSourceObjects}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{getSourceObjects()}{getSourceObjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ Dialog\+Mirror\+By\+Axis\+::get\+Source\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a5867161d7c553ef9cddb968767734ebb}\label{classDialogMirrorByAxis_a5867161d7c553ef9cddb968767734ebb}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!getSuffix@{getSuffix}}
+\index{getSuffix@{getSuffix}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{getSuffix()}{getSuffix()}}
+{\footnotesize\ttfamily QString Dialog\+Mirror\+By\+Axis\+::get\+Suffix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a25bc9079c44431773e9c8751393c1693}\label{classDialogMirrorByAxis_a25bc9079c44431773e9c8751393c1693}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!pointChanged@{pointChanged}}
+\index{pointChanged@{pointChanged}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{pointChanged}{pointChanged}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::point\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_ad7f19d4d60d8abbc75719dc2d327649c}\label{classDialogMirrorByAxis_ad7f19d4d60d8abbc75719dc2d327649c}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_ae511f4c9f1fea6bca23d0d19e50b3aea}\label{classDialogMirrorByAxis_ae511f4c9f1fea6bca23d0d19e50b3aea}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!SelectedObject@{SelectedObject}}
+\index{SelectedObject@{SelectedObject}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{SelectedObject}{SelectedObject}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::\+Selected\+Object (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{id,  }\item[{quint32}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a94550e24f6238a4089fa1f62833057a6}\label{classDialogMirrorByAxis_a94550e24f6238a4089fa1f62833057a6}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!setAxisType@{setAxisType}}
+\index{setAxisType@{setAxisType}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{setAxisType()}{setAxisType()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::set\+Axis\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{Axis\+Type}}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a7b5dc6d70a628c08f9285c43d649288d}\label{classDialogMirrorByAxis_a7b5dc6d70a628c08f9285c43d649288d}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!setOriginPointId@{setOriginPointId}}
+\index{setOriginPointId@{setOriginPointId}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{setOriginPointId()}{setOriginPointId()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::set\+Origin\+Point\+Id (\begin{DoxyParamCaption}\item[{quint32}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a54ca2d456dd58fa96ba112bfc1993275}\label{classDialogMirrorByAxis_a54ca2d456dd58fa96ba112bfc1993275}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!setSourceObjects@{setSourceObjects}}
+\index{setSourceObjects@{setSourceObjects}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{setSourceObjects()}{setSourceObjects()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::set\+Source\+Objects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structSourceItem}{Source\+Item}} $>$ \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a849de4e5ff62b18db3907e70b2dc9f20}\label{classDialogMirrorByAxis_a849de4e5ff62b18db3907e70b2dc9f20}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!setSuffix@{setSuffix}}
+\index{setSuffix@{setSuffix}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{setSuffix()}{setSuffix()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::set\+Suffix (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a97ba05689be2049f2a975baa1fc1fd34}\label{classDialogMirrorByAxis_a97ba05689be2049f2a975baa1fc1fd34}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!ShowDialog@{ShowDialog}}
+\index{ShowDialog@{ShowDialog}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{ShowDialog()}{ShowDialog()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::\+Show\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{click }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a6da67387057958c9a8de664a86c14efb}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_ad98655f75443a6b8f09595c52fcf40ab}\label{classDialogMirrorByAxis_ad98655f75443a6b8f09595c52fcf40ab}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_ac24eae237b40f0014b6f20463e79e6aa}\label{classDialogMirrorByAxis_ac24eae237b40f0014b6f20463e79e6aa}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!suffixChanged@{suffixChanged}}
+\index{suffixChanged@{suffixChanged}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{suffixChanged}{suffixChanged}}
+{\footnotesize\ttfamily void Dialog\+Mirror\+By\+Axis\+::suffix\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogMirrorByAxis_af6c8402524b366aa0df15f02d6d10d7b}\label{classDialogMirrorByAxis_af6c8402524b366aa0df15f02d6d10d7b}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!m\_objects@{m\_objects}}
+\index{m\_objects@{m\_objects}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{m\_objects}{m\_objects}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{structSourceItem}{Source\+Item}}$>$ Dialog\+Mirror\+By\+Axis\+::m\+\_\+objects\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a8ef6fc82c37b0d03db506ac0547b87f2}\label{classDialogMirrorByAxis_a8ef6fc82c37b0d03db506ac0547b87f2}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!m\_suffix@{m\_suffix}}
+\index{m\_suffix@{m\_suffix}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{m\_suffix}{m\_suffix}}
+{\footnotesize\ttfamily QString Dialog\+Mirror\+By\+Axis\+::m\+\_\+suffix\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a4d1a96e74cfbccca0b78e90b432f641c}\label{classDialogMirrorByAxis_a4d1a96e74cfbccca0b78e90b432f641c}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!stage1@{stage1}}
+\index{stage1@{stage1}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{stage1}{stage1}}
+{\footnotesize\ttfamily bool Dialog\+Mirror\+By\+Axis\+::stage1\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDialogMirrorByAxis_a039cfbbc1abc3eb0f1279a57b86456fe}\label{classDialogMirrorByAxis_a039cfbbc1abc3eb0f1279a57b86456fe}} 
+\index{DialogMirrorByAxis@{DialogMirrorByAxis}!ui@{ui}}
+\index{ui@{ui}!DialogMirrorByAxis@{DialogMirrorByAxis}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Mirror\+By\+Axis$\ast$ Dialog\+Mirror\+By\+Axis\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogmirrorbyaxis_8h}{dialogmirrorbyaxis.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogmirrorbyaxis_8cpp}{dialogmirrorbyaxis.\+cpp}}\end{DoxyCompactItemize}

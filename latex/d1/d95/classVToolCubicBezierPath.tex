@@ -1,0 +1,268 @@
+\hypertarget{classVToolCubicBezierPath}{}\doxysection{VTool\+Cubic\+Bezier\+Path Class Reference}
+\label{classVToolCubicBezierPath}\index{VToolCubicBezierPath@{VToolCubicBezierPath}}
+
+
+{\ttfamily \#include $<$vtoolcubicbezierpath.\+h$>$}
+
+Inheritance diagram for VTool\+Cubic\+Bezier\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=7.000000cm]{d1/d95/classVToolCubicBezierPath}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolCubicBezierPath_a0cd4119f00aafbab77c4e328f75949e9afbbcb5f3890af2ebb8ff7946b222a912}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Cubic\+Bezier\+Path)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classVToolCubicBezierPath_a38eb71d3c862a06b9352343c75b28d97}{$\sim$\+VTool\+Cubic\+Bezier\+Path}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_a69bec5d6a3d04a29111eb2f2e041c4dd}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolCubicBezierPath_a0282038890944132bbc8872a247124eb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \mbox{\hyperlink{classVToolCubicBezierPath_aabfad499e1ff99980a1c22bf57181c08}{get\+Spline\+Path}} () const
+\item 
+void \mbox{\hyperlink{classVToolCubicBezierPath_a385b60e013e984088cdf238e62a61bb8}{set\+Spline\+Path}} (const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&\mbox{\hyperlink{ifcdef_8h_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}})
+\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_a305b3202a3a63b4283655d4c47938302}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolCubicBezierPath}{VTool\+Cubic\+Bezier\+Path}} $\ast$ \mbox{\hyperlink{classVToolCubicBezierPath_a0513eda19ff4174655e054138ee1a7b9}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static \mbox{\hyperlink{classVToolCubicBezierPath}{VTool\+Cubic\+Bezier\+Path}} $\ast$ \mbox{\hyperlink{classVToolCubicBezierPath_a1d22f16a703872f2373c14d83031e267}{Create}} (const quint32 \+\_\+id, \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} $\ast$path, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\item 
+static void \mbox{\hyperlink{classVToolCubicBezierPath_aa6a79410cfabd890ae1855cb942a9e21}{Update\+Path\+Points}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&element, const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolCubicBezierPath_a728200a9187345f397484b8a901e3579}{Tool\+Type}} = QString\+Literal(\char`\"{}cubic\+Bezier\+Path\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_a9088b4974d6f465cd4a181e16dda3215}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_a19fe17d8d66bb23a11e3c2c9286dbb78}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_acf1e4da85e87d2d5c30ebc098d316690}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_a76111843d6f1c7d04b41229cce4713c0}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_ab246ae0cc3355278ece942299e6df0a6}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolCubicBezierPath_abd71b5aa181dda510befc47a63c9be8e}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Refresh\+Geometry refresh item on scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolCubicBezierPath_a56c1a25896c35a2690c0d716303b3ec3}{VTool\+Cubic\+Bezier\+Path}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{classVToolCubicBezierPath_a1ae4168ae9564a3614c89c84e3a097a4}{Set\+Spline\+Path\+Attributes}} (QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classVToolCubicBezierPath_a69a7b1ba37fddb5bfe752ac3fe8fe5d8}{Add\+Path\+Point}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{classVPointF}{VPointF}} \&spl\+Point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolCubicBezierPath_a0cd4119f00aafbab77c4e328f75949e9}\label{classVToolCubicBezierPath_a0cd4119f00aafbab77c4e328f75949e9}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolCubicBezierPath@{VToolCubicBezierPath}}\index{VToolCubicBezierPath@{VToolCubicBezierPath}!Type@{Type}}}\mbox{\Hypertarget{classVToolCubicBezierPath_a0cd4119f00aafbab77c4e328f75949e9afbbcb5f3890af2ebb8ff7946b222a912}\label{classVToolCubicBezierPath_a0cd4119f00aafbab77c4e328f75949e9afbbcb5f3890af2ebb8ff7946b222a912}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolCubicBezierPath_a38eb71d3c862a06b9352343c75b28d97}\label{classVToolCubicBezierPath_a38eb71d3c862a06b9352343c75b28d97}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!````~VToolCubicBezierPath@{$\sim$VToolCubicBezierPath}}
+\index{````~VToolCubicBezierPath@{$\sim$VToolCubicBezierPath}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{$\sim$VToolCubicBezierPath()}{~VToolCubicBezierPath()}}
+{\footnotesize\ttfamily virtual VTool\+Cubic\+Bezier\+Path\+::$\sim$\+VTool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a56c1a25896c35a2690c0d716303b3ec3}\label{classVToolCubicBezierPath_a56c1a25896c35a2690c0d716303b3ec3}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{VToolCubicBezierPath()}{VToolCubicBezierPath()}}
+{\footnotesize\ttfamily VTool\+Cubic\+Bezier\+Path\+::\+VTool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolCubicBezierPath_a69a7b1ba37fddb5bfe752ac3fe8fe5d8}\label{classVToolCubicBezierPath_a69a7b1ba37fddb5bfe752ac3fe8fe5d8}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!AddPathPoint@{AddPathPoint}}
+\index{AddPathPoint@{AddPathPoint}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{AddPathPoint()}{AddPathPoint()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Add\+Path\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classVPointF}{VPointF}} \&}]{spl\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a1d22f16a703872f2373c14d83031e267}\label{classVToolCubicBezierPath_a1d22f16a703872f2373c14d83031e267}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!Create@{Create}}
+\index{Create@{Create}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolCubicBezierPath}{VTool\+Cubic\+Bezier\+Path}} $\ast$ VTool\+Cubic\+Bezier\+Path\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{\mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} $\ast$}]{path,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a0513eda19ff4174655e054138ee1a7b9}\label{classVToolCubicBezierPath_a0513eda19ff4174655e054138ee1a7b9}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!Create@{Create}}
+\index{Create@{Create}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolCubicBezierPath}{VTool\+Cubic\+Bezier\+Path}} $\ast$ VTool\+Cubic\+Bezier\+Path\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_aabfad499e1ff99980a1c22bf57181c08}\label{classVToolCubicBezierPath_aabfad499e1ff99980a1c22bf57181c08}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!getSplinePath@{getSplinePath}}
+\index{getSplinePath@{getSplinePath}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{getSplinePath()}{getSplinePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} VTool\+Cubic\+Bezier\+Path\+::get\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_abd71b5aa181dda510befc47a63c9be8e}\label{classVToolCubicBezierPath_abd71b5aa181dda510befc47a63c9be8e}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Refresh\+Geometry refresh item on scene. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_a4e402cb1af57c62e88b64c8d7149c78e}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a19fe17d8d66bb23a11e3c2c9286dbb78}\label{classVToolCubicBezierPath_a19fe17d8d66bb23a11e3c2c9286dbb78}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_acf1e4da85e87d2d5c30ebc098d316690}\label{classVToolCubicBezierPath_acf1e4da85e87d2d5c30ebc098d316690}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a76111843d6f1c7d04b41229cce4713c0}\label{classVToolCubicBezierPath_a76111843d6f1c7d04b41229cce4713c0}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_a01f2c57f0ce45ef261cd41c0065502e8}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a69bec5d6a3d04a29111eb2f2e041c4dd}\label{classVToolCubicBezierPath_a69bec5d6a3d04a29111eb2f2e041c4dd}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a385b60e013e984088cdf238e62a61bb8}\label{classVToolCubicBezierPath_a385b60e013e984088cdf238e62a61bb8}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!setSplinePath@{setSplinePath}}
+\index{setSplinePath@{setSplinePath}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{setSplinePath()}{setSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::set\+Spline\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&}]{spl\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a1ae4168ae9564a3614c89c84e3a097a4}\label{classVToolCubicBezierPath_a1ae4168ae9564a3614c89c84e3a097a4}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!SetSplinePathAttributes@{SetSplinePathAttributes}}
+\index{SetSplinePathAttributes@{SetSplinePathAttributes}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{SetSplinePathAttributes()}{SetSplinePathAttributes()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Set\+Spline\+Path\+Attributes (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_ab246ae0cc3355278ece942299e6df0a6}\label{classVToolCubicBezierPath_ab246ae0cc3355278ece942299e6df0a6}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a9088b4974d6f465cd4a181e16dda3215}\label{classVToolCubicBezierPath_a9088b4974d6f465cd4a181e16dda3215}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a305b3202a3a63b4283655d4c47938302}\label{classVToolCubicBezierPath_a305b3202a3a63b4283655d4c47938302}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_a0282038890944132bbc8872a247124eb}\label{classVToolCubicBezierPath_a0282038890944132bbc8872a247124eb}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!type@{type}}
+\index{type@{type}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Cubic\+Bezier\+Path\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractSpline_ae9aade1d9110d27a0b2716be02ef3f5d}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{classVToolCubicBezierPath_aa6a79410cfabd890ae1855cb942a9e21}\label{classVToolCubicBezierPath_aa6a79410cfabd890ae1855cb942a9e21}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!UpdatePathPoints@{UpdatePathPoints}}
+\index{UpdatePathPoints@{UpdatePathPoints}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{UpdatePathPoints()}{UpdatePathPoints()}}
+{\footnotesize\ttfamily void VTool\+Cubic\+Bezier\+Path\+::\+Update\+Path\+Points (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QDom\+Element \&}]{element,  }\item[{const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolCubicBezierPath_a728200a9187345f397484b8a901e3579}\label{classVToolCubicBezierPath_a728200a9187345f397484b8a901e3579}} 
+\index{VToolCubicBezierPath@{VToolCubicBezierPath}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolCubicBezierPath@{VToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Cubic\+Bezier\+Path\+::\+Tool\+Type = QString\+Literal(\char`\"{}cubic\+Bezier\+Path\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vtoolcubicbezierpath_8h}{vtoolcubicbezierpath.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vtoolcubicbezierpath_8cpp}{vtoolcubicbezierpath.\+cpp}}\end{DoxyCompactItemize}

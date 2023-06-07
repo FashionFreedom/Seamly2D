@@ -1,0 +1,205 @@
+\hypertarget{classVPE_1_1VColorPropertyEditor}{}\doxysection{VPE\+::VColor\+Property\+Editor Class Reference}
+\label{classVPE_1_1VColorPropertyEditor}\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+
+
+{\ttfamily \#include $<$vcolorpropertyeditor.\+h$>$}
+
+Inheritance diagram for VPE\+::VColor\+Property\+Editor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d5/d9d/classVPE_1_1VColorPropertyEditor}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_affe9cb782a0c70ba5c95df4081a6191b}{set\+Line\+Color}} (const QColor \&color\+\_\+)
+\begin{DoxyCompactList}\small\item\em Sets the color of the widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_aa08931a7d329d6a175ea0303f4edc542}{data\+Changed\+By\+User}} (const QColor \&Get\+Color, \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor}{VColor\+Property\+Editor}} $\ast$editor)
+\begin{DoxyCompactList}\small\item\em This is emitted, when the user changes the color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a9d5028c2a4879b0765157fd0eeebaa10}{data\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a1fc6266fb5491f0e57dd9300da409f16}{VColor\+Property\+Editor}} (QWidget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor taking a widget as parent. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_ac25c0c60770b762254eb42829b18d6a2}{$\sim$\+VColor\+Property\+Editor}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_ab3b317827e03d3f5b52c9c12803a497e}{get\+Line\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Returns the color currently set. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a94144d52409e1c9cd354d9eb46a156c1}{event\+Filter}} (QObject $\ast$obj, QEvent $\ast$ev) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Needed for proper event handling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QPixmap \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a328dff1f96646f2294460948881886cd}{Get\+Color\+Pixmap}} (const QColor \&color, quint32 size=16)
+\item 
+static QString \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a1bbf692a510b5b454c33ee28438266d8}{Get\+Color\+String}} (const QColor \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_acc3721b7e361caf64a0051fd08a3f6d6}{on\+Tool\+Button\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_ab64ac67593b36ede31005da8238e6295}{Color}}
+\item 
+QTool\+Button $\ast$ \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_af28480d8c8f72943725454e5e2d4a6b3}{Tool\+Button}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a786317ec29b0568f4470a9c7c8551eb1}{Text\+Label}}
+\item 
+QLabel $\ast$ \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_ac80e65139d46702fe75eee78288df8f3}{Color\+Label}}
+\item 
+QSpacer\+Item $\ast$ \mbox{\hyperlink{classVPE_1_1VColorPropertyEditor_a5d436e72edb907a6746cf75736111c55}{Spacer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a1fc6266fb5491f0e57dd9300da409f16}\label{classVPE_1_1VColorPropertyEditor_a1fc6266fb5491f0e57dd9300da409f16}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!VColorPropertyEditor@{VColorPropertyEditor}}
+\index{VColorPropertyEditor@{VColorPropertyEditor}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{VColorPropertyEditor()}{VColorPropertyEditor()}}
+{\footnotesize\ttfamily VPE\+::\+VColor\+Property\+Editor\+::\+VColor\+Property\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor taking a widget as parent. 
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_ac25c0c60770b762254eb42829b18d6a2}\label{classVPE_1_1VColorPropertyEditor_ac25c0c60770b762254eb42829b18d6a2}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!````~VColorPropertyEditor@{$\sim$VColorPropertyEditor}}
+\index{````~VColorPropertyEditor@{$\sim$VColorPropertyEditor}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{$\sim$VColorPropertyEditor()}{~VColorPropertyEditor()}}
+{\footnotesize\ttfamily VPE\+::\+VColor\+Property\+Editor\+::$\sim$\+VColor\+Property\+Editor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a9d5028c2a4879b0765157fd0eeebaa10}\label{classVPE_1_1VColorPropertyEditor_a9d5028c2a4879b0765157fd0eeebaa10}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!dataChanged@{dataChanged}}
+\index{dataChanged@{dataChanged}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{dataChanged}{dataChanged}}
+{\footnotesize\ttfamily void VPE\+::\+VColor\+Property\+Editor\+::data\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_aa08931a7d329d6a175ea0303f4edc542}\label{classVPE_1_1VColorPropertyEditor_aa08931a7d329d6a175ea0303f4edc542}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!dataChangedByUser@{dataChangedByUser}}
+\index{dataChangedByUser@{dataChangedByUser}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{dataChangedByUser}{dataChangedByUser}}
+{\footnotesize\ttfamily void VPE\+::\+VColor\+Property\+Editor\+::data\+Changed\+By\+User (\begin{DoxyParamCaption}\item[{const QColor \&}]{Get\+Color,  }\item[{\mbox{\hyperlink{classVPE_1_1VColorPropertyEditor}{VColor\+Property\+Editor}} $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+This is emitted, when the user changes the color. 
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a94144d52409e1c9cd354d9eb46a156c1}\label{classVPE_1_1VColorPropertyEditor_a94144d52409e1c9cd354d9eb46a156c1}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool VPE\+::\+VColor\+Property\+Editor\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{obj,  }\item[{QEvent $\ast$}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Needed for proper event handling. 
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a328dff1f96646f2294460948881886cd}\label{classVPE_1_1VColorPropertyEditor_a328dff1f96646f2294460948881886cd}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!GetColorPixmap@{GetColorPixmap}}
+\index{GetColorPixmap@{GetColorPixmap}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{GetColorPixmap()}{GetColorPixmap()}}
+{\footnotesize\ttfamily QPixmap VPE\+::\+VColor\+Property\+Editor\+::\+Get\+Color\+Pixmap (\begin{DoxyParamCaption}\item[{const QColor \&}]{color,  }\item[{quint32}]{size = {\ttfamily 16} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A little helper function generating an image to represent a color 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to fill the image with \textbackslash{}size The size of the generated pixmap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a QPixmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a1bbf692a510b5b454c33ee28438266d8}\label{classVPE_1_1VColorPropertyEditor_a1bbf692a510b5b454c33ee28438266d8}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!GetColorString@{GetColorString}}
+\index{GetColorString@{GetColorString}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{GetColorString()}{GetColorString()}}
+{\footnotesize\ttfamily QString VPE\+::\+VColor\+Property\+Editor\+::\+Get\+Color\+String (\begin{DoxyParamCaption}\item[{const QColor \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+A helper function to convert a color into a string. 
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to fill the image with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color as string, usually in the format \mbox{[}RRR, GGG, BBB\mbox{]} (AAA) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_ab3b317827e03d3f5b52c9c12803a497e}\label{classVPE_1_1VColorPropertyEditor_ab3b317827e03d3f5b52c9c12803a497e}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!getLineColor@{getLineColor}}
+\index{getLineColor@{getLineColor}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{getLineColor()}{getLineColor()}}
+{\footnotesize\ttfamily QColor VPE\+::\+VColor\+Property\+Editor\+::get\+Line\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the color currently set. 
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_acc3721b7e361caf64a0051fd08a3f6d6}\label{classVPE_1_1VColorPropertyEditor_acc3721b7e361caf64a0051fd08a3f6d6}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!onToolButtonClicked@{onToolButtonClicked}}
+\index{onToolButtonClicked@{onToolButtonClicked}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{onToolButtonClicked}{onToolButtonClicked}}
+{\footnotesize\ttfamily void VPE\+::\+VColor\+Property\+Editor\+::on\+Tool\+Button\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_affe9cb782a0c70ba5c95df4081a6191b}\label{classVPE_1_1VColorPropertyEditor_affe9cb782a0c70ba5c95df4081a6191b}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!setLineColor@{setLineColor}}
+\index{setLineColor@{setLineColor}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{setLineColor}{setLineColor}}
+{\footnotesize\ttfamily void VPE\+::\+VColor\+Property\+Editor\+::set\+Line\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Sets the color of the widget. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_ab64ac67593b36ede31005da8238e6295}\label{classVPE_1_1VColorPropertyEditor_ab64ac67593b36ede31005da8238e6295}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!Color@{Color}}
+\index{Color@{Color}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{Color}{Color}}
+{\footnotesize\ttfamily QColor VPE\+::\+VColor\+Property\+Editor\+::\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_ac80e65139d46702fe75eee78288df8f3}\label{classVPE_1_1VColorPropertyEditor_ac80e65139d46702fe75eee78288df8f3}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!ColorLabel@{ColorLabel}}
+\index{ColorLabel@{ColorLabel}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{ColorLabel}{ColorLabel}}
+{\footnotesize\ttfamily QLabel$\ast$ VPE\+::\+VColor\+Property\+Editor\+::\+Color\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a5d436e72edb907a6746cf75736111c55}\label{classVPE_1_1VColorPropertyEditor_a5d436e72edb907a6746cf75736111c55}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!Spacer@{Spacer}}
+\index{Spacer@{Spacer}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{Spacer}{Spacer}}
+{\footnotesize\ttfamily QSpacer\+Item$\ast$ VPE\+::\+VColor\+Property\+Editor\+::\+Spacer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_a786317ec29b0568f4470a9c7c8551eb1}\label{classVPE_1_1VColorPropertyEditor_a786317ec29b0568f4470a9c7c8551eb1}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!TextLabel@{TextLabel}}
+\index{TextLabel@{TextLabel}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{TextLabel}{TextLabel}}
+{\footnotesize\ttfamily QLabel$\ast$ VPE\+::\+VColor\+Property\+Editor\+::\+Text\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVPE_1_1VColorPropertyEditor_af28480d8c8f72943725454e5e2d4a6b3}\label{classVPE_1_1VColorPropertyEditor_af28480d8c8f72943725454e5e2d4a6b3}} 
+\index{VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}!ToolButton@{ToolButton}}
+\index{ToolButton@{ToolButton}!VPE::VColorPropertyEditor@{VPE::VColorPropertyEditor}}
+\doxysubsubsection{\texorpdfstring{ToolButton}{ToolButton}}
+{\footnotesize\ttfamily QTool\+Button$\ast$ VPE\+::\+VColor\+Property\+Editor\+::\+Tool\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vcolorpropertyeditor_8h}{vcolorpropertyeditor.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vcolorpropertyeditor_8cpp}{vcolorpropertyeditor.\+cpp}}\end{DoxyCompactItemize}

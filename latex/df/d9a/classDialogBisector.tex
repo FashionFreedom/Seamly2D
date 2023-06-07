@@ -1,0 +1,453 @@
+\hypertarget{classDialogBisector}{}\doxysection{Dialog\+Bisector Class Reference}
+\label{classDialogBisector}\index{DialogBisector@{DialogBisector}}
+
+
+The \mbox{\hyperlink{classDialogBisector}{Dialog\+Bisector}} class dialog for Tool\+Bisector. Help create point and edit option.  
+
+
+
+
+{\ttfamily \#include $<$dialogbisector.\+h$>$}
+
+Inheritance diagram for Dialog\+Bisector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{df/d9a/classDialogBisector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogBisector_a5e9fb4d3153f1cadb187f8721d964cad}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_a288d62647d12476354636336e5e46757}{Deploy\+Formula\+Text\+Edit}} ()
+\begin{DoxyCompactList}\small\item\em Deploy\+Formula\+Text\+Edit grow or shrink formula input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_ab2aa15d35968b09b4da74a6b4cfb28e7}{Formula\+Text\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Formula\+Text\+Changed when formula text changes for validation and calc. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogBisector_a6d292a5e1eb2cf6f0e7fc096030f9c78}{Point\+Name\+Changed}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classDialogBisector_a9d6a5266b1669037bc10490c84b07f3e}{FXLength}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogBisector_a5eecdfe8e0d764ae52a529ff622ef7c4}{Dialog\+Bisector}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDialogBisector}{Dialog\+Bisector}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDialogBisector_af945ec7e6142b4530d9849ca0c58c407}{$\sim$\+Dialog\+Bisector}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classDialogBisector_ae53c8bafb69c93e19bb670e5f8d2d9fc}{Set\+Point\+Name}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Point\+Name set name of point. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogBisector_ae58384d2ffe5d22970948871169111e8}{get\+Line\+Type}} () const
+\begin{DoxyCompactList}\small\item\em get\+Line\+Type return type of line \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_a0c364082aa61fe5db0eee2b4f84202d2}{set\+Line\+Type}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em set\+Line\+Type set type of line \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogBisector_aa40e2f6bf9b8210370d8345eb7ac2214}{get\+Line\+Weight}} () const
+\begin{DoxyCompactList}\small\item\em get\+Line\+Weight return weight of the lines \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_a59bec4a33a4a0a0c046b550fd21dff10}{set\+Line\+Weight}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em set\+Line\+Weight set weight of the lines \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogBisector_a5033f7ce72eeacf72efb0c047198c1d5}{get\+Line\+Color}} () const
+\begin{DoxyCompactList}\small\item\em get\+Line\+Color get the color of line \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_a2ce77b272a620212f197feb4c617e924}{set\+Line\+Color}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{classDialogBisector_a3aa7376e3c2324b54887366b3c1d575c}{Get\+Formula}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Formula return string of formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_af5c13bce15a8f529d917b7f3db0eedc4}{Set\+Formula}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Formula set string of formula. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogBisector_a23c96229c663016e9a3a4fec595bdd46}{Get\+First\+Point\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get\+First\+Point\+Id return id of first point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_a8dfa99c640e39517e34f1c9731a5544c}{Set\+First\+Point\+Id}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+First\+Point\+Id set id of first point. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogBisector_a2909113a48e5a803a8aeca7582a8254d}{Get\+Second\+Point\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Second\+Point\+Id return id of second point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_a2ea7fd037e7ed030e9eee249cb8a6129}{Set\+Second\+Point\+Id}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Second\+Point\+Id set id of second point. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogBisector_a3790481a8239fa7e4f05d2628d6920ab}{Get\+Third\+Point\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Third\+Point\+Id return id of third point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogBisector_aada01a7c17bacf9d6bee1a711047c545}{Set\+Third\+Point\+Id}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Third\+Point\+Id set id of third point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogBisector_a27cf19e9a4b1758c712d466aaedc381d}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogBisector_aadebdce539df872e5141232a818d1a06}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogBisector_a0294df0fe5578a5378d8fb6189154409}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Bisector $\ast$ \mbox{\hyperlink{classDialogBisector_ae76d274789f25489d108107f256512ea}{ui}}
+\begin{DoxyCompactList}\small\item\em ui keeps information about user interface \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDialogBisector_a457ce4929ed3a717d89b9188f2881157}{formula}}
+\begin{DoxyCompactList}\small\item\em formula formula \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDialogBisector_ab34a2fe04ce5720a1104e46beb1df3ef}{formula\+Base\+Height}}
+\begin{DoxyCompactList}\small\item\em formula\+Base\+Height base height defined by dialogui \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDialogBisector}{Dialog\+Bisector}} class dialog for Tool\+Bisector. Help create point and edit option. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogBisector_a5eecdfe8e0d764ae52a529ff622ef7c4}\label{classDialogBisector_a5eecdfe8e0d764ae52a529ff622ef7c4}} 
+\index{DialogBisector@{DialogBisector}!DialogBisector@{DialogBisector}}
+\index{DialogBisector@{DialogBisector}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{DialogBisector()}{DialogBisector()}}
+{\footnotesize\ttfamily Dialog\+Bisector\+::\+Dialog\+Bisector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDialogBisector}{Dialog\+Bisector}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_af945ec7e6142b4530d9849ca0c58c407}\label{classDialogBisector_af945ec7e6142b4530d9849ca0c58c407}} 
+\index{DialogBisector@{DialogBisector}!````~DialogBisector@{$\sim$DialogBisector}}
+\index{````~DialogBisector@{$\sim$DialogBisector}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogBisector()}{~DialogBisector()}}
+{\footnotesize\ttfamily Dialog\+Bisector\+::$\sim$\+Dialog\+Bisector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogBisector_a5e9fb4d3153f1cadb187f8721d964cad}\label{classDialogBisector_a5e9fb4d3153f1cadb187f8721d964cad}} 
+\index{DialogBisector@{DialogBisector}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of point or detail \\
+\hline
+{\em type} & type of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_a0294df0fe5578a5378d8fb6189154409}\label{classDialogBisector_a0294df0fe5578a5378d8fb6189154409}} 
+\index{DialogBisector@{DialogBisector}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogBisector_a288d62647d12476354636336e5e46757}\label{classDialogBisector_a288d62647d12476354636336e5e46757}} 
+\index{DialogBisector@{DialogBisector}!DeployFormulaTextEdit@{DeployFormulaTextEdit}}
+\index{DeployFormulaTextEdit@{DeployFormulaTextEdit}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{DeployFormulaTextEdit}{DeployFormulaTextEdit}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Deploy\+Formula\+Text\+Edit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Deploy\+Formula\+Text\+Edit grow or shrink formula input. 
+
+\mbox{\Hypertarget{classDialogBisector_ab2aa15d35968b09b4da74a6b4cfb28e7}\label{classDialogBisector_ab2aa15d35968b09b4da74a6b4cfb28e7}} 
+\index{DialogBisector@{DialogBisector}!FormulaTextChanged@{FormulaTextChanged}}
+\index{FormulaTextChanged@{FormulaTextChanged}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{FormulaTextChanged}{FormulaTextChanged}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Formula\+Text\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Formula\+Text\+Changed when formula text changes for validation and calc. 
+
+\mbox{\Hypertarget{classDialogBisector_a9d6a5266b1669037bc10490c84b07f3e}\label{classDialogBisector_a9d6a5266b1669037bc10490c84b07f3e}} 
+\index{DialogBisector@{DialogBisector}!FXLength@{FXLength}}
+\index{FXLength@{FXLength}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{FXLength}{FXLength}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+FXLength (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogBisector_a23c96229c663016e9a3a4fec595bdd46}\label{classDialogBisector_a23c96229c663016e9a3a4fec595bdd46}} 
+\index{DialogBisector@{DialogBisector}!GetFirstPointId@{GetFirstPointId}}
+\index{GetFirstPointId@{GetFirstPointId}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{GetFirstPointId()}{GetFirstPointId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Bisector\+::\+Get\+First\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+First\+Point\+Id return id of first point. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogBisector_a3aa7376e3c2324b54887366b3c1d575c}\label{classDialogBisector_a3aa7376e3c2324b54887366b3c1d575c}} 
+\index{DialogBisector@{DialogBisector}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily QString Dialog\+Bisector\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Formula return string of formula. 
+
+\begin{DoxyReturn}{Returns}
+formula 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogBisector_a5033f7ce72eeacf72efb0c047198c1d5}\label{classDialogBisector_a5033f7ce72eeacf72efb0c047198c1d5}} 
+\index{DialogBisector@{DialogBisector}!getLineColor@{getLineColor}}
+\index{getLineColor@{getLineColor}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{getLineColor()}{getLineColor()}}
+{\footnotesize\ttfamily QString Dialog\+Bisector\+::get\+Line\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Line\+Color get the color of line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_ae58384d2ffe5d22970948871169111e8}\label{classDialogBisector_ae58384d2ffe5d22970948871169111e8}} 
+\index{DialogBisector@{DialogBisector}!getLineType@{getLineType}}
+\index{getLineType@{getLineType}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{getLineType()}{getLineType()}}
+{\footnotesize\ttfamily QString Dialog\+Bisector\+::get\+Line\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Line\+Type return type of line 
+
+\begin{DoxyReturn}{Returns}
+type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogBisector_aa40e2f6bf9b8210370d8345eb7ac2214}\label{classDialogBisector_aa40e2f6bf9b8210370d8345eb7ac2214}} 
+\index{DialogBisector@{DialogBisector}!getLineWeight@{getLineWeight}}
+\index{getLineWeight@{getLineWeight}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{getLineWeight()}{getLineWeight()}}
+{\footnotesize\ttfamily QString Dialog\+Bisector\+::get\+Line\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Line\+Weight return weight of the lines 
+
+\begin{DoxyReturn}{Returns}
+type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogBisector_a2909113a48e5a803a8aeca7582a8254d}\label{classDialogBisector_a2909113a48e5a803a8aeca7582a8254d}} 
+\index{DialogBisector@{DialogBisector}!GetSecondPointId@{GetSecondPointId}}
+\index{GetSecondPointId@{GetSecondPointId}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{GetSecondPointId()}{GetSecondPointId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Bisector\+::\+Get\+Second\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Second\+Point\+Id return id of second point. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogBisector_a3790481a8239fa7e4f05d2628d6920ab}\label{classDialogBisector_a3790481a8239fa7e4f05d2628d6920ab}} 
+\index{DialogBisector@{DialogBisector}!GetThirdPointId@{GetThirdPointId}}
+\index{GetThirdPointId@{GetThirdPointId}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{GetThirdPointId()}{GetThirdPointId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Bisector\+::\+Get\+Third\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Third\+Point\+Id return id of third point. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogBisector_a6d292a5e1eb2cf6f0e7fc096030f9c78}\label{classDialogBisector_a6d292a5e1eb2cf6f0e7fc096030f9c78}} 
+\index{DialogBisector@{DialogBisector}!PointNameChanged@{PointNameChanged}}
+\index{PointNameChanged@{PointNameChanged}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{PointNameChanged}{PointNameChanged}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Point\+Name\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogBisector_aadebdce539df872e5141232a818d1a06}\label{classDialogBisector_aadebdce539df872e5141232a818d1a06}} 
+\index{DialogBisector@{DialogBisector}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogBisector_a8dfa99c640e39517e34f1c9731a5544c}\label{classDialogBisector_a8dfa99c640e39517e34f1c9731a5544c}} 
+\index{DialogBisector@{DialogBisector}!SetFirstPointId@{SetFirstPointId}}
+\index{SetFirstPointId@{SetFirstPointId}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{SetFirstPointId()}{SetFirstPointId()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Set\+First\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+First\+Point\+Id set id of first point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_af5c13bce15a8f529d917b7f3db0eedc4}\label{classDialogBisector_af5c13bce15a8f529d917b7f3db0eedc4}} 
+\index{DialogBisector@{DialogBisector}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Formula set string of formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & formula \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_a2ce77b272a620212f197feb4c617e924}\label{classDialogBisector_a2ce77b272a620212f197feb4c617e924}} 
+\index{DialogBisector@{DialogBisector}!setLineColor@{setLineColor}}
+\index{setLineColor@{setLineColor}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{setLineColor()}{setLineColor()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::set\+Line\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDialogBisector_a0c364082aa61fe5db0eee2b4f84202d2}\label{classDialogBisector_a0c364082aa61fe5db0eee2b4f84202d2}} 
+\index{DialogBisector@{DialogBisector}!setLineType@{setLineType}}
+\index{setLineType@{setLineType}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{setLineType()}{setLineType()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::set\+Line\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Line\+Type set type of line 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_a59bec4a33a4a0a0c046b550fd21dff10}\label{classDialogBisector_a59bec4a33a4a0a0c046b550fd21dff10}} 
+\index{DialogBisector@{DialogBisector}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Line\+Weight set weight of the lines 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_ae53c8bafb69c93e19bb670e5f8d2d9fc}\label{classDialogBisector_ae53c8bafb69c93e19bb670e5f8d2d9fc}} 
+\index{DialogBisector@{DialogBisector}!SetPointName@{SetPointName}}
+\index{SetPointName@{SetPointName}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{SetPointName()}{SetPointName()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Set\+Point\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Point\+Name set name of point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & name \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_a2ea7fd037e7ed030e9eee249cb8a6129}\label{classDialogBisector_a2ea7fd037e7ed030e9eee249cb8a6129}} 
+\index{DialogBisector@{DialogBisector}!SetSecondPointId@{SetSecondPointId}}
+\index{SetSecondPointId@{SetSecondPointId}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{SetSecondPointId()}{SetSecondPointId()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Set\+Second\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Second\+Point\+Id set id of second point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_aada01a7c17bacf9d6bee1a711047c545}\label{classDialogBisector_aada01a7c17bacf9d6bee1a711047c545}} 
+\index{DialogBisector@{DialogBisector}!SetThirdPointId@{SetThirdPointId}}
+\index{SetThirdPointId@{SetThirdPointId}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{SetThirdPointId()}{SetThirdPointId()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Set\+Third\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Third\+Point\+Id set id of third point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogBisector_a27cf19e9a4b1758c712d466aaedc381d}\label{classDialogBisector_a27cf19e9a4b1758c712d466aaedc381d}} 
+\index{DialogBisector@{DialogBisector}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Dialog\+Bisector\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogBisector_a457ce4929ed3a717d89b9188f2881157}\label{classDialogBisector_a457ce4929ed3a717d89b9188f2881157}} 
+\index{DialogBisector@{DialogBisector}!formula@{formula}}
+\index{formula@{formula}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{formula}{formula}}
+{\footnotesize\ttfamily QString Dialog\+Bisector\+::formula\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+formula formula 
+
+\mbox{\Hypertarget{classDialogBisector_ab34a2fe04ce5720a1104e46beb1df3ef}\label{classDialogBisector_ab34a2fe04ce5720a1104e46beb1df3ef}} 
+\index{DialogBisector@{DialogBisector}!formulaBaseHeight@{formulaBaseHeight}}
+\index{formulaBaseHeight@{formulaBaseHeight}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{formulaBaseHeight}{formulaBaseHeight}}
+{\footnotesize\ttfamily int Dialog\+Bisector\+::formula\+Base\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+formula\+Base\+Height base height defined by dialogui 
+
+\mbox{\Hypertarget{classDialogBisector_ae76d274789f25489d108107f256512ea}\label{classDialogBisector_ae76d274789f25489d108107f256512ea}} 
+\index{DialogBisector@{DialogBisector}!ui@{ui}}
+\index{ui@{ui}!DialogBisector@{DialogBisector}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Bisector$\ast$ Dialog\+Bisector\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ui keeps information about user interface 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogbisector_8h}{dialogbisector.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogbisector_8cpp}{dialogbisector.\+cpp}}\end{DoxyCompactItemize}

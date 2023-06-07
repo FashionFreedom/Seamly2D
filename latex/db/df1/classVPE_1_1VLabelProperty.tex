@@ -1,0 +1,213 @@
+\hypertarget{classVPE_1_1VLabelProperty}{}\doxysection{VPE\+::VLabel\+Property Class Reference}
+\label{classVPE_1_1VLabelProperty}\index{VPE::VLabelProperty@{VPE::VLabelProperty}}
+
+
+Class for holding a string property.  
+
+
+
+
+{\ttfamily \#include $<$vlabelproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::VLabel\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{db/df1/classVPE_1_1VLabelProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VLabelProperty_a8c4f3bac36e8fc2b5dc68c8010904e73}{VLabel\+Property}} (const QString \&name, const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QVariant $>$ \&settings)
+\item 
+\mbox{\hyperlink{classVPE_1_1VLabelProperty_a535c075156b9c93d6ebb4ea1ffcb8010}{VLabel\+Property}} (const QString \&name)
+\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{classVPE_1_1VLabelProperty_a650a33904722a17a3a66867e902fcab8}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&options, const QAbstract\+Item\+Delegate $\ast$delegate) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VLabelProperty_a828d2a0c43468cb3f385a06d967614e3}{get\+Editor\+Data}} (const QWidget $\ast$editor) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VLabelProperty_a30e880c25b10c4b3b8d5e595c6abe00d}{set\+Setting}} (const QString \&key, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the settings. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VLabelProperty_a7f2fd5ba19ada6b13267c9a4e98c1cde}{get\+Setting}} (const QString \&key) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual QString\+List \mbox{\hyperlink{classVPE_1_1VLabelProperty_a892569cddcf136a69718e76571c19b57}{get\+Setting\+Keys}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns the list of keys of the property\textquotesingle{}s settings. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPE_1_1VLabelProperty_a5e3fd8d01dfdcfbb3316bce9c8d472de}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$ \mbox{\hyperlink{classVPE_1_1VLabelProperty_ab46c91bcf4c2b6dbb961ee1028a5c751}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$container=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VLabelProperty_a04dc6b9e81f560e08b37a9bd68b2c254}{update\+Parent}} (const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+int \mbox{\hyperlink{classVPE_1_1VLabelProperty_a108ec8871a8a5612950719266b1c2aaa}{get\+Type\+For\+Parent}} () const
+\item 
+void \mbox{\hyperlink{classVPE_1_1VLabelProperty_aaff1cb9a0fc92387b8c7ab0fd9528944}{set\+Type\+For\+Parent}} (int value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVPE_1_1VLabelProperty_add921358592e8be12366e1307013c044}{type\+For\+Parent}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for holding a string property. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a8c4f3bac36e8fc2b5dc68c8010904e73}\label{classVPE_1_1VLabelProperty_a8c4f3bac36e8fc2b5dc68c8010904e73}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!VLabelProperty@{VLabelProperty}}
+\index{VLabelProperty@{VLabelProperty}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{VLabelProperty()}{VLabelProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VPE\+::\+VLabel\+Property\+::\+VLabel\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QVariant $>$ \&}]{settings }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a535c075156b9c93d6ebb4ea1ffcb8010}\label{classVPE_1_1VLabelProperty_a535c075156b9c93d6ebb4ea1ffcb8010}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!VLabelProperty@{VLabelProperty}}
+\index{VLabelProperty@{VLabelProperty}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{VLabelProperty()}{VLabelProperty()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VPE\+::\+VLabel\+Property\+::\+VLabel\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_ab46c91bcf4c2b6dbb961ee1028a5c751}\label{classVPE_1_1VLabelProperty_ab46c91bcf4c2b6dbb961ee1028a5c751}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+VLabel\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{container = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a03865ea193d5465fea60bb7f29ca02bf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a650a33904722a17a3a66867e902fcab8}\label{classVPE_1_1VLabelProperty_a650a33904722a17a3a66867e902fcab8}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VPE\+::\+VLabel\+Property\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{options,  }\item[{const QAbstract\+Item\+Delegate $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one 
+\begin{DoxyParams}{Parameters}
+{\em parent} & The widget to which the editor will be added as a child \textbackslash{}options Render options \textbackslash{}delegate A pointer to the QAbstract\+Item\+Delegate requesting the editor. This can be used to connect signals and slots. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_aea7526e6641c9cb369cc8234881df935}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a828d2a0c43468cb3f385a06d967614e3}\label{classVPE_1_1VLabelProperty_a828d2a0c43468cb3f385a06d967614e3}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!getEditorData@{getEditorData}}
+\index{getEditorData@{getEditorData}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{getEditorData()}{getEditorData()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VLabel\+Property\+::get\+Editor\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the data from the widget. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a884293b0d13de6f76c3109b8f71a61e0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a7f2fd5ba19ada6b13267c9a4e98c1cde}\label{classVPE_1_1VLabelProperty_a7f2fd5ba19ada6b13267c9a4e98c1cde}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!getSetting@{getSetting}}
+\index{getSetting@{getSetting}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{getSetting()}{getSetting()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VLabel\+Property\+::get\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the settings. This function has to be implemented in a subclass in order to have an effect. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_ab1f0fc69ebab910f4ee7eddf2242058a}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a892569cddcf136a69718e76571c19b57}\label{classVPE_1_1VLabelProperty_a892569cddcf136a69718e76571c19b57}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!getSettingKeys@{getSettingKeys}}
+\index{getSettingKeys@{getSettingKeys}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{getSettingKeys()}{getSettingKeys()}}
+{\footnotesize\ttfamily QString\+List VPE\+::\+VLabel\+Property\+::get\+Setting\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the list of keys of the property\textquotesingle{}s settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a38b6acecc6f92d38af104a111d6aa63f}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a108ec8871a8a5612950719266b1c2aaa}\label{classVPE_1_1VLabelProperty_a108ec8871a8a5612950719266b1c2aaa}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!getTypeForParent@{getTypeForParent}}
+\index{getTypeForParent@{getTypeForParent}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{getTypeForParent()}{getTypeForParent()}}
+{\footnotesize\ttfamily int VPE\+::\+VLabel\+Property\+::get\+Type\+For\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a30e880c25b10c4b3b8d5e595c6abe00d}\label{classVPE_1_1VLabelProperty_a30e880c25b10c4b3b8d5e595c6abe00d}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!setSetting@{setSetting}}
+\index{setSetting@{setSetting}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{setSetting()}{setSetting()}}
+{\footnotesize\ttfamily void VPE\+::\+VLabel\+Property\+::set\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{key,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a2d77360aac7fb51de49a7496560c7c14}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_aaff1cb9a0fc92387b8c7ab0fd9528944}\label{classVPE_1_1VLabelProperty_aaff1cb9a0fc92387b8c7ab0fd9528944}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!setTypeForParent@{setTypeForParent}}
+\index{setTypeForParent@{setTypeForParent}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{setTypeForParent()}{setTypeForParent()}}
+{\footnotesize\ttfamily void VPE\+::\+VLabel\+Property\+::set\+Type\+For\+Parent (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a5e3fd8d01dfdcfbb3316bce9c8d472de}\label{classVPE_1_1VLabelProperty_a5e3fd8d01dfdcfbb3316bce9c8d472de}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!type@{type}}
+\index{type@{type}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+VLabel\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_a04dc6b9e81f560e08b37a9bd68b2c254}\label{classVPE_1_1VLabelProperty_a04dc6b9e81f560e08b37a9bd68b2c254}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!updateParent@{updateParent}}
+\index{updateParent@{updateParent}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{updateParent()}{updateParent()}}
+{\footnotesize\ttfamily void VPE\+::\+VLabel\+Property\+::update\+Parent (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_aa2b60b3d17dd17d49fae36895ee08027}{VPE\+::\+VProperty}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VLabelProperty_add921358592e8be12366e1307013c044}\label{classVPE_1_1VLabelProperty_add921358592e8be12366e1307013c044}} 
+\index{VPE::VLabelProperty@{VPE::VLabelProperty}!typeForParent@{typeForParent}}
+\index{typeForParent@{typeForParent}!VPE::VLabelProperty@{VPE::VLabelProperty}}
+\doxysubsubsection{\texorpdfstring{typeForParent}{typeForParent}}
+{\footnotesize\ttfamily int VPE\+::\+VLabel\+Property\+::type\+For\+Parent\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vlabelproperty_8h}{vlabelproperty.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vlabelproperty_8cpp}{vlabelproperty.\+cpp}}\end{DoxyCompactItemize}

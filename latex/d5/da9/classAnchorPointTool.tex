@@ -1,0 +1,165 @@
+\hypertarget{classAnchorPointTool}{}\doxysection{Anchor\+Point\+Tool Class Reference}
+\label{classAnchorPointTool}\index{AnchorPointTool@{AnchorPointTool}}
+
+
+{\ttfamily \#include $<$anchorpoint\+\_\+tool.\+h$>$}
+
+Inheritance diagram for Anchor\+Point\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{d5/da9/classAnchorPointTool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointTool_a3b81220d513cf5e0cd8907ed39c3f8fd}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointTool_a271e32c710cd46ac934e00719fbe651b}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointTool_ad7e89804f2142cd456d3af69303d44ee}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual QString \mbox{\hyperlink{classAnchorPointTool_a01d964c93da802ada8e069370665cfae}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classAnchorPointTool}{Anchor\+Point\+Tool}} $\ast$ \mbox{\hyperlink{classAnchorPointTool_a1bdbdfe48dcdf247afacbe1e996e0208}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static \mbox{\hyperlink{classAnchorPointTool}{Anchor\+Point\+Tool}} $\ast$ \mbox{\hyperlink{classAnchorPointTool_ab6cf727ea68fb2690ca38da632fded39}{Create}} (quint32 \+\_\+id, quint32 point\+Id, quint32 piece\+Id, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, const QString \&block\+Name=QString(), const quint32 \&\mbox{\hyperlink{classVAbstractNode_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classAnchorPointTool_a21b05521f8e70495e243f3463268001e}{Tool\+Type}} = QString\+Literal(\char`\"{}anchor\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointTool_a3e837a3903ce328ffe8a5ec4bf0918e1}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAnchorPointTool_a7cce6992888570d6604fa5e6df07d1d4}{Show\+Node}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointTool_ada8ffe8db70ee71e075bc5f8d8765062}{Hide\+Node}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnchorPointTool_a42a4a37a0c59f2bbe1f8840e72719a29}{Anchor\+Point\+Tool}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, quint32 point\+Id, quint32 piece\+Id, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, const QString \&block\+Name=QString(), const quint32 \&\mbox{\hyperlink{classVAbstractNode_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}=0, QObject $\ast$qo\+Parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classAnchorPointTool_abd0d50682891e8b46c4a6e7c45752eb6}{m\+\_\+piece\+Id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAnchorPointTool_a42a4a37a0c59f2bbe1f8840e72719a29}\label{classAnchorPointTool_a42a4a37a0c59f2bbe1f8840e72719a29}} 
+\index{AnchorPointTool@{AnchorPointTool}!AnchorPointTool@{AnchorPointTool}}
+\index{AnchorPointTool@{AnchorPointTool}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{AnchorPointTool()}{AnchorPointTool()}}
+{\footnotesize\ttfamily Anchor\+Point\+Tool\+::\+Anchor\+Point\+Tool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{quint32}]{point\+Id,  }\item[{quint32}]{piece\+Id,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{const QString \&}]{block\+Name = {\ttfamily QString()},  }\item[{const quint32 \&}]{id\+Tool = {\ttfamily 0},  }\item[{QObject $\ast$}]{qo\+Parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnchorPointTool_a3e837a3903ce328ffe8a5ec4bf0918e1}\label{classAnchorPointTool_a3e837a3903ce328ffe8a5ec4bf0918e1}} 
+\index{AnchorPointTool@{AnchorPointTool}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Tool\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a1ec354c69a9e0bc7474a60ff76dd36ac}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classAnchorPointTool_a271e32c710cd46ac934e00719fbe651b}\label{classAnchorPointTool_a271e32c710cd46ac934e00719fbe651b}} 
+\index{AnchorPointTool@{AnchorPointTool}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void Anchor\+Point\+Tool\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAnchorPointTool_ad7e89804f2142cd456d3af69303d44ee}\label{classAnchorPointTool_ad7e89804f2142cd456d3af69303d44ee}} 
+\index{AnchorPointTool@{AnchorPointTool}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void Anchor\+Point\+Tool\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAnchorPointTool_a1bdbdfe48dcdf247afacbe1e996e0208}\label{classAnchorPointTool_a1bdbdfe48dcdf247afacbe1e996e0208}} 
+\index{AnchorPointTool@{AnchorPointTool}!Create@{Create}}
+\index{Create@{Create}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAnchorPointTool}{Anchor\+Point\+Tool}} $\ast$ Anchor\+Point\+Tool\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classAnchorPointTool_ab6cf727ea68fb2690ca38da632fded39}\label{classAnchorPointTool_ab6cf727ea68fb2690ca38da632fded39}} 
+\index{AnchorPointTool@{AnchorPointTool}!Create@{Create}}
+\index{Create@{Create}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAnchorPointTool}{Anchor\+Point\+Tool}} $\ast$ Anchor\+Point\+Tool\+::\+Create (\begin{DoxyParamCaption}\item[{quint32}]{\+\_\+id,  }\item[{quint32}]{point\+Id,  }\item[{quint32}]{piece\+Id,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{const QString \&}]{block\+Name = {\ttfamily QString()},  }\item[{const quint32 \&}]{id\+Tool = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classAnchorPointTool_a3b81220d513cf5e0cd8907ed39c3f8fd}\label{classAnchorPointTool_a3b81220d513cf5e0cd8907ed39c3f8fd}} 
+\index{AnchorPointTool@{AnchorPointTool}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily virtual void Anchor\+Point\+Tool\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAnchorPointTool_a01d964c93da802ada8e069370665cfae}\label{classAnchorPointTool_a01d964c93da802ada8e069370665cfae}} 
+\index{AnchorPointTool@{AnchorPointTool}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString Anchor\+Point\+Tool\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classAnchorPointTool_ada8ffe8db70ee71e075bc5f8d8765062}\label{classAnchorPointTool_ada8ffe8db70ee71e075bc5f8d8765062}} 
+\index{AnchorPointTool@{AnchorPointTool}!HideNode@{HideNode}}
+\index{HideNode@{HideNode}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{HideNode()}{HideNode()}}
+{\footnotesize\ttfamily virtual void Anchor\+Point\+Tool\+::\+Hide\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractNode_a0efb37bc43a2bc4a1728dea922d774e8}{VAbstract\+Node}}.
+
+\mbox{\Hypertarget{classAnchorPointTool_a7cce6992888570d6604fa5e6df07d1d4}\label{classAnchorPointTool_a7cce6992888570d6604fa5e6df07d1d4}} 
+\index{AnchorPointTool@{AnchorPointTool}!ShowNode@{ShowNode}}
+\index{ShowNode@{ShowNode}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{ShowNode()}{ShowNode()}}
+{\footnotesize\ttfamily virtual void Anchor\+Point\+Tool\+::\+Show\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractNode_a7acfaacf2d09da85ac282ca33393005d}{VAbstract\+Node}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAnchorPointTool_abd0d50682891e8b46c4a6e7c45752eb6}\label{classAnchorPointTool_abd0d50682891e8b46c4a6e7c45752eb6}} 
+\index{AnchorPointTool@{AnchorPointTool}!m\_pieceId@{m\_pieceId}}
+\index{m\_pieceId@{m\_pieceId}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{m\_pieceId}{m\_pieceId}}
+{\footnotesize\ttfamily quint32 Anchor\+Point\+Tool\+::m\+\_\+piece\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnchorPointTool_a21b05521f8e70495e243f3463268001e}\label{classAnchorPointTool_a21b05521f8e70495e243f3463268001e}} 
+\index{AnchorPointTool@{AnchorPointTool}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!AnchorPointTool@{AnchorPointTool}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString Anchor\+Point\+Tool\+::\+Tool\+Type = QString\+Literal(\char`\"{}anchor\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/node\+Details/\mbox{\hyperlink{anchorpoint__tool_8h}{anchorpoint\+\_\+tool.\+h}}\item 
+src/libs/vtools/tools/node\+Details/\mbox{\hyperlink{anchorpoint__tool_8cpp}{anchorpoint\+\_\+tool.\+cpp}}\end{DoxyCompactItemize}

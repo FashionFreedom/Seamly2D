@@ -1,0 +1,360 @@
+\hypertarget{classDoubleLinePointTool}{}\doxysection{Double\+Line\+Point\+Tool Class Reference}
+\label{classDoubleLinePointTool}\index{DoubleLinePointTool@{DoubleLinePointTool}}
+
+
+The \mbox{\hyperlink{classDoubleLinePointTool}{Double\+Line\+Point\+Tool}} class parent for all tools what creates a point with 2 lines.  
+
+
+
+
+{\ttfamily \#include $<$doubleline\+\_\+point\+\_\+tool.\+h$>$}
+
+Inheritance diagram for Double\+Line\+Point\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{d0/db5/classDoubleLinePointTool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classDoubleLinePointTool_a43c18842a5b71d70954ca5a70f80da67a4ce9c3f6976bfadd29f4195cd6622bae}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Line\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_a88dcb3fb5827b76162f18dbd0e3c78c9}{Disable}} (bool disable, const QString \&draft\+Block\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_af44032e68ecf3468ffa0377e2eb10087}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data from file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDoubleLinePointTool_a74cf017dbe3df68007d205a009cd062e}{Double\+Line\+Point\+Tool}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const QString \&type\+Line, const QString \&line\+Weight, const QString \&\mbox{\hyperlink{classDoubleLinePointTool_acc8e397cc9fb6c724b6d0de71db0c863}{line\+Color}}, const quint32 \&\mbox{\hyperlink{classDoubleLinePointTool_aefd6507757cf9ef171b44ad83b64f698}{first\+Point\+Id}}, const quint32 \&\mbox{\hyperlink{classDoubleLinePointTool_aa484ae0368c768fc150b7fa46c9c60c9}{second\+Point\+Id}}, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDoubleLinePointTool}{Double\+Line\+Point\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDoubleLinePointTool_af4720ebc06081da5c0ce6fb7c09f2220}{$\sim$\+Double\+Line\+Point\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classDoubleLinePointTool_a26662892d338ff3d620fdb60f51c709d}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_a2c622e838c00a2adb82b59cb43b6c423}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classDoubleLinePointTool_a0851ec812fd2f75777391fbc2609d8fc}{point1\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classDoubleLinePointTool_aa1af8380521c5ac69d1cb8d2b508e18e}{point2\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classDoubleLinePointTool_a20c9e38255327069cfc0780dfbe21753}{get\+First\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classDoubleLinePointTool_ac2372a3f1af4d8aaa39fd38bd430a3b3}{set\+First\+Point\+Id}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{classDoubleLinePointTool_a251a9f6a32dd790859d4303f1dc21d5f}{get\+Second\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classDoubleLinePointTool_a971d5147f7110700f3e268fd4d4feb23}{set\+Second\+Point\+Id}} (const quint32 \&value)
+\item 
+QString \mbox{\hyperlink{classDoubleLinePointTool_a0f23bbe998eef7cd27aa617bcf32dc8f}{get\+Line\+Color}} () const
+\item 
+void \mbox{\hyperlink{classDoubleLinePointTool_a2629904b4eb596d1da018c3349f0242b}{set\+Line\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_a340b9ba917e2961cb9bd148423ae8135}{Refresh\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em line\+Color color of a line. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_a4bd4cac84cc8381ea1ec1fa8a7f10291}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_ad62446eed1c102eb66294842da699adc}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_a658a226dd3f552bd5a59bbe6afe65777}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDoubleLinePointTool_a7f708c18a4ca30afc00f5503678e1426}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{classDoubleLinePointTool_a44f2f5ace18cc52ca278862714d63380}{make\+Tool\+Tip}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classDoubleLinePointTool_aefd6507757cf9ef171b44ad83b64f698}{first\+Point\+Id}}
+\item 
+quint32 \mbox{\hyperlink{classDoubleLinePointTool_aa484ae0368c768fc150b7fa46c9c60c9}{second\+Point\+Id}}
+\begin{DoxyCompactList}\small\item\em first\+Point\+Id id first line point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classDoubleLinePointTool_ad9c42698e2da4ea8ca7c34ded6ca05ab}{first\+Line}}
+\begin{DoxyCompactList}\small\item\em second\+Point\+Id id second line point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classDoubleLinePointTool_a8ceb5f6368786d5d427a0fbb80ce3166}{second\+Line}}
+\begin{DoxyCompactList}\small\item\em first\+Line first line item. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classDoubleLinePointTool_acc8e397cc9fb6c724b6d0de71db0c863}{line\+Color}}
+\begin{DoxyCompactList}\small\item\em second\+Line second line item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDoubleLinePointTool}{Double\+Line\+Point\+Tool}} class parent for all tools what creates a point with 2 lines. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDoubleLinePointTool_a43c18842a5b71d70954ca5a70f80da67}\label{classDoubleLinePointTool_a43c18842a5b71d70954ca5a70f80da67}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!DoubleLinePointTool@{DoubleLinePointTool}}\index{DoubleLinePointTool@{DoubleLinePointTool}!Type@{Type}}}\mbox{\Hypertarget{classDoubleLinePointTool_a43c18842a5b71d70954ca5a70f80da67a4ce9c3f6976bfadd29f4195cd6622bae}\label{classDoubleLinePointTool_a43c18842a5b71d70954ca5a70f80da67a4ce9c3f6976bfadd29f4195cd6622bae}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDoubleLinePointTool_a74cf017dbe3df68007d205a009cd062e}\label{classDoubleLinePointTool_a74cf017dbe3df68007d205a009cd062e}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!DoubleLinePointTool@{DoubleLinePointTool}}
+\index{DoubleLinePointTool@{DoubleLinePointTool}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{DoubleLinePointTool()}{DoubleLinePointTool()}}
+{\footnotesize\ttfamily Double\+Line\+Point\+Tool\+::\+Double\+Line\+Point\+Tool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const QString \&}]{type\+Line,  }\item[{const QString \&}]{line\+Weight,  }\item[{const QString \&}]{line\+Color,  }\item[{const quint32 \&}]{first\+Point\+Id,  }\item[{const quint32 \&}]{second\+Point\+Id,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDoubleLinePointTool}{Double\+Line\+Point\+Tool}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em type\+Line} & line type. \\
+\hline
+{\em line\+Color} & line color. \\
+\hline
+{\em formula} & string with length formula. \\
+\hline
+{\em first\+Point\+Id} & id first point. \\
+\hline
+{\em second\+Point\+Id} & id second point. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDoubleLinePointTool_af4720ebc06081da5c0ce6fb7c09f2220}\label{classDoubleLinePointTool_af4720ebc06081da5c0ce6fb7c09f2220}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!````~DoubleLinePointTool@{$\sim$DoubleLinePointTool}}
+\index{````~DoubleLinePointTool@{$\sim$DoubleLinePointTool}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{$\sim$DoubleLinePointTool()}{~DoubleLinePointTool()}}
+{\footnotesize\ttfamily Double\+Line\+Point\+Tool\+::$\sim$\+Double\+Line\+Point\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDoubleLinePointTool_a88dcb3fb5827b76162f18dbd0e3c78c9}\label{classDoubleLinePointTool_a88dcb3fb5827b76162f18dbd0e3c78c9}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!Disable@{Disable}}
+\index{Disable@{Disable}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_af44032e68ecf3468ffa0377e2eb10087}\label{classDoubleLinePointTool_af44032e68ecf3468ffa0377e2eb10087}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Full\+Update\+From\+File update tool data from file. 
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a20c9e38255327069cfc0780dfbe21753}\label{classDoubleLinePointTool_a20c9e38255327069cfc0780dfbe21753}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!getFirstPointId@{getFirstPointId}}
+\index{getFirstPointId@{getFirstPointId}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{getFirstPointId()}{getFirstPointId()}}
+{\footnotesize\ttfamily quint32 Double\+Line\+Point\+Tool\+::get\+First\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a0f23bbe998eef7cd27aa617bcf32dc8f}\label{classDoubleLinePointTool_a0f23bbe998eef7cd27aa617bcf32dc8f}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!getLineColor@{getLineColor}}
+\index{getLineColor@{getLineColor}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{getLineColor()}{getLineColor()}}
+{\footnotesize\ttfamily QString Double\+Line\+Point\+Tool\+::get\+Line\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a251a9f6a32dd790859d4303f1dc21d5f}\label{classDoubleLinePointTool_a251a9f6a32dd790859d4303f1dc21d5f}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!getSecondPointId@{getSecondPointId}}
+\index{getSecondPointId@{getSecondPointId}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{getSecondPointId()}{getSecondPointId()}}
+{\footnotesize\ttfamily quint32 Double\+Line\+Point\+Tool\+::get\+Second\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a658a226dd3f552bd5a59bbe6afe65777}\label{classDoubleLinePointTool_a658a226dd3f552bd5a59bbe6afe65777}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_abe5baf59c4fe740e9ca6b0349a985645}{VTool\+Single\+Point}}.
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a7f708c18a4ca30afc00f5503678e1426}\label{classDoubleLinePointTool_a7f708c18a4ca30afc00f5503678e1426}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVScenePoint_ab6573c7be0882c18b7e0e181f2cb9015}{VScene\+Point}}.
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a44f2f5ace18cc52ca278862714d63380}\label{classDoubleLinePointTool_a44f2f5ace18cc52ca278862714d63380}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!makeToolTip@{makeToolTip}}
+\index{makeToolTip@{makeToolTip}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{makeToolTip()}{makeToolTip()}}
+{\footnotesize\ttfamily QString Double\+Line\+Point\+Tool\+::make\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDrawTool_a3c5e34e70a32b885d9a8863deb7e1e2f}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a2c622e838c00a2adb82b59cb43b6c423}\label{classDoubleLinePointTool_a2c622e838c00a2adb82b59cb43b6c423}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!paint@{paint}}
+\index{paint@{paint}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVScenePoint_ae5b1b5d13169a84266a96f9195095ff7}{VScene\+Point}}.
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a0851ec812fd2f75777391fbc2609d8fc}\label{classDoubleLinePointTool_a0851ec812fd2f75777391fbc2609d8fc}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!point1Name@{point1Name}}
+\index{point1Name@{point1Name}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{point1Name()}{point1Name()}}
+{\footnotesize\ttfamily QString Double\+Line\+Point\+Tool\+::point1\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_aa1af8380521c5ac69d1cb8d2b508e18e}\label{classDoubleLinePointTool_aa1af8380521c5ac69d1cb8d2b508e18e}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!point2Name@{point2Name}}
+\index{point2Name@{point2Name}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{point2Name()}{point2Name()}}
+{\footnotesize\ttfamily QString Double\+Line\+Point\+Tool\+::point2\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a340b9ba917e2961cb9bd148423ae8135}\label{classDoubleLinePointTool_a340b9ba917e2961cb9bd148423ae8135}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+line\+Color color of a line. 
+
+Refresh\+Geometry refresh item on scene. \mbox{\Hypertarget{classDoubleLinePointTool_a4bd4cac84cc8381ea1ec1fa8a7f10291}\label{classDoubleLinePointTool_a4bd4cac84cc8381ea1ec1fa8a7f10291}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPointIntersectXYTool_a3583e058f54502e7426918b5916542cb}{Point\+Intersect\+XYTool}}.
+
+\mbox{\Hypertarget{classDoubleLinePointTool_ad62446eed1c102eb66294842da699adc}\label{classDoubleLinePointTool_ad62446eed1c102eb66294842da699adc}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a768712ef8d8b98350d1af66ebee6e63e}{VTool\+Single\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPointIntersectXYTool_a96db1de2a80484e6270d2a33c2ae53ee}{Point\+Intersect\+XYTool}}.
+
+\mbox{\Hypertarget{classDoubleLinePointTool_ac2372a3f1af4d8aaa39fd38bd430a3b3}\label{classDoubleLinePointTool_ac2372a3f1af4d8aaa39fd38bd430a3b3}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!setFirstPointId@{setFirstPointId}}
+\index{setFirstPointId@{setFirstPointId}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{setFirstPointId()}{setFirstPointId()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::set\+First\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a2629904b4eb596d1da018c3349f0242b}\label{classDoubleLinePointTool_a2629904b4eb596d1da018c3349f0242b}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!setLineColor@{setLineColor}}
+\index{setLineColor@{setLineColor}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{setLineColor()}{setLineColor()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::set\+Line\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a971d5147f7110700f3e268fd4d4feb23}\label{classDoubleLinePointTool_a971d5147f7110700f3e268fd4d4feb23}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!setSecondPointId@{setSecondPointId}}
+\index{setSecondPointId@{setSecondPointId}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{setSecondPointId()}{setSecondPointId()}}
+{\footnotesize\ttfamily void Double\+Line\+Point\+Tool\+::set\+Second\+Point\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a26662892d338ff3d620fdb60f51c709d}\label{classDoubleLinePointTool_a26662892d338ff3d620fdb60f51c709d}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!type@{type}}
+\index{type@{type}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Double\+Line\+Point\+Tool\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a6eccae4469cb594716c86dc5011b99eb}{VTool\+Single\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPointIntersectXYTool_a0e301cd666bf50767a1605b443708c64}{Point\+Intersect\+XYTool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDoubleLinePointTool_ad9c42698e2da4ea8ca7c34ded6ca05ab}\label{classDoubleLinePointTool_ad9c42698e2da4ea8ca7c34ded6ca05ab}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!firstLine@{firstLine}}
+\index{firstLine@{firstLine}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{firstLine}{firstLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Double\+Line\+Point\+Tool\+::first\+Line\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+second\+Point\+Id id second line point. 
+
+\mbox{\Hypertarget{classDoubleLinePointTool_aefd6507757cf9ef171b44ad83b64f698}\label{classDoubleLinePointTool_aefd6507757cf9ef171b44ad83b64f698}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!firstPointId@{firstPointId}}
+\index{firstPointId@{firstPointId}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{firstPointId}{firstPointId}}
+{\footnotesize\ttfamily quint32 Double\+Line\+Point\+Tool\+::first\+Point\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classDoubleLinePointTool_acc8e397cc9fb6c724b6d0de71db0c863}\label{classDoubleLinePointTool_acc8e397cc9fb6c724b6d0de71db0c863}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!lineColor@{lineColor}}
+\index{lineColor@{lineColor}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{lineColor}{lineColor}}
+{\footnotesize\ttfamily QString Double\+Line\+Point\+Tool\+::line\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+second\+Line second line item. 
+
+\mbox{\Hypertarget{classDoubleLinePointTool_a8ceb5f6368786d5d427a0fbb80ce3166}\label{classDoubleLinePointTool_a8ceb5f6368786d5d427a0fbb80ce3166}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!secondLine@{secondLine}}
+\index{secondLine@{secondLine}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{secondLine}{secondLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Double\+Line\+Point\+Tool\+::second\+Line\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+first\+Line first line item. 
+
+\mbox{\Hypertarget{classDoubleLinePointTool_aa484ae0368c768fc150b7fa46c9c60c9}\label{classDoubleLinePointTool_aa484ae0368c768fc150b7fa46c9c60c9}} 
+\index{DoubleLinePointTool@{DoubleLinePointTool}!secondPointId@{secondPointId}}
+\index{secondPointId@{secondPointId}!DoubleLinePointTool@{DoubleLinePointTool}}
+\doxysubsubsection{\texorpdfstring{secondPointId}{secondPointId}}
+{\footnotesize\ttfamily quint32 Double\+Line\+Point\+Tool\+::second\+Point\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+first\+Point\+Id id first line point. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toollinepoint/\mbox{\hyperlink{doubleline__point__tool_8h}{doubleline\+\_\+point\+\_\+tool.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/toollinepoint/\mbox{\hyperlink{doubleline__point__tool_8cpp}{doubleline\+\_\+point\+\_\+tool.\+cpp}}\end{DoxyCompactItemize}

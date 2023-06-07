@@ -1,0 +1,258 @@
+\hypertarget{classVPE_1_1VEnumProperty}{}\doxysection{VPE\+::VEnum\+Property Class Reference}
+\label{classVPE_1_1VEnumProperty}\index{VPE::VEnumProperty@{VPE::VEnumProperty}}
+
+
+{\ttfamily \#include $<$venumproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::VEnum\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d2/dcb/classVPE_1_1VEnumProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VEnumProperty_a0d40eaac8935161c5e8af377b1f26269}{current\+Index\+Changed}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VEnumProperty_aca162ca80d1430d455346bedbf9066df}{VEnum\+Property}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VEnumProperty_a4e81fd56f04d12a26feb583be76889fb}{$\sim$\+VEnum\+Property}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VEnumProperty_a7b6d88c9f8c4792c34334a50a6e83053}{data}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{classVPE_1_1VEnumProperty_ac295fc5adae292cc0165ac77823cf346}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&options, const QAbstract\+Item\+Delegate $\ast$delegate) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VEnumProperty_a97e5b0f57559def3f9c76957940ffdcc}{get\+Editor\+Data}} (const QWidget $\ast$editor) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VEnumProperty_af3b22867359dbfe84908cad4e24d40c7}{set\+Literals}} (const QString\+List \&literals)
+\begin{DoxyCompactList}\small\item\em Sets the enumeration literals. \end{DoxyCompactList}\item 
+virtual QString\+List \mbox{\hyperlink{classVPE_1_1VEnumProperty_a2306414da3dac4211e78b7fb14302488}{get\+Literals}} () const
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VEnumProperty_a5c8a7f311ede2d82168fd588bb336d31}{set\+Value}} (const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the value of the property. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPE_1_1VEnumProperty_a957483ea4a83fcd6c0407a0fe520f930}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$ \mbox{\hyperlink{classVPE_1_1VEnumProperty_a8d7bbdcfd7d5fca19df5fcabbb8c81a4}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$container=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VEnumProperty_a93af365785fa5332ec385449a0c8ff70}{set\+Setting}} (const QString \&key, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VEnumProperty_aa3496f5af04a46c6e4bba40ae5273364}{get\+Setting}} (const QString \&key) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual QString\+List \mbox{\hyperlink{classVPE_1_1VEnumProperty_a75c191a1100d3b8eabc9f5c1aeea9ef4}{get\+Setting\+Keys}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns the list of keys of the property\textquotesingle{}s settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString\+List \mbox{\hyperlink{classVPE_1_1VEnumProperty_ae2a2f1ca0e4097d0a9a6ece70f9c8732}{Enumeration\+Literals}}
+\begin{DoxyCompactList}\small\item\em The list of possible options to choose from. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_aca162ca80d1430d455346bedbf9066df}\label{classVPE_1_1VEnumProperty_aca162ca80d1430d455346bedbf9066df}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!VEnumProperty@{VEnumProperty}}
+\index{VEnumProperty@{VEnumProperty}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{VEnumProperty()}{VEnumProperty()}}
+{\footnotesize\ttfamily VPE\+::\+VEnum\+Property\+::\+VEnum\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a4e81fd56f04d12a26feb583be76889fb}\label{classVPE_1_1VEnumProperty_a4e81fd56f04d12a26feb583be76889fb}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!````~VEnumProperty@{$\sim$VEnumProperty}}
+\index{````~VEnumProperty@{$\sim$VEnumProperty}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{$\sim$VEnumProperty()}{~VEnumProperty()}}
+{\footnotesize\ttfamily virtual VPE\+::\+VEnum\+Property\+::$\sim$\+VEnum\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a8d7bbdcfd7d5fca19df5fcabbb8c81a4}\label{classVPE_1_1VEnumProperty_a8d7bbdcfd7d5fca19df5fcabbb8c81a4}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+VEnum\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$}]{container = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a03865ea193d5465fea60bb7f29ca02bf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_ac295fc5adae292cc0165ac77823cf346}\label{classVPE_1_1VEnumProperty_ac295fc5adae292cc0165ac77823cf346}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VPE\+::\+VEnum\+Property\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{options,  }\item[{const QAbstract\+Item\+Delegate $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. 
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one 
+\begin{DoxyParams}{Parameters}
+{\em parent} & The widget to which the editor will be added as a child \textbackslash{}options Render options \textbackslash{}delegate A pointer to the QAbstract\+Item\+Delegate requesting the editor. This can be used to connect signals and slots. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_aea7526e6641c9cb369cc8234881df935}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a0d40eaac8935161c5e8af377b1f26269}\label{classVPE_1_1VEnumProperty_a0d40eaac8935161c5e8af377b1f26269}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!currentIndexChanged@{currentIndexChanged}}
+\index{currentIndexChanged@{currentIndexChanged}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{currentIndexChanged}{currentIndexChanged}}
+{\footnotesize\ttfamily void VPE\+::\+VEnum\+Property\+::current\+Index\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a7b6d88c9f8c4792c34334a50a6e83053}\label{classVPE_1_1VEnumProperty_a7b6d88c9f8c4792c34334a50a6e83053}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!data@{data}}
+\index{data@{data}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VEnum\+Property\+::data (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}},  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the data how it should be displayed. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a21a184d546b92bb2c553ebf7d9d58448}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a97e5b0f57559def3f9c76957940ffdcc}\label{classVPE_1_1VEnumProperty_a97e5b0f57559def3f9c76957940ffdcc}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!getEditorData@{getEditorData}}
+\index{getEditorData@{getEditorData}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{getEditorData()}{getEditorData()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VEnum\+Property\+::get\+Editor\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the data from the widget. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a884293b0d13de6f76c3109b8f71a61e0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a2306414da3dac4211e78b7fb14302488}\label{classVPE_1_1VEnumProperty_a2306414da3dac4211e78b7fb14302488}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!getLiterals@{getLiterals}}
+\index{getLiterals@{getLiterals}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{getLiterals()}{getLiterals()}}
+{\footnotesize\ttfamily QString\+List VPE\+::\+VEnum\+Property\+::get\+Literals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the settings. This function has to be implemented in a subclass in order to have an effect. 
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_aa3496f5af04a46c6e4bba40ae5273364}\label{classVPE_1_1VEnumProperty_aa3496f5af04a46c6e4bba40ae5273364}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!getSetting@{getSetting}}
+\index{getSetting@{getSetting}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{getSetting()}{getSetting()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VEnum\+Property\+::get\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the settings. This function has to be implemented in a subclass in order to have an effect. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_ab1f0fc69ebab910f4ee7eddf2242058a}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a75c191a1100d3b8eabc9f5c1aeea9ef4}\label{classVPE_1_1VEnumProperty_a75c191a1100d3b8eabc9f5c1aeea9ef4}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!getSettingKeys@{getSettingKeys}}
+\index{getSettingKeys@{getSettingKeys}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{getSettingKeys()}{getSettingKeys()}}
+{\footnotesize\ttfamily QString\+List VPE\+::\+VEnum\+Property\+::get\+Setting\+Keys (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the list of keys of the property\textquotesingle{}s settings. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a38b6acecc6f92d38af104a111d6aa63f}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_af3b22867359dbfe84908cad4e24d40c7}\label{classVPE_1_1VEnumProperty_af3b22867359dbfe84908cad4e24d40c7}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!setLiterals@{setLiterals}}
+\index{setLiterals@{setLiterals}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{setLiterals()}{setLiterals()}}
+{\footnotesize\ttfamily void VPE\+::\+VEnum\+Property\+::set\+Literals (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{literals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the enumeration literals. 
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a93af365785fa5332ec385449a0c8ff70}\label{classVPE_1_1VEnumProperty_a93af365785fa5332ec385449a0c8ff70}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!setSetting@{setSetting}}
+\index{setSetting@{setSetting}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{setSetting()}{setSetting()}}
+{\footnotesize\ttfamily void VPE\+::\+VEnum\+Property\+::set\+Setting (\begin{DoxyParamCaption}\item[{const QString \&}]{key,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Sets the settings. Available settings\+:
+
+key\+: \char`\"{}literals\char`\"{} -\/ value\+: \char`\"{}item1;;item2;;item3\char`\"{} 
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a2d77360aac7fb51de49a7496560c7c14}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a5c8a7f311ede2d82168fd588bb336d31}\label{classVPE_1_1VEnumProperty_a5c8a7f311ede2d82168fd588bb336d31}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!setValue@{setValue}}
+\index{setValue@{setValue}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void VPE\+::\+VEnum\+Property\+::set\+Value (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the value of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a67c7322abd6f7f0306ecdf56ffb0f65d}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_a957483ea4a83fcd6c0407a0fe520f930}\label{classVPE_1_1VEnumProperty_a957483ea4a83fcd6c0407a0fe520f930}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!type@{type}}
+\index{type@{type}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+VEnum\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VEnumProperty_ae2a2f1ca0e4097d0a9a6ece70f9c8732}\label{classVPE_1_1VEnumProperty_ae2a2f1ca0e4097d0a9a6ece70f9c8732}} 
+\index{VPE::VEnumProperty@{VPE::VEnumProperty}!EnumerationLiterals@{EnumerationLiterals}}
+\index{EnumerationLiterals@{EnumerationLiterals}!VPE::VEnumProperty@{VPE::VEnumProperty}}
+\doxysubsubsection{\texorpdfstring{EnumerationLiterals}{EnumerationLiterals}}
+{\footnotesize\ttfamily QString\+List VPE\+::\+VEnum\+Property\+::\+Enumeration\+Literals\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The list of possible options to choose from. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{venumproperty_8h}{venumproperty.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{venumproperty_8cpp}{venumproperty.\+cpp}}\end{DoxyCompactItemize}

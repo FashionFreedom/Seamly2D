@@ -1,0 +1,111 @@
+\hypertarget{classArrowedLineItem}{}\doxysection{Arrowed\+Line\+Item Class Reference}
+\label{classArrowedLineItem}\index{ArrowedLineItem@{ArrowedLineItem}}
+
+
+{\ttfamily \#include $<$scalesceneitems.\+h$>$}
+
+Inheritance diagram for Arrowed\+Line\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d6/d43/classArrowedLineItem}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classArrowedLineItem_a708a35eccae9987dd07012cc86afc6ebaecb047aab83575858a38f4f578755757}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Arrowed\+Line\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArrowedLineItem_a9f489a7ee37668da8f59015a8377ceeb}{Arrowed\+Line\+Item}} (QGraphics\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{classArrowedLineItem_a62a5a2cabfe28806ccb0609374fe1e98}{Arrowed\+Line\+Item}} (const QLineF \&line, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classArrowedLineItem_a8d330cd9dd785bf258036294f0225f50}{$\sim$\+Arrowed\+Line\+Item}} ()=default
+\item 
+virtual int \mbox{\hyperlink{classArrowedLineItem_a647d90717d6220b5de57ae33d9210894}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classArrowedLineItem_a6c5e6c2adb27cf4eba970356b00cfc99}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classArrowedLineItem_ac6365ef6ea36224911156bac6f780f92}{draw\+Arrow}} (const QLineF \&axis, QPainter\+Path \&path, const qreal \&arrow\+\_\+size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$ \mbox{\hyperlink{classArrowedLineItem_ae0293dfc5de345ad5054e0e43e5f48b4}{m\+\_\+arrows}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classArrowedLineItem_a708a35eccae9987dd07012cc86afc6eb}\label{classArrowedLineItem_a708a35eccae9987dd07012cc86afc6eb}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!ArrowedLineItem@{ArrowedLineItem}}\index{ArrowedLineItem@{ArrowedLineItem}!Type@{Type}}}\mbox{\Hypertarget{classArrowedLineItem_a708a35eccae9987dd07012cc86afc6ebaecb047aab83575858a38f4f578755757}\label{classArrowedLineItem_a708a35eccae9987dd07012cc86afc6ebaecb047aab83575858a38f4f578755757}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArrowedLineItem_a9f489a7ee37668da8f59015a8377ceeb}\label{classArrowedLineItem_a9f489a7ee37668da8f59015a8377ceeb}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!ArrowedLineItem@{ArrowedLineItem}}
+\index{ArrowedLineItem@{ArrowedLineItem}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{ArrowedLineItem()}{ArrowedLineItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Arrowed\+Line\+Item\+::\+Arrowed\+Line\+Item (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classArrowedLineItem_a62a5a2cabfe28806ccb0609374fe1e98}\label{classArrowedLineItem_a62a5a2cabfe28806ccb0609374fe1e98}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!ArrowedLineItem@{ArrowedLineItem}}
+\index{ArrowedLineItem@{ArrowedLineItem}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{ArrowedLineItem()}{ArrowedLineItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Arrowed\+Line\+Item\+::\+Arrowed\+Line\+Item (\begin{DoxyParamCaption}\item[{const QLineF \&}]{line,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classArrowedLineItem_a8d330cd9dd785bf258036294f0225f50}\label{classArrowedLineItem_a8d330cd9dd785bf258036294f0225f50}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!````~ArrowedLineItem@{$\sim$ArrowedLineItem}}
+\index{````~ArrowedLineItem@{$\sim$ArrowedLineItem}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$ArrowedLineItem()}{~ArrowedLineItem()}}
+{\footnotesize\ttfamily virtual Arrowed\+Line\+Item\+::$\sim$\+Arrowed\+Line\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArrowedLineItem_ac6365ef6ea36224911156bac6f780f92}\label{classArrowedLineItem_ac6365ef6ea36224911156bac6f780f92}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!drawArrow@{drawArrow}}
+\index{drawArrow@{drawArrow}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{drawArrow()}{drawArrow()}}
+{\footnotesize\ttfamily void Arrowed\+Line\+Item\+::draw\+Arrow (\begin{DoxyParamCaption}\item[{const QLineF \&}]{axis,  }\item[{QPainter\+Path \&}]{path,  }\item[{const qreal \&}]{arrow\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classArrowedLineItem_a6c5e6c2adb27cf4eba970356b00cfc99}\label{classArrowedLineItem_a6c5e6c2adb27cf4eba970356b00cfc99}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!paint@{paint}}
+\index{paint@{paint}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void Arrowed\+Line\+Item\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classArrowedLineItem_a647d90717d6220b5de57ae33d9210894}\label{classArrowedLineItem_a647d90717d6220b5de57ae33d9210894}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!type@{type}}
+\index{type@{type}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Arrowed\+Line\+Item\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classArrowedLineItem_ae0293dfc5de345ad5054e0e43e5f48b4}\label{classArrowedLineItem_ae0293dfc5de345ad5054e0e43e5f48b4}} 
+\index{ArrowedLineItem@{ArrowedLineItem}!m\_arrows@{m\_arrows}}
+\index{m\_arrows@{m\_arrows}!ArrowedLineItem@{ArrowedLineItem}}
+\doxysubsubsection{\texorpdfstring{m\_arrows}{m\_arrows}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}}$\ast$ Arrowed\+Line\+Item\+::m\+\_\+arrows\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vwidgets/\mbox{\hyperlink{scalesceneitems_8h}{scalesceneitems.\+h}}\item 
+src/libs/vwidgets/\mbox{\hyperlink{scalesceneitems_8cpp}{scalesceneitems.\+cpp}}\end{DoxyCompactItemize}

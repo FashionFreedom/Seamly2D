@@ -1,0 +1,418 @@
+\hypertarget{classqmu_1_1QmuParserByteCode}{}\doxysection{qmu\+::Qmu\+Parser\+Byte\+Code Class Reference}
+\label{classqmu_1_1QmuParserByteCode}\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+
+
+Bytecode implementation of the Math Parser.  
+
+
+
+
+{\ttfamily \#include $<$qmuparserbytecode.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a726898e6cfda76f466ef8b88b8534b0e}{Qmu\+Parser\+Byte\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Bytecode default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ac2a03cb305c9d578ee15d165bd9677b9}{Qmu\+Parser\+Byte\+Code}} (const \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \&a\+\_\+\+Byte\+Code)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \& \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ae6c9ffdebb1b92f098c7a9771698d285}{operator=}} (const \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \&a\+\_\+\+Byte\+Code)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_add57ee6adf364ce38f4142e0baf2460e}{Assign}} (const \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \&a\+\_\+\+Byte\+Code)
+\begin{DoxyCompactList}\small\item\em Copy state of another object to this. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ab4abd86c7b5a0f3e5d23cd5e2232c348}{Add\+Var}} (qreal $\ast$a\+\_\+p\+Var)
+\begin{DoxyCompactList}\small\item\em Add a Variable pointer to bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a5ec61233f1b062ab30f54b5da0b8522c}{Add\+Val}} (qreal a\+\_\+f\+Val)
+\begin{DoxyCompactList}\small\item\em Add a Variable pointer to bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_aad644e2b432471ac918d2158cc7218b6}{Add\+Op}} (\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} a\+\_\+\+Oprt)
+\begin{DoxyCompactList}\small\item\em Add an operator identifier to bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a1658c3ef6fff8b4b9e5570a86e96669e}{Add\+If\+Else}} (\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} a\+\_\+\+Oprt)
+\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_af416412cd3ffba6a63e7d5157ac2804b}{Add\+Assign\+Op}} (qreal $\ast$a\+\_\+p\+Var)
+\begin{DoxyCompactList}\small\item\em Add an assignement operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a50d83b57efbc4ca9106952944d10140c}{Add\+Fun}} (\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}} a\+\_\+p\+Fun, int a\+\_\+i\+Argc)
+\begin{DoxyCompactList}\small\item\em Add function to bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_add9d293b4ef2b806eba7f1f3361c9301}{Add\+Bulk\+Fun}} (\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}} a\+\_\+p\+Fun, int a\+\_\+i\+Argc)
+\begin{DoxyCompactList}\small\item\em Add a bulk function to bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a57672102ac3d73429c6ce7a1cbd66e35}{Add\+Str\+Fun}} (\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}} a\+\_\+p\+Fun, int a\+\_\+i\+Argc, int a\+\_\+i\+Idx)
+\begin{DoxyCompactList}\small\item\em Add Strung function entry to the parser bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a58b1746e63065c52ea7a4b019c46bff9}{Enable\+Optimizer}} (bool b\+Stat)
+\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a3613a0ee697b8d7d7a5e41052004df62}{Finalize}} ()
+\begin{DoxyCompactList}\small\item\em Add end marker to bytecode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_acf3aaad33ec23d087dcd27664a73fe5b}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Delete the bytecode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ab3d8a66133700df7aa6cf3a70e65cc84}{Get\+Max\+Stack\+Size}} () const
+\item 
+int \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a75f12980d1cb02f0a4d782473c873484}{Get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of entries in the bytecode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structqmu_1_1SToken}{SToken}} $\ast$ \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a5728a899313a85009b76a11a27b91119}{Get\+Base}} () const
+\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ae0a191a37184a629150a4f291273d164}{Ascii\+Dump}} ()
+\begin{DoxyCompactList}\small\item\em Dump bytecode (for debugging only!). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}$<$ qreal, \mbox{\hyperlink{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}{string\+\_\+type}} $>$ \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_afaf8f3c52d68f4a25dc0f49d6bf7d97a}{token\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Token type for internal use only. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structqmu_1_1SToken}{SToken}} $>$ \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ae5669a573df2c5802f48154147a2f421}{rpn\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Token vector for storing the RPN. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a33fb1ea17b95be54b5e9fd1dee909508}{Constant\+Folding}} (\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} a\+\_\+\+Oprt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a778f8c045e688bca0854df3028cb6889}{m\+\_\+i\+Stack\+Pos}}
+\begin{DoxyCompactList}\small\item\em Position in the Calculation array. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_a6aaa90639d0d24983ee9dbbc99e7c16b}{m\+\_\+i\+Max\+Stack\+Size}}
+\begin{DoxyCompactList}\small\item\em Maximum size needed for the stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ae5669a573df2c5802f48154147a2f421}{rpn\+\_\+type}} \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ab46e18ec6a2fd90cc115006cc7e3419e}{m\+\_\+v\+RPN}}
+\begin{DoxyCompactList}\small\item\em The actual rpn storage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ab759e5ab64701720c9b2ace1f00a5a05}{m\+\_\+b\+Enable\+Optimizer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bytecode implementation of the Math Parser. 
+
+The bytecode contains the formula converted to revers polish notation stored in a continious memory area. Associated with this data are operator codes, variable pointers, constant values and function pointers. Those are necessary in order to calculate the result. All those data items will be casted to the underlying datatype of the bytecode.
+
+\begin{DoxyAuthor}{Author}
+(C) 2004-\/2013 Ingo Berg 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ae5669a573df2c5802f48154147a2f421}\label{classqmu_1_1QmuParserByteCode_ae5669a573df2c5802f48154147a2f421}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!rpn\_type@{rpn\_type}}
+\index{rpn\_type@{rpn\_type}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{rpn\_type}{rpn\_type}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{structqmu_1_1SToken}{SToken}}$>$ \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ae5669a573df2c5802f48154147a2f421}{qmu\+::\+Qmu\+Parser\+Byte\+Code\+::rpn\+\_\+type}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Token vector for storing the RPN. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_afaf8f3c52d68f4a25dc0f49d6bf7d97a}\label{classqmu_1_1QmuParserByteCode_afaf8f3c52d68f4a25dc0f49d6bf7d97a}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!token\_type@{token\_type}}
+\index{token\_type@{token\_type}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{token\_type}{token\_type}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}$<$qreal, \mbox{\hyperlink{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}{string\+\_\+type}}$>$ \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_afaf8f3c52d68f4a25dc0f49d6bf7d97a}{qmu\+::\+Qmu\+Parser\+Byte\+Code\+::token\+\_\+type}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Token type for internal use only. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a726898e6cfda76f466ef8b88b8534b0e}\label{classqmu_1_1QmuParserByteCode_a726898e6cfda76f466ef8b88b8534b0e}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!QmuParserByteCode@{QmuParserByteCode}}
+\index{QmuParserByteCode@{QmuParserByteCode}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{QmuParserByteCode()}{QmuParserByteCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Qmu\+Parser\+Byte\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Bytecode default constructor. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ac2a03cb305c9d578ee15d165bd9677b9}\label{classqmu_1_1QmuParserByteCode_ac2a03cb305c9d578ee15d165bd9677b9}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!QmuParserByteCode@{QmuParserByteCode}}
+\index{QmuParserByteCode@{QmuParserByteCode}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{QmuParserByteCode()}{QmuParserByteCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Qmu\+Parser\+Byte\+Code (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \&}]{a\+\_\+\+Byte\+Code }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+Implemented in Terms of Assign(const QParser\+Byte\+Code \&a\+\_\+\+Byte\+Code) 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_af416412cd3ffba6a63e7d5157ac2804b}\label{classqmu_1_1QmuParserByteCode_af416412cd3ffba6a63e7d5157ac2804b}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddAssignOp@{AddAssignOp}}
+\index{AddAssignOp@{AddAssignOp}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddAssignOp()}{AddAssignOp()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Assign\+Op (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{a\+\_\+p\+Var }\end{DoxyParamCaption})}
+
+
+
+Add an assignement operator. 
+
+Operator entries in byte code consist of\+: 
+\begin{DoxyItemize}
+\item cm\+ASSIGN code 
+\item the pointer of the destination variable 
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+Parser\+Token\+::\+ECmd\+Code 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_add9d293b4ef2b806eba7f1f3361c9301}\label{classqmu_1_1QmuParserByteCode_add9d293b4ef2b806eba7f1f3361c9301}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddBulkFun@{AddBulkFun}}
+\index{AddBulkFun@{AddBulkFun}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddBulkFun()}{AddBulkFun()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Bulk\+Fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}}}]{a\+\_\+p\+Fun,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})}
+
+
+
+Add a bulk function to bytecode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+i\+Argc} & Number of arguments, negative numbers indicate multiarg functions. \\
+\hline
+{\em a\+\_\+p\+Fun} & Pointer to function callback. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a50d83b57efbc4ca9106952944d10140c}\label{classqmu_1_1QmuParserByteCode_a50d83b57efbc4ca9106952944d10140c}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddFun@{AddFun}}
+\index{AddFun@{AddFun}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddFun()}{AddFun()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}}}]{a\+\_\+p\+Fun,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})}
+
+
+
+Add function to bytecode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+i\+Argc} & Number of arguments, negative numbers indicate multiarg functions. \\
+\hline
+{\em a\+\_\+p\+Fun} & Pointer to function callback. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a1658c3ef6fff8b4b9e5570a86e96669e}\label{classqmu_1_1QmuParserByteCode_a1658c3ef6fff8b4b9e5570a86e96669e}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddIfElse@{AddIfElse}}
+\index{AddIfElse@{AddIfElse}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddIfElse()}{AddIfElse()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+POP void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+If\+Else (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}}}]{a\+\_\+\+Oprt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_aad644e2b432471ac918d2158cc7218b6}\label{classqmu_1_1QmuParserByteCode_aad644e2b432471ac918d2158cc7218b6}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddOp@{AddOp}}
+\index{AddOp@{AddOp}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddOp()}{AddOp()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}}}]{a\+\_\+\+Oprt }\end{DoxyParamCaption})}
+
+
+
+Add an operator identifier to bytecode. 
+
+Operator entries in byte code consist of\+: 
+\begin{DoxyItemize}
+\item value array position of the result 
+\item the operator code according to Parser\+Token\+::\+ECmd\+Code 
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+Parser\+Token\+::\+ECmd\+Code 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a57672102ac3d73429c6ce7a1cbd66e35}\label{classqmu_1_1QmuParserByteCode_a57672102ac3d73429c6ce7a1cbd66e35}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddStrFun@{AddStrFun}}
+\index{AddStrFun@{AddStrFun}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddStrFun()}{AddStrFun()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Str\+Fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}}}]{a\+\_\+p\+Fun,  }\item[{int}]{a\+\_\+i\+Argc,  }\item[{int}]{a\+\_\+i\+Idx }\end{DoxyParamCaption})}
+
+
+
+Add Strung function entry to the parser bytecode. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & A string function entry consists of the stack position of the return value, followed by a cm\+STRFUNC code, the function pointer and an index into the string buffer maintained by the parser. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a5ec61233f1b062ab30f54b5da0b8522c}\label{classqmu_1_1QmuParserByteCode_a5ec61233f1b062ab30f54b5da0b8522c}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddVal@{AddVal}}
+\index{AddVal@{AddVal}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddVal()}{AddVal()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Val (\begin{DoxyParamCaption}\item[{qreal}]{a\+\_\+f\+Val }\end{DoxyParamCaption})}
+
+
+
+Add a Variable pointer to bytecode. 
+
+Value entries in byte code consist of\+: 
+\begin{DoxyItemize}
+\item value array position of the value 
+\item the operator code according to Parser\+Token\+::cm\+VAL 
+\item the value stored in \#mc\+\_\+i\+Size\+Val number of bytecode entries. 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+f\+Val} & Value to be added. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ab4abd86c7b5a0f3e5d23cd5e2232c348}\label{classqmu_1_1QmuParserByteCode_ab4abd86c7b5a0f3e5d23cd5e2232c348}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AddVar@{AddVar}}
+\index{AddVar@{AddVar}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AddVar()}{AddVar()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Add\+Var (\begin{DoxyParamCaption}\item[{qreal $\ast$}]{a\+\_\+p\+Var }\end{DoxyParamCaption})}
+
+
+
+Add a Variable pointer to bytecode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+p\+Var} & Pointer to be added. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ae0a191a37184a629150a4f291273d164}\label{classqmu_1_1QmuParserByteCode_ae0a191a37184a629150a4f291273d164}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!AsciiDump@{AsciiDump}}
+\index{AsciiDump@{AsciiDump}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{AsciiDump()}{AsciiDump()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Ascii\+Dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Dump bytecode (for debugging only!). 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_add57ee6adf364ce38f4142e0baf2460e}\label{classqmu_1_1QmuParserByteCode_add57ee6adf364ce38f4142e0baf2460e}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!Assign@{Assign}}
+\index{Assign@{Assign}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{Assign()}{Assign()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \&}]{a\+\_\+\+Byte\+Code }\end{DoxyParamCaption})}
+
+
+
+Copy state of another object to this. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nowthrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_acf3aaad33ec23d087dcd27664a73fe5b}\label{classqmu_1_1QmuParserByteCode_acf3aaad33ec23d087dcd27664a73fe5b}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!clear@{clear}}
+\index{clear@{clear}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delete the bytecode. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & The name of this function is a violation of my own coding guidelines but this way it\textquotesingle{}s more in line with the STL functions thus more intuitive. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a33fb1ea17b95be54b5e9fd1dee909508}\label{classqmu_1_1QmuParserByteCode_a33fb1ea17b95be54b5e9fd1dee909508}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!ConstantFolding@{ConstantFolding}}
+\index{ConstantFolding@{ConstantFolding}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{ConstantFolding()}{ConstantFolding()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Constant\+Folding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}}}]{a\+\_\+\+Oprt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a58b1746e63065c52ea7a4b019c46bff9}\label{classqmu_1_1QmuParserByteCode_a58b1746e63065c52ea7a4b019c46bff9}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!EnableOptimizer@{EnableOptimizer}}
+\index{EnableOptimizer@{EnableOptimizer}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{EnableOptimizer()}{EnableOptimizer()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Enable\+Optimizer (\begin{DoxyParamCaption}\item[{bool}]{b\+Stat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a3613a0ee697b8d7d7a5e41052004df62}\label{classqmu_1_1QmuParserByteCode_a3613a0ee697b8d7d7a5e41052004df62}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!Finalize@{Finalize}}
+\index{Finalize@{Finalize}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{Finalize()}{Finalize()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Finalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Add end marker to bytecode. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a5728a899313a85009b76a11a27b91119}\label{classqmu_1_1QmuParserByteCode_a5728a899313a85009b76a11a27b91119}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!GetBase@{GetBase}}
+\index{GetBase@{GetBase}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{GetBase()}{GetBase()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structqmu_1_1SToken}{SToken}} $\ast$ qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Get\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ab3d8a66133700df7aa6cf3a70e65cc84}\label{classqmu_1_1QmuParserByteCode_ab3d8a66133700df7aa6cf3a70e65cc84}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!GetMaxStackSize@{GetMaxStackSize}}
+\index{GetMaxStackSize@{GetMaxStackSize}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{GetMaxStackSize()}{GetMaxStackSize()}}
+{\footnotesize\ttfamily int qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Get\+Max\+Stack\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a75f12980d1cb02f0a4d782473c873484}\label{classqmu_1_1QmuParserByteCode_a75f12980d1cb02f0a4d782473c873484}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily int qmu\+::\+Qmu\+Parser\+Byte\+Code\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the number of entries in the bytecode. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ae6c9ffdebb1b92f098c7a9771698d285}\label{classqmu_1_1QmuParserByteCode_ae6c9ffdebb1b92f098c7a9771698d285}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!operator=@{operator=}}
+\index{operator=@{operator=}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \& qmu\+::\+Qmu\+Parser\+Byte\+Code\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserByteCode}{Qmu\+Parser\+Byte\+Code}} \&}]{a\+\_\+\+Byte\+Code }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+Implemented in Terms of Assign(const QParser\+Byte\+Code \&a\+\_\+\+Byte\+Code) 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ab759e5ab64701720c9b2ace1f00a5a05}\label{classqmu_1_1QmuParserByteCode_ab759e5ab64701720c9b2ace1f00a5a05}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!m\_bEnableOptimizer@{m\_bEnableOptimizer}}
+\index{m\_bEnableOptimizer@{m\_bEnableOptimizer}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{m\_bEnableOptimizer}{m\_bEnableOptimizer}}
+{\footnotesize\ttfamily bool qmu\+::\+Qmu\+Parser\+Byte\+Code\+::m\+\_\+b\+Enable\+Optimizer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a6aaa90639d0d24983ee9dbbc99e7c16b}\label{classqmu_1_1QmuParserByteCode_a6aaa90639d0d24983ee9dbbc99e7c16b}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!m\_iMaxStackSize@{m\_iMaxStackSize}}
+\index{m\_iMaxStackSize@{m\_iMaxStackSize}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{m\_iMaxStackSize}{m\_iMaxStackSize}}
+{\footnotesize\ttfamily unsigned qmu\+::\+Qmu\+Parser\+Byte\+Code\+::m\+\_\+i\+Max\+Stack\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum size needed for the stack. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_a778f8c045e688bca0854df3028cb6889}\label{classqmu_1_1QmuParserByteCode_a778f8c045e688bca0854df3028cb6889}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!m\_iStackPos@{m\_iStackPos}}
+\index{m\_iStackPos@{m\_iStackPos}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{m\_iStackPos}{m\_iStackPos}}
+{\footnotesize\ttfamily unsigned qmu\+::\+Qmu\+Parser\+Byte\+Code\+::m\+\_\+i\+Stack\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Position in the Calculation array. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserByteCode_ab46e18ec6a2fd90cc115006cc7e3419e}\label{classqmu_1_1QmuParserByteCode_ab46e18ec6a2fd90cc115006cc7e3419e}} 
+\index{qmu::QmuParserByteCode@{qmu::QmuParserByteCode}!m\_vRPN@{m\_vRPN}}
+\index{m\_vRPN@{m\_vRPN}!qmu::QmuParserByteCode@{qmu::QmuParserByteCode}}
+\doxysubsubsection{\texorpdfstring{m\_vRPN}{m\_vRPN}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqmu_1_1QmuParserByteCode_ae5669a573df2c5802f48154147a2f421}{rpn\+\_\+type}} qmu\+::\+Qmu\+Parser\+Byte\+Code\+::m\+\_\+v\+RPN\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The actual rpn storage. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuparserbytecode_8h}{qmuparserbytecode.\+h}}\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuparserbytecode_8cpp}{qmuparserbytecode.\+cpp}}\end{DoxyCompactItemize}

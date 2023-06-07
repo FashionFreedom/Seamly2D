@@ -1,0 +1,277 @@
+\hypertarget{classDRW__Variant}{}\doxysection{DRW\+\_\+\+Variant Class Reference}
+\label{classDRW__Variant}\index{DRW\_Variant@{DRW\_Variant}}
+
+
+Class to handle header vars.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+base.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionDRW__Variant_1_1DRW__VarContent}{DRW\+\_\+\+Var\+Content}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}{TYPE}} \{ \newline
+\mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0add19672c7f9209fcf0ee860c489c2761}{STRING}}
+, \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0a58e790689f0e17e16158d474f52d89ba}{INTEGER}}
+, \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0a353bf73bcaaed8d6f0c90216b34898e7}{DOUBLE}}
+, \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0ac1a13fa98e0377b4c4130347c2ca2970}{COORD}}
+, \newline
+\mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0ab026259cb48ad8a607878ac4276a4535}{INVALID}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Variant_add7103d2165092a5766bafbdc5b17790}{DRW\+\_\+\+Variant}} ()
+\item 
+\mbox{\hyperlink{classDRW__Variant_a9f5de70b8acf659352c7d929e0e1eddd}{DRW\+\_\+\+Variant}} (int c, \mbox{\hyperlink{drw__base_8h_a4e8dbb3a7a0c97b3b9bec709188daf32}{dint32}} i)
+\item 
+\mbox{\hyperlink{classDRW__Variant_ab188e85e902d996a19ea2ec8f1aececb}{DRW\+\_\+\+Variant}} (int c, \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} i)
+\item 
+\mbox{\hyperlink{classDRW__Variant_a366f37f568809f942e998cb12e7d187f}{DRW\+\_\+\+Variant}} (int c, double d)
+\item 
+\mbox{\hyperlink{classDRW__Variant_a023f8fe6efa37683ea6183abbc4c7542}{DRW\+\_\+\+Variant}} (int c, const \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \&s)
+\item 
+\mbox{\hyperlink{classDRW__Variant_a523ce332016819f337eb900bb9bde28c}{DRW\+\_\+\+Variant}} (int c, const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \&crd)
+\item 
+\mbox{\hyperlink{classDRW__Variant_ad17c903b0e02b5fddf52a67325e5f4f4}{DRW\+\_\+\+Variant}} (const \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} \&d)
+\item 
+\mbox{\hyperlink{classDRW__Variant_ac439cc3dc263b8b89cea3f4dcf6d0103}{$\sim$\+DRW\+\_\+\+Variant}} ()=default
+\item 
+void \mbox{\hyperlink{classDRW__Variant_a67a0b5d092cbb5c5d2f12e1e5f3bc3b0}{add\+String}} (const \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \&s)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_a48547d073518b2c03834a734eca3b55e}{add\+Int}} (int i)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_a7e05643e571b0472a6eeb28f7d0b7707}{add\+Double}} (double d)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_a610384080d412ecbc499a9a91f43bae0}{add\+Coord}} ()
+\item 
+void \mbox{\hyperlink{classDRW__Variant_ad46f0cc89e0f8ca3154f5223296c0b03}{add\+Coord}} (const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \&v)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_ab737a71f74784df3fe72157c96deb9d5}{set\+Type}} (enum \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}{TYPE}} t)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_ad30771a7cf18482eaca1554d0dc057ce}{set\+CoordX}} (double d)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_acd62938a8425994059b0d023195b56a8}{set\+CoordY}} (double d)
+\item 
+void \mbox{\hyperlink{classDRW__Variant_a297e8f197757c615b286f1c832644bc4}{set\+CoordZ}} (double d)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{unionDRW__Variant_1_1DRW__VarContent}{DRW\+\_\+\+Var\+Content}} \mbox{\hyperlink{classDRW__Variant_ac15c4b3c8417bdcc616fe1599b998c46}{content}}
+\item 
+enum \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}{TYPE}} \mbox{\hyperlink{classDRW__Variant_a6ec337a6e0ae84e609b084e837970820}{type}}
+\item 
+int \mbox{\hyperlink{classDRW__Variant_ae5a8f7fa02e3c751999b3cca9f2af9eb}{code}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} \& \mbox{\hyperlink{classDRW__Variant_aa1ade176b978a0467631139d04a2839a}{operator=}} (const \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} \&) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DELETE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classDRW__Variant_aa8db4378cec259617ce5ff7739715bf5}{sdata}}
+\item 
+\mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{classDRW__Variant_a4442580ad56c2a36bea47be997b49372}{vdata}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle header vars. 
+
+Class to handle header vars \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}\label{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}} 
+\index{DRW\_Variant@{DRW\_Variant}!TYPE@{TYPE}}
+\index{TYPE@{TYPE}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{TYPE}{TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}{DRW\+\_\+\+Variant\+::\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING@{STRING}!DRW\_Variant@{DRW\_Variant}}\index{DRW\_Variant@{DRW\_Variant}!STRING@{STRING}}}\mbox{\Hypertarget{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0add19672c7f9209fcf0ee860c489c2761}\label{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0add19672c7f9209fcf0ee860c489c2761}} 
+STRING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTEGER@{INTEGER}!DRW\_Variant@{DRW\_Variant}}\index{DRW\_Variant@{DRW\_Variant}!INTEGER@{INTEGER}}}\mbox{\Hypertarget{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0a58e790689f0e17e16158d474f52d89ba}\label{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0a58e790689f0e17e16158d474f52d89ba}} 
+INTEGER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE@{DOUBLE}!DRW\_Variant@{DRW\_Variant}}\index{DRW\_Variant@{DRW\_Variant}!DOUBLE@{DOUBLE}}}\mbox{\Hypertarget{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0a353bf73bcaaed8d6f0c90216b34898e7}\label{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0a353bf73bcaaed8d6f0c90216b34898e7}} 
+DOUBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COORD@{COORD}!DRW\_Variant@{DRW\_Variant}}\index{DRW\_Variant@{DRW\_Variant}!COORD@{COORD}}}\mbox{\Hypertarget{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0ac1a13fa98e0377b4c4130347c2ca2970}\label{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0ac1a13fa98e0377b4c4130347c2ca2970}} 
+COORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID@{INVALID}!DRW\_Variant@{DRW\_Variant}}\index{DRW\_Variant@{DRW\_Variant}!INVALID@{INVALID}}}\mbox{\Hypertarget{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0ab026259cb48ad8a607878ac4276a4535}\label{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0ab026259cb48ad8a607878ac4276a4535}} 
+INVALID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__Variant_add7103d2165092a5766bafbdc5b17790}\label{classDRW__Variant_add7103d2165092a5766bafbdc5b17790}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a9f5de70b8acf659352c7d929e0e1eddd}\label{classDRW__Variant_a9f5de70b8acf659352c7d929e0e1eddd}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{\mbox{\hyperlink{drw__base_8h_a4e8dbb3a7a0c97b3b9bec709188daf32}{dint32}}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_ab188e85e902d996a19ea2ec8f1aececb}\label{classDRW__Variant_ab188e85e902d996a19ea2ec8f1aececb}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}}}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a366f37f568809f942e998cb12e7d187f}\label{classDRW__Variant_a366f37f568809f942e998cb12e7d187f}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a023f8fe6efa37683ea6183abbc4c7542}\label{classDRW__Variant_a023f8fe6efa37683ea6183abbc4c7542}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{const \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a523ce332016819f337eb900bb9bde28c}\label{classDRW__Variant_a523ce332016819f337eb900bb9bde28c}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}\item[{int}]{c,  }\item[{const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \&}]{crd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_ad17c903b0e02b5fddf52a67325e5f4f4}\label{classDRW__Variant_ad17c903b0e02b5fddf52a67325e5f4f4}} 
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\index{DRW\_Variant@{DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{DRW\_Variant()}{DRW\_Variant()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_ac439cc3dc263b8b89cea3f4dcf6d0103}\label{classDRW__Variant_ac439cc3dc263b8b89cea3f4dcf6d0103}} 
+\index{DRW\_Variant@{DRW\_Variant}!````~DRW\_Variant@{$\sim$DRW\_Variant}}
+\index{````~DRW\_Variant@{$\sim$DRW\_Variant}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{$\sim$DRW\_Variant()}{~DRW\_Variant()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Variant\+::$\sim$\+DRW\+\_\+\+Variant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__Variant_a610384080d412ecbc499a9a91f43bae0}\label{classDRW__Variant_a610384080d412ecbc499a9a91f43bae0}} 
+\index{DRW\_Variant@{DRW\_Variant}!addCoord@{addCoord}}
+\index{addCoord@{addCoord}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{addCoord()}{addCoord()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::add\+Coord (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_ad46f0cc89e0f8ca3154f5223296c0b03}\label{classDRW__Variant_ad46f0cc89e0f8ca3154f5223296c0b03}} 
+\index{DRW\_Variant@{DRW\_Variant}!addCoord@{addCoord}}
+\index{addCoord@{addCoord}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{addCoord()}{addCoord()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::add\+Coord (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a7e05643e571b0472a6eeb28f7d0b7707}\label{classDRW__Variant_a7e05643e571b0472a6eeb28f7d0b7707}} 
+\index{DRW\_Variant@{DRW\_Variant}!addDouble@{addDouble}}
+\index{addDouble@{addDouble}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{addDouble()}{addDouble()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::add\+Double (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a48547d073518b2c03834a734eca3b55e}\label{classDRW__Variant_a48547d073518b2c03834a734eca3b55e}} 
+\index{DRW\_Variant@{DRW\_Variant}!addInt@{addInt}}
+\index{addInt@{addInt}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{addInt()}{addInt()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::add\+Int (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a67a0b5d092cbb5c5d2f12e1e5f3bc3b0}\label{classDRW__Variant_a67a0b5d092cbb5c5d2f12e1e5f3bc3b0}} 
+\index{DRW\_Variant@{DRW\_Variant}!addString@{addString}}
+\index{addString@{addString}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{addString()}{addString()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::add\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_aa1ade176b978a0467631139d04a2839a}\label{classDRW__Variant_aa1ade176b978a0467631139d04a2839a}} 
+\index{DRW\_Variant@{DRW\_Variant}!operator=@{operator=}}
+\index{operator=@{operator=}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}}\& DRW\+\_\+\+Variant\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDRW__Variant}{DRW\+\_\+\+Variant}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Variant_ad30771a7cf18482eaca1554d0dc057ce}\label{classDRW__Variant_ad30771a7cf18482eaca1554d0dc057ce}} 
+\index{DRW\_Variant@{DRW\_Variant}!setCoordX@{setCoordX}}
+\index{setCoordX@{setCoordX}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{setCoordX()}{setCoordX()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::set\+CoordX (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_acd62938a8425994059b0d023195b56a8}\label{classDRW__Variant_acd62938a8425994059b0d023195b56a8}} 
+\index{DRW\_Variant@{DRW\_Variant}!setCoordY@{setCoordY}}
+\index{setCoordY@{setCoordY}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{setCoordY()}{setCoordY()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::set\+CoordY (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a297e8f197757c615b286f1c832644bc4}\label{classDRW__Variant_a297e8f197757c615b286f1c832644bc4}} 
+\index{DRW\_Variant@{DRW\_Variant}!setCoordZ@{setCoordZ}}
+\index{setCoordZ@{setCoordZ}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{setCoordZ()}{setCoordZ()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::set\+CoordZ (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDRW__Variant_ab737a71f74784df3fe72157c96deb9d5}\label{classDRW__Variant_ab737a71f74784df3fe72157c96deb9d5}} 
+\index{DRW\_Variant@{DRW\_Variant}!setType@{setType}}
+\index{setType@{setType}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Variant\+::set\+Type (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}{TYPE}}}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__Variant_ae5a8f7fa02e3c751999b3cca9f2af9eb}\label{classDRW__Variant_ae5a8f7fa02e3c751999b3cca9f2af9eb}} 
+\index{DRW\_Variant@{DRW\_Variant}!code@{code}}
+\index{code@{code}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Variant\+::code}
+
+dxf code of this value \mbox{\Hypertarget{classDRW__Variant_ac15c4b3c8417bdcc616fe1599b998c46}\label{classDRW__Variant_ac15c4b3c8417bdcc616fe1599b998c46}} 
+\index{DRW\_Variant@{DRW\_Variant}!content@{content}}
+\index{content@{content}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily \mbox{\hyperlink{unionDRW__Variant_1_1DRW__VarContent}{DRW\+\_\+\+Var\+Content}} DRW\+\_\+\+Variant\+::content}
+
+\mbox{\Hypertarget{classDRW__Variant_aa8db4378cec259617ce5ff7739715bf5}\label{classDRW__Variant_aa8db4378cec259617ce5ff7739715bf5}} 
+\index{DRW\_Variant@{DRW\_Variant}!sdata@{sdata}}
+\index{sdata@{sdata}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{sdata}{sdata}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Variant\+::sdata\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Variant_a6ec337a6e0ae84e609b084e837970820}\label{classDRW__Variant_a6ec337a6e0ae84e609b084e837970820}} 
+\index{DRW\_Variant@{DRW\_Variant}!type@{type}}
+\index{type@{type}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classDRW__Variant_aa423ad2cfa9fe1d1b8b07c5f21b3cff0}{TYPE}} DRW\+\_\+\+Variant\+::type}
+
+\mbox{\Hypertarget{classDRW__Variant_a4442580ad56c2a36bea47be997b49372}\label{classDRW__Variant_a4442580ad56c2a36bea47be997b49372}} 
+\index{DRW\_Variant@{DRW\_Variant}!vdata@{vdata}}
+\index{vdata@{vdata}!DRW\_Variant@{DRW\_Variant}}
+\doxysubsubsection{\texorpdfstring{vdata}{vdata}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Variant\+::vdata\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__base_8h}{drw\+\_\+base.\+h}}\end{DoxyCompactItemize}

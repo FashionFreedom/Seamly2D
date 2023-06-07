@@ -1,0 +1,336 @@
+\hypertarget{classVToolPointOfIntersectionCurves}{}\doxysection{VTool\+Point\+Of\+Intersection\+Curves Class Reference}
+\label{classVToolPointOfIntersectionCurves}\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+
+
+{\ttfamily \#include $<$vtoolpointofintersectioncurves.\+h$>$}
+
+Inheritance diagram for VTool\+Point\+Of\+Intersection\+Curves\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.000000cm]{d5/d68/classVToolPointOfIntersectionCurves}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVToolPointOfIntersectionCurves_ad2104530c71f7b2dc0397e7ec510c43ba024b0a744cbb62d7275da9621457d1b0}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Tool\+::Point\+Of\+Intersection\+Curves)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a8657b09fa0504deb61786cae5ca019a8}{set\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a8e02568af6a030fe466ff03e83eecbca}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a0c63364e28877dd084c2a54106f9b77e}{First\+Curve\+Name}} () const
+\item 
+QString \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aac6c8c6925fcaaf2f2fe3deac628ebc3}{Second\+Curve\+Name}} () const
+\item 
+quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a4667b79e3f7dd60a66bb3880584f80eb}{Get\+First\+Curve\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a90bed7432185b5c3141ccd619664f8d8}{Set\+First\+Curve\+Id}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a052a8e180cb30d880388bf1ba0f9ca94}{Get\+Second\+Curve\+Id}} () const
+\item 
+void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a235e12d73bd15dd74a20541f9fe56057}{Set\+Second\+Curve\+Id}} (const quint32 \&value)
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a7ea911a5ea3d602243d198df82ab4207}{Get\+VCross\+Point}} () const
+\item 
+void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a9fa4a6e8b12d4da714cbf37a5a546d87}{Set\+VCross\+Point}} (const \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \&value)
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a574c502c31c02504aa1a3e35813b8556}{Get\+HCross\+Point}} () const
+\item 
+void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_ad80ec10e546aabcfab71d2be3edff844}{Set\+HCross\+Point}} (const \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \&value)
+\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a00d1a56ecf836bf43930b196dd264059}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVToolPointOfIntersectionCurves}{VTool\+Point\+Of\+Intersection\+Curves}} $\ast$ \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aa04d505ff2ae5782133d588bc2202157}{Create}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static \mbox{\hyperlink{classVToolPointOfIntersectionCurves}{VTool\+Point\+Of\+Intersection\+Curves}} $\ast$ \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a16b247d6d4b4f6836e4ce1436e4e99b6}{Create}} (const quint32 \+\_\+id, const QString \&point\+Name, quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aeb1ac691390b24963c2c4828aed46161}{first\+Curve\+Id}}, quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_abaf5a33f1ed6a0b0c7e579007e180b3f}{second\+Curve\+Id}}, \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aaa6e4a3efb62ae324449c3b17b39887b}{v\+Cross\+Point}}, \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a6bcf7fcdf6b9420cacad88b9174f951c}{h\+Cross\+Point}}, qreal mx, qreal my, bool show\+Point\+Name, \mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\item 
+static QPointF \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a125b7755b9839da7560c17cdf38a31fd}{Find\+Point}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&curve1\+Points, const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&curve2\+Points, \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aaa6e4a3efb62ae324449c3b17b39887b}{v\+Cross\+Point}}, \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a6bcf7fcdf6b9420cacad88b9174f951c}{h\+Cross\+Point}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVToolPointOfIntersectionCurves_ae061ddc60b6594506dab1e81cdca8d28}{Tool\+Type}} = QString\+Literal(\char`\"{}point\+Of\+Intersection\+Curves\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aba8561d5d80b38004bc6835298d71eab}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_afb790c66cd6a5af12f2be1eaf848c5e3}{Remove\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a0cbcc4a9654d4da3c0e32928239e9864}{Save\+Dialog}} (QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a032c3cd3e3afa7238777e61e14d667b2}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a6925a9d741388b3ed71c9e69527f9123}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a5a012e51a414664d213403fc18ddde04}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolPointOfIntersectionCurves_ad62e16b0d0a65f13771e0f79e728aa6b}{VTool\+Point\+Of\+Intersection\+Curves}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aeb1ac691390b24963c2c4828aed46161}{first\+Curve\+Id}}, quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_abaf5a33f1ed6a0b0c7e579007e180b3f}{second\+Curve\+Id}}, \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aaa6e4a3efb62ae324449c3b17b39887b}{v\+Cross\+Point}}, \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a6bcf7fcdf6b9420cacad88b9174f951c}{h\+Cross\+Point}}, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, QGraphics\+Item $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aeb1ac691390b24963c2c4828aed46161}{first\+Curve\+Id}}
+\item 
+quint32 \mbox{\hyperlink{classVToolPointOfIntersectionCurves_abaf5a33f1ed6a0b0c7e579007e180b3f}{second\+Curve\+Id}}
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_aaa6e4a3efb62ae324449c3b17b39887b}{v\+Cross\+Point}}
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \mbox{\hyperlink{classVToolPointOfIntersectionCurves_a6bcf7fcdf6b9420cacad88b9174f951c}{h\+Cross\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_ad2104530c71f7b2dc0397e7ec510c43b}\label{classVToolPointOfIntersectionCurves_ad2104530c71f7b2dc0397e7ec510c43b}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!Type@{Type}}}\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_ad2104530c71f7b2dc0397e7ec510c43ba024b0a744cbb62d7275da9621457d1b0}\label{classVToolPointOfIntersectionCurves_ad2104530c71f7b2dc0397e7ec510c43ba024b0a744cbb62d7275da9621457d1b0}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_ad62e16b0d0a65f13771e0f79e728aa6b}\label{classVToolPointOfIntersectionCurves_ad62e16b0d0a65f13771e0f79e728aa6b}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{VToolPointOfIntersectionCurves()}{VToolPointOfIntersectionCurves()}}
+{\footnotesize\ttfamily VTool\+Point\+Of\+Intersection\+Curves\+::\+VTool\+Point\+Of\+Intersection\+Curves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const quint32}]{first\+Curve\+Id,  }\item[{quint32}]{second\+Curve\+Id,  }\item[{\mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}}}]{v\+Cross\+Point,  }\item[{\mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}}}]{h\+Cross\+Point,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a16b247d6d4b4f6836e4ce1436e4e99b6}\label{classVToolPointOfIntersectionCurves_a16b247d6d4b4f6836e4ce1436e4e99b6}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!Create@{Create}}
+\index{Create@{Create}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolPointOfIntersectionCurves}{VTool\+Point\+Of\+Intersection\+Curves}} $\ast$ VTool\+Point\+Of\+Intersection\+Curves\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const QString \&}]{point\+Name,  }\item[{quint32}]{first\+Curve\+Id,  }\item[{quint32}]{second\+Curve\+Id,  }\item[{\mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}}}]{v\+Cross\+Point,  }\item[{\mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}}}]{h\+Cross\+Point,  }\item[{qreal}]{mx,  }\item[{qreal}]{my,  }\item[{bool}]{show\+Point\+Name,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_aa04d505ff2ae5782133d588bc2202157}\label{classVToolPointOfIntersectionCurves_aa04d505ff2ae5782133d588bc2202157}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!Create@{Create}}
+\index{Create@{Create}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVToolPointOfIntersectionCurves}{VTool\+Point\+Of\+Intersection\+Curves}} $\ast$ VTool\+Point\+Of\+Intersection\+Curves\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classDialogTool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a125b7755b9839da7560c17cdf38a31fd}\label{classVToolPointOfIntersectionCurves_a125b7755b9839da7560c17cdf38a31fd}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!FindPoint@{FindPoint}}
+\index{FindPoint@{FindPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{FindPoint()}{FindPoint()}}
+{\footnotesize\ttfamily QPointF VTool\+Point\+Of\+Intersection\+Curves\+::\+Find\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{curve1\+Points,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ QPointF $>$ \&}]{curve2\+Points,  }\item[{\mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}}}]{v\+Cross\+Point,  }\item[{\mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}}}]{h\+Cross\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a0c63364e28877dd084c2a54106f9b77e}\label{classVToolPointOfIntersectionCurves_a0c63364e28877dd084c2a54106f9b77e}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!FirstCurveName@{FirstCurveName}}
+\index{FirstCurveName@{FirstCurveName}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{FirstCurveName()}{FirstCurveName()}}
+{\footnotesize\ttfamily QString VTool\+Point\+Of\+Intersection\+Curves\+::\+First\+Curve\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a4667b79e3f7dd60a66bb3880584f80eb}\label{classVToolPointOfIntersectionCurves_a4667b79e3f7dd60a66bb3880584f80eb}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!GetFirstCurveId@{GetFirstCurveId}}
+\index{GetFirstCurveId@{GetFirstCurveId}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{GetFirstCurveId()}{GetFirstCurveId()}}
+{\footnotesize\ttfamily quint32 VTool\+Point\+Of\+Intersection\+Curves\+::\+Get\+First\+Curve\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a574c502c31c02504aa1a3e35813b8556}\label{classVToolPointOfIntersectionCurves_a574c502c31c02504aa1a3e35813b8556}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!GetHCrossPoint@{GetHCrossPoint}}
+\index{GetHCrossPoint@{GetHCrossPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{GetHCrossPoint()}{GetHCrossPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} VTool\+Point\+Of\+Intersection\+Curves\+::\+Get\+HCross\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a052a8e180cb30d880388bf1ba0f9ca94}\label{classVToolPointOfIntersectionCurves_a052a8e180cb30d880388bf1ba0f9ca94}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!GetSecondCurveId@{GetSecondCurveId}}
+\index{GetSecondCurveId@{GetSecondCurveId}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{GetSecondCurveId()}{GetSecondCurveId()}}
+{\footnotesize\ttfamily quint32 VTool\+Point\+Of\+Intersection\+Curves\+::\+Get\+Second\+Curve\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a7ea911a5ea3d602243d198df82ab4207}\label{classVToolPointOfIntersectionCurves_a7ea911a5ea3d602243d198df82ab4207}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!GetVCrossPoint@{GetVCrossPoint}}
+\index{GetVCrossPoint@{GetVCrossPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{GetVCrossPoint()}{GetVCrossPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} VTool\+Point\+Of\+Intersection\+Curves\+::\+Get\+VCross\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a6925a9d741388b3ed71c9e69527f9123}\label{classVToolPointOfIntersectionCurves_a6925a9d741388b3ed71c9e69527f9123}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a95795603f1fa62ffacc4fb5fb8fae984}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_afb790c66cd6a5af12f2be1eaf848c5e3}\label{classVToolPointOfIntersectionCurves_afb790c66cd6a5af12f2be1eaf848c5e3}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!RemoveReferens@{RemoveReferens}}
+\index{RemoveReferens@{RemoveReferens}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{RemoveReferens()}{RemoveReferens()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Remove\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Remove\+Referens decrement value of reference. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a78a11cab1da83de526158893aa5b212a}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a0cbcc4a9654d4da3c0e32928239e9864}\label{classVToolPointOfIntersectionCurves_a0cbcc4a9654d4da3c0e32928239e9864}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implements \mbox{\hyperlink{classVDrawTool_a66af579b9966ded44ec5c4125d92fb7a}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a032c3cd3e3afa7238777e61e14d667b2}\label{classVToolPointOfIntersectionCurves_a032c3cd3e3afa7238777e61e14d667b2}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVGObject}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a768712ef8d8b98350d1af66ebee6e63e}{VTool\+Single\+Point}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_aac6c8c6925fcaaf2f2fe3deac628ebc3}\label{classVToolPointOfIntersectionCurves_aac6c8c6925fcaaf2f2fe3deac628ebc3}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SecondCurveName@{SecondCurveName}}
+\index{SecondCurveName@{SecondCurveName}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SecondCurveName()}{SecondCurveName()}}
+{\footnotesize\ttfamily QString VTool\+Point\+Of\+Intersection\+Curves\+::\+Second\+Curve\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a8657b09fa0504deb61786cae5ca019a8}\label{classVToolPointOfIntersectionCurves_a8657b09fa0504deb61786cae5ca019a8}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!setDialog@{setDialog}}
+\index{setDialog@{setDialog}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{setDialog()}{setDialog()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::set\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Dialog set dialog when user want change tool option. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVInteractiveTool_ad039d030b4cc44b00004133f138a61c2}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a90bed7432185b5c3141ccd619664f8d8}\label{classVToolPointOfIntersectionCurves_a90bed7432185b5c3141ccd619664f8d8}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SetFirstCurveId@{SetFirstCurveId}}
+\index{SetFirstCurveId@{SetFirstCurveId}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SetFirstCurveId()}{SetFirstCurveId()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Set\+First\+Curve\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_ad80ec10e546aabcfab71d2be3edff844}\label{classVToolPointOfIntersectionCurves_ad80ec10e546aabcfab71d2be3edff844}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SetHCrossPoint@{SetHCrossPoint}}
+\index{SetHCrossPoint@{SetHCrossPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SetHCrossPoint()}{SetHCrossPoint()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Set\+HCross\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a235e12d73bd15dd74a20541f9fe56057}\label{classVToolPointOfIntersectionCurves_a235e12d73bd15dd74a20541f9fe56057}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SetSecondCurveId@{SetSecondCurveId}}
+\index{SetSecondCurveId@{SetSecondCurveId}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SetSecondCurveId()}{SetSecondCurveId()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Set\+Second\+Curve\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a9fa4a6e8b12d4da714cbf37a5a546d87}\label{classVToolPointOfIntersectionCurves_a9fa4a6e8b12d4da714cbf37a5a546d87}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SetVCrossPoint@{SetVCrossPoint}}
+\index{SetVCrossPoint@{SetVCrossPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SetVCrossPoint()}{SetVCrossPoint()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Set\+VCross\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a5a012e51a414664d213403fc18ddde04}\label{classVToolPointOfIntersectionCurves_a5a012e51a414664d213403fc18ddde04}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_aba8561d5d80b38004bc6835298d71eab}\label{classVToolPointOfIntersectionCurves_aba8561d5d80b38004bc6835298d71eab}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a00d1a56ecf836bf43930b196dd264059}\label{classVToolPointOfIntersectionCurves_a00d1a56ecf836bf43930b196dd264059}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VTool\+Point\+Of\+Intersection\+Curves\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a8e02568af6a030fe466ff03e83eecbca}\label{classVToolPointOfIntersectionCurves_a8e02568af6a030fe466ff03e83eecbca}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!type@{type}}
+\index{type@{type}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Point\+Of\+Intersection\+Curves\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVToolSinglePoint_a6eccae4469cb594716c86dc5011b99eb}{VTool\+Single\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_aeb1ac691390b24963c2c4828aed46161}\label{classVToolPointOfIntersectionCurves_aeb1ac691390b24963c2c4828aed46161}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!firstCurveId@{firstCurveId}}
+\index{firstCurveId@{firstCurveId}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{firstCurveId}{firstCurveId}}
+{\footnotesize\ttfamily quint32 VTool\+Point\+Of\+Intersection\+Curves\+::first\+Curve\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_a6bcf7fcdf6b9420cacad88b9174f951c}\label{classVToolPointOfIntersectionCurves_a6bcf7fcdf6b9420cacad88b9174f951c}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!hCrossPoint@{hCrossPoint}}
+\index{hCrossPoint@{hCrossPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{hCrossPoint}{hCrossPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCross\+Curves\+Point}} VTool\+Point\+Of\+Intersection\+Curves\+::h\+Cross\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_abaf5a33f1ed6a0b0c7e579007e180b3f}\label{classVToolPointOfIntersectionCurves_abaf5a33f1ed6a0b0c7e579007e180b3f}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!secondCurveId@{secondCurveId}}
+\index{secondCurveId@{secondCurveId}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{secondCurveId}{secondCurveId}}
+{\footnotesize\ttfamily quint32 VTool\+Point\+Of\+Intersection\+Curves\+::second\+Curve\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_ae061ddc60b6594506dab1e81cdca8d28}\label{classVToolPointOfIntersectionCurves_ae061ddc60b6594506dab1e81cdca8d28}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VTool\+Point\+Of\+Intersection\+Curves\+::\+Tool\+Type = QString\+Literal(\char`\"{}point\+Of\+Intersection\+Curves\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVToolPointOfIntersectionCurves_aaa6e4a3efb62ae324449c3b17b39887b}\label{classVToolPointOfIntersectionCurves_aaa6e4a3efb62ae324449c3b17b39887b}} 
+\index{VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}!vCrossPoint@{vCrossPoint}}
+\index{vCrossPoint@{vCrossPoint}!VToolPointOfIntersectionCurves@{VToolPointOfIntersectionCurves}}
+\doxysubsubsection{\texorpdfstring{vCrossPoint}{vCrossPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCross\+Curves\+Point}} VTool\+Point\+Of\+Intersection\+Curves\+::v\+Cross\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/\mbox{\hyperlink{vtoolpointofintersectioncurves_8h}{vtoolpointofintersectioncurves.\+h}}\item 
+src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/\mbox{\hyperlink{vtoolpointofintersectioncurves_8cpp}{vtoolpointofintersectioncurves.\+cpp}}\end{DoxyCompactItemize}

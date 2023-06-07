@@ -1,0 +1,260 @@
+\hypertarget{classVObjEngine}{}\doxysection{VObj\+Engine Class Reference}
+\label{classVObjEngine}\index{VObjEngine@{VObjEngine}}
+
+
+{\ttfamily \#include $<$vobjengine.\+h$>$}
+
+Inheritance diagram for VObj\+Engine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d3/d1d/classVObjEngine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVObjEngine_a5d839c71006c012f9ba47d9c46367383}{VObj\+Engine}} ()
+\item 
+virtual \mbox{\hyperlink{classVObjEngine_a5462b3908a3e18f65bcc854ecad4a758}{$\sim$\+VObj\+Engine}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVObjEngine_aa253ee97e255d81db9c8b64ba70f4760}{begin}} (QPaint\+Device $\ast$pdev) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{classVObjEngine_a7179642247c343180bba56d5016c724b}{end}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_aa5a6fc451d00e954cb433c393459dfce}{update\+State}} (const QPaint\+Engine\+State \&state) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_a0d694edae835c893ea32fb372f8daea0}{draw\+Path}} (const QPainter\+Path \&path) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual Type \mbox{\hyperlink{classVObjEngine_a7fc66e204472608cf8f1fc4225b0ecaf}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_a445a76e643acf7ff70105c8a138984fb}{draw\+Points}} (const QPointF $\ast$\mbox{\hyperlink{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}{points}}, int point\+Count) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_a759e1300b3452054ba7e3328310c9c36}{draw\+Points}} (const QPoint $\ast$\mbox{\hyperlink{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}{points}}, int point\+Count) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_a776fe821f830add5f0bb841baf2fd079}{draw\+Pixmap}} (const QRectF \&r, const QPixmap \&pm, const QRectF \&sr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_acf1fe9fa4a92fd46185c57612a356ec6}{draw\+Polygon}} (const QPointF $\ast$\mbox{\hyperlink{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}{points}}, int point\+Count, Polygon\+Draw\+Mode mode) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVObjEngine_aa2081918eb4415856a1eeb6a3258f0a9}{draw\+Polygon}} (const QPoint $\ast$\mbox{\hyperlink{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}{points}}, int point\+Count, Polygon\+Draw\+Mode mode) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QSize \mbox{\hyperlink{classVObjEngine_a930e06ac045dbc545228e7749df668f0}{get\+Size}} () const
+\item 
+void \mbox{\hyperlink{classVObjEngine_ac7f7a41f5e4715e4a1425af7719a31fd}{set\+Size}} (const QSize \&value)
+\item 
+QIODevice $\ast$ \mbox{\hyperlink{classVObjEngine_ad6eccf89354d998e5e841f903680aa6a}{get\+Output\+Device}} () const
+\item 
+void \mbox{\hyperlink{classVObjEngine_a356a4e1e1d1a66a74bdf55f408bd96b4}{set\+Output\+Device}} (QIODevice $\ast$value)
+\item 
+int \mbox{\hyperlink{classVObjEngine_a5292a2fc710e6f71943b331e1dca9c79}{get\+Resolution}} () const
+\item 
+void \mbox{\hyperlink{classVObjEngine_aeb7cf91e9aad08b4aa293d2fa0be9697}{set\+Resolution}} (int value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QPolygonF \mbox{\hyperlink{classVObjEngine_a9a320af605085280b1908bf70c09904a}{Make\+Points\+Unique}} (const QPolygonF \&polygon) const
+\item 
+qint64 \mbox{\hyperlink{classVObjEngine_a77fa93d7825c4426046c3feaa8a93498}{Square}} (const QPolygonF \&poly) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ QText\+Stream $>$ \mbox{\hyperlink{classVObjEngine_addf6d156640a8855f5db62cd8cb4d404}{stream}}
+\item 
+quint32 \mbox{\hyperlink{classVObjEngine_ad05e8d8f914e5f135a2e1e4ad00a15f2}{global\+Points\+Count}}
+\item 
+\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ QIODevice $>$ \mbox{\hyperlink{classVObjEngine_aaf061c06cda3145d37aa440b33cb338e}{output\+Device}}
+\item 
+\mbox{\hyperlink{structdel__point2d__t}{del\+\_\+point2d\+\_\+t}} \mbox{\hyperlink{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}{points}} \mbox{[}\mbox{\hyperlink{vobjengine_8h_a3b8cb7c2cda80c18f333c00601c6905b}{MAX\+\_\+\+POINTS}}\mbox{]}
+\item 
+quint32 \mbox{\hyperlink{classVObjEngine_a95324e3092abae34f89400212957683d}{plane\+Count}}
+\item 
+QSize \mbox{\hyperlink{classVObjEngine_ae8671fbd7c879fc717500f9a94623fbe}{size}}
+\item 
+int \mbox{\hyperlink{classVObjEngine_a2f745d49f8b746836925ec023787fa74}{resolution}}
+\item 
+QTransform \mbox{\hyperlink{classVObjEngine_a5ef27cd107f264329a6f1bc241b33a90}{transform}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVObjEngine_a5d839c71006c012f9ba47d9c46367383}\label{classVObjEngine_a5d839c71006c012f9ba47d9c46367383}} 
+\index{VObjEngine@{VObjEngine}!VObjEngine@{VObjEngine}}
+\index{VObjEngine@{VObjEngine}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{VObjEngine()}{VObjEngine()}}
+{\footnotesize\ttfamily VObj\+Engine\+::\+VObj\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVObjEngine_a5462b3908a3e18f65bcc854ecad4a758}\label{classVObjEngine_a5462b3908a3e18f65bcc854ecad4a758}} 
+\index{VObjEngine@{VObjEngine}!````~VObjEngine@{$\sim$VObjEngine}}
+\index{````~VObjEngine@{$\sim$VObjEngine}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{$\sim$VObjEngine()}{~VObjEngine()}}
+{\footnotesize\ttfamily VObj\+Engine\+::$\sim$\+VObj\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVObjEngine_aa253ee97e255d81db9c8b64ba70f4760}\label{classVObjEngine_aa253ee97e255d81db9c8b64ba70f4760}} 
+\index{VObjEngine@{VObjEngine}!begin@{begin}}
+\index{begin@{begin}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily bool VObj\+Engine\+::begin (\begin{DoxyParamCaption}\item[{QPaint\+Device $\ast$}]{pdev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_a0d694edae835c893ea32fb372f8daea0}\label{classVObjEngine_a0d694edae835c893ea32fb372f8daea0}} 
+\index{VObjEngine@{VObjEngine}!drawPath@{drawPath}}
+\index{drawPath@{drawPath}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{drawPath()}{drawPath()}}
+{\footnotesize\ttfamily void VObj\+Engine\+::draw\+Path (\begin{DoxyParamCaption}\item[{const QPainter\+Path \&}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_a776fe821f830add5f0bb841baf2fd079}\label{classVObjEngine_a776fe821f830add5f0bb841baf2fd079}} 
+\index{VObjEngine@{VObjEngine}!drawPixmap@{drawPixmap}}
+\index{drawPixmap@{drawPixmap}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{drawPixmap()}{drawPixmap()}}
+{\footnotesize\ttfamily void VObj\+Engine\+::draw\+Pixmap (\begin{DoxyParamCaption}\item[{const QRectF \&}]{r,  }\item[{const QPixmap \&}]{pm,  }\item[{const QRectF \&}]{sr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_a759e1300b3452054ba7e3328310c9c36}\label{classVObjEngine_a759e1300b3452054ba7e3328310c9c36}} 
+\index{VObjEngine@{VObjEngine}!drawPoints@{drawPoints}}
+\index{drawPoints@{drawPoints}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{drawPoints()}{drawPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VObj\+Engine\+::draw\+Points (\begin{DoxyParamCaption}\item[{const QPoint $\ast$}]{points,  }\item[{int}]{point\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_a445a76e643acf7ff70105c8a138984fb}\label{classVObjEngine_a445a76e643acf7ff70105c8a138984fb}} 
+\index{VObjEngine@{VObjEngine}!drawPoints@{drawPoints}}
+\index{drawPoints@{drawPoints}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{drawPoints()}{drawPoints()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VObj\+Engine\+::draw\+Points (\begin{DoxyParamCaption}\item[{const QPointF $\ast$}]{points,  }\item[{int}]{point\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_aa2081918eb4415856a1eeb6a3258f0a9}\label{classVObjEngine_aa2081918eb4415856a1eeb6a3258f0a9}} 
+\index{VObjEngine@{VObjEngine}!drawPolygon@{drawPolygon}}
+\index{drawPolygon@{drawPolygon}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void VObj\+Engine\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const QPoint $\ast$}]{points,  }\item[{int}]{point\+Count,  }\item[{Polygon\+Draw\+Mode}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_acf1fe9fa4a92fd46185c57612a356ec6}\label{classVObjEngine_acf1fe9fa4a92fd46185c57612a356ec6}} 
+\index{VObjEngine@{VObjEngine}!drawPolygon@{drawPolygon}}
+\index{drawPolygon@{drawPolygon}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{drawPolygon()}{drawPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VObj\+Engine\+::draw\+Polygon (\begin{DoxyParamCaption}\item[{const QPointF $\ast$}]{points,  }\item[{int}]{point\+Count,  }\item[{Polygon\+Draw\+Mode}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_a7179642247c343180bba56d5016c724b}\label{classVObjEngine_a7179642247c343180bba56d5016c724b}} 
+\index{VObjEngine@{VObjEngine}!end@{end}}
+\index{end@{end}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily bool VObj\+Engine\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_ad6eccf89354d998e5e841f903680aa6a}\label{classVObjEngine_ad6eccf89354d998e5e841f903680aa6a}} 
+\index{VObjEngine@{VObjEngine}!getOutputDevice@{getOutputDevice}}
+\index{getOutputDevice@{getOutputDevice}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{getOutputDevice()}{getOutputDevice()}}
+{\footnotesize\ttfamily QIODevice $\ast$ VObj\+Engine\+::get\+Output\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVObjEngine_a5292a2fc710e6f71943b331e1dca9c79}\label{classVObjEngine_a5292a2fc710e6f71943b331e1dca9c79}} 
+\index{VObjEngine@{VObjEngine}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}}
+{\footnotesize\ttfamily int VObj\+Engine\+::get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVObjEngine_a930e06ac045dbc545228e7749df668f0}\label{classVObjEngine_a930e06ac045dbc545228e7749df668f0}} 
+\index{VObjEngine@{VObjEngine}!getSize@{getSize}}
+\index{getSize@{getSize}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily QSize VObj\+Engine\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVObjEngine_a9a320af605085280b1908bf70c09904a}\label{classVObjEngine_a9a320af605085280b1908bf70c09904a}} 
+\index{VObjEngine@{VObjEngine}!MakePointsUnique@{MakePointsUnique}}
+\index{MakePointsUnique@{MakePointsUnique}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{MakePointsUnique()}{MakePointsUnique()}}
+{\footnotesize\ttfamily QPolygonF VObj\+Engine\+::\+Make\+Points\+Unique (\begin{DoxyParamCaption}\item[{const QPolygonF \&}]{polygon }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_a356a4e1e1d1a66a74bdf55f408bd96b4}\label{classVObjEngine_a356a4e1e1d1a66a74bdf55f408bd96b4}} 
+\index{VObjEngine@{VObjEngine}!setOutputDevice@{setOutputDevice}}
+\index{setOutputDevice@{setOutputDevice}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{setOutputDevice()}{setOutputDevice()}}
+{\footnotesize\ttfamily void VObj\+Engine\+::set\+Output\+Device (\begin{DoxyParamCaption}\item[{QIODevice $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVObjEngine_aeb7cf91e9aad08b4aa293d2fa0be9697}\label{classVObjEngine_aeb7cf91e9aad08b4aa293d2fa0be9697}} 
+\index{VObjEngine@{VObjEngine}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}}
+{\footnotesize\ttfamily void VObj\+Engine\+::set\+Resolution (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVObjEngine_ac7f7a41f5e4715e4a1425af7719a31fd}\label{classVObjEngine_ac7f7a41f5e4715e4a1425af7719a31fd}} 
+\index{VObjEngine@{VObjEngine}!setSize@{setSize}}
+\index{setSize@{setSize}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void VObj\+Engine\+::set\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVObjEngine_a77fa93d7825c4426046c3feaa8a93498}\label{classVObjEngine_a77fa93d7825c4426046c3feaa8a93498}} 
+\index{VObjEngine@{VObjEngine}!Square@{Square}}
+\index{Square@{Square}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{Square()}{Square()}}
+{\footnotesize\ttfamily qint64 VObj\+Engine\+::\+Square (\begin{DoxyParamCaption}\item[{const QPolygonF \&}]{poly }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_a7fc66e204472608cf8f1fc4225b0ecaf}\label{classVObjEngine_a7fc66e204472608cf8f1fc4225b0ecaf}} 
+\index{VObjEngine@{VObjEngine}!type@{type}}
+\index{type@{type}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QPaint\+Engine\+::\+Type VObj\+Engine\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classVObjEngine_aa5a6fc451d00e954cb433c393459dfce}\label{classVObjEngine_aa5a6fc451d00e954cb433c393459dfce}} 
+\index{VObjEngine@{VObjEngine}!updateState@{updateState}}
+\index{updateState@{updateState}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{updateState()}{updateState()}}
+{\footnotesize\ttfamily void VObj\+Engine\+::update\+State (\begin{DoxyParamCaption}\item[{const QPaint\+Engine\+State \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVObjEngine_ad05e8d8f914e5f135a2e1e4ad00a15f2}\label{classVObjEngine_ad05e8d8f914e5f135a2e1e4ad00a15f2}} 
+\index{VObjEngine@{VObjEngine}!globalPointsCount@{globalPointsCount}}
+\index{globalPointsCount@{globalPointsCount}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{globalPointsCount}{globalPointsCount}}
+{\footnotesize\ttfamily quint32 VObj\+Engine\+::global\+Points\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_aaf061c06cda3145d37aa440b33cb338e}\label{classVObjEngine_aaf061c06cda3145d37aa440b33cb338e}} 
+\index{VObjEngine@{VObjEngine}!outputDevice@{outputDevice}}
+\index{outputDevice@{outputDevice}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{outputDevice}{outputDevice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$QIODevice$>$ VObj\+Engine\+::output\+Device\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_a95324e3092abae34f89400212957683d}\label{classVObjEngine_a95324e3092abae34f89400212957683d}} 
+\index{VObjEngine@{VObjEngine}!planeCount@{planeCount}}
+\index{planeCount@{planeCount}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{planeCount}{planeCount}}
+{\footnotesize\ttfamily quint32 VObj\+Engine\+::plane\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}\label{classVObjEngine_af5cbb9c8006a32ce733bd6ccaa154874}} 
+\index{VObjEngine@{VObjEngine}!points@{points}}
+\index{points@{points}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdel__point2d__t}{del\+\_\+point2d\+\_\+t}} VObj\+Engine\+::points\mbox{[}\mbox{\hyperlink{vobjengine_8h_a3b8cb7c2cda80c18f333c00601c6905b}{MAX\+\_\+\+POINTS}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_a2f745d49f8b746836925ec023787fa74}\label{classVObjEngine_a2f745d49f8b746836925ec023787fa74}} 
+\index{VObjEngine@{VObjEngine}!resolution@{resolution}}
+\index{resolution@{resolution}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily int VObj\+Engine\+::resolution\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_ae8671fbd7c879fc717500f9a94623fbe}\label{classVObjEngine_ae8671fbd7c879fc717500f9a94623fbe}} 
+\index{VObjEngine@{VObjEngine}!size@{size}}
+\index{size@{size}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily QSize VObj\+Engine\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_addf6d156640a8855f5db62cd8cb4d404}\label{classVObjEngine_addf6d156640a8855f5db62cd8cb4d404}} 
+\index{VObjEngine@{VObjEngine}!stream@{stream}}
+\index{stream@{stream}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{stream}{stream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$QText\+Stream$>$ VObj\+Engine\+::stream\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVObjEngine_a5ef27cd107f264329a6f1bc241b33a90}\label{classVObjEngine_a5ef27cd107f264329a6f1bc241b33a90}} 
+\index{VObjEngine@{VObjEngine}!transform@{transform}}
+\index{transform@{transform}!VObjEngine@{VObjEngine}}
+\doxysubsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily QTransform VObj\+Engine\+::transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vobj/\mbox{\hyperlink{vobjengine_8h}{vobjengine.\+h}}\item 
+src/libs/vobj/\mbox{\hyperlink{vobjengine_8cpp}{vobjengine.\+cpp}}\end{DoxyCompactItemize}

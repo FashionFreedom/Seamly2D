@@ -1,0 +1,200 @@
+\hypertarget{classVisToolCubicBezierPath}{}\doxysection{Vis\+Tool\+Cubic\+Bezier\+Path Class Reference}
+\label{classVisToolCubicBezierPath}\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+
+
+{\ttfamily \#include $<$vistoolcubicbezierpath.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Cubic\+Bezier\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{da/dde/classVisToolCubicBezierPath}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisToolCubicBezierPath_a7c6a2b325fdee554ce02e16005e50330a66486034fd4d3747a4c89de4b3532900}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Cubic\+Bezier\+Path)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisToolCubicBezierPath_a5e037d97d799d10b79193ea894eb96e1}{Vis\+Tool\+Cubic\+Bezier\+Path}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisToolCubicBezierPath_a2ba610dc2deaf82cb491873155016328}{$\sim$\+Vis\+Tool\+Cubic\+Bezier\+Path}} ()
+\item 
+virtual void \mbox{\hyperlink{classVisToolCubicBezierPath_a524adc4b43c50fabbd0f42ff6e2cb152}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classVisToolCubicBezierPath_a62f3ac6dae3d43ad51e63468606a2dcc}{set\+Path}} (const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&value)
+\item 
+\mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \mbox{\hyperlink{classVisToolCubicBezierPath_a9c49447343f26cf3a634c31e2459e76c}{get\+Path}} ()
+\item 
+virtual int \mbox{\hyperlink{classVisToolCubicBezierPath_a901ae350f95056b307b36137f1ab3397}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \mbox{\hyperlink{classVisToolCubicBezierPath_a4ed633fb049dcdaabdefb9798e94be5c}{main\+Points}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \mbox{\hyperlink{classVisToolCubicBezierPath_abdbebbf8caf06398471ccac467d88c65}{ctrl\+Points}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ $>$ \mbox{\hyperlink{classVisToolCubicBezierPath_aec1f180434d1ad29c3748a2986e6bf50}{lines}}
+\item 
+\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$ \mbox{\hyperlink{classVisToolCubicBezierPath_a45ba78c1b382dc423a70b7b2de685aa1}{new\+Curve\+Segment}}
+\item 
+\mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \mbox{\hyperlink{classVisToolCubicBezierPath_ac6dd60e4e55a84ec319c136523db24ce}{path}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolCubicBezierPath_a2ed1c54edcf644456ff01f46bec62746}{help\+Line1}}
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolCubicBezierPath_a25de039e1b880c9fe6b3a9afd9863f90}{help\+Line2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisToolCubicBezierPath_a4c336fe53a4c43d40b5ce4e6b6f5896b}{get\+Point}} (\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \&points, quint32 i, qreal z=0)
+\item 
+\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{classVisToolCubicBezierPath_a6bb1b75be06ac879f4db43d620a5243a}{get\+Line}} (quint32 i)
+\item 
+void \mbox{\hyperlink{classVisToolCubicBezierPath_a0689bcc2e35734715cab5aae0cd5d594}{Creating}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPointF}{VPointF}} $>$ \&path\+Points, int points\+Left)
+\item 
+void \mbox{\hyperlink{classVisToolCubicBezierPath_a4ee3064176b7d84a22aa23b07375e834}{Refresh\+Tool\+Tip}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a7c6a2b325fdee554ce02e16005e50330}\label{classVisToolCubicBezierPath_a7c6a2b325fdee554ce02e16005e50330}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!Type@{Type}}}\mbox{\Hypertarget{classVisToolCubicBezierPath_a7c6a2b325fdee554ce02e16005e50330a66486034fd4d3747a4c89de4b3532900}\label{classVisToolCubicBezierPath_a7c6a2b325fdee554ce02e16005e50330a66486034fd4d3747a4c89de4b3532900}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a5e037d97d799d10b79193ea894eb96e1}\label{classVisToolCubicBezierPath_a5e037d97d799d10b79193ea894eb96e1}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{VisToolCubicBezierPath()}{VisToolCubicBezierPath()}}
+{\footnotesize\ttfamily Vis\+Tool\+Cubic\+Bezier\+Path\+::\+Vis\+Tool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a2ba610dc2deaf82cb491873155016328}\label{classVisToolCubicBezierPath_a2ba610dc2deaf82cb491873155016328}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!````~VisToolCubicBezierPath@{$\sim$VisToolCubicBezierPath}}
+\index{````~VisToolCubicBezierPath@{$\sim$VisToolCubicBezierPath}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolCubicBezierPath()}{~VisToolCubicBezierPath()}}
+{\footnotesize\ttfamily Vis\+Tool\+Cubic\+Bezier\+Path\+::$\sim$\+Vis\+Tool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a0689bcc2e35734715cab5aae0cd5d594}\label{classVisToolCubicBezierPath_a0689bcc2e35734715cab5aae0cd5d594}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!Creating@{Creating}}
+\index{Creating@{Creating}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{Creating()}{Creating()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Cubic\+Bezier\+Path\+::\+Creating (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVPointF}{VPointF}} $>$ \&}]{path\+Points,  }\item[{int}]{points\+Left }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a6bb1b75be06ac879f4db43d620a5243a}\label{classVisToolCubicBezierPath_a6bb1b75be06ac879f4db43d620a5243a}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!getLine@{getLine}}
+\index{getLine@{getLine}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{getLine()}{getLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$ Vis\+Tool\+Cubic\+Bezier\+Path\+::get\+Line (\begin{DoxyParamCaption}\item[{quint32}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a9c49447343f26cf3a634c31e2459e76c}\label{classVisToolCubicBezierPath_a9c49447343f26cf3a634c31e2459e76c}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!getPath@{getPath}}
+\index{getPath@{getPath}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} Vis\+Tool\+Cubic\+Bezier\+Path\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a4c336fe53a4c43d40b5ce4e6b6f5896b}\label{classVisToolCubicBezierPath_a4c336fe53a4c43d40b5ce4e6b6f5896b}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ Vis\+Tool\+Cubic\+Bezier\+Path\+::get\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \&}]{points,  }\item[{quint32}]{i,  }\item[{qreal}]{z = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a524adc4b43c50fabbd0f42ff6e2cb152}\label{classVisToolCubicBezierPath_a524adc4b43c50fabbd0f42ff6e2cb152}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Cubic\+Bezier\+Path\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVisualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a4ee3064176b7d84a22aa23b07375e834}\label{classVisToolCubicBezierPath_a4ee3064176b7d84a22aa23b07375e834}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!RefreshToolTip@{RefreshToolTip}}
+\index{RefreshToolTip@{RefreshToolTip}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{RefreshToolTip()}{RefreshToolTip()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Cubic\+Bezier\+Path\+::\+Refresh\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a62f3ac6dae3d43ad51e63468606a2dcc}\label{classVisToolCubicBezierPath_a62f3ac6dae3d43ad51e63468606a2dcc}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!setPath@{setPath}}
+\index{setPath@{setPath}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{setPath()}{setPath()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Cubic\+Bezier\+Path\+::set\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a901ae350f95056b307b36137f1ab3397}\label{classVisToolCubicBezierPath_a901ae350f95056b307b36137f1ab3397}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!type@{type}}
+\index{type@{type}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Cubic\+Bezier\+Path\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisPath_aa00ad73e91c41aeb8ed9b432b94ad2f6}{Vis\+Path}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisToolCubicBezierPath_abdbebbf8caf06398471ccac467d88c65}\label{classVisToolCubicBezierPath_abdbebbf8caf06398471ccac467d88c65}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!ctrlPoints@{ctrlPoints}}
+\index{ctrlPoints@{ctrlPoints}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{ctrlPoints}{ctrlPoints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$$>$ Vis\+Tool\+Cubic\+Bezier\+Path\+::ctrl\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a2ed1c54edcf644456ff01f46bec62746}\label{classVisToolCubicBezierPath_a2ed1c54edcf644456ff01f46bec62746}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!helpLine1@{helpLine1}}
+\index{helpLine1@{helpLine1}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{helpLine1}{helpLine1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Cubic\+Bezier\+Path\+::help\+Line1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a25de039e1b880c9fe6b3a9afd9863f90}\label{classVisToolCubicBezierPath_a25de039e1b880c9fe6b3a9afd9863f90}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!helpLine2@{helpLine2}}
+\index{helpLine2@{helpLine2}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{helpLine2}{helpLine2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledLine}{VScaled\+Line}}$\ast$ Vis\+Tool\+Cubic\+Bezier\+Path\+::help\+Line2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_aec1f180434d1ad29c3748a2986e6bf50}\label{classVisToolCubicBezierPath_aec1f180434d1ad29c3748a2986e6bf50}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!lines@{lines}}
+\index{lines@{lines}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVScaledLine}{VScaled\+Line}} $\ast$$>$ Vis\+Tool\+Cubic\+Bezier\+Path\+::lines\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a4ed633fb049dcdaabdefb9798e94be5c}\label{classVisToolCubicBezierPath_a4ed633fb049dcdaabdefb9798e94be5c}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!mainPoints@{mainPoints}}
+\index{mainPoints@{mainPoints}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{mainPoints}{mainPoints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$$>$ Vis\+Tool\+Cubic\+Bezier\+Path\+::main\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_a45ba78c1b382dc423a70b7b2de685aa1}\label{classVisToolCubicBezierPath_a45ba78c1b382dc423a70b7b2de685aa1}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!newCurveSegment@{newCurveSegment}}
+\index{newCurveSegment@{newCurveSegment}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{newCurveSegment}{newCurveSegment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}}$\ast$ Vis\+Tool\+Cubic\+Bezier\+Path\+::new\+Curve\+Segment\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisToolCubicBezierPath_ac6dd60e4e55a84ec319c136523db24ce}\label{classVisToolCubicBezierPath_ac6dd60e4e55a84ec319c136523db24ce}} 
+\index{VisToolCubicBezierPath@{VisToolCubicBezierPath}!path@{path}}
+\index{path@{path}!VisToolCubicBezierPath@{VisToolCubicBezierPath}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCubicBezierPath}{VCubic\+Bezier\+Path}} Vis\+Tool\+Cubic\+Bezier\+Path\+::path\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/path/\mbox{\hyperlink{vistoolcubicbezierpath_8h}{vistoolcubicbezierpath.\+h}}\item 
+src/libs/vtools/visualization/path/\mbox{\hyperlink{vistoolcubicbezierpath_8cpp}{vistoolcubicbezierpath.\+cpp}}\end{DoxyCompactItemize}

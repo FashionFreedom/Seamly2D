@@ -1,0 +1,105 @@
+\hypertarget{classMoveOperationLabel}{}\doxysection{Move\+Operation\+Label Class Reference}
+\label{classMoveOperationLabel}\index{MoveOperationLabel@{MoveOperationLabel}}
+
+
+{\ttfamily \#include $<$moveoperationlabel.\+h$>$}
+
+Inheritance diagram for Move\+Operation\+Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{d7/d7b/classMoveOperationLabel}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMoveOperationLabel_a8a0933bac8419277b27eb7eb34efe1eb}{Move\+Operation\+Label}} (quint32 id\+Tool, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVUndoCommand_a59f91873c1db4adde66d943abc043fa0}{doc}}, const QPointF \&pos, quint32 id\+Point, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classMoveOperationLabel_ae8794c5690f84f353b9ecbff34778406}{$\sim$\+Move\+Operation\+Label}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{classMoveOperationLabel_a675dd58081b3ec4a482369dd065caf76}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classMoveOperationLabel_a763b8d8934332a4c4d49e7d3970004ad}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{classMoveOperationLabel_a593df9da7363c1d84875ef29a0063170}{Get\+Tool\+Id}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMoveOperationLabel_a38345b5af6ffa39bd4fd3afd87e07712}{Do}} (const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{classMoveOperationLabel_acef57fd2e6c76bcc9ac666231d9a89b6}{m\+\_\+id\+Tool}}
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{classMoveOperationLabel_a5c738d2890dc8380d1873ab06a52dc2a}{m\+\_\+scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMoveOperationLabel_a8a0933bac8419277b27eb7eb34efe1eb}\label{classMoveOperationLabel_a8a0933bac8419277b27eb7eb34efe1eb}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!MoveOperationLabel@{MoveOperationLabel}}
+\index{MoveOperationLabel@{MoveOperationLabel}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{MoveOperationLabel()}{MoveOperationLabel()}}
+{\footnotesize\ttfamily Move\+Operation\+Label\+::\+Move\+Operation\+Label (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const QPointF \&}]{pos,  }\item[{quint32}]{id\+Point,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classMoveOperationLabel_ae8794c5690f84f353b9ecbff34778406}\label{classMoveOperationLabel_ae8794c5690f84f353b9ecbff34778406}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!````~MoveOperationLabel@{$\sim$MoveOperationLabel}}
+\index{````~MoveOperationLabel@{$\sim$MoveOperationLabel}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{$\sim$MoveOperationLabel()}{~MoveOperationLabel()}}
+{\footnotesize\ttfamily virtual Move\+Operation\+Label\+::$\sim$\+Move\+Operation\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMoveOperationLabel_a38345b5af6ffa39bd4fd3afd87e07712}\label{classMoveOperationLabel_a38345b5af6ffa39bd4fd3afd87e07712}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!Do@{Do}}
+\index{Do@{Do}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{Do()}{Do()}}
+{\footnotesize\ttfamily void Move\+Operation\+Label\+::\+Do (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classMoveAbstractLabel_aa57b546b1ac96182f898726bec555801}{Move\+Abstract\+Label}}.
+
+\mbox{\Hypertarget{classMoveOperationLabel_a593df9da7363c1d84875ef29a0063170}\label{classMoveOperationLabel_a593df9da7363c1d84875ef29a0063170}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!GetToolId@{GetToolId}}
+\index{GetToolId@{GetToolId}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{GetToolId()}{GetToolId()}}
+{\footnotesize\ttfamily quint32 Move\+Operation\+Label\+::\+Get\+Tool\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classMoveOperationLabel_a763b8d8934332a4c4d49e7d3970004ad}\label{classMoveOperationLabel_a763b8d8934332a4c4d49e7d3970004ad}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!id@{id}}
+\index{id@{id}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Move\+Operation\+Label\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classMoveOperationLabel_a675dd58081b3ec4a482369dd065caf76}\label{classMoveOperationLabel_a675dd58081b3ec4a482369dd065caf76}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Move\+Operation\+Label\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMoveOperationLabel_acef57fd2e6c76bcc9ac666231d9a89b6}\label{classMoveOperationLabel_acef57fd2e6c76bcc9ac666231d9a89b6}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!m\_idTool@{m\_idTool}}
+\index{m\_idTool@{m\_idTool}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{m\_idTool}{m\_idTool}}
+{\footnotesize\ttfamily quint32 Move\+Operation\+Label\+::m\+\_\+id\+Tool\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classMoveOperationLabel_a5c738d2890dc8380d1873ab06a52dc2a}\label{classMoveOperationLabel_a5c738d2890dc8380d1873ab06a52dc2a}} 
+\index{MoveOperationLabel@{MoveOperationLabel}!m\_scene@{m\_scene}}
+\index{m\_scene@{m\_scene}!MoveOperationLabel@{MoveOperationLabel}}
+\doxysubsubsection{\texorpdfstring{m\_scene}{m\_scene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$ Move\+Operation\+Label\+::m\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/undocommands/label/\mbox{\hyperlink{moveoperationlabel_8h}{moveoperationlabel.\+h}}\item 
+src/libs/vtools/undocommands/label/\mbox{\hyperlink{moveoperationlabel_8cpp}{moveoperationlabel.\+cpp}}\end{DoxyCompactItemize}

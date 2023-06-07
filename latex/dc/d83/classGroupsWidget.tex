@@ -1,0 +1,419 @@
+\hypertarget{classGroupsWidget}{}\doxysection{Groups\+Widget Class Reference}
+\label{classGroupsWidget}\index{GroupsWidget@{GroupsWidget}}
+
+
+{\ttfamily \#include $<$groups\+\_\+widget.\+h$>$}
+
+Inheritance diagram for Groups\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d83/classGroupsWidget}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGroupsWidget_ad7780eb1bfc21e4b80a0be8064be6b56}{update\+Groups}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a30cd8180e6b7bc36c02dbed4d1885295}{show\+Groups}} (\mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, QString $>$ groups)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a76e7ba9b26ba0c3215bf9d39b4b20880}{show\+All\+Groups}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a57bed1332b8487b0281379ebb3b0974c}{hide\+All\+Groups}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_ab22577549d439176b57c52af854137d4}{lock\+All\+Groups}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a81c0446a2a02d49247576c8dfb39d460}{unlock\+All\+Groups}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_ad4189778b64e1f853925d86413f40842}{add\+Group\+To\+List}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_ac6fd298e78a3d4dcf3582cbcec2e4021}{delete\+Group\+From\+List}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a529e329caa532270edfd0e08f76e1243}{edit\+Group}} ()
+\item 
+quint32 \mbox{\hyperlink{classGroupsWidget_a58e2d86e3eaecabbb9c7da075bb02593}{get\+Group\+Id}} ()
+\item 
+QString \mbox{\hyperlink{classGroupsWidget_af56e55db79007be96cab79c5deff4bcc}{get\+Current\+Group\+Name}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_aa9faa127e2112912e6898b230818a92c}{set\+Add\+Group\+Enabled}} (bool value)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_ae9d9625861bc64810c1e4692040ea455}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGroupsWidget_a36450e7cbb73a769029474e2cb79eae7}{Groups\+Widget}} (\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classGroupsWidget_a23decc7b1408343e0f0df71607db67a9}{$\sim$\+Groups\+Widget}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a7332fe8871fc0f086e59ddbf1a21ff54}{group\+Visibility\+Changed}} (int row, int column)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_af1ffb50e75dd2615ad009e9eaba9be8c}{group\+Lock\+Changed}} (int row, int column)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a20d0cb5a5fdc4e5c89a1ee527af890c7}{rename\+Group}} (int row, int column)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a9b612c8d1e20f7302ac1faf8533c98d2}{group\+Context\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a35ecd548edee87654305c045bf8e4271}{draft\+Block\+Has\+Groups}} (bool value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a60cf1e07127fef860cef74844868aa60}{fill\+Table}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, \mbox{\hyperlink{structGroupAttributes}{Group\+Attributes}} $>$ \&groups)
+\item 
+void \mbox{\hyperlink{classGroupsWidget_aa0f7d657096fe07da756fbbea0171e76}{fill\+Group\+Item\+List}} ()
+\item 
+void \mbox{\hyperlink{classGroupsWidget_a7470d0781ec36b162c0c8d6c26da6bb3}{add\+Group\+Item}} (const quint32 \&tool\+Id, const quint32 \&obj\+Id, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&tooltype)
+\begin{DoxyCompactList}\small\item\em add\+Group\+Item Add group item with description in listwidget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_a4d76435cf8920a19ff52225b32f22acf}{group\+Item\+Context\+Menu}} (const QPoint \&pos)
+\begin{DoxyCompactList}\small\item\em Context\+Menu show context menu for group objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_ae747d915ee5eb4fcd794bbddfb6f3111}{item\+Double\+Clicked}} (QList\+Widget\+Item $\ast$item)
+\begin{DoxyCompactList}\small\item\em Handle double clicking of list item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_a862e5ff08ed0d3a36235f4699061cf72}{zoom\+To\+Object}} (\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVPointF}{VPointF}} $>$ point)
+\begin{DoxyCompactList}\small\item\em zoom\+To\+Object zoom to selected (point) object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_a85224808bafc1248e7a5b1928e6b9063}{set\+Group\+Visibility}} (QTable\+Widget\+Item $\ast$item, const quint32 \&group\+Id, const bool \&visible)
+\item 
+QString \mbox{\hyperlink{classGroupsWidget_a356f599cbed259c6b560f9d01d7900b4}{get\+Point\+Name}} (quint32 point\+Id)
+\begin{DoxyCompactList}\small\item\em get\+Point\+Name get the name of the point by tool id. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classGroupsWidget_a24def2ed9844e27d9f8a55a4244b6454}{attr\+UInt}} (const QDom\+Element \&dom\+Element, const QString \&name)
+\begin{DoxyCompactList}\small\item\em attr\+UInt get unsigned integer attribute. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classGroupsWidget_a92a03b91455b3f3df8c41b9a227864ba}{get\+Obj\+Name}} (quint32 id)
+\begin{DoxyCompactList}\small\item\em get\+Obj\+Name get the name of the graphics object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_aae8626398cbbee809ffd918c85221df4}{splitter\+Moved}} (int pos, int index)
+\begin{DoxyCompactList}\small\item\em splitter\+Moved Save splitter state whenever it\textquotesingle{}s moved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Groups\+Widget $\ast$ \mbox{\hyperlink{classGroupsWidget_ad24f67c7e59789c751183fe5d4fde4cb}{ui}}
+\item 
+\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{classGroupsWidget_ad4ff50d31f07643b71b15a87771dbca5}{m\+\_\+doc}}
+\item 
+\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classGroupsWidget_a36c115d4c2247f3f4299181f3cb9cbba}{m\+\_\+data}}
+\item 
+bool \mbox{\hyperlink{classGroupsWidget_a9536c829a4e976f334cc9b7de3993fca}{m\+\_\+pattern\+Has\+Groups}}
+\item 
+quint32 \mbox{\hyperlink{classGroupsWidget_ae06ced498e64a14985da5edcc707652c}{m\+\_\+current\+Group\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGroupsWidget_a36450e7cbb73a769029474e2cb79eae7}\label{classGroupsWidget_a36450e7cbb73a769029474e2cb79eae7}} 
+\index{GroupsWidget@{GroupsWidget}!GroupsWidget@{GroupsWidget}}
+\index{GroupsWidget@{GroupsWidget}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{GroupsWidget()}{GroupsWidget()}}
+{\footnotesize\ttfamily Groups\+Widget\+::\+Groups\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a23decc7b1408343e0f0df71607db67a9}\label{classGroupsWidget_a23decc7b1408343e0f0df71607db67a9}} 
+\index{GroupsWidget@{GroupsWidget}!````~GroupsWidget@{$\sim$GroupsWidget}}
+\index{````~GroupsWidget@{$\sim$GroupsWidget}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$GroupsWidget()}{~GroupsWidget()}}
+{\footnotesize\ttfamily Groups\+Widget\+::$\sim$\+Groups\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGroupsWidget_a7470d0781ec36b162c0c8d6c26da6bb3}\label{classGroupsWidget_a7470d0781ec36b162c0c8d6c26da6bb3}} 
+\index{GroupsWidget@{GroupsWidget}!addGroupItem@{addGroupItem}}
+\index{addGroupItem@{addGroupItem}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{addGroupItem()}{addGroupItem()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH void Groups\+Widget\+::add\+Group\+Item (\begin{DoxyParamCaption}\item[{const quint32 \&}]{tool\+Id,  }\item[{const quint32 \&}]{obj\+Id,  }\item[{const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&}]{tooltype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+add\+Group\+Item Add group item with description in listwidget. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tool\+ID} & Tool\+ID of item to add to list. \\
+\hline
+{\em obj\+Id} & Object\+ID of item to add to list. \\
+\hline
+{\em tooltype} & Tooltype of item to add to list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroupsWidget_ad4189778b64e1f853925d86413f40842}\label{classGroupsWidget_ad4189778b64e1f853925d86413f40842}} 
+\index{GroupsWidget@{GroupsWidget}!addGroupToList@{addGroupToList}}
+\index{addGroupToList@{addGroupToList}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{addGroupToList}{addGroupToList}}
+{\footnotesize\ttfamily void Groups\+Widget\+::add\+Group\+To\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a24def2ed9844e27d9f8a55a4244b6454}\label{classGroupsWidget_a24def2ed9844e27d9f8a55a4244b6454}} 
+\index{GroupsWidget@{GroupsWidget}!attrUInt@{attrUInt}}
+\index{attrUInt@{attrUInt}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{attrUInt()}{attrUInt()}}
+{\footnotesize\ttfamily quint32 Groups\+Widget\+::attr\+UInt (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+attr\+UInt get unsigned integer attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & Dom Element. \\
+\hline
+{\em name} & Name of Attribute. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsigned interger. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGroupsWidget_ae9d9625861bc64810c1e4692040ea455}\label{classGroupsWidget_ae9d9625861bc64810c1e4692040ea455}} 
+\index{GroupsWidget@{GroupsWidget}!clear@{clear}}
+\index{clear@{clear}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{clear}{clear}}
+{\footnotesize\ttfamily void Groups\+Widget\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_ac6fd298e78a3d4dcf3582cbcec2e4021}\label{classGroupsWidget_ac6fd298e78a3d4dcf3582cbcec2e4021}} 
+\index{GroupsWidget@{GroupsWidget}!deleteGroupFromList@{deleteGroupFromList}}
+\index{deleteGroupFromList@{deleteGroupFromList}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{deleteGroupFromList}{deleteGroupFromList}}
+{\footnotesize\ttfamily void Groups\+Widget\+::delete\+Group\+From\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a35ecd548edee87654305c045bf8e4271}\label{classGroupsWidget_a35ecd548edee87654305c045bf8e4271}} 
+\index{GroupsWidget@{GroupsWidget}!draftBlockHasGroups@{draftBlockHasGroups}}
+\index{draftBlockHasGroups@{draftBlockHasGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{draftBlockHasGroups}{draftBlockHasGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::draft\+Block\+Has\+Groups (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a529e329caa532270edfd0e08f76e1243}\label{classGroupsWidget_a529e329caa532270edfd0e08f76e1243}} 
+\index{GroupsWidget@{GroupsWidget}!editGroup@{editGroup}}
+\index{editGroup@{editGroup}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{editGroup}{editGroup}}
+{\footnotesize\ttfamily void Groups\+Widget\+::edit\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_aa0f7d657096fe07da756fbbea0171e76}\label{classGroupsWidget_aa0f7d657096fe07da756fbbea0171e76}} 
+\index{GroupsWidget@{GroupsWidget}!fillGroupItemList@{fillGroupItemList}}
+\index{fillGroupItemList@{fillGroupItemList}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{fillGroupItemList()}{fillGroupItemList()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::fill\+Group\+Item\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a60cf1e07127fef860cef74844868aa60}\label{classGroupsWidget_a60cf1e07127fef860cef74844868aa60}} 
+\index{GroupsWidget@{GroupsWidget}!fillTable@{fillTable}}
+\index{fillTable@{fillTable}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{fillTable()}{fillTable()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::fill\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, \mbox{\hyperlink{structGroupAttributes}{Group\+Attributes}} $>$ \&}]{groups }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_af56e55db79007be96cab79c5deff4bcc}\label{classGroupsWidget_af56e55db79007be96cab79c5deff4bcc}} 
+\index{GroupsWidget@{GroupsWidget}!getCurrentGroupName@{getCurrentGroupName}}
+\index{getCurrentGroupName@{getCurrentGroupName}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{getCurrentGroupName}{getCurrentGroupName}}
+{\footnotesize\ttfamily QString Groups\+Widget\+::get\+Current\+Group\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a58e2d86e3eaecabbb9c7da075bb02593}\label{classGroupsWidget_a58e2d86e3eaecabbb9c7da075bb02593}} 
+\index{GroupsWidget@{GroupsWidget}!getGroupId@{getGroupId}}
+\index{getGroupId@{getGroupId}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{getGroupId}{getGroupId}}
+{\footnotesize\ttfamily quint32 Groups\+Widget\+::get\+Group\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a92a03b91455b3f3df8c41b9a227864ba}\label{classGroupsWidget_a92a03b91455b3f3df8c41b9a227864ba}} 
+\index{GroupsWidget@{GroupsWidget}!getObjName@{getObjName}}
+\index{getObjName@{getObjName}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{getObjName()}{getObjName()}}
+{\footnotesize\ttfamily QString Groups\+Widget\+::get\+Obj\+Name (\begin{DoxyParamCaption}\item[{quint32}]{tool\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+get\+Obj\+Name get the name of the graphics object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tool\+Id} & Id of the tool the object belongs to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+name of object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGroupsWidget_a356f599cbed259c6b560f9d01d7900b4}\label{classGroupsWidget_a356f599cbed259c6b560f9d01d7900b4}} 
+\index{GroupsWidget@{GroupsWidget}!getPointName@{getPointName}}
+\index{getPointName@{getPointName}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{getPointName()}{getPointName()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+POP QString Groups\+Widget\+::get\+Point\+Name (\begin{DoxyParamCaption}\item[{quint32}]{tool\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+get\+Point\+Name get the name of the point by tool id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tool\+Id} & Id of the tool the object belongs to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+name of point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGroupsWidget_a9b612c8d1e20f7302ac1faf8533c98d2}\label{classGroupsWidget_a9b612c8d1e20f7302ac1faf8533c98d2}} 
+\index{GroupsWidget@{GroupsWidget}!groupContextMenu@{groupContextMenu}}
+\index{groupContextMenu@{groupContextMenu}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{groupContextMenu}{groupContextMenu}}
+{\footnotesize\ttfamily void Groups\+Widget\+::group\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a4d76435cf8920a19ff52225b32f22acf}\label{classGroupsWidget_a4d76435cf8920a19ff52225b32f22acf}} 
+\index{GroupsWidget@{GroupsWidget}!groupItemContextMenu@{groupItemContextMenu}}
+\index{groupItemContextMenu@{groupItemContextMenu}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{groupItemContextMenu()}{groupItemContextMenu()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::group\+Item\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Context\+Menu show context menu for group objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Mouse position of right click. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroupsWidget_af1ffb50e75dd2615ad009e9eaba9be8c}\label{classGroupsWidget_af1ffb50e75dd2615ad009e9eaba9be8c}} 
+\index{GroupsWidget@{GroupsWidget}!groupLockChanged@{groupLockChanged}}
+\index{groupLockChanged@{groupLockChanged}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{groupLockChanged}{groupLockChanged}}
+{\footnotesize\ttfamily void Groups\+Widget\+::group\+Lock\+Changed (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a7332fe8871fc0f086e59ddbf1a21ff54}\label{classGroupsWidget_a7332fe8871fc0f086e59ddbf1a21ff54}} 
+\index{GroupsWidget@{GroupsWidget}!groupVisibilityChanged@{groupVisibilityChanged}}
+\index{groupVisibilityChanged@{groupVisibilityChanged}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{groupVisibilityChanged}{groupVisibilityChanged}}
+{\footnotesize\ttfamily void Groups\+Widget\+::group\+Visibility\+Changed (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a57bed1332b8487b0281379ebb3b0974c}\label{classGroupsWidget_a57bed1332b8487b0281379ebb3b0974c}} 
+\index{GroupsWidget@{GroupsWidget}!hideAllGroups@{hideAllGroups}}
+\index{hideAllGroups@{hideAllGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{hideAllGroups}{hideAllGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::hide\+All\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_ae747d915ee5eb4fcd794bbddfb6f3111}\label{classGroupsWidget_ae747d915ee5eb4fcd794bbddfb6f3111}} 
+\index{GroupsWidget@{GroupsWidget}!itemDoubleClicked@{itemDoubleClicked}}
+\index{itemDoubleClicked@{itemDoubleClicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{itemDoubleClicked()}{itemDoubleClicked()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::item\+Double\+Clicked (\begin{DoxyParamCaption}\item[{QList\+Widget\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handle double clicking of list item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & selected list widget item. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroupsWidget_ab22577549d439176b57c52af854137d4}\label{classGroupsWidget_ab22577549d439176b57c52af854137d4}} 
+\index{GroupsWidget@{GroupsWidget}!lockAllGroups@{lockAllGroups}}
+\index{lockAllGroups@{lockAllGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{lockAllGroups}{lockAllGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::lock\+All\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a20d0cb5a5fdc4e5c89a1ee527af890c7}\label{classGroupsWidget_a20d0cb5a5fdc4e5c89a1ee527af890c7}} 
+\index{GroupsWidget@{GroupsWidget}!renameGroup@{renameGroup}}
+\index{renameGroup@{renameGroup}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{renameGroup}{renameGroup}}
+{\footnotesize\ttfamily void Groups\+Widget\+::rename\+Group (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_aa9faa127e2112912e6898b230818a92c}\label{classGroupsWidget_aa9faa127e2112912e6898b230818a92c}} 
+\index{GroupsWidget@{GroupsWidget}!setAddGroupEnabled@{setAddGroupEnabled}}
+\index{setAddGroupEnabled@{setAddGroupEnabled}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{setAddGroupEnabled}{setAddGroupEnabled}}
+{\footnotesize\ttfamily void Groups\+Widget\+::set\+Add\+Group\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a85224808bafc1248e7a5b1928e6b9063}\label{classGroupsWidget_a85224808bafc1248e7a5b1928e6b9063}} 
+\index{GroupsWidget@{GroupsWidget}!setGroupVisibility@{setGroupVisibility}}
+\index{setGroupVisibility@{setGroupVisibility}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{setGroupVisibility()}{setGroupVisibility()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::set\+Group\+Visibility (\begin{DoxyParamCaption}\item[{QTable\+Widget\+Item $\ast$}]{item,  }\item[{const quint32 \&}]{group\+Id,  }\item[{const bool \&}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a76e7ba9b26ba0c3215bf9d39b4b20880}\label{classGroupsWidget_a76e7ba9b26ba0c3215bf9d39b4b20880}} 
+\index{GroupsWidget@{GroupsWidget}!showAllGroups@{showAllGroups}}
+\index{showAllGroups@{showAllGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{showAllGroups}{showAllGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::show\+All\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a30cd8180e6b7bc36c02dbed4d1885295}\label{classGroupsWidget_a30cd8180e6b7bc36c02dbed4d1885295}} 
+\index{GroupsWidget@{GroupsWidget}!showGroups@{showGroups}}
+\index{showGroups@{showGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{showGroups}{showGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::show\+Groups (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQMap}{QMap}}$<$ quint32, QString $>$}]{groups }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_aae8626398cbbee809ffd918c85221df4}\label{classGroupsWidget_aae8626398cbbee809ffd918c85221df4}} 
+\index{GroupsWidget@{GroupsWidget}!splitterMoved@{splitterMoved}}
+\index{splitterMoved@{splitterMoved}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{splitterMoved()}{splitterMoved()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::splitter\+Moved (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+splitter\+Moved Save splitter state whenever it\textquotesingle{}s moved. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGroupsWidget_a81c0446a2a02d49247576c8dfb39d460}\label{classGroupsWidget_a81c0446a2a02d49247576c8dfb39d460}} 
+\index{GroupsWidget@{GroupsWidget}!unlockAllGroups@{unlockAllGroups}}
+\index{unlockAllGroups@{unlockAllGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{unlockAllGroups}{unlockAllGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::unlock\+All\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_ad7780eb1bfc21e4b80a0be8064be6b56}\label{classGroupsWidget_ad7780eb1bfc21e4b80a0be8064be6b56}} 
+\index{GroupsWidget@{GroupsWidget}!updateGroups@{updateGroups}}
+\index{updateGroups@{updateGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{updateGroups}{updateGroups}}
+{\footnotesize\ttfamily void Groups\+Widget\+::update\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a862e5ff08ed0d3a36235f4699061cf72}\label{classGroupsWidget_a862e5ff08ed0d3a36235f4699061cf72}} 
+\index{GroupsWidget@{GroupsWidget}!zoomToObject@{zoomToObject}}
+\index{zoomToObject@{zoomToObject}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{zoomToObject()}{zoomToObject()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::zoom\+To\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVPointF}{VPointF}} $>$}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+zoom\+To\+Object zoom to selected (point) object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & If selected list item is a point use the item\textquotesingle{}s tool\+Id. if the list item is a curve or line then use the tool\textquotesingle{}s first point. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGroupsWidget_ae06ced498e64a14985da5edcc707652c}\label{classGroupsWidget_ae06ced498e64a14985da5edcc707652c}} 
+\index{GroupsWidget@{GroupsWidget}!m\_currentGroupId@{m\_currentGroupId}}
+\index{m\_currentGroupId@{m\_currentGroupId}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{m\_currentGroupId}{m\_currentGroupId}}
+{\footnotesize\ttfamily quint32 Groups\+Widget\+::m\+\_\+current\+Group\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a36c115d4c2247f3f4299181f3cb9cbba}\label{classGroupsWidget_a36c115d4c2247f3f4299181f3cb9cbba}} 
+\index{GroupsWidget@{GroupsWidget}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ Groups\+Widget\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_ad4ff50d31f07643b71b15a87771dbca5}\label{classGroupsWidget_ad4ff50d31f07643b71b15a87771dbca5}} 
+\index{GroupsWidget@{GroupsWidget}!m\_doc@{m\_doc}}
+\index{m\_doc@{m\_doc}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{m\_doc}{m\_doc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}}$\ast$ Groups\+Widget\+::m\+\_\+doc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_a9536c829a4e976f334cc9b7de3993fca}\label{classGroupsWidget_a9536c829a4e976f334cc9b7de3993fca}} 
+\index{GroupsWidget@{GroupsWidget}!m\_patternHasGroups@{m\_patternHasGroups}}
+\index{m\_patternHasGroups@{m\_patternHasGroups}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{m\_patternHasGroups}{m\_patternHasGroups}}
+{\footnotesize\ttfamily bool Groups\+Widget\+::m\+\_\+pattern\+Has\+Groups\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGroupsWidget_ad24f67c7e59789c751183fe5d4fde4cb}\label{classGroupsWidget_ad24f67c7e59789c751183fe5d4fde4cb}} 
+\index{GroupsWidget@{GroupsWidget}!ui@{ui}}
+\index{ui@{ui}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Groups\+Widget$\ast$ Groups\+Widget\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/dialogs/\mbox{\hyperlink{groups__widget_8h}{groups\+\_\+widget.\+h}}\item 
+src/app/seamly2d/dialogs/\mbox{\hyperlink{groups__widget_8cpp}{groups\+\_\+widget.\+cpp}}\end{DoxyCompactItemize}

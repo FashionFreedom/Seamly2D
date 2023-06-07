@@ -1,0 +1,215 @@
+\hypertarget{classVAbstractLayoutDialog}{}\doxysection{VAbstract\+Layout\+Dialog Class Reference}
+\label{classVAbstractLayoutDialog}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+
+
+{\ttfamily \#include $<$vabstractlayoutdialog.\+h$>$}
+
+Inheritance diagram for VAbstract\+Layout\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d1/dbb/classVAbstractLayoutDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}{Paper\+Size\+Template}} \+: char \{ \newline
+\mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3ad88c146dfafdea37a837778a92415bc2}{A0}} = 0
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a27f237e6b7f96587b6202ff3607ad88a}{A1}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3ac6bdf6f65f3845da9085e9ae5790b494}{A2}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a6593d7b12fd418cdb35bbf438de72f66}{A3}}
+, \newline
+\mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a0c2f3adf2a48bab3adb470f4da57f3d0}{A4}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a17a53d1a012580ef609b70ef6a25d1f1}{Letter}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa10a9bcd450087de1ce1f80b35f44883}{Legal}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa53fc34a28678c56601220fc3f021c1d}{Roll24in}} = 7
+, \newline
+\mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a27736e8ab588cd66ad41f2fb889c15f6}{Roll30in}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3add60e15ef4c1163a333d51dfebe197b1}{Roll36in}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aede3de0cc2a140d0a6b91947069dcc16}{Roll42in}}
+, \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa6cc2c6cd06863094faa905743911aaa}{Roll44in}} = 11
+, \newline
+\mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a90589c47f06eb971d548591f23c285af}{Custom}} = 12
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAbstractLayoutDialog_ad849c0a105d9067f202aeeef9a3bbfb8}{VAbstract\+Layout\+Dialog}} (QWidget $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef QString\+List \mbox{\hyperlink{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}{Formats\+Vector}}
+\item 
+typedef int \mbox{\hyperlink{classVAbstractLayoutDialog_a4fb9cb17b5ddae631a11f50f855319e6}{VIndex\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QSizeF \mbox{\hyperlink{classVAbstractLayoutDialog_aafc4085375d25c77ff953822763fe4ea}{get\+Template\+Size}} (const \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}{Paper\+Size\+Template}} \&tmpl, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&unit) const
+\begin{DoxyCompactList}\small\item\em Dialog\+Layout\+Settings\+::\+Template\+Size. \end{DoxyCompactList}\item 
+QSizeF \mbox{\hyperlink{classVAbstractLayoutDialog_aaaa5300eccf290d8b9e2885f2232a59e}{Round\+Template\+Size}} (qreal width, qreal height, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} unit) const
+\item 
+void \mbox{\hyperlink{classVAbstractLayoutDialog_a565d1cb3c667569fac1a397750ae6ed5}{init\+Templates}} (QCombo\+Box $\ast$combo\+Box\+Templates)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}{Formats\+Vector}} \mbox{\hyperlink{classVAbstractLayoutDialog_ad13db56da246bc98677d3c9203775d82}{page\+Format\+Names}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}\label{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!FormatsVector@{FormatsVector}}
+\index{FormatsVector@{FormatsVector}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{FormatsVector}{FormatsVector}}
+{\footnotesize\ttfamily typedef QString\+List \mbox{\hyperlink{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}{VAbstract\+Layout\+Dialog\+::\+Formats\+Vector}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractLayoutDialog_a4fb9cb17b5ddae631a11f50f855319e6}\label{classVAbstractLayoutDialog_a4fb9cb17b5ddae631a11f50f855319e6}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!VIndexType@{VIndexType}}
+\index{VIndexType@{VIndexType}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{VIndexType}{VIndexType}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{classVAbstractLayoutDialog_a4fb9cb17b5ddae631a11f50f855319e6}{VAbstract\+Layout\+Dialog\+::\+VIndex\+Type}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!PaperSizeTemplate@{PaperSizeTemplate}}
+\index{PaperSizeTemplate@{PaperSizeTemplate}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{PaperSizeTemplate}{PaperSizeTemplate}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}{VAbstract\+Layout\+Dialog\+::\+Paper\+Size\+Template}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A0@{A0}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!A0@{A0}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3ad88c146dfafdea37a837778a92415bc2}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3ad88c146dfafdea37a837778a92415bc2}} 
+A0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A1@{A1}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!A1@{A1}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a27f237e6b7f96587b6202ff3607ad88a}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a27f237e6b7f96587b6202ff3607ad88a}} 
+A1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A2@{A2}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!A2@{A2}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3ac6bdf6f65f3845da9085e9ae5790b494}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3ac6bdf6f65f3845da9085e9ae5790b494}} 
+A2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A3@{A3}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!A3@{A3}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a6593d7b12fd418cdb35bbf438de72f66}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a6593d7b12fd418cdb35bbf438de72f66}} 
+A3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A4@{A4}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!A4@{A4}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a0c2f3adf2a48bab3adb470f4da57f3d0}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a0c2f3adf2a48bab3adb470f4da57f3d0}} 
+A4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Letter@{Letter}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Letter@{Letter}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a17a53d1a012580ef609b70ef6a25d1f1}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a17a53d1a012580ef609b70ef6a25d1f1}} 
+Letter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Legal@{Legal}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Legal@{Legal}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa10a9bcd450087de1ce1f80b35f44883}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa10a9bcd450087de1ce1f80b35f44883}} 
+Legal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roll24in@{Roll24in}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Roll24in@{Roll24in}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa53fc34a28678c56601220fc3f021c1d}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa53fc34a28678c56601220fc3f021c1d}} 
+Roll24in&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roll30in@{Roll30in}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Roll30in@{Roll30in}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a27736e8ab588cd66ad41f2fb889c15f6}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a27736e8ab588cd66ad41f2fb889c15f6}} 
+Roll30in&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roll36in@{Roll36in}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Roll36in@{Roll36in}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3add60e15ef4c1163a333d51dfebe197b1}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3add60e15ef4c1163a333d51dfebe197b1}} 
+Roll36in&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roll42in@{Roll42in}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Roll42in@{Roll42in}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aede3de0cc2a140d0a6b91947069dcc16}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aede3de0cc2a140d0a6b91947069dcc16}} 
+Roll42in&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Roll44in@{Roll44in}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Roll44in@{Roll44in}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa6cc2c6cd06863094faa905743911aaa}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3aa6cc2c6cd06863094faa905743911aaa}} 
+Roll44in&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Custom@{Custom}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!Custom@{Custom}}}\mbox{\Hypertarget{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a90589c47f06eb971d548591f23c285af}\label{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3a90589c47f06eb971d548591f23c285af}} 
+Custom&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVAbstractLayoutDialog_ad849c0a105d9067f202aeeef9a3bbfb8}\label{classVAbstractLayoutDialog_ad849c0a105d9067f202aeeef9a3bbfb8}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{VAbstractLayoutDialog()}{VAbstractLayoutDialog()}}
+{\footnotesize\ttfamily VAbstract\+Layout\+Dialog\+::\+VAbstract\+Layout\+Dialog (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVAbstractLayoutDialog_aafc4085375d25c77ff953822763fe4ea}\label{classVAbstractLayoutDialog_aafc4085375d25c77ff953822763fe4ea}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!getTemplateSize@{getTemplateSize}}
+\index{getTemplateSize@{getTemplateSize}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{getTemplateSize()}{getTemplateSize()}}
+{\footnotesize\ttfamily QSizeF VAbstract\+Layout\+Dialog\+::get\+Template\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVAbstractLayoutDialog_a86853242b6016dbc651dce0da621f8b3}{Paper\+Size\+Template}} \&}]{tmpl,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{unit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Dialog\+Layout\+Settings\+::\+Template\+Size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tmpl} & \\
+\hline
+{\em unit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVAbstractLayoutDialog_a565d1cb3c667569fac1a397750ae6ed5}\label{classVAbstractLayoutDialog_a565d1cb3c667569fac1a397750ae6ed5}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!initTemplates@{initTemplates}}
+\index{initTemplates@{initTemplates}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{initTemplates()}{initTemplates()}}
+{\footnotesize\ttfamily void VAbstract\+Layout\+Dialog\+::init\+Templates (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{combo\+Box\+Templates }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractLayoutDialog_aaaa5300eccf290d8b9e2885f2232a59e}\label{classVAbstractLayoutDialog_aaaa5300eccf290d8b9e2885f2232a59e}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!RoundTemplateSize@{RoundTemplateSize}}
+\index{RoundTemplateSize@{RoundTemplateSize}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{RoundTemplateSize()}{RoundTemplateSize()}}
+{\footnotesize\ttfamily QSizeF VAbstract\+Layout\+Dialog\+::\+Round\+Template\+Size (\begin{DoxyParamCaption}\item[{qreal}]{width,  }\item[{qreal}]{height,  }\item[{\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}}]{unit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVAbstractLayoutDialog_ad13db56da246bc98677d3c9203775d82}\label{classVAbstractLayoutDialog_ad13db56da246bc98677d3c9203775d82}} 
+\index{VAbstractLayoutDialog@{VAbstractLayoutDialog}!pageFormatNames@{pageFormatNames}}
+\index{pageFormatNames@{pageFormatNames}!VAbstractLayoutDialog@{VAbstractLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{pageFormatNames}{pageFormatNames}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}{VAbstract\+Layout\+Dialog\+::\+Formats\+Vector}} VAbstract\+Layout\+Dialog\+::page\+Format\+Names\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{        \mbox{\hyperlink{classVAbstractLayoutDialog_a5533e41817b10ba43a248b2eb1ed2ce8}{VAbstractLayoutDialog::FormatsVector}} () << QLatin1String(\textcolor{stringliteral}{"{}A0"{}})}
+\DoxyCodeLine{                                               << QLatin1String(\textcolor{stringliteral}{"{}A1"{}})}
+\DoxyCodeLine{                                               << QLatin1String(\textcolor{stringliteral}{"{}A2"{}})}
+\DoxyCodeLine{                                               << QLatin1String(\textcolor{stringliteral}{"{}A3"{}})}
+\DoxyCodeLine{                                               << QLatin1String(\textcolor{stringliteral}{"{}A4"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Letter"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Legal"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Roll 24in"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Roll 30in"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Roll 36in"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Roll 42in"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Roll 44in"{}})}
+\DoxyCodeLine{                                               << \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{QApplication::translate}}(\textcolor{stringliteral}{"{}DialogLayoutSettings"{}}, \textcolor{stringliteral}{"{}Custom"{}})}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/dialogs/\mbox{\hyperlink{vabstractlayoutdialog_8h}{vabstractlayoutdialog.\+h}}\item 
+src/app/seamly2d/dialogs/\mbox{\hyperlink{vabstractlayoutdialog_8cpp}{vabstractlayoutdialog.\+cpp}}\end{DoxyCompactItemize}

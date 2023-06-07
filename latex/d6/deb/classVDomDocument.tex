@@ -1,0 +1,556 @@
+\hypertarget{classVDomDocument}{}\doxysection{VDom\+Document Class Reference}
+\label{classVDomDocument}\index{VDomDocument@{VDomDocument}}
+
+
+The \mbox{\hyperlink{classVDomDocument}{VDom\+Document}} class represents a Seamly2D document (.val file).  
+
+
+
+
+{\ttfamily \#include $<$vdomdocument.\+h$>$}
+
+Inheritance diagram for VDom\+Document\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.395210cm]{d6/deb/classVDomDocument}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVDomDocument_aa8b4fdcb86054c08ab19b798f66e6a7e}{VDom\+Document}} ()
+\item 
+virtual \mbox{\hyperlink{classVDomDocument_ac58c6137f03f55806d8a7b3e31c331bb}{$\sim$\+VDom\+Document}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+QDom\+Element \mbox{\hyperlink{classVDomDocument_a035e4a009f8f79f3f8e04e8aa43d56dc}{element\+By\+Id}} (quint32 id, const QString \&tag\+Name=QString())
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classVDomDocument_abfb7369f8b0ebd8da3625a8c347cc2bc}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const T \&value) const
+\begin{DoxyCompactList}\small\item\em Set\+Attribute set attribute in pattern file. Replace \char`\"{},\char`\"{} by \char`\"{}.\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{classVDomDocument_a3f82692162034f217189501368370f65}{MUnit}} () const
+\item 
+virtual void \mbox{\hyperlink{classVDomDocument_ad316cde19d3383a783936544c822b750}{set\+XMLContent}} (const QString \&file\+Name)
+\item 
+virtual bool \mbox{\hyperlink{classVDomDocument_aeaf681ea2c0d1efb06557f18e00f49c6}{Save\+Document}} (const QString \&file\+Name, QString \&error)
+\item 
+QString \mbox{\hyperlink{classVDomDocument_a278a792a3d216ccd935a4fd163d0d0a8}{Major}} () const
+\item 
+QString \mbox{\hyperlink{classVDomDocument_a595506656459aaf6825c1cab2c9b7238}{Minor}} () const
+\item 
+QString \mbox{\hyperlink{classVDomDocument_aae68e283291deaac9ea862c0ada06c06}{Patch}} () const
+\item 
+QDom\+Node \mbox{\hyperlink{classVDomDocument_ac01614ab160d642abb95fdf1dc90f978}{Parent\+Node\+By\+Id}} (const quint32 \&node\+Id)
+\item 
+QDom\+Element \mbox{\hyperlink{classVDomDocument_a6b5a395b56c42f809d7803f61777cead}{Clone\+Node\+By\+Id}} (const quint32 \&node\+Id)
+\item 
+QDom\+Element \mbox{\hyperlink{classVDomDocument_ab41f21975c59bfa7ca249cb3fd95e367}{Node\+By\+Id}} (const quint32 \&node\+Id)
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \mbox{\hyperlink{classVDomDocument_af3e96f8b2c46248b00e5fb4a2775a4e9}{Get\+Label\+Template}} (const QDom\+Element \&element) const
+\item 
+void \mbox{\hyperlink{classVDomDocument_a0adad76775f408c27ded217805c2b6a2}{Set\+Label\+Template}} (QDom\+Element \&element, const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \&lines)
+\item 
+template$<$$>$ void \mbox{\hyperlink{classVDomDocument_afa0a692b1eae58a9488712f1d6004b59}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const QString \&value) const
+\item 
+template$<$$>$ void \mbox{\hyperlink{classVDomDocument_a843909d075d1c079ee63e7e7c7b61d94}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const bool \&value) const
+\item 
+template$<$$>$ void \mbox{\hyperlink{classVDomDocument_a9317baedd26a41080b009402eeb30ae5}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \&value) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static quint32 \mbox{\hyperlink{classVDomDocument_a14e129a4d0d66b87adb48c38e46c0f37}{Get\+Parametr\+UInt}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value)
+\begin{DoxyCompactList}\small\item\em Returns the long long value of the given attribute. RENAME\+: Get\+Parameter\+Long\+Long? \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classVDomDocument_a882aaf932772cc4357a29822a0bb36dc}{get\+Parameter\+Bool}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value)
+\item 
+static \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \mbox{\hyperlink{classVDomDocument_aeb472b427a54a831c69cb9dd3ffb3d87}{Get\+Parametr\+Usage}} (const QDom\+Element \&dom\+Element, const QString \&name)
+\item 
+static void \mbox{\hyperlink{classVDomDocument_aabb51f8c078c47bcc31a75a98d5f0fa4}{Set\+Parametr\+Usage}} (QDom\+Element \&dom\+Element, const QString \&name, const \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \&value)
+\item 
+static QString \mbox{\hyperlink{classVDomDocument_a0529f100ec3ca1152a296f9cc59ef7f3}{Get\+Parametr\+String}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value=QString())
+\begin{DoxyCompactList}\small\item\em Returns the string value of the given attribute. RENAME\+: see above. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{classVDomDocument_a2267524a506a06da9664911c0f0760ea}{Get\+Parametr\+Empty\+String}} (const QDom\+Element \&dom\+Element, const QString \&name)
+\item 
+static qreal \mbox{\hyperlink{classVDomDocument_ab2491ade24937b5eb6d11244f1dda895}{Get\+Parametr\+Double}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value)
+\begin{DoxyCompactList}\small\item\em Returns the double value of the given attribute. \end{DoxyCompactList}\item 
+static quint32 \mbox{\hyperlink{classVDomDocument_af5620d4ba0735e6ccf747d5dc85e377a}{get\+Parameter\+Id}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em get\+Parameter\+Id return value id attribute. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classVDomDocument_a49eb5f686268f8ecab6faab3ee4ae1f0}{Validate\+XML}} (const QString \&schema, const QString \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Validate\+XML validate xml file by xsd schema. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{classVDomDocument_a6012d50aa31b2aafbf513a89c1320daf}{Units\+Help\+String}} ()
+\item 
+static void \mbox{\hyperlink{classVDomDocument_ae93f9e4a2d9b64ad6433886358b105d9}{Remove\+All\+Children}} (QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em Remove\+All\+Children remove all children from file. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classVDomDocument_ab7e2c541d5f3b0a74e88de301223f4cd}{Safe\+Copy}} (const QString \&source, const QString \&destination, QString \&error)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_ad06b8e03afd3169050953c4b4cfa758e}{Attr\+Id}} = QString\+Literal(\char`\"{}id\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_ad9015d6f1665acce0a77172006150120}{Attr\+Text}} = QString\+Literal(\char`\"{}text\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_a0c5421eaa5675ae09a895f78d87026eb}{Attr\+Bold}} = QString\+Literal(\char`\"{}bold\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_a027f643caba00844bf80a64d352efb8f}{Attr\+Italic}} = QString\+Literal(\char`\"{}italic\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_a3190cc38f15720c8204d00716fad8469}{Attr\+Alignment}} = QString\+Literal(\char`\"{}alignment\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_af7c022eef84545253b696838417963e2}{Attr\+FSIncrement}} = QString\+Literal(\char`\"{}sf\+Increment\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_ab8e9f3f325f6e16787f1729059fd3f14}{Tag\+Version}} = QString\+Literal(\char`\"{}version\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_abcef727e02159612a30a9363a04158e4}{Tag\+Unit}} = QString\+Literal(\char`\"{}unit\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{classVDomDocument_ad4777ec1d5af22e6fe90565e29e73872}{Tag\+Line}} = QString\+Literal(\char`\"{}line\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classVDomDocument_a988591c04a3fcf92472ad456a82c1e63}{set\+Tag\+Text}} (const QString \&tag, const QString \&text)
+\item 
+bool \mbox{\hyperlink{classVDomDocument_a553f050145886b403697c0a2b43b0f05}{set\+Tag\+Text}} (const QDom\+Element \&dom\+Element, const QString \&text)
+\item 
+QString \mbox{\hyperlink{classVDomDocument_abd6e5a84e0b9db4e16e1e49062565cc5}{Unique\+Tag\+Text}} (const QString \&tag\+Name, const QString \&def\+Val=QString()) const
+\item 
+void \mbox{\hyperlink{classVDomDocument_a8dd4b44bf243c35092c40916985f894f}{Test\+Unique\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Test\+Unique\+Id test exist unique id in pattern file. Each id must be unique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVDomDocument_a7281671f7a4a0bb0465d62b150cd00a2}{Collect\+Id}} (const QDom\+Element \&node, \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&vector) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classVDomDocument_a59c47296c3a1e728d95dc125b12014d5}{find}} (const QDom\+Element \&node, quint32 id)
+\begin{DoxyCompactList}\small\item\em Find element by id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVDomDocument_a86fe2212ec54746e3e0b01dbb676e130}{Save\+Canonical\+XML}} (QIODevice $\ast$file, int indent, QString \&error) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQHash}{QHash}}$<$ quint32, QDom\+Element $>$ \mbox{\hyperlink{classVDomDocument_aa7bdee99abde0346b9fe3f94b7a03449}{map}}
+\begin{DoxyCompactList}\small\item\em Map used for finding element by id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVDomDocument}{VDom\+Document}} class represents a Seamly2D document (.val file). 
+
+A Seamly2D document describes the construction of a sewing pattern. The information is stored in XML format. By parsing a \mbox{\hyperlink{classVDomDocument}{VDom\+Document}}, the contained pattern is rendered to a Seamly2D graphics scene (\mbox{\hyperlink{classVMainGraphicsScene}{VMain\+Graphics\+Scene}}).
+
+A sewing pattern consists of zero or more increments and one or more pattern pieces.
+
+An increment is an auxiliary variable that is calculated from regular measurement variables (that belong to the multisize measurements table). Increments are used to create a graduation schema for the sewing pattern.
+
+A pattern piece contains 1) auxiliary pattern construction elements (calculation), 2) pattern construction elements (modeling), and 3) special markers, e.\+g. seam allowances (details). Of these, 2) and 3) are visible in the final pattern (draw mode \textquotesingle{}Modeling\textquotesingle{}), 1) is only displayed when editing (draw mode \textquotesingle{}Calculation\textquotesingle{}) the pattern. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVDomDocument_aa8b4fdcb86054c08ab19b798f66e6a7e}\label{classVDomDocument_aa8b4fdcb86054c08ab19b798f66e6a7e}} 
+\index{VDomDocument@{VDomDocument}!VDomDocument@{VDomDocument}}
+\index{VDomDocument@{VDomDocument}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{VDomDocument()}{VDomDocument()}}
+{\footnotesize\ttfamily VDom\+Document\+::\+VDom\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDomDocument_ac58c6137f03f55806d8a7b3e31c331bb}\label{classVDomDocument_ac58c6137f03f55806d8a7b3e31c331bb}} 
+\index{VDomDocument@{VDomDocument}!````~VDomDocument@{$\sim$VDomDocument}}
+\index{````~VDomDocument@{$\sim$VDomDocument}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{$\sim$VDomDocument()}{~VDomDocument()}}
+{\footnotesize\ttfamily virtual VDom\+Document\+::$\sim$\+VDom\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVDomDocument_a6b5a395b56c42f809d7803f61777cead}\label{classVDomDocument_a6b5a395b56c42f809d7803f61777cead}} 
+\index{VDomDocument@{VDomDocument}!CloneNodeById@{CloneNodeById}}
+\index{CloneNodeById@{CloneNodeById}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{CloneNodeById()}{CloneNodeById()}}
+{\footnotesize\ttfamily QDom\+Element VDom\+Document\+::\+Clone\+Node\+By\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{node\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDomDocument_a7281671f7a4a0bb0465d62b150cd00a2}\label{classVDomDocument_a7281671f7a4a0bb0465d62b150cd00a2}} 
+\index{VDomDocument@{VDomDocument}!CollectId@{CollectId}}
+\index{CollectId@{CollectId}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{CollectId()}{CollectId()}}
+{\footnotesize\ttfamily void VDom\+Document\+::\+Collect\+Id (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{node,  }\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&}]{vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVDomDocument_a035e4a009f8f79f3f8e04e8aa43d56dc}\label{classVDomDocument_a035e4a009f8f79f3f8e04e8aa43d56dc}} 
+\index{VDomDocument@{VDomDocument}!elementById@{elementById}}
+\index{elementById@{elementById}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{elementById()}{elementById()}}
+{\footnotesize\ttfamily QDom\+Element VDom\+Document\+::element\+By\+Id (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QString \&}]{tag\+Name = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDomDocument_a59c47296c3a1e728d95dc125b12014d5}\label{classVDomDocument_a59c47296c3a1e728d95dc125b12014d5}} 
+\index{VDomDocument@{VDomDocument}!find@{find}}
+\index{find@{find}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily bool VDom\+Document\+::find (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{node,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Find element by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & node \\
+\hline
+{\em id} & id value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVDomDocument_af3e96f8b2c46248b00e5fb4a2775a4e9}\label{classVDomDocument_af3e96f8b2c46248b00e5fb4a2775a4e9}} 
+\index{VDomDocument@{VDomDocument}!GetLabelTemplate@{GetLabelTemplate}}
+\index{GetLabelTemplate@{GetLabelTemplate}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{GetLabelTemplate()}{GetLabelTemplate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ VDom\+Document\+::\+Get\+Label\+Template (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{element }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDomDocument_a882aaf932772cc4357a29822a0bb36dc}\label{classVDomDocument_a882aaf932772cc4357a29822a0bb36dc}} 
+\index{VDomDocument@{VDomDocument}!getParameterBool@{getParameterBool}}
+\index{getParameterBool@{getParameterBool}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{getParameterBool()}{getParameterBool()}}
+{\footnotesize\ttfamily bool VDom\+Document\+::get\+Parameter\+Bool (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const QString \&}]{def\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_af5620d4ba0735e6ccf747d5dc85e377a}\label{classVDomDocument_af5620d4ba0735e6ccf747d5dc85e377a}} 
+\index{VDomDocument@{VDomDocument}!getParameterId@{getParameterId}}
+\index{getParameterId@{getParameterId}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{getParameterId()}{getParameterId()}}
+{\footnotesize\ttfamily quint32 VDom\+Document\+::get\+Parameter\+Id (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get\+Parameter\+Id return value id attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVDomDocument_ab2491ade24937b5eb6d11244f1dda895}\label{classVDomDocument_ab2491ade24937b5eb6d11244f1dda895}} 
+\index{VDomDocument@{VDomDocument}!GetParametrDouble@{GetParametrDouble}}
+\index{GetParametrDouble@{GetParametrDouble}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{GetParametrDouble()}{GetParametrDouble()}}
+{\footnotesize\ttfamily qreal VDom\+Document\+::\+Get\+Parametr\+Double (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const QString \&}]{def\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the double value of the given attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree \\
+\hline
+{\em name} & attribute name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVDomDocument_a2267524a506a06da9664911c0f0760ea}\label{classVDomDocument_a2267524a506a06da9664911c0f0760ea}} 
+\index{VDomDocument@{VDomDocument}!GetParametrEmptyString@{GetParametrEmptyString}}
+\index{GetParametrEmptyString@{GetParametrEmptyString}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{GetParametrEmptyString()}{GetParametrEmptyString()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Get\+Parametr\+Empty\+String (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a0529f100ec3ca1152a296f9cc59ef7f3}\label{classVDomDocument_a0529f100ec3ca1152a296f9cc59ef7f3}} 
+\index{VDomDocument@{VDomDocument}!GetParametrString@{GetParametrString}}
+\index{GetParametrString@{GetParametrString}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{GetParametrString()}{GetParametrString()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Get\+Parametr\+String (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const QString \&}]{def\+Value = {\ttfamily QString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the string value of the given attribute. RENAME\+: see above. 
+
+if attribute empty return default value. If default value empty too throw exception. \begin{DoxyReturn}{Returns}
+attribute value 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classVExceptionEmptyParameter}{VException\+Empty\+Parameter}}} & when attribute is empty \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classVDomDocument_a14e129a4d0d66b87adb48c38e46c0f37}\label{classVDomDocument_a14e129a4d0d66b87adb48c38e46c0f37}} 
+\index{VDomDocument@{VDomDocument}!GetParametrUInt@{GetParametrUInt}}
+\index{GetParametrUInt@{GetParametrUInt}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{GetParametrUInt()}{GetParametrUInt()}}
+{\footnotesize\ttfamily quint32 VDom\+Document\+::\+Get\+Parametr\+UInt (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const QString \&}]{def\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Returns the long long value of the given attribute. RENAME\+: Get\+Parameter\+Long\+Long? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree \\
+\hline
+{\em name} & attribute name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+long long value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVDomDocument_aeb472b427a54a831c69cb9dd3ffb3d87}\label{classVDomDocument_aeb472b427a54a831c69cb9dd3ffb3d87}} 
+\index{VDomDocument@{VDomDocument}!GetParametrUsage@{GetParametrUsage}}
+\index{GetParametrUsage@{GetParametrUsage}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{GetParametrUsage()}{GetParametrUsage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} VDom\+Document\+::\+Get\+Parametr\+Usage (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a278a792a3d216ccd935a4fd163d0d0a8}\label{classVDomDocument_a278a792a3d216ccd935a4fd163d0d0a8}} 
+\index{VDomDocument@{VDomDocument}!Major@{Major}}
+\index{Major@{Major}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{Major()}{Major()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Major (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDomDocument_a595506656459aaf6825c1cab2c9b7238}\label{classVDomDocument_a595506656459aaf6825c1cab2c9b7238}} 
+\index{VDomDocument@{VDomDocument}!Minor@{Minor}}
+\index{Minor@{Minor}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{Minor()}{Minor()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Minor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDomDocument_a3f82692162034f217189501368370f65}\label{classVDomDocument_a3f82692162034f217189501368370f65}} 
+\index{VDomDocument@{VDomDocument}!MUnit@{MUnit}}
+\index{MUnit@{MUnit}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{MUnit()}{MUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} VDom\+Document\+::\+MUnit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDomDocument_ab41f21975c59bfa7ca249cb3fd95e367}\label{classVDomDocument_ab41f21975c59bfa7ca249cb3fd95e367}} 
+\index{VDomDocument@{VDomDocument}!NodeById@{NodeById}}
+\index{NodeById@{NodeById}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{NodeById()}{NodeById()}}
+{\footnotesize\ttfamily QDom\+Element VDom\+Document\+::\+Node\+By\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{node\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDomDocument_ac01614ab160d642abb95fdf1dc90f978}\label{classVDomDocument_ac01614ab160d642abb95fdf1dc90f978}} 
+\index{VDomDocument@{VDomDocument}!ParentNodeById@{ParentNodeById}}
+\index{ParentNodeById@{ParentNodeById}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{ParentNodeById()}{ParentNodeById()}}
+{\footnotesize\ttfamily QDom\+Node VDom\+Document\+::\+Parent\+Node\+By\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{node\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDomDocument_aae68e283291deaac9ea862c0ada06c06}\label{classVDomDocument_aae68e283291deaac9ea862c0ada06c06}} 
+\index{VDomDocument@{VDomDocument}!Patch@{Patch}}
+\index{Patch@{Patch}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{Patch()}{Patch()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Patch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVDomDocument_ae93f9e4a2d9b64ad6433886358b105d9}\label{classVDomDocument_ae93f9e4a2d9b64ad6433886358b105d9}} 
+\index{VDomDocument@{VDomDocument}!RemoveAllChildren@{RemoveAllChildren}}
+\index{RemoveAllChildren@{RemoveAllChildren}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{RemoveAllChildren()}{RemoveAllChildren()}}
+{\footnotesize\ttfamily void VDom\+Document\+::\+Remove\+All\+Children (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove\+All\+Children remove all children from file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVDomDocument_ab7e2c541d5f3b0a74e88de301223f4cd}\label{classVDomDocument_ab7e2c541d5f3b0a74e88de301223f4cd}} 
+\index{VDomDocument@{VDomDocument}!SafeCopy@{SafeCopy}}
+\index{SafeCopy@{SafeCopy}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SafeCopy()}{SafeCopy()}}
+{\footnotesize\ttfamily bool VDom\+Document\+::\+Safe\+Copy (\begin{DoxyParamCaption}\item[{const QString \&}]{source,  }\item[{const QString \&}]{destination,  }\item[{QString \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a86fe2212ec54746e3e0b01dbb676e130}\label{classVDomDocument_a86fe2212ec54746e3e0b01dbb676e130}} 
+\index{VDomDocument@{VDomDocument}!SaveCanonicalXML@{SaveCanonicalXML}}
+\index{SaveCanonicalXML@{SaveCanonicalXML}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SaveCanonicalXML()}{SaveCanonicalXML()}}
+{\footnotesize\ttfamily bool VDom\+Document\+::\+Save\+Canonical\+XML (\begin{DoxyParamCaption}\item[{QIODevice $\ast$}]{file,  }\item[{int}]{indent,  }\item[{QString \&}]{error }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVDomDocument_aeaf681ea2c0d1efb06557f18e00f49c6}\label{classVDomDocument_aeaf681ea2c0d1efb06557f18e00f49c6}} 
+\index{VDomDocument@{VDomDocument}!SaveDocument@{SaveDocument}}
+\index{SaveDocument@{SaveDocument}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SaveDocument()}{SaveDocument()}}
+{\footnotesize\ttfamily bool VDom\+Document\+::\+Save\+Document (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{QString \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVMeasurements_ada3399deb15a5f272dfa4fa7bdcdf6f3}{VMeasurements}}, and \mbox{\hyperlink{classVPattern_acc2c7ce746bd15e5b0c26b3973e6e731}{VPattern}}.
+
+\mbox{\Hypertarget{classVDomDocument_a843909d075d1c079ee63e7e7c7b61d94}\label{classVDomDocument_a843909d075d1c079ee63e7e7c7b61d94}} 
+\index{VDomDocument@{VDomDocument}!SetAttribute@{SetAttribute}}
+\index{SetAttribute@{SetAttribute}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SetAttribute()}{SetAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void VDom\+Document\+::\+Set\+Attribute (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const bool \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classVDomDocument_a9317baedd26a41080b009402eeb30ae5}\label{classVDomDocument_a9317baedd26a41080b009402eeb30ae5}} 
+\index{VDomDocument@{VDomDocument}!SetAttribute@{SetAttribute}}
+\index{SetAttribute@{SetAttribute}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SetAttribute()}{SetAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void VDom\+Document\+::\+Set\+Attribute (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classVDomDocument_afa0a692b1eae58a9488712f1d6004b59}\label{classVDomDocument_afa0a692b1eae58a9488712f1d6004b59}} 
+\index{VDomDocument@{VDomDocument}!SetAttribute@{SetAttribute}}
+\index{SetAttribute@{SetAttribute}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SetAttribute()}{SetAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void VDom\+Document\+::\+Set\+Attribute (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const QString \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classVDomDocument_abfb7369f8b0ebd8da3625a8c347cc2bc}\label{classVDomDocument_abfb7369f8b0ebd8da3625a8c347cc2bc}} 
+\index{VDomDocument@{VDomDocument}!SetAttribute@{SetAttribute}}
+\index{SetAttribute@{SetAttribute}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SetAttribute()}{SetAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VDom\+Document\+::\+Set\+Attribute (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const T \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set\+Attribute set attribute in pattern file. Replace \char`\"{},\char`\"{} by \char`\"{}.\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & element in xml tree. \\
+\hline
+{\em name} & name of attribute. \\
+\hline
+{\em value} & value of attribute. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVDomDocument_a0adad76775f408c27ded217805c2b6a2}\label{classVDomDocument_a0adad76775f408c27ded217805c2b6a2}} 
+\index{VDomDocument@{VDomDocument}!SetLabelTemplate@{SetLabelTemplate}}
+\index{SetLabelTemplate@{SetLabelTemplate}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SetLabelTemplate()}{SetLabelTemplate()}}
+{\footnotesize\ttfamily void VDom\+Document\+::\+Set\+Label\+Template (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{element,  }\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \&}]{lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVDomDocument_aabb51f8c078c47bcc31a75a98d5f0fa4}\label{classVDomDocument_aabb51f8c078c47bcc31a75a98d5f0fa4}} 
+\index{VDomDocument@{VDomDocument}!SetParametrUsage@{SetParametrUsage}}
+\index{SetParametrUsage@{SetParametrUsage}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{SetParametrUsage()}{SetParametrUsage()}}
+{\footnotesize\ttfamily void VDom\+Document\+::\+Set\+Parametr\+Usage (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{name,  }\item[{const \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a553f050145886b403697c0a2b43b0f05}\label{classVDomDocument_a553f050145886b403697c0a2b43b0f05}} 
+\index{VDomDocument@{VDomDocument}!setTagText@{setTagText}}
+\index{setTagText@{setTagText}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{setTagText()}{setTagText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool VDom\+Document\+::set\+Tag\+Text (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element,  }\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVDomDocument_a988591c04a3fcf92472ad456a82c1e63}\label{classVDomDocument_a988591c04a3fcf92472ad456a82c1e63}} 
+\index{VDomDocument@{VDomDocument}!setTagText@{setTagText}}
+\index{setTagText@{setTagText}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{setTagText()}{setTagText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool VDom\+Document\+::set\+Tag\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{tag,  }\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVDomDocument_ad316cde19d3383a783936544c822b750}\label{classVDomDocument_ad316cde19d3383a783936544c822b750}} 
+\index{VDomDocument@{VDomDocument}!setXMLContent@{setXMLContent}}
+\index{setXMLContent@{setXMLContent}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{setXMLContent()}{setXMLContent()}}
+{\footnotesize\ttfamily void VDom\+Document\+::set\+XMLContent (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classVMeasurements_acf6c8e84b2765df2d098bf2faa9a6d81}{VMeasurements}}, and \mbox{\hyperlink{classVPattern_ac760395c10d311cf1fc63e9591e70383}{VPattern}}.
+
+\mbox{\Hypertarget{classVDomDocument_a8dd4b44bf243c35092c40916985f894f}\label{classVDomDocument_a8dd4b44bf243c35092c40916985f894f}} 
+\index{VDomDocument@{VDomDocument}!TestUniqueId@{TestUniqueId}}
+\index{TestUniqueId@{TestUniqueId}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{TestUniqueId()}{TestUniqueId()}}
+{\footnotesize\ttfamily void VDom\+Document\+::\+Test\+Unique\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Test\+Unique\+Id test exist unique id in pattern file. Each id must be unique. 
+
+\mbox{\Hypertarget{classVDomDocument_abd6e5a84e0b9db4e16e1e49062565cc5}\label{classVDomDocument_abd6e5a84e0b9db4e16e1e49062565cc5}} 
+\index{VDomDocument@{VDomDocument}!UniqueTagText@{UniqueTagText}}
+\index{UniqueTagText@{UniqueTagText}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{UniqueTagText()}{UniqueTagText()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Unique\+Tag\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{tag\+Name,  }\item[{const QString \&}]{def\+Val = {\ttfamily QString()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVDomDocument_a6012d50aa31b2aafbf513a89c1320daf}\label{classVDomDocument_a6012d50aa31b2aafbf513a89c1320daf}} 
+\index{VDomDocument@{VDomDocument}!UnitsHelpString@{UnitsHelpString}}
+\index{UnitsHelpString@{UnitsHelpString}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{UnitsHelpString()}{UnitsHelpString()}}
+{\footnotesize\ttfamily QString VDom\+Document\+::\+Units\+Help\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a49eb5f686268f8ecab6faab3ee4ae1f0}\label{classVDomDocument_a49eb5f686268f8ecab6faab3ee4ae1f0}} 
+\index{VDomDocument@{VDomDocument}!ValidateXML@{ValidateXML}}
+\index{ValidateXML@{ValidateXML}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{ValidateXML()}{ValidateXML()}}
+{\footnotesize\ttfamily void VDom\+Document\+::\+Validate\+XML (\begin{DoxyParamCaption}\item[{const QString \&}]{schema,  }\item[{const QString \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Validate\+XML validate xml file by xsd schema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em schema} & path to schema file. \\
+\hline
+{\em file\+Name} & name of xml file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVDomDocument_a3190cc38f15720c8204d00716fad8469}\label{classVDomDocument_a3190cc38f15720c8204d00716fad8469}} 
+\index{VDomDocument@{VDomDocument}!AttrAlignment@{AttrAlignment}}
+\index{AttrAlignment@{AttrAlignment}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{AttrAlignment}{AttrAlignment}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Attr\+Alignment = QString\+Literal(\char`\"{}alignment\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a0c5421eaa5675ae09a895f78d87026eb}\label{classVDomDocument_a0c5421eaa5675ae09a895f78d87026eb}} 
+\index{VDomDocument@{VDomDocument}!AttrBold@{AttrBold}}
+\index{AttrBold@{AttrBold}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{AttrBold}{AttrBold}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Attr\+Bold = QString\+Literal(\char`\"{}bold\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_af7c022eef84545253b696838417963e2}\label{classVDomDocument_af7c022eef84545253b696838417963e2}} 
+\index{VDomDocument@{VDomDocument}!AttrFSIncrement@{AttrFSIncrement}}
+\index{AttrFSIncrement@{AttrFSIncrement}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{AttrFSIncrement}{AttrFSIncrement}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Attr\+FSIncrement = QString\+Literal(\char`\"{}sf\+Increment\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_ad06b8e03afd3169050953c4b4cfa758e}\label{classVDomDocument_ad06b8e03afd3169050953c4b4cfa758e}} 
+\index{VDomDocument@{VDomDocument}!AttrId@{AttrId}}
+\index{AttrId@{AttrId}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{AttrId}{AttrId}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Attr\+Id = QString\+Literal(\char`\"{}id\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_a027f643caba00844bf80a64d352efb8f}\label{classVDomDocument_a027f643caba00844bf80a64d352efb8f}} 
+\index{VDomDocument@{VDomDocument}!AttrItalic@{AttrItalic}}
+\index{AttrItalic@{AttrItalic}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{AttrItalic}{AttrItalic}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Attr\+Italic = QString\+Literal(\char`\"{}italic\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_ad9015d6f1665acce0a77172006150120}\label{classVDomDocument_ad9015d6f1665acce0a77172006150120}} 
+\index{VDomDocument@{VDomDocument}!AttrText@{AttrText}}
+\index{AttrText@{AttrText}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{AttrText}{AttrText}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Attr\+Text = QString\+Literal(\char`\"{}text\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_aa7bdee99abde0346b9fe3f94b7a03449}\label{classVDomDocument_aa7bdee99abde0346b9fe3f94b7a03449}} 
+\index{VDomDocument@{VDomDocument}!map@{map}}
+\index{map@{map}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQHash}{QHash}}$<$quint32, QDom\+Element$>$ VDom\+Document\+::map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map used for finding element by id. 
+
+\mbox{\Hypertarget{classVDomDocument_ad4777ec1d5af22e6fe90565e29e73872}\label{classVDomDocument_ad4777ec1d5af22e6fe90565e29e73872}} 
+\index{VDomDocument@{VDomDocument}!TagLine@{TagLine}}
+\index{TagLine@{TagLine}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{TagLine}{TagLine}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Tag\+Line = QString\+Literal(\char`\"{}line\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_abcef727e02159612a30a9363a04158e4}\label{classVDomDocument_abcef727e02159612a30a9363a04158e4}} 
+\index{VDomDocument@{VDomDocument}!TagUnit@{TagUnit}}
+\index{TagUnit@{TagUnit}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{TagUnit}{TagUnit}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Tag\+Unit = QString\+Literal(\char`\"{}unit\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVDomDocument_ab8e9f3f325f6e16787f1729059fd3f14}\label{classVDomDocument_ab8e9f3f325f6e16787f1729059fd3f14}} 
+\index{VDomDocument@{VDomDocument}!TagVersion@{TagVersion}}
+\index{TagVersion@{TagVersion}!VDomDocument@{VDomDocument}}
+\doxysubsubsection{\texorpdfstring{TagVersion}{TagVersion}}
+{\footnotesize\ttfamily const QString VDom\+Document\+::\+Tag\+Version = QString\+Literal(\char`\"{}version\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/ifc/xml/\mbox{\hyperlink{vdomdocument_8h}{vdomdocument.\+h}}\item 
+src/libs/ifc/xml/\mbox{\hyperlink{vdomdocument_8cpp}{vdomdocument.\+cpp}}\end{DoxyCompactItemize}

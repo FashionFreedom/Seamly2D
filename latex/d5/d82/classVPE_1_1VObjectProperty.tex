@@ -1,0 +1,242 @@
+\hypertarget{classVPE_1_1VObjectProperty}{}\doxysection{VPE\+::VObject\+Property Class Reference}
+\label{classVPE_1_1VObjectProperty}\index{VPE::VObjectProperty@{VPE::VObjectProperty}}
+
+
+{\ttfamily \#include $<$vobjectproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::VObject\+Property\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d5/d82/classVPE_1_1VObjectProperty}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VObjectProperty_ac04ac75e0891bd8af2a66dd1055b4c9a}{current\+Index\+Changed}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVPE_1_1VObjectProperty_a1ecc67117b5a18b1c4c014e35eaf5bf7}{VObject\+Property}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVPE_1_1VObjectProperty_a1bcb0a03b4661f109119fb22291ccb1a}{$\sim$\+VObject\+Property}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VObjectProperty_a8543725e9017a415d1fdbd95551b47ce}{data}} (int column=\mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{classVPE_1_1VObjectProperty_af5cc2ff042091dbd84282e5c1352cf6a}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&options, const QAbstract\+Item\+Delegate $\ast$delegate) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{classVPE_1_1VObjectProperty_ac1bffef05b1d0a48d5ea9f20d178e870}{get\+Editor\+Data}} (const QWidget $\ast$editor) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVPE_1_1VObjectProperty_ae5bb72eca498ff213c0a39d5e3d5205b}{set\+Objects\+List}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \&objects)
+\begin{DoxyCompactList}\small\item\em Sets the objects list. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{classVPE_1_1VObjectProperty_afeac054265232b7cc450741919fd54df}{get\+Objects}} () const
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVPE_1_1VObjectProperty_ab1cfee8ea16dd279de3fe87452ad0753}{set\+Value}} (const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the value of the property. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{classVPE_1_1VObjectProperty_a642a57c933656c4b557d386c594f6e94}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$ \mbox{\hyperlink{classVPE_1_1VObjectProperty_a694738a96a526650b2783cdf4f4eefd4}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$container=nullptr) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classVPE_1_1VObjectProperty_a40c15cd80771ef55b6c1c256188d1021}{index\+Of\+Object}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \&objects, const QString \&object)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVPE_1_1VObjectProperty_af41256410c14c1214950cdb427f66c92}{fill\+List\+Items}} (QCombo\+Box $\ast$box, const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \&list) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{classVPE_1_1VObjectProperty_a086841966edb304698087b8411865e12}{m\+\_\+objects}}
+\begin{DoxyCompactList}\small\item\em The list of possible objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ QString $>$ \mbox{\hyperlink{classVPE_1_1VObjectProperty_ad2c1a06a4ebfbedf8a66c6b8bdfeb065}{m\+\_\+index\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a1ecc67117b5a18b1c4c014e35eaf5bf7}\label{classVPE_1_1VObjectProperty_a1ecc67117b5a18b1c4c014e35eaf5bf7}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!VObjectProperty@{VObjectProperty}}
+\index{VObjectProperty@{VObjectProperty}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{VObjectProperty()}{VObjectProperty()}}
+{\footnotesize\ttfamily VPE\+::\+VObject\+Property\+::\+VObject\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a1bcb0a03b4661f109119fb22291ccb1a}\label{classVPE_1_1VObjectProperty_a1bcb0a03b4661f109119fb22291ccb1a}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!````~VObjectProperty@{$\sim$VObjectProperty}}
+\index{````~VObjectProperty@{$\sim$VObjectProperty}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{$\sim$VObjectProperty()}{~VObjectProperty()}}
+{\footnotesize\ttfamily virtual VPE\+::\+VObject\+Property\+::$\sim$\+VObject\+Property (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a694738a96a526650b2783cdf4f4eefd4}\label{classVPE_1_1VObjectProperty_a694738a96a526650b2783cdf4f4eefd4}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+VObject\+Property\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} $\ast$}]{container = {\ttfamily nullptr} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{classVPE_1_1VProperty}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a03865ea193d5465fea60bb7f29ca02bf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_af5cc2ff042091dbd84282e5c1352cf6a}\label{classVPE_1_1VObjectProperty_af5cc2ff042091dbd84282e5c1352cf6a}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VPE\+::\+VObject\+Property\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{options,  }\item[{const QAbstract\+Item\+Delegate $\ast$}]{delegate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. 
+
+Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one 
+\begin{DoxyParams}{Parameters}
+{\em parent} & The widget to which the editor will be added as a child \textbackslash{}options Render options \textbackslash{}delegate A pointer to the QAbstract\+Item\+Delegate requesting the editor. This can be used to connect signals and slots. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_aea7526e6641c9cb369cc8234881df935}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_ac04ac75e0891bd8af2a66dd1055b4c9a}\label{classVPE_1_1VObjectProperty_ac04ac75e0891bd8af2a66dd1055b4c9a}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!currentIndexChanged@{currentIndexChanged}}
+\index{currentIndexChanged@{currentIndexChanged}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{currentIndexChanged}{currentIndexChanged}}
+{\footnotesize\ttfamily void VPE\+::\+VObject\+Property\+::current\+Index\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a8543725e9017a415d1fdbd95551b47ce}\label{classVPE_1_1VObjectProperty_a8543725e9017a415d1fdbd95551b47ce}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!data@{data}}
+\index{data@{data}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VObject\+Property\+::data (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{classVPE_1_1VProperty_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}},  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the data how it should be displayed. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a21a184d546b92bb2c553ebf7d9d58448}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_af41256410c14c1214950cdb427f66c92}\label{classVPE_1_1VObjectProperty_af41256410c14c1214950cdb427f66c92}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!fillListItems@{fillListItems}}
+\index{fillListItems@{fillListItems}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{fillListItems()}{fillListItems()}}
+{\footnotesize\ttfamily void VPE\+::\+VObject\+Property\+::fill\+List\+Items (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \&}]{list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_ac1bffef05b1d0a48d5ea9f20d178e870}\label{classVPE_1_1VObjectProperty_ac1bffef05b1d0a48d5ea9f20d178e870}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!getEditorData@{getEditorData}}
+\index{getEditorData@{getEditorData}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{getEditorData()}{getEditorData()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+VObject\+Property\+::get\+Editor\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the data from the widget. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a884293b0d13de6f76c3109b8f71a61e0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_afeac054265232b7cc450741919fd54df}\label{classVPE_1_1VObjectProperty_afeac054265232b7cc450741919fd54df}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!getObjects@{getObjects}}
+\index{getObjects@{getObjects}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{getObjects()}{getObjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ VPE\+::\+VObject\+Property\+::get\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the settings. This function has to be implemented in a subclass in order to have an effect. 
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a40c15cd80771ef55b6c1c256188d1021}\label{classVPE_1_1VObjectProperty_a40c15cd80771ef55b6c1c256188d1021}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!indexOfObject@{indexOfObject}}
+\index{indexOfObject@{indexOfObject}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{indexOfObject()}{indexOfObject()}}
+{\footnotesize\ttfamily int VPE\+::\+VObject\+Property\+::index\+Of\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \&}]{objects,  }\item[{const QString \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_ae5bb72eca498ff213c0a39d5e3d5205b}\label{classVPE_1_1VObjectProperty_ae5bb72eca498ff213c0a39d5e3d5205b}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!setObjectsList@{setObjectsList}}
+\index{setObjectsList@{setObjectsList}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{setObjectsList()}{setObjectsList()}}
+{\footnotesize\ttfamily void VPE\+::\+VObject\+Property\+::set\+Objects\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \&}]{objects }\end{DoxyParamCaption})}
+
+
+
+Sets the objects list. 
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_ab1cfee8ea16dd279de3fe87452ad0753}\label{classVPE_1_1VObjectProperty_ab1cfee8ea16dd279de3fe87452ad0753}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!setValue@{setValue}}
+\index{setValue@{setValue}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void VPE\+::\+VObject\+Property\+::set\+Value (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the value of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_a67c7322abd6f7f0306ecdf56ffb0f65d}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a642a57c933656c4b557d386c594f6e94}\label{classVPE_1_1VObjectProperty_a642a57c933656c4b557d386c594f6e94}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!type@{type}}
+\index{type@{type}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+VObject\+Property\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVPE_1_1VProperty_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_ad2c1a06a4ebfbedf8a66c6b8bdfeb065}\label{classVPE_1_1VObjectProperty_ad2c1a06a4ebfbedf8a66c6b8bdfeb065}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!m\_indexList@{m\_indexList}}
+\index{m\_indexList@{m\_indexList}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{m\_indexList}{m\_indexList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$QString$>$ VPE\+::\+VObject\+Property\+::m\+\_\+index\+List\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVPE_1_1VObjectProperty_a086841966edb304698087b8411865e12}\label{classVPE_1_1VObjectProperty_a086841966edb304698087b8411865e12}} 
+\index{VPE::VObjectProperty@{VPE::VObjectProperty}!m\_objects@{m\_objects}}
+\index{m\_objects@{m\_objects}!VPE::VObjectProperty@{VPE::VObjectProperty}}
+\doxysubsubsection{\texorpdfstring{m\_objects}{m\_objects}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$QString, quint32$>$ VPE\+::\+VObject\+Property\+::m\+\_\+objects\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The list of possible objects. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vobjectproperty_8h}{vobjectproperty.\+h}}\item 
+src/libs/vpropertyexplorer/plugins/\mbox{\hyperlink{vobjectproperty_8cpp}{vobjectproperty.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,142 @@
+\hypertarget{classVAbstractMainWindow}{}\doxysection{VAbstract\+Main\+Window Class Reference}
+\label{classVAbstractMainWindow}\index{VAbstractMainWindow@{VAbstractMainWindow}}
+
+
+{\ttfamily \#include $<$vabstractmainwindow.\+h$>$}
+
+Inheritance diagram for VAbstract\+Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{dc/d59/classVAbstractMainWindow}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classVAbstractMainWindow_ad331115ff94643e19efd6ea03ef1a949}{Show\+Tool\+Tip}} (const QString \&tool\+Tip)=0
+\item 
+virtual void \mbox{\hyperlink{classVAbstractMainWindow_a5dd60672089cf580b4a244516a1eeaab}{update\+Groups}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classVAbstractMainWindow_a3d5d5e3cf10fa4fcbc9b0009c622bf3e}{zoom\+To\+Selected}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAbstractMainWindow_a98df58db7adb372304f04b2f72936fd5}{VAbstract\+Main\+Window}} (QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVAbstractMainWindow_ae1d79c763c7505ae3fdbe20fbe9b243a}{$\sim$\+VAbstract\+Main\+Window}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVAbstractMainWindow_a3432cc05ebf6a5a358de02f55178156d}{Windows\+Locale}} ()
+\item 
+void \mbox{\hyperlink{classVAbstractMainWindow_a676e8cf4325369d0cd988589f0e3b4e1}{export\+To\+CSV}} (QString \&file)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classVAbstractMainWindow_ad8a1ff6d5f795e94c16ebe906f8115ba}{Continue\+Format\+Rewrite}} (const QString \&current\+Format\+Version, const QString \&max\+Format\+Version)
+\item 
+void \mbox{\hyperlink{classVAbstractMainWindow_a83e6500d73223a567ffbb1e5e8923bf5}{Tool\+Bar\+Style}} (QTool\+Bar $\ast$bar)
+\item 
+virtual void \mbox{\hyperlink{classVAbstractMainWindow_a05b5c4707a62ed5df183415fc44d3d86}{export\+To\+CSVData}} (const QString \&file\+Name, const \mbox{\hyperlink{classDialogExportToCSV}{Dialog\+Export\+To\+CSV}} \&dialog)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classVAbstractMainWindow_a3bdd5329bd2ebe9716311d6b45e25d0e}{m\+\_\+cur\+File\+Format\+Version}}
+\item 
+QString \mbox{\hyperlink{classVAbstractMainWindow_a4d0d915a24348d3b182f69e3445d73d0}{m\+\_\+cur\+File\+Format\+Version\+Str}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVAbstractMainWindow_a98df58db7adb372304f04b2f72936fd5}\label{classVAbstractMainWindow_a98df58db7adb372304f04b2f72936fd5}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!VAbstractMainWindow@{VAbstractMainWindow}}
+\index{VAbstractMainWindow@{VAbstractMainWindow}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{VAbstractMainWindow()}{VAbstractMainWindow()}}
+{\footnotesize\ttfamily VAbstract\+Main\+Window\+::\+VAbstract\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_ae1d79c763c7505ae3fdbe20fbe9b243a}\label{classVAbstractMainWindow_ae1d79c763c7505ae3fdbe20fbe9b243a}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!````~VAbstractMainWindow@{$\sim$VAbstractMainWindow}}
+\index{````~VAbstractMainWindow@{$\sim$VAbstractMainWindow}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractMainWindow()}{~VAbstractMainWindow()}}
+{\footnotesize\ttfamily virtual VAbstract\+Main\+Window\+::$\sim$\+VAbstract\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVAbstractMainWindow_ad8a1ff6d5f795e94c16ebe906f8115ba}\label{classVAbstractMainWindow_ad8a1ff6d5f795e94c16ebe906f8115ba}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!ContinueFormatRewrite@{ContinueFormatRewrite}}
+\index{ContinueFormatRewrite@{ContinueFormatRewrite}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{ContinueFormatRewrite()}{ContinueFormatRewrite()}}
+{\footnotesize\ttfamily bool VAbstract\+Main\+Window\+::\+Continue\+Format\+Rewrite (\begin{DoxyParamCaption}\item[{const QString \&}]{current\+Format\+Version,  }\item[{const QString \&}]{max\+Format\+Version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a676e8cf4325369d0cd988589f0e3b4e1}\label{classVAbstractMainWindow_a676e8cf4325369d0cd988589f0e3b4e1}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!exportToCSV@{exportToCSV}}
+\index{exportToCSV@{exportToCSV}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{exportToCSV}{exportToCSV}}
+{\footnotesize\ttfamily void VAbstract\+Main\+Window\+::export\+To\+CSV (\begin{DoxyParamCaption}\item[{QString \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a05b5c4707a62ed5df183415fc44d3d86}\label{classVAbstractMainWindow_a05b5c4707a62ed5df183415fc44d3d86}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!exportToCSVData@{exportToCSVData}}
+\index{exportToCSVData@{exportToCSVData}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{exportToCSVData()}{exportToCSVData()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Main\+Window\+::export\+To\+CSVData (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name,  }\item[{const \mbox{\hyperlink{classDialogExportToCSV}{Dialog\+Export\+To\+CSV}} \&}]{dialog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classTMainWindow_a10cf2465634fcdb7b660b8b4572cfbb1}{TMain\+Window}}, and \mbox{\hyperlink{classMainWindow_a8c6c524074a02ae71d91c3a7c776697c}{Main\+Window}}.
+
+\mbox{\Hypertarget{classVAbstractMainWindow_ad331115ff94643e19efd6ea03ef1a949}\label{classVAbstractMainWindow_ad331115ff94643e19efd6ea03ef1a949}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!ShowToolTip@{ShowToolTip}}
+\index{ShowToolTip@{ShowToolTip}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{ShowToolTip}{ShowToolTip}}
+{\footnotesize\ttfamily virtual void VAbstract\+Main\+Window\+::\+Show\+Tool\+Tip (\begin{DoxyParamCaption}\item[{const QString \&}]{tool\+Tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a83e6500d73223a567ffbb1e5e8923bf5}\label{classVAbstractMainWindow_a83e6500d73223a567ffbb1e5e8923bf5}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!ToolBarStyle@{ToolBarStyle}}
+\index{ToolBarStyle@{ToolBarStyle}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{ToolBarStyle()}{ToolBarStyle()}}
+{\footnotesize\ttfamily void VAbstract\+Main\+Window\+::\+Tool\+Bar\+Style (\begin{DoxyParamCaption}\item[{QTool\+Bar $\ast$}]{bar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a5dd60672089cf580b4a244516a1eeaab}\label{classVAbstractMainWindow_a5dd60672089cf580b4a244516a1eeaab}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!updateGroups@{updateGroups}}
+\index{updateGroups@{updateGroups}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{updateGroups}{updateGroups}}
+{\footnotesize\ttfamily virtual void VAbstract\+Main\+Window\+::update\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a3432cc05ebf6a5a358de02f55178156d}\label{classVAbstractMainWindow_a3432cc05ebf6a5a358de02f55178156d}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!WindowsLocale@{WindowsLocale}}
+\index{WindowsLocale@{WindowsLocale}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{WindowsLocale}{WindowsLocale}}
+{\footnotesize\ttfamily void VAbstract\+Main\+Window\+::\+Windows\+Locale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a3d5d5e3cf10fa4fcbc9b0009c622bf3e}\label{classVAbstractMainWindow_a3d5d5e3cf10fa4fcbc9b0009c622bf3e}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!zoomToSelected@{zoomToSelected}}
+\index{zoomToSelected@{zoomToSelected}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{zoomToSelected}{zoomToSelected}}
+{\footnotesize\ttfamily void VAbstract\+Main\+Window\+::zoom\+To\+Selected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVAbstractMainWindow_a3bdd5329bd2ebe9716311d6b45e25d0e}\label{classVAbstractMainWindow_a3bdd5329bd2ebe9716311d6b45e25d0e}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!m\_curFileFormatVersion@{m\_curFileFormatVersion}}
+\index{m\_curFileFormatVersion@{m\_curFileFormatVersion}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{m\_curFileFormatVersion}{m\_curFileFormatVersion}}
+{\footnotesize\ttfamily int VAbstract\+Main\+Window\+::m\+\_\+cur\+File\+Format\+Version\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractMainWindow_a4d0d915a24348d3b182f69e3445d73d0}\label{classVAbstractMainWindow_a4d0d915a24348d3b182f69e3445d73d0}} 
+\index{VAbstractMainWindow@{VAbstractMainWindow}!m\_curFileFormatVersionStr@{m\_curFileFormatVersionStr}}
+\index{m\_curFileFormatVersionStr@{m\_curFileFormatVersionStr}!VAbstractMainWindow@{VAbstractMainWindow}}
+\doxysubsubsection{\texorpdfstring{m\_curFileFormatVersionStr}{m\_curFileFormatVersionStr}}
+{\footnotesize\ttfamily QString VAbstract\+Main\+Window\+::m\+\_\+cur\+File\+Format\+Version\+Str\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vwidgets/\mbox{\hyperlink{vabstractmainwindow_8h}{vabstractmainwindow.\+h}}\item 
+src/libs/vwidgets/\mbox{\hyperlink{vabstractmainwindow_8cpp}{vabstractmainwindow.\+cpp}}\end{DoxyCompactItemize}

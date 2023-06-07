@@ -1,0 +1,304 @@
+\hypertarget{classVAbstractNode}{}\doxysection{VAbstract\+Node Class Reference}
+\label{classVAbstractNode}\index{VAbstractNode@{VAbstractNode}}
+
+
+The \mbox{\hyperlink{classVAbstractNode}{VAbstract\+Node}} class parent class for all detail node.  
+
+
+
+
+{\ttfamily \#include $<$vabstractnode.\+h$>$}
+
+Inheritance diagram for VAbstract\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.149606cm]{d3/d16/classVAbstractNode}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVAbstractNode_a70b154d2540b78ca2aec6c8ada2ce7b0}{VAbstract\+Node}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{classVAbstractTool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVDataTool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const quint32 \&\mbox{\hyperlink{classVAbstractNode_a9a7b722b784e9af5841ddbdab93ad7fe}{id\+Node}}, const QString \&block\+Name=QString(), const quint32 \&\mbox{\hyperlink{classVAbstractNode_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}=0, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVAbstractNode}{VAbstract\+Node}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVAbstractNode_ab8531c21aeb1c1dabcd1dc42066b74d7}{$\sim$\+VAbstract\+Node}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_a65df18e9f6bf4e78d7af11ae701d8fd9}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_a762966d68cbb8e65a6822794347fa4c4}{increment\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_ae1b128d8c45545bdbc73f7615f6b15d3}{decrement\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement reference for all parent objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \mbox{\hyperlink{classVAbstractNode_a440a4eb726f91d2397476880a21bd8e2}{Get\+Parent\+Type}} () const
+\item 
+void \mbox{\hyperlink{classVAbstractNode_add551b448b7e438918e0a1a3dc03eda3}{Set\+Parent\+Type}} (const \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \&value)
+\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_ae0d0f0405089cae06015303e57533399}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{classVAbstractNode_abd93c138b73cafa6b6aeca2edea6ad40}{Is\+Exluded}} () const
+\item 
+void \mbox{\hyperlink{classVAbstractNode_a2d887cfb63bedf3d644beaff1ab771d9}{Set\+Exluded}} (bool exluded)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{classVAbstractNode_a20f6b9dd538fc932428eb6a1bc212acb}{Attr\+Id\+Tool}} = QString\+Literal(\char`\"{}id\+Tool\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVAbstractNode_ab85af0aa996ac58f85ba89e05f87bd07}{Add\+To\+Modeling}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em Add\+To\+Modeling add tag to modeling tag current pattern peace. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_aa12fbba186be79e96ce06a07e196d74f}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_ab1cf705816a368f000361b514ff02984}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_a7acfaacf2d09da85ac282ca33393005d}{Show\+Node}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classVAbstractNode_a0efb37bc43a2bc4a1728dea922d774e8}{Hide\+Node}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \mbox{\hyperlink{classVAbstractNode_a201252bad756a36aef9fd4696524612b}{parent\+Type}}
+\item 
+quint32 \mbox{\hyperlink{classVAbstractNode_a9a7b722b784e9af5841ddbdab93ad7fe}{id\+Node}}
+\begin{DoxyCompactList}\small\item\em id\+Nodenode id. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classVAbstractNode_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}
+\begin{DoxyCompactList}\small\item\em id\+Tool id tool. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVAbstractNode_a31b0c1cef193038037155a8bf7e78fd5}{m\+\_\+block\+Name}}
+\item 
+bool \mbox{\hyperlink{classVAbstractNode_a1c5ee04f20dca7cb64bd7ef2620e1fb0}{m\+\_\+exluded}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVAbstractNode}{VAbstract\+Node}} class parent class for all detail node. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVAbstractNode_a70b154d2540b78ca2aec6c8ada2ce7b0}\label{classVAbstractNode_a70b154d2540b78ca2aec6c8ada2ce7b0}} 
+\index{VAbstractNode@{VAbstractNode}!VAbstractNode@{VAbstractNode}}
+\index{VAbstractNode@{VAbstractNode}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{VAbstractNode()}{VAbstractNode()}}
+{\footnotesize\ttfamily VAbstract\+Node\+::\+VAbstract\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{id,  }\item[{const quint32 \&}]{id\+Node,  }\item[{const QString \&}]{block\+Name = {\ttfamily QString()},  }\item[{const quint32 \&}]{id\+Tool = {\ttfamily 0},  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classVAbstractNode}{VAbstract\+Node}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em id\+Node} & object id in container\+Node. \\
+\hline
+{\em id\+Tool} & id tool. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVAbstractNode_ab8531c21aeb1c1dabcd1dc42066b74d7}\label{classVAbstractNode_ab8531c21aeb1c1dabcd1dc42066b74d7}} 
+\index{VAbstractNode@{VAbstractNode}!````~VAbstractNode@{$\sim$VAbstractNode}}
+\index{````~VAbstractNode@{$\sim$VAbstractNode}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractNode()}{~VAbstractNode()}}
+{\footnotesize\ttfamily virtual VAbstract\+Node\+::$\sim$\+VAbstract\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVAbstractNode_ab85af0aa996ac58f85ba89e05f87bd07}\label{classVAbstractNode_ab85af0aa996ac58f85ba89e05f87bd07}} 
+\index{VAbstractNode@{VAbstractNode}!AddToModeling@{AddToModeling}}
+\index{AddToModeling@{AddToModeling}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{AddToModeling()}{AddToModeling()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::\+Add\+To\+Modeling (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add\+To\+Modeling add tag to modeling tag current pattern peace. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVAbstractNode_ae1b128d8c45545bdbc73f7615f6b15d3}\label{classVAbstractNode_ae1b128d8c45545bdbc73f7615f6b15d3}} 
+\index{VAbstractNode@{VAbstractNode}!decrementReferens@{decrementReferens}}
+\index{decrementReferens@{decrementReferens}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{decrementReferens()}{decrementReferens()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::decrement\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+decrement\+Referens decrement reference for all parent objects. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDataTool_a1e2948eda3b98034419d51c2a0768316}{VData\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolInternalPath_a04c7d03e47a941db93d5c3ef7e311ed6}{VTool\+Internal\+Path}}.
+
+\mbox{\Hypertarget{classVAbstractNode_a440a4eb726f91d2397476880a21bd8e2}\label{classVAbstractNode_a440a4eb726f91d2397476880a21bd8e2}} 
+\index{VAbstractNode@{VAbstractNode}!GetParentType@{GetParentType}}
+\index{GetParentType@{GetParentType}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{GetParentType()}{GetParentType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} VAbstract\+Node\+::\+Get\+Parent\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVAbstractNode_ae0d0f0405089cae06015303e57533399}\label{classVAbstractNode_ae0d0f0405089cae06015303e57533399}} 
+\index{VAbstractNode@{VAbstractNode}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVDataTool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractNode_a0efb37bc43a2bc4a1728dea922d774e8}\label{classVAbstractNode_a0efb37bc43a2bc4a1728dea922d774e8}} 
+\index{VAbstractNode@{VAbstractNode}!HideNode@{HideNode}}
+\index{HideNode@{HideNode}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{HideNode()}{HideNode()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Node\+::\+Hide\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classVToolInternalPath_a677d5597b32e27652bef708cea97a982}{VTool\+Internal\+Path}}, \mbox{\hyperlink{classVNodeSplinePath_a28c7bf8adfb31cdeb4d472c07bd671fb}{VNode\+Spline\+Path}}, \mbox{\hyperlink{classVNodeSpline_a3862270c6e9bf26ddff9096e5cb60f2d}{VNode\+Spline}}, \mbox{\hyperlink{classVNodePoint_a93ca2a757057e243e9a3e7160636d917}{VNode\+Point}}, \mbox{\hyperlink{classVNodeEllipticalArc_ac55aaa0aa319cbcba6c9e984a366d41b}{VNode\+Elliptical\+Arc}}, \mbox{\hyperlink{classVNodeArc_aa784b5d6f529354dcf86b262ceb4b5b1}{VNode\+Arc}}, and \mbox{\hyperlink{classAnchorPointTool_ada8ffe8db70ee71e075bc5f8d8765062}{Anchor\+Point\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractNode_a762966d68cbb8e65a6822794347fa4c4}\label{classVAbstractNode_a762966d68cbb8e65a6822794347fa4c4}} 
+\index{VAbstractNode@{VAbstractNode}!incrementReferens@{incrementReferens}}
+\index{incrementReferens@{incrementReferens}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{incrementReferens()}{incrementReferens()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::increment\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+increment\+Referens increment referens. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classVDataTool_ad845b82027866a5fda15de7fd677f270}{VData\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolInternalPath_a4a65cc5aa1e58ff5d61f5c50c7a093aa}{VTool\+Internal\+Path}}.
+
+\mbox{\Hypertarget{classVAbstractNode_abd93c138b73cafa6b6aeca2edea6ad40}\label{classVAbstractNode_abd93c138b73cafa6b6aeca2edea6ad40}} 
+\index{VAbstractNode@{VAbstractNode}!IsExluded@{IsExluded}}
+\index{IsExluded@{IsExluded}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{IsExluded()}{IsExluded()}}
+{\footnotesize\ttfamily bool VAbstract\+Node\+::\+Is\+Exluded (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classVAbstractNode_a2d887cfb63bedf3d644beaff1ab771d9}\label{classVAbstractNode_a2d887cfb63bedf3d644beaff1ab771d9}} 
+\index{VAbstractNode@{VAbstractNode}!SetExluded@{SetExluded}}
+\index{SetExluded@{SetExluded}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{SetExluded()}{SetExluded()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::\+Set\+Exluded (\begin{DoxyParamCaption}\item[{bool}]{exluded }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVAbstractNode_add551b448b7e438918e0a1a3dc03eda3}\label{classVAbstractNode_add551b448b7e438918e0a1a3dc03eda3}} 
+\index{VAbstractNode@{VAbstractNode}!SetParentType@{SetParentType}}
+\index{SetParentType@{SetParentType}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{SetParentType()}{SetParentType()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::\+Set\+Parent\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVAbstractNode_ab1cf705816a368f000361b514ff02984}\label{classVAbstractNode_ab1cf705816a368f000361b514ff02984}} 
+\index{VAbstractNode@{VAbstractNode}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Node\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractNode_a7acfaacf2d09da85ac282ca33393005d}\label{classVAbstractNode_a7acfaacf2d09da85ac282ca33393005d}} 
+\index{VAbstractNode@{VAbstractNode}!ShowNode@{ShowNode}}
+\index{ShowNode@{ShowNode}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{ShowNode()}{ShowNode()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Node\+::\+Show\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classVToolInternalPath_ae72e36813e31746a20d27bedb197643e}{VTool\+Internal\+Path}}, \mbox{\hyperlink{classVNodeSplinePath_a8de161b6d5fdec875646d9309b13a267}{VNode\+Spline\+Path}}, \mbox{\hyperlink{classVNodeSpline_a9c3ff009d118c48e7de2fc4b8bec1e23}{VNode\+Spline}}, \mbox{\hyperlink{classVNodePoint_a372675a08ae7bd1ac8cc761b7a599dd5}{VNode\+Point}}, \mbox{\hyperlink{classVNodeEllipticalArc_a1f64fd63885ebfa6ed70233dcd0a2c7f}{VNode\+Elliptical\+Arc}}, \mbox{\hyperlink{classVNodeArc_a56d6037298d5c1f741bfc5b9409aca11}{VNode\+Arc}}, and \mbox{\hyperlink{classAnchorPointTool_a7cce6992888570d6604fa5e6df07d1d4}{Anchor\+Point\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractNode_a65df18e9f6bf4e78d7af11ae701d8fd9}\label{classVAbstractNode_a65df18e9f6bf4e78d7af11ae701d8fd9}} 
+\index{VAbstractNode@{VAbstractNode}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classVAbstractTool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{classVAbstractNode_aa12fbba186be79e96ce06a07e196d74f}\label{classVAbstractNode_aa12fbba186be79e96ce06a07e196d74f}} 
+\index{VAbstractNode@{VAbstractNode}!ToolCreation@{ToolCreation}}
+\index{ToolCreation@{ToolCreation}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{ToolCreation()}{ToolCreation()}}
+{\footnotesize\ttfamily void VAbstract\+Node\+::\+Tool\+Creation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVAbstractTool_a981e6bae05ffb564bfac034ccff918da}{VAbstract\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVToolInternalPath_a42e13db65673e07dbe66c94977984176}{VTool\+Internal\+Path}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVAbstractNode_a20f6b9dd538fc932428eb6a1bc212acb}\label{classVAbstractNode_a20f6b9dd538fc932428eb6a1bc212acb}} 
+\index{VAbstractNode@{VAbstractNode}!AttrIdTool@{AttrIdTool}}
+\index{AttrIdTool@{AttrIdTool}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{AttrIdTool}{AttrIdTool}}
+{\footnotesize\ttfamily const QString VAbstract\+Node\+::\+Attr\+Id\+Tool = QString\+Literal(\char`\"{}id\+Tool\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classVAbstractNode_a9a7b722b784e9af5841ddbdab93ad7fe}\label{classVAbstractNode_a9a7b722b784e9af5841ddbdab93ad7fe}} 
+\index{VAbstractNode@{VAbstractNode}!idNode@{idNode}}
+\index{idNode@{idNode}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{idNode}{idNode}}
+{\footnotesize\ttfamily quint32 VAbstract\+Node\+::id\+Node\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+id\+Nodenode id. 
+
+\mbox{\Hypertarget{classVAbstractNode_a2cecc6036115efe25d8054a1c71252c7}\label{classVAbstractNode_a2cecc6036115efe25d8054a1c71252c7}} 
+\index{VAbstractNode@{VAbstractNode}!idTool@{idTool}}
+\index{idTool@{idTool}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{idTool}{idTool}}
+{\footnotesize\ttfamily quint32 VAbstract\+Node\+::id\+Tool\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+id\+Tool id tool. 
+
+\mbox{\Hypertarget{classVAbstractNode_a31b0c1cef193038037155a8bf7e78fd5}\label{classVAbstractNode_a31b0c1cef193038037155a8bf7e78fd5}} 
+\index{VAbstractNode@{VAbstractNode}!m\_blockName@{m\_blockName}}
+\index{m\_blockName@{m\_blockName}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{m\_blockName}{m\_blockName}}
+{\footnotesize\ttfamily QString VAbstract\+Node\+::m\+\_\+block\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractNode_a1c5ee04f20dca7cb64bd7ef2620e1fb0}\label{classVAbstractNode_a1c5ee04f20dca7cb64bd7ef2620e1fb0}} 
+\index{VAbstractNode@{VAbstractNode}!m\_exluded@{m\_exluded}}
+\index{m\_exluded@{m\_exluded}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{m\_exluded}{m\_exluded}}
+{\footnotesize\ttfamily bool VAbstract\+Node\+::m\+\_\+exluded\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVAbstractNode_a201252bad756a36aef9fd4696524612b}\label{classVAbstractNode_a201252bad756a36aef9fd4696524612b}} 
+\index{VAbstractNode@{VAbstractNode}!parentType@{parentType}}
+\index{parentType@{parentType}!VAbstractNode@{VAbstractNode}}
+\doxysubsubsection{\texorpdfstring{parentType}{parentType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} VAbstract\+Node\+::parent\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/tools/node\+Details/\mbox{\hyperlink{vabstractnode_8h}{vabstractnode.\+h}}\item 
+src/libs/vtools/tools/node\+Details/\mbox{\hyperlink{vabstractnode_8cpp}{vabstractnode.\+cpp}}\end{DoxyCompactItemize}

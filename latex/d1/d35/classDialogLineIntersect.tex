@@ -1,0 +1,345 @@
+\hypertarget{classDialogLineIntersect}{}\doxysection{Dialog\+Line\+Intersect Class Reference}
+\label{classDialogLineIntersect}\index{DialogLineIntersect@{DialogLineIntersect}}
+
+
+The \mbox{\hyperlink{classDialogLineIntersect}{Dialog\+Line\+Intersect}} class dialog for Tool\+Line\+Intersect. Help create point and edit option.  
+
+
+
+
+{\ttfamily \#include $<$dialoglineintersect.\+h$>$}
+
+Inheritance diagram for Dialog\+Line\+Intersect\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d1/d35/classDialogLineIntersect}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogLineIntersect_ac7df2276f0f0d9482a74422d04284adc}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogLineIntersect_aedd745a11ddc27b6b6595815325db0cc}{Point\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em P1\+Line1\+Changed changed first point of first line. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDialogLineIntersect_a6f0a31e53f2ee0a36a96561da7762e41}{Point\+Name\+Changed}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDialogLineIntersect_aa063c11c5da34bedfb7b9a770e09f5b3}{Dialog\+Line\+Intersect}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDialogLineIntersect}{Dialog\+Line\+Intersect}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDialogLineIntersect_ab9c0ba5c7ed4d4a77484cfb1509bd41e}{$\sim$\+Dialog\+Line\+Intersect}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{classDialogLineIntersect_ac267d3de72ec59d08ae1205810fb5d41}{Get\+P1\+Line1}} () const
+\begin{DoxyCompactList}\small\item\em Get\+P1\+Line1 return id first point of first line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogLineIntersect_a969bed370e24dd4f9283f11546b74680}{Set\+P1\+Line1}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+P1\+Line1 set id first point of first line. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogLineIntersect_a2d9bf8f5099c4acd54061dbfb9b01961}{Get\+P2\+Line1}} () const
+\begin{DoxyCompactList}\small\item\em Get\+P2\+Line1 return id second point of first line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogLineIntersect_ac6bd48252ae5518e0f507c3943009318}{Set\+P2\+Line1}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+P2\+Line1 set id second point of first line. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogLineIntersect_a6af780f2233b176b610484a4e9bac718}{Get\+P1\+Line2}} () const
+\begin{DoxyCompactList}\small\item\em Get\+P1\+Line2 return id first point of second line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogLineIntersect_ab562e134e462cfe2019689959430ea59}{Set\+P1\+Line2}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+P1\+Line2 set id first point of second line. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{classDialogLineIntersect_ab8c3a926578d7a25756f41cc3fd52096}{Get\+P2\+Line2}} () const
+\begin{DoxyCompactList}\small\item\em Get\+P2\+Line2 return id second point of second line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogLineIntersect_a2295a44629ce512ae2ea961fe1ee4267}{Set\+P2\+Line2}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em Set\+P2\+Line2 set id second point of second line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDialogLineIntersect_aba398479cd6926003dc84d102662afb0}{Set\+Point\+Name}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Point\+Name set name of point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogLineIntersect_a3c1e072f77ca639d30fb9dcb23953c38}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classDialogLineIntersect_aa4afe69ecd5047bd2adb7491ea0b9b71}{Save\+Data}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDialogLineIntersect_ab32c1469a6c1ea5deed1d26981c2b0f8}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Check\+State check state of dialog. Enable or disable button ok. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDialogLineIntersect_adc5ab4a71d551d08fcefd2a0142702b8}{Check\+Intersecion}} ()
+\begin{DoxyCompactList}\small\item\em Check\+Intersecion check intersection of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+Line\+Intersect $\ast$ \mbox{\hyperlink{classDialogLineIntersect_a97f1ac7f248284ccf5030b61b51a15e4}{ui}}
+\begin{DoxyCompactList}\small\item\em ui keeps information about user interface \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDialogLineIntersect_afcc9311a3fe45e7b719909772735fd90}{flag\+Point}}
+\begin{DoxyCompactList}\small\item\em flag\+Point keep state of point \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDialogLineIntersect}{Dialog\+Line\+Intersect}} class dialog for Tool\+Line\+Intersect. Help create point and edit option. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDialogLineIntersect_aa063c11c5da34bedfb7b9a770e09f5b3}\label{classDialogLineIntersect_aa063c11c5da34bedfb7b9a770e09f5b3}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!DialogLineIntersect@{DialogLineIntersect}}
+\index{DialogLineIntersect@{DialogLineIntersect}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{DialogLineIntersect()}{DialogLineIntersect()}}
+{\footnotesize\ttfamily Dialog\+Line\+Intersect\+::\+Dialog\+Line\+Intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classDialogLineIntersect}{Dialog\+Line\+Intersect}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_ab9c0ba5c7ed4d4a77484cfb1509bd41e}\label{classDialogLineIntersect_ab9c0ba5c7ed4d4a77484cfb1509bd41e}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!````~DialogLineIntersect@{$\sim$DialogLineIntersect}}
+\index{````~DialogLineIntersect@{$\sim$DialogLineIntersect}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogLineIntersect()}{~DialogLineIntersect()}}
+{\footnotesize\ttfamily Dialog\+Line\+Intersect\+::$\sim$\+Dialog\+Line\+Intersect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDialogLineIntersect_adc5ab4a71d551d08fcefd2a0142702b8}\label{classDialogLineIntersect_adc5ab4a71d551d08fcefd2a0142702b8}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!CheckIntersecion@{CheckIntersecion}}
+\index{CheckIntersecion@{CheckIntersecion}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{CheckIntersecion()}{CheckIntersecion()}}
+{\footnotesize\ttfamily bool Dialog\+Line\+Intersect\+::\+Check\+Intersecion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check\+Intersecion check intersection of points. 
+
+\begin{DoxyReturn}{Returns}
+true -\/ line have intersection, false = don\textquotesingle{}t have 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogLineIntersect_ab32c1469a6c1ea5deed1d26981c2b0f8}\label{classDialogLineIntersect_ab32c1469a6c1ea5deed1d26981c2b0f8}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State check state of dialog. Enable or disable button ok. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogLineIntersect_ac7df2276f0f0d9482a74422d04284adc}\label{classDialogLineIntersect_ac7df2276f0f0d9482a74422d04284adc}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Choosed\+Object gets id and type of selected object. Save right data and ignore wrong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of point or detail \\
+\hline
+{\em type} & type of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_ac267d3de72ec59d08ae1205810fb5d41}\label{classDialogLineIntersect_ac267d3de72ec59d08ae1205810fb5d41}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!GetP1Line1@{GetP1Line1}}
+\index{GetP1Line1@{GetP1Line1}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{GetP1Line1()}{GetP1Line1()}}
+{\footnotesize\ttfamily quint32 Dialog\+Line\+Intersect\+::\+Get\+P1\+Line1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+P1\+Line1 return id first point of first line. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogLineIntersect_a6af780f2233b176b610484a4e9bac718}\label{classDialogLineIntersect_a6af780f2233b176b610484a4e9bac718}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!GetP1Line2@{GetP1Line2}}
+\index{GetP1Line2@{GetP1Line2}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{GetP1Line2()}{GetP1Line2()}}
+{\footnotesize\ttfamily quint32 Dialog\+Line\+Intersect\+::\+Get\+P1\+Line2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+P1\+Line2 return id first point of second line. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogLineIntersect_a2d9bf8f5099c4acd54061dbfb9b01961}\label{classDialogLineIntersect_a2d9bf8f5099c4acd54061dbfb9b01961}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!GetP2Line1@{GetP2Line1}}
+\index{GetP2Line1@{GetP2Line1}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{GetP2Line1()}{GetP2Line1()}}
+{\footnotesize\ttfamily quint32 Dialog\+Line\+Intersect\+::\+Get\+P2\+Line1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+P2\+Line1 return id second point of first line. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogLineIntersect_ab8c3a926578d7a25756f41cc3fd52096}\label{classDialogLineIntersect_ab8c3a926578d7a25756f41cc3fd52096}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!GetP2Line2@{GetP2Line2}}
+\index{GetP2Line2@{GetP2Line2}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{GetP2Line2()}{GetP2Line2()}}
+{\footnotesize\ttfamily quint32 Dialog\+Line\+Intersect\+::\+Get\+P2\+Line2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+P2\+Line2 return id second point of second line. 
+
+\begin{DoxyReturn}{Returns}
+id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDialogLineIntersect_aedd745a11ddc27b6b6595815325db0cc}\label{classDialogLineIntersect_aedd745a11ddc27b6b6595815325db0cc}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!PointChanged@{PointChanged}}
+\index{PointChanged@{PointChanged}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{PointChanged}{PointChanged}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Point\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+P1\+Line1\+Changed changed first point of first line. 
+
+\mbox{\Hypertarget{classDialogLineIntersect_a6f0a31e53f2ee0a36a96561da7762e41}\label{classDialogLineIntersect_a6f0a31e53f2ee0a36a96561da7762e41}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!PointNameChanged@{PointNameChanged}}
+\index{PointNameChanged@{PointNameChanged}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{PointNameChanged}{PointNameChanged}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Point\+Name\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classDialogLineIntersect_aa4afe69ecd5047bd2adb7491ea0b9b71}\label{classDialogLineIntersect_aa4afe69ecd5047bd2adb7491ea0b9b71}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_aa197a256d8d19a03878816f138e4e248}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classDialogLineIntersect_a969bed370e24dd4f9283f11546b74680}\label{classDialogLineIntersect_a969bed370e24dd4f9283f11546b74680}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!SetP1Line1@{SetP1Line1}}
+\index{SetP1Line1@{SetP1Line1}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{SetP1Line1()}{SetP1Line1()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Set\+P1\+Line1 (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+P1\+Line1 set id first point of first line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_ab562e134e462cfe2019689959430ea59}\label{classDialogLineIntersect_ab562e134e462cfe2019689959430ea59}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!SetP1Line2@{SetP1Line2}}
+\index{SetP1Line2@{SetP1Line2}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{SetP1Line2()}{SetP1Line2()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Set\+P1\+Line2 (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+P1\+Line2 set id first point of second line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_ac6bd48252ae5518e0f507c3943009318}\label{classDialogLineIntersect_ac6bd48252ae5518e0f507c3943009318}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!SetP2Line1@{SetP2Line1}}
+\index{SetP2Line1@{SetP2Line1}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{SetP2Line1()}{SetP2Line1()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Set\+P2\+Line1 (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+P2\+Line1 set id second point of first line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_a2295a44629ce512ae2ea961fe1ee4267}\label{classDialogLineIntersect_a2295a44629ce512ae2ea961fe1ee4267}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!SetP2Line2@{SetP2Line2}}
+\index{SetP2Line2@{SetP2Line2}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{SetP2Line2()}{SetP2Line2()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Set\+P2\+Line2 (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+P2\+Line2 set id second point of second line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_aba398479cd6926003dc84d102662afb0}\label{classDialogLineIntersect_aba398479cd6926003dc84d102662afb0}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!SetPointName@{SetPointName}}
+\index{SetPointName@{SetPointName}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{SetPointName()}{SetPointName()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Set\+Point\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Point\+Name set name of point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & name of point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDialogLineIntersect_a3c1e072f77ca639d30fb9dcb23953c38}\label{classDialogLineIntersect_a3c1e072f77ca639d30fb9dcb23953c38}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Dialog\+Line\+Intersect\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDialogLineIntersect_afcc9311a3fe45e7b719909772735fd90}\label{classDialogLineIntersect_afcc9311a3fe45e7b719909772735fd90}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!flagPoint@{flagPoint}}
+\index{flagPoint@{flagPoint}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{flagPoint}{flagPoint}}
+{\footnotesize\ttfamily bool Dialog\+Line\+Intersect\+::flag\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+flag\+Point keep state of point 
+
+\mbox{\Hypertarget{classDialogLineIntersect_a97f1ac7f248284ccf5030b61b51a15e4}\label{classDialogLineIntersect_a97f1ac7f248284ccf5030b61b51a15e4}} 
+\index{DialogLineIntersect@{DialogLineIntersect}!ui@{ui}}
+\index{ui@{ui}!DialogLineIntersect@{DialogLineIntersect}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+Line\+Intersect$\ast$ Dialog\+Line\+Intersect\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+ui keeps information about user interface 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialoglineintersect_8h}{dialoglineintersect.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialoglineintersect_8cpp}{dialoglineintersect.\+cpp}}\end{DoxyCompactItemize}

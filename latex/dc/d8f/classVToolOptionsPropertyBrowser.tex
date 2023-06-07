@@ -1,0 +1,1227 @@
+\hypertarget{classVToolOptionsPropertyBrowser}{}\doxysection{VTool\+Options\+Property\+Browser Class Reference}
+\label{classVToolOptionsPropertyBrowser}\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+
+
+{\ttfamily \#include $<$vtooloptionspropertybrowser.\+h$>$}
+
+Inheritance diagram for VTool\+Options\+Property\+Browser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/d8f/classVToolOptionsPropertyBrowser}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a46a6c4c50b63fd6af4a084eafcddc88e}{item\+Clicked}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa9e320cdbecb8f3d83f0d5e15ab4df07}{update\+Options}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a94c90523992454d29d27d94644f3d3ab}{refresh\+Options}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVToolOptionsPropertyBrowser_a280d9d78d6bb61b48e7f9050d9773c36}{VTool\+Options\+Property\+Browser}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$data, QDock\+Widget $\ast$parent)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a1252e0dc9be615256173d2e7a8bffce3}{clear\+Property\+Browser}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a0334240f4eedf63363de9ff1173a13a1}{m\+\_\+data}}
+\item 
+\mbox{\hyperlink{classVPE_1_1VPropertyModel}{VPE\+::\+VProperty\+Model}} $\ast$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7e8b17e73cdb2fe5ebb550aacd13ec19}{property\+Model}}
+\item 
+\mbox{\hyperlink{classVPE_1_1VPropertyFormView}{VPE\+::\+VProperty\+Form\+View}} $\ast$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ac20fec4aadfe22eb99a4063198d4215f}{form\+View}}
+\item 
+QGraphics\+Item $\ast$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ade8802baa568f80b1152cc033dd2970d}{current\+Item}}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$, QString $>$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ae046c3a9fef63573e7bbb234915e9e64}{property\+To\+Id}}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$ $>$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a6e849d07b655c5fd840c248d3ff23be9}{id\+To\+Property}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a0b5e0b32b3cbe63e641bd7402bb3b95a}{user\+Changed\+Data}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a446ba6076873087a68ccf6b26f9c4cab}{add\+Property}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property, const QString \&id)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a1c0a13b923f4e02d744ca26b42ca3fa1}{show\+Item\+Options}} (QGraphics\+Item $\ast$item)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a9448775f465b170ba62795f178b00ceb}{get\+Object\+List}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} obj\+Type)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a8b86804c850ed77babd16e09ecb9dfbf}{set\+Point\+Name}} (const QString \&name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a80b88d5e56db275a5276fb32c447bcc0}{set\+Point\+Name1}} (const QString \&name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a0991983c703f95cd2c8cfefafa05af5b}{set\+Point\+Name2}} (const QString \&name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a93b18dc580a7eab026064e76e7e66cb9}{set\+Operation\+Suffix}} (const QString \&suffix)
+\item 
+{\footnotesize template$<$class Type $>$ }\\Type \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a687ed2d5a8c8ca8dfbc052317a098c7b}{get\+Cross\+Point}} (const QVariant \&value)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a350179ba97aa86569ddb8e1a97ac1c1d}{set\+Circles\+Cross\+Point}} (const QVariant \&value)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a1d434f4206097e076fea3863caa868b5}{set\+Curve\+VCross\+Point}} (const QVariant \&value)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a29489b728e6b53f82f8387d877da71ce}{set\+Curve\+HCross\+Point}} (const QVariant \&value)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a9563e1ea6b13b1413740e090516ee9ef}{set\+Axis\+Type}} (const QVariant \&value)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a4b5ccb5d2892482e5e0f96a7e08bc2f2}{add\+Property\+Object\+Name}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name, bool read\+Only=false)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a66668a222fd3b39f66431d891b55a64f}{add\+Property\+Point\+Name1}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af06224634856eb01d2a0b434c5164269}{add\+Property\+Point\+Name2}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a17e62dcdd7045f74eb01b645c143738b}{add\+Property\+Operation\+Suffix}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name, bool read\+Only=false)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a40d4a92137c1e94a6455523bfd8b0858}{add\+Property\+Line\+Name}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name, bool read\+Only=false)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a2cb6df54cbfb86aca3adb1eb2ae0ef14}{add\+Property\+Curve\+Name}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name, const QString \&prefix, const QString \&first\+Point, const QString \&second\+Point, bool read\+Only=false)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a3a2e79f4f4b3f0736b2365334225c46a}{add\+Property\+Cross\+Point}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ab4bc716e7657deda96e5dfe99db86aea}{add\+Property\+VCross\+Point}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a93916662ec70e17bd9a5a0670579e5bd}{add\+Property\+HCross\+Point}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a6b009ff70f8d9bc66dbe198c2cb5d440}{add\+Property\+Axis\+Type}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a26a5bf462c493109d1ce068fc65325ae}{add\+Property\+Line\+Type}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a8b7ee3d9ada5ba304d0a00bf2df40807}{add\+Property\+Curve\+Line\+Type}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_adde3b8c7d4787ce87c26c2c5bfc06ea2}{add\+Property\+Line\+Weight}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7a9653475c13f7c282c6e44d74bd4140}{add\+Property\+Line\+Color}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&property\+Name, const QString \&id)
+\item 
+{\footnotesize template$<$class Tool $>$ }\\void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a05d63f18be26bdbcb1896447756879d3}{add\+Object\+Property}} (\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$tool, const QString \&point\+Name, const QString \&property\+Name, const QString \&id, \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} obj\+Type)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_abdaeef46d0e5e4c1ad393bf473f418e3}{add\+Property\+Formula}} (const QString \&property\+Name, const \mbox{\hyperlink{classVFormula}{VFormula}} \&formula, const QString \&attr\+Name)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a811439f804f2016104e8551846cbbe80}{add\+Property\+Parent\+Point\+Name}} (const QString \&point\+Name, const QString \&property\+Name, const QString \&property\+Attribute)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a9eabec9402ec6bb4342db65452428fc8}{add\+Property\+Label}} (const QString \&property\+Name, const QString \&property\+Attribute)
+\item 
+QString\+List \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a51f0cfbba1e4f7e42110e5247ee41173}{properties\+List}} () const
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af9d26690fe2df9b1c4cb2782e8c563c2}{change\+Data\+Tool\+Single\+Point}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a02fcd9b05902addeff1e9f4e881a7f61}{change\+Data\+Tool\+End\+Line}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a1d7679ee0520c19cb79528dafb1fb04e}{change\+Data\+Tool\+Along\+Line}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ac7385995d69081d1b678c3791a79bdcf}{change\+Data\+Tool\+Arc}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa112fc50fc9440bd2d1dad137ddd2399}{change\+Data\+Tool\+Arc\+With\+Length}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7c16332f5d5d994d5ffb29ed21282253}{change\+Data\+Tool\+Bisector}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a0c04f7ef24847584ac5f292487ac01a9}{change\+Data\+Tool\+True\+Darts}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa58859eadf3e661c60548366e170c096}{change\+Data\+Tool\+Cut\+Arc}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aebc54e15d9b368f1a654b58a127feff9}{change\+Data\+Tool\+Cut\+Spline}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_abe335a4978e4937f0c518e5828a25610}{change\+Data\+Tool\+Cut\+Spline\+Path}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a6377ded6342e577b82246367b45d1e47}{change\+Data\+Tool\+Height}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ae0700fc0b458d31bc27bd2defb4dbbf4}{change\+Data\+Tool\+Line}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ab820b40fd941fc2f265edecb907e2c9b}{change\+Data\+Tool\+Line\+Intersect}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a38226c56300ac72fb3fff0869ace84e2}{change\+Data\+Tool\+Normal}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7d0f52c1a3040525d3d98fe5c95d42dc}{change\+Data\+Tool\+Point\+Of\+Contact}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ab7070e50c9dae8332dbcd547b1623e21}{change\+Data\+Tool\+Point\+Of\+Intersection}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ab4212a64b5119d1035e58d01fb0e59d3}{change\+Data\+Tool\+Point\+Of\+Intersection\+Arcs}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a8544d1525233c9e60abcc131123300e9}{change\+Data\+Tool\+Point\+Of\+Intersection\+Circles}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a4b4ea75f2a346a6811a88efca7e624e0}{change\+Data\+Tool\+Point\+Of\+Intersection\+Curves}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a523185904185e406b7a018aa7b62e7b4}{change\+Data\+Tool\+Point\+From\+Circle\+And\+Tangent}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af535c719af950cf07c4476f9c7dd667d}{change\+Data\+Tool\+Point\+From\+Arc\+And\+Tangent}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af864b078675fd28ff9cc512e65609237}{change\+Data\+Tool\+Shoulder\+Point}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa5f28585af642b883a4299a454f2188f}{change\+Data\+Tool\+Spline}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a6b3a6bab338ed7fd80fc000a6c6087d7}{change\+Data\+Tool\+Cubic\+Bezier}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ae6204c8a24b246586668e83be11b0f3e}{change\+Data\+Tool\+Spline\+Path}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a3acab36af9155fbdb326a543a1b4f038}{change\+Data\+Tool\+Cubic\+Bezier\+Path}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa5362527ebf6e814ab8971dc67ad75f2}{change\+Data\+Tool\+Triangle}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a86b7822f96683ff646dde1c5afbed9ee}{change\+Data\+Tool\+Line\+Intersect\+Axis}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aefb393ed8da6af409914706e6ef86ca0}{change\+Data\+Tool\+Curve\+Intersect\+Axis}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_afc9509de5e1beff0a67713befb4ab0ee}{change\+Data\+Tool\+Rotation}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a580599b60cbf259626ed468007da3cbb}{change\+Data\+Tool\+Move}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ac768296d97efebe686a4974b97bf9367}{change\+Data\+Tool\+Mirror\+By\+Line}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a9ba14b08ad6ccffd8d3000b313a24aca}{change\+Data\+Tool\+Mirror\+By\+Axis}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a74fbac355dfef8662dc0a71659d1a8ff}{change\+Data\+Tool\+Elliptical\+Arc}} (\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$property)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a01b75c8d0f343bc092633e2012c5b9e4}{show\+Options\+Tool\+Single\+Point}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a06d98de5840cb67c97b2659268eb1911}{show\+Options\+Tool\+End\+Line}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a82a6d9b6e84d438f97feb4f029aaab85}{show\+Options\+Tool\+Along\+Line}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7663913ca9708156038b9dacc9be7029}{show\+Options\+Tool\+Arc}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ad5d90dc67624d596b3ad3f40d13cd400}{show\+Options\+Tool\+Arc\+With\+Length}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aea84debb0347832f1abcaf49f52bb7c0}{show\+Options\+Tool\+Bisector}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a97808010e6799993ebdb04b34e5ee772}{show\+Options\+Tool\+True\+Darts}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a4fb9a984b70d09979bb077394bc6336b}{show\+Options\+Tool\+Cut\+Arc}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ae352c6dd0963ec9cc82b32d2197039f8}{show\+Options\+Tool\+Cut\+Spline}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a1e97d7cc981e5d04f83a9deaa20398c7}{show\+Options\+Tool\+Cut\+Spline\+Path}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ae0cfcf231a870e793b0052e9e427ce4c}{show\+Options\+Tool\+Height}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ac1e066c10001875839a92e3f65e3b842}{show\+Options\+Tool\+Line}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a01f3526a59622c47952b34419b11f97e}{show\+Options\+Tool\+Line\+Intersect}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ab3a33c4cdf6baeb935ec28454c2adb6c}{show\+Options\+Tool\+Normal}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ace6e5771336f04845c0fa6349f78c1ee}{show\+Options\+Tool\+Point\+Of\+Contact}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7988a8706196213dee44e71861bd0462}{show\+Options\+Tool\+Point\+Of\+Intersection}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa7376c0dd3c6ce561b69b2c2146fa6d0}{show\+Options\+Tool\+Point\+Of\+Intersection\+Arcs}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a56e2c60150334aba9544a573a127a252}{show\+Options\+Tool\+Point\+Of\+Intersection\+Circles}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_acbb81546874c24baaff9861d0023fdc6}{show\+Options\+Tool\+Point\+Of\+Intersection\+Curves}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7dcafef7da8432907525ef7a508609d0}{show\+Options\+Tool\+Point\+From\+Circle\+And\+Tangent}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af59df774013b16cdad207862682efdc4}{show\+Options\+Tool\+Point\+From\+Arc\+And\+Tangent}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a9cb6b942d765f3f583012a557c9e9e17}{show\+Options\+Tool\+Shoulder\+Point}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a164798cb37eabaaeb62de4272d4bb105}{show\+Options\+Tool\+Spline}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ab2f2974045c396fcd6e2f1747dd5113b}{show\+Options\+Tool\+Cubic\+Bezier}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a67e0a673774e12e9abdecb9d2ffa6291}{show\+Options\+Tool\+Spline\+Path}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a94babe793f95bd89fbfd4bd7e25dfce0}{show\+Options\+Tool\+Cubic\+Bezier\+Path}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af230b970e74ece166b8ca89ff1a9362b}{show\+Options\+Tool\+Triangle}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a22ec2ca0274791a3aa0304785e6148bf}{show\+Options\+Tool\+Line\+Intersect\+Axis}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a58017d84f40eb1bea11ee9464f125d17}{show\+Options\+Tool\+Curve\+Intersect\+Axis}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a2da57cbe141e4d55e67bfd938f459348}{show\+Options\+Tool\+Rotation}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aec0f825360e7e2200d834f58094663a8}{show\+Options\+Tool\+Move}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af469b9d853e468be5f5086143e1b4de0}{show\+Options\+Tool\+Mirror\+By\+Line}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a26560bdedf6bd392b04270a9e64e9233}{show\+Options\+Tool\+Mirror\+By\+Axis}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a29b12b77741cc409d08a9dc347f3eb0f}{show\+Options\+Tool\+Elliptical\+Arc}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a114c0953f8cf53b6e0516f30836b1e4f}{update\+Options\+Tool\+Single\+Point}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a5a3c8a2b75879b95664c92dfc4651ef1}{update\+Options\+Tool\+End\+Line}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a892a8c915210adf1da9c8412634097b5}{update\+Options\+Tool\+Along\+Line}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a16a2224cbb8c5a7b89e6c88d3c4ade0a}{update\+Options\+Tool\+Arc}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a95253c66f820c9437a6f907fa2919ffb}{update\+Options\+Tool\+Arc\+With\+Length}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a6b34d34283a992f09cde587a00dd9f5c}{update\+Options\+Tool\+Bisector}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a7cca22222edb978b34e2f80082e6d89e}{update\+Options\+Tool\+True\+Darts}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_afd0f27e43a251938afeb9dc43ccef867}{update\+Options\+Tool\+Cut\+Arc}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a538e4a7206eb9907d9c847b02827179b}{update\+Options\+Tool\+Cut\+Spline}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a0ca0cce1041fc25b85572294be17a145}{update\+Options\+Tool\+Cut\+Spline\+Path}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a1a4e6496e27a163a05d9c22a01e49255}{update\+Options\+Tool\+Height}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a06283097160424fcd2d577d53612319d}{update\+Options\+Tool\+Line}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa804fff20f0796175ca09f45c335823d}{update\+Options\+Tool\+Line\+Intersect}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a25668228241fb2bab377b429235c3fd5}{update\+Options\+Tool\+Normal}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_adf557342869e8b5460bc9aa1364ea4f5}{update\+Options\+Tool\+Point\+Of\+Contact}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_af56c57105265b6f9a9e1d5c64c5ea362}{update\+Options\+Tool\+Point\+Of\+Intersection}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ac723f1c9ccc784bbdd2990d4cb7e5c4f}{update\+Options\+Tool\+Point\+Of\+Intersection\+Arcs}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a907f7c130f7d26d15a4d0fee69e801d1}{update\+Options\+Tool\+Point\+Of\+Intersection\+Circles}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a96ed4ff1cc698c2010c86cb0adaa7759}{update\+Options\+Tool\+Point\+Of\+Intersection\+Curves}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ac1b060dd60b880d37b07f83e83272670}{update\+Options\+Tool\+Point\+From\+Circle\+And\+Tangent}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a440e819f74651bffc5138c38c00bbfdd}{update\+Options\+Tool\+Point\+From\+Arc\+And\+Tangent}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a260fc95e6f3e209940b7cca96072c393}{update\+Options\+Tool\+Shoulder\+Point}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a82955507489881c2ec7dde1b3accb630}{update\+Options\+Tool\+Spline}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a240abed6a441dcadbee64f488a9d8e50}{update\+Options\+Tool\+Cubic\+Bezier}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aafb33df793d7639bdbd74d9bb7d37259}{update\+Options\+Tool\+Spline\+Path}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a67602e12cd2e9cc11415175852199676}{update\+Options\+Tool\+Cubic\+Bezier\+Path}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a51685122ac3119f8cd34667f51f5ddd0}{update\+Options\+Tool\+Triangle}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa374619854487a043d6122439f1db78d}{update\+Options\+Tool\+Line\+Intersect\+Axis}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a21405471862e1f7ee0575b734eae95e3}{update\+Options\+Tool\+Curve\+Intersect\+Axis}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a49f0a994818d0a7f153659bdbe10014a}{update\+Options\+Tool\+Rotation}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_a018217ba661a04ac8879f7aaef8531e0}{update\+Options\+Tool\+Move}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_ae088f7157d7edfc1c24b38dbd2c37640}{update\+Options\+Tool\+Mirror\+By\+Line}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_aa763d947e22f801f6af973afe96ed773}{update\+Options\+Tool\+Mirror\+By\+Axis}} ()
+\item 
+void \mbox{\hyperlink{classVToolOptionsPropertyBrowser_acdf0d2e044a5891e7be4c32c62efc967}{update\+Options\+Tool\+Elliptical\+Arc}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a280d9d78d6bb61b48e7f9050d9773c36}\label{classVToolOptionsPropertyBrowser_a280d9d78d6bb61b48e7f9050d9773c36}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{VToolOptionsPropertyBrowser()}{VToolOptionsPropertyBrowser()}}
+{\footnotesize\ttfamily VTool\+Options\+Property\+Browser\+::\+VTool\+Options\+Property\+Browser (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QDock\+Widget $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a05d63f18be26bdbcb1896447756879d3}\label{classVToolOptionsPropertyBrowser_a05d63f18be26bdbcb1896447756879d3}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addObjectProperty@{addObjectProperty}}
+\index{addObjectProperty@{addObjectProperty}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addObjectProperty()}{addObjectProperty()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Object\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{point\+Name,  }\item[{const QString \&}]{property\+Name,  }\item[{const QString \&}]{id,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}}]{obj\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a446ba6076873087a68ccf6b26f9c4cab}\label{classVToolOptionsPropertyBrowser_a446ba6076873087a68ccf6b26f9c4cab}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addProperty@{addProperty}}
+\index{addProperty@{addProperty}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addProperty()}{addProperty()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::add\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property,  }\item[{const QString \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a6b009ff70f8d9bc66dbe198c2cb5d440}\label{classVToolOptionsPropertyBrowser_a6b009ff70f8d9bc66dbe198c2cb5d440}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyAxisType@{addPropertyAxisType}}
+\index{addPropertyAxisType@{addPropertyAxisType}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyAxisType()}{addPropertyAxisType()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Axis\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a3a2e79f4f4b3f0736b2365334225c46a}\label{classVToolOptionsPropertyBrowser_a3a2e79f4f4b3f0736b2365334225c46a}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyCrossPoint@{addPropertyCrossPoint}}
+\index{addPropertyCrossPoint@{addPropertyCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyCrossPoint()}{addPropertyCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Cross\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a8b7ee3d9ada5ba304d0a00bf2df40807}\label{classVToolOptionsPropertyBrowser_a8b7ee3d9ada5ba304d0a00bf2df40807}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyCurveLineType@{addPropertyCurveLineType}}
+\index{addPropertyCurveLineType@{addPropertyCurveLineType}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyCurveLineType()}{addPropertyCurveLineType()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Curve\+Line\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a2cb6df54cbfb86aca3adb1eb2ae0ef14}\label{classVToolOptionsPropertyBrowser_a2cb6df54cbfb86aca3adb1eb2ae0ef14}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyCurveName@{addPropertyCurveName}}
+\index{addPropertyCurveName@{addPropertyCurveName}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyCurveName()}{addPropertyCurveName()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Curve\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name,  }\item[{const QString \&}]{prefix,  }\item[{const QString \&}]{first\+Point,  }\item[{const QString \&}]{second\+Point,  }\item[{bool}]{read\+Only = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_abdaeef46d0e5e4c1ad393bf473f418e3}\label{classVToolOptionsPropertyBrowser_abdaeef46d0e5e4c1ad393bf473f418e3}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyFormula@{addPropertyFormula}}
+\index{addPropertyFormula@{addPropertyFormula}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyFormula()}{addPropertyFormula()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::add\+Property\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{property\+Name,  }\item[{const \mbox{\hyperlink{classVFormula}{VFormula}} \&}]{formula,  }\item[{const QString \&}]{attr\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a93916662ec70e17bd9a5a0670579e5bd}\label{classVToolOptionsPropertyBrowser_a93916662ec70e17bd9a5a0670579e5bd}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyHCrossPoint@{addPropertyHCrossPoint}}
+\index{addPropertyHCrossPoint@{addPropertyHCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyHCrossPoint()}{addPropertyHCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+HCross\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a9eabec9402ec6bb4342db65452428fc8}\label{classVToolOptionsPropertyBrowser_a9eabec9402ec6bb4342db65452428fc8}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyLabel@{addPropertyLabel}}
+\index{addPropertyLabel@{addPropertyLabel}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyLabel()}{addPropertyLabel()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::add\+Property\+Label (\begin{DoxyParamCaption}\item[{const QString \&}]{property\+Name,  }\item[{const QString \&}]{property\+Attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7a9653475c13f7c282c6e44d74bd4140}\label{classVToolOptionsPropertyBrowser_a7a9653475c13f7c282c6e44d74bd4140}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyLineColor@{addPropertyLineColor}}
+\index{addPropertyLineColor@{addPropertyLineColor}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyLineColor()}{addPropertyLineColor()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Line\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name,  }\item[{const QString \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a40d4a92137c1e94a6455523bfd8b0858}\label{classVToolOptionsPropertyBrowser_a40d4a92137c1e94a6455523bfd8b0858}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyLineName@{addPropertyLineName}}
+\index{addPropertyLineName@{addPropertyLineName}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyLineName()}{addPropertyLineName()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Line\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name,  }\item[{bool}]{read\+Only = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a26a5bf462c493109d1ce068fc65325ae}\label{classVToolOptionsPropertyBrowser_a26a5bf462c493109d1ce068fc65325ae}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyLineType@{addPropertyLineType}}
+\index{addPropertyLineType@{addPropertyLineType}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyLineType()}{addPropertyLineType()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Line\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_adde3b8c7d4787ce87c26c2c5bfc06ea2}\label{classVToolOptionsPropertyBrowser_adde3b8c7d4787ce87c26c2c5bfc06ea2}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyLineWeight@{addPropertyLineWeight}}
+\index{addPropertyLineWeight@{addPropertyLineWeight}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyLineWeight()}{addPropertyLineWeight()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Line\+Weight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a4b5ccb5d2892482e5e0f96a7e08bc2f2}\label{classVToolOptionsPropertyBrowser_a4b5ccb5d2892482e5e0f96a7e08bc2f2}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyObjectName@{addPropertyObjectName}}
+\index{addPropertyObjectName@{addPropertyObjectName}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyObjectName()}{addPropertyObjectName()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Object\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name,  }\item[{bool}]{read\+Only = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a17e62dcdd7045f74eb01b645c143738b}\label{classVToolOptionsPropertyBrowser_a17e62dcdd7045f74eb01b645c143738b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyOperationSuffix@{addPropertyOperationSuffix}}
+\index{addPropertyOperationSuffix@{addPropertyOperationSuffix}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyOperationSuffix()}{addPropertyOperationSuffix()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Operation\+Suffix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name,  }\item[{bool}]{read\+Only = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a811439f804f2016104e8551846cbbe80}\label{classVToolOptionsPropertyBrowser_a811439f804f2016104e8551846cbbe80}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyParentPointName@{addPropertyParentPointName}}
+\index{addPropertyParentPointName@{addPropertyParentPointName}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyParentPointName()}{addPropertyParentPointName()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::add\+Property\+Parent\+Point\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{point\+Name,  }\item[{const QString \&}]{property\+Name,  }\item[{const QString \&}]{property\+Attribute }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a66668a222fd3b39f66431d891b55a64f}\label{classVToolOptionsPropertyBrowser_a66668a222fd3b39f66431d891b55a64f}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyPointName1@{addPropertyPointName1}}
+\index{addPropertyPointName1@{addPropertyPointName1}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyPointName1()}{addPropertyPointName1()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Point\+Name1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af06224634856eb01d2a0b434c5164269}\label{classVToolOptionsPropertyBrowser_af06224634856eb01d2a0b434c5164269}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyPointName2@{addPropertyPointName2}}
+\index{addPropertyPointName2@{addPropertyPointName2}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyPointName2()}{addPropertyPointName2()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+Point\+Name2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ab4bc716e7657deda96e5dfe99db86aea}\label{classVToolOptionsPropertyBrowser_ab4bc716e7657deda96e5dfe99db86aea}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!addPropertyVCrossPoint@{addPropertyVCrossPoint}}
+\index{addPropertyVCrossPoint@{addPropertyVCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{addPropertyVCrossPoint()}{addPropertyVCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::add\+Property\+VCross\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{const QString \&}]{property\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a1d7679ee0520c19cb79528dafb1fb04e}\label{classVToolOptionsPropertyBrowser_a1d7679ee0520c19cb79528dafb1fb04e}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolAlongLine@{changeDataToolAlongLine}}
+\index{changeDataToolAlongLine@{changeDataToolAlongLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolAlongLine()}{changeDataToolAlongLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Along\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ac7385995d69081d1b678c3791a79bdcf}\label{classVToolOptionsPropertyBrowser_ac7385995d69081d1b678c3791a79bdcf}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolArc@{changeDataToolArc}}
+\index{changeDataToolArc@{changeDataToolArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolArc()}{changeDataToolArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa112fc50fc9440bd2d1dad137ddd2399}\label{classVToolOptionsPropertyBrowser_aa112fc50fc9440bd2d1dad137ddd2399}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolArcWithLength@{changeDataToolArcWithLength}}
+\index{changeDataToolArcWithLength@{changeDataToolArcWithLength}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolArcWithLength()}{changeDataToolArcWithLength()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Arc\+With\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7c16332f5d5d994d5ffb29ed21282253}\label{classVToolOptionsPropertyBrowser_a7c16332f5d5d994d5ffb29ed21282253}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolBisector@{changeDataToolBisector}}
+\index{changeDataToolBisector@{changeDataToolBisector}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolBisector()}{changeDataToolBisector()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Bisector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a6b3a6bab338ed7fd80fc000a6c6087d7}\label{classVToolOptionsPropertyBrowser_a6b3a6bab338ed7fd80fc000a6c6087d7}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolCubicBezier@{changeDataToolCubicBezier}}
+\index{changeDataToolCubicBezier@{changeDataToolCubicBezier}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolCubicBezier()}{changeDataToolCubicBezier()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Cubic\+Bezier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a3acab36af9155fbdb326a543a1b4f038}\label{classVToolOptionsPropertyBrowser_a3acab36af9155fbdb326a543a1b4f038}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolCubicBezierPath@{changeDataToolCubicBezierPath}}
+\index{changeDataToolCubicBezierPath@{changeDataToolCubicBezierPath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolCubicBezierPath()}{changeDataToolCubicBezierPath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aefb393ed8da6af409914706e6ef86ca0}\label{classVToolOptionsPropertyBrowser_aefb393ed8da6af409914706e6ef86ca0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolCurveIntersectAxis@{changeDataToolCurveIntersectAxis}}
+\index{changeDataToolCurveIntersectAxis@{changeDataToolCurveIntersectAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolCurveIntersectAxis()}{changeDataToolCurveIntersectAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Curve\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa58859eadf3e661c60548366e170c096}\label{classVToolOptionsPropertyBrowser_aa58859eadf3e661c60548366e170c096}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolCutArc@{changeDataToolCutArc}}
+\index{changeDataToolCutArc@{changeDataToolCutArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolCutArc()}{changeDataToolCutArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Cut\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aebc54e15d9b368f1a654b58a127feff9}\label{classVToolOptionsPropertyBrowser_aebc54e15d9b368f1a654b58a127feff9}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolCutSpline@{changeDataToolCutSpline}}
+\index{changeDataToolCutSpline@{changeDataToolCutSpline}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolCutSpline()}{changeDataToolCutSpline()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Cut\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_abe335a4978e4937f0c518e5828a25610}\label{classVToolOptionsPropertyBrowser_abe335a4978e4937f0c518e5828a25610}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolCutSplinePath@{changeDataToolCutSplinePath}}
+\index{changeDataToolCutSplinePath@{changeDataToolCutSplinePath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolCutSplinePath()}{changeDataToolCutSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Cut\+Spline\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a74fbac355dfef8662dc0a71659d1a8ff}\label{classVToolOptionsPropertyBrowser_a74fbac355dfef8662dc0a71659d1a8ff}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolEllipticalArc@{changeDataToolEllipticalArc}}
+\index{changeDataToolEllipticalArc@{changeDataToolEllipticalArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolEllipticalArc()}{changeDataToolEllipticalArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Elliptical\+Arc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a02fcd9b05902addeff1e9f4e881a7f61}\label{classVToolOptionsPropertyBrowser_a02fcd9b05902addeff1e9f4e881a7f61}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolEndLine@{changeDataToolEndLine}}
+\index{changeDataToolEndLine@{changeDataToolEndLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolEndLine()}{changeDataToolEndLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+End\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a6377ded6342e577b82246367b45d1e47}\label{classVToolOptionsPropertyBrowser_a6377ded6342e577b82246367b45d1e47}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolHeight@{changeDataToolHeight}}
+\index{changeDataToolHeight@{changeDataToolHeight}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolHeight()}{changeDataToolHeight()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ae0700fc0b458d31bc27bd2defb4dbbf4}\label{classVToolOptionsPropertyBrowser_ae0700fc0b458d31bc27bd2defb4dbbf4}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolLine@{changeDataToolLine}}
+\index{changeDataToolLine@{changeDataToolLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolLine()}{changeDataToolLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ab820b40fd941fc2f265edecb907e2c9b}\label{classVToolOptionsPropertyBrowser_ab820b40fd941fc2f265edecb907e2c9b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolLineIntersect@{changeDataToolLineIntersect}}
+\index{changeDataToolLineIntersect@{changeDataToolLineIntersect}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolLineIntersect()}{changeDataToolLineIntersect()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Line\+Intersect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a86b7822f96683ff646dde1c5afbed9ee}\label{classVToolOptionsPropertyBrowser_a86b7822f96683ff646dde1c5afbed9ee}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolLineIntersectAxis@{changeDataToolLineIntersectAxis}}
+\index{changeDataToolLineIntersectAxis@{changeDataToolLineIntersectAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolLineIntersectAxis()}{changeDataToolLineIntersectAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Line\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a9ba14b08ad6ccffd8d3000b313a24aca}\label{classVToolOptionsPropertyBrowser_a9ba14b08ad6ccffd8d3000b313a24aca}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolMirrorByAxis@{changeDataToolMirrorByAxis}}
+\index{changeDataToolMirrorByAxis@{changeDataToolMirrorByAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolMirrorByAxis()}{changeDataToolMirrorByAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Mirror\+By\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ac768296d97efebe686a4974b97bf9367}\label{classVToolOptionsPropertyBrowser_ac768296d97efebe686a4974b97bf9367}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolMirrorByLine@{changeDataToolMirrorByLine}}
+\index{changeDataToolMirrorByLine@{changeDataToolMirrorByLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolMirrorByLine()}{changeDataToolMirrorByLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Mirror\+By\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a580599b60cbf259626ed468007da3cbb}\label{classVToolOptionsPropertyBrowser_a580599b60cbf259626ed468007da3cbb}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolMove@{changeDataToolMove}}
+\index{changeDataToolMove@{changeDataToolMove}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolMove()}{changeDataToolMove()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a38226c56300ac72fb3fff0869ace84e2}\label{classVToolOptionsPropertyBrowser_a38226c56300ac72fb3fff0869ace84e2}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolNormal@{changeDataToolNormal}}
+\index{changeDataToolNormal@{changeDataToolNormal}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolNormal()}{changeDataToolNormal()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Normal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af535c719af950cf07c4476f9c7dd667d}\label{classVToolOptionsPropertyBrowser_af535c719af950cf07c4476f9c7dd667d}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointFromArcAndTangent@{changeDataToolPointFromArcAndTangent}}
+\index{changeDataToolPointFromArcAndTangent@{changeDataToolPointFromArcAndTangent}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointFromArcAndTangent()}{changeDataToolPointFromArcAndTangent()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+From\+Arc\+And\+Tangent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a523185904185e406b7a018aa7b62e7b4}\label{classVToolOptionsPropertyBrowser_a523185904185e406b7a018aa7b62e7b4}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointFromCircleAndTangent@{changeDataToolPointFromCircleAndTangent}}
+\index{changeDataToolPointFromCircleAndTangent@{changeDataToolPointFromCircleAndTangent}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointFromCircleAndTangent()}{changeDataToolPointFromCircleAndTangent()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+From\+Circle\+And\+Tangent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7d0f52c1a3040525d3d98fe5c95d42dc}\label{classVToolOptionsPropertyBrowser_a7d0f52c1a3040525d3d98fe5c95d42dc}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointOfContact@{changeDataToolPointOfContact}}
+\index{changeDataToolPointOfContact@{changeDataToolPointOfContact}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointOfContact()}{changeDataToolPointOfContact()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+Of\+Contact (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ab7070e50c9dae8332dbcd547b1623e21}\label{classVToolOptionsPropertyBrowser_ab7070e50c9dae8332dbcd547b1623e21}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointOfIntersection@{changeDataToolPointOfIntersection}}
+\index{changeDataToolPointOfIntersection@{changeDataToolPointOfIntersection}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointOfIntersection()}{changeDataToolPointOfIntersection()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+Of\+Intersection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ab4212a64b5119d1035e58d01fb0e59d3}\label{classVToolOptionsPropertyBrowser_ab4212a64b5119d1035e58d01fb0e59d3}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointOfIntersectionArcs@{changeDataToolPointOfIntersectionArcs}}
+\index{changeDataToolPointOfIntersectionArcs@{changeDataToolPointOfIntersectionArcs}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointOfIntersectionArcs()}{changeDataToolPointOfIntersectionArcs()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+Of\+Intersection\+Arcs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a8544d1525233c9e60abcc131123300e9}\label{classVToolOptionsPropertyBrowser_a8544d1525233c9e60abcc131123300e9}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointOfIntersectionCircles@{changeDataToolPointOfIntersectionCircles}}
+\index{changeDataToolPointOfIntersectionCircles@{changeDataToolPointOfIntersectionCircles}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointOfIntersectionCircles()}{changeDataToolPointOfIntersectionCircles()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+Of\+Intersection\+Circles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a4b4ea75f2a346a6811a88efca7e624e0}\label{classVToolOptionsPropertyBrowser_a4b4ea75f2a346a6811a88efca7e624e0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolPointOfIntersectionCurves@{changeDataToolPointOfIntersectionCurves}}
+\index{changeDataToolPointOfIntersectionCurves@{changeDataToolPointOfIntersectionCurves}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolPointOfIntersectionCurves()}{changeDataToolPointOfIntersectionCurves()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Point\+Of\+Intersection\+Curves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_afc9509de5e1beff0a67713befb4ab0ee}\label{classVToolOptionsPropertyBrowser_afc9509de5e1beff0a67713befb4ab0ee}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolRotation@{changeDataToolRotation}}
+\index{changeDataToolRotation@{changeDataToolRotation}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolRotation()}{changeDataToolRotation()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af864b078675fd28ff9cc512e65609237}\label{classVToolOptionsPropertyBrowser_af864b078675fd28ff9cc512e65609237}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolShoulderPoint@{changeDataToolShoulderPoint}}
+\index{changeDataToolShoulderPoint@{changeDataToolShoulderPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolShoulderPoint()}{changeDataToolShoulderPoint()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Shoulder\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af9d26690fe2df9b1c4cb2782e8c563c2}\label{classVToolOptionsPropertyBrowser_af9d26690fe2df9b1c4cb2782e8c563c2}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolSinglePoint@{changeDataToolSinglePoint}}
+\index{changeDataToolSinglePoint@{changeDataToolSinglePoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolSinglePoint()}{changeDataToolSinglePoint()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Single\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa5f28585af642b883a4299a454f2188f}\label{classVToolOptionsPropertyBrowser_aa5f28585af642b883a4299a454f2188f}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolSpline@{changeDataToolSpline}}
+\index{changeDataToolSpline@{changeDataToolSpline}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolSpline()}{changeDataToolSpline()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ae6204c8a24b246586668e83be11b0f3e}\label{classVToolOptionsPropertyBrowser_ae6204c8a24b246586668e83be11b0f3e}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolSplinePath@{changeDataToolSplinePath}}
+\index{changeDataToolSplinePath@{changeDataToolSplinePath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolSplinePath()}{changeDataToolSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Spline\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa5362527ebf6e814ab8971dc67ad75f2}\label{classVToolOptionsPropertyBrowser_aa5362527ebf6e814ab8971dc67ad75f2}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolTriangle@{changeDataToolTriangle}}
+\index{changeDataToolTriangle@{changeDataToolTriangle}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolTriangle()}{changeDataToolTriangle()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+Triangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a0c04f7ef24847584ac5f292487ac01a9}\label{classVToolOptionsPropertyBrowser_a0c04f7ef24847584ac5f292487ac01a9}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!changeDataToolTrueDarts@{changeDataToolTrueDarts}}
+\index{changeDataToolTrueDarts@{changeDataToolTrueDarts}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{changeDataToolTrueDarts()}{changeDataToolTrueDarts()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::change\+Data\+Tool\+True\+Darts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a1252e0dc9be615256173d2e7a8bffce3}\label{classVToolOptionsPropertyBrowser_a1252e0dc9be615256173d2e7a8bffce3}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!clearPropertyBrowser@{clearPropertyBrowser}}
+\index{clearPropertyBrowser@{clearPropertyBrowser}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{clearPropertyBrowser()}{clearPropertyBrowser()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::clear\+Property\+Browser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a687ed2d5a8c8ca8dfbc052317a098c7b}\label{classVToolOptionsPropertyBrowser_a687ed2d5a8c8ca8dfbc052317a098c7b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!getCrossPoint@{getCrossPoint}}
+\index{getCrossPoint@{getCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{getCrossPoint()}{getCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+Type VTool\+Options\+Property\+Browser\+::get\+Cross\+Point (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a9448775f465b170ba62795f178b00ceb}\label{classVToolOptionsPropertyBrowser_a9448775f465b170ba62795f178b00ceb}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!getObjectList@{getObjectList}}
+\index{getObjectList@{getObjectList}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{getObjectList()}{getObjectList()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, quint32 $>$ VTool\+Options\+Property\+Browser\+::get\+Object\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} $\ast$}]{tool,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}}]{obj\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a46a6c4c50b63fd6af4a084eafcddc88e}\label{classVToolOptionsPropertyBrowser_a46a6c4c50b63fd6af4a084eafcddc88e}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!itemClicked@{itemClicked}}
+\index{itemClicked@{itemClicked}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{itemClicked}{itemClicked}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::item\+Clicked (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a51f0cfbba1e4f7e42110e5247ee41173}\label{classVToolOptionsPropertyBrowser_a51f0cfbba1e4f7e42110e5247ee41173}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!propertiesList@{propertiesList}}
+\index{propertiesList@{propertiesList}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{propertiesList()}{propertiesList()}}
+{\footnotesize\ttfamily QString\+List VTool\+Options\+Property\+Browser\+::properties\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a94c90523992454d29d27d94644f3d3ab}\label{classVToolOptionsPropertyBrowser_a94c90523992454d29d27d94644f3d3ab}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!refreshOptions@{refreshOptions}}
+\index{refreshOptions@{refreshOptions}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{refreshOptions}{refreshOptions}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::refresh\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a9563e1ea6b13b1413740e090516ee9ef}\label{classVToolOptionsPropertyBrowser_a9563e1ea6b13b1413740e090516ee9ef}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setAxisType@{setAxisType}}
+\index{setAxisType@{setAxisType}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setAxisType()}{setAxisType()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Axis\+Type (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a350179ba97aa86569ddb8e1a97ac1c1d}\label{classVToolOptionsPropertyBrowser_a350179ba97aa86569ddb8e1a97ac1c1d}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setCirclesCrossPoint@{setCirclesCrossPoint}}
+\index{setCirclesCrossPoint@{setCirclesCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setCirclesCrossPoint()}{setCirclesCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Circles\+Cross\+Point (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a29489b728e6b53f82f8387d877da71ce}\label{classVToolOptionsPropertyBrowser_a29489b728e6b53f82f8387d877da71ce}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setCurveHCrossPoint@{setCurveHCrossPoint}}
+\index{setCurveHCrossPoint@{setCurveHCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setCurveHCrossPoint()}{setCurveHCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Curve\+HCross\+Point (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a1d434f4206097e076fea3863caa868b5}\label{classVToolOptionsPropertyBrowser_a1d434f4206097e076fea3863caa868b5}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setCurveVCrossPoint@{setCurveVCrossPoint}}
+\index{setCurveVCrossPoint@{setCurveVCrossPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setCurveVCrossPoint()}{setCurveVCrossPoint()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Curve\+VCross\+Point (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a93b18dc580a7eab026064e76e7e66cb9}\label{classVToolOptionsPropertyBrowser_a93b18dc580a7eab026064e76e7e66cb9}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setOperationSuffix@{setOperationSuffix}}
+\index{setOperationSuffix@{setOperationSuffix}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setOperationSuffix()}{setOperationSuffix()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Operation\+Suffix (\begin{DoxyParamCaption}\item[{const QString \&}]{suffix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a8b86804c850ed77babd16e09ecb9dfbf}\label{classVToolOptionsPropertyBrowser_a8b86804c850ed77babd16e09ecb9dfbf}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setPointName@{setPointName}}
+\index{setPointName@{setPointName}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setPointName()}{setPointName()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Point\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a80b88d5e56db275a5276fb32c447bcc0}\label{classVToolOptionsPropertyBrowser_a80b88d5e56db275a5276fb32c447bcc0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setPointName1@{setPointName1}}
+\index{setPointName1@{setPointName1}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setPointName1()}{setPointName1()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Point\+Name1 (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a0991983c703f95cd2c8cfefafa05af5b}\label{classVToolOptionsPropertyBrowser_a0991983c703f95cd2c8cfefafa05af5b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!setPointName2@{setPointName2}}
+\index{setPointName2@{setPointName2}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{setPointName2()}{setPointName2()}}
+{\footnotesize\ttfamily template$<$class Tool $>$ \\
+void VTool\+Options\+Property\+Browser\+::set\+Point\+Name2 (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a1c0a13b923f4e02d744ca26b42ca3fa1}\label{classVToolOptionsPropertyBrowser_a1c0a13b923f4e02d744ca26b42ca3fa1}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showItemOptions@{showItemOptions}}
+\index{showItemOptions@{showItemOptions}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showItemOptions()}{showItemOptions()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Item\+Options (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a82a6d9b6e84d438f97feb4f029aaab85}\label{classVToolOptionsPropertyBrowser_a82a6d9b6e84d438f97feb4f029aaab85}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolAlongLine@{showOptionsToolAlongLine}}
+\index{showOptionsToolAlongLine@{showOptionsToolAlongLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolAlongLine()}{showOptionsToolAlongLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Along\+Line (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7663913ca9708156038b9dacc9be7029}\label{classVToolOptionsPropertyBrowser_a7663913ca9708156038b9dacc9be7029}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolArc@{showOptionsToolArc}}
+\index{showOptionsToolArc@{showOptionsToolArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolArc()}{showOptionsToolArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Arc (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ad5d90dc67624d596b3ad3f40d13cd400}\label{classVToolOptionsPropertyBrowser_ad5d90dc67624d596b3ad3f40d13cd400}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolArcWithLength@{showOptionsToolArcWithLength}}
+\index{showOptionsToolArcWithLength@{showOptionsToolArcWithLength}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolArcWithLength()}{showOptionsToolArcWithLength()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Arc\+With\+Length (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aea84debb0347832f1abcaf49f52bb7c0}\label{classVToolOptionsPropertyBrowser_aea84debb0347832f1abcaf49f52bb7c0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolBisector@{showOptionsToolBisector}}
+\index{showOptionsToolBisector@{showOptionsToolBisector}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolBisector()}{showOptionsToolBisector()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Bisector (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ab2f2974045c396fcd6e2f1747dd5113b}\label{classVToolOptionsPropertyBrowser_ab2f2974045c396fcd6e2f1747dd5113b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolCubicBezier@{showOptionsToolCubicBezier}}
+\index{showOptionsToolCubicBezier@{showOptionsToolCubicBezier}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolCubicBezier()}{showOptionsToolCubicBezier()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Cubic\+Bezier (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a94babe793f95bd89fbfd4bd7e25dfce0}\label{classVToolOptionsPropertyBrowser_a94babe793f95bd89fbfd4bd7e25dfce0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolCubicBezierPath@{showOptionsToolCubicBezierPath}}
+\index{showOptionsToolCubicBezierPath@{showOptionsToolCubicBezierPath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolCubicBezierPath()}{showOptionsToolCubicBezierPath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a58017d84f40eb1bea11ee9464f125d17}\label{classVToolOptionsPropertyBrowser_a58017d84f40eb1bea11ee9464f125d17}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolCurveIntersectAxis@{showOptionsToolCurveIntersectAxis}}
+\index{showOptionsToolCurveIntersectAxis@{showOptionsToolCurveIntersectAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolCurveIntersectAxis()}{showOptionsToolCurveIntersectAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Curve\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a4fb9a984b70d09979bb077394bc6336b}\label{classVToolOptionsPropertyBrowser_a4fb9a984b70d09979bb077394bc6336b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolCutArc@{showOptionsToolCutArc}}
+\index{showOptionsToolCutArc@{showOptionsToolCutArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolCutArc()}{showOptionsToolCutArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Cut\+Arc (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ae352c6dd0963ec9cc82b32d2197039f8}\label{classVToolOptionsPropertyBrowser_ae352c6dd0963ec9cc82b32d2197039f8}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolCutSpline@{showOptionsToolCutSpline}}
+\index{showOptionsToolCutSpline@{showOptionsToolCutSpline}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolCutSpline()}{showOptionsToolCutSpline()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Cut\+Spline (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a1e97d7cc981e5d04f83a9deaa20398c7}\label{classVToolOptionsPropertyBrowser_a1e97d7cc981e5d04f83a9deaa20398c7}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolCutSplinePath@{showOptionsToolCutSplinePath}}
+\index{showOptionsToolCutSplinePath@{showOptionsToolCutSplinePath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolCutSplinePath()}{showOptionsToolCutSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Cut\+Spline\+Path (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a29b12b77741cc409d08a9dc347f3eb0f}\label{classVToolOptionsPropertyBrowser_a29b12b77741cc409d08a9dc347f3eb0f}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolEllipticalArc@{showOptionsToolEllipticalArc}}
+\index{showOptionsToolEllipticalArc@{showOptionsToolEllipticalArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolEllipticalArc()}{showOptionsToolEllipticalArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Elliptical\+Arc (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a06d98de5840cb67c97b2659268eb1911}\label{classVToolOptionsPropertyBrowser_a06d98de5840cb67c97b2659268eb1911}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolEndLine@{showOptionsToolEndLine}}
+\index{showOptionsToolEndLine@{showOptionsToolEndLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolEndLine()}{showOptionsToolEndLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+End\+Line (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ae0cfcf231a870e793b0052e9e427ce4c}\label{classVToolOptionsPropertyBrowser_ae0cfcf231a870e793b0052e9e427ce4c}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolHeight@{showOptionsToolHeight}}
+\index{showOptionsToolHeight@{showOptionsToolHeight}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolHeight()}{showOptionsToolHeight()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Height (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ac1e066c10001875839a92e3f65e3b842}\label{classVToolOptionsPropertyBrowser_ac1e066c10001875839a92e3f65e3b842}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolLine@{showOptionsToolLine}}
+\index{showOptionsToolLine@{showOptionsToolLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolLine()}{showOptionsToolLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Line (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a01f3526a59622c47952b34419b11f97e}\label{classVToolOptionsPropertyBrowser_a01f3526a59622c47952b34419b11f97e}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolLineIntersect@{showOptionsToolLineIntersect}}
+\index{showOptionsToolLineIntersect@{showOptionsToolLineIntersect}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolLineIntersect()}{showOptionsToolLineIntersect()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Line\+Intersect (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a22ec2ca0274791a3aa0304785e6148bf}\label{classVToolOptionsPropertyBrowser_a22ec2ca0274791a3aa0304785e6148bf}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolLineIntersectAxis@{showOptionsToolLineIntersectAxis}}
+\index{showOptionsToolLineIntersectAxis@{showOptionsToolLineIntersectAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolLineIntersectAxis()}{showOptionsToolLineIntersectAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Line\+Intersect\+Axis (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a26560bdedf6bd392b04270a9e64e9233}\label{classVToolOptionsPropertyBrowser_a26560bdedf6bd392b04270a9e64e9233}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolMirrorByAxis@{showOptionsToolMirrorByAxis}}
+\index{showOptionsToolMirrorByAxis@{showOptionsToolMirrorByAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolMirrorByAxis()}{showOptionsToolMirrorByAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Mirror\+By\+Axis (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af469b9d853e468be5f5086143e1b4de0}\label{classVToolOptionsPropertyBrowser_af469b9d853e468be5f5086143e1b4de0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolMirrorByLine@{showOptionsToolMirrorByLine}}
+\index{showOptionsToolMirrorByLine@{showOptionsToolMirrorByLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolMirrorByLine()}{showOptionsToolMirrorByLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Mirror\+By\+Line (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aec0f825360e7e2200d834f58094663a8}\label{classVToolOptionsPropertyBrowser_aec0f825360e7e2200d834f58094663a8}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolMove@{showOptionsToolMove}}
+\index{showOptionsToolMove@{showOptionsToolMove}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolMove()}{showOptionsToolMove()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Move (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ab3a33c4cdf6baeb935ec28454c2adb6c}\label{classVToolOptionsPropertyBrowser_ab3a33c4cdf6baeb935ec28454c2adb6c}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolNormal@{showOptionsToolNormal}}
+\index{showOptionsToolNormal@{showOptionsToolNormal}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolNormal()}{showOptionsToolNormal()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Normal (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af59df774013b16cdad207862682efdc4}\label{classVToolOptionsPropertyBrowser_af59df774013b16cdad207862682efdc4}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointFromArcAndTangent@{showOptionsToolPointFromArcAndTangent}}
+\index{showOptionsToolPointFromArcAndTangent@{showOptionsToolPointFromArcAndTangent}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointFromArcAndTangent()}{showOptionsToolPointFromArcAndTangent()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+From\+Arc\+And\+Tangent (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7dcafef7da8432907525ef7a508609d0}\label{classVToolOptionsPropertyBrowser_a7dcafef7da8432907525ef7a508609d0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointFromCircleAndTangent@{showOptionsToolPointFromCircleAndTangent}}
+\index{showOptionsToolPointFromCircleAndTangent@{showOptionsToolPointFromCircleAndTangent}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointFromCircleAndTangent()}{showOptionsToolPointFromCircleAndTangent()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+From\+Circle\+And\+Tangent (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ace6e5771336f04845c0fa6349f78c1ee}\label{classVToolOptionsPropertyBrowser_ace6e5771336f04845c0fa6349f78c1ee}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointOfContact@{showOptionsToolPointOfContact}}
+\index{showOptionsToolPointOfContact@{showOptionsToolPointOfContact}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointOfContact()}{showOptionsToolPointOfContact()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+Of\+Contact (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7988a8706196213dee44e71861bd0462}\label{classVToolOptionsPropertyBrowser_a7988a8706196213dee44e71861bd0462}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointOfIntersection@{showOptionsToolPointOfIntersection}}
+\index{showOptionsToolPointOfIntersection@{showOptionsToolPointOfIntersection}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointOfIntersection()}{showOptionsToolPointOfIntersection()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+Of\+Intersection (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa7376c0dd3c6ce561b69b2c2146fa6d0}\label{classVToolOptionsPropertyBrowser_aa7376c0dd3c6ce561b69b2c2146fa6d0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointOfIntersectionArcs@{showOptionsToolPointOfIntersectionArcs}}
+\index{showOptionsToolPointOfIntersectionArcs@{showOptionsToolPointOfIntersectionArcs}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointOfIntersectionArcs()}{showOptionsToolPointOfIntersectionArcs()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+Of\+Intersection\+Arcs (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a56e2c60150334aba9544a573a127a252}\label{classVToolOptionsPropertyBrowser_a56e2c60150334aba9544a573a127a252}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointOfIntersectionCircles@{showOptionsToolPointOfIntersectionCircles}}
+\index{showOptionsToolPointOfIntersectionCircles@{showOptionsToolPointOfIntersectionCircles}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointOfIntersectionCircles()}{showOptionsToolPointOfIntersectionCircles()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+Of\+Intersection\+Circles (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_acbb81546874c24baaff9861d0023fdc6}\label{classVToolOptionsPropertyBrowser_acbb81546874c24baaff9861d0023fdc6}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolPointOfIntersectionCurves@{showOptionsToolPointOfIntersectionCurves}}
+\index{showOptionsToolPointOfIntersectionCurves@{showOptionsToolPointOfIntersectionCurves}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolPointOfIntersectionCurves()}{showOptionsToolPointOfIntersectionCurves()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Point\+Of\+Intersection\+Curves (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a2da57cbe141e4d55e67bfd938f459348}\label{classVToolOptionsPropertyBrowser_a2da57cbe141e4d55e67bfd938f459348}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolRotation@{showOptionsToolRotation}}
+\index{showOptionsToolRotation@{showOptionsToolRotation}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolRotation()}{showOptionsToolRotation()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Rotation (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a9cb6b942d765f3f583012a557c9e9e17}\label{classVToolOptionsPropertyBrowser_a9cb6b942d765f3f583012a557c9e9e17}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolShoulderPoint@{showOptionsToolShoulderPoint}}
+\index{showOptionsToolShoulderPoint@{showOptionsToolShoulderPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolShoulderPoint()}{showOptionsToolShoulderPoint()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Shoulder\+Point (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a01b75c8d0f343bc092633e2012c5b9e4}\label{classVToolOptionsPropertyBrowser_a01b75c8d0f343bc092633e2012c5b9e4}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolSinglePoint@{showOptionsToolSinglePoint}}
+\index{showOptionsToolSinglePoint@{showOptionsToolSinglePoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolSinglePoint()}{showOptionsToolSinglePoint()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Single\+Point (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a164798cb37eabaaeb62de4272d4bb105}\label{classVToolOptionsPropertyBrowser_a164798cb37eabaaeb62de4272d4bb105}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolSpline@{showOptionsToolSpline}}
+\index{showOptionsToolSpline@{showOptionsToolSpline}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolSpline()}{showOptionsToolSpline()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Spline (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a67e0a673774e12e9abdecb9d2ffa6291}\label{classVToolOptionsPropertyBrowser_a67e0a673774e12e9abdecb9d2ffa6291}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolSplinePath@{showOptionsToolSplinePath}}
+\index{showOptionsToolSplinePath@{showOptionsToolSplinePath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolSplinePath()}{showOptionsToolSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Spline\+Path (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af230b970e74ece166b8ca89ff1a9362b}\label{classVToolOptionsPropertyBrowser_af230b970e74ece166b8ca89ff1a9362b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolTriangle@{showOptionsToolTriangle}}
+\index{showOptionsToolTriangle@{showOptionsToolTriangle}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolTriangle()}{showOptionsToolTriangle()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+Triangle (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a97808010e6799993ebdb04b34e5ee772}\label{classVToolOptionsPropertyBrowser_a97808010e6799993ebdb04b34e5ee772}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!showOptionsToolTrueDarts@{showOptionsToolTrueDarts}}
+\index{showOptionsToolTrueDarts@{showOptionsToolTrueDarts}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{showOptionsToolTrueDarts()}{showOptionsToolTrueDarts()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::show\+Options\+Tool\+True\+Darts (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa9e320cdbecb8f3d83f0d5e15ab4df07}\label{classVToolOptionsPropertyBrowser_aa9e320cdbecb8f3d83f0d5e15ab4df07}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptions@{updateOptions}}
+\index{updateOptions@{updateOptions}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptions}{updateOptions}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a892a8c915210adf1da9c8412634097b5}\label{classVToolOptionsPropertyBrowser_a892a8c915210adf1da9c8412634097b5}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolAlongLine@{updateOptionsToolAlongLine}}
+\index{updateOptionsToolAlongLine@{updateOptionsToolAlongLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolAlongLine()}{updateOptionsToolAlongLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Along\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a16a2224cbb8c5a7b89e6c88d3c4ade0a}\label{classVToolOptionsPropertyBrowser_a16a2224cbb8c5a7b89e6c88d3c4ade0a}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolArc@{updateOptionsToolArc}}
+\index{updateOptionsToolArc@{updateOptionsToolArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolArc()}{updateOptionsToolArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Arc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a95253c66f820c9437a6f907fa2919ffb}\label{classVToolOptionsPropertyBrowser_a95253c66f820c9437a6f907fa2919ffb}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolArcWithLength@{updateOptionsToolArcWithLength}}
+\index{updateOptionsToolArcWithLength@{updateOptionsToolArcWithLength}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolArcWithLength()}{updateOptionsToolArcWithLength()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Arc\+With\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a6b34d34283a992f09cde587a00dd9f5c}\label{classVToolOptionsPropertyBrowser_a6b34d34283a992f09cde587a00dd9f5c}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolBisector@{updateOptionsToolBisector}}
+\index{updateOptionsToolBisector@{updateOptionsToolBisector}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolBisector()}{updateOptionsToolBisector()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Bisector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a240abed6a441dcadbee64f488a9d8e50}\label{classVToolOptionsPropertyBrowser_a240abed6a441dcadbee64f488a9d8e50}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolCubicBezier@{updateOptionsToolCubicBezier}}
+\index{updateOptionsToolCubicBezier@{updateOptionsToolCubicBezier}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolCubicBezier()}{updateOptionsToolCubicBezier()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Cubic\+Bezier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a67602e12cd2e9cc11415175852199676}\label{classVToolOptionsPropertyBrowser_a67602e12cd2e9cc11415175852199676}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolCubicBezierPath@{updateOptionsToolCubicBezierPath}}
+\index{updateOptionsToolCubicBezierPath@{updateOptionsToolCubicBezierPath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolCubicBezierPath()}{updateOptionsToolCubicBezierPath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Cubic\+Bezier\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a21405471862e1f7ee0575b734eae95e3}\label{classVToolOptionsPropertyBrowser_a21405471862e1f7ee0575b734eae95e3}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolCurveIntersectAxis@{updateOptionsToolCurveIntersectAxis}}
+\index{updateOptionsToolCurveIntersectAxis@{updateOptionsToolCurveIntersectAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolCurveIntersectAxis()}{updateOptionsToolCurveIntersectAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Curve\+Intersect\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_afd0f27e43a251938afeb9dc43ccef867}\label{classVToolOptionsPropertyBrowser_afd0f27e43a251938afeb9dc43ccef867}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolCutArc@{updateOptionsToolCutArc}}
+\index{updateOptionsToolCutArc@{updateOptionsToolCutArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolCutArc()}{updateOptionsToolCutArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Cut\+Arc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a538e4a7206eb9907d9c847b02827179b}\label{classVToolOptionsPropertyBrowser_a538e4a7206eb9907d9c847b02827179b}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolCutSpline@{updateOptionsToolCutSpline}}
+\index{updateOptionsToolCutSpline@{updateOptionsToolCutSpline}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolCutSpline()}{updateOptionsToolCutSpline()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Cut\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a0ca0cce1041fc25b85572294be17a145}\label{classVToolOptionsPropertyBrowser_a0ca0cce1041fc25b85572294be17a145}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolCutSplinePath@{updateOptionsToolCutSplinePath}}
+\index{updateOptionsToolCutSplinePath@{updateOptionsToolCutSplinePath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolCutSplinePath()}{updateOptionsToolCutSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Cut\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_acdf0d2e044a5891e7be4c32c62efc967}\label{classVToolOptionsPropertyBrowser_acdf0d2e044a5891e7be4c32c62efc967}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolEllipticalArc@{updateOptionsToolEllipticalArc}}
+\index{updateOptionsToolEllipticalArc@{updateOptionsToolEllipticalArc}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolEllipticalArc()}{updateOptionsToolEllipticalArc()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Elliptical\+Arc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a5a3c8a2b75879b95664c92dfc4651ef1}\label{classVToolOptionsPropertyBrowser_a5a3c8a2b75879b95664c92dfc4651ef1}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolEndLine@{updateOptionsToolEndLine}}
+\index{updateOptionsToolEndLine@{updateOptionsToolEndLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolEndLine()}{updateOptionsToolEndLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+End\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a1a4e6496e27a163a05d9c22a01e49255}\label{classVToolOptionsPropertyBrowser_a1a4e6496e27a163a05d9c22a01e49255}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolHeight@{updateOptionsToolHeight}}
+\index{updateOptionsToolHeight@{updateOptionsToolHeight}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolHeight()}{updateOptionsToolHeight()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a06283097160424fcd2d577d53612319d}\label{classVToolOptionsPropertyBrowser_a06283097160424fcd2d577d53612319d}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolLine@{updateOptionsToolLine}}
+\index{updateOptionsToolLine@{updateOptionsToolLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolLine()}{updateOptionsToolLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa804fff20f0796175ca09f45c335823d}\label{classVToolOptionsPropertyBrowser_aa804fff20f0796175ca09f45c335823d}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolLineIntersect@{updateOptionsToolLineIntersect}}
+\index{updateOptionsToolLineIntersect@{updateOptionsToolLineIntersect}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolLineIntersect()}{updateOptionsToolLineIntersect()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Line\+Intersect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa374619854487a043d6122439f1db78d}\label{classVToolOptionsPropertyBrowser_aa374619854487a043d6122439f1db78d}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolLineIntersectAxis@{updateOptionsToolLineIntersectAxis}}
+\index{updateOptionsToolLineIntersectAxis@{updateOptionsToolLineIntersectAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolLineIntersectAxis()}{updateOptionsToolLineIntersectAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Line\+Intersect\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aa763d947e22f801f6af973afe96ed773}\label{classVToolOptionsPropertyBrowser_aa763d947e22f801f6af973afe96ed773}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolMirrorByAxis@{updateOptionsToolMirrorByAxis}}
+\index{updateOptionsToolMirrorByAxis@{updateOptionsToolMirrorByAxis}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolMirrorByAxis()}{updateOptionsToolMirrorByAxis()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Mirror\+By\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ae088f7157d7edfc1c24b38dbd2c37640}\label{classVToolOptionsPropertyBrowser_ae088f7157d7edfc1c24b38dbd2c37640}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolMirrorByLine@{updateOptionsToolMirrorByLine}}
+\index{updateOptionsToolMirrorByLine@{updateOptionsToolMirrorByLine}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolMirrorByLine()}{updateOptionsToolMirrorByLine()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Mirror\+By\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a018217ba661a04ac8879f7aaef8531e0}\label{classVToolOptionsPropertyBrowser_a018217ba661a04ac8879f7aaef8531e0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolMove@{updateOptionsToolMove}}
+\index{updateOptionsToolMove@{updateOptionsToolMove}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolMove()}{updateOptionsToolMove()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a25668228241fb2bab377b429235c3fd5}\label{classVToolOptionsPropertyBrowser_a25668228241fb2bab377b429235c3fd5}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolNormal@{updateOptionsToolNormal}}
+\index{updateOptionsToolNormal@{updateOptionsToolNormal}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolNormal()}{updateOptionsToolNormal()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a440e819f74651bffc5138c38c00bbfdd}\label{classVToolOptionsPropertyBrowser_a440e819f74651bffc5138c38c00bbfdd}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointFromArcAndTangent@{updateOptionsToolPointFromArcAndTangent}}
+\index{updateOptionsToolPointFromArcAndTangent@{updateOptionsToolPointFromArcAndTangent}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointFromArcAndTangent()}{updateOptionsToolPointFromArcAndTangent()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+From\+Arc\+And\+Tangent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ac1b060dd60b880d37b07f83e83272670}\label{classVToolOptionsPropertyBrowser_ac1b060dd60b880d37b07f83e83272670}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointFromCircleAndTangent@{updateOptionsToolPointFromCircleAndTangent}}
+\index{updateOptionsToolPointFromCircleAndTangent@{updateOptionsToolPointFromCircleAndTangent}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointFromCircleAndTangent()}{updateOptionsToolPointFromCircleAndTangent()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+From\+Circle\+And\+Tangent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_adf557342869e8b5460bc9aa1364ea4f5}\label{classVToolOptionsPropertyBrowser_adf557342869e8b5460bc9aa1364ea4f5}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointOfContact@{updateOptionsToolPointOfContact}}
+\index{updateOptionsToolPointOfContact@{updateOptionsToolPointOfContact}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointOfContact()}{updateOptionsToolPointOfContact()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+Of\+Contact (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_af56c57105265b6f9a9e1d5c64c5ea362}\label{classVToolOptionsPropertyBrowser_af56c57105265b6f9a9e1d5c64c5ea362}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointOfIntersection@{updateOptionsToolPointOfIntersection}}
+\index{updateOptionsToolPointOfIntersection@{updateOptionsToolPointOfIntersection}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointOfIntersection()}{updateOptionsToolPointOfIntersection()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+Of\+Intersection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ac723f1c9ccc784bbdd2990d4cb7e5c4f}\label{classVToolOptionsPropertyBrowser_ac723f1c9ccc784bbdd2990d4cb7e5c4f}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointOfIntersectionArcs@{updateOptionsToolPointOfIntersectionArcs}}
+\index{updateOptionsToolPointOfIntersectionArcs@{updateOptionsToolPointOfIntersectionArcs}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointOfIntersectionArcs()}{updateOptionsToolPointOfIntersectionArcs()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+Of\+Intersection\+Arcs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a907f7c130f7d26d15a4d0fee69e801d1}\label{classVToolOptionsPropertyBrowser_a907f7c130f7d26d15a4d0fee69e801d1}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointOfIntersectionCircles@{updateOptionsToolPointOfIntersectionCircles}}
+\index{updateOptionsToolPointOfIntersectionCircles@{updateOptionsToolPointOfIntersectionCircles}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointOfIntersectionCircles()}{updateOptionsToolPointOfIntersectionCircles()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+Of\+Intersection\+Circles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a96ed4ff1cc698c2010c86cb0adaa7759}\label{classVToolOptionsPropertyBrowser_a96ed4ff1cc698c2010c86cb0adaa7759}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolPointOfIntersectionCurves@{updateOptionsToolPointOfIntersectionCurves}}
+\index{updateOptionsToolPointOfIntersectionCurves@{updateOptionsToolPointOfIntersectionCurves}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolPointOfIntersectionCurves()}{updateOptionsToolPointOfIntersectionCurves()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Point\+Of\+Intersection\+Curves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a49f0a994818d0a7f153659bdbe10014a}\label{classVToolOptionsPropertyBrowser_a49f0a994818d0a7f153659bdbe10014a}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolRotation@{updateOptionsToolRotation}}
+\index{updateOptionsToolRotation@{updateOptionsToolRotation}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolRotation()}{updateOptionsToolRotation()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a260fc95e6f3e209940b7cca96072c393}\label{classVToolOptionsPropertyBrowser_a260fc95e6f3e209940b7cca96072c393}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolShoulderPoint@{updateOptionsToolShoulderPoint}}
+\index{updateOptionsToolShoulderPoint@{updateOptionsToolShoulderPoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolShoulderPoint()}{updateOptionsToolShoulderPoint()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Shoulder\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a114c0953f8cf53b6e0516f30836b1e4f}\label{classVToolOptionsPropertyBrowser_a114c0953f8cf53b6e0516f30836b1e4f}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolSinglePoint@{updateOptionsToolSinglePoint}}
+\index{updateOptionsToolSinglePoint@{updateOptionsToolSinglePoint}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolSinglePoint()}{updateOptionsToolSinglePoint()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Single\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a82955507489881c2ec7dde1b3accb630}\label{classVToolOptionsPropertyBrowser_a82955507489881c2ec7dde1b3accb630}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolSpline@{updateOptionsToolSpline}}
+\index{updateOptionsToolSpline@{updateOptionsToolSpline}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolSpline()}{updateOptionsToolSpline()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_aafb33df793d7639bdbd74d9bb7d37259}\label{classVToolOptionsPropertyBrowser_aafb33df793d7639bdbd74d9bb7d37259}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolSplinePath@{updateOptionsToolSplinePath}}
+\index{updateOptionsToolSplinePath@{updateOptionsToolSplinePath}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolSplinePath()}{updateOptionsToolSplinePath()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a51685122ac3119f8cd34667f51f5ddd0}\label{classVToolOptionsPropertyBrowser_a51685122ac3119f8cd34667f51f5ddd0}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolTriangle@{updateOptionsToolTriangle}}
+\index{updateOptionsToolTriangle@{updateOptionsToolTriangle}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolTriangle()}{updateOptionsToolTriangle()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+Triangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7cca22222edb978b34e2f80082e6d89e}\label{classVToolOptionsPropertyBrowser_a7cca22222edb978b34e2f80082e6d89e}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!updateOptionsToolTrueDarts@{updateOptionsToolTrueDarts}}
+\index{updateOptionsToolTrueDarts@{updateOptionsToolTrueDarts}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{updateOptionsToolTrueDarts()}{updateOptionsToolTrueDarts()}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::update\+Options\+Tool\+True\+Darts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a0b5e0b32b3cbe63e641bd7402bb3b95a}\label{classVToolOptionsPropertyBrowser_a0b5e0b32b3cbe63e641bd7402bb3b95a}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!userChangedData@{userChangedData}}
+\index{userChangedData@{userChangedData}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{userChangedData}{userChangedData}}
+{\footnotesize\ttfamily void VTool\+Options\+Property\+Browser\+::user\+Changed\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ade8802baa568f80b1152cc033dd2970d}\label{classVToolOptionsPropertyBrowser_ade8802baa568f80b1152cc033dd2970d}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{currentItem}{currentItem}}
+{\footnotesize\ttfamily QGraphics\+Item$\ast$ VTool\+Options\+Property\+Browser\+::current\+Item\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ac20fec4aadfe22eb99a4063198d4215f}\label{classVToolOptionsPropertyBrowser_ac20fec4aadfe22eb99a4063198d4215f}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!formView@{formView}}
+\index{formView@{formView}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{formView}{formView}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VPropertyFormView}{VPE\+::\+VProperty\+Form\+View}}$\ast$ VTool\+Options\+Property\+Browser\+::form\+View\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a6e849d07b655c5fd840c248d3ff23be9}\label{classVToolOptionsPropertyBrowser_a6e849d07b655c5fd840c248d3ff23be9}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!idToProperty@{idToProperty}}
+\index{idToProperty@{idToProperty}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{idToProperty}{idToProperty}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$QString, \mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$$>$ VTool\+Options\+Property\+Browser\+::id\+To\+Property\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a0334240f4eedf63363de9ff1173a13a1}\label{classVToolOptionsPropertyBrowser_a0334240f4eedf63363de9ff1173a13a1}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classVContainer}{VContainer}}$\ast$ VTool\+Options\+Property\+Browser\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_a7e8b17e73cdb2fe5ebb550aacd13ec19}\label{classVToolOptionsPropertyBrowser_a7e8b17e73cdb2fe5ebb550aacd13ec19}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!propertyModel@{propertyModel}}
+\index{propertyModel@{propertyModel}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{propertyModel}{propertyModel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVPE_1_1VPropertyModel}{VPE\+::\+VProperty\+Model}}$\ast$ VTool\+Options\+Property\+Browser\+::property\+Model\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVToolOptionsPropertyBrowser_ae046c3a9fef63573e7bbb234915e9e64}\label{classVToolOptionsPropertyBrowser_ae046c3a9fef63573e7bbb234915e9e64}} 
+\index{VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}!propertyToId@{propertyToId}}
+\index{propertyToId@{propertyToId}!VToolOptionsPropertyBrowser@{VToolOptionsPropertyBrowser}}
+\doxysubsubsection{\texorpdfstring{propertyToId}{propertyToId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$\mbox{\hyperlink{classVPE_1_1VProperty}{VPE\+::\+VProperty}} $\ast$, QString$>$ VTool\+Options\+Property\+Browser\+::property\+To\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vtooloptionspropertybrowser_8h}{vtooloptionspropertybrowser.\+h}}\item 
+src/app/seamly2d/core/\mbox{\hyperlink{vtooloptionspropertybrowser_8cpp}{vtooloptionspropertybrowser.\+cpp}}\end{DoxyCompactItemize}

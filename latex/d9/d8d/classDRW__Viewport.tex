@@ -1,0 +1,232 @@
+\hypertarget{classDRW__Viewport}{}\doxysection{DRW\+\_\+\+Viewport Class Reference}
+\label{classDRW__Viewport}\index{DRW\_Viewport@{DRW\_Viewport}}
+
+
+Class to handle viewport entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Viewport\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d9/d8d/classDRW__Viewport}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDRW__Viewport_a404f3968ed62203b2c858ab3896ada78}{DRW\+\_\+\+Viewport}} ()
+\item 
+virtual void \mbox{\hyperlink{classDRW__Viewport_a450cc9bee864aab3ecd99c091310baf2}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a3d0d03d4fc2c8a3edb3f1ad6e2cdcf2e}{pswidth}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_af462ca77d7463df5319af366846b6494}{psheight}}
+\item 
+int \mbox{\hyperlink{classDRW__Viewport_a5d894c4b220ebb89e7b2f368a02c6a65}{vpstatus}}
+\item 
+int \mbox{\hyperlink{classDRW__Viewport_adbec007a8c4b56acd1a55238aca29250}{vp\+ID}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a345ae2f37484ce99a63b0a62444a80e9}{center\+PX}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_aa40e5f6095ea9641c463c71f79bc7650}{center\+PY}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_abdfa644edb2db86f4e448a47e6c0a08d}{snap\+PX}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a9a54e4f64acc109418504e40948ab858}{snap\+PY}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a2f4827ba6d15951fa21a3aad497a3ff5}{snap\+Sp\+PX}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a8648d21cfe5082e96a84f9d41684b5ca}{snap\+Sp\+PY}}
+\item 
+\mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{classDRW__Viewport_a7ef3ded922fc5a3c5edd5b8da8a3d3d8}{view\+Dir}}
+\item 
+\mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{classDRW__Viewport_aa33f15bb04421b33772d4ba7473a272c}{view\+Target}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a5350736f5091de23f63b13586aab6ff5}{view\+Length}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_ab09b16c657b284f681b10005b7a691c6}{front\+Clip}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_ac43573ecf6007bc2a5223465ab0d3dc0}{back\+Clip}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a58791e7b528bdaaa6f1ca0572c7321ea}{view\+Height}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a6ad208870366d62263d0a6ae190ab4bc}{snap\+Angle}}
+\item 
+double \mbox{\hyperlink{classDRW__Viewport_a0d16a6058735a91ca33cf9b19383ff69}{twist\+Angle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDRW__Viewport_ab38d1016a55fab3d0c80fa2e64eeb79a}{parse\+Code}} (int code, \mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{classDRW__Viewport_a1ae0073c7e131b80736a9be44127c413}{frozen\+Ly\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle viewport entity. 
+
+Class to handle viewport entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDRW__Viewport_a404f3968ed62203b2c858ab3896ada78}\label{classDRW__Viewport_a404f3968ed62203b2c858ab3896ada78}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!DRW\_Viewport@{DRW\_Viewport}}
+\index{DRW\_Viewport@{DRW\_Viewport}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{DRW\_Viewport()}{DRW\_Viewport()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Viewport\+::\+DRW\+\_\+\+Viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDRW__Viewport_a450cc9bee864aab3ecd99c091310baf2}\label{classDRW__Viewport_a450cc9bee864aab3ecd99c091310baf2}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily virtual void DRW\+\_\+\+Viewport\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDRW__Point_a6922b7e506b81509fc4369e5e89301a4}{DRW\+\_\+\+Point}}.
+
+\mbox{\Hypertarget{classDRW__Viewport_ab38d1016a55fab3d0c80fa2e64eeb79a}\label{classDRW__Viewport_ab38d1016a55fab3d0c80fa2e64eeb79a}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Viewport\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxfReader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDRW__Viewport_ac43573ecf6007bc2a5223465ab0d3dc0}\label{classDRW__Viewport_ac43573ecf6007bc2a5223465ab0d3dc0}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!backClip@{backClip}}
+\index{backClip@{backClip}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{backClip}{backClip}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::back\+Clip}
+
+Back clip plane Z value, code 44 \mbox{\Hypertarget{classDRW__Viewport_a345ae2f37484ce99a63b0a62444a80e9}\label{classDRW__Viewport_a345ae2f37484ce99a63b0a62444a80e9}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!centerPX@{centerPX}}
+\index{centerPX@{centerPX}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{centerPX}{centerPX}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::center\+PX}
+
+view center point X, code 12 \mbox{\Hypertarget{classDRW__Viewport_aa40e5f6095ea9641c463c71f79bc7650}\label{classDRW__Viewport_aa40e5f6095ea9641c463c71f79bc7650}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!centerPY@{centerPY}}
+\index{centerPY@{centerPY}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{centerPY}{centerPY}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::center\+PY}
+
+view center point Y, code 22 \mbox{\Hypertarget{classDRW__Viewport_ab09b16c657b284f681b10005b7a691c6}\label{classDRW__Viewport_ab09b16c657b284f681b10005b7a691c6}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!frontClip@{frontClip}}
+\index{frontClip@{frontClip}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{frontClip}{frontClip}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::front\+Clip}
+
+Front clip plane Z value, code 43 \mbox{\Hypertarget{classDRW__Viewport_a1ae0073c7e131b80736a9be44127c413}\label{classDRW__Viewport_a1ae0073c7e131b80736a9be44127c413}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!frozenLyCount@{frozenLyCount}}
+\index{frozenLyCount@{frozenLyCount}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{frozenLyCount}{frozenLyCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Viewport\+::frozen\+Ly\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDRW__Viewport_af462ca77d7463df5319af366846b6494}\label{classDRW__Viewport_af462ca77d7463df5319af366846b6494}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!psheight@{psheight}}
+\index{psheight@{psheight}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{psheight}{psheight}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::psheight}
+
+Height in paper space units, code 41 \mbox{\Hypertarget{classDRW__Viewport_a3d0d03d4fc2c8a3edb3f1ad6e2cdcf2e}\label{classDRW__Viewport_a3d0d03d4fc2c8a3edb3f1ad6e2cdcf2e}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!pswidth@{pswidth}}
+\index{pswidth@{pswidth}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{pswidth}{pswidth}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::pswidth}
+
+Width in paper space units, code 40 \mbox{\Hypertarget{classDRW__Viewport_a6ad208870366d62263d0a6ae190ab4bc}\label{classDRW__Viewport_a6ad208870366d62263d0a6ae190ab4bc}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!snapAngle@{snapAngle}}
+\index{snapAngle@{snapAngle}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{snapAngle}{snapAngle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::snap\+Angle}
+
+Snap angle, code 50 \mbox{\Hypertarget{classDRW__Viewport_abdfa644edb2db86f4e448a47e6c0a08d}\label{classDRW__Viewport_abdfa644edb2db86f4e448a47e6c0a08d}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!snapPX@{snapPX}}
+\index{snapPX@{snapPX}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{snapPX}{snapPX}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::snap\+PX}
+
+Snap base point X, code 13 \mbox{\Hypertarget{classDRW__Viewport_a9a54e4f64acc109418504e40948ab858}\label{classDRW__Viewport_a9a54e4f64acc109418504e40948ab858}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!snapPY@{snapPY}}
+\index{snapPY@{snapPY}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{snapPY}{snapPY}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::snap\+PY}
+
+Snap base point Y, code 23 \mbox{\Hypertarget{classDRW__Viewport_a2f4827ba6d15951fa21a3aad497a3ff5}\label{classDRW__Viewport_a2f4827ba6d15951fa21a3aad497a3ff5}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!snapSpPX@{snapSpPX}}
+\index{snapSpPX@{snapSpPX}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{snapSpPX}{snapSpPX}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::snap\+Sp\+PX}
+
+Snap spacing X, code 14 \mbox{\Hypertarget{classDRW__Viewport_a8648d21cfe5082e96a84f9d41684b5ca}\label{classDRW__Viewport_a8648d21cfe5082e96a84f9d41684b5ca}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!snapSpPY@{snapSpPY}}
+\index{snapSpPY@{snapSpPY}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{snapSpPY}{snapSpPY}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::snap\+Sp\+PY}
+
+Snap spacing Y, code 24 \mbox{\Hypertarget{classDRW__Viewport_a0d16a6058735a91ca33cf9b19383ff69}\label{classDRW__Viewport_a0d16a6058735a91ca33cf9b19383ff69}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!twistAngle@{twistAngle}}
+\index{twistAngle@{twistAngle}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{twistAngle}{twistAngle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::twist\+Angle}
+
+view twist angle, code 51 \mbox{\Hypertarget{classDRW__Viewport_a7ef3ded922fc5a3c5edd5b8da8a3d3d8}\label{classDRW__Viewport_a7ef3ded922fc5a3c5edd5b8da8a3d3d8}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!viewDir@{viewDir}}
+\index{viewDir@{viewDir}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{viewDir}{viewDir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Viewport\+::view\+Dir}
+
+View direction vector, code 16, 26 \& 36 \mbox{\Hypertarget{classDRW__Viewport_a58791e7b528bdaaa6f1ca0572c7321ea}\label{classDRW__Viewport_a58791e7b528bdaaa6f1ca0572c7321ea}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!viewHeight@{viewHeight}}
+\index{viewHeight@{viewHeight}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{viewHeight}{viewHeight}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::view\+Height}
+
+View height in model space units, code 45 \mbox{\Hypertarget{classDRW__Viewport_a5350736f5091de23f63b13586aab6ff5}\label{classDRW__Viewport_a5350736f5091de23f63b13586aab6ff5}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!viewLength@{viewLength}}
+\index{viewLength@{viewLength}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{viewLength}{viewLength}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Viewport\+::view\+Length}
+
+Perspective lens length, code 42 \mbox{\Hypertarget{classDRW__Viewport_aa33f15bb04421b33772d4ba7473a272c}\label{classDRW__Viewport_aa33f15bb04421b33772d4ba7473a272c}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!viewTarget@{viewTarget}}
+\index{viewTarget@{viewTarget}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{viewTarget}{viewTarget}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDRW__Coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Viewport\+::view\+Target}
+
+View target point, code 17, 27, 37 \mbox{\Hypertarget{classDRW__Viewport_adbec007a8c4b56acd1a55238aca29250}\label{classDRW__Viewport_adbec007a8c4b56acd1a55238aca29250}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!vpID@{vpID}}
+\index{vpID@{vpID}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{vpID}{vpID}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Viewport\+::vp\+ID}
+
+Viewport ID, code 69 \mbox{\Hypertarget{classDRW__Viewport_a5d894c4b220ebb89e7b2f368a02c6a65}\label{classDRW__Viewport_a5d894c4b220ebb89e7b2f368a02c6a65}} 
+\index{DRW\_Viewport@{DRW\_Viewport}!vpstatus@{vpstatus}}
+\index{vpstatus@{vpstatus}!DRW\_Viewport@{DRW\_Viewport}}
+\doxysubsubsection{\texorpdfstring{vpstatus}{vpstatus}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Viewport\+::vpstatus}
+
+Viewport status, code 68 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

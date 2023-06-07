@@ -1,0 +1,187 @@
+\hypertarget{classAnchorPointDialog}{}\doxysection{Anchor\+Point\+Dialog Class Reference}
+\label{classAnchorPointDialog}\index{AnchorPointDialog@{AnchorPointDialog}}
+
+
+{\ttfamily \#include $<$anchorpoint\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Anchor\+Point\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d6/dfc/classAnchorPointDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointDialog_a9bcc8ea230bb5e96d302615ee4f6ee28}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAnchorPointDialog_afc3d436148b688f2a3fca351e8f57f2b}{Anchor\+Point\+Dialog}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, quint32 \mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classAnchorPointDialog_a8a5d013489f8716722b0d04dff69ac0a}{$\sim$\+Anchor\+Point\+Dialog}} ()
+\item 
+void \mbox{\hyperlink{classAnchorPointDialog_ad62de2d96acc3edef1890e690563c93f}{Enble\+Show\+Mode}} (bool disable)
+\item 
+quint32 \mbox{\hyperlink{classAnchorPointDialog_ae1a749e8b82027229bef30840d3e592a}{Get\+Piece\+Id}} () const
+\item 
+void \mbox{\hyperlink{classAnchorPointDialog_a0b51abac053caadb9e019b77b5c41467}{Set\+Piece\+Id}} (quint32 id)
+\item 
+quint32 \mbox{\hyperlink{classAnchorPointDialog_aabae591b517ed6eb02d92af4f56b9223}{Get\+Point\+Id}} () const
+\item 
+void \mbox{\hyperlink{classAnchorPointDialog_aa3b29cc04e16069c9373e9b9863cf2a2}{Set\+Point\+Id}} (quint32 id)
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointDialog_a86e2d79c7f0d33ef17995d07c041e2a1}{Set\+Pieces\+List}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&list) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAnchorPointDialog_a5c1e4678811f9b07bfa07fd205ccdffc}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Check\+State enable, when all is correct, or disable, when something wrong, button ok. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAnchorPointDialog_af0b9a7fabc1202048fba570cbd2af05f}{Show\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAnchorPointDialog_a469d504618f7bf0f877992a59bb0e0b9}{Check\+Pieces}} ()
+\item 
+void \mbox{\hyperlink{classAnchorPointDialog_afbeca6100af5cdb4fbc8c81c83d89171}{Check\+Point}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Anchor\+Point\+Dialog $\ast$ \mbox{\hyperlink{classAnchorPointDialog_a215e32d5182f0863414e19ac336f5dde}{ui}}
+\item 
+bool \mbox{\hyperlink{classAnchorPointDialog_aa2a976dade39e9c1ed5e22b904e20f41}{m\+\_\+show\+Mode}}
+\item 
+bool \mbox{\hyperlink{classAnchorPointDialog_aad38a285f88667a208a83b3f2e91c966}{m\+\_\+flag\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAnchorPointDialog_afc3d436148b688f2a3fca351e8f57f2b}\label{classAnchorPointDialog_afc3d436148b688f2a3fca351e8f57f2b}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!AnchorPointDialog@{AnchorPointDialog}}
+\index{AnchorPointDialog@{AnchorPointDialog}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{AnchorPointDialog()}{AnchorPointDialog()}}
+{\footnotesize\ttfamily Anchor\+Point\+Dialog\+::\+Anchor\+Point\+Dialog (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classAnchorPointDialog_a8a5d013489f8716722b0d04dff69ac0a}\label{classAnchorPointDialog_a8a5d013489f8716722b0d04dff69ac0a}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!````~AnchorPointDialog@{$\sim$AnchorPointDialog}}
+\index{````~AnchorPointDialog@{$\sim$AnchorPointDialog}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$AnchorPointDialog()}{~AnchorPointDialog()}}
+{\footnotesize\ttfamily Anchor\+Point\+Dialog\+::$\sim$\+Anchor\+Point\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAnchorPointDialog_a469d504618f7bf0f877992a59bb0e0b9}\label{classAnchorPointDialog_a469d504618f7bf0f877992a59bb0e0b9}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!CheckPieces@{CheckPieces}}
+\index{CheckPieces@{CheckPieces}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{CheckPieces()}{CheckPieces()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Check\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnchorPointDialog_afbeca6100af5cdb4fbc8c81c83d89171}\label{classAnchorPointDialog_afbeca6100af5cdb4fbc8c81c83d89171}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!CheckPoint@{CheckPoint}}
+\index{CheckPoint@{CheckPoint}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{CheckPoint()}{CheckPoint()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Check\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnchorPointDialog_a5c1e4678811f9b07bfa07fd205ccdffc}\label{classAnchorPointDialog_a5c1e4678811f9b07bfa07fd205ccdffc}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State enable, when all is correct, or disable, when something wrong, button ok. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classAnchorPointDialog_a9bcc8ea230bb5e96d302615ee4f6ee28}\label{classAnchorPointDialog_a9bcc8ea230bb5e96d302615ee4f6ee28}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classAnchorPointDialog_ad62de2d96acc3edef1890e690563c93f}\label{classAnchorPointDialog_ad62de2d96acc3edef1890e690563c93f}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!EnbleShowMode@{EnbleShowMode}}
+\index{EnbleShowMode@{EnbleShowMode}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{EnbleShowMode()}{EnbleShowMode()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Enble\+Show\+Mode (\begin{DoxyParamCaption}\item[{bool}]{disable }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAnchorPointDialog_ae1a749e8b82027229bef30840d3e592a}\label{classAnchorPointDialog_ae1a749e8b82027229bef30840d3e592a}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!GetPieceId@{GetPieceId}}
+\index{GetPieceId@{GetPieceId}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{GetPieceId()}{GetPieceId()}}
+{\footnotesize\ttfamily quint32 Anchor\+Point\+Dialog\+::\+Get\+Piece\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAnchorPointDialog_aabae591b517ed6eb02d92af4f56b9223}\label{classAnchorPointDialog_aabae591b517ed6eb02d92af4f56b9223}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!GetPointId@{GetPointId}}
+\index{GetPointId@{GetPointId}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{GetPointId()}{GetPointId()}}
+{\footnotesize\ttfamily quint32 Anchor\+Point\+Dialog\+::\+Get\+Point\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAnchorPointDialog_a0b51abac053caadb9e019b77b5c41467}\label{classAnchorPointDialog_a0b51abac053caadb9e019b77b5c41467}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!SetPieceId@{SetPieceId}}
+\index{SetPieceId@{SetPieceId}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{SetPieceId()}{SetPieceId()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Set\+Piece\+Id (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAnchorPointDialog_a86e2d79c7f0d33ef17995d07c041e2a1}\label{classAnchorPointDialog_a86e2d79c7f0d33ef17995d07c041e2a1}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!SetPiecesList@{SetPiecesList}}
+\index{SetPiecesList@{SetPiecesList}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{SetPiecesList()}{SetPiecesList()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Set\+Pieces\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_ae8a522bc8cd5063cf17cb29d2c14e453}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classAnchorPointDialog_aa3b29cc04e16069c9373e9b9863cf2a2}\label{classAnchorPointDialog_aa3b29cc04e16069c9373e9b9863cf2a2}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!SetPointId@{SetPointId}}
+\index{SetPointId@{SetPointId}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{SetPointId()}{SetPointId()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Set\+Point\+Id (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAnchorPointDialog_af0b9a7fabc1202048fba570cbd2af05f}\label{classAnchorPointDialog_af0b9a7fabc1202048fba570cbd2af05f}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Anchor\+Point\+Dialog\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a27c61eab1bc3d32f6917983612ab8594}{Dialog\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAnchorPointDialog_aad38a285f88667a208a83b3f2e91c966}\label{classAnchorPointDialog_aad38a285f88667a208a83b3f2e91c966}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!m\_flagPoint@{m\_flagPoint}}
+\index{m\_flagPoint@{m\_flagPoint}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{m\_flagPoint}{m\_flagPoint}}
+{\footnotesize\ttfamily bool Anchor\+Point\+Dialog\+::m\+\_\+flag\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnchorPointDialog_aa2a976dade39e9c1ed5e22b904e20f41}\label{classAnchorPointDialog_aa2a976dade39e9c1ed5e22b904e20f41}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!m\_showMode@{m\_showMode}}
+\index{m\_showMode@{m\_showMode}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{m\_showMode}{m\_showMode}}
+{\footnotesize\ttfamily bool Anchor\+Point\+Dialog\+::m\+\_\+show\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAnchorPointDialog_a215e32d5182f0863414e19ac336f5dde}\label{classAnchorPointDialog_a215e32d5182f0863414e19ac336f5dde}} 
+\index{AnchorPointDialog@{AnchorPointDialog}!ui@{ui}}
+\index{ui@{ui}!AnchorPointDialog@{AnchorPointDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Anchor\+Point\+Dialog$\ast$ Anchor\+Point\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{anchorpoint__dialog_8h}{anchorpoint\+\_\+dialog.\+h}}\item 
+src/libs/vtools/dialogs/tools/\mbox{\hyperlink{anchorpoint__dialog_8cpp}{anchorpoint\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

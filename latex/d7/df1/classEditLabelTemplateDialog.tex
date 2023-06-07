@@ -1,0 +1,247 @@
+\hypertarget{classEditLabelTemplateDialog}{}\doxysection{Edit\+Label\+Template\+Dialog Class Reference}
+\label{classEditLabelTemplateDialog}\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+
+
+{\ttfamily \#include $<$editlabeltemplate\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Edit\+Label\+Template\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/df1/classEditLabelTemplateDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEditLabelTemplateDialog_ab5074ec2a978d09f47e9973618420f97}{Edit\+Label\+Template\+Dialog}} (\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$doc, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classEditLabelTemplateDialog_a61e5d22a5496c080c9210ae9731bec39}{$\sim$\+Edit\+Label\+Template\+Dialog}} ()
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \mbox{\hyperlink{classEditLabelTemplateDialog_a10ab7161fcf8b0351b476e15ed413f73}{Get\+Template}} () const
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a0a62b7a9366f0ffe3bfe403dcd6459e0}{Set\+Template}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \&lines)
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a3989878508ca594d57e8e764188453ac}{Set\+Piece}} (const \mbox{\hyperlink{classVPiece}{VPiece}} \&piece)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_ab95012e6e237fbc17e4720d240bc687f}{Show\+Line\+Details}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_ae913bc9e65218fca12216145b363b05c}{Add\+Line}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_ad9b7e6bbe61a39f6e1ef64a0a93b59be}{Remove\+Line}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a86d5c7a3f72f666c44f540d22d99af9e}{Save\+Line\+Text}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a59ce5aee2c922bf07bd8784d7b5484f7}{Save\+Font\+Style}} (bool checked)
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a0391b073d6576cd3e37ac573a7c7b5b5}{Save\+Text\+Formating}} (bool checked)
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_ae405a3f0591028ef9dc8cc0490799de2}{New\+Template}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a184a7e405c0dfef5c558d9bad417cc5f}{Export\+Template}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a8c0db77bec5611d4a5dd0bd5cb97d455}{Import\+Template}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_aabcd5e283255566efc6e23fe28a42c37}{Insert\+Placeholder}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a467532552dbe9b8a35d430f340f6e0ed}{Tab\+Changed}} (int index)
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_ad5b5fc236862a3b9acaad98a51776338}{Save\+Additional\+Font\+Size}} (int i)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_adf14086781aa51661899167817a587b5}{Setup\+Controls}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a4a81c9a08afdec96df7aa89341b31fbf}{Init\+Placeholders\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_afd91cd383b0b541c805df79a0f6b5de5}{Init\+Placeholders}} ()
+\item 
+QString \mbox{\hyperlink{classEditLabelTemplateDialog_a8c10a99053cbfe073f0c2665e3e4ab59}{Replace\+Placeholders}} (QString line) const
+\item 
+void \mbox{\hyperlink{classEditLabelTemplateDialog_a3cc69eb5519084e635c18521db737462}{Init\+Preview\+Lines}} (const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \&lines)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Edit\+Label\+Template\+Dialog $\ast$ \mbox{\hyperlink{classEditLabelTemplateDialog_a2d70945148bcb328293bf08221c06939}{ui}}
+\item 
+QMenu $\ast$ \mbox{\hyperlink{classEditLabelTemplateDialog_a6ec63028f088239131c9f0e28e9c49e2}{m\+\_\+placeholders\+Menu}}
+\item 
+\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{classEditLabelTemplateDialog_af7cc0fa0ff15e5c70f846d76a7bf3cab}{m\+\_\+doc}}
+\item 
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, QPair$<$ QString, QString $>$ $>$ \mbox{\hyperlink{classEditLabelTemplateDialog_a4899fde961c392e5bdbec05c83bac21d}{m\+\_\+placeholders}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEditLabelTemplateDialog_ab5074ec2a978d09f47e9973618420f97}\label{classEditLabelTemplateDialog_ab5074ec2a978d09f47e9973618420f97}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{EditLabelTemplateDialog()}{EditLabelTemplateDialog()}}
+{\footnotesize\ttfamily Edit\+Label\+Template\+Dialog\+::\+Edit\+Label\+Template\+Dialog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a61e5d22a5496c080c9210ae9731bec39}\label{classEditLabelTemplateDialog_a61e5d22a5496c080c9210ae9731bec39}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!````~EditLabelTemplateDialog@{$\sim$EditLabelTemplateDialog}}
+\index{````~EditLabelTemplateDialog@{$\sim$EditLabelTemplateDialog}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$EditLabelTemplateDialog()}{~EditLabelTemplateDialog()}}
+{\footnotesize\ttfamily Edit\+Label\+Template\+Dialog\+::$\sim$\+Edit\+Label\+Template\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEditLabelTemplateDialog_ae913bc9e65218fca12216145b363b05c}\label{classEditLabelTemplateDialog_ae913bc9e65218fca12216145b363b05c}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!AddLine@{AddLine}}
+\index{AddLine@{AddLine}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{AddLine}{AddLine}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Add\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a184a7e405c0dfef5c558d9bad417cc5f}\label{classEditLabelTemplateDialog_a184a7e405c0dfef5c558d9bad417cc5f}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!ExportTemplate@{ExportTemplate}}
+\index{ExportTemplate@{ExportTemplate}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{ExportTemplate}{ExportTemplate}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Export\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a10ab7161fcf8b0351b476e15ed413f73}\label{classEditLabelTemplateDialog_a10ab7161fcf8b0351b476e15ed413f73}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!GetTemplate@{GetTemplate}}
+\index{GetTemplate@{GetTemplate}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{GetTemplate()}{GetTemplate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ Edit\+Label\+Template\+Dialog\+::\+Get\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a8c0db77bec5611d4a5dd0bd5cb97d455}\label{classEditLabelTemplateDialog_a8c0db77bec5611d4a5dd0bd5cb97d455}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!ImportTemplate@{ImportTemplate}}
+\index{ImportTemplate@{ImportTemplate}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{ImportTemplate}{ImportTemplate}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Import\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_afd91cd383b0b541c805df79a0f6b5de5}\label{classEditLabelTemplateDialog_afd91cd383b0b541c805df79a0f6b5de5}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!InitPlaceholders@{InitPlaceholders}}
+\index{InitPlaceholders@{InitPlaceholders}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{InitPlaceholders()}{InitPlaceholders()}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Init\+Placeholders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a4a81c9a08afdec96df7aa89341b31fbf}\label{classEditLabelTemplateDialog_a4a81c9a08afdec96df7aa89341b31fbf}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!InitPlaceholdersMenu@{InitPlaceholdersMenu}}
+\index{InitPlaceholdersMenu@{InitPlaceholdersMenu}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{InitPlaceholdersMenu()}{InitPlaceholdersMenu()}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Init\+Placeholders\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a3cc69eb5519084e635c18521db737462}\label{classEditLabelTemplateDialog_a3cc69eb5519084e635c18521db737462}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!InitPreviewLines@{InitPreviewLines}}
+\index{InitPreviewLines@{InitPreviewLines}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{InitPreviewLines()}{InitPreviewLines()}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Init\+Preview\+Lines (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \&}]{lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_aabcd5e283255566efc6e23fe28a42c37}\label{classEditLabelTemplateDialog_aabcd5e283255566efc6e23fe28a42c37}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!InsertPlaceholder@{InsertPlaceholder}}
+\index{InsertPlaceholder@{InsertPlaceholder}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{InsertPlaceholder}{InsertPlaceholder}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Insert\+Placeholder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_ae405a3f0591028ef9dc8cc0490799de2}\label{classEditLabelTemplateDialog_ae405a3f0591028ef9dc8cc0490799de2}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!NewTemplate@{NewTemplate}}
+\index{NewTemplate@{NewTemplate}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{NewTemplate}{NewTemplate}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+New\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_ad9b7e6bbe61a39f6e1ef64a0a93b59be}\label{classEditLabelTemplateDialog_ad9b7e6bbe61a39f6e1ef64a0a93b59be}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!RemoveLine@{RemoveLine}}
+\index{RemoveLine@{RemoveLine}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{RemoveLine}{RemoveLine}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Remove\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a8c10a99053cbfe073f0c2665e3e4ab59}\label{classEditLabelTemplateDialog_a8c10a99053cbfe073f0c2665e3e4ab59}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!ReplacePlaceholders@{ReplacePlaceholders}}
+\index{ReplacePlaceholders@{ReplacePlaceholders}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{ReplacePlaceholders()}{ReplacePlaceholders()}}
+{\footnotesize\ttfamily QString Edit\+Label\+Template\+Dialog\+::\+Replace\+Placeholders (\begin{DoxyParamCaption}\item[{QString}]{line }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_ad5b5fc236862a3b9acaad98a51776338}\label{classEditLabelTemplateDialog_ad5b5fc236862a3b9acaad98a51776338}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SaveAdditionalFontSize@{SaveAdditionalFontSize}}
+\index{SaveAdditionalFontSize@{SaveAdditionalFontSize}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SaveAdditionalFontSize}{SaveAdditionalFontSize}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Save\+Additional\+Font\+Size (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a59ce5aee2c922bf07bd8784d7b5484f7}\label{classEditLabelTemplateDialog_a59ce5aee2c922bf07bd8784d7b5484f7}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SaveFontStyle@{SaveFontStyle}}
+\index{SaveFontStyle@{SaveFontStyle}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SaveFontStyle}{SaveFontStyle}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Save\+Font\+Style (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a86d5c7a3f72f666c44f540d22d99af9e}\label{classEditLabelTemplateDialog_a86d5c7a3f72f666c44f540d22d99af9e}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SaveLineText@{SaveLineText}}
+\index{SaveLineText@{SaveLineText}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SaveLineText}{SaveLineText}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Save\+Line\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a0391b073d6576cd3e37ac573a7c7b5b5}\label{classEditLabelTemplateDialog_a0391b073d6576cd3e37ac573a7c7b5b5}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SaveTextFormating@{SaveTextFormating}}
+\index{SaveTextFormating@{SaveTextFormating}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SaveTextFormating}{SaveTextFormating}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Save\+Text\+Formating (\begin{DoxyParamCaption}\item[{bool}]{checked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a3989878508ca594d57e8e764188453ac}\label{classEditLabelTemplateDialog_a3989878508ca594d57e8e764188453ac}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SetPiece@{SetPiece}}
+\index{SetPiece@{SetPiece}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SetPiece()}{SetPiece()}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Set\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVPiece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a0a62b7a9366f0ffe3bfe403dcd6459e0}\label{classEditLabelTemplateDialog_a0a62b7a9366f0ffe3bfe403dcd6459e0}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SetTemplate@{SetTemplate}}
+\index{SetTemplate@{SetTemplate}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SetTemplate()}{SetTemplate()}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Set\+Template (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{structVLabelTemplateLine}{VLabel\+Template\+Line}} $>$ \&}]{lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_adf14086781aa51661899167817a587b5}\label{classEditLabelTemplateDialog_adf14086781aa51661899167817a587b5}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!SetupControls@{SetupControls}}
+\index{SetupControls@{SetupControls}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{SetupControls()}{SetupControls()}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Setup\+Controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_ab95012e6e237fbc17e4720d240bc687f}\label{classEditLabelTemplateDialog_ab95012e6e237fbc17e4720d240bc687f}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!ShowLineDetails@{ShowLineDetails}}
+\index{ShowLineDetails@{ShowLineDetails}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{ShowLineDetails}{ShowLineDetails}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Show\+Line\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a467532552dbe9b8a35d430f340f6e0ed}\label{classEditLabelTemplateDialog_a467532552dbe9b8a35d430f340f6e0ed}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!TabChanged@{TabChanged}}
+\index{TabChanged@{TabChanged}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{TabChanged}{TabChanged}}
+{\footnotesize\ttfamily void Edit\+Label\+Template\+Dialog\+::\+Tab\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEditLabelTemplateDialog_af7cc0fa0ff15e5c70f846d76a7bf3cab}\label{classEditLabelTemplateDialog_af7cc0fa0ff15e5c70f846d76a7bf3cab}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!m\_doc@{m\_doc}}
+\index{m\_doc@{m\_doc}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{m\_doc}{m\_doc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVAbstractPattern}{VAbstract\+Pattern}}$\ast$ Edit\+Label\+Template\+Dialog\+::m\+\_\+doc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a4899fde961c392e5bdbec05c83bac21d}\label{classEditLabelTemplateDialog_a4899fde961c392e5bdbec05c83bac21d}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!m\_placeholders@{m\_placeholders}}
+\index{m\_placeholders@{m\_placeholders}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{m\_placeholders}{m\_placeholders}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$QString, QPair$<$QString, QString$>$ $>$ Edit\+Label\+Template\+Dialog\+::m\+\_\+placeholders\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a6ec63028f088239131c9f0e28e9c49e2}\label{classEditLabelTemplateDialog_a6ec63028f088239131c9f0e28e9c49e2}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!m\_placeholdersMenu@{m\_placeholdersMenu}}
+\index{m\_placeholdersMenu@{m\_placeholdersMenu}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{m\_placeholdersMenu}{m\_placeholdersMenu}}
+{\footnotesize\ttfamily QMenu$\ast$ Edit\+Label\+Template\+Dialog\+::m\+\_\+placeholders\+Menu\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditLabelTemplateDialog_a2d70945148bcb328293bf08221c06939}\label{classEditLabelTemplateDialog_a2d70945148bcb328293bf08221c06939}} 
+\index{EditLabelTemplateDialog@{EditLabelTemplateDialog}!ui@{ui}}
+\index{ui@{ui}!EditLabelTemplateDialog@{EditLabelTemplateDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Edit\+Label\+Template\+Dialog$\ast$ Edit\+Label\+Template\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/support/\mbox{\hyperlink{editlabeltemplate__dialog_8h}{editlabeltemplate\+\_\+dialog.\+h}}\item 
+src/libs/vtools/dialogs/support/\mbox{\hyperlink{editlabeltemplate__dialog_8cpp}{editlabeltemplate\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

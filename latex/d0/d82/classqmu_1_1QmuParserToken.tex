@@ -1,0 +1,535 @@
+\hypertarget{classqmu_1_1QmuParserToken}{}\doxysection{qmu\+::Qmu\+Parser\+Token$<$ TBase, TString $>$ Class Template Reference}
+\label{classqmu_1_1QmuParserToken}\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+
+
+Encapsulation of the data for a single formula token.  
+
+
+
+
+{\ttfamily \#include $<$qmuparsertoken.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken_aa84fe95d4c04d7e2f43df2af761a75cd}{Qmu\+Parser\+Token}} ()
+\begin{DoxyCompactList}\small\item\em Constructor (default). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken_ad5148705230119e87bd9cb0a1cbda015}{Qmu\+Parser\+Token}} (const \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \&a\+\_\+\+Tok)
+\begin{DoxyCompactList}\small\item\em Create token from another one. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_a83b7ca1f02a1c50fedad51fea2566c04}{operator=}} (const \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \&a\+\_\+\+Tok)
+\begin{DoxyCompactList}\small\item\em Assignement operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserToken_ae3960b50d343781e48966e57d473066d}{Assign}} (const \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \&a\+\_\+\+Tok)
+\begin{DoxyCompactList}\small\item\em Copy token information from argument. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_ab4024dcbef988d5bfa66588d3417acc4}{Set}} (\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} a\+\_\+i\+Type, const TString \&a\+\_\+str\+Tok=TString())
+\begin{DoxyCompactList}\small\item\em Assign a token type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_a0af464052c161617b428910c59e79926}{Set}} (const \mbox{\hyperlink{classqmu_1_1QmuParserCallback}{Qmu\+Parser\+Callback}} \&a\+\_\+p\+Callback, const TString \&a\+\_\+s\+Tok)
+\begin{DoxyCompactList}\small\item\em Set Callback type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_a8dff801ae34232209ad0ecc9abf1fbe4}{Set\+Val}} (TBase a\+\_\+f\+Val, const TString \&a\+\_\+str\+Tok=TString())
+\begin{DoxyCompactList}\small\item\em Make this token a value token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_a95385e7c34e2f17e700ac6fae79c3ae2}{Set\+Var}} (TBase $\ast$a\+\_\+p\+Var, const TString \&a\+\_\+str\+Tok)
+\begin{DoxyCompactList}\small\item\em make this token a variable token. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_ab70268485971bb96a832e7e7c04bcf2d}{Set\+String}} (const TString \&a\+\_\+str\+Tok, int a\+\_\+i\+Size)
+\begin{DoxyCompactList}\small\item\em Make this token a variable token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1QmuParserToken_a461c5c06f1bd565c0874258939aa9e12}{Set\+Idx}} (int a\+\_\+i\+Idx)
+\begin{DoxyCompactList}\small\item\em Set an index associated with the token related data. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken_a7dc26b27dcde6b2938ec639e9c3cde3b}{Get\+Idx}} () const
+\begin{DoxyCompactList}\small\item\em Return Index associated with the token related data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken_a5bf2549ff60ce866f08975de85e9090f}{Get\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Return the token type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{EType\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken_a02a9b061a62820467c241a7b8d69a853}{Get\+Type}} () const
+\item 
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken_a0107bd53e8b9d12ff8a7d04b3344b26e}{Get\+Pri}} () const
+\item 
+\mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{EOprt\+Associativity}} \mbox{\hyperlink{classqmu_1_1QmuParserToken_a1d7401f2a2b42e9b27acc786cc3034d7}{Get\+Associativity}} () const
+\item 
+\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}} \mbox{\hyperlink{classqmu_1_1QmuParserToken_a3363a3b786a772bf3a6569d8dae3ccb6}{Get\+Func\+Addr}} () const
+\begin{DoxyCompactList}\small\item\em Return the address of the callback function assoziated with function and operator tokens. \end{DoxyCompactList}\item 
+TBase \mbox{\hyperlink{classqmu_1_1QmuParserToken_ae49ab47e86ef7d64ee8ffce8a0eab189}{Get\+Val}} () const
+\begin{DoxyCompactList}\small\item\em Get value of the token. \end{DoxyCompactList}\item 
+TBase $\ast$ \mbox{\hyperlink{classqmu_1_1QmuParserToken_af3c94362f18d3f0c58bee7d0d39354c0}{Get\+Var}} () const
+\begin{DoxyCompactList}\small\item\em Get address of a variable token. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken_a9421bb0ad995f1ade30a50200f4f35ec}{Get\+Arg\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Return the number of function arguments. \end{DoxyCompactList}\item 
+const TString \& \mbox{\hyperlink{classqmu_1_1QmuParserToken_ac5c8dfd83825f70fe51983ace5a17b17}{Get\+As\+String}} () const
+\begin{DoxyCompactList}\small\item\em Return the token identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Function\+Ptr $>$ }\\static Function\+Ptr \mbox{\hyperlink{classqmu_1_1QmuParserToken_a71d9646bc92e9edbee737c9e5258fa6a}{union\+\_\+cast}} (void $\ast$object\+Ptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken_a201e0ce8da37972e76994c6f0b76ba7d}{m\+\_\+i\+Code}}
+\begin{DoxyCompactList}\small\item\em Type of the token; The token type is a constant of type \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{EType\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}{m\+\_\+i\+Type}}
+\item 
+void $\ast$ \mbox{\hyperlink{classqmu_1_1QmuParserToken_a0b10604eedae84d80f2070bceb8935e8}{m\+\_\+p\+Tok}}
+\begin{DoxyCompactList}\small\item\em Stores Token pointer; not applicable for all tokens. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken_a8a5ed7ff51c886899777ea42e856c904}{m\+\_\+i\+Idx}}
+\begin{DoxyCompactList}\small\item\em An otional index to an external buffer storing the token data. \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classqmu_1_1QmuParserToken_a939dd81cf4ce0fa69881e0c11902d911}{m\+\_\+str\+Tok}}
+\begin{DoxyCompactList}\small\item\em Token string. \end{DoxyCompactList}\item 
+TString \mbox{\hyperlink{classqmu_1_1QmuParserToken_aaa074bb7a341c32a12f5b58357f8d7e3}{m\+\_\+str\+Val}}
+\begin{DoxyCompactList}\small\item\em Value for string variables. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{classqmu_1_1QmuParserToken_a780fe3320026640b73916b9fe89a13a9}{m\+\_\+f\+Val}}
+\begin{DoxyCompactList}\small\item\em the value \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classqmu_1_1QmuParserCallback}{Qmu\+Parser\+Callback}} $>$ \mbox{\hyperlink{classqmu_1_1QmuParserToken_a8d494d6652dd72c409327823a74588b0}{m\+\_\+p\+Callback}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TBase, typename TString$>$\newline
+class qmu\+::\+Qmu\+Parser\+Token$<$ TBase, TString $>$}
+
+Encapsulation of the data for a single formula token. 
+
+Formula token implementation. Part of the Math Parser Package. Formula tokens can be either one of the following\+: 
+\begin{DoxyItemize}
+\item value 
+\item variable 
+\item function with numerical arguments 
+\item functions with a string as argument 
+\item prefix operators 
+\item infix operators 
+\item binary operator 
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+(C) 2004-\/2013 Ingo Berg 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_aa84fe95d4c04d7e2f43df2af761a75cd}\label{classqmu_1_1QmuParserToken_aa84fe95d4c04d7e2f43df2af761a75cd}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!QmuParserToken@{QmuParserToken}}
+\index{QmuParserToken@{QmuParserToken}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{QmuParserToken()}{QmuParserToken()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor (default). 
+
+Sets token to an neutral state of type cm\+UNKNOWN. 
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_ad5148705230119e87bd9cb0a1cbda015}\label{classqmu_1_1QmuParserToken_ad5148705230119e87bd9cb0a1cbda015}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!QmuParserToken@{QmuParserToken}}
+\index{QmuParserToken@{QmuParserToken}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{QmuParserToken()}{QmuParserToken()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}$<$ TBase, TString $>$ \&}]{a\+\_\+\+Tok }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create token from another one. 
+
+Implemented by calling Assign(...) 
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyPostcond}{Postcondition}
+m\+\_\+i\+Type==cm\+UNKNOWN 
+\end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classqmu_1_1QmuParserToken_ae3960b50d343781e48966e57d473066d}{Assign}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_ae3960b50d343781e48966e57d473066d}\label{classqmu_1_1QmuParserToken_ae3960b50d343781e48966e57d473066d}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!Assign@{Assign}}
+\index{Assign@{Assign}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{Assign()}{Assign()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+void \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Assign (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}$<$ TBase, TString $>$ \&}]{a\+\_\+\+Tok }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy token information from argument. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a9421bb0ad995f1ade30a50200f4f35ec}\label{classqmu_1_1QmuParserToken_a9421bb0ad995f1ade30a50200f4f35ec}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetArgCount@{GetArgCount}}
+\index{GetArgCount@{GetArgCount}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetArgCount()}{GetArgCount()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Arg\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the number of function arguments. 
+
+Valid only if m\+\_\+i\+Type==Cmd\+FUNC. \mbox{\Hypertarget{classqmu_1_1QmuParserToken_a1d7401f2a2b42e9b27acc786cc3034d7}\label{classqmu_1_1QmuParserToken_a1d7401f2a2b42e9b27acc786cc3034d7}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetAssociativity@{GetAssociativity}}
+\index{GetAssociativity@{GetAssociativity}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetAssociativity()}{GetAssociativity()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{EOprt\+Associativity}} \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Associativity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_ac5c8dfd83825f70fe51983ace5a17b17}\label{classqmu_1_1QmuParserToken_ac5c8dfd83825f70fe51983ace5a17b17}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetAsString@{GetAsString}}
+\index{GetAsString@{GetAsString}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetAsString()}{GetAsString()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+const TString\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the token identifier. 
+
+If \mbox{\hyperlink{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}{m\+\_\+i\+Type}} is cm\+STRING the token identifier is the value of the string argument for a string function. \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classqmu_1_1QmuParserToken_a939dd81cf4ce0fa69881e0c11902d911}{m\+\_\+str\+Tok}} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classqmu_1_1QmuParserToken_a939dd81cf4ce0fa69881e0c11902d911}{m\+\_\+str\+Tok}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a5bf2549ff60ce866f08975de85e9090f}\label{classqmu_1_1QmuParserToken_a5bf2549ff60ce866f08975de85e9090f}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetCode@{GetCode}}
+\index{GetCode@{GetCode}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetCode()}{GetCode()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the token type. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}{m\+\_\+i\+Type}} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a3363a3b786a772bf3a6569d8dae3ccb6}\label{classqmu_1_1QmuParserToken_a3363a3b786a772bf3a6569d8dae3ccb6}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetFuncAddr@{GetFuncAddr}}
+\index{GetFuncAddr@{GetFuncAddr}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetFuncAddr()}{GetFuncAddr()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{namespaceqmu_aa440557251cea678874b3780faf466f9}{generic\+\_\+fun\+\_\+type}} \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Func\+Addr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the address of the callback function assoziated with function and operator tokens. 
+
+\begin{DoxyReturn}{Returns}
+The pointer stored in \mbox{\hyperlink{classqmu_1_1QmuParserToken_a0b10604eedae84d80f2070bceb8935e8}{m\+\_\+p\+Tok}}. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classqmu_1_1QmuParserError}{Qmu\+Parser\+Error}}} & if token type is non of\+: 
+\begin{DoxyItemize}
+\item cm\+FUNC 
+\item cm\+STRFUNC 
+\item cm\+POSTOP 
+\item cm\+INFIXOP 
+\item cm\+OPRT\+\_\+\+BIN 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a7dc26b27dcde6b2938ec639e9c3cde3b}\label{classqmu_1_1QmuParserToken_a7dc26b27dcde6b2938ec639e9c3cde3b}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetIdx@{GetIdx}}
+\index{GetIdx@{GetIdx}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetIdx()}{GetIdx()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return Index associated with the token related data. 
+
+In cm\+STRFUNC -\/ This is the index to a string table in the main parser.
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classqmu_1_1QmuParserError}{Qmu\+Parser\+Error}}} & if \mbox{\hyperlink{classqmu_1_1QmuParserToken_a8a5ed7ff51c886899777ea42e856c904}{m\+\_\+i\+Idx}}$<$0 or \mbox{\hyperlink{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}{m\+\_\+i\+Type}}!=cm\+STRING \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+The index the result will take in the Bytecode calculatin array (\mbox{\hyperlink{classqmu_1_1QmuParserToken_a8a5ed7ff51c886899777ea42e856c904}{m\+\_\+i\+Idx}}). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a0107bd53e8b9d12ff8a7d04b3344b26e}\label{classqmu_1_1QmuParserToken_a0107bd53e8b9d12ff8a7d04b3344b26e}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetPri@{GetPri}}
+\index{GetPri@{GetPri}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetPri()}{GetPri()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Pri (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a02a9b061a62820467c241a7b8d69a853}\label{classqmu_1_1QmuParserToken_a02a9b061a62820467c241a7b8d69a853}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetType@{GetType}}
+\index{GetType@{GetType}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{EType\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_ae49ab47e86ef7d64ee8ffce8a0eab189}\label{classqmu_1_1QmuParserToken_ae49ab47e86ef7d64ee8ffce8a0eab189}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetVal@{GetVal}}
+\index{GetVal@{GetVal}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetVal()}{GetVal()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+TBase \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get value of the token. 
+
+Only applicable to variable and value tokens. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classqmu_1_1QmuParserError}{Qmu\+Parser\+Error}}} & if token is no value/variable token. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_af3c94362f18d3f0c58bee7d0d39354c0}\label{classqmu_1_1QmuParserToken_af3c94362f18d3f0c58bee7d0d39354c0}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!GetVar@{GetVar}}
+\index{GetVar@{GetVar}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{GetVar()}{GetVar()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+TBase$\ast$ \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Get\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get address of a variable token. 
+
+Valid only if m\+\_\+i\+Type==Cmd\+Var. 
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classqmu_1_1QmuParserError}{Qmu\+Parser\+Error}}} & if token is no variable token. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a83b7ca1f02a1c50fedad51fea2566c04}\label{classqmu_1_1QmuParserToken_a83b7ca1f02a1c50fedad51fea2566c04}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}$<$ TBase, TString $>$ \&}]{a\+\_\+\+Tok }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assignement operator. 
+
+Copy token state from another token and return this. Implemented by calling Assign(...). 
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a0af464052c161617b428910c59e79926}\label{classqmu_1_1QmuParserToken_a0af464052c161617b428910c59e79926}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!Set@{Set}}
+\index{Set@{Set}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1QmuParserCallback}{Qmu\+Parser\+Callback}} \&}]{a\+\_\+p\+Callback,  }\item[{const TString \&}]{a\+\_\+s\+Tok }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set Callback type. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_ab4024dcbef988d5bfa66588d3417acc4}\label{classqmu_1_1QmuParserToken_ab4024dcbef988d5bfa66588d3417acc4}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!Set@{Set}}
+\index{Set@{Set}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}}}]{a\+\_\+i\+Type,  }\item[{const TString \&}]{a\+\_\+str\+Tok = {\ttfamily TString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assign a token type. 
+
+Token may not be of type value, variable or function. Those have seperate set functions.
+
+\begin{DoxyPrecond}{Precondition}
+\mbox{[}assert\mbox{]} a\+\_\+i\+Type!=cm\+VAR 
+
+\mbox{[}assert\mbox{]} a\+\_\+i\+Type!=cm\+VAL 
+
+\mbox{[}assert\mbox{]} a\+\_\+i\+Type!=cm\+FUNC 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+m\+\_\+f\+Val = 0 
+
+m\+\_\+p\+Tok = 0 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a461c5c06f1bd565c0874258939aa9e12}\label{classqmu_1_1QmuParserToken_a461c5c06f1bd565c0874258939aa9e12}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!SetIdx@{SetIdx}}
+\index{SetIdx@{SetIdx}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{SetIdx()}{SetIdx()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+void \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Set\+Idx (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+i\+Idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set an index associated with the token related data. 
+
+In cm\+STRFUNC -\/ This is the index to a string table in the main parser. 
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+i\+Idx} & The index the string function result will take in the bytecode parser. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classqmu_1_1QmuParserError}{Qmu\+Parser\+Error}}} & if \#a\+\_\+i\+Idx$<$0 or \mbox{\hyperlink{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}{m\+\_\+i\+Type}}!=cm\+STRING \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_ab70268485971bb96a832e7e7c04bcf2d}\label{classqmu_1_1QmuParserToken_ab70268485971bb96a832e7e7c04bcf2d}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!SetString@{SetString}}
+\index{SetString@{SetString}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{SetString()}{SetString()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Set\+String (\begin{DoxyParamCaption}\item[{const TString \&}]{a\+\_\+str\+Tok,  }\item[{int}]{a\+\_\+i\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Make this token a variable token. 
+
+Member variables not necessary for variable tokens will be invalidated. 
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a8dff801ae34232209ad0ecc9abf1fbe4}\label{classqmu_1_1QmuParserToken_a8dff801ae34232209ad0ecc9abf1fbe4}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!SetVal@{SetVal}}
+\index{SetVal@{SetVal}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{SetVal()}{SetVal()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Set\+Val (\begin{DoxyParamCaption}\item[{TBase}]{a\+\_\+f\+Val,  }\item[{const TString \&}]{a\+\_\+str\+Tok = {\ttfamily TString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Make this token a value token. 
+
+Member variables not necessary for value tokens will be invalidated. 
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a95385e7c34e2f17e700ac6fae79c3ae2}\label{classqmu_1_1QmuParserToken_a95385e7c34e2f17e700ac6fae79c3ae2}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!SetVar@{SetVar}}
+\index{SetVar@{SetVar}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{SetVar()}{SetVar()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{classqmu_1_1QmuParserToken}{Qmu\+Parser\+Token}}\& \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::Set\+Var (\begin{DoxyParamCaption}\item[{TBase $\ast$}]{a\+\_\+p\+Var,  }\item[{const TString \&}]{a\+\_\+str\+Tok }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+make this token a variable token. 
+
+Member variables not necessary for variable tokens will be invalidated. 
+\begin{DoxyExceptions}{Exceptions}
+{\em nothrow} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a71d9646bc92e9edbee737c9e5258fa6a}\label{classqmu_1_1QmuParserToken_a71d9646bc92e9edbee737c9e5258fa6a}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!union\_cast@{union\_cast}}
+\index{union\_cast@{union\_cast}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{union\_cast()}{union\_cast()}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+template$<$class Function\+Ptr $>$ \\
+static Function\+Ptr \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::union\+\_\+cast (\begin{DoxyParamCaption}\item[{void $\ast$}]{object\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a780fe3320026640b73916b9fe89a13a9}\label{classqmu_1_1QmuParserToken_a780fe3320026640b73916b9fe89a13a9}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_fVal@{m\_fVal}}
+\index{m\_fVal@{m\_fVal}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_fVal}{m\_fVal}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+qreal \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+f\+Val\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the value 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a201e0ce8da37972e76994c6f0b76ba7d}\label{classqmu_1_1QmuParserToken_a201e0ce8da37972e76994c6f0b76ba7d}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_iCode@{m\_iCode}}
+\index{m\_iCode@{m\_iCode}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_iCode}{m\_iCode}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+i\+Code\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Type of the token; The token type is a constant of type \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}}. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a8a5ed7ff51c886899777ea42e856c904}\label{classqmu_1_1QmuParserToken_a8a5ed7ff51c886899777ea42e856c904}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_iIdx@{m\_iIdx}}
+\index{m\_iIdx@{m\_iIdx}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_iIdx}{m\_iIdx}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+int \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+i\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+An otional index to an external buffer storing the token data. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}\label{classqmu_1_1QmuParserToken_af6d6b6b0715df5ecec22728aaa0594bd}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_iType@{m\_iType}}
+\index{m\_iType@{m\_iType}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_iType}{m\_iType}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+\mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{EType\+Code}} \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+i\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a8d494d6652dd72c409327823a74588b0}\label{classqmu_1_1QmuParserToken_a8d494d6652dd72c409327823a74588b0}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_pCallback@{m\_pCallback}}
+\index{m\_pCallback@{m\_pCallback}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_pCallback}{m\_pCallback}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classqmu_1_1QmuParserCallback}{Qmu\+Parser\+Callback}}$>$ \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+p\+Callback\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a0b10604eedae84d80f2070bceb8935e8}\label{classqmu_1_1QmuParserToken_a0b10604eedae84d80f2070bceb8935e8}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_pTok@{m\_pTok}}
+\index{m\_pTok@{m\_pTok}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_pTok}{m\_pTok}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+void$\ast$ \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+p\+Tok\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Stores Token pointer; not applicable for all tokens. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_a939dd81cf4ce0fa69881e0c11902d911}\label{classqmu_1_1QmuParserToken_a939dd81cf4ce0fa69881e0c11902d911}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_strTok@{m\_strTok}}
+\index{m\_strTok@{m\_strTok}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_strTok}{m\_strTok}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+TString \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+str\+Tok\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Token string. 
+
+\mbox{\Hypertarget{classqmu_1_1QmuParserToken_aaa074bb7a341c32a12f5b58357f8d7e3}\label{classqmu_1_1QmuParserToken_aaa074bb7a341c32a12f5b58357f8d7e3}} 
+\index{qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}!m\_strVal@{m\_strVal}}
+\index{m\_strVal@{m\_strVal}!qmu::QmuParserToken$<$ TBase, TString $>$@{qmu::QmuParserToken$<$ TBase, TString $>$}}
+\doxysubsubsection{\texorpdfstring{m\_strVal}{m\_strVal}}
+{\footnotesize\ttfamily template$<$typename TBase , typename TString $>$ \\
+TString \mbox{\hyperlink{classqmu_1_1QmuParserToken}{qmu\+::\+Qmu\+Parser\+Token}}$<$ TBase, TString $>$\+::m\+\_\+str\+Val\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Value for string variables. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/qmuparser/\mbox{\hyperlink{qmuparsertoken_8h}{qmuparsertoken.\+h}}\end{DoxyCompactItemize}

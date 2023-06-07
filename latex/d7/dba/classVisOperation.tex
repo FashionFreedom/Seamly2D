@@ -1,0 +1,181 @@
+\hypertarget{classVisOperation}{}\doxysection{Vis\+Operation Class Reference}
+\label{classVisOperation}\index{VisOperation@{VisOperation}}
+
+
+{\ttfamily \#include $<$visoperation.\+h$>$}
+
+Inheritance diagram for Vis\+Operation\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{d7/dba/classVisOperation}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classVisOperation_a40280df4841b65da92bd55f2a2cd7ab7afde36e23a9ab389adcce94da6fa835b3}{Type}} = User\+Type + static\+\_\+cast$<$int$>$(Vis\+::Tool\+Rotation)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVisOperation_aa34168a2e9cd74dff09a1cfbdc4cb527}{Vis\+Operation}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classVisualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classVisOperation_af2f6eb310633c72371130afdca24eb89}{$\sim$\+Vis\+Operation}} ()
+\item 
+void \mbox{\hyperlink{classVisOperation_a161455b7f01e55a7305e36e4fdaf1a44}{set\+Objects}} (\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{classVisOperation_ab701bfa2c29b52f99836d415f784acf7}{objects}})
+\item 
+virtual void \mbox{\hyperlink{classVisOperation_a2d9a92e9bfeb26ce2afedf0d121a6d26}{Visual\+Mode}} (const quint32 \&point\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{classVisOperation_aa1fd1e3e3034af62c1f3b1691551f50f}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{classVisOperation_ab61b3839a3324b168c2e1a14245dabba}{Get\+Point}} (quint32 i, const QColor \&color)
+\item 
+\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$ \mbox{\hyperlink{classVisOperation_a7d39a39152661b8d415607051ebf3d14}{Get\+Curve}} (quint32 i, const QColor \&color)
+\item 
+{\footnotesize template$<$class Item $>$ }\\int \mbox{\hyperlink{classVisOperation_af0f8673f06afdfc4354910343375d9e9}{add\+Flipped\+Curve}} (const QPointF \&first\+Point, const QPointF \&second\+Point, quint32 id, int i)
+\item 
+void \mbox{\hyperlink{classVisOperation_a767585ed59f1b91ea675b0e25c5db390}{refresh\+Mirrored\+Objects}} (const QPointF \&first\+Point, const QPointF \&second\+Point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{classVisOperation_ab701bfa2c29b52f99836d415f784acf7}{objects}}
+\item 
+QColor \mbox{\hyperlink{classVisOperation_abb539d3abaa87f94276fca260c19a62b}{support\+Color2}}
+\item 
+QColor \mbox{\hyperlink{classVisOperation_ab30c128b0171671ba21d59d992c7b9ad}{support\+Color3}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ $>$ \mbox{\hyperlink{classVisOperation_a60d01d9411c35a1066bf21571cb481fe}{points}}
+\item 
+\mbox{\hyperlink{classQVector}{QVector}}$<$ \mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$ $>$ \mbox{\hyperlink{classVisOperation_acbf3d1aa06391b6dfcb6781c9b22b39f}{curves}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVisOperation_a40280df4841b65da92bd55f2a2cd7ab7}\label{classVisOperation_a40280df4841b65da92bd55f2a2cd7ab7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisOperation@{VisOperation}}\index{VisOperation@{VisOperation}!Type@{Type}}}\mbox{\Hypertarget{classVisOperation_a40280df4841b65da92bd55f2a2cd7ab7afde36e23a9ab389adcce94da6fa835b3}\label{classVisOperation_a40280df4841b65da92bd55f2a2cd7ab7afde36e23a9ab389adcce94da6fa835b3}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVisOperation_aa34168a2e9cd74dff09a1cfbdc4cb527}\label{classVisOperation_aa34168a2e9cd74dff09a1cfbdc4cb527}} 
+\index{VisOperation@{VisOperation}!VisOperation@{VisOperation}}
+\index{VisOperation@{VisOperation}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{VisOperation()}{VisOperation()}}
+{\footnotesize\ttfamily Vis\+Operation\+::\+Vis\+Operation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classVisOperation_af2f6eb310633c72371130afdca24eb89}\label{classVisOperation_af2f6eb310633c72371130afdca24eb89}} 
+\index{VisOperation@{VisOperation}!````~VisOperation@{$\sim$VisOperation}}
+\index{````~VisOperation@{$\sim$VisOperation}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisOperation()}{~VisOperation()}}
+{\footnotesize\ttfamily Vis\+Operation\+::$\sim$\+Vis\+Operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVisOperation_af0f8673f06afdfc4354910343375d9e9}\label{classVisOperation_af0f8673f06afdfc4354910343375d9e9}} 
+\index{VisOperation@{VisOperation}!addFlippedCurve@{addFlippedCurve}}
+\index{addFlippedCurve@{addFlippedCurve}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{addFlippedCurve()}{addFlippedCurve()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+int Vis\+Operation\+::add\+Flipped\+Curve (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point,  }\item[{quint32}]{id,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_a7d39a39152661b8d415607051ebf3d14}\label{classVisOperation_a7d39a39152661b8d415607051ebf3d14}} 
+\index{VisOperation@{VisOperation}!GetCurve@{GetCurve}}
+\index{GetCurve@{GetCurve}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{GetCurve()}{GetCurve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$ Vis\+Operation\+::\+Get\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{i,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_ab61b3839a3324b168c2e1a14245dabba}\label{classVisOperation_ab61b3839a3324b168c2e1a14245dabba}} 
+\index{VisOperation@{VisOperation}!GetPoint@{GetPoint}}
+\index{GetPoint@{GetPoint}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{GetPoint()}{GetPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$ Vis\+Operation\+::\+Get\+Point (\begin{DoxyParamCaption}\item[{quint32}]{i,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_a767585ed59f1b91ea675b0e25c5db390}\label{classVisOperation_a767585ed59f1b91ea675b0e25c5db390}} 
+\index{VisOperation@{VisOperation}!refreshMirroredObjects@{refreshMirroredObjects}}
+\index{refreshMirroredObjects@{refreshMirroredObjects}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{refreshMirroredObjects()}{refreshMirroredObjects()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH void Vis\+Operation\+::refresh\+Mirrored\+Objects (\begin{DoxyParamCaption}\item[{const QPointF \&}]{first\+Point,  }\item[{const QPointF \&}]{second\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_a161455b7f01e55a7305e36e4fdaf1a44}\label{classVisOperation_a161455b7f01e55a7305e36e4fdaf1a44}} 
+\index{VisOperation@{VisOperation}!setObjects@{setObjects}}
+\index{setObjects@{setObjects}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{setObjects()}{setObjects()}}
+{\footnotesize\ttfamily void Vis\+Operation\+::set\+Objects (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classQVector}{QVector}}$<$ quint32 $>$}]{objects }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classVisOperation_aa1fd1e3e3034af62c1f3b1691551f50f}\label{classVisOperation_aa1fd1e3e3034af62c1f3b1691551f50f}} 
+\index{VisOperation@{VisOperation}!type@{type}}
+\index{type@{type}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Operation\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisLine_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classVisToolRotation_aa5afa3fe628f6fb1c6d60ab6368ee44f}{Vis\+Tool\+Rotation}}, \mbox{\hyperlink{classVisToolMove_a3cbca6d05b12920ec7b10ba4a46c508f}{Vis\+Tool\+Move}}, \mbox{\hyperlink{classVisToolMirrorByLine_a657368303a73c5fab471a288cfe7261f}{Vis\+Tool\+Mirror\+By\+Line}}, and \mbox{\hyperlink{classVisToolMirrorByAxis_a7d9b8de9079c433ff212bc260e27d6eb}{Vis\+Tool\+Mirror\+By\+Axis}}.
+
+\mbox{\Hypertarget{classVisOperation_a2d9a92e9bfeb26ce2afedf0d121a6d26}\label{classVisOperation_a2d9a92e9bfeb26ce2afedf0d121a6d26}} 
+\index{VisOperation@{VisOperation}!VisualMode@{VisualMode}}
+\index{VisualMode@{VisualMode}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{VisualMode()}{VisualMode()}}
+{\footnotesize\ttfamily void Vis\+Operation\+::\+Visual\+Mode (\begin{DoxyParamCaption}\item[{const quint32 \&}]{point\+Id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classVisualization_a861d9e8fb92c505f90f6ddb016d72a74}{Visualization}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classVisOperation_acbf3d1aa06391b6dfcb6781c9b22b39f}\label{classVisOperation_acbf3d1aa06391b6dfcb6781c9b22b39f}} 
+\index{VisOperation@{VisOperation}!curves@{curves}}
+\index{curves@{curves}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{curves}{curves}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVCurvePathItem}{VCurve\+Path\+Item}} $\ast$$>$ Vis\+Operation\+::curves\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_ab701bfa2c29b52f99836d415f784acf7}\label{classVisOperation_ab701bfa2c29b52f99836d415f784acf7}} 
+\index{VisOperation@{VisOperation}!objects@{objects}}
+\index{objects@{objects}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{objects}{objects}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$quint32$>$ Vis\+Operation\+::objects\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_a60d01d9411c35a1066bf21571cb481fe}\label{classVisOperation_a60d01d9411c35a1066bf21571cb481fe}} 
+\index{VisOperation@{VisOperation}!points@{points}}
+\index{points@{points}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQVector}{QVector}}$<$\mbox{\hyperlink{classVScaledEllipse}{VScaled\+Ellipse}} $\ast$$>$ Vis\+Operation\+::points\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_abb539d3abaa87f94276fca260c19a62b}\label{classVisOperation_abb539d3abaa87f94276fca260c19a62b}} 
+\index{VisOperation@{VisOperation}!supportColor2@{supportColor2}}
+\index{supportColor2@{supportColor2}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{supportColor2}{supportColor2}}
+{\footnotesize\ttfamily QColor Vis\+Operation\+::support\+Color2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classVisOperation_ab30c128b0171671ba21d59d992c7b9ad}\label{classVisOperation_ab30c128b0171671ba21d59d992c7b9ad}} 
+\index{VisOperation@{VisOperation}!supportColor3@{supportColor3}}
+\index{supportColor3@{supportColor3}!VisOperation@{VisOperation}}
+\doxysubsubsection{\texorpdfstring{supportColor3}{supportColor3}}
+{\footnotesize\ttfamily QColor Vis\+Operation\+::support\+Color3\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/visualization/line/operation/\mbox{\hyperlink{visoperation_8h}{visoperation.\+h}}\item 
+src/libs/vtools/visualization/line/operation/\mbox{\hyperlink{visoperation_8cpp}{visoperation.\+cpp}}\end{DoxyCompactItemize}
