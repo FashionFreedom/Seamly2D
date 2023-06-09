@@ -15,7 +15,11 @@ res=requests.get(url)
 data=res.json()
 while 'next' in res.links.keys():
     res=requests.get(res.links['next']['url'])
-    data.extend(res.json())
+    if res.status_code == 200:
+        data.extend(res.json())
+    else:
+        print(f"Error {res.status_code} getting {res.links['next']['url']}")
+        exit(1)
 
 # iterate over all releases and extract the info we want
 for thing in data:
