@@ -217,7 +217,7 @@ const QString \mbox{\hyperlink{def_8cpp_a0f35c65ac737bad188895abceeadcf48}{curso
 \item 
 const QString \mbox{\hyperlink{def_8cpp_a7b39ab83231e23ee686ecabe02567714}{cursor\+Arrow\+Close\+Hand}} = QString\+Literal(\char`\"{}\+://cursor/cursor-\/arrow-\/closehand.\+png\char`\"{})
 \item 
-const QString \mbox{\hyperlink{def_8cpp_a9d57cde0b2077de64d37157baa0e9d10}{degree\+Symbol}} = QString\+Literal(\char`\"{}°\char`\"{})
+const QString \mbox{\hyperlink{def_8cpp_a9d57cde0b2077de64d37157baa0e9d10}{degree\+Symbol}} = QString\+Literal() + QChar(0260)
 \item 
 const QString \mbox{\hyperlink{def_8cpp_ad02992006af50f2843f23279d26ae939}{true\+Str}} = QString\+Literal(\char`\"{}true\char`\"{})
 \item 
@@ -577,7 +577,7 @@ string reprezantation for unit.
 \index{def.cpp@{def.cpp}!degreeSymbol@{degreeSymbol}}
 \index{degreeSymbol@{degreeSymbol}!def.cpp@{def.cpp}}
 \doxysubsubsection{\texorpdfstring{degreeSymbol}{degreeSymbol}}
-{\footnotesize\ttfamily const QString degree\+Symbol = QString\+Literal(\char`\"{}°\char`\"{})}
+{\footnotesize\ttfamily const QString degree\+Symbol = QString\+Literal() + QChar(0260)}
 
 \mbox{\Hypertarget{def_8cpp_ad0679d063111d3e8aceaf2a91d243398}\label{def_8cpp_ad0679d063111d3e8aceaf2a91d243398}} 
 \index{def.cpp@{def.cpp}!degTorad\_F@{degTorad\_F}}
