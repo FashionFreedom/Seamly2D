@@ -193,7 +193,8 @@ const QString cursorArrowCloseHand = QStringLiteral("://cursor/cursor-arrow-clos
 
 // From documantation: If you use QStringLiteral you should avoid declaring the same literal in multiple places: This
 // furthermore blows up the binary sizes.
-const QString degreeSymbol = QStringLiteral("°");
+const QString degreeSymbol = QStringLiteral() + QChar(0260); 
+
 const QString trueStr = QStringLiteral("true");
 const QString falseStr = QStringLiteral("false");
 
