@@ -1207,45 +1207,169 @@ QString VPattern::GetLabelBase(quint32 index) const
     QStringList alphabet;
     switch (list.indexOf(qApp->Seamly2DSettings()->GetLabelLanguage()))
     {
-        case 0: // de
+        case 0: // German
         {
-            const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
+            const QString al = QStringLiteral("A,") +
+                               QChar(0304) + // Ä
+                               QStringLiteral(",B,C,D,E,F,G,H,I,J,K,L,M,N,O,") +
+                               QChar(0326) + // Ö
+                               QStringLiteral(",P,Q,R,S,") +
+                               QChar(0337) + // ß
+                               QStringLiteral(",T,U,") +
+                               QChar(0334) + // Ü
+                               QStringLiteral(",V,W,X,Y,Z");
             alphabet = al.split(",");
             break;
         }
-        case 2: // fr
+        case 2: // French
         {
             const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
             alphabet = al.split(",");
             break;
         }
-        case 3: // ru
+        case 3: // Russian
         {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
+            const QString al = QChar(1040) + QStringLiteral(",") + // A
+                               QChar(1041) + QStringLiteral(",") + // Б
+                               QChar(1042) + QStringLiteral(",") + // B
+                               QChar(1043) + QStringLiteral(",") + // Г
+                               QChar(1044) + QStringLiteral(",") + // Д
+                               QChar(1045) + QStringLiteral(",") + // E
+                               QChar(1046) + QStringLiteral(",") + // Ж
+                               QChar(1047) + QStringLiteral(",") + // З
+                               QChar(1048) + QStringLiteral(",") + // И
+                               QChar(1050) + QStringLiteral(",") + // K
+                               QChar(1051) + QStringLiteral(",") + // Л
+                               QChar(1052) + QStringLiteral(",") + // M
+                               QChar(1053) + QStringLiteral(",") + // H
+                               QChar(1054) + QStringLiteral(",") + // O
+                               QChar(1055) + QStringLiteral(",") + // П
+                               QChar(1056) + QStringLiteral(",") + // P
+                               QChar(1057) + QStringLiteral(",") + // C
+                               QChar(1058) + QStringLiteral(",") + // T
+                               QChar(1059) + QStringLiteral(",") + // У
+                               QChar(1060) + QStringLiteral(",") + // Ф
+                               QChar(1061) + QStringLiteral(",") + // Х
+                               QChar(1062) + QStringLiteral(",") + // Ц
+                               QChar(1063) + QStringLiteral(",") + // Ч
+                               QChar(1064) + QStringLiteral(",") + // Ш
+                               QChar(1065) + QStringLiteral(",") + // Щ
+                               QChar(1069) + QStringLiteral(",") + // Э
+                               QChar(1070) + QStringLiteral(",") + // Ю
+                               QChar(1071);                        // Я
             alphabet = al.split(",");
             break;
         }
-        case 4: // uk
+        case 4: // Ukrainian
         {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
+            const QString al = QChar(1040) + QStringLiteral(",") + // A
+                               QChar(1041) + QStringLiteral(",") + // Б
+                               QChar(1042) + QStringLiteral(",") + // B
+                               QChar(1043) + QStringLiteral(",") + // Г
+                               QChar(1044) + QStringLiteral(",") + // Д
+                               QChar(1045) + QStringLiteral(",") + // E
+                               QChar(1046) + QStringLiteral(",") + // Ж
+                               QChar(1047) + QStringLiteral(",") + // З
+                               QChar(1030) + QStringLiteral(",") + // I
+                               QChar(1031) + QStringLiteral(",") + // Ї
+                               QChar(1049) + QStringLiteral(",") + // Й
+                               QChar(1050) + QStringLiteral(",") + // K
+                               QChar(1051) + QStringLiteral(",") + // Л
+                               QChar(1052) + QStringLiteral(",") + // M
+                               QChar(1053) + QStringLiteral(",") + // H
+                               QChar(1054) + QStringLiteral(",") + // O
+                               QChar(1055) + QStringLiteral(",") + // П
+                               QChar(1056) + QStringLiteral(",") + // P
+                               QChar(1057) + QStringLiteral(",") + // C
+                               QChar(1058) + QStringLiteral(",") + // T
+                               QChar(1059) + QStringLiteral(",") + // У
+                               QChar(1060) + QStringLiteral(",") + // Ф
+                               QChar(1061) + QStringLiteral(",") + // Х
+                               QChar(1062) + QStringLiteral(",") + // Ц
+                               QChar(1063) + QStringLiteral(",") + // Ч
+                               QChar(1064) + QStringLiteral(",") + // Ш
+                               QChar(1065) + QStringLiteral(",") + // Щ
+                               QChar(1028) + QStringLiteral(",") + // Є
+                               QChar(1070) + QStringLiteral(",") + // Ю
+                               QChar(1071);                        // Я
             alphabet = al.split(",");
             break;
         }
-        case 5: // hr
-        case 7: // bs
+        case 5: // Herzegovina
+        case 7: // Bosnian
         {
-            const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
+            //const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
+
+            const QString al = QStringLiteral("A") +               // A
+                               QStringLiteral(",B") +              // B
+                               QStringLiteral(",C") +              // C
+                               QStringLiteral(",") + QChar(0414) + // Č
+                               QStringLiteral(",") + QChar(0406) + // Ć
+                               QStringLiteral(",D") +              // D
+                               QStringLiteral(",") + QChar(0705) + // Dž
+                               QStringLiteral(",") + QChar(0611) + // Ð
+                               QStringLiteral(",E") +              // E
+                               QStringLiteral(",F") +              // F
+                               QStringLiteral(",G") +              // G
+                               QStringLiteral(",H") +              // H
+                               QStringLiteral(",I") +              // I
+                               QStringLiteral(",J") +              // Ј
+                               QStringLiteral(",K") +              // K
+                               QStringLiteral(",L") +              // L
+                               QStringLiteral(",") + QChar(0710) + // Lj
+                               QStringLiteral(",M") +              // M
+                               QStringLiteral(",N") +              // N
+                               QStringLiteral(",") + QChar(0713) + // Nj
+                               QStringLiteral(",O") +              // O
+                               QStringLiteral(",P") +              // P
+                               QStringLiteral(",R") +              // R
+                               QStringLiteral(",S") +              // S
+                               QStringLiteral(",") + QChar(0540) + // Š
+                               QStringLiteral(",T") +              // T
+                               QStringLiteral(",U") +              // U
+                               QStringLiteral(",V") +              // V
+                               QStringLiteral(",Z") +              // Z
+                               QStringLiteral(",") + QChar(0575);  // Ž
             alphabet = al.split(",");
             break;
         }
-        case 6: // sr
+        case 6: // Serbian
         {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
+            const QString al = QChar(1040) + QStringLiteral(",") + // A
+                               QChar(1041) + QStringLiteral(",") + // Б
+                               QChar(1042) + QStringLiteral(",") + // B
+                               QChar(1043) + QStringLiteral(",") + // Г
+                               QChar(1044) + QStringLiteral(",") + // Д
+                               QChar(1026) + QStringLiteral(",") + // Ђ
+                               QChar(1045) + QStringLiteral(",") + // E
+                               QChar(1046) + QStringLiteral(",") + // Ж
+                               QChar(1047) + QStringLiteral(",") + // З
+                               QChar(1048) + QStringLiteral(",") + // И
+                               QChar(1032) + QStringLiteral(",") + // Ј
+                               QChar(1050) + QStringLiteral(",") + // K
+                               QChar(1051) + QStringLiteral(",") + // Л
+                               QChar(1033) + QStringLiteral(",") + // Љ
+                               QChar(1052) + QStringLiteral(",") + // M
+                               QChar(1053) + QStringLiteral(",") + // H
+                               QChar(1034) + QStringLiteral(",") + // Њ
+                               QChar(1054) + QStringLiteral(",") + // O
+                               QChar(1055) + QStringLiteral(",") + // П
+                               QChar(1056) + QStringLiteral(",") + // P
+                               QChar(1057) + QStringLiteral(",") + // C
+                               QChar(1058) + QStringLiteral(",") + // T
+                               QChar(1035) + QStringLiteral(",") + // Ћ
+                               QChar(1059) + QStringLiteral(",") + // У
+                               QChar(1060) + QStringLiteral(",") + // Ф
+                               QChar(1061) + QStringLiteral(",") + // Х
+                               QChar(1062) + QStringLiteral(",") + // Ц
+                               QChar(1063) + QStringLiteral(",") + // Ч
+                               QChar(1064) + QStringLiteral(",") + // Ш
+                               QChar(1065);                        // Щ
             alphabet = al.split(",");
             break;
         }
-        case 1: // en
-        default: // en
+        case 1:  // English
+        default: // English
         {
             alphabet = def.split(",");
             break;
