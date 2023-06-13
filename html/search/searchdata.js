@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   9: "bcdit",
   10: "foqv",
   11: "_acdefilmnopqrstuv",
-  12: "cgw"
+  12: "cg"
 };
 
 var indexSectionNames =
