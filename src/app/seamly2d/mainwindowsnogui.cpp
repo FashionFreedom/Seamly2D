@@ -1013,9 +1013,10 @@ void MainWindowsNoGUI::exportPDF(const QString &name, QGraphicsRectItem *paper, 
     printer.setPageOrientation(QPageLayout::Portrait);
     printer.setFullPage(ignoreMargins);
 
-    const QRectF r = paper->rect();
-    QSizeF size(FromPixel(r.width() + margins.left() + margins.right(), Unit::Mm),
-                FromPixel(r.height() + margins.top() + margins.bottom(), Unit::Mm));
+    const QRectF sourceRect = paper->rect();
+    const QRectF targetRect = QRectF(QPoint(0,0), QPoint(sourceRect.width(),sourceRect.height()));
+    QSizeF size(FromPixel(sourceRect.width() + margins.left() + margins.right(), Unit::Mm),
+                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));    
     QPageSize pageSize(size, QPageSize::Unit::Millimeter);
     printer.setPageSize(pageSize);
 
@@ -1034,16 +1035,16 @@ void MainWindowsNoGUI::exportPDF(const QString &name, QGraphicsRectItem *paper, 
     }
 
     QPainter painter;
-    if (painter.begin( &printer ) == false)
+    if (painter.begin(&printer) == false)
     {
         qCritical("%s", qUtf8Printable(tr("Can't open printer %1").arg(name))); // failed to open file
         return;
     }
-    painter.setFont( QFont( "Arial", 8, QFont::Normal ) );
+    painter.setFont(QFont( "Arial", 8, QFont::Normal));
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.setPen(QPen(Qt::black, widthMainLine, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
-    painter.setBrush ( QBrush ( Qt::NoBrush ) );
-    scene->render(&painter, r, r, Qt::IgnoreAspectRatio);
+    painter.setBrush(QBrush(Qt::NoBrush));
+    scene->render(&painter, targetRect, sourceRect, Qt::KeepAspectRatio);
     painter.end();
 }
 
