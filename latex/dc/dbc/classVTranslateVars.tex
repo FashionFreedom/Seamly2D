@@ -51,7 +51,7 @@ QString \mbox{\hyperlink{classVTranslateVars_a7c00cf7583efb3fc61bbe7e8b7687cb7}{
 \begin{DoxyCompactList}\small\item\em Formula\+To\+User replace all known tokens in formula to user look. Also change decimal separator in numbers. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classVTranslateVars_a27b555cdd78bcbc76e7737b9f743a8c9}{Retranslate}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
-\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} $>$ \mbox{\hyperlink{classVTranslateVars_a6e0ba93b8388fff56e9412446cabbb01}{Get\+Functions}} () const
+\mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} $>$ \mbox{\hyperlink{classVTranslateVars_a31b54b45832dd20467738f2d9540019f}{get\+Functions}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -75,7 +75,7 @@ void \mbox{\hyperlink{classVTranslateVars_a8e07f50b4aed0bbe2e94339def4c6049}{Ini
 \item 
 void \mbox{\hyperlink{classVTranslateVars_a3ba83d0cadd613aeca90def979f22b3e}{Init\+System}} (const QString \&code, const \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} \&name, const \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} \&author, const \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} \&book)
 \item 
-void \mbox{\hyperlink{classVTranslateVars_a507bfb437d3b5ef60643992460b272ed}{Corrections\+Positions}} (int position, int bias, \mbox{\hyperlink{classQMap}{QMap}}$<$ int, QString $>$ \&tokens, \mbox{\hyperlink{classQMap}{QMap}}$<$ int, QString $>$ \&\mbox{\hyperlink{classVTranslateMeasurements_a26a57a53d97ee199fe2d69dd59edfc73}{numbers}}) const
+void \mbox{\hyperlink{classVTranslateVars_a507bfb437d3b5ef60643992460b272ed}{Corrections\+Positions}} (int position, int bias, \mbox{\hyperlink{classQMap}{QMap}}$<$ int, QString $>$ \&tokens, \mbox{\hyperlink{classQMap}{QMap}}$<$ int, QString $>$ \&numbers) const
 \begin{DoxyCompactList}\small\item\em Corrections\+Positions correct position tokens in expression after token translation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -222,11 +222,11 @@ Functions\+From\+User translate function name to internal look.
 \begin{DoxyReturn}{Returns}
 true if was found function with same name. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classVTranslateVars_a6e0ba93b8388fff56e9412446cabbb01}\label{classVTranslateVars_a6e0ba93b8388fff56e9412446cabbb01}} 
-\index{VTranslateVars@{VTranslateVars}!GetFunctions@{GetFunctions}}
-\index{GetFunctions@{GetFunctions}!VTranslateVars@{VTranslateVars}}
-\doxysubsubsection{\texorpdfstring{GetFunctions()}{GetFunctions()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} $>$ VTranslate\+Vars\+::\+Get\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{classVTranslateVars_a31b54b45832dd20467738f2d9540019f}\label{classVTranslateVars_a31b54b45832dd20467738f2d9540019f}} 
+\index{VTranslateVars@{VTranslateVars}!getFunctions@{getFunctions}}
+\index{getFunctions@{getFunctions}!VTranslateVars@{VTranslateVars}}
+\doxysubsubsection{\texorpdfstring{getFunctions()}{getFunctions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classqmu_1_1QmuTranslation}{qmu\+::\+Qmu\+Translation}} $>$ VTranslate\+Vars\+::get\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \mbox{\Hypertarget{classVTranslateVars_aaa398f7be35b13618d1e5bc3b9968b7c}\label{classVTranslateVars_aaa398f7be35b13618d1e5bc3b9968b7c}} 
 \index{VTranslateVars@{VTranslateVars}!InitFunctions@{InitFunctions}}
