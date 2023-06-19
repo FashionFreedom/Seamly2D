@@ -442,6 +442,8 @@ void \mbox{\hyperlink{def_8h_aaf08b4a7d0085a255e1dde1ce3b7206e}{Init\+Languages}
 \item 
 Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString\+List \mbox{\hyperlink{def_8h_a7b4a736138c35f50e76e645cfb11ece1}{Supported\+Locales}} ()
 \item 
+QString \mbox{\hyperlink{def_8h_a0d388d3b034a1f7b4f3618163b213f73}{make\+Header\+Name}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em make\+Header\+Name make a 1 char tablewidgetitem header name based on a translated string. \end{DoxyCompactList}\item 
 Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString \mbox{\hyperlink{def_8h_a87d0bbeb72fd3f881aec730edcfb9248}{stripped\+Name}} (const QString \&full\+File\+Name)
 \begin{DoxyCompactList}\small\item\em stripped\+Name the function call around cur\+File to exclude the path to the file. \end{DoxyCompactList}\item 
 Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString \mbox{\hyperlink{def_8h_a70500634183359838388ccd270379787}{Relative\+MPath}} (const QString \&pattern\+Path, const QString \&absolute\+MPath)
@@ -1981,6 +1983,24 @@ QSet$<$T$>$ convert\+To\+Set (\begin{DoxyParamCaption}\item[{const C$<$ T $>$ \&
 \doxysubsubsection{\texorpdfstring{IsOptionSet()}{IsOptionSet()}}
 {\footnotesize\ttfamily bool Is\+Option\+Set (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{const char $\ast$}]{option }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{def_8h_a0d388d3b034a1f7b4f3618163b213f73}\label{def_8h_a0d388d3b034a1f7b4f3618163b213f73}} 
+\index{def.h@{def.h}!makeHeaderName@{makeHeaderName}}
+\index{makeHeaderName@{makeHeaderName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{makeHeaderName()}{makeHeaderName()}}
+{\footnotesize\ttfamily QString make\+Header\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+
+
+make\+Header\+Name make a 1 char tablewidgetitem header name based on a translated string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & full name of header item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 char name. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{def_8h_a45306c2fc908e7e89e2bd49fd6df23b0}\label{def_8h_a45306c2fc908e7e89e2bd49fd6df23b0}} 
 \index{def.h@{def.h}!notchSubTypeToString@{notchSubTypeToString}}
 \index{notchSubTypeToString@{notchSubTypeToString}!def.h@{def.h}}
