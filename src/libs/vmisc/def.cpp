@@ -393,6 +393,17 @@ QString strippedName(const QString &fullFileName)
     return QFileInfo(fullFileName).fileName();
 }
 
+/**
+ * @brief makeHeaderName make a 1 char tablewidgetitem header name based on a translated string.
+ * @param name full name of header item.
+ * @return 1 char name.
+ */
+QString makeHeaderName(const QString &name)
+{
+    QString headerStr = QObject::tr("%1").arg(name);
+    return headerStr.left(1).toUpper();
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath)
 {
