@@ -64,7 +64,7 @@
 #include <QRegularExpression>
 
 #include "../vpropertyexplorer/vproperty.h"
-#include "../vtools/dialogs/support/dialogeditwrongformula.h"
+#include "../vtools/dialogs/support/edit_formula_dialog.h"
 
 // VFormulaPropertyEditor
 //---------------------------------------------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ void VFormulaPropertyEditor::SetFormula(const VFormula& formula)
 //---------------------------------------------------------------------------------------------------------------------
 void VFormulaPropertyEditor::onToolButtonClicked()
 {
-    DialogEditWrongFormula* dialog = new DialogEditWrongFormula(formula.getData(), formula.getToolId(),
+    EditFormulaDialog* dialog = new EditFormulaDialog(formula.getData(), formula.getToolId(),
                                                                 qApp->getMainWindow());
     dialog->setCheckZero(formula.getCheckZero());
     dialog->setPostfix(formula.getPostfix());

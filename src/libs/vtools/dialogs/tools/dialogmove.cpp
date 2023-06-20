@@ -75,7 +75,7 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
@@ -124,7 +124,7 @@ DialogMove::DialogMove(const VContainer *data, quint32 toolId, QWidget *parent)
     rotationTimer = new QTimer(this);
     connect(rotationTimer, &QTimer::timeout, this, &DialogMove::evaluateRotation);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->rotationPoint_ComboBox);
     ui->rotationPoint_ComboBox->blockSignals(true);
@@ -400,7 +400,7 @@ void DialogMove::rotationChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editAngleFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);
@@ -414,7 +414,7 @@ void DialogMove::editAngleFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editLengthFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetLength());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -428,7 +428,7 @@ void DialogMove::editLengthFormula()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::editRotationFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit rotation"));
     dialog->SetFormula(getRotation());
     dialog->setPostfix(degreeSymbol);

@@ -33,7 +33,7 @@
 #include "ui_intersect_circletangent_dialog.h"
 
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vtranslatevars.h"
@@ -80,7 +80,7 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     timerCircleRadius = new QTimer(this);
     connect(timerCircleRadius, &QTimer::timeout, this, &IntersectCircleTangentDialog::EvalCircleRadius);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxPoints(ui->comboBoxCircleCenter);
@@ -272,7 +272,7 @@ void IntersectCircleTangentDialog::CircleRadiusChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::FXCircleRadius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(GetCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

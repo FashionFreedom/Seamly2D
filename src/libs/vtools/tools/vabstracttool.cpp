@@ -100,7 +100,7 @@
 #include "../vwidgets/vgraphicssimpletextitem.h"
 #include "nodeDetails/nodedetails.h"
 #include "../dialogs/support/dialogundo.h"
-#include "../dialogs/support/dialogeditwrongformula.h"
+#include "../dialogs/support/edit_formula_dialog.h"
 
 template <class T> class QSharedPointer;
 
@@ -212,7 +212,7 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
                     const UndoButton resultUndo = dialogUndo->Result();
                     if (resultUndo == UndoButton::Fix)
                     {
-                        auto *dialog = new DialogEditWrongFormula(data, toolId, qApp->getMainWindow());
+                        auto *dialog = new EditFormulaDialog(data, toolId, qApp->getMainWindow());
                         dialog->setWindowTitle(tr("Edit wrong formula"));
                         dialog->SetFormula(formula);
                         if (dialog->exec() == QDialog::Accepted)

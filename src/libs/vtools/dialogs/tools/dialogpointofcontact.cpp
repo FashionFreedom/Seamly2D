@@ -67,7 +67,7 @@
 #include "../../visualization/line/vistoolpointofcontact.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialogpointofcontact.h"
@@ -90,13 +90,13 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
@@ -155,7 +155,7 @@ void DialogPointOfContact::PointNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::FXRadius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(getRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
