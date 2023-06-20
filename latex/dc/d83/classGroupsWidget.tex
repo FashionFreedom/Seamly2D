@@ -83,7 +83,9 @@ quint32 \mbox{\hyperlink{classGroupsWidget_a24def2ed9844e27d9f8a55a4244b6454}{at
 QString \mbox{\hyperlink{classGroupsWidget_a92a03b91455b3f3df8c41b9a227864ba}{get\+Obj\+Name}} (quint32 id)
 \begin{DoxyCompactList}\small\item\em get\+Obj\+Name get the name of the graphics object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classGroupsWidget_aae8626398cbbee809ffd918c85221df4}{splitter\+Moved}} (int pos, int index)
-\begin{DoxyCompactList}\small\item\em splitter\+Moved Save splitter state whenever it\textquotesingle{}s moved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em splitter\+Moved Save splitter state whenever it\textquotesingle{}s moved. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGroupsWidget_a510fa9c431833f849e0abeb0cc436d2c}{header\+Clicked}} (int index)
+\begin{DoxyCompactList}\small\item\em header\+Clicked Sort state whenever header section clicked. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -277,6 +279,21 @@ Context\+Menu show context menu for group objects.
 \doxysubsubsection{\texorpdfstring{groupVisibilityChanged}{groupVisibilityChanged}}
 {\footnotesize\ttfamily void Groups\+Widget\+::group\+Visibility\+Changed (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
+\mbox{\Hypertarget{classGroupsWidget_a510fa9c431833f849e0abeb0cc436d2c}\label{classGroupsWidget_a510fa9c431833f849e0abeb0cc436d2c}} 
+\index{GroupsWidget@{GroupsWidget}!headerClicked@{headerClicked}}
+\index{headerClicked@{headerClicked}!GroupsWidget@{GroupsWidget}}
+\doxysubsubsection{\texorpdfstring{headerClicked()}{headerClicked()}}
+{\footnotesize\ttfamily void Groups\+Widget\+::header\+Clicked (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+header\+Clicked Sort state whenever header section clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classGroupsWidget_a57bed1332b8487b0281379ebb3b0974c}\label{classGroupsWidget_a57bed1332b8487b0281379ebb3b0974c}} 
 \index{GroupsWidget@{GroupsWidget}!hideAllGroups@{hideAllGroups}}
 \index{hideAllGroups@{hideAllGroups}!GroupsWidget@{GroupsWidget}}
