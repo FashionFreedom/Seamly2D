@@ -30,21 +30,21 @@ virtual \mbox{\hyperlink{classVMeasurement_a9036f2842c26a6b2a4771d65a43c1454}{$\
 \item 
 void \mbox{\hyperlink{classVMeasurement_a876bc2624d67057740495bae91cb7072}{Swap}} (\mbox{\hyperlink{classVMeasurement}{VMeasurement}} \&m) Q\+\_\+\+DECL\+\_\+\+NOTHROW
 \item 
-QString \mbox{\hyperlink{classVMeasurement_a2f3eecd7889fb336ed6c3a0066b5e7d1}{Get\+Gui\+Text}} () const
-\begin{DoxyCompactList}\small\item\em Get\+Gui\+Text measurement name for tooltip. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classVMeasurement_af9199dab682011ceb7564669182543ee}{get\+Gui\+Text}} () const
+\begin{DoxyCompactList}\small\item\em get\+Gui\+Text measurement name for tooltip \end{DoxyCompactList}\item 
 QString \mbox{\hyperlink{classVMeasurement_a0c61865b2fbeee8ab49ec29bebb3d00c}{Tag\+Name}} () const
 \item 
 void \mbox{\hyperlink{classVMeasurement_a5cd0af99b4c736018a2949a97f696ab7}{set\+Tag\+Name}} (const QString \&tag\+Name)
 \item 
 QString \mbox{\hyperlink{classVMeasurement_a099d0809b57a9b25e9b700f044f50ef5}{Get\+Formula}} () const
 \item 
-bool \mbox{\hyperlink{classVMeasurement_a410d93b15ac2125823ec2305bbdb79e9}{Is\+Custom}} () const
+bool \mbox{\hyperlink{classVMeasurement_a92a4f57bac9e19fa061efd7ed1052b12}{is\+Custom}} () const
 \item 
 int \mbox{\hyperlink{classVMeasurement_ad4df1d37874b92bb4921922d7ab00baf}{Index}} () const
 \item 
 bool \mbox{\hyperlink{classVMeasurement_a9724601d8e1d2fd98c331474ca4d41d3}{Is\+Formula\+Ok}} () const
 \item 
-virtual bool \mbox{\hyperlink{classVMeasurement_a340758b1101bf4a88c91728aae0ec7f0}{Is\+Not\+Used}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+virtual bool \mbox{\hyperlink{classVMeasurement_aeeaa8b246a370545346106e6d94f4ea5}{is\+Not\+Used}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
 virtual qreal \mbox{\hyperlink{classVMeasurement_a4a736c32ff9ea86432cafd66502d6b11}{Get\+Value}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
 \item 
@@ -203,15 +203,15 @@ value
 \doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
 {\footnotesize\ttfamily QString VMeasurement\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classVMeasurement_a2f3eecd7889fb336ed6c3a0066b5e7d1}\label{classVMeasurement_a2f3eecd7889fb336ed6c3a0066b5e7d1}} 
-\index{VMeasurement@{VMeasurement}!GetGuiText@{GetGuiText}}
-\index{GetGuiText@{GetGuiText}!VMeasurement@{VMeasurement}}
-\doxysubsubsection{\texorpdfstring{GetGuiText()}{GetGuiText()}}
-{\footnotesize\ttfamily QString VMeasurement\+::\+Get\+Gui\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{classVMeasurement_af9199dab682011ceb7564669182543ee}\label{classVMeasurement_af9199dab682011ceb7564669182543ee}} 
+\index{VMeasurement@{VMeasurement}!getGuiText@{getGuiText}}
+\index{getGuiText@{getGuiText}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{getGuiText()}{getGuiText()}}
+{\footnotesize\ttfamily QString VMeasurement\+::get\+Gui\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
-Get\+Gui\+Text measurement name for tooltip. 
+get\+Gui\+Text measurement name for tooltip 
 
 \begin{DoxyReturn}{Returns}
 measurement name 
@@ -268,11 +268,11 @@ Reimplemented from \mbox{\hyperlink{classVInternalVariable_a21d7960f0395eebd2685
 \doxysubsubsection{\texorpdfstring{Index()}{Index()}}
 {\footnotesize\ttfamily int VMeasurement\+::\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classVMeasurement_a410d93b15ac2125823ec2305bbdb79e9}\label{classVMeasurement_a410d93b15ac2125823ec2305bbdb79e9}} 
-\index{VMeasurement@{VMeasurement}!IsCustom@{IsCustom}}
-\index{IsCustom@{IsCustom}!VMeasurement@{VMeasurement}}
-\doxysubsubsection{\texorpdfstring{IsCustom()}{IsCustom()}}
-{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Custom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+\mbox{\Hypertarget{classVMeasurement_a92a4f57bac9e19fa061efd7ed1052b12}\label{classVMeasurement_a92a4f57bac9e19fa061efd7ed1052b12}} 
+\index{VMeasurement@{VMeasurement}!isCustom@{isCustom}}
+\index{isCustom@{isCustom}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{isCustom()}{isCustom()}}
+{\footnotesize\ttfamily bool VMeasurement\+::is\+Custom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 \mbox{\Hypertarget{classVMeasurement_a9724601d8e1d2fd98c331474ca4d41d3}\label{classVMeasurement_a9724601d8e1d2fd98c331474ca4d41d3}} 
 \index{VMeasurement@{VMeasurement}!IsFormulaOk@{IsFormulaOk}}
@@ -292,15 +292,15 @@ Reimplemented from \mbox{\hyperlink{classVInternalVariable_a21d7960f0395eebd2685
 \doxysubsubsection{\texorpdfstring{IsGradationSizeValid()}{IsGradationSizeValid()}}
 {\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Gradation\+Size\+Valid (\begin{DoxyParamCaption}\item[{const QString \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-\mbox{\Hypertarget{classVMeasurement_a340758b1101bf4a88c91728aae0ec7f0}\label{classVMeasurement_a340758b1101bf4a88c91728aae0ec7f0}} 
-\index{VMeasurement@{VMeasurement}!IsNotUsed@{IsNotUsed}}
-\index{IsNotUsed@{IsNotUsed}!VMeasurement@{VMeasurement}}
-\doxysubsubsection{\texorpdfstring{IsNotUsed()}{IsNotUsed()}}
-{\footnotesize\ttfamily bool VMeasurement\+::\+Is\+Not\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+\mbox{\Hypertarget{classVMeasurement_aeeaa8b246a370545346106e6d94f4ea5}\label{classVMeasurement_aeeaa8b246a370545346106e6d94f4ea5}} 
+\index{VMeasurement@{VMeasurement}!isNotUsed@{isNotUsed}}
+\index{isNotUsed@{isNotUsed}!VMeasurement@{VMeasurement}}
+\doxysubsubsection{\texorpdfstring{isNotUsed()}{isNotUsed()}}
+{\footnotesize\ttfamily bool VMeasurement\+::is\+Not\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
-Reimplemented from \mbox{\hyperlink{classVInternalVariable_ae6f71246c47d4a35b9f05d5bbc8c95e5}{VInternal\+Variable}}.
+Reimplemented from \mbox{\hyperlink{classVInternalVariable_aaa49addbf1996829ec0cecac920cda6c}{VInternal\+Variable}}.
 
 \mbox{\Hypertarget{classVMeasurement_ab465255e0c7f66cdb45790bb5217f9cb}\label{classVMeasurement_ab465255e0c7f66cdb45790bb5217f9cb}} 
 \index{VMeasurement@{VMeasurement}!ListHeights@{ListHeights}}

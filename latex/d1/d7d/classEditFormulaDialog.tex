@@ -1,0 +1,526 @@
+\hypertarget{classEditFormulaDialog}{}\doxysection{Edit\+Formula\+Dialog Class Reference}
+\label{classEditFormulaDialog}\index{EditFormulaDialog@{EditFormulaDialog}}
+
+
+The \mbox{\hyperlink{classEditFormulaDialog}{Edit\+Formula\+Dialog}} class dialog for editing wrong formula.  
+
+
+
+
+{\ttfamily \#include $<$edit\+\_\+formula\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Edit\+Formula\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{d1/d7d/classEditFormulaDialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_a72238f494a258b98e3805c76115ba447}{Dialog\+Accepted}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_abab24ec9e9684e3df4131568f0a189fa}{Dialog\+Rejected}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_a4d8c4c40b0cb5d16aa92ebb2087b6af4}{Eval\+Formula}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a9d983a0b10464f7655c855d6e0ce9a74}{value\+Changed}} (int row)
+\begin{DoxyCompactList}\small\item\em value\+Changed show description when current variable changed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_aa743c053e5cc2859bfec46ba36590a69}{tab\+Changed}} (int row)
+\begin{DoxyCompactList}\small\item\em menu tab\+Changed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a2e2ef88f76830061285ffd0205a193e9}{insert\+Variable}} ()
+\begin{DoxyCompactList}\small\item\em insert\+Variable insert variable into line edit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a5c1061e2f62ee5ced1cc74a4e974b317}{insert\+Value}} (QTable\+Widget\+Item $\ast$item)
+\begin{DoxyCompactList}\small\item\em insert\+Value insert variable into line edit \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a60ca5b2c465c4551d332f945a983cfee}{measurements}} ()
+\begin{DoxyCompactList}\small\item\em measurements show measurements in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_aa523de908a96bb2c6c9c97023518f7a5}{line\+Lengths}} ()
+\begin{DoxyCompactList}\small\item\em line\+Lengths show lengths of line variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_aa72dd32486c3832cbb28cb282d26b2f4}{arc\+Radii}} ()
+\begin{DoxyCompactList}\small\item\em arc\+Radii show radii of arc variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a903a0b463aa108a947ae1d3306b99dce}{curve\+Angles}} ()
+\begin{DoxyCompactList}\small\item\em curve\+Angles show angles of curve variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a3d2a5ce33862177e517cb2eb32529946}{curve\+Lengths}} ()
+\begin{DoxyCompactList}\small\item\em curve\+Lengths show lengths of curve variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a84b333549be510d10e1c4705b9e4678f}{control\+Point\+Lengths}} ()
+\begin{DoxyCompactList}\small\item\em control\+Point\+Lengths show lengths of control point variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a8f97b1a36035a64567d933526217e47d}{line\+Angles}} ()
+\begin{DoxyCompactList}\small\item\em line\+Angles show angles of line variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a2eccdbeaeda0d4a8ff5b3e38f80c3ba9}{custom\+Variables}} ()
+\begin{DoxyCompactList}\small\item\em custom\+Variables show custom variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_ab16908ba748f2804e23cd328d5091eaa}{functions}} ()
+\begin{DoxyCompactList}\small\item\em functions show functions in list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEditFormulaDialog_a73b34ee070f104b337e0b5a45e52b28c}{Edit\+Formula\+Dialog}} (const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$\mbox{\hyperlink{classDialogTool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{classDialogTool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{classEditFormulaDialog_a80531d6b3c0f570c34808659dfc870fb}{$\sim$\+Edit\+Formula\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{classEditFormulaDialog_a128746769678276b4cd36d9e1bf42c90}{Get\+Formula}} () const
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a12d55a01172c71337afb2e346a39b843}{Set\+Formula}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a5500c2b336fb70700c064cedae01497e}{set\+Check\+Zero}} (bool value)
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a86501b4dcf7df7dcf4195a53869c17af}{set\+Check\+Less\+Than\+Zero}} (bool value)
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_ad1aea8c58778ba445c27fecba1f1fd20}{set\+Postfix}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_aab8863b0b9841c83d922e68897b641ed}{Check\+State}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\begin{DoxyCompactList}\small\item\em Check\+State enable, when all is correct, or disable, when something wrong, button ok. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_ab9bc737eef698e49973d834d0811af3c}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_aedb06a6ddda0154ad24ad75c98be65ad}{show\+Event}} (QShow\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em show\+Event handle when window show \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEditFormulaDialog_ac38f716de79f26e0d99570d81d902a35}{resize\+Event}} (QResize\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a4811ca77afb38d1c2f098fd0dfca74db}{filter\+Variables}} (const QString \&filter)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_af706214586802d7e1a8e2da377195312}{initialize\+Variables}} ()
+\item 
+{\footnotesize template$<$class key , class val $>$ }\\void \mbox{\hyperlink{classEditFormulaDialog_abe38a6ecf3165bb67ca6531929e9b9d7}{show\+Variable}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ key, val $>$ \&var)
+\begin{DoxyCompactList}\small\item\em show\+Variable show variables in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_acddf850fd883ed51af24dde066f80963}{show\+Measurements}} (const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVMeasurement}{VMeasurement}} $>$ $>$ \&var)
+\begin{DoxyCompactList}\small\item\em show\+Measurements show measurements in table \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_aa4bc382d202b07ba90fb20e0f0d6478c}{show\+Functions}} ()
+\begin{DoxyCompactList}\small\item\em show\+Functions show functions in list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEditFormulaDialog_afd8baea0a09ee020cfe1e538965c7a8d}{set\+Description}} (const QString \&name, qreal value, const QString \&unit, const QString \&type, const QString \&description)
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a2934d462e81f8f75feb042cca2f096d5}{clear\+Formula}} ()
+\item 
+void \mbox{\hyperlink{classEditFormulaDialog_a97b37c30e2015ea7492320b8ba6a1270}{undo\+Formula}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Edit\+Formula\+Dialog $\ast$ \mbox{\hyperlink{classEditFormulaDialog_acdbbf0fe6f67e253b2bb9f5d82356507}{ui}}
+\item 
+QString \mbox{\hyperlink{classEditFormulaDialog_a77c8769dff87afd45a289438ef977625}{m\+\_\+formula}}
+\item 
+QString \mbox{\hyperlink{classEditFormulaDialog_a9cd0a0e7dec6f51ce9f873d9e107eb5f}{m\+\_\+undo\+Formula}}
+\begin{DoxyCompactList}\small\item\em formula string with formula \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEditFormulaDialog_a671bfceec2935d31b8e61b748ab9faee}{m\+\_\+check\+Zero}}
+\begin{DoxyCompactList}\small\item\em copy of formula string used to perform undo \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEditFormulaDialog_a992f6d3df4e5b389161a84f080a05bd4}{m\+\_\+check\+Less\+Than\+Zero}}
+\item 
+QString \mbox{\hyperlink{classEditFormulaDialog_a00a0ff8ed19ea884156de118f7522c8f}{m\+\_\+postfix}}
+\item 
+bool \mbox{\hyperlink{classEditFormulaDialog_ac1a00125a492fc3a56dfe389ac518470}{m\+\_\+restore\+Cursor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classEditFormulaDialog}{Edit\+Formula\+Dialog}} class dialog for editing wrong formula. 
+
+When math parser find in formula error user can try fix issue. Dialog will show all variables that user can use in this formula. Dialog check fixed variant of formula.
+
+Don\textquotesingle{}t implemant button \char`\"{}\+Apply\char`\"{} for this dialog!! 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEditFormulaDialog_a73b34ee070f104b337e0b5a45e52b28c}\label{classEditFormulaDialog_a73b34ee070f104b337e0b5a45e52b28c}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!EditFormulaDialog@{EditFormulaDialog}}
+\index{EditFormulaDialog@{EditFormulaDialog}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{EditFormulaDialog()}{EditFormulaDialog()}}
+{\footnotesize\ttfamily Edit\+Formula\+Dialog\+::\+Edit\+Formula\+Dialog (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVContainer}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a80531d6b3c0f570c34808659dfc870fb}\label{classEditFormulaDialog_a80531d6b3c0f570c34808659dfc870fb}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!````~EditFormulaDialog@{$\sim$EditFormulaDialog}}
+\index{````~EditFormulaDialog@{$\sim$EditFormulaDialog}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$EditFormulaDialog()}{~EditFormulaDialog()}}
+{\footnotesize\ttfamily Edit\+Formula\+Dialog\+::$\sim$\+Edit\+Formula\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEditFormulaDialog_aa72dd32486c3832cbb28cb282d26b2f4}\label{classEditFormulaDialog_aa72dd32486c3832cbb28cb282d26b2f4}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!arcRadii@{arcRadii}}
+\index{arcRadii@{arcRadii}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{arcRadii}{arcRadii}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::arc\+Radii (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+arc\+Radii show radii of arc variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_aab8863b0b9841c83d922e68897b641ed}\label{classEditFormulaDialog_aab8863b0b9841c83d922e68897b641ed}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State enable, when all is correct, or disable, when something wrong, button ok. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a1dde216466b3f09ff51f8538bb279457}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classEditFormulaDialog_a2934d462e81f8f75feb042cca2f096d5}\label{classEditFormulaDialog_a2934d462e81f8f75feb042cca2f096d5}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!clearFormula@{clearFormula}}
+\index{clearFormula@{clearFormula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{clearFormula()}{clearFormula()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::clear\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_ab9bc737eef698e49973d834d0811af3c}\label{classEditFormulaDialog_ab9bc737eef698e49973d834d0811af3c}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a7351661dd7dfb8231ffdd4b92ddcc11b}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classEditFormulaDialog_a84b333549be510d10e1c4705b9e4678f}\label{classEditFormulaDialog_a84b333549be510d10e1c4705b9e4678f}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!controlPointLengths@{controlPointLengths}}
+\index{controlPointLengths@{controlPointLengths}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{controlPointLengths}{controlPointLengths}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::control\+Point\+Lengths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+control\+Point\+Lengths show lengths of control point variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a903a0b463aa108a947ae1d3306b99dce}\label{classEditFormulaDialog_a903a0b463aa108a947ae1d3306b99dce}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!curveAngles@{curveAngles}}
+\index{curveAngles@{curveAngles}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{curveAngles}{curveAngles}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::curve\+Angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+curve\+Angles show angles of curve variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a3d2a5ce33862177e517cb2eb32529946}\label{classEditFormulaDialog_a3d2a5ce33862177e517cb2eb32529946}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!curveLengths@{curveLengths}}
+\index{curveLengths@{curveLengths}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{curveLengths}{curveLengths}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::curve\+Lengths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+curve\+Lengths show lengths of curve variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a2eccdbeaeda0d4a8ff5b3e38f80c3ba9}\label{classEditFormulaDialog_a2eccdbeaeda0d4a8ff5b3e38f80c3ba9}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!customVariables@{customVariables}}
+\index{customVariables@{customVariables}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{customVariables}{customVariables}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::custom\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+custom\+Variables show custom variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a72238f494a258b98e3805c76115ba447}\label{classEditFormulaDialog_a72238f494a258b98e3805c76115ba447}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!DialogAccepted@{DialogAccepted}}
+\index{DialogAccepted@{DialogAccepted}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{DialogAccepted}{DialogAccepted}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::\+Dialog\+Accepted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_abab24ec9e9684e3df4131568f0a189fa}\label{classEditFormulaDialog_abab24ec9e9684e3df4131568f0a189fa}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!DialogRejected@{DialogRejected}}
+\index{DialogRejected@{DialogRejected}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{DialogRejected}{DialogRejected}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::\+Dialog\+Rejected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a4d8c4c40b0cb5d16aa92ebb2087b6af4}\label{classEditFormulaDialog_a4d8c4c40b0cb5d16aa92ebb2087b6af4}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!EvalFormula@{EvalFormula}}
+\index{EvalFormula@{EvalFormula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{EvalFormula}{EvalFormula}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::\+Eval\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a4811ca77afb38d1c2f098fd0dfca74db}\label{classEditFormulaDialog_a4811ca77afb38d1c2f098fd0dfca74db}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!filterVariables@{filterVariables}}
+\index{filterVariables@{filterVariables}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{filterVariables}{filterVariables}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::filter\+Variables (\begin{DoxyParamCaption}\item[{const QString \&}]{filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_ab16908ba748f2804e23cd328d5091eaa}\label{classEditFormulaDialog_ab16908ba748f2804e23cd328d5091eaa}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!functions@{functions}}
+\index{functions@{functions}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{functions}{functions}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+functions show functions in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a128746769678276b4cd36d9e1bf42c90}\label{classEditFormulaDialog_a128746769678276b4cd36d9e1bf42c90}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!GetFormula@{GetFormula}}
+\index{GetFormula@{GetFormula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{GetFormula()}{GetFormula()}}
+{\footnotesize\ttfamily QString Edit\+Formula\+Dialog\+::\+Get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEditFormulaDialog_af706214586802d7e1a8e2da377195312}\label{classEditFormulaDialog_af706214586802d7e1a8e2da377195312}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!initializeVariables@{initializeVariables}}
+\index{initializeVariables@{initializeVariables}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{initializeVariables()}{initializeVariables()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::initialize\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a5c1061e2f62ee5ced1cc74a4e974b317}\label{classEditFormulaDialog_a5c1061e2f62ee5ced1cc74a4e974b317}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!insertValue@{insertValue}}
+\index{insertValue@{insertValue}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{insertValue}{insertValue}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::insert\+Value (\begin{DoxyParamCaption}\item[{QTable\+Widget\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+insert\+Value insert variable into line edit 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & chosen item of table widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEditFormulaDialog_a2e2ef88f76830061285ffd0205a193e9}\label{classEditFormulaDialog_a2e2ef88f76830061285ffd0205a193e9}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!insertVariable@{insertVariable}}
+\index{insertVariable@{insertVariable}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{insertVariable}{insertVariable}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::insert\+Variable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+insert\+Variable insert variable into line edit 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a8f97b1a36035a64567d933526217e47d}\label{classEditFormulaDialog_a8f97b1a36035a64567d933526217e47d}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!lineAngles@{lineAngles}}
+\index{lineAngles@{lineAngles}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{lineAngles}{lineAngles}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::line\+Angles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+line\+Angles show angles of line variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_aa523de908a96bb2c6c9c97023518f7a5}\label{classEditFormulaDialog_aa523de908a96bb2c6c9c97023518f7a5}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!lineLengths@{lineLengths}}
+\index{lineLengths@{lineLengths}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{lineLengths}{lineLengths}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::line\+Lengths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+line\+Lengths show lengths of line variables in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a60ca5b2c465c4551d332f945a983cfee}\label{classEditFormulaDialog_a60ca5b2c465c4551d332f945a983cfee}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!measurements@{measurements}}
+\index{measurements@{measurements}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{measurements}{measurements}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::measurements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+measurements show measurements in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_ac38f716de79f26e0d99570d81d902a35}\label{classEditFormulaDialog_ac38f716de79f26e0d99570d81d902a35}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::resize\+Event (\begin{DoxyParamCaption}\item[{QResize\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a86501b4dcf7df7dcf4195a53869c17af}\label{classEditFormulaDialog_a86501b4dcf7df7dcf4195a53869c17af}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!setCheckLessThanZero@{setCheckLessThanZero}}
+\index{setCheckLessThanZero@{setCheckLessThanZero}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{setCheckLessThanZero()}{setCheckLessThanZero()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::set\+Check\+Less\+Than\+Zero (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a5500c2b336fb70700c064cedae01497e}\label{classEditFormulaDialog_a5500c2b336fb70700c064cedae01497e}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!setCheckZero@{setCheckZero}}
+\index{setCheckZero@{setCheckZero}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{setCheckZero()}{setCheckZero()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::set\+Check\+Zero (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditFormulaDialog_afd8baea0a09ee020cfe1e538965c7a8d}\label{classEditFormulaDialog_afd8baea0a09ee020cfe1e538965c7a8d}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!setDescription@{setDescription}}
+\index{setDescription@{setDescription}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{setDescription()}{setDescription()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::set\+Description (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{qreal}]{value,  }\item[{const QString \&}]{unit,  }\item[{const QString \&}]{type,  }\item[{const QString \&}]{description }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a12d55a01172c71337afb2e346a39b843}\label{classEditFormulaDialog_a12d55a01172c71337afb2e346a39b843}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditFormulaDialog_ad1aea8c58778ba445c27fecba1f1fd20}\label{classEditFormulaDialog_ad1aea8c58778ba445c27fecba1f1fd20}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!setPostfix@{setPostfix}}
+\index{setPostfix@{setPostfix}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{setPostfix()}{setPostfix()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::set\+Postfix (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classEditFormulaDialog_aedb06a6ddda0154ad24ad75c98be65ad}\label{classEditFormulaDialog_aedb06a6ddda0154ad24ad75c98be65ad}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+show\+Event handle when window show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDialogTool_a60bf040b63da264b842ebe9b7ef76564}{Dialog\+Tool}}.
+
+\mbox{\Hypertarget{classEditFormulaDialog_aa4bc382d202b07ba90fb20e0f0d6478c}\label{classEditFormulaDialog_aa4bc382d202b07ba90fb20e0f0d6478c}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!showFunctions@{showFunctions}}
+\index{showFunctions@{showFunctions}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{showFunctions()}{showFunctions()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::show\+Functions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+show\+Functions show functions in list 
+
+\mbox{\Hypertarget{classEditFormulaDialog_acddf850fd883ed51af24dde066f80963}\label{classEditFormulaDialog_acddf850fd883ed51af24dde066f80963}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!showMeasurements@{showMeasurements}}
+\index{showMeasurements@{showMeasurements}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{showMeasurements()}{showMeasurements()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::show\+Measurements (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ QString, \mbox{\hyperlink{classQSharedPointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{classVMeasurement}{VMeasurement}} $>$ $>$ \&}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+show\+Measurements show measurements in table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & container with measurements \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEditFormulaDialog_abe38a6ecf3165bb67ca6531929e9b9d7}\label{classEditFormulaDialog_abe38a6ecf3165bb67ca6531929e9b9d7}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!showVariable@{showVariable}}
+\index{showVariable@{showVariable}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{showVariable()}{showVariable()}}
+{\footnotesize\ttfamily template$<$class key , class val $>$ \\
+void Edit\+Formula\+Dialog\+::show\+Variable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classQMap}{QMap}}$<$ key, val $>$ \&}]{var }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+show\+Variable show variables in list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var} & container with variables \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEditFormulaDialog_aa743c053e5cc2859bfec46ba36590a69}\label{classEditFormulaDialog_aa743c053e5cc2859bfec46ba36590a69}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!tabChanged@{tabChanged}}
+\index{tabChanged@{tabChanged}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{tabChanged}{tabChanged}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::tab\+Changed (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+menu tab\+Changed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & number of row \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEditFormulaDialog_a97b37c30e2015ea7492320b8ba6a1270}\label{classEditFormulaDialog_a97b37c30e2015ea7492320b8ba6a1270}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!undoFormula@{undoFormula}}
+\index{undoFormula@{undoFormula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{undoFormula()}{undoFormula()}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::undo\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a9d983a0b10464f7655c855d6e0ce9a74}\label{classEditFormulaDialog_a9d983a0b10464f7655c855d6e0ce9a74}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!valueChanged@{valueChanged}}
+\index{valueChanged@{valueChanged}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{valueChanged}{valueChanged}}
+{\footnotesize\ttfamily void Edit\+Formula\+Dialog\+::value\+Changed (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+value\+Changed show description when current variable changed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & number of row \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classEditFormulaDialog_a992f6d3df4e5b389161a84f080a05bd4}\label{classEditFormulaDialog_a992f6d3df4e5b389161a84f080a05bd4}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!m\_checkLessThanZero@{m\_checkLessThanZero}}
+\index{m\_checkLessThanZero@{m\_checkLessThanZero}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{m\_checkLessThanZero}{m\_checkLessThanZero}}
+{\footnotesize\ttfamily bool Edit\+Formula\+Dialog\+::m\+\_\+check\+Less\+Than\+Zero\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a671bfceec2935d31b8e61b748ab9faee}\label{classEditFormulaDialog_a671bfceec2935d31b8e61b748ab9faee}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!m\_checkZero@{m\_checkZero}}
+\index{m\_checkZero@{m\_checkZero}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{m\_checkZero}{m\_checkZero}}
+{\footnotesize\ttfamily bool Edit\+Formula\+Dialog\+::m\+\_\+check\+Zero\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+copy of formula string used to perform undo 
+
+\mbox{\Hypertarget{classEditFormulaDialog_a77c8769dff87afd45a289438ef977625}\label{classEditFormulaDialog_a77c8769dff87afd45a289438ef977625}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!m\_formula@{m\_formula}}
+\index{m\_formula@{m\_formula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{m\_formula}{m\_formula}}
+{\footnotesize\ttfamily QString Edit\+Formula\+Dialog\+::m\+\_\+formula\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a00a0ff8ed19ea884156de118f7522c8f}\label{classEditFormulaDialog_a00a0ff8ed19ea884156de118f7522c8f}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!m\_postfix@{m\_postfix}}
+\index{m\_postfix@{m\_postfix}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{m\_postfix}{m\_postfix}}
+{\footnotesize\ttfamily QString Edit\+Formula\+Dialog\+::m\+\_\+postfix\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_ac1a00125a492fc3a56dfe389ac518470}\label{classEditFormulaDialog_ac1a00125a492fc3a56dfe389ac518470}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!m\_restoreCursor@{m\_restoreCursor}}
+\index{m\_restoreCursor@{m\_restoreCursor}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{m\_restoreCursor}{m\_restoreCursor}}
+{\footnotesize\ttfamily bool Edit\+Formula\+Dialog\+::m\+\_\+restore\+Cursor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classEditFormulaDialog_a9cd0a0e7dec6f51ce9f873d9e107eb5f}\label{classEditFormulaDialog_a9cd0a0e7dec6f51ce9f873d9e107eb5f}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!m\_undoFormula@{m\_undoFormula}}
+\index{m\_undoFormula@{m\_undoFormula}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{m\_undoFormula}{m\_undoFormula}}
+{\footnotesize\ttfamily QString Edit\+Formula\+Dialog\+::m\+\_\+undo\+Formula\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+formula string with formula 
+
+\mbox{\Hypertarget{classEditFormulaDialog_acdbbf0fe6f67e253b2bb9f5d82356507}\label{classEditFormulaDialog_acdbbf0fe6f67e253b2bb9f5d82356507}} 
+\index{EditFormulaDialog@{EditFormulaDialog}!ui@{ui}}
+\index{ui@{ui}!EditFormulaDialog@{EditFormulaDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Edit\+Formula\+Dialog$\ast$ Edit\+Formula\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/libs/vtools/dialogs/support/\mbox{\hyperlink{edit__formula__dialog_8h}{edit\+\_\+formula\+\_\+dialog.\+h}}\item 
+src/libs/vtools/dialogs/support/\mbox{\hyperlink{edit__formula__dialog_8cpp}{edit\+\_\+formula\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{edit__formula__dialog_8h}{}\doxysection{src/libs/vtools/dialogs/support/edit\+\_\+formula\+\_\+dialog.h File Reference}
+\label{edit__formula__dialog_8h}\index{src/libs/vtools/dialogs/support/edit\_formula\_dialog.h@{src/libs/vtools/dialogs/support/edit\_formula\_dialog.h}}
+{\ttfamily \#include $<$qcompilerdetection.\+h$>$}\newline
+{\ttfamily \#include $<$QMap$>$}\newline
+{\ttfamily \#include $<$QMeta\+Object$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QTable\+Widget\+Item$>$}\newline
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include \char`\"{}../tools/dialogtool.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classEditFormulaDialog}{Edit\+Formula\+Dialog}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classEditFormulaDialog}{Edit\+Formula\+Dialog}} class dialog for editing wrong formula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceUi}{Ui}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928}{Variable\+Tab}} \{ \newline
+\mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ab44c82b6e10f9887c1e9b19455ec1ed5}{Measurements}} =0
+, \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a26b367bcdd210f7345b551b921c5551f}{Custom}} =1
+, \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ac146f02bc0f24f00569bee85acf64e01}{Line\+Lengths}} = 2
+, \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a2e5cd1909aca5f4ffecfa3f76eef2cdc}{Line\+Angles}} =3
+, \newline
+\mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a5a1f8f739e47ec5f58742baab1a1bea1}{Curve\+Lengths}} =4
+, \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a666f37a76ab77b57519b43e4025ab44e}{Curve\+Angles}} =5
+, \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a8dd1824ee7f27091802e776437458112}{CPLengths}} =6
+, \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a428cc153e56aedf726c7071488c2bc28}{Arc\+Radii}} =7
+, \newline
+\mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a60fe6c4c525893f09d49fb65b21e81a8}{Functions}} =8
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928}} 
+\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!VariableTab@{VariableTab}}
+\index{VariableTab@{VariableTab}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}
+\doxysubsubsection{\texorpdfstring{VariableTab}{VariableTab}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928}{Variable\+Tab}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Measurements@{Measurements}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!Measurements@{Measurements}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ab44c82b6e10f9887c1e9b19455ec1ed5}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ab44c82b6e10f9887c1e9b19455ec1ed5}} 
+Measurements&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Custom@{Custom}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!Custom@{Custom}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a26b367bcdd210f7345b551b921c5551f}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a26b367bcdd210f7345b551b921c5551f}} 
+Custom&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineLengths@{LineLengths}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!LineLengths@{LineLengths}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ac146f02bc0f24f00569bee85acf64e01}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ac146f02bc0f24f00569bee85acf64e01}} 
+Line\+Lengths&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineAngles@{LineAngles}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!LineAngles@{LineAngles}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a2e5cd1909aca5f4ffecfa3f76eef2cdc}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a2e5cd1909aca5f4ffecfa3f76eef2cdc}} 
+Line\+Angles&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurveLengths@{CurveLengths}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!CurveLengths@{CurveLengths}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a5a1f8f739e47ec5f58742baab1a1bea1}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a5a1f8f739e47ec5f58742baab1a1bea1}} 
+Curve\+Lengths&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurveAngles@{CurveAngles}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!CurveAngles@{CurveAngles}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a666f37a76ab77b57519b43e4025ab44e}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a666f37a76ab77b57519b43e4025ab44e}} 
+Curve\+Angles&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPLengths@{CPLengths}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!CPLengths@{CPLengths}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a8dd1824ee7f27091802e776437458112}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a8dd1824ee7f27091802e776437458112}} 
+CPLengths&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArcRadii@{ArcRadii}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!ArcRadii@{ArcRadii}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a428cc153e56aedf726c7071488c2bc28}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a428cc153e56aedf726c7071488c2bc28}} 
+Arc\+Radii&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Functions@{Functions}!edit\_formula\_dialog.h@{edit\_formula\_dialog.h}}\index{edit\_formula\_dialog.h@{edit\_formula\_dialog.h}!Functions@{Functions}}}\mbox{\Hypertarget{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a60fe6c4c525893f09d49fb65b21e81a8}\label{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a60fe6c4c525893f09d49fb65b21e81a8}} 
+Functions&\\
+\hline
+
+\end{DoxyEnumFields}
