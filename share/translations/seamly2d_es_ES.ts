@@ -8045,10 +8045,6 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Group color</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14934,10 +14930,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
