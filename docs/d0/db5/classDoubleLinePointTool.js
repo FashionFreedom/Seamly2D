@@ -1,0 +1,28 @@
+var classDoubleLinePointTool =
+[
+    [ "DoubleLinePointTool", "d0/db5/classDoubleLinePointTool.html#a74cf017dbe3df68007d205a009cd062e", null ],
+    [ "~DoubleLinePointTool", "d0/db5/classDoubleLinePointTool.html#af4720ebc06081da5c0ce6fb7c09f2220", null ],
+    [ "Disable", "d0/db5/classDoubleLinePointTool.html#a88dcb3fb5827b76162f18dbd0e3c78c9", null ],
+    [ "FullUpdateFromFile", "d0/db5/classDoubleLinePointTool.html#af44032e68ecf3468ffa0377e2eb10087", null ],
+    [ "getFirstPointId", "d0/db5/classDoubleLinePointTool.html#a20c9e38255327069cfc0780dfbe21753", null ],
+    [ "getLineColor", "d0/db5/classDoubleLinePointTool.html#a0f23bbe998eef7cd27aa617bcf32dc8f", null ],
+    [ "getSecondPointId", "d0/db5/classDoubleLinePointTool.html#a251a9f6a32dd790859d4303f1dc21d5f", null ],
+    [ "hoverEnterEvent", "d0/db5/classDoubleLinePointTool.html#a658a226dd3f552bd5a59bbe6afe65777", null ],
+    [ "hoverLeaveEvent", "d0/db5/classDoubleLinePointTool.html#a7f708c18a4ca30afc00f5503678e1426", null ],
+    [ "makeToolTip", "d0/db5/classDoubleLinePointTool.html#a44f2f5ace18cc52ca278862714d63380", null ],
+    [ "paint", "d0/db5/classDoubleLinePointTool.html#a2c622e838c00a2adb82b59cb43b6c423", null ],
+    [ "point1Name", "d0/db5/classDoubleLinePointTool.html#a0851ec812fd2f75777391fbc2609d8fc", null ],
+    [ "point2Name", "d0/db5/classDoubleLinePointTool.html#aa1af8380521c5ac69d1cb8d2b508e18e", null ],
+    [ "RefreshGeometry", "d0/db5/classDoubleLinePointTool.html#a340b9ba917e2961cb9bd148423ae8135", null ],
+    [ "RemoveReferens", "d0/db5/classDoubleLinePointTool.html#a4bd4cac84cc8381ea1ec1fa8a7f10291", null ],
+    [ "SaveOptions", "d0/db5/classDoubleLinePointTool.html#ad62446eed1c102eb66294842da699adc", null ],
+    [ "setFirstPointId", "d0/db5/classDoubleLinePointTool.html#ac2372a3f1af4d8aaa39fd38bd430a3b3", null ],
+    [ "setLineColor", "d0/db5/classDoubleLinePointTool.html#a2629904b4eb596d1da018c3349f0242b", null ],
+    [ "setSecondPointId", "d0/db5/classDoubleLinePointTool.html#a971d5147f7110700f3e268fd4d4feb23", null ],
+    [ "type", "d0/db5/classDoubleLinePointTool.html#a26662892d338ff3d620fdb60f51c709d", null ],
+    [ "firstLine", "d0/db5/classDoubleLinePointTool.html#ad9c42698e2da4ea8ca7c34ded6ca05ab", null ],
+    [ "firstPointId", "d0/db5/classDoubleLinePointTool.html#aefd6507757cf9ef171b44ad83b64f698", null ],
+    [ "lineColor", "d0/db5/classDoubleLinePointTool.html#acc8e397cc9fb6c724b6d0de71db0c863", null ],
+    [ "secondLine", "d0/db5/classDoubleLinePointTool.html#a8ceb5f6368786d5d427a0fbb80ce3166", null ],
+    [ "secondPointId", "d0/db5/classDoubleLinePointTool.html#aa484ae0368c768fc150b7fa46c9c60c9", null ]
+];
