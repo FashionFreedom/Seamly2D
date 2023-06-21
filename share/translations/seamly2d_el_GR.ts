@@ -362,14 +362,6 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = .0625&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = .1875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = .3125&lt;/span&gt;&lt;/p&gt;
@@ -378,6 +370,14 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2033,7 +2033,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogEditWrongFormula</name>
     <message>
         <source>Edit formula</source>
-        <translation>Επεξεργασία φόρμουλας</translation>
+        <translation type="vanished">Επεξεργασία φόρμουλας</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -2041,7 +2041,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Εισαγωγή μεταβλητής στη φόρμουλα</translation>
+        <translation type="vanished">Εισαγωγή μεταβλητής στη φόρμουλα</translation>
     </message>
     <message>
         <source>Value of first angle</source>
@@ -2049,11 +2049,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Εμφάνιση πλήρους υπολογισμού στ πλαίσιο μηνύματος&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Εμφάνιση πλήρους υπολογισμού στ πλαίσιο μηνύματος&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Input data</source>
-        <translation>Εισαγωγή δεδομένων</translation>
+        <translation type="vanished">Εισαγωγή δεδομένων</translation>
     </message>
     <message>
         <source>Size and height</source>
@@ -2061,7 +2061,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Μετρήσεις</translation>
+        <translation type="vanished">Μετρήσεις</translation>
     </message>
     <message>
         <source>Increments</source>
@@ -2085,7 +2085,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Hide empty measurements</source>
-        <translation>Απόκρυψη κενών μετρήσεων</translation>
+        <translation type="vanished">Απόκρυψη κενών μετρήσεων</translation>
     </message>
     <message>
         <source>Double click for add to formula</source>
@@ -2101,7 +2101,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line length</source>
-        <translation>Μήκος γραμμής</translation>
+        <translation type="vanished">Μήκος γραμμής</translation>
     </message>
     <message>
         <source>Arc length</source>
@@ -2109,11 +2109,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve length</source>
-        <translation>Μήκος καμπύλης</translation>
+        <translation type="vanished">Μήκος καμπύλης</translation>
     </message>
     <message>
         <source>Line Angle</source>
-        <translation>Γωνία γραμμής</translation>
+        <translation type="vanished">Γωνία γραμμής</translation>
     </message>
     <message>
         <source>Radius of arcs</source>
@@ -2129,7 +2129,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc radius</source>
-        <translation>Ακτίνα τόξου</translation>
+        <translation type="vanished">Ακτίνα τόξου</translation>
     </message>
     <message>
         <source>Arc angle</source>
@@ -2137,31 +2137,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve angle</source>
-        <translation>Γωνία καμπύλης</translation>
+        <translation type="vanished">Γωνία καμπύλης</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Φόρμουλα:</translation>
+        <translation type="vanished">Φόρμουλα:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Τιμή</translation>
+        <translation type="vanished">Τιμή</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Υπολογισμός</translation>
+        <translation type="vanished">Υπολογισμός</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Όνομα</translation>
+        <translation type="vanished">Όνομα</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation>Πλήρες όνομα</translation>
+        <translation type="vanished">Πλήρες όνομα</translation>
     </message>
     <message>
         <source>Functions</source>
-        <translation>Λειτουργίες</translation>
+        <translation type="vanished">Λειτουργίες</translation>
     </message>
     <message>
         <source>Lengths to control points</source>
@@ -2169,43 +2169,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation>Φιλτράρισμα λίστας με λέξη κλειδί</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom Variable</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Φιλτράρισμα λίστας με λέξη κλειδί</translation>
     </message>
 </context>
 <context>
@@ -3616,13 +3580,13 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
+        <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Millimeters</source>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7122,6 +7086,125 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>EditFormulaDialog</name>
+    <message>
+        <source>Edit formula</source>
+        <translation type="unfinished">Επεξεργασία φόρμουλας</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished">Μετρήσεις</translation>
+    </message>
+    <message>
+        <source>Custom Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Control Point Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radii</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation type="unfinished">Λειτουργίες</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation type="unfinished">Φόρμουλα:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Τιμή</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished">Υπολογισμός</translation>
+    </message>
+    <message>
+        <source>Clear formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to original formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert variable into formula</source>
+        <translation type="unfinished">Εισαγωγή μεταβλητής στη φόρμουλα</translation>
+    </message>
+    <message>
+        <source>Hides measurement variables that have no value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide empty measurements</source>
+        <translation type="unfinished">Απόκρυψη κενών μετρήσεων</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Όνομα</translation>
+    </message>
+    <message>
+        <source>Full name</source>
+        <translation type="unfinished">Πλήρες όνομα</translation>
+    </message>
+    <message>
+        <source>Filter variable list by keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation type="unfinished">Φιλτράρισμα λίστας με λέξη κλειδί</translation>
+    </message>
+    <message>
+        <source>Measurement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line length</source>
+        <translation type="unfinished">Μήκος γραμμής</translation>
+    </message>
+    <message>
+        <source>Curve length</source>
+        <translation type="unfinished">Μήκος καμπύλης</translation>
+    </message>
+    <message>
+        <source>Line Angle</source>
+        <translation type="unfinished">Γωνία γραμμής</translation>
+    </message>
+    <message>
+        <source>Arc radius</source>
+        <translation type="unfinished">Ακτίνα τόξου</translation>
+    </message>
+    <message>
+        <source>Curve angle</source>
+        <translation type="unfinished">Γωνία καμπύλης</translation>
+    </message>
+</context>
+<context>
     <name>EditGroupDialog</name>
     <message>
         <source>Add Group</source>
@@ -7562,12 +7645,6 @@ Apply settings anyway?</source>
         <translation>Πληροφορίες</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to open file
 %1
 for writing</source>
@@ -7588,6 +7665,12 @@ for writing</source>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7706,10 +7789,6 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Show which groups contain objects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Group color and name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7875,6 +7954,22 @@ Do you want to download it?</source>
     <message>
         <source>Remove Group Object</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Όνομα</translation>
     </message>
 </context>
 <context>
@@ -11085,6 +11180,18 @@ Do you want to save your changes?</source>
         <source>Failed to lock. File with this name is opened in another window.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>untitled</source>
+        <translation type="unfinished">ανώνυμο</translation>
+    </message>
+    <message>
+        <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -13475,6 +13582,10 @@ Do you want to save your changes?</source>
         <source>No Pen</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -14165,7 +14276,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>measurements</source>
-        <translation>μετρήσεις</translation>
+        <translation type="vanished">μετρήσεις</translation>
     </message>
     <message>
         <source>Individual measurements (*.vit)</source>
@@ -14221,7 +14332,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>untitled</source>
-        <translation type="vanished">ανώνυμο</translation>
+        <translation>ανώνυμο</translation>
     </message>
     <message>
         <source>&lt;Empty&gt;</source>
@@ -14594,6 +14705,18 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -18454,84 +18577,34 @@ Do you want to save your changes?</source>
         <translation type="vanished">εφαπτομένη</translation>
     </message>
     <message>
-        <source>sinh</source>
-        <comment>hyperbolic sine function</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>hyperbolic cosine</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>logarithm to the base 2</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>logarithm to the base 10</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>logarithm to the base 10</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>logarithm to base e (2.71828...)</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>exp</source>
         <comment>e raised to the power of x</comment>
-        <translation>εκθέτης</translation>
+        <translation type="vanished">εκθέτης</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>square root of a value</comment>
-        <translation>sqrt</translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>sign function -1 if x&lt;0; 1 if x&gt;0</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>round to nearest integer</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>absolute value</comment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">sqrt</translation>
     </message>
     <message>
         <source>min</source>
         <comment>min of all arguments</comment>
-        <translation>ελάχιστο</translation>
+        <translation type="vanished">ελάχιστο</translation>
     </message>
     <message>
         <source>max</source>
         <comment>max of all arguments</comment>
-        <translation>μέγιστο</translation>
+        <translation type="vanished">μέγιστο</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>sum of all arguments</comment>
-        <translation>σύνολο</translation>
+        <translation type="vanished">σύνολο</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>mean value of all arguments</comment>
-        <translation>avg</translation>
-    </message>
-    <message>
-        <source>fmod</source>
-        <comment>Returns the floating-point remainder of numer/denom (rounded towards zero)</comment>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">avg</translation>
     </message>
     <message>
         <source>cm</source>
@@ -18654,39 +18727,19 @@ Do you want to save your changes?</source>
         <translation>ΤρέχονΠεριθώριοΡαφής</translation>
     </message>
     <message>
-        <source>degTorad</source>
-        <comment>converts degrees to radian</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>radTodeg</source>
-        <comment>converts radian to degrees</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>sin</source>
         <comment>sine function working with radians</comment>
-        <translation>ημίτονο</translation>
+        <translation type="vanished">ημίτονο</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>cosine function working with radians</comment>
-        <translation type="unfinished">συνημίτονο</translation>
+        <translation type="obsolete">συνημίτονο</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>tangens function working with radians</comment>
         <translation type="obsolete">εφαπτομένη</translation>
-    </message>
-    <message>
-        <source>sinD</source>
-        <comment>sine function working with degrees</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cosD</source>
-        <comment>cosine function working with degrees</comment>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>M_</source>
@@ -18846,61 +18899,210 @@ Do you want to save your changes?</source>
     <message>
         <source>tan</source>
         <comment>tangent function working with radians</comment>
+        <translation type="obsolete">εφαπτομένη</translation>
+    </message>
+    <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians)</comment>
+        <translation type="unfinished">ημίτονο</translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians)</comment>
+        <translation type="unfinished">συνημίτονο</translation>
+    </message>
+    <message>
+        <source>tan</source>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)</comment>
         <translation type="unfinished">εφαπτομένη</translation>
     </message>
     <message>
         <source>asin</source>
-        <comment>inverse sine function working with radians</comment>
+        <comment>Inverse sine function working with radians
+Usage: asin(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>acos</source>
-        <comment>inverse cosine function working with radians</comment>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>atan</source>
-        <comment>inverse tangent function working with radians</comment>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(angle θ in radians)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>tanh</source>
-        <comment>hyperbolic tangent function</comment>
+        <comment>Hyperbolic tangent function
+Usage: tanh(angle θ in radians)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>asinh</source>
-        <comment>inverse hyperbolic sine function</comment>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>acosh</source>
-        <comment>inverse hyperbolic cosine function</comment>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>atanh</source>
-        <comment>inverse hyperbolic tangent function</comment>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>tanD</source>
-        <comment>tangent function working with degrees</comment>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>asinD</source>
-        <comment>inverse sine function working with degrees</comment>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>acosD</source>
-        <comment>inverse cosine function working with degrees</comment>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>atanD</source>
-        <comment>inverse tangent function working with degrees</comment>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10
+Usage: log10(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>E raised to the power of x
+Usage: exp(x) where e = 2.718</comment>
+        <translation type="unfinished">εκθέτης</translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x)</comment>
+        <translation type="unfinished">sqrt</translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(float x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">μέγιστο</translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">σύνολο</translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">avg</translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)</comment>
         <translation type="unfinished"></translation>
     </message>
 </context>
