@@ -1,0 +1,25 @@
+var classDialogPointOfContact =
+[
+    [ "DialogPointOfContact", "dd/d08/classDialogPointOfContact.html#a028d10e2f42167d3632c0aee6ea60cb2", null ],
+    [ "~DialogPointOfContact", "dd/d08/classDialogPointOfContact.html#a77b5f1f72245e680828f731f07757166", null ],
+    [ "ChosenObject", "dd/d08/classDialogPointOfContact.html#af998c3daaa72bf0f6c23b113035a6448", null ],
+    [ "closeEvent", "dd/d08/classDialogPointOfContact.html#ac9e314f39d75ead66a236a6c8c2ad077", null ],
+    [ "DeployFormulaTextEdit", "dd/d08/classDialogPointOfContact.html#ad62b6628fa0bd7205fcd542c7eaf36e3", null ],
+    [ "FormulaTextChanged", "dd/d08/classDialogPointOfContact.html#ae8109f4d21da17d7ac4b14e922f9f7b3", null ],
+    [ "FXRadius", "dd/d08/classDialogPointOfContact.html#a8a3f6c0ba40e402fdf7da5865f25f08d", null ],
+    [ "getCenter", "dd/d08/classDialogPointOfContact.html#a01aa87bd49774cd1847f1a601df7924e", null ],
+    [ "GetFirstPoint", "dd/d08/classDialogPointOfContact.html#aa1de8633eff139f70c146ac07197a4d8", null ],
+    [ "getRadius", "dd/d08/classDialogPointOfContact.html#a654a0afa0b0074c0ec0463b39930f71a", null ],
+    [ "GetSecondPoint", "dd/d08/classDialogPointOfContact.html#acea7bf258cb29c757293c861173a40c2", null ],
+    [ "PointNameChanged", "dd/d08/classDialogPointOfContact.html#acfded8fb0d673f8900ec10e4f9cf86e8", null ],
+    [ "SaveData", "dd/d08/classDialogPointOfContact.html#aea8f2c69407b653a8244a9c49009b51e", null ],
+    [ "setCenter", "dd/d08/classDialogPointOfContact.html#a5ac6085adf282a45537b076593986998", null ],
+    [ "SetFirstPoint", "dd/d08/classDialogPointOfContact.html#af5a2ea7016e439f64b5773720cbb7c83", null ],
+    [ "SetPointName", "dd/d08/classDialogPointOfContact.html#a8814f935ecfc131e7eb7b87d0aa1a37f", null ],
+    [ "setRadius", "dd/d08/classDialogPointOfContact.html#a8f0ef21ffe576a388db7e96c51ada98c", null ],
+    [ "SetSecondPoint", "dd/d08/classDialogPointOfContact.html#a22683847873883d56287b270f5a2a574", null ],
+    [ "ShowVisualization", "dd/d08/classDialogPointOfContact.html#ada6d0e8460711d31b73539fc4e8c5c21", null ],
+    [ "formulaBaseHeight", "dd/d08/classDialogPointOfContact.html#a263728d556fc4b791081d4753a4646f8", null ],
+    [ "radius", "dd/d08/classDialogPointOfContact.html#a8d58b950ce39a0ae1d667d213d091f17", null ],
+    [ "ui", "dd/d08/classDialogPointOfContact.html#ace66d6537e9eeff678e711b580033ce4", null ]
+];
