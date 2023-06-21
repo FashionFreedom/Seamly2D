@@ -1,16 +1,16 @@
 name: BuildDocs
 
 # for a description, see README.md in this folder
-
+# use this file for testing Doxygen
 on:
-  schedule:
-    - cron: '30 1 * * MON'
+  #schedule:
+  #  - cron: '30 1 * * MON'
   workflow_dispatch:
-  push:
-    branches:
-    - develop
-    - test
-  pull_request:
+  #push:
+  #  branches:
+  #  - develop
+  #  - test
+  #pull_request:
 
 permissions:
   contents: write
