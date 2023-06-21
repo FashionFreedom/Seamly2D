@@ -49,6 +49,11 @@
  **
  *************************************************************************/
 
+/*
+ * @brief entry point of Seamly2D application
+ * @return non-zero value is code of the error
+ */
+
 #include "mainwindow.h"
 #include "core/vapplication.h"
 #include "../vpatterndb/vpiecenode.h"
