@@ -3,25 +3,11 @@ name: BuildDocs
 # for a description, see README.md in this folder
 # use this file for testing Doxygen
 on:
-  #schedule:
-  #  - cron: '30 1 * * MON'
   workflow_dispatch:
-  #push:
-  #  branches:
-  #  - develop
-  #  - test
-  #pull_request:
-
-permissions:
-  contents: write
-
-env:
-  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
 
 jobs:
 
   document:
-    # Create documents for releases (scheduled) and pre-releases
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +16,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          # folder where Doxygen files are written
+          # folder where docs are built, must match OUTPUT_DIRECTORY in Doxyfile + html
           folder: docs/html
           config_file: Doxyfile
+          # target_folder must match pages config in https://github.com/FashionFreedom/Seamly2D/settings/pages
+          target_folder: docs/
 
