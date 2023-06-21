@@ -7502,7 +7502,7 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Unlock all groups</source>
@@ -14467,7 +14467,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>...</source>
-        <translation type="unfinished">...</translation>
+        <translation type="obsolete">...</translation>
     </message>
     <message>
         <source>Number</source>
