@@ -358,6 +358,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          folder: docs/doxygen
+          # folder where docs are built, default is docs/html
+          folder: docs/html
           config_file: Doxyfile
+          target_folder: docs/
 
