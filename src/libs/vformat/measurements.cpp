@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   measurements.cpp
+**  @author Douglas S Caskey
+**  @date   14 Jul, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vmeasurements.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,27 +33,27 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
-#include "vmeasurements.h"
+#include "measurements.h"
 
 #include <qnumeric.h>
 #include <QDate>
@@ -66,45 +70,45 @@
 #include <QtDebug>
 
 #include "../ifc/exception/vexceptionemptyparameter.h"
-#include "../ifc/xml/vvitconverter.h"
-#include "../ifc/xml/vvstconverter.h"
+#include "../ifc/xml/individual_size_converter.h"
+#include "../ifc/xml/multi_size_converter.h"
 #include "../ifc/ifcdef.h"
 #include "../qmuparser/qmutokenparser.h"
 #include "../qmuparser/qmuparsererror.h"
 #include "../vpatterndb/calculator.h"
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../vpatterndb/vcontainer.h"
-#include "../vpatterndb/measurements.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vmisc/projectversion.h"
 
-const QString VMeasurements::TagVST              = QStringLiteral("vst");
-const QString VMeasurements::TagVIT              = QStringLiteral("vit");
-const QString VMeasurements::TagBodyMeasurements = QStringLiteral("body-measurements");
-const QString VMeasurements::TagNotes            = QStringLiteral("notes");
-const QString VMeasurements::TagSize             = QStringLiteral("size");
-const QString VMeasurements::TagHeight           = QStringLiteral("height");
-const QString VMeasurements::TagPersonal         = QStringLiteral("personal");
-const QString VMeasurements::TagFamilyName       = QStringLiteral("family-name");
-const QString VMeasurements::TagGivenName        = QStringLiteral("given-name");
-const QString VMeasurements::TagBirthDate        = QStringLiteral("birth-date");
-const QString VMeasurements::TagGender           = QStringLiteral("gender");
-const QString VMeasurements::TagPMSystem         = QStringLiteral("pm_system");
-const QString VMeasurements::TagEmail            = QStringLiteral("email");
-const QString VMeasurements::TagReadOnly         = QStringLiteral("read-only");
-const QString VMeasurements::TagMeasurement      = QStringLiteral("m");
+const QString Measurements::TagVST              = QStringLiteral("vst");
+const QString Measurements::TagVIT              = QStringLiteral("vit");
+const QString Measurements::TagBodyMeasurements = QStringLiteral("body-measurements");
+const QString Measurements::TagNotes            = QStringLiteral("notes");
+const QString Measurements::TagSize             = QStringLiteral("size");
+const QString Measurements::TagHeight           = QStringLiteral("height");
+const QString Measurements::TagPersonal         = QStringLiteral("personal");
+const QString Measurements::TagFamilyName       = QStringLiteral("family-name");
+const QString Measurements::TagGivenName        = QStringLiteral("given-name");
+const QString Measurements::TagBirthDate        = QStringLiteral("birth-date");
+const QString Measurements::TagGender           = QStringLiteral("gender");
+const QString Measurements::TagPMSystem         = QStringLiteral("pm_system");
+const QString Measurements::TagEmail            = QStringLiteral("email");
+const QString Measurements::TagReadOnly         = QStringLiteral("read-only");
+const QString Measurements::TagMeasurement      = QStringLiteral("m");
 
-const QString VMeasurements::AttrBase           = QStringLiteral("base");
-const QString VMeasurements::AttrValue          = QStringLiteral("value");
-const QString VMeasurements::AttrSizeIncrease   = QStringLiteral("size_increase");
-const QString VMeasurements::AttrHeightIncrease = QStringLiteral("height_increase");
-const QString VMeasurements::AttrDescription    = QStringLiteral("description");
-const QString VMeasurements::AttrName           = QStringLiteral("name");
-const QString VMeasurements::AttrFullName       = QStringLiteral("full_name");
+const QString Measurements::AttrBase           = QStringLiteral("base");
+const QString Measurements::AttrValue          = QStringLiteral("value");
+const QString Measurements::AttrSizeIncrease   = QStringLiteral("size_increase");
+const QString Measurements::AttrHeightIncrease = QStringLiteral("height_increase");
+const QString Measurements::AttrDescription    = QStringLiteral("description");
+const QString Measurements::AttrName           = QStringLiteral("name");
+const QString Measurements::AttrFullName       = QStringLiteral("full_name");
 
-const QString VMeasurements::GenderMale    = QStringLiteral("male");
-const QString VMeasurements::GenderFemale  = QStringLiteral("female");
-const QString VMeasurements::GenderUnknown = QStringLiteral("unknown");
+const QString Measurements::GenderMale    = QStringLiteral("male");
+const QString Measurements::GenderFemale  = QStringLiteral("female");
+const QString Measurements::GenderUnknown = QStringLiteral("unknown");
 
 const QString defBirthDate = QStringLiteral("1800-01-01");
 
@@ -118,7 +122,7 @@ QString FileComment()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VMeasurements::VMeasurements(VContainer *data)
+Measurements::Measurements(VContainer *data)
     :VDomDocument(),
       data(data),
       type(MeasurementsType::Unknown),
@@ -129,7 +133,7 @@ VMeasurements::VMeasurements(VContainer *data)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VMeasurements::VMeasurements(Unit unit, VContainer *data)
+Measurements::Measurements(Unit unit, VContainer *data)
     :VDomDocument(),
       data(data),
       type(MeasurementsType::Individual),
@@ -142,7 +146,7 @@ VMeasurements::VMeasurements(Unit unit, VContainer *data)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VMeasurements::VMeasurements(Unit unit, int baseSize, int baseHeight, VContainer *data)
+Measurements::Measurements(Unit unit, int baseSize, int baseHeight, VContainer *data)
     :VDomDocument(),
       data(data),
       type(MeasurementsType::Multisize),
@@ -155,14 +159,14 @@ VMeasurements::VMeasurements(Unit unit, int baseSize, int baseHeight, VContainer
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::setXMLContent(const QString &fileName)
+void Measurements::setXMLContent(const QString &fileName)
 {
     VDomDocument::setXMLContent(fileName);
     type = ReadType();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurements::SaveDocument(const QString &fileName, QString &error)
+bool Measurements::SaveDocument(const QString &fileName, QString &error)
 {
     // Update comment with Seamly2D version
     QDomNode commentNode = documentElement().firstChild();
@@ -176,7 +180,7 @@ bool VMeasurements::SaveDocument(const QString &fileName, QString &error)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::addEmpty(const QString &name, const QString &formula)
+void Measurements::addEmpty(const QString &name, const QString &formula)
 {
     const QDomElement element = MakeEmpty(name, formula);
 
@@ -185,7 +189,7 @@ void VMeasurements::addEmpty(const QString &name, const QString &formula)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::AddEmptyAfter(const QString &after, const QString &name, const QString &formula)
+void Measurements::AddEmptyAfter(const QString &after, const QString &name, const QString &formula)
 {
     const QDomElement element = MakeEmpty(name, formula);
     const QDomElement sibling = FindM(after);
@@ -203,14 +207,14 @@ void VMeasurements::AddEmptyAfter(const QString &after, const QString &name, con
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::Remove(const QString &name)
+void Measurements::Remove(const QString &name)
 {
     const QDomNodeList list = elementsByTagName(TagBodyMeasurements);
     list.at(0).removeChild(FindM(name));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::MoveTop(const QString &name)
+void Measurements::MoveTop(const QString &name)
 {
     const QDomElement node = FindM(name);
     if (not node.isNull())
@@ -229,7 +233,7 @@ void VMeasurements::MoveTop(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::MoveUp(const QString &name)
+void Measurements::MoveUp(const QString &name)
 {
     const QDomElement node = FindM(name);
     if (not node.isNull())
@@ -244,7 +248,7 @@ void VMeasurements::MoveUp(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::MoveDown(const QString &name)
+void Measurements::MoveDown(const QString &name)
 {
     const QDomElement node = FindM(name);
     if (not node.isNull())
@@ -259,7 +263,7 @@ void VMeasurements::MoveDown(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::MoveBottom(const QString &name)
+void Measurements::MoveBottom(const QString &name)
 {
     const QDomElement node = FindM(name);
     if (not node.isNull())
@@ -278,7 +282,7 @@ void VMeasurements::MoveBottom(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::ReadMeasurements() const
+void Measurements::readMeasurements() const
 {
     // For conversion values we must first calculate all data in measurement file's unit.
     // That's why we need two containers: one for converted values, second for real data.
@@ -313,18 +317,18 @@ void VMeasurements::ReadMeasurements() const
             Q_UNUSED(e)
         }
 
-        QSharedPointer<VMeasurement> meash;
-        QSharedPointer<VMeasurement> tempMeash;
+        QSharedPointer<MeasurementVariable> meash;
+        QSharedPointer<MeasurementVariable> tempMeash;
         if (type == MeasurementsType::Multisize)
         {
             qreal base = GetParametrDouble(dom, AttrBase, "0");
             qreal ksize = GetParametrDouble(dom, AttrSizeIncrease, "0");
             qreal kheight = GetParametrDouble(dom, AttrHeightIncrease, "0");
 
-            tempMeash = QSharedPointer<VMeasurement>(new VMeasurement(static_cast<quint32>(i), name, BaseSize(),
+            tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name, BaseSize(),
                                                                       BaseHeight(), base, ksize, kheight));
-            tempMeash->SetSize(m_currentSize);
-            tempMeash->SetHeight(m_currentHeight);
+            tempMeash->setSize(m_currentSize);
+            tempMeash->setHeight(m_currentHeight);
             tempMeash->SetUnit(data->GetPatternUnit());
 
             base = UnitConvertor(base, MUnit(), *data->GetPatternUnit());
@@ -334,10 +338,10 @@ void VMeasurements::ReadMeasurements() const
             const qreal baseSize = UnitConvertor(BaseSize(), MUnit(), *data->GetPatternUnit());
             const qreal baseHeight = UnitConvertor(BaseHeight(), MUnit(), *data->GetPatternUnit());
 
-            meash = QSharedPointer<VMeasurement>(new VMeasurement(static_cast<quint32>(i), name, baseSize, baseHeight,
+            meash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name, baseSize, baseHeight,
                                                                   base, ksize, kheight, fullName, description));
-            meash->SetSize(m_currentSize);
-            meash->SetHeight(m_currentHeight);
+            meash->setSize(m_currentSize);
+            meash->setHeight(m_currentHeight);
             meash->SetUnit(data->GetPatternUnit());
         }
         else
@@ -346,11 +350,11 @@ void VMeasurements::ReadMeasurements() const
             bool ok = false;
             qreal value = EvalFormula(tempData.data(), formula, &ok);
 
-            tempMeash = QSharedPointer<VMeasurement>(new VMeasurement(tempData.data(), static_cast<quint32>(i), name,
+            tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(tempData.data(), static_cast<quint32>(i), name,
                                                                       value, formula, ok));
 
             value = UnitConvertor(value, MUnit(), *data->GetPatternUnit());
-            meash = QSharedPointer<VMeasurement>(new VMeasurement(data, static_cast<quint32>(i), name, value, formula,
+            meash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(data, static_cast<quint32>(i), name, value, formula,
                                                                   ok, fullName, description));
         }
         tempData->AddVariable(name, tempMeash);
@@ -359,7 +363,7 @@ void VMeasurements::ReadMeasurements() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::ClearForExport()
+void Measurements::ClearForExport()
 {
     const QDomNodeList list = elementsByTagName(TagMeasurement);
 
@@ -377,13 +381,13 @@ void VMeasurements::ClearForExport()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-MeasurementsType VMeasurements::Type() const
+MeasurementsType Measurements::Type() const
 {
     return type;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VMeasurements::BaseSize() const
+int Measurements::BaseSize() const
 {
     if (type == MeasurementsType::Multisize)
     {
@@ -396,7 +400,7 @@ int VMeasurements::BaseSize() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VMeasurements::BaseHeight() const
+int Measurements::BaseHeight() const
 {
     if (type == MeasurementsType::Multisize)
     {
@@ -409,13 +413,13 @@ int VMeasurements::BaseHeight() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::Notes() const
+QString Measurements::Notes() const
 {
     return UniqueTagText(TagNotes, "");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetNotes(const QString &text)
+void Measurements::SetNotes(const QString &text)
 {
     if (not IsReadOnly())
     {
@@ -424,13 +428,13 @@ void VMeasurements::SetNotes(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::FamilyName() const
+QString Measurements::FamilyName() const
 {
     return UniqueTagText(TagFamilyName, "");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetFamilyName(const QString &text)
+void Measurements::SetFamilyName(const QString &text)
 {
     if (not IsReadOnly())
     {
@@ -439,13 +443,13 @@ void VMeasurements::SetFamilyName(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::GivenName() const
+QString Measurements::GivenName() const
 {
     return UniqueTagText(TagGivenName, "");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetGivenName(const QString &text)
+void Measurements::SetGivenName(const QString &text)
 {
     if (not IsReadOnly())
     {
@@ -454,13 +458,13 @@ void VMeasurements::SetGivenName(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDate VMeasurements::BirthDate() const
+QDate Measurements::BirthDate() const
 {
     return QDate::fromString(UniqueTagText(TagBirthDate, defBirthDate), "yyyy-MM-dd");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetBirthDate(const QDate &date)
+void Measurements::SetBirthDate(const QDate &date)
 {
     if (not IsReadOnly())
     {
@@ -469,13 +473,13 @@ void VMeasurements::SetBirthDate(const QDate &date)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-GenderType VMeasurements::Gender() const
+GenderType Measurements::Gender() const
 {
     return StrToGender(UniqueTagText(TagGender, GenderUnknown));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetGender(const GenderType &gender)
+void Measurements::SetGender(const GenderType &gender)
 {
     if (not IsReadOnly())
     {
@@ -484,13 +488,13 @@ void VMeasurements::SetGender(const GenderType &gender)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::PMSystem() const
+QString Measurements::PMSystem() const
 {
     return UniqueTagText(TagPMSystem, ClearPMCode(p998_S));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetPMSystem(const QString &system)
+void Measurements::SetPMSystem(const QString &system)
 {
     if (not IsReadOnly())
     {
@@ -499,13 +503,13 @@ void VMeasurements::SetPMSystem(const QString &system)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::Email() const
+QString Measurements::Email() const
 {
     return UniqueTagText(TagEmail, "");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetEmail(const QString &text)
+void Measurements::SetEmail(const QString &text)
 {
     if (not IsReadOnly())
     {
@@ -514,13 +518,13 @@ void VMeasurements::SetEmail(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurements::IsReadOnly() const
+bool Measurements::IsReadOnly() const
 {
     return UniqueTagText(TagReadOnly, falseStr) == trueStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetReadOnly(bool ro)
+void Measurements::SetReadOnly(bool ro)
 {
     if (ro)
     {
@@ -533,19 +537,19 @@ void VMeasurements::SetReadOnly(bool ro)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetSize(qreal *size)
+void Measurements::setSize(qreal *size)
 {
     m_currentSize = size;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetHeight(qreal *height)
+void Measurements::setHeight(qreal *height)
 {
     m_currentHeight = height;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMName(const QString &name, const QString &text)
+void Measurements::SetMName(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -559,7 +563,7 @@ void VMeasurements::SetMName(const QString &name, const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMValue(const QString &name, const QString &text)
+void Measurements::SetMValue(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -573,7 +577,7 @@ void VMeasurements::SetMValue(const QString &name, const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMBaseValue(const QString &name, double value)
+void Measurements::SetMBaseValue(const QString &name, double value)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -587,7 +591,7 @@ void VMeasurements::SetMBaseValue(const QString &name, double value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMSizeIncrease(const QString &name, double value)
+void Measurements::SetMSizeIncrease(const QString &name, double value)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -601,7 +605,7 @@ void VMeasurements::SetMSizeIncrease(const QString &name, double value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMHeightIncrease(const QString &name, double value)
+void Measurements::SetMHeightIncrease(const QString &name, double value)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -615,7 +619,7 @@ void VMeasurements::SetMHeightIncrease(const QString &name, double value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMDescription(const QString &name, const QString &text)
+void Measurements::SetMDescription(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -629,7 +633,7 @@ void VMeasurements::SetMDescription(const QString &name, const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::SetMFullName(const QString &name, const QString &text)
+void Measurements::SetMFullName(const QString &name, const QString &text)
 {
     QDomElement node = FindM(name);
     if (not node.isNull())
@@ -643,7 +647,7 @@ void VMeasurements::SetMFullName(const QString &name, const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::GenderToStr(const GenderType &sex)
+QString Measurements::GenderToStr(const GenderType &sex)
 {
     switch (sex)
     {
@@ -658,7 +662,7 @@ QString VMeasurements::GenderToStr(const GenderType &sex)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-GenderType VMeasurements::StrToGender(const QString &sex)
+GenderType Measurements::StrToGender(const QString &sex)
 {
     const QStringList genders = QStringList() << GenderMale << GenderFemale << GenderUnknown;
     switch (genders.indexOf(sex))
@@ -674,7 +678,7 @@ GenderType VMeasurements::StrToGender(const QString &sex)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurements::ListAll() const
+QStringList Measurements::ListAll() const
 {
     QStringList listNames;
     const QDomNodeList list = elementsByTagName(TagMeasurement);
@@ -692,7 +696,7 @@ QStringList VMeasurements::ListAll() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurements::listKnown() const
+QStringList Measurements::listKnown() const
 {
     QStringList listNames;
     const QStringList list = ListAll();
@@ -708,7 +712,7 @@ QStringList VMeasurements::listKnown() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurements::IsDefinedKnownNamesValid() const
+bool Measurements::eachKnownNameIsValid() const
 {
     QStringList names = AllGroupNames();
 
@@ -731,13 +735,13 @@ bool VMeasurements::IsDefinedKnownNamesValid() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VContainer *VMeasurements::GetData() const
+VContainer *Measurements::GetData() const
 {
     return data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::CreateEmptyMultisizeFile(Unit unit, int baseSize, int baseHeight)
+void Measurements::CreateEmptyMultisizeFile(Unit unit, int baseSize, int baseHeight)
 {
     this->clear();
     QDomElement mElement = this->createElement(TagVST);
@@ -745,7 +749,7 @@ void VMeasurements::CreateEmptyMultisizeFile(Unit unit, int baseSize, int baseHe
     mElement.appendChild(createComment(FileComment()));
 
     QDomElement version = createElement(TagVersion);
-    const QDomText newNodeText = createTextNode(VVSTConverter::MeasurementMaxVerStr);
+    const QDomText newNodeText = createTextNode(MultiSizeConverter::MeasurementMaxVerStr);
     version.appendChild(newNodeText);
     mElement.appendChild(version);
 
@@ -780,7 +784,7 @@ void VMeasurements::CreateEmptyMultisizeFile(Unit unit, int baseSize, int baseHe
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurements::CreateEmptyIndividualFile(Unit unit)
+void Measurements::CreateEmptyIndividualFile(Unit unit)
 {
     this->clear();
     QDomElement mElement = this->createElement(TagVIT);
@@ -788,7 +792,7 @@ void VMeasurements::CreateEmptyIndividualFile(Unit unit)
     mElement.appendChild(createComment(FileComment()));
 
     QDomElement version = createElement(TagVersion);
-    const QDomText newNodeText = createTextNode(VVITConverter::MeasurementMaxVerStr);
+    const QDomText newNodeText = createTextNode(IndividualSizeConverter::MeasurementMaxVerStr);
     version.appendChild(newNodeText);
     mElement.appendChild(version);
 
@@ -829,7 +833,7 @@ void VMeasurements::CreateEmptyIndividualFile(Unit unit)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VMeasurements::UniqueTagAttr(const QString &tag, const QString &attr, qreal defValue) const
+qreal Measurements::UniqueTagAttr(const QString &tag, const QString &attr, qreal defValue) const
 {
     const qreal defVal = UnitConvertor(defValue, Unit::Cm, MUnit());
 
@@ -854,7 +858,7 @@ qreal VMeasurements::UniqueTagAttr(const QString &tag, const QString &attr, qrea
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VMeasurements::MakeEmpty(const QString &name, const QString &formula)
+QDomElement Measurements::MakeEmpty(const QString &name, const QString &formula)
 {
     QDomElement element = createElement(TagMeasurement);
 
@@ -882,7 +886,7 @@ QDomElement VMeasurements::MakeEmpty(const QString &name, const QString &formula
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VMeasurements::FindM(const QString &name) const
+QDomElement Measurements::FindM(const QString &name) const
 {
     if (name.isEmpty())
     {
@@ -909,7 +913,7 @@ QDomElement VMeasurements::FindM(const QString &name) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-MeasurementsType VMeasurements::ReadType() const
+MeasurementsType Measurements::ReadType() const
 {
     QDomElement root = documentElement();
     if (root.tagName() == TagVST)
@@ -927,7 +931,7 @@ MeasurementsType VMeasurements::ReadType() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VMeasurements::EvalFormula(VContainer *data, const QString &formula, bool *ok) const
+qreal Measurements::EvalFormula(VContainer *data, const QString &formula, bool *ok) const
 {
     if (formula.isEmpty())
     {
@@ -957,7 +961,7 @@ qreal VMeasurements::EvalFormula(VContainer *data, const QString &formula, bool 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurements::ClearPMCode(const QString &code) const
+QString Measurements::ClearPMCode(const QString &code) const
 {
     QString clear = code;
     const int index = clear.indexOf(QLatin1Char('p'));

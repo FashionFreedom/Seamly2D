@@ -11727,7 +11727,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VMeasurements</name>
+    <name>Measurements</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation type="unfinished"></translation>

@@ -933,6 +933,10 @@ EXCLUDE_SYMLINKS       = NO
 EXCLUDE_PATTERNS       = *.svg \
                          *.val \
                          *.vit \
+                         *.vst \
+                         *.sm2d \
+                         *.smin \
+                         *.smms \
                          *.pdf \
                          *.png \
                          *.ts \

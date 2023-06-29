@@ -44,6 +44,7 @@ DialogAboutApp::DialogAboutApp(QWidget *parent) :
 	isInitialized(false)
 {
 	ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
 	qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 

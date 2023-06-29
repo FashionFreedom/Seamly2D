@@ -53,7 +53,7 @@
 #include "ui_seamlymepreferencesconfigurationpage.h"
 #include "../../mapplication.h"
 #include "../vmisc/vseamlymesettings.h"
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../vpatterndb/pmsystems.h"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     ui->toolBarStyle_CheckBox->setChecked(qApp->SeamlyMeSettings()->getToolBarStyle());
 
     //---------------------------Default height and size
-    ui->defHeightCombo->addItems(VMeasurement::WholeListHeights(Unit::Cm));
+    ui->defHeightCombo->addItems(MeasurementVariable::WholeListHeights(Unit::Cm));
     index = ui->defHeightCombo->findText(QString().setNum(qApp->SeamlyMeSettings()->GetDefHeight()));
     if (index != -1)
     {
@@ -124,7 +124,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     connect(ui->defHeightCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
             DefGradationChanged);
 
-    ui->defSizeCombo->addItems(VMeasurement::WholeListSizes(Unit::Cm));
+    ui->defSizeCombo->addItems(MeasurementVariable::WholeListSizes(Unit::Cm));
     index = ui->defSizeCombo->findText(QString().setNum(qApp->SeamlyMeSettings()->GetDefSize()));
     if (index != -1)
     {

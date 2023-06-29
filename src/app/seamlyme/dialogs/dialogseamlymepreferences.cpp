@@ -67,6 +67,7 @@ DialogSeamlyMePreferences::DialogSeamlyMePreferences(QWidget *parent)
      m_pathPage(new SeamlyMePreferencesPathPage)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 

@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   tst_vmeasurements.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   16 10, 2015
+/******************************************************************************
+ *   @file   tst_vmeasurements.cpp
+ **  @author Douglas S Caskey
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,16 +25,45 @@
  **
  *************************************************************************/
 
+/************************************************************************
+ **
+ **  @file   tst_vmeasurements.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   16 10, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
 #include "tst_vmeasurements.h"
-#include "../vformat/vmeasurements.h"
-#include "../ifc/xml/vvstconverter.h"
-#include "../ifc/xml/vvitconverter.h"
+
+#include "../ifc/xml/multi_size_converter.h"
+#include "../ifc/xml/individual_size_converter.h"
+#include "../vformat/measurements.h"
 #include "../vpatterndb/pmsystems.h"
 
 #include <QtTest>
 
 //---------------------------------------------------------------------------------------------------------------------
-TST_VMeasurements::TST_VMeasurements(QObject *parent) :
+TST_Measurements::TST_Measurements(QObject *parent) :
     QObject(parent)
 {
 }
@@ -67,20 +72,20 @@ TST_VMeasurements::TST_VMeasurements(QObject *parent) :
 /**
  * @brief CreateEmptyMultisizeFile check if empty multisize measurement file is valid.
  */
-void TST_VMeasurements::CreateEmptyMultisizeFile()
+void TST_Measurements::CreateEmptyMultisizeFile()
 {
     Unit mUnit = Unit::Cm;
     const int height = 176;
     const int size = 50;
 
     QSharedPointer<VContainer> data = QSharedPointer<VContainer>(new VContainer(nullptr, &mUnit));
-    VContainer::SetHeight(height);
-    VContainer::SetSize(size);
+    VContainer::setHeight(height);
+    VContainer::setSize(size);
 
-    QSharedPointer<VMeasurements> m =
-            QSharedPointer<VMeasurements>(new VMeasurements(mUnit, size, height, data.data()));
-    m->SetSize(VContainer::rsize());
-    m->SetHeight(VContainer::rheight());
+    QSharedPointer<Measurements> m =
+            QSharedPointer<Measurements>(new Measurements(mUnit, size, height, data.data()));
+    m->setSize(VContainer::rsize());
+    m->setHeight(VContainer::rheight());
 
     QTemporaryFile file;
     QString fileName;
@@ -104,7 +109,7 @@ void TST_VMeasurements::CreateEmptyMultisizeFile()
 
     try
     {
-        VDomDocument::ValidateXML(VVSTConverter::CurrentSchema, fileName);
+        VDomDocument::ValidateXML(MultiSizeConverter::CurrentSchema, fileName);
     }
     catch (VException &e)
     {
@@ -116,14 +121,14 @@ void TST_VMeasurements::CreateEmptyMultisizeFile()
 /**
  * @brief CreateEmptyIndividualFile check if empty individual measurement file is valid.
  */
-void TST_VMeasurements::CreateEmptyIndividualFile()
+void TST_Measurements::CreateEmptyIndividualFile()
 {
     Unit mUnit = Unit::Cm;
 
     QSharedPointer<VContainer> data = QSharedPointer<VContainer>(new VContainer(nullptr, &mUnit));
 
-    QSharedPointer<VMeasurements> m =
-            QSharedPointer<VMeasurements>(new VMeasurements(mUnit, data.data()));
+    QSharedPointer<Measurements> m =
+            QSharedPointer<Measurements>(new Measurements(mUnit, data.data()));
 
     QTemporaryFile file;
     QString fileName;
@@ -144,7 +149,7 @@ void TST_VMeasurements::CreateEmptyIndividualFile()
 
     try
     {
-        VDomDocument::ValidateXML(VVITConverter::CurrentSchema, fileName);
+        VDomDocument::ValidateXML(IndividualSizeConverter::CurrentSchema, fileName);
     }
     catch (VException &e)
     {
@@ -157,20 +162,20 @@ void TST_VMeasurements::CreateEmptyIndividualFile()
  * @brief ValidPMCodesMultisizeFile helps to check that all current pattern making systems match pattern inside XSD
  * scheme.
  */
-void TST_VMeasurements::ValidPMCodesMultisizeFile()
+void TST_Measurements::ValidPMCodesMultisizeFile()
 {
     Unit mUnit = Unit::Cm;
     const int height = 176;
     const int size = 50;
 
     QSharedPointer<VContainer> data = QSharedPointer<VContainer>(new VContainer(nullptr, &mUnit));
-    VContainer::SetHeight(height);
-    VContainer::SetSize(size);
+    VContainer::setHeight(height);
+    VContainer::setSize(size);
 
-    QSharedPointer<VMeasurements> m =
-            QSharedPointer<VMeasurements>(new VMeasurements(mUnit, size, height, data.data()));
-    m->SetSize(VContainer::rsize());
-    m->SetHeight(VContainer::rheight());
+    QSharedPointer<Measurements> m =
+            QSharedPointer<Measurements>(new Measurements(mUnit, size, height, data.data()));
+    m->setSize(VContainer::rsize());
+    m->setHeight(VContainer::rheight());
 
     const QStringList listSystems = ListPMSystems();
     for (int i = 0; i < listSystems.size(); ++i)
@@ -199,7 +204,7 @@ void TST_VMeasurements::ValidPMCodesMultisizeFile()
 
         try
         {
-            VDomDocument::ValidateXML(VVSTConverter::CurrentSchema, fileName);
+            VDomDocument::ValidateXML(MultiSizeConverter::CurrentSchema, fileName);
         }
         catch (VException &e)
         {
@@ -214,14 +219,14 @@ void TST_VMeasurements::ValidPMCodesMultisizeFile()
  * @brief ValidPMCodesIndividualFile helps to check that all current pattern making systems match pattern inside XSD
  * scheme.
  */
-void TST_VMeasurements::ValidPMCodesIndividualFile()
+void TST_Measurements::ValidPMCodesIndividualFile()
 {
     Unit mUnit = Unit::Cm;
 
     QSharedPointer<VContainer> data = QSharedPointer<VContainer>(new VContainer(nullptr, &mUnit));
 
-    QSharedPointer<VMeasurements> m =
-            QSharedPointer<VMeasurements>(new VMeasurements(mUnit, data.data()));
+    QSharedPointer<Measurements> m =
+            QSharedPointer<Measurements>(new Measurements(mUnit, data.data()));
 
     const QStringList listSystems = ListPMSystems();
     for (int i = 0; i < listSystems.size(); ++i)
@@ -250,7 +255,7 @@ void TST_VMeasurements::ValidPMCodesIndividualFile()
 
         try
         {
-            VDomDocument::ValidateXML(VVITConverter::CurrentSchema, fileName);
+            VDomDocument::ValidateXML(IndividualSizeConverter::CurrentSchema, fileName);
         }
         catch (VException &e)
         {

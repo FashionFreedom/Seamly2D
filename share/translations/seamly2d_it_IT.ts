@@ -15617,7 +15617,7 @@ Vuoi salvare le tue modifiche?</translation>
     </message>
 </context>
 <context>
-    <name>VMeasurements</name>
+    <name>Measurements</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
@@ -18376,14 +18376,14 @@ Vuoi salvare le tue modifiche?</translation>
     </message>
 </context>
 <context>
-    <name>VVITConverter</name>
+    <name>IndividualSizeConverter</name>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation type="vanished">Inaspettata versione &quot;%1&quot;.</translation>
     </message>
 </context>
 <context>
-    <name>VVSTConverter</name>
+    <name>MultiSizeConverter</name>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation type="vanished">Inaspettata versione &quot;%1&quot;.</translation>

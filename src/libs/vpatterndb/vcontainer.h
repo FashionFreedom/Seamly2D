@@ -197,8 +197,8 @@ public:
     static void        ClearUniqueNames();
     static void        ClearUniqueIncrementNames();
 
-    static void        SetSize(qreal size);
-    static void        SetHeight(qreal height);
+    static void        setSize(qreal size);
+    static void        setHeight(qreal height);
     static qreal       size();
     static qreal      *rsize();
     static qreal       height();
@@ -210,7 +210,7 @@ public:
     const QHash<quint32, VPiece>                            *DataPieces() const;
     const QHash<QString, QSharedPointer<VInternalVariable>> *DataVariables() const;
 
-    const QMap<QString, QSharedPointer<VMeasurement> >  DataMeasurements() const;
+    const QMap<QString, QSharedPointer<MeasurementVariable> >  DataMeasurements() const;
     const QMap<QString, QSharedPointer<VIncrement> >    variablesData() const;
     const QMap<QString, QSharedPointer<VLengthLine> >   lineLengthsData() const;
     const QMap<QString, QSharedPointer<VCurveLength> >  curveLengthsData() const;

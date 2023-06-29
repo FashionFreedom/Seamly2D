@@ -117,9 +117,9 @@ int VLayoutPaper::GetHeight() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLayoutPaper::SetHeight(int height)
+void VLayoutPaper::setHeight(int height)
 {
-    d->globalContour.SetHeight(height);
+    d->globalContour.setHeight(height);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

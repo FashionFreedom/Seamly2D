@@ -63,7 +63,7 @@
 #include "../tools/dialogtool.h"
 
 template <class T> class QSharedPointer;
-class VMeasurement;
+class MeasurementVariable;
 
 namespace Ui
 {
@@ -137,7 +137,7 @@ private:
 
     template <class key, class val>
     void ShowVariable(const QMap<key, val> &var);
-    void ShowMeasurements(const QMap<QString, QSharedPointer<VMeasurement> > &var);
+    void ShowMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var);
     void ShowFunctions();
 
     void setDescription(const QString &name, qreal value, const QString &unit,

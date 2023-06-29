@@ -134,7 +134,7 @@ protected:
     bool         LayoutSettings(VLayoutGenerator& lGenerator);
     int          ContinueIfLayoutStale();
     QString      FileName() const;
-    void         SetSizeHeightForIndividualM() const;
+    void         setSizeHeightForIndividualM() const;
 
 private slots:
     void         PrintPages (QPrinter *printer);

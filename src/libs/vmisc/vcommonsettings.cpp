@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vcommonsettings.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   15 7, 2015
+/******************************************************************************
+ *   @file   vcommonsettings.cpp
+ **  @author Douglas S Caskey
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -46,6 +22,34 @@
  **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+/************************************************************************
+ **
+ **  @file   vcommonsettings.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   15 7, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -381,30 +385,30 @@ QString VCommonSettings::StandardTemplatesPath()
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::PrepareStandardTemplates(const QString & currentPath)
 {
-    return PrepareStandardFiles(currentPath, StandardTemplatesPath(), GetDefPathTemplate());
+    return PrepareStandardFiles(currentPath, StandardTemplatesPath(), getDefaultTemplatePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::PrepareMultisizeTables(const QString &currentPath)
+QString VCommonSettings::prepareMultisizeTables(const QString &currentPath)
 {
-    return PrepareStandardFiles(currentPath, MultisizeTablesPath(), GetDefPathMultisizeMeasurements());
+    return PrepareStandardFiles(currentPath, MultisizeTablesPath(), getDefaultMultisizePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathIndividualMeasurements()
+QString VCommonSettings::getDefaultIndividualSizePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("individual");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathIndividualMeasurements() const
+QString VCommonSettings::getIndividualSizePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsIndividualMeasurements, GetDefPathIndividualMeasurements()).toString();
+    return settings.value(settingPathsIndividualMeasurements, getDefaultIndividualSizePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
+void VCommonSettings::setIndividualSizePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsIndividualMeasurements, value);
@@ -412,20 +416,20 @@ void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathMultisizeMeasurements()
+QString VCommonSettings::getDefaultMultisizePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("multisize");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathMultisizeMeasurements() const
+QString VCommonSettings::getMultisizePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsMultisizeMeasurements, GetDefPathMultisizeMeasurements()).toString();
+    return settings.value(settingPathsMultisizeMeasurements, getDefaultMultisizePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
+void VCommonSettings::setMultisizePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsMultisizeMeasurements, value);
@@ -433,20 +437,20 @@ void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathTemplate()
+QString VCommonSettings::getDefaultTemplatePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathTemplate() const
+QString VCommonSettings::getTemplatePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsTemplates, GetDefPathTemplate()).toString();
+    return settings.value(settingPathsTemplates, getDefaultTemplatePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathTemplate(const QString &value)
+void VCommonSettings::setTemplatePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsTemplates, value);

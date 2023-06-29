@@ -115,9 +115,9 @@ unix{
         pixmaps.files += \
             ../../../dist/$${TARGET}.png \
             ../../../dist/seamlyme.png \
-            ../../../dist/application-x-seamly2d-pattern.png \
-            ../../../dist/application-x-seamly2d-i-measurements.png \
-            ../../../dist/application-x-seamly2d-s-measurements.png \
+            ../../../dist/application-x-seamly2d-2d_file.png \
+            ../../../dist/application-x-seamlyme-individual_size_file.png \
+            ../../../dist/application-x-seamlyme-multi_size_file.png \
 
         # Path to multisize measurement after installation
         multisize.path = $$PREFIX/share/$${TARGET}/tables/multisize/
@@ -161,9 +161,9 @@ unix{
         xpdf.files += $${PWD}/../../../dist/macx/bin64/pdftops
 
         # logo on macx.
-        ICON = ../../../dist/Seamly2D.icns
+        ICON = ../../../dist/seamly2d.icns
 
-        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamly2d/info.plist
 
         # Copy to bundle multisize measurements files
         multisize.path = $${RESOURCES_DIR}/tables/multisize
@@ -178,9 +178,9 @@ unix{
         label.files = $$INSTALL_LABEL_TEMPLATES
 
         icns_resources.path = $${RESOURCES_DIR}
-        icns_resources.files += $$PWD/../../../dist/macx/i-measurements.icns
-        icns_resources.files += $$PWD/../../../dist/macx/s-measurements.icns
-        icns_resources.files += $$PWD/../../../dist/macx/pattern.icns
+        icns_resources.files += $$PWD/../../../dist/macx/individual_size_file.icns
+        icns_resources.files += $$PWD/../../../dist/macx/multi_size_file.icns
+        icns_resources.files += $$PWD/../../../dist/macx/2d_file.icns
 
         QMAKE_BUNDLE_DATA += \
             templates \

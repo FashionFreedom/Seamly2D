@@ -14478,7 +14478,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VMeasurements</name>
+    <name>Measurements</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
@@ -17105,7 +17105,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VVITConverter</name>
+    <name>IndividualSizeConverter</name>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation type="vanished">Versão inesperada&quot;%1&quot;.</translation>
@@ -17116,7 +17116,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VVSTConverter</name>
+    <name>MultiSizeConverter</name>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation type="vanished">Versão inesperada&quot;%1&quot;.</translation>

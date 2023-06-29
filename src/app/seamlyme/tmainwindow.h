@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   tmainwindow.h
  **  @author Douglas S Caskey
- **  @date   13 May, 2023
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
@@ -36,7 +36,7 @@
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2015 Valentina project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -60,7 +60,7 @@
 
 #include "../vmisc/def.h"
 #include "../vmisc/vlockguard.h"
-#include "../vformat/vmeasurements.h"
+#include "../vformat/measurements.h"
 #include "../vmisc/vtablesearch.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "dialogs/me_shortcuts_dialog.h"
@@ -165,7 +165,7 @@ private slots:
 private:
     Q_DISABLE_COPY(TMainWindow)
     Ui::TMainWindow    *ui;
-    VMeasurements      *individualMeasurements;
+    Measurements      *individualMeasurements;
     VContainer         *data;
     Unit                mUnit;
     Unit                pUnit;
@@ -193,7 +193,7 @@ private:
 
     void                SetupMenu();
     void                InitWindow();
-    void                InitTable();
+    void                initializeTable();
     void                SetDecimals();
     void                InitUnits();
     void                InitComboBoxUnits();

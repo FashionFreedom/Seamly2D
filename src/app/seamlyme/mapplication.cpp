@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   mapplication.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   8 7, 2015
+/******************************************************************************
+ *   @file   mapplication.cpp
+ **  @author Douglas S Caskey
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -46,6 +22,34 @@
  **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+/************************************************************************
+ **
+ **  @file   mapplication.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   8 7, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -399,9 +403,9 @@ void MApplication::InitOptions()
 
     OpenSettings();
     VSeamlyMeSettings *settings = SeamlyMeSettings();
-    QDir().mkpath(settings->GetDefPathTemplate());
-    QDir().mkpath(settings->GetDefPathIndividualMeasurements());
-    QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
+    QDir().mkpath(settings->getDefaultTemplatePath());
+    QDir().mkpath(settings->getDefaultIndividualSizePath());
+    QDir().mkpath(settings->getDefaultMultisizePath());
     QDir().mkpath(settings->GetDefPathLabelTemplate());
 
     qCDebug(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
@@ -543,12 +547,12 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     //-----
     QCommandLineOption heightOption(QStringList() << "e" << "height",
             tr("Open with the base height. Valid values: %1cm.")
-                                    .arg(VMeasurement::WholeListHeights(Unit::Cm).join(", ")),
+                                    .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
             tr("The base height"));
     parser.addOption(heightOption);
     //-----
     QCommandLineOption sizeOption(QStringList() << "s" << "size",
-            tr("Open with the base size. Valid values: %1cm.").arg(VMeasurement::WholeListSizes(Unit::Cm).join(", ")),
+            tr("Open with the base size. Valid values: %1cm.").arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
             tr("The base size"));
     parser.addOption(sizeOption);
     //-----
@@ -579,7 +583,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     if (parser.isSet(heightOption))
     {
         const QString heightValue = parser.value(heightOption);
-        if (VMeasurement::IsGradationHeightValid(heightValue))
+        if (MeasurementVariable::IsGradationHeightValid(heightValue))
         {
             flagHeight = true;
             height = heightValue.toInt();
@@ -588,7 +592,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
         {
             qCCritical(mApp, "%s\n",
                     qPrintable(tr("Invalid base height argument. Must be %1cm.")
-                               .arg(VMeasurement::WholeListHeights(Unit::Cm).join(", "))));
+                               .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", "))));
             parser.showHelp(V_EX_USAGE);
         }
     }
@@ -596,7 +600,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     if (parser.isSet(sizeOption))
     {
         const QString sizeValue = parser.value(sizeOption);
-        if (VMeasurement::IsGradationSizeValid(sizeValue))
+        if (MeasurementVariable::IsGradationSizeValid(sizeValue))
         {
             flagSize = true;
             size = sizeValue.toInt();
@@ -605,7 +609,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
         {
             qCCritical(mApp, "%s\n",
                     qPrintable(tr("Invalid base size argument. Must be %1cm.")
-                               .arg(VMeasurement::WholeListSizes(Unit::Cm).join(", "))));
+                               .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", "))));
             parser.showHelp(V_EX_USAGE);
         }
     }

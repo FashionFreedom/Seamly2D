@@ -69,6 +69,7 @@ DialogAboutSeamlyMe::DialogAboutSeamlyMe(QWidget *parent)
       isInitialized(false)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
     //mApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
@@ -92,7 +93,7 @@ DialogAboutSeamlyMe::DialogAboutSeamlyMe(QWidget *parent)
     FontPointSize(ui->label_Legal_Stuff, 11);
     FontPointSize(ui->label_SeamlyMe_Built, 11);
     FontPointSize(ui->label_QT_Version, 11);
-	
+
 	ui->downloadProgress->hide();
 	ui->downloadProgress->setValue(0);
 	connect(FvUpdater::sharedUpdater(), SIGNAL(setProgress(int)), this, SLOT(setProgressValue(int)));
@@ -179,4 +180,3 @@ void DialogAboutSeamlyMe::setProgressValue(int val) {
 		ui->pushButtonCheckUpdate->setDisabled(false);
 	}
 }
-

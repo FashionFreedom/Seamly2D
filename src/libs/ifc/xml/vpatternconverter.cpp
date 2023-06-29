@@ -1,13 +1,15 @@
-/***************************************************************************
- **  @file   vpatternconverter.cpp
+/******************************************************************************
+ *   @file   vpatternconverter.h
  **  @author Douglas S Caskey
- **  @date   Mar 2, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
+ **   @date   Jul 8, 2023
  **
  **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -19,8 +21,9 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
 
 /**************************************************************************
  **
@@ -52,7 +55,7 @@
 
 #include "vpatternconverter.h"
 
-#include "vabstractconverter.h"
+#include "abstract_converter.h"
 #include "../exception/vexception.h"
 #include "../exception/vexceptionemptyparameter.h"
 #include "../qmuparser/qmutokenparser.h"

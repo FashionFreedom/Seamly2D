@@ -2582,8 +2582,8 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
-     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/seamly2d_file.png</normaloff>:/icon/32x32/seamly2d_file.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -3856,6 +3856,10 @@
    <property name="enabled">
     <bool>false</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/individual_size_file.png</normaloff>:/icon/32x32/individual_size_file.png</iconset>
+   </property>
    <property name="text">
     <string>Load Individual</string>
    </property>
@@ -3872,6 +3876,10 @@
   <action name="loadMultisize_Action">
    <property name="enabled">
     <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/multisize_size_file.png</normaloff>:/icon/32x32/multisize_size_file.png</iconset>
    </property>
    <property name="text">
     <string>Load Multisize</string>
@@ -4665,8 +4673,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

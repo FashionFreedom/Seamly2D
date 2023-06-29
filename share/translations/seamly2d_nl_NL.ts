@@ -17508,7 +17508,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
 </context>
 <context>
-    <name>VMeasurements</name>
+    <name>Measurements</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation>Kan maten &apos;%1&apos; niet vinden</translation>
@@ -20616,7 +20616,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
 </context>
 <context>
-    <name>VVITConverter</name>
+    <name>IndividualSizeConverter</name>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation type="vanished">Onverwachte versie &quot;%1&quot;.</translation>
@@ -20627,7 +20627,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
 </context>
 <context>
-    <name>VVSTConverter</name>
+    <name>MultiSizeConverter</name>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
         <translation type="vanished">Onverwachte versie &quot;%1&quot;.</translation>

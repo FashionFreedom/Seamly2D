@@ -75,7 +75,7 @@
 #include "variables/vincrement.h"
 #include "variables/vlineangle.h"
 #include "variables/vlinelength.h"
-#include "variables/vmeasurement.h"
+#include "variables/measurement_variable.h"
 #include "variables/vvariable.h"
 #include "vtranslatevars.h"
 
@@ -534,9 +534,9 @@ void VContainer::removeCustomVariable(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VMeasurement> > VContainer::DataMeasurements() const
+const QMap<QString, QSharedPointer<MeasurementVariable> > VContainer::DataMeasurements() const
 {
-    return DataVar<VMeasurement>(VarType::Measurement);
+    return DataVar<MeasurementVariable>(VarType::Measurement);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -651,7 +651,7 @@ void VContainer::ClearUniqueIncrementNames()
  * @brief SetSize set value of size
  * @param size value of size
  */
-void VContainer::SetSize(qreal size)
+void VContainer::setSize(qreal size)
 {
     _size = size;
 }
@@ -661,7 +661,7 @@ void VContainer::SetSize(qreal size)
  * @brief SetGrowth set value of growth
  * @param height value of height
  */
-void VContainer::SetHeight(qreal height)
+void VContainer::setHeight(qreal height)
 {
     _height = height;
 }

@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   mainwindowsnogui.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 31, 2022
+ **  @date   16 Jul, 2022
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -64,7 +64,7 @@
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
-#include "../vpatterndb/measurements.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/pattern_piece_tool.h"
 
@@ -1016,7 +1016,7 @@ void MainWindowsNoGUI::exportPDF(const QString &name, QGraphicsRectItem *paper, 
     const QRectF sourceRect = paper->rect();
     const QRectF targetRect = QRectF(QPoint(0,0), QPoint(sourceRect.width(),sourceRect.height()));
     QSizeF size(FromPixel(sourceRect.width() + margins.left() + margins.right(), Unit::Mm),
-                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));    
+                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));
     QPageSize pageSize(size, QPageSize::Unit::Millimeter);
     printer.setPageSize(pageSize);
 
@@ -1733,26 +1733,26 @@ QString MainWindowsNoGUI::FileName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::SetSizeHeightForIndividualM() const
+void MainWindowsNoGUI::setSizeHeightForIndividualM() const
 {
     const QHash<QString, QSharedPointer<VInternalVariable> > * vars = pattern->DataVariables();
 
     if (vars->contains(size_M))
     {
-        VContainer::SetSize(*vars->value(size_M)->GetValue());
+        VContainer::setSize(*vars->value(size_M)->GetValue());
     }
     else
     {
-        VContainer::SetSize(0);
+        VContainer::setSize(0);
     }
 
     if (vars->contains(height_M))
     {
-        VContainer::SetHeight(*vars->value(height_M)->GetValue());
+        VContainer::setHeight(*vars->value(height_M)->GetValue());
     }
     else
     {
-        VContainer::SetHeight(0);
+        VContainer::setHeight(0);
     }
 
     doc->SetPatternWasChanged(true);

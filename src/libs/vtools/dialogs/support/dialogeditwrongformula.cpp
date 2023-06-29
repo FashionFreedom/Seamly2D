@@ -83,7 +83,7 @@
 #include "../vpatterndb/variables/vincrement.h"
 #include "../vpatterndb/variables/vlineangle.h"
 #include "../vpatterndb/variables/vlinelength.h"
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vabstractapplication.h"
@@ -203,7 +203,7 @@ void DialogEditWrongFormula::ValChanged(int row)
     if (ui->measurements_RadioButton->isChecked())
     {
         const QString name = qApp->TrVars()->VarFromUser(item->text());
-        const QSharedPointer<VMeasurement> measurements = data->GetVariable<VMeasurement>(name);
+        const QSharedPointer<MeasurementVariable> measurements = data->GetVariable<MeasurementVariable>(name);
         const QString desc = (measurements->GetGuiText() == "") ? "" : QString("\nDescription: %1").arg(measurements->GetGuiText());
         setDescription(item->text(), *data->DataVariables()->value(name)->GetValue(),
                        UnitsToStr(qApp->patternUnit(), true), tr("Measurement"), desc);
@@ -543,7 +543,7 @@ void DialogEditWrongFormula::ShowVariable(const QMap<key, val> &var)
  * @brief ShowMeasurements show measurements in table
  * @param var container with measurements
  */
-void DialogEditWrongFormula::ShowMeasurements(const QMap<QString, QSharedPointer<VMeasurement> > &var)
+void DialogEditWrongFormula::ShowMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var)
 {
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
@@ -551,7 +551,7 @@ void DialogEditWrongFormula::ShowMeasurements(const QMap<QString, QSharedPointer
     ui->tableWidget->setColumnHidden(ColumnFullName, false);
     ui->description_Label->setText("");
 
-    QMapIterator<QString, QSharedPointer<VMeasurement>> iMap(var);
+    QMapIterator<QString, QSharedPointer<MeasurementVariable>> iMap(var);
     while (iMap.hasNext())
     {
         iMap.next();
