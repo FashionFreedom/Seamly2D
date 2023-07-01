@@ -217,10 +217,15 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     SetLabelComboBox(VApplication::LabelLanguages());
 
     index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
+    if (index == -1)
+    {
+        index = ui->labelCombo->findData("en");
+    }
     if (index != -1)
     {
         ui->labelCombo->setCurrentIndex(index);
     }
+
     connect(ui->labelCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_labelLangChanged = true;
