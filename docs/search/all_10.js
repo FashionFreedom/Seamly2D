@@ -207,7 +207,7 @@ var searchData=
   ['pattern_5fpiece_5fvisual_2ecpp_5050',['pattern_piece_visual.cpp',['../d1/d62/pattern__piece__visual_8cpp.html',1,'']]],
   ['pattern_5fpiece_5fvisual_2eh_5051',['pattern_piece_visual.h',['../d9/d31/pattern__piece__visual_8h.html',1,'']]],
   ['patternchanged_5052',['patternChanged',['../d8/dba/classVAbstractPattern.html#a7d938cb0568dce72c2c34769b96ef1b2',1,'VAbstractPattern']]],
-  ['patternchangesweresaved_5053',['PatternChangesWereSaved',['../d6/d1a/classMainWindow.html#aaaea790fdb10775698a93bfc4278f0e2',1,'MainWindow']]],
+  ['patternchangesweresaved_5053',['patternChangesWereSaved',['../d6/d1a/classMainWindow.html#afa949935f3e3b3defce7dd2ab4c85894',1,'MainWindow']]],
   ['patternfilepath_5054',['patternFilePath',['../db/dda/classVAbstractApplication.html#ae40bd06508a5f0b1e485637b59cd3c8d',1,'VAbstractApplication']]],
   ['patternhasgroups_5055',['patternHasGroups',['../d8/dba/classVAbstractPattern.html#afe68dbf09a046fee9737735915efd4ef',1,'VAbstractPattern']]],
   ['patterninfo_5056',['patternInfo',['../d7/dcf/classVLayoutPieceData.html#a24e5fd670bea84e7d511f9b9b937194c',1,'VLayoutPieceData']]],
