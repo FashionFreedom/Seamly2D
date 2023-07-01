@@ -442,7 +442,7 @@ void VPattern::LiteParseIncrements()
 {
     try
     {
-        emit SetEnabledGUI(true);
+        emit setGuiEnabled(true);
 
         VContainer::ClearUniqueIncrementNames();
         data->ClearVariables(VarType::Increment);
@@ -469,41 +469,41 @@ void VPattern::LiteParseIncrements()
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
     catch (const VExceptionConversionError &e)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
     catch (const VExceptionEmptyParameter &e)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
     catch (const VExceptionWrongId &e)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
     catch (VException &e)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
     catch (const std::bad_alloc &)
     {
         qCCritical(vXML, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         return;
     }
 }
@@ -519,7 +519,7 @@ void VPattern::LiteParseTree(const Document &parse)
 
     try
     {
-        emit SetEnabledGUI(true);
+        emit setGuiEnabled(true);
         switch (parse)
         {
             case Document::LiteBlockParse:
@@ -547,7 +547,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -558,7 +558,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -569,7 +569,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -580,7 +580,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -591,7 +591,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -601,7 +601,7 @@ void VPattern::LiteParseTree(const Document &parse)
     catch (const std::bad_alloc &)
     {
         qCCritical(vXML, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
-        emit SetEnabledGUI(false);
+        emit setGuiEnabled(false);
         if (not VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
