@@ -101,34 +101,34 @@ var sectionId = 'dynsection-1';
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d4/d1d/dialogmove_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1128.5,-229 1128.5,-259 1250.5,-259 1250.5,-229 1128.5,-229"/>
-<text text-anchor="start" x="1136.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="1189.5" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.h</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node9 -->
-<g id="edge9" class="edge">
-<title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M1217.08,-292.64C1210.49,-281.25 1203.17,-268.62 1197.74,-259.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1214.13,-294.53 1222.17,-301.43 1220.19,-291.02 1214.13,-294.53"/>
-</g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d2/d51/dialogmove_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node9"><a xlink:href="../../d2/d51/dialogmove_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="1240,-151 1240,-181 1365,-181 1365,-151 1240,-151"/>
 <text text-anchor="start" x="1248" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
 <text text-anchor="middle" x="1302.5" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node10 -->
-<g id="edge13" class="edge">
-<title>Node1&#45;&gt;Node10</title>
+<!-- Node1&#45;&gt;Node9 -->
+<g id="edge9" class="edge">
+<title>Node1&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M1247.1,-292.02C1251.13,-283.34 1255.53,-273.8 1259.5,-265 1272.88,-235.37 1288.06,-200.45 1296.33,-181.32"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1243.8,-290.81 1242.75,-301.35 1250.14,-293.77 1243.8,-290.81"/>
+</g>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="../../d4/d1d/dialogmove_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1128.5,-229 1128.5,-259 1250.5,-259 1250.5,-229 1128.5,-229"/>
+<text text-anchor="start" x="1136.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="1189.5" y="-236" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialogmove.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node10 -->
+<g id="edge10" class="edge">
+<title>Node1&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M1217.08,-292.64C1210.49,-281.25 1203.17,-268.62 1197.74,-259.23"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1214.13,-294.53 1222.17,-301.43 1220.19,-291.02 1214.13,-294.53"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
@@ -318,15 +318,15 @@ var sectionId = 'dynsection-1';
 <path fill="none" stroke="midnightblue" d="M230.66,-221.94C210.33,-201.39 186.98,-169.7 204.5,-145 223.06,-118.84 254.82,-104.8 285.18,-97.31"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="228.3,-224.53 237.92,-228.97 233.17,-219.5 228.3,-224.53"/>
 </g>
-<!-- Node9&#45;&gt;Node3 -->
-<g id="edge10" class="edge">
-<title>Node9&#45;&gt;Node3</title>
+<!-- Node10&#45;&gt;Node3 -->
+<g id="edge11" class="edge">
+<title>Node10&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M1142.01,-225.22C1106.03,-211.75 1057.27,-193.5 1024.01,-181.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1141.2,-228.65 1151.79,-228.88 1143.65,-222.1 1141.2,-228.65"/>
 </g>
-<!-- Node9&#45;&gt;Node10 -->
-<g id="edge11" class="edge">
-<title>Node9&#45;&gt;Node10</title>
+<!-- Node10&#45;&gt;Node9 -->
+<g id="edge12" class="edge">
+<title>Node10&#45;&gt;Node9</title>
 <path fill="none" stroke="midnightblue" d="M1218.81,-223.29C1238.5,-210.05 1263.98,-192.91 1281.62,-181.04"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1216.83,-220.4 1210.49,-228.88 1220.74,-226.21 1216.83,-220.4"/>
 </g>
@@ -341,9 +341,9 @@ var sectionId = 'dynsection-1';
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node11 -->
-<g id="edge12" class="edge">
-<title>Node9&#45;&gt;Node11</title>
+<!-- Node10&#45;&gt;Node11 -->
+<g id="edge13" class="edge">
+<title>Node10&#45;&gt;Node11</title>
 <path fill="none" stroke="midnightblue" d="M1180.97,-218.98C1177.27,-208.58 1173,-196.55 1169.49,-186.68"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="1177.78,-220.45 1184.42,-228.7 1184.37,-218.11 1177.78,-220.45"/>
 </g>
