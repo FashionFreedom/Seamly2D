@@ -158,7 +158,7 @@ private slots:
     void LastUsedTool();
     void fullParseFile();
     void setGuiEnabled(bool enabled);
-    void globalDraftBlockChange(const QString &patternPiece);
+    void changeDraftBlockGlobally(const QString &patternPiece);
     void ToolBarStyles();
     void resetOrigins();
     void showLayoutPages(int index);
@@ -359,8 +359,8 @@ private:
 
     void                              CancelTool();
 
-    void               SetEnableWidgets(bool enable);
-    void               setEnableTools(bool enable);
+    void               setWidgetsEnabled(bool enable);
+    void               setToolsEnabled(bool enable);
     void               SetLayoutModeActions();
 
     void               SaveCurrentScene();
