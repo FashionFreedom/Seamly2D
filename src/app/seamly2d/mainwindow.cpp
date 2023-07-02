@@ -7177,7 +7177,7 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
             case QLockFile::UnknownError:
                 answer = QMessageBox::question(this, tr("Locking file"),
                                                tr("Unknown error happened, for instance a full partition prevented "
-                                                  "writing out the lock file. Ignore if you want to continue (not"
+                                                  "writing out the lock file. Ignore if you want to continue (not "
                                                   "recommended, can cause a data corruption)."),
                                                QMessageBox::Abort|QMessageBox::Ignore, QMessageBox::Abort);
                 break;
