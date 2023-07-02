@@ -41,7 +41,7 @@
   <property name="modal">
    <bool>true</bool>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_6">
+  <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
@@ -80,9 +80,7 @@
          </property>
          <property name="styleSheet">
           <string notr="true">color: rgb(255, 255, 255);
-alternate-background-color:rgb(230, 230, 230);
 selection-color: rgb(230, 230, 230);
-selection-background-color: rgb(230, 230, 230);
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(200, 200, 200, 255));
 
 QListWidget::item:selected {
@@ -246,11 +244,17 @@ QListWidget::item:selected {
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QFrame" name="frame_2">
+        <widget class="QFrame" name="top_Frame">
          <property name="minimumSize">
           <size>
            <width>0</width>
            <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>116</height>
           </size>
          </property>
          <property name="frameShape">
@@ -395,92 +399,117 @@ QListWidget::item:selected {
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="clear_PushButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <property name="spacing">
+               <number>0</number>
               </property>
-              <property name="maximumSize">
-               <size>
-                <width>16</width>
-                <height>16</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::StrongFocus</enum>
-              </property>
-              <property name="toolTip">
-               <string>Clear formula</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../../../vmisc/share/resources/icon.qrc">
-                <normaloff>:/icon/32x32/clear.png</normaloff>:/icon/32x32/clear.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>16</width>
-                <height>16</height>
-               </size>
-              </property>
-              <property name="autoRepeat">
-               <bool>true</bool>
-              </property>
-              <property name="autoRepeatDelay">
-               <number>50</number>
-              </property>
-              <property name="autoRepeatInterval">
-               <number>50</number>
-              </property>
-              <property name="flat">
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="undo_PushButton">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16</width>
-                <height>16</height>
-               </size>
-              </property>
-              <property name="focusPolicy">
-               <enum>Qt::StrongFocus</enum>
-              </property>
-              <property name="toolTip">
-               <string>Reset to original formula</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../../../vmisc/share/resources/theme.qrc">
-                <normaloff>:/icons/win.icon.theme/32x32/actions/edit-undo.png</normaloff>:/icons/win.icon.theme/32x32/actions/edit-undo.png</iconset>
-              </property>
-              <property name="autoRepeat">
-               <bool>true</bool>
-              </property>
-              <property name="autoRepeatDelay">
-               <number>50</number>
-              </property>
-              <property name="autoRepeatInterval">
-               <number>50</number>
-              </property>
-              <property name="flat">
-               <bool>true</bool>
-              </property>
-             </widget>
+              <item>
+               <widget class="QPushButton" name="clear_PushButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::StrongFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>Clear formula</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../../vmisc/share/resources/icon.qrc">
+                  <normaloff>:/icon/32x32/clear.png</normaloff>:/icon/32x32/clear.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="autoRepeat">
+                 <bool>true</bool>
+                </property>
+                <property name="autoRepeatDelay">
+                 <number>50</number>
+                </property>
+                <property name="autoRepeatInterval">
+                 <number>50</number>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="undo_PushButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::StrongFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>Reset to original formula</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../../../vmisc/share/resources/theme.qrc">
+                  <normaloff>:/icons/win.icon.theme/32x32/actions/edit-undo.png</normaloff>:/icons/win.icon.theme/32x32/actions/edit-undo.png</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>16</width>
+                  <height>16</height>
+                 </size>
+                </property>
+                <property name="autoRepeat">
+                 <bool>true</bool>
+                </property>
+                <property name="autoRepeatDelay">
+                 <number>50</number>
+                </property>
+                <property name="autoRepeatInterval">
+                 <number>50</number>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </item>
@@ -488,7 +517,7 @@ QListWidget::item:selected {
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame">
+        <widget class="QFrame" name="bottom_Frame">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -608,7 +637,7 @@ QListWidget::item:selected {
             <item>
              <widget class="QTableWidget" name="tableWidget">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -616,7 +645,7 @@ QListWidget::item:selected {
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>210</height>
+                <height>0</height>
                </size>
               </property>
               <property name="cursor" stdset="0">
@@ -653,6 +682,12 @@ QListWidget::item:selected {
               <property name="cornerButtonEnabled">
                <bool>false</bool>
               </property>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderHighlightSections">
+               <bool>false</bool>
+              </attribute>
               <column>
                <property name="text">
                 <string>Name</string>
@@ -732,7 +767,7 @@ QListWidget::item:selected {
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>0</height>
+           <height>40</height>
           </size>
          </property>
          <property name="frameShape">
