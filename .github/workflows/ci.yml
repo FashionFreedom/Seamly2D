@@ -202,7 +202,11 @@ jobs:
     steps:     
       - uses: actions/checkout@v4
 
-      - uses: ilammy/msvc-dev-cmd@v1
+      - name: install msvc
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          # use Visual C++ 2022 latest, 14.36.xxxx
+          toolset: '14.36'
 
        - uses: jurplel/install-qt-action@v3
          with:
