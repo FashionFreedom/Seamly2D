@@ -62,7 +62,7 @@ jobs:
       - name: install build dependencies
         run: |
           # libgstreamer-plugins-base1.0-0 and libgstreamer-gl1.0-0 required to link against QtMultimedia
-          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0 libgstreamer-gl1.0-0
+          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0 libgstreamer-gl1.0-0 libxcb-cursor0
 
       - name: update version
         run: |
