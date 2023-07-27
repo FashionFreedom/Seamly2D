@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 env:
-  QT_VERSION: '6.2.4' # quotes required or YAML parser will interpret as float
+  QT_VERSION: '6.5.2' # quotes required or YAML parser will interpret as float
 
 jobs:
 
@@ -62,7 +62,7 @@ jobs:
       - name: install build dependencies
         run: |
           # libgstreamer-plugins-base1.0-0 and libgstreamer-gl1.0-0 required to link against QtMultimedia
-          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0 libgstreamer-gl1.0-0
+          sudo apt update && sudo apt install -y libxerces-c-dev libgstreamer-plugins-base1.0-0 libgstreamer-gl1.0-0 libxcb-cursor0
 
       - name: update version
         run: |
@@ -198,8 +198,8 @@ jobs:
       - name: install msvc
         uses: ilammy/msvc-dev-cmd@v1
         with:
-          # use Visual C++ 2022 latest, 14.34.xxxx
-          toolset: '14.34'
+          # use Visual C++ 2022 latest, 14.36.xxxx
+          toolset: '14.36'
 
       - uses: jurplel/install-qt-action@v3
         with:
